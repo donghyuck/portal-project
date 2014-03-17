@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<decorators defaultdir="/decorators">
+    <!-- Any urls that are excluded will never be decorated by Sitemesh -->
+    
+    <excludes>
+        <pattern>/client/*</pattern>
+        <pattern>/images/*</pattern>
+        <pattern>/templates/*</pattern>
+        <pattern>/styles/*</pattern>
+        <pattern>/js/*</pattern>
+        <pattern>/fonts/*</pattern>
+        <pattern>*output=xml*</pattern>
+        <pattern>*output=json*</pattern>
+    </excludes>
+        
+    <decorator name="main" page="main.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+    
+    <decorator name="secure" page="secure.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+    <decorator name="secure-metroblack" page="secure-metroblack.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+    <decorator name="secure-metro" page="secure-metro.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+    <decorator name="homepage" page="homepage.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+    <decorator name="flat-homepage" page="flat-homepage.jsp">
+        <pattern>/*</pattern>
+    </decorator>    
+    <decorator name="simple-homepage" page="simple-homepage.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+        
+     <!--    
+    <decorator name="slidedown" page="main-slidedown.jsp" />
+    <decorator name="banded" page="main-banded.jsp" />
+    <decorator name="panel" page="panel.jsp"/>    
+    <decorator name="printable" page="printable.jsp"/>    
+     --> 
+    <decorator name="black" page="black.jsp"/>
+	<decorator name="none" page="none.jsp"/>
+</decorators>
