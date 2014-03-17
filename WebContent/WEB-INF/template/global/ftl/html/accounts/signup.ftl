@@ -208,8 +208,9 @@
 							emailVisible : true
 						});
 						
-						
-						
+						if( $("#signupInputAgree").is(':checked') ){
+							_f.agree = true;
+						}						
 						common.api.user.signup ({
 							data : kendo.stringify( _f );
 						});
