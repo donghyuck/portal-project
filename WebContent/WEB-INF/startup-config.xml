@@ -56,14 +56,14 @@ PC9saWNlbnNlPg==</file>
 		<social>
 			<providers>
 				<twitter>
-					<callbackUrl>http://222.122.63.147/community/twitter-callback.do</callbackUrl>
+					<callbackUrl>http://222.122.63.146/community/twitter-callback.do</callbackUrl>
 				</twitter>
 				<facebook>
-					<callbackUrl>http://222.122.63.147/community/facebook-callback.do</callbackUrl>
+					<callbackUrl>http://222.122.63.146/community/facebook-callback.do</callbackUrl>
 					<scope>export_stream, read_stream, photo_upload, publish_stream, user_about_me, user_activities, user_education_history, user_friends, user_photos, user_work_history, email</scope>
 				</facebook>	
 				<tumblr>
-					<callbackUrl>http://222.122.63.147/community/social-callback.do</callbackUrl>
+					<callbackUrl>http://222.122.63.146/community/social-callback.do</callbackUrl>
 				</tumblr>			
 			</providers>
 		</social>
