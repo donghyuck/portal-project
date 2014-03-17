@@ -355,9 +355,34 @@
 		JSON = 'json',
 		CALLBACK_URL_TEMPLATE = kendo.template("/community/#= media #-callback.do?output=json");
 	
+	common.api.social.update = function ( options ){		
+		options = options || {};	
+		if( typeof options.url === UNDEFINED){
+			options.url = '/community/update-socialnetwork.do?output=json';
+		}
+		$.ajax({
+			type : POST,
+			url : options.url,
+			data: { options.data },
+			success : function(response){
+				if( typeof response.error === UNDEFINED ){ 		
+					if( isFunction( options.success ) ){						
+						options.success(response) ;
+					}
+				} else {									
+					if( isFunction( options.fail ) ){
+						options.fail(response) ;
+					}
+				}
+			},
+			error:options.error || handleKendoAjaxError ,
+			dataType : JSON
+		});			
+	}
+		
 	common.api.social.getProfile = function ( options ){				
 		options = options || {};		
-		if( typeof options.url == 'undefined' && typeof options.media == 'string' ){
+		if( typeof options.url === UNDEFINED && typeof options.media == 'string' ){
 			options.url = CALLBACK_URL_TEMPLATE ({media : options.media});
 		}	
 		$.ajax({
