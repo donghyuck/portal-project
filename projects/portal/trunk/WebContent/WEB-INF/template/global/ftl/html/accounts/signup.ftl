@@ -199,6 +199,7 @@
 						alert("save");
 						/* SIGNUP for internal  */
 						var _f = new  SignupForm({
+							media : "internal",
 							name: $('#signupInputName').val(),
 							username : $('#signupInputUsername').val(),
 							email: $('#signupInputEmail').val(),
@@ -215,6 +216,9 @@
 							data : kendo.stringify( _f ),
 							success : function(){
 								homepage();
+							},
+							error : function(){
+								
 							}
 						});
 					}						
