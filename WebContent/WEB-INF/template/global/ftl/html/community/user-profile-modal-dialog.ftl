@@ -133,7 +133,14 @@
 			
 			function handleSocialCallbackResult( media, onetime, success ){
 				if( success ){
-	
+					if( !$("#my-social-network-grid" ).data('kendoGrid') ){
+						var my_social_network_grid = $("#my-social-network-grid" ).data('kendoGrid');
+						var selectedCells = my_social_network_grid.select();
+						if( selectedCells.length > 0){
+							var selectedCell = my_social_network_grid.dataItem( selectedCells );
+							alert( kendo.stringify( selectedCell ) );
+						}
+					}
 				}else{
 					alert( "연결에 실패하였습니다." );
 				}
