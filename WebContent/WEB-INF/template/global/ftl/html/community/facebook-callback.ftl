@@ -14,8 +14,7 @@
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.min.js'],
-			complete: function() {	
-			
+			complete: function() {				
 				<#if action.userProfile?exists >
 					<#assign onetime = action.onetime >
 					<#assign before_domain = action.domainName >
@@ -60,7 +59,12 @@
 							});							
 							</#if>
 						<#else>
-						
+							// is login user ;
+										
+							if(typeof window.opener.handleSocialCallbackResult == "function"){		
+								window.opener.handleSocialCallbackResult("twitter", onetime , true);
+								window.close();						
+							}						
 						</#if>
 					</#if>
 				<#else>	
