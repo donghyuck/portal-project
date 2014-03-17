@@ -133,7 +133,8 @@
 			
 			function handleSocialCallbackResult( media, onetime, success ){
 				if( success ){
-					if( !$("#my-social-network-grid" ).data('kendoGrid') ){
+				
+					if( $("#my-social-network-grid" ).data('kendoGrid') ){
 						var my_social_network_grid = $("#my-social-network-grid" ).data('kendoGrid');
 						var selectedCells = my_social_network_grid.select();
 						if( selectedCells.length > 0){
