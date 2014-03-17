@@ -215,7 +215,11 @@
 								$("#signupInputAgree").focus();
 							}							
 						}
-					});								
+					});		
+					
+					if(!hasError){
+						alert("save");
+					}						
 				});				
 				
 				$(":button.homepage").click( function(e) {					
