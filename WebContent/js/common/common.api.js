@@ -180,9 +180,7 @@
 	isFunction = kendo.isFunction,
 	UNDEFINED = 'undefined',
 	POST = 'POST',
-	JSON = 'json';
-	
-	
+	JSON = 'json';	
 	common.api.user.logout = function (options){
 		options = options || {};
 		$.ajax({
@@ -195,7 +193,48 @@
 			},
 			error:handleKendoAjaxError												
 		});			
-	}
+	}	
+	common.api.user.signup = function ( options ){		
+		options = options || {};		
+		if( typeof options.external === UNDEFINED ){
+			options.external = false;
+		}		
+		if( options.external )	{
+			$.ajax({
+				type : 'POST',
+				url : options.url || '/accounts/signup-external.do?output=json' ,
+				data: { item : options.data },
+				success : function(response){
+					if( response.error){ 												
+						if( isFunction(options.fail) )
+							options.fail(response) ;
+					} else {					
+						if( isFunction(options.success) )
+							options.success(response) ;					
+					}
+				},
+				error:options.error || handleKendoAjaxError,
+				dataType : "json"
+			});				
+		}else{
+			$.ajax({
+				type : 'POST',
+				url : options.url || '/accounts/create-user.do?output=json' ,
+				data: { item : options.data },
+				success : function(response){
+					if( response.error){ 												
+						if( isFunction(options.fail) )
+							options.fail(response) ;
+					} else {					
+						if( isFunction(options.success) )
+							options.success(response) ;					
+					}
+				},
+				error:options.error || handleKendoAjaxError,
+				dataType : "json"
+			});				
+		}
+	};	
 	
 })(jQuery);	
 
