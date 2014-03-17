@@ -363,7 +363,7 @@
 		$.ajax({
 			type : POST,
 			url : options.url,
-			data: { options.data },
+			data: options.data,
 			success : function(response){
 				if( typeof response.error === UNDEFINED ){ 		
 					if( isFunction( options.success ) ){						
