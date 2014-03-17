@@ -352,7 +352,11 @@
 			var signupPlaceHolder =  $("#signup-form").data("signupPlaceHolder");				
 			return signupPlaceHolder ;	
 		}
-		
+
+		function goLogin(){
+			window.location.replace("/accounts/login.do");
+		}	
+				
 		function homepage(){
 			window.location.replace("/main.do");
 		}		
