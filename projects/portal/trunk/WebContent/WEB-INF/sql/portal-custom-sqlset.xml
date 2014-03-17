@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlset>
+    <name>PORTAL_CUSTOM</name>
+    <version>2.0</version>
+    <description>사용자 정의 쿼리...</description>
+
+	<sql-query name="SELECT_TABLENAMES_LIKE_NAME"
+		description="번들 이름에 해당하는 전체 택스트를 조회한다."><![CDATA[
+		SELECT 
+		    TABLE_NAME
+		FROM TABS 
+		WHERE TABLE_NAME LIKE  ?
+    ]]></sql-query>
+ 
+	<sql-query name="SELECT_TABLE"
+		description="번들 이름에 해당하는 전체 택스트를 조회한다.">
+		SELECT 
+		    *
+		FROM 
+		<dynamic>
+		${TABLE_NAME} 
+		</dynamic>
+		where USER_ID = ?
+    </sql-query>
+
+</sqlset>

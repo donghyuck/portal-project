@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+	<constant name="struts.devMode" value="true" />
+	
+	<include file="struts-framework-default.xml"/>	
+	<include file="struts-framework-system.xml"/>	 
+	
+	<include file="struts-framework-user.xml"/>	 
+	<include file="struts-framework-user-admin.xml"/>	 
+	<!-- 
+	
+	<include file="struts-framework-content.xml"/>	 
+	<include file="struts-framework-social.xml"/>	 
+	 -->
+	
+	<include file="struts-framework-community.xml"/>	 
+	<include file="struts-framework-community-admin.xml"/>	 
+</struts>

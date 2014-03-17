@@ -1,0 +1,236 @@
+/* Overlay style */
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.7);
+	z-index: 2000;
+}
+
+/* Overlay closing cross */
+.overlay .overlay-close {
+	width: 80px;
+	height: 80px;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	overflow: hidden;
+	border: none;
+	background: url(/images/cross.png) no-repeat center center;
+	text-indent: 200%;
+	color: transparent;
+	outline: none;
+	z-index: 2000;
+}
+
+/* Menu style */
+/*
+.overlay nav {
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.overlay ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	display: inline-block;
+	height: 100%;
+	position: relative;
+}
+
+.overlay ul li {
+	display: block;
+	height: 20%;
+	height: calc(100% / 5);
+	min-height: 54px;
+}
+
+.overlay ul li a {
+	font-weight: 300;
+	display: block;
+	color: #fff;
+	-webkit-transition: color 0.2s;
+	transition: color 0.2s;
+}
+
+.overlay ul li a:hover,
+.overlay ul li a:focus {
+	color: #e3fcb1;
+}
+*/
+
+
+.overlay-hugeinc img {
+	-webkit-animation: fadeInScale 1.2s ease-in-out;
+	-moz-animation: fadeInScale 1.2s ease-in-out;
+	-o-animation: fadeInScale 1.2s ease-in-out;
+	-ms-animation: fadeInScale 1.2s ease-in-out;
+	animation: fadeInScale 1.2s ease-in-out;
+	padding-buttom: 15px;
+	
+	/*max-height: 100%;*/
+}
+
+
+/* Effects */
+
+.overlay-hugeinc {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: opacity 0.5s, visibility 0s 0.5s;
+	transition: opacity 0.5s, visibility 0s 0.5s;
+	overflow-x: hidden;
+	overflow-y: auto;	
+}
+
+.overlay-hugeinc.open {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+
+.overlay-hugeinc nav {
+	/**
+	-webkit-perspective: 1200px;
+	perspective: 1200px;
+	*/
+	background-color: rgba(19,19,20, 0.9);
+	border: 1px;
+	border-color: #060607;
+}
+
+.overlay-hugeinc .nav-tabs>li>a {
+	color : #8E8E93;	
+}
+@media (max-width: 767px) {
+
+	/* Reset the container */
+	.container-fluid, .container {
+	  max-width: none !important;
+	  /*width: 970px;*/
+	}
+	
+	/* Demonstrate the grids */
+	.col-xs-4 {
+	  padding-top: 15px;
+	  padding-bottom: 15px;
+	  background-color: #eee;
+	  border: 1px solid #ddd;
+	  background-color: rgba(86,61,124,.15);
+	  border: 1px solid rgba(86,61,124,.2);
+	}
+	
+	.container-fluid .navbar-header , .container .navbar-header,
+	.container-fluid .navbar-collapse , .container .navbar-collapse {
+	  margin-right: 0;
+	  margin-left: 0;
+	}
+	
+	/* Always float the navbar header */
+	.navbar-header {
+	  float: left;
+	}
+	
+	/* Undo the collapsing navbar */
+	.navbar-collapse {
+	  display: block !important;
+	  height: auto !important;
+	  padding-bottom: 0;
+	  overflow: visible !important;
+	}
+	
+	.navbar-toggle {
+	  display: none;
+	}
+	
+	.navbar-brand {
+	  margin-left: -15px;
+	}
+	
+	/* Always apply the floated nav */
+	.navbar-nav {
+	  float: left;
+	  margin: 0;
+	}
+	.navbar-nav > li {
+	  float: left;
+	}
+	.navbar-nav > li > a {
+	  padding: 15px;
+	}
+	
+	/* Redeclare since we override the float above */
+	.navbar-nav.navbar-right {
+	  float: right;
+	}
+	
+	.navbar-right .dropdown-menu {
+	left: auto;
+	right: 0;
+	}
+		
+	/* Undo custom dropdowns */
+	.navbar .open .dropdown-menu {
+	  position: absolute;
+	  float: left;
+	  background-color: #fff;
+	  border: 1px solid #cccccc;
+	  border: 1px solid rgba(0, 0, 0, 0.15);
+	  border-width: 0 1px 1px;
+	  border-radius: 0 0 4px 4px;
+	  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	          box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+	}
+	.navbar .open .dropdown-menu > li > a {
+	  color: #333;
+	}
+	.navbar .open .dropdown-menu > li > a:hover,
+	.navbar .open .dropdown-menu > li > a:focus,
+	.navbar .open .dropdown-menu > .active > a,
+	.navbar .open .dropdown-menu > .active > a:hover,
+	.navbar .open .dropdown-menu > .active > a:focus {
+	  color: #fff !important;
+	  background-color: #428bca !important;
+	}
+	.navbar .open .dropdown-menu > .disabled > a,
+	.navbar .open .dropdown-menu > .disabled > a:hover,
+	.navbar .open .dropdown-menu > .disabled > a:focus {
+	  color: #999 !important;
+	  background-color: transparent !important;
+	}
+}
+
+/*
+.overlay-hugeinc nav ul {
+	opacity: 0.4;
+	-webkit-transform: translateY(-25%) rotateX(35deg);
+	transform: translateY(-25%) rotateX(35deg);
+	-webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
+	transition: transform 0.5s, opacity 0.5s;
+}
+
+.overlay-hugeinc.open nav ul {
+	opacity: 1;
+	-webkit-transform: rotateX(0deg);
+	transform: rotateX(0deg);
+}
+
+.overlay-hugeinc.close nav ul {
+	-webkit-transform: translateY(25%) rotateX(-35deg);
+	transform: translateY(25%) rotateX(-35deg);
+}
+
+@media screen and (max-height: 30.5em) {
+	.overlay nav {
+		height: 70%;
+		font-size: 34px;
+	}
+	.overlay ul li {
+		min-height: 34px;
+	}
+}
+*/

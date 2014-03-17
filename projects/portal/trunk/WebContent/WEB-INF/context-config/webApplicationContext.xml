@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	<description><![CDATA[
+	
+	
+       Application Context
+        
+	]]></description>	
+	<!-- 기본 유틸리티 컨텍스트  -->
+	<import resource="classpath:context/i18nSubsystemContext.xml"/>
+	<import resource="classpath:context/freemarkerSubsystemContext.xml"/>
+	<import resource="classpath:context/transactionSubsystemContext.xml"/>
+	<import resource="classpath:context/oracleSubsystemContext.xml"/>
+	<import resource="classpath:context/utilSubsystemContext.xml"/>	
+	<import resource="classpath:context/userSubsystemContext.xml"/>
+	<import resource="classpath:context/securitySubsystemContext.xml"/>	
+	<import resource="classpath:context/struts2SubsystemContext.xml"/>
+	<import resource="classpath:context/webSubsystemContext.xml"/>
+	<import resource="classpath:context/communitySubsystemContext.xml"/>
+	
+	
+</beans>
