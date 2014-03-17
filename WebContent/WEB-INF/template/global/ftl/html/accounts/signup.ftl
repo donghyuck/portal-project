@@ -212,7 +212,10 @@
 							_f.agree = true;
 						}						
 						common.api.user.signup ({
-							data : kendo.stringify( _f );
+							data : kendo.stringify( _f ),
+							success : function(){
+								homepage();
+							}
 						});
 					}						
 				});				
