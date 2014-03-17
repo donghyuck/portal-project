@@ -68,6 +68,12 @@ var SignupForm = kendo.data.Model.define({
         "onetime": {
             type: "string"
         },
+        "nameVisible" : {
+        	 type:"boolean", defaultVlaue: false 
+        },
+        "emailVisible" : {
+        	 type:"boolean", defaultVlaue: false 
+        },
         "agree":  { type:"boolean", defaultVlaue: false },
         "customClass" : {type:"string" , defaultValue : "" }
 	}, 
