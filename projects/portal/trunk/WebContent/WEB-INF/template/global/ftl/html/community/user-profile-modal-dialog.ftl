@@ -138,7 +138,17 @@
 						var selectedCells = my_social_network_grid.select();
 						if( selectedCells.length > 0){
 							var selectedCell = my_social_network_grid.dataItem( selectedCells );
-							alert( kendo.stringify( selectedCell ) );
+														
+							common.api.social.update({
+								data : {
+									media: media,
+									onetime: onetime,
+									socialNetworkId: selectedCell.socialAccountId
+								},
+								success : function() {
+									my_social_network_grid.dataSource.read();
+								}							
+							});
 						}
 					}
 				}else{
