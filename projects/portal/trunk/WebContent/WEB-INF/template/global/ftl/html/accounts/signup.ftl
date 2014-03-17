@@ -55,28 +55,7 @@
 						window.open( 
 							target_url,
 							'popUpWindow', 
-							'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
-						/*										
-						if( target_media == "twitter" ){
-							common.api.user.domain({
-								url : "http://${ServletUtils.getLocalHostAddr()}/community/my-domain.do?output=json",
-								data : { domainName:  "${ServletUtils.getDomainName( request.getRequestURL().toString() , false)}" }
-							});
-						}						
-						$.ajax({
-							type : 'POST',
-							url : "${request.contextPath}/community/get-socialnetwork.do?output=json",
-							data: { media: target_media },
-							success : function(response){
-								if( response.error ){
-								} else {	
-									window.open( response.authorizationUrl + '&display=popup' ,'popUpWindow','height=500,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-								}
-							},
-							error:handleKendoAjaxError												
-						});						
-						**/
-						
+							'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');						
 					});		
 				});						
 								
@@ -215,10 +194,25 @@
 								$("#signupInputAgree").focus();
 							}							
 						}
-					});		
-					
+					});						
 					if(!hasError){
 						alert("save");
+						/* SIGNUP for internal  */
+						var _f = new  SignupForm({
+							name: $('#signupInputName').val(),
+							username : $('#signupInputUsername').val(),
+							email: $('#signupInputEmail').val(),
+							password1 : $('#signupInputPassword1').val(),
+							password2: $('#signupInputPassword2').val(),
+							nameVisible : true,
+							emailVisible : true
+						});
+						
+						
+						
+						common.api.user.signup ({
+							data : kendo.stringify( _f );
+						});
 					}						
 				});				
 				
@@ -226,25 +220,21 @@
 					homepage();					
 				} );		
 
-				/* SIGNUP for socialmedia */
+				/* SIGNUP for external  */
 				var template = kendo.template($("#alert-template").html());	
 				var signup_modal = $('#signup-modal');
 				signup_modal.modal({show:false, backdrop:true});
-				kendo.bind(signup_modal, getSignupPlaceHolder() );		
-
-				$('form[name="fm2"]').submit(function(e) {			
-
+				kendo.bind(signup_modal, getSignupPlaceHolder() );	
+				$('form[name="fm2"]').submit(function(e) {	
 					var signupPlaceHolder = getSignupPlaceHolder();
 					var btn = $('.social-signup');				
 					btn.button('loading');				
 					var input_email_required = (signupPlaceHolder.media == 'twitter') ;
 					var input_checkbox = $("input[name='input-agree']");
 					var input_email = $("input[name='input-email']");
-					var alert_danger = signup_modal.find(".custom-alert");			
-				  
+					var alert_danger = signup_modal.find(".custom-alert");				  
 					var hasError = false;
-					var error_message = null;
-				
+					var error_message = null;				
 					if( input_email_required){
 						if ( signupPlaceHolder.email == null ){
 							hasError = true;
@@ -256,8 +246,7 @@
 							$('form[name="fm2"] fieldset' ).removeClass("has-error");
 							alert_danger.html( "" );
 						}
-					}
-								
+					}								
 					if( signupPlaceHolder.agree == false )
 					{
 						error_message = input_checkbox.attr('validationMessage');
@@ -270,8 +259,7 @@
 								$('form[name="fm2"] fieldset' ).removeClass("has-error");
 							}					
 						}
-					}		
-										
+					}										
 					if( hasError ){
 						alert_danger.html( template({message: error_message }) );			
 						btn.button('reset');
@@ -290,12 +278,10 @@
 						});
 					}	
 					return false ;		
-				});													
-
+				});						
 				$('#signup-modal').on('hidden.bs.modal', function () {
 					$('#signup-window').modal('show');
 				});
-
 				// END SCRIPT            
 			}
 		}]);	
