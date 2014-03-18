@@ -1399,8 +1399,8 @@
 		}
 		
 		.image-grid {
-			padding-top:0px;
-			padding-buttom:2px;
+			padding-top:2px;
+			padding-buttom:0px;
 			padding-right:2px;
 			padding-left:0px;
 		}
