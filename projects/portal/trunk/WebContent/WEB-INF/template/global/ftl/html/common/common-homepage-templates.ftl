@@ -549,10 +549,13 @@
 					# for (var i = 0; i < photos.length ; i++) { #	
 					# var post_photo = photos[i] ; #
 					# var post_photo_url = post_photo.sizes[0].url ; #	
-					<div class="col-xs-12 col-md-6 image-grid">
 					
-					<img src="#: post_photo_url  #" alt="media" class="img-rounded img-responsive">
-				
+					#if (photos.length == 1) {#
+					<div class="col-xs-12 col-lg-12 image-grid">					
+					#} else { #
+					<div class="col-xs-12 col-lg-4 image-grid">	
+					# } #	
+					<img src="#: post_photo_url  #" alt="media" class="img-rounded img-responsive">				
 					</div>
 					# } #	
 					</div>				
