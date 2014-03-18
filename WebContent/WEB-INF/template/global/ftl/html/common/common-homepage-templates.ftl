@@ -555,7 +555,7 @@
 					#} else { #
 					<div class="col-xs-12 col-lg-4 image-grid">	
 					# } #	
-					<img src="#: post_photo_url  #" alt="media" class="img-rounded img-responsive">				
+					<img src="#: post_photo_url  #" alt="media" class="img-rounded">				
 					</div>
 					# } #	
 					</div>				
