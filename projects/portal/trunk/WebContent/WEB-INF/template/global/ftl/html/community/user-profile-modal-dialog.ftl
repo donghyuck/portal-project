@@ -382,11 +382,13 @@
 							# for (var i = 0; i < tumblrProfile.blogs.length ; i++) { #												
 							# var blog = tumblrProfile.blogs[i] ; #	
 							<div class="media">
+							<!--
 				            <a class="pull-left" href="\\#">
 				              <img class="media-object" data-src="holder.js/64x64" alt="Generic placeholder image">
 				            </a>
+				            -->
 				            <div class="media-body">
-				              <h4 class="media-heading">Nested media heading</h4>
+				              <!--<h4 class="media-heading">Nested media heading</h4>-->
 				              #=blog.url #
 				            </div>
 				          </div>							
