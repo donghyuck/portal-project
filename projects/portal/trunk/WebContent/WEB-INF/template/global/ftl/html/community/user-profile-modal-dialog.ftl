@@ -124,8 +124,7 @@
 						}				
 					}	
 				});
-			}
-	
+			}	
 			// Popup window code
 			function goSocialPopup(socialnetwork) {
 				//popupWindow = window.open(
