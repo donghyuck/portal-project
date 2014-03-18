@@ -379,17 +379,19 @@
 							</h5>
 							<p>팔로잉 : #=tumblrProfile.following#</p>
 							<p>좋아요 : #=tumblrProfile.likes#</p>
-						
+							# for (var i = 0; i < tumblrProfile.blogs.length ; i++) { #												
+							# var blog = blogs[i] ; #	
 							<div class="media">
 				            <a class="pull-left" href="\\#">
 				              <img class="media-object" data-src="holder.js/64x64" alt="Generic placeholder image">
 				            </a>
 				            <div class="media-body">
 				              <h4 class="media-heading">Nested media heading</h4>
-				              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
+				              #=blog.url #
 				            </div>
 				          </div>							
-						</div>		
+						</div>	
+						# } #	
 					</li>	
 					
 				</ul>											
