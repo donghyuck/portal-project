@@ -2,6 +2,7 @@
 <html decorator="secure-metro">
 	<head>
 		<title>쇼셜 인증</title>
+		<#compress>
 		<script type="text/javascript"> 
 		yepnope([{
 			load: [
