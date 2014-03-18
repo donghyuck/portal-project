@@ -381,7 +381,7 @@
 							<p>좋아요 : #=tumblrProfile.likes#</p>
 						
 							<div class="media">
-				            <a class="pull-left" href="#">
+				            <a class="pull-left" href="\\#">
 				              <img class="media-object" data-src="holder.js/64x64" alt="Generic placeholder image">
 				            </a>
 				            <div class="media-body">
