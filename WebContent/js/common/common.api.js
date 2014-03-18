@@ -188,13 +188,12 @@
 			url : options.url || '/accounts/external-signin.do?output=json' ,
 			data: { onetime : options.onetime },
 			success : function(response){
-
 				if( typeof response.error === UNDEFINED ){ 		
-					if( isFunction(options.fail) )
-						options.fail(response) ;							
-				}else{
 					if( isFunction(options.success) )
-						options.success(new User(response)) ;							
+						options.success(new User(response)) ;						
+				}else{
+					if( isFunction(options.fail) )
+						options.fail(response) ;								
 				}
 			},
 			error:options.error || handleKendoAjaxError,
@@ -227,11 +226,11 @@
 				data: { item : options.data },
 				success : function(response){
 					if( typeof response.error === UNDEFINED ){ 		
-						if( isFunction(options.fail) )
-							options.fail(response) ;							
-					}else{
 						if( isFunction(options.success) )
-							options.success(response) ;							
+							options.success(response) ;						
+					}else{
+						if( isFunction(options.fail) )
+							options.fail(response) ;								
 					}
 				},
 				error:options.error || handleKendoAjaxError,
@@ -244,11 +243,11 @@
 				data: { item : options.data },
 				success : function(response){
 					if( typeof response.error === UNDEFINED ){ 		
-						if( isFunction(options.fail) )
-							options.fail(response) ;							
-					}else{
 						if( isFunction(options.success) )
-							options.success(response) ;							
+							options.success(response) ;						
+					}else{
+						if( isFunction(options.fail) )
+							options.fail(response) ;								
 					}
 				},
 				error:options.error || handleKendoAjaxError,
