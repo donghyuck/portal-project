@@ -551,12 +551,14 @@
 					# var post_photo_url = post_photo.sizes[0].url ; #	
 					
 					#if (photos.length == 1) {#
-					<div class="col-xs-12 col-lg-12 image-grid">					
+					<div class="col-xs-12 col-lg-12 image-grid">		
+						<img src="#: post_photo_url  #" alt="media" class="img-rounded img-responsive">				
+					</div>			
 					#} else { #
 					<div class="col-xs-12 col-lg-4 image-grid">	
+						<img src="#: post_photo_url  #" alt="media" class="img-rounded">				
+					</div>	
 					# } #	
-					<img src="#: post_photo_url  #" alt="media" class="img-rounded">				
-					</div>
 					# } #	
 					</div>				
 				# } #						
