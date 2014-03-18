@@ -183,6 +183,8 @@
 												selectedStreams.setTemplate ( kendo.template($("#twitter-timeline-template").html()) );											
 											}else if ( selectedStreams.name == 'facebook'){
 												selectedStreams.setTemplate( kendo.template($("#facebook-homefeed-template").html()) );
+											}else if ( selectedStreams.name == 'tumblr'){
+												selectedStreams.setTemplate( kendo.template($("#tumblr-dashboard-template").html()) );
 											}
 											selectedStreams.createDataSource({});											
 											$("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId , selectedStreams );
