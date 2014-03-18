@@ -19,10 +19,8 @@
 			complete: function() {
 						
 				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
-				
-				var currentUser = new User({});		
-					
+				kendo.culture("ko-KR");				
+				var currentUser = new User({});
 				// 2. ACCOUNTS LOAD	
 				var accounts = $("#account-navbar").kendoAccounts({
 					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	

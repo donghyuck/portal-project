@@ -33,6 +33,18 @@
 								window.close();						
 							}else if( typeof window.opener.signupCallbackResult == "function"){			
 								window.opener.signupCallbackResult("facebook", onetime, true);
+							}else if( typeof window.opener.signinCallbackResult == "function"){	
+								// window.opener.signinCallbackResult("facebook", onetime, true);			
+								common.api.user.signin({
+									onetime: onetime,
+									success : function( token ){
+										window.opener.location.reload(true);
+										window.close();	
+									},
+									fail : function (response) {
+										
+									}  
+								});					
 							}else{
 							
 							}		
