@@ -536,8 +536,13 @@
 </script>
 
 <script type="text/x-kendo-tmpl" id="tumblr-dashboard-template">
-
-
+		<li class="media">
+			<a class="pull-left" href="\\#">		     
+			</a>
+			<div class="media-body">
+				<h5 class="media-heading">ss</h5>		     	
+			</div>
+		</li>	
 </script>
 
 <!--  Top Nav Account Status Template -->
