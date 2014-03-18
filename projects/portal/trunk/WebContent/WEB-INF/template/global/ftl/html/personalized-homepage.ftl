@@ -1399,9 +1399,17 @@
 		}
 		
 		.image-grid {
-			padding:0px;
+			padding-top:0px;
+			padding-buttom:2px;
+			padding-right:2px;
+			padding-left:0px;
 		}
 		
+		.image-grid img {
+			display: block;
+			max-width: 100%;
+			height: 350px;
+		}
 		
 		/**
 
