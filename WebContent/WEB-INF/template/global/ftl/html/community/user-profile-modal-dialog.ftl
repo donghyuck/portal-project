@@ -119,6 +119,7 @@
 					}	
 				});
 			}	
+			
 			// Popup window code
 			function goSocialPopup(socialnetwork) {
 				var target_url = "http://${ServletUtils.getLocalHostAddr()}/community/connect-socialnetwork.do?media=" + socialnetwork.serviceProviderName + "&domainName=" + document.domain + "&socialNetworkId=" + socialnetwork.socialAccountId ; 
@@ -129,8 +130,7 @@
 			}
 			
 			function handleSocialCallbackResult( media, onetime, success ){
-				if( success ){
-				
+				if( success ){				
 					if( $("#my-social-network-grid" ).data('kendoGrid') ){
 						var my_social_network_grid = $("#my-social-network-grid" ).data('kendoGrid');
 						var selectedCells = my_social_network_grid.select();
@@ -155,15 +155,13 @@
 			}
 		-->
 		</script>
-		<style>		
-		
+		<style>			
 		#my-profile-dialog .dropdown-menu {
 			top: 120px;
 			left: 50px; 
 			padding : 20px;
 			min-width:300px;
-		}	
-			
+		}				
 		</style>			
 		
 		<div id="my-profile-dialog">
