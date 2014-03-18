@@ -433,7 +433,7 @@
 					if( isFunction( options.complete ) ){
 						options.complete(response) ;
 					}
-				}
+				},
 				error:options.error || handleKendoAjaxError ,
 				dataType : JSON
 			});	
