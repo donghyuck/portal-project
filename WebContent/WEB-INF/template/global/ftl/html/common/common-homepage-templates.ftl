@@ -557,7 +557,7 @@
 				# } #						
 				
 				#= caption #
-				<p class="bg-primary">#:noteCount# 노트</p>		
+				<p>#:noteCount# 노트</p>		
 			</div>
 		</li>	
 </script>
