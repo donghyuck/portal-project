@@ -377,8 +377,7 @@
 							<h5 class="media-heading">
 							#=tumblrProfile.name#
 							</h5>
-							<p>팔로잉 : #=tumblrProfile.following#</p>
-							<p>좋아요 : #=tumblrProfile.likes#</p>
+							<p>팔로잉 : #=tumblrProfile.following#, 좋아요 : #=tumblrProfile.likes#</p>
 							# for (var i = 0; i < tumblrProfile.blogs.length ; i++) { #												
 							# var blog = tumblrProfile.blogs[i] ; #	
 							<div class="media">
