@@ -541,7 +541,7 @@
 			</a>
 			<div class="media-body">
 				<h5 class="media-heading">#:blogName#</h5>
-				#:post_url# 노트
+				#:postUrl# 노트
 				#:note_count# 노트
 			</div>
 		</li>	
