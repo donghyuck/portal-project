@@ -380,7 +380,7 @@
 							<p>팔로잉 : #=tumblrProfile.following#</p>
 							<p>좋아요 : #=tumblrProfile.likes#</p>
 							# for (var i = 0; i < tumblrProfile.blogs.length ; i++) { #												
-							# var blog = blogs[i] ; #	
+							# var blog = tumblrProfile.blogs[i] ; #	
 							<div class="media">
 				            <a class="pull-left" href="\\#">
 				              <img class="media-object" data-src="holder.js/64x64" alt="Generic placeholder image">
