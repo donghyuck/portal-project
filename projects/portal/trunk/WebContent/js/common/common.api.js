@@ -181,6 +181,27 @@
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	JSON = 'json';	
+	common.api.user.signin = function ( options ){		
+		options = options || {};
+		$.ajax({
+			type : 'POST',
+			url : options.url || '/accounts/external-signin.do?output=json' ,
+			data: { onetime : options.onetime },
+			success : function(response){
+
+				if( typeof response.error === UNDEFINED ){ 		
+					if( isFunction(options.fail) )
+						options.fail(response) ;							
+				}else{
+					if( isFunction(options.success) )
+						options.success(new User(response)) ;							
+				}
+			},
+			error:options.error || handleKendoAjaxError,
+			dataType : "json"
+		});	
+	};
+	
 	common.api.user.logout = function (options){
 		options = options || {};
 		$.ajax({
@@ -202,15 +223,15 @@
 		if( options.external )	{
 			$.ajax({
 				type : 'POST',
-				url : options.url || '/accounts/signup-external.do?output=json' ,
+				url : options.url || '/accounts/external-singup.do?output=json' ,
 				data: { item : options.data },
 				success : function(response){
-					if( response.error){ 												
+					if( typeof response.error === UNDEFINED ){ 		
 						if( isFunction(options.fail) )
-							options.fail(response) ;
-					} else {					
+							options.fail(response) ;							
+					}else{
 						if( isFunction(options.success) )
-							options.success(response) ;					
+							options.success(response) ;							
 					}
 				},
 				error:options.error || handleKendoAjaxError,
@@ -222,12 +243,12 @@
 				url : options.url || '/accounts/create-user.do?output=json' ,
 				data: { item : options.data },
 				success : function(response){
-					if( response.error){ 												
+					if( typeof response.error === UNDEFINED ){ 		
 						if( isFunction(options.fail) )
-							options.fail(response) ;
-					} else {					
+							options.fail(response) ;							
+					}else{
 						if( isFunction(options.success) )
-							options.success(response) ;					
+							options.success(response) ;							
 					}
 				},
 				error:options.error || handleKendoAjaxError,
