@@ -223,7 +223,7 @@
 		if( options.external )	{
 			$.ajax({
 				type : 'POST',
-				url : options.url || '/accounts/external-singup.do?output=json' ,
+				url : options.url || '/accounts/external-signup.do?output=json' ,
 				data: { item : options.data },
 				success : function(response){
 					if( typeof response.error === UNDEFINED ){ 		
