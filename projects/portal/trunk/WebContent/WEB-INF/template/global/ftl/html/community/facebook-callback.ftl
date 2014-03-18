@@ -71,10 +71,9 @@
 							});							
 							</#if>
 						<#else>
-							// is login user ;
-										
+							// is login user ;										
 							if(typeof window.opener.handleSocialCallbackResult == "function"){		
-								window.opener.handleSocialCallbackResult("twitter", onetime , true);
+								window.opener.handleSocialCallbackResult("facebook", onetime , true);
 								window.close();						
 							}						
 						</#if>
