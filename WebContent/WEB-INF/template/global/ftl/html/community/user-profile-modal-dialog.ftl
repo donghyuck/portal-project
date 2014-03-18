@@ -63,28 +63,6 @@
 												kendo.ui.progress($("#my-social-network-account-details"), false);
 											}												
 										});
-									/*											
-										$.ajax({
-											type : 'POST',
-											url : "${request.contextPath}/community/get-" + selectedCell.serviceProviderName + "-profile.do?output=json",
-											data: { socialNetworkId: selectedCell.socialAccountId },
-											success : function(response){
-												if( response.error ){
-													// 연결실패.
-												} else {	
-												
-												}
-											},
-											error:handleKendoAjaxError,
-											beforeSend : function() {
-												kendo.ui.progress($("#my-social-network-account-details"), true);
-											},
-											complete : function(){
-												kendo.ui.progress($("#my-social-network-account-details"), false);
-											}													
-										});
-									
-									*/
 									}	
 								}							
 							},
