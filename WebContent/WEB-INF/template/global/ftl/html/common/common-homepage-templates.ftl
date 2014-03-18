@@ -550,7 +550,7 @@
 					<img src="#: post_photo_url  #" alt="media" class="img-responsive">
 					# } #					
 				# } #						
-				#: caption #
+				#= caption #
 				<p class="bg-primary">#:noteCount# 노트</p>		
 			</div>
 		</li>	
