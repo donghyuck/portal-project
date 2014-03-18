@@ -42,7 +42,7 @@
 										window.close();	
 									},
 									fail : function (response) {
-										
+										alert( "" + response );
 									}  
 								});
 												
