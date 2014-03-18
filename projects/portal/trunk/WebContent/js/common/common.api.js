@@ -373,6 +373,7 @@
 		UNDEFINED = 'undefined',
 		POST = 'POST',
 		JSON = 'json',
+		PROFILE_URL_TEMPLATE = kendo.template("/community/get-#= media #-profile.do?output=json"),
 		CALLBACK_URL_TEMPLATE = kendo.template("/community/#= media #-callback.do?output=json");
 	
 	common.api.social.update = function ( options ){		
@@ -402,27 +403,65 @@
 		
 	common.api.social.getProfile = function ( options ){				
 		options = options || {};		
-		if( typeof options.url === UNDEFINED && typeof options.media == 'string' ){
-			options.url = CALLBACK_URL_TEMPLATE ({media : options.media});
-		}	
-		$.ajax({
-			type : POST,
-			url : options.url,
-			data: { onetime : options.onetime },
-			success : function(response){
-				//alert( ">" + (typeof response.error === UNDEFINED) );
-				if( typeof response.error === UNDEFINED ){ 		
-					if( isFunction( options.success ) ){						
-						options.success(response) ;
+		
+		if( typeof options.onetime === UNDEFINED  ){
+			// connected profile access
+			if( typeof options.url === UNDEFINED && typeof options.media == 'string' ){
+				options.url = PROFILE_URL_TEMPLATE ({media : options.media});
+			}				
+			$.ajax({
+				type : POST,
+				url : options.url,
+				data: options.data || {},
+				success : function(response){
+					if( typeof response.error === UNDEFINED ){ 		
+						if( isFunction( options.success ) ){						
+							options.success(response) ;
+						}
+					} else {									
+						if( isFunction( options.fail ) ){
+							options.fail(response) ;
+						}
 					}
-				} else {									
-					if( isFunction( options.fail ) ){
-						options.fail(response) ;
+				},
+				beforeSend : function () {
+					if( isFunction( options.beforeSend ) ){
+						options.beforeSend(response) ;
+					}
+				},
+				complete : function () {
+					if( isFunction( options.complete ) ){
+						options.complete(response) ;
 					}
 				}
-			},
-			error:options.error || handleKendoAjaxError ,
-			dataType : JSON
-		});	
+				error:options.error || handleKendoAjaxError ,
+				dataType : JSON
+			});	
+			
+		}else{
+			// onetime profile access			
+			if( typeof options.url === UNDEFINED && typeof options.media == 'string' ){
+				options.url = CALLBACK_URL_TEMPLATE ({media : options.media});
+			}					
+			$.ajax({
+				type : POST,
+				url : options.url,
+				data: { onetime : options.onetime },
+				success : function(response){
+					//alert( ">" + (typeof response.error === UNDEFINED) );
+					if( typeof response.error === UNDEFINED ){ 		
+						if( isFunction( options.success ) ){						
+							options.success(response) ;
+						}
+					} else {									
+						if( isFunction( options.fail ) ){
+							options.fail(response) ;
+						}
+					}
+				},
+				error:options.error || handleKendoAjaxError ,
+				dataType : JSON
+			});				
+		}			
 	};	
 })(jQuery);
