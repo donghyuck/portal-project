@@ -1,4 +1,13 @@
 		<!-- START MENU -->	
+		<#if action.user.anonymous >
+		<script type="text/javascript">
+		<!--
+		function signinCallbackResult( media, onetime, success ){
+		
+		}		
+		-->
+		</script>
+		<#if>		
 		<#if action.getMenuComponent("USER_MENU") ?? >
 		<#assign menu = action.getMenuComponent("USER_MENU") />			
 				<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

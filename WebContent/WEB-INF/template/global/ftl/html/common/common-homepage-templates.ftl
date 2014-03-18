@@ -110,8 +110,7 @@
 			<div class="page-header text-primary">
 				<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
 			</div>
-			<div id="photo-prop-grid"></div>
-			
+			<div id="photo-prop-grid"></div>			
 			<div class="page-header text-primary">
 				<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
 			</div>
@@ -141,7 +140,6 @@
 						<div class="col-md-8"><img data-bind="attr:{src: photoUrl}" class="img-responsive" /></div>
 						<div class="col-md-4"
 						<!-- start photo details -->	
-
 							<div class="panel-group" id="photo-details-accordion">
 								<div class="panel panel-dark">
 									<div class="panel-heading">
@@ -283,7 +281,6 @@
 </script>
 
 <script type="text/x-kendo-template" id="file-view-template">
-
 	<div class="panel panel-default">
 		<div class="panel-heading">#= name # 미리보기<button id="image-view-btn-close" type="button" class="close">&times;</button></div>
 		<div class="panel-body">
@@ -538,7 +535,7 @@
 		  </li>					
 </script>
 
-<!--  Top Munu Account Status Template -->
+<!--  Top Nav Account Status Template -->
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdown navbar-btn">
 	<div class="btn-group">		
@@ -549,9 +546,7 @@
 		<img src="${request.contextPath}/images/common/anonymous.png" height="34" class="btn-img"/>	
 		# } #
 		</a>
-		<!--<a  href="/main.do?view=personalized" class="btn btn-info"># if ( !anonymous ) { # #:name## } else { # 익명 # } #	</a>-->
 		<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-			<!-- <i class="fa fa-cogs"></i> -->			
 			<span class="caret"></span>
 			<span class="sr-only">Toggle Dropdown</span>
 		</button>  
