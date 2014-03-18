@@ -426,12 +426,12 @@
 				},
 				beforeSend : function () {
 					if( isFunction( options.beforeSend ) ){
-						options.beforeSend(response) ;
+						options.beforeSend() ;
 					}
 				},
 				complete : function () {
 					if( isFunction( options.complete ) ){
-						options.complete(response) ;
+						options.complete() ;
 					}
 				},
 				error:options.error || handleKendoAjaxError ,
