@@ -1,8 +1,6 @@
 (function($, undefined) {
 	var common = window.common = window.common || {};
-	common.models = {};	
-	
-
+	common.models = {};
 	
 	common.models.Photo =  kendo.data.Model.define({
 		id : "externalId",
@@ -123,8 +121,10 @@ var SignupForm = kendo.data.Model.define({
 
 var _TWITTER_FEED_URL = "/community/get-twitter-hometimeline.do?output=json",
 	_FACEBOOK_FEED_URL    = "/community/get-facebook-homefeed.do?output=json",
+	_TUMBLR_FEED_URL    = "/community/get-tumblr-dashboard.do?output=json",
 	_TWITTER_FEED_DATA  = "homeTimeline",
 	_FACEBOOK_FEED_DATA = "homeFeed",	
+	_TUMBLR_FEED_DATA = "dashboardPosts()",	
 	MediaStreams = kendo.Class.extend({
 		mediaId : 0,
 		name : null,
