@@ -17,7 +17,11 @@
 			'${request.contextPath}/js/common/common.ui.min.js'],
 			complete: function() {				
 				//$("form[name='fm']").attr("action", "${action.socialNetwork.authorizationUrl}").submit();
+				<#if action.media == "facebook" >
 				window.location.replace("${action.socialNetwork.authorizationUrl}&display=popup");
+				<#else>				
+				window.location.replace("${action.socialNetwork.authorizationUrl}");
+				</#if>
 			}	
 		}]);
 		</script>		
