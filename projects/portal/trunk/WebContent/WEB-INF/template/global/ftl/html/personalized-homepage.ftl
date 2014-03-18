@@ -1154,6 +1154,7 @@
 			margin-top: 5px;
 		}
 	
+	
 		.popover {
 			font-family: "나눔 고딕", "BM_NANUMGOTHIC";
 			width: 90%;
@@ -1395,6 +1396,10 @@
 			color : #000000;
 			background : #5bc0de; /* transparent;        	*/
 			height: 90px;        	
+		}
+		
+		.image-grid {
+			padding:0px;
 		}
 		
 		
