@@ -535,6 +535,11 @@
 		  </li>					
 </script>
 
+<script type="text/x-kendo-tmpl" id="tumblr-dashboard-template">
+
+
+</script>
+
 <!--  Top Nav Account Status Template -->
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdown navbar-btn">
