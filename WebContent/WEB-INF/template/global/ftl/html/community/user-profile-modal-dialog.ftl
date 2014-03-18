@@ -371,17 +371,18 @@
 					</div>		
 				</div>						
 				# } else if ( typeof (tumblrProfile)  == "object" ) { #
-				<div class="media">
-					
-					<div class="media-body">
-						<h5 class="media-heading">
-						#=tumblrProfile.name#
-						</h5>
-						</br>
-						팔로잉 : #=tumblrProfile.following#</br>
-						좋아요 : #=tumblrProfile.likes#</br>
-					</div>		
-				</div>												
+				<ul class="media-list">
+					<li class="media">					
+						<div class="media-body">
+							<h5 class="media-heading">
+							#=tumblrProfile.name#
+							</h5>
+							</br>
+							팔로잉 : #=tumblrProfile.following#</br>
+							좋아요 : #=tumblrProfile.likes#</br>
+						</div>		
+					</li>	
+				</ul>											
 				# } else if ( typeof (error)  == "object" ) { #
 				
 				# } #
