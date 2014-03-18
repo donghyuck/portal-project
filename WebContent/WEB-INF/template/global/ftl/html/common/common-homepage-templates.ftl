@@ -543,13 +543,19 @@
 			<div class="media-body">
 				<h5 class="media-heading">#:blogName#</h5>
 				<p>#:postUrl#</p>
+				
 				#if (type == 'PHOTO') {#	
+					<div class="row">
 					# for (var i = 0; i < photos.length ; i++) { #	
 					# var post_photo = photos[i] ; #
 					# var post_photo_url = post_photo.sizes[0].url ; #	
+					<div class="col-xs-6 col-md-3">
 					<img src="#: post_photo_url  #" alt="media" class="img-responsive">
-					# } #					
+					</div>
+					# } #	
+					</div>				
 				# } #						
+				
 				#= caption #
 				<p class="bg-primary">#:noteCount# 노트</p>		
 			</div>
