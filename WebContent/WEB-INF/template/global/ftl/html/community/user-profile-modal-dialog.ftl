@@ -48,7 +48,22 @@
 								if( selectedCells.length == 1){
 									var selectedCell = this.dataItem( selectedCells );	    									
 									$("#my-social-network-grid").data( "networkPlaceHolder", selectedCell );			
-									if( selectedCell.connected ){															
+									if( selectedCell.connected ){				
+										common.api.social.getProfile({
+											media : selectedCell.serviceProviderName ,
+											data: { socialNetworkId: selectedCell.socialAccountId },
+											success : function(response){
+												var myMediaAccountTemplate = kendo.template($('#my-social-network-account-details-template').html());			
+												$("#my-social-network-account-details").html( myMediaAccountTemplate(response) );	
+											},
+											beforeSend : function() {
+												kendo.ui.progress($("#my-social-network-account-details"), true);
+											},
+											complete : function(){
+												kendo.ui.progress($("#my-social-network-account-details"), false);
+											}												
+										});
+									/*											
 										$.ajax({
 											type : 'POST',
 											url : "${request.contextPath}/community/get-" + selectedCell.serviceProviderName + "-profile.do?output=json",
@@ -57,8 +72,7 @@
 												if( response.error ){
 													// 연결실패.
 												} else {	
-													var myMediaAccountTemplate = kendo.template($('#my-social-network-account-details-template').html());			
-													$("#my-social-network-account-details").html( myMediaAccountTemplate(response) );													
+												
 												}
 											},
 											error:handleKendoAjaxError,
@@ -69,6 +83,8 @@
 												kendo.ui.progress($("#my-social-network-account-details"), false);
 											}													
 										});
+									
+									*//
 									}	
 								}							
 							},
