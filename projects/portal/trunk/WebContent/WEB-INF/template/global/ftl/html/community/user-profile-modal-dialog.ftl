@@ -377,11 +377,11 @@
 							<h5 class="media-heading">
 							#=tumblrProfile.name#
 							</h5>
-							</br>
-							팔로잉 : #=tumblrProfile.following#</br>
-							좋아요 : #=tumblrProfile.likes#</br>
+							<p>팔로잉 : #=tumblrProfile.following#</p>
+							<p>좋아요 : #=tumblrProfile.likes#</p>
 						</div>		
 					</li>	
+					
 				</ul>											
 				# } else if ( typeof (error)  == "object" ) { #
 				
