@@ -79,7 +79,8 @@
 										grid_action.click(function (e) {
 											e.preventDefault();	
 											var networkPlaceHolder = $("#my-social-network-grid").data( "networkPlaceHolder");
-											goSocialPopup(networkPlaceHolder.authorizationUrl + "&display=popup");
+											goSocialPopup(networkPlaceHolder);
+											//goSocialPopup(networkPlaceHolder.authorizationUrl + "&display=popup");
 										});
 									} else if( grid_action.hasClass("custom-social-network-disconnect") ){
 										grid_action.click(function (e) {
@@ -126,9 +127,14 @@
 			}
 	
 			// Popup window code
-			function goSocialPopup(url) {
-				popupWindow = window.open(
-					url,'popUpWindow','height=500,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			function goSocialPopup(socialnetwork) {
+				//popupWindow = window.open(
+				//	url,'popUpWindow','height=500,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+				var target_url = "http://${ServletUtils.getLocalHostAddr()}/community/connect-socialnetwork.do?media=" + socialnetwork.serviceProviderName + "&domainName=" + document.domain + "&socialNetworkId=" + socialnetwork.socialAccountId ; 
+				window.open( 
+					target_url,
+					'popUpWindow', 
+					'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');					
 			}
 			
 			function handleSocialCallbackResult( media, onetime, success ){
