@@ -124,7 +124,7 @@ var _TWITTER_FEED_URL = "/community/get-twitter-hometimeline.do?output=json",
 	_TUMBLR_FEED_URL    = "/community/get-tumblr-dashboard.do?output=json",
 	_TWITTER_FEED_DATA  = "homeTimeline",
 	_FACEBOOK_FEED_DATA = "homeFeed",	
-	_TUMBLR_FEED_DATA = "dashboardPosts()",	
+	_TUMBLR_FEED_DATA = "dashboardPosts",	
 	MediaStreams = kendo.Class.extend({
 		mediaId : 0,
 		name : null,
@@ -134,7 +134,8 @@ var _TWITTER_FEED_URL = "/community/get-twitter-hometimeline.do?output=json",
 		template: null,
 		init: function(mediaId, name, url, data) {
 			if (mediaId) this.mediaId = mediaId;			
-			if (name) this.name = name;				
+			if (name) this.name = name;			
+			
 			if( name == 'twitter' )
 			{
 				this.url = _TWITTER_FEED_URL;
@@ -144,6 +145,11 @@ var _TWITTER_FEED_URL = "/community/get-twitter-hometimeline.do?output=json",
 				this.url = _FACEBOOK_FEED_URL;
 				this.data = _FACEBOOK_FEED_DATA;								
 			}			
+			else if ( name == 'tumblr' ){
+				this.url = _TUMBLR_FEED_URL;
+				this.data = _TUMBLR_FEED_DATA;								
+			}				
+			
 			if (url) this.url = url;
 			if (data) this.data = data;
 		},
