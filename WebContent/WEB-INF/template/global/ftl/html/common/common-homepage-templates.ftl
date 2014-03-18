@@ -538,6 +538,7 @@
 <script type="text/x-kendo-tmpl" id="tumblr-dashboard-template">
 		<li class="media">
 			<a class="pull-left" href="\\#">		     
+			<img src="http://222.122.63.146/community/show-tumblr-avatar.do?blogName=#: blogName#&blogAvatarSize=48" alt="#: blogName #" class="media-object img-circle">
 			</a>
 			<div class="media-body">
 				<h5 class="media-heading">#:blogName#</h5>
