@@ -458,7 +458,7 @@
 		     	</p>
 		     	# } #				     	     	
 		     	#if ( name !=null ) { #
-		     	<br>#: name  #
+		     	<p>#: name  #</p>
 		     	# } #		     	     	
 		     	#if ( type == 'LINK' ) { #
 		     	<p>
