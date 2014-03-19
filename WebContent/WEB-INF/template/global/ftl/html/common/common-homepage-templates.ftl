@@ -436,14 +436,10 @@
 			<div class="panel-body hide" style="max-height:500px;">
 				<button type="button" class="close" aria-hidden="true">&times;</button>	
 
-
-
-
-<form class="form-horizontal" role="form">
-	<div class="form-group">
-		<label class="col-sm-2 control-label">스크롤</label>
-		<div class="col-sm-10">
-				<div class="btn-group" data-toggle="buttons">
+<form role="form">
+<div class="form-group">
+<label>스크롤</label>
+<div class="btn-group" data-toggle="buttons">
 					<label class="btn btn-primary active">
 						<input type="radio" name="options-scrollable" value="1">ON
 					</label>
@@ -451,10 +447,10 @@
 						<input type="radio" name="options-scrollable" value="0">OFF
 					</label>
 				</div>		
-		</div>
-  </div>
-  
-				
+</div>
+</form>
+
+
 			</div>
 			<div class="panel-body scrollable" style="max-height:500px;"> 
 				<ul class="media-list">
