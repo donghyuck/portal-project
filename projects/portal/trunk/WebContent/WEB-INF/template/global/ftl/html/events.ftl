@@ -25,8 +25,7 @@
 				kendo.culture("ko-KR");
 				      
 				// START SCRIPT	
-				$("#top-menu").kendoMenu();
-				$("#top-menu").show();
+
 				var currentUser = new User({});			
 				// ACCOUNTS LOAD	
 				var accounts = $("#account-navbar").kendoAccounts({
