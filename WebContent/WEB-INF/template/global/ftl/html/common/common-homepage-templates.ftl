@@ -489,7 +489,7 @@
 				#if ( comments.length > 0  ) { #
 				<div class="panel-group" id="accordion-#= id #">
 					<div class="panel panel-default">
-						<div class="panel-heading panel-heading-comments">
+						<div class="panel-heading comments-heading">
 							<a data-toggle="collapse" data-parent="\\#accordion-#= id #" href="\\##= id #">
 								<h4 class="panel-title">댓글 보기 (#= comments.length  #)</h4>
 							</a>
