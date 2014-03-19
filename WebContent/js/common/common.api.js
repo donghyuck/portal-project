@@ -121,12 +121,12 @@
 		return result
 	}
 	
-	common.api.handlePanelHeaderActions = function ( element, options ){
+	common.api.handlePanelHeaderActions = function ( selector, options ){
 		
 		options = options || {};
 		
-		if ( typeof element === 'string' )
-			element = $(element);
+		if ( typeof selector === 'string' )
+			selector = $(selector);
 		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
 			var panel_header_action = $(this);
