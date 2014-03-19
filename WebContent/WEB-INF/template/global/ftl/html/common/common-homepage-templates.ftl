@@ -486,7 +486,7 @@
 			     	# } #	
 				</blockquote>
 		     	# } #			     				     							
-				# for (var i = 0; i < comments.length ; i++) { #					
+				
 				#if ( comments.length > 0  ) { #						
 				<div class="panel-group">
 					<div class="panel panel-default">
@@ -500,6 +500,8 @@
 						<div id="facebook-comments-#= id #" class="panel-collapse collapse in">
 							<div class="panel-body">	
 				# } #		
+								
+				# for (var i = 0; i < comments.length ; i++) { #					
 				# var comment = comments[i] ; #							
 					<div class="media">
 						<a class="pull-left" href="\\#">
@@ -510,13 +512,13 @@
 							 <p class="text-muted">#=comment.message#</p>
 						</div>				
 					</div>
-				# } #
+				# } #				
 				#if ( comments.length > 0  ) { #		
 							</div>
 						</div>
 					</div>	
 				</div>  			
-				# } #		
+				# } #						
 			</div>
 		</li>					
 		# } #  	
