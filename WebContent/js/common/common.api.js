@@ -143,7 +143,7 @@
 			});
 			
 			custom_panel_body.find("input[name='options-scrollable']").on("change", function () {
-				var last_panel_body = selector.find('.panel-body:last');
+				var last_panel_body = selector.children('.panel-body:last');
 				if(  this.value == 0 ){
 					last_panel_body.css("max-height", "");
 					last_panel_body.removeClass('scrollable');
