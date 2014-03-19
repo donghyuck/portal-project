@@ -434,6 +434,9 @@
 				</div>							
 			</div>
 			<div class="panel-body scrollable" style="max-height:500px;">
+			
+			</div>
+			<div class="panel-body scrollable" style="max-height:500px;">
 				<ul class="media-list">
 					<div id="#:serviceProviderName#-streams-#:socialAccountId#">&nbsp;</div>
 				</ul>
