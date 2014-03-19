@@ -128,8 +128,7 @@
 	
 	common.api.handlePanelHeaderActions = function ( selector, options ){
 		
-		options = options || {};
-		
+		options = options || {};		
 		if( options.custom === UNDEFINED )
 			 options.custom = false;
 		
