@@ -445,7 +445,7 @@
 		#if (type != "STATUS") {#
 		<li class="media">
 		    <a class="pull-left" href="\\#">
-		    	<img class="media-object img-circle" src="http://graph.facebook.com/#=from.id#/picture" alt="프로파일 이미지">
+		    	<img class="media-object img-rounded" src="http://graph.facebook.com/#=from.id#/picture" alt="프로파일 이미지">
 		    </a>
 		    <div class="media-body">
 		      <h5 class="media-heading">
@@ -490,7 +490,7 @@
 				# var comment = comments[i] ; #							
 					<div class="media">
 						<a class="pull-left" href="\\#">
-							<img class="media-object img-circle" src="http://graph.facebook.com/#=comment.from.id#/picture" alt="프로파일 이미지" class="img-circle">
+							<img class="media-object img-circle" src="http://graph.facebook.com/#=comment.from.id#/picture" alt="프로파일 이미지" class="img-rounded">
 						</a>	
 						<div class="media-body">
 							 <h6 class="media-heading">#: comment.from.name # &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span>#:comment.likesCount#</h6>
@@ -510,8 +510,10 @@
 		    </a>
 		    <div class="media-body">
 		      <h5 class="media-heading">#: user.name # (#: ui.util.prettyDate(createdAt) #)</h5>
-		     	#: text #      	
-							# for (var i = 0; i < entities.urls.length ; i++) { #
+		      
+		     	<p>#= text #</p>
+		     	
+				# for (var i = 0; i < entities.urls.length ; i++) { #
 							# var url = entities.urls[i] ; #		
 							<br><span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: url.expandedUrl  #">#: url.displayUrl #</a>
 							 # } #	
@@ -524,13 +526,13 @@
 							#if (retweeted) {#					
 						<div class="media">
 							<a class="pull-left" href="\\#">
-								<img src="#: retweetedStatus.user.profileImageUrl #" width="100%" alt="media" class="img-rounded">
+								<img src="#: retweetedStatus.user.profileImageUrl #" width="100%" alt="media" class="img-circle">
 							</a>
 							<div class="media-body">
 								<h4 class="media-heading">#: retweetedStatus.user.name #</h4>
 							</div>
 						</div>						
-							# } #
+				# } #
 		    </div>
 		  </li>					
 </script>
