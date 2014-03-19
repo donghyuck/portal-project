@@ -42,6 +42,10 @@
 						custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
 					});
 				});			
+				
+				common.api.handleNavbarActions( $('.personalized-navbar'), {
+				
+				});
 												
 				$("#personalized-controls-menu").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');						
