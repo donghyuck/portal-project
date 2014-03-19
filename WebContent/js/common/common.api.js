@@ -121,7 +121,7 @@
 		return result
 	}
 	
-	common.api.binePanelHeaderActions( selector ){
+	common.api.handlePanelHeaderActions( selector ){
 		
 		alert( typeof selector );
 		
