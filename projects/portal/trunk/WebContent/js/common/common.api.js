@@ -169,7 +169,8 @@
 						selector.find(".panel-body, .panel-footer").addClass("hide");
 					}else{
 						panel_header_action_icon.removeClass("k-i-maximize");
-						panel_header_action_icon.addClass("k-i-minimize");							
+						panel_header_action_icon.addClass("k-i-minimize");		
+						
 						selector.find(".panel-body:last, .panel-footer").removeClass("hide");
 					}						
     			}else if ( panel_header_action.text() == "Close"){
