@@ -1447,7 +1447,7 @@
 		}
 		
 		.panel .comments-heading a {
-			color: #428bca;
+			color: #555;
 		}
 		
 		</style>   	
