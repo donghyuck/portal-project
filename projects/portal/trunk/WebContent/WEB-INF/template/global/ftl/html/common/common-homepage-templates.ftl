@@ -541,7 +541,7 @@
 					<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-rounded">
 					# } #
 				</p>
-				<p class="text-muted"><i class="fa fa-retweet"></i> #= retweetCount #  <i class="fa fa-star"></i>#= favorited #</p>
+				<p class="text-muted"><i class="fa fa-retweet"></i> #= retweetCount #
 				#if (retweeted) {#					
 				<div class="media">
 					<a class="pull-left" href="\\#">
