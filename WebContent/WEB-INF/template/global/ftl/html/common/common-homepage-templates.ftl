@@ -491,7 +491,7 @@
 					<div class="panel panel-default">
 						<div class="panel-heading">
 							<a data-toggle="collapse" data-parent="\\#accordion-#= id #" href="\\##= id #">
-								<h4 class="panel-title"></h4>
+								<h4 class="panel-title">댓글 (#= comments.length  #)</h4>
 							</a>
 						</div>
 						<div id="#= id #" class="panel-collapse collapse in">
