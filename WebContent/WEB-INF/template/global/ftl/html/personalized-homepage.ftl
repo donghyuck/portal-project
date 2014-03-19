@@ -774,8 +774,12 @@
 				$("#personalized-area").append( template( streamsPlaceHolder ) );						
 				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );									
 				
-				common.api.handlePanelHeaderActions( $( '#'+ renderToString) );
-							
+				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
+					refresh : function(){
+						streamsProvider.dataSource.read();
+					}
+				} );
+						/*	
 				$( '#'+ renderToString + ' .panel-header-actions a').each(function( index ) {
 					var social_header_action = $(this);
 					social_header_action.click(function (e){
@@ -796,7 +800,7 @@
 						}
 					});			
 				} );
-				
+				*/
 							
 			} 
 			$("#" + renderToString ).parent().show();
