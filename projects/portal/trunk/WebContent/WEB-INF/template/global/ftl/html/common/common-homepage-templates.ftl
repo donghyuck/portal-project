@@ -473,15 +473,15 @@
 		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
 		     		# } #		     		
 		     		#if ( source !=null ) { #
-		     		<p class="text-muted">source : <span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: source #">#: source #</a></p>
+		     		<p class="text-muted">source : <span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: source #">#= source #</a></p>
 		     		# } #
 		     	# } #		     	
 		     	#if ( typeof( caption ) == 'string'  ) { #
 		     	<blockquote>
-		     	<p>#: caption #</p>
+		     	<p>#= caption #</p>
 			     	#if ( typeof( description ) == 'string'  ) { #
 			     	 <footer>
-			     	 #: description #
+			     	 #= description #
 			     	 </footer>
 			     	# } #	
 				</blockquote>
@@ -491,7 +491,7 @@
 				# var comment = comments[i] ; #							
 					<div class="media">
 						<a class="pull-left" href="\\#">
-							<img class="media-object img-circle" src="http://graph.facebook.com/#=comment.from.id#/picture" alt="프로파일 이미지" class="img-rounded">
+							<img class="media-object img-rounded" src="http://graph.facebook.com/#=comment.from.id#/picture" alt="프로파일 이미지">
 						</a>	
 						<div class="media-body">
 							 <h6 class="media-heading">#: comment.from.name # &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span>#:comment.likesCount#</h6>
