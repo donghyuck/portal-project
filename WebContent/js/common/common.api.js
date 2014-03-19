@@ -148,7 +148,7 @@
 					last_panel_body.css("max-height", "");
 					last_panel_body.removeClass('scrollable');
 				}else if (this.value == 1 ) {
-					last_panel_body.css("max-height", "450px;");
+					last_panel_body.css("max-height", "450px");
 					last_panel_body.addClass('scrollable');
 				}		
 			});					
