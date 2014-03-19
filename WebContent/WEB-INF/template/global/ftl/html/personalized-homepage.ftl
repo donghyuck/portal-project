@@ -68,6 +68,8 @@
 				
 				// photo panel showing				
 				createPhotoListView();
+				
+				
 				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
 					this.select(this.element.children().first());
 				});
@@ -140,12 +142,6 @@
 				createNoticeGrid();
 																			
 				// 4. Right Tabs
-
-				/*$('#myTab a').click(function (e) {
-					e.preventDefault();	
-					$(this).tab('show');
-				});	
-				*/
 								
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					//e.preventDefault();		
@@ -153,169 +149,9 @@
 					if( show_bs_tab.attr('href') == '#my-notice' ){						
 						createNoticeGrid();											
 					} else if( show_bs_tab.attr('href') == '#my-streams' ){						
-						if( !$("#my-social-streams-grid" ).data('kendoGrid') ){ 											
-							$("#my-social-streams-grid").kendoGrid({
-								dataSource : new kendo.data.DataSource({
-									transport: {
-										read: {
-											type : 'POST',
-											dataType : "json", 
-											url : '${request.contextPath}/community/list-my-socialnetwork.do?output=json'
-										} 
-									},
-									pageSize: 10,
-									error:handleKendoAjaxError,				
-									schema: {
-										data : "connectedSocialNetworks",
-										model : SocialNetwork
-									},
-								}),
-								selectable: "single",
-								rowTemplate: kendo.template( '<tr><td><i class="fa fa-#: serviceProviderName#"></i>&nbsp; #: serviceProviderName#</td></tr>' ),				
-								change: function(e) { 				
-									var selectedCells = this.select();
-									if( selectedCells.length == 1){
-										var selectedCell = this.dataItem( selectedCells );		
-										$("#my-social-streams-grid").data("streamsPlaceHolder", selectedCell);
-										if( ! $("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId ) ){										
-											var selectedStreams = new MediaStreams(selectedCell.socialAccountId, selectedCell.serviceProviderName);							
-											if( selectedStreams.name == 'twitter'){
-												selectedStreams.setTemplate ( kendo.template($("#twitter-timeline-template").html()) );											
-											}else if ( selectedStreams.name == 'facebook'){
-												selectedStreams.setTemplate( kendo.template($("#facebook-homefeed-template").html()) );
-											}else if ( selectedStreams.name == 'tumblr'){
-												selectedStreams.setTemplate( kendo.template($("#tumblr-dashboard-template").html()) );
-											}
-											selectedStreams.createDataSource({});											
-											$("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId , selectedStreams );
-										}
-										displaySocialPanel();
-									}							
-								},
-								dataBound: function(e) {									
-								},
-								height: 150
-							});	
-						}
+						createSocialGrid();
 					} else if( show_bs_tab.attr('href') == '#my-files' ){					
-						if( !$('#attachment-list-view').data('kendoListView') ){														
-							var attachementTotalModle = kendo.observable({ 
-								totalAttachCount : "0",
-								totalImageCount : "0",
-								totalFileCount : "0"							
-							});							
-							kendo.bind($("#attachment-list-filter"), attachementTotalModle );													
-							$("#attachment-list-view").kendoListView({
-								dataSource: {
-									type: 'json',
-									transport: {
-										read: { url:'${request.contextPath}/community/list-my-attachement.do?output=json', type: 'POST' },		
-										destroy: { url:'${request.contextPath}/community/delete-my-attachment.do?output=json', type:'POST' },                                
-										parameterMap: function (options, operation){
-											if (operation != "read" && options) {										                        								                       	 	
-												return { attachmentId :options.attachmentId };									                            	
-											}else{
-												 return { startIndex: options.skip, pageSize: options.pageSize }
-											}
-										}
-									},
-									pageSize: 12,
-									error:handleKendoAjaxError,
-									schema: {
-										model: Attachment,
-										data : "targetAttachments",
-										total : "totalTargetAttachmentCount"
-									},
-									sort: { field: "attachmentId", dir: "desc" },
-									filter :  { field: "contentType", operator: "neq", value: "" }
-								},
-								selectable: "single",									
-								change: function(e) {									
-									var data = this.dataSource.view() ;
-									var item = data[this.select().index()];		
-									$("#attachment-list-view").data( "attachPlaceHolder", item );												
-									displayAttachmentPanel( ) ;	
-								},
-								navigatable: false,
-								template: kendo.template($("#attachment-list-view-template").html()),								
-								dataBound: function(e) {
-									var attachment_list_view = $('#attachment-list-view').data('kendoListView');
-									var filter =  attachment_list_view.dataSource.filter().filters[0].value;
-									var totalCount = attachment_list_view.dataSource.total();
-									if( filter == "image" ) 
-									{
-										attachementTotalModle.set("totalImageCount", totalCount);
-									} else if ( filter == "application" ) {
-										attachementTotalModle.set("totalFileCount", totalCount);
-									} else {
-										attachementTotalModle.set("totalAttachCount", totalCount);
-									}
-								}
-							});																	
-							$("#attachment-list-view").on("mouseenter",  ".img-wrapper", function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
-								}).on("mouseleave", ".img-wrapper", function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-							});															
-														
-							$("input[name='attachment-list-view-filters']").on("change", function () {
-								var attachment_list_view = $('#attachment-list-view').data('kendoListView');
-								switch(this.value){
-									case "all" :
-										attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
-										break;
-									case "image" :
-										attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
-										break;
-									case "file" :
-										attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
-										break;
-								}
-							});
-							
-							$("#pager").kendoPager({
-								refresh : true,
-								buttonCount : 5,
-								dataSource : $('#attachment-list-view').data('kendoListView').dataSource
-							});								
-							$("#my-files .btn-group button").each(function( index ) { 
-								var control_button = $(this);								
-								var control_button_icon = control_button.find("i");				
-								if( control_button_icon.hasClass("fa-upload")){
-									control_button.click( function(e){									
-										if( !$('#attachment-files').data('kendoUpload') ){		
-											$("#attachment-files").kendoUpload({
-												 	multiple : false,
-												 	width: 300,
-												 	showFileList : false,
-												    localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
-												    async: {
-														saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',							   
-														autoUpload: true
-												    },
-												    upload: function (e) {								         
-												    	 e.data = {};														    								    	 		    	 
-												    },
-												    success : function(e) {								    
-														if( e.response.targetAttachment ){
-															e.response.targetAttachment.attachmentId;
-															// LIST VIEW REFRESH...
-															$('#attachment-list-view').data('kendoListView').dataSource.read(); 
-														}				
-													}
-											});						
-										}
-										$("#my-files .side1").toggleClass("hide");										
-										$("#my-files .side2").toggleClass("hide");										
-									});									
-								}else if (control_button_icon.hasClass("fa-th-list")){
-									control_button.click( function(e){		
-										$("#my-files .side1").toggleClass("hide");										
-										$("#my-files .side2").toggleClass("hide");										
-									});
-								}								
-							});									
-						}
+						createAttachmentListView();
 					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
 						createPhotoListView();
 					}					
@@ -325,6 +161,178 @@
 				// END SCRIPT 
 			}
 		}]);	
+		
+		
+		function createSocialGrid(){			
+			if( !$("#my-social-streams-grid" ).data('kendoGrid') ){ 											
+				$("#my-social-streams-grid").kendoGrid({
+					dataSource : new kendo.data.DataSource({
+						transport: {
+							read: {
+								type : 'POST',
+								dataType : "json", 
+							url : '${request.contextPath}/community/list-my-socialnetwork.do?output=json'
+						} 
+					},
+					pageSize: 10,
+					error:handleKendoAjaxError,				
+					schema: {
+						data : "connectedSocialNetworks",
+						model : SocialNetwork
+					},
+				}),
+				selectable: "single",
+				rowTemplate: kendo.template( '<tr><td><i class="fa fa-#: serviceProviderName#"></i>&nbsp; #: serviceProviderName#</td></tr>' ),				
+				change: function(e) { 				
+					var selectedCells = this.select();
+					if( selectedCells.length == 1){
+						var selectedCell = this.dataItem( selectedCells );		
+						$("#my-social-streams-grid").data("streamsPlaceHolder", selectedCell);
+						if( ! $("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId ) ){										
+							var selectedStreams = new MediaStreams(selectedCell.socialAccountId, selectedCell.serviceProviderName);							
+							if( selectedStreams.name == 'twitter'){
+								selectedStreams.setTemplate ( kendo.template($("#twitter-timeline-template").html()) );											
+							}else if ( selectedStreams.name == 'facebook'){
+								selectedStreams.setTemplate( kendo.template($("#facebook-homefeed-template").html()) );
+							}else if ( selectedStreams.name == 'tumblr'){
+								selectedStreams.setTemplate( kendo.template($("#tumblr-dashboard-template").html()) );
+							}
+							selectedStreams.createDataSource({});											
+							$("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId , selectedStreams );
+						}
+						displaySocialPanel();
+					}							
+				},
+				dataBound: function(e) {									
+				},
+				height: 150
+				});	
+			}		
+		}
+		
+		
+		function createAttachmentListView(){			
+			if( !$('#attachment-list-view').data('kendoListView') ){														
+				var attachementTotalModle = kendo.observable({ 
+					totalAttachCount : "0",
+					totalImageCount : "0",
+					totalFileCount : "0"							
+				});							
+				kendo.bind($("#attachment-list-filter"), attachementTotalModle );													
+					$("#attachment-list-view").kendoListView({
+						dataSource: {
+							type: 'json',
+							transport: {
+								read: { url:'${request.contextPath}/community/list-my-attachement.do?output=json', type: 'POST' },		
+								destroy: { url:'${request.contextPath}/community/delete-my-attachment.do?output=json', type:'POST' },                                
+								parameterMap: function (options, operation){
+									if (operation != "read" && options) {										                        								                       	 	
+										return { attachmentId :options.attachmentId };									                            	
+									}else{
+										 return { startIndex: options.skip, pageSize: options.pageSize }
+									}
+								}
+							},
+							pageSize: 12,
+							error:handleKendoAjaxError,
+							schema: {
+								model: Attachment,
+								data : "targetAttachments",
+								total : "totalTargetAttachmentCount"
+							},
+							sort: { field: "attachmentId", dir: "desc" },
+							filter :  { field: "contentType", operator: "neq", value: "" }
+						},
+						selectable: "single",									
+						change: function(e) {									
+							var data = this.dataSource.view() ;
+							var item = data[this.select().index()];		
+							$("#attachment-list-view").data( "attachPlaceHolder", item );												
+							displayAttachmentPanel( ) ;	
+						},
+						navigatable: false,
+						template: kendo.template($("#attachment-list-view-template").html()),								
+						dataBound: function(e) {
+							var attachment_list_view = $('#attachment-list-view').data('kendoListView');
+							var filter =  attachment_list_view.dataSource.filter().filters[0].value;
+							var totalCount = attachment_list_view.dataSource.total();
+							if( filter == "image" ) 
+							{
+								attachementTotalModle.set("totalImageCount", totalCount);
+							} else if ( filter == "application" ) {
+								attachementTotalModle.set("totalFileCount", totalCount);
+							} else {
+								attachementTotalModle.set("totalAttachCount", totalCount);
+							}
+						}
+					});																	
+				
+					$("#attachment-list-view").on("mouseenter",  ".img-wrapper", function(e) {
+						kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+					}).on("mouseleave", ".img-wrapper", function(e) {
+						kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+					});															
+														
+					$("input[name='attachment-list-view-filters']").on("change", function () {
+						var attachment_list_view = $('#attachment-list-view').data('kendoListView');
+						switch(this.value){
+							case "all" :
+								attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
+								break;
+							case "image" :
+								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
+								break;
+							case "file" :
+								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
+								break;
+						}
+					});
+							
+					$("#pager").kendoPager({
+						refresh : true,
+						buttonCount : 5,
+						dataSource : $('#attachment-list-view').data('kendoListView').dataSource
+					});								
+				
+					$("#my-files .btn-group button").each(function( index ) { 
+						var control_button = $(this);								
+						var control_button_icon = control_button.find("i");				
+						if( control_button_icon.hasClass("fa-upload")){
+							control_button.click( function(e){									
+								if( !$('#attachment-files').data('kendoUpload') ){		
+									$("#attachment-files").kendoUpload({
+									 	multiple : false,
+									 	width: 300,
+									 	showFileList : false,
+									    localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+									    async: {
+											saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',							   
+											autoUpload: true
+									    },
+									    upload: function (e) {								         
+									    	 e.data = {};														    								    	 		    	 
+									    },
+									    success : function(e) {								    
+											if( e.response.targetAttachment ){
+												e.response.targetAttachment.attachmentId;
+												// LIST VIEW REFRESH...
+												$('#attachment-list-view').data('kendoListView').dataSource.read(); 
+											}				
+										}
+									});						
+								}
+								$("#my-files .side1").toggleClass("hide");										
+								$("#my-files .side2").toggleClass("hide");										
+							});									
+						}else if (control_button_icon.hasClass("fa-th-list")){
+							control_button.click( function(e){		
+								$("#my-files .side1").toggleClass("hide");										
+								$("#my-files .side2").toggleClass("hide");										
+						});
+					}								
+				});									
+			}		
+		}
 		
 		function createPhotoListView(){
 			if( !$('#photo-list-view').data('kendoListView') ){
