@@ -4,6 +4,7 @@
 	common.api =  common.api || {};
 	var kendo = window.kendo,
 	stringify = kendo.stringify,
+	UNDEFINED = 'undefined',
 	isFunction = kendo.isFunction;
 	
 	
@@ -129,11 +130,22 @@
 		
 		options = options || {};
 		
+		if( options.custom === UNDEFINED )
+			 options.custom = false;
+		
 		if ( typeof selector === 'string' )
 			selector = $(selector);
 		
+		if( options.custom ){
+			var custom_panel_body = selector.find(".panel-body:first");
+			var  custom_panel_body_close_button = custom_panel_body.find("button.close");
+			custom_panel_body_close_button.click(function(e){
+				custom_panel_body.addClass("hide");			
+			});
+		}
+		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
-			var panel_header_action = $(this);
+			var panel_header_action = $(this);			
 			panel_header_action.click( function (e) {				
 				if( panel_header_action.text() == "Minimize" ){        				
     				var panel_header_action_icon = panel_header_action.find('span');
@@ -158,11 +170,10 @@
     				}else{
     					
     				}
-    			}else if ( panel_header_action.text() == "Custom" ){        				
+    			} else if ( panel_header_action.text() == "Custom"  &&  options.custom ){        				
     				var panel_body = selector.find(".panel-body:first");
     				if( panel_body.hasClass('hide') ){
-    					panel_body.removeClass('hide');        					
-    					//selector.on( OPEN, { element: selector.find(".panel-body:first")});
+    					panel_body.removeClass('hide');
     				}else{
     					panel_body.addClass('hide');
     				}
