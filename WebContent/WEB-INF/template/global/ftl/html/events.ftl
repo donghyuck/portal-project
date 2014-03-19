@@ -175,7 +175,8 @@
 		}
 
 		.k-listview div.k-state-selected{
-			background: #F98262;
+			/*background: #F98262;*/
+			background-color: transparent;
 			color: #ffffff; 
 		}
 
