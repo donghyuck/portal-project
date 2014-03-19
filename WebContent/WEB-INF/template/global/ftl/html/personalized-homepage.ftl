@@ -770,10 +770,12 @@
 			if( $("#" + renderToString ).length == 0  ){						
 				// create new panel 
 				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-				var template = kendo.template($("#social-view-panel-template").html());				
-				//$("#social-view-panels").append( template( streamsPlaceHolder ) );												
+				var template = kendo.template($("#social-view-panel-template").html());														
 				$("#personalized-area").append( template( streamsPlaceHolder ) );						
-				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );												
+				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );									
+				
+				common.api.binePanelHeaderActions( $( '#'+ renderToString) );
+							
 				$( '#'+ renderToString + ' .panel-header-actions a').each(function( index ) {
 					var social_header_action = $(this);
 					social_header_action.click(function (e){
@@ -793,7 +795,9 @@
 							$("#" + renderToString ).parent().remove();
 						}
 					});			
-				} );			
+				} );
+				
+							
 			} 
 			$("#" + renderToString ).parent().show();
 			if(streamsProvider.dataSource.total() == 0 )
@@ -801,7 +805,6 @@
 				streamsProvider.dataSource.read();
 			}	
 		}		
-
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
 		<!-- ============================== -->			
