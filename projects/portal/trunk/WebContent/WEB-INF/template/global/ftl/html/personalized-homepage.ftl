@@ -1441,6 +1441,15 @@
 		blockquote {
 			font-size: 11pt;
 		}
+		
+		.panel .comments-heading {
+		
+		}
+		
+		.panel .comments-heading a {
+			color: #428bca;
+		}
+		
 		</style>   	
 	</head>
 	<body id="doc" class="bg-gray">
