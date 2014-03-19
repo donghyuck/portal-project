@@ -141,8 +141,7 @@
 				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
 				createNoticeGrid();
 																			
-				// 4. Right Tabs
-								
+				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					//e.preventDefault();		
 					var show_bs_tab = $(e.target);
@@ -208,8 +207,7 @@
 				height: 150
 				});	
 			}		
-		}
-		
+		}		
 		
 		function createAttachmentListView(){			
 			if( !$('#attachment-list-view').data('kendoListView') ){														
@@ -1474,6 +1472,7 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="#" class="btn-link"><i class="fa fa-chevron-up fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link"><i class="fa fa-chevron-down fa-lg"></i></a></li>
+					<li><a href="#" class="btn-link"><i class="fa ffa-bars fa-lg"></i></a></li>
 					<li><a  id="personalized-controls-menu" href="#" class="btn-link"><i class="fa fa-cog fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
