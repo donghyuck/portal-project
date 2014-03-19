@@ -138,10 +138,16 @@
 		
 		if( options.custom ){
 			var custom_panel_body = selector.find(".panel-body:first");
+			
 			var  custom_panel_body_close_button = custom_panel_body.find("button.close");
 			custom_panel_body_close_button.click(function(e){
 				custom_panel_body.addClass("hide");			
 			});
+			
+			
+			//selector.find('.panel-body:last').css("max-height", "");
+			//selector.find('.panel-body:last').removeClass('scrollable');
+			
 		}
 		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
