@@ -453,8 +453,9 @@
 		      #: from.name #  (#: ui.util.prettyDate(updatedTime) #) 
 		      </h5>		     	
 		     	#if ( typeof( message ) == 'string'  ) { #
-		     	<br>
-		     	#: message #
+		     	<p>
+		     	#= message #
+		     	</p>
 		     	# } #				     	     	
 		     	#if ( name !=null ) { #
 		     	<br>#: name  #
