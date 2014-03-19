@@ -473,7 +473,7 @@
 		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
 		     		# } #		     		
 		     		#if ( source !=null ) { #
-		     		<p class="text-muted">source : <span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: source #">#= source #</a></p>
+		     		<p class="text-muted">source : <span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#= source #">#= source #</a></p>
 		     		# } #
 		     	# } #		     	
 		     	#if ( typeof( caption ) == 'string'  ) { #
@@ -485,9 +485,21 @@
 			     	 </footer>
 			     	# } #	
 				</blockquote>
-		     	# } #		     	
-		     				     							
-				# for (var i = 0; i < comments.length ; i++) { #												
+		     	# } #			     				     							
+				# for (var i = 0; i < comments.length ; i++) { #					
+				#if ( comments.length > 0  ) { #						
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="\\#facebook-comments-#= id #">
+						 	댓글 (#= comments.length #)
+							</a>
+							</h4>
+						</div>
+						<div id="facebook-comments-#= id #" class="panel-collapse collapse in">
+							<div class="panel-body">	
+				# } #		
 				# var comment = comments[i] ; #							
 					<div class="media">
 						<a class="pull-left" href="\\#">
@@ -497,8 +509,14 @@
 							 <h6 class="media-heading">#: comment.from.name # &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span>#:comment.likesCount#</h6>
 							 <p class="text-muted">#=comment.message#</p>
 						</div>				
-					</div>				
+					</div>
 				# } #
+				#if ( comments.length > 0  ) { #		
+							</div>
+						</div>
+					</div>	
+				</div>  			
+				# } #		
 			</div>
 		</li>					
 		# } #  	
