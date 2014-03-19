@@ -153,11 +153,6 @@
 					last_panel_body.addClass('scrollable');
 				}		
 			});					
-			
-			
-			//selector.find('.panel-body:last').css("max-height", "");
-			//selector.find('.panel-body:last').removeClass('scrollable');
-			
 		}
 		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
