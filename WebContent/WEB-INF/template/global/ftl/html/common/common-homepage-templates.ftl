@@ -526,7 +526,10 @@
 		      <img src="#: user.profileImageUrl #" alt="#: user.name#" class="media-object img-circle">
 		    </a>
 		    <div class="media-body">
-		      <h5 class="media-heading">#: user.name # (#: ui.util.prettyDate(createdAt) #)</h5>
+		      <h5 class="media-heading">
+		      #if(retweet){# <small><i class="fa fa-retweet"></i>&nbsp; #: user.name # 님이 리트윗함 </small> #}#
+		      	#= user.name # (#: ui.util.prettyDate(createdAt) #)
+		      	</h5>
 		     	<p>#= text #</p>		     	
 				# for (var i = 0; i < entities.urls.length ; i++) { #
 				# var url = entities.urls[i] ; #		
