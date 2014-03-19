@@ -461,8 +461,9 @@
 		     	<br>#: name  #
 		     	# } #		     	     	
 		     	#if ( type == 'LINK' ) { #
-		     	<br>
+		     	<p>
 		     	<span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: link #">#: link #</a>
+		     	</p>
 		     	# } else if ( type == 'PHOTO' ) { #
 		     		<br>
 		     		<img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
