@@ -121,7 +121,7 @@
 		return result
 	}
 	
-	common.api.handlePanelHeaderActions( selector ){
+	common.api.handlePanelHeaderActions = function ( selector ){
 		
 		alert( typeof selector );
 		
@@ -179,7 +179,7 @@
     			}			
     		});
     		*/
-	}
+	};
 	
 	
 	common.api.pager = function (item, current_index, total_index, current_page, total_page) {		
@@ -192,7 +192,7 @@
 		if( (total_index - current_index) == 0 && (total_page - current_page) == 0 )
 			item.next = false;		
 		return item;
-	}
+	};
 	
 	common.api.handleKendoAjaxError = function (xhr) {
 		var message = "";
