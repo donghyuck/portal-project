@@ -155,23 +155,18 @@
 		}
 		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
-			var panel_header_action = $(this);			
-			
-			
-			
-			panel_header_action.click( function (e) {				
-								
+			var panel_header_action = $(this);						
+			panel_header_action.click( function (e) {										
 				if( panel_header_action.text() == "Minimize" ){        				
     				var panel_header_action_icon = panel_header_action.find('span');
 					if( panel_header_action_icon.hasClass("k-i-minimize") ){
 						panel_header_action_icon.removeClass("k-i-minimize");
 						panel_header_action_icon.addClass("k-i-maximize");
-						selector.find(".panel-body, .panel-footer").addClass("hide");
+						selector.children('.panel-body:last, .panel-footer').addClass("hide");
 					}else{
 						panel_header_action_icon.removeClass("k-i-maximize");
-						panel_header_action_icon.addClass("k-i-minimize");		
-						
-						selector.find(".panel-body:last, .panel-footer").removeClass("hide");
+						panel_header_action_icon.addClass("k-i-minimize");								
+						selector.children('.panel-body:last, .panel-footer').removeClass("hide");
 					}						
     			}else if ( panel_header_action.text() == "Close"){
     				if( isFunction(options.close) ){
@@ -186,7 +181,7 @@
     					
     				}
     			} else if ( panel_header_action.text() == "Custom"  &&  options.custom ){        				
-    				var panel_body = selector.find(".panel-body:first");
+    				var panel_body = selector.children(".panel-body:first");
     				if( panel_body.hasClass('hide') ){
     					panel_body.removeClass('hide');
     				}else{
