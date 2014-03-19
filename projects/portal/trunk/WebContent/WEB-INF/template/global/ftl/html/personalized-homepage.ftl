@@ -781,29 +781,6 @@
 						streamsProvider.dataSource.read();
 					}
 				} );
-						/*	
-				$( '#'+ renderToString + ' .panel-header-actions a').each(function( index ) {
-					var social_header_action = $(this);
-					social_header_action.click(function (e){
-						e.preventDefault();		
-						var social_header_action_icon = social_header_action.find('span');
-						if (social_header_action.text() == "Minimize"){
-							$( "#"+ renderToString +" .panel-body").toggleClass("hide");				
-							if( social_header_action_icon.hasClass("k-i-maximize") ){
-								social_header_action_icon.removeClass("k-i-maximize");
-								social_header_action_icon.addClass("k-i-minimize");
-								social_header_action_icon.removeClass("k-i-minimize");
-								social_header_action_icon.addClass("k-i-maximize");
-							}
-						} else if (social_header_action.text() == "Refresh"){								
-							streamsProvider.dataSource.read();							
-						} else if (social_header_action.text() == "Close"){	
-							$("#" + renderToString ).parent().remove();
-						}
-					});			
-				} );
-				*/
-							
 			} 
 			$("#" + renderToString ).parent().show();
 			if(streamsProvider.dataSource.total() == 0 )
