@@ -584,10 +584,9 @@
 					# } #	
 					# } #	
 					</div>				
-				# } #						
-				
-				#= caption #
-				<p>#:noteCount# 노트</p>		
+				# } #							
+				<p>#= caption #</p>		
+				<p class="text-muted"><i class="fa fa-comment-o"></i>&nbsp; #= noteCount# </p>
 			</div>
 		</li>	
 </script>
