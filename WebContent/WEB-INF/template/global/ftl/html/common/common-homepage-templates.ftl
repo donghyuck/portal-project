@@ -527,28 +527,27 @@
 		    </a>
 		    <div class="media-body">
 		      <h5 class="media-heading">#: user.name # (#: ui.util.prettyDate(createdAt) #)</h5>
-		      
-		     	<p>#= text #</p>
-		     	
+		     	<p>#= text #</p>		     	
 				# for (var i = 0; i < entities.urls.length ; i++) { #
-							# var url = entities.urls[i] ; #		
-							<br><span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: url.expandedUrl  #">#: url.displayUrl #</a>
-							 # } #	
-							<p>
-							# for (var i = 0; i < entities.media.length ; i++) { #	
-							# var media = entities.media[i] ; #					
-							<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-rounded">
-							# } #
-							</p>
-							#if (retweeted) {#					
-						<div class="media">
-							<a class="pull-left" href="\\#">
-								<img src="#: retweetedStatus.user.profileImageUrl #" width="100%" alt="media" class="img-circle">
-							</a>
-							<div class="media-body">
-								<h4 class="media-heading">#: retweetedStatus.user.name #</h4>
-							</div>
-						</div>						
+				# var url = entities.urls[i] ; #		
+					<p><span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: url.expandedUrl  #">#: url.displayUrl #</a></p>
+				# } #	
+				<p>
+					# for (var i = 0; i < entities.media.length ; i++) { #	
+					# var media = entities.media[i] ; #					
+					<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-rounded">
+					# } #
+				</p>
+				
+				#if (retweeted) {#					
+				<div class="media">
+					<a class="pull-left" href="\\#">
+						<img src="#: retweetedStatus.user.profileImageUrl #" width="100%" alt="media" class="img-circle">
+					</a>
+					<div class="media-body">
+						<h4 class="media-heading">#: retweetedStatus.user.name #</h4>
+					</div>
+				</div>						
 				# } #
 		    </div>
 		  </li>					
