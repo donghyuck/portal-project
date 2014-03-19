@@ -433,7 +433,7 @@
 					<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
 				</div>							
 			</div>
-			<div class="panel-body scrollable" style="max-height:500px;">
+			<div class="panel-body hide" style="max-height:500px;">
 			
 			</div>
 			<div class="panel-body scrollable" style="max-height:500px;">
