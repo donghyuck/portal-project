@@ -139,15 +139,13 @@
 		if( options.custom ){
 			var custom_panel_body = selector.find(".panel-body:first");
 			
-			var  custom_panel_body_close_button = custom_panel_body.find("button.close");
-			custom_panel_body_close_button.click(function(e){
+			custom_panel_body.find("button.close").click(function(e){
 				custom_panel_body.addClass("hide");			
 			});
 			
 			custom_panel_body.find("input[name='options-scrollable']").on("change", function () {
 				alert(  this.value ) ;			
 			});					
-
 			
 			
 			//selector.find('.panel-body:last').css("max-height", "");
