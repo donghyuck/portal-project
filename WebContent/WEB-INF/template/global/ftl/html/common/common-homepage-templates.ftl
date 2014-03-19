@@ -458,11 +458,11 @@
 		     	</p>
 		     	# } #				     	     	
 		     	#if ( name !=null ) { #
-		     	<p>#: name  #</p>
+		     	<p>#= name  #</p>
 		     	# } #		     	     	
 		     	#if ( type == 'LINK' ) { #
 		     	<p>
-		     	<span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: link #">#: link #</a>
+		     	<span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#= link #">#= link #</a>
 		     	</p>
 		     	# } else if ( type == 'PHOTO' ) { #
 		     		<br>
@@ -474,10 +474,8 @@
 		     		#if ( source !=null ) { #
 		     		<br>source : <span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: source #">#: source #</a>
 		     		# } #
-		     	# } #
-		     	
+		     	# } #		     	
 		     	#if ( typeof( caption ) == 'string'  ) { #
-		     	<br><br>
 		     	<blockquote>
 		     	<p>#: caption #</p>
 			     	#if ( typeof( description ) == 'string'  ) { #
