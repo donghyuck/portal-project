@@ -1472,7 +1472,7 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="#" class="btn-link"><i class="fa fa-chevron-up fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link"><i class="fa fa-chevron-down fa-lg"></i></a></li>
-					<li><a href="#" class="btn-link"><i class="fa ffa-bars fa-lg"></i></a></li>
+					<li><a href="#" class="btn-link"><i class="fa fa-bars fa-lg"></i></a></li>
 					<li><a  id="personalized-controls-menu" href="#" class="btn-link"><i class="fa fa-cog fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
