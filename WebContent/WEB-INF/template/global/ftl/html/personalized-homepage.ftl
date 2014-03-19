@@ -27,8 +27,11 @@
 				
 				// 2.  MEUN 설정
 				// $('body nav').first().addClass('hide');										
+				
+				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();				
 																																									
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
+								
 				$("input[name='personalized-area-col-size']").on("change", function () {					
 					var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
 					grid_col_size.oldValue = grid_col_size.newValue;
@@ -38,10 +41,8 @@
 						custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
 						custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
 					});
-				});					
-	
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
-								
+				});			
+												
 				$("#personalized-controls-menu").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');						
 					if( $('#personalized-controls-section').hasClass("hide") )
@@ -57,16 +58,14 @@
 					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
 					setTimeout(function() {
 						slide_effect.reverse().then(function(){
-						$('body div.overlay').toggleClass('hide');
+							$('body div.overlay').toggleClass('hide');
 						});
 					}, 100);					
-				});
-				
+				});				
 				
 				// photo panel showing				
 				createPhotoListView();
-				
-				
+								
 				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
 					this.select(this.element.children().first());
 				});
