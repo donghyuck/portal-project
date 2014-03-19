@@ -774,7 +774,7 @@
 				$("#personalized-area").append( template( streamsPlaceHolder ) );						
 				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );									
 				
-				common.api.binePanelHeaderActions( $( '#'+ renderToString) );
+				common.api.handlePanelHeaderActions( $( '#'+ renderToString) );
 							
 				$( '#'+ renderToString + ' .panel-header-actions a').each(function( index ) {
 					var social_header_action = $(this);
