@@ -1438,6 +1438,9 @@
 			text-decoration: none;
 		}
 		
+		blockquote {
+			font-size: 11pt;
+		}
 		</style>   	
 	</head>
 	<body id="doc" class="bg-gray">
