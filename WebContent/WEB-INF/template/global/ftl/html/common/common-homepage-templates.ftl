@@ -486,7 +486,9 @@
 			     	# } #	
 				</blockquote>
 		     	# } #			     				     							
-								
+				#if ( comments.length > 0  ) { #
+				
+				# } #				
 				# for (var i = 0; i < comments.length ; i++) { #					
 				# var comment = comments[i] ; #							
 					<div class="media">
@@ -498,6 +500,9 @@
 							 <p class="text-muted">#=comment.message#</p>
 						</div>				
 					</div>
+				# } #
+				#if ( comments.length > 0  ) { #
+				
 				# } #				
 			</div>
 		</li>					
