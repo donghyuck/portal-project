@@ -434,7 +434,7 @@
 				</div>							
 			</div>
 			<div class="panel-body hide" style="max-height:500px;">
-			
+				<button type="button" class="close" aria-hidden="true">&times;</button>	
 			</div>
 			<div class="panel-body scrollable" style="max-height:500px;">
 				<ul class="media-list">
