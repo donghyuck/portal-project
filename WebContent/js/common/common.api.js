@@ -162,7 +162,7 @@
     				var panel_body = selector.find(".panel-body:first");
     				if( panel_body.hasClass('hide') ){
     					panel_body.removeClass('hide');        					
-    					that.trigger( OPEN, { element: selector.find(".panel-body:first")});
+    					//selector.on( OPEN, { element: selector.find(".panel-body:first")});
     				}else{
     					panel_body.addClass('hide');
     				}
