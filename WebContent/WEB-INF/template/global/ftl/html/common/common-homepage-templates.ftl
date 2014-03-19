@@ -487,7 +487,15 @@
 				</blockquote>
 		     	# } #			     				     							
 				#if ( comments.length > 0  ) { #
-				
+				<div class="panel-group" id="accordion-#= id #">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a data-toggle="collapse" data-parent="\\#accordion-#= id #" href="\\##= id #">
+								<h4 class="panel-title"></h4>
+							</a>
+						</div>
+						<div id="#= id #" class="panel-collapse collapse in">
+							<div class="panel-body">	
 				# } #				
 				# for (var i = 0; i < comments.length ; i++) { #					
 				# var comment = comments[i] ; #							
@@ -502,7 +510,10 @@
 					</div>
 				# } #
 				#if ( comments.length > 0  ) { #
-				
+							</div>
+						</div>
+					</div>
+				</div>
 				# } #				
 			</div>
 		</li>					
