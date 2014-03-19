@@ -190,61 +190,6 @@
     			}
 			} );
 		});
-		
-		/*$( '#'+ renderToString + ' .panel-header-actions a').each(function( index ) {
-			var social_header_action = $(this);
-			social_header_action.click(function (e){
-				e.preventDefault();		
-				var social_header_action_icon = social_header_action.find('span');
-				if (social_header_action.text() == "Minimize"){
-					$( "#"+ renderToString +" .panel-body").toggleClass("hide");				
-					if( social_header_action_icon.hasClass("k-i-maximize") ){
-						social_header_action_icon.removeClass("k-i-maximize");
-						social_header_action_icon.addClass("k-i-minimize");
-						social_header_action_icon.removeClass("k-i-minimize");
-						social_header_action_icon.addClass("k-i-maximize");
-					}
-				} else if (social_header_action.text() == "Refresh"){								
-					streamsProvider.dataSource.read();							
-				} else if (social_header_action.text() == "Close"){	
-					$("#" + renderToString ).parent().remove();
-				}
-			});			
-		} );			
-		*/
-		
-		/*
-		$(that.element).find(".panel-header-actions a.k-link").each(function( index ){        		 
-    		$(this).click(function (e) {
-    			e.preventDefault();
-    			var header_action = $(this);
-    			if( header_action.text() == "Minimize" ){        				
-    				var header_action_icon = header_action.find('span');
-					if( header_action_icon.hasClass("k-i-minimize") ){
-						header_action_icon.removeClass("k-i-minimize");
-						header_action_icon.addClass("k-i-maximize");
-						$(that.element).find(".panel-body, .panel-footer").addClass("hide");
-					}else{
-						header_action_icon.removeClass("k-i-maximize");
-						header_action_icon.addClass("k-i-minimize");							
-						$(that.element).find(".panel:first > .panel-body:last, .panel-footer").removeClass("hide");
-					}						
-    			}else if ( header_action.text() == "Close"){
-    				that.destroy();
-    			}else if ( header_action.text() == "Refresh"){	
-    			
-    			// custom
-    			}else if ( header_action.text() == "Custom" ){        				
-    				var _body = $(that.element).find(".panel-body:first");
-    				if( _body.hasClass('hide') ){
-    					_body.removeClass('hide');        					
-    					that.trigger( OPEN, { element: (that.element).find(".panel-body:first")});
-    				}else{
-    					_body.addClass('hide');        					
-    				}
-    			}			
-    		});
-    		*/
 	};
 	
 	
