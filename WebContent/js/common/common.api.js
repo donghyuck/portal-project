@@ -121,9 +121,17 @@
 		return result
 	}
 	
-	common.api.handlePanelHeaderActions = function ( selector ){
+	common.api.handlePanelHeaderActions = function ( element ){
 		
-		alert( typeof selector );
+		var selector = element  ;		
+		
+		if ( typeof element === 'string' )
+			selector = $(element);
+		
+		selector.find('.panel-header-actions a.k-link').each(function( index ){
+			var panel_header_action = $(this);
+			alert( panel_header_action.html() );
+		});
 		
 		/*$( '#'+ renderToString + ' .panel-header-actions a').each(function( index ) {
 			var social_header_action = $(this);
