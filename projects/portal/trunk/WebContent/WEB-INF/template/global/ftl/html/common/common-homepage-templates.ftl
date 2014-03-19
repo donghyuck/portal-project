@@ -486,20 +486,6 @@
 			     	# } #	
 				</blockquote>
 		     	# } #			     				     							
-				
-				#if ( comments.length > 0  ) { #						
-				<div class="panel-group">
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">
-							<a data-toggle="collapse" data-parent="#accordion" href="\\#facebook-comments-#= id #">
-						 	댓글 (#= comments.length #)
-							</a>
-							</h4>
-						</div>
-						<div id="facebook-comments-#= id #" class="panel-collapse collapse in">
-							<div class="panel-body">	
-				# } #		
 								
 				# for (var i = 0; i < comments.length ; i++) { #					
 				# var comment = comments[i] ; #							
@@ -513,12 +499,6 @@
 						</div>				
 					</div>
 				# } #				
-				#if ( comments.length > 0  ) { #		
-							</div>
-						</div>
-					</div>	
-				</div>  			
-				# } #						
 			</div>
 		</li>					
 		# } #  	
