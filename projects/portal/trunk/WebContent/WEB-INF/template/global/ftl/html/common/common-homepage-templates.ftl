@@ -436,6 +436,15 @@
 			<div class="panel-body hide" style="max-height:500px;">
 				<button type="button" class="close" aria-hidden="true">&times;</button>	
 				<button type="button" class="btn btn-primary active" data-toggle="button">스크롤</button>
+
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-primary">
+						<input type="radio" name="options" class="active"> 스크롤 ON
+					</label>
+					<label class="btn btn-primary">
+						<input type="radio" name="options" > 스크롤 OFF
+					</label>
+				</div>
 				
 			</div>
 			<div class="panel-body scrollable" style="max-height:500px;">
