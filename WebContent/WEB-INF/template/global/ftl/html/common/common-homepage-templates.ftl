@@ -438,16 +438,16 @@
 				<button type="button" class="btn btn-primary active" data-toggle="button">스크롤</button>
 
 				<div class="btn-group" data-toggle="buttons">
-					<label class="btn btn-primary">
-						<input type="radio" name="options" class="active"> 스크롤 ON
+					<label class="btn btn-primary active">
+						<input type="radio" name="options-scrollable" value="1"> 스크롤 ON
 					</label>
 					<label class="btn btn-primary">
-						<input type="radio" name="options" > 스크롤 OFF
+						<input type="radio" name="options-scrollable" value="0"> 스크롤 OFF
 					</label>
 				</div>
 				
 			</div>
-			<div class="panel-body scrollable" style="max-height:500px;">
+			<div class="panel-body scrollable" style="max-height:500px;"> 
 				<ul class="media-list">
 					<div id="#:serviceProviderName#-streams-#:socialAccountId#">&nbsp;</div>
 				</ul>
