@@ -489,12 +489,12 @@
 				#if ( comments.length > 0  ) { #
 				<div class="panel-group" id="accordion-#= id #">
 					<div class="panel panel-default">
-						<div class="panel-heading">
+						<div class="panel-heading panel-heading-comments">
 							<a data-toggle="collapse" data-parent="\\#accordion-#= id #" href="\\##= id #">
-								<h4 class="panel-title">댓글 (#= comments.length  #)</h4>
+								<h4 class="panel-title">댓글 보기 (#= comments.length  #)</h4>
 							</a>
 						</div>
-						<div id="#= id #" class="panel-collapse collapse in">
+						<div id="#= id #" class="panel-collapse collapse">
 							<div class="panel-body">	
 				# } #				
 				# for (var i = 0; i < comments.length ; i++) { #					
