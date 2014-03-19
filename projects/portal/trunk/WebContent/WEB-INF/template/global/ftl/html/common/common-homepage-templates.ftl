@@ -435,7 +435,7 @@
 			</div>
 			<div class="panel-body hide" style="max-height:500px;">
 				<button type="button" class="close" aria-hidden="true">&times;</button>	
-				<button type="button" class="btn btn-danger" data-toggle="button">스크롤</button>
+				<button type="button" class="btn btn-primary active" data-toggle="button">스크롤</button>
 				
 			</div>
 			<div class="panel-body scrollable" style="max-height:500px;">
