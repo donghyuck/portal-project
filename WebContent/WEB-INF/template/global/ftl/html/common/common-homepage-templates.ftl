@@ -495,7 +495,7 @@
 						</a>	
 						<div class="media-body">
 							 <h6 class="media-heading">#: comment.from.name # &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-thumbs-up"></span>#:comment.likesCount#</h6>
-							 <p class="text-muted">#:comment.message#</p>
+							 <p class="text-muted">#=comment.message#</p>
 						</div>				
 					</div>				
 				# } #
