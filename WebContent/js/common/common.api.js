@@ -144,7 +144,14 @@
 			});
 			
 			custom_panel_body.find("input[name='options-scrollable']").on("change", function () {
-				alert(  this.value ) ;			
+				var last_panel_body = selector.find('.panel-body:last');
+				if(  this.value == 0 ){
+					last_panel_body.css("max-height", "");
+					last_panel_body.removeClass('scrollable');
+				}else if (this.value == 1 ) {
+					last_panel_body.css("max-height", "450px;");
+					last_panel_body.addClass('scrollable');
+				}		
 			});					
 			
 			
