@@ -480,14 +480,14 @@
 		     	<br><br>
 		     	<blockquote>
 		     	<p>#: caption #</p>
+			     	#if ( typeof( description ) == 'string'  ) { #
+			     	 <footer>
+			     	 #: description #
+			     	 </footer>
+			     	# } #	
 				</blockquote>
 		     	# } #		     	
-		     	#if ( typeof( description ) == 'string'  ) { #
-		     	<blockquote><p class="text-muted"><small>
-		     	#: description #
-		     	</small></p>
-		     	</blockquote>
-		     	# } #				     							
+		     				     							
 				# for (var i = 0; i < comments.length ; i++) { #												
 				# var comment = comments[i] ; #							
 					<div class="media">
