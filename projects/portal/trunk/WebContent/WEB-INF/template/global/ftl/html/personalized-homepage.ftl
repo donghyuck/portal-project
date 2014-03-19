@@ -43,13 +43,10 @@
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
 								
 				$("#personalized-controls-menu").on( "click" , function(e){						
-					$('body').toggleClass('modal-open');		
-					
+					$('body').toggleClass('modal-open');						
 					if( $('#personalized-controls-section').hasClass("hide") )
-						$('#personalized-controls-section').removeClass("hide");	
-						
-					$('body div.overlay').toggleClass('hide');		
-					
+						$('#personalized-controls-section').removeClass("hide");							
+					$('body div.overlay').toggleClass('hide');							
 					slide_effect.play().then(function(){							
 						$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
 					});				
@@ -1452,7 +1449,7 @@
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-left">				
 					<p class="navbar-text hidden-xs">&nbsp;</p>	
-					<li><a href="${request.contextPath}/main.do" class="btn-link"><i class="fa fa-home fa-lg"></i></a></li>
+					<li><a href="${request.contextPath}/main.do" class="btn-link"><i class="fa fa-angle-left fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>						
 					<li class="navbar-btn hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
@@ -1472,7 +1469,6 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="#" class="btn-link"><i class="fa fa-chevron-up fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link"><i class="fa fa-chevron-down fa-lg"></i></a></li>
-					<li><a href="#" class="btn-link"><i class="fa fa-bars fa-lg"></i></a></li>
 					<li><a  id="personalized-controls-menu" href="#" class="btn-link"><i class="fa fa-cog fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
