@@ -192,6 +192,33 @@
 		});
 	};
 	
+	common.api.handleNavbarActions = function ( selector, options ){
+		
+		options = options || {};		
+		if( options.custom === UNDEFINED )
+			 options.custom = false;
+		if( options.custom === UNDEFINED )
+			
+			
+		if ( typeof selector === 'string' )
+			selector = $(selector);
+		
+		$('.personalized-navbar.navbar').find('.navbar-nav  .btn-link').each(function( index ){
+			var navbar_btn_link = $(this);			
+			var navbar_btn_link_icon = navbar_btn_link.children('i');
+			
+			navbar_btn_link.click( function (e) {		
+				if( isFunction( options.click ) ){
+					
+				}				
+			});			
+			
+			
+		});
+		
+		//, .navbar-nav .btn-group.navbar-btn , navbar-nav btn.navbar-btn' );
+		
+	}
 	
 	common.api.pager = function (item, current_index, total_index, current_page, total_page) {		
 		if( current_index < 0 )
