@@ -449,8 +449,8 @@
 		    </a>
 		    <div class="media-body">
 		      <h5 class="media-heading">
-		      <span class="label label-primary">#: type #</span><br><br>
-		      #: from.name #  (#: ui.util.prettyDate(updatedTime) #) 
+		      <span class="label label-primary">#: type #</span>
+		      #= from.name #  (#: ui.util.prettyDate(updatedTime) #) 
 		      </h5>		     	
 		     	#if ( typeof( message ) == 'string'  ) { #
 		     	<p>
