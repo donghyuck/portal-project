@@ -196,13 +196,9 @@
 		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
-			 options.custom = false;
-		if( options.custom === UNDEFINED )
-			
-			
+			 options.custom = false;			
 		if ( typeof selector === 'string' )
-			selector = $(selector);
-		
+			selector = $(selector);		
 		$('.personalized-navbar.navbar').find('.navbar-nav  .btn-link, navbar-nav btn.navbar-btn, .navbar-nav .btn-group.navbar-btn').each(function( index ){
 			var navbar_btn_link = $(this);			
 			var navbar_btn_link_icon = navbar_btn_link.children('i');			
@@ -212,8 +208,7 @@
 					selector.trigger( 'click.navbar' );
 				}				
 			});			
-		});
-		
+		});		
 		//, .navbar-nav .btn-group.navbar-btn , navbar-nav btn.navbar-btn' );
 		
 	}
