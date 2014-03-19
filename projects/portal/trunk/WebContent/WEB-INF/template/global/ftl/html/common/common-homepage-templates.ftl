@@ -436,19 +436,17 @@
 			<div class="panel-body hide" style="max-height:500px;">
 				<button type="button" class="close" aria-hidden="true">&times;</button>	
 
-<form role="form">
-<div class="form-group">
-<label>스크롤</label>
-<div class="btn-group" data-toggle="buttons">
+			<div class="page-header text-primary">
+				<h5><i class="fa fa-circle"></i>&nbsp;<strong>스크롤</strong>&nbsp;<small>스크롤을 OFF 하면 페널의 스크롤이 없이 보여집니다.</small></h5>
+			</div>
+			<div class="btn-group" data-toggle="buttons">
 					<label class="btn btn-primary active">
 						<input type="radio" name="options-scrollable" value="1">ON
 					</label>
 					<label class="btn btn-primary">
 						<input type="radio" name="options-scrollable" value="0">OFF
 					</label>
-				</div>		
-</div>
-</form>
+			</div>	
 
 
 			</div>
