@@ -133,7 +133,7 @@
 						<ul class="nav navbar-nav navbar-left">
 							<p class="navbar-text hidden-xs">&nbsp;</p>	
 							<li class="navbar-btn hidden-xs">
-								<div class="btn-group navbar-btn" data-toggle="buttons">
+								<div class="btn-group navbar-btn borderless" data-toggle="buttons">
 									<label class="btn btn-default active">
 								 		<input type="radio" name="lightingbox-scale"  value="0"><i class="fa fa-arrows-h"></i>
 									</label>
