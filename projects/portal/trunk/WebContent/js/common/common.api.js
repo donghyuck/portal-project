@@ -198,14 +198,22 @@
 			 options.custom = false;			
 		if ( typeof selector === 'string' )
 			selector = $(selector);		
+		if ( typeof options.handlers === UNDEFINED )
+			options.handlers = [];
+		
+		$.each(options.handlers, function(index, data)){
+			selector.find(data.selector).on(data.event, handler);
+		});
 		
 		selector.find('.navbar-nav  .btn-link, navbar-nav btn.navbar-btn').each(function( index ){
-			var navbar_btn_link = $(this);			
-			
+			var navbar_btn_link = $(this);
 			if( isFunction( options.onClick ) ){
 				navbar_btn_link.click( options.onClick );
 			}
 		});			
+		
+		
+		
 	}
 	
 	common.api.pager = function (item, current_index, total_index, current_page, total_page) {		
