@@ -57,6 +57,11 @@
 		color: white;
 		font-weight: 300;
 	}
+	
+	.navbar-inverse {
+		background-color: #333;
+		border-color: #222;
+	}
 		
 </style>
 </head>
