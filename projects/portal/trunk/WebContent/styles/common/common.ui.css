@@ -48,11 +48,11 @@ figure.img-full-width img {
 	transform: translateX(-50%);	
 }
 
-figure.img-full-width .btn-link {
+.color9 .btn-link {
 	font-color : #333;	
 }
 
-figure.img-full-width .btn-link : hover {	
+.color9 .btn-link : hover {	
 	font-color : #fff;
 }
 
