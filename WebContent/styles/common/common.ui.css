@@ -48,11 +48,11 @@ figure.img-full-width img {
 	transform: translateX(-50%);	
 }
 
-		.overlay.color9 button.btn-link {
+		.overlay.color9 .btn-link {
 			color : #f8f8f8;	
 		}
 		
-		.overlay.color9 button.btn-link : hover {	
+		.overlay.color9 .btn-link:hover, .overlay.color9 .btn-link:focus {	
 			color : #fff;
 		}
 		
