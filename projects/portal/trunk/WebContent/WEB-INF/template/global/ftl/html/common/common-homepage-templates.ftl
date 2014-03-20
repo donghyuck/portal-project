@@ -353,8 +353,9 @@
 		<div class="panel-body" data-bind="html:body"></div>	
 	</div>
 </script>
-
-<!-- announce view panel -->
+<!-- ============================== -->
+<!-- announce view panel template                    -->
+<!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="announcement-view-template">		
 	<h4 data-bind="html:subject"></h4>
 	<small><span class="label label-primary">기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small><br>
@@ -420,6 +421,9 @@
 	</tr>
 </script>
 
+<!-- ============================== -->
+<!-- socialnetwork view panel template               -->
+<!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="social-view-panel-template">
 	<div class="custom-panels-group" style="display:none;"> 
 		<div id="#: serviceProviderName #-panel-#:socialAccountId#" class="panel panel-info">
@@ -610,8 +614,9 @@
 		</li>	
 </script>
 
-
-<!--  Top Nav Account Status Template -->
+<!-- ============================== -->
+<!-- Top Nav Account Status Template               -->
+<!-- ============================== -->
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdown navbar-btn">
 	<div class="btn-group">		
