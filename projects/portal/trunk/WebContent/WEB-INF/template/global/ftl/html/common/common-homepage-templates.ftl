@@ -139,7 +139,7 @@
 				</nav>								
 				<button type="button" class="overlay-close">Close</button>
 				<figure class="img-full-width">
-					<section>
+					<section style="positon:fixed;">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info active">
 						 		<input type="radio" name="lightning-box-photo-scale"  value="0"><i class="fa fa-arrows-h"></i></i>
