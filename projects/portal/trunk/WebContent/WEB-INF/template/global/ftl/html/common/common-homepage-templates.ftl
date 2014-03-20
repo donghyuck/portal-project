@@ -141,15 +141,15 @@
 				<figure class="img-full-width">
 					<img data-bind="attr:{src: photoUrl}" />
 				</figure>		
-				<div style="positon:fixed; ">
-						<div class="btn-group navbar-btn" data-toggle="buttons">
+				<div style="position:fixed; top:10px; left: 10px; padding:5px;">
+					<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info active">
 						 		<input type="radio" name="lightning-box-photo-scale"  value="0"><i class="fa fa-arrows-h"></i></i>
 							</label>
 							<label class="btn btn-info">
 								<input type="radio" name="lightning-box-photo-scale"  value="1"> <i class="fa fa-arrows-v"></i>
 							</label>
-						</div>	
+					</div>	
 				<div>									
 			</div>							
 		</div>				
