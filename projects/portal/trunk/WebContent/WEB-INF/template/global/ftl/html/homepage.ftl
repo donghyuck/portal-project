@@ -32,7 +32,7 @@
 					</#if>
 					afterAuthenticate : function(){
 						if( currentUser.anonymous ){
-							var validator = $("#login-panel").kendoValidator({validateOnBlur:false}).data("kendoValidator");							
+							var validator = $("#login-navbar").kendoValidator({validateOnBlur:false}).data("kendoValidator");							
 							$("#login-btn").click(function() { 
 								$("#login-status").html("");
 								if( validator.validate() )

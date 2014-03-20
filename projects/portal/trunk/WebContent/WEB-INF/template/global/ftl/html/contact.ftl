@@ -20,8 +20,6 @@
 				kendo.culture("ko-KR");
 				      
 				// START SCRIPT	
-				$("#top-menu").kendoMenu();
-				$("#top-menu").show();
 				var currentUser = new User({});			
 				// ACCOUNTS LOAD	
 				var accounts = $("#account-navbar").kendoAccounts({
@@ -32,12 +30,9 @@
 					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  >
 					template : kendo.template($("#account-template").html()),
 					</#if>
-					afterAuthenticate : function(){
-						$('.dropdown-toggle').dropdown();
-						//Holder.run();
-						
+					afterAuthenticate : function(){					
 						if( currentUser.anonymous ){
-							var validator = $("#login-panel").kendoValidator({validateOnBlur:false}).data("kendoValidator");							
+							var validator = $("#login-navbar").kendoValidator({validateOnBlur:false}).data("kendoValidator");							
 							$("#login-btn").click(function() { 
 								$("#login-status").html("");
 								if( validator.validate() )
