@@ -133,10 +133,10 @@
 						<ul class="nav navbar-nav navbar-left">
 							<li>
 								<div class="btn-group navbar-btn" data-toggle="buttons">
-									<label class="btn btn-info active">
+									<label class="btn btn-default active">
 								 		<input type="radio" name="lightingbox-scale"  value="0"><i class="fa fa-arrows-h"></i>
 									</label>
-									<label class="btn btn-info">
+									<label class="btn btn-default">
 										<input type="radio" name="lightingbox-scale"  value="1"> <i class="fa fa-arrows-v"></i>
 									</label>
 								</div>												
