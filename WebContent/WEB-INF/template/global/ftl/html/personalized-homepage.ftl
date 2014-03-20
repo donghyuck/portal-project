@@ -26,25 +26,8 @@
 				kendo.culture("ko-KR");
 				
 				// 2.  MEUN 설정
-				// $('body nav').first().addClass('hide');										
-				
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();				
-																																									
+				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
-								
-				/*				
-				$("input[name='personalized-area-col-size']").on("change", function () {					
-					var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-					grid_col_size.oldValue = grid_col_size.newValue;
-					grid_col_size.newValue = this.value;			
-					$(".custom-panels-group").each(function( index ) {
-						var custom_panels_group = $(this);				
-						custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
-						custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
-					});
-				});
-				*/
-				
 				common.api.handleNavbarActions( $('.personalized-navbar'), {
 					handlers : [
 						{ selector: "input[name='personalized-area-col-size']",
@@ -63,7 +46,7 @@
 					],
 					onClick : function (e) {												
 						if( $(this).hasClass('custom-nabvar-hide')){
-						
+							$('body nav').first().removeClass('hide');
 						}else if ($(this).hasClass('custom-nabvar-up')){ 
 						
 						}else if ($(this).hasClass('custom-nabvar-down')){ 
@@ -88,40 +71,13 @@
 						});
 					}, 100);					
 				});
-				
-				/**								
-				$("#personalized-controls-menu").on( "click" , function(e){						
-					$('body').toggleClass('modal-open');						
-					if( $('#personalized-controls-section').hasClass("hide") )
-						$('#personalized-controls-section').removeClass("hide");							
-					$('body div.overlay').toggleClass('hide');							
-					slide_effect.play().then(function(){							
-						$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-					});				
-				});
-				**/
-				
-				
-				
+								
 				// photo panel showing				
 				createPhotoListView();
 								
 				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
 					this.select(this.element.children().first());
 				});
-
-				/**	
-				$('#personalized-area').waypoint(function(direction){	
-					if( direction = 'down' ){
-						$('nav').first().toggleClass('hide');
-						$('.personalized-navbar').toggleClass('up');	
-						$('personalized-area').toggleClass('blank-top-50');	
-					} else if (  direction = 'up' ){	
-						$('nav').first().toggleClass('hide');		
-						$('.personalized-navbar').toggleClass('up');
-						$('personalized-area').toggleClass('blank-top-50');
-					}
-				}, { offset: 50 });	*/
 
 				// 3. ACCOUNTS LOAD	
 				var currentUser = new User({});			
@@ -130,7 +86,7 @@
 					authenticate : function( e ){
 						currentUser = e.token;
 						if(!currentUser.anonymous){
-							$('body nav').first().addClass('hide');			
+							$('body nav').first().addClass('hide');
 						}
 					},
 					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
