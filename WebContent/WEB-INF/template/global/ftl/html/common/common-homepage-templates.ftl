@@ -149,13 +149,13 @@
 					  <a href="\\#" class="btn btn-link"><i class="fa fa-angle-right fa-4x"></i></a>
 					</div>				
 					<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-primary active">
+							<label class="btn btn-info active">
 						 		<input type="radio" name="lightning-box-photo-scale"  value="0"><i class="fa fa-expand"></i></i>
 							</label>
-							<label class="btn btn-primary">
+							<label class="btn btn-info">
 						 		<input type="radio" name="lightning-box-photo-scale"  value="1"><i class="fa fa-arrows-h"></i></i>
 							</label>
-							<label class="btn btn-primary">
+							<label class="btn btn-info">
 								<input type="radio" name="lightning-box-photo-scale"  value="2"> <i class="fa fa-arrows-v"></i>
 							</label>
 					</div>	
