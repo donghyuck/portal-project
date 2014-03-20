@@ -137,7 +137,7 @@
 					</div>
 				</nav>								
 				<button type="button" class="overlay-close">Close</button>
-											
+				<img data-bind="attr:{src: photoUrl}" class="img-responsive" />							
 			</div>							
 		</div>				
 	</div>		
@@ -203,7 +203,7 @@
 				<button type="button" class="overlay-close">Close</button>
 				<div class="container">
 					<div class="row" >
-						<div class="col-md-8"><img data-bind="attr:{src: photoUrl}" class="img-responsive" /></div>
+						<div class="col-md-8"></div>
 						<div class="col-md-4"
 						<!-- start photo details -->	
 							<div class="panel-group" id="photo-details-accordion">
