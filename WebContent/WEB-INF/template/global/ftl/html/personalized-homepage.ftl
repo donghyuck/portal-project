@@ -1449,7 +1449,7 @@
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-left">				
 					<p class="navbar-text hidden-xs">&nbsp;</p>	
-					<li><a href=#" class="btn-link custom-nabvar-hide"><i class="fa fa-chevron-left fa-lg"></i></a></li>
+					<!--<li><a href=#" class="btn-link custom-nabvar-hide"><i class="fa fa-chevron-left fa-lg"></i></a></li>-->
 					<p class="navbar-text hidden-xs">&nbsp;</p>						
 					<li class="navbar-btn hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
@@ -1470,6 +1470,7 @@
 					<li><a href="#" class="btn-link custom-nabvar-up"><i class="fa fa-chevron-up fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link custom-nabvar-down"><i class="fa fa-chevron-down fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
+					<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><i class="fa fa-times fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
 			</div>
