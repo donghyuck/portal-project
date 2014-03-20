@@ -777,9 +777,9 @@
 				} );
 				
 				streamsProvider.dataSource.bind('change', function(e){
-					alert(
-	renderToString + "/" + $("#" + renderToString ).find('figure figcaption .btn').length 
-	);
+					$("#" + renderToString ).find('figure figcaption .btn').click( function(e){
+						alert( $(this).html() );
+					});
 				});
 				
 			} 
@@ -788,13 +788,6 @@
 			{
 				streamsProvider.dataSource.read();
 			}	
-
-			$("#" + renderToString ).find('figure figcaption .btn').on('click' , function(){
-			
-				alert( $(this).html() );
-				
-			});
-						
 		}		
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
