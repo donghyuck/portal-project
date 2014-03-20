@@ -1440,13 +1440,7 @@
 			margin-bottom: 0px; 
 		}
 
-		#photo_overlay.color9 .btn-link {
-			font-color : #333;	
-		}
-		
-		#photo_overlay.color9 .btn-link : hover {	
-			font-color : #fff;
-		}
+
 		
 		</style>   	
 	</head>
