@@ -44,7 +44,9 @@
 				});			
 				
 				common.api.handleNavbarActions( $('.personalized-navbar'), {
-				
+					onClick : function () {
+						alert( $(this).html() );
+					}
 				});
 												
 				$("#personalized-controls-menu").on( "click" , function(e){						
