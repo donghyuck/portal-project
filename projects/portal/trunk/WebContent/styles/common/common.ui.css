@@ -30,6 +30,9 @@ height:50px;
 	src: local('☺'), url('../fonts/nanumgothic.woff') format('woff'), url('../fonts/nanumgothic.woff') format('truetype');
 }
 
+
+fullwidth 
+
 /* Bootstrap customize --------------------- */
 
 
@@ -130,6 +133,9 @@ button.btn-img {
 */
 .margin-top-minus-20 {
 	margin-top: -20px;
+}
+.margin-buttomless{
+	margin-buttom : 0px;
 }
 
 .margin-buttom-5 {
