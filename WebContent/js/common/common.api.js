@@ -201,7 +201,7 @@
 		if ( typeof options.handlers === UNDEFINED )
 			options.handlers = [];		
 		$.each(options.handlers, function(index, data){
-			selector.find(data.selector).on(data.event, handler);
+			selector.find(data.selector).on(data.event, data.handler);
 		});		
 		selector.find('.navbar-nav  .btn-link, navbar-nav btn.navbar-btn').each(function( index ){
 			var navbar_btn_link = $(this);
