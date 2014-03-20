@@ -144,8 +144,8 @@
 				<div style="position:fixed; top:10px; left: 10px; padding:5px;">
 
 					<div class="btn-group text-primary">
-					  <button type="button" class="btn btn-link"><i class="fa fa-angle-left fa-3x"></i></button>
-					  <button type="button" class="btn btn-link"><i class="fa fa-angle-right fa-3x"></i></button>
+					  <button type="button" class="btn btn-link"><i class="fa fa-angle-left fa-4x"></i></button>
+					  <button type="button" class="btn btn-link"><i class="fa fa-angle-right fa-4x"></i></button>
 					</div>
 				
 					<div class="btn-group navbar-btn" data-toggle="buttons">
