@@ -74,10 +74,76 @@
 				# } #
 			# } #  
 		</div>	
-	</div>		
+	</div>			
 </script>
+
+
+
+
 <!-- photo view panel -->
 <script type="text/x-kendo-template" id="photo-panel-template">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+			<i class="fa fa-cloud"></i>&nbsp;사진
+			<div class="k-window-actions panel-header-actions">
+				<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a>
+				<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
+				<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
+				<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>
+				<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
+			</div>		
+		</div>	
+		<div class="panel-body hide">
+			<button type="button" class="close" aria-hidden="true">&times;</button>					
+			<div class="btn-group dropup" data-bind="visible: editable">
+				<button  type="button" class="btn btn-danger custom-delete"  data-bind="enabled: editable"><i class="fa fa-trash-o"></i> 삭제</button>				
+			</div>		
+			
+			<div class="page-header text-primary">
+				<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
+			</div>			
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-primary">
+				<input type="radio" name="photo-public-shared" value="1">모두에게 공개
+				</label>
+				<label class="btn btn-primary active">
+				<input type="radio" name="photo-public-shared" value="0"> 비공개
+				</label>
+			</div>
+			
+			<div class="page-header text-primary">
+				<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
+			</div>
+			<div id="photo-prop-grid"></div>			
+			<div class="page-header text-primary">
+				<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
+			</div>
+			<input name="update-photo-file" type="file" id="update-photo-file" data-bind="enabled: editable" class="pull-right" />			
+		</div>	
+		<div class="panel-body block-space-0">			
+			<figure>			
+				<img data-bind="attr:{src: photoUrl, alt : name }" width="100%" class="border-buttom-rounded"/>			
+				<figcaption class="border-buttom-rounded">
+					<small class="text-muted" data-bind="text: modifiedDate"></small>				
+				</figcaption>		
+			</figure>		
+			<div id="photo_overlay" class="overlay overlay-hugeinc color9">			
+				<nav class="navbar navbar-default navbar-static-top" role="navigation">
+					<div class="container">
+						<ul class="nav navbar-nav navbar-right">
+							<li class="previous" data-bind="visible: previous"><a href="\\#" class="btn-link"><i class="fa fa-angle-left fa-3x"></i></a></li>
+							<li class="next" data-bind="visible: next"><a href="\\#" class="btn-link"><i class="fa fa-angle-right fa-3x"></i></a></li>								
+						</ul>
+					</div>
+				</nav>								
+				<button type="button" class="overlay-close">Close</button>
+											
+			</div>							
+		</div>				
+	</div>		
+</script>
+
+<script type="text/x-kendo-template" id="photo-panel-template-old">
 	<div class="panel panel-default">
 		<div class="panel-heading">
 			<i class="fa fa-cloud"></i>&nbsp;사진
