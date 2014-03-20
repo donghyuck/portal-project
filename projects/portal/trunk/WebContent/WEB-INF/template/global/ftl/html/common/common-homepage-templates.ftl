@@ -149,10 +149,13 @@
 				
 					<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info active">
-						 		<input type="radio" name="lightning-box-photo-scale"  value="0"><i class="fa fa-arrows-h"></i></i>
+						 		<input type="radio" name="lightning-box-photo-scale"  value="0"><i class="fa fa-expand"></i></i>
 							</label>
 							<label class="btn btn-info">
-								<input type="radio" name="lightning-box-photo-scale"  value="1"> <i class="fa fa-arrows-v"></i>
+						 		<input type="radio" name="lightning-box-photo-scale"  value="1"><i class="fa fa-arrows-h"></i></i>
+							</label>
+							<label class="btn btn-info">
+								<input type="radio" name="lightning-box-photo-scale"  value="2"> <i class="fa fa-arrows-v"></i>
 							</label>
 					</div>	
 				<div>									
