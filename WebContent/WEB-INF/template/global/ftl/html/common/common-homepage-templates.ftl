@@ -130,7 +130,7 @@
 			<div id="photo_overlay" class="overlay overlay-hugeinc color9">			
 				<nav class="navbar navbar-default navbar-static-top" role="navigation">
 					<div class="container">
-						<ul class="nav navbar-nav navbar-right">
+						<ul class="nav navbar-nav navbar-left">
 							<li class="previous" data-bind="visible: previous"><a href="\\#" class="btn-link"><i class="fa fa-angle-left fa-2x"></i></a></li>
 							<li class="next" data-bind="visible: next"><a href="\\#" class="btn-link"><i class="fa fa-angle-right fa-2x"></i></a></li>								
 						</ul>
