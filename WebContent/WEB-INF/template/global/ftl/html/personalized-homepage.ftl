@@ -63,6 +63,17 @@
 						}
 					}
 				});
+				
+				$("#personalized-controls-menu-close").on( "click" , function(e){						
+					$('body').toggleClass('modal-open');		
+					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
+					setTimeout(function() {
+						slide_effect.reverse().then(function(){
+							$('body div.overlay').toggleClass('hide');
+						});
+					}, 100);					
+				});
+				
 				/**								
 				$("#personalized-controls-menu").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');						
@@ -75,15 +86,7 @@
 				});
 				**/
 				
-				$("#personalized-controls-menu-close").on( "click" , function(e){						
-					$('body').toggleClass('modal-open');		
-					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
-					setTimeout(function() {
-						slide_effect.reverse().then(function(){
-							$('body div.overlay').toggleClass('hide');
-						});
-					}, 100);					
-				});				
+				
 				
 				// photo panel showing				
 				createPhotoListView();
@@ -1489,7 +1492,7 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="#" class="btn-link custom-nabvar-up"><i class="fa fa-chevron-up fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link custom-nabvar-down"><i class="fa fa-chevron-down fa-lg"></i></a></li>
-					<li><a href="#" class="btn-link custom-nabvar-show-opts"  id="personalized-controls-menu"><i class="fa fa-cog fa-lg"></i></a></li>
+					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
 			</div>
