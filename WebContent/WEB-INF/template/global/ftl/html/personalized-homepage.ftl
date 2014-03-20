@@ -1408,19 +1408,7 @@
 			max-width: 100%;
 			height: 350px;
 		}
-		
-		/**
-
-		.overlay-hugeinc {
-			display:none;
-			position: relative;
-		}
-		
-		.overlay-hugeinc.open{
-			display:block;
-		}
-		*/
-		
+				
 		.cbp-hsmenu-wrapper .cbp-hsmenu {
 			width:100%;
 		}
@@ -1446,6 +1434,10 @@
 		
 		.panel .comments-heading a {
 			color: #555;
+		}
+		
+		#photo_overlay nav.navbar {
+			margin-bottom: 0px; 
 		}
 		
 		</style>   	
