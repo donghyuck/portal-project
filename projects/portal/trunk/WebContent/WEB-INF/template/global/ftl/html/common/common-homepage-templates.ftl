@@ -143,8 +143,8 @@
 								</div>												
 							</li>
 							<p class="navbar-text hidden-xs">&nbsp;</p>
-							<li class="previous" data-bind="visible: previous"><a href="\\#" class="btn-link"><i class="fa fa-angle-left fa-2x"></i></a></li>
-							<li class="next" data-bind="visible: next"><a href="\\#" class="btn-link"><i class="fa fa-angle-right fa-2x"></i></a></li>								
+							<li class="previous" data-bind="visible: previous"><a href="\\#" class="btn-link"><i class="fa fa-angle-left fa-3x"></i></a></li>
+							<li class="next" data-bind="visible: next"><a href="\\#" class="btn-link"><i class="fa fa-angle-right fa-3x"></i></a></li>								
 						</ul>
 					</div>
 				</nav>								
