@@ -600,8 +600,8 @@
 					<div class="col-xs-12 col-lg-12">	
 						<figure>	
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">
-							<figcaption class="border-buttom-rounded">							
-								<button type="button" class="btn btn-primary" data-source="#:postUrl#" data-url="#: post_photo_url#"><i class="fa fa-cloud-upload"></i>&nbsp 내사진으로 복사</button>
+							<figcaption class="pull-right">							
+								<button type="button" class="btn btn-primary btn-sm" data-source="#:postUrl#" data-url="#: post_photo_url#"><i class="fa fa-cloud-upload"></i>&nbsp 내 사진으로 복사</button>
 							</figcaption>		
 						</figure>		
 					</div>			
