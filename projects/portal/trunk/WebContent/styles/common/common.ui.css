@@ -48,6 +48,13 @@ figure.img-full-width img {
 	transform: translateX(-50%);	
 }
 
+figure.img-full-width .btn-link {
+	font-color : #333;	
+}
+
+figure.img-full-width .btn-link : hover {	
+	font-color : #fff;
+}
 
 /* Bootstrap customize --------------------- */
 
