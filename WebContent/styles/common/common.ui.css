@@ -90,7 +90,7 @@ button.btn-img {
 .nav .open > a.btn ,
 .nav .open > a.btn:hover,
 .nav .open > a.btn:focus {
-  background-color: rgba( 91, 192, 222, 0.7 );
+  /*background-color: rgba( 91, 192, 222, 0.7 );*/
  /* border-color: #428bca; */
 }
 
