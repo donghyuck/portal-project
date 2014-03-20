@@ -782,6 +782,13 @@
 			{
 				streamsProvider.dataSource.read();
 			}	
+
+			$("#" + renderToString ).find('figure figcaption .btn').on('click' , function(){
+			
+				alert( $(this).html() );
+				
+			});
+						
 		}		
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
@@ -1008,7 +1015,7 @@
 				var overlay  = $("#" + renderToString ).find('.overlay').extOverlay();								
 				$("#" + renderToString ).data("extPanel").body().find('figure img').click( function(e){
 					overlay.toggleOverlay();
-				});			
+				});		
 								
 
 				// start define over nav events
@@ -1042,14 +1049,6 @@
 				$("#" + renderToString ).data("extPanel").data(photoPlaceHolder);
 				kendo.bind($("#" + renderToString ).data("extPanel").body(), $("#" + renderToString ).data("extPanel").data());
 			}			
-
-			$("#" + renderToString ).find('figure figcaption .btn').on('click' , function(){
-			
-				alert( $(this).html() );
-				
-			});
-
-
 			var panel = $("#" + renderToString ).data("extPanel");
 			panel.show();			
 		}	
