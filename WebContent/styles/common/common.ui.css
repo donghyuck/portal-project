@@ -40,7 +40,8 @@ figure.img-full-width {
 figure.img-full-width img {
 /*	max-width: 100%;
 	max-width: none;
-	position: absolute;*/
+	*/
+	position: absolute;
 	left: 50%;
 	-webkit-transform: translateX(-50%);
 	transform: translateX(-50%);	
