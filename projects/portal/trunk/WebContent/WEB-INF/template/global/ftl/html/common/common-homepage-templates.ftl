@@ -149,7 +149,7 @@
 							</label>
 						</div>	
 					<section>					
-					<img data-bind="attr:{src: photoUrl}" class="img-responsive" />		
+					<img data-bind="attr:{src: photoUrl}" />		
 				</figure>			
 			</div>							
 		</div>				
