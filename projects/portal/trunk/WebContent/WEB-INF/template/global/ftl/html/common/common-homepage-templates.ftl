@@ -601,7 +601,7 @@
 						<figure>	
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">
 							<figcaption class="pull-right">							
-								<button type="button" class="btn btn-primary btn-sm custom-import-to-my-photo" data-source="#:postUrl#" data-url="#: post_photo_url#"><i class="fa fa-cloud-upload"></i>&nbsp 내 사진으로 복사</button>
+								<button type="button" class="btn btn-primary" onclick="javascript:alert("afdsaf");"  data-source="#:postUrl#" data-url="#: post_photo_url#"><i class="fa fa-cloud-upload"></i>&nbsp 내 사진으로 복사</button>
 							</figcaption>		
 						</figure>		
 					</div>			
