@@ -45,11 +45,25 @@
 				
 				common.api.handleNavbarActions( $('.personalized-navbar'), {
 					onClick : function (e) {
-					
-						$(this).children('i')
+												
+						if( $(this).hasClass('custom-nabvar-hide')){
+						
+						}else if ($(this).hasClass('custom-nabvar-up')){ 
+						
+						}else if ($(this).hasClass('custom-nabvar-down')){ 
+						
+						}else if ($(this).hasClass('custom-nabvar-show-opts')){ 
+							$('body').toggleClass('modal-open');						
+							if( $('#personalized-controls-section').hasClass("hide") )
+								$('#personalized-controls-section').removeClass("hide");							
+							$('body div.overlay').toggleClass('hide');							
+							slide_effect.play().then(function(){							
+								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
+							});	
+						}
 					}
 				});
-												
+				/**								
 				$("#personalized-controls-menu").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');						
 					if( $('#personalized-controls-section').hasClass("hide") )
@@ -59,6 +73,7 @@
 						$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
 					});				
 				});
+				**/
 				
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
