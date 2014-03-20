@@ -199,15 +199,13 @@
 		if ( typeof selector === 'string' )
 			selector = $(selector);		
 		
-		if( isFunction( options.onClick ) ){	
-			selector.on('click.navbar', options.onClick() );
-		}
-		
 		selector.find('.navbar-nav  .btn-link, navbar-nav btn.navbar-btn').each(function( index ){
 			var navbar_btn_link = $(this);			
 			var navbar_btn_link_icon = navbar_btn_link.children('i');						
 			navbar_btn_link.click( function (e) {		
-				selector.trigger( 'click.navbar' );			
+				if( isFunction( options.onClick ) ){	
+					options.onClick(e);					
+				}
 			});			
 		});		
 		//, .navbar-nav .btn-group.navbar-btn , navbar-nav btn.navbar-btn' );
