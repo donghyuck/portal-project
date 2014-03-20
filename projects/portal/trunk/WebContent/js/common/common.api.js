@@ -203,7 +203,7 @@
 			var navbar_btn_link = $(this);			
 			var navbar_btn_link_icon = navbar_btn_link.children('i');		
 			if( isFunction( options.onClick ) ){
-				navbar_btn_link.bind( 'navbar-click',  options.onClick(event) );
+				navbar_btn_link.bind( 'click',  options.onClick(event) );
 			}
 			
 /*			navbar_btn_link.click( function (e) {		
