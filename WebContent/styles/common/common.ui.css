@@ -48,6 +48,8 @@ figure.img-full-width img {
 	transform: translateX(-50%);	
 }
 
+/**
+
 		.overlay.color9 a.btn-link, .overlay.color9 button.btn-link {
 			color : #333;	
 		}
@@ -56,7 +58,7 @@ figure.img-full-width img {
 			color : red;
 			background-color: rgba( 91, 192, 222, 0.7 );
 		}
-		
+**/		
 /* Bootstrap customize --------------------- */
 
 
