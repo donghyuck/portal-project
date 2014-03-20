@@ -204,7 +204,7 @@
 			var navbar_btn_link_icon = navbar_btn_link.children('i');			
 			navbar_btn_link.click( function (e) {		
 				if( isFunction( options.onClick ) ){				
-					options.onClick();
+					options.onClick(e);
 				}else{
 					selector.trigger( 'click.navbar' );
 				}				
