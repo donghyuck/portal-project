@@ -145,8 +145,8 @@
 				</figure>		
 				<div style="position:fixed; top:10px; left: 10px; padding:5px;">
 					<div class="btn-group">
-					  <a  href="\\#" class="btn btn-link"><i class="fa fa-angle-left fa-4x"></i></a>
-					  <a href="\\#" class="btn btn-link"><i class="fa fa-angle-right fa-4x"></i></a>
+					  <a  href="\\#" class="btn btn-link previous" data-bind="visible: previous"><i class="fa fa-angle-left fa-4x"></i></a>
+					  <a href="\\#" class="btn btn-link next" data-bind="visible: next"><i class="fa fa-angle-right fa-4x"></i></a>
 					</div>				
 					<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-info active">
