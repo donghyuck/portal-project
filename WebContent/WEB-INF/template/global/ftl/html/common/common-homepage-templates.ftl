@@ -610,6 +610,7 @@
 		</li>	
 </script>
 
+
 <!--  Top Nav Account Status Template -->
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdown navbar-btn">
@@ -624,7 +625,7 @@
 		<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 			<span class="caret"></span>
 			<span class="sr-only">Toggle Dropdown</span>
-		</button>  
+		</button>
 		<ul class="dropdown-menu">
 			# if ( !anonymous ) { # 
 			<li>
@@ -694,7 +695,7 @@
 			</li>
 			<li class="divider"></li>
 			<li>
-				<div class="container bg-white" id="login-panel"style="width:100%;">													
+				<div class="container bg-white" id="login-navbar" style="width:100%;">													
 					<div class="row blank-top-5 ">
 						<div class="col-lg-12">
 							<form role="form" name="login-form" method="POST" accept-charset="utf-8">

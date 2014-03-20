@@ -102,8 +102,8 @@
 					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
 					template : kendo.template($("#account-template").html()),
 					</#if>
-					afterAuthenticate : function(){							
-						var validator = $("#login-navbar").kendoValidator({validateOnBlur:false}).data("kendoValidator");
+					afterAuthenticate : function(){													
+						var validator = $("#login-navbar").kendoValidator({validateOnBlur:false}).data("kendoValidator");						
 						$("#login-btn").click( function() { 
 							$("#login-status").html("");
 							if( validator.validate() )
@@ -162,8 +162,7 @@
 				// END SCRIPT 
 			}
 		}]);	
-		
-		
+				
 		function createSocialGrid(){			
 			if( !$("#my-social-streams-grid" ).data('kendoGrid') ){ 											
 				$("#my-social-streams-grid").kendoGrid({
