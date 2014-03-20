@@ -192,8 +192,7 @@
 		});
 	};
 	
-	common.api.handleNavbarActions = function ( selector, options ){
-		
+	common.api.handleNavbarActions = function ( selector, options ){		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
 			 options.custom = false;			
