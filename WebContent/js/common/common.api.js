@@ -201,19 +201,11 @@
 		
 		selector.find('.navbar-nav  .btn-link, navbar-nav btn.navbar-btn').each(function( index ){
 			var navbar_btn_link = $(this);			
-			var navbar_btn_link_icon = navbar_btn_link.children('i');		
+			
 			if( isFunction( options.onClick ) ){
 				navbar_btn_link.click( options.onClick );
 			}
-			
-/*			navbar_btn_link.click( function (e) {		
-				if( isFunction( options.onClick ) ){	
-					options.onClick(e);					
-				}
-			});	*/		
-		});		
-		//, .navbar-nav .btn-group.navbar-btn , navbar-nav btn.navbar-btn' );
-		
+		});			
 	}
 	
 	common.api.pager = function (item, current_index, total_index, current_page, total_page) {		
