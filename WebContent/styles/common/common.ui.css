@@ -52,7 +52,7 @@ figure.img-full-width img {
 			color : #f8f8f8;	
 		}
 		
-		.overlay.color9 > a.btn-link:hover, .overlay.color9 >  a.btn-link:focus {	
+		.overlay.color9 > a:hover, .overlay.color9 >  a:focus {	
 			color : red;
 			background-color: rgba( 91, 192, 222, 0.7 );
 		}
