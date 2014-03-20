@@ -782,7 +782,9 @@
 			{
 				streamsProvider.dataSource.read();
 			}	
-
+	alert(
+	renderToString
+	);
 			$("#" + renderToString ).find('figure figcaption .btn').on('click' , function(){
 			
 				alert( $(this).html() );
