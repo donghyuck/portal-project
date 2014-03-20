@@ -85,8 +85,7 @@
 					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	
 					authenticate : function( e ){
 						currentUser = e.token;
-						if(!currentUser.anonymous){
-							
+						if(!currentUser.anonymous){							
 							alert("11");
 							//$('body nav').first().addClass('hide');
 							$('#account-navbar').append(
@@ -97,6 +96,9 @@
 							});						
 						
 						}
+					},
+					shown : function(e){
+						alert("12");
 					},
 					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
 					template : kendo.template($("#account-template").html()),
