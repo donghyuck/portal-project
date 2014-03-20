@@ -783,7 +783,7 @@
 				streamsProvider.dataSource.read();
 			}	
 	alert(
-	renderToString
+	renderToString + "/" + $("#" + renderToString ).find('figure figcaption .btn').length 
 	);
 			$("#" + renderToString ).find('figure figcaption .btn').on('click' , function(){
 			
