@@ -151,9 +151,6 @@
 					<section>					
 					<img data-bind="attr:{src: photoUrl}" class="img-responsive" />		
 				</figure>			
-
-
-												
 			</div>							
 		</div>				
 	</div>		
