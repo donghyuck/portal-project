@@ -33,7 +33,7 @@ height:50px;
 
 figure.img-full-width {
 	width: 100%;
-	min-height: 600px;
+	height: 100%;
 	margin-bottom: 0;
 }
 
