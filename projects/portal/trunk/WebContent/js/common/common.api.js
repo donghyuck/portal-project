@@ -191,6 +191,19 @@
 			} );
 		});
 	};
+
+	common.api.handleButtonActions = function ( selector, options ){		
+		options = options || {};		
+		if( options.custom === UNDEFINED )
+			 options.custom = false;			
+		if ( typeof selector === 'string' )
+			selector = $(selector);		
+		if ( typeof options.handlers === UNDEFINED )
+			options.handlers = [];		
+		$.each(options.handlers, function(index, data){
+			selector.find(data.selector).on(data.event, data.handler);
+		});		
+	}
 	
 	common.api.handleNavbarActions = function ( selector, options ){		
 		options = options || {};		
