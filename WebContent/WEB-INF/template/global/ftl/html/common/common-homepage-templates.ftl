@@ -145,16 +145,15 @@
 					<div class="btn-group text-primary">
 					  <button type="button" class="btn btn-link"><i class="fa fa-angle-left fa-4x"></i></button>
 					  <button type="button" class="btn btn-link"><i class="fa fa-angle-right fa-4x"></i></button>
-					</div>
-				
-					<div class="btn-group navbar-btn" data-toggle="buttons">
-							<label class="btn btn-info active">
+					</div>				
+					<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary active">
 						 		<input type="radio" name="lightning-box-photo-scale"  value="0"><i class="fa fa-expand"></i></i>
 							</label>
-							<label class="btn btn-info">
+							<label class="btn btn-primary">
 						 		<input type="radio" name="lightning-box-photo-scale"  value="1"><i class="fa fa-arrows-h"></i></i>
 							</label>
-							<label class="btn btn-info">
+							<label class="btn btn-primary">
 								<input type="radio" name="lightning-box-photo-scale"  value="2"> <i class="fa fa-arrows-v"></i>
 							</label>
 					</div>	
