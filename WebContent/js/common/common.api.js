@@ -201,7 +201,7 @@
 		if ( typeof options.handlers === UNDEFINED )
 			options.handlers = [];
 		
-		$.each(options.handlers, function(index, data)){
+		$.each(options.handlers, function(index, data){
 			selector.find(data.selector).on(data.event, handler);
 		});
 		
