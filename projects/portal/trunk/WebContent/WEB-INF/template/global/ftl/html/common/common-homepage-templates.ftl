@@ -131,7 +131,8 @@
 				<nav class="navbar navbar-default navbar-static-top" role="navigation">
 					<div class="container">
 						<ul class="nav navbar-nav navbar-left">
-							<li>
+							<p class="navbar-text hidden-xs">&nbsp;</p>	
+							<li class="navbar-btn hidden-xs">
 								<div class="btn-group navbar-btn" data-toggle="buttons">
 									<label class="btn btn-default active">
 								 		<input type="radio" name="lightingbox-scale"  value="0"><i class="fa fa-arrows-h"></i>
