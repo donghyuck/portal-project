@@ -41,11 +41,25 @@
 						custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
 						custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
 					});
-				});			
+				});
 				
 				common.api.handleNavbarActions( $('.personalized-navbar'), {
-					onClick : function (e) {
-												
+					handlers : [
+						{ selector: "input[name='personalized-area-col-size']",
+						  event : 'change',
+						  handler : function(){
+							var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
+							grid_col_size.oldValue = grid_col_size.newValue;
+							grid_col_size.newValue = this.value;			
+							$(".custom-panels-group").each(function( index ) {
+								var custom_panels_group = $(this);				
+								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
+								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
+							});
+						  }	
+						}
+					],
+					onClick : function (e) {												
 						if( $(this).hasClass('custom-nabvar-hide')){
 						
 						}else if ($(this).hasClass('custom-nabvar-up')){ 
@@ -62,8 +76,7 @@
 							});	
 						}
 					}
-				});
-				
+				});				
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
 					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
