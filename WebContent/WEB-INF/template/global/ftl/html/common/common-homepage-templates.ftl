@@ -139,7 +139,7 @@
 				</nav>								
 				<button type="button" class="overlay-close">Close</button>
 				<figure class="img-full-width">
-
+					<section>
 						<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info active">
 						 		<input type="radio" name="lightning-box-photo-scale"  value="0"><i class="fa fa-arrows-h"></i></i>
@@ -148,7 +148,7 @@
 								<input type="radio" name="lightning-box-photo-scale"  value="1"> <i class="fa fa-arrows-v"></i>
 							</label>
 						</div>	
-										
+					<section>					
 					<img data-bind="attr:{src: photoUrl}" />		
 				</figure>			
 
