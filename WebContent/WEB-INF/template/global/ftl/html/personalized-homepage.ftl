@@ -88,7 +88,7 @@
 						if(!currentUser.anonymous){
 							
 							alert("11");
-							$('body nav').first().addClass('hide');
+							//$('body nav').first().addClass('hide');
 							$('#account-navbar').append(
 								'<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><i class="fa fa-times fa-lg"></i></a></li>'
 							);	
