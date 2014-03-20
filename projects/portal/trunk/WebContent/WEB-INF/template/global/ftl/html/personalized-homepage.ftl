@@ -86,10 +86,7 @@
 					authenticate : function( e ){
 						currentUser = e.token;
 						if(!currentUser.anonymous){							
-							alert("11");
-							//$('body nav').first().addClass('hide');
-					
-						
+							$('body nav').first().addClass('hide');
 						}
 					},
 					shown : function(e){
