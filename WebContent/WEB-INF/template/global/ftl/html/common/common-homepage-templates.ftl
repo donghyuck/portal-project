@@ -138,7 +138,7 @@
 				</nav>								
 				<button type="button" class="overlay-close">Close</button>
 				<figure class="img-full-width">
-					<img data-bind="attr:{src: photoUrl}" class="img-responsive" />		
+					<img data-bind="attr:{src: photoUrl}" />		
 				</figure>					
 			</div>							
 		</div>				
