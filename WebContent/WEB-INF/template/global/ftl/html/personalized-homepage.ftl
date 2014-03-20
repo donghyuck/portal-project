@@ -329,6 +329,9 @@
 			}		
 		}
 		
+		<!-- ============================== -->
+		<!-- create my photo grid									-->
+		<!-- ============================== -->						
 		function createPhotoListView(){
 			if( !$('#photo-list-view').data('kendoListView') ){
 				$("#photo-list-view").kendoListView({
@@ -959,8 +962,6 @@
 								}
 							});		
 						}
-						//$('#photo-prop-grid').data("kendoGrid").dataSource.read();
-						
 						// start open event handler 
 					})													
 				);	
