@@ -131,8 +131,16 @@
 				<nav class="navbar navbar-default navbar-static-top" role="navigation">
 					<div class="container">
 						<ul class="nav navbar-nav navbar-left">
-							<li><a href="\\#" class="btn-link"><i class="fa fa-compress fa-2x"></i></a></li>
-							<li><a href="\\#" class="btn-link"><i class="fa fa-expand fa-2x"></i></a></li>
+							<li>
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info active">
+								 		<input type="radio" name="lightingbox-scale"  value="0"><i class="fa fa-arrows-h"></i>
+									</label>
+									<label class="btn btn-info">
+										<input type="radio" name="lightingbox-scale"  value="1"> <i class="fa fa-arrows-v"></i>
+									</label>
+								</div>												
+							</li>
 							<li class="previous" data-bind="visible: previous"><a href="\\#" class="btn-link"><i class="fa fa-angle-left fa-2x"></i></a></li>
 							<li class="next" data-bind="visible: next"><a href="\\#" class="btn-link"><i class="fa fa-angle-right fa-2x"></i></a></li>								
 						</ul>
