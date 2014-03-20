@@ -86,6 +86,7 @@
 					authenticate : function( e ){
 						currentUser = e.token;
 						if(!currentUser.anonymous){
+						
 							$('body nav').first().addClass('hide');
 							$('#account-navbar').append(
 								'<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><i class="fa fa-times fa-lg"></i></a></li>'
@@ -93,6 +94,7 @@
 							$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
 								$('body nav').first().addClass('hide');
 							});						
+						
 						}
 					},
 					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
