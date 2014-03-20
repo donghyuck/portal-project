@@ -491,6 +491,7 @@
 	PHOTO_URL = "/accounts/view-image.do?width=100&height=150",
 	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( connectorHostname ) == 'string'  ) { #http://#= connectorHostname ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"),
 	ERROR = "error",
+	SHOWN = "shown",
 	UPDATE = "update",
 	SYSTEM_ROLE = "ROLE_ADMIN",
     NS = ".kendoAccounts",
@@ -520,7 +521,8 @@
 		events : [
 			AUTHENTICATE,
 			ERROR,
-			UPDATE
+			UPDATE,
+			SHOWN
 		],
         authenticate: function(){
         	var that = this ;
@@ -535,8 +537,7 @@
     				that.trigger( AUTHENTICATE, {token: user}); 
     				if(that.options.visible){
     					that.render();
-    				}
-    				
+    				}    				
 					if( that.token.anonymous ){
 						$(that.element).find(".custom-external-login-groups button").each(function( index ) {
 								var external_login_button = $(this);
@@ -549,9 +550,7 @@
 									'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
 								});								
 						});	
-					}	
-					    				
-    				    				
+					}    				    				
     				if( isFunction(that.options.afterAuthenticate) ){    					   					
     					that.options.afterAuthenticate();
     				}
@@ -605,6 +604,8 @@
 	                e.stopPropagation();
 	            });
         	}
+        	
+        	that.trigger(SHOWN); 
         },
         toggle : function(target) {        	
         	var dropdown = $('#' + target.data('dropdown'));	        	
