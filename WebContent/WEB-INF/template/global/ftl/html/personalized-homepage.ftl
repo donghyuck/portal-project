@@ -32,6 +32,7 @@
 																																									
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
 								
+				/*				
 				$("input[name='personalized-area-col-size']").on("change", function () {					
 					var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
 					grid_col_size.oldValue = grid_col_size.newValue;
@@ -42,6 +43,7 @@
 						custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
 					});
 				});
+				*/
 				
 				common.api.handleNavbarActions( $('.personalized-navbar'), {
 					handlers : [
