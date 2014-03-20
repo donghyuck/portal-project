@@ -143,10 +143,10 @@
 				</figure>		
 				<div style="position:fixed; top:10px; left: 10px; padding:5px;">
 
-<div class="btn-group">
-  <button type="button" class="btn btn-link"><i class="fa fa-angle-left fa-2x"></i></button>
-  <button type="button" class="btn btn-link"><i class="fa fa-angle-right fa-2x"></i></button>
-</div>
+					<div class="btn-group">
+					  <button type="button" class="btn btn-link"><i class="fa fa-angle-left fa-3x"></i></button>
+					  <button type="button" class="btn btn-link"><i class="fa fa-angle-right fa-3x"></i></button>
+					</div>
 				
 					<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info active">
