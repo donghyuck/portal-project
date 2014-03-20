@@ -132,8 +132,8 @@
 					<div class="container">
 						<ul class="nav navbar-nav navbar-left">
 							<p class="navbar-text hidden-xs">&nbsp;</p>	
-							<li><a href="\\#" class="btn-link"><i class="fa fa-arrows-h fa-3x"></i></a></li>
-							<li><a href="\\#" class="btn-link"><i class="fa fa-arrows-v fa-3x"></i></a></li>
+							<li><a href="\\#" class="btn-link"><i class="fa fa-arrows-h fa-2x"></i></a></li>
+							<li><a href="\\#" class="btn-link"><i class="fa fa-arrows-v fa-2x"></i></a></li>
 							<p class="navbar-text hidden-xs">&nbsp;</p>
 							<li class="previous" data-bind="visible: previous"><a href="\\#" class="btn-link"><i class="fa fa-angle-left fa-3x"></i></a></li>
 							<li class="next" data-bind="visible: next"><a href="\\#" class="btn-link"><i class="fa fa-angle-right fa-3x"></i></a></li>								
