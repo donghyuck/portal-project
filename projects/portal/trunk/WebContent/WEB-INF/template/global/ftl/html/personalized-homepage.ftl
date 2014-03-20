@@ -768,23 +768,27 @@
 				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
 				var template = kendo.template($("#social-view-panel-template").html());														
 				$("#personalized-area").append( template( streamsPlaceHolder ) );						
-				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );									
-				
+				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );					
 				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
 					custom : true,
 					refresh : function(){
 						streamsProvider.dataSource.read();
 					}
 				} );
+				
+				streamsProvider.dataSource.bind('change', function(e){
+					alert(
+	renderToString + "/" + $("#" + renderToString ).find('figure figcaption .btn').length 
+	);
+				});
+				
 			} 
 			$("#" + renderToString ).parent().show();
 			if(streamsProvider.dataSource.total() == 0 )
 			{
 				streamsProvider.dataSource.read();
 			}	
-	alert(
-	renderToString + "/" + $("#" + renderToString ).find('figure figcaption .btn').length 
-	);
+
 			$("#" + renderToString ).find('figure figcaption .btn').on('click' , function(){
 			
 				alert( $(this).html() );
