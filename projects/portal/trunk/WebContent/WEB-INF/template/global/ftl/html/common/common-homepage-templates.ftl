@@ -597,8 +597,13 @@
 					# var post_photo_url = post_photo.sizes[0].url ; #	
 					
 					#if (photos.length == 1) {#
-					<div class="col-xs-12 col-lg-12">		
-						<img src="#: post_photo_url  #" alt="media" class="img-responsive">				
+					<div class="col-xs-12 col-lg-12">	
+						<figure>	
+						<img src="#: post_photo_url  #" alt="media" class="img-responsive">
+							<figcaption class="border-buttom-rounded">
+							hello
+							</figcaption>		
+						</figure>		
 					</div>			
 					#} else { #
 					<div class="col-xs-12 col-lg-4 image-grid">	
@@ -613,7 +618,6 @@
 			</div>
 		</li>	
 </script>
-
 <!-- ============================== -->
 <!-- Top Nav Account Status Template               -->
 <!-- ============================== -->
