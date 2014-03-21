@@ -1082,8 +1082,7 @@
 			var current_index = $("#photo-list-view").data("photoPlaceHolder").index;
 			var total_index = listView.dataSource.view().length -1 ;
 			var current_page = list_view_pager.page();		
-			var total_page = list_view_pager.totalPages();		
-			alert( current_index + "/"  + total_index  + ", " + current_page + "/" + total_page );		
+			var total_page = list_view_pager.totalPages();	
 			if( current_index == 0 && current_page > 1 ){
 				listView.one('dataBound', function(){
 					if( $("#photo_overlay.open").length  > 0 ){
