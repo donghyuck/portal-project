@@ -780,7 +780,7 @@
 				} );				
 								
 				streamsProvider.dataSource.bind('change', function(e){
-				alert(this.total());
+				alert(this.data().length);
 					//$("#" + renderToString).find("> .panel-body:first input[name='options-scrollable']:last").select();
 				
 					/**$("#" + renderToString ).find('figure figcaption .btn').click( function(e){
