@@ -1012,23 +1012,36 @@
 					} 
 				});				
 												
-				var overlay  = $("#" + renderToString ).find('.overlay').extOverlay();								
+				var overlay  = $("#" + renderToString ).find('.overlay').extOverlay();		
+				/*						
 				$("#" + renderToString ).data("extPanel").body().find('figure img').click( function(e){
 					overlay.toggleOverlay();
-				});		
-								
-
-				// start define over nav events
-				$('#photo-panel-0 .overlay a.btn')
-				
+				});										
+*/
+				// start define over nav events				
 				common.api.handleButtonActions( $("#" + renderToString ), {
 					handlers : [
+						{selector: ".panel-body:last >figure", event : 'click', handler : function(e){
+							e.preventDefault();
+							overlay.toggleOverlay();
+						}}						
 						{selector: '.overlay  a.btn', event : 'click', handler : function(e){
-							alert( $(this).html() );
-						}}
+							e.preventDefault();
+							var _command = $(this);
+							if( _command.hasClass('custom-previous') ){
+								previousPhoto();
+							}else if ( _command.hasClass('custom-next') ) {
+								nextPhoto();
+							}
+						}},
+						{selector: ".overlay  input[name='lightning-box-photo-scale']", event : 'change', handler : function(e){
+							e.preventDefault();
+							var newValue = ( this.value == 0 ) ;
+							alert( newValue );
+						}}						
 					]
 				});
-				
+				/**
 				$("#" + renderToString ).find('.overlay nav li').each(function( index ) { 
 					var command = $(this);
 					if( command.hasClass('previous') ){
@@ -1054,7 +1067,8 @@
 						});
 					}		
 				});	 					 
-
+				*/
+				
 			}else{
 				$("#" + renderToString ).data("extPanel").data(photoPlaceHolder);
 				kendo.bind($("#" + renderToString ).data("extPanel").body(), $("#" + renderToString ).data("extPanel").data());
