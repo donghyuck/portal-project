@@ -1019,6 +1019,16 @@
 								
 
 				// start define over nav events
+				$('#photo-panel-0 .overlay a.btn')
+				
+				common.api.handleButtonActions( $("#" + renderToString ), {
+					handlers : [
+						{selector: '.overlay  a.btn', event : 'click', handler : function(e){
+							alert( $(this).html() );
+						}}
+					]
+				});
+				
 				$("#" + renderToString ).find('.overlay nav li').each(function( index ) { 
 					var command = $(this);
 					if( command.hasClass('previous') ){
