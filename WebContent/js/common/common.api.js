@@ -113,11 +113,11 @@
 	};
 	
 	
-	common.api.getBooleanProperty = function( props, name, defaultValue ){
-		if( props.get(name) === UNDEFINED )
+	common.api.property = function( properties, name, defaultValue ){
+		if( properties[name] === UNDEFINED )
 			return defaultValue;
 		else 
-			props.get(name);		
+			properties[name]
 	}
 
 	common.api.guid = function()
