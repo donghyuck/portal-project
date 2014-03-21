@@ -1039,16 +1039,19 @@
 							var newValue = this.value ;
 							var _img = $("#" + renderToString ).find(".panel-body:last figure.img-full-width img");
 							if( newValue == 0 ){
-
+								if( _img.hasClass('img-full-height') )
+									_img.removeClass('img-full-height'); 		
+								if( _img.hasClass('img-full-width') )
+									_img.removeClass('img-full-width'); 										
 							}else if ( newValue == 1 ) {
-								if( _img.hasClass('full-height') )
-									_img.removeClass('full-height'); 								
-								_img.addClass('full-width');
+								if( _img.hasClass('img-full-height') )
+									_img.removeClass('img-full-height'); 								
+								_img.addClass('img-full-width');
 								
 							}else if ( newValue == 2 ){
-								if( _img.hasClass('full-width') )
-									_img.removeClass('full-width'); 									
-								_img.addClass('full-height');
+								if( _img.hasClass('img-full-width') )
+									_img.removeClass('img-full-width'); 									
+								_img.addClass('img-full-height');
 							}
 						}}						
 					]
