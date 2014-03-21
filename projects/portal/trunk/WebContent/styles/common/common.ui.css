@@ -119,6 +119,7 @@ button.btn-img {
   color: #2a6496;
   text-decoration: underline;
   background-color: transparent;
+  opacity : .7;
 }
 .btn-img[disabled]:hover, fieldset[disabled] .img-link:hover, .btn-link[disabled]:focus, fieldset[disabled] .img-link:focus {
   color: #999;
