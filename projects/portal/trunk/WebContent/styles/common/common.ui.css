@@ -107,32 +107,26 @@ button.btn-img {
   cursor: pointer;
   border-radius: 0;
 }
-.btn-img,
-.btn-img:active,
-.btn-img[disabled],
-fieldset[disabled] .btn-img {
+.btn-img,.btn-img:active,.btn-img[disabled],fieldset[disabled] .btn-img {
   background-color: transparent;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
-.btn-img,
-.btn-img:hover,
-.btn-img:focus,
-.btn-img:active {
+.btn-img,.btn-img:hover,.btn-img:focus,.btn-img:active {
   border-color: transparent;
 }
-.btn-img:hover,
-.btn-img:focus {
+.btn-img:hover, .btn-img:focus {
   color: #2a6496;
   text-decoration: underline;
   background-color: transparent;
 }
-.btn-img[disabled]:hover,
-fieldset[disabled] .img-link:hover,
-.btn-link[disabled]:focus,
-fieldset[disabled] .img-link:focus {
+.btn-img[disabled]:hover, fieldset[disabled] .img-link:hover, .btn-link[disabled]:focus, fieldset[disabled] .img-link:focus {
   color: #999;
   text-decoration: none;
+}
+
+.nav>li>a.btn-img {
+	padding: 10px 15px;
 }
 
 .nav .open > a.btn ,
