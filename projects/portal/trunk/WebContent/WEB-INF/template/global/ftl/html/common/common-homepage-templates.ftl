@@ -84,7 +84,7 @@
 <script type="text/x-kendo-template" id="photo-panel-template">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<i class="fa fa-cloud"></i>&nbsp;사진
+			<i class="fa fa-picture-o"></i>&nbsp;사진
 			<div class="k-window-actions panel-header-actions">
 				<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a>
 				<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
@@ -514,7 +514,7 @@
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="social-view-panel-template">
 	<div class="custom-panels-group" style="display:none;"> 
-		<div id="#: serviceProviderName #-panel-#:socialAccountId#" class="panel panel-info">
+		<div id="#: serviceProviderName #-panel-#:socialAccountId#" class="panel panel-default">
 			<div class="panel-heading">
 				<i class="fa fa-#: serviceProviderName # fa-fw"></i>&nbsp;&nbsp;#: serviceProviderName # &nbsp; 소식
 				<div class="k-window-actions panel-header-actions">
