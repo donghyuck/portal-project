@@ -70,16 +70,17 @@ img.img-full-height {
 		}
 **/		
 /* Bootstrap customize --------------------- */
+a.btn-link img {
+	opacity: .6;
+	max-height: 100%;
+}
 
-
+/**
 .btn-img {
   float: left;
   font-size: 21px;
   font-weight: bold;
   line-height: 1;
-  /*
-  color: #000;
-  text-shadow: 0 1px 0 #fff;*/
   filter: alpha(opacity=60);
   opacity: .6;
 }
@@ -99,7 +100,7 @@ button.btn-img {
   background: transparent;
   border: 0;
 }
-
+**/
 .nav .open > a.btn ,
 .nav .open > a.btn:hover,
 .nav .open > a.btn:focus {
