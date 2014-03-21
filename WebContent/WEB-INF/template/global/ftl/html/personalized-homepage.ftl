@@ -780,6 +780,9 @@
 				} );				
 								
 				streamsProvider.dataSource.bind('change', function(e){
+				
+				alert( common.api.getBooleanProperty( streamsPlaceHolder.properties, "options.scrollable", false ) ) ;
+				
 				alert(this.data().length);
 					//$("#" + renderToString).find("> .panel-body:first input[name='options-scrollable']:last").select();
 				
