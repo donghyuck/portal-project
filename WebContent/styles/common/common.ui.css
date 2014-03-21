@@ -48,6 +48,17 @@ figure.img-full-width img {
 	transform: translateX(-50%);	
 }
 
+figure.img-full-width img.full-width {
+	min-width: none;
+	max-width: 100%;
+}
+
+figure.img-full-width img.full-height {
+	min-width: none;
+	max-width: none;
+	max-height: 100%;
+}
+
 /**
 
 		.overlay.color9 a.btn-link, .overlay.color9 button.btn-link {
