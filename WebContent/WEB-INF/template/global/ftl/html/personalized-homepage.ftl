@@ -1024,7 +1024,7 @@
 						{selector: ".panel-body:last >figure", event : 'click', handler : function(e){
 							e.preventDefault();
 							overlay.toggleOverlay();
-						}}						
+						}},						
 						{selector: '.overlay  a.btn', event : 'click', handler : function(e){
 							e.preventDefault();
 							var _command = $(this);
