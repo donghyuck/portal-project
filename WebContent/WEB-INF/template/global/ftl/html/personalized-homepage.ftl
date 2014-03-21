@@ -784,6 +784,49 @@
 						alert( $(this).html() );
 					});
 				});
+
+				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
+							$('#photo-prop-grid').kendoGrid({
+								dataSource : {		
+									transport: { 
+										read: { url:'/community/get-my-image-property.do?output=json', type:'post' },
+										create: { url:'/community/update-my-image-property.do?output=json', type:'post' },
+										update: { url:'/community/update-my-image-property.do?output=json', type:'post'  },
+										destroy: { url:'/community/delete-my-image-property.do?output=json', type:'post' },
+								 		parameterMap: function (options, operation){			
+									 		if (operation !== "read" && options.models) {
+									 			return { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId, items: kendo.stringify(options.models)};
+											} 
+											return { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId }
+										}
+									},						
+									batch: true, 
+									schema: {
+										data: "targetImageProperty",
+										model: Property
+									},
+									error:handleKendoAjaxError
+								},
+								columns: [
+									{ title: "속성", field: "name" },
+									{ title: "값",   field: "value" },
+									{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+								],
+								pageable: false,
+								resizable: true,
+								editable : true,
+								scrollable: true,
+								height: 180,
+								toolbar: [
+									{ name: "create", text: "추가" },
+									{ name: "save", text: "저장" },
+									{ name: "cancel", text: "취소" }
+								],				     
+								change: function(e) {
+								}
+							});		
+											
+				
 				
 			} 
 			$("#" + renderToString ).parent().show();
