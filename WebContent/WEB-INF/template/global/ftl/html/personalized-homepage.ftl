@@ -783,7 +783,7 @@
 					if(this.data().length > 1 ){					
 						alert(  !common.api.property($("#my-social-streams-grid").data("streamsPlaceHolder").properties, "options.scrollable", true ) );
 						if( !common.api.property($("#my-social-streams-grid").data("streamsPlaceHolder").properties, "options.scrollable", true ) ){
-							$("#" + renderToString).find("> .panel-body:first input[name='options-scrollable']:last").select();
+							$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").select();
 						}
 					}
 				});
