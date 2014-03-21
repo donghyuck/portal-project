@@ -418,6 +418,8 @@
 			});	
 		}	
 		
+		
+		
 		common.api.streams.dataSource = new kendo.data.DataSource({		
 			serverPaging: true,
 			pageSize: 15,
