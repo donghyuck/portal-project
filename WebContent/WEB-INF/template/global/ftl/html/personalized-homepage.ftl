@@ -1035,8 +1035,21 @@
 							}
 						}},
 						{selector: ".overlay  input[name='lightning-box-photo-scale']", event : 'change', handler : function(e){
-							e.preventDefault();							
-							alert( this.value );
+							e.preventDefault();		
+							var newValue = this.value ;
+							var _img = $("#" + renderToString ).find(".panel-body:last > figure img");
+							if( newValue == 0 ){
+
+							}else if ( newValue == 1 ) {
+								if( _img.hasClass('full-height') )
+									_img.removeClass('full-height'); 								
+								_img.addClass('full-width');
+								
+							}else if ( newValue == 2 ){
+								if( _img.hasClass('full-width') )
+									_img.removeClass('full-width'); 									
+								_img.addClass('full-height');
+							}
 						}}						
 					]
 				});
