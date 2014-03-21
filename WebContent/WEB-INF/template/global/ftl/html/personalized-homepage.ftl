@@ -1025,7 +1025,7 @@
 							e.preventDefault();
 							overlay.toggleOverlay();
 						}},						
-						{selector: '.overlay  a.btn', event : 'click', handler : function(e){
+						{selector: ".overlay  a.btn", event : 'click', handler : function(e){
 							e.preventDefault();
 							var _command = $(this);
 							if( _command.hasClass('custom-previous') ){
