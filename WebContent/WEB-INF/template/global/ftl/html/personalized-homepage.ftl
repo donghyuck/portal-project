@@ -1013,11 +1013,7 @@
 				});				
 												
 				var overlay  = $("#" + renderToString ).find('.overlay').extOverlay();		
-				/*						
-				$("#" + renderToString ).data("extPanel").body().find('figure img').click( function(e){
-					overlay.toggleOverlay();
-				});										
-*/
+			
 				// start define over nav events				
 				common.api.handleButtonActions( $("#" + renderToString ), {
 					handlers : [
@@ -1055,35 +1051,7 @@
 							}
 						}}						
 					]
-				});
-				/**
-				$("#" + renderToString ).find('.overlay nav li').each(function( index ) { 
-					var command = $(this);
-					if( command.hasClass('previous') ){
-						command.click(function (e) { 
-							e.preventDefault();								
-							previousPhoto();
-						});
-					}else if ( command.hasClass('next') ){ 
-						command.click(function (e) { 
-							e.preventDefault();
-							nextPhoto();
-						});
-					}else if ( command.hasClass('share') ){ 
-						command.click(function (e) { 
-							e.preventDefault();							
-							common.api.streams.details({
-								imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId,
-								success : function( data ){
-									alert('s' + data.photos.length );
-									kendo.stringify(data.targetImage);
-								}
-							});
-						});
-					}		
-				});	 					 
-				*/
-				
+				});				
 			}else{
 				$("#" + renderToString ).data("extPanel").data(photoPlaceHolder);
 				kendo.bind($("#" + renderToString ).data("extPanel").body(), $("#" + renderToString ).data("extPanel").data());
