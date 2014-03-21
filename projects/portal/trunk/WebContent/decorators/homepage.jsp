@@ -62,9 +62,7 @@
 		background-color: #333;
 		border-color: #222;
 	}
-	a.btn-link-img {
-	
-	}
+
 		
 </style>
 </head>
