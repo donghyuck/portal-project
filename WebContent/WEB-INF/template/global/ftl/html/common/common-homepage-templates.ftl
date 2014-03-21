@@ -541,7 +541,11 @@
 						</label>
 				</div>	
 				</p>
-
+				<div class="page-header text-primary">
+					<h5><i class="fa fa-circle"></i>&nbsp;<strong>속성</strong>&nbsp;<small>쇼셜 패널에 대한 속성입니다.</small></h5>
+				</div>
+				<div id="#: serviceProviderName #-panel-#:socialAccountId#-prop-grid"></div>			
+				
 			</div>
 			<div class="panel-body scrollable" style="max-height:500px;"> 
 				<ul class="media-list">
