@@ -773,12 +773,14 @@
 				var template = kendo.template($("#social-view-panel-template").html());														
 				$("#personalized-area").append( template( streamsPlaceHolder ) );						
 				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );					
+				
 				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
 					custom : true,
 					refresh : function(){
 						streamsProvider.dataSource.read();
 					}
 				} );				
+				
 				streamsProvider.dataSource.bind('change', function(e){
 					$("#" + renderToString ).find('figure figcaption .btn').click( function(e){
 						alert( $(this).html() );
@@ -824,8 +826,8 @@
 							],				     
 							change: function(e) {
 							}
-				});
-					
+					});
+				}	
 			} 
 			$("#" + renderToString ).parent().show();
 			if(streamsProvider.dataSource.total() == 0 )
