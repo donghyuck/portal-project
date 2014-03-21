@@ -704,9 +704,9 @@
 <!-- ============================== -->
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdownd">
-		<a href="\\#" class="btn btn-link dropdown-toggle btn-link-img" data-toggle="dropdown">
+		<a href="\\#" class="btn btn-img dropdown-toggle btn-link-img" data-toggle="dropdown">
 		#if (photoUrl != null && photoUrl != 'null' && photoUrl != '')  { #
-		<img src="#:photoUrl#"  height="34"   alt="#:name#" class=""/>
+		<img src="#:photoUrl#"  height="34"   alt="#:name#" />
 		# } else { # 
 		<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
 		# } #
