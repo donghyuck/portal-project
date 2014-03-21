@@ -712,8 +712,7 @@
 		# } #
 		<span class="caret"></span>
 		</a>
-	<div class="btn-group">		
-		
+			
 		<ul class="dropdown-menu">
 			# if ( !anonymous ) { # 
 			<li>
@@ -756,7 +755,7 @@
 							</div>
 						</li>
 					</ul>
-				</div>
+		
 			</li>
 			<li class="divider"></li>
 			<!--<li><a href="/community/view-myprofile.do?view=modal-dialog" data-toggle="modal" data-target="\\#myModal" ><i class="fa fa-user"></i> 프로필 보기</a></li>-->			
