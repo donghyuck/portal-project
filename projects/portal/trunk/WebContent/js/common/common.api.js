@@ -111,6 +111,14 @@
 			dataType : "json"
 		});	
 	};
+	
+	
+	common.api.getBooleanProperty( props, name, defaultValue ){
+		if( props.get(name) === UNDEFINED )
+			return defaultValue;
+		else 
+			props.get(name);		
+	}
 
 	common.api.guid = function()
 	{
@@ -126,22 +134,17 @@
 		return result
 	}
 	
-	common.api.handlePanelHeaderActions = function ( selector, options ){
-		
+	common.api.handlePanelHeaderActions = function ( selector, options ){		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
-			 options.custom = false;
-		
+			 options.custom = false;		
 		if ( typeof selector === 'string' )
-			selector = $(selector);
-		
+			selector = $(selector);		
 		if( options.custom ){
-			var custom_panel_body = selector.find(".panel-body:first");
-			
+			var custom_panel_body = selector.find(".panel-body:first");			
 			custom_panel_body.find("button.close").click(function(e){
 				custom_panel_body.addClass("hide");			
-			});
-			
+			});			
 			custom_panel_body.find("input[name='options-scrollable']").on("change", function () {
 				var last_panel_body = selector.children('.panel-body:last');
 				if(  this.value == 0 ){
@@ -152,8 +155,7 @@
 					last_panel_body.addClass('scrollable');
 				}		
 			});					
-		}
-		
+		}		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
 			var panel_header_action = $(this);						
 			panel_header_action.click( function (e) {										
