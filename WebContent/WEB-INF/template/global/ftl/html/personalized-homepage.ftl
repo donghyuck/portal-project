@@ -1037,7 +1037,7 @@
 						{selector: ".overlay  input[name='lightning-box-photo-scale']", event : 'change', handler : function(e){
 							e.preventDefault();		
 							var newValue = this.value ;
-							var _img = $("#" + renderToString ).find(".panel-body:last > figure img");
+							var _img = $("#" + renderToString ).find(".panel-body:last figure.img-full-width img");
 							if( newValue == 0 ){
 
 							}else if ( newValue == 1 ) {
