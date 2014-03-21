@@ -1037,7 +1037,7 @@
 						{selector: ".overlay  input[name='lightning-box-photo-scale']", event : 'change', handler : function(e){
 							e.preventDefault();
 							var newValue = ( this.value == 1 ) ;
-							alert( newValue );
+							alert( this.value );
 						}}						
 					]
 				});
