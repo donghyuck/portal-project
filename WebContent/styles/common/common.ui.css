@@ -48,14 +48,13 @@ figure.img-full-width img {
 	transform: translateX(-50%);	
 }
 
-figure.img-full-width img.full-width {
-	min-width: none;
+img.img-full-width {
+	height: auto;
 	max-width: 100%;
 }
 
-figure.img-full-width img.full-height {
-	min-width: none;
-	max-width: none;
+img.img-full-height {
+	width: auto;
 	max-height: 100%;
 }
 
