@@ -767,6 +767,7 @@
 			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;		
 			
 			if( $("#" + renderToString ).length == 0  ){						
+				
 				// create new panel 
 				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
 				var template = kendo.template($("#social-view-panel-template").html());														
@@ -777,8 +778,7 @@
 					refresh : function(){
 						streamsProvider.dataSource.read();
 					}
-				} );
-				
+				} );				
 				streamsProvider.dataSource.bind('change', function(e){
 					$("#" + renderToString ).find('figure figcaption .btn').click( function(e){
 						alert( $(this).html() );
@@ -789,20 +789,20 @@
 					$( "#" + renderToString + "-prop-grid").kendoGrid({
 						dataSource : {		
 							transport: { 
-								read: { url:'/community/get-my-image-property.do?output=json', type:'post' },
-								create: { url:'/community/update-my-image-property.do?output=json', type:'post' },
-								update: { url:'/community/update-my-image-property.do?output=json', type:'post'  },
-								destroy: { url:'/community/delete-my-image-property.do?output=json', type:'post' },
+								read: { url:'/community/get-my-socialnetwork-property.do?output=json', type:'post' },
+								create: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post' },
+								update: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post'  },
+								destroy: { url:'/community/delete-my-socialnetwork-property.do?output=json', type:'post' },
 						 		parameterMap: function (options, operation){			
 							 		if (operation !== "read" && options.models) {
-							 			return { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId, items: kendo.stringify(options.models)};
+							 			return { socialNetworkId: $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId, items: kendo.stringify(options.models)};
 									} 
-									return { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId }
+									return {socialNetworkId : $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId }
 									}
 								},						
 								batch: true, 
 								schema: {
-									data: "targetImageProperty",
+									data: "socialNetworkProperties",
 									model: Property
 								},
 								error:handleKendoAjaxError
