@@ -766,27 +766,28 @@
 			var streamsProvider = $("#my-social-streams-grid").data( streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ) ;
 			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;		
 			
-			if( $("#" + renderToString ).length == 0  ){						
-				
+			if( $("#" + renderToString ).length == 0  ){				
 				// create new panel 
 				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
 				var template = kendo.template($("#social-view-panel-template").html());														
 				$("#personalized-area").append( template( streamsPlaceHolder ) );						
-				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );					
-				
+				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );	
 				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
 					custom : true,
 					refresh : function(){
 						streamsProvider.dataSource.read();
 					}
 				} );				
-				
+								
 				streamsProvider.dataSource.bind('change', function(e){
-					$("#" + renderToString ).find('figure figcaption .btn').click( function(e){
+				alert(this.total());
+					//$("#" + renderToString).find("> .panel-body:first input[name='options-scrollable']:last").select();
+				
+					/**$("#" + renderToString ).find('figure figcaption .btn').click( function(e){
 						alert( $(this).html() );
-					});
+					});**/
 				});
-
+				
 				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
 					$( "#" + renderToString + "-prop-grid").kendoGrid({
 						dataSource : {		
