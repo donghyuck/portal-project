@@ -779,7 +779,7 @@
 					}
 				} );				
 								
-				streamsProvider.dataSource.bind('change', function(e){
+				streamsProvider.dataSource.once('change', function(e){
 					if(this.data().length > 1 ){					
 						if( !common.api.property($("#my-social-streams-grid").data("streamsPlaceHolder").properties, "options.scrollable", false ) ){
 							$("#" + renderToString).find("> .panel-body:first input[name='options-scrollable']:last").select();
