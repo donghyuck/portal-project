@@ -113,7 +113,7 @@
 	};
 	
 	
-	common.api.getBooleanProperty( props, name, defaultValue ){
+	common.api.getBooleanProperty = function( props, name, defaultValue ){
 		if( props.get(name) === UNDEFINED )
 			return defaultValue;
 		else 
