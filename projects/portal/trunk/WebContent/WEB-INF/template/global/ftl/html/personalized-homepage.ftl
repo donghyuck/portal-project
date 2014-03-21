@@ -986,8 +986,7 @@
 							});					
 						}
 					}					
-				});				
-								
+				});												
 				$("#update-photo-file").kendoUpload({
 					showFileList: false,
 					multiple: false,
@@ -1010,10 +1009,8 @@
 							displayPhotoPanel();
 						}
 					} 
-				});				
-												
-				var overlay  = $("#" + renderToString ).find('.overlay').extOverlay();		
-			
+				});																
+				var overlay  = $("#" + renderToString ).find('.overlay').extOverlay();					
 				// start define over nav events				
 				common.api.handleButtonActions( $("#" + renderToString ), {
 					handlers : [
@@ -1042,8 +1039,7 @@
 							}else if ( newValue == 1 ) {
 								if( _img.hasClass('img-full-height') )
 									_img.removeClass('img-full-height'); 								
-								_img.addClass('img-full-width');
-								
+								_img.addClass('img-full-width');								
 							}else if ( newValue == 2 ){
 								if( _img.hasClass('img-full-width') )
 									_img.removeClass('img-full-width'); 									
