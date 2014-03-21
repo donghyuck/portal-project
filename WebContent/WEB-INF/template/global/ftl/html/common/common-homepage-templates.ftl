@@ -704,11 +704,11 @@
 <!-- ============================== -->
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdownd">
-		<a href="\\#" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+		<a href="\\#" class="btn btn-link dropdown-toggle paddingless" data-toggle="dropdown">
 		#if (photoUrl != null && photoUrl != 'null' && photoUrl != '')  { #
 		<img src="#:photoUrl#"  height="34"   alt="#:name#" class="btn-img"/>
 		# } else { # 
-		<img src="${request.contextPath}/images/common/anonymous.png" height="34" class="btn-img"/>	
+		<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
 		# } #
 		<span class="caret"></span>
 		</a>
