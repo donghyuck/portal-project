@@ -595,7 +595,11 @@
 									alert("hello");
 								}
 							},
-							'viewHtml'
+							{	
+								name: "viewHtml", 
+								tooltip: "HTML 소스보기", 	
+								template: "<button type='button' class='btn btn-link'><i class='fa fa-code'></i></button>"
+							}
 						],
 						imageBrowser: {
 							messages: {
