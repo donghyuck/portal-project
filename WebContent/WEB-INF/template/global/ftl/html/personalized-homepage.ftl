@@ -590,7 +590,7 @@
 							{	
 								name: "insertImage", 
 								tooltip: "이미지 삽입", 	
-								template: "<button type='button' class='btn btn-link'><i class='fa fa-picture-o'></i></button>",							
+							/*	template: "<button type='button' class='btn btn-link'><i class='fa fa-picture-o'></i></button>",	*/						
 								exec: function(e){
 									alert("hello");
 								}
