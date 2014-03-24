@@ -931,9 +931,9 @@
 </script>		
 
 <!-- ============================== -->
-<!-- Top Nav Account Status Template               -->
+<!-- Image Broswer Template                            -->
 <!-- ============================== -->
-<script id="account-template" type="text/x-kendo-template">
+<script id="image-broswer-template" type="text/x-kendo-template">
 	<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>
 		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
