@@ -908,6 +908,18 @@
 				e.target // activated tab
 				e.relatedTarget // previous tab
 				alert( $( e.target ).html() ) ; 
+				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){
+					var selected_img =  $('#image-broswer-select-url').children('img');
+					
+					selected_img.attr('src', "");
+					
+					if( ! selected_img.hasClass('hide') )
+						selected_img.addClass('hide');								
+					if(selected_img.parent().hasClass('has-error') )
+						selected_img.parent().removeClass('has-error');		
+					if(selected_img.parent().hasClass('has-success') )
+						selected_img.parent().removeClass('has-success');							
+				}
 			});
 			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
