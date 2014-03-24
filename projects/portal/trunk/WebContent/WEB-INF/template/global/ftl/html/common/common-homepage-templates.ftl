@@ -946,18 +946,29 @@
 						<div class="col-sm-3">
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
-							  <li class="active"><a href="\\#" data-toggle="tab">업로드</a></li>
-							  <li><a href="\\#" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li><a href="\\#" data-toggle="tab">회사 이미지에서 선택</a></li>
-							  <li><a href="\\#" data-toggle="tab">URL에서 선택</a></li>
+							  <li class="active"><a href="\\#image-broswer-select-upload" data-toggle="tab">업로드</a></li>
+							  <li><a href="\\#image-broswer-select-my" data-toggle="tab">My 포토에서 선택</a></li>
+							  <li><a href="\\#image-broswer-select-company" data-toggle="tab">회사 이미지에서 선택</a></li>
+							  <li><a href="\\#image-broswer-select-url" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-9">
 							<!-- Tab panes -->
 							<div class="tab-content">
-							  <div class="tab-pane fade  active" id="home">...</div>
-							  <div class="tab-pane fade" id="messages">...</div>
-							  <div class="tab-pane fade" id="settings">...</div>
+							  <div class="tab-pane fade  active" id="image-broswer-select-upload">
+							  
+							  </div>
+							  <div class="tab-pane fade" id="image-broswer-select-my">
+							  
+							  </div>
+							  <div class="tab-pane fade" id="image-broswer-select-company">
+							  
+							  </div>
+							  <div class="tab-pane fade" id="image-broswer-select-url">
+								<div class="page-header text-primary">
+									<h5 ><i class="fa fa-share"></i>&nbsp;<strong>URL 이미지</strong>&nbsp;<small>입력한 URL 이미지를 삽입합니다.</small></h5>
+								</div>									  
+							  </div>
 							</div>
 						</div>
 					</div>
