@@ -590,7 +590,7 @@
 							{	
 								name: "insertImage", 
 								tooltip: "이미지 삽입", 	
-								template: "<button class='k-button'>Save draft</button>",							
+								template: "<button type='button' class='btn btn-primary'><i class='fa fa-picture-o'></i></button>",							
 								exec: function(e){
 									alert("hello");
 								}
