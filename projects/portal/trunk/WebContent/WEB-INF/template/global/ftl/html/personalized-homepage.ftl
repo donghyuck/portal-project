@@ -581,7 +581,7 @@
 			if(!renderTo.data("kendoEditor") ){				
 				renderTo.kendoEditor({
 						tools : [
-							{ bold : { name: 'bold', template: "<button type='button' class='btn btn-link'><i class='fa fa-bold'></i></button>" } },
+							{ name: 'bold'/*, template: "<button type='button' class='btn btn-link'><i class='fa fa-bold'></i></button>"*/ },
 							{ name: 'italic', template: "<button type='button' class='btn btn-link'><i class='fa fa-italic'></i></button>" },
 							'insertUnorderedList',
 							'insertOrderedList',
