@@ -844,6 +844,77 @@
 
 })(jQuery);
 
+
+/**
+ *  extImageBrowser widget
+ */
+(function($, undefined) {
+	var ui = window.ui = window.ui || {};
+    var kendo = window.kendo,
+    Widget = kendo.ui.Widget,
+    isPlainObject = $.isPlainObject,
+    proxy = $.proxy,
+    extend = $.extend,
+    placeholderSupported = kendo.support.placeholder,
+    browser = kendo.support.browser,
+    isFunction = kendo.isFunction,
+    trimSlashesRegExp = /(^\/|\/$)/g,
+    CHANGE = "change",
+    APPLY = "apply",
+    ERROR = "error",
+    CLICK = "click",
+	UNDEFINED = 'undefined',
+	POST = 'POST',
+	JSON = 'json',		
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;
+	
+	ui.extImageBrowser = Widget.extend({
+		init: function(element, options) {			
+			var that = this;		 
+			Widget.fn.init.call(that, element, options);			
+			options = that.options;							
+			
+			that.refresh();		
+		},
+		events: [ERROR, CHANGE, APPLY],
+		options : {
+			name: "extImageBrowser",
+			transport: {}
+		},
+		refresh: function () {
+			var that = this ;
+			that.element.append(that._dialogTemplate({}));
+		},
+		destroy: function() {
+			var that = this;
+			Widget.fn.destroy.call(that);
+			$(that.element).remove();
+		},
+		_dialogTemplate : function (){
+			return kendo.template( 
+				"<div class='modal fade'>" +	
+				"<div class='modal-dialog'>" +	
+				"<div class='modal-content'>" + 
+				"<div class='modal-header'>" +				
+				"</div>" + 
+				"<div class='modal-body'>" +				
+				"</div>" + 
+				"<div class='modal-footer'>" +				
+				"</div>" + 				
+				"</div><!-- /.modal-content -->" +
+				"</div><!-- /.modal-dialog -->" +
+				"</div><!-- /.modal -->"
+			);			
+		}
+	});
+	
+	$.fn.extend( { 
+		extImageBrowser : function ( options ) {
+			return new ui.extImageBrowser ( this , options );		
+		}
+	});	
+})(jQuery);
+
 function handleKendoAjaxError(xhr) {
 	var message = "";
 	if (xhr.status == 0) {
