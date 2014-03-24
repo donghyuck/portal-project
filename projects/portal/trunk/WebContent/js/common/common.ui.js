@@ -909,9 +909,8 @@
 				e.relatedTarget // previous tab
 				alert($( e.target ).attr('href'));
 				
-				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){				
-					var selected_img =  $('#image-broswer-select-url').children('img');					
-					selected_img.attr('src', "");										
+				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){								
+					that.element.find('.modal-body input[name="custom-selected-url"]').attr('src', "");										
 				}
 			});
 			
