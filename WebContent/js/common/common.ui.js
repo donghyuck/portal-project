@@ -888,21 +888,32 @@
 		},
 		refresh: function () {
 			var that = this ;
-			var guid = common.api.guid();
-			var template = that._dialogTemplate();			
-			that.element.html(template({				
-				id: guid
-			}));			
+			that._createDialog();
 		},
+		
 		destroy: function() {
 			var that = this;
 			Widget.fn.destroy.call(that);
 			$(that.element).remove();
 		},
-		_dialogTemplate : function (){
+		_createDialog : function () {
 			var that = this ;
+			var guid = common.api.guid();
+			var template = that._dialogTemplate();			
+			that.element.html(template({				
+				id: guid
+			}));					
+			
+			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
+				e.target // activated tab
+				e.relatedTarget // previous tab
+				
+			});
 			
 			
+		},
+		_dialogTemplate : function (){
+			var that = this ;			
 			if( typeof that.options.template === UNDEFINED){
 				return kendo.template( 
 						"<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>" +	
