@@ -905,7 +905,10 @@
 		_dialogTemplate : function (){
 			var that = this ;
 			if( typeof that.options.template == 'object'){
-				that.options.template ;				
+				that.options.template ;			
+			}
+			else if( typeof that.options.template == 'string'){
+				return kendo.template( that.options.template );
 			}else{			
 				return kendo.template( 
 					"<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>" +	
