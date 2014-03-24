@@ -918,8 +918,8 @@
 				var selected_url =$(this).val();			
 				var selected_img =  $('#image-broswer-select-url').children('img');					
 				if( selected_url == '' ){
-					if( selected_img.hasClass('hide') )
-						selected_img.removeClass('hide');								
+					if(! selected_img.hasClass('hide') )
+						selected_img.addClass('hide');								
 					if(selected_img.parent().hasClass('has-error') )
 						selected_img.parent().removeClass('has-error');		
 					if(selected_img.parent().hasClass('has-success') )
