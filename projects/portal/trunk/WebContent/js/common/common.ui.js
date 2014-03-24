@@ -902,7 +902,6 @@
 		_dialogTemplate : function (){
 			var that = this ;
 			
-			alert( typeof that.options.template );
 			
 			if( typeof that.options.template === UNDEFINED){
 				return kendo.template( 
