@@ -919,7 +919,7 @@
 				selected_img.attr('src', selected_url).load(function(){
 					selected_img.removeClass('hide');					
 				}).error(function(){
-					if( selected_img.remhasClass('hide') )
+					if( selected_img.hasClass('hide') )
 						selected_img.addClass('hide');		
 					alert("error");					
 				});
