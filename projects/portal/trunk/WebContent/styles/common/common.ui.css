@@ -40,7 +40,7 @@ figure.img-full-width {
 
 figure.img-full-width img {
 	display: block;
-	/*min-width: 100%;*/
+	min-width: 100%;
 	height: auto;
 	position: absolute;
 	left: 50%;
@@ -50,11 +50,13 @@ figure.img-full-width img {
 
 img.img-full-width {
 	height: auto;
+	min-width: auto;
 	max-width: 100%;
 }
 
 img.img-full-height {
 	width: auto;
+	min-width: auto;
 	max-height: 100%;
 }
 
