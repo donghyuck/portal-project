@@ -907,12 +907,10 @@
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
 				e.target // activated tab
 				e.relatedTarget // previous tab
-				alert( $( e.target ).html() ) ; 
-				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){
-					var selected_img =  $('#image-broswer-select-url').children('img');
-					
-					selected_img.attr('src', "");
-					
+				
+				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){				
+					var selected_img =  $('#image-broswer-select-url').children('img');					
+					selected_img.attr('src', "");					
 					if( ! selected_img.hasClass('hide') )
 						selected_img.addClass('hide');								
 					if(selected_img.parent().hasClass('has-error') )
