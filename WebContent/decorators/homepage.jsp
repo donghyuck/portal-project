@@ -72,13 +72,13 @@
 		background-color: #428bca;
 	}
 
-	.k-editor-toolbar .k-state-selected.k-state-hover {
-		background-color: #428bca;
+	.k-editor-toolbar .k-state-hover {
+		background-image: none, linear-gradient( to bottom, #428bca 0, #428bca 100%) ;
 	}	
 	
 	.k-editor-toolbar .k-state-selected {
 		background-color: #428bca;
-	}	
+	}
 	
 		
 </style>
