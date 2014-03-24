@@ -879,11 +879,15 @@
 		events: [ERROR, CHANGE, APPLY],
 		options : {
 			name: "extImageBrowser",
-			transport: {}
+			transport:{
+				
+			}
 		},
 		refresh: function () {
 			var that = this ;
-			that.element.append(that._dialogTemplate({}));
+			that.element.append(that._dialogTemplate({				
+			}));
+			
 		},
 		destroy: function() {
 			var that = this;
