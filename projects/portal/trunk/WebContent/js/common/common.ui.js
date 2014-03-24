@@ -891,8 +891,7 @@
 		refresh: function () {
 			var that = this ;
 			var guid = common.api.guid();
-			var template = that._dialogTemplate();
-			
+			var template = that._dialogTemplate();			
 			that.element.html(template({				
 				id: guid
 			}));			
@@ -904,10 +903,10 @@
 		},
 		_dialogTemplate : function (){
 			var that = this ;
-			if( typeof that.options.template == 'object'){
+			if( typeof that.options.template === 'object'){
 				that.options.template ;			
 			}
-			else if( typeof that.options.template == 'string'){
+			else if( typeof that.options.template === 'string'){
 				return kendo.template( that.options.template );
 			}else{			
 				return kendo.template( 
