@@ -589,8 +589,7 @@
 							'unlink',
 							{	
 								name: "insertImage", 
-								tooltip: "이미지 삽입", 	
-							/*	template: "<button type='button' class='btn btn-link'><i class='fa fa-picture-o'></i></button>",	*/						
+								tooltip: "이미지 삽입",
 								exec: function(e){
 									alert("hello");
 									return false;
@@ -598,7 +597,10 @@
 							},
 							{	
 								name: "viewHtml",
-								template: "<button type='button' class='btn btn-link'><i class='fa fa-code'></i></button>"
+								exec: function(e){
+									alert("hello");
+									return false;
+								}
 							}
 						],
 						imageBrowser: {
