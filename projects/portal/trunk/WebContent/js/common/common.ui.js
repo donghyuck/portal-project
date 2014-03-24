@@ -893,7 +893,7 @@
 			var guid = common.api.guid();
 			
 			that.element.html(that._dialogTemplate({				
-				id:guid
+				id: "fdsfasd"
 			}));			
 		},
 		destroy: function() {
