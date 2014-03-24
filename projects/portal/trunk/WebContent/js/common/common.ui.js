@@ -872,15 +872,13 @@
 		init: function(element, options) {			
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
-			options = that.options;							
-			
+			options = that.options;		
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, APPLY],
 		options : {
 			name: "extImageBrowser",
-			transport:{
-				
+			transport:{				
 			} 
 		},
 		show: function() {
