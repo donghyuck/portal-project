@@ -891,9 +891,10 @@
 		refresh: function () {
 			var that = this ;
 			var guid = common.api.guid();
+			var template = that._dialogTemplate();
 			
-			that.element.html(that._dialogTemplate({				
-				id: "fdsfasd"
+			that.element.html(template({				
+				id: guid
 			}));			
 		},
 		destroy: function() {
