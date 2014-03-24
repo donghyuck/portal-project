@@ -582,7 +582,7 @@
 				renderTo.kendoEditor({
 						tools : [
 							'bold',
-							'italic'
+							'italic',
 							'insertUnorderedList',
 							'insertOrderedList',
 							'createLink',
