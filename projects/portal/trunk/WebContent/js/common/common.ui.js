@@ -890,8 +890,10 @@
 		},
 		refresh: function () {
 			var that = this ;
+			var guid = common.api.guid();
+			
 			that.element.append(that._dialogTemplate({				
-				id:common.api.guid()
+				id:guid
 			}));			
 		},
 		destroy: function() {
