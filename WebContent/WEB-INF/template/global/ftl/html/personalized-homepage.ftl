@@ -593,6 +593,7 @@
 							/*	template: "<button type='button' class='btn btn-link'><i class='fa fa-picture-o'></i></button>",	*/						
 								exec: function(e){
 									alert("hello");
+									return false;
 								}
 							},
 							{	
