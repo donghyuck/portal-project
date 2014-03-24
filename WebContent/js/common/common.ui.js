@@ -881,7 +881,7 @@
 			name: "extImageBrowser",
 			transport:{
 				
-			}
+			} 
 		},
 		show: function() {
 			var that = this ;
@@ -903,22 +903,27 @@
 			$(that.element).remove();
 		},
 		_dialogTemplate : function (){
-			return kendo.template( 
-				"<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>" +	
-				"<div class='modal-dialog modal-lg'>" +	
-				"<div class='modal-content'>" + 
-				"<div class='modal-header'>" +				
-				"<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>" +
-				"<h5 class='modal-title' id=#: id #>이미지 삽입</h5>" + 
-				"</div>" + 
-				"<div class='modal-body'>" +				
-				"</div>" + 
-				"<div class='modal-footer'>" +				
-				"</div>" + 				
-				"</div><!-- /.modal-content -->" +
-				"</div><!-- /.modal-dialog -->" +
-				"</div><!-- /.modal -->"
-			);			
+			var that = this ;
+			if( typeof that.options.template == 'object'){
+				that.options.template ;				
+			}else{			
+				return kendo.template( 
+					"<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>" +	
+					"<div class='modal-dialog modal-lg'>" +	
+					"<div class='modal-content'>" + 
+					"<div class='modal-header'>" +				
+					"<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>" +
+					"<h5 class='modal-title' id=#: id #>이미지 삽입</h5>" + 
+					"</div>" + 
+					"<div class='modal-body'>" +				
+					"</div>" + 
+					"<div class='modal-footer'>" +				
+					"</div>" + 				
+					"</div><!-- /.modal-content -->" +
+					"</div><!-- /.modal-dialog -->" +
+					"</div><!-- /.modal -->"
+				);		
+			}
 		}
 	});
 	
