@@ -582,7 +582,7 @@
 			if(!renderTo.data("kendoEditor") ){				
 			
 				var imageBrowser = $('#image-broswer').extImageBrowser({
-				
+					template : $("#image-broswer-template").html(),
 				});
 				
 				renderTo.kendoEditor({
