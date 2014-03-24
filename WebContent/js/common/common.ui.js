@@ -910,6 +910,10 @@
 				alert( $( e.target ).html() ) ; 
 			});
 			
+			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {
+				alert( $(this).val() );
+			});
+
 			
 		},
 		_dialogTemplate : function (){
