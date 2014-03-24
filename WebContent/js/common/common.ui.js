@@ -886,6 +886,7 @@
 		refresh: function () {
 			var that = this ;
 			that.element.append(that._dialogTemplate({				
+		
 			}));
 			
 		},
