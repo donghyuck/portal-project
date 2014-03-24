@@ -885,7 +885,8 @@
 		},
 		show: function() {
 			var that = this ;
-			that.element.modal('show');
+			var modal = that.element.children('.modal');
+			modal.modal('show');
 		},
 		refresh: function () {
 			var that = this ;
