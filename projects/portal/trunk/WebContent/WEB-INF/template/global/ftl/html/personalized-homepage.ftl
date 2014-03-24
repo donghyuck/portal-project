@@ -583,41 +583,14 @@
 						tools : [
 							'bold',
 							'italic',
-							
-							/* 'underline', 
-							'strikethrough',
-							'justifyLeft',
-							'justifyCenter',
-							'justifyRight',
-							'justifyFull',
-							*/
 							'insertUnorderedList',
 							'insertOrderedList',
-							/* 
-							'indent',
-							
-							'outdent',*/
 							'createLink',
 							'unlink',
-							'insertImage',
-							/*
-							'subscript',
-							'superscript',
-							'createTable',
-							'addRowAbove',
-							'addRowBelow',
-							'addColumnLeft',
-							'addColumnRight',
-							'deleteRow',
-							'deleteColumn',
-							*/
+							{name: "insertImage", tooltip: "이미지 삽입", exec: function(e){
+								alert("hello");
+							}},
 							'viewHtml'
-							/*,
-							'formatting',
-							'fontName',
-							'fontSize',
-							'foreColor',
-							'backColor'*/
 						],
 						imageBrowser: {
 							messages: {
