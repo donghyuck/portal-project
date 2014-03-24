@@ -587,9 +587,14 @@
 							'insertOrderedList',
 							'createLink',
 							'unlink',
-							{name: "insertImage", tooltip: "이미지 삽입", exec: function(e){
-								alert("hello");
-							}},
+							{	
+								name: "insertImage", 
+								tooltip: "이미지 삽입", 	
+								template: "<button class='k-button'>Save draft</button>",							
+								exec: function(e){
+									alert("hello");
+								}
+							},
 							'viewHtml'
 						],
 						imageBrowser: {
