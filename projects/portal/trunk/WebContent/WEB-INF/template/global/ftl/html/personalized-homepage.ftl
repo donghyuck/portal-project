@@ -595,8 +595,7 @@
 								}
 							},
 							{	
-								name: "viewHtml",
-								template: "<button type='button' class='btn btn-link'><i class='fa fa-code'></i></button>"
+								name: "viewHtml"
 							}
 						],
 						imageBrowser: {
