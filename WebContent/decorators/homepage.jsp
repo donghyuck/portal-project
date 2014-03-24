@@ -68,9 +68,12 @@
 		color: #34AADC;
 	}
 
+	.k-editor-toolbar .k-tool:hover {
+		color: #428bca;
+	}
+	
 	.k-editor-toolbar .k-state-selected {
-		background-color: transparent;
-		color: #007AFF;
+		background-color: #428bca;
 	}	
 	
 		
