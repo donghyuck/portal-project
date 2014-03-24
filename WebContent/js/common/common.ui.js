@@ -891,7 +891,7 @@
 		refresh: function () {
 			var that = this ;
 			that.element.append(that._dialogTemplate({				
-				id : common.api.guid()
+				id:common.api.guid()
 			}));			
 		},
 		destroy: function() {
