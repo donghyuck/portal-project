@@ -947,8 +947,8 @@
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
 							  <li class="active"><a href="\\#" data-toggle="tab">업로드</a></li>
-							  <li><a href="\\#" data-toggle="tab">Profile</a></li>
-							  <li><a href="\\#" data-toggle="tab">Messages</a></li>
+							  <li><a href="\\#" data-toggle="tab">My 포토</a></li>
+							  <li><a href="\\#" data-toggle="tab">공용 이미지</a></li>
 							  <li><a href="\\#" data-toggle="tab">Settings</a></li>
 							</ul>
 						</div>
