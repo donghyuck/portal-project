@@ -379,12 +379,14 @@
 									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 								}).on("mouseleave", ".img-wrapper", function(e) {
 									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-							});											
+							});		
+																
 							$("#photo-list-pager").kendoPager({
 								refresh : true,
 								buttonCount : 5,
 								dataSource : $('#photo-list-view').data('kendoListView').dataSource
-							});								
+							});		
+													
 							$("#my-photo-stream .btn-group button").each(function( index ) { 
 								var control_button = $(this);								
 								var control_button_icon = control_button.find("i");				
@@ -424,7 +426,7 @@
 										$("#my-photo-stream .side2").toggleClass("hide");										
 									});								
 								}								
-							});
+				});
 			}
 		}
 		
@@ -1078,14 +1080,19 @@
 								if( _img.hasClass('img-full-height') )
 									_img.removeClass('img-full-height'); 		
 								if( _img.hasClass('img-full-width') )
-									_img.removeClass('img-full-width'); 										
+									_img.removeClass('img-full-width'); 			
+								_img.addClass('img-fit-screen-width'); 										
 							}else if ( newValue == 1 ) {
 								if( _img.hasClass('img-full-height') )
-									_img.removeClass('img-full-height'); 								
+									_img.removeClass('img-full-height'); 			
+								if( _img.hasClass('img-fit-screen-width') )
+									_img.removeClass('img-fit-screen-width'); 															
 								_img.addClass('img-full-width');								
 							}else if ( newValue == 2 ){
 								if( _img.hasClass('img-full-width') )
-									_img.removeClass('img-full-width'); 									
+									_img.removeClass('img-full-width'); 			
+								if( _img.hasClass('img-fit-screen-width') )
+									_img.removeClass('img-fit-screen-width'); 																
 								_img.addClass('img-full-height');
 							}
 						}}						
