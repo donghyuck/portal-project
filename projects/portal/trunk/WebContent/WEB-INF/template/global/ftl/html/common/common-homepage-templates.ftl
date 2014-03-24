@@ -947,9 +947,9 @@
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
 							  <li class="active"><a href="\\#" data-toggle="tab">업로드</a></li>
-							  <li><a href="\\#" data-toggle="tab">My 포토</a></li>
-							  <li><a href="\\#" data-toggle="tab">공용 이미지</a></li>
-							  <li><a href="\\#" data-toggle="tab">Settings</a></li>
+							  <li><a href="\\#" data-toggle="tab">My 포토에서 선택</a></li>
+							  <li><a href="\\#" data-toggle="tab">회사 이미지에서 선택</a></li>
+							  <li><a href="\\#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-9">
