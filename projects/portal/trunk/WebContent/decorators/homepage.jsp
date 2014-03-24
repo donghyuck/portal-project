@@ -72,7 +72,7 @@
 		background-color: #428bca;
 	}
 
-	.k-editor-toolbar .k-state-hover {
+	.k-editor-toolbar .k-state-selected.k-state-hover {
 		background-color: #428bca;
 	}	
 	
