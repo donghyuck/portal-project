@@ -596,7 +596,7 @@
 							{	
 								name: "insertImage",
 								exec: function(e){
-									alert("hello");
+									imageBrowser.show();
 									return false;
 								}
 							},
