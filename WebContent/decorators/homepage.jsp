@@ -63,6 +63,16 @@
 		border-color: #222;
 	}
 
+	.k-editor-toolbar .k-tool {
+		border : 0px;
+		color: #34AADC;
+	}
+
+	.k-editor-toolbar .k-state-selected {
+		background-color: transparent;
+		color: #007AFF;
+	}	
+	
 		
 </style>
 </head>
