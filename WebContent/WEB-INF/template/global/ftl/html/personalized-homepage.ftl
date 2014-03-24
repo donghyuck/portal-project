@@ -588,8 +588,7 @@
 							'createLink',
 							'unlink',
 							{	
-								name: "insertImage", 
-								tooltip: "이미지 삽입",
+								name: "insertImage",
 								exec: function(e){
 									alert("hello");
 									return false;
@@ -597,10 +596,7 @@
 							},
 							{	
 								name: "viewHtml",
-								exec: function(e){
-									alert("hello");
-									return false;
-								}
+								template: "<button type='button' class='btn btn-link'><i class='fa fa-code'></i></button>"
 							}
 						],
 						imageBrowser: {
