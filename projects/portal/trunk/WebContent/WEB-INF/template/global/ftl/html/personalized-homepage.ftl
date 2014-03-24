@@ -578,7 +578,13 @@
 		
 		/** Announce View Panel */		
 		function createEditor( renderTo ){			
+			
 			if(!renderTo.data("kendoEditor") ){				
+			
+				var imageBrowser = $('#image-broswer').extImageBrowser({
+				
+				});
+				
 				renderTo.kendoEditor({
 						tools : [
 							'bold',
@@ -1682,6 +1688,7 @@
 			</div>	
 		</section>
 		
+		<section id="image-broswer"></section>
 					
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
