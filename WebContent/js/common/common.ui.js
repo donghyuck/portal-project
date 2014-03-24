@@ -910,22 +910,22 @@
 				alert( $( e.target ).html() ) ; 
 			});
 			
-			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {
-				
-				var selected_url =$(this).val();
-				
-				var selected_img =  $('#image-broswer-select-url').children('img');
-				
+			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
+				var selected_url =$(this).val();				
+				var selected_img =  $('#image-broswer-select-url').children('img');				
 				selected_img.attr('src', selected_url).load(function(){
-					selected_img.removeClass('hide');					
-				}).error(function(){
+					if(selected_img.parent().hasClass('has-error') )
+						selected_img.parent().removeClass('has-error');					
+					selected_img.parent().addClass('has-success');
+					selected_img.removeClass('hide');				
+				}).error(function(){					
 					if( ! selected_img.hasClass('hide') )
-						selected_img.addClass('hide');		
-					alert("error");					
+						selected_img.addClass('hide');						
+					if(selected_img.parent().hasClass('has-success') )
+						selected_img.parent().removeClass('has-success');					
+					selected_img.parent().addClass('has-error');				
 				});
-			});
-
-			
+			});			
 		},
 		_dialogTemplate : function (){
 			var that = this ;			
