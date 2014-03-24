@@ -968,9 +968,11 @@
 								<div class="page-header text-primary">
 									<h5 ><strong>URL 이미지</strong>&nbsp;<small>입력한 URL 이미지를 삽입합니다.</small></h5>
 								</div>		
-								<p>						
-								<input type="url" name="custom-selected-url" class="form-control" placeholder="URL 입력">
-								</p>
+								
+								<div class='form-group'>					
+									<input type="url" name="custom-selected-url" class="form-control" placeholder="URL 입력">
+								</div>
+								
 								<img class="img-responsive hide" /> 				  
 							  </div>
 							</div>
