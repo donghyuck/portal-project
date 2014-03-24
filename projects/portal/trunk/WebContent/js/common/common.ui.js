@@ -911,7 +911,10 @@
 			});
 			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {
-				alert( $(this).val() );
+				var selected_url =$(this).val();
+				$.ajax({url:selected_url, type:'HEAD', error: function() {
+					alert( "잘못된 URL  입니다." );					
+				}});
 			});
 
 			
