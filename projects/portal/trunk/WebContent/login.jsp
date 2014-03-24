@@ -263,9 +263,6 @@
 		
 </script>
 <style scoped="scoped">
-	#login-window .modal-dialog {
-		width : 550px;
-	}
 
 	.nav>li>a:hover {
 		background-color:#007AFF;
