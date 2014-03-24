@@ -892,7 +892,7 @@
 			var that = this ;
 			var guid = common.api.guid();
 			
-			that.element.append(that._dialogTemplate({				
+			that.element.html(that._dialogTemplate({				
 				id:guid
 			}));			
 		},
