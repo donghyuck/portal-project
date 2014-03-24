@@ -911,31 +911,34 @@
 				
 				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){				
 					var selected_img =  $('#image-broswer-select-url').children('img');					
-					selected_img.attr('src', "");					
-					if( ! selected_img.hasClass('hide') )
-						selected_img.addClass('hide');								
-					if(selected_img.parent().hasClass('has-error') )
-						selected_img.parent().removeClass('has-error');		
-					if(selected_img.parent().hasClass('has-success') )
-						selected_img.parent().removeClass('has-success');							
+					selected_img.attr('src', "");										
 				}
 			});
 			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
 				var selected_url =$(this).val();				
-				var selected_img =  $('#image-broswer-select-url').children('img');				
-				selected_img.attr('src', selected_url).load(function(){
+				if( selected_url != null && selected_url != '' ){
+					var selected_img =  $('#image-broswer-select-url').children('img');								
+					selected_img.attr('src', selected_url).load(function(){
+						if(selected_img.parent().hasClass('has-error') )
+							selected_img.parent().removeClass('has-error');					
+						selected_img.parent().addClass('has-success');
+						selected_img.removeClass('hide');				
+					}).error(function(){					
+						if( ! selected_img.hasClass('hide') )
+							selected_img.addClass('hide');						
+						if(selected_img.parent().hasClass('has-success') )
+							selected_img.parent().removeClass('has-success');					
+						selected_img.parent().addClass('has-error');				
+					});
+				}else{
+					if( selected_img.hasClass('hide') )
+						selected_img.removeClass('hide');								
 					if(selected_img.parent().hasClass('has-error') )
-						selected_img.parent().removeClass('has-error');					
-					selected_img.parent().addClass('has-success');
-					selected_img.removeClass('hide');				
-				}).error(function(){					
-					if( ! selected_img.hasClass('hide') )
-						selected_img.addClass('hide');						
+						selected_img.parent().removeClass('has-error');		
 					if(selected_img.parent().hasClass('has-success') )
-						selected_img.parent().removeClass('has-success');					
-					selected_img.parent().addClass('has-error');				
-				});
+						selected_img.parent().removeClass('has-success');							
+				}	
 			});			
 		},
 		_dialogTemplate : function (){
