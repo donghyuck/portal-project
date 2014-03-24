@@ -943,8 +943,24 @@
 				</div>
 				<div class='modal-body'>		
 					<div class="row">
-						<div class="col-sm-3">fdsaf</div>
-						<div class="col-sm-9">fdfdsaf</div>
+						<div class="col-sm-3">
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs">
+							  <li class="active"><a href="\\#" data-toggle="tab">Home</a></li>
+							  <li><a href="\\#" data-toggle="tab">Profile</a></li>
+							  <li><a href="\\#" data-toggle="tab">Messages</a></li>
+							  <li><a href="\\#" data-toggle="tab">Settings</a></li>
+							</ul>
+						</div>
+						<div class="col-sm-9">
+							<!-- Tab panes -->
+							<div class="tab-content">
+							  <div class="tab-pane active" id="home">...</div>
+							  <div class="tab-pane" id="profile">...</div>
+							  <div class="tab-pane" id="messages">...</div>
+							  <div class="tab-pane" id="settings">...</div>
+							</div>
+						</div>
 					</div>
 					<div class="row"></div>
 				</div>
