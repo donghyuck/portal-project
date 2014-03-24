@@ -911,10 +911,18 @@
 			});
 			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {
+				
 				var selected_url =$(this).val();
-				$.ajax({url:selected_url, type:'HEAD', error: function() {
-					alert( "잘못된 URL  입니다." );					
-				}});
+				
+				var selected_img =  $('#image-broswer-select-url').children('img');
+				
+				selected_img.attr('src', selected_url).load(function(){
+					selected_img.removeClass('hide');					
+				}).error(function(){
+					if( selected_img.remhasClass('hide') )
+						selected_img.addClass('hide');		
+					alert("error");					
+				});
 			});
 
 			
