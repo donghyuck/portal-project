@@ -130,7 +130,7 @@
 			<div id="photo_overlay" class="overlay overlay-hugeinc color9">		
 				<button type="button" class="overlay-close">Close</button>
 				<figure class="img-full-width">
-					<img data-bind="attr:{src: photoUrl}" />
+					<img data-bind="attr:{src: photoUrl}" class="img-fit-screen-width" />
 				</figure>		
 				<div style="position:fixed; top:10px; left: 10px; padding:5px;">
 					<div class="btn-group">
