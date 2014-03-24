@@ -942,6 +942,11 @@
 					<h5 class='modal-title' id=#: id #>이미지 삽입</h5>
 				</div>
 				<div class='modal-body'>		
+					<div class="row">
+						<div class="col-sm-3">fdsaf</div>
+						<div class="col-sm-9">fdfdsaf</div>
+					</div>
+					<div class="row"></div>
 				</div>
 				<div class='modal-footer'>
 				</div>
