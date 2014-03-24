@@ -969,7 +969,7 @@
 									<h5 ><strong>URL 이미지</strong>&nbsp;<small>입력한 URL 이미지를 삽입합니다.</small></h5>
 								</div>					
 								
-								<input type="url" class="form-control" placeholder="URL 입력">
+								<input type="url" class="custom-url form-control" placeholder="URL 입력">
 												  
 							  </div>
 							</div>
