@@ -934,12 +934,12 @@
 <!-- Image Broswer Template                            -->
 <!-- ============================== -->
 <script id="image-broswer-template" type="text/x-kendo-template">
-	<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>
+	<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:guid# aria-hidden='true'>
 		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class='modal-header'>
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-					<h5 class='modal-title' id=#: id #>이미지 삽입</h5>
+					<h5 class='modal-title' id=#: guid #>이미지 삽입</h5>
 				</div>
 				<div class='modal-body'>		
 					<div class="row">
@@ -947,7 +947,7 @@
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
 							  <li class="active"><a href="\\#image-broswer-select-upload" data-toggle="tab">업로드</a></li>
-							  <li><a href="\\#image-broswer-select-my" data-toggle="tab">My 포토에서 선택</a></li>
+							  <li><a href="\\.image-broswer-select-my" data-toggle="tab">My 포토에서 선택</a></li>
 							  <li><a href="\\#image-broswer-select-company" data-toggle="tab">회사 이미지에서 선택</a></li>
 							  <li><a href="\\#image-broswer-select-url" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
@@ -958,7 +958,7 @@
 							  <div class="tab-pane fade  active" id="image-broswer-select-upload">
 							  
 							  </div>
-							  <div class="tab-pane fade" id="image-broswer-select-my">
+							  <div class="tab-pane fade" id="image-broswer-select-my" class="image-broswer-select-my">
 							  
 							  </div>
 							  <div class="tab-pane fade" id="image-broswer-select-company">
