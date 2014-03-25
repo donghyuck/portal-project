@@ -897,8 +897,7 @@
 			Widget.fn.destroy.call(that);
 			$(that.element).remove();
 		},
-		_createDialog : function () {
-			
+		_createDialog : function () {			
 			var that = this ;
 			var template = that._dialogTemplate();			
 			that.element.html(template({				
@@ -913,8 +912,7 @@
 					that.element.find('.modal-body input[name="custom-selected-url"]').val("");		
 					break;
 				}
-			});
-			
+			});			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
 				var selected_url =$(this).val();			
 				var selected_img =  $('#image-broswer-select-url').children('img');					
@@ -939,7 +937,11 @@
 						selected_img.parent().addClass('has-error');				
 					});					
 				}	
-			});			
+			});	
+		},
+		_activeTabPane : function () {
+			var that = this ;
+			return that.element.find( '.tab-content > .tab-pane.active' ) ;
 		},
 		_dialogTemplate : function (){
 			var that = this ;			
