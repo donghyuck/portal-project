@@ -887,6 +887,9 @@
 				TAB_PANE_MY_ID:common.api.guid().toLowerCase(),
 				TAB_PANE_COMPANY_ID:common.api.guid().toLowerCase()
 			};			
+			
+			alert(kendo.stringify(options.guid));
+			
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, APPLY],
