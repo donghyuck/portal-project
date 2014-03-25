@@ -969,10 +969,11 @@
 				alert( tab_pane.attr('id') );
 				alert( tab_pane.html() );
 				switch( tab_pane.attr('id') ){
-				case "#image-broswer-select-url" :					
+				case "image-broswer-select-url" :					
 					selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 				break;
 				}
+								
 				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 			});
 		},
