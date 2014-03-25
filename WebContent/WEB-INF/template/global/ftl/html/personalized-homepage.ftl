@@ -1313,8 +1313,7 @@
 		}		
 		
 		.img-wrapper.k-state-selected img {
-			width: 95%;
-			height: 95%;		
+			filter:progid:DXImageTransform.Microsoft.Glow(Color=white,Strength=5);
 		}
 				
 		.img-description {
