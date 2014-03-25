@@ -682,7 +682,7 @@
 									success : function( response ){		
 										$('#announce-grid').data('kendoGrid').dataSource.read();	
 									},
-									error:handleKendoAjaxError
+									error:common.api.handleKendoAjaxError
 							});	
 						} );
 					}else if ( panel_button.hasClass('custom-delete') ){
