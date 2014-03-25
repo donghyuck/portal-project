@@ -1351,8 +1351,7 @@
 			background : transparent;
 		}
 		
-
-		.image-wrapper.k-state-selected img {
+		.img-wrapper.k-state-selected img {
 			width: 95%;
 			height: 95%;		
 		}
