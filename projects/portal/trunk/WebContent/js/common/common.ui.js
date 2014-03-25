@@ -873,6 +873,7 @@
 	POST = 'POST',
 	JSON = 'json',		
 	VALUE_TEMPLATE = kendo.template( '<img src="#: url #" class="img-responsive"/>' ),
+	URL_TEMPLATE = kendo.template( '/community/view-streams-photo.do?key=#= key #' ),
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
     common.ui.extImageBrowser = Widget.extend({
@@ -971,14 +972,15 @@
 								if( imageId > 0 ){									
 									that._details( item , function ( data ) {										
 										alert( kendo.stringify( data ) );
-										if( data.photos.length > 0 ){
+										if( data.photos.length > 0 ){											
+											var externalId = data.photos[0].externalId ;
+											my_list_view.data("externalId" , externalId )
 											that._changeState(true);		
 										}else{
 											
 										}													
 									})									
-								}
-											
+								}											
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
@@ -1053,12 +1055,10 @@
 						selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 					break;
 					case that.options.guid[TAB_PANE_MY_ID] :		
-						var my_list_view = tab_pane.find('.panel-body div').data('kendoListView');
-						var data = my_list_view.dataSource.view();
-						var current_index = my_list_view.select().index();
-						var item = data[current_index];
-						selected_url = item.imageId;
-						alert(item.imageId);						
+						var my_list_view = tab_pane.find('.panel-body div');
+						var externalId = my_list_view.data("externalId");
+						selected_url = URL_TEMPLATE({ key : externalId });
+						my_list_view.data("externalId", null );
 					break;	
 				}								
 				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
