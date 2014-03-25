@@ -955,19 +955,33 @@
 						<div class="col-sm-9">
 							<!-- Tab panes -->
 							<div class="tab-content">
-							  <div class="tab-pane fade  active" id=#:upload_guid#>
-							  
-							  </div>
-							  <div class="tab-pane fade" id=#:my_guid#>
-							  
-							  </div>
+								<div class="tab-pane fade  active" id=#:upload_guid#>
+									<div class="page-header text-primary">
+										<h5 ><strong>업로드</strong>&nbsp;<small>여러개의 파일을 한번에 업로드할 수 있습니다.</small></h5>
+									</div>
+									<div class="panel panel-default panel-flat">								
+										<div class="panel-body scrollable" style="max-height:450px;">
+										
+										</div>	
+										<div class="panel-footer" style="padding:0px;">
+										
+										</div>
+									</div>															  
+								</div>
+								<div class="tab-pane fade" id=#:my_guid#>
+									<div class="page-header text-primary">
+										<h5 ><strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
+								</div>								  
+								</div>
 							  <div class="tab-pane fade" id=#:company_guid#>
-							  
+								<div class="page-header text-primary">
+									<h5 ><strong>회사 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
+								</div>							  
 							  </div>
 							  <div class="tab-pane fade" id=#:url_guid#>
 								<div class="page-header text-primary">
-									<h5 ><strong>URL 이미지</strong>&nbsp;<small>입력한 URL 이미지를 삽입합니다.</small></h5>
-								</div>								
+									<h5 ><strong>URL 이미지</strong>&nbsp;<small>삽입할 이미지 URL 경로를 입력하세요.</small></h5>
+								</div>
 								<div class='form-group'>					
 									<input type="url" name="custom-selected-url" class="form-control" placeholder="URL 입력">
 								</div>								
