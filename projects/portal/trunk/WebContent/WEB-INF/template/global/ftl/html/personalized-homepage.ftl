@@ -1313,7 +1313,7 @@
 		}		
 		
 		.img-wrapper.k-state-selected img {
-			filter:progid:DXImageTransform.Microsoft.Glow(Color=white,Strength=5);
+			img-thumbnail();
 		}
 				
 		.img-description {
