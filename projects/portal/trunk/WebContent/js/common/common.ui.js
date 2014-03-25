@@ -879,7 +879,7 @@
 		},
 		events: [ERROR, CHANGE, APPLY],
 		options : {
-			name: "imageBrowser",
+			name: "ExtImageBrowser",
 			transport:{				
 			} 
 		},
