@@ -925,12 +925,15 @@
 				e.target // activated tab
 				e.relatedTarget // previous tab
 				that._changeState(false);			
-
-				var tab_pane = that._activePane();							
+				var tab_pane = $("#" + that.options.guid[TAB_PANE_URL_ID] );				
 				switch($( e.target ).attr('href')){
-				case "#" + that.options.guid[TAB_PANE_MY_ID] :					
-					if(!tab_pane.find('.panel-body').data('kendoListView') ){
-						tab_pane.find('.panel-body').kendoListView({ 
+				case "#" + that.options.guid[TAB_PANE_MY_ID] :			
+				
+					var my_list_view = tab_pane.find('.panel-body');				
+					var my_list_pager = tab_pane.find('.panel-footer');		
+					
+					if(!my_list_view.data('kendoListView') ){
+						my_list_view.kendoListView({ 
 							dataSource: {
 								type: 'json',
 								transport: {
@@ -963,6 +966,19 @@
 							dataBound: function(e) {;		
 							}
 						});	
+						
+						my_list_view.on("mouseenter",  ".img-wrapper", function(e) {
+							kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+						}).on("mouseleave", ".img-wrapper", function(e) {
+							kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+						});		
+						
+						my_list_pager.kendoPager({
+							refresh : true,
+							buttonCount : 5,
+							dataSource : my_list_view.data('kendoListView').dataSource
+						});		
+						
 					}
 					break;
 				case "#" + that.options.guid[TAB_PANE_URL_ID] :
