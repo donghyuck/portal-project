@@ -910,7 +910,7 @@
 				alert($( e.target ).attr('href'));
 				
 				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){								
-					that.element.find('.modal-body input[name="custom-selected-url"]').attr('src', "");										
+					that.element.find('.modal-body input[name="custom-selected-url"]').val("");										
 				}
 			});
 			
