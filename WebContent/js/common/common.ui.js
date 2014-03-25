@@ -926,6 +926,11 @@
 				e.relatedTarget // previous tab
 				that._changeState(false);				
 				switch($( e.target ).attr('href')){
+				case "#" + that.options.guid[TAB_PANE_MY_ID] :
+					alert($(e.target));
+					
+					
+					break;
 				case "#" + that.options.guid[TAB_PANE_URL_ID] :
 					var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
 					var selected_img =  $("#" + that.options.guid[TAB_PANE_URL_ID] ).children('img');	
