@@ -1308,7 +1308,15 @@
 			width: 100%;
 			height: 100%;
 		}
+		.img-wrapper.k-state-selected {
+			background-color: #1D62F0;
+		}		
 		
+		.img-wrapper.k-state-selected img {
+			width: 95%;
+			height: 95%;		
+		}
+				
 		.img-description {
 			position: absolute;
 			top: 0;
@@ -1350,11 +1358,7 @@
 			border-width: 0px;
 			background : transparent;
 		}
-		
-		.img-wrapper.k-state-selected img {
-			width: 95%;
-			height: 95%;		
-		}
+
 				
 
 		table.k-editor {
