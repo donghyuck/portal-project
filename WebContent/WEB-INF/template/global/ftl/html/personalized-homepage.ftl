@@ -1308,12 +1308,12 @@
 			width: 100%;
 			height: 100%;
 		}
-		.img-wrapper.k-state-selected {
-			background-color: #1D62F0;
-		}		
+
 		
 		.img-wrapper.k-state-selected img {
-			img-thumbnail();
+			border: 4px solid #1D62F0;
+			-webkit-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
 		}
 				
 		.img-description {
