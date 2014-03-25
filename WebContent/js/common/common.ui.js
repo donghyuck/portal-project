@@ -918,7 +918,7 @@
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
 				var selected_url =$(this).val();			
 				var selected_img =  $('#image-broswer-select-url').children('img');					
-				if( selected_url == '' ){
+				if( selected_url.length == 0 ) {
 					if(! selected_img.hasClass('hide') )
 						selected_img.addClass('hide');								
 					if(selected_img.parent().hasClass('has-error') )
