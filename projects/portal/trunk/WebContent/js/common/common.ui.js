@@ -912,34 +912,34 @@
 				switch($( e.target ).attr('href')){
 				case "#image-broswer-select-url" :
 					that.element.find('.modal-body input[name="custom-selected-url"]').val("");		
+					
 					break;
 				}
 			});			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
-				var selected_url =$(this).val();			
-				var selected_img =  $('#image-broswer-select-url').children('img');				
-				alert(selected_url) ;
-				if( selected_url.length == 0 ) {
+				var form_input = $(this);				
+				var selected_img =  $('#image-broswer-select-url').children('img');	
+				if( form_input.val().length == 0 ) {
 					if(! selected_img.hasClass('hide') )
 						selected_img.addClass('hide');								
-					if(selected_img.parent().hasClass('has-error') )
-						selected_img.parent().removeClass('has-error');		
-					if(selected_img.parent().hasClass('has-success') )
-						selected_img.parent().removeClass('has-success');							
+					if(form_input.parent().hasClass('has-error') )
+						form_input.parent().removeClass('has-error');		
+					if(form_input.parent().hasClass('has-success') )
+						form_input.parent().removeClass('has-success');							
 					that._changeState(false);
 				}else{								
-					selected_img.attr('src', selected_url).load(function(){
-						if(selected_img.parent().hasClass('has-error') )
-							selected_img.parent().removeClass('has-error');					
-						selected_img.parent().addClass('has-success');
-						selected_img.removeClass('hide');		
+					selected_img.attr('src', form_input.val()).load(function(){
+						if(form_input.parent().hasClass('has-error') )
+							form_input.parent().removeClass('has-error');					
+						form_input.parent().addClass('has-success');
+						form_input.removeClass('hide');		
 						that._changeState(true);
 					}).error(function(){					
 						if( ! selected_img.hasClass('hide') )
 							selected_img.addClass('hide');						
-						if(selected_img.parent().hasClass('has-success') )
-							selected_img.parent().removeClass('has-success');					
-						selected_img.parent().addClass('has-error');		
+						if(form_input.parent().hasClass('has-success') )
+							form_input.parent().removeClass('has-success');					
+						form_input.parent().addClass('has-error');		
 						that._changeState(false);
 					});					
 				}	
