@@ -582,8 +582,8 @@
 				var imageBrowser = $('#image-broswer').extImageBrowser({
 					template : $("#image-broswer-template").html(),
 					apply : function(data){						
-					alert( data );
-						renderTo.data("kendoEditor").exec("inserthtml", { value : data } );
+					alert( e );
+						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						imageBrowser.close();
 					}
 				});
