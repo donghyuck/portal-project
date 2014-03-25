@@ -887,9 +887,6 @@
 				my_guid:common.api.guid().toLowerCase(),
 				company_guid:common.api.guid().toLowerCase()
 			};			
-			
-			alert(kendo.stringify(options.guid));
-			
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, APPLY],
