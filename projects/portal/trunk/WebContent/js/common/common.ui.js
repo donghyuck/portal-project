@@ -966,7 +966,7 @@
 			that.element.find('.modal-footer .btn.custom-insert-img').on('click', function () {				
 				var tab_pane = that._activePane();			
 				var selected_url ;
-				
+				alert( tab_pane.attr('id') );
 				alert( tab_pane.html() );
 				switch( tab_pane.attr('id') ){
 				case "#image-broswer-select-url" :					
