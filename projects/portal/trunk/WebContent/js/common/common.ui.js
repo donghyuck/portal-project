@@ -873,11 +873,12 @@
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
+			options.guid = common.api.guid();
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, APPLY],
 		options : {
-			name: "extImageBrowser",
+			name: "imageBrowser",
 			transport:{				
 			} 
 		},
@@ -898,16 +899,25 @@
 		},
 		_createDialog : function () {
 			var that = this ;
-			var guid = common.api.guid();
 			var template = that._dialogTemplate();			
 			that.element.html(template({				
-				id: guid
+				id: that.options.name + "-" + that.options.guid
 			}));					
 			
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
 				e.target // activated tab
 				e.relatedTarget // previous tab
-				alert($( e.target ).attr('href'));
+				switch($( e.target ).attr('href')){
+				case "all" :
+					attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
+					break;
+				case "image" :
+					attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
+					break;
+				case "file" :
+					attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
+					break;
+					
 				
 				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){								
 					that.element.find('.modal-body input[name="custom-selected-url"]').val("");										
