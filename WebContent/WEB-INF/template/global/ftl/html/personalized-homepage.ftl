@@ -578,11 +578,14 @@
 		
 		/** Announce View Panel */		
 		function createEditor( renderTo ){			
-			
-			if(!renderTo.data("kendoEditor") ){				
-			
+			if(!renderTo.data("kendoEditor") ){			
 				var imageBrowser = $('#image-broswer').extImageBrowser({
 					template : $("#image-broswer-template").html(),
+					apply : function(data){
+						
+						renderTo.data("kendoEditor").exec("inserthtml", { value : data } );
+						imageBrowser.close();
+					}
 				});
 				
 				renderTo.kendoEditor({
@@ -698,7 +701,7 @@
 		}
 		
 		function showAnnouncePanel (){			
-			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );						
+			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 			var template = kendo.template($('#announcement-view-template').html());
 			$("#announce-view").html( template(announcePlaceHolder) );	
 			kendo.bind($("#announce-view"), announcePlaceHolder );				
