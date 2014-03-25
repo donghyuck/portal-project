@@ -971,7 +971,7 @@
 					selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 				break;
 				}
-				that.trigger(APPLY, selected_url );
+				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 			});
 		},
 		_activePane : function () {
