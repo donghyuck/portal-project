@@ -913,6 +913,14 @@
 			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
 		},
+		_shared : function ( image, callback ) {		
+			common.api.streams.details({
+				imageId : image.imageId ,
+				success : function( data ) {
+					callback( data );
+				}
+			});				
+		},
 		_modal : function () {
 			var that = this ;
 			return  that.element.children('.modal');
@@ -1041,8 +1049,7 @@
 						var current_index = my_list_view.select().index();
 						var item = data[current_index];
 						selected_url = item.imageId;
-						alert(item.imageId);
-						
+						alert(item.imageId);						
 					break;	
 				}								
 				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
