@@ -959,6 +959,12 @@
 									<div class="page-header text-primary">
 										<h5 ><strong>업로드</strong>&nbsp;<small>여러개의 파일을 한번에 업로드할 수 있습니다.</small></h5>
 									</div>
+														  
+								</div>
+								<div class="tab-pane fade" id=#:my_guid#>
+									<div class="page-header text-primary">
+										<h5 ><strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
+									</div>
 									<div class="panel panel-default panel-flat">								
 										<div class="panel-body scrollable" style="max-height:450px;">
 										
@@ -966,12 +972,8 @@
 										<div class="panel-footer" style="padding:0px;">
 										
 										</div>
-									</div>															  
-								</div>
-								<div class="tab-pane fade" id=#:my_guid#>
-									<div class="page-header text-primary">
-										<h5 ><strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
-								</div>								  
+									</div>	
+																										  
 								</div>
 							  <div class="tab-pane fade" id=#:company_guid#>
 								<div class="page-header text-primary">
