@@ -924,14 +924,13 @@
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
 				e.target // activated tab
 				e.relatedTarget // previous tab
-				that._changeState(false);			
-				var tab_pane = $("#" + that.options.guid[TAB_PANE_URL_ID] );				
-				switch($( e.target ).attr('href')){
-				case "#" + that.options.guid[TAB_PANE_MY_ID] :			
-				
+				that._changeState(false);					
+				var tab_pane_id = $( e.target ).attr('href');				
+				var tab_pane = $(tab_pane_id );					
+				switch(tab_pane_id){
+				case "#" + that.options.guid[TAB_PANE_MY_ID] :					
 					var my_list_view = tab_pane.find('.panel-body');				
 					var my_list_pager = tab_pane.find('.panel-footer');		
-					
 					if(!my_list_view.data('kendoListView') ){
 						my_list_view.kendoListView({ 
 							dataSource: {
