@@ -926,7 +926,7 @@
 				e.relatedTarget // previous tab
 				that._changeState(false);			
 				
-				alert($(e.target));
+				alert($(e.target).html());
 				var tab_pane = that._activePane();			
 				
 				switch($( e.target ).attr('href')){
