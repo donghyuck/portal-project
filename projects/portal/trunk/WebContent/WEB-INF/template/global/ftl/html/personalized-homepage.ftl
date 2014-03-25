@@ -1352,7 +1352,7 @@
 		}
 		
 
-		image-wrapper.k-state-selected img {
+		.image-wrapper.k-state-selected img {
 			width: 95%;
 			height: 95%;		
 		}
