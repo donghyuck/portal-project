@@ -967,10 +967,10 @@
 									</div>
 									<div class="panel panel-default panel-flat">								
 										<div class="panel-body scrollable" style="max-height:450px;">
-										
+											<div></div>
 										</div>	
 										<div class="panel-footer" style="padding:0px;">
-										
+											<div></div>
 										</div>
 									</div>	
 																										  
