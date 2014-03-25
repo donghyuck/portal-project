@@ -849,7 +849,8 @@
  *  extImageBrowser widget
  */
 (function($, undefined) {
-	var ui = window.ui = window.ui || {};
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};
     var kendo = window.kendo,
     Widget = kendo.ui.Widget,
     isPlainObject = $.isPlainObject,
@@ -869,7 +870,7 @@
 	VALUE_TEMPLATE = kendo.template( '<img src="#: url #" class="img-responsive"/>' ),
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
-	ui.extImageBrowser = Widget.extend({
+    common.ui.extImageBrowser = Widget.extend({
 		init: function(element, options) {			
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
@@ -1015,7 +1016,7 @@
 	
 	$.fn.extend( { 
 		extImageBrowser : function ( options ) {
-			return new ui.extImageBrowser ( this , options );		
+			return new common.ui.extImageBrowser ( this , options );		
 		}
 	});	
 })(jQuery);
