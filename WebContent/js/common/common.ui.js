@@ -864,6 +864,10 @@
     APPLY = "apply",
     ERROR = "error",
     CLICK = "click",
+    TAB_PANE_URL = "" ,
+    TAB_PANE_UPLOAD = "" ,
+    TAB_PANE_MY = "" ,
+    TAB_PANE_COMPANY = "" ,
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	JSON = 'json',		
@@ -875,7 +879,7 @@
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
-			options.guid = common.api.guid();
+			options.guid = common.api.guid().toLowerCase();
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, APPLY],
@@ -909,7 +913,7 @@
 			var that = this ;
 			var template = that._dialogTemplate();			
 			that.element.html(template({				
-				id: that.options.guid
+				guid: that.options.guid
 			}));					
 			
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
@@ -966,8 +970,6 @@
 			that.element.find('.modal-footer .btn.custom-insert-img').on('click', function () {				
 				var tab_pane = that._activePane();			
 				var selected_url ;
-				alert( tab_pane.attr('id') );
-				alert( tab_pane.html() );
 				switch( tab_pane.attr('id') ){
 				case "image-broswer-select-url" :					
 					selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
