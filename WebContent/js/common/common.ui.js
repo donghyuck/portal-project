@@ -881,11 +881,11 @@
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
 			options.guid = {
-				MODAL_TITIL_ID:common.api.guid().toLowerCase(),
-				TAB_PANE_URL_ID:common.api.guid().toLowerCase(),
-				TAB_PANE_UPLOAD_ID:common.api.guid().toLowerCase(),
-				TAB_PANE_MY_ID:common.api.guid().toLowerCase(),
-				TAB_PANE_COMPANY_ID:common.api.guid().toLowerCase()
+				title_guid:common.api.guid().toLowerCase(),
+				url_guid:common.api.guid().toLowerCase(),
+				upload_guid:common.api.guid().toLowerCase(),
+				my_guid:common.api.guid().toLowerCase(),
+				company_guid:common.api.guid().toLowerCase()
 			};			
 			
 			alert(kendo.stringify(options.guid));
