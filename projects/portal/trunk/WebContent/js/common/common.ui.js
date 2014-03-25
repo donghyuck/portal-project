@@ -964,7 +964,9 @@
 								serverPaging: true
 							},
 							selectable: "single",									
-							change: function(e) {									
+							change: function(e) {			
+								
+								tab_pane.find('.panel-body .alert').remove();
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
 								var item = data[current_index];							
