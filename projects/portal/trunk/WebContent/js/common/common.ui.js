@@ -942,8 +942,27 @@
 											 return { startIndex: options.skip, pageSize: options.pageSize }
 										}
 									}
-								},							
-						});
+								},			
+								pageSize: 12,
+								error:handleKendoAjaxError,
+								schema: {
+									model: Image,
+									data : "targetImages",
+									total : "totalTargetImageCount"
+								},
+								serverPaging: true
+							},
+							selectable: "single",									
+							change: function(e) {									
+								var data = this.dataSource.view() ;
+								var current_index = this.select().index();
+								var item = data[current_index];											
+							},
+							navigatable: false,
+							template: kendo.template($("#photo-list-view-template").html()),								
+							dataBound: function(e) {;		
+							}
+						});	
 					}
 					break;
 				case "#" + that.options.guid[TAB_PANE_URL_ID] :
