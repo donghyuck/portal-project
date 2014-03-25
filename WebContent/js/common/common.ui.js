@@ -901,6 +901,7 @@
 		show: function() {
 			var that = this ;
 			that._modal().modal('show');
+			that.element.find('.modal-body ul.nav a:first').tab('show');
 		},
 		close: function () {
 			var that = this ;
@@ -976,9 +977,9 @@
 				var tab_pane = that._activePane();			
 				var selected_url ;
 				switch( tab_pane.attr('id') ){
-				case that.options.guid[TAB_PANE_URL_ID] :					
-					selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
-				break;
+					case that.options.guid[TAB_PANE_URL_ID] :					
+						selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
+					break;
 				}
 								
 				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
