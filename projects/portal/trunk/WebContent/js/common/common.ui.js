@@ -898,6 +898,7 @@
 			$(that.element).remove();
 		},
 		_createDialog : function () {
+			
 			var that = this ;
 			var template = that._dialogTemplate();			
 			that.element.html(template({				
@@ -908,19 +909,9 @@
 				e.target // activated tab
 				e.relatedTarget // previous tab
 				switch($( e.target ).attr('href')){
-				case "all" :
-					attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
+				case "#image-broswer-select-url" :
+					that.element.find('.modal-body input[name="custom-selected-url"]').val("");		
 					break;
-				case "image" :
-					attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
-					break;
-				case "file" :
-					attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
-					break;
-					
-				
-				if( $( e.target ).attr('href') == '#image-broswer-select-url' ){								
-					that.element.find('.modal-body input[name="custom-selected-url"]').val("");										
 				}
 			});
 			
