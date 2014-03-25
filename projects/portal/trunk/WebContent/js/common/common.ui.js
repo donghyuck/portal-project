@@ -965,7 +965,8 @@
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
-							dataBound: function(e) {;		
+							dataBound: function(e) {
+								that._changeState(false);
 							}
 						});	
 						
