@@ -932,8 +932,8 @@
 						if(form_input.parent().hasClass('has-error') )
 							form_input.parent().removeClass('has-error');					
 						form_input.parent().addClass('has-success');
-						form_input.removeClass('hide');		
-						that._changeState(true);
+						selected_img.removeClass('hide');		
+						that._changeState(true);						
 					}).error(function(){					
 						if( ! selected_img.hasClass('hide') )
 							selected_img.addClass('hide');						
