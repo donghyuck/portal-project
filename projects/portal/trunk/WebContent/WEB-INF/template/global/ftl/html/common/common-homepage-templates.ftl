@@ -934,37 +934,37 @@
 <!-- Image Broswer Template                            -->
 <!-- ============================== -->
 <script id="image-broswer-template" type="text/x-kendo-template">
-	<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:guid# aria-hidden='true'>
+	<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
 		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class='modal-header'>
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-					<h5 class='modal-title' id=#: guid #>이미지 삽입</h5>
+					<h5 class='modal-title' id=#: title_guid #>이미지 삽입</h5>
 				</div>
 				<div class='modal-body'>		
 					<div class="row">
 						<div class="col-sm-3">
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
-							  <li class="active"><a href="\\#image-broswer-select-upload" data-toggle="tab">업로드</a></li>
-							  <li><a href="\\.image-broswer-select-my" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li><a href="\\#image-broswer-select-company" data-toggle="tab">회사 이미지에서 선택</a></li>
-							  <li><a href="\\#image-broswer-select-url" data-toggle="tab">URL에서 선택</a></li>
+							  <li class="active"><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
+							  <li><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
+							  <li><a href="\\##=company_guid#" data-toggle="tab">회사 이미지에서 선택</a></li>
+							  <li><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-9">
 							<!-- Tab panes -->
 							<div class="tab-content">
-							  <div class="tab-pane fade  active" id="image-broswer-select-upload">
+							  <div class="tab-pane fade  active" id=#:upload_guid#>
 							  
 							  </div>
-							  <div class="tab-pane fade" id="image-broswer-select-my" class="image-broswer-select-my">
-							  ss
-							  </div>
-							  <div class="tab-pane fade" id="image-broswer-select-company">
+							  <div class="tab-pane fade" id=#:my_guid#>
 							  
 							  </div>
-							  <div class="tab-pane fade" id="image-broswer-select-url">
+							  <div class="tab-pane fade" id=#:company_guid#>
+							  
+							  </div>
+							  <div class="tab-pane fade" id=#:url_guid#>
 								<div class="page-header text-primary">
 									<h5 ><strong>URL 이미지</strong>&nbsp;<small>입력한 URL 이미지를 삽입합니다.</small></h5>
 								</div>								
