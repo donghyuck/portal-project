@@ -581,7 +581,7 @@
 			if(!renderTo.data("kendoEditor") ){			
 				var imageBrowser = $('#image-broswer').extImageBrowser({
 					template : $("#image-broswer-template").html(),
-					apply : function(data){						
+					apply : function(e){						
 					alert( e );
 						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						imageBrowser.close();
