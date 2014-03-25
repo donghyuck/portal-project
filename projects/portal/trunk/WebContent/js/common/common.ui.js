@@ -1038,7 +1038,7 @@
 						var my_list_view = tab_pane.find('.panel-body div');
 						var current_index = my_list_view.data('kendoListView').select().index();
 						var item = my_list_view.data('kendoListView').data[current_index];
-						
+						selected_url = item.imageId;
 						alert(item.imageId);
 						
 					break;	
