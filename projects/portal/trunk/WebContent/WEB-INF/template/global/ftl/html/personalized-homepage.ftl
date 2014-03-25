@@ -586,8 +586,7 @@
 						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						imageBrowser.close();
 					}
-				});
-				
+				});				
 				renderTo.kendoEditor({
 						tools : [
 							'bold',
@@ -1351,6 +1350,13 @@
 			border-width: 0px;
 			background : transparent;
 		}
+		
+
+		image-wrapper.k-state-selected img {
+			width: 95%;
+			height: 95%;		
+		}
+				
 
 		table.k-editor {
 			height: 400px;
@@ -1449,6 +1455,7 @@
 			height: 350px;
 		}
 				
+				
 		.cbp-hsmenu-wrapper .cbp-hsmenu {
 			width:100%;
 		}
@@ -1479,7 +1486,6 @@
 		#photo_overlay nav.navbar {
 			margin-bottom: 0px; 
 		}
-
 
 		
 		</style>   	
