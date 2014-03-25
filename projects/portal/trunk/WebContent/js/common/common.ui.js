@@ -971,7 +971,11 @@
 								if( imageId > 0 ){									
 									that._details( item , function ( data ) {										
 										alert( kendo.stringify( data ) );
-										that._changeState(true);					
+										if( data.photos.length > 0 ){
+											that._changeState(true);		
+										}else{
+											
+										}													
 									})									
 								}
 											
@@ -981,8 +985,7 @@
 							dataBound: function(e) {
 								that._changeState(false);
 							}
-						});	
-						
+						});							
 						my_list_view.on("mouseenter",  ".img-wrapper", function(e) {
 							kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 						}).on("mouseleave", ".img-wrapper", function(e) {
@@ -993,8 +996,9 @@
 							refresh : true,
 							buttonCount : 5,
 							dataSource : my_list_view.data('kendoListView').dataSource
-						});
-						
+						});						
+					}else{
+						my_list_view.data('kendoListView').clearSelection();
 					}
 					break;
 				case "#" + that.options.guid[TAB_PANE_URL_ID] :
