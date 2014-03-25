@@ -1036,9 +1036,10 @@
 						selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 					break;
 					case that.options.guid[TAB_PANE_MY_ID] :		
-						var my_list_view = tab_pane.find('.panel-body div');
-						var current_index = my_list_view.data('kendoListView').select().index();
-						var item = my_list_view.data('kendoListView').data[current_index];
+						var my_list_view = tab_pane.find('.panel-body div').data('kendoListView');
+						var data = my_list_view.dataSource.view();
+						var current_index = my_list_viewmy_list_view.select().index();
+						var item = data[current_index];
 						selected_url = item.imageId;
 						alert(item.imageId);
 						
