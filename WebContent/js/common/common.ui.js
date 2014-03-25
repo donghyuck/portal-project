@@ -902,7 +902,7 @@
 			var that = this ;
 			var template = that._dialogTemplate();			
 			that.element.html(template({				
-				id: that.options.name + "-" + that.options.guid
+				id: that.options.guid
 			}));					
 			
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
