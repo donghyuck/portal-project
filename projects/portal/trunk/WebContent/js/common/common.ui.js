@@ -1038,7 +1038,7 @@
 					case that.options.guid[TAB_PANE_MY_ID] :		
 						var my_list_view = tab_pane.find('.panel-body div').data('kendoListView');
 						var data = my_list_view.dataSource.view();
-						var current_index = my_list_viewmy_list_view.select().index();
+						var current_index = my_list_view.select().index();
 						var item = data[current_index];
 						selected_url = item.imageId;
 						alert(item.imageId);
