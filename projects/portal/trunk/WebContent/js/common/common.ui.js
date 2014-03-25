@@ -886,11 +886,11 @@
 		},
 		show: function() {
 			var that = this ;
-			that._modal.modal('show');
+			that._modal().modal('show');
 		},
 		close: function () {
 			var that = this ;
-			that._modal.modal('hide');
+			that._modal().modal('hide');
 		},
 		refresh: function () {
 			var that = this ;
