@@ -958,7 +958,10 @@
 							change: function(e) {									
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
-								var item = data[current_index];											
+								var item = data[current_index];							
+								
+								alert( kendo.stringify( item );
+								
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
