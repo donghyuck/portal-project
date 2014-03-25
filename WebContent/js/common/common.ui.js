@@ -943,6 +943,14 @@
 			var that = this ;
 			return that.element.find( '.tab-content > .tab-pane.active' ) ;
 		},
+		_changeState : function ( enabled ) {
+			var that = this ;
+			if ( enabled ){
+				that.element.find('.modal-footer .btn.custom-insert-img').removeAttr('disabled');			
+			}else{
+				that.element.find('.modal-footer .btn.custom-insert-img').attr('disabled', 'disabled');			
+			}			
+		},		
 		_dialogTemplate : function (){
 			var that = this ;			
 			if( typeof that.options.template === UNDEFINED){
