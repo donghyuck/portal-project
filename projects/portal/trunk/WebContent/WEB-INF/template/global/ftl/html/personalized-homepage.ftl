@@ -171,7 +171,7 @@
 						} 
 					},
 					pageSize: 10,
-					error:handleKendoAjaxError,				
+					error:common.api.handleKendoAjaxError,				
 					schema: {
 						data : "connectedSocialNetworks",
 						model : SocialNetwork
@@ -229,7 +229,7 @@
 								}
 							},
 							pageSize: 12,
-							error:handleKendoAjaxError,
+							error:common.api.handleKendoAjaxError,
 							schema: {
 								model: Attachment,
 								data : "targetAttachments",
@@ -348,7 +348,7 @@
 										}
 									},
 									pageSize: 12,
-									error:handleKendoAjaxError,
+									error:common.api.handleKendoAjaxError,
 									schema: {
 										model: Image,
 										data : "targetImages",
@@ -447,7 +447,7 @@
 							} 
 						},
 						pageSize: 10,
-						error:handleKendoAjaxError,
+						error:common.api.handleKendoAjaxError,
 						schema: {
 							data : "targetAnnounces",
 							model : Announce
@@ -529,7 +529,7 @@
 														$('#announce-grid').data('kendoGrid').dataSource.read();	
 														$("#my-notice .btn-group button").first().click();
 													},
-													error:handleKendoAjaxError
+													error:common.api.handleKendoAjaxError
 												});				
 											}							
 										} );
@@ -797,7 +797,7 @@
 									data: "socialNetworkProperties",
 									model: Property
 								},
-								error:handleKendoAjaxError
+								error:common.api.handleKendoAjaxError
 							},
 							columns: [
 								{ title: "속성", field: "name" },
@@ -884,7 +884,7 @@
 										success : function( response ){
 											$('#' + renderToString ).remove();
 										},
-										error:handleKendoAjaxError
+										error:common.api.handleKendoAjaxError
 									});
 									*/								
 								}
@@ -934,7 +934,7 @@
 										success : function( response ){
 											$("#" + renderToString ).remove();
 										},
-										error:handleKendoAjaxError
+										error:common.api.handleKendoAjaxError
 									});
 									*/								
 								}
@@ -974,7 +974,7 @@
 										data: "targetImageProperty",
 										model: Property
 									},
-									error:handleKendoAjaxError
+									error:common.api.handleKendoAjaxError
 								},
 								columns: [
 									{ title: "속성", field: "name" },
