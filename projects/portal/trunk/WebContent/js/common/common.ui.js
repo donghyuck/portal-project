@@ -924,10 +924,14 @@
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
 				e.target // activated tab
 				e.relatedTarget // previous tab
-				that._changeState(false);				
+				that._changeState(false);			
+				
+				var tab_pane = that._activePane();			
+				
 				switch($( e.target ).attr('href')){
 				case "#" + that.options.guid[TAB_PANE_MY_ID] :
-					alert($(e.target).html());
+					
+					alert(tab_pane.html());
 					
 					
 					break;
