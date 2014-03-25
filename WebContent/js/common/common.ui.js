@@ -979,7 +979,7 @@
 											my_list_view.data("externalId" , externalId )
 											that._changeState(true);		
 										}else{
-											var t = kendo.template('<div class="alert alert-danger">이미지 <b>#= name#<b> 를 사용하시려면 먼저 공개가 필요합니다. <button type="button" class="btn btn-success" data-image=#: imageId #>공개</button></div>');
+											var t = kendo.template('<div class="alert alert-danger"><p>#= name#</p> 이미지를 사용하시려면 먼저 공개가 필요합니다. <button type="button" class="btn btn-primary" data-image=#: imageId #>공개</button></div>');
 											tab_pane.find('.panel-body').prepend(
 												t( item )	
 											);
