@@ -959,9 +959,10 @@
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
 								var item = data[current_index];							
+								var imageId = item.imageId;
 								
-								alert( kendo.stringify( item ));
-								
+								if( imageId > 0 )
+									that._changeState(true);								
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
