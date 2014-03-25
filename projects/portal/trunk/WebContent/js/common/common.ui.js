@@ -927,7 +927,7 @@
 				that._changeState(false);				
 				switch($( e.target ).attr('href')){
 				case "#" + that.options.guid[TAB_PANE_MY_ID] :
-					alert($(e.target));
+					alert($(e.target).html());
 					
 					
 					break;
