@@ -864,10 +864,11 @@
     APPLY = "apply",
     ERROR = "error",
     CLICK = "click",
-    TAB_PANE_URL = "" ,
-    TAB_PANE_UPLOAD = "" ,
-    TAB_PANE_MY = "" ,
-    TAB_PANE_COMPANY = "" ,
+    MODAL_TITIL_ID = "title_guid",
+	TAB_PANE_URL_ID = "url_guid" ,
+	TAB_PANE_UPLOAD_ID = "upload_guid" ,
+    TAB_PANE_MY_ID = "my_guid" ,
+    TAB_PANE_COMPANY_ID = "company_guid" ,
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	JSON = 'json',		
@@ -879,7 +880,13 @@
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
-			options.guid = common.api.guid().toLowerCase();
+			options.guid = {
+				MODAL_TITIL_ID:common.api.guid().toLowerCase(),
+				TAB_PANE_URL_ID:common.api.guid().toLowerCase(),
+				TAB_PANE_UPLOAD_ID:common.api.guid().toLowerCase(),
+				TAB_PANE_MY_ID:common.api.guid().toLowerCase(),
+				TAB_PANE_COMPANY_ID:common.api.guid().toLowerCase()
+			};			
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, APPLY],
@@ -912,21 +919,16 @@
 		_createDialog : function () {			
 			var that = this ;
 			var template = that._dialogTemplate();			
-			that.element.html(template({				
-				guid: that.options.guid
-			}));					
-			
+			that.element.html(template(that.options.guid));					
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
 				e.target // activated tab
 				e.relatedTarget // previous tab
-				that._changeState(false);
-				
+				that._changeState(false);				
 				switch($( e.target ).attr('href')){
-				case "#image-broswer-select-url" :
+				case "#" + that.options.guid[TAB_PANE_URL_ID] :
 					var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
-					var selected_img =  $('#image-broswer-select-url').children('img');	
-					form_input.val("");		
-					
+					var selected_img =  $("#" + that.options.guid[TAB_PANE_URL_ID] ).children('img');	
+					form_input.val("");					
 					if(form_input.parent().hasClass('has-error') )
 						form_input.parent().removeClass('has-error');		
 					if(form_input.parent().hasClass('has-success') )
@@ -940,7 +942,7 @@
 			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
 				var form_input = $(this);				
-				var selected_img =  $('#image-broswer-select-url').children('img');	
+				var selected_img =   $("#" + that.options.guid[TAB_PANE_URL_ID] ).children('img');	
 				if( form_input.val().length == 0 ) {
 					if(! selected_img.hasClass('hide') )
 						selected_img.addClass('hide');								
@@ -971,7 +973,7 @@
 				var tab_pane = that._activePane();			
 				var selected_url ;
 				switch( tab_pane.attr('id') ){
-				case "image-broswer-select-url" :					
+				case that.options.guid[TAB_PANE_URL_ID] :					
 					selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 				break;
 				}
