@@ -907,6 +907,8 @@
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
 				e.target // activated tab
 				e.relatedTarget // previous tab
+				that._changeState(false);
+				
 				switch($( e.target ).attr('href')){
 				case "#image-broswer-select-url" :
 					that.element.find('.modal-body input[name="custom-selected-url"]').val("");		
@@ -922,24 +924,27 @@
 					if(selected_img.parent().hasClass('has-error') )
 						selected_img.parent().removeClass('has-error');		
 					if(selected_img.parent().hasClass('has-success') )
-						selected_img.parent().removeClass('has-success');		
+						selected_img.parent().removeClass('has-success');							
+					that._changeState(false);
 				}else{								
 					selected_img.attr('src', selected_url).load(function(){
 						if(selected_img.parent().hasClass('has-error') )
 							selected_img.parent().removeClass('has-error');					
 						selected_img.parent().addClass('has-success');
-						selected_img.removeClass('hide');				
+						selected_img.removeClass('hide');		
+						that._changeState(true);
 					}).error(function(){					
 						if( ! selected_img.hasClass('hide') )
 							selected_img.addClass('hide');						
 						if(selected_img.parent().hasClass('has-success') )
 							selected_img.parent().removeClass('has-success');					
-						selected_img.parent().addClass('has-error');				
+						selected_img.parent().addClass('has-error');		
+						that._changeState(false);
 					});					
 				}	
 			});	
 		},
-		_activeTabPane : function () {
+		_activePane : function () {
 			var that = this ;
 			return that.element.find( '.tab-content > .tab-pane.active' ) ;
 		},
