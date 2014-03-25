@@ -965,12 +965,12 @@
 			that.element.find('.modal-footer .btn.custom-insert-img').on('click', function () {				
 				var tab_pane = that._activePane();			
 				var selected_url ;
-				switch( tab_pane.attr('id') )
+				switch( tab_pane.attr('id') ){
 				case "#image-broswer-select-url" :					
 					selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 				break;
-				
-				 that.trigger(APPLY, selected_url );
+				}
+				that.trigger(APPLY, selected_url );
 			});
 		},
 		_activePane : function () {
