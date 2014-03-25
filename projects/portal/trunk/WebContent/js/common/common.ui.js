@@ -913,7 +913,7 @@
 			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
 		},
-		_shared : function ( image, callback ) {		
+		_details : function ( image, callback ) {		
 			common.api.streams.details({
 				imageId : image.imageId ,
 				success : function( data ) {
@@ -968,8 +968,13 @@
 								var current_index = this.select().index();
 								var item = data[current_index];							
 								var imageId = item.imageId;								
-								if( imageId > 0 )
-									that._changeState(true);								
+								if( imageId > 0 ){									
+									that._details( item , function ( data ) {										
+										alert( kendo.stringify( data ) );
+										that._changeState(true);					
+									})									
+								}
+											
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
