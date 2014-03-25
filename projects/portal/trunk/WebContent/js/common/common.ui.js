@@ -977,7 +977,7 @@
 							refresh : true,
 							buttonCount : 5,
 							dataSource : my_list_view.data('kendoListView').dataSource
-						});		
+						});
 						
 					}
 					break;
