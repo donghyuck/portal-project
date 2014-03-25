@@ -925,16 +925,26 @@
 				e.target // activated tab
 				e.relatedTarget // previous tab
 				that._changeState(false);			
-				
-				alert($(e.target).html());
-				var tab_pane = that._activePane();			
-				
+
+				var tab_pane = that._activePane();							
 				switch($( e.target ).attr('href')){
-				case "#" + that.options.guid[TAB_PANE_MY_ID] :
-					
-					alert(tab_pane.html());
-					
-					
+				case "#" + that.options.guid[TAB_PANE_MY_ID] :					
+					if(!tab_pane.find('.panel-body').data('kendoListView') ){
+						tab_pane.find('.panel-body').kendoListView({ 
+							dataSource: {
+								type: 'json',
+								transport: {
+									read: { url:'/community/list-my-image.do?output=json', type: 'POST' },
+									parameterMap: function (options, operation){
+										if (operation != "read" && options) {										                        								                       	 	
+											return { };									                            	
+										}else{
+											 return { startIndex: options.skip, pageSize: options.pageSize }
+										}
+									}
+								},							
+						});
+					}
 					break;
 				case "#" + that.options.guid[TAB_PANE_URL_ID] :
 					var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
