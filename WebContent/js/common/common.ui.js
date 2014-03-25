@@ -866,6 +866,7 @@
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	JSON = 'json',		
+	VALUE_TEMPLATE = kendo.template( '<img src="#: url #" class="img-responsive"/>' ),
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
 	ui.extImageBrowser = Widget.extend({
@@ -884,18 +885,24 @@
 		},
 		show: function() {
 			var that = this ;
-			var modal = that.element.children('.modal');
-			modal.modal('show');
+			that._modal.modal('show');
+		},
+		close: function () {
+			var that = this ;
+			that._modal.modal('hide');
 		},
 		refresh: function () {
 			var that = this ;
 			that._createDialog();
-		},
-		
+		},		
 		destroy: function() {
 			var that = this;
-			Widget.fn.destroy.call(that);
+			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
+		},
+		_modal : function () {
+			var that = this ;
+			return  that.element.children('.modal');
 		},
 		_createDialog : function () {			
 			var that = this ;
@@ -921,11 +928,11 @@
 						form_input.parent().removeClass('has-success');		
 					
 					if(! selected_img.hasClass('hide') )
-						selected_img.addClass('hide');		
-					
+						selected_img.addClass('hide');							
 					break;
 				}
 			});			
+			
 			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
 				var form_input = $(this);				
 				var selected_img =  $('#image-broswer-select-url').children('img');	
@@ -953,7 +960,18 @@
 						that._changeState(false);
 					});					
 				}	
-			});	
+			});
+			
+			that.element.find('.modal-footer .btn.custom-insert-img').on('click', function () {				
+				var tab_pane = that._activePane();			
+				var selected_url ;
+				switch( tab_pane.attr('id') )
+				case "#image-broswer-select-url" :					
+					selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
+				break;
+				
+				 that.trigger(APPLY, selected_url );
+			});
 		},
 		_activePane : function () {
 			var that = this ;
