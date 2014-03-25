@@ -1310,10 +1310,12 @@
 		}
 
 		
-		.img-wrapper.k-state-selected img {
-			border: 4px solid #1D62F0;
+		.image-broswer .img-wrapper.k-state-selected img {
+			border-bottom: 5px solid #FF2A68;
 			-webkit-transition: all .2s ease-in-out;
 			transition: all .2s ease-in-out;
+			position: relative;
+			margin-top: -5px;
 		}
 				
 		.img-description {
@@ -1699,7 +1701,7 @@
 			</div>	
 		</section>
 		
-		<section id="image-broswer"></section>
+		<section id="image-broswer" class="image-broswer"></section>
 					
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
