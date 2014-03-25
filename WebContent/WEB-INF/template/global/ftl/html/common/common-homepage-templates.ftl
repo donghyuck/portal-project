@@ -978,7 +978,7 @@
 					</div>
 				</div>
 				<div class='modal-footer'>
-					<button type="button" class="btn btn-primary" disabled="disabled">이미지 삽입</button>	
+					<button type="button" class="btn btn-primary custom-insert-img" disabled="disabled">이미지 삽입</button>	
 					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>
 				</div>
 			</div><!-- /.modal-content -->
