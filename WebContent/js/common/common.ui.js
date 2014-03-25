@@ -911,7 +911,17 @@
 				
 				switch($( e.target ).attr('href')){
 				case "#image-broswer-select-url" :
-					that.element.find('.modal-body input[name="custom-selected-url"]').val("");		
+					var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
+					var selected_img =  $('#image-broswer-select-url').children('img');	
+					form_input.val("");		
+					
+					if(form_input.parent().hasClass('has-error') )
+						form_input.parent().removeClass('has-error');		
+					if(form_input.parent().hasClass('has-success') )
+						form_input.parent().removeClass('has-success');		
+					
+					if(! selected_img.hasClass('hide') )
+						selected_img.addClass('hide');		
 					
 					break;
 				}
