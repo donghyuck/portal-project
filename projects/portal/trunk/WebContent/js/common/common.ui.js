@@ -977,7 +977,10 @@
 											my_list_view.data("externalId" , externalId )
 											that._changeState(true);		
 										}else{
-											
+											var t = kendo.template('<div class="alert alert-danger">이미지지를 사용하시려면 먼저 공개가 필요합니다. 공개하시겠습니까?</div>');
+											tab_pane.find('.panel-body).prepend(
+												t	
+											);
 										}													
 									})									
 								}											
