@@ -959,8 +959,7 @@
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
 								var item = data[current_index];							
-								var imageId = item.imageId;
-								
+								var imageId = item.imageId;								
 								if( imageId > 0 )
 									that._changeState(true);								
 							},
@@ -1035,8 +1034,15 @@
 					case that.options.guid[TAB_PANE_URL_ID] :					
 						selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 					break;
-				}
-								
+					case that.options.guid[TAB_PANE_MY_ID] :		
+						var my_list_view = tab_pane.find('.panel-body div');
+						var current_index = my_list_view.data('kendoListView').select().index();
+						var item = my_list_view.data('kendoListView').data[current_index];
+						
+						alert(item.imageId);
+						
+					break;	
+				}								
 				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 			});
 		},
