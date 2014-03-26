@@ -1073,7 +1073,7 @@
 					break;
 					case that.options.guid[TAB_PANE_MY_ID] :		
 						var my_list_view = tab_pane.find('.panel-body div');
-						var externalId = my_list_view.data("linkId");
+						var linkId = my_list_view.data("linkId");
 						selected_url = URL_TEMPLATE({ key : linkId });
 						my_list_view.data("linkId", null );
 					break;	
