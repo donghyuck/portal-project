@@ -873,7 +873,7 @@
 	POST = 'POST',
 	JSON = 'json',		
 	VALUE_TEMPLATE = kendo.template( '<img src="#: url #" class="img-responsive"/>' ),
-	URL_TEMPLATE = kendo.template( '/community/view-streams-photo.do?key=#= key #' ),
+	URL_TEMPLATE = kendo.template( '/download/image/#= key #' ),
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
     common.ui.extImageBrowser = Widget.extend({
@@ -973,9 +973,20 @@
 								if( imageId > 0 ){									
 									that._getImageLink( item , function ( data ) {										
 										alert( kendo.stringify( data ) );
+										
+										if( ! data.imageLink typeof UNDEFINED ){
+											my_list_view.data("linkId" , data.imageLink.linkId );
+											that._changeState(true);		
+											var t = kendo.template('<div class="alert alert-danger"><p>#= name#</p> 이미지를 사용하시면 누구나 볼수 있게 됩니다. <button type="button" class="btn btn-primary" data-image=#: imageId #>공개</button></div>');
+											tab_pane.find('.panel-body').prepend(
+												t( item )	
+											);
+											
+										}
+										
 										/*
 										if( data.photos.length > 0 ){											
-											var externalId = data.photos[0].externalId ;
+											
 											my_list_view.data("externalId" , externalId )
 											that._changeState(true);		
 										}else{
@@ -1062,9 +1073,9 @@
 					break;
 					case that.options.guid[TAB_PANE_MY_ID] :		
 						var my_list_view = tab_pane.find('.panel-body div');
-						var externalId = my_list_view.data("externalId");
-						selected_url = URL_TEMPLATE({ key : externalId });
-						my_list_view.data("externalId", null );
+						var externalId = my_list_view.data("linkId");
+						selected_url = URL_TEMPLATE({ key : linkId });
+						my_list_view.data("linkId", null );
 					break;	
 				}								
 				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
