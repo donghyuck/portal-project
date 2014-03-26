@@ -155,7 +155,7 @@
 	</servlet>
 
 	<servlet>
-		<servlet-name>download</servlet-name>
+		<servlet-name>download-handler</servlet-name>
 		<servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
 	</servlet>
 
