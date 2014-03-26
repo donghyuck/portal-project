@@ -6,6 +6,6 @@
 <title>요청하신 페이지를 찾을 수 없습니다.</title>
 </head>
 <body>
-    <img src="<%= request.getContextPath()  %>/images/404.jpg"/>  
+    <img src="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/images/404.jpg"/>  
 </body>
 </html>                
