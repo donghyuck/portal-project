@@ -155,8 +155,9 @@
 	</servlet>
 
 	<servlet>
-		<servlet-name>download-handler</servlet-name>
-		<servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+		<servlet-name>download</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!-- <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>-->
 	</servlet>
 
 	<!-- Standard Action Servlet Mapping -->
@@ -172,7 +173,7 @@
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>download-handler</servlet-name>
+		<servlet-name>download</servlet-name>
 		<url-pattern>/download/*</url-pattern>
 	</servlet-mapping>
 
