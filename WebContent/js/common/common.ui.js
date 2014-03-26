@@ -977,8 +977,10 @@
 										if( typeof data.imageLink ===  'object' ){
 											my_list_view.data("linkId" , data.imageLink.linkId );
 											that._changeState(true);		
-											var t = kendo.template('<div class="alert alert-danger"><p>#= name#</p> 이미지를 사용하시면 누구나 볼수 있게 됩니다. <button type="button" class="btn btn-primary" data-image=#: imageId #>공개</button></div>');
-											tab_pane.find('.panel-body').prepend(
+											
+											var t = kendo.template('<div class="panel-body"><p>#= name#</p> 이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</div>');
+											
+											tab_pane.find('.panel').prepend(
 												t( item )	
 											);
 											
