@@ -10,6 +10,6 @@
 <!-- 
 	<context:component-scan base-package="org.springframework.samples.petclinic.web" />
 -->
-	<bean id="download-controller" class="architecture.ee.web.spring.controller.DownloadController"  p:imageManager-ref="imageManager" />	
+	<bean id="download" class="architecture.ee.web.spring.controller.DownloadController"  p:imageManager-ref="imageManager" />	
 	
 </beans>
