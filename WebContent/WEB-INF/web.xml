@@ -172,7 +172,7 @@
 	</servlet-mapping>
 
 	<servlet-mapping>
-		<servlet-name>download</servlet-name>
+		<servlet-name>download-handler</servlet-name>
 		<url-pattern>/download/*</url-pattern>
 	</servlet-mapping>
 
