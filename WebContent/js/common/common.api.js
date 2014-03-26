@@ -237,6 +237,47 @@
 		return item;
 	};
 	
+	
+	common.api.getImagelink = function (options){
+		options = options || {};
+		$.ajax({
+			type : 'POST',
+			url : options.url || '/community/get-image-link.do?output=json' ,
+			data: { imageId : options.imageId },
+			success : function(response){
+				if( response.error ){ 												
+					if( isFunction (options.fail) )
+						options.fail(response) ;
+				} else {					
+					if( isFunction(options.success) )
+						options.success(response) ;					
+				}
+			},
+			error:options.error || handleKendoAjaxError,
+			dataType : "json"
+		});	
+	}
+
+	common.api.removeImageLink = function (options){
+		options = options || {};
+		$.ajax({
+			type : 'POST',
+			url : options.url || '/community/delete-image-link?output=json' ,
+			data: { imageId : options.imageId },
+			success : function(response){
+				if( response.error ){ 												
+					if( isFunction (options.fail) )
+						options.fail(response) ;
+				} else {					
+					if( isFunction(options.success) )
+						options.success(response) ;					
+				}
+			},
+			error:options.error || handleKendoAjaxError,
+			dataType : "json"
+		});	
+	}	
+	
 	common.api.handleKendoAjaxError = function (xhr) {
 		var message = "";
 		if (xhr.status == 0) {
