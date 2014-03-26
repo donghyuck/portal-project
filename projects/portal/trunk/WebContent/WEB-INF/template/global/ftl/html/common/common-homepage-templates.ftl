@@ -329,7 +329,7 @@
 <script type="text/x-kendo-template" id="photo-view-template">	
 		<figure>			
 			<a href="\\#photo-#:imageId#">			
-			<img src="${request.contextPath}/community/view-my-image.do?imageId=#:imageId#" width="100%" alt="#:name# 이미지"/>			
+			<img src="${request.contextPath}/community/download-my-image.do?imageId=#:imageId#" width="100%" alt="#:name# 이미지"/>			
 			</a>
 			<figcaption>
 				<ul class="list-inline">
@@ -958,15 +958,14 @@
 								<div class="tab-pane fade  active" id=#:upload_guid#>
 									<div class="page-header text-primary">
 										<h5 ><strong>업로드</strong>&nbsp;<small>여러개의 파일을 한번에 업로드할 수 있습니다.</small></h5>
-									</div>
-														  
+									</div>														  
 								</div>
 								<div class="tab-pane fade" id=#:my_guid#>
 									<div class="page-header text-primary">
 										<h5 ><strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 									</div>
 									<div class="panel panel-default panel-flat">								
-										<div class="panel-body scrollable" style="max-height:450px;">
+										<div class="panel-body scrollable" style="max-height:450px;">											
 											<div style="width:100%; padding:0px; border: 0px; min-height: 200px;"></div>
 										</div>	
 										<div class="panel-footer" style="padding:0px;">
