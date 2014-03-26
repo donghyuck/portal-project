@@ -971,9 +971,7 @@
 								var item = data[current_index];							
 								var imageId = item.imageId;								
 								if( imageId > 0 ){									
-									that._getImageLink( item , function ( data ) {										
-										alert( kendo.stringify( data ) );
-										
+									that._getImageLink( item , function ( data ) {
 										if( typeof data.imageLink ===  'object' ){
 											my_list_view.data("linkId" , data.imageLink.linkId );
 											that._changeState(true);		
