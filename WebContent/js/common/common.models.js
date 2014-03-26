@@ -298,7 +298,7 @@ var Image = kendo.data.Model.define( {
         index : {type: "number", defaultValue : 0 }
     },
     manupulate : function () {
-    	this.set( "photoUrl" , '/community/view-my-image.do?imageId=' + this.get('imageId') );
+    	this.set( "photoUrl" , '/community/download-my-image.do?imageId=' + this.get('imageId') );
     	this.set( "formattedCreationDate" , kendo.toString(this.get('creationDate'),  'F') );
     	this.set( "formattedModifiedDate" , kendo.toString(this.get('modifiedDate'),  'F') );
     	this.set( "formattedSize" , kendo.toString(this.get('size'),  'n0') );
