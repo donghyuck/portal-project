@@ -914,7 +914,7 @@
 			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
 		},
-		_gerImageLink : function ( image , callback ){
+		_getImageLink : function ( image , callback ){
 			common.api.getImagelink({
 				imageId : image.imageId ,
 				success : function( data ) {
@@ -971,8 +971,7 @@
 								var item = data[current_index];							
 								var imageId = item.imageId;								
 								if( imageId > 0 ){									
-									that._gerImageLink( item , function ( data ) {
-										
+									that._getImageLink( item , function ( data ) {										
 										alert( kendo.stringify( data ) );
 										/*
 										if( data.photos.length > 0 ){											
