@@ -920,7 +920,7 @@
 				success : function( data ) {
 					callback( data );
 				}					
-			);
+			});
 		},
 		_modal : function () {
 			var that = this ;
