@@ -974,7 +974,7 @@
 									that._getImageLink( item , function ( data ) {										
 										alert( kendo.stringify( data ) );
 										
-										if( ! data.imageLink typeof UNDEFINED ){
+										if( typeof data.imageLink ===  'object' ){
 											my_list_view.data("linkId" , data.imageLink.linkId );
 											that._changeState(true);		
 											var t = kendo.template('<div class="alert alert-danger"><p>#= name#</p> 이미지를 사용하시면 누구나 볼수 있게 됩니다. <button type="button" class="btn btn-primary" data-image=#: imageId #>공개</button></div>');
