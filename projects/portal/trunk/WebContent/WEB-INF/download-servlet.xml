@@ -10,6 +10,14 @@
 <!-- 
 	<context:component-scan base-package="org.springframework.samples.petclinic.web" />
 -->
-	<bean id="download" class="architecture.ee.web.spring.controller.DownloadController"  p:imageManager-ref="imageManager" />	
-	
+
+	<bean id="download-controller" class="architecture.ee.web.spring.controller.DownloadController"  p:imageManager-ref="imageManager" />	
+	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="order" value="0" />
+			<property name="mappings">
+				<value>
+					/*=download-controller
+				</value>
+		</property>
+	</bean>	
 </beans>
