@@ -914,13 +914,13 @@
 			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
 		},
-		_details : function ( image, callback ) {		
-			common.api.streams.details({
+		_gerImageLink : function ( image , callback ){
+			common.api.getImagelink({
 				imageId : image.imageId ,
 				success : function( data ) {
 					callback( data );
-				}
-			});				
+				}					
+			);
 		},
 		_modal : function () {
 			var that = this ;
@@ -964,15 +964,17 @@
 								serverPaging: true
 							},
 							selectable: "single",									
-							change: function(e) {			
-								
+							change: function(e) {											
 								tab_pane.find('.panel-body .alert').remove();
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
 								var item = data[current_index];							
 								var imageId = item.imageId;								
 								if( imageId > 0 ){									
-									that._details( item , function ( data ) {										
+									that._gerImageLink( item , function ( data ) {
+										
+										alert( kendo.stringify( data ) );
+										/*
 										if( data.photos.length > 0 ){											
 											var externalId = data.photos[0].externalId ;
 											my_list_view.data("externalId" , externalId )
@@ -982,8 +984,8 @@
 											tab_pane.find('.panel-body').prepend(
 												t( item )	
 											);
-										}													
-									})									
+										}	*/												
+									});									
 								}											
 							},
 							navigatable: false,
