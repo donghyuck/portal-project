@@ -965,7 +965,7 @@
 							},
 							selectable: "single",									
 							change: function(e) {											
-								tab_pane.find('.panel-body .alert').remove();
+								tab_pane.find('.panel-body.custom-selected-image').remove();
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
 								var item = data[current_index];							
@@ -978,7 +978,7 @@
 											my_list_view.data("linkId" , data.imageLink.linkId );
 											that._changeState(true);		
 											
-											var t = kendo.template('<div class="panel-body custom-selected-image"><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ><p class="text-primary">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
+											var t = kendo.template('<div class="panel-body custom-selected-image"><p><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p><p class="text-primary">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
 											
 											tab_pane.find('.panel').prepend(
 												t( item )	
@@ -1003,7 +1003,7 @@
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
 							dataBound: function(e) {
-								tab_pane.find('.panel-body .alert').remove();
+								tab_pane.find('.panel-body.custom-selected-image').remove();
 								that._changeState(false);
 							}
 						});							
