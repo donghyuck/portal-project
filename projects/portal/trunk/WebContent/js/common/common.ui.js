@@ -978,7 +978,7 @@
 											my_list_view.data("linkId" , data.imageLink.linkId );
 											that._changeState(true);		
 											
-											var t = kendo.template('<div class="panel-body custom-selected-image"><a href="\\#" class="thumbnail"><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150"></a><p>#= name#</p> 이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</div>');
+											var t = kendo.template('<div class="panel-body custom-selected-image"><a href="\\#" class="thumbnail"><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150"></a><p class="text-primary">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
 											
 											tab_pane.find('.panel').prepend(
 												t( item )	
