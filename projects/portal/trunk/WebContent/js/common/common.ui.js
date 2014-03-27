@@ -1128,6 +1128,94 @@
 	});	
 })(jQuery);
 
+/**
+ *  FullscreenSlideshow widget
+ */
+(function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};
+    var kendo = window.kendo,
+    Widget = kendo.ui.Widget,
+    isPlainObject = $.isPlainObject,
+    proxy = $.proxy,
+    extend = $.extend,
+    placeholderSupported = kendo.support.placeholder,
+    browser = kendo.support.browser,
+    isFunction = kendo.isFunction,
+    CHANGE = "change",
+    APPLY = "apply",
+    ERROR = "error",
+    CLICK = "click",
+	UNDEFINED = 'undefined',
+	TEMPLATE = kendo.template( 
+		'<ul id="cbp-bislideshow" class="cbp-bislideshow"></ul>' +
+		'<div id="cbp-bicontrols" class="cbp-bicontrols">' +
+		'<span class="fa cbp-biprev"></span>' +
+		'<span class="fa cbp-bipause"></span>' +
+		'<span class="fa cbp-binext"></span>' +
+		'</div>' +
+		'</div>'
+	),
+	ITEM_TEMPLATE = kendo.template( '<li><img src="/community/view-streams-photo.do?key=#= externalId#" alt="이미지"/></li>' ),
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;
+	
+    common.ui.extFullscreenSlideshow = Widget.extend({
+		init: function(element, options) {			
+			var that = this;		 
+			Widget.fn.init.call(that, element, options);			
+			options = that.options;
+			that._dataSource();
+			that.dataSource = kendo.data.DataSource.create(that.options.dataSource);			
+			that.refresh();		
+		},
+		events: [ERROR, CHANGE, APPLY],
+		options : {
+			name: "ExtFullscreenSlideshow",
+			autoBind : true
+		},
+		_dataSource: function() {
+			var that = this ;
+			// returns the datasource OR creates one if using array or configuration object
+			if( typeof that.options.dataSource === 'object')
+				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
+			else 
+				that.dataSource = common.api.streams.dataSource ;
+			
+			that.dataSource.bind(CHANGE, function() {
+				that.refresh();
+			});		
+			
+			if (that.options.autoBind) {    
+				that.dataSource.fetch();
+			}
+		},
+		show: function() {
+			var that = this ;
+			that._modal().modal('show');
+			that.element.find('.modal-body ul.nav a:first').tab('show');
+		},
+		close: function () {
+			var that = this ;
+			that._modal().modal('hide');
+		},
+		refresh: function () {
+			var that = this ;
+			view = that.dataSource.view(),
+		},
+		destroy: function() {
+			var that = this;
+			Widget.fn.destroy.call(that);			
+			$(that.element).remove();
+		}	
+	});
+	
+	$.fn.extend( { 
+		extFullscreenSlideshow : function ( options ) {
+			return new common.ui.extFullscreenSlideshow ( this , options );		
+		}
+	});	
+})(jQuery);
+
 function handleKendoAjaxError(xhr) {
 	var message = "";
 	if (xhr.status == 0) {
