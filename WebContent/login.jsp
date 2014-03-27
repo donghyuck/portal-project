@@ -11,7 +11,7 @@
 	yepnope([{
 		load: [ 
 			'css!<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/font-awesome/4.0.3/font-awesome.min.css',
-			'css!<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/common/common.ui.animatedcheckbox.css',			
+			'css!<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/bootstrap/3.1.0/non-responsive.css',		
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jquery/1.10.2/jquery.min.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jquery.extension/jquery.ui.shake.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jgrowl/jquery.jgrowl.min.js',
