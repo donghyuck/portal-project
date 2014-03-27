@@ -532,8 +532,12 @@
     			url : that.options.ajax.url,
     			success : function(response){
     				user = new User ( $.extend(response.currentUser, { roles: response.roles } ));
-   					user.set('isSystem', user.hasRole(ROLE_ADMIN) );
-   					user.set('isSystem', user.hasRole(ROLE_SYSTEM) );
+    				
+    				if(user.hasRole(ROLE_SYSTEM))
+    					user.set( 'isSystem', true);
+    				if(user.hasRole(ROLE_ADMIN))
+    					user.set( 'isSystem', true);
+    				
    					$(that.element).data("currentUser", user );
    					that.token = user ;    				
     				that.trigger( AUTHENTICATE, {token: user}); 
