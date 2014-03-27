@@ -1163,8 +1163,7 @@
 			options = that.options;
 			that._dataSource();
 			that.element.html(TEMPLATE);			
-			
-			_initEvents();
+			that._initEvents();
 		},
 		options : {
 			name: "ExtFullscreenSlideshow",
