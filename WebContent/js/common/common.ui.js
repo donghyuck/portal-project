@@ -493,7 +493,8 @@
 	ERROR = "error",
 	SHOWN = "shown",
 	UPDATE = "update",
-	SYSTEM_ROLE = "ROLE_ADMIN",
+	ROLE_ADMIN = "ROLE_ADMIN",
+	ROLE_SYSTEM = "ROLE_SYSTEM",
     NS = ".kendoAccounts",
 	open = false,
 	DISABLED = "disabled";	
@@ -531,7 +532,8 @@
     			url : that.options.ajax.url,
     			success : function(response){
     				user = new User ( $.extend(response.currentUser, { roles: response.roles } ));
-   					user.set('isSystem', user.hasRole(SYSTEM_ROLE ) );
+   					user.set('isSystem', user.hasRole(ROLE_ADMIN) );
+   					user.set('isSystem', user.hasRole(ROLE_SYSTEM) );
    					$(that.element).data("currentUser", user );
    					that.token = user ;    				
     				that.trigger( AUTHENTICATE, {token: user}); 
