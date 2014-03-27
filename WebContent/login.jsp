@@ -274,14 +274,7 @@
 <body class="color1">
 	<!-- Main Page Content  -->
 
-		<div class="main">
-			<ul id="cbp-bislideshow" class="cbp-bislideshow"></ul>
-			<div id="cbp-bicontrols" class="cbp-bicontrols">
-				<span class="fa cbp-biprev"></span>
-				<span class="fa cbp-bipause"></span>
-				<span class="fa cbp-binext"></span>
-			</div>			
-		</div>
+		<div class="main" id="slideshow"></div>
 	
 		<nav class="navbar navbar-fixed-bottom" role="navigation" class="color:#000000;">
 			<div class="container-fluid">
