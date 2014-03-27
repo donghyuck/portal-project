@@ -605,7 +605,9 @@
 							{	
 								name: "viewHtml"
 							}
-						],
+						]
+						/*
+						,
 						imageBrowser: {
 							messages: {
 								uploadFile: "이미지 업로드",
@@ -655,6 +657,7 @@
 								}
 							}
 						}
+						*/
 					});
 				}		
 		}
@@ -679,7 +682,7 @@
 									url : '${request.contextPath}/community/update-announce.do?output=json',
 									data : { announceId: data.announceId, item: kendo.stringify( data ) },
 									success : function( response ){		
-										$('#announce-grid').data('kendoGrid').dataSource.read();	
+										showAnnouncePanel();//$('#announce-grid').data('kendoGrid').dataSource.read();	
 									},
 									error:common.api.handleKendoAjaxError
 							});	
