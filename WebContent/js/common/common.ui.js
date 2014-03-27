@@ -1143,9 +1143,6 @@
     browser = kendo.support.browser,
     isFunction = kendo.isFunction,
     CHANGE = "change",
-    APPLY = "apply",
-    ERROR = "error",
-    CLICK = "click",
 	UNDEFINED = 'undefined',
 	TEMPLATE = kendo.template( 
 		'<ul id="cbp-bislideshow" class="cbp-bislideshow"></ul>' +
@@ -1165,13 +1162,46 @@
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;
 			that._dataSource();
-			that.dataSource = kendo.data.DataSource.create(that.options.dataSource);			
-			that.refresh();		
+			that.element.html(TEMPLATE);			
+			
+			_initEvents();
 		},
-		events: [ERROR, CHANGE, APPLY],
 		options : {
 			name: "ExtFullscreenSlideshow",
-			autoBind : true
+			autoBind : true,
+			interval : 6000,
+			slideshowtime: 0
+		},
+		_initEvents : function () {
+			var that = this;
+			var options = that.options ;			
+			var controls = that.element.children('.cbp-bicontrols');			
+			if( controls.length > 0 ){
+				controls.find('span.cbp-bipause').on( 'click', function(){
+					var control = $( this );
+					if( control.hasClass( 'cbp-biplay' ) ) {
+						control.removeClass( 'cbp-biplay' ).addClass( 'cbp-bipause' );
+						that._start();
+					}
+					else {
+						control.removeClass( 'cbp-bipause' ).addClass( 'cbp-biplay' );
+						that._stop();
+					}
+				});				
+				var prev = controls.find('span.cbp-biprev').on('click', function(){
+					that._navigate( 'prev' ); 
+					if( that.active ) { 
+						that._start();
+					} 
+				});
+				
+				var next = controls.find('span.cbp-binext').on('click', function(){
+					that._navigate( 'next' ); 
+					if( that.active ) { 
+						that._start();
+					}
+				});
+			}	
 		},
 		_dataSource: function() {
 			var that = this ;
@@ -1179,28 +1209,67 @@
 			if( typeof that.options.dataSource === 'object')
 				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
 			else 
-				that.dataSource = common.api.streams.dataSource ;
-			
+				that.dataSource = common.api.streams.dataSource ;			
 			that.dataSource.bind(CHANGE, function() {
 				that.refresh();
-			});		
-			
+			});					
 			if (that.options.autoBind) {    
 				that.dataSource.fetch();
 			}
 		},
-		show: function() {
-			var that = this ;
-			that._modal().modal('show');
-			that.element.find('.modal-body ul.nav a:first').tab('show');
-		},
-		close: function () {
-			var that = this ;
-			that._modal().modal('hide');
-		},
+		current: 0,
+		active: false,
 		refresh: function () {
 			var that = this ;
-			view = that.dataSource.view(),
+			var view = that.dataSource.view();			
+			var slideshow = that.element.children('.cbp-bislideshow');
+			slideshow.html( kendo.render(ITEM_TEMPLATE, view ) );					
+			that.items = slideshow.find('li');			
+			slideshow.imagesLoaded(
+				function(){
+					if( Modernizr.backgroundsize ) {
+						that.items.each( function(){
+							 var item = $( this );
+							 item.css( 'background-image', 'url(' + item.find( 'img' ).attr( 'src' ) + ')' );						
+						} );	
+					}else{
+						slideshow.find( 'img' ).show();
+					}
+					that.items.eq( that.current  ).css( 'opacity', 1 );
+				}
+			);
+		},		
+		_navigate : function( direction ) {
+			// current item
+			var that = this;	
+			var oldItem = that.items.eq( that.current );			
+			if( direction === 'next' ) {
+				that.current = that.current < that.items.length - 1 ? ++that.current : 0;
+			}
+			else if( direction === 'prev' ) {
+				that.current = that.current > 0 ? --that.current : that.items.length - 1;
+			}
+			// new item
+			var newItem = that.items.eq( that.current  );
+			// show / hide items
+			oldItem.css( 'opacity', 0 );
+			newItem.css( 'opacity', 1 );
+		},
+		_start : function () {
+			var that = this;
+			var options = that.options ;				
+			that.active = true;
+			clearTimeout( options.slideshowtime );
+			options.slideshowtime = setTimeout( function() {
+				that._navigate( 'next' );
+				that._start();
+			}, options.interval );
+		},
+		_stop : function () {
+			var that = this;
+			var options = that.options ;				
+			that.active = false;
+			clearTimeout( options.slideshowtime );
 		},
 		destroy: function() {
 			var that = this;
