@@ -33,11 +33,11 @@
 	<style scoped="scoped">
 	
 	.cbp-bicontrols {
-		top: 90%;
+		top: 80%;
 	}
 				
 	</style>	
-<body>
+<body class="color4">
 	<div class="main" id="slideshow"></div>
 </body>
 </html>
