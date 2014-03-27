@@ -875,7 +875,7 @@
 	TAB_PANE_URL_ID = "url_guid" ,
 	TAB_PANE_UPLOAD_ID = "upload_guid" ,
     TAB_PANE_MY_ID = "my_guid" ,
-    TAB_PANE_COMPANY_ID = "company_guid" ,
+    TAB_PANE_DOMAIN_ID = "domain_guid" ,
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	JSON = 'json',		
@@ -893,7 +893,7 @@
 				url_guid:common.api.guid().toLowerCase(),
 				upload_guid:common.api.guid().toLowerCase(),
 				my_guid:common.api.guid().toLowerCase(),
-				company_guid:common.api.guid().toLowerCase()
+				domain_guid:common.api.guid().toLowerCase()
 			};			
 			that.refresh();		
 		},
@@ -945,6 +945,9 @@
 				var tab_pane_id = $( e.target ).attr('href');				
 				var tab_pane = $(tab_pane_id );					
 				switch(tab_pane_id){
+				case "#" + that.options.guid[TAB_PANE_DOMAIN_ID] :
+					
+					break;
 				case "#" + that.options.guid[TAB_PANE_MY_ID] :					
 					var my_list_view = tab_pane.find('.panel-body div');				
 					var my_list_pager = tab_pane.find('.panel-footer div');		
@@ -1007,8 +1010,7 @@
 							kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 						}).on("mouseleave", ".img-wrapper", function(e) {
 							kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-						});		
-						
+						});	
 						my_list_pager.kendoPager({
 							refresh : true,
 							buttonCount : 5,
@@ -1069,6 +1071,12 @@
 					case that.options.guid[TAB_PANE_URL_ID] :					
 						selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
 					break;
+					case that.options.guid[TAB_PANE_DOMAIN_ID] :
+						var my_list_view = tab_pane.find('.panel-body div');
+						var linkId = my_list_view.data("linkId");
+						selected_url = URL_TEMPLATE({ key : linkId });
+						my_list_view.data("linkId", null );						
+						break;
 					case that.options.guid[TAB_PANE_MY_ID] :		
 						var my_list_view = tab_pane.find('.panel-body div');
 						var linkId = my_list_view.data("linkId");
