@@ -948,7 +948,7 @@
 							<ul class="nav nav-pills nav-stacked">
 							  <li class="active"><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
 							  <li><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li><a href="\\##=company_guid#" data-toggle="tab">도메인 이미지에서 선택</a></li>
+							  <li><a href="\\##=domain_guid#" data-toggle="tab">도메인 이미지에서 선택</a></li>
 							  <li><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
@@ -974,9 +974,9 @@
 									</div>	
 																										  
 								</div>
-							  <div class="tab-pane fade" id=#:company_guid#>
+							  <div class="tab-pane fade" id=#:domain_guid#>
 								<div class="page-header text-primary">
-									<h5 ><strong>회사 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
+									<h5 ><strong>도메인 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 								</div>							  
 							  </div>
 							  <div class="tab-pane fade" id=#:url_guid#>
