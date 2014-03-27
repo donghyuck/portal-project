@@ -30,6 +30,13 @@
 	}]);			
 	-->
 	</script>	
+	<style scoped="scoped">
+	
+	.cbp-bicontrols {
+		top: 90%;
+	}
+				
+	</style>	
 <body>
 	<div class="main" id="slideshow"></div>
 </body>
