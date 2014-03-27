@@ -57,7 +57,8 @@
 	<body class="color8">
 		<div class="panel panel-default">
 			<div class="panel-body">
-			요청하신 페이지에 대한 권한이 없습니다.
+			<p class="text-center">요청하신 페이지에 대한 권한이 없습니다.</p>
+			<p class="text-center"><a href="/main.do" class="btn btn-info">확인</a></p>
 			</div>
 		</div>
 		<div class="main" id="slideshow"></div>
