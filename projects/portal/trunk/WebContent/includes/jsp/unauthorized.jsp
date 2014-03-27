@@ -37,6 +37,7 @@
 				
 	</style>	
 	<body class="color8">
+		<div class="alert alert-danger">접근권한이 없습니다.</div>	
 		<div class="main" id="slideshow"></div>
 	</body>
 </html>
