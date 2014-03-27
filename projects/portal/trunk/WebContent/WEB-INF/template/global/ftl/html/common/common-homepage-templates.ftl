@@ -948,7 +948,7 @@
 							<ul class="nav nav-pills nav-stacked">
 							  <li class="active"><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
 							  <li><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li><a href="\\##=company_guid#" data-toggle="tab">회사 이미지에서 선택</a></li>
+							  <li><a href="\\##=company_guid#" data-toggle="tab">도메인 이미지에서 선택</a></li>
 							  <li><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
