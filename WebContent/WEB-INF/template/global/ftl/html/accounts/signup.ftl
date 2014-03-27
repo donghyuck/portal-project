@@ -13,10 +13,8 @@
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',	
-			'${request.contextPath}/js/common/common.cbpBGSlideshow.min.js',
+			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',
 			'${request.contextPath}/js/jquery.imagesloaded/imagesloaded.min.js',
-			'${request.contextPath}/js/jquery.cookie/jquery.cookie.min.js',
 			'${request.contextPath}/js/common/common.modernizr.custom.js',
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
@@ -29,18 +27,8 @@
 				kendo.culture("ko-KR");
 				
 				// START SCRIPT	
+				var slideshow = $('#slideshow').extFullscreenSlideshow();
 				
-				var photo_template = kendo.template("<li><img src='${request.contextPath}/community/view-streams-photo.do?key=#= externalId#' alt='이미지'/></li>");				
-				common.api.streams.dataSource.fetch(function(){
-					var data = this.data();
-					$.each( data , function(index, item ){
-						$('#cbp-bislideshow').html( kendo.render( photo_template, data ) ) ;
-					});
-					var slideshow = $('#cbp-bislideshow').extSlideshow({
-						navigation: $('#cbp-bicontrols')
-					});
-				});
-						
 				$("#signup-form").data("signupPlaceHolder", new  SignupForm({}) );		
 				$("#signup-form").data("validatorPlaceHolder", new kendo.data.ObservableObject({}) );			
 										
@@ -361,7 +349,9 @@
 		function homepage(){
 			window.location.replace("/main.do");
 		}		
-		--></script>
+		-->
+		</script>
+		
 		<style>
 
 		.k-widget.k-tooltip-validation {
@@ -379,19 +369,20 @@
 			background-color:#007AFF;
 			color : #ffffff;
 		}
+	
+		.cbp-bicontrols {
+			top: 80%;
+		}
+		.cbp-bicontrols span:before {
+			font-size: 40px;
+			opacity: 0.7;
+		}	
 		
 		</style>
 		</#compress>		
 	</head>
 	<body class="color3">
-		<div class="main">
-			<ul id="cbp-bislideshow" class="cbp-bislideshow"></ul>
-			<div id="cbp-bicontrols" class="cbp-bicontrols">
-				<span class="fa cbp-biprev"></span>
-				<span class="fa cbp-bipause"></span>
-				<span class="fa cbp-binext"></span>
-			</div>			
-		</div>
+		<div class="main" id="slideshow"></div>
 		<nav class="navbar navbar-fixed-bottom" role="navigation" class="color:#000000;">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-left">
