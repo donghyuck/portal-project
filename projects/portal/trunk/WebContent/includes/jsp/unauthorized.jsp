@@ -34,10 +34,32 @@
 	.cbp-bicontrols {
 		top: 80%;
 	}
+	.cbp-bicontrols span:before {
+		font-size: 40px;
+		opacity: 0.7;
+	}
+	
+	.panel {
+		position: fixed;
+		background-color: rgba( 0,0,0, .5);
+		border: 0px ;
+		border-radius: 8px;
+		-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+		box-shadow: 0 1px 1px rgba(0,0,0,.05);
+		width: 300px;
+		left: 50%;
+		top: 50%;
+		margin: -150px 0 0 -150px;
+		color: #FFF;
+	}
 				
 	</style>	
 	<body class="color8">
-		<div class="alert alert-danger">접근권한이 없습니다.</div>	
+		<div class="panel panel-default">
+			<div class="panel-body">
+			요청하신 페이지에 대한 권한이 없습니다.
+			</div>
+		</div>
 		<div class="main" id="slideshow"></div>
 	</body>
 </html>
