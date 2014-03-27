@@ -937,6 +937,7 @@
 			var that = this ;
 			var template = that._dialogTemplate();			
 			that.element.html(template(that.options.guid));					
+			that.element.children( '.modal').css('z-index', '2000');
 			that.element.find( '.modal-body a[data-toggle="tab"]' ).on('shown.bs.tab', function (e) {
 				e.target // activated tab
 				e.relatedTarget // previous tab
@@ -983,25 +984,15 @@
 											my_list_view.data("linkId" , data.imageLink.linkId );
 											that._changeState(true);		
 											
-											var t = kendo.template('<div class="panel-body custom-selected-image"><p><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p><p class="text-primary">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
+											var t = kendo.template(
+												'<div class="panel-body custom-selected-image">' + 
+												'<p><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
+												'<p class="text-primary">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
 											
 											tab_pane.find('.panel').prepend(
 												t( item )	
-											);
-											
-										}
-										
-										/*
-										if( data.photos.length > 0 ){											
-											
-											my_list_view.data("externalId" , externalId )
-											that._changeState(true);		
-										}else{
-											var t = kendo.template('<div class="alert alert-danger"><p>#= name#</p> 이미지를 사용하시면 누구나 볼수 있게 됩니다. <button type="button" class="btn btn-primary" data-image=#: imageId #>공개</button></div>');
-											tab_pane.find('.panel-body').prepend(
-												t( item )	
-											);
-										}	*/												
+											);											
+										}										
 									});									
 								}											
 							},
