@@ -7,7 +7,8 @@
 	User user = SecurityHelper.getUser();
 	Company company = user.getCompany();
 %>
-<script type="text/javascript">
+	<script type="text/javascript">
+	<!--
 	yepnope([{
 		load: [ 
 			'css!<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/font-awesome/4.0.3/font-awesome.min.css',
@@ -26,7 +27,9 @@
 		complete: function() {
 			var slideshow = $('#slideshow').extFullscreenSlideshow();
 		}		
-	}]);				
+	}]);			
+	-->
+	</script>	
 <body>
 	<div class="main" id="slideshow"></div>
 </body>
