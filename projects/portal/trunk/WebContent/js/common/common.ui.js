@@ -532,6 +532,7 @@
     			url : that.options.ajax.url,
     			success : function(response){
     				user = new User ( $.extend(response.currentUser, { roles: response.roles } ));
+    				user.set( 'isSystem', false);
     				
     				if(user.hasRole(ROLE_SYSTEM))
     					user.set( 'isSystem', true);
