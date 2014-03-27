@@ -32,16 +32,7 @@
 				}				
 			} );		
 			
-			var photo_template = kendo.template("<li><img src='<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/community/view-streams-photo.do?key=#= externalId#' alt='이미지'/></li>");				
-			common.api.streams.dataSource.fetch(function(){
-				var data = this.data();
-				$.each( data , function(index, item ){
-					$('#cbp-bislideshow').html( kendo.render( photo_template, data ) ) ;
-				});
-				var slideshow = $('#cbp-bislideshow').extSlideshow({
-					navigation: $('#cbp-bicontrols')
-				});
-			});
+			var slideshow = $('#slideshow').extFullscreenSlideshow();
 			
 			/* LOGIN */
 			$('#login-window').modal({show:true, backdrop:false});						
@@ -268,7 +259,16 @@
 		background-color:#007AFF;
 		color : #ffffff;
 	}
-			
+
+	.cbp-bicontrols {
+			top: 80%;
+	}
+	.cbp-bicontrols span:before {
+		font-size: 40px;
+		opacity: 0.7;
+	}	
+		
+					
 </style>
 </head>
 <body class="color1">
