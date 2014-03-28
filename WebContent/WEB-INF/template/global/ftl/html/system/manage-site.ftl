@@ -493,6 +493,8 @@
 					});		
 				}														 
 			}
+			$('#image-prop-grid').data("kendoGrid").dataSource.read();
+			
 			kendo.bind($('#image-details'), imagePlaceHolder );				
 					
 			if( 	$('#image-details').hasClass('hide') )
