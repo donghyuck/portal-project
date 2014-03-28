@@ -38,8 +38,6 @@
 				var topBar = $("#navbar").extTopNavBar({ 
 					menu:"SYSTEM_MENU",
 					template : kendo.template($("#topnavbar-template").html() )
-				}).on('click.ment', function (e) {
-					alert( kendo.stringify(e.data) );
 				});
 				
 				/**
