@@ -77,7 +77,7 @@
 											var isDetails = false;
 											var pane_id = panel_body.attr("id");				
 											
-											alert( typeof pane_id );
+											alert( panel_body.html() );
 																		
 											if ( pane_id.indexOf( 'details' ) != -1 ){
 												isDetails = true;
