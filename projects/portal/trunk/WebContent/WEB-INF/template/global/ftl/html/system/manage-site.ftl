@@ -531,7 +531,7 @@
 										<div class="panel panel-default">
 											<div class="panel-body">
 											이미지				
-												<img data-bind="attr:{ src: kendo.format('view-image.do?width=150&height=150&imageId={0}', imageId )} "/>
+												
 											</div>
 										</div>									
 									</div>
@@ -581,7 +581,7 @@
 		</footer>
 		<!-- END FOOTER -->
 		<script id="image-details-template" type="text/x-kendo-template">				
-		
+			<img src="/secure/view-image.do?width=150&height=150&imageId=#=imageId#"/>
 		</script>
 		<script id="social-details-template" type="text/x-kendo-template">				
 				#if ( typeof (twitterProfile)  == "object" ){ #
