@@ -729,7 +729,7 @@
 							<div class="media-body" style="color:ccc;">
 								<p class="text-muted"><strong> #:name#</strong></p>
 								<p class="text-muted"> #:email #</p>	
-								<p><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary" data-toggle="modal" data-target="\\#myModal" ><i class="fa fa-user"></i> 프로필 보기</a></p>		
+								<p><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a></p>		
 								<!--						
 								<ul class="nav nav-pills nav-stacked">
 									<li class="active">
