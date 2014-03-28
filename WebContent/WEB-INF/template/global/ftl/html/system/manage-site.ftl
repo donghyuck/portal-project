@@ -74,7 +74,7 @@
 				 					case "layout" :
 					 					$(".body-group").each(function( index ) {
 											var pane_body = $(this);
-											var pane_id = panel_body.attr("id");
+											var pane_id = pane_body.attr("id");
 													
 											if( typeof pane_id === 'undefined' ){
 												pane_id = "";
