@@ -529,10 +529,8 @@
 									<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">
 										<div class="panel panel-default">
 											<div class="panel-body">
-											이미지
-											
-											<img data-bind="attr: { src: 'view-image.do?width=150&height=150&imageId=' + imageId} />
-											
+											이미지											
+												<div data-template='<img src="view-image.do?width=150&height=150&imageId=#= imageId #" >' data-bind="source:" />											
 											</div>
 										</div>									
 									</div>
