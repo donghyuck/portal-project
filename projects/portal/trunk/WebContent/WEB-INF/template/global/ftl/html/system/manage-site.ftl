@@ -434,11 +434,11 @@
 					}					
 				});	
 															
-				$("#update-photo-file").kendoUpload({
+				$("#update-image-file").kendoUpload({
 					showFileList: false,
 					multiple: false,
 					async: {
-						saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
+						saveUrl:  '${request.contextPath}/secure/update-image.do?output=json',
 						autoUpload: true
 					},
 					localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
