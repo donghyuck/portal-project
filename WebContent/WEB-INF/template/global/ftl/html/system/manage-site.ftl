@@ -393,7 +393,11 @@
 		function displayImageDetails(){
 			var imagePlaceHolder = $("#image-details").data( "imagePlaceHolder");		
 			if( $('#image-details').find('.panel-body').length == 0 ){
-				alert( imagePlaceHolder.imgUrl );
+				if( typeof imagePlaceHolder.imgUrl == 'undefined' ){
+					var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
+					imagePlaceHolder.imgUrl = template(imagePlaceHolder);
+				}				
+				
 			}
 			
 			//if( $("#" + renderToString ).length == 0  ){			
@@ -587,7 +591,7 @@
 		<script id="image-details-template" type="text/x-kendo-template">				
 			<div class="panel panel-default">
 				<div class="panel-body">
-					<img src="/secure/view-image.do?width=150&height=150&imageId=#=imageId#" class="img-rounded"/>		
+					<img data-bind="attr:{src=imgUrl}" class="img-rounded"/>		
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
 					</div>			
