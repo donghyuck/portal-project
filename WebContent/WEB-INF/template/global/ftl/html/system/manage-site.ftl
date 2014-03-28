@@ -395,9 +395,68 @@
 			if( typeof imagePlaceHolder.imgUrl == 'undefined' ){
 				var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
 				imagePlaceHolder.imgUrl = template(imagePlaceHolder);
-			}							
+			}		
+
+			common.api.streams.details({
+				imageId :imagePlaceHolder.imageId ,
+				success : function( data ) {
+					if( data.photos.length > 0 ){
+						imagePlaceHolder.shared = true ;
+						$('#image-details').find("input[name='image-public-shared']").first().click();
+					}else{
+						imagePlaceHolder.shared = false ;
+						$('#image-details').find("input[name='image-public-shared']").last().click();
+					}
+				}
+			});		
+														
 			if( $('#image-details').find('.panel-body').length == 0 ){			
-				 $('#image-details').html( $("#image-details-template").html() );
+				$('#image-details').html( $("#image-details-template").html() );			
+				$('#image-details').find("input[name='image-public-shared']").on("change", function () {
+					var newValue = ( this.value == 1 ) ;
+					var oldValue =  $("#image-details").data( "imagePlaceHolder").shared ;					
+					if( oldValue != newValue){
+						if(newValue){
+							common.api.streams.add({
+								imageId: $("#image-details").data( "imagePlaceHolder").imageId,
+								success : function( data ) {
+									kendo.stringify(data);
+								}
+							});							
+						}else{
+							common.api.streams.remove({
+								imageId: $("#image-details").data( "imagePlaceHolder").imageId,
+								success : function( data ) {
+									kendo.stringify(data);
+								}
+							});					
+						}
+					}					
+				});	
+															
+				$("#update-photo-file").kendoUpload({
+					showFileList: false,
+					multiple: false,
+					async: {
+						saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
+						autoUpload: true
+					},
+					localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+					upload: function (e) {				
+						e.data = { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId };
+					},
+					success: function (e) {				
+						if( e.response.targetImage ){
+							$('#photo-list-view').data('kendoListView').dataSource.read();								
+							var item = e.response.targetImage;
+							item.index = $("#photo-list-view").data( "photoPlaceHolder" ).index;			
+							item.page = $("#photo-list-view").data( "photoPlaceHolder" ).page;		
+							// need fix!!
+							$("#photo-list-view").data( "photoPlaceHolder",  item );
+							displayPhotoPanel();
+						}
+					} 
+				});						 
 			}			
 			
 			alert( imagePlaceHolder.imgUrl  );
@@ -599,10 +658,10 @@
 		
 					<div class="btn-group" data-toggle="buttons">
 						<label class="btn btn-primary">
-						<input type="radio" name="photo-public-shared" value="1">모두에게 공개
+						<input type="radio" name="image-public-shared" value="1">모두에게 공개
 						</label>
 						<label class="btn btn-primary active">
-						<input type="radio" name="photo-public-shared" value="0"> 비공개
+						<input type="radio" name="image-public-shared" value="0"> 비공개
 						</label>
 					</div>
 					
@@ -615,7 +674,7 @@
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
 					</div>
-					<input name="update-photo-file" type="file" id="update-photo-file" data-bind="enabled: editable" class="pull-right" />				
+					<input name="update-photo-file" type="file" id="update-photo-file" class="pull-right" />				
 				</div>
 			</div>					
 		</script>
