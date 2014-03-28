@@ -99,7 +99,7 @@
 				 }]});
 				
 				$('#myTab').on( 'show.bs.tab', function (e) {		
-					e.preventDefault();			
+					//e.preventDefault();			
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
 						case "#template-mgmt" :
