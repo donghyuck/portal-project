@@ -113,7 +113,7 @@
 				$.each( options.items, function ( i, item ){
 					if( typeof item ==='string'){
 						
-					}else if typeof item ==='object'){
+					}else if ( typeof item ==='object'){
 						if( item.name === 'getMenuItem' ){
 							item.handler( that._getMenuItem( item.menu )	);					
 						}
