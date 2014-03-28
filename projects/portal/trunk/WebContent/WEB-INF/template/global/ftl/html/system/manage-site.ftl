@@ -60,7 +60,7 @@
 				 			selector: 'button.btn-control-group',
 				 			event: 'click',
 				 			handler : function(e) {
-				 				alert( $(this).attr('data-aciton') );
+				 				alert( $(this).attr("data-action") );
 				 			}
 				 		}]});
 				$("button.btn-control-group").each(function (index) {					
