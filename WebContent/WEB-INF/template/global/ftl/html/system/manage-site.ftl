@@ -520,7 +520,7 @@
 										<div class="blank-top-15"></div>	
 										<div id="image-grid"></div>	
 									</div>
-									<div class="col-sm-12 body-group marginless paddingless custom-details" style="display:none; padding-top:5px;">
+									<div id="image-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;">
 									
 									</div>
 								</div>								
