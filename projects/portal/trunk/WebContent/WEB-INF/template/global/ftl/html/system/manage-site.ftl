@@ -104,7 +104,7 @@
 					alert( show_bs_tab.html() );
 					
 					switch( show_bs_tab.attr('href') ){
-						case : "#template-mgmt" :
+						case "#template-mgmt" :
 							if( ! $("#template-grid").data("kendoGrid") ){	
 								$("#template-grid").kendoGrid({
 									dataSource: {
