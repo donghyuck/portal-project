@@ -392,17 +392,22 @@
 		
 		function displayImageDetails(){
 			var imagePlaceHolder = $("#image-details").data( "imagePlaceHolder");		
-			if( $('#image-details').find('.panel-body').length == 0 ){
-				if( typeof imagePlaceHolder.imgUrl == 'undefined' ){
-					var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
-					imagePlaceHolder.imgUrl = template(imagePlaceHolder);
-				}				
-				
+			
+			if( typeof imagePlaceHolder.imgUrl == 'undefined' ){
+				var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
+				imagePlaceHolder.imgUrl = template(imagePlaceHolder);
+			}	
+							
+			if( $('#image-details').find('.panel-body').length == 0 ){			
+				 $('#image-details').html( $("#image-details-template").html() );
 			}
+			
+			kendo.bind($('#image-details'), imagePlaceHolder );
 			
 			//if( $("#" + renderToString ).length == 0  ){			
 			//							var template = kendo.template($("#image-details-template").html());										
-			//							$('#image-details .panel-body').html( template(selectedCell) );					
+			//							$('#image-details .panel-body').html( template(selectedCell) );		
+						
 			if( 	$('#image-details').hasClass('hide') )
 				$('#image-details').removeClass('hide')												
 		}
