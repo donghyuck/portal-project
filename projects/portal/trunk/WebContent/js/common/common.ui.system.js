@@ -129,7 +129,7 @@
 								item.dataValueField = "companyId";					
 							}							
 							if( typeof item.dataSource === UNDEFINED){
-								item.dataSource : {
+								item.dataSource = {
 									transport: {
 										read: {
 											dataType: JSON,
