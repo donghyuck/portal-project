@@ -35,8 +35,9 @@
 										
 				// 3.MENU LOAD
 				var currentPageName = "MENU_1_2";
-				var topBar = $("#navbar").extTopBar({ 
-					menu:"SYSTEM_MENU"
+				var topBar = $("#navbar").extTopNavBar({ 
+					menu:"SYSTEM_MENU",
+					template : kendo.template($("#topnavbar-template").html() ),
 				});
 				
 				/**
