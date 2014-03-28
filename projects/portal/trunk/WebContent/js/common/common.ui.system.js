@@ -21,6 +21,7 @@
 	UNDEFINED = 'undefined',
 	CHANGE = "change",
 	CLICK = "click",
+	SELECT = "select",
 	POST = 'POST',
 	JSON = 'json',		
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
@@ -38,6 +39,7 @@
 			menu : null,
 			template : null
 		},
+		events : [ SELECT ],
 		_dataSource : function () {
 			var that = this ;
 			var options = that.options;
@@ -61,7 +63,7 @@
 					});
 				} 
 			}
-			alert( that.dataSource );
+
 			that.dataSource.bind(CHANGE, function() {
 				that.refresh();
 			});			
@@ -83,7 +85,7 @@
 				if( $(e.target).is('[action]') ){
 					var selected = $(e.target);
 					var item = { title: $.trim(selected.text()), action: selected.attr("action") , description: selected.attr("description") || "" };
-					that.trigger( 'click.menu', { data: item }); 
+					that.trigger(SELECT, { data: item }); 
 				}
 			});				
 		},				
