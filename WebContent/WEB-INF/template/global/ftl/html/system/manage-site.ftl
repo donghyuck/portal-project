@@ -370,7 +370,7 @@
 								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 								selectable: 'row',
 								//height: 400,
-								detailTemplate: kendo.template( $("#image-details-template").html() ),
+								//detailTemplate: kendo.template( $("#image-details-template").html() ),
 								detailInit : function(e){
 									//var detailRow = e.detailRow;
 								},		
@@ -379,7 +379,7 @@
 								},
 								change: function(e) {          
 									var selectedCells = this.select();       
-									this.expandRow(selectedCells);
+									//this.expandRow(selectedCells);
 								}
 							});
 						}										
