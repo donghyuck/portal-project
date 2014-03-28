@@ -530,7 +530,7 @@
 										<div class="panel panel-default">
 											<div class="panel-body">
 											이미지				
-												<img data-bind="attr : { kendo.format('view-image.do?width=150&height=150&imageId={0}', imageId )} "/>
+												<img data-bind="attr:{ src: kendo.format('view-image.do?width=150&height=150&imageId={0}', imageId )} "/>
 											</div>
 										</div>									
 									</div>
