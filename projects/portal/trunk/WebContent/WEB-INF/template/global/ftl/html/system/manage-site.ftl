@@ -521,7 +521,11 @@
 										<div id="image-grid"></div>	
 									</div>
 									<div id="image-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;">
-									
+										<div class="panel panel-default">
+											<div class="panel-body">
+											이미지
+											</div>
+										</div>									
 									</div>
 								</div>								
 								<div class="tab-pane fade" id="attachment-mgmt">
