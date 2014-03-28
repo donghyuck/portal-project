@@ -33,16 +33,23 @@
 				var selectedCompany = new Company();
 				var selectedSocial = {};			
 										
-				// 3.MENU LOAD
+				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
 				var topBar = $("#navbar").extTopNavBar({ 
 					menu:"SYSTEM_MENU",
 					template : kendo.template($("#topnavbar-template").html() ),
 					items: [
-						{ name:"companySelector" },
-						{ name:"getMenuItem", menu: currentPageName, handler : function( data ){
-							kendo.bind($(".page-header"), data );   
-						} }
+						{ 
+							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.companyId},
+							change : function(data){
+								selectedCompany = data ;
+								kendo.bind($("#site-info"), selectedCompany );
+							}
+						},
+						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
+								kendo.bind($(".page-header"), data );   
+							} 
+						}
 					]
 				});
 				
