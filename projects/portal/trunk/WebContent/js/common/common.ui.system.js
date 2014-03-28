@@ -95,6 +95,7 @@
 			}
 		},	
 		go : function ( action ){
+			var that = this ;
 			that.element.find("form[role='navigation']").attr("action", action ).submit();	
 		},
 		refresh: function () {
