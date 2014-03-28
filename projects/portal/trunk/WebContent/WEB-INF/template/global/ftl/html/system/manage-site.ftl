@@ -236,27 +236,27 @@
 		function createAttachPane(){		
 			var selectedCompany = $("#navbar").data("companyPlaceHolder");
 			
-						if( ! $("#attach-upload").data("kendoUpload") ){	
-							$("#attach-upload").kendoUpload({
-								multiple : false,
-								showFileList : true,
-								localization : { 
-									select: '첨부파일 업로드', remove:'삭제', dropFilesHere : '업로드할 첨부 파일을 이곳에 끌어 놓으세요.' , 
-									uploadSelectedFiles : '이미지 업로드',
-									cancel: '취소' 
-								},
-								async: {
-									saveUrl:  '${request.contextPath}/secure/save-attachments.do?output=json',							   
-									autoUpload: true
-								},
-								upload:  function (e) {		
-									e.data = { objectType: 1, objectId : selectedCompany.companyId, attachmentId:'-1' };		
-								},
-								success : function(e) {	
-									$('#image-grid').data('kendoGrid').dataSource.read(); 
-								}
-							}).css('min-width','300');
-						}				
+			if( ! $("#attach-upload").data("kendoUpload") ){	
+				$("#attach-upload").kendoUpload({
+					multiple : false,
+					showFileList : true,
+					localization : { 
+						select: '첨부파일 업로드', remove:'삭제', dropFilesHere : '업로드할 첨부 파일을 이곳에 끌어 놓으세요.' , 
+						uploadSelectedFiles : '이미지 업로드',
+						cancel: '취소' 
+					},
+					async: {
+						saveUrl:  '${request.contextPath}/secure/save-attachments.do?output=json',							   
+						autoUpload: true
+					},
+					upload:  function (e) {		
+						e.data = { objectType: 1, objectId : selectedCompany.companyId, attachmentId:'-1' };		
+					},
+					success : function(e) {	
+						$('#attach-grid').data('kendoGrid').dataSource.read(); 
+					}
+				}).css('min-width','300');
+			}				
 						
 						if( ! $("#attach-grid").data("kendoGrid") ){	
 							$("#attach-grid").kendoGrid({
