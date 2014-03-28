@@ -57,9 +57,9 @@
 				 common.api.handleButtonActions(
 				 	".panel-heading", {
 				 		handlers :[ {
-				 			selector: "button.btn-control-group"
+				 			selector: "button.btn-control-group",
 				 			handler : function(e) {
-				 				alert($(this).attr('data-aciton'));
+				 				alert( $(this).attr('data-aciton') );
 				 			}
 				 		}]});
 				$("button.btn-control-group").each(function (index) {					
