@@ -41,10 +41,10 @@
 		_dataSource : function () {
 			var that = this ;
 			var options = that.options;
-			if( options.dataSource === 'object' ){
+			if( typeof options.dataSource === 'object' ){
 				that.dataSource = DataSource.create(options.dataSource);
 			}else{
-				if( options.menu === 'string' ){
+				if( typeof options.menu === 'string' ){
 					that.dataSource = DataSource.create({
 						transport: {
 							read: {
