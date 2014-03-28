@@ -70,47 +70,33 @@
 				 						topBar.go('main-user.do');
 				 						break;			
 				 					case "layout" :
+					 					$(".body-group").each(function( index ) {
+											var panel_body = $(this);
+											var is_detail_body = false;
+											if (panel_body.attr("id") == "group-details"){
+												is_detail_body = true;
+											}else{
+												is_detail_body = false;
+											}								
+											if( panel_body.hasClass("col-sm-6" )){
+												panel_body.removeClass("col-sm-6");
+												panel_body.addClass("col-sm-12");	
+												if( is_detail_body ){
+													panel_body.css('padding', '5px 0 0 0');
+												}													
+											}else{
+												panel_body.removeClass("col-sm-12");
+												panel_body.addClass("col-sm-6");		
+												if( is_detail_body ){
+													panel_body.css('padding', '0 0 0 5px');
+												}				
+											}
+										});
 				 						break;				 							 						
 				 				}
-				 				alert( $(this).attr("data-action") );
 				 			}
-				 		}]});
-				$("button.btn-control-group").each(function (index) {					
-					var btn_control = $(this);
-					var btn_control_action = btn_control.attr("data-action");
-					if (btn_control_action == "user"){
-						btn_control.click( function(e){			
-							$("form[name='fm1'] input").val(selectedCompany.companyId);		
-							$("form[name='fm1']").attr("action", "main-user.do" ).submit(); 
-						} );						
-					}else if (btn_control_action == "layout"){
-						btn_control.click(function (e) {										
-							$(".body-group").each(function( index ) {
-								var panel_body = $(this);
-								var is_detail_body = false;
-								if (panel_body.attr("id") == "group-details"){
-									is_detail_body = true;
-								}else{
-									is_detail_body = false;
-								}								
-								if( panel_body.hasClass("col-sm-6" )){
-									panel_body.removeClass("col-sm-6");
-									panel_body.addClass("col-sm-12");	
-									if( is_detail_body ){
-										panel_body.css('padding', '5px 0 0 0');
-									}													
-								}else{
-									panel_body.removeClass("col-sm-12");
-									panel_body.addClass("col-sm-6");		
-									if( is_detail_body ){
-										panel_body.css('padding', '0 0 0 5px');
-									}				
-								}
-							});
-						});
-					}	
-				});	
-																 			 								
+				 }]});
+																				 			 								
 				$('#myTab a').click(function (e) {
 					e.preventDefault();
 					if(  $(this).attr('href') == '#site-info' ){
