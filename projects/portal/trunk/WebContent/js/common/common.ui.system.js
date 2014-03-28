@@ -121,10 +121,10 @@
 								item.enabled = false;								
 							}							
 							if( typeof item.dataTextField === UNDEFINED){
-								item.dataTextField = "displayName",
+								item.dataTextField = "displayName";
 							}							
 							if( typeof item.dataValueField === UNDEFINED){
-								item.dataValueField = "companyId",							
+								item.dataValueField = "companyId";					
 							}							
 							if( typeof item.dataSource === UNDEFINED){
 								item.dataSource : {
