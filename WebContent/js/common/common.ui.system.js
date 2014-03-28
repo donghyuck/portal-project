@@ -6,7 +6,7 @@
  */
 (function($, undefined) {
 	var common = window.common = window.common || {};
-	common.ui.system =  common.ui.system || {};
+	common.ui =  common.ui || {};
 
     var kendo = window.kendo,
     Widget = kendo.ui.Widget,
@@ -25,7 +25,7 @@
 	JSON = 'json',		
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
-    common.ui.system.extTopNavBar = Widget.extend({
+    common.ui.extTopNavBar = Widget.extend({
 		init: function(element, options) {			
 			var that = this;
 			Widget.fn.init.call(that, element, options);			
@@ -106,7 +106,7 @@
 	
 	$.fn.extend( { 
 		extTopNavBar : function ( options ) {
-			return new common.ui.system.extTopNavBar ( this , options );		
+			return new common.ui.extTopNavBar ( this , options );		
 		}
 	});	
 })(jQuery);
