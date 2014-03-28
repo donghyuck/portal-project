@@ -63,7 +63,8 @@
 			}
 			that.dataSource.bind(CHANGE, function() {
 				that.refresh();
-			});					
+			});			
+			
 			if( options.autoBind ){
 				that.dataSource.fetch();
 			}
