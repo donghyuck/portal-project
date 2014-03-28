@@ -24,8 +24,7 @@
 	SELECT = "select",
 	POST = 'POST',
 	JSON = 'json',		
-	handleKendoAjaxError = common.api.handleKendoAjaxError ;
-	
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;	
     common.ui.extTopNavBar = Widget.extend({
 		init: function(element, options) {			
 			var that = this;
@@ -40,6 +39,28 @@
 			template : null
 		},
 		events : [ SELECT ],
+		_getMenuItem : function( name ){
+			var that = this ;
+			var items = this.dataSource.data();
+			var menuItem = null;
+			$.each( items, function ( i, item ){
+				if(item.components.length > 0 )
+				{	
+					$.each( item.components, function ( j, item2 ){
+						if( name == item2.name ){
+							menuItem = item2;
+							return;
+						}
+					});
+				}else{
+					if( name == item.name ){
+						menuItem = item;
+						return;						
+					}
+				}
+			});
+			return menuItem;
+		},		
 		_dataSource : function () {
 			var that = this ;
 			var options = that.options;
@@ -63,7 +84,6 @@
 					});
 				} 
 			}
-
 			that.dataSource.bind(CHANGE, function() {
 				that.refresh();
 			});			
@@ -71,16 +91,14 @@
 			if( options.autoBind ){
 				that.dataSource.fetch();
 			}
-		},
+		},		
 		refresh: function () {
 			var that = this ;
 			var options = that.options;
-			var view = that.dataSource.view();			
-
+			var view = that.dataSource.view();		
 			that.element.html(
 				options.template( view )
-			);
-			
+			);						
 			that.element.find('.nav a').on( CLICK, function( e ){
 				if( $(e.target).is('[action]') ){
 					var selected = $(e.target);
@@ -90,24 +108,7 @@
 						that.element.find("form[role='navigation']").attr("action", item.action ).submit();	
 					}
 				}
-			});				
-		},				
-		render: function ( options ) {
-			var that = this;
-			that.dataSource.fetch(function(){
-			var items = that.dataSource.data();
-			content.append( options.template( items ) );					
-				content.find('.nav a').click(function( e ){
-					if( $(e.target).is('[action]') ){
-						var selected = $(e.target);
-						var item = { title: $.trim(selected.text()), action: selected.attr("action") , description: selected.attr("description") || "" };
-						if( options.select != null )
-							options.select( item );
-						else
-							that.select( item );
-					}					
-				});
-			});
+			});						
 		}
 	});
 	
