@@ -28,6 +28,7 @@
 						currentUser = e.token;						
 					}
 				});
+				
 				var selectedCompany = new Company();
 				var selectedSocial = {};			
 										
@@ -66,7 +67,8 @@
 						var menu = that.getMenuItem(currentPageName);
 						kendo.bind($(".page-header"), menu );   
 					}
-				 });					 
+				 });
+				 				 
 				 
 				 // 4. PAGE MAIN		
 				$("button.btn-control-group ").each(function (index) {					
@@ -604,5 +606,6 @@
 				# } #					
 		</script>
 		<#include "/html/common/common-secure-templates.ftl" >		
+		<#include "/html/common/common-system-templates.ftl" >		
 	</body>
 </html>
