@@ -361,8 +361,8 @@
 									{ field: "name", title: "파일"},
 									{ field: "contentType", title: "이미지 유형",  width: 100 },
 									{ field: "size", title: "파일크기",  width: 100 },
-									{ field: "creationDate", title: "생성일", width: 80, format: "{0:yyyy/MM/dd}" },
-									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
+									{ field: "creationDate", title: "생성일", width: 90, format: "{0:yyyy/MM/dd}" },
+									{ field: "modifiedDate", title: "수정일", width: 90, format: "{0:yyyy/MM/dd}" },
 									{ command: [ { name: "destroy", text: "삭제" } ], title: " ", width: "160px"  }
 								],
 								filterable: true,
