@@ -74,22 +74,21 @@
 				 					case "layout" :
 					 					$(".body-group").each(function( index ) {
 											var panel_body = $(this);
-											var is_detail_body = false;
-											if ( (panel_body.attr("id")).indexOf( 'details' ) != -1 ){
-												is_detail_body = true;
-											}else{
-												is_detail_body = false;
+											var isDetails = false;
+											var pane_id = panel_body.attr("id");											
+											if ( pane_id.indexOf( 'details' ) != -1 ){
+												isDetails = true;
 											}								
 											if( panel_body.hasClass("col-sm-6" )){
 												panel_body.removeClass("col-sm-6");
 												panel_body.addClass("col-sm-12");	
-												if( is_detail_body ){
+												if( isDetails ){
 													panel_body.css('padding', '5px 0 0 0');
 												}													
 											}else{
 												panel_body.removeClass("col-sm-12");
 												panel_body.addClass("col-sm-6");		
-												if( is_detail_body ){
+												if( isDetails ){
 													panel_body.css('padding', '0 0 0 5px');
 												}				
 											}
