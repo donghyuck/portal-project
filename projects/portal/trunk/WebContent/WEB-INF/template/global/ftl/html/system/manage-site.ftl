@@ -73,26 +73,28 @@
 				 						break;			
 				 					case "layout" :
 					 					$(".body-group").each(function( index ) {
-											var panel_body = $(this);
-											var isDetails = false;
-											var pane_id = panel_body.attr("id");				
+											var pane_body = $(this);
+											var pane_id = panel_body.attr("id");
+													
+											if( typeof pane_id === 'undefined' ){
+												pane_id = "";
+											}						
 											
-											alert( panel_body.html() );
-																		
 											if ( pane_id.indexOf( 'details' ) != -1 ){
 												isDetails = true;
 											}								
-											if( panel_body.hasClass("col-sm-6" )){
-												panel_body.removeClass("col-sm-6");
-												panel_body.addClass("col-sm-12");	
+											
+											if( pane_body.hasClass("col-sm-6" )){
+												pane_body.removeClass("col-sm-6");
+												pane_body.addClass("col-sm-12");	
 												if( isDetails ){
-													panel_body.css('padding', '5px 0 0 0');
+													pane_body.css('padding', '5px 0 0 0');
 												}													
 											}else{
-												panel_body.removeClass("col-sm-12");
-												panel_body.addClass("col-sm-6");		
+												pane_body.removeClass("col-sm-12");
+												pane_body.addClass("col-sm-6");		
 												if( isDetails ){
-													panel_body.css('padding', '0 0 0 5px');
+													pane_body.css('padding', '0 0 0 5px');
 												}				
 											}
 										});
