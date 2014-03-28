@@ -371,9 +371,9 @@
 								selectable: 'row',
 								//height: 400,
 								//detailTemplate: kendo.template( $("#image-details-template").html() ),
-								detailInit : function(e){
+								//detailInit : function(e){
 									//var detailRow = e.detailRow;
-								},		
+								//},		
 								dataBound: function(e) {
 								
 								},
