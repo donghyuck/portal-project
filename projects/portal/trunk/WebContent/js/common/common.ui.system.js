@@ -61,6 +61,7 @@
 					});
 				} 
 			}
+			alert( that.dataSource );
 			that.dataSource.bind(CHANGE, function() {
 				that.refresh();
 			});			
