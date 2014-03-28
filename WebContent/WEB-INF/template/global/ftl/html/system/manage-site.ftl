@@ -382,15 +382,22 @@
 									var selectedCells = this.select();	                       
 									if( selectedCells.length == 1){
 										var selectedCell = this.dataItem( selectedCells );											
-										var template = kendo.template($("#image-details-template").html());										
-										$('#image-details .panel-body').html( template(selectedCell) );										
-										if( 	$('#image-details').hasClass('hide') )
-											$('#image-details').removeClass('hide')
+										$("#image-details").data("imagePlaceHolder", selectedCell );										
+										displayImageDetails();
 									}
 								}
 							});
 						}										
 		}	
+		
+		function displayImageDetails(){
+			var imagePlaceHolder = $("#image-details").data( "imagePlaceHolder");		
+			//if( $("#" + renderToString ).length == 0  ){			
+			//							var template = kendo.template($("#image-details-template").html());										
+			//							$('#image-details .panel-body').html( template(selectedCell) );					
+			if( 	$('#image-details').hasClass('hide') )
+				$('#image-details').removeClass('hide')												
+		}
 			
 		function createTemplatePane(){
 			var selectedCompany = $("#navbar").data("companyPlaceHolder");
