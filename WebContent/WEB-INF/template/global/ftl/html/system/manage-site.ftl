@@ -449,11 +449,50 @@
 							displayImageDetails();
 						}
 					} 
-				});						 
-			}			
-			
-			alert( imagePlaceHolder.imgUrl  );
-			
+				});		
+				
+				if( ! $('#image-prop-grid').data("kendoGrid") ){
+					$('#image-prop-grid').kendoGrid({
+						dataSource : {		
+							transport: { 
+								read: { url:'${request.contextPath}/secure/get-image-property.do?output=json', type:'post' },
+								create: { url:'${request.contextPath}/secure/update-image-property.do?output=json', type:'post' },
+								update: { url:'${request.contextPath}/secure/update-image-property.do?output=json', type:'post'  },
+								destroy: { url:'${request.contextPath}/secure/delete-image-property.do?output=json', type:'post' },
+						 		parameterMap: function (options, operation){			
+							 		if (operation !== "read" && options.models) {
+							 			return { imageId: $("#image-details").data( "imagePlaceHolder").imageId, items: kendo.stringify(options.models)};
+									} 
+									return { imageId: $("#image-details").data( "imagePlaceHolder").imageId }
+								}
+							},						
+							batch: true, 
+							schema: {
+								data: "targetImageProperty",
+								model: Property
+							},
+							error:common.api.handleKendoAjaxError
+						},
+						columns: [
+							{ title: "속성", field: "name" },
+							{ title: "값",   field: "value" },
+							{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+						],
+						pageable: false,
+						resizable: true,
+						editable : true,
+						scrollable: true,
+						height: 180,
+						toolbar: [
+							{ name: "create", text: "추가" },
+							{ name: "save", text: "저장" },
+							{ name: "cancel", text: "취소" }
+						],				     
+						change: function(e) {
+						}
+					});		
+				}														 
+			}
 			kendo.bind($('#image-details'), imagePlaceHolder );				
 					
 			if( 	$('#image-details').hasClass('hide') )
@@ -662,7 +701,7 @@
 						<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
 					</div>
 		
-					<div id="photo-prop-grid"></div>			
+					<div id="image-prop-grid"></div>			
 		
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
