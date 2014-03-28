@@ -39,7 +39,7 @@
 					menu:"SYSTEM_MENU",
 					template : kendo.template($("#topnavbar-template").html() ),
 					items: [
-						{ name:"companySelector"}
+						{ name:"companySelector" },
 						{ name:"getMenuItem", menu: currentPageName, handler : function( data ){
 							kendo.bind($(".page-header"), data );   
 						} }
