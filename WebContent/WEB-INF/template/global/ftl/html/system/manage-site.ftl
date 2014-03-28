@@ -517,13 +517,14 @@
 								<div class="tab-pane fade " id="image-mgmt">
 									<div class="col-sm-12 body-group marginless paddingless">
 										<input name="image-upload" id="image-upload" type="file" />
-										<div class="blank-top-5"></div>	
+										<div class="blank-top-15"></div>	
 										<div id="image-grid"></div>	
 									</div>
 								</div>								
 								<div class="tab-pane fade" id="attachment-mgmt">
 									<div class="col-sm-12 body-group marginless paddingless">
 										<input name="attach-upload" id="attach-upload" type="file" />
+										<div class="blank-top-15"></div>
 										<div id="attach-grid"></div>
 									</div>
 								</div>
