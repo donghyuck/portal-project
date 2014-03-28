@@ -520,6 +520,9 @@
 										<div class="blank-top-15"></div>	
 										<div id="image-grid"></div>	
 									</div>
+									<div class="col-sm-12 body-group marginless paddingless custom-details" style="display:none; padding-top:5px;">
+									
+									</div>
 								</div>								
 								<div class="tab-pane fade" id="attachment-mgmt">
 									<div class="col-sm-12 body-group marginless paddingless">
