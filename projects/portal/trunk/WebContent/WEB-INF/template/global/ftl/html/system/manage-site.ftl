@@ -36,6 +36,11 @@
 				// 3.MENU LOAD
 				var currentPageName = "MENU_1_2";
 				var topBar = $("#navbar").extTopBar({ 
+					menu = "SYSTEM_MENU"
+				});
+				
+				/**
+				var topBar = $("#navbar").extTopNavBar({ 
 					template : kendo.template($("#topbar-template").html() ),
 					data : currentUser,
 					menuName: "SYSTEM_MENU",
@@ -69,7 +74,7 @@
 						kendo.bind($(".page-header"), menu );   
 					}
 				 });
-				 				 
+				 */				 
 				 
 				 // 4. PAGE MAIN		
 				$("button.btn-control-group ").each(function (index) {					
