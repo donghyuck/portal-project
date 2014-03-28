@@ -258,7 +258,7 @@
 				}).css('min-width','300');
 			}				
 						
-						if( ! $("#attach-grid").data("kendoGrid") ){	
+			if( ! $("#attach-grid").data("kendoGrid") ){	
 							$("#attach-grid").kendoGrid({
 								dataSource: {
 									type: 'json',
@@ -309,7 +309,7 @@
 									this.expandRow(selectedCells);
 								}
 							});
-						}			
+			}			
 		}
 		
 		function createImagePane(){		
