@@ -154,6 +154,8 @@
 							break;
 					}	
 				});	
+				
+				$('#myTab a:first').tab('show') ;
 								
 																		 			 								
 				$('#myTab2 a').click(function (e) {
