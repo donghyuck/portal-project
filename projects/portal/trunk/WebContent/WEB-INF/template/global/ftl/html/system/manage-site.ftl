@@ -30,7 +30,8 @@
 					}
 				});
 				
-				var selectedCompany = new Company();
+				$("#navbar").data("companyPlaceHolder", new Company() );
+
 				var selectedSocial = {};			
 										
 				// 3.MENU LOAD 
@@ -42,8 +43,8 @@
 						{ 
 							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.companyId},
 							change : function(data){
-								selectedCompany = data ;
-								kendo.bind($("#site-info"), selectedCompany );
+								$("#navbar").data("companyPlaceHolder", data) ;
+								kendo.bind($("#site-info"), data );
 							}
 						},
 						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
@@ -120,7 +121,9 @@
 		}]);
 
 		function createSocialPane(){
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");
 						if( ! $("#social-grid").data("kendoGrid") ){	
+							
 							$("#social-grid").kendoGrid({
 								dataSource: {
 									dataType: 'json',
@@ -224,6 +227,8 @@
 		}
 
 		function createAttachPane(){		
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			
 						if( ! $("#attach-upload").data("kendoUpload") ){	
 							$("#attach-upload").kendoUpload({
 								multiple : false,
@@ -301,6 +306,7 @@
 		}
 		
 		function createImagePane(){		
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");
 						if( ! $("#image-upload").data("kendoUpload") ){	
 							$("#image-upload").kendoUpload({
 								multiple : false,
@@ -378,6 +384,7 @@
 		}	
 			
 		function createTemplatePane(){
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");
 			if( ! $("#template-grid").data("kendoGrid") ){	
 				$("#template-grid").kendoGrid({
 					dataSource: {
