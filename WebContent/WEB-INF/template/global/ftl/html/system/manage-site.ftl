@@ -75,25 +75,26 @@
 					 					$(".body-group").each(function( index ) {
 											var pane_body = $(this);
 											var pane_id = pane_body.attr("id");
+											var is_details_pane = false;
 													
 											if( typeof pane_id === 'undefined' ){
 												pane_id = "";
 											}						
 											
 											if ( pane_id.indexOf( 'details' ) != -1 ){
-												isDetails = true;
+												is_details_pane = true;
 											}								
 											
 											if( pane_body.hasClass("col-sm-6" )){
 												pane_body.removeClass("col-sm-6");
 												pane_body.addClass("col-sm-12");	
-												if( isDetails ){
+												if( is_details_pane ){
 													pane_body.css('padding', '5px 0 0 0');
 												}													
 											}else{
 												pane_body.removeClass("col-sm-12");
 												pane_body.addClass("col-sm-6");		
-												if( isDetails ){
+												if( is_details_pane ){
 													pane_body.css('padding', '0 0 0 5px');
 												}				
 											}
