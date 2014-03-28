@@ -4,7 +4,7 @@
 /**
  *  extTopNavBar widget
  *  
- *  top navigation bar for system page
+ *  top navigation bar
  */
 (function($, undefined) {
 	var common = window.common = window.common || {};
