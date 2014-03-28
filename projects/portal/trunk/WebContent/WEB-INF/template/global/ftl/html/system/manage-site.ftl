@@ -75,7 +75,10 @@
 					 					$(".body-group").each(function( index ) {
 											var panel_body = $(this);
 											var isDetails = false;
-											var pane_id = panel_body.attr("id");											
+											var pane_id = panel_body.attr("id");				
+											
+											alert( typeof pane_id );
+																		
 											if ( pane_id.indexOf( 'details' ) != -1 ){
 												isDetails = true;
 											}								
