@@ -511,7 +511,7 @@
 							</ul>
 							<div class="tab-content">
 								<div class="blank-top-5" ></div>	
-								<div class="tab-pane active" id="site-info">
+								<div class="tab-pane fade active" id="site-info">
 										<table class="table table-hover">
 										<tbody>						
 											<tr>
@@ -541,20 +541,20 @@
 									 	</tbody>
 										</table>
 								</div>
-								<div class="tab-pane" id="template-mgmt">
+								<div class="tab-pane fade" id="template-mgmt">
 									<div id="template-grid" ></div>
 								</div>
-								<div class="tab-pane" id="system-info">
+								<div class="tab-pane fade" id="system-info">
 								</div>
-								<div class="tab-pane" id="image-mgmt">
+								<div class="tab-pane fade " id="image-mgmt">
 									<input name="image-upload" id="image-upload" type="file" />
 									<div id="image-grid"></div>	
 								</div>								
-								<div class="tab-pane" id="attachment-mgmt">
+								<div class="tab-pane fade" id="attachment-mgmt">
 									<input name="attach-upload" id="attach-upload" type="file" />
 									<div id="attach-grid"></div>
 								</div>
-								<div class="tab-pane" id="social-mgmt">
+								<div class="tab-pane fade" id="social-mgmt">
 									<div id="social-grid"></div>
 								</div>								
 							</div>
