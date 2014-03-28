@@ -369,18 +369,15 @@
 								sortable: true,
 								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 								selectable: 'row',
-								//height: 400,
-								//detailTemplate: kendo.template( $("#image-details-template").html() ),
-								//detailInit : function(e){
-									//var detailRow = e.detailRow;
-								//},		
 								dataBound: function(e) {
-									$('#image-details').hide();
+									if( 	!$('#image-details').hasClass('hide') )
+										$('#image-details').addClass('hide')
 								},
 								change: function(e) {          
 									var selectedCells = this.select();       
 									//this.expandRow(selectedCells);
-									$('#image-details').show();
+									if( 	$('#image-details').hasClass('hide') )
+										$('#image-details').removeClass('hide')
 								}
 							});
 						}										
