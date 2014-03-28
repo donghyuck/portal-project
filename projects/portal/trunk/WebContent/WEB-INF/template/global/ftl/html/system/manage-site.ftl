@@ -534,10 +534,7 @@
 										<div class="blank-top-15"></div>	
 										<div id="image-grid"></div>	
 									</div>
-									<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">
-										<div class="panel panel-default">
-											<div class="panel-body"></div>
-										</div>									
+									<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">									
 									</div>
 								</div>								
 								<div class="tab-pane fade" id="attachment-mgmt">
@@ -584,33 +581,34 @@
 		<!-- END FOOTER -->
 		
 		<script id="image-details-template" type="text/x-kendo-template">				
-			
-			<img src="/secure/view-image.do?width=150&height=150&imageId=#=imageId#" class="img-rounded"/>
-
-			<div class="page-header text-primary">
-				<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
-			</div>			
-
-			<div class="btn-group" data-toggle="buttons">
-				<label class="btn btn-primary">
-				<input type="radio" name="photo-public-shared" value="1">모두에게 공개
-				</label>
-				<label class="btn btn-primary active">
-				<input type="radio" name="photo-public-shared" value="0"> 비공개
-				</label>
-			</div>
-			
-			<div class="page-header text-primary">
-				<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
-			</div>
-
-			<div id="photo-prop-grid"></div>			
-
-			<div class="page-header text-primary">
-				<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
-			</div>
-			<input name="update-photo-file" type="file" id="update-photo-file" data-bind="enabled: editable" class="pull-right" />
-			
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<img src="/secure/view-image.do?width=150&height=150&imageId=#=imageId#" class="img-rounded"/>		
+					<div class="page-header text-primary">
+						<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
+					</div>			
+		
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-primary">
+						<input type="radio" name="photo-public-shared" value="1">모두에게 공개
+						</label>
+						<label class="btn btn-primary active">
+						<input type="radio" name="photo-public-shared" value="0"> 비공개
+						</label>
+					</div>
+					
+					<div class="page-header text-primary">
+						<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
+					</div>
+		
+					<div id="photo-prop-grid"></div>			
+		
+					<div class="page-header text-primary">
+						<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
+					</div>
+					<input name="update-photo-file" type="file" id="update-photo-file" data-bind="enabled: editable" class="pull-right" />				
+				</div>
+			</div>					
 		</script>
 		<script id="social-details-template" type="text/x-kendo-template">				
 				#if ( typeof (twitterProfile)  == "object" ){ #
