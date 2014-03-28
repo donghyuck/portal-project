@@ -55,9 +55,10 @@
 								 
 				 // 4. PAGE MAIN		
 				 common.api.handleButtonActions(
-				 	".panel-heading", {
+				 	'.panel-heading', {
 				 		handlers :[ {
-				 			selector: "button.btn-control-group",
+				 			selector: 'button.btn-control-group',
+				 			event: 'click',
 				 			handler : function(e) {
 				 				alert( $(this).attr('data-aciton') );
 				 			}
