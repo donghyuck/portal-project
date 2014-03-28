@@ -75,7 +75,7 @@
 					 					$(".body-group").each(function( index ) {
 											var panel_body = $(this);
 											var is_detail_body = false;
-											if (panel_body.attr("id") == "group-details"){
+											if (panel_body.attr("id").indexOf( 'details' ) != -1 ){
 												is_detail_body = true;
 											}else{
 												is_detail_body = false;
