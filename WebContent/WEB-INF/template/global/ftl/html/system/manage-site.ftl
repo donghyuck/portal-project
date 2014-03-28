@@ -399,7 +399,11 @@
 			if( $('#image-details').find('.panel-body').length == 0 ){			
 				 $('#image-details').html( $("#image-details-template").html() );
 			}			
-			kendo.bind($('#image-details'), imagePlaceHolder );						
+			
+			alert( imagePlaceHolder.imgUrl  );
+			
+			kendo.bind($('#image-details'), imagePlaceHolder );				
+					
 			if( 	$('#image-details').hasClass('hide') )
 				$('#image-details').removeClass('hide')												
 		}
