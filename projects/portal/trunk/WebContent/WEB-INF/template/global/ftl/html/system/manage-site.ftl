@@ -374,10 +374,13 @@
 										$('#image-details').addClass('hide')
 								},
 								change: function(e) {          
-									var selectedCells = this.select();       
-									//this.expandRow(selectedCells);
-									if( 	$('#image-details').hasClass('hide') )
-										$('#image-details').removeClass('hide')
+									var selectedCells = this.select();	                       
+									if( selectedCells.length == 1){
+										var selectedCell = this.dataItem( selectedCells );	                             
+										kendo.bind($('#image-details'), selectedCell);
+										if( 	$('#image-details').hasClass('hide') )
+											$('#image-details').removeClass('hide')
+									}
 								}
 							});
 						}										
