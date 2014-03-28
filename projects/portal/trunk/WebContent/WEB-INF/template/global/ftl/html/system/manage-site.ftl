@@ -531,7 +531,7 @@
 											<div class="panel-body">
 											이미지
 											
-											<img data-bind="attr: { src: imageId} src="/community/download-my-image.do?width=150&height=150&imageId=230" />
+											<img data-bind="attr: { src: 'view-image.do?width=150&height=150&imageId=' + imageId} />
 											
 											</div>
 										</div>									
