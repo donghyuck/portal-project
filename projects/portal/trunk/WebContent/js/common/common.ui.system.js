@@ -93,7 +93,10 @@
 			if( options.autoBind ){
 				that.dataSource.fetch();
 			}
-		},		
+		},	
+		go : function ( action ){
+			that.element.find("form[role='navigation']").attr("action", action ).submit();	
+		},
 		refresh: function () {
 			var that = this ;
 			var options = that.options;
@@ -107,7 +110,7 @@
 					var item = { title: $.trim(selected.text()), action: selected.attr("action") , description: selected.attr("description") || "" };					
 					that.trigger(SELECT, { data: item }); 					
 					if( !isFunction(options.select) ){
-						that.element.find("form[role='navigation']").attr("action", item.action ).submit();	
+						that.go(item.action );
 					}
 				}
 			});			
