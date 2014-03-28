@@ -60,6 +60,16 @@
 				 			selector: 'button.btn-control-group',
 				 			event: 'click',
 				 			handler : function(e) {
+				 				switch($(this).attr("data-action") ){
+				 					case "menu" :				 					
+				 						break;
+				 					case "group" :
+				 						break;
+				 					case "user" :
+				 						break;			
+				 					case "layout" :
+				 						break;				 							 						
+				 				}
 				 				alert( $(this).attr("data-action") );
 				 			}
 				 		}]});
