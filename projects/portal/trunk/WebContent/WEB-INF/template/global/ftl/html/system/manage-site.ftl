@@ -391,12 +391,11 @@
 		}	
 		
 		function displayImageDetails(){
+			var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
 			var imagePlaceHolder = $("#image-details").data( "imagePlaceHolder");			
-			if( typeof imagePlaceHolder.imgUrl == 'undefined' ){
-				var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
+			if( typeof imagePlaceHolder.imgUrl == 'undefined' ){				
 				imagePlaceHolder.imgUrl = template(imagePlaceHolder);
 			}		
-
 			common.api.streams.details({
 				imageId :imagePlaceHolder.imageId ,
 				success : function( data ) {
@@ -443,17 +442,11 @@
 					},
 					localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
 					upload: function (e) {				
-						e.data = { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId };
+						e.data = { imageId: $("#image-details").data( "imagePlaceHolder").imageId };
 					},
 					success: function (e) {				
 						if( e.response.targetImage ){
-							$('#photo-list-view').data('kendoListView').dataSource.read();								
-							var item = e.response.targetImage;
-							item.index = $("#photo-list-view").data( "photoPlaceHolder" ).index;			
-							item.page = $("#photo-list-view").data( "photoPlaceHolder" ).page;		
-							// need fix!!
-							$("#photo-list-view").data( "photoPlaceHolder",  item );
-							displayPhotoPanel();
+							displayImageDetails();
 						}
 					} 
 				});						 
@@ -674,7 +667,7 @@
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
 					</div>
-					<input name="update-photo-file" type="file" id="update-photo-file" class="pull-right" />				
+					<input name="update-image-file" type="file" id="update-image-file" class="pull-right" />				
 				</div>
 			</div>					
 		</script>
