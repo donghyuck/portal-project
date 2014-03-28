@@ -2,7 +2,9 @@
  * COMMON ADMIN UI DEFINE
  */
 /**
- *  extImageBrowser widget
+ *  extTopNavBar widget
+ *  
+ *  top navigation bar for system page
  */
 (function($, undefined) {
 	var common = window.common = window.common || {};
