@@ -36,7 +36,7 @@
 				// 3.MENU LOAD
 				var currentPageName = "MENU_1_2";
 				var topBar = $("#navbar").extTopBar({ 
-					menu = "SYSTEM_MENU"
+					menu:"SYSTEM_MENU"
 				});
 				
 				/**
