@@ -103,187 +103,23 @@
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
 						case "#template-mgmt" :
-							if( ! $("#template-grid").data("kendoGrid") ){	
-								$("#template-grid").kendoGrid({
-									dataSource: {
-										dataType: 'json',
-										transport: {
-											read: { url:'${request.contextPath}/secure/list-template.do?output=json', type: 'POST' },
-											parameterMap: function (options, operation){
-												if (operation != "read" && options) {										                        								                       	 	
-													return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
-												}else{
-													return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
-												}
-											} 
-										},
-										schema: {
-											total: "totalTargetTemplateCount",
-											data: "targetTemplates",
-											model : Template
-										},
-										pageSize: 15,
-										serverPaging: true,
-										serverFiltering: false,
-										serverSorting: false,                        
-										error: common.api.handleKendoAjaxError
-									},
-									toolbar: [ { text: "템플릿 파일 추가", css:"createTemplateCustom" } ],   
-									columns:[
-										{ field: "templateId", title: "ID",  width: 50, filterable: false, sortable: false },
-										{ field: "title", title: "타이틀", width: 150 },
-										{ field: "location", title: "템플릿 이름", width: 150 },
-										{ field: "templateType", title: "유형",  width: 100 },
-										{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
-										{ command: [ { name: "destroy", text: "삭제" } , { name: "customEditTemplateClass", text: "수정" }], title: " ", width: "160px"  }
-									],
-									filterable: true,
-									sortable: true,
-									pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-									dataBound: function(e) {
-									
-									},
-									change: function(e) {          
-										var selectedCells = this.select();       
-										this.expandRow(selectedCells);
-									}
-								});
-							}			
+							createTemplatePane();
 							break;
+						case  '#image-mgmt' :
+							createImagePane();
+							break;
+						case  '#attachment-mgmt' :	
+							createAttachPane();
+							break;	
+						case  '#social-mgmt' :	
+							createSocialPane();
+							break;								
 					}	
 				});	
-				
-								
-																		 			 								
-				$('#myTab2 a').click(function (e) {
-					e.preventDefault();
-					if(  $(this).attr('href') == '#site-info' ){
-						
-					}else if(  $(this).attr('href') == '#template-mgmt' ){
-						if( ! $("#template-grid").data("kendoGrid") ){	
-							$("#template-grid").kendoGrid({
-								dataSource: {
-									dataType: 'json',
-									transport: {
-										read: { url:'${request.contextPath}/secure/list-template.do?output=json', type: 'POST' },
-										parameterMap: function (options, operation){
-											if (operation != "read" && options) {										                        								                       	 	
-												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
-											}else{
-												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
-											}
-										} 
-									},
-									schema: {
-										total: "totalTargetTemplateCount",
-										data: "targetTemplates",
-										model : Template
-									},
-									pageSize: 15,
-									serverPaging: true,
-									serverFiltering: false,
-									serverSorting: false,                        
-									error: handleKendoAjaxError
-								},
-								toolbar: [ { text: "템플릿 파일 추가", css:"createTemplateCustom" } ],   
-								columns:[
-									{ field: "templateId", title: "ID",  width: 50, filterable: false, sortable: false },
-									{ field: "title", title: "타이틀", width: 150 },
-									{ field: "location", title: "템플릿 이름", width: 150 },
-									{ field: "templateType", title: "유형",  width: 100 },
-									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
-									{ command: [ { name: "destroy", text: "삭제" } , { name: "customEditTemplateClass", text: "수정" }], title: " ", width: "160px"  }
-								],
-								filterable: true,
-								sortable: true,
-								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-								//selectable: 'row',
-								dataBound: function(e) {
-								
-								},
-								change: function(e) {          
-									var selectedCells = this.select();       
-									this.expandRow(selectedCells);
-								}
-							});
-						}					
-					}else if(  $(this).attr('href') == '#image-mgmt' ){
-						// IMAGE MGMT
-						if( ! $("#image-upload").data("kendoUpload") ){	
-							$("#image-upload").kendoUpload({
-								multiple : false,
-								showFileList : true,
-								localization : { 
-									select: '이미지 업로드', remove:'삭제', dropFilesHere : '업로드할 이미지 파일을 이곳에 끌어 놓으세요.' , 
-									uploadSelectedFiles : '이미지 업로드',
-									cancel: '취소' 
-								},
-								async: {
-									saveUrl:  '${request.contextPath}/secure/update-image.do?output=json',							   
-									autoUpload: true
-								},
-								upload:  function (e) {		
-									e.data = { objectType: 1, objectId : selectedCompany.companyId, imageId:'-1' };		
-								},
-								success : function(e) {	
-									$('#image-grid').data('kendoGrid').dataSource.read(); 
-								}
-							}).css('min-width','300');
-						}				
-						
-						if( ! $("#image-grid").data("kendoGrid") ){	
-							$("#image-grid").kendoGrid({
-								dataSource: {
-									dataType: 'json',
-									transport: {
-										read: { url:'${request.contextPath}/secure/list-image.do?output=json', type: 'POST' },
-										parameterMap: function (options, operation){
-											if (operation != "read" && options) {										                        								                       	 	
-												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
-											}else{
-												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
-											}
-										} 
-									},
-									schema: {
-										total: "totalTargetImageCount",
-										data: "targetImages",
-										model : Image
-									},
-									pageSize: 15,
-									serverPaging: true,
-									serverFiltering: false,
-									serverSorting: false,                        
-									error: handleKendoAjaxError
-								},
-								columns:[
-									{ field: "imageId", title: "ID",  width: 50, filterable: false, sortable: false },
-									{ field: "name", title: "파일", width: 150 },
-									{ field: "contentType", title: "이미지 유형",  width: 100 },
-									{ field: "size", title: "파일크기",  width: 100 },
-									{ field: "creationDate", title: "생성일", width: 80, format: "{0:yyyy/MM/dd}" },
-									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
-									{ command: [ { name: "destroy", text: "삭제" } ], title: " ", width: "160px"  }
-								],
-								filterable: true,
-								sortable: true,
-								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-								selectable: 'row',
-								//height: 400,
-								detailTemplate: kendo.template( $("#image-details-template").html() ),
-								detailInit : function(e){
-									//var detailRow = e.detailRow;
-								},		
-								dataBound: function(e) {
-								
-								},
-								change: function(e) {          
-									var selectedCells = this.select();       
-									this.expandRow(selectedCells);
-								}
-							});
-						}							
-					}else if(  $(this).attr('href') == '#social-mgmt' ){ 
+			}	
+		}]);
+
+		function createSocialPane(){
 						if( ! $("#social-grid").data("kendoGrid") ){	
 							$("#social-grid").kendoGrid({
 								dataSource: {
@@ -384,10 +220,10 @@
 									var selectedCells = this.select();     
 								}
 							});
-						}	
-																
-					}else if(  $(this).attr('href') == '#attachment-mgmt' ){ 					
-						// IMAGE MGMT
+						}			
+		}
+
+		function createAttachPane(){		
 						if( ! $("#attach-upload").data("kendoUpload") ){	
 							$("#attach-upload").kendoUpload({
 								multiple : false,
@@ -461,13 +297,134 @@
 									this.expandRow(selectedCells);
 								}
 							});
-						}	
-											
+						}			
+		}
+		
+		function createImagePane(){		
+						if( ! $("#image-upload").data("kendoUpload") ){	
+							$("#image-upload").kendoUpload({
+								multiple : false,
+								showFileList : true,
+								localization : { 
+									select: '이미지 업로드', remove:'삭제', dropFilesHere : '업로드할 이미지 파일을 이곳에 끌어 놓으세요.' , 
+									uploadSelectedFiles : '이미지 업로드',
+									cancel: '취소' 
+								},
+								async: {
+									saveUrl:  '${request.contextPath}/secure/update-image.do?output=json',							   
+									autoUpload: true
+								},
+								upload:  function (e) {		
+									e.data = { objectType: 1, objectId : selectedCompany.companyId, imageId:'-1' };		
+								},
+								success : function(e) {	
+									$('#image-grid').data('kendoGrid').dataSource.read(); 
+								}
+							}).css('min-width','300');
+						}				
+						
+						if( ! $("#image-grid").data("kendoGrid") ){	
+							$("#image-grid").kendoGrid({
+								dataSource: {
+									dataType: 'json',
+									transport: {
+										read: { url:'${request.contextPath}/secure/list-image.do?output=json', type: 'POST' },
+										parameterMap: function (options, operation){
+											if (operation != "read" && options) {										                        								                       	 	
+												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
+											}else{
+												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
+											}
+										} 
+									},
+									schema: {
+										total: "totalTargetImageCount",
+										data: "targetImages",
+										model : Image
+									},
+									pageSize: 15,
+									serverPaging: true,
+									serverFiltering: false,
+									serverSorting: false,                        
+									error: handleKendoAjaxError
+								},
+								columns:[
+									{ field: "imageId", title: "ID",  width: 50, filterable: false, sortable: false },
+									{ field: "name", title: "파일", width: 150 },
+									{ field: "contentType", title: "이미지 유형",  width: 100 },
+									{ field: "size", title: "파일크기",  width: 100 },
+									{ field: "creationDate", title: "생성일", width: 80, format: "{0:yyyy/MM/dd}" },
+									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
+									{ command: [ { name: "destroy", text: "삭제" } ], title: " ", width: "160px"  }
+								],
+								filterable: true,
+								sortable: true,
+								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+								selectable: 'row',
+								//height: 400,
+								detailTemplate: kendo.template( $("#image-details-template").html() ),
+								detailInit : function(e){
+									//var detailRow = e.detailRow;
+								},		
+								dataBound: function(e) {
+								
+								},
+								change: function(e) {          
+									var selectedCells = this.select();       
+									this.expandRow(selectedCells);
+								}
+							});
+						}										
+		}	
+			
+		function createTemplatePane(){
+			if( ! $("#template-grid").data("kendoGrid") ){	
+				$("#template-grid").kendoGrid({
+					dataSource: {
+						dataType: 'json',
+						transport: {
+							read: { url:'${request.contextPath}/secure/list-template.do?output=json', type: 'POST' },
+							parameterMap: function (options, operation){
+								if (operation != "read" && options) {										                        								                       	 	
+									return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
+								}else{
+									return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
+								}
+							} 
+						},
+						schema: {
+							total: "totalTargetTemplateCount",
+							data: "targetTemplates",
+							model : Template
+						},
+						pageSize: 15,
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false,                        
+						error: common.api.handleKendoAjaxError
+					},
+					toolbar: [ { text: "템플릿 파일 추가", css:"createTemplateCustom" } ],   
+					columns:[
+						{ field: "templateId", title: "ID",  width: 50, filterable: false, sortable: false },
+						{ field: "title", title: "타이틀", width: 150 },
+						{ field: "location", title: "템플릿 이름", width: 150 },
+						{ field: "templateType", title: "유형",  width: 100 },
+						{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
+						{ command: [ { name: "destroy", text: "삭제" } , { name: "customEditTemplateClass", text: "수정" }], title: " ", width: "160px"  }
+					],
+					filterable: true,
+					sortable: true,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+					dataBound: function(e) {
+									
+					},
+					change: function(e) {          
+						var selectedCells = this.select();       
+						this.expandRow(selectedCells);
 					}
-					$(this).tab('show');
 				});
-			}	
-		}]);
+			}							
+		}	
 		</script>
 		<style>					
 		.k-grid-content{
