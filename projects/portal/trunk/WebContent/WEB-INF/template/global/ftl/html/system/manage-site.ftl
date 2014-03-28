@@ -52,46 +52,17 @@
 						}
 					]
 				});
-				
-				/**
-				var topBar = $("#navbar").extTopNavBar({ 
-					template : kendo.template($("#topbar-template").html() ),
-					data : currentUser,
-					menuName: "SYSTEM_MENU",
-					items: {
-						id:"companyDropDownList", 
-						type: "dropDownList",
-						dataTextField: "displayName",
-						dataValueField: "companyId",
-						value: ${action.companyId},
-						enabled : false,
-						dataSource: {
-							transport: {
-								read: {
-									dataType: "json",
-									url: '${request.contextPath}/secure/list-company.do?output=json',
-									type:'POST'
-								}
-							},
-							schema: { 
-								data: "companies",
-								model : Company
-							}
-						},
-						change : function(data){
-							selectedCompany = data ;
-							kendo.bind($("#site-info"), selectedCompany );   
-						}
-					},
-					doAfter : function(that){
-						var menu = that.getMenuItem(currentPageName);
-						kendo.bind($(".page-header"), menu );   
-					}
-				 });
-				 */				 
-				 
+								 
 				 // 4. PAGE MAIN		
-				$("button.btn-control-group ").each(function (index) {					
+				 common.api.handleButtonActions(
+				 	".panel-heading", {
+				 		handlers :[ {
+				 			selector: "button.btn-control-group"
+				 			handler : function(e) {
+				 				alert($(this).attr('data-aciton'));
+				 			}
+				 		}]});
+				$("button.btn-control-group").each(function (index) {					
 					var btn_control = $(this);
 					var btn_control_action = btn_control.attr("data-action");
 					if (btn_control_action == "user"){
