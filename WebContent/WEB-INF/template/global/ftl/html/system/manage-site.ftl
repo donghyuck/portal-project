@@ -102,7 +102,7 @@
 					e.preventDefault();			
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
-						case : '#template-mgmt'
+						case : '#template-mgmt' :
 							if( ! $("#template-grid").data("kendoGrid") ){	
 								$("#template-grid").kendoGrid({
 									dataSource: {
