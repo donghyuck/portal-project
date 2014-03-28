@@ -108,7 +108,18 @@
 						that.element.find("form[role='navigation']").attr("action", item.action ).submit();	
 					}
 				}
-			});						
+			});			
+			if( $.isArray( options.items ) ){
+				$.each( options.items, function ( i, item ){
+					if( typeof item ==='string'){
+						
+					}else if typeof item ==='object'){
+						if( item.name === 'getMenuItem' ){
+							item.handler( that._getMenuItem( item.menu )	);					
+						}
+					}
+				});
+			}
 		}
 	});
 	
