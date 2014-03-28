@@ -64,8 +64,10 @@
 				 					case "menu" :				 					
 				 						break;
 				 					case "group" :
+				 						topBar.go('main-group.do');
 				 						break;
 				 					case "user" :
+				 						topBar.go('main-user.do');
 				 						break;			
 				 					case "layout" :
 				 						break;				 							 						
