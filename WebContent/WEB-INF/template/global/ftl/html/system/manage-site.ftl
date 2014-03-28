@@ -581,7 +581,7 @@
 		</footer>
 		<!-- END FOOTER -->
 		<script id="image-details-template" type="text/x-kendo-template">				
-			<img src="/secure/view-image.do?width=150&height=150&imageId=#=imageId#"/>
+			<img src="/secure/view-image.do?width=150&height=150&imageId=#=imageId#" class="img-rounded"/>
 		</script>
 		<script id="social-details-template" type="text/x-kendo-template">				
 				#if ( typeof (twitterProfile)  == "object" ){ #
