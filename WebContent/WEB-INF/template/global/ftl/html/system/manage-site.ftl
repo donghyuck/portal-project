@@ -468,12 +468,12 @@
 						</div>
 						<div class="panel-body" style="padding:5px;">					
 							<ul class="nav nav-tabs" id="myTab">
-							  <li><a href="#site-info" data-toggle="tab"><i class="fa fa-sitemap"></i> 사이트 정보</a></li>
-							  <li><a href="#template-mgmt" data-toggle="tab"><i class="fa fa-file-o"></i>	페이지 템플릿 관리</a></li>
-							  <li><a href="#image-mgmt" data-toggle="tab"><i class="fa fa-picture-o"></i> 이미지 관리</a></li>
-							  <li><a href="#attachment-mgmt" data-toggle="tab"><i class="fa fa-paperclip"></i> 첨부파일 관리</a></li>
-							  <li><a href="#social-mgmt" data-toggle="tab">쇼셜 관리</a></li>
-							  <li><a href="#rss-info" data-toggle="tab"><i class="fa fa-rss"></i> RSS 관리</a></li>
+							  <li><a href="#site-info" data-toggle="tab"><i class="fa fa-sitemap"></i> 사이트</a></li>
+							  <li><a href="#template-mgmt" data-toggle="tab"><i class="fa fa-file-o"></i> 템플릿</a></li>
+							  <li><a href="#image-mgmt" data-toggle="tab"><i class="fa fa-picture-o"></i> 이미지</a></li>
+							  <li><a href="#attachment-mgmt" data-toggle="tab"><i class="fa fa-paperclip"></i> 첨부파일</a></li>
+							  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
+							  <li><a href="#rss-info" data-toggle="tab"><i class="fa fa-rss"></i> RSS</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="blank-top-5" ></div>	
