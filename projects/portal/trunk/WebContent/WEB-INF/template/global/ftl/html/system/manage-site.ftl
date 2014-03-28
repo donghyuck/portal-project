@@ -381,8 +381,9 @@
 								change: function(e) {          
 									var selectedCells = this.select();	                       
 									if( selectedCells.length == 1){
-										var selectedCell = this.dataItem( selectedCells );	                             
-										kendo.bind($('#image-details'), selectedCell);
+										var selectedCell = this.dataItem( selectedCells );											
+										var template = kendo.template($("#image-details-template").html());										
+										$('#image-details .panel-body').html( template(selectedCell) );										
 										if( 	$('#image-details').hasClass('hide') )
 											$('#image-details').removeClass('hide')
 									}
@@ -579,7 +580,9 @@
 		<footer>  		
 		</footer>
 		<!-- END FOOTER -->
-
+		<script id="image-details-template" type="text/x-kendo-template">				
+		
+		</script>
 		<script id="social-details-template" type="text/x-kendo-template">				
 				#if ( typeof (twitterProfile)  == "object" ){ #
 				<div class="media">
