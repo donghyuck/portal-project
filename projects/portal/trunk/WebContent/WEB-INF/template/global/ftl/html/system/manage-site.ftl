@@ -392,6 +392,10 @@
 		
 		function displayImageDetails(){
 			var imagePlaceHolder = $("#image-details").data( "imagePlaceHolder");		
+			if( $('#image-details').find('.panel-body').length == 0 ){
+				alert( imagePlaceHolder.imgUrl );
+			}
+			
 			//if( $("#" + renderToString ).length == 0  ){			
 			//							var template = kendo.template($("#image-details-template").html());										
 			//							$('#image-details .panel-body').html( template(selectedCell) );					
