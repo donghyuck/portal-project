@@ -61,7 +61,8 @@
 				 			event: 'click',
 				 			handler : function(e) {
 				 				switch($(this).attr("data-action") ){
-				 					case "menu" :				 					
+				 					case "menu" :			
+				 						alert("menu modal");	 					
 				 						break;
 				 					case "group" :
 				 						topBar.go('main-group.do');
