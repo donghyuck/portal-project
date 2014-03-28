@@ -530,7 +530,7 @@
 										<div class="panel panel-default">
 											<div class="panel-body">
 											이미지											
-												<div data-template='<img src="view-image.do?width=150&height=150&imageId=#= imageId #" >' data-bind="source:" />											
+												<div data-template='<img src="view-image.do?width=150&height=150&imageId=#= imageId #" >' data-bind="source: this" />											
 											</div>
 										</div>									
 									</div>
