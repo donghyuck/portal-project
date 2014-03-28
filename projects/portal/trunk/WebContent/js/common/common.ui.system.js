@@ -84,8 +84,11 @@
 			that.element.find('.nav a').on( CLICK, function( e ){
 				if( $(e.target).is('[action]') ){
 					var selected = $(e.target);
-					var item = { title: $.trim(selected.text()), action: selected.attr("action") , description: selected.attr("description") || "" };
-					that.trigger(SELECT, { data: item }); 
+					var item = { title: $.trim(selected.text()), action: selected.attr("action") , description: selected.attr("description") || "" };					
+					that.trigger(SELECT, { data: item }); 					
+					if( !isFunction(options.select) ){
+						that.element.find("form[role='navigation']").attr("action", item.action ).submit();	
+					}
 				}
 			});				
 		},				
