@@ -375,11 +375,12 @@
 									//var detailRow = e.detailRow;
 								//},		
 								dataBound: function(e) {
-								
+									$('#image-details').hide();
 								},
 								change: function(e) {          
 									var selectedCells = this.select();       
 									//this.expandRow(selectedCells);
+									$('#image-details').show();
 								}
 							});
 						}										
@@ -520,7 +521,7 @@
 										<div class="blank-top-15"></div>	
 										<div id="image-grid"></div>	
 									</div>
-									<div id="image-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;">
+									<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">
 										<div class="panel panel-default">
 											<div class="panel-body">
 											이미지
