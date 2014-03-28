@@ -5,7 +5,8 @@
  *  extImageBrowser widget
  */
 (function($, undefined) {
-	var common.ui.system = common.ui.system || {} ;
+	var common = window.common = window.common || {};
+	common.ui.system =  common.ui.system || {};
 
     var kendo = window.kendo,
     Widget = kendo.ui.Widget,
@@ -24,7 +25,7 @@
 	JSON = 'json',		
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
-    ui.system.extTopNavBar = Widget.extend({
+    common.ui.system.extTopNavBar = Widget.extend({
 		init: function(element, options) {			
 			var that = this;
 			Widget.fn.init.call(that, element, options);			
