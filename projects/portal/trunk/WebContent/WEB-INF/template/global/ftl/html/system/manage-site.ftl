@@ -591,8 +591,8 @@
 		
 		<script id="image-details-template" type="text/x-kendo-template">				
 			<div class="panel panel-default">
-				<div class="panel-body">
-					<img data-bind="attr:{src=imgUrl}" class="img-rounded"/>		
+				<div class="panel-body">	
+					<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
 					</div>			
