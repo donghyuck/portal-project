@@ -5,7 +5,9 @@
  *  extImageBrowser widget
  */
 (function($, undefined) {
-	var common = window.common = window.common || {}, common.ui = common.ui || {} , common.ui.system = common.ui.system || {} ;
+	var common = window.common = window.common || {};
+	common.ui = common.ui || {} ;
+	common.ui.system = common.ui.system || {} ;
 
     var kendo = window.kendo,
     Widget = kendo.ui.Widget,
