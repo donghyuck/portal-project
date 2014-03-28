@@ -42,7 +42,7 @@
 		_dataSource : function () {
 			var that = this ;
 			var options = that.options;
-			if( options.dataSource === 'object' ){}
+			if( options.dataSource === 'object' ){
 				that.dataSource = DataSource.create(options.dataSource);
 			}else{
 				if( options.menu === 'string' ){
