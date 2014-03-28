@@ -40,7 +40,7 @@
 					template : kendo.template($("#topnavbar-template").html() )
 				}).on('click.ment', function (e) {
 					alert( kendo.stringify(e.data) );
-				};
+				});
 				
 				/**
 				var topBar = $("#navbar").extTopNavBar({ 
