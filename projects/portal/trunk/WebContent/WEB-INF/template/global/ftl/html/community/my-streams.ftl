@@ -133,7 +133,14 @@
 		function createConnectedSocialNav(){
 			var myStreams = $('#navbar-btn-my-streams');
 			if( myStreams.find('input').length == 0 ){
-				common.api.social.dataSource({ type : 'list' });
+				common.api.social.dataSource({ 
+					type : 'list' 
+					change : function ( e ) {
+						var template = kendo.template("<li>#: serviceProviderName #</li>");
+						var html = kendo.render(template, this.data());
+						myStreams.html(html);
+					}
+				});
 			}
 			
 		}		
