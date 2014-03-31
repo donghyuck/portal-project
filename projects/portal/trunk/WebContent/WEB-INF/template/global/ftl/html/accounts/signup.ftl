@@ -297,17 +297,17 @@
 		}
 		
 		function signupCallbackResult( media, code , exists  ){
-			var onetime_url =  "${request.contextPath}/community/" + media + "-callback.do?output=json";			
+			
 			if(exists){
-				if( code != null && code != ''  ){						
+				if( code != null && code != ''  ){					
 					common.api.user.signin({
-						url : onetime_url,
-						onetime:  code,
-						success : function(response){
-							alert(kendo.stringify( response ));
+						onetime: onetime,
+						success : function( token ){
 							homepage();
-						}
-					}); 
+						},
+						fail : function (response) {	
+						}  
+					});								
 				}else{
 					alert( media +  "인증에 실패하였습니다." );
 				}			
