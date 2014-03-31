@@ -21,8 +21,7 @@
 			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {
 				
-				
-			
+							
 				// 1.  한글 지원을 위한 로케일 설정
 				kendo.culture("ko-KR");
 				
@@ -299,9 +298,11 @@
 		
 		function signupCallbackResult( media, code , exists  ){
 			var onetime_url =  "${request.contextPath}/community/" + media + "-callback.do?output=json";			
+			
+			alert( media + "-" + code + "-" + exists ) ;
+			
 			if(exists){
 				if( code != null && code != ''  ){						
-					
 					common.api.signin({
 						url : onetime_url,
 						onetime:  code,
