@@ -26,7 +26,7 @@
 					options.success(company) ;					
 				}
 			},
-			error:options.error || handleKendoAjaxError,
+			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});	
 	};				
@@ -52,7 +52,7 @@
 				if( typeof options.success === 'function'  )
 					options.success (user);
 			},
-			error:options.error || handleKendoAjaxError,
+			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});			
 	}
@@ -70,7 +70,7 @@
 					options.success(response) ;					
 				}
 			},
-			error:options.error || handleKendoAjaxError,
+			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});	
 	};
@@ -88,7 +88,7 @@
 					options.success( new User(response.account)) ;					
 				}
 			},
-			error:options.error || handleKendoAjaxError,
+			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});	
 	};
@@ -106,7 +106,7 @@
 					options.success(response) ;					
 				}
 			},
-			error:options.error || handleKendoAjaxError,
+			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});	
 	};	
@@ -256,7 +256,7 @@
 						options.success(response) ;					
 				}
 			},
-			error:options.error || handleKendoAjaxError,
+			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});	
 	}
@@ -276,7 +276,7 @@
 						options.success(response) ;					
 				}
 			},
-			error:options.error || handleKendoAjaxError,
+			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});	
 	}	
