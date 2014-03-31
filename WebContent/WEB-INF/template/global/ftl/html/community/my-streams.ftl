@@ -180,7 +180,7 @@
 						$( '#'+ renderToString2 ).data('kendoExtMediaStreamView').dataSource.read();
 					},
 					close : function(){
-						$('#navbar-btn-my-streams').find('input[value="' + streamsPlaceHolder.socialAccountId + "]').click();				
+						$('#navbar-btn-my-streams').find('input[value="' + streamsPlaceHolder.socialAccountId + '"]').click();				
 					}
 				} );									
 				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
