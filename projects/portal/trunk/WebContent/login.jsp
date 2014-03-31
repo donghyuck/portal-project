@@ -126,11 +126,11 @@
 					alert_danger.html( template({message: error_message }) );			
 					btn.button('reset')
 				}else{				
-					common.api.signup({
+					common.api.user.signup({
 						data: kendo.stringify( signup_modal.data("signupPlaceHolder") ),
 						success : function(data){														
 							if ( !data.anonymous ){	
-								common.api.signin({
+								common.api.user.signin({
 									onetime:  signup_modal.data("signupPlaceHolder").onetime,
 									success : function(response){
 										btn.button('reset')   	    
@@ -188,7 +188,7 @@
 	function handleCallbackResult( media, code, exists ){		
 		if(exists){
 			if( code != null && code != ''  ){							
-				common.api.signin({
+				common.api.user.signin({
 					onetime:  code,
 					success : function(response){
 						//$("form[name='fm']")[0].reset();               	    
