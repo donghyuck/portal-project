@@ -1484,9 +1484,9 @@
     			
     			if( typeof options.template === UNDEFINED )
     				that.template = kendo.template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>');
-    			else if  typeof options.template === STRING )
+    			else if ( typeof options.template === STRING )
     				that.template = kendo.template(options.template);	
-    			else if typeof options.template === 'object' )
+    			else if ( typeof options.template === 'object' )
     				that.template = options.template;	
     
     			if( typeof options.data === UNDEFINED )
