@@ -1380,7 +1380,7 @@
 	POST = 'POST',
 	JSON = 'json',
     CHANGE = "change",
-	UNDEFINED = 'undefined',,
+	UNDEFINED = 'undefined',
 	MEDIA_FACEBOOK = "facebook",
 	MEDIA_TWITTER = "twitter",
 	MEDIA_TUMBLR = "tumblr",
