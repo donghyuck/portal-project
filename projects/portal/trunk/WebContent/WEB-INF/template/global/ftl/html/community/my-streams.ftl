@@ -182,8 +182,8 @@
 				} );		
 				
 				$( '#'+ renderToString2).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
-											
 			}
+			$("#" + renderToString ).parent().show();
 		}
 				
 		function createPanel(){					
