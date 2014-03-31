@@ -146,7 +146,7 @@
 									selector: "input:checkbox",
 									event : 'change',
 									handler : function(){
-										var data = myStreams.data('dataSource').getByUid(this.value);										
+										var data = myStreams.data('dataSource').get(this.value);										
 										alert( "value=" + this.value + ", checked=" + this.checked + ":::" + kendo.stringify(data) );
 									}	
 								}]						
