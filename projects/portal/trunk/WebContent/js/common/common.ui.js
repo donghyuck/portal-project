@@ -1370,12 +1370,15 @@
 	common.ui =  common.ui || {};
     var kendo = window.kendo,
     Widget = kendo.ui.Widget,
+    DataSource = kendo.data.DataSource,
     isPlainObject = $.isPlainObject,
     proxy = $.proxy,
     extend = $.extend,
     placeholderSupported = kendo.support.placeholder,
     browser = kendo.support.browser,
     isFunction = kendo.isFunction,
+	POST = 'POST',
+	JSON = 'json',
     CHANGE = "change",
 	UNDEFINED = 'undefined',,
 	MEDIA_FACEBOOK = "facebook",
@@ -1401,7 +1404,11 @@
 				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
 			}else{
 				if( typeof options.media === 'string' ){
-					var _data = {};
+					var _data = {
+						parameterMap	:  function( options,  operation) {
+							return {};
+						}
+					};
 					switch(options.media){
 						case MEDIA_FACEBOOK :
 							_data.url = "/community/get-facebook-homefeed.do?output=json";
@@ -1414,14 +1421,35 @@
 						case MEDIA_TUMBLR :
 							_data.url = "/community/get-tumblr-dashboard.do?output=json";
 							_data.data = "dashboardPosts";
-							break;	
+							break;
 					}
+					that.dataSource = DataSource.create({
+						type: JSON,
+						transport: {
+							read: {
+								type : POST,
+								url : _data.url
+							},
+							parameterMap: _data.parameterMap
+						},
+						error:handleKendoAjaxError,
+						schema: {
+							data : _data.data
+						},
+						requestStart: function() {
+							kendo.ui.progress(that.element, true);
+						},
+						requestEnd: function() {
+							kendo.ui.progress(that.element, false);
+						}
+					});
 				}
-				that.dataSource = common.api.streams.dataSource ;	
 			}				
+			
 			that.dataSource.bind(CHANGE, function() {
 				that.refresh();
-			});					
+			});		
+			
 			if (that.options.autoBind) {    
 				that.dataSource.fetch();
 			}			
