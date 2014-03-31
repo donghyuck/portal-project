@@ -144,7 +144,7 @@
 								selector: "input:checkbox",
 								event : 'change',
 								handler : function(){
-									alert( "value=" + this.value + ", checked=' + this.checked );
+									alert( "value=" + this.value + ", checked=" + this.checked );
 								}	
 							}]						
 						});							
