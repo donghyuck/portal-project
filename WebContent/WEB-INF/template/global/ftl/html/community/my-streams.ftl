@@ -25,7 +25,7 @@
 				// 1.  한글 지원을 위한 로케일 설정
 				kendo.culture("ko-KR");
 				
-				// 2.  MEUN 설정
+				// 2.  MEUN LOADING ...
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
 				common.api.handleNavbarActions( $('.personalized-navbar'), {
@@ -69,7 +69,7 @@
 					}, 100);					
 				});
 
-				// 3. ACCOUNTS LOAD	
+				// 3. ACCOUNTS STATUS LOAD	.. 
 				var currentUser = new User({});			
 				var accounts = $("#account-navbar").kendoAccounts({				
 					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	
