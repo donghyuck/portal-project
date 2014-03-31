@@ -1320,7 +1320,7 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text text-primary hidden-xs">미디어</p>
 					<li class="navbar-btn">
-						<div id="navbar-btn-my-streams" class="btn-group navbar-btn" data-toggle="buttons">....</div>						
+						<div id="navbar-btn-my-streams" class="btn-group navbar-btn" data-toggle="buttons"><i class="fa-li fa fa-spinner fa-spin"></i></div>						
 					</li>			
 					<p class="navbar-text hidden-xs">&nbsp;</p>	
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
