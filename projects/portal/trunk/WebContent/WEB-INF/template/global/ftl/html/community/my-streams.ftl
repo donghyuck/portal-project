@@ -131,7 +131,7 @@
 		}]);	
 
 		<!-- ============================== -->
-		<!-- create social streams nav buttons                 -->
+		<!-- create media streams nav buttons                -->
 		<!-- ============================== -->				
 		function createConnectedSocialNav(){		
 			var myStreams = $('#navbar-btn-my-streams');
@@ -161,10 +161,9 @@
 					})
 				);				
 			}				
-		}		
-
+		}	
 		<!-- ============================== -->
-		<!-- display social streams panel                        -->
+		<!-- display media stream panel                        -->
 		<!-- ============================== -->		
 		function displayMediaStream(streamsPlaceHolder){					
 			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;
@@ -179,12 +178,19 @@
 					refresh : function(){
 						$( '#'+ renderToString2 ).data('kendoExtMediaStreamView').dataSource.read();
 					}
-				} );		
+				} );						
 				
+				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
+					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
+				}	
+								
 				$( '#'+ renderToString2 ).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
 			}
 			$("#" + renderToString ).parent().show();
 		}
+				
+				
+				
 				
 		function createPanel(){					
 			var renderTo = ui.generateGuid();
