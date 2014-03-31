@@ -1504,7 +1504,7 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
-						<a href="#" class="btn btn-info">
+						<a href="#" class="btn btn-info navbar-btn">
 							<i class="fa-li fa fa-spinner fa-spin"></i>
 						</a> 
 					</li>					
