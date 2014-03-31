@@ -1397,6 +1397,14 @@
 			name: "ExtMediaStreamView",
 			autoBind : true
 		},
+		id : function () {
+			var that = this ;
+			var options = that.options ;		
+			if( typeof  options.id === UNDEFINED)
+				return 0 ;
+			else 
+				return options.id;
+		},
 		_dataSource: function() {
 			var that = this ;
 			var options = that.options ;			
