@@ -131,7 +131,7 @@
 						success : function(data){														
 							if ( !data.anonymous ){
 								var onetime_url =  "<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/community/" + signup_modal.data("signupPlaceHolder").media + "-callback.do?output=json";			
-								common.api.signin({
+								common.api.user.signin({
 									url : onetime_url,
 									onetime:  signup_modal.data("signupPlaceHolder").onetime,
 									success : function(response){
