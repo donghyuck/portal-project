@@ -149,7 +149,7 @@
 									event : 'change',
 									handler : function(){
 										var myStream = myStreams.data( 'dataSource' ).get(this.value);
-										alert( this.checked + '-' = this.value );
+										alert( this.checked + '-' +  this.value );
 										if(this.checked){
 											displayMediaStream( myStream );
 										}else{
