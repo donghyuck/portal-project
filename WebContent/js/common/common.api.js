@@ -539,6 +539,7 @@
 		JSON = 'json',
 		PROFILE_URL_TEMPLATE = kendo.template("/community/get-#= media #-profile.do?output=json"),
 		CALLBACK_URL_TEMPLATE = kendo.template("/community/#= media #-callback.do?output=json");		
+		
 	common.api.social.dataSource = function (options){		
 		if( typeof options.autoBind === UNDEFINED )
 			options.autoBind = true;		
@@ -574,7 +575,7 @@
 		}		
 		return dataSource;
 	}			
-		
+	
 	common.api.social.update = function ( options ){		
 		options = options || {};	
 		if( typeof options.url === UNDEFINED){
