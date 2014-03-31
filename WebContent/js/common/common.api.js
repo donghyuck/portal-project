@@ -112,6 +112,7 @@
 	};	
 	
 	common.api.property = function( properties, name, defaultValue ){		
+		alert(properties[name]);
 		if( properties[name] === UNDEFINED )
 			return defaultValue;
 		else 
