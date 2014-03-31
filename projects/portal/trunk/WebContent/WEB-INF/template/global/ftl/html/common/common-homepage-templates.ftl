@@ -80,7 +80,9 @@
 
 
 
-<!-- photo view panel -->
+<!-- ============================== -->
+<!-- my photo view panel template                    -->
+<!-- ============================== -->
 <script type="text/x-kendo-template" id="photo-panel-template">
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -326,6 +328,7 @@
 		</div>				
 	</div>		
 </script>
+
 <script type="text/x-kendo-template" id="photo-view-template">	
 		<figure>			
 			<a href="\\#photo-#:imageId#">			
@@ -499,7 +502,7 @@
 </script>
 
 <!-- ============================== -->
-<!-- socialnetwork view panel template               -->
+<!-- my socialnetwork view panel template          -->
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="social-view-panel-template">
 	<div class="custom-panels-group" style="display:none;"> 
@@ -699,20 +702,21 @@
 			</div>
 		</li>	
 </script>
+
+
 <!-- ============================== -->
 <!-- Top Nav Account Status Template               -->
 <!-- ============================== -->
 <script id="account-template" type="text/x-kendo-template">
-<li class="dropdownd">
+<li class="dropdown">
 		<a href="\\#" class="btn btn-img dropdown-toggle" data-toggle="dropdown">
 		#if (photoUrl != null && photoUrl != 'null' && photoUrl != '')  { #
-		<img src="#:photoUrl#"  height="34"   alt="#:name#" />
+			<img src="#:photoUrl#"  height="34"   alt="#:name#" />
 		# } else { # 
-		<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
+			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
 		# } #
 		<span class="caret"></span>
-		</a>
-			
+		</a>			
 		<ul class="dropdown-menu">
 			# if ( !anonymous ) { # 
 			<li>
