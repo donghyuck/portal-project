@@ -181,7 +181,7 @@
 					}
 				} );		
 				
-				$( '#'+ renderToString2).extMediaStreamView();
+				$( '#'+ renderToString2).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
 											
 			}
 		}
