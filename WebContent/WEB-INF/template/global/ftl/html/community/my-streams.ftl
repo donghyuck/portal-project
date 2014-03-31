@@ -150,7 +150,7 @@
 									handler : function(){
 										if(this.checked){
 											var myStream = myStreams.data( 'dataSource' ).get(this.value);
-											displaySocialPanel( myStream );
+											displayMediaStream( myStream );
 										}else{
 										
 										}
@@ -166,7 +166,7 @@
 		<!-- ============================== -->
 		<!-- display social streams panel                        -->
 		<!-- ============================== -->		
-		function displaySocialPanel (streamsPlaceHolder){					
+		function displayMediaStream(streamsPlaceHolder){					
 			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;
 			var renderToString2 =  streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ;						
 			if( $("#" + renderToString ).length == 0  ){
