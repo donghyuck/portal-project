@@ -136,7 +136,7 @@
 				common.api.social.dataSource({ 
 					type : 'list',
 					change : function ( e ) {
-						var template = kendo.template('<label class="btn btn-info"><input type="checkbox"><i class="fa fa-#= serviceProviderName #" value="#:socialAccountId#"></i></label>');
+						var template = kendo.template('<label class="btn btn-info"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #" value="#:socialAccountId#"></i></label>');
 						var html = kendo.render(template, this.data());
 						myStreams.html(html);						
 						common.api.handleButtonActions( myStreams, {
@@ -144,7 +144,7 @@
 								selector: "input:checkbox",
 								event : 'change',
 								handler : function(){
-									alert($(this).val());
+									alert( "value=" + this.value + ", checked=' + this.checked );
 								}	
 							}]						
 						});							
@@ -1227,14 +1227,13 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
 						<div id="navbar-btn-my-streams" class="btn-group navbar-btn" data-toggle="buttons">
-							
+						
+						
 						</div>						
 					</li>			
 					<p class="navbar-text">&nbsp;</p>		
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
-					<li><a href="#&quot;" class="btn-link custom-nabvar-hide">
-						<img src="${request.contextPath}/images/cross.png" height="18"/>
-					</a></li>
+					<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"/></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
 			</div>
