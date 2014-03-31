@@ -298,18 +298,12 @@
 		
 		function signupCallbackResult( media, code , exists  ){
 			var onetime_url =  "${request.contextPath}/community/" + media + "-callback.do?output=json";			
-			
-			alert( media + "-" + code + "-" + exists ) ;
-			
 			if(exists){
 				if( code != null && code != ''  ){						
 					common.api.signin({
 						url : onetime_url,
 						onetime:  code,
 						success : function(response){
-							//$("form[name='fm']")[0].reset();               	    
-							//$("form[name='fm']").attr("action", "/main.do").submit();
-							alert( kendo.stringify( response ) ) ;
 							homepage();
 						}
 					}); 
