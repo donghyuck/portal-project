@@ -1229,7 +1229,8 @@
 						<div id="navbar-btn-my-streams" class="btn-group navbar-btn" data-toggle="buttons">
 							
 						</div>						
-					</li>					
+					</li>			
+					<p class="navbar-text">&nbsp;</p>		
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
 					<li><a href="#&quot;" class="btn-link custom-nabvar-hide">
 						<img src="${request.contextPath}/images/cross.png" height="18"/>
@@ -1269,8 +1270,7 @@
 					<button type="button" class="btn btn-info"><i class="fa fa-cog"></i></button>
 					<button type="button" class="btn btn-info"><i class="fa fa-comment"></i></button>
 					<button type="button" class="btn btn-info"><i class="fa fa-envelope"></i></button>
-				</div>			
-				<!--<button id="personalized-controls-menu-close" type="button" class="close" aria-hidden="true"><i class="fa fa-times fa-2x"></i></button>-->				
+				</div>		
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
 			<!--
