@@ -1489,6 +1489,8 @@
     				that.template = kendo.template(options.template);	
     			else if ( typeof options.template === 'object' )
     				that.template = options.template;	
+    			
+    			alert( typeof  options.template  )
     
     			if( typeof options.data === UNDEFINED )
     				options.data = {};
