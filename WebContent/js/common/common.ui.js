@@ -1451,12 +1451,10 @@
 						}
 					});
 				}
-			}				
-			
+			}			
 			that.dataSource.bind(CHANGE, function() {
 				that.refresh();
-			});		
-			
+			});					
 			if (that.options.autoBind) {    
 				that.dataSource.fetch();
 			}			
@@ -1465,7 +1463,7 @@
 			var that = this ;
 			var options = that.options ;			
 			var view = that.dataSource.view();			
-			that.element.html( options.template, view);
+			that.element.html( kendo.render( options.template, view ) );
 		},		
 		destroy: function() {
 			var that = this;
