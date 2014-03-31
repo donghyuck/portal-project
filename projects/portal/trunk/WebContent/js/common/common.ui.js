@@ -1426,6 +1426,10 @@
 							_data.template = kendo.template($("#tumblr-dashboard-template").html());
 							break;
 					}
+					
+					if( typeof options.template === UNDEFINED )
+						options.template = _data.template ;
+						
 					that.dataSource = DataSource.create({
 						type: JSON,
 						transport: {
