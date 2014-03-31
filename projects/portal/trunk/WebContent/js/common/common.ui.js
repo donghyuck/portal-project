@@ -1413,14 +1413,17 @@
 						case MEDIA_FACEBOOK :
 							_data.url = "/community/get-facebook-homefeed.do?output=json";
 							_data.data = "homeFeed";
+							_data.template = kendo.template($("#facebook-homefeed-template").html());
 							break;
 						case MEDIA_TWITTER :
 							_data.url = "/community/get-twitter-hometimeline.do?output=json";
 							_data.data = "homeTimeline" ;
+							_data.template = kendo.template($("#twitter-timeline-template").html());
 							break;
 						case MEDIA_TUMBLR :
 							_data.url = "/community/get-tumblr-dashboard.do?output=json";
 							_data.data = "dashboardPosts";
+							_data.template = kendo.template($("#tumblr-dashboard-template").html());
 							break;
 					}
 					that.dataSource = DataSource.create({
