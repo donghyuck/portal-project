@@ -27,12 +27,13 @@
 						<#if action.user.anonymous >
 							// is anonymous							
 							<#if action.findUser()?exists >
-							// is member 						
+							// is connected user 						
 							if(typeof window.opener.handleCallbackResult == "function"){		
 								window.opener.handleCallbackResult("facebook", onetime , true);
 								window.close();						
 							}else if( typeof window.opener.signupCallbackResult == "function"){			
 								window.opener.signupCallbackResult("facebook", onetime, true);
+								window.close();
 							}else if( typeof window.opener.signinCallbackResult == "function"){	
 								// window.opener.signinCallbackResult("facebook", onetime, true);			
 								common.api.user.signin({
@@ -49,7 +50,7 @@
 							
 							}		
 							<#else>
-							// is not connected 
+							// is not connected user
 							var template = kendo.template($('#account-not-found-alert-template').html());
 							$("#status").html(template({
 								media: "facebook",

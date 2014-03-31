@@ -32,7 +32,8 @@
 								window.opener.handleCallbackResult("twitter", onetime , true);
 								window.close();
 							}else if( typeof window.opener.signupCallbackResult == "function"){	
-								window.opener.signupCallbackResult("twitter", onetime, true);								
+								window.opener.signupCallbackResult("twitter", onetime, true);			
+								window.close();					
 							}else if( typeof window.opener.signinCallbackResult == "function"){	
 								// window.opener.signinCallbackResult("facebook", onetime, true);			
 								common.api.user.signin({
