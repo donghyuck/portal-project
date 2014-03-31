@@ -7,6 +7,10 @@
 	UNDEFINED = 'undefined',
 	isFunction = kendo.isFunction;
 		
+	
+	
+	
+	
 	common.api.getTargetCompany =  function (url, options){
 		if (typeof url === "object") {
 	        options = url;
@@ -119,6 +123,7 @@
 			properties[name]
 	}
 
+	
 	common.api.guid = function()
 	{
 		var result, i, j;
@@ -133,6 +138,9 @@
 		return result
 	}
 	
+	/**
+	 * handlePanelHeaderActions : Panel Header Action Utils
+	 */
 	common.api.handlePanelHeaderActions = function ( selector, options ){		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
@@ -312,8 +320,13 @@
 })(jQuery);
 
 
+
+
 /**
- * User  
+ * User 
+ *  - signin
+ *  - signup
+ *  - logout  
  */
 
 ;(function($, undefined) {
@@ -344,8 +357,7 @@
 			error:options.error || handleKendoAjaxError,
 			dataType : "json"
 		});	
-	};
-	
+	};	
 	common.api.user.logout = function (options){
 		options = options || {};
 		$.ajax({
@@ -399,9 +411,12 @@
 				dataType : "json"
 			});				
 		}
-	};	
-	
+	};		
 })(jQuery);	
+
+
+
+
 
 /**
  * Streams  
@@ -514,6 +529,7 @@
 	common.api.social = common.api.social || {} ;
 	
 	var kendo = window.kendo,
+		DataSource = kendo.data.DataSource,
 		handleKendoAjaxError = common.api.handleKendoAjaxError ;
 		stringify = kendo.stringify,
 		isFunction = kendo.isFunction,
@@ -522,7 +538,33 @@
 		JSON = 'json',
 		PROFILE_URL_TEMPLATE = kendo.template("/community/get-#= media #-profile.do?output=json"),
 		CALLBACK_URL_TEMPLATE = kendo.template("/community/#= media #-callback.do?output=json");
-	
+		
+	common.api.social.dataSource = function (options){			
+		var dataSource = null;			
+		if( typeof that.options.dataSource === 'object'){
+			dataSource = DataSource.create(options.dataSource);
+		}else{
+			dataSource = DataSource.create({
+				transport: {
+					read: {
+						type : 'POST',
+						dataType : "json", 
+						url : '/community/list-my-socialnetwork.do?output=json'
+					} 
+				},
+				pageSize: 10,
+				error:common.api.handleKendoAjaxError,				
+				schema: {
+					data : "connectedSocialNetworks",
+					model : SocialNetwork
+				}				
+			});				
+		}	
+		if (options.autoBind) {    
+			dataSource.fetch();
+		}
+	}			
+		
 	common.api.social.update = function ( options ){		
 		options = options || {};	
 		if( typeof options.url === UNDEFINED){
