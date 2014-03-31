@@ -304,6 +304,7 @@
 						url : onetime_url,
 						onetime:  code,
 						success : function(response){
+							alert(kendo.stringify( response ));
 							homepage();
 						}
 					}); 
