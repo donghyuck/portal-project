@@ -1319,7 +1319,7 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
-					<p class="navbar-text hidden-xs">&nbsp;</p>
+					<p class="navbar-text hidden-xs">미디어</p>
 					<li class="navbar-btn">
 						<div id="navbar-btn-my-streams" class="btn-group navbar-btn" data-toggle="buttons"></div>						
 					</li>			
