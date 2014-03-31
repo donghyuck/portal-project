@@ -112,8 +112,7 @@
 	};	
 	
 	common.api.property = function( properties, name, defaultValue ){		
-		alert(properties[name]);
-		if( properties[name] === UNDEFINED )
+		if( typeof properties[name] === UNDEFINED )
 			return defaultValue;
 		else 
 			return properties[name]
