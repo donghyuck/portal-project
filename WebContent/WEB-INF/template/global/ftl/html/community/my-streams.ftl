@@ -129,9 +129,11 @@
 				// END SCRIPT 
 			}
 		}]);	
-		
-		function createConnectedSocialNav(){
-		
+
+		<!-- ============================== -->
+		<!-- create social streams nav buttons                 -->
+		<!-- ============================== -->				
+		function createConnectedSocialNav(){		
 			var myStreams = $('#navbar-btn-my-streams');
 			if( myStreams.find('input').length == 0 ){
 				myStreams.data( 'dataSource', 
@@ -146,24 +148,156 @@
 									selector: "input:checkbox",
 									event : 'change',
 									handler : function(){
-										var data = myStreams.data('dataSource').get(this.value);
-										alert( "value=" + this.value + ", checked=" + this.checked + ":::" + kendo.stringify(data) );
 										if(this.checked){
-										
+											var myStream = myStreams.data( 'dataSource' ).get(this.value);
+											displaySocialPanel( myStream );
 										}else{
 										
-										}															
-										
+										}
 									}	
-								}]						
-							});							
+								}]
+							});
 						}
 					})
 				);				
-			}
-				
+			}				
 		}		
+
+		<!-- ============================== -->
+		<!-- display social streams panel                        -->
+		<!-- ============================== -->		
+		function displaySocialPanel (streamsPlaceHolder){					
+			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;
+			var renderToString2 =  streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ;						
+			if( $("#" + renderToString ).length == 0  ){
+				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
+				var template = kendo.template($("#social-view-panel-template").html());
+				$("#personalized-area").append( template( streamsPlaceHolder ) );
+				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );
+				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
+					custom : true,
+					refresh : function(){
+						
+					}
+				} );		
 				
+				$( '#'+ renderToString2).extMediaStreamView();
+											
+			}
+		}
+				
+		function createPanel(){					
+			var renderTo = ui.generateGuid();
+			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
+			var template = kendo.template($("#empty-panel-template").html());	
+			$("#personalized-area").append( template( { id: renderTo, colSize: grid_col_size.newValue } ) );
+			$( '#'+ renderTo + ' .panel-header-actions a').each(function( index ) {
+				var panel_header_action = $(this);
+				panel_header_action.click(function (e){
+					e.preventDefault();		
+					var panel_header_action_icon = panel_header_action.find('span');
+					switch( panel_header_action_icon.text() )
+					{
+						case "Minimize" :
+							$( "#"+ renderTo +" .panel-body").toggleClass("hide");		
+							panel_header_action.toggleClass("hide");		
+							break;
+						case "Refresh" :
+							break;
+						case "Close" :							
+							kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
+								$("#" + renderTo ).remove();
+							});							
+							break;	
+						case "Custom" :
+							break;																		
+					}
+				});		
+			});					
+			
+			//$( '#'+ renderTo ).show();
+			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
+		}			
+
+
+								
+		function displaySocialPanel ( ){
+			var streamsPlaceHolder = $("#my-social-streams-grid").data("streamsPlaceHolder");
+			var streamsProvider = $("#my-social-streams-grid").data( streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ) ;
+			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;		
+			
+			if( $("#" + renderToString ).length == 0  ){				
+				// create new panel 
+				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
+				var template = kendo.template($("#social-view-panel-template").html());														
+				$("#personalized-area").append( template( streamsPlaceHolder ) );						
+				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );	
+				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
+					custom : true,
+					refresh : function(){
+						streamsProvider.dataSource.read();
+					}
+				} );				
+							
+				if( ! common.api.property($("#my-social-streams-grid").data("streamsPlaceHolder").properties, "options.scrollable", true ) ){
+					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
+				}				
+				
+				streamsProvider.dataSource.one('change', function(e){
+
+				});
+				
+				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
+					$( "#" + renderToString + "-prop-grid").kendoGrid({
+						dataSource : {		
+							transport: { 
+								read: { url:'/community/get-my-socialnetwork-property.do?output=json', type:'post' },
+								create: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post' },
+								update: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post'  },
+								destroy: { url:'/community/delete-my-socialnetwork-property.do?output=json', type:'post' },
+						 		parameterMap: function (options, operation){			
+							 		if (operation !== "read" && options.models) {
+							 			return { socialNetworkId: $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId, items: kendo.stringify(options.models)};
+									} 
+									return {socialNetworkId : $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId }
+									}
+								},						
+								batch: true, 
+								schema: {
+									data: "socialNetworkProperties",
+									model: Property
+								},
+								error:common.api.handleKendoAjaxError
+							},
+							columns: [
+								{ title: "속성", field: "name" },
+								{ title: "값",   field: "value" },
+								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+							],
+							pageable: false,
+							resizable: true,
+							editable : true,
+							scrollable: true,
+							height: 180,
+							toolbar: [
+								{ name: "create", text: "추가" },
+								{ name: "save", text: "저장" },
+								{ name: "cancel", text: "취소" }
+							],				     
+							change: function(e) {
+							}
+					});
+				}	
+			} 
+			$("#" + renderToString ).parent().show();
+			if(streamsProvider.dataSource.total() == 0 )
+			{
+				streamsProvider.dataSource.read();
+			}	
+		}		
+		
+		
+						
 		function createSocialGrid(){			
 			if( !$("#my-social-streams-grid" ).data('kendoGrid') ){ 											
 				$("#my-social-streams-grid").kendoGrid({
@@ -333,6 +467,7 @@
 				});									
 			}		
 		}
+
 		
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
@@ -435,117 +570,10 @@
 			}
 		}
 		
-		
-		function createPanel(){					
-			var renderTo = ui.generateGuid();
-			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
-			var template = kendo.template($("#empty-panel-template").html());	
-			$("#personalized-area").append( template( { id: renderTo, colSize: grid_col_size.newValue } ) );
-			$( '#'+ renderTo + ' .panel-header-actions a').each(function( index ) {
-				var panel_header_action = $(this);
-				panel_header_action.click(function (e){
-					e.preventDefault();		
-					var panel_header_action_icon = panel_header_action.find('span');
-					switch( panel_header_action_icon.text() )
-					{
-						case "Minimize" :
-							$( "#"+ renderTo +" .panel-body").toggleClass("hide");		
-							panel_header_action.toggleClass("hide");		
-							break;
-						case "Refresh" :
-							break;
-						case "Close" :							
-							kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
-								$("#" + renderTo ).remove();
-							});							
-							break;	
-						case "Custom" :
-							break;																		
-					}
-				});		
-			});					
 			
-			//$( '#'+ renderTo ).show();
-			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
-		}						
 								
-		<!-- ============================== -->
-		<!-- display social streams panel                        -->
-		<!-- ============================== -->						
-		function displaySocialPanel ( ){
-			var streamsPlaceHolder = $("#my-social-streams-grid").data("streamsPlaceHolder");
-			var streamsProvider = $("#my-social-streams-grid").data( streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ) ;
-			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;		
-			
-			if( $("#" + renderToString ).length == 0  ){				
-				// create new panel 
-				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-				var template = kendo.template($("#social-view-panel-template").html());														
-				$("#personalized-area").append( template( streamsPlaceHolder ) );						
-				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );	
-				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
-					custom : true,
-					refresh : function(){
-						streamsProvider.dataSource.read();
-					}
-				} );				
-							
-				if( ! common.api.property($("#my-social-streams-grid").data("streamsPlaceHolder").properties, "options.scrollable", true ) ){
-					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
-				}				
-				
-				streamsProvider.dataSource.one('change', function(e){
 
-				});
-				
-				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
-					$( "#" + renderToString + "-prop-grid").kendoGrid({
-						dataSource : {		
-							transport: { 
-								read: { url:'/community/get-my-socialnetwork-property.do?output=json', type:'post' },
-								create: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post' },
-								update: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post'  },
-								destroy: { url:'/community/delete-my-socialnetwork-property.do?output=json', type:'post' },
-						 		parameterMap: function (options, operation){			
-							 		if (operation !== "read" && options.models) {
-							 			return { socialNetworkId: $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId, items: kendo.stringify(options.models)};
-									} 
-									return {socialNetworkId : $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId }
-									}
-								},						
-								batch: true, 
-								schema: {
-									data: "socialNetworkProperties",
-									model: Property
-								},
-								error:common.api.handleKendoAjaxError
-							},
-							columns: [
-								{ title: "속성", field: "name" },
-								{ title: "값",   field: "value" },
-								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-							],
-							pageable: false,
-							resizable: true,
-							editable : true,
-							scrollable: true,
-							height: 180,
-							toolbar: [
-								{ name: "create", text: "추가" },
-								{ name: "save", text: "저장" },
-								{ name: "cancel", text: "취소" }
-							],				     
-							change: function(e) {
-							}
-					});
-				}	
-			} 
-			$("#" + renderToString ).parent().show();
-			if(streamsProvider.dataSource.total() == 0 )
-			{
-				streamsProvider.dataSource.read();
-			}	
-		}		
+		
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
 		<!-- ============================== -->			
