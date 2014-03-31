@@ -1456,7 +1456,7 @@
 })(jQuery);
 	
 /**
- *  ExtMediaStreams widget
+ *  Alert widget
  */
 (function($, undefined) {
 	var common = window.common = window.common || {};
