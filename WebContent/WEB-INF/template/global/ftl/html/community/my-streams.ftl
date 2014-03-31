@@ -148,11 +148,11 @@
 									selector: "input:checkbox",
 									event : 'change',
 									handler : function(){
+										var myStream = myStreams.data( 'dataSource' ).get(this.value);
 										if(this.checked){
-											var myStream = myStreams.data( 'dataSource' ).get(this.value);
 											displayMediaStream( myStream );
 										}else{
-										
+											closeMediaStream( myStream );
 										}
 									}	
 								}]
@@ -167,13 +167,12 @@
 		<!-- ============================== -->		
 		function displayMediaStream(streamsPlaceHolder){					
 			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;
-			var renderToString2 =  streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ;						
+			var renderToString2 =  streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ;				
 			if( $("#" + renderToString ).length == 0  ){
 				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
 				var template = kendo.template($("#social-view-panel-template").html());
 				$("#personalized-area").append( template( streamsPlaceHolder ) );
-				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );
-				
+				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );	
 				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
 					custom : true,
 					refresh : function(){
@@ -189,12 +188,19 @@
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
 				}									
 				$( '#'+ renderToString2 ).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
+			}else{
+				
 			}			
 			//$("#" + renderToString ).parent().show();			
 			kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).play();			
 		}
 				
-				
+		function closeMediaStream(streamsPlaceHolder){		
+			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;
+			kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).reverse().then( function(e){
+				$("#" + renderToString ).parent().remove();
+			});							
+		}					
 				
 				
 		function createPanel(){					
