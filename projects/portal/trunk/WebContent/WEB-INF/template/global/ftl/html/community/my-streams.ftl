@@ -138,7 +138,16 @@
 					change : function ( e ) {
 						var template = kendo.template('<label class="btn btn-info"><input type="checkbox"><i class="fa fa-#= serviceProviderName #" value="#:socialAccountId#"></i></label>');
 						var html = kendo.render(template, this.data());
-						myStreams.html(html);
+						myStreams.html(html);						
+						common.api.handleButtonActions( myStreams, {
+							handlers : [{
+								selector: "input:checkbox",
+								event : 'change',
+								handler : function(){
+									alert(this.val());
+								}	
+							}]						
+						});							
 					}
 				});
 			}	
