@@ -301,9 +301,8 @@
 			if(exists){
 				if( code != null && code != ''  ){					
 					common.api.user.signin({
-						onetime: onetime,
+						onetime: code,
 						success : function( token ){
-							alert(kendo.stringify(token));
 							homepage();
 						},
 						fail : function (response) {	
