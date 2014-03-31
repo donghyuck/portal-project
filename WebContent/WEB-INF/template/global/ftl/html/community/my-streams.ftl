@@ -177,8 +177,13 @@
 					custom : true,
 					refresh : function(){
 						$( '#'+ renderToString2 ).data('kendoExtMediaStreamView').dataSource.read();
+					},
+					close : function(){
+						kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
+							$("#" + renderToString ).remove();
+						});						
 					}
-				} );						
+				} );					
 				
 				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
