@@ -309,6 +309,7 @@
 						success : function(response){
 							//$("form[name='fm']")[0].reset();               	    
 							//$("form[name='fm']").attr("action", "/main.do").submit();
+							alert( kendo.stringify( response ) ) ;
 							homepage();
 						}
 					}); 
