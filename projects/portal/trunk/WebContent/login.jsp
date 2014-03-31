@@ -129,10 +129,8 @@
 					common.api.signup({
 						data: kendo.stringify( signup_modal.data("signupPlaceHolder") ),
 						success : function(data){														
-							if ( !data.anonymous ){
-								var onetime_url =  "<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/community/" + signup_modal.data("signupPlaceHolder").media + "-callback.do?output=json";			
-								common.api.user.signin({
-									url : onetime_url,
+							if ( !data.anonymous ){	
+								common.api.signin({
 									onetime:  signup_modal.data("signupPlaceHolder").onetime,
 									success : function(response){
 										btn.button('reset')   	    
@@ -181,22 +179,6 @@
 							target_url,
 							'popUpWindow', 
 							'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
-					
-					/**
-					$.ajax({
-						type : 'POST',
-						url : "<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/community/get-socialnetwork.do?output=json",
-						data: { media: target_media },
-						success : function(response){
-							if( response.error ){
-								// 연결실패.
-							} else {	
-								window.open( response.authorizationUrl + '&display=popup' ,'popUpWindow','height=500,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
-							}
-						},
-						error:handleKendoAjaxError												
-					});	
-					**/
 				});								
 			});						
 	
@@ -205,10 +187,8 @@
 	
 	function handleCallbackResult( media, code, exists ){		
 		if(exists){
-			if( code != null && code != ''  ){						
-				var onetime_url =  "<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/community/" + media + "-callback.do?output=json";			
+			if( code != null && code != ''  ){							
 				common.api.signin({
-					url : onetime_url,
 					onetime:  code,
 					success : function(response){
 						//$("form[name='fm']")[0].reset();               	    
