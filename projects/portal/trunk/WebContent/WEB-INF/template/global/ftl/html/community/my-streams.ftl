@@ -270,255 +270,6 @@
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
 		}			
 
-
-								
-		function displaySocialPanel ( ){
-			var streamsPlaceHolder = $("#my-social-streams-grid").data("streamsPlaceHolder");
-			var streamsProvider = $("#my-social-streams-grid").data( streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ) ;
-			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;		
-			
-			if( $("#" + renderToString ).length == 0  ){				
-				// create new panel 
-				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-				var template = kendo.template($("#social-view-panel-template").html());														
-				$("#personalized-area").append( template( streamsPlaceHolder ) );						
-				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );	
-				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
-					custom : true,
-					refresh : function(){
-						streamsProvider.dataSource.read();
-					}
-				} );				
-							
-				if( ! common.api.property($("#my-social-streams-grid").data("streamsPlaceHolder").properties, "options.scrollable", true ) ){
-					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
-				}				
-				
-				streamsProvider.dataSource.one('change', function(e){
-
-				});
-				
-				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
-					$( "#" + renderToString + "-prop-grid").kendoGrid({
-						dataSource : {		
-							transport: { 
-								read: { url:'/community/get-my-socialnetwork-property.do?output=json', type:'post' },
-								create: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post' },
-								update: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post'  },
-								destroy: { url:'/community/delete-my-socialnetwork-property.do?output=json', type:'post' },
-						 		parameterMap: function (options, operation){			
-							 		if (operation !== "read" && options.models) {
-							 			return { socialNetworkId: $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId, items: kendo.stringify(options.models)};
-									} 
-									return {socialNetworkId : $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId }
-									}
-								},						
-								batch: true, 
-								schema: {
-									data: "socialNetworkProperties",
-									model: Property
-								},
-								error:common.api.handleKendoAjaxError
-							},
-							columns: [
-								{ title: "속성", field: "name" },
-								{ title: "값",   field: "value" },
-								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-							],
-							pageable: false,
-							resizable: true,
-							editable : true,
-							scrollable: true,
-							height: 180,
-							toolbar: [
-								{ name: "create", text: "추가" },
-								{ name: "save", text: "저장" },
-								{ name: "cancel", text: "취소" }
-							],				     
-							change: function(e) {
-							}
-					});
-				}	
-			} 
-			$("#" + renderToString ).parent().show();
-			if(streamsProvider.dataSource.total() == 0 )
-			{
-				streamsProvider.dataSource.read();
-			}	
-		}		
-		
-		
-						
-		function createSocialGrid(){			
-			if( !$("#my-social-streams-grid" ).data('kendoGrid') ){ 											
-				$("#my-social-streams-grid").kendoGrid({
-					dataSource : new kendo.data.DataSource({
-						transport: {
-							read: {
-								type : 'POST',
-								dataType : "json", 
-							url : '${request.contextPath}/community/list-my-socialnetwork.do?output=json'
-						} 
-					},
-					pageSize: 10,
-					error:common.api.handleKendoAjaxError,				
-					schema: {
-						data : "connectedSocialNetworks",
-						model : SocialNetwork
-					},
-				}),
-				selectable: "single",
-				rowTemplate: kendo.template( '<tr><td><i class="fa fa-#: serviceProviderName#"></i>&nbsp; #: serviceProviderName#</td></tr>' ),				
-				change: function(e) { 				
-					var selectedCells = this.select();
-					if( selectedCells.length == 1){
-						var selectedCell = this.dataItem( selectedCells );		
-						$("#my-social-streams-grid").data("streamsPlaceHolder", selectedCell);
-						if( ! $("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId ) ){										
-							var selectedStreams = new MediaStreams(selectedCell.socialAccountId, selectedCell.serviceProviderName);							
-							if( selectedStreams.name == 'twitter'){
-								selectedStreams.setTemplate ( kendo.template($("#twitter-timeline-template").html()) );											
-							}else if ( selectedStreams.name == 'facebook'){
-								selectedStreams.setTemplate( kendo.template($("#facebook-homefeed-template").html()) );
-							}else if ( selectedStreams.name == 'tumblr'){
-								selectedStreams.setTemplate( kendo.template($("#tumblr-dashboard-template").html()) );
-							}
-							selectedStreams.createDataSource({});											
-							$("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId , selectedStreams );
-						}
-						displaySocialPanel();
-					}							
-				},
-				dataBound: function(e) {									
-				},
-				height: 150
-				});	
-			}		
-		}		
-		
-		function createAttachmentListView(){			
-			if( !$('#attachment-list-view').data('kendoListView') ){														
-				var attachementTotalModle = kendo.observable({ 
-					totalAttachCount : "0",
-					totalImageCount : "0",
-					totalFileCount : "0"							
-				});							
-				kendo.bind($("#attachment-list-filter"), attachementTotalModle );													
-					$("#attachment-list-view").kendoListView({
-						dataSource: {
-							type: 'json',
-							transport: {
-								read: { url:'${request.contextPath}/community/list-my-attachement.do?output=json', type: 'POST' },		
-								destroy: { url:'${request.contextPath}/community/delete-my-attachment.do?output=json', type:'POST' },                                
-								parameterMap: function (options, operation){
-									if (operation != "read" && options) {										                        								                       	 	
-										return { attachmentId :options.attachmentId };									                            	
-									}else{
-										 return { startIndex: options.skip, pageSize: options.pageSize }
-									}
-								}
-							},
-							pageSize: 12,
-							error:common.api.handleKendoAjaxError,
-							schema: {
-								model: Attachment,
-								data : "targetAttachments",
-								total : "totalTargetAttachmentCount"
-							},
-							sort: { field: "attachmentId", dir: "desc" },
-							filter :  { field: "contentType", operator: "neq", value: "" }
-						},
-						selectable: "single",									
-						change: function(e) {									
-							var data = this.dataSource.view() ;
-							var item = data[this.select().index()];		
-							$("#attachment-list-view").data( "attachPlaceHolder", item );												
-							displayAttachmentPanel( ) ;	
-						},
-						navigatable: false,
-						template: kendo.template($("#attachment-list-view-template").html()),								
-						dataBound: function(e) {
-							var attachment_list_view = $('#attachment-list-view').data('kendoListView');
-							var filter =  attachment_list_view.dataSource.filter().filters[0].value;
-							var totalCount = attachment_list_view.dataSource.total();
-							if( filter == "image" ) 
-							{
-								attachementTotalModle.set("totalImageCount", totalCount);
-							} else if ( filter == "application" ) {
-								attachementTotalModle.set("totalFileCount", totalCount);
-							} else {
-								attachementTotalModle.set("totalAttachCount", totalCount);
-							}
-						}
-					});																	
-				
-					$("#attachment-list-view").on("mouseenter",  ".img-wrapper", function(e) {
-						kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
-					}).on("mouseleave", ".img-wrapper", function(e) {
-						kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-					});															
-														
-					$("input[name='attachment-list-view-filters']").on("change", function () {
-						var attachment_list_view = $('#attachment-list-view').data('kendoListView');
-						switch(this.value){
-							case "all" :
-								attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
-								break;
-							case "image" :
-								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
-								break;
-							case "file" :
-								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
-								break;
-						}
-					});
-							
-					$("#pager").kendoPager({
-						refresh : true,
-						buttonCount : 5,
-						dataSource : $('#attachment-list-view').data('kendoListView').dataSource
-					});								
-				
-					$("#my-files .btn-group button").each(function( index ) { 
-						var control_button = $(this);								
-						var control_button_icon = control_button.find("i");				
-						if( control_button_icon.hasClass("fa-upload")){
-							control_button.click( function(e){									
-								if( !$('#attachment-files').data('kendoUpload') ){		
-									$("#attachment-files").kendoUpload({
-									 	multiple : false,
-									 	width: 300,
-									 	showFileList : false,
-									    localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
-									    async: {
-											saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',							   
-											autoUpload: true
-									    },
-									    upload: function (e) {								         
-									    	 e.data = {};														    								    	 		    	 
-									    },
-									    success : function(e) {								    
-											if( e.response.targetAttachment ){
-												e.response.targetAttachment.attachmentId;
-												// LIST VIEW REFRESH...
-												$('#attachment-list-view').data('kendoListView').dataSource.read(); 
-											}				
-										}
-									});						
-								}
-								$("#my-files .side1").toggleClass("hide");										
-								$("#my-files .side2").toggleClass("hide");										
-							});									
-						}else if (control_button_icon.hasClass("fa-th-list")){
-							control_button.click( function(e){		
-								$("#my-files .side1").toggleClass("hide");										
-								$("#my-files .side2").toggleClass("hide");										
-						});
-					}								
-				});									
-			}		
-		}
-
 		
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
@@ -621,85 +372,7 @@
 			}
 		}
 		
-			
-								
 
-		
-		<!-- ============================== -->
-		<!-- display attachement panel                          -->
-		<!-- ============================== -->			
-		function displayAttachmentPanel(){			
-		
-			var renderToString =  "attachement-panel-0";	
-			var attachPlaceHolder = $("#attachment-list-view").data( "attachPlaceHolder" );		
-			
-			if( $("#" + renderToString ).length == 0  ){			
-				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-				var template = kendo.template('<div id="#: panelId #" class="custom-panels-group col-sm-#: colSize#" style="display:none;"></div>');				
-				$("#personalized-area").append( template( {panelId:renderToString, colSize: grid_col_size.newValue } ) );	
-			}	
-						
-			if( !$( "#" + renderToString ).data("extPanel") ){					
-				$("#" + renderToString ).data("extPanel", 
-					$("#" + renderToString ).extPanel({
-						template : kendo.template($("#file-panel-template").html()),
-						data : attachPlaceHolder,
-						refresh : true, 
-						afterChange : function ( data ){
-							if( data.contentType == "application/pdf" ){
-								var loadSuccess = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { view: "FitV" } }).embed("pdf-view");				
-							}		
-							
-							$("#update-attach-file").kendoUpload({
-								multiple: false,
-								async: {
-									saveUrl:  '${request.contextPath}/community/update-my-attachment.do?output=json',							   
-									autoUpload: true
-								},
-								localization:{ select : '파일 변경하기' , dropFilesHere : '새로운 파일을 이곳에 끌어 놓으세요.' },	
-								upload: function (e) {				
-									e.data = { attachmentId: $("#attach-view-panel").data( "attachPlaceHolder").attachmentId };														    								    	 		    	 
-								},
-								success: function (e) {				
-									if( e.response.targetAttachment ){
-										 $("#attach-view-panel").data( "attachPlaceHolder",  e.response.targetAttachment  );
-										kendo.bind($("#attach-view-panel"), e.response.targetAttachment );
-									}
-								} 
-							});												
-						},
-						commands:[
-							{ selector :   "#" + renderToString + " .panel-body:first .btn", 
-							  handler : function(e){
-								e.preventDefault();
-								var _ele = $(this);
-								if( _ele.hasClass( 'custom-delete') ){
-									alert( $("#attachment-list-view").data( "attachPlaceHolder" ).attachmentId );
-									/**
-									$.ajax({
-										dataType : "json",
-										type : 'POST',
-										url : '${request.contextPath}/community/delete-my-attachment.do?output=json',
-										data : { attachmentId: attachPlaceHolder.attachmentId },
-										success : function( response ){
-											$('#' + renderToString ).remove();
-										},
-										error:common.api.handleKendoAjaxError
-									});
-									*/								
-								}
-							}}
-						]
-					})
-				 );				 
-			}else{
-				$("#" + renderToString ).data("extPanel").data(attachPlaceHolder);
-			}			
-			//CHANGE
-			var panel = $("#" + renderToString ).data("extPanel");
-			panel.show();		
-		}	
-						
 		<!-- ============================== -->
 		<!-- display photo  panel                                  -->
 		<!-- ============================== -->
@@ -892,65 +565,8 @@
 			}			
 			var panel = $("#" + renderToString ).data("extPanel");
 			panel.show();			
-		}	
-												
-		function previousPhoto (){
-			var listView =  $('#photo-list-view').data('kendoListView');
-			var list_view_pager = $("#photo-list-pager").data("kendoPager");			
-			var current_index = $("#photo-list-view").data("photoPlaceHolder").index;
-			var total_index = listView.dataSource.view().length -1 ;
-			var current_page = list_view_pager.page();		
-			var total_page = list_view_pager.totalPages();	
-			if( current_index == 0 && current_page > 1 ){
-				listView.one('dataBound', function(){
-					if( $("#photo_overlay.open").length  > 0 ){
-						var previous_index = this.dataSource.view().length -1;
-						var item = this.dataSource.view()[previous_index];
-						item.manupulate();
-						common.api.pager( item, previous_index, previous_index, current_page - 1, total_page );	
-						$("#photo-list-view").data( "photoPlaceHolder", item );
-						displayPhotoPanel( );
-					}
-				});
-				list_view_pager.page(current_page - 1);
-			}else{
-				var previous_index = current_index - 1;
-				var item = listView.dataSource.view()[previous_index];		
-				item.manupulate();
-				common.api.pager( item, previous_index, total_index, current_page, total_page );
-				$("#photo-list-view").data( "photoPlaceHolder", item );
-				displayPhotoPanel( );
-			}
 		}
 		
-		function nextPhoto (){
-			var listView =  $('#photo-list-view').data('kendoListView');
-			var list_view_pager = $("#photo-list-pager").data("kendoPager");			
-			var current_index = $("#photo-list-view").data( "photoPlaceHolder").index;
-			var total_index = listView.dataSource.view().length -1 ;
-			var current_page = list_view_pager.page();		
-			var total_page = list_view_pager.totalPages();						
-			if( current_index == total_index && ( total_page - current_page ) > 0 )	{		
-				listView.one('dataBound', function(){
-					if( $("#photo_overlay.open").length  > 0 ){
-						var item = this.dataSource.view()[0];
-						item.manupulate();
-						common.api.pager( item, 0, this.dataSource.view().length -1, current_page + 1, total_page );	
-						$("#photo-list-view").data( "photoPlaceHolder", item );
-						displayPhotoPanel( );
-					}
-				});
-				list_view_pager.page(current_page + 1);			
-			}else{
-				var next_index = current_index + 1;				
-				var item = listView.dataSource.view()[next_index];
-				item.manupulate();
-				common.api.pager( item, next_index, total_index, current_page, total_page );
-				$("#photo-list-view").data( "photoPlaceHolder", item );
-				displayPhotoPanel( );
-			}
-		}
-					
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -967,55 +583,10 @@
 			border-color : #428bca; 
 		}
 		
-		#pdf-view {
-			height: 500px;
-			margin: 0 auto;
-			border: 0px solid #787878;
-		}
-		
-		#pdf-view p {
-		   padding: 1em;
-		}
-		
-		#pdf-view object {
-		   display: block;
-		   border: solid 1px #787878;
-		}
-
 		.media, .media .media {
 			margin-top: 5px;
 		}	
 	
-		.popover {
-			font-family: "나눔 고딕", "BM_NANUMGOTHIC";
-			width: 90%;
-			margin-top: 5px;
-			margin-right: 20px;
-			margin-bottom: 10px;
-			margin-left: 20px;
-			float: left;
-			display: block;
-			position: relative;
-			z-index: 1;
-			min-width: 200px;
-			max-width: 500px;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-			background-clip: none;			
-		 }
-		 
-		.popover.left {
-			float: right;  
-		}
-		  
-		.popover.right {
-
-		}		  
-		 
-		.popover-title {
-			font-family: "나눔 고딕", "BM_NANUMGOTHIC";
-		}
-
 		.k-callout-n {
 		border-bottom-color: #787878;
 		}	
@@ -1034,51 +605,7 @@
 			width: 100%;
 			padding: 0px;
 			border: 0px;
-		}
-	
-		.attach
-		{
-			float: left;
-			position: relative;
-			width: 160px;
-			height: 160px;
-			padding: 0;
-			cursor: pointer;
-			overflow: hidden;
-		}
-		
-		.attach img
-		{
-			width: 160px;
-			height: 160px;
-		}
-				
-		.attach-description {
-			position: absolute;
-			top: 0;
-			width: 160px	;
-			height: 0;
-			overflow: hidden;
-			background-color: rgba(0,0,0,0.8)
-		}
-	
-		.attach h3
-		{
-			margin: 0;
-			padding: 10px 10px 0 10px;
-			line-height: 1.1em;
-			font-size : 12px;
-			font-weight: normal;
-			color: #ffffff;
-			word-wrap: break-word;
-		}
-
-		.attach p {
-			color: #ffffff;
-			font-weight: normal;
-			padding: 0 10px;
-			font-size: 12px;
-        }
+		}	
 		
 		/** image grid  */		
 		#photo-list-view.k-listview ,#attachment-list-view.k-listview {
@@ -1102,7 +629,6 @@
 			width: 100%;
 			height: 100%;
 		}
-
 		
 		.image-broswer .img-wrapper.k-state-selected img {
 			border-bottom: 5px solid #FF2A68;
@@ -1124,12 +650,12 @@
 		.img-wrapper h3
 		{
 			margin: 0;
-            padding: 10px 10px 0 10px;
-            line-height: 1.1em;
-            font-size : 12px;
-            font-weight: normal;
-            color: #ffffff;
-            word-wrap: break-word;
+			padding: 10px 10px 0 10px;
+			line-height: 1.1em;
+			font-size : 12px;
+			font-weight: normal;
+			color: #ffffff;
+			word-wrap: break-word;
 		}
 
 		.img-wrapper p {
@@ -1137,8 +663,7 @@
 			font-weight: normal;
 			padding: 0 10px;
 			font-size: 12px;
-		}		
-		
+		}			
 		
 		.k-listview:after, .attach dl:after {
 			content: ".";
@@ -1157,33 +682,7 @@
 		table.k-editor {
 			height: 400px;
 		}
-		
-		.k-editor-inline {
-			margin: 0;
-			#padding: 21px 21px 11px;
-			border-width: 0;
-			box-shadow: none;
-			background: none;
-		}
-
-		.k-editor-inline.k-state-active {
-			border-width: 1px;
-			#padding: 20px 20px 10px;
-			#background: none;
-			#border-color : red;
-  			border-color: #66afe9;
-			#  outline: 0;
-			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-		}
-
-		.inline-column-editor {
-			display: inline-block;
-			vertical-align: top;
-			max-width: 600px;
-			width: 100%;
-		}
-				
+						
 		#personalized-controls {
 			position: absolute;
 			top: 50px;
@@ -1237,20 +736,6 @@
 			background : #5bc0de; /* transparent;        	*/
 			height: 90px;        	
 		}
-		
-		.image-grid {
-			padding-top:2px;
-			padding-buttom:0px;
-			padding-right:2px;
-			padding-left:0px;
-		}
-		
-		.image-grid img {
-			display: block;
-			max-width: 100%;
-			height: 350px;
-		}
-				
 				
 		.cbp-hsmenu-wrapper .cbp-hsmenu {
 			width:100%;
@@ -1282,7 +767,6 @@
 		#photo_overlay nav.navbar {
 			margin-bottom: 0px; 
 		}
-
 		
 		</style>   	
 	</head>
@@ -1325,153 +809,22 @@
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
 		<section class="container-fluid" style="min-height:600px;">		
-			<div id="personalized-area" class="row blank-top-10">				
-				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
-					<div class="panel panel-default">
-						<div class="panel-heading">알림
-							<div class="k-window-actions panel-header-actions">										
-								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
-								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
-								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
-								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-							</div>									
-							</div>
-							<div class="panel-body">					
-								<div  id="announce-view"></div>
-							</div>
-						</div>		
-					</div>
-				</div>		
-			</div>				
+			<div id="personalized-area" class="row blank-top-10"></div>				
 		</section>		
 		<div class="overlay hide"></div>		
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
-			<header>							
+			<header>		
+				<!--					
 				<div class="btn-group">
 					<button type="button" class="btn btn-info"><i class="fa fa-cog"></i></button>
 					<button type="button" class="btn btn-info"><i class="fa fa-comment"></i></button>
 					<button type="button" class="btn btn-info"><i class="fa fa-envelope"></i></button>
 				</div>		
+				-->
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
-				<div class="blank-top-5" ></div>	
-									<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-										<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>	
-										<li><a href="#my-streams" tabindex="-1" data-toggle="tab">쇼셜</a></li>							
-										<#if !action.user.anonymous >	
-										<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
-										<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
-										</#if>						
-									</ul>								
-									<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">	
-										<div class="tab-pane" id="my-notice">
-											<section class="side2 hide">
-												<div class="btn-group">			
-													<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp;  목록보기</button>
-												</div>
-												<div id="announce-creator" class="blank-top-15" ></div>
-											</section>
-											<section class="side1">
-												<div class="btn-group">			
-													<button type="button" class="btn btn-info"><i class="fa fa-plus"></i> &nbsp; 공지 & 이벤트 추가</button>		
-												</div>		
-												<div class="blank-top-5" ></div>
-												<div id="announce-grid"></div>
-											</section>											
-										</div>
-										<!-- start social tab-content -->		
-										<div class="tab-pane" id="my-streams">
-											<table id="my-social-streams-grid">
-												<colgroup>
-													<col/>
-												</colgroup>
-												<thead>
-													<tr>
-														<th>미디어</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td></td>
-													</tr>
-												</tbody>
-											</table>												
-										<div class="blank-top-5" ></div>				
-										<div class="alert alert-flat alert-info fade in">
-											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-											<p><i class="fa fa-info"></i>쇼셜 미디어를 선택하시면, 해당 미디어의 최신 뉴스를 볼수 있습니다.  미디어 추가는 프로파일의 쇼셜네크워크에서 제공합니다. </p>
-										</div>		
-									</div><!-- end socia tab-content -->				
-									<!-- start attachement tab-pane -->
-									<div class="tab-pane" id="my-files">
-										<section class="side1">
-											<div class="btn-group">
-												<button type="button" class="btn btn-info"><i class="fa fa-upload"></i> &nbsp; 파일업로드</button>	
-											</div>			
-											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-												<label class="btn btn-warning active">
-													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
-												</label>
-												<label class="btn btn-warning">
-													<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
-												</label>
-												<label class="btn btn-warning">
-													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
-												</label>	
-											</div>
-											<div class="blank-top-5" ></div>		
-											<div class="panel panel-default panel-flat">
-												<div class="panel-body scrollable" style="max-height:450px;">
-													<div id="attachment-list-view" ></div>
-												</div>	
-												<div class="panel-footer" style="padding:0px;">
-													<div id="pager" class="k-pager-wrap"></div>
-												</div>
-											</div>																							
-										</section>
-										<section class="side2 hide">
-											<div class="btn-group">			
-												<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp; 목록보기</button>		
-											</div>									
-											<div class="blank-top-5 "></div>
-											<#if !action.user.anonymous >									
-											<input name="uploadAttachment" id="attachment-files" type="file" />				
-											<div class="alert alert-info alert-flat"><strong>파일 선택</strong> 버튼을 클릭하여 직접 파일을 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</div>					
-											</#if>									
-										</section>																													
-									</div><!-- end attachements  tab-pane -->		
-									<!-- start photos  tab-pane -->
-									<div class="tab-pane" id="my-photo-stream">
-										<section class="side1">
-											<div class="btn-group">			
-												<button type="button" class="btn btn-info"><i class="fa fa-upload"></i> &nbsp; 사진업로드</button>		
-											</div>		
-											<div class="blank-top-5" ></div>
-											<div class="panel panel-default panel-flat">								
-												<div class="panel-body scrollable" style="max-height:450px;">
-													<div id="photo-list-view" ></div>
-												</div>	
-												<div class="panel-footer" style="padding:0px;">
-													<div id="photo-list-pager" class="k-pager-wrap"></div>
-												</div>
-											</div>																
-										</section>							
-										<section class="side2 hide">
-											<div class="btn-group">			
-												<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp; 목록보기</button>			
-											</div>									
-											<div id="my-photo-upload">
-												<#if !action.user.anonymous >		
-												<div class="blank-top-5 "></div>	
-												<input name="uploadPhotos" id="photo-files" type="file" />	
-												<div class="alert alert-info alert-flat"><strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)을 끌어서 놓기(Drag & Drop)를 하세요.</div>
-												</#if>							
-											</div>																		
-										</section>				
-									</div><!-- end photos  tab-pane -->
-								</div><!-- end of tab content -->					
-			</div>	
+			<div class="blank-top-5" ></div>				
 		</section>
 		
 		<section id="image-broswer" class="image-broswer"></section>
