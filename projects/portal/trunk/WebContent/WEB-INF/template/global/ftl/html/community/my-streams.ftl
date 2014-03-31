@@ -242,7 +242,7 @@
 		<!-- create info alert 										-->
 		<!-- ============================== -->							
 		function createInfoPanel(){					
-			var renderTo = ui.generateGuid();
+			var renderTo = common.api.guid();
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
 			$("#personalized-area").extAlert({
 				template :  kendo.template($("#alert-panel-template").html()),
