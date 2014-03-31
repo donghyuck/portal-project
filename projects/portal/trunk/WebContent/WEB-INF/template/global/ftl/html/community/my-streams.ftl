@@ -173,14 +173,15 @@
 				var template = kendo.template($("#social-view-panel-template").html());
 				$("#personalized-area").append( template( streamsPlaceHolder ) );
 				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );
+				
 				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
 					custom : true,
 					refresh : function(){
 						$( '#'+ renderToString2 ).data('kendoExtMediaStreamView').dataSource.read();
 					},
 					close : function(){
-						kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
-							$("#" + renderToString ).remove();
+						kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).reverse().then( function(e){
+							$("#" + renderToString ).parent().remove();
 						});						
 					}
 				} );					
