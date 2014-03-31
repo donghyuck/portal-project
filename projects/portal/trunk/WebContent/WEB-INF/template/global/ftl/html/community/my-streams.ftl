@@ -131,26 +131,30 @@
 		}]);	
 		
 		function createConnectedSocialNav(){
+		
 			var myStreams = $('#navbar-btn-my-streams');
 			if( myStreams.find('input').length == 0 ){
-				common.api.social.dataSource({ 
-					type : 'list',
-					change : function ( e ) {
-						var template = kendo.template('<label class="btn btn-info"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #" value="#:socialAccountId#"></i></label>');
-						var html = kendo.render(template, this.data());
-						myStreams.html(html);						
-						common.api.handleButtonActions( myStreams, {
-							handlers : [{
-								selector: "input:checkbox",
-								event : 'change',
-								handler : function(){
-									alert( "value=" + this.value + ", checked=" + this.checked );
-								}	
-							}]						
-						});							
-					}
-				});
-			}	
+				myStreams.data( 'dataSource', 
+					common.api.social.dataSource({ 
+						type : 'list',
+						change : function ( e ) {
+							var template = kendo.template('<label class="btn btn-info"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #" value="#:socialAccountId#"></i></label>');
+							var html = kendo.render(template, this.data());
+							myStreams.html(html);						
+							common.api.handleButtonActions( myStreams, {
+								handlers : [{
+									selector: "input:checkbox",
+									event : 'change',
+									handler : function(){
+										alert( "value=" + this.value + ", checked=" + this.checked );
+									}	
+								}]						
+							});							
+						}
+					})
+				);				
+			}
+				
 		}		
 				
 		function createSocialGrid(){			
