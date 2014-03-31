@@ -1473,6 +1473,7 @@
 	POST = 'POST',
 	JSON = 'json',
     CHANGE = "change",
+    STRING = "string",
 	UNDEFINED = 'undefined';
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
