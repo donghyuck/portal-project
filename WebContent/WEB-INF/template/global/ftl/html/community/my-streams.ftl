@@ -184,15 +184,12 @@
 							$("#" + renderToString ).parent().remove();
 						});						
 					}
-				} );					
-				
+				} );									
 				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
-				}	
-								
+				}									
 				$( '#'+ renderToString2 ).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
-			}
-			
+			}			
 			//$("#" + renderToString ).parent().show();			
 			kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).play();			
 		}
