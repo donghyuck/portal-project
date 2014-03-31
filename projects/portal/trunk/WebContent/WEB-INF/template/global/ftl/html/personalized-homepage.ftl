@@ -1526,7 +1526,9 @@
 					<li><a href="#" class="btn-link custom-nabvar-up">마이 쇼셜</a></li>
 					<li><a href="#" class="btn-link custom-nabvar-down"><i class="fa fa-chevron-down fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
-					<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><i class="fa fa-chevron-right fa-lg"></i></a></li>
+					<li><a href="#&quot;" class="btn-link custom-nabvar-hide">
+						<img src="${request.contextPath}/images/cross.png" height="34"/>
+					</a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
 			</div>
