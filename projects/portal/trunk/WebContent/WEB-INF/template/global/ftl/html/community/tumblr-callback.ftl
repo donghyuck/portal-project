@@ -32,7 +32,8 @@
 								window.opener.handleCallbackResult("tumblr", onetime , true);
 								window.close();
 							}else if( typeof window.opener.signupCallbackResult == "function"){	
-								window.opener.signupCallbackResult("tumblr", onetime, true);								
+								window.opener.signupCallbackResult("tumblr", onetime, true);	
+								window.close();							
 							}else if( typeof window.opener.signinCallbackResult == "function"){	
 								// window.opener.signinCallbackResult("tumblr", onetime, true);			
 								common.api.user.signin({
