@@ -74,7 +74,7 @@
 			dataType : "json"
 		});	
 	};
-	
+	/**
 	common.api.signin = function ( options ){		
 		options = options || {};
 		$.ajax({
@@ -110,7 +110,7 @@
 			dataType : "json"
 		});	
 	};	
-	
+	*/
 	common.api.property = function( properties, name, defaultValue ){		
 		if( typeof properties[name] === UNDEFINED )
 			return defaultValue;
