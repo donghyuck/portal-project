@@ -1512,7 +1512,7 @@
     	
     	$.fn.extend( { 
     		extAlert : function ( options ) {
-    			return new ui.common.ui.extAlert ( this , options );		
+    			return new common.ui.extAlert ( this , options );		
     		}
     	});
 })(jQuery);
