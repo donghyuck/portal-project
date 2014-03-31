@@ -180,9 +180,7 @@
 						$( '#'+ renderToString2 ).data('kendoExtMediaStreamView').dataSource.read();
 					},
 					close : function(){
-						kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).reverse().then( function(e){
-							$("#" + renderToString ).parent().remove();
-						});						
+						$('#navbar-btn-my-streams').find('input[value="' + streamsPlaceHolder.socialAccountId + "]').click();				
 					}
 				} );									
 				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
@@ -201,8 +199,7 @@
 			kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).reverse().then( function(e){
 				$("#" + renderToString ).parent().remove();
 			});							
-		}					
-				
+		}
 				
 		function createPanel(){					
 			var renderTo = ui.generateGuid();
