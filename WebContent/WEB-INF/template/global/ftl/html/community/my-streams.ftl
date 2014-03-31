@@ -1504,9 +1504,11 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
-						<a href="#" class="btn btn-info navbar-btn">
-							<i class="fa-li fa fa-spinner fa-spin"></i>
-						</a> 
+						<div class="btn-group navbar-btn" data-toggle="buttons">
+							<a href="#" class="btn btn-info navbar-btn">
+								<i class="fa-li fa fa-spinner fa-spin"></i>
+							</a> 						
+						</div>						
 					</li>					
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
 					<li><a href="#&quot;" class="btn-link custom-nabvar-hide">
