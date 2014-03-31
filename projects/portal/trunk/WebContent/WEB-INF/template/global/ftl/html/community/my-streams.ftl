@@ -181,13 +181,11 @@
 					close : function(){
 						$('#navbar-btn-my-streams').find('input[value="' + streamsPlaceHolder.socialAccountId + '"]').click();				
 					}
-				} );							
-								
+				} );	
 				if( common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
 				}
 				$( '#'+ renderToString2 ).extMediaStreamView({ id: streamsPlaceHolder.socialAccountId, media: streamsPlaceHolder.serviceProviderName });				
-				
 				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
 					$( "#" + renderToString + "-prop-grid").kendoGrid({
 						dataSource : {		
@@ -240,11 +238,6 @@
 			});							
 		}
 				
-				
-				
-				
-				
-				
 		function createPanel(){					
 			var renderTo = ui.generateGuid();
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
@@ -272,8 +265,7 @@
 							break;																		
 					}
 				});		
-			});					
-			
+			});		
 			//$( '#'+ renderTo ).show();
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
 		}			
