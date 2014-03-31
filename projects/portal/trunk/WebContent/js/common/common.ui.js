@@ -4,7 +4,8 @@
 (function($, undefined) {
 	var Widget = kendo.ui.Widget;
 	var ui = window.ui = window.ui || {};
-	
+	var UNDEFINED = 'undefined',
+	STRING = 'string';
 	
 	ui.generateGuid = function generateGuid()
 	{
@@ -59,36 +60,41 @@
 		return null;
 	};  
 
-	ui.kendoAlert = Widget.extend({		
+	ui.extAlert = Widget.extend({		
 		init: function(element, options) {			
 			var that = this;
 			Widget.fn.init.call(that, element, options);
 			this.options = that.options;
-			windowTemplate = kendo.template(that.options.windowTemplate);
-			element.html( windowTemplate(options.data) );	
-			close = options.close || that.options.close ;
 			
-			$(element).find("[data-alert] a.close").click(
+			if( typeof options.template === UNDEFINED )
+				that.template = kendo.template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>');
+			else if  typeof options.template === STRING )
+				that.template = kendo.template(options.template);			
+			
+			if( typeof options.data === UNDEFINED )
+				options.data = {};
+			
+			that.element.html( that.template( options.data ) );
+			that.element.find("[data-alert] a.close").click(
 				function(e){
 					e.preventDefault();
 					$(element).find("[data-alert]").fadeOut(300, function(){
 						$(element).find("[data-alert]").remove();
-						close() ;
+						if( isFunction(options.close))
+							options.close();
 					});				
 				}										
 			);
 			 kendo.notify(that);
 		},
 		options : {
-			name: "Alert",
-			windowTemplate: '<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>',
-			close : function (){} 
+			name: "ExtAlert"
 		}		
 	}); 	
 	
 	$.fn.extend( { 
 		kendoAlert : function ( options ) {
-			return new ui.kendoAlert ( this , options );		
+			return new ui.extAlert ( this , options );		
 		}
 	});
 	
