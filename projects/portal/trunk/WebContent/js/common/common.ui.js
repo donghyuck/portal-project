@@ -59,44 +59,6 @@
 		}
 		return null;
 	};  
-
-	ui.extAlert = Widget.extend({		
-		init: function(element, options) {			
-			var that = this;
-			Widget.fn.init.call(that, element, options);
-			this.options = that.options;
-			
-			if( typeof options.template === UNDEFINED )
-				that.template = kendo.template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>');
-			else if  typeof options.template === STRING )
-				that.template = kendo.template(options.template);			
-			
-			if( typeof options.data === UNDEFINED )
-				options.data = {};
-			
-			that.element.html( that.template( options.data ) );
-			that.element.find("[data-alert] a.close").click(
-				function(e){
-					e.preventDefault();
-					$(element).find("[data-alert]").fadeOut(300, function(){
-						$(element).find("[data-alert]").remove();
-						if( isFunction(options.close))
-							options.close();
-					});				
-				}										
-			);
-			 kendo.notify(that);
-		},
-		options : {
-			name: "ExtAlert"
-		}		
-	}); 	
-	
-	$.fn.extend( { 
-		kendoAlert : function ( options ) {
-			return new ui.extAlert ( this , options );		
-		}
-	});
 	
 })(jQuery);	
 
@@ -1493,6 +1455,65 @@
 	});	
 })(jQuery);
 	
+/**
+ *  ExtMediaStreams widget
+ */
+(function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};
+    var kendo = window.kendo,
+    Widget = kendo.ui.Widget,
+    DataSource = kendo.data.DataSource,
+    isPlainObject = $.isPlainObject,
+    proxy = $.proxy,
+    extend = $.extend,
+    placeholderSupported = kendo.support.placeholder,
+    browser = kendo.support.browser,
+    isFunction = kendo.isFunction,
+	POST = 'POST',
+	JSON = 'json',
+    CHANGE = "change",
+	UNDEFINED = 'undefined';
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;
+	
+    common.ui.extAlert = Widget.extend({		
+    		init: function(element, options) {			
+    			var that = this;
+    			Widget.fn.init.call(that, element, options);
+    			this.options = that.options;
+    			
+    			if( typeof options.template === UNDEFINED )
+    				that.template = kendo.template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>');
+    			else if  typeof options.template === STRING )
+    				that.template = kendo.template(options.template);	
+    
+    			if( typeof options.data === UNDEFINED )
+    				options.data = {};
+    			
+    			that.element.html( that.template( options.data ) );
+    			that.element.find("[data-alert] a.close").click(
+    				function(e){
+    					e.preventDefault();
+    					$(element).find("[data-alert]").fadeOut(300, function(){
+    						$(element).find("[data-alert]").remove();
+    						if( isFunction(options.close))
+    							options.close();
+    					});				
+    				}										
+    			);
+    			 kendo.notify(that);
+    		},
+    		options : {
+    			name: "ExtAlert"
+    		}		
+    	}); 	
+    	
+    	$.fn.extend( { 
+    		extAlert : function ( options ) {
+    			return new ui.common.ui.extAlert ( this , options );		
+    		}
+    	});
+})(jQuery);
 
 function handleKendoAjaxError(xhr) {
 	var message = "";
