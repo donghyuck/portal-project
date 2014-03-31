@@ -47,10 +47,6 @@
 					onClick : function (e) {												
 						if( $(this).hasClass('custom-nabvar-hide')){
 							$('body nav').first().removeClass('hide');
-						}else if ($(this).hasClass('custom-nabvar-up')){ 
-						
-						}else if ($(this).hasClass('custom-nabvar-down')){ 
-						
 						}else if ($(this).hasClass('custom-nabvar-show-opts')){ 
 							$('body').toggleClass('modal-open');						
 							if( $('#personalized-controls-section').hasClass("hide") )
@@ -62,6 +58,7 @@
 						}
 					}
 				});				
+				
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
 					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
@@ -70,13 +67,6 @@
 							$('body div.overlay').toggleClass('hide');
 						});
 					}, 100);					
-				});
-								
-				// photo panel showing				
-				createPhotoListView();
-								
-				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-					this.select(this.element.children().first());
 				});
 
 				// 3. ACCOUNTS LOAD	
