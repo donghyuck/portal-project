@@ -7,10 +7,6 @@
 	UNDEFINED = 'undefined',
 	isFunction = kendo.isFunction;
 		
-	
-	
-	
-	
 	common.api.getTargetCompany =  function (url, options){
 		if (typeof url === "object") {
 	        options = url;
