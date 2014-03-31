@@ -125,7 +125,7 @@
 					}
 				});					
 				// 4. CONTENT LOADING
-				createPanel();
+				createInfoPanel();
 				// END SCRIPT 
 			}
 		}]);	
@@ -237,39 +237,24 @@
 				$("#" + renderToString ).parent().remove();
 			});							
 		}
-				
-		function createPanel(){					
+
+		<!-- ============================== -->
+		<!-- create info alert 										-->
+		<!-- ============================== -->							
+		function createInfoPanel(){					
 			var renderTo = ui.generateGuid();
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
-			var template = kendo.template($("#empty-panel-template").html());	
-			$("#personalized-area").append( template( { id: renderTo, colSize: grid_col_size.newValue } ) );
-			$( '#'+ renderTo + ' .panel-header-actions a').each(function( index ) {
-				var panel_header_action = $(this);
-				panel_header_action.click(function (e){
-					e.preventDefault();		
-					var panel_header_action_icon = panel_header_action.find('span');
-					switch( panel_header_action_icon.text() )
-					{
-						case "Minimize" :
-							$( "#"+ renderTo +" .panel-body").toggleClass("hide");		
-							panel_header_action.toggleClass("hide");		
-							break;
-						case "Refresh" :
-							break;
-						case "Close" :							
-							kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
-								$("#" + renderTo ).remove();
-							});							
-							break;	
-						case "Custom" :
-							break;																		
-					}
-				});		
-			});		
-			//$( '#'+ renderTo ).show();
+			$("#personalized-area").extAlert({
+				template :  kendo.template($("#alert-panel-template").html()),
+				data : { id: renderTo, colSize: grid_col_size.newValue },
+				close : function(){
+					kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
+						$("#" + renderTo ).remove();
+					});					
+				}
+			})			
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
-		}			
-
+		}
 		
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
@@ -831,7 +816,14 @@
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->		
-		<!-- START TEMPLATE -->				
+		<!-- START TEMPLATE -->	
+		<script type="text/x-kendo-template" id="alert-panel-template">			
+			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">
+				<div class="alert alert-danger">
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+				</div>
+			</div>
+		</script>								
 		<script type="text/x-kendo-template" id="empty-panel-template">			
 			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">					
 				<div class="panel panel-flat panel-default">
