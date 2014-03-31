@@ -27,7 +27,7 @@
 						<#if action.user.anonymous >
 							// is anonymous							
 							<#if action.findUser()?exists >
-							// is connected 						
+							// is member 						
 							if(typeof window.opener.handleCallbackResult == "function"){		
 								window.opener.handleCallbackResult("facebook", onetime , true);
 								window.close();						
