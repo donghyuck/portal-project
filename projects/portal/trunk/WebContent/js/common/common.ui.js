@@ -1202,6 +1202,9 @@
 	});	
 })(jQuery);
 
+
+
+
 /**
  *  FullscreenSlideshow widget
  */
@@ -1357,6 +1360,92 @@
 		}
 	});	
 })(jQuery);
+
+
+/**
+ *  ExtMediaStreams widget
+ */
+(function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};
+    var kendo = window.kendo,
+    Widget = kendo.ui.Widget,
+    isPlainObject = $.isPlainObject,
+    proxy = $.proxy,
+    extend = $.extend,
+    placeholderSupported = kendo.support.placeholder,
+    browser = kendo.support.browser,
+    isFunction = kendo.isFunction,
+    CHANGE = "change",
+	UNDEFINED = 'undefined',,
+	MEDIA_FACEBOOK = "facebook",
+	MEDIA_TWITTER = "twitter",
+	MEDIA_TUMBLR = "tumblr",
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;
+	
+    common.ui.extMediaStreamView = Widget.extend({
+		init: function(element, options) {			
+			var that = this;		 
+			Widget.fn.init.call(that, element, options);			
+			options = that.options;
+			that._dataSource();
+		},
+		options : {
+			name: "ExtMediaStreamView",
+			autoBind : true
+		},
+		_dataSource: function() {
+			var that = this ;
+			var options = that.options ;			
+			if( typeof that.options.dataSource === 'object'){
+				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
+			}else{
+				if( typeof options.media === 'string' ){
+					var _data = {};
+					switch(options.media){
+						case MEDIA_FACEBOOK :
+							_data.url = "/community/get-facebook-homefeed.do?output=json";
+							_data.data = "homeFeed";
+							break;
+						case MEDIA_TWITTER :
+							_data.url = "/community/get-twitter-hometimeline.do?output=json";
+							_data.data = "homeTimeline" ;
+							break;
+						case MEDIA_TUMBLR :
+							_data.url = "/community/get-tumblr-dashboard.do?output=json";
+							_data.data = "dashboardPosts";
+							break;	
+					}
+				}
+				that.dataSource = common.api.streams.dataSource ;	
+			}				
+			that.dataSource.bind(CHANGE, function() {
+				that.refresh();
+			});					
+			if (that.options.autoBind) {    
+				that.dataSource.fetch();
+			}			
+		},
+		refresh: function () {
+			var that = this ;
+			var options = that.options ;			
+			var view = that.dataSource.view();			
+			that.element.html( options.template, view);
+		},		
+		destroy: function() {
+			var that = this;
+			Widget.fn.destroy.call(that);			
+			$(that.element).remove();
+		}	
+	});
+	
+	$.fn.extend( { 
+		extMediaStreamView : function ( options ) {
+			return new common.ui.extMediaStreamView ( this , options );		
+		}
+	});	
+})(jQuery);
+	
 
 function handleKendoAjaxError(xhr) {
 	var message = "";
