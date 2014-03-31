@@ -76,7 +76,9 @@
 					authenticate : function( e ){
 						currentUser = e.token;
 						if(!currentUser.anonymous){							
-							$('body nav').first().addClass('hide');
+							$('body nav').first().addClass('hide');							
+							// trigger connected social media buttons
+							createConnectedSocialNav();
 						}
 					},
 					shown : function(e){
@@ -121,15 +123,17 @@
 							}else{	}
 						});	
 					}
-				});	
-				
+				});					
 				// 4. CONTENT LOADING
-																			
-				
-				
+									
 				// END SCRIPT 
 			}
 		}]);	
+		
+		function createConnectedSocialNav(){
+			$('#navbar-btn-my-streams');
+			common.api.social.dataSource({ type : 'list' });
+		}		
 				
 		function createSocialGrid(){			
 			if( !$("#my-social-streams-grid" ).data('kendoGrid') ){ 											
@@ -1204,7 +1208,7 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
-						<div class="btn-group navbar-btn" data-toggle="buttons">
+						<div id="navbar-btn-my-streams" class="btn-group navbar-btn" data-toggle="buttons">
 							
 						</div>						
 					</li>					
