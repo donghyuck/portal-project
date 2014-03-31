@@ -303,6 +303,7 @@
 					common.api.user.signin({
 						onetime: onetime,
 						success : function( token ){
+							alert(kendo.stringify(token));
 							homepage();
 						},
 						fail : function (response) {	
