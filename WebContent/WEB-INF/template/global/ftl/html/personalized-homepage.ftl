@@ -145,8 +145,6 @@
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-notice' ){						
 						createNoticeGrid();											
-					} else if( show_bs_tab.attr('href') == '#my-streams' ){						
-						createSocialGrid();
 					} else if( show_bs_tab.attr('href') == '#my-files' ){					
 						createAttachmentListView();
 					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
@@ -158,54 +156,7 @@
 				// END SCRIPT 
 			}
 		}]);	
-				
-		function createSocialGrid(){			
-			if( !$("#my-social-streams-grid" ).data('kendoGrid') ){ 											
-				$("#my-social-streams-grid").kendoGrid({
-					dataSource : new kendo.data.DataSource({
-						transport: {
-							read: {
-								type : 'POST',
-								dataType : "json", 
-							url : '${request.contextPath}/community/list-my-socialnetwork.do?output=json'
-						} 
-					},
-					pageSize: 10,
-					error:common.api.handleKendoAjaxError,				
-					schema: {
-						data : "connectedSocialNetworks",
-						model : SocialNetwork
-					},
-				}),
-				selectable: "single",
-				rowTemplate: kendo.template( '<tr><td><i class="fa fa-#: serviceProviderName#"></i>&nbsp; #: serviceProviderName#</td></tr>' ),				
-				change: function(e) { 				
-					var selectedCells = this.select();
-					if( selectedCells.length == 1){
-						var selectedCell = this.dataItem( selectedCells );		
-						$("#my-social-streams-grid").data("streamsPlaceHolder", selectedCell);
-						if( ! $("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId ) ){										
-							var selectedStreams = new MediaStreams(selectedCell.socialAccountId, selectedCell.serviceProviderName);							
-							if( selectedStreams.name == 'twitter'){
-								selectedStreams.setTemplate ( kendo.template($("#twitter-timeline-template").html()) );											
-							}else if ( selectedStreams.name == 'facebook'){
-								selectedStreams.setTemplate( kendo.template($("#facebook-homefeed-template").html()) );
-							}else if ( selectedStreams.name == 'tumblr'){
-								selectedStreams.setTemplate( kendo.template($("#tumblr-dashboard-template").html()) );
-							}
-							selectedStreams.createDataSource({});											
-							$("#my-social-streams-grid").data(selectedCell.serviceProviderName + "-streams-" + selectedCell.socialAccountId , selectedStreams );
-						}
-						displaySocialPanel();
-					}							
-				},
-				dataBound: function(e) {									
-				},
-				height: 150
-				});	
-			}		
-		}		
-		
+						
 		function createAttachmentListView(){			
 			if( !$('#attachment-list-view').data('kendoListView') ){														
 				var attachementTotalModle = kendo.observable({ 
@@ -606,58 +557,6 @@
 								name: "viewHtml"
 							}
 						]
-						/*
-						,
-						imageBrowser: {
-							messages: {
-								uploadFile: "이미지 업로드",
-								orderBy: "정렬",
-								orderByName: "이름",
-								orderBySize: "크기",
-								directoryNotFound: "A directory with this name was not found.",
-								emptyFolder: "Empty Folder",
-								deleteFile: 'Are you sure you want to delete "{0}"?',
-								invalidFileType: "The selected file \"{0}\" is not valid. Supported file types are {1}.",
-								overwriteFile: "A file with name \"{0}\" already exists in the current directory. Do you want to overwrite it?",
-								dropFilesHere: "이미지 파일을 이미지 업로드 버튼에 끌어 놓으세요.",
-								search: "검색"
-							},
-							schema: {
-								model: {
-									id: "imageId",
-									fields : {
-										imageId : { fieldId: "imageId" },
-										name : { fieldId: "name" },
-										type : { fieldId: "contentType" , parse: function() { return "f" ; }},
-										size : { fieldId : "size" }										
-									}
-								},
-								data : "targetImages"
-							},			
-							transport: {
-								read: {
-									url: "${request.contextPath}/community/imagebrowser-list.do?output=json",
-									type: "POST",
-									dataType: "json",
-									data: { 
-										objectType: 1,
-										objectId: $("#account-navbar").data("currentUser" ).company.companyId  
-									}
-								},						
-								thumbnailUrl: function( path, name, imageId ){
-									return "${request.contextPath}/community/download-image.do?width=150&height=150&imageId=" + imageId ;
-								},
-								uploadData : {
-									objectType: 1,
-									objectId: $("#account-navbar").data("currentUser" ).company.companyId  
-								},	
-								uploadUrl: "${request.contextPath}/community/imagebrowser-update.do?output=json",							
-								imageUrl: function(path, imageId){
-									return "${request.contextPath}/community/download-image.do?imageId=" + imageId;
-								}
-							}
-						}
-						*/
 					});
 				}		
 		}
@@ -682,7 +581,7 @@
 									url : '${request.contextPath}/community/update-announce.do?output=json',
 									data : { announceId: data.announceId, item: kendo.stringify( data ) },
 									success : function( response ){		
-										showAnnouncePanel();//$('#announce-grid').data('kendoGrid').dataSource.read();	
+										showAnnouncePanel();
 									},
 									error:common.api.handleKendoAjaxError
 							});	
@@ -717,6 +616,7 @@
 			
 		}			
 		
+		/**
 		function createPanel(){					
 			var renderTo = ui.generateGuid();
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
@@ -745,88 +645,11 @@
 					}
 				});		
 			});					
-			
-			//$( '#'+ renderTo ).show();
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
 		}						
+			**/
 								
-		<!-- ============================== -->
-		<!-- display social streams panel                        -->
-		<!-- ============================== -->						
-		function displaySocialPanel ( ){
-			var streamsPlaceHolder = $("#my-social-streams-grid").data("streamsPlaceHolder");
-			var streamsProvider = $("#my-social-streams-grid").data( streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ) ;
-			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;		
-			
-			if( $("#" + renderToString ).length == 0  ){				
-				// create new panel 
-				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-				var template = kendo.template($("#social-view-panel-template").html());														
-				$("#personalized-area").append( template( streamsPlaceHolder ) );						
-				$( '#'+ renderToString ).parent().addClass("col-sm-" + grid_col_size.newValue );	
-				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
-					custom : true,
-					refresh : function(){
-						streamsProvider.dataSource.read();
-					}
-				} );				
-							
-				if( ! common.api.property($("#my-social-streams-grid").data("streamsPlaceHolder").properties, "options.scrollable", true ) ){
-					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
-				}				
-				
-				streamsProvider.dataSource.one('change', function(e){
 
-				});
-				
-				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
-					$( "#" + renderToString + "-prop-grid").kendoGrid({
-						dataSource : {		
-							transport: { 
-								read: { url:'/community/get-my-socialnetwork-property.do?output=json', type:'post' },
-								create: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post' },
-								update: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post'  },
-								destroy: { url:'/community/delete-my-socialnetwork-property.do?output=json', type:'post' },
-						 		parameterMap: function (options, operation){			
-							 		if (operation !== "read" && options.models) {
-							 			return { socialNetworkId: $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId, items: kendo.stringify(options.models)};
-									} 
-									return {socialNetworkId : $("#my-social-streams-grid").data("streamsPlaceHolder").socialAccountId }
-									}
-								},						
-								batch: true, 
-								schema: {
-									data: "socialNetworkProperties",
-									model: Property
-								},
-								error:common.api.handleKendoAjaxError
-							},
-							columns: [
-								{ title: "속성", field: "name" },
-								{ title: "값",   field: "value" },
-								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-							],
-							pageable: false,
-							resizable: true,
-							editable : true,
-							scrollable: true,
-							height: 180,
-							toolbar: [
-								{ name: "create", text: "추가" },
-								{ name: "save", text: "저장" },
-								{ name: "cancel", text: "취소" }
-							],				     
-							change: function(e) {
-							}
-					});
-				}	
-			} 
-			$("#" + renderToString ).parent().show();
-			if(streamsProvider.dataSource.total() == 0 )
-			{
-				streamsProvider.dataSource.read();
-			}	
-		}		
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
 		<!-- ============================== -->			
@@ -1156,12 +979,6 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-/**
-		nav.navbar-fixed-top {
-			opacity: 0;
-			z-index: 100;	
-		}
-**/
 
 		.k-tiles-arrange label {
 			font-weight : normal;		
@@ -1564,33 +1381,12 @@
 					<button type="button" class="btn btn-info"><i class="fa fa-cog"></i></button>
 					<button type="button" class="btn btn-info"><i class="fa fa-comment"></i></button>
 					<button type="button" class="btn btn-info"><i class="fa fa-envelope"></i></button>
-				</div>			
-				<!--<button id="personalized-controls-menu-close" type="button" class="close" aria-hidden="true"><i class="fa fa-times fa-2x"></i></button>-->				
+				</div>
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
-			<!--
-			<div class="blank-space-5">	
-				<nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
-					<div class="cbp-hsinner">
-						<ul class="cbp-hsmenu">
-							<li>
-								<a href="#">응용프로그램</a>
-								<ul class="cbp-hssubmenu cbp-hssub-rows">
-									<li><a href="#"><i class="fa fa-picture-o fa-2x"></i><span>이미지</span></a></li>
-									<li><a href="#"><img src="images/2.png" alt="img02"/><span>파일</span></a></li>
-									<li><a href="#"><img src="images/3.png" alt="img03"/><span>Heavenly Ale</span></a></li>
-									<li><a href="#"><img src="images/4.png" alt="img04"/><span>Juicy Lemonade</span></a></li>
-									<li><a href="#"><img src="images/5.png" alt="img05"/><span>Wise Whiskey</span></a></li>
-								</ul>
-							</li>
-						</ul>		
-					</div>
-				</nav>
-				-->
 				<div class="blank-top-5" ></div>	
 									<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-										<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>	
-										<li><a href="#my-streams" tabindex="-1" data-toggle="tab">쇼셜</a></li>							
+										<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>					
 										<#if !action.user.anonymous >	
 										<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
 										<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
@@ -1612,29 +1408,6 @@
 												<div id="announce-grid"></div>
 											</section>											
 										</div>
-										<!-- start social tab-content -->		
-										<div class="tab-pane" id="my-streams">
-											<table id="my-social-streams-grid">
-												<colgroup>
-													<col/>
-												</colgroup>
-												<thead>
-													<tr>
-														<th>미디어</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td></td>
-													</tr>
-												</tbody>
-											</table>												
-										<div class="blank-top-5" ></div>				
-										<div class="alert alert-flat alert-info fade in">
-											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-											<p><i class="fa fa-info"></i>쇼셜 미디어를 선택하시면, 해당 미디어의 최신 뉴스를 볼수 있습니다.  미디어 추가는 프로파일의 쇼셜네크워크에서 제공합니다. </p>
-										</div>		
-									</div><!-- end socia tab-content -->				
 									<!-- start attachement tab-pane -->
 									<div class="tab-pane" id="my-files">
 										<section class="side1">
@@ -1704,34 +1477,14 @@
 									</div><!-- end photos  tab-pane -->
 								</div><!-- end of tab content -->					
 			</div>	
-		</section>
-		
-		<section id="image-broswer" class="image-broswer"></section>
-					
+		</section>		
+		<section id="image-broswer" class="image-broswer"></section>					
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
-		<!-- END FOOTER -->	
-		
+		<!-- END FOOTER -->			
 		<!-- START TEMPLATE -->				
-		<script type="text/x-kendo-template" id="empty-panel-template">			
-			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">					
-				<div class="panel panel-flat panel-default">
-					<div class="panel-heading">페널
-						<div class="k-window-actions panel-header-actions">		
-							<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a>								
-							<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
-							<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
-							<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
-							<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-						</div>									
-					</div>
-					<div class="panel-body hide"></div>
-					<div class="panel-body"></div>			
-				</div>
-			</div>			
-		</script>
-				
+
 		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
 			<div class="img-wrapper">			
 			#if (contentType.match("^image") ) {#
