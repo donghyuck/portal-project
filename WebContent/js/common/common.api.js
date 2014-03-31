@@ -553,7 +553,7 @@
 					} 
 				},
 				pageSize: 10,
-				error:common.api.handleKendoAjaxError,				
+				error:handleKendoAjaxError,				
 				schema: {
 					data : "connectedSocialNetworks",
 					model : SocialNetwork
