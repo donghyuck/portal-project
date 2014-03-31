@@ -562,11 +562,6 @@
 		.k-tiles li.k-state-selected {
 			border-color: #428bca;
 		}
-		.k-imagebrowser ul li.k-state-selected{
-			background: #428bca;
-			color: #ffffff; 
-			border-color : #428bca; 
-		}
 		
 		.media, .media .media {
 			margin-top: 5px;
@@ -592,82 +587,6 @@
 			border: 0px;
 		}	
 		
-		/** image grid  */		
-		#photo-list-view.k-listview ,#attachment-list-view.k-listview {
-			width: 100%;
-			padding: 0px;
-			border: 0px;		
-			min-height: 200px;
-		}
-
-		.img-wrapper {
-			float: left;
-			position: relative;
-			width: 32.99%;
-			height: 170px;
-			padding: 0;
-			cursor: pointer;
-			overflow: hidden;		
-		}
-		
-		.img-wrapper img{
-			width: 100%;
-			height: 100%;
-		}
-		
-		.image-broswer .img-wrapper.k-state-selected img {
-			border-bottom: 5px solid #FF2A68;
-			-webkit-transition: all .2s ease-in-out;
-			transition: all .2s ease-in-out;
-			position: relative;
-			margin-top: -5px;
-		}
-				
-		.img-description {
-			position: absolute;
-			top: 0;
-			width: 100%	;
-			height: 0;
-			overflow: hidden;
-			background-color: rgba(0,0,0,0.8)
-		}
-	
-		.img-wrapper h3
-		{
-			margin: 0;
-			padding: 10px 10px 0 10px;
-			line-height: 1.1em;
-			font-size : 12px;
-			font-weight: normal;
-			color: #ffffff;
-			word-wrap: break-word;
-		}
-
-		.img-wrapper p {
-			color: #ffffff;
-			font-weight: normal;
-			padding: 0 10px;
-			font-size: 12px;
-		}			
-		
-		.k-listview:after, .attach dl:after {
-			content: ".";
-			display: block;
-			height: 0;
-			clear: both;
-			visibility: hidden;
-		}
-		
-		.k-pager-wrap {
-			border : 0px;
-			border-width: 0px;
-			background : transparent;
-		}
-
-		table.k-editor {
-			height: 400px;
-		}
-						
 		#personalized-controls {
 			position: absolute;
 			top: 50px;
@@ -826,23 +745,6 @@
 				</div>
 			</div>
 		</script>								
-		<script type="text/x-kendo-template" id="empty-panel-template">			
-			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">					
-				<div class="panel panel-flat panel-default">
-					<div class="panel-heading">페널
-						<div class="k-window-actions panel-header-actions">		
-							<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a>								
-							<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
-							<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
-							<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
-							<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-						</div>									
-					</div>
-					<div class="panel-body hide"></div>
-					<div class="panel-body"></div>			
-				</div>
-			</div>			
-		</script>			
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
