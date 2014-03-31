@@ -1503,12 +1503,10 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
-					<li>
-					<div class="progress progress-striped active">
-						<div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-						<span class="sr-only">45% Complete</span>
-						</div>
-					</div>
+					<li class="navbar-btn">
+						<a href="#" class="btn btn-info">
+							<i class="fa-li fa fa-spinner fa-spin"></i>
+						</a> 
 					</li>					
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
 					<li><a href="#&quot;" class="btn-link custom-nabvar-hide">
