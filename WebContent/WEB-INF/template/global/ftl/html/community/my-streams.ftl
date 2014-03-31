@@ -123,11 +123,7 @@
 					}
 				});	
 				
-				// 4. CONTENT 	
-				
-				// 1. Announces 							
-				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
-				createNoticeGrid();
+				// 4. CONTENT LOADING
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
