@@ -183,6 +183,7 @@
 					}
 				} );							
 								
+				alert( common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ) ;				
 				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
 				}
