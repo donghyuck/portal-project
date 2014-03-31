@@ -181,11 +181,13 @@
 					close : function(){
 						$('#navbar-btn-my-streams').find('input[value="' + streamsPlaceHolder.socialAccountId + '"]').click();				
 					}
-				} );									
+				} );							
+				alert( streamsPlaceHolder.properties ) ;		
 				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
 				}
 				$( '#'+ renderToString2 ).extMediaStreamView({ id: streamsPlaceHolder.socialAccountId, media: streamsPlaceHolder.serviceProviderName });				
+				
 				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
 					$( "#" + renderToString + "-prop-grid").kendoGrid({
 						dataSource : {		
@@ -990,8 +992,7 @@
 
 		.media, .media .media {
 			margin-top: 5px;
-		}
-	
+		}	
 	
 		.popover {
 			font-family: "나눔 고딕", "BM_NANUMGOTHIC";
@@ -1160,8 +1161,6 @@
 			border-width: 0px;
 			background : transparent;
 		}
-
-				
 
 		table.k-editor {
 			height: 400px;
@@ -1364,25 +1363,6 @@
 				</div>		
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
-			<!--
-			<div class="blank-space-5">	
-				<nav class="cbp-hsmenu-wrapper" id="cbp-hsmenu-wrapper">
-					<div class="cbp-hsinner">
-						<ul class="cbp-hsmenu">
-							<li>
-								<a href="#">응용프로그램</a>
-								<ul class="cbp-hssubmenu cbp-hssub-rows">
-									<li><a href="#"><i class="fa fa-picture-o fa-2x"></i><span>이미지</span></a></li>
-									<li><a href="#"><img src="images/2.png" alt="img02"/><span>파일</span></a></li>
-									<li><a href="#"><img src="images/3.png" alt="img03"/><span>Heavenly Ale</span></a></li>
-									<li><a href="#"><img src="images/4.png" alt="img04"/><span>Juicy Lemonade</span></a></li>
-									<li><a href="#"><img src="images/5.png" alt="img05"/><span>Wise Whiskey</span></a></li>
-								</ul>
-							</li>
-						</ul>		
-					</div>
-				</nav>
-				-->
 				<div class="blank-top-5" ></div>	
 									<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 										<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>	
