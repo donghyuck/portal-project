@@ -300,7 +300,7 @@
 			var onetime_url =  "${request.contextPath}/community/" + media + "-callback.do?output=json";			
 			if(exists){
 				if( code != null && code != ''  ){						
-					common.api.signin({
+					common.api.user.signin({
 						url : onetime_url,
 						onetime:  code,
 						success : function(response){
