@@ -825,15 +825,12 @@
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
 			<div class="blank-top-5" ></div>				
-		</section>
-		
-		<section id="image-broswer" class="image-broswer"></section>
-					
+		</section>		
+		<section id="image-broswer" class="image-broswer"></section>					
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
-		<!-- END FOOTER -->	
-		
+		<!-- END FOOTER -->		
 		<!-- START TEMPLATE -->				
 		<script type="text/x-kendo-template" id="empty-panel-template">			
 			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">					
@@ -851,34 +848,7 @@
 					<div class="panel-body"></div>			
 				</div>
 			</div>			
-		</script>
-				
-		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
-			<div class="img-wrapper">			
-			#if (contentType.match("^image") ) {#
-				<img src="${request.contextPath}/community/view-my-attachment.do?width=150&height=150&attachmentId=#:attachmentId#" alt="#:name# 이미지" />
-			# } else { #			
-				<img src="http://placehold.it/146x146&amp;text=[file]"></a>
-			# } #	
-				<div class="img-description">
-					<h3>#:name#</h3>
-					<p>#:size# 바이트</p>
-				</div>
-			</div>
-		</script>	
-		<script type="text/x-kendo-tmpl" id="photo-list-view-template">
-			<div class="img-wrapper">			
-			#if (contentType.match("^image") ) {#
-				<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#:imageId#" alt="#:name# 이미지" />
-			# } else { #			
-				<img src="http://placehold.it/146x146&amp;text=[file]"></a>
-			# } #	
-				<div class="img-description">
-					<h3>#:name#</h3>
-					<p>#:size# 바이트</p>
-				</div>
-			</div>
-		</script>					
+		</script>			
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
