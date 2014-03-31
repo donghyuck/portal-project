@@ -1505,7 +1505,7 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
-							<button type="button" class="btn btn-info navbar-btn"><i class="fa-li fa fa-spinner fa-spin"></i></button>
+							
 						</div>						
 					</li>					
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
