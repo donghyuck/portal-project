@@ -125,7 +125,7 @@
 					}
 				});					
 				// 4. CONTENT LOADING
-									
+				createPanel();
 				// END SCRIPT 
 			}
 		}]);	
