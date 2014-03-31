@@ -146,8 +146,14 @@
 									selector: "input:checkbox",
 									event : 'change',
 									handler : function(){
-										var data = myStreams.data('dataSource').get(this.value);										
+										var data = myStreams.data('dataSource').get(this.value);
 										alert( "value=" + this.value + ", checked=" + this.checked + ":::" + kendo.stringify(data) );
+										if(this.checked){
+										
+										}else{
+										
+										}															
+										
 									}	
 								}]						
 							});							
