@@ -125,22 +125,8 @@
 				
 				// 4. CONTENT LOADING
 																			
-				// 4. Right Tabs								
-				$('#myTab').on( 'show.bs.tab', function (e) {
-					//e.preventDefault();		
-					var show_bs_tab = $(e.target);
-					if( show_bs_tab.attr('href') == '#my-notice' ){						
-						createNoticeGrid();											
-					} else if( show_bs_tab.attr('href') == '#my-streams' ){						
-						createSocialGrid();
-					} else if( show_bs_tab.attr('href') == '#my-files' ){					
-						createAttachmentListView();
-					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
-						createPhotoListView();
-					}					
-				});
-
-				$('#myTab a:first').tab('show') ;
+				
+				
 				// END SCRIPT 
 			}
 		}]);	
