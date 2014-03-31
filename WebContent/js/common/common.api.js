@@ -113,14 +113,13 @@
 			error:options.error || handleKendoAjaxError,
 			dataType : "json"
 		});	
-	};
+	};	
 	
-	
-	common.api.property = function( properties, name, defaultValue ){
+	common.api.property = function( properties, name, defaultValue ){		
 		if( properties[name] === UNDEFINED )
 			return defaultValue;
 		else 
-			properties[name]
+			return properties[name]
 	}
 
 	
