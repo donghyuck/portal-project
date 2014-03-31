@@ -534,6 +534,7 @@
 		stringify = kendo.stringify,
 		isFunction = kendo.isFunction,
 		UNDEFINED = 'undefined',
+		CHANGE = "change",
 		POST = 'POST',
 		JSON = 'json',
 		PROFILE_URL_TEMPLATE = kendo.template("/community/get-#= media #-profile.do?output=json"),
@@ -553,8 +554,8 @@
 				dataSource = DataSource.create({
 					transport: {
 						read: {
-							type : 'POST',
-							dataType : "json", 
+							type :POST,
+							dataType : JSON, 
 							url : '/community/list-my-socialnetwork.do?output=json'
 						} 
 					},
@@ -565,10 +566,17 @@
 						model : SocialNetwork
 					}				
 				});		
-			}		}	
+			}		
+		}
+		
+		if( isFunction(options.change) ){
+			.dataSource.bind(CHANGE, options.change );
+		}
+		
 		if (options.autoBind) {    
 			dataSource.fetch();
-		}		
+		}
+		
 		return dataSource;
 	}			
 		
