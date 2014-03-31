@@ -131,8 +131,11 @@
 		}]);	
 		
 		function createConnectedSocialNav(){
-			$('#navbar-btn-my-streams');
-			common.api.social.dataSource({ type : 'list' });
+			var myStreams = $('#navbar-btn-my-streams');
+			if( myStreams.find('input').length == 0 ){
+				common.api.social.dataSource({ type : 'list' });
+			}
+			
 		}		
 				
 		function createSocialGrid(){			
