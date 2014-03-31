@@ -186,7 +186,9 @@
 								
 				$( '#'+ renderToString2 ).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
 			}
-			$("#" + renderToString ).parent().show();
+			
+			//$("#" + renderToString ).parent().show();			
+			kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).play();			
 		}
 				
 				
