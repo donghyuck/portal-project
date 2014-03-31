@@ -1142,12 +1142,6 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-/**
-		nav.navbar-fixed-top {
-			opacity: 0;
-			z-index: 100;	
-		}
-**/
 
 		.k-tiles-arrange label {
 			font-weight : normal;		
@@ -1509,6 +1503,13 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
+					<li>
+					<div class="progress progress-striped active">
+						<div class="progress-bar"  role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+						<span class="sr-only">45% Complete</span>
+						</div>
+					</div>
+					</li>					
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
 					<li><a href="#&quot;" class="btn-link custom-nabvar-hide">
 						<img src="${request.contextPath}/images/cross.png" height="18"/>
