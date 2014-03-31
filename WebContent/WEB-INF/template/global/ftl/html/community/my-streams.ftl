@@ -177,11 +177,11 @@
 				common.api.handlePanelHeaderActions( $( '#'+ renderToString), {
 					custom : true,
 					refresh : function(){
-						
+						$( '#'+ renderToString2 ).data('kendoExtMediaStreamView').dataSource.read();
 					}
 				} );		
 				
-				$( '#'+ renderToString2).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
+				$( '#'+ renderToString2 ).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
 			}
 			$("#" + renderToString ).parent().show();
 		}
