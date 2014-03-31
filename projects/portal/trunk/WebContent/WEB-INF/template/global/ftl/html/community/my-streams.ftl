@@ -149,7 +149,6 @@
 									event : 'change',
 									handler : function(){
 										var myStream = myStreams.data( 'dataSource' ).get(this.value);
-										alert( this.checked + '-' +  this.value );
 										if(this.checked){
 											displayMediaStream( myStream );
 										}else{
@@ -185,8 +184,49 @@
 				} );									
 				if( ! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
-				}									
-				$( '#'+ renderToString2 ).extMediaStreamView({media: streamsPlaceHolder.serviceProviderName });
+				}
+				$( '#'+ renderToString2 ).extMediaStreamView({ id: streamsPlaceHolder.socialAccountId, media: streamsPlaceHolder.serviceProviderName });				
+				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
+					$( "#" + renderToString + "-prop-grid").kendoGrid({
+						dataSource : {		
+							transport: { 
+								read: { url:'/community/get-my-socialnetwork-property.do?output=json', type:'post' },
+								create: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post' },
+								update: { url:'/community/update-my-socialnetwork-property.do?output=json', type:'post'  },
+								destroy: { url:'/community/delete-my-socialnetwork-property.do?output=json', type:'post' },
+						 		parameterMap: function (options, operation){			
+							 		if (operation !== "read" && options.models) {
+							 			return { socialNetworkId: $( '#'+ renderToString2 ).data('kendoExtMediaStreamView').id(), items: kendo.stringify(options.models)};
+									} 
+									return {socialNetworkId :$( '#'+ renderToString2 ).data('kendoExtMediaStreamView').id() }
+									}
+								},						
+								batch: true, 
+								schema: {
+									data: "socialNetworkProperties",
+									model: Property
+								},
+								error:common.api.handleKendoAjaxError
+							},
+							columns: [
+								{ title: "속성", field: "name" },
+								{ title: "값",   field: "value" },
+								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+							],
+							pageable: false,
+							resizable: true,
+							editable : true,
+							scrollable: true,
+							height: 180,
+							toolbar: [
+								{ name: "create", text: "추가" },
+								{ name: "save", text: "저장" },
+								{ name: "cancel", text: "취소" }
+							],				     
+							change: function(e) {
+							}
+					});
+				}
 			}
 			kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).play();			
 		}
@@ -197,6 +237,11 @@
 				$("#" + renderToString ).parent().remove();
 			});							
 		}
+				
+				
+				
+				
+				
 				
 		function createPanel(){					
 			var renderTo = ui.generateGuid();
