@@ -11,13 +11,13 @@
 	<context:component-scan base-package="org.springframework.samples.petclinic.web" />
 -->
 
-	<!-- <bean id="download-controller1" class="architecture.ee.web.spring.controller.DownloadController"  p:imageManager-ref="imageManager" />	-->
+	<bean id="download-controller1" class="architecture.ee.web.spring.controller.DownloadController"  p:imageManager-ref="imageManager" />
 	<bean id="download-controller2" class="architecture.ee.web.community.spring.controller.DownloadController"  p:profileManager-ref="profileManager" p:imageManager-ref="imageManager" />	
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="order" value="0" />
 			<property name="mappings">
 				<value>
-					/*=download-controller2
+					/image/*=download-controller1
 				</value>
 		</property>
 	</bean>	
