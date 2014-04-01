@@ -709,7 +709,7 @@
 		# if ( anonymous ) { # 
 			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
 		# }else{ # 
-			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34" class="img-rounded">
+			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34">
 		# } #
 		
 		<span class="caret"></span>
