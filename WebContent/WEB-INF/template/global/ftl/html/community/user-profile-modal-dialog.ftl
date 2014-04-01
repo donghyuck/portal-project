@@ -173,7 +173,7 @@
 				<div class="modal-body">
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="#" data-toggle="dropdown">
-							<img id="my-photo-image" class="media-object img-thumbnail" src="${request.contextPath}/download/porfile/${user.username}?width=100&height=150" />
+							<img id="my-photo-image" class="media-object img-thumbnail" src="${request.contextPath}/download/profile/${user.username}?width=100&height=150" />
 						</a>
 						<ul class="dropdown-menu">
 							<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
