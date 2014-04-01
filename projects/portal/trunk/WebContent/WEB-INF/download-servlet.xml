@@ -17,7 +17,7 @@
 		<property name="order" value="0" />
 			<property name="mappings">
 				<value>
-					/download/image/*=download-file-controller,
+					/download/image/*=download-file-controller
 					/download/profile/*=download-profile-controller
 				</value>
 		</property>
