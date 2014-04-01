@@ -424,7 +424,7 @@
 	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",
 	AUTHENTICATE = "authenticate", 
 	LOGIN_URL = "/login", 
-	PHOTO_URL = "/accounts/view-image.do?width=100&height=150",
+	//PHOTO_URL = "/download/view-image.do?width=100&height=150",
 	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( connectorHostname ) == 'string'  ) { #http://#= connectorHostname ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"),
 	ERROR = "error",
 	SHOWN = "shown",
@@ -526,7 +526,7 @@
     	},
         render : function(){
         	var that = this, element, content;
-        	if( that.options.photoUrl != null ){
+        	/*if( that.options.photoUrl != null ){
         		that.token.photoUrl = that.options.photoUrl ;
         	}else{
         		that.token.photoUrl = null;
@@ -534,6 +534,7 @@
         	if( that.token.properties.imageId ){
         		that.token.photoUrl = PHOTO_URL + '&imageId=' + that.token.properties.imageId ;	
         	}
+        	*/
         	if( that.options.template ){
         		that.element.html( that.options.template( that.token ) );        		
         	}        	
@@ -546,8 +547,7 @@
 	        	$('[data-dropdown-content]').on('click.fndtn.dropdown', function (e) {
 	                e.stopPropagation();
 	            });
-        	}
-        	
+        	}        	
         	that.trigger(SHOWN); 
         },
         toggle : function(target) {        	
