@@ -708,7 +708,7 @@
 		<a href="\\#" class="btn btn-img dropdown-toggle" data-toggle="dropdown">
 		# if ( anonymous ) { # 
 			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
-		# else # 
+		# }else{ # 
 			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34" class="img-rounded">
 		# } #
 		
