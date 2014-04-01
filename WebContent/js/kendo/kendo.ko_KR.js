@@ -1,5 +1,6 @@
 
 kendo.ui.Locale = "Korean KOREA (ko-KR)";
+
 kendo.ui.ColumnMenu.prototype.options.messages = 
   $.extend(kendo.ui.ColumnMenu.prototype.options.messages, {
 
@@ -104,10 +105,10 @@ kendo.ui.ImageBrowser.prototype.options.messages =
 
 /* IMAGE BROWSER MESSAGES 
  ****************************************************************************/   
-  uploadFile: "Upload",
+  uploadFile: "업로드",
   orderBy: "Arrange by",
-  orderByName: "Name",
-  orderBySize: "Size",
+  orderByName: "이름",
+  orderBySize: "크기",
   directoryNotFound: "A directory with this name was not found.",
   emptyFolder: "Empty Folder",
   deleteFile: 'Are you sure you want to delete "{0}"?',
@@ -122,22 +123,22 @@ kendo.ui.Editor.prototype.options.messages =
 
 /* EDITOR MESSAGES 
  ****************************************************************************/   
-  bold: "Bold",
-  italic: "Italic",
-  underline: "Underline",
-  strikethrough: "Strikethrough",
+  bold: "굵게",
+  italic: "기울림골",
+  underline: "믿줄",
+  strikethrough: "취소선",
   superscript: "Superscript",
   subscript: "Subscript",
-  justifyCenter: "Center text",
-  justifyLeft: "Align text left",
-  justifyRight: "Align text right",
-  justifyFull: "Justify",
+  justifyCenter: "가운데 맞춤",
+  justifyLeft: "왼쪽 맞춤",
+  justifyRight: "오른쪽 맞춤",
+  justifyFull: "균등분할",
   insertUnorderedList: "Insert unordered list",
   insertOrderedList: "Insert ordered list",
   indent: "Indent",
   outdent: "Outdent",
   createLink: "하이퍼링크 삽입",
-  unlink: "Remove hyperlink",
+  unlink: "하이퍼링크 삭제",
   insertImage: "이미지 삽입",
   insertHtml: "HTML 삽입",
   fontName: "글꼴",
@@ -145,22 +146,22 @@ kendo.ui.Editor.prototype.options.messages =
   fontSize: "글자크기",
   fontSizeInherit: "(inherited size)",
   formatBlock: "Format",
-  foreColor: "Color",
+  foreColor: "글꼴 색",
   backColor: "채우기 색",
   style: "스타일",
   emptyFolder: "Empty Folder",
-  uploadFile: "Upload",
-  orderBy: "Arrange by:",
-  orderBySize: "Size",
-  orderByName: "Name",
+  uploadFile: "업로드",
+  orderBy: "정렬:",
+  orderBySize: "크기",
+  orderByName: "이름",
   invalidFileType: "The selected file \"{0}\" is not valid. Supported file types are {1}.",
   deleteFile: 'Are you sure you want to delete "{0}"?',
   overwriteFile: 'A file with name "{0}" already exists in the current directory. Do you want to overwrite it?',
   directoryNotFound: "A directory with this name was not found.",
-  imageWebAddress: "Web address",
+  imageWebAddress: "웹 주소",
   imageAltText: "Alternate text",
   dialogInsert: "Insert",
   dialogButtonSeparator: "or",
-  dialogCancel: "Cancel"
+  dialogCancel: "최소"
  /***************************************************************************/   
 });
