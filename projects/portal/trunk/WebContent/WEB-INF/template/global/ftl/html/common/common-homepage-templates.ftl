@@ -441,7 +441,7 @@
 	<small><span class="label label-primary">기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small><br>
 	<div class="media">
 		<a class="pull-left" href="\\#">
-		<img src="${request.contextPath}/download/profile/#: username #?width=150&height=150" width="30" height="30" class="img-rounded">
+		<img src="${request.contextPath}/download/profile/#: user.username #?width=150&height=150" width="30" height="30" class="img-rounded">
 		</a>
 		<div class="media-body">
 			<h5 class="media-heading">
