@@ -705,8 +705,13 @@
 <!-- ============================== -->
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdown">
-		<a href="\\#" class="btn btn-img dropdown-toggle" data-toggle="dropdown">		
-		<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34" class="img-rounded">		
+		<a href="\\#" class="btn btn-img dropdown-toggle" data-toggle="dropdown">
+		# if ( anonymous ) { # 
+			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
+		# else # 
+			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34" class="img-rounded">
+		# } #
+		
 		<span class="caret"></span>
 		</a>			
 		<ul class="dropdown-menu">
@@ -716,11 +721,7 @@
 					<ul class="media-list">
 						<li class="media">
 							<a class="pull-left" href="\\#">
-								#if (photoUrl != null && photoUrl != 'null' && photoUrl != '')  { #
-								<img class="media-object img-thumbnail" src="#:photoUrl#" />
-								# } else { # 
-								<img class="media-object img-thumbnail" src="http://placehold.it/100x150&amp;text=[No Photo]" />
-								# } #	
+								<img class="media-object img-thumbnail" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
 							</a>
 							<div class="media-body" style="color:ccc;">
 								<p class="text-muted"><strong> #:name#</strong></p>
