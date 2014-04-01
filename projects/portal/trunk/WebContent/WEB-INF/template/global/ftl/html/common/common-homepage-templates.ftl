@@ -706,7 +706,7 @@
 <script id="account-template" type="text/x-kendo-template">
 <li class="dropdown">
 		<a href="\\#" class="btn btn-img dropdown-toggle" data-toggle="dropdown">		
-		<img src="${request.contextPath}/download/profile/#: username #?width=150&height=150" height="34" class="img-rounded">		
+		<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34" class="img-rounded">		
 		<span class="caret"></span>
 		</a>			
 		<ul class="dropdown-menu">
