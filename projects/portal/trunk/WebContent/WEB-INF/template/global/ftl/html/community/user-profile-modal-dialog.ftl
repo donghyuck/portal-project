@@ -173,6 +173,8 @@
 				<div class="modal-body">
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="#" data-toggle="dropdown">
+							<img id="my-photo-image" class="media-object img-thumbnail" src="${request.contextPath}/download/porfile/${user.username}?width=100&height=150" />
+							
 							<#if user.properties.imageId??>
 							<img id="my-photo-image" class="media-object img-thumbnail" src="${request.contextPath}/accounts/view-image.do?width=100&height=150&imageId=${user.properties.imageId}"," />
 							<#else> 
