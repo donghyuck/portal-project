@@ -96,9 +96,7 @@
 					success : function(e) {								    
 						if( e.response.photo ){
 							var _currentUser = $("#account-panel").data("currentUser" );
-							//_currentUser.properties.imageId = e.response.photo.imageId;
-							//var photoUrl = '${request.contextPath}/accounts/view-image.do?width=100&height=150&imageId=' + _currentUser.properties.imageId ;
-							//$('#my-photo-image').attr( 'src', photoUrl );
+							$('#my-photo-image').attr( 'src', common.api.user.photoUrl( currentUser, 100, 150 ) );
 						}				
 					}	
 				});
