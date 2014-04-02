@@ -1466,6 +1466,10 @@
     					e.preventDefault();
     					$(element).find("[data-alert]").fadeOut(300, function(){
     						
+    						if( options.data.renderTo === STRING  )
+    						{
+    							$('#' + options.data.renderTo ).remove();
+    						}
     						//$(element).find("[data-alert]").remove();
     						//if( isFunction(options.close))
     						//	options.close();
