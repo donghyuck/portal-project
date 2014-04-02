@@ -243,7 +243,6 @@
 		<!-- ============================== -->							
 		function createInfoPanel(){					
 			var renderTo = common.api.guid();
-
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
 			$("#personalized-area").extAlert({
 				template :  kendo.template($("#alert-panel-template").html()),
@@ -438,7 +437,7 @@
 		<!-- END FOOTER -->
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="alert-panel-template">
-			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">
+			<div data-alert id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">
 				<div class="alert alert-danger">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					새로운 미디어 연결은 프로필 보기의 쇼셜네트워크 탭에서 지원합니다.
