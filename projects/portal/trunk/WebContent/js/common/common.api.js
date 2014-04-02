@@ -332,6 +332,7 @@
 	stringify = kendo.stringify,
 	isFunction = kendo.isFunction,
 	UNDEFINED = 'undefined',
+	NUMBER = 'number',
 	POST = 'POST',
 	ANONYMOUS_PHOTO_URL = '/images/common/anonymous.png',
 	JSON = 'json';	
@@ -340,7 +341,10 @@
 		
 		if( typeof user.username === 'string'){
 			var _photoUrl = '/download/profile/' + user.username;	
-			alert( typeof width);			
+			if( width typeof NUMBER && height typeof NUMBER ){
+				_photoUrl = _photoUrl + '?width=' + width + '&height=' + height ;
+			}
+			return _photoUrl ;
 		}
 		return ANONYMOUS_PHOTO_URL ;
 	} 
