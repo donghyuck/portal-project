@@ -1457,12 +1457,15 @@
     				that.template = kendo.template(options.template);	
     			else if ( isFunction( options.template ) )
     				that.template = options.template;
+    			
     			if( typeof options.data === UNDEFINED )
     				options.data = {};    			    			
+    			
     			that.element.html( that.template( options.data ) );    		
     			
-    			if( options.data.id === STRING )
+    			if( typeof options.data.id === STRING )
     			{    				
+    				
     				alert($('#' +  options.data.id ).find('.alert').html());
     			}
     			
