@@ -74,9 +74,6 @@
 						
 			
 			if(!$("#my-photo-upload").data("kendoUpload")){
-				
-				
-				
 				$("#my-photo-upload").kendoUpload({
 					multiple : false,
 					showFileList : false,
@@ -85,13 +82,7 @@
 						saveUrl:  '${request.contextPath}/community/update-my-photo.do?output=json',							   
 						autoUpload: true
 					},
-					upload: function (e) {								         
-						//var imageId = -1;
-						//var _currentUser = $("#account-panel").data("currentUser" );
-						i//f( _currentUser.properties.imageId ){
-						//	imageId = _currentUser.properties.imageId
-						//}
-						//e.data = { userId: _currentUser.userId , imageId:imageId  };									    								    	 		    	 
+					upload: function (e) {								         						    								    	 		    	 
 					},
 					success : function(e) {								    
 						if( e.response.photo ){
