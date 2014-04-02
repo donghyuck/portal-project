@@ -243,12 +243,15 @@
 		<!-- ============================== -->							
 		function createInfoPanel(){					
 			var renderTo = common.api.guid();
+
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
 			$("#personalized-area").extAlert({
 				template :  kendo.template($("#alert-panel-template").html()),
 				data : { id: renderTo, colSize: grid_col_size.newValue },
 				close : function(){				
+					alert( "fdsaf" );
 					kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
+						
 						alert("#" + renderTo);
 						$("#" + renderTo ).remove();
 					});					
