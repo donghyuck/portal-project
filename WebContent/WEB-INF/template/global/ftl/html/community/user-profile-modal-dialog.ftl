@@ -71,10 +71,12 @@
 				}
 				$(this).tab('show')
 			})		 	
-			
-			common.api.user.photoUrl( $("#account-panel").data("currentUser" ) );
+						
 			
 			if(!$("#my-photo-upload").data("kendoUpload")){
+				
+				
+				
 				$("#my-photo-upload").kendoUpload({
 					multiple : false,
 					showFileList : false,
