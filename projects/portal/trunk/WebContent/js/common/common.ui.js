@@ -1467,7 +1467,7 @@
     			if( typeof options.data.id === STRING )
     			{	
     				var _alert = $('#' +  options.data.id ).find('.alert');    				
-    				_alert.bind('closed.bs.alert', function () {
+    				_alert.bind('closed.bs.alert', function (e) {
     					e.preventDefault();    					
 						if( isFunction(options.close))
 							options.close();					
