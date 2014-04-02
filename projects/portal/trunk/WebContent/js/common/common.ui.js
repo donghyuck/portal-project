@@ -1455,7 +1455,7 @@
     			else if ( typeof options.template === STRING )
     				that.template = kendo.template(options.template);	
     			else if ( isFunction( options.template ) )
-    				that.template = options.template;	
+    				that.template = options.template;
 
     			if( typeof options.data === UNDEFINED )
     				options.data = {};
@@ -1464,6 +1464,7 @@
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
     					e.preventDefault();
+    					alert('fdsafasd');
     					$(element).find("[data-alert]").fadeOut(300, function(){
     						
     						if( options.data.renderTo === STRING  )
