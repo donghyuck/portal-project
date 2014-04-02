@@ -246,7 +246,7 @@
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
 			$("#personalized-area").extAlert({
 				template :  kendo.template($("#alert-panel-template").html()),
-				data : { id: renderTo, colSize: grid_col_size.newValue }
+				data : { id: renderTo, colSize: grid_col_size.newValue },
 				close : function () {
 					$( '#'+ renderTo ).remove();
 				}
