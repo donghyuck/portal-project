@@ -1461,6 +1461,9 @@
     				options.data = {};
     			    			
     			that.element.html( that.template( options.data ) );
+    			
+    			alert('fdsafasd');
+    			
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
     					e.preventDefault();
