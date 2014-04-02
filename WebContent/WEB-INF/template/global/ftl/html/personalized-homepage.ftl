@@ -89,7 +89,7 @@
 							$('body nav').first().addClass('hide');
 						}
 						
-						common.api.user.photoUrl( currentUser );
+						common.api.user.photoUrl( currentUser, 100 );
 						
 					},
 					shown : function(e){
