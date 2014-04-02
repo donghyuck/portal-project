@@ -117,7 +117,6 @@
 			return defaultValue;
 		}
 		else {
-			alert(typeof properties[name]);
 			if( typeof properties[name] === 'string' ){
 				if(  properties[name] === 'true')
 					return true;
