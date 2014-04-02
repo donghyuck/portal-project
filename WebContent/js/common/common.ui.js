@@ -1462,7 +1462,11 @@
     			    			
     			that.element.html( that.template( options.data ) );
     			
-    			alert('fdsafasd');
+    			if( options.data.renderTo === STRING  ){
+    				$('#' + options.data.renderTo ).find('.alert').bind('closed.bs.alert', function () {
+    					alert("hell");
+    				});    				
+    			}
     			
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
