@@ -1461,7 +1461,7 @@
     				options.data = {};    			    			
     			that.element.html( that.template( options.data ) );    		
     			
-    			if( options.data.id == STRING )
+    			if( options.data.id === STRING )
     			{    				
     				alert($('#' +  options.data.id ).find('.alert').html());
     			}
