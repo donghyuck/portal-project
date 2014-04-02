@@ -337,11 +337,10 @@
 	ANONYMOUS_PHOTO_URL = '/images/common/anonymous.png',
 	JSON = 'json';	
 	
-	common.api.user.photoUrl = function ( user , width , height ){
-		
+	common.api.user.photoUrl = function ( user , width , height ){		
 		if( typeof user.username === 'string'){
 			var _photoUrl = '/download/profile/' + user.username;	
-			if( width typeof NUMBER && height typeof NUMBER ){
+			if( typeof width === NUMBER && typeof height === NUMBER ){
 				_photoUrl = _photoUrl + '?width=' + width + '&height=' + height ;
 			}
 			return _photoUrl ;
