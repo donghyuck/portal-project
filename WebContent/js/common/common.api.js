@@ -333,16 +333,16 @@
 	isFunction = kendo.isFunction,
 	UNDEFINED = 'undefined',
 	POST = 'POST',
+	ANONYMOUS_PHOTO_URL = '/images/common/anonymous.png',
 	JSON = 'json';	
 	
 	common.api.user.photoUrl = function ( user , width , height ){
-		
 		
 		if( typeof user.username === 'string'){
 			var _photoUrl = '/download/profile/' + user.username;	
 			alert( typeof width);			
 		}
-		return '';
+		return ANONYMOUS_PHOTO_URL ;
 	} 
 	
 	common.api.user.signin = function ( options ){		
