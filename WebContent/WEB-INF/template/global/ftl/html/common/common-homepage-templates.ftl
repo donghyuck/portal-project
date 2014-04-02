@@ -756,7 +756,8 @@
 			</li>
 			<li class="divider"></li>
 			<!--<li><a href="/community/view-myprofile.do?view=modal-dialog" data-toggle="modal" data-target="\\#myModal" ><i class="fa fa-user"></i> 프로필 보기</a></li>-->			
-			<li><a href="/main.do?view=personalized">마이 페이지</a></li>
+			<li><a href="${request.contextPath}/main.do?view=personalized">마이 페이지</a></li>
+			<li><a href="${request.contextPath}/main.do?view=streams">마이 스트림</a></li>
 			#if ( isSystem ) {#
 			<li><a href="/secure/main-site.do">시스템 관리</a></li>
 			# } #
