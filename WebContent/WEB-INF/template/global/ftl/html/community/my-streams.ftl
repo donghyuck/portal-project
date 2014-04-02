@@ -251,7 +251,7 @@
 					$( '#'+ renderTo ).remove();
 				}
 			});
-			kendo.fx($( '#'+ renderTo ).parent()).zoom("in").startValue(0).endValue(1).play();		
+			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();		
 		}
 				
 		-->
