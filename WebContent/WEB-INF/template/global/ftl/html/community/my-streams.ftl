@@ -185,10 +185,10 @@
 				
 				alert( common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) );
 				
-				if( common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){
-					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
-				}else{
+				if( common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){					
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:first").click();
+				}else{
+					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
 				}
 				
 				$( '#'+ renderToString2 ).extMediaStreamView({ id: streamsPlaceHolder.socialAccountId, media: streamsPlaceHolder.serviceProviderName });				
