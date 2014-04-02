@@ -247,8 +247,10 @@
 			$("#personalized-area").extAlert({
 				template :  kendo.template($("#alert-panel-template").html()),
 				data : { id: renderTo, colSize: grid_col_size.newValue }
-			})			
-			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
+				close : function () {
+					$( '#'+ renderTo ).remove();
+				}
+			});
 		}
 				
 		-->
