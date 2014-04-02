@@ -21,26 +21,7 @@
 				if( $(this).attr('href') == '#profile-social-network' ){					
 					if( !$("#my-social-network-grid" ).data('kendoGrid') ){
 						$("#my-social-network-grid").kendoGrid({
-							dataSource: new kendo.data.DataSource({
-								transport: {
-									read: {
-										type : 'POST',
-										dataType : "json", 
-										url : '${request.contextPath}/community/list-socialnetwork.do?output=json'
-									},
-									parameterMap: function(options, operation) {
-										if (operation != "read" && options.models) {
-											return {models: kendo.stringify(options.models)};
-										}
-									} 
-								},
-								pageSize: 10,
-								error:handleKendoAjaxError,				
-								schema: {
-									data : "socialNetworks",
-									model : SocialNetwork
-								},
-							}),
+							dataSource: common.api.social.dataSource({type:'all'}),
 							selectable: "single",
 							rowTemplate: kendo.template($("#social-network-grid-row-template").html()),
 							change: function(e) { 				
@@ -49,7 +30,7 @@
 									var selectedCell = this.dataItem( selectedCells );	    									
 									$("#my-social-network-grid").data( "networkPlaceHolder", selectedCell );			
 									if( selectedCell.connected ){				
-										common.api.social.getProfile({
+										common.api.social.profile({
 											media : selectedCell.serviceProviderName ,
 											data: { socialNetworkId: selectedCell.socialAccountId },
 											success : function(response){
@@ -74,7 +55,6 @@
 											e.preventDefault();	
 											var networkPlaceHolder = $("#my-social-network-grid").data( "networkPlaceHolder");
 											goSocialPopup(networkPlaceHolder);
-											//goSocialPopup(networkPlaceHolder.authorizationUrl + "&display=popup");
 										});
 									} else if( grid_action.hasClass("custom-social-network-disconnect") ){
 										grid_action.click(function (e) {
@@ -92,6 +72,8 @@
 				$(this).tab('show')
 			})		 	
 			
+			common.api.user.photoUrl( $("#account-panel").data("currentUser" ) );
+			
 			if(!$("#my-photo-upload").data("kendoUpload")){
 				$("#my-photo-upload").kendoUpload({
 					multiple : false,
@@ -102,19 +84,19 @@
 						autoUpload: true
 					},
 					upload: function (e) {								         
-						var imageId = -1;
-						var _currentUser = $("#account-panel").data("currentUser" );
-						if( _currentUser.properties.imageId ){
-							imageId = _currentUser.properties.imageId
-						}
-						e.data = { userId: _currentUser.userId , imageId:imageId  };									    								    	 		    	 
+						//var imageId = -1;
+						//var _currentUser = $("#account-panel").data("currentUser" );
+						i//f( _currentUser.properties.imageId ){
+						//	imageId = _currentUser.properties.imageId
+						//}
+						//e.data = { userId: _currentUser.userId , imageId:imageId  };									    								    	 		    	 
 					},
 					success : function(e) {								    
 						if( e.response.photo ){
 							var _currentUser = $("#account-panel").data("currentUser" );
-							_currentUser.properties.imageId = e.response.photo.imageId;
-							var photoUrl = '${request.contextPath}/accounts/view-image.do?width=100&height=150&imageId=' + _currentUser.properties.imageId ;
-							$('#my-photo-image').attr( 'src', photoUrl );
+							//_currentUser.properties.imageId = e.response.photo.imageId;
+							//var photoUrl = '${request.contextPath}/accounts/view-image.do?width=100&height=150&imageId=' + _currentUser.properties.imageId ;
+							//$('#my-photo-image').attr( 'src', photoUrl );
 						}				
 					}	
 				});
