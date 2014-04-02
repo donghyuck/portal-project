@@ -113,9 +113,21 @@
 	*/
 	common.api.property = function( properties, name, defaultValue ){		
 		if( typeof properties[name] === UNDEFINED )
+		{	
 			return defaultValue;
-		else 
-			return properties[name]
+		}
+		else {
+			alert(typeof properties[name]);
+			if( typeof properties[name] === 'string' ){
+				if(  properties[name] === 'true')
+					return true;
+				else
+					return false;				
+			}else{
+				return properties[name];
+			}			
+		}
+			
 	}
 
 	
