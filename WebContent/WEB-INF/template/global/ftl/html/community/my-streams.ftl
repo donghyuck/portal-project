@@ -437,8 +437,8 @@
 		<!-- END FOOTER -->
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="alert-panel-template">
-			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel" data-alert>
-				<div class="alert alert-danger">
+			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">
+				<div data-alert class="alert alert-danger">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					새로운 미디어 연결은 프로필 보기의 쇼셜네트워크 탭에서 지원합니다.
 					<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a>
