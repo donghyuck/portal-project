@@ -182,9 +182,7 @@
 						$('#navbar-btn-my-streams').find('input[value="' + streamsPlaceHolder.socialAccountId + '"]').click();				
 					}
 				} );	
-				
-				alert( common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) );
-				
+								
 				if( common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){					
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:first").click();
 				}else{
