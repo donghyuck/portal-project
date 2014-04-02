@@ -1459,13 +1459,13 @@
 
     			if( typeof options.data === UNDEFINED )
     				options.data = {};
-    			
+    			    			
     			that.element.html( that.template( options.data ) );
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
     					e.preventDefault();
     					$(element).find("[data-alert]").fadeOut(300, function(){
-    						$(element).remove();
+    						
     						//$(element).find("[data-alert]").remove();
     						//if( isFunction(options.close))
     						//	options.close();
