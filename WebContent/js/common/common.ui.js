@@ -1449,6 +1449,7 @@
     		init: function(element, options) {			
     			var that = this;
     			Widget.fn.init.call(that, element, options);
+    			
     			this.options = that.options;    			
     			if( typeof options.template === UNDEFINED )
     				that.template = kendo.template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>');
@@ -1456,31 +1457,16 @@
     				that.template = kendo.template(options.template);	
     			else if ( isFunction( options.template ) )
     				that.template = options.template;
-
     			if( typeof options.data === UNDEFINED )
-    				options.data = {};
-    			    			
-    			that.element.html( that.template( options.data ) );
-    			
-    			if( options.data.renderTo === STRING  ){
-    				$('#' + options.data.renderTo ).find('.alert').bind('closed.bs.alert', function () {
-    					alert("hell");
-    				});    				
-    			}
-    			
+    				options.data = {};    			    			
+    			that.element.html( that.template( options.data ) );    			
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
     					e.preventDefault();
-    					alert('fdsafasd');
-    					$(element).find("[data-alert]").fadeOut(300, function(){
-    						
-    						if( options.data.renderTo === STRING  )
-    						{
-    							$('#' + options.data.renderTo ).remove();
-    						}
-    						//$(element).find("[data-alert]").remove();
-    						//if( isFunction(options.close))
-    						//	options.close();
+    					that.element.find("[data-alert]").fadeOut(300, function(){
+    						that.element.find("[data-alert]").remove();
+    						if( isFunction(options.close))
+    							options.close();
     					});				
     				}										
     			);
