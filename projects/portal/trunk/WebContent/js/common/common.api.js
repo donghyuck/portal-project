@@ -334,6 +334,17 @@
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	JSON = 'json';	
+	
+	common.api.user.photoUrl = function ( user , width , height ){
+		
+		
+		if( typeof user.username === 'string'){
+			var _photoUrl = '/download/profile/' + user.username;	
+			alert( typeof width);			
+		}
+		return '';
+	} 
+	
 	common.api.user.signin = function ( options ){		
 		options = options || {};
 		$.ajax({
@@ -538,13 +549,37 @@
 	common.api.social.dataSource = function (options){		
 		if( typeof options.autoBind === UNDEFINED )
 			options.autoBind = true;		
+		
 		if( typeof options.type === UNDEFINED )
 			options.type = 'list';
+		
 		var dataSource = null;			
+		
 		if( typeof options.dataSource === 'object'){
 			dataSource = DataSource.create(options.dataSource);
 		}else{
-			if( options.type === 'list' ){
+			if( options.type === 'all' ){
+				dataSource = DataSource.create({
+					transport: {
+						read: {
+							type :POST,
+							dataType : JSON, 
+							url : '/community/list-socialnetwork.do?output=json'
+						},
+						parameterMap: function(options, operation) {
+							if (operation != "read" && options.models) {
+								return {models: kendo.stringify(options.models)};
+							}
+						} 
+					},
+					pageSize: 10,
+					error:handleKendoAjaxError,				
+					schema: {
+						data : "socialNetworks",
+						model : SocialNetwork
+					}				
+				});						
+			}else 	if( options.type === 'list' ){
 				dataSource = DataSource.create({
 					transport: {
 						read: {
@@ -568,6 +603,7 @@
 		if (options.autoBind) {    
 			dataSource.fetch();
 		}		
+		
 		return dataSource;
 	}			
 	
@@ -596,9 +632,8 @@
 		});			
 	}
 		
-	common.api.social.getProfile = function ( options ){				
-		options = options || {};		
-		
+	common.api.social.profile = function ( options ){				
+		options = options || {};	
 		if( typeof options.onetime === UNDEFINED  ){
 			// connected profile access
 			if( typeof options.url === UNDEFINED && typeof options.media == 'string' ){
