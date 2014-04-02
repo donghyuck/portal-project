@@ -1449,8 +1449,7 @@
     		init: function(element, options) {			
     			var that = this;
     			Widget.fn.init.call(that, element, options);
-    			this.options = that.options;
-    			
+    			this.options = that.options;    			
     			if( typeof options.template === UNDEFINED )
     				that.template = kendo.template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>');
     			else if ( typeof options.template === STRING )
@@ -1463,12 +1462,13 @@
     			
     			that.element.html( that.template( options.data ) );
     			that.element.find("[data-alert] a.close").click(
-    				function(e){
+    				function(e){   
     					e.preventDefault();
     					$(element).find("[data-alert]").fadeOut(300, function(){
-    						$(element).find("[data-alert]").remove();
-    						if( isFunction(options.close))
-    							options.close();
+    						$(element).remove();
+    						//$(element).find("[data-alert]").remove();
+    						//if( isFunction(options.close))
+    						//	options.close();
     					});				
     				}										
     			);
