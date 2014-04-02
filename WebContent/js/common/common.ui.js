@@ -1463,6 +1463,7 @@
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
     					e.preventDefault();
+    					alert('hello');
     					that.element.find("[data-alert]").fadeOut(300, function(){
     						that.element.find("[data-alert]").remove();
     						if( isFunction(options.close))
