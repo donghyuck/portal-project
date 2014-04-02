@@ -1459,7 +1459,13 @@
     				that.template = options.template;
     			if( typeof options.data === UNDEFINED )
     				options.data = {};    			    			
-    			that.element.html( that.template( options.data ) );    			
+    			that.element.html( that.template( options.data ) );    		
+    			
+    			if( options.data.id == STRING )
+    			{    				
+    				alert($('#' +  options.data.id ).find('.alert').html());
+    			}
+    			
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
     					e.preventDefault();
