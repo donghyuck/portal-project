@@ -1446,7 +1446,8 @@
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
     common.ui.extAlert = Widget.extend({		
-    		init: function(element, options) {			
+    	init: function(element, options) {			
+    		
     			var that = this;
     			Widget.fn.init.call(that, element, options);
     			
@@ -1461,14 +1462,18 @@
     			if( typeof options.data === UNDEFINED )
     				options.data = {};    			    			
     			
-    			that.element.html( that.template( options.data ) );    		
+    			that.element.html( that.template( options.data ) );
     			
     			if( typeof options.data.id === STRING )
-    			{    				
-    				
-    				alert($('#' +  options.data.id ).find('.alert').html());
+    			{	
+    				var _alert = $('#' +  options.data.id ).find('.alert');    				
+    				_alert.bind('closed.bs.alert', function () {
+    					e.preventDefault();    					
+						if( isFunction(options.close))
+							options.close();					
+    				});    				
     			}
-    			
+			
     			that.element.find("[data-alert] a.close").click(
     				function(e){   
     					e.preventDefault();
@@ -1491,5 +1496,5 @@
     		extAlert : function ( options ) {
     			return new common.ui.extAlert ( this , options );		
     		}
-    	});
+   	});
 })(jQuery);
