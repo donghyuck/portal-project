@@ -243,21 +243,21 @@
 		<!-- ============================== -->							
 		function createInfoPanel(){					
 			var renderTo = common.api.guid();
-			var _effect =kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1) ;
-			
+
 			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
 			$("#personalized-area").extAlert({
 				template :  kendo.template($("#alert-panel-template").html()),
 				data : { id: renderTo, colSize: grid_col_size.newValue },
 				close : function(){				
 					alert( "fdsaf" );
-					_effect.reverse().then( function(e){		
+					kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
+						
 						alert("#" + renderTo);
 						$("#" + renderTo ).remove();
 					});					
 				}
 			})			
-			_effect.play();
+			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
 		}
 				
 		-->
