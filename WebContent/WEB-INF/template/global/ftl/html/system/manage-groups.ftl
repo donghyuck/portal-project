@@ -2,6 +2,7 @@
 <html decorator="secure">
     <head>
         <title>그룹 관리</title>
+<#compress>        
         <script type="text/javascript">
         <!--
         yepnope([{
@@ -498,6 +499,7 @@
 		}
 
 		</style>
+</#compress>		
     </head>
 	<body>
 		<!-- START HEADER -->

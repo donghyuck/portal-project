@@ -2,6 +2,7 @@
 <html decorator="secure">
     <head>
         <title>시스템 정보</title>
+<#compress>        
         <script type="text/javascript">                
         
         yepnope([{
@@ -237,6 +238,7 @@
 		</script>
 		<style>						
 		</style>
+</#compress>		
 	</head>
 	<body>
 		<!-- START HEADER -->
