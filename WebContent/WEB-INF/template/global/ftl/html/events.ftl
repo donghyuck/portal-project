@@ -97,12 +97,6 @@
 						}
 					}),	
 					columns: [
-					{
-						field: "announceId",
-                                title: "분류",
-                                width: "120px",
-                                sortable : false
-                            },
                             {
                                 field: "subject",
                                 title: "제목",
