@@ -195,6 +195,10 @@
 				</div>
 				<div class="col-lg-9">		
 				<div class="content-main-section">
+					<div class="page-header text-primary">
+						<h5 ><strong>공지 & 이벤트</strong>&nbsp;<small>알려드립니다.</small></h5>
+					</div>	
+													
 					<section id="announce-list-section" style="position: absolute;	">
 						<div id="announce-grid"></div>
 					</section>
