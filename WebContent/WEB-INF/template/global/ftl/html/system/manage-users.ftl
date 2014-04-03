@@ -134,8 +134,8 @@
                     },
                     columns: [
                         { field: "userId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" } , locked: true, lockable: false }, 
-                        { field: "username", title: "아이디", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" ,  , locked: true, lockable: false }, 
-                        { field: "name", title: "이름", width: 100 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" },  , locked: true, lockable: false }, 
+                        { field: "username", title: "아이디", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center"} ,locked: true, lockable: false }, 
+                        { field: "name", title: "이름", width: 100 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, locked: true, lockable: false }, 
                         { field: "email", title: "메일", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
                         { field: "enabled", title: "사용여부", width: 90, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
                         { field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy/MM/dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
