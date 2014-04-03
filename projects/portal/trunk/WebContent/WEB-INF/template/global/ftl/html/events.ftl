@@ -88,9 +88,6 @@
 									return {models: kendo.stringify(options.models)};
 								}
 							},
-							serverPaging: false,
-							serverFiltering: false,
-							serverSorting: false
 						},
 						pageSize: 15,
 						error:common.api.handleKendoAjaxError,				
