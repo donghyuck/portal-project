@@ -99,11 +99,13 @@
 					columns: [
 					{          field: "ID",
                                 title: "First Name",
-                                width: "120px"
+                                width: "120px",
+                                sortable : false
                             },
                             {
                                 field: "subject",
-                                title: "제목"
+                                title: "제목",
+                                sortable : false
                             },
                             {
                                 field: "creationDate",
