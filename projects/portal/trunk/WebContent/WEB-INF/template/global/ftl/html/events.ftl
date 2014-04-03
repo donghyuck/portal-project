@@ -96,7 +96,6 @@
 						}
 					},	
 					rowTemplate: kendo.template($("#announce-row-template").html()),
-					//altRowTemplate: kendo.template($("#altRowTemplate").html()),
 					height: 430
 				});				
 				/*
