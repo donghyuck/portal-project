@@ -74,6 +74,25 @@
 				
 				//var effect =  kendo.fx($("#announce-list-view-panel")).fadeOut().duration(700); 
 				$("#announce-list-view").data( "announcePlaceHolder", new Announce () );	
+				$("#announce-grid").kendoGrid({
+						dataSource: new kendo.data.DataSource({
+						transport: {
+							read: {
+								type : 'POST',
+								dataType : "json", 
+								url : '${request.contextPath}/community/list-announce.do?output=json'
+							},
+							parameterMap: function(options, operation) {
+								if (operation != "read" && options.models) {
+									return {models: kendo.stringify(options.models)};
+								}
+							} 
+						},
+						rowTemplate: kendo.template($("#announce-row-template").html()),
+						//altRowTemplate: kendo.template($("#altRowTemplate").html()),
+						height: 430
+				});				
+				/*
 				$("#announce-list-view").kendoListView({
 					dataSource: new kendo.data.DataSource({
 						transport: {
@@ -113,7 +132,8 @@
 						//this.select( this.element.children().first() );				
 					}
 				});
-            			
+            	*/
+            	/*
 				$("#announce-list-view-panel .panel-header-actions a").each(function( index ) {
 						var panel_header_action = $(this);						
 						if( panel_header_action.text() == "Minimize" ||  panel_header_action.text() == "Maximize" ){
@@ -135,7 +155,8 @@
 								$("#announce-list-view").data( "kendoListView").refresh();
 							});
 						}
-				} );											
+				} );			
+				*/								
 				<#if !action.user.anonymous >				
 				
 				</#if>	
@@ -254,7 +275,35 @@
 				<div class="col-lg-9">		
 				<div class="content-main-section">
 					<section id="announce-list-section" style="position: absolute;	">
-						<div id="announce-list-view"></div>	
+						<div id="announce-list-view">
+						
+						</div>	
+			<table id="announce-grid">
+				<colgroup>
+					<col class="photo" />
+					<col class="details"/>
+					<col/>
+				</colgroup>
+				<thead>
+					<tr>
+					<th>
+						Picture
+					</th>
+					<th>
+					Details
+					</th>
+					<th>
+					ID
+					</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="3"></td>
+					</tr>
+				</tbody>
+				</table>		
+				
 					</section>
 					<section id="announce-view-content-section" style="overflow: hidden; display:none;">						
 						<div id="announce-view-panel"></div>
@@ -264,6 +313,22 @@
 			</div>
 		</div>									 			
 		<!-- END MAIN CONTENT -->	
+		<script id="announce-row-template" type="text/x-kendo-tmpl">
+				<tr data-uid="#: uid #">
+		            <td class="photo">
+                       <img src="../../content/web/Employees/#:data.EmployeeID#.jpg" alt="#: data.EmployeeID #" />
+		            </td>
+		            <td class="details">
+			           <span class="title">#: Title #</span>
+			           <span class="description">Name : #: FirstName# #: LastName#</span>
+			           <span class="description">Country : #: Country# </span>
+		            </td>
+		            <td class="employeeID">
+		               #: EmployeeID #
+		            </td>
+	           </tr>
+		</script>
+				
 		<script id="announce-list-view-template" type="text/x-kendo-tmpl">
 		<div class="blank-space-5 col-xs-12 col-sm-6 col-md-4">
 			<div class="thumbnail">
