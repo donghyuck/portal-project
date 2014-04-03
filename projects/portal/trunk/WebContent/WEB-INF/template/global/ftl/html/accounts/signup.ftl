@@ -8,7 +8,9 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
 			'css!${request.contextPath}/styles/bootstrap/3.1.0/non-responsive.css',	
+			'css!${request.contextPath}/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css',	
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
+			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.with-mousewheel.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
@@ -31,6 +33,8 @@
 				$("#signup-form").data("signupPlaceHolder", new  SignupForm({}) );		
 				$("#signup-form").data("validatorPlaceHolder", new kendo.data.ObservableObject({}) );			
 										
+				$('#slideshow').perfectScrollbar('update');
+														
 				// INTERNAL SIGNUP WINDOW		
 				$('#signup-window').modal({show:true, backdrop:false});
 				$("#signup-window button.custom-social-groups").each(function( index ) {
@@ -155,6 +159,7 @@
 						}
 					});							
 				} );
+						
 						
 				/*   signup button 	*/					
 				$(":button.signup").click( function(e) {						
