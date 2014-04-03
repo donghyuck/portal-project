@@ -151,47 +151,13 @@
 			background: #428bca;
 			color: #ffffff; 
 		}
-
-		.k-listview div.k-state-selected{
-			/*background: #F98262;*/
-			background-color: transparent;
-			color: #ffffff; 
-		}
 		
 		#announce-list-section .k-grid-header .k-header {
 			text-align: center;
 		}
 
-
-		.k-listview:after
-		{
-			content: ".";
-			display: block;
-			height: 0;
-			clear: both;
-			visibility: hidden;
-		}
-		
-		.k-listview
-		{
-			padding: 0;
-			min-width: 300px;
-			min-height: 100px;
-			background-color: transparent;
-		}
-				
-		#announce-list-view {
-			padding: 0px;
-			border: 0px;		
-		}
-				
-		.announcement {
-			cursor: pointer;
-		}
-		
 		.content-main-section {
-			/** background: #F98262;	 */
-			overflow: hidden;			
+			/** background: #F98262;	 */	
 			width: 100%;
 			height: 100%;
 			min-height:500px;
