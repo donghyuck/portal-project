@@ -120,7 +120,6 @@
 			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );			
 			var template = kendo.template($('#announcement-detail-panel-template').html());			
 			
-			alert( kendo.stringify( announcePlaceHolder ) );
 			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );					
