@@ -74,7 +74,7 @@
 				// 1. Announces 				
 				
 				//var effect =  kendo.fx($("#announce-list-view-panel")).fadeOut().duration(700); 
-				$("#announce-list-view").data( "announcePlaceHolder", new Announce () );	
+				$("#announce-grid").data( "announcePlaceHolder", new Announce () );	
 				$("#announce-grid").kendoGrid({
 					dataSource: new kendo.data.DataSource({
 						transport: {
