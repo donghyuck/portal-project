@@ -2,6 +2,7 @@
 <html decorator="secure">
 <head>
 		<title>회사 관리</title>
+<#compress>		
 		<script type="text/javascript">
 		<!--
 		yepnope([{
@@ -504,6 +505,7 @@
 		}	
 	
 		</style>
+</#compress>		
 	</head>
 	<body>
 		<!-- START HEADER -->

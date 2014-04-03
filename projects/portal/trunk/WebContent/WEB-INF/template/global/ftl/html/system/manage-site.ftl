@@ -2,6 +2,7 @@
 <html decorator="secure">
 	<head>
 		<title>시스템 정보</title>
+<#compress>		
 		<script type="text/javascript"> 
 		yepnope([{
 			load: [ 
@@ -556,6 +557,7 @@
 			height:400px;
 		}			
 		</style>
+</#compress>		
 	</head>
 	<body>
 		<!-- START HEADER -->
