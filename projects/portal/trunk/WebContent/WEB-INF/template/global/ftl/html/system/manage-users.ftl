@@ -167,6 +167,8 @@
 							selectedUser.company = selectedCompany;
 							var observable = new kendo.data.ObservableObject( selectedUser ); 
 							
+							
+							
 							if( selectedUser.userId > 0 ){					
 							 	// 2. USER DETAILS
 							 	// $("#splitter").data("kendoSplitter").expand("#datail_pane");
@@ -175,6 +177,7 @@
 								kendo.bind($(".details"), selectedUser ); 
 							
 							alert(common.api.user.photoUrl(selectedUser.username, 150, 200 )) ;
+							
 							 	$('#user-photo').attr( 'src', common.api.user.photoUrl(selectedUser.username, 150, 200 ) );	
 							 	
 							 	observable.bind("change", function(e) {
@@ -927,7 +930,7 @@
 								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
 								<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
 								<li><a href="\\#roles" data-toggle="tab">롤</a></li>
-								<li><a href="\\#attachments" data-toggle="tab">첨부파일</a></li>
+								<!--<li><a href="\\#attachments" data-toggle="tab">첨부파일</a></li>-->
 							</ul>			
 							<div class="tab-content">
 								<div class="tab-pane active" id="props">
