@@ -97,23 +97,21 @@
 						}
 					}),	
 					columns: [
-                            {
-                                field: "subject",
-                                title: "제목",
-                                sortable : false
-                            },
-                            {
-                                field: "creationDate",
-                                title: "게시일",
-                                width: "120px",
-                                format: "{0:yyyy.MM.dd}"
-                            },
+						{field: "subject", title: "제목", sortable : false },
+						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
 					],
 					sortable: true,
 					pageable: false,
 					selectable: "single",
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					height: 430
+					change: function(e) { 
+						var data = this.dataSource.view() ;
+						var selectedCell = data[this.select().index()];		
+						$("#announce-list-view").data( "announcePlaceHolder", selectedCell );
+						//effect.play();					
+						displayAnnouncement();							
+					}			
 				});				
 				/*
 				$("#announce-list-view").kendoListView({
