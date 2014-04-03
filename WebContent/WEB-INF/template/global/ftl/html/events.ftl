@@ -322,7 +322,7 @@
 		<!-- END MAIN CONTENT -->	
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 				<tr data-uid="#: uid #">
-		            <td class="photo">
+		            <td>
                        
 		            </td>
 		            <td class="details">
