@@ -75,7 +75,7 @@
 				//var effect =  kendo.fx($("#announce-list-view-panel")).fadeOut().duration(700); 
 				$("#announce-list-view").data( "announcePlaceHolder", new Announce () );	
 				$("#announce-grid").kendoGrid({
-						dataSource: new kendo.data.DataSource({
+					dataSource: new kendo.data.DataSource({
 						transport: {
 							read: {
 								type : 'POST',
@@ -88,9 +88,16 @@
 								}
 							} 
 						},
-						rowTemplate: kendo.template($("#announce-row-template").html()),
-						//altRowTemplate: kendo.template($("#altRowTemplate").html()),
-						height: 430
+						pageSize: 10,
+						error:common.api.handleKendoAjaxError,				
+						schema: {
+							data : "targetAnnounces",
+							model : Announce
+						}
+					},	
+					rowTemplate: kendo.template($("#announce-row-template").html()),
+					//altRowTemplate: kendo.template($("#altRowTemplate").html()),
+					height: 430
 				});				
 				/*
 				$("#announce-list-view").kendoListView({
