@@ -283,8 +283,7 @@
 				<div class="col-lg-9">		
 				<div class="content-main-section">
 					<section id="announce-list-section" style="position: absolute;	">
-						<div id="announce-list-view">
-						
+						<div id="announce-list-view">						
 						</div>	
 			<table id="announce-grid">
 				<colgroup>
@@ -300,7 +299,7 @@
 					<th>
 					제목
 					</th>
-					<th>
+					<th class="text-center">
 					작성일
 					</th>
 					</tr>
@@ -329,7 +328,7 @@
 			           <span">#: subject #</span>
 			           <small>#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small>
 		            </td>
-		            <td>
+		            <td class="text-center">
 		              #: kendo.toString(creationDate, "yyyy.MM.dd") #
 		            </td>
 	           </tr>
