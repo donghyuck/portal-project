@@ -238,38 +238,9 @@
 				<div class="col-lg-9">		
 				<div class="content-main-section">
 					<section id="announce-list-section" style="position: absolute;	">
-						<div id="announce-list-view">						
-						</div>
-							<div id="announce-grid"></div>
-					<!--
-			<table id="announce-grid">
-				<colgroup>
-					<col class="photo" />
-					<col class="details"/>
-					<col width="120"/>
-				</colgroup>
-				<thead>
-					<tr>
-					<th>
-						분류
-					</th>
-					<th>
-					제목
-					</th>
-					<th>
-					작성일
-					</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td colspan="3"></td>
-					</tr>
-				</tbody>
-				</table>			
-							-->
+						<div id="announce-grid"></div>
 					</section>
-					<section id="announce-view-content-section" style="overflow: hidden; display:none;">						
+					<section id="announce-view-content-section" style="display:none;">						
 						<div id="announce-view-panel"></div>
 					</section>						
 				</div>
@@ -278,31 +249,16 @@
 		</div>									 			
 		<!-- END MAIN CONTENT -->	
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
-				<tr data-uid="#: uid #">
-		            <td>
-			          <span class="label label-info">공지</span>&nbsp;#: subject #	          
-		            </td>
-		            <td class="text-center">
-		              #: kendo.toString(creationDate, "yyyy.MM.dd") #
-		            </td>
-	           </tr>
+			<tr data-uid="#: uid #">
+				<td><span class="label label-info">공지</span>&nbsp;#: subject #	 </td>
+				<td class="text-center">#: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
+			</tr>
 		</script>
-				
-		<script id="announce-list-view-template" type="text/x-kendo-tmpl">
-		<div class="blank-space-5 col-xs-12 col-sm-6 col-md-4">
-			<div class="thumbnail">
-				<img src="http://fc00.deviantart.net/fs71/f/2010/190/8/2/Notice_by_kerokero13.jpg" alt="...">
-				<div class="caption">
-					<h5>#: subject #</h5>
-					<p class="text-muted"><small>#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small></p>
-				</div>
-			</div>
-		</div>
-		</script>
-		
+						
 		<script id="alert-message-template" type="text/x-kendo-tmpl">
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
-		</script>				
+		</script>			
+			
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->	
