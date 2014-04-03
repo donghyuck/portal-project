@@ -154,7 +154,7 @@
 									serverPaging: false,
 									serverFiltering: false,
 									serverSorting: false,                        
-									error: handleKendoAjaxError
+									error: common.api.handleKendoAjaxError
 								},
 								toolbar: [ { text: "쇼셜 연결 추가", css:"createSocialCustom" } ],   
 								columns:[
@@ -213,7 +213,7 @@
 											},
 											error: function(){
 												socialWindow.close();
-												handleKendoAjaxError();
+												common.api.handleKendoAjaxError();
 											},
 											dataType : 'json'
 										});	
@@ -282,7 +282,7 @@
 									serverPaging: true,
 									serverFiltering: false,
 									serverSorting: false,                        
-									error: handleKendoAjaxError
+									error: common.api.handleKendoAjaxError
 								},
 								columns:[
 									{ field: "attachmentId", title: "ID",  width: 50, filterable: false, sortable: false },
@@ -360,7 +360,7 @@
 									serverPaging: true,
 									serverFiltering: false,
 									serverSorting: false,                        
-									error: handleKendoAjaxError
+									error: common.api.handleKendoAjaxError
 								},
 								columns:[
 									{ field: "imageId", title: "ID",  width: 50, filterable: false, sortable: false , locked: true, lockable: false },
