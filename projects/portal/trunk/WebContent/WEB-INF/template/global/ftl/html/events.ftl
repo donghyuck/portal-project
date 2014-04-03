@@ -349,12 +349,8 @@
 		<!-- END MAIN CONTENT -->	
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 				<tr data-uid="#: uid #">
-		            <td class="text-center">
-		            
-		            </td>
 		            <td>
-			          <span class="label label-danger">공지</span>#: subject #
-			          (<small>게시 기간:#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small>)			          
+			          <span class="label label-danger">공지</span>&nbsp;#: subject #	          
 		            </td>
 		            <td class="text-center">
 		              #: kendo.toString(creationDate, "yyyy.MM.dd") #
