@@ -111,6 +111,7 @@
                                 width: "120px"
                             },
 					],
+					sortable: true,
 					selectable: "single",
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					height: 430
