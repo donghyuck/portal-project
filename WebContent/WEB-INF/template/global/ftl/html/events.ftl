@@ -316,15 +316,14 @@
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 				<tr data-uid="#: uid #">
 		            <td class="photo">
-                       <img src="../../content/web/Employees/#:data.EmployeeID#.jpg" alt="#: data.EmployeeID #" />
+                       
 		            </td>
 		            <td class="details">
-			           <span class="title">#: Title #</span>
-			           <span class="description">Name : #: FirstName# #: LastName#</span>
-			           <span class="description">Country : #: Country# </span>
+			           <span">#: subject #</span>
+			           <small>#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small>
 		            </td>
-		            <td class="employeeID">
-		               #: EmployeeID #
+		            <td>
+		              
 		            </td>
 	           </tr>
 		</script>
