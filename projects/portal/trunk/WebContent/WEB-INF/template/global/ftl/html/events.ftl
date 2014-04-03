@@ -300,7 +300,7 @@
 					제목
 					</th>
 					<th>
-					ID
+					작성일
 					</th>
 					</tr>
 				</thead>
@@ -309,8 +309,7 @@
 						<td colspan="3"></td>
 					</tr>
 				</tbody>
-				</table>		
-				
+				</table>						
 					</section>
 					<section id="announce-view-content-section" style="overflow: hidden; display:none;">						
 						<div id="announce-view-panel"></div>
@@ -330,7 +329,7 @@
 			           <small>#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small>
 		            </td>
 		            <td>
-		              
+		              #: kendo.toString(creationDate, "yyyy.MM.dd") #
 		            </td>
 	           </tr>
 		</script>
