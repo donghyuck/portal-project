@@ -422,13 +422,14 @@
 		</div>
 	</div>
 </script>
+
 <!-- EVENT -->
 <script type="text/x-kendo-tmpl" id="announcement-detail-panel-template">		
 	<div class="panel panel-default panel-flat">
 		<div class="panel-heading">
-			<button type="button" class="close" aria-hidden="true"><i class="fa fa-times fa-2x"></i></button>
+			<button type="button" class="close" aria-hidden="true"><img src="${request.contextPath}/images/cross.png" height="18"/></button>
 			<h4 data-bind="html:subject"></h4>
-			<small class="text-muted"><span class="label label-info">알림 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>					
+			<small class="text-muted"><span class="label label-info">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>					
 		</div>
 		<div class="panel-body" data-bind="html:body"></div>	
 	</div>
