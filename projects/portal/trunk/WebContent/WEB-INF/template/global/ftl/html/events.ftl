@@ -104,7 +104,7 @@
 					pageable: false,
 					selectable: "single",
 					rowTemplate: kendo.template($("#announce-row-template").html()),
-					height: 430
+					height: 430,
 					change: function(e) { 
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
