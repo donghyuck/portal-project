@@ -33,7 +33,7 @@
 				$("#signup-form").data("signupPlaceHolder", new  SignupForm({}) );		
 				$("#signup-form").data("validatorPlaceHolder", new kendo.data.ObservableObject({}) );			
 										
-				$('#slideshow').perfectScrollbar('update');
+				$('body').perfectScrollbar('update');
 														
 				// INTERNAL SIGNUP WINDOW		
 				$('#signup-window').modal({show:true, backdrop:false});
