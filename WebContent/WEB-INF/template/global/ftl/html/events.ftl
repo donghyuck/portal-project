@@ -354,7 +354,7 @@
 		            </td>
 		            <td>
 			          <h5>#: subject #</h5>
-			          <p class="text-muted"><small>게시 기간:#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small></p>			          
+			          (<small>게시 기간:#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small>)			          
 		            </td>
 		            <td class="text-center">
 		              #: kendo.toString(creationDate, "yyyy.MM.dd") #
