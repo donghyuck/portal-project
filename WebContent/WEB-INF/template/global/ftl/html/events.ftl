@@ -97,18 +97,19 @@
 						}
 					}),	
 					columns: [
-					{          field: "FirstName",
+					{          field: "ID",
                                 title: "First Name",
                                 width: "120px"
                             },
                             {
-                                field: "LastName",
-                                title: "Last Name",
+                                field: "subject",
+                                title: "제목",
                                 width: "120px"
                             },
                             {
-                                field: "creationDate",
-                                width: "120px"
+                                field: "게시일",
+                                width: "120px",
+                                format: "{0:yyyy.MM.dd}"
                             },
 					],
 					sortable: true,
