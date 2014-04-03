@@ -106,10 +106,9 @@
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					height: 430
 					change: function(e) { 
-						var data = this.dataSource.view() ;
-						var selectedCell = data[this.select().index()];		
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
 						$("#announce-list-view").data( "announcePlaceHolder", selectedCell );
-						//effect.play();					
 						displayAnnouncement();							
 					}			
 				});				
