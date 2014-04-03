@@ -24,7 +24,6 @@
 			
 				// 1.  한글 지원을 위한 로케일 설정
 				kendo.culture("ko-KR");
-				      
 				// START SCRIPT	
 
 				var currentUser = new User({});			
@@ -72,8 +71,7 @@
 				});				
 
 				// 1. Announces 				
-				$("#announce-grid").data( "announcePlaceHolder", new Announce () );	
-				
+				//$("#announce-grid").data( "announcePlaceHolder", new Announce () );					
 				$("#announce-grid").kendoGrid({
 					dataSource: new kendo.data.DataSource({
 						transport: {
@@ -107,7 +105,6 @@
 					change: function(e) { 
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						
 						$("#announce-gird").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement();
 					}			
