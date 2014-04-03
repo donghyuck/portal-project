@@ -1,6 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="secure">
     <head>
+	<#compress>
         <title>사용자 관리</title>
         <script type="text/javascript">                
         yepnope([{
@@ -712,6 +713,7 @@
 		}
 		
 		</style>
+		</#compress>
     </head>
 	<body>
 		<!-- START HEADER -->
