@@ -121,8 +121,7 @@
 		}]);	
 		
 		function displayAnnouncement () {			
-			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );
-			
+			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );			
 			var template = kendo.template($('#announcement-detail-panel-template').html());			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );		
