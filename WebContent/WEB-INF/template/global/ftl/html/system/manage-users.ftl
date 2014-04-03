@@ -174,6 +174,7 @@
 							 	$('#user-details').show().html(kendo.template($('#user-details-template').html()));							 	
 								kendo.bind($(".details"), selectedUser ); 
 							
+							alert(common.api.user.photoUrl(selectedUser.username, 150, 200 )) ;
 							 	$('#user-photo').attr( 'src', common.api.user.photoUrl(selectedUser.username, 150, 200 ) );	
 							 	
 							 	observable.bind("change", function(e) {
