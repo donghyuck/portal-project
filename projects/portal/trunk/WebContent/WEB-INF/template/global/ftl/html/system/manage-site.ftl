@@ -11,7 +11,7 @@
 			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo/kendo.ko_KR.js',       	   
+			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			 
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js', 
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
