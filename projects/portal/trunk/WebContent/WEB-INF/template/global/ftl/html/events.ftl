@@ -290,7 +290,7 @@
 				<colgroup>
 					<col class="photo" />
 					<col class="details"/>
-					<col width="80"/>
+					<col width="120"/>
 				</colgroup>
 				<thead>
 					<tr>
