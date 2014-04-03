@@ -107,7 +107,7 @@
 					change: function(e) { 
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						alert( kendo.stringify( selectedCell ) );
+						
 						$("#announce-gird").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement();
 					}			
@@ -122,6 +122,9 @@
 		function displayAnnouncement () {			
 			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );			
 			var template = kendo.template($('#announcement-detail-panel-template').html());			
+			
+			alert( kendo.stringify( announcePlaceHolder ) );
+			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );					
 			$("#announce-view-panel").removeClass('hide');				
