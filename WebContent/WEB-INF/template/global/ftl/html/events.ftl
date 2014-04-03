@@ -214,6 +214,11 @@
 			background-color: transparent;
 			color: #ffffff; 
 		}
+		
+		#announce-grid .k-grid-header .k-header {
+			text-align: center;
+		}
+
 
 		.k-listview:after
 		{
