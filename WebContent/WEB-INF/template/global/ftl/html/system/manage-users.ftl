@@ -173,7 +173,12 @@
 							 	 
 							 	$('#user-details').show().html(kendo.template($('#user-details-template').html()));							 	
 								kendo.bind($(".details"), selectedUser ); 
-														 	
+							
+							 	if( selectedUser.properties.imageId ){
+							 		var photoUrl = common.api.user.photoUrl(selectedUser.username, 150, 200 );							 		
+							 	 	$('#user-photo').attr( 'src', photoUrl );
+							 	}		
+							 	
 							 	observable.bind("change", function(e) {
 									$('#update-user-btn').removeAttr('disabled');
 								});
@@ -853,7 +858,7 @@
 				<div class="panel-body" style="padding:5px;">					
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
-							<img id="user-photo" class="img-thumbnail media-object" data-bind="attr:{src:common.api.user.photoUrl(username, 100, 150)}"  src="${request.contextPath}/images/common/anonymous.png" border="0"/>				
+							<img id="user-photo" class="img-thumbnail media-object"  src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
 						</a>
 						<small><span class="help-block"><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하십시오.</span></small>
 						<ul class="dropdown-menu">
