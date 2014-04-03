@@ -330,8 +330,9 @@
                        
 		            </td>
 		            <td>
-			           <p class="text-info">#: subject #</p>
+			           <p class="text-info">#: subject #
 			           <small>#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small>
+			           </p>
 		            </td>
 		            <td class="text-center">
 		              #: kendo.toString(creationDate, "yyyy.MM.dd") #
