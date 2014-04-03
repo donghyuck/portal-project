@@ -149,7 +149,7 @@
 						serverPaging: true,
 						serverFiltering: false,
 						serverSorting: false,                        
-						error: handleKendoAjaxError
+						error: common.api.handleKendoAjaxError
 					},
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
@@ -206,7 +206,7 @@
 															data: "targetCompanyProperty",
 															model: Property
 														},
-														error:handleKendoAjaxError
+														error:common.api.handleKendoAjaxError
 													},
 													columns: [
 														{ title: "속성", field: "name" },
@@ -250,7 +250,7 @@
 															data: "companyGroups",
 															model: Group
 														},
-														error:handleKendoAjaxError
+														error:common.api.handleKendoAjaxError
 													},
 													//height: 350,
 													scrollable: true,
@@ -282,7 +282,7 @@
 														data: "users",
 														model: User
 													},
-													error:handleKendoAjaxError,
+													error:common.api.handleKendoAjaxError,
 													batch: false,
 													pageSize: 10,
 													serverPaging: true,
@@ -348,7 +348,7 @@
 						serverPaging: true,
 						serverFiltering: false,
 						serverSorting: false,  
-						error:handleKendoAjaxError
+						error:common.api.handleKendoAjaxError
 					},
 					columns: [
 						{ title: "ID", field: "menuId",  width:40 },
@@ -397,7 +397,7 @@
 										success : function( response ){									
 										    $('#menu-grid').data('kendoGrid').dataSource.read();	
 										},
-										error: handleKendoAjaxError,
+										error: common.api.handleKendoAjaxError,
 										dataType : "json"
 									});	
 								}else{
@@ -408,7 +408,7 @@
 										success : function( response ){									
 										    $('#menu-grid').data('kendoGrid').dataSource.read();	
 										},
-										error: handleKendoAjaxError,
+										error: common.api.handleKendoAjaxError,
 										dataType : "json"
 									});											
 								}
@@ -473,7 +473,7 @@
 									data: "roles",
 									model: Role
 								},
-								error:handleKendoAjaxError
+								error:common.api.handleKendoAjaxError
 							},
 							columns: [
 								{ title: "ID", field: "roleId",  width:40 },
