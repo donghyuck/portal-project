@@ -97,8 +97,8 @@
 						}
 					}),	
 					columns: [
-					{          field: "ID",
-                                title: "First Name",
+					{
+                                title: "분류",
                                 width: "120px",
                                 sortable : false
                             },
@@ -320,7 +320,7 @@
 				<thead>
 					<tr>
 					<th>
-						Picture
+						분류
 					</th>
 					<th>
 					제목
