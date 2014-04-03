@@ -61,48 +61,34 @@ img.img-full-height {
 	max-height: 100%;
 }
 
-
-
-/**
-
-		.overlay.color9 a.btn-link, .overlay.color9 button.btn-link {
-			color : #333;	
-		}
-		
-		.overlay.color9 > a:hover, .overlay.color9 >  a:focus {	
-			color : red;
-			background-color: rgba( 91, 192, 222, 0.7 );
-		}
-**/		
-/* Bootstrap customize --------------------- */
-
-/**
-.btn-img {
-  float: left;
-  font-size: 21px;
-  font-weight: bold;
-  line-height: 1;
-  filter: alpha(opacity=60);
-  opacity: .6;
-}
-.btn-img:hover,
-.btn-img:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-  filter: alpha(opacity=50);
-  opacity: .5;
+/* -------------------------------------------- */
+/* Kendoui customize                              */
+/* -------------------------------------------- */
+.k-button.k-upload-button {
+	min-width: 120px;
 }
 
-button.btn-img {
-  -webkit-appearance: none;
-  padding: 0;
-  cursor: pointer;
-  background: transparent;
-  border: 0;
+.panel .k-button.k-upload-button {
+	min-width: 120px; 
+	float: right;
 }
-**/
 
+.panel .k-dropzone {
+	border: 2px dashed #d4d4d4;
+	background-color: #f7f7f7;
+	position: relative;	
+	text-align: center;
+	padding: 34px 34px 40px 10px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	border-radius: 18px;
+	margin: 20px 0 0 0;
+}
+	
+
+/* -------------------------------------------- */
+/* Bootstrap customize                             */
+/* -------------------------------------------- */
 
 .btn-img {
   font-weight: normal;
@@ -128,31 +114,7 @@ button.btn-img {
   /*background-color: rgba( 91, 192, 222, 0.7 );*/
   border-color: transparent;
 }
-
-/* Kendoui customize ----------------------- */
-.k-button.k-upload-button {
-	min-width: 120px;
-}
-
-.panel .k-button.k-upload-button {
-	min-width: 120px; 
-	float: right;
-}
-
-.panel .k-dropzone {
-	border: 2px dashed #d4d4d4;
-	background-color: #f7f7f7;
-	position: relative;	
-	text-align: center;
-	padding: 34px 34px 40px 10px;
-	-webkit-border-radius: 18px;
-	-moz-border-radius: 18px;
-	border-radius: 18px;
-	margin: 20px 0 0 0;
-}
-		
-
-/* Bootstrap customize---------------------- */
+	
 .jumbotron-page-header {
 	margin-top: -20px;
 	padding-top: 20px;
@@ -176,19 +138,6 @@ button.btn-img {
 	color: #ffffff;
 }
 
-/*
-.full-width-container {
-	width:100%;
-	padding-left: 15px;
-	padding-right: 15px;
-	margin-left: auto;
-	margin-right: auto;		
-}
-
-.full-width-row {
-	margin: 0 15px;
-}
-*/
 .margin-top-minus-20 {
 	margin-top: -20px;
 }
@@ -299,8 +248,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	box-shadow: none;
 }
 
-/** personalized section  */
 
+
+/** personalized section  */
 
 nav.personalized-navbar {
 	/* height: 120px; */
@@ -481,51 +431,7 @@ background-color: #13A7C7;
 	background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(71, 163, 218,1) 100%);
 	background: radial-gradient(center, ellipse cover, rgba(255,255,255,0.56) 0%,rgba(71, 163, 218,1) 100%);
 }
-/*
-.lb-overlay > div {
-	position: relative;
-	color: rgba(27,54,81,0.8);
-	opacity: 0;
-	filter: alpha(opacity=0); 
-    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)"; 
-	width: 565px;
-	margin: 10px auto 0px auto;
-	text-shadow: 0px 1px 1px rgba(255,255,255,0.6);
-	-webkit-transition: opacity 0.3s linear 1.3s;
-	-moz-transition: opacity 0.3s linear 1.3s;
-	-o-transition: opacity 0.3s linear 1.3s;
-	-ms-transition: opacity 0.3s linear 1.3s;
-	transition: opacity 0.3s linear 1.3s;
-}
 
-.lb-overlay div h3,
-.lb-overlay div p{
-	padding: 0px 20px;
-	width: 200px;
-	height: 60px;
-}
-.lb-overlay div h3{
-	font-size: 36px;
-	float: left;
-	text-align: right;
-	border-right: 1px solid rgba(27,54,81,0.4);
-}
-.lb-overlay div h3 span,
-.lb-overlay div p{
-	font-size: 16px;
-	font-family: Constantia, Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
-	font-style: italic;
-}
-.lb-overlay div h3 span{
-	display: block;
-	line-height: 6px;
-}
-.lb-overlay div p{
-	text-align: left;
-	float: left;
-	width: 260px;
-}
-*/
 .lb-overlay a.lb-overlay-close {
 	width: 80px;
 	height: 80px;
@@ -632,8 +538,6 @@ section.hide-effect {
 	z-index: 0;
 }
 
-
-
 /** Main body ------------------------------------ */
 .shadowed-text {
 	text-shadow: 0px 1px 1px #4d4d4d;
@@ -653,6 +557,8 @@ body {
 	font-weight: normal;
 	font-style: normal;
 	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
 }
 
 body.noscroll{
