@@ -103,8 +103,7 @@
                             },
                             {
                                 field: "subject",
-                                title: "제목",
-                                width: "120px"
+                                title: "제목"
                             },
                             {
                                 field: "creationDate",
