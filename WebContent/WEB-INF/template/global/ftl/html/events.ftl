@@ -110,7 +110,7 @@
                             },
 					],
 					sortable: true,
-					pageable: true,
+					pageable: false,
 					selectable: "single",
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					height: 430
