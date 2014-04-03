@@ -290,7 +290,7 @@
 				<colgroup>
 					<col class="photo" />
 					<col class="details"/>
-					<col/>
+					<col width="80"/>
 				</colgroup>
 				<thead>
 					<tr>
@@ -300,7 +300,7 @@
 					<th>
 					제목
 					</th>
-					<th width="80">
+					<th>
 					작성일
 					</th>
 					</tr>
