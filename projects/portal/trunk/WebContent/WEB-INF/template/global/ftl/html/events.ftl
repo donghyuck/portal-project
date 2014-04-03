@@ -266,8 +266,8 @@
 		<!-- END MAIN CONTENT -->	
 		<script id="announce-list-view-template" type="text/x-kendo-tmpl">
 		<div class="blank-space-5 col-xs-12 col-sm-6 col-md-4">
-			<div class="thumbnail thumbnail-flat"><!--
-				<img src="http://fc00.deviantart.net/fs71/f/2010/190/8/2/Notice_by_kerokero13.jpg" alt="...">-->
+			<div class="thumbnail thumbnail-flat">
+				<img src="http://fc00.deviantart.net/fs71/f/2010/190/8/2/Notice_by_kerokero13.jpg" alt="...">
 				<div class="caption">
 					<h5>#: subject #</h5>
 					<p class="text-muted"><small>#: kendo.toString(startDate, "yyyy.MM.dd hh:mm") # ~  #: kendo.toString(endDate, "yyyy.MM.dd hh:mm") #</small></p>
