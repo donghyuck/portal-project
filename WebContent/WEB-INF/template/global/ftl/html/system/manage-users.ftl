@@ -149,7 +149,8 @@
                     toolbar: [
 					 	{ name: "create-user", text: "새로운 사용자 생성하기", className: "createUserCustomClass" } ],
                     change: function(e) {                    
-                        var selectedCells = this.select();                        
+                        var selectedCells = this.select();             
+                        alert("---------");           
   						if( selectedCells.length == 1){ 
                             var selectedCell = this.dataItem( selectedCells ); 
                             selectedUser.userId = selectedCell.userId ; 
@@ -167,9 +168,6 @@
 							selectedUser.properties = selectedCell.properties;							 							 
 							selectedUser.company = selectedCompany;
 							var observable = new kendo.data.ObservableObject( selectedUser ); 
-							
-							alert(" ");
-														
 							
 							if( selectedUser.userId > 0 ){					
 							 	// 2. USER DETAILS
