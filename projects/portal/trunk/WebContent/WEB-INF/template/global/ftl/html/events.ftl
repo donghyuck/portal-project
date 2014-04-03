@@ -327,7 +327,6 @@
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 				<tr data-uid="#: uid #">
 		            <td>
-                       
 		            </td>
 		            <td>
 			          <h5>#: subject #</h5>
