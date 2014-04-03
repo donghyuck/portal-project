@@ -195,8 +195,8 @@
 				</div>
 				<div class="col-lg-9">		
 				<div class="content-main-section">
-					<div class="page-header">
-						<h4 ><strong>공지 & 이벤트</strong>&nbsp;<small>알려드립니다.</small></h4>
+					<div class="page-header text-primary">
+						<h6 ><strong>공지 & 이벤트</strong>&nbsp;<small>게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h6>
 					</div>	
 													
 					<section id="announce-list-section" style="position: absolute;	">
