@@ -299,8 +299,8 @@
 					<th>
 					제목
 					</th>
-					<th class="text-center">
-					작성일
+					<th>
+					<span class="text-center">작성일</span>
 					</th>
 					</tr>
 				</thead>
