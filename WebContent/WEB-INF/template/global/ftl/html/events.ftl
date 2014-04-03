@@ -146,11 +146,6 @@
 			font-size: 15px;
 		}
 
-		.k-grid table tr.k-state-selected{
-			background: #428bca;
-			color: #ffffff; 
-		}
-		
 		#announce-list-section .k-grid-header .k-header {
 			text-align: center;
 		}
