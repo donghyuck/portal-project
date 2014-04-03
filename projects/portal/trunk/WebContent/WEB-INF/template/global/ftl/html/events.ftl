@@ -87,9 +87,12 @@
 								if (operation != "read" && options.models) {
 									return {models: kendo.stringify(options.models)};
 								}
-							} 
+							},
+							serverPaging: false,
+							serverFiltering: false,
+							serverSorting: false
 						},
-						pageSize: 10,
+						pageSize: 15,
 						error:common.api.handleKendoAjaxError,				
 						schema: {
 							data : "targetAnnounces",
@@ -110,6 +113,7 @@
                             },
 					],
 					sortable: true,
+					pageable: true,
 					selectable: "single",
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					height: 430
