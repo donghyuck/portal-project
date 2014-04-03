@@ -142,6 +142,7 @@
                         { field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],         
                     filterable: true,
                     sortable: true,
+                    resizable: true,
                     pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
                     selectable: 'row',
                     height: '100%',
