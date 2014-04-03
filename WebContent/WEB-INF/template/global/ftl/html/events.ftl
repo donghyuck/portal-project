@@ -305,7 +305,7 @@
 					제목
 					</th>
 					<th>
-					<span class="text-center">작성일</span>
+					작성일
 					</th>
 					</tr>
 				</thead>
