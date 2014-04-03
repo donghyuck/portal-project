@@ -438,7 +438,7 @@
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="announcement-view-template">		
 	<h4 data-bind="html:subject"></h4>
-	<small><span class="label label-primary">기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small><br>
+	<small><span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small><br>
 	<div class="media">
 		<a class="pull-left" href="\\#">
 		<img src="${request.contextPath}/download/profile/#: user.username #?width=150&height=150" width="30" height="30" class="img-rounded">
