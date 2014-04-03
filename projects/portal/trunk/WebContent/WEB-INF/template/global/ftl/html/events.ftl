@@ -215,7 +215,7 @@
 			color: #ffffff; 
 		}
 		
-		#announce-grid .k-grid-header .k-header {
+		#content-main-section .k-grid-header .k-header {
 			text-align: center;
 		}
 
