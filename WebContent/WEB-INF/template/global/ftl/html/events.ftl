@@ -349,6 +349,7 @@
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 				<tr data-uid="#: uid #">
 		            <td>
+		            <span class="label label-danger">공지</span>
 		            </td>
 		            <td>
 			          <h5>#: subject #</h5>
