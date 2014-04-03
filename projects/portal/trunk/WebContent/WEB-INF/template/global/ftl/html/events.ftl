@@ -105,7 +105,7 @@
 					change: function(e) { 
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						$("#announce-gird").data( "announcePlaceHolder", selectedCell );
+						$("#announce-grid").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement();
 					}			
 				});							
