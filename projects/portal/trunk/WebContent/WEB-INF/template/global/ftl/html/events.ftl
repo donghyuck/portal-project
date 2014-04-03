@@ -107,7 +107,8 @@
                                 width: "120px"
                             },
                             {
-                                field: "게시일",
+                                field: "creationDate",
+                                title: "게시일",
                                 width: "120px",
                                 format: "{0:yyyy.MM.dd}"
                             },
