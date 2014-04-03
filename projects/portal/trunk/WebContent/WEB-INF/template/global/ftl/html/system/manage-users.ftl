@@ -197,11 +197,11 @@
 									    	 e.data = { userId: selectedUser.userId , imageId:imageId  };									    								    	 		    	 
 									    },
 									    success : function(e) {								    
-									    	if( e.response.targetUserImage ){
+									    	/**if( e.response.targetUserImage ){
 									    		selectedUser.properties.imageId = e.response.targetUserImage.imageId;
 									    		var photoUrl = '${request.contextPath}/secure/view-image.do?width=150&height=200&imageId=' + selectedUser.properties.imageId ;
 								 	 			$('#user-photo').attr( 'src', photoUrl );
-									    	}				
+									    	}	**/			
 									    }					   
 									});
 							 	}	
