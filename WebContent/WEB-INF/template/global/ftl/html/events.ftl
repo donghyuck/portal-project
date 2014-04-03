@@ -297,7 +297,7 @@
 						Picture
 					</th>
 					<th>
-					Details
+					제목
 					</th>
 					<th>
 					ID
