@@ -108,75 +108,11 @@
 					change: function(e) { 
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						$("#announce-list-view").data( "announcePlaceHolder", selectedCell );
+						$("#announce-gird").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement();							
 					}			
 				});				
-				/*
-				$("#announce-list-view").kendoListView({
-					dataSource: new kendo.data.DataSource({
-						transport: {
-							read: {
-								type : 'POST',
-								dataType : "json", 
-								url : '${request.contextPath}/community/list-announce.do?output=json'
-							},
-							parameterMap: function(options, operation) {
-								if (operation != "read" && options.models) {
-									return {models: kendo.stringify(options.models)};
-								}
-							} 
-						},
-						pageSize: 10,
-						error:handleKendoAjaxError,				
-						schema: {
-							data : "targetAnnounces",
-							model : Announce
-						}
-					}),
-					selectable: "single",
-					template: kendo.template($("#announce-list-view-template").html()),
-					change: function(e) { 
-						var data = this.dataSource.view() ;
-						var selectedCell = data[this.select().index()];		
-						$("#announce-list-view").data( "announcePlaceHolder", selectedCell );
-						//effect.play();					
-						displayAnnouncement();							
-					},
-					dataBound: function(e) {
-						if( this.dataSource.data().length == 0 ){
-						//	$("#announce-view-panel").html( 
-						//		$('#alert-message-template').html() 
-						//	);
-						}							
-						//this.select( this.element.children().first() );				
-					}
-				});
-            	*/
-            	/*
-				$("#announce-list-view-panel .panel-header-actions a").each(function( index ) {
-						var panel_header_action = $(this);						
-						if( panel_header_action.text() == "Minimize" ||  panel_header_action.text() == "Maximize" ){
-							panel_header_action.click(function (e) {
-								e.preventDefault();		
-								$("#announce-list-view-panel .panel-body, #announce-list-view-panel .list-group ").toggleClass("hide");
-								var panel_header_action_icon = panel_header_action.find('span');
-								if( panel_header_action_icon.hasClass("k-i-minimize") ){
-									panel_header_action.find('span').removeClass("k-i-minimize");
-									panel_header_action.find('span').addClass("k-i-maximize");
-								}else{
-									panel_header_action.find('span').removeClass("k-i-maximize");
-									panel_header_action.find('span').addClass("k-i-minimize");
-								}								
-							});
-						} else if (panel_header_action.text() == "Refresh" ){
-							panel_header_action.click(function (e) {
-								e.preventDefault();		
-								$("#announce-list-view").data( "kendoListView").refresh();
-							});
-						}
-				} );			
-				*/								
+					
 				<#if !action.user.anonymous >				
 				
 				</#if>	
@@ -185,12 +121,14 @@
 		}]);	
 		
 		function displayAnnouncement () {			
-			var announcePlaceHolder = $("#announce-list-view").data( "announcePlaceHolder" );
+			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );
+			
 			var template = kendo.template($('#announcement-detail-panel-template').html());			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );		
 			
 			$("#announce-view-panel").removeClass('hide');		
+			
 			var zoom = kendo.fx($("#announce-list-section")).zoom("out").endValue(0).startValue(1), slide = kendo.fx($("#announce-view-content-section")).slideIn("up") ;
 			zoom.play();
 			
