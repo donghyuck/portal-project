@@ -309,8 +309,8 @@
 					<section id="announce-list-section" style="position: absolute;	">
 						<div id="announce-list-view">						
 						</div>
-							<!--<div id="announce-grid">	</div>	-->
-					
+							<div id="announce-grid"></div>
+					<!--
 			<table id="announce-grid">
 				<colgroup>
 					<col class="photo" />
@@ -336,7 +336,7 @@
 					</tr>
 				</tbody>
 				</table>			
-							
+							-->
 					</section>
 					<section id="announce-view-content-section" style="overflow: hidden; display:none;">						
 						<div id="announce-view-panel"></div>
