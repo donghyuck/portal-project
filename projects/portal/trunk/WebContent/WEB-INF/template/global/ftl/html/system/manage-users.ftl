@@ -149,8 +149,7 @@
                     toolbar: [
 					 	{ name: "create-user", text: "새로운 사용자 생성하기", className: "createUserCustomClass" } ],
                     change: function(e) {                    
-                        var selectedCells = this.select();             
-                        alert("---------");           
+                        var selectedCells = this.select();                 
   						if( selectedCells.length == 1){ 
                             var selectedCell = this.dataItem( selectedCells ); 
                             selectedUser.userId = selectedCell.userId ; 
@@ -171,19 +170,13 @@
 							
 							if( selectedUser.userId > 0 ){					
 							 	// 2. USER DETAILS
-							 	// $("#splitter").data("kendoSplitter").expand("#datail_pane");
-							 	 
+							 	// $("#splitter").data("kendoSplitter").expand("#datail_pane");							 	 
 							 	$('#user-details').show().html(kendo.template($('#user-details-template').html()));							 	
 								kendo.bind($(".details"), selectedUser ); 
-							
-							alert(common.api.user.photoUrl(selectedUser.username, 150, 200 )) ;
-							
-							 	$('#user-photo').attr( 'src', common.api.user.photoUrl(selectedUser.username, 150, 200 ) );	
-							 	
+							 	$('#user-photo').attr( 'src', common.api.user.photoUrl(selectedUser, 150, 200 ) );								 	
 							 	observable.bind("change", function(e) {
 									$('#update-user-btn').removeAttr('disabled');
-								});
-							 								 	
+								});							 								 	
 							 	if(!$("#files").data("kendoUpload")){
 								 	$("#files").kendoUpload({
 									 	multiple : false,
