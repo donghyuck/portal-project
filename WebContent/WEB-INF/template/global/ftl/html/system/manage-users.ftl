@@ -168,7 +168,7 @@
 							selectedUser.company = selectedCompany;
 							var observable = new kendo.data.ObservableObject( selectedUser ); 
 							
-							alert(common.api.user.photoUrl(selectedUser.username, 150, 200 )) ;
+							alert(" ");
 														
 							
 							if( selectedUser.userId > 0 ){					
