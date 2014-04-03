@@ -94,7 +94,7 @@
 							data : "targetAnnounces",
 							model : Announce
 						}
-					},	
+					}),	
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					height: 430
 				});				
