@@ -8,6 +8,11 @@
 		-->
 		</script>
 		</#if>		
+		<#if action.webSite ?? >
+		<#assign webSite = webSite />		
+		${webSite.displayName}
+		</#if>
+		
 		<#if action.getMenuComponent("USER_MENU") ?? >
 		<#assign menu = action.getMenuComponent("USER_MENU") />			
 				<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
