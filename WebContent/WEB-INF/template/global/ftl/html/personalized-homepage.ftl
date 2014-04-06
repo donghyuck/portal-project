@@ -1412,7 +1412,7 @@
 									<div class="tab-pane" id="my-files">
 										<section class="side1">
 											<div class="btn-group">
-												<button type="button" class="btn btn-info"><i class="fa fa-upload"></i> &nbsp; 파일업로드</button>	
+												<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 파일업로드</button>	
 											</div>			
 											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-warning active">
@@ -1450,7 +1450,7 @@
 									<div class="tab-pane" id="my-photo-stream">
 										<section class="side1">
 											<div class="btn-group">			
-												<button type="button" class="btn btn-info"><i class="fa fa-upload"></i> &nbsp; 사진업로드</button>		
+												<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
 											</div>		
 											<div class="blank-top-5" ></div>
 											<div class="panel panel-default panel-flat">								
