@@ -99,7 +99,7 @@
 			<div class="container">
 				<div class="col-lg-12">	
 					<h1>${ current_menu.title }</h1>
-					<h4><i class="fa fa-quote-left"></i>&nbsp; ${action.user.company.displayName} 관련 보도자료 및 뉴스를 접하실 수 있습니다.&nbsp;<i class="fa fa-quote-right"></i></h4>
+					<h4><i class="fa fa-quote-left"></i>&nbsp; ${webSite.company.displayName} 관련 보도자료 및 뉴스를 접하실 수 있습니다.&nbsp;<i class="fa fa-quote-right"></i></h4>
 				</div>
 			</div>
 		</header>			
