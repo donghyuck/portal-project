@@ -1,23 +1,18 @@
-		<!-- START MENU -->	
-		<#if action.user.anonymous >
-		<script type="text/javascript">
-		<!--
-		function signinCallbackResult( media, onetime, success ){
-		
-		}		
-		-->
-		</script>
-		</#if>		
-		<#if action.webSite ?? >
-		<#assign webSite = webSite />		
-		${webSite.displayName}
-		</#if>
-		
-		<#if action.getMenuComponent("USER_MENU") ?? >
-		<#assign menu = action.getMenuComponent("USER_MENU") />			
+			<!-- START MENU -->	
+			<#if action.user.anonymous >
+			<script type="text/javascript">
+			<!--
+			function signinCallbackResult( media, onetime, success ){
+			
+			}		
+			-->
+			</script>
+			</#if>		
+			<#if action.webSite ?? >
+			<#assign webSite = webSite />				
+			<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />	
 				<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 					<div class="container">
-						<#if action.user.company ?? >
 						<div class="navbar-header">					
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex1-collapse">
 								<span class="sr-only">Toggle navigation</span>
@@ -25,12 +20,11 @@
 								<span class="icon-bar"></span>
 								<span class="icon-bar"></span>
 							</button>					
-							<a class="navbar-brand" href="/main.do">&nbsp;&nbsp;${action.user.company.displayName }</a>
-						</div>			
-						</#if>												
+							<a class="navbar-brand" href="/main.do">&nbsp;&nbsp;${webSite.displayName}</a>
+						</div>												
 						<div class="navbar-collapse collapse" id="navbar-ex1-collapse">
 							<ul class="nav navbar-nav">
-								<#list menu.components as item >
+								<#list webSiteMenu.components as item >
 								<#if  item.components?has_content >
 									<li class="dropdown">
 										<a href="#" class="dropdown-toggle" data-toggle="dropdown">${item.title}<b class="caret"></b></a>
