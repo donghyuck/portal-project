@@ -526,10 +526,12 @@
 			
 			if( announcePlaceHolder.editable ){
 				$("#announce-view button[class*=custom-edit]").click( function (e){
-					//editAnnouncePanel();
 					
-					//<section id="editor" class="image-broswer"></section>
-					
+					if( $('#announce-editor').text().trim().length == 0 ){
+						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
+						$('#announce-editor').html( announceEditorTemplate );		
+					}
+										
 				} );			
 			}
 						
@@ -1440,7 +1442,7 @@
 		
 		<section id="image-broswer" class="image-broswer"></section>
 		
-		<section id="editor"></section>
+		<section id="announce-editor"></section>
 		
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
