@@ -497,11 +497,15 @@
 							$("#my-notice .side1").toggleClass("hide");
 						});								
 					}
+					
+					
+					
 				});																		
 				common.api.handlePanelHeaderActions($("#announce-panel"));				
 				$("#announce-panel" ).show();				
 			}	
 		}	
+		
 		
 		
 		function showAnnouncePanel (){		
@@ -513,8 +517,7 @@
 				$("#announce-view button[class*=custom-edit]").click( function (e){
 					editAnnouncePanel();
 				} );
-			}			
-			//$("#announce-panel" ).show();			
+			}
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
