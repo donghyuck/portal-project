@@ -526,7 +526,10 @@
 			
 			if( announcePlaceHolder.editable ){
 				$("#announce-view button[class*=custom-edit]").click( function (e){
-					editAnnouncePanel();
+					//editAnnouncePanel();
+					
+					//<section id="editor" class="image-broswer"></section>
+					
 				} );			
 			}
 						
