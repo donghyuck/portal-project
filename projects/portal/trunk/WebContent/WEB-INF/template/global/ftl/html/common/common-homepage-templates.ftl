@@ -488,7 +488,10 @@
 							</div>
 						</div>
 						<div class="form-group">
+							<label class="control-label">본문</label>
+							<div class="col-sm-12" >
 							<textarea class="editor" data-bind='value:body'></textarea>		
+							</div>
 						</div>
 					</div>	  
 					<div class="status"></div>	
