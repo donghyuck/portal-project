@@ -239,44 +239,41 @@
 						buttonCount : 5,
 						dataSource : $('#attachment-list-view').data('kendoListView').dataSource
 					});								
-				
-					$("#my-files .btn-group button").each(function( index ) { 
-						var control_button = $(this);								
-						var control_button_icon = control_button.find("i");				
-						if( control_button_icon.hasClass("fa-upload")){
-							control_button.click( function(e){									
-								if( !$('#attachment-files').data('kendoUpload') ){		
-									$("#attachment-files").kendoUpload({
-									 	multiple : false,
-									 	width: 300,
-									 	showFileList : false,
-									    localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
-									    async: {
-											saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',							   
-											autoUpload: true
-									    },
-									    upload: function (e) {								         
-									    	 e.data = {};														    								    	 		    	 
-									    },
-									    success : function(e) {								    
-											if( e.response.targetAttachment ){
-												e.response.targetAttachment.attachmentId;
-												// LIST VIEW REFRESH...
-												$('#attachment-list-view').data('kendoListView').dataSource.read(); 
-											}				
-										}
-									});						
+
+					common.ui.handleActionEvents(
+						$("#my-files .btn-group button"), 
+						{
+							event:'click',
+							handler : function(e){
+								var btn_icon = $(this).find("i");		
+								if( btn_icon.hasClass('fa-cloud-upload') ){								
+									if( !$('#attachment-files').data('kendoUpload') ){		
+										$("#attachment-files").kendoUpload({
+										 	multiple : false,
+										 	width: 300,
+										 	showFileList : false,
+										    localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+										    async: {
+												saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',							   
+												autoUpload: true
+										    },
+										    upload: function (e) {								         
+										    	 e.data = {};														    								    	 		    	 
+										    },
+										    success : function(e) {								    
+												if( e.response.targetAttachment ){
+													e.response.targetAttachment.attachmentId;
+													// LIST VIEW REFRESH...
+													$('#attachment-list-view').data('kendoListView').dataSource.read(); 
+												}				
+											}
+										});						
+									}
+									$("#my-files .custom-upload").toggleClass("hide");					
 								}
-								$("#my-files .side1").toggleClass("hide");										
-								$("#my-files .side2").toggleClass("hide");										
-							});									
-						}else if (control_button_icon.hasClass("fa-th-list")){
-							control_button.click( function(e){		
-								$("#my-files .side1").toggleClass("hide");										
-								$("#my-files .side2").toggleClass("hide");										
-						});
-					}								
-				});									
+							} 
+						}							
+					);							
 			}		
 		}
 		
@@ -375,25 +372,6 @@
 						} 
 					}							
 				);
-				
-					/*								
-							$("#my-photo-stream .btn-group button").each(function( index ) { 
-								var control_button = $(this);								
-								var control_button_icon = control_button.find("i");				
-								if( control_button_icon.hasClass("fa-upload")){
-									control_button.click( function(e){			
-							
-										$("#my-photo-stream .side1").toggleClass("hide");										
-										$("#my-photo-stream .side2").toggleClass("hide");										
-									});									
-								}else if (control_button_icon.hasClass("fa-th-list")){
-									control_button.click( function(e){		
-										$("#my-photo-stream .side1").toggleClass("hide");										
-										$("#my-photo-stream .side2").toggleClass("hide");										
-									});								
-								}								
-				});
-				*/
 			}
 		}
 		<!-- ============================== -->
@@ -518,32 +496,8 @@
 							$("#my-notice .side1").toggleClass("hide");
 						});								
 					}
-				});							
-											
-				common.api.handlePanelHeaderActions($("#announce-panel"));							
-						/*					
-				$("#announce-panel .panel-header-actions a").each(function( index ) {
-					var panel_header_action = $(this);		
-					panel_header_action.click(function (e) {
-						e.preventDefault();
-						if( panel_header_action.text() == "Minimize" ){
-							$("#announce-panel .panel-body").toggleClass("hide");								
-							var panel_header_action_icon = panel_header_action.find('span');
-							if( panel_header_action_icon.hasClass("k-i-minimize") ){
-								panel_header_action.find('span').removeClass("k-i-minimize");
-								panel_header_action.find('span').addClass("k-i-maximize");
-							}else{
-								panel_header_action.find('span').removeClass("k-i-maximize");
-								panel_header_action.find('span').addClass("k-i-minimize");
-							}							
-						}else if (panel_header_action.text() == "Close"){	
-							kendo.fx($("#announce-panel" )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
-								$("#announce-panel" ).hide();
-							});							
-						}
-					});
-				});
-				*/					
+				});																		
+				common.api.handlePanelHeaderActions($("#announce-panel"));										
 			}	
 		}	
 		
