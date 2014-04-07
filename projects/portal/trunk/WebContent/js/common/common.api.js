@@ -169,6 +169,7 @@
 				}		
 			});					
 		}		
+		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
 			var panel_header_action = $(this);						
 			panel_header_action.click( function (e) {										
