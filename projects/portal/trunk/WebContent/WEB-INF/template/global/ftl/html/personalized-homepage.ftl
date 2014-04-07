@@ -538,8 +538,7 @@
 			}						
 			$("#announce-view button[class*=custom-list]").click( function (e){
 					$('html,body').animate({ scrollTop:  0 }, 300);
-			} );
-						
+			} );						
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
@@ -572,7 +571,10 @@
 							{	
 								name: "viewHtml"
 							}
-						]
+						],
+						stylesheets: [
+							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css"
+						}
 					});
 				}		
 		}
