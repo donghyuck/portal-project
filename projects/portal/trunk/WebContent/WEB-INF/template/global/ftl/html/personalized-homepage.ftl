@@ -524,27 +524,50 @@
 			$("#announce-view").html( template(announcePlaceHolder) );				
 			kendo.bind($("#announce-view"), announcePlaceHolder );			
 			
-			if( announcePlaceHolder.editable ){			
+			if( announcePlaceHolder.editable ){							
 				$("#announce-view button[class*=custom-edit]").click( function (e){					
+				
 					if( $('#announce-editor').text().trim().length == 0 ){						
+						$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
 						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
-						$('#announce-editor').html( announceEditorTemplate );		
-					}					
-					
-					var _observable = announcePlaceHolder.clone() ;
-					_observable.bind( 'change', function(e){
-						alert( kendo.stringify( e ) );
-					});
-					 
-					kendo.bind($('#announce-editor'), _observable );
-					createEditor($("#announce-editor .editor"));
+						$('#announce-editor').html( announceEditorTemplate );
 						
+						kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );					
+						createEditor($("#announce-editor .editor"));	
+						
+						var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
+						$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
+							announce_editor_update.removeAttr('disabled');
+							alert( kendo.stringify( e ) );
+						});		
+						
+						announce_editor_update.click(function(e){
+							alert( "save" );
+						});
+						
+					}	
+					
+					// save button disable.. 
+										
+					announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 
+					$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');	
 					$('#announce-editor .modal').modal('show');						
+					
 				} );			
 			}						
+			
+			common.ui.handleActionEvents( $("#announce-view"), {handlers:[
+				{selector: "button[class*=custom-list]" , 'click': , handler: function(e){ $('html,body').animate({ scrollTop:  0 }, 300);  }},
+				{selector: "button[class*=custom-list]" , 'click': , handler: function(e){ $('html,body').animate({ scrollTop:  0 }, 300);  }}
+			]} );
+			
+			
+			/*
 			$("#announce-view button[class*=custom-list]").click( function (e){
 					$('html,body').animate({ scrollTop:  0 }, 300);
 			} );						
+			*/
+			
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
