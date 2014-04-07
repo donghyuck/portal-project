@@ -1481,7 +1481,7 @@
 									<div class="tab-pane" id="my-photo-stream">
 										<section class="custom-upload hide">
 											<div class="page-header text-primary">
-												<h5><i class="fa fa-upload"></i>&nbsp;<strong>업로드</strong>&nbsp;<small><strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+												<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
 											</div>
 											<div id="my-photo-upload">
 												<#if !action.user.anonymous >		
