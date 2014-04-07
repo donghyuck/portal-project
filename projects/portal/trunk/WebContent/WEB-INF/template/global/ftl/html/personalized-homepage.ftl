@@ -530,7 +530,7 @@
 						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 						$('#announce-editor').html( announceEditorTemplate );		
 					}					
-					$('#announce-editor').bind( announcePlaceHolder );
+					kendo.bind($('#announce-editor'), announcePlaceHolder );
 					createEditor($("#announce-editor .editor"));	
 					$('#announce-editor .modal').modal('show');
 						
