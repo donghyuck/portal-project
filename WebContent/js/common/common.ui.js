@@ -668,6 +668,36 @@
 
 })(jQuery);
 
+
+/**
+ * common.ui functions 
+ * 
+ * 
+ */
+(function($, undefined) {
+	var kendo = window.kendo,
+	Widget = kendo.ui.Widget,
+	stringify = kendo.stringify,
+	UNDEFINED = 'undefined',	
+	proxy = $.proxy,	
+	isFunction = kendo.isFunction,
+	ui = window.ui = window.ui || {};
+			
+	common.ui.handleEvents = function ( selector, options ){		
+		options = options || {};		
+		if( options.custom === UNDEFINED )
+			 options.custom = false;			
+		if ( typeof selector === 'string' )
+			selector = $(selector);		
+		if ( typeof options.handlers === UNDEFINED )
+			options.handlers = [];		
+		$.each(options.handlers, function(index, data){
+			selector.find(data.selector).on(data.event, data.handler);
+		});		
+	};
+		
+	
+})(jQuery);	
 /**
  * extSlideshow widget
  */
@@ -786,6 +816,7 @@
 	});	
 
 })(jQuery);
+
 
 
 /**
