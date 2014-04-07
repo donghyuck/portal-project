@@ -1345,7 +1345,7 @@
 							</div>
 							<div class="panel-body">		
 							<div class="page-header text-primary">
-								<h5 ><strong>회사 공지</strong>&nbsp;<small>소속 회사의 공지 입니다</small></h5>
+								<h5 ><strong>회사 공지</strong>&nbsp;<small>소속 회사 ${user.company.displayName} 의 공지 입니다</small></h5>
 							</div>										
 							<div  id="announce-grid"></div>	
 							</div>
