@@ -176,8 +176,12 @@
     				var panel_header_action_icon = panel_header_action.find('span');
 					if( panel_header_action_icon.hasClass("k-i-minimize") ){
 						panel_header_action_icon.removeClass("k-i-minimize");
-						panel_header_action_icon.addClass("k-i-maximize");
-						selector.children('.panel-body:last, .panel-footer').addClass("hide");
+						panel_header_action_icon.addClass("k-i-maximize");						
+						if( selector.hasClass('panel') ){
+							selector.children('.panel-body:last, .panel-footer').addClass("hide");
+						}else{
+							selector.find('.panel:first').children('.panel-body, .panel-footer');
+						}					
 					}else{
 						panel_header_action_icon.removeClass("k-i-maximize");
 						panel_header_action_icon.addClass("k-i-minimize");								
