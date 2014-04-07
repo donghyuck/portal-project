@@ -90,6 +90,10 @@ img.img-full-height {
 /* Bootstrap customize                             */
 /* -------------------------------------------- */
 
+.fa>span {
+	font-family: "나눔 고딕", "BM_NANUMGOTHIC";
+} 
+
 .btn-img {
   font-weight: normal;
   color: #428bca;
