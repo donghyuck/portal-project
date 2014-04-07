@@ -338,7 +338,7 @@
 								dataSource : $('#photo-list-view').data('kendoListView').dataSource
 				});		
 													
-				common.api.bindButtonEvents(
+				common.api.handleButtonEvents(
 								$("#my-photo-stream .btn-group button"), 
 								{
 									event:'click',
