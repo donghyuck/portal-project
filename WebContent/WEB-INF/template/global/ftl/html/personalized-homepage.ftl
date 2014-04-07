@@ -536,6 +536,7 @@
 		}			
 				
 		function createAnnounceEditor(){
+			
 			if( $('#announce-editor').text().trim().length == 0 ){						
 				$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
@@ -566,7 +567,8 @@
 				});
 						
 			}
-			// save button disable.. 										
+			// save button disable.. 		
+			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );								
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');	
 			$('#announce-editor .modal').modal('show');				
