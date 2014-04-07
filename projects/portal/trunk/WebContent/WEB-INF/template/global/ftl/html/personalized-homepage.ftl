@@ -963,6 +963,10 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+		
+		#announce-grid {
+			min-height : 300px;
+		}
 
 /*
 		.k-tiles-arrange label {
@@ -994,6 +998,8 @@
 		   display: block;
 		   border: solid 1px #787878;
 		}
+		
+		
 	/*
 		.media, .media .media {
 			margin-top: 5px;
