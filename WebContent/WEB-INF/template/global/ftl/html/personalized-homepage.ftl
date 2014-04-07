@@ -1355,6 +1355,14 @@
 							<div class="panel-body">		
 							<div class="page-header text-primary">
 								<h5 ><small>소속 회사 ${user.company.displayName} 의 공지 입니다</small></h5>
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-primary">
+									<input type="radio" name="announce-selected-source" id="option1"> Option 1
+									</label>
+									<label class="btn btn-primary">
+									<input type="radio" name="announce-selected-source" id="option2"> Option 2
+									</label>
+								</div>								
 							</div>										
 							<div  id="announce-grid"></div>	
 							</div>
