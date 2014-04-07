@@ -173,12 +173,14 @@
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
 			var panel_header_action = $(this);						
 			panel_header_action.click( function (e) {						
-				alert(panel_header_action.text() );
+				
 				if( panel_header_action.text() == "Minimize" ){        				
     				var panel_header_action_icon = panel_header_action.find('span');
 					if( panel_header_action_icon.hasClass("k-i-minimize") ){
 						panel_header_action_icon.removeClass("k-i-minimize");
-						panel_header_action_icon.addClass("k-i-maximize");						
+						panel_header_action_icon.addClass("k-i-maximize");					
+						alert(selector.hasClass('panel'));
+						
 						if( selector.hasClass('panel') ){
 							selector.children('.panel-body:last, .panel-footer').addClass("hide");
 						}else{
