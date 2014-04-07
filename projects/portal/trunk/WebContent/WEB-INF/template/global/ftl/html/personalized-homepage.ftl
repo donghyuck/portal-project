@@ -523,14 +523,22 @@
 			var template = kendo.template($('#announcement-view-template').html());			
 			$("#announce-view").html( template(announcePlaceHolder) );				
 			kendo.bind($("#announce-view"), announcePlaceHolder );			
-			if( announcePlaceHolder.editable ){
+			
+			if( announcePlaceHolder.editable ){			
 				$("#announce-view button[class*=custom-edit]").click( function (e){					
 					if( $('#announce-editor').text().trim().length == 0 ){						
 						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 						$('#announce-editor').html( announceEditorTemplate );		
 					}					
-					kendo.bind($('#announce-editor'), announcePlaceHolder.clone() );
-					createEditor($("#announce-editor .editor"));	
+					
+					var _observable = announcePlaceHolder.clone() ;
+					_observable.bind( 'change', function(e){
+						alert( kento.stringify( e ) );
+					});
+					 
+					kendo.bind($('#announce-editor'), _observable );
+					createEditor($("#announce-editor .editor"));
+						
 					$('#announce-editor .modal').modal('show');						
 				} );			
 			}						
