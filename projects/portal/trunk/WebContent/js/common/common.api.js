@@ -227,9 +227,9 @@
 		{	
 			if( typeof options.event === 'string' && isFunction(options.handler) ){
 				if( typeof options.selector === UNDEFINED ) {
-					selector.on(data.event, data.handler);					
+					selector.on(options.event, options.handler);					
 				}else{					
-					selector.find(data.selector).on(data.event, data.handler);
+					selector.find(options.selector).on(options.event, options.handler);
 				}				
 			}
 		}else	if(options.handlers instanceof Array ){
