@@ -525,16 +525,18 @@
 			kendo.bind($("#announce-view"), announcePlaceHolder );			
 			if( announcePlaceHolder.editable ){
 				$("#announce-view button[class*=custom-edit]").click( function (e){
+					
 					if( $('#announce-editor').text().trim().length == 0 ){						
 						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 						$('#announce-editor').html( announceEditorTemplate );		
 						createEditor($("#announce-panel .editor"));	
-					}
+					
+					}					
 					$('#announce-editor').bind( announcePlaceHolder );
-					$('#announce-editor .modal').modal('show');					
-				} );			
-			}
+					$('#announce-editor .modal').modal('show');
 						
+				} );			
+			}						
 			$("#announce-view button[class*=custom-list]").click( function (e){
 					$('html,body').animate({ scrollTop:  0 }, 300);
 			} );
