@@ -1365,6 +1365,8 @@
 								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
 							</div>									
 							</div>
+							<div class="panel-body">			
+							</div>
 							<div class="panel-body">					
 								<div  id="announce-view"></div>
 							</div>
@@ -1405,7 +1407,7 @@
 													<button type="button" class="btn btn-info"><i class="fa fa-plus"></i> &nbsp; 공지 & 이벤트 추가</button>		
 												</div>		
 												<div class="blank-top-5" ></div>
-												<div id="announce-grid"></div>
+												
 											</section>											
 										</div>
 									<!-- start attachement tab-pane -->
