@@ -1365,7 +1365,10 @@
 								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
 							</div>									
 							</div>
-							<div class="panel-body">				
+							<div class="panel-body">		
+							<div class="page-header text-primary">
+								<h5 ><strong>회사</strong>&nbsp;<small>소속 회사의 공지 입니다</small></h5>
+							</div>										
 							<div  id="announce-grid"></div>	
 							</div>
 							<div class="panel-body">					
