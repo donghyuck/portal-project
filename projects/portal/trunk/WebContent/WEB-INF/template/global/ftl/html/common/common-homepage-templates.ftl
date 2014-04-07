@@ -460,7 +460,7 @@
 	<div class="blank-top-5" ></div>
 	<div data-bind="html:body"></div>
 
-	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-chevron-up"></i>목록</button>
+	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-chevron-up"></i>&nbsp;목록</button>
 	# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
 	<button  type="button" class="btn btn-primary custom-edit pull-right"><i class="fa fa-pencil-square-o"></i> 수정</button>
 	# } #
