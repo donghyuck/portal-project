@@ -687,15 +687,13 @@
 	common.ui.handleActionEvents = function ( selector, options ){		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
-			 options.custom = false;			
-		
+			 options.custom = false;		
 		if ( typeof selector === 'string' )
-			selector = $(selector);		
-		
+			selector = $(selector);				
 		if ( typeof options.handlers === UNDEFINED ){
 			if( options.event === 'string'  && isFunction(options.handler) ){
 				if(options.selector === UNDEFINED ){
-					
+					selector.on(options.event, options.handler);
 				}else{
 					selector.find(options.selector).on(options.event, options.handler);
 				}			
