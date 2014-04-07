@@ -338,7 +338,7 @@
 								dataSource : $('#photo-list-view').data('kendoListView').dataSource
 				});		
 													
-				common.ui.handleEvents(
+				common.ui.handleActionEvents(
 					$("#my-photo-stream .btn-group button"), 
 					{
 						event:'click',
@@ -890,7 +890,7 @@
 				});																
 				var overlay  = $("#" + renderToString ).find('.overlay').extOverlay();					
 				// start define over nav events				
-				common.api.handleButtonActions( $("#" + renderToString ), {
+				common.ui.handleActionEvents( $("#" + renderToString ), {
 					handlers : [
 						{selector: ".panel-body:last >figure", event : 'click', handler : function(e){
 							e.preventDefault();
