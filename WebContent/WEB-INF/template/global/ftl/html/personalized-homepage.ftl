@@ -514,7 +514,7 @@
 					editAnnouncePanel();
 				} );
 			}			
-			$("#announce-panel" ).show();			
+			//$("#announce-panel" ).show();			
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
@@ -1344,7 +1344,7 @@
 			<div id="personalized-area" class="row blank-top-10">				
 				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
 					<div class="panel panel-default">
-						<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;알림
+						<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
 							<div class="k-window-actions panel-header-actions">										
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
 								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
@@ -1354,7 +1354,7 @@
 							</div>
 							<div class="panel-body">		
 							<div class="page-header text-primary">
-								<h5 ><strong>회사 공지</strong>&nbsp;<small>소속 회사 ${user.company.displayName} 의 공지 입니다</small></h5>
+								<h5 ><small>소속 회사 ${user.company.displayName} 의 공지 입니다</small></h5>
 							</div>										
 							<div  id="announce-grid"></div>	
 							</div>
