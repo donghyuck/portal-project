@@ -83,6 +83,8 @@
 							parameterMap: function(options, operation) {
 								if (operation != "read" && options.models) {
 									return {models: kendo.stringify(options.models)};
+								}else{
+									return {objectType:30}
 								}
 							},
 						},
