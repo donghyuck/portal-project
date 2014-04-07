@@ -497,8 +497,10 @@
 					<div class="status"></div>	
 				</div>
 				<div class='modal-footer'>
-					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>
-					<button type="button" class="btn btn-primary custom-update" disabled="disabled">저장</button>						
+					<div class="btn-group">
+						<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>					
+						<button type="button" class="btn btn-primary custom-update" disabled="disabled"><i class="fa fa-check"></i> 저장</button>	
+					</div>	
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
