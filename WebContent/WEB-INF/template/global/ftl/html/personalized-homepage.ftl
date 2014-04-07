@@ -1428,6 +1428,9 @@
 											<div class="btn-group">
 												<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 파일업로드</button>	
 											</div>			
+											<div class="page-header text-primary">
+											<h5 ><strong>MY 파일</strong>&nbsp;<small>파일을 선택하면 화면에 선택한 파일 페널이 보여집니다.</small></h5>
+											</div>	
 											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-warning active">
 													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
@@ -1465,7 +1468,10 @@
 										<section class="side1">
 											<div class="btn-group">			
 												<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
-											</div>		
+											</div>	
+											<div class="page-header text-primary">
+											<h5 ><strong>MY 포토</strong>&nbsp;<small>사진을 선택하면 화면에 선택한 사진 페널이 보여집니다.</small></h5>
+											</div>													
 											<div class="blank-top-5" ></div>
 											<div class="panel panel-default panel-flat">								
 												<div class="panel-body scrollable" style="max-height:450px;">
