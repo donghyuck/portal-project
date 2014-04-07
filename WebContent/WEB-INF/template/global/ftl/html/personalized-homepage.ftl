@@ -431,8 +431,8 @@
 						}
 					},
 					dataBound: function(e) {					
-						var selectedCells = this.select();
-						this.select("tr:eq(1)");
+						//var selectedCells = this.select();
+						//this.select("tr:eq(1)");
 					}
 				});		
 
