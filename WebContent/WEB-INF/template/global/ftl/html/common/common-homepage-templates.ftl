@@ -476,7 +476,7 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
 				</div>
 			-->	
-				<div class='modal-body' style="min-height:500px;">		
+				<div class='modal-body' style="min-height:600px;">		
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label">제목</label>
