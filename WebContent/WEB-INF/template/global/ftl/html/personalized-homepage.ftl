@@ -531,7 +531,7 @@
 						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 						$('#announce-editor').html( announceEditorTemplate );		
 					}
-										
+					$('#announce-editor .modal').modal('show');					
 				} );			
 			}
 						
