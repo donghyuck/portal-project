@@ -391,10 +391,8 @@
 							parameterMap: function(options, operation) {
 								if (operation != "read" && options.models) {
 									return {models: kendo.stringify(options.models)};
-								}else{
-								
-									return {objectType: $("#announce-grid").data('announceSourcePlaceHolder') };
-								
+								}else{								
+									return {objectType: $("#announce-grid").data('announceSourcePlaceHolder') };								
 								}
 							} 
 						},
@@ -408,8 +406,8 @@
 					}),
 					sortable: true,
 					columns: [ 
-						{field:"announceId", title: "ID", width: 50, attributes: { "class": "table-cell", style: "text-align: center " }} ,
-						{field:"subject", title: "주제"}
+						{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
+						{field:"subject", title: "제목"}
 					],
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
