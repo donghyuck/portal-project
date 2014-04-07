@@ -555,19 +555,9 @@
 					
 				} );			
 			}						
-			
-			common.ui.handleActionEvents( $("#announce-view"), {handlers:[
-				{selector: "button[class*=custom-list]" , 'click': , handler: function(e){ $('html,body').animate({ scrollTop:  0 }, 300);  }},
-				{selector: "button[class*=custom-list]" , 'click': , handler: function(e){ $('html,body').animate({ scrollTop:  0 }, 300);  }}
-			]} );
-			
-			
-			/*
 			$("#announce-view button[class*=custom-list]").click( function (e){
 					$('html,body').animate({ scrollTop:  0 }, 300);
-			} );						
-			*/
-			
+			} );									
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
