@@ -1434,7 +1434,11 @@
 								</div><!-- end of tab content -->					
 			</div>	
 		</section>		
-		<section id="image-broswer" class="image-broswer"></section>					
+		
+		<section id="image-broswer" class="image-broswer"></section>
+		
+		<section id="editor"></section>
+		
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
