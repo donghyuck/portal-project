@@ -217,7 +217,7 @@
 		});
 	};
 
-	common.api.bindButtonEvents= function ( selector, options ){		
+	common.api.handleButtonEvents= function ( selector, options ){		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
 			 options.custom = false;
