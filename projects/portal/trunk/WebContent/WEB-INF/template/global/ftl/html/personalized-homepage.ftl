@@ -1,7 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="homepage">
 <head>
-		<title><#if action.user.company ?? >${action.user.company.displayName }<#else>::</#if></title>
+		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<script type="text/javascript">
 		<!--
 		yepnope([{
@@ -1357,7 +1357,7 @@
 			<div id="personalized-area" class="row blank-top-10">				
 				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
 					<div class="panel panel-default">
-						<div class="panel-heading">알림
+						<div class="panel-heading"><i class="fa fa-bell"></i>알림
 							<div class="k-window-actions panel-header-actions">										
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
 								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
