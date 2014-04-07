@@ -338,6 +338,17 @@
 								dataSource : $('#photo-list-view').data('kendoListView').dataSource
 							});		
 													
+							common.api.bindButtonEvents(
+								$("#my-photo-stream .btn-group button"), 
+								{
+									event:'click',
+									handler : function(e){
+										var _btn = $(this);
+										alert(_btn.html());
+									} 
+								}							
+							);
+													
 							$("#my-photo-stream .btn-group button").each(function( index ) { 
 								var control_button = $(this);								
 								var control_button_icon = control_button.find("i");				
