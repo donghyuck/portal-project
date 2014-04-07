@@ -503,22 +503,19 @@
 		}	
 		
 		
-		function showAnnouncePanel (){			
-			
+		function showAnnouncePanel (){		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 			var template = kendo.template($('#announcement-view-template').html());			
 			$("#announce-view").html( template(announcePlaceHolder) );				
-			kendo.bind($("#announce-view"), announcePlaceHolder );		
-			
+			kendo.bind($("#announce-view"), announcePlaceHolder );				
 			if( announcePlaceHolder.editable ){
 				$("#announce-view button[class*=custom-edit]").click( function (e){
 					editAnnouncePanel();
 				} );
-			}
-			
+			}			
 			$("#announce-panel" ).show();			
-			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 120 }, 300);			 ;
-			
+			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 120 }, 300);			 
+		}			
 				
 		/** Announce View Panel */		
 		function createEditor( renderTo ){			
