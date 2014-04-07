@@ -348,7 +348,7 @@
 						} 
 					}							
 				);
-													
+					/*								
 							$("#my-photo-stream .btn-group button").each(function( index ) { 
 								var control_button = $(this);								
 								var control_button_icon = control_button.find("i");				
@@ -389,6 +389,7 @@
 									});								
 								}								
 				});
+				*/
 			}
 		}
 		<!-- ============================== -->
