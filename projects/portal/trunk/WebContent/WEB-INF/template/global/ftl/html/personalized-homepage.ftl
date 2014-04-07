@@ -548,7 +548,7 @@
 				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
 					announce_editor_update.removeAttr('disabled');
-					alert( kendo.stringify( e ) );
+					//alert( kendo.stringify( e ) );
 				});	
 										
 				announce_editor_update.click(function(e){
