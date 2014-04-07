@@ -574,8 +574,7 @@
 						],
 						stylesheets: [
 							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css"
-						]	
-						}
+						]
 					});
 				}		
 		}
