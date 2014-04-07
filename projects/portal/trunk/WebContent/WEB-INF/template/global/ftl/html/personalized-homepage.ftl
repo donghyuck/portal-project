@@ -554,7 +554,8 @@
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
 					var data = $("#announce-editor").data( "announcePlaceHolder" );
-					$.ajax({
+					alert( kendo.stringify( data ) );
+					/*$.ajax({
 						dataType : "json",
 						type : 'POST',
 						url : '${request.contextPath}/community/update-announce.do?output=json',
@@ -563,14 +564,18 @@
 							showAnnouncePanel();
 						},
 						error:common.api.handleKendoAjaxError
-					});					
+					});				
+					**/	
 				});
 						
 			}
 			// save button disable.. 		
-			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );								
+			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );	
+			
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 
+			
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');	
+			
 			$('#announce-editor .modal').modal('show');				
 		}		
 
