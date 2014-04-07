@@ -2,6 +2,7 @@
 <html decorator="homepage">
 <head>
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
+		<#compress>		
 		<script type="text/javascript">
 		<!--
 		yepnope([{
@@ -516,9 +517,7 @@
 				$("#announce-panel" ).show();				
 			}	
 		}	
-		
-		
-		
+				
 		function showAnnouncePanel (){		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 			var template = kendo.template($('#announcement-view-template').html());			
@@ -571,6 +570,8 @@
 					});
 				}		
 		}
+		
+		
 		
 		function editAnnouncePanel (){		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );		
@@ -980,22 +981,6 @@
 		#announce-grid .k-grid-content {
 			min-height : 300px;
 		}
-
-/*
-		.k-tiles-arrange label {
-			font-weight : normal;		
-		}
-		.k-tiles li.k-state-selected {
-			border-color: #428bca;
-		}
-		
-		
-		.k-imagebrowser ul li.k-state-selected{
-			background: #428bca;
-			color: #ffffff; 
-			border-color : #428bca; 
-		}
-		*/
 		
 		#pdf-view {
 			height: 500px;
@@ -1010,65 +995,8 @@
 		#pdf-view object {
 		   display: block;
 		   border: solid 1px #787878;
-		}
+		}		
 		
-		
-	/*
-		.media, .media .media {
-			margin-top: 5px;
-		}
-	
-
-		.popover {
-			font-family: "나눔 고딕", "BM_NANUMGOTHIC";
-			width: 90%;
-			margin-top: 5px;
-			margin-right: 20px;
-			margin-bottom: 10px;
-			margin-left: 20px;
-			float: left;
-			display: block;
-			position: relative;
-			z-index: 1;
-			min-width: 200px;
-			max-width: 500px;
-			-webkit-box-shadow: none;
-			box-shadow: none;
-			background-clip: none;			
-		 }
-		 
-		.popover.left {
-			float: right;  
-		}
-		  
-		.popover.right {
-
-		}		  
-		 
-		.popover-title {
-			font-family: "나눔 고딕", "BM_NANUMGOTHIC";
-		}
-
-		.k-callout-n {
-		border-bottom-color: #787878;
-		}	
-				
-		.k-callout-w {
-			border-right-color: #787878;
-		}
-		
-		.k-callout-e {
-		border-left-color: #787878;
-		}	
-		
-		#photo-gallery-view {
-			min-height: 320px;
-			min-width: 320px;
-			width: 100%;
-			padding: 0px;
-			border: 0px;
-		}
-	*/
 		.attach
 		{
 			float: left;
@@ -1316,10 +1244,9 @@
 		
 		#photo_overlay nav.navbar {
 			margin-bottom: 0px; 
-		}
-
-		
+		}		
 		</style>   	
+		</#compress>
 	</head>
 	<body id="doc" class="bg-gray">
 		<!-- START HEADER -->		
