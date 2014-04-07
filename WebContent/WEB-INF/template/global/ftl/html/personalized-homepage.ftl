@@ -520,7 +520,8 @@
 				} );
 			}
 			$("#announce-panel" ).show();		
-			$("#announce-panel").focus();	
+			$('html,body').animate({scrollTop: $("#announce-panel").offset().top - 100 }, 500);			 ;
+			
 			//kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
 			
 		}	
