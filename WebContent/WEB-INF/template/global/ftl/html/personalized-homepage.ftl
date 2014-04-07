@@ -1480,15 +1480,15 @@
 									</div><!-- end attachements  tab-pane -->		
 									<!-- start photos  tab-pane -->
 									<div class="tab-pane" id="my-photo-stream">
-										<section class="side1">
 											<div class="btn-group">			
 												<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
 											</div>	
+											
 											<div class="page-header text-primary">
 											<h5 ><strong>MY 포토</strong>&nbsp;<small>사진을 선택하면 화면에 선택한 사진 페널이 보여집니다.</small>
-																						<div class="btn-group">			
-												<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
-											</div>	
+												<div class="btn-group">			
+													<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
+												</div>	
 											</h5>
 											</div>													
 											<div class="blank-top-5" ></div>
@@ -1499,8 +1499,7 @@
 												<div class="panel-footer" style="padding:0px;">
 													<div id="photo-list-pager" class="k-pager-wrap"></div>
 												</div>
-											</div>																
-										</section>							
+											</div>																				
 										<section class="side2 hide">
 											<div class="btn-group">			
 												<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp; 목록보기</button>			
