@@ -504,6 +504,8 @@
 					}
 				});							
 											
+				common.api.handlePanelHeaderActions($("#announce-panel());							
+						/*					
 				$("#announce-panel .panel-header-actions a").each(function( index ) {
 					var panel_header_action = $(this);		
 					panel_header_action.click(function (e) {
@@ -524,7 +526,8 @@
 							});							
 						}
 					});
-				});					
+				});
+				*/					
 			}	
 		}	
 		
