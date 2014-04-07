@@ -529,6 +529,23 @@
 		}	
 		
 		
+		function showAnnouncePanel (){			
+			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
+			var template = kendo.template($('#announcement-view-template').html());
+			$("#announce-view").html( template(announcePlaceHolder) );	
+			kendo.bind($("#announce-view"), announcePlaceHolder );				
+			
+			if( announcePlaceHolder.editable ){
+				$("#announce-view button[class*=custom-edit]").click( function (e){
+					editAnnouncePanel();
+				} );
+			}
+			$("#announce-panel" ).show();		
+			$("#announce-panel").focus();	
+			//kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
+			
+		}	
+				
 		/** Announce View Panel */		
 		function createEditor( renderTo ){			
 			if(!renderTo.data("kendoEditor") ){			
@@ -603,22 +620,6 @@
 			}
 		}
 		
-		function showAnnouncePanel (){			
-			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
-			var template = kendo.template($('#announcement-view-template').html());
-			$("#announce-view").html( template(announcePlaceHolder) );	
-			kendo.bind($("#announce-view"), announcePlaceHolder );				
-			
-			if( announcePlaceHolder.editable ){
-				$("#announce-view button[class*=custom-edit]").click( function (e){
-					editAnnouncePanel();
-				} );
-			}
-			$("#announce-panel" ).show();		
-			$("#announce-panel").focus();	
-			//kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
-			
-		}			
 		
 		/**
 		function createPanel(){					
