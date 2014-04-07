@@ -515,7 +515,7 @@
 				} );
 			}			
 			$("#announce-panel" ).show();			
-			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 120 }, 300);			 
+			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
 		/** Announce View Panel */		
