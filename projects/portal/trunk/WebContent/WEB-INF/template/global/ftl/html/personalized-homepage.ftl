@@ -324,21 +324,21 @@
 								template: kendo.template($("#photo-list-view-template").html()),								
 								dataBound: function(e) {;		
 								}
-							});								
+				});								
 																	
-							$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
+				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
 									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 								}).on("mouseleave", ".img-wrapper", function(e) {
 									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-							});		
+				});		
 																
-							$("#photo-list-pager").kendoPager({
+				$("#photo-list-pager").kendoPager({
 								refresh : true,
 								buttonCount : 5,
 								dataSource : $('#photo-list-view').data('kendoListView').dataSource
-							});		
+				});		
 													
-							common.api.bindButtonEvents(
+				common.api.bindButtonEvents(
 								$("#my-photo-stream .btn-group button"), 
 								{
 									event:'click',
@@ -347,7 +347,7 @@
 										alert(_btn.html());
 									} 
 								}							
-							);
+				);
 													
 							$("#my-photo-stream .btn-group button").each(function( index ) { 
 								var control_button = $(this);								
