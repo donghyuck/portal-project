@@ -466,6 +466,25 @@
 	# } #
 </script>
 
+<script type="text/x-kendo-tmpl" id="announcement-editor-template">		
+	<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:guid# aria-hidden='true'>
+		<div class='modal-dialog modal-lg'>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
+				</div>
+				<div class='modal-body'>		
+
+				</div>
+				<div class='modal-footer'>
+					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>
+					<button type="button" class="btn btn-primary custom-save" disabled="disabled">저장</button>						
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</script>
+
 <script type="text/x-kendo-tmpl" id="announcement-edit-template">		
 	<div  class="form">
 		<div class="form-group">
