@@ -1472,24 +1472,22 @@
 											<div class="btn-group">			
 												<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp; 목록보기</button>		
 											</div>									
-											<div class="blank-top-5 "></div>
 											<#if !action.user.anonymous >									
-											<input name="uploadAttachment" id="attachment-files" type="file" />				
-											<div class="alert alert-info alert-flat"><strong>파일 선택</strong> 버튼을 클릭하여 직접 파일을 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</div>					
+												<input name="uploadAttachment" id="attachment-files" type="file" />												
 											</#if>									
 										</section>																													
 									</div><!-- end attachements  tab-pane -->		
 									<!-- start photos  tab-pane -->
 									<div class="tab-pane" id="my-photo-stream">
 										<section class="custom-upload hide">
-											<button type="button" class="close" aria-hidden="true">&times;</button>
+											<div class="page-header text-primary">
+												<h5><i class="fa fa-upload"></i>&nbsp;<strong>업로드</strong>&nbsp;<small><strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+											</div>
 											<div id="my-photo-upload">
 												<#if !action.user.anonymous >		
-												<div class="blank-top-5 "></div>	
-												<input name="uploadPhotos" id="photo-files" type="file" />	
-												<div class="alert alert-info alert-flat"><strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)을 끌어서 놓기(Drag & Drop)를 하세요.</div>
+												<input name="uploadPhotos" id="photo-files" type="file" />
 												</#if>							
-											</div>																		
+											</div>
 										</section>	
 											<div class="page-header text-primary">
 												<h5 >											
