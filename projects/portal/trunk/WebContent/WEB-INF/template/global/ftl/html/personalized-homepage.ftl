@@ -533,7 +533,7 @@
 					
 					var _observable = announcePlaceHolder.clone() ;
 					_observable.bind( 'change', function(e){
-						alert( kento.stringify( e ) );
+						alert( kendo.stringify( e ) );
 					});
 					 
 					kendo.bind($('#announce-editor'), _observable );
