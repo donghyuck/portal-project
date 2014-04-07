@@ -202,7 +202,7 @@ var _TWITTER_FEED_URL = "/community/get-twitter-hometimeline.do?output=json",
 var Announce = kendo.data.Model.define( {
     id: "announceId", // the identifier of the model
     fields: {
-    	announceId: { type: "number", editable: false, defaultValue: -1  },
+    	announceId: { type: "number", editable: true, defaultValue: -1  },
     	subject: { type: "string", editable: true },
     	body: { type: "string", editable: true },
     	startDate: { type: "date",  editable: true },
