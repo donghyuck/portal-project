@@ -525,34 +525,8 @@
 			kendo.bind($("#announce-view"), announcePlaceHolder );			
 			
 			if( announcePlaceHolder.editable ){							
-				$("#announce-view button[class*=custom-edit]").click( function (e){					
-				
-					if( $('#announce-editor').text().trim().length == 0 ){						
-						$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
-						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
-						$('#announce-editor').html( announceEditorTemplate );
-						
-						kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );					
-						createEditor($("#announce-editor .editor"));	
-						
-						var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
-						$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
-							announce_editor_update.removeAttr('disabled');
-							alert( kendo.stringify( e ) );
-						});		
-						
-						announce_editor_update.click(function(e){
-							alert( "save" );
-						});
-						
-					}	
-					
-					// save button disable.. 
-										
-					announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 
-					$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');	
-					$('#announce-editor .modal').modal('show');						
-					
+				$("#announce-view button[class*=custom-edit]").click( function (e){	
+					createAnnounceEditor();	
 				} );			
 			}						
 			$("#announce-view button[class*=custom-list]").click( function (e){
@@ -561,7 +535,43 @@
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
-		/** Announce View Panel */		
+		function createAnnounceEditor(){
+			if( $('#announce-editor').text().trim().length == 0 ){						
+				$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
+				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
+				$('#announce-editor').html( announceEditorTemplate );
+						
+				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );					
+				createEditor($("#announce-editor .editor"));	
+						
+				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
+				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
+					announce_editor_update.removeAttr('disabled');
+					alert( kendo.stringify( e ) );
+				});	
+										
+				announce_editor_update.click(function(e){
+					e.preventDefault();					
+					var data = $("#announce-editor").data( "announcePlaceHolder" );
+					$.ajax({
+						dataType : "json",
+						type : 'POST',
+						url : '${request.contextPath}/community/update-announce.do?output=json',
+						data : { announceId: data.announceId, item: kendo.stringify( data ) },
+						success : function( response ){		
+							showAnnouncePanel();
+						},
+						error:common.api.handleKendoAjaxError
+					});					
+				});
+						
+			}
+			// save button disable.. 										
+			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 
+			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');	
+			$('#announce-editor .modal').modal('show');				
+		}		
+
 		function createEditor( renderTo ){
 			if(!renderTo.data("kendoEditor") ){			
 				var imageBrowser = $('#image-broswer').extImageBrowser({
