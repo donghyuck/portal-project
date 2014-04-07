@@ -217,27 +217,6 @@
 		});
 	};
 
-	common.api.handleButtonEvents= function ( selector, options ){		
-		options = options || {};		
-		if( options.custom === UNDEFINED )
-			 options.custom = false;
-		if ( typeof selector === 'string' )
-			selector = $(selector);						
-		if ( typeof options.handlers === UNDEFINED )
-		{	
-			if( typeof options.event === 'string' && isFunction(options.handler) ){
-				if( typeof options.selector === UNDEFINED ) {
-					selector.on(options.event, options.handler);					
-				}else{					
-					selector.find(options.selector).on(options.event, options.handler);
-				}				
-			}
-		}else	if(options.handlers instanceof Array ){
-			$.each(options.handlers, function(index, data){
-				selector.find(data.selector).on(data.event, data.handler);
-			});
-		}
-	}
 	
 	common.api.handleButtonActions = function ( selector, options ){		
 		options = options || {};		
