@@ -185,8 +185,12 @@
 						}					
 					}else{
 						panel_header_action_icon.removeClass("k-i-maximize");
-						panel_header_action_icon.addClass("k-i-minimize");								
-						selector.children('.panel-body:last, .panel-footer').removeClass("hide");
+						panel_header_action_icon.addClass("k-i-minimize");	
+						if( selector.hasClass('panel') ){
+							selector.children('.panel-body:last, .panel-footer').addClass("hide");
+						}else{
+							selector.find('.panel:first').children('.panel-body, .panel-footer');
+						}	
 					}						
     			}else if ( panel_header_action.text() == "Close"){
     				if( isFunction(options.close) ){
