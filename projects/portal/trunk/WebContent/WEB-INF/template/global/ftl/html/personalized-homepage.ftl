@@ -614,7 +614,8 @@
 					editAnnouncePanel();
 				} );
 			}
-			$("#announce-panel" ).show();			
+			$("#announce-panel" ).show();		
+			$("#announce-panel").focus();	
 			//kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
 			
 		}			
