@@ -573,7 +573,8 @@
 							}
 						],
 						stylesheets: [
-							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css"
+							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
+							"${request.contextPath}/styles/common/common.ui.css"
 						]
 					});
 				}		
