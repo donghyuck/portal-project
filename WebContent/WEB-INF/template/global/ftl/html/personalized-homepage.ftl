@@ -504,22 +504,21 @@
 		
 		
 		function showAnnouncePanel (){			
+			
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
-			var template = kendo.template($('#announcement-view-template').html());
-			$("#announce-view").html( template(announcePlaceHolder) );	
-			kendo.bind($("#announce-view"), announcePlaceHolder );				
+			var template = kendo.template($('#announcement-view-template').html());			
+			$("#announce-view").html( template(announcePlaceHolder) );				
+			kendo.bind($("#announce-view"), announcePlaceHolder );		
 			
 			if( announcePlaceHolder.editable ){
 				$("#announce-view button[class*=custom-edit]").click( function (e){
 					editAnnouncePanel();
 				} );
 			}
-			$("#announce-panel" ).show();		
-			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 100 }, 500);			 ;
 			
-			//kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
+			$("#announce-panel" ).show();			
+			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 120 }, 300);			 ;
 			
-		}	
 				
 		/** Announce View Panel */		
 		function createEditor( renderTo ){			
