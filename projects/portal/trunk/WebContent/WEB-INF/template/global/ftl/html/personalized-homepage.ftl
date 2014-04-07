@@ -397,7 +397,8 @@
 						error:common.api.handleKendoAjaxError,
 						schema: {
 							data : "targetAnnounces",
-							model : Announce
+							model : Announce,
+							total : "totalAnnounceCount"
 						}
 					}),
 					sortable: true,
@@ -406,6 +407,11 @@
 						{field:"announceId", title: "ID", width: 50, attributes: { "class": "table-cell", style: "text-align: center " }} ,
 						{field:"subject", title: "주제"}
 					],
+					pageable: {
+						refresh: true,
+						pageSizes: false,
+						buttonCount: 5
+					},					
 					selectable: "row",
 					change: function(e) { 
 						var selectedCells = this.select();
