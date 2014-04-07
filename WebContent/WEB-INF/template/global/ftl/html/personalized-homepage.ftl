@@ -343,17 +343,8 @@
 					{
 						event:'click',
 						handler : function(e){
-							var _btn = $(this);
-							alert(_btn.html());
-						} 
-					}							
-				);
-					/*								
-							$("#my-photo-stream .btn-group button").each(function( index ) { 
-								var control_button = $(this);								
-								var control_button_icon = control_button.find("i");				
-								if( control_button_icon.hasClass("fa-upload")){
-									control_button.click( function(e){			
+							var btn_icon = $(this).find("i");		
+							if( btn_icon.hasClass('.fa-cloud-upload') ){
 										if( !$("#photo-files").data("kendoUpload")	){						
 											$("#photo-files").kendoUpload({
 												 	multiple : true,
@@ -378,7 +369,19 @@
 														}				
 													}
 											});		
-										}										
+										}
+							}
+						} 
+					}							
+				);
+				
+					/*								
+							$("#my-photo-stream .btn-group button").each(function( index ) { 
+								var control_button = $(this);								
+								var control_button_icon = control_button.find("i");				
+								if( control_button_icon.hasClass("fa-upload")){
+									control_button.click( function(e){			
+							
 										$("#my-photo-stream .side1").toggleClass("hide");										
 										$("#my-photo-stream .side2").toggleClass("hide");										
 									});									
