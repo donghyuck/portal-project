@@ -1480,9 +1480,7 @@
 									<!-- start photos  tab-pane -->
 									<div class="tab-pane" id="my-photo-stream">
 										<section class="custom-upload hide">
-											<div class="btn-group">			
-												<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp; 목록보기</button>			
-											</div>									
+											<button type="button" class="close" aria-hidden="true">&times;</button>
 											<div id="my-photo-upload">
 												<#if !action.user.anonymous >		
 												<div class="blank-top-5 "></div>	
@@ -1494,7 +1492,7 @@
 											<div class="page-header text-primary">
 												<h5 >
 													<div class="btn-group">			
-														<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
+														<button type="button" class="btn btn-info" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
 													</div>	
 												</h5>
 												<small>사진을 선택하면 화면에 선택한 사진 페널이 보여집니다.</small>
