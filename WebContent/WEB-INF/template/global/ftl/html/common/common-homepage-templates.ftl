@@ -464,6 +464,7 @@
 	# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
 	<button  type="button" class="btn btn-primary btn-sm custom-edit"><i class="fa fa-pencil-square-o"></i> 수정</button>
 	# } #
+	</div>
 </script>
 
 <script type="text/x-kendo-tmpl" id="announcement-edit-template">		
