@@ -217,6 +217,15 @@ var Announce = kendo.data.Model.define( {
     	this.set("startDate", new Date() );
     	this.set("endDate", new Date() );
     },
+    copy: function ( target ){
+    	target.set("announceId", this.get("announceId"));
+    	target.set("subject",this.get("subject") );
+    	target.set("body", this.get("body"));
+    	target.set("startDate",this.get("startDate") );
+    	target.set("endDate", this.get("endDate"));
+    	target.set("modifiedDate",this.get("modifiedDate") );
+    	target.set("creationDate", this.get("creationDate") );
+    }
     clone: function () {
     	return new Announce({
     		announceId : this.get("announceId"),
