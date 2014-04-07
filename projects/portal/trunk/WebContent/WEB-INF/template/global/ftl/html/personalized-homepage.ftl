@@ -529,10 +529,9 @@
 					if( $('#announce-editor').text().trim().length == 0 ){						
 						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 						$('#announce-editor').html( announceEditorTemplate );		
-						createEditor($("#announce-editor .editor"));	
-					
 					}					
 					$('#announce-editor').bind( announcePlaceHolder );
+					createEditor($("#announce-editor .editor"));	
 					$('#announce-editor .modal').modal('show');
 						
 				} );			
