@@ -380,7 +380,9 @@
 				});
 			}
 		}
-		
+		<!-- ============================== -->
+		<!-- create notice grid									-->
+		<!-- ============================== -->								
 		function createNoticeGrid(){
 			if( !$("#announce-grid").data('kendoGrid') ){
 				$("#announce-grid").kendoGrid({
@@ -606,13 +608,14 @@
 			var template = kendo.template($('#announcement-view-template').html());
 			$("#announce-view").html( template(announcePlaceHolder) );	
 			kendo.bind($("#announce-view"), announcePlaceHolder );				
+			
 			if( announcePlaceHolder.editable ){
 				$("#announce-view button[class*=custom-edit]").click( function (e){
 					editAnnouncePanel();
 				} );
 			}
 			$("#announce-panel" ).show();			
-			kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
+			//kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
 			
 		}			
 		
