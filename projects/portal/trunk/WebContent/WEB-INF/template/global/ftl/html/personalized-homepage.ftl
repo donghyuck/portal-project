@@ -499,7 +499,7 @@
 					}
 				});																		
 				common.api.handlePanelHeaderActions($("#announce-panel"));				
-				showAnnouncePanel();							
+				$("#announce-panel" ).show();				
 			}	
 		}	
 		
