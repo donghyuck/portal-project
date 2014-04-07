@@ -226,24 +226,18 @@
 		
 		if ( typeof options.handlers === UNDEFINED )
 		{	
-			options.handlers = [];		
-			
-		}else{
 			if( typeof options.event === 'string' && isFunction(options.handler) ){
 				if( typeof options.selector === UNDEFINED ) {
 					selector.on(data.event, data.handler);					
 				}else{					
 					selector.find(data.selector).on(data.event, data.handler);
-				}
-				
+				}				
 			}
-		}
-		
-		if( options.handlers.length > 0  ){
+		}else{
 			$.each(options.handlers, function(index, data){
 				selector.find(data.selector).on(data.event, data.handler);
 			});
-		}		
+		}
 	}
 	
 	common.api.handleButtonActions = function ( selector, options ){		
