@@ -434,6 +434,7 @@
 		<div class="panel-body" data-bind="html:body"></div>	
 	</div>
 </script>
+
 <!-- ============================== -->
 <!-- announce view panel template                    -->
 <!-- ============================== -->
@@ -474,11 +475,27 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
 				</div>
 				<div class='modal-body'>		
-
+					<div  class="form">
+						<div class="form-group">
+							<label class="control-label">제목</label>
+							<input type="text" placeholder="제목을 입력하세요." data-bind="value: subject"  class="form-control" placeholder="제목" />
+						</div>
+						<div class="form-group">
+							<label class="control-label">기간</label>
+							<div class="col-sm-12" >
+							<input data-role="datetimepicker" data-bind="value:startDate"> ~ <input data-role="datetimepicker" data-bind="value:endDate">
+							<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다. </span>
+							</div>
+						</div>
+						<div class="form-group">
+							<textarea class="editor" data-bind='value:body'></textarea>		
+						</div>
+					</div>	  
+					<div class="status"></div>	
 				</div>
 				<div class='modal-footer'>
 					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>
-					<button type="button" class="btn btn-primary custom-save" disabled="disabled">저장</button>						
+					<button type="button" class="btn btn-primary custom-update" disabled="disabled">저장</button>						
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
