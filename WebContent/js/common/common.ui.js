@@ -690,9 +690,10 @@
 			 options.custom = false;		
 		if ( typeof selector === 'string' )
 			selector = $(selector);				
+		
 		if ( typeof options.handlers === UNDEFINED ){
-			if( options.event === 'string'  && isFunction(options.handler) ){
-				if(options.selector === UNDEFINED ){
+			if(typeof options.event === 'string'  && isFunction(options.handler) ){
+				if(typeof options.selector === UNDEFINED ){
 					selector.on(options.event, options.handler);
 				}else{
 					selector.find(options.selector).on(options.event, options.handler);
