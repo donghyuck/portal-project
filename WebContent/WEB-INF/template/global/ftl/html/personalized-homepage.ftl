@@ -524,11 +524,17 @@
 			var template = kendo.template($('#announcement-view-template').html());			
 			$("#announce-view").html( template(announcePlaceHolder) );				
 			kendo.bind($("#announce-view"), announcePlaceHolder );				
+			
 			if( announcePlaceHolder.editable ){
 				$("#announce-view button[class*=custom-edit]").click( function (e){
 					editAnnouncePanel();
-				} );
+				} );			
 			}
+						
+			$("#announce-view button[class*=custom-list]").click( function (e){
+					$('html,body').animate({ scrollTop:  0 }, 300);			 
+			} );
+						
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
