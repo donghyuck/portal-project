@@ -498,7 +498,8 @@
 						});								
 					}
 				});																		
-				common.api.handlePanelHeaderActions($("#announce-panel"));										
+				common.api.handlePanelHeaderActions($("#announce-panel"));				
+				showAnnouncePanel();							
 			}	
 		}	
 		
