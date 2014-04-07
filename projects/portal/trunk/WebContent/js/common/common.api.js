@@ -172,7 +172,8 @@
 		
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
 			var panel_header_action = $(this);						
-			panel_header_action.click( function (e) {										
+			panel_header_action.click( function (e) {						
+				alert(panel_header_action.text() );
 				if( panel_header_action.text() == "Minimize" ){        				
     				var panel_header_action_icon = panel_header_action.find('span');
 					if( panel_header_action_icon.hasClass("k-i-minimize") ){
