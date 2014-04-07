@@ -688,13 +688,23 @@
 		options = options || {};		
 		if( options.custom === UNDEFINED )
 			 options.custom = false;			
+		
 		if ( typeof selector === 'string' )
 			selector = $(selector);		
-		if ( typeof options.handlers === UNDEFINED )
-			options.handlers = [];		
-		$.each(options.handlers, function(index, data){
-			selector.find(data.selector).on(data.event, data.handler);
-		});		
+		
+		if ( typeof options.handlers === UNDEFINED ){
+			if( options.event === 'string'  && isFunction(options.handler) ){
+				if(options.selector === UNDEFINED ){
+					
+				}else{
+					selector.find(options.selector).on(options.event, options.handler);
+				}			
+			}
+		}else if (options.handlers instanceof Array) {
+			$.each(options.handlers, function(index, data){
+				selector.find(data.selector).on(data.event, data.handler);
+			});
+		}
 	};
 		
 	
