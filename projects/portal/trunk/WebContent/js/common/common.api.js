@@ -217,6 +217,35 @@
 		});
 	};
 
+	common.api.bindButtonEvents= function ( selector, options ){		
+		options = options || {};		
+		if( options.custom === UNDEFINED )
+			 options.custom = false;
+		if ( typeof selector === 'string' )
+			selector = $(selector);				
+		
+		if ( typeof options.handlers === UNDEFINED )
+		{	
+			options.handlers = [];		
+			
+		}else{
+			if( typeof options.event === 'string' && isFunction(options.handler) ){
+				if( typeof options.selector === UNDEFINED ) {
+					selector.on(data.event, data.handler);					
+				}else{					
+					selector.find(data.selector).on(data.event, data.handler);
+				}
+				
+			}
+		}
+		
+		if( options.handlers.length > 0  ){
+			$.each(options.handlers, function(index, data){
+				selector.find(data.selector).on(data.event, data.handler);
+			});
+		}		
+	}
+	
 	common.api.handleButtonActions = function ( selector, options ){		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
