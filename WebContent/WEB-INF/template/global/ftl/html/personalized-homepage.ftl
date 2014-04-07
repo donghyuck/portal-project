@@ -515,7 +515,7 @@
 				} );
 			}
 			$("#announce-panel" ).show();		
-			$('html,body').animate({scrollTop: $("#announce-panel").offset().top - 100 }, 500);			 ;
+			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 100 }, 500);			 ;
 			
 			//kendo.fx($("#announce-panel")).zoom("in").startValue(0).endValue(1).play();
 			
