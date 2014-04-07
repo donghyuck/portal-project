@@ -675,13 +675,14 @@
  * 
  */
 (function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};	
 	var kendo = window.kendo,
 	Widget = kendo.ui.Widget,
 	stringify = kendo.stringify,
 	UNDEFINED = 'undefined',	
 	proxy = $.proxy,	
-	isFunction = kendo.isFunction,
-	ui = window.ui = window.ui || {};
+	isFunction = kendo.isFunction;
 			
 	common.ui.handleEvents = function ( selector, options ){		
 		options = options || {};		
