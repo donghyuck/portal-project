@@ -684,7 +684,7 @@
 	proxy = $.proxy,	
 	isFunction = kendo.isFunction;
 			
-	common.ui.handleEvents = function ( selector, options ){		
+	common.ui.handleActionEvents = function ( selector, options ){		
 		options = options || {};		
 		if( options.custom === UNDEFINED )
 			 options.custom = false;			
