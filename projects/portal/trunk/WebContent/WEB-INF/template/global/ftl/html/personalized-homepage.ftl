@@ -343,7 +343,7 @@
 						event:'click',
 						handler : function(e){
 							var btn_icon = $(this).find("i");		
-							if( btn_icon.hasClass('.fa-cloud-upload') ){
+							if( btn_icon.hasClass('fa-cloud-upload') ){
 							
 										if( !$("#photo-files").data("kendoUpload")	){						
 											$("#photo-files").kendoUpload({
