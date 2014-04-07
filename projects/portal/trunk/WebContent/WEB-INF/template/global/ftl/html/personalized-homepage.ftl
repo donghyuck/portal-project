@@ -281,7 +281,7 @@
 		<!-- create my photo grid									-->
 		<!-- ============================== -->						
 		function createPhotoListView(){
-			if( !$('#photo-list-view').data('kendoListView') ){
+			if( !$('#photo-list-view').data('kendoListView') ){			
 				$("#photo-list-view").kendoListView({
 								dataSource: {
 									type: 'json',
@@ -333,7 +333,7 @@
 					buttonCount : 5,
 					dataSource : $('#photo-list-view').data('kendoListView').dataSource
 				});		
-													
+					
 				common.ui.handleActionEvents(
 					$("#my-photo-stream .btn-group button"), 
 					{
@@ -378,7 +378,8 @@
 		<!-- create notice grid									-->
 		<!-- ============================== -->								
 		function createNoticeGrid(){
-			if( !$("#announce-grid").data('kendoGrid') ){
+			if( !$("#announce-grid").data('kendoGrid') ){				
+				$("#announce-grid").data('announceSourcePlaceHolder', 30);
 				$("#announce-grid").kendoGrid({
 					dataSource : new kendo.data.DataSource({
 						transport: {
@@ -390,6 +391,10 @@
 							parameterMap: function(options, operation) {
 								if (operation != "read" && options.models) {
 									return {models: kendo.stringify(options.models)};
+								}else{
+								
+									return {objectType: $("#announce-grid").data('announceSourcePlaceHolder') };
+								
 								}
 							} 
 						},
@@ -433,6 +438,7 @@
 					dataBound: function(e) {					
 						//var selectedCells = this.select();
 						//this.select("tr:eq(1)");
+						
 					}
 				});		
 
@@ -497,11 +503,18 @@
 							$("#my-notice .side1").toggleClass("hide");
 						});								
 					}
-					
-					
-					
-				});																		
-				common.api.handlePanelHeaderActions($("#announce-panel"));				
+				});																						
+
+				common.api.handlePanelHeaderActions($("#announce-panel"));
+				common.ui.handleActionEvents( $('input[name="announce-selected-source"]'), { event: 'change' , handler: function(e){				
+					var oldSelectedSource = $("#announce-grid").data('announceSourcePlaceHolder');
+					if( oldSelectedSource != this.value ){
+						$("#announce-grid").data('announceSourcePlaceHolder', this.value );		
+						$("#announce-grid").data('kendoGrid').dataSource.read();
+						//$("#announce-view").html("");		
+					}					
+				}});								
+												
 				$("#announce-panel" ).show();				
 			}	
 		}	
