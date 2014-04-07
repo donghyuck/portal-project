@@ -168,8 +168,7 @@
 					last_panel_body.addClass('scrollable');
 				}		
 			});					
-		}		
-		
+		}				
 		selector.find('.panel-header-actions a.k-link').each(function( index ){
 			var panel_header_action = $(this);						
 			panel_header_action.click( function (e) {						
@@ -197,7 +196,10 @@
     				if( isFunction(options.close) ){
     					options.close();
     				}else{
-    					selector.parent().remove();
+    					if( selector.hasClass('panel') )
+    						selector.parent().remove();
+    					else
+    						selector.remove();
     				}
     			}else if ( panel_header_action.text() == "Refresh"){	    			
     				if( isFunction(options.refresh) ){
