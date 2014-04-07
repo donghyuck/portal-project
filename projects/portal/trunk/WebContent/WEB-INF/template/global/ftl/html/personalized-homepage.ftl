@@ -406,11 +406,8 @@
 						{field:"announceId", title: "ID", width: 50, attributes: { "class": "table-cell", style: "text-align: center " }} ,
 						{field:"subject", title: "주제"}
 					],
-					pageable: {
-						refresh: true,
-						pageSizes: false,
-						buttonCount: 5
-					},					
+					height: '100%',
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
 					change: function(e) { 
 						var selectedCells = this.select();
