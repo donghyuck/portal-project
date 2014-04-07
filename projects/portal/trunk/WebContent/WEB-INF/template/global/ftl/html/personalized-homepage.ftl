@@ -1356,10 +1356,10 @@
 							<div class="page-header text-primary">
 								<h5 ><small>소속 회사 ${user.company.displayName} 의 공지 입니다</small></h5>
 								<div class="btn-group" data-toggle="buttons">
-									<label class="btn btn-primary">
+									<label class="btn btn-info">
 									<input type="radio" name="announce-selected-source" value="30" >사이트
 									</label>
-									<label class="btn btn-primary active">
+									<label class="btn btn-info active">
 									<input type="radio" name="announce-selected-source" value="1">회사
 									</label>
 								</div>								
