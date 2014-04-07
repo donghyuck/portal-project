@@ -222,7 +222,7 @@
 		if( options.custom === UNDEFINED )
 			 options.custom = false;
 		if ( typeof selector === 'string' )
-			selector = $(selector);		
+			selector = $(selector);						
 		if ( typeof options.handlers === UNDEFINED )
 		{	
 			if( typeof options.event === 'string' && isFunction(options.handler) ){
@@ -232,7 +232,7 @@
 					selector.find(data.selector).on(data.event, data.handler);
 				}				
 			}
-		}else{
+		}else	if(options.handlers instanceof Array ){
 			$.each(options.handlers, function(index, data){
 				selector.find(data.selector).on(data.event, data.handler);
 			});
