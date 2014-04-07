@@ -964,17 +964,21 @@
 		</script>		
 		<style scoped="scoped">
 
+/*
 		.k-tiles-arrange label {
 			font-weight : normal;		
 		}
 		.k-tiles li.k-state-selected {
 			border-color: #428bca;
 		}
+		
+		
 		.k-imagebrowser ul li.k-state-selected{
 			background: #428bca;
 			color: #ffffff; 
 			border-color : #428bca; 
 		}
+		*/
 		
 		#pdf-view {
 			height: 500px;
@@ -990,12 +994,12 @@
 		   display: block;
 		   border: solid 1px #787878;
 		}
-
+	/*
 		.media, .media .media {
 			margin-top: 5px;
 		}
 	
-	
+
 		.popover {
 			font-family: "나눔 고딕", "BM_NANUMGOTHIC";
 			width: 90%;
@@ -1045,7 +1049,7 @@
 			padding: 0px;
 			border: 0px;
 		}
-	
+	*/
 		.attach
 		{
 			float: left;
