@@ -188,9 +188,9 @@
 						panel_header_action_icon.removeClass("k-i-maximize");
 						panel_header_action_icon.addClass("k-i-minimize");	
 						if( selector.hasClass('panel') ){
-							selector.children('.panel-body:last, .panel-footer').addClass("hide");
+							selector.children('.panel-body:last, .panel-footer').removeClass("hide");
 						}else{
-							selector.find('.panel:first').children('.panel-body, .panel-footer').addClass("hide");
+							selector.find('.panel:first').children('.panel-body, .panel-footer').removeClass("hide");
 						}	
 					}						
     			}else if ( panel_header_action.text() == "Close"){
