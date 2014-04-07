@@ -344,6 +344,7 @@
 						handler : function(e){
 							var btn_icon = $(this).find("i");		
 							if( btn_icon.hasClass('.fa-cloud-upload') ){
+							
 										if( !$("#photo-files").data("kendoUpload")	){						
 											$("#photo-files").kendoUpload({
 												 	multiple : true,
@@ -369,6 +370,7 @@
 													}
 											});		
 										}
+										$("#my-photo-stream .custom-upload").toggleClass("hide");					
 							}
 						} 
 					}							
