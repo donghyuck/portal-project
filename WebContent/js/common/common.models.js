@@ -218,7 +218,7 @@ var Announce = kendo.data.Model.define( {
     	this.set("endDate", new Date() );
     },
     clone: function () {
-    	return new Anounce({
+    	return new Announce({
     		announceId : this.get("announceId"),
     		subject :  this.get("subject"),
     		body: this.get("body"),
