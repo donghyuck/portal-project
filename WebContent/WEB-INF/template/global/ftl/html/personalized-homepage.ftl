@@ -524,16 +524,14 @@
 			$("#announce-view").html( template(announcePlaceHolder) );				
 			kendo.bind($("#announce-view"), announcePlaceHolder );			
 			if( announcePlaceHolder.editable ){
-				$("#announce-view button[class*=custom-edit]").click( function (e){
-					
+				$("#announce-view button[class*=custom-edit]").click( function (e){					
 					if( $('#announce-editor').text().trim().length == 0 ){						
 						var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 						$('#announce-editor').html( announceEditorTemplate );		
 					}					
-					kendo.bind($('#announce-editor'), announcePlaceHolder );
+					kendo.bind($('#announce-editor'), announcePlaceHolder.clone() );
 					createEditor($("#announce-editor .editor"));	
-					$('#announce-editor .modal').modal('show');
-						
+					$('#announce-editor .modal').modal('show');						
 				} );			
 			}						
 			$("#announce-view button[class*=custom-list]").click( function (e){
