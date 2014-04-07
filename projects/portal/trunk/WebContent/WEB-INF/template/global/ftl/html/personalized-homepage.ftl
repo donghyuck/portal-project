@@ -1440,14 +1440,25 @@
 										</div>
 									<!-- start attachement tab-pane -->
 									<div class="tab-pane" id="my-files">
-										<section class="side1">
-											<div class="btn-group">
-												<button type="button" class="btn btn-info"><i class="fa fa-cloud-upload"></i> &nbsp; 파일업로드</button>	
-											</div>			
+										<section class="custom-upload hide">
+											<#if !action.user.anonymous >			
 											<div class="page-header text-primary">
-											<h5 ><strong>MY 파일</strong>&nbsp;<small>파일을 선택하면 화면에 선택한 파일 페널이 보여집니다.</small></h5>
-											</div>	
-											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+												<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+											</div>								
+											<input name="uploadAttachment" id="attachment-files" type="file" />												
+											</#if>								
+										</section>										
+										<div class="page-header text-primary">
+											<h5 >											
+												<small>파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small>
+												<#if !action.user.anonymous >		
+												<div class="btn-group">			
+													<button type="button" class="btn btn-info" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 파일업로드</button>		
+												</div>		
+												</#if>												
+											</h5>
+										</div>
+										<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-warning active">
 													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
 												</label>
@@ -1457,44 +1468,37 @@
 												<label class="btn btn-warning">
 													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
 												</label>	
-											</div>
-											<div class="blank-top-5" ></div>		
-											<div class="panel panel-default panel-flat">
+										</div>
+										<div class="blank-top-5" ></div>		
+										<div class="panel panel-default panel-flat">
 												<div class="panel-body scrollable" style="max-height:450px;">
 													<div id="attachment-list-view" ></div>
 												</div>	
 												<div class="panel-footer" style="padding:0px;">
 													<div id="pager" class="k-pager-wrap"></div>
 												</div>
-											</div>																							
-										</section>
-										<section class="side2 hide">
-											<div class="btn-group">			
-												<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp; 목록보기</button>		
-											</div>									
-											<#if !action.user.anonymous >									
-												<input name="uploadAttachment" id="attachment-files" type="file" />												
-											</#if>									
-										</section>																													
+										</div>																				
 									</div><!-- end attachements  tab-pane -->		
 									<!-- start photos  tab-pane -->
 									<div class="tab-pane" id="my-photo-stream">
 										<section class="custom-upload hide">
+											<#if !action.user.anonymous >			
 											<div class="page-header text-primary">
-												<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+												<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
 											</div>
-											<div id="my-photo-upload">
-												<#if !action.user.anonymous >		
-												<input name="uploadPhotos" id="photo-files" type="file" />
-												</#if>							
+											<div id="my-photo-upload">	
+												<input name="uploadPhotos" id="photo-files" type="file" />					
 											</div>
+											</#if>
 										</section>	
-											<div class="page-header text-primary">
+										<div class="page-header text-primary">
 												<h5 >											
 													<small>사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small>
+													<#if !action.user.anonymous >		
 													<div class="btn-group">			
 														<button type="button" class="btn btn-info" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
-													</div>														
+													</div>		
+													</#if>												
 												</h5>
 											</div>													
 											<div class="blank-top-5" ></div>
@@ -1505,7 +1509,7 @@
 												<div class="panel-footer" style="padding:0px;">
 													<div id="photo-list-pager" class="k-pager-wrap"></div>
 												</div>
-											</div>	
+										</div>	
 									</div><!-- end photos  tab-pane -->
 								</div><!-- end of tab content -->					
 			</div>	
