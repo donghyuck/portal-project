@@ -459,8 +459,9 @@
 	</div>	
 	<div class="blank-top-5" ></div>
 	<div data-bind="html:body"></div>
+	<button  type="button" class="btn btn-info btn-sm pull-right custom-list"><i class="fa fa-list-ul"></i> 목록</button>
 	# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
-	<button  type="button" class="btn btn-primary pull-right custom-edit"><i class="fa fa-pencil-square-o"></i> 수정</button>
+	<button  type="button" class="btn btn-primary btn-sm pull-right custom-edit"><i class="fa fa-pencil-square-o"></i> 수정</button>
 	# } #
 </script>
 
