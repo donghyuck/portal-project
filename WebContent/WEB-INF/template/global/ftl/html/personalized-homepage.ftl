@@ -1373,10 +1373,10 @@
 								<h5 ><small>우측 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다. </small>
 								&nbsp;
 								<div class="btn-group" data-toggle="buttons">
-									<label class="btn btn-info btn-sm">
+									<label class="btn btn-info btn-sm active">
 									<input type="radio" name="announce-selected-source" value="30" >사이트
 									</label>
-									<label class="btn btn-info btn-sm active">
+									<label class="btn btn-info btn-sm ">
 									<input type="radio" name="announce-selected-source" value="1">회사
 									</label>
 								</div>		
