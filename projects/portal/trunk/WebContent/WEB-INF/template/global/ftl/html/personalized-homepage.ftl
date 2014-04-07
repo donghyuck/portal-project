@@ -305,7 +305,6 @@
 										data : "targetImages",
 										total : "totalTargetImageCount"
 									},
-									/*sort: { field: "imageId", dir: "desc" },*/
 									serverPaging: true
 								},
 								selectable: "single",									
@@ -327,15 +326,15 @@
 				});								
 																	
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
-								}).on("mouseleave", ".img-wrapper", function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+					kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+				}).on("mouseleave", ".img-wrapper", function(e) {
+					kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 				});		
 																
 				$("#photo-list-pager").kendoPager({
-								refresh : true,
-								buttonCount : 5,
-								dataSource : $('#photo-list-view').data('kendoListView').dataSource
+					refresh : true,
+					buttonCount : 5,
+					dataSource : $('#photo-list-view').data('kendoListView').dataSource
 				});		
 													
 				common.ui.handleActionEvents(
