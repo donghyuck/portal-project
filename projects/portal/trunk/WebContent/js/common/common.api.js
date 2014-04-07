@@ -222,8 +222,7 @@
 		if( options.custom === UNDEFINED )
 			 options.custom = false;
 		if ( typeof selector === 'string' )
-			selector = $(selector);				
-		
+			selector = $(selector);		
 		if ( typeof options.handlers === UNDEFINED )
 		{	
 			if( typeof options.event === 'string' && isFunction(options.handler) ){
