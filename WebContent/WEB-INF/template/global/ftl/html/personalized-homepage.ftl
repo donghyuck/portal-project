@@ -608,6 +608,7 @@
 			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
 				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceSourcePlaceHolder') ) ;
 			}
+			alert( kendo.stringify( $('#announce-editor').data("announcePlaceHolder") )  ) ;
 			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
 				$('#announce-editor input[name="announce-type"]:last').select();
@@ -615,7 +616,7 @@
 				$('#announce-editor input[name="announce-type"]:first').select();
 			}					
 				
-			alert( kendo.stringify( $('#announce-editor').data("announcePlaceHolder") )  ) ;
+			
 			
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');
