@@ -477,7 +477,7 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
 				</div>
 			-->	
-				<div class='modal-body' style="min-height:660px;">			
+				<div class='modal-body'>			
 					<div class="page-header text-primary" data-bind="invisible: announceId">
 						<h5 >
 						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
@@ -505,7 +505,7 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label">본문</label>
-							<div class="col-sm-12" >
+							<div class="col-sm-12"  style="min-height:400px;" >
 							<textarea class="editor" data-bind='value:body'></textarea>		
 							</div>
 						</div>
@@ -1006,7 +1006,7 @@
 							<ul class="nav nav-pills nav-stacked">
 							  <li class="active"><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
 							  <li><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li><a href="\\##=domain_guid#" data-toggle="tab">도메인 이미지에서 선택</a></li>
+							  <li><a href="\\##=domain_guid#" data-toggle="tab">회사 이미지에서 선택</a></li>
 							  <li><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
