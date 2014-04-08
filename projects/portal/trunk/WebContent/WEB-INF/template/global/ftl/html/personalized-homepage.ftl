@@ -1348,7 +1348,7 @@
 									</label>
 								</div>	
 								<#if action.site.user.userId == action.user.userId >
-								<button type="button" class="btn btn-primary btn-sm custum-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
+								<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
 								</#if>
 								</h5>						
 							</div>										
