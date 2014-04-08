@@ -203,6 +203,7 @@ var Announce = kendo.data.Model.define( {
     id: "announceId", // the identifier of the model
     fields: {
     	announceId: { type: "number", editable: true, defaultValue: 0 },
+    	objectType: { type: "number", editable: true, defaultValue: 0 },	
     	subject: { type: "string", editable: true },
     	body: { type: "string", editable: true },
     	startDate: { type: "date",  editable: true },
