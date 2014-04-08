@@ -499,7 +499,7 @@
 					var template = kendo.template('<div class="alert alert-danger">#:message#</div>');					
 					var data = $("#announce-editor").data( "announcePlaceHolder" );
 					
-					if( pData.subject == null || pData.subject == '' ||  pData.body == null || pData.body == '' ){
+					if( data.subject == null || data.subject == '' ||  data.body == null || data.body == '' ){
 						$("#announce-editor .status").html( template({ message: "모든 항목을 입력하여 주세요."  }) );
 					}				
 						
