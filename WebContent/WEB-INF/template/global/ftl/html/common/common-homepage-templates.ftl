@@ -459,13 +459,11 @@
 		</div>
 	</div>	
 	<div class="blank-top-5" ></div>
-	<div data-bind="html:body"></div>
-
-	
+	<div data-bind="html:body"></div>	
 	# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
-	<button  type="button" class="btn btn-info btn-sm custom-edit pull-right"><i class="fa fa-pencil-square-o"></i> 수정</button>
+	<button  type="button" class="btn btn-info custom-edit pull-right"><i class="fa fa-pencil-square-o"></i> 수정</button>
 	# } #
-	<button  type="button" class="btn btn-link btn-sm custom-list pull-right"><i class="fa fa-chevron-up"><span> 목록</span></i></button>
+	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-chevron-up"><span> 목록</span></i></button>
 </script>
 
 <script type="text/x-kendo-tmpl" id="announcement-editor-template">		
