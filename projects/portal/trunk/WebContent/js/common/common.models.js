@@ -232,7 +232,7 @@ var Announce = kendo.data.Model.define( {
     	return new Announce({
     		announceId : this.get("announceId"),
     		subject :  this.get("subject"),
-    		target.set("objectType",this.get("objectType") );
+    		target.set("objectType",this.get("objectType") ),
     		body: this.get("body"),
     		startDate : this.get("startDate"),
     		endDate: this.get("endDate"),
