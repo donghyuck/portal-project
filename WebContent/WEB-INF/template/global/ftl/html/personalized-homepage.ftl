@@ -527,8 +527,7 @@
 		function showAnnouncePanel (){		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 			var template = kendo.template($('#announcement-view-template').html());			
-			$("#announce-view").html( template(announcePlaceHolder) );			
-				
+			$("#announce-view").html( template(announcePlaceHolder) );							
 			kendo.bind($("#announce-view"), announcePlaceHolder );			
 			
 			if( announcePlaceHolder.editable ){							
@@ -592,14 +591,12 @@
 				$('#announce-editor').data("announcePlaceHolder").objectType = $("#announce-grid").data('announceSourcePlaceHolder');
 			}else{
 			
-			}
-			
+			}						
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
 				$('#announce-editor input[name="announce-type"]:last').select();
 			}else{				
 				$('#announce-editor input[name="announce-type"]:first').select();
-			}
-						
+			}						
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');
 		}		
