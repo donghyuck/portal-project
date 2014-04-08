@@ -135,8 +135,14 @@
 					 	{ name: "create-user", text: "새로운 사용자 생성하기", className: "createUserCustomClass" } ],
                     change: function(e) {                    
                         var selectedCells = this.select();                 
+  						
+  						alert(selectedCells.length);
   						if( selectedCells.length == 1){ 
+                            
                             var selectedCell = this.dataItem( selectedCells ); 
+                            
+                            alert(selectedCell);
+                            
                             selectedUser.userId = selectedCell.userId ; 
 							selectedUser.username = selectedCell.username ;             
 							selectedUser.name = selectedCell.name ;
@@ -152,6 +158,7 @@
 							selectedUser.properties = selectedCell.properties;							 							 
 							selectedUser.company = selectedCompany;
 							var observable = new kendo.data.ObservableObject( selectedUser ); 
+							
 							
 							if( selectedUser.userId > 0 ){					
 							 	// 2. USER DETAILS
@@ -665,15 +672,15 @@
 								
 							 }			     
                         }else{
-                            selectedUser = new User ({});
+                            selectedUser = new User ();
                         }                       
 					},
 					dataBound: function(e){		
 						 var selectedCells = this.select();
-						 if(selectedCells.length == 0 ){								      
+						 if(selectedCells.length == 0 ){
 						     selectedUser = new User ();
 						     kendo.bind($(".tabular"), selectedUser );	
-							$("#user-details").hide(); 	 					     
+							$("#user-details").hide();
 						 }
 					}
                 }).data('kendoGrid');
