@@ -438,7 +438,7 @@
 <!-- announce view panel template                    -->
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="announcement-view-template">		
-	<div class="page-header">
+	<div class="panel-heading">
 		<h4 data-bind="html:subject"></h4>		
 		<span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>
 	</div>
