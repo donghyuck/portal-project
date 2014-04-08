@@ -418,19 +418,6 @@
 							var selectedCell = this.dataItem( selectedCells );	    							
 							var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 							selectedCell.copy(announcePlaceHolder);
-							
-							
-							/**
-							announcePlaceHolder.announceId = selectedCell.announceId;
-							announcePlaceHolder.subject = selectedCell.subject;
-							announcePlaceHolder.body = selectedCell.body;
-							announcePlaceHolder.startDate = selectedCell.startDate ;
-							announcePlaceHolder.endDate = selectedCell.endDate;
-							announcePlaceHolder.modifiedDate = selectedCell.modifiedDate;
-							announcePlaceHolder.creationDate = selectedCell.creationDate;
-							announcePlaceHolder.user = selectedCell.user;							
-							**/
-							
 							if( announcePlaceHolder.user.userId == $("#account-navbar").data("currentUser").userId ){
 								announcePlaceHolder.modifyAllowed = true;
 							}else{
