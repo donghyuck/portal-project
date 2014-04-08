@@ -571,11 +571,13 @@
 						error:common.api.handleKendoAjaxError
 					});
 				});						
-			}
-			
+			}			
 			// save button disable.. 		
+			/*
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
+			*/
+			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
 				$('#announce-editor input[name="announce-type"]:last').select();
 			}else{
