@@ -17,7 +17,8 @@
        	    '${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',
        	    '${request.contextPath}/js/common/common.models.js',
        	    '${request.contextPath}/js/common/common.api.js',
-       	    '${request.contextPath}/js/common/common.ui.js'],        	   
+       	    '${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.system.js'],        	   
             complete: function() {               
 
 				// 1.  한글 지원을 위한 로케일 설정
@@ -38,41 +39,23 @@
 								
 				// 3.MENU LOAD
 				var currentPageName = "MENU_1_5";
-				
-				var topBar = $("#navbar").extTopBar({ 
-					template : kendo.template($("#topbar-template").html()),
-					data : currentUser,
-					menuName: "SYSTEM_MENU",
-					items: {
-						id:"companyDropDownList", 
-						type: "dropDownList",
-						dataTextField: "displayName",
-						dataValueField: "companyId",
-						value: ${action.companyId},
-						enabled : false,
-						dataSource: {
-							transport: {
-								read: {
-									type: "json",
-									url: '${request.contextPath}/secure/list-company.do?output=json',
-									type:'POST'
-								}
-							},
-							schema: { 
-								data: "companies",
-								model : Company
+				var topBar = $("#navbar").extTopNavBar({ 
+					menu:"SYSTEM_MENU",
+					template : kendo.template($("#topnavbar-template").html() ),
+					items: [
+						{ 
+							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
+							change : function(data){
+								$("#navbar").data("companyPlaceHolder", data) ;
+								kendo.bind($("#site-info"), data );
 							}
 						},
-						change : function(data){
-							selectedCompany = data ;
-							kendo.bind($("#company-info-panel"), selectedCompany );   
+						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
+								kendo.bind($(".page-header"), data );   
+							} 
 						}
-					},
-					doAfter : function(that){
-						var menu = that.getMenuItem(currentPageName);
-						kendo.bind($(".page-header"), menu );   
-					}
-				 });	
+					]
+				});
 		
 				// 4. PAGE MAIN		
 				$.ajax({

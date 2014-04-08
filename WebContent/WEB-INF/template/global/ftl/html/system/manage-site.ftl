@@ -41,7 +41,7 @@
 					template : kendo.template($("#topnavbar-template").html() ),
 					items: [
 						{ 
-							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.companyId},
+							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
 							change : function(data){
 								$("#navbar").data("companyPlaceHolder", data) ;
 								kendo.bind($("#site-info"), data );
@@ -83,8 +83,7 @@
 											
 											if ( pane_id.indexOf( 'details' ) != -1 ){
 												is_details_pane = true;
-											}								
-											
+											}											
 											if( pane_body.hasClass("col-sm-6" )){
 												pane_body.removeClass("col-sm-6");
 												pane_body.addClass("col-sm-12");	
