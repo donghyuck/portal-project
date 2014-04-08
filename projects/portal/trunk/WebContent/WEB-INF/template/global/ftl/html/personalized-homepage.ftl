@@ -501,7 +501,7 @@
 					
 					var pData = $("#announce-editor").data( "announcePlaceHolder" );
 					if( pData.subject == null || pData.subject == '' ||  pData.body == null || pData.body == '' ){
-						$("#announce-editor .status").extAlert({message: "모든 항목을 입력하여 주세요. " });
+						$("#announce-editor .status").extAlert({ data: { message: "모든 항목을 입력하여 주세요. " }});
 					}				
 						
 					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
