@@ -19,7 +19,7 @@
     DataSource = kendo.data.DataSource,
     browser = kendo.support.browser,
     isFunction = kendo.isFunction,
-    MENU_DATA_URL = '/secure/get-company-menu-component.do?output=json',
+    MENU_DATA_URL = '/secure/get-website-menu-component.do?output=json',
 	UNDEFINED = 'undefined',
 	CHANGE = "change",
 	CLICK = "click",
@@ -81,7 +81,7 @@
 							}
 						},
 						schema: {
-							data: "targetCompanyMenuComponent.components"
+							data: "targetWebSiteMenuComponent.components"
 						}
 					});
 				} 
