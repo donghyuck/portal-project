@@ -494,6 +494,7 @@
 						if( senderSource.subject == null || senderSource.subject == '' ||  senderSource.body == null || senderSource.body == '' ){
 							return;
 						}else{
+							$("#announce-editor .status").html("");
 							announce_editor_update.removeAttr('disabled');
 						}
 					}
