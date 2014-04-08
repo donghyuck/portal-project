@@ -665,7 +665,7 @@
 									$(this).tab('show');
 								});				
 								$('#myTab a[href="#props"]').tab('show') ;
-								$('html,body').animate({scrollTop: $("#user-details").offset().top - 80 }, 300);												
+								$('html,body').animate({scrollTop: $("#user-details").offset().top - 55 }, 300);												
 							 }			     
                         }else{
                             selectedUser = new User ();
