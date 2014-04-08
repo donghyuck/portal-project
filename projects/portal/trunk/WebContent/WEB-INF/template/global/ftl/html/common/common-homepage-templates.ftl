@@ -434,7 +434,6 @@
 		<div class="panel-body" data-bind="html:body"></div>	
 	</div>
 </script>
-
 <!-- ============================== -->
 <!-- announce view panel template                    -->
 <!-- ============================== -->
@@ -475,7 +474,10 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
 				</div>
 			-->	
-				<div class='modal-body' style="min-height:600px;">		
+				<div class='modal-body' style="min-height:600px;">			
+					
+					<span class="label label-danger">NEW</span>		
+									
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label">제목</label>
