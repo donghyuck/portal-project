@@ -603,7 +603,14 @@
 			}else{				
 				$('#announce-editor input[name="announce-type"]:first').select();
 			}	
-			*/					
+			*/				
+			
+			f( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
+				$('#announce-editor').data("announcePlaceHolder").objectType = $("#announce-grid").data('announceSourcePlaceHolder');
+			}else{
+			
+			}	
+				
 			alert( kendo.stringify( $('#announce-editor').data("announcePlaceHolder"))  ) ;
 			
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
