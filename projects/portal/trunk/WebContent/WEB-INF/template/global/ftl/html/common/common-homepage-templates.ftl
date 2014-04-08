@@ -477,7 +477,7 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
 				</div>
 			-->	
-				<div class='modal-body' style="min-height:650px;">			
+				<div class='modal-body' style="min-height:660px;">			
 					<div class="page-header text-primary">
 						<h5 >
 						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
