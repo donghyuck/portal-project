@@ -579,7 +579,7 @@
 			*/
 			
 			if( $("#announce-panel").data( "announcePlaceHolder" ).announceId > 0 ){
-				announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
+				$("#announce-panel").data( "announcePlaceHolder" ).copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
 			}
 			
 			alert($('#announce-editor').data("announcePlaceHolder").objectType);
