@@ -542,19 +542,22 @@
 		}
 						
 		function createAnnounceEditor(){			
-			if( $('#announce-editor').text().trim().length == 0 ){						
+			if( $('#announce-editor').text().trim().length == 0 ){					
 				$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
-				$('#announce-editor').html( announceEditorTemplate );
-						
+				$('#announce-editor').html( announceEditorTemplate );					
 				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );					
+				if($('#announce-editor').data("announcePlaceHolder").objectType == 1){
+					$('#announce-editor input[name="announce-type"]:first').select();
+				}else{
+					$('#announce-editor input[name="announce-type"]:last').select();
+				}
 				createEditor($("#announce-editor .editor"));	
-						
 				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
 					announce_editor_update.removeAttr('disabled');
-					//alert( kendo.stringify( e ) );
-				});											
+					alert( kendo.stringify( e ) );
+				});							
 				announce_editor_update.click(function(e){
 					e.preventDefault();
 					$.ajax({
