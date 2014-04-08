@@ -503,9 +503,10 @@
 					var template = kendo.template('<div class="alert alert-danger">#:message#</div>');					
 					var data = $("#announce-editor").data( "announcePlaceHolder" );
 					
-					if( data.subject == null || data.subject == '' ||  data.body == null || data.body == '' ){
-						$("#announce-editor .status").html( template({ message: "모든 항목을 입력하여 주세요."  }) );
+					if( data.startDate >= data.endDate  ){
+						$("#announce-editor .status").html( template({ message: "시작일자가 종료일자보다 이휴일 수 없습니다."  }) );
 					}				
+					
 						
 					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
 					
