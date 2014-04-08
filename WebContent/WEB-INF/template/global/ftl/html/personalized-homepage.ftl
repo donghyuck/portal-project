@@ -511,7 +511,6 @@
 					if( oldSelectedSource != this.value ){
 						$("#announce-grid").data('announceSourcePlaceHolder', this.value );
 						$("#announce-grid").data('kendoGrid').dataSource.read();
-						//$("#announce-view").html("");		
 					}					
 				}});
 				
@@ -594,10 +593,15 @@
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
 
 			
-			if( $("#announce-panel").data( "announcePlaceHolder" ).announceId > 0 ){
+			if( $('#announce-editor').data("announcePlaceHolder").announceId < 0 ){
 				$("#announce-panel").data( "announcePlaceHolder" ).copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
 			}
 			*/
+			
+			if( $('#announce-editor').data("announcePlaceHolder").announceId < 0 ){
+				$('#announce-editor').data("announcePlaceHolder").objectType = $("#announce-grid").data('announceSourcePlaceHolder');
+			}
+						
 						
 			alert($('#announce-editor').data("announcePlaceHolder").objectType);
 			
