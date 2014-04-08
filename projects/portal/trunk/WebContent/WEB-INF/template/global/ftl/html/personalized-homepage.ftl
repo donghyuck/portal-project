@@ -575,12 +575,11 @@
 			
 			// save button disable.. 		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
-			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 			
-
-			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){
-				$('#announce-editor input[name="announce-type"]:first').select();
-			}else{
+			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
+			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
 				$('#announce-editor input[name="announce-type"]:last').select();
+			}else{
+				$('#announce-editor input[name="announce-type"]:first').select();
 			}
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');
