@@ -228,7 +228,7 @@ var Announce = kendo.data.Model.define( {
     	target.set("endDate", this.get("endDate"));
     	target.set("modifiedDate",this.get("modifiedDate") );
     	target.set("creationDate", this.get("creationDate") );
-    	if( this.get("user") === 'object' )
+    	if( typeof this.get("user") === 'object' )
     		target.set("user", this.get("user") );    	
     },
     clone: function () {
