@@ -587,30 +587,19 @@
 					*/
 				});						
 			}			
-			// save button disable.. 		
-			/*
-			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
-			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
-
-			
-			if( $('#announce-editor').data("announcePlaceHolder").announceId < 0 ){
-				$("#announce-panel").data( "announcePlaceHolder" ).copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
-			}
-			*/
-			
+			// save button disable.. 					
 			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
 				$('#announce-editor').data("announcePlaceHolder").objectType = $("#announce-grid").data('announceSourcePlaceHolder');
+			}else{
+			
 			}
-						
-						
-			alert($('#announce-editor').data("announcePlaceHolder").objectType);
 			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
 				$('#announce-editor input[name="announce-type"]:last').select();
-			}else{
-				
+			}else{				
 				$('#announce-editor input[name="announce-type"]:first').select();
 			}
+						
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');
 		}		
