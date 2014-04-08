@@ -516,7 +516,8 @@
 				}});
 				
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
-				
+					$("#announce-panel").data( "announcePlaceHolder" ).reset();
+					createAnnounceEditor();
 				});		
 				$("#announce-panel" ).show();
 			}	
@@ -537,8 +538,8 @@
 					$('html,body').animate({ scrollTop:  0 }, 300);
 			} );									
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
-		}			
-				
+		}
+						
 		function createAnnounceEditor(){			
 			if( $('#announce-editor').text().trim().length == 0 ){						
 				$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
@@ -574,7 +575,7 @@
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 			
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
-			$('#announce-editor .modal').modal('show');				
+			$('#announce-editor .modal').modal('show');
 		}		
 
 		function createEditor( renderTo ){
