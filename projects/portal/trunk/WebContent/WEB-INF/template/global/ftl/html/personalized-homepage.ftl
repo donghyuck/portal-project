@@ -489,7 +489,7 @@
 				createEditor($("#announce-editor .editor"));	
 				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
-					alert( kendo.stringify(e) );
+					
 					if( e.field != "objectType" ){						
 						var senderSource = e.sender.source;
 						if( senderSource.subject == null || senderSource.subject == '' ||  senderSource.body == null || senderSource.body == '' ){
