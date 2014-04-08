@@ -532,8 +532,7 @@
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
 		}			
 				
-		function createAnnounceEditor(){
-			
+		function createAnnounceEditor(){			
 			if( $('#announce-editor').text().trim().length == 0 ){						
 				$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
@@ -554,21 +553,20 @@
 						type : 'POST',
 						url : '${request.contextPath}/community/update-announce.do?output=json',
 						data : { objectType: $("#announce-grid").data('announceSourcePlaceHolder'), item: kendo.stringify( $("#announce-editor").data( "announcePlaceHolder" ) ) },
-						success : function( response ){		
+						success : function( response ){						
+							
+							$("#announce-grid").data('kendoGrid').dataSource.read();
+							$("#announce-view").html("");
 							$('#announce-editor .modal').modal('hide');
 						},
 						error:common.api.handleKendoAjaxError
 					});
-				});
-						
+				});						
 			}
 			// save button disable.. 		
-			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );	
-			
-			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 
-			
-			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');	
-			
+			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
+			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 			
+			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');				
 		}		
 
