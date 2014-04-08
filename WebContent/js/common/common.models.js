@@ -220,6 +220,7 @@ var Announce = kendo.data.Model.define( {
     },
     copy: function ( target ){
     	target.set("announceId", this.get("announceId"));
+    	target.set("objectType",this.get("objectType") );
     	target.set("subject",this.get("subject") );
     	target.set("body", this.get("body"));
     	target.set("startDate",this.get("startDate") );
@@ -231,6 +232,7 @@ var Announce = kendo.data.Model.define( {
     	return new Announce({
     		announceId : this.get("announceId"),
     		subject :  this.get("subject"),
+    		target.set("objectType",this.get("objectType") );
     		body: this.get("body"),
     		startDate : this.get("startDate"),
     		endDate: this.get("endDate"),
