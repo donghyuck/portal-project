@@ -439,7 +439,8 @@
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="announcement-view-template">		
 	<div class="page-header">
-		<h4><span data-bind="html:subject"></span><small><span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small></h4>		
+		<h4 data-bind="html:subject"></h4>		
+		<span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>
 	</div>
 	<div class="media">
 		<a class="pull-left" href="\\#">
