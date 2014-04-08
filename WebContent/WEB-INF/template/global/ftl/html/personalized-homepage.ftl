@@ -547,7 +547,7 @@
 		function setAnnounceEditorSource( source ){
 			if( source instanceof Announce ){		
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce({}));			
+					$('#announce-editor').data("announcePlaceHolder", new Announce());			
 				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
 			}else{
 				$('#announce-editor').data("announcePlaceHolder").reset();
@@ -611,9 +611,9 @@
 			alert( kendo.stringify( $('#announce-editor').data("announcePlaceHolder") )  ) ;
 			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
-				$('#announce-editor input[name="announce-type"]:last').select();
+				$('#announce-editor input[name="announce-type"]:last').click();
 			}else{				
-				$('#announce-editor input[name="announce-type"]:first').select();
+				$('#announce-editor input[name="announce-type"]:first').click();
 			}					
 				
 			
