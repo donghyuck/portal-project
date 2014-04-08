@@ -440,6 +440,7 @@
 					}
 				});		
 
+/**
 				$("#my-notice .btn-group button").each(function( index ) { 
 					var control_button = $(this);								
 					var control_button_icon = control_button.find("i");				
@@ -502,16 +503,22 @@
 						});								
 					}
 				});		
+				**/
+				
 				common.api.handlePanelHeaderActions($("#announce-panel"));
 				common.ui.handleActionEvents( $('input[name="announce-selected-source"]'), { event: 'change' , handler: function(e){				
 					var oldSelectedSource = $("#announce-grid").data('announceSourcePlaceHolder');
 					if( oldSelectedSource != this.value ){
-						$("#announce-grid").data('announceSourcePlaceHolder', this.value );		
+						$("#announce-grid").data('announceSourcePlaceHolder', this.value );
 						$("#announce-grid").data('kendoGrid').dataSource.read();
 						//$("#announce-view").html("");		
 					}					
-				}});														
-				$("#announce-panel" ).show();				
+				}});
+				
+				$('#announce-panel .panel-body button.custom-add').click(function(e){
+				
+				});		
+				$("#announce-panel" ).show();
 			}	
 		}	
 				
