@@ -489,8 +489,10 @@
 				createEditor($("#announce-editor .editor"));	
 				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
-					if( e.field != "objectType" ){
-						announce_editor_update.removeAttr('disabled');
+					if( e.field != "objectType" ){						
+						if( e.source.subject == null || e.source.subject == '' ||  e.source.body == null || e.source.body == '' ){ }else{
+							announce_editor_update.removeAttr('disabled');
+						}
 					}
 					
 				alert(	kendo.stringify(e) ) ;
