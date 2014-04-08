@@ -477,7 +477,7 @@
 				<div class='modal-body' style="min-height:620px;">					
 					<span class="label label-danger" data-bind="invisible: announceId">NEW</span><span data-bind="text: objectType "></span>
 					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-info btn-sm">
+						<label class="btn btn-info btn-sm active">
 						<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">사이트
 						</label>
 						<label class="btn btn-info btn-sm">
