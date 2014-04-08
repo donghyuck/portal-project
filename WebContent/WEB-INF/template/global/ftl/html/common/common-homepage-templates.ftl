@@ -474,19 +474,16 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
 				</div>
 			-->	
-				<div class='modal-body' style="min-height:600px;">	
-				
+				<div class='modal-body' style="min-height:600px;">					
 					<span class="label label-danger" data-bind="invisible: announceId">NEW</span>
-
-<div class="btn-group" data-toggle="buttons">
-  <label class="btn btn-primary">
-    <input type="radio" name="announce-type" value="1" data-bind="checked: objectType">사이트
-  </label>
-  <label class="btn btn-primary">
-    <input type="radio" name="announce-type" value="30" data-bind="checked: objectType">회사
-  </label>
-</div>
-
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-info btn-sm">
+						<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">사이트
+						</label>
+						<label class="btn btn-info btn-sm">
+						<input type="radio" name="announce-type" value="30" data-bind="checked: objectType">회사
+						</label>
+					</div>
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label">제목</label>
