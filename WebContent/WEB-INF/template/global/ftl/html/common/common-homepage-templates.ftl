@@ -505,12 +505,14 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label">본문</label>
-							<div class="col-sm-12"  style="min-height:400px;" >
+							<div class="col-sm-12"  style="min-height:420px;" >
 							<textarea class="editor" data-bind='value:body'></textarea>		
 							</div>
 						</div>
-					</div>					
-					<div class="status"></div>					
+						<div class="form-group has-error">
+							<div class="status"></div>
+						</div>
+					</div>								
 				</div>
 				<div class='modal-footer'>
 					<div class="btn-group">
