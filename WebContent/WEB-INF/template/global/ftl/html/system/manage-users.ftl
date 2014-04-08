@@ -57,6 +57,7 @@
 				// 4. CONTENT MAIN		
 
                 // SPLITTER LAYOUT
+                /**
 				$("button.btn-control-group ").each(function (index) {					
 					var btn_control = $(this);
 					var btn_control_action = btn_control.attr("data-action");
@@ -92,7 +93,7 @@
 						});
 					}	
 				});							
-												
+				*/			
 	            var selectedUser = new User ({});	
 		        // 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
