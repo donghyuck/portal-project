@@ -492,10 +492,11 @@
 					if( e.field != "objectType" ){
 						announce_editor_update.removeAttr('disabled');
 					}
+					
+					kendo.stringify(e);
 				});							
 				announce_editor_update.click(function(e){
-					e.preventDefault();
-					
+					e.preventDefault();					
 					var template = kendo.template('<div class="alert alert-danger">#:message#</div>');					
 					var data = $("#announce-editor").data( "announcePlaceHolder" );
 					
