@@ -515,10 +515,6 @@
 				}});
 				
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
-					//$("#announce-panel").data( "announcePlaceHolder" ).reset();
-					//$("#announce-panel").data( "announcePlaceHolder" ).objectType = $("#announce-grid").data('announceSourcePlaceHolder');
-					
-					//setAnnounceEditorSource(new Announce({ objectType : $("#announce-grid").data('announceSourcePlaceHolder') }));
 					setAnnounceEditorSource(new Announce());
 					createAnnounceEditor();
 				});		
