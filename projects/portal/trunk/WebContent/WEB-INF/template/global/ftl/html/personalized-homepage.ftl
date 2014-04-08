@@ -547,13 +547,6 @@
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
 				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );				
-				/**	
-				if($('#announce-editor').data("announcePlaceHolder").objectType == 1){
-					$('#announce-editor input[name="announce-type"]:first').select();
-				}else{
-					$('#announce-editor input[name="announce-type"]:last').select();
-				}
-				**/
 				createEditor($("#announce-editor .editor"));	
 				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
@@ -583,6 +576,12 @@
 			// save button disable.. 		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 			
+
+			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){
+				$('#announce-editor input[name="announce-type"]:first').select();
+			}else{
+				$('#announce-editor input[name="announce-type"]:last').select();
+			}
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');
 		}		
