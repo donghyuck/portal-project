@@ -960,6 +960,7 @@
 		<!-- 공용 템플릿 -->
 		<div id="account-panel"></div>	
 		<#include "/html/common/common-templates.ftl" >		
+		<#include "/html/common/common-system-templates.ftl" >			
 		<!-- END MAIN CONTENT  -->
     </body>
 </html>
