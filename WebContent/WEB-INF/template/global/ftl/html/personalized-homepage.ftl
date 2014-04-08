@@ -1347,7 +1347,9 @@
 										<input type="radio" name="announce-selected-source" value="1">회사
 									</label>
 								</div>	
+								<#if action.site.user.userId == action.user.userId >
 								<button type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
+								</#if>
 								</h5>						
 							</div>										
 							<div  id="announce-grid"></div>	
