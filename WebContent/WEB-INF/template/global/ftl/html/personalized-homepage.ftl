@@ -503,17 +503,12 @@
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
 					var template = kendo.template('<p class="text-danger">#:message#</p>');					
-					var data = $("#announce-editor").data( "announcePlaceHolder" );
-					
+					var data = $("#announce-editor").data( "announcePlaceHolder" );					
 					if( data.startDate >= data.endDate  ){
 						$("#announce-editor .status").html( template({ message: "시작일자가 종료일자보다 이후일 수 없습니다."  }) );
 						return ;
-					}				
-					
-						
-					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
-					
-					/*
+					}		
+					//alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
 					$.ajax({
 						dataType : "json",
 						type : 'POST',
@@ -527,7 +522,6 @@
 						},
 						error:common.api.handleKendoAjaxError
 					});
-					*/
 				});						
 			}			
 			// save button disable.. 	
