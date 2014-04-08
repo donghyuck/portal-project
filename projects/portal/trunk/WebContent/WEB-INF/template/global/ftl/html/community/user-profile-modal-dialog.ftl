@@ -215,7 +215,7 @@
 									<tbody>
 										<tr>
 											<td>회사</td>
-											<td>${company.displayName}<small>(${company.description})</small></td>
+											<td>${user.company.displayName}<small>(${user.company.description})</small></td>
 										</tr>
 										<tr>
 											<td>외부 계정</td>

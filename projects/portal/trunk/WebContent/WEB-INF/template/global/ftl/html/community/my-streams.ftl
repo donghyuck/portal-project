@@ -144,7 +144,7 @@
 							var template = kendo.template('<label class="btn btn-info"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #"></i></label>');
 							var html = kendo.render(template, this.data());
 							myStreams.html(html);						
-							common.api.handleButtonActions( myStreams, {
+							common.ui.handleActionEvents( myStreams, {
 								handlers : [{
 									selector: "input:checkbox",
 									event : 'change',
