@@ -708,7 +708,10 @@
 			<div class="row">			
 				<div class="col-12 col-lg-12">					
 					<div class="page-header">
-						<h1><span data-bind="text: title"></span>     <small><i class="fa fa-quote-left"></i>&nbsp;<span data-bind="text: description"></span>&nbsp;<i class="fa fa-quote-right"></i></small></h1>
+						<h1>
+							<span data-bind="text: title"></span>
+							<small><i class="fa fa-quote-left"></i>&nbsp;<span data-bind="text: description"></span>&nbsp;<i class="fa fa-quote-right"></i></small>
+						</h1>
 					</div>			
 				</div>		
 			</div>
@@ -717,11 +720,16 @@
 					<div class="panel panel-default" style="min-height:300px;" >
 						<div class="panel-heading selected-company-info" style="padding:5px;">
 							<div class="btn-group">
-								<button type="button" class="btn btn-success btn-control-group" data-action="group"><i class="fa fa-users"></i>&nbsp;<span data-bind="text: displayName"></span>&nbsp;그룹관리</button>
-								<button type="button" class="btn btn-default btn-control-group btn-columns-expend" data-action="layout"><i class="fa fa-columns"></i></button>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i>&nbsp;<span data-bind="text: displayName"></span>&nbsp;그룹관리</button>
+							<!--	<button type="button" class="btn btn-default btn-control-group btn-columns-expend" data-action="layout"><i class="fa fa-columns"></i></button> -->
 							</div>
 						</div>
 						<div class="panel-body" style="padding:5px;">
+							<div id="user-grid"></div>
+							
+							<div id="file-preview-panel" class="custom-panels-group"></div>	
+															
+							<!--
 							<div class="row marginless paddingless">
 								<div class="col-sm-12 body-group marginless paddingless">
 									<div id="user-grid"></div>
@@ -729,8 +737,11 @@
 								</div>
 								<div id="user-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;"></div>
 							</div>
-						</div>
-					
+							-->
+						</div>	
+						<div class="panel-body" style="padding:5px;">
+							<div id="user-details" style="display:none;"></div>
+						</div>					
 					</div>				
 				</div>			
 			</div>							
