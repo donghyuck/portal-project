@@ -441,7 +441,7 @@
 	<div class="page-heading">
 		<h4 data-bind="html:subject"></h4>		
 		<small class="text-muted"><span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>
-		<small class="text-muted"><span class="label label-default">수정일</span> #: kendo.toString(modifiedDate, "yyyy.mm.dd") #</small>
+		<small class="text-muted"><span class="label label-default">수정일</span> #: kendo.toString(modifiedDate, "yyyy.MM.dd") #</small>
 	</div>
 	<div class="media">
 		<a class="pull-left" href="\\#">
