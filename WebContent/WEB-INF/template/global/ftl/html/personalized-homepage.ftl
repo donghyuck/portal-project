@@ -496,7 +496,7 @@
 							announce_editor_update.removeAttr('disabled');
 						}
 					}					
-					alert(	kendo.stringify(e) ) ;
+					alert(	kendo.stringify(e.sender.source) ) ;
 				});							
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
