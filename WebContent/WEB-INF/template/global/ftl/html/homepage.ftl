@@ -1,7 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="homepage">
 <head>
-		<title><#if action.user.company ?? >${action.user.company.displayName }<#else>::</#if></title>
+		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<script type="text/javascript">
 		<!--
 		yepnope([{
