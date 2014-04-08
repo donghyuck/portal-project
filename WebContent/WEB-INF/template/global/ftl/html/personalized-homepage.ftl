@@ -434,71 +434,6 @@
 					}
 				});		
 
-/**
-				$("#my-notice .btn-group button").each(function( index ) { 
-					var control_button = $(this);								
-					var control_button_icon = control_button.find("i");				
-					if (control_button_icon.hasClass("fa-plus")){
-						control_button.click( function(e){								
-							// editer start .....																		
-							if( $( "#announce-creator" ).children().length < 1 ){
-								$("#announce-creator").data( "announcePlaceHolder" , new Announce() );	
-								var announcePlaceHolder = $("#announce-creator").data( "announcePlaceHolder" );	
-								var template = kendo.template($('#announcement-edit-template').html());
-								$("#announce-creator").html( template(announcePlaceHolder) );
-								kendo.bind($("#announce-creator"), announcePlaceHolder );			
-								createEditor($("#announce-creator .editor"));	
-								$("#announce-creator div button").each(function( index ) {			
-									var panel_button = $(this);			
-									if( panel_button.hasClass( 'custom-update') ){
-										panel_button.click(function (e) { 
-											e.preventDefault();					
-											var data = $("#announce-creator").data( "announcePlaceHolder" );												
-											var hasError = false;
-											if( data.subject == null || data.subject == '' ){
-												hasError = true;
-											}											
-											if( data.body == null || data.body == '' ){
-												hasError = true;
-											}											
-											if( hasError ) {
-												$("#announce-creator .form-group").addClass("has-error");
-												var template = kendo.template('<div class="alert alert-danger">#:message#</div>');
-												$("#announce-creator .status").html(template({message: "모든 항목을 입력하여 주세요. " }));
-											}
-											if( !hasError ) {											
-												$.ajax({
-													dataType : "json",
-													type : 'POST',
-													url : '${request.contextPath}/community/update-announce.do?output=json',
-													data : { announceId: data.announceId, item: kendo.stringify( data ) },
-													success : function( response ){		
-														$('#announce-grid').data('kendoGrid').dataSource.read();	
-														$("#my-notice .btn-group button").first().click();
-													},
-													error:common.api.handleKendoAjaxError
-												});				
-											}							
-										} );
-									}			
-								} );									
-							}else{
-								$("#announce-creator .form-group").removeClass("has-error");
-								$("#announce-creator .status").html("");
-								$("#announce-creator").data( "announcePlaceHolder" ).reset();	
-							}
-							$("#my-notice .side1").toggleClass("hide");
-							$("#my-notice .side2").toggleClass("hide");
-						});						
-					}else if (control_button_icon.hasClass("fa-th-list")){
-						control_button.click( function(e){										
-							$("#my-notice .side2").toggleClass("hide");
-							$("#my-notice .side1").toggleClass("hide");
-						});								
-					}
-				});		
-				**/
-				
 				common.api.handlePanelHeaderActions($("#announce-panel"));
 				common.ui.handleActionEvents( $('input[name="announce-selected-source"]'), { event: 'change' , handler: function(e){				
 					var oldSelectedSource = $("#announce-grid").data('announceSourcePlaceHolder');
@@ -560,7 +495,17 @@
 				});							
 				announce_editor_update.click(function(e){
 					e.preventDefault();
-					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
+					
+					//var template = kendo.template('<div class="alert alert-danger">#:message#</div>');
+					
+					
+					var pData = $("#announce-editor").data( "announcePlaceHolder" );
+					if( pData.subject == null || pData.subject == '' ||  pData.body == null || pData.body == '' ){
+						$("#announce-editor .status").extAlert({message: "모든 항목을 입력하여 주세요. " });
+					}				
+						
+					//alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
+					
 					/*
 					$.ajax({
 						dataType : "json",
