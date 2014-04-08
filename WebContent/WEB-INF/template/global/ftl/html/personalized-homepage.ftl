@@ -554,11 +554,9 @@
 		}
 
 		function createAnnounceEditor(){								
-			if( $('#announce-editor').text().trim().length == 0 ){		
-			
+			if( $('#announce-editor').text().trim().length == 0 ){			
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce({}));
-										
+					$('#announce-editor').data("announcePlaceHolder", new Announce({}));										
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
 				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );				
@@ -567,16 +565,17 @@
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
 					if( e.field != "objectType" ){
 						announce_editor_update.removeAttr('disabled');
-					}					
-					//alert( kendo.stringify( e ) );
+					}
 				});							
 				announce_editor_update.click(function(e){
 					e.preventDefault();
+					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
+					/*
 					$.ajax({
 						dataType : "json",
 						type : 'POST',
 						url : '${request.contextPath}/community/update-announce.do?output=json',
-						data : { objectType: $("#announce-grid").data('announceSourcePlaceHolder'), item: kendo.stringify( $("#announce-editor").data( "announcePlaceHolder" ) ) },
+						data : { item: kendo.stringify( $("#announce-editor").data( "announcePlaceHolder" ) ) },
 						success : function( response ){						
 							
 							$("#announce-grid").data('kendoGrid').dataSource.read();
@@ -585,6 +584,7 @@
 						},
 						error:common.api.handleKendoAjaxError
 					});
+					*/
 				});						
 			}			
 			// save button disable.. 		
