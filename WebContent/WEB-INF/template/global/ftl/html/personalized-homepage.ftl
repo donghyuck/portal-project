@@ -493,7 +493,7 @@
 						announce_editor_update.removeAttr('disabled');
 					}
 					
-					kendo.stringify(e);
+				alert(	kendo.stringify(e) ) ;
 				});							
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
