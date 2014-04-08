@@ -474,7 +474,7 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
 				</div>
 			-->	
-				<div class='modal-body' style="min-height:600px;">					
+				<div class='modal-body' style="min-height:620px;">					
 					<span class="label label-danger" data-bind="invisible: announceId">NEW</span>
 					<div class="btn-group" data-toggle="buttons">
 						<label class="btn btn-info btn-sm">
