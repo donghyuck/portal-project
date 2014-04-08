@@ -671,7 +671,7 @@
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){								      
-						     selectedUser = new User ({});
+						     selectedUser = new User ();
 						     kendo.bind($(".tabular"), selectedUser );	
 							$("#user-details").hide(); 	 					     
 						 }
