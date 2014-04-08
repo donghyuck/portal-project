@@ -32,9 +32,8 @@
 				});
 				
 				$("#navbar").data("companyPlaceHolder", new Company() );
-
 				var selectedSocial = {};			
-										
+														
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
 				var topBar = $("#navbar").extTopNavBar({ 
@@ -56,7 +55,7 @@
 				});
 								 
 				 // 4. PAGE MAIN		
-				 common.api.handleButtonActions(
+				 common.ui.handleActionEvents(
 				 	'.panel-heading', {
 				 		handlers :[ {
 				 			selector: 'button.btn-control-group',
