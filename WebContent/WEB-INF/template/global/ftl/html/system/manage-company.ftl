@@ -323,7 +323,7 @@
 						batch: false, 
 						schema: {
 							total: "totalMenuCount",
-							data: "menus",
+							data: "targetMenus",
 							model: Menu
 						},
 						pageSize: 15,
