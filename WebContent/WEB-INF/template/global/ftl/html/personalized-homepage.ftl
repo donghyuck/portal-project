@@ -546,19 +546,20 @@
 				$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
-				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );					
+				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );				
+				/**	
 				if($('#announce-editor').data("announcePlaceHolder").objectType == 1){
 					$('#announce-editor input[name="announce-type"]:first').select();
 				}else{
 					$('#announce-editor input[name="announce-type"]:last').select();
 				}
+				**/
 				createEditor($("#announce-editor .editor"));	
 				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
 					if( e.field != "objectType" ){
 						announce_editor_update.removeAttr('disabled');
 					}					
-					
 					//alert( kendo.stringify( e ) );
 				});							
 				announce_editor_update.click(function(e){
@@ -578,6 +579,7 @@
 					});
 				});						
 			}
+			
 			// save button disable.. 		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 			
