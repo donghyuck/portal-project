@@ -500,11 +500,11 @@
 				});							
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
-					var template = kendo.template('<div class="alert alert-danger">#:message#</div>');					
+					var template = kendo.template('<p class="text-danger">#:message#</p>');					
 					var data = $("#announce-editor").data( "announcePlaceHolder" );
 					
 					if( data.startDate >= data.endDate  ){
-						$("#announce-editor .status").html( template({ message: "시작일자가 종료일자보다 이휴일 수 없습니다."  }) );
+						$("#announce-editor .status").html( template({ message: "시작일자가 종료일자보다 이후일 수 없습니다."  }) );
 						return ;
 					}				
 					
