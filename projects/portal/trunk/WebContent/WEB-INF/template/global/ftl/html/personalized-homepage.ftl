@@ -606,8 +606,9 @@
 			*/				
 			
 			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
-				$('#announce-editor').data("announcePlaceHolder").objectType = $("#announce-grid").data('announceSourcePlaceHolder');
+				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceSourcePlaceHolder') ) ;
 			}
+			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
 				$('#announce-editor input[name="announce-type"]:last').select();
 			}else{				
