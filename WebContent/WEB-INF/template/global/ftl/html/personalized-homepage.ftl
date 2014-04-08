@@ -517,6 +517,7 @@
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
 					//$("#announce-panel").data( "announcePlaceHolder" ).reset();
 					//$("#announce-panel").data( "announcePlaceHolder" ).objectType = $("#announce-grid").data('announceSourcePlaceHolder');
+					
 					setAnnounceEditorSource(new Announce({ objectType : $("#announce-grid").data('announceSourcePlaceHolder') }));
 					createAnnounceEditor();
 				});		
@@ -602,7 +603,7 @@
 				$('#announce-editor input[name="announce-type"]:first').select();
 			}	
 			*/					
-			alert($('#announce-editor').data("announcePlaceHolder").announceId ) ;
+			alert( kendo.stringify( $('#announce-editor').data("announcePlaceHolder"))  ) ;
 			
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');
