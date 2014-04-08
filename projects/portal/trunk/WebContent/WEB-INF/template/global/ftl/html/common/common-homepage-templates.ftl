@@ -477,7 +477,7 @@
 				<div class='modal-body' style="min-height:650px;">			
 					<div class="page-header text-primary">
 						<h5 >
-						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span><span data-bind="text: objectType "></span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
+						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-info btn-sm active">
 							<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">사이트
