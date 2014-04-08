@@ -516,8 +516,9 @@
 				}});
 				
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
-					$("#announce-panel").data( "announcePlaceHolder" ).reset();
-					$("#announce-panel").data( "announcePlaceHolder" ).objectType = $("#announce-grid").data('announceSourcePlaceHolder');
+					//$("#announce-panel").data( "announcePlaceHolder" ).reset();
+					//$("#announce-panel").data( "announcePlaceHolder" ).objectType = $("#announce-grid").data('announceSourcePlaceHolder');
+					setAnnounceEditorSource(announcePlaceHolder);
 					createAnnounceEditor();
 				});		
 				$("#announce-panel" ).show();
@@ -527,23 +528,38 @@
 		function showAnnouncePanel (){		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 			var template = kendo.template($('#announcement-view-template').html());			
-			$("#announce-view").html( template(announcePlaceHolder) );				
+			$("#announce-view").html( template(announcePlaceHolder) );			
+				
 			kendo.bind($("#announce-view"), announcePlaceHolder );			
 			
 			if( announcePlaceHolder.editable ){							
-				$("#announce-view button[class*=custom-edit]").click( function (e){	
-					createAnnounceEditor();	
+				$("#announce-view button[class*=custom-edit]").click( function (e){					
+					setAnnounceEditorSource(announcePlaceHolder);
+					createAnnounceEditor();						
 				} );			
 			}						
 			$("#announce-view button[class*=custom-list]").click( function (e){
 					$('html,body').animate({ scrollTop:  0 }, 300);
 			} );									
-			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);			 
+			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
 
-		function createAnnounceEditor(){			
-			if( $('#announce-editor').text().trim().length == 0 ){					
-				$('#announce-editor').data("announcePlaceHolder", new Announce({}));	
+		function setAnnounceEditorSource( source ){
+			if( source instanceof Announce ){		
+				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
+					$('#announce-editor').data("announcePlaceHolder", new Announce({}));			
+				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
+			}else{
+				$('#announce-editor').data("announcePlaceHolder").reset();
+			}	
+		}
+
+		function createAnnounceEditor(){								
+			if( $('#announce-editor').text().trim().length == 0 ){		
+			
+				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
+					$('#announce-editor').data("announcePlaceHolder", new Announce({}));
+										
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
 				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );				
@@ -576,12 +592,13 @@
 			/*
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );				
 			announcePlaceHolder.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
-			*/
+
 			
 			if( $("#announce-panel").data( "announcePlaceHolder" ).announceId > 0 ){
 				$("#announce-panel").data( "announcePlaceHolder" ).copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
 			}
-			
+			*/
+						
 			alert($('#announce-editor').data("announcePlaceHolder").objectType);
 			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
