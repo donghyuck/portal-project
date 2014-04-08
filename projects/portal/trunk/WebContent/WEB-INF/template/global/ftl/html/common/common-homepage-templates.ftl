@@ -487,9 +487,7 @@
 							</label>
 						</div>						
 						</h5>
-					</div>									
-					
-
+					</div>	
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label">제목</label>							
