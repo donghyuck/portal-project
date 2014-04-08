@@ -477,9 +477,15 @@
 				<div class='modal-body' style="min-height:600px;">	
 				
 					<span class="label label-danger" data-bind="invisible: announceId">NEW</span>
-					
-					<input type="radio" value="30" name="announce-source"  data-bind="checked: objectType" />
-					<input type="radio" value="1"   name="announce-source" data-bind="checked: objectType" />
+
+<div class="btn-group" data-toggle="buttons">
+  <label class="btn btn-primary">
+    <input type="radio" name="announce-type" value="1" data-bind="checked: objectType">사이트
+  </label>
+  <label class="btn btn-primary">
+    <input type="radio" name="announce-type" value="30" data-bind="checked: objectType">회사
+  </label>
+</div>
 
 					<div  class="form">
 						<div class="form-group">
