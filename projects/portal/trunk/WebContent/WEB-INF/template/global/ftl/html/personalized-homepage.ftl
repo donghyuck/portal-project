@@ -1341,12 +1341,13 @@
 								&nbsp;
 								<div class="btn-group" data-toggle="buttons">
 									<label class="btn btn-info btn-sm active">
-									<input type="radio" name="announce-selected-source" value="30" >사이트
+										<input type="radio" name="announce-selected-source" value="30" >사이트
 									</label>
 									<label class="btn btn-info btn-sm ">
-									<input type="radio" name="announce-selected-source" value="1">회사
+										<input type="radio" name="announce-selected-source" value="1">회사
 									</label>
-								</div>		
+								</div>	
+								<button type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
 								</h5>						
 							</div>										
 							<div  id="announce-grid"></div>	
