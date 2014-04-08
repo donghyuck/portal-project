@@ -475,7 +475,7 @@
 				</div>
 			-->	
 				<div class='modal-body' style="min-height:620px;">					
-					<span class="label label-danger" data-bind="invisible: announceId">NEW</span>
+					<span class="label label-danger" data-bind="invisible: announceId">NEW</span><span data-bind="text: objectType "></span>
 					<div class="btn-group" data-toggle="buttons">
 						<label class="btn btn-info btn-sm">
 						<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">사이트
@@ -486,7 +486,7 @@
 					</div>
 					<div  class="form">
 						<div class="form-group">
-							<label class="control-label">제목</label>
+							<label class="control-label">제목</label>							
 							<input type="text" placeholder="제목을 입력하세요." data-bind="value: subject"  class="form-control" placeholder="제목" />
 						</div>
 						<div class="form-group">
