@@ -842,14 +842,15 @@
 		</script>	
 		
 		<script type="text/x-kendo-template" id="user-details-template">			
-			<div class="panel panel-primary marginless details" >
+			<div class="panel panel-default marginless details" >
 			<!--
 				<div class="panel-heading" >
 					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: name"></span>
 					<button type="button" class="close" aria-hidden="true">&times;</button>
 				</div>
 			-->					
-				<div class="panel-body" style="padding:5px;">					
+				<div class="panel-body" style="padding:5px;">			
+					
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
 							<img id="user-photo" class="img-thumbnail media-object"  src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
