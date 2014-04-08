@@ -496,12 +496,11 @@
 				announce_editor_update.click(function(e){
 					e.preventDefault();
 					
-					//var template = kendo.template('<div class="alert alert-danger">#:message#</div>');
+					var template = kendo.template('<div class="alert alert-danger">#:message#</div>');					
+					var data = $("#announce-editor").data( "announcePlaceHolder" );
 					
-					
-					var pData = $("#announce-editor").data( "announcePlaceHolder" );
 					if( pData.subject == null || pData.subject == '' ||  pData.body == null || pData.body == '' ){
-						$("#announce-editor .status").extAlert({ data: { message: "모든 항목을 입력하여 주세요. " }});
+						$("#announce-editor .status").html( template({ message: "모든 항목을 입력하여 주세요."  }) );
 					}				
 						
 					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
