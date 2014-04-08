@@ -507,9 +507,7 @@
 							<label class="control-label">본문</label>
 							<textarea class="editor" data-bind='value:body'></textarea>
 						</div>
-						<div class="form-group has-error">
-							<div class="status"></div>
-						</div>
+						<div class="status"></div>
 					</div>								
 				</div>
 				<div class='modal-footer'>
