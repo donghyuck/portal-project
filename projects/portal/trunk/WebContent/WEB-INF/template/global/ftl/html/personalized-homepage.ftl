@@ -549,23 +549,20 @@
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
 					announce_editor_update.removeAttr('disabled');
 					//alert( kendo.stringify( e ) );
-				});	
-										
+				});											
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
 					var data = $("#announce-editor").data( "announcePlaceHolder" );
-					alert( kendo.stringify( data ) );
-					/*$.ajax({
+					$.ajax({
 						dataType : "json",
 						type : 'POST',
 						url : '${request.contextPath}/community/update-announce.do?output=json',
 						data : { announceId: data.announceId, item: kendo.stringify( data ) },
 						success : function( response ){		
-							showAnnouncePanel();
+							$('#announce-editor .modal').modal('hide');
 						},
 						error:common.api.handleKendoAjaxError
-					});				
-					**/	
+					});
 				});
 						
 			}
