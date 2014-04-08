@@ -213,6 +213,7 @@ var Announce = kendo.data.Model.define( {
     },
     reset: function (){
     	this.set("announceId", 0 );
+    	this.set("objectType",  1 );
     	this.set("subject", "" );
     	this.set("body", "" );
     	this.set("startDate", new Date() );
