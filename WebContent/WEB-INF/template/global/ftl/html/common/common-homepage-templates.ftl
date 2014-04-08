@@ -475,7 +475,7 @@
 				</div>
 			-->	
 				<div class='modal-body' style="min-height:600px;">	
-					<span class="label label-danger" data-bind="visible: announceId">NEW</span>
+					<span class="label label-danger" data-bind="invisible: announceId">NEW</span>
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label">제목</label>
