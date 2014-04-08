@@ -505,6 +505,7 @@
 					
 					if( data.startDate >= data.endDate  ){
 						$("#announce-editor .status").html( template({ message: "시작일자가 종료일자보다 이휴일 수 없습니다."  }) );
+						return ;
 					}				
 					
 						
