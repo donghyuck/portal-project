@@ -1,7 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="homepage">
 <head>
-		<title><#if action.user.company ?? >${action.user.company.displayName }<#else>::</#if></title>
+		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<script type="text/javascript">
 		<!--
 		yepnope([{
@@ -28,7 +28,8 @@
 				// 2.  MEUN LOADING ...
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
-				common.api.handleNavbarActions( $('.personalized-navbar'), {
+				
+				common.ui.handleActionEvents( $('.personalized-navbar'), {
 					handlers : [
 						{ selector: "input[name='personalized-area-col-size']",
 						  event : 'change',
@@ -87,7 +88,7 @@
 							$('body nav').first().addClass('hide');
 						});	
 					},
-					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
+					<#if WebSiteUtils.isallowedSignIn(action.webSite) ||  !action.user.anonymous  || action.view! == "personalized" >
 					template : kendo.template($("#account-template").html()),
 					</#if>
 					afterAuthenticate : function(){													
