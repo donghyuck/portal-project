@@ -137,7 +137,7 @@
                         var selectedCells = this.select();                 
   						
   						alert(selectedCells.length);
-  						if( selectedCells.length == 1){ 
+  						if( selectedCells.length > 1){ 
                             
                             var selectedCell = this.dataItem( selectedCells ); 
                             
