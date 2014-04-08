@@ -475,7 +475,12 @@
 				</div>
 			-->	
 				<div class='modal-body' style="min-height:600px;">	
+				
 					<span class="label label-danger" data-bind="invisible: announceId">NEW</span>
+					
+					<input type="radio" value="30" data-bind="checked: objectType" />
+					<input type="radio" value="1"   data-bind="checked: objectType" />
+
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label">제목</label>
