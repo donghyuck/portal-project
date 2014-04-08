@@ -499,15 +499,13 @@
 						<div class="form-group">
 							<label class="control-label">기간</label>
 							<div class="col-sm-12" >
-							<input data-role="datetimepicker" data-bind="value:startDate"> ~ <input data-role="datetimepicker" data-bind="value:endDate">
-							<span class="help-block"><small>지정된 기간 동안만 이벤트 및 공지가 보여집니다. </small></span>
+								<input data-role="datetimepicker" data-bind="value:startDate"> ~ <input data-role="datetimepicker" data-bind="value:endDate">
+								<span class="help-block"><small>지정된 기간 동안만 이벤트 및 공지가 보여집니다. </small></span>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="control-label">본문</label>
-							<div class="col-sm-12"  style="min-height:420px;" >
-							<textarea class="editor" data-bind='value:body'></textarea>		
-							</div>
+							<textarea class="editor" data-bind='value:body'></textarea>
 						</div>
 						<div class="form-group has-error">
 							<div class="status"></div>
