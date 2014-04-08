@@ -690,7 +690,7 @@
 		}		
 		
 		#user-details .dropdown-menu {
-			top: 120px;
+			top: 550px;
 			left: 50px; 
 			padding : 20px;
 			min-width:300px;
