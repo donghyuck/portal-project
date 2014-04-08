@@ -94,7 +94,8 @@
 					}	
 				});							
 				*/			
-	            var selectedUser = new User ({});	
+	            var selectedUser = new User ();
+	            
 		        // 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
                     dataSource: {
@@ -135,13 +136,8 @@
 					 	{ name: "create-user", text: "새로운 사용자 생성하기", className: "createUserCustomClass" } ],
                     change: function(e) {                    
                         var selectedCells = this.select();                 
-  						
-  						alert(selectedCells.length);
   						if( selectedCells.length > 0){ 
-                            
                             var selectedCell = this.dataItem( selectedCells ); 
-                            
-                            alert(selectedCell);
                             
                             selectedUser.userId = selectedCell.userId ; 
 							selectedUser.username = selectedCell.username ;             
