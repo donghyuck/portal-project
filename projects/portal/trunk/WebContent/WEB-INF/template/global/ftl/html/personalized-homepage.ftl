@@ -490,13 +490,13 @@
 				var announce_editor_update = $('#announce-editor .modal-footer .btn.custom-update');								
 				$('#announce-editor').data("announcePlaceHolder").bind( 'change', function(e){
 					if( e.field != "objectType" ){						
-						if( e.source.subject == null || e.source.subject == '' ||  e.source.body == null || e.source.body == '' ){
+						var senderSource = e.sender.source;
+						if( senderSource.subject == null || senderSource.subject == '' ||  senderSource.body == null || senderSource.body == '' ){
 							return;
 						}else{
 							announce_editor_update.removeAttr('disabled');
 						}
-					}					
-					alert(	kendo.stringify(e.sender.source) ) ;
+					}
 				});							
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
