@@ -436,8 +436,7 @@
 					},
 					dataBound: function(e) {					
 						//var selectedCells = this.select();
-						//this.select("tr:eq(1)");
-						
+						//this.select("tr:eq(1)");						
 					}
 				});		
 
@@ -502,8 +501,7 @@
 							$("#my-notice .side1").toggleClass("hide");
 						});								
 					}
-				});																						
-
+				});		
 				common.api.handlePanelHeaderActions($("#announce-panel"));
 				common.ui.handleActionEvents( $('input[name="announce-selected-source"]'), { event: 'change' , handler: function(e){				
 					var oldSelectedSource = $("#announce-grid").data('announceSourcePlaceHolder');
@@ -512,8 +510,7 @@
 						$("#announce-grid").data('kendoGrid').dataSource.read();
 						//$("#announce-view").html("");		
 					}					
-				}});								
-												
+				}});														
 				$("#announce-panel" ).show();				
 			}	
 		}	
@@ -551,13 +548,12 @@
 					//alert( kendo.stringify( e ) );
 				});											
 				announce_editor_update.click(function(e){
-					e.preventDefault();					
-					var data = $("#announce-editor").data( "announcePlaceHolder" );
+					e.preventDefault();
 					$.ajax({
 						dataType : "json",
 						type : 'POST',
 						url : '${request.contextPath}/community/update-announce.do?output=json',
-						data : { announceId: data.announceId, item: kendo.stringify( data ) },
+						data : { objectType: $("#announce-grid").data('announceSourcePlaceHolder'), item: kendo.stringify( $("#announce-editor").data( "announcePlaceHolder" ) ) },
 						success : function( response ){		
 							$('#announce-editor .modal').modal('hide');
 						},
