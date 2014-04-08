@@ -478,8 +478,8 @@
 				
 					<span class="label label-danger" data-bind="invisible: announceId">NEW</span>
 					
-					<input type="radio" value="30" data-bind="checked: objectType" />
-					<input type="radio" value="1"   data-bind="checked: objectType" />
+					<input type="radio" value="30" name="announce-source"  data-bind="checked: objectType" />
+					<input type="radio" value="1"   name="announce-source" data-bind="checked: objectType" />
 
 					<div  class="form">
 						<div class="form-group">
