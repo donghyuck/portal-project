@@ -504,7 +504,7 @@
 						$("#announce-editor .status").extAlert({message: "모든 항목을 입력하여 주세요. " });
 					}				
 						
-					//alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
+					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
 					
 					/*
 					$.ajax({
