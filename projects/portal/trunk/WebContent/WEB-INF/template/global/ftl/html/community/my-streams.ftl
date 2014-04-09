@@ -190,7 +190,14 @@
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
 				}
 				
-				$( '#'+ renderToString2 ).extMediaStreamView({ id: streamsPlaceHolder.socialAccountId, media: streamsPlaceHolder.serviceProviderName });				
+				$( '#'+ renderToString2 ).extMediaStreamView({ 
+					id: streamsPlaceHolder.socialAccountId, 
+					media: streamsPlaceHolder.serviceProviderName 
+					change : function(e){
+						alert( '#'+ renderToString2);
+					}
+				});				
+				
 				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
 					$( "#" + renderToString + "-prop-grid").kendoGrid({
 						dataSource : {		
