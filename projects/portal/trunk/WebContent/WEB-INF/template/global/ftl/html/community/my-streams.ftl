@@ -196,6 +196,7 @@
 					change : function(e){
 						$( '#'+ renderToString2 +' a[data-toggle="window"]').click(function(e){
 							alert( $(this).attr('href') );
+							return false;
 						});
 					}
 				});				
