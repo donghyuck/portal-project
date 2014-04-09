@@ -730,8 +730,8 @@
 			//}				
 			selector.kendoWindow(options);
 		}else{
-		//	if( typeof options.url === 'string' )
-		//		selector.data('kendoWindow').refresh( options.url );
+			if( typeof options.url === 'string' )
+				selector.data('kendoWindow').refresh( options );
 		}	
 		return selector.data('kendoWindow'); 		
 	};
