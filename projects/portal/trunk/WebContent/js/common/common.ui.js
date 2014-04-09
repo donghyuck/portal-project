@@ -706,6 +706,32 @@
 		}
 	};
 		
+	common.ui.openUrl = function ( selector, options ){			
+		
+		if( typeof selector === 'string' ){
+			selector = $(selector);			
+		}		
+		options = options || {};	
+		if($(selector).data('kendoWindow').length == 0){
+			if( typeof options.visible === UNDEFINED ){
+				options.visible = true;
+			}
+			if( typeof options.iframe === UNDEFINED ){
+				options.iframe = true;
+			}		
+			if( typeof options.modal === UNDEFINED ){
+				options.modal = true;
+			}	
+			if( typeof options.title === UNDEFINED ){
+				options.title = false;
+			}				
+			$(selector).kendoWindow(options).center();	
+		}else{
+			$(selector).data('kendoWindow').refresh(options);
+		}		
+		return $(selector).data('kendoWindow'); 		
+	};
+	
 	
 })(jQuery);	
 /**
