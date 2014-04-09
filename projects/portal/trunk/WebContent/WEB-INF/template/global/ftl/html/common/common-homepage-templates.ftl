@@ -694,7 +694,7 @@
 		     	<p>#= text #</p>		     	
 				# for (var i = 0; i < entities.urls.length ; i++) { #
 				# var url = entities.urls[i] ; #		
-					<p><span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#: url.expandedUrl  #">#: url.displayUrl #</a></p>
+				<p><a href="#: url.expandedUrl  #"><span class="glyphicon glyphicon-link"></span> #: url.displayUrl #</a></p>
 				# } #	
 				<p>
 					# for (var i = 0; i < entities.media.length ; i++) { #	
