@@ -15,13 +15,16 @@
 	});
 
 	common.models.WebSite =  kendo.data.Model.define({
-		id : "externalId",
+		id : "webSiteId",
 		fields: { 
-			externalId: { type: "string", editable: false },
-			imageId : { type: "number", editable: false, defaultValue: 0},
-			externalId: { type: "string", editable: false },
-			publicShared: { type: "boolean", editable: false, defaultValue: false },
-	        modifiedDate: { type: "date"},
+			webSiteId: { type: "number", editable: true , defaultValue: 0},
+			name : { type: "string", editable: true},
+			description : { type: "string", editable: true},
+			displayName : { type: "string", editable: true},
+			url : { type: "string", editable: true},
+			enabled: { type: "boolean", editable: true , defaultValue: false},
+			allowAnonymousAccess: { type: "boolean", editable: true, defaultValue: false },
+	        modifiedDate: { type: "date" },
 	        creationDate: { type: "date" } 			
 		}
 	});		
