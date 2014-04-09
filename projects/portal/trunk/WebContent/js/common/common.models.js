@@ -391,6 +391,20 @@ var User = kendo.data.Model.define( {
 			return true
 		else 
 			return false;    	
+    },
+    copy : function ( target ){
+    	target.set("userId", this.get("userId"));
+    	target.set("username", this.get("username"));
+    	target.set("name", this.get("name"));
+    	target.set("email", this.get("email"));
+    	target.set("creationDate", this.get("creationDate"));
+    	target.set("lastLoggedIn", this.get("lastLoggedIn"));
+    	target.set("lastProfileUpdate", this.get("lastProfileUpdate"));
+    	target.set("enabled", this.get("enabled"));
+    	target.set("nameVisible", this.get("nameVisible"));
+    	target.set("emailVisible", this.get("emailVisible"));
+    	target.set("properties", this.get("properties"));
+    	target.set("company", this.get("company"));		
     }
 });
 
