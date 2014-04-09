@@ -693,7 +693,7 @@
 		}		
 		
 		#user-details .dropdown-menu {
-			top: 550px;
+			top: 1900px;
 			left: 50px; 
 			padding : 20px;
 			min-width:300px;
@@ -925,15 +925,6 @@
 						<!-- end basic info -->
 						</div>	
 						<div class="col-lg-6 col-xs-12">2</div>
-					</div>
-
-					<div class="row">
-						<div class="col-12 col-xs-12">
-							<div class="btn-group pull-right">
-								<button id="update-user-btn" disabled class="btn btn-primary">정보 변경</button>
-								<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
-							</div>							
-						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-xs-12">		
