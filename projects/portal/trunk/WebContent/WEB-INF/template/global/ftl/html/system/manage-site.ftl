@@ -583,6 +583,10 @@
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>			
 						</div>
+						<div class="panel-body" style="padding:5px;">		
+						
+						
+						</div>
 						<div class="panel-body" style="padding:5px;">					
 							<ul class="nav nav-tabs" id="myTab">
 							  <li><a href="#site-info" data-toggle="tab"><i class="fa fa-sitemap"></i> 사이트</a></li>
