@@ -854,8 +854,8 @@
 			-->					
 				<div class="panel-body" style="padding:5px;">			
 					<div class="row">
-						<div class="col-lg-6 col-xs-12">1</div>	<div class="col-lg-6 col-xs-12">2</div>
-					</div>
+						<div class="col-lg-6 col-xs-12">
+						<!--  start basic info -->	
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
 							<img id="user-photo" class="img-thumbnail media-object"  src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
@@ -915,6 +915,10 @@
 							</table>					
 						</div>
 					</div>
+						<!-- end basic info -->
+						</div>	<div class="col-lg-6 col-xs-12">2</div>
+					</div>
+
 					<div class="row">
 						<div class="col-12 col-xs-12">
 							<div class="btn-group pull-right">
