@@ -26,7 +26,22 @@
 			allowAnonymousAccess: { type: "boolean", editable: true, defaultValue: false },
 	        modifiedDate: { type: "date" },
 	        creationDate: { type: "date" } 			
-		}
+		},
+	    copy: function ( target ){
+	    	target.set("webSiteId", this.get("webSiteId"));
+	    	target.set("name",this.get("name") );
+	    	target.set("description",this.get("description") );
+	    	target.set("displayName", this.get("displayName"));
+	    	target.set("url",this.get("url") );
+	    	target.set("enabled", this.get("enabled"));
+	    	target.set("allowAnonymousAccess", this.get("allowAnonymousAccess"));
+	    	target.set("modifiedDate",this.get("modifiedDate") );
+	    	target.set("creationDate", this.get("creationDate") );
+	    	if( typeof this.get("user") === 'object' )
+	    		target.set("user", this.get("user") );    	
+	    	if( typeof this.get("company") === 'object' )
+	    		target.set("company", this.get("company") );    		    	
+	    }
 	});		
 	
 })(jQuery);	
