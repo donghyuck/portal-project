@@ -623,7 +623,7 @@
 		     	# } #		     	     	
 		     	#if ( type == 'LINK' ) { #
 		     	<p>
-		     	<span class="glyphicon glyphicon-link"></span>&nbsp;<a href="#= link #">#= link #</a>
+		     	<a href="#= link #" data-toggle="window"><span class="glyphicon glyphicon-link"></span> #= link #</a>
 		     	</p>
 		     	# } else if ( type == 'PHOTO' ) { #
 		     		<p>
