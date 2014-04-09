@@ -706,8 +706,7 @@
 		}
 	};
 		
-	common.ui.openUrl = function ( selector, options ){			
-		
+	common.ui.openUrl = function ( selector, options ){					
 		if( typeof selector === 'string' ){
 			selector = $(selector);			
 		}		
@@ -726,9 +725,7 @@
 				options.title = false;
 			}				
 			$(selector).kendoWindow(options).center();	
-		}else{
-			$(selector).data('kendoWindow').refresh(options);
-		}		
+		}	
 		return $(selector).data('kendoWindow'); 		
 	};
 	
