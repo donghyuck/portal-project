@@ -856,6 +856,9 @@
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
+						<div class="page-header">
+						  <h1>Example page header <small>Subtext for header</small></h1>
+						</div>						
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
 							<img id="user-photo" class="img-thumbnail media-object"  src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
@@ -915,8 +918,13 @@
 							</table>					
 						</div>
 					</div>
+							<div class="btn-group pull-right">
+								<button id="update-user-btn" disabled class="btn btn-primary">정보 변경</button>
+								<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
+							</div>						
 						<!-- end basic info -->
-						</div>	<div class="col-lg-6 col-xs-12">2</div>
+						</div>	
+						<div class="col-lg-6 col-xs-12">2</div>
 					</div>
 
 					<div class="row">
