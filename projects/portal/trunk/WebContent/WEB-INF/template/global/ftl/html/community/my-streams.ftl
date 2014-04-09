@@ -197,8 +197,7 @@
 						$( '#'+ renderToString2 +' a[data-toggle="window"]').click(function(e){
 							e.preventDefault();
 							e.stopPropagation();
-								
-							openExternalContent(  $(this).attr('href') );
+							common.ui.openWindow( $('#external-content-widow'), { visible: false , minWidth: "500px", minHeight: "500px", url : $(this).attr('href'), appendTo: $(this)  }  ).open();	
 							return false;
 						});
 					}
@@ -271,10 +270,7 @@
 			});
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();		
 		}
-				
-		function openExternalContent(url){
-			common.ui.openWindow( $('#external-content-widow'), { visible: false , minWidth: "500px", minHeight: "500px", url : url  }  ).open();
-		}		
+	
 				
 		-->
 		</script>		
