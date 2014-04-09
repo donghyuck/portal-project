@@ -571,7 +571,7 @@
 									schema: {
 										total: "targetWebSiteCount",
 										data: "targetWebSites",
-										model : WebSite
+										model : common.models.WebSite
 									},
 									error: common.api.handleKendoAjaxError
 								},
