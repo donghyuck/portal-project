@@ -138,7 +138,8 @@
                         var selectedCells = this.select();                 
   						if( selectedCells.length > 0){ 
                             var selectedCell = this.dataItem( selectedCells ); 
-                            
+                            selectedCell.copy(selectedUser);
+                            /*                            
                             selectedUser.userId = selectedCell.userId ; 
 							selectedUser.username = selectedCell.username ;             
 							selectedUser.name = selectedCell.name ;
@@ -154,7 +155,7 @@
 							selectedUser.properties = selectedCell.properties;							 							 
 							selectedUser.company = selectedCompany;
 							var observable = new kendo.data.ObservableObject( selectedUser ); 
-							
+							*/
 							
 							if( selectedUser.userId > 0 ){					
 							 	// 2. USER DETAILS
@@ -900,11 +901,11 @@
 									</tr> 																		
 									<tr>
 										<th class="col-lg-3 col-sm-4">마지막 프로파일 수정일</th>
-										<td><span data-bind="text: formattedLastProfileUpdate"></span></td>
+										<td><span data-bind="text: formattedLastProfileUpdate" data-format="{0:yyyy.MM.dd HH:MM:ss}"></span></td>
 									</tr>  
 									<tr>
 										<th class="col-lg-3 col-sm-4">마지막 로그인 일자</th>
-										<td><span data-bind="text: formattedLastLoggedIn"></span></td>
+										<td><span data-bind="text: formattedLastLoggedIn" data-format="{0:yyyy.MM.dd}"></span></td>
 									</tr>  
 								</tbody>
 							</table>					
