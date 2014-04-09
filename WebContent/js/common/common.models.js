@@ -230,8 +230,6 @@ var Announce = kendo.data.Model.define( {
     	target.set("creationDate", this.get("creationDate") );
     	if( typeof this.get("user") === 'object' )
     		target.set("user", this.get("user") );    	
-    	else
-    		target.set("user", null );    	
     },
     clone: function () {
     	return new Announce({
