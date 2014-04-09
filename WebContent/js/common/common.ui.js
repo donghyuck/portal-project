@@ -711,7 +711,7 @@
 			selector = $(selector);			
 		}		
 		options = options || {};	
-		if($(selector).data('kendoWindow').length == 0){
+		if(selector.data('kendoWindow').length == 0){
 			if( typeof options.visible === UNDEFINED ){
 				options.visible = true;
 			}
