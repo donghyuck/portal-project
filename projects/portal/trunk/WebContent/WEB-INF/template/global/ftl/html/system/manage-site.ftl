@@ -551,6 +551,55 @@
 				});
 			}							
 		}	
+		
+		function createSiteGrid(){			
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			if( ! $("#website-grid").data("kendoGrid") ){	
+				$('#website-grid').kendoGrid({
+								dataSource: {
+									type: 'json',
+									transport: {
+										read: { url:'${request.contextPath}/secure/list-site.do?output=json', type: 'POST' },
+										parameterMap: function (options, operation){
+											if (operation != "read" && options) {										                        								                       	 	
+												return { targetCompanyId: selectedCompany.companyId , item: kendo.stringify(options)};									                            	
+											}else{
+												return { targetCompanyId: selectedCompany.companyId }
+											}
+										} 
+									},
+									schema: {
+										total: "targetWebSiteCount",
+										data: "targetWebSites",
+										model : WebSite
+									},
+									error: common.api.handleKendoAjaxError
+								},
+								columns:[
+									{ field: "attachmentId", title: "ID",  width: 50, filterable: false, sortable: false },
+									{ field: "name", title: "파일", width: 150 },
+									{ field: "contentType", title: "파일 유형",  width: 100 },
+									{ field: "size", title: "파일크기",  width: 100 },
+									{ field: "creationDate", title: "생성일", width: 80, format: "{0:yyyy/MM/dd}" },
+									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
+									{ command: [ { name: "destroy", text: "삭제" } ], title: " ", width: "160px"  }
+								],
+								filterable: true,
+								sortable: true,
+								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+								selectable: 'row',
+								dataBound: function(e) {
+								
+								},
+								change: function(e) {          
+									var selectedCells = this.select();
+								}				
+				});
+				
+			
+			}
+		}
+		
 		</script>
 		<style>					
 		.k-grid-content{
@@ -584,8 +633,7 @@
 							</div>			
 						</div>
 						<div class="panel-body" style="padding:5px;">		
-						
-						
+							<div id="website-grid"></div>						
 						</div>
 						<div class="panel-body" style="padding:5px;">					
 							<ul class="nav nav-tabs" id="myTab">
