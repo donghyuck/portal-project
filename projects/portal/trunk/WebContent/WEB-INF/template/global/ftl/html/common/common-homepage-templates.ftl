@@ -634,7 +634,7 @@
 		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
 		     		# } #		     		
 		     		#if ( source !=null ) { #
-		     		<p class="text-muted">source : <a href="#= source #" data-toggle="window"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
+		     		<p class="text-muted">source : <a href="#= source #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
 		     		# } #
 		     	# } #		     	
 		     	#if ( typeof( caption ) == 'string'  ) { #
