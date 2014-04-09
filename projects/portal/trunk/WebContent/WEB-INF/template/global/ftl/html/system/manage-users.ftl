@@ -284,7 +284,7 @@
 						                     error:handleKendoAjaxError
 									    },
 									    columns: [
-									         { title: "속성", field: "name" , locked:true},
+									         { title: "속성", field: "name" , width: 200,  locked:true},
 									         { title: "값",   field: "value" },
 									         { command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
 									    ],
