@@ -95,6 +95,7 @@
 				});							
 				*/			
 	            var selectedUser = new User ();
+	            $("#user-grid").data("userPlaceHolder", selectedUser );
 	            
 		        // 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
@@ -139,33 +140,18 @@
   						if( selectedCells.length > 0){ 
                             var selectedCell = this.dataItem( selectedCells ); 
                             selectedCell.copy(selectedUser);
-                            /*                            
-                            selectedUser.userId = selectedCell.userId ; 
-							selectedUser.username = selectedCell.username ;             
-							selectedUser.name = selectedCell.name ;
-							selectedUser.email = selectedCell.email ;
-							selectedUser.creationDate = selectedCell.creationDate ;
-							selectedUser.lastLoggedIn = selectedCell.lastLoggedIn ;         							 
-							selectedUser.formattedLastLoggedIn =  kendo.format("{0:yyyy.MM.dd}",  selectedUser.lastLoggedIn  );							 
-							selectedUser.lastProfileUpdate = selectedCell.lastProfileUpdate ;                 
-							selectedUser.formattedLastProfileUpdate =  kendo.format("{0:yyyy.MM.dd}",  selectedUser.lastProfileUpdate  );                   
-							selectedUser.enabled = selectedCell.enabled ;              
-							selectedUser.nameVisible = selectedCell.nameVisible ;          
-							selectedUser.emailVisible = selectedCell.emailVisible ;
-							selectedUser.properties = selectedCell.properties;							 							 
-							selectedUser.company = selectedCompany;
-							var observable = new kendo.data.ObservableObject( selectedUser ); 
-							*/
-							
 							if( selectedUser.userId > 0 ){					
 							 	// 2. USER DETAILS
 							 	// $("#splitter").data("kendoSplitter").expand("#datail_pane");							 	 
 							 	$('#user-details').show().html(kendo.template($('#user-details-template').html()));							 	
 								kendo.bind($(".details"), selectedUser ); 
 							 	$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );								 	
-							 														 								 	
+							 	
+							 	selectedUser.bind("change", function(e) {
+									$('#update-user-btn').removeAttr('disabled');
+								});		
+													 								 	
 							 	if(!$("#files").data("kendoUpload")){
-								
 								 	$("#files").kendoUpload({
 									 	multiple : false,
 									 	showFileList : false,
@@ -188,7 +174,7 @@
 								 	 			$('#user-photo').attr( 'src', photoUrl );
 									    	}	**/			
 									    }					   
-									});									
+									});
 							 	}	
 							 							 							
 								// change password..
@@ -842,7 +828,13 @@
 		</script>	
 		
 		<script type="text/x-kendo-template" id="user-details-template">			
-			<div class="panel panel-default marginless details" >			
+			<div class="panel panel-default marginless details" >
+			<!--
+				<div class="panel-heading" >
+					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: name"></span>
+					<button type="button" class="close" aria-hidden="true">&times;</button>
+				</div>
+			-->					
 				<div class="panel-body" style="padding:5px;">			
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
