@@ -194,7 +194,9 @@
 					id: streamsPlaceHolder.socialAccountId, 
 					media: streamsPlaceHolder.serviceProviderName,
 					change : function(e){
-						alert( '#'+ renderToString2);
+						$( '#'+ renderToString2 +' a[data-toggle="window"]').click(function(e){
+							alert( $(this).attr('href') );
+						});
 					}
 				});				
 				
