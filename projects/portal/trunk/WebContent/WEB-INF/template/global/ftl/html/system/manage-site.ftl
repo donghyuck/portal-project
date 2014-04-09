@@ -57,6 +57,10 @@
 				});
 								 
 				 // 4. PAGE MAIN		
+				 $("#website-gird").data("sitePlaceHolder", new common.models.WebSite() );
+				 createSiteGrid();
+				 
+				 
 				 common.ui.handleActionEvents(
 				 	'.panel-heading', {
 				 		handlers :[ {
@@ -593,12 +597,17 @@
 								},
 								change: function(e) {          
 									var selectedCells = this.select();
+									if( selectedCells.length > 0 ){
+										var selectedCell = this.dataItem( selectedCells );
+										selectedCell.copy( $("#website-gird").data("sitePlaceHolder"));
+									}
 								}				
 				});
 				
 			
 			}
 		}
+		
 		
 		</script>
 		<style>					
