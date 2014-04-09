@@ -903,11 +903,11 @@
 									</tr> 																		
 									<tr>
 										<th class="col-lg-3 col-sm-4">마지막 프로파일 수정일</th>
-										<td><span data-bind="text: formattedLastProfileUpdate" data-format="{0:yyyy.MM.dd }"></span></td>
+										<td><span data-bind="text: formattedLastProfileUpdate" data-format="{yyyy.MM.dd }"></span></td>
 									</tr>  
 									<tr>
 										<th class="col-lg-3 col-sm-4">마지막 로그인 일자</th>
-										<td><span data-bind="text: formattedLastLoggedIn" data-format="{0:yyyy.MM.dd HH:MM:ss}"></span></td>
+										<td><span data-bind="text: formattedLastLoggedIn" data-format="{yyyy.MM.dd HH:mm:ss}"></span></td>
 									</tr>  
 								</tbody>
 							</table>					
