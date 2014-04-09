@@ -593,6 +593,7 @@
 									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
 									{ command: [ { name: "destroy", text: "삭제" } ], title: " ", width: "160px"  }
 								],
+								editable: "inline",
 								filterable: true,
 								sortable: true,
 								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
