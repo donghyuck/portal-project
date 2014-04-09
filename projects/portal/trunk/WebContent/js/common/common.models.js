@@ -17,15 +17,15 @@
 	common.models.WebSite =  kendo.data.Model.define({
 		id : "webSiteId",
 		fields: { 
-			webSiteId: { type: "number", editable: true , defaultValue: 0},
+			webSiteId: { type: "number", editable: false , defaultValue: 0},
 			name : { type: "string", editable: true},
 			description : { type: "string", editable: true},
 			displayName : { type: "string", editable: true},
 			url : { type: "string", editable: true},
 			enabled: { type: "boolean", editable: true , defaultValue: false},
 			allowAnonymousAccess: { type: "boolean", editable: true, defaultValue: false },
-	        modifiedDate: { type: "date" },
-	        creationDate: { type: "date" } 			
+	        modifiedDate: { type: "date", editable: false },
+	        creationDate: { type: "date", editable: false } 			
 		},
 	    copy: function ( target ){
 	    	target.set("webSiteId", this.get("webSiteId"));
