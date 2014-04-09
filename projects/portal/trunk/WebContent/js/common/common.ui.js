@@ -725,9 +725,9 @@
 			if( ! options.position ){
 				options.position = { top: 100 };
 			}	
-			if( ! options.pinned ){
-				options.pinned = true;
-			}				
+			//if( ! options.pinned ){
+			//	options.pinned = true;
+			//}				
 			selector.kendoWindow(options);
 		}else{
 		//	if( typeof options.url === 'string' )
