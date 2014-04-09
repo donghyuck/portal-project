@@ -725,7 +725,7 @@
 			if( ! options.title ){
 				options.title = false;
 			}							
-			selector.kendoWindow(options).center();	
+			selector.kendoWindow(options);
 		}	
 		return $(selector).data('kendoWindow'); 		
 	};
