@@ -623,7 +623,7 @@
 		     	# } #		     	     	
 		     	#if ( type == 'LINK' ) { #
 		     	<p>
-		     	<a href="#= link #" data-toggle="window"><span class="glyphicon glyphicon-link"></span> #= link #</a>
+		     	<a href="#= link #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= link #</a>
 		     	</p>
 		     	# } else if ( type == 'PHOTO' ) { #
 		     		<p>
@@ -694,7 +694,7 @@
 		     	<p>#= text #</p>		     	
 				# for (var i = 0; i < entities.urls.length ; i++) { #
 				# var url = entities.urls[i] ; #		
-				<p><a href="#: url.expandedUrl  #" data-toggle="window"><span class="glyphicon glyphicon-link"></span> #: url.displayUrl #</a></p>
+				<p><a href="#: url.expandedUrl  #" target="_blank"><span class="glyphicon glyphicon-link"></span> #: url.displayUrl #</a></p>
 				# } #	
 				<p>
 					# for (var i = 0; i < entities.media.length ; i++) { #	
