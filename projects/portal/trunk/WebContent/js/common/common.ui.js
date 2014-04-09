@@ -711,20 +711,21 @@
 			selector = $(selector);			
 		}		
 		options = options || {};	
-		if( typeof selector.data('kendoWindow') ===  UNDEFINED ){
-			if( typeof options.visible === UNDEFINED ){
+		
+		if( !selector.data('kendoWindow')){
+			if( ! options.visible ){
 				options.visible = true;
 			}
-			if( typeof options.iframe === UNDEFINED ){
+			if( ! options.iframe ){
 				options.iframe = true;
 			}		
-			if( typeof options.modal === UNDEFINED ){
+			if( ! options.modal ){
 				options.modal = true;
 			}	
-			if( typeof options.title === UNDEFINED ){
+			if( ! options.title ){
 				options.title = false;
-			}				
-			$(selector).kendoWindow(options).center();	
+			}							
+			selector.kendoWindow(options).center();	
 		}	
 		return $(selector).data('kendoWindow'); 		
 	};
