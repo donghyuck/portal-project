@@ -13,7 +13,18 @@
 	        creationDate: { type: "date" } 			
 		}
 	});
-	
+
+	common.models.WebSite =  kendo.data.Model.define({
+		id : "externalId",
+		fields: { 
+			externalId: { type: "string", editable: false },
+			imageId : { type: "number", editable: false, defaultValue: 0},
+			externalId: { type: "string", editable: false },
+			publicShared: { type: "boolean", editable: false, defaultValue: false },
+	        modifiedDate: { type: "date"},
+	        creationDate: { type: "date" } 			
+		}
+	});		
 	
 })(jQuery);	
 	
