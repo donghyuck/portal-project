@@ -591,7 +591,7 @@
 									{ field: "allowAnonymousAccess", title: "공개여부",  width: 100 },
 									{ field: "creationDate", title: "생성일", width: 90, format: "{0:yyyy/MM/dd}" },
 									{ field: "modifiedDate", title: "수정일", width: 90, format: "{0:yyyy/MM/dd}" },
-									{ command:  [ {name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"}  }, {name: "destroy", text: "삭제" }] , title: "&nbsp;" }, width:300], 
+									{ command:  [ {name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"}  }, {name: "destroy", text: "삭제" }] , title: "&nbsp;", width:300 }], 
 								editable: "inline",
 								batch: false,
 								filterable: true,
