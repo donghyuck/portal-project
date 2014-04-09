@@ -857,9 +857,9 @@
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
 						<div class="page-header">
-						  <h1>Example page header <small>Subtext for header</small>
-						  <button type="button" class="btn btn-link"><i class="fa fa-angle-double-up fa-lg"></i></button>
-						  </h1>
+						  <h5><small><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하십시오.</small>
+						  <button type="button" class="btn btn-link pull-rifht"><i class="fa fa-angle-double-up fa-lg"></i></button>
+						  </h5>
 						</div>						
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
