@@ -163,12 +163,9 @@
 							 	$('#user-details').show().html(kendo.template($('#user-details-template').html()));							 	
 								kendo.bind($(".details"), selectedUser ); 
 							 	$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );								 	
-							 	
-							 	selectedUser.bind("change", function(e) {
-									$('#update-user-btn').removeAttr('disabled');
-								});		
-													 								 	
+							 														 								 	
 							 	if(!$("#files").data("kendoUpload")){
+								
 								 	$("#files").kendoUpload({
 									 	multiple : false,
 									 	showFileList : false,
@@ -191,7 +188,7 @@
 								 	 			$('#user-photo').attr( 'src', photoUrl );
 									    	}	**/			
 									    }					   
-									});
+									});									
 							 	}	
 							 							 							
 								// change password..
@@ -845,13 +842,7 @@
 		</script>	
 		
 		<script type="text/x-kendo-template" id="user-details-template">			
-			<div class="panel panel-default marginless details" >
-			<!--
-				<div class="panel-heading" >
-					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: name"></span>
-					<button type="button" class="close" aria-hidden="true">&times;</button>
-				</div>
-			-->					
+			<div class="panel panel-default marginless details" >			
 				<div class="panel-body" style="padding:5px;">			
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
