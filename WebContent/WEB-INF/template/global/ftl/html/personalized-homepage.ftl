@@ -477,6 +477,7 @@
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
 					$('#announce-editor').data("announcePlaceHolder", new Announce());			
 				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
+				$('#announce-editor').data("announcePlaceHolder").user = null;
 			}else{
 				$('#announce-editor').data("announcePlaceHolder").reset();
 			}	
