@@ -192,7 +192,7 @@
 				
 				$( '#'+ renderToString2 ).extMediaStreamView({ 
 					id: streamsPlaceHolder.socialAccountId, 
-					media: streamsPlaceHolder.serviceProviderName 
+					media: streamsPlaceHolder.serviceProviderName,
 					change : function(e){
 						alert( '#'+ renderToString2);
 					}
