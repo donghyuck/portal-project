@@ -259,6 +259,10 @@
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();		
 		}
 				
+		function openExternalContent(url){
+			common.ui.openWindow( $('#external-content-widow'), { visible: false } ).refersh(url);
+		}		
+				
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -438,7 +442,8 @@
 			</header>					
 			<div class="blank-top-5" ></div>				
 		</section>		
-		<section id="image-broswer" class="image-broswer"></section>					
+		<section id="image-broswer" class="image-broswer"></section>	
+		<section id="external-content-widow"></section>
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
