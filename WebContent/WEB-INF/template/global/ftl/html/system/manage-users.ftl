@@ -907,7 +907,7 @@
 									</tr>  
 									<tr>
 										<th class="col-lg-3 col-sm-4">마지막 로그인 일자</th>
-										<td><span data-bind="text: lastLoggedIn" data-format="{yyyy.MM.dd HH:mm:ss}"></span></td>
+										<td><span data-bind="text: lastLoggedIn" data-format="yyyy.MM.dd HH:mm:ss"></span></td>
 									</tr>  
 								</tbody>
 							</table>					
