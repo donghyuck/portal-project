@@ -273,7 +273,7 @@
 		}
 				
 		function openExternalContent(url){
-			common.ui.openWindow( $('#external-content-widow'), { visible: false , minWidth: "500px", minHeight: "500px"}  ).refresh(url).open();
+			common.ui.openWindow( $('#external-content-widow'), { visible: false , minWidth: "500px", minHeight: "500px"}  ).open();
 		}		
 				
 		-->
