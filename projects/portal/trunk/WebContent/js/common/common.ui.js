@@ -706,40 +706,6 @@
 		}
 	};
 		
-	common.ui.openWindow = function ( selector, options ){					
-		if( typeof selector === 'string' ){
-			selector = $(selector);			
-		}		
-		options = options || {};	
-		
-		if( !selector.data('kendoWindow')){
-			if( ! options.visible ){
-				options.visible = true;
-			}
-			if( ! options.iframe ){
-				options.iframe = true;
-			}		
-			if( ! options.modal ){
-				options.modal = true;
-			}	
-			if( ! options.position ){
-			//	options.position = { top: 100, left: 100 };
-			}	
-			//if( ! options.pinned ){
-			//	options.pinned = true;
-			//}				
-			selector.kendoWindow(options);
-		}else{
-			if( typeof options.url === 'string' ){
-				if( ! options.iframe ){
-					options.iframe = true;
-				}							
-				selector.data('kendoWindow').refresh( options );
-			}	
-		}	
-		return selector.data('kendoWindow'); 		
-	};
-	
 	
 })(jQuery);	
 /**
