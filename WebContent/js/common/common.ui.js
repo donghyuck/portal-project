@@ -706,7 +706,7 @@
 		}
 	};
 		
-	common.ui.openUrl = function ( selector, options ){					
+	common.ui.openWindow = function ( selector, options ){					
 		if( typeof selector === 'string' ){
 			selector = $(selector);			
 		}		
@@ -1384,6 +1384,7 @@
 	MEDIA_FACEBOOK = "facebook",
 	MEDIA_TWITTER = "twitter",
 	MEDIA_TUMBLR = "tumblr",
+	RENDERED
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
     common.ui.extMediaStreamView = Widget.extend({
@@ -1405,6 +1406,9 @@
 			else 
 				return options.id;
 		},
+		events : [
+		   CHANGE       
+		],
 		_dataSource: function() {
 			var that = this ;
 			var options = that.options ;			
@@ -1472,6 +1476,7 @@
 			var options = that.options ;			
 			var view = that.dataSource.view();			
 			that.element.html( kendo.render( options.template, view ) );
+			that.trigger(CHANGE); 
 		},		
 		destroy: function() {
 			var that = this;
