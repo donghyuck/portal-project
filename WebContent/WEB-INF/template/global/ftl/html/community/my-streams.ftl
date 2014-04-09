@@ -273,7 +273,7 @@
 		}
 				
 		function openExternalContent(url){
-			common.ui.openWindow( $('#external-content-widow'), { visible: false } ).refersh(url);
+			common.ui.openWindow( $('#external-content-widow'), { visible: false } ).refersh(url).open();
 		}		
 				
 		-->
