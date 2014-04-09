@@ -195,7 +195,7 @@
 					media: streamsPlaceHolder.serviceProviderName,
 					change : function(e){
 						$( '#'+ renderToString2 +' a[data-toggle="window"]').click(function(e){
-							alert( $(this).attr('href') );
+							openExternalContent(  $(this).attr('href') );
 							return false;
 						});
 					}
