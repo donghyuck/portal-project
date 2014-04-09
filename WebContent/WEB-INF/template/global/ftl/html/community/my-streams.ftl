@@ -194,12 +194,6 @@
 					id: streamsPlaceHolder.socialAccountId, 
 					media: streamsPlaceHolder.serviceProviderName,
 					change : function(e){
-						$( '#'+ renderToString2 +' a[data-toggle="window"]').click(function(e){
-							e.preventDefault();
-							e.stopPropagation();
-							common.ui.openWindow( $('#external-content-widow'), { visible: false , minWidth: "500px", minHeight: "500px", url : $(this).attr('href'), appendTo: $(this)  }  ).open();	
-							return false;
-						});
 					}
 				});				
 				
