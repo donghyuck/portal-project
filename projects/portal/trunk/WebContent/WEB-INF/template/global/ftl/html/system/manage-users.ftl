@@ -858,7 +858,7 @@
 						<!--  start basic info -->	
 						<div class="page-header">
 						  <h1>Example page header <small>Subtext for header</small>
-						  <button type="button" class="btn btn-link"><i class="fa fa-angle-double-up"></i>목로으로 이동</button>
+						  <button type="button" class="btn btn-link"><i class="fa fa-angle-double-up fa-lg"></i></button>
 						  </h1>
 						</div>						
 					<div class="media">
