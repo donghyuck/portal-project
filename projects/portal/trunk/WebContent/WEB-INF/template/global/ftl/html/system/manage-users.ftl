@@ -925,10 +925,8 @@
 							</div>						
 						<!-- end basic info -->
 						</div>	
-						<div class="col-lg-6 col-xs-12">2</div>
-					</div>
-					<div class="row">
-						<div class="col-12 col-xs-12">		
+						<div class="col-lg-6 col-xs-12">
+						<!-- start additional info -->
 							<ul id="myTab" class="nav nav-tabs">
 								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
 								<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
@@ -974,6 +972,7 @@
 									<div id="attach-grid" class="files"></div>									
 								</div>			
 							</div>
+						<!-- end additional info -->
 						</div>
 					</div>
 				</div>
