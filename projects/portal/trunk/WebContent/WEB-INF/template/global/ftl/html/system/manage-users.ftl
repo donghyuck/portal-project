@@ -285,7 +285,7 @@
 									    },
 									    columns: [
 									         { title: "속성", field: "name" , width: 200,  locked:true},
-									         { title: "값",   field: "value" },
+									         { title: "값",   field: "value", width: 200, },
 									         { command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
 									    ],
 									    autoBind: true, 
