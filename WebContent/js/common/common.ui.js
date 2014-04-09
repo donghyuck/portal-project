@@ -723,8 +723,11 @@
 				options.modal = true;
 			}	
 			if( ! options.position ){
-				options.position = { top: 100, left: 100 };
-			}							
+				options.position = { top: 100 };
+			}	
+			if( ! options.pinned ){
+				options.pinned = true;
+			}				
 			selector.kendoWindow(options);
 		}else{
 		//	if( typeof options.url === 'string' )
