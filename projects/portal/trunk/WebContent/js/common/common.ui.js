@@ -723,7 +723,7 @@
 				options.modal = true;
 			}	
 			if( ! options.position ){
-				options.position = { top: 100 };
+				options.position = { left: 100 };
 			}	
 			//if( ! options.pinned ){
 			//	options.pinned = true;
