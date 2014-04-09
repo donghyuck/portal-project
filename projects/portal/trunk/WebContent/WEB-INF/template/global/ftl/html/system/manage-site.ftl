@@ -32,6 +32,8 @@
 				});
 				
 				$("#navbar").data("companyPlaceHolder", new Company() );
+				
+				
 				var selectedSocial = {};			
 														
 				// 3.MENU LOAD 
@@ -577,10 +579,9 @@
 								<button type="button" class="btn btn-info btn-control-group" data-action="menu"><i class="fa fa-sitemap"></i> 메뉴</button>
 							</div>
 							<div class="btn-group">
-								<button type="button" class="btn btn-success btn-control-group" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
-								<button type="button" class="btn btn-success btn-control-group" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
-							</div>
-							<button type="button" class="btn btn-default btn-control-group btn-columns-expend" data-action="layout"><i class="fa fa-columns"></i></button>					
+								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
+								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
+							</div>			
 						</div>
 						<div class="panel-body" style="padding:5px;">					
 							<ul class="nav nav-tabs" id="myTab">
