@@ -583,7 +583,7 @@
 								toolbar: [ { text: "웹 사이트 추가", css:"createSiteCustom" } ],   
 								columns:[
 									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false },
-									{ field: "name", title: "파일", width: 150 },
+									{ field: "name", title: "이름", width: 150 },
 									{ field: "description", title: "설명",  width: 100 },
 									{ field: "displayName", title: "출력 이름",  width: 100 },
 									{ field: "url", title: "URL",  width: 100 },
