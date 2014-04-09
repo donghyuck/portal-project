@@ -580,10 +580,13 @@
 									error: common.api.handleKendoAjaxError
 								},
 								columns:[
-									{ field: "attachmentId", title: "ID",  width: 50, filterable: false, sortable: false },
+									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false },
 									{ field: "name", title: "파일", width: 150 },
-									{ field: "contentType", title: "파일 유형",  width: 100 },
-									{ field: "size", title: "파일크기",  width: 100 },
+									{ field: "description", title: "설명",  width: 100 },
+									{ field: "displayName", title: "출력 이름",  width: 100 },
+									{ field: "url", title: "URL",  width: 100 },
+									{ field: "enabled", title: "사용여부",  width: 100 },
+									{ field: "allowAnonymousAccess", title: "공개여부",  width: 100 },
 									{ field: "creationDate", title: "생성일", width: 80, format: "{0:yyyy/MM/dd}" },
 									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
 									{ command: [ { name: "destroy", text: "삭제" } ], title: " ", width: "160px"  }
