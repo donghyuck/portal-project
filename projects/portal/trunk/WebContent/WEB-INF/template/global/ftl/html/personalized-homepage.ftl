@@ -496,6 +496,8 @@
 					
 					if( e.field != "objectType" ){						
 						var senderSource = e.sender.source;
+						alert( kendo.stringify( e ) ;
+						
 						if( senderSource.subject == null || senderSource.subject == '' ||  senderSource.body == null || senderSource.body == '' ){
 							return;
 						}else{
