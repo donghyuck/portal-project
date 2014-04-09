@@ -854,8 +854,7 @@
 			-->					
 				<div class="panel-body" style="padding:5px;">			
 					<div class="row">
-						<div class="col-6 col-xs-12">1</div>
-						<div class="col-6 col-xs-12">2</div>
+						<div class="col-6 col-xs-12">1</div>	<div class="col-6 col-xs-12">2</div>
 					</div>
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
