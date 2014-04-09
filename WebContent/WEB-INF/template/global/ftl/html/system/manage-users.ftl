@@ -162,10 +162,12 @@
 							 	// $("#splitter").data("kendoSplitter").expand("#datail_pane");							 	 
 							 	$('#user-details').show().html(kendo.template($('#user-details-template').html()));							 	
 								kendo.bind($(".details"), selectedUser ); 
-							 	$('#user-photo').attr( 'src', common.api.user.photoUrl(selectedUser, 150, 200 ) );								 	
-							 	observable.bind("change", function(e) {
+							 	$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );								 	
+							 	
+							 	selectedUser.bind("change", function(e) {
 									$('#update-user-btn').removeAttr('disabled');
-								});							 								 	
+								});		
+													 								 	
 							 	if(!$("#files").data("kendoUpload")){
 								 	$("#files").kendoUpload({
 									 	multiple : false,
