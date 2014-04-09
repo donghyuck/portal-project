@@ -726,8 +726,11 @@
 				options.title = false;
 			}							
 			selector.kendoWindow(options);
+		}else{
+			if( typeof options.url === 'string' )
+				selector.data('kendoWindow').refersh( options.url );
 		}	
-		return $(selector).data('kendoWindow'); 		
+		return selector.data('kendoWindow'); 		
 	};
 	
 	
