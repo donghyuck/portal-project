@@ -572,6 +572,7 @@
 											}
 										} 
 									},
+									pageSize: 15,
 									schema: {
 										total: "targetWebSiteCount",
 										data: "targetWebSites",
@@ -579,6 +580,7 @@
 									},
 									error: common.api.handleKendoAjaxError
 								},
+								toolbar: [ { text: "웹 사이트 추가", css:"createSiteCustom" } ],   
 								columns:[
 									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false },
 									{ field: "name", title: "파일", width: 150 },
