@@ -717,6 +717,7 @@
 						<h1>
 							<span data-bind="text: title"></span>
 							<small><i class="fa fa-quote-left"></i>&nbsp;<span data-bind="text: description"></span>&nbsp;<i class="fa fa-quote-right"></i></small>
+							<button type="button" class="btn btn-link"><i class="fa fa-angle-double-up"></i>목로으로 이동</button>
 						</h1>
 					</div>			
 				</div>		
