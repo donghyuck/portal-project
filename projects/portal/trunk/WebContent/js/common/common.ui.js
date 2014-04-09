@@ -728,7 +728,7 @@
 			selector.kendoWindow(options);
 		}else{
 			if( typeof options.url === 'string' )
-				selector.data('kendoWindow').refersh( options.url );
+				selector.data('kendoWindow').refresh( options.url );
 		}	
 		return selector.data('kendoWindow'); 		
 	};
