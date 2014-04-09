@@ -722,9 +722,9 @@
 			if( ! options.modal ){
 				options.modal = true;
 			}	
-			//if( ! options.title ){
-			//	options.title = false;
-			//}							
+			if( ! options.position ){
+				options.position = { top: 100, left: 100 };
+			}							
 			selector.kendoWindow(options);
 		}else{
 			if( typeof options.url === 'string' )
