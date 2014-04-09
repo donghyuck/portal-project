@@ -514,6 +514,7 @@
 						return ;
 					}		
 					//alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
+					$("#announce-editor").data( "announcePlaceHolder" ).user = null;
 					$.ajax({
 						dataType : "json",
 						type : 'POST',
