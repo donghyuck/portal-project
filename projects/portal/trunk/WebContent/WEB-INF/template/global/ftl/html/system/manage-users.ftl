@@ -408,9 +408,7 @@
 						</div>
 						<div class="panel-body" style="padding:5px;">
 							<div id="user-grid"></div>
-							
-							<div id="file-preview-panel" class="custom-panels-group"></div>	
-															
+							<div id="file-preview-panel" class="custom-panels-group"></div>
 							<!--
 							<div class="row marginless paddingless">
 								<div class="col-sm-12 body-group marginless paddingless">
