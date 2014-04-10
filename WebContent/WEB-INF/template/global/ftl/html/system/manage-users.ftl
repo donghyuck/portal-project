@@ -237,7 +237,6 @@
 					$('#myTab').on( 'show.bs.tab', function (e) {
 						e.preventDefault();		
 						var show_bs_tab = $(e.target);
-						alert(show_bs_tab.attr('href'));
 						if(show_bs_tab.attr('href') == '#props' ) {
 						
 						}else if(show_bs_tab.attr('href') == '#groups' ) {
@@ -428,8 +427,7 @@
 			<form name="fm1" method="POST" accept-charset="utf-8">
 				<input type="hidden" name="companyId"  value="${action.companyId}" />
 			</form>	
-		</div>	
-		
+		</div>		
 		<div id="change-password-window" style="display:none;">
 		<div class="container layout">	
 			<div class="row">
