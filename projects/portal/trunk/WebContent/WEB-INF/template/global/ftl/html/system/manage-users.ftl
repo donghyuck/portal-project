@@ -73,7 +73,7 @@
 
 				var selectedUser = new User ();
 				$("#user-grid").data("userPlaceHolder", selectedUser );
-		        // 1. USER GRID 		        
+				// 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
                     dataSource: {
                     	serverFiltering: true,
@@ -129,17 +129,24 @@
 							$("#user-details").hide();
 						 }
 					}
-                }).data('kendoGrid');
-            }	
-        }]);      
-        
-        /**
-        * Show user detailis
-        */
-        function showUserDetails(){
+				}).data('kendoGrid');
+			}	
+		}]);
+
+		/**
+		* Show user detailis
+		*/
+		function showUserDetails(){
+			var selectedUser = $("#user-grid").data("userPlaceHolder");
+			
 			if( $('#user-details').text().trim().length	== 0 ){
-				
+				$('#user-details').show().html(kendo.template($('#user-details-template').html()));
+				selectedUser.bind("change", function(e) {
+					$('#update-user-btn').removeAttr('disabled');
+				});			
 			}
+			
+			kendo.bind($(".details"), selectedUser ); 
 			
 		}
         
@@ -442,9 +449,6 @@
 				</div>
 			</div>			
 		</div>
-		
-		<script type="text/x-kendo-template" id="template">
-		</script>
 		<!-- 공용 템플릿 -->
 		<div id="account-panel"></div>	
 		<#include "/html/common/common-templates.ftl" >		
