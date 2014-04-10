@@ -680,7 +680,7 @@
 						<!--  start basic info -->	
 						<div class="page-header">
 						  <h5><small><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하세요.</small>
-							<button type="button" class="btn btn-link btn-control-group pull-right" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
+							<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
 						  </h5>
 						</div>						
 					<div class="media">
