@@ -291,7 +291,7 @@
 												placeholder: "회사 선택",
 						                        dataTextField: "displayName",
 						                        dataValueField: "companyId",
-											    dataSource: topBar.items[0].dataSource // $("#company").data("kendoDropDownList").dataSource 
+											    dataSource: $("#navbar").data('kendoExtTopNavBar').items[0].dataSource // $("#company").data("kendoDropDownList").dataSource 
 											});
 											$("#company-combo").data("kendoComboBox").value( 
 												selectedCompany.companyId //$("#company").data("kendoDropDownList").value() 
