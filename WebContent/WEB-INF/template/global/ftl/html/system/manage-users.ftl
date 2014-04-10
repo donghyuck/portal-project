@@ -180,7 +180,7 @@
 				                        });
 				                    $('#change-password-window').data("kendoWindow").center();        
 				                    $('#password2').focus();                
-					            	$('#change-password-window').data("kendoWindow").open();	            	
+									$('#change-password-window').data("kendoWindow").open();	            	
 					});	
 					$('#do-change-password-btn').bind( 'click', function(){	            	
 					            	var doChangePassword = true ;	            	
@@ -212,7 +212,7 @@
 												dataType : "json"
 											});	
 										selectedUser.password = '' ;                   	    	
-				                   	}
+								}
 					} );	
 					// update user info
 					$('#update-user-btn').bind('click' , function(){
@@ -225,18 +225,139 @@
 										},
 										error: common.api.handleKendoAjaxError,
 										dataType : "json"
-									});										
+									});	
+									/*									
 									if(visible){
 										slide.reverse();						
 										visible = false;		
 										$("#detail-panel").hide();				
-									}
-					}); 					
-															
+									}*/
+					}); 	
+					// user tabs
+					$('#myTab').on( 'show.bs.tab', function (e) {
+						e.preventDefault();		
+						var show_bs_tab = $(e.target);
+						if(show_bs_tab.attr('href') == '#props' ) {
+						
+						}else if(show_bs_tab.attr('href') == '#groups' ) {
+						
+						}else if(show_bs_tab.attr('href') == '#roles' ) {
+							if( !$('#group-role-selected').data('kendoMultiSelect') ){
+												$('#group-role-selected').kendoMultiSelect({
+				                                    placeholder: "NONE",
+									                dataTextField: "name",
+									                dataValueField: "roleId",
+									                dataSource: {
+									                    transport: {
+									                        read: {
+							                                    url: '${request.contextPath}/secure/get-user-group-roles.do?output=json',
+																dataType: "json",
+																type: "POST",
+																data: { userId: selectedUser.userId }
+									                        }
+									                    },
+									                    schema: { 
+						                            		data: "userGroupRoles",
+						                            		model: Role
+						                        		}
+									                },
+						                        	error:handleKendoAjaxError,
+						                        	dataBound: function(e) {
+						                        		var multiSelect = $("#group-role-selected").data("kendoMultiSelect");
+						                        		var selectedRoleIDs = "";
+						                        		$.each(  multiSelect.dataSource.data(), function(index, row){  
+						                        			if( selectedRoleIDs == "" ){
+						                        			    selectedRoleIDs =  selectedRoleIDs + row.roleId ;
+						                        			}else{
+						                        				selectedRoleIDs = selectedRoleIDs + "," + row.roleId;
+						                        			}
+						                        		} );			                        		
+						                        		multiSelect.value( selectedRoleIDs.split( "," ) );
+						                        		multiSelect.readonly();		
+						                        	}
+									            });	
+											}									    
+											// SELECT USER ROLES
+											if( !$('#user-role-select').data('kendoMultiSelect') ){											
+												var selectedRoleDataSource = new kendo.data.DataSource({
+													transport: {
+										            	read: { 
+										            		url:'${request.contextPath}/secure/get-user-roles.do?output=json', 
+										            		dataType: "json", 
+										            		type:'POST',
+										            		data: { userId: selectedUser.userId }
+												        }  
+												    },
+												    schema: {
+									                	data: "userRoles",
+									                    model: Role
+									                },
+									                error:handleKendoAjaxError,
+									                change: function(e) {                
+						                        		var multiSelect = $("#user-role-select").data("kendoMultiSelect");
+						                        		var selectedRoleIDs = "";			                        		
+						                        		$.each(  selectedRoleDataSource.data(), function(index, row){  
+						                        			if( selectedRoleIDs == "" ){
+						                        			    selectedRoleIDs =  selectedRoleIDs + row.roleId ;
+						                        			}else{
+						                        				selectedRoleIDs = selectedRoleIDs + "," + row.roleId;
+						                        			}
+						                        		} );			                        		
+						                        		multiSelect.value( selectedRoleIDs.split( "," ) );	 
+									                }	                               
+				                               	});	
+				                               												
+												$('#user-role-select').kendoMultiSelect({
+				                                    placeholder: "롤 선택",
+									                dataTextField: "name",
+									                dataValueField: "roleId",
+									                dataSource: {
+									                    transport: {
+									                        read: {
+							                                    url: '${request.contextPath}/secure/list-role.do?output=json',
+																dataType: "json",
+																type: "POST"
+									                        }
+									                    },
+									                    schema: { 
+						                            		data: "roles",
+						                            		model: Role
+						                        		}
+									                },
+						                        	error:handleKendoAjaxError,
+						                        	dataBound: function(e) {
+						                        		 selectedRoleDataSource.read();   	
+						                        	},			                        	
+						                        	change: function(e){
+						                        		var multiSelect = $("#user-role-select").data("kendoMultiSelect");			                        		
+						                        		var list = new Array();			                        		                  		
+						                        		$.each(multiSelect.value(), function(index, row){  
+						                        			var item =  multiSelect.dataSource.get(row);
+						                        			list.push(item);			                        			
+						                        		});			                        		
+						                        		multiSelect.readonly();						                        		
+							 							$.ajax({
+												            dataType : "json",
+															type : 'POST',
+															url : "${request.contextPath}/secure/update-user-roles.do?output=json",
+															data : { userId: selectedUser.userId, items: kendo.stringify( list ) },
+															success : function( response ){		
+																// need refresh ..
+															},
+															error:handleKendoAjaxError
+														});												
+														multiSelect.readonly(false);
+														}
+											});
+							}
+						}
+					});															
 			}
+			
 			kendo.bind($(".details"), selectedUser );			
 			$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
 			$('#update-user-btn').attr('disabled', '');
+			$('#myTab a:first').tab('show') ;
 		}
         </script>
 		<style>			
