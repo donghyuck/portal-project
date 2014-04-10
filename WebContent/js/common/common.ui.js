@@ -716,7 +716,7 @@
 			var btn_control = $(this);
 			var data_action = btn_control.attr("data-action");
 			if ( typeof options.handlers === 'object' ){
-				if( isFunction(options.handlers[data_action]){
+				if( isFunction(options.handlers[data_action])){
 					btn_control.bind( options.event , isFunction(options.handlers[data_action]);
 				}
 			}
