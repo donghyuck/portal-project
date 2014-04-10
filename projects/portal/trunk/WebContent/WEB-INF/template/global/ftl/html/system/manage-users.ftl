@@ -147,6 +147,12 @@
 					$('#update-user-btn').removeAttr('disabled');
 				});
 				
+				$('button.btn-control-group[data-action="top"]').click(
+					function(e){						
+						$('html,body').animate({ scrollTop:  0 }, 300);
+					}  		
+				);
+								
 				if(!$("#files").data("kendoUpload")){
 					$("#files").kendoUpload({
 									 	multiple : false,
