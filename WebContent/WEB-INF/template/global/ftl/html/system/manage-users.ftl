@@ -909,11 +909,11 @@
 										</td>
 									</tr> 																		
 									<tr>
-										<th class="col-lg-3 col-sm-4">마지막 프로파일 수정일</th>
+										<th class="col-lg-3 col-sm-4"><small>마지막 프로파일 수정일</small></th>
 										<td><span data-bind="text: lastProfileUpdate" data-format="{yyyy.MM.dd }"></span></td>
 									</tr>  
 									<tr>
-										<th class="col-lg-3 col-sm-4">마지막 로그인 일자</th>
+										<th class="col-lg-3 col-sm-4"><small>마지막 로그인 일자</small></th>
 										<td><span data-bind="text: lastLoggedIn" data-format="yyyy.MM.dd HH:mm:ss"></span></td>
 									</tr>  
 								</tbody>
