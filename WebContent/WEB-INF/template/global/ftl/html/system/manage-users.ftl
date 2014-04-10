@@ -781,6 +781,9 @@
 								</div>							
 								<div class="tab-pane fade" id="roles">
 									<div class="row">
+										<div class="col-sm-12">
+											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 그룹에 부여된 롤입니다. <small>그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
+										</div>
 										<div class="col-sm-offset-2 col-sm-10">
 											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 그룹에 부여된 롤입니다. <small>그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
 											<div id="group-role-selected"></div>
