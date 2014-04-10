@@ -764,11 +764,11 @@
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
 										<div class="form-horizontal">
 											<div class="form-group">
-												<label for="company-combo" class="col-sm-2 control-label">회사</label>
+												<label for="company-combo" class="col-sm-2 control-label"><small>회사</small></label>
 												<input id="company-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
-												<label for="group-combo" class="col-sm-2 control-label">그룹</label>
+												<label for="group-combo" class="col-sm-2 control-label"><small>그룹</small></label>
 												<input id="group-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
