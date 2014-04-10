@@ -720,8 +720,7 @@
 					btn_control.bind( options.event , isFunction(options.handlers[data_action]));
 				}
 			}
-		}
-				
+		});				
 	};
 		
 	
