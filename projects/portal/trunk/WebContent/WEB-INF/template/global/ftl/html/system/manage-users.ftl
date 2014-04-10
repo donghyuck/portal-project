@@ -772,7 +772,9 @@
 												<input id="group-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
-												<button id="add-to-member-btn" class="btn btn-info btn-sm pull-right"><i class="fa fa-plus"></i> 그룹 맴버로 추가</button>
+												<div class="col-sm-offset-2 col-sm-10">
+												<button id="add-to-member-btn" class="btn btn-info btn-sm"><i class="fa fa-plus"></i> 그룹 맴버로 추가</button>
+												</div>
 											</div>
 										</div>							
 									<div id="user-group-grid" class="groups"></div>									
