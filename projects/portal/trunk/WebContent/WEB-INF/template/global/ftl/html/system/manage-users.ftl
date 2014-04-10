@@ -68,6 +68,7 @@
 							alert("add user");				
 						},
 						top : function(e){
+							alert('fdsaf');							
 							$('html,body').animate({ scrollTop:  0 }, 300);
 						}  						 
 					}}
