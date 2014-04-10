@@ -22,19 +22,18 @@
 				// 1.  한글 지원을 위한 로케일 설정
 				kendo.culture("ko-KR");
 										
-				// 2. ACCOUNTS LOAD		
+				// 2. ACCOUNTS LOAD						
+				var selectedCompany = new Company({companyId:${action.user.companyId}});	
+				var currentUser = new User();
 				
-				var currentUser = new User({});
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
 					authenticate : function( e ){
 						currentUser = e.token;						
 					}
-				});
-				var selectedCompany = new Company({companyId:${action.companyId}});			
+				});						
 								
-				// 3.MENU LOAD
-			
+				// 3.MENU LOAD			
 				var currentPageName = "MENU_1_4";
 				var topBar = $("#navbar").extTopNavBar({ 
 					menu:"SYSTEM_MENU",
@@ -54,8 +53,20 @@
 					]
 				});
 		
-				// 4. CONTENT MAIN		
-
+				// 4. CONTENT
+				common.ui.handleButtonActionEvents(
+					$("button.btn-control-group "), {event: 'click', handlers: {
+						company : function(e){
+							$("form[name='fm1'] input").val(selectedCompany.companyId);
+							$("form[name='fm1']").attr("action", "main-company.do" ).submit(); 						
+						},
+						group : function(e){
+							$("form[name='fm1'] input").val(selectedCompany.companyId);
+							$("form[name='fm1']").attr("action", "main-group.do" ).submit(); 						
+						} 						 
+					}}
+				);
+				
                 // SPLITTER LAYOUT
                 /**
 				$("button.btn-control-group ").each(function (index) {					
@@ -709,8 +720,8 @@
 					<div class="panel panel-default" style="min-height:300px;" >
 						<div class="panel-heading selected-company-info" style="padding:5px;">
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i> 회사관리</button>
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i> 그룹관리</button>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i>  그룹관리</button>
 							<!--	<button type="button" class="btn btn-default btn-control-group btn-columns-expend" data-action="layout"><i class="fa fa-columns"></i></button> -->
 							</div>
 						</div>
