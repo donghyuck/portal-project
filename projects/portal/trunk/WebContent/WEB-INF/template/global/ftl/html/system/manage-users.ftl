@@ -138,9 +138,11 @@
 			var selectedUser = $("#user-grid").data("userPlaceHolder");			
 			if( $('#user-details').text().trim().length	== 0 ){
 				$('#user-details').show().html(kendo.template($('#user-details-template').html()));
+				
 				selectedUser.bind("change", function(e) {
 					$('#update-user-btn').removeAttr('disabled');
 				});
+				
 				if(!$("#files").data("kendoUpload")){
 					$("#files").kendoUpload({
 									 	multiple : false,
@@ -165,8 +167,54 @@
 									    	}	**/			
 									    	$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
 									    }					   
-					});				
-				}							
+					});			
+				}	
+					// password window
+					$('#change-password-btn').bind( 'click', function(){
+					                $('#change-password-window').kendoWindow({
+				                            minWidth: "300px",
+				                            minHeight: "250px",
+				                            title: "패스워드 변경",
+				                            modal: true,
+				                            visible: false
+				                        });
+				                    $('#change-password-window').data("kendoWindow").center();        
+				                    $('#password2').focus();                
+					            	$('#change-password-window').data("kendoWindow").open();	            	
+					});	
+					$('#do-change-password-btn').bind( 'click', function(){	            	
+					            	var doChangePassword = true ;	            	
+					            	if( $('#password2').val().length < 6 ){
+					            		alert ('패스워드는 최소 6 자리 이상으로 입력하여 주십시오.') ;	     
+					            		doChangePassword = false ;
+					            		$('#password2').val("");        
+					            		$('#password3').val("");           		
+					            		$('#password2').focus();   
+					            		return false;
+					            	}					            
+				                   	if( doChangePassword && $('#password2').val() != $('#password3').val() ){
+				                   		doChangePassword = false;
+				                   	    alert( '패스워드가 같지 않습니다. 다시 입력하여 주십시오.' );      
+				                   	    $('#password3').val("");
+				                   	    $('#password3').focus();               
+				                   	    return false;
+				                   	} 				
+									if(doChangePassword) {
+				                   	    selectedUser.password = $('#password2').val();                   	    
+										$.ajax({
+												type : 'POST',
+												url : "${request.contextPath}/secure/update-user.do?output=json",
+												data : { userId:selectedUser.userId, item: kendo.stringify( selectedUser ) },
+												success : function( response ){	
+												    $('#user-grid').data('kendoGrid').dataSource.read();	
+												},
+												error:handleKendoAjaxError,
+												dataType : "json"
+											});	
+										selectedUser.password = '' ;                   	    	
+				                   	}
+					} );						
+															
 			}
 			kendo.bind($(".details"), selectedUser );			
 			$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
