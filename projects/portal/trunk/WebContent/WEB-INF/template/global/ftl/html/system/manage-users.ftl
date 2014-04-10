@@ -782,15 +782,14 @@
 								<div class="tab-pane fade" id="roles">
 									<div class="row">
 										<div class="col-sm-12">
-											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 그룹에 부여된 롤입니다. <small>그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
+											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 맴버로 가입된 그룹으로 부터 상속된 롤입니다. <small>그룹에서 상속된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
 										</div>
 										<div class="col-sm-offset-2 col-sm-10">
-											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 그룹에 부여된 롤입니다. <small>그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
 											<div id="group-role-selected"></div>
 										</div>
 									</div>
 									<span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-									<div class="alert alert-info margin-buttom-5">다음은 그룹에 부여된 롤입니다. 그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</div>
+									<div class="alert alert-info margin-buttom-5">다음은 맴버로 가입된 그룹으로 부터 상속된 롤입니다. 그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</div>
 									
 									<div class="blank-top-5"></div>
 									<div class="alert alert-info margin-buttom-5">다음은 사용자에게 직접 부여된 롤입니다. 그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</div>									
