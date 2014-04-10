@@ -291,14 +291,13 @@
 												placeholder: "회사 선택",
 						                        dataTextField: "displayName",
 						                        dataValueField: "companyId",
-											    dataSource: $("#navbar").data('kendoExtTopNavBar').items()[0].dataSource // $("#company").data("kendoDropDownList").dataSource 
+											    dataSource: $("#navbar").data('kendoExtTopNavBar').items()[0].dataSource
 											});
 											$("#company-combo").data("kendoComboBox").value( 
-												$("#navbar").data('kendoExtTopNavBar').items()[0].value
+												selectedUser.company.companyId
 											);
 											$("#company-combo").data("kendoComboBox").readonly();
-										}										
-
+										}
 										if( !$("#group-combo").data("kendoComboBox") ){
 											$("#group-combo").kendoComboBox({
 												autoBind: false,
