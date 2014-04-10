@@ -670,7 +670,9 @@
 
 
 /**
- * common.ui functions 
+ * 
+ * common.ui package define.
+ * 
  * 
  * 
  */
@@ -704,6 +706,22 @@
 				selector.find(data.selector).on(data.event, data.handler);
 			});
 		}
+	};
+	
+	common.ui.handleButtonActionEvents = function ( selector, options ){		
+		options = options || {};	
+		if ( typeof selector === 'string' )
+			selector = $(selector);		
+		selector.each(function (index) {	
+			var btn_control = $(this);
+			var data_action = btn_control.attr("data-action");
+			if ( typeof options.handlers === 'object' ){
+				if( isFunction(options.handlers[data_action]){
+					btn_control.bind( options.event , isFunction(options.handlers[data_action]);
+				}
+			}
+		}
+				
 	};
 		
 	
