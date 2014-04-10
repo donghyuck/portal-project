@@ -656,27 +656,27 @@
 										<table class="table table-hover">
 											<tbody>						
 												<tr>
-													<th>회사</th>								
+													<th><small>회사</small></th>								
 													<td><span data-bind="text: displayName"></span></td>
 												</tr>	
 												<tr>
-													<th>도메인</th>								
+													<th><small>도메인</small></th>								
 													<td><span data-bind="text: domainName"></span></td>
 												</tr>										
 												<tr>
-													<th>키</th>
+													<th><small>키</small></th>
 													<td><span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
 												</tr>			
 												<tr>
-													<th>설명</th>
+													<th><small>설명</small></th>
 													<td><span data-bind="text: description"></span></td>
 												</tr>	
 												<tr>
-													<th>등록일</th>
+													<th><small>등록일</small></th>
 													<td><span data-bind="text: creationDate"></span></td>
 												</tr>				
 												<tr>
-													<th>수정일</th>
+													<th><small>수정일</small></th>
 													<td><span data-bind="text: modifiedDate"></span></td>
 												</tr>												
 										 	</tbody>
