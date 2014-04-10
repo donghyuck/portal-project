@@ -64,6 +64,10 @@
 							$("form[name='fm1'] input").val(selectedCompany.companyId);
 							$("form[name='fm1']").attr("action", "main-group.do" ).submit(); 						
 						}, 	
+						site : function(e){
+							$("form[name='fm1'] input").val(selectedCompany.companyId);
+							$("form[name='fm1']").attr("action", "main-site.do" ).submit(); 						
+						}, 							
 						addUser : function(e){
 							alert("add user");				
 						},
