@@ -144,10 +144,8 @@
 				selectedUser.bind("change", function(e) {
 					$('#update-user-btn').removeAttr('disabled');
 				});			
-			}
-			
-			kendo.bind($(".details"), selectedUser ); 
-			
+			}			
+			kendo.bind($(".details"), selectedUser );
 		}
         
         </script>
