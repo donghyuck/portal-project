@@ -55,7 +55,8 @@
 		
 				// 4. CONTENT
 				common.ui.handleButtonActionEvents(
-					$("button.btn-control-group "), {event: 'click', handlers: {
+					$("button.btn-control-group "), 
+					{event: 'click', handlers: {
 						company : function(e){
 							$("form[name='fm1'] input").val(selectedCompany.companyId);
 							$("form[name='fm1']").attr("action", "main-company.do" ).submit(); 						
