@@ -24,8 +24,7 @@
 										
 				// 2. ACCOUNTS LOAD						
 				var selectedCompany = new Company({companyId:${action.user.companyId}});	
-				var currentUser = new User();
-				
+				var currentUser = new User();				
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
 					authenticate : function( e ){
@@ -71,8 +70,7 @@
 					}}
 				);
 
-				var selectedUser = new User ();
-				$("#user-grid").data("userPlaceHolder", selectedUser );
+				$("#user-grid").data("userPlaceHolder", new User());
 				// 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
                     dataSource: {
@@ -114,9 +112,9 @@
                     change: function(e) {                    
                         var selectedCells = this.select();                 
   						if( selectedCells.length > 0){ 
-                            var selectedCell = this.dataItem( selectedCells ); 
-                            selectedCell.copy(selectedUser);                            
-							if( selectedUser.userId	> 0 ){									
+							var selectedCell = this.dataItem( selectedCells ); 
+							selectedCell.copy($("#user-grid").data("userPlaceHolder"));
+							if( selectedCell.userId	> 0 ){									
 								showUserDetails();
 							}
  						}
@@ -124,8 +122,8 @@
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
-						 	var newUser = new User ();
-						 	newUser.copy(selectedUser);
+						 	//var newUser = new User ();
+						 	//newUser.copy(selectedUser);
 							$("#user-details").hide();
 						 }
 					}
@@ -448,7 +446,7 @@
 			</div>			
 		</div>
 		<!-- 공용 템플릿 -->
-		<div id="account-panel"></div>	
+		<div id="account-panel"></div>
 		<#include "/html/common/common-templates.ftl" >		
 		<#include "/html/common/common-system-templates.ftl" >			
 		<!-- END MAIN CONTENT  -->
