@@ -34,6 +34,10 @@
 			options = that.options;					
 			that._dataSource();
 		},
+		items : function () {
+			var that = this ;
+			return that.options.items;
+		},
 		options : {
 			name: "ExtTopNavBar",	
 			autoBind: true,
