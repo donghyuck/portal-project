@@ -939,7 +939,7 @@
 							</ul>			
 							<div class="tab-content">
 								<div class="tab-pane active" id="props">
-									<p class="text-muted"><i class="fa fa-exclamation-triangle"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></p>			
+									<p class="text-danger"><i class="fa fa-exclamation-triangle"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></p>			
 									<div id="user-props-grid" class="props"></div>
 								</div>
 								<div class="tab-pane" id="groups">
