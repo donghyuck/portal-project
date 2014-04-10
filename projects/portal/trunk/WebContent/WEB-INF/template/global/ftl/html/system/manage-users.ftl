@@ -66,7 +66,10 @@
 						}, 	
 						addUser : function(e){
 							alert("add user");				
-						} 						 
+						},
+						top : function(e){
+							$('html,body').animate({ scrollTop:  0 }, 300);
+						}  						 
 					}}
 				);
 
