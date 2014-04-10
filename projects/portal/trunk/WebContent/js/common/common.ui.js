@@ -716,7 +716,6 @@
 		selector.each(function (index) {	
 			var btn_control = $(this);
 			var data_action = btn_control.attr("data-action");
-			alert(data_action) ;
 			if ( typeof options.handlers === 'object' ){
 				if( isFunction(options.handlers[data_action])){
 					btn_control.bind( options.event , 	options.handlers[data_action]	);
