@@ -46,7 +46,7 @@
 							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
 							change : function(data){
 								$("#navbar").data("companyPlaceHolder", data) ;
-								kendo.bind($("#site-info"), data );
+								kendo.bind($("#company-info"), data );
 							}
 						},
 						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
@@ -652,7 +652,7 @@
 						</div>
 						<div class="panel-body" style="padding:5px;">		
 							<div class="row">
-								<div class="col-lg-6 col-xs-12">
+								<div class="col-lg-6 col-xs-12" id="company-info">
 										<table class="table table-hover">
 										<tbody>						
 											<tr>
@@ -692,7 +692,6 @@
 						</div>
 						<div class="panel-body" style="padding:5px;">					
 							<ul class="nav nav-tabs" id="myTab">
-							  <li><a href="#site-info" data-toggle="tab"><i class="fa fa-sitemap"></i> 사이트</a></li>
 							  <li><a href="#template-mgmt" data-toggle="tab"><i class="fa fa-file-o"></i> 템플릿</a></li>
 							  <li><a href="#image-mgmt" data-toggle="tab"><i class="fa fa-picture-o"></i> 이미지</a></li>
 							  <li><a href="#attachment-mgmt" data-toggle="tab"><i class="fa fa-paperclip"></i> 첨부파일</a></li>
