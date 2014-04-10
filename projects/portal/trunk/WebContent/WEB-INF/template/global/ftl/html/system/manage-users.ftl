@@ -709,7 +709,8 @@
 					<div class="panel panel-default" style="min-height:300px;" >
 						<div class="panel-heading selected-company-info" style="padding:5px;">
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i>&nbsp;<span data-bind="text: displayName"></span>&nbsp;그룹관리</button>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i> 회사관리</button>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i> 그룹관리</button>
 							<!--	<button type="button" class="btn btn-default btn-control-group btn-columns-expend" data-action="layout"><i class="fa fa-columns"></i></button> -->
 							</div>
 						</div>
