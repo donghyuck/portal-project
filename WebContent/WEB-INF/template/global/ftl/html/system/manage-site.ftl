@@ -606,7 +606,9 @@
 									if( selectedCells.length > 0 ){
 										var selectedCell = this.dataItem( selectedCells );
 										alert( kendo.stringify(selectedCell));
+										alert( kendo.stringify($("#website-gird").data("sitePlaceHolder")));
 										selectedCell.copy( $("#website-gird").data("sitePlaceHolder"));
+										
 									}
 								}				
 				});
