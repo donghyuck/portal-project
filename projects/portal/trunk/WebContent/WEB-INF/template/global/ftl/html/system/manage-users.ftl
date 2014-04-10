@@ -134,17 +134,40 @@
 		/**
 		* Show user detailis
 		*/
-		function showUserDetails(){
-		
+		function showUserDetails(){		
 			var selectedUser = $("#user-grid").data("userPlaceHolder");			
 			if( $('#user-details').text().trim().length	== 0 ){
 				$('#user-details').show().html(kendo.template($('#user-details-template').html()));
 				selectedUser.bind("change", function(e) {
 					$('#update-user-btn').removeAttr('disabled');
-				});			
-			}			
-			
-			
+				});
+				if(!$("#files").data("kendoUpload")){
+					$("#files").kendoUpload({
+									 	multiple : false,
+									 	showFileList : false,
+									    localization:{ select : '사진변경' , dropFilesHere : '업로드할 이미지를 이곳에 끌어 놓으세요.' },
+									    async: {
+										    saveUrl:  '${request.contextPath}/secure/save-user-image.do?output=json',							   
+										    autoUpload: true
+									    },
+									    upload: function (e) {								         
+									         var imageId = -1;
+									         if( selectedUser.properties.imageId ){
+									         	imageId = selectedUser.properties.imageId
+									         }
+									    	 e.data = { userId: selectedUser.userId , imageId:imageId  };									    								    	 		    	 
+									    },
+									    success : function(e) {								    
+									    	/**if( e.response.targetUserImage ){
+									    		selectedUser.properties.imageId = e.response.targetUserImage.imageId;
+									    		var photoUrl = '${request.contextPath}/secure/view-image.do?width=150&height=200&imageId=' + selectedUser.properties.imageId ;
+								 	 			$('#user-photo').attr( 'src', photoUrl );
+									    	}	**/			
+									    	$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
+									    }					   
+					});				
+				}							
+			}
 			kendo.bind($(".details"), selectedUser );			
 			$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
 			$('#update-user-btn').attr('disabled', '');
