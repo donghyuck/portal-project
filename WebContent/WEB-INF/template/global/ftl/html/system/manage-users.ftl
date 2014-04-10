@@ -235,7 +235,7 @@
 					}); 	
 					// user tabs
 					$('#myTab').on( 'show.bs.tab', function (e) {
-						e.preventDefault();		
+						//e.preventDefault();		
 						var show_bs_tab = $(e.target);
 						if(show_bs_tab.attr('href') == '#props' ) {
 							if(!$("#user-props-grid").data("kendoGrid")){
