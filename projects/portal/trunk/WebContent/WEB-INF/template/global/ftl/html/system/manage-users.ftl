@@ -939,6 +939,7 @@
 							</ul>			
 							<div class="tab-content">
 								<div class="tab-pane active" id="props">
+									
 									<p class="text-danger"><i class="fa fa-exclamation-triangle"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></p>			
 									<div id="user-props-grid" class="props"></div>
 								</div>
@@ -955,7 +956,7 @@
 									<div id="user-group-grid" class="groups"></div>									
 								</div>							
 								<div class="tab-pane" id="roles">
-									<div class="blank-top-5"></div>
+<span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
 									<div class="alert alert-info margin-buttom-5">다음은 그룹에 부여된 롤입니다. 그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</div>
 									<div id="group-role-selected"></div>
 									<div class="blank-top-5"></div>
