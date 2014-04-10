@@ -24,7 +24,7 @@
 										
 				// 2. ACCOUNTS LOAD						
 				var selectedCompany = new Company({companyId:${action.user.companyId}});	
-				var currentUser = new User();				
+				var currentUser = new User({});				
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
 					authenticate : function( e ){
