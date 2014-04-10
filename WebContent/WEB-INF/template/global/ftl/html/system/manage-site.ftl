@@ -605,6 +605,7 @@
 									var selectedCells = this.select();
 									if( selectedCells.length > 0 ){
 										var selectedCell = this.dataItem( selectedCells );
+										alert( kendo.stringify(selectedCell));
 										selectedCell.copy( $("#website-gird").data("sitePlaceHolder"));
 									}
 								}				
