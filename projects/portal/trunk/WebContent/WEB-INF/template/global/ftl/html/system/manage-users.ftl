@@ -137,8 +137,8 @@
 		* Show user detailis
 		*/
 		function showUserDetails(){
-			var selectedUser = $("#user-grid").data("userPlaceHolder");
-			
+		
+			var selectedUser = $("#user-grid").data("userPlaceHolder");			
 			if( $('#user-details').text().trim().length	== 0 ){
 				$('#user-details').show().html(kendo.template($('#user-details-template').html()));
 				selectedUser.bind("change", function(e) {
