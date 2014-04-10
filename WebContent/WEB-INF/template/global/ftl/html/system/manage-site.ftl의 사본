@@ -57,7 +57,7 @@
 				});
 								 
 				 // 4. PAGE MAIN		
-				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );
+				 $("#website-gird").data("sitePlaceHolder", new common.models.WebSite() );
 				 createSiteGrid();
 				 
 				 
@@ -580,7 +580,7 @@
 									},
 									error: common.api.handleKendoAjaxError
 								},
-								/* toolbar: [ { name: "create", text: "웹 사이트 추가" } ],      */
+								toolbar: [ { text: "웹 사이트 추가", css:"createSiteCustom" } ],   
 								columns:[
 									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false, locked: true, lockable: false },
 									{ field: "name", title: "키", width: 150, locked: true },									
@@ -591,8 +591,7 @@
 									{ field: "allowAnonymousAccess", title: "공개여부",  width: 100 },
 									{ field: "creationDate", title: "생성일", width: 90, format: "{0:yyyy/MM/dd}" },
 									{ field: "modifiedDate", title: "수정일", width: 90, format: "{0:yyyy/MM/dd}" },
-								/*	{ command: [ {name: "destroy", text: "삭제" }, {name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"}  }  ], title: "&nbsp;", width: 180  }	*/
-								], 
+									{ command:  [ {name: "destroy", text: "삭제" }] , title: "&nbsp;", width:300 }], 
 								editable: "inline",
 								batch: false,
 								filterable: true,
@@ -606,9 +605,7 @@
 									var selectedCells = this.select();
 									if( selectedCells.length > 0 ){
 										var selectedCell = this.dataItem( selectedCells );
-			
-										selectedCell.copy( $("#website-grid").data("sitePlaceHolder"));
-										
+										selectedCell.copy( $("#website-gird").data("sitePlaceHolder"));
 									}
 								}				
 				});
