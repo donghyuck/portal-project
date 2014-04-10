@@ -123,7 +123,7 @@
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
 						 	var newUser = new User ();
-						 	newUser.copy(selectedUser);
+						 	newUser.copy($("#user-grid").data("userPlaceHolder"));
 							$("#user-details").hide();
 						 }
 					}
