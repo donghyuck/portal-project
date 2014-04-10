@@ -115,15 +115,15 @@
 							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy($("#user-grid").data("userPlaceHolder"));
 							if( selectedCell.userId	> 0 ){									
-								showUserDetails();
+								//showUserDetails();
 							}
  						}
 					},
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
-						 	//var newUser = new User ();
-						 	//newUser.copy(selectedUser);
+						 	var newUser = new User ();
+						 	newUser.copy(selectedUser);
 							$("#user-details").hide();
 						 }
 					}
