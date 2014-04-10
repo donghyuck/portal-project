@@ -65,7 +65,7 @@
 							$("form[name='fm1'] input").val(selectedCompany.companyId);
 							$("form[name='fm1']").attr("action", "main-group.do" ).submit(); 						
 						} 	
-						add-user : function(e){
+						'add-user' : function(e){
 							alert("add user");				
 						} 						 
 					}}
