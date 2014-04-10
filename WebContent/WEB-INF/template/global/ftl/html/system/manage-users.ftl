@@ -284,7 +284,110 @@
 								    });								    
  							}						
 						}else if(show_bs_tab.attr('href') == '#groups' ) {
-						
+
+							if( !$("#company-combo").data("kendoComboBox") ){
+											var company_combo = $("#company-combo").kendoComboBox({
+												autoBind: false,
+												placeholder: "회사 선택",
+						                        dataTextField: "displayName",
+						                        dataValueField: "companyId",
+											    dataSource: topBar.items[0].dataSource // $("#company").data("kendoDropDownList").dataSource 
+											});
+											$("#company-combo").data("kendoComboBox").value( 
+												selectedCompany.companyId //$("#company").data("kendoDropDownList").value() 
+											);
+											$("#company-combo").data("kendoComboBox").readonly();
+										}										
+
+										if( !$("#group-combo").data("kendoComboBox") ){
+											$("#group-combo").kendoComboBox({
+												autoBind: false,
+												placeholder: "그룹 선택",
+						                        dataTextField: "displayName",
+						                        dataValueField: "groupId",
+						                        cascadeFrom: "company-combo",			                       
+											    dataSource:  {
+													type: "json",
+												 	serverFiltering: true,
+													transport: {
+														read: { url:'${request.contextPath}/secure/list-company-group.do?output=json', type:'post' },
+														parameterMap: function (options, operation){											 	
+														 	return { companyId:  options.filter.filters[0].value };
+														}
+													},
+													schema: {
+														data: "companyGroups",
+														model: Group
+													},
+													error:handleKendoAjaxError
+												}
+											});											
+										}
+									
+										if( ! $("#user-group-grid").data("kendoGrid") ){	
+											// 3-3 USER GROUP GRID
+											$("#user-group-grid").kendoGrid({
+				   								dataSource: {
+													type: "json",
+										        	transport: {
+										                        read: { url:'${request.contextPath}/secure/list-user-groups.do?output=json', type:'post' },
+																destroy: { url:'${request.contextPath}/secure/remove-group-members.do?output=json', type:'post' },
+																parameterMap: function (options, operation){
+												                    if (operation !== "read" && options.models) {
+																 	    return { userId: selectedUser.userId, items: kendo.stringify(options.models)};
+										                            }
+												                    return { userId: selectedUser.userId };
+												                }
+										        	},
+										        	schema: {
+										                    	data: "userGroups",
+										                    	model: Group
+										        	},
+										            error:handleKendoAjaxError
+					                        	},
+												scrollable: true,
+												height:200,
+												editable: false,
+										        columns: [
+									                        { field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
+									                        { field: "displayName",    title: "이름",   filterable: true, sortable: true,  width: 100 },
+									                        { command:  { text: "삭제", click : function(e){									                       		
+									                       		if( confirm("정말로 삭제하시겠습니까?") ){
+																	var selectedGroup = this.dataItem($(e.currentTarget).closest("tr"));									                       		
+										                       		$.ajax({
+																		type : 'POST',
+																		url : "/secure/remove-group-members.do?output=json",
+																		data : { groupId:selectedGroup.groupId, items: '[' + kendo.stringify( selectedUser ) + ']'  },
+																		success : function( response ){									
+																	        $('#user-group-grid').data('kendoGrid').dataSource.read();
+																	        $('#group-role-selected').data("kendoMultiSelect").dataSource.read();
+																		},
+																		error:handleKendoAjaxError,
+																		dataType : "json"
+																	});								                       		
+									                       		}
+									                       }},  title: "&nbsp;", width: 100 }	
+										        ],
+										        dataBound:function(e){										                
+												}
+											});
+										}			
+										
+										// ADD USER TO SELECTED GROUP 
+										$("#add-to-member-btn").click( function ( e ) {
+											 $.ajax({
+									            dataType : "json",
+												type : 'POST',
+												url : "${request.contextPath}/secure/add-group-member.do?output=json",
+												data : { groupId:  $("#group-combo").data("kendoComboBox").value(), item: kendo.stringify( selectedUser ) },
+												success : function( response ){																		    
+													 $("#user-group-grid").data("kendoGrid").dataSource.read();
+													 $('#group-role-selected').data("kendoMultiSelect").dataSource.read();
+												},
+												error:handleKendoAjaxError
+											});	
+							} );
+																
 						}else if(show_bs_tab.attr('href') == '#roles' ) {
 							if( !$('#group-role-selected').data('kendoMultiSelect') ){
 												$('#group-role-selected').kendoMultiSelect({
