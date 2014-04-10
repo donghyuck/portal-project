@@ -143,7 +143,10 @@
 					$('#update-user-btn').removeAttr('disabled');
 				});			
 			}			
+			
 			kendo.bind($(".details"), selectedUser );
+			$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
+			
 		}
         </script>
 		<style>			
