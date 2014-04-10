@@ -580,7 +580,7 @@
 									},
 									error: common.api.handleKendoAjaxError
 								},
-								toolbar: [ { text: "웹 사이트 추가", css:"createSiteCustom" } ],   
+								toolbar: [ { name: "create", text: "회사 추가" } ],      
 								columns:[
 									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false, locked: true, lockable: false },
 									{ field: "name", title: "키", width: 150, locked: true },									
