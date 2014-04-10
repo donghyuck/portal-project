@@ -929,7 +929,7 @@
 						<div class="col-lg-6 col-xs-12">
 						<!-- start additional info -->
 							<div class="page-header">
-							  <h5><i class="fa fa-info"></i><small>탭을 선택하여 개인의 추가 옵션을 변경할 수 있습니다.</small></h5>
+							  <h5><small><i class="fa fa-info"></i> 탭을 선택하여 개인의 추가 옵션을 변경할 수 있습니다.</small></h5>
 							</div>						
 							<ul id="myTab" class="nav nav-tabs">
 								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
@@ -939,7 +939,7 @@
 							</ul>			
 							<div class="tab-content">
 								<div class="tab-pane active" id="props">
-									<span class="help-block"><i class="fa fa-info"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
+									<span class="help-block"><i class="fa fa-circle-o"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
 									<div id="user-props-grid" class="props"></div>
 								</div>
 								<div class="tab-pane" id="groups">
