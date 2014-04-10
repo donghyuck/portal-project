@@ -35,8 +35,7 @@
 			that._dataSource();
 		},
 		options : {
-			prefix: "ext",
-			name: "TopNavBar",	
+			name: "ExtTopNavBar",	
 			autoBind: true,
 			menu : null,
 			template : null
