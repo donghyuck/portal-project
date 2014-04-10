@@ -943,15 +943,19 @@
 									<div id="user-props-grid" class="props"></div>
 								</div>
 								<div class="tab-pane" id="groups">
-									<div class="blank-top-5"></div>
-									<div class="alert alert-info margin-buttom-5">
-				                    	멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.
-										<div class="form-inline">
-											<input id="company-combo" style="width: 180px" />
-											<input id="group-combo" style="width: 180px" />
-											<button id="add-to-member-btn" class="k-button">그룹 맴버로 추가</button>
-					                    </div>	
-									</div>								
+									<span class="help-block"><i class="fa fa-circle-o"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
+										<div class="form-horizontal">
+											<div class="form-group">
+												<label for="company-combo" class="col-sm-2 control-label">회사</label>
+												<input id="company-combo" style="width: 180px" />
+											</div>
+											<div class="form-group">
+												<input id="group-combo" style="width: 180px" />
+											</div>
+											<div class="form-group">
+												<button id="add-to-member-btn" class="k-button">그룹 맴버로 추가</button>
+											</div>
+										</div>							
 									<div id="user-group-grid" class="groups"></div>									
 								</div>							
 								<div class="tab-pane" id="roles">
