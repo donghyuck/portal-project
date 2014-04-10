@@ -349,7 +349,7 @@
 												editable: false,
 										        columns: [
 									                        { field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
-									                        { field: "displayName",    title: "이름",   filterable: true, sortable: true,  width: 100 },
+									                        { field: "displayName",    title: "그룹",   filterable: true, sortable: true,  width: 100 },
 									                        { command:  { text: "삭제", click : function(e){									                       		
 									                       		if( confirm("정말로 삭제하시겠습니까?") ){
 																	var selectedGroup = this.dataItem($(e.currentTarget).closest("tr"));									                       		
