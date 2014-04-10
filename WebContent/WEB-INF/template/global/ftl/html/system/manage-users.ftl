@@ -939,7 +939,7 @@
 							</ul>			
 							<div class="tab-content">
 								<div class="tab-pane active" id="props">
-									<div class="blank-top-5"></div>
+									<p class="text-muted">프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</p>
 									<div class="alert alert-danger margin-buttom-5">
 										<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 										프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.
