@@ -238,7 +238,51 @@
 						e.preventDefault();		
 						var show_bs_tab = $(e.target);
 						if(show_bs_tab.attr('href') == '#props' ) {
-						
+							if(!$("#user-props-grid").data("kendoGrid")){
+ 									$("#user-props-grid").kendoGrid({
+										dataSource: {
+											transport: { 
+												read: { url:'${request.contextPath}/secure/get-user-property.do?output=json', type:'post' },
+											    create: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post' },
+											    update: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post'  },
+											    destroy: { url:'${request.contextPath}/secure/delete-user-property.do?output=json', type:'post' },
+											 	parameterMap: function (options, operation){
+											 		if (operation !== "read" && options.models) {
+					                                	return { userId: selectedUser.userId, items: kendo.stringify(options.models)};
+					                                } 
+							                        return { userId: selectedUser.userId }
+							                    }
+											 },						
+											 batch: true, 
+											 schema: {
+						                            data: "targetUserProperty",
+						                            model: Property
+						                     },
+						                     error:handleKendoAjaxError
+									    },
+									    columns: [
+									         { title: "속성", field: "name" , width: 200,  locked:true},
+									         { title: "값",   field: "value", width: 200, },
+									         { command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+									    ],
+									    autoBind: true, 
+									    pageable: false,
+									    scrollable: true,
+									    height: 200,
+							            editable: {
+							                	update: true,
+							                	destroy: true,
+							                	confirmation: "선택하신 프로퍼티를 삭제하겠습니까?"	
+							            },
+									    toolbar: [
+									         { name: "create", text: "추가" },
+					                         { name: "save", text: "저장" },
+					                         { name: "cancel", text: "취소" }
+										],				     
+									    change: function(e) {  
+										}
+								    });								    
+ 							}						
 						}else if(show_bs_tab.attr('href') == '#groups' ) {
 						
 						}else if(show_bs_tab.attr('href') == '#roles' ) {
