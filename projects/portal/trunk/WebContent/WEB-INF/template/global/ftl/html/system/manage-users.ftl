@@ -147,7 +147,7 @@
 			
 			kendo.bind($(".details"), selectedUser );			
 			$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
-			$('#update-user-btn').attr('disabled');
+			$('#update-user-btn').attr('disabled', '');
 		}
         </script>
 		<style>			
