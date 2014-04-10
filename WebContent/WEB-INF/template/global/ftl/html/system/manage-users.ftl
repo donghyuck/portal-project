@@ -825,8 +825,9 @@
 			    </tr>
 			  </tbody>
 			</table>				
-		</script>	
+		</script>			
 		
+		<!--  User Detetails Template -->
 		<script type="text/x-kendo-template" id="user-details-template">			
 			<div class="panel panel-default marginless details" >
 			<!--
@@ -841,7 +842,7 @@
 						<!--  start basic info -->	
 						<div class="page-header">
 						  <h5><small><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하세요.</small>
-						  <button type="button" class="btn btn-link pull-rifht"><i class="fa fa-angle-double-up fa-lg"></i></button>
+							<button type="button" class="btn btn-link pull-rifht"><i class="fa fa-angle-double-up fa-lg"></i></button>
 						  </h5>
 						</div>						
 					<div class="media">
@@ -910,6 +911,9 @@
 						</div>	
 						<div class="col-lg-6 col-xs-12">
 						<!-- start additional info -->
+							<div class="page-header">
+							  <h5><small><i class="fa fa-info"></i> 탭을 선택하여 개인의 추가 옵션을 변경할 수 있습니다.</small></h5>
+							</div>						
 							<ul id="myTab" class="nav nav-tabs">
 								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
 								<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
