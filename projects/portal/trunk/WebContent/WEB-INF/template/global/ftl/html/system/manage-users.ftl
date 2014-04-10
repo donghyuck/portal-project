@@ -115,7 +115,7 @@
 							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy($("#user-grid").data("userPlaceHolder"));
 							if( selectedCell.userId	> 0 ){									
-								//showUserDetails();
+								showUserDetails();
 							}
  						}
 					},
@@ -145,7 +145,6 @@
 			}			
 			kendo.bind($(".details"), selectedUser );
 		}
-        
         </script>
 		<style>			
 		.k-grid-content{
