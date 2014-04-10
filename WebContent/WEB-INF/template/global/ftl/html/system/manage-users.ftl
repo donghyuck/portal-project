@@ -237,6 +237,7 @@
 					$('#myTab').on( 'show.bs.tab', function (e) {
 						e.preventDefault();		
 						var show_bs_tab = $(e.target);
+						alert(show_bs_tab.attr('href'));
 						if(show_bs_tab.attr('href') == '#props' ) {
 						
 						}else if(show_bs_tab.attr('href') == '#groups' ) {
