@@ -950,6 +950,7 @@
 												<input id="company-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
+												<label for="group-combo" class="col-sm-2 control-label">그룹</label>
 												<input id="group-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
