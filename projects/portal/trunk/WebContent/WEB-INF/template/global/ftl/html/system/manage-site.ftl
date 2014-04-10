@@ -654,7 +654,11 @@
 							<div class="row">
 								<div class="col-lg-5 col-xs-12" id="company-info">
 									<div class="page-header text-primary">
-										<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
+										<h5 >
+											<i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;
+											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
+											<span class="k-icon k-i-minimize"></span>
+										</h5>
 									</div>								
 									<table class="table table-hover">
 											<tbody>						
