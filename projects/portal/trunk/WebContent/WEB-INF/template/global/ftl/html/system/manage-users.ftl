@@ -560,7 +560,9 @@
 						<div class="panel-heading selected-company-info" style="padding:5px;">
 						
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>							
+							<#if request.isUserInRole('ROLE_SYSTEM' )>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>				
+							</#if>				
 								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="site"><i class="fa fa-sitemap"></i>  웹사이트 관리</button>
 								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i>  그룹관리</button>
 							</div>
