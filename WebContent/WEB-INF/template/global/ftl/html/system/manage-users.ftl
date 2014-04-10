@@ -401,6 +401,7 @@
 			$('#user-photo').attr( 'src', common.api.user.photoUrl( selectedUser, 150, 200 ) );
 			$('#update-user-btn').attr('disabled', '');
 			$('#myTab a:first').tab('show') ;
+			$('html,body').animate({scrollTop: $("#user-details").offset().top - 55 }, 300);
 		}
         </script>
 		<style>			
