@@ -294,7 +294,7 @@
 											    dataSource: $("#navbar").data('kendoExtTopNavBar').items()[0].dataSource // $("#company").data("kendoDropDownList").dataSource 
 											});
 											$("#company-combo").data("kendoComboBox").value( 
-												selectedCompany.companyId //$("#company").data("kendoDropDownList").value() 
+												$("#company").data("kendoDropDownList").value() 
 											);
 											$("#company-combo").data("kendoComboBox").readonly();
 										}										
