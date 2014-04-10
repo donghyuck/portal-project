@@ -213,7 +213,25 @@
 											});	
 										selectedUser.password = '' ;                   	    	
 				                   	}
-					} );						
+					} );	
+					// update user info
+					$('#update-user-btn').bind('click' , function(){
+									$.ajax({
+										type : 'POST',
+										url : "${request.contextPath}/secure/update-user.do?output=json",
+										data : { userId:selectedUser.userId, item: kendo.stringify( selectedUser ) },
+										success : function( response ){									
+										    $('#user-grid').data('kendoGrid').dataSource.read();	
+										},
+										error: common.api.handleKendoAjaxError,
+										dataType : "json"
+									});										
+									if(visible){
+										slide.reverse();						
+										visible = false;		
+										$("#detail-panel").hide();				
+									}
+					}); 					
 															
 			}
 			kendo.bind($(".details"), selectedUser );			
