@@ -654,32 +654,32 @@
 							<div class="row">
 								<div class="col-lg-6 col-xs-12" id="company-info">
 										<table class="table table-hover">
-										<tbody>						
-											<tr>
-												<th>사이트</th>								
-												<td><span data-bind="text: displayName"></span></td>
-											</tr>	
-											<tr>
-												<th>도메인</th>								
-												<td><span data-bind="text: domainName"></span></td>
-											</tr>										
-											<tr>
-												<th>등록 아이디</th>
-												<td><span class="label label-info"><span data-bind="text: name"></span></span><code><span data-bind="text: companyId"></span></code></td>
-											</tr>			
-											<tr>
-												<th>등록 이름</th>
-												<td><span data-bind="text: description"></span></td>
-											</tr>	
-											<tr>
-												<th>등록일</th>
-												<td><span data-bind="text: creationDate"></span></td>
-											</tr>				
-											<tr>
-												<th>마지막 정보 수정일</th>
-												<td><span data-bind="text: modifiedDate"></span></td>
-											</tr>												
-									 	</tbody>
+											<tbody>						
+												<tr>
+													<th>회사</th>								
+													<td><span data-bind="text: displayName"></span></td>
+												</tr>	
+												<tr>
+													<th>도메인</th>								
+													<td><span data-bind="text: domainName"></span></td>
+												</tr>										
+												<tr>
+													<th>키</th>
+													<td><span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
+												</tr>			
+												<tr>
+													<th>설명</th>
+													<td><span data-bind="text: description"></span></td>
+												</tr>	
+												<tr>
+													<th>등록일</th>
+													<td><span data-bind="text: creationDate"></span></td>
+												</tr>				
+												<tr>
+													<th>수정일</th>
+													<td><span data-bind="text: modifiedDate"></span></td>
+												</tr>												
+										 	</tbody>
 										</table>
 								</div>
 							</div>	
