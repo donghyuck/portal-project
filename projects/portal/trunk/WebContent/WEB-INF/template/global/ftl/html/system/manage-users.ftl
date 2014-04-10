@@ -780,21 +780,18 @@
 									<div id="user-group-grid" class="groups"></div>									
 								</div>							
 								<div class="tab-pane fade" id="roles">
+									<div class="row">
+										<div class="col-sm-offset-2 col-sm-10">
+											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 그룹에 부여된 롤입니다. <small>그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
+											<div id="group-role-selected"></div>
+										</div>
+									</div>
 									<span class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
 									<div class="alert alert-info margin-buttom-5">다음은 그룹에 부여된 롤입니다. 그룹에서 부여된 롤은 그룹 관리에서 변경할 수 있습니다.</div>
-									<div id="group-role-selected"></div>
+									
 									<div class="blank-top-5"></div>
 									<div class="alert alert-info margin-buttom-5">다음은 사용자에게 직접 부여된 롤입니다. 그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</div>									
 									<div id="user-role-select"></div>  
-								</div>
-								<div class="tab-pane fade" id="attachments">
-									<div class="blank-top-5"></div>
-									<div class="alert alert-info margin-buttom-5">
-										<input id="attach-upload" name="uploadFile" type="file" />
-										<p/>
-										업로드할 파일을 "선택" 버튼에  이곳에 끌어 놓거나,  "선택" 버튼을 클릭하여 업로드할 파일들을 선택한 다음 "업로드" 버튼을 클릭하세요.
-									</div>
-									<div id="attach-grid" class="files"></div>									
 								</div>			
 							</div>
 						<!-- end additional info -->
