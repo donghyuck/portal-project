@@ -64,6 +64,9 @@
 						group : function(e){
 							$("form[name='fm1'] input").val(selectedCompany.companyId);
 							$("form[name='fm1']").attr("action", "main-group.do" ).submit(); 						
+						} 	
+						add-user : function(e){
+							alert("add user");				
 						} 						 
 					}}
 				);
@@ -725,6 +728,7 @@
 								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i>  그룹관리</button>
 							<!--	<button type="button" class="btn btn-default btn-control-group btn-columns-expend" data-action="layout"><i class="fa fa-columns"></i></button> -->
 							</div>
+							<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="add-user"><i class="fa fa-plus"></i>  사용자 추가</button>
 						</div>
 						<div class="panel-body" style="padding:5px;">
 							<div id="user-grid"></div>
