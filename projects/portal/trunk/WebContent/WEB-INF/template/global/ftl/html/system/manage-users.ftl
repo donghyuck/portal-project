@@ -614,7 +614,7 @@
 								<!--<li><a href="\\#attachments" data-toggle="tab">첨부파일</a></li>-->
 							</ul>			
 							<div class="tab-content">
-								<div class="tab-pane active" id="props">
+								<div class="tab-pane" id="props">
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
 									<div id="user-props-grid" class="props"></div>
 								</div>
