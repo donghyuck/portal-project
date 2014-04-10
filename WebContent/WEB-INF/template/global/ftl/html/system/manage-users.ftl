@@ -564,7 +564,7 @@
 								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="site"><i class="fa fa-sitemap"></i>  웹사이트 관리</button>
 								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i>  그룹관리</button>
 							</div>
-						<#if request.hasRole('ROLE_ADMIN' ) || request.hasRole('ROLE_SYSTEM' )>
+						<#if request.isUserInRole('ROLE_ADMIN' ) || request.isUserInRole('ROLE_SYSTEM' )>
 							<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="addUser"><i class="fa fa-plus"></i>  사용자 추가</button>
 						</#if>
 						</div>
