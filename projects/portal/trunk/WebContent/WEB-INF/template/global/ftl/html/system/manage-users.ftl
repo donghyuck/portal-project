@@ -305,8 +305,7 @@
 						                        		} );			                        		
 						                        		multiSelect.value( selectedRoleIDs.split( "," ) );	 
 									                }	                               
-				                               	});	
-				                               												
+				                               	});
 												$('#user-role-select').kendoMultiSelect({
 				                                    placeholder: "롤 선택",
 									                dataTextField: "name",
