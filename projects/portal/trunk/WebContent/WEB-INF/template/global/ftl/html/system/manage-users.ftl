@@ -445,6 +445,7 @@
 				</div>
 			</div>			
 		</div>
+		
 		<!-- 공용 템플릿 -->
 		<div id="account-panel"></div>
 		<#include "/html/common/common-templates.ftl" >		
