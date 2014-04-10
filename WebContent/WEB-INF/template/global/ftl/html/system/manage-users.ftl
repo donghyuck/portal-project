@@ -786,7 +786,7 @@
 										</div>
 									</div>	
 									<div class="row">	
-										<div class="col-sm-offset-2 col-sm-10">
+										<div class="col-sm-offset-1 col-sm-11">
 											<div id="group-role-selected"></div>
 										</div>
 									</div>
@@ -796,7 +796,7 @@
 										</div>
 									</div>	
 									<div class="row">	
-										<div class="col-sm-offset-2 col-sm-10">
+										<div class="col-sm-offset-1 col-sm-11">
 											<div id="user-role-select"></div> 
 										</div>
 									</div>
