@@ -3,10 +3,6 @@
 			<img id="image-preview" src="${request.contextPath}/secure/view-image.do?imageId=#=imageId#" class="img-thumbnail">
 		</script>
 
-		<script id="attach-details-template" type="text/x-kendo-template">	
-			<a href="${request.contextPath}/secure/download-attachment.do?attachmentId=#= attachmentId #" class="btn btn-warning">다운로드</a>
-		</script>
-
 
 		<!-- SECURE TOOLBAR -->
 		<script id="topbar-template" type="text/x-kendo-template">
@@ -15,7 +11,6 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
