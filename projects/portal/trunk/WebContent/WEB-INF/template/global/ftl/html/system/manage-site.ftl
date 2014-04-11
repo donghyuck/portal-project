@@ -682,10 +682,10 @@
 			<div class="panel panel-default">
 				<div class="panel-body">	
 					<div class="row">
-						<div class="col-lg-5 col-xs-5>
+						<div class="col-lg-5 col-xs-5">
 							<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
 						</div>
-						<div class="col-lg-7 col-xs-7>
+						<div class="col-lg-7 col-xs-7">
 							<div class="page-header text-primary">
 								<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
 							</div>	
