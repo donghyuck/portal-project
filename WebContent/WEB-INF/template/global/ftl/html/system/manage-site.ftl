@@ -72,11 +72,7 @@
 						},
 						connect : function(e){
 							alert("social modal");	 					
-						},
-						top : function(e){
-							alert('s');
-							$('html,body').animate({scrollTop: $("#image-grid").offset().top - 55 }, 300);
-						}  						  						 
+						}					  						 
 					}}
 				);
 								 						
