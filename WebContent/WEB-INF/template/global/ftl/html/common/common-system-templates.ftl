@@ -2,7 +2,6 @@
 	<!-- SECURE TOOLBAR 										 -->
 	<!- ================================ ->
 	<script id="topnavbar-template" type="text/x-kendo-template">
-		${action.getClass().getName()}
 		<div class="navbar navbar-inverse navbar-fixed-top " role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
@@ -16,7 +15,7 @@
 				</div>
 				<form role="navigation" name="navbar-form" method="POST" accept-charset="utf-8">
 					<input type="hidden" id="output" name="output" value="html" />
-					<input type="hidden" id="companyId" name="targetCompanyId" value="0" />
+					<input type="hidden" id="companyId" name="targetCompanyId" value="${action.user.company.companyId}" />
 					<input type="hidden" id="targetSiteId" name="targetSiteId" value="0" />
 				</form>			
 				<div class="navbar-form navbar-left">
