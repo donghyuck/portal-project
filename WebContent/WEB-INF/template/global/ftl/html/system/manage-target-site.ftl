@@ -595,6 +595,10 @@
 									<table class="table table-hover">
 											<tbody>						
 												<tr>
+													<th><small>회사</small></th>								
+													<td>${action.targetWebSite.company.displayName} <span class="label label-warning">${action.targetWebSite.company.name}</span> <code>${action.targetWebSite.company.companyId}</code></td>
+												</tr>	
+												<tr>
 													<th><small>사이트</small></th>								
 													<td>${action.targetWebSite.displayName} <span class="label label-warning">${action.targetWebSite.name}</span> <code>${action.targetWebSite.webSiteId}</code></td>
 												</tr>	
