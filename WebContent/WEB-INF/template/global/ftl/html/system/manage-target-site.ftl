@@ -53,8 +53,7 @@
 				});
 								 
 				 // 4. PAGE MAIN		
-				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite({ webSiteId : ${action.targetWebSite.webSiteId}}) );
-
+				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite({ webSiteId : ${action.targetWebSite.webSiteId}}) );
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
