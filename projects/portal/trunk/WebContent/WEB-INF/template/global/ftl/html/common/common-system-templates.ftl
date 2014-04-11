@@ -65,6 +65,7 @@
 	<!-- SECURE ATTACH DETAIL								 -->
 	<!- ================================ ->	
 		<script id="attach-details-template" type="text/x-kendo-template">	
+			<p><span class="label label-info">#= contentType #</span></p>
 			<a href="${request.contextPath}/secure/download-attachment.do?attachmentId=#= attachmentId #" class="btn btn-sm btn-warning">다운로드</a>
 		</script>
 	
