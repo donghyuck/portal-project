@@ -42,7 +42,7 @@
 							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
 							change : function(data){
 								$("#navbar").data("companyPlaceHolder", data) ;
-								kendo.bind($("#company-info"), data );
+								//kendo.bind($("#company-info"), data );
 							}
 						},
 						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
