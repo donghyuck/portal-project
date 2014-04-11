@@ -596,27 +596,23 @@
 											<tbody>						
 												<tr>
 													<th><small>회사</small></th>								
-													<td>${action.targetWebSite.company.displayName} <span class="label label-warning">${action.targetWebSite.company.name}</span> <code>${action.targetWebSite.company.companyId}</code></td>
+													<td>${action.targetWebSite.company.displayName} <span class="label label-primary">${action.targetWebSite.company.name}</span> <code>${action.targetWebSite.company.companyId}</code></td>
 												</tr>	
 												<tr>
 													<th><small>사이트</small></th>								
 													<td>${action.targetWebSite.displayName} <span class="label label-warning">${action.targetWebSite.name}</span> <code>${action.targetWebSite.webSiteId}</code></td>
 												</tr>	
 												<tr>
-													<th><small>도메인</small></th>								
-													<td><span data-bind="text: domainName"></span></td>
+													<th><small>설명</small></th>								
+													<td>${action.targetWebSite.description}</td>
 												</tr>											
 												<tr>
-													<th><small>설명</small></th>
-													<td><span data-bind="text: description"></span></td>
-												</tr>	
-												<tr>
 													<th><small>등록일</small></th>
-													<td><span data-bind="text: creationDate"></span></td>
+													<td>${action.targetWebSite.creationDate}</td>
 												</tr>				
 												<tr>
 													<th><small>수정일</small></th>
-													<td><span data-bind="text: modifiedDate"></span></td>
+													<td>${action.targetWebSite.modifiedDate}</td>
 												</tr>												
 										 	</tbody>
 									</table>
