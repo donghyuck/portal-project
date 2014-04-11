@@ -543,9 +543,9 @@
 			}
 		}
 		
-		function goSite (){		
-			
-			alert( $("#website-grid").data("sitePlaceHolder").webSiteId );
+		function goSite (){					
+			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
+			$("#navbar").data("kendoExtTopNavBar").go("view-site.do");							
 		}
 		</script>
 		<style>					
