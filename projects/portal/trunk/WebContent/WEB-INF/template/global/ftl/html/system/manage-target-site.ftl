@@ -54,6 +54,7 @@
 								 
 				 // 4. PAGE MAIN		
 				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite({ webSiteId : ${action.targetWebSite.webSiteId}}) );
+				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
@@ -73,7 +74,20 @@
 							alert("social modal");	 					
 						},	
 						update : function(e){
-							alert("update");	 					
+						    $.ajax({
+								type : 'POST',
+								url : '/secure/get-site.do?output=json' ,
+								data: {targetSiteId : $("#site-info").data("sitePlaceHolder").webSiteId },
+								success : function(response){
+									if( response.error ){ 												
+										alert( kendo.stringify(response) );									
+									} else {				
+										alert( kendo.stringify(response) );											
+									}
+								},
+								error: common.api.handleKendoAjaxError,
+								dataType : "json"
+							});									
 						},
 						pages : function(e){
 							alert("pages");	 					
