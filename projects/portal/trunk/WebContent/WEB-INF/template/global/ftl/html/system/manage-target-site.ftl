@@ -30,7 +30,7 @@
 						currentUser = e.token;						
 					}
 				});				
-				$("#navbar").data("companyPlaceHolder", new Company({ companyId: ${action.user.companyId} }));
+				$("#navbar").data("companyPlaceHolder", new Company({ companyId: ${action.targetCompany.companyId} }));
 				var selectedSocial = {};																	
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
@@ -39,7 +39,7 @@
 					template : kendo.template($("#topnavbar-template").html() ),
 					items: [
 						{ 
-							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
+							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.targetCompany.companyId},
 							change : function(data){
 								$("#navbar").data("companyPlaceHolder", data) ;
 								//kendo.bind($("#company-info"), data );
