@@ -684,39 +684,37 @@
 										 	</tbody>
 									</table>
 								</div>
-								<div class="col-lg-7 col-xs-12">
-								
-							<ul class="nav nav-tabs" id="myTab">
-							  <li><a href="#image-mgmt" data-toggle="tab"><i class="fa fa-picture-o"></i> 이미지</a></li>
-							  <li><a href="#attachment-mgmt" data-toggle="tab"><i class="fa fa-paperclip"></i> 첨부파일</a></li>
-							  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
-							</ul>
-							<div class="tab-content">
-								<div class="tab-pane fade" id="site-info"></div>
-								<div class="tab-pane fade" id="system-info">
-								</div>
-								<div class="tab-pane fade " id="image-mgmt">
-									<div class="col-sm-12 body-group marginless paddingless">
-										<input name="image-upload" id="image-upload" type="file" />
-										<div class="blank-top-15"></div>	
-										<div id="image-grid"></div>	
-									</div>
-									<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">									
-									</div>
-								</div>								
-								<div class="tab-pane fade" id="attachment-mgmt">
-									<div class="col-sm-12 body-group marginless paddingless">
-										<input name="attach-upload" id="attach-upload" type="file" />
-										<div class="blank-top-15"></div>
-										<div id="attach-grid"></div>
-									</div>
-								</div>
-								<div class="tab-pane fade" id="social-mgmt">
-									<span class="help-block"><small>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small></span>
-									<div id="social-grid"></div>
-								</div>								
-							</div>								
-								
+								<div class="col-lg-7 col-xs-12" id="company-details">								
+									<ul class="nav nav-tabs" id="myTab">
+									  <li><a href="#image-mgmt" data-toggle="tab"><i class="fa fa-picture-o"></i> 이미지</a></li>
+									  <li><a href="#attachment-mgmt" data-toggle="tab"><i class="fa fa-paperclip"></i> 첨부파일</a></li>
+									  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
+									</ul>
+									<div class="tab-content">
+										<div class="tab-pane fade" id="site-info"></div>
+										<div class="tab-pane fade" id="system-info">
+										</div>
+										<div class="tab-pane fade " id="image-mgmt">
+											<div class="col-sm-12 body-group marginless paddingless">
+												<input name="image-upload" id="image-upload" type="file" />
+												<div class="blank-top-15"></div>	
+												<div id="image-grid"></div>	
+											</div>
+											<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">									
+											</div>
+										</div>								
+										<div class="tab-pane fade" id="attachment-mgmt">
+											<div class="col-sm-12 body-group marginless paddingless">
+												<input name="attach-upload" id="attach-upload" type="file" />
+												<div class="blank-top-15"></div>
+												<div id="attach-grid"></div>
+											</div>
+										</div>
+										<div class="tab-pane fade" id="social-mgmt">
+											<span class="help-block"><small>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small></span>
+											<div id="social-grid"></div>
+										</div>								
+									</div>								
 								</div>
 							</div>							
 						</div>					
