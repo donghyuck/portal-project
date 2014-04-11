@@ -594,7 +594,7 @@
 									</div>											
 									<table class="table table-hover">
 											<tbody>						
-												<tr>
+												<tr class="info">
 													<th><small>회사</small></th>								
 													<td>${action.targetWebSite.company.displayName} <span class="label label-primary">${action.targetWebSite.company.name}</span> <code>${action.targetWebSite.company.companyId}</code></td>
 												</tr>	
