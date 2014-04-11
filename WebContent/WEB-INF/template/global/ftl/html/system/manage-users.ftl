@@ -71,8 +71,7 @@
 						addUser : function(e){
 							alert("add user");				
 						},
-						top : function(e){
-							alert('fdsaf');							
+						top : function(e){					
 							$('html,body').animate({ scrollTop:  0 }, 300);
 						}  						 
 					}}
@@ -573,15 +572,6 @@
 						<div class="panel-body" style="padding:5px;">
 							<div id="user-grid"></div>
 							<div id="file-preview-panel" class="custom-panels-group"></div>
-							<!--
-							<div class="row marginless paddingless">
-								<div class="col-sm-12 body-group marginless paddingless">
-									<div id="user-grid"></div>
-									<div id="file-preview-panel" class="custom-panels-group"></div>	
-								</div>
-								<div id="user-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;"></div>
-							</div>
-							-->
 						</div>	
 						<div class="panel-body" style="padding:5px;">
 							<div id="user-details" style="display:none;"></div>
