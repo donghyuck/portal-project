@@ -55,31 +55,24 @@
 				 // 4. PAGE MAIN		
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );
 				 createSiteGrid();
-				 				 
-				 common.ui.handleActionEvents(
-				 	'.panel-heading', {
-				 		handlers :[ {
-				 			selector: 'button.btn-control-group',
-				 			event: 'click',
-				 			handler : function(e) {
-				 				switch($(this).attr("data-action") ){
-				 					case "menu" :			
-				 						alert("menu modal");	 					
-				 						break;
-				 					case "group" :
-				 						topBar.go('main-group.do');
-				 						break;
-				 					case "user" :
-				 						topBar.go('main-user.do');
-				 						break;			
-				 					case "details" :
-										$('#company-details').toggle('hide');
-				 						break;				 							 						
-				 				}
-				 			}
-				 }]});
-				
-				
+				 common.ui.handleButtonActionEvents(
+					$("button.btn-control-group"), 
+					{event: 'click', handlers: {
+						menu : function(e){
+							alert("menu modal");	 						
+						},
+						group : function(e){
+							topBar.go('main-group.do');				
+						}, 	
+						user : function(e){
+							topBar.go('main-user.do');			
+						}, 							
+						details : function(e){
+							$('#company-details').toggle('hide');
+						}  						 
+					}}
+				);
+								 						
 				
 				$('#myTab').on( 'show.bs.tab', function (e) {		
 					//e.preventDefault();			
