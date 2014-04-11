@@ -15,7 +15,7 @@
 				</div>
 				<form role="navigation" name="navbar-form" method="POST" accept-charset="utf-8">
 					<input type="hidden" id="output" name="output" value="html" />
-					<input type="hidden" id="companyId" name="targetCompanyId" value="${action.targetCompany.companyId}" />
+					<input type="hidden" id="companyId" name="targetCompanyId" value="0" />
 					<input type="hidden" id="targetSiteId" name="targetSiteId" value="0" />
 				</form>			
 				<div class="navbar-form navbar-left">
