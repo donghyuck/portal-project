@@ -220,7 +220,7 @@
 						autoUpload: true
 					},
 					upload:  function (e) {		
-						e.data = { objectType: 1, objectId : selectedCompany.companyId, attachmentId:'-1' };		
+						e.data = { objectType: 30, objectId : $("#site-info").data("sitePlaceHolder").webSiteId, attachmentId:'-1' };		
 					},
 					success : function(e) {	
 						$('#attach-grid').data('kendoGrid').dataSource.read(); 
@@ -236,9 +236,9 @@
 										read: { url:'${request.contextPath}/secure/get-attachements.do?output=json', type: 'POST' },
 										parameterMap: function (options, operation){
 											if (operation != "read" && options) {										                        								                       	 	
-												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
+												return { objectType: 30, objectId : $("#site-info").data("sitePlaceHolder").webSiteId , item: kendo.stringify(options)};									                            	
 											}else{
-												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
+												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 30, objectId: $("#site-info").data("sitePlaceHolder").webSiteId }
 											}
 										} 
 									},
