@@ -434,7 +434,6 @@
 		<footer>  		
 		</footer>
 		<!-- END FOOTER -->
-		<#include "/html/common/common-secure-templates.ftl" >	
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>
 </html>
