@@ -683,15 +683,8 @@
 										 	</tbody>
 									</table>
 								</div>
-							</div>	
-							<div class="row">
-								<div class="col-lg-6 col-xs-12"></div>
-							</div>								
-						</div>					
-						<div class="panel-body" style="padding:5px;">		
-							<div id="website-grid"></div>						
-						</div>
-						<div class="panel-body" style="padding:5px;">					
+								<div class="col-lg-7 col-xs-12">
+								
 							<ul class="nav nav-tabs" id="myTab">
 							  <li><a href="#template-mgmt" data-toggle="tab"><i class="fa fa-file-o"></i> 템플릿</a></li>
 							  <li><a href="#image-mgmt" data-toggle="tab"><i class="fa fa-picture-o"></i> 이미지</a></li>
@@ -701,9 +694,7 @@
 							</ul>
 							<div class="tab-content">
 								<div class="blank-top-5" ></div>	
-								<div class="tab-pane fade" id="site-info">
-
-								</div>
+								<div class="tab-pane fade" id="site-info"></div>
 								<div class="tab-pane fade" id="template-mgmt">
 									<div class="col-sm-12 body-group marginless paddingless">
 										<div id="template-grid" ></div>
@@ -730,7 +721,16 @@
 								<div class="tab-pane fade" id="social-mgmt">
 									<div id="social-grid"></div>
 								</div>								
-							</div>
+							</div>								
+								
+								</div>
+							</div>							
+						</div>					
+						<div class="panel-body" style="padding:5px;">		
+							<div id="website-grid"></div>						
+						</div>
+						<div class="panel-body" style="padding:5px;">					
+
 						</div>
 					</div>	
 				</div>
