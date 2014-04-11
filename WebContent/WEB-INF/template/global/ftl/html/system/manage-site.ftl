@@ -68,7 +68,7 @@
 							topBar.go('main-user.do');			
 						}, 							
 						details : function(e){
-							$('#company-details').toggle('hide');
+							$('#company-details').toggleClass('hide');
 						}  						 
 					}}
 				);
