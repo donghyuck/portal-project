@@ -114,8 +114,8 @@
                     pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
                     selectable: 'row',
                     height: '100%',
-                    toolbar: [
-					 	{ name: "create-user", text: "새로운 사용자 생성하기", className: "createUserCustomClass" } ],
+                    /*toolbar: [
+					 	{ name: "create-user", text: "새로운 사용자 생성하기", className: "createUserCustomClass" } ],*/
                     change: function(e) {                    
                         var selectedCells = this.select();                 
   						if( selectedCells.length > 0){ 
