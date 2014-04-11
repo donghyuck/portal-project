@@ -547,7 +547,7 @@
 			}
 		}
 		
-		goSite functions (){		
+		function goSite (){		
 			alert( $(this).html() );
 		}
 		</script>
