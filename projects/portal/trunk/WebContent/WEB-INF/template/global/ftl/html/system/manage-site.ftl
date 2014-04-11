@@ -672,16 +672,12 @@
 											<tbody>						
 												<tr>
 													<th><small>회사</small></th>								
-													<td><span data-bind="text: displayName"></span></td>
+													<td><span data-bind="text: displayName"></span><span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
 												</tr>	
 												<tr>
 													<th><small>도메인</small></th>								
 													<td><span data-bind="text: domainName"></span></td>
-												</tr>										
-												<tr>
-													<th><small>키</small></th>
-													<td><span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
-												</tr>			
+												</tr>											
 												<tr>
 													<th><small>설명</small></th>
 													<td><span data-bind="text: description"></span></td>
