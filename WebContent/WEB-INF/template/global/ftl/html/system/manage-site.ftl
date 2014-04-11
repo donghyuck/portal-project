@@ -621,7 +621,7 @@
 						<div class="panel-body" style="padding:5px;">						
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
-											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
+											<small><i class="fa fa-info"></i> 상세보기 버튼을 클릭하면 회사가 보유한 자원을 관리할 수 있습니다.</small>
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 상세보기</button>
 										</h5>
 									</div>															
