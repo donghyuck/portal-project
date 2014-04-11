@@ -577,7 +577,7 @@
 								<div class="col-lg-5 col-xs-12" id="company-info">					
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
-											<small><i class="fa fa-info"></i> 상세보기 버튼을 클릭하면 회사가 보유한 자원을 관리할 수 있습니다.</small>
+											<small><i class="fa fa-info"></i> 상세보기 버튼을 클릭하면 회사가 보유한 자원(이미지, 파일 등)을 관리할 수 있습니다.</small>
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 상세보기</button>
 										</h5>
 									</div>											
