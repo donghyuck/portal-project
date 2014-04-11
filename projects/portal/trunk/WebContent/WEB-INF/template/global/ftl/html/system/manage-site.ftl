@@ -69,7 +69,10 @@
 						}, 							
 						details : function(e){
 							$('#company-details').toggleClass('hide');
-						}  						 
+						},
+						connect : function(e){
+							alert("social modal");	 					
+						}  						  						 
 					}}
 				);
 								 						
@@ -124,7 +127,6 @@
 									serverSorting: false,                        
 									error: common.api.handleKendoAjaxError
 								},
-								toolbar: [ { text: "쇼셜 연결 추가", css:"createSocialCustom" } ],   
 								columns:[
 									{ field: "socialAccountId", title: "ID",  width: 50, filterable: false, sortable: false },
 									{ field: "serviceProviderName", title: "쇼셜", width: 100 },
