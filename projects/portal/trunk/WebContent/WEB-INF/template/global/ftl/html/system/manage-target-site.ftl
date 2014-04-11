@@ -701,7 +701,7 @@
 				<div class="panel-body">											
 					<div class="row">
 						<div class="col-lg-6 col-xs-6">
-							<span class="label label-info"><span data-bind="text: contentType"></span></span> 
+							<p><span class="label label-info" data-bind="text: contentType"></span></p>
 							<img data-bind="attr:{src: imgUrl}" class="img-rounded" />							
 						</div>
 						<div class="col-lg-6 col-xs-6">
