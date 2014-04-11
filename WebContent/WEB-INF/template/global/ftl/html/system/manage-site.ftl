@@ -652,6 +652,12 @@
 							</div>							
 						</div>					
 						<div class="panel-body" style="padding:5px;">		
+							<div class="page-header page-nounderline-header text-primary">
+								<h5 >
+										<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
+										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details">미디어 관리</button>
+								</h5>
+							</div>								
 							<div id="website-grid"></div>						
 						</div>
 						<div class="panel-body" style="padding:5px;"></div>
