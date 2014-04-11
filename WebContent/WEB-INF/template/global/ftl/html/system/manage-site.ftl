@@ -55,8 +55,7 @@
 				 // 4. PAGE MAIN		
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );
 				 createSiteGrid();
-				 
-				 
+				 				 
 				 common.ui.handleActionEvents(
 				 	'.panel-heading', {
 				 		handlers :[ {
@@ -105,6 +104,8 @@
 				 			}
 				 }]});
 				
+				
+				
 				$('#myTab').on( 'show.bs.tab', function (e) {		
 					//e.preventDefault();			
 					var show_bs_tab = $(e.target);
@@ -122,8 +123,7 @@
 							createSocialPane();
 							break;								
 					}	
-				});	
-				
+				});				
 				$('#myTab a:first').tab('show') ;
 			}	
 		}]);
