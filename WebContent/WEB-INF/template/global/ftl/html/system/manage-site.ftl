@@ -72,6 +72,9 @@
 						},
 						connect : function(e){
 							alert("social modal");	 					
+						},
+						top:function(e){
+							alert("fdsa");
 						}					  						 
 					}}
 				);
