@@ -648,7 +648,10 @@
 							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
-							</div>			
+							</div>	
+												<button type="button" class="btn btn-default btn-sm">
+													<span class="k-icon k-i-minimize"></span>
+												</button>									
 						</div>
 						<div class="panel-body" style="padding:5px;">		
 									<div class="page-header text-primary">
