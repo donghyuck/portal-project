@@ -608,7 +608,7 @@
 								</div>
 								<div class="col-lg-7 col-xs-12 hide" id="company-details">		
 									<span class="help-block">
-										<small><i class="fa fa-info"></i>회사에 속하는 모든 사이트에서 회사의 자원은 공유됩니다.</small>							
+										<small><i class="fa fa-info"></i> 회사에 속하는 모든 사이트에서 회사의 자원은 공유됩니다.</small>							
 									</span>														
 									<ul class="nav nav-tabs" id="myTab">
 									  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
@@ -681,19 +681,24 @@
 		<script id="image-details-template" type="text/x-kendo-template">				
 			<div class="panel panel-default">
 				<div class="panel-body">	
-					<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
-					<div class="page-header text-primary">
-						<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
-					</div>	
-					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-primary">
-						<input type="radio" name="image-public-shared" value="1">모두에게 공개
-						</label>
-						<label class="btn btn-primary active">
-						<input type="radio" name="image-public-shared" value="0"> 비공개
-						</label>
-					</div>
-					
+					<div class="row">
+						<div class="col-lg-5 col-xs-5>
+							<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
+						</div>
+						<div class="col-lg-7 col-xs-7>
+							<div class="page-header text-primary">
+								<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
+							</div>	
+							<div class="btn-group" data-toggle="buttons">
+								<label class="btn btn-primary">
+								<input type="radio" name="image-public-shared" value="1">모두에게 공개
+								</label>
+								<label class="btn btn-primary active">
+								<input type="radio" name="image-public-shared" value="0"> 비공개
+								</label>
+							</div>						
+						</div>						
+					</div>					
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
 					</div>		
