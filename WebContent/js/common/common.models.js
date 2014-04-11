@@ -36,8 +36,11 @@
 	    	target.set("url",this.get("url") );
 	    	target.set("enabled", this.get("enabled"));
 	    	target.set("allowAnonymousAccess", this.get("allowAnonymousAccess"));
-	    	target.set("modifiedDate",this.get("modifiedDate") );
-	    	target.set("creationDate", this.get("creationDate") );
+	    	//targettarget.set("modifiedDate",this.get("modifiedDate") );
+	    	//target.set("creationDate", this.get("creationDate") );
+	    	target.modifiedDate = this.get("modifiedDate");
+	    	target.creationDate = this.get("creationDate") ;
+	    	
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set("user", this.get("user") );    	
 	    	if( typeof this.get("company") === 'object' )
