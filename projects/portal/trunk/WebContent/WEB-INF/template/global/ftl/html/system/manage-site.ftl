@@ -654,7 +654,7 @@
 												</button>									
 						</div>
 						<div class="panel-body" style="padding:5px;">		
-									<div class="page-header text-primary">
+									<div class="panel-header text-primary">
 										<h5 >
 											<strong>회사</strong>
 											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
