@@ -620,9 +620,12 @@
 		
 		</script>
 		<style>					
+		
 		.k-grid-content{
-			height:400px;
+			height:200px;
 		}			
+		
+		
 		</style>
 </#compress>		
 	</head>
