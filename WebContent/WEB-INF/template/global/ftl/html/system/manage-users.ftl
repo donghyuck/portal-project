@@ -535,7 +535,7 @@
 		}
 		
 		.k-grid .btn-link {
-			color: none;
+			color: "#000000";
 		}
 		
 		</style>
