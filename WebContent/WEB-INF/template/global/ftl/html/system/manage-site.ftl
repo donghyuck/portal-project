@@ -388,7 +388,7 @@
 									}
 								}
 							});
-						}										
+						}
 		}	
 		
 		function displayImageDetails(){
