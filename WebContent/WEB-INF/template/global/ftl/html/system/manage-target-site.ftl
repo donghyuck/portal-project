@@ -595,8 +595,8 @@
 									<table class="table table-hover">
 											<tbody>						
 												<tr>
-													<th><small>회사</small></th>								
-													<td><span data-bind="text: displayName"></span> <span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
+													<th><small>사이트</small></th>								
+													<td>${action.targetWebSite.displayName}<span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
 												</tr>	
 												<tr>
 													<th><small>도메인</small></th>								
