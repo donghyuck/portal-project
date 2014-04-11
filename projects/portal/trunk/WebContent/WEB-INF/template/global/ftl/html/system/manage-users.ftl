@@ -694,7 +694,7 @@
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
-						<div class="panel-header">
+						<div class="page-header page-nounderline-header">
 						  <h5><small><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하세요.</small>
 							<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
 						  </h5>
@@ -767,7 +767,7 @@
 						</div>	
 						<div class="col-lg-6 col-xs-12">
 						<!-- start additional info -->
-							<div class="panel-header">
+							<div class="page-header page-nounderline-header">
 							  <h5><small><i class="fa fa-info"></i> 탭을 선택하여 개인의 추가 옵션(프로퍼티, 그룹, 롤)을 변경할 수 있습니다.</small></h5>
 							</div>						
 							<ul id="myTab" class="nav nav-tabs">
