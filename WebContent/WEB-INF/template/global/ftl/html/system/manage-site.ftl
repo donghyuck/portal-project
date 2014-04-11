@@ -29,13 +29,9 @@
 					authenticate : function( e ){
 						currentUser = e.token;						
 					}
-				});
-				
+				});				
 				$("#navbar").data("companyPlaceHolder", new Company() );
-				
-				
-				var selectedSocial = {};			
-														
+				var selectedSocial = {};																	
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
 				var topBar = $("#navbar").extTopNavBar({ 
