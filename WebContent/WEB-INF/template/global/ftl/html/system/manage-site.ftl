@@ -513,7 +513,7 @@
 								/* toolbar: [ { name: "create", text: "웹 사이트 추가" } ],      */
 								columns:[
 									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false, locked: true, lockable: false },
-									{ field: "name", title: "키", width: 150, locked: true, template: '<a class="btn btn-link" href="#" data-action="site" >#: name #</a>'},									
+									{ field: "name", title: "키", width: 150, locked: true, template: '<a class="btn btn-link" href="\\#" data-action="site" >#: name #</a>'},									
 									{ field: "displayName", title: "이름",  width: 100 },
 									{ field: "description", title: "설명",  width: 200 },
 									{ field: "url", title: "URL",  width: 150, locked: true },
