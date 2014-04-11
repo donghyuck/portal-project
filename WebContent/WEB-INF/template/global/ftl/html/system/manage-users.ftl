@@ -534,7 +534,7 @@
 			width:500px;
 		}
 		
-		td[role="gridcell"] button.btn-link {
+		k-grid button.btn-link {
 			color: none;
 		}
 		
