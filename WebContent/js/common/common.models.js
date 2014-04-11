@@ -28,7 +28,8 @@
 	        creationDate: { type: "date", editable: false } 			
 		},
 	    copy: function ( target ){
-	    	target.set("webSiteId", this.get("webSiteId"));
+	    	target.webSiteId = this.get("webSiteId")
+	    //	target.set("webSiteId", this.get("webSiteId"));
 	    	target.set("name",this.get("name") );
 	    	target.set("description",this.get("description") );
 	    	target.set("displayName", this.get("displayName"));
