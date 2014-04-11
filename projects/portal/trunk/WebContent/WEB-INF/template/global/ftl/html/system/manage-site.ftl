@@ -264,7 +264,7 @@
 								filterable: true,
 								sortable: true,
 								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-								selectable: 'row',
+								//selectable: 'row',
 								//height: 500,
 								detailTemplate: kendo.template( $("#attach-details-template").html() ),
 								detailInit : function(e){
