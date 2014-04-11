@@ -714,7 +714,7 @@
 									</div>
 								</div>
 								<div class="tab-pane fade" id="social-mgmt">
-									<p class="text-muted"><small>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small></p>
+									<span class="help-block"><small>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small></span>
 									<div id="social-grid"></div>
 								</div>								
 							</div>								
