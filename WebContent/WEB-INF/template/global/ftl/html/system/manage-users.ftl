@@ -23,7 +23,7 @@
 				kendo.culture("ko-KR");
 										
 				// 2. ACCOUNTS LOAD						
-				var selectedCompany = new Company({companyId:${action.user.companyId}});	
+				var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});	
 				var currentUser = new User({});				
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
@@ -579,7 +579,7 @@
 				</div>			
 			</div>							
 			<form name="fm1" method="POST" accept-charset="utf-8">
-				<input type="hidden" name="companyId"  value="${action.companyId}" />
+				<input type="hidden" name="companyId"  value="${action.targetCompany.companyId}" />
 			</form>	
 		</div>		
 		<div id="change-password-window" style="display:none;">
