@@ -629,7 +629,10 @@
 											</div>
 										</div>
 										<div class="tab-pane fade" id="social-mgmt">
-											<span class="help-block"><small>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small></span>
+											<span class="help-block">
+												<small>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small>
+												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="connect"> 쇼셜연결</button>
+											</span>
 											<div id="social-grid"></div>
 										</div>								
 									</div>								
