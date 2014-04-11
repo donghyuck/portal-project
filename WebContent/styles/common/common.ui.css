@@ -129,7 +129,10 @@ img.img-full-height {
 }
 
 .panel-body .page-header { 
-	padding-left: 5px;	
+	padding-left: 15px;	
+}
+.page-nounderline-header { 
+	border-bottom : 0px;
 }
 
 .bg-flat {
