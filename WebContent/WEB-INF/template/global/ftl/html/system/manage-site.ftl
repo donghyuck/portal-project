@@ -725,9 +725,7 @@
 						<div class="panel-body" style="padding:5px;">		
 							<div id="website-grid"></div>						
 						</div>
-						<div class="panel-body" style="padding:5px;">					
-
-						</div>
+						<div class="panel-body" style="padding:5px;"></div>
 					</div>	
 				</div>
 			</div>
@@ -777,10 +775,8 @@
 					
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
-					</div>
-		
+					</div>		
 					<div id="image-prop-grid"></div>			
-		
 					<div class="page-header text-primary">
 						<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
 					</div>
