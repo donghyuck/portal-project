@@ -686,7 +686,7 @@
 							<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
 						</div>
 						<div class="col-lg-7 col-xs-7">
-							<div class="page-header text-primary">
+							<div class="panel-header text-primary">
 								<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
 							</div>	
 							<div class="btn-group" data-toggle="buttons">
@@ -698,15 +698,21 @@
 								</label>
 							</div>						
 						</div>						
-					</div>					
-					<div class="page-header text-primary">
-						<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
-					</div>		
-					<div id="image-prop-grid"></div>			
-					<div class="page-header text-primary">
-						<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
-					</div>
-					<input name="update-image-file" type="file" id="update-image-file" class="pull-right" />				
+					</div>	
+					<div class="row">
+						<div class="col-lg-6 col-xs-12">
+							<div class="panel-header text-primary">
+								<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong> <small>수정한 다음에는 저장 버튼을 클릭하여야 반영됩니다.</small></h5>
+							</div>		
+							<div id="image-prop-grid"></div>									
+						</div>
+						<div class="col-lg-6 col-xs-12">
+							<div class="panel-header text-primary">
+								<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
+							</div>
+							<input name="update-image-file" type="file" id="update-image-file" class="pull-right" />								
+						</div>						
+					</div>							
 				</div>
 			</div>					
 		</script>
