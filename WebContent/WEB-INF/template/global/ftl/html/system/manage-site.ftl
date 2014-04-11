@@ -651,8 +651,6 @@
 							</div>			
 						</div>
 						<div class="panel-body" style="padding:5px;">		
-							<div class="row">
-								<div class="col-lg-5 col-xs-12" id="company-info">
 									<div class="page-header text-primary">
 										<h5 >
 											<strong>회사</strong>
@@ -663,7 +661,10 @@
 												</button>
 											</div>
 										</h5>
-									</div>								
+									</div>
+															
+							<div class="row">
+								<div class="col-lg-5 col-xs-12" id="company-info">							
 									<table class="table table-hover">
 											<tbody>						
 												<tr>
