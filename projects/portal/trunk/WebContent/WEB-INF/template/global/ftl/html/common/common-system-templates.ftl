@@ -2,6 +2,7 @@
 	<!-- SECURE TOOLBAR 										 -->
 	<!- ================================ ->
 	<script id="topnavbar-template" type="text/x-kendo-template">
+		${action.getClass().getName()}
 		<div class="navbar navbar-inverse navbar-fixed-top " role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
