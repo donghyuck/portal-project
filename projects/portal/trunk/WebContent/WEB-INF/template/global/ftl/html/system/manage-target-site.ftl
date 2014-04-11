@@ -591,6 +591,7 @@
 											<div class="btn-group">
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="update"><i class="fa fa-cog"></i> 설정</button>
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cloud"></i> 미디어 관리</button>
+											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages"><i class="fa fa-cloud"></i> 웹 페이지 관리</button>
 											</div>
 										</h5>
 									</div>										
