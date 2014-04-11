@@ -110,9 +110,9 @@
 										update: { url:'${request.contextPath}/secure/update-social-account.do?output=json', type:'POST' },
 										parameterMap: function (options, operation){
 											if (operation != "read" && options) {										                        								                       	 	
-												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
+												return { objectType: 30, objectId : $("#site-info").data("sitePlaceHolder").webSiteId , item: kendo.stringify(options)};									                            	
 											}else{
-												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
+												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 30, objectId: $("#site-info").data("sitePlaceHolder").webSiteId }
 											}
 										} 
 									},
