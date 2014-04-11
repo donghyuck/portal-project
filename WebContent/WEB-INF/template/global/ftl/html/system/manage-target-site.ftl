@@ -572,6 +572,10 @@
 													</td>
 												</tr>	
 												<tr>
+													<th><small>담당자</small></th>								
+													<td><span data-bind="text: user.username"></span></td>
+												</tr>		
+												<tr>
 													<th><small>설명</small></th>								
 													<td><span data-bind="text: description">${action.targetWebSite.description}</span></td>
 												</tr>				
