@@ -657,7 +657,7 @@
 										<h5 >
 											<strong>회사</strong>
 											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
-											<div class="btn-group">
+											<div class="btn-group pull-right">
 												<button type="button" class="btn btn-default btn-sm">
 													<span class="k-icon k-i-minimize"></span>
 												</button>
