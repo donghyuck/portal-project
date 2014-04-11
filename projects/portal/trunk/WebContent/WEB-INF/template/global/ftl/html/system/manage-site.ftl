@@ -655,12 +655,12 @@
 								<div class="col-lg-5 col-xs-12" id="company-info">
 									<div class="page-header text-primary">
 										<h5 >
-											<i class="fa fa-share"></i>&nbsp;<strong>회사</strong>&nbsp;
+											<strong>회사</strong>
 											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
 											<div class="btn-group">
 												<button type="button" class="btn btn-default btn-sm">
 													<span class="k-icon k-i-minimize"></span>
-												</div>
+												</button>
 											</div>
 										</h5>
 									</div>								
