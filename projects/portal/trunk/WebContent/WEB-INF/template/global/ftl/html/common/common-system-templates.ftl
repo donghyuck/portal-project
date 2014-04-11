@@ -60,3 +60,10 @@
 			</div>
 		</div>	
 	</script>	
+	<!- ================================ ->
+	<!-- SECURE ATTACH DETAIL								 -->
+	<!- ================================ ->	
+		<script id="attach-details-template" type="text/x-kendo-template">	
+			<a href="${request.contextPath}/secure/download-attachment.do?attachmentId=#= attachmentId #" class="btn btn-sm btn-warning">다운로드</a>
+		</script>
+	
