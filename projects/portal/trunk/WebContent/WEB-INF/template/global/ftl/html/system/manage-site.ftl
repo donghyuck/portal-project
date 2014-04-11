@@ -72,33 +72,8 @@
 				 					case "user" :
 				 						topBar.go('main-user.do');
 				 						break;			
-				 					case "layout" :
-					 					$(".body-group").each(function( index ) {
-											var pane_body = $(this);
-											var pane_id = pane_body.attr("id");
-											var is_details_pane = false;
-													
-											if( typeof pane_id === 'undefined' ){
-												pane_id = "";
-											}						
-											
-											if ( pane_id.indexOf( 'details' ) != -1 ){
-												is_details_pane = true;
-											}											
-											if( pane_body.hasClass("col-sm-6" )){
-												pane_body.removeClass("col-sm-6");
-												pane_body.addClass("col-sm-12");	
-												if( is_details_pane ){
-													pane_body.css('padding', '5px 0 0 0');
-												}													
-											}else{
-												pane_body.removeClass("col-sm-12");
-												pane_body.addClass("col-sm-6");		
-												if( is_details_pane ){
-													pane_body.css('padding', '0 0 0 5px');
-												}				
-											}
-										});
+				 					case "details" :
+										$('#company-details').toggle('hide');
 				 						break;				 							 						
 				 				}
 				 			}
@@ -684,7 +659,7 @@
 										 	</tbody>
 									</table>
 								</div>
-								<div class="col-lg-7 col-xs-12" id="company-details">								
+								<div class="col-lg-7 col-xs-12 hide" id="company-details">								
 									<ul class="nav nav-tabs" id="myTab">
 									  <li><a href="#image-mgmt" data-toggle="tab"><i class="fa fa-picture-o"></i> 이미지</a></li>
 									  <li><a href="#attachment-mgmt" data-toggle="tab"><i class="fa fa-paperclip"></i> 첨부파일</a></li>
