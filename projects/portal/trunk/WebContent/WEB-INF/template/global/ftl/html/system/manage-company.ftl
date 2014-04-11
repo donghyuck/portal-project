@@ -642,7 +642,6 @@
 			</div>
 		</script>			
 		<!-- 공용 템플릿 -->
-		<#include "/html/common/common-secure-templates.ftl" >		        	
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
