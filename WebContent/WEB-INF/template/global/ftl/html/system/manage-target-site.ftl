@@ -592,28 +592,58 @@
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 상세보기</button>
 										</h5>
 									</div>											
+									
+											<tbody>						
+												<tr>
+													<th><small>회사</small></th>								
+													<td><span data-bind="text: displayName"></span> <span class="label label-primary"></span> <code><span data-bind="text: companyId"></span></code></td>
+												</tr>	
+												<tr>
+													<th><small>도메인</small></th>								
+													<td><span data-bind="text: domainName"></span></td>
+												</tr>											
+												<tr>
+													<th><small>설명</small></th>
+													<td><span data-bind="text: description"></span></td>
+												</tr>	
+												<tr>
+													<th><small>등록일</small></th>
+													<td><span data-bind="text: creationDate"></span></td>
+												</tr>				
+												<tr>
+													<th><small>수정일</small></th>
+													<td><span data-bind="text: modifiedDate"></span></td>
+												</tr>												
+										 	</tbody>
+										 										
 									<table class="table">
 											<tbody>						
 												<tr class="info">
 													<th><small>회사</small></th>								
-													<td>${action.targetWebSite.company.displayName} <span class="label label-primary">${action.targetWebSite.company.name}</span> <code>${action.targetWebSite.company.companyId}</code></td>
+													<td><span data-bind="text: company.displayName">${action.targetWebSite.company.displayName}</span> 
+														<span class="label label-primary"><span data-bind="text: company.name">${action.targetWebSite.company.name}</span></span> 
+														<code><span data-bind="text: company.companyId">${action.targetWebSite.company.companyId}</span></code>
+													</td>
 												</tr>	
 												<tr>
-													<th><small>사이트</small></th>								
-													<td>${action.targetWebSite.displayName} <span class="label label-warning">${action.targetWebSite.name}</span> <code>${action.targetWebSite.webSiteId}</code></td>
+													<th><small>사이트</small></th>	
+													<td><span data-bind="text: displayName">${action.targetWebSite.displayName} </span> 
+														<span class="label label-primary"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
+														<code><span data-bind="text: webSiteId">${action.targetWebSite.webSiteId}</span></code>
+													</td>
 												</tr>	
 												<tr>
 													<th><small>설명</small></th>								
-													<td>${action.targetWebSite.description}</td>
-												</tr>											
+													<td><span data-bind="text: description">${action.targetWebSite.description}</span></td>
+												</tr>				
 												<tr>
 													<th><small>등록일</small></th>
-													<td><small>${action.targetWebSite.creationDate}</small></td>
+													<td><span data-bind="text: creationDate">${action.targetWebSite.creationDate}</span></td>
 												</tr>				
 												<tr>
 													<th><small>수정일</small></th>
-													<td><small>${action.targetWebSite.modifiedDate}</small></td>
-												</tr>												
+													<td><span data-bind="text: modifiedDate">${action.targetWebSite.modifiedDate}</span></td>
+												</tr>							
 										 	</tbody>
 									</table>
 								</div>
