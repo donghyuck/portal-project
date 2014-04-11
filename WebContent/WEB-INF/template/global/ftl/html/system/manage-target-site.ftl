@@ -608,11 +608,11 @@
 												</tr>											
 												<tr>
 													<th><small>등록일</small></th>
-													<td>${action.targetWebSite.creationDate}</td>
+													<td><small>${action.targetWebSite.creationDate}</small></td>
 												</tr>				
 												<tr>
 													<th><small>수정일</small></th>
-													<td>${action.targetWebSite.modifiedDate}</td>
+													<td><small>${action.targetWebSite.modifiedDate}</small></td>
 												</tr>												
 										 	</tbody>
 									</table>
