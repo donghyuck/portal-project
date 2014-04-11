@@ -71,7 +71,13 @@
 						},
 						connect : function(e){
 							alert("social modal");	 					
-						}			  						 
+						},	
+						update : function(e){
+							alert("update");	 					
+						},
+						pages : function(e){
+							alert("pages");	 					
+						}																  						 
 					}}
 				);
 								 						
