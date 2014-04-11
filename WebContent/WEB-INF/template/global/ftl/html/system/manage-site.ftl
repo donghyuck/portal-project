@@ -572,14 +572,15 @@
 							</div>								
 						</div>
 						<div class="panel-body" style="padding:5px;">						
+														
+							<div class="row">
+								<div class="col-lg-5 col-xs-12" id="company-info">					
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small><i class="fa fa-info"></i> 상세보기 버튼을 클릭하면 회사가 보유한 자원을 관리할 수 있습니다.</small>
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 상세보기</button>
 										</h5>
-									</div>															
-							<div class="row">
-								<div class="col-lg-5 col-xs-12" id="company-info">							
+									</div>											
 									<table class="table table-hover">
 											<tbody>						
 												<tr>
@@ -630,7 +631,7 @@
 										</div>
 										<div class="tab-pane fade" id="social-mgmt">
 											<span class="help-block">
-												<small>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small>
+												<small><i class="fa fa-info"></i>쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small>
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="connect"> 쇼셜연결</button>
 											</span>
 											<div id="social-grid"></div>
