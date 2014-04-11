@@ -534,7 +534,7 @@
 			width:500px;
 		}
 		
-		.k-grid button.btn-link {
+		.k-grid .btn-link {
 			color: none;
 		}
 		
