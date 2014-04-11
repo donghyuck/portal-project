@@ -84,6 +84,7 @@
 									} else {										
 										var site = new common.models.WebSite(response.targetWebSite);
 										site.copy($("#site-info").data("sitePlaceHolder"));
+										kendo.bind($("#site-info"), $("#site-info").data("sitePlaceHolder") );
 									}
 								},
 								error: common.api.handleKendoAjaxError,
