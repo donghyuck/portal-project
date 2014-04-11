@@ -30,7 +30,7 @@
 						currentUser = e.token;						
 					}
 				});				
-				$("#navbar").data("companyPlaceHolder", new Company() );
+				$("#navbar").data("companyPlaceHolder", new Company({ companyId: ${action.user.companyId} }));
 				var selectedSocial = {};																	
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
@@ -612,9 +612,6 @@
 									  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
 									</ul>
 									<div class="tab-content">
-										<div class="tab-pane fade" id="site-info"></div>
-										<div class="tab-pane fade" id="system-info">
-										</div>
 										<div class="tab-pane fade " id="image-mgmt">
 											<div class="col-sm-12 body-group marginless paddingless">
 												<input name="image-upload" id="image-upload" type="file" />
