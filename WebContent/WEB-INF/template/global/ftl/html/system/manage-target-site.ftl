@@ -337,7 +337,7 @@
 								},
 								columns:[
 									{ field: "imageId", title: "ID",  width: 50, filterable: false, sortable: false  },
-									{ field: "name", title: "파일", width: 300 },
+									{ field: "name", title: "파일", width: 350 },
 									/*{ field: "contentType", title: "이미지 유형",  width: 100 },*/
 									{ field: "size", title: "파일크기",  width: 100, format: "{0:##,### bytes}" },
 									{ field: "creationDate", title: "생성일", width: 90, format: "{0:yyyy.MM.dd}" },
