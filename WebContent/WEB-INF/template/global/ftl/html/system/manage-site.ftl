@@ -72,10 +72,7 @@
 						},
 						connect : function(e){
 							alert("social modal");	 					
-						},
-						top:function(e){
-							alert("fdsa");
-						}					  						 
+						}			  						 
 					}}
 				);
 								 						
@@ -409,7 +406,16 @@
 						}
 					}					
 				});	
-															
+				
+				 common.ui.handleButtonActionEvents(
+					$('#image-details button.btn-control-group'), 
+					{event: 'click', handlers: {
+						top : function(e){
+							$('html,body').animate({scrollTop: $("#image-grid").offset().top - 55 }, 300);
+						}  						  						 
+					}}
+				);
+																			
 				$("#update-image-file").kendoUpload({
 					showFileList: false,
 					multiple: false,
