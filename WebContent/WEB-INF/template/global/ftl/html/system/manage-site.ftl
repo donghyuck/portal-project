@@ -619,9 +619,9 @@
 								</div>
 								<div class="col-lg-7 col-xs-12 hide" id="company-details">														
 									<ul class="nav nav-tabs" id="myTab">
-									  <li><a href="#image-mgmt" data-toggle="tab"><small>이미지</small></a></li>
-									  <li><a href="#attachment-mgmt" data-toggle="tab"><small>첨부파일</small></a></li>
-									  <li><a href="#social-mgmt" data-toggle="tab"><small>쇼셜</small></a></li>
+									  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
+									  <li><a href="#attachment-mgmt" data-toggle="tab">첨부파일</a></li>
+									  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
 									</ul>
 									<div class="tab-content">
 										<div class="tab-pane fade " id="image-mgmt">
