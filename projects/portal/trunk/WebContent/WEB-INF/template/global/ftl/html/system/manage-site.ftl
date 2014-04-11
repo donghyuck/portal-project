@@ -479,10 +479,8 @@
 			$('#image-prop-grid').data("kendoGrid").dataSource.read();			
 			kendo.bind($('#image-details'), imagePlaceHolder );						
 			if( 	$('#image-details').hasClass('hide') )
-				$('#image-details').removeClass('hide')	;
-				
-			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);
-				
+				$('#image-details').removeClass('hide')	;				
+			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);				
 		}
 			
 		
@@ -535,10 +533,8 @@
 								change: function(e) {          
 									var selectedCells = this.select();
 									if( selectedCells.length > 0 ){
-										var selectedCell = this.dataItem( selectedCells );
-			
-										selectedCell.copy( $("#website-grid").data("sitePlaceHolder"));
-										
+										var selectedCell = this.dataItem( selectedCells );			
+										selectedCell.copy( $("#website-grid").data("sitePlaceHolder"));										
 									}
 								}				
 				});
@@ -548,7 +544,8 @@
 		}
 		
 		function goSite (){		
-			alert( $(this).html() );
+			
+			alert( $("#website-grid").data("sitePlaceHolder").webSiteId );
 		}
 		</script>
 		<style>					
