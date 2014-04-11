@@ -686,14 +686,12 @@
 		
 		<script id="image-details-template" type="text/x-kendo-template">				
 			<div class="panel panel-default">
-				<div class="panel-body">	
-					<div class="page-header page-nounderline-header">
-						<h5>
-							<!--<small><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하세요.</small>-->
-							<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
-						</h5>
-					</div>		
-										
+				<div class="panel-heading">
+					<div class="k-window-actions panel-header-actions">
+						<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
+					</div>
+				</div>
+				<div class="panel-body">											
 					<div class="row">
 						<div class="col-lg-5 col-xs-5">
 							<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
