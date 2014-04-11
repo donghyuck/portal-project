@@ -702,6 +702,7 @@
 					<div class="row">
 						<div class="col-lg-6 col-xs-6">
 							<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
+							<span class="label label-warning"><span data-bind="text: contentType"></span></span> 
 						</div>
 						<div class="col-lg-6 col-xs-6">
 							<div class="panel-header text-primary">
