@@ -658,7 +658,7 @@
 											<i class="fa fa-share"></i>&nbsp;<strong>회사</strong>&nbsp;
 											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
 											<div class="btn-group">
-												<button type="button" class="btn btn-info btn-sm">
+												<button type="button" class="btn btn-default btn-sm">
 													<span class="k-icon k-i-minimize"></span>
 												</div>
 											</div>
