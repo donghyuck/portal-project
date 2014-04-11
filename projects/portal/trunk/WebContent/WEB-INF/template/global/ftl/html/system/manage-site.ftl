@@ -264,7 +264,7 @@
 								filterable: true,
 								sortable: true,
 								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-								//selectable: 'row',
+								selectable: 'row',
 								//height: 500,
 								detailTemplate: kendo.template( $("#attach-details-template").html() ),
 								detailInit : function(e){
@@ -282,7 +282,9 @@
 		}
 		
 		function createImagePane(){		
+		
 			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+		
 						if( ! $("#image-upload").data("kendoUpload") ){	
 							$("#image-upload").kendoUpload({
 								multiple : false,
@@ -471,55 +473,6 @@
 				$('#image-details').removeClass('hide')												
 		}
 			
-		function createTemplatePane(){
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
-			if( ! $("#template-grid").data("kendoGrid") ){	
-				$("#template-grid").kendoGrid({
-					dataSource: {
-						dataType: 'json',
-						transport: {
-							read: { url:'${request.contextPath}/secure/list-template.do?output=json', type: 'POST' },
-							parameterMap: function (options, operation){
-								if (operation != "read" && options) {										                        								                       	 	
-									return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
-								}else{
-									return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
-								}
-							} 
-						},
-						schema: {
-							total: "totalTargetTemplateCount",
-							data: "targetTemplates",
-							model : Template
-						},
-						pageSize: 15,
-						serverPaging: true,
-						serverFiltering: false,
-						serverSorting: false,                        
-						error: common.api.handleKendoAjaxError
-					},
-					toolbar: [ { text: "템플릿 파일 추가", css:"createTemplateCustom" } ],   
-					columns:[
-						{ field: "templateId", title: "ID",  width: 50, filterable: false, sortable: false },
-						{ field: "title", title: "타이틀", width: 150 },
-						{ field: "location", title: "템플릿 이름" },
-						{ field: "templateType", title: "유형",  width: 100 },
-						{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy/MM/dd}" },
-						{ command: [ { name: "destroy", text: "삭제" } , { name: "customEditTemplateClass", text: "수정" }], title: " ", width: "160px"  }
-					],
-					filterable: true,
-					sortable: true,
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-					dataBound: function(e) {
-									
-					},
-					change: function(e) {          
-						var selectedCells = this.select();       
-						this.expandRow(selectedCells);
-					}
-				});
-			}							
-		}	
 		
 		function createSiteGrid(){			
 			var selectedCompany = $("#navbar").data("companyPlaceHolder");
