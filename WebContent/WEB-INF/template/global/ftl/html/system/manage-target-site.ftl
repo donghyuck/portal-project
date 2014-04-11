@@ -589,7 +589,7 @@
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small><i class="fa fa-info"></i> 설정 버튼을 클릭하면 사이트의 기본정보를 수정할 수 있습니다.</small>
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 설정</button>
+											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cog"></i> 설정</button>
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 상세보기</button>
 										</h5>
 									</div>										
