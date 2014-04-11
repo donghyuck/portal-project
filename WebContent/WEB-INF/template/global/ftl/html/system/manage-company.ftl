@@ -57,6 +57,24 @@
 				});
 				 
 				 // 4. MAIN CONTENT		
+				common.ui.handleButtonActionEvents(
+					$("button.btn-control-group"), 
+					{event: 'click', handlers: {
+						user : function(e){
+							topBar.go('main-user.do');								
+						}, 	
+						group : function(e){
+							topBar.go('main-group.do');							
+						}, 							
+						menu : function(e){
+							showMenuWindow();
+						},
+						role : function(e){					
+							showRoleWindow();			
+						}  						 
+					}}
+				);
+								 /*
 				$("button.btn-control-group ").each(function (index) {					
 					var btn_control = $(this);
 					var btn_control_action = btn_control.attr("data-action");
@@ -106,7 +124,7 @@
 							});
 						});
 					}	
-				});
+				});*/
 				
 				var company_grid = $("#company-grid").kendoGrid({
 					dataSource: {	
