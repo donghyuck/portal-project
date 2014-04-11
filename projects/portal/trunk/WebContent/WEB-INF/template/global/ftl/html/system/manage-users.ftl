@@ -534,6 +534,10 @@
 			width:500px;
 		}
 		
+		td[role="gridcell"] button.btn-link {
+			color: none;
+		}
+		
 		</style>
 		</#compress>
     </head>
