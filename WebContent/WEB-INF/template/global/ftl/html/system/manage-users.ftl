@@ -768,6 +768,7 @@
 						<div class="col-lg-6 col-xs-12">
 						<!-- start additional info -->
 							<div class="panel-header">
+							  <h5><small><i class="fa fa-info"></i> 탭을 선택하여 개인의 추가 옵션(프로퍼티, 그룹, 롤)을 변경할 수 있습니다.</small></h5>
 							</div>						
 							<ul id="myTab" class="nav nav-tabs">
 								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
