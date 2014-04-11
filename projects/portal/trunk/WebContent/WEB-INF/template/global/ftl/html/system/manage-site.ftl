@@ -411,7 +411,7 @@
 					$('#image-details button.btn-control-group'), 
 					{event: 'click', handlers: {
 						top : function(e){
-							$('html,body').animate({scrollTop: $("#image-mgmt").offset().top - 55 }, 300);
+							$('html,body').animate({scrollTop: $("#myTab").offset().top - 55 }, 300);
 						}  						  						 
 					}}
 				);
