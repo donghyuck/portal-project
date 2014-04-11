@@ -648,13 +648,9 @@
 							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
-							</div>	
-												<button type="button" class="btn btn-default btn-sm">
-													<span class="k-icon k-i-minimize"></span>
-												</button>									
+							</div>								
 						</div>
-						<div class="panel-body" style="padding:5px;">		
-						
+						<div class="panel-body" style="padding:5px;">						
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
@@ -664,8 +660,7 @@
 												</button>
 											</div>
 										</h5>
-									</div>
-															
+									</div>															
 							<div class="row">
 								<div class="col-lg-5 col-xs-12" id="company-info">							
 									<table class="table table-hover">
