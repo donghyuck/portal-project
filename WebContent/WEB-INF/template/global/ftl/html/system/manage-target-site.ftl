@@ -132,8 +132,8 @@
 									{ field: "signedIn", title: "로그인",  width: 80 },
 									{ field: "accessSecret", title: "Access Secret", sortable: false },
 									{ field: "accessToken", title: "Access Token", sortable: false },
-									{ field: "creationDate", title: "생성일", width: 100, format: "{0:yyyy/MM/dd}" },
-									{ field: "modifiedDate", title: "수정일", width: 100, format: "{0:yyyy/MM/dd}" },
+									{ field: "creationDate", title: "생성일", width: 100, format: "{0:yyyy.MM.dd}" },
+									{ field: "modifiedDate", title: "수정일", width: 100, format: "{0:yyyy.MM.dd}" },
 									{ command: [ {  text: "상세" , click: function(e){										
 										e.preventDefault();										
 										selectedSocial =  this.dataItem($(e.currentTarget).closest("tr"));											
