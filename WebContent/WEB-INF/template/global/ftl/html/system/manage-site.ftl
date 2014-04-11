@@ -467,12 +467,13 @@
 					});		
 				}														 
 			}
-			$('#image-prop-grid').data("kendoGrid").dataSource.read();
-			
-			kendo.bind($('#image-details'), imagePlaceHolder );				
-					
+			$('#image-prop-grid').data("kendoGrid").dataSource.read();			
+			kendo.bind($('#image-details'), imagePlaceHolder );						
 			if( 	$('#image-details').hasClass('hide') )
-				$('#image-details').removeClass('hide')												
+				$('#image-details').removeClass('hide')	;
+				
+			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);
+				
 		}
 			
 		
