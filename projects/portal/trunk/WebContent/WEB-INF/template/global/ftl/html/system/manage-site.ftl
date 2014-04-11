@@ -74,7 +74,7 @@
 							alert("social modal");	 					
 						},
 						top : function(e){
-							$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);
+							$('html,body').animate({scrollTop: $("#image-grid").offset().top - 55 }, 300);
 						}  						  						 
 					}}
 				);
