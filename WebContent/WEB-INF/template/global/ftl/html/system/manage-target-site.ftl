@@ -572,7 +572,7 @@
 									</table>
 								</div>
 								<div class="col-lg-7 col-xs-12 hide" id="company-details">														
-									<ul class="nav nav-tabs" id="myTab">
+									<ul class="nav nav-pills" id="myTab">
 									  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
 									  <li><a href="#attachment-mgmt" data-toggle="tab">첨부파일</a></li>
 									  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
