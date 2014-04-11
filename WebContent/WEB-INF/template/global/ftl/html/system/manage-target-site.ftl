@@ -585,37 +585,13 @@
 						<div class="panel-body" style="padding:5px;">						
 														
 							<div class="row">
-								<div class="col-lg-5 col-xs-12" id="company-info">					
+								<div class="col-lg-5 col-xs-12" id="site-info">					
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small><i class="fa fa-info"></i> 상세보기 버튼을 클릭하면 회사가 보유한 자원(이미지, 파일 등)을 관리할 수 있습니다.</small>
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 상세보기</button>
 										</h5>
-									</div>											
-									
-											<tbody>						
-												<tr>
-													<th><small>회사</small></th>								
-													<td><span data-bind="text: displayName"></span> <span class="label label-primary"></span> <code><span data-bind="text: companyId"></span></code></td>
-												</tr>	
-												<tr>
-													<th><small>도메인</small></th>								
-													<td><span data-bind="text: domainName"></span></td>
-												</tr>											
-												<tr>
-													<th><small>설명</small></th>
-													<td><span data-bind="text: description"></span></td>
-												</tr>	
-												<tr>
-													<th><small>등록일</small></th>
-													<td><span data-bind="text: creationDate"></span></td>
-												</tr>				
-												<tr>
-													<th><small>수정일</small></th>
-													<td><span data-bind="text: modifiedDate"></span></td>
-												</tr>												
-										 	</tbody>
-										 										
+									</div>										
 									<table class="table">
 											<tbody>						
 												<tr class="info">
@@ -628,7 +604,7 @@
 												<tr>
 													<th><small>사이트</small></th>	
 													<td><span data-bind="text: displayName">${action.targetWebSite.displayName} </span> 
-														<span class="label label-primary"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
+														<span class="label label-warning"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
 														<code><span data-bind="text: webSiteId">${action.targetWebSite.webSiteId}</span></code>
 													</td>
 												</tr>	
