@@ -258,7 +258,7 @@
 									{ field: "attachmentId", title: "ID",  width: 50, filterable: false, sortable: false },
 									{ field: "name", title: "파일", width: 250 },
 								/*	{ field: "contentType", title: "파일 유형",  width: 100 },*/
-									{ field: "size", title: "파일크기",  width: 100 , format: "{##,### bytes}" },
+									{ field: "size", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" },
 									{ field: "creationDate", title: "생성일", width: 80, format: "{0:yyyy.MM.dd}" },
 									{ field: "modifiedDate", title: "수정일", width: 80, format: "{0:yyyy.MM.dd}" },
 									{ command: [ { name: "destroy", text: "삭제" } ], title: " ", width: "160px"  }
