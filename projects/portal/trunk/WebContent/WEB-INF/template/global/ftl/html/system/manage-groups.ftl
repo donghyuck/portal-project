@@ -32,7 +32,7 @@
 						currentUser = e.token;						
 					}
 				});
-				var selectedCompany = new Company({companyId:${action.companyId}});			
+				var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});			
 								
 				// 3.MENU LOAD
 			
@@ -42,7 +42,7 @@
 					template : kendo.template($("#topnavbar-template").html() ),
 					items: [
 						{ 
-							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
+							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.targetCompany.companyId},
 							change : function(data){
 								$("#navbar").data("companyPlaceHolder", data) ;
 								kendo.bind($("#site-info"), data );
@@ -620,7 +620,6 @@
 		-->		
 		</script>		        
 		<!-- 공용 템플릿 -->
-		<#include "/html/common/common-secure-templates.ftl" >		        
 		<#include "/html/common/common-system-templates.ftl" >					
 	<!-- END MAIN CONTENT  -->	  
     </body>

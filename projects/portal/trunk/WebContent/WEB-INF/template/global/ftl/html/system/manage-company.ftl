@@ -43,7 +43,7 @@
 					template : kendo.template($("#topnavbar-template").html() ),
 					items: [
 						{ 
-							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
+							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.targetCompany.companyId},
 							change : function(data){
 								$("#navbar").data("companyPlaceHolder", data) ;
 								kendo.bind($("#site-info"), data );
