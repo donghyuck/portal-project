@@ -81,8 +81,9 @@
 								success : function(response){
 									if( response.error ){ 												
 										alert( kendo.stringify(response) );									
-									} else {				
-										alert( kendo.stringify(response) );											
+									} else {										
+										var site = new common.models.WebSite(response.targetWebSite);
+										site.copy($("#site-info").data("sitePlaceHolder"));
 									}
 								},
 								error: common.api.handleKendoAjaxError,
