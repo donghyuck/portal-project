@@ -592,7 +592,7 @@
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"> 상세보기</button>
 										</h5>
 									</div>											
-									<table class="table table-hover">
+									<table class="table">
 											<tbody>						
 												<tr class="info">
 													<th><small>회사</small></th>								
