@@ -618,7 +618,7 @@
 										 	</tbody>
 									</table>
 								</div>
-								<div class="col-lg-7 col-xs-12 hide" id="company-details">		
+								<div class="col-lg-7 col-xs-12 fade hide" id="company-details">		
 									<span class="help-block">
 										<small><i class="fa fa-info"></i> 회사에 속하는 모든 사이트에서 회사의 자원은 공유됩니다.</small>							
 									</span>														
