@@ -347,6 +347,7 @@
 											if (operation != "read" && options) {										                        								                       	 	
 												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
 											}else{
+												
 												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
 											}
 										} 
@@ -653,6 +654,7 @@
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small>
+											<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="details"> 상세보기</button>
 										</h5>
 									</div>															
 							<div class="row">
