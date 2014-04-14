@@ -467,10 +467,10 @@
 	<div data-bind="html:body"></div>	
 	<div class="blank-top-5" ></div>
 	<div class="btn-group pull-right">
+		<button  type="button" class="btn btn-info btn-sm custom-list "><i class="fa fa-angle-double-up"></i> 목록</button>
 		# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
-		<button  type="button" class="btn btn-info custom-edit"><i class="fa fa-pencil-square-o"></i> 수정</button>
-		# } #
-		<button  type="button" class="btn btn-info custom-list "><i class="fa fa-angle-double-up"></i> 목록</button>
+		<button  type="button" class="btn btn-info btn-sm custom-edit"><i class="fa fa-pencil-square-o"></i> 수정</button>
+		# } #		
 	</div>
 </script>
 
