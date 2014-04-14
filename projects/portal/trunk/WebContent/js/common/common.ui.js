@@ -845,6 +845,121 @@
 
 })(jQuery);
 
+/**
+ *  extModalWindow widget
+ */
+(function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};
+    var kendo = window.kendo,
+    Widget = kendo.ui.Widget,
+    isPlainObject = $.isPlainObject,
+    proxy = $.proxy,
+    extend = $.extend,
+    placeholderSupported = kendo.support.placeholder,
+    browser = kendo.support.browser,
+    isFunction = kendo.isFunction,
+    trimSlashesRegExp = /(^\/|\/$)/g,
+    CHANGE = "change",
+    ERROR = "error",
+    CLICK = "click",
+	UNDEFINED = 'undefined',
+	POST = 'POST',
+	JSON = 'json',
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;
+    
+    common.ui.extModalWindow = Widget.extend({
+		init: function( element, options) {			
+			var that = this;		 
+			Widget.fn.init.call(that, element, options);			
+			options = that.options;		
+			that.refresh();		
+		},
+		events: [ERROR, CHANGE, CLICK],
+		options : {
+			name: "ExtModalWindow",
+			transport:{		
+				
+			} 
+		},
+		show: function() {
+			var that = this ;			
+			that._modal().modal('show');
+		},
+		close: function () {
+			var that = this ;
+			that._modal().modal('hide');
+		},
+		refresh: function () {
+			var that = this ;
+			that._createDialog();
+		},		
+		destroy: function() {
+			var that = this;
+			Widget.fn.destroy.call(that);			
+			$(that.element).remove();
+		},
+		_modal : function () {
+			var that = this ;
+			return  that.element.children('.modal');
+		},
+		_changeState : function ( enabled ) {
+			var that = this ;
+			if ( enabled ){
+				that.element.find('.modal-footer .btn.custom-update').removeAttr('disabled');			
+			}else{
+				that.element.find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');			
+			}			
+		},
+		_createDialog : function () {			
+			var that = this ;
+			var template = that._dialogTemplate();				
+			
+			that.element.html(template({ 
+				title : that.options.title || ""
+			}));
+			
+			kendo.bind( that.element, that._data );	
+			
+			that.element.children( '.modal').css('z-index', '2000');			
+			that.element.find('.modal').on('show.bs.modal' , function(e){
+			
+			});				
+		},
+		_dialogTemplate : function (){
+			var that = this ;			
+			if( typeof that.options.template === UNDEFINED){
+				return kendo.template( 
+						"<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>" +	
+						"<div class='modal-dialog modal-sm'>" +	
+						"<div class='modal-content'>" + 
+						"<div class='modal-header'>" +				
+						"<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>" +
+						"<h5 class='modal-title'>#= title #</h5>" + 
+						"</div>" + 
+						"<div class='modal-body'>" +				
+						"</div>" + 
+						"<div class='modal-footer'>" +							
+						"</div>" + 				
+						"</div><!-- /.modal-content -->" +
+						"</div><!-- /.modal-dialog -->" +
+						"</div><!-- /.modal -->"
+					);		
+			}else 	if( typeof that.options.template === 'object'){
+				return that.options.template ;			
+			}
+			else if( typeof that.options.template === 'string'){
+				return kendo.template( that.options.template );
+			}
+		}
+	});
+	
+	$.fn.extend( { 
+		extEditorPopup : function ( options ) {
+			return new common.ui.extEditorPopup ( this , options );		
+		}
+	});	
+})(jQuery);
 
 
 /**
