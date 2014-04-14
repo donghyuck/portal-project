@@ -91,16 +91,16 @@
 								</div>		
 							  <div class="form-group">
 							    <label>이름</label>
-							    <input type="text" class="form-control" placeholder="회사 이름" data-bind="value: displayName ">
+							    <input type="text" class="form-control" placeholder="회사 이름" data-bind="value: company.displayName ">
 							  </div>
 							  <div class="form-group">
 							    <label>도메인</label>
-							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: domainName">
+							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: company.domainName">
 							    <p class="help-block">예시) www.demo.com</p>
 							  </div>
 							  <div class="form-group">
 							    <label>회사 소개</label>
-							     <input type="text" class="form-control" data-bind="value:description">
+							     <input type="text" class="form-control" data-bind="value:company.description">
 							  </div>
 							
 							</div>			
