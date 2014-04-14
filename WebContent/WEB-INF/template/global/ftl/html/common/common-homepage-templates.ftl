@@ -441,7 +441,10 @@
 	<div class="page-heading">
 		<h4 data-bind="html:subject"></h4>		
 		<small class="text-muted"><span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>
-		<small class="text-muted"><span class="label label-default">수정일</span> #: kendo.toString(modifiedDate, "yyyy.MM.dd") #</small>
+		<p class="text-muted">
+			<small><span class="label label-default">생성일</span> #: kendo.toString(creationDate, "g") #</small>
+			<small><span class="label label-default">수정일</span> #: kendo.toString(modifiedDate, "g") #</small>
+		</p>
 	</div>
 	<div class="media">
 		<a class="pull-left" href="\\#">
@@ -465,7 +468,7 @@
 	# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
 	<button  type="button" class="btn btn-info custom-edit pull-right"><i class="fa fa-pencil-square-o"></i> 수정</button>
 	# } #
-	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-chevron-up"><span> 목록</span></i></button>
+	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-angle-double-up"><span> 목록</span></i></button>
 </script>
 
 <script type="text/x-kendo-tmpl" id="announcement-editor-template">		
