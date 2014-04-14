@@ -848,8 +848,173 @@
 
 
 /**
- *  extImageBrowser widget
+ *  extHyperLink widget
  */
+(function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};
+    var kendo = window.kendo,
+    Widget = kendo.ui.Widget,
+    isPlainObject = $.isPlainObject,
+    proxy = $.proxy,
+    extend = $.extend,
+    placeholderSupported = kendo.support.placeholder,
+    browser = kendo.support.browser,
+    isFunction = kendo.isFunction,
+    trimSlashesRegExp = /(^\/|\/$)/g,
+    CHANGE = "change",
+    APPLY = "apply",
+    ERROR = "error",
+    CLICK = "click",
+	UNDEFINED = 'undefined',
+	POST = 'POST',
+	JSON = 'json',		
+	VALUE_TEMPLATE = kendo.template( '<img src="#: url #" class="img-responsive"/>' ),
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;
+	
+    common.ui.extEditorPopup = Widget.extend({
+		init: function(element, options) {			
+			var that = this;		 
+			Widget.fn.init.call(that, element, options);			
+			options = that.options;		
+			that.refresh();		
+		},
+		events: [ERROR, CHANGE, APPLY],
+		options : {
+			name: "ExtHyperLinkPopup",
+			transport:{		
+				
+			} 
+		},
+		show: function() {
+			var that = this ;
+			that._modal().modal('show');
+		},
+		close: function () {
+			var that = this ;
+			that._modal().modal('hide');
+		},
+		refresh: function () {
+			var that = this ;
+			that._createDialog();
+		},		
+		destroy: function() {
+			var that = this;
+			Widget.fn.destroy.call(that);			
+			$(that.element).remove();
+		},
+		_modal : function () {
+			var that = this ;
+			return  that.element.children('.modal');
+		},
+		_createDialog : function () {			
+			var that = this ;
+			var template = that._dialogTemplate();			
+			that.element.html(template);					
+			that.element.children( '.modal').css('z-index', '2000');
+			
+			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
+				var form_input = $(this);				
+				var selected_img =   $("#" + that.options.guid[TAB_PANE_URL_ID] ).children('img');	
+				if( form_input.val().length == 0 ) {
+					if(! selected_img.hasClass('hide') )
+						selected_img.addClass('hide');								
+					if(form_input.parent().hasClass('has-error') )
+						form_input.parent().removeClass('has-error');		
+					if(form_input.parent().hasClass('has-success') )
+						form_input.parent().removeClass('has-success');							
+					that._changeState(false);
+				}else{								
+					selected_img.attr('src', form_input.val()).load(function(){
+						if(form_input.parent().hasClass('has-error') )
+							form_input.parent().removeClass('has-error');					
+						form_input.parent().addClass('has-success');
+						selected_img.removeClass('hide');		
+						that._changeState(true);						
+					}).error(function(){					
+						if( ! selected_img.hasClass('hide') )
+							selected_img.addClass('hide');						
+						if(form_input.parent().hasClass('has-success') )
+							form_input.parent().removeClass('has-success');					
+						form_input.parent().addClass('has-error');		
+						that._changeState(false);
+					});					
+				}	
+			});
+			
+			that.element.find('.modal-footer .btn.custom-insert-img').on('click', function () {				
+				var tab_pane = that._activePane();			
+				var selected_url ;
+				switch( tab_pane.attr('id') ){
+					case that.options.guid[TAB_PANE_URL_ID] :					
+						selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
+						break;
+					case that.options.guid[TAB_PANE_DOMAIN_ID] :
+						var my_list_view = tab_pane.find('.panel-body div');
+						var linkId = my_list_view.data("linkId");
+						selected_url = URL_TEMPLATE({ key : linkId });
+						my_list_view.data("linkId", null );						
+						break;
+					case that.options.guid[TAB_PANE_MY_ID] :		
+						var my_list_view = tab_pane.find('.panel-body div');
+						var linkId = my_list_view.data("linkId");
+						selected_url = URL_TEMPLATE({ key : linkId });
+						my_list_view.data("linkId", null );
+					break;	
+				}								
+				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
+			});
+		},
+		/*
+		_activePane : function () {
+			var that = this ;
+			return that.element.find( '.tab-content > .tab-pane.active' ) ;
+		},
+		_changeState : function ( enabled ) {
+			var that = this ;
+			if ( enabled ){
+				that.element.find('.modal-footer .btn.custom-insert-img').removeAttr('disabled');			
+			}else{
+				that.element.find('.modal-footer .btn.custom-insert-img').attr('disabled', 'disabled');			
+			}			
+		},		
+		*/
+		_dialogTemplate : function (){
+			var that = this ;			
+			if( typeof that.options.template === UNDEFINED){
+				return kendo.template( 
+						"<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>" +	
+						"<div class='modal-dialog modal-sm'>" +	
+						"<div class='modal-content'>" + 
+						"<div class='modal-header'>" +				
+						"<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>" +
+						"<h5 class='modal-title'>하이퍼링크 삽입</h5>" + 
+						"</div>" + 
+						"<div class='modal-body'>" +				
+						"</div>" + 
+						"<div class='modal-footer'>" +							
+						"</div>" + 				
+						"</div><!-- /.modal-content -->" +
+						"</div><!-- /.modal-dialog -->" +
+						"</div><!-- /.modal -->"
+					);		
+			}else 	if( typeof that.options.template === 'object'){
+				return that.options.template ;			
+			}
+			else if( typeof that.options.template === 'string'){
+				return kendo.template( that.options.template );
+			}
+		}
+	});
+	
+	$.fn.extend( { 
+		extImageBrowser : function ( options ) {
+			return new common.ui.extImageBrowser ( this , options );		
+		}
+	});	
+})(jQuery);
+
+
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui =  common.ui || {};
@@ -1196,9 +1361,6 @@
 		}
 	});	
 })(jQuery);
-
-
-
 
 /**
  *  FullscreenSlideshow widget
