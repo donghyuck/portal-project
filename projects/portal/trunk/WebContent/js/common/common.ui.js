@@ -901,6 +901,10 @@
 			var that = this ;
 			// returns the datasource OR creates one if using array or configuration object
 			if( typeof that.options.dataSource === 'object'){
+				if( typeof that.options.dataSource.error  ===  UNDEFINED ){
+					that.options.dataSource.error = handleKendoAjaxError;
+				}
+				
 				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
 				if (that.options.autoBind) {    
 					that.dataSource.fetch();
