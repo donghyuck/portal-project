@@ -907,6 +907,14 @@
 			var that = this ;
 			return  that.element.children('.modal');
 		},
+		_changeState : function ( enabled ) {
+			var that = this ;
+			if ( enabled ){
+				that.element.find('.modal-footer .btn.custom-update').removeAttr('disabled');			
+			}else{
+				that.element.find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');			
+			}			
+		},			
 		_createDialog : function () {			
 			var that = this ;
 			var template = that._dialogTemplate();				
@@ -915,6 +923,19 @@
 				title : that.options.title || "", 
 				type : that.options.type 
 			}));					
+			
+			if( that.options == 'createLink' ){
+				that._data = kendo.observable({ 
+					link-url: "",
+					link-title: "",
+					link-target: false					
+				});	
+				that._data.bind("change", function(e){
+					if( e.field ){
+						that._changeState(true);
+					}					
+				});
+			}			
 			that.element.children( '.modal').css('z-index', '2000');
 			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
@@ -1028,7 +1049,7 @@
 					callback( data );
 				}					
 			});
-		},
+		},			
 		_modal : function () {
 			var that = this ;
 			return  that.element.children('.modal');
