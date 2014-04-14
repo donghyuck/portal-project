@@ -556,13 +556,16 @@
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}			
 
-			var extModalWindow = $("#"+ renderToString);
-			if( !extModalWindow.data('extModalWindow') ){			
-				extModalWindow.extModalWindow({
+			var companySetting = $("#"+ renderToString);
+			if( !companySetting.data('extModalWindow') ){			
+				companySetting.extModalWindow({
 					title : "회사 정보 변경"	
 				});			
-			}			
-			extModalWindow.show();
+			
+			}
+						
+			companySetting.show();
+		
 		}
 		
 		</script>
