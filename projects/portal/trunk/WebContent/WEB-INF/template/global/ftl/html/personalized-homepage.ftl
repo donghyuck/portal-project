@@ -566,7 +566,7 @@
 				});				
 				
 				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
-					type : 'createLink'
+					type : 'createLink',
 					editor :  renderTo
 				});
 				
