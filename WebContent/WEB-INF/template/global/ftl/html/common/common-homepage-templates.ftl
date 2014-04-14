@@ -1080,7 +1080,7 @@
 				</div>
 				<div class='modal-body'>
 				#if( type == 'createLink' ){ #
-					<div class="form">
+					<div class="form-horizontal">
 						<div class="form-group">
 							<label class="control-label">표시할 텍스트</label>
 							<div class="col-sm-10">
