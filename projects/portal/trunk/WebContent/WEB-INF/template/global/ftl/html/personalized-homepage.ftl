@@ -522,8 +522,7 @@
 						type : 'POST',
 						url : '${request.contextPath}/community/update-announce.do?output=json',
 						data : { item: kendo.stringify( $("#announce-editor").data( "announcePlaceHolder" ) ) },
-						success : function( response ){						
-							
+						success : function( response ){					
 							$("#announce-grid").data('kendoGrid').dataSource.read();
 							$("#announce-view").html("");
 							$('#announce-editor .modal').modal('hide');
