@@ -68,4 +68,27 @@
 			<span class="label label-info">#= contentType #</span>
 			<a href="${request.contextPath}/secure/download-attachment.do?attachmentId=#= attachmentId #" class="btn btn-sm btn-warning">다운로드</a>
 		</script>
+	<!- ================================ ->
+	<!-- COMPANY SETTING MODAL TEMPLAGE 		 -->
+	<!- ================================ ->			
+	<script id="company-setting-modal-template" type="text/x-kendo-template">
+		<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
+			<div class='modal-dialog modal-lg'>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+						<h5 class='modal-title'>#= title #</h5>
+					</div>
+					<div class='modal-body'>
+					
+					</div>
+					<div class='modal-footer'>		
+		
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
+	</script>		
+		
+				
 	
