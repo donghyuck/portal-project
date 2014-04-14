@@ -454,13 +454,15 @@
 		}	
 		
 		function setAnnounceEditorSource( source ){
-			var objectType = $("#announce-grid").data('announceSourcePlaceHolder') ;
+			var _objectType = $("#announce-grid").data('announceSourcePlaceHolder') ;
 			if( source instanceof Announce ){		
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce());			
+					$('#announce-editor').data("announcePlaceHolder", new Announce());
+					$('#announce-editor').data("announcePlaceHolder").objectType = _objectType;
 				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 					
 			}else{
 				$('#announce-editor').data("announcePlaceHolder").reset();
+				$('#announce-editor').data("announcePlaceHolder").objectType = _objectType;
 			}	
 		}
 				
