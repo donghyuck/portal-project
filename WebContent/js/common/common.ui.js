@@ -913,7 +913,7 @@
 			that.element.html(template);					
 			that.element.children( '.modal').css('z-index', '2000');
 			
-			that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
+			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 		},
 		/*
 		_activePane : function () {
