@@ -456,7 +456,7 @@
 		function setAnnounceEditorSource( source ){		
 		
 			if( !$('#announce-editor').data("announcePlaceHolder") ){
-				$('#announce-editor').data("announcePlaceHolder", new Announce());
+				$('#announce-editor').data("announcePlaceHolder", new Announce({}));
 			}
 			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
 			var _target =  $('#announce-editor').data("announcePlaceHolder") ;
