@@ -952,7 +952,9 @@
 					that._data.linkTitle = "";
 					that._data.linkTarget = false ;
 				}
-			});			
+				that._changeState(false);
+			});
+			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 		},
 		_dialogTemplate : function (){
