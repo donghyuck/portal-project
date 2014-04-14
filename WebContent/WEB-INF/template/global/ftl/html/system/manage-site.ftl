@@ -558,10 +558,30 @@
 
 			var companySetting = $("#"+ renderToString);
 			if( !companySetting.data('kendoExtModalWindow') ){			
+				var companyPlaceHolder = $("#navbar").data("companyPlaceHolder");
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
 					template : $("#company-setting-modal-template").html(),
-					data : $("#navbar").data("companyPlaceHolder")
+					data : companyPlaceHolder,
+					dataSource: {
+						transport: { 
+							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
+							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
+							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
+							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { companyId: companyPlaceHolder.companyId, items: kendo.stringify(options.models)};
+								} 
+								return { companyId: companyPlaceHolder.companyId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							data: "targetCompanyProperty",
+							model: Property
+						}
+					}
 				});			
 			}						
 			companySetting.data('kendoExtModalWindow').show();
