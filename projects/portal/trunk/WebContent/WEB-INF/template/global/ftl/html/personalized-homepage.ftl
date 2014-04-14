@@ -534,14 +534,12 @@
 			
 			if( $('#announce-editor').data("announcePlaceHolder").announceId > 0 ){
 				if( !$('#announce-editor .modal-body .page-header').hasClass('hide') ){
-					$('#announce-editor .modal-body .page-header').addClass('hide');
+					$('#announce-editor .modal-body .page-header').removeClass('hide');
 				}
 			}else{
 				if( !$('#announce-editor .modal-body .page-header').hasClass('hide') ){
-					$('#announce-editor .modal-body .page-header').addClass('hide');					
-				}else{
-					$('#announce-editor .modal-body .page-header').removeClass('hide');
-				}			
+					$('#announce-editor .modal-body .page-header').addClass('hide');				
+				}		
 			}
 			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 30){				
