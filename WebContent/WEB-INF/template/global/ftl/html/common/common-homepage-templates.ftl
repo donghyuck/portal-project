@@ -1083,12 +1083,12 @@
 					<div class="form">
 						<div class="form-group">
 							<label class="control-label">표시할 텍스트</label>
-							<input type="text" class="form-control" placeholder="URL">
+							<input type="text" class="form-control" >
 						</div>						
 						
 						<div class="form-group">	
 							<label class="control-label">웹주소</label>
-							<input type="url" class="form-control">
+							<input type="url" class="form-control" placeholder="http://">
 						</div>
 							
 						<div class="form-group">
