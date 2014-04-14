@@ -1080,14 +1080,15 @@
 				</div>
 				<div class='modal-body'>
 				#if( type == 'createLink' ){ #
-					<div class="form-horizontal">
+					<div class="form">
 						<div class="form-group">
-							<label class="col-sm-2 control-label">표시할 텍스트</label>
+							<label class="control-label">표시할 텍스트</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" placeholder="URL">
 								</div>
 							</div>						
-							
+						
+						<div class="form-group">	
 							<label class="col-sm-2 control-label">웹주소</label>
 								<div class="col-sm-10">
 									<input type="url" class="form-control">
