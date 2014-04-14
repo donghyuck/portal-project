@@ -85,8 +85,8 @@
 							<div class="col-sm-6">
 								<div class="page-header text-primary">
 									<h5 >
-									<small><i class="fa fa-info"></i> 미디어관리 버튼을 클릭하면 회사가 보유한 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
-									<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details">속성</button>
+									<small><i class="fa fa-info"></i> 속성 버튼을 클릭하면 시스템 내부적으로 사용되는 속성를 수정할 수 있습니다. </small>
+									<button type="button" class="btn btn-info  btn-control-group btn-sm" data-toggle="button" data-action="details">속성</button>
 									</h5>
 								</div>		
 							  <div class="form-group">
@@ -96,7 +96,7 @@
 							  <div class="form-group">
 							    <label>도메인</label>
 							     <input type="text" class="form-control" placeholder="도메인">
-							    <p class="help-block">예시ㅏ) www.demo.com</p>
+							    <p class="help-block">예시) www.demo.com</p>
 							  </div>
 							  <div class="form-group">
 							    <label>회사 소개</label>
