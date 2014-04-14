@@ -936,8 +936,9 @@
 				});	
 				that._data.bind("change", function(e){
 					alert( e.field );
-					if( e.field ){
-						that._changeState(true);
+					if( e.field == 'linkUrl' ){
+						if( that._data.get( e.field ).length > 0)
+							that._changeState(true);
 					}					
 				});
 			}	
