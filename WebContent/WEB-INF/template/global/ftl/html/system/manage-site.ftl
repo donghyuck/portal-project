@@ -564,7 +564,7 @@
 			
 			}
 						
-			companySetting.show();
+			companySetting.data('kendoExtModalWindow').show();
 		
 		}
 		
