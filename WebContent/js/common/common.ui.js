@@ -939,6 +939,8 @@
 					if( e.field == 'linkUrl' ){
 						if( that._data.get( e.field ).length > 0)
 							that._changeState(true);
+						else 
+							that._changeState(false);
 					}					
 				});
 			}	
