@@ -563,9 +563,7 @@
 					template : $("#company-setting-modal-template").html(),
 					data : $("#navbar").data("companyPlaceHolder")
 				});			
-			
-			}
-						
+			}						
 			companySetting.data('kendoExtModalWindow').show();
 		
 		}
