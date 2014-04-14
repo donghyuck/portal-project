@@ -90,24 +90,19 @@
 									</h5>
 								</div>		
 							  <div class="form-group">
-							    <label for="exampleInputEmail1">Email address</label>
-							    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+							    <label>이름</label>
+							    <input type="text" class="form-control" placeholder="회사 이름">
 							  </div>
 							  <div class="form-group">
-							    <label for="exampleInputPassword1">Password</label>
-							    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+							    <label>도메인</label>
+							    <input type="text" class="form-control" placeholder="도메인 (예. www.demo.com)">
 							  </div>
 							  <div class="form-group">
-							    <label for="exampleInputFile">File input</label>
-							    <input type="file" id="exampleInputFile">
+							    <label>회사 소개</label>
+							     <input type="text" class="form-control" placeholder="도메인 (예. www.demo.com)">
 							    <p class="help-block">Example block-level help text here.</p>
 							  </div>
-							  <div class="checkbox">
-							    <label>
-							      <input type="checkbox"> Check me out
-							    </label>
-							  </div>
-							  <button type="submit" class="btn btn-default">Submit</button>						
+							
 							</div>			
 							<!-- attributes -->
 							<div class="col-sm-6">
