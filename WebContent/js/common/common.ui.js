@@ -909,8 +909,6 @@
 		},
 		_createDialog : function () {			
 			var that = this ;
-			
-			alert( that.options.template );
 			var template = that._dialogTemplate();				
 			
 			that.element.html(template({ 
