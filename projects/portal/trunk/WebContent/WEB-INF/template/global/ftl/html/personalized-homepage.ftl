@@ -383,8 +383,7 @@
 		<!-- ============================== -->								
 		function createNoticeGrid(){
 			if( !$("#announce-grid").data('kendoGrid') ){				
-				$("#announce-grid").data('announceSourcePlaceHolder', 30);
-				
+				$("#announce-grid").data('announceSourcePlaceHolder', 30);				
 				$("#announce-grid").kendoGrid({
 					dataSource : new kendo.data.DataSource({
 						transport: {
@@ -426,8 +425,7 @@
 								announcePlaceHolder.modifyAllowed = true;
 							}else{
 								announcePlaceHolder.modifyAllowed = false;
-							}
-							
+							}							
 							$("#announce-panel").data( "announcePlaceHolder", announcePlaceHolder );							 
 							showAnnouncePanel();	
 						}
@@ -454,6 +452,17 @@
 				$("#announce-panel" ).show();
 			}	
 		}	
+		
+		function setAnnounceEditorSource( source ){
+		alert( $("#announce-grid").data('announceSourcePlaceHolder') );
+			if( source instanceof Announce ){		
+				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
+					$('#announce-editor').data("announcePlaceHolder", new Announce());			
+				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 					
+			}else{
+				$('#announce-editor').data("announcePlaceHolder").reset();
+			}	
+		}
 				
 		function showAnnouncePanel (){		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
@@ -473,16 +482,7 @@
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
 
-		function setAnnounceEditorSource( source ){
-			if( source instanceof Announce ){		
-				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce());			
-				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 	
-				
-			}else{
-				$('#announce-editor').data("announcePlaceHolder").reset();
-			}	
-		}
+
 
 		function createAnnounceEditor(){								
 			if( $('#announce-editor').text().trim().length == 0 ){			
