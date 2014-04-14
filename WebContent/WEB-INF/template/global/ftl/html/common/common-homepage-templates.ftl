@@ -1080,29 +1080,23 @@
 				</div>
 				<div class='modal-body'>
 				#if( type == 'createLink' ){ #
-					<div class="form-horizontal">
+					<div class="form">
 						<div class="form-group">
 							<label class="control-label">표시할 텍스트</label>
-							<div class="col-sm-10">
-									<input type="text" class="form-control" placeholder="URL">
-							</div>
+							<input type="text" class="form-control" placeholder="URL">
 						</div>						
 						
 						<div class="form-group">	
-							<label class="col-sm-2 control-label">웹주소</label>
-							<div class="col-sm-10">
-								<input type="url" class="form-control">
-							</div>
+							<label class="control-label">웹주소</label>
+							<input type="url" class="form-control">
 						</div>
 							
 						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
 								<div class="checkbox">
 								<label>
 									<input type="checkbox"> 새창에서 링크 열기
 								</label>
 								</div>
-							</div>
 						</div>
 					</div>
 				# } #
