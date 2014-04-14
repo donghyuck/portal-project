@@ -560,7 +560,7 @@
 			if( !companySetting.data('kendoExtModalWindow') ){			
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
-					templage : $("#company-setting-modal-template").html(),
+					template : $("#company-setting-modal-template").html(),
 					data : $("#navbar").data("companyPlaceHolder")
 				});			
 			
