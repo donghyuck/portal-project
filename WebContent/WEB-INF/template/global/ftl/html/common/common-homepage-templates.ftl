@@ -1081,6 +1081,25 @@
 					<h5 class='modal-title'>#= title #</h5>
 				</div>
 				<div class='modal-body'>
+				#if( type == 'createLink' ){ #
+					<div class="form-horizontal">
+						<div class="form-group">
+							<label for="editor-hyperlink-url-input" class="col-sm-2 control-label">URL</label>
+								<div class="col-sm-10">
+									<input type="url" class="form-control" placeholder="URL">
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-2 col-sm-10">
+									<div class="checkbox">
+									<label>
+										<input type="checkbox"> 새창에서 링크 열기
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				# } #
 				</div>
 				<div class='modal-footer'>		
 				</div>
