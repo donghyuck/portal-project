@@ -848,7 +848,7 @@
 
 
 /**
- *  extHyperLink widget
+ *  extEditorPopup widget
  */
 (function($, undefined) {
 	var common = window.common = window.common || {};
@@ -1010,8 +1010,8 @@
 	});
 	
 	$.fn.extend( { 
-		extImageBrowser : function ( options ) {
-			return new common.ui.extImageBrowser ( this , options );		
+		extEditorPopup : function ( options ) {
+			return new common.ui.extEditorPopup ( this , options );		
 		}
 	});	
 })(jQuery);
