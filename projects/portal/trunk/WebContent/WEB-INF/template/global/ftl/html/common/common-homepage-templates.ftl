@@ -443,6 +443,8 @@
 		<small class="text-muted"><span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>
 		<p class="text-muted">
 			<small><span class="label label-default">생성일</span> #: kendo.toString(creationDate, "g") #</small>
+		</p>
+		<p class="text-muted">	
 			<small><span class="label label-default">수정일</span> #: kendo.toString(modifiedDate, "g") #</small>
 		</p>
 	</div>
@@ -465,10 +467,13 @@
 	</div>	
 	<div class="blank-top-5" ></div>
 	<div data-bind="html:body"></div>	
-	# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
-	<button  type="button" class="btn btn-info custom-edit pull-right"><i class="fa fa-pencil-square-o"></i> 수정</button>
-	# } #
-	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-angle-double-up"></i></button>
+	<div class="blank-top-5" ></div>
+	<div class="btn-group pull-right">
+		# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
+		<button  type="button" class="btn btn-info custom-edit"><i class="fa fa-pencil-square-o"></i> 수정</button>
+		# } #
+		<button  type="button" class="btn btn-info custom-list "><i class="fa fa-angle-double-up"></i> 목록</button>
+	</div>
 </script>
 
 <script type="text/x-kendo-tmpl" id="announcement-editor-template">		
