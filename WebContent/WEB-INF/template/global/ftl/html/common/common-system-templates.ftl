@@ -114,7 +114,7 @@
 										{ 'title': '이름',  'field': 'name', 'width': 270 },
 										{ 'title': '값', 'field': 'value' }
 									]"
-									data-bind="source: properties,
+									data-bind="source: properties, visible: true,
 									style="width: 480px; height: 200px"></div>
 							</div>											
 						</div>
