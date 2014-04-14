@@ -553,8 +553,7 @@
 		}		
 
 
-		function createEditor( renderTo ){
-				
+		function createEditor( renderTo ){				
 			if(!renderTo.data("kendoEditor") ){			
 				var imageBrowser = $('#image-broswer').extImageBrowser({
 					template : $("#image-broswer-template").html(),
@@ -563,7 +562,8 @@
 						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						imageBrowser.close();
 					}
-				});				
+				});			
+				
 				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
 					type : 'createLink',
 					title : "하이퍼링크 삽입",
