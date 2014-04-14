@@ -873,7 +873,6 @@
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
-			that._dataSource();
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, CLICK],
@@ -896,24 +895,6 @@
 			var that = this;
 			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
-		},
-		_dataSource: function() {
-			var that = this ;
-			// returns the datasource OR creates one if using array or configuration object
-			if( typeof that.options.dataSource === 'object'){
-				if( typeof that.options.dataSource.error  ===  UNDEFINED ){
-					that.options.dataSource.error = handleKendoAjaxError;
-				}				
-				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
-				if (that.options.autoBind) {    
-					that.dataSource.fetch();
-				}
-			}
-			/*
-			that.dataSource.bind(CHANGE, function() {
-				that.refresh();
-			});					
-			*/
 		},
 		_modal : function () {
 			var that = this ;
@@ -938,6 +919,7 @@
 			if( typeof  that.options.data === 'object' )
 				kendo.bind( that._modal(), that.options.data );			
 			
+			/*
 			if( $.isArray( that.options.items ) ){
 				$.each( that.options.items, function ( i, item ){
 					if( item.name === 'grid' ){							
@@ -964,6 +946,7 @@
 					}					
 				});
 			}
+			*/
 			that._modal().css('z-index', '2000');			
 			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
