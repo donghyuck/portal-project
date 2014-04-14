@@ -488,11 +488,8 @@
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
 		
-		function createAnnounceEditor(){								
+		function createAnnounceEditor(){
 			if( $('#announce-editor').text().trim().length == 0 ){			
-				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce());			
-												
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
 				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );				
@@ -510,7 +507,7 @@
 							}
 						}
 					}
-				});							
+				});
 				announce_editor_update.click(function(e){
 					e.preventDefault();					
 					var template = kendo.template('<p class="text-danger">#:message#</p>');					
@@ -520,10 +517,8 @@
 						return ;
 					}		
 					
-					$("#announce-editor").data( "announcePlaceHolder" ).user = null;
-					
-					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;
-					
+					$("#announce-editor").data( "announcePlaceHolder" ).user = null;					
+					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;					
 					$.ajax({
 						dataType : "json",
 						type : 'POST',
@@ -540,7 +535,8 @@
 				});						
 			}			
 			// save button disable.. 	
-			alert( $('#announce-editor').data("announcePlaceHolder").announceId  );
+			alert( kendo.stringify( $('#announce-editor').data("announcePlaceHolder") )   );
+			
 			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
 				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceTargetPlaceHolder')  ) ;
 			}
