@@ -468,7 +468,7 @@
 	# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
 	<button  type="button" class="btn btn-info custom-edit pull-right"><i class="fa fa-pencil-square-o"></i> 수정</button>
 	# } #
-	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-angle-double-up"><span> 목록</span></i></button>
+	<button  type="button" class="btn btn-link custom-list pull-right"><i class="fa fa-angle-double-up"></i></button>
 </script>
 
 <script type="text/x-kendo-tmpl" id="announcement-editor-template">		
