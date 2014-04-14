@@ -453,44 +453,38 @@
 			}	
 		}	
 		
-		function setAnnounceEditorSource( source ){		
-		
+		function setAnnounceEditorSource( source ){			
 			if( !$('#announce-editor').data("announcePlaceHolder") ){
 				$('#announce-editor').data("announcePlaceHolder", new Announce());
 			}
 			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
 			var _target =  $('#announce-editor').data("announcePlaceHolder") ;
-			
-			if( source instanceof Announce ){					
+			if( source instanceof Announce ){
 				source.copy( _target ) ;
 				if( _target.announceId < 1 ){
 					_target.set("objectType" , _objectType);
-				} 								
+				}
 			}else{
 				_target.reset();
 				_target.set("objectType" , _objectType);
-			}				
-	
-	
-			alert( (  source instanceof Announce ) + ":"+_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;
-	
-	
+			}
+			alert( (  source instanceof Announce ) + ":"+_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;	
 		}
 				
-		function showAnnouncePanel (){		
+		function showAnnouncePanel (){			
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
-			var template = kendo.template($('#announcement-view-template').html());			
-			$("#announce-view").html( template(announcePlaceHolder) );							
+			var template = kendo.template($('#announcement-view-template').html());
+			$("#announce-view").html( template(announcePlaceHolder) );	
 			kendo.bind($("#announce-view"), announcePlaceHolder );	
-			if( announcePlaceHolder.editable ){							
-				$("#announce-view button[class*=custom-edit]").click( function (e){					
+			if( announcePlaceHolder.editable ){	
+				$("#announce-view button[class*=custom-edit]").click( function (e){	
 					setAnnounceEditorSource(announcePlaceHolder);
-					createAnnounceEditor();						
-				} );			
-			}						
+					createAnnounceEditor();
+				} );	
+			}
 			$("#announce-view button[class*=custom-list]").click( function (e){
 					$('html,body').animate({ scrollTop:  0 }, 300);
-			} );									
+			} );
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
 		
