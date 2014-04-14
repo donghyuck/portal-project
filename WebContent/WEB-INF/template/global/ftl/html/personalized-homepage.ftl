@@ -456,16 +456,16 @@
 		function setAnnounceEditorSource( source ){		
 		
 			if( !$('#announce-editor').data("announcePlaceHolder") ){
-				$('#announce-editor').data("announcePlaceHolder", new Announce({}));
+				$('#announce-editor').data("announcePlaceHolder", new Announce());
 			}
 			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
 			var _target =  $('#announce-editor').data("announcePlaceHolder") ;
 			
 			if( source instanceof Announce ){					
+				source.copy( _target ) ;
 				if( _target.announceId < 1 ){
 					_target.set("objectType" , _objectType);
-				} 				
-				source.copy( _target ) ;
+				} 								
 			}else{
 				_target.reset();
 				_target.set("objectType" , _objectType);
