@@ -540,7 +540,7 @@
 			}
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 30){				
 				$('#announce-editor input[name="announce-type"]:last').click();
-			}else if($('#announce-editor').data("announcePlaceHolder").objectType == q){			
+			}else if($('#announce-editor').data("announcePlaceHolder").objectType == 0){			
 				$('#announce-editor input[name="announce-type"]:first').click();
 			}				
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
