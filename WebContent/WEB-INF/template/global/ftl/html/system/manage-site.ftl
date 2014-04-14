@@ -561,7 +561,7 @@
 				var companyPlaceHolder = $("#navbar").data("companyPlaceHolder");
 				var companySettingViewModel =  kendo.observable({ 
 					company: companyPlaceHolder,
-					properteis : new kendo.data.DataSource({
+					properties : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
 							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
