@@ -534,11 +534,11 @@
 			
 			if( $('#announce-editor').data("announcePlaceHolder").announceId > 0 ){
 				if( !$('#announce-editor .modal-body .page-header').hasClass('hide') ){
-					$('#announce-editor .modal-body .page-header').removeClass('hide');
+					$('#announce-editor .modal-body .page-header').addClass('hide');					
 				}
 			}else{
 				if( !$('#announce-editor .modal-body .page-header').hasClass('hide') ){
-					$('#announce-editor .modal-body .page-header').addClass('hide');				
+					$('#announce-editor .modal-body .page-header').removeClass('hide');
 				}		
 			}
 			
