@@ -887,7 +887,7 @@
 			} 
 		},
 		show: function() {
-			var that = this ;
+			var that = this ;			
 			that._modal().modal('show');
 		},
 		close: function () {
@@ -926,8 +926,7 @@
 			that.element.html(template({ 
 				title : that.options.title || "", 
 				type : that.options.type 
-			}));					
-			
+			}));				
 			if( that.options.type == 'createLink' ){
 				that._data = kendo.observable({ 
 					linkUrl : "",
@@ -941,13 +940,19 @@
 						else 
 							that._changeState(false);
 					}					
-				});
-			}	
-			
-			kendo.bind( that.element, that._data )
+				});				
+			}
+			kendo.bind( that.element, that._data );			
 			
 			that.element.children( '.modal').css('z-index', '2000');
 			
+			that.element.on('show.bs.modal' , function(e){
+				if( that.options.type == 'createLink' ){
+					that._data.linkUrl = "";
+					that._data.linkTitle = "";
+					that._data.linkTarget = false ;
+				}
+			});			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 		},
 		_dialogTemplate : function (){
