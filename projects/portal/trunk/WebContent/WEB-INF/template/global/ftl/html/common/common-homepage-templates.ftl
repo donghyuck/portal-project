@@ -488,7 +488,6 @@
 							<label class="btn btn-info btn-sm">
 							<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">회사
 							</label>
-							<span data-bind="text: objectType"></span>
 						</div>						
 						</h5>
 					</div>	
