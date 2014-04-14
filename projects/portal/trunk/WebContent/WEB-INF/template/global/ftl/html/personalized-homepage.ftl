@@ -566,7 +566,7 @@
 				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
 					type : 'createLink',
 					title : "하이퍼링크 삽입",
-					template : $("#editor-popup-template").html().
+					template : $("#editor-popup-template").html(),
 					apply : function(e){						
 						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						hyperLinkPopup.close();
