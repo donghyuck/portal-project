@@ -453,17 +453,15 @@
 			}	
 		}	
 		
-		function setAnnounceEditorSource( source ){
-		
+		function setAnnounceEditorSource( source ){		
 			if( !$('#announce-editor').data("announcePlaceHolder") ){
-				alert("x");
-			}else{
-				alert("o");
+				$('#announce-editor').data("announcePlaceHolder", new Announce());
 			}
-		
-			//var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
-			//var _source = $('#announce-editor').data("announcePlaceHolder") || new Announce() ;
+			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
+			var _source = $('#announce-editor').data("announcePlaceHolder");
 			
+			alert( _source.toJSON() ) ;
+		
 			if( source instanceof Announce ){					
 				
 				
