@@ -454,7 +454,16 @@
 		}	
 		
 		function setAnnounceEditorSource( source ){
-			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;			
+		
+			if( !$('#announce-editor').data("announcePlaceHolder") ){
+				alert("x");
+			}else{
+				alert("o");
+			}
+		
+			//var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
+			//var _source = $('#announce-editor').data("announcePlaceHolder") || new Announce() ;
+			
 			if( source instanceof Announce ){					
 				
 				
