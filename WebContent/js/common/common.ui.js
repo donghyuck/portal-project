@@ -906,7 +906,7 @@
 		data: function() {
 			var that = this ;
 			return that._data;
-		}
+		},
 		_modal : function () {
 			var that = this ;
 			return  that.element.children('.modal');
