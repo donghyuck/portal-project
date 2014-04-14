@@ -920,7 +920,7 @@
 			}));
 			
 			if( ! typeof  that.options.data === UNDEFINED )
-				kendo.bind( that.element, that.options.data );
+				kendo.bind( that._modal(), that.options.data );
 			
 			that._modal().css('z-index', '2000');			
 			
