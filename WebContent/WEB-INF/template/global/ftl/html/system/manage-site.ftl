@@ -583,7 +583,7 @@
 					})
 				} );				
 				
-				companySettingViewModel.properties().read();
+				companySettingViewModel.properties.read();
 				
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
