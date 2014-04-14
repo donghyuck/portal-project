@@ -483,10 +483,10 @@
 						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-info btn-sm active">
-							<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">사이트
+							<input type="radio" name="announce-type" value="30" data-bind="checked: objectType">사이트
 							</label>
 							<label class="btn btn-info btn-sm">
-							<input type="radio" name="announce-type" value="30" data-bind="checked: objectType">회사
+							<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">회사
 							</label>
 							<span data-bind="text: objectType"></span>
 						</div>						
