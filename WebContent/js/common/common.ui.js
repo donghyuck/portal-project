@@ -910,7 +910,7 @@
 		_createDialog : function () {			
 			var that = this ;
 			var template = that._dialogTemplate();			
-			that.element.html(template);					
+			that.element.html(template({ title : that.options.title || "" }));					
 			that.element.children( '.modal').css('z-index', '2000');
 			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
@@ -938,7 +938,7 @@
 						"<div class='modal-content'>" + 
 						"<div class='modal-header'>" +				
 						"<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>" +
-						"<h5 class='modal-title'>하이퍼링크 삽입</h5>" + 
+						"<h5 class='modal-title'>#= title #</h5>" + 
 						"</div>" + 
 						"<div class='modal-body'>" +				
 						"</div>" + 
