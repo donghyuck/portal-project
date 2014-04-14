@@ -559,11 +559,9 @@
 			var companySetting = $("#"+ renderToString);
 			if( !companySetting.data('kendoExtModalWindow') ){			
 				var companyPlaceHolder = $("#navbar").data("companyPlaceHolder");
-				companySetting.extModalWindow({
-					title : "회사 정보 변경",
-					template : $("#company-setting-modal-template").html(),
-					data : companyPlaceHolder,
-					dataSource: {
+				var companySettingViewModel =  kendo.observable({ 
+					company: companyPlaceHolder,
+					properteis : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
 							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
@@ -580,8 +578,14 @@
 						schema: {
 							data: "targetCompanyProperty",
 							model: Property
-						}
-					}
+						},
+						error : common.api.handleKendoAjaxError
+					})
+				} );				
+				companySetting.extModalWindow({
+					title : "회사 정보 변경",
+					template : $("#company-setting-modal-template").html(),
+					data :  kendo.observable({ company: companyPlaceHolder } )
 				});			
 			}						
 			companySetting.data('kendoExtModalWindow').show();
