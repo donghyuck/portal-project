@@ -903,8 +903,7 @@
 			if( typeof that.options.dataSource === 'object'){
 				if( typeof that.options.dataSource.error  ===  UNDEFINED ){
 					that.options.dataSource.error = handleKendoAjaxError;
-				}
-				
+				}				
 				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
 				if (that.options.autoBind) {    
 					that.dataSource.fetch();
@@ -915,7 +914,6 @@
 				that.refresh();
 			});					
 			*/
-
 		},
 		_modal : function () {
 			var that = this ;
@@ -938,14 +936,39 @@
 			}));
 			
 			if( typeof  that.options.data === 'object' )
-				kendo.bind( that._modal(), that.options.data );
+				kendo.bind( that._modal(), that.options.data );			
 			
-			alert( stringify (that.options.data) );
-			
+			if( $.isArray( that.options.items ) ){
+				$.each( that.options.items, function ( i, item ){
+					if( item.name === 'grid' ){							
+						$('#' + item.renderTo ).kendoGrid({
+							that.dataSource,
+							columns: [
+								{ title: "속성", field: "name" },
+								{ title: "값",   field: "value" },
+								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+							],
+							pageable: false,
+							resizable: true,
+							editable : true,
+							scrollable: true,
+							//height: 350,
+							toolbar: [
+								{ name: "create", text: "추가" },
+								{ name: "save", text: "저장" },
+								{ name: "cancel", text: "취소" }
+							],				     
+							change: function(e) {
+							}
+						});						
+					}					
+				});
+			}
 			that._modal().css('z-index', '2000');			
 			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
-			
+				
+				
 			});				
 		},
 		_dialogTemplate : function (){
