@@ -454,8 +454,7 @@
 		}	
 		
 		function setAnnounceEditorSource( source ){
-			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
-			
+			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;			
 			if( source instanceof Announce ){		
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
 					$('#announce-editor').data("announcePlaceHolder", new Announce());
@@ -464,9 +463,8 @@
 			}else{
 				$('#announce-editor').data("announcePlaceHolder").reset();
 				$('#announce-editor').data("announcePlaceHolder").objectType = _objectType;
-			}	
-			
-			alert(   source instanceof Announce  + ":"+_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;
+			}				
+			alert( (  source instanceof Announce ) + ":"+_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;
 		}
 				
 		function showAnnouncePanel (){		
