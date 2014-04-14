@@ -1083,16 +1083,18 @@
 				#if( type == 'createLink' ){ #
 					<div class="form-horizontal">
 						<div class="form-group">
-							<label for="editor-hyperlink-text-input" class="col-sm-2 control-label">표시할 텍스트</label>
+							<label class="col-sm-2 control-label">표시할 텍스트</label>
 								<div class="col-sm-10">
 									<input type="text" class="form-control" placeholder="URL">
 								</div>
 							</div>						
-							<label for="editor-hyperlink-url-input" class="col-sm-2 control-label">웹주소</label>
+							
+							<label class="col-sm-2 control-label">웹주소</label>
 								<div class="col-sm-10">
-									<input type="url" class="form-control" placeholder="URL">
+									<input type="url" class="form-control">
 								</div>
 							</div>
+							
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10">
 									<div class="checkbox">
