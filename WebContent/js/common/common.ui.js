@@ -946,13 +946,10 @@
 			
 			that.element.children( '.modal').css('z-index', '2000');			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
-				alert('show');
 				if( that.options.type == 'createLink' ){
-					that._data.linkUrl = "";
-					that._data.linkTitle = "";
-					that._data.linkTarget = false ;
+					that.element.find('input').val('');
+					that.element.find('input[type="checkbox"]').removeAttr('checked');
 				}
-				that._changeState(false);
 			});
 			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
