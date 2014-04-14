@@ -95,12 +95,12 @@
 							  </div>
 							  <div class="form-group">
 							    <label>도메인</label>
-							    <input type="text" class="form-control" placeholder="도메인 (예. www.demo.com)">
+							     <input type="text" class="form-control" placeholder="도메인">
+							    <p class="help-block">예시ㅏ) www.demo.com</p>
 							  </div>
 							  <div class="form-group">
 							    <label>회사 소개</label>
-							     <input type="text" class="form-control" placeholder="도메인 (예. www.demo.com)">
-							    <p class="help-block">Example block-level help text here.</p>
+							     <input type="text" class="form-control">
 							  </div>
 							
 							</div>			
