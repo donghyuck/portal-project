@@ -952,7 +952,10 @@
 				}
 				that._changeState(false);
 			});				
-			that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
+			
+			that.element.find('.modal-footer .btn.custom-update').click( function() {
+				that.trigger(APPLY, { html: LINK_VALUE_TEMPLATE (that._data) } );				
+			} );
 		},
 		_dialogTemplate : function (){
 			var that = this ;			
