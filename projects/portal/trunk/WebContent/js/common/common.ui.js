@@ -955,8 +955,8 @@
 	});
 	
 	$.fn.extend( { 
-		extEditorPopup : function ( options ) {
-			return new common.ui.extEditorPopup ( this , options );		
+		extModalWindow : function ( options ) {
+			return new common.ui.extModalWindow ( this , options );		
 		}
 	});	
 })(jQuery);
