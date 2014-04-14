@@ -557,7 +557,7 @@
 			}			
 
 			var companySetting = $("#"+ renderToString);
-			if( !companySetting.data('extModalWindow') ){			
+			if( !companySetting.data('kendoExtModalWindow') ){			
 				companySetting.extModalWindow({
 					title : "회사 정보 변경"	
 				});			
