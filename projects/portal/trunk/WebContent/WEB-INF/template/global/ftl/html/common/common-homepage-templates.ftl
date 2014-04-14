@@ -1083,18 +1083,18 @@
 					<div class="form">
 						<div class="form-group">
 							<label class="control-label">표시할 텍스트</label>
-							<input type="text" class="form-control" >
+							<input type="text" class="form-control" data-bind="value:linkTitle">
 						</div>						
 						
 						<div class="form-group">	
 							<label class="control-label">웹주소</label>
-							<input type="url" class="form-control" placeholder="http://">
+							<input type="url" class="form-control" placeholder="http://" data-bind="value:linkUrl">
 						</div>
 							
 						<div class="form-group">
 								<div class="checkbox">
 								<label>
-									<input type="checkbox"> 새창에서 링크 열기
+									<input type="checkbox" data-bind="checked:linkTarget" > 새창에서 링크 열기
 								</label>
 								</div>
 						</div>
