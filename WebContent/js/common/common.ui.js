@@ -935,7 +935,10 @@
 						that._changeState(true);
 					}					
 				});
-			}			
+			}	
+			
+			kendo.bind( that.element, that._data )
+			
 			that.element.children( '.modal').css('z-index', '2000');
 			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
