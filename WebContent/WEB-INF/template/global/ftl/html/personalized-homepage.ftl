@@ -558,7 +558,6 @@
 				var imageBrowser = $('#image-broswer').extImageBrowser({
 					template : $("#image-broswer-template").html(),
 					apply : function(e){						
-					alert( e );
 						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						imageBrowser.close();
 					}
@@ -567,8 +566,11 @@
 				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
 					type : 'createLink',
 					title : "하이퍼링크 삽입",
-					template : $("#editor-popup-template").html(),
-					editor :  renderTo
+					template : $("#editor-popup-template").html().
+					apply : function(e){						
+						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
+						hyperLinkPopup.close();
+					}
 				});
 				
 				renderTo.kendoEditor({
