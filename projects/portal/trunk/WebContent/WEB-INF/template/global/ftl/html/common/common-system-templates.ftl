@@ -109,7 +109,7 @@
 								<div data-role="grid"
 									date-scrollable="false"
 									data-editable="true"
-									data-toolbar="['create', 'save']"
+									data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
 									data-columns="[
 										{ 'title': '이름',  'field': 'name', 'width': 270 },
 										{ 'title': '값', 'field': 'value' }
