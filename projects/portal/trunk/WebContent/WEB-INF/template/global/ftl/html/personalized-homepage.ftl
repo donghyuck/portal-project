@@ -460,12 +460,12 @@
 					$('#announce-editor').data("announcePlaceHolder", new Announce());					
 				}									
 				if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
-					$('#announce-editor').data("announcePlaceHolder").objectType = _objectType;
+					$('#announce-editor').data("announcePlaceHolder").set("objectType" , _objectType);
 				} 				
 				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 					
 			}else{
 				$('#announce-editor').data("announcePlaceHolder").reset();
-				$('#announce-editor').data("announcePlaceHolder").objectType = _objectType;
+				$('#announce-editor').data("announcePlaceHolder").set("objectType" , _objectType);
 			}				
 			alert( (  source instanceof Announce ) + ":"+_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;
 		}
