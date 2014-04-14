@@ -919,7 +919,8 @@
 				title : that.options.title || ""
 			}));
 			
-			kendo.bind( that.element, that._data );	
+			if( ! typeof  that.options.data === UNDEFINED )
+				kendo.bind( that.element, that.options.data );
 			
 			that.element.children( '.modal').css('z-index', '2000');			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
