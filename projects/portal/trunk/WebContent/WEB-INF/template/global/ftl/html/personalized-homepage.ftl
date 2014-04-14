@@ -553,10 +553,8 @@
 				$('#announce-editor input[name="announce-type"]:last').click();
 			}				
 			
-			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
-			
-			$('#announce-editor .modal').modal('show');
-		
+			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');							
+			$('#announce-editor .modal').modal('show');		
 		}		
 
 		function createEditor( renderTo ){
