@@ -575,7 +575,7 @@
 					<div class="panel panel-default" style="min-height:300px;">
 						<div class="panel-heading" style="padding:5px;">						
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu"><i class="fa fa-cog"></i>회사 정보변경</button>
+								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu"><i class="fa fa-cog"></i> 회사 정보변경</button>
 							</div>
 							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
