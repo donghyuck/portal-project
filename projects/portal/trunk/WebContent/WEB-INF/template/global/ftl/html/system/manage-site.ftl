@@ -576,7 +576,7 @@
 						<div class="panel-heading" style="padding:5px;">
 							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu"><i class="fa fa-sitemap"></i> 메뉴</button>
-							</div>
+							</div>-->
 							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
@@ -601,7 +601,11 @@
 												<tr>
 													<th><small>도메인</small></th>								
 													<td><span data-bind="text: domainName"></span></td>
-												</tr>											
+												</tr>		
+												<tr>
+													<th><small>담당자</small></th>								
+													<td><span data-bind="text: user.username"></span></td>
+												</tr>																							
 												<tr>
 													<th><small>설명</small></th>
 													<td><span data-bind="text: description"></span></td>
