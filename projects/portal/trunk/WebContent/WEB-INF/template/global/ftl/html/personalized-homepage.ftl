@@ -467,7 +467,8 @@
 				if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
 					$('#announce-editor').data("announcePlaceHolder").set("objectType" , _objectType);
 				} 				
-				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 					
+				source.copy( $('#announce-editor').data("announcePlaceHolder")) ;
+				alert( $('#announce-editor').data("announcePlaceHolder").objectType);
 			}else{
 				$('#announce-editor').data("announcePlaceHolder").reset();
 				$('#announce-editor').data("announcePlaceHolder").set("objectType" , _objectType);
