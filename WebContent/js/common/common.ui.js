@@ -903,6 +903,10 @@
 			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
 		},
+		data: function() {
+			var that = this ;
+			return that._data;
+		}
 		_modal : function () {
 			var that = this ;
 			return  that.element.children('.modal');
@@ -924,7 +928,7 @@
 				type : that.options.type 
 			}));					
 			
-			if( that.options == 'createLink' ){
+			if( that.options.type == 'createLink' ){
 				that._data = kendo.observable({ 
 					linkUrl : "",
 					linkTitle : "",
