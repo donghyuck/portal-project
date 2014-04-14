@@ -384,6 +384,7 @@
 		function createNoticeGrid(){
 			if( !$("#announce-grid").data('kendoGrid') ){				
 				$("#announce-grid").data('announceSourcePlaceHolder', 30);
+				
 				$("#announce-grid").kendoGrid({
 					dataSource : new kendo.data.DataSource({
 						transport: {
@@ -486,7 +487,7 @@
 		function createAnnounceEditor(){								
 			if( $('#announce-editor').text().trim().length == 0 ){			
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce({}));										
+					$('#announce-editor').data("announcePlaceHolder", new Announce());										
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
 				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );				
@@ -535,7 +536,7 @@
 			}			
 			// save button disable.. 	
 			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
-				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceSourcePlaceHolder').objectType  ) ;
+				//$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceSourcePlaceHolder')  ) ;
 			}
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
 				$('#announce-editor input[name="announce-type"]:last').click();
