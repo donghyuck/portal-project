@@ -489,6 +489,7 @@
 		}
 		
 		function createAnnounceEditor(){
+			
 			if( $('#announce-editor').text().trim().length == 0 ){			
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
@@ -515,8 +516,7 @@
 					if( data.startDate >= data.endDate  ){
 						$("#announce-editor .status").html( template({ message: "시작일자가 종료일자보다 이후일 수 없습니다."  }) );
 						return ;
-					}		
-					
+					}					
 					$("#announce-editor").data( "announcePlaceHolder" ).user = null;					
 					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;					
 					$.ajax({
@@ -534,19 +534,29 @@
 					});
 				});						
 			}			
-			// save button disable.. 	
-			alert( kendo.stringify( $('#announce-editor').data("announcePlaceHolder") )   );
 			
-			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
-				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceTargetPlaceHolder')  ) ;
+			if( $('#announce-editor').data("announcePlaceHolder").announceId > 0 ){
+				if( !$('#announce-editor .modal-body .page-header').hasClass('hide') ){
+					$('#announce-editor .modal-body .page-header').addClass('hide');
+				}
+			}else{
+				if( !$('#announce-editor .modal-body .page-header').hasClass('hide') ){
+					$('#announce-editor .modal-body .page-header').addClass('hide');					
+				}else{
+					$('#announce-editor .modal-body .page-header').removeClass('hide');
+				}			
 			}
+			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 30){				
 				$('#announce-editor input[name="announce-type"]:first').click();
 			}else{			
 				$('#announce-editor input[name="announce-type"]:last').click();
 			}				
+			
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
+			
 			$('#announce-editor .modal').modal('show');
+		
 		}		
 
 		function createEditor( renderTo ){
