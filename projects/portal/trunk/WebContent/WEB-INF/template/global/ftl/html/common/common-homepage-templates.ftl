@@ -478,7 +478,7 @@
 				</div>
 			-->	
 				<div class='modal-body'>			
-					<div class="page-header text-primary" data-bind="invisible: announceId">
+					<div class="page-header text-primary">
 						<h5 >
 						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
 						<div class="btn-group" data-toggle="buttons">
