@@ -1102,6 +1102,8 @@
 				# } #
 				</div>
 				<div class='modal-footer'>		
+					<button type="button" class="btn btn-primary custom-update" disabled="disabled">확인</button>	
+					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>				
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
