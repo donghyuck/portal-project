@@ -565,7 +565,7 @@
 					}
 				});				
 				
-				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
+				var hyperLinkPopup = $('#editor-popups').extEditorPopup({
 					type : 'createLink',
 					title : "하이퍼링크 삽입",
 					editor :  renderTo
