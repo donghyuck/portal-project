@@ -293,6 +293,7 @@
 		});	
 	}	
 	
+
 	common.api.handleKendoAjaxError = function (xhr) {
 		var message = "";
 		if (xhr.status == 0) {
