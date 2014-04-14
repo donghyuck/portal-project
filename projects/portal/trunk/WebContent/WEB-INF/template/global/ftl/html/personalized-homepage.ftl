@@ -552,7 +552,9 @@
 			$('#announce-editor .modal').modal('show');		
 		}		
 
+
 		function createEditor( renderTo ){
+		
 			if(!renderTo.data("kendoEditor") ){			
 				var imageBrowser = $('#image-broswer').extImageBrowser({
 					template : $("#image-broswer-template").html(),
@@ -562,13 +564,19 @@
 						imageBrowser.close();
 					}
 				});				
+				
+				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
+					type : 'createLink'
+					editor :  renderTo
+				});
+				
 				renderTo.kendoEditor({
 						tools : [
 							'bold',
 							'italic',
 							'insertUnorderedList',
 							'insertOrderedList',
-							'createLink',
+							//'createLink',
 							'unlink',
 							{	
 								name: "insertImage",
@@ -577,9 +585,13 @@
 									return false;
 								}
 							},
-							//{	
-							//	name: "viewHtml"
-							//},
+							{	
+								name: "createLink",
+								exec: function(e){
+									hyperLinkPopup.show();
+									return false;
+								}								
+							},
 							'viewHtml'
 						],
 						stylesheets: [
