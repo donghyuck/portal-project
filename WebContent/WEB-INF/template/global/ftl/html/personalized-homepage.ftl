@@ -579,7 +579,13 @@
 							'italic',
 							'insertUnorderedList',
 							'insertOrderedList',
-							//'createLink',
+							{	
+								name: "createLink",
+								exec: function(e){
+									hyperLinkPopup.show();
+									return false;
+								}								
+							},
 							'unlink',
 							{	
 								name: "insertImage",
@@ -587,13 +593,6 @@
 									imageBrowser.show();
 									return false;
 								}
-							},
-							{	
-								name: "createLink",
-								exec: function(e){
-									hyperLinkPopup.show();
-									return false;
-								}								
 							},
 							'viewHtml'
 						],
