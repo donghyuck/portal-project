@@ -83,7 +83,7 @@
 						<div class="row">
 						
 							<div class="col-sm-6">
-								<div class="page-header text-primary">
+								<div class="panel-header text-primary">
 									<h5 >
 									<small><i class="fa fa-info"></i> 속성 버튼을 클릭하면 시스템 내부적으로 사용되는 속성를 수정할 수 있습니다. </small>
 									<button type="button" class="btn btn-info  btn-control-group btn-sm" data-toggle="button" data-action="details">속성</button>
