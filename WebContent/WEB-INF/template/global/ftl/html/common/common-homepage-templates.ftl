@@ -521,7 +521,7 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 </script>
-
+<!--
 <script type="text/x-kendo-tmpl" id="announcement-edit-template">		
 	<div  class="form">
 		<div class="form-group">
@@ -547,7 +547,7 @@
 		<button type="button" class="btn btn-danger custom-delete" ><i class="fa fa-trash-o"></i> 삭제</button>			
 		# } #
 	</div>
-</script>
+</script>-->
 
 <script type="text/x-kendo-tmpl" id="announcement-template">
 	<tr class="announce-item" onclick="viewAnnounce(#: announceId#);">
