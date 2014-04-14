@@ -873,14 +873,12 @@
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
+			that._dataSource();
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, CLICK],
 		options : {
 			name: "ExtModalWindow",
-			transport:{		
-				
-			} 
 		},
 		show: function() {
 			var that = this ;			
@@ -898,6 +896,22 @@
 			var that = this;
 			Widget.fn.destroy.call(that);			
 			$(that.element).remove();
+		},
+		_dataSource: function() {
+			var that = this ;
+			// returns the datasource OR creates one if using array or configuration object
+			if( typeof that.options.dataSource === 'object'){
+				that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
+				if (that.options.autoBind) {    
+					that.dataSource.fetch();
+				}
+			}
+			/*
+			that.dataSource.bind(CHANGE, function() {
+				that.refresh();
+			});					
+			*/
+
 		},
 		_modal : function () {
 			var that = this ;
