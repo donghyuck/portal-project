@@ -931,7 +931,6 @@
 					linkTarget : false					
 				});	
 				that._data.bind("change", function(e){
-					alert( e.field );	
 					if( e.field ){
 						that._changeState(true);
 					}					
