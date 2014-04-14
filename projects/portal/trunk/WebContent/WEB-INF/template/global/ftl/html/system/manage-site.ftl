@@ -31,6 +31,7 @@
 					}
 				});				
 				$("#navbar").data("companyPlaceHolder", new Company({ companyId: ${action.user.companyId} }));
+				
 				var selectedSocial = {};																	
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
@@ -54,12 +55,14 @@
 								 
 				 // 4. PAGE MAIN		
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );
+				 
 				 createSiteGrid();
+				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
-						menu : function(e){
-							alert("menu modal");	 						
+						setting : function(e){
+							showCompanySetting();					
 						},
 						group : function(e){
 							topBar.go('main-group.do');				
@@ -75,8 +78,7 @@
 						}			  						 
 					}}
 				);
-								 						
-				
+								
 				$('#myTab').on( 'show.bs.tab', function (e) {		
 					//e.preventDefault();			
 					var show_bs_tab = $(e.target);
@@ -547,6 +549,11 @@
 			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
 			$("#navbar").data("kendoExtTopNavBar").go("view-site.do");							
 		}
+		
+		function showCompanySetting(){
+			
+		}
+		
 		</script>
 		<style>					
 		
@@ -575,7 +582,7 @@
 					<div class="panel panel-default" style="min-height:300px;">
 						<div class="panel-heading" style="padding:5px;">						
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu"><i class="fa fa-cog"></i> 회사 정보변경</button>
+								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>
 							</div>
 							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
