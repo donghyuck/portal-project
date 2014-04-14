@@ -443,8 +443,6 @@
 		<small class="text-muted"><span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>
 		<p class="text-muted">
 			<small><span class="label label-default">생성일</span> #: kendo.toString(creationDate, "g") #</small>
-		</p>
-		<p class="text-muted">	
 			<small><span class="label label-default">수정일</span> #: kendo.toString(modifiedDate, "g") #</small>
 		</p>
 	</div>
