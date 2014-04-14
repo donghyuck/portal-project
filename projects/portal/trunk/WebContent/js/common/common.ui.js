@@ -919,7 +919,7 @@
 				title : that.options.title || ""
 			}));
 			
-			if( ! typeof  that.options.data === UNDEFINED )
+			if( typeof  that.options.data === 'object' )
 				kendo.bind( that._modal(), that.options.data );
 			
 			alert( stringify (that.options.data) );
