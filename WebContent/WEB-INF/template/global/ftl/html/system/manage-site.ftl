@@ -551,8 +551,8 @@
 		}
 		
 		function showCompanySetting(){
-			var renderToString = "#company-setting-modal";
-			if( $(renderToString).length == 0 ){
+			var renderToString = "company-setting-modal";
+			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
 		}
