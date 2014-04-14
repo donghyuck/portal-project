@@ -913,57 +913,7 @@
 			that.element.html(template);					
 			that.element.children( '.modal').css('z-index', '2000');
 			
-			that.element.find('.modal-body input[name="custom-selected-url"]').on('change', function () {				
-				var form_input = $(this);				
-				var selected_img =   $("#" + that.options.guid[TAB_PANE_URL_ID] ).children('img');	
-				if( form_input.val().length == 0 ) {
-					if(! selected_img.hasClass('hide') )
-						selected_img.addClass('hide');								
-					if(form_input.parent().hasClass('has-error') )
-						form_input.parent().removeClass('has-error');		
-					if(form_input.parent().hasClass('has-success') )
-						form_input.parent().removeClass('has-success');							
-					that._changeState(false);
-				}else{								
-					selected_img.attr('src', form_input.val()).load(function(){
-						if(form_input.parent().hasClass('has-error') )
-							form_input.parent().removeClass('has-error');					
-						form_input.parent().addClass('has-success');
-						selected_img.removeClass('hide');		
-						that._changeState(true);						
-					}).error(function(){					
-						if( ! selected_img.hasClass('hide') )
-							selected_img.addClass('hide');						
-						if(form_input.parent().hasClass('has-success') )
-							form_input.parent().removeClass('has-success');					
-						form_input.parent().addClass('has-error');		
-						that._changeState(false);
-					});					
-				}	
-			});
-			
-			that.element.find('.modal-footer .btn.custom-insert-img').on('click', function () {				
-				var tab_pane = that._activePane();			
-				var selected_url ;
-				switch( tab_pane.attr('id') ){
-					case that.options.guid[TAB_PANE_URL_ID] :					
-						selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();					
-						break;
-					case that.options.guid[TAB_PANE_DOMAIN_ID] :
-						var my_list_view = tab_pane.find('.panel-body div');
-						var linkId = my_list_view.data("linkId");
-						selected_url = URL_TEMPLATE({ key : linkId });
-						my_list_view.data("linkId", null );						
-						break;
-					case that.options.guid[TAB_PANE_MY_ID] :		
-						var my_list_view = tab_pane.find('.panel-body div');
-						var linkId = my_list_view.data("linkId");
-						selected_url = URL_TEMPLATE({ key : linkId });
-						my_list_view.data("linkId", null );
-					break;	
-				}								
-				
-				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
+			that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 				
 			});
 		},
