@@ -962,7 +962,9 @@
 						my_list_view.data("linkId", null );
 					break;	
 				}								
+				
 				that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
+				
 			});
 		},
 		/*
