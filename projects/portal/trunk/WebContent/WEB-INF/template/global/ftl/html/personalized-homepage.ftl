@@ -455,10 +455,13 @@
 		
 		function setAnnounceEditorSource( source ){
 			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;			
-			if( source instanceof Announce ){		
-				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce());
+			if( source instanceof Announce ){						
+				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' ){
+					$('#announce-editor').data("announcePlaceHolder", new Announce());					
+				}									
+				if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
 					$('#announce-editor').data("announcePlaceHolder").objectType = _objectType;
+				} 				
 				source.copy( $('#announce-editor').data("announcePlaceHolder")) ; 					
 			}else{
 				$('#announce-editor').data("announcePlaceHolder").reset();
