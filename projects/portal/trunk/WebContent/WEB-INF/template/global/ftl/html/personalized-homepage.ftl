@@ -473,8 +473,7 @@
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 			var template = kendo.template($('#announcement-view-template').html());			
 			$("#announce-view").html( template(announcePlaceHolder) );							
-			kendo.bind($("#announce-view"), announcePlaceHolder );			
-			
+			kendo.bind($("#announce-view"), announcePlaceHolder );	
 			if( announcePlaceHolder.editable ){							
 				$("#announce-view button[class*=custom-edit]").click( function (e){					
 					setAnnounceEditorSource(announcePlaceHolder);
@@ -486,13 +485,12 @@
 			} );									
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
-
-
-
+		
 		function createAnnounceEditor(){								
 			if( $('#announce-editor').text().trim().length == 0 ){			
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
-					$('#announce-editor').data("announcePlaceHolder", new Announce());										
+					$('#announce-editor').data("announcePlaceHolder", new Announce());			
+												
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
 				kendo.bind($('#announce-editor'), $('#announce-editor').data("announcePlaceHolder") );				
