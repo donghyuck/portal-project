@@ -383,7 +383,7 @@
 		<!-- ============================== -->								
 		function createNoticeGrid(){
 			if( !$("#announce-grid").data('kendoGrid') ){				
-				$("#announce-grid").data('announceSourcePlaceHolder', 30);				
+				$("#announce-grid").data('announceTargetPlaceHolder', 30);				
 				$("#announce-grid").kendoGrid({
 					dataSource : new kendo.data.DataSource({
 						transport: {
@@ -396,7 +396,7 @@
 								if (operation != "read" && options.models) {
 									return {models: kendo.stringify(options.models)};
 								}else{								
-									return {objectType: $("#announce-grid").data('announceSourcePlaceHolder') };								
+									return {objectType: $("#announce-grid").data('announceTargetPlaceHolder') };								
 								}
 							} 
 						},
@@ -437,10 +437,10 @@
 				});		
 
 				common.api.handlePanelHeaderActions($("#announce-panel"));
-				common.ui.handleActionEvents( $('input[name="announce-selected-source"]'), { event: 'change' , handler: function(e){				
-					var oldSelectedSource = $("#announce-grid").data('announceSourcePlaceHolder');
+				common.ui.handleActionEvents( $('input[name="announce-selected-target"]'), { event: 'change' , handler: function(e){				
+					var oldSelectedSource = $("#announce-grid").data('announceTargetPlaceHolder');
 					if( oldSelectedSource != this.value ){
-						$("#announce-grid").data('announceSourcePlaceHolder', this.value );
+						$("#announce-grid").data('announceTargetPlaceHolder', this.value );
 						$("#announce-grid").data('kendoGrid').dataSource.read();
 					}					
 				}});
@@ -454,7 +454,8 @@
 		}	
 		
 		function setAnnounceEditorSource( source ){
-			var _objectType = $("#announce-grid").data('announceSourcePlaceHolder') ;
+			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
+			
 			if( source instanceof Announce ){		
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
 					$('#announce-editor').data("announcePlaceHolder", new Announce());
@@ -539,7 +540,7 @@
 			// save button disable.. 	
 			alert( $('#announce-editor').data("announcePlaceHolder").announceId  );
 			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
-				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceSourcePlaceHolder')  ) ;
+				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceTargetPlaceHolder')  ) ;
 			}
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 30){				
 				$('#announce-editor input[name="announce-type"]:last').click();
@@ -1321,10 +1322,10 @@
 								&nbsp;
 								<div class="btn-group" data-toggle="buttons">
 									<label class="btn btn-info btn-sm active">
-										<input type="radio" name="announce-selected-source" value="30" >사이트
+										<input type="radio" name="announce-selected-target" value="30" >사이트
 									</label>
 									<label class="btn btn-info btn-sm ">
-										<input type="radio" name="announce-selected-source" value="1">회사
+										<input type="radio" name="announce-selected-target" value="1">회사
 									</label>
 								</div>	
 								<#if action.webSite.user.userId == action.user.userId >
