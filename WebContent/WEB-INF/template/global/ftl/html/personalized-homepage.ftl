@@ -454,33 +454,27 @@
 		}	
 		
 		function setAnnounceEditorSource( source ){		
+		
 			if( !$('#announce-editor').data("announcePlaceHolder") ){
 				$('#announce-editor').data("announcePlaceHolder", new Announce());
 			}
 			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
-			var _source = $('#announce-editor').data("announcePlaceHolder");
+			var _target =  $('#announce-editor').data("announcePlaceHolder") ;
 			
-			alert(  _source.objectType  ) ;
-		
 			if( source instanceof Announce ){					
-				
-				
-				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' ){
-					$('#announce-editor').data("announcePlaceHolder", new Announce());					
-				}							
-				
-				alert( $('#announce-editor').data("announcePlaceHolder").announceId);
-						
-				if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
-					$('#announce-editor').data("announcePlaceHolder").set("objectType" , _objectType);
+				if( _target.announceId < 1 ){
+					_target.set("objectType" , _objectType);
 				} 				
-				source.copy( $('#announce-editor').data("announcePlaceHolder")) ;
-				alert( $('#announce-editor').data("announcePlaceHolder").objectType);
+				source.copy( _target ) ;
 			}else{
-				$('#announce-editor').data("announcePlaceHolder").reset();
-				$('#announce-editor').data("announcePlaceHolder").set("objectType" , _objectType);
+				_target.reset();
+				_target.set("objectType" , _objectType);
 			}				
+	
+	
 			alert( (  source instanceof Announce ) + ":"+_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;
+	
+	
 		}
 				
 		function showAnnouncePanel (){		
