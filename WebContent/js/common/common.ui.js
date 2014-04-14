@@ -922,6 +922,8 @@
 			if( ! typeof  that.options.data === UNDEFINED )
 				kendo.bind( that._modal(), that.options.data );
 			
+			alert( stringify (that.options.data) );
+			
 			that._modal().css('z-index', '2000');			
 			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
