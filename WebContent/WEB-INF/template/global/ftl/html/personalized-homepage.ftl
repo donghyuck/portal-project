@@ -541,9 +541,9 @@
 				$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceTargetPlaceHolder')  ) ;
 			}
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 30){				
-				$('#announce-editor input[name="announce-type"]:last').click();
-			}else{			
 				$('#announce-editor input[name="announce-type"]:first').click();
+			}else{			
+				$('#announce-editor input[name="announce-type"]:last').click();
 			}				
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			$('#announce-editor .modal').modal('show');
