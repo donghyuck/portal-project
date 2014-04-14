@@ -563,6 +563,9 @@
 					title : "회사 정보 변경",
 					template : $("#company-setting-modal-template").html(),
 					data : companyPlaceHolder,
+					items : [
+						{ name : "grid" , renderTo : "company-prop-grid" }
+					],
 					dataSource: {
 						transport: { 
 							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
