@@ -996,7 +996,7 @@
 <!-- Image Broswer Template                            -->
 <!-- ============================== -->
 <script id="image-broswer-template" type="text/x-kendo-template">
-	<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
+	<div class='modal editor-popup  fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
 		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class='modal-header'>
