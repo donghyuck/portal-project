@@ -1471,7 +1471,7 @@
 		</section>		
 		
 		<section id="image-broswer" class="image-broswer"></section>
-		<section id="editor-oppup"></section>
+		<section id="editor-popup"></section>
 		<section id="announce-editor"></section>
 		
 		<!-- END MAIN CONTENT -->		
