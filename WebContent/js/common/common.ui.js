@@ -926,9 +926,9 @@
 			
 			if( that.options == 'createLink' ){
 				that._data = kendo.observable({ 
-					link-url: "",
-					link-title: "",
-					link-target: false					
+					link_url : "",
+					link_title : "",
+					link_target : false					
 				});	
 				that._data.bind("change", function(e){
 					if( e.field ){
