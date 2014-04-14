@@ -869,7 +869,7 @@
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	JSON = 'json',		
-	VALUE_TEMPLATE = kendo.template( '<img src="#: url #" class="img-responsive"/>' ),
+	LINK_VALUE_TEMPLATE = kendo.template( '<a href="#: linkUrl #" title="#: linkTitle #" #if (linkTarget) { # target="_blank"  # }#>#= linkTitle #</a>' ),
 	handleKendoAjaxError = common.api.handleKendoAjaxError ;
 	
     common.ui.extEditorPopup = Widget.extend({
@@ -950,9 +950,9 @@
 					that.element.find('input').val('');
 					that.element.find('input[type="checkbox"]').removeAttr('checked');
 				}
-			});
-			
-			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
+				that._changeState(false);
+			});				
+			that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 		},
 		_dialogTemplate : function (){
 			var that = this ;			
