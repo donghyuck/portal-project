@@ -466,7 +466,7 @@
 				$('#announce-editor').data("announcePlaceHolder").objectType = _objectType;
 			}	
 			
-			alert( _objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;
+			alert(   source instanceof Announce  + ":"_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;
 		}
 				
 		function showAnnouncePanel (){		
