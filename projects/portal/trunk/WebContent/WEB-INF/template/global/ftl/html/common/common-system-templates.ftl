@@ -88,7 +88,7 @@
 							<div class="page-header text-primary">
 								<h5 >
 								<small><i class="fa fa-info"></i> 미디어관리 버튼을 클릭하면 회사가 보유한 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
-								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details">미디어 관리</button>
+								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details">속성</button>
 								</h5>
 							</div>		
   <div class="form-group">
