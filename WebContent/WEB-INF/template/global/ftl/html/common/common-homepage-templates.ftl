@@ -1079,7 +1079,6 @@
 					<h5 class='modal-title'>#= title #</h5>
 				</div>
 				<div class='modal-body'>
-				#: type #
 				#if( type == 'createLink' ){ #
 					<div class="form-horizontal">
 						<div class="form-group">
