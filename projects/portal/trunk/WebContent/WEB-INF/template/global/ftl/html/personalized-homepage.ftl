@@ -538,9 +538,9 @@
 			if( $('#announce-editor').data("announcePlaceHolder").announceId < 1 ){
 				//$('#announce-editor').data("announcePlaceHolder").set("objectType", $("#announce-grid").data('announceSourcePlaceHolder')  ) ;
 			}
-			if($('#announce-editor').data("announcePlaceHolder").objectType == 1){				
+			if($('#announce-editor').data("announcePlaceHolder").objectType == 30){				
 				$('#announce-editor input[name="announce-type"]:last').click();
-			}else{				
+			}else if($('#announce-editor').data("announcePlaceHolder").objectType == q){			
 				$('#announce-editor input[name="announce-type"]:first').click();
 			}				
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');				
