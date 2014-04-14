@@ -460,7 +460,7 @@
 			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
 			var _source = $('#announce-editor').data("announcePlaceHolder");
 			
-			alert( _source.toJSON() ) ;
+			alert(  _source.objectType  ) ;
 		
 			if( source instanceof Announce ){					
 				
