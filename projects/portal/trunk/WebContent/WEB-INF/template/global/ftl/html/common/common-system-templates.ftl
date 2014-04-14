@@ -106,7 +106,17 @@
 							</div>			
 							<!-- attributes -->
 							<div class="col-sm-6">
-							
+								<div data-role="grid"
+									date-scrollable="false"
+									data-editable="true"
+									data-toolbar="['create', 'save']"
+									data-columns="[
+										{ 'title': '이름',  'field': 'name', 'width': 270 },
+										{ 'title': '값', 'field': 'value' },
+										{ 'command':  '{ 'name': 'destroy', 'text':'삭제' },  'title': '&nbsp;', 'width': 100 }'
+									]"
+									data-bind="source: properties,
+									style="width: 480px; height: 200px"></div>
 							</div>											
 						</div>
 					</div>
