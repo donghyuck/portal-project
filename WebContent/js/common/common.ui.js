@@ -875,11 +875,6 @@
     common.ui.extEditorPopup = Widget.extend({
 		init: function(element, options) {			
 			var that = this;		 
-			
-			if( element.length == 0  )
-			{
-				alert( 0 );
-			}
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
 			that.refresh();		
