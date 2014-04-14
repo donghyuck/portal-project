@@ -90,6 +90,10 @@ img.img-full-height {
 /* Bootstrap customize                             */
 /* -------------------------------------------- */
 
+.editor-popup .modal-dialog {
+	margin: 40px auto;
+}
+
 .fa>span {
 	font-family: "나눔 고딕", "BM_NANUMGOTHIC";
 } 
