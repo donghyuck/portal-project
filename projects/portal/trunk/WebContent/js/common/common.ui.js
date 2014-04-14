@@ -881,7 +881,7 @@
 		},
 		events: [ERROR, CHANGE, APPLY],
 		options : {
-			name: "ExtHyperLinkPopup",
+			name: "ExtEditorPopup",
 			transport:{		
 				
 			} 
@@ -910,7 +910,7 @@
 		_createDialog : function () {			
 			var that = this ;
 			var template = that._dialogTemplate();			
-			that.element.html(template({ title : that.options.title || "" }));					
+			that.element.html(template({ title : that.options.title || "", type : that.options.type }));					
 			that.element.children( '.modal').css('z-index', '2000');
 			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
