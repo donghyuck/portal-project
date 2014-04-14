@@ -468,7 +468,6 @@
 				_target.reset();
 				_target.set("objectType" , _objectType);
 			}
-			alert( (  source instanceof Announce ) + ":"+_objectType + ">"  +  $('#announce-editor').data("announcePlaceHolder").objectType ) ;	
 		}
 				
 		function showAnnouncePanel (){			
@@ -517,8 +516,7 @@
 						$("#announce-editor .status").html( template({ message: "시작일자가 종료일자보다 이후일 수 없습니다."  }) );
 						return ;
 					}					
-					$("#announce-editor").data( "announcePlaceHolder" ).user = null;					
-					alert( kendo.stringify ($("#announce-editor").data( "announcePlaceHolder" )) ) ;					
+					$("#announce-editor").data( "announcePlaceHolder" ).user = null;
 					$.ajax({
 						dataType : "json",
 						type : 'POST',
