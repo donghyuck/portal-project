@@ -909,27 +909,12 @@
 		},
 		_createDialog : function () {			
 			var that = this ;
-			var template = that._dialogTemplate();			
-			
+			var template = that._dialogTemplate();				
 			that.element.html(template({ title : that.options.title || "", type : that.options.type }));					
 			that.element.children( '.modal').css('z-index', '2000');
 			
 			//that.trigger(APPLY, { html: VALUE_TEMPLATE({ url : selected_url })} );
 		},
-		/*
-		_activePane : function () {
-			var that = this ;
-			return that.element.find( '.tab-content > .tab-pane.active' ) ;
-		},
-		_changeState : function ( enabled ) {
-			var that = this ;
-			if ( enabled ){
-				that.element.find('.modal-footer .btn.custom-insert-img').removeAttr('disabled');			
-			}else{
-				that.element.find('.modal-footer .btn.custom-insert-img').attr('disabled', 'disabled');			
-			}			
-		},		
-		*/
 		_dialogTemplate : function (){
 			var that = this ;			
 			if( typeof that.options.template === UNDEFINED){
