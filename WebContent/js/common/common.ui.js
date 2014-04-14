@@ -878,7 +878,7 @@
 			
 			if( element.length == 0  )
 			{
-				alert( element.parent().html());
+				alert( 0 );
 			}
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;		
