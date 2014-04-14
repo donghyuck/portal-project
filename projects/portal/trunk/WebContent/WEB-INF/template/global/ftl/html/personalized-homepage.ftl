@@ -567,6 +567,7 @@
 				
 				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
 					type : 'createLink',
+					title : "하이퍼링크 삽입",
 					editor :  renderTo
 				});
 				
