@@ -455,7 +455,7 @@
 		
 		function setAnnounceEditorSource( source ){
 			var _objectType = $("#announce-grid").data('announceTargetPlaceHolder') ;
-			
+			alert( _objectType ) ;
 			if( source instanceof Announce ){		
 				if( typeof $('#announce-editor').data("announcePlaceHolder") === 'undefined' )
 					$('#announce-editor').data("announcePlaceHolder", new Announce());
