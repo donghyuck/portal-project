@@ -910,6 +910,7 @@
 		_createDialog : function () {			
 			var that = this ;
 			var template = that._dialogTemplate();			
+			
 			that.element.html(template({ title : that.options.title || "", type : that.options.type }));					
 			that.element.children( '.modal').css('z-index', '2000');
 			
