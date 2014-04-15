@@ -23,11 +23,11 @@
 				kendo.culture("ko-KR");
 										
 				// 2. ACCOUNTS LOAD		
-				var currentUser = new User({});
+				var currentUser = new User();
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
 					authenticate : function( e ){
-						currentUser = e.token;						
+						currentUser = e.token.copy(currentUser);							
 					}
 				});				
 				
