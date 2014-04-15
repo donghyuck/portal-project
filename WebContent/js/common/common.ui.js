@@ -1133,6 +1133,7 @@
 	TAB_PANE_URL_ID = "url_guid" ,
 	TAB_PANE_UPLOAD_ID = "upload_guid" ,
     TAB_PANE_MY_ID = "my_guid" ,
+    TAB_PANE_WEBSITE_ID = "website_guid" ,
     TAB_PANE_DOMAIN_ID = "domain_guid" ,
 	UNDEFINED = 'undefined',
 	POST = 'POST',
@@ -1151,7 +1152,8 @@
 				url_guid:common.api.guid().toLowerCase(),
 				upload_guid:common.api.guid().toLowerCase(),
 				my_guid:common.api.guid().toLowerCase(),
-				domain_guid:common.api.guid().toLowerCase()
+				domain_guid:common.api.guid().toLowerCase(),
+				website_guid:common.api.guid().toLowerCase()
 			};			
 			that.refresh();		
 		},
@@ -1275,6 +1277,77 @@
 						my_list_view.data('kendoListView').clearSelection();
 					}
 					break;
+				case "#" + that.options.guid[TAB_PANE_DOMAIN_ID] :
+					var my_list_view = tab_pane.find('.panel-body div');				
+					var my_list_pager = tab_pane.find('.panel-footer div');		
+					if(!my_list_view.data('kendoListView') ){
+						my_list_view.kendoListView({ 
+							dataSource: {
+								type: 'json',
+								transport: {
+									read: { url:'/community/list-my-website-image.do?output=json', type: 'POST' },
+									parameterMap: function (options, operation){
+										if (operation != "read" && options) {										                        								                       	 	
+											return { };									                            	
+										}else{
+											 return { startIndex: options.skip, pageSize: options.pageSize }
+										}
+									}
+								},			
+								pageSize: 12,
+								error:handleKendoAjaxError,
+								schema: {
+									model: Image,
+									data : "targetImages",
+									total : "totalTargetImageCount"
+								},
+								serverPaging: true
+							},
+							selectable: "single",									
+							change: function(e) {											
+								tab_pane.find('.panel-body.custom-selected-image').remove();
+								var data = this.dataSource.view() ;
+								var current_index = this.select().index();
+								var item = data[current_index];							
+								var imageId = item.imageId;								
+								if( imageId > 0 ){									
+									that._getImageLink( item , function ( data ) {
+										if( typeof data.imageLink ===  'object' ){
+											my_list_view.data("linkId" , data.imageLink.linkId );
+											that._changeState(true);											
+											var t = kendo.template(
+												'<div class="panel-body custom-selected-image">' + 
+												'<p><img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
+												'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
+											
+											tab_pane.find('.panel').prepend(
+												t( item )	
+											);											
+										}										
+									});									
+								}											
+							},
+							navigatable: false,
+							template: kendo.template($("#photo-list-view-template").html()),								
+							dataBound: function(e) {
+								tab_pane.find('.panel-body.custom-selected-image').remove();
+								that._changeState(false);
+							}
+						});							
+						my_list_view.on("mouseenter",  ".img-wrapper", function(e) {
+							kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+						}).on("mouseleave", ".img-wrapper", function(e) {
+							kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+						});	
+						my_list_pager.kendoPager({
+							refresh : true,
+							buttonCount : 5,
+							dataSource : my_list_view.data('kendoListView').dataSource
+						});						
+					}else{
+						my_list_view.data('kendoListView').clearSelection();
+					}
+					break;					
 				case "#" + that.options.guid[TAB_PANE_MY_ID] :					
 					var my_list_view = tab_pane.find('.panel-body div');				
 					var my_list_pager = tab_pane.find('.panel-footer div');		
@@ -1403,6 +1476,12 @@
 						selected_url = URL_TEMPLATE({ key : linkId });
 						my_list_view.data("linkId", null );						
 						break;
+					case that.options.guid[TAB_PANE_WEBSITE_ID] :
+						var my_list_view = tab_pane.find('.panel-body div');
+						var linkId = my_list_view.data("linkId");
+						selected_url = URL_TEMPLATE({ key : linkId });
+						my_list_view.data("linkId", null );						
+						break;						
 					case that.options.guid[TAB_PANE_MY_ID] :		
 						var my_list_view = tab_pane.find('.panel-body div');
 						var linkId = my_list_view.data("linkId");
