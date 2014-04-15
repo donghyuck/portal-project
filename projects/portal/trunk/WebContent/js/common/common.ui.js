@@ -916,14 +916,14 @@
 				title : that.options.title || ""
 			}));			
 			
-			if( typeof  that.options.data === 'object' ){
+			if( typeof  that.options.data === 'object' ){			
+				kendo.bind( that._modal(), that.options.data );
 				if ( that.options.data instanceof kendo.data.ObservableObject ) {
 					that.options.data.bind( "change", function(e){
 						alert( kendo.stringify(e));
 						that.trigger(CHANGE, { field : e.field });						
 					} );					
-				}				
-				kendo.bind( that._modal(), that.options.data );		
+				}					
 			}
 			
 			that._modal().css('z-index', '2000');				
