@@ -542,7 +542,7 @@
 		
 		function goSite (){					
 			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
-			$("#navbar").data("ExtNavbar").go("view-site.do");							
+			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 		
 		function showCompanySetting(){
