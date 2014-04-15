@@ -107,7 +107,7 @@
 							<div class="col-sm-6">
 								<div class="panel-header text-primary">
 									<h5 >
-									프로퍼티<small><i class="fa fa-info"></i> 프로퍼티는 변경 후 저장버튼을 클릭하여 반영하여야 합니다.</small>
+									프로퍼티 <small><i class="fa fa-info"></i> 프로퍼티는 변경 후 저장버튼을 클릭하여 반영하여야 합니다.</small>
 									</h5>
 								</div>								
 								<div data-role="grid"
