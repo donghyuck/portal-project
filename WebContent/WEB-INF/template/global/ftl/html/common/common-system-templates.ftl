@@ -27,6 +27,9 @@
 					<ul class="nav navbar-nav">						
 					<#assign webSiteMenu = action.getWebSiteMenu("SYSTEM_MENU") />
 					<#list webSiteMenu.components as item >
+						<#if item.roles ?? >
+						${item.roles}
+						</#if>		
 						<#if  item.components?has_content >
 						<li class="dropdown">
 							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${item.title}<b class="caret"></b></a>
