@@ -38,6 +38,7 @@
 										
 				// 3.MENU LOAD
 				var currentPageName = "MENU_1_1";
+				
 				var topBar = $("#navbar").extTopNavBar({ 
 					menu:"SYSTEM_MENU",
 					template : kendo.template($("#topnavbar-template").html() ),
