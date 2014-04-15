@@ -862,6 +862,7 @@
     trimSlashesRegExp = /(^\/|\/$)/g,
     CHANGE = "change",
     ERROR = "error",
+    SHOW = "show",
     CLICK = "click",
 	UNDEFINED = 'undefined',
 	POST = 'POST',
@@ -879,7 +880,7 @@
 		options : {
 			name: "ExtModalWindow",
 		},
-		show: function() {
+		open: function() {
 			var that = this ;			
 			that._modal().modal('show');
 		},
@@ -949,8 +950,7 @@
 			*/
 			that._modal().css('z-index', '2000');				
 			that.element.find('.modal').on('show.bs.modal' , function(e){
-				
-				
+				that.trigger(SHOW);				
 			});				
 		},
 		_dialogTemplate : function (){
