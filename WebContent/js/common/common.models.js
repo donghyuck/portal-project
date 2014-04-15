@@ -438,7 +438,7 @@ var User = kendo.data.Model.define( {
 			return false;    	
     },
     copy : function ( target ){
-    	target.set("userId", this.get("userId"));
+    	target.userId = this.get("userId");
     	target.set("username", this.get("username"));
     	target.set("name", this.get("name"));
     	target.set("email", this.get("email"));
@@ -449,7 +449,11 @@ var User = kendo.data.Model.define( {
     	target.set("nameVisible", this.get("nameVisible"));
     	target.set("emailVisible", this.get("emailVisible"));
     	target.set("properties", this.get("properties"));
+    	target.set("anonymous", this.get("anonymous"));
     	target.set("company", this.get("company"));		
+    	target.set("isSystem", this.get("isSystem"));
+    	if( typeof this.get("roles") === 'object' )
+    		target.set("roles", this.get("roles") );    	
     }
 });
 
