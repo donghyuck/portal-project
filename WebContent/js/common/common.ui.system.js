@@ -2,10 +2,74 @@
  * COMMON ADMIN UI DEFINE
  */
 /**
- *  extTopNavBar widget
+ *  extNavbar widget
  *  
  *  top navigation bar
  */
+(function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui =  common.ui || {};
+
+    var kendo = window.kendo,
+    Widget = kendo.ui.Widget,
+    isPlainObject = $.isPlainObject,
+    proxy = $.proxy,
+    extend = $.extend,
+    placeholderSupported = kendo.support.placeholder,
+    DataSource = kendo.data.DataSource,
+    browser = kendo.support.browser,
+    isFunction = kendo.isFunction,
+	UNDEFINED = 'undefined',
+	CHANGE = "change",
+	CLICK = "click",
+	SELECT = "select",
+	POST = 'POST',
+	JSON = 'json',		
+	handleKendoAjaxError = common.api.handleKendoAjaxError ;	
+    common.ui.extNavbar = Widget.extend({
+		init: function(element, options) {			
+			var that = this;
+			Widget.fn.init.call(that, element, options);			
+			options = that.options;			
+			if( typeof options.data === UNDEFINED )
+				options.data = {};
+			that._render();
+		},
+		options : {
+			name: "ExtNavbar"
+		},
+		events : [ SELECT ],
+		go : function ( action ){
+			var that = this ;
+			that.element.find("form[role='navigation']").attr("action", action ).submit();	
+		},
+		refresh: function () {			
+		},
+		_render: function () {
+			var that = this ;
+			var template = that._navbarTemplate();
+			that.element.html(template({ that.options.data }));					
+		},
+		_navbarTemplate : function (){
+			var that = this ;			
+			if( typeof that.options.template === UNDEFINED){
+				return kendo.template("" );		
+			}else 	if( typeof that.options.template === 'object'){
+				return that.options.template ;			
+			}
+			else if( typeof that.options.template === 'string'){
+				return kendo.template( that.options.template );
+			}
+		}
+	});
+	
+	$.fn.extend( { 
+		extNavbar : function ( options ) {
+			return new common.ui.extNavbar ( this , options );		
+		}
+	});	
+})(jQuery);
+
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui =  common.ui || {};
@@ -32,7 +96,8 @@
 			var that = this;
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;					
-			that._dataSource();
+			if( options.remote )
+				that._dataSource();
 		},
 		items : function () {
 			var that = this ;
@@ -42,6 +107,7 @@
 			name: "ExtTopNavBar",	
 			autoBind: true,
 			menu : null,
+			remote : false,
 			template : null
 		},
 		events : [ SELECT ],
