@@ -105,6 +105,7 @@
 							
 							</div>			
 							<!-- attributes -->
+							<!--
 							<div class="col-sm-6">
 								<div data-role="grid"
 									date-scrollable="false"
@@ -116,6 +117,7 @@
 									]"
 									data-bind="source: properties, visible: true,
 									style="width: 480px; height: 200px"></div>
+									-->
 							</div>											
 						</div>
 					</div>
