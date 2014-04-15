@@ -33,6 +33,9 @@
 			if( typeof options.data === UNDEFINED ){
 				options.data = {};
 			}
+			if( typeof options.items === UNDEFINED ){
+				options.items = [];
+			}
 			that.refresh();
 		},
 		options : {
@@ -45,9 +48,95 @@
 		},
 		refresh: function () {			
 			var that = this ;
+			var options = that.options;
 			var template = that._navbarTemplate();
-			alert( template ) ;
-			that.element.html(template( that.options.data ));					
+			that.element.html(template( options.data ));		
+			
+			if( $.isArray( options.items ) ){
+				$.each( options.items, function ( i, item ){
+					if ( typeof item ==='object'){
+						 if (item.name === 'companySelector' ){				
+							 if( typeof item.enabled === UNDEFINED){
+									item.enabled = false;								
+							}							
+							if( typeof item.dataTextField === UNDEFINED){
+								item.dataTextField = "displayName";
+							}							
+							if( typeof item.dataValueField === UNDEFINED){
+								item.dataValueField = "companyId";					
+							}							
+							if( typeof item.dataSource === UNDEFINED){
+									item.dataSource = {
+										transport: {
+											read: {
+												dataType: JSON,
+												url: '/secure/list-company.do?output=json',
+												type: POST
+											}
+										},
+										schema: { 
+											data: "companies",
+											model : Company
+										}
+									}
+							}
+							var companySelector = $( item.selector ).extDropDownList(item);
+						 }						
+					}
+				});				
+			}
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			if( $.isArray( options.items ) ){
+				$.each( options.items, function ( i, item ){
+					if( typeof item ==='string'){
+						
+					}else if ( typeof item ==='object'){
+						if( item.name === 'getMenuItem' ){
+							item.handler( that._getMenuItem( item.menu )	);					
+						}else if (item.name === 'companySelector' ){							
+							if( typeof item.enabled === UNDEFINED){
+								item.enabled = false;								
+							}							
+							if( typeof item.dataTextField === UNDEFINED){
+								item.dataTextField = "displayName";
+							}							
+							if( typeof item.dataValueField === UNDEFINED){
+								item.dataValueField = "companyId";					
+							}							
+							if( typeof item.dataSource === UNDEFINED){
+								item.dataSource = {
+									transport: {
+										read: {
+											dataType: JSON,
+											url: '/secure/list-company.do?output=json',
+											type: POST
+										}
+									},
+									schema: { 
+										data: "companies",
+										model : Company
+									}
+								}
+							}
+							var companySelector = $( item.selector ).extDropDownList(item);
+						}
+					}
+				});
+			}
+			
+			
+			
+			
+			
+			
 		},
 		_navbarTemplate : function (){
 			var that = this ;			
