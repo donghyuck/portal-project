@@ -557,7 +557,9 @@
 			}
 			var companySetting = $("#"+ renderToString);
 			if( !companySetting.data('kendoExtModalWindow') ){			
-				var companyPlaceHolder = $("#navbar").data("companyPlaceHolder");
+				
+				var companyPlaceHolder = new Company();
+				$("#navbar").data("companyPlaceHolder").copy(companyPlaceHolder);
 				var companySettingViewModel =  kendo.observable({ 
 					onChange: function(e){
 						alert( e );
@@ -584,7 +586,8 @@
 						},
 						error : common.api.handleKendoAjaxError
 					})
-				} );		
+				} );
+						
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
 					template : $("#company-setting-modal-template").html(),
