@@ -588,8 +588,7 @@
 					data :  companySettingViewModel
 				});			
 			}						
-			companySetting.data('kendoExtModalWindow').open();
-		
+			companySetting.data('kendoExtModalWindow').open();		
 		}
 		
 		</script>
