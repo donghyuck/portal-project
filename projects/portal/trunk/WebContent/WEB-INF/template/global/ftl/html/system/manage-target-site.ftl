@@ -570,7 +570,7 @@
 												</tr>	
 												<tr>
 													<th><small>담당자</small></th>								
-													<td><span data-bind="text: user.username">${action.targetWebSite.user.username}</span>(<span data-bind="text: user.name">${action.targetWebSite.user.name}</span>)</td>
+													<td><span data-bind="text: user.name">${action.targetWebSite.user.name}</span>(<span data-bind="text: user.username">${action.targetWebSite.user.username}</span>)</td>
 												</tr>		
 												<tr>
 													<th><small>설명</small></th>								
