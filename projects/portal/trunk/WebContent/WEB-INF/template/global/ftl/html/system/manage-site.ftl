@@ -39,6 +39,7 @@
 				var currentPageName = "MENU_1_2";
 				var topBar = $("#navbar").extNavbar({
 					template : $("#top-navbar-template").html(),
+					items : [ name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId} ]
 				});
 				
 				
