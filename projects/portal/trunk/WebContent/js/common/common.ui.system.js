@@ -9,7 +9,6 @@
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui =  common.ui || {};
-
     var kendo = window.kendo,
     Widget = kendo.ui.Widget,
     isPlainObject = $.isPlainObject,
@@ -31,9 +30,10 @@
 			var that = this;
 			Widget.fn.init.call(that, element, options);			
 			options = that.options;			
-			if( typeof options.data === UNDEFINED )
+			if( typeof options.data === UNDEFINED ){
 				options.data = {};
-			that._render();
+			}
+			that.refresh();
 		},
 		options : {
 			name: "ExtNavbar"
@@ -44,8 +44,6 @@
 			that.element.find("form[role='navigation']").attr("action", action ).submit();	
 		},
 		refresh: function () {			
-		},
-		_render: function () {
 			var that = this ;
 			var template = that._navbarTemplate();
 			that.element.html(template( that.options.data ));					
