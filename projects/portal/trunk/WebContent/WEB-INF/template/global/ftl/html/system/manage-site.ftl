@@ -554,8 +554,7 @@
 			var renderToString = "company-setting-modal";
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
-			}			
-
+			}
 			var companySetting = $("#"+ renderToString);
 			if( !companySetting.data('kendoExtModalWindow') ){			
 				var companyPlaceHolder = $("#navbar").data("companyPlaceHolder");
@@ -582,17 +581,14 @@
 						},
 						error : common.api.handleKendoAjaxError
 					})
-				} );				
-				
-				// companySettingViewModel.properties.read();
-				
+				} );		
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
 					template : $("#company-setting-modal-template").html(),
 					data :  companySettingViewModel
 				});			
 			}						
-			companySetting.data('kendoExtModalWindow').show();
+			companySetting.data('kendoExtModalWindow').open();
 		
 		}
 		
