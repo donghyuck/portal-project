@@ -559,6 +559,9 @@
 			if( !companySetting.data('kendoExtModalWindow') ){			
 				var companyPlaceHolder = $("#navbar").data("companyPlaceHolder");
 				var companySettingViewModel =  kendo.observable({ 
+					onChange: function(e){
+						alert( e );
+					},
 					isVisible: true,
 					company: companyPlaceHolder,
 					properties : new kendo.data.DataSource({
