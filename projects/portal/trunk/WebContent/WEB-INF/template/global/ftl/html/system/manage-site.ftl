@@ -583,12 +583,12 @@
 					})
 				} );				
 				
-				companySettingViewModel.properties.read();
+				// companySettingViewModel.properties.read();
 				
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
 					template : $("#company-setting-modal-template").html(),
-					data :  kendo.observable({ company: companyPlaceHolder } )
+					data :  companySettingViewModel
 				});			
 			}						
 			companySetting.data('kendoExtModalWindow').show();
