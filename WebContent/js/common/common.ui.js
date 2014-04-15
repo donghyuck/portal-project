@@ -917,11 +917,14 @@
 			}));			
 			
 			if( typeof  that.options.data === 'object' ){
+				if ( that.options.data instanceof kendo.data.ObservableObject ) {
+					that.options.data.bind( "change", function(e){
+						alert( kendo.stringify(e));
+						that.trigger(CHANGE, { field : e.field });						
+					} );					
+				}				
 				kendo.bind( that._modal(), that.options.data );		
 			}
-			
-			alert( that.options.data instanceof kendo.data.ObservableObject );
-			
 			
 			that._modal().css('z-index', '2000');				
 			that.element.find('.modal').on('show.bs.modal' , function(e){
