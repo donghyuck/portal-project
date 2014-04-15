@@ -46,6 +46,7 @@
 						change : function(data){
 							data.copy(companyPlaceHolder);
 							kendo.bind($("#company-info"), companyPlaceHolder );
+						}	
 					}]
 				});
 				
