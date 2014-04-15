@@ -48,7 +48,7 @@
 		_render: function () {
 			var that = this ;
 			var template = that._navbarTemplate();
-			that.element.html(template({ that.options.data }));					
+			that.element.html(template( that.options.data ));					
 		},
 		_navbarTemplate : function (){
 			var that = this ;			
