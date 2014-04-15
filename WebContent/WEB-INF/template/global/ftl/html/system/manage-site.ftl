@@ -565,7 +565,7 @@
 							success : function(response){
 								window.location.reload( true );
 							},
-							error:options.error || common.api.handleKendoAjaxError,
+							error:common.api.handleKendoAjaxError,
 							dataType : "json"
 						});
 					},
