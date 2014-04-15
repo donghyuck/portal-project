@@ -56,6 +56,9 @@
 						menu : function(e){
 							alert("menu modal");	 						
 						},
+						setting : function(e){
+							alert("menu modal");	 						
+						},						
 						group : function(e){
 							topBar.go('main-group.do');				
 						}, 	
@@ -67,24 +70,6 @@
 						},
 						connect : function(e){
 							alert("social modal");	 					
-						},	
-						update : function(e){
-						    $.ajax({
-								type : 'POST',
-								url : '/secure/get-site.do?output=json' ,
-								data: {targetSiteId : $("#site-info").data("sitePlaceHolder").webSiteId },
-								success : function(response){
-									if( response.error ){ 												
-										alert( kendo.stringify(response) );									
-									} else {										
-										var site = new common.models.WebSite(response.targetWebSite);
-										site.copy($("#site-info").data("sitePlaceHolder"));
-										kendo.bind($("#site-info"), $("#site-info").data("sitePlaceHolder") );
-									}
-								},
-								error: common.api.handleKendoAjaxError,
-								dataType : "json"
-							});									
 						},
 						pages : function(e){
 							alert("pages");	 					
@@ -531,7 +516,7 @@
 					<div class="panel panel-default" style="min-height:300px;">
 						<div class="panel-heading" style="padding:5px;">
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="update"><i class="fa fa-cog"></i> 사이트 정보변경</button>
+								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 사이트 정보변경</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu"><i class="fa fa-sitemap"></i> 메뉴</button>
 							</div>
 							<div class="btn-group">
