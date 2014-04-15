@@ -563,19 +563,16 @@
 
 				var companySettingViewModel =  kendo.observable({ 
 					onSave : function(e){
-					alert( kendo.stringify( this.get('company') ) );
-					/*
 						$.ajax({
 							type : 'POST',
 							url : '${request.contextPath}/secure/update-company.do?output=json',
-							data: { item : options.onetime },
+							data: { companyId : this.get('company').getCompanyId, item : kendo.stringify( this.get('company') ) },
 							success : function(response){
 								window.location.reload( true );
 							},
 							error:options.error || common.api.handleKendoAjaxError,
 							dataType : "json"
 						});
-						*/
 					},
 					isVisible: true,
 					company: companyPlaceHolder,
