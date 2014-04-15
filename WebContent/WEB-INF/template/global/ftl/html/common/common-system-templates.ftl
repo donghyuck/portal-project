@@ -120,7 +120,7 @@
 										{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
 									]"
 									data-bind="source: properties, visible: isVisible"
-									style="height: 200px"></div>
+									style="height: 300px"></div>
 							</div>											
 						</div>
 					</div>
