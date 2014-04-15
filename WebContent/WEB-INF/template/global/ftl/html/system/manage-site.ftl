@@ -590,8 +590,8 @@
 						alert( $(this).html() );
 					},
 					change : function (e) {
-						if( e.field.match('^company.')){
-						alert( $(e.element).html() );
+						if( e.field.match('^company.')){							
+							$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
 						}
 					}
 				});			
