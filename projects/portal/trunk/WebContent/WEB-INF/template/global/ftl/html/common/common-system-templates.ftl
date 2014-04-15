@@ -35,6 +35,11 @@
 							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${item.title}<b class="caret"></b></a>
 							<ul class="dropdown-menu">
 							<#list item.components as sub_item >
+					
+						<#if sub_item.roles ?? >
+						${sub_item.roles}
+						</#if>								
+							
 							<#if sub_item.components?has_content >
 								<li class="dropdown-submenu">
 									<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${sub_item.title}</a>
