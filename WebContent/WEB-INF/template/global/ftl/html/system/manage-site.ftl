@@ -558,10 +558,11 @@
 
 				var companySettingViewModel =  kendo.observable({ 
 					onSave : function(e){
+					alert(this.get('company').companyId);
 						$.ajax({
 							type : 'POST',
 							url : '${request.contextPath}/secure/update-company.do?output=json',
-							data: { companyId : this.get('company').getCompanyId, item : kendo.stringify( this.get('company') ) },
+							data: { companyId : this.get('company').companyId, item : kendo.stringify( this.get('company') ) },
 							success : function(response){
 								window.location.reload( true );
 							},
