@@ -561,7 +561,7 @@
 				var companyPlaceHolder = new Company();
 				$("#navbar").data("companyPlaceHolder").copy(companyPlaceHolder);
 				var companySettingViewModel =  kendo.observable({ 
-					onChange: function(e){
+					onSave : function(e){
 						alert( e );
 					},
 					isVisible: true,
@@ -586,15 +586,11 @@
 						},
 						error : common.api.handleKendoAjaxError
 					})
-				} );
-						
+				} );						
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
 					template : $("#company-setting-modal-template").html(),
 					data :  companySettingViewModel,
-					show : function (e){
-						alert( $(this).html() );
-					},
 					change : function (e) {
 						if( e.field.match('^company.')){							
 							$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
