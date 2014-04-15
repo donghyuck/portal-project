@@ -42,7 +42,7 @@
 									</ul>
 								</li>
 								<#else>								
-								<li><a href="${sub_item.page}">${sub_item.title}</a></li>
+								<li><a href="${sub_item.page}" data-description="${sub_item.description}" >${sub_item.title}</a></li>
 							</#if>								
 							</#list>
 							</ul>
