@@ -1,7 +1,7 @@
 	<!- ================================ ->
 	<!-- SECURE TOOLBAR 										 -->
 	<!- ================================ ->
-	<script id="topnavbar-template" type="text/x-kendo-template">
+	<script id="top-navbar-template" type="text/x-kendo-template">
 		<div class="navbar navbar-inverse navbar-fixed-top " role="navigation">
 			<div class="container-fluid">
 				<div class="navbar-header">
