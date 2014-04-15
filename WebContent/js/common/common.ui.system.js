@@ -38,6 +38,10 @@
 			}
 			that.refresh();
 		},
+		items : function () {
+			var that = this ;
+			return that.options.items;
+		},		
 		options : {
 			name: "ExtNavbar"
 		},
