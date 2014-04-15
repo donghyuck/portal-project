@@ -562,7 +562,7 @@
 				$("#navbar").data("companyPlaceHolder").copy(companyPlaceHolder);
 				var companySettingViewModel =  kendo.observable({ 
 					onSave : function(e){
-						alert( e );
+						alert( kendo.stringify( e )  );
 					},
 					isVisible: true,
 					company: companyPlaceHolder,
