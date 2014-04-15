@@ -390,7 +390,18 @@ var Company = kendo.data.Model.define( {
         creationDate: { type: "date" },
         memberCount: { type: "number", editable: true, defaultValue: 0  },
         adminCount: { type: "number", editable: true, defaultValue: 0  }
-    }
+    },
+    copy : function ( target ){
+    	target.companyId = this.get("companyId"));
+    	target.set("name", this.get("name"));
+    	target.set("displayName", this.get("displayName"));
+    	target.set("domainName", this.get("domainName"));
+    	target.set("description", this.get("description"));
+    	target.set("modifiedDate", this.get("modifiedDate"));
+    	target.set("creationDate", this.get("creationDate"));
+    	target.set("memberCount", this.get("memberCount"));
+    	target.set("adminCount", this.get("adminCount"));		
+    }    
 });
 
 
