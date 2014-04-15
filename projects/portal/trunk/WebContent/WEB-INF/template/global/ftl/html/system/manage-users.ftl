@@ -33,7 +33,7 @@
 				});					
 								
 				// 3.MENU LOAD			
-				var companyPlaceHolder = new Company({ companyId: ${action.user.companyId} });
+				var companyPlaceHolder = new Company({ companyId: ${action.targetCompany.companyId} });
 				$("#navbar").data("companyPlaceHolder", companyPlaceHolder);				
 				var topBar = $("#navbar").extNavbar({
 					template : $("#top-navbar-template").html(),
