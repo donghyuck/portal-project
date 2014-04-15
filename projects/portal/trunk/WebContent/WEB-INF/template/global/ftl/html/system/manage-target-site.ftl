@@ -570,7 +570,16 @@
 												</tr>	
 												<tr>
 													<th><small>담당자</small></th>								
-													<td><span data-bind="text: user.name">${action.targetWebSite.user.name}</span>(<span data-bind="text: user.username">${action.targetWebSite.user.username}</span>)</td>
+													<td>
+														<div class="media">
+															<a class="pull-left" href="#">
+																<img class="media-object" src="..." alt="...">
+															</a>
+															<div class="media-body">
+																<h6 class="media-heading"><span data-bind="text: user.name">${action.targetWebSite.user.name}</span>(<span data-bind="text: user.username">${action.targetWebSite.user.username}</span>)</h6>
+															</div>
+														</div>													
+													</td>
 												</tr>		
 												<tr>
 													<th><small>설명</small></th>								
