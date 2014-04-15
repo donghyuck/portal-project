@@ -37,7 +37,7 @@
 									<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${sub_item.title}</a>
 									<ul class="dropdown-menu">
 										<#list sub_item.components as sub_sub_item >
-										<li><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>
+										<li><a href="${sub_sub_item.page}" data-description="${sub_sub_item.description}" >${ sub_sub_item.title }</a></li>
 										</#list>
 									</ul>
 								</li>
