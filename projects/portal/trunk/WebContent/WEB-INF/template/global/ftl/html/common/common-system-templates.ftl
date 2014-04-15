@@ -84,7 +84,7 @@
 							<div class="col-sm-6">
 								<div class="panel-header text-primary">
 									<h5 >
-									<small><i class="fa fa-info"></i> 속성 버튼을 클릭하면 시스템 내부적으로 사용되는 속성를 수정할 수 있습니다. </small>
+									<small><i class="fa fa-info"></i> 변경후에 확인 버튼을 클릭하세요. </small>
 									
 									</h5>
 								</div>		
