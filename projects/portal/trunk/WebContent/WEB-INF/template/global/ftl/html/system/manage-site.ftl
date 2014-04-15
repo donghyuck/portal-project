@@ -560,9 +560,22 @@
 				
 				var companyPlaceHolder = new Company();
 				$("#navbar").data("companyPlaceHolder").copy(companyPlaceHolder);
+
 				var companySettingViewModel =  kendo.observable({ 
 					onSave : function(e){
-						alert( kendo.stringify( e )  );
+					alert( kendo.stringify( this.get('company') ) );
+					/*
+						$.ajax({
+							type : 'POST',
+							url : '${request.contextPath}/secure/update-company.do?output=json',
+							data: { item : options.onetime },
+							success : function(response){
+								window.location.reload( true );
+							},
+							error:options.error || common.api.handleKendoAjaxError,
+							dataType : "json"
+						});
+						*/
 					},
 					isVisible: true,
 					company: companyPlaceHolder,
