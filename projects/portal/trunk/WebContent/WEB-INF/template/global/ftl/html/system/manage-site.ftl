@@ -590,7 +590,9 @@
 						alert( $(this).html() );
 					},
 					change : function (e) {
-						alert( e.field);
+						if( e.field.match('^company.')){
+						alert( $(this).html() );
+						}
 					}
 				});			
 			}						
