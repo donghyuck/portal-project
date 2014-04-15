@@ -392,7 +392,7 @@ var Company = kendo.data.Model.define( {
         adminCount: { type: "number", editable: true, defaultValue: 0  }
     },
     copy : function ( target ){
-    	target.companyId = this.get("companyId"));
+    	target.companyId = this.get("companyId");
     	target.set("name", this.get("name"));
     	target.set("displayName", this.get("displayName"));
     	target.set("domainName", this.get("domainName"));
