@@ -73,12 +73,8 @@
 				
 								 
 				 // 4. PAGE MAIN		
-				 /*
-				 
-				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );
-				 
-				 createSiteGrid();
-				 
+				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );				 
+				 createSiteGrid();				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
@@ -118,7 +114,6 @@
 					}	
 				});				
 				$('#myTab a:first').tab('show') ;
-				*/
 			}	
 		}]);
 
