@@ -31,15 +31,22 @@
 					}
 				});				
 				
-				$("#navbar").data("companyPlaceHolder", new Company({ companyId: ${action.user.companyId} }));
-				
+				var companyPlaceHolder = new Company({ companyId: ${action.user.companyId} });
+				$("#navbar").data("companyPlaceHolder", companyPlaceHolder);
 								
 				var selectedSocial = {};																	
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
 				var topBar = $("#navbar").extNavbar({
 					template : $("#top-navbar-template").html(),
-					items : [ name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId} ]
+					items : [{ 
+						name:"companySelector", 
+						selector: "#companyDropDownList", 
+						value: ${action.user.companyId}, 
+						change : function(data){
+							data.copy(companyPlaceHolder);
+							kendo.bind($("#company-info"), companyPlaceHolder );
+					}]
 				});
 				
 				
