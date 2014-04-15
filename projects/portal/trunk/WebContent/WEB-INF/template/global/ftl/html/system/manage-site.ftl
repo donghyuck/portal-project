@@ -585,7 +585,13 @@
 				companySetting.extModalWindow({
 					title : "회사 정보 변경",
 					template : $("#company-setting-modal-template").html(),
-					data :  companySettingViewModel
+					data :  companySettingViewModel,
+					show : function (e){
+						alert( $(this).html() );
+					},
+					change : function (e) {
+						alert( e.field);
+					}
 				});			
 			}						
 			companySetting.data('kendoExtModalWindow').open();		
