@@ -598,7 +598,8 @@
 						}
 					}
 				});			
-			}						
+			}				
+			companySetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');	
 			companySetting.data('kendoExtModalWindow').open();		
 		}
 		
