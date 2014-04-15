@@ -101,6 +101,7 @@
 							    <label>회사 소개</label>
 							     <input type="text" class="form-control" data-bind="value:company.description">
 							  </div>	
+							</div>  
 							<!-- attributes -->
 							<div class="col-sm-6">
 								<div class="panel-header text-primary">
