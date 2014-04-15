@@ -105,6 +105,12 @@
 							</div>			
 							<!-- attributes -->
 							<div class="col-sm-6">
+								<div class="panel-header text-primary">
+									<h5 >
+									프로퍼티<small><i class="fa fa-info"></i> 프로퍼티는 변경 후 저장버튼을 클릭하여 반영하여야 합니다.</small>
+									<button type="button" class="btn btn-info  btn-control-group btn-sm" data-toggle="button" data-action="details">속성</button>
+									</h5>
+								</div>								
 								<div data-role="grid"
 									date-scrollable="false"
 									data-editable="true"
