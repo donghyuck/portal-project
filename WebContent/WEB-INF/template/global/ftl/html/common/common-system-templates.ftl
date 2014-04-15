@@ -25,22 +25,6 @@
 				</div>			
 				<div class="collapse navbar-collapse navbar-ex1-collapse">					
 					<ul class="nav navbar-nav">
-					# for (var i = 0; i < data.length; i++) { #
-						# var item =data[i] ; #
-						#if ( item.components.length > 0) { #	
-						<li class="dropdown">
-							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">#= item.title # <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-							# for ( var j = 0 ; j <item.components.length ; j ++ ) { #
-								# var sub_item =item.components[j] ; #
-								<li><a href="\\#" #if (sub_item.page != 'null' && sub_item.page != '')  { # action="#=sub_item.page#" description="#=sub_item.description#" # } # >#= sub_item.title #</a></li>
-							# } #
-							</ul>							
-						</li>
-						# } else { #	
-						<li><a href="\\#">#= item.title #</a></li>
-						# } #
-					# } #
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="${request.contextPath}/main.do"><i class="fa fa-home"></i> 사용자 홈</a></li>
