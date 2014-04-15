@@ -124,7 +124,7 @@
 						</div>
 					</div>
 					<div class='modal-footer'>		
-						<button type="button" class="btn btn-info  btn-control-group btn-sm" data-toggle="button" data-action="details" disabled>확인</button>		
+						<button type="button" class="btn btn-info  btn-control-group btn-sm" data-toggle="button" disabled>확인</button>		
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
