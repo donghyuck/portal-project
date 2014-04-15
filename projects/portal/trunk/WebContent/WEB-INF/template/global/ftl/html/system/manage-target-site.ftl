@@ -531,7 +531,7 @@
 					<div class="panel panel-default" style="min-height:300px;">
 						<div class="panel-heading" style="padding:5px;">
 							<div class="btn-group">
-								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="update"><i class="fa fa-cog"></i> 설정</button>
+								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="update"><i class="fa fa-cog"></i> 사이트 정보변경</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu"><i class="fa fa-sitemap"></i> 메뉴</button>
 							</div>
 							<div class="btn-group">
