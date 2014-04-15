@@ -883,7 +883,7 @@
 		open: function() {
 			var that = this ;			
 			that._modal().modal('show');
-			that.trigger(SHOW, {});
+			that.trigger(SHOW, { element: that._modal()[0] });
 		},
 		close: function () {
 			var that = this ;
@@ -920,7 +920,7 @@
 				kendo.bind( that._modal(), that.options.data );
 				if ( that.options.data instanceof kendo.data.ObservableObject ) {
 					that.options.data.bind( "change", function(e){
-						that.trigger(CHANGE, { field : e.field , data : that.options.data });						
+						that.trigger(CHANGE, { field : e.field , element: that._modal()[0], data : that.options.data });						
 					} );					
 				}					
 			}			
