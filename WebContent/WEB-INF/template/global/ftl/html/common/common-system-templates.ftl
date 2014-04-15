@@ -27,21 +27,12 @@
 					<ul class="nav navbar-nav">						
 					<#assign webSiteMenu = action.getWebSiteMenu("SYSTEM_MENU") />
 					<#list webSiteMenu.components as item >
-						<#if item.roles ?? >
-						${item.roles}
-						</#if>		
 						<#if  item.components?has_content >
 						<li class="dropdown">
 							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${item.title}<b class="caret"></b></a>
 							<ul class="dropdown-menu">
-							<#list item.components as sub_item >
-					
-						<#if sub_item.roles ?? >
-							<#list StringUtils.split( sub_item.roles , ",") as role >  
-
-							</#list>							
-						</#if>								
-							
+							<#list item.components as sub_item >	
+							<#if WebSiteUtils.isUserAccessAllowed(request, sub_item ) >						
 							<#if sub_item.components?has_content >
 								<li class="dropdown-submenu">
 									<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${sub_item.title}</a>
@@ -53,6 +44,7 @@
 								</li>
 								<#else>								
 								<li><a href="${sub_item.page}" data-description="${sub_item.description}" >${sub_item.title}</a></li>
+							</#if>
 							</#if>								
 							</#list>
 							</ul>
