@@ -32,6 +32,7 @@
 				});				
 				
 				var companyPlaceHolder = new Company({ companyId: ${action.user.companyId} });
+				
 				$("#navbar").data("companyPlaceHolder", companyPlaceHolder);
 								
 				var selectedSocial = {};																	
@@ -49,29 +50,7 @@
 						}	
 					}]
 				});
-				
-				
-				/*
-				var topBar = $("#navbar").extTopNavBar({ 
-					menu:"SYSTEM_MENU",
-					template : kendo.template($("#topnavbar-template").html() ),
-					items: [
-						{ 
-							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.user.companyId},
-							change : function(data){
-								$("#navbar").data("companyPlaceHolder", data) ;
-								kendo.bind($("#company-info"), data );
-							}
-						},
-						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
-								kendo.bind($(".page-header"), data );   
-							} 
-						}
-					]
-				});
-				*/
-				
-								 
+												 
 				 // 4. PAGE MAIN		
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );				 
 				 createSiteGrid();				 
