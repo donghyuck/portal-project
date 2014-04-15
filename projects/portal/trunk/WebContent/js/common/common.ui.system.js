@@ -46,6 +46,7 @@
 		refresh: function () {			
 			var that = this ;
 			var template = that._navbarTemplate();
+			alert( template ) ;
 			that.element.html(template( that.options.data ));					
 		},
 		_navbarTemplate : function (){
