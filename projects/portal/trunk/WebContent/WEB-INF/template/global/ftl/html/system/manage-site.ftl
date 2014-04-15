@@ -591,7 +591,7 @@
 					},
 					change : function (e) {
 						if( e.field.match('^company.')){
-						alert( $(this).html() );
+						alert( $(e.element).html() );
 						}
 					}
 				});			
