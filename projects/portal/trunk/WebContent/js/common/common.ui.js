@@ -915,8 +915,14 @@
 			that.element.html(template({ 
 				title : that.options.title || ""
 			}));			
-			if( typeof  that.options.data === 'object' )
-				kendo.bind( that._modal(), that.options.data );			
+			
+			if( typeof  that.options.data === 'object' ){
+				kendo.bind( that._modal(), that.options.data );		
+			}
+			
+			alert( that.options.data instanceof kendo.data.ObservableObject );
+			
+			
 			that._modal().css('z-index', '2000');				
 			that.element.find('.modal').on('show.bs.modal' , function(e){
 				that.trigger(SHOW);				
