@@ -51,7 +51,7 @@
 		_navbarTemplate : function (){
 			var that = this ;			
 			if( typeof that.options.template === UNDEFINED){
-				return kendo.template("" );		
+				return kendo.template( "<div class='navbar navbar-inverse navbar-fixed-top' role='navigation'></div>" );		
 			}else 	if( typeof that.options.template === 'object'){
 				return that.options.template ;			
 			}
