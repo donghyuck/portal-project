@@ -37,7 +37,9 @@
 							<#list item.components as sub_item >
 					
 						<#if sub_item.roles ?? >
-						${sub_item.roles}
+							<#list StringUtils.split( sub_item.roles , ",") as role >  
+
+							</#list>							
 						</#if>								
 							
 							<#if sub_item.components?has_content >
