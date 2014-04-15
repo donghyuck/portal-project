@@ -24,7 +24,15 @@
 					</div>					
 				</div>			
 				<div class="collapse navbar-collapse navbar-ex1-collapse">					
-					<ul class="nav navbar-nav">
+					<ul class="nav navbar-nav">						
+					<#assign webSiteMenu = action.getWebSiteMenu("SYSTEM_MENU") />
+					<#list webSiteMenu.components as item >
+						<#if  item.components?has_content >
+						
+						<#else>
+							<li><a href="#">${ item.title }</a></li>
+						</#if>							
+					</#list>	
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="${request.contextPath}/main.do"><i class="fa fa-home"></i> 사용자 홈</a></li>
