@@ -23,33 +23,29 @@
 				kendo.culture("ko-KR");
 										
 				// 2. ACCOUNTS LOAD						
-				var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});	
-				var currentUser = new User({});				
+				// var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});	
+				var currentUser = new User();
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
 					authenticate : function( e ){
-						currentUser = e.token;						
+						currentUser = e.token.copy(currentUser);							
 					}
-				});						
+				});					
 								
 				// 3.MENU LOAD			
-				var currentPageName = "MENU_1_4";
-				var topBar = $("#navbar").extTopNavBar({ 
-					menu:"SYSTEM_MENU",
-					template : kendo.template($("#topnavbar-template").html() ),
-					items: [
-						{ 
-							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.targetCompany.companyId},
-							change : function(data){
-								$("#navbar").data("companyPlaceHolder", data) ;
-								kendo.bind($("#site-info"), data );
-							}
-						},
-						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
-								kendo.bind($(".page-header"), data );   
-							} 
-						}
-					]
+				var companyPlaceHolder = new Company({ companyId: ${action.user.companyId} });
+				$("#navbar").data("companyPlaceHolder", companyPlaceHolder);				
+				var topBar = $("#navbar").extNavbar({
+					template : $("#top-navbar-template").html(),
+					items : [{ 
+						name:"companySelector", 
+						selector: "#companyDropDownList", 
+						value: ${action.user.companyId}, 
+						change : function(data){
+							data.copy(companyPlaceHolder);
+							// kendo.bind($("#company-info"), companyPlaceHolder );
+						}	
+					}]
 				});
 		
 				// 4. CONTENT
@@ -544,12 +540,10 @@
 		<div class="container-fluid">	
 			<div class="row">			
 				<div class="col-12 col-lg-12">					
-					<div class="page-header">
-						<h1>
-							<span data-bind="text: title"></span>
-							<small><i class="fa fa-quote-left"></i>&nbsp;<span data-bind="text: description"></span>&nbsp;<i class="fa fa-quote-right"></i></small>							
-						</h1>
-					</div>			
+				<div class="page-header">
+					<#assign selectedMenuItem = action.getWebSiteMenu("SYSTEM_MENU", "MENU_1_4") />
+					<h1>${selectedMenuItem.title}     <small><i class="fa fa-quote-left"></i>&nbsp;${selectedMenuItem.description}&nbsp;<i class="fa fa-quote-right"></i></small></h1>
+				</div>			
 				</div>		
 			</div>
 			<div class="row">		
