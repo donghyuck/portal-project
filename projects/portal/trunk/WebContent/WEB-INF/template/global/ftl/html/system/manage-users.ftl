@@ -81,7 +81,7 @@
                         transport: { 
                             read: { url:'${request.contextPath}/secure/list-user.do?output=json', type: 'POST' },
 	                        parameterMap: function (options, type){
-	                            return { startIndex: options.skip, pageSize: options.pageSize,  companyId: selectedCompany.companyId }
+	                            return { startIndex: options.skip, pageSize: options.pageSize,  companyId: companyPlaceHolder.companyId }
 	                        }
                         },
                         schema: {
