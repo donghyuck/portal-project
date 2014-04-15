@@ -80,8 +80,7 @@
 						<h5 class='modal-title'>#= title #</h5>
 					</div>
 					<div class='modal-body'>
-						<div class="row">
-						
+						<div class="row">						
 							<div class="col-sm-6">
 								<div class="panel-header text-primary">
 									<h5 >
