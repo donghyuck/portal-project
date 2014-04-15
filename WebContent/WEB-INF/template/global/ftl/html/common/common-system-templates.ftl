@@ -100,14 +100,12 @@
 							  <div class="form-group">
 							    <label>회사 소개</label>
 							     <input type="text" class="form-control" data-bind="value:company.description">
-							  </div>
-							
-							</div>			
+							  </div>	
 							<!-- attributes -->
 							<div class="col-sm-6">
 								<div class="panel-header text-primary">
 									<h5>									 
-									<small><i class="fa fa-info"></i> 프로퍼티는 변경 후 저장버튼을 클릭하여 반영하여야 합니다.</small>
+									<small><i class="fa fa-info"></i> 프로퍼티는 변경 후 저장버튼을 클릭하면 반영됩니다.</small>
 									</h5>
 								</div>								
 								<div data-role="grid"
@@ -125,7 +123,7 @@
 						</div>
 					</div>
 					<div class='modal-footer'>		
-		
+						<button type="button" class="btn btn-info  btn-control-group btn-sm" data-toggle="button" data-action="details">확인</button>		
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
