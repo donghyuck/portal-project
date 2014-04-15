@@ -914,18 +914,15 @@
 			var template = that._dialogTemplate();							
 			that.element.html(template({ 
 				title : that.options.title || ""
-			}));			
-			
+			}));				
 			if( typeof  that.options.data === 'object' ){			
 				kendo.bind( that._modal(), that.options.data );
 				if ( that.options.data instanceof kendo.data.ObservableObject ) {
 					that.options.data.bind( "change", function(e){
-						alert( kendo.stringify(e));
-						that.trigger(CHANGE, { field : e.field });						
+						that.trigger(CHANGE, { field : e.field , data : that.options.data });						
 					} );					
 				}					
-			}
-			
+			}			
 			that._modal().css('z-index', '2000');				
 			that.element.find('.modal').on('show.bs.modal' , function(e){
 				that.trigger(SHOW);				
