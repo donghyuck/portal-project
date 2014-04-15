@@ -401,6 +401,7 @@ var Company = kendo.data.Model.define( {
     	target.set("creationDate", this.get("creationDate"));
     	target.set("memberCount", this.get("memberCount"));
     	target.set("adminCount", this.get("adminCount"));		
+    	target.set("properties", this.get("properties"));
     }    
 });
 
