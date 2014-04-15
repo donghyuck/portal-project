@@ -37,7 +37,7 @@
 				var selectedSocial = {};																	
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
-				var topBar = $("#navbar").extNavBar({
+				var topBar = $("#navbar").extNavbar({
 					template : kendo.template($("#navbar-template").html() ),
 				});
 				
