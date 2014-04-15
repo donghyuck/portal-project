@@ -925,7 +925,7 @@
 			}			
 			that._modal().css('z-index', '2000');				
 			that.element.find('.modal').on('show.bs.modal' , function(e){
-				that.trigger(SHOW);				
+				that.trigger(SHOW, {});				
 			});				
 		},
 		_dialogTemplate : function (){
