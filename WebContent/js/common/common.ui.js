@@ -903,10 +903,10 @@
 		_changeState : function ( enabled ) {
 			var that = this ;
 			if ( enabled ){
-				that.element.find('.modal-footer .btn.custom-update').removeAttr('disabled');			
+				that.element.find('.modal-footer .btn.custom-update').removeAttr('disabled');	
 			}else{
-				that.element.find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');			
-			}			
+				that.element.find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');	
+			}
 		},
 		_createDialog : function () {			
 			var that = this ;
@@ -947,8 +947,7 @@
 				});
 			}
 			*/
-			that._modal().css('z-index', '2000');			
-			
+			that._modal().css('z-index', '2000');				
 			that.element.find('.modal').on('show.bs.modal' , function(e){
 				
 				
