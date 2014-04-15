@@ -30,14 +30,10 @@
 						currentUser = e.token.copy(currentUser);							
 					}
 				});				
-				
-				var companyPlaceHolder = new Company({ companyId: ${action.user.companyId} });
-				
-				$("#navbar").data("companyPlaceHolder", companyPlaceHolder);
-								
-				var selectedSocial = {};																	
+																		
 				// 3.MENU LOAD 
-				var currentPageName = "MENU_1_2";
+				var companyPlaceHolder = new Company({ companyId: ${action.user.companyId} });				
+				$("#navbar").data("companyPlaceHolder", companyPlaceHolder);		
 				var topBar = $("#navbar").extNavbar({
 					template : $("#top-navbar-template").html(),
 					items : [{ 
@@ -52,6 +48,7 @@
 				});
 												 
 				 // 4. PAGE MAIN		
+				 var selectedSocial = {};			
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );				 
 				 createSiteGrid();				 
 				 common.ui.handleButtonActionEvents(
