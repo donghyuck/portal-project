@@ -573,7 +573,7 @@
 													<td>
 														<div class="media">
 															<a class="pull-left" href="#">
-																<img class="media-object" src="..." alt="...">
+																<img class="media-object" src="${request.contextPath}/download/profile/${action.targetWebSite.user.username}?width=100&height=150" alt="...">
 															</a>
 															<div class="media-body">
 																<h6 class="media-heading"><span data-bind="text: user.name">${action.targetWebSite.user.name}</span>(<span data-bind="text: user.username">${action.targetWebSite.user.username}</span>)</h6>
