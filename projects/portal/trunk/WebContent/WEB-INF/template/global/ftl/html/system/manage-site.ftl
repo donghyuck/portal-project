@@ -30,11 +30,19 @@
 						currentUser = e.token;						
 					}
 				});				
+				
 				$("#navbar").data("companyPlaceHolder", new Company({ companyId: ${action.user.companyId} }));
 				
+								
 				var selectedSocial = {};																	
 				// 3.MENU LOAD 
 				var currentPageName = "MENU_1_2";
+				var topBar = $("#navbar").extNavBar({
+					template : kendo.template($("#navbar-template").html() ),
+				});
+				
+				
+				/*
 				var topBar = $("#navbar").extTopNavBar({ 
 					menu:"SYSTEM_MENU",
 					template : kendo.template($("#topnavbar-template").html() ),
@@ -52,6 +60,8 @@
 						}
 					]
 				});
+				*/
+				
 								 
 				 // 4. PAGE MAIN		
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );
