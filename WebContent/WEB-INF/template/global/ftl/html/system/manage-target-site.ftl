@@ -531,6 +531,7 @@
 					<div class="panel panel-default" style="min-height:300px;">
 						<div class="panel-heading" style="padding:5px;">
 							<div class="btn-group">
+								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="update"><i class="fa fa-cog"></i> 설정</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu"><i class="fa fa-sitemap"></i> 메뉴</button>
 							</div>
 							<div class="btn-group">
@@ -538,15 +539,14 @@
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>								
 						</div>
-						<div class="panel-body" style="padding:5px;">						
-														
+						<div class="panel-body" style="padding:5px;">														
 							<div class="row">
 								<div class="col-lg-5 col-xs-12" id="site-info">					
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small><i class="fa fa-info"></i> 설정 버튼을 클릭하면 사이트의 기본정보를 수정할 수 있습니다.</small>
 											<div class="btn-group">
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="update"><i class="fa fa-cog"></i> 설정</button>
+											
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cloud"></i> 미디어 관리</button>
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages">페이지 관리</button>
 											</div>
