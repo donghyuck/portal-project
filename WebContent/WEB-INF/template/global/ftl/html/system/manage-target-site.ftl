@@ -46,9 +46,16 @@
 						}	
 					}]
 				});
-								 
+												 
 				 // 4. PAGE MAIN		
 				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite({ webSiteId: ${ action.targetWebSite.webSiteId} });
+				common.api.callback("${request.contextPath}/secure/get-site.do?output=json", {
+					data : { targetSiteId:  $("#site-info").data("sitePlaceHolder").webSiteId },
+					success : {
+						var site = common.models.WebSite(response.targetWebSite);
+						site.copy( $("#site-info").data("sitePlaceHolder") );
+					}
+				}); 
 				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
