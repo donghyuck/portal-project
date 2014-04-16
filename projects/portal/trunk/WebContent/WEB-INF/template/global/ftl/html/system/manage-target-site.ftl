@@ -513,7 +513,8 @@
 			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);		
 								
 			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
-			
+				
+				sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder
 				});							
