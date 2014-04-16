@@ -1237,7 +1237,7 @@
 								tab_pane.find('.panel-body.custom-selected-image').remove();
 								var data = this.dataSource.view() ;								
 								var current_index = this.select().index();
-								if( current_index > 0 ){									
+								if( current_index >= 0 ){									
 									var item = data[current_index];				
 									var imageId = item.imageId;								
 									if( imageId > 0 ){									
@@ -1312,7 +1312,7 @@
 								tab_pane.find('.panel-body.custom-selected-image').remove();
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
-								if( current_index > 0 ){			
+								if( current_index >= 0 ){			
 									var item = data[current_index];							
 									var imageId = item.imageId;								
 									if( imageId > 0 ){									
@@ -1385,7 +1385,7 @@
 								tab_pane.find('.panel-body.custom-selected-image').remove();
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
-								if( current_index > 0 ){		
+								if( current_index >= 0 ){		
 									var item = data[current_index];							
 									var imageId = item.imageId;								
 									if( imageId > 0 ){									
