@@ -513,7 +513,7 @@
 			
 			if( sitePlaceHolder.menu.menuId == WebSiteUtils.getDefaultMenuId()) {
 				alert(kendo.stringify(sitePlaceHolder));		
-				break;
+				return;
 			}				
 						
 			var websiteMenuSetting = $("#"+ renderToString);			
