@@ -48,12 +48,16 @@
 				});
 												 
 				 // 4. PAGE MAIN		
-				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite({ webSiteId: ${ action.targetWebSite.webSiteId} });
-				common.api.callback("${request.contextPath}/secure/get-site.do?output=json", {
-					data : { targetSiteId:  $("#site-info").data("sitePlaceHolder").webSiteId },
+				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.targetWebSite.webSiteId}} );
+				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
+				 
+				common.api.callback(  
+				{
+					url :"${request.contextPath}/secure/get-site.do?output=json", 
+					data : { targetSiteId:  sitePlaceHolder.webSiteId },
 					success : function(response){
 						var site = common.models.WebSite(response.targetWebSite);
-						site.copy( $("#site-info").data("sitePlaceHolder") );
+						site.copy( sitePlaceHolder );
 					}
 				}); 
 				 
