@@ -319,7 +319,7 @@
 						</form>															
 					</div>
 					<div class='modal-body' style="height:250px; padding-buttom:0px;">
-						<div id="xmleditor" data-bind="text:website.menu.menuData"></div>
+						<div id="xmleditor"></div>
 					</div>
 					<div class='modal-footer'></div>
 				</div><!-- /.modal-content -->
