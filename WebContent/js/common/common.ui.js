@@ -1235,31 +1235,29 @@
 							selectable: "single",									
 							change: function(e) {											
 								tab_pane.find('.panel-body.custom-selected-image').remove();
-								var data = this.dataSource.view() ;
-								
+								var data = this.dataSource.view() ;								
 								var current_index = this.select().index();
-								alert(current_index);
-								
-								var item = data[current_index];				
-								alert(item);
-								var imageId = item.imageId;								
-								if( imageId > 0 ){									
-									that._getImageLink( item , function ( data ) {
-										if( typeof data.imageLink ===  'object' ){
-											my_list_view.data("linkId" , data.imageLink.linkId );
-											that._changeState(true);		
-											
-											var t = kendo.template(
-												'<div class="panel-body custom-selected-image">' + 
-												'<p><img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
-												'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
-											
-											tab_pane.find('.panel').prepend(
-												t( item )	
-											);											
-										}										
-									});									
-								}											
+								if( current_index > 0 ){									
+									var item = data[current_index];				
+									var imageId = item.imageId;								
+									if( imageId > 0 ){									
+										that._getImageLink( item , function ( data ) {
+											if( typeof data.imageLink ===  'object' ){
+												my_list_view.data("linkId" , data.imageLink.linkId );
+												that._changeState(true);		
+												
+												var t = kendo.template(
+													'<div class="panel-body custom-selected-image">' + 
+													'<p><img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
+													'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
+												
+												tab_pane.find('.panel').prepend(
+													t( item )	
+												);											
+											}										
+										});									
+									}																				
+								}
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
@@ -1314,24 +1312,26 @@
 								tab_pane.find('.panel-body.custom-selected-image').remove();
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
-								var item = data[current_index];							
-								var imageId = item.imageId;								
-								if( imageId > 0 ){									
-									that._getImageLink( item , function ( data ) {
-										if( typeof data.imageLink ===  'object' ){
-											my_list_view.data("linkId" , data.imageLink.linkId );
-											that._changeState(true);											
-											var t = kendo.template(
-												'<div class="panel-body custom-selected-image">' + 
-												'<p><img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
-												'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
-											
-											tab_pane.find('.panel').prepend(
-												t( item )	
-											);											
-										}										
-									});									
-								}											
+								if( current_index > 0 ){			
+									var item = data[current_index];							
+									var imageId = item.imageId;								
+									if( imageId > 0 ){									
+										that._getImageLink( item , function ( data ) {
+											if( typeof data.imageLink ===  'object' ){
+												my_list_view.data("linkId" , data.imageLink.linkId );
+												that._changeState(true);											
+												var t = kendo.template(
+													'<div class="panel-body custom-selected-image">' + 
+													'<p><img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
+													'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
+												
+												tab_pane.find('.panel').prepend(
+													t( item )	
+												);											
+											}										
+										});									
+									}
+								}
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
@@ -1385,25 +1385,27 @@
 								tab_pane.find('.panel-body.custom-selected-image').remove();
 								var data = this.dataSource.view() ;
 								var current_index = this.select().index();
-								var item = data[current_index];							
-								var imageId = item.imageId;								
-								if( imageId > 0 ){									
-									that._getImageLink( item , function ( data ) {
-										if( typeof data.imageLink ===  'object' ){
-											my_list_view.data("linkId" , data.imageLink.linkId );
-											that._changeState(true);		
-											
-											var t = kendo.template(
-												'<div class="panel-body custom-selected-image">' + 
-												'<p><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
-												'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
-											
-											tab_pane.find('.panel').prepend(
-												t( item )	
-											);											
-										}										
-									});									
-								}											
+								if( current_index > 0 ){		
+									var item = data[current_index];							
+									var imageId = item.imageId;								
+									if( imageId > 0 ){									
+										that._getImageLink( item , function ( data ) {
+											if( typeof data.imageLink ===  'object' ){
+												my_list_view.data("linkId" , data.imageLink.linkId );
+												that._changeState(true);		
+												
+												var t = kendo.template(
+													'<div class="panel-body custom-selected-image">' + 
+													'<p><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>' +
+													'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
+												
+												tab_pane.find('.panel').prepend(
+													t( item )	
+												);											
+											}										
+										});									
+									}
+								}
 							},
 							navigatable: false,
 							template: kendo.template($("#photo-list-view-template").html()),								
