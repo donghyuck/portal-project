@@ -48,7 +48,7 @@
 				});
 								 
 				 // 4. PAGE MAIN		
-				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite(${ HtmlUtils.objectToJson( action.targetWebSite)});
+				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite({ webSiteId: ${ action.targetWebSite.webSiteId} });
 				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
@@ -596,7 +596,7 @@
 													<td><span data-bind="text: menu.title">${action.targetWebSite.menu.title} </span> 
 														<span class="label label-warning"><span data-bind="text: menu.name">${action.targetWebSite.menu.name}</span></span> 
 														<code><span data-bind="text: menu.menuId">${action.targetWebSite.menu.menuId}</span></code>
-														<#if action.targetWebSite.menu.menuId == WebSiteUtils.getDefaultMenuId() >디폴트 메뉴 사용</#if>
+														<#if action.targetWebSite.menu.menuId == WebSiteUtils.getDefaultMenuId() >디폴트 메뉴 사용중</#if>
 													</td>
 												</tr>													
 												<tr>
