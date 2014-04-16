@@ -57,7 +57,7 @@
 							alert("menu modal");	 						
 						},
 						setting : function(e){
-							alert("menu modal");	 						
+							showWebsiteMenuSetting();					
 						},						
 						group : function(e){
 							topBar.go('main-group.do');				
@@ -486,6 +486,31 @@
 		function goSite (){					
 			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
 			$("#navbar").data("kendoExtTopNavBar").go("view-site.do");							
+		}
+		
+		function showWebsiteMenuSetting(){
+			var renderToString = "website-menu-setting-modal";
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'"/>');
+			}		
+			var websiteMenuSetting = $("#"+ renderToString);
+			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
+			
+				var companySettingViewModel =  kendo.observable({ 
+				
+				});
+				
+				websiteMenuSetting.extModalWindow({
+					title : "사이트 메뉴 설정",
+					template : $("#website-menu-setting-modal-template").html(),
+					data :  websiteMenuSettingViewModel,
+					change : function (e) {
+						//if( e.field.match('^company.')){							
+						///	$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
+						//}
+					}
+				});						
+			}			
 		}
 		</script>
 		<style>					
