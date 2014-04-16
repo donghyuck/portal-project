@@ -287,42 +287,42 @@
 							</h5>
 						</div>	
 						
-								<form class="form-horizontal">
-									<div class="form-group">
-										<label class="col-lg-2 control-label" ><small>이름</small></label>
-										<div class="col-lg-10">
-											<input type="text" class="form-control" placeholder="이름" data-bind="value:website.menu.name"/>
-										</div>
-									</div>					
-									<div class="form-group">
-										<label class="col-lg-2 control-label">타이틀</label>
-										<div class="col-lg-10">
-											<input type="text" class="form-control" placeholder="타이틀" data-bind="value:website.menu.title"/>
-										</div>
-									</div>				
-									<div class="form-group">
-										<label class="col-lg-2 control-label" ><small>사용여부</small></label>
-										<div class="col-lg-10">
-											<div class="checkbox">
-												<label>
-													<input type="checkbox"  name="enabled"  data-bind="checked: website.menu.enabled" /> 사용
-												</label>
-											</div>
-										</div>							
-									</div>				
-									<div class="form-group">
-										<label class="col-lg-2 control-label"><small>설명</small></label>
-										<div class="col-lg-10">
-											<input type="text" class="form-control" placeholder="설명" data-bind="value:website.menu.description"/>
-										</div>
-									</div>			
-									<div class="form-group">
-										<label class="col-lg-2 control-label"><small>메뉴 데이터 <span class="label label-danger">Important</span></small></label>
-										<div class="col-lg-10">
-											<textarea  data-bind="value: website.menu.menuData" rows="10" class="form-control"></textarea>
-										</div>
-									</div>									
-								</form>															
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label class="col-lg-2 control-label" ><small>이름</small></label>
+								<div class="col-lg-10">
+									<input type="text" class="form-control" placeholder="이름" data-bind="value:website.menu.name"/>
+								</div>
+							</div>					
+							<div class="form-group">
+								<label class="col-lg-2 control-label">타이틀</label>
+								<div class="col-lg-10">
+									<input type="text" class="form-control" placeholder="타이틀" data-bind="value:website.menu.title"/>
+								</div>
+							</div>				
+							<div class="form-group">
+								<label class="col-lg-2 control-label" ><small>사용여부</small></label>
+								<div class="col-lg-10">
+									<div class="checkbox">
+										<label>
+											<input type="checkbox"  name="enabled"  data-bind="checked: website.menu.enabled" /> 사용
+										</label>
+									</div>
+								</div>							
+							</div>				
+							<div class="form-group">
+								<label class="col-lg-2 control-label"><small>설명</small></label>
+								<div class="col-lg-10">
+									<input type="text" class="form-control" placeholder="설명" data-bind="value:website.menu.description"/>
+								</div>
+							</div>			
+							<div class="form-group">
+								<label class="col-lg-2 control-label"><small>메뉴 데이터 <span class="label label-danger">Important</span></small></label>
+								<div class="col-lg-10">
+									<textarea  data-bind="value: website.menu.menuData" rows="10" class="form-control"></textarea>
+								</div>
+							</div>									
+						</form>															
 					</div>
 					<div class='modal-footer'>							
 					</div>
