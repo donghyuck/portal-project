@@ -524,7 +524,7 @@
 					template : $("#website-menu-create-modal-template").html(),
 					data :  websiteMenuSettingViewModel,
 					change : function (e) {
-
+alert( "ss" );
 					},
 					refresh : function(e){
 						var editor = ace.edit("xmleditor");
@@ -533,6 +533,9 @@
 						editor.getSession().setUseWrapMode(true);
 						
 						editor.setValue(sitePlaceHolder.menu.menuData);
+						editor.getSession().on('change', function(e) {
+							sitePlaceHolder.set("menuData", editor.getValue() );
+						});						
 					}  
 				});					
 			}else{
