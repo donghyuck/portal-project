@@ -524,30 +524,27 @@
 					change : function (e) {
 
 					}
-				});	
-				websiteMenuSetting.data('kendoExtModalWindow').open();	
-				return;
-			}				
+				});					
+			}else{
+				if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
+					var sitePlaceHolder =new common.models.WebSite();
+					$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);					
+					var websiteMenuSettingViewModel  =  kendo.observable({ 
+						website :sitePlaceHolder
+					});		
 						
-			
-			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
-				var sitePlaceHolder =new common.models.WebSite();
-				$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);					
-				var websiteMenuSettingViewModel  =  kendo.observable({ 
-					website :sitePlaceHolder
-				});		
-					
-				websiteMenuSetting.extModalWindow({
-					title : "사이트 메뉴 설정",
-					template : $("#website-menu-setting-modal-template").html(),
-					data :  websiteMenuSettingViewModel,
-					change : function (e) {
-						//if( e.field.match('^company.')){							
-						///	$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
-						//}
-					}
-				});						
-			}			
+					websiteMenuSetting.extModalWindow({
+						title : "사이트 메뉴 설정",
+						template : $("#website-menu-setting-modal-template").html(),
+						data :  websiteMenuSettingViewModel,
+						change : function (e) {
+							//if( e.field.match('^company.')){							
+							///	$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
+							//}
+						}
+					});						
+				}				
+			}	
 			//websiteMenuSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			websiteMenuSetting.data('kendoExtModalWindow').open();		
 		}
