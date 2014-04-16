@@ -323,7 +323,7 @@
 									<textarea  data-bind="value: website.menu.menuData" rows="10" class="form-control"></textarea>
 								</div>
 								-->
-								<div id="editor" data-bind="text: website.menu.menuData"></div>
+								<div id="xmleditor" data-bind="text: website.menu.menuData"></div>
 								
 							</div>									
 						</form>															
@@ -332,8 +332,7 @@
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->		
-		<script src="${request.contextPath}/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+		</div><!-- /.modal -->				
 	</script>
 		
 	<script id="website-menu-setting-modal-template" type="text/x-kendo-template">
