@@ -56,7 +56,7 @@
 					url :"${request.contextPath}/secure/get-site.do?output=json", 
 					data : { targetSiteId:  sitePlaceHolder.webSiteId },
 					success : function(response){
-						var site = common.models.WebSite(response.targetWebSite);
+						var site = new common.models.WebSite(response.targetWebSite);
 						site.copy( sitePlaceHolder );
 					}
 				}); 
