@@ -318,11 +318,10 @@
 							</div>											
 						</form>															
 					</div>
-					<div class='modal-body' style="height:250px;">
-						<div id="xmleditor"></div>
+					<div class='modal-body' style="height:250px; padding-buttom:0px;">
+						<div id="xmleditor" data-bind="html:website.menu.menuData"></div>
 					</div>
-					<div class='modal-footer'>							
-					</div>
+					<div class='modal-footer'></div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->				
