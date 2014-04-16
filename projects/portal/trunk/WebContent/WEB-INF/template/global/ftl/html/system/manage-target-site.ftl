@@ -58,6 +58,7 @@
 					success : function(response){
 						var site = new common.models.WebSite(response.targetWebSite);
 						site.copy( sitePlaceHolder );
+						kendo.bind($("#site-info"), sitePlaceHolder );
 					}
 				}); 
 				 
