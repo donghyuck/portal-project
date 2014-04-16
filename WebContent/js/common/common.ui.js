@@ -1236,8 +1236,12 @@
 							change: function(e) {											
 								tab_pane.find('.panel-body.custom-selected-image').remove();
 								var data = this.dataSource.view() ;
+								
 								var current_index = this.select().index();
-								var item = data[current_index];							
+								alert(current_index);
+								
+								var item = data[current_index];				
+								alert(item);
 								var imageId = item.imageId;								
 								if( imageId > 0 ){									
 									that._getImageLink( item , function ( data ) {
