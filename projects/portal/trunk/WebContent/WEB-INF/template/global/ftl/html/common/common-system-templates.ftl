@@ -318,15 +318,11 @@
 							</div>			
 							<div class="form-group">
 								<label class="col-lg-2 control-label"><small>메뉴 데이터 <span class="label label-danger">Important</span></small></label>
-								<!--
-								<div class="col-lg-10">
-									<textarea  data-bind="value: website.menu.menuData" rows="10" class="form-control"></textarea>
-								</div>
-								-->
-								<div id="xmleditor" data-bind="text: website.menu.menuData"></div>
-								
 							</div>									
 						</form>															
+					</div>
+					<div class='modal-body'>
+						<div id="xmleditor" data-bind="text: website.menu.menuData"></div>
 					</div>
 					<div class='modal-footer'>							
 					</div>
