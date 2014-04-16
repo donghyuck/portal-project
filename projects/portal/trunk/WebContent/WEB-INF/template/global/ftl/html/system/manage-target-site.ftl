@@ -54,10 +54,10 @@
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
 						menu : function(e){
-							alert("menu modal");	 						
+							showWebsiteMenuSetting();								
 						},
 						setting : function(e){
-							showWebsiteMenuSetting();					
+							
 						},						
 						group : function(e){
 							topBar.go('main-group.do');				
