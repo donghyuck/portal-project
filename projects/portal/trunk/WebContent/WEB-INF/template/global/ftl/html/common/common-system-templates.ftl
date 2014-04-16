@@ -282,7 +282,7 @@
 						<h5 class='modal-title'>#= title #</h5>
 					</div>
 					<div class='modal-body'>			
-						<div class="panel-header text-primary">
+						<div class="page-header text-primary">
 							<h5 >
 							<small><i class="fa fa-info"></i> 기본 메뉴 데이터는 디폴트로 사용되는 내용을 기반으로 생성되었습니다.</small>									
 							</h5>
