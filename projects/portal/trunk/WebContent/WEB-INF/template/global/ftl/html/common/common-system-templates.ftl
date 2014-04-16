@@ -282,8 +282,8 @@
 					</div>
 					<div class='modal-body'>			
 						<div class="panel-header text-primary">
-							<h5 >새로운 메뉴 데이터를 생성합니다.
-							<small><i class="fa fa-info"></i> 기본 메뉴 데이터는 디폴트로 사용되는 내용을 가져오게 됩니다.</small>									
+							<h5 >
+							<small><i class="fa fa-info"></i> 기본 메뉴 데이터는 디폴트로 사용되는 내용을 기반으로 생성되었습니다.</small>									
 							</h5>
 						</div>	
 						
