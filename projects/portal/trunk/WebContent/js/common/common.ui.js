@@ -1147,15 +1147,10 @@
 				'</a>' +
 				'<div class="media-body">' +
 					'<h5 class="media-heading"><span class="label label-warning">#= contentType #</span> #=name#</h5>' +
-					'<dl class="dl-horizontal">'+
-						'<dt>생성일</dt>'+
-						'<dd>#= kendo.toString( creationDate, "yyyy.MM.dd hh:mm tt" )#</dd>'+
-						'<dt>수정일</dt>'+
-						'<dd>#= kendo.toString( modifiedDate, "yyyy.MM.dd hh:mm tt" )#</dd>'+		
-						'<dt>크기</dt>'+
-						'<dd>#= kendo.toString( size, "\\#\\#,\\#" ) #</dd>'+								
-					'</dl>'+					
-					'<p class="text-danger"><small>이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</small></p>' +
+						'<p class="text-muted">생성일: #= kendo.toString( creationDate, "yyyy.MM.dd hh:mm tt" )#</p>'+
+						'<p class="text-muted">수정일: #= kendo.toString( modifiedDate, "yyyy.MM.dd hh:mm tt" )#</p>'+		
+						'<p class="text-muted">크기: #= kendo.toString( size, "\\#\\#,\\#" ) #</p>'+								
+						'<p class="text-danger"><small>이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</small></p>' +
 				'</div>' +
 			'</div>'	+
 		'</div>'		
