@@ -927,6 +927,7 @@
 			that._modal().css('z-index', '2000');				
 			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
+				that.trigger(SHOW, { element: that._modal()[0] });
 				alert("dfdasf");
 			});
 					
