@@ -531,6 +531,8 @@
 						//editor.setTheme("ace/theme/twilight");
 						editor.getSession().setMode("ace/mode/xml");
 						editor.getSession().setUseWrapMode(true);
+						
+						editor.setValue(sitePlaceHolder.menu.menuData);
 					}  
 				});					
 			}else{
