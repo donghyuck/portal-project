@@ -526,7 +526,10 @@
 					data :  websiteMenuSettingViewModel,
 					change : function (e) {
 
-					}
+					},
+					show : function(e){
+						alert("fdsaf");
+					}  
 				});					
 			}else{
 				if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
