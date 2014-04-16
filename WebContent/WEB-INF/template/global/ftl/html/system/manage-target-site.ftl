@@ -508,8 +508,6 @@
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
 
-			var websiteMenuSetting = $("#"+ renderToString );		
-			
 			var sitePlaceHolder =new common.models.WebSite();			
 			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);									
 			
@@ -520,7 +518,7 @@
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder
 				});	
-				websiteMenuSetting.extModalWindow({
+				$("#"+ renderToString ).extModalWindow({
 					title : "사이트 메뉴 생성",
 					template : $("#website-menu-create-modal-template").html(),
 					data :  websiteMenuSettingViewModel,
@@ -536,7 +534,7 @@
 					var websiteMenuSettingViewModel  =  kendo.observable({ 
 						website :sitePlaceHolder
 					});								
-					websiteMenuSetting.extModalWindow({
+					$("#"+ renderToString ).extModalWindow({
 						title : "사이트 메뉴 설정",
 						template : $("#website-menu-setting-modal-template").html(),
 						data :  websiteMenuSettingViewModel,
@@ -549,7 +547,7 @@
 				}				
 			}	
 			//websiteMenuSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');				
-			websiteMenuSetting.data('kendoExtModalWindow').open();		
+			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
 		}
 		</script>
 		<style>					
