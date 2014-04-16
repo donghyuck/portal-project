@@ -892,8 +892,7 @@
 		},
 		refresh: function () {
 			var that = this ;
-			that._createDialog();
-			that.trigger(REFRESH, { element: that._modal()[0] });
+			that._createDialog();			
 		},		
 		destroy: function() {
 			var that = this;
@@ -932,7 +931,9 @@
 			});		
 			that.element.find('.modal').on('hide.bs.modal' , function(e){
 				that.trigger(CLOSE, { element: that._modal()[0] });
-			});					
+			});		
+			
+			that.trigger(REFRESH, { element: that._modal()[0] });
 		},
 		_dialogTemplate : function (){
 			var that = this ;			
