@@ -862,7 +862,9 @@
     trimSlashesRegExp = /(^\/|\/$)/g,
     CHANGE = "change",
     ERROR = "error",
-    SHOW = "show",
+    REFRESH = "refresh",
+    OPEN = "open",
+    CLOSE = "close",
     CLICK = "click",
 	UNDEFINED = 'undefined',
 	POST = 'POST',
@@ -876,14 +878,13 @@
 			options = that.options;
 			that.refresh();		
 		},
-		events: [ERROR, CHANGE, CLICK],
+		events: [ERROR, CHANGE, CLICK, OPEN, REFRESH, CLOSE],
 		options : {
 			name: "ExtModalWindow",
 		},
 		open: function() {
 			var that = this ;			
 			that._modal().modal('show');
-			that.trigger(SHOW, { element: that._modal()[0] });
 		},
 		close: function () {
 			var that = this ;
@@ -892,6 +893,7 @@
 		refresh: function () {
 			var that = this ;
 			that._createDialog();
+			that.trigger(REFRESH, { element: that._modal()[0] });
 		},		
 		destroy: function() {
 			var that = this;
@@ -925,12 +927,12 @@
 				}					
 			}			
 			that._modal().css('z-index', '2000');				
-			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
-				that.trigger(SHOW, { element: that._modal()[0] });
-				alert("dfdasf");
-			});
-					
+				that.trigger(OPEN, { element: that._modal()[0] });
+			});		
+			that.element.find('.modal').on('hide.bs.modal' , function(e){
+				that.trigger(CLOSE, { element: that._modal()[0] });
+			});					
 		},
 		_dialogTemplate : function (){
 			var that = this ;			
