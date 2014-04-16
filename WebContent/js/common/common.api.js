@@ -7,11 +7,32 @@
 	UNDEFINED = 'undefined',
 	isFunction = kendo.isFunction;
 		
+	
+	common.api.callback = function (url, options){
+		options = options || {};	
+	    $.ajax({
+			type : 'POST',
+			url : options.url,
+			data: options.data || {},
+			success : function(response){
+				if( response.error ){ 				
+					if( isFunction (options.fail) )
+						options.fail(response) ;
+				} else {				
+					if( isFunction (options.success) )
+						options.success(response) ;					
+				}
+			},
+			error: options.error || common.api.handleKendoAjaxError,
+			dataType : "json"
+		});			
+	}
+		
 	common.api.getTargetCompany =  function (url, options){
 		if (typeof url === "object") {
 	        options = url;
 	        url = undefined;
-	    }	    
+	    }
 	    // Force options to be an object
 	    options = options || {};		    
 	    $.ajax({
@@ -218,8 +239,6 @@
 			} );
 		});
 	};
-
-
 	
 	common.api.handleNavbarActions = function ( selector, options ){
 		options = options || {};		
