@@ -527,7 +527,7 @@
 					change : function (e) {
 
 					},
-					refersh : function(e){
+					open : function(e){
 						alert("fdsaf");
 					}  
 				});					
