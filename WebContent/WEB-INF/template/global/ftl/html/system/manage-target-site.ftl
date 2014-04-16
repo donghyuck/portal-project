@@ -514,6 +514,8 @@
 					}
 				});						
 			}			
+			//websiteMenuSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');	
+			websiteMenuSetting.data('kendoExtModalWindow').open();		
 		}
 		</script>
 		<style>					
