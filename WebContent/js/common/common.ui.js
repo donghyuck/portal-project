@@ -1153,7 +1153,7 @@
 						'<dt>수정일</dt>'+
 						'<dd>#= kendo.toString( modifiedDate, "yyyy.MM.dd hh:mm tt" )#</dd>'+		
 						'<dt>크기</dt>'+
-						'<dd>#= kendo.toString( size, "##,#" ) #</dd>'+								
+						'<dd>#= kendo.toString( size, "\\#\\#,\\#" ) #</dd>'+								
 					'</dl>'+					
 					'<p class="text-danger"><small>이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</small></p>' +
 				'</div>' +
