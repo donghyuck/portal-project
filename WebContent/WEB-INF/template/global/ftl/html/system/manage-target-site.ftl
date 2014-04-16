@@ -507,15 +507,16 @@
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
-			
-			var websiteMenuSetting = $("#"+ renderToString);				
+
+			var websiteMenuSetting = $("#"+ renderToString);		
+			var sitePlaceHolder =new common.models.WebSite();
+			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);		
+								
 			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
-				var sitePlaceHolder =new common.models.WebSite();
-				$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);					
+			
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder
 				});							
-				sitePlaceHolder.copy( websiteMenuSettingViewModel.website );
 				
 				websiteMenuSetting.extModalWindow({
 					title : "사이트 메뉴 생성",
@@ -527,12 +528,9 @@
 				});					
 			}else{
 				if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
-					var sitePlaceHolder =new common.models.WebSite();
-					$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);					
 					var websiteMenuSettingViewModel  =  kendo.observable({ 
 						website :sitePlaceHolder
-					});		
-						
+					});								
 					websiteMenuSetting.extModalWindow({
 						title : "사이트 메뉴 설정",
 						template : $("#website-menu-setting-modal-template").html(),
