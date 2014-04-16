@@ -596,9 +596,7 @@
 													<td><span data-bind="text: menu.title">${action.targetWebSite.menu.title} </span> 
 														<span class="label label-warning"><span data-bind="text: menu.name">${action.targetWebSite.menu.name}</span></span> 
 														<code><span data-bind="text: menu.menuId">${action.targetWebSite.menu.menuId}</span></code>
-														menuId
-														name
-														title
+														<#if action.targetWebSite.menu.menuId == WebSiteUtils.getDefaultMenuId() >디폴트 메뉴 사용</#if>
 													</td>
 												</tr>													
 												<tr>
