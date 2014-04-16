@@ -528,7 +528,7 @@
 					},
 					refresh : function(e){
 						var editor = ace.edit("xmleditor");
-						editor.setTheme("ace/theme/monokai");
+						editor.setTheme("styles/ace/monokai");
 						editor.getSession().setMode("ace/mode/xml");
 					}  
 				});					
