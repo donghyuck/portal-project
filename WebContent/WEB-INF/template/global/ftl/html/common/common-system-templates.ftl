@@ -146,6 +146,7 @@
 	<!-- COMPANY SETTING MODAL TEMPLAGE 		 -->
 	<!- ================================ ->			
 	<script id="company-setting-modal-template" type="text/x-kendo-template">
+	
 		<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
 			<div class='modal-dialog modal-lg'>
 				<div class='modal-content'>
@@ -285,8 +286,7 @@
 							<h5 >
 							<small><i class="fa fa-info"></i> 기본 메뉴 데이터는 디폴트로 사용되는 내용을 기반으로 생성되었습니다.</small>									
 							</h5>
-						</div>	
-						
+						</div>							
 						<form class="form-horizontal">
 							<div class="form-group">
 								<label class="col-lg-2 control-label" ><small>이름</small></label>
@@ -328,7 +328,8 @@
 					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
+		</div><!-- /.modal -->		
+		<script src="${request.contextPath}/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 	</script>
 		
 	<script id="website-menu-setting-modal-template" type="text/x-kendo-template">
