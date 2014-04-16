@@ -1206,6 +1206,7 @@
 				var tab_pane = $(tab_pane_id );					
 				switch(tab_pane_id){
 				case "#" + that.options.guid[TAB_PANE_DOMAIN_ID] :
+					// domain images
 					var my_list_view = tab_pane.find('.panel-body div');				
 					var my_list_pager = tab_pane.find('.panel-footer div');		
 					if(!my_list_view.data('kendoListView') ){
@@ -1277,10 +1278,10 @@
 						my_list_view.data('kendoListView').clearSelection();
 					}
 					break;
-				case "#" + that.options.guid[TAB_PANE_DOMAIN_ID] :
+				case "#" + that.options.guid[TAB_PANE_WEBSITE_ID] :
+					// website images
 					var my_list_view = tab_pane.find('.panel-body div');				
 					var my_list_pager = tab_pane.find('.panel-footer div');		
-					alert("ehllo");
 					if(!my_list_view.data('kendoListView') ){
 						my_list_view.kendoListView({ 
 							dataSource: {
