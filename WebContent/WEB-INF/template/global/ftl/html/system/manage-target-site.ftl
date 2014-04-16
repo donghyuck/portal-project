@@ -528,7 +528,7 @@
 					},
 					refresh : function(e){
 						var editor = ace.edit("xmleditor");
-						editor.setTheme("ace/theme/twilight");
+						//editor.setTheme("ace/theme/twilight");
 						editor.getSession().setMode("ace/mode/xml");
 					}  
 				});					
