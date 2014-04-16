@@ -511,18 +511,31 @@
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
 			
-			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {
-				alert(kendo.stringify(sitePlaceHolder));		
+			var websiteMenuSetting = $("#"+ renderToString);	
+			
+			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
+				
+				var websiteMenuSettingViewModel  =  kendo.observable({ 
+					website : new common.models.WebSite();
+				});							
+				sitePlaceHolder.copy( websiteMenuSettingViewModel.website );
+				
+				websiteMenuSetting.extModalWindow({
+					title : "사이트 메뉴 생성",
+					template : $("#website-menu-create-modal-template").html(),
+					data :  websiteMenuSettingViewModel,
+					change : function (e) {
+
+					}
+				});	
 				return;
 			}				
 						
-			var websiteMenuSetting = $("#"+ renderToString);			
-			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
 			
+			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 				
-				});
-				
+				});				
 				websiteMenuSetting.extModalWindow({
 					title : "사이트 메뉴 설정",
 					template : $("#website-menu-setting-modal-template").html(),
@@ -535,6 +548,7 @@
 				});						
 			}			
 			//websiteMenuSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');	
+			
 			websiteMenuSetting.data('kendoExtModalWindow').open();		
 		}
 		</script>
