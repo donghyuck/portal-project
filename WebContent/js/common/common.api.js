@@ -8,7 +8,7 @@
 	isFunction = kendo.isFunction;
 		
 	
-	common.api.callback = function (url, options){
+	common.api.callback = function ( options){
 		options = options || {};	
 	    $.ajax({
 			type : 'POST',
