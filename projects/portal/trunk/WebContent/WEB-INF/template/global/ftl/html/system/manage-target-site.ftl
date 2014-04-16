@@ -511,7 +511,7 @@
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
 			
-			if( sitePlaceHolder.menu.menuId == WebSiteUtils.getDefaultMenuId()) {
+			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {
 				alert(kendo.stringify(sitePlaceHolder));		
 				return;
 			}				
