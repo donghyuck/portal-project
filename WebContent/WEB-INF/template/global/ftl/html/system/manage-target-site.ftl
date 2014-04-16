@@ -376,7 +376,9 @@
 		}	
 		
 		function displayImageDetails(){
+			
 			var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
+			
 			var imagePlaceHolder = $("#image-details").data( "imagePlaceHolder");			
 			if( typeof imagePlaceHolder.imgUrl == 'undefined' ){				
 				imagePlaceHolder.imgUrl = template(imagePlaceHolder);
