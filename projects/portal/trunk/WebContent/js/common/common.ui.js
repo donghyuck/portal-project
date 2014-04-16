@@ -1265,7 +1265,7 @@
 													'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
 												
 												tab_pane.find('.panel').prepend(
-													t( item )	
+														SELECTED_IMAGE_TEMPLAGE( item )	
 												);											
 											}										
 										});									
@@ -1339,7 +1339,7 @@
 													'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
 												
 												tab_pane.find('.panel').prepend(
-													t( item )	
+														SELECTED_IMAGE_TEMPLAGE( item )	
 												);											
 											}										
 										});									
@@ -1413,7 +1413,7 @@
 													'<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
 												
 												tab_pane.find('.panel').prepend(
-													t( item )	
+														SELECTED_IMAGE_TEMPLAGE( item )	
 												);											
 											}										
 										});									
