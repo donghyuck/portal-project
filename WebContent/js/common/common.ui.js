@@ -1140,17 +1140,19 @@
 	JSON = 'json',		
 	VALUE_TEMPLATE = kendo.template( '<img src="#: url #" class="img-responsive"/>' ),
 	SELECTED_IMAGE_TEMPLAGE = kendo.template(
-		'<div class="media">' +
-		'<a class="pull-left" href="\\#">' +
-		'<img class="media-object" src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" alt="#=name#">' +
-		'</a>' +
-		'<div class="media-body">' +
-		'<h5 class="media-heading">#=name#</h5>' +
-		'<small>이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</small>' +
-		'<small>#= contentType #</small>' +
-		'<small>#= size #</small>' +
-		'<small>#= creationDate #, #=modifiedDate #</small>' +
-		'</div>' +
+		'<div class="panel-body custom-selected-image">' + 	
+			'<div class="media">' +
+				'<a class="pull-left" href="\\#">' +
+					'<img class="media-object" src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" alt="#=name#">' +
+				'</a>' +
+				'<div class="media-body">' +
+					'<h5 class="media-heading">#=name#</h5>' +
+					'<small>이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</small>' +
+					'<small>#= contentType #</small>' +
+					'<small>#= size #</small>' +
+					'<small>#= creationDate #, #=modifiedDate #</small>' +
+				'</div>' +
+			'</div>'	+
 		'</div>'		
 	),
 	URL_TEMPLATE = kendo.template( '/download/image/#= key #' ),
