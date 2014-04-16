@@ -499,7 +499,7 @@
 			
 			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
 			
-				var companySettingViewModel =  kendo.observable({ 
+				var websiteMenuSettingViewModel  =  kendo.observable({ 
 				
 				});
 				
