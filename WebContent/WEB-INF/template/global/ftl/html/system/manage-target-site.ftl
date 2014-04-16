@@ -48,7 +48,7 @@
 				});
 								 
 				 // 4. PAGE MAIN		
-				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite({ webSiteId : ${action.targetWebSite.webSiteId}}) );
+				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite(${ HtmlUtils.objectToJson( action.targetWebSite)});
 				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
@@ -582,8 +582,25 @@
 													<td><span data-bind="text: displayName">${action.targetWebSite.displayName} </span> 
 														<span class="label label-warning"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
 														<code><span data-bind="text: webSiteId">${action.targetWebSite.webSiteId}</span></code>
+														<span class="label label-danger" data-bind="invisible: enabled">비활성</span>
 													</td>
 												</tr>	
+												<tr>
+													<th><small>공개</small></th>	
+													<td>
+														<span class="label label-info" data-bind="visible: allowAnonymousAccess">공개</span><span class="label label-info" data-bind="invisible: allowAnonymousAccess">비공개</span> 
+													</td>
+												</tr>													
+												<tr>
+													<th><small>메뉴</small></th>	
+													<td><span data-bind="text: displayName">${action.targetWebSite.menu.displayName} </span> 
+														<span class="label label-warning"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
+														<code><span data-bind="text: webSiteId">${action.targetWebSite.webSiteId}</span></code>
+														menuId
+														name
+														title
+													</td>
+												</tr>													
 												<tr>
 													<th><small>담당자</small></th>								
 													<td>
