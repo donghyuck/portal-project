@@ -873,7 +873,7 @@
 		init: function( element, options) {			
 			var that = this;		 
 			Widget.fn.init.call(that, element, options);			
-			options = that.options;		
+			options = that.options;
 			that.refresh();		
 		},
 		events: [ERROR, CHANGE, CLICK],
@@ -925,11 +925,11 @@
 				}					
 			}			
 			that._modal().css('z-index', '2000');				
-			/*
+			
 			that.element.find('.modal').on('show.bs.modal' , function(e){
-				that.trigger(SHOW, {});				
+				alert("dfdasf");
 			});
-			*/				
+					
 		},
 		_dialogTemplate : function (){
 			var that = this ;			
