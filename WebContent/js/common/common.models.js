@@ -40,11 +40,14 @@
 	    	//target.set("creationDate", this.get("creationDate") );
 	    	target.modifiedDate = this.get("modifiedDate");
 	    	target.creationDate = this.get("creationDate") ;
-	    	
+	    	if( typeof this.get("menu") === 'object' )
+	    		target.set("menu", this.get("menu") );    		    	
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set("user", this.get("user") );    	
 	    	if( typeof this.get("company") === 'object' )
-	    		target.set("company", this.get("company") );    		    	
+	    		target.set("company", this.get("company") );    	
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties") );
 	    }
 	});		
 	
