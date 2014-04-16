@@ -40,7 +40,7 @@
 						name:"companySelector", 
 						selector: "#companyDropDownList", 
 						value: ${action.user.companyId}, 
-						change : function(data){
+						change : function (data){
 							data.copy(companyPlaceHolder);
 							kendo.bind($("#company-info"), companyPlaceHolder );
 						}	
@@ -51,7 +51,7 @@
 				 $("#site-info").data("sitePlaceHolder", new common.models.WebSite({ webSiteId: ${ action.targetWebSite.webSiteId} });
 				common.api.callback("${request.contextPath}/secure/get-site.do?output=json", {
 					data : { targetSiteId:  $("#site-info").data("sitePlaceHolder").webSiteId },
-					success : {
+					success : function(response){
 						var site = common.models.WebSite(response.targetWebSite);
 						site.copy( $("#site-info").data("sitePlaceHolder") );
 					}
