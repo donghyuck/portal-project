@@ -1028,7 +1028,7 @@
 										<h5 ><strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 									</div>
 									<div class="panel panel-default panel-flat">								
-										<div class="panel-body scrollable" style="max-height:450px;">											
+										<div class="panel-body scrollable" style="max-height:450px; min-height:360px;">											
 											<div style="width:100%; padding:0px; border: 0px; min-height: 200px;"></div>
 										</div>	
 										<div class="panel-footer" style="padding:0px;">
@@ -1041,7 +1041,7 @@
 									<h5 ><strong>도메인 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 								</div>		
 								<div class="panel panel-default panel-flat">								
-									<div class="panel-body scrollable" style="max-height:450px;">											
+									<div class="panel-body scrollable" style="max-height:450px; min-height:360px;">											
 										<div style="width:100%; padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
 									<div class="panel-footer" style="padding:0px;">
@@ -1054,7 +1054,7 @@
 									<h5 ><strong>사이트 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 								</div>		
 								<div class="panel panel-default panel-flat">								
-									<div class="panel-body scrollable" style="max-height:450px;">											
+									<div class="panel-body scrollable" style="max-height:450px; min-height:360px;">											
 										<div style="width:100%; padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
 									<div class="panel-footer" style="padding:0px;">
