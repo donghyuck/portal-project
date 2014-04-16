@@ -527,7 +527,7 @@
 					change : function (e) {
 
 					},
-					open : function(e){
+					refresh : function(e){
 						alert("fdsaf");
 					}  
 				});					
