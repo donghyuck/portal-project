@@ -593,9 +593,9 @@
 												</tr>													
 												<tr>
 													<th><small>메뉴</small></th>	
-													<td><span data-bind="text: displayName">${action.targetWebSite.menu.displayName} </span> 
-														<span class="label label-warning"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
-														<code><span data-bind="text: webSiteId">${action.targetWebSite.webSiteId}</span></code>
+													<td><span data-bind="text: displayName">${action.targetWebSite.menu.title} </span> 
+														<span class="label label-warning"><span data-bind="text: name">${action.targetWebSite.menu.name}</span></span> 
+														<code><span data-bind="text: webSiteId">${action.targetWebSite.menu.menuId}</span></code>
 														menuId
 														name
 														title
