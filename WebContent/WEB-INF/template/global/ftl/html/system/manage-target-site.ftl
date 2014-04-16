@@ -503,20 +503,17 @@
 		}
 		
 		function showWebsiteMenuSetting(){
-			
-			var sitePlaceHolder = $("#site-info").data("sitePlaceHolder");		
-			
 			var renderToString = "website-menu-setting-modal";
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
 			
-			var websiteMenuSetting = $("#"+ renderToString);	
-			
+			var websiteMenuSetting = $("#"+ renderToString);				
 			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
-				
+				var sitePlaceHolder =new common.models.WebSite();
+				$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);					
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
-					website : new common.models.WebSite()
+					website :sitePlaceHolder
 				});							
 				sitePlaceHolder.copy( websiteMenuSettingViewModel.website );
 				
@@ -528,15 +525,17 @@
 
 					}
 				});	
+				websiteMenuSetting.data('kendoExtModalWindow').open();	
 				return;
 			}				
 						
 			
 			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
+				var sitePlaceHolder =new common.models.WebSite();
+				$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);					
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
-					website : new common.models.WebSite()
-				});			
-				sitePlaceHolder.copy( websiteMenuSettingViewModel.website );
+					website :sitePlaceHolder
+				});		
 					
 				websiteMenuSetting.extModalWindow({
 					title : "사이트 메뉴 설정",
@@ -549,8 +548,7 @@
 					}
 				});						
 			}			
-			//websiteMenuSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');	
-			
+			//websiteMenuSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');				
 			websiteMenuSetting.data('kendoExtModalWindow').open();		
 		}
 		</script>
