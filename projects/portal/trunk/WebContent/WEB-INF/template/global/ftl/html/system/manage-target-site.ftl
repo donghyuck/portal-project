@@ -553,14 +553,19 @@
 			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
 		}
 		</script>
-		<style>					
-		
+		<style type="text/css" media="screen">
+
 		.k-grid-content{
 			height:200px;
 		}			
-		
-		
-		</style>
+		#xmleditor { 
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+		</style>		
 </#compress>		
 	</head>
 	<body>
