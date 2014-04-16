@@ -315,10 +315,7 @@
 								<div class="col-lg-10">
 									<input type="text" class="form-control" placeholder="설명" data-bind="value:website.menu.description"/>
 								</div>
-							</div>			
-							<div class="form-group">
-								<label class="col-lg-2 control-label"><small>메뉴 데이터 <span class="label label-danger">Important</span></small></label>
-							</div>									
+							</div>											
 						</form>															
 					</div>
 					<div class='modal-body' style="height:250px;">
