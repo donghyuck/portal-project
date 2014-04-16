@@ -516,7 +516,7 @@
 			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
 				
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
-					website : new common.models.WebSite();
+					website : new common.models.WebSite()
 				});							
 				sitePlaceHolder.copy( websiteMenuSettingViewModel.website );
 				
@@ -534,8 +534,10 @@
 			
 			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
-				
-				});				
+					website : new common.models.WebSite()
+				});			
+				sitePlaceHolder.copy( websiteMenuSettingViewModel.website );
+					
 				websiteMenuSetting.extModalWindow({
 					title : "사이트 메뉴 설정",
 					template : $("#website-menu-setting-modal-template").html(),
