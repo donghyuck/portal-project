@@ -527,10 +527,10 @@
 
 					},
 					refresh : function(e){
-						//var editor = ace.edit("xmleditor");
+						var editor = ace.edit("xmleditor");
 						//editor.setTheme("ace/theme/twilight");
-						//editor.getSession().setMode("ace/mode/xml");
-						//editor.setValue(sitePlaceHolder.menu.xmlData);
+						editor.getSession().setMode("ace/mode/xml");
+						
 					}  
 				});					
 			}else{
