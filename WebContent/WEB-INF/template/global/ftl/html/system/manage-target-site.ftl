@@ -493,7 +493,10 @@
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}		
+			
+			var sitePlaceHolder = $("#site-info").data("sitePlaceHolder");			
 			var websiteMenuSetting = $("#"+ renderToString);
+			
 			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
 			
 				var companySettingViewModel =  kendo.observable({ 
