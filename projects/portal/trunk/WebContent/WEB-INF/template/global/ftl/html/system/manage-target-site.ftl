@@ -503,14 +503,19 @@
 		}
 		
 		function showWebsiteMenuSetting(){
+			
+			var sitePlaceHolder = $("#site-info").data("sitePlaceHolder");		
+			
 			var renderToString = "website-menu-setting-modal";
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
 			
-			var sitePlaceHolder = $("#site-info").data("sitePlaceHolder");			
-			alert(kendo.stringify(sitePlaceHolder));			
-			
+			if( sitePlaceHolder.menu.menuId == WebSiteUtils.getDefaultMenuId()) {
+				alert(kendo.stringify(sitePlaceHolder));		
+				break;
+			}				
+						
 			var websiteMenuSetting = $("#"+ renderToString);			
 			if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
 			
@@ -600,7 +605,7 @@
 													</td>
 												</tr>	
 												<tr>
-													<th><small>공개</small></th>	
+													<th><small>공개여부</small></th>	
 													<td>
 														<span class="label label-info" data-bind="visible: allowAnonymousAccess">공개</span><span class="label label-info" data-bind="invisible: allowAnonymousAccess">비공개</span> 
 													</td>
@@ -610,7 +615,7 @@
 													<td><span data-bind="text: menu.title">${action.targetWebSite.menu.title} </span> 
 														<span class="label label-warning"><span data-bind="text: menu.name">${action.targetWebSite.menu.name}</span></span> 
 														<code><span data-bind="text: menu.menuId">${action.targetWebSite.menu.menuId}</span></code>
-														<#if action.targetWebSite.menu.menuId == WebSiteUtils.getDefaultMenuId() >디폴트 메뉴 사용중</#if>
+														<#if action.targetWebSite.menu.menuId == WebSiteUtils.getDefaultMenuId() >(디폴트 메뉴 사용중)</#if>
 													</td>
 												</tr>													
 												<tr>
