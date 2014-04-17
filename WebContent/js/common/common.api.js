@@ -23,6 +23,14 @@
 						options.success(response) ;					
 				}
 			},
+			beforeSend : function( xhr ) {
+				if( isFunction( options.requestStart ))
+					options.requestStart( ) ;					
+			},
+			complete : function( xhr ) {
+				if( isFunction( options.requestEnd ))
+					options.requestEnd( ) ;						
+			},
 			error: options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
 		});			
