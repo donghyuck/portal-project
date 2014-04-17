@@ -651,7 +651,7 @@
 										</h5>
 										<p class="pull-right">
 											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>
-											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details">미디어 관리</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cloud"></i> 미디어 관리</button>
 										<p>
 									</div>											
 									<table class="table table-hover">
