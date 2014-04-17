@@ -284,7 +284,7 @@
 					<div class='modal-body'>			
 						<div class="page-header text-primary">
 							<h5 >
-							<small><i class="fa fa-info"></i> 메뉴 데이터는 기본 템플릿을 기반으로 자동으로 생성되었습니다.</small>									
+								<small><i class="fa fa-info"></i> <span data-bind="invisible: website.menu.menuId" >메뉴 데이터는 기본 템플릿을 기반으로 자동으로 생성되었습니다.</span></small>									
 							</h5>
 						</div>							
 						<form class="form-horizontal">
