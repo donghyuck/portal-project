@@ -884,7 +884,17 @@
 		},
 		open: function() {
 			var that = this ;			
-			that._modal().modal('show');
+			
+			if( typeof that.options.backdrop === 'string' )
+			{
+				that._modal().modal({
+					backdrop : that.options.backdrop,
+					show : true;
+				});
+			}
+			else{	
+				that._modal().modal('show');
+			}
 		},
 		close: function () {
 			var that = this ;
