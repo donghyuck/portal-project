@@ -634,7 +634,7 @@
 					<div class="panel panel-default" style="min-height:300px;">
 						<div class="panel-heading" style="padding:5px;">						
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>
+								
 							</div>
 							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
@@ -648,10 +648,11 @@
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small><i class="fa fa-info"></i> 미디어관리 버튼을 클릭하면 회사가 보유한 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
-											<p>
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details">미디어 관리</button>
-											<p>
 										</h5>
+										<p >
+											<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details">미디어 관리</button>
+										<p>
 									</div>											
 									<table class="table table-hover">
 											<tbody>						
