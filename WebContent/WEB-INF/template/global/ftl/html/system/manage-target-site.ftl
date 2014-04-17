@@ -533,7 +533,7 @@ alert( "ss" );
 						editor.getSession().setUseWrapMode(true);
 						
 						editor.setValue(sitePlaceHolder.menu.menuData);
-						editor.getSession().on('change', function(e) {
+						editor.getSession().selection.on('changeSelection', function(e)
 							sitePlaceHolder.set("menuData", editor.getValue() );
 						});						
 					}  
