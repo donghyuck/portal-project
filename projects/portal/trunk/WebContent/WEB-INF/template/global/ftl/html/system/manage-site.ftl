@@ -650,7 +650,7 @@
 											<small><i class="fa fa-info"></i> 미디어관리 버튼을 클릭하면 회사가 보유한 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
 										</h5>
 										<p class="pull-right">
-											<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>
+											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>
 											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details">미디어 관리</button>
 										<p>
 									</div>											
