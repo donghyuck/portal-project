@@ -724,6 +724,41 @@
 		});				
 	};
 		
+	common.ui.notification = function (options){
+		var renderToString = "my-notifications";
+		if( $("#"+ renderToString).length == 0 ){
+			$('body').append('<span id="'+ renderToString +'" style="display:none;"></span>');
+		}
+		
+		if( !$("#"+ renderToString).data("kendoNotification") ){
+			$("#"+ renderToString).kendoNotification({
+	            position: {
+	                pinned: true,
+	                top: 30,
+	                right: 30
+	            },
+	            autoHideAfter: 0,
+	            stacking: "down",
+	            templates: [{
+	                type: "info",
+	                template: ""
+	            }, {
+	                type: "error",
+	                template: '<div class="wrong-pass"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+	            }, {
+	                type: "upload-success",
+	                template: ""
+	            }]	            
+	        });
+		}
+		data("kendoNotification").show(
+			{ 
+				title: options.title,
+				message: options.message
+			},
+			options.type || "error"
+		);
+	};
 	
 })(jQuery);	
 /**
