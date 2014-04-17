@@ -226,6 +226,7 @@
 									<small><i class="fa fa-info"></i> 변경후에 확인 버튼을 클릭하세요. </small>									
 									</h5>
 								</div>		
+								<!--
 							  <div class="form-group">
 							    <label>이름</label>
 							    <input type="text" class="form-control" placeholder="회사 이름" data-bind="value: company.displayName ">
@@ -240,6 +241,7 @@
 							     <input type="text" class="form-control" data-bind="value:company.description">
 							  </div>	
 							</div>  
+							-->
 							<!-- attributes -->
 							<div class="col-sm-6">
 								<div class="panel-header text-primary">
@@ -273,7 +275,7 @@
 	<!- ================================ ->
 	<!-- WEBSITE MENU MODAL TEMPLAGE 				 -->
 	<!- ================================ ->			
-	<script id="website-menu-create-modal-template" type="text/x-kendo-template">
+	<script id="website-menu-setting-modal-template" type="text/x-kendo-template">
 		<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
 			<div class='modal-dialog modal-lg'>
 				<div class='modal-content'>
@@ -326,24 +328,3 @@
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->				
 	</script>
-		
-	<script id="website-menu-setting-modal-template" type="text/x-kendo-template">
-		<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
-			<div class='modal-dialog modal-lg'>
-				<div class='modal-content'>
-					<div class='modal-header'>
-						<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-						<h5 class='modal-title'>#= title #</h5>
-					</div>
-					<div class='modal-body'>
-					
-					
-					
-					</div>
-					<div class='modal-footer'>		
-					
-					</div>
-				</div><!-- /.modal-content -->
-			</div><!-- /.modal-dialog -->
-		</div><!-- /.modal -->
-	</script>			
