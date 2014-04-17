@@ -104,7 +104,7 @@ img.img-full-height {
 
 .notification-error {
 	width: 350px;
-	height: 100px;
+	min-height: 120px
 }
 
 .notification-error h3 {
