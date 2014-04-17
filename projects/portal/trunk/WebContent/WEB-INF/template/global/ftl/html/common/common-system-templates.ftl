@@ -226,11 +226,12 @@
 									<small><i class="fa fa-info"></i> 변경후에 확인 버튼을 클릭하세요. </small>									
 									</h5>
 								</div>		
-								<!--
 							  <div class="form-group">
 							    <label>이름</label>
-							    <input type="text" class="form-control" placeholder="회사 이름" data-bind="value: company.displayName ">
-							  </div>
+							    <input type="text" class="form-control" placeholder="사이트 이름" data-bind="value: website.displayName ">
+							  </div>								
+								<!--
+
 							  <div class="form-group">
 							    <label>도메인</label>
 							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: company.domainName">
