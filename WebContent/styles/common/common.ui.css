@@ -91,12 +91,59 @@ img.img-full-height {
 	border-radius: 18px;
 	margin: 20px 0 0 0;
 }
-	
 
+/* Error template */
+.k-notification {
+	border: 0;
+}
+
+.k-notification-error.k-group {
+	background: rgba(100%, 0%, 0%, .7);
+	color: #ffffff;
+}
+
+.notification-error {
+	width: 300px;
+	height: 100px;
+}
+
+.notification-error h3 {
+	font-size: 1em;
+	padding: 32px 10px 5px;
+}
+
+.notification-error img {
+	float: left;
+	margin: 30px 15px 30px 30px;
+}
+/* Success template */
+.k-notification-upload-success.k-group {
+	background: rgba(0%, 60%, 0%, .7);
+	color: #fff;
+}
+
+.notification-success {
+	width: 240px;
+	height: 100px;
+	padding: 0 30px;
+	line-height: 100px;
+}
+
+.notification-success h3 {
+	font-size: 1.7em;
+	font-weight: normal;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.notification-success img {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+}
 /* -------------------------------------------- */
 /* Bootstrap customize                             */
 /* -------------------------------------------- */
-
 .editor-popup .modal-dialog {
 	margin: 40px auto;
 }
