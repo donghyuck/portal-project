@@ -755,7 +755,7 @@
 			});
 		}
 		$("#" + renderToString).data("kendoNotification").show({
-			title : "Wrong Password",
+			title : options.title,
 			message : "Please enter your password again."
 		}, "error");
 	};
