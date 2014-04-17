@@ -51,8 +51,7 @@
 				 // 4. PAGE MAIN		
 				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.targetWebSite.webSiteId}} );
 				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
-				 
-				 kendo.ui.progress($("#site-info"), true);
+
 				common.api.callback(  
 				{
 					url :"${request.contextPath}/secure/get-site.do?output=json", 
@@ -62,6 +61,12 @@
 						site.copy( sitePlaceHolder );
 						kendo.bind($("#site-info"), sitePlaceHolder );
 						$('button.btn-control-group').removeAttr("disabled");
+						
+					},
+					requestStart : function(){
+						kendo.ui.progress($("#site-info"), true);
+					},
+					requestEnd : function(){
 						kendo.ui.progress($("#site-info"), false);
 					}
 				}); 
