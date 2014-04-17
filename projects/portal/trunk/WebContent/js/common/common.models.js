@@ -518,7 +518,7 @@ var Menu = kendo.data.Model.define( {
 	    	name: { type: "string", editable: true , defaultValue : ""  },
 	        title: { type: "string", editable: true , defaultValue : "" },
 	        enabled : {type: "boolean", defaultValue : true},
-	        description: { type: "string", editable: true ,defaultValue : ""  },
+/*	        description: { type: "string", editable: true ,defaultValue : ""  },*/
 	        properties : {},
 	        menuData : { type: "string", editable: true, defaultValue : "" },
 	        modifiedDate: { type: "date"},
