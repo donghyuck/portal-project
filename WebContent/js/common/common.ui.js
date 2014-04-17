@@ -737,7 +737,7 @@
 					top : 30,
 					right : 30
 				},
-				autoHideAfter : 0,
+				autoHideAfter : 1000,
 				stacking : "down",
 				templates : [
 					{
