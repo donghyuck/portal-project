@@ -548,6 +548,7 @@ alert( "ss" );
 						template : $("#website-menu-setting-modal-template").html(),
 						data :  websiteMenuSettingViewModel,
 						change : function (e) {
+							alert( kendo.stringify( e) );
 							//if( e.field.match('^company.')){							
 							///	$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
 							//}
