@@ -757,7 +757,7 @@
 		$("#" + renderToString).data("kendoNotification").show({
 			title : options.title,
 			message : options.message
-		}, "error");
+		}, options.type || "error");
 	};
 	
 })(jQuery);	
@@ -919,7 +919,6 @@
 		},
 		open: function() {
 			var that = this ;			
-			
 			if( typeof that.options.backdrop === 'string' )
 			{
 				that._modal().modal({
