@@ -511,18 +511,18 @@
 			var renderToString = "website-menu-setting-modal";
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
-				//$("#"+ renderToString).data("");
+				$("#"+ renderToString).data("sitePlaceHolder", new common.models.WebSite() );
 			}
-
-			var sitePlaceHolder =new common.models.WebSite();
+			
+			var sitePlaceHolder =$("#"+ renderToString).data("sitePlaceHolder");			
 			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);			
+			
 			if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){				
 				if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
 					sitePlaceHolder.menu.set("name", sitePlaceHolder.name + "_MENU");
 					sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
 					sitePlaceHolder.menu.menuId = 0;
-				}
-								
+				}								
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder,
 					onSave : function (e) {
@@ -537,6 +537,9 @@
 								var websiteToUse = new common.models.WebSite(response.targetWebSite);																
 								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );								
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
+								
+								if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() ) 
+									window.location.reload( true );								
 							},
 							fail: function(){								
 								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });
@@ -560,11 +563,11 @@
 					refresh : function(e){
 						var editor = ace.edit("xmleditor");
 						editor.getSession().setMode("ace/mode/xml");
-						editor.getSession().setUseWrapMode(true);						
-						editor.setValue(sitePlaceHolder.menu.menuData);				
+						editor.getSession().setUseWrapMode(true);
 					}  
 				});	
-			}		
+			}			
+			ace.edit("xmleditor").setValue(sitePlaceHolder.menu.menuData);
 			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
 		}
 		</script>
