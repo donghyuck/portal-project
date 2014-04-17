@@ -124,7 +124,7 @@ img.img-full-height {
 
 .notification-success {
 	width: 350px;
-	height: 100px;
+	min-height: 120px
 	padding: 0 30px;
 	line-height: 100px;
 }
