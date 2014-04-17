@@ -538,7 +538,7 @@
 								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );								
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
 								
-								if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() ) 
+								if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) 
 									window.location.reload( true );								
 							},
 							fail: function(){								
