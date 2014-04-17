@@ -620,10 +620,6 @@
 					<div class="panel panel-default" style="min-height:300px;">
 						<div class="panel-heading" style="padding:5px;">
 							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="setting" disabled="disabled"><i class="fa fa-cog"></i> 사이트 정보변경</button>
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="menu" disabled="disabled"><i class="fa fa-sitemap"></i> 메뉴</button>
-							</div>
-							<div class="btn-group">
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>								
@@ -633,13 +629,16 @@
 								<div class="col-lg-5 col-xs-12" id="site-info">					
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
-											<small><i class="fa fa-info"></i> 미디어관리 버튼을 클릭하면 사이트 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
-											<div class="btn-group">
-											
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-cloud"></i> 미디어 관리</button>
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled">페이지 관리</button>
-											</div>
+											<small><i class="fa fa-info"></i> 미디어 버튼을 클릭하면 사이트 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
 										</h5>
+										<p class="pull-right">
+											<div class="btn-group">
+												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting" disabled="disabled"><i class="fa fa-cog"></i> 정보변경</button>
+												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="menu" disabled="disabled"><i class="fa fa-sitemap"></i> 메뉴</button>
+												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled">페이지 관리</button>
+											</div>
+											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-cloud"></i> 미디어 관리</button>											
+										</p>
 									</div>										
 									<table class="table">
 											<tbody>						
