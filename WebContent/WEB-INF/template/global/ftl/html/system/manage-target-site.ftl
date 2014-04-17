@@ -531,7 +531,7 @@
 								var websiteToUse = new common.models.WebSite(response.targetWebSite);
 								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
-								$("#"+ renderToString ).data('kendoExtModalWindow').destroy();
+								// $("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
 							fail: function(){								
 								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });
@@ -665,7 +665,6 @@
 													<td><span data-bind="text: menu.title">${action.targetWebSite.menu.title} </span> 
 														<span class="label label-warning"><span data-bind="text: menu.name">${action.targetWebSite.menu.name}</span></span> 
 														<code><span data-bind="text: menu.menuId">${action.targetWebSite.menu.menuId}</span></code>
-														<#if action.targetWebSite.menu.menuId == WebSiteUtils.getDefaultMenuId() >(디폴트 메뉴 사용중)</#if>
 													</td>
 												</tr>													
 												<tr>
