@@ -318,7 +318,7 @@
 							</div>											
 						</form>															
 					</div>
-					<div class='modal-body' style="height:250px; padding-buttom:0px;">
+					<div class='modal-body editor-model-body'>
 						<div id="xmleditor"></div>
 					</div>
 					<div class='modal-footer'></div>
