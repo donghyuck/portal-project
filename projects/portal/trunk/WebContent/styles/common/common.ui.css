@@ -103,7 +103,7 @@ img.img-full-height {
 }
 
 .notification-error {
-	width: 300px;
+	width: 350px;
 	height: 100px;
 }
 
@@ -123,7 +123,7 @@ img.img-full-height {
 }
 
 .notification-success {
-	width: 240px;
+	width: 350px;
 	height: 100px;
 	padding: 0 30px;
 	line-height: 100px;
