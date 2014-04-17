@@ -527,6 +527,7 @@
 					website :sitePlaceHolder,
 					onSave : function (e) {
 						var menuToUse = this.website.menu;
+						menuToUse.menuData = ace.edit("xmleditor").getValue();
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-site-menu.do?output=json", 
