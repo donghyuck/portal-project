@@ -756,7 +756,7 @@
 		}
 		$("#" + renderToString).data("kendoNotification").show({
 			title : options.title,
-			message : "Please enter your password again."
+			message : options.message
 		}, "error");
 	};
 	
