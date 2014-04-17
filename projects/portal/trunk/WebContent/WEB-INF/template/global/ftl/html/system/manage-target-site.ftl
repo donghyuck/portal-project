@@ -638,7 +638,7 @@
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled">페이지 관리</button>
 											</div>
 											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-cloud"></i> 미디어 관리</button>
-										<p>
+										</p>
 									</div>										
 									<table class="table">
 											<tbody>						
