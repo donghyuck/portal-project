@@ -536,6 +536,9 @@
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
 								$("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
+							fail : function (e){
+								alert("오류 발생...") ;
+							},
 							requestStart : function(){
 								kendo.ui.progress($("#"+ renderToString ), true);
 							},
