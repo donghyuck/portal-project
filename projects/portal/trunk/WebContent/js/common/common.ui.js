@@ -753,10 +753,7 @@
 		}
 		
 		$("#"+ renderToString).data("kendoNotification").show(
-			{ 
-				title: options.title,
-				message: options.message
-			},
+			{ title: options.title, message: options.message }, 
 			options.type || "error"
 		);
 	};
