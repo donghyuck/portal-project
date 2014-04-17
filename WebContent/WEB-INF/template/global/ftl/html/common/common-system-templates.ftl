@@ -284,7 +284,7 @@
 					<div class='modal-body'>			
 						<div class="page-header text-primary">
 							<h5 >
-							<small><i class="fa fa-info"></i> 기본 메뉴 데이터는 디폴트로 사용되는 내용을 기반으로 생성되었습니다.</small>									
+							<small><i class="fa fa-info"></i> 메뉴 데이터는 기본 템플릿을 기반으로 자동으로 생성되었습니다.</small>									
 							</h5>
 						</div>							
 						<form class="form-horizontal">
@@ -295,7 +295,7 @@
 								</div>
 							</div>					
 							<div class="form-group">
-								<label class="col-lg-2 control-label">타이틀</label>
+								<label class="col-lg-2 control-label"><small>타이틀</small></label>
 								<div class="col-lg-10">
 									<input type="text" class="form-control" placeholder="타이틀" data-bind="value:website.menu.title"/>
 								</div>
@@ -321,7 +321,10 @@
 					<div class='modal-body editor-model-body'>
 						<div id="xmleditor"></div>
 					</div>
-					<div class='modal-footer' style="margin-top: 0px;"></div>
+					<div class='modal-footer' style="margin-top: 0px;">
+						<button type="button" class="btn btn-info btn-sm custom-update" disabled data-bind="events:{ click: onSave }" >확인</button>		
+						<button type="button" class="btn btn-default  btn-sm" data-dismiss='modal' aria-hidden='true'>취소</button>						
+					</div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->				
