@@ -199,7 +199,7 @@
 						</div>
 					</div>
 					<div class='modal-footer'>		
-						<button type="button" class="btn btn-info btn-sm custom-update" disabled data-bind="events:{ click: onSave }" >확인</button>		
+						<button type="button" class="btn btn-primary btn-sm custom-update" disabled data-bind="events:{ click: onSave }" >확인</button>		
 						<button type="button" class="btn btn-default  btn-sm" data-dismiss='modal' aria-hidden='true'>취소</button>	
 					</div>
 				</div><!-- /.modal-content -->
@@ -264,7 +264,7 @@
 						</div>
 					</div>
 					<div class='modal-footer'>		
-						<button type="button" class="btn btn-info btn-sm custom-update" disabled data-bind="events:{ click: onSave }" >확인</button>		
+						<button type="button" class="btn btn-primary btn-sm custom-update" disabled data-bind="events:{ click: onSave }" >확인</button>		
 						<button type="button" class="btn btn-default  btn-sm" data-dismiss='modal' aria-hidden='true'>취소</button>	
 					</div>
 				</div><!-- /.modal-content -->
