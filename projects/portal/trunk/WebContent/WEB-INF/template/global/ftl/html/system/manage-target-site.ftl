@@ -629,7 +629,7 @@ alert( "ss" );
 													<td><span data-bind="text: displayName">${action.targetWebSite.displayName} </span> 
 														<span class="label label-warning"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
 														<code><span data-bind="text: webSiteId">${action.targetWebSite.webSiteId}</span></code>
-														<span class="label label-danger" data-bind="invisible: enabled"><i class="fa fa-times"></i></span>
+														<span class="label label-danger" data-bind="invisible: enabled" style="display:none;"><i class="fa fa-times"></i></span>
 													</td>
 												</tr>	
 												<tr>
