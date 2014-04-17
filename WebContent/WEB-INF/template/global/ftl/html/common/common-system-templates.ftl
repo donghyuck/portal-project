@@ -309,13 +309,7 @@
 										</label>
 									</div>
 								</div>							
-							</div>				
-							<div class="form-group">
-								<label class="col-lg-2 control-label"><small>설명</small></label>
-								<div class="col-lg-10">
-									<input type="text" class="form-control" placeholder="설명" data-bind="value:website.menu.description"/>
-								</div>
-							</div>											
+							</div>													
 						</form>															
 					</div>
 					<div class='modal-body editor-model-body'>
