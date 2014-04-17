@@ -518,11 +518,13 @@
 			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);		
 			
 			if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){			
+				
 				if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
 					sitePlaceHolder.menu.set("name", sitePlaceHolder.name + "_MENU");
 					sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
 					sitePlaceHolder.menu.menuId = 0;
 				}
+				
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder,
 					onSave : function (e) {
