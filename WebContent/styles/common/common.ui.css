@@ -61,6 +61,12 @@ img.img-full-height {
 	max-height: 100%;
 }
 
+
+.editor-model-body {
+	min-height:250px;
+	padding-buttom : 0;
+}
+
 /* -------------------------------------------- */
 /* Kendoui customize                              */
 /* -------------------------------------------- */
