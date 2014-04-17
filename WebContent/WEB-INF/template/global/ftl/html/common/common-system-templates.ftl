@@ -284,7 +284,10 @@
 					<div class='modal-body'>			
 						<div class="page-header text-primary">
 							<h5 >
-								<small><i class="fa fa-info"></i> <span data-bind="invisible: website.menu.menuId" >메뉴 데이터는 기본 템플릿을 기반으로 자동으로 생성되었습니다.</span></small>									
+								<small><i class="fa fa-info"></i> 
+								<span data-bind="visible: website.menu.menuId" >잘못된 메뉴 데이터가 저장되는 경우 화면의 메뉴가 보이지 않을 수 있습니다.</span>
+								<span data-bind="invisible: website.menu.menuId" >메뉴 데이터는 기본 템플릿을 기반으로 자동으로 생성되었습니다.</span>
+								</small>									
 							</h5>
 						</div>							
 						<form class="form-horizontal">
