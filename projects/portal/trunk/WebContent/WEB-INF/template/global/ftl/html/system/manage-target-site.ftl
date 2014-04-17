@@ -532,10 +532,9 @@
 							url :"${request.contextPath}/secure/update-site-menu.do?output=json", 
 							data : { targetSiteId:  sitePlaceHolder.webSiteId, item: kendo.stringify(menuToUse) },
 							success : function(response){
-								var websiteToUse = new common.models.WebSite(response.targetWebSite);
-																
-								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );
-								
+								common.ui.notification({title:"", message: "메뉴 데이터가 정상적으로 입력되었습니다." });
+								var websiteToUse = new common.models.WebSite(response.targetWebSite);																
+								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );								
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
 							},
 							fail: function(){								
