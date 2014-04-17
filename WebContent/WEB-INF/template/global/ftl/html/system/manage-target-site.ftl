@@ -60,6 +60,7 @@
 						var site = new common.models.WebSite(response.targetWebSite);
 						site.copy( sitePlaceHolder );
 						kendo.bind($("#site-info"), sitePlaceHolder );
+						$('button.btn-control-group').removeAttr("disabled");
 					}
 				}); 
 				 
