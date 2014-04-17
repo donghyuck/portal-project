@@ -744,10 +744,10 @@
 	                template: ""
 	            }, {
 	                type: "error",
-	                template: '<div class="wrong-pass"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+	                template: '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
 	            }, {
-	                type: "upload-success",
-	                template: ""
+	                type: "success",
+	                template: '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
 	            }]	            
 	        });
 		}
