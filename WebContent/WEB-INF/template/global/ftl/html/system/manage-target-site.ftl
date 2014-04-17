@@ -525,6 +525,7 @@
 				});	
 				$("#"+ renderToString ).extModalWindow({
 					title : "사이트 메뉴 생성",
+					backdrop : 'static',
 					template : $("#website-menu-create-modal-template").html(),
 					data :  websiteMenuSettingViewModel,
 					refresh : function(e){
