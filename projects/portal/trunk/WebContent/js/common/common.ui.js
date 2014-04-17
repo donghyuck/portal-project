@@ -889,7 +889,7 @@
 			{
 				that._modal().modal({
 					backdrop : that.options.backdrop,
-					show : true;
+					show : true
 				});
 			}
 			else{	
