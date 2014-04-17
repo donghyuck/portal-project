@@ -537,7 +537,12 @@
 								$("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
 							fail : function (e){
-								alert("오류 발생...") ;
+								common.ui.notification({
+									title:"메뉴 생성 오류" ,
+									message:"메뉴 생성에 실패하였습니다." , 
+									type: "error"
+								});
+								
 							},
 							requestStart : function(){
 								kendo.ui.progress($("#"+ renderToString ), true);
