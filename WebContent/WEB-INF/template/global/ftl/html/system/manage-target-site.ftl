@@ -51,7 +51,6 @@
 				 // 4. PAGE MAIN		
 				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.targetWebSite.webSiteId}} );
 				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
-
 				common.api.callback(  
 				{
 					url :"${request.contextPath}/secure/get-site.do?output=json", 
@@ -77,7 +76,7 @@
 							showWebsiteMenuSetting();								
 						},
 						setting : function(e){
-							
+							showWebsiteSetting();					
 						},						
 						group : function(e){
 							topBar.go('main-group.do');				
@@ -507,6 +506,11 @@
 			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);				
 		}
 				
+				
+		/**
+		*  WebSite Menu Setting Modal 
+		*
+		**/		
 		function showWebsiteMenuSetting(){
 			var renderToString = "website-menu-setting-modal";
 			if( $("#"+ renderToString).length == 0 ){
@@ -536,8 +540,7 @@
 								common.ui.notification({title:"메뉴 저장", message: "메뉴 데이터가 정상적으로 입력되었습니다.", type: "success" });
 								var websiteToUse = new common.models.WebSite(response.targetWebSite);																
 								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );								
-								$("#"+ renderToString ).data('kendoExtModalWindow').close();
-								
+								$("#"+ renderToString ).data('kendoExtModalWindow').close();								
 								if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) 
 									window.location.reload( true );								
 							},
@@ -558,7 +561,7 @@
 				$("#"+ renderToString ).extModalWindow({
 					title : "사이트 메뉴",
 					backdrop : 'static',
-					template : $("#website-menu-create-modal-template").html(),
+					template : $("#website-menu-setting-modal-template").html(),
 					data :  websiteMenuSettingViewModel,
 					refresh : function(e){
 						var editor = ace.edit("xmleditor");
@@ -569,7 +572,76 @@
 			}			
 			ace.edit("xmleditor").setValue(sitePlaceHolder.menu.menuData);
 			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
+		}		
+		
+		function showWebsiteSetting(){
+		
+			var renderToString = "website-setting-modal";
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'"/>');
+				$("#"+ renderToString).data("websitePlaceHolder", new common.models.WebSite() );
+			}
+			var websiteSetting = $("#"+ renderToString);
+			if( !websiteSetting.data('kendoExtModalWindow') ){
+				
+				var websitePlaceHolder = $("#"+ renderToString).data("websitePlaceHolder");
+				$("#site-info").data("sitePlaceHolder").copy(websitePlaceHolder);
+							
+				var websiteSettingViewModel =  kendo.observable({ 
+					onSave : function(e){
+						$.ajax({
+							type : 'POST',
+							url : '${request.contextPath}/secure/update-website.do?output=json',
+							data: { targetSiteId : this.get('website').webSiteId, item : kendo.stringify( this.get('website') ) },
+							success : function(response){
+								common.ui.notification({title:"정보변경", message: "웹 사이트 정보가 정상적으로 저장되었습니다.", type: "success" });
+								var websiteToUse = new common.models.WebSite(response.targetWebSite);																
+								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );								
+								$("#"+ renderToString ).data('kendoExtModalWindow').close();	
+							},
+							error:common.api.handleKendoAjaxError,
+							dataType : "json"
+						});
+					},
+					isVisible: true,
+					website: websitePlaceHolder,
+					properties : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'${request.contextPath}/secure/list-website-property.do?output=json', type:'post' },
+							create: { url:'${request.contextPath}/secure/update-website-property.do?output=json', type:'post' },
+							update: { url:'${request.contextPath}/secure/update-website-property.do?output=json', type:'post'  },
+							destroy: { url:'${request.contextPath}/secure/delete-website-property.do?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { targetSiteId: websitePlaceHolder.webSiteId, items: kendo.stringify(options.models)};
+								} 
+								return { targetSiteId: websitePlaceHolder.webSiteId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							data: "targetCompanyProperty",
+							model: Property
+						},
+						error : common.api.handleKendoAjaxError
+					})
+				} );						
+				websiteSetting.extModalWindow({
+					title : "웹사이트 정보 변경",
+					template : $("#website-setting-modal-template").html(),
+					data :  websiteSettingViewModel,
+					change : function (e) {
+						if( e.field.match('^website.')){							
+							$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
+						}
+					}
+				});			
+			}				
+			websiteSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');	
+			websiteSetting.data('kendoExtModalWindow').open();	
 		}
+		
+		
 		</script>
 		<style type="text/css" media="screen">
 
