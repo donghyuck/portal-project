@@ -511,27 +511,32 @@
 			var renderToString = "website-menu-setting-modal";
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"/>');
+				//$("#"+ renderToString).data("");
 			}
 
 			var sitePlaceHolder =new common.models.WebSite();
-			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);			
-			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
-				sitePlaceHolder.menu.set("name", sitePlaceHolder.name + "_MENU");
-				sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
+			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);		
+			
+			if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){			
+				if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
+					sitePlaceHolder.menu.set("name", sitePlaceHolder.name + "_MENU");
+					sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
+					sitePlaceHolder.menu.menuId = 0;
+				}
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder,
 					onSave : function (e) {
 						var menuToUse = this.website.menu;
-						menuToUse.menuId = 0 ;
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-site-menu.do?output=json", 
 							data : { targetSiteId:  sitePlaceHolder.webSiteId, item: kendo.stringify(menuToUse) },
 							success : function(response){
 								var websiteToUse = new common.models.WebSite(response.targetWebSite);
+																
 								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );
+								
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
-								// $("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
 							fail: function(){								
 								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });
@@ -545,7 +550,7 @@
 							}
 						}); 								
 					}
-				});	
+				});
 				$("#"+ renderToString ).extModalWindow({
 					title : "사이트 메뉴 생성",
 					backdrop : 'static',
@@ -557,26 +562,8 @@
 						editor.getSession().setUseWrapMode(true);						
 						editor.setValue(sitePlaceHolder.menu.menuData);				
 					}  
-				});					
-			}else{
-				if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){			
-					var websiteMenuSettingViewModel  =  kendo.observable({ 
-						website :sitePlaceHolder
-					});								
-					$("#"+ renderToString ).extModalWindow({
-						title : "사이트 메뉴 설정",
-						template : $("#website-menu-setting-modal-template").html(),
-						data :  websiteMenuSettingViewModel,
-						change : function (e) {
-							//alert( kendo.stringify( e) );
-							//if( e.field.match('^company.')){							
-							///	$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
-							//}
-						}
-					});						
-				}				
-			}	
-			//websiteMenuSetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');				
+				});	
+			}		
 			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
 		}
 		</script>
