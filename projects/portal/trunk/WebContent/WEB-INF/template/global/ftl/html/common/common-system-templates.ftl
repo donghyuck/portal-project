@@ -321,7 +321,7 @@
 					<div class='modal-body editor-model-body'>
 						<div id="xmleditor"></div>
 					</div>
-					<div class='modal-footer'></div>
+					<div class='modal-footer' style="margin-top: 0px;"></div>
 				</div><!-- /.modal-content -->
 			</div><!-- /.modal-dialog -->
 		</div><!-- /.modal -->				
