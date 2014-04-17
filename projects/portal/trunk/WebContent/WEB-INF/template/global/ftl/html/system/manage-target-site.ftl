@@ -538,7 +538,7 @@
 							},
 							fail: function(){
 								
-								common.ui.notification();
+								common.ui.notification({title:"메뉴생성오류"});
 																
 							},
 							requestStart : function(){
