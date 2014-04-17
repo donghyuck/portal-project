@@ -633,9 +633,13 @@ alert( "ss" );
 													</td>
 												</tr>	
 												<tr>
-													<th><small>공개여부</small></th>	
+													<th><small>보안</small></th>	
 													<td>
-														<span class="label label-info" data-bind="visible: allowAnonymousAccess">공개</span><span class="label label-info" data-bind="invisible: allowAnonymousAccess">비공개</span> 
+													<!--
+														<span class="label label-info" data-bind="visible: allowAnonymousAccess">공개</span>
+														<span class="label label-info" data-bind="invisible: allowAnonymousAccess">비공개</span> -->
+														<i class="fa fa-lock fa-lg" data-bind="invisible: allowAnonymousAccess"></i>
+														<i class="fa fa-unlock fa-lg" data-bind="visible: allowAnonymousAccess"></i>														
 													</td>
 												</tr>													
 												<tr>
