@@ -515,16 +515,14 @@
 			}
 
 			var sitePlaceHolder =new common.models.WebSite();
-			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);		
-			
-			if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){			
-				
+			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);			
+			if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){				
 				if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
 					sitePlaceHolder.menu.set("name", sitePlaceHolder.name + "_MENU");
 					sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
 					sitePlaceHolder.menu.menuId = 0;
 				}
-				
+								
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder,
 					onSave : function (e) {
@@ -553,8 +551,9 @@
 						}); 								
 					}
 				});
+				
 				$("#"+ renderToString ).extModalWindow({
-					title : "사이트 메뉴 생성",
+					title : "사이트 메뉴",
 					backdrop : 'static',
 					template : $("#website-menu-create-modal-template").html(),
 					data :  websiteMenuSettingViewModel,
