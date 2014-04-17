@@ -518,25 +518,20 @@
 				sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
 				sitePlaceHolder.menu.set("description", sitePlaceHolder.displayName + " 웹 사이트 메뉴입니다.");
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
-					website :sitePlaceHolder
+					website :sitePlaceHolder,
+					onSave : function (e) {
+						alert( kendo.stringify( this.website ) );
+					}
 				});	
 				$("#"+ renderToString ).extModalWindow({
 					title : "사이트 메뉴 생성",
 					template : $("#website-menu-create-modal-template").html(),
 					data :  websiteMenuSettingViewModel,
-					change : function (e) {
-alert( "ss" );
-					},
 					refresh : function(e){
 						var editor = ace.edit("xmleditor");
-						//editor.setTheme("ace/theme/twilight");
 						editor.getSession().setMode("ace/mode/xml");
-						editor.getSession().setUseWrapMode(true);
-						
-						editor.setValue(sitePlaceHolder.menu.menuData);
-						editor.getSession().selection.on('changeSelection', function(e){
-							sitePlaceHolder.set("menuData", editor.getValue() );
-						});						
+						editor.getSession().setUseWrapMode(true);						
+						editor.setValue(sitePlaceHolder.menu.menuData);				
 					}  
 				});					
 			}else{
