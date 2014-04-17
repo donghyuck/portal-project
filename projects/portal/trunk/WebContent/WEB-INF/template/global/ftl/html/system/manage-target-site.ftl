@@ -533,7 +533,7 @@
 							url :"${request.contextPath}/secure/update-site-menu.do?output=json", 
 							data : { targetSiteId:  sitePlaceHolder.webSiteId, item: kendo.stringify(menuToUse) },
 							success : function(response){
-								common.ui.notification({title:"", message: "메뉴 데이터가 정상적으로 입력되었습니다.", type: "success" });
+								common.ui.notification({title:"메뉴 저장", message: "메뉴 데이터가 정상적으로 입력되었습니다.", type: "success" });
 								var websiteToUse = new common.models.WebSite(response.targetWebSite);																
 								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );								
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
@@ -542,7 +542,7 @@
 									window.location.reload( true );								
 							},
 							fail: function(){								
-								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								common.ui.notification({title:"메뉴 생성 오류", message: "시스템 운영자에게 문의하여 주십시오." });
 								$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);
 							},
 							requestStart : function(){
