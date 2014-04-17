@@ -513,9 +513,8 @@
 				$('body').append('<div id="'+ renderToString +'"/>');
 			}
 
-			var sitePlaceHolder =new common.models.WebSite();			
-			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);									
-			
+			var sitePlaceHolder =new common.models.WebSite();
+			$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);			
 			if( sitePlaceHolder.menu.menuId == ${ WebSiteUtils.getDefaultMenuId() } ) {			
 				sitePlaceHolder.menu.set("name", sitePlaceHolder.name + "_MENU");
 				sitePlaceHolder.menu.set("title", sitePlaceHolder.displayName + " 메뉴");
@@ -536,7 +535,9 @@
 								$("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
 							fail: function(){								
-								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });													
+								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);
+								$("#"+ renderToString ).data('kendoExtModalWindow').close();		
 							},
 							requestStart : function(){
 								kendo.ui.progress($("#"+ renderToString ), true);
@@ -560,7 +561,7 @@
 					}  
 				});					
 			}else{
-				if( !websiteMenuSetting.data('kendoExtModalWindow') ){			
+				if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){			
 					var websiteMenuSettingViewModel  =  kendo.observable({ 
 						website :sitePlaceHolder
 					});								
