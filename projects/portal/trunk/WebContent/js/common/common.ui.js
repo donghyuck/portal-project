@@ -732,24 +732,27 @@
 		
 		if( !$("#"+ renderToString).data("kendoNotification") ){
 			$("#"+ renderToString).kendoNotification({
-	            position: {
-	                pinned: true,
-	                top: 30,
-	                right: 30
-	            },
-	            autoHideAfter: 0,
-	            stacking: "down",
-	            templates: [{
-	                type: "info",
-	                template: ""
-	            }, {
-	                type: "error",
-	                template: '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
-	            }, {
-	                type: "success",
-	                template: '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
-	            }]	            
-	        });
+				position : {
+					pinned : true,
+					top : 30,
+					right : 30
+				},
+				autoHideAfter : 0,
+				stacking : "down",
+				templates : [
+					{
+						type : "info",
+						template : '<div class="notification-info"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+					},
+					{
+						type : "error",
+						template : '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+					},
+					{
+						type : "success",
+						template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+				} ]
+			});
 		}
 		$("#" + renderToString).data("kendoNotification").show({
 			title : "Wrong Password",
