@@ -751,7 +751,8 @@
 	            }]	            
 	        });
 		}
-		data("kendoNotification").show(
+		
+		$("#"+ renderToString).data("kendoNotification").show(
 			{ 
 				title: options.title,
 				message: options.message
