@@ -60,8 +60,7 @@
 						var site = new common.models.WebSite(response.targetWebSite);
 						site.copy( sitePlaceHolder );
 						kendo.bind($("#site-info"), sitePlaceHolder );
-						$('button.btn-control-group').removeAttr("disabled");
-						
+						$('button.btn-control-group').removeAttr("disabled");						
 					},
 					requestStart : function(){
 						kendo.ui.progress($("#site-info"), true);
@@ -87,7 +86,7 @@
 							topBar.go('main-user.do');			
 						}, 							
 						details : function(e){
-							$('#company-details').toggleClass('hide');
+							showWebsiteDetails();
 						},
 						connect : function(e){
 							alert("social modal");	 					
@@ -97,8 +96,17 @@
 						}																  						 
 					}}
 				);
-								 						
-				
+			}	
+		}]);
+			
+		function goSite (){					
+			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
+			$("#navbar").data("kendoExtTopNavBar").go("view-site.do");							
+		}
+		
+		function showWebsiteDetails(){			
+
+			if( ! $("#image-grid").data("kendoGrid") ){	
 				$('#myTab').on( 'show.bs.tab', function (e) {		
 					//e.preventDefault();			
 					var show_bs_tab = $(e.target);
@@ -116,15 +124,15 @@
 							createSocialPane();
 							break;								
 					}	
-				});				
-				$('#myTab a:first').tab('show') ;
-			}	
-		}]);
+				});			
+				$('#myTab a:first').tab('show') ;		
+			}
+			$('#company-details').toggleClass('hide');		
+		}
 
 		function createSocialPane(){
 			var selectedCompany = $("#navbar").data("companyPlaceHolder");
-						if( ! $("#social-grid").data("kendoGrid") ){	
-							
+						if( ! $("#social-grid").data("kendoGrid") ){								
 							$("#social-grid").kendoGrid({
 								dataSource: {
 									dataType: 'json',
@@ -227,8 +235,7 @@
 		}
 
 		function createAttachPane(){		
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
-			
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");			
 			if( ! $("#attach-upload").data("kendoUpload") ){	
 				$("#attach-upload").kendoUpload({
 					multiple : false,
@@ -305,10 +312,8 @@
 			}			
 		}
 		
-		function createImagePane(){		
-		
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
-		
+		function createImagePane(){				
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");		
 						if( ! $("#image-upload").data("kendoUpload") ){	
 							$("#image-upload").kendoUpload({
 								multiple : false,
@@ -385,10 +390,8 @@
 						}
 		}	
 		
-		function displayImageDetails(){
-			
-			var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");
-			
+		function displayImageDetails(){			
+			var template = kendo.template("${request.contextPath}/secure/view-image.do?width=150&height=150&imageId=#=imageId#");			
 			var imagePlaceHolder = $("#image-details").data( "imagePlaceHolder");			
 			if( typeof imagePlaceHolder.imgUrl == 'undefined' ){				
 				imagePlaceHolder.imgUrl = template(imagePlaceHolder);
@@ -428,8 +431,7 @@
 							});					
 						}
 					}					
-				});	
-				
+				});					
 				 common.ui.handleButtonActionEvents(
 					$('#image-details button.btn-control-group'), 
 					{event: 'click', handlers: {
@@ -437,8 +439,7 @@
 							$('html,body').animate({scrollTop: $("#myTab").offset().top - 55 }, 300);
 						}  						  						 
 					}}
-				);
-																			
+				);																			
 				$("#update-image-file").kendoUpload({
 					showFileList: false,
 					multiple: false,
@@ -505,12 +506,7 @@
 				$('#image-details').removeClass('hide')	;				
 			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);				
 		}
-			
-		function goSite (){					
-			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
-			$("#navbar").data("kendoExtTopNavBar").go("view-site.do");							
-		}
-		
+				
 		function showWebsiteMenuSetting(){
 			var renderToString = "website-menu-setting-modal";
 			if( $("#"+ renderToString).length == 0 ){
