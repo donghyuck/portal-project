@@ -524,6 +524,23 @@
 					website :sitePlaceHolder,
 					onSave : function (e) {
 						alert( kendo.stringify( this.website ) );
+						var menuToUse = this.website.menu;
+						menuToUse.menuId = 0 ;
+						common.api.callback(  
+						{
+							url :"${request.contextPath}/secure/update-site-menu.do?output=json", 
+							data : { targetSiteId:  sitePlaceHolder.webSiteId, item: kendo.stringify(menuToUse) },
+							success : function(response){
+								var websiteToUse = new common.models.WebSite(response.targetWebSite);
+								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );
+							},
+							requestStart : function(){
+								kendo.ui.progress($("#"+ renderToString ), true);
+							},
+							requestEnd : function(){
+								kendo.ui.progress($( "#"+ renderToString ), false);
+							}
+						}); 								
 					}
 				});	
 				$("#"+ renderToString ).extModalWindow({
