@@ -523,7 +523,6 @@
 				var websiteMenuSettingViewModel  =  kendo.observable({ 
 					website :sitePlaceHolder,
 					onSave : function (e) {
-						alert( kendo.stringify( this.website ) );
 						var menuToUse = this.website.menu;
 						menuToUse.menuId = 0 ;
 						common.api.callback(  
@@ -537,8 +536,7 @@
 								$("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
 							fail: function(){								
-								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });
-																
+								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });													
 							},
 							requestStart : function(){
 								kendo.ui.progress($("#"+ renderToString ), true);
