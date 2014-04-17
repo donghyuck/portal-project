@@ -536,9 +536,8 @@
 								$("#"+ renderToString ).data('kendoExtModalWindow').close();
 								$("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
-							fail: function(){
-								
-								common.ui.notification({title:"메뉴생성오류"});
+							fail: function(){								
+								common.ui.notification({title:"메뉴생성오류", message: "시스템 운영자에게 문의하여 주십시오." });
 																
 							},
 							requestStart : function(){
