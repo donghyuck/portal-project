@@ -751,11 +751,10 @@
 	            }]	            
 	        });
 		}
-		
-		$("#"+ renderToString).data("kendoNotification").show(
-			{ title: options.title, message: options.message }, 
-			options.type || "error"
-		);
+		$("#" + renderToString).data("kendoNotification").show({
+			title : "Wrong Password",
+			message : "Please enter your password again."
+		}, "error");
 	};
 	
 })(jQuery);	
