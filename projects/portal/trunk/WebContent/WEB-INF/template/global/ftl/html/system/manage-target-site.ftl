@@ -533,6 +533,8 @@
 							success : function(response){
 								var websiteToUse = new common.models.WebSite(response.targetWebSite);
 								websiteToUse.copy( $("#site-info").data("sitePlaceHolder") );
+								$("#"+ renderToString ).data('kendoExtModalWindow').close();
+								$("#"+ renderToString ).data('kendoExtModalWindow').destroy();
 							},
 							requestStart : function(){
 								kendo.ui.progress($("#"+ renderToString ), true);
