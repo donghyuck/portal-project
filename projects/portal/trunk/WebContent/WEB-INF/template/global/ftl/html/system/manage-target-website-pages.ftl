@@ -141,14 +141,14 @@
 						</div>
 						<div class="panel-body" style="padding:5px;">
 							<div class="page-header page-nounderline-header text-primary">
-										<h5 >
-											<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
-										</h5>
-										<p class="pull-right"><div class="btn-group">
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
-											<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button></div>
-										</p>
+									<h5 >
+										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
+									</h5>
+									<p class="pull-right"><div class="btn-group">
+										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>
+										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
+										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button></div>
+									</p>
 							</div>								
 						</div>					
 						<div class="panel-body" style="padding:5px;">					
