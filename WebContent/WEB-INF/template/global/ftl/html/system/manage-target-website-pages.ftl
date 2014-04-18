@@ -280,7 +280,8 @@
 									    <div class="col-sm-10">
 									      <input type="text" class="form-control" placeholder="템플릿 파일">
 									    </div>
-									  </div>								
+									  </div>		
+									 </form> 						
 									 <textarea id="webpage-editor" rows="10" cols="30"></textarea>
 								</div>
 							</div>							
