@@ -235,8 +235,8 @@
 							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: website.description">
 							  </div>
 								<div class="form-group">
-									<label class="col-lg-2 control-label" ><small>사용여부</small></label>
-									<div class="col-lg-10">
+									<label class="col-xs-5 control-label" ><small>사용여부</small></label>
+									<div class="col-xs-7">
 										<div class="checkbox">
 											<label>
 												<input type="checkbox"  name="enabled"  data-bind="checked: website.enabled" /> 사용
@@ -245,8 +245,8 @@
 									</div>							
 								</div>
 								<div class="form-group">
-									<label class="col-lg-2 control-label" ><small>공개여부</small></label>
-									<div class="col-lg-10">
+									<label class="col-xs-5 control-label" ><small>공개여부</small></label>
+									<div class="col-xs-7">
 										<div class="checkbox">
 											<label>
 												<input type="checkbox"  name="enabled"  data-bind="checked: website.allowAnonymousAccess" /> 공개
