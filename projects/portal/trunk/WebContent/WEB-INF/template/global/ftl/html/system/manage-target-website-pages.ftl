@@ -278,6 +278,7 @@
 									  <div class="form-group">
 									    <label class="col-sm-2 control-label">템플릿 파일</label>
 									    <div class="col-sm-10">
+									    	<span class="help-block">템플릿 파일 경로를 입력하세요</span>
 									      <input type="text" class="form-control" placeholder="템플릿 파일">
 									    </div>
 									  </div>		
