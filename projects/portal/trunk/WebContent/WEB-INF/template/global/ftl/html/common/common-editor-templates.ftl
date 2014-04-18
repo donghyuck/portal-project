@@ -11,7 +11,50 @@
 			position: relative;
 			margin-top: -5px;
 		}
+		.img-description {
+			position: absolute;
+			top: 0;
+			width: 100%	;
+			height: 0;
+			overflow: hidden;
+			background-color: rgba(0,0,0,0.8)
+		}
+	
+		.img-wrapper h3
+		{
+			margin: 0;
+            padding: 10px 10px 0 10px;
+            line-height: 1.1em;
+            font-size : 12px;
+            font-weight: normal;
+            color: #ffffff;
+            word-wrap: break-word;
+		}
 
+		.img-wrapper p {
+			color: #ffffff;
+			font-weight: normal;
+			padding: 0 10px;
+			font-size: 12px;
+		}		
+		
+		
+		.k-listview:after, .attach dl:after {
+			content: ".";
+			display: block;
+			height: 0;
+			clear: both;
+			visibility: hidden;
+		}
+		
+		.k-pager-wrap {
+			border : 0px;
+			border-width: 0px;
+			background : transparent;
+		}
+		table.k-editor {
+			height: 400px;
+		}
 	</style>				
 	<div class='modal editor-popup  fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
 		<div class='modal-dialog modal-lg'>
