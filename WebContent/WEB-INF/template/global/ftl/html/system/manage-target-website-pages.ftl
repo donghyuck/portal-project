@@ -261,6 +261,9 @@
 											</h5>
 											<div class="pull-right">
 												<div class="btn-group">
+													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">게시</button>
+													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">저장</button>
+													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">미리보기</button>
 													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">프로퍼티</button>
 												</div>						
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
