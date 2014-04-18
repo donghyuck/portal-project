@@ -11,6 +11,22 @@
 			position: relative;
 			margin-top: -5px;
 		}
+
+		.img-wrapper {
+			float: left;
+			position: relative;
+			width: 32.99%;
+			height: 170px;
+			padding: 0;
+			cursor: pointer;
+			overflow: hidden;		
+		}
+		
+		.img-wrapper img{
+			width: 100%;
+			height: 100%;
+		}
+				
 		.img-description {
 			position: absolute;
 			top: 0;
