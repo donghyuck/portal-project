@@ -67,7 +67,7 @@
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
-						page-create : function(e){
+						'page-create' : function(e){
 							alert( "hello" );							
 						},
 						setting : function(e){
