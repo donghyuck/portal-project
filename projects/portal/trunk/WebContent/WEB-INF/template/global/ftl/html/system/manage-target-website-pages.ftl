@@ -271,13 +271,13 @@
 						
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
-								<div class="form-group">
+								<p>
 									<input type="email" class="form-control" placeholder="페이지 제목">
-								</div>	
-								<div class="form-group">
-									<label class="sr-only">템플릿 파일</label>
+								</p>	
+								<p>
+									<label>템플릿 파일</label>
 									<input type="email" class="form-control" placeholder="템플릿 파일 이름">
-								</div>
+								</p>
   									
 								</div>
 								<div class="panel-body" style="padding:5px;">
