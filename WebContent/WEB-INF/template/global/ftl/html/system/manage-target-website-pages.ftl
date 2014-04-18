@@ -272,6 +272,11 @@
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
 									<input type="email" class="form-control" placeholder="페이지 제목">
+	<div class="form-group">
+		<label class="sr-only">템플릿 파일</label>
+		<input type="email" class="form-control" placeholder="템플릿 파일 이름">
+	</div>
+  									
 								</div>
 								<div class="panel-body" style="padding:5px;">
 									 <textarea id="webpage-editor" rows="10" cols="30"></textarea>
