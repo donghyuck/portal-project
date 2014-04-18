@@ -52,9 +52,7 @@
 			border-width: 0px;
 			background : transparent;
 		}
-		table.k-editor {
-			height: 400px;
-		}
+
 	</style>				
 	<div class='modal editor-popup  fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
 		<div class='modal-dialog modal-lg'>
