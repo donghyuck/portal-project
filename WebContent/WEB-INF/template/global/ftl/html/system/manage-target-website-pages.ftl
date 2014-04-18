@@ -147,7 +147,7 @@
 						editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						hyperLinkPopup.close();
 					}
-				});			
+				});
 			}
 			return renderTo.data("kendoExtEditorPopup");
 		}
@@ -189,9 +189,7 @@
 						]
 					});
 				}		
-		}
-		
-				
+		}				
 		</script>
 		<style type="text/css" media="screen">
 
