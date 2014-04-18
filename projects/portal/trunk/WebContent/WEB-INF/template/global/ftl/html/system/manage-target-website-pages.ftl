@@ -91,17 +91,17 @@
 						connect : function(e){
 							alert("social modal");	 					
 						},
-						pages : function(e){
-							goPages();					
+						back : function(e){
+							goWebsite();					
 						}																  						 
 					}}
 				);
 			}	
 		}]);
 			
-		function goPages (){					
+		function goWebsite (){					
 			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#site-info").data("sitePlaceHolder").webSiteId );
-			$("#navbar").data("kendoExtNavbar").go("view-website-pages.do");							
+			$("#navbar").data("kendoExtNavbar").go("/view-site.do");							
 		}
 		
 		</script>
@@ -142,7 +142,7 @@
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>			
 							<div class="btn-group">
-								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting" disabled="disabled"><i class="fa fa-cog"></i> 정보변경</button>
+								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled"><i class="fa fa-angle-left"></i></button>
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="menu" disabled="disabled"><i class="fa fa-sitemap"></i> 메뉴</button>								
 							</div>														
 							<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 웹 페이지</button>
