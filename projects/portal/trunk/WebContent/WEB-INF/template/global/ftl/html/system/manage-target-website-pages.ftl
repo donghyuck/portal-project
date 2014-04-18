@@ -203,7 +203,7 @@
 			bottom: 0;
 			left: 0;
 		}
-		#webpage-editor .k-editor {
+		#webpage-editor table.k-editor{
 			border : 0px;
 			height : 400px;
 		}
