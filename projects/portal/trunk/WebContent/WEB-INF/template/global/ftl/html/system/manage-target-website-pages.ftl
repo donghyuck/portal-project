@@ -64,13 +64,13 @@
 					}
 				}); 
 				
-				 var slide = kendo.fx($("#page-list-panel")).slideIn("down");
+				 var slide = kendo.fx($("#page-list-panel")).slideIn("up");
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
 						'page-create' : function(e){
 							alert( "hello" );	
-							 slide.reverse();	
+							 slide.play();	
 						},
 						'page-publish' : function(e){
 							alert( "hello2" );				
