@@ -260,9 +260,14 @@
 							</div>		
 							
 							<div class="container">
+								<div class="row">
+									<div class="col-lg-12">
 									<div class="pull-right">
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled"><i class="fa fa-level-up"></i>  닫기</button>
-									</div>							
+									</div>										
+									</div>
+								</div>
+						
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
 									<input type="email" class="form-control" placeholder="페이지 제목">
