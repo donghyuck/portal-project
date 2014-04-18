@@ -51,7 +51,7 @@
 												 
 				 // 4. PAGE MAIN		
 				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.targetWebSite.webSiteId}} );
-				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
+				 $("#website-info").data("sitePlaceHolder", sitePlaceHolder );
 				common.api.callback(  
 				{
 					url :"${request.contextPath}/secure/get-site.do?output=json", 
@@ -59,14 +59,8 @@
 					success : function(response){
 						var site = new common.models.WebSite(response.targetWebSite);
 						site.copy( sitePlaceHolder );
-						kendo.bind($("#site-info"), sitePlaceHolder );
+						kendo.bind($("#website-info"), sitePlaceHolder );
 						$('button.btn-control-group').removeAttr("disabled");						
-					},
-					requestStart : function(){
-						kendo.ui.progress($("#site-info"), true);
-					},
-					requestEnd : function(){
-						kendo.ui.progress($("#site-info"), false);
 					}
 				}); 
 				 
@@ -100,7 +94,7 @@
 		}]);
 			
 		function goWebsite (){					
-			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#site-info").data("sitePlaceHolder").webSiteId );
+			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-info").data("sitePlaceHolder").webSiteId );
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 		
@@ -156,6 +150,7 @@
 				</div>
 			</div>
 		</div>				
+		<div id="website-info" ></div>  
 		<div id="account-panel" ></div>    		
 		<!-- END MAIN CONTNET -->
 		<!-- START FOOTER -->
