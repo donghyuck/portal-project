@@ -70,7 +70,7 @@
 					{event: 'click', handlers: {
 						'page-create' : function(e){
 							alert( "hello" );	
-							slide.play();						
+							 slide.play();	
 						},
 						'page-publish' : function(e){
 							alert( "hello2" );				
