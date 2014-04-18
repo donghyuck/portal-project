@@ -139,10 +139,10 @@
 			}				
 			var renderTo = $("#"+ renderToString);		
 			if(!renderTo.data("kendoExtEditorPopup") ){		
-				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
+				var hyperLinkPopup = renderTo.extEditorPopup({
 					type : 'createLink',
 					title : "하이퍼링크 삽입",
-					template : $("#editor-popup-template").html(),
+					template : $("#page-link-popup-template").html(),
 					apply : function(e){						
 						editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						hyperLinkPopup.close();
@@ -156,8 +156,7 @@
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'" style="display:none;"></div>');
 			}			
-			var renderTo = $("#"+ renderToString);		
-			
+			var renderTo = $("#"+ renderToString);			
 			if(!renderTo.data("kendoEditor") ){					
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", renderTo);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", renderTo);	
