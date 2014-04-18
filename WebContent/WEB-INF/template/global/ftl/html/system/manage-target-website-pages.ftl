@@ -236,7 +236,7 @@
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled"  title="이전 페이지로 이동" ><i class="fa fa-level-up"></i></button>			
 							</div>														
 						</div>
-						<div id="page-list-panel" class="panel-body" style="padding:5px;">
+						<div id="page-list-panel" class="panel-body">
 							<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
 									<h5 >
 										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
