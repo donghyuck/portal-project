@@ -70,8 +70,8 @@
 						'page-create' : function(e){
 							alert( "hello" );							
 						},
-						setting : function(e){
-							showWebsiteSetting();					
+						'page-publish' : function(e){
+							alert( "hello2" );				
 						},						
 						group : function(e){
 							topBar.go('main-group.do');				
@@ -79,11 +79,8 @@
 						user : function(e){
 							topBar.go('main-user.do');			
 						}, 							
-						details : function(e){
-							showWebsiteDetails();
-						},
-						connect : function(e){
-							alert("social modal");	 					
+						'page-delete' : function(e){
+							alert( "hello3" );			
 						},
 						back : function(e){
 							goWebsite();					
