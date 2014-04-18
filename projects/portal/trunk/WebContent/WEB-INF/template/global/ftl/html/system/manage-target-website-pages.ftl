@@ -146,122 +146,17 @@
 							</div>														
 							<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 웹 페이지</button>
 						</div>
-						<div class="panel-body" style="padding:5px;">														
-							<div class="row">
-								<div class="col-lg-5 col-xs-12" id="site-info">					
-									<div class="page-header page-nounderline-header text-primary">
-										<h5 >
-											<small><i class="fa fa-info"></i> 미디어 버튼을 클릭하면 사이트 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
-										</h5>
-										<p class="pull-right">											
-										</p>
-									</div>										
-									<table class="table">
-											<tbody>						
-												<tr class="info">
-													<th><small>회사</small></th>								
-													<td><span data-bind="text: company.displayName">${action.targetWebSite.company.displayName}</span> 
-														<span class="label label-primary"><span data-bind="text: company.name">${action.targetWebSite.company.name}</span></span> 
-														<code><span data-bind="text: company.companyId">${action.targetWebSite.company.companyId}</span></code>
-													</td>
-												</tr>	
-												<tr>
-													<th><small>사이트</small></th>	
-													<td><span data-bind="text: displayName">${action.targetWebSite.displayName} </span> 
-														<span class="label label-warning"><span data-bind="text: name">${action.targetWebSite.name}</span></span> 
-														<code><span data-bind="text: webSiteId">${action.targetWebSite.webSiteId}</span></code>
-														<span class="label label-danger" data-bind="invisible: enabled" style="display:none;"><i class="fa fa-times"></i></span>
-													</td>
-												</tr>	
-												<tr>
-													<th><small>보안</small></th>	
-													<td>
-													<!--
-														<span class="label label-info" data-bind="visible: allowAnonymousAccess">공개</span>
-														<span class="label label-info" data-bind="invisible: allowAnonymousAccess">비공개</span> -->
-														<i class="fa fa-lock fa-lg" data-bind="invisible: allowAnonymousAccess" style="display:none;"></i>
-														<i class="fa fa-unlock fa-lg" data-bind="visible: allowAnonymousAccess" style="display:none;"></i>														
-													</td>
-												</tr>													
-												<tr>
-													<th><small>메뉴</small></th>	
-													<td><span data-bind="text: menu.title">${action.targetWebSite.menu.title} </span> 
-														<span class="label label-warning"><span data-bind="text: menu.name">${action.targetWebSite.menu.name}</span></span> 
-														<code><span data-bind="text: menu.menuId">${action.targetWebSite.menu.menuId}</span></code>
-													</td>
-												</tr>													
-												<tr>
-													<th><small>담당자</small></th>								
-													<td>
-														<div class="media">
-															<a class="pull-left" href="#">
-																<img class="media-object" src="${request.contextPath}/download/profile/${action.targetWebSite.user.username}?width=100&height=150" alt="...">
-															</a>
-															<div class="media-body">
-																<h6 class="media-heading"><span data-bind="text: user.name">${action.targetWebSite.user.name}</span>(<span data-bind="text: user.username">${action.targetWebSite.user.username}</span>)</h6>
-															</div>
-														</div>													
-													</td>
-												</tr>		
-												<tr>
-													<th><small>설명</small></th>								
-													<td><span data-bind="text: description">${action.targetWebSite.description}</span></td>
-												</tr>				
-												<tr>
-													<th><small>등록일</small></th>
-													<td><span data-bind="text: creationDate">${action.targetWebSite.creationDate}</span></td>
-												</tr>				
-												<tr>
-													<th><small>수정일</small></th>
-													<td><span data-bind="text: modifiedDate">${action.targetWebSite.modifiedDate}</span></td>
-												</tr>							
-										 	</tbody>
-									</table>
-								</div>
-								<div class="col-lg-7 col-xs-12 hide" id="company-details">														
-									<ul class="nav nav-tabs" id="myTab">
-									  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
-									  <li><a href="#attachment-mgmt" data-toggle="tab">첨부파일</a></li>
-									  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
-									</ul>
-									<div class="tab-content">
-										<div class="tab-pane fade " id="image-mgmt">
-											<div class="col-sm-12 body-group marginless paddingless">
-												<input name="image-upload" id="image-upload" type="file" />
-												<div class="blank-top-15"></div>	
-												<div id="image-grid"></div>	
-											</div>
-											<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">									
-											</div>
-										</div>								
-										<div class="tab-pane fade" id="attachment-mgmt">
-											<div class="col-sm-12 body-group marginless paddingless">
-												<input name="attach-upload" id="attach-upload" type="file" />
-												<div class="blank-top-15"></div>
-												<div id="attach-grid"></div>
-											</div>
-										</div>
-										<div class="tab-pane fade" id="social-mgmt">
-											<span class="help-block">
-												<small><i class="fa fa-info"></i> 쇼셜연결 버튼을 클릭하여 사이트 쇼셜 계정을 연결하세요. </small>
-												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="connect"> 쇼셜연결</button>
-											</span>
-											<div id="social-grid"></div>
-										</div>								
-									</div>								
-								</div>
-							</div>							
+						<div class="panel-body" style="padding:5px;">
 						</div>					
-						<div class="panel-body" style="padding:5px;">		
-							<div id="website-grid"></div>						
+						<div class="panel-body" style="padding:5px;">					
 						</div>
-						<div class="panel-body" style="padding:5px;"></div>
+						<div class="panel-body" style="padding:5px;">
+						</div>
 					</div>	
 				</div>
 			</div>
 		</div>				
-		<div id="account-panel" ></div>
-    		
+		<div id="account-panel" ></div>    		
 		<!-- END MAIN CONTNET -->
 		<!-- START FOOTER -->
 		<footer>  		
