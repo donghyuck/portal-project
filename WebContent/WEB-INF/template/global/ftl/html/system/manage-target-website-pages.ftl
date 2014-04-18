@@ -274,15 +274,12 @@
 									<input type="text" class="form-control" placeholder="페이지 제목">
 								</div>
 								<div class="panel-body" style="padding:5px;">
-									<form class="form-horizontal" role="form">
-									  <div class="form-group">
-									    <label class="col-sm-2 control-label">템플릿 파일</label>
-									    <div class="col-sm-10">
-									    	<span class="help-block">템플릿 파일 경로를 입력하세요</span>
-									      <input type="text" class="form-control" placeholder="템플릿 파일">
-									    </div>
-									  </div>		
-									 </form> 						
+									<div class="row">
+										<div class="col-xs-4">
+										<span class="help-block">템플릿 파일 경로를 입력하세요</span>
+										<input type="text" class="form-control" placeholder="템플릿 파일">		
+										</div>
+									</div>
 									 <textarea id="webpage-editor" rows="10" cols="30"></textarea>
 								</div>
 							</div>							
