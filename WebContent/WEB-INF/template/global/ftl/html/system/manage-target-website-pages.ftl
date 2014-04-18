@@ -277,7 +277,7 @@
 									<div class="row">
 										<div class="col-xs-4">
 										<span class="help-block">템플릿 파일 경로를 입력하세요</span>
-										<input type="text" class="form-control" placeholder="템플릿 파일">		
+										<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">		
 										</div>
 									</div>
 									 <textarea id="webpage-editor" rows="10" cols="30"></textarea>
