@@ -229,20 +229,37 @@
 							  <div class="form-group">
 							    <label>이름</label>
 							    <input type="text" class="form-control" placeholder="사이트 이름" data-bind="value: website.displayName ">
-							  </div>								
-								<!--
-
+							  </div>		
+							  <div class="form-group">
+							    <label>설명</label>
+							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: website.description">
+							  </div>
+								<div class="form-group">
+									<label><small>사용여부</small></label>
+									<div class="col-lg-10">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"  name="enabled"  data-bind="checked: website.enabled" /> 사용
+											</label>
+										</div>
+									</div>							
+								</div>
+								<div class="form-group">
+									<label><small>공개여부</small></label>
+									<div class="col-lg-10">
+										<div class="checkbox">
+											<label>
+												<input type="checkbox"  name="enabled"  data-bind="checked: website.allowAnonymousAccess" /> 공개
+											</label>
+										</div>
+									</div>							
+								</div>															  
 							  <div class="form-group">
 							    <label>도메인</label>
-							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: company.domainName">
-							    <p class="help-block">예시) www.demo.com</p>
-							  </div>
-							  <div class="form-group">
-							    <label>회사 소개</label>
-							     <input type="text" class="form-control" data-bind="value:company.description">
-							  </div>	
-							</div>  
-							-->
+							     <input type="text" class="form-control" placeholder="URL" data-bind="value: website.url">
+							    <p class="help-block">예시) www.demo.com, 111.111.111.111</p>
+							  </div>							  							  						
+							</div> 
 							<!-- attributes -->
 							<div class="col-sm-6">
 								<div class="panel-header text-primary">
