@@ -170,9 +170,13 @@
 									<div class="pull-right"><div class="btn-group">
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button></div>
 									</div>
-							</div>					
-							
-							<div id="htmleditor"></div>
+							</div>		
+
+							<div class="panel panel-default">
+								<div class="panel-body editor-model-body">
+									<div id="htmleditor"></div>
+								</div>
+							</div>							
 										
 						</div>
 						<div class="panel-body" style="padding:5px;">
