@@ -227,11 +227,11 @@
 									</h5>
 								</div>		
 							  <div class="form-group">
-							    <label>이름</label>
+							    <label><small>이름</small></label>
 							    <input type="text" class="form-control" placeholder="사이트 이름" data-bind="value: website.displayName ">
 							  </div>		
 							  <div class="form-group">
-							    <label>설명</label>
+							    <label><small>설명</small></label>
 							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: website.description">
 							  </div>
 								<div class="form-group">
@@ -255,7 +255,7 @@
 									</div>							
 								</div>															  
 							  <div class="form-group">
-							    <label>도메인</label>
+							    <label><small>도메인</small></label>
 							     <input type="text" class="form-control" placeholder="URL" data-bind="value: website.url">
 							    <p class="help-block">예시) www.demo.com, 111.111.111.111</p>
 							  </div>							  							  						
