@@ -582,11 +582,10 @@
 				$("#"+ renderToString).data("websitePlaceHolder", new common.models.WebSite() );
 			}
 			var websiteSetting = $("#"+ renderToString);
-			if( !websiteSetting.data('kendoExtModalWindow') ){
+			var websitePlaceHolder = $("#"+ renderToString).data("websitePlaceHolder");
+			$("#site-info").data("sitePlaceHolder").copy(websitePlaceHolder);
 				
-				var websitePlaceHolder = $("#"+ renderToString).data("websitePlaceHolder");
-				$("#site-info").data("sitePlaceHolder").copy(websitePlaceHolder);
-							
+			if( !websiteSetting.data('kendoExtModalWindow') ){
 				var websiteSettingViewModel =  kendo.observable({ 
 					onSave : function(e){
 						$.ajax({
