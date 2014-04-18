@@ -258,7 +258,7 @@
 									</div>
 							</div>		
 							
-							<div class="webpage-editor"></div>
+							<div id="webpage-editor"></div>
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
 								
