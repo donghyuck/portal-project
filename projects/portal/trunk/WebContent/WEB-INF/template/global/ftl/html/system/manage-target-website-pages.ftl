@@ -141,6 +141,16 @@
 							<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 웹 페이지</button>
 						</div>
 						<div class="panel-body" style="padding:5px;">
+							<div class="page-header page-nounderline-header text-primary">
+										<h5 >
+											<small><i class="fa fa-info"></i> 미디어 버튼을 클릭하면 사이트 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
+										</h5>
+										<p class="pull-right">
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button>
+										</p>
+							</div>								
 						</div>					
 						<div class="panel-body" style="padding:5px;">					
 						</div>
