@@ -259,7 +259,7 @@
 							
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
-									<input type="email" class="form-control" placeholder="제목 입력">
+									<input type="email" class="form-control" placeholder="페이지 제목">
 								</div>
 								<div class="panel-body">
 									 <textarea id="webpage-editor" rows="10" cols="30" style="height:440px"></textarea>
