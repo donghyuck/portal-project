@@ -262,8 +262,17 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-12">
+										<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
+											<h5 >
+												<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
+											</h5>
+											<div class="pull-right">
+												<div class="btn-group"></div>						
+												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled"><i class="fa fa-level-up"></i>  닫기</button>				
+											</div>
+										</div>										
 									<div class="pull-right">
-										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled"><i class="fa fa-level-up"></i>  닫기</button>
+										
 									</div>										
 									</div>
 								</div>
