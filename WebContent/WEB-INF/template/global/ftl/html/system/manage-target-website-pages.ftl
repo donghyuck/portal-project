@@ -135,7 +135,7 @@
 		
 		function createPageLinkPopup(renderToString, editor){		
 			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'" style="display:none;"></div>');
+				$('body').append('<div id="'+ renderToString +'"></div>');
 			}				
 			var renderTo = $("#"+ renderToString);		
 			if(!renderTo.data("kendoExtEditorPopup") ){		
@@ -154,7 +154,7 @@
 		
 		function createEditor( renderToString ){			
 			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'" style="display:none;"></div>');
+				$('body').append('<div id="'+ renderToString +'"></div>');
 			}			
 			var renderTo = $("#"+ renderToString);			
 			if(!renderTo.data("kendoEditor") ){					
