@@ -64,7 +64,7 @@
 					}
 				}); 
 				
-				 var slide = kendo.fx($("#page-list-panel")).slideIn("up");
+				 var slide = kendo.fx($("#page-list-panel")).slideIn("down");
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
