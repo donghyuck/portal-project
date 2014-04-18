@@ -252,13 +252,6 @@
 							페이지 그리드																						
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
-							<div class="page-header page-nounderline-header text-primary">
-									<h5 >
-										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
-									</h5>
-
-							</div>		
-							
 							<div class="container">
 								<div class="row">
 									<div class="col-lg-12">
@@ -270,10 +263,7 @@
 												<div class="btn-group"></div>						
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
 											</div>
-										</div>										
-									<div class="pull-right">
-										
-									</div>										
+										</div>														
 									</div>
 								</div>
 						
