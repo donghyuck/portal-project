@@ -262,7 +262,7 @@
 								
 								</div>
 								<div class="panel-body">
-									<div id="webpage-editor"></div>
+									 <textarea id="webpage-editor" rows="10" cols="30" style="height:440px"></textarea>
 								</div>
 							</div>							
 										
