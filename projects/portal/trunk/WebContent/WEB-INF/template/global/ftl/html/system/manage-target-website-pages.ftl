@@ -257,7 +257,8 @@
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled"><i class="fa fa-level-up"></i>  닫기</button>
 									</div>
 							</div>		
-
+							
+							<div class="webpage-editor">
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
 								
