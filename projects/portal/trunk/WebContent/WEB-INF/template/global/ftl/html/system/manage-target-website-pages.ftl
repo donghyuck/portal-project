@@ -107,7 +107,7 @@
 			//editor.getSession().setMode("ace/mode/html");
 			//editor.getSession().setUseWrapMode(true);
 		
-			String renderToString = "webpage-editor" ;
+			var renderToString = "webpage-editor" ;
 			createEditor(renderToString);			
 			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
 			
