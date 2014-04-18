@@ -258,13 +258,13 @@
 									</div>
 							</div>		
 							
-							<div id="webpage-editor"></div>
+							
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
 								
 								</div>
 								<div class="panel-body">
-									<div id="htmleditor">ehllo</div>
+									<div id="webpage-editor"></div>
 								</div>
 							</div>							
 										
