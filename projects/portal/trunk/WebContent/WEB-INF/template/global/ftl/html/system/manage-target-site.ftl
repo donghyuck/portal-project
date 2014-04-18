@@ -98,9 +98,9 @@
 			}	
 		}]);
 			
-		function goSite (){					
-			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
-			$("#navbar").data("kendoExtTopNavBar").go("view-site.do");							
+		function goPages (){					
+			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#site-info").data("sitePlaceHolder").webSiteId );
+			$("#navbar").data("kendoExtTopNavBar").go("view-website-pages");							
 		}
 		
 		function showWebsiteDetails(){			
