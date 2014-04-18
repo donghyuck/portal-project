@@ -268,7 +268,7 @@
 											</h5>
 											<div class="pull-right">
 												<div class="btn-group"></div>						
-												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled"><i class="fa fa-level-up"></i>  닫기</button>				
+												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
 											</div>
 										</div>										
 									<div class="pull-right">
