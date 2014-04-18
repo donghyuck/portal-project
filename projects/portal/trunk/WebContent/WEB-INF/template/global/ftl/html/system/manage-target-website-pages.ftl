@@ -260,7 +260,9 @@
 												<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
 											</h5>
 											<div class="pull-right">
-												<div class="btn-group"></div>						
+												<div class="btn-group">
+													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">프로퍼티</button>
+												</div>						
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
 											</div>
 										</div>														
