@@ -85,6 +85,10 @@
 						'page-delete' : function(e){
 							alert( "hello3" );			
 						},
+						'page-editor-close' : function(e){
+							kendo.fx($("#page-editor-panel")).expand("vertical").reverse();								
+							kendo.fx($("#page-list-panel")).expand("vertical").play();				
+						},
 						back : function(e){
 							goWebsite();					
 						}																  						 
