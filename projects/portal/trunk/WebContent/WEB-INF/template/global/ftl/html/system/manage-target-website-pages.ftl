@@ -252,7 +252,7 @@
 							페이지 그리드																						
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
-							<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
+							<div class="page-header page-nounderline-header text-primary">
 									<h5 >
 										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
 									</h5>
