@@ -157,7 +157,7 @@
 										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
 									</h5>
 									<div class="pull-right"><div class="btn-group">
-										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>
+										<button type="button" class="close" aria-hidden="true">&times;</button>
 									</div>
 							</div>					
 										
