@@ -63,12 +63,14 @@
 						$('button.btn-control-group').removeAttr("disabled");						
 					}
 				}); 
-				 
+				
+				 var slide = kendo.fx($("#page-list-panel")).slideIn("up"),
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
 						'page-create' : function(e){
-							alert( "hello" );							
+							alert( "hello" );	
+							slide.play();						
 						},
 						'page-publish' : function(e){
 							alert( "hello2" );				
@@ -136,7 +138,7 @@
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled"  title="이전 페이지로 이동" ><i class="fa fa-level-up"></i></button>			
 							</div>														
 						</div>
-						<div class="panel-body" style="padding:5px;">
+						<div id="page-list-panel" class="panel-body" style="padding:5px;">
 							<div class="page-header page-nounderline-header text-primary">
 									<h5 >
 										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
@@ -148,7 +150,7 @@
 									</div>
 							</div>								
 						</div>					
-						<div class="panel-body" style="padding:5px;">	
+						<div  id="page-editor-panel" class="panel-body" style="padding:5px;">	
 						
 										
 						</div>
