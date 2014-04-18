@@ -69,9 +69,8 @@
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
 						'page-create' : function(e){
-							alert( "hello" );	
-							kendo.fx($("#page-list-panel")).expand("vertical").duration(2000).reverse();
-							kendo.fx($("#page-editor-panel")).expand("vertical").duration(2000).play();
+							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
+							kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
 						},
 						'page-publish' : function(e){
 							alert( "hello2" );				
@@ -86,8 +85,8 @@
 							alert( "hello3" );			
 						},
 						'page-editor-close' : function(e){
-							kendo.fx($("#page-editor-panel")).expand("vertical").duration(2000).reverse();								
-							kendo.fx($("#page-list-panel")).expand("vertical").duration(2000).play();				
+							kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).reverse();								
+							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).play();				
 						},
 						back : function(e){
 							goWebsite();					
