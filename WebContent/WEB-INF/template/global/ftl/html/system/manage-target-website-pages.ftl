@@ -142,7 +142,7 @@
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>			
 							<div class="btn-group">
-								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled"><i class="fa fa-angle-left"></i></button>
+								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled" data-toggle="tooltip" data-placement="bottom" title="이전 페이지로 이동" ><i class="fa fa-angle-left"></i></button>
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="menu" disabled="disabled"><i class="fa fa-sitemap"></i> 메뉴</button>								
 							</div>														
 							<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 웹 페이지</button>
