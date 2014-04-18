@@ -107,48 +107,60 @@
 			//editor.getSession().setMode("ace/mode/html");
 			//editor.getSession().setUseWrapMode(true);
 		
+			String renderToString = "webpage-editor" ;
+			createEditor(renderToString);			
 			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
+			
+			
+			
 		}
 		
 		
-		function createImageBroswer(renderToString){			
+		function createPageImageBroswer(renderToString, editor){			
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"></div>');
 			}					
 			var renderTo = $("#"+ renderToString);	
 			if(!renderTo.data("kendoExtImageBrowser")){
-				renderTo.extImageBrowser({
+				var imageBrowser = renderTo.extImageBrowser({
 					template : $("#page-image-broswer-template").html(),
 					apply : function(e){						
-						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
+						editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						imageBrowser.close();
 					}				
 				});
-			}		
-			return renderTo.data("kendoExtImageBrowser");		
+			}
+			return renderTo.data("kendoExtImageBrowser");
 		}
 		
-		function createEditor( renderToString ){				
-			
+		function createPageLinkPopup(renderToString, editor){		
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'" style="display:none;"></div>');
-			}			
+			}				
 			var renderTo = $("#"+ renderToString);		
-			if(!renderTo.data("kendoEditor") ){								
-				
-				imageBroswer = createImageBroswer(renderToString);
-				
-				
+			if(!renderTo.data("kendoExtEditorPopup") ){		
 				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
 					type : 'createLink',
 					title : "하이퍼링크 삽입",
 					template : $("#editor-popup-template").html(),
 					apply : function(e){						
-						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
+						editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						hyperLinkPopup.close();
 					}
-				});
-				
+				});			
+			}
+			return renderTo.data("kendoExtEditorPopup");
+		}
+		
+		function createEditor( renderToString ){			
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'" style="display:none;"></div>');
+			}			
+			var renderTo = $("#"+ renderToString);		
+			
+			if(!renderTo.data("kendoEditor") ){					
+				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", renderTo);				
+				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", renderTo);	
 				renderTo.kendoEditor({
 						tools : [
 							'bold',
@@ -158,7 +170,7 @@
 							{	
 								name: "createLink",
 								exec: function(e){
-									hyperLinkPopup.show();
+									linkPopup.show();
 									return false;
 								}								
 							},
@@ -166,7 +178,7 @@
 							{	
 								name: "insertImage",
 								exec: function(e){
-									imageBrowser.show();
+									imageBroswer.show();
 									return false;
 								}
 							},
