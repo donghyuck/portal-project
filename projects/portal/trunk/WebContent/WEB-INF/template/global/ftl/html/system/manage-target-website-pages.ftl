@@ -162,8 +162,10 @@
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-delete" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button>
 										</div>										
 									</div>
-									dsfdsa
-							</div>								
+							</div>		
+																dsfdsa
+																dfgafdsa
+																						
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
 							<div class="page-header page-nounderline-header text-primary">
