@@ -91,7 +91,7 @@
 							alert("social modal");	 					
 						},
 						pages : function(e){
-							alert("pages");	 					
+							goPages();					
 						}																  						 
 					}}
 				);
