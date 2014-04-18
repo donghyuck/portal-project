@@ -235,7 +235,7 @@
 							     <input type="text" class="form-control" placeholder="도메인" data-bind="value: website.description">
 							  </div>
 								<div class="form-group">
-									<label><small>사용여부</small></label>
+									<label class="col-lg-2 control-label" ><small>사용여부</small></label>
 									<div class="col-lg-10">
 										<div class="checkbox">
 											<label>
@@ -245,7 +245,7 @@
 									</div>							
 								</div>
 								<div class="form-group">
-									<label><small>공개여부</small></label>
+									<label class="col-lg-2 control-label" ><small>공개여부</small></label>
 									<div class="col-lg-10">
 										<div class="checkbox">
 											<label>
