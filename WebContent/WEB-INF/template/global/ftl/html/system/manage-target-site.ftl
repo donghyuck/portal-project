@@ -681,7 +681,7 @@
 							<div class="btn-group">
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting" disabled="disabled"><i class="fa fa-cog"></i> 정보변경</button>
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="menu" disabled="disabled"><i class="fa fa-sitemap"></i> 메뉴</button>
-								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled">페이지 관리</button>
+								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled">웹 페이지</button>
 							</div>														
 						</div>
 						<div class="panel-body" style="padding:5px;">														
