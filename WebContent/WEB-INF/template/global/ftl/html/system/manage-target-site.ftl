@@ -686,7 +686,7 @@
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting" disabled="disabled"><i class="fa fa-cog"></i> 정보변경</button>
 								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="menu" disabled="disabled"><i class="fa fa-sitemap"></i> 메뉴</button>								
 							</div>														
-							<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 웹 페이지</button>
+							
 						</div>
 						<div class="panel-body" style="padding:5px;">														
 							<div class="row">
@@ -696,6 +696,7 @@
 											<small><i class="fa fa-info"></i> 미디어 버튼을 클릭하면 사이트 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
 										</h5>
 										<p class="pull-right">
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 웹 페이지</button>
 											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-cloud"></i> 미디어</button>
 										</p>
 									</div>										
