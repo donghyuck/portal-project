@@ -203,6 +203,10 @@
 			bottom: 0;
 			left: 0;
 		}
+		#webpage-editor .k-editor {
+			border : 0px;
+			height : 400px;
+		}
 		</style>		
 </#compress>		
 	</head>
@@ -262,7 +266,7 @@
 									<input type="email" class="form-control" placeholder="페이지 제목">
 								</div>
 								<div class="panel-body" style="padding:5px;">
-									 <textarea id="webpage-editor" rows="10" cols="30" style="height:440px; border:0px;"></textarea>
+									 <textarea id="webpage-editor" rows="10" cols="30"></textarea>
 								</div>
 							</div>							
 							</div>			
