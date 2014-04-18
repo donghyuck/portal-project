@@ -256,7 +256,7 @@
 									</div>
 							</div>		
 							
-							
+							<div class="container">
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
 									<input type="email" class="form-control" placeholder="페이지 제목">
@@ -265,7 +265,7 @@
 									 <textarea id="webpage-editor" rows="10" cols="30" style="height:440px"></textarea>
 								</div>
 							</div>							
-										
+							</div>			
 						</div>
 						<div class="panel-body" style="padding:5px;">
 							
