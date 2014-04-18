@@ -104,7 +104,7 @@
 		function showPageEditor(){
 		
 			var editor = ace.edit("htmleditor");
-			editor.getSession().setMode("ace/mode/xml");
+			editor.getSession().setMode("ace/mode/html");
 			editor.getSession().setUseWrapMode(true);
 		
 			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
@@ -174,7 +174,7 @@
 
 							<div class="panel panel-default">
 								<div class="panel-body editor-model-body">
-									<div id="htmleditor"></div>
+									<div id="htmleditor">ehllo</div>
 								</div>
 							</div>							
 										
