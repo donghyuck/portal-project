@@ -27,12 +27,12 @@
             line-height: 1.1em;
             font-size : 12px;
             font-weight: normal;
-            color: #ffffff;
+            color: \\#ffffff;
             word-wrap: break-word;
 		}
 
 		.img-wrapper p {
-			color: #ffffff;
+			color: \\#ffffff;
 			font-weight: normal;
 			padding: 0 10px;
 			font-size: 12px;
