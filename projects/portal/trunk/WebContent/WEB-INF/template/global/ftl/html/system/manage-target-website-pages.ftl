@@ -101,7 +101,7 @@
 			
 		function goWebsite (){					
 			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#site-info").data("sitePlaceHolder").webSiteId );
-			$("#navbar").data("kendoExtNavbar").go("/view-site.do");							
+			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 		
 		</script>
