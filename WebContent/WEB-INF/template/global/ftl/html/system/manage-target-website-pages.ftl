@@ -151,7 +151,7 @@
 							</div>														
 						</div>
 						<div id="page-list-panel" class="panel-body" style="padding:5px;">
-							<div class="page-header page-nounderline-header text-primary">
+							<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
 									<h5 >
 										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
 									</h5>
@@ -168,13 +168,13 @@
 																						
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
-							<div class="page-header page-nounderline-header text-primary">
+							<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
 									<h5 >
 										<small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small>
 									</h5>
-									<p class="pull-right">
+									<div class="pull-right">
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>
-									</p>
+									</div>
 							</div>		
 
 							<div class="panel panel-default">
