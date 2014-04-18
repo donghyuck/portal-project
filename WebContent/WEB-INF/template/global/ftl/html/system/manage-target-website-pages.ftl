@@ -103,9 +103,9 @@
 		
 		function showPageEditor(){
 		
-			var editor = ace.edit("htmleditor");
-			editor.getSession().setMode("ace/mode/html");
-			editor.getSession().setUseWrapMode(true);
+			//var editor = ace.edit("htmleditor");
+			//editor.getSession().setMode("ace/mode/html");
+			//editor.getSession().setUseWrapMode(true);
 		
 			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
 		}
