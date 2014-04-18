@@ -109,13 +109,85 @@
 		
 			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
 		}
+		
+		
+		function createImageBroswer(renderToString){			
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'"></div>');
+			}					
+			var renderTo = $("#"+ renderToString);	
+			if(!renderTo.data("kendoExtImageBrowser")){
+				renderTo.extImageBrowser({
+					template : $("#page-image-broswer-template").html(),
+					apply : function(e){						
+						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
+						imageBrowser.close();
+					}				
+				});
+			}		
+			return renderTo.data("kendoExtImageBrowser");		
+		}
+		
+		function createEditor( renderToString ){				
+			
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'" style="display:none;"></div>');
+			}			
+			var renderTo = $("#"+ renderToString);		
+			if(!renderTo.data("kendoEditor") ){								
+				
+				imageBroswer = createImageBroswer(renderToString);
+				
+				
+				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
+					type : 'createLink',
+					title : "하이퍼링크 삽입",
+					template : $("#editor-popup-template").html(),
+					apply : function(e){						
+						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
+						hyperLinkPopup.close();
+					}
+				});
+				
+				renderTo.kendoEditor({
+						tools : [
+							'bold',
+							'italic',
+							'insertUnorderedList',
+							'insertOrderedList',
+							{	
+								name: "createLink",
+								exec: function(e){
+									hyperLinkPopup.show();
+									return false;
+								}								
+							},
+							'unlink',
+							{	
+								name: "insertImage",
+								exec: function(e){
+									imageBrowser.show();
+									return false;
+								}
+							},
+							'viewHtml'
+						],
+						stylesheets: [
+							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
+							"${request.contextPath}/styles/common/common.ui.css"
+						]
+					});
+				}		
+		}
+		
+				
 		</script>
 		<style type="text/css" media="screen">
 
 		.k-grid-content{
 			height:200px;
 		}			
-		#xmleditor { 
+		#htmleditor { 
 			position: absolute;
 			top: 0;
 			right: 0;
@@ -198,7 +270,140 @@
 		<!-- START FOOTER -->
 		<footer>  		
 		</footer>
-		<!-- END FOOTER -->		
+		<!-- END FOOTER -->	
+		<!-- ============================== -->
+		<!-- Image Broswer Template                            -->
+		<!-- ============================== -->
+		<script id="page-image-broswer-template" type="text/x-kendo-template">
+			<div class='modal editor-popup  fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
+				<div class='modal-dialog modal-lg'>
+					<div class='modal-content'>
+						<div class='modal-header'>
+							<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+							<h5 class='modal-title' id=#: title_guid #>이미지 삽입</h5>
+						</div>
+						<div class='modal-body'>		
+							<div class="row">
+								<div class="col-sm-3">
+									<!-- Nav tabs -->
+									<ul class="nav nav-pills nav-stacked">
+									  <li class="active"><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
+									  <li><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
+									  <li><a href="\\##=website_guid#" data-toggle="tab">사이트 이미지에서 선택</a></li>
+									  <li><a href="\\##=domain_guid#" data-toggle="tab">회사 이미지에서 선택</a></li>
+									  <li><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
+									</ul>
+								</div>
+								<div class="col-sm-9">
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div class="tab-pane fade  active" id=#:upload_guid#>
+											<div class="page-header text-primary">
+												<h5 ><strong>업로드</strong>&nbsp;<small>여러개의 파일을 한번에 업로드할 수 있습니다.</small></h5>
+											</div>														  
+										</div>
+										<div class="tab-pane fade" id=#:my_guid#>
+											<div class="page-header text-primary">
+												<h5 ><strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
+											</div>
+											<div class="panel panel-default panel-flat">								
+												<div class="panel-body scrollable" style="max-height:450px; min-height:360px;">											
+													<div style="width:100%; padding:0px; border: 0px; min-height: 200px;"></div>
+												</div>	
+												<div class="panel-footer" style="padding:0px;">
+													<div></div>
+												</div>
+											</div>																											  
+										</div>
+									  <div class="tab-pane fade" id=#:domain_guid#>
+										<div class="page-header text-primary">
+											<h5 ><strong>도메인 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
+										</div>		
+										<div class="panel panel-default panel-flat">								
+											<div class="panel-body scrollable" style="max-height:450px; min-height:360px;">											
+												<div style="width:100%; padding:0px; border: 0px; min-height: 200px;"></div>
+											</div>	
+											<div class="panel-footer" style="padding:0px;">
+												<div></div>
+											</div>
+										</div>														  
+									  </div>
+		 							  <div class="tab-pane fade" id=#:website_guid#>
+										<div class="page-header text-primary">
+											<h5 ><strong>사이트 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
+										</div>		
+										<div class="panel panel-default panel-flat">								
+											<div class="panel-body scrollable" style="max-height:450px; min-height:360px;">											
+												<div style="width:100%; padding:0px; border: 0px; min-height: 200px;"></div>
+											</div>	
+											<div class="panel-footer" style="padding:0px;">
+												<div></div>
+											</div>
+										</div>														  
+									  </div>							  
+									  <div class="tab-pane fade" id=#:url_guid#>
+										<div class="page-header text-primary">
+											<h5 ><strong>URL 이미지</strong>&nbsp;<small>삽입할 이미지 URL 경로를 입력하세요.</small></h5>
+										</div>
+										<div class='form-group'>					
+											<input type="url" name="custom-selected-url" class="form-control" placeholder="URL 입력">
+										</div>								
+										<img class="img-responsive hide" /> 				  
+									  </div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class='modal-footer'>
+							<button type="button" class="btn btn-primary custom-insert-img" disabled="disabled">이미지 삽입</button>	
+							<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</script>				
+		
+		<script id="page-link-popup-template" type="text/x-kendo-template">
+			<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
+				<div class='modal-dialog modal-sm'>
+					<div class='modal-content'>
+						<div class='modal-header'>
+							<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+							<h5 class='modal-title'>#= title #</h5>
+						</div>
+						<div class='modal-body'>
+						#if( type == 'createLink' ){ #
+							<div class="form">
+								<div class="form-group">
+									<label class="control-label">표시할 텍스트</label>
+									<input type="text" class="form-control" data-bind="value:linkTitle">
+								</div>						
+								
+								<div class="form-group">	
+									<label class="control-label">웹주소</label>
+									<input type="url" class="form-control" placeholder="http://" data-bind="value:linkUrl">
+								</div>
+									
+								<div class="form-group">
+										<div class="checkbox">
+										<label>
+											<input type="checkbox" data-bind="checked:linkTarget" > 새창에서 링크 열기
+										</label>
+										</div>
+								</div>
+							</div>
+						# } #
+						</div>
+						<div class='modal-footer'>		
+							<button type="button" class="btn btn-primary custom-update" disabled="disabled">확인</button>	
+							<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>				
+						</div>
+					</div><!-- /.modal-content -->
+				</div><!-- /.modal-dialog -->
+			</div><!-- /.modal -->
+		</script>		
+
 		<#include "/html/common/common-system-templates.ftl" >		
+		
 	</body>
 </html>
