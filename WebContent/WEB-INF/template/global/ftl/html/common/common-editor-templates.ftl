@@ -3,6 +3,16 @@
 <!-- Image Broswer Template                            -->
 <!-- ============================== -->
 <script id="image-broswer-template" type="text/x-kendo-template">
+	<style type="text/css" media="screen">
+		.image-broswer .img-wrapper.k-state-selected img {
+			border-bottom: 5px solid #FF2A68;
+			-webkit-transition: all .2s ease-in-out;
+			transition: all .2s ease-in-out;
+			position: relative;
+			margin-top: -5px;
+		}
+
+	</style>				
 	<div class='modal editor-popup  fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
 		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
@@ -91,7 +101,7 @@
 	</div><!-- /.modal -->
 </script>				
 
-<script id="editor-popup-template" type="text/x-kendo-template">
+<script id="link-popup-template" type="text/x-kendo-template">
 	<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
 		<div class='modal-dialog modal-sm'>
 			<div class='modal-content'>
