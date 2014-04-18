@@ -5,7 +5,7 @@
 <script id="image-broswer-template" type="text/x-kendo-template">
 	<style type="text/css" media="screen">
 		.image-broswer .img-wrapper.k-state-selected img {
-			border-bottom: 5px solid #FF2A68;
+			border-bottom: 5px solid \\#FF2A68;
 			-webkit-transition: all .2s ease-in-out;
 			transition: all .2s ease-in-out;
 			position: relative;
