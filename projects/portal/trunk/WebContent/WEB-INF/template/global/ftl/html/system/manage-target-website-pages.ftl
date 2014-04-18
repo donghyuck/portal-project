@@ -70,7 +70,7 @@
 					{event: 'click', handlers: {
 						'page-create' : function(e){
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
-							kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
+							showPageEditor();							
 						},
 						'page-publish' : function(e){
 							alert( "hello2" );				
@@ -101,6 +101,14 @@
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 		
+		function showPageEditor(){
+		
+			var editor = ace.edit("htmleditor");
+			editor.getSession().setMode("ace/mode/xml");
+			editor.getSession().setUseWrapMode(true);
+		
+			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
+		}
 		</script>
 		<style type="text/css" media="screen">
 
@@ -163,9 +171,12 @@
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button></div>
 									</div>
 							</div>					
+							
+							<div id="htmleditor"></div>
 										
 						</div>
 						<div class="panel-body" style="padding:5px;">
+							
 						</div>
 					</div>	
 				</div>
