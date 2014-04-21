@@ -11,11 +11,6 @@
 	
 	<include file="struts-framework-user.xml"/>	 
 	<include file="struts-framework-user-admin.xml"/>	 
-	<!-- 
-	
-	<include file="struts-framework-content.xml"/>	 
-	<include file="struts-framework-social.xml"/>	 
-	 -->
 	
 	<include file="struts-framework-community.xml"/>	 
 	<include file="struts-framework-community-admin.xml"/>	 
