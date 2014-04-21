@@ -5,13 +5,13 @@
 <struts>
 
 	<constant name="struts.devMode" value="true" />
-	
+
 	<include file="struts-framework-default.xml"/>	
 	<include file="struts-framework-system.xml"/>	 
-	
+
 	<include file="struts-framework-user.xml"/>	 
 	<include file="struts-framework-user-admin.xml"/>	 
 	
 	<include file="struts-framework-community.xml"/>	 
-	<include file="struts-framework-community-admin.xml"/>	 
+	<include file="struts-framework-community-admin.xml"/>	
 </struts>
