@@ -11,7 +11,7 @@
 		<javac.target.version>1.6</javac.target.version>
 		<project.javadoc.docEncoding>UTF-8</project.javadoc.docEncoding>
 		<project.build.version>1.0.0.RELEASE</project.build.version>
-		<project.architecture.version>1.0.5.RELEASE</project.architecture.version>
+		<project.architecture.version>1.1.0.RELEASE</project.architecture.version>
 	</properties>
 
 	<repositories>
@@ -128,10 +128,10 @@
 			<version>1.7.2</version>
 		</dependency>
 		<dependency>
-			<groupId>architecture.user</groupId>
-			<artifactId>architecture-user-web-struts2</artifactId>
-			<version>${project.architecture.version}</version>
-		</dependency>
+			<groupId>architecture.community</groupId>
+			<artifactId>architecture-community-struts2</artifactId>
+			<version>1.0.0.RELEASE</version>
+		</dependency>		
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc5</artifactId>
