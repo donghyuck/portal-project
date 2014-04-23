@@ -60,11 +60,11 @@
 						var site = new common.models.WebSite(response.targetWebSite);
 						site.copy( sitePlaceHolder );
 						kendo.bind($("#website-info"), sitePlaceHolder );
-						$('button.btn-control-group').removeAttr("disabled");						
+						$('button.btn-control-group').removeAttr("disabled");	
 					}
 				}); 
-								
-				 common.ui.handleButtonActionEvents(
+												
+				common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
 						'page-create' : function(e){
@@ -92,6 +92,8 @@
 						}																  						 
 					}}
 				);
+				
+				createPageGrid();
 			}	
 		}]);
 			
