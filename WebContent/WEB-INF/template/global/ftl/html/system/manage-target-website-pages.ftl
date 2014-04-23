@@ -63,8 +63,7 @@
 						$('button.btn-control-group').removeAttr("disabled");						
 					}
 				}); 
-				
-				
+								
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
@@ -101,18 +100,73 @@
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 		
-		function showPageEditor(){
+		function createPageGrid(){
+			if(!$("#website-page-grid").data('kendoGrid') ){
+				var sitePlaceHolder = $("#website-info").data("sitePlaceHolder");
+				$("#website-page-grid").kendoGrid({
+                    dataSource: {
+                    	serverFiltering: false,
+                        transport: { 
+                            read: { url:'${request.contextPath}/secure/list-website-page.do?output=json', type: 'POST' },
+	                        parameterMap: function (options, type){
+	                            return { startIndex: options.skip, pageSize: options.pageSize,  targetSiteId: sitePlaceHolder.webSiteId }
+	                        }
+                        },
+                        schema: {
+                            total: "targetWebSiteCount",
+                            data: "targetWebSites"
+                          //  model: User
+                        },
+                        error:handleKendoAjaxError,
+                        batch: false,
+                        pageSize: 15,
+                        serverPaging: false,
+                        serverFiltering: false,
+                        serverSorting: false
+                    },
+                    columns: [
+                        { field: "userId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, locked: true, lockable: false}, 
+                        { field: "username", title: "아이디", width: 150, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, locked: true  }, 
+                        { field: "name", title: "이름", width: 150 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
+                        { field: "email", title: "메일", width: 200, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+                        { field: "enabled", title: "사용여부", width: 120, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+                        { field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+                        { field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],         
+                    filterable: true,
+                    sortable: true,
+                    resizable: true,
+                    pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+                    selectable: 'row',
+                    height: '100%',
+                    change: function(e) {                    
+                        var selectedCells = this.select();                 
+  						if( selectedCells.length > 0){ 
+							var selectedCell = this.dataItem( selectedCells ); 
+							//selectedCell.copy($("#user-grid").data("userPlaceHolder"));
+							//if( selectedCell.userId	> 0 ){									
+							//	showUserDetails();
+							//}
+ 						}
+					},
+					dataBound: function(e){		
+						 var selectedCells = this.select();
+						 if(selectedCells.length == 0 ){
+						 //	var newUser = new User ();
+						 //	newUser.copy($("#website-page-grid").data("pagePlaceHolder"));
+						//	$("#user-details").hide();
+						 }
+					}
+				}).data('kendoGrid');
+			}
+		}
 		
+		function showPageEditor(){		
 			//var editor = ace.edit("htmleditor");
 			//editor.getSession().setMode("ace/mode/html");
-			//editor.getSession().setUseWrapMode(true);
-		
+			//editor.getSession().setUseWrapMode(true);		
 			var renderToString = "webpage-editor" ;
 			createEditor(renderToString);			
-			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
-			
-			
-			
+			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();			
 		}
 		
 		
@@ -249,7 +303,7 @@
 										</div>										
 									</div>
 							</div>		
-							페이지 그리드																						
+							<div id="website-page-grid"></div>																		
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
 							<div class="container">
