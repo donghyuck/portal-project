@@ -24,6 +24,7 @@
 			versionId:{ type:"number", editable:true, defaultValue:0 },
 			title : { type: "string", editable: true},
 			summary :  { type: "string", editable: true},
+			pageState : { type: "string", editable: true, defaultValue:"INCOMPLETE"},
 			bodyText:  { type: "string", editable: true},
 			modifiedDate: { type: "date", editable: false },
 			creationDate: { type: "date", editable: false } 				
@@ -38,6 +39,13 @@
 	    	target.set("title",this.get("title") );
 	    	target.set("summary",this.get("summary") );		
 	    	target.set("bodyText",this.get("bodyText") );		
+	    	target.set("pageState",this.get("pageState") );		
+	    	if(typeof  this.get("bodyContent") === 'object')
+	    		target.set("bodyContent",this.get("bodyContent") );	
+	    	if( typeof this.get("user") === 'object' )
+	    		target.set("user", this.get("user") );    		
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties") );	    	
 		}
 	});
 	
