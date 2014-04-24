@@ -402,7 +402,7 @@
 												<textarea class="form-control" rows="3" data-bind="value: page.summary" placeholder="페이지 요약"></textarea>
 											</div>
 										</div>
-										<textarea id="webpage-editor-body" rows="5" cols="30"></textarea>
+										<textarea id="webpage-editor-body" rows="5" cols="30" data-bind="value: page.bodyText" placeholder="본문"></textarea>
 									</div>
 								</div>							
 							</div>			
