@@ -12,11 +12,14 @@
 	if( ex == null ){
 		// 스트럿츠1 오류 처리
 		// ex = (Throwable)request.getAttribute( org.apache.struts.Globals.EXCEPTION_KEY );
+		ex = (Throwable) request.getAttribute("javax.servlet.error.exception");
 	}
 	
 	if( ex == null ){
 		ex = (Throwable) request.getAttribute( org.springframework.security.web.WebAttributes.AUTHENTICATION_EXCEPTION );
 	}
+	
+	
 	
 	int objectType = 1;
 	int objectAttribute = 1 ;
