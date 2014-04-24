@@ -208,18 +208,22 @@
 							return false;	
 					},
 					doPublish: function(e){
-					alert("publish");
+						alert("publish");
 					},
 					doSave : function (e) {
-					alert(kendo.stringify(this.page));
+						alert(kendo.stringify(this.page));
 					},
 					doPreview : function (e) {
 						alert("preview");
 					}
 				});				
 				pageEditorModel.bind("change", function(e){
-					if( e.field.match('^page.')){ 
-						$("button.btn-editor-control-group[data-action='page-editor-update']").removeAttr('disabled');
+				
+					
+					if( e.field.match('^page.')){ 						
+						if( page.title.length > 0 && page.bodyText.length > 0 )					
+							$("button.btn-editor-control-group[data-action='page-editor-update']").removeAttr('disabled');
+							
 						if(this.page.pageId > 0 )
 							$("button.btn-editor-control-group[data-action='page-editor-publish']").removeAttr('disabled');
 					}	
