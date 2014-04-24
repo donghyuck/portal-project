@@ -69,7 +69,7 @@
 					{event: 'click', handlers: {
 						'page-create' : function(e){
 							$("#page-list-panel").hide();
-							//kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
+							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
 							emptyPageEditorSource();
 							showPageEditor();							
 						},
