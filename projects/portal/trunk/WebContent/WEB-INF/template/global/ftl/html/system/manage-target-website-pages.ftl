@@ -355,8 +355,9 @@
 									<div class="panel-body" style="padding:5px;">
 										<div class="row">
 											<div class="col-sm-6">
-												<span class="label label-info">템플릿</span><span class="help-block"><small>페이지에 적용할 템플릿 파일 경로를 입력하세요</small></span>
-												<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">		
+												<span class="label label-info">템플릿</span>
+												<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">	
+												<span class="help-block"><small>페이지에 적용할 템플릿 파일 경로를 입력하세요</small></span>	
 											</div>
 											<div class="col-sm-6">
 												<span class="label label-danger">버전</span><code><span data-bind="text: versionId">0</span></code> 
