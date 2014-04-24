@@ -219,7 +219,7 @@
 				});				
 				pageEditorModel.bind("change", function(e){
 				
-					alert
+					
 					if( e.field.match('^page.')){ 						
 						if( this.page.title.length != 0 && this.page.bodyText.length  != 0 )					
 							$("button.btn-editor-control-group[data-action='page-editor-update']").removeAttr('disabled');
