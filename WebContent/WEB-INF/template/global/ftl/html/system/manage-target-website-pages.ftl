@@ -222,7 +222,7 @@
 								pageToUse.copy( pagePlaceHolder );
 							},
 							fail: function(){								
-								common.ui.notification({title:"페이지가 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
 								var newPage = new common.models.Page();
 								newPage.copy(pagePlaceHolder);
 							},
