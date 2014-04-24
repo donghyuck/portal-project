@@ -361,11 +361,11 @@
 											</div>
 											<div class="col-sm-6">
 												<p><span class="label label-danger">버전</span><code><span data-bind="text: versionId">0</span></code></p>
-												<p><span class="label label-info">요약</span></p>
-												<textarea class="form-control" rows="3" data-bind="value: summary" placeholder="페이지 요약 정보를 입력하세요."></textarea>
+												<p class="text-muted"><span class="label label-info">요약</span>  <small>페이지를 간략하게 설명하세요. </small></p>
+												<textarea class="form-control" rows="3" data-bind="value: summary" placeholder="페이지 요약"></textarea>
 											</div>
 										</div>
-										<textarea id="webpage-editor-body" rows="10" cols="30"></textarea>
+										<textarea id="webpage-editor-body" rows="5" cols="30"></textarea>
 									</div>
 								</div>							
 							</div>			
