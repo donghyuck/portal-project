@@ -26,8 +26,17 @@
 			summary :  { type: "string", editable: true},
 			modifiedDate: { type: "date", editable: false },
 			creationDate: { type: "date", editable: false } 				
+		},
+		copy: function ( target ){
+			target.pageId = this.get("pageId");
+	    	target.modifiedDate = this.get("modifiedDate");
+	    	target.creationDate = this.get("creationDate") ;
+	    	target.set("objectType",this.get("objectType") );
+	    	target.set("objectId",this.get("objectId") );
+	    	target.set("versionId",this.get("versionId") );
+	    	target.set("title",this.get("title") );
+	    	target.set("summary",this.get("summary") );			
 		}
-		
 	});
 	
 	common.models.WebSite =  kendo.data.Model.define({
@@ -44,7 +53,7 @@
 	        creationDate: { type: "date", editable: false } 			
 		},
 	    copy: function ( target ){
-	    	target.webSiteId = this.get("webSiteId")
+	    	target.webSiteId = this.get("webSiteId");
 	    //	target.set("webSiteId", this.get("webSiteId"));
 	    	target.set("name",this.get("name") );
 	    	target.set("description",this.get("description") );
