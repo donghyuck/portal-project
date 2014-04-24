@@ -381,8 +381,8 @@
 											</h5>
 											<div class="pull-right">
 												<div class="btn-group">
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPublish, disabled: isNew" disabled="disabled">게시</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onSave, disabled: isNew" disabled="disabled">저장</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPublish, disabled: isNew">게시</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onSave" disabled="disabled">저장</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPreview, disabled: isNew" >미리보기</button>													
 												</div>						
