@@ -347,31 +347,30 @@
 											</div>
 										</div>														
 									</div>
-								</div>
-						
-							<div id="webpage-editor" class="panel panel-default">
-								<div class="panel-heading" style="padding:5px;">
-									<input type="text" class="form-control" placeholder="페이지 제목" bind-data="value=title">
-								</div>
-								<div class="panel-body" style="padding:5px;">
-									<div class="row">
-										<div class="col-sm-6">
-										<span class="help-block"><small>페이지에 적용할 템플릿 파일 경로를 입력하세요><small></span>
-										<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">		
-										</div>
-										<div class="col-sm-6">
-								            <input data-role="numerictextbox"
+								</div>						
+								<div id="webpage-editor" class="panel panel-default">
+									<div class="panel-heading" style="padding:5px;">
+										<input type="text" class="form-control" placeholder="페이지 제목" bind-data="value=title">
+									</div>
+									<div class="panel-body" style="padding:5px;">
+										<div class="row">
+											<div class="col-sm-6">
+												<span class="help-block"><small>페이지에 적용할 템플릿 파일 경로를 입력하세요></small></span>
+												<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">		
+											</div>
+											<div class="col-sm-6">
+								            	<input data-role="numerictextbox"
 								                   data-format="c"
 								                   data-min="0"
 								                   data-max="100"
 								                   data-readonly="true"
 								                   data-bind="value: versionId"
 								                   style="width: 180px">										
+											</div>
 										</div>
+										<textarea id="webpage-editor" rows="10" cols="30"></textarea>
 									</div>
-									 <textarea id="webpage-editor" rows="10" cols="30"></textarea>
-								</div>
-							</div>							
+								</div>							
 							</div>			
 						</div>
 						<div class="panel-body" style="padding:5px;">
