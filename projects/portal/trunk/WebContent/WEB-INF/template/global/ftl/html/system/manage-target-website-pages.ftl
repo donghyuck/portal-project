@@ -230,6 +230,7 @@
 				});								
 				kendo.bind(renderTo, pageEditorModel );													
 				// button group setting ...
+				/*
 				common.ui.handleButtonActionEvents(
 					$("button.btn-editor-control-group"), 
 					{event: 'click', handlers: {
@@ -237,7 +238,8 @@
 							alert( "hello2" );				
 						}																  						 
 					}}
-				);	
+				);
+				*/	
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 				bodyEditor.kendoEditor({
@@ -370,7 +372,7 @@
 							<div id="website-page-grid"></div>																		
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
-							<div class="container">
+							<div  id="webpage-editor" class="container">
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
@@ -379,9 +381,9 @@
 											</h5>
 											<div class="pull-right">
 												<div class="btn-group">
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-publish" disabled="disabled">게시</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-update" disabled="disabled">저장</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-preview" disabled="disabled">미리보기</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPublish, disabled: isNew" disabled="disabled">게시</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onSave, disabled: isNew" disabled="disabled">저장</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group"  data-bind="click: onPreview" >미리보기</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-props" disabled="disabled">프로퍼티</button>
 												</div>						
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
@@ -389,7 +391,7 @@
 										</div>														
 									</div>
 								</div>						
-								<div id="webpage-editor" class="panel panel-default">
+								<div class="panel panel-default">
 									<div class="panel-heading" style="padding:5px;">
 										<input type="text" class="form-control" placeholder="페이지 제목" data-bind="value: page.title">
 									</div>
