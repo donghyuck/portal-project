@@ -391,7 +391,7 @@
 								</div>						
 								<div id="webpage-editor" class="panel panel-default">
 									<div class="panel-heading" style="padding:5px;">
-										<input type="text" class="form-control" placeholder="페이지 제목" bind-data="value: page.title">
+										<input type="text" class="form-control" placeholder="페이지 제목" data-bind="value: page.title">
 									</div>
 									<div class="panel-body" style="padding:5px;">
 										<div class="row">
