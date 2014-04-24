@@ -194,10 +194,44 @@
 				var newPage = new common.models.Page();
 				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
 				renderTo.data("pagePlaceHolder", newPage );
-				kendo.bind(renderTo, newPage );				
+				kendo.bind(renderTo, newPage );
 			}						
 			var bodyEditor =  $("#"+ renderToString +"-body" );			
 			if(!bodyEditor.data("kendoEditor") ){								
+
+				// button group setting ...
+				common.ui.handleButtonActionEvents(
+					$("button.btn-editor-control-group"), 
+					{event: 'click', handlers: {
+						'page-create' : function(e){
+							$("#page-list-panel").hide();
+							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
+							emptyPageEditorSource();
+							showPageEditor();							
+						},
+						'page-publish' : function(e){
+							alert( "hello2" );				
+						},						
+						group : function(e){
+							topBar.go('main-group.do');				
+						}, 	
+						user : function(e){
+							topBar.go('main-user.do');			
+						}, 							
+						'page-delete' : function(e){
+							alert( "hello3" );			
+						},
+						'page-editor-close' : function(e){
+							kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).reverse();								
+							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).play();				
+						},
+						back : function(e){
+							goWebsite();					
+						}																  						 
+					}}
+				);
+								
+
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 				bodyEditor.kendoEditor({
@@ -339,10 +373,10 @@
 											</h5>
 											<div class="pull-right">
 												<div class="btn-group">
-													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">게시</button>
-													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">저장</button>
-													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">미리보기</button>
-													<button type="button" class="btn btn-primary btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">프로퍼티</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">게시</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">저장</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">미리보기</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">프로퍼티</button>
 												</div>						
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
 											</div>
