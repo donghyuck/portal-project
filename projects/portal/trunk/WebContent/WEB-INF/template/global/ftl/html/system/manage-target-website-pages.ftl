@@ -69,6 +69,7 @@
 					{event: 'click', handlers: {
 						'page-create' : function(e){
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
+							emptyPageEditorSource();
 							showPageEditor();							
 						},
 						'page-publish' : function(e){
@@ -161,16 +162,80 @@
 			}
 		}
 		
+		
 		function showPageEditor(){		
 			//var editor = ace.edit("htmleditor");
 			//editor.getSession().setMode("ace/mode/html");
 			//editor.getSession().setUseWrapMode(true);		
-			var renderToString = "webpage-editor" ;
+			
+			var renderToString = "webpage-editor";			
 			createEditor(renderToString);			
-			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();			
+			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
+			
 		}
 		
+		function emptyPageEditorSource(){
+			var renderToString = "webpage-editor";				
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'"></div>');
+			}	
+			
+			var renderTo = $("#"+ renderToString);						
+			if( !renderTo.data("pagePlaceHolder") ){
+				renderTo.data("pagePlaceHolder", new common.models.Page() );
+				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));				
+			}				
+			
+			var newPage = new common.models.Page();
+			newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
+			newPage.copy(renderTo.data("pagePlaceHolder"));
+		}
 		
+		function createEditor( renderToString ){			
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'"></div>');
+			}												
+			var renderTo = $("#"+ renderToString);						
+			if( !renderTo.data("pagePlaceHolder") ){
+				var newPage = new common.models.Page();
+				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
+				renderTo.data("pagePlaceHolder", newPage );
+				kendo.bind(renderTo, newPage );				
+			}			
+			if(!renderTo.data("kendoEditor") ){								
+				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", renderTo);				
+				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", renderTo);	
+				renderTo.kendoEditor({
+						tools : [
+							'bold',
+							'italic',
+							'insertUnorderedList',
+							'insertOrderedList',
+							{	
+								name: "createLink",
+								exec: function(e){
+									linkPopup.show();
+									return false;
+								}								
+							},
+							'unlink',
+							{	
+								name: "insertImage",
+								exec: function(e){
+									imageBroswer.show();
+									return false;
+								}
+							},
+							'viewHtml'
+						],
+						stylesheets: [
+							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
+							"${request.contextPath}/styles/common/common.ui.css"
+						]
+				});
+			}		
+		}	
+				
 		function createPageImageBroswer(renderToString, editor){			
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"></div>');
@@ -207,44 +272,7 @@
 			return renderTo.data("kendoExtEditorPopup");
 		}
 		
-		function createEditor( renderToString ){			
-			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'"></div>');
-			}			
-			var renderTo = $("#"+ renderToString);			
-			if(!renderTo.data("kendoEditor") ){					
-				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", renderTo);				
-				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", renderTo);	
-				renderTo.kendoEditor({
-						tools : [
-							'bold',
-							'italic',
-							'insertUnorderedList',
-							'insertOrderedList',
-							{	
-								name: "createLink",
-								exec: function(e){
-									linkPopup.show();
-									return false;
-								}								
-							},
-							'unlink',
-							{	
-								name: "insertImage",
-								exec: function(e){
-									imageBroswer.show();
-									return false;
-								}
-							},
-							'viewHtml'
-						],
-						stylesheets: [
-							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
-							"${request.contextPath}/styles/common/common.ui.css"
-						]
-				});
-			}		
-		}				
+			
 		</script>
 		<style type="text/css" media="screen">
 
