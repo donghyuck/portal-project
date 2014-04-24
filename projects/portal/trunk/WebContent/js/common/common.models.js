@@ -13,7 +13,23 @@
 	        creationDate: { type: "date" } 			
 		}
 	});
-
+	
+	common.models.Page = kendo.data.Model.define({
+		id : "pageId",
+		fields:{
+			pageId:{ type:"number", editable:false, defaultValue:0 },
+			objectType:{ type:"number", editable:true, defaultValue:0 },
+			objectId:{ type:"number", editable:true, defaultValue:0 },
+			name : { type: "string", editable: true},
+			versionId:{ type:"number", editable:true, defaultValue:0 },
+			title : { type: "string", editable: true},
+			summary :  { type: "string", editable: true},
+			modifiedDate: { type: "date", editable: false },
+			creationDate: { type: "date", editable: false } 				
+		}
+		
+	});
+	
 	common.models.WebSite =  kendo.data.Model.define({
 		id : "webSiteId",
 		fields: { 
@@ -50,7 +66,6 @@
 	    		target.set("properties", this.get("properties") );
 	    }
 	});		
-	
 })(jQuery);	
 	
 var SignupForm = kendo.data.Model.define({
