@@ -221,8 +221,10 @@
 				});				
 				pageEditorModel.bind("change", function(e){
 					if( e.field.match('^page.')){ 
-						alert("fdsaf");
 						//$("button.btn-editor-control-group").attr('disabled', 'disabled');
+						$("button.btn-editor-control-group[data-action='page-editor-update']").removeAttr('disabled');
+						if(this.page.pageId > 0 )
+							$("button.btn-editor-control-group[data-action='page-editor-publish']").removeAttr('disabled');
 					}	
 				});
 								
