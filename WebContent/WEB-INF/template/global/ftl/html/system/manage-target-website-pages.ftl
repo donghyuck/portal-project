@@ -217,12 +217,12 @@
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
 							data : { targetSiteId:  this.page.objectId, item: kendo.stringify(this.page) },
 							success : function(response){
-								common.ui.notification({title:"웹 페이지", message: "웹 페이지가 저장되었습니다.", type: "success" });
+								common.ui.notification({title:"페이지 저장", message: "웹 페이지가 정상적으로 저장되었습니다.", type: "success" });
 								var pageToUse = new common.models.Page(response.targetPage);																
 								pageToUse.copy( pagePlaceHolder );
 							},
 							fail: function(){								
-								common.ui.notification({title:"웹 페이지가 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								common.ui.notification({title:"페이지가 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
 								var newPage = new common.models.Page();
 								newPage.copy(pagePlaceHolder);
 							},
