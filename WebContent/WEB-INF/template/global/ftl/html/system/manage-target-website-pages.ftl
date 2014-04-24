@@ -360,7 +360,9 @@
 												<span class="help-block"><small>페이지에 적용할 템플릿 파일 경로를 입력하세요</small></span>	
 											</div>
 											<div class="col-sm-6">
-												<span class="label label-danger">버전</span><code><span data-bind="text: versionId">0</span></code> 
+												<p><span class="label label-danger">버전</span><code><span data-bind="text: versionId">0</span></code></p>
+												<p><span class="label label-info">요약</span></>
+												<textarea class="form-control" rows="3" data-bind="value: summary"></textarea>
 											</div>
 										</div>
 										<textarea id="webpage-editor-body" rows="10" cols="30"></textarea>
