@@ -207,8 +207,7 @@
 							alert( "hello2" );				
 						}																  						 
 					}}
-				);
-								
+				);	
 
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
@@ -351,10 +350,10 @@
 											</h5>
 											<div class="pull-right">
 												<div class="btn-group">
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">게시</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">저장</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">미리보기</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-close" disabled="disabled">프로퍼티</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-publish" disabled="disabled">게시</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-save" disabled="disabled">저장</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-preview" disabled="disabled">미리보기</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-props" disabled="disabled">프로퍼티</button>
 												</div>						
 												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
 											</div>
