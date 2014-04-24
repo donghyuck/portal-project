@@ -221,7 +221,7 @@
 				
 					alert
 					if( e.field.match('^page.')){ 						
-						if( this.page.title.length > 0 && this.page.bodyText.length > 0 )					
+						if( this.page.title.length != 0 && this.page.bodyText.length  != 0 )					
 							$("button.btn-editor-control-group[data-action='page-editor-update']").removeAttr('disabled');
 							
 						if(this.page.pageId > 0 )
