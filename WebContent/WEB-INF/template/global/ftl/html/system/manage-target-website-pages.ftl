@@ -68,7 +68,8 @@
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
 						'page-create' : function(e){
-							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
+							$("#page-list-panel").hide();
+							//kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
 							emptyPageEditorSource();
 							showPageEditor();							
 						},
