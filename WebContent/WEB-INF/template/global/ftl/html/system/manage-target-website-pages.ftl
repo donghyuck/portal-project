@@ -170,9 +170,10 @@
 			//editor.getSession().setUseWrapMode(true);		
 			
 			var renderToString = "webpage-editor";			
-			createEditor(renderToString);			
-			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
+			createEditor(renderToString);				
+			$("button.btn-editor-control-group").attr('disabled', 'disabled');
 			
+			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();			
 		}
 		
 		function emptyPageEditorSource(){
@@ -181,13 +182,12 @@
 			if( !renderTo.data("pagePlaceHolder") ){
 				renderTo.data("pagePlaceHolder", new common.models.Page() );
 				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));				
-			}				
-			
+			}
 			var newPage = new common.models.Page();
 			newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
 			newPage.copy(renderTo.data("pagePlaceHolder"));
 		}
-		
+				
 		function createEditor( renderToString ){			
 			var renderTo = $("#"+ renderToString);						
 			if( !renderTo.data("pagePlaceHolder") ){
@@ -351,7 +351,7 @@
 											<div class="pull-right">
 												<div class="btn-group">
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-publish" disabled="disabled">게시</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-save" disabled="disabled">저장</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-update" disabled="disabled">저장</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-preview" disabled="disabled">미리보기</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button" data-action="page-editor-props" disabled="disabled">프로퍼티</button>
 												</div>						
