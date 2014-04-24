@@ -117,8 +117,8 @@
 	                        }
                         },
                         schema: {
-                            total: "targetWebSiteCount",
-                            data: "targetWebSites",
+                            total: "targetPageCount",
+                            data: "targetPages",
                             model: common.models.Page
                         },
                         error:handleKendoAjaxError,
