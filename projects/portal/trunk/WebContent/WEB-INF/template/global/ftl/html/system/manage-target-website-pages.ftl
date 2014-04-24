@@ -203,30 +203,8 @@
 				common.ui.handleButtonActionEvents(
 					$("button.btn-editor-control-group"), 
 					{event: 'click', handlers: {
-						'page-create' : function(e){
-							$("#page-list-panel").hide();
-							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
-							emptyPageEditorSource();
-							showPageEditor();							
-						},
 						'page-publish' : function(e){
 							alert( "hello2" );				
-						},						
-						group : function(e){
-							topBar.go('main-group.do');				
-						}, 	
-						user : function(e){
-							topBar.go('main-user.do');			
-						}, 							
-						'page-delete' : function(e){
-							alert( "hello3" );			
-						},
-						'page-editor-close' : function(e){
-							kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).reverse();								
-							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).play();				
-						},
-						back : function(e){
-							goWebsite();					
 						}																  						 
 					}}
 				);
