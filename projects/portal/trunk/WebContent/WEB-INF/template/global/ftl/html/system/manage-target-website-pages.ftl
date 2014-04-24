@@ -361,8 +361,8 @@
 											</div>
 											<div class="col-sm-6">
 												<p><span class="label label-danger">버전</span><code><span data-bind="text: versionId">0</span></code></p>
-												<p><span class="label label-info">요약</span></>
-												<textarea class="form-control" rows="3" data-bind="value: summary"></textarea>
+												<p><span class="label label-info">요약</span></p>
+												<textarea class="form-control" rows="3" data-bind="value: summary" placeholder="페이지 요약 정보를 입력하세요."></textarea>
 											</div>
 										</div>
 										<textarea id="webpage-editor-body" rows="10" cols="30"></textarea>
