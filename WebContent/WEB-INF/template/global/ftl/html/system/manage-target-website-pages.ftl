@@ -215,7 +215,7 @@
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
-							data : { targetSiteId:  sitePlaceHolder.webSiteId, item: kendo.stringify(this.page) },
+							data : { targetSiteId:  this.page.objectId, item: kendo.stringify(this.page) },
 							success : function(response){
 								common.ui.notification({title:"웹 페이지", message: "웹 페이지가 저장되었습니다.", type: "success" });
 								var pageToUse = new common.models.Page(response.targetPage);																
