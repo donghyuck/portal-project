@@ -194,11 +194,12 @@
 				var newPage = new common.models.Page();
 				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
 				renderTo.data("pagePlaceHolder", newPage );
-				kendo.bind(renderTo, newPage );
 			}						
 			var bodyEditor =  $("#"+ renderToString +"-body" );			
-			if(!bodyEditor.data("kendoEditor") ){								
-
+			if(!bodyEditor.data("kendoEditor") ){
+			
+				kendo.bind(renderTo, newPage );
+								
 				// button group setting ...
 				common.ui.handleButtonActionEvents(
 					$("button.btn-editor-control-group"), 
@@ -208,7 +209,6 @@
 						}																  						 
 					}}
 				);	
-
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 				bodyEditor.kendoEditor({
