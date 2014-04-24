@@ -361,8 +361,8 @@
 								</div>
 								<div class="panel-body" style="padding:5px;">
 									<div class="row">
-										<div class="col-xs-4">
-										<span class="help-block">페이지에 적용할 템플릿 파일 경로를 입력하세요</span>
+										<div class="col-sm-4">
+										<span class="help-block">템플릿<small>페이지에 적용할 템플릿 파일 경로를 입력하세요><small></span>
 										<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">		
 										</div>
 									</div>
