@@ -18,12 +18,13 @@
 		id : "pageId",
 		fields:{
 			pageId:{ type:"number", editable:false, defaultValue:0 },
-			objectType:{ type:"number", editable:true, defaultValue:0 },
+			objectType:{ type:"number", editable:true, defaultValue: 30 },
 			objectId:{ type:"number", editable:true, defaultValue:0 },
 			name : { type: "string", editable: true},
 			versionId:{ type:"number", editable:true, defaultValue:0 },
 			title : { type: "string", editable: true},
 			summary :  { type: "string", editable: true},
+			bodyText:  { type: "string", editable: true},
 			modifiedDate: { type: "date", editable: false },
 			creationDate: { type: "date", editable: false } 				
 		},
@@ -35,7 +36,8 @@
 	    	target.set("objectId",this.get("objectId") );
 	    	target.set("versionId",this.get("versionId") );
 	    	target.set("title",this.get("title") );
-	    	target.set("summary",this.get("summary") );			
+	    	target.set("summary",this.get("summary") );		
+	    	target.set("bodyText",this.get("bodyText") );		
 		}
 	});
 	
