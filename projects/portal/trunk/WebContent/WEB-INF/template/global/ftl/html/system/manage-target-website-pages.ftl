@@ -223,7 +223,8 @@
 							},
 							fail: function(){								
 								common.ui.notification({title:"웹 페이지가 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
-								$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);
+								var newPage = new common.models.Page();
+								newPage.copy(pagePlaceHolder);
 							},
 							requestStart : function(){
 								kendo.ui.progress(renderTo, true);
