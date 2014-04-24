@@ -190,16 +190,44 @@
 				
 		function createEditor( renderToString ){			
 			var renderTo = $("#"+ renderToString);						
+			
 			if( !renderTo.data("pagePlaceHolder") ){
 				var newPage = new common.models.Page();
 				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
 				renderTo.data("pagePlaceHolder", newPage );
-			}						
+			}			
+			var pagePlaceHolder = renderTo.data("pagePlaceHolder");			
 			var bodyEditor =  $("#"+ renderToString +"-body" );			
 			if(!bodyEditor.data("kendoEditor") ){
-			
-				kendo.bind(renderTo, newPage );
 								
+				var pageEditorModel = kendo.observable({ 
+					page : pagePlaceHolder,
+					isVisible: true,
+					isNew : function(){
+						if( this.page.pageId <= 0 )
+							return true;
+						else 
+							return false;	
+					},
+					doPublish: function(e){
+					alert("publish");
+					},
+					doSave : function (e) {
+					alert("save");
+					},
+					doPreview : function (e) {
+						alert("preview");
+					}
+				});				
+				pageEditorModel.bind("change", function(e){
+					if( e.field.match('^page.')){ 
+						alert("fdsaf");
+						//$("button.btn-editor-control-group").attr('disabled', 'disabled');
+					}	
+				});
+								
+				kendo.bind(renderTo, pageEditorModel );
+													
 				// button group setting ...
 				common.ui.handleButtonActionEvents(
 					$("button.btn-editor-control-group"), 
