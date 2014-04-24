@@ -364,8 +364,8 @@
 									<div class="pull-right">
 										<div class="btn-group">
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-create" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>
-										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-publish" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
-										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-delete" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button>
+										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-publish" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
+										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-delete" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button>
 										</div>										
 									</div>
 							</div>		
@@ -383,10 +383,10 @@
 												<div class="btn-group">
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPublish, disabled: isNew" disabled="disabled">게시</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onSave, disabled: isNew" disabled="disabled">저장</button>
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPreview, disabled: isNew" >미리보기</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPreview, disabled: isNew" >미리보기</button>													
 												</div>						
-												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>				
+												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>
 											</div>
 										</div>														
 									</div>
