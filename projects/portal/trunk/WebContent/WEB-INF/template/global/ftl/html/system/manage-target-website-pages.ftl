@@ -176,10 +176,6 @@
 		
 		function emptyPageEditorSource(){
 			var renderToString = "webpage-editor";				
-			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'"></div>');
-			}	
-			
 			var renderTo = $("#"+ renderToString);						
 			if( !renderTo.data("pagePlaceHolder") ){
 				renderTo.data("pagePlaceHolder", new common.models.Page() );
@@ -192,19 +188,17 @@
 		}
 		
 		function createEditor( renderToString ){			
-			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'"></div>');
-			}												
 			var renderTo = $("#"+ renderToString);						
 			if( !renderTo.data("pagePlaceHolder") ){
 				var newPage = new common.models.Page();
 				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
 				renderTo.data("pagePlaceHolder", newPage );
 				kendo.bind(renderTo, newPage );				
-			}			
-			if(!renderTo.data("kendoEditor") ){								
-				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", renderTo);				
-				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", renderTo);	
+			}						
+			var bodyEditor =  $("#"+ renderToString +"-body" );			
+			if(!bodyEditor.data("kendoEditor") ){								
+				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
+				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 				renderTo.kendoEditor({
 						tools : [
 							'bold',
@@ -236,7 +230,7 @@
 			}		
 		}	
 				
-		function createPageImageBroswer(renderToString, editor){			
+		function createPageImageBroswer(renderToString, editor ){			
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"></div>');
 			}					
@@ -355,7 +349,7 @@
 									</div>
 								</div>
 						
-							<div class="panel panel-default">
+							<div id="webpage-editor" class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
 									<input type="text" class="form-control" placeholder="페이지 제목" bind-data="value=title">
 								</div>
