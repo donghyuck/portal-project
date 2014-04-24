@@ -368,7 +368,7 @@
 								                   style="width: 180px">										
 											</div>
 										</div>
-										<textarea id="webpage-editor" rows="10" cols="30"></textarea>
+										<textarea id="webpage-editor-body" rows="10" cols="30"></textarea>
 									</div>
 								</div>							
 							</div>			
