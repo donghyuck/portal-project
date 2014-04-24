@@ -199,7 +199,7 @@
 			if(!bodyEditor.data("kendoEditor") ){								
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-				renderTo.kendoEditor({
+				bodyEditor.kendoEditor({
 						tools : [
 							'bold',
 							'italic',
