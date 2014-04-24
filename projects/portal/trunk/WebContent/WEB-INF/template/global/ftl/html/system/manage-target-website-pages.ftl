@@ -390,19 +390,19 @@
 								</div>						
 								<div id="webpage-editor" class="panel panel-default">
 									<div class="panel-heading" style="padding:5px;">
-										<input type="text" class="form-control" placeholder="페이지 제목" bind-data="value=title">
+										<input type="text" class="form-control" placeholder="페이지 제목" bind-data="value: page.title">
 									</div>
 									<div class="panel-body" style="padding:5px;">
 										<div class="row">
 											<div class="col-sm-6">
-												<p><span class="label label-danger">버전</span><code><span data-bind="text: versionId">0</span></code></p>
+												<p><span class="label label-danger">버전</span><code><span data-bind="text: page.versionId">0</span></code></p>
 												<p class="text-muted"><span class="label label-info">템플릿</span>  <small>페이지에 적용할 템플릿 파일 경로를 입력하세요</small></p>
 												<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">	
 													
 											</div>
 											<div class="col-sm-6">												
 												<p class="text-muted"><span class="label label-info">요약</span>  <small>페이지를 간략하게 설명하세요. </small></p>
-												<textarea class="form-control" rows="3" data-bind="value: summary" placeholder="페이지 요약"></textarea>
+												<textarea class="form-control" rows="3" data-bind="value: page.summary" placeholder="페이지 요약"></textarea>
 											</div>
 										</div>
 										<textarea id="webpage-editor-body" rows="5" cols="30"></textarea>
