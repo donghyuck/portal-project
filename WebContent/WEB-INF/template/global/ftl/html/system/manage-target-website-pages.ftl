@@ -218,7 +218,7 @@
 					}
 				});				
 				pageEditorModel.bind("change", function(e){
-				
+				alert( e.field  + "   " + e.field.match('^page.'));
 					
 					if( e.field.match('^page.')){ 						
 						if( this.page.title.length > 0 && this.page.bodyText.length  > 0 )					
