@@ -357,7 +357,7 @@
 						
 							<div class="panel panel-default">
 								<div class="panel-heading" style="padding:5px;">
-									<input type="text" class="form-control" placeholder="페이지 제목">
+									<input type="text" class="form-control" placeholder="페이지 제목" bind-data="value=title">
 								</div>
 								<div class="panel-body" style="padding:5px;">
 									<div class="row">
