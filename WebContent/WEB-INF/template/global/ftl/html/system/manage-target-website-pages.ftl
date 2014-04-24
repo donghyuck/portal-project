@@ -134,7 +134,7 @@
                         { field: "title", title: "제목", width: 300 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
                         { field: "versionId", title: "버전", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },                        
                         { field: "pageState", title: "상태", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
-                        { field: "user.name", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+                        { field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
                         { field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
                         { field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],         
                     filterable: true,
