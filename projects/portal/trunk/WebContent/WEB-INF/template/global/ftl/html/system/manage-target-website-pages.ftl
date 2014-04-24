@@ -359,13 +359,7 @@
 												<input type="text" class="form-control" placeholder="템플릿 파일" value="/html/community/page.ftl">		
 											</div>
 											<div class="col-sm-6">
-								            	<input data-role="numerictextbox"
-								                   data-format="c"
-								                   data-min="0"
-								                   data-max="100"
-								                   data-readonly="true"
-								                   data-bind="value: versionId"
-								                   style="width: 180px">										
+												<span class="label label-danger">버전</span><code><span data-bind="text: versionId">0</span></code> 
 											</div>
 										</div>
 										<textarea id="webpage-editor-body" rows="10" cols="30"></textarea>
