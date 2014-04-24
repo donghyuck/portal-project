@@ -190,7 +190,6 @@
 				
 		function createEditor( renderToString ){			
 			var renderTo = $("#"+ renderToString);						
-			
 			if( !renderTo.data("pagePlaceHolder") ){
 				var newPage = new common.models.Page();
 				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
@@ -198,8 +197,7 @@
 			}			
 			var pagePlaceHolder = renderTo.data("pagePlaceHolder");			
 			var bodyEditor =  $("#"+ renderToString +"-body" );			
-			if(!bodyEditor.data("kendoEditor") ){
-								
+			if(!bodyEditor.data("kendoEditor") ){								
 				var pageEditorModel = kendo.observable({ 
 					page : pagePlaceHolder,
 					isVisible: true,
@@ -213,7 +211,7 @@
 					alert("publish");
 					},
 					doSave : function (e) {
-					alert("save");
+					alert(kendo.stringify(this.page));
 					},
 					doPreview : function (e) {
 						alert("preview");
@@ -225,10 +223,8 @@
 						if(this.page.pageId > 0 )
 							$("button.btn-editor-control-group[data-action='page-editor-publish']").removeAttr('disabled');
 					}	
-				});
-								
-				kendo.bind(renderTo, pageEditorModel );
-													
+				});								
+				kendo.bind(renderTo, pageEditorModel );													
 				// button group setting ...
 				common.ui.handleButtonActionEvents(
 					$("button.btn-editor-control-group"), 
