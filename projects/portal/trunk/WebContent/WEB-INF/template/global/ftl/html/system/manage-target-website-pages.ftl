@@ -212,7 +212,26 @@
 						alert("publish");
 					},					
 					doSave : function (e) {
-						alert(kendo.stringify(this.page));
+						common.api.callback(  
+						{
+							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
+							data : { targetSiteId:  sitePlaceHolder.webSiteId, item: kendo.stringify(this.page) },
+							success : function(response){
+								common.ui.notification({title:"웹 페이지", message: "웹 페이지가 저장되었습니다.", type: "success" });
+								var pageToUse = new common.models.Page(response.targetPage);																
+								pageToUse.copy( pagePlaceHolder );
+							},
+							fail: function(){								
+								common.ui.notification({title:"웹 페이지가 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								$("#site-info").data("sitePlaceHolder").copy(sitePlaceHolder);
+							},
+							requestStart : function(){
+								kendo.ui.progress(renderTo, true);
+							},
+							requestEnd : function(){
+								kendo.ui.progress(renderTo, false);
+							}
+						}); 							
 					},
 					doPreview : function (e) {
 						alert("preview");
