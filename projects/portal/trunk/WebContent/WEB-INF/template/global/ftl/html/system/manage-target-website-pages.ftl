@@ -115,6 +115,11 @@
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 
+		function openPage (page){					
+			$("form[name='openpage-form'] input[name='name']").val( page.name );
+			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
+		}
+		
 		function doPageEdit(){
 			kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
 			showPageEditor();							
@@ -473,6 +478,9 @@
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
 							<div  id="webpage-editor" class="container">
+								<form name="openpage-form" action="${request.contextPath}/community/page.do" >
+									<input type="hidden" name="name"/>
+								</form>
 								<div class="row">
 									<div class="col-lg-12">
 										<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
