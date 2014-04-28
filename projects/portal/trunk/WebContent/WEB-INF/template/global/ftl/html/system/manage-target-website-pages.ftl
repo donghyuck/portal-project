@@ -444,7 +444,7 @@
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>			
 							<div class="btn-group">
-								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled"  title="사이트 목록으로 이동" ><i class="fa fa-level-up"></i></button>			
+								<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled"  title="사이트 상세로 이동" ><i class="fa fa-level-up"></i></button>			
 							</div>														
 						</div>
 						<div id="page-list-panel" class="panel-body">
