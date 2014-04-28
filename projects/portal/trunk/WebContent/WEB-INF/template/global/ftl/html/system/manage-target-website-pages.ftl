@@ -233,8 +233,7 @@
 				renderTo.data("pagePlaceHolder", newPage );
 			}		
 			*/	
-			var pagePlaceHolder = renderTo.data("pagePlaceHolder");
-						
+			var pagePlaceHolder = renderTo.data("pagePlaceHolder");									
 			var bodyEditor =  $("#"+ renderToString +"-body" );
 			if(!bodyEditor.data("kendoEditor") ){
 			
@@ -349,7 +348,7 @@
 						]
 				});
 			}
-					
+			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );				
 		}	
 		
 		function createCodeEditor( renderToString, editor ) {
