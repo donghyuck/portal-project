@@ -76,7 +76,7 @@
 						'page-editor-close' : function(e){
 							kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).reverse();								
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).play();				
-						}								
+						},								
 						group : function(e){
 							topBar.go('main-group.do');				
 						}, 	
