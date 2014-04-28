@@ -290,7 +290,7 @@
 							"${request.contextPath}/styles/common/common.ui.css"
 						]
 				});				
-				var htmleditor = ace.edit("page-htmleditor");
+				var htmleditor = ace.edit("htmleditor");
 				htmleditor.getSession().setMode("ace/mode/html");
 				htmleditor.getSession().setUseWrapMode(true);				
 			}
@@ -356,6 +356,14 @@
 			overflow : visible;
 		}
 		
+		#htmleditor { 
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		}
+				
 		</style>		
 </#compress>		
 	</head>
@@ -439,7 +447,7 @@
 										<textarea id="webpage-editor-body" rows="5" cols="30" data-bind="value: page.bodyText" placeholder="페이지 본문"></textarea>
 									</div>
 									<div class="panel-body" style="padding:5px;">
-										<div id="page-htmleditor"  data-text="value: page.bodyText" ></div>
+										<div id="htmleditor"  data-text="value: page.bodyText" ></div>
 									</div>
 								</div>	
 							</div>			
