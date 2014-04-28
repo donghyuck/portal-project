@@ -256,8 +256,7 @@
 						alert("open page");
 					},										
 					doSave : function (e) {
-					
-					alert(kendo.stringify(this.page)) ;
+
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
