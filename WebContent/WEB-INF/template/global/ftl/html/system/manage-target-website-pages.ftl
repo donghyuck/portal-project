@@ -72,7 +72,10 @@
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
 							emptyPageEditorSource();
 							showPageEditor();							
-						},				
+						},
+						'page-publish' : function(e){
+							alert( "hello2" );				
+						},						
 						group : function(e){
 							topBar.go('main-group.do');				
 						}, 	
@@ -245,9 +248,8 @@
 							return false;	
 					},
 					onPublish: function(e){
-					alert("dfdasf");
-						//this.page.set('pageState', 'PUBLISHED');
-						//this.doSave(e);
+						this.page.set('pageState', 'PUBLISHED');
+						this.doSave(e);
 					},
 					showProps: function(e){
 						renderTo.find('.custom-props' ).toggleClass('hide');
