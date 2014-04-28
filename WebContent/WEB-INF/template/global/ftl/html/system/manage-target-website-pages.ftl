@@ -103,7 +103,7 @@
 
 						
 				createPageGrid();
-			}	d
+			}
 		}]);
 			
 		function goWebsite (){					
