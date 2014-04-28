@@ -93,11 +93,12 @@
 				</div>
 			</div>
 		</div>
+		<!-- END MAIN CONTENT -->	
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
-		<!-- END FOOTER -->				
+		<!-- END FOOTER -->	
 		<!-- START TEMPLATE -->
 		<#include "/html/common/common-homepage-templates.ftl" >		
-		<!-- END TEMPLATE -->		
+		<!-- END TEMPLATE -->	
 	</body>
 </html>
