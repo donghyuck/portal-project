@@ -261,9 +261,7 @@
 				kendo.bind(renderTo, pageEditorModel );													
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-				var htmleditor = ace.edit("htmleditor");
-				htmleditor.getSession().setMode("ace/mode/html");
-				htmleditor.getSession().setUseWrapMode(true);		
+				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);	
 								
 				bodyEditor.kendoEditor({
 						tools : [
@@ -289,7 +287,7 @@
 							{
 								name: 'viewHtml',
 								exec: function(e){
-									bodyEditor.hide();
+									htmlEditor.show();
 									return false;
 								}								
 							}
@@ -303,6 +301,32 @@
 			}
 					
 		}	
+		
+		function createCodeEditor( renderToString, editor ) {
+			//	var htmleditor = ace.edit("htmleditor");
+			//	htmleditor.getSession().setMode("ace/mode/html");
+			//	htmleditor.getSession().setUseWrapMode(true);				
+			
+			if( $("#"+ renderToString).length == 0 ){
+				$('body').append('<div id="'+ renderToString +'"></div>');
+			}							
+			var renderTo = $("#"+ renderToString);		
+			if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){				
+				$("#"+ renderToString ).extModalWindow({
+					title : "HTML",
+					backdrop : 'static',
+					template : $("#code-editor-modal-template").html(),
+					refresh : function(e){
+						var editor = ace.edit("htmleditor");
+						editor.getSession().setMode("ace/mode/xml");
+						editor.getSession().setUseWrapMode(true);
+					}  
+				});	
+			}			
+			ace.edit("htmleditor").setValue("htllo");
+			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
+			
+		}
 				
 		function createPageImageBroswer(renderToString, editor ){			
 			if( $("#"+ renderToString).length == 0 ){
