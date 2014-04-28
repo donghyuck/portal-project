@@ -212,10 +212,8 @@
 								<small><i class="fa fa-info"></i>
 								</small>									
 							</h5>
-						</div>												
-					</div>
-					<div class='modal-body editor-model-body'>
-						<div id="htmleditor"></div>
+						</div>			
+						<div id="htmleditor"></div>									
 					</div>
 					<div class='modal-footer' style="margin-top: 0px;">
 						<button type="button" class="btn btn-primary btn-sm custom-update" data-bind="events:{ click: onSave }" >확인</button>		
