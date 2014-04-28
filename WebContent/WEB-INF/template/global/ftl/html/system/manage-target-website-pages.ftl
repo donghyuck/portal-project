@@ -193,13 +193,16 @@
 
 		
 		function showPageEditor(){		
-			var renderToString = "webpage-editor";
-			createEditor(renderToString);
+			preparePageEditor();
 			$("button.btn-editor-control-group[data-action='page-editor-save']").attr('disabled', 'disabled');
 			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
 		}
-
 		
+		function preparePageEditor(){
+			var renderToString = "webpage-editor";
+			createEditor(renderToString);
+		}
+				
 		function emptyPageEditorSource(){
 			var newPage = new common.models.Page();
 			newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
@@ -216,8 +219,7 @@
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
 				
-		function createEditor( renderToString ){	
-				
+		function createEditor( renderToString ){				
 			var renderTo = $("#"+ renderToString);		
 			/*
 			if( !renderTo.data("pagePlaceHolder") ){
@@ -305,7 +307,8 @@
 					}	
 				});								
 				kendo.bind(renderTo, pageEditorModel );
-				
+				renderTo.data("model", pageEditorModel );		
+								
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);	
