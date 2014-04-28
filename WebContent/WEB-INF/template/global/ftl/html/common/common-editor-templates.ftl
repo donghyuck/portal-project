@@ -198,8 +198,36 @@
 	</div><!-- /.modal -->
 </script>	
 
-		<script type="text/x-kendo-tmpl" id="photo-list-view-template">
-			<div class="img-wrapper">			
+	<script id="code-editor-modal-template" type="text/x-kendo-template">
+		<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
+			<div class='modal-dialog modal-lg'>
+				<div class='modal-content'>
+					<div class='modal-header'>
+						<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+						<h5 class='modal-title'>#= title #</h5>
+					</div>
+					<div class='modal-body'>			
+						<div class="page-header text-primary">
+							<h5 >
+								<small><i class="fa fa-info"></i>
+								</small>									
+							</h5>
+						</div>												
+					</div>
+					<div class='modal-body editor-model-body'>
+						<div id="htmleditor"></div>
+					</div>
+					<div class='modal-footer' style="margin-top: 0px;">
+						<button type="button" class="btn btn-primary btn-sm custom-update" data-bind="events:{ click: onSave }" >확인</button>		
+						<button type="button" class="btn btn-default  btn-sm" data-dismiss='modal' aria-hidden='true'>취소</button>						
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->				
+	</script>
+	
+<script type="text/x-kendo-tmpl" id="photo-list-view-template">
+	<div class="img-wrapper">			
 			#if (contentType.match("^image") ) {#
 				<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#:imageId#" alt="#:name# 이미지" />
 			# } else { #			
@@ -209,5 +237,5 @@
 					<h3>#:name#</h3>
 					<p>#:size# 바이트</p>
 				</div>
-			</div>
-		</script>					
+	</div>
+</script>					
