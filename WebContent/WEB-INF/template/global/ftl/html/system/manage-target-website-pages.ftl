@@ -317,12 +317,13 @@
 						var editor = ace.edit("htmleditor");
 						editor.getSession().setMode("ace/mode/xml");
 						editor.getSession().setUseWrapMode(true);
-					}  
+					},
+					open: function (e){
+						var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');
+						ace.edit("htmleditor").setValue(pagePlaceHolder.bodyText);
+					} 
 				});	
 			}
-			
-			var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');
-			ace.edit("htmleditor").setValue(pagePlaceHolder.bodyText);
 			return renderTo.data('kendoExtModalWindow');			
 		}
 				
