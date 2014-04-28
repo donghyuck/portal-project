@@ -180,7 +180,10 @@
 							var selectedCell = this.dataItem( selectedCells ); 
 							setPageEditorSource(selectedCell);
 							if( selectedCell.pageId > 0 ){
-								$('button.btn-page-control-group').removeAttr("disabled");
+								if( selectedCell.pageState === 'PUBLISHED' )
+									$('button.btn-page-control-group[data-action="page-delete"]').removeAttr("disabled");
+								else
+									$('button.btn-page-control-group').removeAttr("disabled");
 							}
  						} 						
 					},
