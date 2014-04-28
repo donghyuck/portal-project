@@ -202,8 +202,9 @@
 			var renderTo = $("#"+ renderToString);						
 			if( !renderTo.data("pagePlaceHolder") ){
 				renderTo.data("pagePlaceHolder", new common.models.Page() );
-				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));				
+				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));
 			}
+			alert( kendo.stringify( source ) );
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
 				
