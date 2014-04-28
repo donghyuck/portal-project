@@ -173,6 +173,9 @@
   						if( selectedCells.length > 0){ 
 							var selectedCell = this.dataItem( selectedCells ); 
 							setPageEditorSource(selectedCell);
+							if( selectedCell.pageId > 0 ){
+								$('button.btn-page-control-group').attr("disabled", "disabled");
+							}
  						} 						
 					},
 					dataBound: function(e){		
