@@ -177,9 +177,9 @@
 
 		
 		function showPageEditor(){		
-			//var editor = ace.edit("htmleditor");
-			//editor.getSession().setMode("ace/mode/html");
-			//editor.getSession().setUseWrapMode(true);	
+			var editor = ace.edit("page-htmleditor");
+			editor.getSession().setMode("ace/mode/html");
+			editor.getSession().setUseWrapMode(true);	
 			
 			var renderToString = "webpage-editor";
 			createEditor(renderToString);
@@ -438,7 +438,10 @@
 										</div>
 										<textarea id="webpage-editor-body" rows="5" cols="30" data-bind="value: page.bodyText" placeholder="페이지 본문"></textarea>
 									</div>
-								</div>							
+									<div class="panel-body" style="padding:5px;">
+										<div id="page-htmleditor"></div>
+									</div>
+								</div>	
 							</div>			
 						</div>
 						<div class="panel-body" style="padding:5px;">
