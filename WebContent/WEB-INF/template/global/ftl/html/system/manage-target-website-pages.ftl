@@ -454,8 +454,8 @@
 									<div class="pull-right">
 										<div class="btn-group">
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-create" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>
-										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-publish" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
-										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-delete" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button>
+										<button type="button" class="btn btn-primary btn-page-control-group btn-sm" data-action="page-publish" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
+										<button type="button" class="btn btn-primary btn-page-control-group btn-sm" data-action="page-delete" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button>
 										</div>										
 									</div>
 							</div>		
