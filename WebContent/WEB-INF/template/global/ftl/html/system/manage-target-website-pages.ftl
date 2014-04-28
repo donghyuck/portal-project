@@ -120,7 +120,7 @@
 				page = $('#webpage-editor').data("pagePlaceHolder");
 			}	
 			$("form[name='openpage-form'] input[name='name']").val( page.name );
-			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
+			$("form[name='openpage-form']").submit();			
 		}
 		
 		function doPageEdit(){
