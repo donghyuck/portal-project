@@ -105,14 +105,7 @@
 		}
 
 		function doPageEdit(){
-			var grid = $("#website-page-grid").data("kendoGrid");
-			var selectedCells = grid.select();
-			var selectedCell = grid.dataItem( selectedCells ); 
-			$("#page-list-panel").hide();
 			kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
-			var renderToString = "webpage-editor";				
-			var renderTo = $("#"+ renderToString);	
-			selectedCell.copy(renderTo.data("pagePlaceHolder"));				
 			showPageEditor();							
 		}		
 		
@@ -167,11 +160,8 @@
                         var selectedCells = this.select();                 
   						if( selectedCells.length > 0){ 
 							var selectedCell = this.dataItem( selectedCells ); 
-							//selectedCell.copy($("#user-grid").data("userPlaceHolder"));
-							//if( selectedCell.userId	> 0 ){									
-							//	showUserDetails();
-							//}
- 						}
+							selectedCell.copy($("#webpage-editor").data("pagePlaceHolder"));
+ 						} 						
 					},
 					dataBound: function(e){		
 						 var selectedCells = this.select();
