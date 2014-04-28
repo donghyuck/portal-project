@@ -45,7 +45,8 @@
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set("user", this.get("user") );    		
 	    	if( typeof this.get("properties") === 'object' )
-	    		target.set("properties", this.get("properties") );	    	
+	    		target.properties = this.get("properties") ;
+	    		
 		}
 	});
 	
