@@ -61,6 +61,10 @@
 						site.copy( sitePlaceHolder );
 						kendo.bind($("#website-info"), sitePlaceHolder );
 						$('button.btn-control-group').removeAttr("disabled");	
+
+						preparePageEditor();
+						emptyPageEditorSource();
+												
 					}
 				}); 
 												
@@ -182,7 +186,6 @@
 					},
 					dataBound: function(e){		
 						$("button.btn-page-control-group").attr("disabled", "disabled");
-						preparePageEditor();
 						 //var selectedCells = this.select();
 						 //if(selectedCells.length == 0 ){
 						 //	var newUser = new User ();
@@ -203,7 +206,6 @@
 		
 		function preparePageEditor(){
 			var renderToString = "webpage-editor";
-			emptyPageEditorSource();
 			createEditor(renderToString);
 		}
 				
