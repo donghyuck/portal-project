@@ -248,8 +248,9 @@
 							return false;	
 					},
 					onPublish: function(e){
-						this.page.set('pageState', 'PUBLISHED');
-						this.doSave(e);
+					//	this.page.set('pageState', 'PUBLISHED');
+					//	this.doSave(e);
+					alert( this ) ;
 					},
 					showProps: function(e){
 						renderTo.find('.custom-props' ).toggleClass('hide');
