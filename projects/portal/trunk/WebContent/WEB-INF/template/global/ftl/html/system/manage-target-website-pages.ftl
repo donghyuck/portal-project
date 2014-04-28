@@ -98,10 +98,11 @@
 							var editor = $('#webpage-editor').data("model");							
 							editor.page.set('pageState', 'PUBLISHED');
 							editor.doSave(e);	
+							$("#website-page-grid").data('kendoGrid').refresh();
 						},										
 						'page-delete' : function(e){
 							$('#webpage-editor').data("model");
-							alert( "hello3" );			
+							$("#website-page-grid").data('kendoGrid').refresh();
 						},															  						 
 					}}
 				);
