@@ -115,6 +115,13 @@
 			var selectedCell = grid.dataItem( selectedCells ); 		
 			alert("delete") ;
 		}
+		
+		function openPage(){
+			var grid = $("#website-page-grid").data("kendoGrid");
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells ); 		
+			alert("view") ;
+		}		
 				
 		function createPageGrid(){
 			if(!$("#website-page-grid").data('kendoGrid') ){
@@ -223,8 +230,11 @@
 						alert("publish");
 					},
 					showProps: function(e){
-						alert("publish");
-					},					
+						alert("props");
+					},	
+					openPage: function(e){
+						alert("open page");
+					},										
 					doSave : function (e) {
 						common.api.callback(  
 						{
@@ -320,8 +330,6 @@
 						editor.getSession().setUseWrapMode(true);
 					},
 					open: function (e){
-						//alert( "fdsa" );
-						//var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');						
 						ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
 					}					
 				});					
