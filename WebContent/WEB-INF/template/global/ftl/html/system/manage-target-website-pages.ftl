@@ -337,7 +337,7 @@
 			border : 0px;
 			height : 400px;
 		}
-		#website-page-grid.k-grid k-grid-content-locked td{
+		#website-page-grid.k-grid td{
 			overflow : visible;
 		}
 		
