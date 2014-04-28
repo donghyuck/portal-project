@@ -250,7 +250,7 @@
 					onPublish: function(e){
 					//	this.page.set('pageState', 'PUBLISHED');
 					//	this.doSave(e);
-					alert( this ) ;
+					alert( kendo.stringify( this )  ) ;
 					},
 					showProps: function(e){
 						renderTo.find('.custom-props' ).toggleClass('hide');
