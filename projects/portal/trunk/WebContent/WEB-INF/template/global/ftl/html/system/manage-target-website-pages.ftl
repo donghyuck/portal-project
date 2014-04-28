@@ -105,11 +105,16 @@
 		}
 		
 		function doPageEdit(){
-		
-		}
+			var grid = $("#website-page-grid").data("kendoGrid");
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells ); 
+			
+		}		
 		
 		function doPageDelete(){
-		
+			var grid = $("#website-page-grid").data("kendoGrid");
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells ); 		
 		}
 				
 		function createPageGrid(){
@@ -173,6 +178,7 @@
 				}).data('kendoGrid');
 			}
 		}		
+
 		
 		function showPageEditor(){		
 			//var editor = ace.edit("htmleditor");
