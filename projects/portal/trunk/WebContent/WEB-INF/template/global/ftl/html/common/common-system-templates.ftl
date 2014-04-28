@@ -335,7 +335,7 @@
 						<div id="xmleditor"></div>
 					</div>
 					<div class='modal-footer' style="margin-top: 0px;">
-						<button type="button" class="btn btn-primary btn-sm custom-update" data-bind="events:{ click: onSave }" >확인</button>		
+						<button type="button" class="btn btn-primary btn-sm custom-update" data-bind="events:{ click: onSave }" data-loading-text="Loading...">확인</button>		
 						<button type="button" class="btn btn-default  btn-sm" data-dismiss='modal' aria-hidden='true'>취소</button>						
 					</div>
 				</div><!-- /.modal-content -->
