@@ -160,6 +160,7 @@
                         var selectedCells = this.select();                 
   						if( selectedCells.length > 0){ 
 							var selectedCell = this.dataItem( selectedCells ); 
+							alert( kendo.stringify( selectedCell ) );
 							selectedCell.copy($("#webpage-editor").data("pagePlaceHolder"));
  						} 						
 					},
