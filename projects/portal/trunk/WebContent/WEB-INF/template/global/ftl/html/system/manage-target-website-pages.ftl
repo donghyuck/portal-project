@@ -256,6 +256,10 @@
 						alert("open page");
 					},										
 					doSave : function (e) {
+					
+					alert(kendo.stringify(this.page)) ;
+					
+						/*
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
@@ -277,6 +281,7 @@
 								kendo.ui.progress(renderTo, false);
 							}
 						}); 							
+						*/
 					},
 					doPreview : function (e) {
 						alert("preview");
