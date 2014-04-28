@@ -99,9 +99,7 @@
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).play();				
 						}															  						 
 					}}
-				);		
-
-						
+				);
 				createPageGrid();
 			}
 		}]);
