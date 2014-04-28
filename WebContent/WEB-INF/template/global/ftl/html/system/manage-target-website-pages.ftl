@@ -217,6 +217,7 @@
 			var pagePlaceHolder = renderTo.data("pagePlaceHolder");
 			var bodyEditor =  $("#"+ renderToString +"-body" );
 			if(!bodyEditor.data("kendoEditor") ){
+			
 				var pageEditorModel = kendo.observable({
 					page : pagePlaceHolder,
 					properties : new kendo.data.DataSource({
@@ -289,7 +290,8 @@
 							$("button.btn-editor-control-group[data-action='page-editor-save']").removeAttr('disabled');
 					}	
 				});								
-				kendo.bind(renderTo, pageEditorModel );													
+				kendo.bind(renderTo, pageEditorModel );
+				
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);	
@@ -451,7 +453,7 @@
 									<div class="pull-right">
 										<div class="btn-group">
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-create" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>
-										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-publish" disabled="disabled"><i class="fa fa-external-link"></i> 게시</button>
+										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-publish" disabled="disabled" data-bind="click: onPublish, disabled: isNew"><i class="fa fa-external-link"></i> 게시</button>
 										<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-delete" disabled="disabled"><i class="fa fa-trash-o"></i> 삭제</button>
 										</div>										
 									</div>
