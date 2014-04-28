@@ -337,6 +337,10 @@
 			border : 0px;
 			height : 400px;
 		}
+		#website-page-grid.k-grid k-grid-content-locked td{
+			overflow : visible;
+		}
+		
 		</style>		
 </#compress>		
 	</head>
