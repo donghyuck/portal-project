@@ -86,7 +86,7 @@
 				);		
 				
 				common.ui.handleButtonActionEvents(
-					$("btn-page-control-group"), 
+					$("button.btn-page-control-group"), 
 					{event: 'click', handlers: {
 						'page-publish' : function(e){
 							alert( "hello2" );				
