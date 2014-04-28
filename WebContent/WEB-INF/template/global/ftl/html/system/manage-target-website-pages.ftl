@@ -473,6 +473,9 @@
 												<p class="text-muted"><span class="label label-info">요약</span>  <small>페이지를 간략하게 설명하세요. </small></p>
 												<textarea class="form-control" rows="3" data-bind="value: page.summary" placeholder="페이지 요약"></textarea>
 											</div>
+											<div class="custom-props col-sm-6 hide">
+												프로퍼티 그리드...
+											</div>
 										</div>
 										<div class="row">
 											<div class="col-sm-12">
