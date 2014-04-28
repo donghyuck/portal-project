@@ -72,10 +72,7 @@
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
 							emptyPageEditorSource();
 							showPageEditor();							
-						},
-						'page-publish' : function(e){
-							alert( "hello2" );				
-						},						
+						},				
 						group : function(e){
 							topBar.go('main-group.do');				
 						}, 	
