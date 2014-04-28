@@ -327,7 +327,7 @@
 				});					
 				renderTo.find('button.custom-update').click(function () {
 					var btn = $(this)			
-					editor.data("kendoEditor").exec("inserthtml", { value : ace.edit("htmleditor").getValue() } );
+					editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
 					renderTo.data('kendoExtModalWindow').close();
 				});
 			}
