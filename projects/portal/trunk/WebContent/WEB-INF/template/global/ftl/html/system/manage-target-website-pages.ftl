@@ -72,29 +72,36 @@
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
 							emptyPageEditorSource();
 							showPageEditor();							
-						},
-						'page-publish' : function(e){
-							alert( "hello2" );				
-						},						
+						},					
 						group : function(e){
 							topBar.go('main-group.do');				
 						}, 	
 						user : function(e){
 							topBar.go('main-user.do');			
-						}, 							
+						}, 	
+						back : function(e){
+							goWebsite();					
+						}																  						 
+					}}
+				);		
+				
+				common.ui.handleButtonActionEvents(
+					$("btn-page-control-group"), 
+					{event: 'click', handlers: {
+						'page-publish' : function(e){
+							alert( "hello2" );				
+						},										
 						'page-delete' : function(e){
 							alert( "hello3" );			
 						},
 						'page-editor-close' : function(e){
 							kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).reverse();								
 							kendo.fx($("#page-list-panel")).expand("vertical").duration(200).play();				
-						},
-						back : function(e){
-							goWebsite();					
-						}																  						 
+						}															  						 
 					}}
-				);
-				
+				);		
+
+						
 				createPageGrid();
 			}	
 		}]);
@@ -480,7 +487,7 @@
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button"  data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: openPage, disabled: isNew" >미리보기</button>													
 												</div>						
-												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>
+												<button type="button" class="btn btn-primary btn-page-control-group btn-sm" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>
 											</div>
 										</div>														
 									</div>
