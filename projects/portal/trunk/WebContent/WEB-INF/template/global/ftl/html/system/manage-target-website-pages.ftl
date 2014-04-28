@@ -322,10 +322,7 @@
 			}
 			
 			var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');
-			
-			alert( kendo.stringify( pagePlaceHolder ) ) ;
-						
-			ace.edit("htmleditor").setValue("htllo");
+			ace.edit("htmleditor").setValue(pagePlaceHolder.bodyText);
 			return renderTo.data('kendoExtModalWindow');			
 		}
 				
