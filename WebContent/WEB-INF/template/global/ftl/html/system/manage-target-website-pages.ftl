@@ -469,9 +469,6 @@
 										</div>
 										<textarea id="webpage-editor-body" rows="5" cols="30" data-bind="value: page.bodyText" placeholder="페이지 본문"></textarea>
 									</div>
-									<div class="panel-body">
-										<div id="htmleditor"  data-text="value: page.bodyText" ></div>
-									</div>
 								</div>	
 							</div>			
 						</div>
