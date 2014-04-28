@@ -203,10 +203,7 @@
 			if( !renderTo.data("pagePlaceHolder") ){
 				renderTo.data("pagePlaceHolder", new common.models.Page() );
 				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));
-			}
-			alert( kendo.stringify( renderTo.data("pagePlaceHolder") ) );
-			alert( kendo.stringify( source ) );
-		
+			}		
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
 				
@@ -261,8 +258,6 @@
 					doSave : function (e) {
 					
 					alert(kendo.stringify(this.page)) ;
-					
-						/*
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
@@ -283,8 +278,7 @@
 							requestEnd : function(){
 								kendo.ui.progress(renderTo, false);
 							}
-						}); 							
-						*/
+						}); 	
 					},
 					doPreview : function (e) {
 						alert("preview");
