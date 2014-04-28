@@ -439,12 +439,12 @@
 										<textarea id="webpage-editor-body" rows="5" cols="30" data-bind="value: page.bodyText" placeholder="페이지 본문"></textarea>
 									</div>
 									<div class="panel-body" style="padding:5px;">
-										<div id="page-htmleditor"></div>
+										<div id="page-htmleditor"  data-text="value: page.bodyText" ></div>
 									</div>
 								</div>	
 							</div>			
 						</div>
-						<div class="panel-body" style="padding:5px;">
+						<div class="panel-body" style="padding:5px;" >
 							
 						</div>
 					</div>	
