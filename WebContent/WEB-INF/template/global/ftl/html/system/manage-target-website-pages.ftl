@@ -114,8 +114,11 @@
 			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-info").data("sitePlaceHolder").webSiteId );
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
-
-		function goPage (page){					
+		
+		function goPage (page){		
+			if(page == null ){
+				page = $('#webpage-editor').data("pagePlaceHolder");
+			}	
 			$("form[name='openpage-form'] input[name='name']").val( page.name );
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
@@ -232,6 +235,8 @@
 			}		
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
+		
+		
 				
 		function createEditor( renderToString ){				
 			var renderTo = $("#"+ renderToString);		
