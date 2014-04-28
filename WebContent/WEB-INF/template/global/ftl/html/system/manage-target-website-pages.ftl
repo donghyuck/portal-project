@@ -101,7 +101,7 @@
 							$("#website-page-grid").data('kendoGrid').refresh();
 						},										
 						'page-delete' : function(e){
-							$('#webpage-editor').data("model");
+							var editor = $('#webpage-editor').data("model");					
 							$("#website-page-grid").data('kendoGrid').refresh();
 						},															  						 
 					}}
