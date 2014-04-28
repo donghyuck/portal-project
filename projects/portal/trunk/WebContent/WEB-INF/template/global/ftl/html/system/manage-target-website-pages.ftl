@@ -247,7 +247,8 @@
 							return false;	
 					},
 					onPublish: function(e){
-						alert("publish");
+						this.page.set('pageState', 'PUBLISHED');
+						this.doSave(e);
 					},
 					showProps: function(e){
 						renderTo.find('.custom-props' ).toggleClass('hide');
@@ -256,7 +257,6 @@
 						alert("open page");
 					},										
 					doSave : function (e) {
-
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
