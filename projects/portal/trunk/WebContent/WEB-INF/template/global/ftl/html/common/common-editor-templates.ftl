@@ -212,7 +212,7 @@
 						<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
 						<h5 class='modal-title'>#= title #</h5>
 					</div>
-					<div class='modal-body editor-model-body'>					
+					<div class='modal-body' style="padding:0px;">					
 						<div id="htmleditor"></div>									
 					</div>
 					<div class='modal-footer' style="margin-top: 0px;">
