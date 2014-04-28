@@ -309,6 +309,7 @@
 			}							
 			var renderTo = $("#"+ renderToString);		
 			if( !renderTo.data('kendoExtModalWindow') ){				
+				
 				renderTo.extModalWindow({
 					title : "HTML",
 					backdrop : 'static',
@@ -320,11 +321,16 @@
 					},
 					open: function (e){
 						//alert( "fdsa" );
-						//var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');
-						
+						//var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');						
 						ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
-					} 
+					}					
 				});	
+				
+				renderTo.find('button.custom-update').click(function () {
+					var btn = $(this)
+					btn.button('loading');
+					renderTo.data('kendoExtModalWindow').close();
+				});
 			}
 			return renderTo.data('kendoExtModalWindow');			
 		}
