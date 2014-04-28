@@ -207,14 +207,18 @@
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
 				
-		function createEditor( renderToString ){			
-			var renderTo = $("#"+ renderToString);						
+		function createEditor( renderToString ){	
+				
+			var renderTo = $("#"+ renderToString);		
+			/*
 			if( !renderTo.data("pagePlaceHolder") ){
 				var newPage = new common.models.Page();
 				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
 				renderTo.data("pagePlaceHolder", newPage );
-			}			
+			}		
+			*/	
 			var pagePlaceHolder = renderTo.data("pagePlaceHolder");
+						
 			var bodyEditor =  $("#"+ renderToString +"-body" );
 			if(!bodyEditor.data("kendoEditor") ){
 			
