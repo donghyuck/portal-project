@@ -115,7 +115,7 @@
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 
-		function openPage (page){					
+		function goPage (page){					
 			$("form[name='openpage-form'] input[name='name']").val( page.name );
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
@@ -136,7 +136,7 @@
 			var grid = $("#website-page-grid").data("kendoGrid");
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells ); 		
-			alert("view") ;
+			goPage( selectedCell );
 		}		
 				
 		function createPageGrid(){
@@ -270,7 +270,7 @@
 						renderTo.find('.custom-props' ).toggleClass('hide');
 					},	
 					openPage: function(e){
-						alert("open page");
+						goPage(this.page);
 					},										
 					doSave : function (e) {
 						common.api.callback(  
@@ -478,7 +478,7 @@
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
 							<div  id="webpage-editor" class="container">
-								<form name="openpage-form" action="${request.contextPath}/community/page.do" >
+								<form name="openpage-form" action="${request.contextPath}/community/page.do" target="blank">
 									<input type="hidden" name="name"/>
 								</form>
 								<div class="row">
