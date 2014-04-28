@@ -131,7 +131,7 @@
                     columns: [
                     	{ field: "check_row", title: " ", filterable: false, sortable: false, locked: true, lockable: false, width: 30, template: "<input class='check_row' type='checkbox' />" },
                         { field: "pageId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, locked: true, lockable: false}, 
-                        { field: "name", title: "이름", width: 200, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, locked: true  }, 
+                        { field: "name", title: "이름", width: 200, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, locked: true , template: $('webpage-name-template').html() }, 
                         { field: "title", title: "제목", width: 300 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
                         { field: "versionId", title: "버전", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
                         { field: "pageState", title: "상태", width: 120, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template: '<span class="label label-info">#: pageState #</span>'},
@@ -435,7 +435,19 @@
 		<!-- START FOOTER -->
 		<footer>  		
 		</footer>
-		<!-- END FOOTER -->	
+		<!-- END FOOTER -->
+		<script id="webpage-name-template" type="text/x-kendo-template">	
+			<div class="btn-group">
+			  <button type="button" class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+			    #= name # <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu">
+			    <li><a href="\\#">편집</a></li>
+			    <li><a href="\\#">보기</a></li>
+			    <li><a href="\\#">삭제</a></li>
+			  </ul>
+			</div>
+		</script>			
 		<#include "/html/common/common-system-templates.ftl" >		
 		<#include "/html/common/common-editor-templates.ftl" >	
 	</body>
