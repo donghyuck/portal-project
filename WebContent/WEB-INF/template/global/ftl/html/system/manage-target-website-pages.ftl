@@ -560,7 +560,7 @@
 			  </button>
 			  <ul class="dropdown-menu" role="menu">
 			    <li><a href="\\#" onclick="doPageEdit(); return false;">편집</a></li>
-			    <li><a href="\\#">보기</a></li>
+			    <li><a href="\\#" onclick="goPage(); return false;">보기</a></li>
 			    <li><a href="\\#" onclick="doPageDelete(); return false;">삭제</a></li>
 			  </ul>
 			</div>
