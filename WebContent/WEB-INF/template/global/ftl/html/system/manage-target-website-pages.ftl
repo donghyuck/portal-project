@@ -129,7 +129,7 @@
                         serverSorting: false
                     },
                     columns: [
-                    	{ field: "check_row", title: " ", width: 30, template: "<input class='check_row' type='checkbox' />" },
+                    	{ field: "check_row", title: " ", filterable: false, sortable: false, locked: true, lockable: false, width: 30, template: "<input class='check_row' type='checkbox' />" },
                         { field: "pageId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, locked: true, lockable: false}, 
                         { field: "name", title: "이름", width: 200, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, locked: true  }, 
                         { field: "title", title: "제목", width: 300 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
