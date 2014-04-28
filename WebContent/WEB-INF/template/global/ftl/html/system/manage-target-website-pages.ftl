@@ -62,9 +62,8 @@
 						kendo.bind($("#website-info"), sitePlaceHolder );
 						$('button.btn-control-group').removeAttr("disabled");	
 
-						preparePageEditor();
 						emptyPageEditorSource();
-												
+						preparePageEditor();												
 					}
 				}); 
 												
