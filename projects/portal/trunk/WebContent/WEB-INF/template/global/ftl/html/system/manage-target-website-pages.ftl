@@ -343,7 +343,6 @@
 		#htmleditor { 
 			height: 400px;
 			border: 1px solid #ddd;
-			margin: 4px;
 			border-radius: 4px;
 			border-bottom-right-radius: 0px;
 			margin-top: 5px;
