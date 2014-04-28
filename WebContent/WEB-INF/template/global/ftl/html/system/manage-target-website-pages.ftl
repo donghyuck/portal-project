@@ -311,8 +311,8 @@
 				$('body').append('<div id="'+ renderToString +'"></div>');
 			}							
 			var renderTo = $("#"+ renderToString);		
-			if( !$("#"+ renderToString ).data('kendoExtModalWindow') ){				
-				$("#"+ renderToString ).extModalWindow({
+			if( !renderTo.data('kendoExtModalWindow') ){				
+				renderTo.extModalWindow({
 					title : "HTML",
 					backdrop : 'static',
 					template : $("#code-editor-modal-template").html(),
@@ -323,9 +323,8 @@
 					}  
 				});	
 			}			
-			ace.edit("htmleditor").setValue("htllo");
-			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
-			
+			//ace.edit("htmleditor").setValue("htllo");
+			return renderTo.data('kendoExtModalWindow');			
 		}
 				
 		function createPageImageBroswer(renderToString, editor ){			
