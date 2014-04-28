@@ -319,9 +319,10 @@
 						editor.getSession().setUseWrapMode(true);
 					},
 					open: function (e){
-						alert( "fdsa" );
-						var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');
-						ace.edit("htmleditor").setValue(pagePlaceHolder.bodyText);
+						//alert( "fdsa" );
+						//var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');
+						
+						ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
 					} 
 				});	
 			}
