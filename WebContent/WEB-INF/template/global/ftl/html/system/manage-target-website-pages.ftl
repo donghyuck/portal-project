@@ -219,6 +219,26 @@
 			if(!bodyEditor.data("kendoEditor") ){
 				var pageEditorModel = kendo.observable({
 					page : pagePlaceHolder,
+					properties : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'${request.contextPath}/secure/list-website-page-property.do?output=json', type:'post' },
+							create: { url:'${request.contextPath}/secure/update-website-page-property.do?output=json', type:'post' },
+							update: { url:'${request.contextPath}/secure/update-website-page-property.do?output=json', type:'post'  },
+							destroy: { url:'${request.contextPath}/secure/delete-website-page-property.do?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { targetPageId: this.page.pageId, items: kendo.stringify(options.models)};
+								} 
+								return { targetPageId: this.page.pageId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							data: "targetPageProperty",
+							model: Property
+						},
+						error : common.api.handleKendoAjaxError
+					}),					
 					isVisible: true,
 					isNew : function(){
 						if( this.page.pageId <= 0 )
@@ -474,7 +494,22 @@
 												<textarea class="form-control" rows="3" data-bind="value: page.summary" placeholder="페이지 요약"></textarea>
 											</div>
 											<div class="custom-props col-sm-6 hide">
-												프로퍼티 그리드...
+												<div class="panel-header text-primary">
+													<h5>									 
+													<small><i class="fa fa-info"></i> 프로퍼티는 변경 후 저장버튼을 클릭하면 반영됩니다.</small>
+													</h5>
+												</div>								
+												<div data-role="grid"
+													date-scrollable="false"
+													data-editable="true"
+													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+													data-columns="[
+														{ 'title': '이름',  'field': 'name', 'width': 200 },
+														{ 'title': '값', 'field': 'value' },
+														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+													]"
+													data-bind="source: properties, visible: isVisible"
+													style="height: 300px"></div>
 											</div>
 										</div>
 										<div class="row">
