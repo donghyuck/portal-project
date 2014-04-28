@@ -261,12 +261,7 @@
 						error : common.api.handleKendoAjaxError
 					}),					
 					isVisible: true,
-					isNew : function(){
-						if( this.page.pageId <= 0 )
-							return true;
-						else 
-							return false;	
-					},
+					isNew : true,
 					onPublish: function(e){
 					//	this.page.set('pageState', 'PUBLISHED');
 					//	this.doSave(e);
