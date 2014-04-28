@@ -226,7 +226,7 @@
 						else 
 							return false;	
 					},
-					doPublish: function(e){
+					onPublish: function(e){
 						alert("publish");
 					},
 					showProps: function(e){
