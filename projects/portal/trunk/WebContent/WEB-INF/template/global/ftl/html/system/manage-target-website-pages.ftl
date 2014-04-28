@@ -94,8 +94,10 @@
 					{event: 'click', handlers: {
 						'page-publish' : function(e){
 							alert( "hello2" );				
+							$('#webpage-editor').data("model");
 						},										
 						'page-delete' : function(e){
+							$('#webpage-editor').data("model");
 							alert( "hello3" );			
 						},															  						 
 					}}
