@@ -103,12 +103,17 @@
 			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-info").data("sitePlaceHolder").webSiteId );
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
-		
+
 		function doPageEdit(){
 			var grid = $("#website-page-grid").data("kendoGrid");
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells ); 
-			
+			$("#page-list-panel").hide();
+			kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
+			var renderToString = "webpage-editor";				
+			var renderTo = $("#"+ renderToString);	
+			selectedCell.copy(renderTo.data("pagePlaceHolder"));				
+			showPageEditor();							
 		}		
 		
 		function doPageDelete(){
