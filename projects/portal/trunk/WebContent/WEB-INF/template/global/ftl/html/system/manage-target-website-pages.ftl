@@ -341,11 +341,11 @@
 			height:200px;
 		}			
 		#htmleditor { 
-			position: absolute;
-			top: 0;
-			right: 0;
-			bottom: 0;
-			left: 0;
+			height: 275px;
+			border: 1px solid #DDD;
+			border-radius: 4px;
+			border-bottom-right-radius: 0px;
+			margin-top: 5px;
 		}
 		
 		table.k-editor{
