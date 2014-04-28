@@ -104,6 +104,14 @@
 			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
 		}
 		
+		function doPageEdit(){
+		
+		}
+		
+		function doPageDelete(){
+		
+		}
+				
 		function createPageGrid(){
 			if(!$("#website-page-grid").data('kendoGrid') ){
 				var sitePlaceHolder = $("#website-info").data("sitePlaceHolder");
@@ -442,13 +450,13 @@
 		<!-- END FOOTER -->
 		<script id="webpage-name-template" type="text/x-kendo-template">	
 			<div class="btn-group">
-			  <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" style="z-index:2000;">
+			  <button type="button" class="btn btn-success btn-block btn-sm dropdown-toggle" data-toggle="dropdown" style="z-index:2000;">
 			    #= name # <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" role="menu">
-			    <li><a href="\\#">편집</a></li>
+			    <li><a href="\\#" onclick="doPageEdit(); return false;">편집</a></li>
 			    <li><a href="\\#">보기</a></li>
-			    <li><a href="\\#">삭제</a></li>
+			    <li><a href="\\#" onclick="doPageDelete(); return false;">삭제</a></li>
 			  </ul>
 			</div>
 		</script>			
