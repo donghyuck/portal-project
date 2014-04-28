@@ -180,6 +180,7 @@
 					},
 					dataBound: function(e){		
 						$("button.btn-page-control-group").attr("disabled", "disabled");
+						preparePageEditor();
 						 //var selectedCells = this.select();
 						 //if(selectedCells.length == 0 ){
 						 //	var newUser = new User ();
