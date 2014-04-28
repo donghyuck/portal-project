@@ -199,12 +199,14 @@
 
 		function setPageEditorSource(source){
 			var renderToString = "webpage-editor";				
-			var renderTo = $("#"+ renderToString);						
+			var renderTo = $("#"+ renderToString );						
 			if( !renderTo.data("pagePlaceHolder") ){
 				renderTo.data("pagePlaceHolder", new common.models.Page() );
 				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));
 			}
+			alert( kendo.stringify( renderTo.data("pagePlaceHolder") ) );
 			alert( kendo.stringify( source ) );
+		
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
 				
