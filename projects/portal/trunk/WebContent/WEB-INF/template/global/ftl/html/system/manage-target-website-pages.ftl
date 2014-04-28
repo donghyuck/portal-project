@@ -345,7 +345,7 @@
 			border: 1px solid #ddd;
 			border-radius: 4px;
 			border-bottom-right-radius: 0px;
-			margin-top: 5px;
+			/*margin-top: 5px;*/
 		}
 		
 		table.k-editor{
