@@ -252,8 +252,7 @@
 						alert("preview");
 					}
 				});				
-				pageEditorModel.bind("change", function(e){
-					//alert( e.field  + "   " + e.field.match('^page.'));					
+				pageEditorModel.bind("change", function(e){				
 					if( e.field.match('^page.')){ 						
 						if( this.page.title.length > 0 && this.page.bodyText.length  > 0 )					
 							$("button.btn-editor-control-group[data-action='page-editor-save']").removeAttr('disabled');
@@ -262,6 +261,10 @@
 				kendo.bind(renderTo, pageEditorModel );													
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
+				var htmleditor = ace.edit("htmleditor");
+				htmleditor.getSession().setMode("ace/mode/html");
+				htmleditor.getSession().setUseWrapMode(true);		
+								
 				bodyEditor.kendoEditor({
 						tools : [
 							'bold',
@@ -283,16 +286,20 @@
 									return false;
 								}
 							},
-							'viewHtml'
+							{
+								name: 'viewHtml',
+								exec: function(e){
+									bodyEditor.hide();
+									return false;
+								}								
+							}
+							
 						],
 						stylesheets: [
 							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
 							"${request.contextPath}/styles/common/common.ui.css"
 						]
-				});				
-				var htmleditor = ace.edit("htmleditor");
-				htmleditor.getSession().setMode("ace/mode/html");
-				htmleditor.getSession().setUseWrapMode(true);				
+				});
 			}
 					
 		}	
