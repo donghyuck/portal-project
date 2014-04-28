@@ -230,7 +230,7 @@
 						alert("publish");
 					},
 					showProps: function(e){
-						alert("props");
+						renderTo.find('.custom-props' ).toggleClass('hide');
 					},	
 					openPage: function(e){
 						alert("open page");
