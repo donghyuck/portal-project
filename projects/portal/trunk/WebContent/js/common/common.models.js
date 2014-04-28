@@ -30,7 +30,6 @@
 			creationDate: { type: "date", editable: false } 				
 		},
 		copy: function ( target ){
-			target.set("pageId",this.get("pageId") );
 			target.pageId = this.get("pageId");
 	    	target.modifiedDate = this.get("modifiedDate");
 	    	target.creationDate = this.get("creationDate") ;
