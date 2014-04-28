@@ -324,11 +324,10 @@
 						//var pagePlaceHolder = $('#' + editor.attr('id').replace('-body', '') ).data('pagePlaceHolder');						
 						ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
 					}					
-				});	
-				
+				});					
 				renderTo.find('button.custom-update').click(function () {
-					var btn = $(this)
-					btn.button('loading');
+					var btn = $(this)			
+					editor.data("kendoEditor").exec("inserthtml", { value : ace.edit("htmleditor").getValue() } );
 					renderTo.data('kendoExtModalWindow').close();
 				});
 			}
