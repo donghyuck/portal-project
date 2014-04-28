@@ -61,7 +61,6 @@
 						site.copy( sitePlaceHolder );
 						kendo.bind($("#website-info"), sitePlaceHolder );
 						$('button.btn-control-group').removeAttr("disabled");	
-
 						emptyPageEditorSource();
 						preparePageEditor();												
 					}
@@ -96,8 +95,9 @@
 					$("button.btn-page-control-group"), 
 					{event: 'click', handlers: {
 						'page-publish' : function(e){
-							alert( "hello2" );				
-							$('#webpage-editor').data("model");
+							var editor = $('#webpage-editor').data("model");							
+							editor.page.set('pageState', 'PUBLISHED');
+							editor.doSave(e);	
 						},										
 						'page-delete' : function(e){
 							$('#webpage-editor').data("model");
@@ -226,17 +226,9 @@
 				
 		function createEditor( renderToString ){				
 			var renderTo = $("#"+ renderToString);		
-			/*
-			if( !renderTo.data("pagePlaceHolder") ){
-				var newPage = new common.models.Page();
-				newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
-				renderTo.data("pagePlaceHolder", newPage );
-			}		
-			*/	
 			var pagePlaceHolder = renderTo.data("pagePlaceHolder");									
 			var bodyEditor =  $("#"+ renderToString +"-body" );
-			if(!bodyEditor.data("kendoEditor") ){
-			
+			if(!bodyEditor.data("kendoEditor") ){			
 				var pageEditorModel = kendo.observable({
 					page : pagePlaceHolder,
 					properties : new kendo.data.DataSource({
@@ -262,9 +254,8 @@
 					isVisible: true,
 					isNew : true,
 					onPublish: function(e){
-					//	this.page.set('pageState', 'PUBLISHED');
-					//	this.doSave(e);
-					alert( kendo.stringify( this )  ) ;
+						this.page.set('pageState', 'PUBLISHED');
+						this.doSave(e);
 					},
 					showProps: function(e){
 						renderTo.find('.custom-props' ).toggleClass('hide');
