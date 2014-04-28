@@ -287,7 +287,7 @@
 							{
 								name: 'viewHtml',
 								exec: function(e){
-									htmlEditor.show();
+									htmlEditor.open();
 									return false;
 								}								
 							}
