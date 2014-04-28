@@ -7,10 +7,13 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common/common.timeline.css',
+			'css!${request.contextPath}/styles/codedrop/fullscreenOverlay.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
 			'${request.contextPath}/js/common/common.models.min.js',
 			'${request.contextPath}/js/common/common.ui.min.js'],
@@ -21,6 +24,10 @@
 				      
 				// START SCRIPT	
 
+				// 1.  한글 지원을 위한 로케일 설정
+				kendo.culture("ko-KR");
+				      
+				// START SCRIPT	
 				var currentUser = new User({});			
 				// ACCOUNTS LOAD	
 				var accounts = $("#account-navbar").kendoAccounts({
@@ -32,7 +39,6 @@
 					template : kendo.template($("#account-template").html()),
 					</#if>
 					afterAuthenticate : function(){
-						$('.dropdown-toggle').dropdown();			
 						if( currentUser.anonymous ){
 							var validator = $("#login-navbar").kendoValidator({validateOnBlur:false}).data("kendoValidator");							
 							$("#login-btn").click(function() { 
@@ -63,29 +69,7 @@
 							});	
 						}
 					}
-				});					
-				$("#announce-panel .panel-header-actions a").each(function( index ) {
-						var panel_header_action = $(this);						
-						if( panel_header_action.text() == "Minimize" ){
-							panel_header_action.click(function (e) {
-								e.preventDefault();		
-								$("#announce-panel .panel-body, .list-group ").toggleClass("hide");								
-								var panel_header_action_icon = panel_header_action.find('span');
-								if( panel_header_action_icon.hasClass("k-i-minimize") ){
-									panel_header_action.find('span').removeClass("k-i-minimize");
-									panel_header_action.find('span').addClass("k-i-maximize");
-								}else{
-									panel_header_action.find('span').removeClass("k-i-maximize");
-									panel_header_action.find('span').addClass("k-i-minimize");
-								}								
-							});
-						} else if (panel_header_action.text() == "Refresh" ){
-							panel_header_action.click(function (e) {
-								e.preventDefault();		
-								$("#announce-grid").data("kendoGrid").dataSource.read();
-							});
-						}
-				} );	
+				});			
 				// END SCRIPT            
 			}
 		}]);	
@@ -95,8 +79,7 @@
 	<body>
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
-		<!-- END HEADER -->	
-
+		<!-- END HEADER -->
 		<div class="jumbotron jumbotron-ad hidden-print jumbotron-page-header">
 		  <div class="container">
 		    <h2>${action.targetPage.title}</h2>
