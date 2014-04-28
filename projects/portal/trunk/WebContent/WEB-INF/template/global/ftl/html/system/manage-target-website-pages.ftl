@@ -174,7 +174,7 @@
 							var selectedCell = this.dataItem( selectedCells ); 
 							setPageEditorSource(selectedCell);
 							if( selectedCell.pageId > 0 ){
-								$('button.btn-page-control-group').attr("disabled", "");
+								$('button.btn-page-control-group').removeAttr("disabled");
 							}
  						} 						
 					},
