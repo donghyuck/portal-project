@@ -487,7 +487,7 @@
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button"  data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: openPage, disabled: isNew" >미리보기</button>													
 												</div>						
-												<button type="button" class="btn btn-primary btn-page-control-group btn-sm" data-action="page-editor-close" disabled="disabled">&times;  닫기</button>
+												<button type="button" class="btn btn-primary btn-page-control-group btn-sm" data-action="page-editor-close">&times;  닫기</button>
 											</div>
 										</div>														
 									</div>
