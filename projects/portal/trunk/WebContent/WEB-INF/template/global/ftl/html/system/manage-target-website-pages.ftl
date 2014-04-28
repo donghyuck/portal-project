@@ -191,7 +191,6 @@
 		function emptyPageEditorSource(){
 			var newPage = new common.models.Page();
 			newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
-			newPage.copy(renderTo.data("pagePlaceHolder"));
 			setPageEditorSource(newPage);
 		}
 
