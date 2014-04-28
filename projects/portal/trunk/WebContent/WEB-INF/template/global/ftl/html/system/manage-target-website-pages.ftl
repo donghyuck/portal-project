@@ -370,13 +370,6 @@
 		.k-grid-content{
 			height:200px;
 		}			
-		#htmleditor { 
-			height: 400px;
-			border: 1px solid #ddd;
-			border-radius: 4px;
-			border-bottom-right-radius: 0px;
-			/*margin-top: 5px;*/
-		}
 		
 		table.k-editor{
 			border : 0px;
