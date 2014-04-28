@@ -120,6 +120,7 @@
 			var grid = $("#website-page-grid").data("kendoGrid");
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells ); 		
+			alert("delete") ;
 		}
 				
 		function createPageGrid(){
