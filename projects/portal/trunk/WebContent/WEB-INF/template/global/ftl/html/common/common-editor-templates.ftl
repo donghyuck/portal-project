@@ -199,6 +199,12 @@
 </script>	
 
 	<script id="code-editor-modal-template" type="text/x-kendo-template">
+	<style type="text/css" media="screen">
+		#htmleditor { 
+			height: 400px;
+			border: 0px solid #ddd;
+		}		
+	</style>			
 		<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
 			<div class='modal-dialog modal-lg'>
 				<div class='modal-content'>
