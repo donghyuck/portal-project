@@ -80,6 +80,7 @@
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
 		<!-- END HEADER -->
+		<!-- START MAIN CONTENT -->	
 		<div class="jumbotron jumbotron-ad hidden-print jumbotron-page-header">
 		  <div class="container">
 		    <h2>${action.targetPage.title}</h2>
