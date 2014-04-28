@@ -574,7 +574,7 @@
 				});	
 			}			
 			ace.edit("xmleditor").setValue(sitePlaceHolder.menu.menuData);
-			$("#"+ renderToString ).data('kendoExtModalWindow').open();		
+			$("#"+ renderToString ).data('kendoExtModalWindow').open();	
 		}		
 		
 		function showWebsiteSetting(){
