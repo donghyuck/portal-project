@@ -176,8 +176,9 @@
  						} 						
 					},
 					dataBound: function(e){		
-						 var selectedCells = this.select();
-						 if(selectedCells.length == 0 ){
+						$("button.btn-page-control-group").attr("disabled", "disabled");
+						 //var selectedCells = this.select();
+						 //if(selectedCells.length == 0 ){
 						 //	var newUser = new User ();
 						 //	newUser.copy($("#website-page-grid").data("pagePlaceHolder"));
 						//	$("#user-details").hide();
