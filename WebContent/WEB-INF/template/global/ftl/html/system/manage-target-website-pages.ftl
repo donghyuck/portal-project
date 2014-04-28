@@ -160,8 +160,7 @@
                         var selectedCells = this.select();                 
   						if( selectedCells.length > 0){ 
 							var selectedCell = this.dataItem( selectedCells ); 
-							alert( kendo.stringify( selectedCell ) );
-							selectedCell.copy($("#webpage-editor").data("pagePlaceHolder"));
+							setPageEditorSource(selectedCell);
  						} 						
 					},
 					dataBound: function(e){		
@@ -187,17 +186,23 @@
 			$("button.btn-editor-control-group[data-action='page-editor-save']").attr('disabled', 'disabled');
 			kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
 		}
+
 		
 		function emptyPageEditorSource(){
+			var newPage = new common.models.Page();
+			newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
+			newPage.copy(renderTo.data("pagePlaceHolder"));
+			setPageEditorSource(newPage);
+		}
+
+		function setPageEditorSource(source){
 			var renderToString = "webpage-editor";				
 			var renderTo = $("#"+ renderToString);						
 			if( !renderTo.data("pagePlaceHolder") ){
 				renderTo.data("pagePlaceHolder", new common.models.Page() );
 				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));				
 			}
-			var newPage = new common.models.Page();
-			newPage.objectId = $("#website-info").data("sitePlaceHolder").webSiteId ;
-			newPage.copy(renderTo.data("pagePlaceHolder"));
+			source.copy(renderTo.data("pagePlaceHolder"));
 		}
 				
 		function createEditor( renderToString ){			
