@@ -201,6 +201,7 @@
 		
 		function preparePageEditor(){
 			var renderToString = "webpage-editor";
+			emptyPageEditorSource();
 			createEditor(renderToString);
 		}
 				
