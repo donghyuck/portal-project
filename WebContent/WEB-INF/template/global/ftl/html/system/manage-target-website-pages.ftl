@@ -182,7 +182,7 @@
 						 //	var newUser = new User ();
 						 //	newUser.copy($("#website-page-grid").data("pagePlaceHolder"));
 						//	$("#user-details").hide();
-						 }
+						// }
 					}
 				}).data('kendoGrid');
 			}
