@@ -177,10 +177,6 @@
 
 		
 		function showPageEditor(){		
-			var editor = ace.edit("page-htmleditor");
-			editor.getSession().setMode("ace/mode/html");
-			editor.getSession().setUseWrapMode(true);	
-			
 			var renderToString = "webpage-editor";
 			createEditor(renderToString);
 			$("button.btn-editor-control-group[data-action='page-editor-save']").attr('disabled', 'disabled');
@@ -293,8 +289,12 @@
 							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
 							"${request.contextPath}/styles/common/common.ui.css"
 						]
-				});
-			}		
+				});				
+				var htmleditor = ace.edit("page-htmleditor");
+				htmleditor.getSession().setMode("ace/mode/html");
+				htmleditor.getSession().setUseWrapMode(true);				
+			}
+					
 		}	
 				
 		function createPageImageBroswer(renderToString, editor ){			
