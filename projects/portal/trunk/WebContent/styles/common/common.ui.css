@@ -112,6 +112,10 @@ img.img-full-height {
 	padding: 32px 10px 5px;
 }
 
+.k-notification p {
+	padding-right: 25px;
+}
+
 .notification-error img {
 	float: left;
 	margin: 30px 15px 30px 30px;
