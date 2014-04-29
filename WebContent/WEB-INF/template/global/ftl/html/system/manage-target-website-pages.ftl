@@ -135,6 +135,7 @@
 		
 		function openPage(){
 			var page = selectedPage();
+			alert(kendo.stringify(page));
 			goPage( page );
 		}		
 		
