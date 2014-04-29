@@ -857,13 +857,13 @@
 									<label for="login-password">비밀번호</label>
 										<input type="password" class="form-control " id="login-password" name="password"  placeholder="비밀번호"  required validationMessage="비밀번호를 입력하여 주세요." >
 								</div>				 
-								<button type="button" id="login-btn" class="btn btn-primary btn-block" data-action="login"><i class="fa fa-sign-in"></i> 로그인</button>
+								<button type="button" id="login-btn" class="btn btn-primary btn-block btn-internal-login-control-group" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-sign-in"></i> 로그인</button>
 							</form>						
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-12">
-							<div id="login-status" class="blank-top-5"/>
+							<div class="login-form-message blank-top-5"/>
 						</div>
 					</div>	
 				</div>
