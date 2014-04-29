@@ -143,6 +143,7 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;			
 			that.refresh();
+			that.token = new User();
 		},
 		options : {
 			name : "ExtAccounts",
