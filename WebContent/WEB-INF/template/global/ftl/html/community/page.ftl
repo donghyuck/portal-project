@@ -27,6 +27,7 @@
 				
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
+					template : kendo.template($("#account-template").html()),
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					}				
