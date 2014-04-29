@@ -82,7 +82,7 @@
 		<div class="jumbotron jumbotron-ad hidden-print jumbotron-page-header">
 		  <div class="container">
 		    <h2>${action.targetPage.title}</h2>
-		    <small class="text-muted"><i class="fa fa-quote-left fa-2x pull-left"></i><i class="fa fa-quote-right"></i></small>
+		    <small class="text-muted"><i class="fa fa-quote-left fa-2x pull-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small>
 		  </div>
 		</div>			
 		<div class="container layout">
