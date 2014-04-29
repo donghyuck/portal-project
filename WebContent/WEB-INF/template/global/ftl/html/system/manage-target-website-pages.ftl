@@ -483,7 +483,7 @@
 						</div>					
 						<div  id="page-editor-panel" class="panel-body" style="padding:5px; display:none;">	
 							<div  id="webpage-editor" class="container">
-								<form name="openpage-form" action="${request.contextPath}/community/page.do" target="blank">
+								<form name="openpage-form" action="${request.contextPath}/community/page.do" target="_blank">
 									<input type="hidden" name="name"/>
 								</form>
 								<div class="row">
