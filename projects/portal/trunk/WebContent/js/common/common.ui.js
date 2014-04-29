@@ -155,7 +155,19 @@
 		authenticate : function() {
 			var that = this;			
 			var _url = that.options.url || AUTHENTICATE_URL;
-			alert(_url);
+			$.ajax({
+				type : 'POST',
+				url : that.options.url || AUTHENTICATE_URL;
+				success : function(response) {
+					that.token = new User($.extend( response.currentUser, { roles : response.roles }));
+					that.token.set('isSystem', false);
+					if (that.token.hasRole(ROLE_SYSTEM) || that.token.hasRole(ROLE_ADMIN))
+						that.token.set('isSystem', true);
+					that.trigger(AUTHENTICATE,{ token : that.token });		
+				},
+				error : that.options.error || handleKendoAjaxError,
+				dataType : "json"
+			});
 		}
 	});
 	
