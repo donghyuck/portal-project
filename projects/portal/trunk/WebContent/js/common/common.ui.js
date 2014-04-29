@@ -190,7 +190,7 @@
 									},
 									fail : function( response ) {  										
 										login_form.find('input[name="password"]').val("").focus();										
-										login_status.kendoAlert({
+										login_status.extAlert({
 											data : { message: that.options.messages.loginFail },
 											close : function(){	
 												login_form.find('input[name="password"]').focus();										
@@ -199,7 +199,7 @@
 									},		
 									error : function( thrownError ) {
 										login_form[0].reset();
-										login_status.kendoAlert({ data : { message: that.options.messages.loginError } }); 									
+										login_status.extAlert({ data : { message: that.options.messages.loginError } }); 									
 									},
 									always : function(){
 										login_button.button('reset');
