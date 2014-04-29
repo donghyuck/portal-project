@@ -471,7 +471,7 @@ var User = kendo.data.Model.define( {
         roles: {}
     },
     hasRole : function ( role ) {
-    	if( typeof( user.roles ) != "undefined" && $.inArray( role, user.roles ) >= 0 )
+    	if( typeof( this.roles ) != "undefined" && $.inArray( role, this.roles ) >= 0 )
 			return true
 		else 
 			return false;    	
