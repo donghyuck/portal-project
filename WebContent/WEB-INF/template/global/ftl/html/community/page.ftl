@@ -24,7 +24,8 @@
 				kendo.culture("ko-KR");
 				      
 				// START SCRIPT	
-				var currentUser = new User({});			
+				
+				var currentUser = new User();			
 				var accounts = $("#account-navbar").kendoAccounts({				
 					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	
 					authenticate : function( e ){
