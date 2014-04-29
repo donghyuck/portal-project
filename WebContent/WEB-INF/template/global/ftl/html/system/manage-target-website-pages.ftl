@@ -271,8 +271,7 @@
 						goPage(this.page);
 					},										
 					doSave : function (e) {
-					
-					alert( $(this).html() );
+
 					var btn = $('button.btn-editor-control-group[data-action="page-editor-save"]');
 					btn.button('<i class="fa-li fa fa-spinner fa-spin"></i>');
 					
