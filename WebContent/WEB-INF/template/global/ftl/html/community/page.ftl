@@ -29,7 +29,6 @@
 				$("#account-navbar").extAccounts({
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-						alert( kendo.stringify(currentUser) );
 					}				
 				});
 				
