@@ -176,7 +176,9 @@
 			}	
 		},
 		doLogin : function(){
-			
+			var that = this;	
+			var renderTo = $(that.element);
+
 		},
 		authenticate : function() {
 			var that = this;
