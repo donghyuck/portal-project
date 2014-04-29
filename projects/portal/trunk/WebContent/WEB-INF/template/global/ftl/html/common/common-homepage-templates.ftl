@@ -468,7 +468,7 @@
 	<div class="blank-top-5" ></div>
 	<div class="btn-group pull-right">
 		<button  type="button" class="btn btn-info btn-sm custom-list "><i class="fa fa-angle-double-up"></i> 목록</button>
-		# if ("${action.view!}" == "personalized" && modifyAllowed ) {#  										
+		# if ("${ action.view! }" == "personalized" && modifyAllowed ) {#  										
 		<button  type="button" class="btn btn-info btn-sm custom-edit"><i class="fa fa-pencil-square-o"></i> 수정</button>
 		# } #		
 	</div>
@@ -857,7 +857,7 @@
 									<label for="login-password">비밀번호</label>
 										<input type="password" class="form-control " id="login-password" name="password"  placeholder="비밀번호"  required validationMessage="비밀번호를 입력하여 주세요." >
 								</div>				 
-								<button type="button" id="login-btn" class="btn btn-primary btn-block"><i class="fa fa-sign-in"></i> 로그인</button>
+								<button type="button" id="login-btn" class="btn btn-primary btn-block" data-action="login"><i class="fa fa-sign-in"></i> 로그인</button>
 							</form>						
 						</div>
 					</div>
