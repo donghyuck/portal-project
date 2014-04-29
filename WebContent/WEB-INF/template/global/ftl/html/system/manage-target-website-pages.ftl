@@ -262,6 +262,7 @@
 					isVisible: true,
 					isNew : true,
 					isPublished : false,
+					updateRequired : false,
 					onPublish: function(e){					
 						this.page.set('pageState', 'PUBLISHED');
 						this.doSave(e);
@@ -313,7 +314,7 @@
 				pageEditorModel.bind("change", function(e){				
 					if( e.field.match('^page.')){ 						
 						if( this.page.title.length > 0 && this.page.bodyText.length  > 0 )					
-							$("button.btn-editor-control-group[data-action='page-editor-save']").removeAttr('disabled');
+							pageEditorModel.set("updateRequired", true);
 					}	
 				});								
 				kendo.bind(renderTo, pageEditorModel );
