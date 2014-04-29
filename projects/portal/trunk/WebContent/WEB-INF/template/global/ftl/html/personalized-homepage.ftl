@@ -81,59 +81,25 @@
 				});
 
 				// 3. ACCOUNTS LOAD	
-				var currentUser = new User({});			
-				var accounts = $("#account-navbar").kendoAccounts({				
-					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	
+				var currentUser = new User();			
+				$("#account-navbar").extAccounts({
+					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
+					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
+					template : kendo.template($("#account-template").html()),
+					</#if>
 					authenticate : function( e ){
-						currentUser = e.token;
+						e.token.copy(currentUser);
 						if(!currentUser.anonymous){							
 							$('body nav').first().addClass('hide');
-						}
+						}						
 					},
 					shown : function(e){
 						$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
 						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
 							$('body nav').first().addClass('hide');
 						});	
-					},
-					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
-					template : kendo.template($("#account-template").html()),
-					</#if>
-					afterAuthenticate : function(){													
-						var validator = $("#login-navbar").kendoValidator({validateOnBlur:false}).data("kendoValidator");						
-						$("#login-btn").click( function() { 
-							$("#login-status").html("");
-							if( validator.validate() )
-							{								
-								accounts.login({
-									data: $("form[name=login-form]").serialize(),
-									success : function( response ) {
-										var refererUrl = "/main.do";
-										if( response.item.referer ){
-											refererUrl = response.item.referer;
-										}
-										$("form[name='login-form']")[0].reset();    
-										$("form[name='login-form']").attr("action", refererUrl ).submit();						
-									},
-									fail : function( response ) {  
-										$("#login-password").val("").focus();												
-										$("#login-status").kendoAlert({ 
-											data : { message: "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다." },
-											close : function(){	
-												$("#login-password").focus();										
-											}
-										}); 										
-									},		
-									error : function( thrownError ) {
-										$("form[name='login-form']")[0].reset();                    
-										$("#login-status").kendoAlert({ data : { message: "잘못된 접근입니다." } }); 									
-									}																
-								});															
-							}else{	}
-						});	
-					}
-				});	
-				
+					},									
+				});				
 				// 4. CONTENT 	
 				
 				// 1. Announces 							
