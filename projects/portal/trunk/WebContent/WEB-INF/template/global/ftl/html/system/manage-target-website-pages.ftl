@@ -209,7 +209,6 @@
 				}).data('kendoGrid');
 			}
 		}		
-
 		
 		function showPageEditor(){		
 			preparePageEditor();
@@ -237,8 +236,6 @@
 			}		
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
-		
-		
 				
 		function createEditor( renderToString ){				
 			var renderTo = $("#"+ renderToString);		
@@ -277,6 +274,7 @@
 						renderTo.find('.custom-props' ).toggleClass('hide');
 					},	
 					openPage: function(e){
+					alert( kendo.stringify(this.page) );
 						goPage(this.page);
 					},										
 					doSave : function (e) {
@@ -441,7 +439,7 @@
 		}
 				
 		</style>		
-</#compress>		
+		</#compress>		
 	</head>
 	<body>
 		<!-- START HEADER -->
