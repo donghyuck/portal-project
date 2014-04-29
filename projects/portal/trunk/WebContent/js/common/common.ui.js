@@ -191,7 +191,7 @@
 									},
 									fail : function( response ) {  										
 										login_form.find('input[name="password"]').val("").focus();	
-										common.ui.notification({ title:that.options.messages.title, message: that.options.messages.loginFail , type: "success" });
+										common.ui.notification({ title:that.options.messages.title, message: that.options.messages.loginFail , type: "error" });
 										/*
 										login_status.extAlert({
 											data : { message: that.options.messages.loginFail },
