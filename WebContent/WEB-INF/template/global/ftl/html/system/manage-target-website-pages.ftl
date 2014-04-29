@@ -273,7 +273,7 @@
 					doSave : function (e) {
 
 					var btn = $('button.btn-editor-control-group[data-action="page-editor-save"]');
-					btn.button('<i class="fa-li fa fa-spinner fa-spin"></i>');
+					btn.button('loading');
 					
 					
 					/*
