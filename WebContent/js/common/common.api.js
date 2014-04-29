@@ -110,43 +110,7 @@
 			dataType : "json"
 		});	
 	};
-	/**
-	common.api.signin = function ( options ){		
-		options = options || {};
-		$.ajax({
-			type : 'POST',
-			url : options.url ,
-			data: { onetime : options.onetime },
-			success : function(response){
-				if( response.error ){ 												
-					options.fail(response) ;
-				} else {					
-					options.success( new User(response.account)) ;					
-				}
-			},
-			error:options.error || common.api.handleKendoAjaxError,
-			dataType : "json"
-		});	
-	};
-
-	common.api.signup = function ( options ){		
-		options = options || {};
-		$.ajax({
-			type : 'POST',
-			url : options.url || '/accounts/signup-external.do?output=json' ,
-			data: { item : options.data },
-			success : function(response){
-				if( response.error ){ 												
-					options.fail(response) ;
-				} else {					
-					options.success(response) ;					
-				}
-			},
-			error:options.error || common.api.handleKendoAjaxError,
-			dataType : "json"
-		});	
-	};	
-	*/
+	
 	common.api.property = function( properties, name, defaultValue ){		
 		if( typeof properties[name] === UNDEFINED )
 		{	
@@ -164,7 +128,6 @@
 		}
 			
 	}
-
 	
 	common.api.guid = function()
 	{
@@ -347,7 +310,6 @@
 		} else {
 			message = "오류가 발생하였습니다." ;
 		}
-
 		$.jGrowl(message, {
 			sticky : false,
 			life : 1000,
@@ -383,8 +345,7 @@
 	NUMBER = 'number',
 	POST = 'POST',
 	ANONYMOUS_PHOTO_URL = '/images/common/anonymous.png',
-	JSON = 'json';	
-	
+	JSON = 'json';		
 	common.api.user.photoUrl = function ( user , width , height ){		
 		if( typeof user.username === 'string'){
 			var _photoUrl = '/download/profile/' + user.username;	
@@ -470,10 +431,6 @@
 		}
 	};		
 })(jQuery);	
-
-
-
-
 
 /**
  * Streams  
