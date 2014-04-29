@@ -277,6 +277,9 @@
 						//var btn = $('button.btn-editor-control-group[data-action="page-editor-save"]');
 						//btn.button('loading');
 						
+						var btn = $(e.target);
+						btn.button('loading');
+						
 						/*
 						common.api.callback(  
 						{
@@ -357,7 +360,7 @@
 			if( pagePlaceHolder.pageState === 'pagePlaceHolder' ){
 				renderTo.data("model").set("isPublished", true );				
 			}
-			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? true : false);			
+			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? true : true);			
 			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );				
 		}	
 		
