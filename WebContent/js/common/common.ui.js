@@ -192,8 +192,7 @@
 										login_form.find('input[name="password"]').val("").focus();										
 										login_status.extAlert({
 											data : { message: that.options.messages.loginFail },
-											close : function(e){	
-												e.preventDefault();
+											close : function(e){
 												login_form.find('input[name="password"]').focus();										
 											}
 										}); 										
@@ -1811,8 +1810,7 @@
 	var kendo = window.kendo, Widget = kendo.ui.Widget, DataSource = kendo.data.DataSource, isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, POST = 'POST', JSON = 'json', CHANGE = "change", STRING = "string", UNDEFINED = 'undefined';
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
 
-	common.ui.extAlert = Widget
-			.extend({
+	common.ui.extAlert = Widget.extend({
 				init : function(element, options) {
 
 					var that = this;
