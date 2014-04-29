@@ -162,12 +162,46 @@
 						});
 						window.open(target_url, 'popUpWindow', 'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
 					});
-					if( renderTo.find('form[name="login-form"]').length > 0 ){
-						var validator = renderTo.find('form[name="login-form"]').kendoValidator({validateOnBlur:false}).data("kendoValidator");
-						renderTo.find('button.btn-internal-login-control-group').click(function(e){
+					
+					var login_form =  renderTo.find('form[name="login-form"]') ;	
+					var login_status = renderTo.find('.login-form-message');
+					
+					if( login_form.length > 0 ){
+						var validator = login_form.kendoValidator({validateOnBlur:false}).data("kendoValidator");
+						renderTo.find('button.btn-internal-login-control-group').click(function(e){							
+							var login_button = $(this);							
 							if( validator.validate() ){
-								renderTo.find('.login-form-message').html("");
-								that.doLogin();
+								login_button.button('loading');
+								login_status.html("");
+								that._login({
+									data: login_form.serialize(),
+									success : function( response ) {
+										location.reload();										
+										//var refererUrl = "/main.do";
+										//if( response.item.referer ){
+										//	refererUrl = response.item.referer;
+										//}
+										//$("form[name='login-form']")[0].reset();    
+										//$("form[name='login-form']").attr("action", refererUrl ).submit();						
+									},
+									fail : function( response ) {  
+										
+										login_form.find('input[name="password"]').val("").focus();										
+										login_status.kendoAlert({
+											data : { message: that.options.messages.loginFail || "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다." },
+											close : function(){	
+												login_form.find('input[name="password"]').focus();										
+											}
+										}); 										
+									},		
+									error : function( thrownError ) {
+										login_form[0].reset();
+										login_status.kendoAlert({ data : { message: that.options.messages.loginError || "잘못된 접근입니다." } }); 									
+									},
+									always : function(){
+										login_button.button('reset');
+									}
+								});
 							}	
 						});
 					}
@@ -175,11 +209,29 @@
 				that.trigger(SHOWN);
 			}	
 		},
-		doLogin : function(){
-			var that = this;	
-			var renderTo = $(that.element);
-
-		},
+		_login : function(options) {
+			// Force options to be an object
+			options = options || {};
+			$.ajax({
+				type : 'POST',
+				url : options.url || LOGIN_URL,
+				data : options.data || {},
+				success : function(response) {
+					if (response.error) {
+						if( isFunction(options.fail) )
+							options.fail(response);
+					} else {
+						if(isFunction(options.success))
+							options.success(response);
+					}
+				},
+				error : options.error || handleKendoAjaxError,
+				dataType : "json"
+			}).always( function () {
+				if( isFunction( options.always ))
+					options.always( ) ;					
+			});
+		},	
 		authenticate : function() {
 			var that = this;
 			$.ajax({
