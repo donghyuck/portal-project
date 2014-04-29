@@ -149,10 +149,11 @@
 		events : [ AUTHENTICATE, SHOWN ],
 		refresh : function( ){
 			var that = this;	
+			var renderTo = $(that.element);
 			if( that.options.template){
-				that.element.html(that.options.template(that.token));
+				renderTo.html(that.options.template(that.token));
 				if (that.token.anonymous) {	
-					$(that.element).find(	"button.btn-external-login-control-group").click( function (e){
+					renderTo.find(	"button.btn-external-login-control-group").click( function (e){
 						var target_media = $(this)	.attr("data-target");
 						var target_url = CALLBACK_URL_TEMPLATE({
 							externalLoginHost : that.options.externalLoginHost || document.domain ,
@@ -161,10 +162,21 @@
 						});
 						window.open(target_url, 'popUpWindow', 'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
 					});
-					
+					if( renderTo.find('form[name="login-form"]').length > 0 ){
+						var validator = renderTo.find('form[name="login-form"]').kendoValidator({validateOnBlur:false}).data("kendoValidator");
+						renderTo.find('button.btn-internal-login-control-group').click(function(e){
+							if( validator.validate() ){
+								renderTo.find('.login-form-message').html("");
+								that.doLogin();
+							}	
+						});
+					}
 				}
 				that.trigger(SHOWN);
 			}	
+		},
+		doLogin : function(){
+			
 		},
 		authenticate : function() {
 			var that = this;
