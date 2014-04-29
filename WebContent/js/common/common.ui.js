@@ -141,10 +141,20 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;
 			that.token = new User();
+			if( option.messages.loginFail ){
+				that.messages.loginFail = option.messages.loginFail;
+			}
+			if( option.messages.loginError ){
+				that.messages.loginError = option.messages.loginError;
+			}			
 			that.authenticate();
 		},
 		options : {
 			name : "ExtAccounts",
+		},
+		messages : {
+			loginFail : "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다.",
+			loginError : "잘못된 접근입니다."			
 		},
 		events : [ AUTHENTICATE, SHOWN ],
 		refresh : function( ){
@@ -184,11 +194,10 @@
 										//$("form[name='login-form']")[0].reset();    
 										//$("form[name='login-form']").attr("action", refererUrl ).submit();						
 									},
-									fail : function( response ) {  
-										
+									fail : function( response ) {  										
 										login_form.find('input[name="password"]').val("").focus();										
 										login_status.kendoAlert({
-											data : { message: that.options.messages.loginFail || "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다." },
+											data : { message: that.messages.loginFail },
 											close : function(){	
 												login_form.find('input[name="password"]').focus();										
 											}
@@ -196,7 +205,7 @@
 									},		
 									error : function( thrownError ) {
 										login_form[0].reset();
-										login_status.kendoAlert({ data : { message: that.options.messages.loginError || "잘못된 접근입니다." } }); 									
+										login_status.kendoAlert({ data : { message: that.messages.loginError } }); 									
 									},
 									always : function(){
 										login_button.button('reset');
