@@ -133,6 +133,8 @@
 	isFunction = kendo.isFunction, 
 	UNDEFINED = 'undefined',	
 	AUTHENTICATE = "authenticate",
+	ROLE_ADMIN = "ROLE_ADMIN", 
+	ROLE_SYSTEM = "ROLE_SYSTEM", 	
 	LOGIN_URL = "/login",
 	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
