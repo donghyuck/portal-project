@@ -85,17 +85,11 @@
 			$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
 		}
 		if (!$("#" + renderToString).data("kendoNotification")) {
-			$("#" + renderToString)
-					.kendoNotification(
-							{
-								position : {
-									pinned : true,
-									top : 30,
-									right : 30
-								},
-								autoHideAfter : 3000,
-								stacking : "down",
-								templates : [
+			$("#" + renderToString)	.kendoNotification({
+				position : {	pinned : true, top : 30, right : 30 },
+				autoHideAfter : 3000,
+				stacking : "down",
+				templates : [
 									{
 										type : "info",
 										template : '<div class="notification-info"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p>#= message #</p></div>'
@@ -108,7 +102,7 @@
 										type : "success",
 										template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
 								} ]
-							});
+			});
 		}
 		$("#" + renderToString).data("kendoNotification").show({
 			title : options.title,
@@ -143,17 +137,19 @@
 		init : function(element, options) {
 			var that = this;
 			Widget.fn.init.call(that, element, options);
-			options = that.options;			
-			that.refresh();
+			options = that.options;
 			that.token = new User();
+			that.authenticate();
 		},
 		options : {
 			name : "ExtAccounts",
 		},
 		events : [ AUTHENTICATE ],
 		refresh : function( ){
-			var that = this;			
-			that.authenticate();
+			var that = this;	
+			if( that.options.template){
+				that.element.html(that.options.template(that.token));
+			}	
 		},
 		authenticate : function() {
 			var that = this;
@@ -171,6 +167,7 @@
 				error : that.options.error || handleKendoAjaxError,
 				dataType : "json"
 			});
+			that.refresh();
 		}
 	});
 	
