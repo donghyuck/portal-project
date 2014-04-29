@@ -37,6 +37,7 @@
 	    	target.set("objectId",this.get("objectId") );
 	    	target.set("versionId",this.get("versionId") );
 	    	target.set("title",this.get("title") );
+	    	target.set("name",this.get("name") );
 	    	target.set("summary",this.get("summary") );		
 	    	target.set("bodyText",this.get("bodyText") );		
 	    	target.set("pageState",this.get("pageState") );		
