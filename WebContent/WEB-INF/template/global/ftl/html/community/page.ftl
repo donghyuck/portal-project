@@ -26,6 +26,11 @@
 				// START SCRIPT	
 				
 				var currentUser = new User();			
+				$("#account-navbar").extAccounts({
+				
+				});
+				
+				/**
 				var accounts = $("#account-navbar").kendoAccounts({				
 					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	
 					authenticate : function( e ){
@@ -68,6 +73,7 @@
 						});	
 					}
 				});			
+				*/
 				// END SCRIPT            
 			}
 		}]);	
