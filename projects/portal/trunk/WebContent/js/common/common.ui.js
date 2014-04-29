@@ -127,6 +127,7 @@
 	isFunction = kendo.isFunction, 
 	UNDEFINED = 'undefined',	
 	AUTHENTICATE = "authenticate",
+	SHOWN = "shown", 
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 	
 	LOGIN_URL = "/login",
@@ -144,11 +145,17 @@
 		options : {
 			name : "ExtAccounts",
 		},
-		events : [ AUTHENTICATE ],
+		events : [ AUTHENTICATE, SHOWN ],
 		refresh : function( ){
 			var that = this;	
 			if( that.options.template){
 				that.element.html(that.options.template(that.token));
+				if (that.token.anonymous) {
+					
+					
+					
+				}
+				that.trigger(SHOWN);
 			}	
 		},
 		authenticate : function() {
