@@ -27,7 +27,9 @@
 				
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
-				
+					authenticate : function( e ){
+						e.token.copy(currentUser);
+					}				
 				});
 				
 				/**
