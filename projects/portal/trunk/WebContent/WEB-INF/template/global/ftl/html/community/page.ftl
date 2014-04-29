@@ -29,9 +29,6 @@
 					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	
 					authenticate : function( e ){
 						currentUser = e.token;
-						if(!currentUser.anonymous){							
-							$('body nav').first().addClass('hide');
-						}
 					},
 					shown : function(e){
 						$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
