@@ -73,7 +73,7 @@
 			if (typeof options.handlers === 'object') {
 				if (isFunction(options.handlers[data_action])) {
 					btn_control.bind(options.event,
-							options.handlers[data_action]);
+						options.handlers[data_action]);
 				}
 			}
 		});
@@ -192,7 +192,8 @@
 										login_form.find('input[name="password"]').val("").focus();										
 										login_status.extAlert({
 											data : { message: that.options.messages.loginFail },
-											close : function(){	
+											close : function(e){	
+												e.preventDefault();
 												login_form.find('input[name="password"]').focus();										
 											}
 										}); 										
