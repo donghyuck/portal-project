@@ -116,6 +116,7 @@
 		}
 		
 		function goPage (page){		
+			alert(kendo.stringify(page));
 			$("form[name='openpage-form'] input[name='name']").val( page.name );
 			$("form[name='openpage-form']").submit();			
 		}
