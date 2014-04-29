@@ -180,11 +180,11 @@
 						token.set('isSystem', true);					
 					token.copy(that.token);					
 					that.trigger(AUTHENTICATE,{ token : that.token });		
+					that.refresh();
 				},
 				error : that.options.error || handleKendoAjaxError,
 				dataType : "json"
-			});
-			that.refresh();
+			});			
 		}
 	});
 	
