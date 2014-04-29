@@ -151,25 +151,17 @@
 			var that = this;	
 			if( that.options.template){
 				that.element.html(that.options.template(that.token));
-				if (that.token.anonymous) {					
-					
+				if (that.token.anonymous) {	
 					$(that.element).find(	"button.btn-external-login-control-group").click( function (e){
-						alert( $(this).html() )
-					});
-					/*
-					$(that.element).find(	"button.btn-external-login-control-group").each(function(index) {
-						var external_login_button = $(this);
-						external_login_button.click(function(e) {
-							var target_media = external_login_button	.attr("data-target");
-							var target_url = CALLBACK_URL_TEMPLATE({
-								externalLoginHost : that.options.externalLoginHost || document.domain ,
-								media : target_media,
-								domain : document.domain
-							});
-							window.open(target_url, 'popUpWindow', 'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
+						var target_media = $(this)	.attr("data-target");
+						var target_url = CALLBACK_URL_TEMPLATE({
+							externalLoginHost : that.options.externalLoginHost || document.domain ,
+							media : target_media,
+							domain : document.domain
 						});
+						window.open(target_url, 'popUpWindow', 'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
 					});
-					*/
+					
 				}
 				that.trigger(SHOWN);
 			}	
