@@ -155,7 +155,7 @@
 		authenticate : function() {
 			var that = this;			
 			var _url = that.options.url || AUTHENTICATE_URL;
-			alert(url);
+			alert(_url);
 		}
 	});
 	
