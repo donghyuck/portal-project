@@ -829,10 +829,10 @@
 			<li><a href="/logout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
 			# } else { # 						
 			<li>
-				<div class="container custom-external-login-groups" style="width:100%;">
+				<div class="container" style="width:100%;">
 					<div class="row blank-top-5 ">
 						<div class="col-lg-12">
-							<button class="btn btn-block btn-primary" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 로그인</button>
+							<button class="btn btn-block btn-primary btn-external-login-control-group" data-target="facebook"><i class="fa fa-facebook"></i> | 페이스북으로 로그인</button>
 						</div>
 					</div>		
 					<div class="row blank-top-5 ">
