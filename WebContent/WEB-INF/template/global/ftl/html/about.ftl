@@ -14,8 +14,8 @@
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
+			'${request.contextPath}/js/common/common.models.js',			
 			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {
 			
@@ -24,7 +24,6 @@
 				      
 				// START SCRIPT	
 
-				var currentUser = new User({});			
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({

@@ -12,56 +12,26 @@
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-			'${request.contextPath}/js/common/common.models.min.js',
-			'${request.contextPath}/js/common/common.ui.min.js'],
+			'${request.contextPath}/js/common/common.models.js',			
+			'${request.contextPath}/js/common/common.api.js',
+			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {
 			
 				// 1.  한글 지원을 위한 로케일 설정
 				kendo.culture("ko-KR");
 				      
 				// START SCRIPT	
-				var currentUser = new User({});			
 				// ACCOUNTS LOAD	
-				var accounts = $("#account-navbar").kendoAccounts({
-					connectorHostname: "${ServletUtils.getLocalHostAddr()}",	
-					authenticate : function( e ){
-						currentUser = e.token;						
-					},
-					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  >
+				var currentUser = new User();			
+				$("#account-navbar").extAccounts({
+					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
+					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
 					template : kendo.template($("#account-template").html()),
 					</#if>
-					afterAuthenticate : function(){					
-						if( currentUser.anonymous ){
-							var validator = $("#login-navbar").kendoValidator({validateOnBlur:false}).data("kendoValidator");							
-							$("#login-btn").click(function() { 
-								$("#login-status").html("");
-								if( validator.validate() )
-								{								
-									accounts.login({
-										data: $("form[name=login-form]").serialize(),
-										success : function( response ) {
-											$("form[name='login-form']")[0].reset();               
-											$("form[name='login-form']").attr("action", "/main.do").submit();										
-										},
-										fail : function( response ) {  
-											$("#login-password").val("").focus();												
-											$("#login-status").kendoAlert({ 
-												data : { message: "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다." },
-												close : function(){	
-													$("#login-password").focus();										
-												 }
-											}); 										
-										},		
-										error : function( thrownError ) {
-											$("form[name='login-form']")[0].reset();                    
-											$("#login-status").kendoAlert({ data : { message: "잘못된 접근입니다." } }); 									
-										}																
-									});															
-								}else{	}
-							});	
-						}
-					}
-				});				
+					authenticate : function( e ){
+						e.token.copy(currentUser);
+					}				
+				});			
 				
 				<#if !action.user.anonymous >				
 				
