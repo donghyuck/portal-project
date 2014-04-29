@@ -92,15 +92,15 @@
 				templates : [
 									{
 										type : "info",
-										template : '<div class="notification-info"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+										template : '<div class="notification-info"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
 									},
 									{
 										type : "error",
-										template : '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+										template : '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
 									},
 									{
 										type : "success",
-										template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+										template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
 								} ]
 			});
 		}
