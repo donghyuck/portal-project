@@ -116,9 +116,6 @@
 		}
 		
 		function goPage (page){		
-			if(page == null ){
-				page = $('#webpage-editor').data("pagePlaceHolder");
-			}	
 			$("form[name='openpage-form'] input[name='name']").val( page.name );
 			$("form[name='openpage-form']").submit();			
 		}
@@ -130,7 +127,7 @@
 		
 		function doPageDelete(){
 			var grid = $("#website-page-grid").data("kendoGrid");
-			var selectedCells = grid.select();
+			var selectedCells = grid.select();d
 			var selectedCell = grid.dataItem( selectedCells ); 		
 			alert("delete") ;
 		}
