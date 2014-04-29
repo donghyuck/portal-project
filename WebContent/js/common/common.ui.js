@@ -159,10 +159,11 @@
 				type : 'POST',
 				url : that.options.url || AUTHENTICATE_URL,
 				success : function(response) {
-					that.token = new User($.extend( response.currentUser, { roles : response.roles }));
-					that.token.set('isSystem', false);
-					if (that.token.hasRole(ROLE_SYSTEM) || that.token.hasRole(ROLE_ADMIN))
-						that.token.set('isSystem', true);
+					var token = new User($.extend( response.currentUser, { roles : response.roles }));
+					token.set('isSystem', false);
+					if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
+						token.set('isSystem', true);					
+					token.copy(that.token);					
 					that.trigger(AUTHENTICATE,{ token : that.token });		
 				},
 				error : that.options.error || handleKendoAjaxError,
