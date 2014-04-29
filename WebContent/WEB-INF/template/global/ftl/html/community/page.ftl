@@ -2,6 +2,7 @@
 <html decorator="homepage">
 	<head>
 		<title> ${action.targetPage.title}</title>
+		<#compress>	
 		<script type="text/javascript">
 		<!--
 		yepnope([{
@@ -70,6 +71,7 @@
 		}]);	
 		-->
 		</script>
+		</#compress>	
 	</head>
 	<body>
 		<!-- START HEADER -->
