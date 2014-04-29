@@ -229,6 +229,8 @@
 			}		
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
+		
+		
 				
 		function createEditor( renderToString ){				
 			var renderTo = $("#"+ renderToString);		
@@ -271,12 +273,11 @@
 						goPage(this.page);
 					},										
 					doSave : function (e) {
-
-					var btn = $('button.btn-editor-control-group[data-action="page-editor-save"]');
-					btn.button('loading');
-					
-					
-					/*
+					alert( $(e.target).html() );
+						//var btn = $('button.btn-editor-control-group[data-action="page-editor-save"]');
+						//btn.button('loading');
+						
+						/*
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
@@ -299,9 +300,8 @@
 							},
 							always : function(e){
 								btn.button('reset');
-							}
-						}); 	
-						*/
+							}							
+						});*/
 					},
 					doPreview : function (e) {
 						alert("preview");
