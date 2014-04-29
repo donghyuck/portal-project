@@ -28,7 +28,7 @@
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
 					authenticate : function( e ){
-						currentUser = e.token.copy(currentUser);							
+						e.token.copy(currentUser);							
 					}
 				});			
 														
