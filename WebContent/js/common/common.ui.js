@@ -146,6 +146,7 @@
 		options : {
 			name : "ExtAccounts",
 			messages : {
+				title : "로그인",
 				loginFail : "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다.",
 				loginError : "잘못된 접근입니다."			
 			}
@@ -189,13 +190,16 @@
 										//$("form[name='login-form']").attr("action", refererUrl ).submit();						
 									},
 									fail : function( response ) {  										
-										login_form.find('input[name="password"]').val("").focus();										
+										login_form.find('input[name="password"]').val("").focus();	
+										common.ui.notification({ title:that.options.messages.title, message: that.options.messages.loginFail , type: "success" });
+										/*
 										login_status.extAlert({
 											data : { message: that.options.messages.loginFail },
 											close : function(e){
 												login_form.find('input[name="password"]').focus();										
 											}
 										}); 										
+										*/
 									},		
 									error : function( thrownError ) {
 										login_form[0].reset();
