@@ -31,9 +31,16 @@
 				if( isFunction( options.requestEnd ))
 					options.requestEnd( ) ;						
 			},
+			complete : function( xhr ) {
+				if( isFunction( options.requestEnd ))
+					options.requestEnd( ) ;						
+			},			
 			error: options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
-		});			
+		}).always( function () {
+			if( isFunction( options.always ))
+				options.always( ) ;					
+		});
 	}
 		
 	common.api.getTargetCompany =  function (url, options){
