@@ -158,7 +158,7 @@
 								external_login_button.click(function(e) {
 											var target_media = external_login_button	.attr("data-target");
 											var target_url = CALLBACK_URL_TEMPLATE({
-												hostname : that.options.hostname,
+												hostname : that.options.hostname || document.domain ,
 												media : target_media,
 												domain : document.domain
 											});
