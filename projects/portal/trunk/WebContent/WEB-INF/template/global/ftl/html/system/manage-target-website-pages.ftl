@@ -136,11 +136,16 @@
 		}
 		
 		function openPage(){
-			var grid = $("#website-page-grid").data("kendoGrid");
-			var selectedCells = grid.select();
-			var selectedCell = grid.dataItem( selectedCells ); 		
-			goPage( selectedCell );
+			var page = selectedPage();
+			goPage( page );
 		}		
+		
+		function selectedPage(){
+			var grid = $("#website-page-grid").data('kendoGrid');
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells );   
+			return selectedCell;
+		}
 				
 		function createPageGrid(){
 			if(!$("#website-page-grid").data('kendoGrid') ){
