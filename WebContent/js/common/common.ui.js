@@ -149,7 +149,7 @@
 				loginFail : "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다.",
 				loginError : "잘못된 접근입니다."			
 			}
-		},,
+		},
 		events : [ AUTHENTICATE, SHOWN ],
 		refresh : function( ){
 			var that = this;	
