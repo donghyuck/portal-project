@@ -230,8 +230,6 @@
 			source.copy(renderTo.data("pagePlaceHolder"));
 		}
 		
-		
-				
 		function createEditor( renderToString ){				
 			var renderTo = $("#"+ renderToString);		
 			var pagePlaceHolder = renderTo.data("pagePlaceHolder");									
@@ -362,7 +360,8 @@
 				renderTo.data("model").set("isPublished", true );				
 			}
 			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? false : false );			
-			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );				
+			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );		
+			renderTo.data("model").set("updateRequired", false);		
 		}	
 		
 		function createCodeEditor( renderToString, editor ) {		
