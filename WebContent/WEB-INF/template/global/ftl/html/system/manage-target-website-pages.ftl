@@ -169,7 +169,6 @@
                         serverSorting: false
                     },
                     columns: [
-                    /*	{ field: "check_row", title: " ", filterable: false, sortable: false, locked: true, lockable: false, width: 30, template: "<input class='check_row' type='checkbox' />" },*/
                         { field: "pageId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, locked: true, lockable: false}, 
                         { field: "name", title: "이름", width: 200, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, locked: true , template: $('#webpage-name-template').html() }, 
                         { field: "title", title: "제목", width: 300 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
@@ -199,12 +198,6 @@
 					},
 					dataBound: function(e){		
 						$("button.btn-page-control-group").attr("disabled", "disabled");
-						 //var selectedCells = this.select();
-						 //if(selectedCells.length == 0 ){
-						 //	var newUser = new User ();
-						 //	newUser.copy($("#website-page-grid").data("pagePlaceHolder"));
-						//	$("#user-details").hide();
-						// }
 					}
 				}).data('kendoGrid');
 			}
@@ -266,6 +259,7 @@
 					}),					
 					isVisible: true,
 					isNew : true,
+					isPublished : false,
 					onPublish: function(e){
 						this.page.set('pageState', 'PUBLISHED');
 						this.doSave(e);
@@ -311,12 +305,10 @@
 					}	
 				});								
 				kendo.bind(renderTo, pageEditorModel );
-				renderTo.data("model", pageEditorModel );		
-								
+				renderTo.data("model", pageEditorModel );										
 				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);	
-								
+				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);									
 				bodyEditor.kendoEditor({
 						tools : [
 							'bold',
@@ -353,17 +345,19 @@
 						]
 				});
 			}
+			if( pagePlaceHolder.pageState === 'pagePlaceHolder' ){
+				renderTo.data("model").set("isPublished", true );				
+			}
+			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? true : false);			
 			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );				
 		}	
 		
-		function createCodeEditor( renderToString, editor ) {
-		
+		function createCodeEditor( renderToString, editor ) {		
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"></div>');
 			}							
 			var renderTo = $("#"+ renderToString);		
-			if( !renderTo.data('kendoExtModalWindow') ){				
-				
+			if( !renderTo.data('kendoExtModalWindow') ){						
 				renderTo.extModalWindow({
 					title : "HTML",
 					backdrop : 'static',
@@ -420,8 +414,7 @@
 				});
 			}
 			return renderTo.data("kendoExtEditorPopup");
-		}
-		
+		}		
 			
 		</script>
 		<style type="text/css" media="screen">
