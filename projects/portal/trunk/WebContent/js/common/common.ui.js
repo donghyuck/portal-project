@@ -131,6 +131,7 @@
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 	
 	LOGIN_URL = "/login",
+	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( hostname ) == 'string'  ) { #http://#= hostname ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"), 
 	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
 	
@@ -152,7 +153,18 @@
 				that.element.html(that.options.template(that.token));
 				if (that.token.anonymous) {
 					
-					
+					$(that.element).find(	".custom-external-login-groups button").each(function(index) {
+								var external_login_button = $(this);
+								external_login_button.click(function(e) {
+											var target_media = external_login_button	.attr("data-target");
+											var target_url = CALLBACK_URL_TEMPLATE({
+												hostname : that.options.hostname,
+												media : target_media,
+												domain : document.domain
+											});
+											window.open(target_url, 'popUpWindow', 'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
+										});
+							});					
 					
 				}
 				that.trigger(SHOWN);
