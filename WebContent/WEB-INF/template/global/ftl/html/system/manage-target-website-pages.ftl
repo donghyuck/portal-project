@@ -490,7 +490,7 @@
 											</h5>
 											<div class="pull-right">
 												<div class="btn-group">
-													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPublish, disabled: isNew">게시</button>
+													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: onPublish, disabled: isPublished">게시</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-action="page-editor-save" data-bind="click: doSave" disabled="disabled">저장</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-toggle="button"  data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
 													<button type="button" class="btn btn-primary btn-sm btn-editor-control-group" data-bind="click: openPage, disabled: isNew" >미리보기</button>													
