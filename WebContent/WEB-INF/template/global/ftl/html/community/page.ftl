@@ -30,12 +30,6 @@
 					authenticate : function( e ){
 						currentUser = e.token;
 					},
-					shown : function(e){
-						$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
-						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
-							$('body nav').first().addClass('hide');
-						});	
-					},
 					<#if CompanyUtils.isallowedSignIn(action.company) ||  !action.user.anonymous  || action.view! == "personalized" >
 					template : kendo.template($("#account-template").html()),
 					</#if>
