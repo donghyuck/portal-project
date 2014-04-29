@@ -47,7 +47,7 @@
 									</li>
 								<#else>
 									<li>
-										<a href="#">${item.title}</a>
+										<a href="${item.page}">${item.title}</a>
 									</li>
 								</#if>
 								</#list>
