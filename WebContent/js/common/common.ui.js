@@ -87,7 +87,7 @@
 		if (!$("#" + renderToString).data("kendoNotification")) {
 			$("#" + renderToString)	.kendoNotification({
 				position : {	pinned : true, top : 30, right : 30 },
-				autoHideAfter : 0,
+				autoHideAfter : 2000,
 				stacking : "down",
 				templates : [
 									{
