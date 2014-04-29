@@ -360,7 +360,7 @@
 			if( pagePlaceHolder.pageState === 'pagePlaceHolder' ){
 				renderTo.data("model").set("isPublished", true );				
 			}
-			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? true : true );			
+			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? false : false );			
 			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );				
 		}	
 		
