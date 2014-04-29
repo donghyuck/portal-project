@@ -13,8 +13,9 @@
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-			'${request.contextPath}/js/common/common.models.min.js',
-			'${request.contextPath}/js/common/common.ui.min.js'],
+			'${request.contextPath}/js/common/common.api.js',
+			'${request.contextPath}/js/common/common.models.js',
+			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {
 			
 				// 1.  한글 지원을 위한 로케일 설정
