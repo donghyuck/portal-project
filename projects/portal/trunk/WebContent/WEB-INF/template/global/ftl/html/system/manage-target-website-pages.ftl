@@ -197,7 +197,7 @@
  						} 						
 					},
 					dataBound: function(e){		
-						$("button.btn-page-control-group").attr("disabled", "disabled");
+						//$("button.btn-page-control-group").attr("disabled", "disabled");
 					}
 				}).data('kendoGrid');
 			}
