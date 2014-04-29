@@ -837,7 +837,7 @@
 					</div>		
 					<div class="row blank-top-5 ">
 						<div class="col-lg-12">
-							<button class="btn btn-block btn-info" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 로그인</button>
+							<button class="btn btn-block btn-info btn-external-login-control-group" data-target="twitter"><i class="fa fa-twitter"></i> | 트위터로 로그인</button>
 						</div>
 					</div>					
 				</div>
