@@ -153,11 +153,10 @@
 			that.authenticate();
 		},
 		authenticate : function() {
-			var that = this;			
-			var _url = that.options.url || AUTHENTICATE_URL;
+			var that = this;
 			$.ajax({
 				type : 'POST',
-				url : that.options.url || AUTHENTICATE_URL;
+				url : that.options.url || AUTHENTICATE_URL,
 				success : function(response) {
 					that.token = new User($.extend( response.currentUser, { roles : response.roles }));
 					that.token.set('isSystem', false);
