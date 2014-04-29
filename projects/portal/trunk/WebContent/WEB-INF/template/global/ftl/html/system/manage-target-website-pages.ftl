@@ -260,7 +260,7 @@
 					isVisible: true,
 					isNew : true,
 					isPublished : false,
-					onPublish: function(e){
+					onPublish: function(e){					
 						this.page.set('pageState', 'PUBLISHED');
 						this.doSave(e);
 					},
@@ -268,10 +268,12 @@
 						renderTo.find('.custom-props' ).toggleClass('hide');
 					},	
 					openPage: function(e){
-					alert( kendo.stringify(this.page) );
 						goPage(this.page);
 					},										
 					doSave : function (e) {
+					
+					alert( $(this).html() );
+					/*
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
@@ -293,6 +295,7 @@
 								kendo.ui.progress(renderTo, false);
 							}
 						}); 	
+						*/
 					},
 					doPreview : function (e) {
 						alert("preview");
