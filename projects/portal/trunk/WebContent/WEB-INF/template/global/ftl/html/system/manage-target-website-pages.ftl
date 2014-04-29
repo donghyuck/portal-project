@@ -271,15 +271,9 @@
 					openPage: function(e){
 						goPage(this.page);
 					},										
-					doSave : function (e) {
-						//alert( $(e.target).html() );
-						//var btn = $('button.btn-editor-control-group[data-action="page-editor-save"]');
-						//btn.button('loading');
-						
+					doSave : function (e) {						
 						var btn = $(e.target);
 						btn.button('loading');
-						
-						/*
 						common.api.callback(  
 						{
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
@@ -303,10 +297,7 @@
 							always : function(e){
 								btn.button('reset');
 							}							
-						});*/
-					},
-					doPreview : function (e) {
-						alert("preview");
+						});
 					}
 				});				
 				pageEditorModel.bind("change", function(e){				
@@ -359,7 +350,7 @@
 			if( pagePlaceHolder.pageState === 'pagePlaceHolder' ){
 				renderTo.data("model").set("isPublished", true );				
 			}
-			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? false : false );			
+			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? true : false );			
 			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );		
 			renderTo.data("model").set("updateRequired", false);		
 		}	
@@ -500,7 +491,7 @@
 											<div class="pull-right">
 												<div class="btn-group">
 													<button type="button" class="btn btn-primary btn-sm" data-bind="click: onPublish, disabled: isPublished"  data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >게시</button>
-													<button type="button" class="btn btn-primary btn-sm" data-action="page-editor-save" data-bind="click: doSave" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>저장</button>
+													<button type="button" class="btn btn-primary btn-sm" data-action="page-editor-save" data-bind="click: doSave, disabeld:updateRequired" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>저장</button>
 													<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
 													<button type="button" class="btn btn-primary btn-sm" data-bind="click: openPage, disabled: isNew" >미리보기</button>													
 												</div>						
