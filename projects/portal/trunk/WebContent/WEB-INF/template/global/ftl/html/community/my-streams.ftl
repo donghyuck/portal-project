@@ -104,6 +104,7 @@
 		<!-- create media streams nav buttons                -->
 		<!-- ============================== -->				
 		function createConnectedSocialNav(){		
+		
 			var myStreams = $('#navbar-btn-my-streams');
 			if( myStreams.find('input').length == 0 ){
 				myStreams.data( 'dataSource', 
@@ -384,8 +385,10 @@
 					
 					<p class="navbar-text text-primary hidden-xs">연결된 미디어</p>
 					<li class="navbar-btn">
-						<button type="button" class="btn btn-primary navbar-btn" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-						<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons"></div>
+						
+						<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
+							<button type="button" class="btn btn-info navbar-btn" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+						</div>
 					</li>	
 					<li class="navbar-btn">
 						<!---->
