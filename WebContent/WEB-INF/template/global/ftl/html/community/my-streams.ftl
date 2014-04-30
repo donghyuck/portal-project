@@ -308,9 +308,11 @@
 			overflow-x:hidden;
 			overflow-y:auto;			
 		}
-
-		nav.personalized-navbar >li>a:hover {
-			background-color : #000000 ;
+		
+		.personalized-navbar .navbar-nav > li > a:hover,
+		.personalized-navbar .navbar-nav > li > a:focus {
+		  color: #fff;
+		  background-color: transparent;
 		}
 
 
