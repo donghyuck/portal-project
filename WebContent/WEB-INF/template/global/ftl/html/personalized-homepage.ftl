@@ -1245,7 +1245,7 @@
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- start of personalized menu -->
 		<nav class="personalized-navbar navbar" role="navigation">
-			<div class="container-fluid">
+			<div class="container">
 				<ul class="nav navbar-nav navbar-left">				
 					<p class="navbar-text hidden-xs">&nbsp;</p>	
 					<!--<li><a href=#" class="btn-link custom-nabvar-hide"><i class="fa fa-chevron-left fa-lg"></i></a></li>-->
@@ -1267,7 +1267,6 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="${request.contextPath}/main.do?view=streams" class="btn-link custom-nabvar-up">마이 스트림</a></li>
-					<li><a href="#" class="btn-link custom-nabvar-down"><i class="fa fa-chevron-down fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cloud fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link btn-link custom-nabvar-hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
