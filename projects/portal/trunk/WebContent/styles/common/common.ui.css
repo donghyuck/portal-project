@@ -166,6 +166,7 @@ img.img-full-height {
   opacity : .7;
 }
 
+
 .nav>li>a.btn-img {
 	padding: 7px 15px;
 }
@@ -189,6 +190,7 @@ img.img-full-height {
 .panel-body .page-header { 
 	padding-left: 15px;	
 }
+
 .page-nounderline-header { 
 	border-bottom : 0px;
 }
