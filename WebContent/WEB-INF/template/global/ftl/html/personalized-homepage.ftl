@@ -345,7 +345,7 @@
 			}
 		}
 		<!-- ============================== -->
-		<!-- create notice grid									-->
+		<!-- create notice grid										-->
 		<!-- ============================== -->								
 		function createNoticeGrid(){
 			if( !$("#announce-grid").data('kendoGrid') ){				
@@ -453,8 +453,7 @@
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
 		
-		function createAnnounceEditor(){
-			
+		function createAnnounceEditor(){			
 			if( $('#announce-editor').text().trim().length == 0 ){			
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
 				$('#announce-editor').html( announceEditorTemplate );					
@@ -646,22 +645,17 @@
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
 		}						
 			**/
-								
-
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
 		<!-- ============================== -->			
-		function displayAttachmentPanel(){			
-		
+		function displayAttachmentPanel(){					
 			var renderToString =  "attachement-panel-0";	
-			var attachPlaceHolder = $("#attachment-list-view").data( "attachPlaceHolder" );		
-			
+			var attachPlaceHolder = $("#attachment-list-view").data( "attachPlaceHolder" );					
 			if( $("#" + renderToString ).length == 0  ){			
 				var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
 				var template = kendo.template('<div id="#: panelId #" class="custom-panels-group col-sm-#: colSize#" style="display:none;"></div>');				
 				$("#personalized-area").append( template( {panelId:renderToString, colSize: grid_col_size.newValue } ) );	
-			}	
-						
+			}							
 			if( !$( "#" + renderToString ).data("extPanel") ){					
 				$("#" + renderToString ).data("extPanel", 
 					$("#" + renderToString ).extPanel({
@@ -671,8 +665,7 @@
 						afterChange : function ( data ){
 							if( data.contentType == "application/pdf" ){
 								var loadSuccess = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { view: "FitV" } }).embed("pdf-view");				
-							}		
-							
+							}									
 							$("#update-attach-file").kendoUpload({
 								multiple: false,
 								async: {
@@ -972,8 +965,7 @@
 				$("#photo-list-view").data( "photoPlaceHolder", item );
 				displayPhotoPanel( );
 			}
-		}
-					
+		}					
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -1277,9 +1269,7 @@
 					<li><a href="${request.contextPath}/main.do?view=streams" class="btn-link custom-nabvar-up">마이 스트림</a></li>
 					<li><a href="#" class="btn-link custom-nabvar-down"><i class="fa fa-chevron-down fa-lg"></i></a></li>
 					<li><a href="#" class="btn-link custom-nabvar-show-opts"><i class="fa fa-cloud fa-lg"></i></a></li>
-					<li><a href="#&quot;" class="btn-link custom-nabvar-hide">
-						<img src="${request.contextPath}/images/cross.png" height="18"/>
-					</a></li>
+					<li><a href="#" class="btn-link btn-link custom-nabvar-hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
 			</div>
