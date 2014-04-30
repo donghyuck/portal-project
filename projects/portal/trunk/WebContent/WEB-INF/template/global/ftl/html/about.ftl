@@ -28,7 +28,7 @@
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
 					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isallowedSignIn() ||  !action.user.anonymous  >
+					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
 					template : kendo.template($("#account-template").html()),
 					</#if>
 					authenticate : function( e ){
