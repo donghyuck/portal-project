@@ -561,7 +561,7 @@
 		<!-- END FOOTER -->
 		<script id="webpage-name-template" type="text/x-kendo-template">	
 			<div class="btn-group">
-			  <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown" style="z-index:2000;">
+			  <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
 			    #= name # <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" role="menu">
