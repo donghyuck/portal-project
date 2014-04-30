@@ -310,7 +310,7 @@
 		}
 
 		nav.personalized-navbar .navbar>li>a:hover {
-			background-color : #ccc ;
+			background-color : #000000 ;
 		}
 
 
