@@ -49,7 +49,7 @@
 			<div class="container">
 				<div class="col-lg-12">	
 					<h2>${action.targetPage.title}</h2>
-					<h4><small><i class="fa fa-quote-left"></i>&nbsp;${action.targetPage.summary!} <i class="fa fa-quote-right"></i>&nbsp;</small></h4>
+					<h4><i class="fa fa-quote-left"></i>&nbsp;${action.targetPage.summary!} <i class="fa fa-quote-right"></i>&nbsp;</h4>
 				</div>
 			</div>
 		</header>	
