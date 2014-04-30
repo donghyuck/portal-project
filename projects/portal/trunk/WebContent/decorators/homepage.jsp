@@ -47,16 +47,15 @@
 		background: #3ba5db url(/images/common/header/cloud-hero.png) bottom right no-repeat;
 	}
 .
-	header h1 ,  header h2 {
+	header h1 ,  header h2, h4 {
 		color: white;
 		font-weight: 300;
 		margin-bottom: 0;
 	}
-
-	header h4 {
+	
+	header.cloud h4 small {
 		color: white;
-		font-weight: 300;
-	}
+	}	
 	
 	.navbar-inverse {
 		background-color: #333;
