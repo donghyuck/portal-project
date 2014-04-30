@@ -106,6 +106,8 @@
 		function createConnectedSocialNav(){		
 		
 			var myStreams = $('#navbar-btn-my-streams');
+			myStreams.find('button[data-action="media-list"]').button('loading');
+			
 			/*
 			if( myStreams.find('input').length == 0 ){
 				myStreams.data( 'dataSource', 
