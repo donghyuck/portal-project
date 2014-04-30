@@ -637,7 +637,7 @@
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>
-							<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사정보변경</button>								
+							<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>								
 						</div>
 						<div class="panel-body" style="padding:5px;">						
 														
