@@ -95,7 +95,7 @@
 					},
 					shown : function(e){
 						
-						$('#account-navbar').append('<a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a>');
+						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
 						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');					
 						//$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
 						
