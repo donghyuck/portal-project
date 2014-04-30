@@ -311,7 +311,7 @@
 		
 		.personalized-navbar .btn-link {
 		  color: #fff;
-		  background-color: #cccccc;
+		  background-color: transparent;
 		}
 
 
