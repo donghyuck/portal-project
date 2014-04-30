@@ -398,48 +398,51 @@ header .personalized-controls-trigger {
 }
 
 /** color */
+body.color0 , div.color0, ul.color0 , section.color0 {
+	background: #000;			
+}
 
-body.color1 , div.color1, ul.color1 {
+body.color1 , div.color1, ul.color1 , section.color1 {
 	background: #3498db;			
 }
 
-body.color2, div.color2, ul.color2 {
+body.color2, div.color2, ul.color2, section.color2 {
 	background: #52be7f;	
 }
 
-body.color3, div.color3, ul.color3 {
+body.color3, div.color3, ul.color3 , section.color3 {
 	background: #e74c3c;	
 }
 
-body.color4, div.color4, ul.color4 {
+body.color4, div.color4, ul.color4 , section.color4 {
 	background: #F7F7F7;	
 }
 
-body.color5, div.color5, ul.color5 {
+body.color5, div.color5, ul.color5 , section.color5 {
 	background: #BDBEC2;	
 }
 
-body.color6, div.color6, ul.color6 {
+body.color6, div.color6, ul.color6 , section.color6 {
 	background: #C7C7CC;	
 }
 
-body.color7, div.color7, ul.color7 {
+body.color7, div.color7, ul.color7 , section.color7 {
 	background: #007AFF;	
 }
 
-body.color8, div.color8, ul.color8 {
+body.color8, div.color8, ul.color8 , section.color8 {
 	background: #34AADC;	
 }
 
-body.color9, div.color9, ul.color9 {
+body.color9, div.color9, ul.color9 , section.color9 {
 	background: #1F1F21;	
 }
 
-body.color10, div.color10, ul.color10 {
+body.color10, div.color10, ul.color10 , section.color10 {
 	background: #4A4A4A;	
 }
 
-body.color11, div.color11, ul.color11 {
+body.color11, div.color11, ul.color11, section.color11  {
 	background: #2B2B2B;	
 }
 
