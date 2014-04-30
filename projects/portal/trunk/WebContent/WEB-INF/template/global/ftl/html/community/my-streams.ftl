@@ -384,7 +384,7 @@
 					
 					<p class="navbar-text text-primary hidden-xs">연결된 미디어</p>
 					<li class="navbar-btn">
-						<button type="button" class="btn btn-info navbar-btn btn-sm" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-repeat"></i></button>
+						<button type="button" class="btn btn-info navbar-btn" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-repeat"></i></button>
 					</li>	
 					<li class="navbar-btn">
 						<!--<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons"></div>-->
