@@ -313,6 +313,12 @@
 		  color: #fff;
 		  background-color: transparent;
 		}
+		
+		.personalized-navbar .btn-link:hover {
+		  color: #fff;
+		  background-color: #47a3da;
+		}
+				
 
 
 		@media (max-width: 768px ) {
