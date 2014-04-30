@@ -79,7 +79,8 @@
 					template : kendo.template($("#account-template").html()),
 					</#if>
 					shown : function(e){
-						$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
+						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
+						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');		
 						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
 							$('body nav').first().addClass('hide');
 						});	
