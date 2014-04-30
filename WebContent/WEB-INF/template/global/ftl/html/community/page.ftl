@@ -46,18 +46,11 @@
 		<#include "/html/common/common-homepage-menu.ftl" >	
 		<!-- END HEADER -->
 		<!-- START MAIN CONTENT -->	
-		<div class="jumbotron jumbotron-ad hidden-print jumbotron-page-header">
-		  <div class="container">
-		    <h2>${action.targetPage.title}</h2>
-		    <small class="text-muted"><i class="fa fa-quote-left fa-2x pull-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right fa-2x"></i></small>
-		  </div>
-		</div>			
-
 		<div class="container layout">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="page-header">
-						<h2>${action.targetPage.title}</h2> <small class="text-muted"><i class="fa fa-quote-left fa-2x"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small>
+						<h2>${action.targetPage.title}</h2><small class="text-muted"><i class="fa fa-quote-left fa-2x"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right fa-2x"></i></small>
 					</div>				
 				</div>
 			</div>
