@@ -309,6 +309,11 @@
 			overflow-y:auto;			
 		}
 
+		.personalized-navbar>li>a : hover {
+			background-color : #ccc ;
+		}
+
+
 		@media (max-width: 768px ) {
 			#personalized-controls-section.cbp-spmenu-vertical {
 				width: 100%;
