@@ -51,9 +51,9 @@
 					if( $(this).hasClass('custom-nabvar-hide')){
 						
 							if( $('body nav').first().css('display') === 'none' )
-								kendo.fx($('body nav').first()).expand("vertical").stop().reverse();
+								kendo.fx($('body nav').first()).expand("vertical").stop().play();
 							else
-								kendo.fx($('body nav').first()).expand("vertical").stop().play();								
+								kendo.fx($('body nav').first()).expand("vertical").stop().reverse();								
 						//$('body nav').first().removeClass('hide');
 						
 						
