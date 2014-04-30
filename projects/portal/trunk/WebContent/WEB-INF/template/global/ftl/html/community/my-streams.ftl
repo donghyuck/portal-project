@@ -26,7 +26,7 @@
 				kendo.culture("ko-KR");
 				
 				// 2.  MEUN LOADING ...
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
+				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
 				
 				common.ui.handleActionEvents( $('.personalized-navbar'), {
@@ -82,7 +82,10 @@
 						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
 						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');		
 						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
-							$('body nav').first().addClass('hide');
+							//$('body nav').first().addClass('hide');
+							
+							kendo.fx($('body nav').first()).expand("vertical").stop().reverse();
+							
 						});	
 					},					
 					authenticate : function( e ){
