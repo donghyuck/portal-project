@@ -49,7 +49,14 @@
 							
 				$('.personalized-navbar .nav a.btn-link').click(function(e){
 					if( $(this).hasClass('custom-nabvar-hide')){
-						$('body nav').first().removeClass('hide');
+						
+							if( $('body nav').first().css('display') === 'none' )
+								kendo.fx($('body nav').first()).expand("vertical").stop().reverse();
+							else
+								kendo.fx($('body nav').first()).expand("vertical").stop().play();								
+						//$('body nav').first().removeClass('hide');
+						
+						
 					}else if ($(this).hasClass('custom-nabvar-show-opts')){ 
 						$('body').toggleClass('modal-open');						
 						if( $('#personalized-controls-section').hasClass("hide") )
