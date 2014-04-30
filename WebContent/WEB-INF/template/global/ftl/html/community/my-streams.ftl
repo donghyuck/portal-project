@@ -96,7 +96,7 @@
 							if( $('body nav').first().css('display') === 'none' )
 								navbar1_effect.stop().play();
 							else
-								navbar1_effect.stop().reverse();							
+								navbar1_effect.stop().reverse().then(function(){ navbar2_effect.stop().play() })	
 						});	
 					},					
 					authenticate : function( e ){
