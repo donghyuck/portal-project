@@ -52,6 +52,9 @@
 		    <small class="text-muted"><i class="fa fa-quote-left fa-2x pull-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small>
 		  </div>
 		</div>			
+		<div class="page-header">
+			<h2>${action.targetPage.title} <small class="text-muted"><i class="fa fa-quote-left fa-2x pull-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small></h2>
+		</div>
 		<div class="container layout">
 			<div class="row">
 				<div class="col-lg-12">
