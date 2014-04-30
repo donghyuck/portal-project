@@ -83,7 +83,7 @@
 		
 </style>
 </head>
-<body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="" />">
+<body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="color4" />">
 	<decorator:body />
 </body>
 </html>
