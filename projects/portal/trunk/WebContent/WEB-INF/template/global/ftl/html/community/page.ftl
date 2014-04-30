@@ -45,12 +45,21 @@
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
 		<!-- END HEADER -->
+		<header class="cloud">
+			<div class="container">
+				<div class="col-lg-12">	
+					<h1>${action.targetPage.title}</h1>
+					<h4><small class="text-muted"><i class="fa fa-quote-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small></h4>
+				</div>
+			</div>
+		</header>	
+				
 		<!-- START MAIN CONTENT -->	
 		<div class="container layout">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="page-header">
-						<h2>${action.targetPage.title}</h2><small class="text-muted"><i class="fa fa-quote-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small>
+						<h2>${action.targetPage.title}</h2>
 					</div>				
 				</div>
 			</div>
