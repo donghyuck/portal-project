@@ -407,6 +407,7 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 					<h4 class="modal-title">회원가입</h4>
 				</div>
+				<#if action.allowedSocialConnect >
 				<div class="modal-body color4">
 					<fieldset <#if !action.user.anonymous >disabled</#if>>
 						<div class="col-sm-6">
@@ -417,6 +418,7 @@
 						</div>
 					</fieldset>		
 				</div>
+				</#if>>
 				<div class="modal-body">
 						<div class="row">
 							<div class="col-sm-12">
