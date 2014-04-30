@@ -102,7 +102,7 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 						if(!currentUser.anonymous){							
-							$('body nav').first().addClass('hide');
+							//$('body nav').first().addClass('hide');
 							createConnectedSocialNav();
 						}						
 					}				
