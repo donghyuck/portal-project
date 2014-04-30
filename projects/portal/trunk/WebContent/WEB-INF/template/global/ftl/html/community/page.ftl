@@ -48,8 +48,8 @@
 		<header class="cloud">
 			<div class="container">
 				<div class="col-lg-12">	
-					<h1>${action.targetPage.title}</h1>
-					<h4><small class="text-muted"><i class="fa fa-quote-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small></h4>
+					<h2>${action.targetPage.title}</h2>
+					<h4><small><i class="fa fa-quote-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small></h4>
 				</div>
 			</div>
 		</header>	
