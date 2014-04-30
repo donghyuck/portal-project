@@ -47,7 +47,7 @@
 		background: #3ba5db url(/images/common/header/cloud-hero.png) bottom right no-repeat;
 	}
 .
-	header h1 {
+	header h1 ,  header h2 {
 		color: white;
 		font-weight: 300;
 		margin-bottom: 0;
@@ -83,7 +83,8 @@
 	.navbar-nav>li>a.btn-link {
 		padding-top: 14px;
 		padding-bottom: 14px;
-	}			
+	}
+				
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="color4" />">
