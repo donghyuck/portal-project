@@ -309,7 +309,7 @@
 			overflow-y:auto;			
 		}
 
-		.personalized-navbar>li>a : hover {
+		nav.personalized-navbar .navbar>li>a : hover {
 			background-color : #ccc ;
 		}
 
