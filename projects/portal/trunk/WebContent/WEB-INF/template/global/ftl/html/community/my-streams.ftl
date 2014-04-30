@@ -309,7 +309,7 @@
 			overflow-y:auto;			
 		}
 		
-		.personalized-navbar .navbar-nav > li > a:hover
+		.personalized-navbar .btn-link:hover {
 		  color: #fff;
 		  background-color: #cccccc;
 		}
