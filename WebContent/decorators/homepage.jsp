@@ -80,6 +80,10 @@
 		background-color: #428bca;
 	}
 			
+	.navbar-nav>li>a.btn-link {
+		padding-top: 14px;
+		padding-bottom: 14px;
+	}			
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="color4" />">
