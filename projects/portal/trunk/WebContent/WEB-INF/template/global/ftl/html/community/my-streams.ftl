@@ -46,12 +46,15 @@
 						}
 					]
 				});	
+				
+				var navbar1_effect = kendo.fx($('body nav').first()).expand("vertical");
+				var navbar2_effect = kendo.fx($('body nav.personalized-navbar')).expand("vertical");				
 							
 				$('.personalized-navbar .nav a.btn-link').click(function(e){
 					if( $(this).hasClass('custom-nabvar-hide')){
 						
 							if( $('body nav').first().css('display') === 'none' )
-								kendo.fx($('body nav').first()).expand("vertical").stop().play();
+								kendo.fx($('body nav').last()).expand("vertical").stop().play();
 							else
 								kendo.fx($('body nav').first()).expand("vertical").stop().reverse();								
 						//$('body nav').first().removeClass('hide');
@@ -91,9 +94,9 @@
 						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
 							//$('body nav').first().addClass('hide');							
 							if( $('body nav').first().css('display') === 'none' )
-								kendo.fx($('body nav').first()).expand("vertical").stop().play();
+								navbar1_effect.stop().play();
 							else
-								kendo.fx($('body nav').first()).expand("vertical").stop().reverse();							
+								navbar1_effect.stop().reverse();							
 						});	
 					},					
 					authenticate : function( e ){
