@@ -6,6 +6,12 @@
 <%
 	User user = SecurityHelper.getUser();
 	Company company = user.getCompany();
+	architecture.ee.web.site.WebSite website = architecture.ee.web.util.WebSiteUtils.getWebSite(request);
+	
+	boolean isAllowedSocialConnect = architecture.ee.web.util.WebSiteUtils.isAllowedSocialConnect(website);
+	boolean isAllowedSignup = architecture.ee.web.util.WebSiteUtils.isAllowedSignup(website);
+	boolean isAllowedSignIn = architecture.ee.web.util.WebSiteUtils.isAllowedSignIn(website);
+	
 %>
 <script type="text/javascript">
 	yepnope([{
@@ -23,8 +29,7 @@
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.models.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.api.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.ui.js'],
-		complete: function() {
-			
+		complete: function() {			
 			common.api.getUser( {
 				success : function ( token ) {
 					if( !token.anonymous )
@@ -262,11 +267,15 @@
 					 <li><a href="#">약관</a></li>
 					 <li><a href="#">개인정보보호</a></li>
 					 <li><a href="#" onClick="toggleWindow(); return false;">로그인</a></li>
+					 <% if (isAllowedSignup){ %>
 					 <li><a href="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/accounts/signup.do">회원가입</a></li>
+					 <% } %>
 				</ul>
+				<!-- 
 				<ul class="nav navbar-nav navbar-right">
 					 <li><a href="#">Link</a></li>
 				</ul>
+				-->
 			</div>
 		</nav>
 			
@@ -279,6 +288,7 @@
 					<h4 class="modal-title">로그인</h4>
 				</div>
 			<div class="modal-body">
+				<% if (isAllowedSocialConnect) { %>
 				<div class="container custom-external-login-groups" style="width:100%;">
 					<div class="row blank-top-5 ">
 						<div class="col-sm-6">
@@ -289,6 +299,7 @@
 						</div>
 					</div>							
 				</div>
+				<% } %>
 				<div class="container" style="width:100%;">					
 					<div class="row blank-top-15">
 						<div class="col-lg-12">
@@ -316,7 +327,7 @@
 									</div>
 								</div>
 								<div class="col-lg-12">									
-									<span class="label label-primary">접속 IP</span>&nbsp;<%= request.getRemoteAddr() %>  <span class="label label-warning"></span><br/>
+									<span class="label label-primary">접속 IP</span>&nbsp;<small><%= request.getRemoteAddr() %></small><span class="label label-warning"></span><br/>
 									<% if ( !user.isAnonymous() ) { %>
 									<span class="label label-warning"><%= user.getUsername() %> 로그인됨</span>&nbsp; <button type="button" class="btn btn-danger btn-sm">로그아웃</button><br/>
 									<% } %>
@@ -399,7 +410,6 @@
 		#=message#
 	</div>
     </script>
-    
 	<STYLE type="text/css">	    
 
                 span.k-tooltip {
