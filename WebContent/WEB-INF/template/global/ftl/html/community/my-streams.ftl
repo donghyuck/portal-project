@@ -313,8 +313,6 @@
 		  color: #fff;
 		  background-color: #47a3da;
 		}
-				
-
 
 		@media (max-width: 768px ) {
 			#personalized-controls-section.cbp-spmenu-vertical {
@@ -379,7 +377,7 @@
 			<div class="container">
 				<ul class="nav navbar-nav navbar-left">				
 					<p class="navbar-text hidden-xs">&nbsp;</p>	
-					<p class="navbar-text hidden-xs">&nbsp;</p>						
+					<p class="navbar-text hidden-xs"><small>스트림 레이아웃</small></p>						
 					<li class="navbar-btn hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info">
