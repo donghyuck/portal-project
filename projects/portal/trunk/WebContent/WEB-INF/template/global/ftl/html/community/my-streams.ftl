@@ -106,13 +106,15 @@
 		function createConnectedSocialNav(){		
 		
 			var myStreams = $('#navbar-btn-my-streams');
-			myStreams.find('button[data-action="media-list"]').button('loading');
+			myStreams.find('button[data-action="media-list"]').button('loading');			
 			
-			/*
 			if( myStreams.find('input').length == 0 ){
 				myStreams.data( 'dataSource', 
 					common.api.social.dataSource({ 
 						type : 'list',
+						dataBound: function(e){
+							myStreams.find('button[data-action="media-list"]').button('reset');
+						},
 						change : function ( e ) {
 							var template = kendo.template('<label class="btn btn-info"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #"></i></label>');
 							var html = kendo.render(template, this.data());
@@ -135,7 +137,7 @@
 					})
 				);				
 			}				
-			*/
+			
 		}	
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
