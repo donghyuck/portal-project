@@ -106,6 +106,7 @@
 		function createConnectedSocialNav(){		
 		
 			var myStreams = $('#navbar-btn-my-streams');
+			/*
 			if( myStreams.find('input').length == 0 ){
 				myStreams.data( 'dataSource', 
 					common.api.social.dataSource({ 
@@ -132,6 +133,7 @@
 					})
 				);				
 			}				
+			*/
 		}	
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
