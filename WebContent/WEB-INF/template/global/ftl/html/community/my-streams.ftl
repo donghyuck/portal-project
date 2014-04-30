@@ -82,10 +82,11 @@
 						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
 						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');		
 						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
-							//$('body nav').first().addClass('hide');
-							
-							kendo.fx($('body nav').first()).expand("vertical").stop().reverse();
-							
+							//$('body nav').first().addClass('hide');							
+							if( $('body nav').first().css('display') === 'none' )
+								kendo.fx($('body nav').first()).expand("vertical").stop().play();
+							else
+								kendo.fx($('body nav').first()).expand("vertical").stop().reverse();							
 						});	
 					},					
 					authenticate : function( e ){
