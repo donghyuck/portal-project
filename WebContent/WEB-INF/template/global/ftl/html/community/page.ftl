@@ -50,7 +50,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="page-header">
-						<h2>${action.targetPage.title}<small class="text-muted"><i class="fa fa-quote-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small></h2>
+						<h2>${action.targetPage.title}</h2><small class="text-muted"><i class="fa fa-quote-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small>
 					</div>				
 				</div>
 			</div>
