@@ -93,12 +93,9 @@
 							$('body nav').first().addClass('hide');
 						}						
 					},
-					shown : function(e){
-						
+					shown : function(e){						
 						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
-						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');					
-						//$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
-						
+						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');	
 						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
 							$('body nav').first().addClass('hide');
 						});	
@@ -1246,7 +1243,6 @@
 			<div class="container">
 				<ul class="nav navbar-nav navbar-left">				
 					<p class="navbar-text hidden-xs">&nbsp;</p>	
-					<!--<li><a href=#" class="btn-link custom-nabvar-hide"><i class="fa fa-chevron-left fa-lg"></i></a></li>-->
 					<p class="navbar-text hidden-xs">&nbsp;</p>						
 					<li class="navbar-btn hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
@@ -1264,7 +1260,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
-					<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-link custom-nabvar-up">마이 스트림</a></li>
+					<li class="navbar-btn"><a href="${request.contextPath}/main.do?view=streams" class="btn btn-info custom-nabvar-up">마이 스트림</a></li>
 					<li><a href="#" class="btn btn-link custom-nabvar-show-opts"><i class="fa fa-cloud fa-lg"></i></a></li>
 					<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
