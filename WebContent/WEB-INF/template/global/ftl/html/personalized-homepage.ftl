@@ -1260,7 +1260,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
-					<li class="navbar-btn"><a href="${request.contextPath}/main.do?view=streams" class="btn btn-info">마이 스트림</a></li>
+					<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-info">마이 스트림</a></li>
 					<li><a href="#" class="btn btn-link custom-nabvar-show-opts"><i class="fa fa-cloud fa-lg"></i></a></li>
 					<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
