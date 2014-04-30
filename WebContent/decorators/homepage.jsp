@@ -80,6 +80,9 @@
 		background-color: #428bca;
 	}
 	
+	@media (max-width: @screen-xs-max) {
+		max-width: 650px;
+	}
 		
 </style>
 </head>
