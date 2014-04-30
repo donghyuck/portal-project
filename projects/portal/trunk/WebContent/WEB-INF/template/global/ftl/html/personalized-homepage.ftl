@@ -387,7 +387,7 @@
 							var selectedCell = this.dataItem( selectedCells );	    							
 							var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 							selectedCell.copy(announcePlaceHolder);
-							if( announcePlaceHolder.user.userId === $("#account-navbar").data("kendoExtAccounts").token..userId ){
+							if( announcePlaceHolder.user.userId === $("#account-navbar").data("kendoExtAccounts").token.userId ){
 								announcePlaceHolder.modifyAllowed = true;
 							}else{
 								announcePlaceHolder.modifyAllowed = false;
