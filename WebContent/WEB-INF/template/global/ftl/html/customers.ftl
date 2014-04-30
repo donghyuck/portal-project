@@ -65,7 +65,7 @@
 		<header class="cloud">
 			<div class="container">
 				<div class="col-lg-12">	
-					<h1>${ current_menu.title }</h1>
+					<h2>${ current_menu.title }</h2>
 					<h4><i class="fa fa-quote-left"></i>&nbsp; ${action.webSite.company.displayName} 고객들을 소개합니다.&nbsp;<i class="fa fa-quote-right"></i></h4>
 				</div>
 			</div>
