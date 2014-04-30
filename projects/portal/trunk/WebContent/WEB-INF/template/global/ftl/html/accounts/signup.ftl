@@ -418,7 +418,7 @@
 						</div>
 					</fieldset>		
 				</div>
-				</#if>>
+				</#if>
 				<div class="modal-body">
 						<div class="row">
 							<div class="col-sm-12">
