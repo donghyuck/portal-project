@@ -79,11 +79,7 @@
 	.k-editor-toolbar .k-state-selected {
 		background-color: #428bca;
 	}
-	
-	@media (max-width: @screen-xs-max) {
-		max-width: 650px;
-	}
-		
+			
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="color4" />">
