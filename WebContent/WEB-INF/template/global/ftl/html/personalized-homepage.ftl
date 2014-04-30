@@ -94,27 +94,28 @@
 						}						
 					},
 					shown : function(e){
-						$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
+						
+						$('#account-navbar').append('<a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a>');
+						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');					
+						//$('#account-navbar').append('<li><a href="#&quot;" class="btn-link custom-nabvar-hide"><img src="${request.contextPath}/images/cross.png" height="18"></a></li>' );	
+						
 						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
 							$('body nav').first().addClass('hide');
 						});	
+						
 					},									
 				});				
 				// 4. CONTENT 	
 				
 				// 1. Announces 							
 				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
+				
 				createNoticeGrid();
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					//e.preventDefault();		
 					var show_bs_tab = $(e.target);
-					/*
-					if( show_bs_tab.attr('href') == '#my-notice' ){						
-						createNoticeGrid();											
-					} else 
-					*/
 					if( show_bs_tab.attr('href') == '#my-files' ){					
 						createAttachmentListView();
 					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
@@ -570,8 +571,6 @@
 				}		
 		}
 		
-		
-		
 		function editAnnouncePanel (){		
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );		
 			if( announcePlaceHolder.modifyAllowed ){						
@@ -585,7 +584,6 @@
 						panel_button.click(function (e) { 
 							e.preventDefault();					
 							var data = $("#announce-panel").data( "announcePlaceHolder" );								
-							//alert( kendo.stringify( data ) );
 							$.ajax({
 									dataType : "json",
 									type : 'POST',
