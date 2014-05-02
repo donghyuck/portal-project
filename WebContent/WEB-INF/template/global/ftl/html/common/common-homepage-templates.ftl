@@ -736,7 +736,11 @@
 			<img src="http://222.122.63.146/community/show-tumblr-avatar.do?blogName=#: blogName#&blogAvatarSize=48" alt="#: blogName #" class="media-object img-rounded">
 			</a>
 			<div class="media-body">
-				<h5 class="media-heading">#:blogName#</h5>
+				<h5 class="media-heading">#:blogName#
+				#if( sourceTitle != null && sourceUrl != null){ #
+				<a href="#: sourceUrl #" target="_blank"><i class="fa fa-retweet"></i>  #: sourceTitle #</a>
+				#}#
+				</h5>
 				<p>#:postUrl#</p>
 				<p>#= type #</p>
 				<p>#= source #</p>
@@ -747,9 +751,8 @@
 				#} if (type == 'LINK') {#
 					# if ( description != null ) { #						
 					<p>#= description #</p>
-					# } #					
-				<p><a href="#: url #" target="_blank"><i class="fa fa-link"></i></a></p>	
-				
+					# } #	
+					<!--<p><a href="#: url #" target="_blank"><i class="fa fa-link"></i></a></p>	-->				
 				#} else if (type == 'PHOTO') {#	
 					<div class="row">				
 					# for (var i = 0; i < photos.length ; i++) { #	
