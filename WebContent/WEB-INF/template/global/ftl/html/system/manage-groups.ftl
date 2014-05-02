@@ -462,7 +462,7 @@
 		</style>
 </#compress>		
     </head>
-	<body>
+	<body class="color0">
 		<!-- START HEADER -->
 		<section id="navbar"></section>
 		<!-- END HEADER -->
