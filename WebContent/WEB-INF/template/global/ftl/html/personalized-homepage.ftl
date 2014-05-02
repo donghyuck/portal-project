@@ -1399,9 +1399,9 @@
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-sm-2 control-label"><small>이미지</small></label>
+															<label class="col-sm-2 control-label"><small>사진</small></label>
 															<div class="col-sm-10">
-																<input type="url" class="form-control" placeholder="이미지 URL">
+																<input type="url" class="form-control" placeholder="사진 이미지 URL">
 															</div>
 														</div>														
 														<div class="form-group">
