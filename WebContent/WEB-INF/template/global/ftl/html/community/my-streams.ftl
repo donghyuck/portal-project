@@ -170,15 +170,13 @@
 							common.api.uploadMyImageByUrl({
 								data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
 								success : function(response){
-									//alert(kendo.stringify(response));
-									//alert( btn.html() ) ;
-									alert(btn.parent().html());
 									btn.attr('disabled', 'disabled');
 									
 								},
 								always : function(){
 									btn.parent().toggleClass('active');
 									btn.button('reset');
+									btn.attr('disabled', 'disabled');
 								}
 							});
 							
