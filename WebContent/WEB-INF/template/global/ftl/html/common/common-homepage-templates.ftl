@@ -640,7 +640,7 @@
 		     		<p><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive"></p>
 		     		# } #		     		
 		     		#if ( source !=null ) { #
-		     		<p><a href="#= source #" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-film"></i>동영상 보기</a></p>
+		     		<p><a href="#= source #" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-film"></i> 동영상 보기</a></p>
 		     		# } #       	
 		     	# } else { #		     	
 		     		#if ( picture !=null ) { #
