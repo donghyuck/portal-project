@@ -1403,7 +1403,7 @@
 										</section>	
 																						
 									
-								<div class="page-header text-primary">
+								<div class="page-header text-default">
 										<small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small>
 										<#if !action.user.anonymous >		
 										<div class="k-window-actions panel-header-actions">				
