@@ -1332,7 +1332,7 @@
 						<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
 						</#if>						
 					</ul>	
-									<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
+			<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 									<!-- start attachement tab-pane -->
 									<div class="tab-pane" id="my-files">
 										<section class="custom-upload hide">
@@ -1345,7 +1345,7 @@
 										</section>											
 										<div class="blank-top-5" ></div>		
 										<div class="panel panel-default">
-											<div class="panel-body>
+											<div class="panel-body">
 												<div class="page-header page-nounderline-header text-primary">
 													<h5>
 														<p><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
@@ -1419,8 +1419,7 @@
 								</div>
 							</div>	
 						</div><!-- end photos  tab-pane -->
-					</div><!-- end of tab content -->														
-
+			</div><!-- end of tab content -->	
 		</section>		
 		
 		<section id="image-broswer" class="image-broswer"></section>
