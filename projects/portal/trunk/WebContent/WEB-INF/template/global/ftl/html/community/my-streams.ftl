@@ -165,10 +165,19 @@
 					change : function(e){			
 						$( '#'+ renderToString2 ).find('button.custom-upload-by-url').click(function(e){
 							var btn = $(this) ;
-							// data-source 
-							// data-url 
 							btn.parent().toggleClass('active');
 							btn.button('loading');
+							common.api.uploadMyImageByUrl({
+								data : {
+									sourceUrl: btn.attr('data-source'),
+									imageUrl: btn.attr('data-url')
+								},
+								always : function(){
+									btn.parent().toggleClass('active');
+									btn.button('reset');
+								}
+							});
+							
 						});
 					}
 				});							
