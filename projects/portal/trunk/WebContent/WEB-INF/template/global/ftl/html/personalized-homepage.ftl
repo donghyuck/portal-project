@@ -1374,13 +1374,13 @@
 											</#if>	
 										</div>
 										<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-												<label class="btn btn-warning active">
+												<label class="btn btn-sm btn-warning active">
 													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
 												</label>
-												<label class="btn btn-warning">
+												<label class="btn btn-sm btn-warning">
 													<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
 												</label>
-												<label class="btn btn-warning">
+												<label class="btn btn-sm btn-warning">
 													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
 												</label>	
 										</div>
