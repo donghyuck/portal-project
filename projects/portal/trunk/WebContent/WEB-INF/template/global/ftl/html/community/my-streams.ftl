@@ -172,7 +172,8 @@
 								success : function(response){
 									//alert(kendo.stringify(response));
 									//alert( btn.html() ) ;
-									btn.attr('disabled', 'disabled');	
+									alert(btn.parent().html());
+									btn.attr('disabled', 'disabled');
 									
 								},
 								always : function(){
