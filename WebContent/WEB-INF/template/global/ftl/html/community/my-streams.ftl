@@ -169,8 +169,7 @@
 							btn.button('loading');
 							common.api.uploadMyImageByUrl({
 								data : {
-									sourceUrl: btn.attr('data-source'),
-									imageUrl: btn.attr('data-url')
+									item: { sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url') }
 								},
 								always : function(){
 									btn.parent().toggleClass('active');
