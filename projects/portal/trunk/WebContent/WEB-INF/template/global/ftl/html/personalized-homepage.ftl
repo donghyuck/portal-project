@@ -209,14 +209,12 @@
 						dataSource : $('#attachment-list-view').data('kendoListView').dataSource
 					});								
 
-					common.ui.handleActionEvents(
-						$("#my-files .btn-group button"), 
-						{
-							event:'click',
-							handler : function(e){
-								var btn_icon = $(this).find("i");		
-								if( btn_icon.hasClass('fa-cloud-upload') ){								
-									if( !$('#attachment-files').data('kendoUpload') ){		
+
+				common.ui.handleButtonActionEvents(
+					$("#my-files button.btn-control-group"), 
+					{event: 'click', handlers: {
+						upload : function(e){
+								if( !$('#attachment-files').data('kendoUpload') ){		
 										$("#attachment-files").kendoUpload({
 										 	multiple : false,
 										 	width: 300,
@@ -238,7 +236,22 @@
 											}
 										});						
 									}
-									$("#my-files .custom-upload").toggleClass("hide");					
+									$("#my-files .custom-upload").toggleClass("hide");				
+						},
+						'url-upload' : function(e){
+									$("#my-files .custom-url-upload").toggleClass("hide");	
+						}		  						 
+					}}
+				);
+				
+					common.ui.handleActionEvents(
+						$("#my-files .btn-group button"), 
+						{
+							event:'click',
+							handler : function(e){
+								var btn_icon = $(this).find("i");		
+								if( btn_icon.hasClass('fa-cloud-upload') ){								
+													
 								}
 							} 
 						}							
@@ -1403,8 +1416,8 @@
 													<#if !action.user.anonymous >		
 													<p class="pull-right">	
 													<div class="btn-group">			
-														<button type="button" class="btn btn-info btn-sm" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
-														<button type="button" class="btn btn-info btn-sm" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; URL 업로드</button>				
+														<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
+														<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="url-upload"><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>				
 													</div>	
 													</p>	
 													</#if>					
