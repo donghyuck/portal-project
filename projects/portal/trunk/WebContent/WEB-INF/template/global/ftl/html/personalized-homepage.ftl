@@ -1346,16 +1346,13 @@
 										<div class="blank-top-5" ></div>		
 										<div class="panel panel-default">
 											<div class="panel-body">
-												<div class="page-header page-nounderline-header text-primary">
-													<h5>
-														<p><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
+												<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
 														<#if !action.user.anonymous >		
 														<p class="pull-right">				
 															<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
 														</p>	
 														</#if>	
-													</h5>																															
-												</div>
+																										
 												<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 													<label class="btn btn-sm btn-warning active">
 														<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
@@ -1369,7 +1366,7 @@
 												</div>												
 											</div>
 											<div class="panel-body scrollable color4" style="max-height:450px;">
-												<div id="attachment-list-view" ></div>
+												<div id="attachment-list-view" class="color4"></div>
 											</div>	
 											<div class="panel-footer" style="padding:0px;">
 												<div id="pager" class="k-pager-wrap"></div>
