@@ -333,11 +333,13 @@
 								});		
 								var uploadModel = kendo.observable({
 									data : {
-										sourceUrl : "", 
-										imageUrl : ""
+										sourceUrl : null, 
+										imageUrl : null
 									},
 									upload: function(e) {
-									alert('ss');
+									alert( kendo.stringify(this.data) );
+										
+									
 										var btn = $(this);
 										btn.button('loading');										
 										return false;
