@@ -1365,9 +1365,9 @@
 											<h5 >											
 												<small>파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small>
 												<#if !action.user.anonymous >		
-												<div class="pull-right">	
+												<p class="pull-right">		
 													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>		
-												</div>	
+												</p>	
 												</#if>												
 											</h5>		
 										</div>
