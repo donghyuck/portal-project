@@ -24,73 +24,52 @@
 				kendo.culture("ko-KR");
 										
 				// 2. ACCOUNTS LOAD		
-				
-				var currentUser = new User({});
+				var currentUser = new User();
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
 					authenticate : function( e ){
-						currentUser = e.token;						
+						currentUser = e.token.copy(currentUser);							
 					}
-				});
-				var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});			
+				});		
+				
+				
 								
 				// 3.MENU LOAD
-			
-				var currentPageName = "MENU_1_3";
-				var topBar = $("#navbar").extTopNavBar({ 
-					menu:"SYSTEM_MENU",
-					template : kendo.template($("#topnavbar-template").html() ),
-					items: [
-						{ 
-							name:"companySelector", 	selector: "#companyDropDownList", value: ${action.targetCompany.companyId},
-							change : function(data){
-								$("#navbar").data("companyPlaceHolder", data) ;
-								kendo.bind($("#site-info"), data );
-							}
-						},
-						{	name:"getMenuItem", menu: currentPageName, handler : function( data ){ 
-								kendo.bind($(".page-header"), data );   
-							} 
-						}
-					]
+				var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});			
+				var topBar = $("#navbar").extNavbar({
+					template : $("#top-navbar-template").html(),
+					items : [{ 
+						name:"companySelector", 
+						selector: "#companyDropDownList", 
+						value: ${action.user.companyId}, 
+						change : function(data){
+							data.copy(companyPlaceHolder);
+						}	
+					}]
 				});
-		
+	
 				// 4. CONTENT MAIN		
-				$("button.btn-control-group ").each(function (index) {					
-					var btn_control = $(this);
-					var btn_control_action = btn_control.attr("data-action");
-					if (btn_control_action == "user"){
-						btn_control.click( function(e){			
-							$("form[name='fm1'] input").val(selectedCompany.companyId);		
-							$("form[name='fm1']").attr("action", "main-user.do" ).submit(); 
-						} );						
-					}else if (btn_control_action == "layout"){
-						btn_control.click(function (e) {										
-							$(".body-group").each(function( index ) {
-								var panel_body = $(this);
-								var is_detail_body = false;
-								if (panel_body.attr("id") == "group-details"){
-									is_detail_body = true;
-								}else{
-									is_detail_body = false;
-								}								
-								if( panel_body.hasClass("col-sm-6" )){
-									panel_body.removeClass("col-sm-6");
-									panel_body.addClass("col-sm-12");	
-									if( is_detail_body ){
-										panel_body.css('padding', '5px 0 0 0');
-									}													
-								}else{
-									panel_body.removeClass("col-sm-12");
-									panel_body.addClass("col-sm-6");		
-									if( is_detail_body ){
-										panel_body.css('padding', '0 0 0 5px');
-									}				
-								}
-							});
-						});
-					}	
-				});							
+				common.ui.handleButtonActionEvents(
+					$("button.btn-control-group"), 
+					{event: 'click', handlers: {
+						company : function(e){
+							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
+							$("form[name='fm1']").attr("action", "main-company.do" ).submit(); 						
+						},
+						user : function(e){
+							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
+							$("form[name='fm1']").attr("action", "main-user.do" ).submit(); 						
+						}, 	
+						site : function(e){
+							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
+							$("form[name='fm1']").attr("action", "main-site.do" ).submit(); 						
+						}, 
+						top : function(e){					
+							$('html,body').animate({ scrollTop:  0 }, 300);
+						}  						 
+					}}
+				);
+						
 				// 1. GROUP GRID			        
 			        var selectedGroup = new Group();		      
 			        var group_grid = $("#group-grid").kendoGrid({
