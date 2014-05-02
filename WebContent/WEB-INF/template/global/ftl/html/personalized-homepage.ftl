@@ -1403,7 +1403,8 @@
 													<#if !action.user.anonymous >		
 													<p class="pull-right">	
 													<div class="btn-group">			
-														<button type="button" class="btn btn-info" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
+														<button type="button" class="btn btn-info btn-sm" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
+														<button type="button" class="btn btn-info btn-sm" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; URL 업로드</button>				
 													</div>	
 													</p>	
 													</#if>					
