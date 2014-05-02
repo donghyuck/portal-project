@@ -756,7 +756,7 @@
 						</figure>		
 					</div>			
 					#} else { #					
-					<div class="col-xs-12 col-lg-4">	
+					<div class="col-xs-12 col-lg-4" style="padding:2px;">	
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">				
 					</div>	
 					# } #						
