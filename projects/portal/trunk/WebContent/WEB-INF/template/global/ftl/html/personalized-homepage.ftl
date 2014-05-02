@@ -335,7 +335,7 @@
 									data : {
 										sourceUrl : "", 
 										imageUrl : ""
-									}.
+									},
 									upload: function(e) {
 										var btn = $(this);
 										btn.button('loading');
