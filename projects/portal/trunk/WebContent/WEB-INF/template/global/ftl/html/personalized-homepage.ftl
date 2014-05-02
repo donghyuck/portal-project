@@ -373,7 +373,7 @@
 												},
 												always : function(){
 													btn.button('reset');
-													this.reset();
+													$('#my-photo-stream form')[0].reset();
 												}
 											});		
 										}				
