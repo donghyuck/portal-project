@@ -642,15 +642,14 @@
 					</div>		     				     		
 		     		# } else { #		
 			     		#if ( picture !=null ) { #
-			     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
-			     		# } #		     		
-			     		#if ( source !=null ) { #
-			     		<p class="text-muted">source : <a href="#= source #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
-			     		# } #
+			     			<p><a href="#= source #" target="_blank"><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive"></a></p>
+			     		# } else { # 
+			     			<p class="text-muted">source : <a href="#= source #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
+			     		# } #	
 		     		# } #	     		
 		     	# } else { #		     	
 		     		#if ( picture !=null ) { #
-		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
+		     		<p><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive"></p>
 		     		# } #		     		
 		     		#if ( source !=null ) { #
 		     		<p class="text-muted">source : <a href="#= source #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
