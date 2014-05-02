@@ -1722,8 +1722,7 @@
 					var that = this;
 					var options = that.options;
 					if (typeof that.options.dataSource === 'object') {
-						that.dataSource = kendo.data.DataSource
-								.create(that.options.dataSource);
+						that.dataSource = kendo.data.DataSource.create(that.options.dataSource);
 					} else {
 						if (typeof options.media === 'string') {
 							var _data = {
@@ -1735,26 +1734,21 @@
 							case MEDIA_FACEBOOK:
 								_data.url = "/community/get-facebook-homefeed.do?output=json";
 								_data.data = "homeFeed";
-								_data.template = kendo.template($(
-										"#facebook-homefeed-template").html());
+								_data.template = kendo.template($("#facebook-homefeed-template").html());
 								break;
 							case MEDIA_TWITTER:
 								_data.url = "/community/get-twitter-hometimeline.do?output=json";
 								_data.data = "homeTimeline";
-								_data.template = kendo.template($(
-										"#twitter-timeline-template").html());
+								_data.template = kendo.template($("#twitter-timeline-template").html());
 								break;
 							case MEDIA_TUMBLR:
 								_data.url = "/community/get-tumblr-dashboard.do?output=json";
 								_data.data = "dashboardPosts";
-								_data.template = kendo.template($(
-										"#tumblr-dashboard-template").html());
+								_data.template = kendo.template($("#tumblr-dashboard-template").html());
 								break;
 							}
-
 							if (typeof options.template === UNDEFINED)
 								options.template = _data.template;
-
 							that.dataSource = DataSource.create({
 								type : JSON,
 								transport : {
@@ -1788,8 +1782,8 @@
 					var that = this;
 					var options = that.options;
 					var view = that.dataSource.view();
-					that.element.html(kendo.render(options.template, view));
-					that.trigger(CHANGE);
+					that.element.html(kendo.render(options.template, view));					
+					that.trigger(CHANGE);					
 				},
 				destroy : function() {
 					var that = this;
