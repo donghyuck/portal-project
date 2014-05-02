@@ -169,6 +169,9 @@
 							btn.button('loading');
 							common.api.uploadMyImageByUrl({
 								data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
+								success : function(e){
+									btn.attr('disabled', 'disabled');
+								},
 								always : function(){
 									btn.parent().toggleClass('active');
 									btn.button('reset');
