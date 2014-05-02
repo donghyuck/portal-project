@@ -67,6 +67,12 @@
 		});	
 	};				
 	
+	common.api.isValidURL = function (url){
+		  var urlregex = new RegExp(
+		        "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
+		  return urlregex.test(url);
+		}
+	
 	common.api.isValidEmail = function (email){
 		var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
         return expr.test(email);
