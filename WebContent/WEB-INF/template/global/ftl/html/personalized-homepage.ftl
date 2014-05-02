@@ -1342,8 +1342,7 @@
 											</div>								
 											<input name="uploadAttachment" id="attachment-files" type="file" />												
 											</#if>								
-										</section>										
-										
+										</section>											
 										<div class="blank-top-5" ></div>		
 										<div class="panel panel-default">
 											<div class="panel-body>
