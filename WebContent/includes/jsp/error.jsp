@@ -19,8 +19,6 @@
 		ex = (Throwable) request.getAttribute( org.springframework.security.web.WebAttributes.AUTHENTICATION_EXCEPTION );
 	}
 	
-	
-	
 	int objectType = 1;
 	int objectAttribute = 1 ;
 	int errorCode = 0;
