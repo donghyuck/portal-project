@@ -337,9 +337,9 @@
 										imageUrl : ""
 									},
 									upload: function(e) {
+									alert('ss');
 										var btn = $(this);
-										btn.button('loading');
-										
+										btn.button('loading');										
 										return false;
 									}
 								});
