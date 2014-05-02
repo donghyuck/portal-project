@@ -165,7 +165,7 @@
 					id: streamsPlaceHolder.socialAccountId, 
 					media: streamsPlaceHolder.serviceProviderName,
 					change : function(e){
-						alert($(this).html()); 					
+						alert($( '#'+ renderToString2 ).html()); 					
 					}
 				});				
 				
