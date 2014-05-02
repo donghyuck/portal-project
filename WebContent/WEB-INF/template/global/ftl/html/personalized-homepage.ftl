@@ -1364,12 +1364,15 @@
 										<div class="page-header text-primary">
 											<h5 >											
 												<small>파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small>
-												<#if !action.user.anonymous >		
+											</h5>	
+											<#if !action.user.anonymous >		
+											<p class="pull-right">	
 												<div class="btn-group">			
-													<button type="button" class="btn btn-info" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 파일업로드</button>		
+													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"> &nbsp; 파일업로드</button>		
 												</div>		
-												</#if>												
-											</h5>
+											</p>	
+											</#if>												
+											
 										</div>
 										<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-warning active">
