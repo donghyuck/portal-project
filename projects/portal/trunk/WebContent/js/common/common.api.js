@@ -68,8 +68,7 @@
 	};				
 	
 	common.api.isValidUrl = function (url){
-		  var urlregex = new RegExp(
-		        "^(http:\/\/www.|https:\/\/www.|ftp:\/\/www.|www.){1}([0-9A-Za-z]+\.)");
+		  var urlregex = new RegExp("^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*$");
 		  return urlregex.test(url);
 		}
 	
