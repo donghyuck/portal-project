@@ -338,17 +338,33 @@
 									},
 									upload: function(e) {
 										e.preventDefault();		
+										var hasError = fasle;
 										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
 										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.api.isValidUrl( this.data.sourceUrl) ){
-											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error")
+											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");
+											hasError = true;
 										}										
 										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.api.isValidUrl(this.data.imageUrl)  ){
-											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error")
+											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error");
+											hasError = true;
 										}
 										
-									alert( kendo.stringify(this.data) );
-										var btn = $(e.target);
-										btn.button('loading');										
+										if( !hasError) {
+											var btn = $(e.target);
+											btn.button('loading');												
+											common.api.uploadMyImageByUrl({
+												data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
+												success : function(response){
+													var photo_list_view = $('#photo-list-view').data('kendoListView');
+													photo_list_view.dataSource.read();
+													var selectedCells = photo_list_view.select();
+													photo_list_view.select("tr:eq(1)");			
+												},
+												always : function(){
+													btn.button('reset');
+												}
+											});										
+										}								
 										return false;
 									}
 								});
@@ -1424,7 +1440,7 @@
 														</div>														
 														<div class="form-group">
 															<div class="col-sm-offset-2 col-sm-10">
-																<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="click: upload" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
+																<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="click: upload; return false;" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
 															</div>
 														</div>
 													</form>
