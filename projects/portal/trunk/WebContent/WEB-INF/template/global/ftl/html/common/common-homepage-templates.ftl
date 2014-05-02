@@ -635,6 +635,12 @@
 		     		<p>
 		     		<img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
 		     		</p>
+		     	# } else if ( type === 'VIDEO' ) { #
+		     		#if ( source !=null && source.indexOf("www.youtube.com") > -1 ) { #
+					<div class="flex-video">
+						<iframe width="420" height="315" src="#= source #" frameborder="0" allowfullscreen></iframe>
+					</div>		     				     		
+		     		# } #		     		
 		     	# } else { #		     	
 		     		#if ( picture !=null ) { #
 		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
