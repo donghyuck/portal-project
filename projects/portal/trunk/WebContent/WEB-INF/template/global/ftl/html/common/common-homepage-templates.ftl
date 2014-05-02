@@ -772,7 +772,7 @@
 						<figure>	
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">
 							<figcaption>							
-								<button type="button" class="btn btn-primary btn-sm custom-upload-by-url"  data-source="#:postUrl#" data-url="#: post_photo_url#" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i></button>
+								<button type="button" class="btn btn-primary btn-sm custom-upload-by-url pull-right"  data-source="#:postUrl#" data-url="#: post_photo_url#" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i></button>
 							</figcaption>		
 						</figure>			
 					</div>	
