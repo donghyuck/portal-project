@@ -739,12 +739,17 @@
 				<h5 class="media-heading">#:blogName#</h5>
 				<p>#:postUrl#</p>
 				<p>#= type #</p>
+				<p>#= source #</p>
 				# if (type == 'TEXT') {#
-					# if ( caption != null ) { #						
+					# if ( body != null ) { #						
 					<p>#= body #</p>
 					# } #						
 				#} if (type == 'LINK') {#
+					# if ( description != null ) { #						
+					<p>#= description #</p>
+					# } #					
 				<p><a href="#: url #" target="_blank"><i class="fa fa-link"></i></a></p>	
+				
 				#} else if (type == 'PHOTO') {#	
 					<div class="row">				
 					# for (var i = 0; i < photos.length ; i++) { #	
