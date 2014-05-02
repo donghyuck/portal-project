@@ -1402,15 +1402,17 @@
 											</div>	
 										</section>	
 																						
-							<div class="panel panel-default">			
-								<div class="panel-heading">
+									
+								<div class="page-header text-primary">
 										<small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small>
 										<#if !action.user.anonymous >		
 										<div class="k-window-actions panel-header-actions">				
 											<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
 										</div>	
 										</#if>																																
-								</div>					
+								</div>				
+								
+							<div class="panel panel-default">			
 								<div class="panel-body scrollable" style="max-height:450px;">
 									<div id="photo-list-view" ></div>
 								</div>	
