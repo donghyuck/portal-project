@@ -638,7 +638,7 @@
 		     	# } else if ( type === 'VIDEO' ) { #
 		     		#if ( source !=null && source.indexOf("www.youtube.com") > -1 ) { #
 					<div class="flex-video">
-						<iframe width="100%" heigh="300" src="#= source #" frameborder="0" allowfullscreen></iframe>						
+						<iframe width="auto" heigh="300" src="#= source #" frameborder="0" allowfullscreen></iframe>						
 					</div>		     				     		
 		     		# } else { #		
 			     		#if ( picture !=null ) { #
