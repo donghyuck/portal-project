@@ -715,8 +715,6 @@
 					<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-rounded">
 					# } #
 				</p>
-				
-				
 				<p class="text-muted"><i class="fa fa-retweet"></i> #= retweetCount #
 				#if (retweeted) {#					
 				<div class="media">
@@ -750,7 +748,7 @@
 					<div class="col-xs-12 col-lg-12">	
 						<figure>	
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">
-							<figcaption class="pull-right">							
+							<figcaption>							
 								<button type="button" class="btn btn-primary btn-sm custom-upload-by-url"  data-source="#:postUrl#" data-url="#: post_photo_url#" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i>&nbsp 내 사진으로 복사</button>
 							</figcaption>		
 						</figure>		
@@ -759,7 +757,7 @@
 					<div class="col-xs-12 col-lg-4" style="padding:2px;">	
 						<figure>	
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">
-							<figcaption class="pull-right">							
+							<figcaption>							
 								<button type="button" class="btn btn-primary btn-sm custom-upload-by-url"  data-source="#:postUrl#" data-url="#: post_photo_url#" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i></button>
 							</figcaption>		
 						</figure>			
