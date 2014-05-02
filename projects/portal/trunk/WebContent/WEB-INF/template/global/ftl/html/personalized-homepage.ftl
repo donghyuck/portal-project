@@ -1327,6 +1327,7 @@
 				</div>
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
+			<div class="container">
 			<div class="row">
 				<div class="col-lg-12">
 					<div class="blank-top-5" ></div>
@@ -1428,6 +1429,7 @@
 						</div><!-- end photos  tab-pane -->
 					</div><!-- end of tab content -->														
 				</div>
+			</div>	
 			</div>	
 		</section>		
 		
