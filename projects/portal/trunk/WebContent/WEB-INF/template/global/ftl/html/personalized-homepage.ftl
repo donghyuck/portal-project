@@ -339,10 +339,10 @@
 									upload: function(e) {
 										e.preventDefault();		
 										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
-										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 ){
+										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.api.isValidUrl( this.data.sourceUrl) ){
 											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error")
 										}										
-										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 ){
+										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.api.isValidUrl(this.data.imageUrl)  ){
 											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error")
 										}
 										
