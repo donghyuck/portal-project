@@ -1395,14 +1395,14 @@
 														<div class="form-group">
 															<label class="col-sm-2 control-label"><small>출처</small></label>
 															<div class="col-sm-10">
-																<input type="url" class="form-control" placeholder="출처 URL">
+																<input type="url" class="form-control" placeholder="http://">
 																<span class="help-block">사진 이미지 출처 URL 을 입력하세요.</span>
 															</div>
 														</div>
 														<div class="form-group">
 															<label class="col-sm-2 control-label"><small>사진</small></label>
 															<div class="col-sm-10">
-																<input type="url" class="form-control" placeholder="사진 URL">
+																<input type="url" class="form-control" placeholder="http://">
 																<span class="help-block">사진 이미지 경로가 있는 URL 을 입력하세요.</span>
 															</div>
 														</div>														
