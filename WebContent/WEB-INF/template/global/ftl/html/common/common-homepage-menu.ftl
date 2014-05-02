@@ -11,6 +11,7 @@
 			<#if action.webSite ?? >
 			<#assign webSite = webSite />				
 			<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />	
+			<header class="headroom">
 				<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 					<div class="container">
 						<div class="navbar-header">					
@@ -56,6 +57,7 @@
 						</div>						
 					</div>
 				</nav>
+			</header>	
 			</#if>		
 			<!-- END MENU -->		
 			<!-- START My profile Modal -->
