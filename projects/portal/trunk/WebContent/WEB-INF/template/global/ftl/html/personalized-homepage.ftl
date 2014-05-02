@@ -1329,6 +1329,7 @@
 			</header>	
 			<div class="row">
 				<div class="col-lg-12">
+					<div class="blank-top-5" ></div>
 					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 						<!--<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>					-->
 						<#if !action.user.anonymous >	
@@ -1336,27 +1337,7 @@
 						<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
 						</#if>						
 					</ul>	
-				</div>
-			</div>
-							
-				<div class="blank-top-5" ></div>	
-							
-									<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">	
-										<div class="tab-pane" id="my-notice">
-											<section class="side2 hide">
-												<div class="btn-group">			
-													<button type="button" class="btn btn-info"><i class="fa fa-th-list"></i>&nbsp;  목록보기</button>
-												</div>
-												<div id="announce-creator" class="blank-top-15" ></div>
-											</section>
-											<section class="side1">
-												<div class="btn-group">			
-													<button type="button" class="btn btn-info"><i class="fa fa-plus"></i> &nbsp; 공지 & 이벤트 추가</button>		
-												</div>		
-												<div class="blank-top-5" ></div>
-												
-											</section>											
-										</div>
+									<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 									<!-- start attachement tab-pane -->
 									<div class="tab-pane" id="my-files">
 										<section class="custom-upload hide">
@@ -1443,7 +1424,9 @@
 												</div>
 										</div>	
 									</div><!-- end photos  tab-pane -->
-								</div><!-- end of tab content -->					
+								</div><!-- end of tab content -->	
+													
+				</div>
 			</div>	
 		</section>		
 		
