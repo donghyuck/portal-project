@@ -740,7 +740,7 @@
 			<div class="media-body">
 				<h5 class="media-heading">#:blogName#</h5>
 				<p>#:postUrl#</p>
-				
+				<p>#= type #</p>
 				#if (type == 'PHOTO') {#	
 					<div class="row">				
 					# for (var i = 0; i < photos.length ; i++) { #	
