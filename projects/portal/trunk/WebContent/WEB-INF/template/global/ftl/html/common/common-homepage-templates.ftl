@@ -736,13 +736,14 @@
 			<img src="http://222.122.63.146/community/show-tumblr-avatar.do?blogName=#: blogName#&blogAvatarSize=48" alt="#: blogName #" class="media-object img-rounded">
 			</a>
 			<div class="media-body">
-				<h5 class="media-heading">#:blogName#
+				<h5 class="media-heading">
+				<span class="label label-info">#: type #</span> 
+				#:blogName#
 				#if( sourceTitle != null && sourceUrl != null){ #
 				<a href="#: sourceUrl #" target="_blank"><i class="fa fa-retweet"></i>  #: sourceTitle #</a>
 				#}#
 				</h5>
 				<p>#:postUrl#</p>
-				<p>#= type #</p>
 				# if (type == 'TEXT') {#
 					# if ( body != null ) { #						
 					<p>#= body #</p>
