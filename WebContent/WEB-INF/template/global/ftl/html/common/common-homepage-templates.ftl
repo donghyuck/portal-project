@@ -743,7 +743,6 @@
 				</h5>
 				<p>#:postUrl#</p>
 				<p>#= type #</p>
-				<p>#= source #</p>
 				# if (type == 'TEXT') {#
 					# if ( body != null ) { #						
 					<p>#= body #</p>
