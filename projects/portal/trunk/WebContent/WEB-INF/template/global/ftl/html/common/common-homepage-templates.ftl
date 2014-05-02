@@ -740,8 +740,8 @@
 				<p>#:postUrl#</p>
 				<p>#= type #</p>
 				# if (type == 'LINK') {#
-				<p><a href="#: url  #" target="_blank"><i class="fa fa-link"></i></a></p>	
-				# else if (type == 'PHOTO') {#	
+				<p><a href="#: url #" target="_blank"><i class="fa fa-link"></i></a></p>	
+				#} else if (type == 'PHOTO') {#	
 					<div class="row">				
 					# for (var i = 0; i < photos.length ; i++) { #	
 					# var post_photo = photos[i] ; #
