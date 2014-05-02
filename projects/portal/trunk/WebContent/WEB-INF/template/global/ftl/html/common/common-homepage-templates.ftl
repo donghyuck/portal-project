@@ -638,9 +638,16 @@
 		     	# } else if ( type === 'VIDEO' ) { #
 		     		#if ( source !=null && source.indexOf("www.youtube.com") > -1 ) { #
 					<div class="flex-video">
-						<iframe width="100%" heigh="auto" src="#= source #" frameborder="0" allowfullscreen></iframe>						
+						<iframe width="100%" heigh="300" src="#= source #" frameborder="0" allowfullscreen></iframe>						
 					</div>		     				     		
-		     		# } #		     		
+		     		# } else { #		
+			     		#if ( picture !=null ) { #
+			     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
+			     		# } #		     		
+			     		#if ( source !=null ) { #
+			     		<p class="text-muted">source : <a href="#= source #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
+			     		# } #
+		     		# } #	     		
 		     	# } else { #		     	
 		     		#if ( picture !=null ) { #
 		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
