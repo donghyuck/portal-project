@@ -739,7 +739,7 @@
 				<h5 class="media-heading">#:blogName#</h5>
 				<p>#:postUrl#</p>
 				<p>#= type #</p>
-				# if (type == 'TEXT) {#
+				# if (type == 'TEXT') {#
 					# if ( caption != null ) { #						
 					<p>#= body #</p>
 					# } #						
