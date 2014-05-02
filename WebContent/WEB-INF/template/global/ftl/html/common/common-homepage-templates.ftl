@@ -742,10 +742,7 @@
 				<p>#:postUrl#</p>
 				
 				#if (type == 'PHOTO') {#	
-					<div class="row marginless">
-					#if (photos.length > 0 ) {#
-					<div class="row">
-					#}#					
+					<div class="row">				
 					# for (var i = 0; i < photos.length ; i++) { #	
 					# var post_photo = photos[i] ; #
 					# var post_photo_url = post_photo.sizes[0].url ; #
@@ -763,10 +760,7 @@
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">				
 					</div>	
 					# } #						
-					# } #					
-					#if (photos.length > 0 ) {#
-					</div>
-					#}#											
+					# } #														
 					</div>				
 				# } #							
 				<p>#= caption #</p>		
