@@ -337,18 +337,24 @@
 										imageUrl : null
 									},
 									upload: function(e) {
-										e.preventDefault();
+										e.preventDefault();		
+										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
+										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 ){
+											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error")
+										}										
+										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 ){
+											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error")
+										}
 										
 									alert( kendo.stringify(this.data) );
-									alert( $(e.target).html() );	
-									
-										var btn = $(this);
+										var btn = $(e.target);
 										btn.button('loading');										
 										return false;
 									}
 								});
 								kendo.bind($("#my-photo-stream form"), uploadModel);
-							}
+							}							
+							$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
 							$("#my-photo-stream .custom-upload").toggleClass("hide");				
 						},	  
 						'upload-close' : function(e){
