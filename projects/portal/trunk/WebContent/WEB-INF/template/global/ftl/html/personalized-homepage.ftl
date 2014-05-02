@@ -344,7 +344,7 @@
 						},		  
 						'upload-close' : function(e){
 							alert('close');
-							$("#my-photo-stream .custom-url-upload").toggleClass("hide");	
+							$("#my-photo-stream .custom-upload").toggleClass("hide");		
 						}													 
 					}}
 				);
