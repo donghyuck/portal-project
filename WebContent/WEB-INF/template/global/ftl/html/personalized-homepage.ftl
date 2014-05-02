@@ -343,6 +343,7 @@
 							btn.button('loading');
 						},		  
 						'upload-close' : function(e){
+							alert('close');
 							$("#my-photo-stream .custom-url-upload").toggleClass("hide");	
 						}													 
 					}}
