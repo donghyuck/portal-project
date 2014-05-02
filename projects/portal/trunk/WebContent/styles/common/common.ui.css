@@ -1389,7 +1389,7 @@ figcaption .pager li > a:hover {
 	color: #000;
 }
 
-div figure:hover figcaption,  div figure:hover figcaption.active,  {
+div figure:hover figcaption,  div figure figcaption.active,  {
 	opacity: 1;	
 	display: block ;
 	buttom: 0;
