@@ -362,7 +362,7 @@
 										var btn = $(e.target);
 										btn.button('loading');												
 										common.api.uploadMyImageByUrl({
-											data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
+											data : this.data ,
 											success : function(response){
 												var photo_list_view = $('#photo-list-view').data('kendoListView');
 												photo_list_view.dataSource.read();
