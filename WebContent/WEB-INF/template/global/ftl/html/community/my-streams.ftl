@@ -440,7 +440,7 @@
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<p><i class="fa fa-info"></i> 상단 미디어 버튼을 클릭하면 해당 미디어 소식을 볼 수 있습니다.</p>					
 					<p>새로운 쇼셜 미디어 연결은 프로필 보기의 쇼셜네트워크 탭에서 지원합니다.</p>
-					<div class="pull-right"><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info btn-sm" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a></div>
+					<div><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info btn-sm" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a></div>
 				</div>
 			</div>
 		</script>								
