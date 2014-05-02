@@ -1391,7 +1391,7 @@
 													<div class="page-header text-primary">
 														<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
 													</div>						
-													<form class="form-horizontal" role="form">
+													<form name="photo-url-upload-form" class="form-horizontal" role="form">
 														<div class="form-group">
 															<label class="col-sm-2 control-label"><small>출처</small></label>
 															<div class="col-sm-10">
