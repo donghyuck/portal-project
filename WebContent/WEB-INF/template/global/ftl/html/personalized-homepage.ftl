@@ -1409,9 +1409,9 @@
 											<small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small>
 										</h5>	
 										<#if !action.user.anonymous >		
-										<p class="pull-right">			
+										<div class="panel-header-actions">				
 											<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-										</p>	
+										</div>	
 										</#if>												
 									</div>																						
 								</div>					
