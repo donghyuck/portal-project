@@ -155,12 +155,10 @@
 					close : function(){
 						$('#navbar-btn-my-streams').find('input[value="' + streamsPlaceHolder.socialAccountId + '"]').click();				
 					}
-				} );	
-								
+				} );									
 				if(! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){					
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
-				}
-				
+				}				
 				$( '#'+ renderToString2 ).extMediaStreamView({ 
 					id: streamsPlaceHolder.socialAccountId, 
 					media: streamsPlaceHolder.serviceProviderName,
@@ -169,12 +167,11 @@
 							var btn = $(this) ;
 							// data-source 
 							// data-url 
-							btn.parent().toogleClass('active');
+							btn.parent().toggleClass('active');
 							btn.button('loading');
 						});
 					}
-				});				
-				
+				});							
 				if( ! $( "#" + renderToString + "-prop-grid" ).data("kendoGrid") ){
 					$( "#" + renderToString + "-prop-grid").kendoGrid({
 						dataSource : {		
