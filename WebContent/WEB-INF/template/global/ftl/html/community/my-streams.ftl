@@ -169,8 +169,11 @@
 							btn.button('loading');
 							common.api.uploadMyImageByUrl({
 								data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
-								success : function(e){
+								success : function(response){
+									alert(kendo.stringify(response));
+									alert( btn.html() ) ;
 									btn.attr('disabled', 'disabled');	
+									
 								},
 								always : function(){
 									btn.parent().toggleClass('active');
