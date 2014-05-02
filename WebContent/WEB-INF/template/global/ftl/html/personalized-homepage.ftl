@@ -241,7 +241,7 @@
 						'url-upload' : function(e){
 							var btn = $(this);
 							btn.button('loading');
-						}		  
+						},		  
 						'upload-close' : function(e){
 							$("#my-files .custom-url-upload").toggleClass("hide");	
 						}													 
