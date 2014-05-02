@@ -176,7 +176,6 @@
 								always : function(){
 									btn.parent().toggleClass('active');
 									btn.button('reset');
-									btn.attr('disabled', 'disabled');
 								}
 							});
 							
