@@ -338,7 +338,7 @@
 									},
 									upload: function(e) {
 										e.preventDefault();		
-										var hasError = fasle;
+										var hasError = false;
 										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
 										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.api.isValidUrl( this.data.sourceUrl) ){
 											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");
