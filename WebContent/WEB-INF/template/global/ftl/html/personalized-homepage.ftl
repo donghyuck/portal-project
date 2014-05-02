@@ -1399,13 +1399,13 @@
 											</#if>
 										</section>	
 										<div class="page-header text-primary">
-												<h5 >											
-													<small>사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small>
+												<h5 >	
 													<#if !action.user.anonymous >		
 													<div class="btn-group">			
 														<button type="button" class="btn btn-info" data-toggle="button"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>		
 													</div>		
-													</#if>												
+													</#if>																						
+													<p><small>사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>												
 												</h5>
 											</div>													
 											<div class="blank-top-5" ></div>
