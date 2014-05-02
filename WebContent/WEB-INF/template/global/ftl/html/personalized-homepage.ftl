@@ -1393,13 +1393,13 @@
 													</div>						
 													<form class="form-horizontal" role="form">
 														<div class="form-group">
-															<label class="col-sm-2 control-label">Email</label>
+															<label class="col-sm-2 control-label">출처 URL</label>
 															<div class="col-sm-10">
 																<input type="url" class="form-control" placeholder="출처 URL">
 															</div>
 														</div>
 														<div class="form-group">
-															<label class="col-sm-2 control-label">Email</label>
+															<label class="col-sm-2 control-label">이미지 URL</label>
 															<div class="col-sm-10">
 																<input type="url" class="form-control" placeholder="이미지 URL">
 															</div>
