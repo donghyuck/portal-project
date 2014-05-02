@@ -1409,7 +1409,7 @@
 													<div class="page-header text-primary">
 														<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
 													</div>											
-													<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="url-upload"><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>											
+													<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="url-upload" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
 													</#if>
 												</div>
 											</div>	
