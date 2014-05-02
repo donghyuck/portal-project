@@ -114,7 +114,7 @@
 			</div>
 			
 			<div class="page-header text-primary">
-				<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong></h5>
+				<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong>&nbsp;<small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h5>
 			</div>
 			<div id="photo-prop-grid"></div>			
 			<div class="page-header text-primary">

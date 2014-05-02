@@ -548,8 +548,7 @@
 			<div class="row">		
 				<div class="col-sm-12">
 					<div class="panel panel-default" style="min-height:300px;" >
-						<div class="panel-heading selected-company-info" style="padding:5px;">
-						
+						<div class="panel-heading selected-company-info" style="padding:5px;">						
 							<div class="btn-group">
 							<#if request.isUserInRole('ROLE_SYSTEM' )>
 								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>				
