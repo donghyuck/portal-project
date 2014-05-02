@@ -238,12 +238,8 @@
 							}
 							$("#my-files .custom-upload").toggleClass("hide");				
 						},
-						'url-upload' : function(e){
-							var btn = $(this);
-							btn.button('loading');
-						},		  
 						'upload-close' : function(e){
-							$("#my-files .custom-url-upload").toggleClass("hide");	
+							$("#my-files .custom-upload").toggleClass("hide");		
 						}													 
 					}}
 				);						
@@ -343,7 +339,6 @@
 							btn.button('loading');
 						},		  
 						'upload-close' : function(e){
-							alert('close');
 							$("#my-photo-stream .custom-upload").toggleClass("hide");		
 						}													 
 					}}
