@@ -439,7 +439,7 @@
 				<div data-alert class="alert alert-danger">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<p>새로운 미디어 연결은 프로필 보기의 쇼셜네트워크 탭에서 지원합니다.</p>
-					<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info btn-sm" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a>
+					<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info btn-sm pull-right" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a>
 				</div>
 			</div>
 		</script>								
