@@ -743,10 +743,12 @@
 				
 				#if (type == 'PHOTO') {#	
 					<div class="row marginless">
+					#if (photos.length > 0 ) {#
+					<div class="row">
+					#}#					
 					# for (var i = 0; i < photos.length ; i++) { #	
 					# var post_photo = photos[i] ; #
-					# var post_photo_url = post_photo.sizes[0].url ; #	
-					
+					# var post_photo_url = post_photo.sizes[0].url ; #
 					#if (photos.length == 1) {#
 					<div class="col-xs-12 col-lg-12">	
 						<figure>	
@@ -756,12 +758,15 @@
 							</figcaption>		
 						</figure>		
 					</div>			
-					#} else { #
-					<div class="col-xs-12 col-lg-4 image-grid">	
+					#} else { #					
+					<div class="col-xs-12 col-lg-4">	
 						<img src="#: post_photo_url  #" alt="media">				
 					</div>	
-					# } #	
-					# } #	
+					# } #						
+					# } #					
+					#if (photos.length > 0 ) {#
+					</div>
+					#}#											
 					</div>				
 				# } #							
 				<p>#= caption #</p>		
