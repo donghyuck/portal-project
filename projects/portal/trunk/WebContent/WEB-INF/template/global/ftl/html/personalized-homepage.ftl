@@ -341,11 +341,12 @@
 										this.data.imageUrl = null;
 									},
 									upload: function(e) {
-										e.preventDefault();		
+										e.preventDefault();	
+										var hasError = false;	
 										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
 										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.api.isValidUrl( this.data.sourceUrl) ){
-											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");
-											return false;
+											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");			
+											hasError = true;					
 										}else{
 											if( $('#my-photo-stream form div.form-group').eq(0).hasClass("has-error") ){
 												$('#my-photo-stream form div.form-group').eq(0).removeClass("has-error");
@@ -353,27 +354,29 @@
 										}																				
 										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.api.isValidUrl(this.data.imageUrl)  ){
 											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error");
-											return false;
+											hasError = true;		
 										}else{
 											if( $('#my-photo-stream form div.form-group').eq(1).hasClass("has-error") ){
 												$('#my-photo-stream form div.form-group').eq(1).removeClass("has-error");
 											}											
-										}										
-										var btn = $(e.target);
-										btn.button('loading');												
-										common.api.uploadMyImageByUrl({
-											data : this.data ,
-											success : function(response){
-												var photo_list_view = $('#photo-list-view').data('kendoListView');
-												photo_list_view.dataSource.read();
-												var selectedCells = photo_list_view.select();
-												photo_list_view.select("tr:eq(1)");			
-											},
-											always : function(){
-												btn.button('reset');
-												this.reset();
-											}
-										});						
+										}				
+										if( !hasError ){
+											var btn = $(e.target);
+											btn.button('loading');												
+											common.api.uploadMyImageByUrl({
+												data : this.data ,
+												success : function(response){
+													var photo_list_view = $('#photo-list-view').data('kendoListView');
+													photo_list_view.dataSource.read();
+													var selectedCells = photo_list_view.select();
+													photo_list_view.select("tr:eq(1)");			
+												},
+												always : function(){
+													btn.button('reset');
+													this.reset();
+												}
+											});		
+										}				
 										return false;
 									}
 								});
