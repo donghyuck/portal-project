@@ -23,7 +23,6 @@
 				kendo.culture("ko-KR");
 										
 				// 2. ACCOUNTS LOAD						
-				// var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});	
 				var currentUser = new User();
 				var accounts = $("#account-panel").kendoAccounts({
 					visible : false,
@@ -532,7 +531,7 @@
 		</style>
 		</#compress>
     </head>
-	<body>
+	<body class="color0">
 		<!-- START HEADER -->
 		<section id="navbar" class="layout"></section>
 		<!-- END HEADER -->
