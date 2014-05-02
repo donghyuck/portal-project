@@ -170,7 +170,7 @@
 							common.api.uploadMyImageByUrl({
 								data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
 								success : function(e){
-									btn.attr('disabled', 'disabled');
+									btn.attr('disabled', 'disabled');	
 								},
 								always : function(){
 									btn.parent().toggleClass('active');
