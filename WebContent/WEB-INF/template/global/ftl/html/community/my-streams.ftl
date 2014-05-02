@@ -167,10 +167,10 @@
 							var btn = $(this) ;
 							btn.parent().toggleClass('active');
 							btn.button('loading');
-							var data = { sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url') };
-							
 							common.api.uploadMyImageByUrl({
-								data :  kendo.stringify(data),
+								data : {
+									item : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')}
+								},
 								always : function(){
 									btn.parent().toggleClass('active');
 									btn.button('reset');
