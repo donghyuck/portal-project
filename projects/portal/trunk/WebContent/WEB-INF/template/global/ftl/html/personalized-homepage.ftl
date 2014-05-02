@@ -343,7 +343,7 @@
 							btn.button('loading');
 						},		  
 						'upload-close' : function(e){
-							$("#my-files .custom-url-upload").toggleClass("hide");	
+							$("#my-photo-stream .custom-url-upload").toggleClass("hide");	
 						}													 
 					}}
 				);
@@ -1400,26 +1400,18 @@
 												</div>
 											</div>	
 										</section>	
-																						
-								<div class="row">
-								<div class="col-lg-12">	
-								
-										
-							</div>
-							</div>	
 							<div class="panel panel-default">			
 								<div class="panel-body">
-								<div class="page-header page-nounderline-header text-primary">
-									<h5>
-										<p><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
-										<#if !action.user.anonymous >		
-										<p class="pull-right">				
-											<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-										</p>	
-										</#if>	
-									</h5>																															
-								</div>		
-																
+									<div class="page-header page-nounderline-header text-primary">
+										<h5>
+											<p><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
+											<#if !action.user.anonymous >		
+											<p class="pull-right">				
+												<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+											</p>	
+											</#if>	
+										</h5>																															
+									</div>																	
 								</div>
 								<div class="panel-body scrollable" style="max-height:450px;">
 									<div id="photo-list-view" ></div>
