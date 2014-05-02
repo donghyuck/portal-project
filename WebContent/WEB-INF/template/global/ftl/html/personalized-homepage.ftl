@@ -307,7 +307,7 @@
 					$("#my-photo-stream button.btn-control-group"), 
 					{event: 'click', handlers: {
 						upload : function(e){
-							if( !$("#photo-files").data("kendoUpload")	){						
+							if( !$("#photo-files").data("kendoUpload")	){					
 								$("#photo-files").kendoUpload({
 									multiple : true,
 									width: 300,
@@ -331,13 +331,20 @@
 										}				
 									}
 								});		
+								var uploadModel = kendo.observable({
+									data : {
+										sourceUrl : "", 
+										imageUrl : ""
+									}.
+									upload: function(e) {
+										var btn = $(this);
+										btn.button('loading');
+									}
+								});
+								kendo.bind($("#my-photo-stream form"), uploadModel);
 							}
 							$("#my-photo-stream .custom-upload").toggleClass("hide");				
-						},
-						'url-upload' : function(e){
-							var btn = $(this);
-							btn.button('loading');
-						},		  
+						},	  
 						'upload-close' : function(e){
 							$("#my-photo-stream .custom-upload").toggleClass("hide");		
 						}													 
@@ -519,8 +526,7 @@
 		}		
 
 
-		function createEditor( renderTo ){				
-		
+		function createEditor( renderTo ){						
 			if(!renderTo.data("kendoEditor") ){			
 				var imageBrowser = $('#image-broswer').extImageBrowser({
 					template : $("#image-broswer-template").html(),
@@ -528,8 +534,7 @@
 						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						imageBrowser.close();
 					}
-				});			
-				
+				});							
 				var hyperLinkPopup = $('#editor-popup').extEditorPopup({
 					type : 'createLink',
 					title : "하이퍼링크 삽입",
@@ -538,8 +543,7 @@
 						renderTo.data("kendoEditor").exec("inserthtml", { value : e.html } );
 						hyperLinkPopup.close();
 					}
-				});
-				
+				});				
 				renderTo.kendoEditor({
 						tools : [
 							'bold',
@@ -1395,20 +1399,20 @@
 														<div class="form-group">
 															<label class="col-sm-2 control-label"><small>출처</small></label>
 															<div class="col-sm-10">
-																<input type="url" class="form-control" placeholder="URL">
+																<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.sourceUrl">
 																<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
 															</div>
 														</div>
 														<div class="form-group">
 															<label class="col-sm-2 control-label"><small>사진</small></label>
 															<div class="col-sm-10">
-																<input type="url" class="form-control" placeholder="URL">
+																<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.imageUrl">
 																<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
 															</div>
 														</div>														
 														<div class="form-group">
 															<div class="col-sm-offset-2 col-sm-10">
-																<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-action="url-upload" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
+																<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="click: upload" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
 															</div>
 														</div>
 													</form>
