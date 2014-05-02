@@ -1413,7 +1413,7 @@
 												</#if>												
 										</div>													
 											<div class="blank-top-5" ></div>
-											<div class="panel panel-default panel-flat">								
+											<div class="panel panel-default">								
 												<div class="panel-body scrollable" style="max-height:450px;">
 													<div id="photo-list-view" ></div>
 												</div>	
