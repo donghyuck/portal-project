@@ -1326,7 +1326,14 @@
 					<button type="button" class="btn btn-info"><i class="fa fa-envelope"></i></button>
 				</div>
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
-			</header>					
+			</header>	
+			<div class="row">
+				<div class="col-lg-12">
+				
+				ss
+				</div>
+			</div>
+							
 				<div class="blank-top-5" ></div>	
 									<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 										<!--<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>					-->
