@@ -743,7 +743,7 @@
 					# if ( caption != null ) { #						
 					<p>#= body #</p>
 					# } #						
-				# if (type == 'LINK') {#
+				#} if (type == 'LINK') {#
 				<p><a href="#: url #" target="_blank"><i class="fa fa-link"></i></a></p>	
 				#} else if (type == 'PHOTO') {#	
 					<div class="row">				
