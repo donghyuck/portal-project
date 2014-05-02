@@ -339,6 +339,8 @@
 									upload: function(e) {
 										var btn = $(this);
 										btn.button('loading');
+										
+										return false;
 									}
 								});
 								kendo.bind($("#my-photo-stream form"), uploadModel);
