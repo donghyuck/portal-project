@@ -35,8 +35,7 @@
 				});					
 				
 				// top nav bar 
-				$('nav.navbar:first').headroom();
-				
+				$("#header").headroom();				
 				<#if !action.user.anonymous ></#if>	
 			}
 		}]);	
