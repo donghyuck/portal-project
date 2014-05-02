@@ -336,6 +336,10 @@
 										sourceUrl : null, 
 										imageUrl : null
 									},
+									reset: function(e){
+										this.data.sourceUrl = null;
+										this.data.imageUrl = null;
+									},
 									upload: function(e) {
 										e.preventDefault();		
 										var hasError = false;
@@ -344,12 +348,20 @@
 											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");
 											hasError = true;
 											return false;
+										}else{
+											if( $('#my-photo-stream form div.form-group').eq(0).hasClass("has-error") ){
+												$('#my-photo-stream form div.form-group').eq(0).removeClass("has-error");
+											}											
 										}
 																				
 										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.api.isValidUrl(this.data.imageUrl)  ){
 											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error");
 											hasError = true;
 											return false;
+										}else{
+											if( $('#my-photo-stream form div.form-group').eq(1).hasClass("has-error") ){
+												$('#my-photo-stream form div.form-group').eq(1).removeClass("has-error");
+											}											
 										}
 										
 										if( !hasError) {
