@@ -479,11 +479,14 @@
 			<div class="row">		
 				<div class="col-sm-12">
 					<div class="panel panel-default" style="min-height:300px;" >
-						<div class="panel-heading selected-company-info" style="padding:5px;">
+						<div class="panel-heading selected-company-info" style="padding:5px;">						
 							<div class="btn-group">
-								<button type="button" class="btn btn-success btn-control-group" data-action="user"><i class="fa fa-user"></i>&nbsp;<span data-bind="text: displayName"></span>&nbsp;사용자관리</button>
-								<button type="button" class="btn btn-default btn-control-group btn-columns-expend" data-action="layout"><i class="fa fa-columns"></i></button>
-							</div>
+							<#if request.isUserInRole('ROLE_SYSTEM' )>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>				
+							</#if>				
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="site"><i class="fa fa-sitemap"></i>  웹사이트 관리</button>
+								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="user"><i class="fa fa-user"></i>  사용자 관리</button>
+							</div>						
 						</div>
 						<div class="panel-body" style="padding:5px;">
 							<div class="row marginless paddingless">
