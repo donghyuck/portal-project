@@ -739,6 +739,10 @@
 				<h5 class="media-heading">#:blogName#</h5>
 				<p>#:postUrl#</p>
 				<p>#= type #</p>
+				# if (type == 'TEXT) {#
+					# if ( caption != null ) { #						
+					<p>#= body #</p>
+					# } #						
 				# if (type == 'LINK') {#
 				<p><a href="#: url #" target="_blank"><i class="fa fa-link"></i></a></p>	
 				#} else if (type == 'PHOTO') {#	
