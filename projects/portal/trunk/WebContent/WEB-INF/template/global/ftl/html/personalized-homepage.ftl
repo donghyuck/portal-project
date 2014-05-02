@@ -1323,36 +1323,37 @@
 				</div>
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
-
-					<div class="blank-top-5" ></div>
-					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-						<!--<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>					-->
-						<#if !action.user.anonymous >	
-						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
-						<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
-						</#if>						
-					</ul>	
+			<div class="blank-top-5" ></div>
+			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
+				<#if !action.user.anonymous >	
+				<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
+				<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
+				</#if>						
+			</ul>	
 			<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
-									<!-- start attachement tab-pane -->
-									<div class="tab-pane" id="my-files">
-										<section class="custom-upload hide">
-											<#if !action.user.anonymous >			
-											<div class="page-header text-primary">
-												<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-											</div>								
-											<input name="uploadAttachment" id="attachment-files" type="file" />												
-											</#if>								
-										</section>											
-										<div class="blank-top-5" ></div>		
+				<!-- start attachement tab-pane -->
+				<div class="tab-pane" id="my-files">
+					<section class="custom-upload hide">
+						<div class="panel panel-default">
+							<div class="panel-body">		
+							<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
+							<#if !action.user.anonymous >			
+								<div class="page-header text-primary">
+									<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+								</div>								
+								<input name="uploadAttachment" id="attachment-files" type="file" />												
+							</#if>								
+							</div>
+						</div>
+					</section>											
 										<div class="panel panel-default">
 											<div class="panel-body">
 												<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
-														<#if !action.user.anonymous >		
-														<p class="pull-right">				
-															<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
-														</p>	
-														</#if>	
-																										
+												<#if !action.user.anonymous >		
+												<p class="pull-right">				
+													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+												</p>	
+												</#if>																										
 												<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 													<label class="btn btn-sm btn-warning active">
 														<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
@@ -1372,9 +1373,9 @@
 												<div id="pager" class="k-pager-wrap"></div>
 											</div>
 										</div>																				
-									</div><!-- end attachements  tab-pane -->		
-									<!-- start photos  tab-pane -->
-									<div class="tab-pane" id="my-photo-stream">									
+						</div><!-- end attachements  tab-pane -->		
+						<!-- start photos  tab-pane -->
+						<div class="tab-pane" id="my-photo-stream">									
 										<section class="custom-upload hide">
 											<div class="panel panel-default">
 												<div class="panel-body">
