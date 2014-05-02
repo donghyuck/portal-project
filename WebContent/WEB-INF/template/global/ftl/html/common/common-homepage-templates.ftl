@@ -707,7 +707,7 @@
 		     	<p>#= text #</p>		     	
 				# for (var i = 0; i < entities.urls.length ; i++) { #
 				# var url = entities.urls[i] ; #		
-				<p><a href="#: url.expandedUrl  #" target="_blank"><span class="glyphicon glyphicon-link"></span> #: url.displayUrl #</a></p>
+				<p><a href="#: url.expandedUrl  #" target="_blank"><i class="fa fa-link"></i> #: url.displayUrl #</a></p>
 				# } #	
 				<p>
 					# for (var i = 0; i < entities.media.length ; i++) { #	
@@ -739,7 +739,9 @@
 				<h5 class="media-heading">#:blogName#</h5>
 				<p>#:postUrl#</p>
 				<p>#= type #</p>
-				#if (type == 'PHOTO') {#	
+				# if (type == 'LINK') {#
+				<p><a href="#: url  #" target="_blank"><i class="fa fa-link"></i></a></p>	
+				# else if (type == 'PHOTO') {#	
 					<div class="row">				
 					# for (var i = 0; i < photos.length ; i++) { #	
 					# var post_photo = photos[i] ; #
