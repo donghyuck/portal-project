@@ -312,29 +312,29 @@
 					{event: 'click', handlers: {
 						upload : function(e){
 							if( !$("#photo-files").data("kendoUpload")	){						
-											$("#photo-files").kendoUpload({
-												 	multiple : true,
-												 	width: 300,
-												 	showFileList : false,
-												    localization:{ select : '사진 선택' , dropFilesHere : '업로드할 사진들을 이곳에 끌어 놓으세요.' },
-												    async: {
-														saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',							   
-														autoUpload: true
-												    },
-												    upload: function (e) {				
-												    	 e.data = {};							
-												    },
-												    success : function(e) {								    
-														if( e.response.targetImage ){
-															//e.response.targetImage.imageId;
-															// LIST VIEW REFRESH...
-															var photo_list_view = $('#photo-list-view').data('kendoListView');
-															photo_list_view.dataSource.read();
-															var selectedCells = photo_list_view.select();
-															photo_list_view.select("tr:eq(1)");															
-														}				
-													}
-											});		
+								$("#photo-files").kendoUpload({
+									multiple : true,
+									width: 300,
+									showFileList : false,
+									localization:{ select : '사진 선택' , dropFilesHere : '업로드할 사진들을 이곳에 끌어 놓으세요.' },
+									async: {
+										saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',							   
+										autoUpload: true
+									},
+									upload: function (e) {				
+										 e.data = {};							
+									},
+									success : function(e) {								    
+										if( e.response.targetImage ){
+											//e.response.targetImage.imageId;
+											// LIST VIEW REFRESH...
+											var photo_list_view = $('#photo-list-view').data('kendoListView');
+											photo_list_view.dataSource.read();
+											var selectedCells = photo_list_view.select();
+											photo_list_view.select("tr:eq(1)");															
+										}				
+									}
+								});		
 							}
 							$("#my-photo-stream .custom-upload").toggleClass("hide");				
 						},
