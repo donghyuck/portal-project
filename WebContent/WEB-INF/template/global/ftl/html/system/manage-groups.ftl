@@ -35,7 +35,8 @@
 				
 								
 				// 3.MENU LOAD
-				var selectedCompany = new Company({companyId:${action.targetCompany.companyId}});			
+				var companyPlaceHolder = new Company({ companyId: ${action.targetCompany.companyId} });
+				
 				var topBar = $("#navbar").extNavbar({
 					template : $("#top-navbar-template").html(),
 					items : [{ 
@@ -80,9 +81,9 @@
 	                            update: { url:'${request.contextPath}/secure/update-group.do?output=json', type:'POST' },
 		                        parameterMap: function (options, operation){	          
 		                            if (operation != "read" && options) {
-		                                return { companyId: selectedCompany.companyId, item: kendo.stringify(options)};
+		                                return { companyId: companyPlaceHolder.companyId, item: kendo.stringify(options)};
 		                            }else{
-		                                return { startIndex: options.skip, pageSize: options.pageSize , companyId: selectedCompany.companyId }
+		                                return { startIndex: options.skip, pageSize: options.pageSize , companyId: companyPlaceHolder.companyId }
 		                            }
 		                        }                  
 	                        },
@@ -123,7 +124,7 @@
 	                                 selectedGroup.creationDate = selectedCell.creationDate;
 	                                 selectedGroup.formattedCreationDate  =  kendo.format("{0:yyyy.MM.dd}",  selectedCell.creationDate );      
 	                                 selectedGroup.formattedModifiedDate =  kendo.format("{0:yyyy.MM.dd}",  selectedCell.modifiedDate );         	                                 
-	                                 selectedGroup.company = selectedCompany;
+	                                 selectedGroup.company = companyPlaceHolder;
 	                                 	                                 
 	                                 // SHOW GROUP DETAILS ======================================	                                 	                                 
 	                                 $('#group-details').show().html(kendo.template($('#group-details-template').html()));	                                 
