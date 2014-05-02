@@ -760,7 +760,7 @@
 					</div>			
 					#} else { #					
 					<div class="col-xs-12 col-lg-4">	
-						<img src="#: post_photo_url  #" alt="media">				
+						<img src="#: post_photo_url  #" alt="media" class="img-responsive">				
 					</div>	
 					# } #						
 					# } #					
