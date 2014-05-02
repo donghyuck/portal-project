@@ -760,15 +760,17 @@
 						<figure>	
 						<img src="#: post_photo_url  #" alt="media" class="img-responsive">
 							<figcaption class="pull-right">							
-								<button type="button" class="btn btn-primary btn-sm custom-upload-by-url"  data-source="#:postUrl#" data-url="#: post_photo_url#" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i>&nbsp 내 사진으로 복사</button>
+								<button type="button" class="btn btn-primary btn-sm custom-upload-by-url"  data-source="#:postUrl#" data-url="#: post_photo_url#" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i></button>
 							</figcaption>		
 						</figure>			
 					</div>	
 					# } #						
 					# } #														
 					</div>				
-				# } #							
-				<p>#= caption #</p>		
+				# } #	
+				# if ( caption != null ) { #						
+				<p>#= caption #</p>
+				# } #		
 				<p class="text-muted"><i class="fa fa-comment-o"></i>&nbsp; #= noteCount# </p>
 			</div>
 		</li>	
