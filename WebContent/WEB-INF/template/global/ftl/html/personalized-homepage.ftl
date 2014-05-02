@@ -337,8 +337,10 @@
 										imageUrl : null
 									},
 									upload: function(e) {
+										e.preventDefault();
+										
 									alert( kendo.stringify(this.data) );
-									alert( $(this).html() );	
+									alert( $(e.target).html() );	
 									
 										var btn = $(this);
 										btn.button('loading');										
