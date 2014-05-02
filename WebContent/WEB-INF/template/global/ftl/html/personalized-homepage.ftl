@@ -1396,6 +1396,11 @@
 											<div id="my-photo-upload">	
 												<input name="uploadPhotos" id="photo-files" type="file" />					
 											</div>
+											<div class="blank-top-5" ></div>
+											<div class="page-header text-primary">
+												<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
+											</div>											
+											<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="url-upload"><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>											
 											</#if>
 										</section>	
 										<div class="page-header text-primary">
@@ -1403,8 +1408,7 @@
 													<#if !action.user.anonymous >		
 													<p class="pull-right">	
 													<div class="btn-group">			
-														<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
-														<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="url-upload"><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>				
+														<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
 													</div>	
 													</p>	
 													</#if>					
