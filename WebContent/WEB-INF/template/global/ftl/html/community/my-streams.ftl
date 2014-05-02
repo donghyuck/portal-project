@@ -103,11 +103,9 @@
 		<!-- ============================== -->
 		<!-- create media streams nav buttons                -->
 		<!-- ============================== -->				
-		function createConnectedSocialNav(){		
-		
+		function createConnectedSocialNav(){				
 			var myStreams = $('#navbar-btn-my-streams');
-			myStreams.find('button[data-action="media-list"]').button('loading');			
-			
+			myStreams.find('button[data-action="media-list"]').button('loading');				
 			if( myStreams.find('input').length == 0 ){
 				myStreams.data( 'dataSource', 
 					common.api.social.dataSource({ 
@@ -136,8 +134,7 @@
 						}
 					})
 				);				
-			}				
-			
+			}							
 		}	
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
@@ -161,8 +158,6 @@
 				} );	
 								
 				if(! common.api.property(streamsPlaceHolder.properties, "options.scrollable", true ) ){					
-					//$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:first").click();
-				//}else{
 					$("#" + renderToString).find(".panel-body:first input[name='options-scrollable']:last").click();
 				}
 				
@@ -170,6 +165,7 @@
 					id: streamsPlaceHolder.socialAccountId, 
 					media: streamsPlaceHolder.serviceProviderName,
 					change : function(e){
+						alert($(this).html()); 					
 					}
 				});				
 				
