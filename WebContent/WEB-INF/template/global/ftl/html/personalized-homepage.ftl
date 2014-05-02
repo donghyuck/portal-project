@@ -214,7 +214,7 @@
 					$("#my-files button.btn-control-group"), 
 					{event: 'click', handlers: {
 						upload : function(e){
-								if( !$('#attachment-files').data('kendoUpload') ){		
+							if( !$('#attachment-files').data('kendoUpload') ){		
 										$("#attachment-files").kendoUpload({
 										 	multiple : false,
 										 	width: 300,
@@ -235,27 +235,14 @@
 												}				
 											}
 										});						
-									}
-									$("#my-files .custom-upload").toggleClass("hide");				
+							}
+							$("#my-files .custom-upload").toggleClass("hide");				
 						},
 						'url-upload' : function(e){
-									$("#my-files .custom-url-upload").toggleClass("hide");	
+							$("#my-files .custom-url-upload").toggleClass("hide");	
 						}		  						 
 					}}
-				);
-				
-					common.ui.handleActionEvents(
-						$("#my-files .btn-group button"), 
-						{
-							event:'click',
-							handler : function(e){
-								var btn_icon = $(this).find("i");		
-								if( btn_icon.hasClass('fa-cloud-upload') ){								
-													
-								}
-							} 
-						}							
-					);							
+				);						
 			}		
 		}
 		
