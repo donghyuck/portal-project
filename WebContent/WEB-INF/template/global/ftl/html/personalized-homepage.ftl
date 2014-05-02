@@ -338,7 +338,7 @@
 									},
 									upload: function(e) {
 									alert( kendo.stringify(this.data) );
-										
+									alert( $(this).html() );	
 									
 										var btn = $(this);
 										btn.button('loading');										
