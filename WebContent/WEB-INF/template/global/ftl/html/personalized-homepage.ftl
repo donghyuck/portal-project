@@ -1406,7 +1406,7 @@
 									</#if>											
 								</div>
 								<div class="panel-body scrollable color4" style="max-height:450px;">
-									<div id="photo-list-view" ></div>
+									<div id="photo-list-view" class="color4" ></div>
 								</div>	
 								<div class="panel-footer" style="padding:0px;">
 									<div id="photo-list-pager" class="k-pager-wrap"></div>
