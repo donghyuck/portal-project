@@ -1388,23 +1388,31 @@
 									</div><!-- end attachements  tab-pane -->		
 									<!-- start photos  tab-pane -->
 									<div class="tab-pane" id="my-photo-stream">
+									
 										<section class="custom-upload hide">
-											<#if !action.user.anonymous >			
-											<div class="page-header text-primary">
-												<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-											</div>
-											<div id="my-photo-upload">	
-												<input name="uploadPhotos" id="photo-files" type="file" />					
-											</div>
-											<div class="blank-top-5" ></div>
-											<div class="page-header text-primary">
-												<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
-											</div>											
-											<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="url-upload"><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>											
-											</#if>
+											<div class="panel panel-default">
+												<div class="panel-body">
+													<#if !action.user.anonymous >			
+													<div class="page-header text-primary">
+														<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+													</div>
+													<div id="my-photo-upload">	
+														<input name="uploadPhotos" id="photo-files" type="file" />					
+													</div>
+													<div class="blank-top-5" ></div>
+													<div class="page-header text-primary">
+														<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
+													</div>											
+													<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="url-upload"><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>											
+													</#if>
+												</div>
+											</div>	
 										</section>	
+										
 										<div class="page-header text-primary">
-												<h5 ><small>사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></h5>	
+												<h5 >
+													<small>사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small>
+												</h5>	
 													<#if !action.user.anonymous >		
 													<p class="pull-right">	
 													<div class="btn-group">			
