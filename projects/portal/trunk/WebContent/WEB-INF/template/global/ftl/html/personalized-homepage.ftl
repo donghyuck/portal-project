@@ -306,16 +306,12 @@
 					buttonCount : 5,
 					dataSource : $('#photo-list-view').data('kendoListView').dataSource
 				});		
-					
-				common.ui.handleActionEvents(
-					$("#my-photo-stream .btn-group button"), 
-					{
-						event:'click',
-						handler : function(e){
-							var btn_icon = $(this).find("i");		
-							if( btn_icon.hasClass('fa-cloud-upload') ){
-							
-										if( !$("#photo-files").data("kendoUpload")	){						
+
+				common.ui.handleButtonActionEvents(
+					$("#my-photo-stream button.btn-control-group"), 
+					{event: 'click', handlers: {
+						upload : function(e){
+							if( !$("#photo-files").data("kendoUpload")	){						
 											$("#photo-files").kendoUpload({
 												 	multiple : true,
 												 	width: 300,
@@ -339,11 +335,17 @@
 														}				
 													}
 											});		
-										}
-										$("#my-photo-stream .custom-upload").toggleClass("hide");					
 							}
-						} 
-					}							
+							$("#my-photo-stream .custom-upload").toggleClass("hide");				
+						},
+						'url-upload' : function(e){
+							var btn = $(this);
+							btn.button('loading');
+						},		  
+						'upload-close' : function(e){
+							$("#my-files .custom-url-upload").toggleClass("hide");	
+						}													 
+					}}
 				);
 			}
 		}
