@@ -164,8 +164,13 @@
 				$( '#'+ renderToString2 ).extMediaStreamView({ 
 					id: streamsPlaceHolder.socialAccountId, 
 					media: streamsPlaceHolder.serviceProviderName,
-					change : function(e){
-						alert($( '#'+ renderToString2 ).html()); 					
+					change : function(e){			
+						$( '#'+ renderToString2 ).find('button.custom-upload-by-url').click(function(e){
+							var btn = $(this) ;
+							// data-source 
+							// data-url 
+							btn.button('loading');
+						});
 					}
 				});				
 				
