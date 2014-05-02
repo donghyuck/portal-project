@@ -1327,9 +1327,7 @@
 				</div>
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
-			<div class="container-fluid">		
-			<div class="row">
-				<div class="col-lg-12">
+
 					<div class="blank-top-5" ></div>
 					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 						<!--<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>					-->
@@ -1428,9 +1426,7 @@
 							</div>	
 						</div><!-- end photos  tab-pane -->
 					</div><!-- end of tab content -->														
-				</div>
-			</div>	
-			</div>	
+
 		</section>		
 		
 		<section id="image-broswer" class="image-broswer"></section>
