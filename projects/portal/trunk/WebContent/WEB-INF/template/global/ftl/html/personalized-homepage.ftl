@@ -1329,19 +1329,18 @@
 			</header>	
 			<div class="row">
 				<div class="col-lg-12">
-				
-				ss
+					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
+						<!--<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>					-->
+						<#if !action.user.anonymous >	
+						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
+						<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
+						</#if>						
+					</ul>	
 				</div>
 			</div>
 							
 				<div class="blank-top-5" ></div>	
-									<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-										<!--<li><a href="#my-notice" tabindex="-1" data-toggle="tab">공지 & 이벤트</a></li>					-->
-										<#if !action.user.anonymous >	
-										<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
-										<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
-										</#if>						
-									</ul>								
+							
 									<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">	
 										<div class="tab-pane" id="my-notice">
 											<section class="side2 hide">
