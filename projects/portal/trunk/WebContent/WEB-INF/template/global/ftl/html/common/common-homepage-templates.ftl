@@ -636,14 +636,12 @@
 		     		<img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
 		     		</p>
 		     	# } else if ( type === 'VIDEO' ) { #
-		     		#if ( source !=null && source.indexOf("www.youtube.com") > -1 ) { #
-			     		#if ( picture !=null ) { #
-			     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
-			     		# } #		     		
-			     		#if ( source !=null ) { #
-			     		<p class="text-muted">source : <a href="#= source #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
-			     		# } #     				     		
+		     		#if ( picture !=null ) { #
+		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
 		     		# } #		     		
+		     		#if ( source !=null ) { #
+		     		<p><a href="#= source #" target="_blank" class="btn btn-info btn-sm"><i class="fa fa-film"></i> #= source #</a></p>
+		     		# } #       	
 		     	# } else { #		     	
 		     		#if ( picture !=null ) { #
 		     		<br><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive">
