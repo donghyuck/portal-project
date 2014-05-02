@@ -1368,7 +1368,7 @@
 													</label>	
 												</div>												
 											</div>
-											<div class="panel-body scrollable" style="max-height:450px;">
+											<div class="panel-body scrollable color4" style="max-height:450px;">
 												<div id="attachment-list-view" ></div>
 											</div>	
 											<div class="panel-footer" style="padding:0px;">
