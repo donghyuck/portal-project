@@ -254,7 +254,7 @@
 		$.ajax({
 			type : 'POST',
 			url : options.url || '/community/upload-my-image-by-url.do?output=json' ,
-			data: options.data ,
+			data: { item: kendo.stringify(options.data)} ,
 			success : function(response){
 				if( response.error ){ 												
 					if( isFunction (options.fail) )
