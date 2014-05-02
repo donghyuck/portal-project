@@ -1368,11 +1368,10 @@
 											<#if !action.user.anonymous >		
 											<p class="pull-right">	
 												<div class="btn-group">			
-													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"> &nbsp; 파일업로드</button>		
+													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>		
 												</div>		
 											</p>	
-											</#if>												
-											
+											</#if>	
 										</div>
 										<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-warning active">
