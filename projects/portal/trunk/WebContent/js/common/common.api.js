@@ -249,7 +249,29 @@
 		return item;
 	};
 	
-	
+	common.api.uploadMyImageByUrl = function (options){
+		options = options || {};
+		$.ajax({
+			type : 'POST',
+			url : options.url || '/community/upload-my-image-by-url.do?output=json' ,
+			data: options.data ,
+			success : function(response){
+				if( response.error ){ 												
+					if( isFunction (options.fail) )
+						options.fail(response) ;
+				} else {					
+					if( isFunction(options.success) )
+						options.success(response) ;					
+				}
+			},
+			error:options.error || common.api.handleKendoAjaxError,
+			dataType : "json"
+		}).always( function () {
+			if( isFunction( options.always ))
+				options.always( ) ;					
+		});
+	}
+
 	common.api.getImagelink = function (options){
 		options = options || {};
 		$.ajax({
