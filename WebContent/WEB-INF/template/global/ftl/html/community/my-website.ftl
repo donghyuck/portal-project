@@ -1387,7 +1387,7 @@
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
 			<div class="blank-top-5" ></div>
-			<ul class="nav nav-pills" id="myTab" style="padding-left:5px;">
+			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
 				<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
 				<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
