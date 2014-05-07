@@ -51,8 +51,7 @@
 				if (typeof options.selector === UNDEFINED) {
 					selector.on(options.event, options.handler);
 				} else {
-					selector.find(options.selector).on(options.event,
-							options.handler);
+					selector.find(options.selector).on(options.event, options.handler);
 				}
 			}
 		} else if (options.handlers instanceof Array) {
