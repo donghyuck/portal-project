@@ -46,6 +46,27 @@
 						}
 					]
 				});	
+				
+ 				common.ui.handleButtonActionEvents(
+					$("button.btn-control-group"), 
+					{event: 'click', handlers: {
+						setting : function(e){
+							showCompanySetting();					
+						},
+						group : function(e){
+							topBar.go('main-group.do');				
+						}, 	
+						user : function(e){
+							topBar.go('main-user.do');			
+						}, 							
+						details : function(e){
+							$('#company-details').toggleClass('hide');
+						},
+						connect : function(e){
+							alert("social modal");	 					
+						}			  						 
+					}}
+				);				
 											
 				$('.personalized-navbar .nav a.btn-link').click(function(e){
 					if( $(this).hasClass('custom-nabvar-hide')){						
@@ -409,8 +430,8 @@
 					</li>	
 					<p class="navbar-text hidden-xs">&nbsp;</p>		
 					<li><a href="${request.contextPath}/main.do?view=personalized" class="btn btn-link">마이 페이지</a></li>						
-					<li><a href="#" class="btn btn-link custom-nabvar-show-opts"><i class="fa fa-cog fa-lg"></i></a></li>
-					<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
+					<li><a href="#" class="btn btn-link custom-nabvar-show-opts btn-control-group"><i class="fa fa-cog fa-lg"></i></a></li>
+					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
 			</div>
