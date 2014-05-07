@@ -1184,6 +1184,11 @@
 			width: 100%;
 		}
 				
+nav.personalized-navbar .open>a, nav.personalized-navbar  .open>a :hover , nav.personalized-navbar  .open>a :focus {
+	color: #fff;
+	background-color: #47a3da;
+}
+				
 		#personalized-controls {
 			position: absolute;
 			top: 50px;
@@ -1194,14 +1199,12 @@
 			z-index: 1000;
 			overflow: hidden;
 			background-color: rgba(91,192,222,0.8)		
-		}		
-		
+		}				
 		
 		#personalized-controls-section{
 			margin-top: 0px;
 			padding : 0px;
 		}
-		
 		#personalized-controls-section.cbp-spmenu-vertical {
 			width: 565px;
 		}
