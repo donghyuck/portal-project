@@ -131,7 +131,7 @@
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-files' ){					
 						createAttachmentListView();
-					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
+					} else if(show_bs_tab.attr('href') == '#website-photo-stream' ){					
 						createPhotoListView();
 					}					
 				});
@@ -260,7 +260,7 @@
 		}
 		
 		<!-- ============================== -->
-		<!-- create my photo grid									-->
+		<!-- create website photo grid									-->
 		<!-- ============================== -->						
 		function createPhotoListView(){
 			if( !$('#photo-list-view').data('kendoListView') ){			
@@ -314,10 +314,10 @@
 					refresh : true,
 					buttonCount : 5,
 					dataSource : $('#photo-list-view').data('kendoListView').dataSource
-				});		
-
+				});	
+				
 				common.ui.handleButtonActionEvents(
-					$("#my-photo-stream button.btn-control-group"), 
+					$("#website-photo-stream button.btn-control-group"), 
 					{event: 'click', handlers: {
 						upload : function(e){
 							if( !$("#photo-files").data("kendoUpload")	){					
@@ -327,7 +327,7 @@
 									showFileList : false,
 									localization:{ select : '사진 선택' , dropFilesHere : '업로드할 사진들을 이곳에 끌어 놓으세요.' },
 									async: {
-										saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',							   
+										saveUrl:  '${request.contextPath}/community/update-my-website-image.do?output=json',							   
 										autoUpload: true
 									},
 									upload: function (e) {				
@@ -340,7 +340,7 @@
 											var photo_list_view = $('#photo-list-view').data('kendoListView');
 											photo_list_view.dataSource.read();
 											var selectedCells = photo_list_view.select();
-											photo_list_view.select("tr:eq(1)");															
+											photo_list_view.select("tr:eq(1)");	
 										}				
 									}
 								});		
@@ -356,21 +356,21 @@
 									upload: function(e) {
 										e.preventDefault();	
 										var hasError = false;	
-										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
+										$('#website-photo-stream form div.form-group.has-error').removeClass("has-error");								
 										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.api.isValidUrl( this.data.sourceUrl) ){
-											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");			
+											$('#website-photo-stream form div.form-group').eq(0).addClass("has-error");			
 											hasError = true;					
 										}else{
-											if( $('#my-photo-stream form div.form-group').eq(0).hasClass("has-error") ){
-												$('#my-photo-stream form div.form-group').eq(0).removeClass("has-error");
+											if( $('#website-photo-stream form div.form-group').eq(0).hasClass("has-error") ){
+												$('#website-photo-stream form div.form-group').eq(0).removeClass("has-error");
 											}											
 										}																				
 										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.api.isValidUrl(this.data.imageUrl)  ){
-											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error");
+											$('#website-photo-stream form div.form-group').eq(1).addClass("has-error");
 											hasError = true;		
 										}else{
-											if( $('#my-photo-stream form div.form-group').eq(1).hasClass("has-error") ){
-												$('#my-photo-stream form div.form-group').eq(1).removeClass("has-error");
+											if( $('#website-photo-stream form div.form-group').eq(1).hasClass("has-error") ){
+												$('#website-photo-stream form div.form-group').eq(1).removeClass("has-error");
 											}											
 										}				
 										if( !hasError ){
@@ -386,20 +386,20 @@
 												},
 												always : function(){
 													btn.button('reset');
-													$('#my-photo-stream form')[0].reset();
+													uploadModel.reset();
 												}
 											});		
 										}				
 										return false;
 									}
 								});
-								kendo.bind($("#my-photo-stream form"), uploadModel);
+								kendo.bind($("#website-photo-stream form"), uploadModel);
 							}							
-							$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
-							$("#my-photo-stream .custom-upload").toggleClass("hide");				
+							$('#website-photo-stream form div.form-group.has-error').removeClass("has-error");
+							$("#website-photo-stream .custom-upload").toggleClass("hide");				
 						},	  
 						'upload-close' : function(e){
-							$("#my-photo-stream .custom-upload").toggleClass("hide");		
+							$("#website-photo-stream .custom-upload").toggleClass("hide");		
 						}													 
 					}}
 				);
@@ -1389,7 +1389,7 @@
 			<div class="blank-top-5" ></div>
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
-				<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
+				<li><a href="#website-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
 				<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
 				</#if>						
 			</ul>	
@@ -1411,7 +1411,7 @@
 					</section>											
 										<div class="panel panel-default">
 											<div class="panel-body">
-												<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
+												<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 페이지 영역에 선택한 파일이 보여집니다.</small></p>
 												<#if !action.user.anonymous >		
 												<p class="pull-right">				
 													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
@@ -1438,7 +1438,7 @@
 										</div>																				
 						</div><!-- end attachements  tab-pane -->		
 						<!-- start photos  tab-pane -->
-						<div class="tab-pane" id="my-photo-stream">									
+						<div class="tab-pane" id="website-photo-stream">									
 										<section class="custom-upload hide">
 											<div class="panel panel-default">
 												<div class="panel-body">
