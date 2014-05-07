@@ -76,14 +76,7 @@
 						});
 					}, 100);					
 				});
-												
-				// photo panel showing				
-				createPhotoListView();
-								
-				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-					this.select(this.element.children().first());
-				});
-
+			
 				// 3. ACCOUNTS LOAD	
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
