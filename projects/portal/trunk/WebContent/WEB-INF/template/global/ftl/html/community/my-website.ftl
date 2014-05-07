@@ -1196,10 +1196,6 @@
 			background-color: rgba(91,192,222,0.8)		
 		}		
 		
-		.personalized-navbar .btn-link:hover {
-		  color: #fff;
-		  background-color: #47a3da;
-		}		
 		
 		#personalized-controls-section{
 			margin-top: 0px;
