@@ -31,8 +31,7 @@
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
 				
-				
-				common.api.handleNavbarActions( $('.personalized-navbar'), {
+				common.ui.handleActionEvents( $('.personalized-navbar'), {
 					handlers : [
 						{ selector: "input[name='personalized-area-col-size']",
 						  event : 'change',
@@ -47,25 +46,26 @@
 							});
 						  }	
 						}
-					],
-					onClick : function (e) {												
-						if( $(this).hasClass('custom-nabvar-hide')){
+					]
+				});	
+				
+ 				common.ui.handleButtonActionEvents(
+					$(".personalized-navbar .nav a.btn-control-group"), 
+					{event: 'click', handlers: {
+						hide : function(e){
 							$('body nav').first().removeClass('hide');
-						}else if ($(this).hasClass('custom-nabvar-up')){ 
-						
-						}else if ($(this).hasClass('custom-nabvar-down')){ 
-						
-						}else if ($(this).hasClass('custom-nabvar-show-opts')){ 
+						},
+						'open-spmenu' : function(e){
 							$('body').toggleClass('modal-open');						
 							if( $('#personalized-controls-section').hasClass("hide") )
 								$('#personalized-controls-section').removeClass("hide");							
-							$('body div.overlay').toggleClass('hide');							
+							$('body div.overlay').toggleClass('hide');										
 							slide_effect.play().then(function(){							
 								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});	
-						}
-					}
-				});				
+							});									
+						}					 
+					}}
+				);			
 				
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
@@ -76,10 +76,7 @@
 						});
 					}, 100);					
 				});
-				
-				
-				
-								
+												
 				// photo panel showing				
 				createPhotoListView();
 								
@@ -1314,9 +1311,9 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
-					<li><a href="${request.contextPath}/main.do?view=streams btn-control-group" class="btn btn-link">마이 스트림</a></li>
-					<li><a href="#" class="btn btn-link custom-nabvar-show-opt btn-control-groups"><i class="fa fa-cloud fa-lg"></i></a></li>
-					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
+					<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-link">마이 스트림</a></li>
+					<li><a href="#" class="btn btn-link custom-nabvar-show-opt btn-control-groups" data-action="show-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>
+					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group" data-action="close"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
 			</div>
