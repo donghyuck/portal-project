@@ -425,7 +425,7 @@
 					sortable: true,
 					columns: [ 
 						{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
-						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}}, 
+						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, template: '<button type="button" class="btn btn-warning btn-xs btn-block" onclick="return false;">#: subject #</a>'}, 
 					],
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
@@ -544,7 +544,6 @@
 					});
 				});						
 			}			
-			
 			if( $('#announce-editor').data("announcePlaceHolder").announceId > 0 ){
 				if( !$('#announce-editor .modal-body .page-header').hasClass('hide') ){
 					$('#announce-editor .modal-body .page-header').addClass('hide');					
@@ -552,19 +551,16 @@
 			}else{
 				if( $('#announce-editor .modal-body .page-header').hasClass('hide') ){
 					$('#announce-editor .modal-body .page-header').removeClass('hide');
-				}		
-			}
-			
+				}
+			}			
 			if($('#announce-editor').data("announcePlaceHolder").objectType == 30){				
 				$('#announce-editor input[name="announce-type"]:first').click();
 			}else{			
 				$('#announce-editor input[name="announce-type"]:last').click();
-			}				
-			
+			}			
 			$('#announce-editor .modal-footer .btn.custom-update').attr('disabled', 'disabled');							
 			$('#announce-editor .modal').modal('show');		
-		}		
-
+		}
 
 		function createEditor( renderTo ){						
 			if(!renderTo.data("kendoEditor") ){			
