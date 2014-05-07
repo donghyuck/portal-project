@@ -1381,7 +1381,7 @@
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>	
-				<p class="text-primary">${webSite.displayName}<span class="label label-warning">${webSite.name}</span></p>
+				<span class="label label-warning">${webSite.name}</span>
 				<p class="text-muted"><small>${webSite.description}</small></p>											
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
