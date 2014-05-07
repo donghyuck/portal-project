@@ -334,7 +334,7 @@ nav.personalized-navbar {
 	left: 0;
 	border : 0px;
 	position : fixed;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	min-height: 50px;
 	z-index: 1000;	
 	/*
@@ -363,7 +363,7 @@ nav .personalized-controls-trigger {
 	width: 35px;
 	position: absolute;
 	right: 0px;
-	overflow: hidden;
+	/*overflow: hidden;*/
 	border: none;
 	color: #FFFFFF;
 	outline: none;
