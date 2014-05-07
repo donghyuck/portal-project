@@ -1352,11 +1352,12 @@
 											</div>											
 										</p>
 									</h5>
-									<#if action.webSite.user.userId == action.user.userId ></#if>
-								</div>			
-								<div class="pull-right" style="padding:5px;">
-									<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>							
-								</div>							
+									<#if action.webSite.user.userId == action.user.userId >
+										<div class="pull-right" style="padding:5px;">
+											<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>							
+										</div>											
+									</#if>
+								</div>								
 								<div  id="announce-grid"></div>	
 							</div>
 							<div class="panel-body">					
