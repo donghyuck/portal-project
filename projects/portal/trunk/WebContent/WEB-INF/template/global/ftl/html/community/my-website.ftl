@@ -1314,7 +1314,8 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">마이페이지 <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">One more separated link</a></li>
+							<li><a href="#">Something else here</a></li>
+							<li><a href="#">Something else here</a></li>
 						</ul>
 					</li>					
 					<li><a href="${request.contextPath}/main.do?view=personalized" class="btn btn-link">마이 페이지</a></li>
