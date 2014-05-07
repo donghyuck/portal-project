@@ -57,10 +57,10 @@
 							$('body').toggleClass('modal-open');						
 							if( $('#personalized-controls-section').hasClass("hide") )
 								$('#personalized-controls-section').removeClass("hide");							
-							$('body div.overlay').toggleClass('hide');							
+							$('body div.overlay').toggleClass('hide');										
 							slide_effect.play().then(function(){							
 								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});		
+							});									
 						}					 
 					}}
 				);				
