@@ -102,23 +102,6 @@
 				// 4. CONTENT 	
 				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.webSite.webSiteId}} );
 				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
-				common.api.callback(  
-				{
-					url :"${request.contextPath}/secure/get-site.do?output=json", 
-					data : { targetSiteId:  sitePlaceHolder.webSiteId },
-					success : function(response){
-						var site = new common.models.WebSite(response.targetWebSite);
-						site.copy( sitePlaceHolder );
-						kendo.bind($("#site-info"), sitePlaceHolder );
-						$('button.btn-control-group').removeAttr("disabled");						
-					},
-					requestStart : function(){
-						kendo.ui.progress($("#site-info"), true);
-					},
-					requestEnd : function(){
-						kendo.ui.progress($("#site-info"), false);
-					}
-				}); 
 								
 				// 1. Announces 							
 				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
@@ -135,6 +118,8 @@
 						createPhotoListView();
 					}					
 				});
+				$('#myTab a:first').tab('show') ;
+				
 				// END SCRIPT 
 			}
 		}]);	
