@@ -1381,13 +1381,21 @@
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>							
-				<div class="btn-group">
-					<button type="button" class="btn btn-info"><i class="fa fa-cog"></i></button>
-					<button type="button" class="btn btn-info"><i class="fa fa-comment"></i></button>
-					<button type="button" class="btn btn-info"><i class="fa fa-envelope"></i></button>
-				</div>
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
+			
+			<table class="table">
+				<tbody>	
+					<tr class="info">
+						<th><small>사이트</small></th>	
+						<td>
+							${webSite.displayName}
+							<span class="label label-warning">${webSite.name}</span>
+							<code>${webSite.webSiteId}</code>
+						</td>
+					</tr>
+				</tbody>	
+			</table>
 			<div class="blank-top-5" ></div>
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
