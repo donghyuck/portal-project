@@ -1308,19 +1308,19 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
-<div class="btn-group navbar-btn">
-  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    My <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
-							<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
-							<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
-							 <li class="divider"></li>
-							<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
-							</#if>	
-  </ul>
-</div>
+						<div class="btn-group navbar-btn">
+							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+							My <span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
+								<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
+								<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
+								 <li class="divider"></li>
+								<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
+								</#if>	
+							</ul>
+						</div>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
