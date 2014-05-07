@@ -1307,6 +1307,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
+					<li class="navbar-btn">
 <div class="btn-group btn-navbar">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     Action <span class="caret"></span>
@@ -1319,7 +1320,7 @@
     <li><a href="#">Separated link</a></li>
   </ul>
 </div>
-					
+					</li>
 					<li class="dropdown navbar-btn">
 						<a href="#" class="dropdown-toggle btn btn-info navbar-btn" data-toggle="dropdown">My <b class="caret"></b></a>
 						<ul class="dropdown-menu">
