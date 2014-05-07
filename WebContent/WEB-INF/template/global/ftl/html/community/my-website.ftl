@@ -1385,15 +1385,18 @@
 			</header>	
 			<div style="padding:5px;" >
 			<div class="panel panel-default">
+				 <div class="panel-heading">
+									${webSite.displayName}
+									<span class="label label-warning">${webSite.name}</span>
+									<code>${webSite.webSiteId}</code>				 
+				 </div>
 				<div class="panel-body">		
 					<table class="table">
 						<tbody>	
 							<tr class="info">
 								<th><small>사이트</small></th>	
 								<td>
-									${webSite.displayName}
-									<span class="label label-warning">${webSite.name}</span>
-									<code>${webSite.webSiteId}</code>
+
 								</td>
 							</tr>
 						</tbody>	
