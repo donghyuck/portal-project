@@ -1351,10 +1351,8 @@
 								</div>					
 								<#if action.webSite.user.userId == action.user.userId ></#if>
 							</div>			
-							<div class="well well-sm">
-								<p class="pull-right">
-									<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
-								</p>								
+							<div class="pull-right" style="padding:5px;">
+								<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>							
 							</div>							
 							<div  id="announce-grid"></div>	
 							</div>
