@@ -1310,19 +1310,20 @@
 					<li class="navbar-btn">
 <div class="btn-group navbar-btn">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-    Action <span class="caret"></span>
+    My <span class="caret"></span>
   </button>
   <ul class="dropdown-menu" role="menu">
-    <li><a href="#">Action</a></li>
-    <li><a href="#">Another action</a></li>
-    <li><a href="#">Something else here</a></li>
-    <li class="divider"></li>
-    <li><a href="#">Separated link</a></li>
+							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
+							<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
+							<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
+							 <li class="divider"></li>
+							<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
+							</#if>	
   </ul>
 </div>
 					</li>
-					<li class="dropdown navbar-btn">
-						<a href="#" class="dropdown-toggle btn btn-info navbar-btn" data-toggle="dropdown">My <b class="caret"></b></a>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
 							<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
