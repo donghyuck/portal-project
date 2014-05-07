@@ -1307,7 +1307,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
-					<li class="dropdown">
+					<li class="dropdown navbar-btn">
 						<a href="#" class="dropdown-toggle btn btn-info navbar-btn" data-toggle="dropdown">My <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
