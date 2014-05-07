@@ -1383,19 +1383,22 @@
 			<header>							
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
-			
-			<table class="table">
-				<tbody>	
-					<tr class="info">
-						<th><small>사이트</small></th>	
-						<td>
-							${webSite.displayName}
-							<span class="label label-warning">${webSite.name}</span>
-							<code>${webSite.webSiteId}</code>
-						</td>
-					</tr>
-				</tbody>	
-			</table>
+			<div class="panel panel-default">
+				<div class="panel-body">		
+					<table class="table">
+						<tbody>	
+							<tr class="info">
+								<th><small>사이트</small></th>	
+								<td>
+									${webSite.displayName}
+									<span class="label label-warning">${webSite.name}</span>
+									<code>${webSite.webSiteId}</code>
+								</td>
+							</tr>
+						</tbody>	
+					</table>
+				</div>
+			</div>		
 			<div class="blank-top-5" ></div>
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
