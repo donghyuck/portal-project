@@ -379,6 +379,11 @@ nav.personalized-navbar .btn-link:hover {
 	background-color: #47a3da;
 }
 
+nav.personalized-navbar li.dropdown:hover {
+	color: #fff;
+	background-color: #47a3da;
+}
+
 header.personalized-header {
 	/* height: 120px; */
 	/*margin-top: 0;*/
