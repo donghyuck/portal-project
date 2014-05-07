@@ -1312,11 +1312,11 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-link">마이 스트림</a></li>
-					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
 					<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="website-setting"><i class="fa fa-briefcase fa-lg"></i></a></li>					
-					</#if>		
-					
+					</#if>	
+										
+					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
