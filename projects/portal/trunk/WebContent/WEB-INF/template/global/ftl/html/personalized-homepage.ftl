@@ -1310,7 +1310,7 @@
 					<li class="navbar-btn">
 						<div class="btn-group navbar-btn">
 							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-							My <span class="caret"></span>
+							<small>My <span class="caret"></span></small>
 							</button>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
