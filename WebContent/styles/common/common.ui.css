@@ -379,7 +379,8 @@ nav.personalized-navbar .btn-link:hover {
 	background-color: #47a3da;
 }
 
-nav.personalized-navbar .open>a, .open>a :hover {
+nav.personalized-navbar .open>a, nav.personalized-navbar  .open>a :hover {
+	color: #fff;
 	background-color: #47a3da;
 }
 
