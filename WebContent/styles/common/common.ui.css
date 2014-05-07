@@ -379,6 +379,10 @@ nav.personalized-navbar .btn-link:hover {
 	background-color: #47a3da;
 }
 
+nav.personalized-navbar a {
+	background-color: transparent;
+}
+
 nav.personalized-navbar  a :hover , nav.personalized-navbar  a :focus {
 	color: #fff;
 	background-color: #47a3da;
