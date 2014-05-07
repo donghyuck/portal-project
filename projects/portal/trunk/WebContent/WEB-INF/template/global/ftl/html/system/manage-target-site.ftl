@@ -763,7 +763,7 @@
 									</table>
 								</div>
 								<div class="col-lg-7 col-xs-12 hide" id="company-details">
-									<div class="panel panel-default">
+									<div class="panel panel-default" style="padding:5px;">
 										<div class="panel-body">
 											<ul class="nav nav-tabs" id="myTab">
 											  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
