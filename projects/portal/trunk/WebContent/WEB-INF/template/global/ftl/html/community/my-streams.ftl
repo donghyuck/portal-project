@@ -321,11 +321,6 @@
 			overflow-x:hidden;
 			overflow-y:auto;			
 		}
-				
-		.personalized-navbar .btn-link:hover {
-		  color: #fff;
-		  background-color: #47a3da;
-		}
 
 		@media (max-width: 768px ) {
 			#personalized-controls-section.cbp-spmenu-vertical {
