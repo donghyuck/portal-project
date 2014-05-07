@@ -1361,7 +1361,6 @@
 								<div  id="announce-grid"></div>	
 							</div>
 							<div class="panel-body">					
-								<div class="container">
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
@@ -1383,9 +1382,7 @@
 											<div  id="announce-view"></div>	
 										</div>																		
 									</div>																		
-								</div>
-								
-								
+					
 							</div>
 						</div>		
 					</div>
