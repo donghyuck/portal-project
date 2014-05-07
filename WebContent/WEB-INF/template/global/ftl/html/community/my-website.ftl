@@ -1334,7 +1334,7 @@
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
 								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
-								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
+								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-close">Close</span></a>
 							</div>									
 							</div>
 							<div class="panel-body">		
@@ -1349,9 +1349,11 @@
 										<input type="radio" name="announce-selected-target" value="1">회사
 									</label>
 								</div>
-								<#if action.webSite.user.userId == action.user.userId ></#if>
-								<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
 								</p>					
+								<#if action.webSite.user.userId == action.user.userId ></#if>
+								<div class="pull-right">
+								<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
+								</div>								
 							</div>										
 							<div  id="announce-grid"></div>	
 							</div>
