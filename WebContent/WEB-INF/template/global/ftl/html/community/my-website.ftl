@@ -1526,9 +1526,7 @@
 			</div>
 		</script>
 		<script id="notice-subject-template" type="text/x-kendo-template">	
-			  <button type="button" class="btn btn-link btn-sm">
-			    #= subject # <span class="caret"></span>
-			  </button>
+			 #= subject #
 		</script>								
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
