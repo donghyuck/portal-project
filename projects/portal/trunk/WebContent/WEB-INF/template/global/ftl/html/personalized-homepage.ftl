@@ -1309,7 +1309,7 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
 						<div class="btn-group navbar-btn">
-							<button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+							<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
 							<small>My <span class="caret"></span></small>
 							</button>
 							<ul class="dropdown-menu" role="menu">
@@ -1322,6 +1322,7 @@
 							</ul>
 						</div>
 					</li>
+					<!--
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -1333,6 +1334,7 @@
 							</#if>								
 						</ul>
 					</li>										
+					-->
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
