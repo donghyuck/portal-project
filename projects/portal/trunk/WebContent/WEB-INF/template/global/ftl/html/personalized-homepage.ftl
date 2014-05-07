@@ -55,14 +55,14 @@
 						hide : function(e){
 							$('body nav').first().removeClass('hide');
 						},
-						'open-spmenu' : function(e){
+						'open-spmenu' : function(e){						
 							$('body').toggleClass('modal-open');						
 							if( $('#personalized-controls-section').hasClass("hide") )
 								$('#personalized-controls-section').removeClass("hide");							
 							$('body div.overlay').toggleClass('hide');										
 							slide_effect.play().then(function(){							
 								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});									
+							});							
 						}					 
 					}}
 				);			
