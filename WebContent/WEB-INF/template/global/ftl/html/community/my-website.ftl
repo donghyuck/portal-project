@@ -103,12 +103,12 @@
 				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.webSite.webSiteId}} );
 				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
 								
-				// 1. Announces 							
+				// 4-1. Announces 							
 				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
 				
 				createNoticeGrid();
 																			
-				// 4. Right Tabs								
+				// 4-2. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					//e.preventDefault();		
 					var show_bs_tab = $(e.target);
