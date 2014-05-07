@@ -1328,6 +1328,7 @@
 							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
 							<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
 							<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
+							<li class="divider"></li>
 							<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
 							</#if>								
 						</ul>
