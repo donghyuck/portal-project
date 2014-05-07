@@ -698,6 +698,7 @@
 										<p class="pull-right">
 											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="pages" disabled="disabled"><i class="fa fa-file"></i> 웹 페이지</button>
 											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details" disabled="disabled"><i class="fa fa-cloud"></i> 웹사이트 미디어</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="timeline" disabled="disabled"> 웹사이트 타임라인</button>
 										</p>
 									</div>										
 									<table class="table">
