@@ -28,8 +28,9 @@
 				kendo.culture("ko-KR");
 				
 				// 2.  MEUN 설정
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
+				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
+				
 				common.ui.handleActionEvents( $('.personalized-navbar'), {
 					handlers : [
 						{ selector: "input[name='personalized-area-col-size']",
@@ -40,8 +41,8 @@
 							grid_col_size.newValue = this.value;			
 							$(".custom-panels-group").each(function( index ) {
 								var custom_panels_group = $(this);				
-								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );
-								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );
+								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
+								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
 							});
 						  }	
 						}
@@ -73,7 +74,14 @@
 						slide_effect.reverse().then(function(){
 							$('body div.overlay').toggleClass('hide');
 						});
-					}, 100);
+					}, 100);					
+				});
+												
+				// photo panel showing				
+				createPhotoListView();
+								
+				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
+					this.select(this.element.children().first());
 				});
 
 				// 3. ACCOUNTS LOAD	
@@ -98,10 +106,25 @@
 						
 					},									
 				});				
-				// 4. CONTENT
+				// 4. CONTENT 	
+				
 				// 1. Announces 							
-				$("#announce-panel").data( "announcePlaceHolder", new Announce () );				
-				createNoticeGrid();	
+				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
+				
+				createNoticeGrid();
+																			
+				// 4. Right Tabs								
+				$('#myTab').on( 'show.bs.tab', function (e) {
+					//e.preventDefault();		
+					var show_bs_tab = $(e.target);
+					if( show_bs_tab.attr('href') == '#my-files' ){					
+						createAttachmentListView();
+					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
+						createPhotoListView();
+					}					
+				});
+
+				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
 			}
 		}]);	
@@ -1160,7 +1183,7 @@
 			max-width: 600px;
 			width: 100%;
 		}
-			
+				
 		#personalized-controls {
 			position: absolute;
 			top: 50px;
@@ -1171,12 +1194,14 @@
 			z-index: 1000;
 			overflow: hidden;
 			background-color: rgba(91,192,222,0.8)		
-		}				
+		}		
+		
 		
 		#personalized-controls-section{
 			margin-top: 0px;
 			padding : 0px;
 		}
+		
 		#personalized-controls-section.cbp-spmenu-vertical {
 			width: 565px;
 		}
@@ -1292,8 +1317,8 @@
 							<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
 							</#if>								
 						</ul>
-					</li>		
-					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-briefcase fa-lg"></i></a></li>					
+					</li>										
+					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
@@ -1344,9 +1369,124 @@
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>							
+				<div class="btn-group">
+					<button type="button" class="btn btn-info"><i class="fa fa-cog"></i></button>
+					<button type="button" class="btn btn-info"><i class="fa fa-comment"></i></button>
+					<button type="button" class="btn btn-info"><i class="fa fa-envelope"></i></button>
+				</div>
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
 			<div class="blank-top-5" ></div>
+			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
+				<#if !action.user.anonymous >	
+				<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
+				<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
+				</#if>						
+			</ul>	
+			<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
+				<!-- start attachement tab-pane -->
+				<div class="tab-pane" id="my-files">
+					<section class="custom-upload hide">
+						<div class="panel panel-default">
+							<div class="panel-body">		
+							<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
+							<#if !action.user.anonymous >			
+								<div class="page-header text-primary">
+									<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+								</div>								
+								<input name="uploadAttachment" id="attachment-files" type="file" />												
+							</#if>								
+							</div>
+						</div>
+					</section>											
+										<div class="panel panel-default">
+											<div class="panel-body">
+												<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
+												<#if !action.user.anonymous >		
+												<p class="pull-right">				
+													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+												</p>	
+												</#if>																										
+												<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+													<label class="btn btn-sm btn-warning active">
+														<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
+													</label>
+													<label class="btn btn-sm btn-warning">
+														<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
+													</label>
+													<label class="btn btn-sm btn-warning">
+														<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
+													</label>	
+												</div>												
+											</div>
+											<div class="panel-body scrollable color4" style="max-height:450px;">
+												<div id="attachment-list-view" class="color4"></div>
+											</div>	
+											<div class="panel-footer" style="padding:0px;">
+												<div id="pager" class="k-pager-wrap"></div>
+											</div>
+										</div>																				
+						</div><!-- end attachements  tab-pane -->		
+						<!-- start photos  tab-pane -->
+						<div class="tab-pane" id="my-photo-stream">									
+										<section class="custom-upload hide">
+											<div class="panel panel-default">
+												<div class="panel-body">
+													<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+													<#if !action.user.anonymous >			
+													<div class="page-header text-primary">
+														<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+													</div>
+													<div id="my-photo-upload">	
+														<input name="uploadPhotos" id="photo-files" type="file" />					
+													</div>
+													<div class="blank-top-5" ></div>
+													<div class="page-header text-primary">
+														<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
+													</div>						
+													<form name="photo-url-upload-form" class="form-horizontal" role="form">
+														<div class="form-group">
+															<label class="col-sm-2 control-label"><small>출처</small></label>
+															<div class="col-sm-10">
+																<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.sourceUrl">
+																<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
+															</div>
+														</div>
+														<div class="form-group">
+															<label class="col-sm-2 control-label"><small>사진</small></label>
+															<div class="col-sm-10">
+																<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.imageUrl">
+																<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
+															</div>
+														</div>														
+														<div class="form-group">
+															<div class="col-sm-offset-2 col-sm-10">
+																<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
+															</div>
+														</div>
+													</form>
+													</#if>
+												</div>
+											</div>	
+										</section>	
+							<div class="panel panel-default">			
+								<div class="panel-body">
+									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
+									<#if !action.user.anonymous >		
+									<p class="pull-right">				
+										<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+									</p>	
+									</#if>											
+								</div>
+								<div class="panel-body scrollable color4" style="max-height:450px;">
+									<div id="photo-list-view" class="color4" ></div>
+								</div>	
+								<div class="panel-footer" style="padding:0px;">
+									<div id="photo-list-pager" class="k-pager-wrap"></div>
+								</div>
+							</div>	
+						</div><!-- end photos  tab-pane -->
+			</div><!-- end of tab content -->	
 		</section>		
 		
 		<section id="image-broswer" class="image-broswer"></section>
