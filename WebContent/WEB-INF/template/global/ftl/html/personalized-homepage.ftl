@@ -1308,7 +1308,7 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="navbar-btn">
-<div class="btn-group btn-navbar">
+<div class="btn-group navbar-btn">
   <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
     Action <span class="caret"></span>
   </button>
