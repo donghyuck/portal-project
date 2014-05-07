@@ -425,7 +425,7 @@
 					sortable: true,
 					columns: [ 
 						{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
-						{field:"subject", title: "제목"}
+						{ field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, locked: true , template: $('#notice-subject-template').html() }, 
 					],
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
@@ -1524,7 +1524,19 @@
 					<p>#:size# 바이트</p>
 				</div>
 			</div>
-		</script>					
+		</script>
+		<script id="notice-subject-template" type="text/x-kendo-template">	
+			<div class="btn-group">
+			  <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
+			    #= subject # <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu" role="menu">
+			    <li><a href="\\#" onclick="doPageEdit(); return false;">편집</a></li>
+			    <li><a href="\\#" onclick="openPage(); return false;">보기</a></li>
+			    <li><a href="\\#" onclick="doPageDelete(); return false;">삭제</a></li>
+			  </ul>
+			</div>
+		</script>								
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
