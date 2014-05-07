@@ -1308,7 +1308,7 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle btn navbar-btn" data-toggle="dropdown">My <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle btn btn-info navbar-btn" data-toggle="dropdown">My <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
 							<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
