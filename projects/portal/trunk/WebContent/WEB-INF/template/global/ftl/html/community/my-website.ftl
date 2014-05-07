@@ -1312,7 +1312,7 @@
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">마이페이지 <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">One more separated link</a></li>
 						</ul>
