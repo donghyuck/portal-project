@@ -1380,30 +1380,11 @@
 		<div class="overlay hide"></div>		
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
-			<header>							
+			<header>	
+				<p class="text-primary">${webSite.displayName}<span class="label label-warning">${webSite.name}</span></p>
+				<p class="text-muted">${webSite.description}<small></small></p>											
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
-			<div style="padding:5px;" >
-			<div class="panel panel-default">
-				 <div class="panel-heading">
-									${webSite.displayName}
-									<span class="label label-warning">${webSite.name}</span>
-									<code>${webSite.webSiteId}</code>				 
-				 </div>
-				<div class="panel-body">		
-					<table class="table">
-						<tbody>	
-							<tr class="info">
-								<th><small>사이트</small></th>	
-								<td>
-
-								</td>
-							</tr>
-						</tbody>	
-					</table>
-				</div>
-			</div>	
-			</div>	
 			<div class="blank-top-5" ></div>
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
