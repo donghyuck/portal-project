@@ -649,6 +649,7 @@
 										</h5>
 										<p class="pull-right">											
 											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cloud"></i> 회사 미디어</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="timeline" disabled="disabled"> 회사 타임라인</button>
 										<p>
 									</div>											
 									<table class="table table-hover">
