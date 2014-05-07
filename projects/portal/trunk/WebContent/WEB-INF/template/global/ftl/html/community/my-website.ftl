@@ -1339,16 +1339,19 @@
 							</div>
 							<div class="panel-body">		
 								<div class="page-header text-primary">
-									<h5 ><small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small></h5>	
-									
-									<div class="btn-group" data-toggle="buttons">
-											<label class="btn btn-info btn-sm active">
-												<input type="radio" name="announce-selected-target" value="30" >사이트
-											</label>
-											<label class="btn btn-info btn-sm ">
-												<input type="radio" name="announce-selected-target" value="1">회사
-											</label>
-									</div>					
+									<h5 >
+										<small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small>
+										<p>
+											<div class="btn-group" data-toggle="buttons">
+												<label class="btn btn-info btn-sm active">
+													<input type="radio" name="announce-selected-target" value="30" >사이트
+												</label>
+												<label class="btn btn-info btn-sm ">
+													<input type="radio" name="announce-selected-target" value="1">회사
+												</label>
+											</div>											
+										</p>
+									</h5>
 									<#if action.webSite.user.userId == action.user.userId ></#if>
 								</div>			
 								<div class="pull-right" style="padding:5px;">
