@@ -1313,7 +1313,7 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-link">마이 스트림</a></li>
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
-					<#if request.userInRole("ROLE_ADMIN") >
+					<#if request.isUserInRole("ROLE_ADMIN") >
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="website-setting"><i class="fa fa-briefcase fa-lg"></i></a></li>					
 					</#if>		
 					
