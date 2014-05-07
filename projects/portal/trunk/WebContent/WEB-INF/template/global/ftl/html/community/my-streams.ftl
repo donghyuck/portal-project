@@ -48,23 +48,20 @@
 				});	
 				
  				common.ui.handleButtonActionEvents(
-					$("button.btn-control-group"), 
+					$(".personalized-navbar .nav a.btn-control-group"), 
 					{event: 'click', handlers: {
-						setting : function(e){
-							showCompanySetting();					
+						hide : function(e){
+							$('body nav').first().removeClass('hide');
 						},
-						group : function(e){
-							topBar.go('main-group.do');				
-						}, 	
-						user : function(e){
-							topBar.go('main-user.do');			
-						}, 							
-						details : function(e){
-							$('#company-details').toggleClass('hide');
-						},
-						connect : function(e){
-							alert("social modal");	 					
-						}			  						 
+						'open-spmenu' : function(e){
+							$('body').toggleClass('modal-open');						
+							if( $('#personalized-controls-section').hasClass("hide") )
+								$('#personalized-controls-section').removeClass("hide");							
+							$('body div.overlay').toggleClass('hide');							
+							slide_effect.play().then(function(){							
+								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
+							});		
+						}					 
 					}}
 				);				
 											
@@ -429,7 +426,7 @@
 						</div>
 					</li>	
 					<p class="navbar-text hidden-xs">&nbsp;</p>		
-					<li><a href="${request.contextPath}/main.do?view=personalized" class="btn btn-link btn-control-group" data-action="" >마이 페이지</a></li>						
+					<li><a href="${request.contextPath}/main.do?view=personalized" class="btn btn-link">마이 페이지</a></li>						
 					<li><a href="#" class="btn btn-link custom-nabvar-show-opts btn-control-group" data-action="open-spmenu"><i class="fa fa-cog fa-lg"></i></a></li>
 					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
