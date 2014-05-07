@@ -1340,21 +1340,22 @@
 							<div class="panel-body">		
 							<div class="page-header page-nounderline-header text-primary">
 								<h5 ><small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small></h5>	
-								<div class="well well-sm">
-									<div class="btn-group" data-toggle="buttons">
+								
+								<div class="btn-group" data-toggle="buttons">
 										<label class="btn btn-info btn-sm active">
 											<input type="radio" name="announce-selected-target" value="30" >사이트
 										</label>
 										<label class="btn btn-info btn-sm ">
 											<input type="radio" name="announce-selected-target" value="1">회사
 										</label>
-									</div>
 								</div>					
 								<#if action.webSite.user.userId == action.user.userId ></#if>
+							</div>			
+							<div class="well well-sm">
 								<p class="pull-right">
 									<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>	
 								</p>								
-							</div>										
+							</div>							
 							<div  id="announce-grid"></div>	
 							</div>
 							<div class="panel-body">					
