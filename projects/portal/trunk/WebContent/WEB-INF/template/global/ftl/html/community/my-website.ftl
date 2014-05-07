@@ -1311,6 +1311,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
+					<li><a href="${request.contextPath}/main.do?view=personalized" class="btn btn-link">마이 페이지</a></li>
 					<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-link">마이 스트림</a></li>
 					<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
 					<li><a href="${request.contextPath}/main.do?view=manage" class="btn btn-link"><i class="fa fa-briefcase fa-lg"></i></a></li>					
