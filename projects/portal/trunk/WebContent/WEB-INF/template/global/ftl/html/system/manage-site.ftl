@@ -648,7 +648,7 @@
 											<small><i class="fa fa-info"></i> 미디어 버튼을 클릭하면 회사가 보유한 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
 										</h5>
 										<p class="pull-right">											
-											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cloud"></i> 미디어</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cloud"></i> 회사 미디어</button>
 										<p>
 									</div>											
 									<table class="table table-hover">
@@ -676,37 +676,41 @@
 										 	</tbody>
 									</table>
 								</div>
-								<div class="col-lg-7 col-xs-12 hide" id="company-details">														
-									<ul class="nav nav-tabs" id="myTab">
-									  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
-									  <li><a href="#attachment-mgmt" data-toggle="tab">첨부파일</a></li>
-									  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
-									</ul>
-									<div class="tab-content">
-										<div class="tab-pane fade " id="image-mgmt">
-											<div class="col-sm-12 body-group marginless paddingless">
-												<input name="image-upload" id="image-upload" type="file" />
-												<div class="blank-top-15"></div>	
-												<div id="image-grid"></div>	
-											</div>
-											<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">									
-											</div>
-										</div>								
-										<div class="tab-pane fade" id="attachment-mgmt">
-											<div class="col-sm-12 body-group marginless paddingless">
-												<input name="attach-upload" id="attach-upload" type="file" />
-												<div class="blank-top-15"></div>
-												<div id="attach-grid"></div>
-											</div>
+								<div class="col-lg-7 col-xs-12 hide" id="company-details">								
+									<div class="panel panel-default">
+										<div class="panel-body" style="padding:5px;">														
+											<ul class="nav nav-tabs" id="myTab">
+											  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
+											  <li><a href="#attachment-mgmt" data-toggle="tab">첨부파일</a></li>
+											  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane fade " id="image-mgmt">
+													<div class="col-sm-12 body-group marginless paddingless">
+														<input name="image-upload" id="image-upload" type="file" />
+														<div class="blank-top-15"></div>	
+														<div id="image-grid"></div>	
+													</div>
+													<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">									
+													</div>
+												</div>								
+												<div class="tab-pane fade" id="attachment-mgmt">
+													<div class="col-sm-12 body-group marginless paddingless">
+														<input name="attach-upload" id="attach-upload" type="file" />
+														<div class="blank-top-15"></div>
+														<div id="attach-grid"></div>
+													</div>
+												</div>
+												<div class="tab-pane fade" id="social-mgmt">
+													<span class="help-block">
+														<small><i class="fa fa-info"></i> 쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small>
+														<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="connect"> 쇼셜연결</button>
+													</span>
+													<div id="social-grid"></div>
+												</div>								
+											</div>								
 										</div>
-										<div class="tab-pane fade" id="social-mgmt">
-											<span class="help-block">
-												<small><i class="fa fa-info"></i> 쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small>
-												<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="connect"> 쇼셜연결</button>
-											</span>
-											<div id="social-grid"></div>
-										</div>								
-									</div>								
+									</div>									
 								</div>
 							</div>							
 						</div>					
