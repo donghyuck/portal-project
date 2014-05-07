@@ -389,10 +389,6 @@ nav.personalized-navbar .open>a, nav.personalized-navbar  .open>a :hover , nav.p
 	background-color: #47a3da;
 }
 
-nav.personalized-navbar .dropdown:hover {
-	background-color: #47a3da;
-}
-
 header.personalized-header {
 	/* height: 120px; */
 	/*margin-top: 0;*/
