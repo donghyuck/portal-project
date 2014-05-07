@@ -374,6 +374,10 @@ nav.personalized-navbar  .navbar-btn {
 	margin-bottom: 4px;
 }
 
+nav.personalized-navbar .btn-link:hover {
+	color: #fff;
+	background-color: #47a3da;
+}
 
 header.personalized-header {
 	/* height: 120px; */
