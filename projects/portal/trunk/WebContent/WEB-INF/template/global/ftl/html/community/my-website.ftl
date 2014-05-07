@@ -1383,6 +1383,7 @@
 			<header>							
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
+			<div class="padding-5" >
 			<div class="panel panel-default">
 				<div class="panel-body">		
 					<table class="table">
@@ -1398,7 +1399,8 @@
 						</tbody>	
 					</table>
 				</div>
-			</div>		
+			</div>	
+			</div>	
 			<div class="blank-top-5" ></div>
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
