@@ -1313,6 +1313,9 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 					<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-link">마이 스트림</a></li>
 					<li><a href="#" class="btn btn-link custom-nabvar-show-opt btn-control-groups" data-action="show-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>
+					
+					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group" data-action="website-setting"><i class="fa fa-briefcase"></i></a></li>
+					
 					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group" data-action="close"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
 				</ul>
