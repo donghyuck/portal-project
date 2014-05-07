@@ -1383,7 +1383,7 @@
 			<header>							
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
-			<div class="padding-5" >
+			<div style="padding:5px;" >
 			<div class="panel panel-default">
 				<div class="panel-body">		
 					<table class="table">
