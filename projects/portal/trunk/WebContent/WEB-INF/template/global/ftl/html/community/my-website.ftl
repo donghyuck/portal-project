@@ -1526,16 +1526,9 @@
 			</div>
 		</script>
 		<script id="notice-subject-template" type="text/x-kendo-template">	
-			<div class="btn-group">
-			  <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
+			  <button type="button" class="btn btn-link btn-sm">
 			    #= subject # <span class="caret"></span>
 			  </button>
-			  <ul class="dropdown-menu" role="menu">
-			    <li><a href="\\#" onclick="doPageEdit(); return false;">편집</a></li>
-			    <li><a href="\\#" onclick="openPage(); return false;">보기</a></li>
-			    <li><a href="\\#" onclick="doPageDelete(); return false;">삭제</a></li>
-			  </ul>
-			</div>
 		</script>								
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
