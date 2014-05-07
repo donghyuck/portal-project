@@ -425,7 +425,7 @@
 					sortable: true,
 					columns: [ 
 						{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
-						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, template: $('#notice-subject-template').html() }, 
+						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}}, 
 					],
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
@@ -1524,9 +1524,6 @@
 					<p>#:size# 바이트</p>
 				</div>
 			</div>
-		</script>
-		<script id="notice-subject-template" type="text/x-kendo-template">	
-			 #= subject #
 		</script>								
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
