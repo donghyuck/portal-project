@@ -1379,10 +1379,13 @@
 									</div>		
 									<div class="row">
 										<div class="col-lg-12">
-											<div  id="announce-view"></div>	
+											<div class="panel panel-default">
+												<div class="panel-body">
+													<div  id="announce-view"></div>	
+												</div>
+											</div>												
 										</div>																		
-									</div>																		
-					
+									</div>
 							</div>
 						</div>		
 					</div>
