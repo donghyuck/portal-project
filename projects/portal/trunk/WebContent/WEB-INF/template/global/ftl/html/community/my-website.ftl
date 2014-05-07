@@ -1184,9 +1184,9 @@
 			width: 100%;
 		}
 				
-nav.personalized-navbar .open>a, nav.personalized-navbar  .open>a :hover , nav.personalized-navbar  .open>a :focus {
-	color: #fff;
-	background-color: #47a3da;
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+background-color: #47a3da;
+border-color: #428bca;
 }
 				
 		#personalized-controls {
