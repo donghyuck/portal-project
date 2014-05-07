@@ -63,22 +63,7 @@
 							});									
 						}					 
 					}}
-				);				
-											
-				$('.personalized-navbar .nav a.btn-link').click(function(e){
-					if( $(this).hasClass('custom-nabvar-hide')){						
-						$('body nav').first().removeClass('hide');						
-					}else if ($(this).hasClass('custom-nabvar-show-opts')){ 
-						$('body').toggleClass('modal-open');						
-						if( $('#personalized-controls-section').hasClass("hide") )
-							$('#personalized-controls-section').removeClass("hide");							
-						$('body div.overlay').toggleClass('hide');							
-						slide_effect.play().then(function(){							
-							$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-						});	
-					}				
-				});
-				
+				);	
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
 					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
