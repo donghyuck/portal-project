@@ -28,9 +28,8 @@
 				kendo.culture("ko-KR");
 				
 				// 2.  MEUN 설정
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
+				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
-				
 				common.ui.handleActionEvents( $('.personalized-navbar'), {
 					handlers : [
 						{ selector: "input[name='personalized-area-col-size']",
@@ -41,8 +40,8 @@
 							grid_col_size.newValue = this.value;			
 							$(".custom-panels-group").each(function( index ) {
 								var custom_panels_group = $(this);				
-								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
-								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
+								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );
+								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );
 							});
 						  }	
 						}
@@ -74,14 +73,7 @@
 						slide_effect.reverse().then(function(){
 							$('body div.overlay').toggleClass('hide');
 						});
-					}, 100);					
-				});
-												
-				// photo panel showing				
-				createPhotoListView();
-								
-				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-					this.select(this.element.children().first());
+					}, 100);
 				});
 
 				// 3. ACCOUNTS LOAD	
@@ -106,25 +98,10 @@
 						
 					},									
 				});				
-				// 4. CONTENT 	
-				
+				// 4. CONTENT
 				// 1. Announces 							
-				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
-				
-				createNoticeGrid();
-																			
-				// 4. Right Tabs								
-				$('#myTab').on( 'show.bs.tab', function (e) {
-					//e.preventDefault();		
-					var show_bs_tab = $(e.target);
-					if( show_bs_tab.attr('href') == '#my-files' ){					
-						createAttachmentListView();
-					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
-						createPhotoListView();
-					}					
-				});
-
-				$('#myTab a:first').tab('show') ;
+				$("#announce-panel").data( "announcePlaceHolder", new Announce () );				
+				createNoticeGrid();	
 				// END SCRIPT 
 			}
 		}]);	
