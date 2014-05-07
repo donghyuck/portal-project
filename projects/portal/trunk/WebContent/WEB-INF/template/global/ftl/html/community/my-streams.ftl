@@ -412,10 +412,16 @@
 						</div>
 					</li>	
 					<p class="navbar-text hidden-xs">&nbsp;</p>		
-					<li><a href="${request.contextPath}/main.do?view=personalized" class="btn btn-link">마이 페이지</a></li>		
-					<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
-					<li><a href="${request.contextPath}/main.do?view=manage" class="btn btn-link"><i class="fa fa-briefcase fa-lg"></i></a></li>
-					</#if>										
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="${request.contextPath}/main.do?view=personalized" class="btn btn-link">My 페이지</a></li>
+							<li><a href="${request.contextPath}/main.do?view=streams" class="btn btn-link">My 스트림</a></li>
+							<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
+							<li><a href="${request.contextPath}/main.do?view=manage" class="btn btn-link">My 웹사이트</a></li>					
+							</#if>								
+						</ul>
+					</li>								
 					<li><a href="#" class="btn btn-link custom-nabvar-show-opts btn-control-group" data-action="open-spmenu"><i class="fa fa-cog fa-lg"></i></a></li>
 					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
