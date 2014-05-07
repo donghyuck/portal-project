@@ -372,6 +372,7 @@
 												},
 												always : function(){
 													btn.button('reset');
+													$('#my-photo-stream form')[0].reset();
 													uploadModel.reset();
 												}
 											});		
