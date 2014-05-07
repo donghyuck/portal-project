@@ -1307,22 +1307,6 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
 					<p class="navbar-text hidden-xs">&nbsp;</p>
-					<li class="navbar-btn">
-						<div class="btn-group navbar-btn">
-							<button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown">
-							<small>My <span class="caret"></span></small>
-							</button>
-							<ul class="dropdown-menu" role="menu">
-								<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
-								<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
-								<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
-								 <li class="divider"></li>
-								<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
-								</#if>	
-							</ul>
-						</div>
-					</li>
-					<!--
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -1334,7 +1318,6 @@
 							</#if>								
 						</ul>
 					</li>										
-					-->
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
