@@ -1340,7 +1340,7 @@
 							<div class="panel-body" style="padding:5px;">		
 								<div class="page-header text-primary" style="height:100px;">
 									<h5>
-										<small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small>
+										<small><i class="fa fa-info"></i> 사이트(${webSite.displayName})/회사(${user.company.displayName}) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다. </small>
 										<p>
 											<div class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active">
