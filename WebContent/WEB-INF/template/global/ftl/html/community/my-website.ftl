@@ -1183,12 +1183,7 @@
 			max-width: 600px;
 			width: 100%;
 		}
-				
-.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
-background-color: #47a3da;
-border-color: #428bca;
-}
-				
+			
 		#personalized-controls {
 			position: absolute;
 			top: 50px;
