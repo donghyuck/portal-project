@@ -1192,6 +1192,7 @@
 			padding: 10px;
 			width: 100%;
 			z-index: 1000;
+			overflow: hidden;
 			background-color: rgba(91,192,222,0.8)		
 		}		
 		
@@ -1313,7 +1314,6 @@
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">마이페이지 <b class="caret"></b></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Something else here</a></li>
 							<li><a href="#">Something else here</a></li>
 						</ul>
 					</li>					
