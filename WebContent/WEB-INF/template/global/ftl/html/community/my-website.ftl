@@ -503,8 +503,7 @@
 			var announcePlaceHolder = getNoticeEditorSource();			
 			if( $('#notice-editor').text().trim().length == 0 ){			
 				var template = kendo.template($('#notice-editor-template').html());		
-				$('#notice-editor').html( template );				
-				
+				$('#notice-editor').html( template );					
 				var noticeEditorModel =  kendo.observable({ 
 					announce : announcePlaceHolder,
 					profilePhotoUrl : function(){
@@ -529,14 +528,58 @@
 						kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).reverse();								
 						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
 					}
-				});							
+				});
 				
 				kendo.bind($("#notice-editor-panel"), noticeEditorModel );
+				var bodyEditor =  $("#notice-editor-body" );
+				createEditor( "notice-editor" , bodyEditor );								
 			}
 			$('#announce-panel > .panel > .panel-body').hide();
 			kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).play();			
 		}
 		
+		function createEditor( renderToString, bodyEditor ){
+			if(!bodyEditor.data("kendoEditor") ){			
+				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
+				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
+				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);									
+				bodyEditor.kendoEditor({
+						tools : [
+							'bold',
+							'italic',
+							'insertUnorderedList',
+							'insertOrderedList',
+							{	
+								name: "createLink",
+								exec: function(e){
+									linkPopup.show();
+									return false;
+								}								
+							},
+							'unlink',
+							{	
+								name: "insertImage",
+								exec: function(e){
+									imageBroswer.show();
+									return false;
+								}
+							},
+							{
+								name: 'viewHtml',
+								exec: function(e){
+									htmlEditor.open();
+									return false;
+								}								
+							}
+							
+						],
+						stylesheets: [
+							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
+							"${request.contextPath}/styles/common/common.ui.css"
+						]
+				});
+			}			
+		}
 
 
 
