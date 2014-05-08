@@ -1670,18 +1670,18 @@
 					
 					<div  class="form">
 						<div class="form-group">
-							<label class="control-label">제목</label>							
+							<label class="control-label"><small>제목</small></label>							
 							<input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" />
 						</div>
 						<div class="form-group">
-							<label class="control-label">공지 기간</label>
+							<label class="control-label"><small>공지 기간</small></label>
 							<div class="col-sm-12" >
 								<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
 								<span class="help-block"><small>지정된 기간 동안만 이벤트 및 공지가 보여집니다. </small></span>
 							</div>
 						</div>
 						<div class="form-group">
-							<label class="control-label">본문</label>
+							<label class="control-label"><small>본문</small></label>
 							<textarea class="editor" data-bind='value:announce.body'></textarea>
 						</div>
 					</div>								
