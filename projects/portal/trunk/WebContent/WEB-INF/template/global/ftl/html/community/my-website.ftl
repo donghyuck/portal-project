@@ -429,6 +429,11 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
 					change: function(e) { 
+						var selectedCells = this.select();
+						if( selectedCells.length > 0){
+							var selectedCell = this.dataItem( selectedCells );								
+							setNoticeEditorSource(selectedCell);
+						}
 					},
 					dataBound: function(e) {
 					}
@@ -453,48 +458,63 @@
 		<!-- Notice viewer , editor 						       -->
 		<!-- ============================== -->					
 		function showNoticeViewer(){
-			var grid = $("#announce-grid").data('kendoGrid');
-			var selectedCells = grid.select();
-			var selectedCell = grid.dataItem( selectedCells );		
-			if( !$('#notice-viewer').data("announcePlaceHolder") ){
-				$('#notice-viewer').data("announcePlaceHolder", new Announce());
-			}			
-			
-			var announcePlaceHolder = $('#notice-viewer').data("announcePlaceHolder");
-			selectedCell.copy( announcePlaceHolder );							
-			if( $('#notice-viewer').text().trim().length == 0 ){			
-				var template = kendo.template($('#announcement-viewer-template').html());		
-				$('#notice-viewer').html( template );				
-				var noticeViewerModel =  kendo.observable({ 
-					announce : announcePlaceHolder,
-					profilePhotoUrl : function(){
-						return common.api.user.photoUrl (this.get("announce").user, 150,150);
-					},
-					editable : function(){
-						var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
-						if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
-							return true;
+			var announcePlaceHolder = getNoticeEditorSource();
+			if( announcePlaceHolder.announceId > 0 ){					
+				if( $('#notice-viewer').text().trim().length == 0 ){			
+					var template = kendo.template($('#announcement-viewer-template').html());		
+					$('#notice-viewer').html( template );				
+					var noticeViewerModel =  kendo.observable({ 
+						announce : announcePlaceHolder,
+						profilePhotoUrl : function(){
+							return common.api.user.photoUrl (this.get("announce").user, 150,150);
+						},
+						editable : function(){
+							var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
+							if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
+								return true;
+							}
+							return false;
+						},
+						openNoticeEditor : showNoticeEditor,
+						closeViewer : function(e){
+							kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).reverse();								
+							kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
 						}
-						return false;
-					},
-					openNoticeEditor : showNoticeEditor,
-					closeViewer : function(e){
-						kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).reverse();								
-						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
-					}
-				});						
-				kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
-			}			
-			$('#announce-panel > .panel > .panel-body').first().hide();
-			kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
+					});						
+					kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
+				}			
+				$('#announce-panel > .panel > .panel-body').first().hide();
+				kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
+			}
+		}
+		
+		function getNoticeEditorSource(){
+			if( !$("#notice-editor").data("announcePlaceHolder") ){
+				$("#notice-editor").data("announcePlaceHolder",new Announce() );
+			}
+			return $("#notice-editor").data("announcePlaceHolder");			
+		}
+		
+		function setNoticeEditorSource(source){	
+			if( !$("#notice-editor").data("announcePlaceHolder") ){
+				$("#notice-editor").data("announcePlaceHolder",new Announce() );
+			}
+			source.copy($("#notice-editor").data("announcePlaceHolder"));		
 		}
 		
 		function showNoticeEditor(){
+			
+			var announcePlaceHolder = getNoticeEditorSource();
+			
 			$('#announce-panel > .panel > .panel-body').hide();
 			kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).play();			
 		}
 		
-		
+
+
+
+
+
 
 		
 		function showAnnouncePanel (){			
@@ -1417,7 +1437,6 @@
 												</h5>
 												<div class="pull-right">
 													<div class="btn-group">
-														<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable">프로퍼티</button>
 														<button type="button" class="btn btn-primary btn-sm" data-bind="click: openNoticeEditor, enabled: editable" >편집</button>													
 													</div>						
 													<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeViewer">&times;  닫기</button>
