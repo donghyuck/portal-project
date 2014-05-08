@@ -502,8 +502,36 @@
 		function showNoticeEditor(){			
 			var announcePlaceHolder = getNoticeEditorSource();			
 			if( $('#notice-editor').text().trim().length == 0 ){			
-			
-			
+				var template = kendo.template($('#notice-editor-template').html());		
+				$('#notice-editor').html( template );				
+				
+				var noticeEditorModel =  kendo.observable({ 
+					announce : announcePlaceHolder,
+					profilePhotoUrl : function(){
+						return common.api.user.photoUrl (this.get("announce").user, 150,150);
+					},
+					isNew : function(){
+						if( this.announce.get('announceId') > 0 ) 
+							return false;
+						return true;	
+					},
+					editable : function(){
+						var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
+						if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
+							return true;
+						}
+						return false;
+					},
+					openNoticeProps : function(e){
+					
+					},
+					closeEditor : function(e){
+						kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).reverse();								
+						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
+					}
+				});							
+				
+				kendo.bind($("#notice-editor-panel"), noticeEditorModel );
 			}
 			$('#announce-panel > .panel > .panel-body').hide();
 			kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).play();			
@@ -1635,7 +1663,10 @@
 					<p>#:size# 바이트</p>
 				</div>
 			</div>
-		</script>								
+		</script>						
+		<script type="text/x-kendo-tmpl" id="notice-editor-template">
+			
+		</script>
 		<#include "/html/common/common-homepage-templates.ftl" >	
 		<#include "/html/common/common-editor-templates.ftl" >	
 		<!-- END TEMPLATE -->
