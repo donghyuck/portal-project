@@ -283,6 +283,9 @@ var Announce = kendo.data.Model.define( {
         modifiedDate: { type: "date"},
         creationDate: { type: "date" }
     },
+    formattedCreationDate : function(){
+    	return kendo.toString(this.get("creationDate"), "g");
+    },
     reset: function (){
     	this.set("announceId", 0 );
     	this.set("objectType",  1 );
@@ -301,7 +304,9 @@ var Announce = kendo.data.Model.define( {
     	target.set("modifiedDate",this.get("modifiedDate") );
     	target.set("creationDate", this.get("creationDate") );
     	if( typeof this.get("user") === 'object' )
-    		target.set("user", this.get("user") );    	
+    		target.set("user", this.get("user") );
+    	if( typeof this.get("properties") === 'object' )
+    		target.set("properties", this.get("properties") );
     },
     clone: function () {
     	return new Announce({
