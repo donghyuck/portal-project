@@ -1452,7 +1452,7 @@
 														</div>													
 														<div class="media">
 															<a class="pull-left" href="\\#">
-															<img src="${request.contextPath}/download/profile/#: user.username #?width=150&height=150" width="30" height="30" class="img-rounded">
+															<img data-bind="attr:{ src: photoUrl }" width="30" height="30" class="img-rounded">
 															</a>
 															<div class="media-body">
 																<h5 class="media-heading">																	
