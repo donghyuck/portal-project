@@ -393,7 +393,7 @@
 			}
 		}
 		<!-- ============================== -->
-		<!-- create notice grid										-->
+		<!-- Notice grid										       -->
 		<!-- ============================== -->								
 		function createNoticeGrid(){
 			if( !$("#announce-grid").data('kendoGrid') ){				
@@ -467,6 +467,35 @@
 			}	
 		}	
 		
+		<!-- ============================== -->
+		<!-- Notice view , editor 							       -->
+		<!-- ============================== -->					
+		function showNotice(){
+			var grid = $("#announce-grid").data('kendoGrid');
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells );
+			var template = kendo.template($('#announcement-view-template').html());
+			$("#announce-view").html( template(selectedCell) );
+		}
+		
+		function showAnnouncePanel (){			
+			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
+			var template = kendo.template($('#announcement-view-template').html());
+			$("#announce-view").html( template(announcePlaceHolder) );	
+			kendo.bind($("#announce-view"), announcePlaceHolder );	
+			if( announcePlaceHolder.editable ){	
+				$("#announce-view button[class*=custom-edit]").click( function (e){	
+					setAnnounceEditorSource(announcePlaceHolder);
+					createAnnounceEditor();
+				} );	
+			}
+			$("#announce-view button[class*=custom-list]").click( function (e){
+					$('html,body').animate({ scrollTop:  0 }, 300);
+			} );
+			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
+		}
+				
+		
 		function setAnnounceEditorSource( source ){			
 			if( !$('#announce-editor').data("announcePlaceHolder") ){
 				$('#announce-editor').data("announcePlaceHolder", new Announce());
@@ -484,22 +513,7 @@
 			}
 		}
 				
-		function showAnnouncePanel (){			
-			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
-			var template = kendo.template($('#announcement-view-template').html());
-			$("#announce-view").html( template(announcePlaceHolder) );	
-			kendo.bind($("#announce-view"), announcePlaceHolder );	
-			if( announcePlaceHolder.editable ){	
-				$("#announce-view button[class*=custom-edit]").click( function (e){	
-					setAnnounceEditorSource(announcePlaceHolder);
-					createAnnounceEditor();
-				} );	
-			}
-			$("#announce-view button[class*=custom-list]").click( function (e){
-					$('html,body').animate({ scrollTop:  0 }, 300);
-			} );
-			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
-		}
+
 		
 		function createAnnounceEditor(){			
 			if( $('#announce-editor').text().trim().length == 0 ){			
