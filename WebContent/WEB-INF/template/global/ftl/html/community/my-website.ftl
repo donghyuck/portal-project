@@ -1446,8 +1446,8 @@
 															<h4 data-bind="html:subject"></h4>		
 															<small class="text-muted"><span class="label label-primary">게시 기간</span> <span data-bind="text: formattedStartDate"></span> ~ <span data-bind="text: formattedEndDate"></span></small>
 															<p class="text-muted">
-																<small><span class="label label-default">생성일</span> <span data-bind="text: formattedCreationDate"/> </small>
-																<small><span class="label label-default">수정일</span> <span data-bind="text: formattedModifiedDate"/> </small>
+																<small><span class="label label-default">생성일</span> <span data-bind="text: formattedCreationDate"></span> </small>
+																<small><span class="label label-default">수정일</span> <span data-bind="text: formattedModifiedDate"></span> </small>
 															</p>
 														</div>													
 														<div class="media">
@@ -1456,9 +1456,9 @@
 															</a>
 															<div class="media-body">
 																<h5 class="media-heading">																	
-																	<span data-bind="visible:user.nameVisible, text: user.name"/>
-																	<code data-bind="text: user.username"/>
-																	<span data-bind="visible:user.emailVisible, text: user.email"/>
+																	<span data-bind="visible:user.nameVisible, text: user.name"></span>
+																	<code data-bind="text: user.username"></code>
+																	<span data-bind="visible:user.emailVisible, text: user.email"></span>
 																</h5>		
 															</div>
 														</div>	
