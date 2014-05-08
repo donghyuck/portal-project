@@ -497,8 +497,7 @@
 						}
 						return false;
 					}
-				});
-				
+				});				
 				common.ui.handleButtonActionEvents(
 					$("button.btn-notice-control-group"), 
 					{event: 'click', handlers: {	
@@ -507,8 +506,7 @@
 							kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();				
 						}																  						 
 					}}
-				);	
-				
+				);				
 				kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
 			}			
 			$('#announce-panel > .panel > .panel-body').first().hide();
@@ -1468,8 +1466,8 @@
 												</h5>
 												<div class="pull-right">
 													<div class="btn-group">
-														<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
-														<button type="button" class="btn btn-primary btn-sm" data-bind="click: openPage, disabled: isNew" >편집</button>													
+														<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable">프로퍼티</button>
+														<button type="button" class="btn btn-primary btn-sm" data-bind="click: openNoticeEditor, enabled: editable" >편집</button>													
 													</div>						
 													<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-action="notice-viewer-close">&times;  닫기</button>
 												</div>
