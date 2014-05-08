@@ -1441,7 +1441,18 @@
 									</div>
 							</div>
 							<div  id="notice-editor-panel" class="panel-body" style="display:none;">
-							
+								<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
+									<h5 >
+										<small><i class="fa fa-info"></i> 닫기 버튼을 클릭하면 목록이 보여집니다.</small>
+									</h5>
+									<div class="pull-right">
+										<div class="btn-group">
+											<button type="button" class="btn btn-primary btn-sm" data-bind="click: saveNotice, enabled: editable" >저장</button>			
+											<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable">프로퍼티</button>
+										</div>						
+										<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-action="notice-editor-close">&times;  닫기</button>
+									</div>
+								</div>									
 							</div>
 						</div>		
 					</div>
