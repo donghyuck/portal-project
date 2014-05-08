@@ -1450,7 +1450,18 @@
 																<small><span class="label label-default">수정일</span> <span data-bind="text: formattedModifiedDate"/> </small>
 															</p>
 														</div>													
-													
+														<div class="media">
+															<a class="pull-left" href="\\#">
+															<img src="${request.contextPath}/download/profile/#: user.username #?width=150&height=150" width="30" height="30" class="img-rounded">
+															</a>
+															<div class="media-body">
+																<h5 class="media-heading">																	
+																	<span data-bind="visible:user.nameVisible, text: user.name"/>
+																	<code data-bind="text: user.username"/>
+																	<span data-bind="visible:user.emailVisible, text: user.email"/>
+																</h5>		
+															</div>
+														</div>	
 													</div>																										
 												</div>
 											</div>												
