@@ -475,8 +475,8 @@
 			var grid = $("#announce-grid").data('kendoGrid');
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells );
-			var template = kendo.template($('#announcement-view-template').html());
-			$("#announce-view").html( template(selectedCell) );
+			//	var template = kendo.template($('#announcement-view-template').html());
+			kendo.bind( $("#notice-viewer"), selectedCell );
 		}
 		
 		function showAnnouncePanel (){			
@@ -1391,8 +1391,11 @@
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="panel panel-default">
-												<div class="panel-body">
-													<div  id="announce-view"></div>	
+												<div class="panel-body">													
+													<div  id="notice-viewer">
+													
+													
+													</div>																										
 												</div>
 											</div>												
 										</div>																		
