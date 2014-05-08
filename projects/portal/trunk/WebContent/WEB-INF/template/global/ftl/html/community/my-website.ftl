@@ -119,7 +119,6 @@
 					}					
 				});
 				$('#myTab a:first').tab('show') ;
-				
 				// END SCRIPT 
 			}
 		}]);	
@@ -483,6 +482,7 @@
 			selectedCell.copy( announcePlaceHolder );
 							
 			if( $('#notice-viewer').text().trim().length == 0 ){			
+			
 				var template = kendo.template($('#announcement-viewer-template').html());		
 				$('#notice-viewer').html( template );				
 				var noticeViewerModel =  kendo.observable({ 
@@ -498,6 +498,17 @@
 						return false;
 					}
 				});
+				
+				common.ui.handleButtonActionEvents(
+					$("button.btn-notice-control-group"), 
+					{event: 'click', handlers: {	
+						'notice-viewer-close' : function(e){
+							kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).reverse();								
+							kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();				
+						}																  						 
+					}}
+				);	
+				
 				kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
 			}			
 			$('#announce-panel > .panel > .panel-body').first().hide();
@@ -899,10 +910,10 @@
 									$("input[name='photo-public-shared']").last().click();
 								}
 							}
-						});						
+						});	
 						if( ! $('#photo-prop-grid').data("kendoGrid") ){
 							$('#photo-prop-grid').kendoGrid({
-								dataSource : {		
+								dataSource : {	
 									transport: { 
 										read: { url:'/community/get-my-image-property.do?output=json', type:'post' },
 										create: { url:'/community/update-my-image-property.do?output=json', type:'post' },
@@ -914,7 +925,7 @@
 											} 
 											return { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId }
 										}
-									},						
+									},
 									batch: true, 
 									schema: {
 										data: "targetImageProperty",
@@ -942,7 +953,7 @@
 							});		
 						}
 						// start open event handler 
-					})													
+					})
 				);	
 
 				$("input[name='photo-public-shared']").on("change", function () {
@@ -1458,9 +1469,9 @@
 												<div class="pull-right">
 													<div class="btn-group">
 														<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: showProps, disabled: isNew, invisible:isNew ">프로퍼티</button>
-														<button type="button" class="btn btn-primary btn-sm" data-bind="click: openPage, disabled: isNew" >수정</button>													
+														<button type="button" class="btn btn-primary btn-sm" data-bind="click: openPage, disabled: isNew" >편집</button>													
 													</div>						
-													<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="page-editor-close">&times;  닫기</button>
+													<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-action="notice-viewer-close">&times;  닫기</button>
 												</div>
 											</div>																		
 										</div>
