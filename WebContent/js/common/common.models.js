@@ -476,14 +476,17 @@ var User = kendo.data.Model.define( {
         enabled : {type: "boolean" },
         nameVisible : {type: "boolean" },	        
         emailVisible: {type: "boolean" },
-        hasProfileImage:{type: "boolean", defaultValue: false},
+        //hasProfileImage:{type: "boolean", defaultValue: false},
         formattedLastLoggedIn : { type: "string" },
         formattedLastProfileUpdate : { type: "string" },
         isSystem: { type:"boolean", defaultVlaue: false },
         anonymous : { type:"boolean", defaultVlaue: true },
-        photoUrl : {type: "string", editable: true, defaultVlaue: null },
+        //photoUrl : {type: "string", editable: true, defaultVlaue: null },
         roles: {}
     },
+    photoUrl : function (){
+    	return '/download/profile/' +  this.get("username") + "?width=150&height=150";	    	
+    },    
     hasRole : function ( role ) {
     	if( typeof( this.roles ) != "undefined" && $.inArray( role, this.roles ) >= 0 )
 			return true
@@ -506,7 +509,7 @@ var User = kendo.data.Model.define( {
     	target.set("company", this.get("company"));		
     	target.set("isSystem", this.get("isSystem"));
     	if( typeof this.get("roles") === 'object' )
-    		target.set("roles", this.get("roles") );    	
+    		target.set("roles", this.get("roles") );	
     }
 });
 
