@@ -498,7 +498,7 @@
 						return false;
 					}
 				});
-				kendo.bind($("#notice-viewer"), noticeViewerModel );
+				kendo.bind($("#notice-details"), noticeViewerModel );
 			}
 			
 			
