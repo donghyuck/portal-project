@@ -502,10 +502,8 @@
 			source.copy($("#notice-editor").data("announcePlaceHolder"));		
 		}
 		
-		function showNoticeEditor(){
-			
-			var announcePlaceHolder = getNoticeEditorSource();
-			
+		function showNoticeEditor(){			
+			var announcePlaceHolder = getNoticeEditorSource();			
 			$('#announce-panel > .panel > .panel-body').hide();
 			kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).play();			
 		}
