@@ -1444,10 +1444,10 @@
 													<div  id="notice-viewer">
 														<div class="page-heading">
 															<h4 data-bind="html:subject"></h4>		
-															<small class="text-muted"><span class="label label-primary">게시 기간</span> ~ </small>
+															<small class="text-muted"><span class="label label-primary">게시 기간</span> <span data-bind="text: formattedStartDate"/> ~ <span data-bind="text: formattedEndDate"/></small>
 															<p class="text-muted">
-																<small><span class="label label-default">생성일</span><span data-bind="text: formattedCreationDate"/> </small>
-																<small><span class="label label-default">수정일</span> </small>
+																<small><span class="label label-default">생성일</span> <span data-bind="text: formattedCreationDate"/> </small>
+																<small><span class="label label-default">수정일</span> <span data-bind="text: formattedModifiedDate"/> </small>
 															</p>
 														</div>													
 													
