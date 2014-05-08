@@ -430,7 +430,7 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
 					change: function(e) { 
-						var selectedCells = this.select();
+						/*var selectedCells = this.select();
 						if( selectedCells.length > 0){
 							var selectedCell = this.dataItem( selectedCells );	    							
 							var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
@@ -442,7 +442,7 @@
 							}							
 							$("#announce-panel").data( "announcePlaceHolder", announcePlaceHolder );							 
 							showAnnouncePanel();	
-						}
+						}*/
 					},
 					dataBound: function(e) {					
 						//var selectedCells = this.select();
