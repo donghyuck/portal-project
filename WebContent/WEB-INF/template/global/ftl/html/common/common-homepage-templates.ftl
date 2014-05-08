@@ -434,11 +434,11 @@
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="announcement-viewer-template">		
 	<div class="page-heading">
-		<h4 data-bind="html:subject"></h4>		
-		<small class="text-muted"><span class="label label-primary">게시 기간</span> <span data-bind="text: formattedStartDate"></span> ~ <span data-bind="text: formattedEndDate"></span></small>
+		<h4 data-bind="html:announce.subject"></h4>		
+		<small class="text-muted"><span class="label label-primary">게시 기간</span> <span data-bind="text: announce.formattedStartDate"></span> ~ <span data-bind="text: announce.formattedEndDate"></span></small>
 		<p class="text-muted">
-			<small><span class="label label-default">생성일</span> <span data-bind="text: formattedCreationDate"></span> </small>
-			<small><span class="label label-default">수정일</span> <span data-bind="text: formattedModifiedDate"></span> </small>
+			<small><span class="label label-default">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span> </small>
+			<small><span class="label label-default">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span> </small>
 		</p>
 	</div>													
 	<div class="media">
@@ -447,8 +447,8 @@
 		</a>
 		<div class="media-body">
 			<h5 class="media-heading">																	
-				<p><span data-bind="visible:user.nameVisible, text: user.name"></span> <code data-bind="text: user.username"></code></p>
-				<p data-bind="visible:user.emailVisible, text: user.email"></p>
+				<p><span data-bind="visible:announce.user.nameVisible, text: user.name"></span> <code data-bind="text: announce.user.username"></code></p>
+				<p data-bind="visible:announce.user.emailVisible, text: announce.user.email"></p>
 			</h5>		
 		</div>
 	</div>	
