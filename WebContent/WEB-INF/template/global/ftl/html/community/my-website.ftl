@@ -476,6 +476,7 @@
 			if( !$('#notice-viewer').data("announcePlaceHolder") ){
 				$('#notice-viewer').data("announcePlaceHolder", new Announce());
 			}			
+			
 			var announcePlaceHolder = $('#notice-viewer').data("announcePlaceHolder");
 			selectedCell.copy( announcePlaceHolder );							
 			if( $('#notice-viewer').text().trim().length == 0 ){			
@@ -509,6 +510,9 @@
 			kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
 		}
 		
+		function showNoticeEditor(){
+		
+		}
 		
 		
 
@@ -1445,14 +1449,14 @@
 										<div class="col-lg-12">
 											<div class="panel panel-default" style="margin-bottom: 20px;">
 												<div class="panel-body">													
-													<div  id="notice-viewer">
-														
-													</div>																										
+													<div  id="notice-viewer"></div>																										
 												</div>
 											</div>												
 										</div>																		
 									</div>
-									
+							</div>
+							<div  id="notice-editor-panel" class="panel-body" style="display:none;">
+							
 							</div>
 						</div>		
 					</div>
