@@ -447,7 +447,7 @@
 		</a>
 		<div class="media-body">
 			<h5 class="media-heading">																	
-				<p><span data-bind="visible:announce.user.nameVisible, text: user.name"></span> <code data-bind="text: announce.user.username"></code></p>
+				<p><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span> <code data-bind="text: announce.user.username"></code></p>
 				<p data-bind="visible:announce.user.emailVisible, text: announce.user.email"></p>
 			</h5>		
 		</div>
