@@ -1456,7 +1456,7 @@
 															</a>
 															<div class="media-body">
 																<h5 class="media-heading">																	
-																	<p data-bind="visible:user.nameVisible, text: user.name"><code data-bind="text: user.username"></code></p>
+																	<p><span data-bind="visible:user.nameVisible, text: user.name"></span><code data-bind="text: user.username"></code></p>
 																	<p data-bind="visible:user.emailVisible, text: user.email"></p>
 																</h5>		
 															</div>
