@@ -477,17 +477,12 @@
 						}
 						return false;
 					},
-					openNoticeEditor : showNoticeEditor 
-				});				
-				common.ui.handleButtonActionEvents(
-					$("button.btn-notice-control-group"), 
-					{event: 'click', handlers: {	
-						'notice-viewer-close' : function(e){
-							kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).reverse();								
-							kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();				
-						}																  						 
-					}}
-				);				
+					openNoticeEditor : showNoticeEditor,
+					closeViewer : function(e){
+						kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).reverse();								
+						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
+					}
+				});						
 				kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
 			}			
 			$('#announce-panel > .panel > .panel-body').first().hide();
@@ -1425,7 +1420,7 @@
 														<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable">프로퍼티</button>
 														<button type="button" class="btn btn-primary btn-sm" data-bind="click: openNoticeEditor, enabled: editable" >편집</button>													
 													</div>						
-													<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-action="notice-viewer-close">&times;  닫기</button>
+													<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeViewer">&times;  닫기</button>
 												</div>
 											</div>																		
 										</div>
@@ -1450,7 +1445,7 @@
 											<button type="button" class="btn btn-primary btn-sm" data-bind="click: saveNotice, enabled: editable" >저장</button>			
 											<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable">프로퍼티</button>
 										</div>						
-										<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-action="notice-editor-close">&times;  닫기</button>
+										<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeEditor">&times;  닫기</button>
 									</div>
 								</div>									
 							</div>
