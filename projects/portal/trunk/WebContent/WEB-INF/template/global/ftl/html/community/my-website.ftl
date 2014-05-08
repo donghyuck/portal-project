@@ -1682,7 +1682,9 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label"><small>본문</small></label>
-							<textarea class="editor" data-bind='value:announce.body'></textarea>
+							<div class="col-sm-12" >
+								<textarea class="editor" data-bind='value:announce.body'></textarea>
+							</div>
 						</div>
 					</div>								
 									
