@@ -1462,7 +1462,14 @@
 										</div>						
 										<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeEditor">&times;  닫기</button>
 									</div>
+								</div>
+								
+								<div class="panel panel-default" style="margin-bottom: 20px;">
+									<div class="panel-body">													
+										<div  id="notice-editor"></div>																										
+									</div>
 								</div>									
+																	
 							</div>
 						</div>		
 					</div>
