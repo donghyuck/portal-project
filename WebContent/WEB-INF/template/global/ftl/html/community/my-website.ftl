@@ -459,7 +459,6 @@
 		<!-- ============================== -->					
 		function showNoticeViewer(){
 			var announcePlaceHolder = getNoticeEditorSource();
-			alert( kendo.stringify( announcePlaceHolder ) );
 			if( announcePlaceHolder.announceId > 0 ){					
 				if( $('#notice-viewer').text().trim().length == 0 ){			
 					var template = kendo.template($('#announcement-viewer-template').html());		
@@ -502,6 +501,10 @@
 		
 		function showNoticeEditor(){			
 			var announcePlaceHolder = getNoticeEditorSource();			
+			if( $('#notice-editor').text().trim().length == 0 ){			
+			
+			
+			}
 			$('#announce-panel > .panel > .panel-body').hide();
 			kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).play();			
 		}
@@ -1466,7 +1469,7 @@
 								
 								<div class="panel panel-default" style="margin-bottom: 20px;">
 									<div class="panel-body">													
-										<div  id="notice-editor"></div>																										
+										<div  id="notice-editor" class="container"></div>																										
 									</div>
 								</div>									
 																	
