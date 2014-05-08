@@ -76,10 +76,6 @@
 		</div>	
 	</div>			
 </script>
-
-
-
-
 <!-- ============================== -->
 <!-- my photo view panel template                    -->
 <!-- ============================== -->
@@ -155,7 +151,6 @@
 		</div>				
 	</div>		
 </script>
-
 <script type="text/x-kendo-template" id="photo-panel-template-old">
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -448,7 +443,7 @@
 	</div>
 	<div class="media">
 		<a class="pull-left" href="\\#">
-		<img src="${request.contextPath}/download/profile/#: user.username #?width=150&height=150" width="30" height="30" class="img-rounded">
+		<img src="${request.contextPath}/download/profile/#: user.photoUrl #?width=150&height=150" width="30" height="30" class="img-rounded">
 		</a>
 		<div class="media-body">
 			<h5 class="media-heading">
