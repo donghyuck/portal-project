@@ -1452,7 +1452,7 @@
 														</div>													
 														<div class="media">
 															<a class="pull-left" href="\\#">
-															<img data-bind="attr:{ src: user.photoUrl }" width="30" height="30" class="img-rounded">
+															<img data-bind="attr:{ src: common.api.user.photoUr(user, 150 , 150 )}" width="30" height="30" class="img-rounded">
 															</a>
 															<div class="media-body">
 																<h5 class="media-heading">																	
