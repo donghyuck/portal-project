@@ -570,8 +570,7 @@
 									htmlEditor.open();
 									return false;
 								}								
-							}
-							
+							}							
 						],
 						stylesheets: [
 							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
@@ -642,7 +641,8 @@
 				_target.set("objectType" , _objectType);
 			}
 		}
-				
+				function createAnnounceEditor(){	}
+		/*		
 		function createAnnounceEditor(){			
 			if( $('#announce-editor').text().trim().length == 0 ){			
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
@@ -792,6 +792,7 @@
 			}
 		}
 		
+		*/
 		
 		/**
 		function createPanel(){					
