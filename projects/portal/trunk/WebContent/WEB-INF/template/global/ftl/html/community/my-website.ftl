@@ -1495,11 +1495,7 @@
 									</div>
 								</div>
 								
-								<div class="panel panel-default" style="margin-bottom: 20px;">
-									<div class="panel-body">													
-										<div  id="notice-editor" class="container"></div>																										
-									</div>
-								</div>									
+								<div  id="notice-editor" class="container"></div>													
 																	
 							</div>
 						</div>		
