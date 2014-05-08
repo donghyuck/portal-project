@@ -1662,12 +1662,7 @@
 		</script>						
 		<script type="text/x-kendo-tmpl" id="notice-editor-template">
 			<div class="panel panel-default">
-				<div class="panel-heading" style="padding:5px;">
-					<small>공지 & 이벤트 제목</small><input type="text" class="form-control" placeholder="제목" data-bind="value: announce.subject">
-					
-				</div>
-				<div class="panel-body"  style="padding:5px;">
-					
+				<div class="panel-body"  style="padding:5px;">					
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label"><small>제목</small></label>							
@@ -1683,11 +1678,10 @@
 						<div class="form-group">
 							<label class="control-label"><small>본문</small></label>
 							<div class="col-sm-12" >
-								<textarea class="editor" data-bind='value:announce.body'></textarea>
+								<textarea id="notice-editor-body" data-bind='value:announce.body'></textarea>
 							</div>
 						</div>
-					</div>								
-									
+					</div>									
 				</div>	
 			</div>								
 		</script>
