@@ -471,13 +471,43 @@
 		<!-- Notice view , editor 							       -->
 		<!-- ============================== -->					
 		function showNotice(){
-		alert("shoqw");
+			alert("shoqw");
 			var grid = $("#announce-grid").data('kendoGrid');
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells );
 			//	var template = kendo.template($('#announcement-view-template').html());
 			kendo.bind( $("#notice-viewer"), selectedCell );
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		function showAnnouncePanel (){			
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
@@ -495,6 +525,27 @@
 			} );
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 		
 		function setAnnounceEditorSource( source ){			
@@ -514,8 +565,6 @@
 			}
 		}
 				
-
-		
 		function createAnnounceEditor(){			
 			if( $('#announce-editor').text().trim().length == 0 ){			
 				var announceEditorTemplate = kendo.template($('#announcement-editor-template').html());	
@@ -1393,7 +1442,14 @@
 											<div class="panel panel-default">
 												<div class="panel-body">													
 													<div  id="notice-viewer">
-													
+														<div class="page-heading">
+															<h4 data-bind="html:subject"></h4>		
+															<small class="text-muted"><span class="label label-primary">게시 기간</span> ~ </small>
+															<p class="text-muted">
+																<small><span class="label label-default">생성일</span><span data-bind="text: formattedCreationDate"/> </small>
+																<small><span class="label label-default">수정일</span> </small>
+															</p>
+														</div>													
 													
 													</div>																										
 												</div>
