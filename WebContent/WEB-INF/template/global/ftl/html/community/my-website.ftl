@@ -471,6 +471,7 @@
 		<!-- Notice view , editor 							       -->
 		<!-- ============================== -->					
 		function showNotice(){
+		alert("shoqw");
 			var grid = $("#announce-grid").data('kendoGrid');
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells );
