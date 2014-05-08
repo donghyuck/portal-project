@@ -489,6 +489,13 @@
 					announce : announcePlaceHolder,
 					profilePhotoUrl : function(){
 						return common.api.user.photoUrl (this.get("announce").user, 150,150);
+					},
+					editable : function(){
+						var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
+						if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
+							return true;
+						}
+						return false;
 					}
 				});
 				kendo.bind($("#notice-viewer"), noticeViewerModel );
@@ -1441,7 +1448,7 @@
 								</div>								
 								<div  id="announce-grid"></div>	
 							</div>
-							<div class="panel-body">					
+							<div  id="notice-details" class="panel-body">
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
@@ -1469,6 +1476,7 @@
 											</div>												
 										</div>																		
 									</div>
+									
 							</div>
 						</div>		
 					</div>
