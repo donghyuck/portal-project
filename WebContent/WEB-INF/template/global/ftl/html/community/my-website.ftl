@@ -1495,7 +1495,7 @@
 									</div>
 								</div>
 								
-								<div  id="notice-editor" class="container"></div>													
+								<div  id="notice-editor"></div>													
 																	
 							</div>
 						</div>		
