@@ -469,7 +469,7 @@
 		<!-- ============================== -->
 		<!-- Notice view , editor 							       -->
 		<!-- ============================== -->					
-		function showNotice(){
+		function showNoticeViewer(){
 			var grid = $("#announce-grid").data('kendoGrid');
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells );
