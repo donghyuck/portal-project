@@ -498,10 +498,10 @@
 						return false;
 					}
 				});
-				kendo.bind($("#notice-details"), noticeViewerModel );
+				kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
 			}
 			
-			
+			kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();
 			
 			
 			//	
@@ -1403,7 +1403,7 @@
 							<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
 							</#if>								
 						</ul>
-					</li>										
+					</li>
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-briefcase fa-lg"></i></a></li>					
 					<li><a href="#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
 					<p class="navbar-text hidden-xs">&nbsp;</p>
@@ -1423,12 +1423,12 @@
 								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-							</div>									
 							</div>
-							<div class="panel-body" style="padding:5px;">		
+							</div>
+							<div class="panel-body" style="padding:5px;">
 								<div class="page-header text-primary" style="height:100px;">
 									<h5>
-										<small><i class="fa fa-info"></i> 사이트(${webSite.displayName})/회사(${user.company.displayName}) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다. </small>
+										<small><i class="fa fa-info"></i> 사이트(${webSite.displayName})/회사(${user.company.displayName}) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다.</small>
 										<p>
 											<div class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active">
@@ -1442,13 +1442,13 @@
 									</h5>
 									<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
 										<div class="pull-right">
-											<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>							
+											<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>
 										</div>											
 									</#if>
 								</div>								
 								<div  id="announce-grid"></div>	
 							</div>
-							<div  id="notice-details" class="panel-body">
+							<div  id="notice-viewer-panel" class="panel-body">
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
