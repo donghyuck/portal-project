@@ -472,17 +472,13 @@
 		function showNoticeViewer(){
 			var grid = $("#announce-grid").data('kendoGrid');
 			var selectedCells = grid.select();
-			var selectedCell = grid.dataItem( selectedCells );
-		
+			var selectedCell = grid.dataItem( selectedCells );		
 			if( !$('#notice-viewer').data("announcePlaceHolder") ){
 				$('#notice-viewer').data("announcePlaceHolder", new Announce());
-			}
-			
+			}			
 			var announcePlaceHolder = $('#notice-viewer').data("announcePlaceHolder");
-			selectedCell.copy( announcePlaceHolder );
-							
+			selectedCell.copy( announcePlaceHolder );							
 			if( $('#notice-viewer').text().trim().length == 0 ){			
-			
 				var template = kendo.template($('#announcement-viewer-template').html());		
 				$('#notice-viewer').html( template );				
 				var noticeViewerModel =  kendo.observable({ 
@@ -510,9 +506,7 @@
 				kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
 			}			
 			$('#announce-panel > .panel > .panel-body').first().hide();
-			kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();
-			
-			
+			kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
 			//	
 		}
 		
