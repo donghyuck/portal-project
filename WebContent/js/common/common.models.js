@@ -286,6 +286,15 @@ var Announce = kendo.data.Model.define( {
     formattedCreationDate : function(){
     	return kendo.toString(this.get("creationDate"), "g");
     },
+    formattedModifiedDate : function(){
+    	return kendo.toString(this.get("modifiedDate"), "g");
+    },
+    formattedStartDate : function(){
+    	return kendo.toString(this.get("startDate"), "g");
+    },
+    formattedEndDate : function(){
+    	return kendo.toString(this.get("endDate"), "g");
+    },    
     reset: function (){
     	this.set("announceId", 0 );
     	this.set("objectType",  1 );
