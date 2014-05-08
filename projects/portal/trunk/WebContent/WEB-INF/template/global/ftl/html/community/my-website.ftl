@@ -1448,7 +1448,7 @@
 								</div>								
 								<div  id="announce-grid"></div>	
 							</div>
-							<div  id="notice-viewer-panel" class="panel-body">
+							<div  id="notice-viewer-panel" class="panel-body" style="display:none;">
 									<div class="row">
 										<div class="col-lg-12">
 											<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
