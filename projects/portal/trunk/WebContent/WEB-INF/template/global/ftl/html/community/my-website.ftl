@@ -499,8 +499,8 @@
 					}
 				});
 				kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
-			}
-			
+			}			
+			$('#announce-panel > .panel > .panel-body').first().hide();
 			kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();
 			
 			
