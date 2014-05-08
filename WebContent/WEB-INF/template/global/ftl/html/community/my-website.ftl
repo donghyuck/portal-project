@@ -486,7 +486,10 @@
 				var template = kendo.template($('#announcement-viewer-template').html());		
 				$('#notice-viewer').html( template );				
 				var noticeViewerModel =  kendo.observable({ 
-					announce : announcePlaceHolder
+					announce : announcePlaceHolder,
+					profilePhotoUrl : function(){
+						return common.api.user.photoUrl (this.get("announce").user, 150,150);
+					}
 				});
 				kendo.bind($("#notice-viewer"), noticeViewerModel );
 			}
