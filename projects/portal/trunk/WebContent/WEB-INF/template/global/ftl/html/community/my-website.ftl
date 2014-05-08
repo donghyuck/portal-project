@@ -425,7 +425,7 @@
 					sortable: true,
 					columns: [ 
 						{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
-						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, template: '#: subject #<button type="button" class="btn btn-warning btn-xs" onclick="return false;">보기</a>'}, 
+						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, template: '#: subject # <button type="button" class="btn btn-warning btn-xs" onclick="return false;">보기</a><button type="button" class="btn btn-warning btn-xs" onclick="return false;">수정</a>'}, 
 					],
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
