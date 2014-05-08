@@ -1663,8 +1663,8 @@
 		<script type="text/x-kendo-tmpl" id="notice-editor-template">
 			<div class="panel panel-default">
 				<div class="panel-heading" style="padding:5px;">
-					<input type="text" class="form-control" placeholder="제목" data-bind="value: announce.subject">
-					<small>공지 & 이벤트 제목</small>
+					<small>공지 & 이벤트 제목</small><input type="text" class="form-control" placeholder="제목" data-bind="value: announce.subject">
+					
 				</div>
 				<div class="panel-body">
 				</div>	
