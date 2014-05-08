@@ -484,7 +484,7 @@
 							
 			if( $('#notice-viewer').text().trim().length == 0 ){			
 				var template = kendo.template($('#announcement-viewer-template').html());		
-				$('#notice-viewer').html( announceEditorTemplate );				
+				$('#notice-viewer').html( template );				
 				var noticeViewerModel =  kendo.observable({ 
 					announce : announcePlaceHolder
 				});
