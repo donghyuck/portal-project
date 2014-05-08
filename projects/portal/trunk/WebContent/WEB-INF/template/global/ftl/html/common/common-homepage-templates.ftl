@@ -451,6 +451,7 @@
 				<p data-bind="visible:announce.user.emailVisible, text: announce.user.email"></p>
 			</h5>		
 		</div>
+		<div data-bind="html: announce.body "/>
 	</div>	
 </script>
 <script type="text/x-kendo-tmpl" id="announcement-view-template">		
