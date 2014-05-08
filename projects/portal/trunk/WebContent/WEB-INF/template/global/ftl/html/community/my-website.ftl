@@ -440,8 +440,7 @@
 						$("#announce-grid").data('announceTargetPlaceHolder', this.value );
 						$("#announce-grid").data('kendoGrid').dataSource.read();
 					}					
-				}});
-				
+				}});				
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
 					setAnnounceEditorSource(new Announce());
 					createAnnounceEditor();
@@ -477,7 +476,8 @@
 							return true;
 						}
 						return false;
-					}
+					},
+					openNoticeEditor : showNoticeEditor 
 				});				
 				common.ui.handleButtonActionEvents(
 					$("button.btn-notice-control-group"), 
