@@ -497,10 +497,7 @@
 		}
 		
 		function setNoticeEditorSource(source){	
-			if( !$("#notice-editor").data("announcePlaceHolder") ){
-				$("#notice-editor").data("announcePlaceHolder",new Announce() );
-			}
-			source.copy($("#notice-editor").data("announcePlaceHolder"));		
+			source.copy(getNoticeEditorSource());		
 		}
 		
 		function showNoticeEditor(){			
