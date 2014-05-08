@@ -471,12 +471,30 @@
 		<!-- Notice view , editor 							       -->
 		<!-- ============================== -->					
 		function showNotice(){
-			alert("shoqw");
 			var grid = $("#announce-grid").data('kendoGrid');
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells );
-			//	var template = kendo.template($('#announcement-view-template').html());
-			kendo.bind( $("#notice-viewer"), selectedCell );
+		
+			if( !$('#notice-viewer').data("announcePlaceHolder") ){
+				$('#notice-viewer').data("announcePlaceHolder", new Announce());
+			}
+			
+			var announcePlaceHolder = $('#notice-viewer').data("announcePlaceHolder");
+			selectedCell.copy( announcePlaceHolder );
+							
+			if( $('#notice-viewer').text().trim().length == 0 ){			
+				var template = kendo.template($('#announcement-viewer-template').html());		
+				$('#notice-viewer').html( announceEditorTemplate );				
+				var noticeViewerModel =  kendo.observable({ 
+					announce : announcePlaceHolder
+				});
+				kendo.bind($("#notice-viewer"), noticeViewerModel );
+			}
+			
+			
+			
+			
+			//	
 		}
 		
 		
@@ -1442,25 +1460,7 @@
 											<div class="panel panel-default">
 												<div class="panel-body">													
 													<div  id="notice-viewer">
-														<div class="page-heading">
-															<h4 data-bind="html:subject"></h4>		
-															<small class="text-muted"><span class="label label-primary">게시 기간</span> <span data-bind="text: formattedStartDate"></span> ~ <span data-bind="text: formattedEndDate"></span></small>
-															<p class="text-muted">
-																<small><span class="label label-default">생성일</span> <span data-bind="text: formattedCreationDate"></span> </small>
-																<small><span class="label label-default">수정일</span> <span data-bind="text: formattedModifiedDate"></span> </small>
-															</p>
-														</div>													
-														<div class="media">
-															<a class="pull-left" href="\\#">
-															<img data-bind="attr:{ src: common.api.user.photoUr(user, 150 , 150 )}" width="30" height="30" class="img-rounded">
-															</a>
-															<div class="media-body">
-																<h5 class="media-heading">																	
-																	<p><span data-bind="visible:user.nameVisible, text: user.name"></span> <code data-bind="text: user.username"></code></p>
-																	<p data-bind="visible:user.emailVisible, text: user.email"></p>
-																</h5>		
-															</div>
-														</div>	
+														
 													</div>																										
 												</div>
 											</div>												
