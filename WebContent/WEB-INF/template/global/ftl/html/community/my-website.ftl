@@ -1664,7 +1664,7 @@
 			<div class="panel panel-default">
 				<div class="panel-heading" style="padding:5px;">
 					<input type="text" class="form-control" placeholder="제목" data-bind="value: announce.subject">
-					<span class="help-block">공지 & 이벤트 제목</span>
+					<small>공지 & 이벤트 제목</small>
 				</div>
 				<div class="panel-body">
 				</div>	
