@@ -459,6 +459,7 @@
 		<!-- ============================== -->					
 		function showNoticeViewer(){
 			var announcePlaceHolder = getNoticeEditorSource();
+			alert( kendo.stringify( announcePlaceHolder ) );
 			if( announcePlaceHolder.announceId > 0 ){					
 				if( $('#notice-viewer').text().trim().length == 0 ){			
 					var template = kendo.template($('#announcement-viewer-template').html());		
