@@ -507,38 +507,11 @@
 			}			
 			$('#announce-panel > .panel > .panel-body').first().hide();
 			kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
-			//	
 		}
 		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
 		
 		function showAnnouncePanel (){			
 			var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
@@ -1643,7 +1616,8 @@
 				</div>
 			</div>
 		</script>								
-		<#include "/html/common/common-homepage-templates.ftl" >		
+		<#include "/html/common/common-homepage-templates.ftl" >	
+		<#include "/html/common/common-editor-templates.ftl" >	
 		<!-- END TEMPLATE -->
 	</body>    
 </html>
