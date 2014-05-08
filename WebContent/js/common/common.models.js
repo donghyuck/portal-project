@@ -280,6 +280,7 @@ var Announce = kendo.data.Model.define( {
     	body: { type: "string", editable: true },
     	startDate: { type: "date",  editable: true },
     	endDate: { type: "date" ,  editable: true},
+    	user : { type: "User" },
         modifiedDate: { type: "date"},
         creationDate: { type: "date" }
     },
