@@ -429,26 +429,10 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
 					selectable: "row",
 					change: function(e) { 
-						/*var selectedCells = this.select();
-						if( selectedCells.length > 0){
-							var selectedCell = this.dataItem( selectedCells );	    							
-							var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
-							selectedCell.copy(announcePlaceHolder);
-							if( announcePlaceHolder.user.userId === $("#account-navbar").data("kendoExtAccounts").token.userId ){
-								announcePlaceHolder.modifyAllowed = true;
-							}else{
-								announcePlaceHolder.modifyAllowed = false;
-							}							
-							$("#announce-panel").data( "announcePlaceHolder", announcePlaceHolder );							 
-							showAnnouncePanel();	
-						}*/
 					},
-					dataBound: function(e) {					
-						//var selectedCells = this.select();
-						//this.select("tr:eq(1)");						
+					dataBound: function(e) {
 					}
 				});		
-
 				common.api.handlePanelHeaderActions($("#announce-panel"));
 				common.ui.handleActionEvents( $('input[name="announce-selected-target"]'), { event: 'change' , handler: function(e){				
 					var oldSelectedSource = $("#announce-grid").data('announceTargetPlaceHolder');
@@ -467,7 +451,7 @@
 		}	
 		
 		<!-- ============================== -->
-		<!-- Notice view , editor 							       -->
+		<!-- Notice viewer , editor 						       -->
 		<!-- ============================== -->					
 		function showNoticeViewer(){
 			var grid = $("#announce-grid").data('kendoGrid');
@@ -511,7 +495,8 @@
 		}
 		
 		function showNoticeEditor(){
-		
+			$('#announce-panel > .panel > .panel-body').hide();
+			kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).play();			
 		}
 		
 		
