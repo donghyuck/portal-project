@@ -1800,12 +1800,8 @@
 								<span class="help-block"><small>지정된 기간 동안만 이벤트 및 공지가 보여집니다. </small></span>
 							</div>
 						</div>
-						<div class="form-group">
-							<label class="control-label"><small>본문</small></label>
-							<div class="col-sm-12" >
-								<textarea id="notice-editor-body" data-bind='value:announce.body'></textarea>
-							</div>
-						</div>
+						<label class="control-label"><small>본문</small></label>
+						<textarea id="notice-editor-body" data-bind='value:announce.body'></textarea>
 					</div>									
 				</div>	
 			</div>								
