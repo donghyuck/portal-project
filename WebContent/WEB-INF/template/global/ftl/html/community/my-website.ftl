@@ -515,7 +515,7 @@
 					profilePhotoUrl : function(){
 						return common.api.user.photoUrl (this.get("announce").user, 150,150);
 					},
-					isNew : false,,
+					isNew : false,
 					doSave : function () {
 						alert( "save");
 						var btn = $(e.target);
