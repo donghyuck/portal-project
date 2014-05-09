@@ -455,9 +455,6 @@
 	</div>	
 </script>
 
-
-
-
 <script type="text/x-kendo-tmpl" id="announcement-view-template">		
 	<div class="page-heading">
 		<h4 data-bind="html:subject"></h4>		
@@ -491,86 +488,6 @@
 		<button  type="button" class="btn btn-info btn-sm custom-list "><i class="fa fa-angle-double-up"></i> 목록</button>		
 	</div>
 </script>
-
-<script type="text/x-kendo-tmpl" id="announcement-editor-template">		
-	<div class='modal fade' tabindex='-1' role='dialog' aria-hidden='true'>
-		<div class='modal-dialog modal-lg'>
-			<div class='modal-content'>
-			<!--
-				<div class='modal-header'>
-					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>					
-				</div>
-			-->	
-				<div class='modal-body'>			
-					<div class="page-header text-primary">
-						<h5 >
-						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-info btn-sm active">
-							<input type="radio" name="announce-type" value="30" data-bind="checked: objectType">사이트
-							</label>
-							<label class="btn btn-info btn-sm">
-							<input type="radio" name="announce-type" value="1" data-bind="checked: objectType">회사
-							</label>
-						</div>						
-						</h5>
-					</div>	
-					<div  class="form">
-						<div class="form-group">
-							<label class="control-label">제목</label>							
-							<input type="text" placeholder="제목을 입력하세요." data-bind="value: subject"  class="form-control" placeholder="제목" />
-						</div>
-						<div class="form-group">
-							<label class="control-label">공지 기간</label>
-							<div class="col-sm-12" >
-								<input data-role="datetimepicker" data-bind="value:startDate"> ~ <input data-role="datetimepicker" data-bind="value:endDate">
-								<span class="help-block"><small>지정된 기간 동안만 이벤트 및 공지가 보여집니다. </small></span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label">본문</label>
-							<textarea class="editor" data-bind='value:body'></textarea>
-						</div>
-						<div class="status"></div>
-					</div>								
-				</div>
-				<div class='modal-footer'>
-					<div class="btn-group">
-						<button type="button" class="btn btn-primary" data-dismiss='modal' aria-hidden='true'>취소</button>					
-						<button type="button" class="btn btn-primary custom-update" disabled="disabled"><i class="fa fa-check"></i> 저장</button>	
-					</div>	
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-</script>
-<!--
-<script type="text/x-kendo-tmpl" id="announcement-edit-template">		
-	<div  class="form">
-		<div class="form-group">
-			<label class="control-label">제목</label>
-			<input type="text" placeholder="제목을 입력하세요." data-bind="value: subject"  class="form-control" placeholder="제목" />
-		</div>
-		<div class="form-group">
-			<label class="control-label">기간</label>
-			<div class="col-sm-12" >
-			<input data-role="datetimepicker" data-bind="value:startDate"> ~ <input data-role="datetimepicker" data-bind="value:endDate">
-			<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다. </span>
-			</div>
-		</div>
-		<div class="form-group">
-			<textarea class="editor" data-bind='value:body'></textarea>		
-		</div>
-	</div>	  
-	<div class="status"></div>	
-	<div class="btn-group">
-		<button type="button" class="btn btn-primary custom-update" ><i class="fa fa-check"></i> 저장</button>
-		# if( announceId > 0 ){#
-		<button type="button" class="btn btn-primary custom-cancle" >취소</button>
-		<button type="button" class="btn btn-danger custom-delete" ><i class="fa fa-trash-o"></i> 삭제</button>			
-		# } #
-	</div>
-</script>-->
 
 <script type="text/x-kendo-tmpl" id="announcement-template">
 	<tr class="announce-item" onclick="viewAnnounce(#: announceId#);">
