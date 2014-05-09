@@ -1803,7 +1803,7 @@
 				<div class="panel-body"  style="padding:5px;">		
 					<div class="page-header text-primary">
 						<h5 >
-						<small><span class="label label-danger" data-bind="invisible: announceId">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
+						<small><span class="label label-danger" data-bind="visible: announce.isNew">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-info btn-sm active">
 							<input type="radio" name="announce-type" value="30" data-bind="checked: announce.objectType">사이트
