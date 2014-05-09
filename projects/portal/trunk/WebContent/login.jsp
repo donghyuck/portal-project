@@ -308,7 +308,7 @@
 								<div class="form-group">
 									<label for="username" class="col-lg-3 control-label">아이디</label>
 									<div class="col-lg-9">
-										<input type="text" class="form-control"  id="username" name="username"  pattern="[^0-9][A-Za-z]{2,20}" placeholder="아이디" required validationMessage="아이디를 입력하여 주세요.">
+										<input type="text" class="form-control"  id="username" name="username"  pattern="[^-][A-Za-z0-9]{2,20}" placeholder="아이디" required validationMessage="아이디를 입력하여 주세요.">
 									</div>
 								</div>
 								<div class="form-group">
