@@ -470,38 +470,6 @@
 			$('html,body').animate({scrollTop: $("#announce-view").offset().top - 80 }, 300);	
 		}
 		
-		/**
-		function createPanel(){					
-			var renderTo = ui.generateGuid();
-			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
-			var template = kendo.template($("#empty-panel-template").html());	
-			$("#personalized-area").append( template( { id: renderTo, colSize: grid_col_size.newValue } ) );
-			$( '#'+ renderTo + ' .panel-header-actions a').each(function( index ) {
-				var panel_header_action = $(this);
-				panel_header_action.click(function (e){
-					e.preventDefault();		
-					var panel_header_action_icon = panel_header_action.find('span');
-					switch( panel_header_action_icon.text() )
-					{
-						case "Minimize" :
-							$( "#"+ renderTo +" .panel-body").toggleClass("hide");		
-							panel_header_action.toggleClass("hide");		
-							break;
-						case "Refresh" :
-							break;
-						case "Close" :							
-							kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).reverse().then( function(e){							
-								$("#" + renderTo ).remove();
-							});							
-							break;	
-						case "Custom" :
-							break;																		
-					}
-				});		
-			});					
-			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();
-		}						
-			**/
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
 		<!-- ============================== -->			
