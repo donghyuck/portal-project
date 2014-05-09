@@ -546,7 +546,7 @@
 					}	
 				});	
 				kendo.bind(renderTo, noticeEditorModel );
-				renderTo.data("model", pageEditorModel );
+				renderTo.data("model", noticeEditorModel );
 				var bodyEditor =  $("#notice-editor-body" );
 				createEditor( "notice-editor" , bodyEditor );
 			}
@@ -561,33 +561,26 @@
 				var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);									
 				bodyEditor.kendoEditor({
-						tools : [
-							'bold',
-							'italic',
-							'insertUnorderedList',
-							'insertOrderedList',
+						tools : [ 'bold', 'italic', 'insertUnorderedList', 'insertOrderedList',
 							{	
 								name: "createLink",
 								exec: function(e){
 									linkPopup.show();
 									return false;
-								}								
-							},
-							'unlink',
+								}},
+							'unlink', 
 							{	
 								name: "insertImage",
 								exec: function(e){
 									imageBroswer.show();
 									return false;
-								}
-							},
+								}},
 							{
 								name: 'viewHtml',
 								exec: function(e){
 									htmlEditor.open();
 									return false;
-								}								
-							}							
+								}}							
 						],
 						stylesheets: [
 							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
