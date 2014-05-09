@@ -457,7 +457,7 @@
 						$("#announce-grid").data('kendoGrid').dataSource.read();
 					}					
 				}});					
-				//$("#announce-panel" ).show();
+				$("#announce-panel" ).show();
 			}	
 		}	
 		
