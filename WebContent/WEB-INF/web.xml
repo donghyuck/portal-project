@@ -127,10 +127,10 @@
 			architecture.ee.spring.context.WebApplicationContextLoaderListener
 		</listener-class>
 	</listener>
-
+<!-- 
 	<listener>
 		<listener-class>org.apache.struts2.dispatcher.ng.listener.StrutsListener</listener-class>
-	</listener>
+	</listener> -->
 
 	<listener>
 		<listener-class>
