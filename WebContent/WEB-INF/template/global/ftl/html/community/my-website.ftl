@@ -515,11 +515,7 @@
 					profilePhotoUrl : function(){
 						return common.api.user.photoUrl (this.get("announce").user, 150,150);
 					},
-					isNew : function(){
-						if( this.announce.get('announceId') > 0 ) 
-							return false;
-						return true;	
-					},
+					isNew : false,,
 					doSave : function () {
 						alert( "save");
 						var btn = $(e.target);
@@ -555,11 +551,14 @@
 				createEditor( "notice-editor" , bodyEditor );
 			}
 			renderTo.data("model").set("updateRequired", false);			
-			if(renderTo.data("model").announce.objectType == 30){				
+			renderTo.data("model").put("isNew", (announcePlaceHolder.announceId > 0 ));
+				
+			if(announcePlaceHolder.objectType == 30){				
 				renderTo.find('input[name="announce-type"]:first').click();
 			}else{			
 				renderTo.find('input[name="announce-type"]:last').click();
-			}						
+			}
+
 			$('#announce-panel > .panel > .panel-body').hide();
 			kendo.fx(renderTo).expand("vertical").duration(200).play();			
 		}
