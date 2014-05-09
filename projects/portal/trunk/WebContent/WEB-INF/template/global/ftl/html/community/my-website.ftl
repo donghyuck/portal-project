@@ -547,6 +547,7 @@
 							},
 							always : function(e){
 								btn.button('reset');
+								this.closeEditor(e);
 							}
 						});
 						*/
