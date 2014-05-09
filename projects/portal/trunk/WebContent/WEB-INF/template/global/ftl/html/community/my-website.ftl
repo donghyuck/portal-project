@@ -1824,11 +1824,11 @@
 							</div>						
 						</h5>
 						<h5 data-bind="invisible: isNew">
-							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info btn-sm active"  data-bind="enabled: isNew">
+							<div class="btn-group" data-toggle="buttons" data-bind="enabled: isNew">
+								<label class="btn btn-info btn-sm active"  >
 								<input type="radio" name="announce-type" value="30" data-bind="checked: announce.objectType">사이트
 								</label>
-								<label class="btn btn-info btn-sm" data-bind="enabled: isNew">
+								<label class="btn btn-info btn-sm">
 								<input type="radio" name="announce-type" value="1" data-bind="checked: announce.objectType">회사
 								</label>
 							</div>
