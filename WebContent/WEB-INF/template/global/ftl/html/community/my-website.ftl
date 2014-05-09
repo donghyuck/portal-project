@@ -496,6 +496,7 @@
 		function getNoticeEditorSource(){
 			if( !$("#notice-editor").data("announcePlaceHolder") ){
 				$("#notice-editor").data("announcePlaceHolder",new Announce() );
+				$("#notice-editor").data("announcePlaceHolder").set("objectType", 30);
 			}
 			return $("#notice-editor").data("announcePlaceHolder");			
 		}
