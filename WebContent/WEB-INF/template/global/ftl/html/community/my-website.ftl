@@ -440,12 +440,11 @@
 				});		
 				
 				common.api.handlePanelHeaderActions($("#announce-panel"));
-				common.ui.handleButtonActionEvents(
-					$("#announce-panel button.btn-control-group"), 
-					{event: 'click', handlers: {
-							alert("ss");
+				common.ui.handleButtonActionEvents($("#announce-panel button.btn-control-group"), 	{event: 'click', handlers: {
 						'new-notice' : function(e){
-							setAnnounceEditorSource(new Announce());					
+														alert("ss");
+							setNoticeEditorSource(new Announce());		
+							showNoticeEditor();			
 						}
 					}}				
 				);
