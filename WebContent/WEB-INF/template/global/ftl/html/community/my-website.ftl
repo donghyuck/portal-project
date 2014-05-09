@@ -444,7 +444,7 @@
 					$("#announce-panel button.btn-control-group"), 
 					{event: 'click', handlers: {
 						'new-notice' : function(e){
-												
+							setAnnounceEditorSource(new Announce());					
 						}
 					}}				
 				);
@@ -458,8 +458,8 @@
 				}});		
 						
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
-					setAnnounceEditorSource(new Announce());
-					createAnnounceEditor();
+					setNoticeEditorSource(new Announce());
+					showNoticeEditor();
 				});		
 				$("#announce-panel" ).show();
 			}	
