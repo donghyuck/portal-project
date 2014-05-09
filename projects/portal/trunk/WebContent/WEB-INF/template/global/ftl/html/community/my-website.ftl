@@ -521,10 +521,35 @@
 					},
 					isNew : false,
 					doSave : function () {
-						alert( "save");
 						var btn = $(e.target);
 						btn.button('loading');
-						
+						var template = kendo.template('<p class="text-danger">#:message#</p>');
+						if( this.announce.startDate >= this.announce.endDate  ){
+							common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
+							return ;
+						}			
+						/*			
+						common.api.callback({  
+							url : '${request.contextPath}/community/update-announce.do?output=json',
+							data : { item: kendo.stringify( this.announce ) },
+							success : function(response){
+								common.ui.notification({title:"공지 & 이베트", message: "정상적으로 저장되었습니다.", type: "success" });
+								$("#announce-grid").data('kendoGrid').dataSource.read();
+							},
+							fail: function(){								
+								common.ui.notification({title:"공지 & 이베트", message: "시스템 운영자에게 문의하여 주십시오." });
+							},
+							requestStart : function(){
+								kendo.ui.progress(renderTo, true);
+							},
+							requestEnd : function(){
+								kendo.ui.progress(renderTo, false);
+							},
+							always : function(e){
+								btn.button('reset');
+							}
+						});
+						*/
 					},
 					updateRequired : false,
 					editable : function(){
