@@ -552,7 +552,7 @@
 			}
 			
 			renderTo.data("model").set("updateRequired", false);			
-			renderTo.data("model").set("isNew", (announcePlaceHolder.announceId > 0 ));
+			renderTo.data("model").set("isNew", (announcePlaceHolder.announceId < 1 ));
 				
 			if(announcePlaceHolder.objectType == 30){				
 				renderTo.find('input[name="announce-type"]:first').click();
