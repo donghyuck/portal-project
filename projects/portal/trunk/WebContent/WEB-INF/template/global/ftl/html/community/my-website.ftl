@@ -458,6 +458,7 @@
 				}});		
 						
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
+					alert("ss");
 					setNoticeEditorSource(new Announce());
 					showNoticeEditor();
 				});		
