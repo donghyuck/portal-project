@@ -438,14 +438,25 @@
 					dataBound: function(e) {
 					}
 				});		
-				common.api.handlePanelHeaderActions($("#announce-panel"));
+				
+				//common.api.handlePanelHeaderActions($("#announce-panel"));
+				common.ui.handleButtonActionEvents(
+					$("#announce-panel button.btn-control-group"), 
+					{event: 'click', handlers: {
+						'new-notice' : function(e){
+												
+						}
+					}}				
+				);
+				
 				common.ui.handleActionEvents( $('input[name="announce-selected-target"]'), { event: 'change' , handler: function(e){				
 					var oldSelectedSource = $("#announce-grid").data('announceTargetPlaceHolder');
 					if( oldSelectedSource != this.value ){
 						$("#announce-grid").data('announceTargetPlaceHolder', this.value );
 						$("#announce-grid").data('kendoGrid').dataSource.read();
 					}					
-				}});				
+				}});		
+						
 				$('#announce-panel .panel-body button.custom-add').click(function(e){
 					setAnnounceEditorSource(new Announce());
 					createAnnounceEditor();
