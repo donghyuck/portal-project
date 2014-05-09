@@ -1810,10 +1810,10 @@
 						<span data-bind="text: announce.objectType" ></span>
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-info btn-sm active">
-							<input type="radio" name="announce-type" value="30" data-bind="checked: announce.objectType" class="form-control">사이트
+							<input type="radio" name="announce-type" value="30" data-bind="checked: announce.objectType" disabled>사이트
 							</label>
-							<label class="btn btn-info btn-sm">
-							<input type="radio" name="announce-type" value="1" data-bind="checked: announce.objectType" class="form-control">회사
+							<label class="btn btn-info btn-sm" disabled="disabled">
+							<input type="radio" name="announce-type" value="1" data-bind="checked: announce.objectType" disabled>회사
 							</label>
 						</div>						
 						</h5>
