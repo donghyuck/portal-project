@@ -550,8 +550,9 @@
 				var bodyEditor =  $("#notice-editor-body" );
 				createEditor( "notice-editor" , bodyEditor );
 			}
+			
 			renderTo.data("model").set("updateRequired", false);			
-			renderTo.data("model").put("isNew", (announcePlaceHolder.announceId > 0 ));
+			renderTo.data("model").set("isNew", (announcePlaceHolder.announceId > 0 ));
 				
 			if(announcePlaceHolder.objectType == 30){				
 				renderTo.find('input[name="announce-type"]:first').click();
