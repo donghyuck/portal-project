@@ -568,6 +568,9 @@
 			kendo.fx(renderTo).expand("vertical").duration(200).play();			
 		}
 		
+		<!-- ============================== -->
+		<!-- Utils for editor									       -->
+		<!-- ============================== -->						
 		function createEditor( renderToString, bodyEditor ){
 			if(!bodyEditor.data("kendoEditor") ){			
 				var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
