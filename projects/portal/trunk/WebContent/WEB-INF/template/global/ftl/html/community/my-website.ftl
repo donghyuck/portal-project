@@ -442,7 +442,9 @@
 				common.api.handlePanelHeaderActions($("#announce-panel"));
 				common.ui.handleButtonActionEvents($("#announce-panel button.btn-control-group"), 	{event: 'click', handlers: {
 						'new-notice' : function(e){
-							setNoticeEditorSource(new Announce());		
+							var announcePlaceHolder = new Announce();
+							announcePlaceHolder.set("objectType", 30);
+							setNoticeEditorSource(announcePlaceHolder);		
 							showNoticeEditor();			
 						}
 					}}				
@@ -495,8 +497,9 @@
 		
 		function getNoticeEditorSource(){
 			if( !$("#notice-editor").data("announcePlaceHolder") ){
-				$("#notice-editor").data("announcePlaceHolder",new Announce() );
-				$("#notice-editor").data("announcePlaceHolder").set("objectType", 30);
+				var announcePlaceHolder = new Announce();
+				announcePlaceHolder.set("objectType", 30);
+				$("#notice-editor").data("announcePlaceHolder", announcePlaceHolder );				
 			}
 			return $("#notice-editor").data("announcePlaceHolder");			
 		}
