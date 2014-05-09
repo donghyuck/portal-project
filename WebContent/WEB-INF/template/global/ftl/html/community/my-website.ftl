@@ -1629,7 +1629,7 @@
 									<div class="pull-right">
 										<div class="btn-group">
 											<button type="button" class="btn btn-primary btn-sm" data-bind="click: doSave, enabled: updateRequired" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >저장</button>			
-											<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable, invisable: isNew">프로퍼티</button>
+											<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable, invisible:isNew">프로퍼티</button>
 										</div>						
 										<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeEditor">&times;  닫기</button>
 									</div>
