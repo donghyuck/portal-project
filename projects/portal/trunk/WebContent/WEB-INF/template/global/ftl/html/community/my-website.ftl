@@ -506,8 +506,7 @@
 		
 		function showNoticeEditor(){			
 			var announcePlaceHolder = getNoticeEditorSource();
-			var renderTo = $("#notice-editor-panel");
-			
+			var renderTo = $("#notice-editor-panel");			
 			if( $('#notice-editor').text().trim().length == 0 ){			
 				var template = kendo.template($('#notice-editor-template').html());		
 				$('#notice-editor').html( template );	
@@ -555,7 +554,12 @@
 				var bodyEditor =  $("#notice-editor-body" );
 				createEditor( "notice-editor" , bodyEditor );
 			}
-			renderTo.data("model").set("updateRequired", false);
+			renderTo.data("model").set("updateRequired", false);			
+			if(renderTo.data("model").announce.objectType == 30){				
+				renderTo.find('input[name="announce-type"]:first').click();
+			}else{			
+				renderTo.find('input[name="announce-type"]:last').click();
+			}						
 			$('#announce-panel > .panel > .panel-body').hide();
 			kendo.fx(renderTo).expand("vertical").duration(200).play();			
 		}
@@ -594,7 +598,6 @@
 				});
 			}			
 		}
-
 
 		function createCodeEditor( renderToString, editor ) {		
 			if( $("#"+ renderToString).length == 0 ){
