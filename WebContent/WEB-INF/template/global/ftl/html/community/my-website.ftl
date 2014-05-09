@@ -540,8 +540,9 @@
 				});
 				noticeEditorModel.bind("change", function(e){				
 					if( e.field.match('^announce.')){ 						
-						if( this.announce.subject.length > 0 && this.announce.body.length  > 0 && ( this.announce.startDate <  this.announce.endDate  )  )					
+						if( this.announce.subject.length > 0 && this.announce.body.length  > 0 && ( this.announce.startDate <  this.announce.endDate  )  )	{			
 							noticeEditorModel.set("updateRequired", true);
+						}
 					}	
 				});	
 				kendo.bind(renderTo, noticeEditorModel );
