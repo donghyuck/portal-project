@@ -1809,11 +1809,11 @@
 						<small><span class="label label-danger" data-bind="visible: isNew">NEW</span>&nbsp; 우측버튼을 클릭하여 공지 및 이벤트를 추가할 대상을 선택하세요.</small>
 						<span data-bind="text: announce.objectType" ></span>
 						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-info btn-sm active">
-							<input type="radio" name="announce-type" value="30" data-bind="checked: announce.objectType" disabled>사이트
+							<label class="btn btn-info btn-sm active"  data-bind="enabled: isNew">
+							<input type="radio" name="announce-type" value="30" data-bind="checked: announce.objectType">사이트
 							</label>
-							<label class="btn btn-info btn-sm" disabled="disabled">
-							<input type="radio" name="announce-type" value="1" data-bind="checked: announce.objectType" disabled>회사
+							<label class="btn btn-info btn-sm" data-bind="enabled: isNew">
+							<input type="radio" name="announce-type" value="1" data-bind="checked: announce.objectType">회사
 							</label>
 						</div>						
 						</h5>
