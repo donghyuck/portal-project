@@ -500,10 +500,12 @@
 		}
 		
 		function showNoticeEditor(){			
-			var announcePlaceHolder = getNoticeEditorSource();			
+			var announcePlaceHolder = getNoticeEditorSource();
+			var renderTo = $("#notice-editor-panel");
+			
 			if( $('#notice-editor').text().trim().length == 0 ){			
 				var template = kendo.template($('#notice-editor-template').html());		
-				$('#notice-editor').html( template );					
+				$('#notice-editor').html( template );	
 				var noticeEditorModel =  kendo.observable({ 
 					announce : announcePlaceHolder,
 					profilePhotoUrl : function(){
@@ -514,6 +516,13 @@
 							return false;
 						return true;	
 					},
+					doSave : function () {
+						alert( "save");
+						var btn = $(e.target);
+						btn.button('loading');
+						
+					},
+					updateRequired : false,
 					editable : function(){
 						var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
 						if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
@@ -525,17 +534,24 @@
 					
 					},
 					closeEditor : function(e){
-						kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).reverse();								
+						kendo.fx(renderTo).expand("vertical").duration(200).reverse();								
 						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
 					}
 				});
-				
-				kendo.bind($("#notice-editor-panel"), noticeEditorModel );
+				noticeEditorModel.bind("change", function(e){				
+					if( e.field.match('^announce.')){ 						
+						if( this.announce.subject.length > 0 && this.announce.body.length  > 0 )					
+							noticeEditorModel.set("updateRequired", true);
+					}	
+				});	
+				kendo.bind(renderTo, noticeEditorModel );
+				renderTo.data("model", pageEditorModel );
 				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor );								
+				createEditor( "notice-editor" , bodyEditor );
 			}
+			renderTo.data("model").set("updateRequired", false);
 			$('#announce-panel > .panel > .panel-body').hide();
-			kendo.fx($("#notice-editor-panel")).expand("vertical").duration(200).play();			
+			kendo.fx(renderTo).expand("vertical").duration(200).play();			
 		}
 		
 		function createEditor( renderToString, bodyEditor ){
@@ -1613,7 +1629,7 @@
 									</h5>
 									<div class="pull-right">
 										<div class="btn-group">
-											<button type="button" class="btn btn-primary btn-sm" data-bind="click: saveNotice, enabled: updateRequired" data-loading-text='<i class="fa fa-spinner fa-spin" >저장</button>			
+											<button type="button" class="btn btn-primary btn-sm" data-bind="click: doSave, enabled: updateRequired" data-loading-text='<i class="fa fa-spinner fa-spin" >저장</button>			
 											<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable">프로퍼티</button>
 										</div>						
 										<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeEditor">&times;  닫기</button>
