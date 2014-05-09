@@ -67,11 +67,17 @@ PC9saWNlbnNlPg==</file>
 				</tumblr>			
 			</providers>
 		</social>
+		<website>
+			<default>
+				<websiteId>1</websiteId>
+			</default>		
+		</website>
 		<company>
 			<default>
 				<companyId>1</companyId>
 			</default>				
 		</company>
+		
 		<menu>
 			<default>
 				<menuId>1</menuId>	
