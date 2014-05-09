@@ -520,7 +520,7 @@
 						return common.api.user.photoUrl (this.get("announce").user, 150,150);
 					},
 					isNew : false,
-					doSave : function () {
+					doSave : function (e) {
 						var btn = $(e.target);
 						btn.button('loading');
 						var template = kendo.template('<p class="text-danger">#:message#</p>');
