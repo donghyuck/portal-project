@@ -439,7 +439,7 @@
 					}
 				});		
 				
-				//common.api.handlePanelHeaderActions($("#announce-panel"));
+				common.api.handlePanelHeaderActions($("#announce-panel"));
 				common.ui.handleButtonActionEvents(
 					$("#announce-panel button.btn-control-group"), 
 					{event: 'click', handlers: {
@@ -1595,7 +1595,7 @@
 									</h5>
 									<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
 										<div class="pull-right">
-											<button type="button" class="btn btn-primary btn-sm custom-add"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>
+											<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="new-notice"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>
 										</div>											
 									</#if>
 								</div>								
