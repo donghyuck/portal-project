@@ -443,6 +443,7 @@
 				common.ui.handleButtonActionEvents(
 					$("#announce-panel button.btn-control-group"), 
 					{event: 'click', handlers: {
+							alert("ss");
 						'new-notice' : function(e){
 							setAnnounceEditorSource(new Announce());					
 						}
@@ -455,14 +456,8 @@
 						$("#announce-grid").data('announceTargetPlaceHolder', this.value );
 						$("#announce-grid").data('kendoGrid').dataSource.read();
 					}					
-				}});		
-						
-				$('#announce-panel .panel-body button.custom-add').click(function(e){
-					alert("ss");
-					setNoticeEditorSource(new Announce());
-					showNoticeEditor();
-				});		
-				$("#announce-panel" ).show();
+				}});					
+				//$("#announce-panel" ).show();
 			}	
 		}	
 		
