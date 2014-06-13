@@ -28,6 +28,6 @@
 	<import resource="classpath:context/struts2SubsystemContext.xml"/>
 	<import resource="classpath:context/webSubsystemContext.xml"/>
 	<import resource="classpath:context/communitySubsystemContext.xml"/>
-	
+	<import resource="classpath:context/forumSubsystemContext.xml"/>
 	
 </beans>
