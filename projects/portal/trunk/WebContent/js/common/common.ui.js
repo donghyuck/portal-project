@@ -38,6 +38,98 @@
 	common.ui = common.ui || {};
 	var kendo = window.kendo, Widget = kendo.ui.Widget, stringify = kendo.stringify, UNDEFINED = 'undefined', proxy = $.proxy, isFunction = kendo.isFunction;
 
+	common.ui.landing = function (element){		
+		if( typeof element === UNDEFINED )
+			element ='.page-loader' ;
+		 $(element).fadeOut('slow');
+	}
+	
+	common.ui.animate = function (renderTo, animate, always){	
+		var oldCss = renderTo.attr('class');	
+		renderTo.removeClass().addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			$(this).removeClass();
+			$(this).addClass(oldCss);	
+			if(isFunction(always))
+				always();
+		});
+		return renderTo;		
+	}	
+	
+	common.ui.animate_v2 = function (renderTo, animate, always){	
+		var oldCss = renderTo.attr('class');	
+		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+			$(this).removeClass();
+			$(this).addClass(oldCss);	
+			if(isFunction(always))
+				always();
+		});
+		return renderTo;
+		
+	}	
+	
+	common.ui.initializeOwlCarousel = function (){
+		// Owl Slider v1
+		jQuery(document).ready(function() {
+			var owl = $(".owl-slider");
+			owl.owlCarousel({
+				itemsDesktop : [1000,5], // 5 items between 1000px and 901px
+				itemsDesktopSmall : [900,4], // 4 items betweem 900px and 601px
+				itemsTablet: [600,3], // 3 items between 600 and 0;
+				itemsMobile : [479,2] // 2 itemsMobile disabled - inherit from  itemsTablet option
+			});
+	
+			// Custom Navigation Events
+			$(".next-v1").click(function(){
+				owl.trigger('owl.next');
+			})
+			$(".prev-v1").click(function(){
+				owl.trigger('owl.prev');
+			})
+		});
+		// Owl Slider v2
+		jQuery(document).ready(function() {
+			var owl = $(".owl-slider-v2");
+				owl.owlCarousel({
+					itemsDesktop : [1000,5], // 5 items between 1000px and 901px
+					temsDesktopSmall : [900,4], // 4 items betweem 900px and 601px
+					itemsTablet: [600,3], // 3 items between 600 and 0;
+					itemsMobile : [479,2], // 2 itemsMobile disabled - inherit from  itemsTablet option
+					slideSpeed: 1000
+			 });		
+		    // Custom Navigation Events
+		    $(".next-v2").click(function(){
+		        owl.trigger('owl.next');
+		    })
+		    $(".prev-v2").click(function(){
+		        owl.trigger('owl.prev');
+		    })
+		});
+		
+		// Owl Slider v3
+		jQuery(document).ready(function() {
+	        var owl = $(".owl-slider-v3");
+	            owl.owlCarousel({
+	            	items : 9,
+	            	autoPlay : 5000,
+					itemsDesktop : [1000,5], // 5 items between 1000px and 901px
+					itemsDesktopSmall : [900,4], // betweem 900px and 601px
+					itemsTablet: [600,3], // 2 items between 600 and 0
+					itemsMobile : [300,2] // 2 itemsMobile disabled - inherit from itemsTablet option
+	            });
+		});
+
+		// Owl Slider v4
+		jQuery(document).ready(function() {
+	        var owl = $(".owl-slider-v4");
+	            owl.owlCarousel({
+	                items:3,
+	                itemsDesktop : [1000,3], // 3 items between 1000px and 901px
+	                itemsTablet: [600,2], // 2 items between 600 and 0;
+	                itemsMobile : [479,1] // 1 itemsMobile disabled - inherit from itemsTablet option
+	            });
+		});
+	};
+	
 	common.ui.handleActionEvents = function(selector, options) {
 		options = options || {};
 		if (options.custom === UNDEFINED)
@@ -132,8 +224,7 @@
 	LOGIN_URL = "/login",
 	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( externalLoginHost ) == 'string'  ) { #http://#= externalLoginHost ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"), 
 	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
-	handleKendoAjaxError = common.api.handleKendoAjaxError;
-	
+	handleKendoAjaxError = common.api.handleKendoAjaxError;	
 	common.ui.extAccounts = Widget.extend({
 		init : function(element, options) {
 			var that = this;
@@ -826,102 +917,196 @@
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui = common.ui || {};
-	var kendo = window.kendo, Widget = kendo.ui.Widget, isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, trimSlashesRegExp = /(^\/|\/$)/g, CHANGE = "change", APPLY = "apply", ERROR = "error", CLICK = "click", MODAL_TITIL_ID = "title_guid", TAB_PANE_URL_ID = "url_guid", TAB_PANE_UPLOAD_ID = "upload_guid", TAB_PANE_MY_ID = "my_guid", TAB_PANE_WEBSITE_ID = "website_guid", TAB_PANE_DOMAIN_ID = "domain_guid", UNDEFINED = 'undefined', POST = 'POST', JSON = 'json', VALUE_TEMPLATE = kendo
-			.template('<img src="#: url #" class="img-responsive"/>'), SELECTED_IMAGE_TEMPLAGE = kendo
-			.template('<div class="panel-body custom-selected-image">'
-					+ '<div class="media">'
-					+ '<a class="pull-left" href="\\#">'
-					+ '<img class="media-object" src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" alt="#=name#">'
-					+ '</a>'
-					+ '<div class="media-body">'
-					+ '<h5 class="media-heading"><span class="label label-warning">#= contentType #</span> #=name#</h5>'
-					+ '<small><p class="text-muted">생성일: #= kendo.toString( creationDate, "yyyy.MM.dd hh:mm tt" )#</p>'
-					+ '<p class="text-muted">수정일: #= kendo.toString( modifiedDate, "yyyy.MM.dd hh:mm tt" )#</p>'
-					+ '<p class="text-muted">크기: #= kendo.toString( size, "\\#\\#,\\#" ) #</p>'
-					+ '<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></small>'
-					+ '</div>' + '</div>' + '</div>'), URL_TEMPLATE = kendo
-			.template('/download/image/#= key #'), handleKendoAjaxError = common.api.handleKendoAjaxError;
-
-	common.ui.extImageBrowser = Widget
-			.extend({
-				init : function(element, options) {
-					var that = this;
-					Widget.fn.init.call(that, element, options);
-					options = that.options;
-					options.guid = {
-						title_guid : common.api.guid().toLowerCase(),
-						url_guid : common.api.guid().toLowerCase(),
-						upload_guid : common.api.guid().toLowerCase(),
-						my_guid : common.api.guid().toLowerCase(),
-						domain_guid : common.api.guid().toLowerCase(),
-						website_guid : common.api.guid().toLowerCase()
-					};
-					that.refresh();
-				},
-				events : [ ERROR, CHANGE, APPLY ],
-				options : {
-					name : "ExtImageBrowser",
-					transport : {}
-				},
-				show : function() {
-					var that = this;
-					that._modal().modal('show');
-					that.element.find('.modal-body ul.nav a:first').tab('show');
-				},
-				close : function() {
-					var that = this;
-					that._modal().modal('hide');
-				},
-				refresh : function() {
-					var that = this;
-					that._createDialog();
-				},
-				destroy : function() {
-					var that = this;
-					Widget.fn.destroy.call(that);
-					$(that.element).remove();
-				},
-				_getImageLink : function(image, callback) {
-					common.api.getImagelink({
-						imageId : image.imageId,
-						success : function(data) {
-							callback(data);
-						}
-					});
-				},
-				_modal : function() {
-					var that = this;
-					return that.element.children('.modal');
-				},
-				_createDialog : function() {
-					var that = this;
-					var template = that._dialogTemplate();
-					that.element.html(template(that.options.guid));
-					that.element.children('.modal').css('z-index', '2000');
-					that.element
-							.find('.modal-body a[data-toggle="tab"]')
-							.on(
-									'shown.bs.tab',
-									function(e) {
-										e.target // activated tab
-										e.relatedTarget // previous tab
-										that._changeState(false);
-										var tab_pane_id = $(e.target).attr(
-												'href');
-										var tab_pane = $(tab_pane_id);
-										switch (tab_pane_id) {
-										case "#"
-												+ that.options.guid[TAB_PANE_DOMAIN_ID]:
-											// domain images
-											var my_list_view = tab_pane
-													.find('.panel-body div');
-											var my_list_pager = tab_pane
-													.find('.panel-footer div');
-
-											if (!my_list_view
-													.data('kendoListView')) {
-												my_list_view
-														.kendoListView({
+	var kendo = window.kendo, 
+		Widget = kendo.ui.Widget, 
+		isPlainObject = $.isPlainObject, 
+		proxy = $.proxy, 
+		extend = $.extend, 
+		template = kendo.template,
+		placeholderSupported = kendo.support.placeholder, 
+		browser = kendo.support.browser, 
+		isFunction = kendo.isFunction, 
+		trimSlashesRegExp = /(^\/|\/$)/g, 
+		CHANGE = "change", 
+		APPLY = "apply", 
+		ERROR = "error", 
+		CLICK = "click", 
+		MODAL_TITIL_ID = "title_guid", TAB_PANE_URL_ID = "url_guid", TAB_PANE_UPLOAD_ID = "upload_guid", TAB_PANE_MY_ID = "my_guid", TAB_PANE_WEBSITE_ID = "website_guid", TAB_PANE_DOMAIN_ID = "domain_guid", 
+		UNDEFINED = 'undefined',
+		POST = 'POST', 
+		JSON = 'json', 
+		templates = {
+			selected : template(
+				'<div class="row">' +
+				'<div class="col-xs-4">'+
+				'<img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" alt="#=name#" class="img-responsive">' +
+				'</div>' +
+				'<div class="col-xs-8">' +						
+				'<h5><span class="label label-warning label-lightweight">#: contentType #</span> #:name# <small>(#: formattedSize() #)</small></h5>' +
+				'<ul class="list-unstyled">' +
+				'<li><i class="fa fa-user color-green"></i></li>' +
+				'<li><i class="fa fa-calendar color-green"></i> #: formattedCreationDate() #</li>' +
+				'<li><i class="fa fa-calendar color-green"></i> #: formattedModifiedDate() #</li>' +
+				'<li><i class="fa fa-tags color-green"></i></li>' +
+				'</ul>' +
+				'</div>' +
+				'</div>'					
+			),
+			image : template('<img src="#: url #" class="img-responsive"/>'),
+			url : template('/download/image/#= linkId #'),
+			download : template('/download/image/#=imageId#/#=name#')
+		},
+		handleKendoAjaxError = common.api.handleKendoAjaxError;
+		common.ui.extImageBrowser = Widget.extend({
+			init : function(element, options) {
+				var that = this;
+				Widget.fn.init.call(that, element, options);
+				options = that.options;
+				options.guid = {
+					title_guid : common.api.guid().toLowerCase(),
+					url_guid : common.api.guid().toLowerCase(),
+					upload_guid : common.api.guid().toLowerCase(),
+					my_guid : common.api.guid().toLowerCase(),
+					domain_guid : common.api.guid().toLowerCase(),
+					website_guid : common.api.guid().toLowerCase()
+				};
+				that.refresh();
+			},
+			events : [ ERROR, CHANGE, APPLY ],
+			options : {
+				name : "ExtImageBrowser",
+				transport : {}
+			},
+			show : function() {
+				var that = this;
+				that._modal().modal('show');
+				that.element.find('.modal-body ul.nav a:first').tab('show');
+			},
+			close : function() {
+				var that = this;
+				that._modal().modal('hide');
+			},
+			refresh : function() {
+				var that = this;
+				that._createDialog();
+			},
+			destroy : function() {
+				var that = this;
+				Widget.fn.destroy.call(that);
+				$(that.element).remove();
+			},
+			_getImageLink : function(image, callback) {
+				common.api.getImagelink({
+					imageId : image.imageId,
+					success : function(data) {
+						callback(data);
+					}
+				});
+			},
+			_modal : function() {
+				var that = this;
+				return that.element.children('.modal');
+			},
+			_objectId : function(){
+				var that = this;
+				if( typeof that.options.data === 'object' ){	
+					if( that.options.data instanceof common.models.Page ){
+						return that.options.data.pageId ;
+					}
+				}
+				return 0;
+			},
+			_createDialog : function() {
+				var that = this;
+				var template = that._dialogTemplate();
+				that.element.html(template(that.options.guid));				
+				that.element.children('.modal').css('z-index', '2000');
+				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+					e.target // activated tab
+					e.relatedTarget // previous tab
+					that._changeState(false);
+					var tab_pane_id = $(e.target).attr('href');
+					var tab_pane = $(tab_pane_id);
+					var my_selected = $(tab_pane_id + "-selected");
+					var my_list_view = $(tab_pane_id + "-list-view");
+					var my_list_pager = $(tab_pane_id + "-list-pager");						
+					switch (tab_pane_id) {
+						case "#" + that.options.guid[TAB_PANE_UPLOAD_ID]:					
+							if(that._objectId() > 0){							
+								// list view 
+								if (!my_list_view.data('kendoListView')) {
+									my_list_view.kendoListView({
+										dataSource : {
+											type : 'json',
+											transport : {
+												read : {
+													url : '/community/list-my-page-image.do?output=json',
+													type : 'POST'
+												},
+												parameterMap : function(options, operation) {
+													if (operation != "read" && options) {
+														return {
+															pageId : options.pageId || that._objectId()
+														};
+													} else {
+														return {
+															startIndex : options.skip,
+															pageSize : options.pageSize,
+															pageId : options.pageId || that._objectId()
+														}
+													}
+												}
+											},
+											pageSize : 12,
+											error : handleKendoAjaxError,
+											schema : {
+												model : Image,
+												data : "targetImages",
+												total : "totalTargetImageCount"
+											},
+											serverPaging : true
+										},
+										selectable : "single",
+										change : function(e) {
+											tab_pane.find(	'.panel-body.custom-selected-image').remove();
+											var data = this.dataSource.view();
+											var current_index = this.select().index();
+											if (current_index >= 0) {
+												var item = data[current_index];
+												var imageId = item.imageId;
+												if (imageId > 0) {
+													that._changeState(true);
+													tab_pane.find('.panel').prepend(templates.selected(item));													
+												}
+											}
+										},
+										navigatable : false,
+										template : kendo.template($("#photo-list-view-template").html()),
+										dataBound : function(e) {
+											tab_pane.find('.panel-body.custom-selected-image').remove();
+											that._changeState(false);
+										}
+									});
+									my_list_view.on("mouseenter",".img-wrapper", function(e) {
+										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+									}).on("mouseleave", ".img-wrapper", function(e) {
+										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+									});
+									my_list_pager.kendoPager({
+										refresh : true,
+										buttonCount : 5,
+										dataSource : my_list_view.data('kendoListView').dataSource
+									});
+								}								
+								my_list_view.data('kendoListView').dataSource.read({pageId: that._objectId() });								
+							}else{
+								
+							}							
+							break;
+						case "#" + that.options.guid[TAB_PANE_DOMAIN_ID]:
+							// domain images
+							if (!my_list_view.data('kendoListView')) {
+												my_list_view.kendoListView({
 															dataSource : {
 																type : 'json',
 																transport : {
@@ -932,8 +1117,7 @@
 																	parameterMap : function(
 																			options,
 																			operation) {
-																		if (operation != "read"
-																				&& options) {
+																		if (operation != "read" && options) {
 																			return {};
 																		} else {
 																			return {
@@ -954,92 +1138,41 @@
 															},
 															selectable : "single",
 															change : function(e) {
-																tab_pane
-																		.find(
-																				'.panel-body.custom-selected-image')
-																		.remove();
-																var data = this.dataSource
-																		.view();
-																var current_index = this
-																		.select()
-																		.index();
+																var data = this.dataSource.view();
+																var current_index = this.select().index();
 																if (current_index >= 0) {
 																	var item = data[current_index];
 																	var imageId = item.imageId;
 																	if (imageId > 0) {
-																		that
-																				._getImageLink(
-																						item,
-																						function(
-																								data) {
-																							if (typeof data.imageLink === 'object') {
-																								my_list_view
-																										.data(
-																												"linkId",
-																												data.imageLink.linkId);
-																								that
-																										._changeState(true);
-
-																								var t = kendo
-																										.template('<div class="panel-body custom-selected-image">'
-																												+ '<p><img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>'
-																												+ '<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
-
-																								tab_pane
-																										.find(
-																												'.panel')
-																										.prepend(
-																												SELECTED_IMAGE_TEMPLAGE(item));
-																							}
-																						});
+																		that._getImageLink(item,
+																			function(data) {
+																				if (typeof data.imageLink === 'object') {
+																					my_list_view.data("linkId",data.imageLink.linkId);
+																					that._changeState(true);
+																					my_selected.html(templates.selected(item));
+																				}
+																		});
 																	}
 																}
 															},
 															navigatable : false,
-															template : kendo
-																	.template($(
-																			"#photo-list-view-template")
-																			.html()),
-															dataBound : function(
-																	e) {
-																tab_pane
-																		.find(
-																				'.panel-body.custom-selected-image')
-																		.remove();
-																that
-																		._changeState(false);
+															template : kendo.template($("#photo-list-view-template").html()),
+															dataBound : function(e) {
+																my_selected.html('');
+																that._changeState(false);
 															}
 														});
-												my_list_view
-														.on(
+												my_list_view.on(
 																"mouseenter",
 																".img-wrapper",
 																function(e) {
-																	kendo
-																			.fx(
-																					$(
-																							e.currentTarget)
-																							.find(
-																									".img-description"))
-																			.expand(
-																					"vertical")
-																			.stop()
-																			.play();
+																	kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 																})
 														.on(
 																"mouseleave",
 																".img-wrapper",
 																function(e) {
-																	kendo
-																			.fx(
-																					$(
-																							e.currentTarget)
-																							.find(
-																									".img-description"))
-																			.expand(
-																					"vertical")
-																			.stop()
-																			.reverse();
+																	kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 																});
 												my_list_pager
 														.kendoPager({
@@ -1052,482 +1185,272 @@
 												my_list_view.data(
 														'kendoListView')
 														.clearSelection();
+							}
+							break;
+						case "#" + that.options.guid[TAB_PANE_WEBSITE_ID]:
+							// website images
+							if (!my_list_view.data('kendoListView')) {
+								my_list_view.kendoListView({
+									dataSource : {
+										type : 'json',
+										transport : {
+											read : {
+												url : '/community/list-my-website-image.do?output=json',
+												type : 'POST'
+											},
+											parameterMap : function(options, operation) {
+												if (operation != "read" && options) {
+													return {};
+												} else {
+													return {
+														startIndex : options.skip,
+														pageSize : options.pageSize
+													}
+												}
 											}
-											break;
-										case "#"
-												+ that.options.guid[TAB_PANE_WEBSITE_ID]:
-											// website images
-											var my_list_view = tab_pane
-													.find('.panel-body div');
-											var my_list_pager = tab_pane
-													.find('.panel-footer div');
-											if (!my_list_view
-													.data('kendoListView')) {
-												my_list_view
-														.kendoListView({
-															dataSource : {
-																type : 'json',
-																transport : {
-																	read : {
-																		url : '/community/list-my-website-image.do?output=json',
-																		type : 'POST'
-																	},
-																	parameterMap : function(
-																			options,
-																			operation) {
-																		if (operation != "read"
-																				&& options) {
-																			return {};
-																		} else {
-																			return {
-																				startIndex : options.skip,
-																				pageSize : options.pageSize
-																			}
-																		}
-																	}
-																},
-																pageSize : 12,
-																error : handleKendoAjaxError,
-																schema : {
-																	model : Image,
-																	data : "targetImages",
-																	total : "totalTargetImageCount"
-																},
-																serverPaging : true
-															},
-															selectable : "single",
-															change : function(e) {
-																tab_pane
-																		.find(
-																				'.panel-body.custom-selected-image')
-																		.remove();
-																var data = this.dataSource
-																		.view();
-																var current_index = this
-																		.select()
-																		.index();
-																if (current_index >= 0) {
-																	var item = data[current_index];
-																	var imageId = item.imageId;
-																	if (imageId > 0) {
-																		that
-																				._getImageLink(
-																						item,
-																						function(
-																								data) {
-																							if (typeof data.imageLink === 'object') {
-																								my_list_view
-																										.data(
-																												"linkId",
-																												data.imageLink.linkId);
-																								that
-																										._changeState(true);
-																								var t = kendo
-																										.template('<div class="panel-body custom-selected-image">'
-																												+ '<p><img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>'
-																												+ '<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
-
-																								tab_pane
-																										.find(
-																												'.panel')
-																										.prepend(
-																												SELECTED_IMAGE_TEMPLAGE(item));
-																							}
-																						});
-																	}
-																}
-															},
-															navigatable : false,
-															template : kendo
-																	.template($(
-																			"#photo-list-view-template")
-																			.html()),
-															dataBound : function(
-																	e) {
-																tab_pane
-																		.find(
-																				'.panel-body.custom-selected-image')
-																		.remove();
-																that
-																		._changeState(false);
-															}
-														});
-												my_list_view
-														.on(
-																"mouseenter",
-																".img-wrapper",
-																function(e) {
-																	kendo
-																			.fx(
-																					$(
-																							e.currentTarget)
-																							.find(
-																									".img-description"))
-																			.expand(
-																					"vertical")
-																			.stop()
-																			.play();
-																})
-														.on(
-																"mouseleave",
-																".img-wrapper",
-																function(e) {
-																	kendo
-																			.fx(
-																					$(
-																							e.currentTarget)
-																							.find(
-																									".img-description"))
-																			.expand(
-																					"vertical")
-																			.stop()
-																			.reverse();
-																});
-												my_list_pager
-														.kendoPager({
-															refresh : true,
-															buttonCount : 5,
-															dataSource : my_list_view
-																	.data('kendoListView').dataSource
-														});
-											} else {
-												my_list_view.data(
-														'kendoListView')
-														.clearSelection();
+										},
+										pageSize : 12,
+										error : handleKendoAjaxError,
+										schema : {
+											model : Image,
+											data : "targetImages",
+											total : "totalTargetImageCount"
+										},
+										serverPaging : true
+									},
+									selectable : "single",
+									change : function(e) {
+										var data = this.dataSource.view();
+										var current_index = this.select().index();
+										if (current_index >= 0) {
+											var item = data[current_index];
+											var imageId = item.imageId;
+											if (imageId > 0) {
+												that._getImageLink(item, function(data) {
+													if (typeof data.imageLink === 'object') {
+														my_list_view.data("linkId", data.imageLink.linkId);
+														that._changeState(true);
+														my_selected.html(templates.selected(item));
+													}
+												});
 											}
-											break;
-										case "#"
-												+ that.options.guid[TAB_PANE_MY_ID]:
-											var my_list_view = tab_pane
-													.find('.panel-body div');
-											var my_list_pager = tab_pane
-													.find('.panel-footer div');
-											if (!my_list_view
-													.data('kendoListView')) {
-												my_list_view
-														.kendoListView({
-															dataSource : {
-																type : 'json',
-																transport : {
-																	read : {
-																		url : '/community/list-my-image.do?output=json',
-																		type : 'POST'
-																	},
-																	parameterMap : function(
-																			options,
-																			operation) {
-																		if (operation != "read"
-																				&& options) {
-																			return {};
-																		} else {
-																			return {
-																				startIndex : options.skip,
-																				pageSize : options.pageSize
-																			}
-																		}
-																	}
-																},
-																pageSize : 12,
-																error : handleKendoAjaxError,
-																schema : {
-																	model : Image,
-																	data : "targetImages",
-																	total : "totalTargetImageCount"
-																},
-																serverPaging : true
-															},
-															selectable : "single",
-															change : function(e) {
-																tab_pane
-																		.find(
-																				'.panel-body.custom-selected-image')
-																		.remove();
-																var data = this.dataSource
-																		.view();
-																var current_index = this
-																		.select()
-																		.index();
-																if (current_index >= 0) {
-																	var item = data[current_index];
-																	var imageId = item.imageId;
-																	if (imageId > 0) {
-																		that
-																				._getImageLink(
-																						item,
-																						function(
-																								data) {
-																							if (typeof data.imageLink === 'object') {
-																								my_list_view
-																										.data(
-																												"linkId",
-																												data.imageLink.linkId);
-																								that
-																										._changeState(true);
-
-																								var t = kendo
-																										.template('<div class="panel-body custom-selected-image">'
-																												+ '<p><img src="/community/download-my-image.do?imageId=#=imageId#&width=150&height=150" class="img-rounded" ></p>'
-																												+ '<p class="text-danger">이미지를 사용하시면 이미지 링크를 통하여 누구나 볼수 있게 됩니다.</p></div>');
-
-																								tab_pane
-																										.find(
-																												'.panel')
-																										.prepend(
-																												SELECTED_IMAGE_TEMPLAGE(item));
-																							}
-																						});
-																	}
-																}
-															},
-															navigatable : false,
-															template : kendo
-																	.template($(
-																			"#photo-list-view-template")
-																			.html()),
-															dataBound : function(
-																	e) {
-																tab_pane
-																		.find(
-																				'.panel-body.custom-selected-image')
-																		.remove();
-																that
-																		._changeState(false);
-															}
-														});
-												my_list_view
-														.on(
-																"mouseenter",
-																".img-wrapper",
-																function(e) {
-																	kendo
-																			.fx(
-																					$(
-																							e.currentTarget)
-																							.find(
-																									".img-description"))
-																			.expand(
-																					"vertical")
-																			.stop()
-																			.play();
-																})
-														.on(
-																"mouseleave",
-																".img-wrapper",
-																function(e) {
-																	kendo
-																			.fx(
-																					$(
-																							e.currentTarget)
-																							.find(
-																									".img-description"))
-																			.expand(
-																					"vertical")
-																			.stop()
-																			.reverse();
-																});
-												my_list_pager
-														.kendoPager({
-															refresh : true,
-															buttonCount : 5,
-															dataSource : my_list_view
-																	.data('kendoListView').dataSource
-														});
-											} else {
-												my_list_view.data(
-														'kendoListView')
-														.clearSelection();
+										}
+									},
+									navigatable : false,
+									template : kendo.template($("#photo-list-view-template").html()),
+									dataBound : function(e) {
+										my_selected.html("");
+										that._changeState(false);
+									}
+								});
+								my_list_view.on("mouseenter",".img-wrapper", function(e) {
+									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+								}).on("mouseleave", ".img-wrapper",function(e) {
+									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+								});												
+								my_list_pager.kendoPager({
+									refresh : true,
+									buttonCount : 5,
+									dataSource : my_list_view.data('kendoListView').dataSource
+								});
+							} else {
+								my_list_view.data('kendoListView').clearSelection();
+							}
+							break;
+						case "#"+ that.options.guid[TAB_PANE_MY_ID]:
+							if (!my_list_view.data('kendoListView')) {
+								my_list_view.kendoListView({
+									dataSource : {
+										type : 'json',
+										transport : {
+											read : {
+												url : '/community/list-my-image.do?output=json',
+												type : 'POST'
+											},
+											parameterMap : function(options,operation) {
+												if (operation != "read"&& options) {
+													return {};
+												} else {
+													return {
+														startIndex : options.skip,
+														pageSize : options.pageSize
+													}
+												}
 											}
-											break;
-										case "#"
-												+ that.options.guid[TAB_PANE_URL_ID]:
-											var form_input = that.element
-													.find('.modal-body input[name="custom-selected-url"]');
-											var selected_img = $(
-													"#"
-															+ that.options.guid[TAB_PANE_URL_ID])
-													.children('img');
+										},
+										pageSize : 12,
+										error : handleKendoAjaxError,
+										schema : {
+											model : Image,
+											data : "targetImages",
+											total : "totalTargetImageCount"
+										},
+										serverPaging : true
+									},
+									selectable : "single",
+									change : function(e) {
+										var data = this.dataSource.view();
+										var current_index = this.select().index();
+										if (current_index >= 0) {
+											var item = data[current_index];
+											var imageId = item.imageId;
+											if (imageId > 0) {
+												that._getImageLink(item,function(data) {
+												if (typeof data.imageLink === 'object') {
+													my_list_view.data("linkId",data.imageLink.linkId);
+													that._changeState(true);
+													my_selected.html(templates.selected(item));
+												}
+											});
+										}
+									}
+								},
+								navigatable : false,
+									template : kendo.template($("#photo-list-view-template").html()),
+									dataBound : function(e) {
+										my_selected.html("");
+										that._changeState(false);
+									}
+								});
+								my_list_view.on("mouseenter",".img-wrapper",function(e) {
+									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+								}).on("mouseleave",".img-wrapper",function(e) {
+									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+								});
+								my_list_pager.kendoPager({
+									refresh : true,
+									buttonCount : 5,
+									dataSource : my_list_view.data('kendoListView').dataSource
+								});
+							} else {
+								my_list_view.data('kendoListView').clearSelection();
+							}
+							break;
+						case "#" + that.options.guid[TAB_PANE_URL_ID]:
+											var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
+											var selected_img = $("#" + that.options.guid[TAB_PANE_URL_ID]).children('img');
 											form_input.val("");
-											if (form_input.parent().hasClass(
-													'has-error'))
-												form_input.parent()
-														.removeClass(
-																'has-error');
-											if (form_input.parent().hasClass(
-													'has-success'))
-												form_input.parent()
-														.removeClass(
-																'has-success');
+											if (form_input.parent().hasClass('has-error'))
+												form_input.parent().removeClass('has-error');
+											if (form_input.parent().hasClass('has-success'))
+												form_input.parent().removeClass('has-success');
 											if (!selected_img.hasClass('hide'))
 												selected_img.addClass('hide');
 											break;
 										}
-									});
-
-					that.element
-							.find(
-									'.modal-body input[name="custom-selected-url"]')
-							.on(
+				}); //end of tabs
+				
+				// handle select image url 
+				that.element.find('.modal-body input[name="custom-selected-url"]').on(
 									'change',
 									function() {
 										var form_input = $(this);
-										var selected_img = $(
-												"#"
-														+ that.options.guid[TAB_PANE_URL_ID])
-												.children('img');
+										var selected_img = $("#"+ that.options.guid[TAB_PANE_URL_ID]).children('img');
 										if (form_input.val().length == 0) {
 											if (!selected_img.hasClass('hide'))
 												selected_img.addClass('hide');
-											if (form_input.parent().hasClass(
-													'has-error'))
-												form_input.parent()
-														.removeClass(
-																'has-error');
-											if (form_input.parent().hasClass(
-													'has-success'))
-												form_input.parent()
-														.removeClass(
-																'has-success');
+											if (form_input.parent().hasClass('has-error'))
+												form_input.parent().removeClass('has-error');
+											if (form_input.parent().hasClass('has-success'))
+												form_input.parent().removeClass('has-success');
 											that._changeState(false);
 										} else {
-											selected_img
-													.attr('src',
-															form_input.val())
-													.load(
+											selected_img.attr('src',form_input.val()).load(
 															function() {
-																if (form_input
-																		.parent()
-																		.hasClass(
-																				'has-error'))
-																	form_input
-																			.parent()
-																			.removeClass(
-																					'has-error');
-																form_input
-																		.parent()
-																		.addClass(
-																				'has-success');
-																selected_img
-																		.removeClass('hide');
-																that
-																		._changeState(true);
-															})
-													.error(
+																if (form_input.parent().hasClass('has-error'))
+																	form_input.parent().removeClass('has-error');
+																form_input.parent().addClass('has-success');
+																selected_img.removeClass('hide');
+																that._changeState(true);
+															}).error(
 															function() {
-																if (!selected_img
-																		.hasClass('hide'))
-																	selected_img
-																			.addClass('hide');
-																if (form_input
-																		.parent()
-																		.hasClass(
-																				'has-success'))
-																	form_input
-																			.parent()
-																			.removeClass(
-																					'has-success');
-																form_input
-																		.parent()
-																		.addClass(
-																				'has-error');
-																that
-																		._changeState(false);
+																if (!selected_img.hasClass('hide'))
+																	selected_img.addClass('hide');
+																if (form_input.parent().hasClass('has-success'))
+																	form_input.parent().removeClass('has-success');
+																form_input.parent().addClass('has-error');
+																that._changeState(false);
 															});
 										}
-									});
+				});
 
-					that.element
-							.find('.modal-footer .btn.custom-insert-img')
-							.on(
-									'click',
-									function() {
-										var tab_pane = that._activePane();
-										var selected_url;
-										switch (tab_pane.attr('id')) {
-										case that.options.guid[TAB_PANE_URL_ID]:
-											selected_url = that.element
-													.find(
-															'.modal-body input[name="custom-selected-url"]')
-													.val();
-											break;
-										case that.options.guid[TAB_PANE_DOMAIN_ID]:
-											var my_list_view = tab_pane
-													.find('.panel-body div');
-											var linkId = my_list_view
-													.data("linkId");
-											selected_url = URL_TEMPLATE({
-												key : linkId
-											});
-											my_list_view.data("linkId", null);
-											break;
-										case that.options.guid[TAB_PANE_WEBSITE_ID]:
-											var my_list_view = tab_pane
-													.find('.panel-body div');
-											var linkId = my_list_view
-													.data("linkId");
-											selected_url = URL_TEMPLATE({
-												key : linkId
-											});
-											my_list_view.data("linkId", null);
-											break;
-										case that.options.guid[TAB_PANE_MY_ID]:
-											var my_list_view = tab_pane
-													.find('.panel-body div');
-											var linkId = my_list_view
-													.data("linkId");
-											selected_url = URL_TEMPLATE({
-												key : linkId
-											});
-											my_list_view.data("linkId", null);
-											break;
+				// handle insert 		
+				that.element.find('.modal-footer .btn.custom-insert-img').on('click', function() {						
+					var tab_pane = that._activePane();
+					var tab_pane_id	= tab_pane.attr('id');
+					var selected_url = '';					
+					switch (tab_pane_id) {
+						case that.options.guid[TAB_PANE_URL_ID]:
+							selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();							
+						break;
+						default:					
+							var active_list_view = $( "#" + tab_pane_id + "-list-view").data('kendoListView');
+							var data = active_list_view.dataSource.view();						
+							$.each( active_list_view.select(), function(index, item){
+								var image = data[$(item).index()];
+								// website (public) 
+								if( image.objectType === 30 )
+								{
+									selected_url =  templates.download(image);									
+								}else{
+									that._getImageLink(image, function(data) {
+										if (typeof data.imageLink === 'object') {
+											selected_url = templates.url(data.imageLink);
 										}
-										that.trigger(APPLY, {
-											html : VALUE_TEMPLATE({
-												url : selected_url
-											})
-										});
-									});
-				},
-				_activePane : function() {
-					var that = this;
-					return that.element.find('.tab-content > .tab-pane.active');
-				},
-				_changeState : function(enabled) {
-					var that = this;
-					if (enabled) {
-						that.element.find(
-								'.modal-footer .btn.custom-insert-img')
-								.removeAttr('disabled');
-					} else {
-						that.element.find(
-								'.modal-footer .btn.custom-insert-img').attr(
-								'disabled', 'disabled');
+									});								
+								}
+							});								
 					}
-				},
-				_dialogTemplate : function() {
-					var that = this;
-					if (typeof that.options.template === UNDEFINED) {
-						return kendo
-								.template("<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>"
-										+ "<div class='modal-dialog modal-lg'>"
-										+ "<div class='modal-content'>"
-										+ "<div class='modal-header'>"
-										+ "<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>"
-										+ "<h5 class='modal-title' id=#: id #>이미지 삽입</h5>"
-										+ "</div>"
-										+ "<div class='modal-body'>"
-										+ "</div>"
-										+ "<div class='modal-footer'>"
-										+ "</div>"
-										+ "</div><!-- /.modal-content -->"
-										+ "</div><!-- /.modal-dialog -->"
-										+ "</div><!-- /.modal -->");
-					} else if (typeof that.options.template === 'object') {
-						return that.options.template;
-					} else if (typeof that.options.template === 'string') {
-						return kendo.template(that.options.template);
+					if( selected_url.length > 0){
+						that.trigger(APPLY, {
+							html : templates.image({
+								url : selected_url
+							})
+						});
 					}
+				});	
+			},
+			_activePane : function() {
+				var that = this;
+				return that.element.find('.tab-content > .tab-pane.active');
+			},
+			_changeState : function(enabled) {
+				var that = this;
+				if (enabled) {
+					that.element.find(
+							'.modal-footer .btn.custom-insert-img')
+							.removeAttr('disabled');
+				} else {
+					that.element.find(
+							'.modal-footer .btn.custom-insert-img').attr(
+							'disabled', 'disabled');
 				}
-			});
+			},
+			_dialogTemplate : function() {
+				var that = this;
+				if (typeof that.options.template === UNDEFINED) {
+					return kendo.template(
+						"<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>"	+ 
+						"<div class='modal-dialog modal-lg'>" + 
+						"<div class='modal-content'>" + 
+						"<div class='modal-header'>" + 
+						"<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>" + 
+						"<h5 class='modal-title' id=#: id #>이미지 삽입</h5>" + 
+						"</div>" + 
+						"<div class='modal-body'>" + 
+						"</div>" + 
+						"<div class='modal-footer'>" + 
+						"</div>" + 
+						"</div><!-- /.modal-content -->" + 
+						"</div><!-- /.modal-dialog -->" + 
+						"</div><!-- /.modal -->");
+				} else if (typeof that.options.template === 'object') {
+					return that.options.template;
+				} else if (typeof that.options.template === 'string') {
+					return kendo.template(that.options.template);
+				}
+			}
+	});
 
 	$.fn.extend({
 		extImageBrowser : function(options) {

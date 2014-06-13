@@ -5,8 +5,18 @@
 	var kendo = window.kendo,
 	stringify = kendo.stringify,
 	UNDEFINED = 'undefined',
+	LOCALE = 'ko-KR',
 	isFunction = kendo.isFunction;
-		
+	
+	common.api.culture = function ( ){
+		kendo.culture(culture);				
+	}	
+	
+	common.api.culture = function ( culture ){
+		if( typeof culture === UNDEFINED )
+			culture = LOCALE;
+		kendo.culture(culture);				
+	}
 	
 	common.api.callback = function ( options){
 		options = options || {};	
@@ -66,6 +76,8 @@
 			dataType : "json"
 		});	
 	};				
+	
+	
 	
 	common.api.isValidUrl = function (url){
 		  var urlregex = new RegExp("^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*$");
@@ -351,9 +363,6 @@
 	
 })(jQuery);
 
-
-
-
 /**
  * User 
  *  - signin
@@ -458,6 +467,184 @@
 		}
 	};		
 })(jQuery);	
+
+/**
+ * Community  
+ */
+;(function($, undefined) {
+	var common = window.common = window.common || {} ;
+	common.api = common.api || {} ;
+	var kendo = window.kendo,
+	Widget = kendo.ui.Widget, 
+	isPlainObject = $.isPlainObject,
+	DataSource = kendo.data.DataSource,
+	handleKendoAjaxError = common.api.handleKendoAjaxError ,
+	stringify = kendo.stringify,
+	isFunction = kendo.isFunction,
+	UNDEFINED = 'undefined',
+	POST = 'POST',
+	OBJECT_TYPE = 30 ,
+	JSON = 'json';
+
+	common.api.Forum = kendo.Class.extend({		
+		init : function (options){
+			options = options || {};			
+			var that = this;
+			that.options = options;
+			if( typeof that.options.pageSize === UNDEFINED ){
+				that.options.pageSize = 3;
+			}				
+		},
+		dataSource : function (options){			
+			var that = this;
+			if( typeof that._dataSource ===  UNDEFINED){
+				options = options || {};
+				if( typeof options.transport === UNDEFINED){
+					options.transport = {
+						read: { type : POST, dataType:JSON, url : '/community/list-forum-topics.do?output=json' },
+						parameterMap : function(options, operation) {
+							if (operation != "read" && options.models) {
+								return {models: kendo.stringify(options.models)};
+							}else{
+								return {forumId: that.options.forumId }
+							}
+						}
+					}
+				}
+				if( typeof options.error === UNDEFINED ){
+					options.error = handleKendoAjaxError;
+				}
+				if( typeof options.pageSize === UNDEFINED ){
+					options.pageSize = that.options.pageSize;
+				}			
+				if( typeof options.schema === UNDEFINED ){
+					options.schema = {
+						total: "targetTopicCount",
+						data : "targetTopics",
+						model : common.models.ForumTopic						
+					}
+				}				
+				that._dataSource = new DataSource(options);
+			}		
+			return that._dataSource;
+		}	
+	});
+	
+	common.api.teleportation = function(options){
+		options = options || {};				
+		if( typeof options.renderTo === UNDEFINED ){
+			options.renderTo = 'teleportation';			
+		}				
+		if ($("#" +options.renderTo ).length == 0) {
+			$('body').append(	'<div id="' +options.renderTo + '" style="display:none;"></div>');
+		}		
+		if(! $("#" +options.renderTo ).data('kendoExtNavigator') ){
+			$("#" +options.renderTo ).extNavigator(options);
+		}		
+		return $("#" +options.renderTo ).data('kendoExtNavigator');
+	}
+	
+	common.api.Navigator = Widget.extend({		
+		init : function(element, options) {			
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			options = that.options;
+			element = that.element;
+			that.refresh();
+		},
+		options : {
+			name : "ExtNavigator"
+		},
+		refresh : function(){
+			var that = this;
+			var rendorTo = that.element;
+			rendorTo.html(
+				'<form name="teleportation-form" method="POST" accept-charset="utf-8">' +
+				'<input type="hidden" name="output" value="html" />' +		
+				'</form>'						
+			);
+		},
+		teleport : function(params){			
+			var that = this;			
+			var template = kendo.template('<input type="hidden" name="#=name #" value="#=value #"/>');
+			var form = that.element.find('form');
+			if( typeof params === UNDEFINED ){
+				params = params || {};				
+			}									
+			
+			form.find('input[name!="output"]').remove();	
+			
+			if(isPlainObject(params)){
+				$.each( params , function(propertyName, valueOfProperty ){
+					if(propertyName === 'action'){
+						form.attr('action', valueOfProperty );
+					}else{	
+						if( that.element.find('input[name="'+ propertyName + '"]').length === 0  ){			
+							var html = template({name:propertyName , value:valueOfProperty });											
+							form.append(html);							
+						}else{							
+							that.element.find('input[name="'+ propertyName + '"]').val(valueOfProperty);
+						}
+					}
+				});
+			}
+			
+			form.submit();
+		}
+	});
+	
+	$.fn.extend({
+		extNavigator : function(options) {
+			return new common.api.Navigator(this, options);
+		}
+	});
+	
+	
+	common.api.Announcement = kendo.Class.extend({		
+		init : function (options){
+			options = options || {};			
+			var that = this;
+			that.options = options;
+			if( typeof that.options.pageSize === UNDEFINED ){
+				that.options.pageSize = 3;
+			}				
+		},
+		dataSource : function (options){			
+			var that = this;
+			if( typeof that._dataSource ===  UNDEFINED){
+				options = options || {};
+				if( typeof options.transport === UNDEFINED){
+					options.transport = {
+						read: { type : POST, dataType:JSON, url : '/community/list-announce.do?output=json' },
+						parameterMap : function(options, operation) {
+							if (operation != "read" && options.models) {
+								return {models: kendo.stringify(options.models)};
+							}else{
+								return {objectType: OBJECT_TYPE }
+							}
+						}
+					}
+				}
+				if( typeof options.error === UNDEFINED ){
+					options.error = handleKendoAjaxError;
+				}
+				if( typeof options.pageSize === UNDEFINED ){
+					options.pageSize = that.options.pageSize;
+				}			
+				if( typeof options.schema === UNDEFINED ){
+					options.schema = {
+						data : "targetAnnounces",
+						model : Announce						
+					}
+				}				
+				that._dataSource = new DataSource(options);
+			}		
+			return that._dataSource;
+		}	
+	});
+	
+})(jQuery);
+
 
 /**
  * Streams  
