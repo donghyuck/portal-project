@@ -2,7 +2,7 @@
 <html decorator="secure">
 <head>
 		<title>관리자 메인</title>		
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel.admin.style.css" />
+		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />
 		<script type="text/javascript">
 		<!--		
 		yepnope([{
@@ -11,8 +11,8 @@
 			
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			
-			'css!${request.contextPath}/styles/common.admin/pixel.admin.widgets.css',			
-			'css!${request.contextPath}/styles/common.admin/pixel.admin.themes.css',
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',	
