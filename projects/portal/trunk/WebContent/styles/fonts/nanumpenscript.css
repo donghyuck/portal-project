@@ -1,0 +1,13 @@
+/* 
+ * Nanum Pen Script (Korean) 
+ */
+@font-face {
+  font-family: 'Nanum Pen Script';
+  font-style: normal;
+  font-weight: 400;
+  src: url(nanumpenscript/v2/NanumPenScript-Regular.eot);
+  src: url(nanumpenscript/v2/NanumPenScript-Regular.eot?#iefix) format('embedded-opentype'),
+       url(nanumpenscript/v2/NanumPenScript-Regular.woff2) format('woff2'),
+       url(nanumpenscript/v2/NanumPenScript-Regular.woff) format('woff'),
+       url(nanumpenscript/v2/NanumPenScript-Regular.ttf) format('truetype');
+}
