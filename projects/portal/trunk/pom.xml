@@ -126,11 +126,6 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.2</version>
-		</dependency>
-		<dependency>
-			<groupId>architecture.community</groupId>
-			<artifactId>architecture-community-struts2</artifactId>
-			<version>1.0.0.RELEASE</version>
 		</dependency>		
 		<dependency>
 			<groupId>com.oracle</groupId>
@@ -141,6 +136,11 @@
 			<groupId>architecture.bootstrap</groupId>
 			<artifactId>architecture-bootstrap</artifactId>
 			<version>1.0.0.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>architecture.community</groupId>
+			<artifactId>architecture-community-forum</artifactId>
+			<version>1.0.0</version>
 		</dependency>
 	</dependencies>
 		
