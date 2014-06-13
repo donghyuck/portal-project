@@ -422,9 +422,9 @@
 <script type="text/x-kendo-tmpl" id="announcement-detail-panel-template">		
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<button type="button" class="close" aria-hidden="true"><img src="${request.contextPath}/images/close.png" /></button>
+			<button type="button" class="close" aria-hidden="true"><i class="fa fa-times fa-2x"></i></button>
 			<h4 data-bind="html:subject"></h4>
-			<small class="text-muted"><span class="label label-info">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>					
+			<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>					
 		</div>
 		<div class="panel-body" data-bind="html:body"></div>	
 	</div>
@@ -435,10 +435,11 @@
 <script type="text/x-kendo-tmpl" id="announcement-viewer-template">		
 	<div class="page-heading">
 		<h4 data-bind="html:announce.subject"></h4>		
-		<small class="text-muted"><span class="label label-primary">게시 기간</span> <span data-bind="text: announce.formattedStartDate"></span> ~ <span data-bind="text: announce.formattedEndDate"></span></small>
+		<hr class="devider">
+		<span class="label label-primary label-lightweight">게시 기간</span> <small class="text-primary"><span data-bind="text: announce.formattedStartDate"></span> ~ <span data-bind="text: announce.formattedEndDate"></span></small>
 		<p class="text-muted">
-			<small><span class="label label-default">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span> </small>
-			<small><span class="label label-default">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span> </small>
+			<span class="label label-default label-lightweight">생성일</span> <small><span data-bind="text: announce.formattedCreationDate"></span> </small>
+			<span class="label label-default label-lightweight">수정일</span> <small><span data-bind="text: announce.formattedModifiedDate"></span> </small>
 		</p>
 	</div>													
 	<div class="media">
@@ -450,23 +451,25 @@
 				<p><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span> <code data-bind="text: announce.user.username"></code></p>
 				<p data-bind="visible:announce.user.emailVisible, text: announce.user.email"></p>
 			</h5>		
-		</div>
-		<div data-bind="html: announce.body " />
+		</div>		
 	</div>	
+	<div class="margin-bottom-20"><hr class="devider"></div>
+	<div data-bind="html: announce.body " />
 </script>
 
 <script type="text/x-kendo-tmpl" id="announcement-view-template">		
 	<div class="page-heading">
 		<h4 data-bind="html:subject"></h4>		
-		<small class="text-muted"><span class="label label-primary">게시 기간</span> #: kendo.toString(startDate, "g") # ~  #: kendo.toString(endDate, "g") #</small>
+		<hr class="devider">
+		<span class="label label-primary label-lightweight">게시 기간</span> <small class="text-primary"><span data-bind="text: formattedStartDate"></span> ~ <span data-bind="text: formattedEndDate"></span></small>
 		<p class="text-muted">
-			<small><span class="label label-default">생성일</span> #: kendo.toString(creationDate, "g") #</small>
-			<small><span class="label label-default">수정일</span> #: kendo.toString(modifiedDate, "g") #</small>
+			<span class="label label-default label-lightweight">생성일</span> <small><span data-bind="text: formattedCreationDate"></span> </small>
+			<span class="label label-default ">수정일</span> <small><span data-bind="text: formattedModifiedDate"></span> </small>
 		</p>
-	</div>
+	</div>													
 	<div class="media">
 		<a class="pull-left" href="\\#">
-		<img src="${request.contextPath}/download/profile/#: user.photoUrl #?width=150&height=150" width="30" height="30" class="img-rounded">
+			<img src="${request.contextPath}/download/profile/#: user.photoUrl #?width=150&height=150" width="30" height="30" class="img-rounded">
 		</a>
 		<div class="media-body">
 			<h5 class="media-heading">
@@ -479,11 +482,11 @@
 				<br>(#: user.email #)
 				# } #	
 			</h5>		
-		</div>
+		</div>			
 	</div>	
-	<div class="blank-top-5" ></div>
-	<div data-bind="html:body"></div>	
-	<div class="blank-top-5" ></div>
+	<div class="margin-bottom-20"><hr class="devider"></div>
+	<div data-bind="html: body " />
+	<div class="margin-bottom-20"></div>
 	<div class="btn-group pull-right">
 		<button  type="button" class="btn btn-info btn-sm custom-list "><i class="fa fa-angle-double-up"></i> 목록</button>		
 	</div>
@@ -495,6 +498,30 @@
 		<td>#: subject#</td>
 	</tr>
 </script>
+
+
+
+<!-- ============================== -->
+<!-- news viewer template                          -->
+<!-- ============================== -->
+<script type="text/x-kendo-tmpl" id="news-viewer-template">		
+	<div class="page-heading">
+		<h4 data-bind="html:news.subject"></h4>		
+	</div>													
+	<div class="media">
+		<a class="pull-left" href="\\#">
+			<img data-bind="attr:{ src: profilePhotoUrl }" width="30" height="30" class="img-rounded">
+		</a>
+		<div class="media-body">
+			<h5 class="media-heading">																	
+				<p><span data-bind="visible:news.user.nameVisible, text: news.user.name"></span> <code data-bind="text: news.user.username"></code></p>
+				<p data-bind="visible:news.user.emailVisible, text: news.user.email"></p>
+			</h5>		
+		</div>
+		<div data-bind="html: news.content " />
+	</div>	
+</script>
+
 
 <!-- ============================== -->
 <!-- my socialnetwork view panel template          -->
@@ -728,66 +755,35 @@
 <!-- Top Nav Account Status Template               -->
 <!-- ============================== -->
 <script id="account-template" type="text/x-kendo-template">
-<li class="dropdown">
-		<a href="\\#" class="btn btn-img dropdown-toggle" data-toggle="dropdown">
-		# if ( anonymous ) { # 
-			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
-		# }else{ # 
-			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34">
-		# } #
-		
-		<span class="caret"></span>
-		</a>			
-		<ul class="dropdown-menu">
-			# if ( !anonymous ) { # 
-			<li>
-				<div class="blank-space-5">	
-					<ul class="media-list">
-						<li class="media">
-							<a class="pull-left" href="\\#">
-								<img class="media-object img-thumbnail" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
-							</a>
-							<div class="media-body" style="color:ccc;">
-								<p class="text-muted"><strong> #:name#</strong></p>
-								<p class="text-muted"> #:email #</p>	
-								<p><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a></p>		
-								<!--						
-								<ul class="nav nav-pills nav-stacked">
-									<li class="active">
-										<a href="\\#">
-										<span class="badge pull-right">3</span>
-										Home
-										</a>
-									</li>
-									<li>
-										<a href="\\#">
-										<span class="badge pull-right">1</span>
-										알림
-										</a>
-									</li>
-									<li>
-										<a href="\\#">
-										<span class="badge pull-right">2</span>
-										메시지
-										</a>
-									</li>																			
-								</ul>
-								-->
-							</div>
-						</li>
-					</ul>
-		
-			</li>
-			<li class="divider"></li>
-			<!--<li><a href="/community/view-myprofile.do?view=modal-dialog" data-toggle="modal" data-target="\\#myModal" ><i class="fa fa-user"></i> 프로필 보기</a></li>-->			
-			<li><a href="${request.contextPath}/main.do?view=personalized">마이 페이지</a></li>
-			<li><a href="${request.contextPath}/main.do?view=streams">마이 스트림</a></li>
+<li class="account">
+	<a href="javascript:void(0);" class="btn btn-link btn-account dropdown-toggle" data-toggle="dropdown">
+	# if ( anonymous ) { # 
+		<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
+	# }else{ # 
+		<span class="badge badge-blue rounded-2x pull-right">3</span>
+		<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34">
+	# } #
+	</a>			
+	<div class="account-content" >
+		# if ( !anonymous ) { # 
+		<div class="alert alert-danger fade in">
+			<i class="fa fa-warning"></i> <strong>Oh snap!</strong> Change a few things up and try submitting again.
+		</div>			
+		<img class="img-profile img-thumbnail" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
+		<div class="overflow-h">
+			<span class="font-s">#:name# (#:email #)</span>
+			<p class="color-green">소속: <span class="hex"> #= company.displayName #</span></p>	
+			<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+		</div>
+		<hr>
+		<ul class="list-unstyled save-job">
+			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
 			#if ( isSystem ) {#
-			<li><a href="/secure/main-site.do">시스템 관리</a></li>
-			# } #
-			<li class="divider"></li>
-			<li><a href="/logout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
-			# } else { # 						
+			<li><a href="/secure/main.do" class="btn-link">시스템 관리</a></li>
+			# } #			
+			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i> 로그아웃</a></li>
+		</ul>		
+		# }else{ # 
 			<li>
 				<div class="container" style="width:100%;">
 					<div class="row blank-top-5 ">
@@ -830,10 +826,9 @@
 			</li>
 			<li class="divider"></li>
 			<li><a href="\\#">아이디/비밀번호찾기</a></li>
-			<li><a href="${request.contextPath}/accounts/signup.do">회원가입</a></li>
-			# } #
-		</ul>
-	</div>			
+			<li><a href="${request.contextPath}/accounts/signup.do">회원가입</a></li>	
+		# } #
+	</div>
 </li>				
 </script>	
 		
