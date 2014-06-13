@@ -1,11 +1,4 @@
 @charset "UTF-8";
-/* import naver nanumgothic font ---------------------- */
-@font-face {
-	font-family: "BM_NANUMGOTHIC";
-	src: url('../fonts/nanumgothic.eot');
-	src: local('☺'), url('../fonts/nanumgothic.woff') format('woff'), url('../fonts/nanumgothic.woff') format('truetype');
-}
-
 
 /** Page Loader 
 ------------------------------------*/
@@ -24,7 +17,7 @@
 body,html {
 	padding: 0;
 	margin: 0;
-	font-family: "나눔 고딕", "BM_NANUMGOTHIC";
+	font-family: "나눔 고딕", "Nanum Gothic";
 }
 
 /** kendoui ext
