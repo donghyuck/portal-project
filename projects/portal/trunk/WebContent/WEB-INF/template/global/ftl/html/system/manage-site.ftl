@@ -1,7 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="secure">
 	<head>
-		<title>시스템 정보</title>
+		<title>웹사이트관리</title>
 <#compress>		
 		<script type="text/javascript"> 
 		yepnope([{
@@ -43,12 +43,14 @@
 						change : function(data){
 							data.copy(companyPlaceHolder);
 							kendo.bind($("#company-info"), companyPlaceHolder );
+							$('button.btn-control-group').removeAttr("disabled");				
 						}	
 					}]
 				});
 												 
 				 // 4. PAGE MAIN		
-				 var selectedSocial = {};			
+				 var selectedSocial = {};		
+				 	
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );				 
 				 createSiteGrid();				 
 				 common.ui.handleButtonActionEvents(
@@ -63,9 +65,25 @@
 						user : function(e){
 							topBar.go('main-user.do');			
 						}, 							
-						details : function(e){
-							$('#company-details').toggleClass('hide');
+						media : function(e){
+							$('#company-details .panel[role="media"]').toggleClass('hide');
 						},
+						'close-media' : function(e){
+							$("button.btn-control-group[data-action='media']").click();
+						},
+						timeline: function(e){
+							$('#company-details .panel[role="timeline"]').toggleClass('hide');
+						},
+						'close-timeline': function(e){
+							$("button.btn-control-group[data-action='timeline']").click();
+						},
+						logo: function(e){
+							createLogoPanel();
+							$('#company-details .panel[role="logo"]').toggleClass('hide');							
+						},
+						'close-logo': function(e){
+							$("button.btn-control-group[data-action='logo']").click();
+						},						
 						connect : function(e){
 							alert("social modal");	 					
 						}			  						 
@@ -92,110 +110,186 @@
 				$('#myTab a:first').tab('show') ;
 			}	
 		}]);
+		
+		function createLogoPanel(){
+			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			if( !$('#logo-file').data('kendoUpload') ){
+				$("#logo-file").kendoUpload({
+					multiple : false,
+					width: 300,
+				 	showFileList : false,
+					localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+					async: {
+						saveUrl:  '${request.contextPath}/secure/add-logo-image.do?output=json',							   
+						autoUpload: true
+					},
+					upload: function (e) {								         
+						e.data = {
+							objectType : 1,
+							objectId: selectedCompany.companyId
+						};														    								    	 		    	 
+					},
+					success : function(e) {								    
+						if( e.response.targetPrimaryLogoImage ){
+							//e.response.targetAttachment.attachmentId;
+							// LIST VIEW REFRESH...
+							$('#logo-grid').data('kendoGrid').dataSource.read(); 
+						}				
+					}
+				});						
+			}
+			/*
+			if(!$('#logo-list-view').data('kendoListView')){
+				$("#logo-list-view").kendoListView({
+					dataSource: {
+						dataType: 'json',
+						transport: {
+							read: { url:'${request.contextPath}/secure/list-logo-image.do?output=json', type: 'POST' },
+							parameterMap: function (options, operation){
+								return { objectType: 1, objectId: selectedCompany.companyId }
+							} 
+						},
+						schema: {
+							data: "targetLogoImages",
+							total: "targetLogoImageCount",
+							model : common.models.Logo
+						},
+						error: common.api.handleKendoAjaxError
+					},
+					//selectable: "single",
+					template: kendo.template($('#logo-list-view-template').html())
+				});				
+			}
+			*/
+			
+			if(!$('#logo-grid').data('kendoGrid')){				
+				$("#logo-grid").kendoGrid({
+					dataSource: {
+						dataType: 'json',
+						transport: {
+							read: { url:'${request.contextPath}/secure/list-logo-image.do?output=json', type: 'POST' },
+							parameterMap: function (options, operation){
+								return { objectType: 1, objectId: selectedCompany.companyId }
+							} 
+						},
+						schema: {
+							data: "targetLogoImages",
+							total: "targetLogoImageCount",
+							model : common.models.Logo
+						},
+						error: common.api.handleKendoAjaxError
+					},
+					height: 200,
+					columns:[
+						{ field: "logoId", title: "ID",  width: 30, filterable: false, sortable: false },
+						{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
+						{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
+					]				
+				});			
+			}								
+		}
 
 		function createSocialPane(){
 			var selectedCompany = $("#navbar").data("companyPlaceHolder");
-						if( ! $("#social-grid").data("kendoGrid") ){	
-							
-							$("#social-grid").kendoGrid({
-								dataSource: {
-									dataType: 'json',
-									transport: {
-										read: { url:'${request.contextPath}/secure/list-social-account.do?output=json', type: 'POST' },
-										update: { url:'${request.contextPath}/secure/update-social-account.do?output=json', type:'POST' },
-										parameterMap: function (options, operation){
-											if (operation != "read" && options) {										                        								                       	 	
-												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
-											}else{
-												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
-											}
-										} 
-									},
-									schema: {
-										data: "targetSocialAccounts",
-										model : SocialAccount
-									},
-									pageSize: 15,
-									serverPaging: false,
-									serverFiltering: false,
-									serverSorting: false,                        
-									error: common.api.handleKendoAjaxError
-								},
-								columns:[
-									{ field: "socialAccountId", title: "ID",  width: 50, filterable: false, sortable: false },
-									{ field: "serviceProviderName", title: "쇼셜", width: 100 },
-									{ field: "signedIn", title: "로그인",  width: 80 },
-									{ field: "accessSecret", title: "Access Secret", sortable: false },
-									{ field: "accessToken", title: "Access Token", sortable: false },
-									{ field: "creationDate", title: "생성일", width: 100, format: "{0:yyyy/MM/dd}" },
-									{ field: "modifiedDate", title: "수정일", width: 100, format: "{0:yyyy/MM/dd}" },
-									{ command: [ {  text: "상세" , click: function(e){										
-										e.preventDefault();										
-										selectedSocial =  this.dataItem($(e.currentTarget).closest("tr"));											
-										if(! $("#social-detail-window").data("kendoWindow")){       
-											// WINDOW 생성
-											$("#social-detail-window").kendoWindow({
-												actions: ["Close"],
-												resizable: false,
-												modal: true,
-												visible: false,
-												minWidth: 300,
-												minHeight: 300
-											});
-										}																				
-										// load social template ...										
-										var socialWindow = $("#social-detail-window").data("kendoWindow");
-										var socialMediaName = selectedSocial.serviceProviderName ;										
-										var template = kendo.template($('#social-details-template').html());											
-										socialWindow.title( socialMediaName + ' 연결정보' );
-										socialWindow.content(template({ 'socialAccount' : selectedSocial }));
-										$.ajax({
-											type : 'POST',
-											url : '${request.contextPath}/social/get-' + socialMediaName + '-profile.do?output=json',
-											data: { socialAccountId: selectedSocial.socialAccountId },
-											beforeSend: function(){																					
-												socialWindow.center();
-												socialWindow.open();
-												kendo.ui.progress($("#social-detail-window"), true);												
-											},
-											success : function(response){
-												if( response.error ){
-													// 오류 발생..
-													socialWindow.content( template( { 'socialAccount' : selectedSocial, 'error': response.error } ) );
-												} else {														
-													socialWindow.content( template(response) );
-												}										
-												$('#connect-social-btn').click( function(e){
-													socialWindow.close();													
-													var w = window.open(
-														selectedSocial.authorizationUrl, 
-														"_blank",
-														"toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=500, height=400"
-													);
-													w.focus();
-												});		
-											},
-											error: function(){
-												socialWindow.close();
-												common.api.handleKendoAjaxError();
-											},
-											dataType : 'json'
-										});	
-										
-									}}, { name: "destroy", text: "삭제" } ], title: " ", width: "230px"  }
-								],
-								filterable: true,
-								editable: "inline",
-								sortable: true,
-								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-								//height: 500,
-								dataBound: function(e) {								
-								},
-								change: function(e) {          
-									var selectedCells = this.select();     
+			if( ! $("#social-grid").data("kendoGrid") ){
+				$("#social-grid").kendoGrid({
+					dataSource: {
+						dataType: 'json',
+						transport: {
+							read: { url:'${request.contextPath}/secure/list-social-account.do?output=json', type: 'POST' },
+							update: { url:'${request.contextPath}/secure/update-social-account.do?output=json', type:'POST' },
+							parameterMap: function (options, operation){
+								if (operation != "read" && options) {
+									return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};
+								}else{
+									return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
 								}
+							}
+						},
+						schema: {
+							data: "targetSocialAccounts",
+							model : SocialAccount
+						},
+						pageSize: 15,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false,
+						error: common.api.handleKendoAjaxError
+					},
+					columns:[
+						{ field: "socialAccountId", title: "ID",  width: 50, filterable: false, sortable: false },
+						{ field: "serviceProviderName", title: "쇼셜", width: 100 },
+						{ field: "signedIn", title: "로그인",  width: 80 },
+						{ field: "accessSecret", title: "Access Secret", sortable: false },
+						{ field: "accessToken", title: "Access Token", sortable: false },
+						{ field: "creationDate", title: "생성일", width: 100, format: "{0:yyyy/MM/dd}" },
+						{ field: "modifiedDate", title: "수정일", width: 100, format: "{0:yyyy/MM/dd}" },
+						{ command: [ {  text: "상세" , click: function(e){
+							e.preventDefault();
+							selectedSocial =  this.dataItem($(e.currentTarget).closest("tr"));
+							if(! $("#social-detail-window").data("kendoWindow")){
+								// WINDOW 생성
+								$("#social-detail-window").kendoWindow({
+									actions: ["Close"],
+									resizable: false,
+									modal: true,
+									visible: false,
+									minWidth: 300,
+									minHeight: 300
+								});
+							}
+							// load social template ...
+							var socialWindow = $("#social-detail-window").data("kendoWindow");
+							var socialMediaName = selectedSocial.serviceProviderName ;
+							var template = kendo.template($('#social-details-template').html());
+							socialWindow.title( socialMediaName + ' 연결정보' );
+							socialWindow.content(template({ 'socialAccount' : selectedSocial }));
+							$.ajax({
+								type : 'POST',
+								url : '${request.contextPath}/social/get-' + socialMediaName + '-profile.do?output=json',
+								data: { socialAccountId: selectedSocial.socialAccountId },
+								beforeSend: function(){
+									socialWindow.center();
+									socialWindow.open();
+									kendo.ui.progress($("#social-detail-window"), true);
+								},
+								success : function(response){
+									if( response.error ){
+										// 오류 발생..
+										socialWindow.content( template( { 'socialAccount' : selectedSocial, 'error': response.error } ) );
+									} else {
+										socialWindow.content( template(response) );
+									}
+									$('#connect-social-btn').click( function(e){
+										socialWindow.close();
+										var w = window.open(
+											selectedSocial.authorizationUrl,
+											"_blank",
+											"toolbar=yes, location=yes, directories=no, status=no, menubar=yes, scrollbars=yes, resizable=no, copyhistory=yes, width=500, height=400"
+										);
+										w.focus();
+									});
+								},
+								error: function(){
+									socialWindow.close();
+									common.api.handleKendoAjaxError();
+								},
+								dataType : 'json'
 							});
-						}			
+						}}, { name: "destroy", text: "삭제" } ], title: " ", width: "230px"  }
+					],
+					filterable: true,
+					editable: "inline",
+					sortable: true,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+					//height: 500,
+					dataBound: function(e) {
+					},
+					change: function(e) {
+						var selectedCells = this.select();
+					}
+				});
+			}
 		}
 
 		function createAttachPane(){		
@@ -610,9 +704,7 @@
 		
 		.k-grid-content{
 			height:200px;
-		}			
-		
-		
+		}		
 		</style>
 </#compress>		
 	</head>
@@ -637,18 +729,17 @@
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
 								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
 							</div>
-							<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting"><i class="fa fa-cog"></i> 회사 정보변경</button>								
+							<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting" disabled="disabled"><i class="fa fa-cog"></i> 회사 정보변경</button>								
 						</div>
-						<div class="panel-body" style="padding:5px;">						
-														
+						<div class="panel-body" style="padding:5px;">	
 							<div class="row">
-								<div class="col-lg-5 col-xs-12" id="company-info">					
+								<div id="company-info" class="col-lg-5 col-xs-12">					
 									<div class="page-header page-nounderline-header text-primary">
 										<h5 >
 											<small><i class="fa fa-info"></i> 미디어 버튼을 클릭하면 회사가 보유한 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
 										</h5>
 										<p class="pull-right">											
-											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="details"><i class="fa fa-cloud"></i> 회사 미디어</button>
+											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="media" disabled="disabled"><i class="fa fa-cloud"></i> 회사 미디어</button>
 											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="timeline" disabled="disabled"><i class="fa fa-clock-o"></i> 회사 타임라인</button>
 										<p>
 									</div>											
@@ -661,7 +752,16 @@
 												<tr>
 													<th><small>도메인</small></th>								
 													<td><span data-bind="text: domainName"></span></td>
-												</tr>		
+												</tr>	
+												<tr>
+													<th><small>회사 로고</small></th>								
+													<td>
+														<img class="img-responsive" src="${request.contextPath}/download/logo/company/${action.targetCompany.name}" height="80" alt="..." />
+														<p class="pull-right">											
+															<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="logo" disabled="disabled">회사 로고</button>															
+														<p>
+													</td>
+												</tr>														
 												<tr>
 													<th><small>설명</small></th>
 													<td><span data-bind="text: description"></span></td>
@@ -677,9 +777,34 @@
 										 	</tbody>
 									</table>
 								</div>
-								<div class="col-lg-7 col-xs-12 hide" id="company-details">								
-									<div class="panel panel-default">
-										<div class="panel-body" style="padding:5px;">														
+								<div class="col-lg-7 col-xs-12" id="company-details">			
+									<div class="panel panel-default hide" role="logo">
+										<div class="panel-heading">
+											<button type="button" class="btn-control-group close" data-action="close-logo">&times;</button>
+											<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 아래의 영역에 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</small>
+										</div>
+										<div class="panel-body">											
+											<input name="logo-file" id="logo-file" type="file" />											
+										</div>
+										<div class="panel-body scrollable" style="max-height:450px;">
+											<div id="logo-grid"></div>
+										</div>										
+									</div>		
+									<div class="panel panel-default hide" role="timeline">
+										<div class="panel-heading">
+											<button type="button" class="btn-control-group close" data-action="close-timeline">&times;</button>
+											<i class="fa fa-clock-o"></i> <small>회사 타임라인을 관리합니다.</small>
+										</div>									
+										<div class="panel-body" style="padding:5px;">
+																			
+										</div>
+									</div>													
+									<div class="panel panel-default hide" role="media">
+										<div class="panel-heading">
+											<button type="button" class="btn-control-group close" data-action="close-media">&times;</button>
+											<i class="fa fa-cloud"></i> <small>회사 미디어(이미지, 파일, 쇼셜 등)를 관리합니다.</small>
+										</div>
+										<div class="panel-body" style="padding:5px;">									
 											<ul class="nav nav-tabs" id="myTab">
 											  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
 											  <li><a href="#attachment-mgmt" data-toggle="tab">첨부파일</a></li>
@@ -857,6 +982,6 @@
 					# } #	
 				# } #					
 		</script>
-		<#include "/html/common/common-system-templates.ftl" >		
+		<#include "/html/common/common-system-templates.ftl" >
 	</body>
 </html>

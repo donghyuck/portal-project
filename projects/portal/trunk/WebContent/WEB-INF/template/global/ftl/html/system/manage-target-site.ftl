@@ -719,6 +719,12 @@
 													</td>
 												</tr>	
 												<tr>
+													<th><small>사이트 로고</small></th>	
+													<td>
+														<img class="img-rounded" src="${request.contextPath}/download/logo/site/${action.targetWebSite.name}" height="100" alt="..." />
+													</td>
+												</tr>													
+												<tr>
 													<th><small>보안</small></th>	
 													<td>
 													<!--

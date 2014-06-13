@@ -265,7 +265,17 @@
 						this.page.set('pageState', 'PUBLISHED');
 						this.doSave(e);
 					},
+					value : function( value ){
+						if( typeof value === 'undefined' ){
+							return this.page.bodyText ;
+						}else{
+							this.page.set('bodyText' , value);
+						}
+					},
 					showProps: function(e){
+						if( this.page.pageId > 0 ){
+							this.properties.read();				
+						}							
 						renderTo.find('.custom-props' ).toggleClass('hide');
 					},	
 					openPage: function(e){
@@ -279,9 +289,10 @@
 							url :"${request.contextPath}/secure/update-website-page.do?output=json", 
 							data : { targetSiteId:  this.page.objectId, item: kendo.stringify(this.page) },
 							success : function(response){
-								common.ui.notification({title:"페이지 저장", message: "웹 페이지가 정상적으로 저장되었습니다.", type: "success" });
+								common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
 								var pageToUse = new common.models.Page(response.targetPage);																
 								pageToUse.copy( pagePlaceHolder );
+								$("#website-page-grid").data('kendoGrid').dataSource.read();
 							},
 							fail: function(){								
 								common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
@@ -300,7 +311,8 @@
 						});
 					}
 				});				
-				pageEditorModel.bind("change", function(e){				
+				pageEditorModel.bind("change", function(e){
+					// alert( e.field ) ;				
 					if( e.field.match('^page.')){ 						
 						if( this.page.title.length > 0 && this.page.bodyText.length  > 0 )					
 							pageEditorModel.set("updateRequired", true);
@@ -308,9 +320,9 @@
 				});								
 				kendo.bind(renderTo, pageEditorModel );
 				renderTo.data("model", pageEditorModel );										
-				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
+				var imageBroswer = createPageImageBroswer( renderToString + "-imagebroswer", bodyEditor, pageEditorModel);				
 				var linkPopup = createPageLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);									
+				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor, pageEditorModel);									
 				bodyEditor.kendoEditor({
 						tools : [
 							'bold',
@@ -347,15 +359,17 @@
 						]
 				});
 			}
+			
 			if( pagePlaceHolder.pageState === 'pagePlaceHolder' ){
 				renderTo.data("model").set("isPublished", true );				
-			}
+			}			
+		
 			renderTo.data("model").set("isPublished", (pagePlaceHolder.pageState ==='PUBLISHED') ? true : false );			
 			renderTo.data("model").set("isNew", (pagePlaceHolder.pageId > 0) ? false : true );		
 			renderTo.data("model").set("updateRequired", false);		
 		}	
 		
-		function createCodeEditor( renderToString, editor ) {		
+		function createCodeEditor( renderToString, editor, pageEditorModel ) {		
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"></div>');
 			}							
@@ -368,28 +382,36 @@
 					refresh : function(e){
 						var editor = ace.edit("htmleditor");
 						editor.getSession().setMode("ace/mode/xml");
-						editor.getSession().setUseWrapMode(true);
+						editor.getSession().setUseWrapMode(true);						
 					},
 					open: function (e){
-						ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
+						//ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
+						ace.edit("htmleditor").setValue(pageEditorModel.value());
 					}					
 				});					
 				renderTo.find('button.custom-update').click(function () {
 					var btn = $(this)			
-					editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
+					var newValue = ace.edit("htmleditor").getValue();
+					var oldValue = pageEditorModel.value(); // editor.data("kendoEditor").value();
+					// editor.data("kendoEditor").value(newValue);
+					if( newValue.length != oldValue.length ){
+						pageEditorModel.value( newValue ) ;
+					}
+					ace.edit("htmleditor").setValue("");
 					renderTo.data('kendoExtModalWindow').close();
 				});
 			}
 			return renderTo.data('kendoExtModalWindow');			
 		}
 				
-		function createPageImageBroswer(renderToString, editor ){			
+		function createPageImageBroswer(renderToString, editor, pageEditorModel ){			
 			if( $("#"+ renderToString).length == 0 ){
 				$('body').append('<div id="'+ renderToString +'"></div>');
 			}					
 			var renderTo = $("#"+ renderToString);	
 			if(!renderTo.data("kendoExtImageBrowser")){
 				var imageBrowser = renderTo.extImageBrowser({
+					data : pageEditorModel.page,
 					template : $("#image-broswer-template").html(),
 					apply : function(e){						
 						editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
@@ -423,7 +445,7 @@
 		<style type="text/css" media="screen">
 
 		.k-grid-content{
-			height:200px;
+			height:400px;
 		}			
 		
 		table.k-editor{
@@ -431,13 +453,6 @@
 			height : 400px;
 		}
 		
-		#website-page-grid.k-grid td{
-			overflow : visible;
-		}
-		
-		#website-page-grid.k-grid .k-grid-content-locked {
-			overflow : visible;
-		}
 						
 		</style>		
 		</#compress>		
@@ -559,7 +574,13 @@
 		<footer>  		
 		</footer>
 		<!-- END FOOTER -->
-		<script id="webpage-name-template" type="text/x-kendo-template">	
+		<script id="webpage-name-template" type="text/x-kendo-template">
+			<span class="label label-primary label-lightweight">#= name #</span>
+			<div class="btn-group btn-group-xs">
+				<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
+				<a href="\\#" onclick="openPage(); return false;" class="btn btn-info btn-sm">미리보기</a>
+			</div>	
+			<!--
 			<div class="btn-group">
 			  <button type="button" class="btn btn-info btn-sm dropdown-toggle" data-toggle="dropdown">
 			    #= name # <span class="caret"></span>
@@ -570,6 +591,7 @@
 			    <li><a href="\\#" onclick="doPageDelete(); return false;">삭제</a></li>
 			  </ul>
 			</div>
+			-->
 		</script>			
 		<#include "/html/common/common-system-templates.ftl" >		
 		<#include "/html/common/common-editor-templates.ftl" >	

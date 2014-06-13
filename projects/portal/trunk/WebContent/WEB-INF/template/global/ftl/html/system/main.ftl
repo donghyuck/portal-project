@@ -1,147 +1,73 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="secure">
 <head>
-		<title>관리자 메인</title>
+		<title>관리자 메인</title>		
+		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common/common.admin.style.css" />
 		<script type="text/javascript">
-		<!--
+		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',	
-			'css!${request.contextPath}/styles/codedrop/codedrop.overlay.css',			
+			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.extension/animate.css',
+			'css!${request.contextPath}/styles/common/common.admin.widgets.css',			
+	/*		'css!${request.contextPath}/styles/common/common.admin.rtl.css',			*/
+			'css!${request.contextPath}/styles/common/common.admin.themes.css',
+			/*'${request.contextPath}/js/jquery/2.1.1/jquery-2.1.1.min.js',*/
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-       	    '${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',      	    
-       	    '${request.contextPath}/js/kendo/kendo.ko_KR.js',
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',       	    
-       	    '${request.contextPath}/js/common/common.modernizr.custom.js',
-       	    '${request.contextPath}/js/common/common.models.js',
-       	    '${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/kendo/kendo.web.min.js',
+			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
+			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
+			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
+			'${request.contextPath}/js/common.plugins/fastclick.js', 
+			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
+			'${request.contextPath}/js/common/common.admin.js',
+			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
-			],        	  	   
-			complete: function() {      
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
-										
-				// 2. ACCOUNTS LOAD		
-				var currentUser = new User({});
-				var accounts = $("#account-panel").kendoAccounts({
-					visible : false,
-					authenticate : function( e ){
-						currentUser = e.token;						
-					}
-				});
-										
-				var currentCompany = new Company();							
-				var selectedCompany = new Company();	
-										
-				// 3.MENU LOAD
-				var currentPageName = "MENU_1_1";
-				
-				var topBar = $("#navbar").extTopBar({ 
-					template : kendo.template($("#topbar-template").html() ),
-					data : currentUser,
-					menuName: "SYSTEM_MENU",
-					items: {
-						id:"companyDropDownList", 
-						type: "dropDownList",
-						dataTextField: "displayName",
-						dataValueField: "companyId",
-						value: ${action.companyId},
-						enabled : false,
-						dataSource: {
-							transport: {
-								read: {
-									type: "json",
-									url: '${request.contextPath}/secure/list-company.do?output=json',
-									type:'POST'
-								}
-							},
-							schema: { 
-								data: "companies",
-								model : Company
-							}
-						},
-						change : function(data){
-							currentCompany = data ;
-							kendo.bind($("#company-info-panel"), selectedCompany );   
-						}
+			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.admin.js'
+			],
+			complete: function() {
+				// 1-1.  한글 지원을 위한 로케일 설정
+				common.api.culture();
+				// 1-2.  페이지 렌딩
+				common.ui.landing();				
+				// 1-3.  관리자  로딩
+				var currentUser = new User();
+				var targetCompany = new Company();	
+				common.ui.admin.setup({
+					authenticate : function(e){
+						e.token.copy(currentUser);
 					},
-					doAfter : function(that){
-						var menu = that.getMenuItem(currentPageName);
-						kendo.bind($(".page-header"), menu );   
+					companyChanged: function(item){
+						item.copy(targetCompany);
 					}
-				 });	
-				 
-				 
-				 
-					$("#splitter").height( $(window).height() - 150 );
-				
- 				var splitter = $("#splitter").kendoSplitter({
-					orientation: "horizontal",
-						panes: [
-							{ collapsible: false, size: "50%" },
-							{ collapsible: true, size: "50%" }
-						],
-					resize: function () {
-					        if(splitter) {
-					            //alert(splitter.wrapper.height());
-					$("#splitter").height( $(window).height() - 150 );            
-					$("#splitter").find(".k-splitbar").height( $(window).height() - 150 );
-					$("#splitter").find(".k-pane").height( $(window).height() - 150 );
-					        }
-					        //you can also get the panes each on it's own.
-					        //check: console.log(splitter); to see what options are available           
-					    }						
-				}).data("kendoSplitter");
-				
-				splitter.resize();
-				
+				});		
 				// END SCRIPT
 			}
 		}]);
 		-->
 		</script> 		 
 		<style>
-
+		
 		</style>
 	</head>
-	<body>
-		<!-- START HEADER -->
-		<section id="navbar"></section>
-		<!-- END HEADER -->
-		<!-- START MAIN CONTNET -->
-		<div class="container-fluid">		
-			<div class="row">			
-				<div class="col-sm-12">
-					<div class="page-header">
-						<h1><span data-bind="text: title"></span>     <small><i class="fa fa-quote-left"></i>&nbsp;<span data-bind="text: description"></span>&nbsp;<i class="fa fa-quote-right"></i></small></h1>
-					</div>	
-				</div>			
-			</div>	
-			<div class="row">		
-				<div class="col-sm-12">
+	<body class="theme-default main-menu-animated">
+		<div id="main-wrapper">
+			<#include "/html/common/common-system-navigation.ftl" >	
+			<div id="content-wrapper">
+				<div class="page-header">
+					<h1><i class="fa fa-bar-chart-o page-header-icon"></i> 사용자 관리</h1>
+				</div><!-- / .page-header -->
+				<div class="note note-info padding-xs-vr">
+				사용자관리..
+				</div> <!-- / .note -->
 				
-			<div id="splitter">
-                <div id="list_pane" class="color1">
-                    <p>
-                        Left pane
-                    </p>
-                </div>
-                <div id="detail_pane" class="color2">
-                    <p>
-                        Right pane
-                    </p>
-                </div>
+				
+			</div> <!-- / #content-wrapper -->
+			<div id="main-menu-bg">
 			</div>
-					
-				</div>
-			</div>
-		</div>				
-		<div id="account-panel"></div>
-		<!-- END MAIN CONTENT -->					
-		<!-- START FOOTER -->
-		<!-- END FOOTER -->				
-		<!-- 공용 템플릿 -->
-		<#include "/html/common/common-secure-templates.ftl" >
+		</div> <!-- / #main-wrapper -->
+		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>

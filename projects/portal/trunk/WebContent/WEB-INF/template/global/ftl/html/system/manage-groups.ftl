@@ -31,9 +31,7 @@
 						currentUser = e.token.copy(currentUser);							
 					}
 				});		
-				
-				
-								
+												
 				// 3.MENU LOAD
 				var companyPlaceHolder = new Company({ companyId: ${action.targetCompany.companyId} });
 				
