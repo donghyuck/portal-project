@@ -14,4 +14,8 @@
 	
 	<include file="struts-framework-community.xml"/>	 
 	<include file="struts-framework-community-admin.xml"/>	
+	
+	<include file="struts-framework-community-forum.xml"/>	 
+	<include file="struts-framework-community-forum-admin.xml"/>	 
+		
 </struts>
