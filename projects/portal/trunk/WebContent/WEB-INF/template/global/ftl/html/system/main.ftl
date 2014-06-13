@@ -2,28 +2,36 @@
 <html decorator="secure">
 <head>
 		<title>관리자 메인</title>		
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common/common.admin.style.css" />
+		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel.admin.style.css" />
 		<script type="text/javascript">
 		<!--		
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.extension/animate.css',
-			'css!${request.contextPath}/styles/common/common.admin.widgets.css',			
-			'css!${request.contextPath}/styles/common/common.admin.themes.css',
-			/*'${request.contextPath}/js/jquery/2.1.1/jquery-2.1.1.min.js',*/
+			
+			'css!${request.contextPath}/styles/common.plugins/animate.css',
+			
+			'css!${request.contextPath}/styles/common.admin/pixel.admin.widgets.css',			
+			'css!${request.contextPath}/styles/common.admin/pixel.admin.themes.css',
+
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
+			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',	
+			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
+					
+			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',		
+				
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
-			'${request.contextPath}/js/common/common.admin.js',
+			
+			'${request.contextPath}/js/common.admin/pixel.admin.js',
+			
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
+			
 			'${request.contextPath}/js/common/common.ui.admin.js'
 			],
 			complete: function() {
