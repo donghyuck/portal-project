@@ -454,7 +454,7 @@
 						transport: { 
 							read: { url:'${request.contextPath}/secure/list-user.do?output=json', type: 'POST' },
 							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  companyId: companyPlaceHolder.companyId }
+								return { startIndex: options.skip, pageSize: options.pageSize,  companyId: getSelectedCompany().companyId }
 							}
 						},
 						schema: {
@@ -500,9 +500,9 @@
 								destroy: { url:'${request.contextPath}/secure/remove-group-members.do?output=json', type:'post' },
 								parameterMap: function (options, operation){
 									if (operation !== "read" && options.models) {
-										return { companyId: companyPlaceHolder.companyId, items: kendo.stringify(options.models)};
+										return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
 									}
-									return { companyId: companyPlaceHolder.companyId }
+									return { companyId: getSelectedCompany().companyId }
 								}
 							},
 							schema: {
