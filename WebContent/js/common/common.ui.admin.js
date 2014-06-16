@@ -71,6 +71,7 @@
 		},
 		_createMenuContent : function (){		
 			var that = this;	
+			alert( (typeof that.options.switcherChanged ) );
 			$.each( $('input[role="switcher"]'), function( index, element ){
 				$(element).switcher();						
 				$(element).change(function(){
