@@ -391,6 +391,7 @@
 			
 			
 				common.ui.animate_v3($("#company-list"), 'slideOutLeft', true) ;
+				common.ui.animate_v3(renderTo, 'slideInLeft', false).show() ;
 				
 				/*.then(fucntion(){
 					common.ui.animate(renderTo, 'slideInLeft').show();
