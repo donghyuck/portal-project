@@ -382,7 +382,7 @@
 			if(hideList){
 				common.ui.animate(renderTo, 'slideInLeft', function(){
 				
-				});
+				}).show();
 			}else{
 				$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
 			}			
