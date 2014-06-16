@@ -334,7 +334,7 @@
 				}
 				common.ui.animate_v3($("#company-details"), animate, function(){  
 					if( !$("#company-list").is(":visible") ){
-						common.ui.animate_v3($("#company-list"), "slideInRight");
+						common.ui.animate_v3($("#company-list"), "slideInRight").show();
 					} 
 				});	
 			}	
