@@ -54,7 +54,9 @@
 						item.copy(targetCompany);
 					},
 					switcherChanged: function( name , value ){
-					
+						if( value && !$('#company-list').is(":visible") ){
+							$('#company-list').show();
+						}
 					}
 				});
 				common.ui.handleButtonActionEvents(
@@ -387,23 +389,10 @@
 				common.ui.animate(renderTo, 'slideInLeft', function(){
 				
 				}).show();
-			}else{
-			
-			
+			}else{			
 				common.ui.animate_v3($("#company-list"), 'slideOutLeft', function(){
 					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
 				}) ;
-				
-				
-				/*.then(fucntion(){
-					common.ui.animate(renderTo, 'slideInLeft').show();
-				});
-			*/
-				/**common.ui.animate($("#company-list"), 'slideOutLeft', function(){
-					$("#company-list").hide();
-					common.ui.animate(renderTo, 'slideInLeft').show();
-				});
-				*/
 				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
 			}			
 			
