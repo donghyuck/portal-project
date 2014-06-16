@@ -13,20 +13,27 @@
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rt.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
+			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
+			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
+			
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
+			
 			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
+			
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
-			'${request.contextPath}/js/common.plugins/bootstrap-editable.min.js',
+			
 			'${request.contextPath}/js/common.admin/pixel.admin.js',
+			
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
 			'${request.contextPath}/js/common/common.ui.admin.js',
+			
 			'${request.contextPath}/js/ace/ace.js'
 			],
 			complete: function() {
