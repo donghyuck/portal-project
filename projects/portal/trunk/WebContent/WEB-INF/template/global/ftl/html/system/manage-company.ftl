@@ -51,6 +51,7 @@
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
+					alert("fdsaf");
 						item.copy(targetCompany);
 					},
 					switcherChanged: function( name , value ){
