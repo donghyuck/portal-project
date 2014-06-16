@@ -69,6 +69,11 @@
 				} 
 			});			
 		},
+		_createMenuContent : function (){			
+			$.each( $('input[role="switcher"]'), function( index, element ){
+				$(element).switcher();						
+			} );
+		},
 		refresh: function(){			
 			var that = this;
 			$('.menu-content-profile .close').click(function () {
@@ -82,16 +87,11 @@
 				return false;
 			});
 			that._createCompanySelector();			
+			thia._createMenuContent();
 			that._doAuthenticate();
 			that._pixelAdmin.start([]);	
 		}
 	});	
-	
-	$.fn.extend({
-		adminSetup : function(options) {
-			return new common.ui.admin.Setup(this, options);
-		}
-	});
 	
 })(jQuery);
 
