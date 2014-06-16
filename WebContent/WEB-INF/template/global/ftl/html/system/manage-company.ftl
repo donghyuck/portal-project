@@ -330,7 +330,7 @@
 				var alwaysShowList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");
 				var animate = "slideOutLeft" ;
 				if( alwaysShowList ){
-					animate = "fadeInDown" ;
+					animate = "fadeOutUp" ;
 				}
 				common.ui.animate($("#company-details"), animate, function(){  
 					$("#company-details").hide() ;
