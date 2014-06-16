@@ -562,7 +562,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="panel-title-icon fa fa-building-o"></i> 목록</span>
 								<div class="panel-heading-controls">
-								목록 자동 숨기기 <input type="checkbox" id="list-switcher" data-class="switcher-primary">
+								
 								<span style="color: #ccc">|</span><button class="btn btn-danger btn-sm btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
 								</div>
 							</div>
