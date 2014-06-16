@@ -14,10 +14,12 @@
 	UNDEFINED = 'undefined',
 	POST = 'POST',
 	OBJECT_TYPE = 30 ,
+	ACCOUNT_RENDER_ID = "account-panel",
+	COMPANY_SELECTOR_RENDER_ID = "targetCompany",
 	JSON = 'json';
 		
 	common.ui.admin.Setup = kendo.Class.extend({		
-		init : function (options){
+		init : function (element, options){
 			options = options || {};			
 			var that = this;
 			that.options = options;
@@ -26,7 +28,7 @@
 		},		
 		_doAuthenticate : function(){		
 			var that = this;
-			var renderTo = "account-panel";				
+			var renderTo = ACCOUNT_RENDER_ID;				
 			if ($("#" +renderTo ).length == 0) {
 				$('body').append(	'<div id="' + renderTo + '" style="display:none;"></div>');
 			}
@@ -40,7 +42,8 @@
 		},
 		_createCompanySelector : function(){	
 			var that = this;
-			$('#targetCompany').kendoDropDownList({
+			var renderTo = COMPANY_SELECTOR_RENDER_ID;				
+			$('#' + renderTo).kendoDropDownList({
 				dataTextField: 'displayName',	
 				dataValueField: 'companyId',
 				dataSource: {
@@ -60,8 +63,7 @@
 					if( isFunction( that.options.companyChanged ) )
 						that.options.companyChanged( this.dataSource.get(this.value) );
 				} 
-			});		
-			
+			});			
 		},
 		refresh: function(){			
 			var that = this;
@@ -80,9 +82,16 @@
 			that._pixelAdmin.start([]);	
 		}
 	});	
+	
+	$.fn.extend({
+		adminSetup : function(options) {
+			return new common.ui.admin.Setup(this, options);
+		}
+	});
+	
 })(jQuery);
 
-common.ui.admin.setup = function (options){
+common.ui.admin.setup = function (options){	
 	options = options || {};			
 	return new common.ui.admin.Setup(options);	
 }
