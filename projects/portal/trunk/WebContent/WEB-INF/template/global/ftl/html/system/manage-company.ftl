@@ -378,6 +378,7 @@
 				}).show();
 			}
 			*/
+			$('#myTab a:first').tab('show');			
 			
 			if(alwaysShowList){
 				common.ui.animate(renderTo, 'slideInLeft', function(){
@@ -389,7 +390,7 @@
 				}).show();
 				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
 			}			
-			$('#myTab a:first').tab('show');			
+			
 		}
 		
 		function createCompanyPropsPane(renderTo){
