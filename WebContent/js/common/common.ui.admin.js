@@ -81,8 +81,7 @@
 			} );
 		},
 		isSwitcherEnabled:function(name){
-		
-			
+			return $('input[name="list-switcher"][name="' + name + '"]').is(":checked") );			
 		}, 
 		refresh: function(){			
 			var that = this;
