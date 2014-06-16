@@ -153,7 +153,7 @@
 				</ul> <!-- / .navigation -->
 				<div class="menu-content">
 					<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">목록 자동 숨기기</h6>
-					<input type="checkbox" id="list-switcher" data-class="switcher-primary">	
+					<input type="checkbox" id="list-switcher" data-class="switcher-primary" role="switcher" >	
 				</div>
 			</div> <!-- / #main-menu-inner -->
 		</div> <!-- / #main-menu -->
