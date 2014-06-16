@@ -388,7 +388,9 @@
 				
 				}).show();
 			}else{
-				slide.reverse();
+			
+			
+				common.ui.animate($("#company-list"), 'slideOutLeft hidden');
 				/*.then(fucntion(){
 					common.ui.animate(renderTo, 'slideInLeft').show();
 				});
