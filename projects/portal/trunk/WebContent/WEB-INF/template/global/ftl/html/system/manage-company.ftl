@@ -333,7 +333,6 @@
 					animate = "fadeOutUp" ;
 				}
 				common.ui.animate_v3($("#company-details"), animate, function(){  
-					$("#company-details").hide() ;
 					if( !$("#company-list").is(":visiblde") ){
 						$("#company-list").show();
 					} 
