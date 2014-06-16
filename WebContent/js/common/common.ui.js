@@ -69,7 +69,7 @@
 	common.ui.animate_v3 = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){			
-			if( animate.indexOf("Out") ){
+			if( animate.indexOf("Out") > -1){
 				$(this).hide().removeClass(animate + ' animated');
 			}else{
 				$(this).show().removeClass();
