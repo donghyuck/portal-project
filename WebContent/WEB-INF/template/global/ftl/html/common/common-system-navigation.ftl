@@ -153,6 +153,8 @@
 				</ul> <!-- / .navigation -->
 				<div class="menu-content">
 					<!-- <a href="pages-invoice.html" class="btn btn-primary btn-block btn-outline dark">Create Invoice</a> -->
+					
+					목록 자동 숨기기 <input type="checkbox" id="list-switcher" data-class="switcher-primary">
 				</div>
 			</div> <!-- / #main-menu-inner -->
 		</div> <!-- / #main-menu -->
