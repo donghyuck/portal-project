@@ -66,12 +66,15 @@
 		return renderTo;		
 	}	
 
-	common.ui.animate_v3 = function (renderTo, animate, out){	
+	common.ui.animate_v3 = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){			
-			if( out )
+			if( animate.indexOf("Out") ){
 				$(this).removeClass().hide();
+			}	
 			$(this).addClass(oldCss);	
+			if(isFunction(always))
+				always();			
 		});
 		return renderTo;		
 	}	
