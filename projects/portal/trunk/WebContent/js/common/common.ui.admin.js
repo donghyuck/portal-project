@@ -20,6 +20,9 @@
 		
 	common.ui.admin.Setup = kendo.Class.extend({		
 		init : function (element, options){
+			
+			alert( element );
+			
 			options = options || {};			
 			var that = this;
 			that.options = options;
