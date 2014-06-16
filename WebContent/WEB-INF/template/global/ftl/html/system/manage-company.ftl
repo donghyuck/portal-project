@@ -52,6 +52,9 @@
 					},
 					companyChanged: function(item){
 						item.copy(targetCompany);
+					},
+					switcherChanged : function( name , value ){
+						alert("name:" + name);
 					}
 				});
 				common.ui.handleButtonActionEvents(
