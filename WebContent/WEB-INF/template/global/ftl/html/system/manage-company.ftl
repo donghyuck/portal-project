@@ -123,22 +123,8 @@
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
 						var selectedCells = this.select();
-						if( selectedCells.length === 0){					
-							alert(0);
-						
+						if( selectedCells.length === 0){								
 						}
-						
-						/*
-						if( selectedCells.length > 0){							
-							var selectedCell = this.dataItem( selectedCells );		
-							this.editRow(selectedCells);
-							if( selectedCell.companyId > 0 && this.tbody.find('>tr[data-role="editable"]').length == 0 )
-							{	
-							
-								//showCompanyDetails();
-							
-							}
-						}*/
 					},
 					cancel: function(e){	
 					
@@ -334,7 +320,8 @@
 				}
 				common.ui.animate_v3($("#company-details"), animate, function(){  
 					if( !$("#company-list").is(":visible") ){
-						common.ui.animate_v3($("#company-list"), "slideInRight").show();
+						$("#company-list").show();
+						//common.ui.animate_v3($("#company-list"), "slideInRight").show();
 					} 
 				});	
 			}	
@@ -391,7 +378,8 @@
 				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
 			}else{			
 				common.ui.animate_v3($("#company-list"), 'slideOutLeft', function(){
-					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
+					//common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
+					renderTo.show();
 				}) ;
 			}			
 			return false;
