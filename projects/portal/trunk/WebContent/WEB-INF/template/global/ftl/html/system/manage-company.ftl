@@ -332,6 +332,8 @@
 		function showCompanyDetails(){
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
+			var hideList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");
+			
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
 				var detailsModel = kendo.observable({
@@ -369,12 +371,21 @@
 			}
 			companyPlaceHolder.copy( renderTo.data("model").company );
 			//renderTo.removeClass('fadeOutUp');
-			if(!renderTo.is(":visible")){
+			
+			/*if(!renderTo.is(":visible")){
 				common.ui.animate(renderTo, 'slideInLeft', function(){
 										
 				}).show();
 			}
-			$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
+			*/
+			
+			if(hideList){
+				common.ui.animate(renderTo, 'slideInLeft', function(){
+				
+				});
+			}else{
+				$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
+			}			
 			$('#myTab a:first').tab('show');			
 		}
 		
