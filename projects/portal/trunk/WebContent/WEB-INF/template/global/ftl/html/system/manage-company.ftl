@@ -591,7 +591,7 @@
 						<!-- details -->
 						<div id="company-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="panel-title-icon fa fa-building-o"></i> 목록</span>
+								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 								<div class="panel-heading-controls">								
 								<button class="btn btn-danger btn-sm btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
 								</div>
