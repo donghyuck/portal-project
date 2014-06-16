@@ -69,7 +69,8 @@
 				} 
 			});			
 		},
-		_createMenuContent : function (){			
+		_createMenuContent : function (){		
+			var that = this;	
 			$.each( $('input[role="switcher"]'), function( index, element ){
 				$(element).switcher();						
 				$(element).change(function(){
