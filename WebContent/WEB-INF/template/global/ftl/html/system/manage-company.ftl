@@ -381,7 +381,7 @@
 			*/
 			$('#myTab a:first').tab('show');			
 			
-			var slide = kendo.fx($("#company-list")).slideIn("right");
+			//var slide = kendo.fx($("#company-list")).slideIn("right");
 			
 			if(alwaysShowList){
 				common.ui.animate(renderTo, 'slideInLeft', function(){
@@ -391,6 +391,7 @@
 			
 			
 				common.ui.animate_v3($("#company-list"), 'slideOutLeft', true) ;
+				
 				/*.then(fucntion(){
 					common.ui.animate(renderTo, 'slideInLeft').show();
 				});
