@@ -99,10 +99,10 @@
 					always();			
 			 }).emulateTransitionEnd(150) ;
 		}else{
-			renderTo.hide();
 			if(isFunction(always))
 				always();			
 		}
+		return renderTo;		
 	}
 	
 	common.ui.animateFadeOut = function (renderTo, always){		  
