@@ -80,6 +80,39 @@
 		return renderTo;		
 	}	
 	
+	common.ui.animateFade= function (renderTo, mode, always){		
+		var oldCls = renderTo.attr("class");
+		if( $.support.transition ){
+			if( oldCls.indexOf("fade") > -1 ){
+				renderTo.addClass( mode );
+			}else{
+				renderTo.addClass('fade ' + mode );
+			}			
+			 renderTo.one($.support.transition.end, function(){
+				 renderTo.hide();
+				if( oldCls.indexOf("fade") > -1 ){
+					renderTo.removeClass( mode );
+				}else{
+					renderTo.removeClass('fade ' + mode );
+				}					
+				if(isFunction(always))
+					always();			
+			 }).emulateTransitionEnd(150) ;
+		}else{
+			renderTo.hide();
+			if(isFunction(always))
+				always();			
+		}
+	}
+	
+	common.ui.animateFadeOut = function (renderTo, always){		  
+		common.ui.animateFade(renderTo, 'out', always);
+	}
+	
+	common.ui.animateFadeIn = function (renderTo, always){		  
+		common.ui.animateFade(renderTo, 'in', always);
+	}	
+	
 	common.ui.initializeOwlCarousel = function (){
 		// Owl Slider v1
 		jQuery(document).ready(function() {
