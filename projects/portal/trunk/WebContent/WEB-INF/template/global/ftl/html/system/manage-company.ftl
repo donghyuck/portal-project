@@ -322,7 +322,7 @@
 		}
 		
 		function hideCompanyDetails(){
-			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible")){ ){	
+			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible") ){	
 			
 				common.ui.animate($("#company-details"), 'slideOutLeft', function(){  
 					$("#company-details").hide() ;
