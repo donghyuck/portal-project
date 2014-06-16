@@ -72,6 +72,11 @@
 		_createMenuContent : function (){			
 			$.each( $('input[role="switcher"]'), function( index, element ){
 				$(element).switcher();						
+				$(element).change(function(){
+					alert( $(this).is(":checked") );
+					
+					
+				});
 			} );
 		},
 		refresh: function(){			
