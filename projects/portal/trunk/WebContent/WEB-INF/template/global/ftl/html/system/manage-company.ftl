@@ -213,10 +213,12 @@
 			var grid = renderTo.data('kendoGrid');			
 			var selectedCells = grid.select();
 			
-			alert( selectedCells.length );
-			
-			var selectedCell = grid.dataItem( selectedCells );   
-			return selectedCell;
+			if( selectedCells.length == 0){
+				return new Menu();
+			}else{			
+				var selectedCell = grid.dataItem( selectedCells );   
+				return selectedCell;
+			}
 		}	
 				
 		function openMenuEditor(){
