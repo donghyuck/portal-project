@@ -75,8 +75,7 @@
 					}}
 				);
 
-				$('#list-switcher').switcher();
-				
+				$('#list-switcher').switcher();				
 
 				var company_grid = $("#company-grid").kendoGrid({
 					dataSource: {	
@@ -549,7 +548,7 @@
 								<div class="pull-right col-xs-12 col-sm-auto">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">옵션</h6>
 
-<input type="checkbox" id="list-switcher">
+
 
 <!--<div class="switcher switcher-primary"><input type="checkbox" data-class="switcher-primary" checked="checked"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on">ON</div><div class="switcher-state-off">OFF</div></div></div>
 	-->								
@@ -568,6 +567,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="panel-title-icon fa fa-building-o"></i> 목록</span>
 								<div class="panel-heading-controls">
+								<input type="checkbox" id="list-switcher">
 								<span style="color: #ccc">|</span><button class="btn btn-danger btn-sm btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
 								</div>
 							</div>
