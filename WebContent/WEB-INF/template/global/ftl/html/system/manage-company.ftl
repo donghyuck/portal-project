@@ -53,9 +53,11 @@
 					companyChanged: function(item){
 						item.copy(targetCompany);
 					},
-					switcherChanged: function( name , value ){
+					switcherChanged: function( name , value ){						
 						if( value && !$('#company-list').is(":visible") ){
 							$('#company-list').show();
+						}else if ( !value && $('#company-list').is(":visible") && $('#company-details').is(":visible") ){
+							hideCompanyDetails();
 						}
 					}
 				});
