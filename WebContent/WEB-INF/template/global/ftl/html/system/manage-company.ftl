@@ -137,20 +137,10 @@
 					
 					},
 					edit: function(e){	
-						if( $("#company-details").text().length > 0 ){	
-							common.ui.animate($("#company-details"), 'fadeOutUp', function(){  
-								$("#company-details").hide() ;
-							});
-						}			
+						hideCompanyDetails()		
 					},
 					dataBound: function(e){   
-						// 1-2 Company 데이터를 새로 읽어드리면 기존 선택된 정보들과 상세 화면을 클리어 한다. 
-						//var selectedCells = this.select();				
-						if( $("#company-details").text().length > 0 ){	
-							common.ui.animate($("#company-details"), 'fadeOutUp', function(){  
-								$("#company-details").hide() 
-							});
-						} 
+						hideCompanyDetails(); 
 					}	                    
 				}); //.css("border", 0);
 																			
@@ -328,6 +318,14 @@
 			return model;
 		}
 		
+		function hideCompanyDetails(){
+			if( $("#company-details").text().length > 0 ){	
+				common.ui.animate($("#company-details"), 'slideOutLeft', function(){  
+					$("#company-details").hide() ;
+				});
+			}	
+		}
+		
 		function showCompanyDetails(){
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
@@ -369,7 +367,7 @@
 			companyPlaceHolder.copy( renderTo.data("model").company );
 			renderTo.removeClass('fadeOutUp');
 			if(!renderTo.is(":visible")){
-				common.ui.animate(renderTo, 'fadeInDown', function(){
+				common.ui.animate(renderTo, 'slideInLeft', function(){
 					
 				}).show();
 			}
