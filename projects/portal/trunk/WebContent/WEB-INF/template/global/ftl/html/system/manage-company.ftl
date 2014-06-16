@@ -576,7 +576,7 @@
 				<div class="row">				
 					<div class="col-sm-12">					
 						<!-- details -->
-						<div class="panel panel-default" style="min-height:300px;">
+						<div id="company-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="panel-title-icon fa fa-building-o"></i> 목록</span>
 								<div class="panel-heading-controls">								
@@ -586,17 +586,11 @@
 							<div id="company-grid" class="no-border"></div>	
 						</div>
 						<!-- /details -->
+						<!-- list -->
+						<div id="company-details" class="page-details" style="display:none;"></div><!-- /company details -->		
+						<!-- /list -->
 					</div>	
-				</div>
-				<!--
-				<div class="row">					
-					<div class="col-sm-12">					
-						<div id="company-details" style="display:none;"></div>
-					</div>
-				</div>
-				-->
-				<!-- company details -->
-				<div id="company-details" class="page-details" style="display:none;"></div><!-- /company details -->		
+				</div>				
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
