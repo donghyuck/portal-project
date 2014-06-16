@@ -388,7 +388,7 @@
 				
 				}).show();
 			}else{
-				slide.play();
+				slide.reverse();
 				/*.then(fucntion(){
 					common.ui.animate(renderTo, 'slideInLeft').show();
 				});
