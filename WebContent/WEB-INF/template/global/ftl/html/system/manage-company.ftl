@@ -234,7 +234,8 @@
 				});
 				
 				var switcher = $('#menu-editor input[role="switcher"][name="warp-switcher"]');
-				if( switcher > 0 ){
+				
+				if( switcher.length > 0 ){
 					$(switcher).switcher();
 					$(switcher).change(function(){
 						editor.getSession().setUseWrapMode($(this).is(":checked"));
