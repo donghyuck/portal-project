@@ -232,8 +232,16 @@
 				$('#menu-editor button[data-action="editor-close"]').click(function(e){
 					closeMenuEditor();
 				});
+				
+				var switcher = $('#menu-editor input[role="switcher"][name="warp-switcher"]');
+				if( switcher > 0 ){
+					$(switcher).switcher();
+					$(switcher).change(function(){
+						editor.getSession().setUseWrapMode($(this).is(":checked"));
+					});		
+				}				
 			}						
-			menuPlaceHolder.copy( renderTo.data("model").menu );			
+			menuPlaceHolder.copy( renderTo.data("model").menu );	
 			editor.setValue(renderTo.data("model").menu.menuData);
 			$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
 			common.ui.animate($('#menu-modal .modal-body:first'), 'fadeOutUp', function(){
