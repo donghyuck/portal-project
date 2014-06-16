@@ -390,7 +390,7 @@
 					common.ui.animate_v3(renderTo, 'fadeInDown').show() ;
 				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
 			}else{			
-				common.ui.animate_v3($("#company-list"), 'slideOutLeft', function(){
+				common.ui.animate_v3($("#company-list"), 'fadeOutLeft', function(){
 					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
 				}) ;
 			}			
