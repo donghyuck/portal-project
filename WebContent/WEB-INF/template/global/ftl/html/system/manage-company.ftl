@@ -381,7 +381,7 @@
 			*/
 			$('#myTab a:first').tab('show');			
 			
-			var slide = kendo.fx($("#company-list")).slideOut("left");
+			var slide = kendo.fx($("#company-list")).slideIn("left");
 			
 			if(alwaysShowList){
 				common.ui.animate(renderTo, 'slideInLeft', function(){
