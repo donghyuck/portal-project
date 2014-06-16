@@ -74,6 +74,7 @@
 			$.each( $('input[role="switcher"]'), function( index, element ){
 				$(element).switcher();						
 				$(element).change(function(){
+					alert(isFunction( that.options.switcherChanged )));
 					if( isFunction( that.options.switcherChanged ) ){
 						that.options.switcherChanged( $(this).attr("name"), $(this).is(":checked") );						
 					}
