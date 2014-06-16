@@ -47,13 +47,13 @@
 				var targetCompany = new Company();	
 				
 				common.ui.admin.setup({
-					authenticate : function(e){
+					authenticate: function(e){
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
 						item.copy(targetCompany);
 					},
-					switcherChanged : function( name , value ){
+					switcherChanged: function( name , value ){
 						alert("name:" + name);
 					}
 				});
