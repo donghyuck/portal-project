@@ -219,9 +219,9 @@
     })(this);
     
     */
-    var _this = this;
-				var initilizer, _i, _len, _ref;
-        $('html').addClass('pxajs');
+	var _this = this;
+	var initilizer, _i, _len, _ref;
+	$('html').addClass('pxajs');
         if (init.length > 0) {
           $.merge(_this.init, init);
         }
@@ -240,8 +240,8 @@
         $(window).trigger("pa.loaded");
         $(window).resize();
       
-    return this;
-  };
+        return this;
+	};
 
 
   /*
