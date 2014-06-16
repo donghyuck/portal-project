@@ -27,7 +27,7 @@
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			
-			'${request.contextPath}/js/common.admin/pixel.admin.js',
+			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
 			
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
@@ -386,6 +386,7 @@
 				});
 			}
 			companyPlaceHolder.copy( renderTo.data("model").company );
+			
 			$('#myTab a:first').tab('show');			
 			if(alwaysShowList){				
 				if(!renderTo.is(':visible'))
