@@ -1,5 +1,14 @@
 @charset "UTF-8";
 
+
+/** Animate
+-----------------------------------*/
+.animated {
+  -vendor-animation-duration: 3s;
+  -vendor-animation-delay: 2s;
+  -vendor-animation-iteration-count: infinite;
+}
+
 /** Page Loader 
 ------------------------------------*/
 .page-loader {
