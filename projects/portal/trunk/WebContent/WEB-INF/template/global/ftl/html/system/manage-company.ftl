@@ -334,6 +334,9 @@
 				}
 				common.ui.animate($("#company-details"), animate, function(){  
 					$("#company-details").hide() ;
+					if( !$("#company-list").is(":visiblde") ){
+						$("#company-list").show();
+					} 
 				});	
 			}	
 		}
@@ -379,8 +382,6 @@
 				});
 				renderTo.find("button.close").click(function(e){
 					hideCompanyDetails();
-					if(!$("#company-list").is(":visible"))
-						$("#company-list").show();
 				});
 			}
 			companyPlaceHolder.copy( renderTo.data("model").company );
