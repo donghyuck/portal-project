@@ -547,11 +547,6 @@
 								<hr class="visible-xs no-grid-gutter-h">							
 								<div class="pull-right col-xs-12 col-sm-auto">
 									<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">옵션</h6>
-
-
-
-<!--<div class="switcher switcher-primary"><input type="checkbox" data-class="switcher-primary" checked="checked"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on">ON</div><div class="switcher-state-off">OFF</div></div></div>
-	-->								
 									<div class="btn-group">
 										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="menu"><i class="btn-label icon fa fa-sitemap"></i> 메뉴</button>
 										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="role"><i class="btn-label icon fa fa-lock"></i> 권한 & 롤</button>
