@@ -22,7 +22,7 @@
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/common.plugins/bootstrap-editable.min.js',
-			'${request.contextPath}/js/common/common.admin.js',
+			'${request.contextPath}/js/common.admin/common.admin.js',
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
