@@ -71,6 +71,8 @@
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){			
 			if( animate.indexOf("Out") ){
 				$(this).removeClass().hide();
+			}else{
+				$(this).removeClass().show();
 			}	
 			$(this).addClass(oldCss);	
 			if(isFunction(always))
