@@ -19,7 +19,7 @@
 	JSON = 'json';
 		
 	common.ui.admin.Setup = kendo.Class.extend({		
-		init : function (element, options){
+		init : function (options){
 			
 		
 			var that = this;
