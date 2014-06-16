@@ -385,15 +385,14 @@
 			
 			//var slide = kendo.fx($("#company-list")).slideIn("right");
 			
-			if(alwaysShowList){
-				common.ui.animate(renderTo, 'slideInLeft', function(){
-				
-				}).show();
+			if(alwaysShowList){				
+				if(!renderTo.is(':visible'))
+					common.ui.animate_v3(renderTo, 'slideInDown');				
+				$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
 			}else{			
 				common.ui.animate_v3($("#company-list"), 'slideOutLeft', function(){
 					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
 				}) ;
-				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
 			}			
 			
 		}
