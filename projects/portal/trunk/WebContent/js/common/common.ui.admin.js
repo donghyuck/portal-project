@@ -70,13 +70,10 @@
 			});			
 		},
 		_createMenuContent : function (){		
-			var that = this;	
-			alert( (typeof that.options.companyChanged ) );
+			var that = this;
 			$.each( $('input[role="switcher"]'), function( index, element ){
 				$(element).switcher();						
 				$(element).change(function(){
-					alert( (typeof that.options.switcherChanged ) );
-					alert(isFunction( that.options.switcherChanged ));
 					if( isFunction( that.options.switcherChanged ) ){
 						that.options.switcherChanged( $(this).attr("name"), $(this).is(":checked") );						
 					}
