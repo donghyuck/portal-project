@@ -10,7 +10,7 @@
 			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rt.css',
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
 			
