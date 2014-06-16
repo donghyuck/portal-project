@@ -51,11 +51,10 @@
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
-					alert("fdsaf");
 						item.copy(targetCompany);
 					},
 					switcherChanged: function( name , value ){
-						alert("name:" + name);
+					
 					}
 				});
 				common.ui.handleButtonActionEvents(
@@ -78,8 +77,6 @@
 						}  						 
 					}}
 				);
-
-						
 
 				var company_grid = $("#company-grid").kendoGrid({
 					dataSource: {	
@@ -371,10 +368,10 @@
 				});
 			}
 			companyPlaceHolder.copy( renderTo.data("model").company );
-			renderTo.removeClass('fadeOutUp');
+			//renderTo.removeClass('fadeOutUp');
 			if(!renderTo.is(":visible")){
 				common.ui.animate(renderTo, 'slideInLeft', function(){
-					
+										
 				}).show();
 			}
 			$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
@@ -716,7 +713,7 @@
 								<!-- .tab-content -->	
 								<div class="tab-content tab-content-bordered no-padding">								
 									<div class="tab-pane fade" id="props">
-										<div class="alert alert-danger alert-dark no-border-radius no-border-vr no-margin-b">
+										<div class="alert alert-info alert-dark no-border-radius no-border-vr no-margin-b">
 											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 											프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.
 										</div>						
