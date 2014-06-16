@@ -388,7 +388,7 @@
 			if(alwaysShowList){				
 				if(!renderTo.is(':visible'))
 					common.ui.animate_v3(renderTo, 'slideInDown');				
-				$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
+				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
 			}else{			
 				common.ui.animate_v3($("#company-list"), 'slideOutLeft', function(){
 					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
