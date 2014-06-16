@@ -388,10 +388,11 @@
 				
 				}).show();
 			}else{
-				slide.play().then(fucntion(){
+				slide.play();
+				/*.then(fucntion(){
 					common.ui.animate(renderTo, 'slideInLeft').show();
 				});
-			
+			*/
 				/**common.ui.animate($("#company-list"), 'slideOutLeft', function(){
 					$("#company-list").hide();
 					common.ui.animate(renderTo, 'slideInLeft').show();
