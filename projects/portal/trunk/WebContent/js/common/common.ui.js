@@ -89,7 +89,11 @@
 				renderTo.addClass('fade ' + mode );
 			}			
 			 renderTo.one($.support.transition.end, function(){
-				 renderTo.hide();
+				if( mode === 'out')
+					renderTo.hide();
+				else
+					renderTo.show();
+					
 				if( oldCls.indexOf("fade") > -1 ){
 					renderTo.removeClass( mode );
 				}else{
@@ -99,6 +103,11 @@
 					always();			
 			 }).emulateTransitionEnd(150) ;
 		}else{
+			if( mode === 'out')
+				renderTo.hide();
+			else
+				renderTo.show();
+			
 			if(isFunction(always))
 				always();			
 		}
