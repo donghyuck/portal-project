@@ -4,8 +4,8 @@
 /** Animate
 -----------------------------------*/
 .animated {
-  -vendor-animation-duration: 3s;
-  -vendor-animation-delay: 2s;
+  -vendor-animation-duration: 1s;
+  -vendor-animation-delay: .5s;
   -vendor-animation-iteration-count: infinite;
 }
 
