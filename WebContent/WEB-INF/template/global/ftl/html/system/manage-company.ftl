@@ -590,7 +590,7 @@
 				</div>
 				-->
 				<!-- company details -->
-				<div id="company-details" class="page-details animated" style="display:none;"></div><!-- /company details -->		
+				<div id="company-details" class="page-details" style="display:none;"></div><!-- /company details -->		
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
