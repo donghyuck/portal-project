@@ -390,7 +390,7 @@
 			}else{
 			
 			
-				common.ui.animate($("#company-list"), 'slideOutLeft hidden');
+				common.ui.animate($("#company-list"), 'slideOutLeft', true) ;
 				/*.then(fucntion(){
 					common.ui.animate(renderTo, 'slideInLeft').show();
 				});
