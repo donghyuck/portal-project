@@ -81,6 +81,10 @@
 				});
 			} );
 		},
+		isSwitcherEnabled:function(name){
+		
+			
+		}, 
 		refresh: function(){			
 			var that = this;
 			$('.menu-content-profile .close').click(function () {
