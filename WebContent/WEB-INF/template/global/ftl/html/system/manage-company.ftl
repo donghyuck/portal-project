@@ -370,9 +370,10 @@
 			renderTo.removeClass('fadeOutUp');
 			if(!renderTo.is(":visible")){
 				common.ui.animate(renderTo, 'fadeInDown', function(){
-					$('html,body').animate({scrollTop: renderTo.offset().top -10 }, 300);
+					
 				}).show();
 			}
+			$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 300);
 			$('#myTab a:first').tab('show');			
 		}
 		
