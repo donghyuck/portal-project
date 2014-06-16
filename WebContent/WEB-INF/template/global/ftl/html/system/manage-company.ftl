@@ -585,7 +585,7 @@
 				<!--
 				<div class="row">					
 					<div class="col-sm-12">					
-						<div id="company-details" class="animated"  style="display:none;"></div>
+						<div id="company-details" style="display:none;"></div>
 					</div>
 				</div>
 				-->
