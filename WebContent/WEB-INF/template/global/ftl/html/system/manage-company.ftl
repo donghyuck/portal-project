@@ -7,7 +7,7 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
@@ -433,6 +433,7 @@
 					resizable: true,
 					editable : true,
 					scrollable: true,
+					autoBind: false,
 					height: 300,
 					toolbar: [
 						{ name: "create", text: "추가" },
@@ -442,7 +443,8 @@
 					change: function(e) {
 					}
 				});		
-			}										
+			}
+			renderTo.data("kendoGrid").read();
 		}
 		
 		function createCompanyMembersPane(renderTo){
@@ -473,6 +475,7 @@
 					filterable: true,
 					sortable: true,
 					scrollable: true,
+					autoBind: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
 					columns: [
@@ -486,7 +489,8 @@
 					},
 					toolbar: [{ name: "create-groups", text: "선택 사용자 소속 변경하기", imageClass:"k-icon k-i-folder-up" , className: "changeUserCompanyCustomClass" }]
 				});												
-			}			
+			}	
+			renderTo.data("kendoGrid").read();		
 		}	
 		
 		function createCompanyGroupsPane(renderTo){
@@ -514,6 +518,7 @@
 						height: 300,
 						scrollable: true,
 						editable: false,
+						autoBind: false,
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
 							{ field: "name",    title: "KEY",  filterable: true, sortable: true,  width: 100 },
@@ -526,7 +531,8 @@
 						},
 						toolbar: [{ name: "create-groups", text: "디폴트 그룹 생성하기", imageClass:"k-icon k-i-folder-add" , className: "createGroupsCustomClass" }]
 				});		
-			}			
+			}
+			renderTo.data("kendoGrid").read();			
 		}				
 		
 		-->
