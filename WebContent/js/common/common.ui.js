@@ -70,11 +70,11 @@
 		var oldCss = renderTo.attr('class');	
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){			
 			if( animate.indexOf("Out") ){
-				$(this).removeClass().hide();
+				$(this).removeClass().hide().addClass(oldCss);
 			}else{
-				$(this).removeClass().show();
+				$(this).removeClass().addClass(oldCss);
 			}	
-			$(this).addClass(oldCss);	
+			;	
 			if(isFunction(always))
 				always();			
 		});
