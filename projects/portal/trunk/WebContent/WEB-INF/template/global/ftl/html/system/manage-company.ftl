@@ -334,7 +334,7 @@
 				}
 				common.ui.animate_v3($("#company-details"), animate, function(){  
 					if( !$("#company-list").is(":visible") ){
-						$("#company-list").show();
+						common.ui.animateFadeIn($("#company-list"));
 					} 
 				});	
 			}	
@@ -390,7 +390,7 @@
 					common.ui.animate_v3(renderTo, 'fadeInDown').show() ;
 				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
 			}else{			
-				common.ui.animate_v3($("#company-list"), 'fadeOutLeft', function(){
+				common.ui.animateFadeOut($("#company-list"), function(){
 					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
 				}) ;
 			}			
