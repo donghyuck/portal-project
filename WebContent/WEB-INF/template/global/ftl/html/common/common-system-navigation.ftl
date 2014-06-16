@@ -154,7 +154,14 @@
 				<div class="menu-content">
 					<!-- <a href="pages-invoice.html" class="btn btn-primary btn-block btn-outline dark">Create Invoice</a> -->
 					
-					목록 자동 숨기기 <input type="checkbox" id="list-switcher" data-class="switcher-primary">
+					<form action="" class="form-horizontal">
+						<div class="row form-group">
+							<label class="col-sm-8 control-label">목록 자동 숨기기</label>
+							<div class="col-sm-4">
+								<input type="checkbox" id="list-switcher" data-class="switcher-primary">
+							</div>
+						</div>
+					</form>				
 				</div>
 			</div> <!-- / #main-menu-inner -->
 		</div> <!-- / #main-menu -->
