@@ -332,7 +332,7 @@
 				if( alwaysShowList ){
 					animate = "fadeOutUp" ;
 				}
-				common.ui.animate($("#company-details"), animate, function(){  
+				common.ui.animate_v3($("#company-details"), animate, function(){  
 					$("#company-details").hide() ;
 					if( !$("#company-list").is(":visiblde") ){
 						$("#company-list").show();
