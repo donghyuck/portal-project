@@ -575,16 +575,17 @@
 				</div><!-- / .page-header -->
 				<div class="row">				
 					<div class="col-sm-12">					
+						<!-- details -->
 						<div class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="panel-title-icon fa fa-building-o"></i> 목록</span>
-								<div class="panel-heading-controls">
-								
-								<span style="color: #ccc">|</span><button class="btn btn-danger btn-sm btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
+								<div class="panel-heading-controls">								
+								<button class="btn btn-danger btn-sm btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
 								</div>
 							</div>
 							<div id="company-grid" class="no-border"></div>	
 						</div>
+						<!-- /details -->
 					</div>	
 				</div>
 				<!--
