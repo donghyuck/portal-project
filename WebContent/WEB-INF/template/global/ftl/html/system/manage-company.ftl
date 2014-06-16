@@ -381,15 +381,22 @@
 			*/
 			$('#myTab a:first').tab('show');			
 			
+			var slide = kendo.fx($("#company-list")).slideIn("left");
+			
 			if(alwaysShowList){
 				common.ui.animate(renderTo, 'slideInLeft', function(){
 				
 				}).show();
 			}else{
-				common.ui.animate($("#company-list"), 'slideOutLeft', function(){
+				slide.play().then(fucntion(){
+					common.ui.animate(renderTo, 'slideInLeft').show();
+				});
+			
+				/**common.ui.animate($("#company-list"), 'slideOutLeft', function(){
 					$("#company-list").hide();
 					common.ui.animate(renderTo, 'slideInLeft').show();
 				});
+				*/
 				//$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
 			}			
 			
