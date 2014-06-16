@@ -373,7 +373,7 @@
 					
 				}).show();
 			}
-			$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 300);
+			$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);
 			$('#myTab a:first').tab('show');			
 		}
 		
