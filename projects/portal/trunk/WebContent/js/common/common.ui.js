@@ -72,9 +72,8 @@
 			if( animate.indexOf("Out") ){
 				$(this).removeClass().hide().addClass(oldCss);
 			}else{
-				$(this).removeClass().addClass(oldCss);
-			}	
-			;	
+				$(this).show().removeClass().addClass(oldCss);
+			}
 			if(isFunction(always))
 				always();			
 		});
