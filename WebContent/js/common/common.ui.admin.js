@@ -25,7 +25,6 @@
 			var that = this;
 			options = options || {};	
 			
-			alert( $(that.element).html() );
 			
 			that.options = options;
 			that._pixelAdmin = window.PixelAdmin;			
@@ -97,7 +96,17 @@
 })(jQuery);
 
 common.ui.admin.setup = function (options){	
-	options = options || {};			
-	return new common.ui.admin.Setup(options);	
+	options = options || {};
+	if( $("#main-wrapper").text().length > 0 ){	
+		if( $("#main-wrapper").data("admin-setup") ){
+			return $("#main-wrapper").data("admin-setup");		
+		}else{
+			var setup = new common.ui.admin.Setup(options);	
+			 $("#main-wrapper").data("admin-setup", setup );
+			 return setup;
+		}
+	}else{
+		return new common.ui.admin.Setup(options);	
+	}		
 }
 	
