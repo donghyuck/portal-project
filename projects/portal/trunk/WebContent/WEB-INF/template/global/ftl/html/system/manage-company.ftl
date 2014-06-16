@@ -412,9 +412,9 @@
 							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
 							parameterMap: function (options, operation){			
 								if (operation !== "read" && options.models) {
-									return { companyId: companyPlaceHolder.companyId, items: kendo.stringify(options.models)};
+									return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
 								} 
-								return { companyId: companyPlaceHolder.companyId }
+								return { companyId: getSelectedCompany().companyId }
 							}
 						},						
 						batch: true, 
