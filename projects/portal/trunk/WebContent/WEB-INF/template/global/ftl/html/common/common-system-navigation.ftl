@@ -152,16 +152,8 @@
 				</#list>						
 				</ul> <!-- / .navigation -->
 				<div class="menu-content">
-					<!-- <a href="pages-invoice.html" class="btn btn-primary btn-block btn-outline dark">Create Invoice</a> -->
-					
-					<form action="" class="form-horizontal">
-						<div class="row form-group">
-							<label class="col-sm-8 control-label">목록 자동 숨기기</label>
-							<div class="col-sm-4">
-								<input type="checkbox" id="list-switcher" data-class="switcher-primary">
-							</div>
-						</div>
-					</form>				
+					<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">목록 자동 숨기기</h6>
+					<input type="checkbox" id="list-switcher" data-class="switcher-primary">	
 				</div>
 			</div> <!-- / #main-menu-inner -->
 		</div> <!-- / #main-menu -->
