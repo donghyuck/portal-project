@@ -326,19 +326,23 @@
 		}
 		
 		function hideCompanyDetails(){
-			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible") ){	
 			
-				common.ui.animate($("#company-details"), 'slideOutLeft', function(){  
+			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible") ){
+				var alwaysShowList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");
+				var animate = "slideOutLeft" ;
+				if( alwaysShowList ){
+					animate = "slideOutUp" ;
+				}
+				common.ui.animate($("#company-details"), animate, function(){  
 					$("#company-details").hide() ;
-				});
+				});	
 			}	
 		}
 		
 		function showCompanyDetails(){
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
-			var alwaysShowList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");
-			
+			var alwaysShowList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");			
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
 				var detailsModel = kendo.observable({
@@ -375,18 +379,7 @@
 				});
 			}
 			companyPlaceHolder.copy( renderTo.data("model").company );
-			//renderTo.removeClass('fadeOutUp');
-			
-			/*if(!renderTo.is(":visible")){
-				common.ui.animate(renderTo, 'slideInLeft', function(){
-										
-				}).show();
-			}
-			*/
 			$('#myTab a:first').tab('show');			
-			
-			//var slide = kendo.fx($("#company-list")).slideIn("right");
-			
 			if(alwaysShowList){				
 				if(!renderTo.is(':visible'))
 					common.ui.animate_v3(renderTo, 'slideInDown').show() ;
