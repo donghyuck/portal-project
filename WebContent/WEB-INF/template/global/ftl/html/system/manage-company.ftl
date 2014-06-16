@@ -394,7 +394,7 @@
 					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
 				}) ;
 			}			
-			
+			return false;
 		}
 		
 		function createCompanyPropsPane(renderTo){
