@@ -342,6 +342,7 @@
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
 			var alwaysShowList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");			
+			
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
 				var detailsModel = kendo.observable({
@@ -375,6 +376,11 @@
 							createCompanyGroupsPane($('#company-group-grid'));
 							break;
 					}	
+				});
+				renderTo.find("button.close").click(function(e){
+					hideCompanyDetails();
+					if(!$("#company-list").is(":visible"))
+						$("#company-list").show();
 				});
 			}
 			companyPlaceHolder.copy( renderTo.data("model").company );
