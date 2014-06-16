@@ -21,10 +21,12 @@
 	common.ui.admin.Setup = kendo.Class.extend({		
 		init : function (element, options){
 			
-			alert( $(element).html() );
-			
-			options = options || {};			
+		
 			var that = this;
+			options = options || {};	
+			
+			alert( $(that.element).html() );
+			
 			that.options = options;
 			that._pixelAdmin = window.PixelAdmin;			
 			that.refresh();
