@@ -75,7 +75,7 @@
 					}}
 				);
 
-				$('#list-switcher').switcher();				
+						
 
 				var company_grid = $("#company-grid").kendoGrid({
 					dataSource: {	
