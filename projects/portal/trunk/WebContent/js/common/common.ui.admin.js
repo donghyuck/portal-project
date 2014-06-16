@@ -87,7 +87,7 @@
 				return false;
 			});
 			that._createCompanySelector();			
-			thia._createMenuContent();
+			that._createMenuContent();
 			that._doAuthenticate();
 			that._pixelAdmin.start([]);	
 		}
