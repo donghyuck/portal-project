@@ -208,9 +208,13 @@
 		} 
 
 		function getSelectedMenu(){
+			
 			var renderTo = $("#menu-grid");
 			var grid = renderTo.data('kendoGrid');			
 			var selectedCells = grid.select();
+			
+			alert( selectedCells.length );
+			
 			var selectedCell = grid.dataItem( selectedCells );   
 			return selectedCell;
 		}	
