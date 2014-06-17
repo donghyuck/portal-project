@@ -55,8 +55,7 @@
 						kendo.bind($("#company-info"), targetCompany );
 						
 						kendo.bind($("#company-details"), targetCompany );
-						
-
+						displayCompanyDetails();
 						
 						//$('button.btn-control-group').removeAttr("disabled");									
 					}
@@ -67,7 +66,6 @@
 				 var selectedSocial = {};		
 				 	
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );				 
-				createSiteGrid();				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
@@ -105,6 +103,13 @@
 					}}
 				);
 								
+
+			}	
+		}]);
+		
+		
+		function displayCompanyDetails = function(){
+				createSiteGrid();	
 				$('#myTab').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
@@ -123,9 +128,9 @@
 					}	
 				});				
 				$('#myTab a:first').tab('show') ;
-			}	
-		}]);
+						
 		
+		}
 		
 		function getSelectedCompany(){
 			var setup = common.ui.admin.setup();
