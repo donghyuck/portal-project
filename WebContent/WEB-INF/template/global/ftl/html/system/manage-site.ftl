@@ -891,8 +891,10 @@
 										
 					</div>
 				</div>
+			</div> <!-- / #content-wrapper -->
+			<div id="main-menu-bg">
 			</div>
-		</div>
+		</div> <!-- / #main-wrapper -->
 				
 
   
@@ -1023,6 +1025,6 @@
 					# } #	
 				# } #					
 		</script>
-		<#include "/html/common/common-system-templates.ftl" >
+		<#include "/html/common/common-system-templates.ftl" >		
 	</body>
 </html>
