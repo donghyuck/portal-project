@@ -13,7 +13,7 @@
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
-			
+			'css!${request.contextPath}/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
@@ -26,6 +26,7 @@
 			
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
+			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 
 			
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
 			
@@ -337,7 +338,7 @@
 					if( !$("#company-list").is(":visible") ){
 						$("#company-list").show();
 						//common.ui.animate_v3($("#company-list"), "slideInRight").show();
-						//common.ui.animateFadeIn($("#company-list"));
+						common.ui.animateFadeIn($("#company-list"));
 					} 
 				});	
 			}	
