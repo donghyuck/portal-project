@@ -757,14 +757,78 @@
 						</div>
 					</div>				
 				</div><!-- / .page-header -->
-				<div class="row">
-					<div class="col-sm-6 bg-dark-gray">
-					aa
-					</div>
-					<div class="col-sm-6 bg-dark-gray">
-					bb
-					</div>					
-				</div>
+<div id="company-details" class="page-details" style="">		
+
+					<div class="details-row no-margin-t">					
+						<div class="left-col">
+							<div class="details-block no-margin-t">
+								<div class="details-photo">
+									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/podosoftware">
+								</div>
+								<br>
+								<!--
+								<a href="#" class="btn btn-success"><i class="fa fa-check"></i> Following</a> 
+								<a href="#" class="btn"><i class="fa fa-comment"></i></a>-->
+							</div>				
+							<div class="panel panel-transparent">
+								<div class="panel-heading">
+									<span class="panel-title" data-bind="text:company.description">포도소프트웨어는 고객 구성원 개개인의 가치를 최대화하여 고객의 지속가능한 발전을 돕겠습니다.</span>
+									
+								</div>
+								<table class="table">
+									<tbody>						
+										<tr>
+											<td><small><span class="badge">도메인</span></small></td>								
+											<td><span data-bind="text:company.domainName">www.podosw.co.kr</span></td>
+										</tr>	
+										<tr>
+											<th><small><span class="badge">생성일</span></small></th>								
+											<td><span data-bind="text:formattedCreationDate">2014.06.17</span></td>
+										</tr>	
+										<tr>
+											<th><small><span class="badge">수정일</span></small></th>								
+											<td><span data-bind="text:formattedModifiedDate">2014.06.17</span></td>
+										</tr>														
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="right-col">
+							<hr class="details-content-hr no-grid-gutter-h">	
+							<div class="details-content">
+								<ul id="myTab" class="nav nav-tabs nav-tabs-sm">
+									<li class="active"><a href="#props" data-toggle="tab">프로퍼티</a></li>
+									<li><a href="#groups" data-toggle="tab">그룹 <span class="badge badge-primary" data-bind="text:groupCount, visible:groupCount " style="display: none;">0</span></a></li>
+									<li><a href="#users" data-toggle="tab">사용자 <span class="badge badge-primary" data-bind="text:memberCount, visible:memberCount" style="display: none;">0</span></a></li>
+								</ul>	
+								<!-- .tab-content -->	
+								<div class="tab-content tab-content-bordered no-padding">								
+									<div class="tab-pane active" id="props">
+										<div class="alert alert-info alert-dark no-border-radius no-border-vr no-margin-b">
+											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+											프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.
+										</div>						
+										<div id="company-prop-grid" class="props no-border k-grid k-widget" data-role="grid" style="height: 300px;"><div class="k-toolbar k-grid-toolbar"><a class="k-button k-button-icontext k-grid-add" href="#"><span class="k-icon k-add"></span>추가</a><a class="k-button k-button-icontext k-grid-save-changes" href="#"><span class="k-icon k-update"></span>저장</a><a class="k-button k-button-icontext k-grid-cancel-changes" href="#"><span class="k-icon k-cancel"></span>취소</a></div><div class="k-grid-header" style="padding-right: 17px;"><div class="k-grid-header-wrap" data-role="resizable"><table role="grid"><colgroup><col style="width:250px"><col><col style="width:100px"></colgroup><thead role="rowgroup"><tr role="row"><th role="columnheader" data-field="name" data-title="속성" class="k-header">속성</th><th role="columnheader" data-field="value" data-title="값" class="k-header">값</th><th class="k-header">&nbsp;</th></tr></thead></table></div></div><div class="k-grid-content"><table role="grid" style="height: auto;"><colgroup><col style="width:250px"><col><col style="width:100px"></colgroup><tbody role="rowgroup"></tbody></table></div></div>
+									</div>
+									<div class="tab-pane fade" id="groups">					
+										<div class="alert alert-info alert-dark no-border-radius no-border no-margin-b">
+											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+											<small>그룹관리는  그룹관리를 사용하여 관리 하실수 있습니다.	</small>     
+										</div>						
+										<div id="company-group-grid" class="groups no-border"></div>					
+									</div>
+									<div class="tab-pane fade" id="users">
+										<div class="alert alert-info alert-dark no-border-radius no-border no-margin-b">
+											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+											<small>사용자관리는 사용자관리를 사용하여 관리 하실수 있습니다.	    </small> 
+										</div>			
+										<div id="company-user-grid" class="users no-border"></div>
+									</div>
+								</div><!-- / .tab-content -->
+							</div><!-- / .details-content -->
+						</div><!-- / .right-col -->
+					</div><!-- / .details-row -->	
+	
 				<div class="row">				
 					<div class="col-sm-12 ">				
 					
