@@ -780,26 +780,25 @@
 							</div>				
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
-									<span class="panel-title" data-bind="text:company.description">포도소프트웨어는 고객 구성원 개개인의 가치를 최대화하여 고객의 지속가능한 발전을 돕겠습니다.</span>
-									
+									<span class="panel-title" data-bind="text:description"></span>									
 								</div>
 								<table class="table">
 									<tbody>						
 										<tr>
 											<td><small><span class="badge">회사</span></small></td>								
-											<td><span data-bind="text:company.domainName">www.podosw.co.kr</span></td>
+											<td><span data-bind="text: displayName"></span> <span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
 										</tr>	
 										<tr>
 											<th><small><span class="badge">도메인</span></small></th>								
-											<td><span data-bind="text:formattedCreationDate">2014.06.17</span></td>
+											<td><span data-bind="text: domainName"></span></td>
 										</tr>	
 										<tr>
 											<th><small><span class="badge">생성일</span></small></th>								
-											<td><span data-bind="text:formattedModifiedDate">2014.06.17</span></td>
+											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>	
 										<tr>
 											<th><small><span class="badge">수정일</span></small></th>								
-											<td><span data-bind="text:formattedModifiedDate">2014.06.17</span></td>
+											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>																								
 									</tbody>
 								</table>
