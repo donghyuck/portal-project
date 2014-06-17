@@ -381,7 +381,7 @@
 							break;
 					}	
 				});
-				renderTo.find("button.close").click(function(e){
+				renderTo.find(".panel-heading > button.close").click(function(e){
 					hideCompanyDetails();
 				});
 			}
