@@ -60,12 +60,12 @@
 					}
 				},
 				change : function (e){			
-					alert( kendo.stringify(this.dataSource.get(this.value));			
+					alert( kendo.stringify( this.dataSource.get(this.value)) );			
 					if( isFunction( that.options.companyChanged ) )
 						that.options.companyChanged( this.dataSource.get(this.value) );
 				},
 				dataBound : function(e){
-					alert( kendo.stringify(this.dataSource.get(this.value));			
+					alert( kendo.stringify(this.dataSource.get(this.value)));			
 					//alert(this.value());
 				}
 			}).data('kendoDropDownList');			
