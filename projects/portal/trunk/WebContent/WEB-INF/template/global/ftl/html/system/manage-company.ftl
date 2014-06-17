@@ -445,7 +445,7 @@
 					}
 				});		
 			}
-			renderTo.data("kendoGrid").refresh();
+			renderTo.data("kendoGrid").dataSource.read();
 		}
 		
 		function createCompanyMembersPane(renderTo){
@@ -491,7 +491,7 @@
 					toolbar: [{ name: "create-groups", text: "선택 사용자 소속 변경하기", imageClass:"k-icon k-i-folder-up" , className: "changeUserCompanyCustomClass" }]
 				});												
 			}	
-			renderTo.data("kendoGrid").read();		
+			renderTo.data("kendoGrid").dataSource.read();
 		}	
 		
 		function createCompanyGroupsPane(renderTo){
@@ -533,7 +533,7 @@
 						toolbar: [{ name: "create-groups", text: "디폴트 그룹 생성하기", imageClass:"k-icon k-i-folder-add" , className: "createGroupsCustomClass" }]
 				});		
 			}
-			renderTo.data("kendoGrid").read();			
+			renderTo.data("kendoGrid").dataSource.read();
 		}				
 		
 		-->
