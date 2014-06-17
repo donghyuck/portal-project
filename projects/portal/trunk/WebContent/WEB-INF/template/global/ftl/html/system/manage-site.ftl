@@ -45,23 +45,17 @@
 				// 1-3.  관리자  로딩
 				var currentUser = new User();
 				
-				var targetCompany = new Company();	
-				
+				var targetCompany = new Company();
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
 						item.copy(targetCompany);
-						kendo.bind($("#company-info"), companyPlaceHolder );
-						$('button.btn-control-group').removeAttr("disabled");									
-					},
-					switcherChanged: function( name , value ){						
-						if( value && !$('#company-list').is(":visible") ){
-							$('#company-list').show();
-						}else if ( !value && $('#company-list').is(":visible") && $('#company-details').is(":visible") ){
-							hideCompanyDetails();
-						}
+						//kendo.bind($("#company-info"), companyPlaceHolder );
+						
+						kendo.bind($("#company-details"), companyPlaceHolder );
+						//$('button.btn-control-group').removeAttr("disabled");									
 					}
 				});
 				
@@ -757,8 +751,8 @@
 						</div>
 					</div>				
 				</div><!-- / .page-header -->
-<div id="company-details" class="page-details" style="">		
-
+				<!-- details-row -->
+				<div id="company-details" class="page-details" style="">
 					<div class="details-row no-margin-t">					
 						<div class="left-col">
 							<div class="details-block no-margin-t">
@@ -778,17 +772,21 @@
 								<table class="table">
 									<tbody>						
 										<tr>
-											<td><small><span class="badge">도메인</span></small></td>								
+											<td><small><span class="badge">회사</span></small></td>								
 											<td><span data-bind="text:company.domainName">www.podosw.co.kr</span></td>
 										</tr>	
 										<tr>
-											<th><small><span class="badge">생성일</span></small></th>								
+											<th><small><span class="badge">도메인</span></small></th>								
 											<td><span data-bind="text:formattedCreationDate">2014.06.17</span></td>
+										</tr>	
+										<tr>
+											<th><small><span class="badge">생성일</span></small></th>								
+											<td><span data-bind="text:formattedModifiedDate">2014.06.17</span></td>
 										</tr>	
 										<tr>
 											<th><small><span class="badge">수정일</span></small></th>								
 											<td><span data-bind="text:formattedModifiedDate">2014.06.17</span></td>
-										</tr>														
+										</tr>																								
 									</tbody>
 								</table>
 							</div>
