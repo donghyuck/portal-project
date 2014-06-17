@@ -43,9 +43,23 @@
 				// 1-2.  페이지 렌딩
 				common.ui.landing();				
 				// 1-3.  관리자  로딩
-				var currentUser = new User();				
+				var currentUser = new User();	
 				var targetCompany = new Company();
 				
+				var detailsModel = kendo.observable({
+					company : new Company()
+				});	
+				detailsModel.bind("change", function(e){		
+					if( e.field.match('^company.name')){ 						
+						var sender = e.sender ;
+						if( sender.company.companyId > 0 ){
+							this.set("logoUrl", "/download/logo/company/" + sender.company.name );
+							this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
+							this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
+						}
+					}	
+				});
+												
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
@@ -54,7 +68,7 @@
 						item.copy(targetCompany);
 						kendo.bind($("#company-info"), targetCompany );
 						
-						kendo.bind($("#company-details"), targetCompany );
+						kendo.bind($("#company-details"), detailsModel.company );
 						displayCompanyDetails();
 						
 						//$('button.btn-control-group').removeAttr("disabled");									
@@ -780,17 +794,17 @@
 							</div>				
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
-									<span class="panel-title" data-bind="text:description"></span>									
+									<span class="panel-title" data-bind="text:company.description"></span>									
 								</div>
 								<table class="table">
 									<tbody>						
 										<tr>
 											<td><small><span class="badge">회사</span></small></td>								
-											<td><span data-bind="text: displayName"></span> <span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
+											<td><span data-bind="text: company.displayName"></span> <span class="label label-primary"><span data-bind="text: company.name"></span></span> <code><span data-bind="text: company.companyId"></span></code></td>
 										</tr>	
 										<tr>
 											<th><small><span class="badge">도메인</span></small></th>								
-											<td><span data-bind="text: domainName"></span></td>
+											<td><span data-bind="text: company.domainName"></span></td>
 										</tr>	
 										<tr>
 											<th><small><span class="badge">생성일</span></small></th>								
