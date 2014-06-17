@@ -224,7 +224,7 @@
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
 				</ul>			
 				<div class="page-header bg-dark-gray">					
-					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i>${selectedMenu.description!""}<i class="fa fa-quote-right"></i></small></h1>
+					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">				
 					<div class="col-xs-3">
