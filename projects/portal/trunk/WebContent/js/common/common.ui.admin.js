@@ -19,12 +19,9 @@
 	JSON = 'json';
 		
 	common.ui.admin.Setup = kendo.Class.extend({		
-		init : function (options){
-			
+		init : function (options){			
 			var that = this;
-			options = options || {};	
-			
-			
+			options = options || {};				
 			that.options = options;
 			that._pixelAdmin = window.PixelAdmin;			
 			that.refresh();
@@ -108,14 +105,12 @@
 })(jQuery);
 
 
-
-
 common.ui.admin.setup = function (options){	
 	options = options || {};
 	if( $("#main-wrapper").text().length > 0 ){	
 		if( $("#main-wrapper").data("admin-setup") ){
 			return $("#main-wrapper").data("admin-setup");		
-		}else{
+		}else{			
 			var setup = new common.ui.admin.Setup(options);	
 			 $("#main-wrapper").data("admin-setup", setup );
 			 return setup;
