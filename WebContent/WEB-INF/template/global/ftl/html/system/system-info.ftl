@@ -7,12 +7,10 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.extension/animate.css',
-			'css!${request.contextPath}/styles/common/common.admin.widgets.css',			
-			/*		'css!${request.contextPath}/styles/common/common.admin.rtl.css',			*/
+			'css!${request.contextPath}/styles/common/common.admin.widgets.css',
 			'css!${request.contextPath}/styles/common/common.admin.themes.css',
-			/*'${request.contextPath}/js/jquery/2.1.1/jquery-2.1.1.min.js',*/
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo/kendo.dataviz.min.js',
@@ -218,8 +216,8 @@
 			<#include "/html/common/common-system-navigation.ftl" >	
 			<div id="content-wrapper">
 				<div class="page-header">
-					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1") />
-					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i>${selectedMenu.description}<i class="fa fa-quote-right"></i></small></h1>
+					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_5") />
+					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i>${selectedMenu.description!""}<i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">				
 					<div class="col-xs-3">
