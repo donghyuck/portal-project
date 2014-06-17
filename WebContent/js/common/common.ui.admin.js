@@ -66,7 +66,7 @@
 				},
 				dataBound : function(e){
 					//alert( kendo.stringify(this.dataItem(this.select) ));			
-					alert(1);
+					alert(this.value);
 				}
 			}).data('kendoDropDownList');			
 		},
