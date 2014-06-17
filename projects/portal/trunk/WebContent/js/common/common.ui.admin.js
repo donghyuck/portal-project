@@ -60,7 +60,7 @@
 					}
 				},
 				change : function (e){			
-					alert(2);
+					alert( kendo.stringify(this.dataSource.get(this.value));			
 					if( isFunction( that.options.companyChanged ) )
 						that.options.companyChanged( this.dataSource.get(this.value) );
 				},
