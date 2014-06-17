@@ -759,10 +759,10 @@
 				</div><!-- / .page-header -->
 				<div class="row">
 					<div class="col-sm-6 bg-dark-gray">
-					
+					aa
 					</div>
 					<div class="col-sm-6 bg-dark-gray">
-					
+					bb
 					</div>					
 				</div>
 				<div class="row">				
