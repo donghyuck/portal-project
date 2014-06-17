@@ -65,8 +65,8 @@
 						that.options.companyChanged( this.dataSource.get(this.value) );
 				},
 				dataBound : function(e){
-					//alert( kendo.stringify(this.dataItem(this.select) ));			
-					alert(this.value());
+					alert( kendo.stringify(this.dataSource.get(this.value));			
+					//alert(this.value());
 				}
 			}).data('kendoDropDownList');			
 		},
