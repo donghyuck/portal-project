@@ -66,7 +66,7 @@
 					if( isFunction( that.options.companyChanged ) )
 						that.options.companyChanged( this.dataSource.get(this.value) );
 				} 
-			});			
+			}).data('kendoDropDownList');			
 		},
 		_createMenuContent : function (){		
 			var that = this;
