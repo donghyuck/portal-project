@@ -757,6 +757,11 @@
 						</div>
 					</div>				
 				</div><!-- / .page-header -->
+				<div class="row">
+					<div class="col-sm-12">
+					
+					</div>
+				</div>
 				<div class="row">				
 					<div class="col-sm-12">				
 					
