@@ -79,6 +79,10 @@
 				});
 			} );
 		},
+		selectedCompany : function(){
+			var that = this;
+			that.companySelector.dataItem(that.companySelector.select());
+		},
 		isSwitcherEnabled:function(name){
 			return $('input[role="switcher"][name="' + name + '"]').is(":checked") ;			
 		}, 
@@ -102,6 +106,9 @@
 	});	
 	
 })(jQuery);
+
+
+
 
 common.ui.admin.setup = function (options){	
 	options = options || {};
