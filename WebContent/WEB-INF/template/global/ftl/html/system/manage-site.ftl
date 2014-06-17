@@ -130,7 +130,7 @@
 		}
 		
 		function createLogoPanel(){
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			var selectedCompany = getSelectedCompany();
 			if( !$('#logo-file').data('kendoUpload') ){
 				$("#logo-file").kendoUpload({
 					multiple : false,
@@ -208,7 +208,7 @@
 		}
 
 		function createSocialPane(){
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			var selectedCompany = getSelectedCompany();
 			if( ! $("#social-grid").data("kendoGrid") ){
 				$("#social-grid").kendoGrid({
 					dataSource: {
@@ -311,7 +311,7 @@
 		}
 
 		function createAttachPane(){		
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			var selectedCompany = getSelectedCompany();
 			
 			if( ! $("#attach-upload").data("kendoUpload") ){	
 				$("#attach-upload").kendoUpload({
@@ -391,7 +391,7 @@
 		
 		function createImagePane(){		
 		
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			var selectedCompany = getSelectedCompany();
 		
 						if( ! $("#image-upload").data("kendoUpload") ){	
 							$("#image-upload").kendoUpload({
@@ -591,7 +591,7 @@
 			
 		
 		function createSiteGrid(){			
-			var selectedCompany = $("#navbar").data("companyPlaceHolder");
+			var selectedCompany = getSelectedCompany();
 			if( ! $("#website-grid").data("kendoGrid") ){	
 				$('#website-grid').kendoGrid({
 								dataSource: {
