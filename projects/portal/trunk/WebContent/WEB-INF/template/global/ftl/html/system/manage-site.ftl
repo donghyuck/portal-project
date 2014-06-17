@@ -43,18 +43,20 @@
 				// 1-2.  페이지 렌딩
 				common.ui.landing();				
 				// 1-3.  관리자  로딩
-				var currentUser = new User();
-				
+				var currentUser = new User();				
 				var targetCompany = new Company();
+				
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
 						item.copy(targetCompany);
-						//kendo.bind($("#company-info"), companyPlaceHolder );
+						//kendo.bind($("#company-info"), targetCompany );
 						
-						kendo.bind($("#company-details"), companyPlaceHolder );
+						kendo.bind($("#company-details"), targetCompany );
+						
+						
 						//$('button.btn-control-group').removeAttr("disabled");									
 					}
 				});
