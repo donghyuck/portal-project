@@ -13,6 +13,7 @@
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
+			'css!${request.contextPath}/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo/kendo.dataviz.min.js',
@@ -23,6 +24,7 @@
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
+			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
@@ -202,6 +204,9 @@
 						}					
 					}
 					$(this).tab('show');
+					
+					$('table.system-details').perfectScrollbar();
+					
 				});													
 									
 				// END SCRIPT
