@@ -108,7 +108,7 @@
 		}]);
 		
 		
-		function displayCompanyDetails = function(){
+		function displayCompanyDetails (){
 				createSiteGrid();	
 				$('#myTab').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
