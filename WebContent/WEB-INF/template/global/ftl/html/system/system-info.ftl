@@ -359,7 +359,7 @@
 									</div>		
 								</div>
 								<div class="tab-pane" id="system-info">
-									<div class="panel-body">
+									<div class="panel-body" height="200" width="100%">
 												<table class="table table-striped .table-hover system-details">
 													<tbody>
 														<tr>
