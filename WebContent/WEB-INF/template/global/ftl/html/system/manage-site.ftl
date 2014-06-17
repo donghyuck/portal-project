@@ -758,12 +758,15 @@
 					</div>				
 				</div><!-- / .page-header -->
 				<div class="row">
-					<div class="col-sm-12">
+					<div class="col-sm-6 bg-dark-gray">
 					
 					</div>
+					<div class="col-sm-6 bg-dark-gray">
+					
+					</div>					
 				</div>
 				<div class="row">				
-					<div class="col-sm-12">				
+					<div class="col-sm-12 ">				
 					
 	
 					<div class="panel panel-default" style="min-height:300px;">
