@@ -445,7 +445,7 @@
 					}
 				});		
 			}
-			renderTo.data("kendoGrid").read();
+			renderTo.data("kendoGrid").refresh();
 		}
 		
 		function createCompanyMembersPane(renderTo){
