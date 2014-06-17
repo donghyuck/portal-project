@@ -43,18 +43,10 @@
 				}
 			});
 		},
-		getCompanySelector : function(){
-			var that = this;
-			var renderTo = COMPANY_SELECTOR_RENDER_ID;							
-			if( !$('#' + renderTo).data('kendoDropDownList' ) ){
-				that._createCompanySelector();				
-			}
-			return $('#' + renderTo).data('kendoDropDownList' ) ;
-		},
 		_createCompanySelector : function(){	
 			var that = this;
 			var renderTo = COMPANY_SELECTOR_RENDER_ID;				
-			$('#' + renderTo).kendoDropDownList({
+			that.companySelector = $('#' + renderTo).kendoDropDownList({
 				dataTextField: 'displayName',	
 				dataValueField: 'companyId',
 				dataSource: {
