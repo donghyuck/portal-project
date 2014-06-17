@@ -123,6 +123,12 @@
 			}	
 		}]);
 		
+		
+		function getSelectedCompany(){
+			var setup = common.ui.admin.setup();
+			return setup.companySelector.dataItem(setup.companySelector.select());
+		}
+		
 		function createLogoPanel(){
 			var selectedCompany = $("#navbar").data("companyPlaceHolder");
 			if( !$('#logo-file').data('kendoUpload') ){
