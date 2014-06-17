@@ -205,7 +205,7 @@
 					}
 					$(this).tab('show');
 					
-					$('table.system-details').perfectScrollbar();
+					$('#system-info .panel-body').perfectScrollbar();
 					
 				});													
 									
