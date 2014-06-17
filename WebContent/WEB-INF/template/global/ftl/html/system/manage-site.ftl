@@ -56,6 +56,7 @@
 						
 						kendo.bind($("#company-details"), targetCompany );
 						
+						alert("sss");
 						
 						//$('button.btn-control-group').removeAttr("disabled");									
 					}
@@ -66,7 +67,7 @@
 				 var selectedSocial = {};		
 				 	
 				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );				 
-				// createSiteGrid();				 
+				createSiteGrid();				 
 				 common.ui.handleButtonActionEvents(
 					$("button.btn-control-group"), 
 					{event: 'click', handlers: {
