@@ -52,11 +52,11 @@
 					},
 					companyChanged: function(item){
 						item.copy(targetCompany);
-						//kendo.bind($("#company-info"), targetCompany );
+						kendo.bind($("#company-info"), targetCompany );
 						
 						kendo.bind($("#company-details"), targetCompany );
 						
-						alert("sss");
+
 						
 						//$('button.btn-control-group').removeAttr("disabled");									
 					}
