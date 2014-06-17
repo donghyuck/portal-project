@@ -44,8 +44,6 @@
 				common.ui.landing();				
 				// 1-3.  관리자  로딩
 				var currentUser = new User();	
-				var targetCompany = new Company();
-				
 				var detailsModel = kendo.observable({
 					company : new Company()
 				});	
@@ -65,12 +63,10 @@
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
-						item.copy(targetCompany);
-						kendo.bind($("#company-info"), targetCompany );
-						
+						item.copy(detailsModel.company);
+						kendo.bind($("#company-info"), detailsModel.company );						
 						kendo.bind($("#company-details"), detailsModel.company );
-						displayCompanyDetails();
-						
+						displayCompanyDetails();						
 						//$('button.btn-control-group').removeAttr("disabled");									
 					}
 				});
