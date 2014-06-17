@@ -13,6 +13,7 @@
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
+			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo/kendo.dataviz.min.js',
@@ -23,6 +24,7 @@
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
+			
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
