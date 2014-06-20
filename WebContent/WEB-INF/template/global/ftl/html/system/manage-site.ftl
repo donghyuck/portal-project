@@ -166,6 +166,7 @@
 		}
 		
 		function toggleLogoUploadPanel(){
+			
 			if( !$('#logo-file').data('kendoUpload') ){
 				$("#logo-file").kendoUpload({
 					multiple : false,
@@ -190,7 +191,8 @@
 						}
 					}
 				});						
-			}			
+			}		
+				
 			if(!$('#logo-grid').data('kendoGrid')){				
 				$("#logo-grid").kendoGrid({
 					dataSource: {
@@ -208,6 +210,7 @@
 						},
 						error: common.api.handleKendoAjaxError
 					},
+					autoBind: false,
 					height: 200,
 					columns:[
 						{ field: "logoId", title: "ID",  width: 30, filterable: false, sortable: false },
@@ -218,7 +221,9 @@
 			}
 			
 			var renderTo = $('.panel[data-action="upload-logo"]');
+			
 			if( !renderTo.is(":visible") ){
+				$('#logo-grid').data('kendoGrid').dataSource.read();
 				common.ui.animate_v3(renderTo, "fadeInDown").show();
 			}else{
 				common.ui.animate_v3(renderTo, "fadeOutUp").show();
