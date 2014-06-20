@@ -108,6 +108,7 @@
 				detailsModel.bind("change", function(e){		
 					if( e.field.match('^company.name')){ 						
 						var sender = e.sender ;
+						alert( sender.company.companyId + "/" + this.get('company').companyId );
 						if( sender.company.companyId > 0 ){
 							this.set("logoUrl", "/download/logo/company/" + sender.company.name );
 							this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
