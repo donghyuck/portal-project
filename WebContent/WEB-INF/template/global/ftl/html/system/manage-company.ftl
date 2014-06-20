@@ -329,7 +329,7 @@
 		
 		function hideCompanyDetails(){			
 			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible") ){
-				var alwaysShowList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");
+				var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");
 				var animate = "slideOutLeft" ;
 				if( alwaysShowList ){
 					animate = "fadeOutUp" ;
@@ -347,7 +347,7 @@
 		function showCompanyDetails(){
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
-			var alwaysShowList = common.ui.admin.setup().isSwitcherEnabled("list-switcher");			
+			var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");			
 			
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
@@ -602,7 +602,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 								<div class="panel-heading-controls">								
-								<button class="btn btn-danger btn-sm btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
+								<button class="btn btn-danger btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
 								</div>
 							</div>
 							<div id="company-grid" class="no-border"></div>	
@@ -729,15 +729,15 @@
 								<table class="table">
 									<tbody>						
 										<tr>
-											<td><small><span class="badge">도메인</span></small></td>								
+											<td><small><span class="badge light-weight">도메인</span></small></td>								
 											<td><span data-bind="text:company.domainName"></span></td>
 										</tr>	
 										<tr>
-											<th><small><span class="badge">생성일</span></small></th>								
+											<th><small><span class="badge light-weight">생성일</span></small></th>								
 											<td><span data-bind="text:formattedCreationDate"></span></td>
 										</tr>	
 										<tr>
-											<th><small><span class="badge">수정일</span></small></th>								
+											<th><small><span class="badge light-weight">수정일</span></small></th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>														
 									</tbody>
@@ -749,8 +749,8 @@
 							<div class="details-content">
 								<ul id="myTab" class="nav nav-tabs nav-tabs-sm">
 									<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
-									<li><a href="\\#groups" data-toggle="tab">그룹 <span class="badge badge-primary" data-bind="text:groupCount, visible:groupCount ">0</span></a></li>
-									<li><a href="\\#users" data-toggle="tab">사용자 <span class="badge badge-primary" data-bind="text:memberCount, visible:memberCount">0</span></a></li>
+									<li><a href="\\#groups" data-toggle="tab">그룹 <span class="badge badge-success" data-bind="text:groupCount, visible:groupCount ">0</span></a></li>
+									<li><a href="\\#users" data-toggle="tab">사용자 <span class="badge badge-success" data-bind="text:memberCount, visible:memberCount">0</span></a></li>
 								</ul>	
 								<!-- .tab-content -->	
 								<div class="tab-content tab-content-bordered no-padding">								

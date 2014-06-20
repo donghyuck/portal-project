@@ -4,6 +4,7 @@
 		<title>웹사이트관리</title>
 <#compress>		
 		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />
+		
 		<script type="text/javascript"> 
 		yepnope([{
 			load: [ 
@@ -44,9 +45,66 @@
 				common.ui.landing();				
 				// 1-3.  관리자  로딩
 				var currentUser = new User();	
+				
 				var detailsModel = kendo.observable({
-					company : new Company()
+					company : new Company(),
+					isEnabled : false,
+					properties : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
+							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
+							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
+							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
+								} 
+								return { companyId: getSelectedCompany().companyId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							data: "targetCompanyProperty",
+							model: Property
+						},
+						error : common.api.handleKendoAjaxError
+					}),
+					toggleOptionPanel:function(e){					
+						var action = $(e.target).attr('data-action');
+						if( action === 'upload-logo' ){						
+							toggleLogoUploadPanel();
+						} else if( action === 'update-company' ){
+							toggleCompanyUpdatePanel();
+						}
+					},
+					onSave : function(e){					
+						$.ajax({
+							type : 'POST',
+							url : '${request.contextPath}/secure/update-company.do?output=json',
+							data: { companyId : this.get('company').companyId, item : kendo.stringify( this.get('company') ) },
+							success : function(response){
+								window.location.reload( true );
+							},
+							error:common.api.handleKendoAjaxError,
+							dataType : "json"
+						});
+					},
+					teleport : function(e){
+						var action = $(e.target).attr('data-action');
+						if(action === 'go-group'){
+							common.api.teleportation().teleport({
+								action : '${request.contextPath}/secure/main-group.do',
+								companyId : this.get('company').companyId
+							});							
+						}else if (action === 'go-user'){
+							common.api.teleportation().teleport({
+								action : '${request.contextPath}/secure/main-user.do',
+								companyId : this.get('company').companyId
+							});								
+						}
+					}										
 				});	
+				
 				detailsModel.bind("change", function(e){		
 					if( e.field.match('^company.name')){ 						
 						var sender = e.sender ;
@@ -54,92 +112,52 @@
 							this.set("logoUrl", "/download/logo/company/" + sender.company.name );
 							this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
 							this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
-						}
+						}						
 					}	
 				});
-												
+				
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
 						item.copy(detailsModel.company);
-						kendo.bind($("#company-info"), detailsModel.company );						
-						kendo.bind($("#company-details"), detailsModel.company );
-						displayCompanyDetails();						
-						//$('button.btn-control-group').removeAttr("disabled");									
+						detailsModel.isEnabled = true;		
+						kendo.bind($("#company-details"), detailsModel );				
+						//kendo.bind($("#company-info"), detailsModel.company );						
+						displayCompanyDetails();	
 					}
 				});
 				
 												 
 				 // 4. PAGE MAIN		
-				 var selectedSocial = {};		
-				 	
-				 $("#website-grid").data("sitePlaceHolder", new common.models.WebSite() );				 
-				 common.ui.handleButtonActionEvents(
-					$("button.btn-control-group"), 
-					{event: 'click', handlers: {
-						setting : function(e){
-							showCompanySetting();					
-						},
-						group : function(e){
-							topBar.go('main-group.do');				
-						}, 	
-						user : function(e){
-							topBar.go('main-user.do');			
-						}, 							
-						media : function(e){
-							$('#company-details .panel[role="media"]').toggleClass('hide');
-						},
-						'close-media' : function(e){
-							$("button.btn-control-group[data-action='media']").click();
-						},
-						timeline: function(e){
-							$('#company-details .panel[role="timeline"]').toggleClass('hide');
-						},
-						'close-timeline': function(e){
-							$("button.btn-control-group[data-action='timeline']").click();
-						},
-						logo: function(e){
-							createLogoPanel();
-							$('#company-details .panel[role="logo"]').toggleClass('hide');							
-						},
-						'close-logo': function(e){
-							$("button.btn-control-group[data-action='logo']").click();
-						},						
-						connect : function(e){
-							alert("social modal");	 					
-						}			  						 
-					}}
-				);
-								
 
 			}	
 		}]);
 		
 		
-		function displayCompanyDetails (){
-				createSiteGrid();	
-				$('#myTab').on( 'show.bs.tab', function (e) {		
+		function displayCompanyDetails (){				
+				$('#company-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
-						case "#template-mgmt" :
-							createTemplatePane();
+						case "#company-tabs-props" :						
 							break;
-						case  '#image-mgmt' :
+						case  '#company-tabs-images' :
 							createImagePane();
 							break;
-						case  '#attachment-mgmt' :	
-							createAttachPane();
+						case  '#company-tabs-files' :	
+							createFilePane();
 							break;	
-						case  '#social-mgmt' :	
+						case  '#company-tabs-timeline' :	
+							createTimelinePane();
+							break;	
+						case  '#company-tabs-networks' :	
 							createSocialPane();
-							break;								
+							break;															
 					}	
 				});				
-				$('#myTab a:first').tab('show') ;
-						
-		
+				$('#company-tabs a:first').tab('show') ;				
+				createSiteGrid();	
 		}
 		
 		function getSelectedCompany(){
@@ -147,8 +165,7 @@
 			return setup.companySelector.dataItem(setup.companySelector.select());
 		}
 		
-		function createLogoPanel(){
-			var selectedCompany = getSelectedCompany();
+		function toggleLogoUploadPanel(){
 			if( !$('#logo-file').data('kendoUpload') ){
 				$("#logo-file").kendoUpload({
 					multiple : false,
@@ -162,7 +179,7 @@
 					upload: function (e) {								         
 						e.data = {
 							objectType : 1,
-							objectId: selectedCompany.companyId
+							objectId: getSelectedCompany().companyId
 						};														    								    	 		    	 
 					},
 					success : function(e) {								    
@@ -170,34 +187,10 @@
 							//e.response.targetAttachment.attachmentId;
 							// LIST VIEW REFRESH...
 							$('#logo-grid').data('kendoGrid').dataSource.read(); 
-						}				
+						}
 					}
 				});						
-			}
-			/*
-			if(!$('#logo-list-view').data('kendoListView')){
-				$("#logo-list-view").kendoListView({
-					dataSource: {
-						dataType: 'json',
-						transport: {
-							read: { url:'${request.contextPath}/secure/list-logo-image.do?output=json', type: 'POST' },
-							parameterMap: function (options, operation){
-								return { objectType: 1, objectId: selectedCompany.companyId }
-							} 
-						},
-						schema: {
-							data: "targetLogoImages",
-							total: "targetLogoImageCount",
-							model : common.models.Logo
-						},
-						error: common.api.handleKendoAjaxError
-					},
-					//selectable: "single",
-					template: kendo.template($('#logo-list-view-template').html())
-				});				
-			}
-			*/
-			
+			}			
 			if(!$('#logo-grid').data('kendoGrid')){				
 				$("#logo-grid").kendoGrid({
 					dataSource: {
@@ -205,7 +198,7 @@
 						transport: {
 							read: { url:'${request.contextPath}/secure/list-logo-image.do?output=json', type: 'POST' },
 							parameterMap: function (options, operation){
-								return { objectType: 1, objectId: selectedCompany.companyId }
+								return { objectType: 1, objectId: getSelectedCompany().companyId }
 							} 
 						},
 						schema: {
@@ -221,8 +214,24 @@
 						{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
 						{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
 					]				
-				});			
-			}								
+				});
+			}
+			
+			var renderTo = $('.panel[data-action="upload-logo"]');
+			if( !renderTo.is(":visible") ){
+				common.ui.animate_v3(renderTo, "fadeInDown").show();
+			}else{
+				common.ui.animate_v3(renderTo, "fadeOutUp").show();
+			}							
+		}
+
+		function toggleCompanyUpdatePanel(){		
+			var renderTo = $('.panel[data-action="update-company"]');				
+			if( !renderTo.is(":visible") ){
+				common.ui.animate_v3(renderTo, "fadeInDown").show();
+			}else{
+				common.ui.animate_v3(renderTo, "fadeOutUp").show();
+			}	
 		}
 
 		function createSocialPane(){
@@ -328,9 +337,8 @@
 			}
 		}
 
-		function createAttachPane(){		
-			var selectedCompany = getSelectedCompany();
-			
+		function createFilePane(){		
+			var selectedCompany = getSelectedCompany();			
 			if( ! $("#attach-upload").data("kendoUpload") ){	
 				$("#attach-upload").kendoUpload({
 					multiple : false,
@@ -351,8 +359,7 @@
 						$('#attach-grid').data('kendoGrid').dataSource.read(); 
 					}
 				}).css('min-width','300');
-			}				
-						
+			}			
 			if( ! $("#attach-grid").data("kendoGrid") ){	
 							$("#attach-grid").kendoGrid({
 								dataSource: {
@@ -408,9 +415,7 @@
 		}
 		
 		function createImagePane(){		
-		
-			var selectedCompany = getSelectedCompany();
-		
+			var selectedCompany = getSelectedCompany();		
 						if( ! $("#image-upload").data("kendoUpload") ){	
 							$("#image-upload").kendoUpload({
 								multiple : false,
@@ -634,15 +639,15 @@
 								},
 								/* toolbar: [ { name: "create", text: "웹 사이트 추가" } ],      */
 								columns:[
-									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false, locked: true, lockable: false },
-									{ field: "name", title: "키", width: 150, locked: true, template: '<button type="button" class="btn btn-warning btn-xs btn-block" onclick="goSite(this); return false;">#: name #</a>'},									
+									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false},
+									{ field: "name", title: "키", width: 200, template: '<button type="button" class="btn btn-warning btn-xs" onclick="goSite(this); return false;">#: name #</a>'},									
 									{ field: "displayName", title: "이름",  width: 100 },
 									{ field: "description", title: "설명",  width: 200 },
-									{ field: "url", title: "URL",  width: 150, locked: true },
+									{ field: "url", title: "URL",  width: 150 },
 									{ field: "enabled", title: "사용여부",  width: 100 },
 									{ field: "allowAnonymousAccess", title: "공개여부",  width: 100 },
-									{ field: "creationDate", title: "생성일", width: 90, format: "{0:yyyy/MM/dd}" },
-									{ field: "modifiedDate", title: "수정일", width: 90, format: "{0:yyyy/MM/dd}" },
+									{ field: "creationDate", title: "생성일", width: 120, format: "{0:yyyy/MM/dd}" },
+									{ field: "modifiedDate", title: "수정일", width: 120, format: "{0:yyyy/MM/dd}" },
 								/*	{ command: [ {name: "destroy", text: "삭제" }, {name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"}  }  ], title: "&nbsp;", width: 180  }	*/
 								], 
 								editable: "inline",
@@ -651,6 +656,7 @@
 								sortable: true,
 								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 								selectable: 'row',
+								autoBind: false,
 								dataBound: function(e) {
 								
 								},
@@ -662,78 +668,31 @@
 									}
 								}				
 				});
-				
-			
 			}
+			$("#website-grid").data("kendoGrid").dataSource.read(); 
 		}
+		
+		function getSelectedSite(){			
+			var renderTo = $("#website-grid");
+			var grid = renderTo.data('kendoGrid');			
+			var selectedCells = grid.select();			
+			if( selectedCells.length == 0){
+				return new common.models.WebSite();
+			}else{			
+				var selectedCell = grid.dataItem( selectedCells );   
+				return selectedCell;
+			}
+		}		
 		
 		function goSite (){					
-			$("form[name='navbar-form'] input[name='targetSiteId']").val( $("#website-grid").data("sitePlaceHolder").webSiteId );
-			$("#navbar").data("kendoExtNavbar").go("view-site.do");							
+			common.api.teleportation().teleport({
+				action : '${request.contextPath}/secure/view-site.do',
+				targetSiteId : getSelectedSite().webSiteId
+			});						
 		}
 		
-		function showCompanySetting(){
-			var renderToString = "company-setting-modal";
-			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'"/>');
-			}
-			var companySetting = $("#"+ renderToString);
-			if( !companySetting.data('kendoExtModalWindow') ){			
-				
-				var companyPlaceHolder = new Company();
-				$("#navbar").data("companyPlaceHolder").copy(companyPlaceHolder);
 
-				var companySettingViewModel =  kendo.observable({ 
-					onSave : function(e){
-					alert(this.get('company').companyId);
-						$.ajax({
-							type : 'POST',
-							url : '${request.contextPath}/secure/update-company.do?output=json',
-							data: { companyId : this.get('company').companyId, item : kendo.stringify( this.get('company') ) },
-							success : function(response){
-								window.location.reload( true );
-							},
-							error:common.api.handleKendoAjaxError,
-							dataType : "json"
-						});
-					},
-					isVisible: true,
-					company: companyPlaceHolder,
-					properties : new kendo.data.DataSource({
-						transport: { 
-							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
-							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
-							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
-							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
-					 		parameterMap: function (options, operation){			
-						 		if (operation !== "read" && options.models) {
-						 			return { companyId: companyPlaceHolder.companyId, items: kendo.stringify(options.models)};
-								} 
-								return { companyId: companyPlaceHolder.companyId }
-							}
-						},	
-						batch: true, 
-						schema: {
-							data: "targetCompanyProperty",
-							model: Property
-						},
-						error : common.api.handleKendoAjaxError
-					})
-				} );						
-				companySetting.extModalWindow({
-					title : "회사 정보 변경",
-					template : $("#company-setting-modal-template").html(),
-					data :  companySettingViewModel,
-					change : function (e) {
-						if( e.field.match('^company.')){							
-							$(e.element).find('.modal-footer .btn.custom-update').removeAttr('disabled');
-						}
-					}
-				});			
-			}				
-			companySetting.data('kendoExtModalWindow')._modal().find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');	
-			companySetting.data('kendoExtModalWindow').open();		
-		}
+		
 		
 		</script>
 		<style>					
@@ -760,19 +719,7 @@
 					<div class="row">
 						<h1 class="col-xs-12 col-sm-6 text-center text-left-sm"><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}
 							<p><small><i class="fa fa-quote-left"></i> ${selectedMenu.description} <i class="fa fa-quote-right"></i></small></p>
-						</h1>
-						<div class="col-xs-12 col-sm-6">
-							<div class="row">
-								<hr class="visible-xs no-grid-gutter-h">							
-								<div class="pull-right col-xs-12 col-sm-auto">
-									<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">옵션</h6>
-									<div class="btn-group">
-										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="menu"><i class="btn-label icon fa fa-sitemap"></i> 메뉴</button>
-										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="role"><i class="btn-label icon fa fa-lock"></i> 권한 & 롤</button>
-									</div>									
-								</div>
-							</div>
-						</div>
+						</h1>						
 					</div>				
 				</div><!-- / .page-header -->
 				<!-- details-row -->
@@ -781,7 +728,7 @@
 						<div class="left-col">
 							<div class="details-block no-margin-t">
 								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/podosoftware">
+									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
 								</div>
 								<br>
 								<!--
@@ -795,19 +742,19 @@
 								<table class="table">
 									<tbody>						
 										<tr>
-											<td><small><span class="badge">회사</span></small></td>								
+											<td><span class="badge">회사</span></td>								
 											<td><span data-bind="text: company.displayName"></span> <span class="label label-primary"><span data-bind="text: company.name"></span></span> <code><span data-bind="text: company.companyId"></span></code></td>
 										</tr>	
 										<tr>
-											<th><small><span class="badge">도메인</span></small></th>								
+											<th><span class="badge">도메인</span></th>								
 											<td><span data-bind="text: company.domainName"></span></td>
 										</tr>	
 										<tr>
-											<th><small><span class="badge">생성일</span></small></th>								
+											<th><span class="badge">생성일</span></th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>	
 										<tr>
-											<th><small><span class="badge">수정일</span></small></th>								
+											<th><span class="badge">수정일</span></th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>																								
 									</tbody>
@@ -815,145 +762,141 @@
 							</div>
 						</div>
 						<div class="right-col">
-							<hr class="details-content-hr no-grid-gutter-h">	
+							<hr class="details-content-hr no-grid-gutter-h"/>						
+							<div class="details-content">				
+								<div class="panel panel-transparent">
+									<div class="panel-heading">
+										&nbsp;
+										<div class="panel-heading-controls">
+											<div class="btn-group">
+												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-group" data-bind="enabled: isEnabled, click:teleport"" ><i class="fa fa-users"></i> 그룹관리</button>
+												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-user" data-bind="enabled: isEnabled, click:teleport""><i class="fa fa-user"></i> 사용자 관리</button>
+											</div>																						
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="upload-logo" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel"><i class="fa fa-upload" ></i> 로고 업로드</button>
+												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 정보변경</button>
+											</div>											
+										</div>
+									</div>
+									<div class="panel-body no-padding-hr">
+										<div class="row">
+											<div class="col-lg-6">		
+												<!-- logo upload panel -->									
+												<div class="panel panel-default" data-action="upload-logo" style="display:none;">
+													<div class="panel-heading">
+														<button type="button" class="close btn-control-group"  data-action="upload-logo" data-bind="click:toggleOptionPanel">×</button>
+														<span class="panel-title">로고 업로드</span>
+													</div>
+													<div class="panel-body">											
+														<input name="logo-file" id="logo-file" type="file" />											
+													</div>
+													<div class="panel-body scrollable" style="max-height:450px;">
+														<p> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</p>
+														<div id="logo-grid"></div>
+													</div>																						
+												</div>
+												<!-- ./logo upload panel -->			
+											</div>
+											<div class="col-lg-6">		
+												<!-- company setting panel -->				
+												<div class="panel form-horizontal" data-action="update-company" style="display:none;">
+													<div class="panel-heading">
+														
+														<button type="button" class="close btn-control-group" data-action="update-company"  data-bind="click:toggleOptionPanel">×</button>
+														<span class="panel-title">회사 정보 변경</span>
+													</div>
+													<div class="panel-body">
+															<div class="row form-group">
+																<label class="col-sm-4 control-label">이름:</label>
+																<div class="col-sm-8">
+																	<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
+																</div>
+															</div>
+															<div class="row form-group">
+																<label class="col-sm-4 control-label">설명:</label>
+																<div class="col-sm-8">
+																	<input type="text" name="name" class="form-control" data-bind="value:company.description">
+																</div>
+															</div>																
+															<div class="row form-group">
+																<label class="col-sm-4 control-label">도메인:</label>
+																<div class="col-sm-8">
+																	<input type="text" class="form-control" data-bind="value:company.domainName">
+																</div>
+															</div>															
 
+													</div>
+													<div class="panel-footer text-right">
+														<button class="btn btn-primary btn-flat" data-bind="click: onSave, enabled: isEnabled" >확인</button>
+													</div>
+												</div>
+												<!-- ./company setting panel -->								
+											</div>
+										</div>
+									</div>
+								</div>	
+								<!-- company-tabs -->	
+									<ul id="company-tabs" class="nav nav-tabs nav-tabs-sm">
+										<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
+										<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
+										<li><a href="#company-tabs-files" data-toggle="tab">파일</a></li>
+										<li><a href="#company-tabs-timeline" data-toggle="tab">타임라인</a></li>
+									</ul>	
+									<div class="tab-content tab-content-bordered no-padding">								
+										<div class="tab-pane fade" id="company-tabs-props">
+											<div data-role="grid"
+												class="no-border"
+												date-scrollable="false"
+												data-editable="true"
+												data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+												data-columns="[
+													{ 'title': '이름',  'field': 'name', 'width': 200 },
+													{ 'title': '값', 'field': 'value' },
+													{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+												]"
+												data-bind="source: properties, visible: isEnabled"
+												style="height: 300px"></div>																				
+												
+										</div>
+										<div class="tab-pane fade" id="company-tabs-images">
+											<div class="panel panel-transparent no-margin-b">
+												<div class="panel-body">
+													<input name="image-upload" id="image-upload" type="file" />
+												</div>		
+												<div class="panel-body">
+													<div id="image-grid"></div>												
+												</div>	
+												<div id="image-details" class="panel-body no-padding-t  hide">												
+												</div>																					
+											</div>
+																				
+										</div>
+										<div class="tab-pane fade" id="company-tabs-files">
+											<div class="panel panel-transparent">
+												<div class="panel-body">
+													<input name="attach-upload" id="attach-upload" type="file" />
+												</div>		
+												<div class="panel-body">
+													<div id="attach-grid"></div>										
+												</div>	
+											</div>
+										</div>
+										<div class="tab-pane fade" id="company-tabs-timeline">
+											
+										</div>																																								
+									</div>	
+								<!-- / .website-tabs -->								
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
-	
-				<div class="row">				
-					<div class="col-sm-12 ">				
-					
-	
-					<div class="panel panel-default" style="min-height:300px;">
-						<div class="panel-heading" style="padding:5px;">						
-							<div class="btn-group">
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
-								<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
-							</div>
-							<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="setting" disabled="disabled"><i class="fa fa-cog"></i> 회사 정보변경</button>								
+					<div class="row">				
+						<div class="col-sm-12 ">		
+							<h4>
+								<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
+							</h4>		
+							<div id="website-grid" ></div>
 						</div>
-						<div class="panel-body" style="padding:5px;">	
-							<div class="row">
-								<div id="company-info" class="col-lg-5 col-xs-12">					
-									<div class="page-header page-nounderline-header text-primary">
-										<h5 >
-											<small><i class="fa fa-info"></i> 미디어 버튼을 클릭하면 회사가 보유한 미디어(이미지, 파일 등)을 관리할 수 있습니다.</small>
-										</h5>
-										<p class="pull-right">											
-											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="media" disabled="disabled"><i class="fa fa-cloud"></i> 회사 미디어</button>
-											<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="timeline" disabled="disabled"><i class="fa fa-clock-o"></i> 회사 타임라인</button>
-										<p>
-									</div>											
-									<table class="table table-hover">
-											<tbody>						
-												<tr>
-													<th><small>회사</small></th>								
-													<td><span data-bind="text: displayName"></span> <span class="label label-primary"><span data-bind="text: name"></span></span> <code><span data-bind="text: companyId"></span></code></td>
-												</tr>	
-												<tr>
-													<th><small>도메인</small></th>								
-													<td><span data-bind="text: domainName"></span></td>
-												</tr>	
-												<tr>
-													<th><small>회사 로고</small></th>								
-													<td>
-														<img class="img-responsive" src="${request.contextPath}/download/logo/company/${action.targetCompany.name}" height="80" alt="..." />
-														<p class="pull-right">											
-															<button type="button" class="btn btn-success btn-control-group btn-sm" data-toggle="button" data-action="logo" disabled="disabled">회사 로고</button>															
-														<p>
-													</td>
-												</tr>														
-												<tr>
-													<th><small>설명</small></th>
-													<td><span data-bind="text: description"></span></td>
-												</tr>	
-												<tr>
-													<th><small>등록일</small></th>
-													<td><span data-bind="text: creationDate"></span></td>
-												</tr>				
-												<tr>
-													<th><small>수정일</small></th>
-													<td><span data-bind="text: modifiedDate"></span></td>
-												</tr>												
-										 	</tbody>
-									</table>
-								</div>
-								<div class="col-lg-7 col-xs-12" id="company-details">			
-									<div class="panel panel-default hide" role="logo">
-										<div class="panel-heading">
-											<button type="button" class="btn-control-group close" data-action="close-logo">&times;</button>
-											<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 아래의 영역에 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</small>
-										</div>
-										<div class="panel-body">											
-											<input name="logo-file" id="logo-file" type="file" />											
-										</div>
-										<div class="panel-body scrollable" style="max-height:450px;">
-											<div id="logo-grid"></div>
-										</div>										
-									</div>		
-									<div class="panel panel-default hide" role="timeline">
-										<div class="panel-heading">
-											<button type="button" class="btn-control-group close" data-action="close-timeline">&times;</button>
-											<i class="fa fa-clock-o"></i> <small>회사 타임라인을 관리합니다.</small>
-										</div>									
-										<div class="panel-body" style="padding:5px;">
-																			
-										</div>
-									</div>													
-									<div class="panel panel-default hide" role="media">
-										<div class="panel-heading">
-											<button type="button" class="btn-control-group close" data-action="close-media">&times;</button>
-											<i class="fa fa-cloud"></i> <small>회사 미디어(이미지, 파일, 쇼셜 등)를 관리합니다.</small>
-										</div>
-										<div class="panel-body" style="padding:5px;">									
-											<ul class="nav nav-tabs" id="myTab">
-											  <li><a href="#image-mgmt" data-toggle="tab">이미지</a></li>
-											  <li><a href="#attachment-mgmt" data-toggle="tab">첨부파일</a></li>
-											  <li><a href="#social-mgmt" data-toggle="tab">쇼셜</a></li>
-											</ul>
-											<div class="tab-content">
-												<div class="tab-pane fade " id="image-mgmt">
-													<div class="col-sm-12 body-group marginless paddingless">
-														<input name="image-upload" id="image-upload" type="file" />
-														<div class="blank-top-15"></div>	
-														<div id="image-grid"></div>	
-													</div>
-													<div id="image-details" class="col-sm-12 body-group marginless paddingless hide" style="padding-top:5px;">									
-													</div>
-												</div>								
-												<div class="tab-pane fade" id="attachment-mgmt">
-													<div class="col-sm-12 body-group marginless paddingless">
-														<input name="attach-upload" id="attach-upload" type="file" />
-														<div class="blank-top-15"></div>
-														<div id="attach-grid"></div>
-													</div>
-												</div>
-												<div class="tab-pane fade" id="social-mgmt">
-													<span class="help-block">
-														<small><i class="fa fa-info"></i> 쇼셜연결 버튼을 클릭하여 회사 쇼셜 계정을 연결하세요. </small>
-														<button type="button" class="btn btn-primary btn-control-group btn-sm" data-toggle="button" data-action="connect"> 쇼셜연결</button>
-													</span>
-													<div id="social-grid"></div>
-												</div>								
-											</div>								
-										</div>
-									</div>									
-								</div>
-							</div>							
-						</div>					
-						<div class="panel-body" style="padding:5px;">		
-							<div class="page-header page-nounderline-header text-primary">
-								<h5 >
-										<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
-								</h5>
-							</div>								
-							<div id="website-grid"></div>						
-						</div>
-						<div class="panel-body" style="padding:5px;"></div>
-					</div>	
-										
-					</div>
+					</div>		
 				</div>
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
@@ -986,9 +929,9 @@
 		<footer>  		
 		</footer>
 		<!-- END FOOTER -->
-		
+
 		<script id="image-details-template" type="text/x-kendo-template">				
-			<div class="panel panel-default">
+			<div class="panel panel-default no-margin-b">
 				<div class="panel-body paddingless pull-right">
 					<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
 				</div>
