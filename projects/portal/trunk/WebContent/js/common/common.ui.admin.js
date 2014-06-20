@@ -69,7 +69,7 @@
 				}
 			}).data('kendoDropDownList');			
 		},
-		_createMenuContent : function (){		
+		_createSwitcher : function (){		
 			var that = this;
 			$.each( $('input[role="switcher"]'), function( index, element ){
 				$(element).switcher();						
@@ -80,9 +80,6 @@
 				});
 			} );
 		},
-		isSwitcherEnabled:function(name){
-			return $('input[role="switcher"][name="' + name + '"]').is(":checked") ;			
-		}, 
 		refresh: function(){			
 			var that = this;
 			$('.menu-content-profile .close').click(function () {
@@ -96,7 +93,7 @@
 				return false;
 			});
 			that._createCompanySelector();			
-			that._createMenuContent();
+			that._createSwitcher();
 			that._doAuthenticate();
 			that._pixelAdmin.start([]);	
 		}
@@ -104,6 +101,9 @@
 	
 })(jQuery);
 
+common.ui.admin.switcherEnabled = function(name) {
+	return $('input[role="switcher"][name="' + name + '"]').is(":checked") ;	
+}
 
 common.ui.admin.setup = function (options){	
 	options = options || {};
