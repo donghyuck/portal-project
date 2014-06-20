@@ -614,7 +614,7 @@
 			
 		
 		function createSiteGrid(){			
-			var selectedCompany = getSelectedCompany();
+			
 			if( ! $("#website-grid").data("kendoGrid") ){	
 				$('#website-grid').kendoGrid({
 								dataSource: {
@@ -623,9 +623,9 @@
 										read: { url:'${request.contextPath}/secure/list-site.do?output=json', type: 'POST' },
 										parameterMap: function (options, operation){
 											if (operation != "read" && options) {										                        								                       	 	
-												return { targetCompanyId: selectedCompany.companyId , item: kendo.stringify(options)};									                            	
+												return { targetCompanyId: getSelectedCompany().companyId , item: kendo.stringify(options)};									                            	
 											}else{
-												return { targetCompanyId: selectedCompany.companyId }
+												return { targetCompanyId: getSelectedCompany().companyId }
 											}
 										} 
 									},
@@ -663,12 +663,12 @@
 								change: function(e) {          
 									var selectedCells = this.select();
 									if( selectedCells.length > 0 ){
-										var selectedCell = this.dataItem( selectedCells );			
-										selectedCell.copy( $("#website-grid").data("sitePlaceHolder"));										
+										var selectedCell = this.dataItem( selectedCells );	
 									}
 								}				
 				});
 			}
+			
 			$("#website-grid").data("kendoGrid").dataSource.read(); 
 		}
 		
