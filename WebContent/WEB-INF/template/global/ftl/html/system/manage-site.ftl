@@ -124,7 +124,6 @@
 						item.copy(detailsModel.company);
 						detailsModel.isEnabled = true;		
 						kendo.bind($("#company-details"), detailsModel );				
-						//kendo.bind($("#company-info"), detailsModel.company );						
 						displayCompanyDetails();	
 					}
 				});
@@ -739,6 +738,11 @@
 								<!--
 								<a href="#" class="btn btn-success"><i class="fa fa-check"></i> Following</a> 
 								<a href="#" class="btn"><i class="fa fa-comment"></i></a>-->
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="upload-logo" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel"><i class="fa fa-upload" ></i> 로고 변경</button>
+												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 정보변경</button>
+											</div>			
+																			
 							</div>				
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
@@ -747,19 +751,19 @@
 								<table class="table">
 									<tbody>						
 										<tr>
-											<td><span class="badge">회사</span></td>								
+											<td class="text-center"><span class="badge">회사</span></td>								
 											<td><span data-bind="text: company.displayName"></span> <span class="label label-primary"><span data-bind="text: company.name"></span></span> <code><span data-bind="text: company.companyId"></span></code></td>
 										</tr>	
 										<tr>
-											<th><span class="badge">도메인</span></th>								
+											<th class="text-center"><span class="badge">도메인</span></th>								
 											<td><span data-bind="text: company.domainName"></span></td>
 										</tr>	
 										<tr>
-											<th><span class="badge">생성일</span></th>								
+											<th class="text-center"><span class="badge">생성일</span></th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>	
 										<tr>
-											<th><span class="badge">수정일</span></th>								
+											<th class="text-center"><span class="badge">수정일</span></th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>																								
 									</tbody>
@@ -768,24 +772,25 @@
 						</div>
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h"/>						
-							<div class="details-content">				
-								<div class="panel panel-transparent">
-									<div class="panel-heading">
-										&nbsp;
-										<div class="panel-heading-controls">
+							<div class="details-content">			
+								<div class="row" >
+									<div class="col-sm-12">
+										<div class="pull-right">
 											<div class="btn-group">
 												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-group" data-bind="enabled: isEnabled, click:teleport"" ><i class="fa fa-users"></i> 그룹관리</button>
 												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-user" data-bind="enabled: isEnabled, click:teleport""><i class="fa fa-user"></i> 사용자 관리</button>
-											</div>																						
+											</div>					
+											<!--																	
 											<div class="btn-group">
 												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="upload-logo" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel"><i class="fa fa-upload" ></i> 로고 업로드</button>
 												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 정보변경</button>
-											</div>											
+											</div>-->											
 										</div>
 									</div>
-									<div class="panel-body no-padding-hr">
-										<div class="row">
-											<div class="col-lg-6">		
+								</div>	
+								<hr/>
+								<div class="row" >
+									<div class="col-lg-6">		
 												<!-- logo upload panel -->									
 												<div class="panel panel-default" data-action="upload-logo" style="display:none;">
 													<div class="panel-heading">
@@ -802,11 +807,10 @@
 												</div>
 												<!-- ./logo upload panel -->			
 											</div>
-											<div class="col-lg-6">		
+									<div class="col-lg-6">		
 												<!-- company setting panel -->				
 												<div class="panel form-horizontal" data-action="update-company" style="display:none;">
-													<div class="panel-heading">
-														
+													<div class="panel-heading">														
 														<button type="button" class="close btn-control-group" data-action="update-company"  data-bind="click:toggleOptionPanel">×</button>
 														<span class="panel-title">회사 정보 변경</span>
 													</div>
@@ -835,12 +839,11 @@
 														<button class="btn btn-primary btn-flat" data-bind="click: onSave, enabled: isEnabled" >확인</button>
 													</div>
 												</div>
-												<!-- ./company setting panel -->								
-											</div>
-										</div>
+											<!-- ./company setting panel -->				
 									</div>
-								</div>	
-								<!-- company-tabs -->	
+								</div><!-- ./row -->
+									
+									<!-- company-tabs -->	
 									<ul id="company-tabs" class="nav nav-tabs nav-tabs-sm">
 										<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
 										<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
@@ -867,49 +870,41 @@
 											<div class="panel panel-transparent no-margin-b">
 												<div class="panel-body">
 													<input name="image-upload" id="image-upload" type="file" />
-												</div>		
-												<div class="panel-body">
-													<div id="image-grid"></div>												
-												</div>	
-												<div id="image-details" class="panel-body no-padding-t  hide">												
-												</div>																					
+												</div>																																		
 											</div>
-																				
+											<div id="image-details" class="no-padding-t  hide"></div>
+											<div id="image-grid" class="no-border-hr no-border-b"></div>			
+																									
 										</div>
 										<div class="tab-pane fade" id="company-tabs-files">
-											<div class="panel panel-transparent">
+											<div class="panel panel-transparent no-margin-b">
 												<div class="panel-body">
 													<input name="attach-upload" id="attach-upload" type="file" />
-												</div>		
-												<div class="panel-body">
-													<div id="attach-grid"></div>										
-												</div>	
+												</div>												
 											</div>
+											<div id="attach-grid" class="no-border-hr no-border-b"></div>
 										</div>
-										<div class="tab-pane fade" id="company-tabs-timeline">
-											
+										<div class="tab-pane fade" id="company-tabs-timeline">											
 										</div>																																								
 									</div>	
-								<!-- / .website-tabs -->								
+								<!-- / .website-tabs -->				
+								<div class="row">				
+									<div class="col-sm-12 ">		
+										<h4>
+											<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
+										</h4>		
+										<div id="website-grid" ></div>
+									</div>
+								</div>		
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
-					<div class="row">				
-						<div class="col-sm-12 ">		
-							<h4>
-								<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
-							</h4>		
-							<div id="website-grid" ></div>
-						</div>
-					</div>		
+	
 				</div>
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
-		</div> <!-- / #main-wrapper -->
-				
-
-  
+		</div> <!-- / #main-wrapper -->  
 		<!-- Modal -->
 		<div id="social-detail-window" style="display:none;"></div>
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -936,43 +931,73 @@
 		<!-- END FOOTER -->
 
 		<script id="image-details-template" type="text/x-kendo-template">				
-			<div class="panel panel-default no-margin-b">
-				<div class="panel-body paddingless pull-right">
+			<div class="panel panel-default no-margin-b no-border">
+				<div class="panel-body paddingless pull-right hidden">
 					<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
 				</div>
-				<div class="panel-body">											
+				<div class="panel-body">					
 					<div class="row">
-						<div class="col-lg-6 col-xs-6">
-							<img data-bind="attr:{src: imgUrl}" class="img-rounded" />
+						<div class="col-sm-4">
+							<p><span class="label label-info" data-bind="text: contentType"></span></p>
+							<img data-bind="attr:{src: imgUrl}" class="img-responsive img-thumbnail " />						
 						</div>
-						<div class="col-lg-6 col-xs-6">
-							<div class="panel-header text-primary">
-								<h5 ><i class="fa fa-share"></i>&nbsp;<strong>이미지 공유</strong>&nbsp;<small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>
-							</div>	
-							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-primary">
-								<input type="radio" name="image-public-shared" value="1">모두에게 공개
-								</label>
-								<label class="btn btn-primary active">
-								<input type="radio" name="image-public-shared" value="0"> 비공개
-								</label>
-							</div>						
-						</div>						
-					</div>	
-					<div class="row">
-						<div class="col-lg-6 col-xs-12">
-							<div class="panel-header text-primary">
-								<h5 ><i class="fa fa-info"></i>&nbsp;<strong>이미지 속성</strong> <small>수정한 다음에는 저장 버튼을 클릭하여야 반영됩니다.</small></h5>
-							</div>		
-							<div id="image-prop-grid"></div>									
-						</div>
-						<div class="col-lg-6 col-xs-12">
-							<div class="panel-header text-primary">
-								<h5 ><i class="fa fa-upload"></i>&nbsp;<strong>이미지 변경</strong>&nbsp;<small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
+						<div class="col-sm-8">	
+							<div class="panel-group" id="company-tabs-image-accordion">
+								<div class="panel">
+									<div class="panel-heading ">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#company-tabs-image-accordion" href="\\#company-tabs-image-accordion-collapse1">
+											<i class="fa fa-info"></i> 속성
+										</a>
+									</div> <!-- / .panel-heading -->
+									<div id="company-tabs-image-accordion-collapse1" class="panel-collapse collapse in" style="height: auto;">
+										<div class="panel-body no-padding">
+											<div class="note note-default no-border no-margin-b">
+												<h5><small>수정한 다음에는 저장 버튼을 클릭하여야 반영됩니다.</small></h5>
+											</div>											
+											<div id="image-prop-grid" class="no-border-hr no-border-b"></div>						
+										</div> <!-- / .panel-body -->
+									</div> <!-- / .collapse -->
+								</div> <!-- / .panel -->
+	
+								<div class="panel">
+									<div class="panel-heading">
+										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#company-tabs-image-accordion" href="\\#company-tabs-image-accordion-collapse2">
+											<i class="fa fa-share"></i>  공유
+										</a>
+									</div> <!-- / .panel-heading -->
+									<div id="company-tabs-image-accordion-collapse2" class="panel-collapse collapse" style="height: 0px;">
+										<div class="panel-body">
+											<h5><small>모두에게 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h5>	
+
+											<div class="btn-group" data-toggle="buttons">
+												<label class="btn btn-primary">
+												<input type="radio" name="image-public-shared" value="1">모두에게 공개
+												</label>
+												<label class="btn btn-primary active">
+												<input type="radio" name="image-public-shared" value="0"> 비공개
+												</label>
+											</div>
+											
+										</div> <!-- / .panel-body -->
+									</div> <!-- / .collapse -->
+								</div> <!-- / .panel -->
+	
+								<div class="panel">
+									<div class="panel-heading">
+										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#company-tabs-image-accordion" href="\\#company-tabs-image-accordion-collapse3">
+											<i class="fa fa-upload"></i> 이미지 업로드
+										</a>
+									</div> <!-- / .panel-heading -->
+									<div id="company-tabs-image-accordion-collapse3" class="panel-collapse collapse" style="height: 0px;">
+										<div class="panel-body">
+											<h5><small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h5>
+											<input name="update-image-file" type="file" id="update-image-file" class="pull-right" />
+										</div> <!-- / .panel-body -->
+									</div> <!-- / .collapse -->
+								</div> <!-- / .panel -->
 							</div>
-							<input name="update-image-file" type="file" id="update-image-file" class="pull-right" />								
-						</div>						
-					</div>							
+						</div>				
+					</div>											
 				</div>
 			</div>					
 		</script>
