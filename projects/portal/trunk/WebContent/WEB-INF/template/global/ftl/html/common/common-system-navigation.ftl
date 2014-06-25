@@ -126,12 +126,12 @@
 				<#list menu.components as item >
 					<#if  item.components?has_content >
 					<li class="mm-dropdown">
-						<a href="javascript:void(0);" data-menu-item="${item.name}"><#if item.isSetIcon()><i class="menu-icon fa ${item.icon}"></i> </#if><span class="mm-text">${item.title}</span></a>
+						<a href="javascript:void(0);" data-menu-item="${item.name}"> <#if item.isSetIcon()><i class="menu-icon fa ${item.icon}"></i><#else><i class="menu-icon fa fa-folder-o"></i></#if><span class="mm-text">${item.title}</span></a>
 						<ul>
 							<#list item.components as sub_item >
 								<#if sub_item.components?has_content >
 								<li class="dropdown-submenu">
-									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-menu-item="${sub_item.name}"><span class="mm-text">${sub_item.title}</span></a>
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-menu-item="${sub_item.name}"><#if sub_item.isSetIcon()><i class="menu-icon fa ${sub_item.icon}"></i> </#if><span class="mm-text">${sub_item.title}</span></a>
 									<ul class="dropdown-menu">
 									<#list sub_item.components as sub_sub_item >
 										<li><a href="${sub_sub_item.page}" data-menu-item="${sub_sub_item.name}"> <span class="mm-text">${ sub_sub_item.title }</span></a></li>
@@ -139,7 +139,7 @@
 									</ul>
 								</li>
 								<#else>								
-									<li><a tabindex="-1" href="${sub_item.page}" data-menu-item="${sub_item.name}"><span class="mm-text">${sub_item.title}</span></a></li>
+									<li><a tabindex="-1" href="${sub_item.page}" data-menu-item="${sub_item.name}"><#if sub_item.isSetIcon()><i class="menu-icon fa ${sub_item.icon}"></i> </#if><span class="mm-text">${sub_item.title}</span></a></li>
 								</#if>								
 							</#list>
 						</ul>					
