@@ -364,12 +364,12 @@
 					renderTo.find('.navbar-toggle-aside-menu').click(function(e){
 						var target = $(this).attr("href");
 						if($(target).is(":visible")){
-							$(target).hide();
+							common.ui.animate($(target), 'slideOutRight');		
 							$("body").removeClass("aside-menu-in");
 						}
 						else{
 							$("body").addClass("aside-menu-in");							
-							common.ui.animate_v3($(target), 'slideInRight');							
+							common.ui.animate($(target), 'slideInRight');							
 							$(target).show();
 						}
 						return false;							
