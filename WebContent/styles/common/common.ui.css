@@ -68,4 +68,9 @@ body.aside-menu-in{
 .aside-menu .dropdown-menu>li>a:hover{
 	background: #222222;
 	
-} 
+}
+
+.aside-menu .header {
+position: relative;
+border-bottom: solid 2px #616161;
+}
