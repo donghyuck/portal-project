@@ -783,7 +783,7 @@
 			#if ( isSystem ) {#
 			<li><a href="/secure/main.do" class="btn-link">시스템 관리</a></li>
 			# } #			
-			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link">  로그아웃</a></li>
+			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i>  로그아웃</a></li>
 		</ul>		
 		
 		# } # 
