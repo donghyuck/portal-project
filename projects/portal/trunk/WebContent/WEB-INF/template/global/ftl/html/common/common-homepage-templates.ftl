@@ -791,18 +791,20 @@
 			<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
 		<h5 class="side-section-title">MY CLOUD MENU</h5>
-		<nav class="navbar navbar-default">
-		<ul class="nav navbar-nav navbar-left">		
-			<li class="dropdown">
-				<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드</a>
-				<ul class="dropdown-menu">
-					<li><a href="/main.do?view=personalized">My 페이지</a></li>
-					<li><a href="/main.do?view=streams">My 스트림</a></li>
-					<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
-				</ul>
-			</li>
-		</ul>		 
-		</nav>
+		<div class="account-content header" >	
+			<nav class="navbar navbar-default">
+				<ul class="nav navbar-nav navbar-left">		
+					<li class="dropdown">
+						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드</a>
+						<ul class="dropdown-menu">
+							<li><a href="/main.do?view=personalized">My 페이지</a></li>
+							<li><a href="/main.do?view=streams">My 스트림</a></li>
+							<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
+						</ul>
+					</li>
+				</ul>		 
+			</nav>
+		</div>
 		# } # 		
 	</section>		
 </script>	
