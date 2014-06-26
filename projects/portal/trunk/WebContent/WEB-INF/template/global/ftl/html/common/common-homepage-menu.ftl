@@ -40,12 +40,13 @@
 								<span class="fa fa-bars"></span>
 							</button>					
 							<a class="navbar-brand" href="/main.do">
-								<img id="logo-header" src="/download/logo/company/INKIUM" width="175" class="img-responsive" alt="Logo">
+								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" width="175" class="img-responsive" alt="Logo">
 							</a>
 						</div>												
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
-							<ul id="account-navbar" class="nav navbar-nav navbar-right"></ul>
+							<ul id="account-navbar" class="nav navbar-nav navbar-right">
+							</ul>
 							<!-- /account -->
 							<ul class="nav navbar-nav">
 								<#list webSiteMenu.components as item >
