@@ -775,7 +775,7 @@
 		<div class="overflow-h">
 			<span class="font-s">#:name# (#:email #)</span>
 			<p class="color-green">소속: <span class="hex"> #= company.displayName #</span></p>	
-			<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+			
 		</div>
 		<ul class="list-unstyled who margin-bottom-30">
 			<li><a href="\\#"><i class="fa fa-user"></i>#:name#</a></li>
@@ -791,7 +791,8 @@
 			# } #			
 			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i>  로그아웃</a></li>
 		</ul>		
-		
+		<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+		<a href="/logout" class="btn btn-danger btn-sm"><i class="fafa-sign-out"></i> 로그아웃</a>
 		# } # 
 
 	    <h5 class="side-section-title">Contact information</h5>
