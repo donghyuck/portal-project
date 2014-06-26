@@ -50,7 +50,7 @@
 			if( animate.indexOf("Out") > -1){
 				$(this).hide().removeClass(animate + ' animated');
 			}else{
-				$(this).show().removeClass(animate + ' animated');
+				$(this).removeClass(animate + ' animated');
 			}
 			if(isFunction(always))
 				always();			
