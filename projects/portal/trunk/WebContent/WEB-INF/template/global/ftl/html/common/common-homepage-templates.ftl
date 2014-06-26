@@ -776,19 +776,15 @@
 			<p class="color-green">소속: <span class="hex"> #= company.displayName #</span></p>	
 			<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
 		</div>
-		<hr>
-		<ul class="list-unstyled save-job">
-			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
-			#if ( isSystem ) {#
-			<li><a href="/secure/main.do" class="btn-link">시스템 관리</a></li>
-			# } #			
-			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i> 로그아웃</a></li>
-		</ul>		
 		
 		<ul class="nav nav-stacked">
 			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
+				#if ( isSystem ) {#
+			<li><a href="/secure/main.do" class="btn-link">시스템 관리</a></li>
+			# } #			
 			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link">  로그아웃</a></li>
 		</ul>		
+		
 		# } # 
 			    
 	    <h5 class="side-section-title">Social media</h5>
