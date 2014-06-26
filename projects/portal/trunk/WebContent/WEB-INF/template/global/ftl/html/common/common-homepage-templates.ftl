@@ -766,14 +766,9 @@
 		</a>
 	</li>		
 	<section id="my-aside-menu" class="aside-menu">
-		<form class="form-inline form-search">
-	        <div class="input-group">
-	            <input type="search" class="form-control" placeholder="Search...">
-	            <span class="input-group-btn">
-	                <button id="btnHideAsideMenu" class="btn btn-close" type="button" title="Hide sidebar"><i class="fa fa-times"></i></button>
-	            </span>
-	        </div>
-	    </form>
+	
+		<button type="button" class="btn-close">Close</button>
+	
 		
 	    <h5 class="side-section-title">Optional sidebar menu</h5>
 	    <div class="nav">
