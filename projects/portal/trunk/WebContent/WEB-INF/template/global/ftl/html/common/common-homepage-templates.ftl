@@ -789,18 +789,8 @@
 			# } #			
 		</div>
 		<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
-		 <h5 class="side-section-title">MY CLOUD</h5>
-		<ul class="nav nav-stacked">
-			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
-			#if ( isSystem ) {#
-			<li><a href="/secure/main.do" class="btn-link">시스템 관리</a></li>
-			# } #			
-			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i>  로그아웃</a></li>
-		</ul>				 
-		# } # 
-
-<ul class="nav navbar-nav navbar-right">		
-					<p class="navbar-text hidden-xs">&nbsp;</p>
+		 <h5 class="side-section-title">MY CLOUD MENU</h5>
+			<ul class="nav navbar-nav navbar-left">		
 					<li class="dropdown">
 						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -809,11 +799,11 @@
 							<li class="divider"></li>
 							<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
 						</ul>
-					</li>										
-					<li><a href="\\#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
-					<li><a href="\\#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
-					<p class="navbar-text hidden-xs">&nbsp;</p>
-				</ul>
+					</li>
+				</ul>		 
+		# } # 
+
+
 
 
 	</section>		
