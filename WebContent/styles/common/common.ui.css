@@ -44,6 +44,14 @@ body.aside-menu-in{
 }
 
 .aside-menu .contact-info, .aside-menu .profile-info {
-padding: 15px;
-color: #fff;
+	padding: 15px;
+	color: #fff;
+}
+.aside-menu .contact-info h5, .aside-menu .contact-info p {
+	color: #fff;
+	font-size: 12px;
+}
+
+.contact-info h5 {
+	margin: 0;
 }
