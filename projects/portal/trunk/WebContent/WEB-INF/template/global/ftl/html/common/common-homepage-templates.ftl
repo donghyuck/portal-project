@@ -767,44 +767,41 @@
 	</li>		
 	<section id="my-aside-menu" class="aside-menu">	
 		<button type="button" class="btn-close">Close</button>		
-	    <h5 class="side-section-title">Optional sidebar menu</h5>
-	<div class="account-content" >	
+		<h5 class="side-section-title">Optional sidebar menu</h5>		
 		# if ( !anonymous ) { # 	
-		<img class="img-profile img-rounded" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
-		<div class="margin-bottom-10">		
+		<div class="account-content" >		
+			<img class="img-profile img-rounded" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
+			<div class="margin-bottom-10">		
+			</div>
+			<ul class="list-unstyled who margin-bottom-30">
+				<li><a href="\\#"><i class="fa fa-user"></i>#:name#</a></li>
+				<li><a href="\\#"><i class="fa fa-envelope"></i>#:email #</a></li>
+				<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
+				<!--
+				<li><a href="\\#"><i class="fa fa-phone"></i></a></li>
+				<li><a href="\\#"><i class="fa fa-globe"></i></a></li>			
+				-->
+			</ul>		
+			<div class="btn-group btn-group-sm">
+				<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+				#if ( isSystem ) {#
+				<a href="/secure/main.do" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
+				# } #			
+			</div>
+			<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
-		<ul class="list-unstyled who margin-bottom-30">
-			<li><a href="\\#"><i class="fa fa-user"></i>#:name#</a></li>
-			<li><a href="\\#"><i class="fa fa-envelope"></i>#:email #</a></li>
-			<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
-			<!--
-			<li><a href="\\#"><i class="fa fa-phone"></i></a></li>
-			<li><a href="\\#"><i class="fa fa-globe"></i></a></li>			
-			-->
-		</ul>		
-		<div class="btn-group btn-group-sm">
-			<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
-			#if ( isSystem ) {#
-			<a href="/secure/main.do" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
-			# } #			
-		</div>
-		<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
-		 <h5 class="side-section-title">MY CLOUD MENU</h5>
-			<ul class="nav navbar-nav navbar-left">		
-					<li class="dropdown">
-						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드<b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="/main.do?view=personalized">My 페이지</a></li>
-							<li><a href="/main.do?view=streams">My 스트림</a></li>
-							<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
-						</ul>
-					</li>
-				</ul>		 
-		# } # 
-
-
-
-
+		<h5 class="side-section-title">MY CLOUD MENU</h5>
+		<ul class="nav navbar-nav navbar-left">		
+			<li class="dropdown">
+				<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드</a>
+				<ul class="dropdown-menu">
+					<li><a href="/main.do?view=personalized">My 페이지</a></li>
+					<li><a href="/main.do?view=streams">My 스트림</a></li>
+					<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
+				</ul>
+			</li>
+		</ul>		 
+		# } # 		
 	</section>		
 </script>	
 
