@@ -773,9 +773,7 @@
 		# if ( !anonymous ) { # 	
 		<img class="img-profile img-rounded" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
 		<div class="overflow-h">
-			<span class="font-s">#:name# (#:email #)</span>
-			<p class="color-green">소속: <span class="hex"> #= company.displayName #</span></p>	
-			
+			<span class="font-s">#:username#</span>			
 		</div>
 		<ul class="list-unstyled who margin-bottom-30">
 			<li><a href="\\#"><i class="fa fa-user"></i>#:name#</a></li>
