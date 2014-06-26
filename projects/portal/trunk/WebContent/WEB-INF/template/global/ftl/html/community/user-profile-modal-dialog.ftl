@@ -200,7 +200,7 @@
 					<div class="alert alert-danger no-margin-bottom block-space-10">								
 						<i class="fa fa-info"></i> 마지막으로 <span data-bind="text: lastProfileUpdate">${user.lastProfileUpdate}</span> 에 수정하였습니다. 사진를 클릭하면 새로운 사진을 업로드 하실 수 있습니다. 
 					</div>
-					<div class="blank-top-5" ></div>					
+					<div class="tab-v1" >					
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs" id="my-profile-tab">
 							<li class="active"><a href="#profile-basic-info" data-toggle="tab">기본정보</a></li>
@@ -281,7 +281,8 @@
 								<div class="blank-top-5" ></div>
 								준비중입니다.
 							</div>	
-						</div>					
+						</div>
+					</div>						
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
