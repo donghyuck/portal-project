@@ -817,15 +817,15 @@
                                         </div>
                                     </div>
 
-                                    <h3 class="heading-xs">PHP/WordPress <span class="pull-right">76%</span></h3>
+                                    <h3 class="heading-xs">메일 <span class="pull-right">76%</span></h3>
                                     <div class="progress progress-u progress-xs">
-                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%">
+                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
                                         </div>
                                     </div>
 
-                                    <h3 class="heading-xs">HTML/CSS <span class="pull-right">97%</span></h3>
+                                    <h3 class="heading-xs">파일<span class="pull-right">97%</span></h3>
                                     <div class="progress progress-u progress-xs">
-                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%">
+                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
                                         </div>
                                     </div>				
 				 </div>			 
