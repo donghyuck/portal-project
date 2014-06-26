@@ -9,6 +9,7 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
+			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			
 			'css!${request.contextPath}/styles/codedrop/cbpSlidePushMenus.css',
 			'css!${request.contextPath}/styles/codedrop/codedrop.overlay.css',
@@ -973,62 +974,7 @@
 			max-width: 600px;
 			width: 100%;
 		}
-				
-		#personalized-controls {
-			position: absolute;
-			top: 50px;
-			left:0;
-			min-height: 300px;
-			padding: 10px;
-			width: 100%;
-			z-index: 1000;
-			overflow: hidden;
-			background-color: rgba(91,192,222,0.8)		
-		}		
-		
-		
-		#personalized-controls-section{
-			margin-top: 0px;
-			padding : 0px;
-		}
-		
-		#personalized-controls-section.cbp-spmenu-vertical {
-			width: 565px;
-		}
-		
-		#personalized-controls-section.cbp-spmenu-right {
-			right: -565px;
-			z-index: 2000;
-		}
-		
-		#personalized-controls-section.cbp-spmenu-right.cbp-spmenu-open {
-			right : 0px;
-			overflow-x:hidden;
-			overflow-y:auto;			
-		}
 
-		@media (max-width: 768px ) {
-			#personalized-controls-section.cbp-spmenu-vertical {
-				width: 100%;
-			}			
-			#personalized-controls-section.cbp-spmenu-right {
-				right: -100%;
-			}		
-		} 
-		
-		.cbp-spmenu {
-			background : #ffffff;
-		}
-		
-		.cbp-spmenu-vertical header {
-			1px solid #258ecd;
-			margin : 0px;
-			padding : 5px;
-			color : #000000;
-			background : #5bc0de; /* transparent;        	*/
-			height: 90px;        	
-		}
-		
 		.image-grid {
 			padding-top:2px;
 			padding-buttom:0px;
@@ -1042,22 +988,7 @@
 			height: 350px;
 		}
 				
-				
-		.cbp-hsmenu-wrapper .cbp-hsmenu {
-			width:100%;
-		}
-		
-		.cbp-hsmenu > li > a {
-			color: #fff;
-			font-size: 1em;
-			line-height: 3em;
-			display: inline-block;
-			position: relative;
-			z-index: 10000;
-			outline: none;
-			text-decoration: none;
-		}
-		
+
 		blockquote {
 			font-size: 11pt;
 		}
