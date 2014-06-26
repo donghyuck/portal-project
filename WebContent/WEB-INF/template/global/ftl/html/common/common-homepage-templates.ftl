@@ -765,7 +765,7 @@
 		# } #
 		</a>
 	</li>		
-	<section id="my-aside-menu" class="aside-menu" style="display: block;">
+	<section id="my-aside-menu" class="aside-menu">
 		<form class="form-inline form-search">
 	        <div class="input-group">
 	            <input type="search" class="form-control" placeholder="Search...">
