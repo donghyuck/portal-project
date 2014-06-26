@@ -798,19 +798,24 @@
 			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i>  로그아웃</a></li>
 		</ul>				 
 		# } # 
-<div class="dropdown">
-  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
-    Dropdown
-    <span class="caret"></span>
-  </button>
-  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Another action</a></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Something else here</a></li>
-    <li role="presentation" class="divider"></li>
-    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Separated link</a></li>
-  </ul>
-</div>
+
+<ul class="nav navbar-nav navbar-right">		
+					<p class="navbar-text hidden-xs">&nbsp;</p>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="/main.do?view=personalized">My 페이지</a></li>
+							<li><a href="/main.do?view=streams">My 스트림</a></li>
+							<li class="divider"></li>
+							<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
+						</ul>
+					</li>										
+					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
+					<li><a href="#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
+					<p class="navbar-text hidden-xs">&nbsp;</p>
+				</ul>
+
+
 	</section>		
 </script>	
 
