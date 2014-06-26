@@ -1075,36 +1075,6 @@
 	<body id="doc" class="bg-gray">
 		<!-- START HEADER -->		
 		<#include "/html/common/common-homepage-menu.ftl" >		
-		<!-- start of personalized menu -->
-		<nav class="personalized-navbar navbar" role="navigation">
-			<div class="container">
-				<ul class="nav navbar-nav navbar-left">				
-					<p class="navbar-text hidden-xs">&nbsp;</p>	
-					<p class="navbar-text hidden-xs text-primary"><small>위젯 레이아웃</small></p>	
-					<li class="navbar-btn hidden-xs">
-												
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">		
-					<p class="navbar-text hidden-xs">&nbsp;</p>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
-							<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
-							<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
-							<li class="divider"></li>
-							<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
-							</#if>								
-						</ul>
-					</li>										
-					<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud fa-lg"></i></a></li>					
-					<li><a href="#" class="btn btn-link btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
-					<p class="navbar-text hidden-xs">&nbsp;</p>
-				</ul>
-			</div>
-		</nav>
-		<!-- end of personalized menu -->
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
 		<section class="container-fluid" style="min-height:600px;">		
