@@ -1,12 +1,18 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="homepage">
 <head>
-		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
+		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>		
+		<!--
+		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/fonts/nanumpenscript.css" />
+		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.themes/unify/themes/blue.css" />	
+		-->		
 		<script type="text/javascript">
 		<!--
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
+			'css!${request.contextPath}/styles/fonts/nanumpenscript.css',
+			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/headroom/headroom.min.js',
