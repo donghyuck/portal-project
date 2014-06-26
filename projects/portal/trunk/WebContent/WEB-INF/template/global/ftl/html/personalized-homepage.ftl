@@ -49,13 +49,13 @@
 						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');	
 						$('#account-navbar').find('.btn-control-group [data-action="open-spmenu"]').click(function(e){
 							$('body').toggleClass('modal-open');
-							if( $('#personalized-controls-section').hasClass("hide") )
-								$('#personalized-controls-section').removeClass("hide");							
-								$('body div.overlay').toggleClass('hide');										
-								slide_effect.play().then(function(){							
-									$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-								});
-							}		
+							if( $('#personalized-controls-section').hasClass("hide") ){
+								$('#personalized-controls-section').removeClass("hide");
+							}								
+							$('body div.overlay').toggleClass('hide');										
+							slide_effect.play().then(function(){							
+								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
+							});									
 						});						
 					}
 				});		
