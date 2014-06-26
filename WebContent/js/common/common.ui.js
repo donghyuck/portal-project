@@ -357,6 +357,19 @@
 							}	
 						});
 					}
+				}else{
+					renderTo.find('.navbar-toggle-aside-menu').click(function(e){
+						var target = $(this).attr("href");
+						if($(target).is(":visible")){
+							$(target).hide();
+							$("body").removeClass("aside-menu-in");
+						}
+						else{
+							$("body").addClass("aside-menu-in");
+							$(target).show();
+						}
+						return false;							
+					});					
 				}
 				that.trigger(SHOWN);
 			}	
