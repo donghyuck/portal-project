@@ -361,19 +361,30 @@
 						});
 					}
 				}else{
-					renderTo.find('.navbar-toggle-aside-menu').click(function(e){
-						var target = $(this).attr("href");
-						if($(target).is(":visible")){
-							common.ui.animate($(target), 'slideOutRight');		
-							$("body").removeClass("aside-menu-in");
-						}
-						else{
-							$("body").addClass("aside-menu-in");							
-							common.ui.animate($(target), 'slideInRight');							
-							$(target).show();
-						}
-						return false;							
-					});					
+					var aside= renderTo.find('.navbar-toggle-aside-menu');
+					if( aside.length > 0 ){
+						
+						var target = aside.attr("href");
+						$( target + ' button.btn-close:first').click(function(e){
+							if($(target).is(":visible")){
+								common.ui.animate($(target), 'slideOutRight');		
+								$("body").removeClass("aside-menu-in");
+							}
+						});						
+						aside.click(function(e){
+							//var target = $(this).attr("href");
+							if($(target).is(":visible")){
+								common.ui.animate($(target), 'slideOutRight');		
+								$("body").removeClass("aside-menu-in");
+							}
+							else{
+								$("body").addClass("aside-menu-in");							
+								common.ui.animate($(target), 'slideInRight');							
+								$(target).show();
+							}
+							return false;							
+						});					
+					}					
 				}
 				that.trigger(SHOWN);
 			}	
