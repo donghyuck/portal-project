@@ -14,6 +14,71 @@
 @import url(../../common.plugins/animate.css);
 @import url(../../common.plugins/box-shadows.css);
 
+
+**/
+/*Account nav
+------------------------------------*/
+.header li.account {
+	color: #aaa;
+	cursor: pointer;
+	min-width: 35px;
+	font-size: 15px;
+	text-align: center;
+	background: #f7f7f7;
+	display: inline-block;	
+}
+
+.header .navbar-default .navbar-nav > li > a.btn-account {
+	border: 0px;
+	padding: 2px 2px 2px 2px;
+	border-bottom: solid 2px #5fb611;
+}
+
+.header .navbar-default .navbar-nav > li > a.btn-account:hover, .header .navbar-default .navbar-nav > li > a.btn-account:focus, .header .navbar-default .navbar-nav > li >  a.btn-account:active {
+	background-color: transparent;
+	opacity : .7;
+}
+
+.header .navbar-default .navbar-nav > li.open > a.btn-account {
+	border-bottom: solid 2px #5fb611;
+}
+
+.header li.account.open .account-content {
+	position: absolute;
+	left: auto;
+	right: 0;
+}
+
+.header li.account .account-content {
+	position: fixed;
+	left: -999px;
+	width: 350px;
+	right: 0;
+	text-align: left;
+	padding: 10px;
+	font-family: "나눔 고딕", "Nanum Gothic";
+	line-height: 24px;
+	list-style: none;
+	background-color: #fff;
+	background-clip: padding-box;
+	border: 1px solid rgba(0,0,0,.15);
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);	
+	font-size: 13px;
+	cursor: default;
+}
+
+.account-content  img.img-profile {
+ 	float: left;	
+	width: 90px;
+	height: auto;
+	margin-right: 10px;
+}
+ 
+.account-content hr {
+	margin: 15px 0;
+}
+
 /*Boxed Layout
 ------------------------------------*/
 .wrapper {
