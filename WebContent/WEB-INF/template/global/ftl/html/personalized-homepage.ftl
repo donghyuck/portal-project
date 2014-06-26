@@ -45,9 +45,9 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){						
-						$('#account-navbar').append('<li><a href="#" class="btn btn-link btn-control-group" data-action="open-spmenu"><i class="fa fa-cog fa-lg"></i></a></li>');
+						$('#account-navbar').append('<li><a href="#" class="btn btn-control-group" data-action="open-spmenu"><i class="fa fa-cog fa-lg"></i></a></li>');
 						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');	
-						$('#account-navbar').find('a.btn-control-group [data-action="open-spmenu"]').click(function(e){
+						$('#account-navbar').find('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
 							$('body').toggleClass('modal-open');
 							if( $('#personalized-controls-section').hasClass("hide") ){
 								$('#personalized-controls-section').removeClass("hide");
