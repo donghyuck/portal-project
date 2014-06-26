@@ -784,28 +784,13 @@
 			# } #			
 			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i> 로그아웃</a></li>
 		</ul>		
+		
+		<ul class="nav nav-stacked">
+			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
+			<li><a href="#"><i class="fa fa-sign-out" class="btn-link">  로그아웃</a></li>
+		</ul>		
 		# } # 
 			    
-	    <div class="nav">
-	    	<ul>
-	        	<li>
-	            	<a href="\\#">Home</a>
-	            </li>
-	            <li>
-	            	<a href="\\#">About us</a>
-	            </li>
-	            <li>
-	            	<a href="\\#">Blog</a>
-	            </li>
-	            <li>
-	            	<a href="\\#">Work</a>
-	            </li>
-	            <li>
-	            	<a href="\\#">Online shop</a>
-	            </li>
-	        </ul>
-	    </div>
-	    
 	    <h5 class="side-section-title">Social media</h5>
 	    <div class="social-media">
 	        <a href="\\#"><i class="fa fa-facebook facebook"></i></a>
