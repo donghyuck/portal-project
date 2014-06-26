@@ -12,3 +12,8 @@
 	border-left: 1px solid #333;
 	display: none;
 }
+
+body.aside-menu-in{
+	overflow-y: none;
+	
+}
