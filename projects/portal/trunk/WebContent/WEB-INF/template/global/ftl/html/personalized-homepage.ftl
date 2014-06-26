@@ -42,7 +42,7 @@
 					</#if>
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-					}				
+					},				
 					shown : function(e){						
 						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
 						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');	
