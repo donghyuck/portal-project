@@ -792,7 +792,7 @@
 		</div>
 		<h5 class="side-section-title">MY CLOUD MENU</h5>
 		<div class="account-content" >
-			<div class="side-section-menu">	
+			<div class="side-section-nav">	
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav navbar-left">		
 					<li class="dropdown">
