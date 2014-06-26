@@ -768,12 +768,10 @@
 	<section id="my-aside-menu" class="aside-menu">	
 		<button type="button" class="btn-close">Close</button>		
 	    <h5 class="side-section-title">Optional sidebar menu</h5>
-	<div class="account-content" >
-	
+	<div class="account-content" >	
 		# if ( !anonymous ) { # 	
 		<img class="img-profile img-rounded" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
-		<div class="overflow-h">
-			<span class="font-s">#:username#</span>			
+		<div class="margin-bottom-10">		
 		</div>
 		<ul class="list-unstyled who margin-bottom-30">
 			<li><a href="\\#"><i class="fa fa-user"></i>#:name#</a></li>
