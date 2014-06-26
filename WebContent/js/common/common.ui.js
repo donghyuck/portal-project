@@ -365,7 +365,8 @@
 							$("body").removeClass("aside-menu-in");
 						}
 						else{
-							$("body").addClass("aside-menu-in");
+							$("body").addClass("aside-menu-in");							
+							common.ui.animate_v3($(target), 'slideInRight');							
 							$(target).show();
 						}
 						return false;							
