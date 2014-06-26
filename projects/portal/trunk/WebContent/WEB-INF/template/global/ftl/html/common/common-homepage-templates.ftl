@@ -765,17 +765,11 @@
 		# } #
 		</a>
 	</li>		
-	<section id="my-aside-menu" class="aside-menu">
-	
-		<button type="button" class="btn-close">Close</button>
-	
-		
+	<section id="my-aside-menu" class="aside-menu">	
+		<button type="button" class="btn-close">Close</button>		
 	    <h5 class="side-section-title">Optional sidebar menu</h5>
 	<div class="account-content" >
-		# if ( !anonymous ) { # 
-		<div class="alert alert-danger fade in">
-			<i class="fa fa-warning"></i> <strong>Oh snap!</strong> Change a few things up and try submitting again.
-		</div>			
+		# if ( !anonymous ) { # 	
 		<img class="img-profile img-thumbnail" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
 		<div class="overflow-h">
 			<span class="font-s">#:name# (#:email #)</span>
