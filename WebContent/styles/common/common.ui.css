@@ -42,3 +42,8 @@ body.aside-menu-in{
 	text-transform: uppercase;
 	color: #616161;
 }
+
+.aside-menu .contact-info, .aside-menu .profile-info {
+padding: 15px;
+color: #fff;
+}
