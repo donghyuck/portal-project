@@ -800,18 +800,19 @@
 			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i>  로그아웃</a></li>
 		</ul>				 
 		# } # 
-
-	    <h5 class="side-section-title">MY CLOUD</h5>
-	    <div class="contact-info">
-	        <h5>Address</h5>
-	        <p>5th Avenue, New York - United States</p>
-	        
-	        <h5>Email</h5>
-	        <p>hello@webpixels.ro</p>
-	        
-	        <h5>Phone</h5>
-	        <p>+10 724 1234 567</p>
-	    </div>
+<div class="dropdown">
+  <button class="btn dropdown-toggle sr-only" type="button" id="dropdownMenu1" data-toggle="dropdown">
+    Dropdown
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Another action</a></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Something else here</a></li>
+    <li role="presentation" class="divider"></li>
+    <li role="presentation"><a role="menuitem" tabindex="-1" href="\\#">Separated link</a></li>
+  </ul>
+</div>
 	</section>		
 </script>	
 
