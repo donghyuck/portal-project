@@ -1083,17 +1083,7 @@
 					<p class="navbar-text hidden-xs">&nbsp;</p>	
 					<p class="navbar-text hidden-xs text-primary"><small>위젯 레이아웃</small></p>	
 					<li class="navbar-btn hidden-xs">
-						<div class="btn-group navbar-btn" data-toggle="buttons">
-							<label class="btn btn-info">
-								<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-							</label>
-							<label class="btn btn-info active">
-						 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
-							</label>
-							<label class="btn btn-info">
-								<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
-							</label>
-						</div>										
+												
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">		
@@ -1158,11 +1148,17 @@
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>							
-				<div class="btn-group">
-					<button type="button" class="btn btn-info"><i class="fa fa-cog"></i></button>
-					<button type="button" class="btn btn-info"><i class="fa fa-comment"></i></button>
-					<button type="button" class="btn btn-info"><i class="fa fa-envelope"></i></button>
-				</div>
+						<div class="btn-group navbar-btn" data-toggle="buttons">
+							<label class="btn btn-info">
+								<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+							</label>
+							<label class="btn btn-info active">
+						 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
+							</label>
+							<label class="btn btn-info">
+								<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
+							</label>
+						</div>				
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
 			<div class="blank-top-5" ></div>
