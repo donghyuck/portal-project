@@ -790,8 +790,14 @@
 			</div>
 			<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
+		
 		<h5 class="side-section-title">MY CLOUD MENU</h5>
-		<div class="account-content" >
+		<div class="row">
+			<div class="col-md-6">
+			 </div>
+			<div class="col-md-6">
+			 </div>			 
+		</div>
 			<div class="side-section-nav">	
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav navbar-left">		
@@ -827,8 +833,6 @@
                                     </div>
                                 </div>
                                 
-			
-		</div>
 		# } # 		
 	</section>		
 </script>	
