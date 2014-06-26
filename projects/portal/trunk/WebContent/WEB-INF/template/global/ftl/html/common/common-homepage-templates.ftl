@@ -792,11 +792,10 @@
 		 <h5 class="side-section-title">MY CLOUD MENU</h5>
 			<ul class="nav navbar-nav navbar-left">		
 					<li class="dropdown">
-						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
+						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드<b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="/main.do?view=personalized">My 페이지</a></li>
 							<li><a href="/main.do?view=streams">My 스트림</a></li>
-							<li class="divider"></li>
 							<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
 						</ul>
 					</li>
