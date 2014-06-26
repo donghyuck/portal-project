@@ -777,7 +777,12 @@
 			<p class="color-green">소속: <span class="hex"> #= company.displayName #</span></p>	
 			<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
 		</div>
-		
+		<ul class="list-unstyled who margin-bottom-30">
+			<li><a href="\\#"><i class="fa fa-home"></i>5B Streat, City 50987 New Town US</a></li>
+			<li><a href="\\#"><i class="fa fa-envelope"></i>info@example.com</a></li>
+			<li><a href="\\#"><i class="fa fa-phone"></i>1(222) 5x86 x97x</a></li>
+			<li><a href="\\#"><i class="fa fa-globe"></i>http://www.example.com</a></li>
+		</ul>		
 		<ul class="nav nav-stacked">
 			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
 			#if ( isSystem ) {#
