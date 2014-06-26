@@ -794,7 +794,7 @@
 		<h5 class="side-section-title">MY CLOUD MENU</h5>
 		<div class="account-content" >	
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-xs-6">
 			<div class="side-section-nav">	
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav navbar-left">		
@@ -810,7 +810,7 @@
 			</nav>
 			</div>				 
 				 </div>
-				<div class="col-md-6">
+				<div class="col-xs-6">
                                     <h3 class="heading-xs">전체 사용량 <span class="pull-right">88%</span></h3>
                                     <div class="progress progress-u progress-xs">
                                         <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
