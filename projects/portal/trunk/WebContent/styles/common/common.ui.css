@@ -57,6 +57,9 @@ body.aside-menu-in{
 }
 
 .aside-menu .account-content {
-	
-	
+	text-align: left;
+	padding: 10px;
+	line-height: 24px;
+	list-style: none;
+	color : #fff;
 }
