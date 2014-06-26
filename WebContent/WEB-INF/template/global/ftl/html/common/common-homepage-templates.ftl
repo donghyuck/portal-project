@@ -791,7 +791,8 @@
 			<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
 		<h5 class="side-section-title">MY CLOUD MENU</h5>
-		<div class="account-content header" >	
+		<div class="account-content" >
+			<div class="header">	
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav navbar-left">		
 					<li class="dropdown">
@@ -804,6 +805,7 @@
 					</li>
 				</ul>		 
 			</nav>
+			</div>
 		</div>
 		# } # 		
 	</section>		
