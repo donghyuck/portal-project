@@ -75,3 +75,16 @@ position: relative;
 border-bottom: solid 2px #616161;
 /*margin: 0px 10px 0px 10px;*/
 }
+
+
+.header .navbar .nav > li > .options {
+	color: #aaa;
+	cursor: pointer;
+	min-width: 35px;
+	font-size: 15px;
+	text-align: center;
+	background: #f7f7f7;
+	padding: 11px 0 12px;
+	display: inline-block;
+	border-bottom: solid 2px #aaa;	
+}
