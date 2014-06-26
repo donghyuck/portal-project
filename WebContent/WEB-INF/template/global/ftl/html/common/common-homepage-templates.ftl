@@ -781,8 +781,10 @@
 			<li><a href="\\#"><i class="fa fa-user"></i>#:name#</a></li>
 			<li><a href="\\#"><i class="fa fa-envelope"></i>#:email #</a></li>
 			<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
+			<!--
 			<li><a href="\\#"><i class="fa fa-phone"></i></a></li>
 			<li><a href="\\#"><i class="fa fa-globe"></i></a></li>			
+			-->
 		</ul>		
 		<ul class="nav nav-stacked">
 			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
@@ -791,7 +793,12 @@
 			# } #			
 			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i>  로그아웃</a></li>
 		</ul>		
-		<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+		<div class="btn-group btn-group-sm">
+			<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+			#if ( isSystem ) {#
+			<a href="/secure/main.do" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
+			# } #			
+		</div>
 		<a href="/logout" class="btn btn-danger btn-sm"><i class="fafa-sign-out"></i> 로그아웃</a>
 		# } # 
 
