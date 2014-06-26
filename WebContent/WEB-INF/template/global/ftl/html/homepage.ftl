@@ -10,7 +10,7 @@
 		<!--
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/fonts/nanumpenscript.css',
+			'css!${request.contextPath}/styles/fonts/nanumgothic.css',
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
