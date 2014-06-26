@@ -4,7 +4,7 @@
 .aside-menu {
 	width: 280px;
 	height: 100%;
-	overflow-y: scroll;
+	/*overflow-y: scroll;*/
 	position: fixed;
 	right: 0;
 	top: 0;
