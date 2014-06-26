@@ -796,7 +796,7 @@
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav navbar-left">		
 					<li class="dropdown">
-						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드 <i class="fa fa-cloud fa-lg"></i></a>
+						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My <i class="fa fa-cloud fa-lg"></i></a>
 						<ul class="dropdown-menu">
 							<li><a href="/main.do?view=personalized">My 페이지</a></li>
 							<li><a href="/main.do?view=streams">My 스트림</a></li>
@@ -806,6 +806,28 @@
 				</ul>		 
 			</nav>
 			</div>
+
+<div class="col-md-6">
+                                    <h3 class="heading-xs">Web Design <span class="pull-right">88%</span></h3>
+                                    <div class="progress progress-u progress-xs">
+                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
+                                        </div>
+                                    </div>
+
+                                    <h3 class="heading-xs">PHP/WordPress <span class="pull-right">76%</span></h3>
+                                    <div class="progress progress-u progress-xs">
+                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%">
+                                        </div>
+                                    </div>
+
+                                    <h3 class="heading-xs">HTML/CSS <span class="pull-right">97%</span></h3>
+                                    <div class="progress progress-u progress-xs">
+                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+			
 		</div>
 		# } # 		
 	</section>		
