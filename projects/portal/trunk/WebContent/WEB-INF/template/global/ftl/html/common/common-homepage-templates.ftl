@@ -755,18 +755,68 @@
 <!-- Top Nav Account Status Template               -->
 <!-- ============================== -->
 <script id="account-template" type="text/x-kendo-template">
-<li class="account">
-	<a href="\\#my-aside-menu" class="btn btn-link btn-account dropdown-toggle dropdown-form-toggle">
-	# if ( anonymous ) { # 
-		<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
-	# }else{ # 
-		<span class="badge badge-blue rounded-2x pull-right">3</span>
-		<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34">
-	# } #
-	</a>
-</li>		
+	<li class="account">
+		<a href="\\#my-aside-menu" class="btn btn-link btn-account dropdown-toggle dropdown-form-toggle">
+		# if ( anonymous ) { # 
+			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
+		# }else{ # 
+			<span class="badge badge-blue rounded-2x pull-right">3</span>
+			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34">
+		# } #
+		</a>
+	</li>		
+	<section id="my-aside-menu" class="aside-menu" style="display: block;">
+		<form class="form-inline form-search">
+	        <div class="input-group">
+	            <input type="search" class="form-control" placeholder="Search...">
+	            <span class="input-group-btn">
+	                <button id="btnHideAsideMenu" class="btn btn-close" type="button" title="Hide sidebar"><i class="fa fa-times"></i></button>
+	            </span>
+	        </div>
+	    </form>
 		
+	    <h5 class="side-section-title">Optional sidebar menu</h5>
+	    <div class="nav">
+	    	<ul>
+	        	<li>
+	            	<a href="\\#">Home</a>
+	            </li>
+	            <li>
+	            	<a href="\\#">About us</a>
+	            </li>
+	            <li>
+	            	<a href="\\#">Blog</a>
+	            </li>
+	            <li>
+	            	<a href="\\#">Work</a>
+	            </li>
+	            <li>
+	            	<a href="\\#">Online shop</a>
+	            </li>
+	        </ul>
+	    </div>
+	    
+	    <h5 class="side-section-title">Social media</h5>
+	    <div class="social-media">
+	        <a href="\\#"><i class="fa fa-facebook facebook"></i></a>
+	        <a href="\\#"><i class="fa fa-google-plus google"></i></a>
+	        <a href="\\#"><i class="fa fa-twitter twitter"></i></a>
+	    </div>
+	    
+	    <h5 class="side-section-title">Contact information</h5>
+	    <div class="contact-info">
+	        <h5>Address</h5>
+	        <p>5th Avenue, New York - United States</p>
+	        
+	        <h5>Email</h5>
+	        <p>hello@webpixels.ro</p>
+	        
+	        <h5>Phone</h5>
+	        <p>+10 724 1234 567</p>
+	    </div>
+	</section>		
 </script>	
+
 <script id="account-template2" type="text/x-kendo-template">
 <li class="account">
 	<a href="javascript:void(0);" class="btn btn-link btn-account dropdown-toggle" data-toggle="dropdown">
