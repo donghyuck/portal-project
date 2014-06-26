@@ -771,6 +771,27 @@
 	
 		
 	    <h5 class="side-section-title">Optional sidebar menu</h5>
+	<div class="account-content" >
+		# if ( !anonymous ) { # 
+		<div class="alert alert-danger fade in">
+			<i class="fa fa-warning"></i> <strong>Oh snap!</strong> Change a few things up and try submitting again.
+		</div>			
+		<img class="img-profile img-thumbnail" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
+		<div class="overflow-h">
+			<span class="font-s">#:name# (#:email #)</span>
+			<p class="color-green">소속: <span class="hex"> #= company.displayName #</span></p>	
+			<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary btn-sm" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+		</div>
+		<hr>
+		<ul class="list-unstyled save-job">
+			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
+			#if ( isSystem ) {#
+			<li><a href="/secure/main.do" class="btn-link">시스템 관리</a></li>
+			# } #			
+			<li><a href="/logout"><i class="fa fa-sign-out" class="btn-link"></i> 로그아웃</a></li>
+		</ul>		
+		# } # 
+			    
 	    <div class="nav">
 	    	<ul>
 	        	<li>
