@@ -796,7 +796,7 @@
 			<nav class="navbar navbar-default">
 				<ul class="nav navbar-nav navbar-left">		
 					<li class="dropdown">
-						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드</a>
+						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My 클라우드 <i class="fa fa-cloud fa-lg"></i></a>
 						<ul class="dropdown-menu">
 							<li><a href="/main.do?view=personalized">My 페이지</a></li>
 							<li><a href="/main.do?view=streams">My 스트림</a></li>
