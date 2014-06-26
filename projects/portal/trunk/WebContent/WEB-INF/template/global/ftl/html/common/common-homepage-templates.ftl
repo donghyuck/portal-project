@@ -782,6 +782,8 @@
 			<li><a href="\\#"><i class="fa fa-envelope"></i>#:email #</a></li>
 			<li><a href="\\#"><i class="fa fa-phone"></i></a></li>
 			<li><a href="\\#"><i class="fa fa-globe"></i></a></li>
+			
+			<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
 		</ul>		
 		<ul class="nav nav-stacked">
 			<li><a href="${request.contextPath}/main.do?view=personalized" class="btn-link">마이 페이지</a></li>
