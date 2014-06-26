@@ -2,15 +2,10 @@
 <html decorator="homepage">
 <head>
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>		
-		<!--
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/fonts/nanumpenscript.css" />
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.themes/unify/themes/blue.css" />	
-		-->		
 		<script type="text/javascript">
 		<!--
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/fonts/nanumgothic.css',
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
@@ -26,22 +21,22 @@
 			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {
 						
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");				
+				// 1-1.  한글 지원을 위한 로케일 설정
+				common.api.culture();
+				// 1-2.  페이지 렌딩
+				common.ui.landing();		
+				
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
 					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if WebSiteUtils.isAllowedSignIn(action.webSite) ||  !action.user.anonymous  >
+					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
 					template : kendo.template($("#account-template").html()),
 					</#if>
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					}				
-				});					
-				
-				// top nav bar 
-				$("nav.navbar:first").headroom();				
+				});			
 				<#if !action.user.anonymous ></#if>	
 			}
 		}]);	
