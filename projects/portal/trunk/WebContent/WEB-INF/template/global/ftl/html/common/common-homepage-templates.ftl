@@ -770,7 +770,7 @@
 	    <h5 class="side-section-title">Optional sidebar menu</h5>
 	<div class="account-content" >
 		# if ( !anonymous ) { # 	
-		<img class="img-profile img-thumbnail" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
+		<img class="img-profile img-rounded" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
 		<div class="overflow-h">
 			<span class="font-s">#:name# (#:email #)</span>
 			<p class="color-green">소속: <span class="hex"> #= company.displayName #</span></p>	
