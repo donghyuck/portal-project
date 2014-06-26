@@ -46,7 +46,6 @@
 					},				
 					shown : function(e){						
 						$('#account-navbar').append('<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cog fa-lg"></i></a></li>');
-						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');	
 						$('#account-navbar').find('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
 							$('body').toggleClass('modal-open');
 							if( $('#personalized-controls-section').hasClass("hide") ){
