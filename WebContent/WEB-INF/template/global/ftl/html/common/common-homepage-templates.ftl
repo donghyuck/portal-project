@@ -799,7 +799,7 @@
 			<a href="/secure/main.do" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
 			# } #			
 		</div>
-		<a href="/logout" class="btn btn-danger btn-sm"><i class="fafa-sign-out"></i> 로그아웃</a>
+		<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		# } # 
 
 	    <h5 class="side-section-title">Contact information</h5>
