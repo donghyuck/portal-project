@@ -811,7 +811,7 @@
 			</div>				 
 				 </div>
 				<div class="col-md-6">
-                                    <h3 class="heading-xs">Web Design <span class="pull-right">88%</span></h3>
+                                    <h3 class="heading-xs">전체 사용량 <span class="pull-right">88%</span></h3>
                                     <div class="progress progress-u progress-xs">
                                         <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
                                         </div>
