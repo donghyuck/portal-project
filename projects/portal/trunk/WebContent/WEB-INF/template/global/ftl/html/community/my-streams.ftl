@@ -32,8 +32,7 @@
 				
 				// 2.  MEUN LOADING ...
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
-				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
-				
+				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );					
 				common.ui.handleActionEvents( $('.cbp-spmenu'), {
 					handlers : [
 						{ selector: "input[name='personalized-area-col-size']",
@@ -397,9 +396,7 @@
 				</ul>
 				<ul class="nav navbar-nav navbar-right">	
 					<li class="navbar-btn">						
-						<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
-							<button type="button" class="btn btn-info" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-						</div>
+
 					</li>	
 					<p class="navbar-text hidden-xs">&nbsp;</p>		
 					<li class="dropdown">
@@ -443,7 +440,14 @@
 						
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
-			<div class="blank-top-5" ></div>				
+			<h5 class="side-section-title">My 쇼셜네트워크</h5>
+			<div class="panel">
+				<div class="panel-body">
+					<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
+						<button type="button" class="btn btn-info" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+					</div>
+				</div>		
+			</div>							
 		</section>		
 		<section id="image-broswer" class="image-broswer"></section>	
 		<section id="external-content-widow"></section>
