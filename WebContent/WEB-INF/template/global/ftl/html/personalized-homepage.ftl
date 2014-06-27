@@ -1004,6 +1004,7 @@
 		</#compress>
 	</head>
 	<body id="doc" class="bg-gray">
+		<div class="wrapper">
 		<!-- START HEADER -->		
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- END HEADER -->	
@@ -1184,6 +1185,8 @@
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->			
+		
+		<div
 		<!-- START TEMPLATE -->				
 
 		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
