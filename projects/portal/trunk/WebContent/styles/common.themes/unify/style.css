@@ -2411,3 +2411,7 @@ ul.labels-demo li {
 	float: right;
 	padding-top:6px;
 }
+
+.scrollable{
+overflow-y: auto;	
+}
