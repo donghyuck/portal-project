@@ -40,7 +40,7 @@
 								<span class="fa fa-bars"></span>
 							</button>					
 							<a class="navbar-brand" href="/main.do">
-								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" width="175" class="img-responsive" alt="Logo">
+								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" width="175" class="img-responsive" alt="Logo" style="max-height: 45px;">
 							</a>
 						</div>												
 						<!-- Collect the nav links, forms, and other content for toggling -->
