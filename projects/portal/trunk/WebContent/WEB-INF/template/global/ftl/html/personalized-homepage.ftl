@@ -59,8 +59,7 @@
 							});									
 						});						
 					}
-				});		
-				
+				});						
 				
 				// 2.  MEUN 설정
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
@@ -1062,13 +1061,13 @@
 						</div>				
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
-			<div class="blank-top-5" ></div>
+			<div class="tabs-v1" >
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
 				<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
 				<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
 				</#if>						
-			</ul>	
+			</ul>				
 			<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 				<!-- start attachement tab-pane -->
 				<div class="tab-pane" id="my-files">
@@ -1174,7 +1173,8 @@
 								</div>
 							</div>	
 						</div><!-- end photos  tab-pane -->
-			</div><!-- end of tab content -->	
+				</div><!-- end of tab content -->
+			</div>	
 		</section>				
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
