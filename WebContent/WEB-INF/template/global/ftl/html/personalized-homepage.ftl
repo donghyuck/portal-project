@@ -1062,7 +1062,7 @@
 			</header>	
 			<div class="tab-v1" >
 			
-			<h5 class="side-section-title">Optional sidebar menu</h5>
+			<h5 class="side-section-title">My 클라우드 저장소</h5>
 			
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
