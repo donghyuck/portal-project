@@ -513,7 +513,7 @@
 /*Search Box*/
 
 .header .navbar .nav > li > .options{
-	color: #aaa;
+	/*color: #aaa;*/
 	cursor: pointer;
 	min-width: 35px;
 	font-size: 15px;
