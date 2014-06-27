@@ -27,9 +27,36 @@
 			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {			
 			
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
+				// 1-1.  한글 지원을 위한 로케일 설정
+				common.api.culture();
+				// 1-2.  페이지 렌딩
+				common.ui.landing();	
 				
+				// ACCOUNTS LOAD	
+				var currentUser = new User();			
+				$("#account-navbar").extAccounts({
+					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
+					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
+					template : kendo.template($("#account-template").html()),
+					</#if>
+					authenticate : function( e ){
+						e.token.copy(currentUser);
+					},				
+					shown : function(e){				
+						$('#account-navbar').append('<li><a href="#" class="btn-control-group options" data-action="open-spmenu"><i class="fa fa-briefcase fa-lg"></i></a></li>');
+						$('#account-navbar').find('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
+							$('body').toggleClass('modal-open');
+							if( $('#personalized-controls-section').hasClass("hide") ){
+								$('#personalized-controls-section').removeClass("hide");
+							}								
+							$('body div.overlay').toggleClass('hide');										
+							slide_effect.play().then(function(){							
+								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
+							});									
+						});				
+					}
+				});		
+								
 				// 2.  MEUN LOADING ...
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
 				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );					
@@ -50,25 +77,7 @@
 						}
 					]
 				});	
-				
- 				common.ui.handleButtonActionEvents(
-					$(".personalized-navbar .nav a.btn-control-group"), 
-					{event: 'click', handlers: {
-						hide : function(e){
-							$('body nav').first().removeClass('hide');
-						},
-						'open-spmenu' : function(e){
-							$('body').toggleClass('modal-open');						
-							if( $('#personalized-controls-section').hasClass("hide") )
-								$('#personalized-controls-section').removeClass("hide");							
-							$('body div.overlay').toggleClass('hide');										
-							slide_effect.play().then(function(){							
-								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});									
-						}					 
-					}}
-				);	
-				
+								
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
 					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
@@ -77,29 +86,6 @@
 							$('body div.overlay').toggleClass('hide');
 						});
 					}, 100);					
-				});
-
-				// 3. ACCOUNTS STATUS LOAD	.. 
-				var currentUser = new User();			
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if WebSiteUtils.isAllowedSignIn(action.webSite) ||  !action.user.anonymous>
-					template : kendo.template($("#account-template").html()),
-					</#if>
-					shown : function(e){
-						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
-						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');		
-						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
-							$('body nav').first().addClass('hide');
-						});	
-					},					
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if(!currentUser.anonymous){							
-							$('body nav').first().addClass('hide');
-							createConnectedSocialNav();
-						}						
-					}				
 				});
 
 				// 4. CONTENT LOADING
@@ -285,83 +271,6 @@
 		.k-callout-e {
 		border-left-color: #787878;
 		}	
-		
-		#photo-gallery-view {
-			min-height: 320px;
-			min-width: 320px;
-			width: 100%;
-			padding: 0px;
-			border: 0px;
-		}	
-		
-		#personalized-controls {
-			position: absolute;
-			top: 50px;
-			left:0;
-			min-height: 300px;
-			padding: 10px;
-			width: 100%;
-			z-index: 1000;
-			overflow: hidden;
-			background-color: rgba(91,192,222,0.8)		
-		}		
-		
-		#personalized-controls-section{
-			margin-top: 0px;
-			padding : 0px;
-		}
-		
-		#personalized-controls-section.cbp-spmenu-vertical {
-			width: 565px;
-		}
-		
-		#personalized-controls-section.cbp-spmenu-right {
-			right: -565px;
-			z-index: 2000;
-		}
-		
-		#personalized-controls-section.cbp-spmenu-right.cbp-spmenu-open {
-			right : 0px;
-			overflow-x:hidden;
-			overflow-y:auto;			
-		}
-
-		@media (max-width: 768px ) {
-			#personalized-controls-section.cbp-spmenu-vertical {
-				width: 100%;
-			}			
-			#personalized-controls-section.cbp-spmenu-right {
-				right: -100%;
-			}		
-		} 
-		
-		.cbp-spmenu {
-			background : #ffffff;
-		}
-		
-		.cbp-spmenu-vertical header {
-			1px solid #258ecd;
-			margin : 0px;
-			padding : 5px;
-			color : #000000;
-			background : #5bc0de; /* transparent;        	*/
-			height: 90px;        	
-		}
-				
-		.cbp-hsmenu-wrapper .cbp-hsmenu {
-			width:100%;
-		}
-		
-		.cbp-hsmenu > li > a {
-			color: #fff;
-			font-size: 1em;
-			line-height: 3em;
-			display: inline-block;
-			position: relative;
-			z-index: 10000;
-			outline: none;
-			text-decoration: none;
-		}
 		
 		blockquote {
 			font-size: 11pt;
