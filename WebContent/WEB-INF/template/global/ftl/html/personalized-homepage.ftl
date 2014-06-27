@@ -11,7 +11,6 @@
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			
-			'css!${request.contextPath}/styles/codedrop/cbpSlidePushMenus.css',
 			'css!${request.contextPath}/styles/codedrop/codedrop.overlay.css',
 			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
