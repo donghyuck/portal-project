@@ -2407,7 +2407,7 @@ ul.labels-demo li {
 }
 
 
-.panel-header .panel-header-actions {
+.panel .panel-header-actions {
 	float: right;
 	padding-top:2px;
 }
