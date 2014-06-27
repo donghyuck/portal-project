@@ -50,10 +50,11 @@
 								$('#personalized-controls-section').removeClass("hide");
 							}								
 							$('body div.overlay').toggleClass('hide');										
-							slide_effect.play().then(function(){							
+							slide_effect.play().then(function(){
 								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
 							});									
-						});				
+						});			
+						createConnectedSocialNav();	
 					}
 				});		
 								
