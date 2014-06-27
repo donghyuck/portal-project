@@ -530,16 +530,16 @@
 	<div class="custom-panels-group" style="display:none;"> 
 		<div id="#: serviceProviderName #-panel-#:socialAccountId#" class="panel panel-default">
 			<div class="panel-heading">
-				<h3 class="panel-title"><i class="fa fa-tasks"></i> 
-				<i class="fa fa-#: serviceProviderName # fa-fw"></i> #: serviceProviderName # 소식
-				</h3>
-				<div class="k-window-actions panel-header-actions">
-					<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a>
-					<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
-					<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
-					<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>
-					<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-				</div>							
+				<h3 class="panel-title">
+					<i class="fa fa-#: serviceProviderName # fa-fw"></i> #: serviceProviderName # 소식		
+					<div class="k-window-actions panel-header-actions">
+						<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a>
+						<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
+						<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
+						<a role="button" href="\\#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>
+						<a role="button" href="\\#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
+					</div>	
+				</h3>						
 			</div>
 			<div class="panel-body hide" style="max-height:500px;">
 				<button type="button" class="close" aria-hidden="true">&times;</button>	
