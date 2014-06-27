@@ -1186,7 +1186,7 @@
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->			
 		
-		<div
+		<div>
 		<!-- START TEMPLATE -->				
 
 		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
