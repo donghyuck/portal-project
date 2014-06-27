@@ -387,7 +387,7 @@
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
-		<section class="container-fluid" style="min-height:600px;">		
+		<section class="container-fluid content" style="min-height:600px;">		
 			<div id="personalized-area" class="row blank-top-10"></div>				
 		</section>		
 		
