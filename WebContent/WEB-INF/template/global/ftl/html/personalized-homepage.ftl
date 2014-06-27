@@ -1061,6 +1061,9 @@
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
 			<div class="tab-v1" >
+			
+			<h5 class="side-section-title">Optional sidebar menu</h5>
+			
 			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
 				<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
