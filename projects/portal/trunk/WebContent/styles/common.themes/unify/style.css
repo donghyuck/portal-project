@@ -525,9 +525,9 @@
 }
 
 .header .navbar .nav > li > .options:hover {
-	color: #72c02c;
+/*	color: #72c02c; */
 	background: #f7f7f7;
-	border-bottom-color: #72c02c;
+/*	border-bottom-color: #72c02c;*/
 }
 
 .header .navbar .nav > li > .search {
