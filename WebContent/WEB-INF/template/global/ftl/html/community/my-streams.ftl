@@ -382,62 +382,30 @@
 		</style>   	
 	</head>
 	<body id="doc" class="bg-gray">
+		<div class="wrapper">
 		<!-- START HEADER -->		
 		<#include "/html/common/common-homepage-menu.ftl" >		
-		<!-- start of personalized menu -->
-		<nav class="personalized-navbar navbar" role="navigation">
-			<div class="container">
-				<ul class="nav navbar-nav navbar-left">				
-					<p class="navbar-text hidden-xs">&nbsp;</p>	
-					<p class="navbar-text hidden-xs text-primary"><small>스트림 레이아웃</small></p>						
-					<li class="navbar-btn hidden-xs">
-									
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">	
-					<li class="navbar-btn">						
-
-					</li>	
-					<p class="navbar-text hidden-xs">&nbsp;</p>		
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">My <b class="caret"></b></a>
-						<ul class="dropdown-menu">
-							<li><a href="${request.contextPath}/main.do?view=personalized">My 페이지</a></li>
-							<li><a href="${request.contextPath}/main.do?view=streams">My 스트림</a></li>
-							<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
-							<li class="divider"></li>
-							<li><a href="${request.contextPath}/main.do?view=manage">My 웹사이트</a></li>					
-							</#if>								
-						</ul>
-					</li>								
-					<li><a href="#" class="btn btn-link custom-nabvar-show-opts btn-control-group" data-action="open-spmenu"><i class="fa fa-cog fa-lg"></i></a></li>
-					<li><a href="#" class="btn btn-link custom-nabvar-hide btn-control-group" data-action="hide"><i class="fa fa-angle-double-up fa-lg"></i></a></li>
-					<p class="navbar-text hidden-xs">&nbsp;</p>
-				</ul>
-			</div>
-		</nav>
-		<!-- end of personalized menu -->
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
 		<section class="container-fluid" style="min-height:600px;">		
 			<div id="personalized-area" class="row blank-top-10"></div>				
 		</section>		
+		
 		<div class="overlay hide"></div>		
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>		
-						<div class="btn-group navbar-btn" data-toggle="buttons">
-							<label class="btn btn-info">
-								<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-							</label>
-							<label class="btn btn-info active">
-						 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
-							</label>
-							<label class="btn btn-info">
-								<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
-							</label>
-						</div>							
-						
+				<div class="btn-group navbar-btn" data-toggle="buttons">
+					<label class="btn btn-info">
+						<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+					</label>
+					<label class="btn btn-info active">
+				 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
+					</label>
+					<label class="btn btn-info">
+						<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
+					</label>
+				</div>						
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
 			<h5 class="side-section-title">My 쇼셜네트워크</h5>
@@ -449,12 +417,15 @@
 				</div>		
 			</div>							
 		</section>		
-		<section id="image-broswer" class="image-broswer"></section>	
-		<section id="external-content-widow"></section>
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->
+		</div>
+		
+		<section id="image-broswer" class="image-broswer"></section>	
+		<section id="external-content-widow"></section>
+				
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="alert-panel-template">
 			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">
