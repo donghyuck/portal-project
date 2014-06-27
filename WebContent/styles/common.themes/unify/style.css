@@ -2405,3 +2405,9 @@ ul.labels-demo li {
 .panel .page-header {
 	margin: 20px 0 20px;	
 }
+
+
+.panel-header .panel-header-actions {
+	float: right;
+	padding-top:2px;
+}
