@@ -2409,7 +2409,7 @@ ul.labels-demo li {
 
 .panel-heading .panel-header-actions {
 	float: right;
-	padding-top:6px;
+	margin-top: -20px;
 }
 
 .scrollable{
