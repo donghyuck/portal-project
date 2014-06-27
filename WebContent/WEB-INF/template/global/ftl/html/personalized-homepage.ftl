@@ -1175,18 +1175,17 @@
 							</div>	
 						</div><!-- end photos  tab-pane -->
 			</div><!-- end of tab content -->	
-		</section>		
-		
-		<section id="image-broswer" class="image-broswer"></section>
-		<section id="editor-popup"></section>
-		<section id="announce-editor"></section>
-		
+		</section>				
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
-		<!-- END FOOTER -->			
-		
-		<div>
+		<!-- END FOOTER -->				
+		</div>
+
+		<section id="image-broswer" class="image-broswer"></section>
+		<section id="editor-popup"></section>
+		<section id="announce-editor"></section>
+				
 		<!-- START TEMPLATE -->				
 
 		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
