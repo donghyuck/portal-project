@@ -35,7 +35,7 @@
             </div>
             <div class="col-md-6">  
                 <a href="${request.contextPath}/main.do">
-                    <img src="${request.contextPath}/download/logo/company/${action.webSite.company.name}" class="pull-right img-responsive" alt="" />
+                    <img src="${request.contextPath}/download/logo/company/${action.webSite.company.name}" class="pull-right img-rounded" height="42" alt="" />
                 </a>
             </div>
         </div><!--/row-->
