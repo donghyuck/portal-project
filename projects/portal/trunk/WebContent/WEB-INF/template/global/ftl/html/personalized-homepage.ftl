@@ -1222,7 +1222,7 @@
 		</script>					
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
-		<#assign x = ["red", 16, "blue", "cyan"]>
-		${x?join(",", "", "")}
+<#assign colors = ["red", "green", "blue"]>
+${colors?join(", ")} 
 	</body>    
 </html>
