@@ -62,6 +62,11 @@
 	}
 	
 	common.ui.panel = function ( element , options ){
+		
+		if( typeof element === 'UNDEFINED'){
+			alert('--') ;
+		}
+		
 		if (element.length == 0) {
 			alert( element.attr('id'))
 			//$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
