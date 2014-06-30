@@ -2020,9 +2020,6 @@
 			id = element.attr("id");
 			
 			wrapper.on("click", "> " + EXT_PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
-			
-
-			
 			 if (options.visible) {
 				 that.trigger(OPEN);
 				 that.trigger(ACTIVATE);
@@ -2124,9 +2121,7 @@
 			that.wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end()
 			.find(MINIMIZE_MAXIMIZE).parent().show().end().end();
 			that.wrapper.children(EXT_PANEL_BODY).show();			
-			options.isMaximized = options.isMinimized = false;
-				
-			
+			options.isMaximized = options.isMinimized = false;			
 			return that;
 		},
 		refresh: function(){
@@ -2134,6 +2129,14 @@
 			wrapper = that.wrapper,
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
+		},
+		content:function(html, data)){
+		 	var content = this.wrapper.children(EXT_PANEL_BODY);
+		 	if (!defined(html)) {
+		 		return content.html();		 		
+		 	}
+		 	content.empty().html(html);
+		 	kendo.bind(content, data);
 		},
 		destroy: function () {
 			//this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
