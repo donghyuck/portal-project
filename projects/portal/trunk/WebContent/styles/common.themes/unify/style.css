@@ -80,6 +80,19 @@
 	margin: 15px 0;
 }
 
+
+.header li.account  > a:after {
+top: 9px;
+right: 15px;
+content: "\f107";
+font-size: 11px;
+position: absolute;
+font-weight: normal;
+display: inline-block;
+font-family: FontAwesome;
+}
+
+
 /*Boxed Layout
 ------------------------------------*/
 .wrapper {
@@ -2415,3 +2428,4 @@ ul.labels-demo li {
 .scrollable{
 overflow-y: auto;	
 }
+
