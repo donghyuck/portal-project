@@ -1971,6 +1971,8 @@
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
 			
+			alert( wrapper.html() );
+			
 			id = element.attr("id");
 			
 			that.refresh();
