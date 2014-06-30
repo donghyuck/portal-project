@@ -1985,14 +1985,14 @@
 			}
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
-			element.append(templates.heading( extend( templates, options )));
-			element.append(templates.content({}));
+			wrapper.append(templates.heading( extend( templates, options )));
+			wrapper.append(templates.content({}));
 			
 			
 			
 			id = element.attr("id");
 			
-			element.on("click", "> " + TITLEBAR_BUTTONS, proxy(that._panelActionHandler, that));
+			wrapper.on("click", "> " + TITLEBAR_BUTTONS, proxy(that._panelActionHandler, that));
 			
 			
 			that.refresh();			
