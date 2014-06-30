@@ -136,7 +136,7 @@
 				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
 				
-				common.ui.panel({appendTo: "#personalized-area" , title: "이미지", actions:["Custom","Maximize", "Minimize", "Refresh", "Close"]
+				common.ui.panel({appendTo: "#personalized-area" , title: "이미지", actions:["Custom", "Minimize", "Refresh", "Close"]
 				,content: "hello"
 				});
 				common.ui.panel({appendTo: "#personalized-area" , title: "이미지"});
