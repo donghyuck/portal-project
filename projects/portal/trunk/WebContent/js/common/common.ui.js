@@ -1992,7 +1992,7 @@
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
 			wrapper.append(templates.heading( extend( templates, options )));
-			wrapper.append(templates.content( {} ) );
+			wrapper.append(templates.content( }) );
 			
 			
 			
@@ -2092,7 +2092,7 @@
 			"</div>"	 +
 			"</div>"	
 		) ,
-		content: template("<div class='panel-body'/>")
+		content:template("<div class='panel-body'`></div>")
 	};
 	
 })(jQuery);
