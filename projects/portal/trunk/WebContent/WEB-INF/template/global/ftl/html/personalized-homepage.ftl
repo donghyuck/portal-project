@@ -1222,18 +1222,5 @@
 		</script>					
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
-<#assign colors = ["red", "green", "blue"]>
-<#assign cnt = 0
-	cnt_size = colors?size
->
-<#list colors as color >
-<#assign cnt = cnt + 1>
-<#if cnt == cnt_size >
-${color}
-<#else>
-${color},
-</#if> 
-
-</#list>
 	</body>    
 </html>
