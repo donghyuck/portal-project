@@ -1226,7 +1226,7 @@
 <#assign cnt = 0>
 <#list colors as color >
 
-<#if cnt == colors?size >
+<#if cnt < colors?size >
 ${color}
 <#else>
 ${color},
