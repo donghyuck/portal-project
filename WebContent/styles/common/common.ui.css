@@ -106,4 +106,159 @@ border-bottom: solid 2px #616161;
 	display: inline-block;
 	border-bottom: solid 2px #aaa;	
 }
+/*
+* Utility
+**/
+.no-animation {
+	-webkit-animation-duration: 0s !important;
+	-moz-animation-duration: 0s !important;
+	-o-animation-duration: 0s !important;
+	animation-duration: 0s !important
+}
 
+.bordered {
+	border: 1px solid #e4e4e4
+}
+
+.bordered[class*=bg-],[class*=bg-] .border-t {
+	border-color: #fff;
+	border-color: rgba(0, 0, 0, .2)
+}
+
+.border-t {
+	border-top: 1px solid #e4e4e4
+}
+
+.no-border {
+	border-width: 0 !important
+}
+
+.no-border-hr {
+	border-left-width: 0 !important;
+	border-right-width: 0 !important
+}
+
+.no-border-vr {
+	border-top-width: 0 !important;
+	border-bottom-width: 0 !important
+}
+
+.no-border-t {
+	border-top-width: 0 !important
+}
+
+body:not (.right-to-left ) .no-border-r {
+	border-right-width: 0 !important
+}
+
+.no-border-b {
+	border-bottom-width: 0 !important
+}
+
+body:not (.right-to-left ) .no-border-l {
+	border-left-width: 0 !important
+}
+
+.no-grid-gutter-h {
+	margin-left: -18px !important;
+	margin-right: -18px !important
+}
+
+.panel-wide {
+	margin-left: -20px !important;
+	margin-right: -20px !important
+}
+
+.grid-gutter-margin-b {
+	margin-bottom: 22px
+}
+
+.no-margin {
+	margin: 0 !important
+}
+
+.no-margin-hr {
+	margin-left: 0 !important;
+	margin-right: 0 !important
+}
+
+.no-margin-vr {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important
+}
+
+.no-margin-b {
+	margin-bottom: 0 !important
+}
+
+.no-margin-t {
+	margin-top: 0 !important
+}
+
+.form-group-margin {
+	margin-bottom: 15px !important
+}
+
+.panel-padding {
+	padding: 20px !important
+}
+
+.grid-gutter-padding-h {
+	padding-left: 18px;
+	padding-right: 18px
+}
+
+.tab-content-padding {
+	padding: 15px 0 !important
+}
+
+.panel-padding-h {
+	padding-left: 20px !important;
+	padding-right: 20px !important
+}
+
+.padding-sm {
+	padding: 10px 15px !important
+}
+
+.padding-sm-hr {
+	padding-left: 15px !important;
+	padding-right: 15px !important
+}
+
+.padding-xs-hr {
+	padding-left: 10px !important;
+	padding-right: 10px !important
+}
+
+.padding-sm-vr {
+	padding-top: 15px !important;
+	padding-bottom: 15px !important
+}
+
+.padding-xs-vr {
+	padding-top: 10px !important;
+	padding-bottom: 10px !important
+}
+
+.no-padding {
+	padding: 0 !important
+}
+
+.no-padding-hr {
+	padding-left: 0 !important;
+	padding-right: 0 !important
+}
+
+.no-padding-vr {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important
+}
+
+.no-padding-b {
+	padding-bottom: 0 !important
+}
+
+.no-padding-t {
+	padding-top: 0 !important
+}
