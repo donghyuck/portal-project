@@ -64,6 +64,7 @@
 	common.ui.panel = function ( element , options ){
 		options = options || {};
 		if( typeof element === UNDEFINED ){			
+			alert(1) ;
 			options.id = options.id || common.api.guid().toLowerCase();
 		}
 		
