@@ -1223,6 +1223,6 @@
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 		<#assign x = ["red", 16, "blue", "cyan"]>
-		${x?join(",")}
+		${x?join(",", "", "")}
 	</body>    
 </html>
