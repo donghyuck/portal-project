@@ -1980,7 +1980,7 @@
 		title : function (text){
 			var that = this,
 				wrapper = that.wrapper,
-				options = that.options,
+				options = that.options;
 		}
 	});
 	
