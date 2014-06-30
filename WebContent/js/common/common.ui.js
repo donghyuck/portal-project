@@ -1953,6 +1953,8 @@
 			var that = this,
 			wrapper,
 			content,
+			visibility, display,
+			isVisible = false,
 			suppressActions = options && options.actions && !options.actions.length,
 			id;			
 			Widget.fn.init.call(that, element, options);
@@ -1968,15 +1970,28 @@
 			if (!defined(options.visible) || options.visible === null) {
 				options.visible = element.is(VISIBLE);
 			}
+			if (element.is(VISIBLE)) {
+				isVisible = true;				
+			} else {
+				visibility = element.css("visibility");
+				display = element.css("display");
+				element.css({ visibility: HIDDEN, display: "" });
+				 element.css({ visibility: visibility, display: display });
+			}
+			
+			if (!defined(options.visible) || options.visible === null) {
+				options.visible = element.is(VISIBLE);				
+			}
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
+			wrapper.add(templates.heading(options));
 			
 			id = element.attr("id");
 			
-			alert("" + wrapper[0]);
+		
 			
-			that.refresh();
 			
+			that.refresh();			
 			kendo.notify(that);
 		},
 		options : {
