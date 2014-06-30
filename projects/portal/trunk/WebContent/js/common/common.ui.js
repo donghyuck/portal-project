@@ -1970,10 +1970,10 @@
 			}
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
-			alert( element.html() );
-			alert( wrapper.html() );
 			
 			id = element.attr("id");
+			
+			alert("" + wrapper[0]);
 			
 			that.refresh();
 			
