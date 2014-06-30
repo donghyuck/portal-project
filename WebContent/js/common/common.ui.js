@@ -61,19 +61,16 @@
 		
 	}
 	
-	common.ui.panel = function ( element , options ){
+	common.ui.panel = function ( options ){
 		options = options || {};
-		if( typeof element === UNDEFINED ){			
-			alert(1) ;
-			options.id = options.id || common.api.guid().toLowerCase();
-		}
+		options.id = options.id || common.api.guid().toLowerCase();
 		
 		alert(options.id );
 		
-		if (element.length == 0) {
-			alert( element.attr('id'))
+		//if (element.length == 0) {
+		//	alert( element.attr('id'))
 			//$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
-		}				
+		//}				
 	}
 	
 	common.ui.animate = function (renderTo, animate, always){	
