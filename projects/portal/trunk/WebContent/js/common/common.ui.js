@@ -1936,7 +1936,7 @@
 		if( defined(options.renderTo)){
 			
 		}else 	if( defined(options.appendTo) ){
-			appendTo.append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
+			options.appendTo.append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
 		}
 		
 		//if (element.length == 0) {
