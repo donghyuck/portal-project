@@ -1989,19 +1989,22 @@
 			if (!defined(options.visible) || options.visible === null) {
 				options.visible = element.is(VISIBLE);				
 			}
+
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
 			wrapper.append(templates.heading( extend( templates, options )));
 			wrapper.append(templates.body( {} ) );
 			
 			
+			if (content) {
+				that.refresh();			
+			}			
 			
 			id = element.attr("id");
 			
 			wrapper.on("click", "> " + EXT_PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
 			
-			
-			that.refresh();			
+
 			
 			 if (options.visible) {
 				 that.trigger(OPEN);
@@ -2082,7 +2085,8 @@
 				options = that.options;
 		},
 		refresh: function(){
-			
+			var that = this,
+			that.element.childred(EXT_PANEL_BODY).html(options.content);
 		},
 		destroy: function () {
 			//this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
