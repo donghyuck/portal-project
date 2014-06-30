@@ -1954,16 +1954,16 @@
         };		
 	}
 	
-	common.ui.panel = function ( options ){
-		
-		options = options || {};		
-		var guid = common.api.guid().toLowerCase() ;
+	common.ui.panel = function ( options ){		
+		options = options || {};	
 		if( defined(options.renderTo)){
-			 $(options.appendTo).attr("id", guid);
+			 return new common.ui.ExtPanel( $(options.appendTo), options); 
 		}else 	if( defined(options.appendTo) ){		
+			var guid = common.api.guid().toLowerCase() ;
 			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
+			return new common.ui.ExtPanel( $("#" + guid ), options); 
 		}
-		return new common.ui.ExtPanel( $("#" + guid ), options); 
+		
 		
 		//if (element.length == 0) {
 		//	alert( element.attr('id'))
