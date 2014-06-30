@@ -1913,6 +1913,7 @@
 		EXT_PANEL_HEADING = ".panel-heading",
 		EXT_PANEL_TITLE = ".panel-title",
 		EXT_PANEL_BODY = ".panel-body",
+		EXT_PANEL_HEADING_BUTTONS = ".panel-heading .k-window-action",
 		// constants
 		POST = 'POST', 
 		JSON = 'json', 
@@ -1984,12 +1985,14 @@
 			}
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
-			element.append(templates.heading( extend( templates, options )));
-			element.append(templates.content({}));
+			wrapper.append(templates.heading( extend( templates, options )));
+			wrapper.append(templates.content({}));
+			
+			
 			
 			id = element.attr("id");
 			
-		
+			wrapper.on("click", "> " + TITLEBAR_BUTTONS, proxy(that._panelActionHandler, that));
 			
 			
 			that.refresh();			
@@ -2010,18 +2013,28 @@
 		_closable: function() {
 			return $.inArray("close", $.map(this.options.actions, function(x) { return x.toLowerCase(); })) > -1;
 		},
-		 _actionForIcon: function(icon) {
-	            var iconClass = /\bk-i-\w+\b/.exec(icon[0].className)[0];
-
-	            return {
+		_panelActionHandler: function(e){
+			if (this._closing) {
+                return;
+            }
+			 var icon = $(e.target).closest(".k-window-action").find(".k-icon");
+			 var action = this._actionForIcon(icon);
+			 if (action) {
+				 e.preventDefault();
+				 this[action]();
+				 return false;
+			 }			 
+		},
+		_actionForIcon: function(icon) {
+			var iconClass = /\bk-i-\w+\b/.exec(icon[0].className)[0];
+			return {
 	                "k-i-close": "_close",
 	                "k-i-maximize": "maximize",
 	                "k-i-minimize": "minimize",
 	                "k-i-restore": "restore",
 	                "k-i-refresh": "refresh",
-	                "k-i-pin": "pin",
-	                "k-i-unpin": "unpin"
-	            }[iconClass];
+	                "k-i-custom": "custom"
+			}[iconClass];
 		},															
 		title : function (text){
 			var that = this,
