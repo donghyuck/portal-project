@@ -1985,7 +1985,7 @@
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
 			wrapper.add(templates.heading(options));
-			wrapper.add(templates.content());
+			wrapper.add(templates.content({}));
 			
 			id = element.attr("id");
 			
