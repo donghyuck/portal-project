@@ -61,7 +61,7 @@
 		
 	}
 	
-	common.ui.panel = function ( element , options ){
+	common.ui.ext-panel = function ( element , options ){
 		options = options || {};
 		if( typeof element === UNDEFINED ){			
 			options.id = options.id || common.api.guid().toLowerCase();
