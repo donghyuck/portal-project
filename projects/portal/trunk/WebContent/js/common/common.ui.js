@@ -1937,7 +1937,7 @@
 		if( defined(options.renderTo)){
 			
 		}else 	if( defined(options.appendTo) ){
-			appentTo.append('<div id="' + common.api.guid().toLowerCase() + '" ></div>');		
+			appendTo.append('<div id="' + common.api.guid().toLowerCase() + '" ></div>');		
 		}
 		
 		//if (element.length == 0) {
