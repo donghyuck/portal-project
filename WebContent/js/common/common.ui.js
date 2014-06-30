@@ -1947,7 +1947,7 @@
             if (options.isMaximized || options.isMinimized) {
                 return;
             }
-           // wrapper.children(EXT_PANEL_HEADING).find(MINIMIZE_MAXIMIZE).parent().hide().eq(0).before(templates.action({ name: "Restore" }));
+            wrapper.children(EXT_PANEL_HEADING).find(MINIMIZE_MAXIMIZE).parent().hide().eq(0).before(templates.action({ name: "Restore" }));
             callback.call(that);
             return that;
         };		
@@ -2113,10 +2113,10 @@
 		}),
 		minimize: sizingAction("minimize", function() {
 			var that = this;
-			that.element.hide();
+			//that.element.hide();
 			that.options.isMinimized = true;
 			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
-				//wrapper.children(EXT_PANEL_BODY).hide();				
+				wrapper.children(EXT_PANEL_BODY).hide();				
 			}
 		}),
 		refresh: function(){
