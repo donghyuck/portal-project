@@ -137,7 +137,7 @@
 				// END SCRIPT 
 				
 				common.ui.panel({appendTo: "#personalized-area" , title: "이미지", actions:["Custom","Maximize", "Minimize", "Refresh", "Close"]
-				content: "hello"
+				,content: "hello"
 				});
 				common.ui.panel({appendTo: "#personalized-area" , title: "이미지"});
 				
