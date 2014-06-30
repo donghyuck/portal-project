@@ -1223,13 +1223,15 @@
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 <#assign colors = ["red", "green", "blue"]>
+<#assing cnt = 0>
 <#list colors as color >
 
-<#if color == colors?last >
+<#if cnt == colors.length >
 ${color}
 <#else>
 ${color},
 </#if> 
+<#assing cnt = cnt + 1>
 </#list>
 	</body>    
 </html>
