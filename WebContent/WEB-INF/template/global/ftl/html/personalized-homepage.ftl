@@ -1225,7 +1225,7 @@
 <#assign colors = ["red", "green", "blue"]>
 <#list colors as color >
 
-<#if colors?last >
+<#if color == colors?last >
 1
 <#else>
 3
