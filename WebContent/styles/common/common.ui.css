@@ -14,7 +14,11 @@
 	z-index: 1000;	
 }
 
-body.aside-menu-in{
+body.aside-menu-in {
+
+}
+
+.wrapper {
 	position: relative; 
 	left: 0;
 	-webkit-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
@@ -24,9 +28,8 @@ body.aside-menu-in{
 	-webkit-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
 	-moz-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
 	-o-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
-	transition-timing-function: cubic-bezier(.25, .46, .45, .94);	
+	transition-timing-function: cubic-bezier(.25, .46, .45, .94);		
 }
-
 
 body.aside-menu-in .wrapper {
 	left: -280px;	
