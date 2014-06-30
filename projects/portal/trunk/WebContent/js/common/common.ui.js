@@ -1956,16 +1956,14 @@
 	
 	common.ui.panel = function ( options ){
 		
-		options = options || {};
-		
+		options = options || {};		
+		var guid = common.api.guid().toLowerCase() ;
 		if( defined(options.renderTo)){
-			
-		}else 	if( defined(options.appendTo) ){
-			var id = common.api.guid().toLowerCase() ;
-			$(options.appendTo).append( "<div id='" + id+ "'  class='panel panel-default no-padding-hr'></div>");		
-			return new common.ui.ExtPanel( $("#" + id ), options); 
+			 $(options.appendTo).attr("id", guid);
+		}else 	if( defined(options.appendTo) ){		
+			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
 		}
-		
+		return new common.ui.ExtPanel( $("#" + guid ), options); 
 		
 		//if (element.length == 0) {
 		//	alert( element.attr('id'))
