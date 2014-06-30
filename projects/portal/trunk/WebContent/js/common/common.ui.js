@@ -2092,7 +2092,7 @@
 			"</div>"	 +
 			"</div>"	
 		) ,
-		body: template("<div class='panel-body'`></div>")
+		body: template("<div class='panel-body'></div>")
 	};
 	
 })(jQuery);
