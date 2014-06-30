@@ -1923,6 +1923,12 @@
 		// events
 		CHANGE = "change", 
 		UNDEFINED = 'undefined',	
+		OPEN = "open",
+		DEACTIVATE = "deactivate",
+		ACTIVATE = "activate",
+		CLOSE = "close",
+		REFRESH = "refresh",
+		ERROR = "error",
 		// error handler
 		handleKendoAjaxError = common.api.handleKendoAjaxError;	
 	
@@ -2052,7 +2058,11 @@
 					complete: proxy(this._deactivate, this)
 				 });
 			}
-		}
+		},
+		_deactivate: function() {
+			this.wrapper.hide().css("opacity","");
+			this.trigger(DEACTIVATE);			
+        },
 		title : function (text){
 			var that = this,
 				wrapper = that.wrapper,
