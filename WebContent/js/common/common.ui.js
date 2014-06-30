@@ -1985,6 +1985,7 @@
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
 			wrapper.add(templates.heading(options));
+			wrapper.add(templates.content());
 			
 			id = element.attr("id");
 			
@@ -2027,7 +2028,8 @@
 			"<div class='k-window-actions panel-header-actions'>" +
 			"</div>"	 +
 			"</div>"	
-		) 	
+		) ,
+		content : template("<div class='panel-body'/>)
 	};
 	
 })(jQuery);
