@@ -2116,7 +2116,7 @@
 			that.element.hide();
 			that.options.isMinimized = true;
 			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
-				wrapper.children(EXT_PANEL_BODY).hide();				
+				//wrapper.children(EXT_PANEL_BODY).hide();				
 			}
 		}),
 		refresh: function(){
