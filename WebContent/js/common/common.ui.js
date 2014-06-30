@@ -63,7 +63,7 @@
 	
 	common.ui.panel = function ( element , options ){
 		
-		if( typeof element === 'UNDEFINED'){
+		if( typeof element === UNDEFINED ){
 			alert('--') ;
 		}
 		
