@@ -62,10 +62,12 @@
 	}
 	
 	common.ui.panel = function ( element , options ){
-		
-		if( typeof element === UNDEFINED ){
-			alert('--') ;
+		options = options || {};
+		if( typeof element === UNDEFINED ){			
+			options.id = options.id || common.api.guid().toLowerCase();
 		}
+		
+		alert(options.id );
 		
 		if (element.length == 0) {
 			alert( element.attr('id'))
