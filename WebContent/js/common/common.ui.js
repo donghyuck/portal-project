@@ -2022,7 +2022,7 @@
 	                "k-i-pin": "pin",
 	                "k-i-unpin": "unpin"
 	            }[iconClass];
-		},															w 
+		},															
 		title : function (text){
 			var that = this,
 				wrapper = that.wrapper,
