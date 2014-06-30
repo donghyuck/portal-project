@@ -135,11 +135,12 @@
 
 				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
-				
+				/**
 				common.ui.panel({appendTo: "#personalized-area" , title: "이미지", actions:["Custom", "Minimize", "Refresh", "Close"]
 				,content: "hello"
 				});
 				common.ui.panel({appendTo: "#personalized-area" , title: "이미지"});
+				*/
 				
 			}
 		}]);	
@@ -570,7 +571,12 @@
 			"</div>"
 			);		
 			$("#personalized-area").append( template( {guid: guid, colSize: grid_col_size.newValue } ) );
-			common.ui.panel({renderTo: "#" + guid });
+			common.ui.panel({
+				renderTo: "#" + guid,
+				title: "이미지", 
+				actions:["Custom", "Minimize", "Refresh", "Close"],
+				content: "hello"
+			});
 			
 		}		
 				
