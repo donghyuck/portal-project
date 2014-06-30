@@ -82,14 +82,14 @@
 
 
 .header li.account  > a:after {
-top: 9px;
-right: 15px;
-content: "\f107";
-font-size: 11px;
-position: absolute;
-font-weight: normal;
-display: inline-block;
-font-family: FontAwesome;
+	top: 9px;
+	right: 15px;
+	content: "\f107";
+	font-size: 11px;
+	position: absolute;
+	font-weight: normal;
+	display: inline-block;
+	font-family: FontAwesome;
 }
 
 
