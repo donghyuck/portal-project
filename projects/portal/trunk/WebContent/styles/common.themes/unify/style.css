@@ -93,6 +93,12 @@
 	color: #fff;
 }
 
+.header li.account >a:hover {
+	color : #3498db;
+} 
+
+
+
 
 /*Boxed Layout
 ------------------------------------*/
