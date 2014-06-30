@@ -2033,7 +2033,6 @@
 	            OPEN,
 	            CLOSE,
 	            REFRESH,
-	            RESIZE,
 	            DRAGSTART,
 	            DRAGEND,
 	            ERROR
