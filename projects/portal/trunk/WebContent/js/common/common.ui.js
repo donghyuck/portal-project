@@ -2065,6 +2065,12 @@
 				 });
 			}
 		},
+		toggleMaximization: function () {
+            if (this._closing) {
+                return this;
+            }
+            return this[this.options.isMaximized ? "restore" : "maximize"]();
+        },		
 		_deactivate: function() {
 			this.wrapper.hide().css("opacity","");
 			this.trigger(DEACTIVATE);			
