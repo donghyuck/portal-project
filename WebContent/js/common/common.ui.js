@@ -61,6 +61,13 @@
 		
 	}
 	
+	common.ui.panel = function ( element , options ){
+		if (element.length == 0) {
+			alert( element.attr('id'))
+			//$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
+		}				
+	}
+	
 	common.ui.animate = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){			
