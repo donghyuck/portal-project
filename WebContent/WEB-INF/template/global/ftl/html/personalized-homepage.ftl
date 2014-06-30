@@ -1223,6 +1223,13 @@
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 <#assign colors = ["red", "green", "blue"]>
-${colors?join(", ")} 
+<#list colors as color >
+
+<#if color?last >
+1
+<#else>
+3
+</#if> 
+</#list>
 	</body>    
 </html>
