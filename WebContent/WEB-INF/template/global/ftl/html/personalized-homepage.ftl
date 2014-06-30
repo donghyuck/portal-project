@@ -577,7 +577,7 @@
 				actions:["Custom", "Minimize", "Refresh", "Close"],
 				content: "hello",
 				close: function(e) {
-					alert( $(this).html() );
+					alert(  kendo.stringify( e)  );
 				}
 			});
 			
