@@ -60,18 +60,7 @@
 		var renderTo = options.renderTo || "wrapper" ;
 		
 	}
-	
-	common.ui.panel = function ( options ){
-		options = options || {};
-		options.id = options.id || common.api.guid().toLowerCase();
-		
-		alert(options.id );
-		
-		//if (element.length == 0) {
-		//	alert( element.attr('id'))
-			//$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
-		//}				
-	}
+
 	
 	common.ui.animate = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
@@ -1938,6 +1927,23 @@
 	
 	function defined(x) {
 		return (typeof x != UNDEFINED);
+	}
+	
+	
+	common.ui.panel = function ( options ){
+		
+		options = options || {};
+		
+		if( defined(options.renderTo)){
+			
+		}else 	if( defined(options.appendTo) ){
+			appentTo.append('<div id="' + common.api.guid().toLowerCase() + '" ></div>');		
+		}
+		
+		//if (element.length == 0) {
+		//	alert( element.attr('id'))
+			//$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
+		//}				
 	}
 	
 	common.ui.ExtPanel = Widget.extend({
