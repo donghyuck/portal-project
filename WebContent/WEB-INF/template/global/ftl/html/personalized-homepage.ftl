@@ -564,20 +564,21 @@
 			
 			var appendTo = $("#personalized-area");			
 			var grid_col_size =appendTo.data("sizePlaceHolder");			
+			var photoPlaceHolder = $("#photo-list-view").data( "photoPlaceHolder");		
 			var guid = common.api.guid().toLowerCase() ;
 			var template = kendo.template(
-			"<div class='custom-panels-group col-sm-#: colSize#'>" + 
+			"<div id='#=guid#-layout' class='custom-panels-group col-sm-#: colSize#'>" + 
 			"<div id='#=guid#' class='panel panel-default'></div>" +
 			"</div>"
 			);		
 			$("#personalized-area").append( template( {guid: guid, colSize: grid_col_size.newValue } ) );
 			common.ui.panel({
 				renderTo: "#" + guid,
-				title: "이미지", 
+				title: photoPlaceHolder.name, 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
 				content: "hello",
 				close: function(e) {
-					alert(  kendo.stringify( e)  );
+					$("#"+guid+"-layout").remove();
 				}
 			});
 			
