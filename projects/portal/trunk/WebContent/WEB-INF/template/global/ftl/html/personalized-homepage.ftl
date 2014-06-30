@@ -1047,25 +1047,17 @@
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>	
-				<div class="row">
-					<div class="col-xs-10">
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-info">
-								<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-							</label>
-							<label class="btn btn-info active">
-						 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
-							</label>
-							<label class="btn btn-info">
-								<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
-							</label>
-						</div>						
-					</div>
-					<div class="col-xs-10">
-						<h3 class="heading-xs">전체 사용량 <span class="pull-right">88%</span></h3>
-						<div class="progress progress-u progress-xs"></div>
-				</div>			
-			
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-info">
+						<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+					</label>
+					<label class="btn btn-info active">
+				 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
+					</label>
+					<label class="btn btn-info">
+						<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
+					</label>
+				</div>				
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>	
 			<div class="tab-v1" >
