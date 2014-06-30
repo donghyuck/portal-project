@@ -1984,8 +1984,8 @@
 			}
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
-			element.add(templates.heading(options));
-			element.add(templates.content({}));
+			element.append(templates.heading(options));
+			element.append(templates.content({}));
 			
 			id = element.attr("id");
 			
