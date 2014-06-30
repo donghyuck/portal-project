@@ -17,6 +17,12 @@
 body.aside-menu-in{
 	
 }
+
+
+.aside-menu-in .wrapper {
+	left: -280px;	
+}
+
 .btn-close{
 	width: 80px;
 	height: 80px;
@@ -88,3 +94,4 @@ border-bottom: solid 2px #616161;
 	display: inline-block;
 	border-bottom: solid 2px #aaa;	
 }
+
