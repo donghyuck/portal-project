@@ -1957,7 +1957,7 @@
 	common.ui.panel = function ( options ){		
 		options = options || {};	
 		if( defined(options.renderTo)){
-			 return new common.ui.ExtPanel( $(options.appendTo), options); 
+			 return new common.ui.ExtPanel( $(options.renderTo), options); 
 		}else 	if( defined(options.appendTo) ){		
 			var guid = common.api.guid().toLowerCase() ;
 			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
@@ -2130,7 +2130,7 @@
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
 		},
-		content:function(html, data)){
+		content:function(html, data){
 		 	var content = this.wrapper.children(EXT_PANEL_BODY);
 		 	if (!defined(html)) {
 		 		return content.html();		 		
