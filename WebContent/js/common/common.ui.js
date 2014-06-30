@@ -2002,6 +2002,12 @@
 			
 			
 			that.refresh();			
+			
+			 if (options.visible) {
+				 that.trigger(OPEN);
+				 that.trigger(ACTIVATE);
+			 }
+			
 			kendo.notify(that);
 		},
 		options : {
@@ -2073,7 +2079,7 @@
 			
 		},
 		destroy: function () {
-			this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
+			//this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
 			 Widget.fn.destroy.call(this);
 			 this.unbind(undefined);
 			 kendo.destroy(this.wrapper);
