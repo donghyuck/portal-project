@@ -2125,7 +2125,10 @@
 			var options = that.options;
 			that.wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end()
 			.find(MINIMIZE_MAXIMIZE).parent().show().end().end();
+			that.wrapper.children(EXT_PANEL_BODY).show();			
 			options.isMaximized = options.isMinimized = false;
+				
+			
 			return that;
 		},
 		refresh: function(){
