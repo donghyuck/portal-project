@@ -1992,7 +1992,7 @@
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
 			wrapper.append(templates.heading( extend( templates, options )));
-			//wrapper.append(templates.content({}));
+			wrapper.append(templates.content( {} ) );
 			
 			
 			
