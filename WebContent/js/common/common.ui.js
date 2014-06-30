@@ -1936,7 +1936,7 @@
 		if( defined(options.renderTo)){
 			
 		}else 	if( defined(options.appendTo) ){
-			var element = options.appendTo.append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
+			var element = $(options.appendTo).append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
 			return new common.ui.ExtPanel( $(element), options); 
 		}
 		
@@ -1964,11 +1964,14 @@
 			}
 			
 			that.appendTo = $(options.appendTo);
+			
 			if (!defined(options.visible) || options.visible === null) {
 				options.visible = element.is(VISIBLE);
 			}
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
+			
+			id = element.attr("id");
 			
 			that.refresh();
 			
@@ -1993,6 +1996,9 @@
 			var that = this,
 				wrapper = that.wrapper,
 				options = that.options;
+		},
+		refresh: function(){
+			
 		}
 	});
 	
