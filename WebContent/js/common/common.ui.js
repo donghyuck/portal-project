@@ -2035,7 +2035,24 @@
 	                "k-i-refresh": "refresh",
 	                "k-i-custom": "custom"
 			}[iconClass];
-		},															
+		},											
+		_close: function(systemTriggered) {
+			var that = this,
+				wrapper = that.wrapper,
+				options = that.options,
+				showOptions = options.animation.open,
+				hideOptions = options.animation.close;
+			if (wrapper.is(VISIBLE) && !that.trigger(CLOSE, { userTriggered: !systemTriggered })) {
+				that._closing = true;
+				 options.visible = false;
+				 wrapper.kendoStop().kendoAnimate({
+					effects: hideOptions.effects || showOptions.effects,
+					reverse: hideOptions.reverse === true,
+					duration: hideOptions.duration,
+					complete: proxy(this._deactivate, this)
+				 });
+			}
+		}
 		title : function (text){
 			var that = this,
 				wrapper = that.wrapper,
