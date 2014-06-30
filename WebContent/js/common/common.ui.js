@@ -1992,7 +1992,7 @@
 			
 			id = element.attr("id");
 			
-			wrapper.on("click", "> " + TITLEBAR_BUTTONS, proxy(that._panelActionHandler, that));
+			wrapper.on("click", "> " + EXT_PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
 			
 			
 			that.refresh();			
@@ -2065,7 +2065,7 @@
 			"</div>"	 +
 			"</div>"	
 		) ,
-		content : template("<div class='panel-body'/>")
+		content: template("<div class='panel-body'/>")
 	};
 	
 })(jQuery);
