@@ -44,6 +44,23 @@
 		 $(element).fadeOut('slow');
 	}
 	
+	common.ui.Setup = kendo.Class.extend({		
+		options : {
+			
+			
+		},
+		init: function(element, options) {
+			
+			
+		}			
+	})
+	
+	common.ui.setup = function (options){
+		options = options || {};
+		var renderTo = options.renderTo || "wrapper" ;
+		
+	}
+	
 	common.ui.animate = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){			
@@ -1874,6 +1891,94 @@
 /**
  * extPanel widget
  */
+(function($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui = common.ui || {};
+	var kendo = window.kendo, 
+		Widget = kendo.ui.Widget, 
+		DataSource = kendo.data.DataSource, 
+		isPlainObject = $.isPlainObject, 
+		proxy = $.proxy, 
+		extend = $.extend, 
+		each = $.each,
+		template = kendo.template,
+		templates,
+		placeholderSupported = kendo.support.placeholder, 
+		browser = kendo.support.browser, 
+		isFunction = kendo.isFunction, 
+		BODY = "body",
+		// classNames
+		EXT_PANEL = ".panel",
+		EXT_PANEL_HEADING = ".panel-heading",
+		EXT_PANEL_TITLE = ".panel-title",
+		EXT_PANEL_BODY = ".panel-body",
+		// constants
+		POST = 'POST', 
+		JSON = 'json', 
+		VISIBLE = ":visible",
+		HIDDEN = "hidden",
+		CURSOR = "cursor",
+		// events
+		CHANGE = "change", 
+		UNDEFINED = 'undefined',	
+		// error handler
+		handleKendoAjaxError = common.api.handleKendoAjaxError;	
+	
+	function defined(x) {
+		return (typeof x != UNDEFINED);
+	}
+	
+	common.ui.ExtPanel = Widget.extend({
+		init : function(element, options) {
+			var that = this,
+			wrapper,
+			content,
+			suppressActions = options && options.actions && !options.actions.length,
+			id;			
+			Widget.fn.init.call(that, element, options);
+			options = that.options;			
+			element = that.element;
+			content = options.content;
+			
+			if (suppressActions) {
+				options.actions = [];
+			}
+			
+			that.appendTo = $(options.appendTo);
+			if (!defined(options.visible) || options.visible === null) {
+				options.visible = element.is(VISIBLE);
+			}
+			
+			wrapper = that.wrapper = element.closest(EXT_PANEL);
+			
+			that.refresh();
+			
+			kendo.notify(that);
+		},
+		options : {
+			name : "ExtPanel",
+			title: "",
+			actions: ["Close"],
+			content : null,
+			visible: null,
+			appendTo: BODY,
+			animation : {
+				open: {},
+				close: {}
+			}	
+		},
+		_closable: function() {
+			return $.inArray("close", $.map(this.options.actions, function(x) { return x.toLowerCase(); })) > -1;
+		},
+		title : function (text){
+			var that = this,
+				wrapper = that.wrapper,
+				options = that.options,
+		}
+	});
+	
+})(jQuery);
+
 (function($, undefined) {
 	var Widget = kendo.ui.Widget, DataSource = kendo.data.DataSource, ui = window.ui = window.ui
 			|| {};
