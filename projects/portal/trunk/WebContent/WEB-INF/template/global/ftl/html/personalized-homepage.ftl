@@ -1226,9 +1226,9 @@
 <#list colors as color >
 
 <#if color == colors?last >
-1
+${color}
 <#else>
-3
+${color},
 </#if> 
 </#list>
 	</body>    
