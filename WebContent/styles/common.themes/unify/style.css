@@ -37,6 +37,7 @@
 
 .header .navbar-default .navbar-nav > li > a.btn-account:hover, .header .navbar-default .navbar-nav > li > a.btn-account:focus, .header .navbar-default .navbar-nav > li >  a.btn-account:active {
 	background-color: transparent;
+	color : #3498db;
 	opacity : .7;
 }
 
@@ -92,12 +93,6 @@
 	font-family: FontAwesome;
 	color: #fff;
 }
-
-.header li.account >a:hover {
-	color : #3498db;
-} 
-
-
 
 
 /*Boxed Layout
