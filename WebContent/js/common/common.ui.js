@@ -1937,7 +1937,7 @@
 			
 		}else 	if( defined(options.appendTo) ){
 			var id = common.api.guid().toLowerCase() ;
-			$(options.appendTo).append( "<div id='" + id+ "'  class='panel panel-default'></div>");		
+			$(options.appendTo).append( "<div id='" + id+ "'  class='panel panel-default no-padding-hr'></div>");		
 			return new common.ui.ExtPanel( $("#" + id ), options); 
 		}
 		
