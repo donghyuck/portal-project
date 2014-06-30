@@ -136,7 +136,7 @@
 				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
 				
-				common.ui.panel({appendTo: $("#personalized-area")});
+				common.ui.panel({appendTo: "#personalized-area" });
 			}
 		}]);	
 						
