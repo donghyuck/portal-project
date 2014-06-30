@@ -1936,8 +1936,10 @@
 		if( defined(options.renderTo)){
 			
 		}else 	if( defined(options.appendTo) ){
-			options.appendTo.append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
+			var element = options.appendTo.append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
+			return new common.ui.ExtPanel( $(element), options); 
 		}
+		
 		
 		//if (element.length == 0) {
 		//	alert( element.attr('id'))
