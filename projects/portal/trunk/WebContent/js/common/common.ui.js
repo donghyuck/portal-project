@@ -1928,8 +1928,7 @@
 	function defined(x) {
 		return (typeof x != UNDEFINED);
 	}
-	
-	
+		
 	common.ui.panel = function ( options ){
 		
 		options = options || {};
@@ -1937,7 +1936,7 @@
 		if( defined(options.renderTo)){
 			
 		}else 	if( defined(options.appendTo) ){
-			appendTo.append('<div id="' + common.api.guid().toLowerCase() + '" ></div>');		
+			appendTo.append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
 		}
 		
 		//if (element.length == 0) {
@@ -1994,6 +1993,17 @@
 				options = that.options;
 		}
 	});
+	
+	templates = {
+		wrapper: template("<div class='panel panel-default' />"),	
+		heading: template(
+			"<div class'panel-heading'" +
+			"<h3 class='panel-title'>#= title #</h3>" +
+			"<div class='k-window-actions panel-header-actions'>" +
+			"</div>"	 +
+			"</div>"	
+		) 	
+	};
 	
 })(jQuery);
 
