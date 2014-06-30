@@ -565,7 +565,7 @@
 			var grid_col_size =appendTo.data("sizePlaceHolder");			
 			var guid = common.api.guid().toLowerCase() ;
 			var template = kendo.template(
-			"<div class="custom-panels-group col-sm-#: colSize#">" + 
+			"<div class='custom-panels-group col-sm-#: colSize#'>" + 
 			"<div id='#=guid#' class='panel panel-default'></div>" +
 			"</div>"
 			);		
