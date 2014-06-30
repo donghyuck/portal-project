@@ -576,7 +576,7 @@
 				renderTo: "#" + guid,
 				title: photoPlaceHolder.name, 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
-				content: "hello",
+				content: "<img class='img-responsive' src='/community/download-my-image.do?imageId=" + photoPlaceHolder.imageId + "'>",
 				close: function(e) {
 					$("#"+guid+"-layout").remove();
 				}
