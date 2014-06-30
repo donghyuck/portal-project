@@ -2113,8 +2113,8 @@
 			
 		}),
 		minimize: sizingAction("minimize", function() {
-			var that = this;
-			//that.element.hide();
+			var that = this,
+				wrapper = that.wrapper;			//that.element.hide();
 			that.options.isMinimized = true;
 			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
 				wrapper.children(EXT_PANEL_BODY).hide();				
