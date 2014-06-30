@@ -575,7 +575,10 @@
 				renderTo: "#" + guid,
 				title: "이미지", 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
-				content: "hello"
+				content: "hello",
+				close: function(e) {
+					alert( $(this).html() );
+				}
 			});
 			
 		}		
