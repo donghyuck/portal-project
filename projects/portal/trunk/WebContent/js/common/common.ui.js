@@ -2010,6 +2010,19 @@
 		_closable: function() {
 			return $.inArray("close", $.map(this.options.actions, function(x) { return x.toLowerCase(); })) > -1;
 		},
+		 _actionForIcon: function(icon) {
+	            var iconClass = /\bk-i-\w+\b/.exec(icon[0].className)[0];
+
+	            return {
+	                "k-i-close": "_close",
+	                "k-i-maximize": "maximize",
+	                "k-i-minimize": "minimize",
+	                "k-i-restore": "restore",
+	                "k-i-refresh": "refresh",
+	                "k-i-pin": "pin",
+	                "k-i-unpin": "unpin"
+	            }[iconClass];
+		},															w 
 		title : function (text){
 			var that = this,
 				wrapper = that.wrapper,
