@@ -2023,7 +2023,7 @@
 	templates = {
 		wrapper: template("<div class='panel panel-default' />"),	
 		heading: template(
-			"<div class'panel-heading'" +
+			"<div class='panel-heading'>" +
 			"<h3 class='panel-title'>#= title #</h3>" +
 			"<div class='k-window-actions panel-header-actions'>" +
 			"</div>"	 +
