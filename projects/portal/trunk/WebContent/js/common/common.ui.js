@@ -1936,8 +1936,9 @@
 		if( defined(options.renderTo)){
 			
 		}else 	if( defined(options.appendTo) ){
-			var element = $(options.appendTo).append( "<div id='" + common.api.guid().toLowerCase() + "'  class='panel panel-default'></div>");		
-			return new common.ui.ExtPanel( element, options); 
+			var id = common.api.guid().toLowerCase() ;
+			$(options.appendTo).append( "<div id='" + id+ "'  class='panel panel-default'></div>");		
+			return new common.ui.ExtPanel( $("#" + id ), options); 
 		}
 		
 		
@@ -1957,8 +1958,7 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;			
 			element = that.element;
-			content = options.content;
-			
+			content = options.content;			
 			if (suppressActions) {
 				options.actions = [];
 			}
