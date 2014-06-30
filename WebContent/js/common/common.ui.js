@@ -2086,7 +2086,9 @@
 		},
 		refresh: function(){
 			var that = this,
-			that.element.children(EXT_PANEL_BODY).html(that.options.content);
+			wrapper = that.wrapper,
+			options = that.options;
+			wrapper.children(EXT_PANEL_BODY).html(options.content);
 		},
 		destroy: function () {
 			//this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
