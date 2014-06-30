@@ -2062,6 +2062,7 @@
 		_deactivate: function() {
 			this.wrapper.hide().css("opacity","");
 			this.trigger(DEACTIVATE);			
+			this.destroy();
         },
 		title : function (text){
 			var that = this,
@@ -2070,6 +2071,14 @@
 		},
 		refresh: function(){
 			
+		},
+		destroy: function () {
+			this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
+			 Widget.fn.destroy.call(this);
+			 this.unbind(undefined);
+			 kendo.destroy(this.wrapper);
+			 this.wrapper.empty().remove();
+			 this.wrapper = this.appendTo = this.element = $();
 		}
 	});
 	
