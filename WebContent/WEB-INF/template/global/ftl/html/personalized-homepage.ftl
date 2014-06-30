@@ -559,8 +559,23 @@
 		<!-- ============================== -->
 		<!-- display photo  panel                                  -->
 		<!-- ============================== -->
+		function displayPhotoPanel(){
+			
+			var appendTo = $("#personalized-area");			
+			var grid_col_size =appendTo.data("sizePlaceHolder");			
+			var guid = common.api.guid().toLowerCase() ;
+			var template = kendo.template(
+			"<div class="custom-panels-group col-sm-#: colSize#">" + 
+			"<div id='#=guid#' class='panel panel-default'></div>" +
+			"</div>"
+			);		
+			$("#personalized-area").append( template( {guid: guid, colSize: grid_col_size.newValue } ) );
+			common.ui.panel({renderTo: "#" + guid });
+			
+		}		
 				
-		function displayPhotoPanel(){					
+				
+		function displayPhotoPanel2(){					
 			var renderToString =  "photo-panel-0";	
 			var photoPlaceHolder = $("#photo-list-view").data( "photoPlaceHolder");		
 			if( $("#" + renderToString ).length == 0  ){			
