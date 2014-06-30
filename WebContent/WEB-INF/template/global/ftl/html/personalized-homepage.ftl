@@ -1227,13 +1227,13 @@
 	cnt_size = colors?size
 >
 <#list colors as color >
-
+<#assign cnt = cnt + 1>
 <#if cnt == cnt_size >
 ${color}
 <#else>
 ${color},
 </#if> 
-<#assign cnt = cnt + 1>
+
 </#list>
 	</body>    
 </html>
