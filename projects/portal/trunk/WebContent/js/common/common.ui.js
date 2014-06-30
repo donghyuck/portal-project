@@ -2022,10 +2022,20 @@
 	
 	templates = {
 		wrapper: template("<div class='panel panel-default' />"),	
+		action: template(
+	            "<a role='button' href='\\#' class='k-window-action k-link'>" +
+	                "<span role='presentation' class='k-icon k-i-#= name.toLowerCase() #'>#= name #</span>" +
+	            "</a>"
+	        ),
 		heading: template(
 			"<div class='panel-heading'>" +
 			"<h3 class='panel-title'>#= title #</h3>" +
 			"<div class='k-window-actions panel-header-actions'>" +
+			"<div class='k-window-actions'>" +
+            "# for (var i = 0; i < actions.length; i++) { #" +
+                "#= action({ name: actions[i] }) #" +
+            "# } #" +
+            "</div>" +			
 			"</div>"	 +
 			"</div>"	
 		) ,
