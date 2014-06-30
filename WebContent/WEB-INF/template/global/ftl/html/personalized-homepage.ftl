@@ -136,7 +136,7 @@
 				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
 				
-				common.ui.ext-panel({});
+				common.ui.panel({});
 			}
 		}]);	
 						
