@@ -1929,6 +1929,8 @@
 		CLOSE = "close",
 		REFRESH = "refresh",
 		ERROR = "error",
+		DRAGSTART = "dragstart",
+        DRAGEND = "dragend",		
 		REFRESHICON = ".k-window-titlebar .k-i-refresh",
 		MINIMIZE_MAXIMIZE = ".k-window-actions .k-i-minimize,.k-window-actions .k-i-maximize",
 		// error handler
@@ -2027,6 +2029,15 @@
 			
 			kendo.notify(that);
 		},
+		events:[
+	            OPEN,
+	            CLOSE,
+	            REFRESH,
+	            RESIZE,
+	            DRAGSTART,
+	            DRAGEND,
+	            ERROR
+	        ],		
 		options : {
 			name : "ExtPanel",
 			title: "",
