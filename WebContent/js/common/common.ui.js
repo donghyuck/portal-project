@@ -1929,13 +1929,30 @@
 		CLOSE = "close",
 		REFRESH = "refresh",
 		ERROR = "error",
+		MINIMIZE_MAXIMIZE = ".k-window-actions .k-i-minimize,.k-window-actions .k-i-maximize",
 		// error handler
 		handleKendoAjaxError = common.api.handleKendoAjaxError;	
 	
 	function defined(x) {
 		return (typeof x != UNDEFINED);
 	}
-		
+	
+	function sizingAction(actionId, callback) {
+		return function() {
+            var that = this,
+                wrapper = that.wrapper,
+                style = wrapper[0].style,
+                options = that.options;
+
+            if (options.isMaximized || options.isMinimized) {
+                return;
+            }
+            wrapper.children(EXT_PANEL_HEADING).find(MINIMIZE_MAXIMIZE).parent().hide().eq(0).before(templates.action({ name: "Restore" }));
+            callback.call(that);
+            return that;
+        };		
+	}
+	
 	common.ui.panel = function ( options ){
 		
 		options = options || {};
@@ -1954,6 +1971,7 @@
 			//$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
 		//}				
 	}
+
 	
 	common.ui.ExtPanel = Widget.extend({
 		init : function(element, options) {
@@ -2084,6 +2102,23 @@
 				wrapper = that.wrapper,
 				options = that.options;
 		},
+		maximize: sizingAction("maximize", function() {
+			var that = this,
+            wrapper = that.wrapper;
+			if( !wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
+				wrapper.children(EXT_PANEL_BODY).show();				
+			}			
+			that.options.isMaximized = true;
+			
+		}),
+		minimize: sizingAction("minimize", function() {
+			var that = this;
+			that.element.hide();
+			that.options.isMinimized = true;
+			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
+				wrapper.children(EXT_PANEL_BODY).hide();				
+			}
+		}),
 		refresh: function(){
 			var that = this,
 			wrapper = that.wrapper,
