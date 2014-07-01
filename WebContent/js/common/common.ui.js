@@ -2014,10 +2014,18 @@
 			wrapper.append(templates.heading( extend( templates, options )));
 			wrapper.append(templates.body( {} ) );
 			
+
 			
+			if( defined(options.template)){
+				if (!defined(options.data) ){
+					options.data = {};
+				}
+				options.content = options.template(options.data); 
+			}
+
 			if (content) {
 				that.refresh();			
-			}			
+			}
 			
 			id = element.attr("id");
 			
