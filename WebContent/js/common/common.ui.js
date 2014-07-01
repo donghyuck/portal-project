@@ -872,7 +872,7 @@
 				}
 			});
 
-	common.ui.modal: function (options){
+	common.ui.modal = function (options){
 		options = options || {};	
 		if( defined(options.renderTo)){
 			if( $("#"+options.renderTo).length === 0 ){
