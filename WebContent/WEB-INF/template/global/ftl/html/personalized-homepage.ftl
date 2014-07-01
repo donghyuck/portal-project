@@ -561,7 +561,7 @@
 		<!-- display photo  panel                                  -->
 		<!-- ============================== -->
 		function displayPhotoSource(photo){
-			if( photo typeof === 'undefined' ){
+			if(  typeof photo === 'undefined' ){
 				var photoPlaceHolder = $("#photo-list-view").data( "photoPlaceHolder");
 				if( !photoPlaceHolder ){
 					photoPlaceHolder = new Photo();
