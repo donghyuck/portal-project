@@ -1942,6 +1942,7 @@
 		ACTIVATE = "activate",
 		CLOSE = "close",
 		REFRESH = "refresh",
+		CUSTOM = "custom",
 		ERROR = "error",
 		DRAGSTART = "dragstart",
         DRAGEND = "dragend",		
@@ -2058,6 +2059,7 @@
 	            REFRESH,
 	            DRAGSTART,
 	            DRAGEND,
+	            CUSTOM,
 	            ERROR
 	        ],		
 		options : {
@@ -2095,9 +2097,13 @@
 	                "k-i-minimize": "minimize",
 	                "k-i-restore": "restore",
 	                "k-i-refresh": "refresh",
-	                "k-i-custom": "custom"
+	                "k-i-custom": "_custom"
 			}[iconClass];
 		},											
+		_custom: function(systemTriggered){
+			var that = this;
+			that.trigger(CUSTOM);
+		},
 		_close: function(systemTriggered) {
 			var that = this,
 				wrapper = that.wrapper,
