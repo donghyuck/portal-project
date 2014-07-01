@@ -613,9 +613,7 @@
 							image : new Image(e.target.data())
 						}),
 						open: function(e){											
-							var grid = e.target.element.children(".photo-props-grid");
-							alert(grid.length );
-							
+							var grid = e.target.element.find(".modal-body .photo-props-grid");						
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
 								alert("create grid");								
 								grid.kendoGrid({
