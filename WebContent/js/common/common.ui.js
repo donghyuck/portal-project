@@ -2104,7 +2104,7 @@
 		},											
 		_custom: function(systemTriggered){
 			var that = this;
-			that.trigger(CUSTOM);
+			that.trigger(CUSTOM, {target: that});
 		},
 		_close: function(systemTriggered) {
 			var that = this,
