@@ -658,8 +658,8 @@
 									change: function(e) {
 									}
 								});
-										/*
-								if(shared.length > 0)
+										
+								if(shared.length > 0){
 									shared.on("change", function () {
 										var newValue = ( this.value == 1 ) ;
 										var oldValue =  photoEditorSource().shared ;					
@@ -703,7 +703,7 @@
 										} 
 									});														
 								}	
-								*/			
+								
 							}		
 							
 							grid.data('kendoGrid').dataSource.read();
