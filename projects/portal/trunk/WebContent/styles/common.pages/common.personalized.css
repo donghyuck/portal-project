@@ -244,10 +244,12 @@
  .panel-body figure h2 {
 	word-spacing: -0.15em;	
 	font-weight: 300;
+	color: #fff;
 }
 
  .panel-body figure h2 span {
 	font-weight: 800;
+	color: #fff;
 }
 
  .panel-body figure h2,
