@@ -656,6 +656,28 @@
 									}
 								});
 
+								e.target.element.find("input[name='photo-public-shared']").on("change", function () {
+									var newValue = ( this.value == 1 ) ;
+									var oldValue =  photoEditorSource().shared ;					
+									if( oldValue != newValue){
+										if(newValue){
+											common.api.streams.add({
+												imageId: photoEditorSource().imageId,
+												success : function( data ) {
+													kendo.stringify(data);
+												}
+											});							
+										}else{
+											common.api.streams.remove({
+												imageId: photoEditorSource().imageId,
+												success : function( data ) {
+													kendo.stringify(data);
+												}
+											});					
+										}
+									}					
+								});	
+				
 								var upload = e.target.element.find(".modal-body input[name='update-photo-file']");
 								if(upload.length > 0 ){								
 									upload.kendoUpload({
