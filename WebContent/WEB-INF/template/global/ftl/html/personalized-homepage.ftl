@@ -612,10 +612,10 @@
 							image : new Image(e.target.data())
 						}),
 						open: function(e){											
-							var grid = e.target.element.find(".modal-body .photo-props-grid");		
-							var shared = e.target.element.find("input[name='photo-public-shared']");
+							var grid = e.target.element.find(".modal-body .photo-props-grid");							
+							var shared = e.target.element.find(".modal-body input[name='photo-public-shared']");
 							var upload = e.target.element.find(".modal-body input[name='update-photo-file']");
-														
+							
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
 								alert("create grid");								
 								grid.kendoGrid({
