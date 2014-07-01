@@ -841,7 +841,8 @@
 					that._modal().css('z-index', '2000');
 					that.element.find('.modal').on('show.bs.modal', function(e) {
 						that.trigger(OPEN, {
-							element : that._modal()[0]
+							element : that._modal()[0],
+							target: that
 						});
 					});
 					that.element.find('.modal').on('hide.bs.modal', function(e) {
