@@ -606,14 +606,10 @@
 									create: { url:'/community/update-my-image-property.do?output=json', type:'post' },
 									update: { url:'/community/update-my-image-property.do?output=json', type:'post'  },
 									destroy: { url:'/community/delete-my-image-property.do?output=json', type:'post' },
-									parameterMap: function (options, operation){	
-											
-										alert(photoEditorSource().image.imageId);
-								 		
+									parameterMap: function (options, operation){						 		
 								 		if (operation !== "read" && options.models) {								 			
-								 			return { imageId: image.imageId, items: kendo.stringify(options.models)};
-										} 
-										
+								 			return { imageId: photoEditorSource().image.imageId, items: kendo.stringify(options.models)};
+										} 										
 										if (photoEditorSource().image.imageId > 0 )
 											return { imageId: photoEditorSource().image.imageId };
 										else{	  										
