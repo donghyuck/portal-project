@@ -531,8 +531,8 @@ var Image = kendo.data.Model.define( {
     	objectType: { type: "number", editable: false, defaultValue: -1  },    	
     	objectId: { type: "number", editable: false, defaultValue: -1  },    	
     	name: { type: "string", editable: true , validation: { required: true }},
-        contentType: { type: "string", editable: false },
-        size: { type: "number", defaultValue : 0,  editable: false },
+        contentType: { type: "string", editable: true },
+        size: { type: "number", defaultValue : 0,  editable: true },
         shared : { type: "boolean", defaultValue : false,  editable: true },
         modifiedDate: { type: "date"},
         creationDate: { type: "date" },
@@ -547,6 +547,18 @@ var Image = kendo.data.Model.define( {
     formattedModifiedDate : function(){
     	return kendo.toString(this.get("modifiedDate"), "g");
     },
+    copy : function ( target ){
+    	target.imageId = this.get("imageId");
+    	target.objectType = this.get("objectType");
+    	target.objectId = this.get("objectId");
+    	target.set("name", this.get("name"));
+    	target.set("contentType", this.get("contentType"));
+    	target.set("size", this.get("size"));
+    	target.set("shared", this.get("shared"));
+    	if( typeof this.get("properties") === 'object' )
+    		target.set("properties", this.get("properties") );    	
+    	target.set("modifiedDate", this.get("modifiedDate"));
+    },        
     manupulate : function () {
     	this.set( "photoUrl" , '/community/download-my-image.do?imageId=' + this.get('imageId') );
     	this.set( "formattedCreationDate" , kendo.toString(this.get('creationDate'),  'F') );
