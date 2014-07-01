@@ -199,7 +199,11 @@
 /**
  * Panel Hover Effect
  */
- .panel-body  figure img{
+ .panel-body  figure {
+ 	position: relative;
+ }
+ 
+.panel-body  figure img{
 	position: relative;
 	display: block;
 	/*min-height: 100%;*/
@@ -260,6 +264,7 @@
  .panel-body figure p {
 	letter-spacing: 1px;
 	font-size: 68.5%;
+	color: #fff;
 }
  
  
