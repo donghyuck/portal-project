@@ -617,7 +617,7 @@
 							var upload = e.target.element.find(".modal-body input[name='update-photo-file']");
 							
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
-								alert("create grid");								
+							
 								grid.kendoGrid({
 									dataSource : {		
 										transport: { 
