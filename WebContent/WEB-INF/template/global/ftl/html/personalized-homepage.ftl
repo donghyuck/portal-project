@@ -683,7 +683,7 @@
 									});					
 								}
 								
-								if(upload.length > 0 ){								
+								if( upload.length > 0 ){								
 									upload.kendoUpload({
 										showFileList: false,
 										multiple: false,
@@ -701,7 +701,8 @@
 											}
 										} 
 									});														
-								}				
+								}	
+											
 							}		
 							
 							grid.data('kendoGrid').dataSource.read();
