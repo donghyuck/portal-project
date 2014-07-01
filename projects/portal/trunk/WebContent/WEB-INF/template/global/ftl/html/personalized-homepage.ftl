@@ -599,9 +599,8 @@
 						data: new kendo.data.ObservableObject({
 							image : new Image()
 						}),
-						open: function(e){
-							
-							image.copy(modal.data.image);
+						open: function(e){							
+							image.copy(modal.data().image);
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
