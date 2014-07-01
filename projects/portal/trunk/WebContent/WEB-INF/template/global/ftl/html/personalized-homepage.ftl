@@ -596,48 +596,14 @@
 				},
 				custom: function(e){
 					var image = e.target.data();
-					alert( image.imageId );
 					
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
-							image : new Image(),
-							properties : new kendo.data.DataSource({
-								transport: { 
-									read: { url:'/community/get-my-image-property.do?output=json', type:'post' },
-									create: { url:'/community/update-my-image-property.do?output=json', type:'post' },
-									update: { url:'/community/update-my-image-property.do?output=json', type:'post'  },
-									destroy: { url:'/community/delete-my-image-property.do?output=json', type:'post' },
-									parameterMap: function (options, operation){						 		
-								 		if (operation !== "read" && options.models) {								 			
-								 			return { imageId: photoEditorSource().image.imageId, items: kendo.stringify(options.models)};
-										} 										
-										if (photoEditorSource().image.imageId > 0 )
-											return { imageId: photoEditorSource().image.imageId };
-										else{	  										
-											return { imageId: image.imageId };
-										}
-									}
-								},						
-								batch: true, 
-								schema: {
-									data: "targetImageProperty",
-									model: Property
-								},
-								error:common.api.handleKendoAjaxError
-							})
+							image : new Image()
 						}),
-						open: function(e){							
-							
-							image.copy(e.target.data().image);
-							alert ( image.imageId +","+ e.target.data().image.imageId);
-							/*
-							
-							if(image.imageId != e.target.data().image.imageId && e.target.data().image.imageId > 0 ){
-							
-								 e.target.data().properties.read();
-							}
-							*/				
+						open: function(e){
+							//image.copy(e.target.data().image);		
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
