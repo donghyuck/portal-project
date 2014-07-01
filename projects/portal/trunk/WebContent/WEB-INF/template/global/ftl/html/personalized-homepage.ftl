@@ -593,14 +593,13 @@
 				},
 				custom: function(e){
 					var image = e.target.data();
-					alert( image.imageId ) ;
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
 							image : new Image()
 						}),
 						open: function(e){							
-							image.copy(modal.data().image);
+							image.copy(e.target.data().image);
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
