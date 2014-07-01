@@ -2071,6 +2071,14 @@
 				close: {}
 			}	
 		},
+		data : function( data ){
+			var that = this;
+			if( defined(data)){
+				that.options.data = data;
+			}else{
+				return that.options.data;
+			}
+		},
 		_closable: function() {
 			return $.inArray("close", $.map(this.options.actions, function(x) { return x.toLowerCase(); })) > -1;
 		},
