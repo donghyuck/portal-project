@@ -48,9 +48,8 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
 					<h5 class='modal-title' data-bind="text: image.name">포토 수정</h5>
 				</div>
-				<div class='modal-body'>
-					
-					<div class="page-header">
+				<div class='modal-body'>					
+					<div class="page-header no-margin-t">
 						<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
 					</div>
 					<div class="btn-group btn-group-sm" data-toggle="buttons">
