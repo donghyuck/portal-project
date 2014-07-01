@@ -606,7 +606,7 @@
 					$("#"+guid+"-layout").remove();
 				},
 				custom: function(e){
-					photoEditorSource(  e.target.data() );
+					
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
@@ -621,8 +621,8 @@
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					});
-					
-					
+					photoEditorSource(  e.target.data() );
+					modal.open();					
 				}
 			});			
 		}		
