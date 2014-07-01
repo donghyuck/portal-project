@@ -594,7 +594,7 @@
 				custom: function(e){
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal"
-					});
+					}).open();
 					
 				}
 			});			
