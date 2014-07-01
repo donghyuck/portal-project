@@ -655,10 +655,9 @@
 									],				     
 									change: function(e) {
 									}
-								});										
-								
-							}			
-							alert(e.target.data().image.imageId);		
+								});
+							}		
+							grid.data('kendoGrid').dataSource.read();
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					});
