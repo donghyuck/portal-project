@@ -612,7 +612,10 @@
 							image : new Image(e.target.data())
 						}),
 						open: function(e){											
-							var grid = e.target.element.find(".modal-body .photo-props-grid");									
+							var grid = e.target.element.find(".modal-body .photo-props-grid");		
+							var shared = e.target.element.find("input[name='photo-public-shared']");
+							var upload = e.target.element.find(".modal-body input[name='update-photo-file']");
+														
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
 								alert("create grid");								
 								grid.kendoGrid({
@@ -655,30 +658,31 @@
 									change: function(e) {
 									}
 								});
-
-								e.target.element.find("input[name='photo-public-shared']").on("change", function () {
-									var newValue = ( this.value == 1 ) ;
-									var oldValue =  photoEditorSource().shared ;					
-									if( oldValue != newValue){
-										if(newValue){
-											common.api.streams.add({
-												imageId: photoEditorSource().imageId,
-												success : function( data ) {
-													photoEditorSource().shared = true ;
-												}
-											});							
-										}else{
-											common.api.streams.remove({
-												imageId: photoEditorSource().imageId,
-												success : function( data ) {
-													photoEditorSource().shared = false ;
-												}
-											});					
-										}
-									}					
-								});	
-				
-								var upload = e.target.element.find(".modal-body input[name='update-photo-file']");
+								
+								if(shared.length > 0)
+									shared.on("change", function () {
+										var newValue = ( this.value == 1 ) ;
+										var oldValue =  photoEditorSource().shared ;					
+										if( oldValue != newValue){
+											if(newValue){
+												common.api.streams.add({
+													imageId: photoEditorSource().imageId,
+													success : function( data ) {
+														photoEditorSource().shared = true ;
+													}
+												});							
+											}else{
+												common.api.streams.remove({
+													imageId: photoEditorSource().imageId,
+													success : function( data ) {
+														photoEditorSource().shared = false ;
+													}
+												});					
+											}
+										}					
+									});					
+								}
+								
 								if(upload.length > 0 ){								
 									upload.kendoUpload({
 										showFileList: false,
@@ -699,7 +703,20 @@
 									});														
 								}				
 							}		
+							
 							grid.data('kendoGrid').dataSource.read();
+							common.api.streams.details({
+								imageId : photoEditorSource().imageId ,
+								success : function( data ) {
+									if( data.photos.length > 0 ){
+										photoEditorSource().shared = true ;
+										shared.first().click();
+									}else{
+										photoEditorSource().shared = false ;
+										shared.last().click();
+									}
+								}
+							});					
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					});
