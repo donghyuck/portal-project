@@ -606,11 +606,11 @@
 					$("#"+guid+"-layout").remove();
 				},
 				custom: function(e){
-					photoEditorSource(  e.target.data() );				
+					photoEditorSource(  e.target.data() );
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
-							image : new Image()
+							image : new Image(e.target.data())
 						}),
 						open: function(e){											
 							var grid = e.target.element.children(".photo-props-grid");
@@ -620,7 +620,8 @@
 							alert(e.target.data().image.imageId);		
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
-					}).open();
+					});
+					
 					
 				}
 			});			
