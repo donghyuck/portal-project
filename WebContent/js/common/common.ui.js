@@ -758,7 +758,12 @@
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui = common.ui || {};
-	var kendo = window.kendo, Widget = kendo.ui.Widget, isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, trimSlashesRegExp = /(^\/|\/$)/g, CHANGE = "change", ERROR = "error", REFRESH = "refresh", OPEN = "open", CLOSE = "close", CLICK = "click", UNDEFINED = 'undefined', POST = 'POST', JSON = 'json', handleKendoAjaxError = common.api.handleKendoAjaxError;
+	var kendo = window.kendo, Widget = kendo.ui.Widget, 
+	isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, 
+	trimSlashesRegExp = /(^\/|\/$)/g, CHANGE = "change", ERROR = "error", REFRESH = "refresh", OPEN = "open", CLOSE = "close", CLICK = "click", 
+	UNDEFINED = 'undefined', POST = 'POST', 
+	JSON = 'json', 
+	handleKendoAjaxError = common.api.handleKendoAjaxError;
 
 	common.ui.extModalWindow = Widget
 			.extend({
@@ -874,7 +879,7 @@
 
 	common.ui.modal = function (options){
 		options = options || {};	
-		if( defined(options.renderTo)){
+		if( typeof options.renderTo) === "string" ){
 			if( $("#"+options.renderTo).length === 0 ){
 				$('body').append("<section id='"+ options.renderTo  +"'></section>");
 			}
