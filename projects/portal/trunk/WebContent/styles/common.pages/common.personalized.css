@@ -188,8 +188,12 @@
 	overflow: hidden;
 }
 
+.panel-heading a.k-link {
+	padding: 4px 2px 2px 2px;
+}
+
 .panel-heading a.k-link: hover {
-	color : #3498db;
+	background : #3498db;
 }
 
 /**
