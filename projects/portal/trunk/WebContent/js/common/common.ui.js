@@ -2015,17 +2015,18 @@
 			wrapper.append(templates.body( {} ) );
 			
 
-			
+			if (content) {
+				that.refresh();			
+			}
 			if( defined(options.template)){
 				if (!defined(options.data) ){
 					options.data = {};
 				}
 				options.content = options.template(options.data); 
-			}
-
-			if (content) {
 				that.refresh();			
 			}
+
+
 			
 			id = element.attr("id");
 			
