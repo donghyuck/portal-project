@@ -879,6 +879,7 @@
 
 	common.ui.modal = function (options){
 		options = options || {};	
+		alert( typeof options.renderTo );
 		if( typeof options.renderTo === "string" ){
 			if( $("#"+options.renderTo).length === 0 ){
 				$('body').append("<section id='"+ options.renderTo  +"'></section>");
