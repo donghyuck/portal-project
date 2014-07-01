@@ -614,7 +614,7 @@
 						}),
 						open: function(e){											
 							var grid = e.target.element.children(".photo-props-grid");
-							alert( e.target.element.html() );
+							alert(grid.length );
 							
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
 								alert("create grid");								
