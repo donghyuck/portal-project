@@ -807,11 +807,9 @@
 				_changeState : function(enabled) {
 					var that = this;
 					if (enabled) {
-						that.element.find('.modal-footer .btn.custom-update')
-								.removeAttr('disabled');
+						that.element.find('.modal-footer .btn.custom-update').removeAttr('disabled');
 					} else {
-						that.element.find('.modal-footer .btn.custom-update')
-								.attr('disabled', 'disabled');
+						that.element.find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');
 					}
 				},
 				_createDialog : function() {
@@ -851,7 +849,6 @@
 				_dialogTemplate : function() {
 					var that = this;
 					
-					alert(typeof that.options.template);
 					if (typeof that.options.template === UNDEFINED) {
 						return kendo
 								.template("<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>"
