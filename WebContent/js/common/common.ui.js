@@ -872,16 +872,6 @@
 				}
 			});
 
-	common.ui.panel = function ( options ){		
-		options = options || {};	
-		if( defined(options.renderTo)){
-			 return new common.ui.ExtPanel( $(options.renderTo), options); 
-		}else 	if( defined(options.appendTo) ){		
-			var guid = common.api.guid().toLowerCase() ;
-			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
-			return new common.ui.ExtPanel( $("#" + guid ), options); 
-		}
-		
 	common.ui.modal: function (options){
 		options = options || {};	
 		if( defined(options.renderTo)){
