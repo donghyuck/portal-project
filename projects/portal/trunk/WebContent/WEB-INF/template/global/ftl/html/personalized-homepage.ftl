@@ -619,11 +619,10 @@
 							})
 						}),
 						open: function(e){							
-							
-							image.copy(e.target.data().image);
-							
-							alert( e.target.element.html() );
-							
+							if(image.imageId != this.data.image.imageId ){
+								this.properties.read();
+							}
+							image.copy(e.target.data().image);							
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
