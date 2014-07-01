@@ -586,7 +586,6 @@
 				renderTo: "#" + guid,
 				title: photoPlaceHolder.name, 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
-				content: "<figure class='effect-marley'>" + "<img src='/community/download-my-image.do?imageId=" + photoPlaceHolder.imageId + "'>" + "<figcaption><h2>Sweet <span>Marley</span></h2><p>Marley tried to convince her but she was not interested.</p><a href='\\#'>View more</a></figcaption>" + "</figure>",
 				template: kendo.template($("#photo-view-template").html()),   
 				data: photoPlaceHolder, 
 				close: function(e) {
