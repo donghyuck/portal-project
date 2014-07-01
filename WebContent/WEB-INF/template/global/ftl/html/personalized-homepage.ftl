@@ -619,7 +619,7 @@
 							})
 						}),
 						open: function(e){							
-							if(image.imageId != this.data.image.imageId ){
+							if(image.imageId != e.target.data().image.imageId ){
 								this.properties.read();
 							}
 							image.copy(e.target.data().image);							
