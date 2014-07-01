@@ -599,6 +599,7 @@
 							image : new Image()
 						}),
 						open: function(e){
+							image.copy(modal.data.image);
 							alert(2) ;
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
