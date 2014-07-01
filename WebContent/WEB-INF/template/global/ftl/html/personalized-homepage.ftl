@@ -658,7 +658,7 @@
 									change: function(e) {
 									}
 								});
-								
+										/*
 								if(shared.length > 0)
 									shared.on("change", function () {
 										var newValue = ( this.value == 1 ) ;
@@ -683,7 +683,7 @@
 									});					
 								}
 								
-								/*
+						
 								if( upload.length > 0 ){								
 									upload.kendoUpload({
 										showFileList: false,
