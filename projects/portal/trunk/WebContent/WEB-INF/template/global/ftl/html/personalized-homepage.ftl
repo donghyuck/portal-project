@@ -596,6 +596,7 @@
 				},
 				custom: function(e){
 					var image = e.target.data();
+					
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
@@ -628,7 +629,7 @@
 						open: function(e){							
 							
 							image.copy(e.target.data().image);
-							alert(e.target.data().image.imageId);
+							alert ( image.imageId +","+ e.target.data().image.imageId);
 							/*
 							
 							if(image.imageId != e.target.data().image.imageId && e.target.data().image.imageId > 0 ){
