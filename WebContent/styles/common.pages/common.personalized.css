@@ -192,7 +192,7 @@
 	padding: 4px 2px 2px 2px;
 }
 
-.panel-heading a.k-link: hover {
+.panel-heading a.k-link:hover, .panel-heading a.k-link:active {
 	background : #3498db;
 }
 
