@@ -65,18 +65,7 @@
 					<div class="page-header">
 						<h4 class="text-primary"><i class="fa fa-bars"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
 					</div>
-					<div data-role="grid" class="photo-props-grid"
-							data-scrollable="false"
-							data-editable="true"
-							data-autoBind="false"
-							data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-							data-columns="[
-								{ 'title': '이름',  'field': 'name', 'width': 200 },
-								{ 'title': '값', 'field': 'value' },
-								{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
-							]"
-							data-bind="source: properties"
-						style="min-height: 300px"></div>
+					<div class="photo-props-grid" style="min-height: 300px"></div>
 																	
 					<div class="page-header">
 						<h4 class="text-primary"><i class="fa fa-upload"></i> <strong>이미지 변경</strong> <small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h4>
