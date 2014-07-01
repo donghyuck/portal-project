@@ -46,7 +46,7 @@
 			<div class='modal-content'>
 				<div class='modal-header'>
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-					<h5 class='modal-title'>포토 수정</h5>
+					<h5 class='modal-title' data-bind="text: image.name">포토 수정</h5>
 				</div>
 				<div class='modal-body'>
 				
