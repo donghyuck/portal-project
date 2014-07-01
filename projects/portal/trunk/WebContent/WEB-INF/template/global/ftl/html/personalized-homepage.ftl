@@ -586,7 +586,7 @@
 				renderTo: "#" + guid,
 				title: photoPlaceHolder.name, 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
-				content: "<figure class='effect-marley'>" + "<img src='/community/download-my-image.do?imageId=" + photoPlaceHolder.imageId + "'>" + "<pigcaption><a href='\\#'>View more</a></pigcaption>" + "</figure>",
+				content: "<figure class='effect-marley'>" + "<img src='/community/download-my-image.do?imageId=" + photoPlaceHolder.imageId + "'>" + "<pigcaption><h2>Sweet <span>Marley</span></h2><p>Marley tried to convince her but she was not interested.</p><a href='\\#'>View more</a></pigcaption>" + "</figure>",
 				close: function(e) {
 					$("#"+guid+"-layout").remove();
 				}
