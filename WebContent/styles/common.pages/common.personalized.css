@@ -1,5 +1,6 @@
 @CHARSET "UTF-8";
 
+
 #personalized-controls {
 	position: absolute;
 	top: 50px;
@@ -179,3 +180,14 @@
 	outline: none;
 	text-decoration: none;
 }
+
+/**
+ * Panel
+ */
+ .panel-title {
+	overflow: hidden;
+}
+
+.panel-heading a.k-link: hover {
+	color : #3498db;
+} 
