@@ -557,6 +557,7 @@ var Image = kendo.data.Model.define( {
     	target.set("shared", this.get("shared"));
     	if( typeof this.get("properties") === 'object' )
     		target.set("properties", this.get("properties") );    	
+    	target.set("creationDate", this.get("creationDate"));
     	target.set("modifiedDate", this.get("modifiedDate"));
     },        
     manupulate : function () {
