@@ -570,8 +570,8 @@
 			}
 		}
 		
-		function displayPhotoPanel(){
-			
+		
+		function displayPhotoPanel(){			
 			var appendTo = $("#personalized-area");			
 			var grid_col_size =appendTo.data("sizePlaceHolder");			
 			var photoPlaceHolder = displayPhotoSource(); //$("#photo-list-view").data( "photoPlaceHolder");		
@@ -590,9 +590,13 @@
 				data: photoPlaceHolder, 
 				close: function(e) {
 					$("#"+guid+"-layout").remove();
+				},
+				custom: function(e){
+					var modal = common.ui.modal({
+						rendorTo : "image-editor-modal"
+					});
 				}
-			});
-			
+			});			
 		}		
 				
 				
