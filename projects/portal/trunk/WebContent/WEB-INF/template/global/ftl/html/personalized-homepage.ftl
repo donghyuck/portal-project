@@ -604,9 +604,8 @@
 									update: { url:'/community/update-my-image-property.do?output=json', type:'post'  },
 									destroy: { url:'/community/delete-my-image-property.do?output=json', type:'post' },
 									parameterMap: function (options, operation){			
-								 		if (operation !== "read" && options.models) {
-								 			
-								 			//return { imageId: $("#photo-list-view").data( "photoPlaceHolder").imageId, items: kendo.stringify(options.models)};
+								 		if (operation !== "read" && options.models) {								 			
+								 			return { imageId: image.imageId, items: kendo.stringify(options.models)};
 										} 
 										return { imageId: image.imageId }
 									}
@@ -620,7 +619,9 @@
 							})
 						}),
 						open: function(e){							
+							
 							image.copy(e.target.data().image);
+							
 							alert( e.target.element.html() );
 							
 						},
