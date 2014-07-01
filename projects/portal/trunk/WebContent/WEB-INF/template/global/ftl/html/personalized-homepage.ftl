@@ -570,8 +570,19 @@
 			}
 		}
 		
-		function photoEditorSource (){
-			return common.ui.modal({renderTo : "photo-editor-modal"}).data();
+		function photoEditorSource (photo){			
+			var modal = $('#photo-editor-modal').data("kendoExtModalWindow");			
+			if(  typeof photo === 'undefined' ){
+				if( modal ){
+					return modal.data().image
+				}else{
+					return new Image();
+				}
+			}else{
+				if( modal ){
+					photo.copy( modal.data().image);
+				}
+			}
 		}
 		
 		function displayPhotoPanel(){			
@@ -595,20 +606,18 @@
 					$("#"+guid+"-layout").remove();
 				},
 				custom: function(e){
-					var image = e.target.data();
-					
+					photoEditorSource(  e.target.data() );				
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
 							image : new Image()
 						}),
-						open: function(e){		
-											
+						open: function(e){											
 							var grid = e.target.element.children(".photo-props-grid");
 							if( !grid.data('kendoGrid') ){
 								alert("create grid");
-							}						
-							//image.copy(e.target.data().image);		
+							}			
+							alert(e.target.data().image.imageId);		
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
