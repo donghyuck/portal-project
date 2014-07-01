@@ -602,7 +602,12 @@
 						data: new kendo.data.ObservableObject({
 							image : new Image()
 						}),
-						open: function(e){
+						open: function(e){		
+											
+							var grid = e.target.element.children(".photo-props-grid");
+							if( !grid.data('kendoGrid') ){
+								alert("create grid");
+							}						
 							//image.copy(e.target.data().image);		
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
