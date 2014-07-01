@@ -800,6 +800,14 @@
 					Widget.fn.destroy.call(that);
 					$(that.element).remove();
 				},
+				data : function( data ){
+					var that = this;
+					if( typeof data === UNDEFINED ){
+						return that.options.data;
+					}else{						
+						that.options.data = data;
+					}
+				},				
 				_modal : function() {
 					var that = this;
 					return that.element.children('.modal');
