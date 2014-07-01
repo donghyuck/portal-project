@@ -587,6 +587,7 @@
 				title: photoPlaceHolder.name, 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
 				content: "<figure class='effect-marley'>" + "<img src='/community/download-my-image.do?imageId=" + photoPlaceHolder.imageId + "'>" + "<figcaption><h2>Sweet <span>Marley</span></h2><p>Marley tried to convince her but she was not interested.</p><a href='\\#'>View more</a></figcaption>" + "</figure>",
+				template : kendo.template($("#photo-view-template").html()),   
 				close: function(e) {
 					$("#"+guid+"-layout").remove();
 				}
@@ -1258,6 +1259,7 @@
 			</div>
 		</script>					
 		<#include "/html/common/common-homepage-templates.ftl" >		
+		<#include "/html/common/common-personalized-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
 </html>
