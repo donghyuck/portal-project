@@ -594,6 +594,9 @@
 				custom: function(e){
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
+						data: new kendo.data.ObservableObject({
+							image : new Image()
+						}),
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
 					
