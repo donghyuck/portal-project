@@ -868,7 +868,7 @@
 										+ "</div><!-- /.modal-content -->"
 										+ "</div><!-- /.modal-dialog -->"
 										+ "</div><!-- /.modal -->");
-					} else if (typeof that.options.template === 'object') {
+					} else if (isFunction( that.options.template )) {
 						return that.options.template;
 					} else if (typeof that.options.template === 'string') {
 						return kendo.template(that.options.template);
