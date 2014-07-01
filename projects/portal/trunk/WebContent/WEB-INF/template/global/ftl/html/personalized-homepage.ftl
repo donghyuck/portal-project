@@ -606,8 +606,10 @@
 									create: { url:'/community/update-my-image-property.do?output=json', type:'post' },
 									update: { url:'/community/update-my-image-property.do?output=json', type:'post'  },
 									destroy: { url:'/community/delete-my-image-property.do?output=json', type:'post' },
-									parameterMap: function (options, operation){			
-									alert(photoEditorSource().image.imageId);
+									parameterMap: function (options, operation){	
+											
+										alert(photoEditorSource().image.imageId);
+								 		
 								 		if (operation !== "read" && options.models) {								 			
 								 			return { imageId: image.imageId, items: kendo.stringify(options.models)};
 										} 
@@ -623,7 +625,7 @@
 							})
 						}),
 						open: function(e){							
-							alert(image.imageId + "/" + e.target.data().image.imageId  );
+							//alert(image.imageId + "/" + e.target.data().image.imageId  );
 							if(image.imageId != e.target.data().image.imageId && e.target.data().image.imageId > 0 ){
 							
 								 e.target.data().properties.read();
