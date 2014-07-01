@@ -605,15 +605,14 @@
 				close: function(e) {
 					$("#"+guid+"-layout").remove();
 				},
-				custom: function(e){
-					
+				custom: function(e){					
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
 							image : new Image(e.target.data())
 						}),
 						open: function(e){											
-							var grid = e.target.element.find(".modal-body .photo-props-grid");						
+							var grid = e.target.element.find(".modal-body .photo-props-grid");									
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
 								alert("create grid");								
 								grid.kendoGrid({
@@ -656,6 +655,27 @@
 									change: function(e) {
 									}
 								});
+
+								var upload = e.target.element.find(".modal-body input[name='update-photo-file']");
+								if(upload.length > 0 ){								
+									upload.kendoUpload({
+										showFileList: false,
+										multiple: false,
+										async: {
+											saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
+											autoUpload: true
+										},
+										localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+										upload: function (e) {				
+											e.data = { imageId: photoEditorSource().imageId };
+										},
+										success: function (e) {				
+											if( e.response.targetImage ){
+												$('#photo-list-view').data('kendoListView').dataSource.read();
+											}
+										} 
+									});														
+								}				
 							}		
 							grid.data('kendoGrid').dataSource.read();
 						},
