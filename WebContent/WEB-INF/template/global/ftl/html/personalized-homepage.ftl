@@ -613,7 +613,12 @@
 								 		if (operation !== "read" && options.models) {								 			
 								 			return { imageId: image.imageId, items: kendo.stringify(options.models)};
 										} 
-										return { imageId: image.imageId }
+										
+										if (photoEditorSource().image.imageId > 0 )
+											return { imageId: photoEditorSource().image.imageId };
+										else{	  										
+											return { imageId: image.imageId };
+										}
 									}
 								},						
 								batch: true, 
@@ -625,12 +630,16 @@
 							})
 						}),
 						open: function(e){							
-							//alert(image.imageId + "/" + e.target.data().image.imageId  );
+							
+							image.copy(e.target.data().image);
+							alert();
+							/*
+							
 							if(image.imageId != e.target.data().image.imageId && e.target.data().image.imageId > 0 ){
 							
 								 e.target.data().properties.read();
 							}
-							image.copy(e.target.data().image);							
+							*/				
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
