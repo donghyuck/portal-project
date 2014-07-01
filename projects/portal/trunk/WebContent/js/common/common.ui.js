@@ -993,8 +993,7 @@
 								that._changeState(false);
 							});
 
-					that.element.find('.modal-footer .btn.custom-update')
-							.click(function() {
+					that.element.find('.modal-footer .btn.custom-update').click(function() {
 								that.trigger(APPLY, {
 									html : LINK_VALUE_TEMPLATE(that._data)
 								});
@@ -1003,8 +1002,7 @@
 				_dialogTemplate : function() {
 					var that = this;
 					if (typeof that.options.template === UNDEFINED) {
-						return kendo
-								.template("<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>"
+						return kendo.template("<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>"
 										+ "<div class='modal-dialog modal-sm'>"
 										+ "<div class='modal-content'>"
 										+ "<div class='modal-header'>"
