@@ -42,11 +42,11 @@
 </script>
 <script id="photo-editor-modal-template" type="text/x-kendo-template">
 	<div class='modal fade' tabindex='-1' role='dialog' aria-hidden='true'>
-		<div class='modal-dialog modal-sm'>
+		<div class='modal-dialog'>
 			<div class='modal-content'>
 				<div class='modal-header'>
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-					<h5 class='modal-title'>제목</h5>
+					<h5 class='modal-title'>포토 수정</h5>
 				</div>
 				<div class='modal-body'>
 				
