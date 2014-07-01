@@ -68,6 +68,7 @@
 					<div data-role="grid" class="photo-props-grid"
 							data-scrollable="false"
 							data-editable="true"
+							data-autoBind="false"
 							data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
 							data-columns="[
 								{ 'title': '이름',  'field': 'name', 'width': 200 },
