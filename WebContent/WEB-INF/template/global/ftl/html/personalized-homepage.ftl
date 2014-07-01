@@ -664,7 +664,7 @@
 											common.api.streams.add({
 												imageId: photoEditorSource().imageId,
 												success : function( data ) {
-													photoEditorSource().shared = false ;
+													photoEditorSource().shared = true ;
 												}
 											});							
 										}else{
