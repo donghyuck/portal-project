@@ -49,7 +49,11 @@
 					<h5 class='modal-title' data-bind="text: image.name">포토 수정</h5>
 				</div>
 				<div class='modal-body'>
-				
+					
+					<div class="page-header text-primary">
+						<h4><i class="fa fa-share-alt"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
+					</div>
+							
 				</div>
 				<div class='modal-footer'>		
 					<button type="button" class="btn btn-primary custom-update" disabled="disabled">확인</button>	
