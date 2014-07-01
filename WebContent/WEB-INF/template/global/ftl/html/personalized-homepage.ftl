@@ -600,6 +600,8 @@
 						}),
 						open: function(e){							
 							image.copy(e.target.data().image);
+							alert( e.target.element.html );
+							
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					}).open();
