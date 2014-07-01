@@ -664,14 +664,14 @@
 											common.api.streams.add({
 												imageId: photoEditorSource().imageId,
 												success : function( data ) {
-													kendo.stringify(data);
+													photoEditorSource().shared = false ;
 												}
 											});							
 										}else{
 											common.api.streams.remove({
 												imageId: photoEditorSource().imageId,
 												success : function( data ) {
-													kendo.stringify(data);
+													photoEditorSource().shared = false ;
 												}
 											});					
 										}
