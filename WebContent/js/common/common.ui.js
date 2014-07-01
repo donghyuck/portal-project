@@ -832,15 +832,15 @@
 					}
 					that._modal().css('z-index', '2000');
 					that.element.find('.modal').on('show.bs.modal', function(e) {
-								that.trigger(OPEN, {
-									element : that._modal()[0]
-								});
-							});
+						that.trigger(OPEN, {
+							element : that._modal()[0]
+						});
+					});
 					that.element.find('.modal').on('hide.bs.modal', function(e) {
-								that.trigger(CLOSE, {
-									element : that._modal()[0]
-								});
-							});
+						that.trigger(CLOSE, {
+							element : that._modal()[0]
+						});
+					});
 
 					that.trigger(REFRESH, {
 						element : that._modal()[0]
