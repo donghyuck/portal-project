@@ -628,7 +628,7 @@
 						open: function(e){							
 							
 							image.copy(e.target.data().image);
-							alert();
+							alert(e.target.data().image.imageId);
 							/*
 							
 							if(image.imageId != e.target.data().image.imageId && e.target.data().image.imageId > 0 ){
