@@ -592,8 +592,9 @@
 					$("#"+guid+"-layout").remove();
 				},
 				custom: function(e){
+				alert( $(this).html() );
 					var modal = common.ui.modal({
-						renderTo : "photo-editor-modal"
+						renderTo : "photo-editor-modal",
 					}).open();
 					
 				}
