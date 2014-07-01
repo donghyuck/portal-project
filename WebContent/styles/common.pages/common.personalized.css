@@ -202,7 +202,9 @@
  .panel-body  figure img{
 	position: relative;
 	display: block;
-	min-height: 100%;
+	/*min-height: 100%;*/
+	max-width: 100%;
+	height: auto;
 	opacity: 0.8;
 }
  
