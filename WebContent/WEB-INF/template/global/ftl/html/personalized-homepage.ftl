@@ -564,7 +564,7 @@
 			if(  typeof photo === 'undefined' ){
 				var photoPlaceHolder = $("#photo-list-view").data( "photoPlaceHolder");
 				if( !photoPlaceHolder ){
-					photoPlaceHolder = new Photo();
+					photoPlaceHolder = new Image();
 				}
 				return photoPlaceHolder;
 			}
