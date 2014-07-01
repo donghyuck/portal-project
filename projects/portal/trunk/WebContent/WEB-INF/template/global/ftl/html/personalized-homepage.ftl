@@ -592,7 +592,7 @@
 					$("#"+guid+"-layout").remove();
 				},
 				custom: function(e){
-					var image = e.target.data;
+					var image = e.target.data();
 					alert( image.imageId ) ;
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
