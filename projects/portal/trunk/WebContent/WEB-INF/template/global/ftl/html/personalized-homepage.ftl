@@ -620,7 +620,7 @@
 						}),
 						open: function(e){							
 							alert(image.imageId + "/" + e.target.data().image.imageId  );
-							if(image.imageId != e.target.data().image.imageId ){
+							if(image.imageId != e.target.data().image.imageId && e.target.data().image.imageId > 0 ){
 							
 								 e.target.data().properties.read();
 							}
