@@ -571,7 +571,7 @@
 		}
 		
 		function photoEditorSource (){
-			return common.ui.modal({renderTo : "photo-editor-modal"}.data();
+			return common.ui.modal({renderTo : "photo-editor-modal"}).data();
 		}
 		
 		function displayPhotoPanel(){			
