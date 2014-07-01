@@ -705,6 +705,7 @@
 							}		
 							
 							grid.data('kendoGrid').dataSource.read();
+							
 							common.api.streams.details({
 								imageId : photoEditorSource().imageId ,
 								success : function( data ) {
@@ -716,7 +717,8 @@
 										shared.last().click();
 									}
 								}
-							});					
+							});
+												
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					});
