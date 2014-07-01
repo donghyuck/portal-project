@@ -560,11 +560,21 @@
 		<!-- ============================== -->
 		<!-- display photo  panel                                  -->
 		<!-- ============================== -->
+		function displayPhotoSource(photo){
+			if( photo typeof === 'undefined' ){
+				var photoPlaceHolder = $("#photo-list-view").data( "photoPlaceHolder");
+				if( !photoPlaceHolder ){
+					photoPlaceHolder = new Photo();
+				}
+				return photoPlaceHolder;
+			}
+		}
+		
 		function displayPhotoPanel(){
 			
 			var appendTo = $("#personalized-area");			
 			var grid_col_size =appendTo.data("sizePlaceHolder");			
-			var photoPlaceHolder = $("#photo-list-view").data( "photoPlaceHolder");		
+			var photoPlaceHolder = displayPhotoSource(); //$("#photo-list-view").data( "photoPlaceHolder");		
 			var guid = common.api.guid().toLowerCase() ;
 			var template = kendo.template(
 			"<div id='#=guid#-layout' class='custom-panels-group col-sm-#: colSize#'>" + 
