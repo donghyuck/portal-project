@@ -200,7 +200,13 @@
  * Panel Hover Effect
  */
  .panel-body  figure {
- 	position: relative;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	margin: -0.135em;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
  }
  
 .panel-body  figure img{
