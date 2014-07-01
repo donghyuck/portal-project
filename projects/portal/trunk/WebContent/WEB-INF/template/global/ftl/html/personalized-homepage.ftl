@@ -619,7 +619,7 @@
 							})
 						}),
 						open: function(e){							
-							alert(image.imageId);
+							alert(image.imageId + "/" + e.target.data().image.imageId  );
 							if(image.imageId != e.target.data().image.imageId ){
 							
 								 e.target.data().properties.read();
