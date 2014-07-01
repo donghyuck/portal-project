@@ -593,7 +593,7 @@
 				},
 				custom: function(e){
 					var modal = common.ui.modal({
-						renderTo : "image-editor-modal"
+						renderTo : "photo-editor-modal"
 					});
 					
 				}
