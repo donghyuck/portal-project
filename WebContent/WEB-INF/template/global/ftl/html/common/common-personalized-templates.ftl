@@ -40,3 +40,42 @@
 		</div>	
 	-->		
 </script>
+<script id="photo-editor-modal-template" type="text/x-kendo-template">
+	<div class='modal fade' tabindex='-1' role='dialog' aria-hidden='true'>
+		<div class='modal-dialog modal-sm'>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+					<h5 class='modal-title'>#= title #</h5>
+				</div>
+				<div class='modal-body'>
+				#if( type == 'createLink' ){ #
+					<div class="form">
+						<div class="form-group">
+							<label class="control-label">표시할 텍스트</label>
+							<input type="text" class="form-control" data-bind="value:linkTitle">
+						</div>						
+						
+						<div class="form-group">	
+							<label class="control-label">웹주소</label>
+							<input type="url" class="form-control" placeholder="http://" data-bind="value:linkUrl">
+						</div>
+							
+						<div class="form-group">
+								<div class="checkbox">
+								<label>
+									<input type="checkbox" data-bind="checked:linkTarget" > 새창에서 링크 열기
+								</label>
+								</div>
+						</div>
+					</div>
+				# } #
+				</div>
+				<div class='modal-footer'>		
+					<button type="button" class="btn btn-primary custom-update" disabled="disabled">확인</button>	
+					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>				
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</script>	
