@@ -46,30 +46,10 @@
 			<div class='modal-content'>
 				<div class='modal-header'>
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-					<h5 class='modal-title'>#= title #</h5>
+					<h5 class='modal-title'>제목</h5>
 				</div>
 				<div class='modal-body'>
-				#if( type == 'createLink' ){ #
-					<div class="form">
-						<div class="form-group">
-							<label class="control-label">표시할 텍스트</label>
-							<input type="text" class="form-control" data-bind="value:linkTitle">
-						</div>						
-						
-						<div class="form-group">	
-							<label class="control-label">웹주소</label>
-							<input type="url" class="form-control" placeholder="http://" data-bind="value:linkUrl">
-						</div>
-							
-						<div class="form-group">
-								<div class="checkbox">
-								<label>
-									<input type="checkbox" data-bind="checked:linkTarget" > 새창에서 링크 열기
-								</label>
-								</div>
-						</div>
-					</div>
-				# } #
+				
 				</div>
 				<div class='modal-footer'>		
 					<button type="button" class="btn btn-primary custom-update" disabled="disabled">확인</button>	
