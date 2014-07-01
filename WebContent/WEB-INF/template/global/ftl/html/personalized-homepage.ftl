@@ -592,6 +592,7 @@
 					$("#"+guid+"-layout").remove();
 				},
 				custom: function(e){
+					var image = e.target.data;
 					var modal = common.ui.modal({
 						renderTo : "photo-editor-modal",
 						data: new kendo.data.ObservableObject({
