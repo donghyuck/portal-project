@@ -593,8 +593,9 @@
 				},
 				custom: function(e){
 					var modal = common.ui.modal({
-						rendorTo : "image-editor-modal"
+						renderTo : "image-editor-modal"
 					});
+					
 				}
 			});			
 		}		
