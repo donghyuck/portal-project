@@ -160,6 +160,7 @@
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.panel({
 				appendTo: appendTo,
+				autoBind: true,
 				data: new kendo.data.ObservableObject({
 					announce : new Announce(),
 					visible : false
