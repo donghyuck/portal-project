@@ -32,6 +32,7 @@ function getNextPersonalizedColumn (element){
 	element.children().each(function(){ 
 		$this = $(this);
 		var height = $this.outerHeight() ;
+		alert( height );
 		if( height === 1 )
 		{
 			return $this;
