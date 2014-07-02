@@ -166,7 +166,7 @@
 					visible : false,
 					profilePhotoUrl : "/images/common/anonymous.png"
 				}),
-				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
+				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
 				custom: function(e){
 					var template = kendo.template($("#notice-options-template").html());
