@@ -71,8 +71,8 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-	<div class="panel" data-bind="visible: visible">
-		<div class="panel-heading">
+	<div class="panel panel-parmary no-border" data-bind="visible: visible">
+		<div class="panel-heading rounded-top">
 			<h4 class="panel-title" data-bind="html:announce.subject"></h4>
 		</div>
 		<div class="panel-body padding-sm">
@@ -92,7 +92,7 @@
 					</h5>		
 				</div>		
 			</div>	
-			<div class="margin-bottom-20"><hr class="devider"></div>
+			<hr class="devider no-margin-t">
 			<div data-bind="html: announce.body " />		
 		</div>
 	</div>
