@@ -1226,48 +1226,12 @@
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
 			<div class="container-fluid content" style="min-height:600px;">		
-				<div id="personalized-area" class="row">				
-				<!--
-					<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
-						<div class="panel panel-default">
-							<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
-								<div class="k-window-actions panel-header-actions">										
-									<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
-									<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
-									<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
-									<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-								</div>									
-								</div>
-								<div class="panel-body">		
-								<div class="page-header text-primary">
-									<h5 ><small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small></h5>	
-									<p>
-									<div class="btn-group" data-toggle="buttons">
-										<label class="btn btn-info btn-sm active">
-											<input type="radio" name="announce-selected-target" value="30" >사이트
-										</label>
-										<label class="btn btn-info btn-sm ">
-											<input type="radio" name="announce-selected-target" value="1">회사
-										</label>
-									</div>
-									</p>					
-								</div>										
-								<div  id="announce-grid"></div>	
-								</div>
-								<div class="panel-body">					
-									<div  id="announce-view"></div>
-								</div>
-							</div>		
-						</div>
-					</div>
-					-->		
-				</div>				
+				<div id="personalized-area" class="row"></div>				
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
-			<!-- ./END FOOTER -->
-					
+			<!-- ./END FOOTER -->					
 		</div>
 		<div class="overlay hide"></div>					
 			<!-- START RIGHT SLIDE MENU -->
