@@ -170,8 +170,8 @@
 				template: kendo.template($("#notice-view-template").html()),   
 				custom: function(e){
 					var template = kendo.template($("#notice-options-template").html());
-					var heading =  e.target.element.childred(".panel-heading");
-					var popover = e.target.element.find(".panel-heading .popover");
+					var heading =  e.target.element.children(".panel-heading");
+					var popover = heading.children(".popover");
 					if( popover.length === 0 ){
 						heading.append(template({}));
 						popover = e.target.element.find(".panel-heading .popover");
