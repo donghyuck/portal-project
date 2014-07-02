@@ -1230,7 +1230,22 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="container-fluid content" style="min-height:600px;">		
+			<div class="container padding-sm">		
+				<div class="row">
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-info">
+							<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+						</label>
+						<label class="btn btn-info active">
+					 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
+						</label>
+						<label class="btn btn-info">
+							<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
+						</label>
+					</div>					
+				</div>				
+			</div>	
+			<div class="container-fluid padding-sm" style="min-height:600px;">		
 				<div id="personalized-area" class="row"></div>				
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
@@ -1242,18 +1257,7 @@
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">		
 				<!-- header -->	
-				<header>	
-					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-info">
-							<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-						</label>
-						<label class="btn btn-info active">
-					 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
-						</label>
-						<label class="btn btn-info">
-							<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
-						</label>
-					</div>				
+				<header>				
 					<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 				</header>	
 				<!-- ./header -->
