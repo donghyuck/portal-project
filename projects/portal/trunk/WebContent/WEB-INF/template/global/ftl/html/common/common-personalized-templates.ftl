@@ -5,9 +5,13 @@
 		<figcaption>
 			<h2>#: name # <span></span></h2>
 			<p>#: formattedModifiedDate #</p>
-			<a href="\\#">View more</a>
+			<a href="\\#lightbox-photo-#:imageId#">View more</a>
 		</figcaption>			
 	</figure>
+	<div class="lb-overlay" id="#lightbox-photo-#:imageId#">
+		<a href="\\#page" class="lb-overlay-close">Close</a>
+		<img src="${request.contextPath}/community/download-my-image.do?imageId=#:imageId#">
+	</div>
 	<!--			
 	<figure>			
 		<a href="\\#photo-#:imageId#">			
