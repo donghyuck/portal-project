@@ -62,7 +62,8 @@
 				
 				// 2.  MEUN 설정
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();								
-																																									
+				
+				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
 				
@@ -614,24 +615,16 @@
 		}
 		
 		function displayPhotoPanel(){			
-			var appendTo = $("#personalized-area");			
-			var grid_col_size =appendTo.data("sizePlaceHolder");			
-			var photoPlaceHolder = displayPhotoSource(); //$("#photo-list-view").data( "photoPlaceHolder");		
-			var guid = common.api.guid().toLowerCase() ;
-			var template = kendo.template(
-			"<div id='#=guid#-layout' class='custom-panels-group col-sm-#: colSize#'>" + 
-			"<div id='#=guid#' class='panel panel-default'></div>" +
-			"</div>"
-			);		
+			var appendTo = getNextPersonalizedColumn($("#personalized-area"));			
 			$("#personalized-area").append( template( {guid: guid, colSize: grid_col_size.newValue } ) );
 			common.ui.panel({
-				renderTo: "#" + guid,
+				appendTo: appendTo,
 				title: photoPlaceHolder.name, 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
 				template: kendo.template($("#photo-view-template").html()),   
 				data: photoPlaceHolder, 
 				close: function(e) {
-					$("#"+guid+"-layout").remove();
+
 				},
 				custom: function(e){					
 					var modal = common.ui.modal({
