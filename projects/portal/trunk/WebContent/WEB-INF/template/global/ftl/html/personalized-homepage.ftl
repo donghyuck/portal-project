@@ -158,9 +158,9 @@
 		<!-- ============================== -->
 		function showNoticePanel(){
 
-		
+			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			common.ui.panel({
-				appendTo: "#personalized-area" , 
+				appendTo: appendTo,
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
 				content: "hello"
 			});
