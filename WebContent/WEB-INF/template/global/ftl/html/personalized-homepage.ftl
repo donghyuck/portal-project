@@ -229,6 +229,7 @@
 									var selectedCell = this.dataItem( selectedCells );	
 									selectedCell.copy( panel.data().announce  );
 									panel.data().set("visible", true);
+									panel.data().set("profilePhotoUrl", common.api.user.photoUrl (selectedCell.user, 150,150) );
 								}
 							},
 							dataBind:function(e){
