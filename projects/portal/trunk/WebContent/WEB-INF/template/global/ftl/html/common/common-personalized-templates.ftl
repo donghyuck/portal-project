@@ -49,3 +49,18 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 </script>	
+
+<script type="text/x-kendo-template" id="notice-view-template">	
+	<div class="page-header">
+		<h4 class=" text-primary"><small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small></h4>	
+		<div class="btn-group" data-toggle="buttons">
+			<label class="btn btn-info btn-sm active">
+				<input type="radio" name="announce-selected-target" value="30" >사이트
+			</label>
+			<label class="btn btn-info btn-sm ">
+				<input type="radio" name="announce-selected-target" value="1">회사
+			</label>							
+		</div>									
+	</div>										
+	<div class="notice-grid" style="min-height: 300px"></div>
+</script>
