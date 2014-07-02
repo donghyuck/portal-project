@@ -8,7 +8,7 @@
 			<a href="\\#lightbox-photo-#:imageId#">View more</a>
 		</figcaption>			
 	</figure>
-	<div class="lb-overlay" id="#lightbox-photo-#:imageId#">
+	<div class="lb-overlay" id="lightbox-photo-#:imageId#">
 		<a href="\\#page" class="lb-overlay-close">Close</a>
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#:imageId#">
 	</div>
