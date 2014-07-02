@@ -164,11 +164,13 @@
 				template: kendo.template($("#notice-view-template").html()),   
 				custom: function(e){				
 					var template = kendo.template($("#notice-options-template").html());
+					/*
 					if( e.target.element.find(".panel-heading .popover").length === 0 ){
 						e.target.element.append(template({}));
 					}
 					var popover = e.target.element.find(".panel-heading .popover");
 					popover.show();
+					*/
 				},
 				open: function(e){				
 					var grid = e.target.element.find(".panel-body .notice-grid");
