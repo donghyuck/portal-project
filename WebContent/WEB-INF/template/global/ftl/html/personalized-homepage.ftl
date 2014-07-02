@@ -66,7 +66,7 @@
 				preparePersonalizedArea($("#personalized-area"), 6 );
 				
 				
-				
+				/**
 				
 				common.ui.handleActionEvents( $('.cbp-spmenu'), {
 					handlers : [
@@ -85,6 +85,7 @@
 						}
 					]
 				});	
+				*/
 				
  				common.ui.handleButtonActionEvents(
 					$(".personalized-navbar .nav a.btn-control-group"), 
