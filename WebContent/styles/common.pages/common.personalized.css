@@ -1,9 +1,13 @@
 @CHARSET "UTF-8";
 
-		
+/**
+* Kendo UI customized
+*/		
 .notice-grid .k-grid-content {
 	min-height : 300px;
 }
+
+
 
 		
 #personalized-controls {
@@ -199,6 +203,11 @@
 
 .panel-heading a.k-link:hover, .panel-heading a.k-link:active {
 	background : #3498db;
+}
+
+.panel-heading >.popover {
+	top: 40px;
+	left: 40px;
 }
 
 /**
