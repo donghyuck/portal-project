@@ -141,14 +141,7 @@
 				$('#myTab a:first').tab('show') ;
 				
 				showNoticePanel();
-				// END SCRIPT 
-				/**
-				common.ui.panel({appendTo: "#personalized-area" , title: "이미지", actions:["Custom", "Minimize", "Refresh", "Close"]
-				,content: "hello"
-				});
-				common.ui.panel({appendTo: "#personalized-area" , title: "이미지"});
-				*/
-				
+				// END SCRIPT 				
 			}
 		}]);	
 
@@ -202,7 +195,7 @@
 									},
 									parameterMap: function(options, operation) {
 										if( typeof options.objectType === "undefined"  ){
-											return {objectType: 30 };	
+											return {objectType: <#if action.user.anonymous >30<#else>1</#if> };	
 										}else{			
 											return options;		
 										} 
