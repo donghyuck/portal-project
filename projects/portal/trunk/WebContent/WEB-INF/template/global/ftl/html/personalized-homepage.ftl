@@ -159,14 +159,15 @@
 					visible : false,
 					profilePhotoUrl : "/images/common/anonymous.png"
 				}),
-				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Close"],
+				title: "공지 & 이벤트", 
+				actions:["Custom", "Minimize", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
 				custom: function(e){
-					var template = kendo.template($("#notice-options-template").html());
+					var optTemplate = kendo.template($("#notice-options-template").html());
 					var heading =  e.target.element.children(".panel-heading");
 					var popover = heading.children(".popover");
 					if( popover.length === 0 ){
-						heading.append(template({}));
+						heading.append(optTemplate({}));
 						popover = e.target.element.find(".panel-heading .popover");
 						popover.find("button.close").click(function(e){
 							popover.hide();
