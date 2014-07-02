@@ -111,8 +111,7 @@
 				});
 												
 				// photo panel showing				
-				createPhotoListView();
-								
+				createPhotoListView();								
 				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
 					this.select(this.element.children().first());
 				});
@@ -134,6 +133,8 @@
 				});
 
 				$('#myTab a:first').tab('show') ;
+				
+				showNoticePanel();
 				// END SCRIPT 
 				/**
 				common.ui.panel({appendTo: "#personalized-area" , title: "이미지", actions:["Custom", "Minimize", "Refresh", "Close"]
@@ -144,6 +145,23 @@
 				
 			}
 		}]);	
+
+		
+		<!-- ============================== -->
+		<!-- display nitice  panel                                  -->
+		<!-- ============================== -->
+		function showNoticePanel(){
+			common.ui.panel({
+				appendTo: "#personalized-area" , 
+				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
+				content: "hello"
+			});
+		}
+		
+		
+		
+				
+		
 						
 		function createAttachmentListView(){			
 			if( !$('#attachment-list-view').data('kendoListView') ){														
@@ -411,6 +429,8 @@
 				);
 			}
 		}
+
+				
 		<!-- ============================== -->
 		<!-- create notice grid										-->
 		<!-- ============================== -->								
@@ -560,6 +580,7 @@
 		<!-- ============================== -->
 		<!-- display photo  panel                                  -->
 		<!-- ============================== -->
+		
 		function displayPhotoSource(photo){
 			if(  typeof photo === 'undefined' ){
 				var photoPlaceHolder = $("#photo-list-view").data( "photoPlaceHolder");
@@ -657,8 +678,7 @@
 									],				     
 									change: function(e) {
 									}
-								});
-										
+								});										
 								if(shared.length > 0){
 									shared.on("change", function () {
 										var newValue = ( this.value == 1 ) ;
@@ -682,8 +702,6 @@
 										}					
 									});					
 								}
-								
-						
 								if( upload.length > 0 ){								
 									upload.kendoUpload({
 										showFileList: false,
@@ -702,12 +720,9 @@
 											}
 										} 
 									});														
-								}	
-								
-							}		
-							
-							grid.data('kendoGrid').dataSource.read();
-							
+								}									
+							}									
+							grid.data('kendoGrid').dataSource.read();							
 							common.api.streams.details({
 								imageId : photoEditorSource().imageId ,
 								success : function( data ) {
@@ -719,8 +734,7 @@
 										shared.last().click();
 									}
 								}
-							});
-												
+							});												
 						},
 						template: kendo.template($("#photo-editor-modal-template").html())
 					});
@@ -1066,7 +1080,6 @@
 			width: 100%;
 			height: 100%;
 		}
-
 		
 		.image-broswer .img-wrapper.k-state-selected img {
 			border-bottom: 5px solid #FF2A68;
@@ -1118,38 +1131,6 @@
 			background : transparent;
 		}
 
-				
-
-		table.k-editor {
-			height: 400px;
-		}
-		
-		.k-editor-inline {
-			margin: 0;
-			#padding: 21px 21px 11px;
-			border-width: 0;
-			box-shadow: none;
-			background: none;
-		}
-
-		.k-editor-inline.k-state-active {
-			border-width: 1px;
-			#padding: 20px 20px 10px;
-			#background: none;
-			#border-color : red;
-  			border-color: #66afe9;
-			#  outline: 0;
-			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-		}
-
-		.inline-column-editor {
-			display: inline-block;
-			vertical-align: top;
-			max-width: 600px;
-			width: 100%;
-		}
-
 		.image-grid {
 			padding-top:2px;
 			padding-buttom:0px;
@@ -1175,6 +1156,7 @@
 		#photo_overlay nav.navbar {
 			margin-bottom: 0px; 
 		}		
+		
 		</style>   	
 		</#compress>
 	</head>
