@@ -154,7 +154,7 @@
 
 		
 		<!-- ============================== -->
-		<!-- display nitice  panel                                  -->
+		<!-- display notice  panel                                  -->
 		<!-- ============================== -->
 		function showNoticePanel(){
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
@@ -162,17 +162,14 @@
 				appendTo: appendTo,
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
-				custom: function(e){				
-				
+				custom: function(e){
 					var template = kendo.template($("#notice-options-template").html());
 					var heading =  e.target.element.find(".panel-heading");
 					if( heading.children(".popover").length === 0 ){
 						heading.append(template({}));
 					}
-					
 					var popover = e.target.element.find(".panel-heading .popover");
-					popover.show();
-					
+					popover.show();					
 				},
 				open: function(e){				
 					var grid = e.target.element.find(".panel-body .notice-grid");
@@ -216,57 +213,6 @@
 							}
 						});		
 					}
-				/**
-					
-					if( grid.length > 0 && !grid.data('kendoGrid') ){
-						grid.kendoGrid({
-							dataSource : new kendo.data.DataSource({
-								transport: {
-									read: {
-										type : 'POST',
-										dataType : "json", 
-										url : '${request.contextPath}/community/list-announce.do?output=json'
-									},
-									parameterMap: function(options, operation) {
-										if (operation != "read" && options.models) {
-											return {models: kendo.stringify(options.models)};
-										}else{								
-											return {objectType: 30 };								
-										}
-									} 
-								},
-								pageSize: 10,
-								error:common.api.handleKendoAjaxError,
-								schema: {
-									data : "targetAnnounces",
-									model : Announce,
-									total : "totalAnnounceCount"
-								}
-							}),
-							sortable: true,
-							columns: [ 
-								{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
-								{field:"subject", title: "제목"}a
-							],
-							pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
-							selectable: "row",
-							change: function(e) { 
-								var selectedCells = this.select();
-								if( selectedCells.length > 0){
-									var selectedCell = this.dataItem( selectedCells );	    							
-									var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
-									selectedCell.copy(announcePlaceHolder);					
-									$("#announce-panel").data( "announcePlaceHolder", announcePlaceHolder );							 
-									showAnnouncePanel();	
-								}
-							},
-							dataBound: function(e) {					
-								//var selectedCells = this.select();
-								//this.select("tr:eq(1)");						
-							}
-						});						
-					}
-					*/
 				}
 			});
 		}
@@ -1098,10 +1044,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-		
-		.notice-grid .k-grid-content {
-			min-height : 300px;
-		}
+
 		
 		#pdf-view {
 			height: 500px;
