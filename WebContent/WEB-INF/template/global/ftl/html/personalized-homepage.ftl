@@ -163,8 +163,9 @@
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
 				open: function(e){
-				alert( "heloo" + e.target.element.html() ) ;
+				
 					var grid = e.target.element.find(".modal-body .notice-grid");
+					alert( grid.html() ) ;
 					if( grid.length > 0 && !grid.data('kendoGrid') ){
 						grid.kendoGrid({
 							dataSource : new kendo.data.DataSource({
