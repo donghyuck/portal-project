@@ -71,7 +71,7 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-	<div class="panel panel-primary no-border" data-bind="visible: visible">
+	<div class="panel panel-success no-border" data-bind="visible: visible">
 		<div class="panel-heading rounded-top">
 			<h4 class="panel-title" data-bind="html:announce.subject"></h4>
 		</div>
