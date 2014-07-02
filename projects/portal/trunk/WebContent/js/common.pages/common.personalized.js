@@ -24,3 +24,22 @@ function preparePersonalizedArea( element, minCount, colSize ){
 		});
 	});	
 }
+
+
+function getNextPersonalizedColumn (element){
+	var minValue;
+	var minItem;
+	element.children().each(function(){ 
+		$this = $(this);
+		var height = $this.outerHeight() ;
+		if( height === 1 )
+		{
+			return $this;
+		}else{			
+			if ( height && (!minItem || height < minValue)) {
+				minItem = this;
+				minValue = height;
+			}			
+		}
+	});	
+} 
