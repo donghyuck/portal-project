@@ -2046,14 +2046,10 @@
 				options.content = options.template(options.data); 
 				that.refresh();			
 			}
-
-
-			
-			id = element.attr("id");
-			
+			id = element.attr("id");			
 			wrapper.on("click", "> " + EXT_PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
 			 if (options.visible) {
-				 that.trigger(OPEN);
+				 that.trigger(OPEN, {target: that});
 				 that.trigger(ACTIVATE);
 			 }
 			
@@ -2113,7 +2109,8 @@
 	                "k-i-refresh": "refresh",
 	                "k-i-custom": "_custom"
 			}[iconClass];
-		},											
+		},				
+		
 		_custom: function(systemTriggered){
 			var that = this;
 			that.trigger(CUSTOM, {target: that});
