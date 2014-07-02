@@ -195,13 +195,11 @@
 										url : '${request.contextPath}/community/list-announce.do?output=json'
 									},
 									parameterMap: function(options, operation) {
-									
-										alert( stringify( options ) );
-										if (operation != "read" && options.models) {
-											return {models: kendo.stringify(options.models)};
-										}else{								
-											return {objectType: 30 };								
-										}
+										if( options ){
+											return options;		
+										}else{											
+											return {objectType: 30 };		
+										} 
 									} 
 								},
 								pageSize: 10,
