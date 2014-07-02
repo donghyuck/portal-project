@@ -1,6 +1,11 @@
 @CHARSET "UTF-8";
 
+		
+.notice-grid .k-grid-content {
+	min-height : 300px;
+}
 
+		
 #personalized-controls {
 	position: absolute;
 	top: 50px;
