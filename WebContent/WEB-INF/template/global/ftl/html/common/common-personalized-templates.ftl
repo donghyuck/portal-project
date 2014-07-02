@@ -50,6 +50,22 @@
 	</div><!-- /.modal -->
 </script>	
 
+<script type="text/x-kendo-template" id="notice-options-template">	
+	<div class="popover left">
+		<div class="arrow"></div>
+			<h3 class="popover-title">소스 설정</h3>
+			<div class="popover-content">
+				<h5 ><small><i class="fa fa-info"></i>공지 & 이벤트 소스를 변경할수 있습니다.</small></h5>	
+				<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-info btn-sm active">
+					<input type="radio" name="announce-selected-target" value="30" >사이트
+				</label>
+				<label class="btn btn-info btn-sm ">
+					<input type="radio" name="announce-selected-target" value="1">회사
+				</label>
+		</div>
+	</div>
+</div>
 <script type="text/x-kendo-template" id="notice-view-template">	
 <!--
 	<div class="page-header">
