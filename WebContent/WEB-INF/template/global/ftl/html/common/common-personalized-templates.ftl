@@ -75,7 +75,7 @@
 		<div class="panel-heading">
 			<h4 data-bind="html:announce.subject"></h4>
 		</div>
-		<div class="panel-body">
+		<div class="panel-body padding-sm">
 			<ul class="list-unstyled text-muted">
 				<li><span class="label label-primary label-lightweight">게시 기간</span> <small class="text-primary"><span data-bind="text: announce.formattedStartDate"></span> ~ <span data-bind="text: announce.formattedEndDate"></span></small></li>
 				<li><span class="label label-default label-lightweight">생성일</span> <small><span data-bind="text: announce.formattedCreationDate"></span> </small></li>
