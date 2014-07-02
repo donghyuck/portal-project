@@ -71,7 +71,7 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-	<div class="panel panel-success no-border" data-bind="visible: visible">
+	<div class="panel panel-default no-border no-margin-b" data-bind="visible: visible">
 		<div class="panel-heading rounded-top">
 			<h4 class="panel-title" data-bind="html:announce.subject"></h4>
 		</div>
@@ -95,6 +95,7 @@
 			<hr class="devider no-margin-t">
 			<div data-bind="html: announce.body " />		
 		</div>
+		<div class="panel-footer"></div>		
 	</div>
 	<div class="notice-grid" style="min-height: 300px"></div>
 </script>
