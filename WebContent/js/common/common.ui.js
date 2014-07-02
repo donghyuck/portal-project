@@ -2023,22 +2023,20 @@
 				visibility = element.css("visibility");
 				display = element.css("display");
 				element.css({ visibility: HIDDEN, display: "" });
-				 element.css({ visibility: visibility, display: display });
-			}
-			
+				element.css({ visibility: visibility, display: display });
+			}			
 			if (!defined(options.visible) || options.visible === null) {
 				options.visible = element.is(VISIBLE);				
 			}
-
 			
 			wrapper = that.wrapper = element.closest(EXT_PANEL);
 			wrapper.append(templates.heading( extend( templates, options )));
 			wrapper.append(templates.body( {} ) );
 			
-
 			if (content) {
 				that.refresh();			
 			}
+			
 			if( defined(options.template)){
 				if (!defined(options.data) ){
 					options.data = {};
@@ -2046,13 +2044,17 @@
 				options.content = options.template(options.data); 
 				that.refresh();			
 			}
+
+			 if( options.autoBind )
+				kendo.bind(wrapper, options.data );
+			 
 			id = element.attr("id");			
 			wrapper.on("click", "> " + EXT_PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
 			 if (options.visible) {
 				 that.trigger(OPEN, {target: that});
 				 that.trigger(ACTIVATE);
 			 }
-			
+
 			kendo.notify(that);
 		},
 		events:[
@@ -2071,6 +2073,7 @@
 			content : null,
 			visible: null,
 			appendTo: BODY,
+			autoBind: false,
 			animation : {
 				open: {},
 				close: {}
@@ -2106,7 +2109,7 @@
 	                "k-i-maximize": "maximize",
 	                "k-i-minimize": "minimize",
 	                "k-i-restore": "restore",
-	                "k-i-refresh": "refresh",
+	                "k-i-refresh": "_refresh",
 	                "k-i-custom": "_custom"
 			}[iconClass];
 		},				
@@ -2179,6 +2182,7 @@
 			wrapper = that.wrapper,
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
+			that.trigger(REFRESH, {target: that});
 		},
 		content:function(html, data){
 		 	var content = this.wrapper.children(EXT_PANEL_BODY);
