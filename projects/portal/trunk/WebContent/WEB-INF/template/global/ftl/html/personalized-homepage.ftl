@@ -227,7 +227,11 @@
 								if( selectedCells.length > 0){
 									var selectedCell = this.dataItem( selectedCells );	
 									selectedCell.copy( panel.data().announce  );
+									panel.data().set("visible", true);
 								}
+							},
+							dataBind:function(e){
+								panel.data().set("visible", false);
 							}
 						});		
 					}
