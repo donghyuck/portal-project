@@ -1180,191 +1180,190 @@
 	</head>
 	<body id="doc" class="bg-gray">
 		<div class="wrapper">
-		<!-- START HEADER -->		
-		<#include "/html/common/common-homepage-menu.ftl" >		
-		<!-- END HEADER -->	
-		<!-- START MAIN CONTENT -->
-		<section class="container-fluid content" style="min-height:600px;">		
-			<div id="personalized-area" class="row blank-top-10">				
-				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
-					<div class="panel panel-default">
-						<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
-							<div class="k-window-actions panel-header-actions">										
-								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
-								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
-								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
-								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-							</div>									
-							</div>
-							<div class="panel-body">		
-							<div class="page-header text-primary">
-								<h5 ><small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small></h5>	
-								<p>
-								<div class="btn-group" data-toggle="buttons">
-									<label class="btn btn-info btn-sm active">
-										<input type="radio" name="announce-selected-target" value="30" >사이트
-									</label>
-									<label class="btn btn-info btn-sm ">
-										<input type="radio" name="announce-selected-target" value="1">회사
-									</label>
-								</div>
-								</p>					
-							</div>										
-							<div  id="announce-grid"></div>	
-							</div>
-							<div class="panel-body">					
-								<div  id="announce-view"></div>
-							</div>
-						</div>		
-					</div>
-				</div>		
-			</div>				
-		</section>		
-		<div class="overlay hide"></div>		
-		<!-- start side menu -->
-		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
-			<header>	
-				<div class="btn-group" data-toggle="buttons">
-					<label class="btn btn-info">
-						<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-					</label>
-					<label class="btn btn-info active">
-				 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
-					</label>
-					<label class="btn btn-info">
-						<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
-					</label>
-				</div>				
-				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
-			</header>	
-			<div class="tab-v1" >
-			
-			<h5 class="side-section-title">My 클라우드 저장소</h5>
-			
-			<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-				<#if !action.user.anonymous >	
-				<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
-				<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
-				</#if>						
-			</ul>				
-			<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
-				<!-- start attachement tab-pane -->
-				<div class="tab-pane" id="my-files">
-					<section class="custom-upload hide">
+			<!-- START HEADER -->		
+			<#include "/html/common/common-homepage-menu.ftl" >		
+			<!-- END HEADER -->	
+			<!-- START MAIN CONTENT -->
+			<section class="container-fluid content" style="min-height:600px;">		
+				<div id="personalized-area" class="row blank-top-10">				
+					<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
 						<div class="panel panel-default">
-							<div class="panel-body">		
-							<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
-							<#if !action.user.anonymous >			
+							<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
+								<div class="k-window-actions panel-header-actions">										
+									<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
+									<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
+									<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
+									<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a>
+								</div>									
+								</div>
+								<div class="panel-body">		
 								<div class="page-header text-primary">
-									<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-								</div>								
-								<input name="uploadAttachment" id="attachment-files" type="file" />												
-							</#if>								
-							</div>
+									<h5 ><small><i class="fa fa-info"></i> 우측 회사 버튼을 클릭하면 회사(${user.company.displayName}) 에 해당하는 공지 & 이벤트 목록이 보여집니다. </small></h5>	
+									<p>
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-info btn-sm active">
+											<input type="radio" name="announce-selected-target" value="30" >사이트
+										</label>
+										<label class="btn btn-info btn-sm ">
+											<input type="radio" name="announce-selected-target" value="1">회사
+										</label>
+									</div>
+									</p>					
+								</div>										
+								<div  id="announce-grid"></div>	
+								</div>
+								<div class="panel-body">					
+									<div  id="announce-view"></div>
+								</div>
+							</div>		
 						</div>
-					</section>											
-										
-										<div class="panel panel-default">
-											<div class="panel-body">
-												<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
-												<#if !action.user.anonymous >		
-												<p class="pull-right">				
-													<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
-												</p>	
-												</#if>																										
-												<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-													<label class="btn btn-sm btn-warning active">
-														<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
-													</label>
-													<label class="btn btn-sm btn-warning">
-														<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
-													</label>
-													<label class="btn btn-sm btn-warning">
-														<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
-													</label>	
-												</div>												
-											</div>
-											<div class="panel-body scrollable color4" style="max-height:450px;">
-												<div id="attachment-list-view" class="color4"></div>
-											</div>	
-											<div class="panel-footer" style="padding:0px;">
-												<div id="pager" class="k-pager-wrap"></div>
-											</div>
-										</div>												
-																												
-						</div><!-- end attachements  tab-pane -->		
-						<!-- start photos  tab-pane -->
-						<div class="tab-pane" id="my-photo-stream">									
-										<section class="custom-upload hide">
+					</div>		
+				</div>				
+			</section>		
+			<!-- END MAIN CONTENT -->	
+			<!-- start side menu -->
+			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
+				<header>	
+					<div class="btn-group" data-toggle="buttons">
+						<label class="btn btn-info">
+							<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+						</label>
+						<label class="btn btn-info active">
+					 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
+						</label>
+						<label class="btn btn-info">
+							<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
+						</label>
+					</div>				
+					<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
+				</header>	
+				<div class="tab-v1" >			
+				<h5 class="side-section-title">My 클라우드 저장소</h5>			
+				<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
+					<#if !action.user.anonymous >	
+					<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
+					<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
+					</#if>						
+				</ul>				
+				<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
+					<!-- start attachement tab-pane -->
+					<div class="tab-pane" id="my-files">
+						<section class="custom-upload hide">
+							<div class="panel panel-default">
+								<div class="panel-body">		
+								<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
+								<#if !action.user.anonymous >			
+									<div class="page-header text-primary">
+										<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+									</div>								
+									<input name="uploadAttachment" id="attachment-files" type="file" />												
+								</#if>								
+								</div>
+							</div>
+						</section>											
+											
 											<div class="panel panel-default">
 												<div class="panel-body">
-													<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
-													<#if !action.user.anonymous >			
-													<div class="page-header text-primary">
-														<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-													</div>
-													<div id="my-photo-upload">	
-														<input name="uploadPhotos" id="photo-files" type="file" />					
-													</div>
-													<div class="blank-top-5" ></div>
-													<div class="page-header text-primary">
-														<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
-													</div>						
-													<form name="photo-url-upload-form" class="form-horizontal" role="form">
-														<div class="form-group">
-															<label class="col-sm-2 control-label"><small>출처</small></label>
-															<div class="col-sm-10">
-																<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.sourceUrl">
-																<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
-															</div>
-														</div>
-														<div class="form-group">
-															<label class="col-sm-2 control-label"><small>사진</small></label>
-															<div class="col-sm-10">
-																<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.imageUrl">
-																<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
-															</div>
-														</div>														
-														<div class="form-group">
-															<div class="col-sm-offset-2 col-sm-10">
-																<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
-															</div>
-														</div>
-													</form>
-													</#if>
+													<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
+													<#if !action.user.anonymous >		
+													<p class="pull-right">				
+														<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+													</p>	
+													</#if>																										
+													<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+														<label class="btn btn-sm btn-warning active">
+															<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
+														</label>
+														<label class="btn btn-sm btn-warning">
+															<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
+														</label>
+														<label class="btn btn-sm btn-warning">
+															<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
+														</label>	
+													</div>												
 												</div>
-											</div>	
-										</section>	
-							<div class="panel panel-default">			
-								<div class="panel-body">
-									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
-									<#if !action.user.anonymous >		
-									<p class="pull-right">				
-										<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-									</p>	
-									</#if>											
-								</div>
-								<div class="panel-body scrollable color4" style="max-height:450px;">
-									<div id="photo-list-view" class="color4" ></div>
+												<div class="panel-body scrollable color4" style="max-height:450px;">
+													<div id="attachment-list-view" class="color4"></div>
+												</div>	
+												<div class="panel-footer" style="padding:0px;">
+													<div id="pager" class="k-pager-wrap"></div>
+												</div>
+											</div>												
+																													
+							</div><!-- end attachements  tab-pane -->		
+							<!-- start photos  tab-pane -->
+							<div class="tab-pane" id="my-photo-stream">									
+											<section class="custom-upload hide">
+												<div class="panel panel-default">
+													<div class="panel-body">
+														<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+														<#if !action.user.anonymous >			
+														<div class="page-header text-primary">
+															<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+														</div>
+														<div id="my-photo-upload">	
+															<input name="uploadPhotos" id="photo-files" type="file" />					
+														</div>
+														<div class="blank-top-5" ></div>
+														<div class="page-header text-primary">
+															<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
+														</div>						
+														<form name="photo-url-upload-form" class="form-horizontal" role="form">
+															<div class="form-group">
+																<label class="col-sm-2 control-label"><small>출처</small></label>
+																<div class="col-sm-10">
+																	<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.sourceUrl">
+																	<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
+																</div>
+															</div>
+															<div class="form-group">
+																<label class="col-sm-2 control-label"><small>사진</small></label>
+																<div class="col-sm-10">
+																	<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.imageUrl">
+																	<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
+																</div>
+															</div>														
+															<div class="form-group">
+																<div class="col-sm-offset-2 col-sm-10">
+																	<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
+																</div>
+															</div>
+														</form>
+														</#if>
+													</div>
+												</div>	
+											</section>	
+								<div class="panel panel-default">			
+									<div class="panel-body">
+										<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
+										<#if !action.user.anonymous >		
+										<p class="pull-right">				
+											<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+										</p>	
+										</#if>											
+									</div>
+									<div class="panel-body scrollable color4" style="max-height:450px;">
+										<div id="photo-list-view" class="color4" ></div>
+									</div>	
+									<div class="panel-footer" style="padding:0px;">
+										<div id="photo-list-pager" class="k-pager-wrap"></div>
+									</div>
 								</div>	
-								<div class="panel-footer" style="padding:0px;">
-									<div id="photo-list-pager" class="k-pager-wrap"></div>
-								</div>
-							</div>	
-						</div><!-- end photos  tab-pane -->
-				</div><!-- end of tab content -->
-			</div>	
-		</section>				
-		<!-- END MAIN CONTENT -->		
- 		<!-- START FOOTER -->
-		<#include "/html/common/common-homepage-footer.ftl" >		
-		<!-- END FOOTER -->				
+							</div><!-- end photos  tab-pane -->
+					</div><!-- end of tab content -->
+				</div>	
+			</section>				
+			<!-- end side menu -->	
+	 		<!-- START FOOTER -->
+			<#include "/html/common/common-homepage-footer.ftl" >		
+			<!-- END FOOTER -->				
 		</div>
 
 		<section id="image-broswer" class="image-broswer"></section>
 		<section id="editor-popup"></section>
 		<section id="announce-editor"></section>
-				
+		<div class="overlay hide"></div>			
+					
 		<!-- START TEMPLATE -->				
 
 		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
