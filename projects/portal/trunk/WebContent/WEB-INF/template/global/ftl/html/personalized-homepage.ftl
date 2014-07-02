@@ -1180,10 +1180,10 @@
 	</head>
 	<body id="doc" class="bg-gray">
 		<div class="wrapper">
-			<!-- START HEADER -->		
+			<!-- 1. START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
-			<!-- END HEADER -->	
-			<!-- START MAIN CONTENT -->
+			<!-- 1. END HEADER -->	
+			<!-- 2. START MAIN CONTENT -->
 			<section class="container-fluid content" style="min-height:600px;">		
 				<div id="personalized-area" class="row blank-top-10">				
 					<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
@@ -1220,8 +1220,8 @@
 					</div>		
 				</div>				
 			</section>		
-			<!-- END MAIN CONTENT -->	
-			<!-- start side menu -->
+			<!-- 2. END MAIN CONTENT -->	
+			<!-- 3. START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 				<header>	
 					<div class="btn-group" data-toggle="buttons">
@@ -1353,10 +1353,10 @@
 					</div><!-- end of tab content -->
 				</div>	
 			</section>				
-			<!-- end side menu -->	
-	 		<!-- START FOOTER -->
+			<!-- 3. END RIGHT SLIDE MENU -->
+	 		<!-- 4. START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
-			<!-- END FOOTER -->				
+			<!-- 4. END FOOTER -->				
 		</div>
 
 		<section id="image-broswer" class="image-broswer"></section>
