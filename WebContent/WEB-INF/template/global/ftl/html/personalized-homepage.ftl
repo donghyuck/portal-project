@@ -1207,6 +1207,12 @@
 				</div>				
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
+	 		<!-- START FOOTER -->
+			<#include "/html/common/common-homepage-footer.ftl" >		
+			<!-- ./END FOOTER -->
+					
+		</div>
+		<div class="overlay hide"></div>					
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">		
 				<!-- header -->	
@@ -1342,12 +1348,7 @@
 				</div>	
 			</section>				
 			<!-- ./END RIGHT SLIDE MENU -->
-	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-footer.ftl" >		
-			<!-- ./END FOOTER -->
-			<div class="overlay hide"></div>							
-		</div>
-		
+					
 		<section id="image-broswer" class="image-broswer"></section>
 		<section id="editor-popup"></section>
 		<section id="announce-editor"></section>
