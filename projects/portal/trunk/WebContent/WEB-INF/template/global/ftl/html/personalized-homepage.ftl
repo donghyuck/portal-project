@@ -232,7 +232,7 @@
 									panel.data().set("profilePhotoUrl", common.api.user.photoUrl (selectedCell.user, 150,150) );
 								}
 							},
-							dataBind:function(e){
+							dataBound:function(e){
 								panel.data().set("visible", false);
 							}
 						});		
