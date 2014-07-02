@@ -140,7 +140,7 @@
 
 				$('#myTab a:first').tab('show') ;
 				
-				//showNoticePanel();
+				showNoticePanel();
 				// END SCRIPT 
 				/**
 				common.ui.panel({appendTo: "#personalized-area" , title: "이미지", actions:["Custom", "Minimize", "Refresh", "Close"]
