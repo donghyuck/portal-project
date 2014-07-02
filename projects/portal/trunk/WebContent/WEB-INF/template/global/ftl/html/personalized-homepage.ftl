@@ -1180,12 +1180,13 @@
 	</head>
 	<body id="doc" class="bg-gray">
 		<div class="wrapper">
-			<!-- 1. START HEADER -->		
+			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
-			<!-- 1. END HEADER -->	
-			<!-- 2. START MAIN CONTENT -->
-			<section class="container-fluid content" style="min-height:600px;">		
+			<!-- ./END HEADER -->	
+			<!-- START MAIN CONTENT -->
+			<div class="container-fluid content" style="min-height:600px;">		
 				<div id="personalized-area" class="row blank-top-10">				
+				<!--
 					<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
 						<div class="panel panel-default">
 							<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
@@ -1217,12 +1218,14 @@
 								</div>
 							</div>		
 						</div>
-					</div>		
+					</div>
+					-->		
 				</div>				
-			</section>		
-			<!-- 2. END MAIN CONTENT -->	
-			<!-- 3. START RIGHT SLIDE MENU -->
-			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
+			</div>		
+			<!-- ./END MAIN CONTENT -->	
+			<!-- START RIGHT SLIDE MENU -->
+			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">		
+				<!-- header -->	
 				<header>	
 					<div class="btn-group" data-toggle="buttons">
 						<label class="btn btn-info">
@@ -1237,63 +1240,64 @@
 					</div>				
 					<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 				</header>	
+				<!-- ./header -->
+				<!-- tab-v1 -->
 				<div class="tab-v1" >			
-				<h5 class="side-section-title">My 클라우드 저장소</h5>			
-				<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-					<#if !action.user.anonymous >	
-					<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
-					<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
-					</#if>						
-				</ul>				
-				<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
-					<!-- start attachement tab-pane -->
-					<div class="tab-pane" id="my-files">
-						<section class="custom-upload hide">
-							<div class="panel panel-default">
-								<div class="panel-body">		
-								<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
-								<#if !action.user.anonymous >			
-									<div class="page-header text-primary">
-										<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-									</div>								
-									<input name="uploadAttachment" id="attachment-files" type="file" />												
-								</#if>								
+					<h5 class="side-section-title">My 클라우드 저장소</h5>			
+					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
+						<#if !action.user.anonymous >	
+						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
+						<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
+						</#if>						
+					</ul>		
+					<!-- tab-content -->		
+					<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
+						<!-- start attachement tab-pane -->
+						<div class="tab-pane" id="my-files">
+							<section class="custom-upload hide">
+								<div class="panel panel-default">
+									<div class="panel-body">		
+										<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
+										<#if !action.user.anonymous >			
+											<div class="page-header text-primary">
+												<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+											</div>								
+											<input name="uploadAttachment" id="attachment-files" type="file" />												
+										</#if>								
+									</div>
 								</div>
-							</div>
-						</section>											
-											
-											<div class="panel panel-default">
-												<div class="panel-body">
-													<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
-													<#if !action.user.anonymous >		
-													<p class="pull-right">				
-														<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
-													</p>	
-													</#if>																										
-													<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-														<label class="btn btn-sm btn-warning active">
-															<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
-														</label>
-														<label class="btn btn-sm btn-warning">
-															<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
-														</label>
-														<label class="btn btn-sm btn-warning">
-															<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
-														</label>	
-													</div>												
-												</div>
-												<div class="panel-body scrollable color4" style="max-height:450px;">
-													<div id="attachment-list-view" class="color4"></div>
-												</div>	
-												<div class="panel-footer" style="padding:0px;">
-													<div id="pager" class="k-pager-wrap"></div>
-												</div>
-											</div>												
-																													
-							</div><!-- end attachements  tab-pane -->		
-							<!-- start photos  tab-pane -->
-							<div class="tab-pane" id="my-photo-stream">									
-											<section class="custom-upload hide">
+							</section>
+							<div class="panel panel-default">
+								<div class="panel-body">
+									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
+									<#if !action.user.anonymous >		
+									<p class="pull-right">				
+										<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+									</p>	
+									</#if>																										
+									<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+										<label class="btn btn-sm btn-warning active">
+											<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
+										</label>
+										<label class="btn btn-sm btn-warning">
+											<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
+										</label>
+										<label class="btn btn-sm btn-warning">
+											<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
+										</label>	
+									</div>												
+								</div>
+								<div class="panel-body scrollable color4" style="max-height:450px;">
+									<div id="attachment-list-view" class="color4"></div>
+								</div>	
+								<div class="panel-footer no-padding">
+										<div id="pager" class="k-pager-wrap"></div>
+								</div>
+							</div>																				
+						</div><!-- end attachements  tab-pane -->		
+						<!-- start photos  tab-pane -->
+						<div class="tab-pane" id="my-photo-stream">									
+							<section class="custom-upload hide">
 												<div class="panel panel-default">
 													<div class="panel-body">
 														<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
@@ -1332,40 +1336,37 @@
 														</#if>
 													</div>
 												</div>	
-											</section>	
-								<div class="panel panel-default">			
-									<div class="panel-body">
-										<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
-										<#if !action.user.anonymous >		
-										<p class="pull-right">				
-											<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-										</p>	
-										</#if>											
-									</div>
-									<div class="panel-body scrollable color4" style="max-height:450px;">
-										<div id="photo-list-view" class="color4" ></div>
-									</div>	
-									<div class="panel-footer" style="padding:0px;">
-										<div id="photo-list-pager" class="k-pager-wrap"></div>
-									</div>
+							</section>	
+							<div class="panel panel-default">			
+								<div class="panel-body">
+									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
+									<#if !action.user.anonymous >		
+									<p class="pull-right">				
+										<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+									</p>	
+									</#if>											
+								</div>
+								<div class="panel-body scrollable color4" style="max-height:450px;">
+									<div id="photo-list-view" class="color4" ></div>
 								</div>	
-							</div><!-- end photos  tab-pane -->
+								<div class="panel-footer no-padding">
+									<div id="photo-list-pager" class="k-pager-wrap"></div>
+								</div>
+							</div>	
+						</div><!-- end photos  tab-pane -->
 					</div><!-- end of tab content -->
 				</div>	
 			</section>				
-			<!-- 3. END RIGHT SLIDE MENU -->
-	 		<!-- 4. START FOOTER -->
+			<!-- ./END RIGHT SLIDE MENU -->
+	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
-			<!-- 4. END FOOTER -->				
+			<!-- ./END FOOTER -->				
 		</div>
-
+		<div class="overlay hide"></div>			
 		<section id="image-broswer" class="image-broswer"></section>
 		<section id="editor-popup"></section>
 		<section id="announce-editor"></section>
-		<div class="overlay hide"></div>			
-					
 		<!-- START TEMPLATE -->				
-
 		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
 			<div class="img-wrapper">			
 			#if (contentType.match("^image") ) {#
@@ -1394,6 +1395,6 @@
 		</script>					
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<#include "/html/common/common-personalized-templates.ftl" >		
-		<!-- END TEMPLATE -->
+		<!-- ./END TEMPLATE -->
 	</body>    
 </html>
