@@ -26,10 +26,10 @@
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'],
-			
-			complete: function() {			
-			
+			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common.pages/common.personalized.js'
+			],			
+			complete: function() {		
 				// 1-1.  한글 지원을 위한 로케일 설정
 				common.api.culture();
 				// 1-2.  페이지 렌딩
@@ -151,6 +151,8 @@
 		<!-- display nitice  panel                                  -->
 		<!-- ============================== -->
 		function showNoticePanel(){
+
+		
 			common.ui.panel({
 				appendTo: "#personalized-area" , 
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
@@ -1342,9 +1344,10 @@
 			<!-- ./END RIGHT SLIDE MENU -->
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
-			<!-- ./END FOOTER -->				
+			<!-- ./END FOOTER -->
+			<div class="overlay hide"></div>							
 		</div>
-		<div class="overlay hide"></div>			
+		
 		<section id="image-broswer" class="image-broswer"></section>
 		<section id="editor-popup"></section>
 		<section id="announce-editor"></section>
