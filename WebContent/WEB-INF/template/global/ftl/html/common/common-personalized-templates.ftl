@@ -73,7 +73,7 @@
 <script type="text/x-kendo-template" id="notice-view-template">	
 	<div class="panel" data-bind="visible: visible">
 		<div class="panel-heading">
-			<h4 data-bind="html:announce.subject"></h4>
+			<h4 class="panel-title" data-bind="html:announce.subject"></h4>
 		</div>
 		<div class="panel-body padding-sm">
 			<ul class="list-unstyled text-muted">
