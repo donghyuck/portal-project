@@ -164,7 +164,7 @@
 				template: kendo.template($("#notice-view-template").html()),   
 				open: function(e){
 				
-					var grid = e.target.element.find(".modal-body .notice-grid");
+					var grid = e.target.element.find(".panel-body .notice-grid");
 					alert( grid.html() ) ;
 					if( grid.length > 0 && !grid.data('kendoGrid') ){
 						grid.kendoGrid({
