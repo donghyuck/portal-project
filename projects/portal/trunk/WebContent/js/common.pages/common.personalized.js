@@ -36,7 +36,7 @@ function getNextPersonalizedColumn (element){
 		if( height === 1 )
 		{
 			minItem = $this;
-			break;
+			return minItem;
 		}else{			
 			if ( height && (!minItem || height < minValue)) {
 				minItem = $this;;
