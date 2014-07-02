@@ -162,10 +162,16 @@
 				appendTo: appendTo,
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
-				open: function(e){
-				
+				custom: function(e){				
+					var template: kendo.template($("#notice-options-template").html());
+					if( e.target.element.find(".panel-heading .popover").length === 0 ){
+						e.target.element.append(template({}));
+					}
+					var popover = e.target.element.find(".panel-heading .popover");
+					popover.show();
+				},
+				open: function(e){				
 					var grid = e.target.element.find(".panel-body .notice-grid");
-					alert( grid.html() ) ;
 					if( grid.length > 0 && !grid.data('kendoGrid') ){
 						grid.kendoGrid({
 							dataSource : new kendo.data.DataSource({
