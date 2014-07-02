@@ -165,10 +165,11 @@
 				custom: function(e){				
 				
 					var template = kendo.template($("#notice-options-template").html());
-					
-					if( e.target.element.find(".panel-heading .popover").length === 0 ){
-						e.target.element.append(template({}));
+					var heading =  e.target.element.find(".panel-heading");
+					if( heading.children(".popover").length === 0 ){
+						heading.append(template({}));
 					}
+					
 					var popover = e.target.element.find(".panel-heading .popover");
 					popover.show();
 					
