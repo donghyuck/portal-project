@@ -63,7 +63,7 @@
 				// 2.  MEUN 설정
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();								
 																																									
-				preparePersonalizedArea($("#personalized-area"), 6 );
+				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
 				
 				/**
