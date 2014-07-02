@@ -161,7 +161,8 @@
 			var panel = common.ui.panel({
 				appendTo: appendTo,
 				data: new kendo.data.ObservableObject({
-					announce : new Announce()
+					announce : new Announce(),
+					visible : false
 				}),
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
