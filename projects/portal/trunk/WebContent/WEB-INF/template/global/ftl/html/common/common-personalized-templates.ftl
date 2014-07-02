@@ -63,7 +63,7 @@
 					<input type="radio" name="notice-selected-target" value="30" >사이트
 				</label>
 				<label class="btn btn-info btn-sm ">
-					<input type="radio" name="notice-selected-target" value="1">회사
+					<input type="radio" name="notice-selected-target" value="1">My 회사
 				</label>
 		</div>
 	</div>
