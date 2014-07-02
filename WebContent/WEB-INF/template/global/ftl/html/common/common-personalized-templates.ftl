@@ -60,10 +60,10 @@
 				<h5 ><small><i class="fa fa-info"></i>공지 & 이벤트 소스를 변경할수 있습니다.</small></h5>	
 				<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-info btn-sm active">
-					<input type="radio" name="announce-selected-target" value="30" >사이트
+					<input type="radio" name="notice-selected-target" value="30" >사이트
 				</label>
 				<label class="btn btn-info btn-sm ">
-					<input type="radio" name="announce-selected-target" value="1">회사
+					<input type="radio" name="notice-selected-target" value="1">회사
 				</label>
 		</div>
 	</div>
