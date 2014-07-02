@@ -51,7 +51,7 @@
 </script>	
 
 <script type="text/x-kendo-template" id="notice-options-template">	
-	<div class="popover left">
+	<div class="popover top">
 		<div class="arrow"></div>
 			<h3 class="popover-title">소스 설정</h3>
 			<div class="popover-content">
