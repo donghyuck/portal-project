@@ -1,7 +1,7 @@
-function preparePersonalizedArea( element, min, colSize ){
+function preparePersonalizedArea( element, minCount, colSize ){
 	
 	var template = kendo.template("<div id='#= guid #' class='personalized-panels-group col-sm-#= colSize#'></div>");
-	for ( var  i = 1 ; i < colSize + 1 ; i ++  )
+	for ( var  i = 1 ; i < minCount + 1 ; i ++  )
 	{
 		element.append( 
 			template({
