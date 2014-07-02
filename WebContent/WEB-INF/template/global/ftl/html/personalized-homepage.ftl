@@ -195,11 +195,10 @@
 										url : '${request.contextPath}/community/list-announce.do?output=json'
 									},
 									parameterMap: function(options, operation) {
-									alert( typeof options );
-										if( options ){
+										if( typeof options.objectType === "undefined"  ){
+											return {objectType: 30 };	
+										}else{			
 											return options;		
-										}else{											
-											return {objectType: 30 };		
 										} 
 									} 
 								},
