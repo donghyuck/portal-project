@@ -616,7 +616,7 @@
 		
 		function displayPhotoPanel(){			
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));			
-		//	$("#personalized-area").append( template( {guid: guid, colSize: grid_col_size.newValue } ) );
+			var photoPlaceHolder = displayPhotoSource();
 			common.ui.panel({
 				appendTo: appendTo,
 				title: photoPlaceHolder.name, 
