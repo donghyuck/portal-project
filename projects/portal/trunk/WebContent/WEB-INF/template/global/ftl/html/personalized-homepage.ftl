@@ -164,9 +164,9 @@
 				data: new kendo.data.ObservableObject({
 					announce : new Announce(),
 					visible : false,
-					profilePhotoUrl: function(){
-						return "/download/profile/" + this.announce.user.username + "?width=100&height=150"
-					}
+					profilePhotoUrl : function(){
+						return common.api.user.photoUrl (this.get("announce").user, 150,150);
+					},
 				}),
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
