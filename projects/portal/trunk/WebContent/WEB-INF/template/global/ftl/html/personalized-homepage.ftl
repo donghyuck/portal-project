@@ -165,10 +165,22 @@
 				custom: function(e){
 					var template = kendo.template($("#notice-options-template").html());
 					var heading =  e.target.element.find(".panel-heading");
-					if( heading.children(".popover").length === 0 ){
-						heading.append(template({}));
-					}
 					var popover = e.target.element.find(".panel-heading .popover");
+					if( popover.length === 0 ){
+						heading.append(template({}));
+						popover = e.target.element.find(".panel-heading .popover");
+						popover.find("button.close").click(function(e){
+							popover.hide();
+						});
+						var grid = e.target.element.find(".panel-body .notice-grid");
+						popover.find("input[name='notice-selected-target']").on(
+							"change", function(e){
+								if( grid.data('kendoGrid')){
+									grid.data('kendoGrid').dataSource.read({objectType: this.value });
+								}
+							}
+						);
+					}
 					popover.show();					
 				},
 				open: function(e){				
@@ -183,6 +195,8 @@
 										url : '${request.contextPath}/community/list-announce.do?output=json'
 									},
 									parameterMap: function(options, operation) {
+									
+										alert( stringify( options ) );
 										if (operation != "read" && options.models) {
 											return {models: kendo.stringify(options.models)};
 										}else{								
