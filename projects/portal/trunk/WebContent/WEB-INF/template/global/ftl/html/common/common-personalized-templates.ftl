@@ -53,7 +53,9 @@
 <script type="text/x-kendo-template" id="notice-options-template">	
 	<div class="popover top">
 		<div class="arrow"></div>
-			<h3 class="popover-title">소스 설정</h3>
+			<h3 class="popover-title">소스 설정			
+				<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+			</h3>
 			<div class="popover-content">
 				<h5 ><small><i class="fa fa-info"></i>공지 & 이벤트 소스를 변경할수 있습니다.</small></h5>	
 				<div class="btn-group" data-toggle="buttons">
