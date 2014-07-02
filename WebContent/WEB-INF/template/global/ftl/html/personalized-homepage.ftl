@@ -61,8 +61,12 @@
 				});						
 				
 				// 2.  MEUN 설정
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
-				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
+				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();								
+																																									
+				preparePersonalizedArea($("#personalized-area"), 6 );
+				
+				
+				
 				
 				common.ui.handleActionEvents( $('.cbp-spmenu'), {
 					handlers : [
@@ -1169,7 +1173,7 @@
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
 			<div class="container-fluid content" style="min-height:600px;">		
-				<div id="personalized-area" class="row blank-top-10">				
+				<div id="personalized-area" class="row">				
 				<!--
 					<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
 						<div class="panel panel-default">
