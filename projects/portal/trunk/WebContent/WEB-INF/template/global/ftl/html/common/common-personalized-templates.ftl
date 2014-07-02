@@ -72,7 +72,7 @@
 
 <script type="text/x-kendo-template" id="notice-view-template">	
 	<div class="panel panel-default no-border no-margin-b" data-bind="visible: visible">
-		<div class="panel-heading rounded-top">
+		<div class="panel-heading rounded-top" style="background-color: #fff; ">
 			<h4 class="panel-title" data-bind="html:announce.subject"></h4>
 		</div>
 		<div class="panel-body padding-sm">
