@@ -1405,10 +1405,7 @@
 				</div>	
 			</section>				
 			<!-- ./END RIGHT SLIDE MENU -->
-					
-		<section id="image-broswer" class="image-broswer"></section>
-		<section id="editor-popup"></section>
-		<section id="announce-editor"></section>
+							
 		<!-- START TEMPLATE -->				
 		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
 			<div class="img-wrapper">			
