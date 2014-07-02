@@ -158,8 +158,11 @@
 		<!-- ============================== -->
 		function showNoticePanel(){
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
-			common.ui.panel({
+			var panel = common.ui.panel({
 				appendTo: appendTo,
+				data: new kendo.data.ObservableObject({
+					announce : new Announce()
+				}),
 				title: "공지 & 이벤트", actions:["Custom", "Minimize", "Refresh", "Close"],
 				template: kendo.template($("#notice-view-template").html()),   
 				custom: function(e){
@@ -221,6 +224,7 @@
 								var selectedCells = this.select();
 								if( selectedCells.length > 0){
 									var selectedCell = this.dataItem( selectedCells );	
+									selectedCell.copy( panel.data().announce  );
 								}
 							}
 						});		
