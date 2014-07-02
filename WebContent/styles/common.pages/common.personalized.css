@@ -210,6 +210,10 @@
 	left: 40px;
 }
 
+.panel-body .list-unstyled li {
+	padding: 2px;	
+}
+
 /**
  * Panel Hover Effect
  */
