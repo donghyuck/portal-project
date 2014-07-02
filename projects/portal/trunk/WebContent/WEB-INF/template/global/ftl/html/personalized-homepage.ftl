@@ -164,6 +164,46 @@
 				template: kendo.template($("#notice-view-template").html()),   
 				open: function(e){
 					var grid = e.target.element.find(".modal-body .notice-grid");
+					if( grid.length > 0 && !grid.data('kendoGrid') ){
+						grid.kendoGrid({
+							dataSource : new kendo.data.DataSource({
+								transport: {
+									read: {
+										type : 'POST',
+										dataType : "json", 
+										url : '${request.contextPath}/community/list-announce.do?output=json'
+									},
+									parameterMap: function(options, operation) {
+										if (operation != "read" && options.models) {
+											return {models: kendo.stringify(options.models)};
+										}else{								
+											return {objectType: 30 };								
+										}
+									} 
+								},
+								pageSize: 10,
+								error:common.api.handleKendoAjaxError,
+								schema: {
+									data : "targetAnnounces",
+									model : Announce,
+									total : "totalAnnounceCount"
+								}
+							}),
+							sortable: true,
+							columns: [ 
+								{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
+								{field:"subject", title: "제목"}a
+							],
+							pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
+							selectable: "row",
+							change: function(e) { 
+								var selectedCells = this.select();
+								if( selectedCells.length > 0){
+									var selectedCell = this.dataItem( selectedCells );	
+								}
+							}
+						});		
+					}
 				/**
 					
 					if( grid.length > 0 && !grid.data('kendoGrid') ){
