@@ -1089,7 +1089,7 @@
 		</script>		
 		<style scoped="scoped">
 		
-		#announce-grid .k-grid-content {
+		.notice-grid .k-grid-content {
 			min-height : 300px;
 		}
 		
