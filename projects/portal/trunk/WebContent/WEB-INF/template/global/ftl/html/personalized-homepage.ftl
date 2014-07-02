@@ -151,6 +151,8 @@
 		<!-- ============================== -->
 		function showNoticePanel(){
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
+			
+			alert( $("#notice-view-template").html() );
 			var panel = common.ui.panel({
 				appendTo: appendTo,
 				autoBind: true,
