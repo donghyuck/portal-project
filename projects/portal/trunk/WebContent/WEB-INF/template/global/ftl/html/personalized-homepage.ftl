@@ -201,12 +201,10 @@
 								var selectedCells = this.select();
 								if( selectedCells.length > 0){
 									var selectedCell = this.dataItem( selectedCells );	    							
-									/**
 									var announcePlaceHolder = $("#announce-panel").data( "announcePlaceHolder" );
 									selectedCell.copy(announcePlaceHolder);					
 									$("#announce-panel").data( "announcePlaceHolder", announcePlaceHolder );							 
 									showAnnouncePanel();	
-									*/
 								}
 							},
 							dataBound: function(e) {					
