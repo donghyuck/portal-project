@@ -1235,7 +1235,7 @@
 					<div class="col-sm-6 col-sm-offset-6">       
 					
 			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
-   
+<div class="container">
 			<ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -1253,6 +1253,7 @@
                   </ul>
                 </li>
               </ul>
+              </div>
 			</div>
 					</div><!-- ./col-sm-6 col-sm-offset-6 -->
 				</div><!-- ./container -->
