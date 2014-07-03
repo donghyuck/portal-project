@@ -1234,7 +1234,7 @@
 				<div class="container"> 
 					<div class="col-sm-6 col-sm-offset-6">       
 					
-			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="navbar navbar-personalized" role="navigation">
 
 			<ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
