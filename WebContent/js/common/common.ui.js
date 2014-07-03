@@ -83,6 +83,7 @@
 					var photos = this.data();
 					var urls = [];
 					each(photos, function(idx, photo){
+						alert("fdsaf");
 						urls.push(template(photo));
 					});					
 					$.backstretch(
