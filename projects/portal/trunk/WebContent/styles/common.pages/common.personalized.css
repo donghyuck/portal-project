@@ -32,6 +32,11 @@
 		padding-top: 10px;
 		padding-bottom: 10px;
 	}
+	
+	.navbar-personalized	 .navbar-btn {
+		padding-top: 4px;
+		padding-bottom: 4px;	
+	}
 }
 
 #personalized-controls {
