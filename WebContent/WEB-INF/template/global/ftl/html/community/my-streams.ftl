@@ -126,6 +126,7 @@
 				appendTo: appendTo,
 				title: "<i class='fa fa-" + media.serviceProviderName + " fa-fw'></i>" + media.serviceProviderName , 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
+				data: media,
 				template: kendo.template("<ul class='media-list'></ul>")
 			});			
 		}
