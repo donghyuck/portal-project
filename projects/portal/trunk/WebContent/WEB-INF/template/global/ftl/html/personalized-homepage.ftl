@@ -1211,27 +1211,26 @@
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
 			<div class="container"> 
-				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">       
-					
-			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
-			<ul class="nav navbar-nav pull-right">
-				<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-				<li class="hidden-xs">
-					<div class="btn-group navbar-btn" data-toggle="buttons">
-						<label class="btn btn-info">
-							<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-						</label>
-						<label class="btn btn-info active">
-					 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-						</label>
-						<label class="btn btn-info">
-							<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-						</label>
-					</div>
-				</li> 
-				<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
-              </ul>
-			</div>
+				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">
+					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
+						<ul class="nav navbar-nav pull-right">
+							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+							<li class="hidden-xs">
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info">
+										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+									</label>
+									<label class="btn btn-info active">
+								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+									</label>
+									<label class="btn btn-info">
+										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+									</label>
+								</div>
+							</li> 
+							<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
+						</ul>
+					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
 			</div><!-- ./container -->
 
