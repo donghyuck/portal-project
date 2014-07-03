@@ -1232,14 +1232,10 @@
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
 				<div class="container"> 
-					<div class="col-sm-6 col-sm-offset-6">       
+					<div class="col-sm-5 col-sm-offset-7">       
 					
 			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
-
-			<ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+			<ul class="nav navbar-nav pull-right">
                  <li><p class="navbar-text">레이아웃</p> </li>
 				<li class="hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
