@@ -54,7 +54,7 @@
 					},				
 					shown : function(e){						
 						//$('#account-navbar').append('<li><a href="#" class="btn-control-group options" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>');
-						$.find('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
+						$('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
 							$('body').toggleClass('modal-open');
 							if( $('#personalized-controls-section').hasClass("hide") ){
 								$('#personalized-controls-section').removeClass("hide");
