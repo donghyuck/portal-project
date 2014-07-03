@@ -2154,7 +2154,7 @@
 	                "k-i-maximize": "maximize",
 	                "k-i-minimize": "minimize",
 	                "k-i-restore": "restore",
-	                "k-i-refresh": "_refresh",
+	                "k-i-refresh": "refresh",
 	                "k-i-custom": "_custom"
 			}[iconClass];
 		},				
