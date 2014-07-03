@@ -340,6 +340,10 @@ body.bg-dark .header {
 	background-color: rgba(0, 0, 0, 0.8);
 }
 
+body.bg-dark .header .navbar-default .navbar-nav > li > a {
+	color : #fff;
+}
+
 .header .navbar {
 	margin: 0;
 	min-height: inherit;
