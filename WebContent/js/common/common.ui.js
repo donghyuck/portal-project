@@ -2122,7 +2122,7 @@
 				open: {},
 				close: {}
 			},
-			handler : {}
+			handlers : {}
 		},
 		data : function( data ){
 			var that = this;
@@ -2228,8 +2228,12 @@
 			var that = this,
 			wrapper = that.wrapper,
 			options = that.options;
-			wrapper.children(EXT_PANEL_BODY).html(options.content);
-			that.trigger(REFRESH, {target: that});	
+			if( isFunction(options.handlers.refresh) ){
+				options.handlers.refresh();				
+			}else{
+				wrapper.children(EXT_PANEL_BODY).html(options.content);
+			}			
+			that.trigger(REFRESH, {target: that});			
 		},
 		content:function(html, data){
 		 	var content = this.wrapper.children(EXT_PANEL_BODY);
