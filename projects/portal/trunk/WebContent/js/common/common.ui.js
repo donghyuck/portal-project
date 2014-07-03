@@ -2,6 +2,7 @@
  * COMMON UI
  */
 (function($, undefined) {
+	
 	var Widget = kendo.ui.Widget;
 	var ui = window.ui = window.ui || {};
 	var UNDEFINED = 'undefined', STRING = 'string';
@@ -38,27 +39,35 @@
 	common.ui = common.ui || {};
 	var kendo = window.kendo, Widget = kendo.ui.Widget, stringify = kendo.stringify, UNDEFINED = 'undefined', proxy = $.proxy, isFunction = kendo.isFunction;
 
+	function defined(x) {
+		return (typeof x != UNDEFINED);
+	}
+		
 	common.ui.landing = function (element){		
 		if( typeof element === UNDEFINED )
 			element ='.page-loader' ;
 		 $(element).fadeOut('slow');
 	}
 	
-	common.ui.Setup = kendo.Class.extend({		
-		options : {
-			
-			
+	common.ui.PageSetup = kendo.Class.extend({		
+		options : {			
+			features : {
+				
+				
+			}
 		},
-		init: function(element, options) {
-			
-			
+		init: function( options) {
+			var that = this;
+			options = that.options;			
 		}			
 	})
 	
 	common.ui.setup = function (options){
-		options = options || {};
+		/*
 		var renderTo = options.renderTo || "wrapper" ;
-		
+		*/
+		options = options || {};
+		var setup = new common.ui.PageSetup(options);
 	}
 
 	
