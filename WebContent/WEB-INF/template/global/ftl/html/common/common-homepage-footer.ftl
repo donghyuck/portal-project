@@ -1,31 +1,23 @@
 <!--=== Footer ===-->
 <footer>
-<div class="footer">
-
-                    <div class="container">
-                        <div class="footer-wrapper">
-                            <div class="row">
-
-
-                                <!-- Footer Col. -->
-                                <div class="col-md-3 col-sm-3 footer-col">
-                                    <div class="footer-content">
-                                        <div class="footer-content-logo">
-                                            <img src="images/main_logo.png" alt="">
-                                        </div>
-                                        <div class="footer-content-text">
-                                            <p>Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                                dolor.</p>
-                                            <p>Lorem ipsum dolor sit amet nec, consectetuer adipiscing elit. Aenean commodo ligula eget
-                                                dolor.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- //Footer Col.// -->
-
-
-                                <!-- Footer Col. -->
-                                <div class="col-md-3 col-sm-3 footer-col">
+	<div class="footer">
+		<div class="container">
+			<div class="footer-wrapper">
+				<div class="row">
+					<!-- Footer Col. -->
+					<div class="col-md-3 col-sm-3 footer-col">
+						<div class="footer-content">
+							<div class="footer-content-logo">
+								<img src="${request.contextPath}/download/logo/company/${action.webSite.company.name}" alt="">
+							</div>
+							<div class="footer-content-text">
+								<p>${action.webSite.company.description}</p>
+							</div>
+						</div>
+					</div>
+					<!-- //Footer Col.// -->
+					<!-- Footer Col. -->
+					<div class="col-md-3 col-sm-3 footer-col">
                                     <div class="footer-title">
                                         Recent Tweets
                                     </div>
@@ -41,8 +33,8 @@
                                             </li>
                                         </ul>
                                     </div>
-                                </div>
-                                <!-- //Footer Col.// -->
+					</div>
+					<!-- //Footer Col.// -->
 
 
                                 <!-- Footer Col. -->
