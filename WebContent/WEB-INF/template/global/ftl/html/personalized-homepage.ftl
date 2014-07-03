@@ -67,27 +67,6 @@
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
 				
-				/**
-				
-				common.ui.handleActionEvents( $('.cbp-spmenu'), {
-					handlers : [
-						{ selector: "input[name='personalized-area-col-size']",
-						  event : 'change',
-						  handler : function(){
-							var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-							grid_col_size.oldValue = grid_col_size.newValue;
-							grid_col_size.newValue = this.value;			
-							$(".custom-panels-group").each(function( index ) {
-								var custom_panels_group = $(this);				
-								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
-								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
-							});
-						  }	
-						}
-					]
-				});	
-				*/
-				
  				common.ui.handleButtonActionEvents(
 					$(".personalized-navbar .nav a.btn-control-group"), 
 					{event: 'click', handlers: {
