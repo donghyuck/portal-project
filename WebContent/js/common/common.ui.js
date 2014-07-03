@@ -37,7 +37,13 @@
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui = common.ui || {};
-	var kendo = window.kendo, Widget = kendo.ui.Widget, stringify = kendo.stringify, UNDEFINED = 'undefined', proxy = $.proxy, isFunction = kendo.isFunction;
+	var kendo = window.kendo, 
+	Widget = kendo.ui.Widget, 
+	stringify = kendo.stringify, 
+	UNDEFINED = 'undefined', 
+	proxy = $.proxy, 
+	extend = $.extend,
+	isFunction = kendo.isFunction;
 
 	function defined(x) {
 		return (typeof x != UNDEFINED);
@@ -58,7 +64,7 @@
 		},
 		init: function( options) {
 			var that = this;
-			options = that.options;		
+			options = that.options = extend(true, {}, that.options, options);
 			
 			alert(options.features.landing);
 			alert(options.features.culture);
