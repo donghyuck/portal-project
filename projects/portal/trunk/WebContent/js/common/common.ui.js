@@ -52,13 +52,15 @@
 	common.ui.PageSetup = kendo.Class.extend({		
 		options : {			
 			features : {
-				
-				
+				culture : true,
+				landing : true
 			}
 		},
 		init: function( options) {
 			var that = this;
-			options = that.options;			
+			options = that.options;		
+			
+			alert(options.features.landing);
 		}			
 	})
 	
