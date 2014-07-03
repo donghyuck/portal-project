@@ -1244,7 +1244,7 @@
 			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 			<ul class="nav navbar-nav pull-right">
 				<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
 		          <ul class="dropdown-menu" role="menu">
 		            <li><a href="#">공지 & 이벤트</a></li>
 		            <li><a href="#">최근 이미지 불러오기</a></li>
