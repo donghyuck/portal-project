@@ -336,17 +336,13 @@
 	border-bottom: solid 2px #eee;
 }
 
-body.bg-dark .header {
-	background-color: rgba(0, 0, 0, 0.8);
-}
-
-body.bg-dark .header .navbar-default .navbar-nav > li > a {
-	color : #f2f2f2;
-	font-size : 16px;
-}
-
 .header.header-transparent {
 	background-color: transparent;	
+}
+
+.header.header-transparent .navbar-default .navbar-nav > li > a {
+	color : #f2f2f2;
+	font-size : 16px;
 }
 
 .header .navbar {
