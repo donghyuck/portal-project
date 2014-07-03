@@ -17,6 +17,10 @@
 	border-right-width: 0 !important;	
 }
 
+.navbar-personalized .navbar-nav {
+margin: 0px 0px;
+}
+
 
 #personalized-controls {
 	position: absolute;
