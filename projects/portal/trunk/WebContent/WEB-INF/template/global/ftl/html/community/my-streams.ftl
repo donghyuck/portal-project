@@ -59,27 +59,11 @@
 						createConnectedSocialNav();	
 					}
 				});		
+				
+				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 								
 				// 2.  MEUN LOADING ...
 				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
-				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );					
-				common.ui.handleActionEvents( $('.cbp-spmenu'), {
-					handlers : [
-						{ selector: "input[name='personalized-area-col-size']",
-						  event : 'change',
-						  handler : function(){
-							var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-							grid_col_size.oldValue = grid_col_size.newValue;
-							grid_col_size.newValue = this.value;			
-							$(".custom-panels-group").each(function( index ) {
-								var custom_panels_group = $(this);				
-								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
-								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
-							});
-						  }	
-						}
-					]
-				});	
 								
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
