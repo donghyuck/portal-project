@@ -386,14 +386,12 @@
 				
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="alert-panel-template">
-			<div id="#: id #" class="custom-panels-group col-sm-#: colSize#" style="min-height:200px; display:none;" data-role="panel">
-				<div data-alert class="alert alert-info">
+				<div  id="#: id #" data-alert class="alert alert-info" style="min-height:200px; display:none;">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
 					<p> 상단 메뉴에서 <i class="fa fa-briefcase fa-lg"></i> 버튼을 클릭하면 연결된 미디어 목록을 확인할 수 있습니다.</p>				
 					<p><small>새로운 쇼셜 미디어 연결은 프로필 보기의 쇼셜네트워크 탭에서 지원합니다.</small></p>
 					<p><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info btn-sm" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a></p>
 				</div>
-			</div>
 		</script>								
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
