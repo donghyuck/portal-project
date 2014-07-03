@@ -14,23 +14,25 @@
 			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/headroom/headroom.min.js',
-			'${request.contextPath}/js/headroom/jquery.headroom.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
 			'${request.contextPath}/js/common/common.modernizr.custom.js',				
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
+			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'],
+			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common.pages/common.personalized.js'
+			],
 			complete: function() {			
 			
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();	
+				common.ui.setup({
+					features:{
+						backstretch : true
+					}
+				});	
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
@@ -43,17 +45,17 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){				
-						$('#account-navbar').append('<li><a href="#" class="btn-control-group options" data-action="open-spmenu"><i class="fa fa-briefcase fa-lg"></i></a></li>');
-						$('#account-navbar').find('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
+						//$('#account-navbar').append('<li><a href="#" class="btn-control-group options" data-action="open-spmenu"><i class="fa fa-briefcase fa-lg"></i></a></li>');
+						$('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
 							$('body').toggleClass('modal-open');
 							if( $('#personalized-controls-section').hasClass("hide") ){
 								$('#personalized-controls-section').removeClass("hide");
 							}								
 							$('body div.overlay').toggleClass('hide');										
-							slide_effect.play().then(function(){
+							slide_effect.play().then(function(){							
 								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
 							});									
-						});			
+						});		
 						createConnectedSocialNav();	
 					}
 				});		
