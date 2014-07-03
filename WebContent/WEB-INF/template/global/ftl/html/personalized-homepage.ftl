@@ -1231,13 +1231,9 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="container padding-sm">		
-				<div class="row">
-				
-					<div class="col-sm-6 col-sm-offset-6">
-					
-<div class="navbar navbar-inverse navbar-static-top" role="navigation">
-          <div class="container">           
+			<div class="navbar navbar-inverse navbar-static-top" role="navigation">
+				<div class="container"> 
+					<div class="col-sm-6 col-sm-offset-6">          
 			<ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -1255,8 +1251,15 @@
                   </ul>
                 </li>
               </ul>
-          </div>
-        </div>					
+					</div><!-- ./col-sm-6 col-sm-offset-6 -->
+				</div><!-- ./container -->
+			</div>
+			<div class="container padding-sm">		
+				<div class="row">
+				
+					<div class="col-sm-6 col-sm-offset-6">
+					
+					
 					
 					</div>
 					<div class="btn-group" data-toggle="buttons">
