@@ -105,7 +105,7 @@
 									handler : function(){
 										var myStream = myStreams.data( 'dataSource' ).get(this.value);
 										if(this.checked){
-											displayMediaStream( myStream );
+											displayMediaPanel( myStream );
 										}else{
 											closeMediaStream( myStream );
 										}
@@ -120,6 +120,17 @@
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
 		<!-- ============================== -->		
+		function displayMediaPanel(media){				
+			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
+			var panel = common.ui.panel({ 
+				appendTo: appendTo,
+				title: "<i class='fa fa-" + media.serviceProviderName + " fa-fw'></i>" + media.serviceProviderName , 
+				actions:["Custom", "Minimize", "Refresh", "Close"],
+				content : "hello"
+			});			
+		}
+		
+		
 		function displayMediaStream(streamsPlaceHolder){					
 			var renderToString =  streamsPlaceHolder.serviceProviderName + "-panel-" + streamsPlaceHolder.socialAccountId ;
 			var renderToString2 =  streamsPlaceHolder.serviceProviderName + "-streams-" + streamsPlaceHolder.socialAccountId ;				
