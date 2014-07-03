@@ -16,7 +16,10 @@
 	border-bottom: solid 2px #eee;	
 }
 
-		
+.header {
+	border-bottom: 0px;
+}
+
 #personalized-controls {
 	position: absolute;
 	top: 50px;
