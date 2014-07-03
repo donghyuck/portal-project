@@ -8,7 +8,7 @@
 					<div class="col-md-3 col-sm-3 footer-col">
 						<div class="footer-content">
 							<div class="footer-content-logo">
-								<img src="${request.contextPath}/download/logo/company/${action.webSite.company.name}" alt="">
+								<img src="${request.contextPath}/download/logo/company/${action.webSite.company.name}" height="42"   alt="로고 이미지">
 							</div>
 							<div class="footer-content-text">
 								<p>${action.webSite.company.description}</p>
