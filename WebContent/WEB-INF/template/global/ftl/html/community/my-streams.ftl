@@ -260,12 +260,12 @@
 		<!-- ============================== -->
 		<!-- create info alert 										-->
 		<!-- ============================== -->							
-		function createInfoPanel(){					
+		function createInfoPanel(){		
+			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var renderTo = common.api.guid();
-			var grid_col_size = $("#personalized-area").data("sizePlaceHolder");			
-			$("#personalized-area").extAlert({
+			appendTo.extAlert({
 				template :  kendo.template($("#alert-panel-template").html()),
-				data : { id: renderTo, colSize: grid_col_size.newValue },
+				data : { id: renderTo },
 				close : function () {
 					$( '#'+ renderTo ).remove();
 				}
