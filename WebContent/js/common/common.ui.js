@@ -380,8 +380,7 @@
 					}
 				}else{
 					var aside= renderTo.find('.navbar-toggle-aside-menu');
-					if( aside.length > 0 ){
-						
+					if( aside.length > 0 ){						
 						var target = aside.attr("href");
 						$( target + ' button.btn-close:first').click(function(e){
 							if($(target).is(":visible")){
@@ -2046,7 +2045,7 @@
 			}
 
 			 if( options.autoBind )
-				kendo.bind(wrapper, options.data );
+				kendo.bind(element, options.data );
 			 
 			id = element.attr("id");			
 			wrapper.on("click", "> " + EXT_PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
@@ -2077,7 +2076,8 @@
 			animation : {
 				open: {},
 				close: {}
-			}	
+			},
+			handler : {}
 		},
 		data : function( data ){
 			var that = this;
@@ -2182,7 +2182,7 @@
 			wrapper = that.wrapper,
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
-			that.trigger(REFRESH, {target: that});
+			that.trigger(REFRESH, {target: that});	
 		},
 		content:function(html, data){
 		 	var content = this.wrapper.children(EXT_PANEL_BODY);
