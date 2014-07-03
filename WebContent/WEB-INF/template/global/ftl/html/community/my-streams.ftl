@@ -288,6 +288,14 @@
 				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">
 					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 						<ul class="nav navbar-nav pull-right">
+							<li>
+
+								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
+									<button type="button" class="btn btn-info" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+								</div>
+					
+							
+							</li>
 							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
 								<div class="btn-group navbar-btn" data-toggle="buttons">
@@ -321,9 +329,7 @@
 			<h5 class="side-section-title">My 쇼셜네트워크</h5>
 			<div class="panel">
 				<div class="panel-body">
-					<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
-						<button type="button" class="btn btn-info" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-					</div>
+					
 				</div>		
 			</div>							
 		</section>		
