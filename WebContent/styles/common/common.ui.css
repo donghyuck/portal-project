@@ -18,6 +18,10 @@
 	font-weight: bold;
 }
 
+.footer .title  h1, .footer .title h2, .footer .title h3, .footer .title h4, .footer .title h5, .footer .title h6{ 
+	color: #f2f2f2;	
+}
+
 /*Aside Menu
 ------------------------------------*/
 .aside-menu {
