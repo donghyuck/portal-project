@@ -1234,24 +1234,13 @@
 				<div class="container"> 
 					<div class="col-sm-6 col-sm-offset-6">       
 					
-			<div class="navbar navbar-personalized" role="navigation">
+			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 
 			<ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+				<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
               </ul>
 			</div>
 					</div><!-- ./col-sm-6 col-sm-offset-6 -->
