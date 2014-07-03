@@ -61,7 +61,7 @@
 			features : {
 				culture : true,
 				landing : true,
-				backstretch : true
+				backstretch : false
 			}
 		},
 		init: function( options) {
