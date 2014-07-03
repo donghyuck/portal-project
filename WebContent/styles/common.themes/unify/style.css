@@ -336,6 +336,10 @@
 	border-bottom: solid 2px #eee;
 }
 
+body.bg-dark > .header {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
 .header .navbar {
 	margin: 0;
 	min-height: inherit;
