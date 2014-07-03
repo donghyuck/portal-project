@@ -1240,7 +1240,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
-				<li class="navbar-btn hidden-xs">
+				<li class="hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info">
 								<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
