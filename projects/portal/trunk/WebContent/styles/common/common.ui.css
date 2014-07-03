@@ -12,6 +12,10 @@
 	margin: 0 15px -4px 15px!important;
 }
 
+.footer .title {
+	border-bottom: 0px;	
+}
+
 /*Aside Menu
 ------------------------------------*/
 .aside-menu {
