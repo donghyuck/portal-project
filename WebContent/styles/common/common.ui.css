@@ -1,26 +1,4 @@
-/* Text
-------------------------------------*/
-.title {
-	border-bottom: 3px double #f6f6f6;
-	margin-bottom: 10px;
-}
 
-.title h1, .title h2, .title h3, .title h4, .title h5, .title h6 {
-	border-bottom: 5px solid #29a9df!important;
-	display: inline-block;
-	padding: 0 10px!important;
-	margin: 0 15px -4px 15px!important;
-}
-
-.footer .title {
-	border-bottom: 0px;	
-	color: #f2f2f2;
-	font-weight: bold;
-}
-
-.footer .title  h1, .footer .title h2, .footer .title h3, .footer .title h4, .footer .title h5, .footer .title h6{ 
-	color: #f2f2f2;	
-}
 
 /*Aside Menu
 ------------------------------------*/
@@ -286,3 +264,26 @@ body:not (.right-to-left ) .no-border-l {
 	padding-top: 0 !important
 }
 
+/* Text
+------------------------------------*/
+.title {
+	border-bottom: 3px double #f6f6f6;
+	margin-bottom: 10px;
+}
+
+.title h1, .title h2, .title h3, .title h4, .title h5, .title h6 {
+	border-bottom: 5px solid #29a9df!important;
+	display: inline-block;
+	padding: 0 10px!important;
+	margin: 0 15px -4px 15px!important;
+}
+
+.footer .title {
+	border-bottom: 0px;	
+	color: #f2f2f2;
+	font-weight: bold;
+}
+
+.footer .title  h1, .footer .title h2, .footer .title h3, .footer .title h4, .footer .title h5, .footer .title h6{ 
+	color: #f2f2f2;	
+}
