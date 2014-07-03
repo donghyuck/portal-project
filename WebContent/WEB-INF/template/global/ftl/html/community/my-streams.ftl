@@ -95,7 +95,7 @@
 							myStreams.find('button[data-action="media-list"]').button('reset');
 						},
 						change : function ( e ) {
-							var template = kendo.template('<label class="btn btn-info"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #"></i></label>');
+							var template = kendo.template('<label class="btn btn-primary"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #"></i></label>');
 							var html = kendo.render(template, this.data());
 							myStreams.html(html);						
 							common.ui.handleActionEvents( myStreams, {
@@ -291,7 +291,7 @@
 							<li>
 
 								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
-									<button type="button" class="btn btn-info" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+									<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
 								</div>
 					
 							
