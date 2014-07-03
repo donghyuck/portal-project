@@ -12,6 +12,7 @@
 							</div>
 							<div class="footer-content-text">
 								<p>${action.webSite.company.description}</p>
+								<p/>
 								<div class="title">
 									<h5>연락처</h5>
 								</div>
@@ -28,9 +29,9 @@
 					<!-- //Footer Col.// -->
 					<!-- Footer Col. -->
 					<div class="col-md-3 col-sm-3 footer-col">
-                                    <div class="footer-title">
-                                        Recent Tweets
-                                    </div>
+						<div class="title">
+							<h5>최근 소식</h5>
+						</div>
                                     <div class="footer-content footer-recent-tweets-container">
                                         <ul class="tweetList footer-recent-tweets">
                                             <li class="tweet_content item">
