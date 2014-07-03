@@ -1240,6 +1240,7 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                 <li><p class="navbar-text">레이아웃</p> </li>
 				<li class="hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info">
