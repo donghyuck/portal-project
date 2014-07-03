@@ -96,17 +96,20 @@
                         </div>
 
                     </div>
-                    <div class="copyright">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-12 col-sm-12 center-text">
-                                    <div class="copyright-text">© 2013 Kanzi Theme | Theme Developed By <a href="http://www.activeaxon.com" target="_blank">ActiveAxon</a></div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+		<!--=== Copyright ===-->
+		<div class="copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-sm-12">
+						<div class="copyright-text">
+							<#if action.webSite ?? >${.now?string("yyyy")} &copy; ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
+							<a href="${request.contextPath}/content.do?contentId=2">개인정보 취급방침</a> | <a href="${request.contextPath}/content.do?contentId=1">이용약관</a>
+						</div>
+					</div>
+				</div><!--/row--> 
+			</div><!--/container--> 
+		</div><!--/copyright--> 
+	</div>
 </footer>
 
 <div class="footer">
