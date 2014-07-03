@@ -1239,7 +1239,7 @@
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
 			<div class="container"> 
-				<div class="col-sm-5 col-sm-offset-7 no-padding-hr">       
+				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">       
 					
 			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 			<ul class="nav navbar-nav pull-right">
