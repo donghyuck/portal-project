@@ -152,7 +152,8 @@
 											btn.parent().toggleClass('active');
 											btn.button('reset');
 										}
-									});							
+									});
+								});								
 							}
 						});
 					}
