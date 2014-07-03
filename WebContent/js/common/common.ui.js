@@ -61,6 +61,7 @@
 			options = that.options;		
 			
 			alert(options.features.landing);
+			alert(options.features.culture);
 		}			
 	})
 	
