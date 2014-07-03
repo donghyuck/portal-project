@@ -12,6 +12,13 @@
 							</div>
 							<div class="footer-content-text">
 								<p>${action.webSite.company.description}</p>
+								<address class="md-margin-bottom-40">
+								서울특별시 구로구 디티털로 30길 31<br />
+								코오롱빌란트2차 701호 ~ 704호<br />
+								Tel: 02 555 1965<br />
+								Fax: 02 2081 1090 <br />
+								<!--Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>-->
+								</address>								
 							</div>
 						</div>
 					</div>
