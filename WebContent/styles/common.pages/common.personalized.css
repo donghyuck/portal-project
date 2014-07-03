@@ -24,8 +24,8 @@
 @media (min-width: 768px) {
 	
 	.navbar-personalized	 .navbar-text {
-		margin-right: 10px;
-		margin-left: 10px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 	}
 
 	.navbar-personalized	  .navbar-nav>li>a {
