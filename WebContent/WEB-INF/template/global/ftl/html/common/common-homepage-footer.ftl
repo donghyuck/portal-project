@@ -13,7 +13,7 @@
 							<div class="footer-content-text">
 								<p>${action.webSite.company.description}</p>
 								<div class="title">
-									<h6>연락처</h6>
+									<h5>연락처</h5>
 								</div>
 								<address class="md-margin-bottom-40">
 								서울특별시 구로구 디티털로 30길 31<br />
