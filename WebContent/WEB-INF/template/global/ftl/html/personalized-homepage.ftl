@@ -1263,28 +1263,7 @@
 			</div>
 					</div><!-- ./col-sm-6 col-sm-offset-6 -->
 				</div><!-- ./container -->
-							
-			<div class="container padding-sm">		
-				<div class="row">
-				
-					<div class="col-sm-6 col-sm-offset-6">
-					
-					
-					
-					</div>
-					<div class="btn-group" data-toggle="buttons">
-						<label class="btn btn-info">
-							<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-						</label>
-						<label class="btn btn-info active">
-					 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
-						</label>
-						<label class="btn btn-info">
-							<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
-						</label>
-					</div>					
-				</div>				
-			</div>	
+
 			<div class="container-fluid padding-sm" style="min-height:600px;">		
 				<div id="personalized-area" class="row"></div>				
 			</div>		
