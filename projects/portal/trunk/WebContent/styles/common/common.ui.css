@@ -290,3 +290,9 @@ body:not (.right-to-left ) .no-border-l {
 	color: #f2f2f2;	
 	margin: 0 15px -4px 0px!important;
 }
+
+/* Background
+------------------------------------*/
+.bg-dark{
+	background: #222222;
+}
