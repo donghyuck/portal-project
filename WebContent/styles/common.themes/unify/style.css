@@ -1116,12 +1116,16 @@
 .footer .footer-col .footer-content {
 	color: #d4d4d4;
 	line-height: 20px;
-	font-family: "Open Sans", sans-serif;
+	/*font-family: "Open Sans", sans-serif;*/
 	padding-bottom: 0px;
 }
 
 .footer .footer-col .footer-content .footer-content-text {
 	line-height: 20px;
+	color: #c9c9c9;
+}
+
+.footer .footer-col .footer-content p{
 	color: #c9c9c9;
 }
 
