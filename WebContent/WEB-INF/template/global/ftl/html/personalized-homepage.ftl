@@ -1255,6 +1255,7 @@
 						</div>
 					</li> 
 				<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
+				<li><p class="navbar-text hidden-xs">&nbsp;</p></li>
               </ul>
 			</div>
 					</div><!-- ./col-sm-6 col-sm-offset-6 -->
