@@ -38,7 +38,7 @@
 				
 				common.ui.setup({
 					features:{
-						landing : false
+						backstretch : true
 					}
 				});		
 				
