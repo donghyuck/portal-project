@@ -31,17 +31,11 @@
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],			
 			complete: function() {		
-				// 1-1.  한글 지원을 위한 로케일 설정
-				//common.api.culture();
-				// 1-2.  페이지 렌딩
-				//common.ui.landing();	
-				
 				common.ui.setup({
 					features:{
 						backstretch : true
 					}
-				});		
-				
+				});				
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
@@ -53,7 +47,6 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){						
-						//$('#account-navbar').append('<li><a href="#" class="btn-control-group options" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>');
 						$('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
 							$('body').toggleClass('modal-open');
 							if( $('#personalized-controls-section').hasClass("hide") ){
@@ -1256,7 +1249,7 @@
 							<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 						</label>
 					</div>
-					</li> 
+				</li> 
 				<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
               </ul>
 			</div>
