@@ -98,7 +98,8 @@
 /*Boxed Layout
 ------------------------------------*/
 .wrapper {
-  background: #fff;
+ /* background: #fff;*/
+  background: rgba(255, 255, 255, 0.95);
 }
 
 .boxed-layout {
