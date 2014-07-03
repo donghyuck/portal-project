@@ -131,6 +131,12 @@
 				close: function(e) {
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').click();				
 				},
+				refresh: function(e){
+					var streams = e.target.element.find(".panel-body ul.media-list");
+					if( streams.length > 0 && streams.data('kendoExtMediaStreamView') ){
+						streams.data('kendoExtMediaStreamView').dataSource.read();
+					}
+				},
 				open: function(e){
 					var streams = e.target.element.find(".panel-body ul.media-list");
 					if( streams.length > 0 && !streams.data('kendoExtMediaStreamView') ){
