@@ -2179,6 +2179,7 @@
 					complete: proxy(this._deactivate, this)
 				 });
 			}
+			that.trigger(CLOSE, {target: that});
 		},
 		toggleMaximization: function () {
             if (this._closing) {
