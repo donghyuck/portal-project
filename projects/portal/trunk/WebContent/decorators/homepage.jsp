@@ -93,6 +93,9 @@
 		padding-bottom: 14px;
 	}
 	**/
+	.header {
+		border-bottom: 0px;
+	}	
 				
 </style>
 </head>
