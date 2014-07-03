@@ -2169,7 +2169,8 @@
 				options = that.options,
 				showOptions = options.animation.open,
 				hideOptions = options.animation.close;
-			if (wrapper.is(VISIBLE) && !that.trigger(CLOSE, { userTriggered: !systemTriggered })) {
+			
+			if (wrapper.is(VISIBLE) && !that.trigger(CLOSE, { userTriggered: !systemTriggered, target: that })) {
 				that._closing = true;
 				 options.visible = false;
 				 wrapper.kendoStop().kendoAnimate({
@@ -2179,7 +2180,7 @@
 					complete: proxy(this._deactivate, this)
 				 });
 			}
-			that.trigger(CLOSE, {target: that});
+			
 		},
 		toggleMaximization: function () {
             if (this._closing) {
