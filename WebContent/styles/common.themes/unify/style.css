@@ -342,6 +342,7 @@ body.bg-dark .header {
 
 body.bg-dark .header .navbar-default .navbar-nav > li > a {
 	color : #fff;
+	font-size : 16px;
 }
 
 .header .navbar {
