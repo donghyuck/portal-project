@@ -130,6 +130,32 @@
 				template: kendo.template("<ul class='media-list'></ul>"),
 				close: function(e) {
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').click();				
+				},
+				open: function(e){
+					var streams = e.target.element.find(".panel-body ul.media-list");
+					if( streams.length > 0 && !streams.data('kendoExtMediaStreamView') ){
+						streams.extMediaStreamView({
+							id:  e.target.data().socialAccountId,
+							media: e.target.data().serviceProviderName,
+							change : function(e){		
+								streams.find('button.custom-upload-by-url').click(function(e){
+									var btn = $(this) ;
+									btn.parent().toggleClass('active');
+									btn.button('loading');
+									common.api.uploadMyImageByUrl({
+										data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
+										success : function(response){
+											btn.attr("disabled", "disabled");
+											btn.addClass('hide');
+										},
+										always : function(){
+											btn.parent().toggleClass('active');
+											btn.button('reset');
+										}
+									});							
+							}
+						});
+					}
 				}
 			});			
 		}
@@ -159,21 +185,21 @@
 					id: streamsPlaceHolder.socialAccountId, 
 					media: streamsPlaceHolder.serviceProviderName,
 					change : function(e){			
-						$( '#'+ renderToString2 ).find('button.custom-upload-by-url').click(function(e){
-							var btn = $(this) ;
-							btn.parent().toggleClass('active');
-							btn.button('loading');
-							common.api.uploadMyImageByUrl({
-								data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
-								success : function(response){
-									btn.attr("disabled", "disabled");
-									btn.addClass('hide');
-								},
-								always : function(){
-									btn.parent().toggleClass('active');
-									btn.button('reset');
-								}
-							});
+									$( '#'+ renderToString2 ).find('button.custom-upload-by-url').click(function(e){
+										var btn = $(this) ;
+										btn.parent().toggleClass('active');
+										btn.button('loading');
+										common.api.uploadMyImageByUrl({
+											data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
+											success : function(response){
+												btn.attr("disabled", "disabled");
+												btn.addClass('hide');
+											},
+											always : function(){
+												btn.parent().toggleClass('active');
+												btn.button('reset');
+											}
+										});
 							
 						});
 					}
