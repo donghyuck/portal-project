@@ -10,10 +10,11 @@
 .navbar-personalized {	
 	background-color: rgba(0, 0, 0, 0.8);
 	border-color: #080808;
-	border:0px;
 	border-radius: 0 0 6px 6px !important;
 	min-height: 30px;	
 	border-bottom: solid 2px #eee;	
+	border-left-width: 0 !important;
+	border-right-width: 0 !important;	
 }
 
 .header {
