@@ -1240,6 +1240,20 @@
                 <li class="active"><a href="#">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+				<li class="navbar-btn hidden-xs">
+						<div class="btn-group navbar-btn" data-toggle="buttons">
+							<label class="btn btn-info">
+								<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+							</label>
+							<label class="btn btn-info active">
+						 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+							</label>
+														<label class="btn btn-info">
+								<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+							</label>
+						</div>
+					</li>
+					                
 				<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
               </ul>
 			</div>
