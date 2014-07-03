@@ -37,7 +37,7 @@
 				
 				common.ui.setup({
 					features:{
-						landing : false;
+						landing : false
 					}
 				});		
 				
