@@ -64,11 +64,19 @@
 		},
 		init: function( options) {
 			var that = this;
-			options = that.options = extend(true, {}, that.options, options);
-			
-			alert(options.features.landing);
-			alert(options.features.culture);
-		}			
+			options = that.options = extend(true, {}, that.options, options);			
+			that._initFeatures();
+		},
+		_initFeatures: function(){
+			var that = this;
+			var features = that.options.features;
+			if( features.culture ){
+				common.api.culture();				
+			}
+			if(features.landing){
+				common.ui.landing();
+			}
+		} 
 	})
 	
 	common.ui.setup = function (options){
