@@ -1238,8 +1238,8 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->	
 			<!-- START MAIN CONTENT -->
-				<div class="container"> 
-					<div class="col-sm-5 col-sm-offset-7 no-padding-hr">       
+			<div class="container"> 
+				<div class="col-sm-5 col-sm-offset-7 no-padding-hr">       
 					
 			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 			<ul class="nav navbar-nav pull-right">
@@ -1261,8 +1261,8 @@
 				<li><p class="navbar-text hidden-xs">&nbsp;</p></li>
               </ul>
 			</div>
-					</div><!-- ./col-sm-6 col-sm-offset-6 -->
-				</div><!-- ./container -->
+				</div><!-- ./col-sm-6 col-sm-offset-6 -->
+			</div><!-- ./container -->
 
 			<div class="container-fluid padding-sm" style="min-height:600px;">		
 				<div id="personalized-area" class="row"></div>				
