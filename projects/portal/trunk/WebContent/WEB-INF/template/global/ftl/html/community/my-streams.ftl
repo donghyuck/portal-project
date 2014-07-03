@@ -332,17 +332,6 @@
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>		
-				<div class="btn-group navbar-btn" data-toggle="buttons">
-					<label class="btn btn-info">
-						<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-					</label>
-					<label class="btn btn-info active">
-				 		<input type="radio" name="personalized-area-col-size"  value="6"> <i class="fa fa-th-large"></i>
-					</label>
-					<label class="btn btn-info">
-						<input type="radio" name="personalized-area-col-size"  value="4"> <i class="fa fa-th"></i>
-					</label>
-				</div>						
 				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
 			</header>					
 			<h5 class="side-section-title">My 쇼셜네트워크</h5>
