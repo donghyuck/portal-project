@@ -14,7 +14,7 @@
 								<p>${action.webSite.company.description}</p>
 								<p/>
 								<div class="title">
-									<h5 class="no-margin-l">연락처</h5>
+									<h5>연락처</h5>
 								</div>
 								<address class="md-margin-bottom-40">
 								서울특별시 구로구 디티털로 30길 31<br />
@@ -30,7 +30,7 @@
 					<!-- Footer Col. -->
 					<div class="col-md-3 col-sm-3 footer-col">
 						<div class="title">
-							<h5 class="no-margin-l">최근 소식</h5>
+							<h5>최근 소식</h5>
 						</div>
                                     <div class="footer-content footer-recent-tweets-container">
                                         <ul class="tweetList footer-recent-tweets">
