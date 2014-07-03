@@ -1243,7 +1243,8 @@
 					
 			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 			<ul class="nav navbar-nav pull-right">
-                 <li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+				<li class="hidden-xs"><a href="#">공지</li>
+				<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 				<li class="hidden-xs">
 						<div class="btn-group navbar-btn" data-toggle="buttons">
 							<label class="btn btn-info">
