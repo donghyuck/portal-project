@@ -296,7 +296,3 @@ body:not (.right-to-left ) .no-border-l {
 .bg-dark{
 	background: #222222;
 }
-
-.wrapper{
-	background: rgba(255, 255, 255, 0.95);
-}
