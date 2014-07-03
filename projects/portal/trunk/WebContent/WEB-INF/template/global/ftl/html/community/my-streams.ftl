@@ -358,9 +358,9 @@
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
 			</div><!-- ./container -->
 					
-		<section class="container-fluid content" style="min-height:600px;">		
-			<div id="personalized-area" class="row blank-top-10"></div>				
-		</section>		
+			<div class="container-fluid padding-sm" style="min-height:600px;">		
+				<div id="personalized-area" class="row"></div>				
+			</div>		
 		
 		<div class="overlay hide"></div>		
 		<!-- start side menu -->
