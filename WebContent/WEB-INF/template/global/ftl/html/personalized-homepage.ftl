@@ -1253,8 +1253,7 @@
 								<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 							</label>
 						</div>
-					</li>
-					                
+					</li> 
 				<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
               </ul>
 			</div>
