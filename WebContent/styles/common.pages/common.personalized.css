@@ -8,10 +8,12 @@
 }
 
 .navbar-personalized {	
-	background-color: #222;
+	background-color: rgba(0, 0, 0, 0.8);
 	border-color: #080808;
-	border-radius: 0 0 4px 4px !important;
+	border:0px;
+	border-radius: 0 0 6px 6px !important;
 	min-height: 30px;	
+	
 }
 
 		
