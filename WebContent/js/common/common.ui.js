@@ -43,6 +43,7 @@
 	UNDEFINED = 'undefined', 
 	proxy = $.proxy, 
 	extend = $.extend,
+	each = $.each,
 	isFunction = kendo.isFunction;
 
 	function defined(x) {
@@ -59,7 +60,8 @@
 		options : {			
 			features : {
 				culture : true,
-				landing : true
+				landing : true,
+				backstretch : true
 			}
 		},
 		init: function( options) {
@@ -73,9 +75,26 @@
 			if( features.culture ){
 				common.api.culture();				
 			}
+			if(features.backstretch){
+				common.ui.landing();
+				var dataSource = common.api.streams.dataSource;
+				var template = kendo.template("/community/view-streams-photo.do?key=#= externalId#");
+				dataSource.fetch(function(){
+					var photos = this.data();
+					var urls = [];
+					each(photos, function(idx, photo){
+						urls.push(template(photo));
+					});					
+					$.backstretch(
+						urls,	
+						{duration: 6000, fade: 750}	
+					);
+				});
+			}
 			if(features.landing){
 				common.ui.landing();
 			}
+			
 		} 
 	})
 	
