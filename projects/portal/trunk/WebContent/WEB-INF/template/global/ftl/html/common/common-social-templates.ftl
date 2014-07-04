@@ -1,4 +1,36 @@
-
+<script id="media-editor-modal-template" type="text/x-kendo-template">
+	<div class='modal fade' tabindex='-1' role='dialog' aria-hidden='true'>
+		<div class='modal-dialog'>
+			<div class='modal-content'>
+				<div class='modal-header'>
+					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
+					<h5 class='modal-title' data-bind="text: media.serviceProviderName">쇼셜연결 수정</h5>
+				</div>
+				<div class='modal-body'>					
+					<div class="page-header no-margin-t">
+						<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>스크롤</strong>&nbsp;<small>스크롤을 OFF 하면 스크롤 기능이 비활성됩니다.</small></h4>
+					</div>
+					<div class="btn-group" data-toggle="buttons">
+							<label class="btn btn-primary btn-xs active">
+								<input type="radio" name="options-scrollable" value="1">ON
+							</label>
+							<label class="btn btn-primary btn-xs">
+								<input type="radio" name="options-scrollable" value="0">OFF
+							</label>
+					</div>																										
+					<div class="page-header">
+						<h4 class="text-primary"><i class="fa fa-bars"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
+					</div>
+					<div class="media-props-grid" style="min-height: 300px"></div>																
+				</div>
+				<div class='modal-footer'>		
+					<!--<button type="button" class="btn btn-primary custom-update" disabled="disabled">확인</button>	-->
+					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>확인</button>				
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</script>	
 <!-- ============================== -->
 <!-- my socialnetwork view panel template          -->
 <!-- ============================== -->
