@@ -472,7 +472,9 @@
 	.header.header-transparent .navbar-default .navbar-nav > li > a {
 		color : #777;	
 	}
-	
+	.header.header-transparent .navbar-nav .open .dropdown-menu {
+		padding-bottom: 0;
+	}	
 	.header-transparent .navbar-collapse {
 			
 	}	
