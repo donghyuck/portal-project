@@ -134,7 +134,12 @@
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
 							media : new SocialNetwork(e.target.data()),
-							scrollable : false
+							scrollable : false,
+							change: function(e){
+								if( e.field.match('^media.properties')){ 						
+									alert( kendo.stringify( this.media ) );
+								}
+							}
 						}),
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
@@ -179,6 +184,7 @@
 									change: function(e) {
 									}
 								});
+								
 								alert(
 								 e.target.element.html()
 								) ;
