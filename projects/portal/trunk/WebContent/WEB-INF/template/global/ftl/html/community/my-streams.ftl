@@ -145,6 +145,10 @@
 									alert(this.value);
 									if( this.value == 1 ){
 										panel.element.find(".panel-body").slimscroll({ height: "500px"});
+									}else{
+										if(panel.element.find(".panel-body").parent().hasClass("slimScrollDiv")){
+											panel.element.find(".panel-body").slimscroll({ "destroy" });
+										}										
 									}
 								});																
 								grid.kendoGrid({
