@@ -138,7 +138,7 @@
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
-								grid..kendoGrid({
+								grid.kendoGrid({
 									dataSource : {		
 										transport: { 
 											read: { url:'/community/get-my-socialnetwork-property.do?output=json', type:'post' },
