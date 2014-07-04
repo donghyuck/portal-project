@@ -117,6 +117,7 @@
 			}
 
 			if(features.lightbox){
+				
 				$(document).on("change", function(e){
 						alert(
 								$(this).html()
@@ -2288,6 +2289,9 @@
 			wrapper = that.wrapper,
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
+			
+			that.element.trigger('render.ext.panel');
+		
 		},	
 		refresh: function(){
 			var that = this,
