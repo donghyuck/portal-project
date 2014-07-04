@@ -35,7 +35,8 @@
 			complete: function() {		
 				common.ui.setup({
 					features:{
-						backstretch : true
+						backstretch : true,
+						lightbox : true
 					}
 				});				
 				// ACCOUNTS LOAD	
