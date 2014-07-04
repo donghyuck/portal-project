@@ -144,7 +144,7 @@
 								scrollable.on("change", function(e){
 									alert(this.value);
 									if( this.value == 1 ){
-										renderTo.find(".modal-body").slimscroll({ height: "500px"});
+										panel.element.find(".panel-body").slimscroll({ height: "500px"});
 									}
 								});																
 								grid.kendoGrid({
