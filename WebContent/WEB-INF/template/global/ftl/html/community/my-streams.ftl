@@ -313,12 +313,7 @@
 				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">
 					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 						<ul class="nav navbar-nav pull-right">
-							<li>
-								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
-									<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-								</div>
-							</li>
-							<li class="hidden-sm"><p class="navbar-text">레이아웃</p> </li>
+							<li class="hidden-sm hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
 								<div class="btn-group navbar-btn" data-toggle="buttons">
 									<label class="btn btn-info">
@@ -332,6 +327,11 @@
 									</label>
 								</div>
 							</li> 
+							<li>
+								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
+									<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+								</div>
+							</li>							
 						</ul>
 					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
