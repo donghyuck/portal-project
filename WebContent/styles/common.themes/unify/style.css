@@ -479,7 +479,8 @@
 		padding-bottom: 0;
 	}	
 	.header-transparent .navbar-collapse {
-			
+		overflow-y: visible;
+		max-height: 500px;			
 	}	
 	
 }
