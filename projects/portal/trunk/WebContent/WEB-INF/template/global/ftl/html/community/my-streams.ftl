@@ -313,8 +313,8 @@
 				<div class="col-xs-5 col-xs-offset-7 col-sm-6 col-sm-offset-6 no-padding-hr">
 					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 						<ul class="nav navbar-nav pull-right">
-							<li class="hidden-sm hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
+								<p class="navbar-text">레이아웃</p>
 								<div class="btn-group navbar-btn" data-toggle="buttons">
 									<label class="btn btn-info">
 										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
