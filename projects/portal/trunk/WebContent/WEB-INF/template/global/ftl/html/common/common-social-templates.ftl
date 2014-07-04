@@ -14,7 +14,7 @@
 							<label class="btn btn-primary btn-xs">
 								<input type="radio" name="options-scrollable" value="1" data-bind="checked: scrollable">ON
 							</label>
-							<label class="btn btn-primary btn-xs">
+							<label class="btn btn-primary btn-xs active">
 								<input type="radio" name="options-scrollable" value="0" data-bind="checked: scrollable">OFF
 							</label>
 					</div>																										
