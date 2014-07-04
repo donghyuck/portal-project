@@ -129,16 +129,17 @@
 				data: media,
 				template: kendo.template("<ul class='media-list'></ul>"),
 				close: function(e) {
-					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').click();				
+					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').parent().toggleClass("disabled");	
+					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').click();
 				},
-				refreshContent: false,
 				refresh: function(e){
 					var streams = e.target.element.find(".panel-body ul.media-list");
 					if( streams.length > 0 && streams.data('kendoExtMediaStreamView') ){
 						streams.data('kendoExtMediaStreamView').dataSource.read();
 					}
 				},
-				open: function(e){
+				open: function(e){					
+					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').parent().toggleClass("disabled");					
 					var streams = e.target.element.find(".panel-body ul.media-list");
 					if( streams.length > 0 && !streams.data('kendoExtMediaStreamView') ){
 						streams.extMediaStreamView({
