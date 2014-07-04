@@ -117,14 +117,8 @@
 			}
 
 			if(features.lightbox){
-
-				$(document).on("change.ext.panel", function(e){
-					alert(
-							$(this).html()
-					);					
-				} );
 				
-				$(document).on("change.ext.panel","[data-ride='lightbox']", function(e){
+				$(document).on("click","[data-ride='lightbox']", function(e){
 					alert(
 							$(this).html()
 					);					
@@ -2290,7 +2284,7 @@
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
 			
-			that.element.trigger('change.ext.panel');
+			//that.element.trigger('change.ext.panel');
 		
 		},	
 		refresh: function(){
