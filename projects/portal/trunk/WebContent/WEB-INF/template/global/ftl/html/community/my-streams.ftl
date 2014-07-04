@@ -34,7 +34,7 @@
 						backstretch : true
 						}
 					},
-					worklist : [
+					worklist:[
 						function(){
 							$("#account-navbar").extAccounts({
 								externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
