@@ -119,7 +119,9 @@
 			if(features.lightbox){
 				
 				$(document).on('click', "[data-ride='lightbox']", function(e){
-					alert($(this).html()));					
+					alert(
+							$(this).html()
+					);					
 				} );
 						
 						
