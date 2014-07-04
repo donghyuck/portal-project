@@ -203,7 +203,14 @@
 						},
 						template: kendo.template($("#media-editor-modal-template").html())
 					});
+					
+					if( common.api.property( e.target.data().properties, "options.scrollable", false ) ){			
+						modal.data.scrollable = "1";
+					}else{
+						modal.data.scrollable = "0";
+					}
 					mediaEditorSource( e.target.data() );
+					
 					modal.open();							
 				},
 				open: function(e){					
