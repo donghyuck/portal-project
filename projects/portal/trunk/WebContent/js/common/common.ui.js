@@ -117,6 +117,12 @@
 			}
 
 			if(features.lightbox){
+
+				$(document).on("change.ext.panel", function(e){
+					alert(
+							$(this).html()
+					);					
+				} );
 				
 				$(document).on("change.ext.panel","[data-ride='lightbox']", function(e){
 					alert(
