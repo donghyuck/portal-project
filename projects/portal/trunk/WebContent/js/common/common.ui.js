@@ -66,7 +66,8 @@
 			features : {
 				culture : true,
 				landing : true,
-				backstretch : false
+				backstretch : false,
+				lightbox: false
 			},
 			worklist: []
 		},
@@ -115,7 +116,22 @@
 				common.ui.landing();
 			}
 
-			
+			if(features.lightbox){
+				$(window).on('load', function () {
+				    $('figure[data-ride='lightbox']').each(function () {
+				    	var lightbox = $(this);
+				    	var lightbox_data_target = lightbox.children('img');
+				    	if( lightbox_data_target.length > 0 ){
+				    		lightbox.magnificPopup({
+				    			type: 'image',
+				    			items: {				    				
+				    				src : lightbox_data_target.attr("src")
+				    			}				    			
+				    		});				    		
+				    	}
+				    })
+				  })
+			}				
 			
 		} 
 	})
