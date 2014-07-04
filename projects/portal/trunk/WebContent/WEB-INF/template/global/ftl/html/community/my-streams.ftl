@@ -135,7 +135,7 @@
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
 							media : mediaEditorSource(),
-							scrollable : "0"
+							scrollable:false
 						}),
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
@@ -204,14 +204,8 @@
 						},
 						template: kendo.template($("#media-editor-modal-template").html())
 					});
-					
-					if( common.api.property( e.target.data().properties, "options.scrollable", false ) ){			
-						modal.data.scrollable = "1";
-					}else{
-						modal.data.scrollable = "0";
-					}
-					mediaEditorSource( e.target.data() );
-					
+					modal.data.set("scrollable", common.api.property( e.target.data().properties, "options.scrollable", false ) ); 
+					mediaEditorSource( e.target.data() );					
 					modal.open();							
 				},
 				open: function(e){					
