@@ -146,6 +146,19 @@
 							);
 							
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
+								
+								
+							e.target.data().bind("change", function(e){
+							alert(e.field);
+								if( e.field.match('^media.properties')){ 						
+									alert( kendo.stringify( this.media ) );
+								}
+							});
+								
+								scrollable.on("change", function(e){
+									alert(this.value);
+								});		
+															
 								grid.kendoGrid({
 									dataSource : {		
 										transport: { 
@@ -185,19 +198,7 @@
 									],				     
 									change: function(e) {
 									}
-								});	
-								
-								
-							e.target.data().bind("change", function(e){
-							alert(e.field);
-								if( e.field.match('^media.properties')){ 						
-									alert( kendo.stringify( this.media ) );
-								}
-							});
-								
-								scrollable.on("change", function(e){
-									alert(this.value);
-								});			
+								});		
 							}
 							grid.data('kendoGrid').dataSource.read();
 						},
