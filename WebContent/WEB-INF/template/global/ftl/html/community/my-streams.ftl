@@ -130,7 +130,7 @@
 					}
 				},
 				custom: function(e){
-					alert("s");
+
 					var modal = common.ui.modal({
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
@@ -146,7 +146,7 @@
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
 							var scrollable =  e.target.element.find(".modal-body input[name='options-scrollable']");
-							alert("ss" + scrollable.html() );
+
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
 								grid.kendoGrid({
 									dataSource : {		
