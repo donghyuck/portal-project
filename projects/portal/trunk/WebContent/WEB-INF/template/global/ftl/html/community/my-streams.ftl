@@ -318,7 +318,7 @@
 									<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
 								</div>
 							</li>
-							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+							<li class="hidden-sm"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
 								<div class="btn-group navbar-btn" data-toggle="buttons">
 									<label class="btn btn-info">
@@ -341,28 +341,12 @@
 				<div id="personalized-area" class="row"></div>				
 			</div>		
 		
-		<div class="overlay hide"></div>		
-		<!-- start side menu -->
-		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
-			<header>		
-				<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
-			</header>					
-			<h5 class="side-section-title">My 쇼셜네트워크</h5>
-			<div class="panel">
-				<div class="panel-body">
-					
-				</div>		
-			</div>							
-		</section>		
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->
 		</div>
-		
-		<section id="image-broswer" class="image-broswer"></section>	
-		<section id="external-content-widow"></section>
-				
+						
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="alert-panel-template">
 				<div  id="#: id #" data-alert class="alert alert-info" style="min-height:50px; display:none;">
