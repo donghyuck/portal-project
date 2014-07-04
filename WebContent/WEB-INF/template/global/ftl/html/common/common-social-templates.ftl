@@ -12,10 +12,10 @@
 					</div>
 					<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-primary btn-xs">
-								<input type="radio" name="options-scrollable" value="1" data-bind="checked: scrollable">ON
+								<input type="radio" name="options-scrollable" value="1">ON
 							</label>
 							<label class="btn btn-primary btn-xs active">
-								<input type="radio" name="options-scrollable" value="0" data-bind="checked: scrollable">OFF
+								<input type="radio" name="options-scrollable" value="0">OFF
 							</label>
 					</div>																										
 					<div class="page-header">
