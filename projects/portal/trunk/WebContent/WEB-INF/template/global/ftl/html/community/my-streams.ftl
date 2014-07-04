@@ -134,7 +134,7 @@
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
 							media : mediaEditorSource(),
-							scrollable : false,
+							scrollable : 0,
 							change: function(e){
 							alert(e.field);
 								if( e.field.match('^media.properties')){ 						
