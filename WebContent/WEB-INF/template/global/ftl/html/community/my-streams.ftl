@@ -136,6 +136,7 @@
 							media : mediaEditorSource(),
 							scrollable : false,
 							change: function(e){
+							alert(e.field);
 								if( e.field.match('^media.properties')){ 						
 									alert( kendo.stringify( this.media ) );
 								}
