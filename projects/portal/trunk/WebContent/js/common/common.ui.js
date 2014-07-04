@@ -431,6 +431,7 @@
 							if($(target).is(":visible")){
 								//common.ui.animate($(target), 'slideOutRight');		
 								$("body").removeClass("aside-menu-in");
+								$(target).hide();
 							}
 						});						
 						aside.click(function(e){
@@ -438,11 +439,13 @@
 							if($(target).is(":visible")){
 								//common.ui.animate($(target), 'slideOutRight');		
 								$("body").removeClass("aside-menu-in");
+								$(target).hide();
 							}
 							else{
+								$(target).show();
 								$("body").addClass("aside-menu-in");							
 								//common.ui.animate($(target), 'slideInRight');							
-								$(target).show();
+								
 							}
 							return false;							
 						});					
