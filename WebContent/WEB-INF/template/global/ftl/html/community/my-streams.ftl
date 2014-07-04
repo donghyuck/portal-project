@@ -140,11 +140,6 @@
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
 							var scrollable =  e.target.element.find(".modal-body input[name='options-scrollable']");
-
-							alert(
-								 e.target.element.find(".modal-body input[name='options-scrollable']").length
-							);
-							
 							if( grid.length > 0 && !grid.data('kendoGrid') ){
 								
 								
