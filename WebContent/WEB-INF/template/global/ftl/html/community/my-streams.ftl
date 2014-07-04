@@ -141,14 +141,16 @@
 							var grid = renderTo.find(".modal-body .media-props-grid");		
 							var scrollable =  renderTo.find(".modal-body input[name='options-scrollable']");
 							if( grid.length > 0 && !grid.data('kendoGrid') ){	
+								
 								scrollable.on("change", function(e){
 									var isSlimscroll = panel.element.find(".panel-body").parent().hasClass("slimScrollDiv");									
 									if( this.value == 1 && !isSlimscroll ){									
 										panel.element.find(".panel-body").slimscroll({ height: "500px"});
 									}else if ( this.value == 0 && isSlimscroll ){
-										panel.element.find(".panel-body").slimscroll({ "destroy" });										
+										panel.element.find(".panel-body").slimscroll({ destroy:"destroy" });										
 									}
-								});																
+								});							
+																	
 								grid.kendoGrid({
 									dataSource : {		
 										transport: { 
