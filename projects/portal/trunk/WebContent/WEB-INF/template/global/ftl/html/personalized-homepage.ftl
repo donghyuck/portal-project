@@ -10,7 +10,7 @@
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css.css',			
+			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
 			'css!${request.contextPath}/styles/codedrop/codedrop.overlay.css',
 			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
