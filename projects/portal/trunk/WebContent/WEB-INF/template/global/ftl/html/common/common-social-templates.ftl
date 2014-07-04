@@ -19,7 +19,6 @@
 							<input type="radio" name="options-scrollable" value="0">OFF
 						</label>
 					</div>	
-					
 					<div class="bs-callout bs-callout-danger">
 						<h4>Cross-browser compatibility</h4>
 						<p>스크롤 기능을 항상 활성하려면 속성에 options.scrollable 값을 true 로 수정하세요.</p>
