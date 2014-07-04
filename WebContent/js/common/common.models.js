@@ -480,17 +480,38 @@ var SocialNetwork = kendo.data.Model.define( {
     id: "socialAccountId", // the identifier of the model
     fields: {
     	socialAccountId: { type: "number", editable: false, defaultValue: -1  },    	
-    	objectType: { type: "number", editable: false, defaultValue: -1  },    	
-    	objectId: { type: "number", editable: false, defaultValue: -1  },    	
+    	objectType: { type: "number", editable: true, defaultValue: -1  },    	
+    	objectId: { type: "number", editable: true, defaultValue: -1  },    	
     	serviceProviderName: { type: "string", editable: true , validation: { required: true }},
-    	authorizationUrl : { type: "string", editable: false  },    	
+    	authorizationUrl : { type: "string", editable: true  },    	
     	accessSecret: { type: "string", editable: true },
     	accessToken : { type: "string", editable: true },
-    	signedIn: { type:"boolean", defaultVlaue: false },
-    	connected: { type:"boolean", defaultVlaue: false },
+    	signedIn: { type:"boolean", defaultVlaue: true },
+    	connected: { type:"boolean", defaultVlaue: true },
         modifiedDate: { type: "date"},
         creationDate: { type: "date" } 
-    }
+    },
+    copy: function ( target ){
+    	target.socialAccountId = this.get("socialAccountId");
+    	target.set("name",this.get("name") );
+    	target.set("description",this.get("description") );
+    	target.set("displayName", this.get("displayName"));
+    	target.set("url",this.get("url") );
+    	target.set("enabled", this.get("enabled"));
+    	target.set("allowAnonymousAccess", this.get("allowAnonymousAccess"));
+    	//targettarget.set("modifiedDate",this.get("modifiedDate") );
+    	//target.set("creationDate", this.get("creationDate") );
+    	target.modifiedDate = this.get("modifiedDate");
+    	target.creationDate = this.get("creationDate") ;
+    	if( typeof this.get("menu") === 'object' )
+    		target.set("menu", this.get("menu") );    		    	
+    	if( typeof this.get("user") === 'object' )
+    		target.set("user", this.get("user") );    	
+    	if( typeof this.get("company") === 'object' )
+    		target.set("company", this.get("company") );    	
+    	if( typeof this.get("properties") === 'object' )
+    		target.set("properties", this.get("properties") );
+    }    
 });
 
 var SocialAccount = kendo.data.Model.define( {
