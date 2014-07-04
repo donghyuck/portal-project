@@ -196,7 +196,7 @@
 							});
 								
 								scrollable.on("change", function(e){
-									alert("cha");
+									alert(this.value);
 								});			
 							}
 							grid.data('kendoGrid').dataSource.read();
