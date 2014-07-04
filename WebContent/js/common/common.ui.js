@@ -75,6 +75,21 @@
 			var that = this;
 			options = that.options = extend(true, {}, that.options, options);			
 			that._initFeatures();
+			that._initWorklist();
+		}, 
+		_intiWorklist: function(){
+			var that = this;
+			var worklist = that.options.worklist;
+			
+			if (worklist == null) {
+				worklist = [];
+			}			
+			var initilizer, _i, _len, _ref;
+			 _ref = worklist;			 
+			 for (_i = 0, _len = worklist.length; _i < _len; _i++) {
+				 initilizer = _ref[_i];
+				 $.proxy(initilizer, that)();
+			}				
 		},
 		_initFeatures: function(){
 			var that = this;
@@ -102,16 +117,6 @@
 				});
 			}
 			
-			if (worklist == null) {
-				worklist = [];
-			}			
-			var initilizer, _i, _len, _ref;
-			 _ref = worklist;			 
-			 for (_i = 0, _len = worklist.length; _i < _len; _i++) {
-				 initilizer = _ref[_i];
-				 $.proxy(initilizer, that)();
-			}	
-			
 			if(features.landing){				
 				common.ui.landing();
 			}
@@ -119,12 +124,21 @@
 			if(features.lightbox){
 				
 				$(document).on("click","[data-ride='lightbox']", function(e){
-					alert(
-							$(this).html()
-					);					
-				} );
-						
-						
+					var $this = $(this);
+					if( $this.children("img").length > 0  ){
+						var data = [];
+						$.each( $this.children("img"), function( index,  item){
+							data.push({
+								src : item.attr("src")
+							});
+						});
+						$.magnificPopup.open({
+							  items: data,
+							  type : "image"
+							}).open();						
+					}
+				} );	
+				/**
 				$(document).on('load', function () {
 				    $("figure[data-ride='lightbox']").each(function () {
 				    	var lightbox = $(this);
@@ -139,6 +153,7 @@
 				    	}
 				    })
 				  })
+				  */
 			}				
 			
 		} 
