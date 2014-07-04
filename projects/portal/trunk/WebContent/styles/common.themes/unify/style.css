@@ -94,6 +94,11 @@
 	color: #fff;
 }
 
+@media (max-width: 767px) {
+	.header li.account  > a {
+		float : right;
+	}	
+}
 
 /*Boxed Layout
 ------------------------------------*/
@@ -449,7 +454,12 @@
 
 	.header .dropdown-submenu li a { 
 		font-size: 12px;
+	}
+	
+	.header-transparent .navbar-collapse {
+			
 	}	
+	
 }
 
 @media (min-width: 767px) {
