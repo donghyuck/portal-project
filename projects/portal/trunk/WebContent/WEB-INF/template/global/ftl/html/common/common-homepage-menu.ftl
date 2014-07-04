@@ -36,6 +36,7 @@
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">					
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+								<span class="fa fa-user pull-left"></span>
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
 							</button>					
