@@ -436,12 +436,12 @@
 						aside.click(function(e){
 							//var target = $(this).attr("href");
 							if($(target).is(":visible")){
-								common.ui.animate($(target), 'slideOutRight');		
+								//common.ui.animate($(target), 'slideOutRight');		
 								$("body").removeClass("aside-menu-in");
 							}
 							else{
 								$("body").addClass("aside-menu-in");							
-								common.ui.animate($(target), 'slideInRight');							
+								//common.ui.animate($(target), 'slideInRight');							
 								$(target).show();
 							}
 							return false;							
