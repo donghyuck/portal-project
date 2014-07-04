@@ -67,7 +67,8 @@
 				culture : true,
 				landing : true,
 				backstretch : false
-			}
+			},
+			worklist: []
 		},
 		init: function( options) {
 			var that = this;
@@ -77,9 +78,12 @@
 		_initFeatures: function(){
 			var that = this;
 			var features = that.options.features;
+			var worklist = that.options.worklist;
+			
 			if( features.culture ){
 				common.api.culture();				
 			}
+			
 			if(features.backstretch){
 				common.ui.landing();
 				var dataSource = common.api.streams.dataSource;
@@ -96,10 +100,22 @@
 					);
 				});
 			}
-			if(features.landing){
-				
+			
+			if (init == null) {
+				init = [];
+			}			
+			var initilizer, _i, _len, _ref;
+			 _ref = init;			 
+			 for (_i = 0, _len = init.length; _i < _len; _i++) {
+				 initilizer = _ref[_i];
+				 $.proxy(initilizer, that)();
+			}	
+			
+			if(features.landing){				
 				common.ui.landing();
 			}
+
+			
 			
 		} 
 	})
