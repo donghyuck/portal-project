@@ -95,9 +95,11 @@
 }
 
 @media (max-width: 767px) {
-
+	.header li.account {
+		float: right; 
+	}
+	
 	.header .navbar-default .navbar-nav > li > a.btn-account {
-		float : right;
 		padding: 2px 8px 2px 2px;
 	}	
 }
