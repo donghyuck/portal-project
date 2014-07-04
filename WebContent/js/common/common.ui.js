@@ -117,7 +117,7 @@
 			}
 
 			if(features.lightbox){
-				$(document).on('change", function(e){
+				$(document).on("change", function(e){
 						alert(
 								$(this).html()
 						);					
