@@ -134,7 +134,7 @@
 					var modal = common.ui.modal({
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
-							media : mediaEditorSource(),
+							media : new SocialNetwork({e.target.data()}),
 							scrollable:false
 						}),
 						open: function(e){			
