@@ -100,7 +100,7 @@
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="" />">
-	<div class="page-loader" ></div>
+	<!-- <div class="page-loader" ></div>-->
 	<decorator:body />
 </body>
 </html>
