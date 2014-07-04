@@ -432,12 +432,13 @@
 /*Responsive Navbar*/
 @media (max-width: 767px) {
 	.header .navbar-default .navbar-nav > li > a {
-		font-size: 14px;
+		font-size: 15px;
 		padding: 9px 10px;
 	}
 
 	.header .navbar-default .navbar-nav > li a {
 		/*margin-bottom: 1px;*/
+		line-height: 30px;
 		border-bottom: solid 1px #eee;
 	}
 
@@ -467,6 +468,7 @@
 
 	.header.header-transparent  .navbar-default .navbar-nav  {
 		margin-bottom: 0px;
+		margin-top: 0px;
 	}
 	
 	.header.header-transparent .navbar-default .navbar-nav > li > a {
