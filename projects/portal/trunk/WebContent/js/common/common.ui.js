@@ -117,7 +117,13 @@
 			}
 
 			if(features.lightbox){
-				$(window).on('load', function () {
+				
+				$(document).on('click', "figure[data-ride='lightbox']", function(e){
+					alert($(this.html()));					
+				} );
+						
+						
+				$(document).on('load', function () {
 				    $("figure[data-ride='lightbox']").each(function () {
 				    	var lightbox = $(this);
 				    	var lightbox_data_target = lightbox.children('img');
