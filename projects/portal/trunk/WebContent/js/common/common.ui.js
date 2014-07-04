@@ -2102,14 +2102,14 @@
 			kendo.notify(that);
 		},
 		events:[
-	            OPEN,
-	            CLOSE,
-	            REFRESH,
-	            DRAGSTART,
-	            DRAGEND,
-	            CUSTOM,
-	            ERROR
-	        ],		
+			OPEN,
+			CLOSE,
+			REFRESH,
+			DRAGSTART,
+			DRAGEND,
+			CUSTOM,
+			ERROR
+		],		
 		options : {
 			name : "ExtPanel",
 			title: "",
@@ -2122,6 +2122,7 @@
 				open: {},
 				close: {}
 			},
+			refreshContent : true,
 			handlers : {}
 		},
 		data : function( data ){
@@ -2179,8 +2180,7 @@
 					duration: hideOptions.duration,
 					complete: proxy(this._deactivate, this)
 				 });
-			}
-			
+			}			
 		},
 		toggleMaximization: function () {
             if (this._closing) {
@@ -2230,7 +2230,7 @@
 			options = that.options;
 			if( isFunction(options.handlers.refresh) ){
 				options.handlers.refresh();				
-			}else{
+			}else if(options.refreshContent ){
 				wrapper.children(EXT_PANEL_BODY).html(options.content);
 			}			
 			that.trigger(REFRESH, {target: that});			
