@@ -130,7 +130,6 @@
 					}
 				},
 				custom: function(e){
-
 					var modal = common.ui.modal({
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
@@ -138,13 +137,14 @@
 							scrollable:false
 						}),
 						open: function(e){			
-							var grid = e.target.element.find(".modal-body .media-props-grid");		
-							var scrollable =  e.target.element.find(".modal-body input[name='options-scrollable']");
-							if( grid.length > 0 && !grid.data('kendoGrid') ){																
+							var renderTo = e.target.element;
+							var grid = renderTo.find(".modal-body .media-props-grid");		
+							var scrollable =  renderTo.find(".modal-body input[name='options-scrollable']");
+							if( grid.length > 0 && !grid.data('kendoGrid') ){	
 								scrollable.on("change", function(e){
 									alert(this.value);
 									if( this.value == 1 ){
-										e.target.element.find(".modal-body").slimscroll({ height: "500px"});
+										renderTo.find(".modal-body").slimscroll({ height: "500px"});
 									}
 								});																
 								grid.kendoGrid({
