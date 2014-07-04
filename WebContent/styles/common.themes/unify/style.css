@@ -25,6 +25,7 @@
 	text-align: center;
 	/*background: #f7f7f7;*/
 	display: inline-block;	
+	opacity : .7;
 }
 
 .header .navbar-default .navbar-nav > li > a.btn-account {
@@ -37,7 +38,7 @@
 .header .navbar-default .navbar-nav > li > a.btn-account:hover, .header .navbar-default .navbar-nav > li > a.btn-account:focus, .header .navbar-default .navbar-nav > li >  a.btn-account:active {
 	background-color: transparent;
 	color : #3498db;
-	opacity : .7;
+	opacity : 1;
 }
 
 .header .navbar-default .navbar-nav > li.open > a.btn-account {
