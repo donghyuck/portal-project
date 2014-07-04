@@ -493,22 +493,18 @@ var SocialNetwork = kendo.data.Model.define( {
     },
     copy: function ( target ){
     	target.socialAccountId = this.get("socialAccountId");
-    	target.set("name",this.get("name") );
-    	target.set("description",this.get("description") );
-    	target.set("displayName", this.get("displayName"));
-    	target.set("url",this.get("url") );
-    	target.set("enabled", this.get("enabled"));
-    	target.set("allowAnonymousAccess", this.get("allowAnonymousAccess"));
-    	//targettarget.set("modifiedDate",this.get("modifiedDate") );
-    	//target.set("creationDate", this.get("creationDate") );
+    	target.set("objectType",this.get("objectType") );
+    	target.set("objectId",this.get("objectId") );
+    	target.set("serviceProviderName", this.get("serviceProviderName"));
+    	target.set("authorizationUrl",this.get("authorizationUrl") );
+    	target.set("accessSecret", this.get("accessSecret"));
+    	target.set("accessToken", this.get("accessToken"));
+    	target.set("signedIn", this.get("signedIn"));
+    	target.set("connected", this.get("connected"));
     	target.modifiedDate = this.get("modifiedDate");
-    	target.creationDate = this.get("creationDate") ;
-    	if( typeof this.get("menu") === 'object' )
-    		target.set("menu", this.get("menu") );    		    	
+    	target.creationDate = this.get("creationDate") ;  	
     	if( typeof this.get("user") === 'object' )
     		target.set("user", this.get("user") );    	
-    	if( typeof this.get("company") === 'object' )
-    		target.set("company", this.get("company") );    	
     	if( typeof this.get("properties") === 'object' )
     		target.set("properties", this.get("properties") );
     }    
