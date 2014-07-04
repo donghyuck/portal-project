@@ -135,7 +135,7 @@
 						$.magnificPopup.open({
 							  items: data,
 							  type : "image"
-							}).open();						
+							});				
 					}
 				} );	
 				/**
