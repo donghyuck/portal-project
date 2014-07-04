@@ -2086,7 +2086,7 @@
 			wrapper.append(templates.body( {} ) );
 			
 			if (content) {
-				that.refresh();			
+				that.render();			
 			}
 			
 			if( defined(options.template)){
@@ -2094,7 +2094,7 @@
 					options.data = {};
 				}
 				options.content = options.template(options.data); 
-				that.refresh();			
+				that.render();			
 			}
 
 			 if( options.autoBind )
@@ -2232,17 +2232,23 @@
 			options.isMaximized = options.isMinimized = false;			
 			return that;
 		},
+		render: function(){
+			var that = this,
+			wrapper = that.wrapper,
+			options = that.options;
+			wrapper.children(EXT_PANEL_BODY).html(options.content);
+		},	
 		refresh: function(){
 			var that = this,
 			wrapper = that.wrapper,
 			options = that.options;
+			wrapper.children(EXT_PANEL_BODY).html(options.content);
+			
 			if( isFunction(options.handlers.refresh) ){
 				options.handlers.refresh();				
-			}else if(options.refreshContent ){
-				wrapper.children(EXT_PANEL_BODY).html(options.content);
 			}			
 			that.trigger(REFRESH, {target: that});			
-		},
+		},		
 		content:function(html, data){
 		 	var content = this.wrapper.children(EXT_PANEL_BODY);
 		 	if (!defined(html)) {
