@@ -462,6 +462,10 @@
 		font-size: 12px;
 	}
 
+	.header li.account > a:after {
+		top: 5px;
+	}
+	
 	.header.header-transparent {
 		background-color : #fff;	
 	}	
