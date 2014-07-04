@@ -134,26 +134,16 @@
 					var modal = common.ui.modal({
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
-							media : new SocialNetwork({e.target.data()}),
+							media : mediaEditorSource(),
 							scrollable:false
 						}),
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
 							var scrollable =  e.target.element.find(".modal-body input[name='options-scrollable']");
-							if( grid.length > 0 && !grid.data('kendoGrid') ){
-								
-								
-							e.target.data().bind("change", function(e){
-							alert(e.field);
-								if( e.field.match('^media.properties')){ 						
-									alert( kendo.stringify( this.media ) );
-								}
-							});
-								
+							if( grid.length > 0 && !grid.data('kendoGrid') ){																
 								scrollable.on("change", function(e){
 									alert(this.value);
-								});		
-															
+								});																
 								grid.kendoGrid({
 									dataSource : {		
 										transport: { 
