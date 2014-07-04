@@ -199,7 +199,12 @@
 						},
 						template: kendo.template($("#media-editor-modal-template").html())
 					});
-					modal.data().set("scrollable", common.api.property( e.target.data().properties, "options.scrollable", false ) ); 
+					
+					if( common.api.property( e.target.data().properties, "options.scrollable", false ) ){
+						modal.data().set("scrollable", 1);
+					}else{
+						modal.data().set("scrollable", 0);
+					}
 					mediaEditorSource( e.target.data() );					
 					modal.open();							
 				},
