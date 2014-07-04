@@ -467,8 +467,9 @@
 	}	
 
 	.header.header-transparent  .navbar-default .navbar-nav  {
-		margin-bottom: 0px;
+	/*	margin-bottom: 0px;
 		margin-top: 0px;
+		*/
 	}
 	
 	.header.header-transparent .navbar-default .navbar-nav > li > a {
