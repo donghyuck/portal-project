@@ -304,3 +304,15 @@ body:not (.right-to-left ) .no-border-l {
 .bg-dark{
 	background: #303030;
 }
+
+.bs-callout-danger {
+border-left-color: #d9534f;
+}
+.bs-callout {
+padding: 20px;
+margin: 20px 0;
+border: 1px solid #eee;
+border-left-width: 5px;
+border-radius: 3px;
+}
+
