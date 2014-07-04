@@ -191,7 +191,11 @@
 									],				     
 									change: function(e) {
 									}
-								});				
+								});	
+								
+								scrollable.on("change", function(e){
+									alert("cha");
+								});			
 							}
 							grid.data('kendoGrid').dataSource.read();
 						},
