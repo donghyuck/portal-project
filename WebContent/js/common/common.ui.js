@@ -129,7 +129,7 @@
 						var data = [];
 						$.each( $this.children("img"), function( index,  item){
 							data.push({
-								src : item.attr("src")
+								src : $(item).attr("src")
 							});
 						});
 						$.magnificPopup.open({
