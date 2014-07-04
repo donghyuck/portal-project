@@ -2283,6 +2283,7 @@
 			wrapper = that.wrapper,
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
+			that.trigger(e = $.Event('ext.panel.data-apil'))
 		},	
 		refresh: function(){
 			var that = this,
