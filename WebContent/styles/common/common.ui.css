@@ -2,19 +2,6 @@
 
 /*Aside Menu
 ------------------------------------*/
-.aside-menu {
-	width: 280px;
-	height: 100%;
-	overflow-x: hidden;
-	position: fixed;
-	right: -280px; 
-	top: 0;
-	background: #222222;
-	border-left: 1px solid #333;
-	display: none;
-	z-index: 1000;	
-}
-
 .wrapper  {
 	position: relative; 
 	left: 0;
@@ -26,6 +13,28 @@
 	-moz-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
 	-o-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
 	transition-timing-function: cubic-bezier(.25, .46, .45, .94);		
+}
+
+.aside-menu {
+	width: 280px;
+	height: 100%;
+	overflow-x: hidden;
+	position: fixed;
+	right: -280px; 
+	top: 0;
+	background: #222222;
+	border-left: 1px solid #333;
+	display: none;
+	z-index: 1000;	
+	
+	-webkit-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+	-moz-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+	-o-transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+	transition: all 300ms cubic-bezier(.25, .46, .45, .94);
+	-webkit-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+	-moz-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+	-o-transition-timing-function: cubic-bezier(.25, .46, .45, .94);
+	transition-timing-function: cubic-bezier(.25, .46, .45, .94);			
 }
 
 body.aside-menu-in .wrapper {
