@@ -429,7 +429,7 @@
 						var target = aside.attr("href");
 						$( target + ' button.btn-close:first').click(function(e){
 							if($(target).is(":visible")){
-								common.ui.animate($(target), 'slideOutRight');		
+								//common.ui.animate($(target), 'slideOutRight');		
 								$("body").removeClass("aside-menu-in");
 							}
 						});						
