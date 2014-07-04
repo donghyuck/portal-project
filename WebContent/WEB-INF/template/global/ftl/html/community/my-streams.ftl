@@ -153,9 +153,9 @@
 											destroy: { url:'/community/delete-my-socialnetwork-property.do?output=json', type:'post' },
 											parameterMap: function (options, operation){			
 										 		if (operation !== "read" && options.models) {
-										 			return { imageId: mediaEditorSource().socialAccountId, items: kendo.stringify(options.models)};
+										 			return { socialNetworkId: mediaEditorSource().socialAccountId, items: kendo.stringify(options.models)};
 												} 
-												return { imageId: mediaEditorSource().socialAccountId }				
+												return { socialNetworkId: mediaEditorSource().socialAccountId }				
 											}									
 										},						
 										batch: true, 
