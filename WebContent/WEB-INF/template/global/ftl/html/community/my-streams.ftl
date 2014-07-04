@@ -114,6 +114,9 @@
 						streams.data('kendoExtMediaStreamView').dataSource.read();
 					}
 				},
+				custom: function(e){
+				
+				},
 				open: function(e){					
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').parent().toggleClass("disabled");					
 					var streams = e.target.element.find(".panel-body ul.media-list");
@@ -357,6 +360,7 @@
 				</div>
 		</script>								
 		<#include "/html/common/common-homepage-templates.ftl" >		
+		<#include "/html/common/common-social-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
 </html>
