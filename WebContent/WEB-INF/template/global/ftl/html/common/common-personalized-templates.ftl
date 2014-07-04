@@ -1,6 +1,6 @@
 
 <script type="text/x-kendo-template" id="photo-view-template">	
-	<figure class="effect-marley">
+	<figure class="effect-marley" data-ride="lightbox" >
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#:imageId#" alt="#:name# 이미지"/>
 		<figcaption>
 			<h2>#: name # <span></span></h2>
