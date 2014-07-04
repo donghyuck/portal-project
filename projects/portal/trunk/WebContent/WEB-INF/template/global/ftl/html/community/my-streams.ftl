@@ -133,7 +133,8 @@
 					var modal = common.ui.modal({
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
-							media : new SocialNetwork(e.target.data())
+							media : new SocialNetwork(e.target.data()),
+							scrollable : false
 						}),
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
@@ -178,12 +179,18 @@
 									change: function(e) {
 									}
 								});
+								
+								 e.target.element.find(".modal-body input[name='options-scrollable']").bind("change", function(e){ 
+								 	alert( this.value ) ;
+								 
+								 });
+								
 							}
 							grid.data('kendoGrid').dataSource.read();
 						},
 						template: kendo.template($("#media-editor-modal-template").html())
 					});
-					mediaEditorSource(  e.target.data() );
+					mediaEditorSource( e.target.data() );
 					modal.open();							
 				},
 				open: function(e){					
