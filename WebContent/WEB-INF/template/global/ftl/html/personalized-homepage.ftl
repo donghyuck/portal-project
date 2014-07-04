@@ -55,7 +55,7 @@
 							if( $('#personalized-controls-section').hasClass("hide") ){
 								$('#personalized-controls-section').removeClass("hide");
 							}								
-							$('body div.overlay').toggleClass('hide');										
+							$('body div.overlay').togvv gleClass('hide');										
 							slide_effect.play().then(function(){							
 								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
 							});									
@@ -86,7 +86,7 @@
 							});							
 						}					 
 					}}
-				);			
+				);		
 				
 				$("#personalized-controls-menu-close").on( "click" , function(e){						
 					$('body').toggleClass('modal-open');		
@@ -887,7 +887,6 @@
 				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">
 					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 						<ul class="nav navbar-nav pull-right">
-							<li class="visible-xs"><a href="#" class="btn-control-group no-padding-b"><i class="fa fa-child fa-2x"></i></a></li>
 							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
 								<div class="btn-group navbar-btn" data-toggle="buttons">
