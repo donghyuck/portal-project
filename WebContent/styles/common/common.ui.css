@@ -316,3 +316,6 @@ border-radius: 3px;
 .bs-callout-danger {
 border-left-color: #d9534f;
 }
+.bs-callout-danger  h4 {
+color: #d9534f;		
+}
