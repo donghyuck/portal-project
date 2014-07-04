@@ -8,7 +8,7 @@
 				</div>
 				<div class='modal-body'>					
 					<div class="page-header no-margin-t">
-						<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>스크롤</strong>&nbsp;<small>스크롤을 OFF 하면 스크롤 기능이 비활성됩니다.</small></h4>
+						<h4 class="text-primary"><i class="fa fa-arrows-v"></i> <strong>스크롤</strong>&nbsp;<small>스크롤을 OFF 하면 스크롤 기능이 비활성됩니다.</small></h4>
 					</div>
 					<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-primary btn-xs active">
