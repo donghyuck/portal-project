@@ -118,7 +118,7 @@
 
 			if(features.lightbox){
 				
-				$(document).on('click', "figure[data-ride='lightbox']", function(e){
+				$(document).on('click', "[data-ride='lightbox']", function(e){
 					alert($(this.html()));					
 				} );
 						
