@@ -53,6 +53,11 @@
 	common.ui.landing = function (element){		
 		if( typeof element === UNDEFINED )
 			element ='.page-loader' ;
+		
+		if( $(element).length == 0 ){
+			$('body').prepend("<div class='page-loader' ></div>");
+		}
+		
 		 $(element).fadeOut('slow');
 	}
 	
@@ -92,6 +97,7 @@
 				});
 			}
 			if(features.landing){
+				
 				common.ui.landing();
 			}
 			
