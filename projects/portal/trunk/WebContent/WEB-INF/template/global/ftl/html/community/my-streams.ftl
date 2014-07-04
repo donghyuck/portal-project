@@ -310,7 +310,7 @@
 		<!-- START MAIN CONTENT -->
 			
 			<div class="container"> 
-				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">
+				<div class="col-xs-5 col-xs-offset-7 col-sm-6 col-sm-offset-6 no-padding-hr">
 					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 						<ul class="nav navbar-nav pull-right">
 							<li class="hidden-sm hidden-xs"><p class="navbar-text">레이아웃</p> </li>
