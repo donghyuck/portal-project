@@ -118,7 +118,7 @@
 
 			if(features.lightbox){
 				
-				$(document).on('click', "[data-ride='lightbox']", function(e){
+				$(document).on('ext.panel.data-api', "[data-ride='lightbox']", function(e){
 					alert(
 							$(this).html()
 					);					
@@ -2283,7 +2283,7 @@
 			wrapper = that.wrapper,
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
-			that.trigger(e = $.Event('ext.panel.data-apil'))
+			that.trigger(e = $.Event("ext.panel.data-api"))
 		},	
 		refresh: function(){
 			var that = this,
