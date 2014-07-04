@@ -31,7 +31,6 @@
 				common.ui.setup({
 					features:{
 						backstretch : true
-						}
 					}
 				});
 				var currentUser = new User();		
