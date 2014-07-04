@@ -10,14 +10,21 @@
 					<div class="page-header no-margin-t">
 						<h4 class="text-primary"><i class="fa fa-arrows-v"></i> <strong>스크롤</strong>&nbsp;<small>스크롤을 OFF 하면 스크롤 기능이 비활성됩니다.</small></h4>
 					</div>
+					
 					<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-primary btn-xs">
-								<input type="radio" name="options-scrollable" value="1">ON
-							</label>
-							<label class="btn btn-primary btn-xs active">
-								<input type="radio" name="options-scrollable" value="0">OFF
-							</label>
-					</div>																										
+						<label class="btn btn-primary btn-xs">
+							<input type="radio" name="options-scrollable" value="1">ON
+						</label>
+						<label class="btn btn-primary btn-xs active">
+							<input type="radio" name="options-scrollable" value="0">OFF
+						</label>
+					</div>	
+					
+					<div class="bs-callout bs-callout-danger">
+						<h4>Cross-browser compatibility</h4>
+						<p>스크롤 기능을 항상 활성하려면 속성에 options.scrollable 값을 true 로 수정하세요.</p>
+					</div>			
+																								
 					<div class="page-header">
 						<h4 class="text-primary"><i class="fa fa-bars"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
 					</div>
