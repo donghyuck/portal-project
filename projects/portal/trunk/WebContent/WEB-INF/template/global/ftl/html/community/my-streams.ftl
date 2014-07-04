@@ -133,7 +133,7 @@
 					var modal = common.ui.modal({
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
-							media : new SocialNetwork(e.target.data()),
+							media : mediaEditorSource(),
 							scrollable : false,
 							change: function(e){
 								if( e.field.match('^media.properties')){ 						
