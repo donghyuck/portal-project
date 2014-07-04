@@ -327,11 +327,13 @@
 									</label>
 								</div>
 							</li> 
+							<li><p class="navbar-text">&nbsp;</p></li>	
 							<li>
 								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
 									<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
 								</div>
-							</li>							
+							</li>			
+							<li><p class="navbar-text">&nbsp;</p></li>				
 						</ul>
 					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
