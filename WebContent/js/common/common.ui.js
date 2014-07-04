@@ -2290,7 +2290,7 @@
 			options = that.options;
 			wrapper.children(EXT_PANEL_BODY).html(options.content);
 			
-			that.element.trigger('render.ext.panel');
+			that.element.trigger('change.ext.panel');
 		
 		},	
 		refresh: function(){
