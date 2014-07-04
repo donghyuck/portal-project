@@ -44,36 +44,12 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					},				
-					shown : function(e){				
-						//$('#account-navbar').append('<li><a href="#" class="btn-control-group options" data-action="open-spmenu"><i class="fa fa-briefcase fa-lg"></i></a></li>');
-						$('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
-							$('body').toggleClass('modal-open');
-							if( $('#personalized-controls-section').hasClass("hide") ){
-								$('#personalized-controls-section').removeClass("hide");
-							}								
-							$('body div.overlay').toggleClass('hide');										
-							slide_effect.play().then(function(){							
-								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});									
-						});		
+					shown : function(e){							
 						createConnectedSocialNav();	
 					}
 				});		
 				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-								
-				// 2.  MEUN LOADING ...
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();
-								
-				$("#personalized-controls-menu-close").on( "click" , function(e){						
-					$('body').toggleClass('modal-open');		
-					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
-					setTimeout(function() {
-						slide_effect.reverse().then(function(){
-							$('body div.overlay').toggleClass('hide');
-						});
-					}, 100);					
-				});
 
 				// 4. CONTENT LOADING
 				createInfoPanel();
@@ -279,8 +255,7 @@
 				}
 			});
 			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();		
-		}
-	
+		}	
 				
 		-->
 		</script>		
@@ -339,12 +314,9 @@
 					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 						<ul class="nav navbar-nav pull-right">
 							<li>
-
 								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
 									<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
 								</div>
-					
-							
 							</li>
 							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
@@ -360,7 +332,6 @@
 									</label>
 								</div>
 							</li> 
-							<li><a href="#" class="btn-control-group" data-action="open-spmenu"><i class="fa fa-cloud-upload fa-lg"></i></a></li>
 						</ul>
 					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
