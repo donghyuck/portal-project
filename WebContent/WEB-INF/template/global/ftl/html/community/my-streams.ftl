@@ -96,6 +96,21 @@
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
 		<!-- ============================== -->		
+		function mediaEditorSource (media){			
+			var modal = $('#media-editor-modal').data("kendoExtModalWindow");			
+			if(  typeof media === 'undefined' ){
+				if( modal ){
+					return modal.data().media
+				}else{
+					return new SocialNetwork();
+				}
+			}else{
+				if( modal ){
+					media.copy( modal.data().media);
+				}
+			}
+		}
+				
 		function displayMediaPanel(media){				
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.panel({ 
@@ -115,7 +130,18 @@
 					}
 				},
 				custom: function(e){
-				
+					var modal = common.ui.modal({
+						renderTo : "media-editor-modal",
+						data: new kendo.data.ObservableObject({
+							media : new SocialNetwork(e.target.data())
+						}),
+						open: function(e){			
+						
+						},
+						template: kendo.template($("#media-editor-modal-template").html())
+					});
+					mediaEditorSource(  e.target.data() );
+					modal.open();							
 				},
 				open: function(e){					
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').parent().toggleClass("disabled");					
