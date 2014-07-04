@@ -28,26 +28,31 @@
 			],
 			complete: function() {			
 			
+				var currentUser = new User();		
 				common.ui.setup({
 					features:{
 						backstretch : true
-					}
-				});	
+						}
+					},
+					worklist : [
+						function(){
+							$("#account-navbar").extAccounts({
+								externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
+								<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
+								template : kendo.template($("#account-template").html()),
+								</#if>
+								authenticate : function( e ){
+									e.token.copy(currentUser);
+								},				
+								shown : function(e){							
+									createConnectedSocialNav();	
+								}
+							});
+						}
+					]
+				});
 				
-				var currentUser = new User();		
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-					},				
-					shown : function(e){							
-						createConnectedSocialNav();	
-					}
-				});		
-								
+										
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
 				createInfoPanel();
 			}
