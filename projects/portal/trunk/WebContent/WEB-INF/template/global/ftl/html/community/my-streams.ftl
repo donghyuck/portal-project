@@ -130,7 +130,7 @@
 				template: kendo.template("<ul class='media-list'></ul>"),
 				close: function(e) {
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').parent().toggleClass("disabled");	
-					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').click();
+					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialAccountId + '"]').parent().toggleClass("active");	
 				},
 				refresh: function(e){
 					var streams = e.target.element.find(".panel-body ul.media-list");
