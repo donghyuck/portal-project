@@ -179,7 +179,9 @@
 									change: function(e) {
 									}
 								});
-								
+								alert(
+								 e.target.element.html();
+								) ;
 								 e.target.element.find(".modal-body input[name='options-scrollable']").bind("change", function(e){ 
 								 	alert( this.value ) ;
 								 
