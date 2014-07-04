@@ -118,13 +118,7 @@
 
 			if(features.lightbox){
 				
-				$(document).on("change", function(e){
-						alert(
-								$(this).html()
-						);					
-					} );
-						
-				$(document).on('ext.panel.data-api', "[data-ride='lightbox']", function(e){
+				$(document).on("change.ext.panel","[data-ride='lightbox']", function(e){
 					alert(
 							$(this).html()
 					);					
