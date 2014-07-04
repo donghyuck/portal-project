@@ -460,6 +460,10 @@
 	.header .dropdown-submenu li a { 
 		font-size: 12px;
 	}
+
+	.header-transparent  {
+		background-color : #fff;	
+	}	
 	
 	.header-transparent .navbar-collapse {
 			
