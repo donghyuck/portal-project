@@ -118,7 +118,7 @@
 
 			if(features.lightbox){
 				$(window).on('load', function () {
-				    $('figure[data-ride='lightbox']').each(function () {
+				    $("figure[data-ride='lightbox']").each(function () {
 				    	var lightbox = $(this);
 				    	var lightbox_data_target = lightbox.children('img');
 				    	if( lightbox_data_target.length > 0 ){
