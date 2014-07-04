@@ -34,11 +34,7 @@
 					}
 				});	
 				
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
-				createInfoPanel();
-				
-				// ACCOUNTS LOAD	
-				var currentUser = new User();			
+				var currentUser = new User();		
 				$("#account-navbar").extAccounts({
 					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
 					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
@@ -51,6 +47,9 @@
 						createConnectedSocialNav();	
 					}
 				});		
+								
+				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
+				createInfoPanel();
 			}
 		}]);	
 
