@@ -135,18 +135,12 @@
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
 							media : mediaEditorSource(),
-							scrollable : "0",
-							change: function(e){
-							alert(e.field);
-								if( e.field.match('^media.properties')){ 						
-									alert( kendo.stringify( this.media ) );
-								}
-							}
+							scrollable : "0"
 						}),
 						open: function(e){			
 							var grid = e.target.element.find(".modal-body .media-props-grid");		
 							var scrollable =  e.target.element.find(".modal-body input[name='options-scrollable']");
-							alert( e.target.element.html() );
+
 							alert(
 								 e.target.element.find(".modal-body input[name='options-scrollable']").length
 							);
@@ -192,6 +186,14 @@
 									change: function(e) {
 									}
 								});	
+								
+								
+							e.target.data().bind("change", function(e){
+							alert(e.field);
+								if( e.field.match('^media.properties')){ 						
+									alert( kendo.stringify( this.media ) );
+								}
+							});
 								
 								scrollable.on("change", function(e){
 									alert("cha");
