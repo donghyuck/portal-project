@@ -9,6 +9,7 @@
 
 .navbar-personalized {	
 	background-color: rgba(0, 0, 0, 0.6);
+	border: none;
 	border-color: #080808;
 	border-radius: 0 0 6px 6px !important;
 	min-height: 30px;	
