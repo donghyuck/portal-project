@@ -969,7 +969,7 @@
 										</label>	
 									</div>												
 								</div>
-								<div class="panel-body scrollable color4" style="max-height:450px;">
+								<div class="panel-body color4" style="max-height:450px;">
 									<div id="attachment-list-view" class="color4"></div>
 								</div>	
 								<div class="panel-footer no-padding">
@@ -1028,7 +1028,7 @@
 									</p>	
 									</#if>											
 								</div>
-								<div class="panel-body scrollable color4" style="max-height:450px;">
+								<div class="panel-body color4" style="max-height:450px;">
 									<div id="photo-list-view" class="color4" ></div>
 								</div>	
 								<div class="panel-footer no-padding">
