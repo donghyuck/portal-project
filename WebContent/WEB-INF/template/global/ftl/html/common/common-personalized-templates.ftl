@@ -5,7 +5,7 @@
 		<figcaption>
 			<h2>#: name # <span></span></h2>
 			<p>#: formattedModifiedDate #</p>
-			<a href="\\#">View more</a>
+			<a href="\\#" data-ride="lightbox">View more</a>
 		</figcaption>			
 	</figure>
 </script>
