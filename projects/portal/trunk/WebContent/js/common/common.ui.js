@@ -101,12 +101,12 @@
 				});
 			}
 			
-			if (init == null) {
-				init = [];
+			if (worklist == null) {
+				worklist = [];
 			}			
 			var initilizer, _i, _len, _ref;
-			 _ref = init;			 
-			 for (_i = 0, _len = init.length; _i < _len; _i++) {
+			 _ref = worklist;			 
+			 for (_i = 0, _len = worklist.length; _i < _len; _i++) {
 				 initilizer = _ref[_i];
 				 $.proxy(initilizer, that)();
 			}	
