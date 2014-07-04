@@ -464,6 +464,10 @@
 	.header.header-transparent {
 		background-color : #fff;	
 	}	
+
+	.header.header-transparent .navbar-default .navbar-nav > li > a {
+		color : #777;	
+	}
 	
 	.header-transparent .navbar-collapse {
 			
