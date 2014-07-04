@@ -35,7 +35,7 @@
 						}
 					},
 					worklist:[
-						function(){
+						(function(){
 							$("#account-navbar").extAccounts({
 								externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
 								<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
@@ -48,7 +48,7 @@
 									createConnectedSocialNav();	
 								}
 							});
-						}
+						})
 					]
 				});
 				
