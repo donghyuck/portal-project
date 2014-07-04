@@ -34,6 +34,9 @@
 					}
 				});	
 				
+				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
+				createInfoPanel();
+				
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
@@ -48,12 +51,6 @@
 						createConnectedSocialNav();	
 					}
 				});		
-				
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-
-				// 4. CONTENT LOADING
-				createInfoPanel();
-				// END SCRIPT 
 			}
 		}]);	
 
