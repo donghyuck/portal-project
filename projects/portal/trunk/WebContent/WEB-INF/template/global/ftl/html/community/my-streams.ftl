@@ -130,6 +130,7 @@
 					}
 				},
 				custom: function(e){
+				alert("ff");
 					var modal = common.ui.modal({
 						renderTo : "media-editor-modal",
 						data: new kendo.data.ObservableObject({
