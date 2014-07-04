@@ -77,7 +77,7 @@
 			that._initFeatures();
 			that._initWorklist();
 		}, 
-		_intiWorklist: function(){
+		_initWorklist: function(){
 			var that = this;
 			var worklist = that.options.worklist;
 			
