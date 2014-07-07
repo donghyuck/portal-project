@@ -7,76 +7,44 @@
 		<!--
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
-			'css!${request.contextPath}/styles/codedrop/cbpSlidePushMenus.css',
-			'css!${request.contextPath}/styles/codedrop/codedrop.overlay.css',
+			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
+			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
+			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
+			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
+			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
+			'${request.contextPath}/js/headroom/headroom.min.js',
+			'${request.contextPath}/js/headroom/jquery.headroom.min.js',
+			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',	
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
+			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-			'${request.contextPath}/js/pdfobject/pdfobject.js',
-			'${request.contextPath}/js/common/common.modernizr.custom.js',
+			'${request.contextPath}/js/common/common.modernizr.custom.js',				
+			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
+			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
+				
+			'${request.contextPath}/js/pdfobject/pdfobject.js',			
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/ace/ace.js',],        	   
+			'${request.contextPath}/js/common.pages/common.personalized.js'
+			],        	   
 			complete: function() {			
 			
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
-				
-				// 2.  MEUN 설정
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();																																													
-				$("#personalized-area").data("sizePlaceHolder", { oldValue: 6 , newValue : 6} );	
-				
-				common.ui.handleActionEvents( $('.personalized-navbar'), {
-					handlers : [
-						{ selector: "input[name='personalized-area-col-size']",
-						  event : 'change',
-						  handler : function(){
-							var grid_col_size = $("#personalized-area").data("sizePlaceHolder");
-							grid_col_size.oldValue = grid_col_size.newValue;
-							grid_col_size.newValue = this.value;			
-							$(".custom-panels-group").each(function( index ) {
-								var custom_panels_group = $(this);				
-								custom_panels_group.removeClass("col-sm-" + grid_col_size.oldValue );		
-								custom_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
-							});
-						  }	
-						}
-					]
+				common.ui.setup({
+					features:{
+						backstretch : true,
+						lightbox : true,
+						spmenu : true
+					}
 				});	
 				
- 				common.ui.handleButtonActionEvents(
-					$(".personalized-navbar .nav a.btn-control-group"), 
-					{event: 'click', handlers: {
-						hide : function(e){
-							$('body nav').first().removeClass('hide');
-						},
-						'open-spmenu' : function(e){						
-							$('body').toggleClass('modal-open');						
-							if( $('#personalized-controls-section').hasClass("hide") )
-								$('#personalized-controls-section').removeClass("hide");							
-							$('body div.overlay').toggleClass('hide');										
-							slide_effect.play().then(function(){							
-								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});							
-						}					 
-					}}
-				);			
-				
-				$("#personalized-controls-menu-close").on( "click" , function(e){						
-					$('body').toggleClass('modal-open');		
-					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
-					setTimeout(function() {
-						slide_effect.reverse().then(function(){
-							$('body div.overlay').toggleClass('hide');
-						});
-					}, 100);					
-				});
-			
+				// 2.  MEUN 설정
+				preparePersonalizedArea($("#personalized-area"), 3, 6 );
+					
 				// 3. ACCOUNTS LOAD	
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
@@ -85,20 +53,12 @@
 					template : kendo.template($("#account-template").html()),
 					</#if>
 					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if(!currentUser.anonymous){							
-							$('body nav').first().addClass('hide');
-						}						
+						e.token.copy(currentUser);					
 					},
-					shown : function(e){						
-						$('#account-navbar').append('<li><a href="#" class="btn btn-link custom-nabvar-hide"><i class="fa fa-angle-double-down fa-lg"></i></a></li>');
-						$('#account-navbar').append('<p class="navbar-text hidden-xs">&nbsp;</p>');	
-						$('#account-navbar li a.custom-nabvar-hide').on('click', function(){
-							$('body nav').first().addClass('hide');
-						});	
-						
+					shown : function(e){											
 					},									
 				});				
+				
 				// 4. CONTENT 	
 				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.webSite.webSiteId}} );
 				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
