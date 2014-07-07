@@ -1375,7 +1375,7 @@
 					<li><a href="#website-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
 					<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
 				</#if>						
-				</ul>	<!-- ./nav-tabs >
+				</ul>	<!-- ./nav-tabs -->
 				<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 					<div class="tab-pane" id="my-files">
 						<section class="custom-upload hide">
