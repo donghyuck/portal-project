@@ -36,7 +36,8 @@
 				common.ui.setup({
 					features:{
 						backstretch : true,
-						lightbox : true
+						lightbox : true,
+						spmenu : true
 					}
 				});				
 				// ACCOUNTS LOAD	
