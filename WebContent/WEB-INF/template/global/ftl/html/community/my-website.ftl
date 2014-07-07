@@ -884,7 +884,7 @@
 		</script>		
 		<style scoped="scoped">
 		
-		.personalized-panels-group{
+		#personalized-area{
 			border-bottom: 3px solid #CCC;
 		}
 		
