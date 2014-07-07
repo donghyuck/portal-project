@@ -34,18 +34,14 @@
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">	
-						
-								
-							
+						<div class="navbar-header">	`
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">								
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
 							</button>
 							<a href="#" class="navbar-toggle-account btn-link">
 							<img src="/download/profile/andang?width=100&amp;height=150" height="34">
-							<!--<i class="fa fa-user fa-2x"></i>-->
-							
+							<!--<i class="fa fa-user fa-2x"></i>-->							
 							</a>							
 							<a class="navbar-brand" href="/main.do">
 								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="Logo">
