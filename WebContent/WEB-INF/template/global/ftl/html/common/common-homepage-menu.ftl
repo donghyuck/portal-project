@@ -39,8 +39,8 @@
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
 							</button>
-							<a href="#" class="navbar-toggle-account btn-link no-padding no-margin">
-							<img src="/download/profile/andang?width=100&amp;height=150" height="34">
+							<a href="#" class="navbar-toggle-account no-padding no-border">
+							<img src="/download/profile/andang?width=100&amp;height=150">
 							<!--<i class="fa fa-user fa-2x"></i>-->							
 							</a>							
 							<a class="navbar-brand" href="/main.do">
