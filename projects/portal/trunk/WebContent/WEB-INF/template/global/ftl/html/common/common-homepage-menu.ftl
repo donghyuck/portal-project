@@ -34,9 +34,11 @@
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">					
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-								<span class="fa fa-user pull-left"></span>
+						<div class="navbar-header">	
+							<button type="button" class="navbar-toggle">	
+								<span class="fa fa-user"></span>
+							</button>				
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">								
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
 							</button>					
@@ -46,8 +48,7 @@
 						</div>												
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-responsive-collapse">
-							<ul id="account-navbar" class="nav navbar-nav navbar-right">
-							</ul>
+							<ul id="account-navbar" class="nav navbar-nav navbar-right"></ul>
 							<!-- /account -->
 							<ul class="nav navbar-nav">
 								<#list webSiteMenu.components as item >
