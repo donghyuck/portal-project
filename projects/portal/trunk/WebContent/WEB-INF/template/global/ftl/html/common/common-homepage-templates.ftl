@@ -505,7 +505,10 @@
 			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34">
 		# } #
 		</a>
-	</li>		
+	</li>	
+</script>
+	
+<script id="account-sidebar-template" type="text/x-kendo-template">
 	<section id="my-aside-menu" class="aside-menu">	
 		<button type="button" class="btn-close">Close</button>		
 		<h5 class="side-section-title">Optional sidebar menu</h5>		
@@ -552,7 +555,7 @@
 			</div>				 
 				 </div>
 				<div class="col-xs-6">
-                                    <h3 class="heading-xs">전체 사용량 <span class="pull-right">88%</span></h3>
+					<h3 class="heading-xs">전체 사용량 <span class="pull-right">88%</span></h3>
                                     <div class="progress progress-u progress-xs">
                                         <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
                                         </div>
@@ -568,12 +571,12 @@
                                     <div class="progress progress-u progress-xs">
                                         <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%">
                                         </div>
-                                    </div>				
+					</div>				
 				 </div>			 
 			</div>
 		</div>
 		# } # 		
-	</section>		
+	</section>
 </script>	
 
 <script id="account-template2" type="text/x-kendo-template">
