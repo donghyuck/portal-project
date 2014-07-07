@@ -883,6 +883,10 @@
 		</script>		
 		<style scoped="scoped">
 		
+		.personalized-panels-group{
+			border-right: 3px solid #CCC;
+		}
+		
 		#announce-grid .k-grid-content {
 			min-height : 300px;
 		}
@@ -1026,32 +1030,7 @@
 			height: 400px;
 		}
 		
-		.k-editor-inline {
-			margin: 0;
-			#padding: 21px 21px 11px;
-			border-width: 0;
-			box-shadow: none;
-			background: none;
-		}
-
-		.k-editor-inline.k-state-active {
-			border-width: 1px;
-			#padding: 20px 20px 10px;
-			#background: none;
-			#border-color : red;
-  			border-color: #66afe9;
-			#  outline: 0;
-			-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-			box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
-		}
-
-		.inline-column-editor {
-			display: inline-block;
-			vertical-align: top;
-			max-width: 600px;
-			width: 100%;
-		}
-				
+		
 		#personalized-controls {
 			position: absolute;
 			top: 50px;
@@ -1094,51 +1073,6 @@
 			}		
 		} 
 		
-		.cbp-spmenu {
-			background : #ffffff;
-		}
-		
-		.cbp-spmenu-vertical header {
-			1px solid #258ecd;
-			margin : 0px;
-			padding : 5px;
-			color : #000000;
-			background : #5bc0de; /* transparent;        	*/
-			height: 90px;        	
-		}
-		
-		.image-grid {
-			padding-top:2px;
-			padding-buttom:0px;
-			padding-right:2px;
-			padding-left:0px;
-		}
-		
-		.image-grid img {
-			display: block;
-			max-width: 100%;
-			height: 350px;
-		}
-				
-				
-		.cbp-hsmenu-wrapper .cbp-hsmenu {
-			width:100%;
-		}
-		
-		.cbp-hsmenu > li > a {
-			color: #fff;
-			font-size: 1em;
-			line-height: 3em;
-			display: inline-block;
-			position: relative;
-			z-index: 10000;
-			outline: none;
-			text-decoration: none;
-		}
-		
-		blockquote {
-			font-size: 11pt;
-		}
 		
 		.panel .comments-heading a {
 			color: #555;
