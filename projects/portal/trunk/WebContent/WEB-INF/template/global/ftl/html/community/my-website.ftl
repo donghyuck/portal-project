@@ -1374,7 +1374,7 @@
 				</div>		
 			</div>				
 		</section>		
-		<div class="overlay hide"></div>		
+
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
 			<header>	
@@ -1494,6 +1494,7 @@
 						</div><!-- end photos  tab-pane -->
 			</div><!-- end of tab content -->	
 		</section>		
+		<div class="cbp-spmenu-overlay"></div>		
 		
 		<section id="image-broswer" class="image-broswer"></section>
 		<section id="editor-popup"></section>
