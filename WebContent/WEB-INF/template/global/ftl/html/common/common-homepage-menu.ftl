@@ -51,6 +51,7 @@
 							<!-- /account -->
 							<ul class="nav navbar-nav">
 								<#list webSiteMenu.components as item >
+								<#if WebSiteUtils.isUserAccessAllowed(request, item) )
 								<#if  item.components?has_content >
 									<li class="dropdown">
 										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
@@ -76,6 +77,7 @@
 										<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
 									</li>
 								</#if>
+								</#if>		
 								</#list>
 							</ul>				
 						</div>						
