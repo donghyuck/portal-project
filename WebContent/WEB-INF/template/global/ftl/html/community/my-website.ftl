@@ -1184,7 +1184,7 @@
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
 			</div><!-- ./container -->			
 			<!-- end of personalized menu -->			
-			<div class="container-fluid padding-sm" style="min-height:600px;">		
+			<div class="container-fluid padding-sm" style="min-height:50px;">		
 				<div id="personalized-area" class="row"></div>				
 			</div>	
 					
