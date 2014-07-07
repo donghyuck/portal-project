@@ -50,56 +50,12 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					},				
-					shown : function(e){						
-					/*
-						$('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
-							$('body').toggleClass('modal-open');
-							if( $('#personalized-controls-section').hasClass("hide") ){
-								$('#personalized-controls-section').removeClass("hide");
-							}								
-							$('body div.overlay').toggleClass('hide');										
-							slide_effect.play().then(function(){							
-								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});									
-						});
-						*/						
+					shown : function(e){
 					}
-				});						
-				
-				// 2.  MEUN 설정
-				var slide_effect = kendo.fx($("body div.overlay")).fadeIn();								
+				});	
 				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-				
-				
- 				common.ui.handleButtonActionEvents(
-					$(".personalized-navbar .nav a.btn-control-group"), 
-					{event: 'click', handlers: {
-						hide : function(e){
-							$('body nav').first().removeClass('hide');
-						},
-						'open-spmenu' : function(e){						
-							$('body').toggleClass('modal-open');						
-							if( $('#personalized-controls-section').hasClass("hide") )
-								$('#personalized-controls-section').removeClass("hide");							
-							$('body div.overlay').toggleClass('hide');										
-							slide_effect.play().then(function(){							
-								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
-							});							
-						}					 
-					}}
-				);		
-				
-				$("#personalized-controls-menu-close").on( "click" , function(e){						
-					$('body').toggleClass('modal-open');		
-					$('#personalized-controls-section').toggleClass('cbp-spmenu-open');					
-					setTimeout(function() {
-						slide_effect.reverse().then(function(){
-							$('body div.overlay').toggleClass('hide');
-						});
-					}, 100);					
-				});
 												
 				// photo panel showing				
 				createPhotoListView();								
