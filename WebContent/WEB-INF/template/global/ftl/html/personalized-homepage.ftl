@@ -51,6 +51,7 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){						
+					/*
 						$('a.btn-control-group[data-action="open-spmenu"]').click(function(e){
 							$('body').toggleClass('modal-open');
 							if( $('#personalized-controls-section').hasClass("hide") ){
@@ -60,7 +61,8 @@
 							slide_effect.play().then(function(){							
 								$('#personalized-controls-section').toggleClass('cbp-spmenu-open');
 							});									
-						});						
+						});
+						*/						
 					}
 				});						
 				
