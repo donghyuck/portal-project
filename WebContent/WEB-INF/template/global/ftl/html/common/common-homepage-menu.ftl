@@ -40,8 +40,7 @@
 								<span class="fa fa-bars"></span>
 							</button>
 							<a href="#" class="navbar-toggle-account visible-xs no-padding no-border">
-							<img src="/download/profile/andang?width=100&amp;height=150">
-							<!--<i class="fa fa-user fa-2x"></i>-->							
+							<img src="/download/profile/andang?width=100&amp;height=150">			
 							</a>							
 							<a class="navbar-brand" href="/main.do">
 								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="Logo">
