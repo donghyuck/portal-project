@@ -44,7 +44,7 @@
 				});	
 				
 				// 2.  MEUN 설정
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );
+				preparePersonalizedArea($("#personalized-area"), 3, 4 );
 					
 				// 3. ACCOUNTS LOAD	
 				var currentUser = new User();			
