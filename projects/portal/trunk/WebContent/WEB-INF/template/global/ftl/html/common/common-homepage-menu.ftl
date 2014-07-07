@@ -39,7 +39,7 @@
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
 							</button>
-							<a href="#" class="navbar-toggle-account btn-link">
+							<a href="#" class="navbar-toggle-account btn-link no-padding no-margin">
 							<img src="/download/profile/andang?width=100&amp;height=150" height="34">
 							<!--<i class="fa fa-user fa-2x"></i>-->							
 							</a>							
