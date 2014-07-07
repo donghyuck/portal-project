@@ -127,10 +127,12 @@
 					var $this = $(item);
 					var target  = $this.attr("href");					
 					$this.on("click", function(e){
+						$("body").toggleClass("modal-open");
 						$(target).toggleClass("cbp-spmenu-open");
 					});					
 					$( target + ' button.btn-close:first').click(function(e){
 						$(target).toggleClass("cbp-spmenu-open");
+						$("body").toggleClass("modal-open");
 					});						
 				});
 			}
