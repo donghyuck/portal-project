@@ -1414,7 +1414,7 @@
 							<div class="panel-body" style="max-height:450px;">
 								<div id="attachment-list-view" class="color4"></div>
 							</div>	
-							<div class="panel-footer" style="no-padding">
+							<div class="panel-footer no-padding">
 								<div id="pager" class="k-pager-wrap"></div>
 							</div>
 						</div>																				
