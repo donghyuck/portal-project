@@ -918,8 +918,7 @@
 			<#include "/html/common/common-homepage-footer.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>
-		<div class="cbp-spmenu-overlay"></div>
-		
+				
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- header -->	
@@ -1042,7 +1041,8 @@
 						</div><!-- end photos  tab-pane -->
 					</div><!-- end of tab content -->
 				</div>	
-			</section>				
+			</section>	
+			<div class="cbp-spmenu-overlay"></div>			
 			<!-- ./END RIGHT SLIDE MENU -->
 							
 		<!-- START TEMPLATE -->				
