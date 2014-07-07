@@ -30,7 +30,8 @@
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common.pages/common.personalized.js'
+			'${request.contextPath}/js/common.pages/common.personalized.js',
+			'${request.contextPath}/js/ace/ace.js'
 			],        	   
 			complete: function() {			
 			
