@@ -35,9 +35,8 @@
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">	
-							<button type="button" class="navbar-toggle">	
-								<span class="fa fa-user"></span>
-							</button>				
+							<a href="#" class="btn-control-group no-padding-b"><i class="fa fa-user fa-2x"></i></a>			
+							
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">								
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
