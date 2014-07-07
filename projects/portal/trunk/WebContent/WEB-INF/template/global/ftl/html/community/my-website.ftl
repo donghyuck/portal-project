@@ -58,11 +58,7 @@
 					shown : function(e){											
 					},									
 				});				
-				
-				// 4. CONTENT 	
-				 var sitePlaceHolder = new common.models.WebSite( {webSiteId: ${ action.webSite.webSiteId}} );
-				 $("#site-info").data("sitePlaceHolder", sitePlaceHolder );
-								
+			
 				// 4-1. Announces 							
 				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
 				
