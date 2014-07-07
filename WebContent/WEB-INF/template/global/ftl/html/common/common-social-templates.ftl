@@ -105,7 +105,7 @@
 		     	# } #		     	     	
 		     	#if ( type == 'LINK' ) { #
 		     	<p>
-		     	<a href="#= link #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= link #</a>
+		     	<a href="#= link #" target="_blank"><i class="fa fa-link"></i> #= link #</a>
 		     	</p>
 		     	# } else if ( type == 'PHOTO' ) { #
 		     		<p>
@@ -123,7 +123,7 @@
 		     		<p><img src="#: picture.replace("_s.", "_n.")  #" alt="media" class="img-rounded img-responsive"></p>
 		     		# } #		     		
 		     		#if ( source !=null ) { #
-		     		<p class="text-muted">source : <a href="#= source #" target="_blank"><span class="glyphicon glyphicon-link"></span> #= source #</a></p>
+		     		<p class="text-muted">source : <a href="#= source #" target="_blank"><i class="fa fa-link"></i> #= source #</a></p>
 		     		# } #
 		     	# } #		     	
 		     	#if ( typeof( caption ) == 'string'  ) { #
