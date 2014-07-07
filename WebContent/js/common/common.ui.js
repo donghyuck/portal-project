@@ -407,7 +407,7 @@
 	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( externalLoginHost ) == 'string'  ) { #http://#= externalLoginHost ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"), 
 	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
 	handleKendoAjaxError = common.api.handleKendoAjaxError;	
-	common.ui.extAccounts = Widget.extend({
+	common.ui.ExtAccounts = Widget.extend({
 		init : function(element, options) {
 			var that = this;
 			Widget.fn.init.call(that, element, options);
@@ -426,9 +426,11 @@
 		events : [ AUTHENTICATE, SHOWN ],
 		refresh : function( ){
 			var that = this;	
-			var renderTo = $(that.element);
+			var renderTo = $(that.element);			
 			if( that.options.template){
+				
 				renderTo.html(that.options.template(that.token));
+								
 				if (that.token.anonymous) {	
 					renderTo.find(	"button.btn-external-login-control-group").click( function (e){
 						var target_media = $(this)	.attr("data-target");
@@ -484,10 +486,19 @@
 							}	
 						});
 					}
-				}else{
-					var aside= renderTo.find('.navbar-toggle-aside-menu');
+				
+				}else{					
+					// aside menu event...
+					var aside= renderTo.find('.navbar-toggle-aside-menu');					
 					if( aside.length > 0 ){						
 						var target = aside.attr("href");
+						
+						if$(target).length == 0 )
+						{
+							var template = kendo.template($("#account-sidebar-template").html());
+							$(".header > .navbar:first").append( template(that.token) );
+						}
+						
 						$( target + ' button.btn-close:first').click(function(e){
 							$("body").toggleClass("aside-menu-in");
 						});						
@@ -503,6 +514,7 @@
 							return false;							
 						});
 					}
+					
 				}
 				that.trigger(SHOWN);
 			}	
@@ -552,7 +564,7 @@
 	
 	$.fn.extend({
 		extAccounts : function(options) {
-			return new common.ui.extAccounts(this, options);
+			return new common.ui.ExtAccounts(this, options);
 		}
 	});
 })(jQuery);
@@ -602,15 +614,13 @@
 				authenticate : function() {
 					var that = this;
 					$.ajax({
-								type : 'POST',
-								url : that.options.ajax.url,
-								success : function(response) {
-									user = new User($.extend(
-											response.currentUser, {
-												roles : response.roles
-											}));
-									user.set('isSystem', false);
-
+						type : 'POST',
+						url : that.options.ajax.url,
+						success : function(response) {
+							user = new User($.extend(response.currentUser, {
+								roles : response.roles
+							}));
+							user.set('isSystem', false);
 									if (user.hasRole(ROLE_SYSTEM))
 										user.set('isSystem', true);
 									if (user.hasRole(ROLE_ADMIN))
@@ -627,23 +637,19 @@
 									if (that.token.anonymous) {
 										$(that.element).find(".custom-external-login-groups button").each(
 											function(index) {
-															var external_login_button = $(this);
-															external_login_button
-																	.click(function(
-																			e) {
-																		var target_media = external_login_button
-																				.attr("data-target");
-																		var target_url = CALLBACK_URL_TEMPLATE({
-																			connectorHostname : that.options.connectorHostname,
-																			media : target_media,
-																			domain : document.domain
-																		});
-																		window
-																				.open(
+												var external_login_button = $(this);
+												external_login_button.click(function(e) {
+													var target_media = external_login_button.attr("data-target");
+													var target_url = CALLBACK_URL_TEMPLATE({
+														connectorHostname : that.options.connectorHostname,
+														media : target_media,
+														domain : document.domain
+													});
+													window.open(
 																						target_url,
 																						'popUpWindow',
 																						'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
-																	});
+													});
 											});
 									}
 									if (isFunction(that.options.afterAuthenticate)) {
