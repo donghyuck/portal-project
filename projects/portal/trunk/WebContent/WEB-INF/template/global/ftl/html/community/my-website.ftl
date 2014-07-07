@@ -1420,7 +1420,7 @@
 						</div>																				
 					</div><!-- ./tab-pane -->	
 					<div class="tab-pane" id="website-photo-stream">									
-											<section class="custom-upload hide">
+						<section class="custom-upload hide">
 												<div class="panel panel-default">
 													<div class="panel-body">
 														<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
@@ -1459,23 +1459,23 @@
 														</#if>
 													</div>
 												</div>	
-											</section>	
-								<div class="panel panel-default">			
-									<div class="panel-body">
-										<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 페이지 영역에 선택한 사진이 보여집니다.</small></p>
-										<#if !action.user.anonymous >		
-										<p class="pull-right">				
-											<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-										</p>	
-										</#if>											
-									</div>
-									<div class="panel-body scrollable color4" style="max-height:450px;">
-										<div id="photo-list-view" class="color4" ></div>
-									</div>	
-									<div class="panel-footer" style="padding:0px;">
-										<div id="photo-list-pager" class="k-pager-wrap"></div>
-									</div>
-								</div>	
+						</section><!-- ./custom-upload -->	
+						<div class="panel panel-default">			
+							<div class="panel-body">
+								<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 페이지 영역에 선택한 사진이 보여집니다.</small></p>
+								<#if !action.user.anonymous >		
+								<p class="pull-right">				
+									<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+								</p>	
+								</#if>											
+							</div>
+							<div class="panel-body color4" style="max-height:450px;">
+								<div id="photo-list-view" class="color4" ></div>
+							</div>	
+							<div class="panel-footer no-padding">
+								<div id="photo-list-pager" class="k-pager-wrap"></div>
+							</div>
+						</div>	
 					</div><!-- ./tab-pane -->
 				</div><!-- ./tab-content-->	
 			</div><!-- ./tab-v1 -->		
