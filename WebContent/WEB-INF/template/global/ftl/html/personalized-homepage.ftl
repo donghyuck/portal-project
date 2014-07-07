@@ -920,7 +920,7 @@
 		</div>
 		<div class="overlay hide"></div>					
 			<!-- START RIGHT SLIDE MENU -->
-			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">		
+			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- header -->	
 				<header>				
 					<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
