@@ -884,7 +884,7 @@
 		<style scoped="scoped">
 		
 		.personalized-panels-group{
-			border-right: 3px solid #CCC;
+			border-bottom: 3px solid #CCC;
 		}
 		
 		#announce-grid .k-grid-content {
