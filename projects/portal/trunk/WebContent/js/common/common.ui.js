@@ -491,14 +491,12 @@
 					// aside menu event...
 					var aside= renderTo.find('.navbar-toggle-aside-menu');					
 					if( aside.length > 0 ){						
-						var target = aside.attr("href");
-						
-						if$(target).length == 0 )
+						var target = aside.attr("href");						
+						if($(target).length == 0 )
 						{
 							var template = kendo.template($("#account-sidebar-template").html());
 							$(".header > .navbar:first").append( template(that.token) );
-						}
-						
+						}						
 						$( target + ' button.btn-close:first').click(function(e){
 							$("body").toggleClass("aside-menu-in");
 						});						
@@ -506,15 +504,13 @@
 							$("body").toggleClass("aside-menu-in");
 							return false;							
 						});					
-					}
-					
+					}					
 					if( $('.navbar-header .navbar-toggle-account').length > 0 ){
 						$('.navbar-header .navbar-toggle-account').click(function(e){
 							$("body").toggleClass("aside-menu-in");
 							return false;							
 						});
-					}
-					
+					}					
 				}
 				that.trigger(SHOWN);
 			}	
