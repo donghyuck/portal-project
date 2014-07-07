@@ -489,33 +489,20 @@
 					if( aside.length > 0 ){						
 						var target = aside.attr("href");
 						$( target + ' button.btn-close:first').click(function(e){
-							/**
-							if($(target).is(":visible")){
-								//common.ui.animate($(target), 'slideOutRight');		
-								$("body").removeClass("aside-menu-in");
-								$(target).hide();
-							}
-							**/
 							$("body").toggleClass("aside-menu-in");
 						});						
 						aside.click(function(e){
-							//var target = $(this).attr("href");
 							$("body").toggleClass("aside-menu-in");
-							/**
-							if($(target).is(":visible")){
-								//common.ui.animate($(target), 'slideOutRight');		
-								$("body").removeClass("aside-menu-in");
-								$(target).hide();
-							}
-							else{
-								$(target).show();
-								$("body").addClass("aside-menu-in");							
-								//common.ui.animate($(target), 'slideInRight');							
-								
-							}**/
 							return false;							
 						});					
-					}					
+					}
+					
+					if( $('.navbar-header .navbar-toggle-account').length > 0 ){
+						$('.navbar-header .navbar-toggle-account').click(function(e){
+							$("body").toggleClass("aside-menu-in");
+							return false;							
+						});
+					}
 				}
 				that.trigger(SHOWN);
 			}	
