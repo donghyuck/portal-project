@@ -923,7 +923,7 @@
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- header -->	
 				<header>				
-					<button id="personalized-controls-menu-close" type="button" class="btn-close">Close</button>
+					<button type="button" class="btn-close">Close</button>
 				</header>	
 				<!-- ./header -->
 				<!-- tab-v1 -->
