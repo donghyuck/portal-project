@@ -601,8 +601,7 @@
 				events : [ AUTHENTICATE, ERROR, UPDATE, SHOWN ],
 				authenticate : function() {
 					var that = this;
-					$
-							.ajax({
+					$.ajax({
 								type : 'POST',
 								url : that.options.ajax.url,
 								success : function(response) {
@@ -626,11 +625,8 @@
 										that.render();
 									}
 									if (that.token.anonymous) {
-										$(that.element)
-												.find(
-														".custom-external-login-groups button")
-												.each(
-														function(index) {
+										$(that.element).find(".custom-external-login-groups button").each(
+											function(index) {
 															var external_login_button = $(this);
 															external_login_button
 																	.click(function(
@@ -648,7 +644,7 @@
 																						'popUpWindow',
 																						'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');
 																	});
-														});
+											});
 									}
 									if (isFunction(that.options.afterAuthenticate)) {
 										that.options.afterAuthenticate();
