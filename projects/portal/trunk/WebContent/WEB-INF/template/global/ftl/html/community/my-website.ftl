@@ -1364,11 +1364,12 @@
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">			
 			<header>	
-				<span class="label label-warning">${webSite.name}</span>
-				<p class="text-muted"><small>${webSite.description}</small></p>											
+				<span class="label label-warning">${webSite.name}</span>								
 				<button type="button" class="btn-close">Close</button>
 			</header>	
+			<!-- tab-v1 -->
 			<div class="tab-v1" >			
+				<h5 class="side-section-title">{webSite.description} 클라우드 저장소</h5>	
 				<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
 					<li><a href="#website-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
