@@ -9,9 +9,7 @@
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-			
-			'css!${request.contextPath}/styles/codedrop/codedrop.overlay.css',
-			
+						
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
@@ -420,18 +418,15 @@
 						</ul>
 					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
-			</div><!-- ./container -->
-					
+			</div><!-- ./container -->					
 			<div class="container-fluid padding-sm" style="min-height:600px;">		
 				<div id="personalized-area" class="row"></div>				
-			</div>		
-		
+			</div>			
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->
-		</div>
-						
+		</div>						
 		<!-- START TEMPLATE -->	
 		<script type="text/x-kendo-template" id="alert-panel-template">
 				<div  id="#: id #" data-alert class="alert alert-info" style="min-height:50px; display:none;">
