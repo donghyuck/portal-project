@@ -47,7 +47,7 @@
 						</div>												
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
-							<ul id="account-navbar" class="nav navbar-nav navbar-right"></ul>
+							<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs"></ul>
 							<!-- /account -->
 							<ul class="nav navbar-nav">
 								<#list webSiteMenu.components as item >
