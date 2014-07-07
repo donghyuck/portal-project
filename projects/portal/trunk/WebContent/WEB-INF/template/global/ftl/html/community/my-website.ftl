@@ -1362,7 +1362,7 @@
 		</section>		
 
 		<!-- start side menu -->
-		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right hide"  id="personalized-controls-section">			
+		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">			
 			<header>	
 				<span class="label label-warning">${webSite.name}</span>
 				<p class="text-muted"><small>${webSite.description}</small></p>											
