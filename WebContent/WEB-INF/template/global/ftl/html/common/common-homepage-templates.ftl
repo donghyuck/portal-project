@@ -506,8 +506,7 @@
 		# } #
 		</a>
 	</li>	
-</script>
-	
+</script>	
 <script id="account-sidebar-template" type="text/x-kendo-template">
 	<section id="my-aside-menu" class="aside-menu">	
 		<button type="button" class="btn-close">Close</button>		
