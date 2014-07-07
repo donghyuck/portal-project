@@ -1370,13 +1370,12 @@
 			</header>	
 			<div class="tab-v1" >			
 				<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-					<#if !action.user.anonymous >	
+				<#if !action.user.anonymous >	
 					<li><a href="#website-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
 					<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
-					</#if>						
+				</#if>						
 				</ul>	<!-- ./nav-tabs >
 				<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
-					<!-- start attachement tab-pane -->
 					<div class="tab-pane" id="my-files">
 						<section class="custom-upload hide">
 							<div class="panel panel-default">
@@ -1418,9 +1417,8 @@
 													<div id="pager" class="k-pager-wrap"></div>
 												</div>
 											</div>																				
-						</div><!-- ./tab-pane -->	
-							<!-- start photos  tab-pane -->
-							<div class="tab-pane" id="website-photo-stream">									
+					</div><!-- ./tab-pane -->	
+					<div class="tab-pane" id="website-photo-stream">									
 											<section class="custom-upload hide">
 												<div class="panel panel-default">
 													<div class="panel-body">
