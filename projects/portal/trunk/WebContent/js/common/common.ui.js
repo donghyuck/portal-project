@@ -125,7 +125,7 @@
 				
 				$.each( $("a[data-toggle='menu']"), function( index,  item){
 					var $this = $(item);
-					var   = $this.attr("href");					
+					var target  = $this.attr("href");					
 					$this.on("click", function(e){
 						$(target).toggleClass("cbp-spmenu-open");
 					});					
