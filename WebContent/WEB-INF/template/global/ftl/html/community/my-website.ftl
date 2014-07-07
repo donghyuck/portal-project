@@ -1183,11 +1183,13 @@
 					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
 			</div><!-- ./container -->			
-			<!-- end of personalized menu -->
-		<!-- END HEADER -->	
-		<!-- START MAIN CONTENT -->
-		<div class="container-fluid padding-sm" style="min-height:600px;">			
-			<div id="personalized-area" class="row blank-top-10">				
+			<!-- end of personalized menu -->			
+			<div class="container-fluid padding-sm" style="min-height:600px;">		
+				<div id="personalized-area" class="row"></div>				
+			</div>	
+					
+		<div class="container padding-sm" style="min-height:600px;">			
+			<div class="row blank-top-10">				
 				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
 					<div class="panel panel-default">
 						<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
