@@ -17,8 +17,8 @@
 }
 
 .cbp-spmenu-open ~ .cbp-spmenu-overlay {
-opacity: 1;
-visibility: visible;
+	opacity: .5;
+	visibility: visible;
 }
 
 
