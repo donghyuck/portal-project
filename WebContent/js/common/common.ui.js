@@ -67,7 +67,8 @@
 				culture : true,
 				landing : true,
 				backstretch : false,
-				lightbox: false
+				lightbox: false,
+				spmenu: false
 			},
 			worklist: []
 		},
@@ -120,9 +121,21 @@
 			if(features.landing){				
 				common.ui.landing();
 			}
-
-			if(features.lightbox){
+			if(features.spmenu){				
 				
+				$.each( $("a[data-toggle='menu']"), function( index,  item){
+					var $this = $(item);
+					var   = $this.attr("href");					
+					$this.on("click", function(e){
+						$(target).toggleClass("cbp-spmenu-open");
+					});					
+					$( target + ' button.btn-close:first').click(function(e){
+						$(target).toggleClass("cbp-spmenu-open");
+					});						
+				});
+			}
+			
+			if(features.lightbox){				
 				$(document).on("click","[data-ride='lightbox']", function(e){
 					var $this = $(this);
 					if( $this.children("img").length > 0  ){
@@ -138,24 +151,7 @@
 							});				
 					}
 				} );	
-				/**
-				$(document).on('load', function () {
-				    $("figure[data-ride='lightbox']").each(function () {
-				    	var lightbox = $(this);
-				    	var lightbox_data_target = lightbox.children('img');
-				    	if( lightbox_data_target.length > 0 ){
-				    		lightbox.magnificPopup({
-				    			type: 'image',
-				    			items: {				    				
-				    				src : lightbox_data_target.attr("src")
-				    			}				    			
-				    		});				    		
-				    	}
-				    })
-				  })
-				  */
-			}				
-			
+			}	
 		} 
 	})
 	
