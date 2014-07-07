@@ -42,7 +42,11 @@
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
 							</button>
-							<a href="#" class="btn-control-group no-padding-b pull-right"><i class="fa fa-user fa-2x"></i></a>							
+							<a href="#" class="navbar-collapse btn-link">
+							<img src="/download/profile/andang?width=100&amp;height=150" height="34">
+							<!--<i class="fa fa-user fa-2x"></i>-->
+							
+							</a>							
 							<a class="navbar-brand" href="/main.do">
 								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="Logo">
 							</a>
