@@ -35,12 +35,14 @@
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">	
-							<a href="#" class="btn-control-group no-padding-b"><i class="fa fa-user fa-2x"></i></a>			
+						
+								
 							
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">								
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
-							</button>					
+							</button>
+							<a href="#" class="btn-control-group no-padding-b pull-right"><i class="fa fa-user fa-2x"></i></a>							
 							<a class="navbar-brand" href="/main.do">
 								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="Logo">
 							</a>
