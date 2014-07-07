@@ -885,7 +885,7 @@
 		<style scoped="scoped">
 		
 		#personalized-area{
-			border-bottom: 3px solid #CCC;
+			border-bottom: 1px dashed #f5f5f5;
 		}
 		
 		#announce-grid .k-grid-content {
