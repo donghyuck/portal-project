@@ -67,6 +67,8 @@
 						return false;
 					}
 				}				
+				
+				
 				that.isAnimating = false;
 				// callback
 				if( that.expanded ) {
