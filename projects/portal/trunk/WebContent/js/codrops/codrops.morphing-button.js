@@ -68,7 +68,7 @@
 				alert(ev.originalEvent.propertyName);
 				
 				if( kendo.support.transitions ) {				
-					if( that.expanded && ev.originalEvent.propertyName !== 'opacity' || !that.expanded && ev.originalEvent.propertyName !== 'width' && ev.originalEvent.propertyName !== 'height' && ev.originalEvent.propertyName !== 'left' && ev.originalEvent.propertyName !== 'margin-top' && ev.originalEvent.propertyName !== 'top' ) {
+					if( that.expanded && ev.originalEvent.propertyName !== 'opacity' || that.expanded && ev.originalEvent.propertyName !== 'visibility' ||  !that.expanded && ev.originalEvent.propertyName !== 'width' && ev.originalEvent.propertyName !== 'height' && ev.originalEvent.propertyName !== 'left' && ev.originalEvent.propertyName !== 'margin-top' && ev.originalEvent.propertyName !== 'top' ) {
 						return false;
 					}
 				}				
