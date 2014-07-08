@@ -72,7 +72,7 @@
 						<div class="morph-content">
 							<div>
 								<div class="content-style-form content-style-form-1">
-									<span class="icon icon-close">Close the dialog</span>
+									<button type="button" class="btn-close">Close</button>
 									<h2>Login</h2>
 									<form>
 										<p><label>Email</label><input type="text"></p>
