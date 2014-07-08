@@ -38,6 +38,7 @@
 			} );
 			if( renderTo.find("button.btn-close").length > 0 )
 				renderTo.find("button.btn-close").click(function(e){
+					alert("ss");
 					that._toggle();					
 				});	
 		},
