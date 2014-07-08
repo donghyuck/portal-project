@@ -50,7 +50,7 @@
 					 
 					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
 						<button type="button">이용약관</button>
-						<div class="morph-content" style="left: 471.5px; top: 219.796875px;">
+						<div class="morph-content">
 							<div>
 								<div class="content-style-text">
 									<button type="button" class="btn-close">Close</button>
