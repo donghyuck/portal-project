@@ -38,16 +38,11 @@
 		-->
 		</script>
 		<style>	
-		.mockup-content {
-text-align: center;
-}
-		.mockup-content > p {
-font-size: 0.85em;
-text-align: center;
-opacity: 0.5;
-margin: 0;
-overflow: hidden;
-}
+		.nav>li>a:hover, .nav>li>a:focus {
+			text-decoration: none;
+			background-color: #3498db;
+			color: #fff;
+		}
 		</style>
 </#compress>		
 	</head>
