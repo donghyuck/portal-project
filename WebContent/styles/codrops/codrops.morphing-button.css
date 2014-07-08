@@ -500,12 +500,10 @@
 }
 
 .nav .morph-button-fixed {
-	height: auto;
-	width: auto;
 
 }
 
 .nav .morph-button > button {
 	line-height: 20px;
-		padding: 10px 15px;
+	padding: 10px 15px;
 }
