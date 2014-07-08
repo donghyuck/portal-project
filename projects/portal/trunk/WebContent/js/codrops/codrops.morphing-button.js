@@ -61,12 +61,15 @@
 			var onEndTransitionFn = function( ev ) {								
 				if( ev.target !== this ) return false;
 				if( kendo.support.transitions ) {
+					alert(
+							ev.propertyName 
+					);
+					
 					if( that.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' ) {
 						return false;
 					}
 				}				
 				that.isAnimating = false;
-				alert( that.isAnimating );
 				// callback
 				if( that.expanded ) {
 					// remove class active (after closing)
