@@ -53,7 +53,7 @@
 						<div class="morph-content" style="left: 471.5px; top: 219.796875px;">
 							<div>
 								<div class="content-style-text">
-									<span class="icon icon-close">Close the dialog</span>
+									<button type="button" class="btn-close">Close</button>
 									<h2>Terms &amp; Conditions</h2>
 									<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
 									<p><input id="terms" type="checkbox"><label for="terms">I accept the terms &amp; conditions.</label></p>
