@@ -120,7 +120,7 @@
 			}
 			
 			if( features.morphing ){
-				$.each( $("button[data-toggle='morphing']"), function( index,  item){
+				$.each( $(".morph-button"), function( index,  item){
 					var $this = $(item);
 					var btn = new codrops.ui.MorphingButton();					
 				});
