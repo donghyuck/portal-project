@@ -38,6 +38,10 @@
 		-->
 		</script>
 		<style>	
+		
+		.nav>li>a{
+			font-weight: 700;
+		}
 		.nav>li>a:hover, .nav>li>a:focus {
 			text-decoration: none;
 			background-color: #3498db;
