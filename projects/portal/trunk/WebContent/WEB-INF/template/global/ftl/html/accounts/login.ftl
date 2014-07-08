@@ -38,16 +38,24 @@
 		-->
 		</script>
 		<style>	
+		.mockup-content {
+text-align: center;
+}
+		.mockup-content > p {
+font-size: 0.85em;
+text-align: center;
+opacity: 0.5;
+margin: 0;
+overflow: hidden;
+}
 		</style>
 </#compress>		
 	</head>
 	<body class="color3">
+				<div class="mockup-content">
 
-		<nav class="navbar navbar-inverse navbar-fixed-bottom no-border" role="navigation">
-			<div class="container">
-				<ul class="nav navbar-nav navbar-left">
-					 <li>
-					 
+				
+
 					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed no-margin">
 						<button type="button">이용약관</button>
 						<div class="morph-content">
@@ -62,9 +70,7 @@
 						</div>
 					</div>
 					 
-					 
-					 </li>
-					 <li>
+
 
 					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed no-margin">
 						<button type="button">개인정보보호</button>
@@ -80,8 +86,7 @@
 						</div>
 					</div>
 					
-					</li>
-					 <li>
+
 
 					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed no-margin">
 						<button type="button">Login</button>
@@ -99,9 +104,7 @@
 							</div>
 						</div>
 					</div>					 
-					 
-					 </li>			
-					 <li>
+
 
 					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed no-margin">
 						<button type="button">회원가입</button>
@@ -119,10 +122,7 @@
 							</div>
 						</div>
 					</div>					 
-					 
-					 </li>					 					 		 
-				</ul>
-			</div>
-		</nav>					
+
+		</div>				
 	</body>    
 </html>
