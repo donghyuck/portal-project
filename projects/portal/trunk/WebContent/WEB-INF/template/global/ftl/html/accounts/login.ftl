@@ -42,7 +42,7 @@
 	</head>
 	<body class="color3">
 
-		<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+		<nav class="navbar navbar-inverse navbar-fixed-bottom no-border" role="navigation">
 			<div class="container">
 				<ul class="nav navbar-nav navbar-left">
 					 <li><a href="#">약관</a></li>
