@@ -62,7 +62,7 @@
 				if( ev.target !== this ) return false;
 				if( kendo.support.transitions ) {
 					alert(
-							ev.propertyName 
+							( that.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' )
 					);
 					
 					if( that.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' ) {
