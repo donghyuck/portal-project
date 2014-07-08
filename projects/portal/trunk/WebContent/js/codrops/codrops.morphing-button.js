@@ -61,10 +61,12 @@
 			var content = renderTo.find(".morph-content");
 			var onEndTransitionFn = function( ev ) {								
 				if( ev.target !== this ) return false;
+				
 				if( kendo.support.transitions ) {
 					alert(
-							( that.expanded && ev.propertyName !== 'opacity' || !that.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' )
+							ev.originalEvent.propertyName
 					);
+				
 					if( that.expanded && ev.propertyName !== 'opacity' || !that.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' ) {
 						return false;
 					}
