@@ -32,24 +32,27 @@
 		],
 		refresh: function(){
 			var that = this;
-			that.element.on(CLICK, that._toggle );
-			if( that.element.find("button.btn-close").length > 0 )
-				that.element.find("button.btn-close").click(that._toggle);	
+			var renderTo = $(that.element);
+			renderTo.on(CLICK, that._toggle );
+			if( renderTo.find("button.btn-close").length > 0 )
+				renderTo.find("button.btn-close").click(that._toggle);	
 		},
 		_toggle: function(){
 			var that = this;
+			var renderTo = $(that.element);
+			
 			if( that.isAnimating ) return false;
 			if( that.expanded ) {
 				that.trigger(CLOSING, {target: that});
 			}else{
-				that.element.addClass("active");
+				renderTo.addClass("active");
 				that.trigger(OPENING, {target: that});				
 			}
 			
 			that.isAnimating = true;
 			// set the left and top values of the contentEl (same like the button)
-			var button = that.element.children("button")
-			var content = that.element.find(".morph-content")
+			var button = renderTo.children("button")
+			var content = renderTo.find(".morph-content")
 						
 			var onEndTransitionFn = function( ev ) {
 				if( ev.target !== this ) return false;
@@ -62,7 +65,7 @@
 				// callback
 				if( that.expanded ) {
 					// remove class active (after closing)
-					that.element.removeClass("active");
+					renderTo.removeClass("active");
 					that.trigger(CLOSED, {target: that});	
 				}
 				else {
@@ -72,7 +75,7 @@
 			};
 			
 			if(kendo.support.transitions){
-				that.content.one(kendo.support.transitions.event, onEndTransitionFn );				
+				content.one(kendo.support.transitions.event, onEndTransitionFn );				
 			}else{
 				onEndTransitionFn();				
 			}
@@ -83,13 +86,12 @@
 				content.css({	"left": offset.left + "px", "top": offset.top + "px"});		
 				if( that.expanded ) {
 					content.removeClass("no-transition");
-					that.element.removeClass("open");
+					renderTo.removeClass("open");
 				}else{
 					setTimeout(function(){
 						content.removeClass("no-transition");
-						that.element.addClass("open");
-					});
-					
+						renderTo.addClass("open");
+					});					
 				}
 			});			
 		}
