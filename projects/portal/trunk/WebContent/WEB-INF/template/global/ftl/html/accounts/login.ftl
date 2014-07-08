@@ -65,7 +65,26 @@
 					 
 					 </li>
 					 <li><a href="#">개인정보보호</a></li>
-					 <li><a href="#" onclick="toggleWindow(); return false;">로그인</a></li>					 
+					 <li>
+
+					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+						<button type="button">Login</button>
+						<div class="morph-content">
+							<div>
+								<div class="content-style-form content-style-form-1">
+									<span class="icon icon-close">Close the dialog</span>
+									<h2>Login</h2>
+									<form>
+										<p><label>Email</label><input type="text"></p>
+										<p><label>Password</label><input type="password"></p>
+										<p><button>Login</button></p>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>					 
+					 
+					 </li>					 
 				</ul>
 			</div>
 		</nav>					
