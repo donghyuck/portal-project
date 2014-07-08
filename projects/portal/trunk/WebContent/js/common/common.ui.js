@@ -122,7 +122,7 @@
 			if( features.morphing ){
 				$.each( $(".morph-button"), function( index,  item){
 					var $this = $(item);
-					var btn = new codrops.ui.MorphingButton();					
+					var btn = new codrops.ui.MorphingButton($this);					
 				});
 			}
 			
