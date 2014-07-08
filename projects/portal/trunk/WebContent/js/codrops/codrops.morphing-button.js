@@ -38,14 +38,13 @@
 			} );
 			if( renderTo.find("button.btn-close").length > 0 )
 				renderTo.find("button.btn-close").click(function(e){
-					alert("ss");
 					that._toggle();					
 				});	
 		},
 		_toggle: function(){
 			var that = this;
 			var renderTo = $(that.element);
-			
+						
 			if( that.isAnimating ) return false;
 			
 			if( that.expanded ) {
@@ -58,7 +57,7 @@
 			that.isAnimating = true;
 			// set the left and top values of the contentEl (same like the button)
 			var button = renderTo.children("button")
-			var content = renderTo.find(".morph-content")
+			var content = renderTo.find(".morph-content");
 						
 			var onEndTransitionFn = function( ev ) {
 				if( ev.target !== this ) return false;
