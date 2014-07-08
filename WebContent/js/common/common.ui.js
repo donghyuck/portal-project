@@ -68,7 +68,8 @@
 				landing : true,
 				backstretch : false,
 				lightbox: false,
-				spmenu: false
+				spmenu: false,
+				morphing: false
 			},
 			worklist: []
 		},
@@ -118,11 +119,19 @@
 				});
 			}
 			
+			if( features.morphing ){
+				$.each( $("button[data-toggle='morphing']"), function( index,  item){
+					
+					
+					
+				});
+			}
+			
 			if(features.landing){				
 				common.ui.landing();
 			}
-			if(features.spmenu){				
-				
+			
+			if(features.spmenu){
 				$.each( $("a[data-toggle='menu']"), function( index,  item){
 					var $this = $(item);
 					var target  = $this.attr("href");					
