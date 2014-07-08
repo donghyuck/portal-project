@@ -23,6 +23,7 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;			
 			element = that.element;
+			that.expanded = false;
 			that.refresh();
 		},
 		options : {
@@ -34,7 +35,8 @@
 		refresh: function(){
 			var that = this;
 			var renderTo = $(that.element);
-			renderTo.on(CLICK, function(e){
+			var button = renderTo.children("button");
+			button.on(CLICK, function(e){
 				that._toggle();
 			} );
 			if( renderTo.find("button.btn-close").length > 0 )
