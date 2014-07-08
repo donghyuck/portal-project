@@ -61,7 +61,7 @@
 			var content = renderTo.find(".morph-content");
 			var onEndTransitionFn = function( ev ) {				
 				
-				alert(  ev.target !== this );
+				alert(  $(ev.target).html() );
 				if( ev.target !== this ) return false;
 				
 				alert(ev.originalEvent.propertyName);
