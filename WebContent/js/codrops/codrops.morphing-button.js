@@ -79,6 +79,8 @@
 				that.expanded = !that.expanded;
 			};
 			
+			alert( kendo.support.transitions.event );
+			
 			if(kendo.support.transitions){
 				content.one(kendo.support.transitions.event, onEndTransitionFn );				
 			}else{
