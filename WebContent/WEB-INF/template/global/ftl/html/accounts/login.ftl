@@ -64,11 +64,47 @@
 					 
 					 
 					 </li>
-					 <li><a href="#">개인정보보호</a></li>
+					 <li>
+
+					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed no-margin">
+						<button type="button">개인정보보호</button>
+						<div class="morph-content">
+							<div>
+								<div class="padding-sm">
+									<button type="button" class="btn-close">Close</button>
+									<h2>Terms &amp; Conditions</h2>
+									<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+									<p><input id="terms" type="checkbox"><label for="terms">I accept the terms &amp; conditions.</label></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					</li>
 					 <li>
 
 					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed no-margin">
 						<button type="button">Login</button>
+						<div class="morph-content">
+							<div>
+								<div class="content-style-form content-style-form-1">
+									<button type="button" class="btn-close">Close</button>
+									<h2>Login</h2>
+									<form>
+										<p><label>Email</label><input type="text"></p>
+										<p><label>로그인</label><input type="password"></p>
+										<p><button>Login</button></p>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>					 
+					 
+					 </li>			
+					 <li>
+
+					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed no-margin">
+						<button type="button">회원가입</button>
 						<div class="morph-content">
 							<div>
 								<div class="content-style-form content-style-form-1">
@@ -84,7 +120,7 @@
 						</div>
 					</div>					 
 					 
-					 </li>					 
+					 </li>					 					 		 
 				</ul>
 			</div>
 		</nav>					
