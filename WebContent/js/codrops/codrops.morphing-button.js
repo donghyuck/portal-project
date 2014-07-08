@@ -60,15 +60,11 @@
 			var content = renderTo.find(".morph-content");
 						
 			var onEndTransitionFn = function( ev ) {
-				
-				alert( ev.target !== this ) ;
-				
-				
+								
 				if( ev.target !== this ) return false;
-				
-				
 				if( kendo.support.transitions ) {
 					if( that.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' ) {
+						alert("fdsaf");
 						return false;
 					}
 				}
@@ -84,9 +80,7 @@
 				}
 				that.expanded = !that.expanded;
 			};
-			
-			alert( kendo.support.transitions.event );
-			
+						
 			if(kendo.support.transitions){
 				content.one(kendo.support.transitions.event, onEndTransitionFn );				
 			}else{
