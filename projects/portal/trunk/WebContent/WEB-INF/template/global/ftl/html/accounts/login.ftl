@@ -3,12 +3,12 @@
 <head>
 <#compress>
 		<title><#if action.webSite ?? >${action.webSite.displayName } 로그인<#else>로그인</#if></title>
+		<link rel="stylesheet" type="text/css" href="${request.contextPath}/styles/codrops/codrops.morphing-button.css">
 		<script type="text/javascript"><!--		
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
-			'css!${request.contextPath}/styles/codrops/codrops.morphing-button.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
@@ -52,7 +52,7 @@
 						<button type="button">이용약관</button>
 						<div class="morph-content">
 							<div>
-								<div class="content-style-text">
+								<div class="padding-sm">
 									<button type="button" class="btn-close">Close</button>
 									<h2>Terms &amp; Conditions</h2>
 									<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
