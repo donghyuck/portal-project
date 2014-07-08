@@ -25,7 +25,11 @@
 			'${request.contextPath}/js/common/common.ui.js'
 			],
 			complete: function() {
-
+				common.ui.setup({
+					features:{
+						backstretch : true
+					}
+				});	
 
 			}
 		}]);	
