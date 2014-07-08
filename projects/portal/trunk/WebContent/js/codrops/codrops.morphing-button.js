@@ -59,7 +59,9 @@
 			// set the left and top values of the contentEl (same like the button)
 			var button = renderTo.children("button")
 			var content = renderTo.find(".morph-content");
-			var onEndTransitionFn = function( ev ) {								
+			var onEndTransitionFn = function( ev ) {				
+				
+				alert( renderTo.html()  );
 				if( ev.target !== this ) return false;
 				
 				alert(ev.originalEvent.propertyName);
@@ -74,8 +76,6 @@
 						return false;
 					}
 				}				
-				
-				
 				that.isAnimating = false;
 				// callback
 				if( that.expanded ) {
