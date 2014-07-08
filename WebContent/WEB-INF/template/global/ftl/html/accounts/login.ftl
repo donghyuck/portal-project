@@ -123,6 +123,16 @@ overflow: hidden;
 						</div>
 					</div>					 
 
-		</div>				
+		</div>			
+		
+		<nav class="navbar navbar-fixed-bottom" role="navigation">
+			<div class="container-fluid">
+				<ul class="nav navbar-nav navbar-right">
+					 <li><a href="#">약관</a></li>
+					 <li><a href="#">개인정보보호</a></li>
+					 <li><a href="#" onclick="toggleWindow(); return false;">로그인</a></li>					 
+				</ul>
+			</div>
+		</nav>			
 	</body>    
 </html>
