@@ -20,6 +20,10 @@
 	overflow: hidden;
 }
 
+.nav .morph-button > button {
+	line-height: 20px;
+}
+
 .morph-button.open > button {
 	pointer-events: none;
 }
