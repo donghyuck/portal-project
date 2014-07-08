@@ -17,7 +17,6 @@
 	yepnope([{
 		load: [ 
 			'css!<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/font-awesome/4.0.3/font-awesome.min.css',
-			'css!<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/styles/bootstrap/3.1.0/non-responsive.css',		
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jquery/1.10.2/jquery.min.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jquery.extension/jquery.ui.shake.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/jgrowl/jquery.jgrowl.min.js',
@@ -30,6 +29,7 @@
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.api.js',
 			'<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/common/common.ui.js'],
 		complete: function() {			
+
 			common.api.getUser( {
 				success : function ( token ) {
 					if( !token.anonymous )
@@ -264,7 +264,24 @@
 		<nav class="navbar navbar-fixed-bottom" role="navigation" class="color:#000000;">
 			<div class="container-fluid">
 				<ul class="nav navbar-nav navbar-left">
-					 <li><a href="#">약관</a></li>
+					 <li>
+					 
+					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
+						<button type="button">이용약관</button>
+						<div class="morph-content" style="left: 471.5px; top: 219.796875px;">
+							<div>
+								<div class="content-style-text">
+									<span class="icon icon-close">Close the dialog</span>
+									<h2>Terms &amp; Conditions</h2>
+									<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
+									<p><input id="terms" type="checkbox"><label for="terms">I accept the terms &amp; conditions.</label></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					 
+					 
+					 </li>
 					 <li><a href="#">개인정보보호</a></li>
 					 <li><a href="#" onClick="toggleWindow(); return false;">로그인</a></li>
 					 <% if (isAllowedSignup){ %>
