@@ -58,16 +58,15 @@
 			// set the left and top values of the contentEl (same like the button)
 			var button = renderTo.children("button")
 			var content = renderTo.find(".morph-content");
-						
-			var onEndTransitionFn = function( ev ) {
-								
+			var onEndTransitionFn = function( ev ) {								
 				if( ev.target !== this ) return false;
 				if( kendo.support.transitions ) {
 					if( that.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' ) {
 						return false;
 					}
 				}				
-				that.isAnimating = false;				
+				that.isAnimating = false;
+				alert( that.isAnimating );
 				// callback
 				if( that.expanded ) {
 					// remove class active (after closing)
