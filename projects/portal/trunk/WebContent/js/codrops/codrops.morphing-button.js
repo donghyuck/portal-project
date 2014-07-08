@@ -38,7 +38,7 @@
 				that._toggle();
 			} );
 			if( renderTo.find("button.btn-close").length > 0 )
-				renderTo.find("button.btn-close").click(function(e){
+				renderTo.find("button.btn-close").on(CLICK, function(e){
 					that._toggle();					
 				});	
 		},
