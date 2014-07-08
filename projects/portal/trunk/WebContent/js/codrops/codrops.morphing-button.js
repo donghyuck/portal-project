@@ -63,7 +63,6 @@
 				if( ev.target !== this ) return false;
 				
 				if( kendo.support.transitions ) {				
-					alert( ( that.expanded && ev.originalEvent.propertyName !== 'opacity' || !that.expanded && ev.originalEvent.propertyName !== 'width' && ev.originalEvent.propertyName !== 'height' && ev.originalEvent.propertyName !== 'left' && ev.originalEvent.propertyName !== 'top' )  );
 					if( that.expanded && ev.originalEvent.propertyName !== 'opacity' || !that.expanded && ev.originalEvent.propertyName !== 'width' && ev.originalEvent.propertyName !== 'height' && ev.originalEvent.propertyName !== 'left' && ev.originalEvent.propertyName !== 'top' ) {
 						return false;
 					}
@@ -87,6 +86,7 @@
 				onEndTransitionFn();				
 			}
 			var offset = button.offset();
+			
 			content.addClass("no-transition");
 			content.css({	"left":"auto", "top":"auto"});
 			setTimeout( function() { 
