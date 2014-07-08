@@ -499,7 +499,7 @@
 	}
 }
 
-.nav .morph-button-fixed {
+.nav .morph-button-fixed , .nav .morph-button-fixed .morph-content {
 	width: 150px;
 	height: 50px;
 }
