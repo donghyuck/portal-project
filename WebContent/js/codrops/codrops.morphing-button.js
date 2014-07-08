@@ -33,15 +33,20 @@
 		refresh: function(){
 			var that = this;
 			var renderTo = $(that.element);
-			renderTo.on(CLICK, that._toggle );
+			renderTo.on(CLICK, function(e){
+				that._toggle();
+			} );
 			if( renderTo.find("button.btn-close").length > 0 )
-				renderTo.find("button.btn-close").click(that._toggle);	
+				renderTo.find("button.btn-close").click(function(e){
+					that._toggle();					
+				});	
 		},
 		_toggle: function(){
 			var that = this;
 			var renderTo = $(that.element);
 			
 			if( that.isAnimating ) return false;
+			
 			if( that.expanded ) {
 				that.trigger(CLOSING, {target: that});
 			}else{
