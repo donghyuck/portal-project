@@ -48,7 +48,7 @@
 				<ul class="nav navbar-nav navbar-left">
 					 <li>
 					 
-					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed">
+					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed no-margin">
 						<button type="button">이용약관</button>
 						<div class="morph-content">
 							<div>
@@ -67,7 +67,7 @@
 					 <li><a href="#">개인정보보호</a></li>
 					 <li>
 
-					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed">
+					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed no-margin">
 						<button type="button">Login</button>
 						<div class="morph-content">
 							<div>
