@@ -40,6 +40,7 @@
 		<style>	
 		
 		.nav>li>a{
+			color: #fff;
 			font-weight: 700;
 		}
 		.nav>li>a:hover, .nav>li>a:focus {
