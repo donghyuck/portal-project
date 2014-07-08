@@ -126,9 +126,9 @@ overflow: hidden;
 		</div>			
 		
 		<nav class="navbar navbar-fixed-bottom" role="navigation">
-			<div class="container-fluid">
+			<div class="container">
 				<ul class="nav navbar-nav navbar-right">
-					 <li><a href="#">약관</a></li>
+					 <li><a href="#">이용약관</a></li>
 					 <li><a href="#">개인정보보호</a></li>
 					 <li><a href="#" onclick="toggleWindow(); return false;">로그인</a></li>					 
 				</ul>
