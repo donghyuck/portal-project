@@ -64,14 +64,15 @@
 				//alert(  $(ev.target).html() );
 				//alert(  $(this).html() );
 				//if( ev.target !== this ) return false;
-				
+				/*
 				alert(ev.originalEvent.propertyName);
-				alert( ( that.expanded && ev.originalEvent.propertyName !== 'opacity' && that.expanded || !that.expanded && ev.originalEvent.propertyName !== 'width' && ev.originalEvent.propertyName !== 'height' && ev.originalEvent.propertyName !== 'left' && ev.originalEvent.propertyName !== 'margin-top' && ev.originalEvent.propertyName !== 'top' ) ) ;
+				alert( ( that.expanded && ev.originalEvent.propertyName !== 'opacity' ||  && that.expanded || !that.expanded && ev.originalEvent.propertyName !== 'width' && ev.originalEvent.propertyName !== 'height' && ev.originalEvent.propertyName !== 'left' && ev.originalEvent.propertyName !== 'margin-top' && ev.originalEvent.propertyName !== 'top' ) ) ;
 				if( kendo.support.transitions ) {				
 					if( that.expanded && ev.originalEvent.propertyName !== 'opacity' && that.expanded || !that.expanded && ev.originalEvent.propertyName !== 'width' && ev.originalEvent.propertyName !== 'height' && ev.originalEvent.propertyName !== 'left' && ev.originalEvent.propertyName !== 'margin-top' && ev.originalEvent.propertyName !== 'top' ) {
 						return false;
 					}
-				}				
+				}			
+				*/
 				that.isAnimating = false;
 				// callback
 				if( that.expanded ) {
