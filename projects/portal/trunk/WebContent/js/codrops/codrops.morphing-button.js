@@ -5,6 +5,7 @@
 	var codrops = window.codrops = window.codrops || {};
 	codrops.ui = codrops.ui || {};
 	var kendo = window.kendo, 
+	stringify = kendo.stringify,
 	Widget = kendo.ui.Widget,
 	
 	OPENING = "opening",
@@ -64,7 +65,7 @@
 					alert(
 							( that.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' )
 					);
-					alert( ev );
+					alert( stringify(ev) );
 					if( that.expanded && ev.propertyName !== 'opacity' || !self.expanded && ev.propertyName !== 'width' && ev.propertyName !== 'height' && ev.propertyName !== 'left' && ev.propertyName !== 'top' ) {
 						return false;
 					}
