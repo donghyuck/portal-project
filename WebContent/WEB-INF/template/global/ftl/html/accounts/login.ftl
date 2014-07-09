@@ -116,13 +116,14 @@
 		<div class="page-loader"></div>
 		<div class="container" style="min-height:450px;">
 		
-		<div class="popover pull-right" style="display:block;">
-      <h3 class="popover-title">이미 로그인 되어 있습니다.</h3>
-
-      <div class="popover-content">
-        <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
-      </div>
-    </div>
+		<div class="popover pull-right animated bounceInDown">
+			<h3 class="popover-title">이미 로그인 되어 있습니다.</h3>
+			<div class="popover-content">
+			<a href="#" class="btn btn-default">메인으로 이동</a>
+			<button class="btn btn-primary">로그아웃</button>
+			<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+			</div>
+		</div>
 			<div id="signin-block" class="reg-block reg-block-transparent  pull-right">
 		        <div class="reg-block-header">		        
 		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
