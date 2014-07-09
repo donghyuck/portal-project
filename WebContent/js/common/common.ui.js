@@ -1971,7 +1971,7 @@
 	UNDEFINED = 'undefined';
 	TEMPLATE = template('<div data-alert class="alert alert-danger">#=content#<a href="\\#" class="close">&times;</a></div>'),
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
-	common.ui.extAlert = Widget.extend({
+	common.ui.ExtAlert = Widget.extend({
 				init : function(element, options) {
 					var that = this;
 					Widget.fn.init.call(that, element, options);
