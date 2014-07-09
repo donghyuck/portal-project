@@ -115,6 +115,7 @@
 					 </#if>					
 		        </div>				
 				<form name="signin-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
+				<input type="hidden" name="output" value="json" />		    
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 		            <input type="text" name="username" class="form-control" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
