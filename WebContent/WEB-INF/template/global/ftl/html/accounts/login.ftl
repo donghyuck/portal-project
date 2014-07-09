@@ -3,11 +3,11 @@
 <head>
 <#compress>
 		<title><#if action.webSite ?? >${action.webSite.displayName } 로그인<#else>로그인</#if></title>
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.pages/common.signup_signon.css" />
 		<script type="text/javascript"><!--		
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
