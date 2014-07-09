@@ -1954,54 +1954,48 @@
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui = common.ui || {};
-	var kendo = window.kendo, Widget = kendo.ui.Widget, DataSource = kendo.data.DataSource, isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, POST = 'POST', JSON = 'json', CHANGE = "change", STRING = "string", UNDEFINED = 'undefined';
+	var kendo = window.kendo, 
+	Widget = kendo.ui.Widget, 
+	DataSource = kendo.data.DataSource, 
+	template = kendo.template,
+	isPlainObject = $.isPlainObject, 
+	proxy = $.proxy, 
+	extend = $.extend, 
+	placeholderSupported = kendo.support.placeholder, 
+	browser = kendo.support.browser, 
+	isFunction = kendo.isFunction, 
+	POST = 'POST', 
+	JSON = 'json', 
+	CHANGE = "change", 
+	STRING = "string", 
+	UNDEFINED = 'undefined';
+	TEMPLATE = template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>'),
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
-
 	common.ui.extAlert = Widget.extend({
 				init : function(element, options) {
-
 					var that = this;
 					Widget.fn.init.call(that, element, options);
-
+					this.options = that.options;					
+					that.refresh();	
+					kendo.notify(that);
+				},
+				options : {
+					name : "ExtAlert"
+				},
+				refresh: function(){
+					var that = this;
 					this.options = that.options;
 					if (typeof options.template === UNDEFINED)
-						that.template = kendo
-								.template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>');
+						that.template = TEMPLATE ;
 					else if (typeof options.template === STRING)
-						that.template = kendo.template(options.template);
+						that.template = template(options.template);
 					else if (isFunction(options.template))
 						that.template = options.template;
 
 					if (typeof options.data === UNDEFINED)
 						options.data = {};
-
 					that.element.html(that.template(options.data));
-
-					if (typeof options.data.id === STRING) {
-						var _alert = $('#' + options.data.id).find('.alert');
-						_alert.bind('closed.bs.alert', function(e) {
-							e.preventDefault();
-							if (isFunction(options.close))
-								options.close();
-						});
-					}
-
-					that.element.find("[data-alert] a.close").click(
-							function(e) {
-								e.preventDefault();
-								that.element.find("[data-alert]").fadeOut(
-										300,
-										function() {
-											that.element.find("[data-alert]")
-													.remove();
-											if (isFunction(options.close))
-												options.close();
-										});
-							});
-					kendo.notify(that);
-				},
-				options : {
-					name : "ExtAlert"
+					
 				}
 			});
 
