@@ -98,7 +98,7 @@
 		        </div>
 		        <div class="row">
 		            <div class="col-md-10 col-md-offset-1">
-		                <button type="submit" class="btn-u btn-block">로그인</button>
+		                <button type="submit" class="btn-u btn-block" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 		            </div>
 		        </div>
 		        </form><!-- /form -->
