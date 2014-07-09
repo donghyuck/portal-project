@@ -892,7 +892,7 @@
 				</header>	-->
 				<!-- ./header -->
 				<!-- tab-v1 -->
-				<button type="button" class="btn-close">Close</button>
+				<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
 				<div class="tab-v1" >			
 					<h5 class="side-section-title">My 클라우드 저장소</h5>			
 					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
