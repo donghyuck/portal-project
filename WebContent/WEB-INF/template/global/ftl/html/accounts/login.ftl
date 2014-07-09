@@ -80,11 +80,11 @@
 				<form name="signon-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-		            <input type="text" class="form-control" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
+		            <input type="text" name="username" class="form-control" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
 		        </div>
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-		            <input type="password"  class="form-control" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." >
+		            <input type="password" name="password" class="form-control" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." >
 		        </div>
 		        <hr class="no-margin">
 		        <label class="checkbox">
