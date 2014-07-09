@@ -2000,8 +2000,7 @@
 					data : {}
 				},
 				refresh: function(){
-					var that = this;
-					this.options = that.options;
+					var that = this, options = that.options;
 					if (typeof options.template === UNDEFINED)
 						that.template = TEMPLATE ;
 					else if (typeof options.template === STRING)
