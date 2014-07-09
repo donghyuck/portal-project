@@ -146,7 +146,7 @@
 		        </div>
 		        <div class="row">
 		            <div class="col-md-10 col-md-offset-1">
-		                <button type="submit" class="btn-u btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+		                <button type="submit" class="btn btn-primary btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 		            </div>
 		        </div>
 		        </fieldset><!-- /fieldset -->
