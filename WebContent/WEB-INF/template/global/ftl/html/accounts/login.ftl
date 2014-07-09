@@ -120,6 +120,7 @@
 					 </#if>					
 		        </div>				
 				<form name="signin-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
+				<fieldset>
 				<input type="hidden" name="output" value="json" />		    
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -147,6 +148,7 @@
 		                <button type="submit" class="btn-u btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 		            </div>
 		        </div>
+		        </fieldset><!-- /fieldset -->
 		        </form><!-- /form -->
 		    </div><!-- /.reg-block -->
 		</div><!-- /.container -->
