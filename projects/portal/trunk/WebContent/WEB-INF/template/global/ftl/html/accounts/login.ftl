@@ -50,79 +50,41 @@
 </#compress>		
 	</head>
 	<body class="color3">
-				<div class="mockup-content">
-
-				
-
-					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed no-margin">
-						<button type="button">이용약관</button>
-						<div class="morph-content">
-							<div>
-								<div class="padding-sm">
-									<button type="button" class="btn-close">Close</button>
-									<h2>Terms &amp; Conditions</h2>
-									<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
-									<p><input id="terms" type="checkbox"><label for="terms">I accept the terms &amp; conditions.</label></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					 
-
-
-					<div class="morph-button morph-button-modal morph-button-modal-1 morph-button-fixed no-margin">
-						<button type="button">개인정보보호</button>
-						<div class="morph-content">
-							<div>
-								<div class="padding-sm">
-									<button type="button" class="btn-close">Close</button>
-									<h2>Terms &amp; Conditions</h2>
-									<p>Pea horseradish azuki bean lettuce avocado asparagus okra. Kohlrabi radish okra azuki bean corn fava bean mustard tigernut juccama green bean celtuce collard greens avocado quandong <strong>fennel gumbo</strong> black-eyed pea. Grape silver beet watercress potato tigernut corn groundnut. Chickweed okra pea winter purslane coriander yarrow sweet pepper radish garlic brussels sprout groundnut summer purslane earthnut pea <strong>tomato spring onion</strong> azuki bean gourd.</p>
-									<p><input id="terms" type="checkbox"><label for="terms">I accept the terms &amp; conditions.</label></p>
-								</div>
-							</div>
-						</div>
-					</div>
-					
-
-
-					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed no-margin">
-						<button type="button">Login</button>
-						<div class="morph-content">
-							<div>
-								<div class="content-style-form content-style-form-1">
-									<button type="button" class="btn-close">Close</button>
-									<h2>Login</h2>
-									<form>
-										<p><label>Email</label><input type="text"></p>
-										<p><label>로그인</label><input type="password"></p>
-										<p><button>Login</button></p>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>					 
-
-
-					<div class="morph-button morph-button-modal morph-button-modal-2 morph-button-fixed no-margin">
-						<button type="button">회원가입</button>
-						<div class="morph-content">
-							<div>
-								<div class="content-style-form content-style-form-1">
-									<button type="button" class="btn-close">Close</button>
-									<h2>Login</h2>
-									<form>
-										<p><label>Email</label><input type="text"></p>
-										<p><label>Password</label><input type="password"></p>
-										<p><button>Login</button></p>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>					 
-
-		</div>			
 		
+		<div class="container">
+			<div class="reg-block">
+	        <div class="reg-block-header">
+	            <h2>Sign In</h2>
+	            <ul class="social-icons text-center">
+	                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
+	                <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
+	                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
+	                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
+	            </ul>
+	            <p>Don't Have Account? Click <a class="color-green" href="page_registration1.html">Sign Up</a> to registration.</p>            
+	        </div>
+	
+	        <div class="input-group margin-bottom-20">
+	            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+	            <input type="text" class="form-control" placeholder="Email">
+	        </div>
+	        <div class="input-group margin-bottom-20">
+	            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+	            <input type="text" class="form-control" placeholder="Password">
+	        </div>
+	        <hr>
+	        <label class="checkbox">
+	            <input type="checkbox"> 
+	            <p>Always stay signed in</p>
+	        </label>
+	                                
+	        <div class="row">
+	            <div class="col-md-10 col-md-offset-1">
+	                <button type="submit" class="btn-u btn-block">Log In</button>
+	            </div>
+	        </div>
+	    </div>
+		</div><!-- ./container -->
 		<nav class="navbar navbar-fixed-bottom" role="navigation">
 			<div class="container">
 				<ul class="nav navbar-nav navbar-right">
