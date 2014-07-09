@@ -43,7 +43,6 @@
 			}).data("kendoValidator");
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
-			alert( "ss" );
 				var btn = $('.btn-signin');
 				btn.button('loading');
 				if( validator.validate() ){        				
@@ -65,7 +64,8 @@
 									times: 5,
 									speed: 100
 								});																
-							} else {        	                            
+							} else {        	   
+								$(#signin-status").html("");                         
 								location.href="/main.do";
 							} 	
 						},
