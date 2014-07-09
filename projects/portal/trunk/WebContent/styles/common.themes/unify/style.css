@@ -362,7 +362,7 @@
 
 .header .navbar-default {
 	border: none;
-	background: none;
+	background: #333;
 }
 
 .header .navbar-collapse {
