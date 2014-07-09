@@ -39,8 +39,7 @@
 		function prepareSignOn () {
 		
 			var validator = $("#signin-block").kendoValidator({
-				errorTemplate: '<span class="help-block">#=message#</span>',
-				validateOnBlur: false
+				errorTemplate: '<span class="help-block">#=message#</span>'
 			}).data("kendoValidator");
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
