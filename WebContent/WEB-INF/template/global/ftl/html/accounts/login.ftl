@@ -61,26 +61,28 @@
 		                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 		                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 		            </ul>
-		            <p>Don't Have Account? Click <a class="color-green" href="page_registration1.html">Sign Up</a> to registration.</p>            
+		            <#if isAllowedSignup >
+					 <p>Don't Have Account? Click <a class="color-green" href="{request.contextPath}/accounts/signup.do">Sign Up</a> to registration.</p>
+					 <#/if>	
 		        </div>
 		
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-		            <input type="text" class="form-control" placeholder="Email">
+		            <input type="text" class="form-control" placeholder="아이디 또는 이메일">
 		        </div>
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-		            <input type="text" class="form-control" placeholder="Password">
+		            <input type="text" class="form-control" placeholder="비밀번호">
 		        </div>
 		        <hr>
 		        <label class="checkbox">
 		            <input type="checkbox"> 
-		            <p>Always stay signed in</p>
+		            <p>로그인 상태 유지</p>
 		        </label>
 		                                
 		        <div class="row">
 		            <div class="col-md-10 col-md-offset-1">
-		                <button type="submit" class="btn-u btn-block">Log In</button>
+		                <button type="submit" class="btn-u btn-block">로그인</button>
 		            </div>
 		        </div>
 		    </div>
