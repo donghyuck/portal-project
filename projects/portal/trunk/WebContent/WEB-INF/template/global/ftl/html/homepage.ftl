@@ -25,7 +25,7 @@
 						
 				common.ui.setup({
 					features:{
-						backstretch : true
+						backstretch : false
 					}
 				});	
 				
@@ -51,7 +51,7 @@
 			
 		</style>   	
 	</head>
-	<body>
+	<body class="bg-dark">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<!-- START HEADER -->
