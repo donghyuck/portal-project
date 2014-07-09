@@ -181,9 +181,6 @@
 		options = options || {};
 		var setup = new common.ui.PageSetup(options);
 	}
-
-	
-	
 	
 	common.ui.animate = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
