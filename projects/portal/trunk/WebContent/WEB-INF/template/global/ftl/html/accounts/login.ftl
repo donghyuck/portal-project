@@ -3,7 +3,6 @@
 <head>
 <#compress>
 		<title><#if action.webSite ?? >${action.webSite.displayName } 로그인<#else>로그인</#if></title>
-		<link rel="stylesheet" type="text/css" href="${request.contextPath}/styles/codrops/codrops.morphing-button.css">
 		<script type="text/javascript"><!--		
 		yepnope([{
 			load: [
@@ -17,8 +16,7 @@
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 			
-			'${request.contextPath}/js/codrops/codrops.morphing-button.js',
+			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 
 				
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
