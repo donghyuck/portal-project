@@ -52,7 +52,7 @@
 					},				
 					shown : function(e){
 						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");	
-						$(".navbar .navbar-header").append("<a href='#' class='navbar-toggle-inverse visible-xs'><i class="fa fa-cloud-upload fa-2x'></i></a>");			
+						$(".navbar .navbar-header").append("<a href='#' class='navbar-toggle-inverse visible-xs'><i class='fa fa-cloud-upload fa-2x'></i></a>");			
 					}
 				});	
 				
