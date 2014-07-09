@@ -61,7 +61,7 @@
 		                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 		                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 		            </ul>
-		            <#if isAllowedSignup >
+		            <#if allowedSignup >
 					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="{request.contextPath}/accounts/signup.do">회원가입</a></p>
 					 </#if>					
 		        </div>
