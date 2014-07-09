@@ -852,10 +852,8 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<div class="container"> 
-				<div class="col-xs-5 col-xs-offset-7 no-padding-hr">
-					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
-						<ul class="nav navbar-nav pull-right">
+			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
+				<ul class="nav navbar-nav pull-right">
 							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
 								<div class="btn-group navbar-btn" data-toggle="buttons">
@@ -871,10 +869,8 @@
 								</div>
 							</li> 
 							<!--<li><a href="#personalized-controls-section" class="btn-control-group no-padding-b" data-toggle="menu"><i class="fa fa-cloud-upload fa-2x"></i></a></li>-->
-						</ul>
-					</div><!-- ./navbar -->
-				</div><!-- ./col-sm-6 col-sm-offset-6 -->
-			</div><!-- ./container -->
+				</ul>
+			</div><!-- ./navbar-personalized -->
 
 			<div class="container-fluid padding-sm" style="min-height:600px;">		
 				<div id="personalized-area" class="row"></div>				
