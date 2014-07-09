@@ -80,8 +80,12 @@
 		        <label class="checkbox">
 		            <input type="checkbox"> 
 		            <p>로그인 상태 유지</p>
-		        </label>
-		         <span class="label label-primary">접속 IP</span>&nbsp;<small>${ request.getRemoteAddr() }</small><span class="label label-warning"></span>
+		        </label>		         
+		        <div class="row margin-bottom-20">
+		            <div class="col-md-10 col-md-offset-1">
+		                <span class="label label-primary">접속 IP</span>&nbsp;<small>${ request.getRemoteAddr() }</small><span class="label label-warning"></span>
+		            </div>
+		        </div>
 		        <div class="row">
 		            <div class="col-md-10 col-md-offset-1">
 		                <button type="submit" class="btn-u btn-block">로그인</button>
