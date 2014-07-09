@@ -105,7 +105,7 @@
 		<div class="page-loader"></div>
 		<div class="container" style="min-height:450px;">
 		
-		<div class="popover left">
+		<div class="popover left" style="block">
       <div class="arrow"></div>
       <h3 class="popover-title">Popover bottom</h3>
 
