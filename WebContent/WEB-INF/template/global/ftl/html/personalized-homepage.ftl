@@ -869,7 +869,7 @@
 									</label>
 								</div>
 							</li> 
-							<li><a href="#personalized-controls-section" class="btn-control-group no-padding-b" data-toggle="menu"><i class="fa fa-cloud-upload fa-2x"></i></a></li>
+							<!--<li><a href="#personalized-controls-section" class="btn-control-group no-padding-b" data-toggle="menu"><i class="fa fa-cloud-upload fa-2x"></i></a></li>-->
 						</ul>
 					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
