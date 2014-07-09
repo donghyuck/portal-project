@@ -52,8 +52,8 @@
 	</head>
 	<body>
 		<div class="page-loader"></div>
-		<div class="container">
-			<div class="reg-block">
+		<div class="container" style="min-height:450px;">
+			<div class="reg-block pull-right">
 		        <div class="reg-block-header">
 		            <h2>Sign In</h2>
 		            <ul class="social-icons text-center">
