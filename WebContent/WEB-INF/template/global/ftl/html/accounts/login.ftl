@@ -40,9 +40,12 @@
 
 			common.api.getUser( {
 				success : function ( token ) {
-					if( !token.anonymous )
+					if( !token.anonymous ){
 						$("form fieldset").prop("disabled", true);
 						alert( "이미 로그인되어 있습니다." );
+						var template = kendo.template($("#alert-template").html());	
+						$(".container:first").prepend(template(token));				
+					}			
 				}				
 			} );		
 					
@@ -115,8 +118,6 @@
 	<body>
 		<div class="page-loader"></div>
 		<div class="container" style="min-height:450px;">
-		
-
 			<div id="signin-block" class="reg-block reg-block-transparent  pull-right">
 		        <div class="reg-block-header">		        
 		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
