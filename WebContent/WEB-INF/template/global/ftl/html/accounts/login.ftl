@@ -54,7 +54,7 @@
 						success : function( response ) {   
 							if( response.error ){ 
 								common.ui.alert({
-									renderTo: "signin-status",
+									renderTo: "#signin-status",
 									data:{message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."}
 								});
 								//$("#status").html(  template({ message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다." })  );
