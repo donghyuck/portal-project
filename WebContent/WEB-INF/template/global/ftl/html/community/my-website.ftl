@@ -1211,7 +1211,7 @@
 
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">			
-			<button type="button" class="btn-close">Close</button>
+			<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
 			<!-- tab-v1 -->
 			<div class="tab-v1" >			
 				<h5 class="side-section-title white">${webSite.description} 클라우드 저장소</h5>	
