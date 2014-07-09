@@ -67,6 +67,12 @@ body.aside-menu-in .aside-menu {
 	right : 0;	
 }
 
+@media (max-width: 600px) {	
+	body.aside-menu-in {
+		overflow-y: hidden;
+	}	
+}
+
 .btn-close{
 	width: 80px;
 	height: 80px;
