@@ -108,9 +108,12 @@
 /*Boxed Layout
 ------------------------------------*/
 .wrapper {
- /* background: #fff;*/
+ background: #fff;*
+}
+.wrapper.wrapper-transparent {
   background: rgba(255, 255, 255, 0.3);
 }
+
 
 .boxed-layout {
   padding: 0;
