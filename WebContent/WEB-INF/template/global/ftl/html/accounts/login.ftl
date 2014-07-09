@@ -39,11 +39,13 @@
 
 			common.api.getUser( {
 				success : function ( token ) {
+				
 					if( !token.anonymous ){
 						$("form fieldset").prop("disabled", true);
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(token));				
-					}			
+					}
+								
 				}				
 			} );		
 					
