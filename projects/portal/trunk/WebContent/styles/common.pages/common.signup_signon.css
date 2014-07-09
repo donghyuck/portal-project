@@ -13,6 +13,10 @@ body {
 	border-top: solid 2px #72c02c;
 }
 
+.reg-block-transparent {
+	opacity: 0.8;
+}
+
 .reg-block h2,
 .reg-block p,
 .reg-block p a {
