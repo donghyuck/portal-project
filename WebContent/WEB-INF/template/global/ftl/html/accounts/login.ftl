@@ -50,7 +50,7 @@
 						type: "POST",
 						url: "/login",
 						dataType: 'json',
-						data: $("form[name=fm1]").serialize(),
+						data: $('form[name="signin-fm"]').serialize(),
 						success : function( response ) {   
 							if( response.error ){ 
 								$("#status").html(  template({ message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다." })  );
