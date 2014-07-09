@@ -57,13 +57,7 @@
 									renderTo: "#signin-status",
 									data:{message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."}
 								});
-								$("input[type='password']").val("").focus();								
-								btn.shake({
-									direction: "left",
-									distance: 10,
-									times: 5,
-									speed: 100
-								});																
+								$("input[type='password']").val("").focus();											
 							} else {        	   
 								$("#signin-status").html("");                         
 								location.href="/main.do";
