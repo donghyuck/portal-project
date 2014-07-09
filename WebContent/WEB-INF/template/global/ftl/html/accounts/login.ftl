@@ -26,8 +26,7 @@
 			complete: function() {
 				common.ui.setup({
 					features:{
-						backstretch : true,
-						morphing : true
+						backstretch : true
 					}
 				});	
 
