@@ -503,7 +503,9 @@
 						if($(target).length == 0 )
 						{
 							var template = kendo.template($("#account-sidebar-template").html());
-							$(".header > .navbar:first").append( template(that.token) );
+							$("body").append(  template(that.token) );
+							/*$(".header > .navbar:first").append( template(that.token) );*/
+							
 						}						
 						$( target + ' button.btn-close:first').click(function(e){
 							$("body").toggleClass("aside-menu-in");
