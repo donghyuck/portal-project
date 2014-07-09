@@ -1969,7 +1969,7 @@
 	CHANGE = "change", 
 	STRING = "string", 
 	UNDEFINED = 'undefined';
-	TEMPLATE = template('<div data-alert class="alert alert-danger">#=message#<a href="\\#" class="close">&times;</a></div>'),
+	TEMPLATE = template('<div data-alert class="alert alert-danger">#=content#<a href="\\#" class="close">&times;</a></div>'),
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
 	common.ui.extAlert = Widget.extend({
 				init : function(element, options) {
@@ -1980,7 +1980,8 @@
 					kendo.notify(that);
 				},
 				options : {
-					name : "ExtAlert"
+					name : "ExtAlert",
+					data : {}
 				},
 				refresh: function(){
 					var that = this;
