@@ -37,7 +37,14 @@
 		}]);	
 	
 		function prepareSignOn () {
-		
+
+			common.api.getUser( {
+				success : function ( token ) {
+					if( !token.anonymous )
+						alert( "이미 로그인되어 있습니다." );
+				}				
+			} );		
+					
 			var validator = $("#signin-block").kendoValidator({
 				errorTemplate: "<b class='tooltip tooltip-alert'>#=message#</b>"
 			}).data("kendoValidator");
