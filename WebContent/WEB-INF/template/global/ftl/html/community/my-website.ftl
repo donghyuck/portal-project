@@ -1095,6 +1095,7 @@
 		</#compress>
 	</head>
 	<body id="doc" class="bg-gray">
+		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
