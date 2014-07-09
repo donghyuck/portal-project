@@ -51,7 +51,7 @@
 </#compress>		
 	</head>
 	<body class="color3">
-		
+		<div class="page-loader"></div>
 		<div class="container">
 			<div class="reg-block">
 		        <div class="reg-block-header">
