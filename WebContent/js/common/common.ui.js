@@ -1969,7 +1969,7 @@
 	CHANGE = "change", 
 	STRING = "string", 
 	UNDEFINED = 'undefined';
-	TEMPLATE = template('<div data-alert class="alert alert-danger">#=message#<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'),
+	TEMPLATE = template('<div data-alert class="alert alert-danger animated fadeInDown">#=message#<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'),
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
 	
 	common.ui.alert = function ( options ){		
