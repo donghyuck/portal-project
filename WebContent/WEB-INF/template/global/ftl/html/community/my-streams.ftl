@@ -400,10 +400,7 @@
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
-			
-			<div class="container"> 
-				<div class="col-xs-5 col-xs-offset-7 col-sm-6 col-sm-offset-6 no-padding-hr">
-					<div class="navbar navbar-personalized navbar-inverse" role="navigation">
+			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 						<ul class="nav navbar-nav pull-right">
 							<li class="hidden-xs">
 								<p class="navbar-text">레이아웃</p>
@@ -425,9 +422,7 @@
 								</div>
 							</li>		
 						</ul>
-					</div><!-- ./navbar -->
-				</div><!-- ./col-sm-6 col-sm-offset-6 -->
-			</div><!-- ./container -->					
+			</div><!-- ./navbar-personalized -->			
 			<div class="container-fluid padding-sm" style="min-height:600px;">		
 				<div id="personalized-area" class="row"></div>				
 			</div>			
