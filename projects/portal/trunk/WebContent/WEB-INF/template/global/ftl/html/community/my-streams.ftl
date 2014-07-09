@@ -344,6 +344,14 @@
 		</script>		
 		<style scoped="scoped">
 
+		.wrapper{
+			background-color:transparent;
+		}
+		
+		.wrapper .header {
+			background-color: #fff;
+		}
+		
 		.k-tiles-arrange label {
 			font-weight : normal;		
 		}
