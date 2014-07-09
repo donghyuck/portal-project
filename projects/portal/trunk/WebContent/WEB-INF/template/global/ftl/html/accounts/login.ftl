@@ -54,7 +54,7 @@
 		<div class="container" style="min-height:450px;">
 			<div class="reg-block reg-block-transparent  pull-right">
 		        <div class="reg-block-header">
-		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="Logo"> 로그인</h2>
+		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 		            <ul class="social-icons text-center">
 		                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 		                <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
