@@ -2015,7 +2015,7 @@
 			});
 	$.fn.extend({
 		extAlert : function(options) {
-			return new common.ui.extAlert(this, options);
+			return new common.ui.ExtAlert(this, options);
 		}
 	});
 })(jQuery);
