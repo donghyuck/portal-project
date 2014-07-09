@@ -172,8 +172,7 @@
 					 <li><a href="#" onclick="toggleWindow(); return false;">로그인</a></li>					 
 				</ul>
 			</div>
-		</nav>			
-	</body>    
+		</nav>	
 	<script type="text/x-kendo-template" id="alert-template">
 	<div class="popover pull-right animated bounceInDown">
 		<h3 class="popover-title">로그인 상태입니다.</h3>
@@ -182,5 +181,7 @@
 			<a href="/main.do" class="btn btn-default">메인으로 이동</a>
 		</div>
 	</div>
-    </script>	
+    </script>
+    				
+	</body>    	
 </html>
