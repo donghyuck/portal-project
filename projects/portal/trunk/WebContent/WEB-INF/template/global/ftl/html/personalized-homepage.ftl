@@ -838,7 +838,7 @@
 	</head>
 	<body id="doc" class="bg-dark">
 		<div class="page-loader"></div>
-		<div class="wrapper wrapper-transparent">
+		<div class="wrapper">
 			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
