@@ -63,7 +63,7 @@
 		            </ul>
 		            <#if isAllowedSignup >
 					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="{request.contextPath}/accounts/signup.do">회원가입</a></p>
-					 <#/if>	
+					 </#if>					
 		        </div>
 		
 		        <div class="input-group margin-bottom-20">
