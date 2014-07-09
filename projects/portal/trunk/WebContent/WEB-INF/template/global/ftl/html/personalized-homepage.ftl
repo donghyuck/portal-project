@@ -51,7 +51,7 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){
-						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='menu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");						
+						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");						
 					}
 				});	
 				
