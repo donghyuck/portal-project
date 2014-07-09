@@ -50,6 +50,7 @@
 		</style>   	
 	</head>
 	<body>
+		<div class="page-loader"></div>
 		<div class="wrapper">
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
