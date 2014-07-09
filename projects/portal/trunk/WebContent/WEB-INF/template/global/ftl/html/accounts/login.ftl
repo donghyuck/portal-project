@@ -107,7 +107,7 @@
 		}
 		
 		.popover-title{
-			border-bottom: 1px solid #a94442;
+			
 		}
 		</style>
 </#compress>		
