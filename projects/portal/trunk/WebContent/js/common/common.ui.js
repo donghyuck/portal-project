@@ -61,6 +61,22 @@
 		 $(element).fadeOut('slow');
 	}
 	
+	common.ui.backstretch = function (){		
+		var dataSource = common.api.streams.dataSource;
+		var template = kendo.template("/community/view-streams-photo.do?key=#= externalId#");
+		dataSource.fetch(function(){
+			var photos = this.data();
+			var urls = [];
+			each(photos, function(idx, photo){
+				urls.push(template(photo));
+			});					
+			$.backstretch(
+				urls,	
+				{duration: 6000, fade: 750}	
+			);
+		});
+	}
+	
 	common.ui.PageSetup = kendo.Class.extend({		
 		options : {			
 			features : {
@@ -103,20 +119,7 @@
 			}
 			
 			if(features.backstretch){
-				common.ui.landing();
-				var dataSource = common.api.streams.dataSource;
-				var template = kendo.template("/community/view-streams-photo.do?key=#= externalId#");
-				dataSource.fetch(function(){
-					var photos = this.data();
-					var urls = [];
-					each(photos, function(idx, photo){
-						urls.push(template(photo));
-					});					
-					$.backstretch(
-						urls,	
-						{duration: 6000, fade: 750}	
-					);
-				});
+				common.ui.backstretch();
 			}
 			
 			if( features.morphing ){
