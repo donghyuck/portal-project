@@ -540,7 +540,7 @@
 				<div class="col-xs-6">
 			<div class="side-section-nav">	
 			<nav class="navbar navbar-default navbar-static-top">
-				<ul class="nav navbar-nav navbar-left">		
+				<ul class="nav navbar-nav navbar-inverse no-padding-b">		
 					<li class="dropdown">
 						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My <i class="fa fa-cloud fa-lg"></i></a>
 						<ul class="dropdown-menu">
