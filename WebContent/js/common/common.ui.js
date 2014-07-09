@@ -1983,6 +1983,10 @@
 		}		
 	}
 	
+	function defined(x) {
+		return (typeof x != UNDEFINED);
+	}
+	
 	common.ui.ExtAlert = Widget.extend({
 				init : function(element, options) {
 					var that = this;
