@@ -502,7 +502,7 @@
 		# if ( anonymous ) { # 
 			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
 		# }else{ # 
-			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" height="34">
+			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" class="rounded-top" height="34">
 		# } #
 		</a>
 	</li>	
