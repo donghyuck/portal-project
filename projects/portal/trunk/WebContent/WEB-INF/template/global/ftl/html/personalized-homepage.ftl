@@ -886,11 +886,6 @@
 				
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
-				<!-- header -->	
-				<!--<header>				
-					
-				</header>	-->
-				<!-- ./header -->
 				<!-- tab-v1 -->
 				<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
 				<div class="tab-v1" >			
