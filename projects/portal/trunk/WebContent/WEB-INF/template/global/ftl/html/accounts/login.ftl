@@ -30,8 +30,7 @@
 					features:{
 						backstretch : true
 					}
-				});	
-				
+				});					
 				prepareSignOn();
 			}
 		}]);	
@@ -42,7 +41,6 @@
 				success : function ( token ) {
 					if( !token.anonymous ){
 						$("form fieldset").prop("disabled", true);
-						alert( "이미 로그인되어 있습니다." );
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(token));				
 					}			
