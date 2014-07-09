@@ -16,6 +16,13 @@
 	max-height:32px;
 }
 
+.tooltip-alert {
+	opacity: 1;
+	top: 100%;
+	padding: 2px 8px 3px;
+	color: #a94442;
+}
+
 /*Aside Menu
 ------------------------------------*/
 .wrapper  {
