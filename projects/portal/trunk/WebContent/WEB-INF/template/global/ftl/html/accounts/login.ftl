@@ -41,6 +41,7 @@
 			common.api.getUser( {
 				success : function ( token ) {
 					if( !token.anonymous )
+						$("form fieldset").prop("disabled", true);
 						alert( "이미 로그인되어 있습니다." );
 				}				
 			} );		
