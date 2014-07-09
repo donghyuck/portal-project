@@ -1971,6 +1971,18 @@
 	UNDEFINED = 'undefined';
 	TEMPLATE = template('<div data-alert class="alert alert-danger">#=content#<a href="\\#" class="close">&times;</a></div>'),
 	handleKendoAjaxError = common.api.handleKendoAjaxError;
+	
+	common.ui.alert = function ( options ){		
+		options = options || {};	
+		if( defined(options.renderTo)){
+			 return new common.ui.ExtAlert( $(options.renderTo), options); 
+		}else 	if( defined( options.appendTo) ){		
+			var guid = common.api.guid().toLowerCase() ;
+			$(options.appendTo).append( "<div id='" + guid+ "'></div>");		
+			return new common.ui.ExtAlert( $("#" + guid ), options); 
+		}		
+	}
+	
 	common.ui.ExtAlert = Widget.extend({
 				init : function(element, options) {
 					var that = this;
@@ -1999,7 +2011,6 @@
 					
 				}
 			});
-
 	$.fn.extend({
 		extAlert : function(options) {
 			return new common.ui.extAlert(this, options);
