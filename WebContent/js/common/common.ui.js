@@ -136,7 +136,7 @@
 			if(features.spmenu){
 				
 				$(document).on("click","[data-toggle='menu']", function(e){
-					var $this = $(item);
+					var $this = $(this);
 					var target  = $this.attr("href");						
 					$("body").toggleClass("modal-open");
 					$(target).toggleClass("cbp-spmenu-open");
