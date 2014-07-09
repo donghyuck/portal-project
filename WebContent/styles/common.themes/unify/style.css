@@ -411,6 +411,9 @@
 	padding-right: 8px;
 	padding-left: 8px;	
 }
+.header .navbar-default .navbar-nav > li > a.navbar-btn-options:hover {
+	color :#428bca ;
+}
 
 .header .navbar-default .navbar-nav > .active > a {
 	color: #72c02c;
