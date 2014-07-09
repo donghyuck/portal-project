@@ -1119,10 +1119,9 @@
 							</li> 
 						</ul>
 			</div><!-- ./navbar-personalized -->
-			<!-- end of personalized menu -->			
-			<div class="container-fluid padding-sm" style="min-height:50px;">		
+			<div class="container-fluid">		
 				<div id="personalized-area" class="row"></div>				
-			</div>	
+			</div><!-- ./container-fluid -->	
 					
 		<div class="container padding-sm" style="min-height:600px;">			
 			<div class="row blank-top-10">				
