@@ -99,6 +99,9 @@ body.aside-menu-in .aside-menu {
 	color: #616161;
 }
 
+.side-section-title.white  {
+	color: #fff;
+}
 .aside-menu .contact-info, .aside-menu .profile-info {
 	padding: 15px;
 	color: #fff;
