@@ -66,7 +66,7 @@
 									speed: 100
 								});																
 							} else {        	                            
-								$("form[name='signin-fm']").attr("action", "/main.do").submit();
+								//$("form[name='signin-fm']").attr("action", "/main.do").submit();
 							} 	
 						},
 						error:handleKendoAjaxError,
