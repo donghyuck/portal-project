@@ -51,8 +51,7 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){
-						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");	
-						
+						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");						
 						$(".navbar .navbar-header").append("<a href='#' class='navbar-toggle-account visible-xs no-padding no-border'><img src='/download/profile/"+ currentUser.username +"?width=100&amp;height=150'></a>"	);					
 						$(".navbar .navbar-header").append("<a href='#personalized-controls-section'  data-toggle='spmenu' class='navbar-toggle-inverse visible-xs'><i class='fa fa-cloud-upload fa-2x'></i></a>");			
 					}
