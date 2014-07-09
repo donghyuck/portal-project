@@ -674,6 +674,9 @@
 		</script>		
 		<style scoped="scoped">
 
+		.wrapper{
+			background-color:transparent;
+		}
 		
 		#pdf-view {
 			height: 500px;
