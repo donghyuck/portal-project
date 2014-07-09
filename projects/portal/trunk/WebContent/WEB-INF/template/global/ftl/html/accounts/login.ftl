@@ -98,6 +98,17 @@
 			background-color: #3498db;
 			color: #fff;
 		}
+		
+		.popover {
+			display: block;
+			margin: 80px auto;
+			right: 0;
+			border: 2px solid #a94442;
+		}
+		
+		.popover-title{
+			border-bottom: 1px solid #a94442;
+		}
 		</style>
 </#compress>		
 	</head>
