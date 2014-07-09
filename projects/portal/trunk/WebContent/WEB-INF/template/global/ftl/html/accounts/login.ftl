@@ -39,7 +39,7 @@
 		function prepareSignOn () {
 		
 			var validator = $("#signin-block").kendoValidator({
-				errorTemplate: "<b class='tooltip tooltip-bottom-left'>#=message#</b>"
+				errorTemplate: "<b class='tooltip tooltip-alert'>#=message#</b>"
 			}).data("kendoValidator");
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
