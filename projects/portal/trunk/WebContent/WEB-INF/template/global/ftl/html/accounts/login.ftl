@@ -36,10 +36,45 @@
 	
 		function prepareSignOn () {
 		
-			var validator = $("#signon-block").kendoValidator({
+			var validator = $("#signin-block").kendoValidator({
 				errorTemplate: '<span class="help-block">#=message#</span>',
 				validateOnBlur: false
 			}).data("kendoValidator");
+			
+			$('form[name="signin-fm"]').submit(function(e) {		
+				var btn = $('.btn-signin');
+				btn.button('loading');
+				if( validator.validate() ){        				
+					$.ajax({
+						type: "POST",
+						url: "/login",
+						dataType: 'json',
+						data: $("form[name=fm1]").serialize(),
+						success : function( response ) {   
+							if( response.error ){ 
+								$("#status").html(  template({ message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다." })  );
+								$("#password").val("").focus();
+								$(".btn-signin").shake({
+									direction: "left",
+									distance: 10,
+									times: 5,
+									speed: 100
+								});								
+							} else {        	                            
+								$("form[name='signin-fm']").attr("action", "/main.do").submit();
+							} 	
+						},
+						error:handleKendoAjaxError,
+						complete: function(jqXHR, textStatus ){					
+							btn.button('reset');
+						}
+					});
+				}else{        			      
+					btn.button('reset');
+				}			
+				return false ;
+			});	
+						
 		}
 		
 		
@@ -63,7 +98,7 @@
 		<div class="page-loader"></div>
 		<div class="container" style="min-height:450px;">
 		
-			<div id="signon-block" class="reg-block reg-block-transparent  pull-right">
+			<div id="signin-block" class="reg-block reg-block-transparent  pull-right">
 		        <div class="reg-block-header">
 		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 		            <ul class="social-icons text-center">
@@ -78,7 +113,7 @@
 					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="{request.contextPath}/accounts/signup.do">회원가입</a></p>
 					 </#if>					
 		        </div>				
-				<form name="signon-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
+				<form name="signin-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 		            <input type="text" name="username" class="form-control" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
@@ -99,7 +134,7 @@
 		        </div>
 		        <div class="row">
 		            <div class="col-md-10 col-md-offset-1">
-		                <button type="submit" class="btn-u btn-block" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+		                <button type="submit" class="btn-u btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 		            </div>
 		        </div>
 		        </form><!-- /form -->
