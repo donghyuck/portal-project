@@ -117,7 +117,7 @@
 		<div class="container" style="min-height:450px;">
 		
 		<div class="popover pull-right" style="display:block;">
-      <h3 class="popover-title">Popover bottom</h3>
+      <h3 class="popover-title">이미 로그인 되어 있습니다.</h3>
 
       <div class="popover-content">
         <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
