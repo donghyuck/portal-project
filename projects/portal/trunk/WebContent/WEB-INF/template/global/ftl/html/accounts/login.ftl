@@ -43,6 +43,7 @@
 			}).data("kendoValidator");
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
+			alert( "ss" );
 				var btn = $('.btn-signin');
 				btn.button('loading');
 				if( validator.validate() ){        				
