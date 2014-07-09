@@ -29,10 +29,19 @@
 						backstretch : true
 					}
 				});	
-
+				
+				prepareSignOn();
 			}
 		}]);	
 	
+		function prepareSignOn () {
+		
+			var validator = $("#signon-block").kendoValidator({
+				errorTemplate: '<span class="help-block">#=message#</span>',
+			}).data("kendoValidator");
+		}
+		
+		
 		-->
 		</script>
 		<style>	
@@ -52,7 +61,8 @@
 	<body>
 		<div class="page-loader"></div>
 		<div class="container" style="min-height:450px;">
-			<div class="reg-block reg-block-transparent  pull-right">
+		
+			<div id="signon-block" class="reg-block reg-block-transparent  pull-right">
 		        <div class="reg-block-header">
 		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 		            <ul class="social-icons text-center">
@@ -66,15 +76,15 @@
 		            <#if isAllowedSignup >
 					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="{request.contextPath}/accounts/signup.do">회원가입</a></p>
 					 </#if>					
-		        </div>
-		
+		        </div>				
+				<form name="signon-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-		            <input type="text" class="form-control" placeholder="아이디 또는 이메일">
+		            <input type="text" class="form-control" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
 		        </div>
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-		            <input type="text" class="form-control" placeholder="비밀번호">
+		            <input type="password"  class="form-control" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." >
 		        </div>
 		        <hr class="no-margin">
 		        <label class="checkbox">
@@ -91,8 +101,9 @@
 		                <button type="submit" class="btn-u btn-block">로그인</button>
 		            </div>
 		        </div>
-		    </div>
-		</div><!-- ./container -->
+		        </form><!-- /form -->
+		    </div><!-- /.reg-block -->
+		</div><!-- /.container -->
 		<nav class="navbar navbar-fixed-bottom" role="navigation">
 			<div class="container">
 				<ul class="nav navbar-nav navbar-right">
