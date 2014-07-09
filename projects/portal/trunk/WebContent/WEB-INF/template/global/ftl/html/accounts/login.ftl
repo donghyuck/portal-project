@@ -10,6 +10,7 @@
 			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
+			'${request.contextPath}/js/jquery.plugins/jquery.ui.shake.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
