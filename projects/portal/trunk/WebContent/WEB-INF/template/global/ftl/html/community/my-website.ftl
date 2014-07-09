@@ -885,7 +885,14 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+		.wrapper{
+			background-color:transparent;
+		}
 		
+		.wrapper .header {
+			background-color: #fff;
+		}
+				
 		#personalized-area{
 			border-bottom: 1px dashed #f5f5f5;
 		}
@@ -1111,7 +1118,6 @@
 									</label>
 								</div>
 							</li> 
-							<li><a href="#personalized-controls-section" class="btn-control-group no-padding-b" data-toggle="menu"><i class="fa fa-cloud-upload fa-2x"></i></a></li>
 						</ul>
 					</div><!-- ./navbar -->
 				</div><!-- ./col-sm-6 col-sm-offset-6 -->
@@ -1205,13 +1211,10 @@
 
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">			
-			<header>	
-				<span class="label label-warning">${webSite.name}</span>								
-				<button type="button" class="btn-close">Close</button>
-			</header>	
+			<button type="button" class="btn-close">Close</button>
 			<!-- tab-v1 -->
 			<div class="tab-v1" >			
-				<h5 class="side-section-title">${webSite.description} 클라우드 저장소</h5>	
+				<h5 class="side-section-title white">${webSite.description} 클라우드 저장소</h5>	
 				<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 				<#if !action.user.anonymous >	
 					<li><a href="#website-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
