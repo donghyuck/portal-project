@@ -58,16 +58,13 @@
 									renderTo: "#signin-status",
 									data:{message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."}
 								});
-								//$("#status").html(  template({ message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다." })  );
-								$("#password").val("").focus();
-								
-								$(".btn-signin").shake({
+								$("input[type='password']").val("").focus();								
+								btn.shake({
 									direction: "left",
 									distance: 10,
 									times: 5,
 									speed: 100
-								});
-																
+								});																
 							} else {        	                            
 								$("form[name='signin-fm']").attr("action", "/main.do").submit();
 							} 	
