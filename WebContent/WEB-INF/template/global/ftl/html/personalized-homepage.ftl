@@ -837,6 +837,7 @@
 		</#compress>
 	</head>
 	<body id="doc" class="bg-dark">
+		<div class="page-loader"></div>
 		<div class="wrapper wrapper-transparent">
 			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
