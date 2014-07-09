@@ -121,7 +121,7 @@
 			<div class="popover-content">
 			<a href="/main.do" class="btn btn-default">메인으로 이동</a>
 			<button class="btn btn-primary">로그아웃</button>
-			<p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+			<p>로그아웃 버튼을 클릭하면 다시 로그인 할 수 있습니다..</p>
 			</div>
 		</div>
 			<div id="signin-block" class="reg-block reg-block-transparent  pull-right">
