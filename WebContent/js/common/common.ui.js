@@ -169,13 +169,12 @@
 	})
 	
 	common.ui.setup = function (options){
-		/*
-		var renderTo = options.renderTo || "wrapper" ;
-		*/
 		options = options || {};
 		var setup = new common.ui.PageSetup(options);
 	}
 
+	
+	
 	
 	common.ui.animate = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
