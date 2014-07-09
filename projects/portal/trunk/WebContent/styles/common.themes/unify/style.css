@@ -368,6 +368,7 @@
 .header .navbar-default {
 	border: none;
 	background: #fff;
+	color : #333;
 }
 
 .header .navbar-collapse {
