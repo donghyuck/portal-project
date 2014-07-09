@@ -65,7 +65,7 @@
 									speed: 100
 								});																
 							} else {        	   
-								$(#signin-status").html("");                         
+								$("#signin-status").html("");                         
 								location.href="/main.do";
 							} 	
 						},
