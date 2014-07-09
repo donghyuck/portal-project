@@ -38,6 +38,7 @@
 		
 			var validator = $("#signon-block").kendoValidator({
 				errorTemplate: '<span class="help-block">#=message#</span>',
+				validateOnBlur: false
 			}).data("kendoValidator");
 		}
 		
