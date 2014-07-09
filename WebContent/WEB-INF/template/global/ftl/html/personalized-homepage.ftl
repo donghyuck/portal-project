@@ -678,6 +678,10 @@
 			background-color:transparent;
 		}
 		
+		.wrapper .header {
+			background-color: #fff;
+		}
+		
 		#pdf-view {
 			height: 500px;
 			margin: 0 auto;
