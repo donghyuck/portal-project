@@ -34,7 +34,7 @@
 				<nav class="navbar navbar-default" role="navigation">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
-						<div class="navbar-header">	`
+						<div class="navbar-header">
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">								
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
