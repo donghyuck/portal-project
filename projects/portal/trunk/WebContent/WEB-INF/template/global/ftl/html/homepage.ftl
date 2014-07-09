@@ -21,10 +21,11 @@
 			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {
 						
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();		
+				common.ui.setup({
+					features:{
+						backstretch : true
+					}
+				});	
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
@@ -49,6 +50,7 @@
 		</style>   	
 	</head>
 	<body>
+		<div class="wrapper">
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
 		<!-- END HEADER -->	
@@ -136,6 +138,7 @@
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->	
+		</div><!-- /.wrapper -->
 		
 		<!-- START TEMPLATE -->
 		<#include "/html/common/common-homepage-templates.ftl" >		
