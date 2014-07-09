@@ -141,10 +141,8 @@
 		                <span class="label label-primary">접속 IP</span>&nbsp;<small>${ request.getRemoteAddr() }</small><span class="label label-warning"></span>
 		            </div>
 		        </div>
-		        <div class="row margin-bottom-20">
-		            <div id="signin-status"  class="col-sm-12">
-		                
-		            </div>
+		        <div class="row">
+		            <div id="signin-status"  class="col-sm-12"></div>
 		        </div>
 		        <div class="row">
 		            <div class="col-md-10 col-md-offset-1">
