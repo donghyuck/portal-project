@@ -105,8 +105,16 @@
 		<div class="page-loader"></div>
 		<div class="container" style="min-height:450px;">
 		
+		<div class="popover left">
+      <div class="arrow"></div>
+      <h3 class="popover-title">Popover bottom</h3>
+
+      <div class="popover-content">
+        <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</p>
+      </div>
+    </div>
 			<div id="signin-block" class="reg-block reg-block-transparent  pull-right">
-		        <div class="reg-block-header">
+		        <div class="reg-block-header">		        
 		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 		            <ul class="social-icons text-center">
 		                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
