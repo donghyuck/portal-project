@@ -76,7 +76,7 @@
 		            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 		            <input type="text" class="form-control" placeholder="비밀번호">
 		        </div>
-		        <hr>
+		        <hr class="no-margin">
 		        <label class="checkbox">
 		            <input type="checkbox"> 
 		            <p>로그인 상태 유지</p>
