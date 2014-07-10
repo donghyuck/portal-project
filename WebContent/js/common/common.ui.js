@@ -2033,9 +2033,29 @@
 	Widget = kendo.ui.Widget, 
 	proxy = $.proxy,
 	keys = kendo.keys,
+	UNDEFINED = 'undefined',	
 	CLICK = "click",
 	CHANGE = "change",
+	RADIO = "radio",
 	DISABLED = "disabled";
+
+	
+	function defined(x) {
+		return (typeof x != UNDEFINED);
+	}
+	
+	common.ui.buttons = function ( options ){		
+		options = options || {};	
+		if( defined(options.renderTo)){
+			if($(options.renderTo).data("kendoExtRadioButtons")){
+				return	$(options.renderTo).data("kendoExtRadioButtons");
+			)else{
+				if( options.type === RADIO){
+					return new common.ui.ExtRadioButtons( $(options.renderTo), options); 				
+				}	 
+			}
+		}
+	}
 	
 	common.ui.ExtRadioButtons = Widget.extend({
 		init: function(element, options) {
@@ -2071,7 +2091,7 @@
         	
         	if(that.radio){
         		that.value = that._value();
-        		input.on("change", function(e){
+        		input.on(CHANGE, function(e){
         			if( that.value != this.value ){
         				that.value = value ;
         				that.trigger( CHANGE, { value: that.value } )
