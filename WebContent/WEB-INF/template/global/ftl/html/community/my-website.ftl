@@ -97,7 +97,7 @@
 					$("#notice-grid").data('kendoGrid').dataSource.read();
 				}
 			});	
-			createNoticeGrid();							
+			createNoticeGrid();
 		}
 		
 		function getNoticeTarget (){
@@ -164,9 +164,38 @@
 		}
 		
 		function showNoticePanel(){
-			alert(kendo.stringify(selectedNotice()));
+			var renderTo = "#notice-view";
+			var noticeToUse = selectedNotice();
+			if( !$(renderTo).data("model") ){				
+				ver template = kendo.template("#notice-view-template");
+				var model =  kendo.observable({ 
+					announce : new Announce (),
+					profilePhotoUrl : "",
+					visible:false,
+					editable:false
+				});				
+				$(renderTo).data("model", model);
+				kendo.bind($(renderTo), model );
+			}			
+			noticeToUse.copy( $(renderTo).data("model").announce  );
+			$(renderTo).data("model").set("visible", true);
+			$(renderTo).data("model").set("editable", hasPermissions(noticeToUse.user));
+			$(renderTo).data("model").set("profilePhotoUrl", common.api.user.photoUrl (noticeToUse.user, 150,150) );			
 		}
-		
+						
+		function hasPermissions(user){
+			var hasPermission = false;
+			var userToUse =  $("#account-navbar").data("kendoExtAccounts").token;
+			if( userToUse.company.companyId == ${ webSite.company.companyId } ){
+				if( userToUse.hasRole("ROLE_ADMIN") || userToUse.hasRole("ROLE_ADMIN_SITE") ){
+					hasPermission = true;
+				}				
+			}			
+			if( typeof user == "object" && userToUse.userId == user.userId ){
+				hasPermission = true;
+			}			
+			retrun hasPermission;
+		}			
 								
 		function createNoticeGrid2(){
 			if( !$("#notice-grid").data('kendoGrid') ){				
