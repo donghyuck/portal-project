@@ -963,12 +963,8 @@
 		.wrapper .header {
 			background-color: #fff;
 		}
-		/*		
-		#personalized-area{
-			border-bottom: 1px dashed #f5f5f5;
-		}*/
 		
-		#announce-grid .k-grid-content {
+		#notice-grid .k-grid-content {
 			min-height : 300px;
 		}
 		
