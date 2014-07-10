@@ -2093,7 +2093,7 @@
         		that.value = that._value();
         		input.on(CHANGE, function(e){
         			if( that.value != this.value ){
-        				that.value = value ;
+        				that.value = this.value ;
         				that.trigger( CHANGE, { value: that.value } )
         			}
         		} );        		
