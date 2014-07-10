@@ -35,7 +35,8 @@
 			'${request.contextPath}/js/ace/ace.js'
 			],        	   
 			complete: function() {			
-			
+				
+				// SETUP COMMON
 				common.ui.setup({
 					features:{
 						backstretch : true,
@@ -43,11 +44,6 @@
 						spmenu : true
 					}
 				});	
-				
-				// 2.  MEUN 설정
-				preparePersonalizedArea($("#personalized-area"), 3, 4 );
-					
-				// 3. ACCOUNTS LOAD	
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
 					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
@@ -61,14 +57,10 @@
 						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");
 						$(".navbar .navbar-header").append("<a href='#personalized-controls-section'  data-toggle='spmenu' class='navbar-toggle-inverse visible-xs'><i class='fa fa-cloud-upload fa-2x'></i></a>");															
 					},									
-				});				
-			
-				// 4-1. Announces 							
-				$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
+				});	
+				preparePersonalizedArea($("#personalized-area"), 3, 4 );
 				
-				createNoticeGrid();
-																			
-				// 4-2. Right Tabs								
+				// 2. SPMenu Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					//e.preventDefault();		
 					var show_bs_tab = $(e.target);
@@ -78,14 +70,37 @@
 						createPhotoListView();
 					}					
 				});
+				
+					
+				// 3. Notice	
+				createNoticeSection();
+			
+				// 4-1. Announces 							
+				//$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
+				
+				//createNoticeGrid();
+																			
+
 				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
 			}
 		}]);	
 		
 		<!-- ============================== -->
-		<!-- Notice grid										       -->
-		<!-- ============================== -->								
+		<!-- Notice 											       -->
+		<!-- ============================== -->				
+		function createNoticeSection(){
+			
+			var buttons = common.ui.buttons({
+				renderTo: "#notice-target-button",
+				type: "radio",
+				change: function(e){
+					alert(e.value);
+				}
+			});		
+			
+		}
+						
 		function createNoticeGrid(){
 			if( !$("#notice-grid").data('kendoGrid') ){				
 				$("#notice-grid").data('announceTargetPlaceHolder', 30);				
