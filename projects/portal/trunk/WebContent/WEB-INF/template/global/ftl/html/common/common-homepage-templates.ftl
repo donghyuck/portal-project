@@ -82,11 +82,11 @@
 
 <script type="text/x-kendo-template" id="notice-view-template">	
 <p data-bind="visible:editable"><button type="button" class="btn-u btn-u-blue btn-u-small">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small">삭제</button></p>
-<div class="panel panel-default no-margin-b animated fadeInLeft" bind="visible:visible">
+<div class="panel panel-default no-margin-b animated fadeInLeft"  data-bind="visible:visible">
 	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 		<h4 class="panel-title" data-bind="html:announce.subject"></h4>		
 	</div>
-	<div class="panel-body padding-sm" data-bind="visible:visible">
+	<div class="panel-body padding-sm">
 		<ul class="list-unstyled text-muted">
 			<li><span class="label label-primary label-lightweight">게시 기간</span> <span data-bind="text: announce.formattedStartDate"></span> ~ <span data-bind="text: announce.formattedEndDate"></span></li>
 			<li><span class="label label-default label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
