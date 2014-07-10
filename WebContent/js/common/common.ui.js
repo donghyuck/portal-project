@@ -56,8 +56,7 @@
 		
 		if( $(element).length == 0 ){
 			$('body').prepend("<div class='page-loader' ></div>");
-		}
-		
+		}		
 		 $(element).fadeOut('slow');
 	}
 	
@@ -388,6 +387,8 @@
 		}, options.type || "error");
 	};
 })(jQuery);
+
+
 
 /**
  * extAccounts widget
@@ -2022,7 +2023,54 @@
 
 
 
-
+/**
+ * ExtButton Widget
+ */
+(function ($, undefined) {
+	var common = window.common = window.common || {};
+	common.ui = common.ui || {};
+	var kendo = window.kendo, 
+	Widget = kendo.ui.Widget, 
+	proxy = $.proxy,
+	keys = kendo.keys,
+	CLICK = "click",
+	CHANGE = "change",
+	DISABLEDSTATE = "k-state-disabled",
+	DISABLED = "disabled";
+	
+	var common.ui.ExtButtons =  Widget.extend({
+		init: function(element, options) {
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			element = that.wrapper = that.element;
+			options = that.options;
+			options.enable = options.enable && !element.attr(DISABLED);
+			that.enable(options.enable);
+			kendo.notify(that);
+		},
+        events: [
+            CLICK
+        ],
+        options: {
+        	name:"ExtButtons",
+        	enable:true
+        }
+		enable: function(enable) {
+            var that = this,
+                element = that.element;
+            if (enable === undefined) {
+                enable = true;
+            }
+            enable = !!enable;
+            that.options.enable = enable;
+            element.toggleClass(DISABLEDSTATE, !enable)
+                   .attr("aria-disabled", !enable)
+                   .attr(DISABLED, !enable);
+            element.blur();
+        }		
+	});
+	
+})(jQuery);
 /**
  * extPanel widget
  */
@@ -2099,15 +2147,8 @@
 			var guid = common.api.guid().toLowerCase() ;
 			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
 			return new common.ui.ExtPanel( $("#" + guid ), options); 
-		}
-		
-		
-		//if (element.length == 0) {
-		//	alert( element.attr('id'))
-			//$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
-		//}				
+		}		
 	}
-
 	
 	common.ui.ExtPanel = Widget.extend({
 		init : function(element, options) {
