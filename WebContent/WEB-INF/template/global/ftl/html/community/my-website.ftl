@@ -1238,7 +1238,11 @@
 		<div class="container">	
 			<h1>공지 & 이벤트 
 				<small>		
-					소스를 선택하세요 	
+					소스를 선택하세요 							
+				</small>
+			</h1>		
+			<div class="row ">
+				<div class="col-sm-4">
 					<div id="notice-target-button" class="btn-group" data-toggle="buttons">
 						<label class="btn btn-info btn-sm active">
 							<input type="radio" name="notice-target" value="30" >사이트
@@ -1246,11 +1250,9 @@
 						<label class="btn btn-info btn-sm ">
 							<input type="radio" name="notice-target" value="1">회사
 						</label>
-					</div>						
-				</small>
-			</h1>		
-			<div class="row ">
-				<div class="col-sm-4"><div  id="notice-grid"></div></div>
+					</div>					
+					<div  id="notice-grid"></div>
+				</div>
 				<div class="col-sm-8"><div  id="notice-view"></div></div>
 			</div>				
 		</div>
