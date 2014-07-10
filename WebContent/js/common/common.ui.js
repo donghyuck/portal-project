@@ -2046,12 +2046,12 @@
 	
 	common.ui.buttons = function ( options ){		
 		options = options || {};	
-		if( defined(options.renderTo)){
+		if( defined(options.renderTo) ){
 			if($(options.renderTo).data("kendoExtRadioButtons")){
 				return	$(options.renderTo).data("kendoExtRadioButtons");
-			)else{
+			}else{
 				if( options.type === RADIO){
-					return new common.ui.ExtRadioButtons( $(options.renderTo), options); 				
+					return new common.ui.ExtRadioButtons( $(options.renderTo), options ); 				
 				}	 
 			}
 		}
