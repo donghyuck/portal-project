@@ -99,7 +99,7 @@
 				}),
 				title: "공지 & 이벤트", 
 				actions:["Custom", "Minimize", "Close"],
-				template: kendo.template($("#notice-view-template").html()),   
+				template: kendo.template($("#notice-viewer-template").html()),   
 				custom: function(e){
 					var optTemplate = kendo.template($("#notice-options-template").html());
 					var heading =  e.target.element.children(".panel-heading");
@@ -1027,7 +1027,7 @@
 	</div>
 	</script>
 	
-	<script type="text/x-kendo-template" id="notice-view-template">	
+	<script type="text/x-kendo-template" id="notice-viewer-template">	
 	<div class="panel panel-default no-border no-margin-b" data-bind="visible: visible">
 		<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 			<h4 class="panel-title" data-bind="html:announce.subject"></h4>
