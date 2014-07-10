@@ -153,8 +153,18 @@
 			}	
 		}	
 		
-		function showNotice(){
+		function selectedNotice(){
+			var grid = $("#notice-grid").data('kendoGrid');
+			var selectedCells = grid.select();
+			if( selectedCells.length > 0){
+				return grid.dataItem( selectedCells );						
+			}else{
+				return new Announce ();
+			}
+		}
 		
+		function showNoticePanel(){
+			alert(kendo.stringify(selectedNotice()));
 		}
 		
 								
