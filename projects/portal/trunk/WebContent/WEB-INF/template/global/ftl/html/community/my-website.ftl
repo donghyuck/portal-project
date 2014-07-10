@@ -194,7 +194,7 @@
 			if( typeof user == "object" && userToUse.userId == user.userId ){
 				hasPermission = true;
 			}			
-			retrun hasPermission;
+			return hasPermission;
 		}			
 								
 		function createNoticeGrid2(){
