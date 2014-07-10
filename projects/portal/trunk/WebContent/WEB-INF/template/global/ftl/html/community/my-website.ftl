@@ -1126,7 +1126,7 @@
 <div class="one-page">
 	<div class="one-page-inner one-default">
 		<div class="container" style="min-height:600px;">	
-			<h1>At vero eos et accusamus et iusto odio dignissimos</h1>		
+			<h1>공지 & 이벤트</h1>		
 			<div class="row ">
 				<div class="col-sm-4">ss</div>
 				<div class="col-sm-8">ss</div>
