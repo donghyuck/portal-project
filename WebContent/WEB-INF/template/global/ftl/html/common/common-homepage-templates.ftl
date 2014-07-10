@@ -81,7 +81,7 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-<div class="panel panel-default no-border no-margin-b">
+<div class="panel panel-default no-border no-margin-b animated fadeInLeft">
 	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 		<h4 class="panel-title" data-bind="html:announce.subject"></h4>
 	</div>
