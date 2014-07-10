@@ -1140,7 +1140,7 @@
 			</h1>		
 			<div class="row ">
 				<div class="col-sm-4"><div  id="announce-grid"></div></div>
-				<div class="col-sm-8">ss</div>
+				<div class="col-sm-8"><div  id="notice-viewer"></div></div>
 			</div>				
 		</div>
 	</div>	
@@ -1193,7 +1193,7 @@
 										<div class="col-lg-12">
 											<div class="panel panel-default" style="margin-bottom: 20px;">
 												<div class="panel-body">													
-													<div  id="notice-viewer"></div>																										
+																																					
 												</div>
 											</div>												
 										</div>																		
