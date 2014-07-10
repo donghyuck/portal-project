@@ -89,19 +89,71 @@
 		<!-- ============================== -->
 		<!-- Notice 											       -->
 		<!-- ============================== -->				
-		function createNoticeSection(){
-			
+		function createNoticeSection(){			
 			var buttons = common.ui.buttons({
 				renderTo: "#notice-target-button",
 				type: "radio",
 				change: function(e){
 					alert(e.value);
 				}
-			});		
-			
+			});	
+			createNoticeGrid();							
 		}
-						
+		
+		function getNoticeTarget (){
+			var renderTo = "#notice-target-button";
+			return $(renderTo).data("kendoExtRadioButtons").value;
+		}
+		
 		function createNoticeGrid(){
+			if( !$("#notice-grid").data('kendoGrid') ){				
+				$("#notice-grid").data('announceTargetPlaceHolder', 30);				
+				$("#notice-grid").kendoGrid({
+					dataSource : new kendo.data.DataSource({
+						transport: {
+							read: {
+								type : 'POST',
+								dataType : "json", 
+								url : '${request.contextPath}/community/list-announce.do?output=json'
+							},
+							parameterMap: function(options, operation) {
+								if (operation != "read" && options.models) {
+									return {models: kendo.stringify(options.models)};
+								}else{								
+									return {objectType: getNoticeTarget() };								
+								}
+							} 
+						},
+						pageSize: 10,
+						error:common.api.handleKendoAjaxError,
+						schema: {
+							data : "targetAnnounces",
+							model : Announce,
+							total : "totalAnnounceCount"
+						}
+					}),
+					sortable: true,
+					columns: [ 
+						{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
+						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, template: '#: subject # <div class="btn-group"><button type="button" class="btn btn-warning btn-xs" onclick="showNoticeEditor();return false;">편집</a><button type="button" class="btn btn-warning btn-xs" onclick="showNoticeViewer();return false;">보기</a></div>'}, 
+					],
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
+					selectable: "row",
+					change: function(e) { 
+						var selectedCells = this.select();
+						if( selectedCells.length > 0){
+							var selectedCell = this.dataItem( selectedCells );								
+							//setNoticeEditorSource(selectedCell);
+						}
+					},
+					dataBound: function(e) {
+					
+					}
+				});		
+			}	
+		}	
+								
+		function createNoticeGrid2(){
 			if( !$("#notice-grid").data('kendoGrid') ){				
 				$("#notice-grid").data('announceTargetPlaceHolder', 30);				
 				$("#notice-grid").kendoGrid({
@@ -1158,7 +1210,7 @@
 				</small>
 			</h1>		
 			<div class="row ">
-				<div class="col-sm-4"></div>
+				<div class="col-sm-4"><div  id="notice-grid"></div></div>
 				<div class="col-sm-8"></div>
 			</div>				
 		</div>
