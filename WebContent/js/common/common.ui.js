@@ -2038,7 +2038,7 @@
 	DISABLEDSTATE = "k-state-disabled",
 	DISABLED = "disabled";
 	
-	var common.ui.ExtButtons = Widget.extend({
+	common.ui.ExtButtons = Widget.extend({
 		init: function(element, options) {
 			var that = this;
 			Widget.fn.init.call(that, element, options);
