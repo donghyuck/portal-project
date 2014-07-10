@@ -1154,16 +1154,7 @@
 						<label class="btn btn-info btn-sm ">
 							<input type="radio" name="notice-target" value="1">회사
 						</label>
-					</div>	
-					
-					<div class="btn-group" data-toggle="buttons">
-												<label class="btn btn-info btn-sm active">
-													<input type="radio" name="announce-selected-target" value="30" >사이트
-												</label>
-												<label class="btn btn-info btn-sm ">
-													<input type="radio" name="announce-selected-target" value="1">회사
-												</label>
-					</div>							
+					</div>						
 				</small>
 			</h1>		
 			<div class="row ">
