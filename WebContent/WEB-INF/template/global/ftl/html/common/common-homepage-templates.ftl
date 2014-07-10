@@ -84,6 +84,7 @@
 <div class="panel panel-default no-border no-margin-b animated fadeInLeft">
 	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 		<h4 class="panel-title" data-bind="html:announce.subject"></h4>
+		<div class="panel-header-actions"><button type="button" class="btn-u">편집</button></div>
 	</div>
 	<div class="panel-body padding-sm">
 		<ul class="list-unstyled text-muted">
@@ -113,7 +114,7 @@
 <script type="text/x-kendo-tmpl" id="news-viewer-template">		
 	<div class="page-heading">
 		<h4 data-bind="html:news.subject"></h4>		
-		<div class="panel-header-actions"><button type="button" class="btn-u">편집</button></div>
+
 	</div>													
 	<div class="media">
 		<a class="pull-left" href="\\#">
