@@ -1252,7 +1252,7 @@
 								<input type="radio" name="notice-target" value="1">회사
 							</label>
 						</div>
-						<button type="button"	class="btn-u btn-u-blue">공지 만들기</button>		
+						<button type="button"	class="btn-u btn-u-red">공지 만들기</button>		
 					</div>		
 					<div  id="notice-grid"></div>
 				</div>
