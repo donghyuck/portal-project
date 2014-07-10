@@ -2054,7 +2054,7 @@
         options: {
         	name:"ExtButtons",
         	enable:true
-        }
+        },
 		enable: function(enable) {
             var that = this,
                 element = that.element;
