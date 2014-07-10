@@ -2077,7 +2077,7 @@
         _value: function(){
         	var that = this;
         	if(that.radio){
-        		var value = that.element.find(".active input[type='radio']").val();
+        		return that.element.find(".active input[type='radio']").val();
         	}
         },
         _radio: function(){
