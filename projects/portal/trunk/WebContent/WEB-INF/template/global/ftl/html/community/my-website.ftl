@@ -1140,8 +1140,8 @@
 				</small>
 			</h1>		
 			<div class="row ">
-				<div class="col-sm-4"><div  id="announce-grid"></div></div>
-				<div class="col-sm-8"><div  id="notice-viewer"></div></div>
+				<div class="col-sm-4"></div>
+				<div class="col-sm-8"></div>
 			</div>				
 		</div>
 	</div>	
@@ -1163,7 +1163,7 @@
 									<h5>
 										<small><i class="fa fa-info"></i> 사이트(${webSite.displayName})/회사(${user.company.displayName}) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다.</small>
 										<p>
-															
+													<div  id="announce-grid"></div>		
 										</p>
 									</h5>
 									<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
@@ -1194,7 +1194,7 @@
 										<div class="col-lg-12">
 											<div class="panel panel-default" style="margin-bottom: 20px;">
 												<div class="panel-body">													
-																																					
+															<div  id="notice-viewer"></div>																						
 												</div>
 											</div>												
 										</div>																		
