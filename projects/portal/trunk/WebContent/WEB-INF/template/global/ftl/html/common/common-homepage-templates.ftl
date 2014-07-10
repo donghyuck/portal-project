@@ -81,7 +81,7 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-<p><button type="button" class="btn-u btn-u-blue btn-u-small">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small">삭제</button></p>
+<p data-bind="visible: editable"><button type="button" class="btn-u btn-u-blue btn-u-small">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small">삭제</button></p>
 <div class="panel panel-default no-margin-b animated fadeInLeft">
 	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 		<h4 class="panel-title" data-bind="html:announce.subject"></h4>		
