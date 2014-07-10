@@ -173,7 +173,7 @@
 					profilePhotoUrl : "",
 					visible:false,
 					editable:false
-				});				
+				});	
 				$(renderTo).data("model", model);
 				kendo.bind($(renderTo), model );
 			}			
