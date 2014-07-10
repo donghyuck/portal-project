@@ -1,4 +1,6 @@
-
+<!-- ============================== -->
+<!-- my photo template                                   -->
+<!-- ============================== -->
 <script type="text/x-kendo-template" id="photo-view-template">	
 	<figure class="effect-marley" data-ride="lightbox" >
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#:imageId#" alt="#:name# 이미지"/>
@@ -50,7 +52,9 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 </script>	
-
+<!-- ============================== -->
+<!-- notice template                                   -->
+<!-- ============================== -->
 <script type="text/x-kendo-template" id="notice-options-template">	
 <div class="popover bottom">
 	<div class="arrow"></div>
