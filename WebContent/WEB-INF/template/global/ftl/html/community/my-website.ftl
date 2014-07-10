@@ -1207,7 +1207,7 @@
 			</h1>		
 			<div class="row ">
 				<div class="col-sm-4"><div  id="notice-grid"></div></div>
-				<div class="col-sm-8"></div>
+				<div class="col-sm-8"><div  id="notice-view"></div></div>
 			</div>				
 		</div>
 	</div>	
