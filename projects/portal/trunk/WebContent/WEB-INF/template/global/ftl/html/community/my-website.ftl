@@ -1261,7 +1261,7 @@
 				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
 					<div class="panel panel-default">
 						<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
-							<div class="k-window-actions panel-header-actions">										
+							<div class="k-window-actions panel-header-controls">										
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
 								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
 								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
