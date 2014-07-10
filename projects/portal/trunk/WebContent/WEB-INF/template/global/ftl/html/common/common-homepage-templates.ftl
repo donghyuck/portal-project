@@ -113,6 +113,7 @@
 <script type="text/x-kendo-tmpl" id="news-viewer-template">		
 	<div class="page-heading">
 		<h4 data-bind="html:news.subject"></h4>		
+		<div class="panel-header-actions"><button type="button" class="btn-u">편집</button></div>
 	</div>													
 	<div class="media">
 		<a class="pull-left" href="\\#">
