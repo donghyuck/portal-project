@@ -10,6 +10,7 @@
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
+			'css!${request.contextPath}/styles/common.pages/common.page_one.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
 			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
 			
@@ -1122,7 +1123,17 @@
 			<div class="container-fluid">		
 				<div id="personalized-area" class="row"></div>				
 			</div><!-- ./container-fluid -->	
-					
+<div class="one-page">
+	<div class="one-page-inner one-default">
+		<div class="container" style="min-height:600px;">	
+			<h1>At vero eos et accusamus et iusto odio dignissimos</h1>		
+			<div class="row ">
+				<div class="col-sm-4">ss</div>
+				<div class="col-sm-8">ss</div>
+			</div>				
+		</div>
+	</div>	
+</div>					
 		<div class="container padding-sm" style="min-height:600px;">			
 			<div class="row blank-top-10">				
 				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
