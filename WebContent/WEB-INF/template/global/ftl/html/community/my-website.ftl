@@ -1127,7 +1127,8 @@
 	<div class="one-page-inner one-default">
 		<div class="container" style="min-height:600px;">	
 			<h1>공지 & 이벤트 
-				<small>			
+				<small>		
+					소스를 선택하세요 	
 					<div class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active">
 													<input type="radio" name="announce-selected-target" value="30" >사이트
