@@ -2803,6 +2803,11 @@ ul.labels-demo li {
 	margin-top: -20px;
 }
 
+.panel-heading-controls>* {
+	display: block;
+	float: left;
+}
+
 .scrollable{
 overflow-y: auto;	
 }
