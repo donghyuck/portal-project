@@ -52,7 +52,7 @@
 </script>	
 
 <script type="text/x-kendo-template" id="notice-options-template">	
-<div class="popover top">
+<div class="popover bottom">
 	<div class="arrow"></div>
 	<h3 class="popover-title">소스 설정			
 		<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
