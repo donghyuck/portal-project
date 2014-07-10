@@ -1413,34 +1413,7 @@
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->			
-		<!-- START TEMPLATE -->				
-
-		<script type="text/x-kendo-tmpl" id="attachment-list-view-template">
-			<div class="img-wrapper">			
-			#if (contentType.match("^image") ) {#
-				<img src="${request.contextPath}/community/view-my-attachment.do?width=150&height=150&attachmentId=#:attachmentId#" alt="#:name# 이미지" />
-			# } else { #			
-				<img src="http://placehold.it/146x146&amp;text=[file]"></a>
-			# } #	
-				<div class="img-description">
-					<h3>#:name#</h3>
-					<p>#:size# 바이트</p>
-				</div>
-			</div>
-		</script>	
-		<script type="text/x-kendo-tmpl" id="photo-list-view-template">
-			<div class="img-wrapper">			
-			#if (contentType.match("^image") ) {#
-				<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#:imageId#" alt="#:name# 이미지" />
-			# } else { #			
-				<img src="http://placehold.it/146x146&amp;text=[file]"></a>
-			# } #	
-				<div class="img-description">
-					<h3>#:name#</h3>
-					<p>#:size# 바이트</p>
-				</div>
-			</div>
-		</script>						
+		<!-- START TEMPLATE -->					
 		<script type="text/x-kendo-tmpl" id="notice-editor-template">
 			<div class="panel panel-default">
 				<div class="panel-body"  style="padding:5px;">		
