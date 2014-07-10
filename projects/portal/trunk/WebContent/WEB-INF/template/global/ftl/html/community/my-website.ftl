@@ -143,7 +143,7 @@
 						var selectedCells = this.select();
 						if( selectedCells.length > 0){
 							var selectedCell = this.dataItem( selectedCells );								
-							showNotice();
+							showNoticePanel();
 						}
 					},
 					dataBound: function(e) {
