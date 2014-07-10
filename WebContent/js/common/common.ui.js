@@ -2414,7 +2414,7 @@
 		heading: template(
 			"<div class='panel-heading'>" +
 			"<h3 class='panel-title'>#= title #</h3>" +
-			"<div class='k-window-actions panel-header-actions'>" +
+			"<div class='k-window-actions panel-header-controls'>" +
 			"<div class='k-window-actions'>" +
             "# for (var i = 0; i < actions.length; i++) { #" +
                 "#= action({ name: actions[i] }) #" +
@@ -2491,7 +2491,7 @@
 						// kendo.bind($(that.element), observable );
 					}
 					$(that.element)
-							.find(".panel-header-actions a.k-link")
+							.find(".panel-header-controls a.k-link")
 							.each(
 									function(index) {
 										$(this)
