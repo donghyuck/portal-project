@@ -1242,7 +1242,7 @@
 				</small>
 			</h1>		
 			<div class="row ">
-				<div class="col-sm-4">
+				<div class="col-sm-4 pull">
 					<div id="notice-target-button" class="btn-group" data-toggle="buttons">
 						<label class="btn btn-info btn-sm active">
 							<input type="radio" name="notice-target" value="30" >사이트
