@@ -1238,7 +1238,7 @@
 		<div class="container">	
 			<h1>공지 & 이벤트 
 				<small>		
-					소스를 선택하세요 							
+					소스를 선택하세요. 							
 				</small>
 			</h1>		
 			<div class="row ">
