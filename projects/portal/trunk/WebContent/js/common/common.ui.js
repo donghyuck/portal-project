@@ -2035,39 +2035,50 @@
 	keys = kendo.keys,
 	CLICK = "click",
 	CHANGE = "change",
-	DISABLEDSTATE = "k-state-disabled",
 	DISABLED = "disabled";
 	
-	common.ui.ExtButtons = Widget.extend({
+	common.ui.ExtRadioButtons = Widget.extend({
 		init: function(element, options) {
 			var that = this;
 			Widget.fn.init.call(that, element, options);
 			element = that.wrapper = that.element;
 			options = that.options;
-			options.enable = options.enable && !element.attr(DISABLED);
-			that.enable(options.enable);
+			that._radio();
 			kendo.notify(that);
 		},
         events: [
-            CLICK
+            CLICK,
+            CHANGE
         ],
         options: {
-        	name:"ExtButtons",
+        	name:"ExtRadioButtons",
         	enable:true
         },
-		enable: function(enable) {
-            var that = this,
-                element = that.element;
-            if (enable === undefined) {
-                enable = true;
-            }
-            enable = !!enable;
-            that.options.enable = enable;
-            element.toggleClass(DISABLEDSTATE, !enable)
-                   .attr("aria-disabled", !enable)
-                   .attr(DISABLED, !enable);
-            element.blur();
-        }		
+        _value: function(){
+        	var that = this;
+        	if(that.radio){
+        		var value = that.element.find(".active input[type='radio']").val();
+        	}
+        },
+        _radio: function(){
+        	var that = this;
+        	var input = that.element.find("input[type='radio']");
+        	if(input.length > 0){
+        		that.radio = true ;
+        	}else{
+        		that.radio = false ;
+        	}
+        	
+        	if(that.radio){
+        		that.value = that._value();
+        		input.on("change", function(e){
+        			if( that.value != this.value ){
+        				that.value = value ;
+        				that.trigger( CHANGE, { value: that.value } )
+        			}
+        		} );        		
+        	}
+        }        
 	});
 	
 })(jQuery);
