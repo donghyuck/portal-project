@@ -1128,7 +1128,7 @@
 		<div class="container" style="min-height:600px;">	
 			<h1>공지 & 이벤트 <small>사이트(메르디앙)/회사(메르디앙) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다.</small></h1>		
 			<div class="row ">
-				<div class="col-sm-4">ss</div>
+				<div class="col-sm-4"><div  id="announce-grid"></div></div>
 				<div class="col-sm-8">ss</div>
 			</div>				
 		</div>
@@ -1167,7 +1167,7 @@
 										</div>											
 									</#if>
 								</div>								
-								<div  id="announce-grid"></div>	
+								
 							</div>
 							<div  id="notice-viewer-panel" class="panel-body" style="display:none;">
 									<div class="row">
