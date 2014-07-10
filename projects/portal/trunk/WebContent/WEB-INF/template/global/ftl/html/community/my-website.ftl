@@ -1126,17 +1126,18 @@
 <div class="one-page">
 	<div class="one-page-inner one-default">
 		<div class="container" style="min-height:600px;">	
-			<h1>공지 & 이벤트 <small>사이트(메르디앙)/회사(메르디앙) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다.
-			
-			<div class="btn-group" data-toggle="buttons">
+			<h1>공지 & 이벤트 
+				<small>			
+					<div class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active">
 													<input type="radio" name="announce-selected-target" value="30" >사이트
 												</label>
 												<label class="btn btn-info btn-sm ">
 													<input type="radio" name="announce-selected-target" value="1">회사
 												</label>
-											</div>							
-			</small></h1>		
+					</div>							
+				</small>
+			</h1>		
 			<div class="row ">
 				<div class="col-sm-4"><div  id="announce-grid"></div></div>
 				<div class="col-sm-8">ss</div>
