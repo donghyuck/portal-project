@@ -1,3 +1,6 @@
+<!-- ============================== -->
+<!-- my file view panel template                        -->
+<!-- ============================== -->
 <script type="text/x-kendo-template" id="file-panel-template">
 	<div class="panel panel-default">
 		<div class="panel-heading">
@@ -151,70 +154,6 @@
 		</div>				
 	</div>		
 </script>
-
-<script type="text/x-kendo-template" id="file-view-template">
-	<div class="panel panel-default">
-		<div class="panel-heading">#= name # 미리보기<button id="image-view-btn-close" type="button" class="close">&times;</button></div>
-		<div class="panel-body">
-			#if (contentType.match("^image") ) {#			
-			<img src="${request.contextPath}/community/view-my-attachment.do?attachmentId=#= attachmentId #" alt="#:name# 이미지" class="img-responsive"/>			
-			# } else { #		
-				#if (contentType == "application/pdf" ) {#
-				<div id="pdf-view"></div>
-				# } else { #	
-				<div class="k-grid k-widget" style="width:100%;">
-					<div style="padding-right: 17px;" class="k-grid-header">
-						<div class="k-grid-header-wrap">
-							<table cellSpacing="0">
-								<thead>
-									<tr>
-										<th class="k-header">속성</th>
-										<th class="k-header">값</th>
-									</tr>
-								</thead>
-							</table>
-						</div>
-					</div>
-					<div style="height: 199px;" class="k-grid-content">
-						<table style="height: auto;" class="system-details" cellSpacing="0">
-							<tbody>
-								<tr>
-									<td>파일</td>
-									<td>#= name #</td>
-								</tr>
-								<tr class="k-alt">
-									<td>종류</td>
-									<td>#= contentType #</td>
-								</tr>
-								<tr>
-									<td>크기(bytes)</td>
-									<td>#= size #</td>
-								</tr>				
-								<tr>
-									<td>다운수/클릭수</td>
-									<td>#= downloadCount #</td>
-								</tr>											
-							</tbody>
-						</table>	
-					</div>
-				</div>
-				# } #
-			# } #  			
-		</div>
-		<div class="panel-footer">
-			<a class="btn btn-default" href="${request.contextPath}/community/download-my-attachment.do?attachmentId=#= attachmentId #" ><i class="fa fa-download"></i> 다운로드</a>
-			<button  type="button" class="btn btn-danger custom-attachment-delete"  data-for-attachmentId="#=attachmentId #" ><i class="fa fa-trash-o"></i> 삭제</button>		
-			<button  type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><i class="fa fa-upload"></i> 파일 변경하기</button>				
-			<ul class="dropdown-menu" style="min-width:400px; padding:10px;">
-				<li role="presentation" class="dropdown-header">마우스로 새로운 파일을 끌어 놓으세요.</li>
-				<li>
-					<input name="update-attach-file" id="update-attach-file" type="file"class="pull-right" />
-				</li>
-			</ul>			
-		</div>
-	</div>
-</script>
-
 <!-- EVENT -->
 <script type="text/x-kendo-tmpl" id="announcement-detail-panel-template">		
 	<div class="panel panel-default">
