@@ -94,7 +94,7 @@
 				renderTo: "#notice-target-button",
 				type: "radio",
 				change: function(e){
-					alert(e.value);
+					$("#notice-grid").data('kendoGrid').dataSource.read();
 				}
 			});	
 			createNoticeGrid();							
