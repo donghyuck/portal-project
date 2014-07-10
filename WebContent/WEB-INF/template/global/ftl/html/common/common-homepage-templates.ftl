@@ -84,7 +84,7 @@
 <div class="panel panel-default no-border no-margin-b animated fadeInLeft">
 	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 		<h4 class="panel-title" data-bind="html:announce.subject"></h4>
-		<div class="panel-header-controls"><button type="button" class="btn-u btn-u-red">편집</button></div>
+		<div class="panel-header-controls"><button type="button" class="btn-u btn-u-red btn-u-xs">편집</button></div>
 	</div>
 	<div class="panel-body padding-sm">
 		<ul class="list-unstyled text-muted">
