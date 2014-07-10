@@ -167,7 +167,7 @@
 			var renderTo = "#notice-view";
 			var noticeToUse = selectedNotice();
 			if( !$(renderTo).data("model") ){				
-				ver template = kendo.template("#notice-view-template");
+				ver template = kendo.template($("#notice-view-template").html());
 				var model =  kendo.observable({ 
 					announce : new Announce (),
 					profilePhotoUrl : "",
