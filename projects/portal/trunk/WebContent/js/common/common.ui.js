@@ -402,7 +402,7 @@
 			});
 		}
 		
-		if( isFunction(options.hide ){
+		if( isFunction(options.hide) ){
 			$("#" + renderToString).data("kendoNotification").bind("hide", options.hide );			
 		}
 		
