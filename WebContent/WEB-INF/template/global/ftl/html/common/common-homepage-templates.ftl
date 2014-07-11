@@ -84,7 +84,7 @@
 <div class="one-page-btn no-margin-b" data-bind="visible:visible">
 <button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="events{click:delete}">삭제</button>
 </div>
-<div class="panel panel-default no-margin-b animated fadeInLeft"  data-bind="visible:visible">
+<div class="panel panel-default animated fadeInLeft"  data-bind="visible:visible">
 	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 		<h4 class="panel-title" data-bind="html:announce.subject"></h4>		
 	</div>
