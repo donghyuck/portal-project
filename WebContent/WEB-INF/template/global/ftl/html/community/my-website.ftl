@@ -250,7 +250,16 @@
 					update : function (e) {
 						var btn = $(e.target);
 						btn.button('loading');
-						
+						if( this.announce.subject.length ==0 || this.announce.body.length  ){
+							common.ui.notification({
+								title:"공지 입력 오류", 
+								message: "제목 또는 본문을 입력하세요." ,
+								hide:function(e){
+									btn.button('reset');
+								}
+							});
+							return ;
+						}
 						if( this.announce.startDate >= this.announce.endDate  ){
 							common.ui.notification({
 								title:"공지 기간 입력 오류", 
