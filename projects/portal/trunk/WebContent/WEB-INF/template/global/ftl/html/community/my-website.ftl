@@ -188,9 +188,12 @@
 					}
 				});	
 				model.bind("change", function(e){
-					if(this.visible && $("#notice-editor").data("model").visible){
-						$("#notice-editor").data("model").set("visible", false);
+					if( e.field.match('visible')){ 				
+						if(this.visible && $("#notice-editor").data("model").visible){
+							$("#notice-editor").data("model").set("visible", false);
+						}					
 					}
+
 				});
 				$(renderTo).data("model", model);
 				kendo.bind($(renderTo), model );
