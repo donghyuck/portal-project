@@ -177,7 +177,7 @@
 					visible:false,
 					editable:false,
 					edit: function(e){
-						alert( "s" );
+						alert( $(renderTo).data("model").editable + "-"  + this.editable);
 						if($(renderTo).data("model").editable){
 							setNoticeEditorSource(this.announce);
 							openNoticeEditor();
