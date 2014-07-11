@@ -1389,6 +1389,9 @@
 					<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
 				</div>			
 				<div class="panel-body"  style="padding:5px;">		
+				ss
+				</div>
+				<div class="panel-footer"  style="padding:5px;">		
 					<div class="page-header text-primary" data-bind="visible: isNew">
 						<h5>
 							<small><span class="label label-danger">NEW</span> 공지 및 이벤트 생성 대상을 지정하세요. (디폴트는 값은 사이트)</small>
@@ -1412,8 +1415,10 @@
 						</div>
 						<label class="control-label">본문</label>
 						<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body'></textarea>
-					</div>									
+					</div>
+					<div class="panel-footer">Panel footer</div>									
 				</div>	
+				
 			</div>								
 		</script>
 		<#include "/html/common/common-homepage-templates.ftl" >	
