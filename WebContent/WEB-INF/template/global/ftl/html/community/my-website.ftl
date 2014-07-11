@@ -224,20 +224,17 @@
 		}
 
 		function openNoticeEditor(){			
-			var announcePlaceHolder = getNoticeEditorSource();
-			var renderTo = $("#notice-editor-panel");			
-			if( $('#notice-editor').text().trim().length == 0 ){			
-				var template = kendo.template($('#notice-editor-template').html());		
-				$('#notice-editor').html( template );	
-				var noticeEditorModel =  kendo.observable({ 
-					announce : announcePlaceHolder,
-					profilePhotoUrl : function(){
-						return common.api.user.photoUrl (this.get("announce").user, 150,150);
-					},
+			var noticePlaceHolder = getNoticeEditorSource();
+			var renderTo = "#notice-editor";			
+			if(!$(renderTo).data("model")){
+				var model =  kendo.observable({ 
+					announce : new Announce (),
+					profilePhotoUrl : "",
 					isNew : false,
-					doSave : function (e) {
+					update : function (e) {
 						var btn = $(e.target);
 						btn.button('loading');
+						
 						var template = kendo.template('<p class="text-danger">#:message#</p>');
 						if( this.announce.startDate >= this.announce.endDate  ){
 							common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
@@ -266,46 +263,31 @@
 							}
 						});
 					},
-					updateRequired : false,
-					editable : function(){
-						var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
-						if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
-							return true;
-						}
-						return false;
-					},
-					openNoticeProps : function(e){
-					
-					},
-					closeEditor : function(e){
-						kendo.fx(renderTo).expand("vertical").duration(200).reverse();								
-						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
+					changed : false,
+					close : function(e){
+							
 					}
 				});
-				noticeEditorModel.bind("change", function(e){				
-					if( e.field.match('^announce.')){ 						
-						if( this.announce.subject.length > 0 && this.announce.body.length  > 0 && ( this.announce.startDate <  this.announce.endDate  )  )	{			
-							noticeEditorModel.set("updateRequired", true);
-						}
-					}	
-				});	
-				kendo.bind(renderTo, noticeEditorModel );
-				renderTo.data("model", noticeEditorModel );
+				kendo.bind($(renderTo), model );
+				$(renderTo).data("model", model );
 				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor );
-			}
+				createEditor( "notice-editor" , bodyEditor );				
+			}		
 			
-			renderTo.data("model").set("updateRequired", false);			
-			renderTo.data("model").set("isNew", (announcePlaceHolder.announceId < 1 ));
-				
+			
+			noticeToUse.copy( $(renderTo).data("model").announce  );	
+			$(renderTo).data("model").set("changed", false);			
+			$(renderTo).data("model").set("isNew", (noticeToUse.announceId < 1 ));		
+							
+			/*	
 			if(announcePlaceHolder.objectType == 30){				
 				renderTo.find('input[name="announce-type"]:first').click();
 			}else{			
 				renderTo.find('input[name="announce-type"]:last').click();
-			}
+			}*/
 
-			$('#announce-panel > .panel > .panel-body').hide();
-			kendo.fx(renderTo).expand("vertical").duration(200).play();			
+			//$('#announce-panel > .panel > .panel-body').hide();
+			//kendo.fx(renderTo).expand("vertical").duration(200).play();			
 		}
 		
 		<!-- ============================== -->
