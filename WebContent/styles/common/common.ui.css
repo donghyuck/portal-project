@@ -398,7 +398,8 @@ color: #d9534f;
 }
 .notification-error {
 	width: 300px;
-	height: 100px;
+	min-height: 100px;
+	padding:10px;
 }
 
 .notification-error h3 {
