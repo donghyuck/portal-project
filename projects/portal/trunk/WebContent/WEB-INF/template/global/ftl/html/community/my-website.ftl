@@ -246,14 +246,17 @@
 						var btn = $(e.target);
 						btn.button('loading');
 						
-						common.ui.notification({
-							title:"오류", 
-							message: "시작일자가 종료일자보다 이후일 수 없습니다." ,
-							autoHideAfter: 0,
-							hide:function(e){
-								btn.button('reset');
-							}
-						});
+						if( this.announce.startDate >= this.announce.endDate  ){
+							common.ui.notification({
+								title:"공지 기간 입력 오류", 
+								message: "시작일자가 종료일자보다 이후일 수 없습니다." ,
+								autoHideAfter: 0,
+								hide:function(e){
+									btn.button('reset');
+								}
+							});
+							return ;
+						}
 						
 						/*
 						var template = kendo.template('<p class="text-danger">#:message#</p>');
