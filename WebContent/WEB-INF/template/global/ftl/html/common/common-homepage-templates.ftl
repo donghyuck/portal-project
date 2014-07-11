@@ -100,7 +100,7 @@
 					<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
 					<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
 					<li class="pull-right" data-bind="visible:editable">
-						<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="click:edit">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="click:delete">삭제</button>
+						<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="events{click:delete}">삭제</button>
 					</li>
 				</ul>	
 			</div>		
