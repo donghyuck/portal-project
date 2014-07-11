@@ -1397,7 +1397,7 @@
 								<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
 							</div>
 						</div>
-						<label class="control-label"><small>본문</small></label>
+						<label class="control-label">본문</label>
 						<textarea id="notice-editor-body" data-bind='value:announce.body'></textarea>
 					</div>									
 				</div>	
