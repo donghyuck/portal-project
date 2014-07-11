@@ -99,7 +99,7 @@
 			<div class="media-body">
 				<ul class="list-unstyled text-muted">
 					<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-					<li data-bind="visible:announce.user.emailVisible><span  data-bind="text: announce.user.email"></span></li>
+					<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
 					<li>
 						<button type="button" class="btn-u btn-u-blue btn-u-small">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small">삭제</button>
 					</li>
