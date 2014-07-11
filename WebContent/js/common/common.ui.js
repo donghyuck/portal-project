@@ -175,16 +175,16 @@
 		var setup = new common.ui.PageSetup(options);
 	}
 	
-	common.ui.effect = function( element , classes ) {		
+	common.ui.effect = function( renderTo , classes ) {		
 		 if (classes) {
 			classes = classes.split(" "); 
 			if (transitions) { 								
 				each(classes, function(idx, value) {
-					element.toggleClass(value, true);
+					renderTo.toggleClass(value, true);
 				}
-				element.one(transitions.event, function(){
+				renderTo.one(transitions.event, function(){
 					each(classes, function(idx, value) {
-						element.toggleClass(value, false);
+						renderTo.toggleClass(value, false);
 					}										
 				});
 			}
