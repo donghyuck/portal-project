@@ -404,6 +404,12 @@ color: #d9534f;
 .notification-error h3 {
 	font-size: 1em;
 	padding: 32px 10px 5px;
+	color: #fff;
+	font-weight: 600;	
+}
+
+.notification-error p {
+	color: #fff;
 }
 
 .notification-error img {
