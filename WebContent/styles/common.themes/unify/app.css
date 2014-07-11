@@ -2769,3 +2769,11 @@ img.img-circle {
    -ms-transform: scale(2) rotate(5deg);
    transform: scale(2) rotate(5deg);
 }
+
+
+/* Button
+------------------------------------*/
+button.btn-u[disabled]
+{
+	opacity: 0.5;
+}
