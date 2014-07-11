@@ -295,6 +295,7 @@
 							data : { item: kendo.stringify( this.announce ) },
 							success : function(response){
 								common.ui.notification({title:"공지 & 이베트", message: "정상적으로 저장되었습니다.", type: "success" });
+								this.set("visible", false);	
 								$("#announce-grid").data('kendoGrid').dataSource.read();
 							},
 							fail: function(){								
