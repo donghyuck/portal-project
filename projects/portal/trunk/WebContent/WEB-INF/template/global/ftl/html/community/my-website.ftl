@@ -246,6 +246,9 @@
 						var btn = $(e.target);
 						btn.button('loading');
 						
+						common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
+						
+						/*
 						var template = kendo.template('<p class="text-danger">#:message#</p>');
 						if( this.announce.startDate >= this.announce.endDate  ){
 							common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
@@ -273,6 +276,7 @@
 								this.closeEditor(e);
 							}
 						});
+						*/
 					},
 					visible: false,
 					changed : false,
