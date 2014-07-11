@@ -393,7 +393,7 @@
 				},
 				{
 					type : "error",
-					template : '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+					template : '<div class="notification-error rounded"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
 				},
 				{
 					type : "success",
