@@ -278,8 +278,8 @@
 					changed : false,
 					close : function(e){
 						this.set("visible", false);	
-						if( $("notice-view").data("model").announce.announceId == this.announce.announceId	){
-							$("notice-view").data("model").set("visible", true);	
+						if( $("#notice-view").data("model").announce.announceId == this.announce.announceId	){
+							$("#notice-view").data("model").set("visible", true);	
 						}		
 					}
 				});
