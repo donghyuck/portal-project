@@ -289,6 +289,7 @@
 			
 			noticeToUse.copy( $(renderTo).data("model").announce  );	
 			$(renderTo).data("model").set("changed", false);			
+			$(renderTo).data("model").set("visible", true);			
 			$(renderTo).data("model").set("isNew", (noticeToUse.announceId < 1 ));		
 							
 			/*	
