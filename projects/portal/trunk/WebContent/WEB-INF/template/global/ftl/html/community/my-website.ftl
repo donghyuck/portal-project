@@ -1384,7 +1384,11 @@
 		<!-- END FOOTER -->			
 		<!-- START TEMPLATE -->					
 		<script type="text/x-kendo-tmpl" id="notice-edit-template">
-		<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:delete}">취소</button>
+		
+		<div class="one-page-btn" data-bind="visible:visible">
+			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
+		</div>
+		
 			<div class="panel panel-default animated fadeInLeft" data-bind="visible:visible">
 				<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
 					<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
