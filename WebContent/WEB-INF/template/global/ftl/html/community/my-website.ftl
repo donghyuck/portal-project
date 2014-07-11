@@ -258,7 +258,7 @@
 						}
 						common.api.callback({  
 							url : '${request.contextPath}/community/update-announce.do?output=json',
-							data : { item: kendo.stringify( this.announce ) },
+							data : { item: kendo.stringify( this.announce.clone() ) },
 							success : function(response){
 								$("#notice-grid").data('kendoGrid').dataSource.read();
 							},
