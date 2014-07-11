@@ -177,10 +177,9 @@
 					visible:false,
 					editable:false,
 					edit: function(e){
-						alert( $(renderTo).data("model").editable + "-"  + this.editable);
-						if($(renderTo).data("model").editable){
+						if(this.editable){
 							setNoticeEditorSource(this.announce);
-							openNoticeEditor();
+							openNoticeEditorPanel();
 						}
 					},
 					delete: function(e){
@@ -224,10 +223,12 @@
 			source.copy(getNoticeEditorSource());		
 		}
 
-		function openNoticeEditor(){			
+		function openNoticeEditorPanel(){			
 			var noticeToUse = getNoticeEditorSource();
 			var renderTo = "#notice-editor";			
+			
 			if(!$(renderTo).data("model")){
+				$(renderTo).html($("#notice-edit-template").html());
 				var model =  kendo.observable({ 
 					announce : new Announce (),
 					profilePhotoUrl : "",
@@ -1368,7 +1369,7 @@
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->			
 		<!-- START TEMPLATE -->					
-		<script type="text/x-kendo-tmpl" id="notice-editor-template">
+		<script type="text/x-kendo-tmpl" id="notice-edit-template">
 			<div class="panel panel-default">
 				<div class="panel-body"  style="padding:5px;">		
 					<div class="page-header text-primary" data-bind="visible: isNew">
