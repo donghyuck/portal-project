@@ -246,7 +246,12 @@
 						var btn = $(e.target);
 						btn.button('loading');
 						
-						common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
+						common.ui.notification({
+							title:"오류", 
+							message: "시작일자가 종료일자보다 이후일 수 없습니다." ,
+							autoHideAfter: 0
+							
+						});
 						
 						/*
 						var template = kendo.template('<p class="text-danger">#:message#</p>');
