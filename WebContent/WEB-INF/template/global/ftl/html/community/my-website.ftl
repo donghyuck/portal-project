@@ -98,7 +98,12 @@
 					$("#notice-grid").data('kendoGrid').dataSource.read();
 				}
 			});	
-			
+			$("button[data-action='new-notice']").on("click", function(e){				
+				setNoticeEditorSource(new Announce());
+				getNoticeEditorSource().objectType = getNoticeTarget();
+				$(this).toggleClass("state-disabled").prop("disabled", true);
+				openNoticeEditorPanel();
+			}); 
 			createNoticeGrid();
 		}
 		
