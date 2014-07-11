@@ -31,8 +31,9 @@
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common.pages/common.personalized.js',
-			'${request.contextPath}/js/ace/ace.js'
+			'${request.contextPath}/js/common.pages/common.personalized.js',			
+			'${request.contextPath}/js/ace/ace.js',
+			'${request.contextPath}/js/common.pages/common.code-editor.js',
 			],        	   
 			complete: function() {			
 				
@@ -174,7 +175,16 @@
 					announce : new Announce (),
 					profilePhotoUrl : "",
 					visible:false,
-					editable:false
+					editable:false,
+					edit: function(e){
+						if(this.editable){
+							setNoticeEditorSource(this.announce);
+							openNoticeEditor();
+						}
+					},
+					delete: function(e){
+						
+					}
 				});	
 				$(renderTo).data("model", model);
 				kendo.bind($(renderTo), model );
@@ -198,6 +208,147 @@
 			}			
 			return hasPermission;
 		}			
+
+		function getNoticeEditorSource(){
+			var renderTo = "#notice-editor"; 
+			if( !$(renderTo).data("noticePlaceHolder") ){
+				var noticePlaceHolder = new Announce();
+				noticePlaceHolder.set("objectType", getNoticeTarget());
+				$(renderTo).data("noticePlaceHolder", noticePlaceHolder );				
+			}
+			return $(renderTo).data("noticePlaceHolder");			
+		}
+		
+		function setNoticeEditorSource(source){	
+			source.copy(getNoticeEditorSource());		
+		}
+
+		function openNoticeEditor(){			
+			var announcePlaceHolder = getNoticeEditorSource();
+			var renderTo = $("#notice-editor-panel");			
+			if( $('#notice-editor').text().trim().length == 0 ){			
+				var template = kendo.template($('#notice-editor-template').html());		
+				$('#notice-editor').html( template );	
+				var noticeEditorModel =  kendo.observable({ 
+					announce : announcePlaceHolder,
+					profilePhotoUrl : function(){
+						return common.api.user.photoUrl (this.get("announce").user, 150,150);
+					},
+					isNew : false,
+					doSave : function (e) {
+						var btn = $(e.target);
+						btn.button('loading');
+						var template = kendo.template('<p class="text-danger">#:message#</p>');
+						if( this.announce.startDate >= this.announce.endDate  ){
+							common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
+							return ;
+						}			
+
+						common.api.callback({  
+							url : '${request.contextPath}/community/update-announce.do?output=json',
+							data : { item: kendo.stringify( this.announce ) },
+							success : function(response){
+								common.ui.notification({title:"공지 & 이베트", message: "정상적으로 저장되었습니다.", type: "success" });
+								$("#announce-grid").data('kendoGrid').dataSource.read();
+							},
+							fail: function(){								
+								common.ui.notification({title:"공지 & 이베트", message: "시스템 운영자에게 문의하여 주십시오." });
+							},
+							requestStart : function(){
+								kendo.ui.progress(renderTo, true);
+							},
+							requestEnd : function(){
+								kendo.ui.progress(renderTo, false);
+							},
+							always : function(e){
+								btn.button('reset');
+								this.closeEditor(e);
+							}
+						});
+					},
+					updateRequired : false,
+					editable : function(){
+						var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
+						if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
+							return true;
+						}
+						return false;
+					},
+					openNoticeProps : function(e){
+					
+					},
+					closeEditor : function(e){
+						kendo.fx(renderTo).expand("vertical").duration(200).reverse();								
+						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
+					}
+				});
+				noticeEditorModel.bind("change", function(e){				
+					if( e.field.match('^announce.')){ 						
+						if( this.announce.subject.length > 0 && this.announce.body.length  > 0 && ( this.announce.startDate <  this.announce.endDate  )  )	{			
+							noticeEditorModel.set("updateRequired", true);
+						}
+					}	
+				});	
+				kendo.bind(renderTo, noticeEditorModel );
+				renderTo.data("model", noticeEditorModel );
+				var bodyEditor =  $("#notice-editor-body" );
+				createEditor( "notice-editor" , bodyEditor );
+			}
+			
+			renderTo.data("model").set("updateRequired", false);			
+			renderTo.data("model").set("isNew", (announcePlaceHolder.announceId < 1 ));
+				
+			if(announcePlaceHolder.objectType == 30){				
+				renderTo.find('input[name="announce-type"]:first').click();
+			}else{			
+				renderTo.find('input[name="announce-type"]:last').click();
+			}
+
+			$('#announce-panel > .panel > .panel-body').hide();
+			kendo.fx(renderTo).expand("vertical").duration(200).play();			
+		}
+		
+		<!-- ============================== -->
+		<!-- Notice viewer , editor 						       -->
+		<!-- ============================== -->					
+		function showNoticeViewer(){
+			var announcePlaceHolder = getNoticeEditorSource();
+			if( announcePlaceHolder.announceId > 0 ){					
+				if( $('#notice-viewer').text().trim().length == 0 ){			
+					var template = kendo.template($('#announcement-viewer-template').html());		
+					$('#notice-viewer').html( template );				
+					var noticeViewerModel =  kendo.observable({ 
+						announce : announcePlaceHolder,
+						profilePhotoUrl : function(){
+							return common.api.user.photoUrl (this.get("announce").user, 150,150);
+						},
+						editable : function(){
+							var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
+							if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
+								return true;
+							}
+							return false;
+						},
+						openNoticeEditor : showNoticeEditor,
+						closeViewer : function(e){
+							kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).reverse();								
+							kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
+						}
+					});						
+					kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
+				}			
+				$('#announce-panel > .panel > .panel-body').first().hide();
+				kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
+			}
+		}
+		
+		
+
+		
+	
+
+
+
 								
 		function createNoticeGrid2(){
 			if( !$("#notice-grid").data('kendoGrid') ){				
@@ -536,240 +687,6 @@
 				);
 			}
 		}
-
-		<!-- ============================== -->
-		<!-- Notice viewer , editor 						       -->
-		<!-- ============================== -->					
-		function showNoticeViewer(){
-			var announcePlaceHolder = getNoticeEditorSource();
-			if( announcePlaceHolder.announceId > 0 ){					
-				if( $('#notice-viewer').text().trim().length == 0 ){			
-					var template = kendo.template($('#announcement-viewer-template').html());		
-					$('#notice-viewer').html( template );				
-					var noticeViewerModel =  kendo.observable({ 
-						announce : announcePlaceHolder,
-						profilePhotoUrl : function(){
-							return common.api.user.photoUrl (this.get("announce").user, 150,150);
-						},
-						editable : function(){
-							var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
-							if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
-								return true;
-							}
-							return false;
-						},
-						openNoticeEditor : showNoticeEditor,
-						closeViewer : function(e){
-							kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).reverse();								
-							kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
-						}
-					});						
-					kendo.bind($("#notice-viewer-panel"), noticeViewerModel );
-				}			
-				$('#announce-panel > .panel > .panel-body').first().hide();
-				kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
-			}
-		}
-		
-		function getNoticeEditorSource(){
-			if( !$("#notice-editor").data("announcePlaceHolder") ){
-				var announcePlaceHolder = new Announce();
-				announcePlaceHolder.set("objectType", 30);
-				$("#notice-editor").data("announcePlaceHolder", announcePlaceHolder );				
-			}
-			return $("#notice-editor").data("announcePlaceHolder");			
-		}
-		
-		function setNoticeEditorSource(source){	
-			source.copy(getNoticeEditorSource());		
-		}
-		
-		function showNoticeEditor(){			
-			var announcePlaceHolder = getNoticeEditorSource();
-			var renderTo = $("#notice-editor-panel");			
-			if( $('#notice-editor').text().trim().length == 0 ){			
-				var template = kendo.template($('#notice-editor-template').html());		
-				$('#notice-editor').html( template );	
-				var noticeEditorModel =  kendo.observable({ 
-					announce : announcePlaceHolder,
-					profilePhotoUrl : function(){
-						return common.api.user.photoUrl (this.get("announce").user, 150,150);
-					},
-					isNew : false,
-					doSave : function (e) {
-						var btn = $(e.target);
-						btn.button('loading');
-						var template = kendo.template('<p class="text-danger">#:message#</p>');
-						if( this.announce.startDate >= this.announce.endDate  ){
-							common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
-							return ;
-						}			
-
-						common.api.callback({  
-							url : '${request.contextPath}/community/update-announce.do?output=json',
-							data : { item: kendo.stringify( this.announce ) },
-							success : function(response){
-								common.ui.notification({title:"공지 & 이베트", message: "정상적으로 저장되었습니다.", type: "success" });
-								$("#announce-grid").data('kendoGrid').dataSource.read();
-							},
-							fail: function(){								
-								common.ui.notification({title:"공지 & 이베트", message: "시스템 운영자에게 문의하여 주십시오." });
-							},
-							requestStart : function(){
-								kendo.ui.progress(renderTo, true);
-							},
-							requestEnd : function(){
-								kendo.ui.progress(renderTo, false);
-							},
-							always : function(e){
-								btn.button('reset');
-								this.closeEditor(e);
-							}
-						});
-					},
-					updateRequired : false,
-					editable : function(){
-						var currentUser = $("#account-navbar").data("kendoExtAccounts").token;
-						if( currentUser.hasRole("ROLE_ADMIN") || currentUser.hasRole("ROLE_ADMIN_SITE") ){
-							return true;
-						}
-						return false;
-					},
-					openNoticeProps : function(e){
-					
-					},
-					closeEditor : function(e){
-						kendo.fx(renderTo).expand("vertical").duration(200).reverse();								
-						kendo.fx($('#announce-panel > .panel > .panel-body').first()).expand("vertical").duration(200).play();							
-					}
-				});
-				noticeEditorModel.bind("change", function(e){				
-					if( e.field.match('^announce.')){ 						
-						if( this.announce.subject.length > 0 && this.announce.body.length  > 0 && ( this.announce.startDate <  this.announce.endDate  )  )	{			
-							noticeEditorModel.set("updateRequired", true);
-						}
-					}	
-				});	
-				kendo.bind(renderTo, noticeEditorModel );
-				renderTo.data("model", noticeEditorModel );
-				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor );
-			}
-			
-			renderTo.data("model").set("updateRequired", false);			
-			renderTo.data("model").set("isNew", (announcePlaceHolder.announceId < 1 ));
-				
-			if(announcePlaceHolder.objectType == 30){				
-				renderTo.find('input[name="announce-type"]:first').click();
-			}else{			
-				renderTo.find('input[name="announce-type"]:last').click();
-			}
-
-			$('#announce-panel > .panel > .panel-body').hide();
-			kendo.fx(renderTo).expand("vertical").duration(200).play();			
-		}
-		
-		<!-- ============================== -->
-		<!-- Utils for editor									       -->
-		<!-- ============================== -->						
-		function createEditor( renderToString, bodyEditor ){
-			if(!bodyEditor.data("kendoEditor") ){			
-				var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
-				var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-				var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);									
-				bodyEditor.kendoEditor({
-						tools : [ 'bold', 'italic', 'insertUnorderedList', 'insertOrderedList',
-							{	
-								name: "createLink",
-								exec: function(e){
-									linkPopup.show();
-									return false;
-								}},
-							'unlink', 
-							{	
-								name: "insertImage",
-								exec: function(e){
-									imageBroswer.show();
-									return false;
-								}},
-							{
-								name: 'viewHtml',
-								exec: function(e){
-									htmlEditor.open();
-									return false;
-								}}							
-						],
-						stylesheets: [
-							"${request.contextPath}/styles/bootstrap/3.1.0/bootstrap.min.css",
-							"${request.contextPath}/styles/common/common.ui.css"
-						]
-				});
-			}			
-		}
-
-		function createCodeEditor( renderToString, editor ) {		
-			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'"></div>');
-			}							
-			var renderTo = $("#"+ renderToString);		
-			if( !renderTo.data('kendoExtModalWindow') ){						
-				renderTo.extModalWindow({
-					title : "HTML",
-					backdrop : 'static',
-					template : $("#code-editor-modal-template").html(),
-					refresh : function(e){
-						var editor = ace.edit("htmleditor");
-						editor.getSession().setMode("ace/mode/xml");
-						editor.getSession().setUseWrapMode(true);
-					},
-					open: function (e){
-						ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
-					}					
-				});					
-				renderTo.find('button.custom-update').click(function () {
-					var btn = $(this)			
-					editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
-					renderTo.data('kendoExtModalWindow').close();
-				});
-			}
-			return renderTo.data('kendoExtModalWindow');			
-		}
-				
-		function createEditorImageBroswer(renderToString, editor ){			
-			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'"></div>');
-			}					
-			var renderTo = $("#"+ renderToString);	
-			if(!renderTo.data("kendoExtImageBrowser")){
-				var imageBrowser = renderTo.extImageBrowser({
-					template : $("#image-broswer-template").html(),
-					apply : function(e){						
-						editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
-						imageBrowser.close();
-					}				
-				});
-			}
-			return renderTo.data("kendoExtImageBrowser");
-		}
-		
-		function createEditorLinkPopup(renderToString, editor){		
-			if( $("#"+ renderToString).length == 0 ){
-				$('body').append('<div id="'+ renderToString +'"></div>');
-			}				
-			var renderTo = $("#"+ renderToString);		
-			if(!renderTo.data("kendoExtEditorPopup") ){		
-				var hyperLinkPopup = renderTo.extEditorPopup({
-					type : 'createLink',
-					title : "하이퍼링크 삽입",
-					template : $("#link-popup-template").html(),
-					apply : function(e){						
-						editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
-						hyperLinkPopup.close();
-					}
-				});
-			}
-			return renderTo.data("kendoExtEditorPopup");
-		}		
 
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
