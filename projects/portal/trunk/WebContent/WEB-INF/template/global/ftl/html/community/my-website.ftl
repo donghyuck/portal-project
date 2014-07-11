@@ -249,8 +249,10 @@
 						common.ui.notification({
 							title:"오류", 
 							message: "시작일자가 종료일자보다 이후일 수 없습니다." ,
-							autoHideAfter: 0
-							
+							autoHideAfter: 0,
+							hide:function(e){
+								btn.button('reset');
+							}
 						});
 						
 						/*
