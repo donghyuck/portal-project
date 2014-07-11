@@ -409,7 +409,7 @@
 		$("#" + renderToString).data("kendoNotification").show({
 			title : options.title,
 			autoHideAfter: options.autoHideAfter || 5000,
-			message : options.message
+			message : options.message,
 		}, options.type || "error");
 	};
 })(jQuery);
