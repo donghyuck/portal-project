@@ -401,6 +401,11 @@
 				} ]
 			});
 		}
+		
+		if( isFunction(options.hide ){
+			$("#" + renderToString).data("kendoNotification").bind("hide", options.hide );			
+		}
+		
 		$("#" + renderToString).data("kendoNotification").show({
 			title : options.title,
 			message : options.message
