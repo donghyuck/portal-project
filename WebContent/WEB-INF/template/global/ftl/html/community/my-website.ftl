@@ -174,7 +174,7 @@
 				var model =  kendo.observable({ 
 					announce : new Announce (),
 					profilePhotoUrl : "",
-					visible:false,
+					visible : false,,
 					editable:false,
 					edit: function(e){
 						if(this.editable){
