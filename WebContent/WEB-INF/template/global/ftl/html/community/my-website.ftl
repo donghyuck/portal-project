@@ -224,7 +224,7 @@
 		}
 
 		function openNoticeEditor(){			
-			var noticePlaceHolder = getNoticeEditorSource();
+			var noticeToUse = getNoticeEditorSource();
 			var renderTo = "#notice-editor";			
 			if(!$(renderTo).data("model")){
 				var model =  kendo.observable({ 
