@@ -272,10 +272,10 @@
 								});								
 							},
 							requestStart : function(){
-								kendo.ui.progress(renderTo, true);
+								kendo.ui.progress($(renderTo), true);
 							},
 							requestEnd : function(){
-								kendo.ui.progress(renderTo, false);
+								kendo.ui.progress($(renderTo), false);
 							},
 							always : function(e){
 								btn.button('reset');
