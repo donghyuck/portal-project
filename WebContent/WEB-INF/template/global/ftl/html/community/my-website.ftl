@@ -187,6 +187,11 @@
 						
 					}
 				});	
+				model.bind("change", function(e){
+					if(this.visible && $("#notice-editor").data("model").visible){
+						$("#notice-editor").data("model").set("visible", false);
+					}
+				});
 				$(renderTo).data("model", model);
 				kendo.bind($(renderTo), model );
 			}			
@@ -266,6 +271,7 @@
 							}
 						});
 					},
+					visible: false,
 					changed : false,
 					close : function(e){
 							
