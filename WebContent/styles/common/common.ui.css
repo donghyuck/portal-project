@@ -419,17 +419,3 @@ color: #d9534f;
 	/*margin: 30px 15px 30px 30px;*/
 	margin: 30px 15px 30px 10px;
 }
-
-/* Button
-------------------------------------*/
-.input.state-disabled input,
-.select.state-disabled,
-.textarea.state-disabled,
-.radio.state-disabled,
-.checkbox.state-disabled,
-.toggle.state-disabled,
-.button.state-disabled
-{
-	cursor: default;
-	opacity: 0.5;
-}
