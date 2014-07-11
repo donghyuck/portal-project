@@ -1391,14 +1391,10 @@
 					</div>								
 					<div  class="form">
 						<div class="form-group">
-							<label class="control-label"><small>제목</small></label>							
-							
-						</div>
-						<div class="form-group">
-							<label class="control-label"><small>공지 기간</small></label>
+							<label class="control-label">공지 기간</label>
 							<div class="col-sm-12" >
 								<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
-								<span class="help-block"><small>지정된 기간 동안만 이벤트 및 공지가 보여집니다. </small></span>
+								<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
 							</div>
 						</div>
 						<label class="control-label"><small>본문</small></label>
