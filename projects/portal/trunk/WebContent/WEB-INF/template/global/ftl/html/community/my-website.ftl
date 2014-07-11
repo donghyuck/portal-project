@@ -1258,7 +1258,10 @@
 					</div>		
 					<div  id="notice-grid"></div>
 				</div>
-				<div class="col-sm-8"><div  id="notice-view"></div></div>
+				<div class="col-sm-8">
+					<div  id="notice-view"></div>
+					<div  id="notice-editor"></div>	
+				</div>
 			</div>				
 		</div>
 	</div>	
