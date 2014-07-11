@@ -39,11 +39,14 @@
 	common.ui = common.ui || {};
 	var kendo = window.kendo, 
 	Widget = kendo.ui.Widget, 
+	each = $.each,
+	support = kendo.support,
+	browser = support.browser,
+	transitions = support.transitions,
 	stringify = kendo.stringify, 
 	UNDEFINED = 'undefined', 
 	proxy = $.proxy, 
 	extend = $.extend,
-	each = $.each,
 	isFunction = kendo.isFunction;
 
 	function defined(x) {
@@ -170,6 +173,17 @@
 	common.ui.setup = function (options){
 		options = options || {};
 		var setup = new common.ui.PageSetup(options);
+	}
+	
+	common.ui.effect = function( element , classes, add ) {
+		 if (classes) {
+			classes = classes.split(" "); 
+			if (transitions) { 
+				each(classes, function(idx, value) {
+					element.toggleClass(value, add);
+				}
+			}
+		 }
 	}
 	
 	common.ui.animate = function (renderTo, animate, always){	
