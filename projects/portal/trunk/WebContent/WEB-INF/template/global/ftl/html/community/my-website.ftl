@@ -926,6 +926,11 @@
 			min-height : 300px;
 		}
 		
+		table.k-editor {
+			height: 400px;
+			border : 0;
+		}		
+		
 		#pdf-view {
 			height: 500px;
 			margin: 0 auto;
@@ -1061,9 +1066,7 @@
 
 				
 
-		table.k-editor {
-			height: 400px;
-		}
+
 		
 		
 		#personalized-controls {
