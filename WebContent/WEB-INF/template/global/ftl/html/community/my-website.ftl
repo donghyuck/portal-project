@@ -98,6 +98,7 @@
 					$("#notice-grid").data('kendoGrid').dataSource.read();
 				}
 			});	
+			
 			createNoticeGrid();
 		}
 		
@@ -193,7 +194,6 @@
 							$("#notice-editor").data("model").set("visible", false);
 						}					
 					}
-
 				});
 				$(renderTo).data("model", model);
 				kendo.bind($(renderTo), model );
@@ -1200,7 +1200,7 @@
 								<input type="radio" name="notice-target" value="1">회사
 							</label>
 						</div>
-						<button type="button"	class="btn-u btn-u-red pull-right">공지 만들기</button>		
+						<button type="button"	class="btn-u btn-u-red pull-right" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button>
 					</div>		
 					<div  id="notice-grid"></div>
 				</div>
@@ -1234,7 +1234,7 @@
 									</h5>
 									<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
 										<div class="pull-right">
-											<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="new-notice"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>
+											<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="new"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>
 										</div>											
 									</#if>
 								</div>								
