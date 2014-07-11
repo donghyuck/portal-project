@@ -404,9 +404,9 @@ color: #d9534f;
 
 .notification-error h3 {
 	font-size: 1em;
-	padding: 32px 10px 5px;
+	/*padding: 32px 10px 5px;*/
 	color: #fff;
-	font-weight: 600;	
+	font-size: 18px;	
 }
 
 .notification-error p {
