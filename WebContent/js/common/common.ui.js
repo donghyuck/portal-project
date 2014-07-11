@@ -381,24 +381,24 @@
 		if ($("#" + renderToString).length == 0) {
 			$('body').append(	'<span id="' + renderToString + '" style="display:none;"></span>');
 		}
+		
 		if (!$("#" + renderToString).data("kendoNotification")) {
 			$("#" + renderToString)	.kendoNotification({
 				position : {	pinned : true, top : 10, right : 10 },
 				autoHideAfter : 2000,
 				stacking : "down",
-				templates : [
-									{
-										type : "info",
-										template : '<div class="notification-info"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
-									},
-									{
-										type : "error",
-										template : '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
-									},
-									{
-										type : "success",
-										template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
-								} ]
+				templates : [{
+					type : "mail",
+					template : '<div class="notification-mail"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+				},
+				{
+					type : "error",
+					template : '<div class="notification-error"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+				},
+				{
+					type : "success",
+					template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+				} ]
 			});
 		}
 		$("#" + renderToString).data("kendoNotification").show({
