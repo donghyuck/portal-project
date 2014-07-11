@@ -178,6 +178,7 @@
 					editable:false,
 					edit: function(e){
 						if(this.editable){
+							this.set("visible", false );
 							setNoticeEditorSource(this.announce);
 							openNoticeEditorPanel();
 						}
