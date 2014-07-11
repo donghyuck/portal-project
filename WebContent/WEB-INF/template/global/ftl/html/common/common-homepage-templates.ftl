@@ -81,7 +81,6 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-<p data-bind="visible:editable"></p>
 <div class="panel panel-default no-margin-b animated fadeInLeft"  data-bind="visible:visible">
 	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
 		<h4 class="panel-title" data-bind="html:announce.subject"></h4>		
@@ -100,7 +99,7 @@
 				<ul class="list-unstyled text-muted">
 					<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
 					<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-					<li>
+					<li class="pull-right" data-bind="visible:editable">
 						<button type="button" class="btn-u btn-u-blue btn-u-small">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small">삭제</button>
 					</li>
 				</ul>	
