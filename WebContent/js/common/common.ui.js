@@ -175,13 +175,18 @@
 		var setup = new common.ui.PageSetup(options);
 	}
 	
-	common.ui.effect = function( element , classes, add ) {
+	common.ui.effect = function( element , classes ) {		
 		 if (classes) {
 			classes = classes.split(" "); 
-			if (transitions) { 
+			if (transitions) { 								
 				each(classes, function(idx, value) {
-					element.toggleClass(value, add);
+					element.toggleClass(value, true);
 				}
+				element.one(transitions.event, function(){
+					each(classes, function(idx, value) {
+						element.toggleClass(value, false);
+					}										
+				});
 			}
 		 }
 	}
@@ -2421,7 +2426,7 @@
 	});
 	
 	templates = {
-		wrapper: template("<div class='panel panel-default' style='display:none;' />"),	
+		wrapper: template("<div class='panel panel-default' />"),	
 		action: template(
 	            "<a role='button' href='\\#' class='k-window-action k-link'>" +
 	                "<span role='presentation' class='k-icon k-i-#= name.toLowerCase() #'>#= name #</span>" +
