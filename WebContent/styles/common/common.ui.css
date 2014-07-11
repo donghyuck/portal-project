@@ -290,6 +290,12 @@ body:not (.right-to-left ) .no-border-l {
 	padding-right: 10px !important
 }
 
+.padding-xxs-hr {
+	padding-left: 5px !important;
+	padding-right: 5px !important
+}
+
+
 .padding-sm-vr {
 	padding-top: 15px !important;
 	padding-bottom: 15px !important
