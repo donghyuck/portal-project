@@ -181,11 +181,12 @@
 			if (transitions) { 								
 				each(classes, function(idx, value) {
 					renderTo.toggleClass(value, true);
-				}
+				});
+				
 				renderTo.one(transitions.event, function(){
 					each(classes, function(idx, value) {
 						renderTo.toggleClass(value, false);
-					}										
+					});										
 				});
 			}
 		 }
