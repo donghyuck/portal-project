@@ -1372,6 +1372,9 @@
 		<!-- START TEMPLATE -->					
 		<script type="text/x-kendo-tmpl" id="notice-edit-template">
 			<div class="panel panel-default">
+				<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
+					<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
+				</div>			
 				<div class="panel-body"  style="padding:5px;">		
 					<div class="page-header text-primary" data-bind="visible: isNew">
 						<h5>
@@ -1389,7 +1392,7 @@
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label"><small>제목</small></label>							
-							<input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" />
+							
 						</div>
 						<div class="form-group">
 							<label class="control-label"><small>공지 기간</small></label>
