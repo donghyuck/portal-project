@@ -1440,25 +1440,14 @@
 		<div class="one-page-btn no-margin-b" data-bind="visible:visible">
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 		</div>
-		
-			<div class="panel panel-default animated fadeInLeft" data-bind="visible:visible">
+		<h5 data-bind="visible: isNew">
+			<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
+		</h5>		
+		<div class="panel panel-default animated fadeInLeft" data-bind="visible:visible">
 				<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
 					<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
 				</div>			
-				<div class="panel-body"  style="padding:5px;">		
-					<div class="page-header text-primary" data-bind="visible: isNew">
-						<h5>
-							<small><span class="label label-danger">NEW</span> 공지 및 이벤트 생성 대상을 지정하세요. (디폴트는 값은 사이트)</small>
-							<div class="btn-group" data-toggle="buttons">
-								<label class="btn btn-info btn-sm active"  data-bind="enabled: isNew">
-								<input type="radio" name="announce-type" value="30" data-bind="checked: announce.objectType">사이트
-								</label>
-								<label class="btn btn-info btn-sm" data-bind="enabled: isNew">
-								<input type="radio" name="announce-type" value="1" data-bind="checked: announce.objectType">회사
-								</label>
-							</div>						
-						</h5>
-					</div>								
+				<div class="panel-body"  style="padding:5px;">									
 					<div  class="form">
 						<div class="form-group">
 							<label class="control-label">공지 기간</label>
@@ -1471,11 +1460,10 @@
 						<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body'></textarea>
 					</div>						
 				</div>					
-			</div>		
+		</div>		
 		<div class="one-page-btn no-margin-b" data-bind="visible:visible">
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-		</div>
-											
+		</div>							
 		</script>
 		<#include "/html/common/common-homepage-templates.ftl" >	
 		<#include "/html/common/common-editor-templates.ftl" >	
