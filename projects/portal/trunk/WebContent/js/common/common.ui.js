@@ -2254,7 +2254,6 @@
 				 that.trigger(OPEN, {target: that});
 				 that.trigger(ACTIVATE);
 			 }
-
 			kendo.notify(that);
 		},
 		events:[
@@ -2287,6 +2286,12 @@
 				that.options.data = data;
 			}else{
 				return that.options.data;
+			}
+		},
+		_animations: function() {
+			var options = this.options;
+			if (options.animation === false) {
+				 options.animation = { open: { effects: {} }, close: { hide: true, effects: {} } };				
 			}
 		},
 		_closable: function() {
@@ -2384,10 +2389,7 @@
 			var that = this,
 			wrapper = that.wrapper,
 			options = that.options;
-			wrapper.children(EXT_PANEL_BODY).html(options.content);
-			
-			//that.element.trigger('change.ext.panel');
-		
+			wrapper.children(EXT_PANEL_BODY).html(options.content);		
 		},	
 		refresh: function(){
 			var that = this,
@@ -2419,7 +2421,7 @@
 	});
 	
 	templates = {
-		wrapper: template("<div class='panel panel-default' />"),	
+		wrapper: template("<div class='panel panel-default' style='display:none;' />"),	
 		action: template(
 	            "<a role='button' href='\\#' class='k-window-action k-link'>" +
 	                "<span role='presentation' class='k-icon k-i-#= name.toLowerCase() #'>#= name #</span>" +
