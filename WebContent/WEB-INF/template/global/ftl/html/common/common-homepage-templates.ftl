@@ -94,7 +94,7 @@
 		</ul>	
 		<div class="media">
 			<a class="pull-left" href="\\#">
-				<img data-bind="attr:{ src: profilePhotoUrl }" width="30" height="30" class="img-rounded">
+				<img data-bind="attr:{ src: profilePhotoUrl }" width="30" height="30" class="img-circle">
 			</a>
 			<div class="media-body">
 				<ul class="list-unstyled text-muted">
