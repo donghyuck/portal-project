@@ -1408,7 +1408,7 @@
 							</div>
 						</div>
 						<label class="control-label">본문</label>
-						<textarea id="notice-editor-body" data-bind='value:announce.body'></textarea>
+						<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body'></textarea>
 					</div>									
 				</div>	
 			</div>								
