@@ -188,7 +188,7 @@
 					}
 				});	
 				model.bind("change", function(e){
-					if( e.field.match('visible')){ 				
+					if( e.field == "visible" ){ 				
 						if(this.visible && $("#notice-editor").data("model").visible){
 							$("#notice-editor").data("model").set("visible", false);
 						}					
