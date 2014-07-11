@@ -250,13 +250,38 @@
 							common.ui.notification({
 								title:"공지 기간 입력 오류", 
 								message: "시작일자가 종료일자보다 이후일 수 없습니다." ,
-								autoHideAfter: 0,
 								hide:function(e){
 									btn.button('reset');
 								}
 							});
 							return ;
 						}
+						common.api.callback({  
+							url : '${request.contextPath}/community/update-announce.do?output=json',
+							data : { item: kendo.stringify( this.announce ) },
+							success : function(response){
+								$("#notice-grid").data('kendoGrid').dataSource.read();
+							},
+							fail: function(){								
+								common.ui.notification({
+									title:"저장 오류", 
+									message: "시스템 운영자에게 문의하여 주십시오." ,
+									hide:function(e){
+										btn.button('reset');
+									}
+								});								
+							},
+							requestStart : function(){
+								kendo.ui.progress(renderTo, true);
+							},
+							requestEnd : function(){
+								kendo.ui.progress(renderTo, false);
+							},
+							always : function(e){
+								btn.button('reset');
+							}
+						});
+						
 						
 						/*
 						var template = kendo.template('<p class="text-danger">#:message#</p>');
