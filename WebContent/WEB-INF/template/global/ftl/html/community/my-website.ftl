@@ -1418,7 +1418,11 @@
 						<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body'></textarea>
 					</div>						
 				</div>					
-			</div>								
+			</div>		
+		<div class="one-page-btn no-margin-b" data-bind="visible:visible">
+			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
+		</div>
+											
 		</script>
 		<#include "/html/common/common-homepage-templates.ftl" >	
 		<#include "/html/common/common-editor-templates.ftl" >	
