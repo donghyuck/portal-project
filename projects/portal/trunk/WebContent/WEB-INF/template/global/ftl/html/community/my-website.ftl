@@ -101,7 +101,7 @@
 			$("button[data-action='new-notice']").on("click", function(e){				
 				setNoticeEditorSource(new Announce());
 				getNoticeEditorSource().objectType = getNoticeTarget();
-				$(this).toggleClass("state-disabled").prop("disabled", true);
+				$(this).prop("disabled", true);
 				openNoticeEditorPanel();
 			}); 
 			createNoticeGrid();
