@@ -45,3 +45,4 @@ function getNextPersonalizedColumn (element){
 	});	
 	return minItem;
 } 
+
