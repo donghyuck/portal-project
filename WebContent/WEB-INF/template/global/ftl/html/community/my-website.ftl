@@ -323,11 +323,19 @@
 					changed : false,
 					close : function(e){
 						this.set("visible", false);	
-						if( $("#notice-view").data("model").announce.announceId == this.announce.announceId	){
+						if( $("#notice-view").data("model") && $("#notice-view").data("model").announce.announceId == this.announce.announceId	){
 							$("#notice-view").data("model").set("visible", true);	
 						}		
 					}
 				});
+				model.bind("change", function(e){
+					if( e.field == "visible" ){ 				
+						if(!this.visible ){
+							$("button[data-action='new-notice'][disabled]").prop("disabled", false);
+						}					
+					}
+				});
+				
 				kendo.bind($(renderTo), model );
 				$(renderTo).data("model", model );
 				var bodyEditor =  $("#notice-editor-body" );
