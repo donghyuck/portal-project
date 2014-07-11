@@ -277,30 +277,21 @@
 					visible: false,
 					changed : false,
 					close : function(e){
-							
+						this.set("visible", false);	
+						if( $("notice-view").data("model").announce.announceId == this.announce.announceId	){
+							$("notice-view").data("model").set("visible", true);	
+						}		
 					}
 				});
 				kendo.bind($(renderTo), model );
 				$(renderTo).data("model", model );
 				var bodyEditor =  $("#notice-editor-body" );
 				createEditor( "notice-editor" , bodyEditor );				
-			}		
-			
-			
+			}	
 			noticeToUse.copy( $(renderTo).data("model").announce  );	
 			$(renderTo).data("model").set("changed", false);			
 			$(renderTo).data("model").set("visible", true);			
-			$(renderTo).data("model").set("isNew", (noticeToUse.announceId < 1 ));		
-							
-			/*	
-			if(announcePlaceHolder.objectType == 30){				
-				renderTo.find('input[name="announce-type"]:first').click();
-			}else{			
-				renderTo.find('input[name="announce-type"]:last').click();
-			}*/
-
-			//$('#announce-panel > .panel > .panel-body').hide();
-			//kendo.fx(renderTo).expand("vertical").duration(200).play();			
+			$(renderTo).data("model").set("isNew", (noticeToUse.announceId < 1 ));			
 		}
 		
 		<!-- ============================== -->
