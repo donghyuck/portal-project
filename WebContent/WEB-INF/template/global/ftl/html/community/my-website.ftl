@@ -370,84 +370,10 @@
 				kendo.fx($("#notice-viewer-panel")).expand("vertical").duration(200).play();			
 			}
 		}
-		
-		
 
-		
-	
-
-
-
-								
-		function createNoticeGrid2(){
-			if( !$("#notice-grid").data('kendoGrid') ){				
-				$("#notice-grid").data('announceTargetPlaceHolder', 30);				
-				$("#notice-grid").kendoGrid({
-					dataSource : new kendo.data.DataSource({
-						transport: {
-							read: {
-								type : 'POST',
-								dataType : "json", 
-								url : '${request.contextPath}/community/list-announce.do?output=json'
-							},
-							parameterMap: function(options, operation) {
-								if (operation != "read" && options.models) {
-									return {models: kendo.stringify(options.models)};
-								}else{								
-									return {objectType: $("#announce-grid").data('announceTargetPlaceHolder') };								
-								}
-							} 
-						},
-						pageSize: 10,
-						error:common.api.handleKendoAjaxError,
-						schema: {
-							data : "targetAnnounces",
-							model : Announce,
-							total : "totalAnnounceCount"
-						}
-					}),
-					sortable: true,
-					columns: [ 
-						{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
-						{field: "subject", title: "제목", headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, template: '#: subject # <div class="btn-group"><button type="button" class="btn btn-warning btn-xs" onclick="showNoticeEditor();return false;">편집</a><button type="button" class="btn btn-warning btn-xs" onclick="showNoticeViewer();return false;">보기</a></div>'}, 
-					],
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
-					selectable: "row",
-					change: function(e) { 
-						var selectedCells = this.select();
-						if( selectedCells.length > 0){
-							var selectedCell = this.dataItem( selectedCells );								
-							setNoticeEditorSource(selectedCell);
-						}
-					},
-					dataBound: function(e) {
-					}
-				});		
-				
-				common.api.handlePanelHeaderActions($("#announce-panel"));
-				common.ui.handleButtonActionEvents($("#announce-panel button.btn-control-group"), 	{event: 'click', handlers: {
-						'new-notice' : function(e){
-							var announcePlaceHolder = new Announce();
-							announcePlaceHolder.set("objectType", 30);
-							setNoticeEditorSource(announcePlaceHolder);		
-							showNoticeEditor();			
-						}
-					}}				
-				);
-				
-				common.ui.handleActionEvents( $('input[name="announce-selected-target"]'), { event: 'change' , handler: function(e){				
-					var oldSelectedSource = $("#announce-grid").data('announceTargetPlaceHolder');
-					if( oldSelectedSource != this.value ){
-						$("#announce-grid").data('announceTargetPlaceHolder', this.value );
-						$("#announce-grid").data('kendoGrid').dataSource.read();
-					}					
-				}});					
-				$("#announce-panel" ).show();
-			}	
-		}	
-		
-				
-						
+		<!-- ============================== -->
+		<!-- create website file grid								-->
+		<!-- ============================== -->														
 		function createAttachmentListView(){			
 			if( !$('#attachment-list-view').data('kendoListView') ){														
 				var attachementTotalModle = kendo.observable({ 
@@ -569,7 +495,7 @@
 		}
 		
 		<!-- ============================== -->
-		<!-- create website photo grid									-->
+		<!-- create website photo grid							-->
 		<!-- ============================== -->						
 		function createPhotoListView(){
 			if( !$('#photo-list-view').data('kendoListView') ){			
