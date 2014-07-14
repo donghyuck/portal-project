@@ -17,13 +17,13 @@
 /**
 * image broswer .. 
 */
-.image-listview.k-listview {
+.image-listview.k-listview, .file-listview.k-listview {
 	width: 100%;
 	padding: 0px;
 	border: 0px;		
 	min-height: 200px;	
 }
-.image-listview .img-wrapper {
+.image-listview .img-wrapper, .file-listview .file-wrapper {
 	float: left;
 	position: relative;
 	width: 32.99%;
@@ -33,7 +33,7 @@
 	overflow: hidden;	
 }
 
-.image-listview .img-wrapper >.img-description {
+.image-listview .img-wrapper >.img-description, .file-listview .img-wrapper >.file-description {
 	position: absolute;
 	top: 0;
 	width: 100%	;
@@ -50,7 +50,7 @@
 	height:auto;
 }
 
-.image-listview .img-wrapper h3 {
+.image-listview .img-wrapper h3, .file-listview .file-wrapper h3 {
 	margin: 0;
 	padding: 10px 10px 0 10px;
 	line-height: 1.1em;
@@ -60,30 +60,26 @@
 	word-wrap: break-word;
 }
 
-.image-listview .img-wrapper p {
+.image-listview .img-wrapper p , .file-listview .file-wrapper p {
 	color: #ffffff;
 	font-weight: normal;
 	padding: 0 10px;
 }
 
-.image-listview-pager.k-pager-wrap {
+.image-listview-pager.k-pager-wrap, .file-listview-pager.k-pager-wrap {
 	border : 0px;
 	border-width: 0px;
 	background : transparent;
 }
 
-.image-listview .img-wrapper.k-state-selected {
+.image-listview .img-wrapper.k-state-selected, .file-listview .file-wrapper.k-state-selected {
 	background-color: #5bc0de;	
 	border-color: #46b8da;
 	border : 1px;
 	border-width: 1px;
 }
 
-.image-listview .img-wrapper.k-state-selected >img {
-	padding : 1px;
-}
-
-.image-listview .img-wrapper.k-state-selected:after  {
+.image-listview .img-wrapper.k-state-selected:after , .file-listview .file-wrapper.k-state-selected:after  {
 	top: 10px;
 	right: 15px;
 	content: "\f00c";
