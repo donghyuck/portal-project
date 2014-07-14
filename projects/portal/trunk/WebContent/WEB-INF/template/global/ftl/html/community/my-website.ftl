@@ -183,7 +183,6 @@
 					editable:false,
 					edit: function(e){
 						if(this.editable){
-							this.set("visible", false );
 							setNoticeEditorSource(this.announce);
 							openNoticeEditorPanel();
 						}
@@ -242,7 +241,9 @@
 		function openNoticeEditorPanel(){			
 			var noticeToUse = getNoticeEditorSource();
 			var renderTo = "#notice-editor";			
-			
+			if($("#notice-view").data("model")){
+				$("#notice-view").data("model").set("visible", false);	
+			}
 			if(!$(renderTo).data("model")){
 				$(renderTo).html($("#notice-edit-template").html());
 				var model =  kendo.observable({ 
@@ -345,8 +346,7 @@
 							$("button[data-action='new-notice'][disabled]").prop("disabled", false);
 						}					
 					}
-				});
-				
+				});				
 				kendo.bind($(renderTo), model );
 				$(renderTo).data("model", model );
 				var bodyEditor =  $("#notice-editor-body" );
