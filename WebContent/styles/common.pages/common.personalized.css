@@ -75,8 +75,8 @@
 .image-listview .img-wrapper.k-state-selected:after  {
 	top: 10px;
 	right: 15px;
-	content: "\f05d";
-	font-size: 18px;
+	content: "\f00c";
+	font-size: 15px;
 	position: absolute;
 	font-weight: normal;
 	display: inline-block;
