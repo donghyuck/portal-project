@@ -2094,7 +2094,6 @@
 				element.toggleClass("active");
 			}
 		}	
-
 	}
 	
 	common.ui.buttonDisabled = function(element){
@@ -2104,7 +2103,6 @@
 				element.toggleClass("active");
 			}
 		}	
-
 	}
 	
 	common.ui.button = function (options){
