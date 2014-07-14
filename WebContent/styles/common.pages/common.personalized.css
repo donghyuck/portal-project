@@ -14,6 +14,24 @@
 	min-height : 300px;
 }
 
+/**
+* image broswer .. 
+*/
+.image-listview.k-listview {
+	width: 100%;
+	padding: 0px;
+	border: 0px;		
+	min-height: 200px;	
+}
+.image-listview .img-wrapper {
+	float: left;
+	position: relative;
+	width: 32.99%;
+	height: 170px;
+	padding: 0;
+	cursor: pointer;
+	overflow: hidden;	
+}	
 
 /**
 * personalized navbar 
