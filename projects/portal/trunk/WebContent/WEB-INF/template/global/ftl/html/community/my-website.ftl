@@ -1200,7 +1200,7 @@
 								</li> 
 							</ul>
 				</div><!-- ./navbar-personalized -->		
-				<div id="personalized-area" class="row"></div>				
+				<div id="personalized-area" class="row" style="min-height:10px;"></div>				
 			</div><!-- ./container-fluid -->	
 <div class="one-page">
 	<div class="one-page-inner one-default">
