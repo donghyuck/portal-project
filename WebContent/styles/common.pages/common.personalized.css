@@ -1,12 +1,20 @@
 @CHARSET "UTF-8";
+/**
+* main 
+*/
+
 
 /**
 * Kendo UI customized
 */		
-.notice-grid .k-grid-content {
+.wrapper .k-grid-content {
 	min-height : 300px;
 }
 
+
+/**
+* personalized navbar 
+*/		
 .navbar-personalized {	
 	/*background-color: rgba(0, 0, 0, 0.6);*/
 	background-color: transparent;
@@ -97,6 +105,9 @@
 	}
 }
 
+/**
+* sliede side menu
+*/	
 .cbp-spmenu {
 	position: fixed;
 	background: #ffffff;
