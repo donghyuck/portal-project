@@ -2086,6 +2086,15 @@
 	function defined(x) {
 		return (typeof x != UNDEFINED);
 	}
+
+	common.ui.buttonEnabled = function(element){
+		if( element.is(":disabled") ){
+			element.prop("disabled", false);
+		}	
+		if( renderTo.is("[data-toggle='button']") ){
+			$(switch_target).toggleClass("active");
+		}
+	}
 	
 	common.ui.buttonDisabled = function(element){
 		if( !element.is(":disabled") ){
@@ -2112,7 +2121,7 @@
 					}		
 					var switch_target = $(this).attr("data-switch-target");
 					if( $(switch_target).length > 0 && $(switch_target).is("button" ){		
-						common.ui.buttonDisabled($(switch_target));
+						common.ui.buttonEnabled($(switch_target));
 					}
 				});				
 			}
