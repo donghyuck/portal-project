@@ -55,12 +55,12 @@
 								<#if WebSiteUtils.isUserAccessAllowed(request, item) >
 								<#if  item.components?has_content >
 									<li class="dropdown">
-										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
+										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</a>
 										<ul class="dropdown-menu">
 										<#list item.components as sub_item >
 											<#if sub_item.components?has_content >
 												<li class="dropdown-submenu">
-													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</a>
+													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a>
 													<ul class="dropdown-menu">
 														<#list sub_item.components as sub_sub_item >
 														<li><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>
