@@ -89,21 +89,26 @@
 		<!-- ============================== -->
 		<!-- Notice 											       -->
 		<!-- ============================== -->				
-		function createNoticeSection(){			
-			var buttons = common.ui.buttons({
-				renderTo: "#notice-target-button",
-				type: "radio",
-				change: function(e){
-					$("#notice-grid").data('kendoGrid').dataSource.read();
-				}
-			});	
-			$("button[data-action='new-notice']").on("click", function(e){				
-				setNoticeEditorSource(new Announce());
-				getNoticeEditorSource().objectType = getNoticeTarget();
-				$(this).prop("disabled", true);
-				openNoticeEditorPanel();
-			}); 
-			createNoticeGrid();
+		function createNoticeSection(){	
+			if( !$("#notice-grid").data('kendoGrid') ){
+				var buttons = common.ui.buttons({
+					renderTo: "#notice-target-button",
+					type: "radio",
+					change: function(e){
+						$("#notice-grid").data('kendoGrid').dataSource.read();
+					}
+				});	
+				common.ui.button({
+					renderTo: "button[data-action='new-notice']",
+					click: function(e){				
+						setNoticeEditorSource(new Announce());
+						getNoticeEditorSource().objectType = getNoticeTarget();
+						$(this).prop("disabled", true);
+						openNoticeEditorPanel();
+					}
+				});
+				createNoticeGrid();
+			}			
 		}
 		
 		function getNoticeTarget (){
