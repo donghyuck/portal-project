@@ -1066,7 +1066,7 @@
 									</label>	
 								</div>												
 							</div>
-							<div class="panel-body" style="max-height:450px;">
+							<div class="panel-body" style="min-height:450px;">
 								<div id="attachment-list-view" class="file-listview"></div>
 							</div>	
 							<div class="panel-footer no-padding">
