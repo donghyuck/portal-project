@@ -430,7 +430,7 @@
 						}
 					});																	
 				
-					$("#attachment-list-view").on("mouseenter",  ".img-wrapper", function(e) {
+					$("#attachment-list-view").on("mouseenter",  ".file-wrapper", function(e) {
 						kendo.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().play();
 					}).on("mouseleave", ".file-wrapper", function(e) {
 						kendo.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().reverse();
