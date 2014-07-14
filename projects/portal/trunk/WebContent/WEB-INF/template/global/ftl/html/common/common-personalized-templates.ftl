@@ -2,17 +2,23 @@
 <!-- my cloud template                                   -->
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="attachment-list-view-template">
-<div class="image-wrapper">			
-	#if (contentType.match("^image") ) {#
-	<img src="${request.contextPath}/community/view-my-attachment.do?width=150&height=150&attachmentId=#:attachmentId#" alt="#:name# 이미지" />
-	# } else { #			
-	<img src="http://placehold.it/146x146&amp;text=[file]"></a>
-	# } #	
+#if (contentType.match("^image") ) {#
+<div class="image-wrapper">	
+	<img src="${request.contextPath}/community/view-my-attachment.do?width=150&height=150&attachmentId=#:attachmentId#" alt="#:name# 이미지" />		
 	<div class="img-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
 	</div>
 </div>
+# } else { #		
+<div class="file-wrapper">
+	<img src="${request.contextPath}/common/icons/file/file.jpg"></a>
+	<div class="file-description">
+		<h3>#:name#</h3>
+		<p>#:size# 바이트</p>
+	</div>
+</div>
+# } #	
 </script>	
 <script type="text/x-kendo-tmpl" id="photo-list-view-template">
 <div class="img-wrapper">			
