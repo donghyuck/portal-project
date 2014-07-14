@@ -42,6 +42,14 @@
 	background-color: rgba(0,0,0,0.8)
 }
 
+.image-listview.k-listview:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+
 .image-listview .img-wrapper>img {
 	top: 0; padding : 0 !important;
 	margin: 0 !important;
