@@ -42,15 +42,7 @@
 	background-color: rgba(0,0,0,0.8)
 }
 
-.image-listview .img-wrapper>img {
-	top: 0; padding : 0 !important;
-	margin: 0 !important;
-	padding: 0 !important;
-	width:100%;
-	height:auto;
-}
-
-.file-listview .file-wrapper>img {
+.image-listview .img-wrapper>img, .file-listview .file-wrapper>img {
 	top: 0; padding : 0 !important;
 	margin: 0 !important;
 	padding: 0 !important;
