@@ -31,7 +31,17 @@
 	padding: 0;
 	cursor: pointer;
 	overflow: hidden;	
-}	
+}
+
+.image-listview .img-wrapper >.img-description {
+	position: absolute;
+	top: 0;
+	width: 100%	;
+	height: 0;
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.8)
+}
+		
 
 /**
 * personalized navbar 
