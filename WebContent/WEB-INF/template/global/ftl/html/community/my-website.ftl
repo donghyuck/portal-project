@@ -71,15 +71,16 @@
 					}					
 				});
 				
+				// 3. Notice	 Section
 				common.ui.button({
 					renderTo: "button[data-action='show-notice-section']",
 					click:function(e){
 						createNoticeSection();
 						common.ui.buttonDisabled($(this));
 					}
-				}).click();;
+				}).click();
 					
-				// 3. Notice	 Section
+				
 				//createNoticeSection();
 			
 				// 4-1. Announces 							
