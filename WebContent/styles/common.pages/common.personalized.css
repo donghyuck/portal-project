@@ -42,14 +42,6 @@
 	background-color: rgba(0,0,0,0.8)
 }
 
-.image-listview.k-listview:after {
-	content: ".";
-	display: block;
-	height: 0;
-	clear: both;
-	visibility: hidden;
-}
-
 .image-listview .img-wrapper>img {
 	top: 0; padding : 0 !important;
 	margin: 0 !important;
@@ -75,10 +67,23 @@
 }
 
 .image-listview-pager.k-pager-wrap {
-			border : 0px;
-			border-width: 0px;
-			background : transparent;
+	border : 0px;
+	border-width: 0px;
+	background : transparent;
 }
+		
+.image-listview .img-wrapper.k-state-selected :after  {
+	top: 10px;
+	right: 15px;
+	content: "\f03b";
+	font-size: 15px;
+	position: absolute;
+	font-weight: normal;
+	display: inline-block;
+	font-family: FontAwesome;
+	color: #fff;
+}
+
 		
 /**
 * personalized navbar 
