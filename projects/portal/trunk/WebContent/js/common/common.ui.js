@@ -184,10 +184,7 @@
 				each(classes, function(idx, value) {
 					renderTo.toggleClass(value);
 				});
-				
-				alert(transitions.event);
-				renderTo.one(transitions.event, function(){
-					alert("1");
+				renderTo.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
 					each(classes, function(idx, value) {
 						renderTo.toggleClass(value);
 					});										
