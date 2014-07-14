@@ -72,7 +72,7 @@
 				});
 				
 				common.ui.button({
-					renderTo: "data-action='show-notice-section'",
+					renderTo: "button[data-action='show-notice-section']",
 					click:function(e){
 						createNoticeSection();
 					}
