@@ -1000,37 +1000,42 @@
 				</div><!-- ./navbar-personalized -->		
 				<div id="personalized-area" class="row" style="min-height:10px;"></div>				
 			</div><!-- ./container-fluid -->	
-<div class="one-page">
-	<div class="one-page-inner one-default">
-		<div class="container">	
-			<h1>공지 & 이벤트 
-				<small>		
-					소스를 선택하세요.
-				</small>
-			</h1>		
-			<div class="row ">
-				<div class="col-sm-4">
-					<div class="one-page-btn">
-						<div id="notice-target-button" class="btn-group" data-toggle="buttons">
-							<label class="btn btn-info btn-sm active">
-								<input type="radio" name="notice-target" value="30" >사이트
-							</label>
-							<label class="btn btn-info btn-sm ">
-								<input type="radio" name="notice-target" value="1">회사
-							</label>
-						</div>
-						<button type="button"	class="btn-u btn-u-red pull-right" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button>
-					</div>		
-					<div  id="notice-grid"></div>
-				</div>
-				<div class="col-sm-8">
-					<div  id="notice-view"></div>
-					<div  id="notice-editor"></div>	
-				</div>
-			</div>				
-		</div>
-	</div>	
-</div>					
+			
+			<div class="one-page">
+				<div class="one-page-inner one-default">
+					<div class="container">	
+						<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<h1>공지 & 이벤트 
+							<small>		
+								소스를 선택하세요.
+							</small>
+						</h1>		
+						<div class="row ">
+							<div class="col-sm-4">
+								<div class="one-page-btn">
+									<div id="notice-target-button" class="btn-group" data-toggle="buttons">
+										<label class="btn btn-info btn-sm active">
+											<input type="radio" name="notice-target" value="30" >사이트
+										</label>
+										<label class="btn btn-info btn-sm ">
+											<input type="radio" name="notice-target" value="1">회사
+										</label>
+									</div>
+									<button type="button"	class="btn-u btn-u-red pull-right" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button>
+								</div>		
+								<div  id="notice-grid"></div>
+							</div>
+							<div class="col-sm-8">
+								<div  id="notice-view"></div>
+								<div  id="notice-editor"></div>	
+							</div>
+						</div>				
+					</div>
+				</div>	
+			</div><!-- ./ong-page -->		
+			
+			
+							
 		<div class="container padding-sm" style="min-height:600px;">			
 			<div class="row blank-top-10">				
 				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
@@ -1048,7 +1053,7 @@
 									<h5>
 										<small><i class="fa fa-info"></i> 사이트(${webSite.displayName})/회사(${user.company.displayName}) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다.</small>
 										<p>
-													<div  id="announce-grid"></div>		
+											<div  id="announce-grid"></div>		
 										</p>
 									</h5>
 									<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
