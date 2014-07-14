@@ -36,7 +36,7 @@
 			],        	   
 			complete: function() {			
 				
-				// SETUP COMMON
+				// 1. SETUP COMMON
 				common.ui.setup({
 					features:{
 						backstretch : true,
@@ -80,15 +80,6 @@
 					}
 				}).click();
 					
-				
-				//createNoticeSection();
-			
-				// 4-1. Announces 							
-				//$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
-				
-				//createNoticeGrid();
-																			
-
 				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
 			}
@@ -318,38 +309,6 @@
 								btn.button('reset');
 							}
 						});
-						
-						
-						/*
-						var template = kendo.template('<p class="text-danger">#:message#</p>');
-						if( this.announce.startDate >= this.announce.endDate  ){
-							common.ui.notification({title:"공지 & 이베트", message: "시작일자가 종료일자보다 이후일 수 없습니다." });
-							return ;
-						}			
-
-						common.api.callback({  
-							url : '${request.contextPath}/community/update-announce.do?output=json',
-							data : { item: kendo.stringify( this.announce ) },
-							success : function(response){
-								common.ui.notification({title:"공지 & 이베트", message: "정상적으로 저장되었습니다.", type: "success" });
-								this.set("visible", false);	
-								$("#announce-grid").data('kendoGrid').dataSource.read();
-							},
-							fail: function(){								
-								common.ui.notification({title:"공지 & 이베트", message: "시스템 운영자에게 문의하여 주십시오." });
-							},
-							requestStart : function(){
-								kendo.ui.progress(renderTo, true);
-							},
-							requestEnd : function(){
-								kendo.ui.progress(renderTo, false);
-							},
-							always : function(e){
-								btn.button('reset');
-								this.closeEditor(e);
-							}
-						});
-						*/
 					},
 					visible: false,
 					changed : false,
