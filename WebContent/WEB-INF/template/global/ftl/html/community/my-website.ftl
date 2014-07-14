@@ -431,9 +431,9 @@
 					});																	
 				
 					$("#attachment-list-view").on("mouseenter",  ".img-wrapper", function(e) {
-						kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
-					}).on("mouseleave", ".img-wrapper", function(e) {
-						kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+						kendo.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().play();
+					}).on("mouseleave", ".file-wrapper", function(e) {
+						kendo.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().reverse();
 					});															
 														
 					$("input[name='attachment-list-view-filters']").on("change", function () {
