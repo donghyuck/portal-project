@@ -2090,19 +2090,21 @@
 	common.ui.buttonEnabled = function(element){
 		if( element.is(":disabled") ){
 			element.prop("disabled", false);
+			if( element.is("[data-toggle='button']") ){
+				element.toggleClass("active");
+			}
 		}	
-		if( element.is("[data-toggle='button']") ){
-			element.toggleClass("active");
-		}
+
 	}
 	
 	common.ui.buttonDisabled = function(element){
 		if( !element.is(":disabled") ){
 			element.prop("disabled", true);
+			if( element.is("[data-toggle='button']") ){
+				element.toggleClass("active");
+			}
 		}	
-		if( element.is("[data-toggle='button']") ){
-			element.toggleClass("active");
-		}
+
 	}
 	
 	common.ui.button = function (options){
