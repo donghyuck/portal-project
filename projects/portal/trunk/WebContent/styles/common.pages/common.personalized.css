@@ -48,6 +48,12 @@
 	padding: 0 10px;
 }
 
+.image-listview-pager.k-pager-wrap {
+			border : 0px;
+			border-width: 0px;
+			background : transparent;
+}
+		
 /**
 * personalized navbar 
 */
