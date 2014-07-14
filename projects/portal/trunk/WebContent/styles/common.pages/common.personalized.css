@@ -50,6 +50,15 @@
 	height:auto;
 }
 
+.file-listview .file-wrapper>img {
+	top: 0; padding : 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width:100%;
+	height:auto;
+}
+
+
 .image-listview .img-wrapper h3, .file-listview .file-wrapper h3 {
 	margin: 0;
 	padding: 10px 10px 0 10px;
