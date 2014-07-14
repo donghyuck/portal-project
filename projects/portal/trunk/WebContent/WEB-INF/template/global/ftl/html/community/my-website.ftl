@@ -98,6 +98,7 @@
 		<!-- Notice 											       -->
 		<!-- ============================== -->				
 		function createNoticeSection(){	
+		
 			if( !$("#notice-grid").data('kendoGrid') ){
 				var buttons = common.ui.buttons({
 					renderTo: "#notice-target-button",
@@ -118,7 +119,7 @@
 				common.ui.button({
 					renderTo : "button[data-dismiss='section'][data-target]"
 				});
-				//createNoticeGrid();
+				createNoticeGrid();
 			}	
 			if(	!$("#notice-section").is(":visible") ){
 				$("#notice-section").show();
