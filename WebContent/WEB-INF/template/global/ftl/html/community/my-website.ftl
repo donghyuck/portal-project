@@ -1180,26 +1180,26 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="navbar navbar-personalized navbar-inverse" role="navigation">
-						<ul class="nav navbar-nav pull-right">
-							<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button">공지 & 이벤트 </button></li>
-							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-							<li class="hidden-xs">
-								<div class="btn-group navbar-btn" data-toggle="buttons">
-									<label class="btn btn-info">
-										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-									</label>
-									<label class="btn btn-info active">
-								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-									</label>
-									<label class="btn btn-info">
-										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-									</label>
-								</div>
-							</li> 
-						</ul>
-			</div><!-- ./navbar-personalized -->
 			<div class="container-fluid">		
+				<div class="navbar navbar-personalized navbar-inverse" role="navigation">
+							<ul class="nav navbar-nav pull-right">
+								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button">공지 & 이벤트 </button></li>
+								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+								<li class="hidden-xs">
+									<div class="btn-group navbar-btn" data-toggle="buttons">
+										<label class="btn btn-info">
+											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+										</label>
+										<label class="btn btn-info active">
+									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+										</label>
+										<label class="btn btn-info">
+											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+										</label>
+									</div>
+								</li> 
+							</ul>
+				</div><!-- ./navbar-personalized -->		
 				<div id="personalized-area" class="row"></div>				
 			</div><!-- ./container-fluid -->	
 <div class="one-page">
