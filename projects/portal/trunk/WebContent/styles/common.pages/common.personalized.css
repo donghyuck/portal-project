@@ -41,11 +41,16 @@
 	overflow: hidden;
 	background-color: rgba(0,0,0,0.8)
 }
-		
+
+.image-listview .img-wrapper p {
+	color: #ffffff;
+	font-weight: normal;
+	padding: 0 10px;
+}
 
 /**
 * personalized navbar 
-*/		
+*/
 .navbar-personalized {	
 	/*background-color: rgba(0, 0, 0, 0.6);*/
 	background-color: transparent;
