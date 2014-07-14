@@ -2087,6 +2087,15 @@
 		return (typeof x != UNDEFINED);
 	}
 	
+	common.ui.buttonDisabled = function(element){
+		if( !element.is(":disabled") ){
+			element.prop("disabled", true);
+		}	
+		if( renderTo.is("[data-toggle='button']") ){
+			$(switch_target).toggleClass("active");
+		}
+	}
+	
 	common.ui.button = function (options){
 		if( defined(options.renderTo) ){
 			var renderTo = options.renderTo ;
