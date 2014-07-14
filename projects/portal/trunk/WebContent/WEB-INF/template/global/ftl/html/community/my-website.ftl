@@ -1154,10 +1154,10 @@
 								</div>												
 							</div>
 							<div class="panel-body" style="max-height:450px;">
-								<div id="attachment-list-view" class="color4"></div>
+								<div id="attachment-list-view" class="image-listview"></div>
 							</div>	
 							<div class="panel-footer no-padding">
-								<div id="pager" class="k-pager-wrap"></div>
+								<div id="pager" class="image-listview-pager k-pager-wrap"></div>
 							</div>
 						</div>																				
 					</div><!-- ./tab-pane -->	
