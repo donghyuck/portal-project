@@ -343,52 +343,6 @@
 		</script>		
 		<style scoped="scoped">
 
-		.wrapper{
-			background-color:transparent;
-		}
-		
-		.wrapper .header {
-			background-color: #fff;
-		}
-		
-		.k-tiles-arrange label {
-			font-weight : normal;		
-		}
-		.k-tiles li.k-state-selected {
-			border-color: #428bca;
-		}
-		
-		.media, .media .media {
-			margin-top: 5px;
-		}	
-	
-		.k-callout-n {
-		border-bottom-color: #787878;
-		}	
-				
-		.k-callout-w {
-			border-right-color: #787878;
-		}
-		
-		.k-callout-e {
-		border-left-color: #787878;
-		}	
-		
-		blockquote {
-			font-size: 11pt;
-		}
-		
-		.panel .comments-heading {
-		
-		}
-		
-		.panel .comments-heading a {
-			color: #555;
-		}
-		
-		#photo_overlay nav.navbar {
-			margin-bottom: 0px; 
-		}
 		
 		</style>   	
 	</head>
