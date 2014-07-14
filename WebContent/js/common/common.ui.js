@@ -2097,7 +2097,7 @@
 			if( renderTo.attr("data-dismiss") && renderTo.attr("data-target")  )
 			{
 				renderTo.click(function(e){
-					var target = $(this).attr(("data-target");
+					var target = $(this).attr("data-target");
 					if( $(target).length > 0 ){
 						$(target).hide();
 					}
