@@ -186,6 +186,7 @@
 				});
 				
 				renderTo.one(transitions.event, function(){
+					alert("1");
 					each(classes, function(idx, value) {
 						renderTo.toggleClass(value);
 					});										
