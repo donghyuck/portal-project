@@ -12,7 +12,7 @@
 </div>
 # } else { #		
 <div class="file-wrapper">
-	<img src="${request.contextPath}/common/icons/file/file.jpg"></a>
+	<img src="${request.contextPath}/images/common/icons/file/file.jpg"></a>
 	<div class="file-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
