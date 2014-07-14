@@ -2073,6 +2073,7 @@
 	common.ui = common.ui || {};
 	var kendo = window.kendo, 
 	Widget = kendo.ui.Widget, 
+	isFunction = kendo.isFunction,
 	proxy = $.proxy,
 	keys = kendo.keys,
 	UNDEFINED = 'undefined',	
@@ -2086,6 +2087,13 @@
 		return (typeof x != UNDEFINED);
 	}
 	
+	common.ui.button = function (options){
+		if( defined(options.renderTo) ){
+			if( isFunction(options.click)){
+				$(options.renderTo).click( options.click );
+			}
+		}
+	}
 	
 	common.ui.buttons = function ( options ){		
 		options = options || {};	
@@ -2099,8 +2107,6 @@
 			}
 		}
 	}
-	
-	
 	
 	common.ui.ExtRadioButtons = Widget.extend({
 		init: function(element, options) {
