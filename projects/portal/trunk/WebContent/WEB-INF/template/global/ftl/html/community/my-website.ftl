@@ -75,6 +75,7 @@
 					renderTo: "button[data-action='show-notice-section']",
 					click:function(e){
 						createNoticeSection();
+						common.ui.buttonDisabled($(this));
 					}
 				});
 					
