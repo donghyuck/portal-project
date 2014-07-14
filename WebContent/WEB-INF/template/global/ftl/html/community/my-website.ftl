@@ -360,7 +360,8 @@
 				model.bind("change", function(e){
 					if( e.field == "visible" ){ 				
 						if(!this.visible ){
-							$("button[data-action='new-notice'][disabled]").prop("disabled", false);
+							//$("button[data-action='new-notice'][disabled]").prop("disabled", false);
+							common.ui.buttonDisabled($("button[data-action='new-notice'][disabled]"));
 						}					
 					}
 				});				
