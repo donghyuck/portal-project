@@ -2100,9 +2100,11 @@
 					var target = $(this).attr("data-target");
 					if( $(target).length > 0 ){
 						$(target).hide();
-					}					
-					if( isFunction(options.aways)){
-						options.aways();
+					}		
+					var switch_target = $(this).attr("data-switch");
+					if( $(switch_target).length > 0 && $(switch_target).prop("tagName") == "button" ){
+						$(switch_target).toggleClass("disabled");	
+						$(switch_target).toggleClass("active");							
 					}
 				});				
 			}
