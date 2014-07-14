@@ -33,7 +33,7 @@
 	overflow: hidden;	
 }
 
-.image-listview .img-wrapper >.img-description, .file-listview .img-file >.file-description {
+.image-listview .img-wrapper >.img-description, .file-listview .file-wrapper >.file-description {
 	position: absolute;
 	top: 0;
 	width: 100%	;
