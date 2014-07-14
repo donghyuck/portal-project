@@ -107,6 +107,9 @@
 						openNoticeEditorPanel();
 					}
 				});
+				common.ui.button({
+					renderTo : '$("button[data-dismiss='section'][data-target]")',
+				});
 				createNoticeGrid();
 			}			
 		}
