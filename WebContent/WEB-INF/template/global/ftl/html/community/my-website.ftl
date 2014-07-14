@@ -188,6 +188,9 @@
 							openNoticeEditorPanel();
 						}
 					},
+					close: function(e){
+						this.set("visible", false );
+					},
 					delete: function(e){
 						
 					}
