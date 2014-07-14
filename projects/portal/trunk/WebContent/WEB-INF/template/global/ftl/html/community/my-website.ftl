@@ -116,8 +116,8 @@
 				});
 				common.ui.button({
 					renderTo : "button[data-dismiss='section'][data-target]"
-				});
-				createNoticeGrid();
+				}).click();
+				//createNoticeGrid();
 			}	
 			if(	!$("#notice-section").is(":visible") ){
 				$("#notice-section").show();
