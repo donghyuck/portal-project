@@ -1212,7 +1212,7 @@
 								</#if>											
 							</div>
 							<div class="panel-body color4" style="max-height:450px;">
-								<div id="photo-list-view" class="color4" ></div>
+								<div id="photo-list-view" class="image-listview" ></div>
 							</div>	
 							<div class="panel-footer no-padding">
 								<div id="photo-list-pager" class="k-pager-wrap"></div>
