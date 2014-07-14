@@ -170,6 +170,8 @@
 		} 
 	})
 	
+	
+	
 	common.ui.setup = function (options){
 		options = options || {};
 		var setup = new common.ui.PageSetup(options);
@@ -375,6 +377,21 @@
 			}
 		});
 	};
+
+	/*
+	common.ui.on(selector, handlers ){
+		if (typeof selector === 'string')
+			selector = $(selector);				
+		if( defined(handlers)){
+			if (options.handlers instanceof Array){
+				
+				
+			}else{
+								
+			}
+		}		
+	}
+	*/
 
 	common.ui.notification = function(options) {
 		var renderToString = "my-notifications";
