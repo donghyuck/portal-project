@@ -1215,7 +1215,7 @@
 								<div id="photo-list-view" class="image-listview" ></div>
 							</div>	
 							<div class="panel-footer no-padding">
-								<div id="photo-list-pager" class="k-pager-wrap"></div>
+								<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
 							</div>
 						</div>	
 					</div><!-- ./tab-pane -->
