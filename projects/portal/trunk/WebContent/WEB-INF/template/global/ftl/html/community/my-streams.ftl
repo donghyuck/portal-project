@@ -399,30 +399,31 @@
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
-		<div class="navbar navbar-personalized navbar-inverse" role="navigation">
-						<ul class="nav navbar-nav pull-right">
-							<li class="hidden-xs">
-								<p class="navbar-text">레이아웃</p>
-								<div class="btn-group navbar-btn" data-toggle="buttons">
-									<label class="btn btn-info">
-										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-									</label>
-									<label class="btn btn-info active">
-								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-									</label>
-									<label class="btn btn-info">
-										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-									</label>
-								</div>
-							</li> 
-							<li>
-								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
-									<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-								</div>
-							</li>		
-						</ul>
-			</div><!-- ./navbar-personalized -->			
 			<div class="container-fluid padding-sm" style="min-height:600px;">		
+				<div class="navbar navbar-personalized navbar-inverse" role="navigation">
+								<ul class="nav navbar-nav pull-right">
+									<li class="hidden-xs">
+										<p class="navbar-text">레이아웃</p>
+										<div class="btn-group navbar-btn" data-toggle="buttons">
+											<label class="btn btn-info">
+												<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+											</label>
+											<label class="btn btn-info active">
+										 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+											</label>
+											<label class="btn btn-info">
+												<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+											</label>
+										</div>
+									</li> 
+									<li>
+										<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
+											<button type="button" class="btn btn-primary" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+										</div>
+									</li>		
+								</ul>
+					</div><!-- ./navbar-personalized -->			
+						
 				<div id="personalized-area" class="row"></div>				
 			</div>			
 		<!-- END MAIN CONTENT -->		
