@@ -71,8 +71,14 @@
 					}					
 				});
 				
+				common.ui.button({
+					renderTo: "data-action='show-notice-section'",
+					click:function(e){
+						createNoticeSection();
+					}
+				});
 					
-				// 3. Notice	
+				// 3. Notice	 Section
 				createNoticeSection();
 			
 				// 4-1. Announces 							
@@ -111,7 +117,10 @@
 					renderTo : "button[data-dismiss='section'][data-target]"
 				});
 				createNoticeGrid();
-			}			
+			}	
+			if(	!$("#notice-section").is(":visible") ){
+				$("#notice-section").show();
+			}	
 		}
 		
 		function getNoticeTarget (){
@@ -992,7 +1001,7 @@
 			<div class="container-fluid">		
 				<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 							<ul class="nav navbar-nav pull-right">
-								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button">공지 & 이벤트 </button></li>
+								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
 								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 								<li class="hidden-xs">
 									<div class="btn-group navbar-btn" data-toggle="buttons">
