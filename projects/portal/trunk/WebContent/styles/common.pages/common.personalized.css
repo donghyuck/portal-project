@@ -71,7 +71,12 @@
 	border-width: 0px;
 	background : transparent;
 }
-		
+
+.image-listview .img-wrapper.k-state-selected {
+	background-color: #5bc0de;	
+	border-color: #46b8da;
+}
+
 .image-listview .img-wrapper.k-state-selected:after  {
 	top: 10px;
 	right: 15px;
