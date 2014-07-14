@@ -1239,10 +1239,11 @@
 		<!-- END FOOTER -->			
 		<!-- START TEMPLATE -->					
 		<script type="text/x-kendo-tmpl" id="notice-edit-template">		
+		
 		<div class="one-page-btn no-margin-b" data-bind="visible:visible">
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 		</div>
-		<h5 data-bind="visible: isNew">
+		<h5 data-bind="visible: isNew&&visible">
 			<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
 		</h5>		
 		<div class="panel panel-default animated fadeInLeft" data-bind="visible:visible">
@@ -1265,7 +1266,8 @@
 		</div>		
 		<div class="one-page-btn no-margin-b" data-bind="visible:visible">
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-		</div>							
+		</div>		
+							
 		</script>
 		<#include "/html/common/common-homepage-templates.ftl" >	
 		<#include "/html/common/common-editor-templates.ftl" >	
