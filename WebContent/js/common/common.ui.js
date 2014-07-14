@@ -182,12 +182,12 @@
 			classes = classes.split(" "); 
 			if (transitions) { 								
 				each(classes, function(idx, value) {
-					renderTo.toggleClass(value, true);
+					renderTo.toggleClass(value);
 				});
 				
 				renderTo.one(transitions.event, function(){
 					each(classes, function(idx, value) {
-						renderTo.toggleClass(value, false);
+						renderTo.toggleClass(value);
 					});										
 				});
 			}
@@ -2087,6 +2087,7 @@
 		return (typeof x != UNDEFINED);
 	}
 	
+	
 	common.ui.buttons = function ( options ){		
 		options = options || {};	
 		if( defined(options.renderTo) ){
@@ -2099,6 +2100,8 @@
 			}
 		}
 	}
+	
+	
 	
 	common.ui.ExtRadioButtons = Widget.extend({
 		init: function(element, options) {
