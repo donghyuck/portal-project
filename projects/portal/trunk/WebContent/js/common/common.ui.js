@@ -2128,6 +2128,7 @@
 			if( isFunction(options.click)){
 				renderTo.click( options.click );
 			}
+			return renderTo;
 		}
 	}
 	
