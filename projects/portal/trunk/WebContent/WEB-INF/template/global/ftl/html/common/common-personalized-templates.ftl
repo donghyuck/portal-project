@@ -117,7 +117,7 @@
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#:imageId#" alt="#:name# 이미지"/>
 		<figcaption>
 			<h2>#: name # <span></span></h2>
-			<p>#= formattedModifiedDate #</p>
+			<p>#= formattedModifiedDate() #</p>
 			<a href="\\#">View more</a>
 		</figcaption>			
 	</figure>
