@@ -2091,8 +2091,8 @@
 		if( element.is(":disabled") ){
 			element.prop("disabled", false);
 		}	
-		if( renderTo.is("[data-toggle='button']") ){
-			$(switch_target).toggleClass("active");
+		if( element.is("[data-toggle='button']") ){
+			element.toggleClass("active");
 		}
 	}
 	
@@ -2100,8 +2100,8 @@
 		if( !element.is(":disabled") ){
 			element.prop("disabled", true);
 		}	
-		if( renderTo.is("[data-toggle='button']") ){
-			$(switch_target).toggleClass("active");
+		if( element.is("[data-toggle='button']") ){
+			element.toggleClass("active");
 		}
 	}
 	
