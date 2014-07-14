@@ -1004,7 +1004,7 @@
 			<div class="one-page">
 				<div class="one-page-inner one-default">
 					<div class="container">	
-						<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<button type="button" class="close fa-3x"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 						<h1>공지 & 이벤트 
 							<small>		
 								소스를 선택하세요.
