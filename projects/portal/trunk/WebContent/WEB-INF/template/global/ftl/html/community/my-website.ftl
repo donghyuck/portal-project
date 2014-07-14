@@ -77,10 +77,10 @@
 						createNoticeSection();
 						common.ui.buttonDisabled($(this));
 					}
-				});
+				}).click();;
 					
 				// 3. Notice	 Section
-				createNoticeSection();
+				//createNoticeSection();
 			
 				// 4-1. Announces 							
 				//$("#announce-panel").data( "announcePlaceHolder", new Announce () );	
@@ -116,7 +116,7 @@
 				});
 				common.ui.button({
 					renderTo : "button[data-dismiss='section'][data-target]"
-				}).click();
+				});
 				//createNoticeGrid();
 			}	
 			if(	!$("#notice-section").is(":visible") ){
