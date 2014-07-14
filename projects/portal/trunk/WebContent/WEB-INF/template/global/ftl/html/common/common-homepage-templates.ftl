@@ -81,36 +81,34 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-<div class="one-page-btn no-margin-b" data-bind="visible:visible">
-<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="events{click:delete}">삭제</button>
-</div>
-<div class="panel panel-default animated fadeInLeft"  data-bind="visible:visible">
-	<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
-		<h4 class="panel-title" data-bind="html:announce.subject"></h4>		
-	</div>
-	<div class="panel-body padding-sm">
-		<ul class="list-unstyled text-muted">
-			<li><span class="label label-primary label-lightweight">게시 기간</span> <span data-bind="text: announce.formattedStartDate"></span> ~ <span data-bind="text: announce.formattedEndDate"></span></li>
-			<li><span class="label label-default label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
-			<li><span class="label label-default label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
-		</ul>	
-		<div class="media">
-			<a class="pull-left" href="\\#">
-				<img data-bind="attr:{ src: profilePhotoUrl }" width="30" height="30" class="img-circle">
-			</a>
-			<div class="media-body">
-				<ul class="list-unstyled text-muted">
-					<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-					<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-				</ul>	
-			</div>		
-		</div>	
-		<hr class="devider no-margin-t">
-		<div data-bind="html: announce.body " />		
-	</div>
-</div>
-<div class="one-page-btn no-margin-b" data-bind="visible:visible">
-<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="events{click:delete}">삭제</button>
+<div class="animated fadeInLeft" data-bind="visible:visible">
+	<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="events{click:delete}">삭제</button> <button type="button" class="btn-u btn-u-gray btn-u-small" data-bind="events{click:close}">취소</button>
+	<div class="panel panel-default">
+		<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
+			<h4 class="panel-title" data-bind="html:announce.subject"></h4>		
+		</div>
+		<div class="panel-body padding-sm">
+			<ul class="list-unstyled text-muted">
+				<li><span class="label label-primary label-lightweight">게시 기간</span> <span data-bind="text: announce.formattedStartDate"></span> ~ <span data-bind="text: announce.formattedEndDate"></span></li>
+				<li><span class="label label-default label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
+				<li><span class="label label-default label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
+			</ul>	
+			<div class="media">
+				<a class="pull-left" href="\\#">
+					<img data-bind="attr:{ src: profilePhotoUrl }" width="30" height="30" class="img-circle">
+				</a>
+				<div class="media-body">
+					<ul class="list-unstyled text-muted">
+						<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
+						<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
+					</ul>	
+				</div>		
+			</div>	
+			<hr class="devider no-margin-t">
+			<div data-bind="html: announce.body " />		
+		</div>
+	</div>	
+	<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="events{click:delete}">삭제</button> <button type="button" class="btn-u btn-u-gray btn-u-small" data-bind="events{click:close}">취소</button>
 </div>
 </script>
 <!-- ============================== -->
