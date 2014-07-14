@@ -909,7 +909,7 @@
 				<div id="personalized-area" class="row" style="min-height:10px;"></div>				
 			</div><!-- ./container-fluid -->	
 			
-			<div id="notice-section" class="one-page">
+			<div id="notice-section" class="one-page animated bounceInUp">
 				<div class="one-page-inner one-default">
 					<div class="container">	
 						<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
