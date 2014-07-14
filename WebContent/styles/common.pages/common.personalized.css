@@ -2,11 +2,14 @@
 /**
 * main 
 */
+.wrapper{
+	background-color:transparent;
+}
+		
+.wrapper .header {
+	background-color: #fff;
+}
 
-
-/**
-* Kendo UI customized
-*/		
 .wrapper .k-grid-content {
 	min-height : 300px;
 }
