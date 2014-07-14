@@ -2100,6 +2100,9 @@
 					var target = $(this).attr("data-target");
 					if( $(target).length > 0 ){
 						$(target).hide();
+					}					
+					if( isFunction(options.aways)){
+						options.aways();
 					}
 				});				
 			}
