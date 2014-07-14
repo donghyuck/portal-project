@@ -763,10 +763,10 @@
 									</div>												
 								</div>
 								<div class="panel-body color4" style="max-height:450px;">
-									<div id="attachment-list-view" class="color4"></div>
+									<div id="attachment-list-view" class="file-listview"></div>
 								</div>	
 								<div class="panel-footer no-padding">
-										<div id="pager" class="k-pager-wrap"></div>
+										<div id="pager" class="file-listview-pager k-pager-wrap"></div>
 								</div>
 							</div>																				
 						</div><!-- end attachements  tab-pane -->		
@@ -822,10 +822,10 @@
 									</#if>											
 								</div>
 								<div class="panel-body color4" style="max-height:450px;">
-									<div id="photo-list-view" class="color4" ></div>
+									<div id="photo-list-view" class="image-listview" ></div>
 								</div>	
 								<div class="panel-footer no-padding">
-									<div id="photo-list-pager" class="k-pager-wrap"></div>
+									<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
 								</div>
 							</div>	
 						</div><!-- end photos  tab-pane -->
