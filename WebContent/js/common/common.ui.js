@@ -2089,8 +2089,22 @@
 	
 	common.ui.button = function (options){
 		if( defined(options.renderTo) ){
+			var renderTo = options.renderTo ;
+			if( typeof renderTo === "string" ){	
+				renderTo = $(options.renderTo);
+			}
+			
+			if( renderTo.attr("data-dismiss") && renderTo.attr("data-target")  )
+			{
+				renderTo.click(function(e){
+					var target = $(this).attr(("data-target");
+					if( $(target).length > 0 ){
+						$(target).hide();
+					}
+				});				
+			}
 			if( isFunction(options.click)){
-				$(options.renderTo).click( options.click );
+				renderTo.click( options.click );
 			}
 		}
 	}
