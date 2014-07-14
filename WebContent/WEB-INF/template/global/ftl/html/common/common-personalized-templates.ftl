@@ -6,7 +6,7 @@
 	#if (contentType.match("^image") ) {#
 	<img src="${request.contextPath}/community/view-my-attachment.do?width=150&height=150&attachmentId=#:attachmentId#" alt="#:name# 이미지" />		
 	# } else { #		
-	<img src="${request.contextPath}/images/common/icons/file/blank.jpg"></a>
+	<img src="${request.contextPath}/images/common/icons/file/blank.png"></a>
 	# } #	
 	<div class="file-description">
 		<h3>#:name#</h3>
