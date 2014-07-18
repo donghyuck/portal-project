@@ -94,7 +94,10 @@
 		<!-- display image gallery                                  -->
 		<!-- ============================== -->
 		function createGallerySection(){
-			alert("hello");
+			var renderTo = "image-gallery-section";
+			if( $( "#" +renderTo).length == 0 ){
+				$("#personalized-area").before($("#image-gallery-template").html());
+			}
 		}
 		<!-- ============================== -->
 		<!-- display notice  panel                                  -->
