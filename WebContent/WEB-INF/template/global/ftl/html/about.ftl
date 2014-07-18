@@ -159,12 +159,12 @@
 									<div class="progress progress-u progress-xs">
 						                    <div style="width: 88%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar" class="progress-bar progress-bar-u"></div>
 						             </div>
-						             <h3 class="heading-xs no-top-space">PHP/WordPress <span class="pull-right">76%</span></h3>
+						             <h3 class="heading-xs no-top-space">JAVA/JSP, Servlet <span class="pull-right">97%</span></h3>
 						             <div class="progress progress-u progress-xs">
-						                    <div style="width: 76%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="76" role="progressbar" class="progress-bar progress-bar-u">
+						                    <div style="width: 76%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="97" role="progressbar" class="progress-bar progress-bar-u">
 						                    </div>
 						             </div>
-						             <h3 class="heading-xs no-top-space">HTML/CSS <span class="pull-right">97%</span></h3>
+						             <h3 class="heading-xs no-top-space">HTML5/CSS3 <span class="pull-right">97%</span></h3>
 						             <div class="progress progress-u progress-xs">
 						                    <div style="width: 97%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="97" role="progressbar" class="progress-bar progress-bar-u">
 						                    </div>
