@@ -886,7 +886,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="container-fluid one-page">		
+			<div class="container-fluid one-page no-border">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 							<ul class="nav navbar-nav pull-right">
 								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
