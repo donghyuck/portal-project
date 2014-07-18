@@ -396,6 +396,8 @@ article > h3.title {
 	overflow: hidden;
 	line-height: 28px;
 	font-weight: 400;
+	border: 0px;
+	margin: 0px;
 }
 
 article > h3.title:after {
