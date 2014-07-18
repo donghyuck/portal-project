@@ -146,6 +146,9 @@
 						<!-- end side menu -->					
 					</div>
 					<div class="col-lg-9">
+					<#if hasWebSitePage >							
+					${ processedBodyText }
+					</#if> 
 						<div class="row">
 							<div class="col-sm-12">					
 								<ul class="nav nav-tabs">
