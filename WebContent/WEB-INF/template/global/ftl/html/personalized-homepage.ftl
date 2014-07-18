@@ -689,8 +689,9 @@
 			<div class="container-fluid" style="min-height:600px;">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 					<ul class="nav navbar-nav pull-right">
-								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-								<li class="hidden-xs">
+							<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-gallery-section" >이미지 갤러리 </button></li>
+							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+							<li class="hidden-xs">
 									<div class="btn-group navbar-btn" data-toggle="buttons">
 										<label class="btn btn-info">
 											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
@@ -702,8 +703,8 @@
 											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 										</label>
 									</div>
-								</li> 
-								<!--<li><a href="#personalized-controls-section" class="btn-control-group no-padding-b" data-toggle="menu"><i class="fa fa-cloud-upload fa-2x"></i></a></li>-->
+							</li> 
+							<!--<li><a href="#personalized-controls-section" class="btn-control-group no-padding-b" data-toggle="menu"><i class="fa fa-cloud-upload fa-2x"></i></a></li>-->
 					</ul>
 				</div><!-- ./navbar-personalized -->
 				<div id="personalized-area" class="row"></div>				
