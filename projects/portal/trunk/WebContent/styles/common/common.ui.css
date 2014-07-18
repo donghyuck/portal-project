@@ -375,6 +375,7 @@ body:not (.right-to-left ) .no-border-l {
 .bs-callout-danger  h4 {
 color: #d9534f;		
 }
+
 /* Loader
 ------------------------------------*/
 .page-loader {
@@ -386,6 +387,25 @@ color: #d9534f;
 	overflow: visible;
 	background: #ffffff url('/images/common/loader/loading.gif') no-repeat center center;
 	z-index: 100000;
+}
+
+/* Text
+------------------------------------*/
+
+article > h3.title {
+	overflow: hidden;
+	line-height: 28px;
+	font-weight: 400;
+}
+
+article > h3.title:after {
+background: url(/images/common/bg_off.png) repeat;
+content: "";
+height: 5px;
+margin-left: 10px;
+position: absolute;
+top: 12px;
+width: 99%;
 }
 
 /* Lightbox
