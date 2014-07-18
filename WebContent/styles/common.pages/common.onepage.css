@@ -13,10 +13,6 @@
 }
 
 
-
-	
-	
-
 .one-page h1,.one-page h2 {
 	color: #fff;
 	font-size: 23px;
@@ -77,4 +73,10 @@
 
 .one-page .one-green {
 	background: #2ecc71;
+}
+
+.one-page .headline-controls {
+	margin-top: -2px;
+	margin-bottom: -200px;
+	float: right;	
 }
