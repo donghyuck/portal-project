@@ -2147,10 +2147,11 @@
 			if( renderTo.attr("data-dismiss") && renderTo.attr("data-target")  )
 			{
 				renderTo.click(function(e){
-					var target = $(this).attr("data-target");
+					var target = $(this).data("target");
+					alert( target );
 					if( $(target).length > 0 ){
 						$(target).hide();
-					}		
+					}		#image-gallery-section button[data-dismiss='section'][data-target]
 					var switch_target = $(this).attr("data-switch-target");
 					if( $(switch_target).length > 0 && $(switch_target).is("button" )){		
 						common.ui.buttonEnabled($(switch_target));
