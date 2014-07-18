@@ -886,7 +886,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="container-fluid">		
+			<div class="container-fluid one-page">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 							<ul class="nav navbar-nav pull-right">
 								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
@@ -905,42 +905,43 @@
 									</div>
 								</li> 
 							</ul>
-				</div><!-- ./navbar-personalized -->		
+				</div><!-- ./navbar-personalized -->
+				<div id="notice-section" class="animated bounceInUp content no-padding-t">
+					<div class="one-page-inner one-default">
+						<div class="container">	
+							<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<h1>공지 & 이벤트 
+								<small>		
+									소스를 선택하세요.
+								</small>
+							</h1>		
+							<div class="row ">
+								<div class="col-sm-4">
+									<div class="one-page-btn">
+										<div id="notice-target-button" class="btn-group" data-toggle="buttons">
+											<label class="btn btn-info btn-sm active">
+												<input type="radio" name="notice-target" value="30" >사이트
+											</label>
+											<label class="btn btn-info btn-sm ">
+												<input type="radio" name="notice-target" value="1">회사
+											</label>
+										</div>
+										<button type="button"	class="btn-u btn-u-red pull-right" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button>
+									</div>		
+									<div  id="notice-grid"></div>
+								</div>
+								<div class="col-sm-8">
+									<div  id="notice-view"></div>
+									<div  id="notice-editor"></div>	
+								</div>
+							</div>				
+						</div>
+					</div>	
+				</div><!-- ./ong-page -->							
 				<div id="personalized-area" class="row" style="min-height:10px;"></div>				
 			</div><!-- ./container-fluid -->	
 			
-			<div id="notice-section" class="one-page animated bounceInUp">
-				<div class="one-page-inner one-default">
-					<div class="container">	
-						<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						<h1>공지 & 이벤트 
-							<small>		
-								소스를 선택하세요.
-							</small>
-						</h1>		
-						<div class="row ">
-							<div class="col-sm-4">
-								<div class="one-page-btn">
-									<div id="notice-target-button" class="btn-group" data-toggle="buttons">
-										<label class="btn btn-info btn-sm active">
-											<input type="radio" name="notice-target" value="30" >사이트
-										</label>
-										<label class="btn btn-info btn-sm ">
-											<input type="radio" name="notice-target" value="1">회사
-										</label>
-									</div>
-									<button type="button"	class="btn-u btn-u-red pull-right" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button>
-								</div>		
-								<div  id="notice-grid"></div>
-							</div>
-							<div class="col-sm-8">
-								<div  id="notice-view"></div>
-								<div  id="notice-editor"></div>	
-							</div>
-						</div>				
-					</div>
-				</div>	
-			</div><!-- ./ong-page -->		
+	
 			
 			
 							
