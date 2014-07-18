@@ -942,9 +942,6 @@
 			</div><!-- ./container-fluid -->	
 			
 	
-			
-			
-							
 		<div class="container padding-sm" style="min-height:600px;">			
 			<div class="row blank-top-10">				
 				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
