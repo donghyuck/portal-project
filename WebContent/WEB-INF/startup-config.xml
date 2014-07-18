@@ -106,6 +106,7 @@ PC9saWNlbnNlPg==</file>
 		
 	<security>
 		<authentication>
+			<loginVer>1</loginVer>
 		    <disallowGuest>false</disallowGuest>
 		    <authority>ROLE_USER</authority>		
 			<encoding>
