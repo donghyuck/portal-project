@@ -121,13 +121,6 @@
 		#announce-list-section .k-grid-header .k-header {
 			text-align: center;
 		}
-
-		.content-main-section {
-			/** background: #F98262;	 */	
-			width: 100%;
-			height: 100%;
-			min-height:500px;
-		}
 							
 		</style>   	
 	</head>
@@ -140,7 +133,7 @@
 		<#include "/html/common/common-homepage-menu.ftl" >	
 		<#assign hasWebSitePage = action.hasWebSitePage("pages.about.pageId") />
 		<#assign menuName = action.targetPage.getProperty("page.menu.name", "USER_MENU") />
-		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_2") />
+		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_3") />
 		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />
 				
 		<header class="cloud">
