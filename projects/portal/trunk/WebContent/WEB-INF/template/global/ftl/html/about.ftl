@@ -151,7 +151,7 @@
 					<#else>					
 						<div class="row">
 							<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-							</div>
+							</div><!-- ./col-lg-8  -->			
 							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
 								<article>
 									<h3 class="title">보유 기술</div>
@@ -176,8 +176,8 @@
 						                    </div>
 						                </div>									
 								</article>
-							</div>							
-						</div></!-- ./row -->
+							</div><!-- ./col-lg-4  -->							
+						</div><!-- ./row -->
 					</#if> 
 						<div class="row">
 							<div class="col-sm-12">					
