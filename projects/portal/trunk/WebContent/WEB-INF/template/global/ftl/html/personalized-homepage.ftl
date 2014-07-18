@@ -84,7 +84,7 @@
 						createGallerySection();
 						common.ui.buttonDisabled($(this));
 					}
-				}).click();
+				});
 								
 				showNoticePanel();
 				// END SCRIPT 				
@@ -94,7 +94,7 @@
 		<!-- display image gallery                                  -->
 		<!-- ============================== -->
 		function createGallerySection(){
-		
+			alert("hello");
 		}
 		<!-- ============================== -->
 		<!-- display notice  panel                                  -->
