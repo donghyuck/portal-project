@@ -388,8 +388,12 @@ color: #d9534f;
 	z-index: 100000;
 }
 
-
-/* Notifacation
+/* Lightbox
+------------------------------------*/
+.lightbox {
+	cursor: pointer;	
+}
+/* Notification
 ------------------------------------*/
 /* Error template */
 .k-notification-error.k-group {
