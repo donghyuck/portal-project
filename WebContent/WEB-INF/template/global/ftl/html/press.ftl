@@ -46,19 +46,6 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-		blockquote p {
-			font-size: 15px;
-		}
-
-		.k-grid table tr.k-state-selected{
-			background: #428bca;
-			color: #ffffff; 
-		}
-		
-		#announce-view .popover {
-			position : relative;
-			max-width : 500px;
-		}
 						
 		</style>   	
 	</head>
