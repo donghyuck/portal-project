@@ -6,8 +6,8 @@
 		<!--
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
-			'css!${request.contextPath}/styles/jquery.extension/component.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
@@ -22,9 +22,11 @@
 			],
 			complete: function() {
 			
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
-				// START SCRIPT	
+				common.ui.setup({
+					features:{
+						backstretch : false
+					}
+				});	
 
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
@@ -129,10 +131,18 @@
 							
 		</style>   	
 	</head>
-	<body class="color0">
+	<body>
+		<div class="page-loader"></div>	
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
-		<#assign current_menu = action.getWebSiteMenu("USER_MENU", "MENU_1_2") />
+		<div class="wrapper">
+		<!-- START HEADER -->
+		<#include "/html/common/common-homepage-menu.ftl" >	
+		<#assign hasWebSitePage = action.hasWebSitePage("pages.about.pageId") />
+		<#assign menuName = action.targetPage.getProperty("page.menu.name", "USER_MENU") />
+		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_2") />
+		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />
+				
 		<header class="cloud">
 			<div class="container">
 				<div class="col-lg-12">	
@@ -143,7 +153,7 @@
 		</header>		
 		<!-- END HEADER -->			
 		<!-- START MAIN CONTENT -->	
-		<div class="container layout">			
+		<div class="container content no-padding-t">			
 			<div class="row">
 				<div class="col-lg-3 visible-lg">		
 					<!-- start side menu -->		
@@ -160,7 +170,7 @@
 				</div>
 				<div class="col-lg-9">		
 				<div class="content-main-section">
-					<div class="page-header text-primary">
+					<div class="page-header text-primary no-padding-t">
 						<h5><small>게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
 					</div>	
 													
