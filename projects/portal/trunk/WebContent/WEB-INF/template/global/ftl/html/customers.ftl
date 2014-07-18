@@ -102,16 +102,12 @@
 					</#if> 										
 				</div>				
 			</div>
-		</div>									 
-		<div class="container layout">						
-				<div class="row">
-				</div>		
-			</div>				
+		</div>									 		
 		<!-- END MAIN CONTENT -->	
-
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->	
+		</div>
 		<!-- START TEMPLATE -->
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
