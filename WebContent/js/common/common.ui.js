@@ -47,7 +47,20 @@
 	UNDEFINED = 'undefined', 
 	proxy = $.proxy, 
 	extend = $.extend,
-	isFunction = kendo.isFunction;
+	isFunction = kendo.isFunction,
+	DEFAULT_LIGHTBOX_OPTIONS = {
+		items:[] ,	
+		type:'image',	
+		mainClass: 	'mfp-no-margins mfp-with-zoom',
+		image: {
+			verticalFit: 	true
+		},
+		gallery: {
+			enabled: false,
+			navigateByImgClick: true
+		}	
+	}
+	;
 
 	function defined(x) {
 		return (typeof x != UNDEFINED);
@@ -64,6 +77,10 @@
 	}
 	
 	common.ui.backstretch = function (){		
+		
+		if(!defined($.backstretch)) {
+			return false;
+		}		
 		var dataSource = common.api.streams.dataSource;
 		var template = kendo.template("/community/view-streams-photo.do?key=#= externalId#");
 		dataSource.fetch(function(){
@@ -77,6 +94,35 @@
 				{duration: 6000, fade: 750}	
 			);
 		});
+	}
+	
+	common.ui.lightbox = function(){
+		if(!defined($.magnificPopup)) {
+			return false;
+		}
+		$(document).on("click","[data-ride='lightbox']", function(e){					
+			var $this = $(this), config = {};				
+			if($this.data("plugin-options")) {
+				config = jQuery.extend({}, DEFAULT_LIGHTBOX_OPTIONS, opts, $this.data("plugin-options"));	
+			}else{
+				config = DEFAULT_LIGHTBOX_OPTIONS;
+			}						
+			if( $this.prop("tagName").toLowerCase() == "img" ){				
+				config.items = {
+					src : $this.attr("src")
+				}				
+			}else{
+				if( $this.children("img").length > 0  ){
+					var data = [];
+					$.each( $this.children("img"), function( index,  item){
+						config.items.push({
+							src : $(item).attr("src")
+						});
+					});	
+				}
+			}
+			$.magnificPopup.open(config);
+		} );	
 	}
 	
 	common.ui.PageSetup = kendo.Class.extend({		
@@ -151,21 +197,7 @@
 			}
 			
 			if(features.lightbox){				
-				$(document).on("click","[data-ride='lightbox']", function(e){
-					var $this = $(this);
-					if( $this.children("img").length > 0  ){
-						var data = [];
-						$.each( $this.children("img"), function( index,  item){
-							data.push({
-								src : $(item).attr("src")
-							});
-						});
-						$.magnificPopup.open({
-							  items: data,
-							  type : "image"
-							});				
-					}
-				} );	
+				common.ui.lightbox();	
 			}	
 		} 
 	})
