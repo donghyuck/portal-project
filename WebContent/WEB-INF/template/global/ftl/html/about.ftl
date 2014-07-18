@@ -8,7 +8,7 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.timeline-v2.min.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/pomegranate.css',		
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
 			
 			'css!${request.contextPath}/styles/common/common.timeline.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
