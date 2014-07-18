@@ -77,13 +77,25 @@
 				});
 
 				$('#myTab a:first').tab('show') ;
-				
+
+				common.ui.button({
+					renderTo: "button[data-action='show-gallery-section']",
+					click:function(e){
+						createGallerySection();
+						common.ui.buttonDisabled($(this));
+					}
+				}).click();
+								
 				showNoticePanel();
 				// END SCRIPT 				
 			}
 		}]);	
-
+		<!-- ============================== -->
+		<!-- display image gallery                                  -->
+		<!-- ============================== -->
+		function createGallerySection(){
 		
+		}
 		<!-- ============================== -->
 		<!-- display notice  panel                                  -->
 		<!-- ============================== -->
