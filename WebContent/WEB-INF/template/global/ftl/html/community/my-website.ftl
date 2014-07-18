@@ -887,7 +887,7 @@
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
 			<div class="container-fluid">		
-				<div class="navbar navbar-personalized navbar-inverse" role="navigation">
+				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 							<ul class="nav navbar-nav pull-right">
 								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
 								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
