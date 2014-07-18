@@ -398,6 +398,7 @@ article > h3.title {
 	font-weight: 400;
 	border: 0px;
 	margin: 0px;
+	position: relative;
 }
 
 article > h3.title:after {
