@@ -170,8 +170,7 @@
 			<div class="container">
 				<ul class="nav navbar-nav navbar-right">
 					 <li><a href="#">이용약관</a></li>
-					 <li><a href="#">개인정보보호</a></li>
-					 <li><a href="#" onclick="toggleWindow(); return false;">로그인</a></li>					 
+					 <li><a href="#">개인정보보호</a></li>	 
 				</ul>
 			</div>
 		</nav>	
