@@ -110,8 +110,12 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->
-			<#include "/html/common/common-homepage-menu.ftl" >	
-			<#assign current_menu = action.getWebSiteMenu("USER_MENU", "MENU_1_1") />
+		<#include "/html/common/common-homepage-menu.ftl" >	
+		<#assign hasWebSitePage = action.hasWebSitePage("pages.about.pageId") />
+		<#assign menuName = action.targetPage.getProperty("page.menu.name", "USER_MENU") />
+		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_1") />
+		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />
+					
 			<header class="cloud">
 				<div class="container">
 					<div class="col-lg-12">	
