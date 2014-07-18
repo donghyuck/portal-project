@@ -6,7 +6,8 @@
 		<!--
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
@@ -17,8 +18,11 @@
 			'${request.contextPath}/js/common/common.ui.js'],
 			complete: function() {
 			
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
+				common.ui.setup({
+					features:{
+						backstretch : false
+					}
+				});	
 				      
 				// START SCRIPT	
 				// ACCOUNTS LOAD	
@@ -58,10 +62,15 @@
 						
 		</style>   	
 	</head>
-	<body class="color0">
+	<body>
+		<div class="page-loader"></div>	
+		<div class="wrapper">
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
-		<#assign current_menu = action.getWebSiteMenu("USER_MENU", "MENU_1_3") />
+		<#assign hasWebSitePage = action.hasWebSitePage("pages.events.pageId") />
+		<#assign menuName = action.targetPage.getProperty("page.menu.name", "USER_MENU") />
+		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_3") />
+		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />
 		<header class="cloud">
 			<div class="container">
 				<div class="col-lg-12">	
@@ -72,7 +81,7 @@
 		</header>	
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->	
-		<div class="container layout">	
+		<div class="container content no-padding-t	">	
 			<div class="row">
 				<div class="col-lg-3 visible-lg">
 					<!-- start side menu -->		
@@ -87,17 +96,10 @@
 					</div>	
 					<!-- end side menu -->						
 				</div>
-				<div class="col-lg-9">
-
-					<div class="row">
-						<div class="col-lg-6">
-																							
-						</div>							
-						<div class="col-lg-6">			
-											
-						</div>								
-					</div>	
-					
+				<div class="col-lg-9" style="min-height: 500px;">		
+					<#if hasWebSitePage >							
+					${ processedBodyText }
+					</#if> 										
 				</div>				
 			</div>
 		</div>									 
