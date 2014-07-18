@@ -906,7 +906,7 @@
 								</li> 
 							</ul>
 				</div><!-- ./navbar-personalized -->
-				<div id="notice-section" class="one-page animated bounceInUp content no-padding-t">
+				<div id="notice-section" class="one-page animated bounceInUp content no-padding-t" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
 					<div class="one-page-inner one-default">
 						<div class="container">	
 							<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
