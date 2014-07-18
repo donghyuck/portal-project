@@ -148,6 +148,9 @@
 					<div class="col-lg-9">
 					<#if hasWebSitePage >							
 					${ processedBodyText }
+					<#else>
+					
+					
 					</#if> 
 						<div class="row">
 							<div class="col-sm-12">					
