@@ -185,6 +185,13 @@
 			</div>
 		</div>									 			
 		<!-- END MAIN CONTENT -->	
+
+ 		<!-- START FOOTER -->
+		<#include "/html/common/common-homepage-footer.ftl" >		
+		<!-- END FOOTER -->	
+		</div>
+		
+		<!-- START TEMPLATE -->
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 			<tr data-uid="#: uid #">
 				<td><span class="label label-info">공지</span>&nbsp;#: subject #	 </td>
@@ -195,11 +202,7 @@
 		<script id="alert-message-template" type="text/x-kendo-tmpl">
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
 		</script>			
-			
- 		<!-- START FOOTER -->
-		<#include "/html/common/common-homepage-footer.ftl" >		
-		<!-- END FOOTER -->	
-		<!-- START TEMPLATE -->
+					
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
