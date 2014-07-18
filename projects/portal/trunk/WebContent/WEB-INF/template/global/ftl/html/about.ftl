@@ -159,7 +159,7 @@
 									<div class="progress progress-u progress-xs">
 						                    <div style="width: 88%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="88" role="progressbar" class="progress-bar progress-bar-u"></div>
 						             </div>
-						             <h3 class="heading-xs no-top-space">JAVA/JSP, Servlet <span class="pull-right">97%</span></h3>
+						             <h3 class="heading-xs no-top-space">JAVA <span class="pull-right">97%</span></h3>
 						             <div class="progress progress-u progress-xs">
 						                    <div style="width: 76%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="97" role="progressbar" class="progress-bar progress-bar-u">
 						                    </div>
@@ -169,7 +169,7 @@
 						                    <div style="width: 97%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="97" role="progressbar" class="progress-bar progress-bar-u">
 						                    </div>
 						             </div>
-						             <h3 class="heading-xs no-top-space">Web Animation <span class="pull-right">68%</span></h3>
+						             <h3 class="heading-xs no-top-space">JSP, Servlet<span class="pull-right">68%</span></h3>
 						             <div class="progress progress-u progress-xs">
 						                    <div style="width: 68%" aria-valuemax="100" aria-valuemin="0" aria-valuenow="68" role="progressbar" class="progress-bar progress-bar-u">
 						                    </div>
