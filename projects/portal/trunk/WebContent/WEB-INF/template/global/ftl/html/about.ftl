@@ -148,9 +148,16 @@
 					<div class="col-lg-9">
 					<#if hasWebSitePage >							
 					${ processedBodyText }
-					<#else>
-					
-					
+					<#else>					
+						<div class="row">
+							<div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+							</div>
+							<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<article>
+									<h3 class="title">보유 기술</div>
+								</article>
+							</div>							
+						</div></!-- ./row -->
 					</#if> 
 						<div class="row">
 							<div class="col-sm-12">					
