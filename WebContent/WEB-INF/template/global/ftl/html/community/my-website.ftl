@@ -886,7 +886,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="container-fluid one-page no-border">		
+			<div class="container-fluid">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 							<ul class="nav navbar-nav pull-right">
 								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
@@ -906,7 +906,7 @@
 								</li> 
 							</ul>
 				</div><!-- ./navbar-personalized -->
-				<div id="notice-section" class="animated bounceInUp content no-padding-t">
+				<div id="notice-section" class="one-page animated bounceInUp content no-padding-t">
 					<div class="one-page-inner one-default">
 						<div class="container">	
 							<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
