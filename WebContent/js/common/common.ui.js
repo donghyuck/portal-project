@@ -92,7 +92,7 @@
 		
 		var options =DEFAULT_BXSLIDER_OPTIONS;		
 		if(element.data("plugin-options")) {
-			extend(options, $.parseJSON( "{" +  element.data("plugin-options") + "}" ) );
+			extend(options, eval( "({" +  element.data("plugin-options") + "})" ) );
 		}
 		
 		alert(stringify(options));
