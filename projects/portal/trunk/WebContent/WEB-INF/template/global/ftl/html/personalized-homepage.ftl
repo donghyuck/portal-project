@@ -878,7 +878,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 				
-										<div id="myImageCarousel" class="carousel bxslider carousel-v1">
+										<div id="myImageCarousel" class="carousel slide  carousel-v1">
 			                    <div class="carousel-inner">
 			                        <div class="item active">
 			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/5.jpg" alt="">
