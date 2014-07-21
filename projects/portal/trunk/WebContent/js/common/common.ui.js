@@ -87,14 +87,14 @@
 			return false;
 		}
 		if(!defined(element)) {
-			element = $(".bxslider");
+			 = $(".bxslider");
 		}
 		
 		var options =DEFAULT_BXSLIDER_OPTIONS;		
 		if(element.data("plugin-options")) {
 			extend(options, element.data("plugin-options") );
 		}
-		renderTo.bxSlider(options); 
+		element.bxSlider(options); 
 	}
 	
 	
