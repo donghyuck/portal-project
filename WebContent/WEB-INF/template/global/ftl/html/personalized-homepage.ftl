@@ -879,9 +879,10 @@
 				<div class="row">
 					<div class="col-xs-12">
 				
-						<div id="myCarousel" class="carousel bxslider carousel-v1">
+						<div id="#=guid#" class="carousel bxslider carousel-v1">
 			                    
 			                <div class="carousel-inner">
+			                        
 			                        <div class="item active">
 			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/5.jpg" alt="">
 			                            <div class="carousel-caption">
@@ -900,13 +901,13 @@
 			                                <p>여름 수련회....</p>
 			                            </div>
 			                        </div>
-			                </div>
-			                    
+			                        
+			                </div>			                    
 			                <div class="carousel-arrow">
-			                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			                        <a class="left carousel-control" href="\\##=guid#" data-slide="prev">
 			                            <i class="fa fa-angle-left"></i>
 			                        </a>
-			                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+			                        <a class="right carousel-control" href="\\##=guid#" data-slide="next">
 			                            <i class="fa fa-angle-right"></i>
 			                        </a>
 			                </div>
