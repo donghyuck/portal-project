@@ -103,7 +103,7 @@
 				$("#personalized-area").before(template({guid:guid}));
 				
 				$( "#" + guid + " .carousel-inner" ).html(
-					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view )
+					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
 				
 				common.ui.button({
