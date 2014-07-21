@@ -99,7 +99,13 @@
 			var renderTo = "image-gallery-section";
 			if( $( "#" +renderTo).length == 0 ){			
 				var template = kendo.template($("#image-gallery-template").html());
-				$("#personalized-area").before(template({guid:common.api.guid().toLowerCase()}));
+				var guid = common.api.guid().toLowerCase()
+				$("#personalized-area").before(template({guid:guid}));
+				
+				$( "#" + guid + " .carousel-inner" ).html(
+					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view )
+				);
+				
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
