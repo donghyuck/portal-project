@@ -8,6 +8,7 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
