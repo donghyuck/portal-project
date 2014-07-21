@@ -2152,7 +2152,7 @@
 					
 					if( $(target).length > 0 ){
 						if( defined( options.animate) ){
-							kendo.fx($(target)).fadeOut.play();
+							kendo.fx($(target)).fade("out").play();
 						}else{
 							$(target).hide();
 						}
