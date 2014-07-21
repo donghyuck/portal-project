@@ -92,6 +92,7 @@
 		
 		var options =DEFAULT_BXSLIDER_OPTIONS;		
 		if(element.data("plugin-options")) {
+			alert(element.data("plugin-options")) ;
 			extend(options, JSON.parse( element.data("plugin-options") ) );
 		}
 		
