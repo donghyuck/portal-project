@@ -83,9 +83,6 @@
 	}
 	
 	common.ui.slider = function( element ){		
-		if(!isFunction($.fn.bxSlider)) {
-			return false;
-		}
 		
 		if(!defined(element)) {
 			element = $(".bxslider");
