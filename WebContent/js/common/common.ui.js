@@ -59,6 +59,12 @@
 			enabled: false,
 			navigateByImgClick: true
 		}	
+	},
+	DEFAULT_BXSLIDER_OPTIONS = {
+		minSlides: 3,
+		maxSlides :	3,
+		slideWidth : 360,
+		slideMargin : 	10				
 	}
 	;
 
@@ -76,30 +82,21 @@
 		 $(element).fadeOut('slow');
 	}
 	
-	common.ui.slider = function( options ){
+	common.ui.slider = function( element ){		
 		if(!isFunction($.fn.bxSlider)) {
 			return false;
 		}
-		var renderTo, cfg = {
-			minSlides: 3,
-			maxSlides :	3,
-			slideWidth : 360,
-			slideMargin : 	10		
-		};
-		
-		options  = options || {};		
-		extend(cfg, options );
-		
-		alert(stringify(cfg));
-		
-		var renderTo = options.renderTo ;
-		if( defined(renderTo) ){			
-			if( typeof render === "string" ){
-				renderTo = $(renderTo);
-			}
-			renderTo.bxSlider(cfg);  
+		if(!defined(element)) {
+			element = $(".bxslider");
 		}
+		
+		var options =DEFAULT_BXSLIDER_OPTIONS;		
+		if(element.data("plugin-options")) {
+			extend(options, element.data("plugin-options") );
+		}
+		renderTo.bxSlider(options); 
 	}
+	
 	
 	common.ui.backstretch = function (){		
 		
