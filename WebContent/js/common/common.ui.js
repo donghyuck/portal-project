@@ -2149,9 +2149,15 @@
 				renderTo.click(function(e){
 					var target = $(this).data("target");
 					
+					
 					if( $(target).length > 0 ){
-						$(target).hide();
+						if( defined( options.animate) ){
+							kendo.fx($(target)).fadeOut.play();
+						}else{
+							$(target).hide();
+						}
 					}
+					
 					var switch_target = $(this).data("switch-target");
 					if( $(switch_target).length > 0 && $(switch_target).is("button" )){		
 						common.ui.buttonEnabled($(switch_target));
