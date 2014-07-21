@@ -877,7 +877,7 @@
 					</small>
 				</h1>
 				
-										<div class="carousel slide carousel-v1">
+										<div id="myImageCarousel" class="carousel slide carousel-v1">
 			                    <div class="carousel-inner">
 			                        <div class="item active">
 			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/5.jpg" alt="">
@@ -900,10 +900,10 @@
 			                    </div>
 			                    
 			                    <div class="carousel-arrow">
-			                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			                        <a class="left carousel-control" href="#myImageCarousel" data-slide="prev">
 			                            <i class="fa fa-angle-left"></i>
 			                        </a>
-			                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+			                        <a class="right carousel-control" href="#myImageCarousel" data-slide="next">
 			                            <i class="fa fa-angle-right"></i>
 			                        </a>
 			                    </div>
