@@ -878,7 +878,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 				
-						<div id="myCarousel" class="carousel slide carousel-v1">
+						<div id="myCarousel" class="carousel slide bxslider carousel-v1">
 			                    
 			                <div class="carousel-inner">
 			                        <div class="item active">
