@@ -876,6 +876,8 @@
 						소스를 선택하세요.
 					</small>
 				</h1>
+				<div class="row">
+					<div class="col-xs-12">
 				
 										<div id="myImageCarousel" class="carousel slide carousel-v1">
 			                    <div class="carousel-inner">
@@ -910,7 +912,8 @@
 							</div>
 						</div>
 						
-						
+						</div>
+					</div>	
 			</div>
 		</div>		
 	</div>
