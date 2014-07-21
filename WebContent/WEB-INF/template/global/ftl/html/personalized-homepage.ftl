@@ -880,7 +880,7 @@
 				
 										<div id="myImageCarousel" class="carousel   carousel-v1 bxslider">
 			                    <div class="carousel-inner">
-			                        <div class="item">
+			                        <div class="item active">
 			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/5.jpg" alt="">
 			                            <div class="carousel-caption">
 			                                <p>XX 고객사 위탁교육실시</p>
