@@ -98,8 +98,7 @@
 			if( $( "#" +renderTo).length == 0 ){			
 				$("#personalized-area").before($("#image-gallery-template").html());
 				common.ui.button({
-					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]",
-					animate : true
+					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
