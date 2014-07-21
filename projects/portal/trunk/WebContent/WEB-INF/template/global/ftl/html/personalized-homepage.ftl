@@ -102,7 +102,7 @@
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
 				common.ui.slider({
-					renderTo : $("#myImageCarousel")
+					renderTo : $(".slide")
 				}); 
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
