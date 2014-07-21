@@ -63,7 +63,7 @@
 	DEFAULT_BXSLIDER_OPTIONS = {
 		minSlides: 3,
 		maxSlides :	3,
-		slideWidth : 360,
+		slideWidth : "100%",
 		slideMargin : 	10,
 		adaptiveHeight: true
 	}
