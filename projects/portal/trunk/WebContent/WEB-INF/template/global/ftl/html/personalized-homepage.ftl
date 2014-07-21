@@ -878,7 +878,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 				
-										<div id="myImageCarousel" class="carousel slide  carousel-v1" data-plugin-options="slideWidth:100%">
+										<div id="myImageCarousel" class="carousel slide  carousel-v1" data-plugin-options="slideWidth:'100%'">
 			                    <div class="carousel-inner">
 			                        <div class="item active">
 			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/5.jpg" alt="">
