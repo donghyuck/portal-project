@@ -19,6 +19,7 @@
 			'${request.contextPath}/js/headroom/headroom.min.js',
 			'${request.contextPath}/js/headroom/jquery.headroom.min.js',
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
+			'${request.contextPath}/js/jquery.bxslider/jquery.bxslider.min.js',		
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
