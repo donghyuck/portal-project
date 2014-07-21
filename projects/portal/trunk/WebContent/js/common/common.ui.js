@@ -87,7 +87,7 @@
 			return false;
 		}
 		if(!defined(element)) {
-			 = $(".bxslider");
+			element = $(".bxslider");
 		}
 		
 		var options =DEFAULT_BXSLIDER_OPTIONS;		
