@@ -83,6 +83,9 @@
 	}
 	
 	common.ui.slider = function( element ){		
+		if(!isFunction($.fn.bxSlider)) {
+			return false;
+		}
 		
 		if(!defined(element)) {
 			element = $(".bxslider");
@@ -93,7 +96,6 @@
 			extend(options, eval( "({" +  element.data("plugin-options") + "})" ) );
 		}
 		
-		alert(stringify(options));
 		element.bxSlider(options);
 		
 	}
