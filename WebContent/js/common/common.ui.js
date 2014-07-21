@@ -89,8 +89,12 @@
 			slideMargin : 	10
 		});
 		
-		if( defined(options.renderTo) ){
-			$(renderTo).bxSlider({
+		var renderTo = options.renderTo ;
+		if( defined(renderTo) ){			
+			if( typeof render === "string" ){
+				renderTo = $(renderTo);
+			}
+			renderTo.bxSlider({
                 minSlides: options.minSlides,
                 maxSlides: options.maxSlides,
                 slideWidth: options.slideWidth,
