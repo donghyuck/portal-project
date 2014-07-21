@@ -101,11 +101,10 @@
 				var template = kendo.template($("#image-gallery-template").html());
 				var guid = common.api.guid().toLowerCase()
 				$("#personalized-area").before(template({guid:guid}));
-				
 				$( "#" + guid + " .carousel-inner" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				
+				$( "#" + guid + " .carousel-inner > .item:first" ).addClass("active");
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
@@ -873,7 +872,7 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
-	<div class="item active">
+	<div class="item">
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="">
 		<div class="carousel-caption">
 			<p>#: name #</p>
