@@ -80,28 +80,24 @@
 		if(!isFunction($.fn.bxSlider)) {
 			return false;
 		}
-		
-		options  = options || {};
-		extend({}, {
+		var renderTo, cfg = {
 			minSlides: 3,
 			maxSlides :	3,
 			slideWidth : 360,
-			slideMargin : 	10
-		});
+			slideMargin : 	10		
+		};
 		
-		alert(stringify(options));
+		options  = options || {};		
+		extend(cfg, options );
+		
+		alert(stringify(cfg));
 		
 		var renderTo = options.renderTo ;
 		if( defined(renderTo) ){			
 			if( typeof render === "string" ){
 				renderTo = $(renderTo);
 			}
-			renderTo.bxSlider({
-                minSlides: options.minSlides,
-                maxSlides: options.maxSlides,
-                slideWidth: options.slideWidth,
-                slideMargin: options.slideMargin
-            });  
+			renderTo.bxSlider(cfg);  
 		}
 	}
 	
