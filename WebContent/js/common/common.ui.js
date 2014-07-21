@@ -77,7 +77,7 @@
 	}
 	
 	common.ui.slider = function( options ){
-		if(!defined($.bxSlider)) {
+		if(!isFunction($.fn.bxSlider)) {
 			return false;
 		}
 		
