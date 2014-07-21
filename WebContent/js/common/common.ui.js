@@ -83,7 +83,7 @@
 		
 		options  = options || {};
 		extend({}, {
-			minSlides: 3
+			minSlides: 3,
 			maxSlides :	3,
 			slideWidth : 360,
 			slideMargin : 	10
