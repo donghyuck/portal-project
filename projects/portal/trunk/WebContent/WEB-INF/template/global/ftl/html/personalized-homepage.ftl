@@ -103,7 +103,7 @@
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
 				common.ui.slider({
-					renderTo : $(".slide")
+					renderTo : ".slide"
 				}); 
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
