@@ -864,7 +864,7 @@
 	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
 		<div class="one-page-inner one-grey">
 			<div class="container">	
-				<button type="button" class="close fa-3x" data-dismiss="section" data-target="\\#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<button type="button" class="close fa-3x" data-dismiss="section" data-target="#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h1>공지 & 이벤트 
 					<small>		
 						소스를 선택하세요.
