@@ -871,7 +871,42 @@
 					<small>		
 						소스를 선택하세요.
 					</small>
-				</h1>		
+				</h1>
+				
+										<div class="carousel slide carousel-v1">
+			                    <div class="carousel-inner">
+			                        <div class="item active">
+			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/5.jpg" alt="">
+			                            <div class="carousel-caption">
+			                                <p>XX 고객사 위탁교육실시</p>
+			                            </div>
+			                        </div>
+			                        <div class="item">
+			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/4.jpg" alt="">
+			                            <div class="carousel-caption">
+			                                <p>무신무신...</p>
+			                            </div>
+			                            </div>
+			                        <div class="item">
+			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/3.jpg" alt="">
+			                            <div class="carousel-caption">
+			                                <p>여름 수련회....</p>
+			                            </div>
+			                        </div>
+			                    </div>
+			                    
+			                    <div class="carousel-arrow">
+			                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+			                            <i class="fa fa-angle-left"></i>
+			                        </a>
+			                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+			                            <i class="fa fa-angle-right"></i>
+			                        </a>
+			                    </div>
+							</div>
+						</div>
+						
+						
 			</div>
 		</div>		
 	</div>
