@@ -86,6 +86,7 @@
 		if(!isFunction($.fn.bxSlider)) {
 			return false;
 		}
+		
 		if(!defined(element)) {
 			element = $(".bxslider");
 		}
@@ -96,7 +97,8 @@
 		}
 		
 		alert(stringify(options));
-		element.bxSlider(options); 
+		element.bxSlider(options);
+		
 	}
 	
 	
