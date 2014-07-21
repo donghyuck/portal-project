@@ -89,6 +89,8 @@
 			slideMargin : 	10
 		});
 		
+		alert(stringify(options));
+		
 		var renderTo = options.renderTo ;
 		if( defined(renderTo) ){			
 			if( typeof render === "string" ){
