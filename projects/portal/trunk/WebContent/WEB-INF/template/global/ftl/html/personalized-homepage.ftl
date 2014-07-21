@@ -103,7 +103,8 @@
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
 				common.ui.slider({
-					renderTo : ".slide"
+					renderTo : ".slide",
+					slideWidth : "100%"
 				}); 
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
