@@ -76,6 +76,29 @@
 		 $(element).fadeOut('slow');
 	}
 	
+	common.ui.slider = function( options ){
+		if(!defined($.bxSlider)) {
+			return false;
+		}
+		
+		options  = options || {};
+		extend({}, {
+			minSlides: 3
+			maxSlides :	3,
+			slideWidth : 360,
+			slideMargin : 	10
+		});
+		
+		if( defined(options.renderTo) ){
+			$(renderTo).bxSlider({
+                minSlides: options.minSlides,
+                maxSlides: options.maxSlides,
+                slideWidth: options.slideWidth,
+                slideMargin: options.slideMargin
+            });  
+		}
+	}
+	
 	common.ui.backstretch = function (){		
 		
 		if(!defined($.backstretch)) {
@@ -201,7 +224,6 @@
 			}	
 		} 
 	})
-	
 	
 	
 	common.ui.setup = function (options){
@@ -2147,9 +2169,7 @@
 			if( renderTo.attr("data-dismiss") && renderTo.attr("data-target")  )
 			{
 				renderTo.click(function(e){
-					var target = $(this).data("target");
-					
-					
+					var target = $(this).data("target");					
 					if( $(target).length > 0 ){
 						if( defined( options.animate) ){
 							kendo.fx($(target)).fade("out").play();
@@ -2183,6 +2203,8 @@
 			}
 		}
 	}
+	
+
 	
 	common.ui.ExtRadioButtons = Widget.extend({
 		init: function(element, options) {
