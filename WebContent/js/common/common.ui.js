@@ -2148,7 +2148,8 @@
 			{
 				renderTo.click(function(e){
 					var target = $(this).data("target");
-					alert( target );
+					alert( target +  )$(this).attr("data-target");
+					
 					if( $(target).length > 0 ){
 						$(target).hide();
 					}
