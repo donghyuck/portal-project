@@ -100,7 +100,7 @@
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
-				common.ui.slider($("#myImageCarousel")); 
+			//	common.ui.slider($("#myImageCarousel")); 
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).show();
@@ -878,7 +878,7 @@
 				
 										<div id="myImageCarousel" class="carousel bxslider  carousel-v1">
 			                    <div class="carousel-inner">
-			                        <div class="item active">
+			                        <div class="item">
 			                            <img src="http://htmlstream.com/preview/unify-v1.4/assets/img/main/5.jpg" alt="">
 			                            <div class="carousel-caption">
 			                                <p>XX 고객사 위탁교육실시</p>
