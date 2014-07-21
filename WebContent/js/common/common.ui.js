@@ -94,6 +94,8 @@
 		if(element.data("plugin-options")) {
 			extend(options, element.data("plugin-options") );
 		}
+		
+		alert(stringify(options));
 		element.bxSlider(options); 
 	}
 	
