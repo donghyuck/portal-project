@@ -98,7 +98,8 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery-section";
 			if( $( "#" +renderTo).length == 0 ){			
-				$("#personalized-area").before($("#image-gallery-template").html());
+				var template = kendo.template($("#image-gallery-template").html());
+				$("#personalized-area").before(template({guid:common.api.guid().toLowerCase()}));
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
