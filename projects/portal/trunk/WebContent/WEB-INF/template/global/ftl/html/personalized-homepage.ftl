@@ -108,8 +108,7 @@
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
 				$('.flexslider').flexslider({
-				    animation: "slide",
-				    controlNav: "thumbnails"
+				    animation: "slide"				    
 				  });			
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
