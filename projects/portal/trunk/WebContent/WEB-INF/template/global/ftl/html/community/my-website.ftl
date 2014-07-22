@@ -1033,12 +1033,13 @@
 					<div class="tab-pane" id="my-files">
 						<section class="custom-upload hide">
 							<div class="panel panel-default panel-upload">
-								<div class="panel-heading"><strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button></div>
-								<div class="panel-body">		
-																							
+								<div class="panel-heading">
+									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+								</div>
+								<div class="panel-body">							
 								<#if !action.user.anonymous >			
 								<div class="page-header text-primary">
-									<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+									<h5><i class="fa fa-info"></i> <strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
 								</div>								
 								<input name="uploadAttachment" id="attachment-files" type="file" />												
 								</#if>								
@@ -1050,7 +1051,7 @@
 								<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 페이지 영역에 선택한 파일이 보여집니다.</small></p>
 								<#if !action.user.anonymous >		
 								<p class="pull-right">				
-									<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+									<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> 파일업로드</button>	
 								</p>	
 								</#if>																										
 								<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
