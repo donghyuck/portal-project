@@ -775,7 +775,7 @@
 					<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 						<!-- start attachement tab-pane -->
 						<div class="tab-pane" id="my-files">
-								<div class="panel panel-default upload-panel" no-margin-b no-border-b" style="display:none;">
+								<div class="panel panel-default upload-panel no-margin-b no-border-b" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 								</div>						
@@ -818,7 +818,7 @@
 						</div><!-- end attachements  tab-pane -->		
 						<!-- start photos  tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
-												<div class="panel panel-default upload-panel" no-margin-b no-border-b" style="display:none;">
+												<div class="panel panel-default upload-panel no-margin-b no-border-b" style="display:none;">
 							<div class="panel-heading">
 								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 							</div>												
