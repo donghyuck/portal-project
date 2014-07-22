@@ -101,11 +101,7 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery-section";
 			if( $( "#" +renderTo).length == 0 ){			
-				//var template = kendo.template($("#image-gallery-template").html());
-				//var guid = common.api.guid().toLowerCase()
-				//$("#personalized-area").before(template({guid:guid}));
-				$(".wrapper .header").after( $("#image-gallery-template").html() );
-				
+				$(".wrapper .header").after( $("#image-gallery-template").html() );				
 				$( ".flexslider ul.slides" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
@@ -113,17 +109,9 @@
 				    animation: "slide"	,
 				    controlsContainer: ".flex-container"
 				  });			
-				/**
-				$( "#" + guid + " .carousel-inner" ).html(
-					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
-				);
-				*/
-				
-				//$( "#" + guid + " .carousel-inner > .item:first" ).addClass("active");
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
-				//common.ui.slider(); 
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).show();
@@ -323,16 +311,15 @@
 										    success : function(e) {								    
 												if( e.response.targetAttachment ){
 													e.response.targetAttachment.attachmentId;
-													// LIST VIEW REFRESH...
 													$('#attachment-list-view').data('kendoListView').dataSource.read(); 
 												}				
 											}
 										});						
 							}
-							$("#my-files .custom-upload").toggleClass("hide");				
+							$("#my-files .panel-upload").slideToggle(200);	
 						},
 						'upload-close' : function(e){
-							$("#my-files .custom-upload").toggleClass("hide");		
+							$("#my-files .panel-upload").slideToggle(200);	
 						}													 
 					}}
 				);						
@@ -789,9 +776,11 @@
 						<!-- start attachement tab-pane -->
 						<div class="tab-pane" id="my-files">
 							<section class="custom-upload hide">
-								<div class="panel panel-default">
-									<div class="panel-body">		
-										<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
+								<div class="panel panel-default upload-panel" no-margin-b no-border-b" style="display:none;">
+								<div class="panel-heading">
+									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+								</div>						
+									<div class="panel-body">													
 										<#if !action.user.anonymous >			
 											<div class="page-header text-primary">
 												<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
@@ -832,9 +821,11 @@
 						<!-- start photos  tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
 							<section class="custom-upload hide">
-												<div class="panel panel-default">
+												<div class="panel panel-default upload-panel" no-margin-b no-border-b" style="display:none;">
+							<div class="panel-heading">
+								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+							</div>												
 													<div class="panel-body">
-														<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 														<#if !action.user.anonymous >			
 														<div class="page-header text-primary">
 															<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
@@ -876,7 +867,7 @@
 									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
 									<p class="pull-right">				
-										<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+										<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
 									</p>	
 									</#if>											
 								</div>
@@ -919,7 +910,7 @@
     </li>
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-template">	
-	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
+	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border">
 		<div class="one-page-inner one-dark">
 			<div class="container">	
 				<button type="button" class="close fa-3x" data-dismiss="section" data-target="#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
