@@ -1032,7 +1032,7 @@
 				<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 					<div class="tab-pane" id="my-files">
 						<section class="custom-upload hide">
-							<div class="panel panel-default">
+							<div class="panel panel-default panel-upload">
 								<div class="panel-body">		
 								<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
 								<#if !action.user.anonymous >			
@@ -1074,7 +1074,8 @@
 					</div><!-- ./tab-pane -->	
 					<div class="tab-pane" id="website-photo-stream">									
 						
-												<div class="panel panel-default">
+												<div class="panel panel-default panel-upload">
+													<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Table - No paddding</strong></div>
 													<div class="panel-body">
 														<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 														<#if !action.user.anonymous >			
