@@ -886,27 +886,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="container-fluid">		
-				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
-							<ul class="nav navbar-nav pull-right">
-								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
-								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-								<li class="hidden-xs">
-									<div class="btn-group navbar-btn" data-toggle="buttons">
-										<label class="btn btn-info">
-											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-										</label>
-										<label class="btn btn-info active">
-									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-										</label>
-										<label class="btn btn-info">
-											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-										</label>
-									</div>
-								</li> 
-							</ul>
-				</div><!-- ./navbar-personalized -->
-				<div id="notice-section" class="one-page animated bounceInUp  no-padding-t" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
+				<div id="notice-section" class="one-page animated bounceInUp  no-padding-t" style="margin-bottom: 20px;">
 					<div class="one-page-inner one-default">
 						<div class="container">	
 							<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
@@ -938,6 +918,26 @@
 						</div>
 					</div>	
 				</div><!-- ./ong-page -->							
+			<div class="container-fluid">		
+				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
+							<ul class="nav navbar-nav pull-right">
+								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
+								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+								<li class="hidden-xs">
+									<div class="btn-group navbar-btn" data-toggle="buttons">
+										<label class="btn btn-info">
+											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+										</label>
+										<label class="btn btn-info active">
+									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+										</label>
+										<label class="btn btn-info">
+											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+										</label>
+									</div>
+								</li> 
+							</ul>
+				</div><!-- ./navbar-personalized -->
 				<div id="personalized-area" class="row" style="min-height:10px;"></div>				
 			</div><!-- ./container-fluid -->	
 			
