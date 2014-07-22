@@ -104,10 +104,10 @@
 				//$("#personalized-area").before(template({guid:guid}));
 				$("#personalized-area").before( $("#image-gallery-template").html() );
 				
-				$( ".tn3gallery" ).html(
+				$( ".gallery" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				$('#my-gallery').tn3({autoplay:true});				
+				$('.gallery').tn3({autoplay:true});				
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
@@ -908,8 +908,8 @@
 					</small>
 				</h1>
 				<div class="row">
-					<div id="my-gallery" class="col-xs-12">		
-						<div class="tn3-gallery"></div>	
+					<div class="col-xs-12">		
+						<div class="gallery"></div>	
 					</div>	
 				</div>
 			</div>	
