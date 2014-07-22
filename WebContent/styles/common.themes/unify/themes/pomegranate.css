@@ -1,0 +1,899 @@
+/* 
+* Version: 1.4
+* Pomegranate Color 		: #f37021;
+* Pomegranate Hover Color  : #c0392B;
+*/
+
+a {
+   color: #f37021;
+}
+
+a:focus, 
+a:hover, 
+a:active {
+	color: #f37021;
+}
+
+.color-green {
+	color: #f37021;
+}
+
+a.read-more:hover { 
+	color:#f37021; 
+}
+
+.linked:hover {
+	color:#f37021;
+}
+
+
+.header {
+	border-bottom: solid 2px #f37021;
+}
+
+/*Header v1
+------------------------------------*/
+/*Navber*/
+.header .navbar-default .navbar-nav > .active > a {
+	color: #f37021;
+}
+
+/*Navbar Toggle*/
+.navbar-toggle,
+.navbar-default .navbar-toggle:hover, 
+.navbar-default .navbar-toggle:focus {
+	background: #f37021;
+}
+
+.navbar-default .navbar-toggle {
+	border-color: #c0392B;
+}
+
+.navbar-default .navbar-toggle:hover {
+	background: #c0392B;
+}
+
+/*Responsive Navbar*/
+@media (max-width: 767px) {
+	.header .navbar-default .navbar-nav > li > a:hover {
+		color: #f37021;
+	}
+
+	.header .navbar-default .navbar-nav > .active > a,
+	.header .navbar-default .navbar-nav > .active > a:hover,
+	.header .navbar-default .navbar-nav > .active > a:focus {
+		color: #fff;		
+		background: #f37021;
+	}
+}
+
+@media (min-width: 767px) {
+	/*Navbar*/
+	.header .navbar-default .navbar-nav > li > a:hover,
+	.header .navbar-default .navbar-nav > .active > a {
+		border-bottom: solid 2px #f37021;
+	}
+
+	.header .navbar-default .navbar-nav > .open > a,
+	.header .navbar-default .navbar-nav > .open > a:hover,
+	.header .navbar-default .navbar-nav > .open > a:focus {
+		color: #f37021;
+	}
+
+	/*Dropdown Menu*/
+	.header .dropdown-menu { 
+		border-top: solid 2px #f37021; 
+	}	
+}
+
+/*Search Box*/
+.header .navbar .nav > li > .search:hover {
+	color: #f37021;
+	border-bottom-color: #f37021;
+}
+
+@media (max-width: 767px) {
+	.header .navbar .nav > li > .search:hover {
+		background: #c0392B;
+	}
+}
+
+/*
+* Account nav ..
+**/
+
+.header .navbar-default .navbar-nav > li > a.btn-account {
+	border-bottom: solid 2px #c0392B;
+}
+
+.header .navbar-default .navbar-nav > li.open > a.btn-account {
+	border-bottom: solid 2px #c0392B;
+}
+
+
+/*Header v2
+------------------------------------*/
+/*Topbar*/
+.topbar-v1 .top-v1-data li a:hover i {
+	color: #f37021;
+}
+
+/*Search Box*/
+.header-v1 .navbar .nav > li > .search:hover {
+	background: #f37021;
+}
+
+/*Responsive Navbar*/
+@media (min-width: 767px) {
+	.header-v1 .navbar-default .navbar-nav > li > a:hover,
+	.header-v1 .navbar-default .navbar-nav > .active > a {
+		color: #fff;
+		background: #f37021 !important;
+	}
+
+	.header-v1 .navbar-default .navbar-nav > .open > a,
+	.header-v1 .navbar-default .navbar-nav > .open > a:hover,
+	.header-v1 .navbar-default .navbar-nav > .open > a:focus {
+		background: #f37021;		
+	}
+}	
+
+/*Sliders
+------------------------------------*/
+/*Main Parallax Sldier*/
+.da-slide h2 i {
+	background:url(../../plugins/parallax-slider/img/bg-heading-orange.png) repeat;
+}
+
+/*Sequence Parallax Sldier*/
+.sequence-inner {
+  background: -webkit-gradient(linear, 0 0, 0 bottom, from(#fff), to(#fcf2de));
+  background: -webkit-linear-gradient(#fff, #fcf2de);
+  background: -moz-linear-gradient(#fff, #fcf2de);
+  background: -ms-linear-gradient(#fff, #fcf2de);
+  background: -o-linear-gradient(#fff, #fcf2de);
+  background: linear-gradient(#fff, #fcf2de)
+}
+
+#sequence-theme h2 {
+	background:rgba(230, 126, 34, 0.8);
+}
+
+#sequence-theme .info p {
+	background:rgba(230, 126, 34, 0.8);
+}
+
+/*Buttons
+------------------------------------*/
+.btn-u {
+	background: #f37021;
+}
+
+.btn-u:hover, 
+.btn-u:focus, 
+.btn-u:active, 
+.btn-u.active, 
+.open .dropdown-toggle.btn-u {
+	background: #c0392B;
+}
+
+/*Buttons Color*/
+.btn-u-split.dropdown-toggle {
+   border-left: solid 1px #c0392B;
+}
+
+/*Bordered Buttons*/
+.btn-u.btn-brd {
+  border-color: #f37021;
+}
+.btn-u.btn-brd:hover {
+  color: #c0392B;
+  border-color: #c0392B;
+}
+.btn-u.btn-brd.btn-brd-hover:hover {
+   background: #c0392B;   
+}
+
+/*Service
+------------------------------------*/
+.service .service-icon {
+	color:#f37021;	
+}
+
+/*Service Blocks*/
+.service-alternative .service:hover { 
+	background:#f37021;
+} 
+
+/*Thumbnail (Recent Work, Family Site)
+------------------------------------*/
+.thumbnail-style h3 a:hover {
+	color:#f37021;
+}
+
+.thumbnail-style a.btn-more {
+	background:#f37021;
+}
+.thumbnail-style a.btn-more:hover {
+	box-shadow:0 0 0 2px #c0392B;
+}
+
+/*Carousel (Recent Work, Family Site)*/
+.family-site a:hover span {
+	border-bottom:solid 2px #f37021;
+}
+.family-site a:hover span {
+	border-bottom:solid 2px #f37021;
+}
+
+.recent-work a:hover span {
+	border-bottom:solid 2px #f37021;
+}
+
+
+.bx-wrapper .bx-prev {
+	background-image: url(../common.plugins/images/controls-orange.png);
+}
+.bx-wrapper .bx-next {
+	background-image: url(../common.plugins/images/controls-orange.png);
+}
+
+/*Typography
+------------------------------------*/
+/*Heading*/
+.headline h2, 
+.headline h3, 
+.headline h4 {
+	border-bottom:2px solid #f37021;
+}
+
+/*Blockquote*/
+blockquote:hover {
+	border-left-color:#f37021; 
+}
+
+.hero {
+	border-left-color: #f37021;
+}
+
+/*Carousel
+------------------------------------*/
+.carousel-arrow a.carousel-control:hover {
+	color: #f37021;
+}
+
+/*Footer
+------------------------------------*/
+.footer a,
+.copyright a,
+.footer a:hover,
+.copyright a:hover {
+	color: #f37021;
+}
+
+/*Footer Blog*/
+.footer .dl-horizontal a:hover {
+	color:#f37021 !important;
+}
+
+/*Blog Posts
+------------------------------------*/
+.posts .dl-horizontal a:hover { 
+	color:#f37021; 
+}
+
+.posts .dl-horizontal:hover dt img,
+.posts .dl-horizontal:hover dd a { 
+	color: #f37021;
+	border-color: #f37021 !important;
+}
+
+/*Post Comment*/
+.post-comment h3, 
+.blog-item .media h3,
+.blog-item .media h4.media-heading span a {
+	color: #f37021;
+}
+
+/*Tabs
+------------------------------------*/
+/*Tabs v1*/
+.tab-v1 .nav-tabs { 
+	border-bottom: solid 2px #f37021; 	
+}
+
+.tab-v1 .nav-tabs > .active > a, 
+.tab-v1 .nav-tabs > .active > a:hover, 
+.tab-v1 .nav-tabs > .active > a:focus { 
+	background: #f37021; 
+}
+
+.tab-v1 .nav-tabs > li > a:hover { 
+	background: #f37021; 
+}
+
+/*Tabs v2*/
+.tab-v2 .nav-tabs li.active a {
+	border-top: solid 2px #f37021;
+}
+
+/*Tabs v3*/
+.tab-v3 .nav-pills li a:hover,
+.tab-v3 .nav-pills li.active a {
+	background: #f37021;
+	border: solid 1px #c0392B;
+}
+
+/* List group */
+a.list-group-item.active, a.list-group-item.active:hover, a.list-group-item.active:focus {
+	z-index: 2;
+	color: #fff;
+	background-color: #f37021;
+	border-color: #c0392B;
+}
+
+
+
+/*Accardion
+------------------------------------*/
+.acc-home a.active,
+.acc-home a.accordion-toggle:hover { 
+	color:#f37021; 
+}
+.acc-home .collapse.in { 
+	border-bottom:solid 1px #f37021; 
+}
+
+/*Testimonials
+------------------------------------*/
+.testimonials .testimonial-info {
+	color: #f37021;
+}
+
+.testimonials .carousel-arrow i:hover {
+	background: #f37021;
+}
+
+/*Info Blocks
+------------------------------------*/
+.info-blocks:hover i.icon-info-blocks {
+	color: #f37021;
+}
+
+/*Breadcrumb
+------------------------------------*/
+.breadcrumb li.active,
+.breadcrumb li a:hover {
+	color:#f37021;
+}
+
+/*About Page
+------------------------------------*/
+.team .thumbnail-style:hover h3 a {
+	color:#f37021 !important;
+}
+
+/*Social Icons*/
+.team ul.team-socail li i:hover {
+	background: #f37021;
+}
+
+/*Right Sidebar
+------------------------------------*/
+/*Right Sidebar*/
+.who li i,
+.who li:hover i, 
+.who li:hover a { 
+	color:#f37021; 
+}
+
+/*Privacy Page
+------------------------------------*/
+.privacy a:hover {
+	color:#f37021; 
+}
+
+/*Portfolio Page
+------------------------------------*/
+/*Portfolio v1*/
+.view a.info:hover {
+	background: #f37021;
+}
+
+/*Portfolio v2*/
+.sorting-block .sorting-nav li.active {
+	color: #f37021;
+	border-bottom: solid 1px #f37021;
+}
+
+.sorting-block .sorting-grid li a:hover span.sorting-cover {
+	background: #f37021;
+}
+
+/*Blog Page
+------------------------------------*/
+.blog h3 {
+	color:#f37021;
+}
+.blog li a:hover {
+	color:#f37021;
+}
+
+/*Blog Tags*/
+ul.blog-tags a:hover {
+	background: #f37021;
+}
+
+.blog-post-tags ul.blog-tags a:hover {
+    background: none repeat scroll 0 0 #f37021;
+}
+
+/*Blog Photos*/
+.blog-photos li img:hover {
+	box-shadow: 0 0 0 2px #f37021;
+}
+
+/*Blog Latest Tweets*/
+.blog-twitter .blog-twitter-inner:hover {
+	border-color: #f37021;
+	border-top-color: #f37021;	
+}
+.blog-twitter .blog-twitter-inner:hover:after {
+	border-top-color: #f37021;	
+}
+
+.blog-twitter .blog-twitter-inner a {
+	color: #f37021;
+}
+
+/*Blog Item Page
+------------------------------------*/
+.blog-item h4.media-heading span a {
+	color:#f37021;
+}
+
+/*Coming Soon Page
+------------------------------------*/
+.coming-soon-border {
+	border-top: solid 3px #f37021;
+}
+
+/*Search Page
+------------------------------------*/
+.booking-blocks p a {
+	color: #f37021;
+}
+
+/*Icons Page
+------------------------------------*/
+.icon-page li:hover { 
+	color:#f37021;
+}
+
+/*Glyphicons*/
+.glyphicons-demo a:hover {
+	color: #f37021;
+	text-decoration: none;
+}
+
+/*Magazine Page
+------------------------------------*/
+/*Magazine News*/
+.magazine-news .by-author strong {
+	color: #f37021;
+}
+
+.magazine-news a.read-more {
+	color: #f37021;
+}
+
+/*Magazine Mini News*/
+.magazine-mini-news .post-author strong {
+	color: #f37021;
+}
+
+.news-read-more i {
+	background: #f37021;
+}
+
+/*Sidebar Features*/
+.magazine-page h3 a:hover {
+	color: #f37021;
+}
+
+/*Page Features
+------------------------------------*/
+/*Tag Boxes v1*/
+.tag-box-v1 {
+	border-top: solid 2px #f37021;
+}
+
+/*Tag Boxes v2*/
+.tag-box-v2 {
+	border-left: solid 2px #f37021;
+}
+
+/*Tag Boxes v7*/
+.tag-box-v7 {
+	border-bottom: solid 2px #f37021;
+}
+
+/*Font Awesome Icon Page Style*/
+.fa-icons li:hover { 
+   color: #f37021;
+}
+
+.fa-icons li:hover i {
+   background: #f37021; 
+}
+
+/*GLYPHICONS Icons Page Style*/
+.bs-glyphicons li:hover {
+   color: #f37021;
+}
+
+/*Navigation
+------------------------------------*/
+/*Pagination*/
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > .active > span:focus {
+   background-color: #f37021;
+   border-color: #f37021;
+}
+
+.pagination li a:hover {
+   background: #c0392B;
+   border-color: #c0392B;   
+}
+
+/*Pager*/
+.pager li > a:hover, 
+.pager li > a:focus {
+   background: #c0392B;
+   border-color: #c0392B;   
+}
+
+/*Registration and Login Page v2
+------------------------------------*/
+.reg-block {
+	border-top: solid 2px #f37021;
+}
+
+/*Image Hover
+------------------------------------*/
+/*Image-hover*/
+#effect-2 figure .img-hover {
+	background: #f37021;
+}
+
+/*Blog Large Page
+------------------------------------*/
+.blog h2 a:hover {
+	color: #f37021;
+}
+
+/*Timeline v1 Page
+------------------------------------*/
+.timeline-v1 > li > .timeline-badge i:hover {
+	color: #f37021;
+}
+
+.timeline-v1 .timeline-footer .likes:hover i {
+	color: #f37021;
+}
+
+/*Timeline v2 Page
+------------------------------------*/
+/* The icons */
+.timeline-v2 > li .cbp_tmicon {
+	background: #f37021;
+}
+
+/*Progress Bar
+------------------------------------*/
+.progress-bar-u {
+  background: #f37021;
+}
+
+/*Job Inner Page
+------------------------------------*/
+.job-description .save-job a:hover,
+.block-description .save-job a:hover {
+	color: #f37021;
+}
+
+.job-description .p-chart .overflow-h li i,
+.job-description .p-chart .overflow-h li a,
+.block-description .p-chart .overflow-h li i,
+.block-description .p-chart .overflow-h li a {
+	color: #f37021;
+}
+
+/*Colorful-ul*/
+.job-description .colorful-ul li a {
+	color: #f37021;
+}
+
+/*Search Inner Page
+------------------------------------*/
+.s-results .related-search a:hover {
+	color: #f37021;
+}
+
+.s-results .inner-results h3 a:hover {
+	color: #f37021;
+}
+
+.s-results .up-ul li a:hover {
+	color: #f37021;
+}
+
+.s-results .down-ul li a {
+	color: #f37021;
+}
+
+/*Funny Boxes
+------------------------------------*/
+.funny-boxes p a {
+  color: #f37021;
+}
+
+.funny-boxes .funny-boxes-img li i {
+  color: #f37021;
+}
+
+/*Sidebar Sub Navigation
+------------------------------------*/
+.sidebar-nav-v1 ul li:hover a,
+.sidebar-nav-v1 ul li.active a {
+  color: #f37021;
+}
+
+/*Blockquote
+------------------------------------*/
+blockquote.bq-green {
+  border-color: #f37021;
+}
+
+blockquote:hover,
+blockquote.text-right:hover {
+   border-color: #f37021;
+}
+
+/*Green Left Bordered Funny Box**/
+.funny-boxes-left-green {
+  border-left: solid 2px #f37021;
+}
+
+.funny-boxes-left-green:hover {
+  border-left-color: #f37021;
+}
+
+/*Testimonials Default
+------------------------------------*/
+/*Testimonials*/
+.testimonials .carousel-arrow i:hover {
+  background: #f37021;
+}
+
+/*Testimonials Default*/
+.testimonials-bg-default .item p {
+  background: #f37021;
+}
+
+.testimonials.testimonials-bg-default .item p:after,
+.testimonials.testimonials-bg-default .item p:after {
+  border-top-color: #f37021;
+}
+
+.testimonials-bg-default .carousel-arrow i {
+  background: #f37021;
+}
+
+.testimonials.testimonials-bg-default .carousel-arrow i:hover {
+  background: #c0392B;
+}
+
+/*Promo Page
+------------------------------------*/
+/*Promo Box*/
+.promo-box:hover strong, 
+.promo-box:hover strong a {
+	color: #f37021;
+}
+
+/*Typography
+------------------------------------*/
+.dropcap {
+	color: #f37021;
+}
+
+.dropcap-bg {
+	color: #fff;
+	background: #f37021;
+}
+
+/*Breadcrumbs
+------------------------------------*/ 
+span.label-u,
+span.badge-u {
+  background: #f37021;
+}
+
+/*Icons
+------------------------------------*/
+/*Icon Link*/
+.link-icon:hover i {
+  color: #f37021;
+  border: solid 1px #f37021;
+}
+
+.link-bg-icon:hover i {
+  color: #f37021;
+  background: #f37021 !important;
+  border-color: #f37021;
+}
+
+/*Icons Backgroun Color
+------------------------------------*/ 
+i.icon-color-u {
+   color: #f37021;
+   border: solid 1px #f37021;
+}
+
+i.icon-bg-u {
+   background: #f37021;
+}
+
+/*Line Icon Page
+------------------------------------*/
+.line-icon-page .item:hover {
+	color: #f37021;
+}
+
+/*Colored Content Boxes
+------------------------------------*/
+.servive-block-u {
+  background: #f37021;
+}
+
+/*Panels (Portlets)
+------------------------------------*/
+.panel-u > .panel-heading {
+   background: #f37021;
+}
+
+/*Owl Carousel
+------------------------------------*/
+.owl-btn:hover {
+  background: #f37021;
+}
+
+/*Counter
+------------------------------------*/
+.counters span.counter-icon i {
+	background: #f37021;
+}
+
+.counters span.counter-icon i:after {
+	border-top: 7px solid #f37021;
+}
+
+/*SKy-Forms
+------------------------------------*/
+/*Buttons*/
+.sky-form .button {
+	background: #f37021;
+}
+
+/*Rating*/
+.sky-form .rating input:checked ~ label {
+	color: #f37021;
+}
+
+/*Pricing Page
+------------------------------------*/
+/*Pricing Head*/
+.pricing:hover h4 {
+	color:#f37021;
+}
+
+.pricing-head h3 {
+	background:#f37021;
+	text-shadow: 0 1px 0 #c0392B;	
+}
+
+.pricing-head h4 {
+	color:#999;
+	background:#fcfcfc;
+	border-bottom:solid 1px #fcf2de;
+}
+	
+/*Pricing Content*/
+.pricing-content li {
+	border-bottom:solid 1px #fcf2de;
+}
+.pricing-content li i {
+	color:#f37021;
+}
+
+/*Pricing Extra*/
+.sticker-left {
+	background: #f37021;
+}
+
+/*Pricing Footer*/
+.pricing-footer a,
+.pricing-footer button {
+	background:#f37021;
+}
+.pricing-footer a:hover,
+.pricing-footer button:hover {
+	background:#c0392B;
+}
+
+/*Priceing Active*/
+.price-active h4 {
+	color:#f37021;
+}
+
+.no-space-pricing .price-active .pricing-head h4,
+.no-space-pricing .pricing:hover .pricing-head h4 {
+	color:#f37021;
+}
+
+/*Mega Pricing Tables 
+------------------------------------*/
+.pricing-mega-v1 .pricing-head h3,
+.pricing-mega-v2 .pricing-head h3,
+.pricing-mega-v3 .pricing-head h3 {
+	text-shadow: 0 1px 0 #c0392B;
+}
+
+/*Pricing Table Mega v1 Version
+------------------------------------*/
+.pricing-mega-v1 .pricing:hover h4 i {
+	color:#f37021;
+}
+.pricing-mega-v1 .pricing-content li i {
+	color: #f37021; 
+}
+
+/*Pricing Table Colored Background Version
+------------------------------------*/
+.pricing-bg-colored .pricing:hover {	
+	background: #f37021;
+}
+
+.pricing-bg-colored .pricing-head i {
+	color:#f37021;
+}
+
+/*Pricing Table Mega v2 
+------------------------------------*/
+.pricing-mega-v2 .block:hover .bg-color {
+	background: #f37021;
+}
+.pricing-mega-v2 .block:hover h3,
+.pricing-mega-v2 .block:hover h4, 
+.pricing-mega-v2 .block:hover li, 
+.pricing-mega-v2 .block:hover li i,
+.pricing-mega-v2 .block:hover h4 i {
+	background: #f37021;
+}
+
+/*Pricing Table Mega v3 
+------------------------------------*/
+.pricing-mega-v1 .btn-group .dropdown-menu,
+.pricing-mega-v3 .btn-group .dropdown-menu {
+	background: #f37021 !important;
+}
+
+.pricing-mega-v1 .btn-group .dropdown-menu li a:hover,
+.pricing-mega-v3 .btn-group .dropdown-menu li a:hover {
+	background: #c0392B;
+}
