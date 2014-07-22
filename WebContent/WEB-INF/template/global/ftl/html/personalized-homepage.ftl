@@ -728,6 +728,7 @@
 			    margin: 0;
 			    padding: 10px;
 			    color: white;
+			    width:100%;
 			    background-color: rgba(0,0,0,0.5);
 			}
 		</style>   	
