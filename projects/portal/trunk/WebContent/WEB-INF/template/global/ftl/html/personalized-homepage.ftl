@@ -899,7 +899,7 @@
 	*/	
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
-	<li>
+	<li data-thumb="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#">
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
 	</li>
 	</script>
