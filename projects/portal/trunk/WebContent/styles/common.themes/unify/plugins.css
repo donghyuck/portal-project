@@ -121,6 +121,13 @@
     margin-bottom: 30px;      
 }
 
+.flexslider.gallery {
+    border: 0;
+    overflow: hidden;
+    margin-top: 0px;      
+    margin-bottom: 0px;      
+}
+
 .flexslider { 
    margin-top: 10px !important;
    background: none !important;
