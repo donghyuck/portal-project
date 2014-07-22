@@ -102,16 +102,7 @@
 			var renderTo = "image-gallery-section";
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .header").after( $("#image-gallery-template").html() );				
-				$( ".flexslider ul.slides" ).html(
-					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
-				);
-				$('.flexslider').flexslider({
-				    animation: "slide"	,
-				    controlsContainer: ".flex-container"
-				  });			
-				common.ui.button({
-					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
-				});
+
 				var dataSource = new  kendo.data.DataSource({
 									type: 'json',
 									transport: {
@@ -136,11 +127,22 @@
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
 					buttonCount : 9,
-					dataSource : $('#photo-list-view').data('kendoListView').dataSource,
+					dataSource : dataSource,
 					change : function(e){
 						alert("ss");
 					}
 				});			
+				$( ".flexslider ul.slides" ).html(
+					kendo.render( kendo.template($("#image-gallery-item-template").html()), dataSource.view() )
+				);
+				$('.flexslider').flexslider({
+				    animation: "slide"	,
+				    controlsContainer: ".flex-container"
+				  });			
+				common.ui.button({
+					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
+				});				
+				
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).show();
