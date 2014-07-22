@@ -283,7 +283,7 @@
 			},
 			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
-		}).always( function () {
+		}).complete( function () {
 			if( isFunction( options.always ))
 				options.always( ) ;					
 		});
