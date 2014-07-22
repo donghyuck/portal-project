@@ -107,9 +107,6 @@
 				$( ".flexslider ul.slides" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				
-				"flexslider">
-							<ul class="slides">
 							
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
