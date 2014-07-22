@@ -134,7 +134,7 @@
 .flexslider.gallery {
     border: 0;
     overflow: hidden;
-    margin-top: 0px;      
+    margin-top: 0px !important;
     margin-bottom: 0px;      
 }
 
