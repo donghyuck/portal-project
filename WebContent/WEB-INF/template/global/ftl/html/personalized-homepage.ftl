@@ -118,7 +118,7 @@
 					buttonCount : 9,
 					dataSource : $('#photo-list-view').data('kendoListView').dataSource,
 					change : function(e){
-					
+						alert("ss");
 					}
 				});			
 			}
