@@ -138,6 +138,7 @@
 					buttonCount : 9,
 					dataSource : dataSource
 				});		
+				dataSource.read();
 							
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
