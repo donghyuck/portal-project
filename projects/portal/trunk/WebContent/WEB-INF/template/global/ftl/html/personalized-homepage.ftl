@@ -107,7 +107,10 @@
 				$( ".flexslider ul.slides" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				$('.flexslider').flexslider();
+				$('.flexslider').flexslider({
+					animation: "slide",
+					controlNav: "thumbnails"
+				});
 							
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
@@ -119,7 +122,7 @@
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
-				common.ui.slider(); 
+				//common.ui.slider(); 
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).show();
