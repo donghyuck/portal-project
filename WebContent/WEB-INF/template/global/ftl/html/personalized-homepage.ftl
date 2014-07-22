@@ -115,7 +115,7 @@
 				
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
-					buttonCount : 5,
+					buttonCount : 9,
 					dataSource : $('#photo-list-view').data('kendoListView').dataSource,
 					change : function(e){
 					
