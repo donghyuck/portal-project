@@ -939,8 +939,8 @@
 	</div>
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-template2">	
-	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
-		<div class="one-page-inner one-dark">
+	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" >
+		<div class="one-page-inner one-blue">
 			<div class="container">	
 				<button type="button" class="close fa-3x" data-dismiss="section" data-target="\\#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h1>공지 & 이벤트 
