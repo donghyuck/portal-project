@@ -21,7 +21,7 @@
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
 			'${request.contextPath}/js/jquery.easing/jquery.easing.1.3.js',		
 			'${request.contextPath}/js/jquery.bxslider/jquery.bxslider.min.js',		
-			'${request.contextPath}/js/jquery.tn3lite/jquery.tn3.min.js',		
+			'${request.contextPath}/js/jquery.tn3lite/jquery.tn3lite.min.js',		
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
