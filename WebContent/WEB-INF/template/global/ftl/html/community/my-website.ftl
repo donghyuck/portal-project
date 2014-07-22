@@ -1074,10 +1074,11 @@
 					</div><!-- ./tab-pane -->	
 					<div class="tab-pane" id="website-photo-stream">									
 						
-												<div class="panel panel-default panel-upload">
-													<div class="panel-heading"><strong><span class="glyphicon glyphicon-th"></span> Table - No paddding</strong></div>
+						<div class="panel panel-default panel-upload">
+							<div class="panel-heading">
+								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+							</div>
 													<div class="panel-body">
-														<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 														<#if !action.user.anonymous >			
 														<div class="page-header text-primary">
 															<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
@@ -1119,7 +1120,7 @@
 								<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 페이지 영역에 선택한 사진이 보여집니다.</small></p>
 								<#if !action.user.anonymous >		
 								<p class="pull-right">				
-									<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+									<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
 								</p>	
 								</#if>											
 							</div>
