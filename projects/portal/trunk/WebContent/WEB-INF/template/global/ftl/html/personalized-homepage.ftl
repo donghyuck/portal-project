@@ -104,13 +104,10 @@
 				//$("#personalized-area").before(template({guid:guid}));
 				$("#personalized-area").before( $("#image-gallery-template").html() );
 				
-				$( ".flexslider ul.slides" ).html(
+				$( ".tn3gallery" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				$('.flexslider').flexslider({
-					animation: "slide",
-					controlNav: "thumbnails"
-				});
+
 							
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
@@ -898,10 +895,8 @@
 	</div>
 	*/	
 	</script>
-	<script type="text/x-kendo-template" id="image-gallery-item-template">	
-	
-	<a href="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" /></a>
-	
+	<script type="text/x-kendo-template" id="image-gallery-item-template">		
+		<a href="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" /></a>	
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
