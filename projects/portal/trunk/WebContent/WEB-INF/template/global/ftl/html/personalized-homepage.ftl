@@ -112,7 +112,27 @@
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
-				
+				var dataSource = new  kendo.data.DataSource({
+									type: 'json',
+									transport: {
+										read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
+										parameterMap: function (options, operation){
+											if (operation != "read" && options) {										                        								                       	 	
+												return { imageId :options.imageId };									                            	
+											}else{
+												 return { startIndex: options.skip, pageSize: options.pageSize }
+											}
+										}
+									},
+									pageSize: 12,
+									error:common.api.handleKendoAjaxError,
+									schema: {
+										model: Image,
+										data : "targetImages",
+										total : "totalTargetImageCount"
+									},
+									serverPaging: true
+								});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
 					buttonCount : 9,
