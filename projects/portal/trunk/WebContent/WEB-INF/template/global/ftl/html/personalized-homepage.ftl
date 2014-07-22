@@ -897,12 +897,9 @@
 	*/	
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-item-template">			
-	<div class="item">
-		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="">
-		<div class="carousel-caption">
-			<p>#: name #</p>
-		</div>
-	</div>	
+	<li data-thumb="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#">
+      <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
+    </li>
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
