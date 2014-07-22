@@ -447,8 +447,8 @@
 												success : function(response){
 													var photo_list_view = $('#photo-list-view').data('kendoListView');
 													photo_list_view.dataSource.read();
-													var selectedCells = photo_list_view.select();
-													photo_list_view.select("tr:eq(1)");			
+													//var selectedCells = photo_list_view.select();
+													//photo_list_view.select("tr:eq(1)");			
 												},
 												always : function(){
 													btn.button('reset');
