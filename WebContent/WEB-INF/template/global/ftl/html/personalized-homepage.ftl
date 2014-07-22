@@ -316,10 +316,10 @@
 											}
 										});						
 							}
-							$("#my-files .panel-upload").slideToggle(200);	
+							$("#my-files .panel-upload").slideToggle(200);			
 						},
 						'upload-close' : function(e){
-							$("#my-files .panel-upload").slideToggle(200);	
+							$("#my-files .panel-upload").slideToggle(200);			
 						}													 
 					}}
 				);						
@@ -793,7 +793,7 @@
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
 									<p class="pull-right">				
-										<button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+										<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
 									</p>	
 									</#if>																										
 									<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
