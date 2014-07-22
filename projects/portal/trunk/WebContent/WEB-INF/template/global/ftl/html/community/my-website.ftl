@@ -1033,9 +1033,9 @@
 					<div class="tab-pane" id="my-files">
 						<section class="custom-upload hide">
 							<div class="panel panel-default panel-upload">
-								<div class="panel-heading"><strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong></div>
+								<div class="panel-heading"><strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button></div>
 								<div class="panel-body">		
-								<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
+																							
 								<#if !action.user.anonymous >			
 								<div class="page-header text-primary">
 									<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
