@@ -9,7 +9,7 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
-			'css!${request.contextPath}/styles/jquery.tn3lite/tn3.css',
+			'css!${request.contextPath}/styles/jquery.flexslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
@@ -21,7 +21,7 @@
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
 			'${request.contextPath}/js/jquery.easing/jquery.easing.1.3.js',		
 			'${request.contextPath}/js/jquery.bxslider/jquery.bxslider.min.js',		
-			'${request.contextPath}/js/jquery.tn3lite/jquery.tn3lite.min.js',		
+			'${request.contextPath}/js/jquery.flexslider/jquery.flexslider-min.js',		
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
@@ -104,10 +104,12 @@
 				//$("#personalized-area").before(template({guid:guid}));
 				$("#personalized-area").before( $("#image-gallery-template").html() );
 				
-				$( ".gallery" ).html(
+				$( ".flexslider" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				$('.gallery').tn3({autoplay:true});				
+				$('.flexslider').flexslider({
+				    animation: "slide"
+				  });			
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
@@ -894,8 +896,13 @@
 	</div>
 	*/	
 	</script>
-	<script type="text/x-kendo-template" id="image-gallery-item-template">		
-		<a href="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" /></a>	
+	<script type="text/x-kendo-template" id="image-gallery-item-template">			
+	<div class="item">
+		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="">
+		<div class="carousel-caption">
+			<p>#: name #</p>
+		</div>
+	</div>	
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
@@ -909,7 +916,10 @@
 				</h1>
 				<div class="row">
 					<div class="col-xs-12">		
-						<div class="gallery"></div>	
+						<div class="flexslider">
+							<ul class="slides">
+							</ul>
+						</div>	
 					</div>	
 				</div>
 			</div>	
