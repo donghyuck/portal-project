@@ -882,7 +882,7 @@
 	<!-- ============================== -->
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
-	<script type="text/x-kendo-template" id="image-gallery-item-template">	
+	<script type="text/x-kendo-template" id="image-gallery-item-template2">	
 	<li>
       <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
     </li>
@@ -895,7 +895,34 @@
 	</div>
 	*/	
 	</script>
+	<script type="text/x-kendo-template" id="image-gallery-item-template">	
+	<li>
+		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
+	</li>
+	</script>
 	<script type="text/x-kendo-template" id="image-gallery-template">	
+	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
+		<div class="one-page-inner one-dark">
+			<div class="container">	
+				<button type="button" class="close fa-3x" data-dismiss="section" data-target="\\#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<h1>공지 & 이벤트 
+					<small>		
+						소스를 선택하세요.
+					</small>
+				</h1>
+				<div class="row">
+					<div class="col-xs-12">		
+						<div class="flexslider">
+							<ul class="slides">
+							</ul>
+						</div>	
+					</div>	
+				</div>
+			</div>	
+		</div>		
+	</div>
+	</script>
+	<script type="text/x-kendo-template" id="image-gallery-template2">	
 	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
 		<div class="one-page-inner one-dark">
 			<div class="container">	
@@ -930,7 +957,7 @@
 			</div>	
 		</div>		
 	</div>
-	</script>
+	</script>	
 	<!-- ============================== -->
 	<!-- notice template                                        -->
 	<!-- ============================== -->
