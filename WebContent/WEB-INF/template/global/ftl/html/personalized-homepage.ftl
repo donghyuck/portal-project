@@ -775,7 +775,6 @@
 					<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 						<!-- start attachement tab-pane -->
 						<div class="tab-pane" id="my-files">
-							<section class="custom-upload hide">
 								<div class="panel panel-default upload-panel" no-margin-b no-border-b" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
@@ -789,7 +788,6 @@
 										</#if>								
 									</div>
 								</div>
-							</section>
 							<div class="panel panel-default">
 								<div class="panel-body">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
@@ -820,7 +818,6 @@
 						</div><!-- end attachements  tab-pane -->		
 						<!-- start photos  tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
-							<section class="custom-upload hide">
 												<div class="panel panel-default upload-panel" no-margin-b no-border-b" style="display:none;">
 							<div class="panel-heading">
 								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
@@ -861,7 +858,7 @@
 														</#if>
 													</div>
 												</div>	
-							</section>	
+
 							<div class="panel panel-default">			
 								<div class="panel-body">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
