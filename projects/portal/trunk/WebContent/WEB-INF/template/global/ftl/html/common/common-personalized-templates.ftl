@@ -137,10 +137,10 @@
 					</div>
 					<div class="btn-group btn-group-sm" data-toggle="buttons">
 						<label class="btn btn-success active">
-						<input type="radio" name="photo-public-shared" value="1">모두에게 공개
+						<input type="radio"  class="js-switch"  name="photo-public-shared" value="1">모두에게 공개
 						</label>
 						<label class="btn btn-success">
-						<input type="radio" name="photo-public-shared" value="0"> 비공개
+						<input type="radio"  class="js-switch"  name="photo-public-shared" value="0"> 비공개
 						</label>
 					</div>	
 																	
