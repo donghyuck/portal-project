@@ -1033,7 +1033,7 @@
 					<div class="tab-pane" id="my-files">
 						<section class="custom-upload hide">
 							<div class="panel panel-default panel-upload">
-								<div class="panel-heading"><strong><i class="fa fa-cloud fa-lg"></i> 파일 업로드</strong></div>
+								<div class="panel-heading"><strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong></div>
 								<div class="panel-body">		
 								<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>															
 								<#if !action.user.anonymous >			
