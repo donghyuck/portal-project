@@ -1038,7 +1038,7 @@
 							<div class="panel-body">							
 							<#if !action.user.anonymous >			
 							<div class="page-header text-primary">
-								<h5><i class="fa fa-info"></i> <strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+								<h5><i class="fa fa-upload"></i> <strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
 							</div>								
 							<input name="uploadAttachment" id="attachment-files" type="file" />												
 							</#if>								
