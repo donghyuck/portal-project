@@ -107,8 +107,7 @@
 				$( ".tn3gallery" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-
-							
+				$('.gallery').tn3({autoplay:true});				
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
