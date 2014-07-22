@@ -633,10 +633,10 @@
 								kendo.bind($("#website-photo-stream form"), uploadModel);
 							}							
 							$('#website-photo-stream form div.form-group.has-error').removeClass("has-error");
-							$("#website-photo-stream .custom-upload").toggleClass("hide");				
+							$("#website-photo-stream .panel-upload").slideToggle(200);						
 						},	  
 						'upload-close' : function(e){
-							$("#website-photo-stream .custom-upload").toggleClass("hide");		
+							$("#website-photo-stream .panel-upload").slideToggle(200);				
 						}													 
 					}}
 				);
