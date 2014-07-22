@@ -1073,7 +1073,7 @@
 						</div>																				
 					</div><!-- ./tab-pane -->	
 					<div class="tab-pane" id="website-photo-stream">									
-						<section class="custom-upload hide">
+						
 												<div class="panel panel-default">
 													<div class="panel-body">
 														<button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
@@ -1112,7 +1112,7 @@
 														</#if>
 													</div>
 												</div>	
-						</section><!-- ./custom-upload -->	
+						<!-- ./custom-upload -->	
 						<div class="panel panel-default">			
 							<div class="panel-body">
 								<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 페이지 영역에 선택한 사진이 보여집니다.</small></p>
