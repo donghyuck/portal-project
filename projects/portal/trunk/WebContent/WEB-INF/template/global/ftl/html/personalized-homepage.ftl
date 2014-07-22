@@ -922,12 +922,13 @@
 				<button type="button" class="close fa-3x" data-dismiss="section" data-target="#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h1>공지 & 이벤트 
 					<small>		
-						<div class="gallery-listview-pager k-pager-wrap"></div>
+						
 					</small>
 				</h1>
 				<div class="row">
 					<div class="col-xs-12">		
-						<div class="flexslider">
+						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>
+						<div class="flexslider gallery">
 							<ul class="slides">
 							</ul>
 						</div>	
