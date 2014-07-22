@@ -113,7 +113,7 @@
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
 				
-				$("#pager").kendoPager({
+				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
 					buttonCount : 5,
 					dataSource : $('#photo-list-view').data('kendoListView').dataSource,
