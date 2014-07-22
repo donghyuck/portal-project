@@ -99,13 +99,25 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery-section";
 			if( $( "#" +renderTo).length == 0 ){			
-				var template = kendo.template($("#image-gallery-template").html());
-				var guid = common.api.guid().toLowerCase()
-				$("#personalized-area").before(template({guid:guid}));
+				//var template = kendo.template($("#image-gallery-template").html());
+				//var guid = common.api.guid().toLowerCase()
+				//$("#personalized-area").before(template({guid:guid}));
+				$("#personalized-area").before( $("#image-gallery-template").html() );
+				
+				$( ".flexslider ul.slides" ).html(
+					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
+				);
+				
+				"flexslider">
+							<ul class="slides">
+							
+				/**
 				$( "#" + guid + " .carousel-inner" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				$( "#" + guid + " .carousel-inner > .item:first" ).addClass("active");
+				*/
+				
+				//$( "#" + guid + " .carousel-inner > .item:first" ).addClass("active");
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});
@@ -873,12 +885,17 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
+	<li>
+      <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
+    </li>
+	/*
 	<div class="item">
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="">
 		<div class="carousel-caption">
 			<p>#: name #</p>
 		</div>
-	</div>	
+	</div>
+	*/	
 	</script>
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" style="margin-left: -15px; margin-right: -15px; margin-bottom: 20px;">
@@ -891,7 +908,12 @@
 					</small>
 				</h1>
 				<div class="row">
-					<div class="col-xs-12">				
+					<div class="col-xs-12">		
+						<div class="flexslider">
+							<ul class="slides">
+							</ul>
+						</div>	
+						/*
 						<div id="#=guid#" class="carousel slide carousel-v1">			                    
 			                <div class="carousel-inner">			                        
 			                </div>			                    
@@ -903,7 +925,8 @@
 			                            <i class="fa fa-angle-right"></i>
 			                        </a>
 			                </div>
-						</div>						
+						</div>
+						*/						
 					</div>	
 				</div>
 			</div>	
