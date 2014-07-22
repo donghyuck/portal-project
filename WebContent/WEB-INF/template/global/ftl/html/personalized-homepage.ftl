@@ -986,10 +986,10 @@
 			<h5 ><small><i class="fa fa-info"></i>공지 & 이벤트 소스를 변경할수 있습니다.</small></h5>	
 			<div class="btn-group btn-group-sm" data-toggle="buttons">
 				<label class="btn btn-success <#if action.user.anonymous >active</#if>">
-					<input type="radio" name="notice-selected-target" value="30" >사이트
+					<input type="radio" class="js-switch" name="notice-selected-target" value="30" >사이트
 				</label>
 				<label class="btn btn-success <#if !action.user.anonymous >active</#if>">
-					<input type="radio" name="notice-selected-target" value="1">My 회사
+					<input type="radio" class="js-switch" name="notice-selected-target" value="1">My 회사
 				</label>
 			</div>
 		</div>
