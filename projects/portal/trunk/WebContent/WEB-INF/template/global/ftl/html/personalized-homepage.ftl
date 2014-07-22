@@ -716,7 +716,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-			.flexslider .slides li img {max-height: 500px}		
+			.flexslider .slides li img {max-height: 100%}		
 		</style>   	
 		</#compress>
 	</head>
