@@ -116,7 +116,10 @@
 				$("#pager").kendoPager({
 					refresh : true,
 					buttonCount : 5,
-					dataSource : $('#photo-list-view').data('kendoListView').dataSource
+					dataSource : $('#photo-list-view').data('kendoListView').dataSource,
+					change : function(e){
+					
+					}
 				});			
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
