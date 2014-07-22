@@ -101,8 +101,7 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery-section";
 			if( $( "#" +renderTo).length == 0 ){			
-				$(".wrapper .header").after( $("#image-gallery-template").html() );				
-
+				$(".wrapper .header").after( $("#image-gallery-template").html() );
 				var dataSource = new  kendo.data.DataSource({
 									type: 'json',
 									transport: {
@@ -122,23 +121,24 @@
 										data : "targetImages",
 										total : "totalTargetImageCount"
 									},
-									serverPaging: true
+									serverPaging: true,
+									change : function(){
+										$('.flexslider.gallery').removeData("flexslider");
+										$( ".flexslider.gallery ul.slides" ).html(
+											kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
+										);
+										$('.flexslider.gallery').flexslider({
+									    animation: "slide"	,
+									    controlsContainer: ".flex-container"
+									  });
+									}
 								});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
 					buttonCount : 9,
-					dataSource : dataSource,
-					change : function(e){
-						alert("ss");
-					}
-				});			
-				$( ".flexslider ul.slides" ).html(
-					kendo.render( kendo.template($("#image-gallery-item-template").html()), dataSource.view() )
-				);
-				$('.flexslider').flexslider({
-				    animation: "slide"	,
-				    controlsContainer: ".flex-container"
-				  });			
+					dataSource : dataSource
+				});		
+							
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
 				});				
