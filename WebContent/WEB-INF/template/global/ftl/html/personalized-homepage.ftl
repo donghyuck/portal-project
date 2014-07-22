@@ -107,7 +107,7 @@
 				$( ".tn3gallery" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
-				$('.gallery').tn3({autoplay:true});				
+				$('#my-gallery').tn3({autoplay:true});				
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
@@ -908,9 +908,8 @@
 					</small>
 				</h1>
 				<div class="row">
-					<div class="col-xs-12">		
-						<div class="tn3gallery">
-						</div>	
+					<div id="my-gallery" class="col-xs-12">		
+						<div class="tn3-gallery"></div>	
 					</div>	
 				</div>
 			</div>	
