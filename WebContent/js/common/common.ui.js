@@ -2523,7 +2523,7 @@
 			.find(MINIMIZE_MAXIMIZE).parent().show().end().end();
 			
 			//that.wrapper.children(EXT_PANEL_BODY).show();			
-			wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
+			that.wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
 			options.isMaximized = options.isMinimized = false;			
 			return that;
 		},
