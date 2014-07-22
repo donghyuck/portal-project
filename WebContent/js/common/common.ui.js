@@ -2501,7 +2501,8 @@
 			var that = this,
             wrapper = that.wrapper;
 			if( !wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
-				wrapper.children(EXT_PANEL_BODY).show();				
+				//wrapper.children(EXT_PANEL_BODY).show();				
+				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
 			}			
 			that.options.isMaximized = true;
 			
@@ -2511,7 +2512,8 @@
 				wrapper = that.wrapper;			//that.element.hide();
 			that.options.isMinimized = true;
 			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
-				wrapper.children(EXT_PANEL_BODY).hide();				
+				//wrapper.children(EXT_PANEL_BODY).hide();				
+				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
 			}
 		}),
 		restore: function () {
