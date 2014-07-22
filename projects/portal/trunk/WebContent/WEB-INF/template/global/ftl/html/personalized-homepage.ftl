@@ -102,7 +102,7 @@
 				//var template = kendo.template($("#image-gallery-template").html());
 				//var guid = common.api.guid().toLowerCase()
 				//$("#personalized-area").before(template({guid:guid}));
-				$("#personalized-area").before( $("#image-gallery-template").html() );
+				$(".wrapper .header").after( $("#image-gallery-template").html() );
 				
 				$( ".flexslider ul.slides" ).html(
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
@@ -741,7 +741,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<div class="container-fluid" style="min-height:600px;">		
+			<div class="container-fluid" style="min-height:300px;">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 					<ul class="nav navbar-nav pull-right">
 							<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-gallery-section" >이미지 갤러리 </button></li>
@@ -762,7 +762,7 @@
 							<!--<li><a href="#personalized-controls-section" class="btn-control-group no-padding-b" data-toggle="menu"><i class="fa fa-cloud-upload fa-2x"></i></a></li>-->
 					</ul>
 				</div><!-- ./navbar-personalized -->
-				<div id="personalized-area" class="row"></div>				
+				<div id="personalized-area" class="row"></div>
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
