@@ -108,8 +108,8 @@
 					kendo.render( kendo.template($("#image-gallery-item-template").html()),  $('#photo-list-view').data('kendoListView').dataSource.view() )
 				);
 				$('.flexslider').flexslider({
-				    animation: "slide"	,			    
-				    controlNav: "thumbnails"
+				    animation: "slide"	,
+				    controlsContainer: ".flex-container"
 				  });			
 				/**
 				$( "#" + guid + " .carousel-inner" ).html(
@@ -717,7 +717,19 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+			.flexslider .slides li {
+				position: relative;
+			}
 			.flexslider .slides li img {max-height: 100%}		
+			.flex-caption {
+			    position: absolute;
+			    bottom: 0;
+			    left: 0;
+			    margin: 0;
+			    padding: 10px;
+			    color: white;
+			    background-color: rgba(0,0,0,0.5);
+			}
 		</style>   	
 		</#compress>
 	</head>
