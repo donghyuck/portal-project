@@ -281,11 +281,12 @@
 						options.success(response) ;					
 				}
 			},
+			complete : function () {
+				if( isFunction( options.always ))
+					options.always( ) ;					
+			},
 			error:options.error || common.api.handleKendoAjaxError,
 			dataType : "json"
-		}).complete( function () {
-			if( isFunction( options.always ))
-				options.always( ) ;					
 		});
 	}
 
