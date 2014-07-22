@@ -1031,7 +1031,7 @@
 				</ul>	<!-- ./nav-tabs -->
 				<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 					<div class="tab-pane" id="my-files">
-						<div class="panel panel-default panel-upload" style="display:none;">
+						<div class="panel panel-default panel-upload  no-margin-b no-border-b" style="display:none;">
 							<div class="panel-heading">
 								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 							</div>
@@ -1074,7 +1074,7 @@
 					</div><!-- ./tab-pane -->	
 					<div class="tab-pane" id="website-photo-stream">									
 						
-						<div class="panel panel-default panel-upload">
+						<div class="panel panel-default panel-upload no-margin-b no-border-b" style="display:none;">
 							<div class="panel-heading">
 								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 							</div>
