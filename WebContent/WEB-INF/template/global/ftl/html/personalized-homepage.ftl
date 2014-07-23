@@ -99,51 +99,49 @@
 		<!-- display image gallery                                  -->
 		<!-- ============================== -->
 		function createGallerySection(){
-			var renderTo = "image-gallery-section";
+			var renderTo = "image-gallery";
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .header").after( $("#image-gallery-template").html() );
 				var dataSource = new  kendo.data.DataSource({
-									type: 'json',
-									transport: {
-										read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
-										parameterMap: function (options, operation){
-											if (operation != "read" && options) {										                        								                       	 	
-												return { imageId :options.imageId };									                            	
-											}else{
-												 return { startIndex: options.skip, pageSize: options.pageSize }
-											}
-										}
-									},
-									pageSize: 12,
-									error:common.api.handleKendoAjaxError,
-									schema: {
-										model: Image,
-										data : "targetImages",
-										total : "totalTargetImageCount"
-									},
-									serverPaging: true,
-									change : function(){
-										$('.flexslider.gallery').removeData("flexslider");
-										$( ".flexslider.gallery ul.slides" ).html(
-											kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
-										);
-										$('.flexslider.gallery').flexslider({
-									    animation: "slide"	,
-									    controlsContainer: ".flex-container"
-									  });
-									}
-								});
+					type: 'json',
+					transport: {
+							read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
+							parameterMap: function (options, operation){
+								if (operation != "read" && options) {										                        								                       	 	
+									return { imageId :options.imageId };									                            	
+								}else{
+									 return { startIndex: options.skip, pageSize: options.pageSize }
+								}
+							}
+					},
+					pageSize: 12,
+					error:common.api.handleKendoAjaxError,
+					schema: {
+						model: Image,
+						data : "targetImages",
+						total : "totalTargetImageCount"
+					},
+					serverPaging: true,
+					change : function(){
+						$('#image-gallery-slider').removeData("flexslider");
+						$( "#image-gallery-slider ul.slides" ).html(
+							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
+						);
+						$('#image-gallery-slider').flexslider({
+						    animation: "slide"	,
+						    controlsContainer: ".flex-container"
+						  });
+					}
+				});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
 					buttonCount : 9,
 					dataSource : dataSource
 				});		
-				dataSource.read();
-							
+				dataSource.read();							
 				common.ui.button({
 					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
-				});				
-				
+				});		
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).show();
@@ -938,20 +936,19 @@
        <p class='flex-caption'>#: name #</p>
     </li>
 	</script>
+	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
-	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border">
+	<div id="image-gallery" class="one-page animated bounceInUp  no-padding-t no-border">
 		<div class="one-page-inner one-dark">
 			<div class="container">	
 				<button type="button" class="close fa-3x" data-dismiss="section" data-target="#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 				<h1>공지 & 이벤트 
-					<small>		
-						
-					</small>
+					<small>	</small>
 				</h1>
 				<div class="row">
 					<div class="col-xs-12">		
 						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>
-						<div class="flexslider gallery">
+						<div id="#gallery-slider" class="flexslider">
 							<ul class="slides">
 							</ul>
 						</div>	
@@ -961,8 +958,9 @@
 		</div>		
 	</div>
 	</script>
+	
 	<script type="text/x-kendo-template" id="image-gallery-template2">	
-	<div id="image-gallery-section" class="one-page animated bounceInUp  no-padding-t no-border" >
+	<div id="image-gallery" class="one-page animated bounceInUp  no-padding-t no-border" >
 		<div class="one-page-inner one-blue">
 			<div class="container">	
 				<button type="button" class="close fa-3x" data-dismiss="section" data-target="\\#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
