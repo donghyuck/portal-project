@@ -106,14 +106,14 @@
 				var galleryDataSource =new kendo.data.DataSource({
 					type: 'json',
 					transport: {
-							read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
-							parameterMap: function (options, operation){
-								if (operation != "read" && options) {										                        								                       	 	
-									return { imageId :options.imageId };									                            	
-								}else{
-									 return { startIndex: options.skip, pageSize: options.pageSize }
-								}
+						read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
+						parameterMap: function (options, operation){
+							if (operation != "read" && options) {										                        								                       	 	
+								return { imageId :options.imageId };									                            	
+							}else{
+								 return { startIndex: options.skip, pageSize: options.pageSize }
 							}
+						}
 					},
 					pageSize: 25,
 					error:common.api.handleKendoAjaxError,
@@ -135,10 +135,11 @@
 						});
 					}
 				});
-				$(  "#image-gallery-pager").kendoPager({
+				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					dataSource : galleryDataSource
 				});
+				
 				galleryDataSource.read();
 					
 				common.ui.button({
