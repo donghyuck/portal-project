@@ -774,7 +774,9 @@
 				margin-bottom: 15px; 
 			
 			}
-			
+			.controls{
+				z-index: 100;
+			}
 		</style>   	
 		</#compress>
 	</head>
