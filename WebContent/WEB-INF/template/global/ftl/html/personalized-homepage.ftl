@@ -745,6 +745,14 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+			ul.items-small {
+				list-style: none;
+				overflow: hidden;
+				padding: 0px;
+			}
+			ul.items-small li.item {
+				width: 150px;
+			}		
 			ul.items-small li.item img {
 				height : 150px;	
 				width: 150px;			
