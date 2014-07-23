@@ -133,7 +133,8 @@
 						);
 					
 						$('#image-gallery-slider').sGallery({
-							fullScreenEnabled: false
+							fullScreenEnabled: false,
+							touch:false
 						});
 					}
 				});
