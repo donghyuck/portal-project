@@ -947,7 +947,7 @@
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-item-template">			
-	<li class="item--big">
+	<li class="item-big">
       <a href="\\#">
         <figure>
           <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" />
