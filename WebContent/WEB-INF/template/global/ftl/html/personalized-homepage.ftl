@@ -761,7 +761,8 @@
 			li.item--big.fadeInScaleUp 
 			{
 				position: relative;
-				margin-top : -460px;
+				top:0;
+				margin-top : -455px;
 			}
 			
 			.controls {
