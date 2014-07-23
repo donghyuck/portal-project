@@ -129,6 +129,10 @@
 						);
 						$('#image-gallery-slider').flexslider({
 						    animation: "slide"	,
+						    easing: "swing",
+						    direction: "vertical",
+						    smoothHeight : true,
+						    startAt : 0,
 						    controlsContainer: ".flex-container"
 						  });
 					}
