@@ -141,7 +141,7 @@
 				$(  "#image-gallery-pager").kendoPager({
 					refresh : true,					
 					dataSource : galleryDataSource,
-					buttonCount : 1
+					buttonCount : 5
 				});		
 					
 				common.ui.button({
