@@ -739,7 +739,7 @@
 			.flexslider .slides li {
 				position: relative;
 			}
-			.flexslider .slides li img {max-height: 100%}		
+			/*.flexslider .slides li img {max-height: 100%}		*/
 			.flex-caption {
 			    position: absolute;
 			    bottom: 0;
