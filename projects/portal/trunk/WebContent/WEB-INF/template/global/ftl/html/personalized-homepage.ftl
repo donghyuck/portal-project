@@ -746,10 +746,14 @@
 		</script>		
 		<style scoped="scoped">
 					
-		ul.items-small li.item img {
-			height : 150px;
-			width : 150px;
-		}
+			ul.items-small li.item {
+				display : inline;
+				width: 150px;
+				height:150px;
+				margin-left: -0.25em;
+				margin-bottom: 0.25em;
+				float: left;
+			}
 			/*
 			ul.items-small {
 				list-style: none;
