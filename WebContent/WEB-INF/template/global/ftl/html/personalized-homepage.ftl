@@ -115,7 +115,7 @@
 							}
 						}
 					},
-					pageSize: 28,
+					pageSize: 20,
 					error:common.api.handleKendoAjaxError,
 					schema: {
 						model: Image,
@@ -745,10 +745,11 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+		/*
 			ul.items-small li.item img {
 				height : 150px;				
 			}
-			/*
+			
 			ul.items-small {
 				list-style: none;
 				overflow: hidden;
