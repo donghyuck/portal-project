@@ -137,7 +137,7 @@
 						});
 					}
 				});
-				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
+				$(  "#image-gallery-pager").kendoPager({
 					autoBind : true,
 					refresh : true,
 					buttonCount : 1,
@@ -966,7 +966,7 @@
 				</h1>
 				<div class="row">
 					<div class="col-xs-12">						
-						<div class="gallery-listview-pager k-pager-wrap no-border-t"></div>	
+						<div id="image-gallery-pager" class="k-pager-wrap"></div>	
 						<div id="image-gallery-slider">
 						  <ul class="items-small no-margin-b">
 						  </ul>
