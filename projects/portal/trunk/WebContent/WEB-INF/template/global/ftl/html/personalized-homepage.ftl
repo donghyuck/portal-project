@@ -123,8 +123,7 @@
 						total : "totalTargetImageCount"
 					},
 					serverPaging: true,
-					change : function(){				
-						alert("2");	
+					change : function(){
 						$( "#image-gallery-slider ul.items-small" ).html(
 							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
 						);
