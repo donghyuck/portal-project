@@ -961,7 +961,7 @@
 	<div id="image-gallery" class="one-page animated bounceInUp  no-padding-t no-border">
 		<div class="one-page-inner one-dark">
 			<div class="container">	
-				<button type="button" class="close fa-3x" data-dismiss="section" data-target="#image-gallery" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+				<button type="button" class="btn-close" data-dismiss="section" data-target="#image-gallery" data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
 				<h1>MY 이미지 겔러리
 					<small>	</small>
 				</h1>
