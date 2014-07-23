@@ -745,6 +745,13 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+		ul.items-small li.item {
+			display : inline;
+			margin-left: -0.25em;
+			margin-bottom: 0.25em;
+			float: left;
+		}
+					
 		ul.items-small li.item img {
 			height : 150px;
 		}
