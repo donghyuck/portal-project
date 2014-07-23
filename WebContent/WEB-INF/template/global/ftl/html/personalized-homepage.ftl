@@ -939,10 +939,16 @@
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-item-template">			
-	<li data-thumb="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#">
-		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
-		<p class='flex-caption'>#: name #</p>
-	</li>
+	<li class="item--big">
+      <a href="\\#">
+        <figure>
+          <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" />
+          <figcaption class="img-caption">
+            #: name #
+          </figcaption>
+        </figure>
+        </a>
+    </li>	
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
