@@ -967,7 +967,7 @@
 						    <span class="fs-toggle icon-fullscreen"></span>
 						  </div>
 						</div>
-						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>	
+						<div class="gallery-listview-pager k-pager-wrap no-border-t"></div>	
 					</div>	
 				</div>
 			</div>	
