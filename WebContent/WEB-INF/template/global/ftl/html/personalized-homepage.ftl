@@ -124,7 +124,6 @@
 					},
 					serverPaging: true,
 					change : function(){
-					alert("qq");
 						$( "#image-gallery-slider ul.items-small" ).html(
 							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
 						);
@@ -138,12 +137,10 @@
 				});
 				
 				$("#image-gallery-pager").kendoPager({
+					autoBind: true,
 					refresh : true,					
 					dataSource : galleryDataSource
 				});
-				
-				galleryDataSource.read();
-				
 					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
