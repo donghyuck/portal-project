@@ -758,7 +758,8 @@
 			}
 			ul.items-small li.item {
 				display : inline;
-				width: 100px;
+				width: 150px;
+				height:150px;
 				margin-left: -0.25em;
 				margin-bottom: -0.25em;
 				float: left;
@@ -766,7 +767,6 @@
 			
 			ul.items-small li.item img {
 				max-width: 100%;
-				min-height: 100px;
 			}
 			
 		</style>   	
