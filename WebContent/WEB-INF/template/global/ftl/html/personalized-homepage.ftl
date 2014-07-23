@@ -130,18 +130,17 @@
 						);
 						$( "#image-gallery-slider ul.items-big" ).html(
 							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
-						);
-					
+						);					
 						$('#image-gallery-slider').sGallery({
-							fullScreenEnabled: false,
-							touch:false
+							fullScreenEnabled: false
 						});
 					}
 				});
 				$(  "#image-gallery-pager").kendoPager({
 					refresh : true,					
 					dataSource : galleryDataSource
-				}).data("kendoPager").refresh();		
+				});
+				galleryDataSource.read();
 					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
