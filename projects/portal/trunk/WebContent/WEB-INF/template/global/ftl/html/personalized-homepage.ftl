@@ -966,7 +966,7 @@
 				<button type="button" class="btn-close" data-dismiss="section" data-target="#image-gallery" data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
 				<div class="row">
 					<div class="col-md-6"><h5 class="side-section-title">MY 이미지 갤러리</h5></div>
-					<div class="col-md-6"><div id="image-gallery-pager" class="k-pager-wrap"></div></div>
+					<div class="col-md-5"><div id="image-gallery-pager" class="k-pager-wrap rounded"></div></div>
 				</div>
 				<div class="row">
 					<div class="col-xs-12">						
