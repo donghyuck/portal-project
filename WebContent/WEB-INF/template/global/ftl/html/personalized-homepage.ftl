@@ -914,7 +914,7 @@
 	<!-- ============================== -->
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
-	<script type="text/x-kendo-template" id="#image-gallery-thumbnail-template">
+	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
 	<li class="item"><a href="\\#"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
 	</script>
 	
