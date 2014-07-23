@@ -135,12 +135,14 @@
 						});
 					}
 				});
+				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					dataSource : galleryDataSource
 				});
 				
 				galleryDataSource.read();
+				
 					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
@@ -965,7 +967,7 @@
 				</h1>
 				<div class="row">
 					<div class="col-xs-12">						
-						<div id="image-gallery-pager" class="k-pager-wrap"></div>	
+						<div id="image-gallery-pager" class="k-pager-wrap"></div>
 						<div id="image-gallery-slider">
 						  <ul class="items-small no-margin-b">
 						  </ul>
