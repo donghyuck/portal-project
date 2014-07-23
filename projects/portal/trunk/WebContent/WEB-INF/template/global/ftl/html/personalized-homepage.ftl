@@ -937,12 +937,23 @@
 					<small>	</small>
 				</h1>
 				<div class="row">
-					<div class="col-xs-12">		
+					<div class="col-xs-12">							
 						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>
-						<div id="image-gallery-slider" class="flexslider">
+						<div id="image-gallery-slider"  class="blueimp-gallery">
+							<div class="slides"></div>
+							<h3 class="title"></h3>
+							<a class="prev">‹</a>
+							<a class="next">›</a>
+							<a class="close">×</a>
+							<a class="play-pause"></a>
+							<ol class="indicator"></ol>
+						</div>						
+						<div class="flexslider">
 							<ul class="slides">
 							</ul>
-						</div>	
+						</div>
+						
+							
 					</div>	
 				</div>
 			</div>	
