@@ -745,6 +745,10 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+			ul.items-small li.item img {
+				height : 150px;	
+				width: 150px;			
+			}		
 /*
 			ul.items-small li.item img {
 				height : 150px;				
