@@ -761,6 +761,12 @@
 			li.item--big.fadeInScaleUp 
 			{
 				position: relative;
+				margin-top : -460px;
+			}
+			
+			.controls {
+				position:relative;
+				margin-top: 15px; 
 			}
 /*
 			ul.items-small li.item img {
