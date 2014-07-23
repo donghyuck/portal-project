@@ -742,20 +742,6 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-			.flexslider .slides li {
-				position: relative;
-			}
-			/*.flexslider .slides li img {max-height: 100%}		*/
-			.flex-caption {
-			    position: absolute;
-			    bottom: 0;
-			    left: 0;
-			    margin: 0;
-			    padding: 10px;
-			    color: white;
-			    width:100%;
-			    background-color: rgba(0,0,0,0.5);
-			}
 			
 			ul.items-small {
 				list-style: none;
@@ -772,6 +758,15 @@
 			
 			ul.items-small li.item img {
 				height : 150px;
+			}
+			
+			.item--big {
+				position: absolute;
+				width: 90%;
+				height: auto;
+				left: 5%;
+				right: 5%;
+				top: 3em;
 			}
 			
 		</style>   	
