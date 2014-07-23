@@ -938,7 +938,7 @@
 				<div class="row">
 					<div class="col-xs-12">		
 						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>
-						<div id="#image-gallery-slider" class="flexslider">
+						<div id="image-gallery-slider" class="flexslider">
 							<ul class="slides">
 							</ul>
 						</div>	
