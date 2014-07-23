@@ -125,7 +125,7 @@
 					serverPaging: true,
 					change : function(){
 						
-						$( "#image-gallery-slider ul.items--small" ).html(
+						$( "#image-gallery-slider ul.items-small" ).html(
 							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
 						);
 						$('#image-gallery-slider').sGallery({
