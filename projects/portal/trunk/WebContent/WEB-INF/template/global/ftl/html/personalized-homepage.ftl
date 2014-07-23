@@ -937,31 +937,8 @@
 					<div class="col-xs-12">						
 						<div id="image-gallery-slider">
 						  <ul class="items--small">
-						    <li class="item"><a href="#"><img src="images/small-1.png" alt="" /></a></li>
-						    <li class="item"><a href="#"><img src="images/small-2.png" alt="" /></a></li>
-						    <!--.....-->
 						  </ul>
 						  <ul class="items--big">
-						    <li class="item--big">
-						      <a href="#">
-						        <figure>
-						          <img src="images/big-1.jpg" alt="" />
-						          <figcaption class="img-caption">
-						            Caption
-						          </figcaption>
-						        </figure>
-						        </a>
-						    </li>
-						    <li class="item--big">
-						      <a href="#">
-						        <figure>
-						          <img src="images/big-2.jpg" alt="" />
-						          <figcaption class="img-caption">
-						            Caption
-						          </figcaption>
-						        </figure>
-						        </a>
-						    </li>
 						  </ul>
 						  <div class="controls">
 						    <span class="control icon-arrow-left" data-direction="previous"></span> 
