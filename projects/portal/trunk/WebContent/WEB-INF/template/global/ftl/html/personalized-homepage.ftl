@@ -124,6 +124,7 @@
 					},
 					serverPaging: true,
 					change : function(){
+					alert("qq");
 						$( "#image-gallery-slider ul.items-small" ).html(
 							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
 						);
