@@ -144,7 +144,7 @@
 				});		
 				dataSource.read();							
 				common.ui.button({
-					renderTo : "#image-gallery-section button[data-dismiss='section'][data-target]"
+					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
 				});		
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
@@ -920,20 +920,6 @@
 	<!-- ============================== -->
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
-	<script type="text/x-kendo-template" id="image-gallery-item-template2">	
-	<li data-thumb="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#">
-      <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
-      <p class='flex-caption'>#: name #</p>
-    </li>
-	/*
-	<div class="item">
-		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="">
-		<div class="carousel-caption">
-			<p>#: name #</p>
-		</div>
-	</div>
-	*/	
-	</script>
 	<script type="text/x-kendo-template" id="image-gallery-item-template">			
 	<li data-thumb="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#">
       <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
@@ -952,7 +938,7 @@
 				<div class="row">
 					<div class="col-xs-12">		
 						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>
-						<div id="#gallery-slider" class="flexslider">
+						<div id="#image-gallery-slider" class="flexslider">
 							<ul class="slides">
 							</ul>
 						</div>	
@@ -962,40 +948,6 @@
 		</div>		
 	</div>
 	</script>
-	
-	<script type="text/x-kendo-template" id="image-gallery-template2">	
-	<div id="image-gallery" class="one-page animated bounceInUp  no-padding-t no-border" >
-		<div class="one-page-inner one-blue">
-			<div class="container">	
-				<button type="button" class="close fa-3x" data-dismiss="section" data-target="\\#image-gallery-section" data-switch-target="button[data-action='show-gallery-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-				<h1>이미지 갤러리
-				</h1>
-				<div class="row">
-					<div class="col-xs-12">		
-						<div class="flexslider">
-							<ul class="slides">
-							</ul>
-						</div>	
-						/*
-						<div id="#=guid#" class="carousel slide carousel-v1">			                    
-			                <div class="carousel-inner">			                        
-			                </div>			                    
-			                <div class="carousel-arrow">
-			                        <a class="left carousel-control" href="\\##=guid#" data-slide="prev">
-			                            <i class="fa fa-angle-left"></i>
-			                        </a>
-			                        <a class="right carousel-control" href="\\##=guid#" data-slide="next">
-			                            <i class="fa fa-angle-right"></i>
-			                        </a>
-			                </div>
-						</div>
-						*/						
-					</div>	
-				</div>
-			</div>	
-		</div>		
-	</div>
-	</script>	
 	<!-- ============================== -->
 	<!-- notice template                                        -->
 	<!-- ============================== -->
