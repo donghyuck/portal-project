@@ -753,6 +753,9 @@
 			
 			ul.items-small li.item {
 				display : inline-block;
+				width: 150px;
+				margin-left: -0.25em;
+				float: left;
 			}
 			
 		</style>   	
@@ -922,7 +925,7 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
-	<li class="item"><a href="\\#" class="thumbnail"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
+	<li class="item"><a href="\\#" class=""><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-item-template">			
