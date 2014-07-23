@@ -130,9 +130,9 @@
 						$( "#image-gallery-slider ul.items-big" ).html(
 							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);					
-						//$('#image-gallery-slider').sGallery({
-						//	fullScreenEnabled: false
-						//});
+						$('#image-gallery-slider').sGallery({
+							fullScreenEnabled: false
+						});
 					}
 				});
 				
