@@ -745,16 +745,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-					
-			ul.items-small li.item {
-				display : inline;
-				width: 150px;
-				height:150px;
-				margin-left: -0.25em;
-				margin-bottom: 0.25em;
-				float: left;
-			}
-			/*
+			
 			ul.items-small {
 				list-style: none;
 				overflow: hidden;
@@ -780,7 +771,7 @@
 			#image-gallery-pager { 
 				margin-bottom: 15px; 
 			}
-			*/
+			
 		</style>   	
 		</#compress>
 	</head>
