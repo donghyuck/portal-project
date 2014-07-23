@@ -10,7 +10,7 @@
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
-			'css!${request.contextPath}/styles/blueimp-gallery/blueimp-gallery.min.css',
+			'css!${request.contextPath}/styles/jquery.s-gallery/s-gallery.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
@@ -939,25 +939,43 @@
 					<small>	</small>
 				</h1>
 				<div class="row">
-					<div class="col-xs-12">							
-						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>
-						<div id="image-gallery-slider"  class="blueimp-gallery">
-							<div class="slides"></div>
-							<h3 class="title"></h3>
-							<a class="prev">‹</a>
-							<a class="next">›</a>
-							<a class="close">×</a>
-							<a class="play-pause"></a>
-							<ol class="indicator"></ol>
+					<div class="col-xs-12">						
+						<div id="image-gallery-slider">
+						  <ul class="items--small">
+						    <li class="item"><a href="#"><img src="images/small-1.png" alt="" /></a></li>
+						    <li class="item"><a href="#"><img src="images/small-2.png" alt="" /></a></li>
+						    <!--.....-->
+						  </ul>
+						  <ul class="items--big">
+						    <li class="item--big">
+						      <a href="#">
+						        <figure>
+						          <img src="images/big-1.jpg" alt="" />
+						          <figcaption class="img-caption">
+						            Caption
+						          </figcaption>
+						        </figure>
+						        </a>
+						    </li>
+						    <li class="item--big">
+						      <a href="#">
+						        <figure>
+						          <img src="images/big-2.jpg" alt="" />
+						          <figcaption class="img-caption">
+						            Caption
+						          </figcaption>
+						        </figure>
+						        </a>
+						    </li>
+						  </ul>
+						  <div class="controls">
+						    <span class="control icon-arrow-left" data-direction="previous"></span> 
+						    <span class="control icon-arrow-right" data-direction="next"></span> 
+						    <span class="grid icon-grid"></span>
+						    <span class="fs-toggle icon-fullscreen"></span>
+						  </div>
 						</div>
-						<div class=""></div>
-						/*						
-						<div class="flexslider">
-							<ul class="slides">
-							</ul>
-						</div>
-						*/
-							
+						<div class="gallery-listview-pager k-pager-wrap no-border-b"></div>	
 					</div>	
 				</div>
 			</div>	
