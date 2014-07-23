@@ -139,7 +139,7 @@
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 5,
-					info: false;
+					info: false,
 					dataSource : galleryDataSource
 				});
 					
