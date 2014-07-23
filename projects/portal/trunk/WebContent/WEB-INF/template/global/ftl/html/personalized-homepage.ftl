@@ -139,10 +139,9 @@
 					}
 				});
 				$(  "#image-gallery-pager").kendoPager({
-					autoBind : true,
-					refresh : true,
-					buttonCount : 1,
-					dataSource:galleryDataSource
+					refresh : true,					
+					dataSource : galleryDataSource,
+					buttonCount : 1
 				});		
 					
 				common.ui.button({
