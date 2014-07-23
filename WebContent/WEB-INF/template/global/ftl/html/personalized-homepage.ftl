@@ -764,11 +764,10 @@
 			
 			.item--big {
 				position: absolute;
-				width: 90%;
+			}
+			.item img, .item--big img {
+				max-width: 100%;
 				height: auto;
-				left: 5%;
-				right: 5%;
-				top: 3em;
 			}
 			
 			#image-gallery-pager { 
