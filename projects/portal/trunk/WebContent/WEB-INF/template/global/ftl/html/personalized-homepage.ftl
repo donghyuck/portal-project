@@ -958,7 +958,7 @@
 						<div id="image-gallery-slider">
 						  <ul class="items-small no-margin-b">
 						  </ul>
-						  <ul class="items-big">
+						  <ul class="items-big no-margin-b">
 						  </ul>
 						  <div class="controls">
 						    <span class="control icon-arrow-left" data-direction="previous"></span> 
