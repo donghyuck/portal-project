@@ -750,6 +750,11 @@
 			    width:100%;
 			    background-color: rgba(0,0,0,0.5);
 			}
+			
+			ul.items-small li.item {
+				display : inline-block;
+			}
+			
 		</style>   	
 		</#compress>
 	</head>
@@ -938,9 +943,9 @@
 				<div class="row">
 					<div class="col-xs-12">						
 						<div id="image-gallery-slider">
-						  <ul class="items--small">
+						  <ul class="items-small">
 						  </ul>
-						  <ul class="items--big">
+						  <ul class="items-big">
 						  </ul>
 						  <div class="controls">
 						    <span class="control icon-arrow-left" data-direction="previous"></span> 
