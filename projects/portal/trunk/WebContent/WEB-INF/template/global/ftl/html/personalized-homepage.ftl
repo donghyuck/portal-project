@@ -917,14 +917,14 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
-	<li class="item"><a href="\\#"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
+	<li class="item"><a href="\\#"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" class="img-thumbnail" /></a></li>
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-item-template">			
 	<li data-thumb="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#">
-      <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
-       <p class='flex-caption'>#: name #</p>
-    </li>
+		<img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
+		<p class='flex-caption'>#: name #</p>
+	</li>
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
