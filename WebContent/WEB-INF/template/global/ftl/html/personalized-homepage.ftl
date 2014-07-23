@@ -138,6 +138,7 @@
 				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
+					buttonCount : 5,
 					dataSource : galleryDataSource
 				});
 					
