@@ -140,11 +140,7 @@
 				});
 				$(  "#image-gallery-pager").kendoPager({
 					refresh : true,					
-					dataSource : galleryDataSource,
-					buttonCount : 5,
-					change: function(e){
-				alert("1");	
-					}
+					dataSource : galleryDataSource
 				}).data("kendoPager").refresh();		
 					
 				common.ui.button({
