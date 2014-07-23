@@ -757,6 +757,11 @@
 				height : 150px;	
 				width: 150px;			
 			}		
+			
+			li.item--big.fadeInScaleUp 
+			{
+				position: relative;
+			}
 /*
 			ul.items-small li.item img {
 				height : 150px;				
