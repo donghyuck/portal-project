@@ -115,7 +115,7 @@
 								}
 							}
 					},
-					pageSize: 12,
+					pageSize: 50,
 					error:common.api.handleKendoAjaxError,
 					schema: {
 						model: Image,
