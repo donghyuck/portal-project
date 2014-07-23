@@ -75,6 +75,12 @@
 	background: #111;
 }
 
+.one-page .one-dark .btn-close {
+right: 10px;
+top: 10px;
+}
+
+
 .one-page .one-green {
 	background: #2ecc71;
 }
