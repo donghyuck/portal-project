@@ -103,7 +103,7 @@
 			var renderTo = "image-gallery";
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .header").after( $("#image-gallery-template").html() );
-				var dataSource = new  kendo.data.DataSource({
+				var galleryDataSource = new  kendo.data.DataSource({
 					type: 'json',
 					transport: {
 							read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
@@ -123,22 +123,24 @@
 						total : "totalTargetImageCount"
 					},
 					serverPaging: true,
-					change : function(){						
+					change : function(){				
+							
 						$( "#image-gallery-slider ul.items-small" ).html(
 							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
 						);
 						$( "#image-gallery-slider ul.items-big" ).html(
 							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);
+					
 						$('#image-gallery-slider').sGallery({
-							fullScreenEnabled: true
+							fullScreenEnabled: false
 						});
 					}
 				});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
 					buttonCount : 1,
-					dataSource : dataSource
+					dataSource:galleryDataSource
 				});		
 				dataSource.read();							
 				common.ui.button({
