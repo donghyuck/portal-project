@@ -137,10 +137,9 @@
 				});
 				
 				$("#image-gallery-pager").kendoPager({
-					autoBind: true,
 					refresh : true,					
 					dataSource : galleryDataSource
-				});
+				}).data("kendoPager").refresh();
 					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
