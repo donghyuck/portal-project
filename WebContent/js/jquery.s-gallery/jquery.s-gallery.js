@@ -53,7 +53,10 @@
                 this.controlFullScreen();
             }
             this.changeHeight();
-            this.handleTouch();
+            
+            if( options.touch || false ){
+            	this.handleTouch();
+            }
         },
 
         handleTouch: function(){
