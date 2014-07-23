@@ -751,11 +751,20 @@
 			    background-color: rgba(0,0,0,0.5);
 			}
 			
+			ul.items-small {
+				list-style: none;
+			}
 			ul.items-small li.item {
 				display : inline-block;
 				width: 150px;
 				margin-left: -0.25em;
 				float: left;
+				vertical-align: top;
+			}
+			
+			ul.items-small li.item img {
+				max-width: 100%;
+				height: auto;
 			}
 			
 		</style>   	
