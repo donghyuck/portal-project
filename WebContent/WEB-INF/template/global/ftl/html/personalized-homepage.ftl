@@ -124,20 +124,11 @@
 					},
 					serverPaging: true,
 					change : function(){
-						$('#image-gallery-slider').removeData("flexslider");
-						$( "#image-gallery-slider ul.slides" ).html(
-							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
+						
+						$( "#image-gallery-slider ul.items--small" ).html(
+							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
 						);
-						/*
-						$('#image-gallery-slider').flexslider({
-						    animation: "slide"	,
-						    easing: "swing",
-						    direction: "vertical",
-						    smoothHeight : true,
-						    startAt : 0,
-						    controlsContainer: ".flex-container"
-						  });
-						  */
+						
 					}
 				});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
@@ -923,6 +914,10 @@
 	<!-- ============================== -->
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
+	<script type="text/x-kendo-template" id="#image-gallery-thumbnail-template">
+	<li class="item"><a href="\\#"><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
+	</script>
+	
 	<script type="text/x-kendo-template" id="image-gallery-item-template">			
 	<li data-thumb="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#">
       <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" />
