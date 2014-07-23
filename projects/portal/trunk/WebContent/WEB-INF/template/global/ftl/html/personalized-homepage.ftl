@@ -963,7 +963,7 @@
 				<h1>MY 이미지 겔러리
 					<small>	</small>
 				</h1>
-				<div class="row" style="min-height:1000px;">
+				<div class="row">
 					<div class="col-xs-12">						
 						<div class="gallery-listview-pager k-pager-wrap no-border-t"></div>	
 						<div id="image-gallery-slider">
