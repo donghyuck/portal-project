@@ -139,11 +139,14 @@
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					dataSource : galleryDataSource
-				}).data("kendoPager").refresh();
+				});
+					
+				galleryDataSource.read();
 					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
 				});	
+				
 					
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
