@@ -123,10 +123,12 @@
 						total : "totalTargetImageCount"
 					},
 					serverPaging: true,
-					change : function(){
-						
+					change : function(){						
 						$( "#image-gallery-slider ul.items-small" ).html(
 							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
+						);
+						$( "#image-gallery-slider ul.items-big" ).html(
+							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);
 						$('#image-gallery-slider').sGallery({
 							fullScreenEnabled: true
