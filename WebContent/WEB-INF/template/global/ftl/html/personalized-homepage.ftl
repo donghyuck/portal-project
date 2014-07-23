@@ -137,7 +137,7 @@
 				});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
 					refresh : true,
-					buttonCount : 9,
+					buttonCount : 1,
 					dataSource : dataSource
 				});		
 				dataSource.read();							
