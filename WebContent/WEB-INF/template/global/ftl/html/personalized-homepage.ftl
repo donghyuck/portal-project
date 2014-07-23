@@ -138,11 +138,12 @@
 					}
 				});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
+					autoBind : true,
 					refresh : true,
 					buttonCount : 1,
 					dataSource:galleryDataSource
 				});		
-				galleryDataSource.read();							
+					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
 				});		
