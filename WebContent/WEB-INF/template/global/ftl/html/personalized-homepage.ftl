@@ -763,9 +763,6 @@
 				height : 150px;
 			}
 			
-			.item--big {
-				position: absolute;
-			}
 			.item img, .item--big img {
 				max-width: 100%;
 				height: auto;
@@ -773,11 +770,8 @@
 			
 			#image-gallery-pager { 
 				margin-bottom: 15px; 
+			}
 			
-			}
-			.controls{
-				z-index: 100;
-			}
 		</style>   	
 		</#compress>
 	</head>
