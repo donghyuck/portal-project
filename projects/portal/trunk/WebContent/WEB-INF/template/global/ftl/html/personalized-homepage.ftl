@@ -956,7 +956,7 @@
 				<div class="row">
 					<div class="col-xs-12">						
 						<div id="image-gallery-slider">
-						  <ul class="items-small">
+						  <ul class="items-small no-margin-b">
 						  </ul>
 						  <ul class="items-big">
 						  </ul>
