@@ -23,7 +23,7 @@
 			'${request.contextPath}/js/jquery.easing/jquery.easing.1.3.js',		
 			'${request.contextPath}/js/jquery.bxslider/jquery.bxslider.min.js',		
 			'${request.contextPath}/js/jquery.flexslider/jquery.flexslider-min.js',		
-			'${request.contextPath}/js/blueimp-gallery/blueimp-gallery.min.js',		
+			'${request.contextPath}/js/jquery.s-gallery/jquery.s-gallery.min.js',		
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/common.plugins/switchery.min.js', 		
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
@@ -128,6 +128,7 @@
 						$( "#image-gallery-slider ul.slides" ).html(
 							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);
+						/*
 						$('#image-gallery-slider').flexslider({
 						    animation: "slide"	,
 						    easing: "swing",
@@ -136,6 +137,7 @@
 						    startAt : 0,
 						    controlsContainer: ".flex-container"
 						  });
+						  */
 					}
 				});
 				$(  "#" +renderTo + " .gallery-listview-pager").kendoPager({
@@ -947,12 +949,14 @@
 							<a class="close">×</a>
 							<a class="play-pause"></a>
 							<ol class="indicator"></ol>
-						</div>						
+						</div>
+						<div class=""></div>
+						/*						
 						<div class="flexslider">
 							<ul class="slides">
 							</ul>
 						</div>
-						
+						*/
 							
 					</div>	
 				</div>
