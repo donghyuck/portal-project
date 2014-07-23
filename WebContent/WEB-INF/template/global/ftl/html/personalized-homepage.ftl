@@ -139,6 +139,7 @@
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 5,
+					info: false;
 					dataSource : galleryDataSource
 				});
 					
@@ -768,6 +769,11 @@
 				left: 5%;
 				right: 5%;
 				top: 3em;
+			}
+			
+			#image-gallery-pager { 
+				margin-bottom: 15px; 
+			
 			}
 			
 		</style>   	
