@@ -745,7 +745,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-
+/*
 			ul.items-small li.item img {
 				height : 150px;				
 			}
@@ -771,7 +771,7 @@
 				max-width: 100%;
 				height: auto;
 			}
-			
+*/			
 			#image-gallery-pager { 
 				margin-bottom: 15px; 
 			}
