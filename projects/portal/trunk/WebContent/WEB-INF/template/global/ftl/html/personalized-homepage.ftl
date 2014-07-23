@@ -124,7 +124,7 @@
 					},
 					serverPaging: true,
 					change : function(){				
-							
+						alert("2");	
 						$( "#image-gallery-slider ul.items-small" ).html(
 							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
 						);
@@ -141,12 +141,16 @@
 				$(  "#image-gallery-pager").kendoPager({
 					refresh : true,					
 					dataSource : galleryDataSource,
-					buttonCount : 5
-				});		
+					buttonCount : 5,
+					change: function(e){
+				alert("1");	
+					}
+				}).data("kendoPager").refresh();		
 					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
-				});		
+				});	
+					
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).show();
