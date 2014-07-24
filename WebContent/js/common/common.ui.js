@@ -122,6 +122,39 @@
 		});
 	}
 	
+	common.ui.superbox = function(){
+		var superbox      = $('<div class="superbox-show"></div>');
+		var superboximg   = $('<img src="" class="superbox-current-img">');
+		var superboxclose = $('<div class="superbox-close" data-dismiss="superbox"></div>');		
+		superbox.append(superboximg).append(superboxclose);
+		
+		
+		$(document).on("click","[data-ride='gallery'].superbox-list", function(e){			
+			var $this = $(this);
+			var current = $this.find('img.superbox-img');
+			var src = current.data("img");
+			superboximg.attr('src', src);
+			
+			if ($this.next().hasClass('superbox-show')) {
+				superbox.toggle();
+			} else {
+				superbox.insertAfter(this).css('display', 'block');
+			}
+			$('html, body').animate({
+				scrollTop:superbox.position().top - currentimg.width()
+			}, 'medium');
+			
+		});
+		
+		$(document).on("click","[data-dismiss='superbox'].superbox-close", function(e){			
+			var $this = $(this);
+			$('.superbox-current-img').animate({opacity: 0}, 200, function() {
+				//$('.superbox-show').slideUp();
+				$this.parent().slideUp();
+			});			
+		});
+	}
+	
 	common.ui.lightbox = function(){
 		if(!defined($.magnificPopup)) {
 			return false;
