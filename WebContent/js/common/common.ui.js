@@ -142,10 +142,10 @@
 				$this.addClass("active");
 			}
 			
-			if ($this.next().hasClass('superbox-show')) {
-				
+			if ($this.next().hasClass('superbox-show')) {				
 				superbox.slideToggle({ 
 					complete : function(){
+						alert(isActive);
 						if( isActive ){
 							$this.removeClass("active");
 						}
