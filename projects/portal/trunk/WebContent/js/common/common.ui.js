@@ -140,7 +140,7 @@
 			
 			if ($this.next().hasClass('superbox-show')) {				
 				
-				var visible = $this.next().hasClass('superbox-show').is(":visible");
+				var visible = $this.next().is(":visible");
 				$('.superbox-current-img').animate({opacity: (visible?0:1) }, 200, function() {
 					superbox.slideToggle({ 
 						complete : function(){
