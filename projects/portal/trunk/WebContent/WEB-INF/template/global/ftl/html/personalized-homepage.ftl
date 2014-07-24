@@ -136,10 +136,11 @@
 				//	fullScreenEnabled: false
 				//});
 						
+				$('.superbox').SuperBox();
 				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
-					buttonCount : 5,
+					buttonCount : 9,
 					info: false,
 					dataSource : galleryDataSource
 				});
@@ -743,57 +744,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-			ul.items-small {
-				list-style: none;
-				overflow: hidden;
-				padding: 0px;
-			}
-			ul.items-small li.item {
-				width: 150px;
-			}		
-			ul.items-small li.item img {
-				height : 150px;	
-				width: 150px;			
-			}		
 			
-			li.item--big.fadeInScaleUp 
-			{
-				position: relative;
-				top:0;
-				margin-top : -455px;
-			}
-			
-			.controls {
-				position:relative;
-				margin-top: 15px; 
-			}
-/*
-			ul.items-small li.item img {
-				height : 150px;				
-			}
-			
-			ul.items-small {
-				list-style: none;
-				overflow: hidden;
-				padding: 0px;
-			}
-			ul.items-small li.item {
-				display : inline;
-				width: 150px;
-				margin-left: -0.25em;
-				margin-bottom: 0.25em;
-				float: left;
-			}
-			
-			ul.items-small li.item img {
-				height : 150px;
-			}
-			
-			.item img, .item--big img {
-				max-width: 100%;
-				height: auto;
-			}
-*/			
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}
