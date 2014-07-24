@@ -135,8 +135,8 @@
 			var src = current.data("img");
 			superboximg.attr('src', src);
 			
-			if( !superboximg.is(".active") ){
-				superboximg.addClass("active");
+			if( !$this.is(".active") ){
+				$this.addClass("active");
 			}
 			
 			if ($this.next().hasClass('superbox-show')) {
