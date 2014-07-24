@@ -141,7 +141,6 @@
 			if ($this.next().hasClass('superbox-show')) {				
 				superbox.slideToggle({ 
 					complete : function(){
-						alert(isActive);
 						if( $this.next().hasClass('superbox-show').is(":visible") ){
 							$this.removeClass("active");
 						}
