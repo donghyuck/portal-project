@@ -140,8 +140,8 @@
 				$this.addClass("active");
 			}
 			
-			if ($this.next().hasClass('superbox-show')) {
-				superbox.toggle();
+			if ($this.next().hasClass('superbox-show')) {				
+				superbox.slideToggle({ });				
 			} else {
 				superbox.insertAfter(this).css('display', 'block');
 			}
