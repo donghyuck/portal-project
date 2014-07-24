@@ -171,7 +171,7 @@
 	top:25px;
 	right:25px;
 	background:url(images/close.gif) no-repeat center center;
-	transition: all .1s linear 0s
+	transition: all .1s linear 0s;
 	width:35px;
 	height:35px;
 }
