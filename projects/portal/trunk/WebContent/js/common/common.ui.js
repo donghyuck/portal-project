@@ -134,19 +134,15 @@
 			$this.parent().children(".superbox-list.active").removeClass("active");
 			var current = $this.find('img.superbox-img');
 			var src = current.data("img");
-			var isActive = $this.is(".active");
-			
+
 			superboximg.attr('src', src);
-			
-			if( !isActive ){
-				$this.addClass("active");
-			}
+			$this.addClass("active");
 			
 			if ($this.next().hasClass('superbox-show')) {				
 				superbox.slideToggle({ 
 					complete : function(){
 						alert(isActive);
-						if( isActive ){
+						if( $this.next().hasClass('superbox-show').is(":visible") ){
 							$this.removeClass("active");
 						}
 					}
