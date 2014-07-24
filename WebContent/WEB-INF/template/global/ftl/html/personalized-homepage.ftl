@@ -136,7 +136,8 @@
 				//	fullScreenEnabled: false
 				//});
 						
-				$('.superbox').SuperBox();
+				//$('.superbox').SuperBox();
+				common.ui.superbox();
 				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
