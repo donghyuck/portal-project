@@ -144,7 +144,7 @@
 				$('.superbox-current-img').animate({opacity: (visible?0:1) }, 200, function() {
 					superbox.slideToggle({ 
 						complete : function(){
-							if( $this.next().hasClass('superbox-show').is(":visible") ){
+							if( visible ){
 								$this.removeClass("active");
 							}
 						}
