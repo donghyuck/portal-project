@@ -156,7 +156,7 @@
 			
 			$('html, body').animate({
 				scrollTop:superbox.position().top - current.width()
-			}, 'top');
+			}, 'medium');
 			
 		});
 		
