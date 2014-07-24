@@ -6,6 +6,7 @@
 /*------------------------------------*\
     SuperBox
 \*------------------------------------*/
+/*
 *,
 *:after,
 *:before {
@@ -40,6 +41,7 @@ img {
 .logo-img {
 	max-width:95%;
 }
+*/
 /* SuperBox */
 .superbox-list {
 	display:inline-block;
