@@ -131,6 +131,12 @@
 	cursor: pointer
 }
 
+.superbox-img-thumbnail
+{
+	height: 150px;	
+}
+
+
 .superbox-show {
 	text-align: left;
 	position: relative;
