@@ -967,10 +967,10 @@
 	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
 	<li class="item"><a href="\\#" class=""><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
 	</script>
-	
+		
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
 	<div class="superbox-list">
-		<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" data-img="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img">
+		<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" data-img="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail scaleUpFadeIn">
 	</div>			
 	</script>
 	
