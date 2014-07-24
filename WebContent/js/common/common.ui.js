@@ -151,11 +151,13 @@
 		});
 		
 		$(document).on("click","[data-dismiss='superbox'].superbox-close", function(e){			
-			var $this = $(this);
-			$this.parent().parent().children(".superbox-list.active").removeClass("active");
+			var $this = $(this);			
 			$('.superbox-current-img').animate({opacity: 0}, 200, function() {
-				//$('.superbox-show').slideUp();
-				$this.parent().slideUp();
+				$this.parent().slideUp({
+					complete : function(){
+						$this.parent().parent().children(".superbox-list.active").removeClass("active");
+					}
+				});
 			});			
 		});
 	}
