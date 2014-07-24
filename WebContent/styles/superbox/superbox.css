@@ -51,13 +51,12 @@ img {
 }
 .superbox-img {
 	max-width:100%;
-	width:100%;
-	
+	width:100%;	
 	cursor:pointer;
 }
 .superbox-img-thumbnail
 {
-	hieight: 150px;	
+	height: 150px;	
 }
 
 .superbox-show {
