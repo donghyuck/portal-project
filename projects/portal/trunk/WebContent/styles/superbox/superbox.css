@@ -3,6 +3,7 @@
 	URL: www.toddmotto.com
 */
 /* SuperBox */
+/**
 .superbox-list {
 	display:inline-block;
 	*display:inline;
@@ -87,7 +88,7 @@
 		width:12.5%;
 	}
 }
-
+*/
 
 .superbox *,.superbox :after,.superbox :before {
 	margin: 0;
