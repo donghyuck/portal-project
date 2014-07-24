@@ -125,7 +125,7 @@
 	common.ui.superbox = function(){
 		var superbox      = $('<div class="superbox-show"></div>');
 		var superboximg   = $('<img src="" class="superbox-current-img">');
-		var superboxclose = $('<div class="superbox-close" data-dismiss="superbox"></div>');		
+		var superboxclose = $('<div class="superbox-close" data-dismiss="superbox"><span class="sr-only">Close</span></div>');		
 		superbox.append(superboximg).append(superboxclose);
 		
 		
