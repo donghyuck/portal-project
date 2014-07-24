@@ -135,6 +135,10 @@
 			var src = current.data("img");
 			superboximg.attr('src', src);
 			
+			if( !superboximg.is(".active") ){
+				superboximg.addClass("active");
+			}
+			
 			if ($this.next().hasClass('superbox-show')) {
 				superbox.toggle();
 			} else {
@@ -148,7 +152,7 @@
 		
 		$(document).on("click","[data-dismiss='superbox'].superbox-close", function(e){			
 			var $this = $(this);
-			$this.parent().before().removeClass("active");
+			$this.parent().parent().removeClass("active");
 			$('.superbox-current-img').animate({opacity: 0}, 200, function() {
 				//$('.superbox-show').slideUp();
 				$this.parent().slideUp();
