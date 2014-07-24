@@ -157,13 +157,17 @@
 	float: left
 }
 
+
 .superbox-close {
-	opacity: .7;
-	cursor: pointer;
-	position: absolute;
-	top: 15px;
-	right: 15px;
+	opacity:0.7;
+	cursor:pointer;
+	position:absolute;
+	top:25px;
+	right:25px;
+	background:url(images/close.gif) no-repeat center center;
 	transition: all .1s linear 0s
+	width:35px;
+	height:35px;
 }
 
 .superbox-close:hover {
