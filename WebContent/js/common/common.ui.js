@@ -134,14 +134,23 @@
 			$this.parent().children(".superbox-list.active").removeClass("active");
 			var current = $this.find('img.superbox-img');
 			var src = current.data("img");
+			var isActive = $this.is(".active");
+			
 			superboximg.attr('src', src);
 			
-			if( !$this.is(".active") ){
+			if( !isActive ){
 				$this.addClass("active");
 			}
 			
-			if ($this.next().hasClass('superbox-show')) {				
-				superbox.slideToggle({ });				
+			if ($this.next().hasClass('superbox-show')) {
+				
+				superbox.slideToggle({ 
+					complete : function(){
+						if( isActive ){
+							$this.removeClass("active");
+						}
+					}
+				});				
 			} else {
 				superbox.insertAfter(this).css('display', 'block');
 			}
@@ -154,13 +163,14 @@
 		
 		$(document).on("click","[data-dismiss='superbox'].superbox-close", function(e){			
 			var $this = $(this);			
-			$('.superbox-current-img').animate({opacity: 0}, 200, function() {
-				$this.parent().slideUp({
-					complete : function(){
-						$this.parent().parent().children(".superbox-list.active").removeClass("active");
-					}
-				});
-			});			
+			$this.parent().slideUp({
+				complete : function(){
+					$this.parent().parent().children(".superbox-list.active").removeClass("active");
+				}
+			});
+			
+			//$('.superbox-current-img').animate({opacity: 0}, 200, function() {
+			//});			
 		});
 	}
 	
