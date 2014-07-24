@@ -148,6 +148,7 @@
 		
 		$(document).on("click","[data-dismiss='superbox'].superbox-close", function(e){			
 			var $this = $(this);
+			$this.parent().before().removeClass("active");
 			$('.superbox-current-img').animate({opacity: 0}, 200, function() {
 				//$('.superbox-show').slideUp();
 				$this.parent().slideUp();
