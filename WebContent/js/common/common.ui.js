@@ -131,6 +131,7 @@
 		
 		$(document).on("click","[data-ride='gallery'].superbox-list", function(e){			
 			var $this = $(this);
+			$this.parent().children(".superbox-list.active").removeClass("active");
 			var current = $this.find('img.superbox-img');
 			var src = current.data("img");
 			superboximg.attr('src', src);
@@ -144,6 +145,7 @@
 			} else {
 				superbox.insertAfter(this).css('display', 'block');
 			}
+			
 			$('html, body').animate({
 				scrollTop:superbox.position().top - current.width()
 			}, 'medium');
