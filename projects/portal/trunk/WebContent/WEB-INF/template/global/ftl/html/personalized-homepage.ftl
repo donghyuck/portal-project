@@ -124,17 +124,17 @@
 					},
 					serverPaging: true,
 					change : function(){
-						$( "#image-gallery-slider ul.items-small" ).html(
-							kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
-						);
-						$( "#image-gallery-slider ul.items-big" ).html(
+					//	$( "#image-gallery-slider ul.items-small" ).html(
+					//		kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
+					//	);
+						$( "#image-gallery-slider" ).html(
 							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);					
 					}
 				});
-				$('#image-gallery-slider').sGallery({
-					fullScreenEnabled: false
-				});
+				//$('#image-gallery-slider').sGallery({
+				//	fullScreenEnabled: false
+				//});
 						
 				
 				$("#image-gallery-pager").kendoPager({
@@ -149,8 +149,6 @@
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
 				});	
-				
-					
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).show();
@@ -970,17 +968,10 @@
 	<li class="item"><a href="\\#" class=""><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
 	</script>
 	
-	<script type="text/x-kendo-template" id="image-gallery-item-template">			
-	<li class="item--big">
-      <a href="\\#">
-        <figure>
-          <img src="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" />
-          <figcaption class="img-caption">
-            #: name #
-          </figcaption>
-        </figure>
-        </a>
-    </li>	
+	<script type="text/x-kendo-template" id="image-gallery-item-template">	
+	<div class="superbox-list">
+		<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" data-img="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img">
+	</div>			
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
@@ -993,20 +984,8 @@
 					<div class="col-md-5"><div id="image-gallery-pager" class="k-pager-wrap rounded"></div></div>
 				</div>
 				<div class="row">
-					<div class="col-xs-12">						
-						
-						<div id="image-gallery-slider">
-						  <ul class="items-small no-margin-b">
-						  </ul>
-						  <ul class="items-big no-margin-b">
-						  </ul>
-						  <div class="controls">
-						    <span class="control icon-arrow-left" data-direction="previous"></span> 
-						    <span class="control icon-arrow-right" data-direction="next"></span> 
-						    <span class="grid icon-grid"></span>
-						    <span class="fs-toggle icon-fullscreen"></span>
-						  </div>
-						</div>
+					<div class="col-xs-12">
+						<div id="image-gallery-slider" class="superbox"></div>
 					</div>	
 				</div>
 			</div>	
