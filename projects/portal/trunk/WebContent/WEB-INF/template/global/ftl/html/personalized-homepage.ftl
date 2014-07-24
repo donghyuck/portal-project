@@ -795,7 +795,7 @@
 			}
 */			
 			#image-gallery-pager { 
-				margin-bottom: 15px; 
+				margin-top: 5px; 
 			}
 			
 		</style>   	
@@ -979,13 +979,11 @@
 		<div class="one-page-inner one-dark">
 			<div class="container">	
 				<button type="button" class="btn-close" data-dismiss="section" data-target="#image-gallery" data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
-				<div class="row">
-					<div class="col-md-6"><h5 class="side-section-title">MY 이미지 갤러리</h5></div>
-					<div class="col-md-5"><div id="image-gallery-pager" class="k-pager-wrap rounded"></div></div>
-				</div>
+				<h5 class="side-section-title">MY 이미지 갤러리</h5>
 				<div class="row">
 					<div class="col-xs-12">
 						<div id="image-gallery-slider" class="superbox"></div>
+						<div id="image-gallery-pager" class="k-pager-wrap rounded-b"></div>
 					</div>	
 				</div>
 			</div>	
