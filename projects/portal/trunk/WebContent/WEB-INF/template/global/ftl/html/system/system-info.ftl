@@ -319,7 +319,7 @@
 							<div class="tab-content">
 								<div class="tab-pane active" id="license-info">
 
-													<table class="table table-striped .table-hover license-details">
+													<table class="table table-hover license-details">
 														<tbody>
 															<tr>
 																<th>발급 ID</th>
