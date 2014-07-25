@@ -850,49 +850,54 @@
 								</div><!-- ./row -->
 									
 									<!-- company-tabs -->	
-									<ul id="company-tabs" class="nav nav-tabs nav-tabs-sm">
-										<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
-										<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
-										<li><a href="#company-tabs-files" data-toggle="tab">파일</a></li>
-										<li><a href="#company-tabs-timeline" data-toggle="tab">타임라인</a></li>
-									</ul>	
-									<div class="tab-content tab-content-bordered no-padding">								
-										<div class="tab-pane fade" id="company-tabs-props">
-											<div data-role="grid"
-												class="no-border"
-												date-scrollable="false"
-												data-editable="true"
-												data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-												data-columns="[
-													{ 'title': '이름',  'field': 'name', 'width': 200 },
-													{ 'title': '값', 'field': 'value' },
-													{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
-												]"
-												data-bind="source: properties, visible: isEnabled"
-												style="height: 300px"></div>																				
-												
-										</div>
-										<div class="tab-pane fade" id="company-tabs-images">
-											<div class="panel panel-transparent no-margin-b">
-												<div class="panel-body">
-													<input name="image-upload" id="image-upload" type="file" />
-												</div>																																		
+									<div class="panel colourable">
+										<div class="panel-heading">
+											<span class="panel-title"><i class="fa fa-info"></i></span>
+											<ul id="company-tabs" class="nav nav-tabs nav-tabs-xs">
+												<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
+												<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
+												<li><a href="#company-tabs-files" data-toggle="tab">파일</a></li>
+												<li><a href="#company-tabs-timeline" data-toggle="tab">타임라인</a></li>
+											</ul>	
+										</div> <!-- / .panel-heading -->		
+										<div class="tab-content">								
+											<div class="tab-pane fade" id="company-tabs-props">
+												<div data-role="grid"
+													class="no-border"
+													date-scrollable="false"
+													data-editable="true"
+													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+													data-columns="[
+														{ 'title': '이름',  'field': 'name', 'width': 200 },
+														{ 'title': '값', 'field': 'value' },
+														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+													]"
+													data-bind="source: properties, visible: isEnabled"
+													style="height: 300px"></div>																				
+													
 											</div>
-											<div id="image-details" class="no-padding-t  hide"></div>
-											<div id="image-grid" class="no-border-hr no-border-b"></div>			
-																									
-										</div>
-										<div class="tab-pane fade" id="company-tabs-files">
-											<div class="panel panel-transparent no-margin-b">
-												<div class="panel-body">
-													<input name="attach-upload" id="attach-upload" type="file" />
-												</div>												
+											<div class="tab-pane fade" id="company-tabs-images">
+												<div class="panel panel-transparent no-margin-b">
+													<div class="panel-body">
+														<input name="image-upload" id="image-upload" type="file" />
+													</div>																																		
+												</div>
+												<div id="image-details" class="no-padding-t  hide"></div>
+												<div id="image-grid" class="no-border-hr no-border-b"></div>			
+																										
 											</div>
-											<div id="attach-grid" class="no-border-hr no-border-b"></div>
-										</div>
-										<div class="tab-pane fade" id="company-tabs-timeline">											
-										</div>																																								
-									</div>	
+											<div class="tab-pane fade" id="company-tabs-files">
+												<div class="panel panel-transparent no-margin-b">
+													<div class="panel-body">
+														<input name="attach-upload" id="attach-upload" type="file" />
+													</div>												
+												</div>
+												<div id="attach-grid" class="no-border-hr no-border-b"></div>
+											</div>
+											<div class="tab-pane fade" id="company-tabs-timeline">											
+											</div>																																								
+										</div>	
+									</div>
 								<!-- / .website-tabs -->				
 								<div class="row">				
 									<div class="col-sm-12 ">		
