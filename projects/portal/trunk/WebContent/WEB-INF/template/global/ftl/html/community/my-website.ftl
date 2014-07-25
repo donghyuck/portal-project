@@ -265,7 +265,7 @@
 						var btn = $(e.target);
 						btn.button('loading');
 						alert(kendo.stringify( this.announce ) );
-						if( this.announce.subject.length ==0 || this.announce.body.length  ){
+						if( this.announce.subject.length == 0 || this.announce.body.length == 0 ){
 							common.ui.notification({
 								title:"공지 입력 오류", 
 								message: "제목 또는 본문을 입력하세요." ,
