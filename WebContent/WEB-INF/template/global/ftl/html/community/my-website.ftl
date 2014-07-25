@@ -264,6 +264,7 @@
 					update : function (e) {
 						var btn = $(e.target);
 						btn.button('loading');
+						alert(kendo.stringify( this.announce ) );
 						if( this.announce.subject.length ==0 || this.announce.body.length  ){
 							common.ui.notification({
 								title:"공지 입력 오류", 
