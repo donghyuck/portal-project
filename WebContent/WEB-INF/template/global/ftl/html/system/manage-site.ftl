@@ -872,10 +872,12 @@
 													
 											</div>
 											<div class="tab-pane fade" id="company-tabs-images">
+												<div class="container">
 												<div class="row">
 													<div class="col-xs-4"><input name="image-upload" id="image-upload" type="file" /></div>
 												</div>
-											
+												</div>
+																							
 												<div class="panel panel-transparent no-margin-b">
 													<div class="panel-body">
 														
