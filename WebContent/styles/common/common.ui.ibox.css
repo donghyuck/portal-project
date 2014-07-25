@@ -1,7 +1,8 @@
 @CHARSET "UTF-8";
 /* One Page
 ------------------------------------*/
-.ibox {
+
+ .ibox {
 	clear: both;
 	margin-bottom: 25px;
 	margin-top: 0;
@@ -38,6 +39,42 @@
 }
 
 
+.details-body {
+    border-top: 1px solid #E7EAEC;
+    padding: 20px;
+}
+
+.details-text {
+    border-top: 1px solid #E7EAEC;
+}
+
+.details-text .details-toolbar {
+    padding: 10px 15px;
+}
+
+.details-body .form-group {
+    margin-bottom: 5px;
+}
+
+.details-text .note-editor .note-toolbar {
+    background-color: #F9F8F8;
+}
+
+.details-attachment {
+    border-top: 1px solid #E7EAEC;
+    padding: 20px;
+    font-size: 12px;
+}
+
+.details-content {
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+.details-ontact {
+    width: 23%;
+}
 
 
 .ibox-content {
