@@ -2,34 +2,31 @@
 /* One Page
 ------------------------------------*/
 
-
- /* MAILBOX */
-
+/* MAILBOX */
 .details-box {
-    background-color: #ffffff;
-    border: 1px solid #E7EAEC;
-    border-top: 0;
-    padding: 0px;
-    margin-bottom: 20px;
+	background-color: #ffffff;
+	border: 1px solid #E7EAEC;
+	border-top: 0;
+	padding: 0px;
+	margin-bottom: 20px;
 }
 
 .details-box-header {
-    background-color: #ffffff;
-    border: 1px solid #E7EAEC;
-    border-bottom: 0;
-    padding: 30px 20px 20px 20px;
+	background-color: #ffffff;
+	border: 1px solid #E7EAEC;
+	border-bottom: 0;
+	padding: 30px 20px 20px 20px;
 }
 
-
 .details-box-header h2 {
-    margin-top: 0px;
+	margin-top: 0px;
 }
 
 .details-box-content .tag-list li a {
-    background: #ffffff;
+	background: #ffffff;
 }
 
- .ibox {
+.ibox {
 	clear: both;
 	margin-bottom: 25px;
 	margin-top: 0;
@@ -65,44 +62,42 @@
 	border-width: 1px 0px;
 }
 
-
 .details-body {
-    border-top: 1px solid #E7EAEC;
-    padding: 20px;
+	border-top: 1px solid #E7EAEC;
+	padding: 20px;
 }
 
 .details-text {
-    border-top: 1px solid #E7EAEC;
+	border-top: 1px solid #E7EAEC;
 }
 
 .details-text .details-toolbar {
-    padding: 10px 15px;
+	padding: 10px 15px;
 }
 
 .details-body .form-group {
-    margin-bottom: 5px;
+	margin-bottom: 5px;
 }
 
 .details-text .note-editor .note-toolbar {
-    background-color: #F9F8F8;
+	background-color: #F9F8F8;
 }
 
 .details-attachment {
-    border-top: 1px solid #E7EAEC;
-    padding: 20px;
-    font-size: 12px;
+	border-top: 1px solid #E7EAEC;
+	padding: 20px;
+	font-size: 12px;
 }
 
 .details-content {
-    background: none;
-    border: none;
-    padding: 10px;
+	background: none;
+	border: none;
+	padding: 10px;
 }
 
 .details-ontact {
-    width: 23%;
+	width: 23%;
 }
-
 
 .ibox-content {
 	clear: both;
