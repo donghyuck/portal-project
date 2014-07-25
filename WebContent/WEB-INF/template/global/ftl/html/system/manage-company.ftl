@@ -754,25 +754,13 @@
 								</ul>	
 								<!-- .tab-content -->	
 								<div class="tab-content tab-content-bordered no-padding">								
-									<div class="tab-pane fade" id="props">
-										<div class="alert alert-info alert-dark no-border-radius no-border-vr no-margin-b">
-											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-											프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.
-										</div>						
+									<div class="tab-pane fade" id="props">				
 										<div id="company-prop-grid" class="props no-border"></div>
 									</div>
-									<div class="tab-pane fade" id="groups">					
-										<div class="alert alert-info alert-dark no-border-radius no-border no-margin-b">
-											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-											<small>그룹관리는  그룹관리를 사용하여 관리 하실수 있습니다.	</small>     
-										</div>						
+									<div class="tab-pane fade" id="groups">										
 										<div id="company-group-grid"  class="groups no-border"></div>					
 									</div>
-									<div class="tab-pane fade" id="users">
-										<div class="alert alert-info alert-dark no-border-radius no-border no-margin-b">
-											<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-											<small>사용자관리는 사용자관리를 사용하여 관리 하실수 있습니다.	    </small> 
-										</div>			
+									<div class="tab-pane fade" id="users">	
 										<div id="company-user-grid"  class="users no-border"></div>
 									</div>
 								</div><!-- / .tab-content -->
