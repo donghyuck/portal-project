@@ -936,11 +936,11 @@
 		<script id="image-details-template" type="text/x-kendo-template">				
 		
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-sm-3">
 							<p><span class="label label-info" data-bind="text: contentType"></span></p>
 							<img data-bind="attr:{src: imgUrl}" class="img-responsive img-thumbnail " />						
 						</div>
-						<div class="col-sm-8">	
+						<div class="col-sm-9">	
 							<div class="panel-group" id="company-tabs-image-accordion">
 								<div class="panel">
 									<div class="panel-heading ">
