@@ -430,8 +430,8 @@
 
 								</div>
 								<div class="tab-pane" id="database-info">
-									<div class="panel-body">
-										<div id="database-info-grid" ></div>
+									<div class="panel-body no-padding">
+										<div id="database-info-grid" class="no-border"></div>
 									</div>
 								</div>		
 							</div><!-- tab contents end -->
