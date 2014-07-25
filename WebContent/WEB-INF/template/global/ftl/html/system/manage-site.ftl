@@ -873,7 +873,7 @@
 											</div>
 											<div class="tab-pane fade" id="company-tabs-images">
 												<div class="row no-margin-hr">
-													<div class="col-xs-4" class="background:#f5f5f5; border-right : solid 1px #ccc;"><input name="image-upload" id="image-upload" type="file" /></div>
+													<div class="col-xs-4" style="background:#f5f5f5; border-right : solid 1px #ccc;"><input name="image-upload" id="image-upload" type="file" /></div>
 												</div>
 																							
 												<div class="panel panel-transparent no-margin-b">
