@@ -934,11 +934,7 @@
 		<!-- END FOOTER -->
 
 		<script id="image-details-template" type="text/x-kendo-template">				
-			<div class="panel panel-default no-margin-b no-border">
-				<div class="panel-body paddingless pull-right hidden">
-					<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
-				</div>
-				<div class="panel-body">					
+		
 					<div class="row">
 						<div class="col-sm-4">
 							<p><span class="label label-info" data-bind="text: contentType"></span></p>
@@ -1001,8 +997,7 @@
 							</div>
 						</div>				
 					</div>											
-				</div>
-			</div>					
+									
 		</script>
 		<script id="social-details-template" type="text/x-kendo-template">				
 				#if ( typeof (twitterProfile)  == "object" ){ #
