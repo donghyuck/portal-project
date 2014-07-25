@@ -729,7 +729,7 @@
 								<table class="table">
 									<tbody>						
 										<tr>
-											<td><small>도메인</small></td>								
+											<th><small>도메인</small></th>								
 											<td><span data-bind="text:company.domainName"></span></td>
 										</tr>	
 										<tr>
