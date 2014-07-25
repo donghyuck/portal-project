@@ -736,8 +736,8 @@
 				<div id="company-details" class="page-details" style="">
 					<div class="row">
 						<div class="col-sm-3">
-							<div class="i-box">
-								<div class="i-box-content"></div>
+							<div class="ibox">
+								<div class="ibox-content"></div>
 							</div>
 						</div>
 						
