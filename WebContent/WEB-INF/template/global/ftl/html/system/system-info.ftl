@@ -354,8 +354,8 @@
 		
 								</div>
 								<div class="tab-pane" id="setup-info">
-									<div class="panel-body">
-										<div id="setup-props-grid" ></div>
+									<div class="panel-body no-padding">
+										<div id="setup-props-grid" class="no-border" ></div>
 									</div>		
 								</div>
 								<div class="tab-pane" id="system-info">
