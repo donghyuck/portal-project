@@ -734,6 +734,16 @@
 				</div><!-- / .page-header -->
 				<!-- details-row -->
 				<div id="company-details" class="page-details" style="">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="i-box">
+								<div class="i-box-content"></div>
+							</div>
+						</div>
+						
+						<div class="col-sm-9"></div>
+					</div>
+				
 					<div class="details-row no-margin-t">					
 						<div class="left-col">
 							<div class="details-block no-margin-t">
