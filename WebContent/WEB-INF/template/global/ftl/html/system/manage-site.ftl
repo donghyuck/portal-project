@@ -790,7 +790,7 @@
 									</div>
 								</div>	
 								<hr/>
-								<div class="row animated fadeInRight" >
+								<div class="row" >
 									<div class="col-lg-6">		
 												<!-- logo upload panel -->									
 												<div class="panel panel-default" data-action="upload-logo" style="display:none;">
@@ -874,16 +874,9 @@
 											<div class="tab-pane fade" id="company-tabs-images">
 												<div class="row no-margin-hr">
 													<div class="col-xs-4" style="background:#f5f5f5; border-right : solid 1px #ccc;"><input name="image-upload" id="image-upload" type="file" /></div>
+													<div class="col-xs-8"><div id="image-details hide animated fadeInRight"></div></div>
 												</div>
-																							
-												<div class="panel panel-transparent no-margin-b">
-													<div class="panel-body">
-														
-													</div>																																		
-												</div>
-												<div id="image-details" class="no-padding-t  hide"></div>
-												<div id="image-grid" class="no-border-hr no-border-b"></div>			
-																										
+												<div id="image-grid" class="no-border-hr no-border-b"></div>		
 											</div>
 											<div class="tab-pane fade" id="company-tabs-files">
 												<div class="panel panel-transparent no-margin-b">
