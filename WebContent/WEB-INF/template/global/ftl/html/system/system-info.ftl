@@ -359,8 +359,7 @@
 									</div>		
 								</div>
 								<div class="tab-pane" id="system-info">
-									<div class="panel-body" >
-												<table class="table table-striped .table-hover system-details">
+												<table class="table table-hover system-details">
 													<tbody>
 														<tr>
 															<th>운영시스템</th>
@@ -428,7 +427,7 @@
 														</tr>											
 													</tbody>
 												</table>	
-									</div>	
+
 								</div>
 								<div class="tab-pane" id="database-info">
 									<div class="panel-body">
