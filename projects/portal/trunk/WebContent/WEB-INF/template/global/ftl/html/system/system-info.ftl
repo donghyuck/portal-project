@@ -318,7 +318,7 @@
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
 								<div class="tab-pane active" id="license-info">
-									<div class="panel-body">
+
 													<table class="table table-striped .table-hover license-details">
 														<tbody>
 															<tr>
@@ -351,7 +351,7 @@
 															</tr>	
 													 	</tbody>
 													</table>
-										</div>			
+		
 								</div>
 								<div class="tab-pane" id="setup-info">
 									<div class="panel-body">
