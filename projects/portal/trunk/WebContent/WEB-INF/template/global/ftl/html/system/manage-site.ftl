@@ -10,8 +10,6 @@
 			load: [ 
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
-			'css!${request.contextPath}/styles/common/common.ui.ibox.css',	
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
