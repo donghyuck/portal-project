@@ -874,7 +874,7 @@
 											<div class="tab-pane fade" id="company-tabs-images">
 												<div class="row no-margin-hr">
 													<div class="col-xs-4" style="background:#f5f5f5; border-right : solid 1px #ccc;"><input name="image-upload" id="image-upload" type="file" /></div>
-													<div class="col-xs-8"><div id="image-details hide animated fadeInRight"></div></div>
+													<div class="col-xs-8"><div id="image-details" class="hide animated fadeInRight"></div></div>
 												</div>
 												<div id="image-grid" class="no-border-hr no-border-b"></div>		
 											</div>
