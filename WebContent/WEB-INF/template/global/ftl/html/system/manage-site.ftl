@@ -733,20 +733,7 @@
 					</div>				
 				</div><!-- / .page-header -->
 				<!-- details-row -->
-				<div id="company-details" class="page-details" style="">
-					<div class="row">
-						<div class="col-sm-3">
-							<div class="ibox">
-								<div class="ibox-content details-content"></div>
-							</div>
-						</div>
-						
-						<div class="col-sm-9">
-							<div calss="details-box-header"></div>
-							<div calss="details-box"></div>
-						</div>
-					</div>
-				
+				<div id="company-details" class="page-details" style="">				
 					<div class="details-row no-margin-t">					
 						<div class="left-col">
 							<div class="details-block no-margin-t">
