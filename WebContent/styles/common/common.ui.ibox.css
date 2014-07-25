@@ -2,6 +2,32 @@
 /* One Page
 ------------------------------------*/
 
+
+ /* MAILBOX */
+
+.details-box {
+    background-color: #ffffff;
+    border: 1px solid #E7EAEC;
+    border-top: 0;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+
+.details-box-header {
+    background-color: #ffffff;
+    border: 1px solid #E7EAEC;
+    border-bottom: 0;
+    padding: 30px 20px 20px 20px;
+}
+
+.details-box-header h2 {
+    margin-top: 0px;
+}
+
+.details-box-content .tag-list li a {
+    background: #ffffff;
+}
+
  .ibox {
 	clear: both;
 	margin-bottom: 25px;
