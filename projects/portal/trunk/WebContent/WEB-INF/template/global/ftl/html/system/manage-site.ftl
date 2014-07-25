@@ -874,7 +874,7 @@
 											<div class="tab-pane fade" id="company-tabs-images" >
 												<div class="row no-margin-hr" style="background:#f5f5f5;" >
 													<div class="col-xs-4"><input name="image-upload" id="image-upload" type="file" /></div>
-													<div class="col-xs-8" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated fadeInRight"></div></div>
+													<div class="col-xs-8" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
 												</div>
 												<div id="image-grid" class="no-border-hr no-border-b"></div>		
 											</div>
@@ -949,10 +949,7 @@
 										</a>
 									</div> <!-- / .panel-heading -->
 									<div id="company-tabs-image-accordion-collapse1" class="panel-collapse collapse in" style="height: auto;">
-										<div class="panel-body no-padding">
-											<div class="note note-default no-border no-margin-b">
-												<h5><small>수정한 다음에는 저장 버튼을 클릭하여야 반영됩니다.</small></h5>
-											</div>											
+										<div class="panel-body no-padding">									
 											<div id="image-prop-grid" class="no-border-hr no-border-b"></div>						
 										</div> <!-- / .panel-body -->
 									</div> <!-- / .collapse -->
