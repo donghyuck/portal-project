@@ -118,7 +118,7 @@
 	<body>
 		<div class="page-loader"></div>
 		<div class="container" style="min-height:450px;">
-			<div id="signin-block" class="reg-block reg-block-transparent  pull-right">
+			<div id="signin-block" class="reg-block reg-block-transparent  pull-right animated swing">
 		        <div class="reg-block-header">		        
 		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 		            <ul class="social-icons text-center">
