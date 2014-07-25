@@ -770,19 +770,19 @@
 								<table class="table">
 									<tbody>						
 										<tr>
-											<td class="text-center"><span class="badge">회사</span></td>								
+											<td class="text-center">회사</td>								
 											<td><span data-bind="text: company.displayName"></span> <span class="label label-primary"><span data-bind="text: company.name"></span></span> <code><span data-bind="text: company.companyId"></span></code></td>
 										</tr>	
 										<tr>
-											<th class="text-center"><span class="badge">도메인</span></th>								
+											<th class="text-center">도메인</th>								
 											<td><span data-bind="text: company.domainName"></span></td>
 										</tr>	
 										<tr>
-											<th class="text-center"><span class="badge">생성일</span></th>								
+											<th class="text-center">생성일</th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>	
 										<tr>
-											<th class="text-center"><span class="badge">수정일</span></th>								
+											<th class="text-center">수정일</th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>																								
 									</tbody>
@@ -791,7 +791,7 @@
 						</div>
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h"/>						
-							<div class="details-content">			
+							<div class="details-content animated fadeInRight">			
 								<div class="row" >
 									<div class="col-sm-12">
 										<div class="pull-right">
