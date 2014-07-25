@@ -9,12 +9,18 @@
 		yepnope([{
 			load: [ 
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
+			
+			'css!${request.contextPath}/styles/common/common.ui.ibox.css',
+			
 			'css!${request.contextPath}/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css',
+			
+			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
