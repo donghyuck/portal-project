@@ -138,6 +138,7 @@
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
 				});	
+				$( "#" +renderTo).slideDown();
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).slideDown();
