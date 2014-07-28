@@ -21,11 +21,8 @@
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
 			'${request.contextPath}/js/jquery.easing/jquery.easing.1.3.js',		
-			'${request.contextPath}/js/jquery.bxslider/jquery.bxslider.min.js',		
-			'${request.contextPath}/js/jquery.flexslider/jquery.flexslider-min.js',		
-			'${request.contextPath}/js/superbox/superbox.min.js',		
+			'${request.contextPath}/js/jquery.bxslider/jquery.bxslider.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/common.plugins/switchery.min.js', 		
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
@@ -124,36 +121,26 @@
 					},
 					serverPaging: true,
 					change : function(){
-					//	$( "#image-gallery-slider ul.items-small" ).html(
-					//		kendo.render( kendo.template($("#image-gallery-thumbnail-template").html()), this.view() )
-					//	);
 						$( "#image-gallery-slider" ).html(
 							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);					
 					}
 				});
-				//$('#image-gallery-slider').sGallery({
-				//	fullScreenEnabled: false
-				//});
-						
-				//$('.superbox').SuperBox();
 				common.ui.superbox();
-				
+								
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 9,
 					info: false,
 					dataSource : galleryDataSource
-				});
-					
-				galleryDataSource.read();
-					
+				});					
+				galleryDataSource.read();					
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]"
 				});	
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
-				$( "#" +renderTo).show();
+				$( "#" +renderTo).slideDown();
 			} 			
 		}
 		<!-- ============================== -->
