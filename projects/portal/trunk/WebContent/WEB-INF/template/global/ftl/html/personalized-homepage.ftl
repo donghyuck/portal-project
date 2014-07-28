@@ -915,7 +915,7 @@
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
-	<div id="image-gallery" class="one-page animated bounceInUp  no-padding-t no-border">
+	<div id="image-gallery" class="one-page  no-padding-t no-border" style="display:none;">
 		<div class="one-page-inner one-dark">
 			<div class="container">	
 				<button type="button" class="btn-close" data-dismiss="section" data-target="#image-gallery" data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
