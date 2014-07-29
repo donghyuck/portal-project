@@ -2392,6 +2392,7 @@
 		}else 	if( defined(options.appendTo) ){		
 			var guid = common.api.guid().toLowerCase() ;
 			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
+			$("#" + guid ).fadeIn("slow");			
 			return new common.ui.ExtPanel( $("#" + guid ), options); 
 		}		
 	}
@@ -2582,8 +2583,7 @@
 		restore: function () {
 			var that = this;
 			var options = that.options;
-			that.wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end()
-			.find(MINIMIZE_MAXIMIZE).parent().show().end().end();
+			that.wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end().find(MINIMIZE_MAXIMIZE).parent().show().end().end();
 			
 			//that.wrapper.children(EXT_PANEL_BODY).show();			
 			that.wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
