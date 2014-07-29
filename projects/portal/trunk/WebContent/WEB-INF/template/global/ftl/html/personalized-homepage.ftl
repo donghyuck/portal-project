@@ -755,8 +755,12 @@
 			<div class="container-fluid" style="min-height:300px;">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 					<ul class="nav navbar-nav pull-right">
-						<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-panel" >공지 & 이벤트 </button></li>
-						<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-gallery-section" >이미지 갤러리 </button></li>
+						<li>
+						<div class="btn-group navbar-btn"> 
+						<button type="button" class="btn btn-primary" data-toggle="button" data-action="show-notice-panel" >공지 & 이벤트 </button>
+						<button type="button" class="btn btn-primary" data-toggle="button" data-action="show-gallery-section" >이미지 갤러리 </button>
+						</div>
+						</li>
 						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 						<li class="hidden-xs">
 							<div class="btn-group navbar-btn" data-toggle="buttons">
