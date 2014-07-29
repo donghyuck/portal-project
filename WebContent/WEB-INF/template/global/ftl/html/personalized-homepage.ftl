@@ -739,6 +739,9 @@
 				margin-top: 5px; 
 			}
 			
+			.one-page .one-dark .btn-close {
+				top: 100px;
+			}			
 		</style>   	
 		</#compress>
 	</head>
