@@ -284,7 +284,15 @@
 		var setup = new common.ui.PageSetup(options);
 	}
 	
-	common.ui.effect = function( renderTo , classes ) {		
+	
+	
+	common.ui.switchClass = function( element, remove, add, speed, easing, callback ) {		
+		$.effects.animateClass.call( element, {
+			add: add,
+			remove: remove
+		}, speed, easing, callback );
+		
+		/*
 		 if (classes) {
 			classes = classes.split(" "); 
 			if (transitions) { 								
@@ -298,6 +306,7 @@
 				});
 			}
 		 }
+		 */
 	}
 	
 	common.ui.animate = function (renderTo, animate, always){	
