@@ -93,9 +93,7 @@
 						showNoticePanel();
 						common.ui.buttonDisabled($(this));
 					}
-				});
-								
-				
+				});				
 				// END SCRIPT 				
 			}
 		}]);	
@@ -132,8 +130,7 @@
 						);					
 					}
 				});
-				common.ui.superbox();
-								
+				common.ui.superbox();								
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 9,
@@ -166,7 +163,10 @@
 				}),
 				title: "공지 & 이벤트", 
 				actions:["Custom", "Minimize", "Close"],
-				template: kendo.template($("#notice-viewer-template").html()),   
+				template: kendo.template($("#notice-viewer-template").html()),
+				close:function(e){
+					common.ui.buttonEnabled($("button[data-action='show-notice-panel']"));
+				},   
 				custom: function(e){
 					var optTemplate = kendo.template($("#notice-options-template").html());
 					var heading =  e.target.element.children(".panel-heading");
