@@ -78,7 +78,6 @@
 						createPhotoListView();
 					}					
 				});
-
 				$('#myTab a:first').tab('show') ;
 
 				common.ui.button({
@@ -88,8 +87,15 @@
 						common.ui.buttonDisabled($(this));
 					}
 				});
+				common.ui.button({
+					renderTo: "button[data-action='show-notice-panel']",
+					click:function(e){
+						showNoticePanel();
+						common.ui.buttonDisabled($(this));
+					}
+				});
 								
-				showNoticePanel();
+				
 				// END SCRIPT 				
 			}
 		}]);	
