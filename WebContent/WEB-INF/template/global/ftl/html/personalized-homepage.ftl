@@ -165,7 +165,6 @@
 				actions:["Custom", "Minimize", "Close"],
 				template: kendo.template($("#notice-viewer-template").html()),
 				close:function(e){
-					alert("s");
 					common.ui.buttonEnabled($("button[data-action='show-notice-panel']"));
 				},   
 				custom: function(e){
