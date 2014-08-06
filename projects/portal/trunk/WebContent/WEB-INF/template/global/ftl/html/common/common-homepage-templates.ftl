@@ -178,18 +178,7 @@
 			<div class="row">
 				<div class="col-xs-6">
 			<div class="side-section-nav">	
-			<nav class="navbar navbar-default  navbar-inverse no-margin-b navbar-static-top">
-				<ul class="nav navbar-nav">		
-					<li class="dropdown">
-						<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">My <i class="fa fa-cloud fa-lg"></i></a>
-						<ul class="dropdown-menu">
-							<li><a href="/main.do?view=personalized">My 페이지</a></li>
-							<li><a href="/main.do?view=streams">My 스트림</a></li>
-							<li><a href="/main.do?view=manage">My 웹사이트</a></li>					
-						</ul>
-					</li>
-				</ul>		 
-			</nav>
+
 			</div>				 
 				 </div>
 				<div class="col-xs-6">
