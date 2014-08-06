@@ -957,9 +957,6 @@
 		
 		<script id="image-details-template" type="text/x-kendo-template">				
 			<div class="panel panel-default no-border-hr no-border-b no-margin-b">
-				<div class="panel-body paddingless pull-right">
-					<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
-				</div>
 				<div class="panel-body">											
 					<div class="row">
 						<div class="col-lg-4 col-xs-4">
