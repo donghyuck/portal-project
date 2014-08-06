@@ -976,14 +976,13 @@
 									</div> <!-- / .panel-heading -->
 									<div id="website-tabs-image-accordion-collapse1" class="panel-collapse collapse in" style="height: auto;">
 										<div class="panel-body no-padding">
-											<div class="note note-default no-border no-margin-b">
+											<div class="note note-default no-border no-padding-b">
 												<h5><small>수정한 다음에는 저장 버튼을 클릭하여야 반영됩니다.</small></h5>
 											</div>											
 											<div id="image-prop-grid" class="no-border-hr no-border-b"></div>						
 										</div> <!-- / .panel-body -->
 									</div> <!-- / .collapse -->
 								</div> <!-- / .panel -->	
-															
 								<div class="panel">
 									<div class="panel-heading">
 										<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#website-tabs-image-accordion" href="\\#website-tabs-image-accordion-collapse2">
