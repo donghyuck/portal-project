@@ -762,10 +762,11 @@
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 					<ul class="nav navbar-nav pull-right">
 						<li>
-							<div class="btn-group navbar-btn rounded"> 
-							<button type="button" class="btn-u btn-u-blue" data-toggle="button" data-action="show-notice-panel">공지 & 이벤트 </button>
-							<button type="button" class="btn-u btn-u-blue" data-toggle="button" data-action="show-gallery-section" >이미지 갤러리 </button>
+							<div class="btn-group navbar-btn"> 
+								<button type="button" class="btn-u btn-u-dark-blue" data-toggle="button" data-action="show-notice-panel">공지 & 이벤트 </button>
+								<button type="button" class="btn-u btn-u-dark-blue" data-toggle="button" data-action="show-gallery-section" >이미지 갤러리 </button>
 							</div>
+							&nbsp;
 						</li>
 						<li>
 							<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">클라우드 저장소</span></button>
