@@ -75,9 +75,9 @@
 	background: #111;
 }
 
-.one-page .one-dark .btn-close {
-right: 10px;
-top: 10px;
+.one-page .btn-close {
+	position:relative;
+	float:right;
 }
 
 
