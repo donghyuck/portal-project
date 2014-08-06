@@ -27,7 +27,8 @@
 			
 				common.ui.setup({
 					features:{
-						backstretch : true
+						backstretch : true,
+						landing : true
 					}
 				});
 				var currentUser = new User();		
@@ -353,8 +354,8 @@
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
-			<div class="container-fluid" style="min-height:600px;">		
-				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
+			<div class="container-fluid padding-sm" style="min-height:600px;">		
+				<div class="navbar navbar-personalized navbar-inverse" role="navigation">
 								<ul class="nav navbar-nav pull-right">
 									<li class="hidden-xs">
 										<p class="navbar-text">레이아웃</p>
@@ -390,7 +391,7 @@
 		<script type="text/x-kendo-template" id="alert-panel-template">
 				<div  id="#: id #" data-alert class="alert alert-info" style="min-height:50px; display:none;">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<p> 상단 메뉴에서 <i class="fa fa-briefcase fa-lg"></i> 버튼을 클릭하면 연결된 미디어 목록을 확인할 수 있습니다.</p>				
+					<p> 쇼셜 아이콘을 클릭하면 연결된 미디어 뉴스가 보여집니다. </p>				
 					<p><small>새로운 쇼셜 미디어 연결은 프로필 보기의 쇼셜네트워크 탭에서 지원합니다.</small></p>
 					<p><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info btn-sm" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a></p>
 				</div>

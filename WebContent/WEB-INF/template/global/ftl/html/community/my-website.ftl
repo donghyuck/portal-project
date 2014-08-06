@@ -41,7 +41,8 @@
 					features:{
 						backstretch : true,
 						lightbox : true,
-						spmenu : true
+						spmenu : true,
+						landing:true
 					}
 				});	
 				var currentUser = new User();			
@@ -54,8 +55,7 @@
 						e.token.copy(currentUser);					
 					},
 					shown : function(e){				
-						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");
-						$(".navbar .navbar-header").append("<a href='#personalized-controls-section'  data-toggle='spmenu' class='navbar-toggle-inverse visible-xs'><i class='fa fa-cloud-upload fa-2x'></i></a>");															
+							
 					},									
 				});	
 				preparePersonalizedArea($("#personalized-area"), 3, 4 );
@@ -887,10 +887,10 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-				<div id="notice-section" class="one-page animated bounceInUp no-border no-padding-t" >
+				<div id="notice-section" class="one-page animated bounceInDown no-border no-padding-t" >
 					<div class="one-page-inner one-grey">
 						<div class="container">	
-							<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+							<button type="button" class="close fa-3x" data-dismiss="section" data-target="#notice-section" data-animate="slideUp" data-switch-target="button[data-action='show-notice-section']" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 							<h1>공지 & 이벤트 
 								<small>		
 									소스를 선택하세요.
@@ -922,7 +922,10 @@
 			<div class="container-fluid">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 							<ul class="nav navbar-nav pull-right">
-								<li><button type="button" class="btn btn-primary navbar-btn" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button></li>
+								<li><button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button>&nbsp;</li>
+								<li>
+									<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">클라우드 저장소</span></button>
+								</li>								
 								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 								<li class="hidden-xs">
 									<div class="btn-group navbar-btn" data-toggle="buttons">
