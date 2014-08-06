@@ -73,8 +73,6 @@
 					{event: 'click', handlers: {
 						'page-create' : function(e){
 							$("#page-list-panel").hide();
-							//kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
-							//common.ui.animate_v3($('#page-list-panel'), 'fadeOutUp') ;
 							emptyPageEditorSource();
 							showPageEditor();							
 						},			
@@ -84,15 +82,6 @@
 							$('#page-editor-panel').hide();	
 							common.ui.animate_v3($('#page-list-panel'), 'fadeInDown').show() ;					
 						},
-						/*								
-						group : function(e){
-							topBar.go('main-group.do');				
-						}, 
-							
-						user : function(e){
-							topBar.go('main-user.do');			
-						}, 	
-						*/
 						back : function(e){
 							goWebsite();					
 						}																  						 
@@ -219,10 +208,8 @@
 		
 		function showPageEditor(){		
 			preparePageEditor();
-			$("button.btn-editor-control-group[data-action='page-editor-save']").attr('disabled', 'disabled');
-			//kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).play();
-			
-			common.ui.animate_v3($('#page-editor-panel'), 'fadeInDown').show() ;
+			$("button.btn-editor-control-group[data-action='page-editor-save']").attr('disabled', 'disabled');			
+			common.ui.animate_v3($('#page-editor-panel'), 'slideInRight').show() ;
 		}
 		
 		function preparePageEditor(){
