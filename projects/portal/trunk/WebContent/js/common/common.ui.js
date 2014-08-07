@@ -2212,25 +2212,21 @@
 			var renderTo = options.renderTo ;
 			if( typeof renderTo === "string" ){	
 				renderTo = $(options.renderTo);
-			}			
+			}
+			
 			if( renderTo.attr("data-dismiss") && renderTo.attr("data-target")  )
 			{
 				renderTo.click(function(e){
-					$this = $(this);
-					var target = $this.data("target");					
+					$this =  $(this);
+					var target = $this.attr("data-target");
 					if( $(target).length > 0 ){
-						if( defined( options.animate) ){
-							if($this.data("animate") && $this.data("animate") == "slideUp"){
-								$(target).slideUp();								
-							}else{
-								kendo.fx($(target)).fade("out").play();
-							}
+						if($this.data("animate")){
+							$(target).slideUp();
 						}else{
 							$(target).hide();
-						}
-					}
-					
-					var switch_target = $this.data("toggle-target");
+						}						
+					}		
+					var switch_target = $(this).attr("data-switch-target");
 					if( $(switch_target).length > 0 && $(switch_target).is("button" )){		
 						common.ui.buttonEnabled($(switch_target));
 					}
