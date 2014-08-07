@@ -921,26 +921,26 @@
 				</div><!-- ./ong-page -->							
 			<div class="container-fluid">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
-							<ul class="nav navbar-nav pull-right">
-								<li><button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button>&nbsp;</li>
-								<li>
-									<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">클라우드 저장소</span></button>
-								</li>								
-								<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-								<li class="hidden-xs">
-									<div class="btn-group navbar-btn" data-toggle="buttons">
-										<label class="btn btn-info">
-											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-										</label>
-										<label class="btn btn-info active">
-									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-										</label>
-										<label class="btn btn-info">
-											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-										</label>
-									</div>
-								</li> 
-							</ul>
+						<ul class="nav navbar-nav pull-right">
+							<li><button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button>&nbsp;</li>
+							<li>
+								<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">클라우드 저장소</span></button>
+							</li>								
+							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+							<li class="hidden-xs">
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info">
+										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+									</label>
+									<label class="btn btn-info active">
+								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+									</label>
+									<label class="btn btn-info">
+										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+									</label>
+								</div>
+							</li> 
+						</ul>
 				</div><!-- ./navbar-personalized -->
 				<div id="personalized-area" class="row" style="min-height:10px;"></div>				
 			</div><!-- ./container-fluid -->	
@@ -994,7 +994,7 @@
 										<div class="col-lg-12">
 											<div class="panel panel-default" style="margin-bottom: 20px;">
 												<div class="panel-body">													
-															<div  id="notice-viewer"></div>																						
+													<div  id="notice-viewer"></div>																						
 												</div>
 											</div>												
 										</div>																		
@@ -1151,7 +1151,7 @@
 		<!-- END FOOTER -->			
 		<!-- START TEMPLATE -->					
 		<script type="text/x-kendo-tmpl" id="notice-edit-template">		
-		<div class="animated fadeInLeft" data-bind="visible:visible">
+		<div class="animated fadeInRight" data-bind="visible:visible">
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 			<h5 data-bind="visible: isNew">
 				<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
