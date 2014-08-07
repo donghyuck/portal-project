@@ -95,15 +95,12 @@
 		var options =DEFAULT_BXSLIDER_OPTIONS;		
 		if(element.data("plugin-options")) {
 			extend(options, eval( "({" +  element.data("plugin-options") + "})" ) );
-		}
-		
-		element.bxSlider(options);
-		
+		}		
+		element.bxSlider(options);		
 	}
 	
 	
-	common.ui.backstretch = function (){		
-		
+	common.ui.backstretch = function (){				
 		if(!defined($.backstretch)) {
 			return false;
 		}		
@@ -127,19 +124,14 @@
 		var superboximg   = $('<img src="" class="superbox-current-img">');
 		var superboxclose = $('<div class="superbox-close" data-dismiss="superbox"><span class="sr-only">Close</span></div>');		
 		superbox.append(superboximg).append(superboxclose);
-		
-		
 		$(document).on("click","[data-ride='gallery'].superbox-list", function(e){			
 			var $this = $(this);
 			$this.parent().children(".superbox-list.active").removeClass("active");
 			var current = $this.find('img.superbox-img');
 			var src = current.data("img");
-
 			superboximg.attr('src', src);
-			$this.addClass("active");
-			
-			if ($this.next().hasClass('superbox-show')) {				
-				
+			$this.addClass("active");			
+			if ($this.next().hasClass('superbox-show')) {		
 				var visible = $this.next().is(":visible");
 				$('.superbox-current-img').animate({opacity: (visible?0:1) }, 200, function() {
 					superbox.slideToggle({ 
@@ -152,12 +144,10 @@
 				});
 			} else {
 				superbox.insertAfter(this).css('display', 'block');
-			}
-			
+			}			
 			$('html, body').animate({
 				scrollTop:superbox.position().top - current.width()
-			}, 'medium');
-			
+			}, 'medium');			
 		});
 		
 		$(document).on("click","[data-dismiss='superbox'].superbox-close", function(e){			
@@ -257,10 +247,22 @@
 				common.ui.landing();
 			}
 			
+
+			
 			if(features.spmenu){				
 				$(document).on("click","[data-toggle='spmenu']", function(e){
 					var $this = $(this);
-					var target  = $this.attr("href");						
+					
+					
+					
+					var target ;
+					if( $this.prop("tagName").toLowerCase() == "a" ){			
+						target  = $this.attr("href");	
+					}else{
+						if($this.data("target")){
+							target = $this.data("target")
+						}
+					}
 					$("body").toggleClass("modal-open");
 					$(target).toggleClass("cbp-spmenu-open");
 				});
@@ -290,23 +292,7 @@
 		$.effects.animateClass.call( element, {
 			add: add,
 			remove: remove
-		}, speed, easing, callback );
-		
-		/*
-		 if (classes) {
-			classes = classes.split(" "); 
-			if (transitions) { 								
-				each(classes, function(idx, value) {
-					renderTo.toggleClass(value);
-				});
-				renderTo.one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
-					each(classes, function(idx, value) {
-						renderTo.toggleClass(value);
-					});										
-				});
-			}
-		 }
-		 */
+		}, speed, easing, callback );		
 	}
 	
 	common.ui.animate = function (renderTo, animate, always){	
