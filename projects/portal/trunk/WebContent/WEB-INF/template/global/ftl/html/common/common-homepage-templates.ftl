@@ -81,7 +81,7 @@
 </script>
 
 <script type="text/x-kendo-template" id="notice-view-template">	
-<div class="animated fadeInRight" data-bind="visible:visible">
+<div class="animated fadeIn" data-bind="visible:visible">
 	<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:edit}">편집</button> <button type="button" class="btn-u btn-u-red btn-u-small" data-bind="events{click:delete}">삭제</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 	<div class="panel panel-default">
 		<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
