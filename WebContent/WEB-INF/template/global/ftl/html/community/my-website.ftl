@@ -1151,7 +1151,7 @@
 		<!-- END FOOTER -->			
 		<!-- START TEMPLATE -->					
 		<script type="text/x-kendo-tmpl" id="notice-edit-template">		
-		<div class="animated fadeInRight" data-bind="visible:visible">
+		<div class="animated fadeIn" data-bind="visible:visible">
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 			<h5 data-bind="visible: isNew">
 				<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
