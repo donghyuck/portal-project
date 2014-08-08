@@ -158,20 +158,21 @@
 			
 			var preview = $gallery.find(".og-expander");
 			if(preview.length === 0){
-				$parent.append(template({}));
-				
+				$parent.append(template({}));	
 				$items.css("height", "");
-				preview = $parent.children(".og-expander").css("height", previewHeight ).css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );
-				$parent.css("height", previewHeight + height + marginExpanded ).css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );
-				
+				preview = $parent.children(".og-expander").css("height", previewHeight )
+				$parent.css("height", previewHeight + height + marginExpanded );
+				preview.css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );
+				$parent.css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );				
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
-				preview.slideUp(150, function(){
+				//preview.slideUp(150, function(){
+					
 					preview.remove();
 					$parent.append(template({}));	
-					preview = $parent.children(".og-expander").css("height", previewHeight );
 					$items.css("height", "");
+					preview = $parent.children(".og-expander").css("height", previewHeight );					
 					$parent.css("height", previewHeight + height + marginExpanded );
-				});				
+				//});				
 			}
 			return false;
 		});
