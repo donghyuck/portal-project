@@ -952,10 +952,10 @@
 				<h5 class="side-section-title">MY 이미지 갤러리</h5>
 				<div class="row">
 					<div class="col-xs-12">
-						<div class="bg-light">
+						<div class="bg-light no-padding">
 							<ul id="image-gallery-grid" class="og-grid"></ul>
 							<div id="image-gallery-slider" class="superbox"></div>
-							<div id="image-gallery-pager" class="k-pager-wrap no-border-hr"></div>	
+							<div id="image-gallery-pager" class="k-pager-wrap no-border-hr no-border-b"></div>	
 						</div>
 					</div>	
 				</div>
