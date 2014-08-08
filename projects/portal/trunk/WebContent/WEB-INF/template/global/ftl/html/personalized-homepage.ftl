@@ -137,7 +137,7 @@
 					}
 				});
 				//common.ui.superbox();		
-				Grid.init();						
+				Grid.init();				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 9,
