@@ -2227,11 +2227,7 @@
 						}						
 					}		
 					var switch_target = $this.data("switch-target");
-					alert($(switch_target).html());
-				
-					
 					if( $(switch_target).length > 0 && $(switch_target).prop("tagName").toLowerCase() == "button"){		
-						alert($(switch_target).html());
 						common.ui.buttonEnabled($(switch_target));
 					}
 				});				
