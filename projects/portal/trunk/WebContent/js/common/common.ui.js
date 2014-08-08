@@ -2214,11 +2214,11 @@
 				renderTo = $(options.renderTo);
 			}
 			
-			if( renderTo.attr("data-dismiss") && renderTo.attr("data-target")  )
+			if( renderTo.data("dismiss") && renderTo.data("target")  )
 			{
 				renderTo.click(function(e){
 					$this =  $(this);
-					var target = $this.attr("data-target");
+					var target = $this.data("target");
 					if( $(target).length > 0 ){
 						if($this.data("animate")){
 							$(target).slideUp();
@@ -2226,8 +2226,8 @@
 							$(target).hide();
 						}						
 					}		
-					var switch_target = $this.attr("data-switch-target");
-					
+					var switch_target = $this.data("switch-target");
+					alert($(switch_target).html());
 				
 					
 					if( $(switch_target).length > 0 && $(switch_target).prop("tagName").toLowerCase() == "button"){		
