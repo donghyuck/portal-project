@@ -128,7 +128,7 @@
 			var description = $this.data("description");
 			alert(src);
 			
-		}
+		});
 	}
 	
 	common.ui.superbox = function(){
