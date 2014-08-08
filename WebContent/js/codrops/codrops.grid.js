@@ -164,7 +164,7 @@ $.fn.imagesLoaded = function( callback ) {
 var Grid = (function() {
 
 		// list of items
-	var $grid = $( '#og-grid' ),
+	var $grid = $( '.og-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
