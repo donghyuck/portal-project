@@ -349,10 +349,17 @@
 
 
 /** grid */
-
-.og-grid li>a img {
+.og-grid li {
+	height: 150px;	
+}
+.og-grid li>a {
 	width:150px;
 	height: 150px;	
+}
+
+.og-grid li>a.img {
+	min-width:100%;
+	min-height:100%;	
 }
 
 /**
