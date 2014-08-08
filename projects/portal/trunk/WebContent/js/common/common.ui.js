@@ -162,6 +162,11 @@
 			if(preview.length === 0){
 				$parent.append(template({}));				
 				preview = $parent.children(".og-expander");
+			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
+				preview.slideUp(350, function(){
+					preview.remove();
+					preview = $parent.children(".og-expander");
+				});				
 			}
 			
 			alert( ( position + height + marginExpanded ) + "/" + height + "/" + preview.offset().top );
