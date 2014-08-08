@@ -123,7 +123,7 @@
 		var template = kendo.template(
 			'<div class="superbox-show">' +
 			'<img src="" class="superbox-current-img">' +
-			'<div class="superbox-close" data-dismiss="superbox"><span class="sr-only">Close</span></div>'
+			'<div class="superbox-close" data-dismiss="superbox"><span class="sr-only">Close</span></div>'+
 			'</div>'
 		); 
 		
