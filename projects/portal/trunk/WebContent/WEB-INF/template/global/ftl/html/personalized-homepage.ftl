@@ -938,7 +938,7 @@
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li class="superbox-list" data-ride="gallery" >
 		<a href="\\#" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#">
-			<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#"/>
+			<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" class="animated zoomIn"/>
 		</a>	
 	</li>			
 	</script>
