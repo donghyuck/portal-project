@@ -121,7 +121,7 @@
 	
 	
 	common.ui.thumbnailexpanding =  function(){
-		var previewHeight = 500l
+		var previewHeight = 500;
 		var template = kendo.template(
 			'<div class="og-expander">' +
 			'<div class="og-expander-inner">' + 
