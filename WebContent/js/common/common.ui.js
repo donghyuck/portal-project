@@ -131,7 +131,7 @@
 			'<div class="og-details">' + 
 			'<h3></h3>' + 
 			'<p></p>' + 
-			'<a href="#">Visit website</a>' +
+			'<a href="\\#">Visit website</a>' +
 			'</div>' +
 			'</div>' +
 			'</div>'
