@@ -953,7 +953,7 @@
 				<div class="row">
 					<div class="col-xs-12">
 						<div class="bg-light no-padding">
-							<ul id="image-gallery-grid" class="og-grid"></ul>
+							<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
 							<div id="image-gallery-slider" class="superbox"></div>
 							<div id="image-gallery-pager" class="k-pager-wrap no-border-hr no-border-b"></div>	
 						</div>
