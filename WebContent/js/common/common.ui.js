@@ -161,14 +161,13 @@
 			var preview = $gallery.find(".og-expander"); 
 			if(preview.length === 0){
 				$parent.append(template({}));				
-				preview = $parent.children(".og-expander");
+				preview = $parent.children(".og-expander").css("height", previewHeight );
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
 				preview.slideUp(350, function(){
 					preview.remove();
-					preview = $parent.children(".og-expander");
+					preview = $parent.children(".og-expander").css("height", previewHeight );
 				});				
 			}
-			preview.css("height", previewHeight );
 			return false;
 		});
 	}
