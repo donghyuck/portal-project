@@ -153,7 +153,7 @@
 			var position = $parent.offset().top;
 			$parent.css("height", position + 500)
 			
-			if($parent.child(".og-expander").length === 0){
+			if($parent.children(".og-expander").length === 0){
 				$parent.append(template({}));				
 			}else{
 				
