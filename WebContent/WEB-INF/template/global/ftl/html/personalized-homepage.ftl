@@ -54,8 +54,8 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){
-						$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");
-						$(".navbar .navbar-header").append("<a href='#personalized-controls-section'  data-toggle='spmenu' class='navbar-toggle-inverse visible-xs'><i class='fa fa-cloud-upload fa-2x'></i></a>");			
+						//$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");
+						//$(".navbar .navbar-header").append("<a href='#personalized-controls-section'  data-toggle='spmenu' class='navbar-toggle-inverse visible-xs'><i class='fa fa-cloud-upload fa-2x'></i></a>");			
 					}
 				});	
 				
@@ -744,10 +744,7 @@
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}
-			
-			.one-page .one-dark .btn-close {
-				top: 100px;
-			}			
+		
 		</style>   	
 		</#compress>
 	</head>
