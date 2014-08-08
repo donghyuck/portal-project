@@ -363,6 +363,9 @@
 	height:150px
 	
 }
+.superbox-show{
+	max-height:700px;	
+}
 
 /**
  * Panel
