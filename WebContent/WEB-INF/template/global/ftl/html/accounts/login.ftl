@@ -109,7 +109,10 @@
 			right: 0;
 			border: 2px solid #a94442;
 		}
-
+		
+		.wrapper {
+			background:transparent;
+		}
 		</style>
 </#compress>		
 	</head>
