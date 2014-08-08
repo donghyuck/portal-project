@@ -157,6 +157,7 @@
 			var position = $parent.offset().top;
 			$parent.css("height", position + 500)
 			
+			return false;
 		});
 	}
 	
