@@ -151,14 +151,18 @@
 			$(".og-grid>li").css("height", "");
 			
 			var position = $parent.offset().top;
-			alert( $parent.html() + ">" +  position );
+			
 			$parent.css("height", 650)
+			
 			
 			if($parent.children(".og-expander").length === 0){
 				$parent.append(template({}));				
 			}
+			var preview = $parent.children(".og-expander");
 			
+			alert(  position  + "/" + preview.offset().top );
 			
+			preview.css("height", 500);
 			
 			return false;
 		});
