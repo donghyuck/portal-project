@@ -135,12 +135,13 @@
 					},
 					serverPaging: true,
 					change : function(){
-						$( "#image-gallery-slider" ).html(
-							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
+						$( "#image-gallery-grid" ).html(
+							kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
 						);					
 					}
 				});
-				common.ui.superbox();								
+				//common.ui.superbox();		
+				Grid.init();						
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 9,
@@ -937,6 +938,14 @@
 		<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" data-img="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail">
 	</div>			
 	</script>
+
+	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
+	<li class="superbox-list" data-ride="gallery" >
+		<a href="#" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#">
+			<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#"/>
+		</a>	
+	</li>			
+	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery" class="one-page  no-padding-t no-border" style="display:none;">
@@ -946,6 +955,7 @@
 				<h5 class="side-section-title">MY 이미지 갤러리</h5>
 				<div class="row">
 					<div class="col-xs-12">
+						<ul id="image-gallery-grid" class="og-grid"></ul>
 						<div id="image-gallery-slider" class="superbox"></div>
 						<div id="image-gallery-pager" class="k-pager-wrap rounded-b"></div>
 					</div>	
