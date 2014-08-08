@@ -169,7 +169,6 @@
 				});				
 			}
 			preview.css("height", previewHeight );
-			
 			return false;
 		});
 	}
