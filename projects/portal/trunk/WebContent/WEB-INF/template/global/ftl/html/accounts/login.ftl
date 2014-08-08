@@ -28,7 +28,8 @@
 			complete: function() {
 				common.ui.setup({
 					features:{
-						backstretch : true
+						backstretch : true,
+						loading:true
 					}
 				});					
 				prepareSignOn();
@@ -108,15 +109,12 @@
 			right: 0;
 			border: 2px solid #a94442;
 		}
-		
-		.popover-title{
-			
-		}
+
 		</style>
 </#compress>		
 	</head>
 	<body>
-		<!--<div class="page-loader"></div>-->
+		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
 			<div id="signin-block" class="reg-block reg-block-transparent  pull-right animated swing">
