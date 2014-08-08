@@ -120,10 +120,20 @@
 	}
 	
 	common.ui.superbox = function(){
+		var template = kendo.template(
+			'<div class="superbox-show">' +
+			'<img src="" class="superbox-current-img">' +
+			'<div class="superbox-close" data-dismiss="superbox"><span class="sr-only">Close</span></div>'
+			'</div>'
+		); 
+		
 		var superbox      = $('<div class="superbox-show"></div>');
 		var superboximg   = $('<img src="" class="superbox-current-img">');
 		var superboxclose = $('<div class="superbox-close" data-dismiss="superbox"><span class="sr-only">Close</span></div>');		
+		
 		superbox.append(superboximg).append(superboxclose);
+		
+		
 		$(document).on("click","[data-ride='gallery'].superbox-list", function(e){			
 			var $this = $(this);
 			$this.parent().children(".superbox-list.active").removeClass("active");
@@ -247,14 +257,9 @@
 				common.ui.landing();
 			}
 			
-
-			
 			if(features.spmenu){				
 				$(document).on("click","[data-toggle='spmenu']", function(e){
-					var $this = $(this);
-					
-					
-					
+					var $this = $(this);					
 					var target ;
 					if( $this.prop("tagName").toLowerCase() == "a" ){			
 						target  = $this.attr("href");	
@@ -279,14 +284,11 @@
 			}	
 		} 
 	})
-	
-	
+		
 	common.ui.setup = function (options){
 		options = options || {};
 		var setup = new common.ui.PageSetup(options);
 	}
-	
-	
 	
 	common.ui.switchClass = function( element, remove, add, speed, easing, callback ) {		
 		$.effects.animateClass.call( element, {
