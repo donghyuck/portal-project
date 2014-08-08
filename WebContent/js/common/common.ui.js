@@ -118,7 +118,9 @@
 			);
 		});
 	}
-	thumbnailexpanding =  function(){
+	
+	
+	common.ui.thumbnailexpanding =  function(){
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
 			var src = $this.data("largesrc");
