@@ -98,11 +98,7 @@
 					}
 				});			
 				
-				          Weather.getCurrent("Seoul", function(current) {
-            console.log(
-              ["currently:",current.temperature(),"and",current.conditions()].join(" ")
-            );
-          });
+
 
 				// END SCRIPT 				
 			}
