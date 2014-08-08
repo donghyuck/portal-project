@@ -186,7 +186,7 @@ var Grid = (function() {
 			'msTransition' : 'MSTransitionEnd',
 			'transition' : 'transitionend'
 		},
-		transEndEventName = transEndEventNames[ kendo.transitions.prefix ],
+		transEndEventName = transEndEventNames[ kendo.support.transitions.prefix ],
 		// support for csstransitions
 		support = kendo.support.hasHW3D; //  Modernizr.csstransitions,
 		// default settings
