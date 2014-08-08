@@ -168,9 +168,6 @@
 					preview = $parent.children(".og-expander");
 				});				
 			}
-			
-			alert( ( position + height + marginExpanded ) + "/" + height + "/" + preview.offset().top );
-			
 			preview.css("height", previewHeight );
 			
 			return false;
