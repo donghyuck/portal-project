@@ -355,11 +355,13 @@
 .og-grid li>a {
 	width:150px;
 	height: 150px;	
+	overflow: hidden;
 }
 
 .og-grid li>a img {
-	width: 150px;
-	height:auto;
+	width: auto;
+	height:150px
+	
 }
 
 /**
