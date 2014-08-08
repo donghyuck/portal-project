@@ -2226,8 +2226,8 @@
 							$(target).hide();
 						}						
 					}		
-					var switch_target = $(this).attr("data-switch-target");
-					if( $(switch_target).length > 0 && $(switch_target).is("button" )){		
+					var switch_target = $this.attr("data-switch-target");
+					if( $(switch_target).length > 0 && $(switch_target).prop("tagName").toLowerCase() == "button"){		
 						common.ui.buttonEnabled($(switch_target));
 					}
 				});				
