@@ -133,11 +133,12 @@
 					change : function(){
 						$( "#image-gallery-grid" ).html(
 							kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
-						);					
+						);		
+						Grid.init();							
 					}
 				});
 				//common.ui.superbox();		
-				Grid.init();				
+				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 9,
