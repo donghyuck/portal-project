@@ -118,6 +118,16 @@
 			);
 		});
 	}
+	thumbnailexpanding =  function(){
+		$(document).on("click","[data-ride='expanding']", function(e){		
+			var $this = $(this);
+			var src = $this.data("largesrc");
+			var title = $this.data("title");
+			var description = $this.data("description");
+			alert(src);
+			
+		}
+	}
 	
 	common.ui.superbox = function(){
 		var template = kendo.template(
