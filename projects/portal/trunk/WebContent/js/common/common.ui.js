@@ -156,7 +156,7 @@
 			
 			var height = $this.height();
 			var position = $parent.offset().top;
-			$parent.css("height", previewHeight + marginExpanded )
+			$parent.css("height", previewHeight + height + marginExpanded )
 			
 			var preview = $gallery.find(".og-expander"); 
 			if(preview.length === 0){
