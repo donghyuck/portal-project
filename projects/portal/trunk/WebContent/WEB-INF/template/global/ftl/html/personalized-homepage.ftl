@@ -946,19 +946,21 @@
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery" class="one-page  no-padding-t no-border" style="display:none;">
-		<div class="one-page-inner one-grey no-padding-b">
+		<div class="one-page-inner one-grey">
 			<div class="container">	
 				<button type="button" class="btn-close btn-close-grey" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
 				<h5 class="side-section-title">MY 이미지 갤러리</h5>
 				<div class="row">
 					<div class="col-xs-12">
-						<ul id="image-gallery-grid" class="og-grid"></ul>
-						<div id="image-gallery-slider" class="superbox"></div>
-						
+						<div class="bg-light">
+							<ul id="image-gallery-grid" class="og-grid"></ul>
+							<div id="image-gallery-slider" class="superbox"></div>
+							<div id="image-gallery-pager" class="k-pager-wrap no-border-hr"></div>	
+						</div>
 					</div>	
 				</div>
 			</div>
-			<div id="image-gallery-pager" class="k-pager-wrap no-border-hr"></div>	
+			
 		</div>		
 	</div>
 	</script>
