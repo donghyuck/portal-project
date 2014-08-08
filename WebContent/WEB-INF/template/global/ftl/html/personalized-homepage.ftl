@@ -137,7 +137,8 @@
 						//Grid.init();							
 					}
 				});
-				//common.ui.superbox();		
+				
+				common.ui.thumbnailexpanding();		
 				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
@@ -938,8 +939,8 @@
 
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#">
-			<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" class="animated zoomIn"/>
+		<a href="\\#" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#" data-ride="expanding">
+			<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" class="animated zoomIn" />
 		</a>	
 	</li>			
 	</script>
