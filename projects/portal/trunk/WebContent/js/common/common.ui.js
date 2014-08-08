@@ -150,13 +150,14 @@
 			$parent.addClass( 'og-expanded' );						
 			$(".og-grid>li").css("height", "");
 			
-			if($(".og-expander").length === 0){
-				$parent.append(template({}));				
-			}
-			
 			var position = $parent.offset().top;
 			$parent.css("height", position + 500)
 			
+			if($parent.child(".og-expander").length === 0){
+				$parent.append(template({}));				
+			}else{
+				
+			}
 			return false;
 		});
 	}
