@@ -131,7 +131,7 @@
 					},
 					serverPaging: true,
 					change : function(){
-						$( "#image-gallery-grid" ).html(
+						$( "#image-gallery-slider" ).html(
 							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);		
 						//Grid.init();							
