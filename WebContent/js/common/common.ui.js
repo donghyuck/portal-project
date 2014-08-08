@@ -164,9 +164,10 @@
 				$parent.css("height", previewHeight + height + marginExpanded );
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
 				preview.slideUp(150, function(){
-					$items.css("height", "");
 					preview.remove();
+					$parent.append(template({}));	
 					preview = $parent.children(".og-expander").css("height", previewHeight );
+					$items.css("height", "");
 					$parent.css("height", previewHeight + height + marginExpanded );
 				});				
 			}
