@@ -116,7 +116,8 @@
 </#compress>		
 	</head>
 	<body>
-		<div class="page-loader"></div>
+		<!--<div class="page-loader"></div>-->
+		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
 			<div id="signin-block" class="reg-block reg-block-transparent  pull-right animated swing">
 		        <div class="reg-block-header">		        
@@ -174,6 +175,8 @@
 				</ul>
 			</div>
 		</nav>	
+	</div> <!-- ./wrapper -->	
+		
 	<script type="text/x-kendo-template" id="alert-template">
 	<div class="popover pull-right animated bounceInDown">
 		<h3 class="popover-title">로그인 상태입니다.</h3>
