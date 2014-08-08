@@ -15,7 +15,8 @@
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
-			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
+			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.min.css',
+			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
 			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
@@ -29,7 +30,7 @@
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
 			
-		
+			'css!${request.contextPath}/js/codrops/codrops.grid.min.js',
 				
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
 			'${request.contextPath}/js/common/common.models.js',
