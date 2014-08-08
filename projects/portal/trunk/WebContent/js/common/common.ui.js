@@ -127,7 +127,9 @@
 			var title = $this.data("title");
 			var description = $this.data("description");
 			
+			$(".og-grid>li.og-expanded").removeClass("og-expanded");
 			$this.parent().addClass( 'og-expanded' );			
+		
 		});
 	}
 	
