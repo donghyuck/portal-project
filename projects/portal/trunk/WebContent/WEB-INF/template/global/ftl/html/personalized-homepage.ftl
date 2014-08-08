@@ -932,7 +932,7 @@
 	<div id="image-gallery" class="one-page  no-padding-t no-border" style="display:none;">
 		<div class="one-page-inner one-dark">
 			<div class="container">	
-				<button type="button" class="btn-close" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-toggle-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
+				<button type="button" class="btn-close" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
 				<h5 class="side-section-title">MY 이미지 갤러리</h5>
 				<div class="row">
 					<div class="col-xs-12">
