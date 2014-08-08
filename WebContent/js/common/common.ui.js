@@ -126,8 +126,8 @@
 			var src = $this.data("largesrc");
 			var title = $this.data("title");
 			var description = $this.data("description");
-			alert(src);
 			
+			this.parent().addClass( 'og-expanded' );			
 		});
 	}
 	
