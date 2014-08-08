@@ -98,7 +98,7 @@
 					}
 				});			
 				
-				          Weather.getCurrent("Kansas City", function(current) {
+				          Weather.getCurrent("Seoul", function(current) {
             console.log(
               ["currently:",current.temperature(),"and",current.conditions()].join(" ")
             );
