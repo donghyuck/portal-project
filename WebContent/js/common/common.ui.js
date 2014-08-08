@@ -121,7 +121,7 @@
 	
 	
 	common.ui.thumbnailexpanding =  function(){
-		
+		var previewHeight = 500l
 		var template = kendo.template(
 			'<div class="og-expander">' +
 			'<div class="og-expander-inner">' + 
@@ -142,8 +142,9 @@
 			var $this = $(this);
 			var $gallery = $( $this.data("target-gallery") );
 			var $items = $gallery.children("li");
-			
 			var $parent = $this.parent();			
+			
+			
 			var src = $this.data("largesrc");
 			var title = $this.data("title"); 
 			var description = $this.data("description");
@@ -152,6 +153,7 @@
 			$parent.addClass( 'og-expanded' );						
 			$items.css("height", "");
 			
+			var height = $this.height();
 			var position = $parent.offset().top;
 			$parent.css("height", 660)
 			
@@ -161,9 +163,9 @@
 				preview = $parent.children(".og-expander");
 			}
 			
-			alert(  position  + "/" + preview.offset().top );
+			alert(  position  + "/" + height + "/" + preview.offset().top );
 			
-			preview.css("height", 500);
+			preview.css("height", previewHeight );
 			
 			return false;
 		});
