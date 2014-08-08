@@ -132,12 +132,12 @@
 					serverPaging: true,
 					change : function(){
 						$( "#image-gallery-grid" ).html(
-							kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
+							kendo.render( kendo.template($("#image-gallery-item-template").html()), this.view() )
 						);		
-						Grid.init();							
+						//Grid.init();							
 					}
 				});
-				//common.ui.superbox();		
+				common.ui.superbox();		
 				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
