@@ -177,7 +177,7 @@
 				//preview.find("img").attr("src", data.src);				
 				//var $fullimage = preview.find("img");
 				var $loading = preview.find(".og-loading");
-					$largeImg = preview.find("img");
+				var $largeImg = preview.find("img");
 				
 				$largeImg.hide();
 				$loading.show();
