@@ -106,7 +106,7 @@ body.aside-menu-in .aside-menu {
 	z-index: 1001;	
 }
 
-.btn-close..btn-close-grey {
+.btn-close.btn-close-grey {
 	background: url(/images/cross-grey.png) no-repeat center center;
 }
 
