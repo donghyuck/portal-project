@@ -184,8 +184,7 @@
 					var $img = $( this );
 					if( $img.attr( 'src' ) === data.src ) {
 						$loading.hide();
-						$img.attr("src", data.src );
-						$img.show();
+						$img.attr("src", data.src ).show();
 						//$fullimage.remove();
 						//self.$largeImg = $img.fadeIn( 350 );
 						//self.$fullimage.append( self.$largeImg );
