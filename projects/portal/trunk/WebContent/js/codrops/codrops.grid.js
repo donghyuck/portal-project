@@ -202,8 +202,8 @@ var Grid = (function() {
 		settings = $.extend( true, {}, settings, config );
 
 		// preload all images
+		alert("imagesLoaded");
 		$grid.imagesLoaded( function() {
-
 			// save item´s size and offset
 			saveItemInfo( true );
 			// get window´s size
@@ -236,7 +236,6 @@ var Grid = (function() {
 
 	// saves the item´s offset top and height (if saveheight is true)
 	function saveItemInfo( saveheight ) {
-		alert(items.length);
 		$items.each( function() {
 			var $item = $( this );
 			$item.data( 'offsetTop', $item.offset().top );
