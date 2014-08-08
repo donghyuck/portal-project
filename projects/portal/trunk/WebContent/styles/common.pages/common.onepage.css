@@ -78,6 +78,7 @@
 .one-page .btn-close {
 	position:relative;
 	float:right;
+	z-index: 1;
 }
 
 .one-page .one-green {
