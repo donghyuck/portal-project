@@ -152,8 +152,7 @@
 			
 			$gallery.children("li.og-expanded").removeClass("og-expanded");
 			$parent.addClass( 'og-expanded' );						
-			$items.css("height", "");
-			
+						
 			var height = $this.height();
 			var position = $parent.offset().top;
 			
@@ -161,10 +160,12 @@
 			if(preview.length === 0){
 				$parent.append(template({}));				
 				preview = $parent.children(".og-expander").css("height", previewHeight );
+				$items.css("height", "");
 				$parent.css("height", previewHeight + height + marginExpanded )
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
 				preview.parent().slideUp(350, function(){
 					preview.remove();
+					$items.css("height", "");
 					preview = $parent.children(".og-expander").css("height", previewHeight );
 				});				
 			}
