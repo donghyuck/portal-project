@@ -166,7 +166,7 @@ $.fn.imagesLoaded = function( callback ) {
 var Grid = (function() {
 
 		// list of items
-	var $grid = $( '.og-grid' ),
+	var $grid = $( '#image-gallery-grid' ),
 		// the items
 		$items = $grid.children( 'li' ),
 		// current expanded item's index
@@ -204,10 +204,8 @@ var Grid = (function() {
 		settings = $.extend( true, {}, settings, config );
 
 		// preload all images
-		alert("imagesLoaded");
 		$grid.imagesLoaded( function() {
 			// save item´s size and offset
-			alert("hello");
 			saveItemInfo( true );
 			// get window´s size
 			getWinSize();
@@ -257,8 +255,7 @@ var Grid = (function() {
 		
 		// on window resize get the window´s size again
 		// reset some values..
-		$window.on( 'debouncedresize', function() {
-			
+		$window.on( 'debouncedresize', function() {			
 			scrollExtra = 0;
 			previewPos = -1;
 			// save item´s offset
