@@ -88,7 +88,7 @@ $.fn.imagesLoaded = function( callback ) {
 			}
 		}
 		
-		alert($.isFunction( callback ));
+		
 		if ( $.isFunction( callback ) ) {
 			callback.call( $this, $images, $proper, $broken );
 		}
@@ -207,6 +207,7 @@ var Grid = (function() {
 		alert("imagesLoaded");
 		$grid.imagesLoaded( function() {
 			// save item´s size and offset
+			alert("hello");
 			saveItemInfo( true );
 			// get window´s size
 			getWinSize();
