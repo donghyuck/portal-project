@@ -174,7 +174,20 @@
 					$parent.css("height", previewHeight + height + marginExpanded );
 				});				
 			}else{
-				preview.find("img").attr("src", data.src);				
+				//preview.find("img").attr("src", data.src);				
+				//var $fullimage = preview.find("img");
+				var $loading = $preview.find(".og-loading");
+				$loading.show();
+				$( '<img/>' ).load( function() {
+					var $img = $( this );
+					if( $img.attr( 'src' ) === data.src ) {
+						$loading.hide();
+						preview.find("img").attr("src", data.src );
+						//$fullimage.remove();
+						//self.$largeImg = $img.fadeIn( 350 );
+						//self.$fullimage.append( self.$largeImg );
+					}
+				} ).attr( 'src', data.src );
 			}
 			return false;
 		});
