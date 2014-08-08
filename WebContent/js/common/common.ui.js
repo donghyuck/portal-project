@@ -129,7 +129,7 @@
 			'<span class="og-close"></span>' + 
 			'<div class="og-fullimg">' +
 			'<div class="og-loading" style="display: none;"></div>'+
-			'<img src="images/2.jpg" style="display: inline;"></div>' + 
+			'<img src="#= src #" style="display: inline;" class="animated fadeIn" ></div>' + 
 			'<div class="og-details">' + 
 			'<h3></h3>' + 
 			'<p></p>' + 
@@ -145,10 +145,11 @@
 			var $items = $gallery.children("li");
 			var $parent = $this.parent();			
 			
-			
-			var src = $this.data("largesrc");
-			var title = $this.data("title"); 
-			var description = $this.data("description");
+			var data = {
+				src : $this.data("largesrc") ,	
+				title : $this.data("title"),
+				description : $this.data("description")
+			};
 			
 			$gallery.children("li.og-expanded").removeClass("og-expanded");
 			$parent.addClass( 'og-expanded' );						
@@ -158,7 +159,7 @@
 			
 			var preview = $gallery.find(".og-expander");
 			if(preview.length === 0){
-				$parent.append(template({}));	
+				$parent.append(template(data));	
 				$items.css("height", "");
 				preview = $parent.children(".og-expander").css("height", previewHeight )
 				$parent.css("height", previewHeight + height + marginExpanded );
@@ -166,9 +167,8 @@
 				$parent.css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );				
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
 				preview.slideUp(150, function(){
-					
 					preview.remove();
-					$parent.append(template({}));	
+					$parent.append(template(data));	
 					$items.css("height", "");
 					preview = $parent.children(".og-expander").css("height", previewHeight );					
 					$parent.css("height", previewHeight + height + marginExpanded );
