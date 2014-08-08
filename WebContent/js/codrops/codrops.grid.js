@@ -65,6 +65,7 @@ $.fn.imagesLoaded = function( callback ) {
 		broken = [];
 
 	// Register deferred callbacks
+		alert($.isPlainObject(callback));
 	if ($.isPlainObject(callback)) {
 		$.each(callback, function (key, value) {
 			if (key === 'callback') {
