@@ -176,7 +176,7 @@
 			}else{
 				//preview.find("img").attr("src", data.src);				
 				//var $fullimage = preview.find("img");
-				var $loading = $preview.find(".og-loading");
+				var $loading = preview.find(".og-loading");
 				$loading.show();
 				$( '<img/>' ).load( function() {
 					var $img = $( this );
