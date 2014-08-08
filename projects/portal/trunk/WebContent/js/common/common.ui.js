@@ -140,25 +140,26 @@
 		
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
-			var $parent = $this.parent();
+			var $gallery = $( $this.data("target-gallery") );
+			var $items = $gallery.children("li");
 			
+			var $parent = $this.parent();			
 			var src = $this.data("largesrc");
-			var title = $this.data("title");
+			var title = $this.data("title"); 
 			var description = $this.data("description");
 			
-			$(".og-grid>li.og-expanded").removeClass("og-expanded");
+			$gallery.children("li.og-expanded").removeClass("og-expanded");
 			$parent.addClass( 'og-expanded' );						
-			$(".og-grid>li").css("height", "");
+			$items.css("height", "");
 			
 			var position = $parent.offset().top;
+			$parent.css("height", 660)
 			
-			$parent.css("height", 650)
-			
-			
-			if($parent.children(".og-expander").length === 0){
+			var preview = $gallery.find(".og-expander"); 
+			if(preview.length === 0){
 				$parent.append(template({}));				
+				preview = $parent.children(".og-expander");
 			}
-			var preview = $parent.children(".og-expander");
 			
 			alert(  position  + "/" + preview.offset().top );
 			
