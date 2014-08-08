@@ -173,6 +173,8 @@
 					preview = $parent.children(".og-expander").css("height", previewHeight );					
 					$parent.css("height", previewHeight + height + marginExpanded );
 				});				
+			}else{
+				preview.find("img").attr("src", data.src);				
 			}
 			return false;
 		});
