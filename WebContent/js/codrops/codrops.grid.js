@@ -186,9 +186,9 @@ var Grid = (function() {
 			'msTransition' : 'MSTransitionEnd',
 			'transition' : 'transitionend'
 		},
-		transEndEventName = transEndEventNames[ Modernizr.prefixed( 'transition' ) ],
+		transEndEventName = transEndEventNames[ kendo.transitions.prefix ],
 		// support for csstransitions
-		support = Modernizr.csstransitions,
+		support = kendo.support.hasHW3D; //  Modernizr.csstransitions,
 		// default settings
 		settings = {
 			minHeight : 500,
