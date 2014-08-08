@@ -147,7 +147,8 @@
 			var description = $this.data("description");
 			
 			$(".og-grid>li.og-expanded").removeClass("og-expanded");
-			$parent.addClass( 'og-expanded' );			
+			$parent.addClass( 'og-expanded' );						
+			$(".og-grid>li").css("height", "");
 			
 			if($(".og-expander").length === 0){
 				$parent.append(template({}));				
