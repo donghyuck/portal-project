@@ -954,10 +954,11 @@
 					<div class="col-xs-12">
 						<ul id="image-gallery-grid" class="og-grid"></ul>
 						<div id="image-gallery-slider" class="superbox"></div>
-						<div id="image-gallery-pager" class="k-pager-wrap rounded-b"></div>
+						
 					</div>	
 				</div>
-			</div>	
+			</div>
+			<div id="image-gallery-pager" class="k-pager-wrap no-border-hr"></div>	
 		</div>		
 	</div>
 	</script>
