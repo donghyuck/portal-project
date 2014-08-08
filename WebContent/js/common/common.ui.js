@@ -140,16 +140,21 @@
 		
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
+			var $parent = $this.parent();
+			
 			var src = $this.data("largesrc");
 			var title = $this.data("title");
 			var description = $this.data("description");
 			
 			$(".og-grid>li.og-expanded").removeClass("og-expanded");
-			$this.parent().addClass( 'og-expanded' );			
+			$parent.addClass( 'og-expanded' );			
 			
 			if($(".og-expander").length === 0){
-				$this.parent().append(template({}));				
+				$parent.append(template({}));				
 			}
+			
+			var position = $parent.offset().top;
+			$parent.css("height", position + 500)
 			
 		});
 	}
