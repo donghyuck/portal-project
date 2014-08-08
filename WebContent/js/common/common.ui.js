@@ -121,6 +121,11 @@
 	
 	
 	common.ui.thumbnailexpanding =  function(){
+		var template = kendo.template(
+			'<div class="og-expander-inner">' +
+			'</div>'
+		); 
+		
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
 			var src = $this.data("largesrc");
@@ -129,7 +134,11 @@
 			
 			$(".og-grid>li.og-expanded").removeClass("og-expanded");
 			$this.parent().addClass( 'og-expanded' );			
-		
+			
+			if($(".og-expander").length === 0){
+				$this.parent().append(template({}));				
+			}
+			
 		});
 	}
 	
