@@ -200,7 +200,7 @@ var Grid = (function() {
 		
 		// the settings..
 		settings = $.extend( true, {}, settings, config );
-
+alert("");
 		// preload all images
 		$grid.imagesLoaded( function() {
 
