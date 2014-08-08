@@ -124,7 +124,7 @@
 		var previewHeight = 500,
 		marginExpanded = 10,
 		template = kendo.template(
-			'<div class="og-expander">' +
+			'<div class="og-expander animated slideDown">' +
 			'<div class="og-expander-inner">' + 
 			'<span class="og-close"></span>' + 
 			'<div class="og-fullimg">' +
