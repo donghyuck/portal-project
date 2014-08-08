@@ -29,8 +29,7 @@
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
 			
-			'${request.contextPath}/js/sugar/sugar-1.5.0.min.js',			
-			'${request.contextPath}/js/weather/weather.min.js',			
+		
 				
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
 			'${request.contextPath}/js/common/common.models.js',
@@ -104,11 +103,6 @@
             );
           });
 
-          Weather.getForecast("Kansas City", function(forecast) {
-            console.log("forecast high: " + forecast.high());
-            console.log("forecast low: " + forecast.low());
-          });
-          	
 				// END SCRIPT 				
 			}
 		}]);	
