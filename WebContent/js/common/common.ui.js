@@ -177,12 +177,15 @@
 				//preview.find("img").attr("src", data.src);				
 				//var $fullimage = preview.find("img");
 				var $loading = preview.find(".og-loading");
+				$img = preview.find("img");
 				$loading.show();
+				$img.hide();
 				$( '<img/>' ).load( function() {
 					var $img = $( this );
 					if( $img.attr( 'src' ) === data.src ) {
 						$loading.hide();
-						preview.find("img").attr("src", data.src );
+						$img.attr("src", data.src );
+						$img.show();
 						//$fullimage.remove();
 						//self.$largeImg = $img.fadeIn( 350 );
 						//self.$fullimage.append( self.$largeImg );
