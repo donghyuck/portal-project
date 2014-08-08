@@ -123,6 +123,17 @@
 	common.ui.thumbnailexpanding =  function(){
 		var template = kendo.template(
 			'<div class="og-expander-inner">' +
+			'<div class="og-expander-inner">' + 
+			'<span class="og-close"></span>' + 
+			'<div class="og-fullimg">' +
+			'<div class="og-loading" style="display: none;"></div>'+
+			'<img src="images/2.jpg" style="display: inline;"></div>' + 
+			'<div class="og-details">' + 
+			'<h3></h3>' + 
+			'<p></p>' + 
+			'<a href="#">Visit website</a>' +
+			'</div>' +
+			'</div>' +
 			'</div>'
 		); 
 		
