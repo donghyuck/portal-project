@@ -156,14 +156,14 @@
 			
 			var height = $this.height();
 			var position = $parent.offset().top;
-			$parent.css("height", previewHeight + height + marginExpanded )
 			
-			var preview = $gallery.find(".og-expander"); 
+			var preview = $gallery.find(".og-expander");
 			if(preview.length === 0){
 				$parent.append(template({}));				
 				preview = $parent.children(".og-expander").css("height", previewHeight );
+				$parent.css("height", previewHeight + height + marginExpanded )
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
-				preview.slideUp(350, function(){
+				preview.parent().slideUp(350, function(){
 					preview.remove();
 					preview = $parent.children(".og-expander").css("height", previewHeight );
 				});				
