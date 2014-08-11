@@ -197,7 +197,7 @@
 		<script type="text/x-kendo-tmpl" id="announcement-detail-panel-template">		
 			<div class="panel panel-default">
 				<div class="panel-heading">
-					<button type="button" class="btn-close btn-close-grey" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp" data-switch-target="button[data-action='show-gallery-section']"><span class="sr-only">Close</span></button>
+					<button type="button" class="btn-close btn-close-grey"><span class="sr-only">Close</span></button>
 					
 					<h4 data-bind="html:subject"></h4>
 					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>					
