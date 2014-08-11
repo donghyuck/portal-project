@@ -166,9 +166,9 @@
 					<div class="page-header text-primary no-margin-t">
 						<h5><small>게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
 					</div>	
-													
+					<div id="announce-grid"></div>								
 					<section id="announce-list-section" style="position: absolute;	">
-						<div id="announce-grid"></div>
+						
 					</section>
 					<section id="announce-view-content-section" style="display:none;">						
 						<div id="announce-view-panel"></div>
