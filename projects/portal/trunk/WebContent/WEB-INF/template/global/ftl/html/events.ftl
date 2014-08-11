@@ -186,7 +186,7 @@
 		<!-- START TEMPLATE -->
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 			<tr data-uid="#: uid #">
-				<td><span class="label label-info">공지</span>&nbsp;#: subject #	 </td>
+				<td><span class="label label-success">공지</span>&nbsp;#: subject #	 </td>
 				<td class="text-center">#: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
 			</tr>
 		</script>
