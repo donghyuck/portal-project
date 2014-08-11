@@ -163,24 +163,12 @@
 					</div>	
 					<!-- end side menu -->				
 				</div>
-				<div class="col-lg-9" style="min-height: 500px;">		
+				<div class="col-lg-9" style="min-height: 500px;">			
+					<div id="announce-view-panel" style="display:none;"></div>
 					<div class="page-header text-primary no-margin-t">
 						<h5><small>게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
-					</div>	
-					<div id="announce-view-panel"  style="display:none;"></div>
-					<div id="announce-grid"></div>								
-					
-					
-					
-					
-					<section id="announce-list-section" style="position: absolute;	">
-						
-					</section>
-					
-					
-					<section id="announce-view-content-section" style="display:none;">						
-						
-					</section>						
+					</div>
+					<div id="announce-grid" style="position: absolute;"></div>												
 				</div>				
 			</div>
 		</div>									 			
@@ -205,13 +193,13 @@
 
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
 			<div class="panel panel-default no-border">
-				<div class="panel-heading">
+				<div class="panel-heading rounded-top">
 					<button type="button" class="btn-close btn-close-grey"><span class="sr-only">Close</span></button>
 					
 					<h4 data-bind="html:subject"></h4>
 					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>					
 				</div>
-				<div class="panel-body" data-bind="html:body"></div>	
+				<div class="panel-body padding-sm" data-bind="html:body"></div>	
 			</div>
 		</script>
 					
