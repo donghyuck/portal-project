@@ -106,9 +106,10 @@
 			$("#announce-view-panel").find(".btn-close").click(function (e) {
 				slide.reverse();
 				setTimeout(function() {
-					slide.stop();
+					//slide.stop();
 					zoom.reverse();
-					$("#announce-view-panel").addClass('hide');
+					$("#announce-view-panel").fadeOut();
+					//$("#announce-view-panel").addClass('hide');
 				}, 100);
 			});			
 		}				
@@ -203,7 +204,7 @@
 		</script>			
 
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
-			<div class="panel panel-default">
+			<div class="panel panel-default no-border">
 				<div class="panel-heading">
 					<button type="button" class="btn-close btn-close-grey"><span class="sr-only">Close</span></button>
 					
