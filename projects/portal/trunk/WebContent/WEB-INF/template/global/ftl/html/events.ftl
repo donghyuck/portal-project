@@ -123,8 +123,7 @@
 		<#assign hasWebSitePage = action.hasWebSitePage("pages.events.pageId") />
 		<#assign menuName = action.targetPage.getProperty("page.menu.name", "USER_MENU") />
 		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_3") />
-		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />
-				
+		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />				
 		<header  class="cloud <#if current_menu.parent.css??>${current_menu.parent.css}</#if>">
 		<div class="breadcrumbs">
 		        <div class="container">
