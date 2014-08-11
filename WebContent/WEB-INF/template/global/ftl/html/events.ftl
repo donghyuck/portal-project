@@ -102,7 +102,7 @@
 				slide.play();
 			}, 100);					
 			
-			$("#announce-view-panel").find(".close").click(function (e) {
+			$("#announce-view-panel").find(".btn-close").click(function (e) {
 				slide.reverse();
 				setTimeout(function() {
 					slide.stop();
@@ -193,6 +193,18 @@
 		<script id="alert-message-template" type="text/x-kendo-tmpl">
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
 		</script>			
+
+		<script type="text/x-kendo-tmpl" id="announcement-detail-panel-template">		
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<button type="button" class="btn-close btn-close-grey" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp" data-switch-target="button[data-action='show-gallery-section']"><span class="sr-only">Close</span></button>
+					
+					<h4 data-bind="html:subject"></h4>
+					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>					
+				</div>
+				<div class="panel-body" data-bind="html:body"></div>	
+			</div>
+		</script>
 					
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
