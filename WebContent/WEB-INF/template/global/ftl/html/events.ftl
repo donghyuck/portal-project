@@ -89,17 +89,18 @@
 		}]);	
 		
 		function displayAnnouncement () {			
+
 			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );			
 			var template = kendo.template($('#announcement-detail-panel-template').html());			
 			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );					
-			$("#announce-view-panel").removeClass('hide');				
+
 			var zoom = kendo.fx($("#announce-list-section")).zoom("out").endValue(0).startValue(1), slide = kendo.fx($("#announce-view-content-section")).slideIn("up") ;
 			zoom.play();			
 			setTimeout(function() {
 				zoom.stop();
-				slide.play();
+				$("#announce-view-panel").fadeIn();
 			}, 100);					
 			
 			$("#announce-view-panel").find(".btn-close").click(function (e) {
