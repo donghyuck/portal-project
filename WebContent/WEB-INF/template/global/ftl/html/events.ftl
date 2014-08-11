@@ -95,7 +95,7 @@
 			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );
-			$("#announce-view-panel").fadeIn();
+			$("#announce-view-panel").slideDown();
 			$("#announce-view-panel").find(".btn-close").click(function (e) {
 				$("#announce-view-panel").slideUp();
 			});			
