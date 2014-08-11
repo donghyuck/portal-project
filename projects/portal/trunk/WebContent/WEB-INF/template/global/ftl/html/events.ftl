@@ -91,7 +91,7 @@
 		function displayAnnouncement () {			
 
 			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );			
-			var template = kendo.template($('#announcement-detail-panel-template').html());			
+			var template = kendo.template($('#announce-view-panel-template').html());			
 			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );					
@@ -170,8 +170,10 @@
 					<section id="announce-list-section" style="position: absolute;	">
 						
 					</section>
+					<div id="announce-view-panel"  style="display:none;"></div>
+					
 					<section id="announce-view-content-section" style="display:none;">						
-						<div id="announce-view-panel"></div>
+						
 					</section>						
 				</div>				
 			</div>
@@ -195,7 +197,7 @@
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
 		</script>			
 
-		<script type="text/x-kendo-tmpl" id="announcement-detail-panel-template">		
+		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<button type="button" class="btn-close btn-close-grey"><span class="sr-only">Close</span></button>
