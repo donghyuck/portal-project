@@ -101,7 +101,7 @@
 </div>
 </script>
 <!-- ============================== -->
-<!-- news viewer template                          -->
+<!-- news viewer template									-->
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="news-viewer-template">		
 	<div class="page-heading">
