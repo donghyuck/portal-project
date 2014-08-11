@@ -94,23 +94,12 @@
 			var template = kendo.template($('#announce-view-panel-template').html());			
 			
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
-			kendo.bind($("#announce-view-panel"), announcePlaceHolder );					
-
-			var zoom = kendo.fx($("#announce-list-section")).zoom("out").endValue(0).startValue(1), slide = kendo.fx($("#announce-view-content-section")).slideIn("up") ;
-			zoom.play();			
-			setTimeout(function() {
-				zoom.stop();
-				$("#announce-view-panel").fadeIn();
-			}, 100);					
+			kendo.bind($("#announce-view-panel"), announcePlaceHolder );
+			$("#announce-view-panel").fadeIn();
 			
+
 			$("#announce-view-panel").find(".btn-close").click(function (e) {
-				slide.reverse();
-				setTimeout(function() {
-					//slide.stop();
-					zoom.reverse();
-					$("#announce-view-panel").fadeOut();
-					//$("#announce-view-panel").addClass('hide');
-				}, 100);
+				$("#announce-view-panel").fadeOut();
 			});			
 		}				
 		-->
