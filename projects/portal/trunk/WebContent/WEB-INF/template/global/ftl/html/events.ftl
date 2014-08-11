@@ -99,7 +99,7 @@
 			
 
 			$("#announce-view-panel").find(".btn-close").click(function (e) {
-				$("#announce-view-panel").fadeOut();
+				$("#announce-view-panel").slideUp();
 			});			
 		}				
 		-->
