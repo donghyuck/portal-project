@@ -96,7 +96,7 @@
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );
 			$("#announce-view-panel").slideDown();
-			$("#announce-view-panel").find(".btn-close").click(function (e) {
+			$("#announce-view-panel").find(".close-sm").click(function (e) {
 				$("#announce-view-panel").slideUp();
 			});			
 		}				
@@ -186,7 +186,10 @@
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
 			<div class="panel panel-default no-border">
 				<div class="panel-heading rounded-top">
+					<span class="close-sm"></div>
+					<!-- 
 					<button type="button" class="btn-close btn-close-grey"><span class="sr-only">Close</span></button>
+					-->
 					
 					<h4 data-bind="html:subject"></h4>
 					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>					
