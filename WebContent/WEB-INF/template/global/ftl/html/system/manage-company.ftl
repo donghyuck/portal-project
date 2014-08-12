@@ -682,7 +682,7 @@
 						</form>			
 						
 					</div>					
-					<div class="modal-body no-padding menu-editor-group hidden" style="height:400px;">
+					<div class="modal-body no-padding menu-editor-group" style="height:400px;">
 						<div id="xml-editor">												
 						</div>							
 					</div>					
