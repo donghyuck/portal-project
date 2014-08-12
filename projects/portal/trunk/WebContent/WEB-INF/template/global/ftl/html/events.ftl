@@ -186,11 +186,11 @@
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
 			<div class="panel panel-default no-border">
 				<div class="panel-heading rounded-top">
-					<span class="close-sm"></div>
+					
 					<!-- 
 					<button type="button" class="btn-close btn-close-grey"><span class="sr-only">Close</span></button>
 					-->
-					
+					<span class="close-sm"></span>
 					<h4 data-bind="html:subject"></h4>
 					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>					
 				</div>
