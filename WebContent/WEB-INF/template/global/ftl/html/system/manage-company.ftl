@@ -254,7 +254,7 @@
 			
 			$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
 			$('#menu-modal .modal-body:first').slideUp("slow", function(){
-				$('.menu-editor-group[class~="hidden"]').removeClass('hidden');
+				$('.menu-editor-group[class~="hidden"]').show();
 			});
 			
 			/*
@@ -271,9 +271,13 @@
 				$("#menu-grid").data("kendoGrid").removeRow("tr.k-grid-edit-row");
 			}
 			$('#menu-modal button[data-action="saveOrUpdate"]').addClass("hidden");
+			
+			$("#menu-editor").slideUp("slow", function(){
+				$('#menu-editor .modal-body.menu-editor-group').hide();
+				$('#menu-modal .modal-body:first.hidden').show();
+			});
 			common.ui.animate($("#menu-editor"), "fadeOutUp", function(){				
-				$('#menu-editor .modal-body.menu-editor-group').addClass('hidden');
-				$('#menu-modal .modal-body:first.hidden').removeClass("hidden");
+				
 			});
 		}
 		
