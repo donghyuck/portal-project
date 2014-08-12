@@ -646,7 +646,7 @@
 						</div>
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
 					</div>					
-					<div id="menu-editor">
+					<div id="menu-editor" style="display:none;">
 					<div class="modal-body border-t no-padding-hr no-padding-t no-margin-t menu-editor-group">
 						<div class="panel panel-transparent no-margin-b">
 							<div class="panel-body">
