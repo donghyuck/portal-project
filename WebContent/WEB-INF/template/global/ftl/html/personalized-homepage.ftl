@@ -57,8 +57,6 @@
 						e.token.copy(currentUser);
 					},				
 					shown : function(e){
-						//$("#account-navbar").append("<li><a href='#personalized-controls-section' class='btn-control-group navbar-btn-options' data-toggle='spmenu'><i class='fa fa-cloud-upload fa-2x'></i></a></li>");
-						//$(".navbar .navbar-header").append("<a href='#personalized-controls-section'  data-toggle='spmenu' class='navbar-toggle-inverse visible-xs'><i class='fa fa-cloud-upload fa-2x'></i></a>");			
 					}
 				});	
 				
@@ -97,9 +95,6 @@
 						common.ui.buttonDisabled($(this));
 					}
 				});			
-				
-
-
 				// END SCRIPT 				
 			}
 		}]);	
@@ -108,6 +103,7 @@
 		<!-- ============================== -->
 		function createGallerySection(){
 			var renderTo = "image-gallery";
+			
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .header").after( $("#image-gallery-template").html() );
 				var galleryDataSource =new kendo.data.DataSource({
@@ -136,9 +132,9 @@
 						);		
 						//Grid.init();							
 					}
-				});
+				});				
 				
-				common.ui.thumbnailexpanding();		
+				common.ui.thumbnailexpanding();
 				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
@@ -146,13 +142,18 @@
 					info: false,
 					dataSource : galleryDataSource
 				});					
+				
 				galleryDataSource.read();					
+				
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
 					animate : true
 				});	
-				$( "#" +renderTo).slideDown();
+				setTimeout(function(){
+					$( "#" +renderTo).slideDown();
+				}, 500);
 			}
+			
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).slideDown();
 			} 			
