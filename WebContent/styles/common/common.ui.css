@@ -110,6 +110,41 @@ body.aside-menu-in .aside-menu {
 	background: url(/images/cross-grey.png) no-repeat center center;
 }
 
+.close-sm {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 20px;
+	right: 20px;
+	cursor: pointer;
+}
+
+.close-sm::before,
+.close-sm::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	top: 50%;
+	height: 1px;
+	background: #888;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+
+.close-sm::after {
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.close-sm:hover::before,
+.close-sm:hover::after {
+	background: #333;
+}
+
+
+
 .side-section-title {
 	position: relative;
 	overflow: hidden;
