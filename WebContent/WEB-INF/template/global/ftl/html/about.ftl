@@ -137,7 +137,7 @@
 			</header>			
 			<!-- END HEADER -->					
 			<!-- START MAIN CONTENT -->	
-			<div class="container content no-padding-t">	
+			<div class="container content">	
 				<div class="row">
 					<div class="col-lg-3 visible-lg">
 						<!-- start side menu -->		
