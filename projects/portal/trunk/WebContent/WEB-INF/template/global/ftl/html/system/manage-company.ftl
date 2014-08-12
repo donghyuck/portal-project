@@ -235,7 +235,8 @@
 				kendo.bind(renderTo, editorModel);
 				renderTo.data("model", editorModel );					
 				editor.setTheme("ace/theme/monokai");
-				editor.getSession().setMode("ace/mode/xml");				
+				editor.getSession().setMode("ace/mode/xml");		
+						
 				$('#menu-editor button[data-action="editor-close"]').click(function(e){
 					closeMenuEditor();
 				});
@@ -254,7 +255,7 @@
 			
 			$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
 			$('#menu-modal .modal-body:first').slideUp("slow", function(){
-				$('.menu-editor-group[class~="hidden"]').show();
+				$('.menu-editor-group:hidden').show();
 			});
 			
 			/*
