@@ -10,14 +10,15 @@
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
-			'css!${request.contextPath}/styles/superbox/superbox.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
-			css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
+
 			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
+			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
+						
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
