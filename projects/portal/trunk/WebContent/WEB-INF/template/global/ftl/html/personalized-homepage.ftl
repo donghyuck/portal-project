@@ -15,7 +15,7 @@
 			
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
-			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.min.css',
+			css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
 			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
