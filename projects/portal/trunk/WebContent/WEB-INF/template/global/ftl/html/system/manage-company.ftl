@@ -251,11 +251,19 @@
 			}						
 			menuPlaceHolder.copy( renderTo.data("model").menu );	
 			editor.setValue(renderTo.data("model").menu.menuData);
+			
 			$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
+			$('#menu-modal .modal-body:first').slideUp("slow", function(){
+				$('.menu-editor-group[class~="hidden"]').removeClass('hidden');
+			});
+			
+			/*
+			
 			common.ui.animate($('#menu-modal .modal-body:first'), 'fadeOutUp', function(){
 				$('#menu-modal .modal-body:first').addClass("hidden");				
 				$('.menu-editor-group[class~="hidden"]').removeClass('hidden');
 			});
+			*/
 		}
 		
 		function closeMenuEditor(){
