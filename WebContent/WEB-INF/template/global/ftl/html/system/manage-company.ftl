@@ -651,10 +651,12 @@
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-xs-6">
-										<button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록으로</small></button>	
+										<button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	
 									</div>
-									<div class="col-xs-6">
-										<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">줄 바꿈 설정</h6>
+									<div class="col-xs-3">
+										<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">줄 바꿈 설정</h6>										
+									</div>
+									<div class="col-xs-3">
 										<input type="checkbox" name="warp-switcher" data-class="switcher-primary" role="switcher" >	
 									</div>
 								</div>	
@@ -678,10 +680,11 @@
 									<input type="text" name="description" class="form-control input-sm" placeholder="설명"  data-bind="value:menu.description" />
 								</div>
 							</div>				
-						</form>						
+						</form>		
+						<div id="xml-editor">				
 					</div>					
 					<div class="modal-body no-padding menu-editor-group" style="height:400px;">
-						<div id="xml-editor">												
+																		
 						</div>							
 					</div>					
 					</div>	
