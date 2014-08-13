@@ -645,7 +645,7 @@
 						</div>
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
 					</div>					
-					<div id="menu-editor" style="display:none; position:relative;" class="modal-body border-t no-padding-hr no-padding-t no-margin-t">
+					<div id="menu-editor" style="display:none;" class="modal-body border-t no-padding-hr no-padding-t no-margin-t">
 						<div class="padding-sm">
 							<div class="row">
 								<div class="col-xs-6">
@@ -678,13 +678,8 @@
 								</div>				
 							</form>																						
 						</div>
-						<div id="xml-editor" class="modal-body no-padding" style="height:400px;"></div>	
+						<div id="xml-editor" style="height:400px; position:relative;"></div>	
 					</div>
-						
-										
-					</div>					
-					
-					</div>	
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
 						<button type="button" class="btn btn-primary btn-flat disable hidden" data-action="saveOrUpdate">저장</button>
