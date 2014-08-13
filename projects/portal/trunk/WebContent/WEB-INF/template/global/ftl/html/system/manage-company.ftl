@@ -645,7 +645,7 @@
 						</div>
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
 					</div>					
-					<div id="menu-editor" style="display:none;" class="modal-body no-padding">
+					<div id="menu-editor" style="display:none;" class="modal-body no-padding-hr">
 						<div class="">
 							<form class="form-horizontal">	
 									<div class="row no-margin">
