@@ -645,46 +645,45 @@
 						</div>
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
 					</div>					
-					<div id="menu-editor" style="display:none;">
-					<div class="modal-body border-t no-padding-hr no-padding-t no-margin-t menu-editor-group">
-						<div class="panel panel-transparent no-margin-b">
-							<div class="panel-body">
-								<div class="row">
-									<div class="col-xs-6">
-										<button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	
-									</div>
-									<div class="col-xs-3">
-										<small>줄 바꿈 설정</small>										
-									</div>
-									<div class="col-xs-3">
-										<input type="checkbox" name="warp-switcher" data-class="switcher-primary" role="switcher" >	
-									</div>
-								</div>	
-							</div>						
-						</div>					
-						<form class="form-horizontal">				
-							<div class="row no-margin">
-								<div class="col-sm-6">
-									<div class="form-group no-margin-hr">
-										<input type="text" name="name" class="form-control input-sm" placeholder="이름" data-bind="value: menu.name">
-									</div>
-								</div><!-- col-sm-6 -->
-								<div class="col-sm-6">
-									<div class="form-group no-margin-hr">
-										<input type="text" name="title" class="form-control input-sm" placeholder="타이틀" data-bind="value: menu.title">
-									</div>
-								</div><!-- col-sm-6 -->
-							</div>
-							<div class="row no-margin">
-								<div class="col-sm-12">
-									<input type="text" name="description" class="form-control input-sm" placeholder="설명"  data-bind="value:menu.description" />
+					<div id="menu-editor" style="display:none; position:relative;" class="modal-body border-t no-padding-hr no-padding-t no-margin-t">
+						<div class="padding-sm">
+							<div class="row">
+								<div class="col-xs-6">
+									<button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	
 								</div>
-							</div>				
-						</form>		
+								<div class="col-xs-3">
+									<small>줄 바꿈 설정</small>										
+								</div>
+								<div class="col-xs-3">
+									<input type="checkbox" name="warp-switcher" data-class="switcher-primary" role="switcher" >	
+								</div>
+							</div>
+							<form class="form-horizontal">				
+								<div class="row no-margin">
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<input type="text" name="name" class="form-control input-sm" placeholder="이름" data-bind="value: menu.name">
+										</div>
+									</div><!-- col-sm-6 -->
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<input type="text" name="title" class="form-control input-sm" placeholder="타이틀" data-bind="value: menu.title">
+										</div>
+									</div><!-- col-sm-6 -->
+								</div>
+								<div class="row no-margin">
+									<div class="col-sm-12">
+										<input type="text" name="description" class="form-control input-sm" placeholder="설명"  data-bind="value:menu.description" />
+									</div>
+								</div>				
+							</form>																						
+						</div>
+						<div id="xml-editor" class="modal-body no-padding" style="height:400px;"></div>	
+					</div>
+						
 										
 					</div>					
-					<div id="xml-editor" class="modal-body no-padding menu-editor-group" style="height:400px;">					
-					</div>					
+					
 					</div>	
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
