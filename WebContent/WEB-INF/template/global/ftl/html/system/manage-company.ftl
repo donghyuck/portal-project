@@ -275,14 +275,23 @@
 				$("#menu-grid").data("kendoGrid").removeRow("tr.k-grid-edit-row");
 			}
 			$('#menu-modal button[data-action="saveOrUpdate"]').addClass("hidden");
+						
+			if($("#menu-editor").is(":visible")){
+				$("#menu-editor").hide();
+				if(!$('#menu-modal .modal-body:first').is("visble")){
+					$('#menu-modal .modal-body:first').fadeIn();
+				}
+			}
 			
-			$("#menu-editor").slideUp("slow", function(){
+			
+			//if($('#menu-modal .modal-body:first').is("visble")){
+			
+			//}
+			
+			//$("#menu-editor").slideUp("slow", function(){
 				$('#menu-editor .modal-body.menu-editor-group').hide();
 				$('#menu-modal .modal-body:first.hidden').show();
-			});
-			common.ui.animate($("#menu-editor"), "fadeOutUp", function(){				
-				
-			});
+			//});
 		}
 		
 		
