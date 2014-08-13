@@ -400,9 +400,7 @@
 					});
 				}else{
 					$("#company-list").fadeOut("slow", function(){
-						renderTo.fadeIn("slow", function(){
-							$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
-						});
+						renderTo.fadeIn("slow");
 					});
 				}
 			}
