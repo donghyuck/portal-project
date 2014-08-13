@@ -640,7 +640,7 @@
 						<h4 class="modal-title">메뉴</h4>
 					</div>
 					<div class="modal-body no-padding">
-						<div class="padding-xs">
+						<div class="padding-sm">
 							<button class="btn btn-danger btn-flat btn-labeled" data-action="create-menu"><span class="btn-label icon fa fa-plus"></span> <small>새로운 메뉴 만들기</small></button>
 						</div>
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
