@@ -339,7 +339,7 @@
 				var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");
 				
 				$("#company-details").slideUp("slow", function(){
-					if( alwaysShowList && $("#company-list").is(":hidden") ){
+					if( !alwaysShowList && $("#company-list").is(":hidden") ){
 						$("#company-list").fadeIn();
 					}
 				});
