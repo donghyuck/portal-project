@@ -743,23 +743,28 @@
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h">	
 							<div class="details-content">
-								<ul id="myTab" class="nav nav-tabs nav-tabs-sm">
-									<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
-									<li><a href="\\#groups" data-toggle="tab">그룹 <span class="badge badge-success" data-bind="text:groupCount, visible:groupCount ">0</span></a></li>
-									<li><a href="\\#users" data-toggle="tab">사용자 <span class="badge badge-success" data-bind="text:memberCount, visible:memberCount">0</span></a></li>
-								</ul>	
-								<!-- .tab-content -->	
-								<div class="tab-content tab-content-bordered no-padding">								
-									<div class="tab-pane fade" id="props">				
-										<div id="company-prop-grid" class="props no-border"></div>
-									</div>
-									<div class="tab-pane fade" id="groups">										
-										<div id="company-group-grid"  class="groups no-border"></div>					
-									</div>
-									<div class="tab-pane fade" id="users">	
-										<div id="company-user-grid"  class="users no-border"></div>
-									</div>
-								</div><!-- / .tab-content -->
+								<div class="panel colourable">
+									<div class="panel-heading">
+										<span class="panel-title"><i class="fa fa-info"></i></span>							
+										<ul id="myTab" class="nav nav-tabs nav-tabs-sm">
+											<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
+											<li><a href="\\#groups" data-toggle="tab">그룹 <span class="badge badge-success" data-bind="text:groupCount, visible:groupCount ">0</span></a></li>
+											<li><a href="\\#users" data-toggle="tab">사용자 <span class="badge badge-success" data-bind="text:memberCount, visible:memberCount">0</span></a></li>
+										</ul>	
+									</div></!-- /.panel-heading -->								
+									<!-- .tab-content -->	
+									<div class="tab-content tab-content-bordered no-padding">								
+										<div class="tab-pane fade" id="props">				
+											<div id="company-prop-grid" class="props no-border"></div>
+										</div>
+										<div class="tab-pane fade" id="groups">										
+											<div id="company-group-grid"  class="groups no-border"></div>					
+										</div>
+										<div class="tab-pane fade" id="users">	
+											<div id="company-user-grid"  class="users no-border"></div>
+										</div>
+									</div><!-- / .tab-content -->
+								</div><!-- / .panel -->
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
