@@ -682,7 +682,7 @@
 		
 		<script type="text/x-kendo-template" id="role-modal-template">
 		<div class="modal fade" id="role-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog animated swing">
+			<div class="modal-dialog animated slideDown">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
