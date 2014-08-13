@@ -646,12 +646,15 @@
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
 					</div>					
 					<div id="menu-editor" style="display:none;" class="modal-body no-padding">
-						<div class="padding-sm">
+						<div class="">
 							<form class="form-horizontal">	
 									<div class="row no-margin">
-										<div class="col-sm-6"><button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	</div>
-										<div class="col-sm-3"><small>줄 바꿈 설정</small></div>
-										<div class="col-sm-3"><input type="checkbox" name="warp-switcher" data-class="switcher-primary" role="switcher" >	</div>
+										<div class="col-sm-6"><button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close" style="margin-top:15px;"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	</div>
+										<div class="col-sm-3"></div>
+										<div class="col-sm-3">
+											<h6 class="text-light-gray text-semibold text-xs">줄바꿈 설정/해지</h6>
+											<input type="checkbox" name="warp-switcher" data-class="switcher-primary" role="switcher" >	
+										</div>
 									</div>			
 									<div class="row no-margin">
 										<div class="col-sm-6">
