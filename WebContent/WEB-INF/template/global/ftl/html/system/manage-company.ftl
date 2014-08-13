@@ -254,7 +254,7 @@
 			menuPlaceHolder.copy( renderTo.data("model").menu );	
 			editor.setValue(renderTo.data("model").menu.menuData);
 			
-			$('#menu-modal .modal-body:first').hide("slow", function(){
+			$('#menu-modal .modal-body:first').fadeOut("slow", function(){
 				$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
 				$("#menu-editor").fadeIn();
 			});
@@ -267,7 +267,7 @@
 			$('#menu-modal button[data-action="saveOrUpdate"]').addClass("hidden");						
 			
 			if($("#menu-editor").is(":visible")){
-				$("#menu-editor").hide("slow", function(){
+				$("#menu-editor").fadeOut("slow", function(){
 					if($('#menu-modal .modal-body:first').is(":hidden")){
 						$('#menu-modal .modal-body:first').fadeIn();
 					}
