@@ -340,7 +340,7 @@
 				
 				$("#company-details").slideUp("slow", function(){
 					if( alwaysShowList && $("#company-list").is(":hidden") ){
-						
+						$("#company-list").fadeIn();
 					}
 				});
 					
