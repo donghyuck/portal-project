@@ -2,6 +2,7 @@
 <html decorator="secure">
 <head>
 		<title>관리자 메인</title>		
+<#compress>		
 		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />
 		<script type="text/javascript">
 		<!--		
@@ -551,7 +552,7 @@
 			}
 			
 			#menu-grid .k-grid-content {
-				min-height:250px;
+				min-height:350px;
 			}
 			
 			#xml-editor{
@@ -563,6 +564,7 @@
 				min-height:400px;
 			}
 		</style>
+</#compress>		
 	</head>
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
