@@ -338,7 +338,7 @@
 			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible") ){
 				var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");
 				
-				$("#company-details").slideUp("slow", function(){
+				$("#company-details").fadeOut("slow", function(){
 					if( !alwaysShowList && $("#company-list").is(":hidden") ){
 						$("#company-list").fadeIn();
 					}
