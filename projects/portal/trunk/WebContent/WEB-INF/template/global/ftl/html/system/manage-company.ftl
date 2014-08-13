@@ -337,17 +337,21 @@
 		function hideCompanyDetails(){			
 			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible") ){
 				var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");
-				var animate = "slideOutLeft" ;
-				if( alwaysShowList ){
-					animate = "fadeOutUp" ;
-				}
-				common.ui.animate_v3($("#company-details"), animate, function(){  
+				
+				$("#company-details").slideUp("slow", function(){
+					if( alwaysShowList && $("#company-list").is(":hidden") ){
+						
+					}
+				});
+					
+/*				common.ui.animate_v3($("#company-details"), animate, function(){  
 					if( !$("#company-list").is(":visible") ){
 						$("#company-list").show();
 						//common.ui.animate_v3($("#company-list"), "slideInRight").show();
 						common.ui.animateFadeIn($("#company-list"));
 					} 
 				});	
+*/
 			}	
 		}
 		
@@ -753,7 +757,7 @@
 										</ul>	
 									</div></!-- /.panel-heading -->								
 									<!-- .tab-content -->	
-									<div class="tab-content tab-content-bordered no-padding">								
+									<div class="tab-content  no-padding">								
 										<div class="tab-pane fade" id="props">				
 											<div id="company-prop-grid" class="props no-border"></div>
 										</div>
