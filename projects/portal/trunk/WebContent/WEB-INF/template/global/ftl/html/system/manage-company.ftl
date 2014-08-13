@@ -640,14 +640,14 @@
 						<h4 class="modal-title">메뉴</h4>
 					</div>
 					<div class="modal-body no-padding">
-						<div class="padding-sm">
+						<div class="padding-xs">
 							<button class="btn btn-danger btn-flat btn-labeled" data-action="create-menu"><span class="btn-label icon fa fa-plus"></span> <small>새로운 메뉴 만들기</small></button>
 						</div>
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
 					</div>					
 					<div id="menu-editor" style="display:none;" class="modal-body no-padding-hr">
 						<div class="">
-							<form class="form-horizontal">	
+							<form class="form-horizontal m-b-lg">	
 									<div class="row no-margin">
 										<div class="col-sm-6"><button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close" style="margin-top:15px;"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	</div>
 										<div class="col-sm-3"></div>
