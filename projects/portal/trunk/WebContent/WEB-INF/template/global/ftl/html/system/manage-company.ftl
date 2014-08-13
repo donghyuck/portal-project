@@ -391,23 +391,22 @@
 			}
 			companyPlaceHolder.copy( renderTo.data("model").company );
 			
-			$('#myTab a:first').tab('show');			
-			if(alwaysShowList){				
-				if(!renderTo.is(':visible'))
-					common.ui.animate_v3(renderTo, 'fadeInDown').show() ;
-				$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
-			}else{			
+			$('#myTab a:first').tab('show');		
 			
-				common.ui.animateFadeOut($("#company-list"), function(){
-					common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
-				});
-				
-				
-				//common.ui.animate_v3($("#company-list"), 'slideOutLeft', function(){
-					//common.ui.animate_v3(renderTo, 'slideInLeft').show() ;
-					//renderTo.show();
-				//}) ;
-			}			
+			if(renderTo.is(':hidden')){
+				if(alwaysShowList){		
+					renderTo.fadeIn("slow", function(){
+						$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
+					});
+				}else{
+					$("#company-list").fadeOut("slow", function(){
+						renderTo.fadeIn("slow", function(){
+							$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
+						});
+					});
+				}
+			}
+						
 			return false;
 		}
 		
