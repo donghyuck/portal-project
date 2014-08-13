@@ -654,7 +654,7 @@
 										<button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	
 									</div>
 									<div class="col-xs-3">
-										<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">줄 바꿈 설정</h6>										
+										<small>줄 바꿈 설정</small>										
 									</div>
 									<div class="col-xs-3">
 										<input type="checkbox" name="warp-switcher" data-class="switcher-primary" role="switcher" >	
