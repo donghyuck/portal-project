@@ -649,7 +649,7 @@
 						<div class="">
 							<form class="form-horizontal m-b-lg">	
 									<div class="row no-margin">
-										<div class="col-sm-6"><button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close" style="margin-top:15px;"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	</div>
+										<div class="col-sm-6"><button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	</div>
 										<div class="col-sm-3"></div>
 										<div class="col-sm-3">
 											<h6 class="text-light-gray text-semibold text-xs">줄바꿈 설정/해지</h6>
