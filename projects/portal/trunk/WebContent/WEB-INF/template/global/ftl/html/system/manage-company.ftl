@@ -289,8 +289,8 @@
 			//}
 			
 			//$("#menu-editor").slideUp("slow", function(){
-				$('#menu-editor .modal-body.menu-editor-group').hide();
-				$('#menu-modal .modal-body:first.hidden').show();
+			//	$('#menu-editor .modal-body.menu-editor-group').hide();
+			//	$('#menu-modal .modal-body:first.hidden').show();
 			//});
 		}
 		
