@@ -681,11 +681,9 @@
 								</div>
 							</div>				
 						</form>		
-						<div id="xml-editor">				
+										
 					</div>					
-					<div class="modal-body no-padding menu-editor-group" style="height:400px;">
-																		
-						</div>							
+					<div id="xml-editor" class="modal-body no-padding menu-editor-group" style="height:400px;">					
 					</div>					
 					</div>	
 					<div class="modal-footer">					
