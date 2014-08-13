@@ -254,8 +254,11 @@
 			editor.setValue(renderTo.data("model").menu.menuData);
 			
 			$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
+			$('#menu-modal .modal-body:first').fadeOut("slow", function(){
+			
+			});
 			$('#menu-modal .modal-body:first').slideUp("slow", function(){
-				$('.menu-editor-group:hidden').show();
+				$("#menu-editor").slideDown();
 			});
 			
 			/*
