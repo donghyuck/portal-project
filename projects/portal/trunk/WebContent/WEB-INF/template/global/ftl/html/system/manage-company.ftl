@@ -645,9 +645,9 @@
 						</div>
 						<div id="menu-grid" class="no-border-hr no-border-b"></div>
 					</div>					
-					<div id="menu-editor" style="display:none;" class="modal-body no-padding-hr">
-						<div class="">
-							<form class="form-horizontal m-b-lg">	
+					<div id="menu-editor" style="display:none;" class="modal-body no-padding">
+						<div class="padding-sm-vr">
+							<form class="form-horizontal">	
 									<div class="row no-margin">
 										<div class="col-sm-6"><button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="btn-label icon fa fa-arrow-left"></span> <small>목록 보기</small></button>	</div>
 										<div class="col-sm-3"></div>
