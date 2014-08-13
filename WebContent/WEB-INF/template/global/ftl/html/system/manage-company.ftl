@@ -239,6 +239,7 @@
 						
 				$('#menu-editor button[data-action="editor-close"]').click(function(e){
 					closeMenuEditor();
+					return false;
 				});
 				
 				var switcher = $('#menu-editor input[role="switcher"][name="warp-switcher"]');
