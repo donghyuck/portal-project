@@ -678,8 +678,7 @@
 									<input type="text" name="description" class="form-control input-sm" placeholder="설명"  data-bind="value:menu.description" />
 								</div>
 							</div>				
-						</form>			
-						
+						</form>						
 					</div>					
 					<div class="modal-body no-padding menu-editor-group" style="height:400px;">
 						<div id="xml-editor">												
