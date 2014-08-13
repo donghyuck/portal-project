@@ -253,46 +253,26 @@
 			menuPlaceHolder.copy( renderTo.data("model").menu );	
 			editor.setValue(renderTo.data("model").menu.menuData);
 			
-			$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
-			$('#menu-modal .modal-body:first').fadeOut("slow", function(){
-			
+			$('#menu-modal .modal-body:first').hide("slow", function(){
+				$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
+				$("#menu-editor").fadeIn();
 			});
-			$('#menu-modal .modal-body:first').slideUp("slow", function(){
-				$("#menu-editor").slideDown();
-			});
-			
-			/*
-			
-			common.ui.animate($('#menu-modal .modal-body:first'), 'fadeOutUp', function(){
-				$('#menu-modal .modal-body:first').addClass("hidden");				
-				$('.menu-editor-group[class~="hidden"]').removeClass('hidden');
-			});
-			*/
 		}
 		
-		function closeMenuEditor(){
+		function closeMenuEditor(){		
 			if(getSelectedMenu().menuId < 0 ){
 				$("#menu-grid").data("kendoGrid").removeRow("tr.k-grid-edit-row");
-			}
-			
+			}			
 			$('#menu-modal button[data-action="saveOrUpdate"]').addClass("hidden");
 						
 			if($("#menu-editor").is(":visible")){
-				$("#menu-editor").hide();
-				if(!$('#menu-modal .modal-body:first').is(":visble")){
+				$("#menu-editor").hide("slow", function(){
+				
+				});
+				if($('#menu-modal .modal-body:first').is(":hidden")){
 					$('#menu-modal .modal-body:first').fadeIn();
 				}
 			}
-			
-			
-			//if($('#menu-modal .modal-body:first').is("visble")){
-			
-			//}
-			
-			//$("#menu-editor").slideUp("slow", function(){
-			//	$('#menu-editor .modal-body.menu-editor-group').hide();
-			//	$('#menu-modal .modal-body:first.hidden').show();
-			//});
 		}
 		
 		
