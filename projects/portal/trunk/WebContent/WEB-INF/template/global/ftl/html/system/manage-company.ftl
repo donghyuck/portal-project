@@ -260,9 +260,9 @@
 		}
 		
 		function closeMenuEditor(){		
-			if(getSelectedMenu().menuId < 0 ){
-				$("#menu-grid").data("kendoGrid").removeRow("tr.k-grid-edit-row");
-			}
+			//if(getSelectedMenu().menuId < 0 ){
+			//	$("#menu-grid").data("kendoGrid").removeRow("tr.k-grid-edit-row");
+			//}
 			$('#menu-modal button[data-action="saveOrUpdate"]').addClass("hidden");						
 			/*
 			if($("#menu-editor").is(":visible")){
