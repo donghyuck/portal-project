@@ -129,8 +129,7 @@
 					},
 					companyChanged: function(item){
 						item.copy(detailsModel.company);
-						detailsModel.isEnabled = true;		
-						
+						detailsModel.isEnabled = true;
 						kendo.bind($("#company-details"), detailsModel );				
 						displayCompanyDetails();	
 					}
