@@ -795,16 +795,16 @@
 								</table>
 								<div class="panel-footer no-border">
 									<h6 class="text-light-gray text-semibold text-xs">담당자</h6>
-													<div class="media">
-														<a class="pull-left" href="#">
-															<img class="media-object" data-bind="attr: { src: profileUrl }" alt="...">
-														</a>
-														<div class="media-body">
-															<h5 class="media-heading">
-															<span data-bind="text: website.user.name"></span>(<span data-bind="text: website.user.username"></span>)
-															</h5>
-														</div>
-													</div>				
+									<div class="media">
+										<a class="pull-left" href="#">
+											<img class="media-object" data-bind="attr: { src: profileUrl }" alt="...">
+										</a>
+										<div class="media-body">
+											<h5 class="media-heading">
+												<span data-bind="text: website.user.name"></span>(<span data-bind="text: website.user.username"></span>)
+											</h5>
+										</div>
+									</div>				
 								</div>								
 							</div>														
 						</div>
