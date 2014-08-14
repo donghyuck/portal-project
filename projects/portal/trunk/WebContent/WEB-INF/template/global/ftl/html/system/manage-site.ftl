@@ -867,9 +867,7 @@
 										</div>
 									</div>
 								</div>	
-								<hr/>
-								
-									
+								<hr/>									
 									<!-- company-tabs -->	
 									<div class="panel colourable">
 										<div class="panel-heading">
@@ -1006,8 +1004,8 @@
 									<input type="text" class="form-control" data-bind="value:company.domainName">
 								</div>
 							</div>	
+							<h5><small><i class="fa fa-info"></i> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
 							<input name="logo-file" id="logo-file" type="file" />	
-							<p> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</p>
 							<div id="logo-grid"></div>							
 						</div>
 					</div>																		
