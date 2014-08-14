@@ -732,11 +732,7 @@
 								</div>
 								<br>
 								
-								<div class="btn-group">
-									
-									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-menu" data-bind="enabled: isEnabled, click:openMenuModal"><i class="fa fa-sitemap"></i> 매뉴변경</button>
-									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="go-pages" data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-file"></i> 웹 페이지 관리</button>
-								</div>	
+
 																				
 							</div>				
 							
@@ -811,10 +807,16 @@
 								<div class="row" >
 									<div class="col-sm-12 m-b-sm">
 										<div class="pull-right">
+											<div class="btn-group">									
+												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-menu" data-bind="enabled: isEnabled, click:openMenuModal"><i class="fa fa-sitemap"></i> 매뉴변경</button>
+												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="go-pages" data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-file"></i> 웹 페이지 관리</button>
+											</div>	
+								<!--										
 												<div class="btn-group">
 													<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-group" data-bind="enabled: isEnabled, click:teleport" ><i class="fa fa-users"></i> 그룹관리</button>
 													<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-user" data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-user"></i> 사용자 관리</button>
-												</div>											
+												</div>					
+												-->						
 										</div>
 									</div>
 								</div>
