@@ -741,14 +741,10 @@
 									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
 								</div>
 								<br>
-								<!--
-								<a href="#" class="btn btn-success"><i class="fa fa-check"></i> Following</a> 
-								<a href="#" class="btn"><i class="fa fa-comment"></i></a>-->
-											<div class="btn-group">
-												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="upload-logo" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel"><i class="fa fa-upload" ></i> 로고 변경</button>
-												<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 정보변경</button>
-											</div>			
-																			
+								<div class="btn-group">
+									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="upload-logo" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel"><i class="fa fa-upload" ></i> 로고 변경</button>
+									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 정보변경</button>
+								</div>			
 							</div>				
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
@@ -757,7 +753,7 @@
 								<table class="table">
 									<tbody>						
 										<tr>
-											<td class="text-center">회사</td>								
+											<th class="text-center">회사</th>								
 											<td><span data-bind="text: company.displayName"></span> <span class="label label-primary"><span data-bind="text: company.name"></span></span> <code><span data-bind="text: company.companyId"></span></code></td>
 										</tr>	
 										<tr>
@@ -847,7 +843,7 @@
 									<!-- company-tabs -->	
 									<div class="panel colourable">
 										<div class="panel-heading">
-											<span class="panel-title"><i class="fa fa-info"></i></span>
+											<span class="panel-title"><i class="fa fa-info"></i> <span class="label label-primary" data-bind="text: company.name"></span></span>
 											<ul id="company-tabs" class="nav nav-tabs nav-tabs-xs">
 												<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
 												<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
