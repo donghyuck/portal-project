@@ -242,8 +242,8 @@
 							{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
 							{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
 						]				
-				});
-												
+					});
+				}								
 				renderTo.modal({
 					backdrop: 'static',
 					show : false
