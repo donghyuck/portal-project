@@ -820,7 +820,7 @@
 														<input name="attach-upload" id="attach-upload" type="file" />
 													</div>												
 												</div>
-												<div id="attach-grid" class="no-border"></div>
+												<div id="attach-grid" class="no-border-hr no-border-b"></div>
 											</div>
 											<div class="tab-pane fade" id="company-tabs-timeline">											
 											</div>																																								
@@ -899,7 +899,7 @@
 							</div>	
 							<h5><small><i class="fa fa-info"></i> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
 							<input name="logo-file" id="logo-file" type="file" />	
-							<div id="logo-grid" style="height:400px;"></div>							
+							<div id="logo-grid"></div>							
 						</div>
 					</div>																		
 					<div class="modal-footer">					
