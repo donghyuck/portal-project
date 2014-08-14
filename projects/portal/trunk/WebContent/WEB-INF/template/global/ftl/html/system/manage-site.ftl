@@ -191,7 +191,60 @@
 			if( renderTo.length === 0 ){		
 				$("#main-wrapper").append( kendo.template($('#company-update-modal-template').html()) );				
 				renderTo = $('#' + renderToString );
-				kendo.bind(renderTo, $("#company-details").data("model") );								
+				kendo.bind(renderTo, $("#company-details").data("model") );
+				
+				if( !$('#logo-file').data('kendoUpload') ){
+					$("#logo-file").kendoUpload({
+						multiple : false,
+						width: 300,
+					 	showFileList : false,
+						localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+						async: {
+							saveUrl:  '${request.contextPath}/secure/add-logo-image.do?output=json',							   
+							autoUpload: true
+						},
+						upload: function (e) {								         
+							e.data = {
+								objectType : 1,
+								objectId: getSelectedCompany().companyId
+							};														    								    	 		    	 
+						},
+						success : function(e) {								    
+							if( e.response.targetPrimaryLogoImage ){
+								//e.response.targetAttachment.attachmentId;
+								// LIST VIEW REFRESH...
+								$('#logo-grid').data('kendoGrid').dataSource.read(); 
+							}
+						}
+					});						
+				}		
+				
+				if(!$('#logo-grid').data('kendoGrid')){				
+					$("#logo-grid").kendoGrid({
+						dataSource: {
+							dataType: 'json',
+							transport: {
+								read: { url:'${request.contextPath}/secure/list-logo-image.do?output=json', type: 'POST' },
+								parameterMap: function (options, operation){
+									return { objectType: 1, objectId: getSelectedCompany().companyId }
+								} 
+							},
+							schema: {
+								data: "targetLogoImages",
+								total: "targetLogoImageCount",
+								model : common.models.Logo
+							},
+							error: common.api.handleKendoAjaxError
+						},
+						autoBind: false,
+						height: 200,
+						columns:[
+							{ field: "logoId", title: "ID",  width: 30, filterable: false, sortable: false },
+							{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
+							{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
+						]				
+				});
+												
 				renderTo.modal({
 					backdrop: 'static',
 					show : false
@@ -986,8 +1039,8 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title">회사 정보 변경</h4>
 					</div>
-					<div class="modal-body padding-sm">
-						<div class=" form-horizontal" >
+					<div class="modal-body no-padding">
+						<div class=" form-horizontal padding-sm" >
 							<div class="row form-group">
 								<label class="col-sm-4 control-label">이름:</label>
 								<div class="col-sm-8">
@@ -1007,7 +1060,10 @@
 								</div>
 							</div>	
 						</div>
-					</div>
+						<input name="logo-file" id="logo-file" type="file" />	
+						<p> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</p>
+						<div id="logo-grid"></div>
+					</div>																		
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-primary btn-flat disable hidden" data-bind="click: onSave, enabled: isEnabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>확인</button>					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
