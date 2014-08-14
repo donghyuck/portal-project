@@ -132,7 +132,7 @@
 						item.copy(detailsModel.company);
 						detailsModel.isEnabled = true;		
 						
-						kendo.bind($("#company-details), detailsModel );				
+						kendo.bind($("#company-details"), detailsModel );				
 						displayCompanyDetails();	
 					}
 				});	 
