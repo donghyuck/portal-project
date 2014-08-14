@@ -732,9 +732,7 @@
 									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
 								</div>
 								<br>
-								<!--
-								<a href="#" class="btn btn-success"><i class="fa fa-check"></i> Following</a> 
-								<a href="#" class="btn"><i class="fa fa-comment"></i></a>-->
+								
 								<div class="btn-group">
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="back" title="사이트 관리로 이동"  data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-level-up"></i></button>    
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-menu" data-bind="enabled: isEnabled, click:openMenuModal"><i class="fa fa-sitemap"></i> 매뉴변경</button>
@@ -812,7 +810,7 @@
 							<hr class="details-content-hr no-grid-gutter-h"/>						
 							<div class="details-content">							
 								<div class="row" >
-									<div class="col-sm-12">
+									<div class="col-sm-12 m-b-sm">
 										<div class="pull-right">
 												<div class="btn-group">
 													<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-group" data-bind="enabled: isEnabled, click:teleport" ><i class="fa fa-users"></i> 그룹관리</button>
@@ -821,14 +819,17 @@
 										</div>
 									</div>
 								</div>
-								<hr/>
-									<ul id="website-tabs" class="nav nav-tabs nav-tabs-sm">
-										<li><a href="#website-tabs-props" data-toggle="tab">프로퍼티</a></li>
-										<li><a href="#website-tabs-images" data-toggle="tab">이미지</a></li>
-										<li><a href="#website-tabs-files" data-toggle="tab">파일</a></li>
-										<li><a href="#website-tabs-timeline" data-toggle="tab">타임라인</a></li>
-									</ul>	
-									<div class="tab-content tab-content-bordered no-padding">								
+								<div class="panel colourable">
+										<div class="panel-heading">	
+										<span class="panel-title"><span class="label label-primary" data-bind="text: website.name"></span> <small data-bind="text:website.description"></small></span>
+											<ul id="website-tabs" class="nav nav-tabs nav-tabs-xs">
+												<li><a href="#website-tabs-props" data-toggle="tab">프로퍼티</a></li>
+												<li><a href="#website-tabs-images" data-toggle="tab">이미지</a></li>
+												<li><a href="#website-tabs-files" data-toggle="tab">파일</a></li>
+												<li><a href="#website-tabs-timeline" data-toggle="tab">타임라인</a></li>
+											</ul>	
+										</div> <!-- / .panel-heading -->
+									<div class="tab-content">								
 										<div class="tab-pane fade" id="website-tabs-props">
 											<div data-role="grid"
 												class="no-border"
