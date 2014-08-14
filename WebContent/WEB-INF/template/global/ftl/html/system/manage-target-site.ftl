@@ -726,15 +726,14 @@
 					<div class="details-row no-margin-t">					
 						<div class="left-col left-col-nav">
 							<div class="details-block no-margin-t">
-								<span class="label label-warning"><span data-bind="text: website.name"></span></span> 
-								<h6 class="text-light-gray text-semibold text-xs" data-bind="text:website.description"></h6>
+								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="back" title="사이트 관리로 이동"  data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-level-up"></i></button>    
 								<div class="details-photo">
 									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
 								</div>
 								<br>
 								
 								<div class="btn-group">
-									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="back" title="사이트 관리로 이동"  data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-level-up"></i></button>    
+									
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-menu" data-bind="enabled: isEnabled, click:openMenuModal"><i class="fa fa-sitemap"></i> 매뉴변경</button>
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="go-pages" data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-file"></i> 웹 페이지 관리</button>
 								</div>	
