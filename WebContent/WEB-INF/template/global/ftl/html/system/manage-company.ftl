@@ -200,7 +200,15 @@
 							$("#menu-grid").data("kendoGrid").select("tr.k-grid-edit-row:first");							
 						});	
 						renderTo.find('button[data-action="saveOrUpdate"]').click(function(e){
-							alert("save");
+							if( $("#menu-editor").data("model") ){
+								var btn = $(this);
+								
+								btn.button('loading');
+								var saveTarget = $("#menu-editor").data("model").menu ;
+								alert( kendo.stringify(saveTarget) );
+								
+								btn.reset();
+							}
 						});
 					}				
 					$("#menu-grid").data("kendoGrid").dataSource.read();
@@ -667,7 +675,7 @@
 					</div>
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
-						<button type="button" class="btn btn-primary btn-flat disable hidden" data-action="saveOrUpdate">저장</button>
+						<button type="button" class="btn btn-primary btn-flat disable hidden" data-action="saveOrUpdate" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>저장</button>
 					</div>
 				</div>
 			</div>
