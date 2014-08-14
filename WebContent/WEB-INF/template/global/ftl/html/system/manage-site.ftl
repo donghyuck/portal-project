@@ -987,22 +987,22 @@
 					<div class="modal-body padding-sm">
 						<div class=" form-horizontal" >
 							<div class="row form-group">
-																<label class="col-sm-4 control-label">이름:</label>
-																<div class="col-sm-8">
-																	<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
-																</div>
-															</div>
-															<div class="row form-group">
-																<label class="col-sm-4 control-label">설명:</label>
-																<div class="col-sm-8">
-																	<input type="text" name="name" class="form-control" data-bind="value:company.description">
-																</div>
-															</div>																
-															<div class="row form-group">
-																<label class="col-sm-4 control-label">도메인:</label>
-																<div class="col-sm-8">
-																	<input type="text" class="form-control" data-bind="value:company.domainName">
-																</div>
+								<label class="col-sm-4 control-label">이름:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
+								</div>
+							</div>
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">설명:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.description">
+								</div>
+							</div>																
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">도메인:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" data-bind="value:company.domainName">
+								</div>
 							</div>	
 						</div>
 					</div>
