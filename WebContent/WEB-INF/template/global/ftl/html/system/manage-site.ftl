@@ -170,6 +170,18 @@
 			return setup.companySelector.dataItem(setup.companySelector.select());
 		}
 		
+		function showLogoUploadModal(){
+			var renderToString = "logo-upload-modal";
+			var renderTo = $( '#' + renderToString );
+			if( renderTo.length === 0 ){		
+				$("#main-wrapper").append( kendo.template($('#logo-upload-modal-template').html()) );				
+				renderTo = $('#' + renderToString );
+				renderTo.modal({
+					backdrop: 'static'
+				});
+			}	
+		}
+		
 		function toggleLogoUploadPanel(){
 			
 			if( !$('#logo-file').data('kendoUpload') ){
@@ -929,6 +941,45 @@
 		</footer>
 		<!-- END FOOTER -->
 
+		<script type="text/x-kendo-template" id="logo-upload-modal-template">
+		<div class="modal fade" id="logo-upload-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog modal-lg animated slideDown">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">로고 업로드</h4>
+					</div>
+					<div class="modal-body no-padding">
+
+					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>				
+		</script>
+
+		<script type="text/x-kendo-template" id="company-update-modal-template">
+		<div class="modal fade" id="logo-upload-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog modal-lg animated slideDown">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">회사 정보 변경</h4>
+					</div>
+					<div class="modal-body no-padding">
+
+					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat disable hidden" data-action="saveOrUpdate" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>확인</button>					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>				
+		</script>
+				
 		<script id="image-details-template" type="text/x-kendo-template">				
 		
 					<div class="row">
