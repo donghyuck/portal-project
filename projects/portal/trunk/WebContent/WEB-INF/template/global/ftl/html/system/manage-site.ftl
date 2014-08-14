@@ -78,7 +78,7 @@
 					toggleOptionPanel:function(e){					
 						var action = $(e.target).attr('data-action');
 						if( action === 'upload-logo' ){						
-							toggleLogoUploadPanel();
+							showLogoUploadModal();//toggleLogoUploadPanel();
 						} else if( action === 'update-company' ){
 							toggleCompanyUpdatePanel();
 						}
