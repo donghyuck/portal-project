@@ -77,10 +77,8 @@
 					}),
 					toggleOptionPanel:function(e){					
 						var action = $(e.target).attr('data-action');
-						if( action === 'upload-logo' ){						
-							openLogoUploadModal();//toggleLogoUploadPanel();
-						} else if( action === 'update-company' ){
-							openCompanyUpdateModal(); //toggleCompanyUpdatePanel();
+						if( action === 'update-company' ){
+							openCompanyUpdateModal(); 
 						}
 					},
 					onSave : function(e){						
@@ -174,20 +172,6 @@
 			var setup = common.ui.admin.setup();
 			return setup.companySelector.dataItem(setup.companySelector.select());
 		}
-		
-		function openLogoUploadModal(){
-			var renderToString = "logo-upload-modal";
-			var renderTo = $( '#' + renderToString );
-			if( renderTo.length === 0 ){		
-				$("#main-wrapper").append( kendo.template($('#logo-upload-modal-template').html()) );				
-				renderTo = $('#' + renderToString );
-				renderTo.modal({
-					backdrop: 'static',
-					show : false
-				});
-			}			
-			renderTo.modal('show');				
-		}
 
 		function openCompanyUpdateModal(){
 			var renderToString = "company-update-modal";
@@ -257,80 +241,6 @@
 			renderTo.modal('show');				
 		}
 				
-		function toggleLogoUploadPanel(){
-			
-			if( !$('#logo-file').data('kendoUpload') ){
-				$("#logo-file").kendoUpload({
-					multiple : false,
-					width: 300,
-				 	showFileList : false,
-					localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
-					async: {
-						saveUrl:  '${request.contextPath}/secure/add-logo-image.do?output=json',							   
-						autoUpload: true
-					},
-					upload: function (e) {								         
-						e.data = {
-							objectType : 1,
-							objectId: getSelectedCompany().companyId
-						};														    								    	 		    	 
-					},
-					success : function(e) {								    
-						if( e.response.targetPrimaryLogoImage ){
-							//e.response.targetAttachment.attachmentId;
-							// LIST VIEW REFRESH...
-							$('#logo-grid').data('kendoGrid').dataSource.read(); 
-						}
-					}
-				});						
-			}		
-				
-			if(!$('#logo-grid').data('kendoGrid')){				
-				$("#logo-grid").kendoGrid({
-					dataSource: {
-						dataType: 'json',
-						transport: {
-							read: { url:'${request.contextPath}/secure/list-logo-image.do?output=json', type: 'POST' },
-							parameterMap: function (options, operation){
-								return { objectType: 1, objectId: getSelectedCompany().companyId }
-							} 
-						},
-						schema: {
-							data: "targetLogoImages",
-							total: "targetLogoImageCount",
-							model : common.models.Logo
-						},
-						error: common.api.handleKendoAjaxError
-					},
-					autoBind: false,
-					height: 200,
-					columns:[
-						{ field: "logoId", title: "ID",  width: 30, filterable: false, sortable: false },
-						{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
-						{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
-					]				
-				});
-			}
-			
-			var renderTo = $('.panel[data-action="upload-logo"]');
-			
-			if( !renderTo.is(":visible") ){
-				$('#logo-grid').data('kendoGrid').dataSource.read();
-				common.ui.animate_v3(renderTo, "fadeInDown").show();
-			}else{
-				common.ui.animate_v3(renderTo, "fadeOutUp").show();
-			}							
-		}
-
-		function toggleCompanyUpdatePanel(){		
-			var renderTo = $('.panel[data-action="update-company"]');				
-			if( !renderTo.is(":visible") ){
-				common.ui.animate_v3(renderTo, "fadeInDown").show();
-			}else{
-				common.ui.animate_v3(renderTo, "fadeOutUp").show();
-			}	
-		}
-
 		function createSocialPane(){
 			var selectedCompany = getSelectedCompany();
 			if( ! $("#social-grid").data("kendoGrid") ){
