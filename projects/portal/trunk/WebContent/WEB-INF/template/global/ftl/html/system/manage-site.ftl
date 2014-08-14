@@ -225,7 +225,6 @@
 							error: common.api.handleKendoAjaxError
 						},
 						autoBind: false,
-						height: 200,
 						columns:[
 							{ field: "logoId", title: "ID",  width: 30, filterable: false, sortable: false },
 							{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
