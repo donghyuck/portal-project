@@ -843,12 +843,12 @@
 										</div>									
 										<div class="tab-pane fade" id="website-tabs-images">
 											<div class="panel panel-transparent no-margin-b">
-												<div class="panel-body">
-													<input name="image-upload" id="image-upload" type="file" />
-												</div>																																		
-											</div>
-											<div id="image-details" class="no-padding-t  hide"></div>										
-											<div id="image-grid" class="no-border-hr no-border-b"></div>			
+												<div class="row no-margin-hr" style="background:#f5f5f5;" >
+													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
+													<div class="col-md-8" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
+												</div>
+												<div id="image-grid" class="no-border-hr no-border-b"></div>							
+											</div>	
 										</div>			
 										<div class="tab-pane fade" id="website-tabs-files">
 											<div class="panel panel-transparent no-margin-b">
@@ -960,7 +960,7 @@
 							<p><span class="label label-info" data-bind="text: contentType"></span></p>
 							<img data-bind="attr:{src: imgUrl}" class="img-rounded img-responsive" />							
 						</div>
-						<div class="col-lg-8 col-xs-8" style="border-left : solid 1px #ccc;">
+						<div class="col-lg-8 col-xs-8">
 							<div class="panel-group" id="website-tabs-image-accordion">
 								<div class="panel">
 									<div class="panel-heading ">
