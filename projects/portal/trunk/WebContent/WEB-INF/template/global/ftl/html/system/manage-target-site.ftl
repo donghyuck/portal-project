@@ -960,7 +960,7 @@
 							<p><span class="label label-info" data-bind="text: contentType"></span></p>
 							<img data-bind="attr:{src: imgUrl}" class="img-rounded img-responsive" />							
 						</div>
-						<div class="col-lg-8 col-xs-8">
+						<div class="col-lg-8 col-xs-8" style="border-left : solid 1px #ccc;">
 							<div class="panel-group" id="website-tabs-image-accordion">
 								<div class="panel">
 									<div class="panel-heading ">
