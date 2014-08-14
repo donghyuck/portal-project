@@ -122,7 +122,7 @@
 					}	
 				});
 				
-				$("#company-details).data("model", detailsModel );
+				$("#company-details").data("model", detailsModel );
 				
 				common.ui.admin.setup({
 					authenticate: function(e){
