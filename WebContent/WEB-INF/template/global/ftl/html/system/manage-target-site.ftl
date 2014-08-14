@@ -821,7 +821,7 @@
 								</div>
 								<div class="panel colourable">
 										<div class="panel-heading">	
-										<span class="panel-title"><span class="label label-primary" data-bind="text: website.name"></span> <small data-bind="text:website.description"></small></span>
+										<span class="panel-title"><span class="label label-warning" data-bind="text: website.name"></span> <small data-bind="text:website.description"></small></span>
 											<ul id="website-tabs" class="nav nav-tabs nav-tabs-xs">
 												<li><a href="#website-tabs-props" data-toggle="tab">프로퍼티</a></li>
 												<li><a href="#website-tabs-images" data-toggle="tab">이미지</a></li>
