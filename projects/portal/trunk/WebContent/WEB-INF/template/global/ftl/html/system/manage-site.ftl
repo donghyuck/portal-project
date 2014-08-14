@@ -83,7 +83,10 @@
 							openCompanyUpdateModal(); //toggleCompanyUpdatePanel();
 						}
 					},
-					onSave : function(e){					
+					onSave : function(e){				
+						
+						var btn = $(e.target);
+						btn.button('loading');
 						$.ajax({
 							type : 'POST',
 							url : '${request.contextPath}/secure/update-company.do?output=json',
@@ -91,6 +94,9 @@
 							success : function(response){
 								window.location.reload( true );
 							},
+							complete: function(jqXHR, textStatus ){					
+								btn.button('reset');
+							}
 							error:common.api.handleKendoAjaxError,
 							dataType : "json"
 						});
