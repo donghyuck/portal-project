@@ -868,59 +868,7 @@
 									</div>
 								</div>	
 								<hr/>
-								<div class="row" >
-									<div class="col-lg-6">		
-												<!-- logo upload panel -->									
-												<div class="panel panel-default" data-action="upload-logo" style="display:none;">
-													<div class="panel-heading">
-														<button type="button" class="close btn-control-group"  data-action="upload-logo" data-bind="click:toggleOptionPanel">×</button>
-														<span class="panel-title">로고 업로드</span>
-													</div>
-													<div class="panel-body">											
-														<input name="logo-file" id="logo-file" type="file" />											
-													</div>
-													<div class="panel-body scrollable" style="max-height:450px;">
-														<p> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</p>
-														<div id="logo-grid"></div>
-													</div>																						
-												</div>
-												<!-- ./logo upload panel -->			
-											</div>
-									<div class="col-lg-6">		
-												<!-- company setting panel -->				
-												<div class="panel form-horizontal" data-action="update-company" style="display:none;">
-													<div class="panel-heading">														
-														<button type="button" class="close btn-control-group" data-action="update-company"  data-bind="click:toggleOptionPanel">×</button>
-														<span class="panel-title">회사 정보 변경</span>
-													</div>
-													<div class="panel-body">
-															<div class="row form-group">
-																<label class="col-sm-4 control-label">이름:</label>
-																<div class="col-sm-8">
-																	<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
-																</div>
-															</div>
-															<div class="row form-group">
-																<label class="col-sm-4 control-label">설명:</label>
-																<div class="col-sm-8">
-																	<input type="text" name="name" class="form-control" data-bind="value:company.description">
-																</div>
-															</div>																
-															<div class="row form-group">
-																<label class="col-sm-4 control-label">도메인:</label>
-																<div class="col-sm-8">
-																	<input type="text" class="form-control" data-bind="value:company.domainName">
-																</div>
-															</div>															
-
-													</div>
-													<div class="panel-footer text-right">
-														<button class="btn btn-primary btn-flat" data-bind="click: onSave, enabled: isEnabled" >확인</button>
-													</div>
-												</div>
-											<!-- ./company setting panel -->				
-									</div>
-								</div><!-- ./row -->
+								
 									
 									<!-- company-tabs -->	
 									<div class="panel colourable">
