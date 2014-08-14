@@ -191,7 +191,7 @@
 			if( renderTo.length === 0 ){		
 				$("#main-wrapper").append( kendo.template($('#company-update-modal-template').html()) );				
 				renderTo = $('#' + renderToString );
-				kendo.bind($("#company-details), $("#company-details).data("model") );								
+				kendo.bind($("#company-details"), $("#company-details).data("model") );								
 				renderTo.modal({
 					backdrop: 'static',
 					show : false
