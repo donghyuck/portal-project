@@ -80,7 +80,7 @@
 						if( action === 'upload-logo' ){						
 							showLogoUploadModal();//toggleLogoUploadPanel();
 						} else if( action === 'update-company' ){
-							toggleCompanyUpdatePanel();
+							showCompanyUpdateModal(); //toggleCompanyUpdatePanel();
 						}
 					},
 					onSave : function(e){					
@@ -183,7 +183,21 @@
 			}			
 			renderTo.modal('show');				
 		}
-		
+
+		function showCompanyUpdateModal(){
+			var renderToString = "company-update-modal";
+			var renderTo = $( '#' + renderToString );
+			if( renderTo.length === 0 ){		
+				$("#main-wrapper").append( kendo.template($('#company-update-modal-template').html()) );				
+				renderTo = $('#' + renderToString );
+				renderTo.modal({
+					backdrop: 'static',
+					show : false
+				});
+			}			
+			renderTo.modal('show');				
+		}
+				
 		function toggleLogoUploadPanel(){
 			
 			if( !$('#logo-file').data('kendoUpload') ){
@@ -945,7 +959,7 @@
 
 		<script type="text/x-kendo-template" id="logo-upload-modal-template">
 		<div class="modal fade" id="logo-upload-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog modal-lg animated slideDown">
+			<div class="modal-dialog animated slideDown">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -964,7 +978,7 @@
 
 		<script type="text/x-kendo-template" id="company-update-modal-template">
 		<div class="modal fade" id="logo-upload-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog modal-lg animated slideDown">
+			<div class="modal-dialog animated slideDown">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
