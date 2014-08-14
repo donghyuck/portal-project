@@ -790,7 +790,7 @@
 		<style>					
 		
 		.k-grid-content{
-			height:200px;
+			min-height:200px;
 		}		
 		</style>
 </#compress>		
