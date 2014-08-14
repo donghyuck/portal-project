@@ -3,6 +3,7 @@
     <head>
 	<#compress>
         <title>사용자 관리</title>
+        <link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />
         <script type="text/javascript">                
         yepnope([{
             load: [ 
@@ -16,7 +17,7 @@
        	    '${request.contextPath}/js/common/common.models.js',
        	    '${request.contextPath}/js/common/common.api.js',       	    
        	    '${request.contextPath}/js/common/common.ui.js',
-      		'${request.contextPath}/js/common/common.ui.system.js'],        	   
+      		'${request.contextPath}/js/common/common.ui.admin.js'],        	   
             complete: function() {       
 
 				// 1.  한글 지원을 위한 로케일 설정
