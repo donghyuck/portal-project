@@ -96,7 +96,7 @@
 							},
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
-							}
+							},
 							error:common.api.handleKendoAjaxError,
 							dataType : "json"
 						});
