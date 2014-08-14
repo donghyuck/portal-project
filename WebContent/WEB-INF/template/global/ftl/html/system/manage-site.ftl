@@ -809,7 +809,7 @@
 											<div class="tab-pane fade" id="company-tabs-images" >
 												<div class="row no-margin-hr" style="background:#f5f5f5;" >
 													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
-													<div class="col-md-8" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
+													<div class="col-md-8 no-padding-hr" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
 												</div>
 												<div id="image-grid" class="no-border-hr no-border-b"></div>		
 											</div>
