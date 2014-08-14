@@ -78,9 +78,9 @@
 					toggleOptionPanel:function(e){					
 						var action = $(e.target).attr('data-action');
 						if( action === 'upload-logo' ){						
-							showLogoUploadModal();//toggleLogoUploadPanel();
+							openLogoUploadModal();//toggleLogoUploadPanel();
 						} else if( action === 'update-company' ){
-							showCompanyUpdateModal(); //toggleCompanyUpdatePanel();
+							openCompanyUpdateModal(); //toggleCompanyUpdatePanel();
 						}
 					},
 					onSave : function(e){					
@@ -170,7 +170,7 @@
 			return setup.companySelector.dataItem(setup.companySelector.select());
 		}
 		
-		function showLogoUploadModal(){
+		function openLogoUploadModal(){
 			var renderToString = "logo-upload-modal";
 			var renderTo = $( '#' + renderToString );
 			if( renderTo.length === 0 ){		
@@ -184,7 +184,7 @@
 			renderTo.modal('show');				
 		}
 
-		function showCompanyUpdateModal(){
+		function openCompanyUpdateModal(){
 			var renderToString = "company-update-modal";
 			var renderTo = $( '#' + renderToString );
 			if( renderTo.length === 0 ){		
