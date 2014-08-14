@@ -122,6 +122,8 @@
 					}	
 				});
 				
+				$("#company-details).data("model", detailsModel );
+				
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
@@ -129,12 +131,11 @@
 					companyChanged: function(item){
 						item.copy(detailsModel.company);
 						detailsModel.isEnabled = true;		
-						kendo.bind($("#company-details"), detailsModel );				
+						
+						kendo.bind($("#company-details), detailsModel );				
 						displayCompanyDetails();	
 					}
-				});
-				
-												 
+				});	 
 				 // 4. PAGE MAIN		
 
 			}	
@@ -190,6 +191,7 @@
 			if( renderTo.length === 0 ){		
 				$("#main-wrapper").append( kendo.template($('#company-update-modal-template').html()) );				
 				renderTo = $('#' + renderToString );
+				kendo.bind($("#company-details), $("#company-details).data("model") );								
 				renderTo.modal({
 					backdrop: 'static',
 					show : false
