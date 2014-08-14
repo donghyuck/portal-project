@@ -984,11 +984,30 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title">회사 정보 변경</h4>
 					</div>
-					<div class="modal-body no-padding">
-
+					<div class="modal-body padding-sm">
+						<div class=" form-horizontal" >
+							<div class="row form-group">
+																<label class="col-sm-4 control-label">이름:</label>
+																<div class="col-sm-8">
+																	<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
+																</div>
+															</div>
+															<div class="row form-group">
+																<label class="col-sm-4 control-label">설명:</label>
+																<div class="col-sm-8">
+																	<input type="text" name="name" class="form-control" data-bind="value:company.description">
+																</div>
+															</div>																
+															<div class="row form-group">
+																<label class="col-sm-4 control-label">도메인:</label>
+																<div class="col-sm-8">
+																	<input type="text" class="form-control" data-bind="value:company.domainName">
+																</div>
+							</div>	
+						</div>
 					</div>
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat disable hidden" data-action="saveOrUpdate" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>확인</button>					
+						<button type="button" class="btn btn-primary btn-flat disable hidden" data-bind="click: onSave, enabled: isEnabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>확인</button>					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
 					</div>
 				</div>
