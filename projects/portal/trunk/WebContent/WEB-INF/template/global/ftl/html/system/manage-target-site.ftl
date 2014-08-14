@@ -899,7 +899,7 @@
 		
 		<script id="menu-setting-modal-template" type="text/x-kendo-template">		
 		<div id="#=uid#"class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog modal-lg animated swing">
+			<div class="modal-dialog modal-lg animated slideDown">
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
