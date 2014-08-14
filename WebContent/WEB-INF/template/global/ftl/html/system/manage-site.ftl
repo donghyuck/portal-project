@@ -122,8 +122,7 @@
 					}	
 				});
 				
-				$("#company-details").data("model", detailsModel );
-				
+				$("#company-details").data("model", detailsModel );				
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
@@ -191,8 +190,8 @@
 			if( renderTo.length === 0 ){		
 				$("#main-wrapper").append( kendo.template($('#company-update-modal-template').html()) );				
 				renderTo = $('#' + renderToString );
-				kendo.bind(renderTo, $("#company-details").data("model") );
-				
+				kendo.bind(renderTo, $("#company-details").data("model") );	
+							
 				if( !$('#logo-file').data('kendoUpload') ){
 					$("#logo-file").kendoUpload({
 						multiple : false,
