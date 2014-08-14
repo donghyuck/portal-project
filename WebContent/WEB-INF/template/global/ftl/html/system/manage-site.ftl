@@ -821,7 +821,7 @@
 														<input name="attach-upload" id="attach-upload" type="file" />
 													</div>												
 												</div>
-												<div id="attach-grid" class="no-border-hr no-border-b"></div>
+												<div id="attach-grid" class="no-border"></div>
 											</div>
 											<div class="tab-pane fade" id="company-tabs-timeline">											
 											</div>																																								
@@ -869,25 +869,6 @@
 		<footer>  		
 		</footer>
 		<!-- END FOOTER -->
-
-		<script type="text/x-kendo-template" id="logo-upload-modal-template">
-		<div class="modal fade" id="logo-upload-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog animated slideDown">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">로고 업로드</h4>
-					</div>
-					<div class="modal-body no-padding">
-
-					</div>
-					<div class="modal-footer">					
-						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
-					</div>
-				</div>
-			</div>
-		</div>				
-		</script>
 
 		<script type="text/x-kendo-template" id="company-update-modal-template">
 		<div class="modal fade" id="company-update-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
