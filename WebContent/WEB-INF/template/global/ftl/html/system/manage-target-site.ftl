@@ -845,7 +845,7 @@
 											<div class="panel panel-transparent no-margin-b">
 												<div class="row no-margin-hr" style="background:#f5f5f5;" >
 													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
-													<div class="col-md-8" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
+													<div class="col-md-8 no-padding-hr" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
 												</div>
 												<div id="image-grid" class="no-border-hr no-border-b"></div>							
 											</div>	
@@ -953,7 +953,7 @@
 		</script> 
 		
 		<script id="image-details-template" type="text/x-kendo-template">				
-			<div class="panel panel-default no-border-hr no-border-b no-margin-b">
+			<div class="panel panel-transparent">
 				<div class="panel-body">											
 					<div class="row">
 						<div class="col-lg-4 col-xs-4">
