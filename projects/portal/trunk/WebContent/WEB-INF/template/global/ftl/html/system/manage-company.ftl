@@ -205,11 +205,9 @@
 								btn.button('loading');
 								var saveTarget = $("#menu-editor").data("model").menu ;
 								var editor = ace.edit("xml-editor");
+								saveTarget.set("menuData", editor.session.getValue() );
 								
-								
-								alert(saveTarget.menuData);
-								alert(editor.value());
-								
+								alert(saveTarget.menuData);								
 								
 								var updateUrl = "${request.contextPath}/secure/create-menu.do?output=json";
 								if( saveTarget.menuId > 0){
