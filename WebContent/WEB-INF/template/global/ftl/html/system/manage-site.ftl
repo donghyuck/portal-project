@@ -177,9 +177,11 @@
 				$("#main-wrapper").append( kendo.template($('#logo-upload-modal-template').html()) );				
 				renderTo = $('#' + renderToString );
 				renderTo.modal({
-					backdrop: 'static'
+					backdrop: 'static',
+					show : false
 				});
-			}	
+			}			
+			renderTo.modal('show');				
 		}
 		
 		function toggleLogoUploadPanel(){
