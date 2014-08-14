@@ -769,13 +769,13 @@
 												<i class="fa fa-unlock fa-lg" data-bind="visible: website.allowAnonymousAccess"></i>														
 											</td>
 										</tr>							
-												<tr>
-													<th  class="text-center">메뉴</th>	
-													<td><span data-bind="text: website.menu.title"></span> 
-														<span class="label label-warning"><span data-bind="text: webiste.menu.name"></span></span> 
-														<code><span data-bind="text: website.menu.menuId"></span></code>
-													</td>
-												</tr>																																									
+										<tr>
+											<th  class="text-center">메뉴</th>	
+											<td><span data-bind="text: website.menu.title"></span> 
+												<span class="label label-warning"><span data-bind="text: webiste.menu.name"></span></span> 
+												<code><span data-bind="text: website.menu.menuId"></span></code>
+											</td>
+										</tr>																																									
 										<tr>
 											<th  class="text-center">생성일</th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
