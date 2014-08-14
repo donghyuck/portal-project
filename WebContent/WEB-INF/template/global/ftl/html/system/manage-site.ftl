@@ -100,6 +100,8 @@
 							error:common.api.handleKendoAjaxError,
 							dataType : "json"
 						});
+						
+						return false;
 					},
 					teleport : function(e){
 						var action = $(e.target).attr('data-action');
