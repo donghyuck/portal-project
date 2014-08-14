@@ -204,6 +204,9 @@
 								var btn = $(this);								
 								btn.button('loading');
 								var saveTarget = $("#menu-editor").data("model").menu ;
+								
+								alert(saveTarget.menuData);
+								
 								var updateUrl = "${request.contextPath}/secure/create-menu.do?output=json";
 								if( saveTarget.menuId > 0){
 									updateUrl = "${request.contextPath}/secure/update-menu.do?output=json";
