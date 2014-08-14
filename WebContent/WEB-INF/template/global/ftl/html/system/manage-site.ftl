@@ -83,8 +83,7 @@
 							openCompanyUpdateModal(); //toggleCompanyUpdatePanel();
 						}
 					},
-					onSave : function(e){				
-						
+					onSave : function(e){						
 						var btn = $(e.target);
 						btn.button('loading');
 						$.ajax({
@@ -99,8 +98,7 @@
 							},
 							error:common.api.handleKendoAjaxError,
 							dataType : "json"
-						});
-						
+						});						
 						return false;
 					},
 					teleport : function(e){
