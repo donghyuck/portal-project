@@ -731,9 +731,7 @@
 									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
 								</div>
 								<br>
-								
-
-																				
+								<button type="button" class="btn btn-primary btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 정보변경</button>												
 							</div>				
 							
 							<div class="panel panel-transparent">
@@ -741,9 +739,6 @@
 									<span class="panel-title">
 										기본정보											
 									</span>
-									<div class="panel-heading-controls">				
-									<button type="button" class="btn btn-primary btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 정보변경</button>
-									</div>
 								</div>								
 								<table class="table">
 									<tbody>						
