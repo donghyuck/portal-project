@@ -236,14 +236,14 @@
 						<div class="stat-panel">
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
-								<div class="stat-cell col-sm-4 bordered no-border-r padding-sm-hr valign-top">
+								<div class="stat-cell col-sm-6 bordered no-border-r padding-sm-hr valign-top">
 									<!-- Small padding, without top padding, extra small horizontal padding -->
 									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-database text-primary"></i>&nbsp;&nbsp;디스크</h4>
 									<!-- Without margin -->
 									<ul class="list-group no-margin">
 										<!-- Without left and right borders, extra small horizontal padding -->
 										<li class="list-group-item no-border-hr padding-xs-hr">
-											Documents <span class="label pull-right">34</span>
+											CPU <span class="label pull-right">4</span>
 										</li> <!-- / .list-group-item -->
 										<!-- Without left and right borders, extra small horizontal padding -->
 										<li class="list-group-item no-border-hr padding-xs-hr">
