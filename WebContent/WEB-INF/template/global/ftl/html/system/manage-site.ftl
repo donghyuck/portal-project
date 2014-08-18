@@ -826,12 +826,13 @@
 											</div>																																								
 										</div>	
 									</div>
-								<!-- / .website-tabs -->				
-								<div class="row">				
-									<div class="col-sm-12 ">		
+								<!-- / .website-tabs -->			
+								<a href="#" class="header-2">웹 사이트</a>	
 										<h4>
 											<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
-										</h4>		
+										</h4>	
+								<div class="row">				
+									<div class="col-sm-12 ">			
 										<div id="website-grid" ></div>
 									</div>
 								</div>		
