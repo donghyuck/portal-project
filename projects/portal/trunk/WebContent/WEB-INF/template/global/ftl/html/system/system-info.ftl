@@ -48,6 +48,8 @@
 				});		
 				
 				
+				
+				// memory dataSource
 				var dataSource = new kendo.data.DataSource({
 					transport: {
 						read: {
@@ -93,8 +95,7 @@
 							});						
 						}else{
 							$("#mem-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedHeap.megabytes );
-						}	
-											
+						}					
 						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
 							$("#perm-gen-gauge").kendoRadialGauge({
 								theme: "white",
@@ -125,14 +126,13 @@
 							$("#perm-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedPermGen.megabytes );
 						}	
 					}
-				});
-				
+				});				
 				dataSource.read();		
 								
 				var timer = setInterval(function () {
 					dataSource.read();
 					//clearInterval(timer);
-					}, 6000);		
+				}, 6000);		
 									
 				$.ajax({
 					type : 'POST',
@@ -212,6 +212,9 @@
 				// END SCRIPT
 			}
 		}]);
+		
+		
+		
 		-->
 		</script> 		 
 		<style>
@@ -233,7 +236,7 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-xs-6">
-						<div class="stat-panel">
+						<div class="stat-panel system-details">
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
 								<div class="stat-cell col-sm-6 bordered no-border-r padding-sm-hr valign-top">
@@ -243,7 +246,7 @@
 									<ul class="list-group no-margin">
 										<!-- Without left and right borders, extra small horizontal padding -->
 										<li class="list-group-item no-border-hr padding-xs-hr">
-											CPU <span class="label pull-right">4</span>
+											CPU <span class="label pull-right" data-bind="text: availableProcessors">0</span>
 										</li> <!-- / .list-group-item -->
 										<!-- Without left and right borders, extra small horizontal padding -->
 										<li class="list-group-item no-border-hr padding-xs-hr">
@@ -257,28 +260,28 @@
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
 								<div class="stat-cell col-sm-6 bordered  padding-sm valign-middle">
-					<table class="table">
-						<thead>
-							<tr>
-								<th>#</th>
-								<th>위치</th>
-								<th>사용 중인 공간</th>
-								<th>사용 가능한 공간</th>
-								<th>전체 용량</th>
-							</tr>
-						</thead>
-						<tbody class="valign-middle">
-							<tr>
-								<td>1</td>
-								<td>
-									<img src="assets/demo/avatars/2.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@rjang</a>
-								</td>
-								<td>Robert Jang</td>
-								<td>rjang@example.com</td>
-								<td></td>
-							</tr>
-						</tbody>
-					</table>									
+								<table class="table">
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>위치</th>
+											<th>사용 중인 공간</th>
+											<th>사용 가능한 공간</th>
+											<th>전체 용량</th>
+										</tr>
+									</thead>
+									<tbody class="valign-middle">
+										<tr>
+											<td>1</td>
+											<td>
+												<img src="assets/demo/avatars/2.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@rjang</a>
+											</td>
+											<td>Robert Jang</td>
+											<td>rjang@example.com</td>
+											<td></td>
+										</tr>
+									</tbody>
+								</table>									
 								</div>
 							</div>
 						</div><!-- ./stat-panel -->					
