@@ -244,17 +244,11 @@
 									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-database text-primary"></i>&nbsp;&nbsp;디스크</h4>
 									<!-- Without margin -->
 									<ul class="list-group no-margin">
-										<!-- Without left and right borders, extra small horizontal padding -->
 										<li class="list-group-item no-border-hr padding-xs-hr">
 											CPU <span class="label pull-right" data-bind="text: availableProcessors">0</span>
 										</li> <!-- / .list-group-item -->
-										<!-- Without left and right borders, extra small horizontal padding -->
 										<li class="list-group-item no-border-hr padding-xs-hr">
-											Audio <span class="label pull-right">128</span>
-										</li> <!-- / .list-group-item -->
-										<!-- Without left and right borders, without bottom border, extra small horizontal padding -->
-										<li class="list-group-item no-border-hr no-border-b padding-xs-hr">
-											Videos <span class="label pull-right">12</span>
+											OS <span class="label pull-right" data-bind="text: operatingSystem">Unknown</span>
 										</li> <!-- / .list-group-item -->
 									</ul>
 								</div> <!-- /.stat-cell -->
