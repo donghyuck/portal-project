@@ -272,7 +272,7 @@
 									</ul>
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
-								<div class="stat-cell col-sm-8 bordered bg-default padding-sm valign-middle">
+								<div class="stat-cell col-sm-8 bordered bg-panel padding-sm valign-middle">
 									<table class="table">
 										<thead>
 											<tr>
