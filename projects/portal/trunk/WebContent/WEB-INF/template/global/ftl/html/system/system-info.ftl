@@ -241,7 +241,7 @@
 								<!-- Bordered, without right border, top aligned text -->
 								<div class="stat-cell col-sm-6 bordered no-border-r padding-sm-hr valign-top">
 									<!-- Small padding, without top padding, extra small horizontal padding -->
-									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-database text-primary"></i>&nbsp;&nbsp;디스크</h4>
+									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-dashboard text-primary"></i>&nbsp;&nbsp;시스템</h4>
 									<!-- Without margin -->
 									<ul class="list-group no-margin">
 										<li class="list-group-item no-border-hr padding-xs-hr">
