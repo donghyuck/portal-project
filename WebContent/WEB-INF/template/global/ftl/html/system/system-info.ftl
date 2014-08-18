@@ -505,9 +505,9 @@
 				<td>
 					#: absolutePath #
 				</td>
-				<td>Robert Jang</td>
-				<td>rjang@example.com</td>
-				<td></td>
+				<td>#: freeSpace #</td>
+				<td>#: usableSpace #</td>
+				<td>#: totalSpace #</td>
 			</tr>
 		</script>								
 												
