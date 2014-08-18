@@ -273,18 +273,21 @@
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
 								<div class="stat-cell col-sm-8 bordered  padding-sm valign-middle">
-								<table class="table">
-									<thead>
-										<tr>
-											<th>위치</th>
-											<th>사용 중인 공간</th>
-											<th>사용 가능한 공간</th>
-											<th>전체 용량</th>
-										</tr>
-									</thead>
-									<tbody class="valign-middle disk-usage-table-row">
-									</tbody>
-								</table>									
+									<table class="table">
+										<thead>
+											<tr>
+												<th>위치</th>
+												<th>사용 중인 공간</th>
+												<th>사용 가능한 공간</th>
+												<th>전체 용량</th>
+											</tr>
+										</thead>
+										<tbody class="valign-middle disk-usage-table-row">
+										</tbody>
+									</table>		
+									<span class="text-danger">
+										<small><i class="fa fa-info"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
+									</span>							
 								</div>
 							</div>
 						</div><!-- ./stat-panel -->					
@@ -407,11 +410,7 @@
 																<td><span data-bind="text: client.company"></span>(<span data-bind="text: client.name"></span>)</td>
 															</tr>	
 													 	</tbody>
-													</table>
-													
-									<h4 class="text-danger">
-										<small><i class="fa fa-info"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
-									</h4>		
+													</table>		
 								</div>
 								<div class="tab-pane" id="setup-info">
 									<div class="panel-body no-padding">
