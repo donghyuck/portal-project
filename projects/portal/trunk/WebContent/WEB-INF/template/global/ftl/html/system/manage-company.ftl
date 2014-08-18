@@ -195,9 +195,10 @@
 							}
 						});	
 						renderTo.find('button[data-action="create-menu"]').click(function(e){				
-							openMenuEditor();
+							
 							$("#menu-grid").data("kendoGrid").addRow();
-							$("#menu-grid").data("kendoGrid").select("tr.k-grid-edit-row:first");							
+							$("#menu-grid").data("kendoGrid").select("tr.k-grid-edit-row:first");			
+							openMenuEditor();				
 						});	
 						renderTo.find('button[data-action="saveOrUpdate"]').click(function(e){
 							if( $("#menu-editor").data("model") ){
