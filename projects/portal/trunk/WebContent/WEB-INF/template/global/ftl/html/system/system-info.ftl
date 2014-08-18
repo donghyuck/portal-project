@@ -231,7 +231,10 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
-				<div class="row">				
+				<div class="row">			
+					<div class="col-xs-3">
+					
+					</div>	
 					<div class="col-xs-3">
 						<div class="stat-panel text-center">
 							<div class="stat-row">						
@@ -359,7 +362,7 @@
 									</div>		
 								</div>
 								<div class="tab-pane" id="system-info">
-												<table class="table table-hover system-details">
+									<table class="table table-hover system-details">
 													<tbody>
 														<tr>
 															<th>운영시스템</th>
@@ -426,8 +429,7 @@
 															<td><span data-bind="text: jvmInputArguments"></span></td>
 														</tr>											
 													</tbody>
-												</table>	
-
+									</table>	
 								</div>
 								<div class="tab-pane" id="database-info">
 									<div class="panel-body no-padding">
