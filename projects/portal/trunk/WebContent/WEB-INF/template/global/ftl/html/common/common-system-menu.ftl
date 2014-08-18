@@ -44,7 +44,7 @@
 				</li>
 				</#if>
 			</#list>
-<li class="mm-dropdown">
+				<li class="mm-dropdown">
 					<a href="#"><i class="menu-icon fa fa-desktop"></i><span class="mm-text">UI elements</span></a>
 					<ul>
 						<li>
