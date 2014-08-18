@@ -242,7 +242,7 @@
 									<!-- Without margin -->
 									<ul class="list-group no-margin">
 										<li class="list-group-item no-border-hr padding-xs-hr">
-											CPU <span class="label pull-right" data-bind="text: availableProcessors">0</span>
+											CPU <span class="label label-danger pull-right" data-bind="text: availableProcessors">0</span>
 										</li> <!-- / .list-group-item -->
 										<li class="list-group-item no-border-hr padding-xs-hr">
 											OS <span class="label pull-right" data-bind="text: operatingSystem">Unknown</span>
