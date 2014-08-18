@@ -392,7 +392,7 @@
 						var sender = e.sender ;
 						if( sender.company.companyId > 0 ){
 							var dt = new Date();
-							this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt );
+							this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
 							this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
 							this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
 						}
