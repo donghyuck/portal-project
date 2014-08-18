@@ -503,9 +503,9 @@
 				<td>
 					#: absolutePath #
 				</td>
-				<td>#: freeSpace #</td>
-				<td>#: usableSpace #</td>
-				<td>#: totalSpace #</td>
+				<td>#: common.api.bytesToSize(freeSpace) #</td>
+				<td>#: common.api.bytesToSize(usableSpace) #</td>
+				<td>#: common.api.bytesToSize(totalSpace) #</td>
 			</tr>
 		</script>								
 												
