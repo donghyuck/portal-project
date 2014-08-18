@@ -276,7 +276,6 @@
 								<table class="table">
 									<thead>
 										<tr>
-											<th>#</th>
 											<th>위치</th>
 											<th>사용 중인 공간</th>
 											<th>사용 가능한 공간</th>
@@ -501,7 +500,6 @@
 		</div> <!-- / #main-wrapper -->
 		<script id="disk-usage-row-template" type="text/x-kendo-template">			
 			<tr>
-				<td>1</td>
 				<td>
 					#: absolutePath #
 				</td>
