@@ -391,7 +391,8 @@
 					if( e.field.match('^company.name')){ 						
 						var sender = e.sender ;
 						if( sender.company.companyId > 0 ){
-							this.set("logoUrl", "/download/logo/company/" + sender.company.name );
+							var dt = new DateTime();
+							this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt );
 							this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
 							this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
 						}
