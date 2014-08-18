@@ -284,16 +284,6 @@
 										</tr>
 									</thead>
 									<tbody class="valign-middle disk-usage-table-row">
-										
-										<tr>
-											<td>1</td>
-											<td>
-												<img src="assets/demo/avatars/2.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@rjang</a>
-											</td>
-											<td>Robert Jang</td>
-											<td>rjang@example.com</td>
-											<td></td>
-										</tr>
 									</tbody>
 								</table>									
 								</div>
