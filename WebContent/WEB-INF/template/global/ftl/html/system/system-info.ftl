@@ -58,7 +58,7 @@
 							dataType : 'json'
 						}
 					},
-					error:handleKendoAjaxError,
+					error:common.api.handleKendoAjaxError,
 					schema: { 
 						data: function(response){
 							return [ response ] ; 
@@ -134,10 +134,32 @@
 					//clearInterval(timer);
 				}, 6000);		
 
+				displayDiskUsage();
 				displaySystemDetails();					
 				// END SCRIPT
 			}
 		}]);
+		
+		function displayDiskUsage () {
+			var template = kendo.template( $("#disk-usage-row-template").html() );
+			var dataSource = new kendo.data.DataSource({
+					transport: {
+						read: {
+							url: '${request.contextPath}/secure/view-system-diskusage.do?output=json', // the remove service url
+							type:'POST',
+							dataType : 'json'
+						}
+					},
+					error:common.api.handleKendoAjaxError,
+					schema: { 
+						data: "diskUsages"
+                    },
+                    change:function(e){
+                    	if(this.view().length>0)			
+							$("table .disk-usage-table-row").html(kendo.render(template, this.view()))
+                    }		
+			}).read();
+		}		
 				
 		function displaySystemDetails (){		
 				$.ajax({
@@ -148,7 +170,7 @@
 						kendo.bind($(".system-details"), data.systemInfo );			
 						kendo.bind($(".license-details"), data.licenseInfo );					
 					},
-					error:handleKendoAjaxError,
+					error:common.api.handleKendoAjaxError,
 					dataType : "json"
 				});	
 						
@@ -192,7 +214,7 @@
 										data: "databaseInfos",
 											model: DatabaseInfo
 										},
-										error:handleKendoAjaxError
+										error:common.api.handleKendoAjaxError
 									},
 									columns: [
 										{ title: "데이터베이스", field: "databaseVersion"},
@@ -261,7 +283,8 @@
 											<th>전체 용량</th>
 										</tr>
 									</thead>
-									<tbody class="valign-middle">
+									<tbody class="valign-middle disk-usage-table-row">
+										
 										<tr>
 											<td>1</td>
 											<td>
@@ -486,6 +509,18 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
+		<script id="disk-usage-row-template" type="text/x-kendo-template">			
+			<tr>
+				<td>1</td>
+				<td>
+					#: absolutePath #
+				</td>
+				<td>Robert Jang</td>
+				<td>rjang@example.com</td>
+				<td></td>
+			</tr>
+		</script>								
+												
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
