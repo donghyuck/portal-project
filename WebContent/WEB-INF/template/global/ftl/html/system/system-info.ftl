@@ -261,10 +261,10 @@
 						<thead>
 							<tr>
 								<th>#</th>
-								<th>Username</th>
-								<th>Full Name</th>
-								<th>E-mail</th>
-								<th></th>
+								<th>위치</th>
+								<th>사용 중인 공간</th>
+								<th>사용 가능한 공간</th>
+								<th>전체 용량</th>
 							</tr>
 						</thead>
 						<tbody class="valign-middle">
