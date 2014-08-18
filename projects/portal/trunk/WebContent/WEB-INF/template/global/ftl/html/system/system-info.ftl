@@ -503,7 +503,7 @@
 				<td>
 					#: absolutePath #
 				</td>
-				<td>#: common.api.bytesToSize(totalSpace - usableSpace) #</td>
+				<td>#: common.api.bytesToSize(totalSpace - freeSpace) #</td>
 				<td>#: common.api.bytesToSize(usableSpace) #</td>
 				<td>#: common.api.bytesToSize(totalSpace) #</td>
 			</tr>
