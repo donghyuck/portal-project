@@ -92,7 +92,7 @@
 								</li>
 								<li class="dropdown">
 									<a href="#" class="dropdown-toggle user-menu" data-toggle="dropdown">
-										<img src="/download/profile/system?width=100&height=150" alt/>
+										<img src="/download/profile/${action.user.username}?width=100&height=150" alt/>
 										<span>${action.user.name}</span>
 									</a>
 									<ul class="dropdown-menu">
@@ -111,7 +111,7 @@
 			<div id="main-menu-inner">
 				<div class="menu-content menu-content-profile top">
 					<div>
-						<div class="text-bg"><span class="text-slim">Welcome,</span> <span class="text-semibold">${action.user.name}</span></div>
+						<div class="text-bg"><span class="text-slim"></span> <span class="text-semibold">${action.user.name}</span></div>
 						<img src="/download/profile/${action.user.username}?width=100&height=150" alt="" class="">
 						<div class="btn-group">
 							<a href="#" class="btn btn-xs btn-primary btn-outline dark"><i class="fa fa-envelope"></i></a>
