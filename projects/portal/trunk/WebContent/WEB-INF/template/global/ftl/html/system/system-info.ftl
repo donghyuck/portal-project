@@ -239,7 +239,7 @@
 						<div class="stat-panel system-details">
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
-								<div class="stat-cell col-sm-6 bordered no-border-r padding-sm-hr valign-top">
+								<div class="stat-cell col-sm-4 bordered no-border-r padding-sm-hr valign-top">
 									<!-- Small padding, without top padding, extra small horizontal padding -->
 									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-dashboard text-primary"></i>&nbsp;&nbsp;시스템</h4>
 									<!-- Without margin -->
@@ -253,7 +253,7 @@
 									</ul>
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
-								<div class="stat-cell col-sm-6 bordered  padding-sm valign-middle">
+								<div class="stat-cell col-sm-8 bordered  padding-sm valign-middle">
 								<table class="table">
 									<thead>
 										<tr>
