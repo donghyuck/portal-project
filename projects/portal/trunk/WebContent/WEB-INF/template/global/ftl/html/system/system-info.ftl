@@ -408,7 +408,10 @@
 															</tr>	
 													 	</tbody>
 													</table>
-		
+													
+									<h4 class="text-danger">
+										<small><i class="fa fa-info"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
+									</h4>		
 								</div>
 								<div class="tab-pane" id="setup-info">
 									<div class="panel-body no-padding">
