@@ -277,60 +277,6 @@
 								<td>rjang@example.com</td>
 								<td></td>
 							</tr>
-							<tr>
-								<td>2</td>
-								<td>
-									<img src="assets/demo/avatars/3.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@mbortz</a>
-								</td>
-								<td>Michelle Bortz</td>
-								<td>mbortz@example.com</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>3</td>
-								<td>
-									<img src="assets/demo/avatars/4.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@towens</a>
-								</td>
-								<td>Timothy Owens</td>
-								<td>towens@example.com</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>4</td>
-								<td>
-									<img src="assets/demo/avatars/5.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@dsteiner</a>
-								</td>
-								<td>Denise Steiner</td>
-								<td>dsteiner@example.com</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>5</td>
-								<td>
-									<img src="assets/demo/avatars/2.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@rjang</a>
-								</td>
-								<td>Robert Jang</td>
-								<td>rjang@example.com</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>6</td>
-								<td>
-									<img src="assets/demo/avatars/3.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@mbortz</a>
-								</td>
-								<td>Michelle Bortz</td>
-								<td>mbortz@example.com</td>
-								<td></td>
-							</tr>
-							<tr>
-								<td>7</td>
-								<td>
-									<img src="assets/demo/avatars/4.jpg" alt="" style="width:26px;height:26px;" class="rounded">&nbsp;&nbsp;<a href="#" title="">@towens</a>
-								</td>
-								<td>Timothy Owens</td>
-								<td>towens@example.com</td>
-								<td></td>
-							</tr>
 						</tbody>
 					</table>									
 								</div>
