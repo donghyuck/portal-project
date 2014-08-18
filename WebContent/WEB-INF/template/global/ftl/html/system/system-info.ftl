@@ -133,7 +133,13 @@
 					dataSource.read();
 					//clearInterval(timer);
 				}, 6000);		
-									
+
+				displaySystemDetails();					
+				// END SCRIPT
+			}
+		}]);
+				
+		function displaySystemDetails (){		
 				$.ajax({
 					type : 'POST',
 					url : '${request.contextPath}/secure/view-system-details.do?output=json',
@@ -145,9 +151,9 @@
 					error:handleKendoAjaxError,
 					dataType : "json"
 				});	
-
+						
 				$('#myTab a').click(function (e) {
-					e.preventDefault();
+					e.preventDefault();					
 					if(  $(this).attr('href') == '#setup-info' ){
 						if(!$("#setup-props-grid").data("kendoGrid")){
 							$('#setup-props-grid').kendoGrid({
@@ -203,18 +209,9 @@
 								});									
 						}					
 					}
-					$(this).tab('show');
-					
-					$('#system-info .panel-body').perfectScrollbar();
-					
-				});													
-									
-				// END SCRIPT
-			}
-		}]);
-		
-		
-		
+					$(this).tab('show');		
+			});				
+		}
 		-->
 		</script> 		 
 		<style>
