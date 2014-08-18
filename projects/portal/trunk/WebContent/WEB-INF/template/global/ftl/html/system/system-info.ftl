@@ -272,7 +272,7 @@
 									</ul>
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
-								<div class="stat-cell col-sm-8 bordered  padding-sm valign-middle">
+								<div class="stat-cell col-sm-8 bordered bg-default padding-sm valign-middle">
 									<table class="table">
 										<thead>
 											<tr>
@@ -286,7 +286,7 @@
 										</tbody>
 									</table>		
 									<span class="text-danger">
-										<small><i class="fa fa-info"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
+										<small><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
 									</span>							
 								</div>
 							</div>
@@ -506,13 +506,13 @@
 					#: absolutePath #
 				</td>
 				<td>#: common.api.bytesToSize(totalSpace - freeSpace) #
-					<small class="text-muted">#= kendo.toString(( totalSpace - freeSpace), '\\#\\#,\\#') #</small>
+					<small class="text-light-gray">#= kendo.toString(( totalSpace - freeSpace), '\\#\\#,\\#') #</small>
 				</td>
 				<td>#: common.api.bytesToSize(usableSpace) #
-					<small class="text-muted">#= kendo.toString(usableSpace, '\\#\\#,\\#') #</small>
+					<small class="text-light-gray">#= kendo.toString(usableSpace, '\\#\\#,\\#') #</small>
 				</td>
 				<td>#: common.api.bytesToSize(totalSpace) #
-					<small class="text-muted">#= kendo.toString(totalSpace, '\\#\\#,\\#') #</small>
+					<small class="text-light-gray">#= kendo.toString(totalSpace, '\\#\\#,\\#') #</small>
 				</td>
 			</tr>
 		</script>								
