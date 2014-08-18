@@ -233,7 +233,34 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-xs-3">
-					
+						<div class="stat-panel">
+							<div class="stat-row">
+								<!-- Bordered, without right border, top aligned text -->
+								<div class="stat-cell col-sm-4 bordered no-border-r padding-sm-hr valign-top">
+									<!-- Small padding, without top padding, extra small horizontal padding -->
+									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-cloud-upload text-primary"></i>&nbsp;&nbsp;Uploads</h4>
+									<!-- Without margin -->
+									<ul class="list-group no-margin">
+										<!-- Without left and right borders, extra small horizontal padding -->
+										<li class="list-group-item no-border-hr padding-xs-hr">
+											Documents <span class="label pull-right">34</span>
+										</li> <!-- / .list-group-item -->
+										<!-- Without left and right borders, extra small horizontal padding -->
+										<li class="list-group-item no-border-hr padding-xs-hr">
+											Audio <span class="label pull-right">128</span>
+										</li> <!-- / .list-group-item -->
+										<!-- Without left and right borders, without bottom border, extra small horizontal padding -->
+										<li class="list-group-item no-border-hr no-border-b padding-xs-hr">
+											Videos <span class="label pull-right">12</span>
+										</li> <!-- / .list-group-item -->
+									</ul>
+								</div> <!-- /.stat-cell -->
+								<!-- Primary background, small padding, vertically centered text -->
+								<div class="stat-cell col-sm-8 bordered  padding-sm valign-middle">
+									
+								</div>
+							</div>
+						</div><!-- ./stat-panel -->					
 					</div>	
 					<div class="col-xs-3">
 						<div class="stat-panel text-center">
