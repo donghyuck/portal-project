@@ -236,7 +236,7 @@
 						<div class="stat-panel text-center">
 							<div class="stat-row">						
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
-									<i class="fa fa-cloud"></i> Heap 메모리
+									<i class="fa fa-tachometer"></i> Heap 메모리
 								</div>
 							</div><!-- /.stat-row -->
 							<div class="stat-row">								
@@ -267,7 +267,7 @@
 							<div class="stat-row">
 								<!-- Dark gray background, small padding, extra small text, semibold text -->
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
-									<i class="fa fa-cloud"></i> PermGen 메모리
+									<i class="fa fa-tachometer"></i> PermGen 메모리
 								</div>
 							</div> <!-- /.stat-row -->
 							<div class="stat-row">
