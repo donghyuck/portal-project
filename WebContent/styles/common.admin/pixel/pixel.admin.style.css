@@ -4338,6 +4338,56 @@ label,optgroup {
 	color: #fff
 }
 
+.panel-default.panel-dark {
+	border-color: #ececec !important
+}
+
+.panel-default.panel-dark .panel-heading {
+	background: #fafafa;;
+	border-color: #ececec;
+	color: #555;
+}
+
+.panel-default.panel-dark .panel-heading .panel-title {
+	color: #555;
+}
+
+.panel-default.panel-dark .panel-heading .panel-heading-text {
+	color: #fcfefe
+}
+
+.panel-default.panel-dark .panel-heading .panel-heading-text a {
+	color: #fcfefe;
+	text-decoration: underline
+}
+
+.panel-default.panel-dark .panel-heading .panel-heading-text a:hover {
+	color: #fff
+}
+
+.panel-default.panel-dark .panel-heading-controls li.active a,.panel-default.panel-dark .panel-heading-controls li.active span
+	{
+	color: #5bc0de !important
+}
+
+.panel-default.panel-dark.panel-body-colorful .list-group-item,.panel-default.panel-dark.panel-body-colorful .panel-heading,.panel-default.panel-dark.panel-body-colorful table,.panel-default.panel-dark.panel-body-colorful table td,.panel-default.panel-dark.panel-body-colorful table th,.panel-default.panel-dark.panel-body-colorful table tr
+	{
+	border-color: #7dcde5
+}
+
+.panel-default.panel-dark.panel-body-colorful,.panel-default.panel-dark.panel-body-colorful .list-group-item,.panel-default.panel-dark.panel-body-colorful .panel-body
+	{
+	background: #5bc0de;
+	color: #fff
+}
+
+.panel-default.panel-dark.panel-body-colorful .panel-footer {
+	background: #5bc0de;
+	border-color: #7dcde5;
+	color: #fff
+}
+
+
 .panel-transparent {
 	background: none !important;
 	border: none !important
