@@ -719,13 +719,13 @@
 				<div id="website-details" class="page-details" style="">				
 					<div class="details-row no-margin-t">					
 						<div class="left-col left-col-nav">
-							<div class="details-block no-margin-t">
-								<button type="button" class="btn btn-success btn-flat btn-control-group pull-left" data-action="back" title="사이트 관리로 이동"  data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-level-up"></i></button>    
+							<div class="details-block no-margin-t">								
 								<div class="details-photo">
 									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
 								</div>
 								<br>
 								<div class="btn-group">
+									<button type="button" class="btn btn-success btn-flat btn-control-group pull-left" data-action="back" title="사이트 관리로 이동"  data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-level-up"></i></button>    
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 사이트 정보변경</button>
 								</div>												
 							</div>				
