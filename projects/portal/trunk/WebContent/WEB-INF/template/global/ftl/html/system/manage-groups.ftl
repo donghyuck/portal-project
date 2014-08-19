@@ -481,8 +481,8 @@
 									<div class="panel-heading">
 										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span><code data-bind="text: company.companyId"></code> 그룹 목록</span>
 									</div>
-									<div class="panel-body">
-										<div class="note note-info">
+									<div class="panel-body padding-sm">
+										<div class="note note-info no-margin-b">
 											<h4 class="note-title"><small><i class="fa fa-info"></i> 그룹을 사용하면 더욱 쉽게 권한을 관리할 수 있습니다.</small></h4>
 											<button class="btn btn-danger btn-labeled btn-control-group" data-bind="click:addGroup"><span class="btn-label icon fa fa-plus"></span> 그룹 만들기 </button>	
 										</div>	
