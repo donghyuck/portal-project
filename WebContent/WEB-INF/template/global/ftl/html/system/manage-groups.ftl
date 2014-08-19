@@ -51,7 +51,6 @@
 					}
 				});					
 				common.ui.admin.setup({	
-					menu : {toggleClass : "mmc"},
 					authenticate: function(e){
 						e.token.copy(currentUser);
 					},
@@ -59,7 +58,8 @@
 						item.copy(detailsModel.company);
 						detailsModel.isEnabled = true;
 						kendo.bind($("#company-details"), detailsModel );				
-						$("#group-grid").data("kendoGrid").refresh();
+						//$("#group-grid").data("kendoGrid").refresh();
+						alert("dd");
 					},
 					switcherChanged: function( name , value ){						
 					}					
