@@ -713,7 +713,7 @@
 													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
 													<div class="col-md-8 no-padding-hr" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
 												</div>
-												<div id="image-grid" class="no-border-hr no-border-b"></div>		
+												<div id="image-grid" class="no-border-hr"></div>		
 											</div>
 											<div class="tab-pane fade" id="company-tabs-files">
 												<div class="panel panel-transparent no-margin-b">
@@ -721,23 +721,13 @@
 														<input name="attach-upload" id="attach-upload" type="file" />
 													</div>												
 												</div>
-												<div id="attach-grid" class="no-border-hr no-border-b"></div>
+												<div id="attach-grid" class="no-border-hr"></div>
 											</div>
 											<div class="tab-pane fade" id="company-tabs-timeline">											
 											</div>																																								
 										</div>	
 										<div class="panel-footer no-padding-vr"></div>	
-									</div>
-								<!-- / .website-tabs -->			
-								<a href="#" class="header-2">웹 사이트</a>	
-										<h4>
-											<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
-										</h4>	
-								<div class="row">				
-									<div class="col-sm-12 ">			
-										<div id="website-grid" ></div>
-									</div>
-								</div>		
+									</div>	
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
