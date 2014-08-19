@@ -627,10 +627,6 @@
 				<div class="row">				
 					<div class="col-sm-12">					
 						<!-- details -->
-						<h4>
-							<small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다.</small>
-						</h4>
-						
 						<div id="company-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
