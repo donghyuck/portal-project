@@ -479,6 +479,15 @@
 					<div class="row no-margin-hr">		
 						<div class="col-sm-12">
 
+<div class="media">
+	<a class="pull-left" href="#">
+		<img class="media-object" data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
+	</a>
+	<div class="media-body">
+        <h4 class="media-heading"><span data-bind="text:company.displayName"></span> <code data-bind="text: company.companyId"></code></h4>
+	</div>
+</div>
+	    
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
 									<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span><span class="text-semibold" data-bind="text:company.displayName"></span></span>				
