@@ -724,7 +724,7 @@
 						<div class="left-col">
 							<div class="details-block no-margin-t">
 								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
+									<img data-bind="attr: { src: logoUrl }" alt="" src="${request.contextPath}/images/common/loader/loading-transparent-bg.gif">
 								</div>
 								<br>
 								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 회사 정보변경</button>
@@ -897,7 +897,7 @@
 					<div class="row">
 						<div class="col-sm-3">
 							<p><span class="label label-info" data-bind="text: contentType"></span></p>
-							<img data-bind="attr:{src: imgUrl}" class="img-responsive img-thumbnail " />						
+							<img data-bind="attr:{src: imgUrl}" src="${request.contextPath}/images/common/loader/loading-transparent-bg.gif" class="img-responsive img-thumbnail " />						
 						</div>
 						<div class="col-sm-9">	
 							<div class="panel-group" id="company-tabs-image-accordion">
