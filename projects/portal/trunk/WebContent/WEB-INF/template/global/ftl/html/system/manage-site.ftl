@@ -243,7 +243,29 @@
 					</div>				
 				</div><!-- / .page-header -->
 				<!-- details-row -->
-				<div id="company-details" class="page-details" style="">				
+				<div id="company-details" class="page-details">			
+				
+					<div class="row">		
+							<div class="col-sm-12">
+								<div class="panel panel-default" style="min-height:300px;" >
+									<div class="panel-heading">
+										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span><code data-bind="text: company.companyId"></code> 그룹 목록</span>
+									</div>
+									<div class="panel-body">
+										<div class="note note-info">
+											<h4 class="note-title"><small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small></h4>
+										</div>	
+									</div>
+									<div id="website-grid" class="no-border-hr"></div>
+									<div class="panel-footer no-padding-vr">								
+									</div>
+								</div>	
+							</div>				
+						</div><!-- / .col-sm-12 -->						
+					</div><!-- / .row -->
+					
+									
+					
 					<div class="details-row no-margin-t">					
 						<div class="left-col">
 							<div class="details-block no-margin-t">
