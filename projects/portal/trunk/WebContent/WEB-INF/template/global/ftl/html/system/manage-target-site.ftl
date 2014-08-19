@@ -32,13 +32,15 @@
 			],    	   
 			complete: function() {               
 				
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
+				// 1-1.  셋업
 				var currentUser = new User();			
-														
+				common.ui.admin.setup({	
+					menu : {toggleClass : "mmc"},
+					authenticate: function(e){
+						e.token.copy(currentUser);
+					}
+				});		
+																		
 				// 3.MENU LOAD 
 				var detailsModel = kendo.observable({
 					website: new common.models.WebSite( {webSiteId: ${ action.targetWebSite.webSiteId}} ),
@@ -106,14 +108,7 @@
 				});								
 				
 				$("#website-details").data("model", detailsModel );			
-				
-				common.ui.admin.setup({
-					menu : {toggleClass : "mmc"},
-					authenticate: function(e){
-						e.token.copy(currentUser);
-					}
-				});				
-				
+								
 				common.api.callback({
 					url :"${request.contextPath}/secure/get-site.do?output=json", 
 					data : { targetSiteId:  detailsModel.website.webSiteId },
