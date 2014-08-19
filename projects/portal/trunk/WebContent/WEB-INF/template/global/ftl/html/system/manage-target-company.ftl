@@ -741,6 +741,10 @@
 											<td><span data-bind="text: company.displayName"></span><code><span data-bind="text: company.companyId"></span></code></td>
 										</tr>	
 										<tr>
+											<th class="text-center">영문명</th>								
+											<td><span class="label label-primary" data-bind="text: company.name"></span></td>
+										</tr>	
+										<tr>
 											<th class="text-center">도메인</th>								
 											<td><span data-bind="text: company.domainName"></span></td>
 										</tr>	
@@ -762,7 +766,7 @@
 									<!-- company-tabs -->	
 									<div class="panel colourable">
 										<div class="panel-heading">
-											<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span></span>
+											<span class="panel-title"><i class="fa fa-info"></i> </span>
 											<ul id="company-tabs" class="nav nav-tabs nav-tabs-xs">
 												<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
 												<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
