@@ -781,13 +781,13 @@
 									<!-- .tab-content -->	
 									<div class="tab-content  no-padding">								
 										<div class="tab-pane fade" id="props">				
-											<div id="company-prop-grid" class="props no-border"></div>
+											<div id="company-prop-grid" class="props no-border-hr no-border-t"></div>
 										</div>
 										<div class="tab-pane fade" id="groups">										
-											<div id="company-group-grid"  class="groups no-border"></div>					
+											<div id="company-group-grid"  class="groups no-border-hr no-border-t"></div>					
 										</div>
 										<div class="tab-pane fade" id="users">	
-											<div id="company-user-grid"  class="users no-border"></div>
+											<div id="company-user-grid"  class="users no-border-hr no-border-t"></div>
 										</div>
 									</div><!-- / .tab-content -->
 									<div class="panel-footer no-padding-vr"></div>
