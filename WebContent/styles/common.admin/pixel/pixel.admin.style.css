@@ -4382,13 +4382,13 @@ label,optgroup {
 .panel-default.panel-dark.panel-body-colorful,.panel-default.panel-dark.panel-body-colorful .list-group-item,.panel-default.panel-dark.panel-body-colorful .panel-body
 	{
 	background: #5bc0de;
-	color: #fff
+	color: #333;
 }
 
 .panel-default.panel-dark.panel-body-colorful .panel-footer {
 	background: #5bc0de;
 	border-color: #7dcde5;
-	color: #fff
+	color: #333;
 }
 
 
