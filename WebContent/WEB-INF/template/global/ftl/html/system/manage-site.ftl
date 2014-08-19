@@ -63,21 +63,7 @@
 							dataType : "json"
 						});						
 						return false;
-					},
-					teleport : function(e){
-						var action = $(e.target).attr('data-action');
-						if(action === 'go-group'){
-							common.api.teleportation().teleport({
-								action : '${request.contextPath}/secure/main-group.do',
-								companyId : this.get('company').companyId
-							});							
-						}else if (action === 'go-user'){
-							common.api.teleportation().teleport({
-								action : '${request.contextPath}/secure/main-user.do',
-								companyId : this.get('company').companyId
-							});								
-						}
-					}										
+					}									
 				});	
 				
 				detailsModel.bind("change", function(e){		
