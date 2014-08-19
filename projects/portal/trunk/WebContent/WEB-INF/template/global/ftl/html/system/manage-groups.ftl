@@ -512,13 +512,7 @@
 							<hr class="details-content-hr no-grid-gutter-h"/>						
 							<div class="details-content">			
 	
-							</div><!-- / .details-content -->
-						</div><!-- / .right-col -->
-										
-				
-				
-				
-					
+	
 				<div class="row">		
 					<div class="col-sm-12">
 						<div class="panel panel-default" style="min-height:300px;" >
@@ -538,7 +532,17 @@
 							</div>					
 						</div>				
 					</div><!-- / .col-sm-12 -->						
-				</div><!-- / .row -->								
+				</div><!-- / .row -->			
+	
+	
+							</div><!-- / .details-content -->
+						</div><!-- / .right-col -->
+										
+				
+				
+				
+					
+						
 					
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
