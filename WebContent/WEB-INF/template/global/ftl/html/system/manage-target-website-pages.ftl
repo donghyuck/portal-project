@@ -454,7 +454,7 @@
 		<style type="text/css" media="screen">
 
 		.k-grid-content{
-			height:540px;
+			min-height:540px;
 		}			
 		
 		table.k-editor{
