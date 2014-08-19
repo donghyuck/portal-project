@@ -488,15 +488,41 @@
 						<div class="panel-group" id="company-summary-header">
 							<div class="panel">
 								<div class="panel-heading">
-									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#company-summary-header" href="#collapseOne">
-										Collapsible Group Item #1
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#company-summary-header" href="#company-summary-content">
+										<span class="panel-title text-semibold" data-bind="text:company.displayName"></span>
 									</a>
 								</div> <!-- / .panel-heading -->
-								<div id="collapseOne" class="panel-collapse collapse">
+								<div id="company-summary-content" class="panel-collapse collapse">
 									<div class="panel-body">
-								
-								
-								
+										<div class="left-col">
+											<div class="details-block no-margin-vr">
+												<div class="details-photo">
+													<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
+												</div>								
+											</div>	
+										</div>
+										<div class="right-col">
+											<table class="table small">
+												<tbody>						
+													<tr>
+														<th>회사</th>								
+														<td><span data-bind="text:company.name"></span> <code data-bind="text: company.companyId"></code></td>
+													</tr>	
+													<tr>
+														<th>도메인</th>								
+														<td><span data-bind="text:company.domainName"></span></td>
+													</tr>	
+													<tr>
+														<th>생성일</th>								
+														<td><span data-bind="text:formattedCreationDate"></span></td>
+													</tr>	
+													<tr>
+														<th>수정일</th>								
+														<td><span data-bind="text:formattedModifiedDate"></span></td>
+													</tr>														
+												</tbody>
+											</table>
+										</div><!-- / .right-col -->								
 									</div> <!-- / .panel-body -->
 								</div> <!-- / .collapse -->
 							</div> <!-- / .panel -->
