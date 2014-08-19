@@ -254,6 +254,7 @@
 									<div class="panel-body">
 										<div class="note note-info">
 											<h4 class="note-title"><small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small></h4>
+											<button class="btn btn-danger btn-labeled btn-control-group" data-bind="click:addWebSite"><span class="btn-label icon fa fa-plus"></span> 웹사이트 만들기 </button>	
 										</div>	
 									</div>
 									<div id="website-grid" class="no-border-hr"></div>
