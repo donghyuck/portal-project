@@ -4339,7 +4339,7 @@ label,optgroup {
 }
 
 .panel-default.panel-dark {
-	border-color: #ececec !important
+	border-color: #ddd !important
 }
 
 .panel-default.panel-dark .panel-heading {
