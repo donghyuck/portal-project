@@ -802,6 +802,38 @@
 										</div> <!-- / .panel-heading -->
 									<div class="tab-content">								
 										<div class="tab-pane fade" id="website-tabs-props">
+										
+										<table class="table table-hover">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>First Name</th>
+									<th>Last Name</th>
+									<th>Username</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>1</td>
+									<td>Mark</td>
+									<td>Otto</td>
+									<td>@mdo</td>
+								</tr>
+								<tr>
+									<td>2</td>
+									<td>Jacob</td>
+									<td>Thornton</td>
+									<td>@fat</td>
+								</tr>
+								<tr>
+									<td>3</td>
+									<td>Larry</td>
+									<td>the Bird</td>
+									<td>@twitter</td>
+								</tr>
+							</tbody>
+						</table>
+										
 											<div data-role="grid"
 												class="no-border-hr no-border-t"
 												data-scrollable="false"
