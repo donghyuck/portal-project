@@ -802,82 +802,32 @@
 										</div> <!-- / .panel-heading -->
 									<div class="tab-content">								
 										<div class="tab-pane fade" id="website-tabs-props">
-
-<div class="table-light">
-									<div class="table-header">
-										<div class="table-caption">
-											Light Table
-										</div>
-									</div>
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>First Name</th>
-												<th>Last Name</th>
-												<th>Username</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>Mark</td>
-												<td>Otto</td>
-												<td>@mdo</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>Jacob</td>
-												<td>Thornton</td>
-												<td>@fat</td>
-											</tr>
-											<tr>
-												<td>3</td>
-												<td>Larry</td>
-												<td>the Bird</td>
-												<td>@twitter</td>
-										  </tr>
-										</tbody>
-									</table>
-									<div class="table-footer">
-										Footer
-									</div>
-								</div>
-								
-																		
-										<table class="table table-hover">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>First Name</th>
-									<th>Last Name</th>
-									<th>Username</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td>Mark</td>
-									<td>Otto</td>
-									<td>@mdo</td>
-								</tr>
-								<tr>
-									<td>2</td>
-									<td>Jacob</td>
-									<td>Thornton</td>
-									<td>@fat</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td>Larry</td>
-									<td>the Bird</td>
-									<td>@twitter</td>
-								</tr>
-							</tbody>
-						</table>
-										
+											<div class="note note-default no-margin-b no-border-vr">
+														<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하여 프로퍼티 값을 설정하세요.				
+																										
+													<table class="table table-striped">
+												<thead>
+													<tr>
+														<th>#</th>
+														<th>이름(키)</th>
+														<th>설명</th>														
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>1</td>
+														<td>allowedSignIn</td>
+														<td><code>true</code> 이면 로그인 버튼이 화면에 보여짐.</td>														
+													</tr>
+													<tr>
+														<td>2</td>
+														<td>allowedSignup</td>
+														<td><code>true</code> 이면 회원가입 버튼이 화면에 보여짐.</td>														
+													</tr>													
+												</tbody>
+											</table></div>										
 											<div data-role="grid"
-												class="no-border-hr no-border-t"
+												class="no-border-hr"
 												data-scrollable="false"
 												data-editable="true"
 												data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
