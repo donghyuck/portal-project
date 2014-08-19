@@ -9,6 +9,7 @@
 	var kendo = window.kendo,
 	Widget = kendo.ui.Widget,
 	Class = kendo.Class,
+	extend = $.extend,
 	stringify = kendo.stringify,
 	isFunction = kendo.isFunction,
 	UNDEFINED = 'undefined',
