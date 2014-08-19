@@ -479,7 +479,7 @@
 						<div class="left-col">
 							<div class="details-block no-margin-t">
 								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="" src="/download/logo/company/inkium">
+									<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
 								</div>
 							</div>				
 							<div class="panel panel-transparent">
