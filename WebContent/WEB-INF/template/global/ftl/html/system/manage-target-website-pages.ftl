@@ -489,17 +489,7 @@
 						<div  id="page-list-panel" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><button type="button" class="btn-link btn-control-group" data-action="back"><i class="fa fa fa-level-up fa-lg"></i></button><small class="text-danger">( 웹 페이지는 게시 상태에서 보여집니다.)</small></span>
-								<!--
-								<div class="btn-group">
-									<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="group"><i class="fa fa-users"></i> 그룹관리</button>
-									<button type="button" class="btn btn-info btn-control-group btn-sm" data-action="user"><i class="fa fa-user"></i> 사용자관리</button>
-								</div>			
-								<div class="btn-group">
-									<button type="button" class="btn btn-primary btn-control-group btn-sm" data-action="back" disabled="disabled"  title="사이트 상세로 이동" ><i class="fa fa-level-up"></i></button>			
-								</div>
-								-->							
-								<div class="panel-heading-controls">
-									
+								<div class="panel-heading-controls">									
 									<button class="btn btn-danger btn-labeled btn-control-group" data-action="page-create" disabled="disabled"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 									<div class="btn-group">
 										<!--<button type="button" class="btn btn-danger btn-control-group" data-action="page-create" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>-->
@@ -508,9 +498,14 @@
 									</div>
 								</div>																
 						</div>
-						<div class="table">
-							<div id="website-page-grid" class="no-border"></div>																		
-						</div>					
+						<div class="panel-body padding-sm">
+							<div class="note note-info no-margin-b">
+								<h4 class="note-title"><small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small></h4>
+								<button class="btn btn-danger btn-labeled btn-control-group" data-bind="click:addWebSite"><span class="btn-label icon fa fa-plus"></span> 웹사이트 만들기 </button>	
+							</div>	
+						</div>
+						<div id="website-page-grid" class="no-border-hr"></div>			
+						<div class="panel-footer no-padding-vr"></div>	
 					</div>
 					<div  id="page-editor-panel" class="panel panel-default" style="min-height:300px; display:none;">	
 						<div class="panel-heading">
