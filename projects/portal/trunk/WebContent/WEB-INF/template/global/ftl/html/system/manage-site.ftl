@@ -596,15 +596,16 @@
 							{ name: "cancel", text: "취소" }
 						],				     
 						change: function(e) {
+						
 						}
 					});		
 				}														 
 			}
-			$('#image-prop-grid').data("kendoGrid").dataSource.read();			
+			$('#image-prop-grid').data("kendoGrid").dataSource.read();	
 			kendo.bind($('#image-details'), imagePlaceHolder );						
 			if( 	$('#image-details').hasClass('hide') )
 				$('#image-details').removeClass('hide')	;				
-			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);				
+			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);
 		}
 			
 		
@@ -782,7 +783,7 @@
 										<div class="tab-content">								
 											<div class="tab-pane fade" id="company-tabs-props">
 												<div data-role="grid"
-													class="no-border"
+													class="no-border-hr no-border-t"
 													date-scrollable="false"
 													data-editable="true"
 													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
@@ -813,6 +814,7 @@
 											<div class="tab-pane fade" id="company-tabs-timeline">											
 											</div>																																								
 										</div>	
+										<div class="panel-footer no-padding-vr"></div>	
 									</div>
 								<!-- / .website-tabs -->			
 								<a href="#" class="header-2">웹 사이트</a>	
