@@ -464,45 +464,46 @@
 
 		</style>
 </#compress>		
-    </head>
-	<body class="color0">
-		<!-- START HEADER -->
-		<section id="navbar"></section>
-		<!-- END HEADER -->
-		<!-- START MAIN CONTNET -->
-		<div class="container-fluid">	
-			<div class="row">			
-				<div class="col-12 col-lg-12">					
-				<div class="page-header">
-					<#assign selectedMenuItem = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_2_2") />
-					<h1>${selectedMenuItem.title}     <small><i class="fa fa-quote-left"></i>&nbsp;${selectedMenuItem.description}&nbsp;<i class="fa fa-quote-right"></i></small></h1>
-				</div>			
-				</div>		
-			</div>
-			<div class="row">		
-				<div class="col-sm-12">
-					<div class="panel panel-default" style="min-height:300px;" >
-						<div class="panel-heading selected-company-info" style="padding:5px;">						
-							<div class="btn-group">
-							<#if request.isUserInRole('ROLE_SYSTEM' )>
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>				
-							</#if>				
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="site"><i class="fa fa-sitemap"></i>  웹사이트 관리</button>
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="user"><i class="fa fa-user"></i>  사용자 관리</button>
-							</div>						
-						</div>
-						<div class="panel-body" style="padding:5px;">
-							<div class="row marginless paddingless">
-								<div class="col-sm-12 body-group marginless paddingless"><div id="group-grid"></div></div>
-								<div id="group-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;"></div>
-							</div>
-						</div>
-					
-					</div>				
-				</div>			
-			</div>				
-		</div>		
+	</head>
+	<body class="theme-default main-menu-animated">
+		<div id="main-wrapper">
+			<#include "/html/common/common-system-navigation.ftl" >	
+			<div id="content-wrapper">
+				<ul class="breadcrumb breadcrumb-page">
+					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_2_2") />
+					<li><a href="#">Home</a></li>
+					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
+					<li class="active"><a href="#">${selectedMenu.title}</a></li>
+				</ul>			
+				<div class="page-header bg-dark-gray">					
+					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
+				</div><!-- / .page-header -->			
 
+				<div class="row">		
+					<div class="col-sm-12">
+						<div class="panel panel-default" style="min-height:300px;" >
+							<div class="panel-heading selected-company-info" style="padding:5px;">						
+								<div class="btn-group">
+								<#if request.isUserInRole('ROLE_SYSTEM' )>
+									<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>				
+								</#if>				
+									<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="site"><i class="fa fa-sitemap"></i>  웹사이트 관리</button>
+									<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="user"><i class="fa fa-user"></i>  사용자 관리</button>
+								</div>						
+							</div>
+							<div class="panel-body" style="padding:5px;">
+								<div class="row marginless paddingless">
+									<div class="col-sm-12 body-group marginless paddingless"><div id="group-grid"></div></div>
+									<div id="group-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;"></div>
+								</div>
+							</div>					
+						</div>				
+					</div><!-- / .col-sm-12 -->						
+				</div><!-- / .row -->								
+					
+			</div><!-- /.content-wrapper -->		
+		</div><!-- /.main-wrapper -->
+		
 		<div id="search-window" style="display:none;" class="clearfix gray">		
 			<div class="container layout">					
 				<div class="row">
