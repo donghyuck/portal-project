@@ -726,7 +726,7 @@
 								<br>
 								<div class="btn-group">
 									<button type="button" class="btn btn-success btn-flat btn-control-group pull-left" data-action="back" title="웹사이트 목록으로 이동"  data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-level-up"></i></button>    
-									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 사이트 정보변경</button>
+									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 웹 사이트 정보변경</button>
 								</div>												
 							</div>				
 							<span class="label label-warning" data-bind="text: website.name"></span> <small style="text-muted" data-bind="text:website.description"></small></span>
@@ -737,40 +737,40 @@
 								</div>								
 								<table class="table">
 									<tbody>						
-										<tr class="info">
+										<tr>
 											<th class="text-center" width="75">회사</th>								
 											<td><span data-bind="text: website.company.displayName"></span> <code><span data-bind="text: website.company.companyId"></span></code> <span class="label label-primary"><span data-bind="text: website.company.name"></span></span> </td>
 										</tr>	
-										<tr class="info">										
+										<tr>										
 											<th class="text-center">도메인</th>												
 											<td><span data-bind="text: website.company.domainName"></span></td>
 										</tr>	
-										<tr>
+										<tr class="info">
 											<th class="text-center">사이트</th>								
 											<td>
 												<span data-bind="text: website.displayName"></span> 												
 												<code><span data-bind="text: website.webSiteId">1</span></code>
 											</td>
 										</tr>				
-										<tr>
+										<tr class="info">
 											<th class="text-center">보안</th>	
 											<td>
 												<i class="fa fa-lock fa-lg" data-bind="invisible: website.allowAnonymousAccess" style="display: none;"></i>
 												<i class="fa fa-unlock fa-lg" data-bind="visible: website.allowAnonymousAccess"></i>														
 											</td>
 										</tr>							
-										<tr>
+										<tr class="info">
 											<th  class="text-center">메뉴</th>	
 											<td><span data-bind="text: website.menu.title"></span> 
 												<span class="label label-warning"><span data-bind="text: webiste.menu.name"></span></span> 
 												<code><span data-bind="text: website.menu.menuId"></span></code>
 											</td>
 										</tr>																																									
-										<tr>
+										<tr class="info">
 											<th  class="text-center">생성일</th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>	
-										<tr>
+										<tr class="info">
 											<th  class="text-center">수정일</th>								
 											<td><span data-bind="text:formattedModifiedDate"></span></td>
 										</tr>																								
