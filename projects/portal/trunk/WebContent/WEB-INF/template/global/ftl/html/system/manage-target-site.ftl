@@ -712,24 +712,7 @@
 					<div class="row">
 						<h1 class="col-xs-12 col-sm-6 text-center text-left-sm"><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}
 							<p><small><i class="fa fa-quote-left"></i> ${selectedMenu.description} <i class="fa fa-quote-right"></i></small></p>
-						</h1>				
-						<div class="col-xs-12 col-sm-6">
-							<div class="row">
-								<hr class="visible-xs no-grid-gutter-h">							
-								<div class="pull-right col-xs-12 col-sm-auto">
-									<h6 class="text-light-gray text-semibold text-xs hidded-xs" style="margin:20px 0 10px 0;">옵션</h6>
-									<div class="btn-group pull-right">
-
-										<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="update-menu" data-bind="enabled: isEnabled, click:openMenuModal"><i class="fa fa-sitemap"></i> 매뉴변경</button>
-										<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-pages" data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-file"></i> 웹 페이지 관리</button>
-																					
-										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="menu"><i class="btn-label icon fa fa-sitemap"></i> 메뉴</button>
-										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="role"><i class="btn-label icon fa fa-lock"></i> 권한 & 롤</button>
-									
-									</div>									
-								</div>
-							</div>
-						</div>		
+						</h1>
 					</div><!-- ./row -->				
 				</div><!-- / .page-header -->
 				<!-- details-row -->
