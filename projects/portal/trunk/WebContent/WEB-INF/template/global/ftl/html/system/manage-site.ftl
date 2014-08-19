@@ -249,7 +249,7 @@
 							<div class="col-sm-12">
 								<div class="panel panel-default" style="min-height:300px;" >
 									<div class="panel-heading">
-										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span><code data-bind="text: company.companyId"></code> 그룹 목록</span>
+										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span><code data-bind="text: company.companyId"></code> 웹사이트 목록</span>
 									</div>
 									<div class="panel-body">
 										<div class="note note-info">
