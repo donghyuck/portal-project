@@ -484,7 +484,7 @@
 								</div>			
 								<div class="panel-body no-padding">
 									<div class="left-col">
-										<div class="details-block no-margin-t">
+										<div class="details-block no-margin-vr">
 											<div class="details-photo">
 												<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
 											</div>								
