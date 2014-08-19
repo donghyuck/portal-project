@@ -645,6 +645,7 @@
 								</div>	
 							</div>									
 							<div id="company-grid" class="no-border"></div>	
+							<div class="panel-footer no-padding-vr"></div>
 						</div>
 						<!-- /details -->
 						<!-- list -->
