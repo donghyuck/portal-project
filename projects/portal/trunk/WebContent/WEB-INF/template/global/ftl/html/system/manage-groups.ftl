@@ -523,7 +523,7 @@
 									</div>
 								</div>
 								<div id="group-grid" class="no-border"></div>
-								<div class="panel-footer" style="padding:5px;">	
+								<div class="panel-footer" min-height="300px;">	
 									<div class="row marginless paddingless">
 										<div id="group-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;"></div>
 									</div>
