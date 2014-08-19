@@ -35,44 +35,35 @@
 
 				// 1-1.  셋업
 				var currentUser = new User();	
+				var detailsModel = kendo.observable({
+					company : new Company(),
+					isEnabled : false,
+					change : function(e){
+						if( e.field.match('^company.name')){ 						
+							var sender = e.sender ;
+							if( sender.company.companyId > 0 ){
+								var dt = new Date();
+								this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
+								this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
+								this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
+							}						
+						}	
+					}
+				});					
 				common.ui.admin.setup({	
 					menu : {toggleClass : "mmc"},
 					authenticate: function(e){
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
-					
-					
-					}
+						item.copy(detailsModel.company);
+						detailsModel.isEnabled = true;
+						kendo.bind($("#company-details"), detailsModel );				
+					},
+					switcherChanged: function( name , value ){						
+					}					
 				});								
-												
-				// 3.MENU LOAD
-				var companyPlaceHolder = new Company({ companyId: ${action.targetCompany.companyId} });
-				
-
-	
-				// 4. CONTENT MAIN		
-				common.ui.handleButtonActionEvents(
-					$("button.btn-control-group"), 
-					{event: 'click', handlers: {
-						company : function(e){
-							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
-							$("form[name='fm1']").attr("action", "main-company.do" ).submit(); 						
-						},
-						user : function(e){
-							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
-							$("form[name='fm1']").attr("action", "main-user.do" ).submit(); 						
-						}, 	
-						site : function(e){
-							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
-							$("form[name='fm1']").attr("action", "main-site.do" ).submit(); 						
-						}, 
-						top : function(e){					
-							$('html,body').animate({ scrollTop:  0 }, 300);
-						}  						 
-					}}
-				);
-						
+																			
 				// 1. GROUP GRID			        
 			        var selectedGroup = new Group();		      
 			        var group_grid = $("#group-grid").kendoGrid({
@@ -85,7 +76,7 @@
 		                            if (operation != "read" && options) {
 		                                return { companyId: companyPlaceHolder.companyId, item: kendo.stringify(options)};
 		                            }else{
-		                                return { startIndex: options.skip, pageSize: options.pageSize , companyId: companyPlaceHolder.companyId }
+		                                return { startIndex: options.skip, pageSize: options.pageSize , companyId: detailsModel.company.companyId }
 		                            }
 		                        }                  
 	                        },
