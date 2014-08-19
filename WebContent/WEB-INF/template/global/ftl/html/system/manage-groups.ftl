@@ -477,31 +477,23 @@
 				<div id="company-details" class="page-details">				
 
 					<div class="row">		
-						<div class="col-sm-12">
-						
+						<div class="col-sm-12">						
 							<div class="panel panel-default panel-dark widget-profile">
 								<div class="panel-heading">
 									<div class="widget-profile-bg-icon"><i class="fa fa-building-o"></i></div>
 									<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif" class="widget-profile-avatar">
 									<div class="widget-profile-header">
-										<span class="panel-title text-semibold" data-bind="text:company.displayName"></span><br>
-										<span data-bind="text:company.name"></span>
-										<code data-bind="text: company.companyId"></code>
+										<span class="panel-title text-semibold" data-bind="text:company.displayName"></span>
+										<h5>
+											<span data-bind="text:company.name"></span>
+											<code data-bind="text: company.companyId"></code>
+											<small>마지막 수정일 : <span data-bind="text:formattedModifiedDate"></span></small>
+										</h5>
 									</div>
 								</div>			
-								<div class="panel-body">
-									
-																			
-								</div>
-								<div class="panel-footer">	
-								</div>
 							</div>
 						</div>
-					</div>		
-
-
-
-
+					</div>	
 						<div class="row">		
 						<div class="col-sm-12">
 							<div class="panel panel-default" style="min-height:300px;" >
