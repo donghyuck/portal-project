@@ -511,8 +511,8 @@
 							<span class="panel-title"><small><i class="fa fa-info"></i> 웹 페이지는 게시 상태에서 보여집니다.</small></span>
 							<button type="button" class="close btn-control-group" data-action="page-editor-close">&times;  <small style="font-size: 15px;vertical-align: top;line-height:  1.5;">닫기</small></button>
 						</div>
-						<div  class="panel-body padding-sm form-horizontal">	
-							<div  id="webpage-editor" class="container">
+						<div  class="panel-body form-horizontal">	
+							<div  id="webpage-editor" class="padding-sm">
 								<div class="row">
 									<div class="col-lg-12">
 											<div class="pull-right">
