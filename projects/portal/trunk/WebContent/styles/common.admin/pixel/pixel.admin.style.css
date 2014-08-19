@@ -4352,6 +4352,10 @@ label,optgroup {
 	color: #555;
 }
 
+.panel-default.panel-dark .panel-heading .widget-profile .widget-profile-header span {
+	color: #666;	
+}
+
 .panel-default.panel-dark .panel-heading .panel-heading-text {
 	color: #fcfefe
 }
