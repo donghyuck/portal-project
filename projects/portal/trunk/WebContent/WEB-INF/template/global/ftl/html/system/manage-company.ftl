@@ -634,9 +634,6 @@
 						<div id="company-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
-								<div class="panel-heading-controls">								
-								<button class="btn btn-danger btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
-								</div>
 							</div>
 							<div class="panel-body">
 								<div class="note note-info">
@@ -644,7 +641,7 @@
 									<button class="btn btn-danger btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
 								</div>	
 							</div>									
-							<div id="company-grid" class="no-border"></div>	
+							<div id="company-grid" class="no-border-hr"></div>	
 							<div class="panel-footer no-padding-vr"></div>
 						</div>
 						<!-- /details -->
