@@ -806,8 +806,7 @@
 									</div>
 								</div>
 								<div class="note note-danger">
-									<h4 class="note-title">Danger note title</h4>
-									"웹 페이지 관리" 버튼을 클릭하면 웹사이트 페이지들을 생성/수정할 수 있습니다.
+									<h4 class="note-title">"웹 페이지 관리" 버튼을 클릭하면 웹사이트 페이지들을 생성/수정할 수 있습니다.</h4>									
 								</div>								
 								<div class="panel colourable">
 										<div class="panel-heading">	
