@@ -496,7 +496,7 @@
 									<div class="panel-body">
 										<div class="left-col">
 											<div class="details-block no-margin-vr">
-												<div class="details-photo">
+												<div class="details-photo no-margin no-padding">
 													<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
 												</div>								
 											</div>	
