@@ -478,6 +478,39 @@
 
 					<div class="row no-margin-hr">		
 						<div class="col-sm-12">
+
+
+
+
+
+
+
+						<div class="panel-group" id="company-summary-header">
+							<div class="panel">
+								<div class="panel-heading">
+									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#company-summary-header" href="#collapseOne">
+										Collapsible Group Item #1
+									</a>
+								</div> <!-- / .panel-heading -->
+								<div id="collapseOne" class="panel-collapse collapse">
+									<div class="panel-body">
+								
+								
+								
+									</div> <!-- / .panel-body -->
+								</div> <!-- / .collapse -->
+							</div> <!-- / .panel -->
+						</div>
+						
+
+
+
+
+
+
+
+
+												
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
 									<span class="panel-title text-semibold" data-bind="text:company.displayName"></span>				
