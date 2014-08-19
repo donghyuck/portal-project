@@ -630,6 +630,7 @@
 						<h4>
 							<small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다.</small>
 						</h4>
+						
 						<div id="company-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
@@ -637,6 +638,12 @@
 								<button class="btn btn-danger btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
 								</div>
 							</div>
+							<div class="panel-body">
+								<div class="note note-info">
+									<h4 class="note-title"><small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다.</small></h4>
+									<button class="btn btn-danger btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 회사 만들기 </button>
+								</div>	
+							</div>									
 							<div id="company-grid" class="no-border"></div>	
 						</div>
 						<!-- /details -->
