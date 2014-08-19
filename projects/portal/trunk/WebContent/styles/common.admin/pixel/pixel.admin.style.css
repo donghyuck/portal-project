@@ -4360,6 +4360,10 @@ label,optgroup {
 	color: #fcfefe
 }
 
+.panel-default.panel-dark.widget-profile .widget-profile-header span {
+	color: #fcfefe;	
+}
+
 .panel-default.panel-dark .panel-heading .panel-heading-text a {
 	color: #fcfefe;
 	text-decoration: underline
