@@ -230,7 +230,7 @@
 		}		
 	</style>			
 		<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>
-			<div class='modal-dialog modal-lg'>
+			<div class='modal-dialog' style="width:90%;">
 				<div class='modal-content'>
 					<div class='modal-header'>
 						<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
