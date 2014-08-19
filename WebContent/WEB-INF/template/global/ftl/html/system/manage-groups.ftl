@@ -481,7 +481,7 @@
 
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
-									<span class="panel-title"><span class="label label-primary" data-bind="text: company.name">meridian</span><span class="text-semibold" data-bind="text:company.displayName"></span></span>				
+									<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span><span class="text-semibold" data-bind="text:company.displayName"></span></span>				
 								</div>			
 								<div class="panel-body no-padding">
 					
@@ -493,18 +493,22 @@
 										</div>	
 									</div>
 							<div class="right-col">
-								<table class="table">
+								<table class="table small">
 									<tbody>						
 										<tr>
-											<th><small>도메인</small></th>								
+											<th>회사</th>								
+											<td><span data-bind="text:company.displayName"></span> <code data-bind="text: company.companyId"></code></td>
+										</tr>	
+										<tr>
+											<th>도메인</th>								
 											<td><span data-bind="text:company.domainName">222.122.63.146</span></td>
 										</tr>	
 										<tr>
-											<th><small>생성일</small></th>								
+											<th>생성일</th>								
 											<td><span data-bind="text:formattedCreationDate">2014.08.19</span></td>
 										</tr>	
 										<tr>
-											<th><small>수정일</small></th>								
+											<th>수정일</th>								
 											<td><span data-bind="text:formattedModifiedDate">2014.08.19</span></td>
 										</tr>														
 									</tbody>
