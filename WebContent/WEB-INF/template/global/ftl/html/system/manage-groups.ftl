@@ -37,8 +37,10 @@
 				var currentUser = new User();	
 				var detailsModel = kendo.observable({
 					company : new Company(),
-					isEnabled : false,
-					change : function(e){
+					isEnabled : false
+				});	
+				detailsModel.bind(
+					"change",  function(e){
 						if( e.field.match('^company.name')){ 						
 							var sender = e.sender ;
 							if( sender.company.companyId > 0 ){
@@ -49,7 +51,7 @@
 							}
 						}
 					}
-				});	
+				);
 				common.ui.admin.setup({	
 					authenticate: function(e){
 						e.token.copy(currentUser);
@@ -470,8 +472,6 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				
-				
 				
 				
 				<div id="company-details" class="page-details" style="">				
