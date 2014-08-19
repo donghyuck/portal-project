@@ -729,20 +729,19 @@
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 사이트 정보변경</button>
 								</div>												
 							</div>				
-							
+							<span class="label label-warning" data-bind="text: website.name"></span> <small style="text-muted" data-bind="text:website.description"></small></span>
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
-									<span class="panel-title">
-										기본정보											
+									<span class="panel-title" data-bind="text:website.description">
 									</span>
 								</div>								
 								<table class="table">
 									<tbody>						
-										<tr>
+										<tr class="info">
 											<th class="text-center" width="75">회사</th>								
-											<td><span data-bind="text: website.company.displayName"></span> <span class="label label-primary"><span data-bind="text: website.company.name"></span></span> <code><span data-bind="text: website.company.companyId"></span></code></td>
+											<td><span data-bind="text: website.company.displayName"></span> <code><span data-bind="text: website.company.companyId"></span></code> <span class="label label-primary"><span data-bind="text: website.company.name"></span></span> </td>
 										</tr>	
-										<tr>											
+										<tr class="info">										
 											<th class="text-center">도메인</th>												
 											<td><span data-bind="text: website.company.domainName"></span></td>
 										</tr>	
