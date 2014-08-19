@@ -154,7 +154,6 @@
 				}	
 			});				
 			$('#company-tabs a:first').tab('show') ;				
-			createSiteGrid();	
 		}
 		
 		function getSelectedCompany(){
@@ -608,88 +607,7 @@
 			$('html,body').animate({scrollTop: $("#image-details").offset().top - 55 }, 300);
 		}
 			
-		
-		function createSiteGrid(){			
-			
-			if( ! $("#website-grid").data("kendoGrid") ){	
-				$('#website-grid').kendoGrid({
-								dataSource: {
-									type: 'json',
-									transport: {
-										read: { url:'${request.contextPath}/secure/list-site.do?output=json', type: 'POST' },
-										parameterMap: function (options, operation){
-											if (operation != "read" && options) {										                        								                       	 	
-												return { targetCompanyId: getSelectedCompany().companyId , item: kendo.stringify(options)};									                            	
-											}else{
-												return { targetCompanyId: getSelectedCompany().companyId }
-											}
-										} 
-									},
-									pageSize: 15,
-									schema: {
-										total: "targetWebSiteCount",
-										data: "targetWebSites",
-										model : common.models.WebSite
-									},
-									error: common.api.handleKendoAjaxError
-								},
-								/* toolbar: [ { name: "create", text: "웹 사이트 추가" } ],      */
-								columns:[
-									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false},
-									{ field: "name", title: "키", width: 200, template: '<button type="button" class="btn btn-warning btn-xs" onclick="goSite(this); return false;">#: name #</a>'},									
-									{ field: "displayName", title: "이름",  width: 100 },
-									{ field: "description", title: "설명",  width: 200 },
-									{ field: "url", title: "URL",  width: 150 },
-									{ field: "enabled", title: "사용여부",  width: 100 },
-									{ field: "allowAnonymousAccess", title: "공개여부",  width: 100 },
-									{ field: "creationDate", title: "생성일", width: 120, format: "{0:yyyy/MM/dd}" },
-									{ field: "modifiedDate", title: "수정일", width: 120, format: "{0:yyyy/MM/dd}" },
-								/*	{ command: [ {name: "destroy", text: "삭제" }, {name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"}  }  ], title: "&nbsp;", width: 180  }	*/
-								], 
-								editable: "inline",
-								batch: false,
-								filterable: true,
-								sortable: true,
-								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-								selectable: 'row',
-								autoBind: false,
-								dataBound: function(e) {
-								
-								},
-								change: function(e) {          
-									var selectedCells = this.select();
-									if( selectedCells.length > 0 ){
-										var selectedCell = this.dataItem( selectedCells );	
-									}
-								}				
-				});
-			}
-			
-			$("#website-grid").data("kendoGrid").dataSource.read(); 
-		}
-		
-		function getSelectedSite(){			
-			var renderTo = $("#website-grid");
-			var grid = renderTo.data('kendoGrid');			
-			var selectedCells = grid.select();			
-			if( selectedCells.length == 0){
-				return new common.models.WebSite();
-			}else{			
-				var selectedCell = grid.dataItem( selectedCells );   
-				return selectedCell;
-			}
-		}		
-		
-		function goSite (){					
-			common.api.teleportation().teleport({
-				action : '${request.contextPath}/secure/view-site.do',
-				targetSiteId : getSelectedSite().webSiteId
-			});						
-		}
-		
-
-		
-		
+				
 		</script>
 		<style>					
 		
