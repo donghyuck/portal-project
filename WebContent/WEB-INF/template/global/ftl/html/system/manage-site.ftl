@@ -43,31 +43,8 @@
 				var detailsModel = kendo.observable({
 					company : new Company(),
 					isEnabled : false,
-					properties : new kendo.data.DataSource({
-						transport: { 
-							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
-							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
-							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
-							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
-					 		parameterMap: function (options, operation){			
-						 		if (operation !== "read" && options.models) {
-						 			return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
-								} 
-								return { companyId: getSelectedCompany().companyId }
-							}
-						},	
-						batch: true, 
-						schema: {
-							data: "targetCompanyProperty",
-							model: Property
-						},
-						error : common.api.handleKendoAjaxError
-					}),
-					toggleOptionPanel:function(e){					
-						var action = $(e.target).attr('data-action');
-						if( action === 'update-company' ){
-							openCompanyUpdateModal(); 
-						}
+					addWebSite:function(e){					
+						alert("준비중입니다...");
 					},
 					onSave : function(e){						
 						var btn = $(e.target);
