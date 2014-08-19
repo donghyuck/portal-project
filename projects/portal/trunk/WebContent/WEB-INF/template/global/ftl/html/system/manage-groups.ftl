@@ -476,10 +476,10 @@
 				
 				<div id="company-details" class="page-details">				
 
-					<div class="row no-margin-hr">		
+					<div class="row">		
 						<div class="col-sm-12">
 						
-							<div class="panel panel-info panel-dark widget-profile">
+							<div class="panel panel-default panel-dark widget-profile">
 								<div class="panel-heading">
 									<div class="widget-profile-bg-icon"><i class="fa fa-building-o"></i></div>
 									<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif" class="widget-profile-avatar">
