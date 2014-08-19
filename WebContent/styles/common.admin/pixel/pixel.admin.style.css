@@ -4362,7 +4362,7 @@ label,optgroup {
 }
 
 .panel-default.panel-dark .panel-heading .panel-heading-text a:hover {
-	color: #fff
+	color: #666
 }
 
 .panel-default.panel-dark .panel-heading-controls li.active a,.panel-default.panel-dark .panel-heading-controls li.active span
