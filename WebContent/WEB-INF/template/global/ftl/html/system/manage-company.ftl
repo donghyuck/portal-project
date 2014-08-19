@@ -614,8 +614,8 @@
 							<div class="row">
 								<hr class="visible-xs no-grid-gutter-h">							
 								<div class="pull-right col-xs-12 col-sm-auto">
-									<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">옵션</h6>
-									<div class="btn-group">
+									<h6 class="text-light-gray text-semibold text-xs hidded-xs" style="margin:20px 0 10px 0;">옵션</h6>
+									<div class="btn-group pull-right">
 										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="menu"><i class="btn-label icon fa fa-sitemap"></i> 메뉴</button>
 										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="role"><i class="btn-label icon fa fa-lock"></i> 권한 & 롤</button>
 									</div>									
