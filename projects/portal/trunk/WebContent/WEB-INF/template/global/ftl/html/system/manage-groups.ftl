@@ -478,101 +478,31 @@
 
 					<div class="row no-margin-hr">		
 						<div class="col-sm-12">
-
-
-
-
-
-
-
-						<div class="panel-group" id="company-summary-header">
-							<div class="panel">
-								<div class="panel-heading">
-									<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#company-summary-header" href="#company-summary-content">
-										<span class="panel-title text-semibold" data-bind="text:company.displayName"></span>
-									</a>
-								</div> <!-- / .panel-heading -->
-								<div id="company-summary-content" class="panel-collapse collapse">
-									<div class="panel-body">
-										<div class="left-col">
-											<div class="details-block no-margin-vr">
-												<div class="details-photo no-margin no-padding">
-													<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
-												</div>								
-											</div>	
-										</div>
-										<div class="right-col">
-											<table class="table small">
-												<tbody>						
-													<tr>
-														<th>회사</th>								
-														<td><span data-bind="text:company.name"></span> <code data-bind="text: company.companyId"></code></td>
-													</tr>	
-													<tr>
-														<th>도메인</th>								
-														<td><span data-bind="text:company.domainName"></span></td>
-													</tr>	
-													<tr>
-														<th>생성일</th>								
-														<td><span data-bind="text:formattedCreationDate"></span></td>
-													</tr>	
-													<tr>
-														<th>수정일</th>								
-														<td><span data-bind="text:formattedModifiedDate"></span></td>
-													</tr>														
-												</tbody>
-											</table>
-										</div><!-- / .right-col -->								
-									</div> <!-- / .panel-body -->
-								</div> <!-- / .collapse -->
-							</div> <!-- / .panel -->
-						</div>
 						
-
-
-
-
-
-
-
-
-												
-							<div class="panel panel-transparent">
+							<div class="panel panel-info panel-dark widget-profile">
 								<div class="panel-heading">
-									<span class="panel-title text-semibold" data-bind="text:company.displayName"></span>				
-								</div>			
-								<div class="panel-body no-padding">
-									<div class="left-col">
-										<div class="details-block no-margin-vr">
-											<div class="details-photo">
-												<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
-											</div>								
-										</div>	
+									<div class="widget-profile-bg-icon"><i class="fa fa-building-o"></i></div>
+									<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif" class="widget-profile-avatar">
+									<div class="widget-profile-header">
+										<span class="panel-title text-semibold" data-bind="text:company.displayName"></span><br>
+										<span data-bind="text:company.name"></span>
+										<code data-bind="text: company.companyId"></code>
 									</div>
-							<div class="right-col">
-								<table class="table small">
-									<tbody>						
-										<tr>
-											<th>회사</th>								
-											<td><span data-bind="text:company.name"></span> <code data-bind="text: company.companyId"></code></td>
-										</tr>	
-										<tr>
-											<th>도메인</th>								
-											<td><span data-bind="text:company.domainName">222.122.63.146</span></td>
-										</tr>	
-										<tr>
-											<th>생성일</th>								
-											<td><span data-bind="text:formattedCreationDate">2014.08.19</span></td>
-										</tr>	
-										<tr>
-											<th>수정일</th>								
-											<td><span data-bind="text:formattedModifiedDate">2014.08.19</span></td>
-										</tr>														
-									</tbody>
-								</table></div><!-- / .right-col -->												
+								</div>			
+								<div class="panel-body">
+									
+																			
+								</div>
+								<div class="panel-footer">	
+								</div>
+							</div>
 						</div>
-					</div><!-- / .details-row -->		
-					<div class="row">		
+					</div>		
+
+
+
+
+						<div class="row">		
 						<div class="col-sm-12">
 							<div class="panel panel-default" style="min-height:300px;" >
 								<div class="panel-heading">
