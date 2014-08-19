@@ -485,13 +485,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 								<div class="panel-heading-controls selected-company-info">								
-									<div class="btn-group">
-									<#if request.isUserInRole('ROLE_SYSTEM' )>
-										<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>				
-									</#if>				
-										<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="site"><i class="fa fa-sitemap"></i>  웹사이트 관리</button>
-										<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="user"><i class="fa fa-user"></i>  사용자 관리</button>
-									</div>	
+									<button class="btn btn-danger btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 그룹 만들기 </button>			
 								</div>
 							</div>
 							<div id="group-grid" class="no-border"></div>	
