@@ -474,44 +474,44 @@
 				</div><!-- / .page-header -->	
 				
 				
-				<div id="company-details" class="page-details" style="">				
-					<div class="details-row no-margin-t">					
-						<div class="left-col">
-							<div class="details-block no-margin-t">
-								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
-								</div>
-							</div>				
+				<div id="company-details" class="page-details">				
+
+					<div class="row no-margin-hr">		
+						<div class="col-sm-12">
+
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
-									<span class="panel-title" data-bind="text:company.description"></span>									
-								</div>
+									<span class="panel-title"><span class="label label-primary" data-bind="text: company.name">meridian</span><span class="text-semibold" data-bind="text:company.displayName"></span></span>				
+								</div>			
+								<div class="panel-body no-padding">
+					
+									<div class="left-col">
+										<div class="details-block no-margin-t">
+											<div class="details-photo">
+												<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif">
+											</div>								
+										</div>	
+									</div>
+							<div class="right-col">
 								<table class="table">
 									<tbody>						
 										<tr>
-											<th class="text-center">회사</th>								
-											<td><span data-bind="text: company.displayName"></span><code><span data-bind="text: company.companyId"></span></code></td>
+											<th><small>도메인</small></th>								
+											<td><span data-bind="text:company.domainName">222.122.63.146</span></td>
 										</tr>	
 										<tr>
-											<th class="text-center">도메인</th>								
-											<td><span data-bind="text: company.domainName"></span></td>
+											<th><small>생성일</small></th>								
+											<td><span data-bind="text:formattedCreationDate">2014.08.19</span></td>
 										</tr>	
 										<tr>
-											<th class="text-center">생성일</th>								
-											<td><span data-bind="text:formattedModifiedDate"></span></td>
-										</tr>	
-										<tr>
-											<th class="text-center">수정일</th>								
-											<td><span data-bind="text:formattedModifiedDate"></span></td>
-										</tr>																								
+											<th><small>수정일</small></th>								
+											<td><span data-bind="text:formattedModifiedDate">2014.08.19</span></td>
+										</tr>														
 									</tbody>
-								</table>
-							</div>
+								</table></div><!-- / .right-col -->												
 						</div>
-						<div class="right-col">
-							<hr class="details-content-hr no-grid-gutter-h"/>						
-							<div class="details-content">			
-	
+					</div><!-- / .details-row -->	
+
 	
 				<div class="row">		
 					<div class="col-sm-12">
@@ -533,11 +533,7 @@
 						</div>				
 					</div><!-- / .col-sm-12 -->						
 				</div><!-- / .row -->			
-	
-	
-							</div><!-- / .details-content -->
-						</div><!-- / .right-col -->
-										
+				
 				
 				
 				
