@@ -116,8 +116,7 @@
 						var site = new common.models.WebSite(response.targetWebSite);
 						site.copy( detailsModel.website );
 						detailsModel.isEnabled = true;						
-						kendo.bind($("#website-details"), detailsModel );
-						
+						kendo.bind($("#website-details"), detailsModel );						
 						displayWebsiteDetails();	
 					},
 					requestStart : function(){
