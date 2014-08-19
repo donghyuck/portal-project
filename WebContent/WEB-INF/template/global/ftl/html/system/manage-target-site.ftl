@@ -819,7 +819,7 @@
 									<div class="tab-content">								
 										<div class="tab-pane fade" id="website-tabs-props">
 											<div data-role="grid"
-												class="no-border"
+												class="no-border-hr no-border-t"
 												data-scrollable="false"
 												data-editable="true"
 												data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
@@ -838,7 +838,7 @@
 													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
 													<div class="col-md-8 no-padding-hr" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
 												</div>
-												<div id="image-grid" class="no-border-hr no-border-b"></div>							
+												<div id="image-grid" class="no-border-hr"></div>							
 											</div>	
 										</div>			
 										<div class="tab-pane fade" id="website-tabs-files">
@@ -848,7 +848,7 @@
 												</div>																																		
 											</div>
 											<div id="attach-details" class="no-padding-t  hide"></div>										
-											<div id="attach-grid" class="no-border-hr no-border-b"></div>												
+											<div id="attach-grid" class="no-border-hr"></div>												
 										</div>			
 										<div class="tab-pane fade" id="website-tabs-timeline">
 										</div>																																							
