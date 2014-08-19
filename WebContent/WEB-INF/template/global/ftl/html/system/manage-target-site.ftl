@@ -786,15 +786,16 @@
 								<div class="row" >
 									<div class="col-sm-12 m-b-sm">
 										<div class="pull-right">
-											<div class="btn-group">									
-												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="update-menu" data-bind="enabled: isEnabled, click:openMenuModal"><i class="fa fa-sitemap"></i> 매뉴변경</button>
-												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-pages" data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-file"></i> 웹 페이지 관리</button>
-											</div>				
+			
 										</div>
 									</div>
 								</div>
 								<div class="note note-danger">
-									<h4 class="note-title">"웹 페이지 관리" 버튼을 클릭하면 웹사이트 페이지들을 생성/수정할 수 있습니다.</h4>									
+									<h4 class="note-title">"웹 페이지 관리" 버튼을 클릭하면 웹사이트 페이지들을 생성/수정할 수 있습니다.</h4>				
+									<div class="btn-group">									
+										<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="update-menu" data-bind="enabled: isEnabled, click:openMenuModal"><i class="fa fa-sitemap"></i> 매뉴변경</button>
+										<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-pages" data-bind="enabled: isEnabled, click:teleport"><i class="fa fa-file"></i> 웹 페이지 관리</button>
+									</div>												
 								</div>								
 								<div class="panel colourable">
 										<div class="panel-heading">	
