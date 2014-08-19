@@ -487,7 +487,6 @@
 										<h5>
 											<span data-bind="text:company.name"></span>
 											<code data-bind="text: company.companyId"></code>
-											<small>마지막 수정일 : <span data-bind="text:formattedModifiedDate"></span></small>
 										</h5>
 									</div>
 								</div>			
