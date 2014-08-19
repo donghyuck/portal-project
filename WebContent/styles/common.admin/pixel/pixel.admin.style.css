@@ -4343,9 +4343,9 @@ label,optgroup {
 }
 
 .panel-default.panel-dark .panel-heading {
-	background: #fafafa;;
-	border-color: #ececec;
-	color: #555;
+	background: #f5f5f5;;
+	border-color: #ddd;
+	color: #333;
 }
 
 .panel-default.panel-dark .panel-heading .panel-title {
