@@ -511,72 +511,7 @@
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h"/>						
 							<div class="details-content">			
-								<div class="row" >
-									<div class="col-sm-12 m-b-sm">
-										<div class="pull-right">
-											<div class="btn-group">
-												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-group" data-bind="enabled: isEnabled, click:teleport"" ><i class="fa fa-users"></i> 그룹관리</button>
-												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-user" data-bind="enabled: isEnabled, click:teleport""><i class="fa fa-user"></i> 사용자 관리</button>
-											</div>														
-										</div>
-									</div>
-								</div>									
-									<!-- company-tabs -->	
-									<div class="panel colourable">
-										<div class="panel-heading">
-											<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span></span>
-											<ul id="company-tabs" class="nav nav-tabs nav-tabs-xs">
-												<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
-												<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
-												<li><a href="#company-tabs-files" data-toggle="tab">파일</a></li>
-												<li><a href="#company-tabs-timeline" data-toggle="tab">타임라인</a></li>
-											</ul>	
-										</div> <!-- / .panel-heading -->		
-										<div class="tab-content">								
-											<div class="tab-pane fade" id="company-tabs-props">
-												<div data-role="grid"
-													class="no-border"
-													date-scrollable="false"
-													data-editable="true"
-													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-													data-columns="[
-														{ 'title': '이름',  'field': 'name', 'width': 200 },
-														{ 'title': '값', 'field': 'value' },
-														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
-													]"
-													data-bind="source: properties, visible: isEnabled"
-													style="height: 300px"></div>																				
-													
-											</div>
-											<div class="tab-pane fade" id="company-tabs-images" >
-												<div class="row no-margin-hr" style="background:#f5f5f5;" >
-													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
-													<div class="col-md-8 no-padding-hr" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
-												</div>
-												<div id="image-grid" class="no-border-hr no-border-b"></div>		
-											</div>
-											<div class="tab-pane fade" id="company-tabs-files">
-												<div class="panel panel-transparent no-margin-b">
-													<div class="panel-body">
-														<input name="attach-upload" id="attach-upload" type="file" />
-													</div>												
-												</div>
-												<div id="attach-grid" class="no-border-hr no-border-b"></div>
-											</div>
-											<div class="tab-pane fade" id="company-tabs-timeline">											
-											</div>																																								
-										</div>	
-									</div>
-								<!-- / .website-tabs -->			
-								<a href="#" class="header-2">웹 사이트</a>	
-										<h4>
-											<small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small>
-										</h4>	
-								<div class="row">				
-									<div class="col-sm-12 ">			
-										<div id="website-grid" ></div>
-									</div>
-								</div>		
+	
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 										
