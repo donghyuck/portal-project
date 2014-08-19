@@ -134,10 +134,10 @@
 		
 		
 		function displayCompanyDetails (){				
-				$('#company-tabs').on( 'show.bs.tab', function (e) {		
-					var show_bs_tab = $(e.target);
-					switch( show_bs_tab.attr('href') ){
-						case "#company-tabs-props" :						
+			$('#company-tabs').on( 'show.bs.tab', function (e) {		
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.attr('href') ){
+					case "#company-tabs-props" :						
 							break;
 						case  '#company-tabs-images' :
 							createImagePane();
@@ -151,10 +151,10 @@
 						case  '#company-tabs-networks' :	
 							createSocialPane();
 							break;															
-					}	
-				});				
-				$('#company-tabs a:first').tab('show') ;				
-				createSiteGrid();	
+				}	
+			});				
+			$('#company-tabs a:first').tab('show') ;				
+			createSiteGrid();	
 		}
 		
 		function getSelectedCompany(){
