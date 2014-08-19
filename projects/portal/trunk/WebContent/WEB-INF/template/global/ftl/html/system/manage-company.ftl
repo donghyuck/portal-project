@@ -736,7 +736,7 @@
 						<div class="left-col">
 							<div class="details-block no-margin-t">
 								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="">
+									<img data-bind="attr: { src: logoUrl }" alt="" src="${request.contextPath}/images/common/loader/loading-transparent-bg.gif">
 								</div>
 								<br>
 								<!--
@@ -796,6 +796,7 @@
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
 			</div>
+			<div class="panel-footer no-padding-vr"></div>
 		</div>			
 		</script>				
 		<#include "/html/common/common-system-templates.ftl" >			
