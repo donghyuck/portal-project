@@ -488,13 +488,13 @@
 					<div class="col-lg-12">
 						<div  id="page-list-panel" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title"><button type="button" class="btn-link btn-control-group" data-action="back"><i class="fa fa fa-level-up fa-lg"></i></button><small class="text-danger">( 웹 페이지는 게시 상태에서 보여집니다.)</small></span>
-								<div class="panel-heading-controls">									
-									
-									
+								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
+								<div class="panel-heading-controls">
+									<button type="button" class="btn btn-success btn-control-group" data-action="back"><i class="fa fa fa-level-up fa-lg"></i></button>
+									<div class="btn-group">
 										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-publish" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-external-link"></i> 게시</button>
 										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-delete" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"' ><i class="fa fa-trash-o"></i> 삭제</button>
-									
+									</div>
 								</div>																
 						</div>
 						<div class="panel-body padding-sm">
