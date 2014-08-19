@@ -492,9 +492,11 @@
 									<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="user"><i class="fa fa-user"></i>  사용자 관리</button>
 								</div>	
 							</div>
+							<div id="group-grid" class="no-border"></div>	
+							
 							<div class="panel-body" style="padding:5px;">
+
 								<div class="row marginless paddingless">
-									<div class="col-sm-12 body-group marginless paddingless"><div id="group-grid"></div></div>
 									<div id="group-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;"></div>
 								</div>
 							</div>					
