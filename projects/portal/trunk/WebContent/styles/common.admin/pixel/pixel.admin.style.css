@@ -4357,15 +4357,15 @@ label,optgroup {
 }
 
 .panel-default.panel-dark .panel-heading .panel-heading-text {
-	color: #fcfefe
+	color: #666
 }
 
 .panel-default.panel-dark.widget-profile .widget-profile-header span {
-	color: #fcfefe;	
+	color: #666;	
 }
 
 .panel-default.panel-dark .panel-heading .panel-heading-text a {
-	color: #fcfefe;
+	color: #666;
 	text-decoration: underline
 }
 
@@ -4375,7 +4375,7 @@ label,optgroup {
 
 .panel-default.panel-dark .panel-heading-controls li.active a,.panel-default.panel-dark .panel-heading-controls li.active span
 	{
-	color: #5bc0de !important
+	color: #666 !important
 }
 
 .panel-default.panel-dark.panel-body-colorful .list-group-item,.panel-default.panel-dark.panel-body-colorful .panel-heading,.panel-default.panel-dark.panel-body-colorful table,.panel-default.panel-dark.panel-body-colorful table td,.panel-default.panel-dark.panel-body-colorful table th,.panel-default.panel-dark.panel-body-colorful table tr
