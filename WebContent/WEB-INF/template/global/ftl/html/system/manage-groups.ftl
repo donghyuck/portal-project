@@ -470,7 +470,7 @@
 			<div class="row">			
 				<div class="col-12 col-lg-12">					
 				<div class="page-header">
-					<#assign selectedMenuItem = action.getWebSiteMenu("SYSTEM_MENU", "MENU_2_2") />
+					<#assign selectedMenuItem = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_2_2") />
 					<h1>${selectedMenuItem.title}     <small><i class="fa fa-quote-left"></i>&nbsp;${selectedMenuItem.description}&nbsp;<i class="fa fa-quote-right"></i></small></h1>
 				</div>			
 				</div>		
