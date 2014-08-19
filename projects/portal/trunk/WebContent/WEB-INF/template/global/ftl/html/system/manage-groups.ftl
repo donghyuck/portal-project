@@ -37,7 +37,10 @@
 				var currentUser = new User();	
 				var detailsModel = kendo.observable({
 					company : new Company(),
-					isEnabled : false
+					isEnabled : false,
+					addGroup : function(e){
+						$("#group-grid").data('kendoGrid').addRow();		
+					}
 				});	
 				detailsModel.bind(
 					"change",  function(e){
@@ -104,8 +107,7 @@
 	                    editable: "inline",
 	                    selectable: 'row',
 	                    height: '100%',
-	                    batch: false,
-	                    toolbar: [ { name: "create", text: "그룹추가" } ],                    
+	                    batch: false,            
 	                    pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },                    
 	                    change: function(e) {	                       
 	                        var selectedCells = this.select();	                       
