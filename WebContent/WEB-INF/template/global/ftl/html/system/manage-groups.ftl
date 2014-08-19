@@ -472,31 +472,12 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				
-				
 				<div id="company-details" class="page-details">
-					<div class="row">		
-						<div class="col-sm-12">						
-							<div class="panel panel-default panel-dark widget-profile">
-								<div class="panel-heading">
-									<div class="widget-profile-bg-icon"><i class="fa fa-building-o"></i></div>
-									<img data-bind="attr: { src: logoUrl }" alt="" src="/images/common/loader/loading-transparent-bg.gif" class="widget-profile-avatar">
-									<div class="widget-profile-header">
-										<span class="panel-title text-semibold" data-bind="text:company.displayName"></span>
-										<h5>
-											<span data-bind="text:company.name"></span>
-											<code data-bind="text: company.companyId"></code>
-										</h5>
-									</div>
-								</div>			
-							</div>
-						</div>
-					</div>	
 					<div class="row">		
 							<div class="col-sm-12">
 								<div class="panel panel-default" style="min-height:300px;" >
 									<div class="panel-heading">
-										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span> 그룹 목록</span>
+										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span><code data-bind="text: company.companyId"></code> 그룹 목록</span>
 									</div>
 									<div class="panel-body">
 										<div class="note note-info">
