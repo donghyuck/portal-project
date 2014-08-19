@@ -501,8 +501,10 @@
 					</div><!-- / .col-sm-12 -->						
 				</div><!-- / .row -->								
 					
-			</div><!-- /.content-wrapper -->		
-		</div><!-- /.main-wrapper -->
+			</div> <!-- / #content-wrapper -->
+			<div id="main-menu-bg">
+			</div>
+		</div> <!-- / #main-wrapper -->
 		
 		<div id="search-window" style="display:none;" class="clearfix gray">		
 			<div class="container layout">					
@@ -531,12 +533,12 @@
 					</div>
 				</div>				
 			</div>
-		</div>			
+		</div>		
+			
 		<form name="fm1" method="POST" accept-charset="utf-8" class="details">
 			<input type="hidden" name="companyId" value="0" />
 		</form>		
-		<!-- END MAIN CONTNET -->
-		<div id="account-panel"></div>			
+
 		<script type="text/x-kendo-template" id="group-details-template">					
 			<div class="panel panel-primary marginless details" >
 				<div class="panel-heading" >
