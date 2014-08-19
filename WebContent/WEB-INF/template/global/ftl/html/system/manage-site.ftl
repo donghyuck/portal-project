@@ -758,17 +758,7 @@
 						</div>
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h"/>						
-							<div class="details-content">			
-								<div class="row" >
-									<div class="col-sm-12 m-b-sm">
-										<div class="pull-right">
-											<div class="btn-group">
-												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-group" data-bind="enabled: isEnabled, click:teleport"" ><i class="fa fa-users"></i> 그룹관리</button>
-												<button type="button" class="btn btn-info btn-flat btn-control-group" data-action="go-user" data-bind="enabled: isEnabled, click:teleport""><i class="fa fa-user"></i> 사용자 관리</button>
-											</div>														
-										</div>
-									</div>
-								</div>									
+							<div class="details-content">											
 									<!-- company-tabs -->	
 									<div class="panel colourable">
 										<div class="panel-heading">
