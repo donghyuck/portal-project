@@ -490,18 +490,17 @@
 							<div class="panel-heading">
 								<span class="panel-title"><button type="button" class="btn-link btn-control-group" data-action="back"><i class="fa fa fa-level-up fa-lg"></i></button><small class="text-danger">( 웹 페이지는 게시 상태에서 보여집니다.)</small></span>
 								<div class="panel-heading-controls">									
-									<button class="btn btn-danger btn-labeled btn-control-group" data-action="page-create" disabled="disabled"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
-									<div class="btn-group">
-										<!--<button type="button" class="btn btn-danger btn-control-group" data-action="page-create" disabled="disabled"><i class="fa fa-file"></i> 새 페이지</button>-->
+									
+									
 										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-publish" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-external-link"></i> 게시</button>
 										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-delete" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"' ><i class="fa fa-trash-o"></i> 삭제</button>
-									</div>
+									
 								</div>																
 						</div>
 						<div class="panel-body padding-sm">
 							<div class="note note-info no-margin-b">
-								<h4 class="note-title"><small><i class="fa fa-info"></i> 키 컬럼의 버튼을 클릭하면 해당하는 사이트를 관리할 수 있습니다.</small></h4>
-								<button class="btn btn-danger btn-labeled btn-control-group" data-bind="click:addWebSite"><span class="btn-label icon fa fa-plus"></span> 웹사이트 만들기 </button>	
+								<h4 class="note-title"><small><i class="fa fa-info"></i> 페이지는 게시 상태에서 보여집니다.</small></h4>
+								<button class="btn btn-danger btn-labeled btn-control-group" data-action="page-create" disabled="disabled"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 							</div>	
 						</div>
 						<div id="website-page-grid" class="no-border-hr"></div>			
