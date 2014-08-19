@@ -32,17 +32,18 @@
 			],        	   
             complete: function() { 
 
-				// 1.  한글 지원을 위한 로케일 설정
-				kendo.culture("ko-KR");
-										
-				// 2. ACCOUNTS LOAD		
-				var currentUser = new User();
-				var accounts = $("#account-panel").kendoAccounts({
-					visible : false,
-					authenticate : function( e ){
-						currentUser = e.token.copy(currentUser);							
+				// 1-1.  셋업
+				var currentUser = new User();	
+				common.ui.admin.setup({	
+					menu : {toggleClass : "mmc"},
+					authenticate: function(e){
+						e.token.copy(currentUser);
+					},
+					companyChanged: function(item){
+					
+					
 					}
-				});		
+				});								
 												
 				// 3.MENU LOAD
 				var companyPlaceHolder = new Company({ companyId: ${action.targetCompany.companyId} });
