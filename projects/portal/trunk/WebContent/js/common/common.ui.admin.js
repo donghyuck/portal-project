@@ -167,11 +167,13 @@
 				return false;
 			});
 			that._initFeatures();
-			that._initWorklist();
+		
 			that._createCompanySelector();			
 			that._createSwitcher();
 			that._doAuthenticate();
-			that._pixelAdmin.start([]);				
+			that._pixelAdmin.start([]);	
+			that._initWorklist();
+			
 		}
 	});	
 	
