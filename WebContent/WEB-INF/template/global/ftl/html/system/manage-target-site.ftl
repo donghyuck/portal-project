@@ -783,13 +783,6 @@
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h"/>						
 							<div class="details-content">							
-								<div class="row" >
-									<div class="col-sm-12 m-b-sm">
-										<div class="pull-right">
-			
-										</div>
-									</div>
-								</div>
 								<div class="note note-danger">
 									<h4 class="note-title">"웹 페이지 관리" 버튼을 클릭하면 웹사이트 페이지들을 생성/수정할 수 있습니다.</h4>				
 									<div class="btn-group">									
