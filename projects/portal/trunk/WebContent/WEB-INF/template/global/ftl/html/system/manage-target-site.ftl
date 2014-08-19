@@ -852,8 +852,9 @@
 										</div>			
 										<div class="tab-pane fade" id="website-tabs-timeline">
 										</div>																																							
-							</div>
-						</div>				
+							</div><!-- /.tab-content -->
+							<div class="panel-footer no-padding-vr"></div>
+						</div><!-- /.panel -->				
 					</div>							
 				</div>
 			</div> <!-- / #content-wrapper -->
