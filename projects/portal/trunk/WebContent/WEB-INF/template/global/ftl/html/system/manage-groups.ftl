@@ -3,6 +3,7 @@
     <head>
         <title>그룹 관리</title>
 <#compress>        
+		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />	
         <script type="text/javascript">
         <!--
         yepnope([{
