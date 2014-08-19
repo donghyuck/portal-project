@@ -71,7 +71,7 @@
 
 	</style>				
 	<div class='modal editor-popup  fade' tabindex='-1' role='dialog' aria-labelledby=#:title_guid# aria-hidden='true'>
-		<div class='modal-dialog' style="width:90%;">
+		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class='modal-header'>
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
@@ -93,7 +93,7 @@
 							<!-- Tab panes -->
 							<div class="tab-content">
 								<div class="tab-pane fade  active" id=#:upload_guid#>
-									<div class="page-header padding-left-10 text-primary">
+									<div class="text-primary">
 										<h5 ><i class="fa fa-upload"></i> <strong>업로드</strong>&nbsp;<small> 삽입할 이미지를 선택하세요.</small></h5>
 										<div class="panel panel-default">			
 											<div class="panel-body">
