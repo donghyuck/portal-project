@@ -729,7 +729,6 @@
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 웹 사이트 정보변경</button>
 								</div>												
 							</div>				
-							<span class="label label-warning" data-bind="text: website.name"></span> <small style="text-muted" data-bind="text:website.description"></small></span>
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
 									<span class="panel-title" data-bind="text:website.description">
@@ -749,7 +748,7 @@
 											<th class="text-center">사이트</th>								
 											<td>
 												<span data-bind="text: website.displayName"></span> 												
-												<code><span data-bind="text: website.webSiteId">1</span></code>
+												<code><span data-bind="text: website.webSiteId">1</span></code> <span class="label label-warning" data-bind="text: website.name"></span>
 											</td>
 										</tr>				
 										<tr class="info">
