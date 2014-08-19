@@ -490,10 +490,9 @@
 	    
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
-									<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span><span class="text-semibold" data-bind="text:company.displayName"></span></span>				
+									<span class="panel-title text-semibold" data-bind="text:company.displayName"></span>				
 								</div>			
 								<div class="panel-body no-padding">
-					
 									<div class="left-col">
 										<div class="details-block no-margin-t">
 											<div class="details-photo">
@@ -506,7 +505,7 @@
 									<tbody>						
 										<tr>
 											<th>회사</th>								
-											<td><span data-bind="text:company.displayName"></span> <code data-bind="text: company.companyId"></code></td>
+											<td><span data-bind="text:company.name"></span> <code data-bind="text: company.companyId"></code></td>
 										</tr>	
 										<tr>
 											<th>도메인</th>								
