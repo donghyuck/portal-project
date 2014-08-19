@@ -502,7 +502,7 @@
 								<div class="panel-body">
 									<button class="btn btn-danger btn-labeled btn-control-group" data-action="create-company"><span class="btn-label icon fa fa-plus"></span> 그룹 만들기 </button>		
 								</div>
-								<div id="group-grid" class="no-border"></div>
+								<div id="group-grid" class="no-border-hr"></div>
 								<div class="panel-footer" min-height="300px;">	
 									<div class="row marginless paddingless">
 										<div id="group-details" class="col-sm-12 body-group marginless paddingless" style="display:none; padding-top:5px;"></div>
