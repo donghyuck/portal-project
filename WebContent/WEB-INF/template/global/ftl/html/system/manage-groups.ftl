@@ -46,10 +46,10 @@
 								this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
 								this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
 								this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
-							}						
-						}	
+							}
+						}
 					}
-				});					
+				});	
 				common.ui.admin.setup({	
 					authenticate: function(e){
 						e.token.copy(currentUser);
@@ -58,13 +58,13 @@
 						item.copy(detailsModel.company);
 						detailsModel.isEnabled = true;
 						kendo.bind($("#company-details"), detailsModel );				
-						//$("#group-grid").data("kendoGrid").refresh();
-						alert("dd");
+						$("#group-grid").data("kendoGrid").dataSource.read();
 					},
 					switcherChanged: function( name , value ){						
 					}					
 				});								
 																			
+				
 				// 1. GROUP GRID			        
 			        var selectedGroup = new Group();		      
 			        var group_grid = $("#group-grid").kendoGrid({
