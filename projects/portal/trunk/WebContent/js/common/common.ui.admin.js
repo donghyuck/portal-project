@@ -21,10 +21,21 @@
 	common.ui.admin.Setup = kendo.Class.extend({		
 		init : function (options){			
 			var that = this;
-			options = options || {};				
-			that.options = options;
+			options = options || {};
+			options = that.options = extend(true, {}, that.options, options);
 			that._pixelAdmin = window.PixelAdmin;			
 			that.refresh();
+		},		
+		options : {			
+			features : {
+				culture : true,
+				landing : true,
+				backstretch : false,
+				lightbox: false,
+				spmenu: false,
+				morphing: false
+			},
+			worklist: []
 		},		
 		_doAuthenticate : function(){		
 			var that = this;
@@ -80,6 +91,69 @@
 				});
 			} );
 		},
+		_initWorklist: function(){
+			var that = this;
+			var worklist = that.options.worklist;			
+			if (worklist == null) {
+				worklist = [];
+			}			
+			var initilizer, _i, _len, _ref;
+			 _ref = worklist;			 
+			 for (_i = 0, _len = worklist.length; _i < _len; _i++) {
+				 initilizer = _ref[_i];
+				 $.proxy(initilizer, that)();
+			}				
+		},
+		_initFeatures: function(){
+			var that = this;
+			var features = that.options.features;
+			var worklist = that.options.worklist;
+			
+			if( features.culture ){
+				common.api.culture();				
+			}
+			
+			if(features.backstretch){
+				common.ui.backstretch();
+			}
+			
+			if( features.morphing ){
+				$.each( $(".morph-button"), function( index,  item){
+					var $this = $(item);
+					var btn = new codrops.ui.MorphingButton($this);					
+				});
+			}
+			
+			if(features.landing){				
+				common.ui.landing();
+			}
+			
+			if(features.spmenu){				
+				$(document).on("click","[data-toggle='spmenu']", function(e){
+					var $this = $(this);					
+					var target ;
+					if( $this.prop("tagName").toLowerCase() == "a" ){			
+						target  = $this.attr("href");	
+					}else{
+						if($this.data("target")){
+							target = $this.data("target")
+						}
+					}
+					$("body").toggleClass("modal-open");
+					$(target).toggleClass("cbp-spmenu-open");
+				});
+				$(document).on("click","[data-dismiss='spmenu']", function(e){
+					var $this = $(this);
+					var target  = $this.parent();		
+					$("body").toggleClass("modal-open");
+					target.toggleClass("cbp-spmenu-open");
+				});
+			}
+			
+			if(features.lightbox){				
+				common.ui.lightbox();	
+			}	
+		},		
 		refresh: function(){			
 			var that = this;
 			$('.menu-content-profile .close').click(function () {
