@@ -59,6 +59,7 @@
 						item.copy(detailsModel.company);
 						detailsModel.isEnabled = true;
 						kendo.bind($("#company-details"), detailsModel );				
+						$("#group-grid").data("kendoGrid").refresh();
 					},
 					switcherChanged: function( name , value ){						
 					}					
@@ -74,7 +75,7 @@
 	                            update: { url:'${request.contextPath}/secure/update-group.do?output=json', type:'POST' },
 		                        parameterMap: function (options, operation){	          
 		                            if (operation != "read" && options) {
-		                                return { companyId: companyPlaceHolder.companyId, item: kendo.stringify(options)};
+		                                return { companyId: detailsModel.company.companyId, item: kendo.stringify(options)};
 		                            }else{
 		                                return { startIndex: options.skip, pageSize: options.pageSize , companyId: detailsModel.company.companyId }
 		                            }
