@@ -693,26 +693,25 @@
 											</ul>	
 										</div> <!-- / .panel-heading -->		
 										<div class="tab-content">		
-											<div class="note note-default no-margin-b no-border-vr">
-														<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하여 프로퍼티 값을 설정하세요.
-													<table class="table table-striped">
-												<thead>
-													<tr>
-														<th>#</th>
-														<th>이름(키)</th>
-														<th>설명</th>														
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>1</td>
-														<td>##</td>
-														<td><code>true</code> ##</td>														
-													</tr>											
-												</tbody>
-											</table></div>					
-																											
 											<div class="tab-pane fade" id="company-tabs-props">
+												<div class="note note-default no-margin-b no-border-vr">
+															<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하여 프로퍼티 값을 설정하세요.
+														<table class="table table-striped">
+													<thead>
+														<tr>
+															<th>#</th>
+															<th>이름(키)</th>
+															<th>설명</th>														
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>##</td>
+															<td><code>true</code> ##</td>														
+														</tr>											
+													</tbody>
+												</table></div>	
 												<div data-role="grid"
 													class="no-border-hr"
 													date-scrollable="false"
