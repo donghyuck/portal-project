@@ -48,17 +48,7 @@
 				// 3.MENU LOAD
 				var companyPlaceHolder = new Company({ companyId: ${action.targetCompany.companyId} });
 				
-				var topBar = $("#navbar").extNavbar({
-					template : $("#top-navbar-template").html(),
-					items : [{ 
-						name:"companySelector", 
-						selector: "#companyDropDownList", 
-						value: ${action.user.companyId}, 
-						change : function(data){
-							data.copy(companyPlaceHolder);
-						}	
-					}]
-				});
+
 	
 				// 4. CONTENT MAIN		
 				common.ui.handleButtonActionEvents(
