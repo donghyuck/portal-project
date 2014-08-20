@@ -1,117 +1,39 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="banded">
 <head>
+<#compress>
 <title>메인 페이지</title>
 <script type="text/javascript">
 <!--
 yepnope([{
     load: [        
-             'css!${request.contextPath}/styles/kendo/kendo.dataviz.min.css',
-             '${request.contextPath}/js/kendo/kendo.web.min.js',
-             '${request.contextPath}/js/kendo/kendo.dataviz.min.js' ],             
+			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
+			'css!${request.contextPath}/styles/common.plugins/animate.css',
+			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
+			'${request.contextPath}/js/jquery.plugins/jquery.ui.shake.min.js',
+			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
+			'${request.contextPath}/js/kendo/kendo.web.min.js',
+			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
+			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
+
+			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
+			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 
+				
+			'${request.contextPath}/js/common/common.models.js',
+			'${request.contextPath}/js/common/common.api.js',
+			'${request.contextPath}/js/common/common.ui.js'
+			
+			],             
 		complete : function() {
-			// grid 생성
-			$("#grid")
-					.kendoGrid(
-							{
-								dataSource : {
-									type : "odata",
-									transport : {
-										read : "http://demos.kendoui.com/service/Northwind.svc/Orders"
-									},
-									schema : {
-										model : {
-											fields : {
-												OrderID : {
-													type : "number"
-												},
-												Freight : {
-													type : "number"
-												},
-												ShipName : {
-													type : "string"
-												},
-												OrderDate : {
-													type : "date"
-												},
-												ShipCity : {
-													type : "string"
-												}
-											}
-										}
-									},
-									pageSize : 10,
-									serverPaging : true,
-									serverFiltering : true,
-									serverSorting : true
-								},
-								height : 250,
-								filterable : true,
-								sortable : true,
-								pageable : true,
-								selectable: "row",
-								columns : [ {
-									field : "OrderID",
-									filterable : false
-								}, "Freight", {
-									field : "OrderDate",
-									title : "Order Date",
-									width : 100,
-									format : "{0:MM/dd/yyyy}"
-								}, {
-									field : "ShipName",
-									title : "Ship Name",
-									width : 200
-								}, {
-									field : "ShipCity",
-									title : "Ship City"
-								} ]
-							});
-
-			// 차트 생성
-			setTimeout(function() {
-				// Initialize the chart with a delay to make sure
-				// the initial animation is visible
-
-				$("#chart").kendoChart({
-
-					title : {
-						text : "인터넷 사용자"
-					},
-					legend : {
-						position : "bottom"
-					},
-					seriesDefaults : {
-						type : "area",
-						stack : true
-					},
-					series : [ {
-						name : "한국",
-						data : [ 67.96, 68.93, 75, 74, 78 ]
-					}, {
-						name : "전세계",
-						data : [ 15.7, 16.7, 20, 23.5, 26.6 ]
-					} ],
-					valueAxis : {
-						labels : {
-							format : "{0}%"
-						}
-					},
-					categoryAxis : {
-						categories : [ 2005, 2006, 2007, 2008, 2009 ]
-					},
-					tooltip : {
-						visible : true,
-						format : "{0}%"
-					}
-				});
-
-			}, 500);
 
 		}
 	} ]);
 	-->
 </script>
+</#compress>
 </head>
 <body>
 	<div class="row">
