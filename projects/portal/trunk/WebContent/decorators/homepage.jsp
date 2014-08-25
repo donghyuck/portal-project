@@ -27,11 +27,10 @@
 <script src="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/yepnope/1.5.4/yepnope.min.js"></script>
 <decorator:head />
 <style>
-dd
 	.header {
-		border-bottom: 0px;
-	}	
-				
+		box-shadow : none;
+		-webkit-transform : none;
+	}					
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="" />">
