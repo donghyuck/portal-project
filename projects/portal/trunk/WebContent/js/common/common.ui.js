@@ -99,13 +99,15 @@
 		element.bxSlider(options);		
 	}
 	
-	
-	common.ui.backstretch = function (){				
+	common.ui.backstretch = function (options){				
 		if(!defined($.backstretch)) {
 			return false;
 		}		
-		var dataSource = common.api.streams.dataSource;
-		var template = kendo.template("/community/view-streams-photo.do?key=#= externalId#");
+		options = options || {} ;
+		
+		var dataSource = dataSource = common.api.streams.dataSource;
+		var template = options.template || kendo.template("/community/view-streams-photo.do?key=#= externalId#")  ;
+				
 		dataSource.fetch(function(){
 			var photos = this.data();
 			var urls = [];
@@ -118,7 +120,6 @@
 			);
 		});
 	}
-	
 	
 	common.ui.thumbnailexpanding =  function(){
 		var previewHeight = 500,
