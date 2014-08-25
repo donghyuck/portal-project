@@ -276,6 +276,7 @@
 					});	
 				}
 			}
+			alert( kendo.stringify(config.items) );
 			$.magnificPopup.open(config);
 		} );	
 	}
