@@ -12,5 +12,9 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
        
-       
+	<bean name="/PhotoStreamsManager" class="org.springframework.remoting.caucho.HessianServiceExporter" >
+		<property name="service" ref="photoStreamsManager" />
+		<property name="serviceInterface" value="architecture.ee.web.community.streams.PhotoStreamsManager" />
+	</bean>
+	
 </beans>
