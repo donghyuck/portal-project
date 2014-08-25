@@ -56,7 +56,7 @@
 			verticalFit: 	true
 		},
 		gallery: {
-			enabled: false,
+			enabled: true,
 			navigateByImgClick: true
 		}	
 	},
