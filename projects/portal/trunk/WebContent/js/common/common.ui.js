@@ -268,7 +268,7 @@
 				}				
 			}else{
 				if( $this.children("img").length > 0  ){
-					var data = [];
+					config.items = [];
 					$.each( $this.children("img"), function( index,  item){
 						config.items.push({
 							src : $(item).attr("src")
