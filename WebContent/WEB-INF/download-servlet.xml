@@ -12,11 +12,13 @@
 -->
 
 	<bean id="download-controller1" class="architecture.ee.web.spring.controller.DownloadController"  p:imageManager-ref="imageManager"  p:attachmentManager-ref="attachmentManager" />
+	
 	<bean id="download-controller2" class="architecture.ee.web.community.spring.controller.DownloadController"  
 			p:profileManager-ref="profileManager"  
 			p:companyManager-ref="companyManager"  
 			p:webSiteManager-ref="webSiteManager"  
 			p:logoManager-ref="logoManager" />	
+			
 	<bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="order" value="0" />
 			<property name="mappings">

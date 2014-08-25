@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<html decorator="banded">
+<html decorator="homepage">
 <head>
 <#compress>
 <title>메인 페이지</title>
