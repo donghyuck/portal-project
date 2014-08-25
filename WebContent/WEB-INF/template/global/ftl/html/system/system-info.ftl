@@ -413,9 +413,25 @@
 													</table>		
 								</div>
 								<div class="tab-pane" id="setup-info">
-									<div class="panel-body no-padding">
-										<div id="setup-props-grid" class="no-border" ></div>
-									</div>		
+									<div class="note note-default no-margin-b no-border-vr">
+										<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하세요.
+										<table class="table table-striped">
+											<thead>
+														<tr>
+															<th>#</th>
+															<th>이름(키)</th>
+															<th>설명</th>														
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>1</td>
+															<td>##</td>
+															<td><code>true</code> ##</td>														
+														</tr>											
+													</tbody>
+									</table></div>								
+									<div id="setup-props-grid" class="no-border" ></div>		
 								</div>
 								<div class="tab-pane" id="system-info">
 									<table class="table table-hover system-details">
