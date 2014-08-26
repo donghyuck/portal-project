@@ -75,6 +75,7 @@
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />"  data-color="<decorator:getProperty property="body.data-color" />" class="<decorator:getProperty property="body.class" default="" />">
+
 	<div class="page-loader" ></div>
 	<decorator:body />
 </body>
