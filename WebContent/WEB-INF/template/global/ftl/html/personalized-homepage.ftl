@@ -766,7 +766,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<div class="container-fluid" style="min-height:300px;">		
+			<div id="main-content" class="container-fluid" style="min-height:300px;">		
 				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
 					<ul class="nav navbar-nav pull-right">
 						<li>
