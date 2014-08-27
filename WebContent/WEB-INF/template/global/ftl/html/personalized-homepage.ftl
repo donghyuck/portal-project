@@ -5,6 +5,8 @@
 		<#compress>		
 		<script type="text/javascript">
 		<!--
+		var jobs = [];	
+				
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
@@ -45,7 +47,8 @@
 						backstretch : true,
 						lightbox : true,
 						spmenu : true
-					}
+					},
+					worklist:jobs
 				});				
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
@@ -56,8 +59,13 @@
 					</#if>
 					authenticate : function( e ){
 						e.token.copy(currentUser);
+
 					},				
 					shown : function(e){
+						if( !currentUser.anonymous ){
+							common.ui.buttonEnabled( $('button[data-toggle="spmenu"]')	);
+							common.ui.buttonEnabled( $('button[data-action="show-gallery-section"]') );
+						}					
 					}
 				});	
 				
@@ -199,8 +207,9 @@
 					}
 					popover.show();					
 				},
-				open: function(e){				
-					var grid = e.target.element.find(".panel-body .notice-grid");
+				open: function(e){		
+					e.target.element.children(".panel-body").addClass("no-padding");
+					var grid = e.target.element.find(".notice-grid");					
 					if( grid.length > 0 && !grid.data('kendoGrid') ){
 						grid.kendoGrid({
 							dataSource : new kendo.data.DataSource({
@@ -767,17 +776,16 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div id="main-content" class="container-fluid" style="min-height:300px;">		
-				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
+				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">
 					<ul class="nav navbar-nav pull-right">
-						<li>
-							<div class="btn-group navbar-btn"> 
-								<button type="button" class="btn-u btn-u-dark-blue" data-toggle="button" data-action="show-notice-panel">공지 & 이벤트 </button>
-								<button type="button" class="btn-u btn-u-dark-blue" data-toggle="button" data-action="show-gallery-section" >My 이미지 갤러리 </button>
-							</div>
-							&nbsp;
+						<li class="padding-xs-hr no-padding-r">
+							<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-panel">공지 & 이벤트 </button>
 						</li>
-						<li>
-							<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+						<li class="padding-xs-hr no-padding-r">
+						<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-gallery-section" disabled>My 이미지 갤러리 </button>
+						</li>
+						<li class="padding-xs-hr no-padding-r">
+							<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 						</li>							
 						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 						<li class="hidden-xs">
@@ -973,7 +981,7 @@
 	<script type="text/x-kendo-template" id="notice-options-template">	
 	<div class="popover bottom">
 		<div class="arrow"></div>
-		<h3 class="popover-title">소스 설정			
+		<h3 class="popover-title">이벤트 소스 설정			
 			<button type="button" class="close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
 		</h3>
 		<div class="popover-content">
@@ -991,8 +999,8 @@
 	</script>
 	
 	<script type="text/x-kendo-template" id="notice-viewer-template">	
-	<div class="panel panel-default no-border no-margin-b" data-bind="visible: visible">
-		<div class="panel-heading rounded-top" style="background-color: \\#fff; ">
+	<div class="panel panel-default no-border no-margin-b padding-sm" data-bind="visible: visible">
+		<div class="panel-heading" style="background-color: \\#fff; ">
 			<h4 class="panel-title" data-bind="html:announce.subject"></h4>
 		</div>
 		<div class="panel-body padding-sm">
@@ -1016,7 +1024,7 @@
 			<div data-bind="html: announce.body " />		
 		</div>
 	</div>
-	<div class="notice-grid" style="min-height: 300px"></div>
+	<div class="notice-grid no-border-hr no-border-b" style="min-height: 300px"></div>
 	</script>		
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
