@@ -215,6 +215,32 @@
 	    		target.set("properties", this.get("properties") );
 	    }
 	});		
+	
+	common.models.CacheStats =  kendo.data.Model.define({
+		id : "cacheName",
+		fields: { 
+			cacheName : { type: "string", editable: true},
+			statisticsAccuracy : { type: "number", editable: false, defaultValue: 0 },
+			cacheHits : { type: "number", editable: false, defaultValue: 0 },
+			onDiskHits : { type: "number", editable: false, defaultValue: 0 },
+			offHeapHits : { type: "number", editable: false, defaultValue: 0 },
+			inMemoryHits : { type: "number", editable: false, defaultValue: 0 },
+			misses : { type: "number", editable: false, defaultValue: 0 },
+			onDiskMisses : { type: "number", editable: false, defaultValue: 0 },
+			offHeapMisses : { type: "number", editable: false, defaultValue: 0 },
+			inMemoryMisses : { type: "number", editable: false, defaultValue: 0 },
+			size : { type: "number", editable: false, defaultValue: 0 },
+			memoryStoreSize : { type: "number", editable: false, defaultValue: 0 },
+			offHeapStoreSize : { type: "number", editable: false, defaultValue: 0 },
+			diskStoreSize : { type: "number", editable: false, defaultValue: 0 },
+			averageGetTime : { type: "number", editable: false, defaultValue: 0 },
+			evictionCount : { type: "number", editable: false, defaultValue: 0 },
+			searchesPerSecond : { type: "number", editable: false, defaultValue: 0 },
+			averageSearchTime : { type: "number", editable: false, defaultValue: 0 },
+			writerQueueLength : { type: "number", editable: false, defaultValue: 0 }			
+		}
+	});
+	
 })(jQuery);	
 	
 var SignupForm = kendo.data.Model.define({

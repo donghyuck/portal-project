@@ -29,9 +29,19 @@
 	color: #fff;
 }
 
-.one-page .one-default p,.one-page .one-default h1,.one-page .one-default h2,.one-page .one-grey p,.one-page .one-grey h1,.one-page .one-grey h2
-	{
+.one-page .one-default p,.one-page .one-default h1,.one-page .one-default h2,
+.one-page .one-grey p,.one-page .one-grey h1,.one-page .one-grey h2
+{
 	color: #555;
+}
+
+.one-page .one-blur p,.one-page .one-blur h1,.one-page .one-blur h2, .one-page .one-blur p small,.one-page .one-blur h1 small,.one-page .one-blur h2 small
+{
+	color: #fff;
+}
+
+.one-page .one-blur  .panel p {
+	color: #555;		
 }
 
 .one-page .one-page-inner {
@@ -74,6 +84,12 @@
 .one-page .one-dark {
 	background: #111;
 }
+
+.one-page .one-blur {
+	background-image: url(../common.themes/unify/images/blur.png);
+	background-size: cover;
+}
+
 
 .one-page .btn-close {
 	position:relative;

@@ -276,7 +276,7 @@
 					});	
 				}
 			}
-			alert( kendo.stringify(config.items) );
+			
 			$.magnificPopup.open(config);
 		} );	
 	}
@@ -2708,7 +2708,8 @@
 			"</div>"	 +
 			"</div>"	
 		) ,
-		body: template("<div class='panel-body'></div>")
+		body: template("<div class='panel-body'><div class='panel-body-loading'></div></div>"),
+		footer: template("<div class='panel-footer'></div>")
 	};
 	
 })(jQuery);
