@@ -78,7 +78,7 @@
 						createNoticeSection();
 						common.ui.buttonDisabled($(this));
 					}
-				}).click();
+				});
 					
 				$('#myTab a:first').tab('show') ;
 				// END SCRIPT 
@@ -113,7 +113,7 @@
 				createNoticeGrid();
 			}	
 			if(	!$("#notice-section").is(":visible") ){
-				$("#notice-section").show();
+				$("#notice-section").slideDown();
 			}	
 		}
 		
@@ -887,30 +887,29 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-				<div id="notice-section" class="one-page animated bounceInDown no-border no-padding-t" >
-					<div class="one-page-inner one-grey">
+				<div id="notice-section" class="one-page no-border no-padding-t" style="display:none;">
+					<div class="one-page-inner one-blur">
 						<div class="container">	
-							<button type="button" class="btn-close btn-close-grey" data-dismiss="section" data-target="#notice-section" data-animate="slideUp" data-switch-target="button[data-action='show-notice-section']" ><span class="sr-only">Close</span></button>
-							
+							<button type="button" class="btn-close btn-close" data-dismiss="section" data-target="#notice-section" data-animate="slideUp" data-switch-target="button[data-action='show-notice-section']" ><span class="sr-only">Close</span></button>							
 							<h1>공지 & 이벤트 
 								<small>		
-									소스를 선택하세요.
+									이벤트 소스를 선택하세요.
 								</small>
 							</h1>		
 							<div class="row ">
 								<div class="col-sm-4">
 									<div class="one-page-btn">
 										<div id="notice-target-button" class="btn-group" data-toggle="buttons">
-											<label class="btn btn-info btn-sm active">
+											<label class="btn btn-info btn-sm active rounded-left">
 												<input type="radio" name="notice-target" value="30" >사이트
 											</label>
-											<label class="btn btn-info btn-sm ">
+											<label class="btn btn-info btn-sm rounded-right">
 												<input type="radio" name="notice-target" value="1">회사
 											</label>
 										</div>
 										<button type="button"	class="btn-u btn-u-red pull-right" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button>
 									</div>		
-									<div  id="notice-grid"></div>
+									<div  id="notice-grid" class="no-border"></div>
 								</div>
 								<div class="col-sm-8">
 									<div  id="notice-view"></div>
@@ -921,11 +920,13 @@
 					</div>	
 				</div><!-- ./ong-page -->							
 			<div class="container-fluid">		
-				<div class="navbar navbar-personalized navbar-inverse padding-sm" role="navigation">
+				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">
 						<ul class="nav navbar-nav pull-right">
-							<li><button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-section" >공지 & 이벤트 </button>&nbsp;</li>
-							<li>
-								<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">클라우드 저장소</span></button>
+							<li class="padding-xs-hr no-padding-r">
+								<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-section" ><i class="fa fa-pencil fa-lg"></i> 공지 & 이벤트 </button>
+							</li>
+							<li class="padding-xs-hr no-padding-r">
+								<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">웹사이트 클라우드 저장소</span></button>
 							</li>								
 							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
@@ -943,85 +944,9 @@
 							</li> 
 						</ul>
 				</div><!-- ./navbar-personalized -->
-				<div id="personalized-area" class="row" style="min-height:10px;"></div>				
+				<div id="personalized-area" class="row" style="min-height:300px;"></div>				
 			</div><!-- ./container-fluid -->	
 			
-	
-		<div class="container padding-sm" style="min-height:600px;">			
-			<div class="row blank-top-10">				
-				<div id="announce-panel" class="custom-panels-group col-sm-6" style="display:none;">	
-					<div class="panel panel-default">
-						<div class="panel-heading"><i class="fa fa-bell-o"></i>&nbsp;공지 & 이벤트
-							<div class="k-window-actions panel-header-controls">										
-								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a>
-								<a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a>
-								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-maximize">Maximize</span></a>										
-								<a role="button" href="#" class="k-window-action k-link hide"><span role="presentation" class="k-icon k-i-close">Close</span></a>
-							</div>
-							</div>
-							<div class="panel-body" style="padding:5px;">
-								<div class="page-header text-primary" style="height:100px;">
-									<h5>
-										<small><i class="fa fa-info"></i> 사이트(${webSite.displayName})/회사(${user.company.displayName}) 버튼을 클릭하면 해당하는 공지 & 이벤트 목록이 보여집니다.</small>
-										<p>
-											<div  id="announce-grid"></div>		
-										</p>
-									</h5>
-									<#if request.isUserInRole("ROLE_ADMIN") || request.isUserInRole("ROLE_ADMIN_SITE") >
-										<div class="pull-right">
-											<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="new"><i class="fa fa-plus"></i> 공지 및 이벤트 추가</button>
-										</div>											
-									</#if>
-								</div>								
-								
-							</div>
-							<div  id="notice-viewer-panel" class="panel-body" style="display:none;">
-									<div class="row">
-										<div class="col-lg-12">
-											<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
-												<h5 >
-													<small><i class="fa fa-info"></i> 닫기 버튼을 클릭하면 목록이 보여집니다.</small>
-												</h5>
-												<div class="pull-right">
-													<div class="btn-group">
-														<button type="button" class="btn btn-primary btn-sm" data-bind="click: openNoticeEditor, enabled: editable" >편집</button>													
-													</div>						
-													<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeViewer">&times;  닫기</button>
-												</div>
-											</div>																		
-										</div>
-									</div>		
-									<div class="row">
-										<div class="col-lg-12">
-											<div class="panel panel-default" style="margin-bottom: 20px;">
-												<div class="panel-body">													
-													<div  id="notice-viewer"></div>																						
-												</div>
-											</div>												
-										</div>																		
-									</div>
-							</div>
-							<div  id="notice-editor-panel" class="panel-body" style="display:none;">
-								<div class="page-header page-nounderline-header text-primary" style="min-height: 45px;">
-									<h5 >
-										<small><i class="fa fa-info"></i> 닫기 버튼을 클릭하면 목록이 보여집니다.</small>
-									</h5>
-									<div class="pull-right">
-										<div class="btn-group">
-											<button type="button" class="btn btn-primary btn-sm" data-bind="click: doSave, enabled: updateRequired" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >저장</button>			
-											<button type="button" class="btn btn-primary btn-sm" data-toggle="button"  data-bind="click: openNoticeProps, enabled: editable, invisible:isNew">프로퍼티</button>
-										</div>						
-										<button type="button" class="btn btn-primary btn-notice-control-group btn-sm" data-bind="click: closeEditor">&times;  닫기</button>
-									</div>
-								</div>								
-								<div  id="notice-editor"></div>	
-							</div>
-						</div>		
-					</div>
-				</div>		
-			</div>				
-		</section>		
-
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">			
 			<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
@@ -1171,7 +1096,7 @@
 								</div>
 							</div>
 							<label class="control-label">본문</label>
-							<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body'></textarea>
+							<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
 						</div>						
 					</div>					
 			</div>					
