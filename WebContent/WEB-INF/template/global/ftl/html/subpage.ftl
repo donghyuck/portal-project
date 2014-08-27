@@ -4,7 +4,10 @@
 		<title> ${action.targetPage.title}</title>
 		<#compress>				
 		<script type="text/javascript">
-		<!--
+		<!--		
+
+		var jobs = [];	
+		
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
@@ -25,7 +28,8 @@
 				common.ui.setup({
 					features:{
 						backstretch : false
-					}
+					},
+					worklist:jobs
 				});	
 				      
 				// START SCRIPT					
@@ -54,24 +58,28 @@
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
 		<!-- END HEADER -->
-		<header class="cloud">
-			<div class="container">
-				<div class="col-lg-12">	
-					<#if action.isSetNavigator()  >
-					<#assign current_menu = action.getNavigator() />					
-							<ul class="pull-left breadcrumb">
-				                <li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
-				                <li><a href="">${current_menu.parent.title}</a></li>
-				                <li class="active">${current_menu.title}</li>
-				            </ul>
-					</#if>					
-					<h2 class="color-green">${action.targetPage.title}  <br/><small><i class="fa fa-quote-left"></i> ${action.targetPage.summary!} <i class="fa fa-quote-right"></i></small></h2>			
-				</div>
-			</div>
+		<#if action.isSetNavigator()  >
+		<#assign current_menu = action.getNavigator() />					
+		<header  class="cloud <#if current_menu.parent.css??>${current_menu.parent.css}</#if>">			
+				<div class="breadcrumbs">
+			        <div class="container">
+			            <h1 class="pull-left">${ current_menu.title }
+			            	<small>
+			            		<i class="fa fa-quote-left"></i>&nbsp;${ current_menu.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
+			            	</small>
+			            </h1>
+			            <ul class="pull-right breadcrumb">
+					        <li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
+					        <li><a href="">${current_menu.parent.title}</a></li>
+					    	<li class="active">${current_menu.title}</li>
+			            </ul>
+			        </div>
+			    </div>	
 		</header>	
-				
+		</#if>	
+									
 		<!-- START MAIN CONTENT -->	
-		<div class="container content no-padding-t">
+		<div class="container content">
 			<#if action.isSetNavigator()  >
 			<#assign current_menu = action.getNavigator() />
 			<div class="row">
