@@ -4,6 +4,9 @@
 		<title>기업소개</title>
 		<script type="text/javascript">
 		<!--
+
+		var jobs = [];	
+				
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
@@ -25,7 +28,8 @@
 				common.ui.setup({
 					features:{
 						backstretch : false
-					}
+					},
+					worklist:jobs
 				});	
 
 				// ACCOUNTS LOAD	
@@ -99,10 +103,7 @@
 			color: #ffffff; 
 		}
 		
-		#announce-view .popover {
-			position : relative;
-			max-width : 500px;
-		}
+
 		.cbp_tmtimeline > li .cbp_tmicon { 
 			position : relative;
 		}

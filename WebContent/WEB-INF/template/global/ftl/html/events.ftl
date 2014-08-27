@@ -4,6 +4,9 @@
 		<title>기업소개</title>
 		<script type="text/javascript">
 		<!--
+		
+		var jobs = [];	
+		
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
@@ -25,7 +28,8 @@
 				common.ui.setup({
 					features:{
 						backstretch : false
-					}
+					},
+					worklist:jobs
 				});	
 
 				// ACCOUNTS LOAD	
@@ -125,21 +129,22 @@
 		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_3") />
 		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />				
 		<header  class="cloud <#if current_menu.parent.css??>${current_menu.parent.css}</#if>">
-		<div class="breadcrumbs">
-		        <div class="container">
-		            <h1 class="pull-left">${ current_menu.title }
-		            	<small>
-		            		<i class="fa fa-quote-left"></i>&nbsp;${ current_menu.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
-		            	</small>
-		            </h1>
-		            <ul class="pull-right breadcrumb">
-				        <li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
-				        <li><a href="">${current_menu.parent.title}</a></li>
-				    	<li class="active">${current_menu.title}</li>
-		            </ul>
-		        </div>
-		    </div>		
-		</header>		
+			<header  class="cloud <#if current_menu.parent.css??>${current_menu.parent.css}</#if>">			
+				<div class="breadcrumbs">
+			        <div class="container">
+			            <h1 class="pull-left">${ current_menu.title }
+			            	<small>
+			            		<i class="fa fa-quote-left"></i>&nbsp;${ current_menu.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
+			            	</small>
+			            </h1>
+			            <ul class="pull-right breadcrumb">
+					        <li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
+					        <li><a href="">${current_menu.parent.title}</a></li>
+					    	<li class="active">${current_menu.title}</li>
+			            </ul>
+			        </div>
+			    </div>		
+			</header>
 		<!-- END HEADER -->			
 		<!-- START MAIN CONTENT -->	
 		<div class="container content">			
