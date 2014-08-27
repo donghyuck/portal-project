@@ -145,7 +145,12 @@
 		}
 			
 	}
-	
+
+	common.api.truncate = function(title, size){
+		size = size || 50;
+		return $.trim(title).substring(0, size).split(" ").slice(0, -1).join(" ") + "...";	
+	}
+		
 	common.api.guid = function()
 	{
 		var result, i, j;
@@ -357,6 +362,7 @@
 	    }
 	}	
 
+	
 	common.api.handleKendoAjaxError = function (xhr) {
 		var message = "";
 		if (xhr.status == 0) {

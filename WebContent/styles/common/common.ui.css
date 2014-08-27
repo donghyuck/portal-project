@@ -368,6 +368,10 @@ body:not (.right-to-left ) .no-border-l {
 	padding-top: 0 !important
 }
 
+.no-padding-r {
+	padding-right: 0 !important
+}
+
 /* MARGINS & PADDINGS */
 
 .p-xxs {
@@ -671,6 +675,18 @@ color: #d9534f;
 	height: 100%;
 	overflow: visible;
 	background: #ffffff url('/images/common/loader/loading.gif') no-repeat center center;
+	z-index: 100000;
+}
+
+.panel-body-loading {
+	position: relative;
+	left: 0;
+	top: 0;
+	display: block;
+	width: auto;
+	height: 200px;
+	overflow: visible;
+	background: #ffffff url('/images/common/loader/loading-transparent-bg.gif') no-repeat center center;
 	z-index: 100000;
 }
 
