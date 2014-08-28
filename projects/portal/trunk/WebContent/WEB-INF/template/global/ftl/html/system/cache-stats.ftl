@@ -114,7 +114,7 @@
 						position: "buttom"
 					},
 					seriesDefaults: {
-						type: "bar"
+						type: "bar", stack: true
 					},		
 					series: [
 						{field: "size", name: "Cached Object"},
