@@ -337,7 +337,7 @@
 								</div>							
 							</div> <!-- /.stat-row -->
 							<div class="stat-row memory-details">
-								<div class="stat-counters bg-warning bordered no-border-t text-center">
+								<div class="stat-counters bg-danger bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
 										<span class="text-bg"><strong><span data-bind="text: maxPermGen.megabytes"></span>MB</strong></span><br>
