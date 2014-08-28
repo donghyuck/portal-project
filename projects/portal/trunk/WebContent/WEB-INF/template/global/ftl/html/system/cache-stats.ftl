@@ -84,6 +84,18 @@
 				
 				$(document).on("click", "[data-action='cache-removeAll']", function(e){
 					$(this).button("loading");
+					common.api.callback({
+						url :"${request.contextPath}/secure/remove-cache-stats.do?output=json", 
+						data : { targetName:  getSelectedCacheStats().cacheName },
+						success : function(response){
+							alert( kendo.stringify(response) );
+						},
+						always : function(e){
+							$(this).button("reset");
+						}							
+					});
+						
+					
 				});				
 			}
 		}
