@@ -255,45 +255,12 @@
 				</div><!-- / .page-header -->				
 				<div class="row">	
 				
-				<div class="col-sm-5">
-					<div class="stat-panel">
-						<!-- Success background, bordered, without top and bottom borders, without left border, without padding, vertically and horizontally centered text, large text -->
-						<a href="#" class="stat-cell col-xs-5 bg-success bordered no-border-vr no-border-l no-padding valign-middle text-center text-lg">
-							<i class="fa fa-dashboard">시스템</i>
-						</a> <!-- /.stat-cell -->
-						<!-- Without padding, extra small text -->
-						<div class="stat-cell col-xs-7 no-padding valign-middle">
-							<!-- Add parent div.stat-rows if you want build nested rows -->
-							<div class="stat-rows">
-								<div class="stat-row">
-									<!-- Success background, small padding, vertically aligned text -->
-									<span class="stat-cell bg-success padding-sm valign-middle" data-bind="text: availableProcessors">0</span>
-								</div>
-								<div class="stat-row">
-									<!-- Success darken background, small padding, vertically aligned text -->
-									<a href="#" class="stat-cell bg-success darken padding-sm valign-middle">
-										9 issues
-										<i class="fa fa-bug pull-right"></i>
-									</a>
-								</div>
-								<div class="stat-row">
-									<!-- Success darker background, small padding, vertically aligned text -->
-									<a href="#" class="stat-cell bg-success darker padding-sm valign-middle">
-										47 new users
-										<i class="fa fa-users pull-right"></i>
-									</a>
-								</div>
-							</div> <!-- /.stat-rows -->
-						</div> <!-- /.stat-cell -->
-					</div>
-				</div>
-
 						
 					<div class="col-xs-12 col-lg-6">
 						<div class="stat-panel system-details">
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
-								<div class="stat-cell col-sm-4 bordered no-border-r padding-sm-hr valign-top">
+								<div class="stat-cell col-sm-5 bordered no-border-r padding-sm-hr valign-top">
 									<!-- Small padding, without top padding, extra small horizontal padding -->
 									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-dashboard text-primary"></i>&nbsp;&nbsp;시스템</h4>
 									<!-- Without margin -->
@@ -307,7 +274,7 @@
 									</ul>
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
-								<div class="stat-cell col-sm-8 bordered bg-panel padding-sm valign-middle">
+								<div class="stat-cell col-sm-7 bordered bg-panel padding-sm valign-middle">
 									<table class="table">
 										<thead>
 											<tr>
