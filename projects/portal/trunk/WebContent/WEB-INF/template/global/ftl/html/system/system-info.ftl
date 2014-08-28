@@ -261,9 +261,12 @@
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
 								<div class="stat-cell col-sm-5 bordered no-border-r padding-sm-hr valign-top">
-									<!-- Small padding, without top padding, extra small horizontal padding -->
-									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-dashboard text-primary"></i>&nbsp;&nbsp;시스템</h4>
+									
+									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-desktop text-primary"></i>&nbsp;&nbsp;시스템</h4>
+									
+									
 									<!-- Without margin -->
+									<i class="fa fa-desktop bg-icon" style="font-size:60px;line-height:80px;height:80px;top: 0;"></i>
 									<ul class="list-group no-margin">
 										<li class="list-group-item no-border-hr padding-xs-hr">
 											CPU <span class="label label-danger pull-right" data-bind="text: availableProcessors">0</span>
@@ -274,7 +277,7 @@
 									</ul>
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
-								<div class="stat-cell col-sm-7 bordered bg-panel padding-sm valign-middle">
+								<div class="stat-cell col-sm-7 bordered  padding-sm valign-middle">
 									<table class="table">
 										<thead>
 											<tr>
