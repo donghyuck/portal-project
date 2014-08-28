@@ -47,11 +47,57 @@
 					}
 				});					
 				
-				createCacheStatsGridAndChart();	
+				createCacheStatsGrid();	
 				// END SCRIPT
 			}
 		}]);		
-		
+
+		function createCacheStatsGrid(){
+			if( !$("#cache-stats-grid").data("kendoGrid") ){
+				$("#cache-stats-grid").kendoGrid({
+					dataSource: {	
+						transport: { 
+							read: { url:'${request.contextPath}/secure/list-cache-stats.do?output=json', type: 'POST' }
+						},
+						schema: {
+							data: "allCacheStats",
+							model : common.models.CacheStats 
+						},
+						sort: { field: "cacheName", dir: "asc" },
+						error: common.api.handleKendoAjaxError
+					},
+					columns: [
+						{ field: "cacheName", title: "Cache", width:80,  filterable: true, sortable: true , template: '#: cacheName # <button class="btn btn-xs btn-labeled btn-danger pull-right" data-action="cache-removeAll" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><span class="btn-label icon fa fa-bolt"></span>캐쉬 비우기</button>' }, 
+						{ field: "diskPersistent", title: "Disk Cache", width:20,  filterable: true, sortable: true ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
+						{ title: "Effectiveness",  width: 40, template: '#if( cacheHits > 0 ){ # #= kendo.toString( cacheHits / (cacheHits + misses ) , "p") # #}#' , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
+						{ field: "size",    title: "Object",  filterable: true, sortable: true,  width: 30 , template: '#if(diskPersistent){# #:size# / #: (maxEntriesLocalHeap+maxEntriesLocalDisk) # #}else{# #:size# / #: maxEntriesLocalHeap # #}#'  ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
+						{ field: "cacheHits",    title: "cacheHits",  width: 30 ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center; color:blue;" }},
+						{ field: "misses",    title: "misses",  width: 30 ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center; color: red;" }},
+						{ field: "evictionCount",    title: "evictionCount",  width: 30, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }}
+					],
+					sortable: true,
+					selectable : "row"
+				});
+				$("[data-action='refresh']").click( function(e){
+					$("#cache-stats-grid").data("kendoGrid").dataSource.read();
+				});				
+				$(document).on("click", "[data-action='cache-removeAll']", function(e){
+					var btn = $(this);
+					btn.button("loading");
+					common.api.callback({
+						url :"${request.contextPath}/secure/remove-cache-stats.do?output=json", 
+						data : { targetName:  getSelectedCacheStats().cacheName },
+						success : function(response){
+							$("#cache-stats-grid").data("kendoGrid").dataSource.read();
+						},
+						always : function(e){
+							btn.button("reset");
+						}							
+					});					
+				});				
+			}
+		}
+				
 		function createCacheStatsDataSource(){
 			return new kendo.data.DataSource({
 				transport: { 
@@ -166,53 +212,7 @@
 			}		
 		}
 		
-		function displayCacheStatsGrid(){
-			if( !$("#cache-stats-grid").data("kendoGrid") ){
-			
-			
-				$("#cache-stats-grid").kendoGrid({
-					dataSource: {	
-						transport: { 
-							read: { url:'${request.contextPath}/secure/list-cache-stats.do?output=json', type: 'POST' }
-						},
-						schema: {
-							data: "allCacheStats",
-							model : common.models.CacheStats 
-						},
-						sort: { field: "cacheName", dir: "asc" },
-						error: common.api.handleKendoAjaxError
-					},
-					columns: [
-						{ field: "cacheName", title: "Cache", width:80,  filterable: true, sortable: true , template: '#: cacheName # <button class="btn btn-xs btn-labeled btn-danger pull-right" data-action="cache-removeAll" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><span class="btn-label icon fa fa-bolt"></span>캐쉬 비우기</button>' }, 
-						{ field: "diskPersistent", title: "Disk Cache", width:20,  filterable: true, sortable: true ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
-						{ title: "Effectiveness",  width: 40, template: '#if( cacheHits > 0 ){ # #= kendo.toString( cacheHits / (cacheHits + misses ) , "p") # #}#' , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
-						{ field: "size",    title: "Object",  filterable: true, sortable: true,  width: 30 , template: '#if(diskPersistent){# #:size# / #: (maxEntriesLocalHeap+maxEntriesLocalDisk) # #}else{# #:size# / #: maxEntriesLocalHeap # #}#'  ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
-						{ field: "cacheHits",    title: "cacheHits",  width: 30 ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center; color:blue;" }},
-						{ field: "misses",    title: "misses",  width: 30 ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center; color: red;" }},
-						{ field: "evictionCount",    title: "evictionCount",  width: 30, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }}
-					],
-					sortable: true,
-					selectable : "row"
-				});
-				$("[data-action='refresh']").click( function(e){
-					$("#cache-stats-grid").data("kendoGrid").dataSource.read();
-				});				
-				$(document).on("click", "[data-action='cache-removeAll']", function(e){
-					var btn = $(this);
-					btn.button("loading");
-					common.api.callback({
-						url :"${request.contextPath}/secure/remove-cache-stats.do?output=json", 
-						data : { targetName:  getSelectedCacheStats().cacheName },
-						success : function(response){
-							$("#cache-stats-grid").data("kendoGrid").dataSource.read();
-						},
-						always : function(e){
-							btn.button("reset");
-						}							
-					});					
-				});				
-			}
-		}
+
 		
 		function getSelectedCacheStats(){			
 			var renderTo = $("#cache-stats-grid");
