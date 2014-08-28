@@ -253,7 +253,45 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
-				<div class="row">			
+				<div class="row">	
+				
+				<div class="col-sm-5">
+					<div class="stat-panel">
+						<!-- Success background, bordered, without top and bottom borders, without left border, without padding, vertically and horizontally centered text, large text -->
+						<a href="#" class="stat-cell col-xs-5 bg-success bordered no-border-vr no-border-l no-padding valign-middle text-center text-lg">
+							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<strong>11</strong>
+						</a> <!-- /.stat-cell -->
+						<!-- Without padding, extra small text -->
+						<div class="stat-cell col-xs-7 no-padding valign-middle">
+							<!-- Add parent div.stat-rows if you want build nested rows -->
+							<div class="stat-rows">
+								<div class="stat-row">
+									<!-- Success background, small padding, vertically aligned text -->
+									<a href="#" class="stat-cell bg-success padding-sm valign-middle">
+										32 messages
+										<i class="fa fa-envelope-o pull-right"></i>
+									</a>
+								</div>
+								<div class="stat-row">
+									<!-- Success darken background, small padding, vertically aligned text -->
+									<a href="#" class="stat-cell bg-success darken padding-sm valign-middle">
+										9 issues
+										<i class="fa fa-bug pull-right"></i>
+									</a>
+								</div>
+								<div class="stat-row">
+									<!-- Success darker background, small padding, vertically aligned text -->
+									<a href="#" class="stat-cell bg-success darker padding-sm valign-middle">
+										47 new users
+										<i class="fa fa-users pull-right"></i>
+									</a>
+								</div>
+							</div> <!-- /.stat-rows -->
+						</div> <!-- /.stat-cell -->
+					</div>
+				</div>
+
+						
 					<div class="col-xs-12 col-lg-6">
 						<div class="stat-panel system-details">
 							<div class="stat-row">
