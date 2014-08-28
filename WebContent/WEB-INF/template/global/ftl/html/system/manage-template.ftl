@@ -71,7 +71,7 @@
 			
 			$("#template-tree-view").kendoTreeView({
 				dataSource: finderDataSource,
-				dataTextField: "path"
+				dataTextField: "name"
 			});
 		}		
 				
