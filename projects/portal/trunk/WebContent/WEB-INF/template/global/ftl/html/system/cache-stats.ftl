@@ -124,7 +124,15 @@
 					categoryAxis:{
 						field:"cacheName",
 						name : "Cache"
-					}	
+					},
+					valueAxis: {
+	                    line: {
+	                        visible: false
+	                    },
+	                    minorGridLines: {
+	                        visible: true
+	                    }
+	                },	
 				});			
 			}
 			sharedDataSource.read();
