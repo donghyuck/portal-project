@@ -118,8 +118,7 @@
 					},		
 					series: [
 						{field: "size", name: "Cached Object"},
-						{field: "maxEntriesLocalHeap", name: "Memory"},
-						{field: "maxEntriesLocalDisk", name: "Disk"},
+						{field: "maxEntriesLocalHeap", name: "Memory"}
 					],
 					categoryAxis:{
 						field:"cacheName",
