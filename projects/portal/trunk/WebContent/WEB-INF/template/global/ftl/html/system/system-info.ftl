@@ -259,7 +259,7 @@
 					<div class="stat-panel">
 						<!-- Success background, bordered, without top and bottom borders, without left border, without padding, vertically and horizontally centered text, large text -->
 						<a href="#" class="stat-cell col-xs-5 bg-success bordered no-border-vr no-border-l no-padding valign-middle text-center text-lg">
-							<i class="fa fa-dashboard text-primary">시스템</i>
+							<i class="fa fa-dashboard">시스템</i>
 						</a> <!-- /.stat-cell -->
 						<!-- Without padding, extra small text -->
 						<div class="stat-cell col-xs-7 no-padding valign-middle">
@@ -267,10 +267,7 @@
 							<div class="stat-rows">
 								<div class="stat-row">
 									<!-- Success background, small padding, vertically aligned text -->
-									<a href="#" class="stat-cell bg-success padding-sm valign-middle">
-										32 messages
-										<i class="fa fa-envelope-o pull-right"></i>
-									</a>
+									<span class="stat-cell bg-success padding-sm valign-middle" data-bind="text: availableProcessors">0</span>
 								</div>
 								<div class="stat-row">
 									<!-- Success darken background, small padding, vertically aligned text -->
