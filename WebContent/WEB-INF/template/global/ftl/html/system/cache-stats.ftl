@@ -72,13 +72,7 @@
 						{field: "size", name: "Cached Object"},
 						{field: "maxEntriesLocalHeap", name: "Memory"},
 						{field: "maxEntriesLocalDisk", name: "Disk"},
-					],
-					categoryAxis: {
-						field: "cacheName",
-						majorGridLines: {
-							visible: false
-						}
-					}		
+					]	
 				});			
 			}		
 		}
