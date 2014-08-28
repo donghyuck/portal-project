@@ -58,6 +58,7 @@
 			if( !$("#cache-stats-chart").data("kendoChart") ){
 				$("#cache-stats-chart").kendoChart({
 					dataSource : $("#cache-stats-grid").data("kendoGrid").dataSource,
+					autoBind: false,
 					title: {
 						text: "Object Cache Usage"
 					},
@@ -74,23 +75,9 @@
 					],
 					categoryAxis: {
 						field: "cacheName",
-						labels:{ rotation: -90 },
 						majorGridLines: {
 							visible: false
 						}
-					},
-					valueAxis: {
-						labels: {
-							format: "N0"
-						},
-						majorUnit: 100,
-						line: {
-							visible: false
-						}
-					},
-					tooltip: {
-						visible: true,
-						format: "N0"
 					}		
 				});			
 			}		
