@@ -81,7 +81,9 @@
 				$("[data-action='refresh']").click( function(e){
 					$("#cache-stats-grid").data("kendoGrid").dataSource.read();
 				});
-				$("[data-action='cache-removeAll']").click( function(e){
+				
+				$(document).on("click", "[data-action='cache-removeAll']", function(e){
+					alert(e);
 					alert($(this).html());
 				});				
 			}
