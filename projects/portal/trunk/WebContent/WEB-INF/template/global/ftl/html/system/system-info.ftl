@@ -259,7 +259,7 @@
 					<div class="stat-panel">
 						<!-- Success background, bordered, without top and bottom borders, without left border, without padding, vertically and horizontally centered text, large text -->
 						<a href="#" class="stat-cell col-xs-5 bg-success bordered no-border-vr no-border-l no-padding valign-middle text-center text-lg">
-							<i class="fa fa-calendar"></i>&nbsp;&nbsp;<strong>11</strong>
+							<i class="fa fa-dashboard text-primary">시스템</i>
 						</a> <!-- /.stat-cell -->
 						<!-- Without padding, extra small text -->
 						<div class="stat-cell col-xs-7 no-padding valign-middle">
