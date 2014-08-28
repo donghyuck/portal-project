@@ -292,7 +292,7 @@
 							</div>
 						</div><!-- ./stat-panel -->					
 					</div>	
-					<div class="col-xs-6 col-log-3">
+					<div class="col-xs-6 col-lg-3">
 						<div class="stat-panel text-center">
 							<div class="stat-row">						
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
@@ -322,7 +322,7 @@
 							</div>						
 						</div> <!-- /.stat-panel -->
 					</div>					
-					<div class="col-xs-6 col-log-3">
+					<div class="col-xs-6 col-lg-3">
 						<div class="stat-panel text-center">
 							<div class="stat-row">
 								<!-- Dark gray background, small padding, extra small text, semibold text -->
