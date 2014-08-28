@@ -89,7 +89,7 @@
 						url :"${request.contextPath}/secure/remove-cache-stats.do?output=json", 
 						data : { targetName:  getSelectedCacheStats().cacheName },
 						success : function(response){
-							alert( kendo.stringify(response) );
+							$("#cache-stats-grid").data("kendoGrid").dataSource.read();
 						},
 						always : function(e){
 							btn.button("reset");
