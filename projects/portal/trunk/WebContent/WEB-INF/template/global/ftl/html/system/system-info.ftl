@@ -254,7 +254,7 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">			
-					<div class="col-xs-6">
+					<div class="col-xs-12 col-lg-6">
 						<div class="stat-panel system-details">
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
@@ -292,7 +292,7 @@
 							</div>
 						</div><!-- ./stat-panel -->					
 					</div>	
-					<div class="col-xs-3">
+					<div class="col-xs-6 col-log-3">
 						<div class="stat-panel text-center">
 							<div class="stat-row">						
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
@@ -322,7 +322,7 @@
 							</div>						
 						</div> <!-- /.stat-panel -->
 					</div>					
-					<div class="col-xs-3">
+					<div class="col-xs-6 col-log-3">
 						<div class="stat-panel text-center">
 							<div class="stat-row">
 								<!-- Dark gray background, small padding, extra small text, semibold text -->
