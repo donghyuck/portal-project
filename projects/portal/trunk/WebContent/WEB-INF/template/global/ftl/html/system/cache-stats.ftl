@@ -54,6 +54,8 @@
 		}]);
 		
 		function displayCacheStatsChart(){
+		
+			alert($("#cache-stats-grid").data("kendoGrid").dataSource);
 			if( !$("#cache-stats-chart").data("kendoChart") ){
 				$("#cache-stats-chart").kendoChart({
 					dataSource : $("#cache-stats-grid").data("kendoGrid").dataSource,
