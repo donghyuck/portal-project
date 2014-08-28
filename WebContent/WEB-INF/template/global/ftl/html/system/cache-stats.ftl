@@ -47,12 +47,55 @@
 					}
 				});					
 				
-				displayCacheStats();				
+				displayCacheStatsGrid();			
+				displayCacheStatsChart();	
 				// END SCRIPT
 			}
 		}]);
 		
-		function displayCacheStats(){
+		function displayCacheStatsChart(){
+			if( !$("#cache-stats-chart").data("kendoChart") ){
+				$("#cache-stats-chart").kendoChart({
+					dataSource : $("#cache-stats-grid").data("kendoGrid").dataSource,
+					title: {
+						text: "Object Cache Usage"
+					},
+					legend: {
+						position: "top"
+					},
+					seriesDefaults: {
+						type: "column"
+					},		
+					series: [
+						{field: "size", name: "Cached Object"},
+						{field: "maxEntriesLocalHeap", name: "Memory"},
+						{field: "maxEntriesLocalDisk", name: "Disk"},
+					],
+					categoryAxis: {
+						field: "cacheName",
+						labels:{ rotation: -90 },
+						majorGridLines: {
+							visible: false
+						}
+					},
+					valueAxis: {
+						labels: {
+							format: "N0"
+						},
+						majorUnit: 100,
+						line: {
+							visible: false
+						}
+					},
+					tooltip: {
+						visible: true,
+						format: "N0"
+					}		
+				});			
+			}		
+		}
+		
+		function displayCacheStatsGrid(){
 			if( !$("#cache-stats-grid").data("kendoGrid") ){
 				$("#cache-stats-grid").kendoGrid({
 					dataSource: {	
@@ -80,8 +123,7 @@
 				});
 				$("[data-action='refresh']").click( function(e){
 					$("#cache-stats-grid").data("kendoGrid").dataSource.read();
-				});
-				
+				});				
 				$(document).on("click", "[data-action='cache-removeAll']", function(e){
 					var btn = $(this);
 					btn.button("loading");
@@ -138,6 +180,9 @@
 								<div class="panel-heading-controls">
 									<button class="btn btn-info btn-xs btn-outline" data-action="refresh"><span class="k-icon k-si-refresh"></span> 새로고침</button>
 								</div>
+							</div>
+							<div class="panel-body">
+								<div id="cache-stats-chart"></div>
 							</div>
 							<div id="cache-stats-grid" class="no-border-hr"></div>	
 							<div class="panel-footer no-padding-vr"></div>
