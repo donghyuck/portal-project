@@ -55,7 +55,6 @@
 		
 		function displayCacheStatsChart(){
 		
-			alert($("#cache-stats-grid").data("kendoGrid").dataSource);
 			if( !$("#cache-stats-chart").data("kendoChart") ){
 				$("#cache-stats-chart").kendoChart({
 					dataSource : $("#cache-stats-grid").data("kendoGrid").dataSource,
@@ -63,10 +62,10 @@
 						text: "Object Cache Usage"
 					},
 					legend: {
-						position: "top"
+						position: "buttom"
 					},
 					seriesDefaults: {
-						type: "column"
+						type: "bar"
 					},		
 					series: [
 						{field: "size", name: "Cached Object"},
