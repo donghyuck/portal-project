@@ -83,7 +83,7 @@
 				});
 				
 				$(document).on("click", "[data-action='cache-removeAll']", function(e){
-					$(this).button("loading").
+					$(this).button("loading");
 				});				
 			}
 		}
