@@ -68,7 +68,7 @@
 					},
 					columns: [
 						{ field: "cacheName", title: "Cache", width:80,  filterable: true, sortable: true , template: '#: cacheName # <button class="btn btn-xs btn-labeled btn-danger pull-right" data-action="trash" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><span class="btn-label icon fa fa-bolt"></span>캐쉬 비우기</button>' }, 
-						{ field: "diskPersistent", title: "Disk", width:20,  filterable: true, sortable: true ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
+						{ field: "diskPersistent", title: "Disk Cache", width:20,  filterable: true, sortable: true ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
 						{ title: "Effectiveness",  width: 40, template: '#if( cacheHits > 0 ){ # #= kendo.toString( cacheHits / (cacheHits + misses ) , "p") # #}#' , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
 						{ field: "size",    title: "Object",  filterable: true, sortable: true,  width: 30 , template: '#if(diskPersistent){# #:size# / #: (maxEntriesLocalHeap+maxEntriesLocalDisk) # #}else{# #:size# / #: maxEntriesLocalHeap # #}#'  ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
 						{ field: "cacheHits",    title: "cacheHits",  width: 30 ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center; color:blue;" }},
