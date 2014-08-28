@@ -83,7 +83,8 @@
 				});
 				
 				$(document).on("click", "[data-action='cache-removeAll']", function(e){
-					$(this).button("loading");
+					var btn = $(this);
+					btn.button("loading");
 					common.api.callback({
 						url :"${request.contextPath}/secure/remove-cache-stats.do?output=json", 
 						data : { targetName:  getSelectedCacheStats().cacheName },
@@ -91,7 +92,7 @@
 							alert( kendo.stringify(response) );
 						},
 						always : function(e){
-							$(this).button("reset");
+							btn.button("reset");
 						}							
 					});
 						
