@@ -47,10 +47,32 @@
 					}
 				});					
 				
-				createCacheStatsGrid();	
+				//createCacheStatsGrid();	
+				createPathFinder();
 				// END SCRIPT
 			}
 		}]);		
+		
+		function createPathFinder(){
+		
+			var finderDataSource = new kendo.data.HierarchicalDataSource({
+				transport: { 
+					read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
+				},
+				schema: {
+					data: "targetFiles",
+					model : {
+						id: "path",
+						hasChildren: "directory"							
+					}
+				},
+				error: common.api.handleKendoAjaxError
+			});
+			$("#template-tree-view").kendoTreeView({
+				dataSource: finderDataSource,
+				dataTextField: "path"
+			});
+		}		
 				
 		function createCacheStatsGrid(){
 			if( !$("#cache-stats-grid").data("kendoGrid") ){
@@ -138,8 +160,9 @@
 									<button class="btn btn-info btn-xs btn-outline" data-action="refresh"><span class="k-icon k-si-refresh"></span> 새로고침</button>
 								</div>
 							</div>
-
-							<div id="cache-stats-grid" class="no-border-hr"></div>	
+							<div class="panel-body">
+								<div id="template-tree-view" ></div>	
+							</div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
