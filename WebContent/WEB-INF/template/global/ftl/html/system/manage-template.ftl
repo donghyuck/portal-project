@@ -68,6 +68,7 @@
 				},
 				error: common.api.handleKendoAjaxError
 			});
+			
 			$("#template-tree-view").kendoTreeView({
 				dataSource: finderDataSource,
 				dataTextField: "path"
