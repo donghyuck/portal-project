@@ -355,8 +355,8 @@
 						</div> <!-- /.stat-panel -->
 					</div>									
 				</div><!-- memory status end -->
+				<hr class="no-grid-gutter-h grid-gutter-margin-b no-margin-t">				
 				<div class="row">			
-					<a href="#" class="header-2">시스템 정보</a>
 					<div class="col-lg-12">	
 						<div class="panel colourable">
 							<div class="panel-heading">
