@@ -63,7 +63,7 @@
 							data: "allCacheStats",
 							model : common.models.CacheStats 
 						},
-						sort: { field: "cacheName", dir: "desc" },
+						sort: { field: "cacheName", dir: "asc" },
 						error: common.api.handleKendoAjaxError
 					},
 					columns: [
@@ -94,9 +94,7 @@
 						always : function(e){
 							btn.button("reset");
 						}							
-					});
-						
-					
+					});					
 				});				
 			}
 		}
