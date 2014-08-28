@@ -124,8 +124,8 @@
 								},
 								/* toolbar: [ { name: "create", text: "웹 사이트 추가" } ],      */
 								columns:[
-									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false},
-									{ field: "name", title: "키", width: 200, template: '<button type="button" class="btn btn-warning btn-xs" onclick="goSite(this); return false;">#: name #</a>'},									
+									{ field: "webSiteId", title: "ID",  width: 50, filterable: false, sortable: false}, 
+									{ field: "name", title: "키", width: 200, template: '<button type="button" class="btn btn-xs btn-labeled btn-warning pull-right" onclick="goSite(this); return false;"><span class="btn-label icon fa fa-globe"></span> #: name #</a>'},									
 									{ field: "displayName", title: "이름",  width: 100 },
 									{ field: "description", title: "설명",  width: 200 },
 									{ field: "url", title: "URL",  width: 150 },
