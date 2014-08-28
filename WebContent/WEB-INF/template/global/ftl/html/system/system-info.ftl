@@ -260,11 +260,8 @@
 						<div class="stat-panel system-details">
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
-								<div class="stat-cell col-sm-5 bordered no-border-r padding-sm-hr valign-top">
-									
-									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-desktop text-primary"></i>&nbsp;&nbsp;시스템</h4>
-									
-									
+								<div class="stat-cell col-sm-5 bordered no-border-r padding-sm-hr valign-top">									
+									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-desktop text-primary"></i></h4>
 									<!-- Without margin -->
 									<i class="fa fa-desktop bg-icon" style="font-size:60px;line-height:80px;height:80px;top: 0;"></i>
 									<ul class="list-group no-margin">
