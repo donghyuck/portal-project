@@ -274,7 +274,7 @@
 									</ul>
 								</div> <!-- /.stat-cell -->
 								<!-- Primary background, small padding, vertically centered text -->
-								<div class="stat-cell col-sm-7 bordered  padding-sm valign-middle">
+								<div class="stat-cell col-sm-7 bg-primary bordered  padding-sm valign-middle">
 									<table class="table">
 										<thead>
 											<tr>
