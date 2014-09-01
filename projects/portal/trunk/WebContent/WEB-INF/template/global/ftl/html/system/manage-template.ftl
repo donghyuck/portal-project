@@ -61,7 +61,11 @@
 				},
 				schema: {
 					data: "targetFiles",
-					model: common.models.FileInfo
+					
+					model: {
+                                id: "path",
+                                hasChildren: "directory"
+                            }
 				},
 				error: common.api.handleKendoAjaxError
 			});
