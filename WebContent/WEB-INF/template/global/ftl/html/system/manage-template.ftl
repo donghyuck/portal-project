@@ -165,7 +165,7 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th>이름</th>
+										<th class="small">이름</th>
 										<th>크기</th>
 										<th>수정일</th>
 									</tr>
@@ -178,7 +178,7 @@
 									</tr>
 								</tbody>
 							</table>	
-							<div id="htmleditor" class="panel-body" data-bind="invisible: file.directory" style="display:none;">
+							<div id="htmleditor" class="panel-body" >
 							
 							</div>
 							<div class="panel-footer no-padding-vr"></div>
