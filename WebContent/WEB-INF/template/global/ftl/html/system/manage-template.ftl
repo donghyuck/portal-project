@@ -157,7 +157,7 @@
 					<div class="col-sm-4">
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title">With tabs</span>
+								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs">
 									<li class="active">
 										<a href="#" data-toggle="tab">디폴트 템플릿</a>
