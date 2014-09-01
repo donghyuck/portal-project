@@ -84,7 +84,7 @@
 			var tree = renderTo.data('kendoTreeView');			
 			var selectedCells = tree.select();			
 			var selectedCell = tree.dataItem( selectedCells );   
-			return selectedCell;
+			return new common.models.FileInfo( selectedCell );
 		}
 		
 		function showTemplateDetails (){			
