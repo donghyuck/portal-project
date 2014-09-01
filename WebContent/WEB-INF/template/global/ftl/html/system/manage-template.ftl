@@ -151,7 +151,7 @@
 									<h4 class="note-title">Info note title</h4>
 									<span data-bind="text:file.formattedLastModifiedDate"></span>
 									<span data-bind="text:file.directory"></span>
-									<span data-bind="text:file.size"></span>
+									<span data-bind="text:file.formattedSize"></span>
 								</div>
 							</div>
 							<div class="panel-footer no-padding-vr"></div>
