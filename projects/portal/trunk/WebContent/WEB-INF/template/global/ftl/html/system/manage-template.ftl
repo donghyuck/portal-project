@@ -131,9 +131,10 @@
 		#htmleditor.panel-body{
 			min-height:500px;
 		}
-		#template-details .table > tr > th   {
-			border-bottom: 0px;
-		}		
+		.table > thead > tr > th {
+		vertical-align: bottom;
+		border-bottom: none;
+		}
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
