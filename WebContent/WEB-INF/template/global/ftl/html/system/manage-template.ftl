@@ -61,7 +61,7 @@
 				},
 				schema: {
 					data: "targetFiles",
-					model :common.models.FileInfo
+					model: common.models.FileInfo
 				},
 				error: common.api.handleKendoAjaxError
 			});
