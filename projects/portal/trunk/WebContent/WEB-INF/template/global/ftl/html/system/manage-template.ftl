@@ -107,7 +107,10 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">			
-					<div class="col-sm-12">				
+					<div class="col-sm-6">				
+					
+					</div>
+					<div class="col-sm-6">				
 						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬 통계</span>
