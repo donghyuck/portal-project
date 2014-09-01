@@ -8,7 +8,7 @@
 		fields: { 
 			absolutePath: { type: "string", defaultValue: "" },
 			name: { type: "string", defaultValue: "." },
-			path: { type: "string", editable: true, defaultValue: "." },
+			path: { type: "string", defaultValue: "." },
 			size: { type: "number", defaultValue: 0 },
 			directory: { type: "boolean", defaultValue: false },
 	        lastModifiedDate: { type: "date"}
