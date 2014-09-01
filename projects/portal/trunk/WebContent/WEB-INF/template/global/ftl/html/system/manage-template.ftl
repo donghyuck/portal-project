@@ -74,7 +74,7 @@
 				dataTextField: "name",
 				select: function(e) {
 				
-					alert( kendo.stringify(getSelectedFile) );
+					alert( kendo.stringify(getSelectedFile()) );
 				}
 			});
 		}		
