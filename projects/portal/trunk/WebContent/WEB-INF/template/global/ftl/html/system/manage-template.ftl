@@ -84,7 +84,7 @@
 			var tree = renderTo.data('kendoTreeView');			
 			var selectedCells = tree.select();			
 			var selectedCell = tree.dataItem( selectedCells );   
-			return new common.models.FileInfo( selectedCell );
+			return selectedCell ;
 		}
 		
 		function showTemplateDetails (){			
@@ -99,7 +99,14 @@
 				kendo.bind(renderTo, detailsModel );	
 				renderTo.data("model", detailsModel );		
 			}
-			filePlaceHolder.copy( renderTo.data("model").file );				
+			
+			renderTo.data("model").file.path = filePlaceHolder.path; 
+	    	renderTo.set("absolutePath", filePlaceHolder.absolutePath );
+	    	renderTo.set("name", filePlaceHolder.name );
+	    	renderTo.set("size", filePlaceHolder.size );
+	    	renderTo.set("directory", filePlaceHolder.directory );
+	    	renderTo.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
+	    		
 		}									
 		-->
 		</script> 		 
