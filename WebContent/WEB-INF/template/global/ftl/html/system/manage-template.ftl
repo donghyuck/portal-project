@@ -141,8 +141,7 @@
 							<div class="panel-heading">
 								<span class="panel-title" data-bind="text:file.name"></span>
 								<div class="panel-heading-controls">
-									<span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;<span style="color: #ccc">|</span>&nbsp;&nbsp;</span>
-									<button class="btn btn-primary  btn-xs">수정</button>
+									<button class="btn btn-primary  btn-xs"><i class="fa fa-code"></i></button>
 								</div>
 							</div>			
 							<table class="table">
