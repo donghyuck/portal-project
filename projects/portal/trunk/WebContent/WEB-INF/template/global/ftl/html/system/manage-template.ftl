@@ -108,7 +108,20 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-sm-6">				
+					
+				<div class="panel colourable">
+					<div class="panel-heading">
+						<span class="panel-title">With switcher</span>
+						<div class="panel-heading-controls">
+						</div> <!-- / .panel-heading-controls -->
+					</div> <!-- / .panel-heading -->
+					<div class="panel-body">
 						<div id="template-tree-view" ></div>	
+					</div>
+				</div>
+									
+					
+						
 					</div>
 					<div class="col-sm-6" style="border-left: 1px solid #ccc;">				
 						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
