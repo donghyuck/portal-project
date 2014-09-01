@@ -148,10 +148,11 @@
 							<div class="panel-body">
 								<span class="header-2">File</span>
 								<div class="note note-info">
-									<h4 class="note-title">Info note title</h4>
-									<span data-bind="text:file.formattedLastModifiedDate"></span>
-									<span data-bind="text:file.directory"></span>
-									<span data-bind="text:file.formattedSize"></span>
+								<ul class="list-unstyled">
+								  <li>위치: <span data-bind="text:file.path"></span></li>
+								  <li>크기: <span data-bind="text:file.formattedSize"></span></li>
+								  <li>마지막 수정일: <span data-bind="text:file.formattedLastModifiedDate"></span></li>    
+								</ul>
 								</div>
 							</div>
 							<div class="panel-footer no-padding-vr"></div>
