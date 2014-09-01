@@ -131,7 +131,7 @@
 					<div class="col-sm-8">				
 						<div id="template-details" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:file.path"></span></span>
+								<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:file.name"></span></span>
 								<div class="panel-heading-controls">
 									<button class="btn btn-info btn-xs btn-outline" data-action="refresh"><span class="k-icon k-si-refresh"></span> 새로고침</button>
 								</div>
