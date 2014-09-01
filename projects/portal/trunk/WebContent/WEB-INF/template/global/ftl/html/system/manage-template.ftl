@@ -128,7 +128,9 @@
 		-->
 		</script> 		 
 		<style>
-		
+		#htmleditor.panel-body{
+			min-height:500px;
+		}
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
