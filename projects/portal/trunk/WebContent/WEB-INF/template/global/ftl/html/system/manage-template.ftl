@@ -178,7 +178,7 @@
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
+									<tr class="text-center">
 										<td data-bind="text:file.path">&nbsp;</td>
 										<td data-bind="text:file.formattedSize">&nbsp;</td>
 										<td data-bind="text:file.formattedLastModifiedDate">&nbsp;</td>
