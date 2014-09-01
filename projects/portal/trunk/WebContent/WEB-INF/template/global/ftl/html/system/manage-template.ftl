@@ -115,9 +115,9 @@
 			</div>
 		</div> <!-- / #main-wrapper -->
 		<script id="treeview-template" type="text/kendo-ui-template">
-            #: item.text #
+            #: item.text # #: kendo.toString(item.lastModifiedDate , "F") #
             # if (!item.items) { #
-                <a class='delete-link' href='\#'></a>
+                <a class='delete-link' href='\#'></a> 
             # } #
         </script>									
 		<#include "/html/common/common-system-templates.ftl" >			
