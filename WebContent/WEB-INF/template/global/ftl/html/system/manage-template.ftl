@@ -141,7 +141,7 @@
 							<div class="panel-heading">
 								<span class="panel-title" data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
-									<button class="btn btn-primary  btn-xs"><i class="fa fa-code"></i></button>
+									<button class="btn btn-primary  btn-xs" data-bind="disabled: file.directory"><i class="fa fa-code"></i></button>
 								</div>
 							</div>			
 							<table class="table">
