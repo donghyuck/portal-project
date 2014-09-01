@@ -131,6 +131,9 @@
 		#htmleditor.panel-body{
 			min-height:500px;
 		}
+		#htmleditor.table > tr > th   {
+			border-bottom: 0px;
+		}		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
