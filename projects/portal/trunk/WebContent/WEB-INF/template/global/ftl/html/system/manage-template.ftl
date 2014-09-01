@@ -161,10 +161,10 @@
 								<div class="panel-heading-controls">
 									<div class="btn-group btn-group-xs" data-toggle="buttons">
 										<label class="btn btn-primary btn-flat  active">
-											<input type="radio" name="template-finder-options"> 디폴트
+											<input type="radio" name="template-finder-options" value="0"> 디폴트
 										</label>
 										<label class="btn btn-primary btn-flat">
-											<input type="radio" name="template-finder-options"> 커스텀
+											<input type="radio" name="template-finder-options" value="1"> 커스텀
 										</label>
 									</div>							
 								</div>
