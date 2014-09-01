@@ -4,6 +4,7 @@
 
 	common.models.FileInfo =  kendo.data.Model.define({
 		id : "path",
+		hasChildren: "directory",
 		fields: { 
 			absolutePath: { type: "string", defaultValue: "" },
 			name: { type: "string", defaultValue: "." },
