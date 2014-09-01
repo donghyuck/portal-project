@@ -172,9 +172,9 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th class="small">이름</th>
-										<th>크기</th>
-										<th>수정일</th>
+										<th class="small text-center">이름</th>
+										<th class="small text-center">크기</th>
+										<th class="small text-center">수정일</th>
 									</tr>
 								</thead>
 								<tbody>
