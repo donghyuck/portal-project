@@ -145,7 +145,7 @@
 									<button class="btn btn-primary  btn-xs">수정</button>
 								</div>
 							</div>			
-							<table class="table table-hover">
+							<table class="table">
 								<thead>
 									<tr>
 										<th>이름</th>
