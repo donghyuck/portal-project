@@ -139,11 +139,12 @@
 					<div class="col-sm-8">				
 						<div id="template-details" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:file.name"></span></span>
+								<span class="panel-title" data-bind="text:file.name"></span>
 								<div class="panel-heading-controls">
-									<button class="btn btn-info btn-xs btn-outline" data-action="refresh"><span class="k-icon k-si-refresh"></span> 새로고침</button>
+									<span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;<span style="color: #ccc">|</span>&nbsp;&nbsp;</span>
+									<button class="btn btn-xs">수정</button>
 								</div>
-							</div>
+							</div>						
 							<div class="panel-body">
 								
 							</div>
