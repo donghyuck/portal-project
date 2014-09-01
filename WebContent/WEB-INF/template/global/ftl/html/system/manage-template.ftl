@@ -92,15 +92,18 @@
 		function showTemplateDetails (){			
 			var renderTo = $('#template-details');
 			var filePlaceHolder = getSelectedTemplateFile();				
-			alert( kendo.stringify(filePlaceHolder) );
-			if(!renderTo.data("model")){	
-				
+			
+			if(!renderTo.data("model")){					
 				var detailsModel = kendo.observable({
 					file : new common.models.FileInfo(),
 					content : ""
 				});	
+				
 				kendo.bind(renderTo, detailsModel );	
 				renderTo.data("model", detailsModel );		
+				var editor = ace.edit("htmleditor");		
+				editor.getSession().setMode("ace/mode/ftl");
+				editor.getSession().setUseWrapMode(true);					
 			}
 			
 			renderTo.data("model").file.set("path", filePlaceHolder.path); 
@@ -110,20 +113,17 @@
 	    	renderTo.data("model").file.set("directory", filePlaceHolder.directory );
 	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
 	    	
-			common.api.callback(  
-			{
-				url :"${request.contextPath}/secure/view-template-content.do?output=json", 
-				data : { path:  filePlaceHolder.path },
-				success : function(response){
-					//renderTo.data("model").set("content", response.targetFileContent );					
-					
-					var editor = ace.edit("htmleditor");					
-					editor.getSession().setMode("ace/mode/ftl");
-					editor.getSession().setUseWrapMode(true);	
-					editor.setValue( response.targetFileContent );	
-				}
-			}); 
-	    		    		
+	    	if(!filePlaceHolder.directory){
+				common.api.callback(  
+				{
+					url :"${request.contextPath}/secure/view-template-content.do?output=json", 
+					data : { path:  filePlaceHolder.path },
+					success : function(response){
+						//renderTo.data("model").set("content", response.targetFileContent );					
+						ace.edit("htmleditor").setValue( response.targetFileContent );	
+					}
+				}); 
+	    	}	    		
 		}									
 		-->
 		</script> 		 
