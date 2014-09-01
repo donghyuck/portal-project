@@ -20,25 +20,6 @@
 	JSON = 'json';
 		
 	
-	common.ui.admin.FileInfo =  kendo.data.Model.define({
-		id : "path",
-		fields: { 
-			absolutePath: { type: "string", defaultValue: "" },
-			name: { type: "string", defaultValue: "." },
-			path: { type: "string", editable: false, defaultValue: "." },
-			size: { type: "number", defaultValue: 0 },
-			directory: { type: "boolean", defaultValue: false },
-	        lastModifiedDate: { type: "date"}
-		},
-	    copy: function ( target ){
-	    	target.path = this.get("path");
-	    	target.set("absolutePath",this.get("absolutePath") );
-	    	target.set("name", this.get("name"));
-	    	target.set("size",this.get("size") );
-	    	target.set("directory", this.get("directory"));
-	    	target.set("lastModifiedDate",this.get("lastModifiedDate") );
-	    }
-	});
 	
 	common.ui.admin.Setup = kendo.Class.extend({		
 		init : function (options){			
