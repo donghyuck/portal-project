@@ -90,8 +90,9 @@
 		function showTemplateDetails (){			
 			var renderTo = $('#template-details');
 			var filePlaceHolder = getSelectedTemplateFile();				
+			alert( kendo.stringify(filePlaceHolder) );
 			if(!renderTo.data("model")){	
-				alert("1");
+				
 				var detailsModel = kendo.observable({
 					file : new common.models.FileInfo()
 				});	
