@@ -28,7 +28,8 @@
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common/common.ui.admin.js'
+			'${request.contextPath}/js/common/common.ui.admin.js',
+			'${request.contextPath}/js/ace/ace.js'			
 			],
 			complete: function() {
 				// 1-1.  한글 지원을 위한 로케일 설정
@@ -95,7 +96,8 @@
 			if(!renderTo.data("model")){	
 				
 				var detailsModel = kendo.observable({
-					file : new common.models.FileInfo()
+					file : new common.models.FileInfo(),
+					content : ""
 				});	
 				kendo.bind(renderTo, detailsModel );	
 				renderTo.data("model", detailsModel );		
@@ -107,7 +109,21 @@
 	    	renderTo.data("model").file.set("size", filePlaceHolder.size );
 	    	renderTo.data("model").file.set("directory", filePlaceHolder.directory );
 	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
-	    		
+	    	
+			common.api.callback(  
+			{
+				url :"${request.contextPath}/secure/view-template-content.do?output=json", 
+				data : { path:  filePlaceHolder.path },
+				success : function(response){
+					//renderTo.data("model").set("content", response.targetFileContent );					
+					
+					var editor = ace.edit("htmleditor");					
+					editor.getSession().setMode("ace/mode/html");
+					editor.getSession().setUseWrapMode(true);	
+					editor.setValue( response.targetFileContent );	
+				}
+			}); 
+	    		    		
 		}									
 		-->
 		</script> 		 
@@ -160,6 +176,9 @@
 									</tr>
 								</tbody>
 							</table>	
+							<div id="htmleditor" class="panel-body">
+							
+							</div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
