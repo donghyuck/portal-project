@@ -71,10 +71,22 @@
 			$("#template-tree-view").kendoTreeView({
 				dataSource: finderDataSource,
 				template: kendo.template($("#treeview-template").html()),
-				dataTextField: "name"
+				dataTextField: "name",
+				select: function(e) {
+				
+					alert( kendo.stringify(getSelectedFile) );
+				}
 			});
 		}		
-								
+
+		function getSelectedFile(){			
+			var renderTo = $("#template-tree-view");
+			var tree = renderTo.data('kendoTreeView');			
+			var selectedCells = tree.select();			
+			var selectedCell = tree.dataItem( selectedCells );   
+			return selectedCell;
+		}	
+										
 		-->
 		</script> 		 
 		<style>
