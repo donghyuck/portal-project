@@ -160,10 +160,10 @@
 								<span class="panel-title">템플릿</span>
 								<div class="panel-heading-controls">
 									<div class="btn-group btn-group-xs" data-toggle="buttons">
-										<label class="btn btn-primary active">
+										<label class="btn btn-primary btn-flat  active">
 											<input type="radio" name="template-finder-options"> 디폴트
 										</label>
-										<label class="btn btn-primary">
+										<label class="btn btn-primary btn-flat">
 											<input type="radio" name="template-finder-options"> 커스텀
 										</label>
 									</div>							
