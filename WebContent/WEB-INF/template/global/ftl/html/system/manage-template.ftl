@@ -131,7 +131,7 @@
 		#htmleditor.panel-body{
 			min-height:500px;
 		}
-		#htmleditor.table > tr > th   {
+		#template-details .table > tr > th   {
 			border-bottom: 0px;
 		}		
 		</style>
