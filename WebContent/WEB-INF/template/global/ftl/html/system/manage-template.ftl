@@ -158,21 +158,19 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
-								<ul class="nav nav-tabs nav-tabs-xs">
-									<li class="active">
-										<a href="#default-template-pane" data-toggle="tab">디폴트 템플릿</a>
-									</li>
-									<li class="">
-										<a href="#custom-template-pane" data-toggle="tab">커스텀 템플릿</a>
-									</li>
-								</ul> <!-- / .nav -->
+								<div class="panel-heading-controls">
+									<div class="btn-group" data-toggle="buttons">
+										<label class="btn btn-success active">
+											<input type="radio" name="template-finder-options"> 디폴트
+										</label>
+										<label class="btn btn-success">
+											<input type="radio" name="template-finder-options"> 커스텀
+										</label>
+									</div>							
+								</div>
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
-								<div class="tab-content">
-									<div class="tab-pane active" id="default-template-pane">
-										<div id="template-tree-view" ></div>	
-									</div>
-								</div>		
+								<div id="template-tree-view" ></div>	
 							</div>
 						</div>															
 					</div>
