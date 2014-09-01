@@ -139,12 +139,30 @@
 					<div class="col-sm-8">				
 						<div id="template-details" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title" data-bind="text:file.name"></span>
+								<span class="panel-title" data-bind="text:file.path"></span>
 								<div class="panel-heading-controls">
 									<span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;<span style="color: #ccc">|</span>&nbsp;&nbsp;</span>
 									<button class="btn btn-primary  btn-xs">수정</button>
 								</div>
-							</div>						
+							</div>			
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>이름</th>
+										<th>크기</th>
+										<th>수정일</th>
+										<th>Username</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td data-bind="text:file.name"></td>
+										<td data-bind="text:file.formattedSize"></td>
+										<td data-bind="text:file.formattedLastModifiedDate"></td>
+										<td data-bind="text:file.path"></td>
+									</tr>
+								</tbody>
+							</table>										
 							<div class="panel-body">
 								<span class="header-2">File</span>
 								<div class="note note-info">
