@@ -60,10 +60,7 @@
 				},
 				schema: {
 					data: "targetFiles",
-					model : {
-						id: "path",
-						hasChildren: "directory"							
-					}
+					model :TemplateFile
 				},
 				error: common.api.handleKendoAjaxError
 			});
@@ -86,7 +83,27 @@
 			var selectedCell = tree.dataItem( selectedCells );   
 			return selectedCell;
 		}	
-										
+			
+		var TemplateFile =  kendo.data.Model.define({
+			id : "path",
+			fields: { 
+				absolutePath: { type: "string", defaultValue: "" },
+				name: { type: "string", defaultValue: "." },
+				path: { type: "string", editable: false, defaultValue: "." },
+				size: { type: "number", defaultValue: 0 },
+				directory: { type: "boolean", defaultValue: false },
+		        lastModifiedDate: { type: "date"}
+			},
+		    copy: function ( target ){
+		    	target.path = this.get("path");
+		    	target.set("absolutePath",this.get("absolutePath") );
+		    	target.set("name", this.get("name"));
+		    	target.set("size",this.get("size") );
+		    	target.set("directory", this.get("directory"));
+		    	target.set("lastModifiedDate",this.get("lastModifiedDate") );
+		    }
+		});
+											
 		-->
 		</script> 		 
 		<style>
@@ -107,18 +124,14 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">			
-					<div class="col-sm-4">
-					
-				<div class="panel colourable">
-					<div class="panel-body">
-						<div id="template-tree-view" ></div>	
+					<div class="col-sm-4">					
+						<div class="panel colourable">
+							<div class="panel-body">
+								<div id="template-tree-view" ></div>	
+							</div>
+						</div>						
 					</div>
-				</div>
-									
-					
-						
-					</div>
-					<div class="col-sm-8" style="border-left: 1px solid #ccc;">				
+					<div class="col-sm-8">				
 						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬 통계</span>
