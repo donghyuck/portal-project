@@ -108,9 +108,9 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-sm-6">				
-					
+						<div id="template-tree-view" ></div>	
 					</div>
-					<div class="col-sm-6">				
+					<div class="col-sm-6" style="border-left: 1px solid #ccc;">				
 						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬 통계</span>
@@ -119,7 +119,7 @@
 								</div>
 							</div>
 							<div class="panel-body">
-								<div id="template-tree-view" ></div>	
+								
 							</div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>					
