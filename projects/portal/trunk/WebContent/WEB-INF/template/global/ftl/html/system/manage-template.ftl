@@ -159,11 +159,11 @@
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<div class="panel-heading-controls">
-									<div class="btn-group" data-toggle="buttons">
-										<label class="btn btn-success active">
+									<div class="btn-group btn-group-xs" data-toggle="buttons">
+										<label class="btn btn-primary active">
 											<input type="radio" name="template-finder-options"> 디폴트
 										</label>
-										<label class="btn btn-success">
+										<label class="btn btn-primary">
 											<input type="radio" name="template-finder-options"> 커스텀
 										</label>
 									</div>							
