@@ -118,7 +118,7 @@
 					//renderTo.data("model").set("content", response.targetFileContent );					
 					
 					var editor = ace.edit("htmleditor");					
-					editor.getSession().setMode("ace/mode/html");
+					editor.getSession().setMode("ace/mode/freemarker");
 					editor.getSession().setUseWrapMode(true);	
 					editor.setValue( response.targetFileContent );	
 				}
