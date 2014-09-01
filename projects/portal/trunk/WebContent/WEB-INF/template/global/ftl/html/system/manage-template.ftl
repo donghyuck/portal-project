@@ -60,9 +60,11 @@
 					read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
 				},
 				schema: {
-					data: "targetFiles",
-					
-					model:common.models.FileInfo
+					data: "targetFiles",					
+					model: {
+						id: "path",
+						hasChildren: "directory"
+					}
 				},
 				error: common.api.handleKendoAjaxError
 			});
