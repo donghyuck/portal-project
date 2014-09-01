@@ -101,7 +101,7 @@
 				renderTo.data("model", detailsModel );		
 			}
 			
-			renderTo.data("model").file.path = filePlaceHolder.path; 
+			renderTo.data("model").file.set("path", filePlaceHolder.path); 
 	    	renderTo.data("model").file.set("absolutePath", filePlaceHolder.absolutePath );
 	    	renderTo.data("model").file.set("name", filePlaceHolder.name );
 	    	renderTo.data("model").file.set("size", filePlaceHolder.size );
