@@ -72,7 +72,7 @@
 				dataSource: finderDataSource,
 				template: kendo.template($("#treeview-template").html()),
 				dataTextField: "name",
-				select: function(e) {
+				change: function(e) {
 				
 					alert( kendo.stringify(getSelectedFile()) );
 				}
