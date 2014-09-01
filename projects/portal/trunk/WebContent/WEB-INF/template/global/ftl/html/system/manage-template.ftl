@@ -155,9 +155,9 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td data-bind="text:file.path"></td>
-										<td data-bind="text:file.formattedSize"></td>
-										<td data-bind="text:file.formattedLastModifiedDate"></td>
+										<td data-bind="text:file.path">&nbsp;</td>
+										<td data-bind="text:file.formattedSize">&nbsp;</td>
+										<td data-bind="text:file.formattedLastModifiedDate">&nbsp;</td>
 									</tr>
 								</tbody>
 							</table>	
