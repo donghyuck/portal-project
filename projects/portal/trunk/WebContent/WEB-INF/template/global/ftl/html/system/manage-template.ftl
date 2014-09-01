@@ -139,7 +139,7 @@
 					<div class="col-sm-8">				
 						<div id="template-details" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title" data-bind="text:file.name"></span>
+								<span class="panel-title" data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
 									<button class="btn btn-primary  btn-xs"><i class="fa fa-code"></i></button>
 								</div>
