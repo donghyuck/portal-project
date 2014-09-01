@@ -178,7 +178,7 @@
 									</tr>
 								</tbody>
 							</table>	
-							<div id="htmleditor" class="panel-body">
+							<div id="htmleditor" class="panel-body" data-bind="invisible: file.directory" style="display:none;">
 							
 							</div>
 							<div class="panel-footer no-padding-vr"></div>
