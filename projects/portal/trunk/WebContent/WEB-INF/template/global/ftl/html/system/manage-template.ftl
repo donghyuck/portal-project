@@ -91,6 +91,7 @@
 			var renderTo = $('#template-details');
 			var filePlaceHolder = getSelectedTemplateFile();				
 			if(!renderTo.data("model")){	
+				alert("1");
 				var detailsModel = kendo.observable({
 					file : new common.models.FileInfo()
 				});	
