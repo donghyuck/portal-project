@@ -61,7 +61,7 @@
 				},
 				schema: {
 					data: "targetFiles",
-					model :common.ui.admin.FileInfo
+					model :common.models.FileInfo
 				},
 				error: common.api.handleKendoAjaxError
 			});
@@ -89,7 +89,7 @@
 			var filePlaceHolder = getSelectedTemplateFile();				
 			if(!renderTo.data("model")){	
 				var detailsModel = kendo.observable({
-					file : new common.ui.admin.FileInfo()
+					file : new common.models.FileInfo()
 				});	
 				kendo.bind(renderTo, detailsModel );	
 				renderTo.data("model", detailsModel );		
