@@ -159,7 +159,7 @@
 										<td data-bind="text:file.name"></td>
 										<td data-bind="text:file.formattedSize"></td>
 										<td data-bind="text:file.formattedLastModifiedDate"></td>
-										<td data-bind="text:file.path"></td>
+										<td data-bind="text:file.absolutePath"></td>
 									</tr>
 								</tbody>
 							</table>										
