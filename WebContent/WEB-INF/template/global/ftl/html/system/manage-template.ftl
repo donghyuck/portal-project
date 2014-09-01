@@ -160,15 +160,19 @@
 								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs">
 									<li class="active">
-										<a href="#" data-toggle="tab">디폴트 템플릿</a>
+										<a href="#default-template-pane" data-toggle="tab">디폴트 템플릿</a>
 									</li>
 									<li class="">
-										<a href="#" data-toggle="tab">커스텀 템플릿</a>
+										<a href="#custom-template-pane" data-toggle="tab">커스텀 템플릿</a>
 									</li>
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
-								<div id="template-tree-view" ></div>	
+								<div class="tab-content">
+									<div class="tab-pane active" id="default-template-pane">
+										<div id="template-tree-view" ></div>	
+									</div>
+								</div>		
 							</div>
 						</div>															
 					</div>
