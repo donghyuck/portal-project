@@ -101,11 +101,11 @@
 			}
 			
 			renderTo.data("model").file.path = filePlaceHolder.path; 
-	    	renderTo.set("absolutePath", filePlaceHolder.absolutePath );
-	    	renderTo.set("name", filePlaceHolder.name );
-	    	renderTo.set("size", filePlaceHolder.size );
-	    	renderTo.set("directory", filePlaceHolder.directory );
-	    	renderTo.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
+	    	renderTo.data("model").file.set("absolutePath", filePlaceHolder.absolutePath );
+	    	renderTo.data("model").file.set("name", filePlaceHolder.name );
+	    	renderTo.data("model").file.set("size", filePlaceHolder.size );
+	    	renderTo.data("model").file.set("directory", filePlaceHolder.directory );
+	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
 	    		
 		}									
 		-->
