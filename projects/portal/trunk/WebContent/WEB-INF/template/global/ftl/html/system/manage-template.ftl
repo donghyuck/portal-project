@@ -154,12 +154,23 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">			
-					<div class="col-sm-4">					
+					<div class="col-sm-4">
 						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title">With tabs</span>
+								<ul class="nav nav-tabs nav-tabs-xs">
+									<li class="active">
+										<a href="#" data-toggle="tab">디폴트 템플릿</a>
+									</li>
+									<li class="">
+										<a href="#" data-toggle="tab">커스텀 템플릿</a>
+									</li>
+								</ul> <!-- / .nav -->
+							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
 								<div id="template-tree-view" ></div>	
 							</div>
-						</div>						
+						</div>															
 					</div>
 					<div class="col-sm-8">				
 						<div id="template-details" class="panel panel-default" style="min-height:300px;">
