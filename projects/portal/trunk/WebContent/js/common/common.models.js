@@ -15,7 +15,7 @@
 		},
 	    formattedLastModifiedDate : function(){
 	    	return kendo.toString(this.get("lastModifiedDate"), "g");
-	    }		
+	    },		
 	    copy: function ( target ){
 	    	target.path = this.get("path");
 	    	target.set("absolutePath",this.get("absolutePath") );
