@@ -60,7 +60,7 @@
 				},
 				schema: {
 					data: "targetFiles",
-					model :TemplateFile
+					model :FileInfo
 				},
 				error: common.api.handleKendoAjaxError
 			});
@@ -70,21 +70,33 @@
 				template: kendo.template($("#treeview-template").html()),
 				dataTextField: "name",
 				change: function(e) {
-				
-					alert( kendo.stringify(getSelectedFile()) );
+					showTemplateDetails();
 				}
 			});
 		}		
 
-		function getSelectedFile(){			
+		function getSelectedTemplateFile(){			
 			var renderTo = $("#template-tree-view");
 			var tree = renderTo.data('kendoTreeView');			
 			var selectedCells = tree.select();			
 			var selectedCell = tree.dataItem( selectedCells );   
 			return selectedCell;
+		}
+		
+		function showTemplateDetails (){			
+			var renderTo = $('#template-details');
+			var filePlaceHolder = getSelectedTemplateFile();				
+			if(!renderTo.data("model")){	
+				var detailsModel = kendo.observable({
+					file : new FileInfo(),
+				});	
+				kendo.bind(renderTo, detailsModel );	
+				renderTo.data("model", detailsModel );		
+			}
+			filePlaceHolder.copy( renderTo.data("model").file );				
 		}	
 			
-		var TemplateFile =  kendo.data.Model.define({
+		var FileInfo =  kendo.data.Model.define({
 			id : "path",
 			fields: { 
 				absolutePath: { type: "string", defaultValue: "" },
@@ -132,9 +144,9 @@
 						</div>						
 					</div>
 					<div class="col-sm-8">				
-						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
+						<div id="template-details" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬 통계</span>
+								<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:file.path"></span></span>
 								<div class="panel-heading-controls">
 									<button class="btn btn-info btn-xs btn-outline" data-action="refresh"><span class="k-icon k-si-refresh"></span> 새로고침</button>
 								</div>
