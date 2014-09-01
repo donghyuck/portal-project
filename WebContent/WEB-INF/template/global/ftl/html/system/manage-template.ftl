@@ -115,6 +115,7 @@
 			</div>
 		</div> <!-- / #main-wrapper -->
 		<script id="treeview-template" type="text/kendo-ui-template">
+			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
             #: item.path # #: kendo.toString(item.lastModifiedDate , "g") # #: kendo.toString( item.size , "\\#\\#,\\#" )#bytes
             # if (!item.items) { #
                 <a class='delete-link' href='\#'></a> 
