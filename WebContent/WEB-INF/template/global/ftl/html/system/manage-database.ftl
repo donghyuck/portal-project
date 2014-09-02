@@ -55,7 +55,7 @@
 					connecting : false,
 				});	
 				var renderTo = $("#database-details");
-				//renderTo.data("database", detailsModel );
+				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
 								
 				connectDatabase();
@@ -64,7 +64,10 @@
 		}]);		
 									
 									
-									
+		function getDatabaseDetailsModel(){
+			var renderTo = $("#database-details");
+			return renderTo.data(model");
+		} 								
 									
 		
 		function connectDatabase(){
@@ -74,6 +77,9 @@
 				data : {  },
 				success : function(response){						
 					alert( kendo.stringify(response) );	
+					var model = getDatabaseDetailsModel();
+					model.set("catalog" , response.catalog);
+					model.set("schema", response.schema); 
 				}
 			}); 						
 		}
