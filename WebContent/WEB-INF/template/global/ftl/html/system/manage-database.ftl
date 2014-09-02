@@ -117,6 +117,20 @@
 									</div>
 								</div>
 							</div> <!-- / .panel-heading -->
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="small text-center">Catalog</th>
+										<th class="small text-center">Schema</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr class="text-center">
+										<td data-bind="text:catalog">&nbsp;</td>
+										<td data-bind="text:schema">&nbsp;</td>
+									</tr>
+								</tbody>
+							</table>								
 							<div class="panel-body">
 								<div class="row">
 									<div class="col-sm-6">
