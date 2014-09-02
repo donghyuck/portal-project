@@ -43,8 +43,9 @@ PC9saWNlbnNlPg==</file>
 				<enabled>false</enabled>
 			</velocity>
 		</render>
-	</view>	
-		
+	</view>			
+	
+	
 	<components>
 		<user>
 			<anonymous>
@@ -76,8 +77,7 @@ PC9saWNlbnNlPg==</file>
 			<default>
 				<companyId>1</companyId>
 			</default>				
-		</company>
-		
+		</company>		
 		<menu>
 			<default>
 				<menuId>1</menuId>	
@@ -101,9 +101,16 @@ PC9saWNlbnNlPg==</file>
 				<no-logo-url>/images/common/no-image.jpg</no-logo-url>
 				<no-avatar-url>/images/common/no-avatar.png</no-avatar-url>
 			</images>			
-		</download>		
+		</download>	
 	</components>
-		
+	
+	<performance-monitoring>
+		<database>			
+			<schema>u_portal</schema>
+			<!-- <catalog></catalog> -->			
+		</database>
+	</performance-monitoring>
+	
 	<security>
 		<authentication>
 			<loginVer>1</loginVer>
@@ -113,8 +120,7 @@ PC9saWNlbnNlPg==</file>
 				<algorithm>SHA-256</algorithm>
 			</encoding>
 		</authentication>
-	</security>
-	
+	</security>	
 	<scripting>
 		<groovy>
 			<debug>false</debug>
