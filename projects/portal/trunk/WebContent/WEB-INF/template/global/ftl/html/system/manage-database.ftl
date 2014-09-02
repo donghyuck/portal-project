@@ -114,13 +114,9 @@
 											<label class="control-label">Schema Filter</label>
 											<input type="text" name="schemaFilter" class="form-control">
 										</div>
-									</div><!-- col-sm-5 -->
-									<div class="col-sm-2">
-										<div class="form-group no-margin-hr">
-											<button class="btn btn-primary btn-flat btn-block">연결</button>
-										</div>
-									</div><!-- col-sm-2 -->									
+									</div><!-- col-sm-5 -->							
 								</div>
+								<button class="btn btn-primary">Send</button>
 							</div>
 						</div>															
 					</div>
