@@ -48,6 +48,7 @@
 					}
 				});					
 	
+	connectDatabase();
 				// END SCRIPT
 			}
 		}]);		
