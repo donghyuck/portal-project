@@ -162,10 +162,10 @@
 								
 							<div class="btn-group btn-group-xs" data-toggle="buttons">
 								<label class="btn btn-info active">
-									<input type="radio" name="personalized-area-col-size" value="false"><i class="fa fa-square"></i> 디폴트
+									<input type="radio" name="personalized-area-col-size" value="false"><i class="fa fa-file-o"></i> 기본
 								</label>
 								<label class="btn btn-info ">
-							 		<input type="radio" name="personalized-area-col-size" value="true"> <i class="fa fa-th-large"></i> 커스텀
+							 		<input type="radio" name="personalized-area-col-size" value="true"> <i class="fa fa-file-code-o"></i> 커스텀
 								</label>
 							</div>
 															
