@@ -103,18 +103,18 @@
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
 								<div class="row">
-									<div class="col-sm-5">
+									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
 											<label class="control-label">Catalog Filter</label>
 											<input type="text" name="catalogFilter" class="form-control" >
 										</div>
-									</div><!-- col-sm-5 -->
-									<div class="col-sm-5">
+									</div><!-- col-sm-6 -->
+									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
 											<label class="control-label">Schema Filter</label>
 											<input type="text" name="schemaFilter" class="form-control">
 										</div>
-									</div><!-- col-sm-5 -->							
+									</div><!-- col-sm-6 -->							
 								</div>
 								<button class="btn btn-primary">Send</button>
 							</div>
