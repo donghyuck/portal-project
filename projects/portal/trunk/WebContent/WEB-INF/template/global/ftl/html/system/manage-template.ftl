@@ -48,37 +48,46 @@
 					}
 				});					
 				
+				$('#template-tabs').on( 'show.bs.tab', function (e) {		
+					var show_bs_tab = $(e.target);
+					switch( show_bs_tab.attr('href') ){
+						case "#template-tree-view" :
+							createPathFinder();
+							break;
+						case  '#custom-template-tree-view' :
+							
+							break;
+					}	
+				});
 				
-				//createCacheStatsGrid();	
-				createPathFinder();
 				// END SCRIPT
 			}
 		}]);		
 		
-		function createPathFinder(){
-		
-			var finderDataSource = new kendo.data.HierarchicalDataSource({
-				transport: { 
-					read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
-				},
-				schema: {
-					data: "targetFiles",					
-					model: {
-						id: "path",
-						hasChildren: "directory"
+		function createPathFinder(){		
+			if( !$("#template-tree-view").data('kendoTreeView') ){			
+				var finderDataSource = new kendo.data.HierarchicalDataSource({
+					transport: { 
+						read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
+					},
+					schema: {
+						data: "targetFiles",					
+						model: {
+							id: "path",
+							hasChildren: "directory"
+						}
+					},
+					error: common.api.handleKendoAjaxError
+				});			
+				$("#template-tree-view").kendoTreeView({
+					dataSource: finderDataSource,
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {
+						showTemplateDetails();
 					}
-				},
-				error: common.api.handleKendoAjaxError
-			});
-			
-			$("#template-tree-view").kendoTreeView({
-				dataSource: finderDataSource,
-				template: kendo.template($("#treeview-template").html()),
-				dataTextField: "name",
-				change: function(e) {
-					showTemplateDetails();
-				}
-			});
+				});
+			}
 		}		
 
 		function getSelectedTemplateFile(){			
@@ -158,7 +167,7 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
-								<ul class="nav nav-tabs nav-tabs-xs" role="tablist">
+								<ul class="nav nav-tabs nav-tabs-xs" role="tablist" id="template-tabs">
 									<li class="active">
 										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
 									</li>
