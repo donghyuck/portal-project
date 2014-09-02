@@ -53,12 +53,18 @@
 					catalog : "",
 					schema : "",
 					connecting : true,
+					status : 0
 				});	
 				var renderTo = $("#database-details");
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
 								
-				connectDatabase();
+				connectDatabase();				
+				setInterval(function () {
+					if(getDatabaseDetailsModel().get("status") == 1) 
+						connectDatabase();
+				}, 15000);		
+									
 				// END SCRIPT
 			}
 		}]);		
@@ -80,17 +86,10 @@
 					var model = getDatabaseDetailsModel();
 					model.set("catalog" , response.catalogFilter);
 					model.set("schema", response.schemaFilter); 
+					model.set("status", response.taskStatusCode); 
 					if( response.taskStatusCode == 2 ){
 						model.set("connecting" , false);
 					}
-				
-					if( response.taskStatusCode == 1 ){	
-						setInterval(function () {
-							connectDatabase();
-						}, 15000);		
-					}
-				
-				
 				}
 			}); 						
 		}
