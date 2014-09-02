@@ -82,12 +82,25 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-sm-4">
-						<div class="panel colourable">
+						<div class="panel form-horizontal">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i> 데이터 베이스</span>
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
-
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<label class="control-label">Firstname</label>
+											<input type="text" name="firstname" class="form-control">
+										</div>
+									</div><!-- col-sm-6 -->
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<label class="control-label">Lastname</label>
+											<input type="text" name="lastname" class="form-control">
+										</div>
+									</div><!-- col-sm-6 -->
+								</div>
 							</div>
 						</div>															
 					</div>
