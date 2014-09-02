@@ -167,8 +167,7 @@
 								<a href="#custom-template-pane" data-toggle="tab">커스텀</a>
 							</li>
 						</ul>																						
-													
-								</div>
+
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
 								<div id="template-tree-view" ></div>	
