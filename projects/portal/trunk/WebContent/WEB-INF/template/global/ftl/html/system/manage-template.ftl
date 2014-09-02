@@ -117,6 +117,7 @@
 			}
 			
 			renderTo.data("model").file.set("path", filePlaceHolder.path); 
+			renderTo.data("model").file.set("customized", filePlaceHolder.customized); 
 	    	renderTo.data("model").file.set("absolutePath", filePlaceHolder.absolutePath );
 	    	renderTo.data("model").file.set("name", filePlaceHolder.name );
 	    	renderTo.data("model").file.set("size", filePlaceHolder.size );
@@ -127,7 +128,7 @@
 				common.api.callback(  
 				{
 					url :"${request.contextPath}/secure/view-template-content.do?output=json", 
-					data : { path:  filePlaceHolder.path },
+					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
 					success : function(response){
 						//renderTo.data("model").set("content", response.targetFileContent );					
 						ace.edit("htmleditor").setValue( response.targetFileContent );	
