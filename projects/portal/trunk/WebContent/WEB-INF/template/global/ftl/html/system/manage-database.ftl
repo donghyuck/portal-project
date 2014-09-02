@@ -90,13 +90,13 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
-											<label class="control-label">catalogFilter</label>
+											<label class="control-label">Catalog Filter</label>
 											<input type="text" name="catalogFilter" class="form-control">
 										</div>
 									</div><!-- col-sm-6 -->
 									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
-											<label class="control-label">schemaFilter</label>
+											<label class="control-label">Schema Filter</label>
 											<input type="text" name="schemaFilter" class="form-control">
 										</div>
 									</div><!-- col-sm-6 -->
