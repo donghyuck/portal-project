@@ -60,7 +60,7 @@
 				common.api.callback(  
 				{
 					url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
-					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
+					data : {  },
 					success : function(response){						
 						alert( kendo.stringify(response) );	
 					}
