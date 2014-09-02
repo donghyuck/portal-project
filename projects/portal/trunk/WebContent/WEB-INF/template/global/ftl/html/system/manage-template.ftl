@@ -81,7 +81,19 @@
 					error: common.api.handleKendoAjaxError
 				});			
 				$("#template-tree-view").kendoTreeView({
-					dataSource: finderDataSource,
+					dataSource: {
+						transport: { 
+							read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
+						},
+						schema: {
+							data: "targetFiles",					
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						},
+						error: common.api.handleKendoAjaxError					
+					},
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
