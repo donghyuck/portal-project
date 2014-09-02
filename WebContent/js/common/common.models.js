@@ -11,6 +11,7 @@
 			path: { type: "string", defaultValue: "." },
 			size: { type: "number", defaultValue: 0 },
 			directory: { type: "boolean", defaultValue: false },
+			customized : { type: "boolean", defaultValue: false },
 	        lastModifiedDate: { type: "date"}
 		},
 	    formattedLastModifiedDate : function(){
@@ -21,6 +22,7 @@
 	    },
 	    copy: function ( target ){
 	    	target.path = this.get("path");
+	    	target.set("customized",this.get("customized") );
 	    	target.set("absolutePath",this.get("absolutePath") );
 	    	target.set("name", this.get("name"));
 	    	target.set("size",this.get("size") );
