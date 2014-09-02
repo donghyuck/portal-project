@@ -83,6 +83,14 @@
 					if( response.taskStatusCode == 2 ){
 						model.set("connecting" , false);
 					}
+				
+					if( response.taskStatusCode == 1 ){	
+						setInterval(function () {
+							connectDatabase();
+						}, 15000);		
+					}
+				
+				
 				}
 			}); 						
 		}
