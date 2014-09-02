@@ -158,19 +158,20 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
-
-						<ul class="nav nav-tabs nav-tabs-xs">
-							<li class="active">
-								<a href="#default-template-pane" data-toggle="tab">기본</a>
-							</li>
-							<li>
-								<a href="#custom-template-pane" data-toggle="tab">커스텀</a>
-							</li>
-						</ul>																						
-
+								<ul class="nav nav-tabs nav-tabs-xs" role="tablist">
+									<li class="active">
+										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
+									</li>
+									<li>
+										<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
+									</li>
+								</ul>			
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
-								<div id="template-tree-view" ></div>	
+								<div class="tab-content">
+									 <div class="tab-pane fade" id="template-tree-view"></div>
+									 <div class="tab-pane fade" id="custom-template-tree-view"></div>
+								</div>
 							</div>
 						</div>															
 					</div>
