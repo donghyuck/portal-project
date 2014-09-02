@@ -140,23 +140,6 @@
 									</tr>
 								</tbody>
 							</table>								
-							<div class="panel-body">
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="form-group no-margin-hr">
-											<label class="control-label">Catalog Filter</label>
-											<input type="text" name="catalogFilter" class="form-control" >
-										</div>
-									</div><!-- col-sm-6 -->
-									<div class="col-sm-6">
-										<div class="form-group no-margin-hr">
-											<label class="control-label">Schema Filter</label>
-											<input type="text" name="schemaFilter" class="form-control">
-										</div>
-									</div><!-- col-sm-6 -->							
-								</div>
-								<button class="btn btn-labeled btn-primary"><span class="btn-label icon fa fa-flug"></span> 연결</button>
-							</div>
 						</div>															
 					</div>
 					<div class="col-sm-8">				
