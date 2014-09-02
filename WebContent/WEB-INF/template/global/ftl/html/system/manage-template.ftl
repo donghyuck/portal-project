@@ -234,7 +234,7 @@
 							<div class="panel-heading">
 								<span class="panel-title" data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
-									<button class="btn btn-primary  btn-xs" data-bind="invisible: file.directory" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 생성</button>
+									<button class="btn btn-primary  btn-xs" data-bind="invisible: file.directory, enabled: customized" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 생성</button>
 								</div>
 							</div>			
 							<table class="table">
