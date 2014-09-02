@@ -107,7 +107,7 @@ PC9saWNlbnNlPg==</file>
 	<performance-monitoring>
 		<database>			
 			<!-- <schema>u_portal</schema>-->
-			<catalog>U_PORTAL</catalog>		
+			<!-- <catalog>U_PORTAL</catalog>		-->
 		</database>
 	</performance-monitoring>
 	
