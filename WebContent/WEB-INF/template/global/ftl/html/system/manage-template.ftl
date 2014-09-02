@@ -159,14 +159,17 @@
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<div class="panel-heading-controls">
-									<div class="btn-group btn-group-xs" data-toggle="buttons">
-										<label class="btn btn-primary btn-flat  active">
-											<input type="radio" name="template-finder-options" value="0"> 디폴트
-										</label>
-										<label class="btn btn-primary btn-flat">
-											<input type="radio" name="template-finder-options" value="1"> 커스텀
-										</label>
-									</div>							
+								
+							<div class="btn-group btn-group-xs" data-toggle="buttons">
+								<label class="btn btn-info active">
+									<input type="radio" name="personalized-area-col-size" value="false"><i class="fa fa-square"></i> 디폴트
+								</label>
+								<label class="btn btn-info ">
+							 		<input type="radio" name="personalized-area-col-size" value="true"> <i class="fa fa-th-large"></i> 커스텀
+								</label>
+							</div>
+															
+													
 								</div>
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
@@ -185,7 +188,7 @@
 							<table class="table">
 								<thead>
 									<tr>
-										<th class="small text-center">이름</th>
+										<th class="small text-center">경로</th>
 										<th class="small text-center">크기</th>
 										<th class="small text-center">수정일</th>
 									</tr>
@@ -198,9 +201,7 @@
 									</tr>
 								</tbody>
 							</table>	
-							<div id="htmleditor" class="panel-body" data-bind="invisible: file.directory" style="display:none;">
-							
-							</div>
+							<div id="htmleditor" class="panel-body" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
