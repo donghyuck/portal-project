@@ -55,7 +55,7 @@
 							createPathFinder();
 							break;
 						case  '#custom-template-tree-view' :
-							
+							createCustomPathFinder();
 							break;
 					}	
 				});
@@ -97,24 +97,55 @@
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
-						showTemplateDetails();
+						var filePlaceHolder = getSelectedTemplateFile($("#template-tree-view"));
+						showTemplateDetails(filePlaceHolder);
 					}
 				});
 			}
 		}		
 
-		function getSelectedTemplateFile(){			
-			var renderTo = $("#template-tree-view");
+		function createCustomPathFinder(){		
+			if( !$("#custom-template-tree-view").data('kendoTreeView') ){			
+				$("#custom-template-tree-view").kendoTreeView({
+					dataSource: {
+						transport: { 
+							read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' },
+							parameterMap: function (options, operation){			
+								return {customized :true};
+							}							
+						},
+						schema: {
+							data: "targetFiles",					
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						},
+						error: common.api.handleKendoAjaxError					
+					},
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {
+						var filePlaceHolder = getSelectedTemplateFile($("#custom-template-tree-view"));
+						showTemplateDetails(filePlaceHolder);
+					}
+				});
+			}
+		}		
+
+
+		function getSelectedTemplateFile( renderTo ){			
+			//var renderTo = $("#template-tree-view");
 			var tree = renderTo.data('kendoTreeView');			
 			var selectedCells = tree.select();			
 			var selectedCell = tree.dataItem( selectedCells );   
 			return selectedCell ;
 		}
 		
-		function showTemplateDetails (){			
-			var renderTo = $('#template-details');
-			var filePlaceHolder = getSelectedTemplateFile();				
-			
+		function showTemplateDetails (filePlaceHolder){			
+			//var filePlaceHolder = getSelectedTemplateFile();			
+				
+			var renderTo = $('#template-details');			
 			if(!renderTo.data("model")){					
 				var detailsModel = kendo.observable({
 					file : new common.models.FileInfo(),
