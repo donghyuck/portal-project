@@ -100,7 +100,12 @@
 					<div class="col-sm-4">
 						<div class="panel form-horizontal">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-database"></i> 데이터 베이스</span>
+								<span class="panel-title"><i class="fa fa-database"></i></span>
+								<div class="panel-heading-controls" style="width: 30%">
+									<div class="progress progress-striped active" style="width: 100%">
+										<div class="progress-bar progress-bar-danger" style="width: 90%;"></div>
+									</div>
+								</div>
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
 								<div class="row">
