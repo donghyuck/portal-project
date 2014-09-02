@@ -116,7 +116,7 @@
 										</div>
 									</div><!-- col-sm-6 -->							
 								</div>
-								<button class="btn btn-primary"><i class="fa fa-plug"></i> 연결</button>
+								<button class="btn btn-labeled btn-primary"><span class="btn-label icon fa fa-flug"></span> 연결</button>
 							</div>
 						</div>															
 					</div>
