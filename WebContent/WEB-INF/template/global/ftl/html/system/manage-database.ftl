@@ -47,25 +47,35 @@
 						item.copy(targetCompany);
 					}
 				});					
-	
-	connectDatabase();
+				
+
+				var detailsModel = kendo.observable({
+					catalog : "",
+					schema : "",
+					connecting : false,
+				});	
+				var renderTo = $("#database-details");
+				//renderTo.data("database", detailsModel );
+				kendo.bind( renderTo, detailsModel );
+								
+				connectDatabase();
 				// END SCRIPT
 			}
 		}]);		
 									
 									
+									
+									
 		
 		function connectDatabase(){
-
-				common.api.callback(  
-				{
-					url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
-					data : {  },
-					success : function(response){						
-						alert( kendo.stringify(response) );	
-					}
-				}); 
-						
+			common.api.callback(  
+			{
+				url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
+				data : {  },
+				success : function(response){						
+					alert( kendo.stringify(response) );	
+				}
+			}); 						
 		}
 									
 		-->
@@ -98,7 +108,7 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-sm-4">
-						<div class="panel form-horizontal">
+						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 								<div class="panel-heading-controls" style="width: 30%">
