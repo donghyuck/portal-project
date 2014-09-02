@@ -116,7 +116,7 @@
 										</div>
 									</div><!-- col-sm-6 -->							
 								</div>
-								<button class="btn btn-primary">Send</button>
+								<button class="btn btn-primary"><i class="fa fa-plug"></i> 연결</button>
 							</div>
 						</div>															
 					</div>
