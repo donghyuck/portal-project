@@ -158,17 +158,15 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
-								<div class="panel-heading-controls">
-								
-							<div class="btn-group btn-group-xs" data-toggle="buttons">
-								<label class="btn btn-info active">
-									<input type="radio" name="personalized-area-col-size" value="false"><i class="fa fa-file-o"></i> 기본
-								</label>
-								<label class="btn btn-info ">
-							 		<input type="radio" name="personalized-area-col-size" value="true"> <i class="fa fa-file-code-o"></i> 커스텀
-								</label>
-							</div>
-															
+
+						<ul class="nav nav-tabs nav-tabs-xs">
+							<li class="active">
+								<a href="#default-template-pane" data-toggle="tab">기본</a>
+							</li>
+							<li>
+								<a href="#custom-template-pane" data-toggle="tab">커스텀</a>
+							</li>
+						</ul>																						
 													
 								</div>
 							</div> <!-- / .panel-heading -->
