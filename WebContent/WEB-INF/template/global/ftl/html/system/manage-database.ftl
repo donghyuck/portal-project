@@ -84,21 +84,10 @@
 					<div class="col-sm-4">
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title">템플릿</span>
-								<ul class="nav nav-tabs nav-tabs-xs" role="tablist" id="template-tabs">
-									<li>
-										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
-									</li>
-									<li>
-										<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
-									</li>
-								</ul>			
+								<span class="panel-title"><i class="fa fa-database"></i> 데이터 베이스</span>
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
-								<div class="tab-content">
-									 <div class="tab-pane fade" id="template-tree-view"></div>
-									 <div class="tab-pane fade" id="custom-template-tree-view"></div>
-								</div>
+
 							</div>
 						</div>															
 					</div>
