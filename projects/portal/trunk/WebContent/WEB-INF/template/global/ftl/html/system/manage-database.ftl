@@ -78,8 +78,8 @@
 				success : function(response){						
 					alert( kendo.stringify(response) );	
 					var model = getDatabaseDetailsModel();
-					model.set("catalog" , response.catalog);
-					model.set("schema", response.schema); 
+					model.set("catalog" , response.catalogFilter);
+					model.set("schema", response.schemaFilter); 
 					if( response.taskStatusCode == 2 ){
 						model.set("connecting" , false);
 					}
