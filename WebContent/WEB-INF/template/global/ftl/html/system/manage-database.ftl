@@ -52,6 +52,21 @@
 			}
 		}]);		
 									
+									
+		
+		function connectDatabase(){
+
+				common.api.callback(  
+				{
+					url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
+					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
+					success : function(response){						
+						alert( kendo.stringify(response) );	
+					}
+				}); 
+						
+		}
+									
 		-->
 		</script> 		 
 		<style>
@@ -88,18 +103,23 @@
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
 								<div class="row">
-									<div class="col-sm-6">
+									<div class="col-sm-5">
 										<div class="form-group no-margin-hr">
 											<label class="control-label">Catalog Filter</label>
 											<input type="text" name="catalogFilter" class="form-control" >
 										</div>
-									</div><!-- col-sm-6 -->
-									<div class="col-sm-6">
+									</div><!-- col-sm-5 -->
+									<div class="col-sm-5">
 										<div class="form-group no-margin-hr">
 											<label class="control-label">Schema Filter</label>
 											<input type="text" name="schemaFilter" class="form-control">
 										</div>
-									</div><!-- col-sm-6 -->
+									</div><!-- col-sm-5 -->
+									<div class="col-sm-2">
+										<div class="form-group no-margin-hr">
+											<button class="btn btn-primary btn-flat btn-block">연결</button>
+										</div>
+									</div><!-- col-sm-2 -->									
 								</div>
 							</div>
 						</div>															
