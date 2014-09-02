@@ -169,7 +169,7 @@
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs" role="tablist" id="template-tabs">
-									<li class="active">
+									<li>
 										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
 									</li>
 									<li>
