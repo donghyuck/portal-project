@@ -90,14 +90,14 @@
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
-											<label class="control-label">Firstname</label>
-											<input type="text" name="firstname" class="form-control">
+											<label class="control-label">catalogFilter</label>
+											<input type="text" name="catalogFilter" class="form-control">
 										</div>
 									</div><!-- col-sm-6 -->
 									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
-											<label class="control-label">Lastname</label>
-											<input type="text" name="lastname" class="form-control">
+											<label class="control-label">schemaFilter</label>
+											<input type="text" name="schemaFilter" class="form-control">
 										</div>
 									</div><!-- col-sm-6 -->
 								</div>
