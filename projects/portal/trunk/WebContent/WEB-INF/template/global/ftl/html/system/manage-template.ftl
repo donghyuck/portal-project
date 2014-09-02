@@ -60,8 +60,7 @@
 					}	
 				});
 				
-				$('#template-tabs a:first').tab('show');		
-				
+				$('#template-tabs a:first').tab('show');				
 				// END SCRIPT
 			}
 		}]);		
