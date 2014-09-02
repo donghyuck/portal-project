@@ -91,7 +91,7 @@
 									<div class="col-sm-6">
 										<div class="form-group no-margin-hr">
 											<label class="control-label">Catalog Filter</label>
-											<input type="text" name="catalogFilter" class="form-control">
+											<input type="text" name="catalogFilter" class="form-control" >
 										</div>
 									</div><!-- col-sm-6 -->
 									<div class="col-sm-6">
