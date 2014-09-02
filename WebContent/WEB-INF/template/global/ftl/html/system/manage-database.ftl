@@ -52,7 +52,7 @@
 				var detailsModel = kendo.observable({
 					catalog : "",
 					schema : "",
-					connecting : false,
+					connecting : true,
 				});	
 				var renderTo = $("#database-details");
 				renderTo.data("model", detailsModel );
@@ -66,7 +66,7 @@
 									
 		function getDatabaseDetailsModel(){
 			var renderTo = $("#database-details");
-			return renderTo.data(model");
+			return renderTo.data("model");
 		} 								
 									
 		
@@ -80,6 +80,9 @@
 					var model = getDatabaseDetailsModel();
 					model.set("catalog" , response.catalog);
 					model.set("schema", response.schema); 
+					if( response.taskStatusCode == 2 ){
+						model.set("connecting" , false);
+					}
 				}
 			}); 						
 		}
@@ -118,8 +121,8 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 								<div class="panel-heading-controls" style="width: 30%">
-									<div class="progress progress-striped active" style="width: 100%">
-										<div class="progress-bar progress-bar-danger" style="width: 90%;"></div>
+									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
+										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
 									</div>
 								</div>
 							</div> <!-- / .panel-heading -->
