@@ -53,7 +53,8 @@
 					catalog : "",
 					schema : "",
 					connecting : true,
-					status : 0
+					status : 0,
+					tableCount : 0
 				});	
 				var renderTo = $("#database-details");
 				renderTo.data("model", detailsModel );
@@ -86,9 +87,10 @@
 					model.set("catalog" , response.catalogFilter);
 					model.set("schema", response.schemaFilter); 
 					model.set("status", response.taskStatusCode); 
+				
 					if( response.taskStatusCode == 2 ){
 						model.set("connecting" , false);
-						
+						model.set("tableCount" , response.tableNames.length );
 						var rendorTo = $("#database-details ul.list-group");
 						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #= name #</li>');
 						$.each( 
@@ -143,7 +145,7 @@
 							<ul class="list-group" style="display:none;">
 							</ul>	
 							<div class="panel-footer">
-								&nbsp;
+								<span data-bind="text: tableCount">0</span> 
 								<div class="panel-heading-controls" style="width: 30%">
 									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
 										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
