@@ -92,7 +92,7 @@
 						model.set("connecting" , false);
 						model.set("tableCount" , response.tableNames.length );
 						var rendorTo = $("#database-details ul.list-group");
-						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #= name # <button class="btn  btn-info btn-flat btn-xs pull-right">상세 보기</button></li>');
+						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #= name # <button class="btn  btn-primary btn-flat btn-xs pull-right">상세 보기</button></li>');
 						$.each( 
 							response.tableNames,
 							function( index , value ){
