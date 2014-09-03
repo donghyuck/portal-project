@@ -187,9 +187,9 @@
 						</div>															
 					</div>
 					<div class="col-sm-8">				
-						<div id="database-table-details" class="panel panel-default">
+						<div id="database-table-details" class="panel panel-primary">
 							<div class="panel-heading">
-								<i class="fa fa-table"></i> <span class="panel-title" data-bind="text:name"></span>
+								<span class="panel-title"><i class="fa fa-table"></i> <span class="panel-title" data-bind="text:name"></span></span>
 								<div class="panel-heading-controls">								
 								</div>
 							</div>			
