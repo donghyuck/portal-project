@@ -89,6 +89,15 @@
 					model.set("status", response.taskStatusCode); 
 					if( response.taskStatusCode == 2 ){
 						model.set("connecting" , false);
+						
+						var rendorTo = $("#database-details ul.list-group");
+						var template = kento.template('<li class="list-group-item">#= name #</li>');
+						$.each( 
+							response.tableNames,
+							function( index , value ){
+								rendorTo.append(template({ "index" : index , "name" : value  }));
+							}
+						);
 					}
 				}
 			}); 						
