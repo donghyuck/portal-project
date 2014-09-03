@@ -146,7 +146,9 @@
 										<td data-bind="text:schema">&nbsp;</td>
 									</tr>
 								</tbody>
-							</table>								
+							</table>	
+							<ul class="list-group">
+							</ul>														
 						</div>															
 					</div>
 					<div class="col-sm-8">				
