@@ -187,28 +187,12 @@
 						</div>															
 					</div>
 					<div class="col-sm-8">				
-						<div id="database-table-details" class="panel panel-default" style="min-height:300px;">
+						<div id="database-table-details" class="panel panel-default">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span class="panel-title" data-bind="text:name">&nbsp;</span>
 								<div class="panel-heading-controls">								
 								</div>
 							</div>			
-							<table class="table">
-								<thead>
-									<tr>
-										<th class="small text-center">경로</th>
-										<th class="small text-center">크기</th>
-										<th class="small text-center">수정일</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="text-center">
-										<td data-bind="text:file.path">&nbsp;</td>
-										<td data-bind="text:file.formattedSize">&nbsp;</td>
-										<td data-bind="text:file.formattedLastModifiedDate">&nbsp;</td>
-									</tr>
-								</tbody>
-							</table>	
 							<div class="panel-footer no-padding-vr">
 								테이블 : <span data-bind="text: columnCount">0</span> 
 							</div>
