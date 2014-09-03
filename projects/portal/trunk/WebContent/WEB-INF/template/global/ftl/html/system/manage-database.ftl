@@ -49,6 +49,14 @@
 				});					
 				
 
+				createDatabasePanel();
+													
+				// END SCRIPT
+			}
+		}]);		
+											
+		function createDatabasePanel(){
+		
 				var detailsModel = kendo.observable({
 					catalog : "",
 					schema : "",
@@ -60,23 +68,30 @@
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
 				
-				
 				$("#database-details ul.list-group").slimScroll({
 					height: '550px'
-				});				
-				connectDatabase();	
-				
+				});		
+		
+				$(document).on("click","[data-table]", function(e){		
+					var $this = $(this);		
+					common.api.callback({
+						url :"${request.contextPath}/secure/get-database-browser-table.do?output=json", 
+						data : { targetTableName : $this.data("table") },
+						success : function(response){					
+							alert( kendo.stringify(response) );
 							
+						}
+					}); 		
+				});
+								
+				connectDatabase();	
 				setInterval(function () {
 					if(getDatabaseDetailsModel().get("status") == 1) 
 						connectDatabase();
-				}, 15000);		
-									
-				// END SCRIPT
-			}
-		}]);		
-									
-									
+				}, 15000);
+		}
+		
+											
 		function getDatabaseDetailsModel(){
 			var renderTo = $("#database-details");
 			return renderTo.data("model");
