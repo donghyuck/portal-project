@@ -97,8 +97,8 @@
 							function( index , value ){
 								rendorTo.append(template({ "index" : index , "name" : value  }));
 							}
-							rendorTo.slideDown();
 						);
+						rendorTo.slideDown();
 					}
 				}
 			}); 						
