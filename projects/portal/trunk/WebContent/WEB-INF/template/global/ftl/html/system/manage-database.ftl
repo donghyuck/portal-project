@@ -49,13 +49,12 @@
 				});
 				
 				createDatabasePanel();
-													
+				createTablePanel();									
 				// END SCRIPT
 			}
 		}]);		
 											
-		function createDatabasePanel(){
-		
+		function createDatabasePanel(){		
 				var detailsModel = kendo.observable({
 					catalog : "",
 					schema : "",
@@ -76,7 +75,6 @@
 				$("#database-details ul.list-group").slimScroll({
 					height: '550px'
 				});
-				
 		}
 		
 		function createTablePanel(){
