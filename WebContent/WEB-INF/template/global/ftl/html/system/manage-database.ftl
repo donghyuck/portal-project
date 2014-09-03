@@ -81,8 +81,7 @@
 			{
 				url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
 				data : {  },
-				success : function(response){						
-					alert( kendo.stringify(response) );	
+				success : function(response){					
 					var model = getDatabaseDetailsModel();
 					model.set("catalog" , response.catalogFilter);
 					model.set("schema", response.schemaFilter); 
@@ -136,7 +135,7 @@
 					<div class="col-sm-4">
 						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-plug"></i></span> 
+								<span class="panel-title"><i class="fa fa-plug"></i> 테이블</span> 
 								<div class="panel-heading-controls">
 									<span class="label label-danger" data-bind="text:catalog"></span> <span class="label label-danger" data-bind="text:schema"></span>
 								</div>
