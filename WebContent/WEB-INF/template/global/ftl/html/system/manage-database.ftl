@@ -82,7 +82,8 @@
 				var detailsModel = kendo.observable({
 					name : "",
 					columns : [],
-					columnCount : 0
+					columnCount : 0,
+					visible : false
 				});
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );						
@@ -92,12 +93,11 @@
 					common.api.callback({
 						url :"${request.contextPath}/secure/get-database-browser-table.do?output=json", 
 						data : { targetTableName : $this.data("table") },
-						success : function(response){			
-									
+						success : function(response){
 							detailsModel.set("name", response.targetTable.name);
 							detailsModel.set("columns", response.targetTable.columns);
 							detailsModel.set("columnCount", response.targetTable.columns.length);
-						
+							detailsModel.set("visible", true );						
 						}
 					}); 		
 				});												
@@ -187,7 +187,7 @@
 						</div>															
 					</div>
 					<div class="col-sm-8">				
-						<div id="database-table-details" class="panel panel-primary">
+						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
 								<div class="panel-heading-controls">	</div>
