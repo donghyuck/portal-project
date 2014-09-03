@@ -136,11 +136,7 @@
 						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span> <span class="label label-danger" data-bind="text:schema"></span>
-								<div class="panel-heading-controls" style="width: 30%">
-									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
-										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
-									</div>
-								</div>
+
 							</div> <!-- / .panel-heading -->
 							<table class="table">
 								<thead>
@@ -157,7 +153,14 @@
 								</tbody>
 							</table>	
 							<ul class="list-group">
-							</ul>														
+							</ul>	
+							<div class="panel-footer">
+								<div class="panel-heading-controls" style="width: 30%">
+									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
+										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
+									</div>
+								</div>							
+							</div>													
 						</div>															
 					</div>
 					<div class="col-sm-8">				
