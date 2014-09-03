@@ -192,7 +192,7 @@
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
 								<div class="panel-heading-controls">	</div>
 							</div>			
-							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns="[ {'field':'primaryKey', 'title':'기본키'}, {'field':'name', 'title':'컬럼'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
+							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns="[ {'field':'primaryKey', 'title':'기본키'}, {'field':'name', 'title':'컬럼', 'template':'#:name#'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
 							<div class="panel-footer">
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
