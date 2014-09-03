@@ -135,8 +135,9 @@
 					<div class="col-sm-4">
 						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-database"></i></span> <span class="label label-danger" data-bind="text:schema"></span>
-
+								<span class="panel-title"><i class="fa fa-plug"></i> <span class="label label-danger" data-bind="text:schema"></span></span> 
+								<div class="panel-heading-controls">
+								</div>
 							</div> <!-- / .panel-heading -->
 							<table class="table">
 								<thead>
