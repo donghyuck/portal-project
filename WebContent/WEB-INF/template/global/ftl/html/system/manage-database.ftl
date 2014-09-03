@@ -46,9 +46,8 @@
 					companyChanged: function(item){
 						item.copy(targetCompany);
 					}
-				});					
+				});
 				
-
 				createDatabasePanel();
 													
 				// END SCRIPT
@@ -67,30 +66,42 @@
 				var renderTo = $("#database-details");
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
-				
+
+				connectDatabase();	
+				setInterval(function () {
+					if(getDatabaseDetailsModel().get("status") == 1) 
+						connectDatabase();
+				}, 15000);
+								
 				$("#database-details ul.list-group").slimScroll({
 					height: '550px'
-				});		
+				});
+				
+		}
 		
+		function createTablePanel(){
+				var renderTo =  $("#database-table-details");
+				var detailsModel = kendo.observable({
+					name : "",
+					columns : [],
+					columnCount : 0
+				});
+				renderTo.data("model", detailsModel );
+				kendo.bind( renderTo, detailsModel );						
+								
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
 					common.api.callback({
 						url :"${request.contextPath}/secure/get-database-browser-table.do?output=json", 
 						data : { targetTableName : $this.data("table") },
 						success : function(response){					
-							alert( kendo.stringify(response) );
-							
+							detailsModel.set("name", response.targetTable.name);
+							detailsModel.set("columns", response.columns);
+							detailsModel.set("columnCount", response.columns.length);
 						}
 					}); 		
-				});
-								
-				connectDatabase();	
-				setInterval(function () {
-					if(getDatabaseDetailsModel().get("status") == 1) 
-						connectDatabase();
-				}, 15000);
+				});												
 		}
-		
 											
 		function getDatabaseDetailsModel(){
 			var renderTo = $("#database-details");
@@ -176,11 +187,10 @@
 						</div>															
 					</div>
 					<div class="col-sm-8">				
-						<div id="template-details" class="panel panel-default" style="min-height:300px;">
+						<div id="database-table-details" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title" data-bind="text:file.name">&nbsp;</span>
-								<div class="panel-heading-controls">
-									<button class="btn btn-primary  btn-xs" data-bind="invisible: file.directory, disabled: customized" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 생성</button>
+								<i class="fa fa-table"></i> <span class="panel-title" data-bind="text:name">&nbsp;</span>
+								<div class="panel-heading-controls">								
 								</div>
 							</div>			
 							<table class="table">
@@ -199,8 +209,9 @@
 									</tr>
 								</tbody>
 							</table>	
-							<div id="htmleditor" class="panel-body" data-bind="invisible: file.directory" style="display:none;"></div>
-							<div class="panel-footer no-padding-vr"></div>
+							<div class="panel-footer no-padding-vr">
+								테이블 : <span data-bind="text: columnCount">0</span> 
+							</div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
 				</div><!-- /.row -->	
