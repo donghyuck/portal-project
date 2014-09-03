@@ -95,8 +95,8 @@
 						success : function(response){			
 									
 							detailsModel.set("name", response.targetTable.name);
-							detailsModel.set("columns", response.columns);
-							detailsModel.set("columnCount", response.columnNames.length);
+							detailsModel.set("columns", response.targetTable.columns);
+							detailsModel.set("columnCount", response.targetTable.columns.length);
 						
 						}
 					}); 		
