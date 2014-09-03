@@ -193,7 +193,7 @@
 								<div class="panel-heading-controls">								
 								</div>
 							</div>			
-							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns='["name", "type"]' ></div>
+							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns='["name", "type"]'  class="no-border" ></div>
 							<div class="panel-footer">
 								테이블 : <span data-bind="text: columnCount">0</span> 
 							</div>
