@@ -90,7 +90,7 @@
 						model.set("connecting" , false);
 						
 						var rendorTo = $("#database-details ul.list-group");
-						var template = kendo.template('<li class="list-group-item">#= name #</li>');
+						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #= name #</li>');
 						$.each( 
 							response.tableNames,
 							function( index , value ){
