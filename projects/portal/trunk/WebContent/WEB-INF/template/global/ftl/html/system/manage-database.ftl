@@ -137,6 +137,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 								<div class="panel-heading-controls" style="width: 30%">
+									<span class="panel-heading-text"><em>Just some text with <a href="#">link</a></em>&nbsp;&nbsp;<span style="color: #ccc">|</span>&nbsp;&nbsp;</span>
 									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
 										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
 									</div>
