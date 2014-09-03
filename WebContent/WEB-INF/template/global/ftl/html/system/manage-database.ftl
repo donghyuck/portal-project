@@ -7,7 +7,7 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/jquery.jgrowl/jquery.jgrowl.min.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
