@@ -59,8 +59,14 @@
 				var renderTo = $("#database-details");
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
-								
-				connectDatabase();				
+				
+				
+				$("#database-details ul.list-group").slimScroll({
+					height: '550px'
+				});				
+				connectDatabase();	
+				
+							
 				setInterval(function () {
 					if(getDatabaseDetailsModel().get("status") == 1) 
 						connectDatabase();
@@ -98,7 +104,7 @@
 							function( index , value ){
 								rendorTo.append(template({ "index" : index , "name" : value  }));
 							}
-						);
+						);						
 						rendorTo.slideDown();
 					}
 				}
