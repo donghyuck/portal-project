@@ -94,10 +94,12 @@
 					common.api.callback({
 						url :"${request.contextPath}/secure/get-database-browser-table.do?output=json", 
 						data : { targetTableName : $this.data("table") },
-						success : function(response){					
+						success : function(response){			
+									
 							detailsModel.set("name", response.targetTable.name);
 							detailsModel.set("columns", response.columns);
 							detailsModel.set("columnCount", response.columns.length);
+						
 						}
 					}); 		
 				});												
@@ -189,11 +191,11 @@
 					<div class="col-sm-8">				
 						<div id="database-table-details" class="panel panel-default">
 							<div class="panel-heading">
-								<i class="fa fa-table"></i> <span class="panel-title" data-bind="text:name">&nbsp;</span>
+								<i class="fa fa-table"></i> <span class="panel-title" data-bind="text:name"></span>
 								<div class="panel-heading-controls">								
 								</div>
 							</div>			
-							<div class="panel-footer no-padding-vr">
+							<div class="panel-footer">
 								테이블 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>					
