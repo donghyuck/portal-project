@@ -190,9 +190,12 @@
 						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
-								<div class="panel-heading-controls">	</div>
+								<div class="panel-heading-controls">	</div>data-columns="[
+                                 { 'field': 'ProductName', 'width': 270 },
+                                 { 'field': 'UnitPrice' },
+                              ]"
 							</div>			
-							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns='["name", "type"]'  class="no-border" ></div>
+							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns="[ {'field':'name', 'title':'컬럼 명'}, {'field':'type' ,'title':'테이터 유형'}]"  class="no-border" ></div>
 							<div class="panel-footer">
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
