@@ -189,9 +189,8 @@
 					<div class="col-sm-8">				
 						<div id="database-table-details" class="panel panel-primary">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-table"></i> <span class="panel-title" data-bind="text:name"></span></span>
-								<div class="panel-heading-controls">								
-								</div>
+								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
+								<div class="panel-heading-controls">	</div>
 							</div>			
 							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns='["name", "type"]'  class="no-border" ></div>
 							<div class="panel-footer">
