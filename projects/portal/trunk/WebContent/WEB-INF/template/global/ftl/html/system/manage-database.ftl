@@ -194,7 +194,7 @@
 							</div>			
 							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns='["name", "type"]'  class="no-border" ></div>
 							<div class="panel-footer">
-								테이블 : <span data-bind="text: columnCount">0</span> 
+								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
