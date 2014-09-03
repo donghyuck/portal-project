@@ -96,7 +96,7 @@
 									
 							detailsModel.set("name", response.targetTable.name);
 							detailsModel.set("columns", response.columns);
-							detailsModel.set("columnCount", response.columns.length);
+							detailsModel.set("columnCount", response.columnNames.length);
 						
 						}
 					}); 		
