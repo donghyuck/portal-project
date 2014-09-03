@@ -97,6 +97,7 @@
 							function( index , value ){
 								rendorTo.append(template({ "index" : index , "name" : value  }));
 							}
+							rendorTo.slideDown();
 						);
 					}
 				}
@@ -140,21 +141,7 @@
 									<span class="label label-danger" data-bind="text:catalog"></span> <span class="label label-danger" data-bind="text:schema"></span>
 								</div>
 							</div> <!-- / .panel-heading -->
-							<table class="table">
-								<thead>
-									<tr>
-										<th class="small text-center">Catalog</th>
-										<th class="small text-center">Schema</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="text-center">
-										<td data-bind="text:catalog">&nbsp;</td>
-										<td data-bind="text:schema">&nbsp;</td>
-									</tr>
-								</tbody>
-							</table>	
-							<ul class="list-group">
+							<ul class="list-group" style="display:none;">
 							</ul>	
 							<div class="panel-footer">
 								&nbsp;
