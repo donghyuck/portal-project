@@ -156,9 +156,11 @@
 							</ul>	
 							<div class="panel-footer">
 								&nbsp;
+								<div class="panel-heading-controls" style="width: 30%">
 									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
 										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
-									</div>						
+									</div>
+								</div>							
 							</div>													
 						</div>															
 					</div>
