@@ -145,7 +145,7 @@
 							<ul class="list-group" style="display:none;">
 							</ul>	
 							<div class="panel-footer">
-								<span data-bind="text: tableCount">0</span> 
+								테이블 : <span data-bind="text: tableCount">0</span> 
 								<div class="panel-heading-controls" style="width: 30%">
 									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
 										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
