@@ -153,13 +153,11 @@
 						return false;
 					},
 					createCustomizedTemplate : function(e){
-						alert("00");
-						//e.preventDefault();
+						e.preventDefault();
 						
 						
-						//$this = $(e.target);
-						//alert($this.html()); 
-						//$this.btn("loading");
+						$this = $(e.target);
+						$this.btn("loading");
 						
 						return false;
 					}
