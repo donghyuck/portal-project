@@ -357,7 +357,9 @@
 						<div class="alert alert-danger alert-dark">
 							<button type="button" class="close" data-dismiss="alert">×</button>
 							<strong>주의!!</strong> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다.
-						</div>						
+						</div>					
+						
+						<p class="text-danger"><i class="fa fa-exclamation-triangle"></i> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다.</p>		
 						<div class="form-group">
 							<label class="control-label" for="file-copy-modal-input-source">소스</label>
 							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
@@ -389,7 +391,6 @@
 								<div class="form-group">
 									<label class="control-label" for="file-copy-modal-input-target">대상</label>
 									<input type="text" class="form-control" id="file-copy-modal-input-target" data-bind="value: file.path">
-									<p class="help-block">커스텀 템플릿 파일을 생성할 경로 입력에 주의하여 주세요. </p>
 								</div>
 							</div>
 						</div>
