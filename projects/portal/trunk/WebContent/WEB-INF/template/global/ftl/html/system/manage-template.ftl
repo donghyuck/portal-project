@@ -354,12 +354,7 @@
 						<h4 class="modal-title">커스텀 템플릿 파일 생성</h4>
 					</div>
 					<div class="modal-body">
-						<div class="alert alert-danger alert-dark">
-							<button type="button" class="close" data-dismiss="alert">×</button>
-							<strong>주의!!</strong> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다.
-						</div>					
-						
-						<p class="text-danger"><i class="fa fa-exclamation-triangle"></i> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다.</p>		
+						<p class="text-warning"><i class="fa fa-exclamation-triangle"></i> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다. 주의하여 주세요.</p>		
 						<div class="form-group">
 							<label class="control-label" for="file-copy-modal-input-source">소스</label>
 							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
