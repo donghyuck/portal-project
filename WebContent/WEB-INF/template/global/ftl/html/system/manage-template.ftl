@@ -246,7 +246,7 @@
 									<tr>
 										<th class="small text-center">경로</th>
 										<th class="small text-center">크기</th>
-										<th class="small text-center">수정일</th>
+										<th class="small text-center" width="100">수정일</th>
 									</tr>
 								</thead>
 								<tbody>
