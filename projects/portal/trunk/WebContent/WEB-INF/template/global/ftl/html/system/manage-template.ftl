@@ -307,7 +307,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label class="control-label" for="file-copy-modal-input-1">소스</label>
+							<label class="control-label" for="file-copy-modal-input-1">소스 템플릿</label>
 							<input type="text" class="form-control" id="file-copy-modal-input-1" disabled data-bind="value: file.path">
 						</div>
 					</div>
