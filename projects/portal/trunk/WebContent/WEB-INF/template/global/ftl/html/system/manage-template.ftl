@@ -229,7 +229,29 @@
 									model : Company
 								}
 							}
-						});					
+						});	
+						
+						var websites = $("#file-copy-modal-input-sites").kendoDropDownList({
+							autoBind: false,
+							cascadeFrom: "file-copy-modal-input-companies",
+							optionLabel: "웹 사이트를 선택하세요.",
+							dataTextField: "displayName",
+							dataValueField: "webSiteId",							
+							dataSource : {
+								transport : {
+									read: { type : "post", dataType:"json", url : '${request.contextPath}/secure/list-site.do?output=json' },	
+									parameterMap: function (options, operation){	          
+										alert(kendo.stringify(options));
+										return: options; 
+									}									
+								},
+								schema: {
+									total: "targetWebSiteCount",
+									data: "targetWebSites",
+									model : common.models.WebSite
+								}
+							}						
+						}).data("kendoDropDownList");										
 					}
 					
 				});
