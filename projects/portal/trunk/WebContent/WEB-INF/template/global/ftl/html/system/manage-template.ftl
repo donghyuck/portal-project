@@ -357,6 +357,22 @@
 						</div>
 						<hr>				
 						<p class="text-primary"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요 </small></p>	
+						<ul class="nav nav-tabs nav-tabs-simple">
+							<li class="active">
+								<a href="#" data-toggle="tab">Home <span class="label label-success">12</span></a>
+							</li>
+							<li class="">
+								<a href="#" data-toggle="tab">Profile <span class="badge badge-info">12</span></a>
+							</li>
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="#" data-toggle="tab">@fat</a></li>
+									<li><a href="#" data-toggle="tab">@mdo</a></li>
+								</ul>
+							</li> <!-- / .dropdown -->
+						</ul>
+
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group no-margin-hr">
