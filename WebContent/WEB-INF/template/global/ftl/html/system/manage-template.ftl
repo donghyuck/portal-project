@@ -227,7 +227,7 @@
 									total: "totalCompanyCount",
 									data: "companies",
 									model : Company
-								},
+								}
 							}
 						});					
 					}
