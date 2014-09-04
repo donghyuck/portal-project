@@ -170,7 +170,7 @@
 						<div class="btn-group btn-group-justified">
 							<a href="#" class="btn">Left</a>
 							<a href="#" class="btn">Middle</a>
-							<a href="#" class="btn">Right</a>
+							<a href="#" class="btn"><i class="fa fa-table"></i> 테이블</a>
 						</div>
 						<hr>		
 						<div id="database-details" class="panel form-horizontal">
