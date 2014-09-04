@@ -329,10 +329,11 @@
 							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
 						</div>
 						<div class="form-group">
+							<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">대상 선택</h6>
 							<label class="control-label" for="file-copy-modal-input-companies">회사</label>
-							<input id="file-copy-modal-input-companies" style="width: 270px" />
+							<input id="file-copy-modal-input-companies" />
 							<label class="control-label" for="file-copy-modal-input-sites">사이트</label>
-							<input id="file-copy-modal-input-sites" style="width: 270px" />							
+							<input id="file-copy-modal-input-sites" />							
 						</div>
 					</div>
 					<div class="modal-footer">
