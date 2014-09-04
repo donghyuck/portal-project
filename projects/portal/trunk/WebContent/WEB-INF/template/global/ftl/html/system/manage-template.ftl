@@ -155,9 +155,9 @@
 					createCustomizedTemplate : function(e){
 						alert( e ) ;
 						
-						$this = $(e.target);
-						alert($this.html()); 
-						$this.btn("loading");
+						//$this = $(e.target);
+						//alert($this.html()); 
+						//$this.btn("loading");
 						
 						return false;
 					}
