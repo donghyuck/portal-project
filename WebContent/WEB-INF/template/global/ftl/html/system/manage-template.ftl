@@ -362,32 +362,28 @@
 							<li class=""><a href="\\#file-copy-modal-tabdrop-2" data-toggle="tab">직접 입력</a></li>							
 						</ul>
 						<div class="tab-content">
-									<div class="tab-pane active" id="file-copy-modal-tabdrop-1">
-										<p>I'm in Section 1.</p>
+							<div class="tab-pane active" id="file-copy-modal-tabdrop-1">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<label class="control-label" for="file-copy-modal-input-companies">회사</label>
+											&nbsp;&nbsp;<input id="file-copy-modal-input-companies" />
+										</div>
 									</div>
-									<div class="tab-pane" id="file-copy-modal-tabdrop-2">
-										<p>Howdy, I'm in Section 2.</p>
-									</div>
-								</div>
-								
-								
-						<div class="row">
-							<div class="col-sm-6">
-								<div class="form-group no-margin-hr">
-									<label class="control-label" for="file-copy-modal-input-companies">회사</label>
-									&nbsp;&nbsp;<input id="file-copy-modal-input-companies" />
+									<div class="col-sm-6">
+										<div class="form-group no-margin-hr">
+											<label class="control-label" for="file-copy-modal-input-sites">사이트</label>
+											&nbsp;&nbsp;<input id="file-copy-modal-input-sites" />		
+										</div>
+									</div>					
+								</div>						
+							</div>
+							<div class="tab-pane" id="file-copy-modal-tabdrop-2">
+								<div class="form-group">
+									<label class="control-label" for="file-copy-modal-input-target">대상</label>
+									<input type="text" class="form-control" id="file-copy-modal-input-target" data-bind="value: file.path">
 								</div>
 							</div>
-							<div class="col-sm-6">
-								<div class="form-group no-margin-hr">
-									<label class="control-label" for="file-copy-modal-input-sites">사이트</label>
-									&nbsp;&nbsp;<input id="file-copy-modal-input-sites" />		
-								</div>
-							</div>					
-						</div>
-						<div class="form-group">
-							<label class="control-label" for="file-copy-modal-input-target">대상</label>
-							<input type="text" class="form-control" id="file-copy-modal-input-target" data-bind="value: file.path">
 						</div>
 					</div>
 					<div class="modal-footer">
