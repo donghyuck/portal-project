@@ -67,6 +67,7 @@
 		
 		function createPathFinder(){		
 			if( !$("#template-tree-view").data('kendoTreeView') ){			
+				
 				var finderDataSource = new kendo.data.HierarchicalDataSource({
 					transport: { 
 						read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
@@ -80,6 +81,7 @@
 					},
 					error: common.api.handleKendoAjaxError
 				});			
+				
 				$("#template-tree-view").kendoTreeView({
 					dataSource: {
 						transport: { 
@@ -111,6 +113,9 @@
 						transport: { 
 							read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' },
 							parameterMap: function (options, operation){			
+								
+								alert( kendo.stringify(options) );
+								
 								return {customized :true};
 							}							
 						},
