@@ -336,7 +336,7 @@
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
 									<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-									<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 생성</button>
+									<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
 								</div>
 							</div>			
 							<div class="panel-body padding-sm">
@@ -404,7 +404,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
-						<button type="button" class="btn btn-primary" data-bind="click:createCustomizedTemplate"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">생성</button>
+						<button type="button" class="btn btn-primary" data-bind="click:createCustomizedTemplate"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">  커스텀 템플릿 생성</button>
 					</div>
 				</div>
 			</div>
