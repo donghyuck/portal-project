@@ -240,9 +240,9 @@
 							dataSource : {
 								transport : {
 									read: { type : "post", dataType:"json", url : '${request.contextPath}/secure/list-site.do?output=json' },	
-									parameterMap: function (options, operation){	          
+									parameterMap: function (options, operation){
 										alert(kendo.stringify(options));
-										return: options; 
+										return options; 
 									}									
 								},
 								schema: {
@@ -253,7 +253,6 @@
 							}						
 						}).data("kendoDropDownList");										
 					}
-					
 				});
 			}						
 			renderTo.modal('show');
