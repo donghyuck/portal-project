@@ -310,6 +310,9 @@
 							<label class="control-label" for="file-copy-modal-input-1">소스 템플릿</label>
 							<input type="text" class="form-control" id="file-copy-modal-input-1" disabled data-bind="value: file.path">
 						</div>
+						<div class="form-group">
+							<label class="control-label" for="file-copy-modal-input-2">대상</label>
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
