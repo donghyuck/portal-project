@@ -306,9 +306,10 @@
 						<h4 class="modal-title">커스텀 템플릿 파일 생성</h4>
 					</div>
 					<div class="modal-body">
-
-
-
+						<div class="form-group">
+							<label class="control-label" for="file-copy-modal-input-1">소스</label>
+							<input type="text" class="form-control" id="file-copy-modal-input-1" disabled bind-data="value: file.path">
+						</div>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
