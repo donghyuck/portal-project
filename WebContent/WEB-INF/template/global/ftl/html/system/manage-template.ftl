@@ -157,7 +157,7 @@
 						
 						
 						$this = $(e.target);
-						$this.btn("loading");
+						$this.button("loading");
 						
 						return false;
 					}
