@@ -145,9 +145,7 @@
 			return selectedCell ;
 		}
 		
-		function showTemplateDetails (filePlaceHolder){			
-			//var filePlaceHolder = getSelectedTemplateFile();			
-				
+		function showTemplateDetails (filePlaceHolder){							
 			var renderTo = $('#template-details');			
 			if(!renderTo.data("model")){					
 				var detailsModel = kendo.observable({
@@ -164,15 +162,14 @@
 						alert("준비중입니다");
 						return false;
 					}
-				});	
-				
+				});					
 				kendo.bind(renderTo, detailsModel );	
 				renderTo.data("model", detailsModel );		
 				var editor = ace.edit("htmleditor");		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);					
 			}
-			
+						
 			renderTo.data("model").file.set("path", filePlaceHolder.path); 
 			renderTo.data("model").file.set("customized", filePlaceHolder.customized); 
 	    	renderTo.data("model").file.set("absolutePath", filePlaceHolder.absolutePath );
@@ -206,7 +203,23 @@
 					}
 				}); 
 	    	}	    		
-		}									
+		}				
+		
+		
+		function showFileCopyModal(){		
+			var renderToString = "file-copy-modal";
+			var renderTo = $( '#' + renderToString );
+			if( renderTo.length === 0 ){	
+				$("#main-wrapper").append( kendo.template($('#file-copy-modal-template').html()) );	
+				renderTo = $('#' + renderToString );
+				renderTo.modal({
+					backdrop: 'static'
+				});	
+			}			
+			renderTo.modal('show');
+		}
+		
+							
 		-->
 		</script> 		 
 		<style>
@@ -283,6 +296,29 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
+		
+		<script type="text/x-kendo-template" id="file-copy-modal-template">
+		<div class="modal fade" id="role-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog animated slideDown">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">커스텀 템플릿 파일 생성</h4>
+					</div>
+					<div class="modal-body">
+
+
+
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary">생성</button>
+					</div>
+				</div>
+			</div>
+		</div>				
+		</script>		
+				
 		<script id="treeview-template" type="text/kendo-ui-template">
 			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
             #: item.name # 
