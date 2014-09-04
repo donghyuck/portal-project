@@ -358,8 +358,8 @@
 						<hr>				
 						<p class="text-primary"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요 </small></p>	
 						<ul class="nav nav-tabs nav-tabs-xs">
-							<li class="active"><a href="\\#file-copy-modal-tabdrop-1" data-toggle="tab">Section 1</a></li>
-							<li class=""><a href="\\#file-copy-modal-tabdrop-2" data-toggle="tab">Section 2</a></li>							
+							<li class="active"><a href="\\#file-copy-modal-tabdrop-1" data-toggle="tab">웹사이트 선택</a></li>
+							<li class=""><a href="\\#file-copy-modal-tabdrop-2" data-toggle="tab">직접 입력</a></li>							
 						</ul>
 						<div class="tab-content">
 									<div class="tab-pane active" id="file-copy-modal-tabdrop-1">
