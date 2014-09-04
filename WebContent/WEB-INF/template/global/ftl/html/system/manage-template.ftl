@@ -212,7 +212,24 @@
 				renderTo.modal({
 					backdrop: 'static'
 				});					
-				renderTo.on('show.bs.modal', function(e){
+				renderTo.on('show.bs.modal', function(e){					
+					if( $("#file-copy-modal-input-companies").data("kendoDropDownList") ){
+						var companies = $("#file-copy-modal-input-companies").kendoDropDownList({
+							optionLabel: "회사를 선택하세요...",
+							dataTextField: "displayName",
+							dataValueField: "companyId",
+							dataSource : {
+								transport : {
+									read: { type : "post", dataType:"json", url : '${request.contextPath}/secure/list-company.do?output=json' },	
+								},
+								schema: {
+									total: "totalCompanyCount",
+									data: "companies",
+									model : Company
+								},
+							}
+						});					
+					}
 					
 				});
 			}						
