@@ -373,7 +373,7 @@
 						</div>
 						<div class="form-group">
 							<label class="control-label" for="file-copy-modal-input-target">대상</label>
-							<input type="text" class="form-control" id="file-copy-modal-input-target" value="${ action.getApplicationProperty("view.html.customize.source.location",  null )	}">
+							<input type="text" class="form-control" id="file-copy-modal-input-target" value="${ WebApplicationHelper.getApplicationProperty("view.html.customize.source.location",  null )	}">
 						</div>
 					</div>
 					<div class="modal-footer">
