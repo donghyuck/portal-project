@@ -169,7 +169,7 @@
 					<div class="col-sm-4">
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-info btn-flat">
-								<input type="radio" name="options" id="option1"> Option 1
+								<input type="radio" name="options" id="option1"> <i class="fa fa-archive"></i> 임포트 / 익스포트
 							</label>
 							<label class="btn btn-info btn-flat">
 								<input type="radio" name="options" id="option2"><i class="fa fa-database"></i> SQL 워크시트
@@ -177,13 +177,7 @@
 							<label class="btn btn-info btn-flat active">
 								<input type="radio" name="options" id="option3"><i class="fa fa-table"></i> 테이블 정보
 							</label>
-						</div>
-											
-						<div class="btn-group">
-							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-archive"></i> 임포트 / 익스포트</button>
-							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-database"></i> SQL 워크시트 열기</button>
-							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-table"></i> 테이블 목록 보기</button>
-						</div>
+						</div>								
 						<hr>		
 						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
