@@ -245,7 +245,7 @@
 							
 								<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 								<div class="pull-right" class="text-muted">
-									<span data-bind="text:file.formattedSize"></span>bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+									<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
 								</div>
 											
 							<table class="table">
