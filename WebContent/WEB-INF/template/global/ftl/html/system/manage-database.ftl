@@ -167,6 +167,27 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-sm-4">
+
+					<div class="panel colourable">
+						<div class="panel-heading">
+							<span class="panel-title">With tabs</span>
+							<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
+								<li class="active">
+									<a href="#database-tree-tree-view" data-toggle="tab">테이블</a>
+								</li>
+								<li>
+									<a href="#database-sql-tree-view" data-toggle="tab">SQL</a>
+								</li>
+							</ul> <!-- / .nav -->
+						</div> <!-- / .panel-heading -->						
+						<div class="panel-body">
+							<div class="tab-content">
+								 <div class="tab-pane fade" id="database-tree-tree-view"></div>
+								 <div class="tab-pane fade" id="database-sql-tree-view"></div>
+							</div>
+						</div>
+					</div>					
+					
 						<div class="btn-group" data-toggle="buttons">
 							<label class="btn btn-info btn-flat">
 								<input type="radio" name="options" id="option1"> <i class="fa fa-archive"></i> 임포트 / 익스포트
@@ -178,7 +199,8 @@
 								<input type="radio" name="options" id="option3"><i class="fa fa-table"></i> 테이블 정보
 							</label>
 						</div>								
-						<hr>		
+						<hr>	
+							
 						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-folder-open"></i> 테이블</span> 
