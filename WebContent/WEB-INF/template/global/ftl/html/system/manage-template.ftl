@@ -244,7 +244,7 @@
 									parameterMap: function (options, operation){
 									
 										alert(kendo.stringify(options));
-										return { "targetCompanyId" :  options.filters[0].value }; 
+										return { "targetCompanyId" :  options.filter.filters[0].value }; 
 									}									
 								},
 								schema: {
