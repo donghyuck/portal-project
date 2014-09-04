@@ -153,7 +153,7 @@
 						return false;
 					},
 					createCustomizedTemplate : function(e){
-						
+						alert( e.target.html() );
 						$this = $(e.target);
 						$this.btn("loading");
 						
