@@ -154,7 +154,7 @@
 					},
 					createCustomizedTemplate : function(e){
 						alert("00");
-						e.preventDefault();
+						//e.preventDefault();
 						
 						
 						//$this = $(e.target);
