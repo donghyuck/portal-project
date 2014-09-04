@@ -159,7 +159,7 @@
 						return false;
 					},
 					openFileCopyModal : function(){
-						alert("준비중입니다");
+						showFileCopyModal();
 						return false;
 					}
 				});					
