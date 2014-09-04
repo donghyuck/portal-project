@@ -298,7 +298,7 @@
 		</div> <!-- / #main-wrapper -->
 		
 		<script type="text/x-kendo-template" id="file-copy-modal-template">
-		<div class="modal fade" id="role-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+		<div class="modal fade" id="file-copy-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
 			<div class="modal-dialog animated slideDown">
 				<div class="modal-content">
 					<div class="modal-header">
