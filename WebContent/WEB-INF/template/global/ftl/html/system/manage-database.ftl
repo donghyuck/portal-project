@@ -175,7 +175,7 @@
 								<input type="radio" name="options" id="option2"><i class="fa fa-database"></i> SQL 워크시트
 							</label>
 							<label class="btn btn-info btn-flat active">
-								<input type="radio" name="options" id="option3"><i class="fa fa-table"></i> 테이블
+								<input type="radio" name="options" id="option3"><i class="fa fa-table"></i> 테이블 정보
 							</label>
 						</div>
 											
