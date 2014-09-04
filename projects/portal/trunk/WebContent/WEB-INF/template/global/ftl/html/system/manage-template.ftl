@@ -66,8 +66,7 @@
 		}]);		
 		
 		function createPathFinder(){		
-			if( !$("#template-tree-view").data('kendoTreeView') ){			
-				
+			if( !$("#template-tree-view").data('kendoTreeView') ){		
 				var finderDataSource = new kendo.data.HierarchicalDataSource({
 					transport: { 
 						read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
@@ -135,15 +134,6 @@
 				});
 			}
 		}		
-
-
-		function getSelectedTemplateFile( renderTo ){			
-			//var renderTo = $("#template-tree-view");
-			var tree = renderTo.data('kendoTreeView');			
-			var selectedCells = tree.select();			
-			var selectedCell = tree.dataItem( selectedCells );   
-			return selectedCell ;
-		}
 		
 		function showTemplateDetails (filePlaceHolder){							
 			var renderTo = $('#template-details');			
@@ -205,17 +195,27 @@
 	    	}	    		
 		}				
 		
-		
+		function getSelectedTemplateFile( renderTo ){			
+			var tree = renderTo.data('kendoTreeView');			
+			var selectedCells = tree.select();			
+			var selectedCell = tree.dataItem( selectedCells );   
+			return selectedCell ;
+		}
+				
 		function showFileCopyModal(){		
 			var renderToString = "file-copy-modal";
 			var renderTo = $( '#' + renderToString );
 			if( renderTo.length === 0 ){	
 				$("#main-wrapper").append( kendo.template($('#file-copy-modal-template').html()) );	
 				renderTo = $('#' + renderToString );
+				kendo.bind( renderTo, $('#template-details').data("model"));				
 				renderTo.modal({
 					backdrop: 'static'
-				});	
-			}			
+				});					
+				renderTo.on('show.bs.modal', function(e){
+				
+				});
+			}						
 			renderTo.modal('show');
 		}
 		
