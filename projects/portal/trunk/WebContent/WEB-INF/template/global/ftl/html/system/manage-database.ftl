@@ -170,7 +170,7 @@
 
 					<div class="panel colourable">
 						<div class="panel-heading">
-							<span class="panel-title"><i class="fa fa-folder-open"></i></span>
+							<span class="panel-title"><i class="fa fa-database"></i></span>
 							<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
 								<li class="active">
 									<a href="#database-tree-tree-view" data-toggle="tab">테이블</a>
