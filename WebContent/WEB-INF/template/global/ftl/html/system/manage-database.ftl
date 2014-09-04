@@ -168,13 +168,13 @@
 				<div class="row">			
 					<div class="col-sm-4">
 						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-success">
+							<label class="btn btn-info btn-flat">
 								<input type="radio" name="options" id="option1"> Option 1
 							</label>
-							<label class="btn btn-success">
+							<label class="btn btn-info btn-flat">
 								<input type="radio" name="options" id="option2"><i class="fa fa-database"></i> SQL 워크시트
 							</label>
-							<label class="btn btn-success active">
+							<label class="btn btn-info btn-flat active">
 								<input type="radio" name="options" id="option3"><i class="fa fa-table"></i> 테이블
 							</label>
 						</div>
