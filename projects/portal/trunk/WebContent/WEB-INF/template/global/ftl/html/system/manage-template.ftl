@@ -364,13 +364,6 @@
 							<li class="">
 								<a href="#" data-toggle="tab">Profile <span class="badge badge-info">12</span></a>
 							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="#" data-toggle="tab">@fat</a></li>
-									<li><a href="#" data-toggle="tab">@mdo</a></li>
-								</ul>
-							</li> <!-- / .dropdown -->
 						</ul>
 
 						<div class="row">
