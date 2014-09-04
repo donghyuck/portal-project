@@ -233,11 +233,11 @@
 						</div>															
 					</div>
 					<div class="col-sm-8">				
-						<div id="template-details" class="panel panel-primary" style="min-height:300px;">
+						<div id="template-details" class="panel panel-primary">
 							<div class="panel-heading">
 								<span class="panel-title" data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
-									<button class="btn btn-success  btn-xs" data-bind="invisible: file.directory, disabled: customized" style="display:none;"><i class="fa fa-long-arrow-down"></i> 업데이트</button>
+									<button class="btn btn-success  btn-xs" data-bind="disabled: customized" style="display:none;"><i class="fa fa-long-arrow-down"></i> 업데이트</button>
 									<button class="btn btn-primary  btn-xs" data-bind="invisible: file.directory, disabled: customized" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 생성</button>
 								</div>
 							</div>			
