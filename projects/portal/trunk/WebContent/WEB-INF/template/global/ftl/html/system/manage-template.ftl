@@ -347,30 +347,31 @@
 						<h4 class="modal-title">커스텀 템플릿 파일 생성</h4>
 					</div>
 					<div class="modal-body">
-						<div class="alert alert-info alert-dark">
+						<div class="alert alert-danger alert-dark">
 							<button type="button" class="close" data-dismiss="alert">×</button>
 							<strong>주의!!</strong> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다.
 						</div>						
 						<div class="form-group">
-							<label class="control-label text-light-gray" for="file-copy-modal-input-source">소스</label>
+							<label class="control-label" for="file-copy-modal-input-source">소스</label>
 							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
 						</div>
-						<hr>					
+						<hr>				
+						<p class="text-primary"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하여 주세요 </small></p>	
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group no-margin-hr">
-									<label class="control-label text-light-gray" for="file-copy-modal-input-companies">회사</label>
+									<label class="control-label" for="file-copy-modal-input-companies">회사</label>
 									<input id="file-copy-modal-input-companies" />
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group no-margin-hr">
-									<label class="control-label text-light-gray" for="file-copy-modal-input-sites">사이트</label>
+									<label class="control-label" for="file-copy-modal-input-sites">사이트</label>
 									<input id="file-copy-modal-input-sites" />		
 								</div>
 							</div>					
 						</div>
-						<p class="text-muted"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하여 주세요 </small></p>
+						
 						
 					</div>
 					<div class="modal-footer">
