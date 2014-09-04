@@ -153,7 +153,9 @@
 						return false;
 					},
 					createCustomizedTemplate : function(){
-					
+						$this = $(this);
+						$this.btn("loading");
+						
 					}
 				});					
 				kendo.bind(renderTo, detailsModel );	
@@ -183,8 +185,6 @@
 	    	}else{
 	    		renderTo.data("model").set("supportSvn", true); 
 	    	}  
-	    	
-	    	
 	    	if(!filePlaceHolder.directory){
 				common.api.callback(  
 				{
