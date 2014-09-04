@@ -249,7 +249,7 @@
 								</div>
 									
 							</div>
-							<div id="htmleditor" class="panel-body" data-bind="invisible: file.directory" style="display:none;"></div>
+							<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
