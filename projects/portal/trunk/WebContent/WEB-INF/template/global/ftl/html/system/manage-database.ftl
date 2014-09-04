@@ -180,7 +180,7 @@
 						</div>
 											
 						<div class="btn-group">
-							<button type="button" class="btn btn-outline btn-flat">Left</button>
+							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-archive"></i> 임포트 / 익스포트</button>
 							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-database"></i> SQL 워크시트 열기</button>
 							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-table"></i> 테이블 목록 보기</button>
 						</div>
