@@ -357,15 +357,20 @@
 						</div>
 						<hr>				
 						<p class="text-primary"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요 </small></p>	
-						<ul class="nav nav-tabs nav-tabs-simple">
-							<li class="active">
-								<a href="#" data-toggle="tab">Home <span class="label label-success">12</span></a>
-							</li>
-							<li class="">
-								<a href="#" data-toggle="tab">Profile <span class="badge badge-info">12</span></a>
-							</li>
+						<ul class="nav nav-pills bs-tabdrop-example">
+							<li class="active"><a href="#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
+							<li class=""><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>							
 						</ul>
-
+						<div class="tab-content">
+									<div class="tab-pane active" id="bs-tabdrop-pill1">
+										<p>I'm in Section 1.</p>
+									</div>
+									<div class="tab-pane" id="bs-tabdrop-pill2">
+										<p>Howdy, I'm in Section 2.</p>
+									</div>
+								</div>
+								
+								
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group no-margin-hr">
