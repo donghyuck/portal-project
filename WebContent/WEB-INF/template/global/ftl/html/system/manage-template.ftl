@@ -242,6 +242,12 @@
 								</div>
 							</div>			
 							<div class="panel-body padding-sm">
+							
+								<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<spandata-bind="text:file.path"></span>&nbsp;<span class="text-muted" data-bind="text:file.formattedSize"></span>
+								<div class="pull-right">
+									<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+								</div>
+											
 							<table class="table">
 								<thead>
 									<tr>
