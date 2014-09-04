@@ -155,7 +155,15 @@
 					content : "",
 					supportCustomized : false,
 					supportUpdate : false,
-					supportSvn : true
+					supportSvn : true,
+					openFileUpdateModal : function(){
+						alert("준비중입니다");
+						return false;
+					},
+					openFileCopyModal : function(){
+						alert("준비중입니다");
+						return false;
+					}
 				});	
 				
 				kendo.bind(renderTo, detailsModel );	
@@ -254,8 +262,8 @@
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
-									<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn" style="display:none;"><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-									<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 생성</button>
+									<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
+									<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 생성</button>
 								</div>
 							</div>			
 							<div class="panel-body padding-sm">
