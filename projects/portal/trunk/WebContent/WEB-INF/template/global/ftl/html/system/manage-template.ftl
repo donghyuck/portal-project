@@ -213,7 +213,7 @@
 					backdrop: 'static'
 				});					
 				renderTo.on('show.bs.modal', function(e){
-				
+					
 				});
 			}						
 			renderTo.modal('show');
@@ -307,11 +307,14 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label class="control-label" for="file-copy-modal-input-1">소스 템플릿</label>
-							<input type="text" class="form-control" id="file-copy-modal-input-1" disabled data-bind="value: file.path">
+							<label class="control-label" for="file-copy-modal-input-source">소스 템플릿</label>
+							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
 						</div>
 						<div class="form-group">
-							<label class="control-label" for="file-copy-modal-input-2">대상</label>
+							<label class="control-label" for="file-copy-modal-input-companies">회사</label>
+							<input id="file-copy-modal-input-companies" style="width: 270px" />
+							<label class="control-label" for="file-copy-modal-input-sites">사이트</label>
+							<input id="file-copy-modal-input-sites" style="width: 270px" />							
 						</div>
 					</div>
 					<div class="modal-footer">
