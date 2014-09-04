@@ -382,6 +382,7 @@
 								<div class="form-group">
 									<label class="control-label" for="file-copy-modal-input-target">대상</label>
 									<input type="text" class="form-control" id="file-copy-modal-input-target" data-bind="value: file.path">
+									<p class="help-block">커스텀 템플릿 파일을 생성할 경로 입력에 주의하여 주세요. </p>
 								</div>
 							</div>
 						</div>
