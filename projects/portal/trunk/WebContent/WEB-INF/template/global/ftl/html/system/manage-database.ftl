@@ -167,6 +167,11 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-sm-4">
+						<div class="btn-group btn-group-justified">
+							<a href="#" class="btn">Left</a>
+							<a href="#" class="btn">Middle</a>
+							<a href="#" class="btn">Right</a>
+						</div>
 						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-folder-open"></i> 테이블</span> 
