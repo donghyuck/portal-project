@@ -155,10 +155,22 @@
 					createCustomizedTemplate : function(e){
 						e.preventDefault();
 						
-						
 						$this = $(e.target);
 						$this.button("loading");
+						var input1 =  $("#file-copy-modal-input-sites").val();
+						var input2 =  $("#file-copy-modal-input-target").val();
 						
+						if( input1.length == 0 || input2.length == 0 ){
+							if( !$("#file-copy-modal .tab-content").hasClass("has-error") ){
+								$("#file-copy-modal .tab-content").addClass("has-error");
+							}	
+						}else{
+							if( $("#file-copy-modal .tab-content").hasClass("has-error") ){
+								$("#file-copy-modal .tab-content").removeClass("has-error");
+							}						
+						}
+						
+						$this.button("reset");																		
 						return false;
 					}
 				});					
@@ -195,7 +207,6 @@
 					url :"${request.contextPath}/secure/view-template-content.do?output=json", 
 					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
 					success : function(response){
-						//renderTo.data("model").set("content", response.targetFileContent );					
 						ace.edit("htmleditor").setValue( response.targetFileContent );	
 					}
 				}); 
@@ -220,7 +231,6 @@
 					backdrop: 'static'
 				});					
 				renderTo.on('show.bs.modal', function(e){	
-
 					if( !$("#file-copy-modal-input-companies").data("kendoDropDownList") ){
 						var companies = $("#file-copy-modal-input-companies").kendoDropDownList({
 							optionLabel: "회사를 선택하세요...",
@@ -236,8 +246,7 @@
 									model : Company
 								}
 							}
-						});	
-						
+						});							
 						var websites = $("#file-copy-modal-input-sites").kendoDropDownList({
 							autoBind: false,
 							cascadeFrom: "file-copy-modal-input-companies",
@@ -249,8 +258,6 @@
 								transport : {
 									read: { type : "post", dataType:"json", url : '${request.contextPath}/secure/list-site.do?output=json' },	
 									parameterMap: function (options, operation){
-									
-										alert(kendo.stringify(options));
 										return { "targetCompanyId" :  options.filter.filters[0].value }; 
 									}									
 								},
@@ -261,8 +268,13 @@
 								}
 							}						
 						}).data("kendoDropDownList");										
+					}					
+					if( $("#file-copy-modal .tab-content").hasClass("has-error") ){
+						$("#file-copy-modal .tab-content").removeClass("has-error");
 					}
 				});
+				
+				
 			}						
 			renderTo.modal('show');
 		}
@@ -384,7 +396,7 @@
 							<div class="tab-pane" id="file-copy-modal-tabdrop-2">
 								<div class="form-group">
 									<label class="control-label" for="file-copy-modal-input-target">대상</label>
-									<input type="text" class="form-control" id="file-copy-modal-input-target" data-bind="value: file.path">
+									<input type="text" class="form-control" id="file-copy-modal-input-target">
 								</div>
 							</div>
 							<p class="help-block"><i class="fa fa-exclamation-triangle"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요</p>
