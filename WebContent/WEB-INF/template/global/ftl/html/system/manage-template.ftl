@@ -357,7 +357,7 @@
 						</div>
 						<hr>				
 						<p class="text-primary"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요 </small></p>	
-						<ul class="nav nav-pills bs-tabdrop-example">
+						<ul class="nav nav-tabs nav-tabs-xs">
 							<li class="active"><a href="\\#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
 							<li class=""><a href="\\#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>							
 						</ul>
