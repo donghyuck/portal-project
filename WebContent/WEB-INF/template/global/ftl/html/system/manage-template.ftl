@@ -151,6 +151,9 @@
 					openFileCopyModal : function(){
 						showFileCopyModal();
 						return false;
+					},
+					createCustomizedTemplate : function(){
+					
 					}
 				});					
 				kendo.bind(renderTo, detailsModel );	
@@ -389,7 +392,7 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
-						<button type="button" class="btn btn-primary">생성</button>
+						<button type="button" class="btn btn-primary" data-bind="click:createCustomizedTemplateFile"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">생성</button>
 					</div>
 				</div>
 			</div>
