@@ -172,6 +172,7 @@
 							<a href="#" class="btn">Middle</a>
 							<a href="#" class="btn">Right</a>
 						</div>
+						<hr>		
 						<div id="database-details" class="panel form-horizontal">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-folder-open"></i> 테이블</span> 
