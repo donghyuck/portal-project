@@ -325,11 +325,12 @@
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
-							<label class="control-label" for="file-copy-modal-input-source">소스 템플릿</label>
+							<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">소스</h6>
+							<label class="control-label" for="file-copy-modal-input-source">템플릿</label>
 							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
 						</div>
 						<div class="form-group">
-							<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">대상 선택</h6>
+							<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">대상</h6>
 							<label class="control-label" for="file-copy-modal-input-companies">회사</label>
 							<input id="file-copy-modal-input-companies" />
 							<label class="control-label" for="file-copy-modal-input-sites">사이트</label>
