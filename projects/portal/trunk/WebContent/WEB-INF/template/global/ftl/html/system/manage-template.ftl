@@ -208,7 +208,7 @@
 			if( renderTo.length === 0 ){	
 				$("#main-wrapper").append( kendo.template($('#file-copy-modal-template').html()) );	
 				renderTo = $('#' + renderToString );
-				kendo.bind( renderTo, $('#template-details').data("model"));				
+				kendo.bind(renderTo, $('#template-details').data("model") );					
 				renderTo.modal({
 					backdrop: 'static'
 				});					
