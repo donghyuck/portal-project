@@ -148,14 +148,16 @@
 						alert("준비중입니다");
 						return false;
 					},
-					openFileCopyModal : function(){
+					openFileCopyModal : function(e){
 						showFileCopyModal();
 						return false;
 					},
-					createCustomizedTemplate : function(){
-						$this = $(this);
+					createCustomizedTemplate : function(e){
+						
+						$this = $(e.target);
 						$this.btn("loading");
 						
+						return false;
 					}
 				});					
 				kendo.bind(renderTo, detailsModel );	
