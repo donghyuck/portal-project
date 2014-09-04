@@ -354,20 +354,17 @@
 						<h4 class="modal-title">커스텀 템플릿 파일 생성</h4>
 					</div>
 					<div class="modal-body">
-						<p class="text-warning"><i class="fa fa-exclamation-triangle"></i> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다. 주의하여 주세요.</p>		
+						<p class="text-primary"><i class="fa fa-info"></i> 대상 위치에 커스텀 템플릿 파일이 존재하는 경우 덮어 쓰기 됩니다. 주의하여 주세요.</p>		
 						<div class="form-group">
-							<label class="control-label" for="file-copy-modal-input-source">소스</label>
+							<label class="control-label text-muted" for="file-copy-modal-input-source">소스</label>
 							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
 						</div>
 						<hr>				
-						<p class="text-primary"><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요</p>	
-						
 						<ul class="nav nav-tabs nav-tabs-xs">
 							<li class="active"><a href="\\#file-copy-modal-tabdrop-1" data-toggle="tab">웹사이트 선택</a></li>
 							<li class=""><a href="\\#file-copy-modal-tabdrop-2" data-toggle="tab">직접 입력</a></li>							
 						</ul>			
-						<div class="form-group no-margin-hr">			
-						<div class="tab-content">
+						<div class="tab-content has-error">
 							<div class="tab-pane active" id="file-copy-modal-tabdrop-1">
 								<div class="row">
 									<div class="col-sm-6">
@@ -390,7 +387,7 @@
 									<input type="text" class="form-control" id="file-copy-modal-input-target" data-bind="value: file.path">
 								</div>
 							</div>
-						</div>
+							<p class="help-block"><i class="fa fa-exclamation-triangle"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요</p>
 						</div>
 					</div>
 					<div class="modal-footer">
