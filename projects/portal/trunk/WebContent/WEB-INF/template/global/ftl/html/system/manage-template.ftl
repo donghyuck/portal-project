@@ -356,18 +356,18 @@
 							<input type="text" class="form-control" id="file-copy-modal-input-source" disabled data-bind="value: file.path">
 						</div>
 						<hr>				
-						<p class="text-primary"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하여 주세요 </small></p>	
+						<p class="text-primary"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하거나, 직접 경로를 입력하여 주세요 </small></p>	
 						<div class="row">
 							<div class="col-sm-6">
 								<div class="form-group no-margin-hr">
 									<label class="control-label" for="file-copy-modal-input-companies">회사</label>
-									<input id="file-copy-modal-input-companies" />
+									&nbsp;&nbsp;<input id="file-copy-modal-input-companies" />
 								</div>
 							</div>
 							<div class="col-sm-6">
 								<div class="form-group no-margin-hr">
 									<label class="control-label" for="file-copy-modal-input-sites">사이트</label>
-									<input id="file-copy-modal-input-sites" />		
+									&nbsp;&nbsp;<input id="file-copy-modal-input-sites" />		
 								</div>
 							</div>					
 						</div>
