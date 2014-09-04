@@ -247,23 +247,7 @@
 								<div class="pull-right text-muted">
 									<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
 								</div>
-											
-							<table class="table">
-								<thead>
-									<tr>
-										<th class="small text-center">경로</th>
-										<th class="small text-center" width="150">크기(바이트)</th>
-										<th class="small text-center" width="180">수정일</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr class="text-center">
-										<td data-bind="text:file.path">&nbsp;</td>
-										<td data-bind="text:file.formattedSize">&nbsp;</td>
-										<td data-bind="text:file.formattedLastModifiedDate">&nbsp;</td>
-									</tr>
-								</tbody>
-							</table>	
+									
 							</div>
 							<div id="htmleditor" class="panel-body" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
