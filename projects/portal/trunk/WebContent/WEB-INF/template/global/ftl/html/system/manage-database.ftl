@@ -168,9 +168,9 @@
 				<div class="row">			
 					<div class="col-sm-4">
 						<div class="btn-group btn-group-justified">
-							<a href="#" class="btn">Left</a>
-							<a href="#" class="btn">Middle</a>
-							<a href="#" class="btn"><i class="fa fa-table"></i> 테이블</a>
+							<button type="button" class="btn btn-outline btn-flat">Left</button>
+							<button type="button" class="btn btn-outline btn-flat">Left</button>
+							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-table"></i> 테이블</button>
 						</div>
 						<hr>		
 						<div id="database-details" class="panel form-horizontal">
