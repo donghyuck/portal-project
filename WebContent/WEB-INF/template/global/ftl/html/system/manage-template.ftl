@@ -153,7 +153,9 @@
 						return false;
 					},
 					createCustomizedTemplate : function(e){
-						alert( e ) ;
+						alert("00");
+						e.preventDefault();
+						
 						
 						//$this = $(e.target);
 						//alert($this.html()); 
