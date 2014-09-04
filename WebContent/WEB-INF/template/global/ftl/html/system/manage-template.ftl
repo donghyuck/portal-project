@@ -308,7 +308,7 @@
 					<div class="modal-body">
 						<div class="form-group">
 							<label class="control-label" for="file-copy-modal-input-1">소스</label>
-							<input type="text" class="form-control" id="file-copy-modal-input-1" disabled data-bine="value: file.path">
+							<input type="text" class="form-control" id="file-copy-modal-input-1" disabled data-bind="value: file.path">
 						</div>
 					</div>
 					<div class="modal-footer">
