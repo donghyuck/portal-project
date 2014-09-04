@@ -212,7 +212,8 @@
 				renderTo.modal({
 					backdrop: 'static'
 				});					
-				renderTo.on('show.bs.modal', function(e){					
+				renderTo.on('show.bs.modal', function(e){	
+					alert("ss");				
 					if( $("#file-copy-modal-input-companies").data("kendoDropDownList") ){
 						var companies = $("#file-copy-modal-input-companies").kendoDropDownList({
 							optionLabel: "회사를 선택하세요...",
