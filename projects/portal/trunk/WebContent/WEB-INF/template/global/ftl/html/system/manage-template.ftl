@@ -113,10 +113,8 @@
 						transport: { 
 							read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' },
 							parameterMap: function (options, operation){			
-								
-								alert( kendo.stringify(options) );
-								
-								return {customized :true};
+								options.customized = true;
+								return options ;
 							}							
 						},
 						schema: {
