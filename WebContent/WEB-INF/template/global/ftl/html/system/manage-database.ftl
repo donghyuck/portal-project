@@ -182,8 +182,18 @@
 						</div> <!-- / .panel-heading -->						
 						<div class="panel-body">
 							<div class="tab-content">
-								 <div class="tab-pane fade" id="database-tree-tree-view"></div>
-								 <div class="tab-pane fade" id="database-sql-tree-view"></div>
+								 <div class="tab-pane fade" id="database-tree-tree-view">
+
+								<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
+								<div class="pull-right text-muted">
+									<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+								</div>
+																 
+								 
+								 </div>
+								 <div class="tab-pane fade" id="database-sql-tree-view">
+								 
+								 </div>
 							</div>
 						</div>
 					</div>					
