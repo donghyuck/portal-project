@@ -169,8 +169,8 @@
 					<div class="col-sm-4">
 						<div class="btn-group btn-group-justified">
 							<button type="button" class="btn btn-outline btn-flat">Left</button>
-							<button type="button" class="btn btn-outline btn-flat">Left</button>
-							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-table"></i> 테이블</button>
+							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-database"></i> SQL 워크시트 열기</button>
+							<button type="button" class="btn btn-outline btn-flat"><i class="fa fa-table"></i> 테이블 목록 보기</button>
 						</div>
 						<hr>		
 						<div id="database-details" class="panel form-horizontal">
