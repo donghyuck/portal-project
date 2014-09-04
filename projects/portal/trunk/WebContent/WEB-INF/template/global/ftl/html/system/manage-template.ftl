@@ -180,6 +180,13 @@
 	    		renderTo.data("model").set("supportCustomized", false); 
 	    	}
 	    	
+	    	if( filePlaceHolder.path.indexOf( ".svn" ) != -1 ) {
+	    		renderTo.data("model").set("supportSvn", false); 
+	    	}else{
+	    		renderTo.data("model").set("supportSvn", true); 
+	    	}  
+	    	
+	    	
 	    	if(!filePlaceHolder.directory){
 				common.api.callback(  
 				{
