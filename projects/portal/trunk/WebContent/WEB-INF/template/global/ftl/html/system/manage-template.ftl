@@ -370,6 +370,8 @@
 								</div>
 							</div>					
 						</div>
+						<p class="text-muted"><small><i class="fa fa-info"></i> 커스텀 템플릿을 생성할 회사의 웹 사이트를 선택하여 주세요 </small></p>
+						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
