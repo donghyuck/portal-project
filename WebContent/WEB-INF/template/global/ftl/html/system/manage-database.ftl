@@ -55,6 +55,7 @@
 							createTableTreePanel($(show_bs_tab.attr('href')));
 							break;
 						case  '#database-sql-tree-view' :
+							createSqlFileTreePanel($(show_bs_tab.attr('href')));
 							break;
 					}	
 				});
@@ -154,20 +155,94 @@
 					}); 		
 				});												
 		}
-									
+		
+		function createSqlFileTreePanel(renderTo){
+			if( !renderTo.data('kendoTreeView') ){		
+				renderTo.kendoTreeView({
+					dataSource: {
+						transport: { 
+							read: { url:'${request.contextPath}/secure/list-sql-files.do?output=json', type: 'POST' }
+						},
+						schema: {
+							data: "targetFiles",					
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						},
+						error: common.api.handleKendoAjaxError					
+					},
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {
+						var filePlaceHolder = getSelectedSqlFile(renderTo);
+						showSqlFileDetails(filePlaceHolder);
+					}
+				});			
+			}
+		}
+
+		function getSelectedSqlFile( renderTo ){			
+			var tree = renderTo.data('kendoTreeView');			
+			var selectedCells = tree.select();			
+			var selectedCell = tree.dataItem( selectedCells );   
+			return selectedCell ;
+		}
+		
+		function showSqlFileDetails (filePlaceHolder){							
+			var renderTo = $('#sql-details');			
+			if(!renderTo.data("model")){					
+				var detailsModel = kendo.observable({
+					file : new common.models.FileInfo(),
+					content : "",
+					supportCustomized : false,
+					supportUpdate : false,
+					supportSvn : true
+				});					
+				kendo.bind(renderTo, detailsModel );	
+				renderTo.data("model", detailsModel );		
+				var editor = ace.edit("xmleditor");		
+				editor.getSession().setMode("ace/mode/xml");
+				editor.getSession().setUseWrapMode(false);					
+			}
+						
+			renderTo.data("model").file.set("path", filePlaceHolder.path); 
+			renderTo.data("model").file.set("customized", filePlaceHolder.customized); 
+	    	renderTo.data("model").file.set("absolutePath", filePlaceHolder.absolutePath );
+	    	renderTo.data("model").file.set("name", filePlaceHolder.name );
+	    	renderTo.data("model").file.set("size", filePlaceHolder.size );
+	    	renderTo.data("model").file.set("directory", filePlaceHolder.directory );
+	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
+	    	
+	    	if( !filePlaceHolder.customized && !filePlaceHolder.directory ) 
+	    	{
+	    		renderTo.data("model").set("supportCustomized", true); 
+	    	}else{
+	    		renderTo.data("model").set("supportCustomized", false); 
+	    	}
+	    	
+	    	if( filePlaceHolder.path.indexOf( ".svn" ) != -1 ) {
+	    		renderTo.data("model").set("supportSvn", false); 
+	    	}else{
+	    		renderTo.data("model").set("supportSvn", true); 
+	    	}  
+	    	if(!filePlaceHolder.directory){
+				common.api.callback(  
+				{
+					url :"${request.contextPath}/secure/view-sql-file-content.do?output=json", 
+					data : { path:  filePlaceHolder.path },
+					success : function(response){
+						ace.edit("xmleditor").setValue( response.targetFileContent );	
+					}
+				}); 
+	    	}	    		
+		}												
 		-->
 		</script> 		 
 		<style>
-		#htmleditor.panel-body{
+		#xmleditor.panel-body{
 			min-height:500px;
-		}
-		#template-details .table > thead > tr > th {
-			vertical-align: bottom;
-			border-bottom: none;
-		}
-		#template-details .table > tbody > tr  {
-			border-bottom: 1px solid #ddd;
-		}		
+		}	
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -211,16 +286,29 @@
 									<ul class="list-group no-margin-b" style="display:none;"></ul>
 									
 								</div><!-- ./tab-pane -->
-								<div class="tab-pane fade" id="database-sql-tree-view">
-									<div class="panel-body padding-sm">
-									
-									</div>
+								<div class="tab-pane fade panel-body padding-sm" id="database-sql-tree-view">
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->						
 							<div class="panel-footer no-padding-vr"></div>	
 						</div>
 					</div></!-- /.col-sm-4 -->	
 					<div class="col-sm-8">				
+						<div id="sql-details" class="panel panel-primary">
+							<div class="panel-heading">
+								<span data-bind="text:file.name">&nbsp;</span>
+									<div class="panel-heading-controls">
+										<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
+									</div>
+								</div>			
+								<div class="panel-body padding-sm">
+									<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
+									<div class="pull-right text-muted">
+										<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+									</div>
+							</div>
+							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
+							<div class="panel-footer no-padding-vr"></div>
+						</div>						
 						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
