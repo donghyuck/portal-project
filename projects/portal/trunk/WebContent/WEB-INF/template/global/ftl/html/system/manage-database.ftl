@@ -89,7 +89,7 @@
 		}
 		
 		function getDBDetailsModel(){
-			var renderTo = $("#database-details");
+			var renderTo = $("#database-table-tree-view");
 			return renderTo.data("model");
 		} 		
 		
