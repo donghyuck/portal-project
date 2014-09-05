@@ -80,7 +80,7 @@
 					showDBTableList : function(e){
 						$this = $(e.target);
 						$this.button("loading");				
-						extractDatabaseTableInfo();	
+						//extractDatabaseTableInfo();	
 					}
 				});	
 				renderTo.data("model", detailsModel );
