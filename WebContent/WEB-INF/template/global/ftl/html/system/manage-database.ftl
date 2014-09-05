@@ -76,13 +76,45 @@
 					schema : "",
 					connecting : true,
 					status : 0,
-					tableCount : 0
+					tableCount : 0,
+					showDBTableList : function(e){
+						$this = $(e.target);
+						$this.button("loading");					
+					}
 				});	
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
 			}		
 		}
-											
+
+		function extractDatabaseTableInfo(){
+			common.api.callback(  
+			{
+				url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
+				data : {  },
+				success : function(response){					
+					var model = getDatabaseDetailsModel();
+					model.set("catalog" , response.catalogFilter);
+					model.set("schema", response.schemaFilter); 
+					model.set("status", response.taskStatusCode); 
+				
+					if( response.taskStatusCode == 2 ){
+						model.set("connecting" , false);
+						model.set("tableCount" , response.tableNames.length );
+						var rendorTo = $("#database-details ul.list-group");
+						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >상세 보기</button></li>');
+						$.each( 
+							response.tableNames,
+							function( index , value ){
+								rendorTo.append(template({ "index" : index , "name" : value  }));
+							}
+						);						
+						rendorTo.slideDown();
+					}
+				}
+			}); 						
+		}
+													
 		function createDatabasePanel(){		
 				var detailsModel = kendo.observable({
 					catalog : "",
@@ -138,33 +170,7 @@
 		} 								
 									
 		
-		function connectDatabase(){
-			common.api.callback(  
-			{
-				url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
-				data : {  },
-				success : function(response){					
-					var model = getDatabaseDetailsModel();
-					model.set("catalog" , response.catalogFilter);
-					model.set("schema", response.schemaFilter); 
-					model.set("status", response.taskStatusCode); 
-				
-					if( response.taskStatusCode == 2 ){
-						model.set("connecting" , false);
-						model.set("tableCount" , response.tableNames.length );
-						var rendorTo = $("#database-details ul.list-group");
-						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >상세 보기</button></li>');
-						$.each( 
-							response.tableNames,
-							function( index , value ){
-								rendorTo.append(template({ "index" : index , "name" : value  }));
-							}
-						);						
-						rendorTo.slideDown();
-					}
-				}
-			}); 						
-		}
+
 									
 		-->
 		</script> 		 
@@ -215,7 +221,7 @@
 									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog"></span>	
 									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema"></span>
 									<div class="pull-right text-muted">
-										<button class="btn  btn-primary btn-outline btn-flat pull-right" data-bind="visible:connecting">목록 보기</button>
+										<button class="btn  btn-primary btn-outline btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList">목록 보기</button>
 									</div>
 																 
 								 
