@@ -322,10 +322,12 @@
 									</li>
 								</ul>			
 							</div> <!-- / .panel-heading -->
+							<div class="panel-body padding-sm">
 								<div class="tab-content">
 									 <div class="tab-pane fade" id="template-tree-view"></div>
 									 <div class="tab-pane fade" id="custom-template-tree-view"></div>
 								</div>
+							</div>
 						</div>															
 					</div>
 					<div class="col-sm-8">				
