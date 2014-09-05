@@ -157,19 +157,10 @@
 				
 				renderTo.find("button.close").click(function(e){
 					$this = $(this);
-					$icon =  $this.children("i");
-					if( $icon.hasClass("fa-chevron-up") ){
-						$icon.removeClass("")
 					
-					}else{
+					//renderTo.find("[data-role='grid']").slideUp();
 					
-					
-					}
-										
-					
-					renderTo.find("[data-role='grid']").slideUp();
-					
-					renderTo.find("[data-role='grid']").slideDown();
+					//renderTo.find("[data-role='grid']").slideDown();
 				});								
 		}
 		
