@@ -52,6 +52,7 @@
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
 						case "#database-table-tree-view" :
+							createTableTreePanel($(show_bs_tab.attr('href')));
 							break;
 						case  '#database-sql-tree-view' :
 							break;
