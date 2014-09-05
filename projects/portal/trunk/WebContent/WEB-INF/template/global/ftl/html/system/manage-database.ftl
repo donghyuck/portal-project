@@ -79,38 +79,47 @@
 					tableCount : 0,
 					showDBTableList : function(e){
 						$this = $(e.target);
-						$this.button("loading");					
+						$this.button("loading");				
+						extractDatabaseTableInfo();	
 					}
 				});	
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
 			}		
 		}
-
-		function extractDatabaseTableInfo(){
+		
+		function getDBDetailsModel(){
+			var renderTo = $("#database-details");
+			return renderTo.data("model");
+		} 		
+		
+		function extractDatabaseTableInfo(renderTo){
 			common.api.callback(  
 			{
 				url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
 				data : {  },
 				success : function(response){					
-					var model = getDatabaseDetailsModel();
+					var model = getDBDetailsModel();
 					model.set("catalog" , response.catalogFilter);
 					model.set("schema", response.schemaFilter); 
-					model.set("status", response.taskStatusCode); 
-				
+					model.set("status", response.taskStatusCode);
+					
 					if( response.taskStatusCode == 2 ){
 						model.set("connecting" , false);
 						model.set("tableCount" , response.tableNames.length );
-						var rendorTo = $("#database-details ul.list-group");
+						var renderTarget = renderTo.find("ul.list-group");
 						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >상세 보기</button></li>');
 						$.each( 
 							response.tableNames,
 							function( index , value ){
-								rendorTo.append(template({ "index" : index , "name" : value  }));
+								renderTarget.append(template({ "index" : index , "name" : value  }));
 							}
 						);						
-						rendorTo.slideDown();
-					}
+						renderTarget.slideDown();
+					}else(
+						
+					)
+					
 				}
 			}); 						
 		}
@@ -223,8 +232,7 @@
 									<div class="pull-right text-muted">
 										<button class="btn  btn-primary btn-outline btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList">목록 보기</button>
 									</div>
-																 
-								 
+									<ul class="list-group" style="display:none;"></ul>									 
 								 </div>
 								 <div class="tab-pane fade" id="database-sql-tree-view">
 								 
