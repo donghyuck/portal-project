@@ -7,17 +7,28 @@
         <script type="text/javascript">                
         yepnope([{
             load: [ 
-			'css!${request.contextPath}/styles/font-awesome/4.0.3/font-awesome.min.css',			
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.plugins/animate.css',
+			'css!${request.contextPath}/styles/jquery.jgrowl/jquery.jgrowl.min.css',
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
+			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-       	    '${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',      	    
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			 
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js', 
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',       	    
-       	    '${request.contextPath}/js/common/common.models.js',
-       	    '${request.contextPath}/js/common/common.api.js',       	    
-       	    '${request.contextPath}/js/common/common.ui.js',
-      		'${request.contextPath}/js/common/common.ui.admin.js'],        	   
+			'${request.contextPath}/js/kendo/kendo.web.min.js',
+			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
+			'${request.contextPath}/js/jquery.jgrowl/jquery.jgrowl.min.js',			
+			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
+			'${request.contextPath}/js/common.plugins/fastclick.js', 
+			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
+			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
+			
+			'${request.contextPath}/js/common/common.models.js',       	    
+			'${request.contextPath}/js/common/common.api.js',
+			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.admin.js'],        	   
             complete: function() {       
 
 				// 1-1.  한글 지원을 위한 로케일 설정
@@ -26,51 +37,40 @@
 				common.ui.landing();				
 				// 1-3.  관리자  로딩
 				var currentUser = new User();
-				
-				var targetCompany = new Company();	
+				var targetCompany = kendo.observable({
+					company : new Company(),
+					isEnabled : false,
+					addUser : function(e){
+						alert("준비중입니다.") ;
+					}
+				});	
+				targetCompany.bind(
+					"change",  function(e){
+						if( e.field.match('^company.name')){ 						
+							var sender = e.sender ;
+							if( sender.company.companyId > 0 ){
+								var dt = new Date();
+								this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
+								this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
+								this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
+							}
+						}
+					}
+				);
+				kendo.bind($("#company-details"), targetCompany );	
 				
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
-						item.copy(targetCompany);
+						item.copy(targetCompany.company);
+						$("#user-grid").data("kendoGrid").dataSource.read();
 					},
 					switcherChanged: function( name , value ){						
-						if( value && !$('#company-list').is(":visible") ){
-							$('#company-list').show();
-						}else if ( !value && $('#company-list').is(":visible") && $('#company-details').is(":visible") ){
-							hideCompanyDetails();
-						}
 					}
 				});
 				
-				// 4. CONTENT
-				common.ui.handleButtonActionEvents(
-					$("button.btn-control-group"), 
-					{event: 'click', handlers: {
-						company : function(e){
-							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
-							$("form[name='fm1']").attr("action", "main-company.do" ).submit(); 						
-						},
-						group : function(e){
-							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
-							$("form[name='fm1']").attr("action", "main-group.do" ).submit(); 						
-						}, 	
-						site : function(e){
-							$("form[name='fm1'] input").val(companyPlaceHolder.companyId);
-							$("form[name='fm1']").attr("action", "main-site.do" ).submit(); 						
-						}, 							
-						addUser : function(e){
-							alert("add user");				
-						},
-						top : function(e){					
-							$('html,body').animate({ scrollTop:  0 }, 300);
-						}  						 
-					}}
-				);
-
-				$("#user-grid").data("userPlaceHolder", new User());
 				// 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
                     dataSource: {
@@ -78,7 +78,7 @@
                         transport: { 
                             read: { url:'${request.contextPath}/secure/list-user.do?output=json', type: 'POST' },
 	                        parameterMap: function (options, type){
-	                            return { startIndex: options.skip, pageSize: options.pageSize,  companyId: companyPlaceHolder.companyId }
+	                            return { startIndex: options.skip, pageSize: options.pageSize,  companyId: targetCompany.company.companyId }
 	                        }
                         },
                         schema: {
@@ -107,30 +107,33 @@
                     pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
                     selectable: 'row',
                     height: '100%',
-                    /*toolbar: [
-					 	{ name: "create-user", text: "새로운 사용자 생성하기", className: "createUserCustomClass" } ],*/
+                    autoBind: false,
                     change: function(e) {                    
                         var selectedCells = this.select();                 
-  						if( selectedCells.length > 0){ 
+  						if( selectedCells.length > 0){ /**
 							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy($("#user-grid").data("userPlaceHolder"));
 							if( selectedCell.userId	> 0 ){									
 								showUserDetails();
-							}
+							}*/
  						}
 					},
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
+						 	/**
 						 	var newUser = new User ();
 						 	newUser.copy($("#user-grid").data("userPlaceHolder"));
 							$("#user-details").hide();
+							**/
 						 }
 					}
 				}).data('kendoGrid');
 			}	
 		}]);
 
+
+	
 		/**
 		* Show user detailis
 		*/
@@ -529,20 +532,49 @@
 		</style>
 		</#compress>
     </head>
-	<body class="color0">
-		<!-- START HEADER -->
-		<section id="navbar" class="layout"></section>
-		<!-- END HEADER -->
-		<!-- START MAIN CONTNET -->
-		<div class="container-fluid">	
-			<div class="row">			
-				<div class="col-12 col-lg-12">					
-				<div class="page-header">
-					<#assign selectedMenuItem = action.getWebSiteMenu("SYSTEM_MENU", "MENU_2_2") />
-					<h1>${selectedMenuItem.title}     <small><i class="fa fa-quote-left"></i>&nbsp;${selectedMenuItem.description}&nbsp;<i class="fa fa-quote-right"></i></small></h1>
-				</div>			
-				</div>		
+	<body class="theme-default main-menu-animated">
+		<div id="main-wrapper">
+			<#include "/html/common/common-system-navigation.ftl" >	
+			<div id="content-wrapper">
+				<ul class="breadcrumb breadcrumb-page">
+					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_2_2") />
+					<li><a href="#">Home</a></li>
+					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
+					<li class="active"><a href="#">${selectedMenu.title}</a></li>
+				</ul>			
+				<div class="page-header bg-dark-gray">					
+					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
+				</div><!-- / .page-header -->	
+				<div id="company-details" class="page-details">
+					<div class="row">		
+							<div class="col-sm-12">
+								<div class="panel panel-default" style="min-height:300px;" >
+									<div class="panel-heading">
+										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span> 사용자 목록</span>
+										<div class="panel-heading-controls">
+											<button class="btn btn-danger btn-labeled" data-bind="click:addUser"><span class="btn-label icon fa fa-plus"></span> 사용자 추가 </button>
+										</div>
+									</div>
+									<div class="panel-body padding-sm">
+										<div class="note note-info no-margin-b">
+											<h4 class="note-title"><small><i class="fa fa-info"></i> 그룹을 사용하면 더욱 쉽게 권한을 관리할 수 있습니다.</small></h4>
+										</div>	
+									</div>
+									<div id="user-grid"  class="no-border-hr"></div>
+									<div class="panel-footer no-padding-vr">								
+									</div>
+								</div>			
+							</div>				
+						</div><!-- / .col-sm-12 -->						
+					</div><!-- / .row -->							
+								
+				</div>				
+			</div> <!-- / #content-wrapper -->
+			<div id="main-menu-bg">
 			</div>
+		</div> <!-- / #main-wrapper -->
+
+		<div class="container-fluid">	
 			<div class="row">		
 				<div class="col-sm-12">
 					<div class="panel panel-default" style="min-height:300px;" >
@@ -559,7 +591,7 @@
 						</#if>
 						</div>
 						<div class="panel-body" style="padding:5px;">
-							<div id="user-grid"></div>
+							
 							<div id="file-preview-panel" class="custom-panels-group"></div>
 						</div>	
 						<div class="panel-body" style="padding:5px;">
@@ -620,19 +652,7 @@
 			</div>	
 		</div>
 		</div>
-		  
-  		<div id="download-window"></div>    
-		<div id="accounts-panel"></div>
-		<form name="fm1" method="POST" accept-charset="utf-8" class="details">
-			<input type="hidden" name="companyId" value="0" />
-		</form>			  
-  		<!-- END MAIN CONTNET -->
-		<!--
-		<footer>  
-		</footer>    
-		-->
-		
-		
+				
 		<script id="download-window-template" type="text/x-kendo-template">				
 			#if (contentType.match("^image") ) {#
 				<img src="${request.contextPath}/secure/view-attachment.do?attachmentId=#= attachmentId #" class="img-responsive" alt="#= name #" />
@@ -809,8 +829,7 @@
 			</div>			
 		</div>
 		</script>			
-		<!-- 공용 템플릿 -->
-		<div id="account-panel"></div>    	
+		<!-- 공용 템플릿 -->		
 		<#include "/html/common/common-system-templates.ftl" >	
 		<!-- END MAIN CONTENT  -->
     </body>
