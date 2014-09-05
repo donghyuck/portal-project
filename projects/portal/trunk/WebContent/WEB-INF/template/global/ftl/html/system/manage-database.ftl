@@ -116,10 +116,9 @@
 							}
 						);						
 						renderTarget.slideDown();
-					}else(
-						
-					)
+					}else{
 					
+					}
 				}
 			}); 						
 		}
