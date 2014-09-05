@@ -243,7 +243,7 @@
 								 </div>
 								 </div>
 							</div>
-						
+						<div class="panel-footer no-padding-vr"></div>	
 					</div>					
 					
 						<div class="btn-group" data-toggle="buttons">
