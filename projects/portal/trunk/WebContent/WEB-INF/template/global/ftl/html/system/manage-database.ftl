@@ -218,7 +218,7 @@
 				<div class="row">			
 					<div class="col-sm-4">
 
-					<div class="panel colourable">
+					<div class="panel panel-transparent">
 						<div class="panel-heading">
 							<span class="panel-title"><i class="fa fa-database"></i></span>
 							<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
@@ -231,15 +231,15 @@
 							</ul> <!-- / .nav -->
 						</div> <!-- / .panel-heading -->						
 						<div class="tab-content">
-							<div class="tab-pane fade panel panel-transparent no-margin-b" id="database-table-tree-view">
-								<div class="panel-heading">
-									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
-									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
-									<div class="panel-heading-controls">
-										<button class="btn  btn-primary btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...">목록 보기</button>
+							<div class="tab-pane fade" id="database-table-tree-view">
+								<div class="panel panel-default" style="border-radius: 0px 0px 4px 4px;">
+									<div class="panel-heading">
+										<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
+										<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
+										<div class="panel-heading-controls">
+											<button class="btn  btn-primary btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...">목록 보기</button>
+										</div>
 									</div>
-								</div>
-								<div class="panel-body padding-sm">
 									<ul class="list-group no-margin-b" style="display:none;"></ul>
 								</div>
 							</div><!-- ./tab-pane -->
