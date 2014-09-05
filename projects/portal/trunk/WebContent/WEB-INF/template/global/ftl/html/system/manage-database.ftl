@@ -237,6 +237,7 @@
 									<span class="label label-warning">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
 									<span class="label label-warning">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
 									<div class="pull-right margin-buttom-20">
+										<span data-bind="text: tableCount, invisible:connecting">0</span>
 										<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 목록</button>										
 									</div>
 								</div>
