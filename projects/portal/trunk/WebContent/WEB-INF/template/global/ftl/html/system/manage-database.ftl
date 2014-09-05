@@ -233,12 +233,13 @@
 										
 						<div class="tab-content">
 							<div class="tab-pane fade panel-body padding-sm" id="database-table-tree-view">
-								<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
-								<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
-								<div class="pull-right margin-buttom-20">
-									<button class="btn  btn-primary btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...">TABLE 목록</button>
+								<div class="m-b-sm">
+									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
+									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
+									<div class="pull-right margin-buttom-20">
+										<button class="btn  btn-primary btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...">TABLE 목록</button>
+									</div>
 								</div>
-								
 								<ul class="list-group no-margin-b" style="display:none;"></ul>
 								
 							</div><!-- ./tab-pane -->
