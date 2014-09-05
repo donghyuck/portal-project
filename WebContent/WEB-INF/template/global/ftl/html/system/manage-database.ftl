@@ -212,11 +212,11 @@
 						<div class="panel-body">
 							<div class="tab-content">
 								 <div class="tab-pane fade" id="database-table-tree-view">
-								<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>	
-								<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
-								<div class="pull-right text-muted">
-									<button class="btn  btn-primary btn-outline btn-flat pull-right">목록 보기</button>
-								</div>
+									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>	
+									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
+									<div class="pull-right text-muted">
+										<button class="btn  btn-primary btn-outline btn-flat pull-right">목록 보기</button>
+									</div>
 																 
 								 
 								 </div>
