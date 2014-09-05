@@ -186,7 +186,7 @@
 								<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>	
 								<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 								<div class="pull-right text-muted">
-									<button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right">목록 보기</button>
+									<button class="btn  btn-primary btn-outline btn-flat pull-right">목록 보기</button>
 								</div>
 																 
 								 
