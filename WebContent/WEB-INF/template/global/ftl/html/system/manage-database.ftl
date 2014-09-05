@@ -89,7 +89,7 @@
 				renderTo.find("ul.list-group").slimScroll({
 					height: '550px'
 				});
-								
+				createTableDetailsPanel();				
 			}		
 		}
 		
@@ -129,31 +129,8 @@
 				}
 			}); 						
 		}
-													
-		function createDatabasePanel(){		
-				var detailsModel = kendo.observable({
-					catalog : "",
-					schema : "",
-					connecting : true,
-					status : 0,
-					tableCount : 0
-				});	
-				var renderTo = $("#database-details");
-				renderTo.data("model", detailsModel );
-				kendo.bind( renderTo, detailsModel );
 
-				connectDatabase();	
-				setInterval(function () {
-					if(getDatabaseDetailsModel().get("status") == 1) 
-						connectDatabase();
-				}, 15000);
-								
-				$("#database-details ul.list-group").slimScroll({
-					height: '550px'
-				});
-		}
-		
-		function createTablePanel(){
+		function createTableDetailsPanel(){
 				var renderTo =  $("#database-table-details");
 				var detailsModel = kendo.observable({
 					name : "",
@@ -162,8 +139,7 @@
 					visible : false
 				});
 				renderTo.data("model", detailsModel );
-				kendo.bind( renderTo, detailsModel );						
-								
+				kendo.bind( renderTo, detailsModel );
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
 					common.api.callback({
@@ -178,14 +154,6 @@
 					}); 		
 				});												
 		}
-											
-		function getDatabaseDetailsModel(){
-			var renderTo = $("#database-details");
-			return renderTo.data("model");
-		} 								
-									
-		
-
 									
 		-->
 		</script> 		 
@@ -251,39 +219,6 @@
 							</div><!-- ./tab-pane -->
 						</div><!-- /.tab-content -->						
 						<div class="panel-footer no-padding-vr"></div>	
-					</div>
-					
-						<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-info btn-flat">
-								<input type="radio" name="options" id="option1"> <i class="fa fa-archive"></i> 임포트 / 익스포트
-							</label>
-							<label class="btn btn-info btn-flat">
-								<input type="radio" name="options" id="option2"><i class="fa fa-database"></i> SQL 워크시트
-							</label>
-							<label class="btn btn-info btn-flat active">
-								<input type="radio" name="options" id="option3"><i class="fa fa-table"></i> 테이블 정보
-							</label>
-						</div>								
-						<hr>	
-							
-						<div id="database-details" class="panel form-horizontal">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-folder-open"></i> 테이블</span> 
-								<div class="panel-heading-controls">
-									<span class="label label-danger" data-bind="text:catalog"></span> <span class="label label-danger" data-bind="text:schema"></span>
-								</div>
-							</div> <!-- / .panel-heading -->
-							<ul class="list-group" style="display:none;">
-							</ul>	
-							<div class="panel-footer">
-								테이블 : <span data-bind="text: tableCount">0</span> 
-								<div class="panel-heading-controls" style="width: 30%">
-									<div class="progress progress-striped active" style="width: 100%" data-bind="visible:connecting">
-										<div class="progress-bar progress-bar-danger" style="width: 100%;"></div>
-									</div>
-								</div>							
-							</div>													
-						</div>															
 					</div>
 					<div class="col-sm-8">				
 						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
