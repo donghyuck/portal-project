@@ -117,7 +117,9 @@
 						);						
 						renderTarget.slideDown();
 					}else{
-					
+						setInterval(function () {
+							extractDatabaseTableInfo(renderTo);
+						}, 10000);						
 					}
 				}
 			}); 						
