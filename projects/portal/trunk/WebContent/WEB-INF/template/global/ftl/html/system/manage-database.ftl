@@ -48,11 +48,39 @@
 					}
 				});
 				
-				createDatabasePanel();
-				createTablePanel();									
+				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
+					var show_bs_tab = $(e.target);
+					switch( show_bs_tab.attr('href') ){
+						case "#database-table-tree-view" :
+							break;
+						case  '#database-sql-tree-view' :
+							break;
+					}	
+				});
+				
+				$('#database-details-tabs a:first').tab('show');		
+				
+								
+				//createDatabasePanel();
+				//createTablePanel();									
 				// END SCRIPT
 			}
 		}]);		
+
+		
+		function createTableTreePanel(renderTo){			
+			if( !renderTo.data("model") ){
+				var detailsModel = kendo.observable({
+					catalog : "",
+					schema : "",
+					connecting : true,
+					status : 0,
+					tableCount : 0
+				});	
+				renderTo.data("model", detailsModel );
+				kendo.bind( renderTo, detailsModel );
+			}		
+		}
 											
 		function createDatabasePanel(){		
 				var detailsModel = kendo.observable({
@@ -173,7 +201,7 @@
 							<span class="panel-title"><i class="fa fa-database"></i></span>
 							<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
 								<li class="active">
-									<a href="#database-tree-tree-view" data-toggle="tab">테이블</a>
+									<a href="#database-table-tree-view" data-toggle="tab">테이블</a>
 								</li>
 								<li>
 									<a href="#database-sql-tree-view" data-toggle="tab">SQL</a>
@@ -182,7 +210,7 @@
 						</div> <!-- / .panel-heading -->						
 						<div class="panel-body">
 							<div class="tab-content">
-								 <div class="tab-pane fade" id="database-tree-tree-view">
+								 <div class="tab-pane fade" id="database-table-tree-view">
 								<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>	
 								<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 								<div class="pull-right text-muted">
