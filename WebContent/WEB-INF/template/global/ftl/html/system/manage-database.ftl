@@ -91,7 +91,8 @@
 					height: '550px'
 				});
 				createTableDetailsPanel();				
-			}		
+			}	
+			$("#database-table-details").find("button.close[data-action='slideDown']").click();	
 		}
 		
 		function getDBDetailsModel(){
@@ -155,13 +156,18 @@
 					}); 		
 				});				
 				
-				renderTo.find("button.close").click(function(e){
-					$this = $(this);
-					
-					//renderTo.find("[data-role='grid']").slideUp();
-					
-					//renderTo.find("[data-role='grid']").slideDown();
-				});								
+				var btnSlideUp = renderTo.find("button.close[data-action='slideUp']");				
+				var btnSlideDown = renderTo.find("button.close[data-action='slideDown']");				
+				btnSlideUp.click(function(e){
+					renderTo.find("[data-role='grid']").slideUp();
+					btnSlideUp.hide();
+					btnSlideDown.show();
+				});
+				btnSlideDown.click(function(e){
+					renderTo.find("[data-role='grid']").slideDown();
+					btnSlideDown.hide();
+					btnSlideUp.show();
+				});	
 		}
 		
 		function createSqlFileTreePanel(renderTo){
@@ -188,6 +194,7 @@
 					}
 				});			
 			}
+			$("#database-table-details").find("button.close[data-action='slideUp']").click();
 		}
 
 		function getSelectedSqlFile( renderTo ){			
@@ -304,23 +311,7 @@
 							<div class="panel-footer no-padding-vr"></div>	
 						</div>
 					</div></!-- /.col-sm-4 -->	
-					<div class="col-sm-8">				
-						<div id="sql-details" class="panel panel-primary">
-							<div class="panel-heading">
-								<span data-bind="text:file.name">&nbsp;</span>
-									<div class="panel-heading-controls">
-										<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-									</div>
-								</div>			
-								<div class="panel-body padding-sm">
-									<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
-									<div class="pull-right text-muted">
-										<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-									</div>
-							</div>
-							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
-							<div class="panel-footer no-padding-vr"></div>
-						</div>						
+					<div class="col-sm-8">										
 						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
@@ -333,7 +324,23 @@
 							<div class="panel-footer">
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
-						</div>					
+						</div>	
+						<div id="sql-details" class="panel panel-primary">
+							<div class="panel-heading">
+								<span data-bind="text:file.name">&nbsp;</span>
+									<div class="panel-heading-controls">
+										<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>					
+									</div>
+								</div>			
+								<div class="panel-body padding-sm">
+									<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
+									<div class="pull-right text-muted">
+										<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+									</div>
+							</div>
+							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
+							<div class="panel-footer no-padding-vr"></div>
+						</div>										
 					</div></!-- /.col-sm-8 -->
 				</div><!-- /.row -->	
 			</div> <!-- / #content-wrapper -->

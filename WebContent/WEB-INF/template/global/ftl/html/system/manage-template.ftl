@@ -66,21 +66,7 @@
 		}]);		
 		
 		function createPathFinder(){		
-			if( !$("#template-tree-view").data('kendoTreeView') ){		
-				var finderDataSource = new kendo.data.HierarchicalDataSource({
-					transport: { 
-						read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
-					},
-					schema: {
-						data: "targetFiles",					
-						model: {
-							id: "path",
-							hasChildren: "directory"
-						}
-					},
-					error: common.api.handleKendoAjaxError
-				});			
-				
+			if( !$("#template-tree-view").data('kendoTreeView') ){					
 				$("#template-tree-view").kendoTreeView({
 					dataSource: {
 						transport: { 
@@ -286,13 +272,7 @@
 		#htmleditor.panel-body{
 			min-height:500px;
 		}
-		#template-details .table > thead > tr > th {
-			vertical-align: bottom;
-			border-bottom: none;
-		}
-		#template-details .table > tbody > tr  {
-			border-bottom: 1px solid #ddd;
-		}		
+
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
