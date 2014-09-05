@@ -153,7 +153,24 @@
 							detailsModel.set("visible", true );						
 						}
 					}); 		
-				});												
+				});				
+				
+				renderTo.find("button.close").click(function(e){
+					$this = $(this);
+					$icon =  $this.children("i");
+					if( $icon.hasClass("fa-chevron-up") ){
+						$icon.removeClass("")
+					
+					}else{
+					
+					
+					}
+										
+					
+					renderTo.find("[data-role='grid']").slideUp();
+					
+					renderTo.find("[data-role='grid']").slideDown();
+				});								
 		}
 		
 		function createSqlFileTreePanel(renderTo){
@@ -197,7 +214,11 @@
 					content : "",
 					supportCustomized : false,
 					supportUpdate : false,
-					supportSvn : true
+					supportSvn : true,
+					openFileUpdateModal : function(){
+						alert("준비중입니다");
+						return false;
+					}					
 				});					
 				kendo.bind(renderTo, detailsModel );	
 				renderTo.data("model", detailsModel );		
@@ -312,7 +333,7 @@
 						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
-								<div class="panel-heading-controls">	</div>
+								<div class="panel-heading-controls"><button class="close"><i class="fa fa-chevron-up"></i></button><button class="close" style="display:none;"><i class="fa fa-chevron-down"></i></button></div>
 							</div>			
 							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns="[ {'field':'primaryKey', 'title':'기본키'}, {'field':'name', 'title':'컬럼'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
 							<div class="panel-footer">
