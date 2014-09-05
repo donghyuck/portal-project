@@ -764,8 +764,8 @@ width: 99%;
 // By default, space out list group content from panel headings to account for
 // any kind of custom content between the two.
 
-.panel {
-  	.tab-pane > .list-group {
+.panel  .tab-pane {
+  > .list-group {
     margin-bottom: 0;
     .list-group-item {
       border-width: 1px 0;
