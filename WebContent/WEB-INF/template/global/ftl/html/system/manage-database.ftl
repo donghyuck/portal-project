@@ -184,9 +184,9 @@
 							<div class="tab-content">
 								 <div class="tab-pane fade" id="database-tree-tree-view">
 								<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>	
-								<span class="label label-info">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
+								<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 								<div class="pull-right text-muted">
-									<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+									<button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right">목록 보기</button>
 								</div>
 																 
 								 
