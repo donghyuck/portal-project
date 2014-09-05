@@ -231,10 +231,10 @@
 									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
 									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
 									<div class="pull-right">
-										<button class="btn  btn-primary btn-outline btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...">목록 보기</button>
+										<button class="btn  btn-primary btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...">목록 보기</button>
 									</div>
 								</div>
-								<ul class="list-group" style="display:none;"></ul>
+								<ul class="list-group no-margin-b" style="display:none;"></ul>
 							</div><!-- ./tab-pane -->
 							<div class="tab-pane fade" id="database-sql-tree-view">
 								<div class="panel-body padding-sm">
