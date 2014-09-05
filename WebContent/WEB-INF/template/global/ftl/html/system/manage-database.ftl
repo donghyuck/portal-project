@@ -229,9 +229,9 @@
 							<div class="tab-content">
 								 <div class="tab-pane fade" id="database-table-tree-view">
 								 <div class="panel-body padding-sm">
-									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog"></span>	
-									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema"></span>
-									<div class="pull-right text-muted">
+									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
+									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
+									<div class="pull-right">
 										<button class="btn  btn-primary btn-outline btn-flat pull-right" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ...">목록 보기</button>
 									</div>
 																		 
