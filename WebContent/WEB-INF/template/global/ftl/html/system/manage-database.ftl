@@ -201,7 +201,7 @@
 						<div class="panel-heading">
 							<span class="panel-title"><i class="fa fa-database"></i></span>
 							<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
-								<li class="active">
+								<li>
 									<a href="#database-table-tree-view" data-toggle="tab">테이블</a>
 								</li>
 								<li>
