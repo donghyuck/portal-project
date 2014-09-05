@@ -185,41 +185,41 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-sm-4">
-
-					<div class="panel colourable">
-						<div class="panel-heading">
-							<span class="panel-title"><i class="fa fa-database"></i></span>
-							<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
-								<li>
-									<a href="#database-table-tree-view" data-toggle="tab">스키마</a>
-								</li>
-								<li>
-									<a href="#database-sql-tree-view" data-toggle="tab">SQL</a>
-								</li>
-							</ul> <!-- / .nav -->
-						</div> <!-- / .panel-heading -->		
-										
-						<div class="tab-content">
-							<div class="tab-pane fade panel-body padding-sm" id="database-table-tree-view">
-								<div class="m-b-sm">
-									<span class="label label-warning">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
-									<span class="label label-warning">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
-									<div class="pull-right margin-buttom-20">
-										<span data-bind="text: tableCount, invisible:connecting">0</span>
-										<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 목록</button>										
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-database"></i></span>
+								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
+									<li>
+										<a href="#database-table-tree-view" data-toggle="tab">스키마</a>
+									</li>
+									<li>
+										<a href="#database-sql-tree-view" data-toggle="tab">SQL</a>
+									</li>
+								</ul> <!-- / .nav -->
+							</div> <!-- / .panel-heading -->		
+											
+							<div class="tab-content">
+								<div class="tab-pane fade panel-body padding-sm" id="database-table-tree-view">
+									<div class="m-b-sm">
+										<span class="label label-warning">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
+										<span class="label label-warning">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
+										<div class="pull-right margin-buttom-20">
+											<span data-bind="text: tableCount, invisible:connecting">0</span>
+											<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 목록</button>										
+										</div>
 									</div>
-								</div>
-								<ul class="list-group no-margin-b" style="display:none;"></ul>
-								
-							</div><!-- ./tab-pane -->
-							<div class="tab-pane fade" id="database-sql-tree-view">
-								<div class="panel-body padding-sm">
-								
-								</div>
-							</div><!-- ./tab-pane -->
-						</div><!-- /.tab-content -->						
-						<div class="panel-footer no-padding-vr"></div>	
-					</div>
+									<ul class="list-group no-margin-b" style="display:none;"></ul>
+									
+								</div><!-- ./tab-pane -->
+								<div class="tab-pane fade" id="database-sql-tree-view">
+									<div class="panel-body padding-sm">
+									
+									</div>
+								</div><!-- ./tab-pane -->
+							</div><!-- /.tab-content -->						
+							<div class="panel-footer no-padding-vr"></div>	
+						</div>
+					</div></!-- /.col-sm-4 -->	
 					<div class="col-sm-8">				
 						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
 							<div class="panel-heading">
@@ -231,7 +231,7 @@
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>					
-					</div></!-- /.col-sm-12 -->
+					</div></!-- /.col-sm-8 -->
 				</div><!-- /.row -->	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
