@@ -232,7 +232,7 @@
 						</div> <!-- / .panel-heading -->						
 						<div class="tab-content">
 							<div class="tab-pane fade panel panel-transparent no-margin-b" id="database-table-tree-view">
-								<div class="panel-heading">
+								<div class="padding-sm">
 									<span class="label label-info">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
 									<span class="label label-primary">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
 									<div class="panel-heading-controls">
