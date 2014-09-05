@@ -85,6 +85,11 @@
 				});	
 				renderTo.data("model", detailsModel );
 				kendo.bind( renderTo, detailsModel );
+				
+				renderTo.children("ul.list-group").slimScroll({
+					height: '550px'
+				});
+								
 			}		
 		}
 		
