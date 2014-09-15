@@ -554,6 +554,9 @@
 										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span> 사용자 목록</span>
 										<div class="panel-heading-controls">
 											<button class="btn btn-danger btn-labeled" data-bind="click:addUser"><span class="btn-label icon fa fa-plus"></span> 사용자 추가 </button>
+											<span class="panel-heading-text" style="font-size:11px;font-weight:600;">목록항상보기&nbsp;&nbsp;</span>
+											<div class="switcher switcher-sm checked"><input type="checkbox" data-class="switcher-sm" id="panel-switcher" checked="checked"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on">ON</div><div class="switcher-state-off">OFF</div></div></div>
+											
 										</div>
 									</div>
 									<div class="panel-body padding-sm">
