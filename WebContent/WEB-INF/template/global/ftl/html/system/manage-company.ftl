@@ -596,12 +596,16 @@
 				left: 0;
 				min-height:400px;
 			}
-			
-			.k-grid tr[aria-selected="true"] > td > a {
+
+			.k-grid td > a.k-button {
+				display : none; 
+			}
+						
+			.k-grid tr[aria-selected="true"] > td > a.k-button {
 				display : inline; 
 			}
 			
-			.k-grid tr[aria-selected="false"] > td > a {
+			.k-grid tr[aria-selected="false"] > td > a.k-button {
 				display : none; 
 			}
 			
