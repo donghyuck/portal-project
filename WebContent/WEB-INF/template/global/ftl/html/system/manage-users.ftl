@@ -37,6 +37,7 @@
 				common.ui.landing();				
 				// 1-3.  관리자  로딩
 				var currentUser = new User();
+				
 				var targetCompany = kendo.observable({
 					company : new Company(),
 					isEnabled : false,
@@ -44,6 +45,7 @@
 						alert("준비중입니다.") ;
 					}
 				});	
+				
 				targetCompany.bind(
 					"change",  function(e){
 						if( e.field.match('^company.name')){ 						
@@ -57,6 +59,7 @@
 						}
 					}
 				);
+				
 				kendo.bind($("#company-details"), targetCompany );	
 				
 				common.ui.admin.setup({
@@ -133,13 +136,20 @@
 			}	
 		}]);
 
-
+		function getSelectedUser(){
+			var renderTo = $("#user-grid");
+			var grid = renderTo.data('kendoGrid');
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells );   
+			return selectedCell;
+		}
 	
 		/**
 		* Show user detailis
 		*/
 		function showUserDetails(){		
-			var selectedUser = $("#user-grid").data("userPlaceHolder");			
+			var selectedUser = getSelectedUser();
+				
 			if( $('#user-details').text().trim().length	== 0 ){
 				$('#user-details').show().html(kendo.template($('#user-details-template').html()));
 				
