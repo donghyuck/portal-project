@@ -608,7 +608,15 @@
 			.k-grid tr[aria-selected="false"] > td > a.k-button {
 				display : none; 
 			}
-			
+
+			.k-grid td > .btn {
+				cursor: not-allowed;
+				pointer-events: none;
+				opacity: .65;
+				filter: alpha(opacity=65);
+				-webkit-box-shadow: none;
+				box-shadow: none;
+			}			
 						
 		</style>
 </#compress>		
