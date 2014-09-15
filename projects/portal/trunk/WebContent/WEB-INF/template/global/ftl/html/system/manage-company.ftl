@@ -376,8 +376,6 @@
 		
 		function showCompanyDetails(e){
 		
-		$this = $(e.target);
-			alert( $this.html() );
 		
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
