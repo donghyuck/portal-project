@@ -115,7 +115,7 @@
 						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 100 }, 
 						{ field: "domainName",   title: "도메인",  filterable: true, sortable: false,  width: 100 }, 
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
-						{ command: [ { text:"상세보기", click: showCompanyDetails, className:"btn btn-xs btn-info"  }, { name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"} , imageClass:"", className:"btn btn-xs btn-danger" } ], title: "&nbsp;", width: 180  }], 
+						{ command: [ { text:"상세보기", click: showCompanyDetails, className:"btn btn-xs btn-info"  }, { name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"} , imageClass:"none", className:"btn btn-xs btn-danger" } ], title: "&nbsp;", width: 180  }], 
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
