@@ -112,10 +112,10 @@
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
 						{ field: "name",    title: "KEY",  filterable: true, sortable: true,  width: 80 }, 
-						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 100 }, 
+						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 100 , template:"#:displayName #(#: name#) <a class='btn btn-xs btn-info'>상세보기</a>" }, 
 						{ field: "domainName",   title: "도메인",  filterable: true, sortable: false,  width: 100 }, 
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
-						{ command: [ { text:"상세보기", click: showCompanyDetails, className:"btn btn-xs btn-info"  }, { name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"} , imageClassName:"fa fa-pencil", className:"btn btn-xs btn-danger" } ], title: "&nbsp;", width: 180  }], 
+						{ command: [ { text:"상세보기", click: showCompanyDetails, className:"btn btn-xs btn-info"  }, { name:"edit",  text: { edit: "수정", update: "저장", cancel: "취소"} ], title: "&nbsp;", width: 180  }], 
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
