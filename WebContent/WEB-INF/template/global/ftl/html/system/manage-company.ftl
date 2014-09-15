@@ -601,7 +601,7 @@
 				display : inline; 
 			}
 			
-			.k-grid tr[aria-selected="true"] > td > a {
+			.k-grid tr[aria-selected="false"] > td > a {
 				display : none; 
 			}
 			
