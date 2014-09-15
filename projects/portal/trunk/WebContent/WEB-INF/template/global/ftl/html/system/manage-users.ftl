@@ -554,7 +554,7 @@
 										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span> 사용자 목록</span>
 										<div class="panel-heading-controls">
 											
-											<span class="panel-heading-text text-light-gray text-xs t-m-3" style="font-size:11px;font-weight:600;">목록항상보기&nbsp;&nbsp;</span>
+											<span class="panel-heading-text text-light-gray text-xs" style="font-size:11px;font-weight:600;margin-top:3px;">목록항상보기&nbsp;&nbsp;</span>
 											<div class="switcher switcher-primary checked"><input type="checkbox" data-class="switcher-sm" id="panel-switcher" checked="checked"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on">ON</div><div class="switcher-state-off">OFF</div></div></div>
 											
 										</div>
