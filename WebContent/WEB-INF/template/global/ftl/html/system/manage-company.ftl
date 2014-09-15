@@ -615,7 +615,7 @@
 			}			
 			.k-grid tr[aria-selected="true"] > td > .btn {
 				cursor: pointer;
-				pointer-events: none;
+				pointer-events: auto;
 				opacity: 1;
 				filter: none;
 				-webkit-box-shadow: none;
