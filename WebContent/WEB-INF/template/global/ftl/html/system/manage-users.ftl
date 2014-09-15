@@ -558,15 +558,14 @@
 				</div><!-- / .page-header -->	
 				<div id="company-details" class="page-details">
 					<div class="row">		
-							<div class="col-sm-12">
+						<div class="col-sm-12">
+								<!-- user grid panel -->		
 								<div class="panel panel-default" style="min-height:300px;" >
 									<div class="panel-heading">
 										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span> 사용자 목록</span>
-										<div class="panel-heading-controls">
-											
+										<div class="panel-heading-controls">											
 											<span class="panel-heading-text text-light-gray text-xs" style="font-size:11px;font-weight:600;margin-top:3px;">목록항상보기&nbsp;&nbsp;</span>
 											<div class="switcher switcher-primary checked"><input type="checkbox" data-class="switcher-sm" id="panel-switcher" checked="checked"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on">ON</div><div class="switcher-state-off">OFF</div></div></div>
-											
 										</div>
 									</div>
 									<div class="panel-body padding-sm">
@@ -579,10 +578,13 @@
 									<div class="panel-footer no-padding-vr">								
 									</div>
 								</div>			
-							</div>				
-						</div><!-- / .col-sm-12 -->						
-					</div><!-- / .row -->							
-								
+							</div>	
+							<!-- ./user grid panel -->
+							<!-- user details panel -->
+							<div id="user-details" style="display:none;"></div>
+							<!-- ./user details panel -->
+						</div><!-- / .col-sm-12 -->
+					</div><!-- / .row -->	
 				</div>				
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
@@ -610,7 +612,7 @@
 							<div id="file-preview-panel" class="custom-panels-group"></div>
 						</div>	
 						<div class="panel-body" style="padding:5px;">
-							<div id="user-details" style="display:none;"></div>
+							
 						</div>					
 					</div>				
 				</div>			
@@ -619,6 +621,8 @@
 				<input type="hidden" name="companyId"  value="${action.targetCompany.companyId}" />
 			</form>	
 		</div>		
+		
+		
 		<div id="change-password-window" style="display:none;">
 		<div class="container layout">	
 			<div class="row">
