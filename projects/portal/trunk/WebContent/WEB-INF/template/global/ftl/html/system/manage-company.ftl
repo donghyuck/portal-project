@@ -374,9 +374,14 @@
 			}	
 		}
 		
-		function showCompanyDetails(){
+		function showCompanyDetails(e){
+		
+		$this = $(e.target);
+			alert( $this.html() );
+		
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
+
 			var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");			
 			
 			if( renderTo.text().length === 0 ){
