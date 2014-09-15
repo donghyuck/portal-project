@@ -560,7 +560,7 @@
 					<div class="row">		
 						<div class="col-sm-12">
 								<!-- user grid panel -->		
-								<div class="panel panel-default" style="min-height:300px;" >
+								<div id="user-list-panel" class="panel panel-default" style="min-height:300px;" >
 									<div class="panel-heading">
 										<span class="panel-title"><i class="fa fa-align-justify"></i> <span data-bind="text:company.displayName"></span> 사용자 목록</span>
 										<div class="panel-heading-controls">											
