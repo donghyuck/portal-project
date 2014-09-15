@@ -555,7 +555,7 @@
 										<div class="panel-heading-controls">
 											
 											<span class="panel-heading-text" style="font-size:11px;font-weight:600;">목록항상보기&nbsp;&nbsp;</span>
-											<div class="switcher switcher-sm checked"><input type="checkbox" data-class="switcher-sm" id="panel-switcher" checked="checked"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on">ON</div><div class="switcher-state-off">OFF</div></div></div>
+											<div class="switcher switcher-primary switcher-sm checked"><input type="checkbox" data-class="switcher-sm" id="panel-switcher" checked="checked"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on">ON</div><div class="switcher-state-off">OFF</div></div></div>
 											
 										</div>
 									</div>
