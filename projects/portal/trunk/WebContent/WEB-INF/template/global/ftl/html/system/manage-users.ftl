@@ -512,120 +512,120 @@
 		
 		<!--  User Detetails Template -->
 		<script type="text/x-kendo-template" id="user-details-template">			
-			<div class="panel panel-default" >
-				<div class="panel-heading" >
-					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: user.username"></span>
-					<button type="button" class="close" aria-hidden="true">&times;</button>
-					<div class="panel-heading-controls" style="padding-right: 25px;">						
-						<span class="panel-heading-text text-light-gray text-xs" style="font-size:11px;font-weight:600;margin-top:3px;">목록으로 이동&nbsp;&nbsp;</span>
-						<button type="button" class="btn btn-rounded btn-outline btn-info" data-bind="click:scrollTop"><i class="fa fa-angle-double-up fa-lg"></i></button>						
-					</div>
-				</div>	
-				<!-- ./panel-heading -->			
-				<!-- panel-body -->			
-				<div class="panel-body">			
-					<div class="row">
-						<div class="col-lg-6 col-xs-12">
+		<div class="panel panel-default" >
+			<div class="panel-heading" >
+				<i class="fa fa-male"></i>&nbsp;<span data-bind="text: user.username"></span>
+				<button type="button" class="close" aria-hidden="true">&times;</button>
+				<div class="panel-heading-controls" style="padding-right: 25px;">						
+					<span class="panel-heading-text text-light-gray text-xs" style="font-size:11px;font-weight:600;margin-top:3px;">목록으로 이동&nbsp;&nbsp;</span>
+					<button type="button" class="btn btn-rounded btn-outline btn-info" data-bind="click:scrollTop"><i class="fa fa-angle-double-up fa-lg"></i></button>						
+				</div>
+			</div>	
+			<!-- ./panel-heading -->			
+			<!-- panel-body -->			
+			<div class="panel-body">			
+				<div class="row">
+					<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
-					<div class="profile-row no-margin-t">	
-					
-					<div class="left-col">	
-					<div class="profile-block no-margin-t">
-						<div class="panel profile-photo">
-							<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
-								<img id="user-photo" src="${request.contextPath}/images/common/no-avatar.png" border="0" data-bind="attr:{ src: profileImageUrl }" />			
-							</a>
-							<ul class="dropdown-menu">
-								<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
-								<li>
-									<input name="uploadImage" id="files" type="file" class="pull-right" />
-								</li>
-							</ul>			
-						</div>
-					</div>
-					</div>
-					<div class="right-col">	
-						<div class="profile-content">
-							<table class="table">
-								<tbody>
-									<tr>
-										<th class="col-lg-3 col-sm-4">아이디</th>
-										<td><input type="text" class="form-control" placeholder="아이디" disabled data-bind="value:user.username"/></td>
-									</tr> 
-									<tr>
-										<th class="col-lg-3 col-sm-4">이름</th>
-										<td><input type="text" class="form-control" placeholder="이름" data-bind="value:user.name"/></td>
-									</tr> 
-									<tr>
-										<th class="col-lg-3 col-sm-4">메일</th>
-										<td><input type="email" class="form-control" placeholder="메일주소" data-bind="value:user.email"/></td>
-									</tr> 
-									<tr>
-										<th class="col-lg-3 col-sm-4">옵션</th>
-										<td>
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" name="nameVisible"  data-bind="checked: user.nameVisible" />	이름공개
-												</label>
-											</div>		
-											<div class="checkbox">
-												<label>
-													<input type="checkbox"  name="emailVisible"  data-bind="checked: user.emailVisible" />	메일공개
-												</label>
-											</div>	
-											<div class="checkbox">
-												<label>
-													<input type="checkbox"  name="enabled"  data-bind="checked: user.enabled" />계정사용여부
-												</label>
-											</div>										
-										</td>
-									</tr> 																		
-									<tr>
-										<th class="col-lg-3 col-sm-4"><small>마지막 프로파일 수정일</small></th>
-										<td><small><span data-bind="text: user.lastProfileUpdate" data-format="{yyyy.MM.dd }"></span></small></td>
-									</tr>  
-									<tr>
-										<th class="col-lg-3 col-sm-4"><small>마지막 로그인 일자</small></th>
-										<td><small><span data-bind="text: user.lastLoggedIn" data-format="yyyy.MM.dd HH:mm:ss"></span></small></td>
-									</tr>  
-								</tbody>
-							</table>								
-						
-						</div>
-						
-					</div>	
-					</div>
-
-							<div class="btn-group pull-right">
-								<button id="update-user-btn" disabled class="btn btn-primary">정보 변경</button>
-								<#if request.isUserInRole('ROLE_SYSTEM' )>
-								<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
-								</#if>
-							</div>						
-						
-						</div><!-- ./col-md-6 -->	
-						<div class="col-lg-6 col-xs-12">
-						<!-- start additional info -->
-				
-							<ul id="myTab" class="nav nav-tabs nav-tabs-xs">
-								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
-								<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
-								<li><a href="\\#roles" data-toggle="tab">롤</a></li>
-							</ul>			
-							<div class="tab-content padding-sm">
-								<div class="tab-pane fade" id="props">
-									<span class="help-block"><i class="fa fa-info"></i>  프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</span>
-									<div id="user-props-grid"></div>
-									
-								</div>
-								<div class="tab-pane fade" id="groups">
-									
-										<div class="form-horizontal">
-											<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
+						<div class="profile-row no-margin-t">						
+							<div class="left-col">	
+								<div class="profile-block no-margin-t">
+									<div class="panel profile-photo">
+										<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
+											<img id="user-photo" src="${request.contextPath}/images/common/no-avatar.png" border="0" data-bind="attr:{ src: profileImageUrl }" />			
+										</a>
+										<ul class="dropdown-menu">
+											<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
+											<li><input name="uploadImage" id="files" type="file" class="pull-right" /></li>
+										</ul>			
+									</div><!-- ./profile-photo -->
+								</div><!-- ./profile-block -->
+							</div><!-- ./left-col -->						
+							<div class="right-col">	
+								<div class="profile-content">
+									<table class="table">
+										<tbody>
+											<tr>
+												<th class="col-lg-3 col-sm-4">아이디</th>
+												<td><input type="text" class="form-control" placeholder="아이디" disabled data-bind="value:user.username"/></td>
+											</tr> 
+											<tr>
+												<th class="col-lg-3 col-sm-4">이름</th>
+												<td><input type="text" class="form-control" placeholder="이름" data-bind="value:user.name"/></td>
+											</tr> 
+											<tr>
+												<th class="col-lg-3 col-sm-4">메일</th>
+												<td><input type="email" class="form-control" placeholder="메일주소" data-bind="value:user.email"/></td>
+											</tr> 
+											<tr>
+												<th class="col-lg-3 col-sm-4">옵션</th>
+												<td>
+													<div class="checkbox">
+														<label>
+															<input type="checkbox" name="nameVisible"  data-bind="checked: user.nameVisible" />	이름공개
+														</label>
+													</div>		
+													<div class="checkbox">
+														<label>
+															<input type="checkbox"  name="emailVisible"  data-bind="checked: user.emailVisible" />	메일공개
+														</label>
+													</div>	
+													<div class="checkbox">
+														<label>
+															<input type="checkbox"  name="enabled"  data-bind="checked: user.enabled" />계정사용여부
+														</label>
+													</div>										
+												</td>
+											</tr> 																		
+											<tr>
+												<th class="col-lg-3 col-sm-4"><small>마지막 프로파일 수정일</small></th>
+												<td><small><span data-bind="text: user.lastProfileUpdate" data-format="{yyyy.MM.dd }"></span></small></td>
+											</tr>  
+											<tr>
+												<th class="col-lg-3 col-sm-4"><small>마지막 로그인 일자</small></th>
+												<td><small><span data-bind="text: user.lastLoggedIn" data-format="yyyy.MM.dd HH:mm:ss"></span></small></td>
+											</tr>  
+										</tbody>
+									</table>								
+								</div><!-- ./profile-content -->
+							</div><!-- ./right-col -->		
+						</div><!-- ./profile-row -->	
+						<div class="btn-group pull-right">
+							<button id="update-user-btn" disabled class="btn btn-primary">정보 변경</button>
+							<#if request.isUserInRole('ROLE_SYSTEM' )>
+							<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
+							</#if>
+						</div>						
+					</div><!-- ./col-md-6 -->	
+					<div class="col-lg-6 col-xs-12">
+						<ul id="myTab" class="nav nav-tabs nav-tabs-xs">
+							<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
+							<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
+							<li><a href="\\#roles" data-toggle="tab">롤</a></li>
+						</ul>								
+						<div class="tab-content padding-sm">
+							<div class="tab-pane fade" id="props">
+								<span class="help-block"><i class="fa fa-info"></i>  프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</span>
+								<div id="user-props-grid"></div>									
+							</div>
+							<div class="tab-pane fade" id="groups">																	
+								<div class="form-horizontal">
+									<div class="row">
+										<div class="col-sm-6">
 											<div class="form-group">
-												<label for="user-company-combo" class="col-sm-2 control-label">회사</label>
+												<label for="user-company-combo" class="control-label text-light-gray text-semibold text-xs">회사</label>
 												<input id="user-company-combo" style="width: 180px" />
-											</div>
+											</div>										
+										</div>
+										<div class="col-sm-6">
+										
+										</div>										
+									</div>
+								</div>
+								
+										
+									<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
+	
 											<div class="form-group">
 												<label for="user-group-combo" class="col-sm-2 control-label">그룹</label>
 												<input id="user-group-combo" style="width: 180px" />
