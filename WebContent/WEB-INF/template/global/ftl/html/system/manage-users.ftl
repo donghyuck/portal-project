@@ -163,7 +163,7 @@
 							destroy: { url:'${request.contextPath}/secure/delete-user-property.do?output=json', type:'post' },
 					 		parameterMap: function (options, operation){			
 						 		if (operation !== "read" && options.models) {
-						 			return { companyId: getSelectedUser.userId, items: kendo.stringify(options.models)};
+						 			return { companyId: getSelectedUser().userId, items: kendo.stringify(options.models)};
 								} 
 								return { companyId: getSelectedUser().userId }
 							}
