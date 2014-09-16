@@ -124,7 +124,9 @@
 }
 
 @media (min-width: 768px) {
-	
+	.page-profile .profile-row {
+		margin-top: -36px;
+	}	
 	.page-profile .left-col {
 		float: left;
 		width: 220px;
@@ -151,4 +153,9 @@
 	display: block;
 	max-width: 100%;
 	border-radius: 999999px;
+}
+
+.page-profile .profile-content-hr {
+	margin-top: 30px;
+	margin-bottom: 30px;
 }
