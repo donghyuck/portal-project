@@ -401,7 +401,7 @@
 					<div class="profile-block no-margin-t">
 						<div class="panel profile-photo">
 							<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
-								<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0" data-bind="attr:{"src": user.profileImageUrl}" />			
+								<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0" data-bind="attr:{ src: profileImageUrl }" />			
 							</a>
 							<ul class="dropdown-menu">
 								<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
