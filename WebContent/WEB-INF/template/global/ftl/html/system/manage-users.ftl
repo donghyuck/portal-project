@@ -619,7 +619,7 @@
 									
 								</div>
 								<div class="tab-pane fade" id="groups">
-									<span class="help-block"><i class="fa fa-info"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
+									
 										<div class="form-horizontal">
 											<div class="form-group">
 												<label for="user-company-combo" class="col-sm-2 control-label">회사</label>
@@ -634,7 +634,8 @@
 												<button class="btn btn-sm btn-danger btn-labeled" data-bind="click:addToMember"><span class="btn-label icon fa fa-plus"></span> 맴버로 추가 </button>												
 												</div>
 											</div>
-										</div>							
+										</div>		
+									<span class="help-block"><i class="fa fa-info"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>						
 									<div id="user-group-grid" class="groups"></div>									
 								</div>							
 								<div class="tab-pane fade" id="roles">
