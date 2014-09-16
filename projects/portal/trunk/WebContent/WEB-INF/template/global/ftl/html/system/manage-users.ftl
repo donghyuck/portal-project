@@ -250,7 +250,7 @@
 		
 		function createUserGroupsPane(renderTo){
 			if(!$("#user-company-combo").data("kendoComboBox") ){
-				var company_combo = $("#company-combo").kendoComboBox({
+				var company_combo = $("#user-company-combo").kendoComboBox({
 					autoBind: false,
 					placeholder: "회사 선택",
 					dataTextField: "displayName",
