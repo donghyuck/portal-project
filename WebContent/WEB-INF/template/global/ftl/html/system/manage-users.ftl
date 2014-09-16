@@ -790,8 +790,8 @@
 								<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
 								</#if>
 							</div>						
-						<!-- end basic info -->
-						</div>	
+						
+						</div><!-- ./col-md-6 -->	
 						<div class="col-lg-6 col-xs-12">
 						<!-- start additional info -->
 							<div class="page-header page-nounderline-header">
