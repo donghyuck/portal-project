@@ -507,8 +507,8 @@
 													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
 													data-columns="[
 														{ 'title': '이름',  'field': 'name', 'width': 200, 'locked': true },
-														{ 'title': '값', 'field': 'value' },
-														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+														{ 'title': '값', 'field': 'value' ,'width' : 200 },
+														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;' }
 													]"
 													data-bind="source: properties, visible: isVisible"
 													style="height: 300px"></div>
