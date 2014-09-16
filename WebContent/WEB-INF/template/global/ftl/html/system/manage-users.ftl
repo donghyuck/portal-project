@@ -575,8 +575,9 @@
 							</ul>			
 							<div class="tab-content padding-sm">
 								<div class="tab-pane fade" id="props">
-									<span class="help-block"><i class="fa fa-info"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
+									
 									<div id="user-props-grid"></div>
+									<span class="help-block"><i class="fa fa-info"></i>  프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</span>
 								</div>
 								<div class="tab-pane fade" id="groups">
 									<span class="help-block"><i class="fa fa-info"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
