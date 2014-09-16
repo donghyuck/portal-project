@@ -249,6 +249,45 @@
 		}
 		
 		function createUserGroupsPane(renderTo){
+			if(!$("#user-company-combo").data("kendoComboBox") ){
+				var company_combo = $("#company-combo").kendoComboBox({
+					autoBind: false,
+					placeholder: "회사 선택",
+					dataTextField: "displayName",
+					dataValueField: "companyId",
+					dataSource: common.ui.admin.setup().companySelector.dataSource
+				});
+				var selectedUser = getUserDetailsModel().user;
+				$("#user-company-combo").data("kendoComboBox").value( 
+					selectedUser.company.companyId
+				);
+				$("#user-company-combo").data("kendoComboBox").readonly();
+			}
+			if( !$("#user-group-combo").data("kendoComboBox") ){
+				$("#user-group-combo").kendoComboBox({
+												autoBind: false,
+												placeholder: "그룹 선택",
+						                        dataTextField: "displayName",
+						                        dataValueField: "groupId",
+						                        cascadeFrom: "company-combo",			                       
+											    dataSource:  {
+													type: "json",
+												 	serverFiltering: true,
+													transport: {
+														read: { url:'${request.contextPath}/secure/list-company-group.do?output=json', type:'post' },
+														parameterMap: function (options, operation){											 	
+														 	return { companyId:  options.filter.filters[0].value };
+														}
+													},
+													schema: {
+														data: "companyGroups",
+														model: Group
+													},
+													error:handleKendoAjaxError
+												}
+				});											
+			}
+												
 			if( ! renderTo.data("kendoGrid") ){	
 				renderTo.kendoGrid({
 					dataSource: {
