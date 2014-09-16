@@ -382,11 +382,11 @@
 		<script type="text/x-kendo-template" id="user-details-template">			
 			<div class="panel panel-default" >
 				<div class="panel-heading" >
-					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: name"></span>
+					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: user.username"></span>
 					<button type="button" class="close" aria-hidden="true">&times;</button>
 					<div class="panel-heading-controls" style="padding-right: 25px;">						
 						<span class="panel-heading-text text-light-gray text-xs" style="font-size:11px;font-weight:600;margin-top:3px;">목록으로 이동&nbsp;&nbsp;</span>
-						<button type="button" class="btn btn-rounded btn-outline btn-info btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>						
+						<button type="button" class="btn btn-rounded btn-outline btn-info" data-bind="click:scrollTop"><i class="fa fa-angle-double-up fa-lg"></i></button>						
 					</div>
 				</div>	
 				<!-- ./panel-heading -->			
