@@ -794,11 +794,10 @@
 						<div class="col-lg-6 col-xs-12">
 						<!-- start additional info -->
 				
-							<ul id="myTab" class="nav nav-tabs">
+							<ul id="myTab" class="nav nav-tabs nav-tabs-xs">
 								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
 								<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
 								<li><a href="\\#roles" data-toggle="tab">롤</a></li>
-								<!--<li><a href="\\#attachments" data-toggle="tab">첨부파일</a></li>-->
 							</ul>			
 							<div class="tab-content">
 								<div class="tab-pane fade" id="props">
