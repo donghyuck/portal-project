@@ -612,9 +612,9 @@
 								<div class="form-horizontal">
 									<div class="row">
 										<div class="col-sm-6">
-											<div class="form-group">
+											<div class="form-group no-margin-hr">
 												<label for="user-company-combo" class="control-label text-light-gray text-semibold text-xs">회사</label>
-												<input id="user-company-combo" style="width: 180px" />
+												<input id="user-company-combo" class="form-control" style="width: 180px" />
 											</div>										
 										</div>
 										<div class="col-sm-6">
