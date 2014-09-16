@@ -185,11 +185,13 @@
 				});
 				
 				detailsModel.bind("change", function(e){		
-					if( e.field.match('^user.username')){ 						
+					if( e.field.match('^user.userId')){ 						
 						var sender = e.sender ;
 						if( sender.user.userId > 0 ){
 							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
 							this.set("isVisible", true );
+							$('#myTab a:first').tab('show') ;
+							
 							//var dt = new Date();
 							//this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
 							//this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
@@ -197,11 +199,11 @@
 						}						
 					}	
 				});
-				
+												
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					var show_bs_tab = $(e.target);
 					if(show_bs_tab.attr('href') == '#props' ) {
-					
+						createUserPropsPane($("user-props-grid"));
 					}else if(show_bs_tab.attr('href') == '#groups' ) {
 					
 					}else if(show_bs_tab.attr('href') == '#roles' ) {
@@ -216,13 +218,64 @@
 						
 			getSelectedUser().copy( renderTo.data("model").user );
 			
-			$('#myTab a:first').tab('show') ;
+			
 			
 			if(renderTo.is(':hidden')){
 				renderTo.fadeIn("slow");
 			}
 			
 		}
+		
+		function createUserPropsPane(renderTo){
+			if( ! renderTo.data("kendoGrid") ){
+				renderTo.kendoGrid({
+									dataSource: {
+										transport: { 
+											read: { url:'${request.contextPath}/secure/get-user-property.do?output=json', type:'post' },
+										    create: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post' },
+										    update: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post'  },
+										    destroy: { url:'${request.contextPath}/secure/delete-user-property.do?output=json', type:'post' },
+										 	parameterMap: function (options, operation){
+										 		getUserDetailsModel().user;
+									 			if (operation !== "read" && options.models) {
+					                          		return { userId: selectedUser.userId, items: kendo.stringify(options.models)};
+					                        	} 
+							                	return { userId: selectedUser.userId }
+							             	}
+										},						
+										batch: true, 
+										schema: {
+						                	data: "targetUserProperty",
+						                	model: Property
+						            	},
+						            	error:handleKendoAjaxError
+									},
+									columns: [
+									    { title: "속성", field: "name" , width: 200,  locked:true},
+									    { title: "값",   field: "value", width: 200, },
+										{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+									],
+									autoBind: true, 
+									pageable: false,
+									scrollable: true,
+									height: 200,
+							        editable: {
+										update: true,
+							            destroy: true,
+							            confirmation: "선택하신 프로퍼티를 삭제하겠습니까?"	
+							        },
+									toolbar: [
+								      { name: "create", text: "추가" },
+					                  { name: "save", text: "저장" },
+					                  { name: "cancel", text: "취소" }
+									],				     
+									change: function(e) {  
+									}
+				});						
+			}
+			renderTo.data("kendoGrid").dataSource.read();
+		}
+		
         </script>
 		<style>			
 		.k-grid-content{
@@ -500,6 +553,7 @@
 							<div class="tab-content">
 								<div class="tab-pane fade" id="props">
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
+									<div id="user-props-grid" ></div>
 									<div data-role="grid" 
 											class="no-border-hr" 
 											date-scrollable="false" 
