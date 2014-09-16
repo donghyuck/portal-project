@@ -579,7 +579,7 @@
 							</div>	
 							<!-- ./user grid panel -->
 							<!-- user details panel -->
-							<div id="user-details" style="display:none;"></div>
+							<div id="user-details" style="display:none;" class="details"></div>
 							<!-- ./user details panel -->
 						</div><!-- / .col-sm-12 -->
 					</div><!-- / .row -->	
@@ -699,14 +699,14 @@
 		
 		<!--  User Detetails Template -->
 		<script type="text/x-kendo-template" id="user-details-template">			
-			<div class="panel panel-default marginless details" >
-			<!--
+			<div class="panel panel-default" >
 				<div class="panel-heading" >
 					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: name"></span>
 					<button type="button" class="close" aria-hidden="true">&times;</button>
-				</div>
-			-->					
-				<div class="panel-body" style="padding:5px;">			
+				</div>	
+				<!-- ./panel-heading -->			
+				<!-- panel-body -->			
+				<div class="panel-body padding-sm">			
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
@@ -842,6 +842,9 @@
 						<!-- end additional info -->
 						</div>
 					</div>
+				</div>
+				<!-- panel-body -->			
+				<div class="panel-footer no-padding-vr">								
 				</div>
 			</div>			
 		</div>
