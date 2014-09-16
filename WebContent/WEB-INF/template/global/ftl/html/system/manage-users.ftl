@@ -174,7 +174,6 @@
 							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
 							this.set("isVisible", true );
 							$('#myTab a:first').tab('show') ;
-							
 							//var dt = new Date();
 							//this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
 							//this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
