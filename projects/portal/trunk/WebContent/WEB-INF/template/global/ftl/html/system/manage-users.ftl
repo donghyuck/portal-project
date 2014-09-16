@@ -500,18 +500,19 @@
 							<div class="tab-content">
 								<div class="tab-pane fade" id="props">
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
-									<div data-role="grid"
-													class="no-border-hr"
-													date-scrollable="false"
-													data-editable="true"
-													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-													data-columns="[
-														{ 'title': '이름',  'field': 'name', 'width': 200, 'locked': true },
-														{ 'title': '값', 'field': 'value' ,'width' : 200 },
-														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;' }
-													]"
-													data-bind="source: properties, visible: isVisible"
-													style="height: 300px"></div>
+									<div data-role="grid" 
+											class="no-border-hr" 
+											date-scrollable="false" 
+											data-editable="true" 
+											data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+											data-columns="[
+												{ 'title': '이름',  'field': 'name', 'width': 200, 'locked': true },
+												{ 'title': '값', 'field': 'value' ,'width' : 200 },
+												{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;' }
+											]" 
+											data-autoBind="true" 
+											data-bind="source: properties, visible: isVisible"
+											style="height: 300px"></div>
 								</div>
 								<div class="tab-pane fade" id="groups">
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
