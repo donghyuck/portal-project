@@ -185,7 +185,7 @@
 				});
 				
 				detailsModel.bind("change", function(e){		
-					if( e.field.match('^user.userId')){ 						
+					if( e.field.match('^user.username')){ 						
 						var sender = e.sender ;
 						if( sender.user.userId > 0 ){
 							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
