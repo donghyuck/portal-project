@@ -144,7 +144,11 @@
 			var selectedCell = grid.dataItem( selectedCells );   
 			return selectedCell;
 		}
-	
+		function getUserDetailsModel () {
+			var renderTo = $('#user-details');
+			var model = renderTo.data("model");
+			return model;
+		}	
 		/**
 		* Show user detailis
 		*/
@@ -194,12 +198,25 @@
 					}	
 				});
 				
+				$('#myTab').on( 'show.bs.tab', function (e) {
+					var show_bs_tab = $(e.target);
+					if(show_bs_tab.attr('href') == '#props' ) {
+					
+					}else if(show_bs_tab.attr('href') == '#groups' ) {
+					
+					}else if(show_bs_tab.attr('href') == '#roles' ) {
+					
+					}
+				});
+				
 				renderTo.data("model", detailsModel );	
 				kendo.bind(renderTo, detailsModel );				
 				
 			}
 						
 			getSelectedUser().copy( renderTo.data("model").user );
+			
+			$('#myTab a:first').tab('show') ;
 			
 			if(renderTo.is(':hidden')){
 				renderTo.fadeIn("slow");
