@@ -591,7 +591,7 @@
 											</div>
 											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-10">
-												<button id="add-to-member-btn" class="btn btn-info btn-sm"><i class="fa fa-plus"></i> 그룹 맴버로 추가</button>
+												<button class="btn btn-sm btn-danger btn-labeled" data-bind="click:addToMember"><span class="btn-label icon fa fa-plus"></span> 맴버로 추가 </button>												
 												</div>
 											</div>
 										</div>							
