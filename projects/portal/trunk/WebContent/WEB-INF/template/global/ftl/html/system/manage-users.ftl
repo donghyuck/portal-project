@@ -190,18 +190,12 @@
 				});
 				
 				renderTo.data("model", detailsModel );	
-				kendo.bind(renderTo, detailsModel );				
-				
-			}
-						
+				kendo.bind(renderTo, detailsModel );	
+			}						
 			getSelectedUser().copy( renderTo.data("model").user );
-			
-			
-			
 			if(renderTo.is(':hidden')){
 				renderTo.fadeIn("slow");
 			}
-			
 		}
 		
 		function createUserPropsPane(renderTo){
@@ -252,6 +246,10 @@
 				});						
 			}			
 			renderTo.data("kendoGrid").dataSource.read();
+		}
+		
+		function createUserGroupsPane(renderTo){
+		
 		}
 		
         </script>
@@ -541,8 +539,8 @@
 												<input id="company-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
-												<label for="group-combo" class="col-sm-2 control-label"><small>그룹</small></label>
-												<input id="group-combo" style="width: 180px" />
+												<label for="user-groups-combo" class="col-sm-2 control-label"><small>그룹</small></label>
+												<input id="user-groups-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-10">
