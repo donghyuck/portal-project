@@ -117,6 +117,18 @@
 	}
 }
 
+
+.page-profile .profile-block {
+	margin-bottom: 18px;
+	text-align: center;
+}
+
+@media (min-width: 768px) {}
+	.page-profile .profile-block {
+	margin-top: -70px;
+	}
+}
+
 .page-profile .profile-photo {
 	padding: 6px;
 	display: inline-block;
