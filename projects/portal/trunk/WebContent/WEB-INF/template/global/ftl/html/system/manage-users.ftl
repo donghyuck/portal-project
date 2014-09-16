@@ -533,13 +533,13 @@
 								<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
 								<li><a href="\\#roles" data-toggle="tab">롤</a></li>
 							</ul>			
-							<div class="tab-content">
+							<div class="tab-content padding-sm">
 								<div class="tab-pane fade" id="props">
-									<span class="help-block"><i class="fa fa-circle-o"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
+									<span class="help-block"><i class="fa fa-info"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
 									<div id="user-props-grid"></div>
 								</div>
 								<div class="tab-pane fade" id="groups">
-									<span class="help-block"><i class="fa fa-circle-o"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
+									<span class="help-block"><i class="fa fa-info"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
 										<div class="form-horizontal">
 											<div class="form-group">
 												<label for="company-combo" class="col-sm-2 control-label"><small>회사</small></label>
@@ -560,7 +560,7 @@
 								<div class="tab-pane fade" id="roles">
 									<div class="row">
 										<div class="col-sm-12">
-											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 맴버로 가입된 그룹으로 부터 상속된 롤입니다. <small>그룹에서 상속된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
+											<span class="help-block"><i class="fa fa-info"></i> 다음은 맴버로 가입된 그룹으로 부터 상속된 롤입니다. <small>그룹에서 상속된 롤은 그룹 관리에서 변경할 수 있습니다.</small></span>
 										</div>
 									</div>	
 									<div class="row">	
@@ -570,7 +570,7 @@
 									</div>
 									<div class="row">
 										<div class="col-sm-12">
-											<span class="help-block"><i class="fa fa-circle-o"></i> 다음은 사용자에게 직접 부여된 롤입니다. <small>그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</small></span>
+											<span class="help-block"><i class="fa fa-info"></i> 다음은 사용자에게 직접 부여된 롤입니다. <small>그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</small></span>
 										</div>
 									</div>	
 									<div class="row">	
