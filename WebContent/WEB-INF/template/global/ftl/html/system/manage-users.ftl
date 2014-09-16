@@ -621,6 +621,7 @@
 								<div class="tab-pane fade" id="groups">
 									
 										<div class="form-horizontal">
+											<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
 											<div class="form-group">
 												<label for="user-company-combo" class="col-sm-2 control-label">회사</label>
 												<input id="user-company-combo" style="width: 180px" />
