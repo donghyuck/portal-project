@@ -717,7 +717,7 @@
 					<div class="profile-row no-margin-t">	
 					
 					<div class="left-col">	
-					<div class="profile-block">
+					<div class="profile-block no-margin-t">
 						<div class="panel profile-photo">
 							<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
 								<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
@@ -794,9 +794,7 @@
 						</div><!-- ./col-md-6 -->	
 						<div class="col-lg-6 col-xs-12">
 						<!-- start additional info -->
-							<div class="page-header page-nounderline-header">
-							  <h5><small><i class="fa fa-info"></i> 탭을 선택하여 개인의 추가 옵션(프로퍼티, 그룹, 롤)을 변경할 수 있습니다.</small></h5>
-							</div>						
+				
 							<ul id="myTab" class="nav nav-tabs">
 								<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
 								<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
