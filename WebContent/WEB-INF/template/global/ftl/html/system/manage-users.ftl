@@ -115,22 +115,13 @@
                     autoBind: false,
                     change: function(e) {                    
                         var selectedCells = this.select();                 
-  						if( selectedCells.length > 0){ /**
-							var selectedCell = this.dataItem( selectedCells ); 
-							selectedCell.copy($("#user-grid").data("userPlaceHolder"));
-							if( selectedCell.userId	> 0 ){									
-								showUserDetails();
-							}*/
+  						if( selectedCells.length > 0){
  						}
 					},
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
-						 	/**
-						 	var newUser = new User ();
-						 	newUser.copy($("#user-grid").data("userPlaceHolder"));
-							$("#user-details").hide();
-							**/
+						 	$("#user-details").hide();
 						 }
 					}
 				}).data('kendoGrid');
@@ -192,7 +183,7 @@
 					if(show_bs_tab.attr('href') == '#props' ) {
 						createUserPropsPane($("#user-props-grid"));
 					}else if(show_bs_tab.attr('href') == '#groups' ) {
-					
+						createUserGroupsPane($("#user-groups-combo"));
 					}else if(show_bs_tab.attr('href') == '#roles' ) {
 					
 					}
