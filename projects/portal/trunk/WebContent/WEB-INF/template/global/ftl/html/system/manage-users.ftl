@@ -157,20 +157,20 @@
 					isVisible : false,
 					properties : new kendo.data.DataSource({
 						transport: { 
-							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
-							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
-							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
-							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
+							read: { url:'${request.contextPath}/secure/get-user-property.do?output=json', type:'post' }
+							create: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post' },
+							update: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post'  },
+							destroy: { url:'${request.contextPath}/secure/delete-user-property.do?output=json', type:'post' },
 					 		parameterMap: function (options, operation){			
 						 		if (operation !== "read" && options.models) {
-						 			return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
+						 			return { companyId: getSelectedUser.userId, items: kendo.stringify(options.models)};
 								} 
-								return { companyId: getSelectedCompany().companyId }
+								return { companyId: getSelectedUser().userId }
 							}
 						},	
 						batch: true, 
 						schema: {
-							data: "targetCompanyProperty",
+							data: "targetUserProperty",
 							model: Property
 						},
 						error : common.api.handleKendoAjaxError
@@ -179,6 +179,21 @@
 						$('html,body').animate({scrollTop: renderTo.offset().top - 55 }, 300);
 					}
 				});
+				
+				detailsModel.bind("change", function(e){		
+					if( e.field.match('^user.username')){ 						
+						var sender = e.sender ;
+						if( sender.user.userId > 0 ){
+							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
+							this.set("isVisible", true );
+							//var dt = new Date();
+							//this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
+							//this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
+							//this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
+						}						
+					}	
+				});
+				
 				renderTo.data("model", detailsModel );	
 				kendo.bind(renderTo, detailsModel );				
 			}			
@@ -463,6 +478,18 @@
 								<div class="tab-pane fade" id="props">
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
 									<div id="user-props-grid" class="props"></div>
+									<div data-role="grid"
+													class="no-border-hr"
+													date-scrollable="false"
+													data-editable="true"
+													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+													data-columns="[
+														{ 'title': '이름',  'field': 'name', 'width': 200, 'locked': true },
+														{ 'title': '값', 'field': 'value' },
+														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+													]"
+													data-bind="source: properties, visible: isVisible"
+													style="height: 300px"></div>
 								</div>
 								<div class="tab-pane fade" id="groups">
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
