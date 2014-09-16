@@ -401,7 +401,7 @@
 					<div class="profile-block no-margin-t">
 						<div class="panel profile-photo">
 							<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
-								<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
+								<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0" data-bind="attr:{"src": user.profileImageUrl}" />			
 							</a>
 							<ul class="dropdown-menu">
 								<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
@@ -418,43 +418,43 @@
 								<tbody>
 									<tr>
 										<th class="col-lg-3 col-sm-4">아이디</th>
-										<td><input type="text" class="form-control" placeholder="아이디" disabled data-bind="value:username"/></td>
+										<td><input type="text" class="form-control" placeholder="아이디" disabled data-bind="value:user.username"/></td>
 									</tr> 
 									<tr>
 										<th class="col-lg-3 col-sm-4">이름</th>
-										<td><input type="text" class="form-control" placeholder="이름" data-bind="value:name"/></td>
+										<td><input type="text" class="form-control" placeholder="이름" data-bind="value:user.name"/></td>
 									</tr> 
 									<tr>
 										<th class="col-lg-3 col-sm-4">메일</th>
-										<td><input type="email" class="form-control" placeholder="메일주소" data-bind="value:email"/></td>
+										<td><input type="email" class="form-control" placeholder="메일주소" data-bind="value:user.email"/></td>
 									</tr> 
 									<tr>
 										<th class="col-lg-3 col-sm-4">옵션</th>
 										<td>
 											<div class="checkbox">
 												<label>
-													<input type="checkbox" name="nameVisible"  data-bind="checked: nameVisible" />	이름공개
+													<input type="checkbox" name="nameVisible"  data-bind="checked: user.nameVisible" />	이름공개
 												</label>
 											</div>		
 											<div class="checkbox">
 												<label>
-													<input type="checkbox"  name="emailVisible"  data-bind="checked: emailVisible" />	메일공개
+													<input type="checkbox"  name="emailVisible"  data-bind="checked: user.emailVisible" />	메일공개
 												</label>
 											</div>	
 											<div class="checkbox">
 												<label>
-													<input type="checkbox"  name="enabled"  data-bind="checked: enabled" />계정사용여부
+													<input type="checkbox"  name="enabled"  data-bind="checked: user.enabled" />계정사용여부
 												</label>
 											</div>										
 										</td>
 									</tr> 																		
 									<tr>
 										<th class="col-lg-3 col-sm-4"><small>마지막 프로파일 수정일</small></th>
-										<td><small><span data-bind="text: lastProfileUpdate" data-format="{yyyy.MM.dd }"></span></small></td>
+										<td><small><span data-bind="text: user.lastProfileUpdate" data-format="{yyyy.MM.dd }"></span></small></td>
 									</tr>  
 									<tr>
 										<th class="col-lg-3 col-sm-4"><small>마지막 로그인 일자</small></th>
-										<td><small><span data-bind="text: lastLoggedIn" data-format="yyyy.MM.dd HH:mm:ss"></span></small></td>
+										<td><small><span data-bind="text: user.lastLoggedIn" data-format="yyyy.MM.dd HH:mm:ss"></span></small></td>
 									</tr>  
 								</tbody>
 							</table>								
