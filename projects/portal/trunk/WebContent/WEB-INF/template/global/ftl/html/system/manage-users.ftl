@@ -202,9 +202,7 @@
 			getSelectedUser().copy( renderTo.data("model").user );
 			
 			if(renderTo.is(':hidden')){
-				$("#company-list").fadeOut("slow", function(){
-					renderTo.fadeIn("slow");
-				});
+				renderTo.fadeIn("slow");
 			}
 			
 		}
