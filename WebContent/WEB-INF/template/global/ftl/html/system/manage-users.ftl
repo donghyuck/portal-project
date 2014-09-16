@@ -714,20 +714,32 @@
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
+					<div class="profile-row">	
+					
+					<div class="left-col">	
 					<div class="profile-block">
-					<div class="panel profile-photo">
-						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
-							<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
-						</a>
-						<ul class="dropdown-menu">
-							<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
-							<li>
-								<input name="uploadImage" id="files" type="file" class="pull-right" />
-							</li>
-						</ul>			
+						<div class="panel profile-photo">
+							<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
+								<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
+							</a>
+							<ul class="dropdown-menu">
+								<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
+								<li>
+									<input name="uploadImage" id="files" type="file" class="pull-right" />
+								</li>
+							</ul>			
+						</div>
 					</div>
+					</div>
+					<div class="right-col">	
+						<hr class="profile-content-hr no-grid-gutter-h">
+						<div class="profile-content">
+						</div>
+						
 					</div>	
-					<div class="media">						
+					</div>
+					
+					<div class="panel panel-transparent">						
 						<div class="media-body">
 							<h4 class="media-heading"></h4>
 							<table class="table">
