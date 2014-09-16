@@ -183,7 +183,7 @@
 					if(show_bs_tab.attr('href') == '#props' ) {
 						createUserPropsPane($("#user-props-grid"));
 					}else if(show_bs_tab.attr('href') == '#groups' ) {
-						createUserGroupsPane($("#user-groups-combo"));
+						createUserGroupsPane($("#user-groups-grid"));
 					}else if(show_bs_tab.attr('href') == '#roles' ) {
 					
 					}
@@ -249,7 +249,54 @@
 		}
 		
 		function createUserGroupsPane(renderTo){
-		
+			if( ! renderTo.data("kendoGrid") ){	
+				renderTo.kendoGrid({
+					dataSource: {
+						type: "json",
+						transport: {
+							read: { url:'${request.contextPath}/secure/list-user-groups.do?output=json', type:'post' },
+							destroy: { url:'${request.contextPath}/secure/remove-group-members.do?output=json', type:'post' },
+							parameterMap: function (options, operation){
+								var selectedUser = getUserDetailsModel().user;
+								if (operation !== "read" && options.models) {
+									return { userId: selectedUser.userId, items: kendo.stringify(options.models)};
+								}
+								return { userId: selectedUser.userId };
+							}
+						},
+						schema: {
+							data: "userGroups",
+							model: Group
+						},
+						error:handleKendoAjaxError
+					},
+					scrollable: true,
+					height:200,
+					editable: false,
+					columns: [
+						{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
+						{ field: "displayName",    title: "그룹",   filterable: true, sortable: true,  width: 100 },
+						{ command:  { text: "삭제", click : function(e){									                       		
+							if( confirm("정말로 삭제하시겠습니까?") ){
+								var selectedGroup = this.dataItem($(e.currentTarget).closest("tr"));									                       		
+									$.ajax({
+										type : 'POST',
+										url : "/secure/remove-group-members.do?output=json",
+										data : { groupId:selectedGroup.groupId, items: '[' + kendo.stringify( selectedUser ) + ']'  },
+										success : function( response ){									
+										$('#user-group-grid').data('kendoGrid').dataSource.read();
+										$('#group-role-selected').data("kendoMultiSelect").dataSource.read();
+									},
+									error:handleKendoAjaxError,
+									dataType : "json"
+								});								                       		
+							}
+						}},  title: "&nbsp;", width: 100 }	
+					],
+					dataBound:function(e){										                
+					}
+				});
+			}
 		}
 		
         </script>
@@ -535,12 +582,12 @@
 									<span class="help-block"><i class="fa fa-info"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
 										<div class="form-horizontal">
 											<div class="form-group">
-												<label for="company-combo" class="col-sm-2 control-label"><small>회사</small></label>
-												<input id="company-combo" style="width: 180px" />
+												<label for="user-company-combo" class="col-sm-2 control-label"><small>회사</small></label>
+												<input id="user-company-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
-												<label for="user-groups-combo" class="col-sm-2 control-label"><small>그룹</small></label>
-												<input id="user-groups-combo" style="width: 180px" />
+												<label for="user-group-combo" class="col-sm-2 control-label"><small>그룹</small></label>
+												<input id="user-group-combo" style="width: 180px" />
 											</div>
 											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-10">
