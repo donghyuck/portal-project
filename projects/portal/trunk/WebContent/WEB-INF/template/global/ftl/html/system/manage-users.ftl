@@ -732,7 +732,6 @@
 					</div>
 					</div>
 					<div class="right-col">	
-						<hr class="profile-content-hr no-grid-gutter-h">
 						<div class="profile-content">
 							<table class="table">
 								<tbody>
