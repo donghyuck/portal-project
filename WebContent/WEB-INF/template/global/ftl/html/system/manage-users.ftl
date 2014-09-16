@@ -273,6 +273,7 @@
 									}
 				});						
 			}
+			alert(renderTo.data());
 			renderTo.data("kendoGrid").dataSource.read();
 		}
 		
