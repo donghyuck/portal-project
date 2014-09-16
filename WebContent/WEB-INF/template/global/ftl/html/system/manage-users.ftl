@@ -236,7 +236,7 @@
 										    update: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post'  },
 										    destroy: { url:'${request.contextPath}/secure/delete-user-property.do?output=json', type:'post' },
 										 	parameterMap: function (options, operation){
-										 		getUserDetailsModel().user;
+										 		var selectedUser = getUserDetailsModel().user;
 									 			if (operation !== "read" && options.models) {
 					                          		return { userId: selectedUser.userId, items: kendo.stringify(options.models)};
 					                        	} 
