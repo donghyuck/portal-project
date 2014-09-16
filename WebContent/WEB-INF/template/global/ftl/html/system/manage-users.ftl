@@ -702,7 +702,11 @@
 			<div class="panel panel-default" >
 				<div class="panel-heading" >
 					<i class="fa fa-male"></i>&nbsp;<span data-bind="text: name"></span>
-					<button type="button" class="close" aria-hidden="true">&times;</button>
+					<div class="panel-heading-controls">
+						<button type="button" class="close" aria-hidden="true">&times;</button>
+						<span class="panel-heading-text text-light-gray text-xs" style="font-size:11px;font-weight:600;margin-top:3px;">목록으로 이동&nbsp;&nbsp;</span>
+						<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>						
+					</div>
 				</div>	
 				<!-- ./panel-heading -->			
 				<!-- panel-body -->			
@@ -712,7 +716,7 @@
 						<!--  start basic info -->	
 						<div class="page-header page-nounderline-header">
 						  <h5><small><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하세요.</small>
-							<button type="button" class="btn btn-link btn-control-group" data-action="top"><i class="fa fa-angle-double-up fa-lg"></i></button>
+							
 						  </h5>
 						</div>						
 					<div class="media">
