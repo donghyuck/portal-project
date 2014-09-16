@@ -543,7 +543,7 @@
 		</style>
 		</#compress>
     </head>
-	<body class="theme-default main-menu-animated">
+	<body class="theme-default main-menu-animated page-profile">
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >	
 			<div id="content-wrapper">
