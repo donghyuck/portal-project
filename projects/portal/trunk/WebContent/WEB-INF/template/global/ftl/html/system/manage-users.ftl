@@ -714,11 +714,7 @@
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
-						<div class="page-header page-nounderline-header">
-						  <h5><small><i class="fa fa-info"></i> 이미지를 수정하시려면 이미지를 클릭하세요.</small>
-							
-						  </h5>
-						</div>						
+					<div class="profile-block">
 					<div class="panel profile-photo">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
 							<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
@@ -728,7 +724,10 @@
 							<li>
 								<input name="uploadImage" id="files" type="file" class="pull-right" />
 							</li>
-						</ul>								
+						</ul>			
+					</div>
+					</div>	
+					<div class="media">						
 						<div class="media-body">
 							<h4 class="media-heading"></h4>
 							<table class="table">
