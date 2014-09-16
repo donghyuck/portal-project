@@ -203,7 +203,7 @@
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					var show_bs_tab = $(e.target);
 					if(show_bs_tab.attr('href') == '#props' ) {
-						createUserPropsPane($("user-props-grid"));
+						createUserPropsPane($("#user-props-grid"));
 					}else if(show_bs_tab.attr('href') == '#groups' ) {
 					
 					}else if(show_bs_tab.attr('href') == '#roles' ) {
@@ -227,6 +227,9 @@
 		}
 		
 		function createUserPropsPane(renderTo){
+			
+			alert(renderTo.data());
+			
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 									dataSource: {
@@ -273,7 +276,7 @@
 									}
 				});						
 			}
-			alert(renderTo.data());
+			
 			renderTo.data("kendoGrid").dataSource.read();
 		}
 		
