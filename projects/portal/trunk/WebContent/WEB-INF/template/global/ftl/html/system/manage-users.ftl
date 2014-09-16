@@ -183,7 +183,7 @@
 					if(show_bs_tab.attr('href') == '#props' ) {
 						createUserPropsPane($("#user-props-grid"));
 					}else if(show_bs_tab.attr('href') == '#groups' ) {
-						createUserGroupsPane($("#user-groups-grid"));
+						createUserGroupsPane($("#user-group-grid"));
 					}else if(show_bs_tab.attr('href') == '#roles' ) {
 					
 					}
