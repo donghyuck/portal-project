@@ -116,3 +116,16 @@
 		display: none;
 	}
 }
+
+.page-profile .profile-photo {
+	padding: 6px;
+	display: inline-block;
+	margin-bottom: 10px;
+	border-radius: 999999px;
+}
+
+.page-profile .profile-photo img {
+	display: block;
+	max-width: 100%;
+	border-radius: 999999px;
+}
