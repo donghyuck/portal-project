@@ -159,26 +159,9 @@
 				var detailsModel = kendo.observable({
 					user : new User(),
 					isVisible : false,
-					properties : new kendo.data.DataSource({
-						transport: { 
-							read: { url:'${request.contextPath}/secure/get-user-property.do?output=json', type:'post' },
-							create: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post' },
-							update: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post'  },
-							destroy: { url:'${request.contextPath}/secure/delete-user-property.do?output=json', type:'post' },
-					 		parameterMap: function (options, operation){			
-						 		if (operation !== "read" && options.models) {
-						 			return { userId: getUserDetailsModel().user.userId, items: kendo.stringify(options.models)};
-								} 
-								return { userId: getUserDetailsModel().user.userId }
-							}
-						},	
-						batch: true, 
-						schema: {
-							data: "targetUserProperty",
-							model: Property
-						},
-						error : common.api.handleKendoAjaxError
-					}),
+					scrollDown:function(e){	
+						$('html,body').animate({scrollTop: renderTo.offset().top - 55 }, 300);
+					},
 					scrollTop:function(e){					
 						$('html,body').animate({ scrollTop:  0 }, 300);
 					}
