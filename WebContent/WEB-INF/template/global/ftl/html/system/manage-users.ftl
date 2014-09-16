@@ -714,7 +714,7 @@
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
-					<div class="profile-row">	
+					<div class="profile-row no-margin-t">	
 					
 					<div class="left-col">	
 					<div class="profile-block">
@@ -734,14 +734,6 @@
 					<div class="right-col">	
 						<hr class="profile-content-hr no-grid-gutter-h">
 						<div class="profile-content">
-						</div>
-						
-					</div>	
-					</div>
-					
-					<div class="panel panel-transparent">						
-						<div class="media-body">
-							<h4 class="media-heading"></h4>
 							<table class="table">
 								<tbody>
 									<tr>
@@ -785,9 +777,13 @@
 										<td><small><span data-bind="text: lastLoggedIn" data-format="yyyy.MM.dd HH:mm:ss"></span></small></td>
 									</tr>  
 								</tbody>
-							</table>					
+							</table>								
+						
 						</div>
+						
+					</div>	
 					</div>
+
 							<div class="btn-group pull-right">
 								<button id="update-user-btn" disabled class="btn btn-primary">정보 변경</button>
 								<#if request.isUserInRole('ROLE_SYSTEM' )>
