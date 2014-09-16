@@ -554,7 +554,7 @@
 							<div class="tab-content">
 								<div class="tab-pane fade" id="props">
 									<span class="help-block"><i class="fa fa-circle-o"></i><small> 프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</small></span>
-									<div id="user-props-grid" ></div>
+									<div id="user-props-grid"></div>
 									<div data-role="grid" 
 											class="no-border-hr" 
 											date-scrollable="false" 
