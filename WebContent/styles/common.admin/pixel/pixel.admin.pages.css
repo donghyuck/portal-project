@@ -123,7 +123,18 @@
 	text-align: center;
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+	
+	.page-profile .left-col {
+		float: left;
+		width: 220px;
+	}	
+
+	.page-profile .right-col {
+		overflow: hidden;
+		padding-left: 20px;
+	}
+
 	.page-profile .profile-block {
 	margin-top: -70px;
 	}
