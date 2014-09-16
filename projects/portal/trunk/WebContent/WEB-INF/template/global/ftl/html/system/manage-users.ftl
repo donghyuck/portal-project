@@ -710,7 +710,7 @@
 				</div>	
 				<!-- ./panel-heading -->			
 				<!-- panel-body -->			
-				<div class="panel-body padding-sm">			
+				<div class="panel-body">			
 					<div class="row">
 						<div class="col-lg-6 col-xs-12">
 						<!--  start basic info -->	
@@ -719,9 +719,9 @@
 							
 						  </h5>
 						</div>						
-					<div class="media">
+					<div class="panel profile-photo">
 						<a class="pull-left dropdown-toggle" href="\\#" data-toggle="dropdown">
-							<img id="user-photo" class="img-thumbnail media-object"  src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
+							<img id="user-photo" src="${request.contextPath}/images/common/anonymous.png" border="0"/>			
 						</a>
 						<ul class="dropdown-menu">
 							<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
