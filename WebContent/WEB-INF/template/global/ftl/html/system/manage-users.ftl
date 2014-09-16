@@ -176,7 +176,7 @@
 						error : common.api.handleKendoAjaxError
 					}),
 					scrollTop:function(e){					
-						$('html,body').animate({scrollTop: renderTo.offset().top - 55 }, 300);
+						$('html,body').animate({ scrollTop:  0 }, 300);
 					}
 				});
 				
