@@ -173,7 +173,12 @@
 						if( sender.user.userId > 0 ){
 							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
 							this.set("isVisible", true );
-							$('#myTab a:first').tab('show') ;
+							//$('#myTab a:first').tab('show') ;
+							if( $('#myTab li:first.active').length == 0 ){ 
+								$('#myTab a:first').tab('show') ;
+							}else{
+								createUserPropsPane($("#user-props-grid"));
+							}							
 							//var dt = new Date();
 							//this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
 							//this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
