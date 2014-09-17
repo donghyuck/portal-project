@@ -165,6 +165,10 @@
 				});				
 				detailsModel.bind("change", function(e){		
 					var sender = e.sender ;
+					alert(
+						e.field + "=" + e.value + ", this=" + this.user.username + ", sender=" + sender.user.username					
+					);
+					
 					if( e.field.match('^user.username') && this.user.username != sender.user.username ){						
 						if( sender.user.userId > 0 ){
 							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
