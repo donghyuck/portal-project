@@ -441,7 +441,7 @@
 									    { title: "값",   field: "value", width: "200px", },
 										{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
 					],
-					autoBind: true, 
+					autoBind: false, 
 					pageable: false,
 					scrollable: true,
 					height: 300,
