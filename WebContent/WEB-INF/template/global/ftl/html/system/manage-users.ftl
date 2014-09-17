@@ -150,34 +150,38 @@
 				var detailsModel = kendo.observable({
 					user : new User(),
 					isVisible : false,
+					isChanged : false,
 					scrollDown:function(e){	
 						$('html,body').animate({scrollTop: renderTo.offset().top - 55 }, 300);
 					},
 					scrollTop:function(e){					
 						$('html,body').animate({ scrollTop:  0 }, 300);
+					},
+					updateProfile:function(e){
+					
+					
 					}
-				});
-				
+				});				
 				detailsModel.bind("change", function(e){		
-					alert( kendo.stringify( this.user ) );
-				
-					if( e.field.match('^user.username')){ 						
-						var sender = e.sender ;
-						if( sender.user.userId > 0 ){
-							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
-							this.set("isVisible", true );
-							//$('#myTab a:first').tab('show') ;
-							if( $('#myTab li:first.active').length == 0 ){ 
-								$('#myTab a:first').tab('show') ;
-							}else{
-								createUserPropsPane($("#user-props-grid"));
-							}							
-							//var dt = new Date();
-							//this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
-							//this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
-							//this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
-						}						
-					}						
+					var sender = e.sender ;
+					if( this.user.userId == sender.user.userId ){
+						if( e.field.match('^user.name') || e.field.match('^user.email') || e.field.match('^user.nameVisible') || e.field.match('^user.emailVisible') || e.field.match('^user.enabled')){				
+							this.set("isChanged", true);
+						}
+					}else{
+						if( e.field.match('^user.username')){						
+							if( sender.user.userId > 0 ){
+								this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
+								this.set("isVisible", true );
+								this.set("isChanged", false);
+								if( $('#myTab li:first.active').length == 0 ){ 
+									$('#myTab a:first').tab('show') ;
+								}else{
+									createUserPropsPane($("#user-props-grid"));
+								}							
+							}						
+						}
+					}					
 				});
 												
 				$('#myTab').on( 'show.bs.tab', function (e) {
@@ -703,7 +707,7 @@
 							</div><!-- ./right-col -->		
 						</div><!-- ./profile-row -->	
 						<div class="btn-group pull-right">
-							<button id="update-user-btn" disabled class="btn btn-primary">정보 변경</button>
+							<button disabled class="btn btn-primary" data-bind="enabled:isChanged, click: updateProfile">정보 변경</button>
 							<#if request.isUserInRole('ROLE_SYSTEM' )>
 							<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
 							</#if>
