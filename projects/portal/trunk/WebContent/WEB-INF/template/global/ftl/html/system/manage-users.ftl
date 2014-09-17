@@ -310,7 +310,7 @@
 						error:handleKendoAjaxError
 					},
 					scrollable: true,
-					height:200,
+					height: 200,
 					editable: false,
 					columns: [
 						{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
