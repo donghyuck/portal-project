@@ -469,7 +469,7 @@
 		
 		function createUserGroupsPane(renderTo){
 									
-			if(!$("#user-company-combo").data("kendoDropDownList") ){
+			if(!$("#user-company-combo").data("kendoComboBox") ){
 			/*
 				$("#user-company-combo").kendoComboBox({
 					filter:"contains",
@@ -827,7 +827,7 @@ $("#fabric").kendoComboBox({
 											<div class="form-group no-margin-hr">
 												<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
 												<input id="fabric" placeholder="Select fabric..." />
-												<input id="user-company-combo"/>
+												<input id="user-company-combo" placeholder="회사선택"/>
 											</div>										
 										</div>
 										<div class="col-sm-6">
