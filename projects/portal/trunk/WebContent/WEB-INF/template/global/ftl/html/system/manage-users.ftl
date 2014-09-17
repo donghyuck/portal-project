@@ -165,27 +165,22 @@
 				});				
 				detailsModel.bind("change", function(e){		
 					var sender = e.sender ;
-					
-					alert( (this.user.userId == sender.user.userId ) + ", " + e.field );
-					
-					if( this.user.userId == sender.user.userId ){
-						if( e.field.match('^user.name') || e.field.match('^user.email') || e.field.match('^user.nameVisible') || e.field.match('^user.emailVisible') || e.field.match('^user.enabled')){				
+					if( e.field.match('^user.username') && this.user.username != sender.user.username ){						
+						if( sender.user.userId > 0 ){
+							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
+							this.set("isVisible", true );
+							this.set("isChanged", false);
+							if( $('#myTab li:first.active').length == 0 ){ 
+								$('#myTab a:first').tab('show') ;
+							}else{
+								createUserPropsPane($("#user-props-grid"));
+							}							
+						}
+					} else {
+						if( e.field.match('^user.name') || e.field.match('^user.email') || e.field.match('^user.nameVisible') || e.field.match('^user.emailVisible') || e.field.match('^user.enabled')){
 							this.set("isChanged", true);
 						}
-					}else{
-						if( e.field.match('^user.username')){						
-							if( sender.user.userId > 0 ){
-								this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
-								this.set("isVisible", true );
-								this.set("isChanged", false);
-								if( $('#myTab li:first.active').length == 0 ){ 
-									$('#myTab a:first').tab('show') ;
-								}else{
-									createUserPropsPane($("#user-props-grid"));
-								}							
-							}						
-						}
-					}					
+					}
 				});
 												
 				$('#myTab').on( 'show.bs.tab', function (e) {
