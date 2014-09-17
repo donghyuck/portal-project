@@ -403,7 +403,7 @@
 							success : function( response ){		
 								// need refresh ..
 							},
-							error: common.api.handleKendoAjaxError,
+							error: common.api.handleKendoAjaxError
 						});												
 						multiSelect.readonly(false);
 					}
@@ -434,7 +434,7 @@
 							data: "targetUserProperty",
 							model: Property
 						},
-						error: common.api.handleKendoAjaxError,
+						error: common.api.handleKendoAjaxError
 					},
 					columns: [
 									    { title: "이름", field: "name" , width: "200px",  locked:true},
@@ -470,25 +470,12 @@
 		function createUserGroupsPane(renderTo){
 									
 			if(!$("#user-company-combo").data("kendoComboBox") ){
-				var company_combo = $("#user-company-combo").kendoComboBox({
+				var company_combo = $("#user-company-combo").kendoDropDownList({
 					autoBind: false,
-					placeholder: "회사 선택",
+					optionLabel: "회사 선택",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
-					dataSource: {
-						transport: {
-							read: {
-								dataType: JSON,
-								url: '/secure/list-company.do?output=json',
-								type: POST
-							}
-						},
-						schema: { 
-							data: "companies",
-							model : Company
-						},
-						error: common.api.handleKendoAjaxError,
-					}
+					dataSource: common.ui.admin.setup().companySelector.dataSource
 				});
 				/*
 				var selectedUser = getUserDetailsModel().user;
@@ -519,7 +506,7 @@
 							data: "companyGroups",
 							model: Group
 						},
-						error: common.api.handleKendoAjaxError,
+						error:handleKendoAjaxError
 					},
 					select:function(e){
 						resetFormErrorStates($("#groups"));
@@ -546,7 +533,7 @@
 							data: "userGroups",
 							model: Group
 						},
-						error: common.api.handleKendoAjaxError,
+						error:handleKendoAjaxError
 					},
 					scrollable: true,
 					height: '100%',
@@ -565,7 +552,7 @@
 										$('#user-group-grid').data('kendoGrid').dataSource.read();
 										$('#group-role-selected').data("kendoMultiSelect").dataSource.read();
 									},
-									error:handleKendoAjaxError,
+									error: common.api.handleKendoAjaxError,
 									dataType : "json"
 								});								                       		
 							}
