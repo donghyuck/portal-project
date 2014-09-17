@@ -575,7 +575,7 @@
 				});	
 				
 				var validator = renderTo.find("form").kendoValidator({
-					template: "<div class='help-block'>#=message#</div>"				
+					errorTemplate: "<div class='help-block'>#=message#</div>"				
 				}).data("kendoValidator");
 				
 				renderTo.find("form").submit(function(event) {
