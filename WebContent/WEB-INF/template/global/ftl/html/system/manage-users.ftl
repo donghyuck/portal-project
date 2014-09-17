@@ -476,7 +476,9 @@
 					dataTextField: "displayName",
 					dataValueField: "companyId",
 					autoBind: false,
-					dataSource: {
+					dataSource: common.ui.admin.setup().companySelector.data
+					/*
+					{
 						serverFiltering: false,
 						transport: {
 							read: {
@@ -489,7 +491,7 @@
 							data: "companies",
 							model : Company
 						}
-					}
+					}*/
 				});
 				
 							//var selectedUser = getUserDetailsModel().user;
