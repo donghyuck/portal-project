@@ -472,12 +472,12 @@
 			if(!$("#user-company-combo").data("kendoDropDownList") ){
 			/*
 				$("#user-company-combo").kendoComboBox({
-					filter:"startswith",
-					placeholder: "회사 선택",
+					filter:"contains",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
 					dataSource: common.ui.admin.setup().companySelector.dataSource
-				}).data("kendoComboBox");
+				});
+				
 				*/
 				//var selectedUser = getUserDetailsModel().user;
 				//company_combo.value( 
