@@ -585,13 +585,10 @@
                         } else {
 
                         }
-                    });
-                    			
-				renderTo.on('hidden.bs.modal', function(e){
-					
+                    });                    			
+				renderTo.on('hidden.bs.modal', function(e){					
 				});
-				renderTo.on('show.bs.modal', function(e){				
-					
+				renderTo.on('show.bs.modal', function(e){		
 				});
 			}
 			renderTo.modal('show');	
