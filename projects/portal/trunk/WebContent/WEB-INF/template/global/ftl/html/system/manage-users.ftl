@@ -470,9 +470,9 @@
 		function createUserGroupsPane(renderTo){
 									
 			if(!$("#user-company-combo").data("kendoDropDownList") ){
-				var company_combo = $("#user-company-combo").kendoComboBox({
+				$("#user-company-combo").kendoComboBox({
 					filter:"startswith",
-					//placeholder: "회사 선택",
+					placeholder: "회사 선택",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
 					dataSource: common.ui.admin.setup().companySelector.dataSource
