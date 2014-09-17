@@ -80,8 +80,6 @@
 					}
 				});
 				
-				
-				
 				// 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
                     dataSource: {
@@ -207,8 +205,7 @@
 					updateProfile:function(e){
 						var btn = $(e.target);
 						var selectedUser = this.user;						
-						btn.button('loading');
-						
+						btn.button('loading');						
 						$.ajax({
 							type : 'POST',
 							url : "${request.contextPath}/secure/update-user.do?output=json",
@@ -467,8 +464,7 @@
 			renderTo.find(".form-group.has-error").removeClass("has-error");
 		}
 		
-		function createUserGroupsPane(renderTo){
-									
+		function createUserGroupsPane(renderTo){									
 			if(!$("#user-company-combo").data("kendoComboBox") ){			
 				$("#user-company-combo").kendoComboBox({
 					filter:"contains",
@@ -491,19 +487,8 @@
 						}
 					}*/
 				}).data("kendoComboBox").readonly();
-				
-				// var selectedUser = getUserDetailsModel().user;
-				// company_combo.value( 
-				//	selectedUser.company.companyId
-				//);
-				// company_combo.readonly();			
 			}
-			$("#user-company-combo").data("kendoComboBox").value(
-				getUserDetailsModel().user.company.companyId
-			);
-			
-						
-/*	
+
 			if( !$("#user-group-combo").data("kendoComboBox") ){
 				$("#user-group-combo").kendoComboBox({
 					autoBind: false,
@@ -531,6 +516,14 @@
 					}
 				});											
 			}
+
+			$("#user-company-combo").data("kendoComboBox").value(
+				getUserDetailsModel().user.company.companyId
+			);
+			
+						
+/*	
+
 			*/					
 			if( ! renderTo.data("kendoGrid") ){	
 				renderTo.kendoGrid({
@@ -829,7 +822,6 @@
 										<div class="col-sm-6">
 											<div class="form-group no-margin-hr">
 												<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
-												<input id="fabric" placeholder="Select fabric..." />
 												<input id="user-company-combo" placeholder="회사선택"/>
 											</div>										
 										</div>
