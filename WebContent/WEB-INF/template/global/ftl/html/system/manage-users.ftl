@@ -67,6 +67,7 @@
 					},
 					companyChanged: function(item){
 						item.copy(targetCompany.company);
+						hideUserDetails();
 						$("#user-grid").data("kendoGrid").dataSource.read();
 					},
 					switcherChanged: function( name , value ){				
@@ -125,7 +126,7 @@
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
-						 	hideUserDetails();
+						 	$("#user-details").hide();
 						 }
 					}
 				}).data('kendoGrid');
