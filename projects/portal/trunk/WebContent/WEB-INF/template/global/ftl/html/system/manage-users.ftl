@@ -165,6 +165,9 @@
 				});				
 				detailsModel.bind("change", function(e){		
 					var sender = e.sender ;
+					
+					alert( (this.user.userId == sender.user.userId ) + ", " + e.field.match('^user.username') );
+					
 					if( this.user.userId == sender.user.userId ){
 						if( e.field.match('^user.name') || e.field.match('^user.email') || e.field.match('^user.nameVisible') || e.field.match('^user.emailVisible') || e.field.match('^user.enabled')){				
 							this.set("isChanged", true);
