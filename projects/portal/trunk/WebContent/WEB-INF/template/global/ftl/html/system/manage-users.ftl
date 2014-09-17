@@ -282,6 +282,7 @@
 			
 			getSelectedUser().copy( renderTo.data("model").user );
 			renderTo.data("model").set("isChangable", true );
+			
 			$('#myTab a:first').tab('show') ;			
 
 			if(renderTo.is(':hidden')){
@@ -296,9 +297,7 @@
 					});
 				}
 			}
-
-
-			
+			return false;
 		}
 		
 		function createUserRolesPane(renderTo){
@@ -421,41 +420,41 @@
 										    create: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post' },
 										    update: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post'  },
 										    destroy: { url:'${request.contextPath}/secure/delete-user-property.do?output=json', type:'post' },
-										 	parameterMap: function (options, operation){
-										 		var selectedUser = getUserDetailsModel().user;
-									 			if (operation !== "read" && options.models) {
-					                          		return { userId: selectedUser.userId, items: kendo.stringify(options.models)};
-					                        	} 
-							                	return { userId: selectedUser.userId }
-							             	}
+							parameterMap: function (options, operation){
+								var selectedUser = getUserDetailsModel().user;
+								if (operation !== "read" && options.models) {
+									return { userId: selectedUser.userId, items: kendo.stringify(options.models)};
+								} 
+								return { userId: selectedUser.userId }
+							}
 						},						
-										batch: true, 
-										schema: {
-						                	data: "targetUserProperty",
-						                	model: Property
-						            	},
-						            	error:handleKendoAjaxError
-									},
-									columns: [
+						batch: true, 
+						schema: {
+							data: "targetUserProperty",
+							model: Property
+						},
+						error:handleKendoAjaxError
+					},
+					columns: [
 									    { title: "이름", field: "name" , width: "200px",  locked:true},
 									    { title: "값",   field: "value", width: "200px", },
 										{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-									],
-									autoBind: true, 
-									pageable: false,
-									scrollable: true,
-									height: "100%",
-							        editable: {
-										update: true,
-							            destroy: true,
-							            confirmation: "선택하신 프로퍼티를 삭제하겠습니까?"	
-							        },
-									toolbar: [
-								      { name: "create", text: "추가" },
-					                  { name: "save", text: "저장" },
-					                  { name: "cancel", text: "취소" }
-									],				     
-									change: function(e) {  
+					],
+					autoBind: true, 
+					pageable: false,
+					scrollable: true,
+					height: 300,
+					editable: {
+						update: true,
+						destroy: true,
+						confirmation: "선택하신 프로퍼티를 삭제하겠습니까?"	
+					},
+					toolbar: [
+						{ name: "create", text: "추가" },
+						{ name: "save", text: "저장" },
+						{ name: "cancel", text: "취소" }
+					],				     
+					change: function(e) {  
 					}
 				});						
 			}			
