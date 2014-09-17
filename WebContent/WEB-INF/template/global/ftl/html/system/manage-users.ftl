@@ -488,7 +488,7 @@
 					placeholder: "그룹 선택",
 					dataTextField: "displayName",
 					dataValueField: "groupId",
-					cascadeFrom: "company-combo",			                       
+					cascadeFrom: "user-company-combo",			                       
 					dataSource:  {
 						type: "json",
 						serverFiltering: true,
