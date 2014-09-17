@@ -158,8 +158,9 @@
 						$('html,body').animate({ scrollTop:  0 }, 300);
 					},
 					updateProfile:function(e){
-					
-					
+						var btn = $(e.target);
+						btn.button('loading');
+						return false;
 					}
 				});				
 				detailsModel.bind("change", function(e){		
@@ -707,7 +708,7 @@
 							</div><!-- ./right-col -->		
 						</div><!-- ./profile-row -->	
 						<div class="btn-group pull-right">
-							<button disabled class="btn btn-primary" data-bind="enabled:isChanged, click: updateProfile">정보 변경</button>
+							<button disabled class="btn btn-primary" data-bind="enabled:isChanged, click: updateProfile" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >정보 변경</button>
 							<#if request.isUserInRole('ROLE_SYSTEM' )>
 							<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
 							</#if>
@@ -744,7 +745,7 @@
 									<div class="row">
 										<div class="col-sm-12">																											
 											<div id="user-group-grid" class="groups"></div>	
-											<div class="pull-right padding-sm"><button class="btn btn-sm btn-danger btn-labeled" data-bind="click:addToMember"><span class="btn-label icon fa fa-plus"></span> 맴버로 추가 </button></div>
+											<div class="pull-right padding-sm"><button class="btn btn-sm btn-danger btn-labeled" data-bind="click:addToMember" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><span class="btn-label icon fa fa-plus"></span> 맴버로 추가 </button></div>
 										</div>										
 									</div>
 								</div><!-- ./form-horizontal -->							
