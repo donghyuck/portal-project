@@ -579,13 +579,18 @@
 				}).data("kendoValidator");
 				
 				renderTo.find("form").submit(function(event) {
-                        event.preventDefault();
-                        if (validator.validate()) {
-
-                        } else {
-
-                        }
-                    });                    			
+					event.preventDefault();
+					
+					if (!validator.validateInput( $("input[name=validate-password]") ){
+					
+					}					
+					if (!validator.validateInput( $("input[name=validate-repeat-password]") ){
+					
+					}
+					
+					
+					
+				});                    			
 				renderTo.on('hidden.bs.modal', function(e){					
 				});
 				renderTo.on('show.bs.modal', function(e){		
