@@ -467,7 +467,6 @@
 			renderTo.find(".form-group.has-error").removeClass("has-error");
 		}
 		
-		
 		function createUserGroupsPane(renderTo){
 			if(!$("#user-company-combo").data("kendoComboBox") ){
 				var company_combo = $("#user-company-combo").kendoComboBox({
@@ -488,22 +487,22 @@
 					autoBind: false,
 					placeholder: "그룹 선택",
 					dataTextField: "displayName",
-						                        dataValueField: "groupId",
-						                        cascadeFrom: "company-combo",			                       
-											    dataSource:  {
-													type: "json",
-												 	serverFiltering: true,
-													transport: {
-														read: { url:'${request.contextPath}/secure/list-company-group.do?output=json', type:'post' },
-														parameterMap: function (options, operation){											 	
-														 	return { companyId:  options.filter.filters[0].value };
-														}
-													},
-													schema: {
-														data: "companyGroups",
-														model: Group
-													},
-													error:handleKendoAjaxError
+					dataValueField: "groupId",
+					cascadeFrom: "company-combo",			                       
+					dataSource:  {
+						type: "json",
+						serverFiltering: true,
+						transport: {
+							read: { url:'${request.contextPath}/secure/list-company-group.do?output=json', type:'post' },
+							parameterMap: function (options, operation){											 	
+								return { companyId:  options.filter.filters[0].value };
+							}
+						},
+						schema: {
+							data: "companyGroups",
+							model: Group
+						},
+						error:handleKendoAjaxError
 					},
 					select:function(e){
 						resetFormErrorStates($("#groups"));
