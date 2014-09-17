@@ -723,15 +723,17 @@
 						<div class="form-group">
 							<label class="col-lg-5 control-label" for="password2">새 비밀번호</label>
 							<div class="col-lg-7">
-								<input type="password" id="password2" name="password2" class="form-control" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." />
+								<div class="has-feedback">
+									<input type="password" name="password" placeholder="비밀번호" class="form-control" required validationMessage="비밀번호를 입력하여 주세요." >
+									<i class="fa fa-asterisk form-control-feedback"></i>
+								</div>									
 							</div>
 						</div>	
 						<div class="form-group">
 							<label class="col-lg-5 control-label" for="password3">새 비밀번호 확인</label>
 							<div class="col-lg-7">
-								<input type="password" id="password3" name="password3" class="form-control"  placeholder="비밀번호 확인" required validationMessage="비밀번호를 입력하여 주세요." />
 								<div class="has-feedback">
-									<input type="password" name="repeat-password" placeholder="비밀번호 확인" class="form-control">
+									<input type="password" name="repeat-password" placeholder="비밀번호 확인" class="form-control" required validationMessage="비밀번호를 입력하여 주세요." >
 									<i class="fa fa-asterisk form-control-feedback"></i>
 								</div>								
 							</div>
