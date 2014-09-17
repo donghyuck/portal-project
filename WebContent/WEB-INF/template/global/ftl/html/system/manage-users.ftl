@@ -575,11 +575,18 @@
 				});	
 				
 				var validator = renderTo.find("form").kendoValidator({
-					errorTemplate: "<div class='help-block'>#=message#</div>"				
+					errorTemplate: "<div class='help-block'>#=message#</div>",
+					rules: {
+						customRule1 : function(input){
+							alert( $(input).html() );
+							return true;
+						}						
+					}				
 				}).data("kendoValidator");
 				
 				renderTo.find("form").submit(function(event) {
 					event.preventDefault();
+					validator.validate();
 					
 					if (!validator.validateInput( $("#validate-password") ) ){					
 					alert("ss");	
