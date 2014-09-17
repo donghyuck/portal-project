@@ -283,16 +283,16 @@
 			getSelectedUser().copy( renderTo.data("model").user );
 			renderTo.data("model").set("isChangable", true );
 			
-			$('#myTab a:first').tab('show') ;			
-
 			if(renderTo.is(':hidden')){
 				var alwaysShowList = common.ui.admin.switcherEnabled("panel-switcher");
 				if(alwaysShowList){		
 					renderTo.fadeIn("slow", function(){
+						$('#myTab a:first').tab('show') ;			
 						renderTo.data("model").scrollDown();
 					});
 				}else{
 					$("#user-list-panel").fadeOut("slow", function(){
+						$('#myTab a:first').tab('show') ;			
 						renderTo.fadeIn("slow");
 					});
 				}
