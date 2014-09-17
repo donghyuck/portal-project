@@ -468,6 +468,7 @@
 		}
 		
 		function createUserGroupsPane(renderTo){
+			
 			if(!$("#user-company-combo").data("kendoComboBox") ){
 				var company_combo = $("#user-company-combo").kendoComboBox({
 					autoBind: false,
@@ -482,6 +483,7 @@
 				);
 				//$("#user-company-combo").data("kendoComboBox").readonly();
 			}
+			
 			if( !$("#user-group-combo").data("kendoComboBox") ){
 				$("#user-group-combo").kendoComboBox({
 					autoBind: false,
@@ -558,6 +560,7 @@
 					}
 				});
 			}
+			return false;
 		}
 		
 		</script>
