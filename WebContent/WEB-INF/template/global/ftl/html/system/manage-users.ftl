@@ -490,7 +490,7 @@
 							model : Company
 						}
 					}*/
-				});
+				}).data("kendoComboBox").readonly();
 				
 				// var selectedUser = getUserDetailsModel().user;
 				// company_combo.value( 
@@ -498,7 +498,9 @@
 				//);
 				// company_combo.readonly();			
 			}
-			
+			$("#user-company-combo").data("kendoComboBox").value(
+				getUserDetailsModel().user.company.companyId
+			);
 			
 						
 /*	
