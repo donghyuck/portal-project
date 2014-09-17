@@ -174,6 +174,9 @@
 					scrollDown:function(e){	
 						$('html,body').animate({scrollTop: renderTo.offset().top - 55 }, 300);
 					},
+					close:function(e){
+						hideUserDetails();
+					},
 					scrollTop:function(e){					
 						$('html,body').animate({ scrollTop:  0 }, 300);
 					},
