@@ -282,6 +282,7 @@
 			
 			getSelectedUser().copy( renderTo.data("model").user );
 			renderTo.data("model").set("isChangable", true );
+			$('#myTab a:first').tab('show') ;			
 
 			if(renderTo.is(':hidden')){
 				var alwaysShowList = common.ui.admin.switcherEnabled("panel-switcher");
@@ -296,11 +297,7 @@
 				}
 			}
 
-							if( $('#myTab li:first.active').length == 0 ){ 
-								$('#myTab a:first').tab('show') ;
-							}else{
-								createUserPropsPane($("#user-props-grid"));
-							}				
+
 			
 		}
 		
