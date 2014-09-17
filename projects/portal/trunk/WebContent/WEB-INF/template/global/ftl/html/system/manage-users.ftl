@@ -166,7 +166,7 @@
 				detailsModel.bind("change", function(e){		
 					var sender = e.sender ;
 					alert(
-						e.field + "=" + e.value + ", this=" + this.user.username + ", sender=" + sender.user.username					
+						kendo.stringify( this.user )	
 					);
 					
 					if( e.field.match('^user.username') && this.user.username != sender.user.username ){						
