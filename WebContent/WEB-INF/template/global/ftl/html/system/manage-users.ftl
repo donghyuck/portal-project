@@ -581,7 +581,8 @@
 				renderTo.find("form").submit(function(event) {
 					event.preventDefault();
 					
-					if (!validator.validateInput( $("#validate-password") ) ){						
+					if (!validator.validateInput( $("#validate-password") ) ){					
+					alert("ss");	
 						$("#validate-password").closest(".form-group").addClass("has-error");
 					}else{
 						$("#validate-password").closest(".form-group").removeClass("has-error");
