@@ -705,7 +705,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="note note-danger">
-							<h4 class="note-title">Danger note title</h4>
+							<h4 class="note-title"><i class="fa fa-exclamation-triangle"></i></h4>
 							6~16자의 영문 대소문자, 숫자, 특수문자를 조합하여
 							사용하실 수 있습니다.
 							생년월일, 전화번호 등 개인정보와 관련된 숫자,
