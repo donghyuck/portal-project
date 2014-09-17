@@ -477,11 +477,13 @@
 					dataValueField: "companyId",
 					dataSource: common.ui.admin.setup().companySelector.dataSource
 				});
+				/*
 				var selectedUser = getUserDetailsModel().user;
 				$("#user-company-combo").data("kendoComboBox").value( 
 					selectedUser.company.companyId
 				);
 				$("#user-company-combo").data("kendoComboBox").readonly();
+				*/
 			}
 /*	
 			if( !$("#user-group-combo").data("kendoComboBox") ){
