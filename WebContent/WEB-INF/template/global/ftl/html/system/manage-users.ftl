@@ -595,7 +595,7 @@
 					}
 					
 					
-					
+					return false;
 				});                    			
 				renderTo.on('hidden.bs.modal', function(e){					
 				});
