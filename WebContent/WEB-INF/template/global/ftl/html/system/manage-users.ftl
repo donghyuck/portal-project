@@ -480,7 +480,7 @@
 				$("#user-company-combo").data("kendoComboBox").value( 
 					selectedUser.company.companyId
 				);
-				$("#user-company-combo").data("kendoComboBox").readonly();
+				//$("#user-company-combo").data("kendoComboBox").readonly();
 			}
 			if( !$("#user-group-combo").data("kendoComboBox") ){
 				$("#user-group-combo").kendoComboBox({
