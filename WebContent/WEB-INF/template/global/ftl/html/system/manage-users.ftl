@@ -581,10 +581,10 @@
 				renderTo.find("form").submit(function(event) {
 					event.preventDefault();
 					
-					if (!validator.validateInput( $("input[name=validate-password]") ){
+					if (!validator.validateInput( $("input[name=validate-password]") ) ){
 					
 					}					
-					if (!validator.validateInput( $("input[name=validate-repeat-password]") ){
+					if (!validator.validateInput( $("input[name=validate-repeat-password]") ) ){
 					
 					}
 					
