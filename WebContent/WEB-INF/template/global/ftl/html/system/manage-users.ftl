@@ -322,7 +322,7 @@
 						                            		model: Role
 						                        		}
 									                },
-						                        	error:handleKendoAjaxError,
+						error: common.api.handleKendoAjaxError,
 						                        	dataBound: function(e) {
 						                        		var multiSelect = $("#group-role-selected").data("kendoMultiSelect");
 						                        		var selectedRoleIDs = "";
@@ -341,33 +341,34 @@
 			// SELECT USER ROLES
 			if( !$('#user-role-select').data('kendoMultiSelect') ){											
 				var selectedRoleDataSource = new kendo.data.DataSource({
-													transport: {
-										            	read: { 
-										            		url:'${request.contextPath}/secure/get-user-roles.do?output=json', 
-										            		dataType: "json", 
-										            		type:'POST',
-										            		data: { userId: getUserDetailsModel().user.userId }
-												        }  
-												    },
-												    schema: {
-									                	data: "userRoles",
-									                    model: Role
-									                },
-									                error:handleKendoAjaxError,
-									                change: function(e) {                
-						                        		var multiSelect = $("#user-role-select").data("kendoMultiSelect");
-						                        		var selectedRoleIDs = "";			                        		
-						                        		$.each(  selectedRoleDataSource.data(), function(index, row){  
-						                        			if( selectedRoleIDs == "" ){
-						                        			    selectedRoleIDs =  selectedRoleIDs + row.roleId ;
-						                        			}else{
-						                        				selectedRoleIDs = selectedRoleIDs + "," + row.roleId;
-						                        			}
-						                        		} );			                        		
-						                        		multiSelect.value( selectedRoleIDs.split( "," ) );	 
-									                }	                               
-				                               	});
-				$('#user-role-select').kendoMultiSelect({
+					transport: {
+						read: { 
+							url:'${request.contextPath}/secure/get-user-roles.do?output=json', 
+							dataType: "json", 
+							type:'POST',
+							data: { userId: getUserDetailsModel().user.userId }
+						}  
+					},
+					schema: {
+						data: "userRoles",
+						model: Role
+					},
+					error: common.api.handleKendoAjaxError,
+					change: function(e) {                
+						var multiSelect = $("#user-role-select").data("kendoMultiSelect");
+						var selectedRoleIDs = "";			                        		
+						$.each(  selectedRoleDataSource.data(), function(index, row){  
+							if( selectedRoleIDs == "" ){
+								selectedRoleIDs =  selectedRoleIDs + row.roleId ;
+							}else{
+								selectedRoleIDs = selectedRoleIDs + "," + row.roleId;
+							}
+						});			                        		
+						multiSelect.value( selectedRoleIDs.split( "," ) );	 
+					}	
+				});
+				
+				('#user-role-select').kendoMultiSelect({
 					placeholder: "롤 선택",
 					dataTextField: "name",
 					dataValueField: "roleId",
@@ -384,7 +385,7 @@
 							model: Role
 						}
 					},
-					error:handleKendoAjaxError,
+					error: common.api.handleKendoAjaxError,
 					dataBound: function(e) {
 						selectedRoleDataSource.read();   	
 					},			                        	
@@ -404,7 +405,7 @@
 							success : function( response ){		
 								// need refresh ..
 							},
-							error:handleKendoAjaxError
+							error: common.api.handleKendoAjaxError,
 						});												
 						multiSelect.readonly(false);
 					}
