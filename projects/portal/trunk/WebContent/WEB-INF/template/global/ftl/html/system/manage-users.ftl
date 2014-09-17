@@ -469,13 +469,11 @@
 		
 		function createUserGroupsPane(renderTo){
 									
-			if(!$("#user-company-combo").data("kendoComboBox") ){
-			
+			if(!$("#user-company-combo").data("kendoComboBox") ){			
 				$("#user-company-combo").kendoComboBox({
 					filter:"contains",
 					dataTextField: "displayName",
-					dataValueField: "companyId",
-					
+					dataValueField: "companyId",					
 					dataSource: common.ui.admin.setup().companySelector.dataSource.data()
 					/*
 					{
@@ -494,27 +492,15 @@
 					}*/
 				});
 				
-							//var selectedUser = getUserDetailsModel().user;
-				//company_combo.value( 
+				// var selectedUser = getUserDetailsModel().user;
+				// company_combo.value( 
 				//	selectedUser.company.companyId
 				//);
-				//company_combo.readonly();			
-				
-$("#fabric").kendoComboBox({
-                        dataTextField: "text",
-                        dataValueField: "value",
-                        dataSource: [
-                            { text: "Cotton", value: "1" },
-                            { text: "Polyester", value: "2" },
-                            { text: "Cotton/Polyester", value: "3" },
-                            { text: "Rib Knit", value: "4" }
-                        ],
-                        filter: "contains",
-                        suggest: true,
-                        index: 3
-                    });
-                    					
+				// company_combo.readonly();			
 			}
+			
+			
+						
 /*	
 			if( !$("#user-group-combo").data("kendoComboBox") ){
 				$("#user-group-combo").kendoComboBox({
