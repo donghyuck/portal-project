@@ -511,7 +511,7 @@
 					}
 				});											
 			}
-								
+			*/					
 			if( ! renderTo.data("kendoGrid") ){	
 				renderTo.kendoGrid({
 					dataSource: {
@@ -560,7 +560,7 @@
 					}
 				});
 			}
-			*/
+			
 			return false;
 		}
 		
