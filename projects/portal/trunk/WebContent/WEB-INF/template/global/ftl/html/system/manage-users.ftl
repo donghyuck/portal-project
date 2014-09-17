@@ -285,8 +285,7 @@
 			
 			resetFormErrorStates($("#groups"));
 			
-			getSelectedUser().copy( renderTo.data("model").user );
-			renderTo.data("model").set("isChangable", true );
+
 
 			if(renderTo.is(':hidden')){
 				var alwaysShowList = common.ui.admin.switcherEnabled("panel-switcher");
@@ -300,6 +299,10 @@
 					});
 				}
 			}
+			
+			getSelectedUser().copy( renderTo.data("model").user );
+			renderTo.data("model").set("isChangable", true );
+						
 		}
 		
 		function createUserRolesPane(renderTo){
