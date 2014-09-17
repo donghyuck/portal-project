@@ -125,7 +125,7 @@
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
-						 	$("#user-details").hide();
+						 	hideUserDetails();
 						 }
 					}
 				}).data('kendoGrid');
@@ -520,11 +520,7 @@
 			$("#user-company-combo").data("kendoComboBox").value(
 				getUserDetailsModel().user.company.companyId
 			);
-			
-						
-/*	
-
-			*/					
+					
 			if( ! renderTo.data("kendoGrid") ){	
 				renderTo.kendoGrid({
 					dataSource: {
