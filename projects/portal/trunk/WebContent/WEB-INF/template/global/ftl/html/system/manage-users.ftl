@@ -97,8 +97,7 @@
                         serverFiltering: false,
                         serverSorting: false
                     },
-                    columns: [
-                  
+                    columns: [                  
                         { field: "userId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, locked: true, lockable: false}, 
                         { field: "username", title: "아이디", width: 150, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}, locked: true, template:'#:username # <button type="button" class="btn btn-xs btn-success pull-right" onclick="javascript:showUserDetails(this); return false;">상세보기</button>'  }, 
                         { field: "name", title: "이름", width: 150 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
@@ -160,7 +159,29 @@
 						$('html,body').animate({ scrollTop:  0 }, 300);
 					},
 					addToMember:function(e){
+						var btn = $(e.target);
 						
+						if($("#user-group-combo").data("kendoComboBox").select() < 0 ){							
+							$("#groups .form-group:last").addClass("hasError");
+							$("#groups .form-group:last").append("<p class="help-block">그룹을 선택하여 주세요.</p>");
+							return false;
+						}						
+						btn.button('loading');
+						 $.ajax({
+							dataType : "json",
+							type : 'POST',
+							url : "${request.contextPath}/secure/add-group-member.do?output=json",
+							data : { groupId:  $("#user-group-combo").data("kendoComboBox").value(), item: kendo.stringify( selectedUser ) },
+							complete: function(jqXHR, textStatus ){					
+								btn.button('reset');
+							},							
+							success : function( response ){																		    
+								$("#user-group-grid").data("kendoGrid").dataSource.read();
+								 $('#group-role-selected').data("kendoMultiSelect").dataSource.read();
+							},
+							error:handleKendoAjaxError
+						});		
+						return false;					
 					},
 					updateProfile:function(e){
 						var btn = $(e.target);
@@ -227,8 +248,12 @@
 				renderTo.data("model", detailsModel );	
 				kendo.bind(renderTo, detailsModel );	
 			}						
+			
+			resetFormErrorStates($("#groups"));
+			
 			getSelectedUser().copy( renderTo.data("model").user );
 			renderTo.data("model").set("isChangable", true );
+						
 			if(renderTo.is(':hidden')){
 				renderTo.fadeIn("slow");
 			}
@@ -394,6 +419,12 @@
 			renderTo.data("kendoGrid").dataSource.read();
 		}
 		
+		function resetFormErrorStates(renderTo){
+			renderTo.find(".form-group.has-error p.help-block").remove();
+			renderTo.find(".form-group.has-error").removeClass("has-error");
+		}
+		
+		
 		function createUserGroupsPane(renderTo){
 			if(!$("#user-company-combo").data("kendoComboBox") ){
 				var company_combo = $("#user-company-combo").kendoComboBox({
@@ -411,9 +442,9 @@
 			}
 			if( !$("#user-group-combo").data("kendoComboBox") ){
 				$("#user-group-combo").kendoComboBox({
-												autoBind: false,
-												placeholder: "그룹 선택",
-						                        dataTextField: "displayName",
+					autoBind: false,
+					placeholder: "그룹 선택",
+					dataTextField: "displayName",
 						                        dataValueField: "groupId",
 						                        cascadeFrom: "company-combo",			                       
 											    dataSource:  {
@@ -430,7 +461,10 @@
 														model: Group
 													},
 													error:handleKendoAjaxError
-												}
+					},
+					select:function(e){
+						resetFormErrorStates($("#groups"));
+					}
 				});											
 			}
 												
