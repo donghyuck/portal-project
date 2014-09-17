@@ -476,7 +476,7 @@
 					dataTextField: "displayName",
 					dataValueField: "companyId",
 					
-					dataSource: common.ui.admin.setup().companySelector.dataSource.data
+					dataSource: common.ui.admin.setup().companySelector.dataSource.data()
 					/*
 					{
 						serverFiltering: false,
