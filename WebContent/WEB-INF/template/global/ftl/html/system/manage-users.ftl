@@ -614,31 +614,25 @@
 										<div class="col-sm-6">
 											<div class="form-group no-margin-hr">
 												<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
-												<input id="user-company-combo" style="width: 180px" />
+												<input id="user-company-combo" style="width: 100%" />
 											</div>										
 										</div>
 										<div class="col-sm-6">
-										
+											<div class="form-group no-margin-hr">
+												<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">그룹</h6>
+												<input id="user-group-combo" style="width: 100%" />
+											</div>											
 										</div>										
 									</div>
-								</div>
-								
-										
-									<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
-	
-											<div class="form-group">
-												<label for="user-group-combo" class="col-sm-2 control-label">그룹</label>
-												<input id="user-group-combo" style="width: 180px" />
-											</div>
-											<div class="form-group">
-												<div class="col-sm-offset-2 col-sm-10">
-												<button class="btn btn-sm btn-danger btn-labeled" data-bind="click:addToMember"><span class="btn-label icon fa fa-plus"></span> 맴버로 추가 </button>												
-												</div>
-											</div>
-										</div>		
-									<span class="help-block"><i class="fa fa-info"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>						
-									<div id="user-group-grid" class="groups"></div>									
-								</div>							
+									<div class="row">
+										<div class="col-sm-12">
+											<button class="btn btn-sm btn-danger btn-labeled" data-bind="click:addToMember"><span class="btn-label icon fa fa-plus"></span> 맴버로 추가 </button>
+											<span class="help-block"><i class="fa fa-info"></i><small> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</small></span>
+											<div id="user-group-grid" class="groups"></div>	
+										</div>										
+									</div>
+								</div><!-- ./form-horizontal -->							
+							</div><!-- ./tab-pane -->							
 								<div class="tab-pane fade" id="roles">
 									<div class="row">
 										<div class="col-sm-12">
