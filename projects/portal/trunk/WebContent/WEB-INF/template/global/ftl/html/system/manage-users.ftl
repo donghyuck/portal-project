@@ -581,11 +581,16 @@
 				renderTo.find("form").submit(function(event) {
 					event.preventDefault();
 					
-					if (!validator.validateInput( $("input[name=validate-password]") ) ){
-					
-					}					
-					if (!validator.validateInput( $("input[name=validate-repeat-password]") ) ){
-					
+					if (!validator.validateInput( $("#validate-password") ) ){						
+						$("#validate-password").closest(".form-group").addClass("has-error");
+					}else{
+						$("#validate-password").closest(".form-group").addClass("remove-error");
+					}
+										
+					if (!validator.validateInput( $("#validate-repeat-password") ) ){
+						$("#validate-repeat-password").closest(".form-group").addClass("has-error");
+					}else{
+						$("#validate-repeat-password").closest(".form-group").removeClass("has-error");
 					}
 					
 					
@@ -736,7 +741,7 @@
 							</div>
 						</div>
 					<form class="form-horizontal">
-						<div class="form-group">
+						<div class="form-group" id="validate-password-form-group">
 							<label class="col-lg-5 control-label" for="validate-password">새 비밀번호</label>
 							<div class="col-lg-7">
 								<div class="has-feedback">
