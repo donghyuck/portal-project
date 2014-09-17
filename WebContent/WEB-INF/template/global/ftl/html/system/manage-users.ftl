@@ -69,7 +69,8 @@
 						item.copy(targetCompany.company);
 						$("#user-grid").data("kendoGrid").dataSource.read();
 					},
-					switcherChanged: function( name , value ){						
+					switcherChanged: function( name , value ){				
+						alert( name + "=" + value );		
 					}
 				});
 				
