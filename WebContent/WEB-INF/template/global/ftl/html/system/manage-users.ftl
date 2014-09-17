@@ -159,6 +159,8 @@
 				});
 				
 				detailsModel.bind("change", function(e){		
+					alert( kendo.stringify( this.user ) );
+				
 					if( e.field.match('^user.username')){ 						
 						var sender = e.sender ;
 						if( sender.user.userId > 0 ){
@@ -175,7 +177,7 @@
 							//this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
 							//this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
 						}						
-					}	
+					}						
 				});
 												
 				$('#myTab').on( 'show.bs.tab', function (e) {
