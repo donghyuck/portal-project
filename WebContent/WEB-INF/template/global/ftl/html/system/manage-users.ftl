@@ -177,6 +177,9 @@
 					close:function(e){
 						hideUserDetails();
 					},
+					showPasswordModal:function(e){
+						showPasswordModal();
+					},
 					scrollTop:function(e){					
 						$('html,body').animate({ scrollTop:  0 }, 300);
 					},
@@ -474,21 +477,6 @@
 					dataTextField: "displayName",
 					dataValueField: "companyId",					
 					dataSource: common.ui.admin.setup().companySelector.dataSource.data()
-					/*
-					{
-						serverFiltering: false,
-						transport: {
-							read: {
-								dataType: JSON,
-								url: '/secure/list-company.do?output=json',
-								type: POST
-							}
-						},
-						schema: { 
-							data: "companies",
-							model : Company
-						}
-					}*/
 				}).data("kendoComboBox").readonly();
 			}
 
@@ -575,7 +563,26 @@
 			
 			return false;
 		}
-		
+
+		function showPasswordModal(){
+			var renderToString = "password-modal";
+			var renderTo = $( '#' + renderToString );
+			if( renderTo.length === 0 ){		
+				$("#main-wrapper").append( kendo.template($('#password-modal-template').html()) );				
+				renderTo = $('#' + renderToString );
+				renderTo.modal({
+					backdrop: 'static'
+				});				
+				renderTo.on('hidden.bs.modal', function(e){
+					
+				});
+				renderTo.on('show.bs.modal', function(e){				
+					
+				});
+			}
+			renderTo.modal('show');	
+		}
+	
 		</script>
 		<style>			
 		.k-grid-content{
@@ -688,7 +695,26 @@
 			</div>	
 		</div>
 		</div>
-				
+		<script id="password-modal-template" type="text/x-kendo-template">			
+		<div class="modal fade" id="role-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog animated slideDown">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">비밀번호 변경</h4>
+					</div>
+					<div class="modal-body">
+						
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary btn-flat" >확인</button>
+						<button type="reset" class="btn btn-default btn-flat">다시입력</button>
+					</div>
+				</div>
+			</div>
+		</div>						
+		</script>		
 		<script id="download-window-template" type="text/x-kendo-template">				
 			#if (contentType.match("^image") ) {#
 				<img src="${request.contextPath}/secure/view-attachment.do?attachmentId=#= attachmentId #" class="img-responsive" alt="#= name #" />
@@ -798,7 +824,7 @@
 						</div><!-- ./profile-row -->	
 						<div class="btn-group pull-right">
 							<button disabled class="btn btn-primary btn-flat" disabled data-bind="enabled:isChanged, click: updateProfile" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >정보 변경</button>
-							<button id="change-password-btn" class="btn btn-danger btn-flat">비밀번호변경</button>		
+							<button id="change-password-btn" class="btn btn-danger btn-flat" data-bind="click:showPasswordModal">비밀번호변경</button>		
 							
 							<#if request.isUserInRole('ROLE_SYSTEM' )>
 										
