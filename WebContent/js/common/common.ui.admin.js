@@ -61,6 +61,7 @@
 				dataTextField: 'displayName',	
 				dataValueField: 'companyId',
 				dataSource: {
+					serverFiltering: false,
 					transport: {
 						read: {
 							dataType: JSON,
