@@ -163,7 +163,7 @@
 						
 						if($("#user-group-combo").data("kendoComboBox").select() < 0 ){							
 							$("#groups .form-group:last").addClass("hasError");
-							$("#groups .form-group:last").append("<p class="help-block">그룹을 선택하여 주세요.</p>");
+							$("#groups .form-group:last").append('<p class="help-block">그룹을 선택하여 주세요.</p>');
 							return false;
 						}						
 						btn.button('loading');
