@@ -147,6 +147,7 @@
 			var renderTo = $('#user-details');					
 			if( $('#user-details').text().trim().length	== 0 ){
 				renderTo.html(kendo.template($('#user-details-template').html()));					
+
 				var detailsModel = kendo.observable({
 					user : new User(),
 					isVisible : false,
@@ -158,12 +159,16 @@
 					scrollTop:function(e){					
 						$('html,body').animate({ scrollTop:  0 }, 300);
 					},
+					addToMember(e){
+						
+					},
 					updateProfile:function(e){
 						var btn = $(e.target);
 						btn.button('loading');
 						return false;
 					}
-				});				
+				});			
+					
 				detailsModel.bind("change", function(e){		
 					var sender = e.sender ;
 					if( e.field.match('^user.username') ){						
@@ -184,6 +189,29 @@
 						}
 					}
 				});
+				
+				if(!$("#files").data("kendoUpload")){
+					$("#files").kendoUpload({
+					 	multiple : false,
+					 	showFileList : false,
+					    localization:{ select : '사진변경' , dropFilesHere : '업로드할 이미지를 이곳에 끌어 놓으세요.' },
+					    async: {
+						    saveUrl:  '${request.contextPath}/secure/save-user-image.do?output=json',							   
+						    autoUpload: true
+						},
+						upload: function (e) {		
+							var selectedUser = detailsModel.user;						         
+						    var imageId = -1;
+							if( selectedUser.properties.imageId ){
+								imageId = selectedUser.properties.imageId
+							}
+							e.data = { userId: selectedUser.userId , imageId:imageId  };																    								    	 		    	 
+						},
+						success : function(e) {								    
+							detailsModel.set( 'profileImageUrl', common.api.user.photoUrl( selectedUser, 150, 200 ) );
+						}					   
+					});			
+				}					
 												
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					var show_bs_tab = $(e.target);
