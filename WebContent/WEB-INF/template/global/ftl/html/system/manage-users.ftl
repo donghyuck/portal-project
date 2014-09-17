@@ -287,6 +287,7 @@
 			renderTo.data("model").set("isChangable", true );
 
 			if(renderTo.is(':hidden')){
+				var alwaysShowList = common.ui.admin.switcherEnabled("panel-switcher");
 				if(alwaysShowList){		
 					renderTo.fadeIn("slow", function(){
 						renderTo.data("model").scrollDown();
