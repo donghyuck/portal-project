@@ -159,7 +159,7 @@
 					scrollTop:function(e){					
 						$('html,body').animate({ scrollTop:  0 }, 300);
 					},
-					addToMember(e){
+					addToMember:function(e){
 						
 					},
 					updateProfile:function(e){
