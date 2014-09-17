@@ -598,38 +598,6 @@
 			</div>
 		</div> <!-- / #main-wrapper -->
 
-		<div class="container-fluid">	
-			<div class="row">		
-				<div class="col-sm-12">
-					<div class="panel panel-default" style="min-height:300px;" >
-						<div class="panel-heading selected-company-info" style="padding:5px;">						
-							<div class="btn-group">
-							<#if request.isUserInRole('ROLE_SYSTEM' )>
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="company"><i class="fa fa-building-o"></i>  회사관리</button>				
-							</#if>				
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="site"><i class="fa fa-sitemap"></i>  웹사이트 관리</button>
-								<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="group"><i class="fa fa-users"></i>  그룹관리</button>
-							</div>
-						<#if request.isUserInRole('ROLE_ADMIN' ) || request.isUserInRole('ROLE_SYSTEM' )>
-							<button type="button" class="btn btn-info btn-sm  btn-control-group" data-action="addUser"><i class="fa fa-plus"></i>  사용자 추가</button>
-						</#if>
-						</div>
-						<div class="panel-body" style="padding:5px;">
-							
-							<div id="file-preview-panel" class="custom-panels-group"></div>
-						</div>	
-						<div class="panel-body" style="padding:5px;">
-							
-						</div>					
-					</div>				
-				</div>			
-			</div>							
-			<form name="fm1" method="POST" accept-charset="utf-8">
-				<input type="hidden" name="companyId"  value="${action.targetCompany.companyId}" />
-			</form>	
-		</div>		
-		
-		
 		<div id="change-password-window" style="display:none;">
 		<div class="container layout">	
 			<div class="row">
