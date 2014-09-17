@@ -210,7 +210,7 @@
 							                                    url: '${request.contextPath}/secure/get-user-group-roles.do?output=json',
 																dataType: "json",
 																type: "POST",
-																data: { userId: selectedUser.userId }
+																data: { userId: getUserDetailsModel().user.userId }
 									                        }
 									                    },
 									                    schema: { 
@@ -242,7 +242,7 @@
 										            		url:'${request.contextPath}/secure/get-user-roles.do?output=json', 
 										            		dataType: "json", 
 										            		type:'POST',
-										            		data: { userId: selectedUser.userId }
+										            		data: { userId: getUserDetailsModel().user.userId }
 												        }  
 												    },
 												    schema: {
@@ -296,7 +296,7 @@
 							dataType : "json",
 							type : 'POST',
 							url : "${request.contextPath}/secure/update-user-roles.do?output=json",
-							data : { userId: selectedUser.userId, items: kendo.stringify( list ) },
+							data : { userId: getUserDetailsModel().user.userId, items: kendo.stringify( list ) },
 							success : function( response ){		
 								// need refresh ..
 							},
@@ -312,7 +312,7 @@
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					dataSource: {
-										transport: { 
+						transport: { 
 											read: { url:'${request.contextPath}/secure/get-user-property.do?output=json', type:'post' },
 										    create: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post' },
 										    update: { url:'${request.contextPath}/secure/update-user-property.do?output=json', type:'post'  },
@@ -324,7 +324,7 @@
 					                        	} 
 							                	return { userId: selectedUser.userId }
 							             	}
-										},						
+						},						
 										batch: true, 
 										schema: {
 						                	data: "targetUserProperty",
