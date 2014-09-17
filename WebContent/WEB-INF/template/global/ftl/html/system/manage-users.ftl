@@ -709,7 +709,7 @@
 							</div><!-- ./right-col -->		
 						</div><!-- ./profile-row -->	
 						<div class="btn-group pull-right">
-							<button disabled class="btn btn-primary" disabled data-bind="enabled:isChanged, click: updateProfile" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >정보 변경</button>
+							<button disabled class="btn btn-primary btn-flat" disabled data-bind="enabled:isChanged, click: updateProfile" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >정보 변경</button>
 							<#if request.isUserInRole('ROLE_SYSTEM' )>
 							<button id="change-password-btn" class="btn btn-primary">비밀번호변경</button>					
 							</#if>
