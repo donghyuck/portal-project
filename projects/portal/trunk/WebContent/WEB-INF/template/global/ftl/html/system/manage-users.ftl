@@ -469,7 +469,7 @@
 		
 		function createUserGroupsPane(renderTo){
 									
-			if(!$("#user-company-combo").data("kendoComboBox") ){
+			if(!$("#user-company-combo").data("kendoDropDownList") ){
 				var company_combo = $("#user-company-combo").kendoDropDownList({
 					autoBind: false,
 					optionLabel: "회사 선택",
