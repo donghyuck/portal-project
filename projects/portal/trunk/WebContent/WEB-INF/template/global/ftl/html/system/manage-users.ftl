@@ -811,13 +811,13 @@
 										<div class="col-sm-6">
 											<div class="form-group no-margin-hr">
 												<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
-												<input id="user-company-combo" style="width: 100%" />
+												<input id="user-company-combo"/>
 											</div>										
 										</div>
 										<div class="col-sm-6">
 											<div class="form-group no-margin-hr">
 												<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">그룹</h6>
-												<input id="user-group-combo" style="width: 100%" />
+												<input id="user-group-combo"/>
 											</div>											
 										</div>										
 									</div>
