@@ -471,21 +471,16 @@
 									
 			if(!$("#user-company-combo").data("kendoDropDownList") ){
 				var company_combo = $("#user-company-combo").kendoComboBox({
-					autoBind: false,
 					placeholder: "회사 선택",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
 					dataSource: common.ui.admin.setup().companySelector.dataSource
 				}).data("kendoComboBox");
-				
-				
-				/*
 				var selectedUser = getUserDetailsModel().user;
-				$("#user-company-combo").data("kendoComboBox").value( 
+				company_combo.value( 
 					selectedUser.company.companyId
 				);
-				$("#user-company-combo").data("kendoComboBox").readonly();
-				*/
+				company_combo.readonly();				
 			}
 /*	
 			if( !$("#user-group-combo").data("kendoComboBox") ){
