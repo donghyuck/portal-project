@@ -475,7 +475,7 @@
 					filter:"contains",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
-					autoBind: false,
+					
 					dataSource: common.ui.admin.setup().companySelector.data
 					/*
 					{
