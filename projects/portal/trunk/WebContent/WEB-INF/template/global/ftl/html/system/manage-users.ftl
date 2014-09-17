@@ -470,7 +470,7 @@
 		function createUserGroupsPane(renderTo){
 									
 			if(!$("#user-company-combo").data("kendoComboBox") ){
-			/*
+			
 				$("#user-company-combo").kendoComboBox({
 					filter:"contains",
 					dataTextField: "displayName",
@@ -478,8 +478,7 @@
 					dataSource: common.ui.admin.setup().companySelector.dataSource
 				});
 				
-				*/
-				//var selectedUser = getUserDetailsModel().user;
+							//var selectedUser = getUserDetailsModel().user;
 				//company_combo.value( 
 				//	selectedUser.company.companyId
 				//);
