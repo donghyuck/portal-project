@@ -70,7 +70,6 @@
 						$("#user-grid").data("kendoGrid").dataSource.read();
 					},
 					switcherChanged: function( name , value ){				
-						alert( name + "=" + value );		
 						if( name == "panel-switcher" ){
 							if( value ){
 								$('#user-list-panel').show();
