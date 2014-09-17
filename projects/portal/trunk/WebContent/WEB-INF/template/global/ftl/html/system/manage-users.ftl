@@ -475,7 +475,19 @@
 					placeholder: "회사 선택",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
-					dataSource: common.ui.admin.setup().companySelector.dataSource
+					dataSource: {
+						transport: {
+							read: {
+								dataType: JSON,
+								url: '/secure/list-company.do?output=json',
+								type: POST
+							}
+						},
+						schema: { 
+							data: "companies",
+							model : Company
+						}
+					}
 				});
 				/*
 				var selectedUser = getUserDetailsModel().user;
