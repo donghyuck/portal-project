@@ -233,12 +233,7 @@
 							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
 							this.set("isVisible", true );
 							this.set("isChanged", false);
-							this.set("isChangable", false);
-							if( $('#myTab li:first.active').length == 0 ){ 
-								$('#myTab a:first').tab('show') ;
-							}else{
-								createUserPropsPane($("#user-props-grid"));
-							}							
+							this.set("isChangable", false);						
 						}
 					} else if(this.isChangable) {
 						if( e.field.match('^user.name') || e.field.match('^user.email') || e.field.match('^user.nameVisible') || e.field.match('^user.emailVisible') || e.field.match('^user.enabled')){
@@ -285,7 +280,8 @@
 			
 			resetFormErrorStates($("#groups"));
 			
-
+			getSelectedUser().copy( renderTo.data("model").user );
+			renderTo.data("model").set("isChangable", true );
 
 			if(renderTo.is(':hidden')){
 				var alwaysShowList = common.ui.admin.switcherEnabled("panel-switcher");
@@ -299,10 +295,13 @@
 					});
 				}
 			}
+
+							if( $('#myTab li:first.active').length == 0 ){ 
+								$('#myTab a:first').tab('show') ;
+							}else{
+								createUserPropsPane($("#user-props-grid"));
+							}				
 			
-			getSelectedUser().copy( renderTo.data("model").user );
-			renderTo.data("model").set("isChangable", true );
-						
 		}
 		
 		function createUserRolesPane(renderTo){
