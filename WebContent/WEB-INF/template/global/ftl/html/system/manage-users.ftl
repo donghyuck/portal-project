@@ -519,7 +519,7 @@
 							data: "companyGroups",
 							model: Group
 						},
-						error:handleKendoAjaxError
+						error: common.api.handleKendoAjaxError,
 					},
 					select:function(e){
 						resetFormErrorStates($("#groups"));
@@ -546,7 +546,7 @@
 							data: "userGroups",
 							model: Group
 						},
-						error:handleKendoAjaxError
+						error: common.api.handleKendoAjaxError,
 					},
 					scrollable: true,
 					height: '100%',
