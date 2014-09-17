@@ -603,13 +603,14 @@
 							<li><a href="\\#groups" data-toggle="tab">그룹</a></li>
 							<li><a href="\\#roles" data-toggle="tab">롤</a></li>
 						</ul>								
-						<div class="tab-content padding-sm">
+						<div class="tab-content padding-sm no-padding-hr">
 							<div class="tab-pane fade" id="props">
 								<span class="help-block"><i class="fa fa-info"></i>  프로퍼티는 수정 후 저장 버튼을 클릭하여야 최종 반영됩니다.</span>
 								<div id="user-props-grid"></div>									
 							</div>
 							<div class="tab-pane fade" id="groups">																	
 								<div class="form-horizontal">
+									<span class="help-block"><i class="fa fa-info"></i> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</span>			
 									<div class="row">
 										<div class="col-sm-6">
 											<div class="form-group no-margin-hr">
@@ -625,8 +626,7 @@
 										</div>										
 									</div>
 									<div class="row">
-										<div class="col-sm-12">
-											<span class="help-block"><i class="fa fa-info"></i> 멤버로 추가하려면 리스트 박스에서 그룹을 선택후 "그룹 멤버로 추가" 버튼을 클릭하세요.</span>																			
+										<div class="col-sm-12">																											
 											<div id="user-group-grid" class="groups"></div>	
 											<div class="pull-right padding-sm"><button class="btn btn-sm btn-danger btn-labeled" data-bind="click:addToMember"><span class="btn-label icon fa fa-plus"></span> 맴버로 추가 </button></div>
 										</div>										
