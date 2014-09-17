@@ -705,7 +705,7 @@
 					</div>
 					<div class="modal-body">
 						<div class="note note-danger">
-							<h4 class="note-title"><i class="fa fa-exclamation-triangle"></i></h4>
+							<h4 class="note-title"><i class="fa fa-exclamation-triangle fa-2x"></i></h4>
 							6~16자의 영문 대소문자, 숫자, 특수문자를 조합하여
 							사용하실 수 있습니다.
 							생년월일, 전화번호 등 개인정보와 관련된 숫자,
@@ -718,12 +718,33 @@
 							기억하기도 쉽고, 비밀번호 안전도가 높아져 도용의 위험이
 							줄어듭니다.	
 							</div>
-						</div>						
+						</div>
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label class="col-lg-5 control-label" for="password2">새 비밀번호</label>
+							<div class="col-lg-7">
+								<input type="password" id="password2" name="password2" class="form-control" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." />
+							</div>
+						</div>	
+						<div class="form-group">
+							<label class="col-lg-5 control-label" for="password3">새 비밀번호 확인</label>
+							<div class="col-lg-7">
+								<input type="password" id="password3" name="password3" class="form-control"  placeholder="비밀번호 확인" required validationMessage="비밀번호를 입력하여 주세요." />
+							</div>
+						</div>		
+						<div class="form-group">	
+							<div class="col-lg-4"></div>
+							<div class="col-lg-8">
+								<div class="btn-group">
+									<button class="btn btn-primary btn-flat">확인</button>
+									<button class="btn btn-default btn-flat" type="reset">다시입력</button></div>
+								</div>
+							</div>
+						</div>
+					</form>												
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
-						<button type="button" class="btn btn-primary btn-flat" >확인</button>
-						<button type="reset" class="btn btn-default btn-flat">다시입력</button>
 					</div>
 				</div>
 			</div>
