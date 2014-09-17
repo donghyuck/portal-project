@@ -483,7 +483,7 @@
 				);
 				//$("#user-company-combo").data("kendoComboBox").readonly();
 			}
-			
+						/*	
 			if( !$("#user-group-combo").data("kendoComboBox") ){
 				$("#user-group-combo").kendoComboBox({
 					autoBind: false,
@@ -511,7 +511,7 @@
 					}
 				});											
 			}
-			/*									
+								
 			if( ! renderTo.data("kendoGrid") ){	
 				renderTo.kendoGrid({
 					dataSource: {
