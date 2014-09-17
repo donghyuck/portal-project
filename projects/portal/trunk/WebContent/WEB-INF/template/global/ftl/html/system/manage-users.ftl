@@ -578,8 +578,8 @@
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
 						customRule1 : function(input){
-							alert( $(input).html() );
-							return true;
+							$(input).closest(".form-group").addClass("has-error");
+							return false;
 						}						
 					}				
 				}).data("kendoValidator");
@@ -589,7 +589,6 @@
 					validator.validate();
 					
 					if (!validator.validateInput( $("#validate-password") ) ){					
-					alert("ss");	
 						$("#validate-password").closest(".form-group").addClass("has-error");
 					}else{
 						$("#validate-password").closest(".form-group").removeClass("has-error");
