@@ -575,7 +575,7 @@
 				});	
 				
 				var validator = renderTo.find("form").kendoValidator().data("kendoValidator"),
-				nderTo.find("form").submit(function(event) {
+				renderTo.find("form").submit(function(event) {
                         event.preventDefault();
                         if (validator.validate()) {
 
