@@ -151,6 +151,7 @@
 					user : new User(),
 					isVisible : false,
 					isChanged : false,
+					isChangable : false,
 					scrollDown:function(e){	
 						$('html,body').animate({scrollTop: renderTo.offset().top - 55 }, 300);
 					},
@@ -165,22 +166,19 @@
 				});				
 				detailsModel.bind("change", function(e){		
 					var sender = e.sender ;
-					alert(
-						kendo.stringify( this.user )	
-					);
-					
-					if( e.field.match('^user.username') && this.user.username != sender.user.username ){						
+					if( e.field.match('^user.username') ){						
 						if( sender.user.userId > 0 ){
 							this.set("profileImageUrl", common.api.user.photoUrl( sender.user, 150, 200 ) );
 							this.set("isVisible", true );
 							this.set("isChanged", false);
+							this.set("isChangable", false);
 							if( $('#myTab li:first.active').length == 0 ){ 
 								$('#myTab a:first').tab('show') ;
 							}else{
 								createUserPropsPane($("#user-props-grid"));
 							}							
 						}
-					} else {
+					} else if(this.isChangable) {
 						if( e.field.match('^user.name') || e.field.match('^user.email') || e.field.match('^user.nameVisible') || e.field.match('^user.emailVisible') || e.field.match('^user.enabled')){
 							this.set("isChanged", true);
 						}
@@ -202,6 +200,7 @@
 				kendo.bind(renderTo, detailsModel );	
 			}						
 			getSelectedUser().copy( renderTo.data("model").user );
+			renderTo.data("model").set("isChangable", true );
 			if(renderTo.is(':hidden')){
 				renderTo.fadeIn("slow");
 			}
