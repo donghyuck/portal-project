@@ -578,7 +578,7 @@
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
 						customRule1 : function(input){
-							 if( $.trim(input.val()) === "" ){
+							 if( $.trim(input.val()) === "" || input.val().length < 6 ){
 							 	$(input).closest(".form-group").addClass("has-error");
 								return false;
 							 }else{
