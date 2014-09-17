@@ -160,9 +160,9 @@
 					},
 					addToMember:function(e){
 						var btn = $(e.target);
-						
+						var selectedUser = this.user;						
 						if($("#user-group-combo").data("kendoComboBox").select() < 0 ){							
-							$("#groups .form-group:last").addClass("hasError");
+							$("#groups .form-group:last").addClass("has-error");
 							$("#groups .form-group:last").append('<p class="help-block">그룹을 선택하여 주세요.</p>');
 							return false;
 						}						
@@ -185,7 +185,23 @@
 					},
 					updateProfile:function(e){
 						var btn = $(e.target);
+						var selectedUser = this.user;						
 						btn.button('loading');
+						
+						$.ajax({
+							type : 'POST',
+							url : "${request.contextPath}/secure/update-user.do?output=json",
+							data : { userId:selectedUser.userId, item: kendo.stringify( selectedUser ) },
+							success : function( response ){									
+							    $('#user-grid').data('kendoGrid').dataSource.read();	
+							},
+							complete: function(jqXHR, textStatus ){					
+								btn.button('reset');
+							},								
+							error: common.api.handleKendoAjaxError,
+							dataType : "json"
+						});							
+						
 						return false;
 					}
 				});			
