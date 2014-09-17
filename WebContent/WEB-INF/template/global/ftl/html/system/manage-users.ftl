@@ -408,7 +408,8 @@
 						multiSelect.readonly(false);
 					}
 				});
-			}			
+			}		
+			return false;	
 		}
 		
 		function createUserPropsPane(renderTo){
