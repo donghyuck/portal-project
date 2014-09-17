@@ -696,7 +696,7 @@
 		</div>
 		</div>
 		<script id="password-modal-template" type="text/x-kendo-template">			
-		<div class="modal fade" id="role-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+		<div class="modal fade" id="password-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
 			<div class="modal-dialog animated slideDown">
 				<div class="modal-content">
 					<div class="modal-header">
