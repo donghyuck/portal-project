@@ -584,7 +584,7 @@
 					if (!validator.validateInput( $("#validate-password") ) ){						
 						$("#validate-password").closest(".form-group").addClass("has-error");
 					}else{
-						$("#validate-password").closest(".form-group").addClass("remove-error");
+						$("#validate-password").closest(".form-group").removeClass("has-error");
 					}
 										
 					if (!validator.validateInput( $("#validate-repeat-password") ) ){
