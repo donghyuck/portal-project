@@ -66,8 +66,10 @@
 						e.token.copy(currentUser);
 					},
 					companyChanged: function(item){
-						item.copy(targetCompany.company);
-						hideUserDetails();
+						item.copy(targetCompany.company);						
+						if( !$('#user-list-panel').is(":visible") ){
+							$('#user-list-panel').show();
+						}
 						$("#user-grid").data("kendoGrid").dataSource.read();
 					},
 					switcherChanged: function( name , value ){				
@@ -126,7 +128,7 @@
 					dataBound: function(e){		
 						 var selectedCells = this.select();
 						 if(selectedCells.length == 0 ){
-						 	$("#user-details").hide();
+						 	hideUserDetails();
 						 }
 					}
 				}).data('kendoGrid');
