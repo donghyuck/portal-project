@@ -482,7 +482,22 @@
 				//company_combo.value( 
 				//	selectedUser.company.companyId
 				//);
-				//company_combo.readonly();				
+				//company_combo.readonly();			
+				
+$("#fabric").kendoComboBox({
+                        dataTextField: "text",
+                        dataValueField: "value",
+                        dataSource: [
+                            { text: "Cotton", value: "1" },
+                            { text: "Polyester", value: "2" },
+                            { text: "Cotton/Polyester", value: "3" },
+                            { text: "Rib Knit", value: "4" }
+                        ],
+                        filter: "contains",
+                        suggest: true,
+                        index: 3
+                    });
+                    					
 			}
 /*	
 			if( !$("#user-group-combo").data("kendoComboBox") ){
@@ -810,6 +825,7 @@
 										<div class="col-sm-6">
 											<div class="form-group no-margin-hr">
 												<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">회사</h6>
+												<input id="fabric" placeholder="Select fabric..." />
 												<input id="user-company-combo"/>
 											</div>										
 										</div>
