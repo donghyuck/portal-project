@@ -475,7 +475,21 @@
 					filter:"contains",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
-					dataSource: common.ui.admin.setup().companySelector.dataSource
+					autoBind: false,
+					dataSource: {
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: JSON,
+								url: '/secure/list-company.do?output=json',
+								type: POST
+							}
+						},
+						schema: { 
+							data: "companies",
+							model : Company
+						}
+					}
 				});
 				
 							//var selectedUser = getUserDetailsModel().user;
