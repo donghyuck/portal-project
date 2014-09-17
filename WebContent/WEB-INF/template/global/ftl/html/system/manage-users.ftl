@@ -434,7 +434,7 @@
 							data: "targetUserProperty",
 							model: Property
 						},
-						error:handleKendoAjaxError
+						error: common.api.handleKendoAjaxError,
 					},
 					columns: [
 									    { title: "이름", field: "name" , width: "200px",  locked:true},
@@ -486,7 +486,8 @@
 						schema: { 
 							data: "companies",
 							model : Company
-						}
+						},
+						error: common.api.handleKendoAjaxError,
 					}
 				});
 				/*
