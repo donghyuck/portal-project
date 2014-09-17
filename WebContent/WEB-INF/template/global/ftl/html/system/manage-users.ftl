@@ -438,14 +438,14 @@
 						            	error:handleKendoAjaxError
 									},
 									columns: [
-									    { title: "이름", field: "name" , width: 200,  locked:true},
-									    { title: "값",   field: "value", width: 200, },
+									    { title: "이름", field: "name" , width: "200px",  locked:true},
+									    { title: "값",   field: "value", width: "200px", },
 										{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
 									],
 									autoBind: true, 
 									pageable: false,
 									scrollable: true,
-									height: 200,
+									height: "100%",
 							        editable: {
 										update: true,
 							            destroy: true,
