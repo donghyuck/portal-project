@@ -578,8 +578,13 @@
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
 						customRule1 : function(input){
-							$(input).closest(".form-group").addClass("has-error");
-							return false;
+							 if( $.trim(input.val()) === "" ){
+							 	$(input).closest(".form-group").addClass("has-error");
+								return false;
+							 }else{
+							 	$(input).closest(".form-group").removeClass("has-error");
+							 	return true;
+							 }
 						}						
 					}				
 				}).data("kendoValidator");
