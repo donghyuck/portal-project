@@ -471,16 +471,18 @@
 									
 			if(!$("#user-company-combo").data("kendoDropDownList") ){
 				var company_combo = $("#user-company-combo").kendoComboBox({
+					filter:"startswith",
 					placeholder: "회사 선택",
 					dataTextField: "displayName",
 					dataValueField: "companyId",
 					dataSource: common.ui.admin.setup().companySelector.dataSource
 				}).data("kendoComboBox");
-				var selectedUser = getUserDetailsModel().user;
-				company_combo.value( 
-					selectedUser.company.companyId
-				);
-				company_combo.readonly();				
+				
+				//var selectedUser = getUserDetailsModel().user;
+				//company_combo.value( 
+				//	selectedUser.company.companyId
+				//);
+				//company_combo.readonly();				
 			}
 /*	
 			if( !$("#user-group-combo").data("kendoComboBox") ){
