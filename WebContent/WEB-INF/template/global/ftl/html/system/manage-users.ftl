@@ -71,6 +71,13 @@
 					},
 					switcherChanged: function( name , value ){				
 						alert( name + "=" + value );		
+						if( name == "panel-switcher" ){
+							if( value ){
+								$('#user-list-panel').show();
+							}else if ( !value && $('#user-list-panel').is(":visible") && $('#user-details').is(":visible") ){
+								hideUserDetails();
+							}
+						}
 					}
 				});
 				
@@ -140,14 +147,25 @@
 			var model = renderTo.data("model");
 			return model;
 		}	
+		
+		function hideUserDetails(){			
+			if( $("#user-details").text().length > 0 && $("#user-details").is(":visible") ){
+				var alwaysShowList = common.ui.admin.switcherEnabled("panel-switcher");				
+				$("#user-details").fadeOut("slow", function(){
+					if( !alwaysShowList && $("#user-list-panel").is(":hidden") ){
+						$("#user-list-panel").fadeIn();
+					}
+				});
+			}	
+		}
+				
 		/**
 		* Show user detailis
 		*/
 		function showUserDetails(){		
 			var renderTo = $('#user-details');					
 			if( $('#user-details').text().trim().length	== 0 ){
-				renderTo.html(kendo.template($('#user-details-template').html()));					
-
+				renderTo.html(kendo.template($('#user-details-template').html()));
 				var detailsModel = kendo.observable({
 					user : new User(),
 					isVisible : false,
@@ -201,8 +219,7 @@
 							},								
 							error: common.api.handleKendoAjaxError,
 							dataType : "json"
-						});							
-						
+						});	
 						return false;
 					}
 				});			
@@ -249,8 +266,7 @@
 							detailsModel.set( 'profileImageUrl', common.api.user.photoUrl( selectedUser, 150, 200 ) );
 						}					   
 					});			
-				}					
-												
+				}														
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					var show_bs_tab = $(e.target);
 					if(show_bs_tab.attr('href') == '#props' ) {
@@ -260,8 +276,7 @@
 					}else if(show_bs_tab.attr('href') == '#roles' ) {
 						createUserRolesPane();
 					}
-				});
-				
+				});				
 				renderTo.data("model", detailsModel );	
 				kendo.bind(renderTo, detailsModel );	
 			}						
@@ -270,9 +285,17 @@
 			
 			getSelectedUser().copy( renderTo.data("model").user );
 			renderTo.data("model").set("isChangable", true );
-						
+
 			if(renderTo.is(':hidden')){
-				renderTo.fadeIn("slow");
+				if(alwaysShowList){		
+					renderTo.fadeIn("slow", function(){
+						renderTo.data("model").scrollDown();
+					});
+				}else{
+					$("#user-list-panel").fadeOut("slow", function(){
+						renderTo.fadeIn("slow");
+					});
+				}
 			}
 		}
 		
