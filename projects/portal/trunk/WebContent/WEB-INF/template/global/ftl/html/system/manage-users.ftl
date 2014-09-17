@@ -704,7 +704,20 @@
 						<h4 class="modal-title">비밀번호 변경</h4>
 					</div>
 					<div class="modal-body">
-						
+						<div class="note note-danger">
+							<h4 class="note-title">Danger note title</h4>
+							6~16자의 영문 대소문자, 숫자, 특수문자를 조합하여
+							사용하실 수 있습니다.
+							생년월일, 전화번호 등 개인정보와 관련된 숫자,
+							연속된 숫자와 같이 쉬운 비밀번호는 다른 사람이 쉽게
+							알아낼 수 있으니 사용을 자제해 주세요.
+							이전에 사용했던 비밀번호나 타 사이트와는 다른 비밀번호를
+							사용하고, 비밀번호는 주기적으로 변경해주세요.
+							<div class="alert alert-danger">비밀번호에 특수문자를 추가하여 사용하시면
+							기억하기도 쉽고, 비밀번호 안전도가 높아져 도용의 위험이
+							줄어듭니다.	
+							</div>
+						</div>						
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
