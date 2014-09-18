@@ -591,7 +591,7 @@
 				
 				renderTo.find("form").submit(function(event) {
 					event.preventDefault();
-					validator.validate();
+					//validator.validate();
 					
 					if (!validator.validateInput( $("#validate-password") ) ){					
 						$("#validate-password").closest(".form-group").addClass("has-error");
@@ -766,7 +766,7 @@
 							<label class="col-lg-5 control-label" for="validate-repeat-password">새 비밀번호 확인</label>
 							<div class="col-lg-7">
 								<div class="has-feedback">
-									<input type="password" name="validate-repeat-password" id="validate-repeat-password" placeholder="비밀번호 확인" class="form-control" required validationMessage="비밀번호를 입력하여 주세요." >
+									<input type="password" name="validate-repeat-password" id="validate-repeat-password" placeholder="비밀번호 확인" class="form-control" required validationMessage="다시한번 비밀번호를 입력하여 주세요." >
 									<i class="fa fa-asterisk form-control-feedback"></i>
 								</div>								
 							</div>
