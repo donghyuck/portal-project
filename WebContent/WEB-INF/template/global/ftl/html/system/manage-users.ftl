@@ -795,7 +795,7 @@
 							<div class="col-lg-4"></div>
 							<div class="col-lg-8">
 								<div class="btn-group">
-									<button class="btn btn-primary btn-flat">확인</button>
+									<button class="btn btn-primary btn-flat" name="password-conform" >확인</button>
 									<button class="btn btn-default btn-flat" type="reset">다시입력</button></div>
 								</div>
 							</div>
