@@ -370,6 +370,13 @@
 		var setup = new common.ui.PageSetup(options);
 	}
 	
+	common.ui.hasAttribute = function(input, name) {
+		if (input.length)  {
+			return input[0].attributes[name] != null;
+		}
+		return false;
+	};
+	
 	common.ui.switchClass = function( element, remove, add, speed, easing, callback ) {		
 		$.effects.animateClass.call( element, {
 			add: add,
