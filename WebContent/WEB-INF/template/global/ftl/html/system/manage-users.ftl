@@ -592,13 +592,10 @@
 							}
 							return noError;
 						},
-						customRule1 : function(input){
-						alert( input.filter("[type=password]")  ) ;
-							if(input.filter("[type=password]")) {
-							
+						customRule1 : function(input){					
+							if(input.filter("[type=password]")) {							
 								var $this = $(input), max = 16, value = input.val(), noError = ( max >= value.length );		
-								alert( value ) ;
-							
+								alert( noError ) ;							
 								if (noError && $this.closest(".form-group").hasClass("has-error")){			
 									$this.closest(".form-group").removeClass("has-error");
 								}else{
