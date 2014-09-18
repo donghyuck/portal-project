@@ -617,7 +617,24 @@
 								
 				$("button[name=password-conform]").click(function(event) {
 					event.preventDefault();
-					validator.validate();
+					if(validator.validate()){
+						var btn = $(this);						
+						btn.button('loading');
+						var selectedUser = getUserDetailsModel().user;						
+						$.ajax({
+							type : 'POST',
+							url : "${request.contextPath}/secure/update-user.do?output=json",
+							data : { userId:selectedUser.userId, item: kendo.stringify( selectedUser ) },
+							success : function( response ){	
+
+							},
+							complete: function(jqXHR, textStatus ){					
+								btn.button('reset');
+							},
+							error: common.api.handleKendoAjaxError,
+							dataType : "json"
+						});							
+					}
 					return false;
 				});      
 				$("button[name=password-reset]").click(function(event) {
