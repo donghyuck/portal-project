@@ -580,6 +580,7 @@
 						required: function(input) {
 							var $this = $(input), checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), noError = !(hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
+							alert(noError );
 							if (noError){					
 								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
 							}else{
