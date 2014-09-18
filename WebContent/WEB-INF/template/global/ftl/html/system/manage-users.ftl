@@ -579,7 +579,8 @@
 					rules: {
 						required: function(input) {
 					
-							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
+							var $this = $(input),
+							checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), 
 							noError = !(common.ui.hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
 							if (noError){					
