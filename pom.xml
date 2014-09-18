@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>portal</groupId>
 	<artifactId>portal</artifactId>
-	<version>1.0.0.RELEASE</version>
+	<version>1.0.3.RELEASE</version>
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -11,7 +11,7 @@
 		<javac.target.version>1.6</javac.target.version>
 		<project.javadoc.docEncoding>UTF-8</project.javadoc.docEncoding>
 		<project.build.version>1.0.0.RELEASE</project.build.version>
-		<project.architecture.version>1.1.0.RELEASE</project.architecture.version>
+		<project.architecture.version>2.0.0.RELEASE</project.architecture.version>
 	</properties>
 
 	<repositories>
@@ -139,8 +139,8 @@
 		</dependency>
 		<dependency>
 			<groupId>architecture.community</groupId>
-			<artifactId>architecture-community-forum</artifactId>
-			<version>1.0.0</version>
+			<artifactId>architecture-community-struts2</artifactId>
+			<version>${project.architecture.version}</version>
 		</dependency>
 	</dependencies>
 		
