@@ -580,7 +580,8 @@
 						required: function(input) {
 					
 							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
-							value = input.val(), noError = !(hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
+							value = input.val(), 
+							noError = !(common.ui.hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
 							alert(noError );
 							/*
 							if (noError){					
@@ -588,6 +589,7 @@
 							}else{
 								$this.closest(".form-group").addClass("has-error");
 							}	*/						
+							
 							return noError;
 						},
 						password : function(input){
