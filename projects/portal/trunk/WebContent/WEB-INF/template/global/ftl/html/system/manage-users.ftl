@@ -594,7 +594,10 @@
 						},
 						password : function(input){
 							if(input.filter("[type=password]")) {
+							
 								var $this = $(input), max = 16, value = input.val(), noError = ( max >= value.length );		
+								alert( value ) ;
+							
 								if (noError && $this.closest(".form-group").hasClass("has-error")){			
 									$this.closest(".form-group").removeClass("has-error");
 								}else{
