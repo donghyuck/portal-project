@@ -608,8 +608,8 @@
 						}						
 					}				
 				}).data("kendoValidator");
-				
-				renderTo.find("form").submit(function(event) {
+								
+				$("button[name=password-conform]").click(function(event) {
 					event.preventDefault();
 					validator.validate();
 					
