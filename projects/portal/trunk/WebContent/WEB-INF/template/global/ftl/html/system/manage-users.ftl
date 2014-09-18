@@ -593,18 +593,18 @@
 							return noError;
 						},
 						password : function(input){
-							var $this = $(input),
-							max = 16,
-							value = input.val()
-							noError = ( max >= value.length );
-							/*
-							if (noError){					
-								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
-							}else{
-								$this.closest(".form-group").addClass("has-error");
-							}*/
-							
-							return false;
+							if(input.filter("[type=password]")) {
+								var $this = $(input),
+								max = 16,
+								value = input.val(),
+								noError = ( max >= value.length );		
+								if (noError){					
+									$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
+								}else{
+									$this.closest(".form-group").addClass("has-error");
+								}			
+							}
+							return true;
 						}						
 					}				
 				}).data("kendoValidator");
