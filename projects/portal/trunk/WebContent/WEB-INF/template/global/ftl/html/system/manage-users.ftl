@@ -587,7 +587,7 @@
 							}							
 							return noError;
 						},
-						,password : function(input){
+						password : function(input){
 							alert( input.val() );
 							 if( $.trim(input.val()) === "" || input.val().length < 6 ){
 							 	$(input).closest(".form-group").addClass("has-error");
