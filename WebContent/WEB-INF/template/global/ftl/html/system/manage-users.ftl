@@ -593,6 +593,7 @@
 							return noError;
 						},
 						password : function(input){
+						alert( input.val() ) ;
 							if(input.filter("[type=password]")) {
 							
 								var $this = $(input), max = 16, value = input.val(), noError = ( max >= value.length );		
