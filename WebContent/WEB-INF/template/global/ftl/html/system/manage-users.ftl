@@ -597,12 +597,14 @@
 							max = 16,
 							value = input.val()
 							noError = ( max >= value.length );
+							/*
 							if (noError){					
 								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
 							}else{
 								$this.closest(".form-group").addClass("has-error");
-							}
-							return noError;
+							}*/
+							
+							return false;
 						}						
 					}				
 				}).data("kendoValidator");
