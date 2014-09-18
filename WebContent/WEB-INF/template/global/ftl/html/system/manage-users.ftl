@@ -578,7 +578,7 @@
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
 						required: function(input) {
-							alert( 
+					
 							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), noError = !(hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
 							alert(noError );
