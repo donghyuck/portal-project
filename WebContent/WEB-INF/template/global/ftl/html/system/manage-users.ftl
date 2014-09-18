@@ -620,7 +620,8 @@
 					if(validator.validate()){
 						var btn = $(this);						
 						btn.button('loading');
-						var selectedUser = getUserDetailsModel().user;						
+						var selectedUser = getUserDetailsModel().user;					
+						selectedUser.password = $("#validate-password").val();	
 						$.ajax({
 							type : 'POST',
 							url : "${request.contextPath}/secure/update-user.do?output=json",
