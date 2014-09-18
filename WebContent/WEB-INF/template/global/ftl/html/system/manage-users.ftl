@@ -593,7 +593,7 @@
 							return noError;
 						},
 						password : function(input){
-						alert( input.val() ) ;
+						alert( input.filter("[type=password]")  ) ;
 							if(input.filter("[type=password]")) {
 							
 								var $this = $(input), max = 16, value = input.val(), noError = ( max >= value.length );		
@@ -606,7 +606,7 @@
 								}	
 								return noError;		
 							}
-							return false;
+							return true;
 						}						
 					}				
 				}).data("kendoValidator");
