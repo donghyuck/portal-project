@@ -582,34 +582,32 @@
 					},
 					rules: {
 						required: function(input) {					
-							var $this = $(input),
-							checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
+							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), 
 							noError = !(common.ui.hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
 							if (noError){
-								if($this.closest(".form-group").hasClass("has-error"))					
-									$this.closest(".form-group").removeClass("has-error");
+								if(input.closest(".form-group").hasClass("has-error"))					
+									input.closest(".form-group").removeClass("has-error");
 							}else{
-								$this.closest(".form-group").addClass("has-error");
+								input.closest(".form-group").addClass("has-error");
 							}
 							return noError;
 						},
 						customRule1 : function(input){					
 							if(input.filter("[type=password]")) {							
-								var $this = $(input), max = 16, value = input.val(), noError = ( 16 >= value.length && 6 <= value.length );		
-								alert( noError + "," + value.length ) ;							
+								var value = input.val(), noError = ( 16 >= value.length && 6 <= value.length );							
 								if (noError){
-									if($this.closest(".form-group").hasClass("has-error"))			
-										$this.closest(".form-group").removeClass("has-error");
+									if(input.closest(".form-group").hasClass("has-error"))			
+										input.closest(".form-group").removeClass("has-error");
 								}else{
-									$this.closest(".form-group").addClass("has-error");
+									input.closest(".form-group").addClass("has-error");
 								}	
 								return noError;		
 							}
 							return true;
 						},
 						customRule2 : function(input){		
-							if(input.filter("[type=password]") && if input.is("[name=validate-repeat-password]") ) {	
+							if(input.filter("[type=password]") && input.is("[name=validate-repeat-password]") ) {	
 								return input.val() === $("#validate-password").val();
 							}
 							return true;
