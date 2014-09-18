@@ -578,6 +578,7 @@
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
 						customRule1 : function(input){
+							alert( input.val() );
 							 if( $.trim(input.val()) === "" || input.val().length < 6 ){
 							 	$(input).closest(".form-group").addClass("has-error");
 								return false;
@@ -591,7 +592,7 @@
 				
 				renderTo.find("form").submit(function(event) {
 					event.preventDefault();
-					//validator.validate();
+					validator.validate();
 					
 					if (!validator.validateInput( $("#validate-password") ) ){					
 						$("#validate-password").closest(".form-group").addClass("has-error");
