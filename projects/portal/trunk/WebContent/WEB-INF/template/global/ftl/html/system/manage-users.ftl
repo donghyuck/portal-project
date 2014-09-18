@@ -577,7 +577,7 @@
 				var validator = renderTo.find("form").kendoValidator({
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
-						rquired: function(input) {
+						required: function(input) {
 							alert(input);
 							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), noError = !(hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
