@@ -594,7 +594,7 @@
 						},
 						customRule1 : function(input){					
 							if(input.filter("[type=password]")) {							
-								var $this = $(input), max = 16, value = input.val(), noError = ( max >= value.length );		
+								var $this = $(input), max = 16, value = input.val(), noError = ( 16 >= value.length && 6 <= value.length );		
 								alert( noError + "," + value.length ) ;							
 								if (noError && $this.closest(".form-group").hasClass("has-error")){			
 									$this.closest(".form-group").removeClass("has-error");
