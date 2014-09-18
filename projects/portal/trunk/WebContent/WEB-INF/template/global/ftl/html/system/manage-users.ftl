@@ -582,13 +582,11 @@
 							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), 
 							noError = !(common.ui.hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
-							alert(noError );
-							/*
 							if (noError){					
 								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
 							}else{
 								$this.closest(".form-group").addClass("has-error");
-							}	*/						
+							}				
 							
 							return noError;
 						},
