@@ -577,7 +577,17 @@
 				var validator = renderTo.find("form").kendoValidator({
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
-						customRule1 : function(input){
+						rquired: function(input) {
+							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
+							value = input.val(), noError = !(hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
+							if (noError){					
+								input.closest(".form-group").hasClass("has-error").removeClass("has-error");
+							}else{
+								input.closest(".form-group").addClass("has-error");
+							}							
+							return noError;
+						},
+						,password : function(input){
 							alert( input.val() );
 							 if( $.trim(input.val()) === "" || input.val().length < 6 ){
 							 	$(input).closest(".form-group").addClass("has-error");
