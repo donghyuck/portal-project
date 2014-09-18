@@ -135,7 +135,7 @@
 		<dependency>
 			<groupId>architecture.bootstrap</groupId>
 			<artifactId>architecture-bootstrap</artifactId>
-			<version>1.0.0.RELEASE</version>
+			<version>1.0.3.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>architecture.community</groupId>
