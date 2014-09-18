@@ -320,7 +320,7 @@
 									<button class="close" data-action="slideDown"  style="display:none;"><i class="fa fa-chevron-down"></i></button>								
 								</div>
 							</div>			
-							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns="[ {'field':'primaryKey', 'title':'기본키', 'template':'<i class="fa fa-key"></i>' }, {'field':'name', 'title':'컬럼'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
+							<div data-role="grid" data-sortable="true" data-bind="source: columns" data-columns="[ {'field':'primaryKey', 'title':'기본키', 'template':'#: primaryKey#' }, {'field':'name', 'title':'컬럼'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
 							<div class="panel-footer">
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
