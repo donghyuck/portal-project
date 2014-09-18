@@ -578,13 +578,12 @@
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					rules: {
 						required: function(input) {
-							alert(input);
-							var checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
+							var $this = $(input), checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), noError = !(hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
 							if (noError){					
-								input.closest(".form-group").hasClass("has-error").removeClass("has-error");
+								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
 							}else{
-								input.closest(".form-group").addClass("has-error");
+								$this.closest(".form-group").addClass("has-error");
 							}							
 							return noError;
 						},
