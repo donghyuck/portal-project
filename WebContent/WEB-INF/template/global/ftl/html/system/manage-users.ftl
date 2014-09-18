@@ -604,7 +604,7 @@
 									$this.closest(".form-group").addClass("has-error");
 								}			
 							}
-							return true;
+							return false;
 						}						
 					}				
 				}).data("kendoValidator");
