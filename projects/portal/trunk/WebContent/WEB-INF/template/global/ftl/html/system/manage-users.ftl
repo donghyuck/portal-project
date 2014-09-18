@@ -716,7 +716,7 @@
 						<div class="form-group">
 							<label class="col-lg-5 control-label" for="password3">새 비밀번호 확인</label>
 							<div class="col-lg-7">
-								<input type="password" id="password3" name="password3" class="form-control"  placeholder="비밀번호 확인" required validationMessage="비밀번호를 입력하여 주세요." />
+								<input type="password" id="password3" name="password3" class="form-control"  placeholder="비밀번호 확인" required validationMessage="다시한번, 비밀번호를 입력하여 주세요." />
 							</div>
 						</div>		
 						<div class="form-group">	
