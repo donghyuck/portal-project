@@ -577,7 +577,7 @@
 				var validator = renderTo.find("form").kendoValidator({
 					errorTemplate: "<div class='help-block'>#=message#</div>",
 					messages : {
-						custom : "비밀번호는 6~16자의 영문 대문자, 숫자, 특수문자를 조합으로 입력하여주세요."
+						customRule1 : "비밀번호는 6~16자의 영문 대문자, 숫자, 특수문자를 조합으로 입력하여주세요."
 					},
 					rules: {
 						required: function(input) {					
@@ -592,7 +592,7 @@
 							}
 							return noError;
 						},
-						custom : function(input){
+						customRule1 : function(input){
 						alert( input.filter("[type=password]")  ) ;
 							if(input.filter("[type=password]")) {
 							
