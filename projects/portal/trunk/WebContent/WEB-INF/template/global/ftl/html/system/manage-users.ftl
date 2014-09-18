@@ -771,7 +771,7 @@
 							<label class="col-lg-5 control-label" for="validate-password">새 비밀번호</label>
 							<div class="col-lg-7">
 								<div class="has-feedback">
-									<input type="password" name="validate-password" id="validate-password" placeholder="비밀번호" class="form-control" required validationMessage="비밀번호를 입력하여 주세요." >
+									<input type="password" name="validate-password" id="validate-password" placeholder="비밀번호" class="form-control" required validationMessage="비밀번호는 6~16자의 영문 대문자, 숫자, 특수문자를 조합으로 입력하여주세요." >
 									<i class="fa fa-asterisk form-control-feedback"></i>
 								</div>									
 							</div>
