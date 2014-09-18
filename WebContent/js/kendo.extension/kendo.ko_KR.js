@@ -89,7 +89,7 @@ kendo.ui.Validator.prototype.options.messages =
 
 /* VALIDATOR MESSAGES 
  ****************************************************************************/   
-  required: "{0} is required",
+  required: "{0} 은 필수입니다.",
   pattern: "{0} is not valid",
   min: "{0} should be greater than or equal to {1}",
   max: "{0} should be smaller than or equal to {1}",
@@ -106,15 +106,15 @@ kendo.ui.ImageBrowser.prototype.options.messages =
 /* IMAGE BROWSER MESSAGES 
  ****************************************************************************/   
   uploadFile: "업로드",
-  orderBy: "Arrange by",
+  orderBy: "정렬 기준",
   orderByName: "이름",
   orderBySize: "크기",
-  directoryNotFound: "A directory with this name was not found.",
-  emptyFolder: "Empty Folder",
-  deleteFile: 'Are you sure you want to delete "{0}"?',
+  directoryNotFound: "해당하는 이름의 디렉토리를 찾을 수 없습니다..",
+  emptyFolder: "빈 폴더",
+  deleteFile: '"{0}"를 삭제 하시겠습니까 ?',
   invalidFileType: "The selected file \"{0}\" is not valid. Supported file types are {1}.",
   overwriteFile: "A file with name \"{0}\" already exists in the current directory. Do you want to overwrite it?",
-  dropFilesHere: "drop files here to upload"
+  dropFilesHere: "업로드할 파일을 이곳에 놓어 주세요."
  /***************************************************************************/   
 });
 
