@@ -576,9 +576,11 @@
 				
 				var validator = renderTo.find("form").kendoValidator({
 					errorTemplate: "<div class='help-block'>#=message#</div>",
+					messages : {
+						password : "비밀번호는 6~16자의 영문 대문자, 숫자, 특수문자를 조합으로 입력하여주세요."
+					},
 					rules: {
-						required: function(input) {
-					
+						required: function(input) {					
 							var $this = $(input),
 							checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), 
@@ -587,19 +589,20 @@
 								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
 							}else{
 								$this.closest(".form-group").addClass("has-error");
-							}				
-							
+							}
 							return noError;
 						},
 						password : function(input){
-							alert( input.val() );
-							 if( $.trim(input.val()) === "" || input.val().length < 6 ){
-							 	$(input).closest(".form-group").addClass("has-error");
-								return false;
-							 }else{
-							 	$(input).closest(".form-group").removeClass("has-error");
-							 	return true;
-							 }
+							var $this = $(input),
+							max = 16,
+							value = input.val()
+							noError = max >= value.length;
+							if (noError){					
+								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
+							}else{
+								$this.closest(".form-group").addClass("has-error");
+							}
+							return noError;
 						}						
 					}				
 				}).data("kendoValidator");
