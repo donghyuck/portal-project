@@ -585,8 +585,9 @@
 							checkbox = input.filter("[type=checkbox]").length && !input.is(":checked"),
 							value = input.val(), 
 							noError = !(common.ui.hasAttribute(input, "required") && (value === "" || !value  || checkbox)) ;
-							if (noError && $this.closest(".form-group").hasClass("has-error")){					
-								$this.closest(".form-group").removeClass("has-error");
+							if (noError){
+								if($this.closest(".form-group").hasClass("has-error"))					
+									$this.closest(".form-group").removeClass("has-error");
 							}else{
 								$this.closest(".form-group").addClass("has-error");
 							}
@@ -596,8 +597,9 @@
 							if(input.filter("[type=password]")) {							
 								var $this = $(input), max = 16, value = input.val(), noError = ( 16 >= value.length && 6 <= value.length );		
 								alert( noError + "," + value.length ) ;							
-								if (noError && $this.closest(".form-group").hasClass("has-error")){			
-									$this.closest(".form-group").removeClass("has-error");
+								if (noError){
+									if($this.closest(".form-group").hasClass("has-error"))			
+										$this.closest(".form-group").removeClass("has-error");
 								}else{
 									$this.closest(".form-group").addClass("has-error");
 								}	
