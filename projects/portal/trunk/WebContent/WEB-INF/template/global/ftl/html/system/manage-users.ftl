@@ -389,7 +389,7 @@
 					error: common.api.handleKendoAjaxError,
 					dataBound: function(e) {
 						selectedRoleDataSource.read();   	
-					},			                        	
+					},	
 					change: function(e){
 						var multiSelect = $("#user-role-select").data("kendoMultiSelect");			                        		
 						var list = new Array();			                        		                  		
@@ -614,7 +614,14 @@
 					event.preventDefault();
 					validator.validate();
 					return false;
-				});                    			
+				});      
+				$("button[name=password-reset]").click(function(event) {
+					event.preventDefault();
+					validator.hideMessages();
+					renderTo.find("form[data-role=validator] .form-group").removeClass("has-error");
+					return false;
+				});   				
+				              			
 				renderTo.on('hidden.bs.modal', function(e){					
 				});
 				renderTo.on('show.bs.modal', function(e){		
@@ -783,7 +790,7 @@
 							<div class="col-lg-8">
 								<div class="btn-group">
 									<button class="btn btn-primary btn-flat" name="password-conform" >확인</button>
-									<button class="btn btn-default btn-flat" type="reset">다시입력</button></div>
+									<button class="btn btn-default btn-flat" type="reset" name="password-reset">다시입력</button></div>
 								</div>
 							</div>
 						</div>
