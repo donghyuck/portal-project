@@ -594,15 +594,13 @@
 						},
 						password : function(input){
 							if(input.filter("[type=password]")) {
-								var $this = $(input),
-								max = 16,
-								value = input.val(),
-								noError = ( max >= value.length );		
+								var $this = $(input), max = 16, value = input.val(), noError = ( max >= value.length );		
 								if (noError){					
 									$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
 								}else{
 									$this.closest(".form-group").addClass("has-error");
-								}			
+								}	
+								return noError;		
 							}
 							return false;
 						}						
@@ -612,20 +610,6 @@
 				$("button[name=password-conform]").click(function(event) {
 					event.preventDefault();
 					validator.validate();
-					
-					if (!validator.validateInput( $("#validate-password") ) ){					
-						$("#validate-password").closest(".form-group").addClass("has-error");
-					}else{
-						$("#validate-password").closest(".form-group").removeClass("has-error");
-					}
-										
-					if (!validator.validateInput( $("#validate-repeat-password") ) ){
-						$("#validate-repeat-password").closest(".form-group").addClass("has-error");
-					}else{
-						$("#validate-repeat-password").closest(".form-group").removeClass("has-error");
-					}
-					
-					
 					return false;
 				});                    			
 				renderTo.on('hidden.bs.modal', function(e){					
