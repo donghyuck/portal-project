@@ -596,7 +596,7 @@
 							var $this = $(input),
 							max = 16,
 							value = input.val()
-							noError = max >= value.length;
+							noError = ( max >= value.length );
 							if (noError){					
 								$this.closest(".form-group").hasClass("has-error").removeClass("has-error");
 							}else{
