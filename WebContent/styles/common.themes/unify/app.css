@@ -2711,6 +2711,8 @@ img.img-circle {
 .rounded-left { border-radius: 4px 0 0 4px !important;}
 .rounded-right { border-radius: 0 4px 4px 0 !important;}
 .rounded-bottom { border-radius: 0 0 4px 4px !important;}
+.rounded-bottom-right { border-radius: 0 0 4px 0px !important;}
+.rounded-bottom-left { border-radius: 0 0 0px 4px !important;}
 
 /*Others
 ------------------------------------*/
