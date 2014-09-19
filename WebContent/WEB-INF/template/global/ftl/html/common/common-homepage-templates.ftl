@@ -156,7 +156,7 @@
 </script>	
 <script id="account-sidebar-template" type="text/x-kendo-template">
 	<section id="my-aside-menu" class="aside-menu">	
-		<button type="button" class="btn-close">Close</button>		
+		<button type="button" class="btn-close btn-sm">Close</button>		
 		<h5 class="side-section-title">Optional sidebar menu</h5>		
 		# if ( !anonymous ) { # 	
 		<div class="account-content" >		
@@ -181,7 +181,7 @@
 			<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
 		
-		<h5 class="side-section-title">MY CLOUD MENU</h5>
+		<h5 class="side-section-title">MY CLOUD DRIVE</h5>
 		<div class="account-content" >	
 			<div class="row">
 				<div class="col-xs-6">
