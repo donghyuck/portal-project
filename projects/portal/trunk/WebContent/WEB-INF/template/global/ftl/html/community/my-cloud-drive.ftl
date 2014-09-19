@@ -13,11 +13,13 @@
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',						
+			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
+			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',		
+			
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',			
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
-			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',						
+				
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
@@ -771,19 +773,13 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div id="main-content" class="container-fluid" style="min-height:300px;">		
-				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">
+				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation" style="top:-4px;">
 					<ul class="nav navbar-nav pull-right">
-						<li class="padding-xs-hr no-padding-r">
-							
-						</li>
-						<li class="padding-xs-hr no-padding-r">
-						
-						</li>
 						<li class="padding-xs-hr no-padding-r">
 							<div class="btn-group navbar-btn rounded-bottom">
 								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o fa-lg"></i> <span class="hidden-xs">공지 & 이벤트</span></button>
-								<button type="button" class="btn-u btn-u-blue" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
-								<button type="button" class="btn-u btn-u-blue rounded-bottom-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 							</div>
 						</li>							
 						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
@@ -956,17 +952,21 @@
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery" class="one-page  no-padding-t no-border" style="display:none;">
-		<div class="one-page-inner one-grey">
+		<div class="one-page-inner no-padding-t">
 			<div class="container">	
-				<button type="button" class="btn-close btn-close-grey" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
-				<h5 class="side-section-title">MY 이미지 갤러리</h5>
 				<div class="row">
-					<div class="col-xs-12">
-						<div class="bg-light no-padding">
+					<div class="col-xs-12 padding-sm">					
+					<div class="panel panel-default rounded">
+						<div class="panel-heading">						
+						<button type="button" class="btn-close btn-close-grey btn-sm" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
+						<h3 class="panel-title">MY 이미지 갤러리</h3>
+						</div>
+						<div class="panel-body padding-sm no-padding-hr" style="min-height:300px;">
 							<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
 							<div id="image-gallery-slider" class="superbox"></div>
-							<div id="image-gallery-pager" class="k-pager-wrap no-border-hr no-border-b"></div>	
 						</div>
+						<div class="panel-footer no-padding"><div id="image-gallery-pager" class="k-pager-wrap no-border no-margin-t "></div>	</div>
+					</div>						
 					</div>	
 				</div>
 			</div>
