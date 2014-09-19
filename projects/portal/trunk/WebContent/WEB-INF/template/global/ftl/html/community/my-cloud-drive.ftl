@@ -12,15 +12,12 @@
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
-			
+			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',						
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',			
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
-			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
-
-			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
-						
+			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
+			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',						
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
@@ -31,10 +28,8 @@
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
-			
-			'css!${request.contextPath}/js/codrops/codrops.grid.js',
-				
+			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 					
+			'css!${request.contextPath}/js/codrops/codrops.grid.js',				
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
@@ -779,24 +774,28 @@
 				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">
 					<ul class="nav navbar-nav pull-right">
 						<li class="padding-xs-hr no-padding-r">
-							<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-panel">공지 & 이벤트 </button>
+							
 						</li>
 						<li class="padding-xs-hr no-padding-r">
-						<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-gallery-section" disabled>My 이미지 갤러리 </button>
+						
 						</li>
 						<li class="padding-xs-hr no-padding-r">
-							<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+							<div class="btn-group navbar-btn rounded-bottom">
+								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o fa-lg"></i> <span class="hidden-xs">공지 & 이벤트</span></button>
+								<button type="button" class="btn-u btn-u-blue" data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
+								<button type="button" class="btn-u btn-u-blue rounded-bottom-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+							</div>
 						</li>							
 						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 						<li class="hidden-xs">
 							<div class="btn-group navbar-btn" data-toggle="buttons">
-								<label class="btn btn-info">
+								<label class="btn btn-info rounded-bottom-left">
 									<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
 								</label>
 								<label class="btn btn-info active">
 							 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
 								</label>
-								<label class="btn btn-info">
+								<label class="btn btn-info rounded-bottom-right">
 									<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 								</label>
 							</div>
