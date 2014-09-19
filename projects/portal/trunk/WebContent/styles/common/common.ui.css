@@ -110,6 +110,12 @@ body.aside-menu-in .aside-menu {
 	background: url(/images/cross-grey.png) no-repeat center center;
 }
 
+.btn-close.btn-sm {	
+	width: 40px;
+	height: 40px;
+	top: 15px;
+	right: 15px;
+}
 
 .close-sm {
 	position: absolute;
