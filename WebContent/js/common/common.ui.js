@@ -140,6 +140,10 @@
 			'</div>'
 		); 
 		
+		$(document).on("click", ".og-close", function(e){
+			$(this).closest(".og-expander").remove();				
+		});		
+		
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
 			var $gallery = $( $this.data("target-gallery") );
@@ -151,6 +155,7 @@
 				title : $this.data("title"),
 				description : $this.data("description")
 			};
+			
 			
 			$gallery.children("li.og-expanded").removeClass("og-expanded");
 			$parent.addClass( 'og-expanded' );						
@@ -175,25 +180,17 @@
 					$parent.css("height", previewHeight + height + marginExpanded );
 				});				
 			}else{
-				//preview.find("img").attr("src", data.src);				
-				//var $fullimage = preview.find("img");
 				var $loading = preview.find(".og-loading");
-				var $largeImg = preview.find("img");
-				
-				$largeImg.hide();
-				$loading.show();
-				
+				var $largeImg = preview.find("img");				
+				$largeImg.hide();				$loading.show();				
 				$( '<img/>' ).load( function() {
 					var $img = $( this );
 					if( $img.attr( 'src' ) === data.src ) {
 						$loading.hide();
 						$largeImg.attr("src", data.src ).show();
-						//$fullimage.remove();
-						//self.$largeImg = $img.fadeIn( 350 );
-						//self.$fullimage.append( self.$largeImg );
 					}
 				} ).attr( 'src', data.src );
-			}
+			}			
 			return false;
 		});
 	}
