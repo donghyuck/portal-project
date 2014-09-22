@@ -141,7 +141,7 @@
 		); 
 		
 		$(document).on("click", ".og-close", function(e){
-			$(this).closest(".og-expander").remove();				
+			$(this).closest(".og-expanded").remove();				
 		});		
 		
 		
