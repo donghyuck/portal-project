@@ -30,7 +30,11 @@
 	.header {
 		box-shadow : none;
 		-webkit-transform : none;
-	}					
+	}				
+	.k-loading-image {
+		background-image: url('/images/common/loader/loading-transparent-bg.gif');
+	}
+		
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="" />">
