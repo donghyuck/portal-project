@@ -144,6 +144,7 @@
 			$(this).closest(".og-expander").remove();				
 		});		
 		
+		
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
 			var $gallery = $( $this.data("target-gallery") );
