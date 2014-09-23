@@ -435,7 +435,7 @@
 													</tbody>
 									</table></div>		
 									</div>						
-									<div id="setup-props-grid" class="no-border" ></div>		
+									<div id="setup-props-grid" class="no-border-hr no-border-b" ></div>		
 								</div>
 								<div class="tab-pane" id="system-info">
 									<table class="table table-hover system-details">
