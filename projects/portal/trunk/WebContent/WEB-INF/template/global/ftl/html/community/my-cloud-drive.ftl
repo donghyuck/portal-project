@@ -111,7 +111,9 @@
 			var renderTo = "image-gallery";
 			
 			if( $( "#" +renderTo).length == 0 ){			
+			
 				$(".wrapper .header").after( $("#image-gallery-template").html() );
+				
 				var galleryDataSource =new kendo.data.DataSource({
 					type: 'json',
 					transport: {
