@@ -145,6 +145,7 @@
 			$gallery = self.closest(".og-grid"),
 			$items = $gallery.children("li"),
 			$previewEl = $gallery.find(".og-expander"),
+			$expandedItem = $gallery.children("li.og-expanded");
 			onEndFn = function(){
 				if( kendo.support.transitions ){
 					$(this).off( kendo.support.transitions.event );				
@@ -158,7 +159,7 @@
 				//}
 				$previewEl.css( 'height', 0 );
 				// the current expanded item (might be different from this.$item)
-				var $expandedItem = $items.eq( this.expandedIdx );
+				//var $expandedItem = $items.eq( this.expandedIdx );
 				$expandedItem.css( 'height', $expandedItem.data( 'height' ) ).on( kendo.support.transitions.event, onEndFn );
 
 				if( ! kendo.transitions.support.css ) {
