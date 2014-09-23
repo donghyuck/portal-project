@@ -491,6 +491,7 @@
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 								<div class="panel-heading-controls">
 									<button type="button" class="btn btn-success btn-control-group" data-action="back"><i class="fa fa fa-level-up fa-lg"></i></button>
+									<button class="btn btn-primary btn-flat btn-labeled" data-action="editor-close"><span class="fa fa fa-level-up fa-lg></span> <small>이전</small></button>	
 									<div class="btn-group">
 										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-publish" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-external-link"></i> 게시</button>
 										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-delete" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"' ><i class="fa fa-trash-o"></i> 삭제</button>
