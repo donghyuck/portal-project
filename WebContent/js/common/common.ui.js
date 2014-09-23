@@ -162,7 +162,7 @@
 				//var $expandedItem = $items.eq( this.expandedIdx );
 				$expandedItem.css( 'height', $expandedItem.data( 'height' ) ).on( kendo.support.transitions.event, onEndFn );
 
-				if( ! kendo.transitions.support.css ) {
+				if( ! kendo.support.transitions.css ) {
 					onEndFn.call();
 				}
 			}, this ), 25);	
