@@ -156,7 +156,7 @@
 				//if( typeof this.$largeImg !== 'undefined' ) {
 				//	this.$largeImg.fadeOut( 'fast' );
 				//}
-				this.$previewEl.css( 'height', 0 );
+				$previewEl.css( 'height', 0 );
 				// the current expanded item (might be different from this.$item)
 				var $expandedItem = $items.eq( this.expandedIdx );
 				$expandedItem.css( 'height', $expandedItem.data( 'height' ) ).on( transEndEventName, onEndFn );
