@@ -77,8 +77,9 @@
 							showPageEditor();							
 						},			
 						'page-editor-close' : function(e){
-							$('#page-editor-panel').hide();	
-							common.ui.animate_v3($('#page-list-panel'), 'fadeInDown').show() ;					
+							$("#page-editor-panel").fadeOut("slow", function(){
+								$('#page-list-panel').fadeIn("slow");
+							});
 						},
 						back : function(e){
 							goWebsite();					
