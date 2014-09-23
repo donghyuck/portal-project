@@ -247,6 +247,7 @@
 								if( selectedCells.length > 0){
 									var selectedCell = this.dataItem( selectedCells );	
 									selectedCell.copy( panel.data().announce  );
+									alert( kendo.stringify(panel.data()) );
 									panel.data().set("visible", true);
 									panel.data().set("profilePhotoUrl", common.api.user.photoUrl (selectedCell.user, 150,150) );
 								}
