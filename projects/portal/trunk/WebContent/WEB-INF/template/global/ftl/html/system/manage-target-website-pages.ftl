@@ -498,8 +498,8 @@
 				
 				
 									<div class="btn-group">
-										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-publish" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-external-link"></i> 게시</button>
-										<button type="button" class="btn btn-info btn-page-control-group" data-action="page-delete" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"' ><i class="fa fa-trash-o"></i> 삭제</button>
+										<button type="button" class="btn btn-primary btn-page-control-group" data-action="page-publish" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-external-link"></i> 게시</button>
+										<button type="button" class="btn btn-danger btn-page-control-group" data-action="page-delete" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"' ><i class="fa fa-trash-o"></i> 삭제</button>
 									</div>
 								</div>																
 						</div>
