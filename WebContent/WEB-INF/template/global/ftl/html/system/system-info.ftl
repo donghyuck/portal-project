@@ -82,15 +82,15 @@
 									max: data.memoryInfo.maxHeap.megabytes,
 									ranges: [
 										{
-		                                    from:  ( data.memoryInfo.maxHeap.megabytes -  ( ( data.memoryInfo.maxHeap.megabytes / 10 ) * 2 ) ) ,
-		                                    to:  ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
-		                                    color: "#ff7a00"
-		                                }, {
-		                                    from: ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
-		                                    to: data.memoryInfo.maxHeap.megabytes,
-		                                    color: "#c20000"
-		                                }
-	                            	]			
+											from:  ( data.memoryInfo.maxHeap.megabytes -  ( ( data.memoryInfo.maxHeap.megabytes / 10 ) * 2 ) ) ,
+											to:  ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
+											color: "#ff7a00"
+										}, {
+											from: ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
+											to: data.memoryInfo.maxHeap.megabytes,
+											color: "#c20000"
+										}
+									]			
 								}
 							});						
 						}else{
@@ -111,15 +111,15 @@
 									max: data.memoryInfo.maxPermGen.megabytes,
 									ranges: [
 										{
-		                                    from:  ( data.memoryInfo.maxPermGen.megabytes -  ( ( data.memoryInfo.maxPermGen.megabytes / 10 ) * 2 ) ) ,
-		                                    to:  ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
-		                                    color: "#ff7a00"
-		                                }, {
-		                                    from: ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
-		                                    to: data.memoryInfo.maxPermGen.megabytes,
-		                                    color: "#c20000"
-		                                }
-	                            	]								
+											from:  ( data.memoryInfo.maxPermGen.megabytes -  ( ( data.memoryInfo.maxPermGen.megabytes / 10 ) * 2 ) ) ,
+											to:  ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
+											color: "#ff7a00"
+										}, {
+											from: ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
+											to: data.memoryInfo.maxPermGen.megabytes,
+											color: "#c20000"
+										}
+									]								
 								}
 							});		
 						}else{
@@ -191,7 +191,7 @@
 								     },
 								     columns: [
 								         { title: "속성", field: "name", locked: true, width:400 },
-								         { title: "값",   field: "value",  width:500 }
+								         { title: "값",   field: "value"}
 								     ],
 									pageable: false,
 									resizable: true,
@@ -508,9 +508,7 @@
 									</table>	
 								</div>
 								<div class="tab-pane" id="database-info">
-									<div class="panel-body no-padding">
-										<div id="database-info-grid" class="no-border"></div>
-									</div>
+									<div id="database-info-grid" class="no-border-hr no-border-b"></div>
 								</div>		
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
