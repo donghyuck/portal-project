@@ -144,13 +144,13 @@
 			var self = $(this),
 			$gallery = self.closest(".og-grid"),
 			$items = $gallery.children("li"),
-			$preview = $gallery.find(".og-expander"),
+			$previewEl = $gallery.find(".og-expander"),
 			onEndFn = function(){
 				if( kendo.support.transitions ){
 					$(this).off( kendo.support.transitions.event );				
 				}
 				$items.removeClass( 'og-expanded' );
-				$preview.remove();
+				$previewEl.remove();
 			};
 			setTimeout( $.proxy( function() {
 				//if( typeof this.$largeImg !== 'undefined' ) {
