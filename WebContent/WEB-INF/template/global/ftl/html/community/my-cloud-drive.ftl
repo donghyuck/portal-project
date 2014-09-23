@@ -682,7 +682,7 @@
 					<ul class="nav navbar-nav pull-right">
 						<li class="padding-xs-hr no-padding-r">
 							<div class="btn-group navbar-btn rounded-bottom">
-								<button type="button" class="btn-u btn-u-dark-blue" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
 								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 							</div>
 						</li>							
