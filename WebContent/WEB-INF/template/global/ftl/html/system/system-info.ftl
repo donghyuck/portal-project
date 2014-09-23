@@ -513,7 +513,8 @@
 									</div>
 								</div>		
 							</div><!-- tab contents end -->
-						</div>
+							<div class="panel-footer no-padding-vr"></div>
+						</div><!-- /.panel -->
 					</div>
 				</div>	
 			</div> <!-- / #content-wrapper -->
