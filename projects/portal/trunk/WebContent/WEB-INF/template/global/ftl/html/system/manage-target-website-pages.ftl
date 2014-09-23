@@ -77,8 +77,6 @@
 							showPageEditor();							
 						},			
 						'page-editor-close' : function(e){
-							//kendo.fx($("#page-editor-panel")).expand("vertical").duration(200).reverse();								
-							//kendo.fx($("#page-list-panel")).expand("vertical").duration(200).play();				
 							$('#page-editor-panel').hide();	
 							common.ui.animate_v3($('#page-list-panel'), 'fadeInDown').show() ;					
 						},
@@ -121,9 +119,9 @@
 		}
 		
 		function doPageEdit(){
-			//kendo.fx($("#page-list-panel")).expand("vertical").duration(200).reverse();
-			$("#page-list-panel").hide();
-			showPageEditor();							
+			$("#page-list-panel").fadeOut("slow", function(){
+				showPageEditor();		
+			});
 		}		
 		
 		function doPageDelete(){
