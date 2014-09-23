@@ -94,13 +94,7 @@
 						common.ui.buttonDisabled($(this));
 					}
 				});
-				common.ui.button({
-					renderTo: "button[data-action='show-notice-panel']",
-					click:function(e){
-						showNoticePanel();
-						common.ui.buttonDisabled($(this));
-					}
-				});			
+							
 				// END SCRIPT 				
 			}
 		}]);	
@@ -166,98 +160,7 @@
 				$( "#" +renderTo).slideDown();
 			} 			
 		}
-		<!-- ============================== -->
-		<!-- display notice  panel                                  -->
-		<!-- ============================== -->
-		function showNoticePanel(){
-			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
-			var panel = common.ui.panel({
-				appendTo: appendTo,
-				autoBind: true,
-				data: new kendo.data.ObservableObject({
-					announce : new Announce(),
-					visible : false,
-					profilePhotoUrl : "/images/common/anonymous.png"
-				}),
-				title: "공지 & 이벤트", 
-				actions:["Custom", "Minimize", "Close"],
-				template: kendo.template($("#notice-viewer-template").html()),
-				close:function(e){
-					common.ui.buttonEnabled($("button[data-action='show-notice-panel']"));
-				},   
-				custom: function(e){
-					var optTemplate = kendo.template($("#notice-options-template").html());
-					var heading =  e.target.element.children(".panel-heading");
-					var popover = heading.children(".popover");
-					if( popover.length === 0 ){
-						heading.append(optTemplate({}));
-						popover = e.target.element.find(".panel-heading .popover");
-						popover.find("button.close").click(function(e){
-							popover.hide();
-						});
-						var grid = e.target.element.find(".panel-body .notice-grid");
-						popover.find("input[name='notice-selected-target']").on(
-							"change", function(e){
-								if( grid.data('kendoGrid')){
-									grid.data('kendoGrid').dataSource.read({objectType: this.value });
-								}
-							}
-						);
-					}
-					popover.show();					
-				},
-				open: function(e){		
-					e.target.element.children(".panel-body").addClass("no-padding");
-					var grid = e.target.element.find(".notice-grid");					
-					if( grid.length > 0 && !grid.data('kendoGrid') ){
-						grid.kendoGrid({
-							dataSource : new kendo.data.DataSource({
-								transport: {
-									read: {
-										type : 'POST',
-										dataType : "json", 
-										url : '${request.contextPath}/community/list-announce.do?output=json'
-									},
-									parameterMap: function(options, operation) {
-										if( typeof options.objectType === "undefined"  ){
-											return {objectType: <#if action.user.anonymous >30<#else>1</#if> };	
-										}else{			
-											return options;		
-										} 
-									} 
-								},
-								pageSize: 10,
-								error:common.api.handleKendoAjaxError,
-								schema: {
-									data : "targetAnnounces",
-									model : Announce,
-									total : "totalAnnounceCount"
-								}
-							}),
-							sortable: true,
-							columns: [ 
-								{field:"creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}", attributes: { "class": "table-cell", style: "text-align: center " }} ,
-								{field:"subject", title: "제목"}
-							],
-							pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },									
-							selectable: "row",
-							change: function(e) { 
-								var selectedCells = this.select();
-								if( selectedCells.length > 0){
-									var selectedCell = this.dataItem( selectedCells );	
-									selectedCell.copy( panel.data().announce  );
-									panel.data().set("visible", true);
-									panel.data().set("profilePhotoUrl", common.api.user.photoUrl (selectedCell.user, 150,150) );
-								}
-							},
-							dataBound:function(e){
-								panel.data().set("visible", false);
-							}
-						});		
-					}
-				}
-			});
-		}
+
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
 		<!-- ============================== -->									
@@ -779,7 +682,6 @@
 					<ul class="nav navbar-nav pull-right">
 						<li class="padding-xs-hr no-padding-r">
 							<div class="btn-group navbar-btn rounded-bottom">
-								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o fa-lg"></i> <span class="hidden-xs">공지 & 이벤트</span></button>
 								<button type="button" class="btn-u btn-u-dark-blue" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
 								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 							</div>
