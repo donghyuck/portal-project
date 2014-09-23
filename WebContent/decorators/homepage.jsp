@@ -30,6 +30,7 @@
 	.header {
 		box-shadow : none;
 		-webkit-transform : none;
+		border-bottom: solid 2px #fff;
 	}				
 	.k-loading-image {
 		background-image: url('/images/common/loader/loading-transparent-bg.gif');
