@@ -493,10 +493,13 @@
 
 					<span class="panel-heading-text text-light-gray text-xs" style="font-size:11px;font-weight:600;margin-top:3px;">웹 사이트 상세로 이동&nbsp;&nbsp;</span>
 					<button type="button" class="btn btn-rounded btn-outline btn-info btn-control-group" data-action="back"><i class="fa fa fa-level-up fa-lg"></i></button>						
+		
+				
+				
+									<div class="btn-group">
 										<button type="button" class="btn btn-primary btn-page-control-group" data-action="page-publish" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-external-link"></i> 게시</button>
-										<button type="button" class="btn btn-danger btn-page-control-group" data-action="page-delete" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"' ><i class="fa fa-trash-o"></i> 삭제</button>		
-				
-				
+										<button type="button" class="btn btn-danger btn-page-control-group" data-action="page-delete" disabled="disabled" data-loading-text='<i class="fa fa-spinner fa-spin"' ><i class="fa fa-trash-o"></i> 삭제</button>
+									</div>
 								</div>																
 						</div>
 						<div class="panel-body padding-sm">
@@ -602,9 +605,11 @@
 		</script>				
 		<script id="webpage-name-template" type="text/x-kendo-template">
 			<span class="label label-primary label-lightweight">#= name #</span>
-			<div class="btn-group btn-group-xs">
 				<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
 				<a href="\\#" onclick="openPage(); return false;" class="btn btn-info btn-sm">미리보기</a>
+							
+			<div class="btn-group btn-group-xs">
+
 			</div>	
 			<!--
 			<div class="btn-group">
