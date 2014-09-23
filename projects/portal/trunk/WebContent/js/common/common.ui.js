@@ -147,9 +147,9 @@
 			$preview = $gallery.find(".og-expander"),
 			onEndFn = function(){
 				if( kendo.support.transitions ){
-					$( this ).off( kendo.support.transitions.event );				
+					$(this).off( kendo.support.transitions.event );				
 				}
-				$items.removeClass( 'og-expanded' );.
+				$items.removeClass( 'og-expanded' );
 				$preview.remove();
 			};
 			setTimeout( $.proxy( function() {
