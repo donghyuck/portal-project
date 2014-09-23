@@ -141,7 +141,7 @@
 		); 
 		
 		$(document).on("click", "span.og-close", function(e){
-			var self = this,
+			var self = $(this),
 			$gallery = self.closest(".og-grid"),
 			$items = $gallery.children("li"),
 			$preview = $gallery.find(".og-expander"),
