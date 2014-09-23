@@ -15,27 +15,21 @@
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
 			'css!${request.contextPath}/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css',
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			
+			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
-			
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
-			
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
-			
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
+			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',	
+			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
-			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 
-			
-			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
-			
+			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 			
+			'${request.contextPath}/js/common.admin/pixel.admin.min.js',			
 			'${request.contextPath}/js/common/common.models.js',       	    
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common/common.ui.admin.js',
-			
+			'${request.contextPath}/js/common/common.ui.admin.js',			
 			'${request.contextPath}/js/ace/ace.js'
 			],
 			complete: function() {
@@ -603,7 +597,7 @@
 		<div id="main-wrapper">
 			<#include "/html/common/common-system-navigation.ftl" >	
 			<div id="content-wrapper">
-				<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_1") />
+				<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_1_6") />
 				<ul class="breadcrumb breadcrumb-page">
 					<!--<div class="breadcrumb-label text-light-gray">You are here: </div>-->
 					<li><a href="#">Home</a></li>
