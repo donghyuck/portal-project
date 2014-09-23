@@ -190,8 +190,8 @@
 					                     error:handleKendoAjaxError
 								     },
 								     columns: [
-								         { title: "속성", field: "name", locked: true, width:400 },
-								         { title: "값",   field: "value", width: 400}
+								         { title: "속성", field: "name", width:400 },
+								         { title: "값",   field: "value"}
 								     ],
 									pageable: false,
 									resizable: true,
