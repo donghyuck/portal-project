@@ -79,7 +79,8 @@
 						'page-editor-close' : function(e){
 							$("#page-editor-panel").fadeOut("slow", function(){
 								$('#page-list-panel').fadeIn("slow");
-							});
+							});							
+								
 						},
 						back : function(e){
 							goWebsite();					
@@ -605,10 +606,9 @@
 		</script>				
 		<script id="webpage-name-template" type="text/x-kendo-template">
 			<span class="label label-primary label-lightweight">#= name #</span>
-				<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
-				<a href="\\#" onclick="openPage(); return false;" class="btn btn-info btn-sm">미리보기</a>			
 			<div class="btn-group btn-group-xs">
-
+				<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
+				<a href="\\#" onclick="openPage(); return false;" class="btn btn-info btn-sm">미리보기</a>
 			</div>	
 			<!--
 			<div class="btn-group">
