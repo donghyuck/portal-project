@@ -196,8 +196,7 @@
 									pageable: false,
 									resizable: true,
 									editable : false,
-									scrollable: true,
-									height: 300,
+									scrollable: false,
 									change: function(e) {}
 							});			
 							//$("#setup-props-grid").attr('style','');	    				
