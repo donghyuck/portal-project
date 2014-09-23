@@ -140,8 +140,35 @@
 			'</div>'
 		); 
 		
-		$(document).on("click", ".og-close", function(e){
-			$(this).closest(".og-expanded").remove();				
+		$(document).on("click", "span.og-close", function(e){
+			var self = this,
+			$gallery = self.closest(".og-grid"),
+			$items = $gallery.children("li"),
+			$preview = $gallery.find(".og-expander"),
+			onEndFn = function(){
+				if( kendo.support.transitions ){
+					$( this ).off( kendo.support.transitions.event );				
+				}
+				$items.removeClass( 'og-expanded' );.
+				$preview.remove();
+			};
+			setTimeout( $.proxy( function() {
+				//if( typeof this.$largeImg !== 'undefined' ) {
+				//	this.$largeImg.fadeOut( 'fast' );
+				//}
+				this.$previewEl.css( 'height', 0 );
+				// the current expanded item (might be different from this.$item)
+				var $expandedItem = $items.eq( this.expandedIdx );
+				$expandedItem.css( 'height', $expandedItem.data( 'height' ) ).on( transEndEventName, onEndFn );
+
+				if( ! kendo.transitions.css ) {
+					onEndFn.call();
+				}
+			}, this ), 25);	
+			
+			
+			
+			
 		});		
 		
 		
