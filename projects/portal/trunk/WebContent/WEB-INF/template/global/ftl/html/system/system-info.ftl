@@ -196,7 +196,8 @@
 									pageable: false,
 									resizable: true,
 									editable : false,
-									scrollable: false,
+									scrollable: true,
+									height: 600,
 									change: function(e) {}
 							});			
 							//$("#setup-props-grid").attr('style','');	    				
@@ -414,6 +415,7 @@
 													</table>		
 								</div>
 								<div class="tab-pane" id="setup-info">
+									<div class="panel-body padding-sm">
 									<div class="note note-default no-margin-b no-border-vr">
 										<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하세요.
 										<table class="table table-striped">
@@ -431,7 +433,8 @@
 															<td><code>true</code> ##</td>														
 														</tr>											
 													</tbody>
-									</table></div>								
+									</table></div>		
+									</div>						
 									<div id="setup-props-grid" class="no-border" ></div>		
 								</div>
 								<div class="tab-pane" id="system-info">
