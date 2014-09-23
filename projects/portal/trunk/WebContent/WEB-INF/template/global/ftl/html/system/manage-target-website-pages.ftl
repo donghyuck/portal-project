@@ -594,7 +594,7 @@
 		<script id="webpage-title-template" type="text/x-kendo-template">
 			#= title #
 			<div class="btn-group btn-group-xs pull-right">
-				<button type="button" class="btn btn-xs btn-info" onclick="javascript:doPageEdit(this); return false;">상세보기</button>
+				<button type="button" class="btn btn-xs btn-info" onclick="javascript:doPageEdit(this); return false;">편집</button>
 				<button type="button" class="btn btn-xs btn-info" onclick="javascript:openPage(this); return false;">상세보기</button>
 			</div>	
 		</script>				
