@@ -147,7 +147,7 @@
 			$previewEl = $gallery.find(".og-expander"),
 			$expandedItem = $gallery.children("li.og-expanded");
 			onEndFn = function(){
-					alert("ss"):
+					alert("ss");
 				if( kendo.support.transitions ){
 					$(this).off( kendo.support.transitions.event );				
 				}
