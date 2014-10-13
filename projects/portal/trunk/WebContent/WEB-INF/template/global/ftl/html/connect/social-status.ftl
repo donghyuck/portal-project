@@ -38,7 +38,7 @@
 				});
 				<#if profile ?? >
 				common.api.social.profile({
-					url : "/connect/${connect.providerId}/user/lookup.json"
+					url : "/connect/${connect.providerId}/user/lookup.json",
 					success : function( data ){
 						alert(kendo.stringify(data));
 					}
