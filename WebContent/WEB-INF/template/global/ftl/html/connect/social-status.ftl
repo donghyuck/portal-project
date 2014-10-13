@@ -18,7 +18,10 @@
 			'/js/bootstrap/3.1.0/bootstrap.min.js',
 			'/js/common/common.models.js',
 			'/js/common/common.api.js',
-			'/js/common/common.ui.js'],
+			'/js/common/common.ui.js',
+			'/js/common/common.ui.core.js',
+			'/js/common/common.ui.connect.js'
+			],
 			complete: function() {
 				// START SCRIPT	
 				common.ui.setup({
