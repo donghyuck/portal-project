@@ -36,6 +36,14 @@
 						e.token.copy(currentUser);
 					}				
 				});
+				<#if profile ?? >
+				common.api.social.profile({
+					url : "/connect/${connect.providerId}/user/lookup.json"
+					success : function( data ){
+						alert(kendo.stringify(data));
+					}
+				});
+				</#if>
 				// END SCRIPT            
 			}
 		}]);	
