@@ -5,6 +5,7 @@
 		<#compress>	
 		<link rel="stylesheet" href="/styles/font-awesome/4.0.3/font-awesome.min.css">
 		<link rel="stylesheet" href="/styles/common.themes/unify/plugins/brand-buttons/brand-buttons.min.css">
+		<link rel="stylesheet" href="/styles/jquery.jgrowl/jquery.jgrowl.min.css">
 		<script type="text/javascript">
 		<!--
 		yepnope([{
