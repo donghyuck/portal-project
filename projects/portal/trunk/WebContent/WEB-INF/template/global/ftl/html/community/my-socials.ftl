@@ -4,6 +4,8 @@
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<script type="text/javascript">
 		<!--
+		var jobs = [];
+		
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
@@ -21,6 +23,8 @@
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.core.js',
+			'${request.contextPath}/js/common/common.ui.connect.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],
 			complete: function() {			
@@ -40,54 +44,91 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					},				
-					shown : function(e){							
+					shown : function(e){					
 						createConnectedSocialNav();	
 					}
 				});										
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
-				createInfoPanel();
+				//createInfoPanel();
 			}
 		}]);	
 
 		<!-- ============================== -->
-		<!-- create media streams nav buttons                -->
+		<!-- create media connect nav buttons                -->
 		<!-- ============================== -->				
 		function createConnectedSocialNav(){				
-			var myStreams = $('#navbar-btn-my-streams');
-			myStreams.find('button[data-action="media-list"]').button('loading');				
-			if( myStreams.find('input').length == 0 ){
-				myStreams.data( 'dataSource', 
-					common.api.social.dataSource({ 
-						type : 'list',
-						dataBound: function(e){
-							myStreams.find('button[data-action="media-list"]').button('reset');
-						},
-						change : function ( e ) {
-							var template = kendo.template('<label class="btn btn-primary"><input type="checkbox" value="#:socialAccountId#"><i class="fa fa-#= serviceProviderName #"></i></label>');
-							var html = kendo.render(template, this.data());
-							myStreams.html(html);						
-							common.ui.handleActionEvents( myStreams, {
-								handlers : [{
-									selector: "input:checkbox",
-									event : 'change',
-									handler : function(){
-										var myStream = myStreams.data( 'dataSource' ).get(this.value);
-										if(this.checked){
-											displayMediaPanel( myStream );
-										}else{
-											closeMediaStream( myStream );
-										}
-									}	
-								}]
-							});
+			var renderTo = $('#navbar-btn-my-streams');	
+			var myConnectBtn = renderTo.find('button[data-action="media-list"]').button('loading');	
+			var myConnectDataSource = common.ui.connect.newConnectListDataSource({
+				change:function(e){
+					var $this = this;
+					var template = kendo.template('<label class="btn btn-primary"><input name="selectedSocialConnect" type="checkbox" value="#:socialConnectId#"><i class="fa fa-#= providerId #"></i></label>');
+					var html = kendo.render(template, $this.data());
+					renderTo.html(html);	
+					renderTo.find("label").first().addClass("rounded-bottom-left");
+					renderTo.find("label").last().addClass("rounded-bottom-right");
+					renderTo.find("input[type=checkbox]").bind("change", function(e){		
+						var myConnect = $this.get(this.value);
+						if($(this).is(":checked")){
+							showMediaPanel(myConnect);
+						}else{
+							
 						}
-					})
-				);				
-			}							
+					});								
+				}
+			}).read();		
 		}	
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
 		<!-- ============================== -->		
+		function showMediaPanel(connect){				
+			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
+			var panel = common.ui.panel({ 
+				appendTo: appendTo,
+				title: "<i class='fa fa-" + connect.providerId + " fa-fw'></i>" + connect.providerId  , 
+				actions:["Custom", "Minimize", "Refresh", "Close"],
+				data: connect,
+				template: kendo.template("<ul class='media-list no-border' style='min-height:150px;'></ul>"),
+				close: function(e) {
+					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
+					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("active");	
+				},
+				refresh: function(e){
+					var view = e.target.element.find(".panel-body ul.media-list");
+					if(view.data("kendoListView")){
+						view.data("kendoListView").dataSource.read();
+					}
+				},
+				custom: function(e){
+					alert("준비중입니다.");
+				},
+				open: function(e){
+					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
+					var view = e.target.element.find(".panel-body ul.media-list");
+					common.ui.connect.listview(view, connect, {	"change": function(e){
+							
+								this.element.find('button.custom-upload-by-url').click(function(e){
+									var btn = $(this) ;
+									btn.parent().toggleClass('active');
+									btn.button('loading');
+									common.api.uploadMyImageByUrl({
+										data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
+										success : function(response){
+											btn.attr("disabled", "disabled");
+											btn.addClass('hide');
+										},
+										always : function(){
+											btn.parent().toggleClass('active');
+											btn.button('reset');
+										}
+									});
+								});									
+						}
+					});
+				}
+			});	
+		}
+				
 		function mediaEditorSource (media){			
 			var modal = $('#media-editor-modal').data("kendoExtModalWindow");			
 			if(  typeof media === 'undefined' ){
@@ -102,6 +143,8 @@
 				}
 			}
 		}
+		
+
 				
 		function displayMediaPanel(media){				
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
@@ -395,8 +438,74 @@
 					<p><a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-info btn-sm" data-toggle="modal" data-target="\\#myProfileModal">프로필 보기</a></p>
 				</div>
 		</script>								
+		<script type="text/x-kendo-tmpl" id="twitter-timeline-template">
+			<li class="media">
+				<a class="pull-left" href="\\#">
+					#if(retweet){#
+					<img src="#: retweetedStatus.user.profileImageUrl #" alt="#: retweetedStatus.user.name#" class="media-object img-circle">
+					#}else{#
+					<img src="#: user.profileImageUrl #" alt="#: user.name#" class="media-object img-circle">
+					#}#
+				</a>
+				<div class="media-body">
+					<h5 class="media-heading">
+						 #if(retweet){# 
+						 <small><i class="fa fa-retweet"></i>&nbsp; #: user.name # 님이 리트윗함 </small> 
+						 <p>#= retweetedStatus.user.name # <small>@#= retweetedStatus.user.screenName #</small></p>
+						 #}else{#
+						 <p> #= user.name # <small>@#= user.screenName #</small></p>
+						 #}#						 
+					</h5>
+					<p>#= text #</p>
+					# for (var i = 0; i < entities.urls.length ; i++) { #
+					# var url = entities.urls[i] ; #	
+					<p><a href="#: url.expandedUrl  #" target="_blank"><i class="fa fa-link"></i> #: url.displayUrl #</a></p>
+					#}#
+					# for (var i = 0; i < entities.media.length ; i++) { #	
+					# var media = entities.media[i] ; #					
+					<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-responsive">
+					# } #
+										
+					<ul class="list-unstyled list-inline text-muted">
+                            <li><i class="fa fa-retweet"></i> #= retweetCount #</li>
+                            <li><i class="fa fa-star-o"></i> #= favoriteCount #</li>
+                     </ul>
+                        
+				</div>
+			</li>
+		</script>
+		<script type="text/x-kendo-tmpl" id="tumblr-dashboard-template">
+			<li class="media">
+				<a class="pull-left" href="\\#">
+					<img src="/connect/tumblr/#: blogName#/avatar?size=small" style="width:48px;" alt="#: blogName #" class="media-object img-rounded">
+				</a>
+				<div class="media-body">
+					<h5 class="media-heading">
+					#:blogName#
+					</h5>
+					<p>#:postUrl#</p>
+					#if (type == 'PHOTO') {#				
+					<div class="row">		
+						# for (var i = 0; i < photos.length ; i++) { #	
+						# var photo = photos[i] ; #
+						<div class="col-xs-#= common.ui.connect.colSize(photos) # no-padding">
+						<figure>
+						<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive">
+						<figcaption class="no-padding-hr"><button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url"  data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> My 클라우드로 복사</button></figcaption>
+						</figure>
+						</div>
+						#}#	
+					</div>
+					#}#
+					# if ( caption != null ) { #						
+					<p>#= caption #</p>
+					# } #
+					<p class="text-muted"><i class="fa fa-comment-o"></i>&nbsp; #= noteCount# </p>
+				</div>
+			</li>
+		</script>		
 		<#include "/html/common/common-homepage-templates.ftl" >		
-		<#include "/html/common/common-social-templates.ftl" >		
+	
 		<!-- END TEMPLATE -->
 	</body>    
 </html>

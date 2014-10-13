@@ -31,7 +31,7 @@
 					},
 					worklist:jobs
 				});	
-				      
+
 				// START SCRIPT					
 				var currentUser = new User();			
 				$("#account-navbar").extAccounts({
@@ -45,7 +45,7 @@
 				});
 				
 				<#if !action.user.anonymous ></#if>	
-				// END SCRIPT            
+				// END SCRIPT
 			}
 		}]);	
 		-->
