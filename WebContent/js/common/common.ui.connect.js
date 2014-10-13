@@ -156,7 +156,7 @@
 		var dataSource =  DataSource.create({
 			transport: {
 				read: {
-					type :GET,
+					type :POST,
 					dataType : JSON, 
 					url : '/connect/list.json'
 				} 
