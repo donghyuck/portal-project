@@ -244,8 +244,7 @@
 							selectable: "row",
 							change: function(e) { 
 								var selectedCells = this.select();
-								alert(selectedCells);
-								
+
 								if( selectedCells.length > 0){
 									var selectedCell = this.dataItem( selectedCells );	
 									

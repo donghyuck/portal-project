@@ -10,12 +10,15 @@
 			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
+			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jquery.plugins/jquery.ui.shake.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
+			'${request.contextPath}/js/jquery.jgrowl/jquery.jgrowl.min.js',
+			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
+			
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
@@ -23,7 +26,11 @@
 				
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'
+			'${request.contextPath}/js/common/common.ui.js',
+			
+			'${request.contextPath}/js/common/common.ui.core.js',
+			'${request.contextPath}/js/common/common.ui.community.js'
+			
 			],
 			complete: function() {
 				common.ui.setup({
@@ -121,14 +128,14 @@
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
 			<div id="signin-block" class="reg-block reg-block-transparent  pull-right animated swing">
-		        <div class="reg-block-header">		        
-		            <h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
-		            <ul class="social-icons text-center">
+				<div class="reg-block-header">		        
+					<h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
+					<ul class="social-icons text-center">
 		                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 		                <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
 		                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 		                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
-		            </ul>
+					</ul>
 		            <#assign webSite = action.webSite
 		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
 		            <#if isAllowedSignup >
