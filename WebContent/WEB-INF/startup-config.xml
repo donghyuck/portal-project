@@ -34,8 +34,10 @@ PC9saWNlbnNlPg==</file>
 			<freemarker>
 				<debug>true</debug>
 				<enabled>true</enabled>
-				<usingDatabase>true</usingDatabase>
-				<source>
+				<persistence>
+					<database>true</database>
+				</persistence>	
+				<source>				
 					<location>/WEB-INF/template/global/ftl/</location>
 				</source>
 			</freemarker>
@@ -57,15 +59,25 @@ PC9saWNlbnNlPg==</file>
 		<social>
 			<providers>
 				<twitter>
-					<callbackUrl>http://222.122.63.146/community/twitter-callback.do</callbackUrl>
+					<clientId>4XebpD1MW3CQ8Koh7naQpg</clientId>
+					<clientSecret>aFlMLXe7fsyE3EnZtTp1LdAHRqEMROqOFW8ldQNYc</clientSecret>
+					<callbackUrl>http://222.122.63.146/connect/twitter</callbackUrl>
+					<allowSignin>true</allowSignin>
+					<allowSignup>false</allowSignup>
 				</twitter>
 				<facebook>
-					<callbackUrl>http://222.122.63.146/community/facebook-callback.do</callbackUrl>
+					<clientId>251365428350280</clientId>
+					<clientSecret>704f08c943c6dfdba328e08a10550d38</clientSecret>
+					<callbackUrl>http://222.122.63.146/connect/facebook</callbackUrl>
 					<scope>export_stream, read_stream, photo_upload, publish_stream, user_about_me, user_activities, user_education_history, user_friends, user_photos, user_work_history, email</scope>
+					<allowSignin>true</allowSignin>
+					<allowSignup>true</allowSignup>
 				</facebook>	
 				<tumblr>
-					<callbackUrl>http://222.122.63.146/community/tumblr-callback.do</callbackUrl>
-				</tumblr>			
+					<clientId>VdE7COcqx3c8qiXg45AowMPausYVvYDpBSIrx1jI6gPj1X5V8T</clientId>
+					<clientSecret>SILFKJbnYTuFLWVhCnKiD1wpd4T6ahVC0HXTemu1AqT3X7iL0r</clientSecret>				
+					<callbackUrl>http://222.122.63.146/connect/tumblr</callbackUrl>
+				</tumblr>	
 			</providers>
 		</social>
 		<website>
@@ -107,7 +119,6 @@ PC9saWNlbnNlPg==</file>
 	<performance-monitoring>
 		<database>			
 			<schema>U_PORTAL</schema>
-			<!-- <catalog>U_PORTAL</catalog>		-->
 		</database>
 	</performance-monitoring>
 	
