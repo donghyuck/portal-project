@@ -14,6 +14,7 @@
 	OBJECT = 'object',
 	STRING = 'string',
 	GET = 'GET',
+	POST = 'POST',
 	OPEN = 'open', 
 	UNDEFINED = 'undefined',
 	CHANGE = "change";
@@ -125,7 +126,7 @@
 					type : JSON,
 					transport : {
 						read : {
-							type : GET,
+							type : POST,
 							url : _data.url || ""
 						},
 						parameterMap : _data.parameterMap
