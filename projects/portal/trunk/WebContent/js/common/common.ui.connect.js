@@ -9,6 +9,7 @@
 	Widget = kendo.ui.Widget, 
 	DataSource = kendo.data.DataSource,
 	proxy = $.proxy, 
+	
 	isFunction = kendo.isFunction,
 	OBJECT = 'object',
 	STRING = 'string',
@@ -52,7 +53,71 @@
 	    		target.set("properties", this.get("properties") );
 	    }
 	});
+
+	ui.connect.colSize = function(data){
+		if( data.length == 1 ){
+			return 12;
+		}else if ( data.length == 2 ){
+			return 6;			
+		}else if ( data.length == 3 ){
+			return 4 ;			
+		}else{
+			return 3 ;				
+		} 
+	}
 	
+	ui.connect.listview = function (renderTo, connect, options ){
+		if(!renderTo.data("kendoListView")){
+			var _data = {
+				parameterMap : function(options, operation) {
+					return {};
+				}
+			};
+			switch (connect.providerId){
+			case "facebook":
+				_data.url = "/connect/facebook/homefeed.json";
+				_data.template = kendo.template($("#facebook-homefeed-template").html());
+				break;
+			case "twitter":
+				_data.url = "/connect/twitter/home_timeline.json";
+				_data.template = kendo.template($("#twitter-timeline-template").html());
+				break;
+			case "tumblr":
+				_data.url = "/connect/tumblr/dashboard.json";
+				_data.template = kendo.template($("#tumblr-dashboard-template").html());
+				_data.data = "posts";
+				break;
+			}
+			var listview = renderTo.kendoListView({
+				dataSource: DataSource.create({
+					type : JSON,
+					transport : {
+						read : {
+							type : GET,
+							url : _data.url || ""
+						},
+						parameterMap : _data.parameterMap
+					},
+					schema:{
+						data : _data.data						
+					},
+					error : handleAjaxError,
+					requestStart : function() {
+						kendo.ui.progress(renderTo, true);
+					},
+					requestEnd : function() {
+						kendo.ui.progress(renderTo, false);
+					}
+				}),
+				template:_data.template
+			});	
+			if( isFunction(options.change)){
+				listview.bind("change", options.change);
+			}
+		}
+		return renderTo.data("kendoListView");
+	} 
+		
 	ui.connect.newConnectListDataSource = function(handlers){
 		var handlers = handlers || {};
 		var dataSource =  DataSource.create({
@@ -64,7 +129,7 @@
 				} 
 			},
 			pageSize: 10,
-			error:handleKendoAjaxError,				
+			error:handleAjaxError,				
 			schema: {
 				data : "connections",
 				model : ui.connect.SocialConnect
@@ -78,6 +143,8 @@
 		}
 		return dataSource;
 	}
+	
+
 	
 	ui.connect.ExtMediaStreamView = Widget.extend({
 		init : function(element, options) {
@@ -98,7 +165,7 @@
 			else
 				return options.id;
 		},
-		events : [ CHANGE ],
+		//events : [ CHANGE ],
 		_dataSource : function() {
 			var that = this;
 			var options = that.options;
@@ -152,9 +219,9 @@
 					});
 				}
 			}
-			that.dataSource.bind(CHANGE, function() {
-				that.refresh();
-			});
+			//that.dataSource.bind(CHANGE, function() {
+			//	that.refresh();
+			//});
 			if (that.options.autoBind) {
 				that.dataSource.fetch();
 			}
@@ -164,7 +231,7 @@
 			var options = that.options;
 			var view = that.dataSource.view();
 			that.element.html(kendo.render(options.template, view));					
-			that.trigger(CHANGE);					
+			//that.trigger(CHANGE);					
 		},
 		destroy : function() {
 			var that = this;
