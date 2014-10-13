@@ -78,9 +78,6 @@
 	};				
 	
 	
-	
-	
-	
 	common.api.isValidUrl = function (url){
 		  var urlregex = new RegExp("^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*$");
 		  return urlregex.test(url);
@@ -803,6 +800,7 @@
 		isFunction = kendo.isFunction,
 		UNDEFINED = 'undefined',
 		CHANGE = "change",
+		OPEN = "open",
 		POST = 'POST',
 		JSON = 'json',
 		PROFILE_URL_TEMPLATE = kendo.template("/community/get-#= media #-profile.do?output=json"),

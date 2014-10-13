@@ -2694,7 +2694,7 @@
 			var that = this,
 			wrapper = that.wrapper,
 			options = that.options;
-			wrapper.children(EXT_PANEL_BODY).html(options.content);
+			//wrapper.children(EXT_PANEL_BODY).html(options.content);
 			
 			if( isFunction(options.handlers.refresh) ){
 				options.handlers.refresh();				
