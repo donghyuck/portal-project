@@ -101,6 +101,7 @@
 	
 	ui.connect.listview = function (renderTo, connect, options ){
 		if(!renderTo.data("kendoListView")){
+			
 			var _data = {
 				parameterMap : function(options, operation) {
 					return {};
@@ -142,11 +143,9 @@
 						kendo.ui.progress(renderTo, false);
 					}
 				}),
+				autoBind: true,
 				template:_data.template
 			});	
-			if( isFunction(options.change)){
-				listview.bind("change", options.change);
-			}
 		}
 		return renderTo.data("kendoListView");
 	} 
