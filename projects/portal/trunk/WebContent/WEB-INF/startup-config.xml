@@ -69,7 +69,7 @@ PC9saWNlbnNlPg==</file>
 					<clientId>251365428350280</clientId>
 					<clientSecret>704f08c943c6dfdba328e08a10550d38</clientSecret>
 					<callbackUrl>http://222.122.63.146/connect/facebook</callbackUrl>
-					<scope>export_stream, read_stream, photo_upload, publish_stream, user_about_me, user_activities, user_education_history, user_friends, user_photos, user_work_history, email</scope>
+					<scope>publish_actions, email, user_likes, user_about_me, user_education_history, user_groups, user_hometown, user_interests, user_likes, user_location, user_photos, user_relationships, user_status, user_tagged_places, user_videos, user_website, user_work_history, read_friendlists, read_stream </scope>
 					<allowSignin>true</allowSignin>
 					<allowSignup>true</allowSignup>
 				</facebook>	
