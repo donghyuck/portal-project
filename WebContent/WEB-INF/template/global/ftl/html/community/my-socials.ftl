@@ -31,7 +31,7 @@
 			
 				common.ui.setup({
 					features:{
-						backstretch : true,
+						backstretch : false,
 						landing : true
 					}
 				});
@@ -105,9 +105,8 @@
 				open: function(e){
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
 					var view = e.target.element.find(".panel-body ul.media-list");
-					common.ui.connect.listview(view, connect, {	"change": function(e){
-							
-								this.element.find('button.custom-upload-by-url').click(function(e){
+					common.ui.connect.listview(view, connect, {	"change": function(e){							
+						this.element.find('button.custom-upload-by-url').click(function(e){
 									var btn = $(this) ;
 									btn.parent().toggleClass('active');
 									btn.button('loading');
@@ -504,6 +503,105 @@
 				</div>
 			</li>
 		</script>		
+		<script type="text/x-kendo-tmpl" id="facebook-homefeed-template">
+		<li class="media">
+			<a class="pull-left" href="\\#">
+				<img src="http://graph.facebook.com/#=from.id#/picture" style="width:48px;" alt="#: from.name #" class="media-object img-circle">
+			</a>
+			<div class="media-body">
+				<h5 class="media-heading">
+				#:from.name# #if( to != null ){ # <i class="fa fa-angle-right"></i>  #:to[0].name # #}#
+				</h5> 	
+				# if ( story != null ) { #
+				<div style="padding-bottom:10px;">						
+				<span class="label label-blue rounded">#: story #</span>
+				</div>
+				# } #		
+									
+				# if ( type === 'STATUS' ) { #
+					#= id.replace( from.id + "_" , "") #
+				# } else if (type === 'LINK' ) { #
+					# if ( picture != null ){#
+					<a href="#: link #" target="_blank;">	
+					<img src="#: picture  #" alt="media" class="padding-sm">
+					</a>
+					#}else{#
+					<a href="#: link #" target="_blank;">#: link #</a>
+					#}#
+					#if (caption !=null ) { #
+					<blockquote>
+						<p>#: caption #</p>
+						#if ( description != null ) { #
+						<footer>
+							#: description #
+						</footer>
+						# } #	
+					</blockquote>
+					# } #		
+				#} else if (type === 'PHOTO' ) {#			
+					#if ( description != null ) { #
+					<p>#: description #<p>		
+					# }#						
+					# if ( picture != null ){#
+					<img src="#: picture  #" alt="media" class="img-responsive padding-sm">
+					# }#												
+				# } #	
+				
+				# if ( message != null ) { #						
+				<p>#: message #</p>
+				# } #	
+			
+				#if ( commentCount > 0 || likes != null  ) { #
+				<div class="panel-group" id="accordion-#= id #">
+			
+					#if ( likes.length > 0  ) { #
+					<div class="panel panel-default no-border rounded-2x">
+						<div class="panel-heading comments-heading">	
+							<a data-toggle="collapse" data-parent="\\#accordion-#= id #" href="\\#likes-#= id #">
+								<h4 class="panel-title"><i class="fa fa-thumbs-up"></i> <small>좋아요 (#=  likes.length #)</small></h4>
+							</a>
+						</div>	
+						<div id="likes-#= id #" class="panel-collapse collapse">
+							<div class="panel-body">
+								# for (var i = 0; i < likes.length ; i++) { #	
+									<img class="img-circle" src="http://graph.facebook.com/#=likes[i].id#/picture" alt="#=likes[i].name#">
+								# } #
+							</div>
+						</div>
+					</div>
+					# } #
+			
+					#if ( commentCount > 0  ) { #
+					<div class="panel panel-default no-border rounded-2x">
+						<div class="panel-heading comments-heading">	
+							<a data-toggle="collapse" data-parent="\\#accordion-#= id #" href="\\#comments-#= id #">
+								<h4 class="panel-title"><i class="fa fa-comment"></i> <small>댓글 (#= commentCount  #)</small></h4>
+							</a>
+						</div>
+						<div id="comments-#= id #" class="panel-collapse collapse">
+							<div class="panel-body">
+							# for (var i = 0; i < commentCount ; i++) { #	
+								# var comment = comments[i] ; #	
+									<div class="media">
+										<a class="pull-left" href="\\#">
+											<img class="media-object img-circle" src="http://graph.facebook.com/#=comment.from.id#/picture" alt="#=comment.from.name#">
+										</a>	
+										<div class="media-body">
+											 <h6 class="media-heading">#: comment.from.name # <i class="fa fa-thumbs-up"></i> #:comment.likesCount#</h6>
+											 <div class="text-muted">#=comment.message#</div>
+										</div>				
+									</div>								
+								# } #							
+							</div>
+						</div>
+					</div>
+					# } #	
+				</div>
+				# } #
+					
+			</div>
+		</li>
+		</script>			
 		<#include "/html/common/common-homepage-templates.ftl" >		
 	
 		<!-- END TEMPLATE -->
