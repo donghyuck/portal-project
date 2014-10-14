@@ -49,7 +49,25 @@
 					}
 				});										
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
-				//createInfoPanel();
+				
+				$(document).on("click","[data-upload='photo']", function(e){		
+				
+					var btn = $(this) ;
+					btn.parent().toggleClass('active');
+					btn.button('loading');
+					common.api.uploadMyImageByUrl({
+										data : {sourceUrl: btn.data('source'), imageUrl: btn.data('url')} ,
+										success : function(response){
+											btn.attr("disabled", "disabled");
+											btn.addClass('hide');
+										},
+										always : function(){
+											btn.parent().toggleClass('active');
+											btn.button('reset');
+										}
+									});
+					
+				});
 			}
 		}]);	
 
@@ -105,25 +123,7 @@
 				open: function(e){
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
 					var view = e.target.element.find(".panel-body ul.media-list");
-					common.ui.connect.listview(view, connect, {	"change": function(e){							
-						this.element.find('button.custom-upload-by-url').click(function(e){
-									var btn = $(this) ;
-									btn.parent().toggleClass('active');
-									btn.button('loading');
-									common.api.uploadMyImageByUrl({
-										data : {sourceUrl: btn.attr('data-source'), imageUrl: btn.attr('data-url')} ,
-										success : function(response){
-											btn.attr("disabled", "disabled");
-											btn.addClass('hide');
-										},
-										always : function(){
-											btn.parent().toggleClass('active');
-											btn.button('reset');
-										}
-									});
-								});									
-						}
-					});
+					common.ui.connect.listview( view, connect );
 				}
 			});	
 		}
@@ -490,7 +490,7 @@
 						<div class="col-xs-#= common.ui.connect.colSize(photos) # no-padding">
 						<figure>
 						<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive">
-						<figcaption class="no-padding-hr"><button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url"  data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> My 클라우드로 복사</button></figcaption>
+						<figcaption class="no-padding-hr"><button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url" data-upload="photo" data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> My 클라우드로 복사</button></figcaption>
 						</figure>
 						</div>
 						#}#	
