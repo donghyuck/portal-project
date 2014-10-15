@@ -5,11 +5,11 @@
 ;(function($, undefined) {
 	var ui = common.ui, 	
 	handleAjaxError = ui.handleAjaxError,
+	defined = ui.defined,
 	extend = $.extend,	
 	Widget = kendo.ui.Widget, 
 	DataSource = kendo.data.DataSource,
-	proxy = $.proxy, 
-	
+	proxy = $.proxy, 	
 	isFunction = kendo.isFunction,
 	OBJECT = 'object',
 	STRING = 'string',
@@ -67,7 +67,31 @@
 		} 
 	}
 	
-	ui.connect.profile = function( options ){
+	ui.connect.userProfile = function( providerId, userId, callback, error ){
+		var options = options || {};		
+		switch (providerId){
+			case "facebook":
+				options.url = "/connect/facebook/user/lookup.json";
+				break;			
+		}
+		
+		$.ajax({
+			type : POST,
+			url : options.url,
+			data : { userId : userId },
+			success : function(response){
+				if( !defined(response.error) ){
+					if( isFunction( callback ) ){	
+						callback( response );
+					}
+				}				
+			},
+			error: handleAjaxError ,
+			dataType : JSON
+		});
+	}
+	
+	ui.connect.profile = function( options ){	
 		$.ajax({
 			type : POST,
 			url : options.url,
