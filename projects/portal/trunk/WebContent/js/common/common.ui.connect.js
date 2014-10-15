@@ -55,7 +55,59 @@
 	    }
 	});
 
-	ui.connect.colSize = function(data){
+	ui.connect.row = function(current, totalSize){
+		if( current == 0 )
+			return true;
+		else if( totalSize >= 3 && ( current == 1 || current == 4 || current == 5 || current == 7) )
+			return true ;		
+		return false;
+	}
+
+	ui.connect.columns = function(current, totalSize){
+		if( totalSize == 1 )
+			return 12;
+		else if ( totalSize == 2)
+			return 6;
+		else if ( totalSize == 3 ){
+			if( current == 0 ){
+				return 12;
+			}else{
+				return 6;
+			}
+		}else if (totalSize > 3 && totalSize < 6){
+			if( current == 0 ){
+				return 12;
+			}else if ( current > 0 && current < 4 ){
+				return 4;				
+			}else{
+				return 12;
+			}				
+		}else if ( totalSize == 6 ){
+			if( current == 0 ){
+				return 12;
+			}else if ( current > 0 && current < 4 ){
+				return 4;				
+			}else{
+				return 6;
+			}
+		}else{
+			if( current == 0 ){
+				return 12;
+			}else if ( current > 0 && current < 4 ){
+				return 4;				
+			}else if (current > 3 && current < 6 ){
+				return 6;
+			}else if ( current == 7 ){
+				return 12;
+			}else{
+				return 4;
+			}			
+		}		
+		return false;
+	}
+	
+	
+	ui.connect.colSize = function(totalSize, current){
 		if( data.length == 1 ){
 			return 12;
 		}else if ( data.length == 2 ){
