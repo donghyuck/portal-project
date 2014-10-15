@@ -488,8 +488,10 @@
 						# var photo = photos[i] ; #
 						<div class="col-xs-#= common.ui.connect.colSize(photos) # no-padding">
 						<figure>
-						<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive">
-						<figcaption class="no-padding-hr"><button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url" data-upload="photo" data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> My 클라우드로 복사</button></figcaption>
+							<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive">
+							<figcaption class="no-padding-hr">
+								<button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url" data-upload="photo" data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> #if(common.ui.connect.colSize(photos)<3){ # My 클라우드로 복사 #}#</button>
+							</figcaption>
 						</figure>
 						</div>
 						#}#	
