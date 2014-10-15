@@ -8,7 +8,7 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 						
@@ -70,7 +70,6 @@
 				});
 			}
 		}]);	
-
 		<!-- ============================== -->
 		<!-- create media connect nav buttons                -->
 		<!-- ============================== -->				
@@ -510,11 +509,17 @@
 			</a>
 			<div class="media-body">
 				<h5 class="media-heading">
-				#:from.name# #if( to != null ){ # <i class="fa fa-angle-right"></i>  #:to[0].name # #}#
+					#:from.name#
+					#if( to != null ){ # 
+					<i class="fa fa-angle-right"></i>  #:to[0].name # 					
+					#}# 
+					#if( application !=null ){# 
+					<span class="label label-success"><i class="fa fa-mobile"></i> #:application.name#  </span> 
+					#}#
 				</h5> 	
 				# if ( story != null ) { #
 				<div style="padding-bottom:10px;">						
-				<span class="label label-blue rounded">#: story #</span>
+				<span class="label label-blue rounded"><i class="fa fa-quote-left"></i> #: story # <i class="fa fa-quote-right"></i></span>
 				</div>
 				# } #		
 									
