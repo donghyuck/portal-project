@@ -25,7 +25,8 @@
 <style>
 
 	.header {
-		border-bottom: 0px;
+		background rgba(0,0,0,0.6);
+		border-bottom: solid 2px #444;
 	}	
 				
 </style>
