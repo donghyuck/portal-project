@@ -11,7 +11,7 @@
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-						
+			'css!${request.contextPath}/styles/codrops/codrops.rfgrid.css',			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
@@ -482,21 +482,23 @@
 					#:blogName#
 					</h5>
 					<p>#:postUrl#</p>
-					#if (type == 'PHOTO') {#				
-					<div class="row">		
+					#if (type == 'PHOTO' ) {#		
+						# var totalPhoto = photos.length ; #
+						<div class="row no-margin">
 						# for (var i = 0; i < photos.length ; i++) { #	
-						# var photo = photos[i] ; #
-						# var colSize =common.ui.connect.colSize(photos) ;#
-						<div class="col-xs-#= colSize # no-padding">
-						<figure>
-							<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive">
-							<figcaption class="no-padding-hr">
-								<button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url" data-upload="photo" data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> #if( colSize > 4 ){ # My 클라우드로 복사 #}#</button>
-							</figcaption>
-						</figure>
+							# var photo = photos[i] ; #
+							
+						<div class="col-xs-#=common.ui.connect.columns(i, totalPhoto)# no-padding">
+							<figure>
+							<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive lightbox" style="padding:0px 1px 1px 0px;" data-ride="lightbox">
+								<figcaption class="no-padding-hr">
+									<button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url" data-upload="photo" data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> #if( common.ui.connect.columns(i, totalPhoto) > 4 ){ # My 클라우드로 복사 #}#</button>
+								</figcaption>
+							</figure>
+						</div>	
+											
+						#}#
 						</div>
-						#}#	
-					</div>
 					#}#
 					# if ( caption != null ) { #						
 					<p>#= caption #</p>
