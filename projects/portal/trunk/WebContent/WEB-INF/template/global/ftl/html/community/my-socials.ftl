@@ -11,6 +11,7 @@
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
+			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',	
 			'css!${request.contextPath}/styles/codrops/codrops.rfgrid.css',			
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
@@ -20,6 +21,7 @@
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
+			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
@@ -32,6 +34,7 @@
 				common.ui.setup({
 					features:{
 						backstretch : false,
+						lightbox : true,
 						landing : true
 					}
 				});
@@ -486,12 +489,11 @@
 						# var totalPhoto = photos.length ; #
 						<div class="row no-margin">
 						# for (var i = 0; i < photos.length ; i++) { #	
-							# var photo = photos[i] ; #
-							
+							# var photo = photos[i] ; #							
 						<div class="col-xs-#=common.ui.connect.columns(i, totalPhoto)# no-padding">
 							<figure>
 							<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive lightbox" style="padding:0px 1px 1px 0px;" data-ride="lightbox">
-								<figcaption class="no-padding-hr">
+								<figcaption class="no-padding-hr" style="height:10px;">
 									<button type="button" class="btn btn-primary btn-sm rounded-buttom-right custom-upload-by-url" data-upload="photo" data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> #if( common.ui.connect.columns(i, totalPhoto) > 4 ){ # My 클라우드로 복사 #}#</button>
 								</figcaption>
 							</figure>
