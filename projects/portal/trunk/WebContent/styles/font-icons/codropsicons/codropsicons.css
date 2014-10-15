@@ -1,0 +1,13 @@
+/* 
+ * codropsicons
+ */
+@font-face {
+  font-family: 'codropsicons'  ;
+  font-style: normal;
+  font-weight: normal;
+  src: url('codropsicons/codropsicons.eot');
+  src: url('codropsicons/codropsicons.eot?#iefix') format('embedded-opentype'),
+       url('codropsicons/codropsicons.woff') format('woff'),
+       url('codropsicons/codropsicons.ttf') format('truetype'),
+       url('codropsicons/codropsicons.svg#codropsicons') format('svg'); 
+}
