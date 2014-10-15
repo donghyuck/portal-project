@@ -59,11 +59,9 @@
 		if( data.length == 1 ){
 			return 12;
 		}else if ( data.length == 2 ){
-			return 6;			
-		}else if ( data.length == 3 ){
-			return 4 ;			
+			return 6;				
 		}else{
-			return 3 ;				
+			return 4 ;				
 		} 
 	}
 	
