@@ -37,7 +37,8 @@
 ;(function($, undefined) {
 	var ui = common.ui,
 	isFunction = kendo.isFunction,
-	extend = $.extend;
+	extend = $.extend,
+	UNDEFINED = "undefined";
 	
 	function handleAjaxError(xhr) {
 		var message = "";		
@@ -69,6 +70,10 @@
 			}
 		});
 	};
+	
+	function defined(x) {
+		return (typeof x != UNDEFINED);
+	};
 
 	common.ui.bind = function(selector, options) {
 		options = options || {};
@@ -95,6 +100,7 @@
 	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
+		defined : common.ui.defined || defined,
 		bind : common.ui.bind
 	});	
 })(jQuery);
