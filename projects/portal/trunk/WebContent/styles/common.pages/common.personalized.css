@@ -14,6 +14,40 @@
 	min-height : 300px;
 }
 
+.breadcrumbs-personalized{
+	background: transparent;
+	border: 0px;
+	padding: 0 10px 0px 0;
+}
+
+.overlay-zoom .zoom-icon {
+	left:0;
+}
+/**
+* image grid
+*/
+
+.og-expander-inner {
+	/*padding:0px;*/
+}
+
+.og-details {
+	width : 50%;
+}
+
+.og-fullimg {
+	/*text-align:left;	
+	width : 80%;*/
+}
+
+.one-page.one-page-v2 {
+	display: block;
+	position: relative;
+	width: 100%;
+	top: -42px;
+	z-index: 2;
+}
+
 /**
 * image broswer .. 
 */
