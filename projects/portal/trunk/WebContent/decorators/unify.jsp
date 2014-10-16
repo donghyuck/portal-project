@@ -25,10 +25,24 @@
 <style>
 
 	.header {
-		background rgba(0,0,0,0.6);
-		border-bottom: solid 2px #444;
+		border-bottom: solid 2px #F5F5F5;
 	}	
-				
+	
+	.header .navbar-brand {
+		height:20px;
+	}
+	.header .navbar-default {
+		background: #fff;
+	}
+	
+	.header .navbar-default .navbar-nav > li > a {
+		color: #444;
+	}
+	
+	.k-loading-image {
+		background-image: url('/images/common/loader/loading-transparent-bg.gif');
+	}
+					
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />" class="<decorator:getProperty property="body.class" default="" />">
