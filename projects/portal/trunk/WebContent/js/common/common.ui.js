@@ -121,24 +121,29 @@
 		});
 	}
 	
-	common.ui.thumbnailexpanding =  function(){
+	common.ui.thumbnailexpanding =  function( options ){
 		var previewHeight = 500,
-		marginExpanded = 10,
-		template = kendo.template(
-			'<div class="og-expander animated slideDown">' +
-			'<div class="og-expander-inner">' + 
-			'<span class="og-close"></span>' + 
-			'<div class="og-fullimg">' +
-			'<div class="og-loading" style="display: none;"></div>'+
-			'<img src="#= src #" style="display: inline;" class="animated fadeIn" ></div>' + 
-			'<div class="og-details">' + 
-			'<h3></h3>' + 
-			'<p></p>' + 
-			'<a href="\\#">Visit website</a>' +
-			'</div>' +
-			'</div>' +
-			'</div>'
-		); 
+		marginExpanded = 10;
+		
+		options = options || {};
+		
+		if(!defined(options.template)){
+			options.template = kendo.template(
+					'<div class="og-expander animated slideDown">' +
+					'<div class="og-expander-inner">' + 
+					'<span class="og-close"></span>' + 
+					'<div class="og-fullimg">' +
+					'<div class="og-loading" style="display: none;"></div>'+
+					'<img src="#= src #" style="display: inline;" class="animated fadeIn" ></div>' + 
+					'<div class="og-details">' + 
+					'<h3></h3>' + 
+					'<p></p>' + 
+					'<a href="\\#">Visit website</a>' +
+					'</div>' +
+					'</div>' +
+					'</div>'
+				); 
+		}
 		
 		$(document).on("click", "span.og-close", function(e){
 			var self = $(this),
@@ -146,8 +151,7 @@
 			$items = $gallery.children("li"),
 			$previewEl = $gallery.find(".og-expander"),
 			$expandedItem = $gallery.children("li.og-expanded");
-			onEndFn = function(){
-					
+			onEndFn = function(){					
 				if( kendo.support.transitions ){
 					$(this).off( kendo.support.transitions.event );				
 				}
@@ -162,36 +166,28 @@
 				// the current expanded item (might be different from this.$item)
 				//var $expandedItem = $items.eq( this.expandedIdx );
 				$expandedItem.css( 'height', '0px' ).on( kendo.support.transitions.event, onEndFn );
-
 				if( ! kendo.support.transitions.css ) {
 					onEndFn.call();
 				}
 			}, this ), 25);	
-		});		
-		
-		
+		});
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
 			var $gallery = $( $this.data("target-gallery") );
 			var $items = $gallery.children("li");
-			var $parent = $this.parent();			
-			
+			var $parent = $this.parent();						
 			var data = {
 				src : $this.data("largesrc") ,	
 				title : $this.data("title"),
 				description : $this.data("description")
-			};
-			
-			
+			};			
 			$gallery.children("li.og-expanded").removeClass("og-expanded");
-			$parent.addClass( 'og-expanded' );						
-						
+			$parent.addClass( 'og-expanded' );							
 			var height = $this.height();
-			var position = $parent.offset().top;
-			
+			var position = $parent.offset().top;			
 			var preview = $gallery.find(".og-expander");
 			if(preview.length === 0){
-				$parent.append(template(data));	
+				$parent.append(options.template(data));	
 				$items.css("height", "");
 				preview = $parent.children(".og-expander").css("height", previewHeight )
 				$parent.css("height", previewHeight + height + marginExpanded );
@@ -200,7 +196,7 @@
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
 				preview.slideUp(150, function(){
 					preview.remove();
-					$parent.append(template(data));	
+					$parent.append(options.template(data));	
 					$items.css("height", "");
 					preview = $parent.children(".og-expander").css("height", previewHeight );					
 					$parent.css("height", previewHeight + height + marginExpanded );
@@ -275,31 +271,45 @@
 	}
 	
 	common.ui.lightbox = function(){
+		
 		if(!defined($.magnificPopup)) {
 			return false;
 		}
+		
 		$(document).on("click","[data-ride='lightbox']", function(e){					
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
 				config = jQuery.extend({}, DEFAULT_LIGHTBOX_OPTIONS, opts, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_OPTIONS;
-			}						
-			if( $this.prop("tagName").toLowerCase() == "img" ){				
-				config.items = {
-					src : $this.attr("src")
-				}				
-			}else{
-				if( $this.children("img").length > 0  ){
-					config.items = [];
-					$.each( $this.children("img"), function( index,  item){
+			}		
+			
+			if( $this.data("selector") ){
+				config.items = [];
+				$.each( $($this.data("selector") ) , function( index , value ){
+					var $that = $(value);
+					if( $that.data("largesrc") ){
 						config.items.push({
-							src : $(item).attr("src")
-						});
-					});	
+							src : $that.data("largesrc")
+						});						
+					}
+				});
+			}else{			
+				if( $this.prop("tagName").toLowerCase() == "img" ){				
+					config.items = {
+						src : $this.attr("src")
+					}				
+				}else{
+					if( $this.children("img").length > 0  ){
+						config.items = [];
+						$.each( $this.children("img"), function( index,  item){
+							config.items.push({
+								src : $(item).attr("src")
+							});
+						});	
+					}
 				}
 			}
-			
 			$.magnificPopup.open(config);
 		} );	
 	}
