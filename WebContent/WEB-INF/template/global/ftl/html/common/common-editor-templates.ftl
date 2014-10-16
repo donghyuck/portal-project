@@ -77,34 +77,38 @@
 					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
 					<h5 class='modal-title' id=#: title_guid #>이미지 삽입</h5>
 				</div>
-				<div class='modal-body'>		
-					<div class="row">
-						<div class="col-sm-3">
+				<div class="modal-body no-padding">		
+					<div class="row no-margin-hr">
+						<div class="col-sm-3 no-padding">
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
-							  <li><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
-							  <li><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li><a href="\\##=website_guid#" data-toggle="tab">My 사이트에서 선택</a></li>
-							  <li><a href="\\##=domain_guid#" data-toggle="tab">My 회사에서 선택</a></li>
-							  <li><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
+							  <li class="no-margin-t"><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=website_guid#" data-toggle="tab">My 사이트에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=domain_guid#" data-toggle="tab">My 회사에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
-						<div class="col-sm-9">
+						<div class="col-sm-9 padding-sm" style="border-left: 1px solid \\#e5e5e5; background:\\#f5f5f5; min-height:250px;">
 							<!-- Tab panes -->
 							<div class="tab-content">
 								<div class="tab-pane fade  active" id=#:upload_guid#>
 									<div class="text-primary">
 										<h5 ><i class="fa fa-upload"></i> <strong>업로드</strong>&nbsp;<small> 삽입할 이미지를 선택하세요.</small></h5>
 										<div class="panel panel-default">			
-											<div class="panel-body">
-												<p class="text-muted">
-													<small><i class="fa fa-info"></i> 업로드 버튼을 클릭하여 여러개의 파일을 한번에 업로드할 수 있습니다.</small>
-													<span class="pull-right"><button type="button" class="btn btn-info btn-sm btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> &nbsp; 이미지 업로드</button></span>			
-												</p>
-												<div id="#=upload_guid#-selected" class="tag-box tag-box-v4" style="margin: 20px 0 0 0;"></div>
+											<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">
+												<div class="row padding-sm">
+													<div class="col-xs-8">
+														<p class="text-muted">
+															<small><i class="fa fa-info"></i> 업로드 버튼을 클릭하여 여러개의 파일을 한번에 업로드할 수 있습니다.</small>		
+														</p>
+													</div>
+													<div class="col-xs-4"><button type="button" class="btn btn-info btn-sm btn-block btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> &nbsp; 이미지 업로드</button></div>
+												</div>
+												<div id="#=upload_guid#-selected" class="funny-boxes funny-boxes-top-sea no-margin"></div>
 											</div>
-											<div class="panel-body scrollable color4" style="max-height:450px;">
-												<div id="#=upload_guid#-list-view" class="color4" style="padding:0px; border: 0px; min-height: 200px;"></div>
+											<div class="panel-body scrollable" style="max-height:450px; padding:5px;">
+												<div id="#=upload_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 											</div>	
 											<div class="panel-footer" style="padding:0px;">
 												<div id="#=upload_guid#-list-pager" class="k-pager-wrap"></div>
@@ -113,15 +117,13 @@
 									</div>														  
 								</div>
 								<div class="tab-pane fade" id=#:my_guid#>
-									<div class="page-header padding-left-10 text-primary">
-										<h5 ><i class="fa fa-picture-o"></i> <strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
-									</div>
+									<h5 ><i class="fa fa-picture-o"></i> <strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 									<div class="panel panel-default panel-flat">								
-										<div class="panel-body">	
-											<div id="#=my_guid#-selected" class="tag-box tag-box-v4" style="margin: 0 0 0 0;"></div>
+										<div class="panel-body no-padding"  style="border-bottom: 1px solid \\#e5e5e5;">	
+											<div id="#=my_guid#-selected" class="funny-boxes no-margin"></div>
 										</div>
 										<div class="panel-body scrollable color4" style="max-height:450px;">
-											<div id="#=my_guid#-list-view" class="color4" style="padding:0px; border: 0px; min-height: 200px;"></div>
+											<div id="#=my_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 										</div>	
 										<div class="panel-footer" style="padding:0px;">
 											<div id="#=my_guid#-list-pager" class="k-pager-wrap"></div>
@@ -129,15 +131,13 @@
 									</div>																											  
 								</div>
 							  <div class="tab-pane fade" id=#:domain_guid#>
-								<div class="page-header padding-left-10 text-primary">
-									<h5 ><i class="fa fa-picture-o"></i> <strong>도메인 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
-								</div>		
+								<h5 ><i class="fa fa-picture-o"></i> <strong>도메인 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 								<div class="panel panel-default panel-flat">			
-									<div class="panel-body">	
-										<div id="#=domain_guid#-selected" class="tag-box tag-box-v4" style="margin: 0 0 0 0;"></div>
+									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
+										<div id="#=domain_guid#-selected" class="funny-boxes no-margin"></div>
 									</div>													
 									<div class="panel-body scrollable color4" style="max-height:450px;">
-										<div id="#=domain_guid#-list-view" class="color4" style="padding:0px; border: 0px; min-height: 200px;"></div>
+										<div id="#=domain_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
 									<div class="panel-footer" style="padding:0px;">
 										<div id="#=domain_guid#-list-pager" class="k-pager-wrap"></div>
@@ -145,15 +145,13 @@
 								</div>														  
 							  </div>
  							  <div class="tab-pane fade" id=#:website_guid#>
-								<div class="page-header padding-left-10 text-primary">
-									<h5 ><i class="fa fa-picture-o"></i> <strong>사이트 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
-								</div>		
+								<h5 ><i class="fa fa-picture-o"></i> <strong>사이트 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>	
 								<div class="panel panel-default panel-flat">								
-									<div class="panel-body">	
-										<div id="#=website_guid#-selected" class="tag-box tag-box-v4" style="margin: 0 0 0 0;"></div>
+									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
+										<div id="#=website_guid#-selected" class="funny-boxes no-margin"></div>
 									</div>									
 									<div class="panel-body scrollable color4" style="max-height:450px;">
-										<div id="#=website_guid#-list-view" class="color4" style="padding:0px; border: 0px; min-height: 200px;"></div>
+										<div id="#=website_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
 									<div class="panel-footer" style="padding:0px;">
 										<div id="#=website_guid#-list-pager" class="k-pager-wrap"></div>
@@ -161,9 +159,7 @@
 								</div>														  
 							  </div>							  
 							  <div class="tab-pane fade" id=#:url_guid#>
-								<div class="page-header padding-left-10 text-primary">
-									<h5 ><i class="fa fa-link"></i> <strong>URL 이미지</strong>&nbsp;<small>삽입할 이미지 URL 경로를 입력하세요.</small></h5>
-								</div>
+								<h5 ><i class="fa fa-link"></i> <strong>URL 이미지</strong>&nbsp;<small>삽입할 이미지 URL 경로를 입력하세요.</small></h5>
 								<div class='form-group'>					
 									<input type="url" name="custom-selected-url" class="form-control" placeholder="URL 입력">
 								</div>								
@@ -173,7 +169,7 @@
 						</div>
 					</div>
 				</div>
-				<div class='modal-footer'>
+				<div class='modal-footer no-margin-t'>
 					<button type="button" class="btn btn-primary custom-insert-img" disabled="disabled">이미지 삽입</button>	
 					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>
 				</div>

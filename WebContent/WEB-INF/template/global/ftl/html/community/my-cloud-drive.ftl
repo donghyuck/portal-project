@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<html decorator="homepage">
+<html decorator="unify">
 <head>
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<#compress>		
@@ -41,7 +41,7 @@
 			complete: function() {		
 				common.ui.setup({
 					features:{
-						backstretch : true,
+						backstretch : false,
 						lightbox : true,
 						spmenu : true
 					},
@@ -71,9 +71,9 @@
 												
 				// photo panel showing				
 				createPhotoListView();								
-				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-					this.select(this.element.children().first());
-				});
+			//	$('#photo-list-view').data('kendoListView').one('dataBound', function(){
+			//		this.select(this.element.children().first());
+			//	});
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
@@ -102,12 +102,9 @@
 		<!-- display image gallery                                  -->
 		<!-- ============================== -->
 		function createGallerySection(){
-			var renderTo = "image-gallery";
-			
+			var renderTo = "image-gallery";			
 			if( $( "#" +renderTo).length == 0 ){			
-			
-				$(".wrapper .header").after( $("#image-gallery-template").html() );
-				
+				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );				
 				var galleryDataSource =new kendo.data.DataSource({
 					type: 'json',
 					transport: {
@@ -131,22 +128,17 @@
 					change : function(){
 						$( "#image-gallery-grid" ).html(
 							kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
-						);		
-						//Grid.init();							
+						);	
 					}
-				});				
-				
-				common.ui.thumbnailexpanding();
-				
+				});								
+				common.ui.thumbnailexpanding({ template:kendo.template($("#image-gallery-expanding-template").html()) });				
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 9,
 					info: false,
 					dataSource : galleryDataSource
-				});					
-				
-				galleryDataSource.read();					
-				
+				});			
+				galleryDataSource.read();	
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
 					animate : true
@@ -155,7 +147,6 @@
 					$( "#" +renderTo).slideDown();
 				}, 500);
 			}
-			
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).slideDown();
 			} 			
@@ -677,9 +668,9 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<div id="main-content" class="container-fluid" style="min-height:300px;">		
-				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation" style="top:-4px;">
-					<ul class="nav navbar-nav pull-right">
+			<div class="breadcrumbs breadcrumbs-personalized">
+				<div class="navbar navbar-personalized navbar-inverse padding-xs pull-right" role="navigation" style="top:-4px;">									
+					<ul class="nav navbar-nav">
 						<li class="padding-xs-hr no-padding-r">
 							<div class="btn-group navbar-btn rounded-bottom">
 								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
@@ -700,8 +691,11 @@
 								</label>
 							</div>
 						</li>
-					</ul>
-				</div><!-- ./navbar-personalized -->
+					</ul>				
+				</div><!-- ./navbar-personalized -->			
+			</div>
+			
+			<div id="main-content" class="container-fluid" style="min-height:300px;">
 				<div id="personalized-area" class="row"></div>
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
@@ -846,10 +840,32 @@
 	</div>			
 	</script>
 
+	<script type="text/x-kendo-template" id="image-gallery-expanding-template">	
+	<div class="og-expander animated slideDown">
+		<div class="og-expander-inner">
+			<span class="og-close"></span> 
+			<div class="og-fullimg">
+				<div class="og-loading" style="display: none;"></div>
+				<img src="#= src #" style="display: inline;" class="lightbox" data-ride="lightbox">
+			</div>
+			<div class="og-details">
+				<h5>#: title #</h5>
+				<p>
+				<button data-ride="lightbox" data-selector="a[data-largesrc]" class="btn-u btn-u-orange"><i class="fa fa-bolt"></i> 슬라이드 쇼</button>
+				</p>
+				
+			</div>
+		</div>
+	</div>
+	</script>
+	
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
-			<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" class="animated zoomIn" />
+		<a href="\\#" class="zoomer" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
+			<span class="overlay-zoom">
+				<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" class="img-responsive animated zoomIn" />
+				<span class="zoom-icon"></span>
+			</span>
 		</a>	
 	</li>			
 	</script>
@@ -857,25 +873,24 @@
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery" class="one-page  no-padding-t no-border" style="display:none;">
 		<div class="one-page-inner no-padding-t">
-			<div class="container">	
+			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 padding-sm">					
-					<div class="panel panel-default rounded">
-						<div class="panel-heading">						
-						<button type="button" class="btn-close btn-close-grey btn-sm" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
-						<h3 class="panel-title">MY 이미지 갤러리</h3>
-						</div>
-						<div class="panel-body padding-sm no-padding-hr" style="min-height:300px;">
-							<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
-							<div id="image-gallery-slider" class="superbox"></div>
-						</div>
-						<div class="panel-footer no-padding"><div id="image-gallery-pager" class="k-pager-wrap no-border no-margin-t "></div>	</div>
-					</div>						
+						<div class="panel panel-default rounded">
+							<div class="panel-heading">						
+							<button type="button" class="btn-close btn-close-grey btn-xs" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
+							<h3 class="panel-title">MY 이미지 갤러리</h3>
+							</div>
+							<div class="panel-body padding-sm no-padding-hr no-padding-t" style="min-height:300px;">
+								<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
+								<div id="image-gallery-slider" class="superbox"></div>
+							</div>
+							<div class="panel-footer no-padding"><div id="image-gallery-pager" class="k-pager-wrap no-border no-margin-t "></div></div>
+						</div>						
 					</div>	
-				</div>
+				</div>			
 			</div>
-			
-		</div>		
+		</div>	
 	</div>
 	</script>
 	<!-- ============================== -->

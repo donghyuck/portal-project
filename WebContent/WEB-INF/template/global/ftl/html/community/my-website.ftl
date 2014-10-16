@@ -1,10 +1,11 @@
 <#ftl encoding="UTF-8"/>
-<html decorator="homepage">
+<html decorator="unify">
 <head>
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<#compress>		
 		<script type="text/javascript">
-		<!--
+		<!--		
+		var jobs = [];	
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
@@ -39,7 +40,7 @@
 				// 1. SETUP COMMON
 				common.ui.setup({
 					features:{
-						backstretch : true,
+						backstretch : false,
 						lightbox : true,
 						spmenu : true,
 						landing:true
@@ -880,17 +881,86 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body id="doc" class="bg-gray">
+	<body id="doc" class="bg-dark">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-				<div id="notice-section" class="one-page no-border no-padding-t" style="display:none;">
+			<div class="breadcrumbs breadcrumbs-personalized">
+				<div class="navbar navbar-personalized navbar-inverse padding-xs pull-right" role="navigation" style="top:-4px;">
+						<ul class="nav navbar-nav">
+							<li class="padding-xs-hr no-padding-r">
+								<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded-bottom" data-toggle="button" data-action="show-notice-section" ><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 공지 & 이벤트</span></button>
+								<button type="button" class="btn-u btn-u-blue navbar-btn rounded-bottom" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">웹사이트 클라우드 저장소</span></button>
+							</li>					
+							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+							<li class="hidden-xs">
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info rounded-bottom-left">
+										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+									</label>
+									<label class="btn btn-info active">
+								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+									</label>
+									<label class="btn btn-info rounded-bottom-right">
+										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+									</label>
+								</div>
+							</li> 
+						</ul>
+				</div><!-- ./navbar-personalized -->			
+			</div>
+	
+			<div id="notice-section" class="one-page  no-padding-t no-border" style="display:none;">
+				<div class="one-page-inner no-padding-t">
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 padding-sm">					
+								<div class="panel panel-default rounded">
+									<div class="panel-heading">						
+										<button type="button" class="btn-close btn-close-grey btn-xs" data-dismiss="section" data-target="#notice-section" data-animate="slideUp" data-switch-target="button[data-action='show-notice-section']" ><span class="sr-only">Close</span></button>	
+										<h3 class="panel-title">공지 & 이벤트 </h3>
+									</div>
+									<div class="panel-body" style="min-height:300px;">
+										<div class="row">
+											<div class="col-sm-4">
+												<div class="row">
+													<div class="col-xs-6">
+														<div id="notice-target-button" class="btn-group" data-toggle="buttons">
+															<label class="btn btn-info btn-sm active rounded-left">
+																<input type="radio" name="notice-target" value="30" >사이트
+															</label>
+															<label class="btn btn-info btn-sm rounded-right">
+																<input type="radio" name="notice-target" value="1">회사
+															</label>
+														</div>												
+													</div>
+													<div class="col-xs-6"><button type="button"	class="btn-u btn-u-red btn-block btn-sm" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button></div>												
+												</div>
+												<div  id="notice-grid"></div>
+											</div>
+											<div class="col-sm-8">
+												<div  id="notice-view"></div>
+												<div  id="notice-editor"></div>													
+											</div>
+										</div>
+									</div>
+									<div class="panel-footer no-padding">
+									
+									</div>
+								</div>						
+							</div>	
+						</div>			
+					</div>
+				</div>	
+			</div>
+			
+				<div id="notice-section" class="one-page one-page-v2 no-border no-padding-t" style="display:none;">
 					<div class="one-page-inner one-blur">
 						<div class="container">	
-							<button type="button" class="btn-close btn-close" data-dismiss="section" data-target="#notice-section" data-animate="slideUp" data-switch-target="button[data-action='show-notice-section']" ><span class="sr-only">Close</span></button>							
+													
 							<h1>공지 & 이벤트 
 								<small>		
 									이벤트 소스를 선택하세요.
@@ -899,54 +969,23 @@
 							<div class="row ">
 								<div class="col-sm-4">
 									<div class="one-page-btn">
-										<div id="notice-target-button" class="btn-group" data-toggle="buttons">
-											<label class="btn btn-info btn-sm active rounded-left">
-												<input type="radio" name="notice-target" value="30" >사이트
-											</label>
-											<label class="btn btn-info btn-sm rounded-right">
-												<input type="radio" name="notice-target" value="1">회사
-											</label>
-										</div>
-										<button type="button"	class="btn-u btn-u-red pull-right" data-action="new-notice"><i class="fa fa-plus"></i> 공지 추가</button>
+										
+										
 									</div>		
-									<div  id="notice-grid" class="no-border"></div>
+									
 								</div>
 								<div class="col-sm-8">
-									<div  id="notice-view"></div>
-									<div  id="notice-editor"></div>	
+
 								</div>
 							</div>				
 						</div>
 					</div>	
-				</div><!-- ./ong-page -->							
-			<div class="container-fluid">		
-				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">
-						<ul class="nav navbar-nav pull-right">
-							<li class="padding-xs-hr no-padding-r">
-								<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-section" ><i class="fa fa-pencil fa-lg"></i> 공지 & 이벤트 </button>
-							</li>
-							<li class="padding-xs-hr no-padding-r">
-								<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section"><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">웹사이트 클라우드 저장소</span></button>
-							</li>								
-							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-							<li class="hidden-xs">
-								<div class="btn-group navbar-btn" data-toggle="buttons">
-									<label class="btn btn-info">
-										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-									</label>
-									<label class="btn btn-info active">
-								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-									</label>
-									<label class="btn btn-info">
-										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-									</label>
-								</div>
-							</li> 
-						</ul>
-				</div><!-- ./navbar-personalized -->
-				<div id="personalized-area" class="row" style="min-height:300px;"></div>				
-			</div><!-- ./container-fluid -->	
-			
+				</div><!-- ./ong-page -->
+											
+		<div id="main-content" class="container-fluid" style="min-height:300px;">
+			<div id="personalized-area" class="row"></div>
+		</div>	
+						
 		<!-- start side menu -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">			
 			<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
