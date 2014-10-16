@@ -117,6 +117,13 @@ body.aside-menu-in .aside-menu {
 	right: 15px;
 }
 
+.btn-close.btn-xs {	
+	width: 20px;
+	height: 20px;
+	top: 5px;
+	right: 0px;
+}
+
 .close-sm {
 	position: absolute;
 	width: 40px;
