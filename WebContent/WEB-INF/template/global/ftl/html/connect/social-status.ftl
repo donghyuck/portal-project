@@ -27,7 +27,7 @@
 				// START SCRIPT	
 				common.ui.setup({
 					features:{
-						backstretch : true
+						backstretch : false
 					}
 				});	  
 				// START SCRIPT					
@@ -80,7 +80,7 @@
 		<div class="container content">	
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
-				<#if error ?? >
+					<#if error ?? >
 					<div class="error-v1 rounded">
 						<p>${error?html}</p>
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/facebook/authorize">
@@ -88,6 +88,7 @@
 						</a>
 					</div>
 					</#if>
+					${connect.providerUserId}
 				</div>
 			</div>
 		</div>
