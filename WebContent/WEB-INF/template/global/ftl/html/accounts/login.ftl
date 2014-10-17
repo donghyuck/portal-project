@@ -8,6 +8,7 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',
+			
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			
@@ -61,9 +62,23 @@
 				
 			}
 		}]);	
+
+		function handleCallbackResult( success ){
+			if( success ){
+				common.ui.connect.signin({
+					success : function(data){
+						if(data.userId > 0){
+							location.href="/main.do";
+						}else{
+							$("form[name='signin-fm'] fieldset").attr("disabled", false);	
+						} 
+					}
+				});
+			}		
+		}
+
 	
-		function prepareSignOn () {
-		
+		function prepareSignOn () {		
 			common.api.getUser( {
 				success : function ( token ) {				
 					if( !token.anonymous ){
