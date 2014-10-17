@@ -29,31 +29,48 @@
 			'${request.contextPath}/js/common/common.ui.js',
 			
 			'${request.contextPath}/js/common/common.ui.core.js',
-			'${request.contextPath}/js/common/common.ui.community.js'
-			
-			],
+			'${request.contextPath}/js/common/common.ui.connect.js'			
+			],			
 			complete: function() {
+			
 				common.ui.setup({
 					features:{
-						backstretch : true,
+						backstretch : false,
 						loading:true
 					}
 				});					
+			
+				common.ui.connect.status({
+					success:function(data){
+						var renderTo = $("#signin-block .social-icons");
+						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , data.media );
+						renderTo.html( html );	
+						$("a[data-action='connect']").click(function(e){
+							var $this = $(this);				
+							$("form[name='signin-fm'] fieldset").attr("disabled", true);									
+							window.open( 
+								"${request.contextPath}/connect/" + $this.data("provider-id") + "/authorize",
+								'popUpWindow', 
+								'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');	
+							return false;								
+						});
+											
+					}
+				});
 				prepareSignOn();
+				
 			}
 		}]);	
 	
 		function prepareSignOn () {
-
+		
 			common.api.getUser( {
-				success : function ( token ) {
-				
+				success : function ( token ) {				
 					if( !token.anonymous ){
 						$("form fieldset").prop("disabled", true);
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(token));				
-					}
-								
+					}								
 				}				
 			} );		
 					
@@ -91,10 +108,8 @@
 					btn.button('reset');
 				}			
 				return false ;
-			});	
-						
+			});			
 		}
-		
 		
 		-->
 		</script>
@@ -131,10 +146,12 @@
 				<div class="reg-block-header">		        
 					<h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 					<ul class="social-icons text-center">
+					
 		                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 		                <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
 		                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 		                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
+					
 					</ul>
 		            <#assign webSite = action.webSite
 		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
@@ -194,6 +211,5 @@
 		</div>
 	</div>
     </script>
-    				
 	</body>    	
 </html>
