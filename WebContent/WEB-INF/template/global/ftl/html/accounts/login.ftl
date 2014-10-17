@@ -7,28 +7,22 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',
-			
+			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',			
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
-			
+			'css!${request.contextPath}/styles/jquery.jgrowl/jquery.jgrowl.min.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jquery.plugins/jquery.ui.shake.min.js',
-			'${request.contextPath}/js/jquery.jgrowl/jquery.jgrowl.min.js',
-			
+			'${request.contextPath}/js/jquery.jgrowl/jquery.jgrowl.min.js',			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',						
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 
-				
+			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 				
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
-			
+			'${request.contextPath}/js/common/common.ui.js',			
 			'${request.contextPath}/js/common/common.ui.core.js',
 			'${request.contextPath}/js/common/common.ui.connect.js'			
 			],			
