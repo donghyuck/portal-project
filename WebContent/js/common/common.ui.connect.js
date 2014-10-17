@@ -212,6 +212,33 @@
 		return renderTo.data("kendoListView");
 	} 
 		
+	ui.connect.signin = function (options){
+		options = options || {};		
+		$.ajax({
+			type : POST,
+			url : options.url || "/connect/signin.json",
+			data: options.data || {},
+			success : function(response){
+				if( typeof response.error === UNDEFINED ){ 		
+					if( isFunction( options.success ) ){						
+						options.success(response) ;
+					}
+				} else {									
+					if( isFunction( options.fail ) ){
+						options.fail(response) ;
+					}
+				}
+			},
+			complete : function () {
+				if( isFunction( options.complete ) ){
+					options.complete() ;
+				}
+			},
+			error:options.error || handleAjaxError ,
+			dataType : JSON
+		});				
+	}
+	
 	ui.connect.status = function( options ){
 		options = options || {};		
 		$.ajax({
