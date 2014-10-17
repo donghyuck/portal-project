@@ -5,6 +5,7 @@
 		<#compress>	
 		<link rel="stylesheet" href="/styles/font-awesome/4.0.3/font-awesome.min.css">
 		<link rel="stylesheet" href="/styles/common.themes/unify/plugins/brand-buttons/brand-buttons.min.css">
+		<link rel="stylesheet" href="/styles/common.themes/unify/pages/profile.min.css">
 		<link rel="stylesheet" href="/styles/jquery.jgrowl/jquery.jgrowl.min.css">
 		<script type="text/javascript">
 		<!--
@@ -38,12 +39,22 @@
 					}				
 				});
 				<#if profile ?? >
+				
+				if(window.opener){
+					if(typeof window.opener.handleCallbackResult == "function"){	
+						window.opener.handleCallbackResult(true);
+						window.close();
+					}
+				}				
+				
+				/**
 				common.api.social.profile({
 					url : "/connect/${connect.providerId}/user/lookup.json",
 					success : function( data ){
-						alert(kendo.stringify(data));
+						
 					}
 				});
+				**/
 				</#if>
 				// END SCRIPT            
 			}
@@ -72,7 +83,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2><i class="fa fa-${connect.providerId}"></i> Status <#if profile ?? ><small>${profile.username}</small></#if>	</h2>				
+					<h2><i class="fa fa-${connect.providerId}"></i> Status <#if connect.displayName ?? ><small>${connect.displayName}</small></#if></h2>				
 				</div>
 			</div>
 		</div>
@@ -88,7 +99,13 @@
 						</a>
 					</div>
 					</#if>
-					${connect.providerUserId}
+					<#if profile ?? >
+					<div class="profile-blog">
+						<img class="rounded-x" src="${connect.imageUrl}" alt="">
+                                    <div class="name-location">
+                                        <strong>${connect.displayName}</strong>
+                                    </div>				
+					</#if>
 				</div>
 			</div>
 		</div>
