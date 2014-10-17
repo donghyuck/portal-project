@@ -105,18 +105,7 @@
 		}		
 		return false;
 	}
-	
-	
-	ui.connect.colSize = function(totalSize, current){
-		if( data.length == 1 ){
-			return 12;
-		}else if ( data.length == 2 ){
-			return 6;				
-		}else{
-			return 4 ;				
-		} 
-	}
-	
+		
 	ui.connect.userProfile = function( providerId, userId, callback, error ){
 		var options = options || {};		
 		switch (providerId){
@@ -174,8 +163,7 @@
 	
 	
 	ui.connect.listview = function (renderTo, connect, options ){
-		if(!renderTo.data("kendoListView")){
-			
+		if(!renderTo.data("kendoListView")){			
 			var _data = {
 				parameterMap : function(options, operation) {
 					return {};
@@ -224,6 +212,38 @@
 		return renderTo.data("kendoListView");
 	} 
 		
+	ui.connect.status = function( options ){
+		options = options || {};		
+		$.ajax({
+			type : POST,
+			url : options.url || "/connect/list.json",
+			data: options.data || {},
+			success : function(response){
+				if( typeof response.error === UNDEFINED ){ 		
+					if( isFunction( options.success ) ){						
+						options.success(response) ;
+					}
+				} else {									
+					if( isFunction( options.fail ) ){
+						options.fail(response) ;
+					}
+				}
+			},
+			beforeSend : function () {
+				if( isFunction( options.beforeSend ) ){
+					options.beforeSend() ;
+				}
+			},
+			complete : function () {
+				if( isFunction( options.complete ) ){
+					options.complete() ;
+				}
+			},
+			error:options.error || handleAjaxError ,
+			dataType : JSON
+		});		
+	}
+	
 	ui.connect.newConnectListDataSource = function(handlers){
 		var handlers = handlers || {};
 		var dataSource =  DataSource.create({
@@ -248,6 +268,5 @@
 			dataSource.bind(CHANGE, handlers.change );
 		}
 		return dataSource;
-	}
-	
+	}	
 })(jQuery);
