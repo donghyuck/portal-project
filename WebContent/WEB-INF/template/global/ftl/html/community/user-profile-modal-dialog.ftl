@@ -145,6 +145,10 @@
 			padding: 20px;
 			background: #fff;
 		}
+		
+		#my-profile-dialog .tab-content .tab-pane hr{
+			margin: 17px 0 15px;
+		}
 										
 		</style>			
 		
