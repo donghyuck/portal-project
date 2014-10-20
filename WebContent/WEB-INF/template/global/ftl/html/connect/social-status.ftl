@@ -94,7 +94,7 @@
 					<#if error ?? >
 					<div class="error-v1 rounded">
 						<p>${error?html}</p>
-						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/facebook/authorize">
+						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
 					</div>
@@ -107,7 +107,7 @@
 							</div>		
 					<#else>
 					<div class="error-v1 rounded">
-						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/facebook/authorize">
+						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
 					</div>									
