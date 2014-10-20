@@ -167,6 +167,82 @@
 						<!-- Tab panes -->
 						<div class="tab-content no-padding-t">
 							<div class="tab-pane active" id="profile-basic-info">
+							
+							<h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
+							<p>Below are the name and email addresses on file for your account.</p>
+							<dl class="dl-horizontal">
+                                        <dt><strong>Your name </strong></dt>
+                                        <dd>
+                                            Edward Rooster 
+                                            <span>
+                                                <a class="pull-right" href="#">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </span>
+                                        </dd>
+                                        <hr>
+                                        <dt><strong>Your ID </strong></dt>
+                                        <dd>
+                                            FKJ-032440 
+                                            <span>
+                                                <a class="pull-right" href="#">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </span>
+                                        </dd>
+                                        <hr>
+                                        <dt><strong>Company name </strong></dt>
+                                        <dd>
+                                            Htmlstream 
+                                            <span>
+                                                <a class="pull-right" href="#">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </span>
+                                        </dd>
+                                        <hr>
+                                        <dt><strong>Primary Email Address </strong></dt>
+                                        <dd>
+                                            edward-rooster@gmail.com 
+                                            <span>
+                                                <a class="pull-right" href="#">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </span>
+                                        </dd>
+                                        <hr>
+                                        <dt><strong>Phone Number </strong></dt>
+                                        <dd>
+                                            (304) 33-2867-499 
+                                            <span>
+                                                <a class="pull-right" href="#">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </span>
+                                        </dd>
+                                        <hr>
+                                        <dt><strong>Office Number </strong></dt>
+                                        <dd>
+                                            (304) 44-9810-296 
+                                            <span>
+                                                <a class="pull-right" href="#">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </span>
+                                        </dd>
+                                        <hr>
+                                        <dt><strong>Address </strong></dt>
+                                        <dd>
+                                            California, US 
+                                            <span>
+                                                <a class="pull-right" href="#">
+                                                    <i class="fa fa-pencil"></i>
+                                                </a>
+                                            </span>
+                                        </dd>
+                                        <hr>
+                                    </dl>
+                                    
 								<div class="blank-top-5" ></div>					
 								<table class="table  table-hover no-margin-bottom" >
 									<tbody>
