@@ -195,7 +195,7 @@
 									</span>
 								</dd>
 								<hr>	
-								<#if groups?size > 0 >
+								<#if groups?has_content >
 								<dt><strong>그룹</strong></dt>
 								<dd>
 									<#list groups as item >								
