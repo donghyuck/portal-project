@@ -199,6 +199,11 @@
 									<#list groups as item >								
 									<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-folder-o"></i> ${item.displayName}</span>
 									</#list> 
+
+												<#list groups as item >								
+													<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-folder-o"></i> ${item.displayName}</span>
+												</#list>
+																					
 									<span>
 										<a class="pull-right" href="#">
 											<i class="fa fa-pencil"></i>
@@ -207,6 +212,8 @@
 								</dd>
 								<hr>																
 							</dl>
+							
+							<!--
 								<div class="blank-top-5" ></div>					
 								<table class="table  table-hover no-margin-bottom" >
 									<tbody>
@@ -222,13 +229,12 @@
 											<td>그룹</td>
 											<td>
 												<#list groups as item >								
-												<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-folder-o"></i> ${item.displayName}</span>
+													<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-folder-o"></i> ${item.displayName}</span>
 												</#list>  		
 
 												<#list roles as item >								
 													<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> ${item}</span>						
-												</#list>  
-																																
+												</#list>  																																
 											</td>
 										</tr>																						
 										<tr>
@@ -244,7 +250,8 @@
 											<td><span class="text-muted data-bind="text: lastLoggedIn">${user.lastLoggedIn}</span></td>
 										</tr>																				
 									</tbody>
-								</table>								
+								</table>		
+								-->						
 							</div>
 							<div class="tab-pane" id="profile-social-network">
 								<div class="blank-top-5" ></div>					
