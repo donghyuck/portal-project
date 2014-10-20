@@ -105,6 +105,7 @@
 							<div class="name-location">
 								<strong>${connect.displayName}</strong>
 							</div>
+							
 							<#if connect.profileUrl ?? >
 							<p><a href="${connect.profileUrl }" class="btn-link">홈</a></p>
 							</#if>							
