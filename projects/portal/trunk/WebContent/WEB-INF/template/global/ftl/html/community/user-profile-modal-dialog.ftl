@@ -197,12 +197,12 @@
 								<dt><strong>보안</strong></dt>
 								<dd>
 									<#list groups as item >								
-									<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-folder-o"></i> ${item.displayName}</span>
+									<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-users"></i> ${item.displayName}</span>
 									</#list> 
 
-												<#list groups as item >								
-													<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-folder-o"></i> ${item.displayName}</span>
-												</#list>
+									<#list roles as item >								
+										<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> ${item}</span>						
+									</#list>
 																					
 									<span>
 										<a class="pull-right" href="#">
