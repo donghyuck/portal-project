@@ -176,7 +176,8 @@
 							<dl class="dl-horizontal">
 								<dt><strong>소속</strong></dt>
 								<dd>
-									${user.company.displayName}<small>(${user.company.description})</small>
+									<i class="fa fa-building-o"></i> ${user.company.displayName}
+									<small class="text-muted">(${user.company.description})</small>
 									<span>
 										<a class="pull-right" href="#">
 											<i class="fa fa-pencil"></i>
