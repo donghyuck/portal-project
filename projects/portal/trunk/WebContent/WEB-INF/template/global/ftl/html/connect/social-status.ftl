@@ -40,6 +40,9 @@
 				});
 				
 				$("button.btn-close").click(function(e){
+					if(typeof window.opener.handleCallbackResult == "function"){	
+						window.opener.handleCallbackResult( false );
+					}
 					window.close();
 				});
 				
