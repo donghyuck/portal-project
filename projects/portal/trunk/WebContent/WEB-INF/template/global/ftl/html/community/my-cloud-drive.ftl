@@ -64,14 +64,16 @@
 					}
 				});	
 				
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");
+				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 												
 				// photo panel showing				
 				createPhotoListView();								
-			//	$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-			//		this.select(this.element.children().first());
-			//	});
+				//	$('#photo-list-view').data('kendoListView').one('dataBound', function(){
+				//		this.select(this.element.children().first());
+				//	});
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
