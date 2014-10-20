@@ -77,6 +77,8 @@ PC9saWNlbnNlPg==</file>
 					<clientId>VdE7COcqx3c8qiXg45AowMPausYVvYDpBSIrx1jI6gPj1X5V8T</clientId>
 					<clientSecret>SILFKJbnYTuFLWVhCnKiD1wpd4T6ahVC0HXTemu1AqT3X7iL0r</clientSecret>				
 					<callbackUrl>http://222.122.63.146/connect/tumblr</callbackUrl>
+					<allowSignin>true</allowSignin>
+					<allowSignup>false</allowSignup>					
 				</tumblr>	
 			</providers>
 		</social>
