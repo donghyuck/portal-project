@@ -116,6 +116,7 @@
 						</a>
 					</div>									
 					</#if>
+					${social_provider_error}
 				</div>
 			</div>
 		</div>
