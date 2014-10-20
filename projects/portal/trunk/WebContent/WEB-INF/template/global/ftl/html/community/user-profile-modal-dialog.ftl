@@ -165,7 +165,7 @@
 							<li><a href="#profile-application-cfg" data-toggle="tab">응용프로그램 설정</a></li>
 						</ul>
 						<!-- Tab panes -->
-						<div class="tab-content">
+						<div class="tab-content no-padding-t">
 							<div class="tab-pane active" id="profile-basic-info">
 								<div class="blank-top-5" ></div>					
 								<table class="table  table-hover no-margin-bottom" >
