@@ -104,7 +104,10 @@
 							<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
 							<div class="name-location">
 								<strong>${connect.displayName}</strong>
-							</div>		
+							</div>
+							<#if connect.profileUrl ?? >
+							<p><a href="${connect.profileUrl }" class="btn-link">홈</a></p>
+							</#if>							
 					<#else>
 					<div class="error-v1 rounded">
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
