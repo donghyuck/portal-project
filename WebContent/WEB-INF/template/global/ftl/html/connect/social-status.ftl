@@ -38,15 +38,18 @@
 						e.token.copy(currentUser);
 					}				
 				});
-				<#if profile ?? >
 				
+				$("button.btn-close").click(function(e){
+					window.close();
+				});
+				
+				<#if profile ?? >				
 				if(window.opener){
 					if(typeof window.opener.handleCallbackResult == "function"){	
 						window.opener.handleCallbackResult( <#if error ?? >false<#else>true</#if> );
 						window.close();
 					}
-				}				
-				
+				}
 				/**
 				common.api.social.profile({
 					url : "/connect/${connect.providerId}/user/lookup.json",
@@ -84,6 +87,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<h2><i class="fa fa-${connect.providerId}"></i> Status <#if connect.displayName ?? ><small>${connect.displayName}</small></#if></h2>				
+					<button type="button" class="btn-close btn-close-grey btn-sm" style="top:0px;"><span class="sr-only">Close</span></button>
 				</div>
 			</div>
 		</div>
