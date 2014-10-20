@@ -69,6 +69,7 @@
 					}
 				});	
 				
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 												
