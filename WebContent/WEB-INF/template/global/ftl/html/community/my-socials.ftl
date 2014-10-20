@@ -49,7 +49,8 @@
 					shown : function(e){					
 						createConnectedSocialNav();	
 					}
-				});										
+				});						
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
 				
 				$(document).on("click","[data-upload='photo']", function(e){		
