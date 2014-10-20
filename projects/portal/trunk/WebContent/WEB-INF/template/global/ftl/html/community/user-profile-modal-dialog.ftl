@@ -139,7 +139,13 @@
 		#my-profile-dialog .profile-body {
 			background: #f7f7f7;
 			padding: 20px;
-		}						
+		}
+		
+		#my-profile-dialog .tab-content .tab-pane {
+			padding: 20px;
+			background: #fff;
+		}
+										
 		</style>			
 		
 		<div id="my-profile-dialog">
