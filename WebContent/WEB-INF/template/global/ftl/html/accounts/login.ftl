@@ -69,7 +69,7 @@
 					}
 				});
 			}else{
-				$("form[name='signin-fm'] fieldset").attr("disabled", true);	
+				$("form[name='signin-fm'] fieldset").attr("disabled", false);	
 			}		
 		}
 
