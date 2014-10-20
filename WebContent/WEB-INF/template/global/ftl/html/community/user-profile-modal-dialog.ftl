@@ -195,16 +195,25 @@
 									</span>
 								</dd>
 								<hr>	
-								<dt><strong>보안</strong></dt>
+								<#if groups.size > 0 >
+								<dt><strong>그룹</strong></dt>
 								<dd>
 									<#list groups as item >								
-									<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-users"></i> ${item.displayName}</span>
-									</#list> 
-
+									<span class="label label-info rounded"><i class="fa fa-users"></i> ${item.displayName}</span>
+									</#list> 													
+									<span>
+										<a class="pull-right" href="#">
+											<i class="fa fa-pencil"></i>
+										</a>
+									</span>
+								</dd>
+								<hr>									
+								</#if>								
+								<dt><strong>롤</strong></dt>
+								<dd>
 									<#list roles as item >								
-										<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> ${item}</span>						
-									</#list>
-																					
+										<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
+									</#list>																					
 									<span>
 										<a class="pull-right" href="#">
 											<i class="fa fa-pencil"></i>
