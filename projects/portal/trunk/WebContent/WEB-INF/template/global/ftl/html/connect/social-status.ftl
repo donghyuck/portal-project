@@ -28,7 +28,8 @@
 				// START SCRIPT	
 				common.ui.setup({
 					features:{
-						backstretch : false
+						backstretch : false,
+						landing:false
 					}
 				});	  
 				// START SCRIPT					
