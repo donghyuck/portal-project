@@ -88,7 +88,7 @@
 			</div>
 		</div>
 		</div>
-		<div class="container content">	
+		<div class="profile container content">	
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
 					<#if error ?? >
@@ -102,9 +102,9 @@
 					<#if profile ?? >
 					<div class="profile-blog">
 						<img class="rounded-x" src="${connect.imageUrl}" alt="">
-                                    <div class="name-location">
-                                        <strong>${connect.displayName}</strong>
-                                    </div>				
+							<div class="name-location">
+								<strong>${connect.displayName}</strong>
+							</div>				
 					</#if>
 				</div>
 			</div>
