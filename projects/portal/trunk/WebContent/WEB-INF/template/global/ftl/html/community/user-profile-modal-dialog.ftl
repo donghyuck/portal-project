@@ -134,72 +134,23 @@
 			left: 50px; 
 			padding : 20px;
 			min-width:300px;
-		}				
+		}	
+		
+		#my-profile-dialog .profile-body {
+			background: #f7f7f7;
+			padding: 20px;
+		}						
 		</style>			
 		
 		<div id="my-profile-dialog">
 			<div class="modal-content">			
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-					<h4 class="modal-title" id="myProfileModalLabel">내정보</h4>
+					<h4 class="modal-title" id="myProfileModalLabel">프로파일</h4>
 				</div>
-				<div class="modal-body">
-					<div class="media">
-						<a class="pull-left dropdown-toggle" href="#" data-toggle="dropdown">
-							<img id="my-photo-image" class="media-object img-thumbnail" src="${request.contextPath}/download/profile/${user.username}?width=100&height=150" />
-						</a>
-						<ul class="dropdown-menu">
-							<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
-							<li>
-								<input name="my-photo-upload" id="my-photo-upload" type="file" class="pull-right" />
-							</li>
-						</ul>									
-						<div class="media-body">				
-							<form class="form-horizontal" role="form">
-								<fieldset disabled>
-									<div class="form-group">
-										<label class="col-sm-2 control-label">아이디</label>
-										<div class="col-sm-10">
-											<h5 data-bind="text:username" >${ user.username }</h5>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-2 control-label">이름</label>
-										<div class="col-sm-10">
-											<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-2 control-label">메일</label>
-										<div class="col-sm-10">
-											<input type="email" class="form-control" placeholder="메일" data-bind="value:email" value="${ user.email }"/>
-										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10">
-											<label class="checkbox-inline">
-												<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
-											</label>
-											<label class="checkbox-inline">
-												<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
-											</label>
-										</div>
-									</div>
-								</fieldset>									
-								<div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
-										<div class="btn-group pull-right">	
-											<button type="submit" class="btn btn-default custom-modify">기본정보변경</button>		
-											<button type="submit" class="btn btn-primary custom-password-change">비밀번호 변경</button>				
-										</div>							
-									</div>
-								</div>																	
-							</form>
-						</div>
-					</div>
-					<div class="alert alert-danger no-margin-bottom block-space-10">								
-						<i class="fa fa-info"></i> 마지막으로 <span data-bind="text: lastProfileUpdate">${user.lastProfileUpdate}</span> 에 수정하였습니다. 사진를 클릭하면 새로운 사진을 업로드 하실 수 있습니다. 
-					</div>
+				<div class="modal-body no-padding">
+					<div class="profile-body">
+					
 					<div class="tab-v1" >					
 						<!-- Nav tabs -->
 						<ul class="nav nav-tabs" id="my-profile-tab">
@@ -282,7 +233,66 @@
 								준비중입니다.
 							</div>	
 						</div>
-					</div>						
+					</div>					
+					
+					</div><!-- .profile-body -->
+					<div class="media">
+						<a class="pull-left dropdown-toggle" href="#" data-toggle="dropdown">
+							<img id="my-photo-image" class="media-object img-thumbnail" src="${request.contextPath}/download/profile/${user.username}?width=100&height=150" />
+						</a>
+						<ul class="dropdown-menu">
+							<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
+							<li>
+								<input name="my-photo-upload" id="my-photo-upload" type="file" class="pull-right" />
+							</li>
+						</ul>									
+						<div class="media-body">				
+							<form class="form-horizontal" role="form">
+								<fieldset disabled>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">아이디</label>
+										<div class="col-sm-10">
+											<h5 data-bind="text:username" >${ user.username }</h5>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">이름</label>
+										<div class="col-sm-10">
+											<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">메일</label>
+										<div class="col-sm-10">
+											<input type="email" class="form-control" placeholder="메일" data-bind="value:email" value="${ user.email }"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<label class="checkbox-inline">
+												<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
+											</label>
+											<label class="checkbox-inline">
+												<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
+											</label>
+										</div>
+									</div>
+								</fieldset>									
+								<div class="form-group">
+									<div class="col-sm-offset-2 col-sm-10">
+										<div class="btn-group pull-right">	
+											<button type="submit" class="btn btn-default custom-modify">기본정보변경</button>		
+											<button type="submit" class="btn btn-primary custom-password-change">비밀번호 변경</button>				
+										</div>							
+									</div>
+								</div>																	
+							</form>
+						</div>
+					</div>
+					<div class="alert alert-danger no-margin-bottom block-space-10">								
+						<i class="fa fa-info"></i> 마지막으로 <span data-bind="text: lastProfileUpdate">${user.lastProfileUpdate}</span> 에 수정하였습니다. 사진를 클릭하면 새로운 사진을 업로드 하실 수 있습니다. 
+					</div>
+						
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
