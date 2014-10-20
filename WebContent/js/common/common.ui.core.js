@@ -83,6 +83,8 @@
 		return (typeof x != UNDEFINED);
 	};
 
+	
+	/*
 	common.ui.bind = function(selector, options) {
 		options = options || {};
 		if (options.custom === UNDEFINED)
@@ -105,7 +107,7 @@
 			});
 		}
 	};
-	
+	*/
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
