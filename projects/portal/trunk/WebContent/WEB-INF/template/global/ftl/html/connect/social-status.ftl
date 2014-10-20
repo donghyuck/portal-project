@@ -91,6 +91,7 @@
 		<div class="profile container content">	
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">
+				
 					<#if error ?? >
 					<div class="error-v1 rounded">
 						<p>${error?html}</p>
@@ -99,6 +100,16 @@
 						</a>
 					</div>
 					</#if>
+					
+					<#if social_provider_error ?? >
+					<div class="error-v1 rounded">
+						<p>${social_provider_error?html}</p>
+						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
+							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+					</#if>	
+									
 					<#if profile ?? >
 					<div class="profile-blog">
 							<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
@@ -116,7 +127,7 @@
 						</a>
 					</div>									
 					</#if>
-					${social_provider_error}
+					
 				</div>
 			</div>
 		</div>
