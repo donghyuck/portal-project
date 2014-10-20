@@ -104,7 +104,13 @@
 						<img class="rounded-x" src="${connect.imageUrl}" alt="">
 							<div class="name-location">
 								<strong>${connect.displayName}</strong>
-							</div>				
+							</div>		
+					<#else>
+					<div class="error-v1 rounded">
+						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/facebook/authorize">
+							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
+						</a>
+					</div>									
 					</#if>
 				</div>
 			</div>
