@@ -420,7 +420,7 @@
 								<div class="tab-pane" id="my-profile-social-cfg">
 									<div class="row" >
 										<div class="col-sm-6">
-											<table id="my-profile-social-grid">											
+											<table id="my-profile-social-grid" class="social-contacts-v2">											
 												<colgroup>
 													<col/>
 													<col/>
