@@ -210,8 +210,8 @@
 						<!-- Tab panes -->
 						<div class="tab-content no-padding-t">
 							<div class="tab-pane active" id="profile-basic-info">							
-							<h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
-							<p><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 에 사용자 정보를 수정하였습니다. </p>
+							<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
+							<p><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
 							<dl class="dl-horizontal">
 								<dt><strong>아이디</strong></dt>
 								<dd>
