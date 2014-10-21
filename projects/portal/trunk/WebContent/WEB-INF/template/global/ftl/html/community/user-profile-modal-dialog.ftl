@@ -407,12 +407,11 @@
 											<table id="my-profile-social-grid">
 										</div>
 									</div>				
-									
+									<!--
 										
 									<div class="container" style="width:100%">
 										<div class="row">			
-											<div class="col-sm-5 leftless rightless">											
-												<!-- start my social network grid -->	
+											<div class="col-sm-5 leftless rightless">		
 												<table id="my-social-network-grid">
 													<colgroup>
 														<col/>
@@ -434,19 +433,18 @@
 														</tr>
 													</tbody>
 												</table>	
-												<!-- end my social network grid -->
 											</div>										
 											<div id="my-social-network-account-details" class="col-sm-7 rightless"></div>
 										</div>
 									</div>
+									-->
 									
+										
+								</div>
 									<div class="tab-pane" id="my-profile-notice-cfg">
 										<div style="height:300px" ></div>
 										준비중입니다.
-									</div>										
-										
-								</div>
-
+									</div>	
 							</div>
 						</div>	
 					</div><!-- .profile-body -->						
