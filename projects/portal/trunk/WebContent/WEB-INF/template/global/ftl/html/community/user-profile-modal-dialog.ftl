@@ -578,8 +578,8 @@
 			<tr>
 				<td><i class="rounded-x #: providerId #" fa-#: providerId #"></i> #: providerId #</td>
 				<td>
-				#if ( !displayName  ) { # 
-				#: displayName#
+				#if ( displayName != null ) { # 
+				#: displayName #
 				# } # 
 				</td>
 			</tr>					
