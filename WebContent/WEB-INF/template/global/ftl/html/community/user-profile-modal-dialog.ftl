@@ -63,7 +63,7 @@
 									}
 								}),
 								selectable: "single",
-								rowTemplate: kendo.template($("#social-network-grid-row-template").html()),	
+								rowTemplate: kendo.template($("#my-profile-social-connection-grid-row-template").html()),	
 								change: function(e) { 				
 								}
 							});
@@ -249,6 +249,20 @@
 		
 		#my-profile-dialog  .panel-profile .panel-title {
 			font-size: 16px;
+		}		
+		
+		#my-profile-dialog .social-contacts-v2 i.twitter {
+			color: #159ceb;
+		}
+		#my-profile-dialog .social-contacts-v2 i.facebook {
+			color: #4862a3;
+		}		
+		#my-profile-dialog .social-contacts-v2 i.fa {
+			font-size: 16px;
+			min-width: 25px;
+			margin-right: 7px;
+			text-align: center;
+			display: inline-block;
 		}						
 		</style>			
 		
@@ -560,9 +574,9 @@
 			</div>
 		</div>				
 		</script>
-		<script type="text/x-kendo-template" id="social-network-grid-row-template">
+		<script type="text/x-kendo-template" id="my-profile-social-connection-grid-row-template">
 			<tr>
-				<td><i class="fa fa-#: serviceProviderName#"></i>&nbsp; #: serviceProviderName#</td>
+				<td><i class="rounded-x #: providerId #" fa-#: providerId #"></i> #: providerId #</td>
 				<td>
 				#if ( ! connected  ) { # 
 				<button type="button" class="btn btn-info custom-social-network-connect btn-sm" data-url="#:authorizationUrl#" >연결</button>  
