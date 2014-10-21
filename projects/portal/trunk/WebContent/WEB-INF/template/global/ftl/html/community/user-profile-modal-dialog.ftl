@@ -166,7 +166,7 @@
 						<ul class="nav nav-tabs" id="my-profile-tab">
 							<li class="active"><a href="#profile-basic-info" data-toggle="tab">기본정보</a></li>
 							<li><a href="#profile-social-network" data-toggle="tab">쇼셜 네트워크</a></li>
-							<li><a href="#profile-application-cfg" data-toggle="tab">응용프로그램 설정</a></li>
+							<li><a href="#profile-notice-cfg" data-toggle="tab">알림 설정</a></li>
 						</ul>
 						<!-- Tab panes -->
 						<div class="tab-content no-padding-t">
@@ -223,7 +223,10 @@
 								<dd>
 									<#list roles as item >								
 										<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
-									</#list>																					
+									</#list>			
+									
+									<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>
+																											
 									<span>
 										<a class="pull-right" href="#">
 											<i class="fa fa-pencil"></i>
@@ -255,6 +258,7 @@
 												<#list roles as item >								
 													<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> ${item}</span>						
 												</#list>  																																
+												
 											</td>
 										</tr>																						
 										<tr>
@@ -306,7 +310,7 @@
 									</div>
 								</div>	
 							</div>
-							<div class="tab-pane" id="profile-application-cfg">
+							<div class="tab-pane" id="profile-notice-cfg">
 								<div class="blank-top-5" ></div>
 								준비중입니다.
 							</div>	
