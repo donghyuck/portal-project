@@ -407,6 +407,7 @@
 											<table id="my-profile-social-grid">
 										</div>
 									</div>				
+								</div>
 									<!--
 										
 									<div class="container" style="width:100%">
@@ -438,13 +439,10 @@
 										</div>
 									</div>
 									-->
-									
-										
-								</div>
-									<div class="tab-pane" id="my-profile-notice-cfg">
-										<div style="height:300px" ></div>
-										준비중입니다.
-									</div>	
+								<div class="tab-pane" id="my-profile-notice-cfg">
+									<div style="height:300px" ></div>
+									준비중입니다.
+								</div>	
 							</div>
 						</div>	
 					</div><!-- .profile-body -->						
