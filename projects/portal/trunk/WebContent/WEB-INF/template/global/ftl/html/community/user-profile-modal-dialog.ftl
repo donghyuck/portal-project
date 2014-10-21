@@ -261,7 +261,10 @@
 										<div class="col-sm-10">
 											<input type="text" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
 
-
+											<div class="input-group margin-bottom-20">
+												<span class="input-group-addon"><i class="fa fa-user"></i></span>
+												<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
+											</div>
 
 										</div>
 									</div>
