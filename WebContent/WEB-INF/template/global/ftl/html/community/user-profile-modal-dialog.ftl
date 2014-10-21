@@ -11,7 +11,7 @@
 					action = btn.data("action");
 					switch (action) {
 						case "basic-modify-mode" :
-							common.ui.status( btn , "disable" );
+							common.ui.status( $("button[data-action='basic-modify-mode']") , "disable" );
 							break;			
 						case "basic-modify-mode-close" :
 							common.ui.status( $("button[data-action='basic-modify-mode']"), "enable");
