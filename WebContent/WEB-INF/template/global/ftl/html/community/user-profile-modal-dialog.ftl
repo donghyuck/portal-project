@@ -3,7 +3,7 @@
 	<body>
 		<script type="text/javascript">
 		<!--
-				
+						
 			var myProfileModel = new kendo.data.ObservableObject({
 				user : $("#account-navbar").data("kendoExtAccounts").token, 
 				click: function(e){
@@ -25,10 +25,7 @@
 					}
 				}		
 			});
-			
-			
 			kendo.bind( $("#my-profile-dialog" ), myProfileModel );
-
 			if(!$("#my-photo-upload").data("kendoUpload")){
 				$("#my-photo-upload").kendoUpload({
 					multiple : false,
@@ -53,9 +50,22 @@
 				$this = $(this);				
 				var pane = $(this).attr("href");
 				switch (pane) {
-					case "profile-basic-cfg" :
+					case "my-profile-basic-cfg" :
 					
 						break;
+					case : "my-profile-social-cfg" :
+					
+						common.ui.datasource({
+							url : "/connect/list.json",
+							dataBound: function(){
+								alert(this.data());
+							}
+						}).read();
+						if( !$("#my-profile-social-grid" ).data('kendoGrid') ){ 
+						
+
+						}
+						break;	
 				}
 			});
 			
@@ -64,7 +74,7 @@
 			$('#my-profile-tab a.a').click(function (e) {
 				e.preventDefault();				
 				if( $(this).attr('href') == '#profile-social-network' ){					
-					if( !$("#my-social-network-grid" ).data('kendoGrid') ){
+					if( !$("#my-social-grid" ).data('kendoGrid') ){
 						$("#my-social-network-grid").kendoGrid({
 							dataSource: common.api.social.dataSource({type:'all'}),
 							selectable: "single",
@@ -277,14 +287,14 @@
 						<div class="tab-v1" >					
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" id="my-profile-tab">
-								<li class="active"><a href="#profile-basic-cfg" data-toggle="tab">기본정보</a></li>
-								<li><a href="#profile-password-change" data-toggle="tab"><i class="fa fa-lock"></i> 패스워드</a></li>
-								<li><a href="#profile-social-cfg" data-toggle="tab">쇼셜</a></li>
-								<li><a href="#profile-notice-cfg" data-toggle="tab">알림 설정</a></li>
+								<li class="active"><a href="#my-profile-basic-cfg" data-toggle="tab">기본정보</a></li>
+								<li><a href="#my-profile-password-change" data-toggle="tab"><i class="fa fa-lock"></i> 패스워드</a></li>
+								<li><a href="#my-profile-social-cfg" data-toggle="tab">쇼셜</a></li>
+								<li><a href="#my-profile-notice-cfg" data-toggle="tab">알림 설정</a></li>
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content no-padding-t">
-								<div class="tab-pane active" id="profile-basic-cfg">				
+								<div class="tab-pane active" id="my-profile-basic-cfg">				
 									<h2 class="heading-md">이름과 메일 주소, 이름(메일) 공개 여부를 확인하세요. 
 										<button class="btn btn-primary btn-sm rounded pull-right" data-action="basic-modify-mode" data-toggle="button" data-bind="click: click"><i class="fa fa-pencil"></i> 변경</button>
 									</h2>
@@ -387,12 +397,21 @@
 										</div>
 									</div>												
 								</div>
-								<div class="tab-pane" id="profile-password-change">
+								<div class="tab-pane" id="my-profile-password-change">
 									<div style="height:300px" ></div>
 									준비중입니다.
 								</div>									
-								<div class="tab-pane" id="profile-social-cfg">
-									<div class="blank-top-5" ></div>					
+								<div class="tab-pane" id="my-profile-social-cfg">
+									<div class="row" >
+										<div class="col-sm-6">
+										
+										</div>
+										<div class="col-sm-6">
+											<table id="my-profile-social-grid">
+										</div>
+									</div>				
+									
+										
 									<div class="container" style="width:100%">
 										<div class="row">			
 											<div class="col-sm-5 leftless rightless">											
@@ -422,9 +441,12 @@
 											</div>										
 											<div id="my-social-network-account-details" class="col-sm-7 rightless"></div>
 										</div>
-									</div>	
+									</div>
+									
+									
+										
 								</div>
-								<div class="tab-pane" id="profile-notice-cfg">
+								<div class="tab-pane" id="my-profile-notice-cfg">
 									<div style="height:300px" ></div>
 									준비중입니다.
 								</div>	
