@@ -278,7 +278,8 @@
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" id="my-profile-tab">
 								<li class="active"><a href="#profile-basic-info" data-toggle="tab">기본정보</a></li>
-								<li><a href="#profile-social-network" data-toggle="tab">쇼셜 네트워크</a></li>
+								<li><a href="#profile-password-change" data-toggle="tab"><i class="fa fa-lock"></i> 패스워드</a></li>
+								<li><a href="#profile-social-network" data-toggle="tab">쇼셜</a></li>
 								<li><a href="#profile-notice-cfg" data-toggle="tab">알림 설정</a></li>
 							</ul>
 							<!-- Tab panes -->
@@ -386,6 +387,10 @@
 										</div>
 									</div>												
 								</div>
+								<div class="tab-pane" id="profile-password-change">
+									<div class="blank-top-5" ></div>
+									준비중입니다.
+								</div>									
 								<div class="tab-pane" id="profile-social-network">
 									<div class="blank-top-5" ></div>					
 									<div class="container" style="width:100%">
