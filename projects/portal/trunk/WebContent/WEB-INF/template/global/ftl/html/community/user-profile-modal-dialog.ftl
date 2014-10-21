@@ -8,7 +8,11 @@
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
-					
+					switch (action) {
+						case "basic-modify-mode" :
+							common.ui.status( btn , "disable" );
+							break;				
+					}
 					
 					alert( action );
 					
@@ -288,6 +292,14 @@
 										</dd>
 										<hr>																									
 									</dl>	
+
+									<div class="panel panel-profile">
+										<div class="panel-heading overflow-h">
+											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> 변경</h2>
+											<a href="#"><i class="fa fa-cog pull-right"></i></a>
+										</div>
+										<div class="panel-body">
+
 									<form class="form-horizontal" role="form">
 										<fieldset disabled>
 											<div class="form-group">
@@ -327,7 +339,12 @@
 											</div>
 										</div>																		
 										</fieldset>
-									</form>																									
+									</form>		
+									
+										</div>       
+									</div>
+								
+																							
 								</div>
 								<div class="tab-pane" id="profile-social-network">
 									<div class="blank-top-5" ></div>					
