@@ -84,6 +84,35 @@
 	};
 
 	
+	common.ui.Status = Widget.extend({
+		init : function(element, options) {
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			options = that.options;
+		},
+		options : {
+			name : "Status"
+		},
+		enable : function( ){
+			
+			if( element.is(":disabled") ){
+				element.prop("disabled", false);
+				if( element.is("[data-toggle='button']") ){
+					element.toggleClass("active");
+				}
+			}
+		},
+		disable : function() {
+			if( !element.is(":disabled") ){
+				element.prop("disabled", true);
+				if( element.is("[data-toggle='button']") ){
+					element.toggleClass("active");
+				}
+			}
+		}
+	});
+	
+	
 	/*
 	common.ui.bind = function(selector, options) {
 		options = options || {};
@@ -112,4 +141,6 @@
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined
 	});	
+	
+	
 })(jQuery);
