@@ -200,14 +200,14 @@
 			box-shadow: none;
 		}
 		
-		#my-profile-dialog .panel-heading {
+		#my-profile-dialog  .panel-profile .panel-heading {
 			color: #585f69;
 			background: #fff;
 			padding: 7px 15px;
 			border-bottom: solid 3px #f7f7f7;
 		}	
 		
-		#my-profile-dialog .panel-title {
+		#my-profile-dialog  .panel-profile .panel-title {
 			font-size: 16px;
 		}						
 		</style>			
