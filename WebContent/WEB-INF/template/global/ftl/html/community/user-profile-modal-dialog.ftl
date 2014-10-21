@@ -174,6 +174,16 @@
 							<h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
 							<p>Below are the name and email addresses on file for your account.</p>
 							<dl class="dl-horizontal">
+								<dt><strong>아이디</strong></dt>
+								<dd>
+									<h5 data-bind="text:username" >${ user.username }</h5>																				
+									<span>
+										<a class="pull-right" href="#">
+											<i class="fa fa-pencil"></i>
+										</a>
+									</span>
+								</dd>
+								<hr>									
 								<dt><strong>소속</strong></dt>
 								<dd>
 									<i class="fa fa-building-o"></i> ${user.company.displayName}
@@ -320,7 +330,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">아이디</label>
 										<div class="col-sm-10">
-											<h5 data-bind="text:username" >${ user.username }</h5>
+											
 										</div>
 									</div>
 									<div class="form-group">
