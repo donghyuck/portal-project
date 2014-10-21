@@ -124,16 +124,16 @@
 		};		
 		options = options || {};		
 				
-		alert( kendo.stringify( options ));
+		
 		
 		var settings = extend( true, {}, cfg , options ); 
 		if( defined(options.url) ){
-			cfg.transport.read.url = options.url;			
+			settings.transport.read.url = options.url;			
 		}
-		
+		alert( kendo.stringify( options ));
 		var dataSource =  DataSource.create(settings);
 		return dataSource;
-	}
+	};
 
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
