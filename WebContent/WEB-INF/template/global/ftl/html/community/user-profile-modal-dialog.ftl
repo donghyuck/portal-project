@@ -257,8 +257,7 @@
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content no-padding-t">
-								<div class="tab-pane active" id="profile-basic-info">
-				
+								<div class="tab-pane active" id="profile-basic-info">				
 									<h2 class="heading-md">이름과 메일 주소, 이름(메일) 공개 여부를 확인하세요. 
 										<button class="btn btn-primary btn-sm rounded pull-right" data-action="basic-modify-mode" data-toggle="button" data-bind="click: click"><i class="fa fa-pencil"></i> 변경</button>
 									</h2>
@@ -313,14 +312,14 @@
 										</dd>
 										<hr>																									
 									</dl>	
-									<div class="panel panel-primary no-margin-b" style="display:none;">
+									<div class="panel panel-default no-margin-b" style="display:none;">
 										<div class="panel-heading overflow-h">
 											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> 변경</h2>
 											<a href="#"><i class="fa fa-cog pull-right"></i></a>
 										</div>
 										<div class="panel-body no-padding-b">
 											<form class="form-horizontal" role="form">
-												<fieldset disabled>
+												<fieldset>
 													<div class="form-group">
 														<label class="col-sm-2 control-label">변경할 이름</label>
 														<div class="col-sm-10">
