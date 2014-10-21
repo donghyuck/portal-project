@@ -128,9 +128,9 @@
 			cfg.transport.read.url = options.url;			
 		}
 		
-		extend( cfg , options ); 
+		var settings = extend(true, {}, cfg , options ); 
 				
-		var dataSource =  DataSource.create(cfg);
+		var dataSource =  DataSource.create(settings);
 		return dataSource;
 	}
 
