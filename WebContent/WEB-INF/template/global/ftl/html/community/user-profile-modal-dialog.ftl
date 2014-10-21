@@ -60,8 +60,8 @@
 							schema:{
 								data:"connections"
 							},
-							dataBound: function(){
-								alert(this.data());
+							change: function(){
+								alert(this.data().length);
 							}
 						}).read();
 												
