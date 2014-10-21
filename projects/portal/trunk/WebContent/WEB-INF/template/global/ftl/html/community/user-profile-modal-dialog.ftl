@@ -222,7 +222,17 @@
 										<dd>
 											<span data-bind="text:username" >${ user.username }</span>									
 										</dd>
-										<hr>									
+										<hr>		
+										<dt><strong>이름</strong></dt>
+										<dd>
+											<span data-bind="text:username" >${ user.name }</span>									
+										</dd>
+										<hr>	
+										<dt><strong>메일</strong></dt>
+										<dd>
+											<span data-bind="text:username" >${ user.email }</span>									
+										</dd>
+										<hr>																												
 										<dt><strong>회사</strong></dt>
 										<dd>
 											<i class="fa fa-building-o"></i> ${user.company.displayName}
