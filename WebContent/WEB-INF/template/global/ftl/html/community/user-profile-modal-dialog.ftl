@@ -53,7 +53,7 @@
 				$this = $(this);				
 				var pane = $(this).attr("href");
 				switch (pane) {
-					case "profile-basic-info" :
+					case "profile-basic-cfg" :
 					
 						break;
 				}
@@ -268,8 +268,8 @@
 									<span><strong>Job:</strong> <i class="fa fa-question text-muted"></i></span>
 									<span><strong>Position:</strong> <i class="fa fa-question text-muted"></i></span>
 									<hr>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum. Integer nulla felis, porta suscipit nulla et, dignissim commodo nunc. Morbi a semper nulla.</p>
-									<p>Proin mauris odio, pharetra quis ligula non, vulputate vehicula quam. Nunc in libero vitae nunc ultricies tincidunt ut sed leo. Sed luctus dui ut congue consequat. Cras consequat nisl ante, nec malesuada velit pellentesque ac. Pellentesque nec arcu in ipsum iaculis convallis.</p>
+									<p>하이</p>
+									
 								</div>
                             </div>    
                         </div>
@@ -277,14 +277,14 @@
 						<div class="tab-v1" >					
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" id="my-profile-tab">
-								<li class="active"><a href="#profile-basic-info" data-toggle="tab">기본정보</a></li>
+								<li class="active"><a href="#profile-basic-cfg" data-toggle="tab">기본정보</a></li>
 								<li><a href="#profile-password-change" data-toggle="tab"><i class="fa fa-lock"></i> 패스워드</a></li>
-								<li><a href="#profile-social-network" data-toggle="tab">쇼셜</a></li>
+								<li><a href="#profile-social-cfg" data-toggle="tab">쇼셜</a></li>
 								<li><a href="#profile-notice-cfg" data-toggle="tab">알림 설정</a></li>
 							</ul>
 							<!-- Tab panes -->
 							<div class="tab-content no-padding-t">
-								<div class="tab-pane active" id="profile-basic-info">				
+								<div class="tab-pane active" id="profile-basic-cfg">				
 									<h2 class="heading-md">이름과 메일 주소, 이름(메일) 공개 여부를 확인하세요. 
 										<button class="btn btn-primary btn-sm rounded pull-right" data-action="basic-modify-mode" data-toggle="button" data-bind="click: click"><i class="fa fa-pencil"></i> 변경</button>
 									</h2>
@@ -391,7 +391,7 @@
 									<div class="blank-top-5" ></div>
 									준비중입니다.
 								</div>									
-								<div class="tab-pane" id="profile-social-network">
+								<div class="tab-pane" id="profile-social-cfg">
 									<div class="blank-top-5" ></div>					
 									<div class="container" style="width:100%">
 										<div class="row">			
