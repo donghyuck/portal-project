@@ -512,10 +512,26 @@
 		<script type="text/x-kendo-template" id="my-social-account-details-template">
 		<div class="panel panel-profile">
 			<div class="panel-heading overflow-h">
-				<h2 class="panel-title heading-sm pull-left"><i class="fa fa-#=providerId#"></i> #=providerId#</h2>
-				<a href="\\#"><i class="fa fa-cog pull-right"></i></a>
+				<h2 class="panel-title heading-sm pull-left"><i class="fa fa-#=providerId#"></i> Profile</h2>
 			</div>		
-			<div class="panel-body" style="padding:10px;">				
+			<div class="panel-body">				
+							<div class="profile-blog">
+                                    <img class="rounded-x" src="assets/img/testimonials/img2.jpg" alt="">
+                                    <div class="name-location">
+                                        <strong>#= name #</strong>
+                                        <span><i class="fa fa-map-marker"></i><a href="\\#">California,</a> <a href="\\#">US</a></span>
+                                    </div>
+                                    <div class="clearfix margin-bottom-20"></div>    
+                                    <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
+                                    <hr>
+                                    <ul class="list-inline share-list">
+                                        <li><i class="fa fa-bell"></i><a href="\\#">3 Notifications</a></li>
+                                        <li><i class="fa fa-group"></i><a href="\\#">25 Followers</a></li>
+                                        <li><i class="fa fa-share"></i><a href="\\#">Share</a></li>
+                                    </ul>
+                                </div>
+                                			
+			
 				#if ( typeof (twitterProfile)  == "object" ){ #
 				<div class="media">
 					<a class="pull-left" href="\\#"><img class="media-object" src="#=twitterProfile.profileImageUrl#" alt="프로파일 이미지" class="img-rounded"></a>
