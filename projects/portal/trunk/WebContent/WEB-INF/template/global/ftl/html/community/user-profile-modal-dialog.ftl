@@ -164,7 +164,13 @@
 		
 		#my-profile-dialog .profile-bio hr {
 			margin: 12px 0 10px;
-		}								
+		}	
+		
+		#my-profile-dialog .profile-bio {
+			background: #fff;
+			position: relative;
+			padding: 15px 10px 5px 15px;
+		}							
 		</style>			
 		
 		<div id="my-profile-dialog">
