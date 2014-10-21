@@ -190,7 +190,7 @@
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
 									<span><strong>아이디:</strong> ${user.username}</span>
-									<span><strong>소속:</strong> <i class="fa fa-building-o"></i> ${user.company.displayName} <small class="text-muted">(${user.company.description})</small></span>
+									<span><strong>회사:</strong> ${user.company.displayName} <small class="text-muted">(${user.company.description})</small></span>
 									<span><strong>Job:</strong> <i class="fa fa-question text-muted"></i></span>
 									<span><strong>Position:</strong> <i class="fa fa-question text-muted"></i></span>
 									<hr>
@@ -211,7 +211,7 @@
 						<div class="tab-content no-padding-t">
 							<div class="tab-pane active" id="profile-basic-info">							
 							<h2 class="heading-md">Manage your Name, ID and Email Addresses.</h2>
-							<p>Below are the name and email addresses on file for your account.</p>
+							<p><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 에 사용자 정보를 수정하였습니다. </p>
 							<dl class="dl-horizontal">
 								<dt><strong>아이디</strong></dt>
 								<dd>
