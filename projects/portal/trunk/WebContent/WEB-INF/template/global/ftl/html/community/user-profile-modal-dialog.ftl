@@ -406,11 +406,7 @@
 								<div class="tab-pane" id="my-profile-social-cfg">
 									<div class="row" >
 										<div class="col-sm-6">
-										
-										</div>
-										<div class="col-sm-6">
-											<table id="my-profile-social-grid">
-											
+											<table id="my-profile-social-grid">											
 												<colgroup>
 													<col/>
 													<col/>
@@ -431,6 +427,9 @@
 													</tr>
 												</tbody>
 											</table>	
+										</div>
+										<div class="col-sm-6">										
+										
 										</div>
 									</div>				
 								</div>
