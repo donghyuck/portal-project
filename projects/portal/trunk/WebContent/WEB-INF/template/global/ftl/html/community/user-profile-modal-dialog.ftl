@@ -63,7 +63,7 @@
 							change: function(){
 								alert(this.data().length);
 							}
-						}).read();
+						}).fetch();
 												
 						break;	
 				}
