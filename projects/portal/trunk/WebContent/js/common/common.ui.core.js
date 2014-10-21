@@ -148,7 +148,8 @@
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
 		status : common.ui.status || status,
-		datasource : common.ui.datasource || datasource
+		datasource : common.ui.datasource || datasource,
+		ajax : common.ui.ajax || ajax,
 	});	
 	
 	
