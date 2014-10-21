@@ -12,7 +12,10 @@
 					switch (action) {
 						case "basic-modify-mode" :
 							common.ui.status( btn , "disable" );
-							break;				
+							break;			
+						case "basic-modify-mode-close" :
+							common.ui.status( $("button[data-action='basic-modify-mode']"), "enable");
+							break;	
 					}
 					
 					alert( action );
@@ -310,13 +313,12 @@
 										</dd>
 										<hr>																									
 									</dl>	
-									<div class="panel panel-primary no-margin-b">
+									<div class="panel panel-primary no-margin-b" style="display:none;">
 										<div class="panel-heading overflow-h">
 											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> 변경</h2>
 											<a href="#"><i class="fa fa-cog pull-right"></i></a>
 										</div>
 										<div class="panel-body no-padding-b">
-
 											<form class="form-horizontal" role="form">
 												<fieldset disabled>
 													<div class="form-group">
@@ -347,11 +349,11 @@
 															</label>
 														</div>
 													</div>	
-												<div class="form-group no-margin-b">
+												<div class="form-group">
 													<div class="col-sm-offset-2 col-sm-10">
 														<div class="btn-group pull-right">	
 															<button type="submit" class="btn btn-danger custom-modify">수정 완료</button>		
-															<button type="submit" class="btn btn-default custom-password-change">최소</button>				
+															<button type="submit" class="btn btn-default" data-bind="click:click" data-action="basic-modify-mode-close">최소</button>				
 														</div>							
 													</div>
 												</div>																		
@@ -401,7 +403,7 @@
 						</div>	
 					</div><!-- .profile-body -->						
 				</div>
-				<div class="modal-footer">
+				<div class="modal-footer no-margin-t">
 					<button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
 				</div>
 			
