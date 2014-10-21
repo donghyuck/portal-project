@@ -182,7 +182,7 @@
 				<div class="modal-body no-padding">
 					<div class="profile-body">
 						
-						<div class="profile-bio">
+						<div class="profile-bio rounded">
                             <div class="row">
                                 <div class="col-md-5">
                                     <img class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
