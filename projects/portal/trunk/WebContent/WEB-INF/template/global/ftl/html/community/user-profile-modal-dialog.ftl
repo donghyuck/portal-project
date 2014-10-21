@@ -215,6 +215,7 @@
 								<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
 								<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
 								<br/>
+								<form class="form-horizontal" role="form">
 								<dl class="dl-horizontal">
 									<dt><strong>아이디</strong></dt>
 									<dd>
@@ -253,14 +254,22 @@
 										</#list>												
 										<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
 									</dd>
-									<hr>																
+									<hr>	
+									<dt><strong>이름</strong></dt>
+									<dd>
+										<label class="input">
+											<i class="icon-append fa fa-user"></i>
+											<input type="text" placeholder="Username" name="username" value="${ user.name }" >
+										</label>																					
+									</dd>
+									<hr>																									
 								</dl>	
-								<form class="form-horizontal" role="form">
+								</form>		
 									<fieldset disabled>
 										<div class="form-group">
 											<label class="col-sm-2 control-label">이름</label>
 											<div class="col-sm-10">
-												<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
+												
 											</div>
 										</div>
 										<div class="form-group">
@@ -280,7 +289,7 @@
 											</div>
 										</div>	
 									</fieldset>
-								</form>																		
+																								
 							</div>
 							<div class="tab-pane" id="profile-social-network">
 								<div class="blank-top-5" ></div>					
