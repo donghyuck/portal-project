@@ -255,16 +255,14 @@
 										<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
 									</dd>
 									<hr>	
-									<dt><strong>이름</strong></dt>
+									<dt><label><strong>이름</strong></label></dt>
 									<dd>
-										<label class="input">
-											<i class="icon-append fa fa-user"></i>
-											<input type="text" placeholder="Username" name="username" value="${ user.name }" >
-										</label>																					
+										<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>																				
 									</dd>
 									<hr>																									
 								</dl>	
 								</form>		
+								
 									<fieldset disabled>
 										<div class="form-group">
 											<label class="col-sm-2 control-label">이름</label>
