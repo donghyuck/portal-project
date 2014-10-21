@@ -84,6 +84,10 @@
 	};
 
 	
+	function status ( selctor, options ){
+		return new common.ui.Status(selector, options);
+	}
+	
 	common.ui.Status = Widget.extend({
 		init : function(element, options) {
 			var that = this;
@@ -139,7 +143,8 @@
 	*/
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
-		defined : common.ui.defined || defined
+		defined : common.ui.defined || defined,
+		status : common.ui.status || status
 	});	
 	
 	
