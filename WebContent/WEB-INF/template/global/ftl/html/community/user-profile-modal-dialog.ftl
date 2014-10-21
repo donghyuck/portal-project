@@ -181,7 +181,7 @@
 				</div>
 				<div class="modal-body no-padding">
 					<div class="profile-body">						
-						<div class="profile-bio rounded margin-buttom-20">
+						<div class="profile-bio rounded margin-bottom-20">
 							<div class="row">
 								<div class="col-md-5">
 									<img class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
@@ -223,7 +223,7 @@
 									</span>
 								</dd>
 								<hr>									
-								<dt><strong>소속</strong></dt>
+								<dt><strong>회사</strong></dt>
 								<dd>
 									<i class="fa fa-building-o"></i> ${user.company.displayName}
 									<small class="text-muted">(${user.company.description})</small>
