@@ -439,10 +439,11 @@
 										</div>
 									</div>
 									-->
-								<div class="tab-pane" id="my-profile-notice-cfg">
-									<div style="height:300px" ></div>
-									준비중입니다.
-								</div>	
+									<div class="tab-pane" id="my-profile-notice-cfg">
+										<div style="height:300px" ></div>
+										준비중입니다.
+									</div>	
+								</div>
 							</div>
 						</div><!-- /.tabs -->	
 					</div><!-- .profile-body -->						
@@ -450,7 +451,6 @@
 				<div class="modal-footer no-margin-t">
 					<button type="button" class="btn btn-default" data-dismiss="modal">확인</button>
 				</div>
-			
 			</div>
 		</div>
 		
