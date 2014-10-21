@@ -289,8 +289,7 @@
 										<dd>
 											<#list roles as item >								
 												<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
-											</#list>												
-											<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: user.roles" ></div>																											
+											</#list>																																				
 										</dd>
 										<hr>																									
 									</dl>	
