@@ -110,7 +110,6 @@
 	*/
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
-		defined : common.ui.defined || defined,
-		bind : common.ui.bind
+		defined : common.ui.defined || defined
 	});	
 })(jQuery);
