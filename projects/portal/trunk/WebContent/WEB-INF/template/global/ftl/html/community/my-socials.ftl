@@ -398,11 +398,7 @@
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
-		<div class="breadcrumbs breadcrumbs-personalized">
-		
-		
-		
-		
+		<div class="breadcrumbs breadcrumbs-personalized">		
 				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation" style="top:-4px;">
 								<ul class="nav navbar-nav pull-right">
 									<li>
