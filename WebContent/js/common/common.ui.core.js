@@ -38,6 +38,9 @@
 	var ui = common.ui,
 	isFunction = kendo.isFunction,
 	extend = $.extend,
+	DataSource = kendo.data.DataSource,
+	POST = 'POST',	
+	JSON = 'json',
 	STRING = 'string',
 	UNDEFINED = "undefined";
 	
@@ -103,11 +106,34 @@
 			}
 		}
 	}
+	/**
+	 * url 
+	 * options 
+	 */
+	
+	function datasource(options){		
+		var cfg = {
+			transport : {
+				read: {
+					type :POST,
+					dataType : JSON, 
+				} 				
+			},
+			error:handleAjaxError,	
+			pageSize: 10,
+		}
+		options = options || {};		
+		extend( cfg , options ); 
+				
+		var dataSource =  DataSource.create(cfg);
+		return dataSource;
+	}
 
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
-		status : common.ui.status || status
+		status : common.ui.status || status,
+		datasource : common.ui.datasource || datasource
 	});	
 	
 	
