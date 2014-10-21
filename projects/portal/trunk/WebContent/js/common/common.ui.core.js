@@ -123,13 +123,12 @@
 			pageSize: 10			
 		};		
 		options = options || {};		
-		
+				
+		var settings = extend( true, {}, cfg , options ); 
 		if( defined(options.url) ){
 			cfg.transport.read.url = options.url;			
 		}
 		
-		var settings = extend(true, {}, cfg , options ); 
-				
 		var dataSource =  DataSource.create(settings);
 		return dataSource;
 	}
