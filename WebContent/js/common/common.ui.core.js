@@ -129,7 +129,7 @@
 				
 		
 		
-		var settings = extend({}, cfg , options ); 
+		var settings = extend(true, {}, cfg , options ); 
 		if( defined(options.url) ){
 			settings.transport.read.url = options.url;			
 		}
