@@ -85,7 +85,7 @@
 	
 	function status ( selector, status ){
 		var element = selector;
-		if(define(status)){
+		if(defined(status)){
 			if( status === 'enable') {
 				if( !element.is(":disabled") ){
 					element.prop("disabled", true);
