@@ -388,7 +388,7 @@
 									</div>												
 								</div>
 								<div class="tab-pane" id="profile-password-change">
-									<div class="blank-top-5" ></div>
+									<div style="height:300px" ></div>
 									준비중입니다.
 								</div>									
 								<div class="tab-pane" id="profile-social-cfg">
@@ -425,7 +425,7 @@
 									</div>	
 								</div>
 								<div class="tab-pane" id="profile-notice-cfg">
-									<div class="blank-top-5" ></div>
+									<div style="height:300px" ></div>
 									준비중입니다.
 								</div>	
 							</div>
