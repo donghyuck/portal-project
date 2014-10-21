@@ -86,7 +86,7 @@
 	function status ( selector, status ){
 		var element = selector;
 		if(defined(status)){
-			if( status === 'enable') {
+			if( status === 'disable') {
 				if( !element.is(":disabled") ){
 					element.prop("disabled", true);
 					if( element.is("[data-toggle='button']") ){
