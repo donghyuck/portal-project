@@ -9,7 +9,6 @@
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
-					
 					switch (action) {
 						case "basic-modify-mode" :
 							common.ui.status( $("button[data-action='basic-modify-mode']") , "disable" );
@@ -28,20 +27,20 @@
 			});
 			
 			kendo.bind( $("#my-profile-dialog" ), myProfileModel );
-			
-			$("#my-profile-dialog form button").each(function( index ) {
-				var dialog_action = $(this);		
-				dialog_action.click(function (e) {
-					e.preventDefault();					
-					if( $(this).hasClass("custom-modify") ){
-						alert("update");
-					}else if( $(this).hasClass("custom-password-change") ){ 
-						alert("password");				
-					}
-				});
-			});	
 
 			$('#my-profile-tab a').click(function (e) {
+				$this = $(this);				
+				var pane = $(this).attr("href");
+				switch (pane) {
+					case "profile-basic-info" :
+					
+						break;
+				}
+			});
+			
+			$('#my-profile-tab a:first').tab('show')
+
+			$('#my-profile-tab a.a').click(function (e) {
 				e.preventDefault();				
 				if( $(this).attr('href') == '#profile-social-network' ){					
 					if( !$("#my-social-network-grid" ).data('kendoGrid') ){
