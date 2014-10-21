@@ -5,6 +5,7 @@
 		<!--
 				
 			var myProfileModel = new kendo.data.ObservableObject({
+				user : $("#account-navbar").data("kendoExtAccounts").token, 
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
@@ -267,7 +268,7 @@
 										<hr>
 										<dt><strong>외부 연계 계정</strong></dt>
 										<dd>
-											${user.external?string("네", "아니오")}									
+											${user.external?string("네", "아니오")}
 										</dd>
 										<hr>	
 										<#if groups?has_content >
