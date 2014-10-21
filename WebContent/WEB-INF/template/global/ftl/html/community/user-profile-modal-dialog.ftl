@@ -57,6 +57,9 @@
 					
 						common.ui.datasource({
 							url : "/connect/list.json",
+							schema : {
+								data : "connections"
+							}
 							dataBound: function(){
 								alert(this.data());
 							}
