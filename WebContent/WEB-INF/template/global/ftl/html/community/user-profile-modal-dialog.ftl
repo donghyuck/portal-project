@@ -54,17 +54,20 @@
 					case "#my-profile-basic-cfg" :					
 						break;
 					case "#my-profile-social-cfg" :
-					
-						common.ui.datasource({
-							url : "/connect/list.json",
-							schema:{
-								data:"connections"
-							},
-							change: function(){
-								alert(this.data().length);
-							}
-						}).fetch();
-												
+						if( !$("#my-profile-social-grid" ).data('kendoGrid') ){
+							$("#my-profile-social-grid" ).kendoGrid({
+								dataSource : common.ui.datasource({
+									url : "/connect/list.json",
+									schema:{
+										data:"connections"
+									}
+								}),
+								selectable: "single",
+								rowTemplate: kendo.template($("#social-network-grid-row-template").html()),	
+								change: function(e) { 				
+								}
+							});
+						}							
 						break;	
 				}
 			});
