@@ -65,6 +65,18 @@
 								selectable: "single",
 								rowTemplate: kendo.template($("#my-profile-social-connection-grid-row-template").html()),	
 								change: function(e) { 				
+									var selectedCells = this.select();
+									if( selectedCells.length == 1){
+										var selectedCell = this.dataItem( selectedCells );	 										
+										common.ui.ajax({
+											url: "/connect/" + selectedCell.providerId + "/user/lookup.json",
+											success : function(response){
+												var t = kendo.template($('#my-social-account-details-template').html());			
+												$("#my-profile-social-details").html( t(response) );	
+											}
+										});
+										
+									}
 								}
 							});
 						}							
@@ -443,7 +455,10 @@
 											</table>	
 										</div>
 										<div class="col-sm-6">										
-										
+											<div id="my-profile-social-details" >
+												<!--<button class="btn btn-danger btn-sm">연결 삭제</button>-->
+											
+											</div>
 										</div>
 									</div>				
 								</div>
@@ -494,7 +509,7 @@
 		</div>
 		
 		<!-- social network -->
-		<script type="text/x-kendo-template" id="my-social-network-account-details-template">
+		<script type="text/x-kendo-template" id="my-social-account-details-template">
 		<div class="panel panel-default margin-buttom-5">
 			<!--<div class="panel-heading"><i class="fa fa-user"></i></div>-->
 			<div class="panel-body" style="padding:10px;">				
