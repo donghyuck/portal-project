@@ -26,7 +26,29 @@
 				}		
 			});
 			
+			
 			kendo.bind( $("#my-profile-dialog" ), myProfileModel );
+
+			if(!$("#my-photo-upload").data("kendoUpload")){
+				$("#my-photo-upload").kendoUpload({
+					multiple : false,
+					showFileList : false,
+					localization:{ select : '사진 선택' , dropFilesHere : '업로드할 이미지를 이곳에 끌어 놓으세요.' },
+					async: {
+						saveUrl:  '${request.contextPath}/community/update-my-photo.do?output=json',							   
+						autoUpload: true
+					},
+					upload: function (e) {								         						    								    	 		    	 
+					},
+					success : function(e) {								    
+						if( e.response.photo ){
+							var _currentUser = $("#account-panel").data("currentUser" );
+							$('#my-photo-image').attr( 'src', common.api.user.photoUrl( currentUser, 100, 150 ) );
+						}				
+					}	
+				});
+			}	
+			
 
 			$('#my-profile-tab a').click(function (e) {
 				$this = $(this);				
