@@ -511,7 +511,7 @@
 		<script type="text/x-kendo-template" id="my-social-account-details-template">
 		<div class="panel panel-profile">
 			<div class="panel-heading overflow-h">
-				<h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Skills</h2>
+				<h2 class="panel-title heading-sm pull-left"><i class="fa fa-#=providerId#"></i> #=providerId#</h2>
 				<a href="#"><i class="fa fa-cog pull-right"></i></a>
 			</div>		
 			<div class="panel-body" style="padding:10px;">				
