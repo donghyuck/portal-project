@@ -256,36 +256,37 @@
 									<hr>																									
 								</dl>	
 								<form class="form-horizontal" role="form">
-									<div class="form-group">
-										<label class="col-sm-2 control-label">이름</label>
-										<div class="col-sm-10">
-											<div class="input-group">
-												<span class="input-group-addon"><i class="fa fa-user"></i></span>
-												<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
-											</div>
-
-										</div>
-									</div>
-									<div class="form-group">
-										<label class="col-sm-2 control-label">메일</label>
-										<div class="col-sm-10">
-											<div class="input-group">
-												<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-												<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+									<fieldset disabled>
+										<div class="form-group">
+											<label class="col-sm-2 control-label">이름</label>
+											<div class="col-sm-10">
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-user"></i></span>
+													<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
+												</div>
+	
 											</div>
 										</div>
-									</div>
-									<div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10">
-											<label class="checkbox-inline">
-												<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
-											</label>
-											<label class="checkbox-inline">
-												<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
-											</label>
+										<div class="form-group">
+											<label class="col-sm-2 control-label">메일</label>
+											<div class="col-sm-10">
+												<div class="input-group">
+													<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+													<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+												</div>
+											</div>
 										</div>
-									</div>								
-								
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<label class="checkbox-inline">
+													<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
+												</label>
+												<label class="checkbox-inline">
+													<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
+												</label>
+											</div>
+										</div>								
+									</fieldset>
 								</form>		
 								
 									
