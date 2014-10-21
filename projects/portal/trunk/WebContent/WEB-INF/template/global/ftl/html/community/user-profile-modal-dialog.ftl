@@ -214,8 +214,7 @@
 							<div class="tab-pane active" id="profile-basic-info">							
 								<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
 								<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
-								<br/>
-								<form class="form-horizontal" role="form">
+								<br/>								
 								<dl class="dl-horizontal">
 									<dt><strong>아이디</strong></dt>
 									<dd>
@@ -254,39 +253,42 @@
 										</#list>												
 										<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
 									</dd>
-									<hr>	
-									<dt><label><strong>이름</strong></label></dt>
-									<dd>
-										<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>																				
-									</dd>
 									<hr>																									
 								</dl>	
+								<form class="form-horizontal" role="form">
+								
+									<div class="form-group">
+										<label class="col-sm-2 control-label">아이디</label>
+										<div class="col-sm-10">
+											
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">이름</label>
+										<div class="col-sm-10">
+											<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="col-sm-2 control-label">메일</label>
+										<div class="col-sm-10">
+											<input type="email" class="form-control" placeholder="메일" data-bind="value:email" value="${ user.email }"/>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<label class="checkbox-inline">
+												<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
+											</label>
+											<label class="checkbox-inline">
+												<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
+											</label>
+										</div>
+									</div>								
+								
 								</form>		
 								
-									<fieldset disabled>
-										<div class="form-group">
-											<label class="col-sm-2 control-label">이름</label>
-											<div class="col-sm-10">
-												
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label">메일</label>
-											<div class="col-sm-10">
-												<input type="email" class="form-control" placeholder="메일" data-bind="value:email" value="${ user.email }"/>
-											</div>
-										</div>
-										<div class="form-group">
-											<div class="col-sm-offset-2 col-sm-10">
-												<label class="checkbox-inline">
-													<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
-												</label>
-												<label class="checkbox-inline">
-													<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
-												</label>
-											</div>
-										</div>	
-									</fieldset>
+									
 																								
 							</div>
 							<div class="tab-pane" id="profile-social-network">
