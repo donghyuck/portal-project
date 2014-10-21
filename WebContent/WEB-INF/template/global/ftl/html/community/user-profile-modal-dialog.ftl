@@ -149,7 +149,22 @@
 		#my-profile-dialog .tab-content .tab-pane hr{
 			margin: 17px 0 15px;
 		}
-										
+		
+		#my-profile-dialog .profile-bio a {
+			left: 50%;
+			bottom: 20px;
+			margin-left: -60px;
+			text-align: center;
+			position: absolute;
+		}
+		
+		#my-profile-dialog .profile-bio span {
+			display: block;
+		}
+		
+		#my-profile-dialog .profile-bio hr {
+			margin: 12px 0 10px;
+		}								
 		</style>			
 		
 		<div id="my-profile-dialog">
