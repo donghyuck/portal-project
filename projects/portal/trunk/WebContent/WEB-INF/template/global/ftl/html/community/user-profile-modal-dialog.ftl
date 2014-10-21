@@ -311,7 +311,7 @@
 										<hr>																									
 									</dl>	
 									</div>
-									<div class="panel panel-profile">
+									<div class="panel panel-primary">
 										<div class="panel-heading overflow-h">
 											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> 변경</h2>
 											<a href="#"><i class="fa fa-cog pull-right"></i></a>
