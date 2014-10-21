@@ -116,7 +116,7 @@
 			transport:{
 				read:{
 					type :POST,
-					dataType : JSON, 
+					dataType : JSON
 				} 				
 			},
 			error:handleAjaxError,	
