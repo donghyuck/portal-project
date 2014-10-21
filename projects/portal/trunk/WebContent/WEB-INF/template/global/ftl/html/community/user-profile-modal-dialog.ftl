@@ -255,6 +255,11 @@
 									</dd>
 									<hr>																									
 								</dl>	
+								<span>
+											<a class="pull-right" href="#">
+												<i class="fa fa-pencil"></i>
+											</a>
+										</span>
 								<form class="form-horizontal" role="form">
 									<fieldset disabled>
 										<div class="form-group">
