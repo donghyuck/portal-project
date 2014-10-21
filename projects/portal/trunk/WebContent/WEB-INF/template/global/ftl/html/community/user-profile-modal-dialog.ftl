@@ -189,6 +189,8 @@
 								</div>
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
+									<span><strong>아이디:</strong> ${user.username}</span>
+									<span><strong>소속:</strong> <i class="fa fa-building-o"></i> ${user.company.displayName} <small class="text-muted">(${user.company.description})</small></span>
 									<span><strong>Job:</strong> <i class="fa fa-question text-muted"></i></span>
 									<span><strong>Position:</strong> <i class="fa fa-question text-muted"></i></span>
 									<hr>
