@@ -193,8 +193,6 @@
 								</div>
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
-									<span><strong>아이디:</strong> ${user.username}</span>
-									<span><strong>회사:</strong> ${user.company.displayName} <small class="text-muted">(${user.company.description})</small></span>
 									<span><strong>Job:</strong> <i class="fa fa-question text-muted"></i></span>
 									<span><strong>Position:</strong> <i class="fa fa-question text-muted"></i></span>
 									<hr>
@@ -214,50 +212,75 @@
 						<!-- Tab panes -->
 						<div class="tab-content no-padding-t">
 							<div class="tab-pane active" id="profile-basic-info">							
-							<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
-							<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
-							<br/>
-							<dl class="dl-horizontal">
-								<dt><strong>아이디</strong></dt>
-								<dd>
-									<span data-bind="text:username" >${ user.username }</span>									
-								</dd>
-								<hr>									
-								<dt><strong>회사</strong></dt>
-								<dd>
-									<i class="fa fa-building-o"></i> ${user.company.displayName}
-									<small class="text-muted">(${user.company.description})</small>
-								</dd>
-								<hr>
-								<dt><strong>외부 연계 계정</strong></dt>
-								<dd>
-									${user.external?string("네", "아니오")}									
-								</dd>
-								<hr>	
-								<#if groups?has_content >
-								<dt><strong>그룹</strong></dt>
-								<dd>
-									<#list groups as item >								
-									<span class="label label-info rounded"><i class="fa fa-users"></i> ${item.displayName}</span>
-									</#list> 													
-									<span>
-										<a class="pull-right" href="#">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</span>
-								</dd>
-								<hr>									
-								</#if>								
-								<dt><strong>롤</strong></dt>
-								<dd>
-									<#list roles as item >								
-										<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
-									</#list>												
-									<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
-								</dd>
-								<hr>																
-							</dl>
-											
+								<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
+								<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
+								<br/>
+								<dl class="dl-horizontal">
+									<dt><strong>아이디</strong></dt>
+									<dd>
+										<span data-bind="text:username" >${ user.username }</span>									
+									</dd>
+									<hr>									
+									<dt><strong>회사</strong></dt>
+									<dd>
+										<i class="fa fa-building-o"></i> ${user.company.displayName}
+										<small class="text-muted">(${user.company.description})</small>
+									</dd>
+									<hr>
+									<dt><strong>외부 연계 계정</strong></dt>
+									<dd>
+										${user.external?string("네", "아니오")}									
+									</dd>
+									<hr>	
+									<#if groups?has_content >
+									<dt><strong>그룹</strong></dt>
+									<dd>
+										<#list groups as item >								
+										<span class="label label-info rounded"><i class="fa fa-users"></i> ${item.displayName}</span>
+										</#list> 													
+										<span>
+											<a class="pull-right" href="#">
+												<i class="fa fa-pencil"></i>
+											</a>
+										</span>
+									</dd>
+									<hr>									
+									</#if>								
+									<dt><strong>롤</strong></dt>
+									<dd>
+										<#list roles as item >								
+											<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
+										</#list>												
+										<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
+									</dd>
+									<hr>																
+								</dl>	
+								<form class="form-horizontal" role="form">
+									<fieldset disabled>
+										<div class="form-group">
+											<label class="col-sm-2 control-label">이름</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="col-sm-2 control-label">메일</label>
+											<div class="col-sm-10">
+												<input type="email" class="form-control" placeholder="메일" data-bind="value:email" value="${ user.email }"/>
+											</div>
+										</div>
+										<div class="form-group">
+											<div class="col-sm-offset-2 col-sm-10">
+												<label class="checkbox-inline">
+													<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
+												</label>
+												<label class="checkbox-inline">
+													<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
+												</label>
+											</div>
+										</div>	
+									</fieldset>
+								</form>																		
 							</div>
 							<div class="tab-pane" id="profile-social-network">
 								<div class="blank-top-5" ></div>					
