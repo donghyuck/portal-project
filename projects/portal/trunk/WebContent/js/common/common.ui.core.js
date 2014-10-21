@@ -132,6 +132,18 @@
 		return dataSource;
 	};
 
+	function ajax ( options ){
+		var cfg = {
+			type : POST,	
+			data : {},
+			dataType : JSON,
+			error:handleAjaxError 				
+		};
+		options = options || {};	
+		var settings = extend(true, {}, cfg , options ); 
+		$.ajax(settings);		
+	};
+	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
