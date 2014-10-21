@@ -409,7 +409,28 @@
 										
 										</div>
 										<div class="col-sm-6">
-											<table id="my-profile-social-grid"></table>	
+											<table id="my-profile-social-grid">
+											
+												<colgroup>
+													<col/>
+													<col/>
+												</colgroup>
+												<thead>
+													<tr>
+													<th>
+													미디어
+													</th>
+													<th>
+													상태
+													</th>													
+												</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td colspan="2"></td>
+													</tr>
+												</tbody>
+											</table>	
 										</div>
 									</div>				
 								</div>
