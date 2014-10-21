@@ -255,7 +255,7 @@
 							<!-- Tab panes -->
 							<div class="tab-content no-padding-t">
 								<div class="tab-pane active" id="profile-basic-info">
-									<div class="row">						
+				
 									<h2 class="heading-md">이름과 메일 주소, 이름(메일) 공개 여부를 확인하세요. 
 										<button class="btn btn-primary btn-sm rounded pull-right" data-action="basic-modify-mode" data-toggle="button" data-bind="click: click"><i class="fa fa-pencil"></i> 변경</button>
 									</h2>
@@ -310,13 +310,12 @@
 										</dd>
 										<hr>																									
 									</dl>	
-									</div>
-									<div class="panel panel-primary">
+									<div class="panel panel-primary no-margin-b">
 										<div class="panel-heading overflow-h">
 											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> 변경</h2>
 											<a href="#"><i class="fa fa-cog pull-right"></i></a>
 										</div>
-										<div class="panel-body">
+										<div class="panel-body no-padding-b">
 
 											<form class="form-horizontal" role="form">
 												<fieldset disabled>
@@ -348,7 +347,7 @@
 															</label>
 														</div>
 													</div>	
-												<div class="form-group">
+												<div class="form-group no-margin-b">
 													<div class="col-sm-offset-2 col-sm-10">
 														<div class="btn-group pull-right">	
 															<button type="submit" class="btn btn-danger custom-modify">수정 완료</button>		
@@ -357,12 +356,9 @@
 													</div>
 												</div>																		
 												</fieldset>
-											</form>		
-									
-										</div>       
-									</div>
-								
-																							
+											</form>										
+										</div>
+									</div>												
 								</div>
 								<div class="tab-pane" id="profile-social-network">
 									<div class="blank-top-5" ></div>					
