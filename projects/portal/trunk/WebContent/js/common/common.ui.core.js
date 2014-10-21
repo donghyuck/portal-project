@@ -123,18 +123,11 @@
 			pageSize: 10			
 		};		
 		
-		alert("ss");
-		
 		options = options || {};		
-				
-		
-		
 		var settings = extend(true, {}, cfg , options ); 
 		if( defined(options.url) ){
 			settings.transport.read.url = options.url;			
-		}
-		alert( kendo.stringify( settings ));
-		
+		}		
 		var dataSource =  DataSource.create(settings);
 		return dataSource;
 	};
