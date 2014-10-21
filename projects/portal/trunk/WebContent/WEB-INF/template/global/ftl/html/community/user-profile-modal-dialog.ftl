@@ -176,7 +176,7 @@
 							<dl class="dl-horizontal">
 								<dt><strong>아이디</strong></dt>
 								<dd>
-									<span data-bind="text:username" >${ user.username }</span>																				
+									<span data-bind="text:username" ></span>																				
 									<span>
 										<a class="pull-right" href="#">
 											<i class="fa fa-pencil"></i>
