@@ -149,6 +149,10 @@
 		#my-profile-dialog .tab-content .tab-pane hr{
 			margin: 17px 0 15px;
 		}
+
+		#my-profile-dialog .tab-content .tab-pane dl dt {
+			text-align: inherit;
+		}
 		
 		#my-profile-dialog .profile-bio a {
 			left: 50%;
@@ -212,6 +216,7 @@
 							<div class="tab-pane active" id="profile-basic-info">							
 							<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
 							<p><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
+							<br/>
 							<dl class="dl-horizontal">
 								<dt><strong>아이디</strong></dt>
 								<dd>
