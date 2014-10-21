@@ -179,8 +179,8 @@
 						<div class="profile-bio">
                             <div class="row">
                                 <div class="col-md-5">
-                                    <img class="img-responsive md-margin-bottom-10" src="assets/img/team/5.jpg" alt="">
-                                    <a class="btn-u btn-u-sm" href="#">Change Picture</a>
+                                    <img class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
+                                    <a class="btn-u btn-u-sm" href="#">사진변경</a>
                                 </div>
                                 <div class="col-md-7">
                                     <h2>Edward Rooster</h2>
