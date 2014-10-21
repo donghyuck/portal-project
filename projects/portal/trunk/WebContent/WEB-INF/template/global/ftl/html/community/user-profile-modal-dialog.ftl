@@ -403,7 +403,7 @@
 										
 										</div>
 										<div class="col-sm-6">
-											<table id="my-profile-social-grid">
+											<table id="my-profile-social-grid"></table>	
 										</div>
 									</div>				
 								</div>
