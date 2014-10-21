@@ -36,6 +36,9 @@
 			'css!${request.contextPath}/js/codrops/codrops.grid.js',
 				
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
+			'${request.contextPath}/js/common/common.ui.core.js',		
+			'${request.contextPath}/js/common/common.ui.connect.js',		
+						
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
@@ -75,9 +78,9 @@
 												
 				// photo panel showing				
 				createPhotoListView();								
-				$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-					this.select(this.element.children().first());
-				});
+				//$('#photo-list-view').data('kendoListView').one('dataBound', function(){
+				//	this.select(this.element.children().first());
+				//});
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
