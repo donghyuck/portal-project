@@ -189,10 +189,10 @@
 								</div>
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
-                                    <span><strong>Job:</strong> <i class="fa fa-question text-muted"></i></span>
-                                    <span><strong>Position:</strong> <i class="fa fa-question text-muted"></i></span>
-                                    <hr>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum. Integer nulla felis, porta suscipit nulla et, dignissim commodo nunc. Morbi a semper nulla.</p>
+									<span><strong>Job:</strong> <i class="fa fa-question text-muted"></i></span>
+									<span><strong>Position:</strong> <i class="fa fa-question text-muted"></i></span>
+									<hr>
+									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum. Integer nulla felis, porta suscipit nulla et, dignissim commodo nunc. Morbi a semper nulla.</p>
 									<p>Proin mauris odio, pharetra quis ligula non, vulputate vehicula quam. Nunc in libero vitae nunc ultricies tincidunt ut sed leo. Sed luctus dui ut congue consequat. Cras consequat nisl ante, nec malesuada velit pellentesque ac. Pellentesque nec arcu in ipsum iaculis convallis.</p>
 								</div>
                             </div>    
