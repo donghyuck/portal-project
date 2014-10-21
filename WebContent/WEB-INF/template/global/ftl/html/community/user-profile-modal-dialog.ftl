@@ -15,7 +15,7 @@
 				}		
 			});
 			
-			kendo.bind( $(#my-profile-dialog), myProfileModel );
+			kendo.bind( $("#my-profile-dialog" ), myProfileModel );
 			
 			$("#my-profile-dialog form button").each(function( index ) {
 				var dialog_action = $(this);		
