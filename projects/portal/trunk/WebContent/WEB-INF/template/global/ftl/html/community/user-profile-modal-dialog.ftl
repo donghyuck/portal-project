@@ -312,10 +312,9 @@
 										</dd>
 										<hr>																									
 									</dl>	
-									<div class="panel panel-default no-margin-b" style="display:none;">
+									<div class="panel panel-default no-margin-b rounded" style="display:none;">
 										<div class="panel-heading overflow-h">
 											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> 변경</h2>
-											<a href="#"><i class="fa fa-cog pull-right"></i></a>
 										</div>
 										<div class="panel-body no-padding-b">
 											<form class="form-horizontal" role="form">
