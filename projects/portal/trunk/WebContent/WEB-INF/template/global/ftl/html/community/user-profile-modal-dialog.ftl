@@ -256,23 +256,22 @@
 									<hr>																									
 								</dl>	
 								<form class="form-horizontal" role="form">
-								
-									<div class="form-group">
-										<label class="col-sm-2 control-label">아이디</label>
-										<div class="col-sm-10">
-											
-										</div>
-									</div>
 									<div class="form-group">
 										<label class="col-sm-2 control-label">이름</label>
 										<div class="col-sm-10">
-											<input type="email" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
+											<input type="text" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
+
+
+
 										</div>
 									</div>
 									<div class="form-group">
 										<label class="col-sm-2 control-label">메일</label>
 										<div class="col-sm-10">
-											<input type="email" class="form-control" placeholder="메일" data-bind="value:email" value="${ user.email }"/>
+											<div class="input-group margin-bottom-20">
+												<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+												<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+											</div>
 										</div>
 									</div>
 									<div class="form-group">
