@@ -247,17 +247,17 @@
 									<dl class="dl-horizontal">
 										<dt><strong>아이디</strong></dt>
 										<dd>
-											<span data-bind="text:username" >${ user.username }</span>									
+											<span data-bind="text:user.username" >${ user.username }</span>									
 										</dd>
 										<hr>		
 										<dt><strong>이름</strong></dt>
 										<dd>
-											<span data-bind="text:username" >${ user.name }</span>									
+											<span data-bind="text:user.username" >${ user.name }</span>									
 										</dd>
 										<hr>	
 										<dt><strong>메일</strong></dt>
 										<dd>
-											<span data-bind="text:username" >${ user.email }</span>									
+											<span data-bind="text:user.email" >${ user.email }</span>									
 										</dd>
 										<hr>																												
 										<dt><strong>회사</strong></dt>
@@ -290,7 +290,7 @@
 											<#list roles as item >								
 												<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
 											</#list>												
-											<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
+											<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: user.roles" ></div>																											
 										</dd>
 										<hr>																									
 									</dl>	
