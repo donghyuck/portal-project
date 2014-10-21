@@ -576,7 +576,7 @@
 		</script>
 		<script type="text/x-kendo-template" id="my-profile-social-connection-grid-row-template">
 			<tr>
-				<td><i class="rounded-x #: providerId #" fa-#: providerId #"></i> #: providerId #</td>
+				<td><i class="fa rounded-x #: providerId #" fa-#: providerId #"></i> #: providerId #</td>
 				<td>
 				#if ( displayName != null ) { # 
 				#: displayName #
