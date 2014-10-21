@@ -352,7 +352,7 @@
 													<div class="col-sm-offset-2 col-sm-10">
 														<div class="btn-group pull-right">	
 															<button type="submit" class="btn btn-danger custom-modify">수정 완료</button>		
-															<button type="submit" class="btn btn-default" data-bind="click:click" data-action="basic-modify-mode-close">최소</button>				
+															<button type="submit" class="btn btn-default" data-bind="click:click" data-action="basic-modify-mode-close">취소</button>				
 														</div>							
 													</div>
 												</div>																		
