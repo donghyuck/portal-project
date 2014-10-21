@@ -192,7 +192,24 @@
 			background: #fff;
 			position: relative;
 			padding: 15px 10px 5px 15px;
-		}							
+		}		
+		
+		#my-profile-dialog .panel-profile {
+			border: none;
+			margin-bottom: 0;
+			box-shadow: none;
+		}
+		
+		#my-profile-dialog .panel-heading {
+			color: #585f69;
+			background: #fff;
+			padding: 7px 15px;
+			border-bottom: solid 3px #f7f7f7;
+		}	
+		
+		#my-profile-dialog .panel-title {
+			font-size: 16px;
+		}						
 		</style>			
 		
 		<div id="my-profile-dialog">
