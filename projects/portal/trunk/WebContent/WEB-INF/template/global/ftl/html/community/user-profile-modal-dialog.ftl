@@ -251,6 +251,7 @@
 						<div class="profile-bio rounded margin-bottom-20">
 							<div class="row">
 								<div class="col-md-5">
+									<div class="dropdown">
 									<img id="my-photo-image" class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
 									<a class="btn-u btn-u-sm dropdown-toggle" href="#" data-toggle="dropdown">
 									사진변경	
@@ -260,7 +261,8 @@
 										<li>
 											<input name="my-photo-upload" id="my-photo-upload" type="file" class="pull-right" />
 										</li>
-									</ul>											
+									</ul>	
+									</div>										
 								</div>
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
