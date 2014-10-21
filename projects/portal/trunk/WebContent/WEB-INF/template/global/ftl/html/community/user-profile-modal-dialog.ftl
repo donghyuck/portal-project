@@ -215,38 +215,23 @@
 						<div class="tab-content no-padding-t">
 							<div class="tab-pane active" id="profile-basic-info">							
 							<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
-							<p><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
+							<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
 							<br/>
 							<dl class="dl-horizontal">
 								<dt><strong>아이디</strong></dt>
 								<dd>
-									<span data-bind="text:username" >${ user.username }</span>																				
-									<span>
-										<a class="pull-right" href="#">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</span>
+									<span data-bind="text:username" >${ user.username }</span>									
 								</dd>
 								<hr>									
 								<dt><strong>회사</strong></dt>
 								<dd>
 									<i class="fa fa-building-o"></i> ${user.company.displayName}
 									<small class="text-muted">(${user.company.description})</small>
-									<span>
-										<a class="pull-right" href="#">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</span>
 								</dd>
 								<hr>
 								<dt><strong>외부 연계 계정</strong></dt>
 								<dd>
-									${user.external?string("네", "아니오")}
-									<span>
-										<a class="pull-right" href="#">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</span>
+									${user.external?string("네", "아니오")}									
 								</dd>
 								<hr>	
 								<#if groups?has_content >
@@ -269,55 +254,10 @@
 										<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
 									</#list>												
 									<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
-									<span>
-										<a class="pull-right" href="#">
-											<i class="fa fa-pencil"></i>
-										</a>
-									</span>
 								</dd>
 								<hr>																
 							</dl>
-							
-							<!--
-								<div class="blank-top-5" ></div>					
-								<table class="table  table-hover no-margin-bottom" >
-									<tbody>
-										<tr>
-											<td>회사</td>
-											<td>${user.company.displayName}<small>(${user.company.description})</small></td>
-										</tr>
-										<tr>
-											<td>외부 계정</td>
-											<td>${user.external?string("네", "아니오")}</td>
-										</tr>
-										<tr>
-											<td>그룹</td>
-											<td>
-												<#list groups as item >								
-													<span class="label label-info" style="font-size:100%; font-weight:normal;"><i class="fa fa-folder-o"></i> ${item.displayName}</span>
-												</#list>  		
-
-												<#list roles as item >								
-													<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> ${item}</span>						
-												</#list>  																																
-												
-											</td>
-										</tr>																						
-										<tr>
-											<td>권한</td>
-											<td>
-												<#list roles as item >								
-													<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> ${item}</span>						
-												</#list>  										
-											</td>
-										</tr>		
-										<tr>
-											<td>마지막 로그인</td>
-											<td><span class="text-muted data-bind="text: lastLoggedIn">${user.lastLoggedIn}</span></td>
-										</tr>																				
-									</tbody>
-								</table>		
-								-->						
+											
 							</div>
 							<div class="tab-pane" id="profile-social-network">
 								<div class="blank-top-5" ></div>					
