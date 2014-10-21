@@ -252,7 +252,7 @@
 										<hr>		
 										<dt><strong>이름</strong></dt>
 										<dd>
-											<span data-bind="text:user.username" >${ user.name }</span>									
+											<span data-bind="text:user.name" >${ user.name }</span>									
 										</dd>
 										<hr>	
 										<dt><strong>메일</strong></dt>
@@ -275,7 +275,7 @@
 										<dt><strong>그룹</strong></dt>
 										<dd>
 											<#list groups as item >								
-											<span class="label label-info rounded"><i class="fa fa-users"></i> ${item.displayName}</span>
+											<span class="label label-primary rounded"><i class="fa fa-users"></i> ${item.displayName}</span>
 											</#list> 													
 											<span>
 												<a class="pull-right" href="#">
@@ -288,7 +288,7 @@
 										<dt><strong>롤</strong></dt>
 										<dd>
 											<#list roles as item >								
-												<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
+												<span class="label label-success rounded"><i class="fa fa-key"></i> ${item}</span>						
 											</#list>																																				
 										</dd>
 										<hr>																									
@@ -301,46 +301,46 @@
 										</div>
 										<div class="panel-body">
 
-									<form class="form-horizontal" role="form">
-										<fieldset disabled>
-											<div class="form-group">
-												<label class="col-sm-2 control-label">변경할 이름</label>
-												<div class="col-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-user"></i></span>
-														<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
-													</div>	
-												</div>
-											</div>
-											<div class="form-group">
-												<label class="col-sm-2 control-label">변경할 메일</label>
-												<div class="col-sm-10">
-													<div class="input-group">
-														<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-														<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+											<form class="form-horizontal" role="form">
+												<fieldset disabled>
+													<div class="form-group">
+														<label class="col-sm-2 control-label">변경할 이름</label>
+														<div class="col-sm-10">
+															<div class="input-group">
+																<span class="input-group-addon"><i class="fa fa-user"></i></span>
+																<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
+															</div>	
+														</div>
 													</div>
-												</div>
-											</div>
-											<div class="form-group">
-												<div class="col-sm-offset-2 col-sm-10">
-													<label class="checkbox-inline">
-														<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
-													</label>
-													<label class="checkbox-inline">
-														<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
-													</label>
-												</div>
-											</div>	
-										<div class="form-group">
-											<div class="col-sm-offset-2 col-sm-10">
-												<div class="btn-group pull-right">	
-													<button type="submit" class="btn btn-danger custom-modify">수정 완료</button>		
-													<button type="submit" class="btn btn-default custom-password-change">최소</button>				
-												</div>							
-											</div>
-										</div>																		
-										</fieldset>
-									</form>		
+													<div class="form-group">
+														<label class="col-sm-2 control-label">변경할 메일</label>
+														<div class="col-sm-10">
+															<div class="input-group">
+																<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+																<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<div class="col-sm-offset-2 col-sm-10">
+															<label class="checkbox-inline">
+																<input type="checkbox" data-bind="checked: user.nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
+															</label>
+															<label class="checkbox-inline">
+																<input type="checkbox" data-bind="checked: user.emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
+															</label>
+														</div>
+													</div>	
+												<div class="form-group">
+													<div class="col-sm-offset-2 col-sm-10">
+														<div class="btn-group pull-right">	
+															<button type="submit" class="btn btn-danger custom-modify">수정 완료</button>		
+															<button type="submit" class="btn btn-default custom-password-change">최소</button>				
+														</div>							
+													</div>
+												</div>																		
+												</fieldset>
+											</form>		
 									
 										</div>       
 									</div>
