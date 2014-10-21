@@ -70,8 +70,9 @@
 										common.ui.ajax({
 											url: "/connect/" + selectedCell.providerId + "/user/lookup.json",
 											success : function(response){
-												var t = kendo.template($('#my-social-account-details-template').html());	
-												$("#my-profile-social-details").html( t( $.extend({}, response , {provider : selectedCell.providerId } ) ) );	
+												var temp = kendo.template($('#my-social-account-details-template').html());	
+												$.extend( response , { connection : selectedCell } ); 
+												$("#my-profile-social-details").html( temp( response ) );	
 											}
 										});
 										
