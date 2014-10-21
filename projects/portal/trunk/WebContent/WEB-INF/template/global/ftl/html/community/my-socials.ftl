@@ -398,7 +398,11 @@
 		<#include "/html/common/common-homepage-menu.ftl" >		
 		<!-- END HEADER -->	
 		<!-- START MAIN CONTENT -->
-		<div id="main-content" class="container-fluid" style="min-height:300px;">
+		<div class="breadcrumbs breadcrumbs-personalized">
+		
+		
+		
+		
 				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation" style="top:-4px;">
 								<ul class="nav navbar-nav pull-right">
 									<li>
@@ -422,9 +426,10 @@
 									</li> 		
 								</ul>
 					</div><!-- ./navbar-personalized -->	
-				<div id="personalized-area" class="row"></div>				
-
-		</div
+		</div>
+		<div id="main-content" class="container-fluid" style="min-height:300px;">			
+				<div id="personalized-area" class="row"></div>	
+		</div>
 		<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
