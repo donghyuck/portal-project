@@ -201,148 +201,142 @@
 								</div>
                             </div>    
                         </div>
-                        					
-					<div class="tab-v1" >					
-						<!-- Nav tabs -->
-						<ul class="nav nav-tabs" id="my-profile-tab">
-							<li class="active"><a href="#profile-basic-info" data-toggle="tab">기본정보</a></li>
-							<li><a href="#profile-social-network" data-toggle="tab">쇼셜 네트워크</a></li>
-							<li><a href="#profile-notice-cfg" data-toggle="tab">알림 설정</a></li>
-						</ul>
-						<!-- Tab panes -->
-						<div class="tab-content no-padding-t">
-							<div class="tab-pane active" id="profile-basic-info">							
-								<h2 class="heading-md">이름과 메일 주소를 확인하세요. 
-								<button class="btn btn-primary btn-sm rounded pull-right"><i class="fa fa-pencil"></i> 변경</button>
-								</h2>
-								<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
-								<br/>								
-								<dl class="dl-horizontal">
-									<dt><strong>아이디</strong></dt>
-									<dd>
-										<span data-bind="text:username" >${ user.username }</span>									
-									</dd>
-									<hr>									
-									<dt><strong>회사</strong></dt>
-									<dd>
-										<i class="fa fa-building-o"></i> ${user.company.displayName}
-										<small class="text-muted">(${user.company.description})</small>
-									</dd>
-									<hr>
-									<dt><strong>외부 연계 계정</strong></dt>
-									<dd>
-										${user.external?string("네", "아니오")}									
-									</dd>
-									<hr>	
-									<#if groups?has_content >
-									<dt><strong>그룹</strong></dt>
-									<dd>
-										<#list groups as item >								
-										<span class="label label-info rounded"><i class="fa fa-users"></i> ${item.displayName}</span>
-										</#list> 													
-										<span>
-											<a class="pull-right" href="#">
-												<i class="fa fa-pencil"></i>
-											</a>
-										</span>
-									</dd>
-									<hr>									
-									</#if>								
-									<dt><strong>롤</strong></dt>
-									<dd>
-										<#list roles as item >								
-											<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
-										</#list>												
-										<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
-									</dd>
-									<hr>																									
-								</dl>	
-								<span>
-
-								<form class="form-horizontal" role="form">
-									<fieldset disabled>
-										<div class="form-group">
-											<label class="col-sm-2 control-label">변경할 이름</label>
-											<div class="col-sm-10">
-												<div class="input-group">
-													<span class="input-group-addon"><i class="fa fa-user"></i></span>
-													<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
-												</div>	
-											</div>
-										</div>
-										<div class="form-group">
-											<label class="col-sm-2 control-label">변경할 메일</label>
-											<div class="col-sm-10">
-												<div class="input-group">
-													<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-													<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+			
+						<div class="tab-v1" >					
+							<!-- Nav tabs -->
+							<ul class="nav nav-tabs" id="my-profile-tab">
+								<li class="active"><a href="#profile-basic-info" data-toggle="tab">기본정보</a></li>
+								<li><a href="#profile-social-network" data-toggle="tab">쇼셜 네트워크</a></li>
+								<li><a href="#profile-notice-cfg" data-toggle="tab">알림 설정</a></li>
+							</ul>
+							<!-- Tab panes -->
+							<div class="tab-content no-padding-t">
+								<div class="tab-pane active" id="profile-basic-info">							
+									<h2 class="heading-md">이름과 메일 주소, 이름(메일) 공개 여부를 확인하세요. 
+										<button class="btn btn-primary btn-sm rounded pull-right"><i class="fa fa-pencil"></i> 변경</button>
+									</h2>
+									<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
+									<br/>								
+									<dl class="dl-horizontal">
+										<dt><strong>아이디</strong></dt>
+										<dd>
+											<span data-bind="text:username" >${ user.username }</span>									
+										</dd>
+										<hr>									
+										<dt><strong>회사</strong></dt>
+										<dd>
+											<i class="fa fa-building-o"></i> ${user.company.displayName}
+											<small class="text-muted">(${user.company.description})</small>
+										</dd>
+										<hr>
+										<dt><strong>외부 연계 계정</strong></dt>
+										<dd>
+											${user.external?string("네", "아니오")}									
+										</dd>
+										<hr>	
+										<#if groups?has_content >
+										<dt><strong>그룹</strong></dt>
+										<dd>
+											<#list groups as item >								
+											<span class="label label-info rounded"><i class="fa fa-users"></i> ${item.displayName}</span>
+											</#list> 													
+											<span>
+												<a class="pull-right" href="#">
+													<i class="fa fa-pencil"></i>
+												</a>
+											</span>
+										</dd>
+										<hr>									
+										</#if>								
+										<dt><strong>롤</strong></dt>
+										<dd>
+											<#list roles as item >								
+												<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
+											</#list>												
+											<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
+										</dd>
+										<hr>																									
+									</dl>	
+									<form class="form-horizontal" role="form">
+										<fieldset disabled>
+											<div class="form-group">
+												<label class="col-sm-2 control-label">변경할 이름</label>
+												<div class="col-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon"><i class="fa fa-user"></i></span>
+														<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
+													</div>	
 												</div>
 											</div>
-										</div>
+											<div class="form-group">
+												<label class="col-sm-2 control-label">변경할 메일</label>
+												<div class="col-sm-10">
+													<div class="input-group">
+														<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+														<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+													</div>
+												</div>
+											</div>
+											<div class="form-group">
+												<div class="col-sm-offset-2 col-sm-10">
+													<label class="checkbox-inline">
+														<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
+													</label>
+													<label class="checkbox-inline">
+														<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
+													</label>
+												</div>
+											</div>	
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
-												<label class="checkbox-inline">
-													<input type="checkbox" data-bind="checked: nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
-												</label>
-												<label class="checkbox-inline">
-													<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
-												</label>
+												<div class="btn-group pull-right">	
+													<button type="submit" class="btn btn-default custom-modify">기본정보변경</button>		
+													<button type="submit" class="btn btn-primary custom-password-change">비밀번호 변경</button>				
+												</div>							
 											</div>
-										</div>	
-									<div class="form-group">
-										<div class="col-sm-offset-2 col-sm-10">
-											<div class="btn-group pull-right">	
-												<button type="submit" class="btn btn-default custom-modify">기본정보변경</button>		
-												<button type="submit" class="btn btn-primary custom-password-change">비밀번호 변경</button>				
-											</div>							
+										</div>																		
+										</fieldset>
+									</form>																									
+								</div>
+								<div class="tab-pane" id="profile-social-network">
+									<div class="blank-top-5" ></div>					
+									<div class="container" style="width:100%">
+										<div class="row">			
+											<div class="col-sm-5 leftless rightless">											
+												<!-- start my social network grid -->	
+												<table id="my-social-network-grid">
+													<colgroup>
+														<col/>
+														<col/>
+													</colgroup>
+													<thead>
+														<tr>
+														<th>
+														미디어
+														</th>
+														<th>
+														상태
+														</th>													
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td colspan="2"></td>
+														</tr>
+													</tbody>
+												</table>	
+												<!-- end my social network grid -->
+											</div>										
+											<div id="my-social-network-account-details" class="col-sm-7 rightless"></div>
 										</div>
-									</div>																		
-									</fieldset>
-								</form>		
-								
-									
-																								
-							</div>
-							<div class="tab-pane" id="profile-social-network">
-								<div class="blank-top-5" ></div>					
-								<div class="container" style="width:100%">
-									<div class="row">			
-										<div class="col-sm-5 leftless rightless">											
-											<!-- start my social network grid -->	
-											<table id="my-social-network-grid">
-												<colgroup>
-													<col/>
-													<col/>
-												</colgroup>
-												<thead>
-													<tr>
-													<th>
-													미디어
-													</th>
-													<th>
-													상태
-													</th>													
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td colspan="2"></td>
-													</tr>
-												</tbody>
-											</table>	
-											<!-- end my social network grid -->
-										</div>										
-										<div id="my-social-network-account-details" class="col-sm-7 rightless"></div>
-									</div>
+									</div>	
+								</div>
+								<div class="tab-pane" id="profile-notice-cfg">
+									<div class="blank-top-5" ></div>
+									준비중입니다.
 								</div>	
 							</div>
-							<div class="tab-pane" id="profile-notice-cfg">
-								<div class="blank-top-5" ></div>
-								준비중입니다.
-							</div>	
-						</div>
-					</div>					
-					
+						</div>	
 					</div><!-- .profile-body -->
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="#" data-toggle="dropdown">
