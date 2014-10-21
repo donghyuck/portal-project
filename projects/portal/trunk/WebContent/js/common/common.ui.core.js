@@ -123,6 +123,10 @@
 			pageSize: 10,
 		}
 		options = options || {};		
+		if( defined(options.url) ){
+			cfg.transport.read.url = options.url;			
+		}
+		
 		extend( cfg , options ); 
 				
 		var dataSource =  DataSource.create(cfg);
