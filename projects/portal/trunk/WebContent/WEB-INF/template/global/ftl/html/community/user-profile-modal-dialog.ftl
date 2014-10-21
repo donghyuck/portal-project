@@ -17,9 +17,6 @@
 							common.ui.status( $("button[data-action='basic-modify-mode']"), "enable");
 							break;	
 					}
-					
-					alert( action );
-					
 				}		
 			});
 			
