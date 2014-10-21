@@ -71,7 +71,7 @@
 											url: "/connect/" + selectedCell.providerId + "/user/lookup.json",
 											success : function(response){
 												var temp = kendo.template($('#my-social-account-details-template').html());	
-												$.extend( response , { connection : selectedCell } ); 
+												$.extend( response , { providerId : selectedCell.providerId } ); 
 												$("#my-profile-social-details").html( temp( response ) );	
 											}
 										});
