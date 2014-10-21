@@ -259,9 +259,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">이름</label>
 										<div class="col-sm-10">
-											<input type="text" class="form-control" placeholder="이름" data-bind="value:name" value="${ user.name }"/>
-
-											<div class="input-group margin-bottom-20">
+											<div class="input-group">
 												<span class="input-group-addon"><i class="fa fa-user"></i></span>
 												<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
 											</div>
@@ -271,7 +269,7 @@
 									<div class="form-group">
 										<label class="col-sm-2 control-label">메일</label>
 										<div class="col-sm-10">
-											<div class="input-group margin-bottom-20">
+											<div class="input-group">
 												<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 												<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
 											</div>
