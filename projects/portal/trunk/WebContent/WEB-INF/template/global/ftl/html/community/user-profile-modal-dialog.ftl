@@ -180,22 +180,21 @@
 					<h4 class="modal-title" id="myProfileModalLabel">프로파일</h4>
 				</div>
 				<div class="modal-body no-padding">
-					<div class="profile-body">
-						
+					<div class="profile-body">						
 						<div class="profile-bio rounded">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <img class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
-                                    <a class="btn-u btn-u-sm" href="#">사진변경</a>
-                                </div>
-                                <div class="col-md-7">
-                                    <h2>Edward Rooster</h2>
+							<div class="row">
+								<div class="col-md-5">
+									<img class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
+									<a class="btn-u btn-u-sm" href="#">사진변경</a>
+								</div>
+								<div class="col-md-7">
+									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
                                     <span><strong>Job:</strong> Web Developer</span>
                                     <span><strong>Position:</strong> Web Designer</span>
                                     <hr>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget massa nec turpis congue bibendum. Integer nulla felis, porta suscipit nulla et, dignissim commodo nunc. Morbi a semper nulla.</p>
-                                    <p>Proin mauris odio, pharetra quis ligula non, vulputate vehicula quam. Nunc in libero vitae nunc ultricies tincidunt ut sed leo. Sed luctus dui ut congue consequat. Cras consequat nisl ante, nec malesuada velit pellentesque ac. Pellentesque nec arcu in ipsum iaculis convallis.</p>
-                                </div>
+									<p>Proin mauris odio, pharetra quis ligula non, vulputate vehicula quam. Nunc in libero vitae nunc ultricies tincidunt ut sed leo. Sed luctus dui ut congue consequat. Cras consequat nisl ante, nec malesuada velit pellentesque ac. Pellentesque nec arcu in ipsum iaculis convallis.</p>
+								</div>
                             </div>    
                         </div>
                         					
