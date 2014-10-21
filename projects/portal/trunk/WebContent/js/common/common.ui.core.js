@@ -120,7 +120,7 @@
 				} 				
 			},
 			error:handleAjaxError,	
-			pageSize: 10,
+			pageSize: 10			
 		}
 		options = options || {};		
 		if( defined(options.url) ){
