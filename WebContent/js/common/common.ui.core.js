@@ -103,31 +103,7 @@
 			}
 		}
 	}
-		
-	/*
-	common.ui.bind = function(selector, options) {
-		options = options || {};
-		if (options.custom === UNDEFINED)
-			options.custom = false;
-		if (typeof selector === STRING)
-			selector = $(selector);
 
-		if (typeof options.handlers === UNDEFINED) {
-			if (typeof options.event === STRING
-					&& isFunction(options.handler)) {
-				if (typeof options.selector === UNDEFINED) {
-					selector.on(options.event, options.handler);
-				} else {
-					selector.find(options.selector).on(options.event, options.handler);
-				}
-			}
-		} else if (options.handlers instanceof Array) {
-			$.each(options.handlers, function(index, data) {
-				selector.find(data.selector).on(data.event, data.handler);
-			});
-		}
-	};
-	*/
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
