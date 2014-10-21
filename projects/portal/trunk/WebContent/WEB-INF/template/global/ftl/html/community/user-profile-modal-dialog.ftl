@@ -578,13 +578,9 @@
 			<tr>
 				<td><i class="rounded-x #: providerId #" fa-#: providerId #"></i> #: providerId #</td>
 				<td>
-				#if ( ! connected  ) { # 
-				<button type="button" class="btn btn-info custom-social-network-connect btn-sm" data-url="#:authorizationUrl#" >연결</button>  
-				# } else { # 
-				<div class="btn-group">
-					<button type="button" class="btn btn-danger custom-social-network-disconnect btn-sm">연결 취소</button>  
-				</div>
-				# }  #  				
+				#if ( !displayName  ) { # 
+				#: displayName#
+				# } # 
 				</td>
 			</tr>					
 		</script>			
