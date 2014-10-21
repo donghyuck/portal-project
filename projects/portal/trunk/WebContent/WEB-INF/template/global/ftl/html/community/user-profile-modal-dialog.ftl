@@ -9,12 +9,15 @@
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
+					
 					switch (action) {
 						case "basic-modify-mode" :
 							common.ui.status( $("button[data-action='basic-modify-mode']") , "disable" );
+							$("#profile-basic-info .panel").slideDown();
 							break;			
 						case "basic-modify-mode-close" :
 							common.ui.status( $("button[data-action='basic-modify-mode']"), "enable");
+							$("#profile-basic-info .panel").slideUp();
 							break;	
 					}
 				}		
