@@ -176,7 +176,7 @@
 							<dl class="dl-horizontal">
 								<dt><strong>아이디</strong></dt>
 								<dd>
-									<span data-bind="text:username" ></span>																				
+									<span data-bind="text:username" >${ user.username }</span>																				
 									<span>
 										<a class="pull-right" href="#">
 											<i class="fa fa-pencil"></i>
@@ -223,10 +223,8 @@
 								<dd>
 									<#list roles as item >								
 										<span class="label label-primary rounded"><i class="fa fa-key"></i> ${item}</span>						
-									</#list>			
-									
-									<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>
-																											
+									</#list>												
+									<div data-template='<span class="label label-success" style="font-size:100%; font-weight:normal;"><i class="fa fa-key"></i> </span>' data-bind="source: roles" ></div>																											
 									<span>
 										<a class="pull-right" href="#">
 											<i class="fa fa-pencil"></i>
