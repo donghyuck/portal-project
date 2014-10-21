@@ -188,8 +188,16 @@
 						<div class="profile-bio rounded margin-bottom-20">
 							<div class="row">
 								<div class="col-md-5">
-									<img class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
-									<a class="btn-u btn-u-sm" href="#">사진변경</a>
+									<img id="my-photo-image" class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
+									<a class="btn-u btn-u-sm dropdown-toggle" href="#" data-toggle="dropdown">
+									사진변경	
+									</a>
+									<ul class="dropdown-menu">
+										<li role="presentation" class="dropdown-header">마우스로 사진을 끌어 놓으세요.</li>
+										<li>
+											<input name="my-photo-upload" id="my-photo-upload" type="file" class="pull-right" />
+										</li>
+									</ul>											
 								</div>
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
@@ -348,6 +356,7 @@
 							</div>
 						</div>	
 					</div><!-- .profile-body -->
+					
 					<div class="media">
 						<a class="pull-left dropdown-toggle" href="#" data-toggle="dropdown">
 							<img id="my-photo-image" class="media-object img-thumbnail" src="${request.contextPath}/download/profile/${user.username}?width=100&height=150" />
