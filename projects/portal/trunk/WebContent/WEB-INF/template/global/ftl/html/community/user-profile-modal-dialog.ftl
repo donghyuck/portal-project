@@ -9,6 +9,7 @@
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
+					alert( action ) ;
 					switch (action) {
 						case "basic-modify-mode" :
 							common.ui.status( $("button[data-action='basic-modify-mode']") , "disable" );
@@ -25,7 +26,9 @@
 					}
 				}		
 			});
+			
 			kendo.bind( $("#my-profile-dialog" ), myProfileModel );
+			
 			if(!$("#my-photo-upload").data("kendoUpload")){
 				$("#my-photo-upload").kendoUpload({
 					multiple : false,
