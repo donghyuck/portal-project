@@ -212,7 +212,9 @@
 						<!-- Tab panes -->
 						<div class="tab-content no-padding-t">
 							<div class="tab-pane active" id="profile-basic-info">							
-								<h2 class="heading-md">이름과 메일 주소를 확인하세요.</h2>
+								<h2 class="heading-md">이름과 메일 주소를 확인하세요. 
+								<button class="btn btn-primary btn-sm rounded pull-right"><i class="fa fa-pencil"></i> 변경</button>
+								</h2>
 								<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
 								<br/>								
 								<dl class="dl-horizontal">
@@ -256,14 +258,11 @@
 									<hr>																									
 								</dl>	
 								<span>
-											<a class="pull-right" href="#">
-												<i class="fa fa-pencil"></i>
-											</a>
-										</span>
+
 								<form class="form-horizontal" role="form">
 									<fieldset disabled>
 										<div class="form-group">
-											<label class="col-sm-2 control-label">이름</label>
+											<label class="col-sm-2 control-label">변경할 이름</label>
 											<div class="col-sm-10">
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-user"></i></span>
@@ -272,7 +271,7 @@
 											</div>
 										</div>
 										<div class="form-group">
-											<label class="col-sm-2 control-label">메일</label>
+											<label class="col-sm-2 control-label">변경할 메일</label>
 											<div class="col-sm-10">
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
