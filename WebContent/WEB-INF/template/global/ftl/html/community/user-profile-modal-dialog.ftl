@@ -279,8 +279,7 @@
 									
 								</div>
 							</div>    
-						</div><!-- /.profile-bio -->
-			
+						</div><!-- /.profile-bio -->			
 						<div class="tab-v1" >					
 							<!-- Nav tabs -->
 							<ul class="nav nav-tabs" id="my-profile-tab">
@@ -408,7 +407,7 @@
 										</div>
 									</div>				
 								</div>
-									<!--
+								<!--
 										
 									<div class="container" style="width:100%">
 										<div class="row">			
@@ -439,11 +438,11 @@
 										</div>
 									</div>
 									-->
-									<div class="tab-pane" id="my-profile-notice-cfg">
-										<div style="height:300px" ></div>
-										준비중입니다.
-									</div>	
-								</div>
+								<div class="tab-pane" id="my-profile-notice-cfg">
+									<div style="height:300px" ></div>
+									준비중입니다.
+								</div>	
+								
 							</div>
 						</div><!-- /.tabs -->	
 					</div><!-- .profile-body -->						
