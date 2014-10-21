@@ -3,7 +3,20 @@
 	<body>
 		<script type="text/javascript">
 		<!--
-		
+				
+			var myProfileModel = new kendo.data.ObservableObject({
+				click: function(e){
+					var btn = $(e.target),
+					action = btn.data("action");
+					
+					
+					alert( action );
+					
+				}		
+			});
+			
+			kendo.bind( $(#my-profile-dialog), myProfileModel );
+			
 			$("#my-profile-dialog form button").each(function( index ) {
 				var dialog_action = $(this);		
 				dialog_action.click(function (e) {
