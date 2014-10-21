@@ -49,7 +49,6 @@
 			$('#my-profile-tab a').click(function (e) {
 				$this = $(this);				
 				var pane = $this.attr("href");
-				alert( pane );
 				switch (pane) {
 					case "#my-profile-basic-cfg" :					
 						break;
