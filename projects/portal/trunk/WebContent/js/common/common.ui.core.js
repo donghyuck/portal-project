@@ -113,16 +113,17 @@
 	
 	function datasource(options){		
 		var cfg = {
-			transport : {
-				read: {
+			transport:{
+				read:{
 					type :POST,
 					dataType : JSON, 
 				} 				
 			},
 			error:handleAjaxError,	
 			pageSize: 10			
-		}
+		};		
 		options = options || {};		
+		
 		if( defined(options.url) ){
 			cfg.transport.read.url = options.url;			
 		}
