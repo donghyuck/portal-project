@@ -263,8 +263,7 @@
 												<div class="input-group">
 													<span class="input-group-addon"><i class="fa fa-user"></i></span>
 													<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
-												</div>
-	
+												</div>	
 											</div>
 										</div>
 										<div class="form-group">
@@ -285,7 +284,15 @@
 													<input type="checkbox" data-bind="checked: emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
 												</label>
 											</div>
-										</div>								
+										</div>	
+									<div class="form-group">
+										<div class="col-sm-offset-2 col-sm-10">
+											<div class="btn-group pull-right">	
+												<button type="submit" class="btn btn-default custom-modify">기본정보변경</button>		
+												<button type="submit" class="btn btn-primary custom-password-change">비밀번호 변경</button>				
+											</div>							
+										</div>
+									</div>																		
 									</fieldset>
 								</form>		
 								
@@ -375,14 +382,7 @@
 										</div>
 									</div>
 								</fieldset>									
-								<div class="form-group">
-									<div class="col-sm-offset-2 col-sm-10">
-										<div class="btn-group pull-right">	
-											<button type="submit" class="btn btn-default custom-modify">기본정보변경</button>		
-											<button type="submit" class="btn btn-primary custom-password-change">비밀번호 변경</button>				
-										</div>							
-									</div>
-								</div>																	
+																
 							</form>
 						</div>
 					</div>
