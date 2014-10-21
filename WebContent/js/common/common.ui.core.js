@@ -124,6 +124,8 @@
 		};		
 		options = options || {};		
 				
+		alert( kendo.stringify( options ));
+		
 		var settings = extend( true, {}, cfg , options ); 
 		if( defined(options.url) ){
 			cfg.transport.read.url = options.url;			
