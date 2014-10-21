@@ -70,8 +70,8 @@
 										common.ui.ajax({
 											url: "/connect/" + selectedCell.providerId + "/user/lookup.json",
 											success : function(response){
-												var t = kendo.template($('#my-social-account-details-template').html());			
-												$("#my-profile-social-details").html( t(response) );	
+												var t = kendo.template($('#my-social-account-details-template').html());	
+												$("#my-profile-social-details").html( t( $.extend({}, response , {provider : selectedCell.providerId } ) ) );	
 											}
 										});
 										
@@ -509,8 +509,11 @@
 		
 		<!-- social network -->
 		<script type="text/x-kendo-template" id="my-social-account-details-template">
-		<div class="panel panel-default margin-buttom-5">
-			<!--<div class="panel-heading"><i class="fa fa-user"></i></div>-->
+		<div class="panel panel-profile">
+			<div class="panel-heading overflow-h">
+				<h2 class="panel-title heading-sm pull-left"><i class="fa fa-lightbulb-o"></i> Skills</h2>
+				<a href="#"><i class="fa fa-cog pull-right"></i></a>
+			</div>		
 			<div class="panel-body" style="padding:10px;">				
 				#if ( typeof (twitterProfile)  == "object" ){ #
 				<div class="media">
