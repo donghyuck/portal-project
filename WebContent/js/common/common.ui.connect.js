@@ -1,5 +1,5 @@
 /**
- * COMMUNITY UI 
+ * COMMUNITY UI CONNECT
  * dependency : common.ui.core, common.ui.kendo
  */
 ;(function($, undefined) {
