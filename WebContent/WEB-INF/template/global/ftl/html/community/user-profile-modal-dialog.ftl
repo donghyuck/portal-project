@@ -60,11 +60,7 @@
 								alert(this.data());
 							}
 						}).read();
-						if( !$("#my-profile-social-grid" ).data('kendoGrid') ){ 
-						
-
-						}
-						
+												
 						break;	
 				}
 			});
