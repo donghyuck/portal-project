@@ -50,10 +50,9 @@
 				$this = $(this);				
 				var pane = $(this).attr("href");
 				switch (pane) {
-					case "my-profile-basic-cfg" :
-					
+					case "my-profile-basic-cfg" :					
 						break;
-					case : "my-profile-social-cfg" :
+					case "my-profile-social-cfg" :
 					
 						common.ui.datasource({
 							url : "/connect/list.json",
@@ -65,6 +64,7 @@
 						
 
 						}
+						
 						break;	
 				}
 			});
