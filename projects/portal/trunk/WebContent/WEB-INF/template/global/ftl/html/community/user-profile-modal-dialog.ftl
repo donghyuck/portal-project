@@ -14,12 +14,12 @@
 						case "basic-modify-mode" :
 							common.ui.status( $("button[data-action='basic-modify-mode']") , "disable" );
 							$("#profile-basic-info .dl-horizontal").fadeOut("slow", function(e){
-								$("#profile-basic-info .panel").slideDown();
+								$("#profile-basic-info .panel").fadeIn();
 							});							
 							break;			
 						case "basic-modify-mode-close" :
 							common.ui.status( $("button[data-action='basic-modify-mode']"), "enable");
-							$("#profile-basic-info .panel").slideUp("slow", function(e){
+							$("#profile-basic-info .panel").fadeOut("slow", function(e){
 								$("#profile-basic-info .dl-horizontal").fadeIn();
 							});
 							break;	
