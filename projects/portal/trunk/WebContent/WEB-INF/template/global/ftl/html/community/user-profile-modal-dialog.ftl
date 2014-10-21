@@ -47,8 +47,7 @@
 						}				
 					}	
 				});
-			}	
-			
+			}
 
 			$('#my-profile-tab a').click(function (e) {
 				$this = $(this);				
