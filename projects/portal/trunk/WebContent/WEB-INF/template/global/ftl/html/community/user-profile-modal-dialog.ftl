@@ -300,8 +300,8 @@
 										<div class="form-group">
 											<div class="col-sm-offset-2 col-sm-10">
 												<div class="btn-group pull-right">	
-													<button type="submit" class="btn btn-default custom-modify">수정 완료</button>		
-													<button type="submit" class="btn btn-primary custom-password-change">최소</button>				
+													<button type="submit" class="btn btn-danger custom-modify">수정 완료</button>		
+													<button type="submit" class="btn btn-default custom-password-change">최소</button>				
 												</div>							
 											</div>
 										</div>																		
