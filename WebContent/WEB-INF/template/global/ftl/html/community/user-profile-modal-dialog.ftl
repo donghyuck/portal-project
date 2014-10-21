@@ -153,7 +153,7 @@
 		#my-profile-dialog .profile-bio a {
 			left: 50%;
 			bottom: 20px;
-			margin-left: -60px;
+			margin-left: -35px;
 			text-align: center;
 			position: absolute;
 		}
