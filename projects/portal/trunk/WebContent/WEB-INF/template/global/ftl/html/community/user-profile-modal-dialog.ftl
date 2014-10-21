@@ -278,8 +278,8 @@
 									<p>하이</p>
 									
 								</div>
-                            </div>    
-                        </div>
+							</div>    
+						</div><!-- /.profile-bio -->
 			
 						<div class="tab-v1" >					
 							<!-- Nav tabs -->
@@ -444,7 +444,7 @@
 									준비중입니다.
 								</div>	
 							</div>
-						</div>	
+						</div><!-- /.tabs -->	
 					</div><!-- .profile-body -->						
 				</div>
 				<div class="modal-footer no-margin-t">
