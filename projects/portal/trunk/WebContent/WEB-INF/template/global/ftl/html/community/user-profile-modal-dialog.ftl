@@ -324,7 +324,7 @@
 														<div class="col-sm-10">
 															<div class="input-group">
 																<span class="input-group-addon"><i class="fa fa-user"></i></span>
-																<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이메일" required="" validationmessage="이름을 입력하여 주세요.">
+																<input type="text" name="name" value="${ user.name }" class="form-control" placeholder="이름" required="" validationmessage="이름을 입력하여 주세요.">
 															</div>	
 														</div>
 													</div>
@@ -333,7 +333,7 @@
 														<div class="col-sm-10">
 															<div class="input-group">
 																<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-																<input type="text" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+																<input type="email" name="email" value="${ user.email }" class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
 															</div>
 														</div>
 													</div>
