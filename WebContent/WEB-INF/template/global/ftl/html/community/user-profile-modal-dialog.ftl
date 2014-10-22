@@ -545,6 +545,24 @@
 						<li><i class="fa fa-group"></i> <a href="\\#">#: friendsCount # 팔로워</a></li>
 					</ul>
 				</div>
+			#}else if (providerId === "tumblr"){ #
+				<div class="profile-blog">
+					<img class="rounded-x" src="#= profileImageUrl #" alt="">
+					<div class="name-location">
+						<strong>#= name #</strong>
+						<span><i class="fa fa-map-marker"></i> <a href="\\#">#: location #</a> </span>
+					</div>
+					<div class="clearfix margin-bottom-20"></div>
+					<p>#: description #</p>
+					#for( int 1 = 0 ; i < blogs.length ; i ++ ){#
+						<p><i class="fa fa-globe"></i> <a href="blogs[i].url">#: blogs[i].title #</a></p>					
+					#}# 					
+					<hr>
+					<ul class="list-inline share-list">						
+						<li><i class="fa fa-group"></i> <a href="\\#">#: following # 팔로잉</a></li>
+						<li><i class="fa fa-thumbs-o-up"></i> <a href="\\#">#: likes # 좋아요</a></li>
+					</ul>
+				</div>			
 			#}#		
 							<div class="profile-blog">
                                     <img class="rounded-x" src="assets/img/testimonials/img2.jpg" alt="">
