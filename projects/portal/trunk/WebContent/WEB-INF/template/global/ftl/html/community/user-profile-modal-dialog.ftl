@@ -587,7 +587,7 @@
 					<hr>					
 					<ul class="list-unstyled social-contacts-v2">
 						# for (var i = 0; i < education.length ; i++) { #			
-						<li>#: education[i].school.name#, #:education[i].year.name# (#:education[i].type#)</li>
+						<li>#: education[i].school.name#, #if(education[i].year!=null){# #:education[i].year.name# #}# (#:education[i].type#)</li>
 						#}#
 					</ul>
 					<ul class="list-unstyled social-contacts-v2">
