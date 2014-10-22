@@ -527,7 +527,25 @@
 			<div class="panel-heading overflow-h">
 				<h2 class="panel-title heading-sm pull-left"><i class="fa fa-#=providerId#"></i> &nbsp;</h2>
 			</div>		
-			<div class="panel-body">				
+			<div class="panel-body">		
+			#if( providerId === "twitter"){#
+				<div class="profile-blog">
+					<img class="rounded-x" src="#= profileImageUrl #" alt="">
+					<div class="name-location">
+						<strong>#= name #</strong>
+						<span><i class="fa fa-map-marker"></i> <a href="\\#">#: location #</a> </span>
+					</div>
+					<div class="clearfix margin-bottom-20"></div>
+					<p>#: description #</p>
+					<p><i class="fa fa-home"></i> <a href="profileUrl">홈</a></p>
+					<hr>
+					<ul class="list-inline share-list">						
+						<li><i class="fa fa-star-o"></i> <a href="\\#">#: favoritesCount # 관심글</a></li>
+						<li><i class="fa fa-group"></i> <a href="\\#">#: followersCount # 팔로잉</a></li>
+						<li><i class="fa fa-group"></i> <a href="\\#">#: friendsCount # 팔로워</a></li>
+					</ul>
+				</div>
+			#}#		
 							<div class="profile-blog">
                                     <img class="rounded-x" src="assets/img/testimonials/img2.jpg" alt="">
                                     <div class="name-location">
@@ -539,7 +557,7 @@
                                     <hr>
                                     <ul class="list-inline share-list">
                                         <li><i class="fa fa-bell"></i><a href="\\#">3 Notifications</a></li>
-                                        <li><i class="fa fa-group"></i><a href="\\#">25 Followers</a></li>
+                                        
                                         <li><i class="fa fa-share"></i><a href="\\#">Share</a></li>
                                     </ul>
                                 </div>
