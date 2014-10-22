@@ -13,6 +13,8 @@
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
+			'css!${request.contextPath}/styles/common.themes/unify/pages/profile.min.css',
+			
 			
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
@@ -20,6 +22,8 @@
 			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
+			
+			
 						
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
@@ -810,7 +814,143 @@
 					</ul>
 				</div><!-- ./navbar-personalized -->			
 			</div>
-			<div id="main-content" class="container-fluid" style="min-height:300px;">		
+			<div id="main-content" class="container-fluid" style="min-height:300px;">	
+				<div class="row margin-bottom-20">
+                        <!--Profile Post-->
+                        <div class="col-sm-6">
+                            <div class="panel panel-profile no-bg">
+                                <div class="panel-heading overflow-h">
+                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Notes</h2>
+                                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                                </div>
+                                <div id="scrollbar" class="panel-body contentHolder ps-container">
+                                    <div class="profile-post color-one">
+                                        <span class="profile-post-numb">01</span>
+                                        <div class="profile-post-in">
+                                            <h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
+                                            <p>How to market yourself as a freelance designer</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-post color-two">
+                                        <span class="profile-post-numb">02</span>
+                                        <div class="profile-post-in">
+                                            <h3 class="heading-xs"><a href="#">Codrops Collective #117</a></h3>
+                                            <p>Web Design &amp; Development News</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-post color-three">
+                                        <span class="profile-post-numb">03</span>
+                                        <div class="profile-post-in">
+                                            <h3 class="heading-xs"><a href="#">Sketch Toolbox</a></h3>
+                                            <p>Basic prototype of a package manager for Sketch</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-post color-four">
+                                        <span class="profile-post-numb">04</span>
+                                        <div class="profile-post-in">
+                                            <h3 class="heading-xs"><a href="#">Amazing Portfolio</a></h3>
+                                            <p>Create a free online portfolio lookbook with Readz</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-post color-five">
+                                        <span class="profile-post-numb">05</span>
+                                        <div class="profile-post-in">
+                                            <h3 class="heading-xs"><a href="#">Discover New Features</a></h3>
+                                            <p>More than 100+ amazing add-ons coming soon...</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-post color-six">
+                                        <span class="profile-post-numb">06</span>
+                                        <div class="profile-post-in">
+                                            <h3 class="heading-xs"><a href="#">Corporation Plans</a></h3>
+                                            <p>Discussion of new corporation plans</p>
+                                        </div>
+                                    </div>
+                                    <div class="profile-post color-seven">
+                                        <span class="profile-post-numb">07</span>
+                                        <div class="profile-post-in">
+                                            <h3 class="heading-xs"><a href="#">Project Updates</a></h3>
+                                            <p>New features of coming update</p>
+                                        </div>
+                                    </div>
+                                <div class="ps-scrollbar-x-rail" style="width: 389px; display: none; left: 0px; bottom: 2px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 320px; display: inherit; right: 2px;"><div class="ps-scrollbar-y" style="top: 0px; height: 198px;"></div></div></div>
+                            </div>        
+                        </div>
+                        <!--End Profile Post-->
+
+                        <!--Profile Event-->
+                        <div class="col-sm-6 md-margin-bottom-20">
+                            <div class="panel panel-profile no-bg">
+                                <div class="panel-heading overflow-h">
+                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Upcoming Events</h2>
+                                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
+                                </div>
+                                <div id="scrollbar2" class="panel-body contentHolder ps-container">
+                                    <div class="profile-event">
+                                        <div class="date-formats">
+                                            <span>25</span>
+                                            <small>05, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">GitHub seminars in Japan.</a></h3>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
+                                        </div>    
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats">
+                                            <span>31</span>
+                                            <small>06, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">Bootstrap Update</a></h3>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
+                                        </div>    
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats">
+                                            <span>07</span>
+                                            <small>08, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">Apple Conference</a></h3>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
+                                        </div>    
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats">
+                                            <span>22</span>
+                                            <small>10, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">Backend Meeting</a></h3>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
+                                        </div>    
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats">
+                                            <span>14</span>
+                                            <small>11, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">Google Conference</a></h3>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
+                                        </div>    
+                                    </div>
+                                    <div class="profile-event">
+                                        <div class="date-formats">
+                                            <span>05</span>
+                                            <small>12, 2014</small>
+                                        </div>
+                                        <div class="overflow-h">
+                                            <h3 class="heading-xs"><a href="#">FontAwesome Update</a></h3>
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
+                                        </div>    
+                                    </div>
+                                <div class="ps-scrollbar-x-rail" style="width: 389px; display: none; left: 0px; bottom: 2px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 320px; display: inherit; right: 2px;"><div class="ps-scrollbar-y" style="top: 0px; height: 178px;"></div></div></div>    
+                            </div>
+                        </div>
+                        <!--End Profile Event-->
+                    </div>	
 				<div id="personalized-area" class="row"></div>
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
