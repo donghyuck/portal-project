@@ -128,9 +128,6 @@
 		if( defined(url) ){
 			settings.transport.read.url = url;			
 		}		
-		if( defined(options.renderTo) ){
-
-		}		
 		var dataSource =  DataSource.create(settings);
 		return dataSource;
 	};
