@@ -550,7 +550,6 @@
 					<img class="rounded-x" src="/connect/tumblr/#= name #/avatar?size=small" alt="">
 					<div class="name-location">
 						<strong>#= name #</strong>
-						<span><i class="fa fa-map-marker"></i> <a href="\\#">#: location #</a> </span>
 					</div>
 					<div class="clearfix margin-bottom-20"></div>
 					# for (var i = 0; i < blogs.length ; i++) { #												
@@ -561,24 +560,24 @@
 						<li><i class="fa fa-group"></i> <a href="\\#">#: following # 팔로잉</a></li>
 						<li><i class="fa fa-thumbs-o-up"></i> <a href="\\#">#: likes # 좋아요</a></li>
 					</ul>
-				</div>			
+				</div>	
+			#}else if (providerId === "facebook"){ #	
+				<div class="profile-blog">
+					<img class="rounded-x" src="#= profileImageUrl #" alt="">
+					<div class="name-location">
+						<strong>#= name #</strong>
+						#if( location != null ){ #
+						<span><i class="fa fa-map-marker"></i> <a href="\\#">#: location.name #</a> </span>
+						#} #						
+					</div>
+					<div class="clearfix margin-bottom-20"></div>
+					<p>#: description #</p>
+					<p><i class="fa fa-home"></i> <a href="link">홈</a></p>
+					<hr>
+
+				</div>					
 			#}#		
-							<div class="profile-blog">
-                                    <img class="rounded-x" src="assets/img/testimonials/img2.jpg" alt="">
-                                    <div class="name-location">
-                                        <strong>#= name #</strong>
-                                        <span><i class="fa fa-map-marker"></i><a href="\\#">California,</a> <a href="\\#">US</a></span>
-                                    </div>
-                                    <div class="clearfix margin-bottom-20"></div>    
-                                    <p>Donec non dignissim eros. Mauris faucibus turpis volutpat sagittis rhoncus. Pellentesque et rhoncus sapien, sed ullamcorper justo.</p>
-                                    <hr>
-                                    <ul class="list-inline share-list">
-                                        <li><i class="fa fa-bell"></i><a href="\\#">3 Notifications</a></li>
-                                        
-                                        <li><i class="fa fa-share"></i><a href="\\#">Share</a></li>
-                                    </ul>
-                                </div>
-                                			
+
 			
 				#if ( typeof (twitterProfile)  == "object" ){ #
 				<div class="media">
