@@ -567,7 +567,7 @@
 				#if ( commentCount > 0 || likes != null  ) { #
 				<div class="panel-group" id="accordion-#= id #">
 			
-					#if ( likes.length > 0  ) { #
+					#if ( likes!= null &&  likes.length > 0  ) { #
 					<div class="panel panel-default no-border rounded-2x">
 						<div class="panel-heading comments-heading">	
 							<a data-toggle="collapse" data-parent="\\#accordion-#= id #" href="\\#likes-#= id #">
