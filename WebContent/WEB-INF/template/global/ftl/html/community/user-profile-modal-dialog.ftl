@@ -565,12 +565,23 @@
 				<div class="profile-blog">
 					<img class="rounded-x" src="http://graph.facebook.com/#= id #/picture" alt="">
 					<div class="name-location">
-						<strong>#= name #</strong>
+						<strong>#= name # </strong>
 						#if( location != null ){ #
 						<span><i class="fa fa-map-marker"></i> <a href="\\#">#: location.name #</a> </span>
 						#} #						
 					</div>
 					<div class="clearfix margin-bottom-20"></div>
+					<dl class="dl-horizontal">
+                                <dt>Description lists</dt>
+                                <dd>A description list is perfect for defining terms.</dd>
+                                <dt>Euismod</dt>
+                                <dd>Vestibulum id ligula porta felis</dd>
+                                <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+                                <dt>Malesuada porta</dt>
+                                <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+                                <dt>Felis euismod semper eget lacinia</dt>
+                                <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum</dd>
+					</dl>
 					<p>#: about #</p>
 					<p><i class="fa fa-home"></i> <a href="link">홈</a></p>
 					<hr>
