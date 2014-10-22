@@ -819,7 +819,7 @@
 			</div>
 			<div id="main-content" class="container-fluid profile" style="min-height:300px;">	
 				<div class="row">
-					<div class=col-md-3 md-margin-bottom-40">
+					<div class="col-md-3 md-margin-bottom-40">
 					
 					</div>
 					<div class=col-md-9">
