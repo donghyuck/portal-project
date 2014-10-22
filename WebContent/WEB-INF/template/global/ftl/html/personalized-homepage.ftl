@@ -13,10 +13,13 @@
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
-			'css!${request.contextPath}/styles/common.themes/unify/pages/profile.min.css',
+			
 			
 			
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
+			
+			'css!${request.contextPath}/styles/common.themes/unify/pages/profile.min.css',
+			
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
 
 			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
