@@ -109,7 +109,7 @@
 							} 
 						}
 					),
-					template: kendo.template("hello");
+					template: kendo.template("hello")
 				}
 			);
 		}
