@@ -547,7 +547,7 @@
 				</div>
 			#}else if (providerId === "tumblr"){ #
 				<div class="profile-blog">
-					<img class="rounded-x" src="#= profileImageUrl #" alt="">
+					<img class="rounded-x" src="/connect/tumblr/#= name #/avatar?size=small" alt="">
 					<div class="name-location">
 						<strong>#= name #</strong>
 						<span><i class="fa fa-map-marker"></i> <a href="\\#">#: location #</a> </span>
