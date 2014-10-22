@@ -39,6 +39,7 @@
 	isFunction = kendo.isFunction,
 	extend = $.extend,
 	DataSource = kendo.data.DataSource,
+	progress = kendo.ui.progress,
 	POST = 'POST',	
 	JSON = 'json',
 	STRING = 'string',
@@ -110,9 +111,7 @@
 	 * url 
 	 * options 
 	 */
-	
-	function datasource(options){		
-		var cfg = {
+	var DEFAULT_DATASOURCE_SETTING = {
 			transport:{
 				read:{
 					type :POST,
@@ -120,27 +119,35 @@
 				} 				
 			},
 			error:handleAjaxError,	
-			pageSize: 10			
-		};		
-		
+			pageSize: 10		
+	};	
+	
+	function datasource(url, options){		
 		options = options || {};		
-		var settings = extend(true, {}, cfg , options ); 
-		if( defined(options.url) ){
+		var settings = extend(true, {}, DEFAULT_DATASOURCE_SETTING , options ); 
+		if( defined(url) ){
 			settings.transport.read.url = options.url;			
+		}		
+		if( defined(options.renderTo) ){
+
 		}		
 		var dataSource =  DataSource.create(settings);
 		return dataSource;
 	};
 
-	function ajax ( options ){
-		var cfg = {
-			type : POST,	
-			data : {},
-			dataType : JSON,
-			error:handleAjaxError 				
-		};
+	var DEFAULT_AJAX_SETTING = {
+		type : POST,	
+		data : {},
+		dataType : JSON,
+		error:handleAjaxError 		
+	};	
+
+	function ajax ( url, options ){
 		options = options || {};	
-		var settings = extend(true, {}, cfg , options ); 
+		var settings = extend(true, {}, DEFAULT_AJAX_SETTING , options ); 
+		if( defined( url) ){
+			settings.url = url;			
+		}				
 		$.ajax(settings);		
 	};
 	
