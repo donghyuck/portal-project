@@ -23,6 +23,7 @@
 							});
 							break;	
 					}
+					return false;
 				}		
 			});
 			
