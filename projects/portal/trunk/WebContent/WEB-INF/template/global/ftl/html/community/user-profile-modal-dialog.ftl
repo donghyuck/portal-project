@@ -81,10 +81,10 @@
 													$.extend( response , { providerId : selectedCell.providerId } ); 
 													$("#my-profile-social-details").html( temp( response ) );	
 												},
-												beforeSend : function(e){
+												beforeSend : function(){
 													kendo.ui.progress($("#my-profile-social-details"), true);			
 												},
-												complete : function(e){
+												complete : function(){
 													kendo.ui.progress($("#my-profile-social-details"), false);			
 												}
 											}
