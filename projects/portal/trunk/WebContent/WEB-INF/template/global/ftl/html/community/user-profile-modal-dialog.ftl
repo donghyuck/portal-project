@@ -584,8 +584,17 @@
 					</dl>
 					
 					<p><i class="fa fa-home"></i> <a href="link">홈</a></p>
-					<hr>
-
+					<hr>					
+					<ul class="list-unstyled social-contacts-v2">
+						# for (var i = 0; i < education.length ; i++) { #			
+						<li>#: education[i].school.name#, education[i].year.name (#:education[i].type#)</li>
+						#}#
+					</ul>
+					<ul class="list-unstyled social-contacts-v2">
+						# for (var i = 0; i < work.length ; i++) { #			
+						<li>#: work[i].employer.name# (#: work[i].startDate#~#: work[i].endDate#)</li>
+						#}#
+					</ul>
 				</div>					
 			#}#		
 
