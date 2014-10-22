@@ -83,7 +83,7 @@
 				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-												
+				createAnnouncePanel();								
 				// END SCRIPT 				
 			}
 		}]);	
