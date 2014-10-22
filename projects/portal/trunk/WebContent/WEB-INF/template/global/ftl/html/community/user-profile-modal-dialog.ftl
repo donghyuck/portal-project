@@ -571,7 +571,7 @@
 						#} #						
 					</div>
 					<div class="clearfix margin-bottom-20"></div>
-					<p>#: description #</p>
+					<p>#: about #</p>
 					<p><i class="fa fa-home"></i> <a href="link">홈</a></p>
 					<hr>
 
