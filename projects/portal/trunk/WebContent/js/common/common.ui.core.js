@@ -126,7 +126,7 @@
 		options = options || {};		
 		var settings = extend(true, {}, DEFAULT_DATASOURCE_SETTING , options ); 
 		if( defined(url) ){
-			settings.transport.read.url = options.url;			
+			settings.transport.read.url = url;			
 		}		
 		if( defined(options.renderTo) ){
 
