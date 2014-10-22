@@ -1552,6 +1552,7 @@
 	overflow: hidden;
 	padding: 10px 0 6px;
 	border-bottom: solid 1px #eee;
+	border-top: solid 1px #eee;
 	background: url(images/breadcrumbs.png) repeat; 
 }
 
