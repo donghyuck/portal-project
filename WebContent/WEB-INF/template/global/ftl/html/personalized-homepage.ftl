@@ -78,42 +78,12 @@
 					}
 				});	
 				
+				
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");
+				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 												
-				// photo panel showing				
-				createPhotoListView();								
-				//$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-				//	this.select(this.element.children().first());
-				//});
-																			
-				// 4. Right Tabs								
-				$('#myTab').on( 'show.bs.tab', function (e) {
-					//e.preventDefault();		
-					var show_bs_tab = $(e.target);
-					if( show_bs_tab.attr('href') == '#my-files' ){					
-						createAttachmentListView();
-					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
-						createPhotoListView();
-					}					
-				});
-				$('#myTab a:first').tab('show') ;
-
-				common.ui.button({
-					renderTo: "button[data-action='show-gallery-section']",
-					click:function(e){
-						createGallerySection();
-						common.ui.buttonDisabled($(this));
-					}
-				});
-				common.ui.button({
-					renderTo: "button[data-action='show-notice-panel']",
-					click:function(e){
-						showNoticePanel();
-						common.ui.buttonDisabled($(this));
-					}
-				});			
 				// END SCRIPT 				
 			}
 		}]);	
