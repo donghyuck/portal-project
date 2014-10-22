@@ -9,7 +9,6 @@
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
-					alert( action ) ;
 					switch (action) {
 						case "basic-modify-mode" :
 							common.ui.status( $("button[data-action='basic-modify-mode']") , "disable" );
@@ -98,83 +97,6 @@
 			});
 			
 			$('#my-profile-tab a:first').tab('show')
-
-			$('#my-profile-tab a.a').click(function (e) {
-				e.preventDefault();				
-				if( $(this).attr('href') == '#profile-social-network' ){					
-					if( !$("#my-social-grid" ).data('kendoGrid') ){
-						$("#my-social-network-grid").kendoGrid({
-							dataSource: common.api.social.dataSource({type:'all'}),
-							selectable: "single",
-							rowTemplate: kendo.template($("#social-network-grid-row-template").html()),
-							change: function(e) { 				
-								var selectedCells = this.select();
-								if( selectedCells.length == 1){
-									var selectedCell = this.dataItem( selectedCells );	    									
-									$("#my-social-network-grid").data( "networkPlaceHolder", selectedCell );			
-									if( selectedCell.connected ){				
-										common.api.social.profile({
-											media : selectedCell.serviceProviderName ,
-											data: { socialNetworkId: selectedCell.socialAccountId },
-											success : function(response){
-												var myMediaAccountTemplate = kendo.template($('#my-social-network-account-details-template').html());			
-												$("#my-social-network-account-details").html( myMediaAccountTemplate(response) );	
-											},
-											beforeSend : function() {
-												kendo.ui.progress($("#my-social-network-account-details"), true);
-											},
-											complete : function(){
-												kendo.ui.progress($("#my-social-network-account-details"), false);
-											}												
-										});
-									}	
-								}							
-							},
-							dataBound: function(e) {
-								$("#my-social-network-grid button").each(function( index ) {
-									var grid_action = $(this);									
-									if( grid_action.hasClass("custom-social-network-connect") ){
-										grid_action.click(function (e) {
-											e.preventDefault();	
-											var networkPlaceHolder = $("#my-social-network-grid").data( "networkPlaceHolder");
-											goSocialPopup(networkPlaceHolder);
-										});
-									} else if( grid_action.hasClass("custom-social-network-disconnect") ){
-										grid_action.click(function (e) {
-											e.preventDefault();			
-											var networkPlaceHolder = $("#my-social-network-grid").data( "networkPlaceHolder");
-											alert( networkPlaceHolder.socialAccountId +  " 준비중입니다." ) ;									
-										});									 	
-									 }
-								});
-							},
-							height: 300
-						});								
-					}				
-				}
-				$(this).tab('show')
-			})		 	
-						
-			
-			if(!$("#my-photo-upload").data("kendoUpload")){
-				$("#my-photo-upload").kendoUpload({
-					multiple : false,
-					showFileList : false,
-					localization:{ select : '사진변경' , dropFilesHere : '업로드할 이미지를 이곳에 끌어 놓으세요.' },
-					async: {
-						saveUrl:  '${request.contextPath}/community/update-my-photo.do?output=json',							   
-						autoUpload: true
-					},
-					upload: function (e) {								         						    								    	 		    	 
-					},
-					success : function(e) {								    
-						if( e.response.photo ){
-							var _currentUser = $("#account-panel").data("currentUser" );
-							$('#my-photo-image').attr( 'src', common.api.user.photoUrl( currentUser, 100, 150 ) );
-						}				
-					}	
-				});
-			}	
 			
 			// Popup window code
 			function goSocialPopup(socialnetwork) {
