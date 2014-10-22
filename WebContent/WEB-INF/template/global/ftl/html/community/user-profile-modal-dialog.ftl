@@ -390,7 +390,7 @@
 										</dd>
 										<hr>																									
 									</dl>	
-									<div class="panel panel-default no-margin-b rounded" style="display:none;">
+									<div class="panel panel-profile no-margin-b rounded" style="display:none;">
 										<div class="panel-heading overflow-h">
 											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i> 변경</h2>
 										</div>
@@ -468,44 +468,11 @@
 											</table>	
 										</div>
 										<div class="col-sm-6">										
-											<div id="my-profile-social-details" >
-												<!--<button class="btn btn-danger btn-sm">연결 삭제</button>-->
-											
+											<div id="my-profile-social-details" style="min-height:200px;">
 											</div>
 										</div>
 									</div>				
 								</div>
-								<!--
-										
-									<div class="container" style="width:100%">
-										<div class="row">			
-											<div class="col-sm-5 leftless rightless">		
-												<table id="my-social-network-grid">
-													<colgroup>
-														<col/>
-														<col/>
-													</colgroup>
-													<thead>
-														<tr>
-														<th>
-														미디어
-														</th>
-														<th>
-														상태
-														</th>													
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td colspan="2"></td>
-														</tr>
-													</tbody>
-												</table>	
-											</div>										
-											<div id="my-social-network-account-details" class="col-sm-7 rightless"></div>
-										</div>
-									</div>
-									-->
 								<div class="tab-pane" id="my-profile-notice-cfg">
 									<div style="height:300px" ></div>
 									준비중입니다.
@@ -598,80 +565,6 @@
 				</div>					
 			#}#		
 
-			
-				#if ( typeof (twitterProfile)  == "object" ){ #
-				<div class="media">
-					<a class="pull-left" href="\\#"><img class="media-object" src="#=twitterProfile.profileImageUrl#" alt="프로파일 이미지" class="img-rounded"></a>
-					<div class="media-body">
-						<h5 class="media-heading">#=twitterProfile.screenName# (#=twitterProfile.name#)</h5>
-						#=twitterProfile.description#</br>
-						</br>
-						트위터 URL : #=twitterProfile.profileUrl#</br>
-						표준시간대: #=twitterProfile.timeZone#</br>	
-						웹 사이트: #=twitterProfile.url#</br>	
-						언어: #=twitterProfile.language#</br>	
-						위치: #=twitterProfile.location#</br>	
-					</div>			
-				</div>
-				</br>
-				<ul class="list-group">
-					<li class="list-group-item">
-					<span class="badge">#=twitterProfile.statusesCount#</span>
-					트윗
-					</li>
-					<li class="list-group-item">
-					<span class="badge">#=twitterProfile.friendsCount#</span>
-					팔로잉
-					</li>
-					<li class="list-group-item">
-					<span class="badge">#=twitterProfile.followersCount#</span>
-					팔로워
-					</li>		
-				</ul>			
-				# } else if ( typeof (facebookProfile)  == "object" ) { #
-				<div class="media">
-					<a class="pull-left" href="\\#"><img class="media-object" src="http://graph.facebook.com/#=facebookProfile.id#/picture" alt="프로파일 이미지" class="img-rounded"></a>
-					<div class="media-body">
-						<h5 class="media-heading">
-						#=facebookProfile.name# (#=facebookProfile.firstName#, #=facebookProfile.lastName#)
-						</h5>
-						</br>
-						URL : #=facebookProfile.link#</br>
-						로케일 : #=facebookProfile.locale#</br>
-						# if ( typeof (facebookProfile.location)  == "object" ) { #
-						위치 : #=facebookProfile.location.name#</br>
-						# } #
-					</div>		
-				</div>						
-				# } else if ( typeof (tumblrProfile)  == "object" ) { #
-				<ul class="media-list">
-					<li class="media">					
-						<div class="media-body">
-							<h5 class="media-heading">
-							#=tumblrProfile.name#
-							</h5>
-							<p>팔로잉 : #=tumblrProfile.following#, 좋아요 : #=tumblrProfile.likes#</p>
-							# for (var i = 0; i < tumblrProfile.blogs.length ; i++) { #												
-							# var blog = tumblrProfile.blogs[i] ; #	
-							<div class="media">
-							<!--
-				            <a class="pull-left" href="\\#">
-				              <img class="media-object" data-src="holder.js/64x64" alt="Generic placeholder image">
-				            </a>
-				            -->
-				            <div class="media-body">
-				              <!--<h4 class="media-heading">Nested media heading</h4>-->
-				              #=blog.url #
-				            </div>
-				          </div>							
-						</div>	
-						# } #	
-					</li>	
-					
-				</ul>											
-				# } else if ( typeof (error)  == "object" ) { #
-				
-				# } #
 			</div>
 		</div>				
 		</script>
