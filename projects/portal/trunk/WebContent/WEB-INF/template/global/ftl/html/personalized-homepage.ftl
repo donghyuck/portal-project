@@ -814,7 +814,8 @@
 					</ul>
 				</div><!-- ./navbar-personalized -->			
 			</div>
-			<div id="main-content" class="container-fluid" style="min-height:300px;">	
+			<div id="main-content" class="container-fluid profile" style="min-height:300px;">	
+				<div class="profile-body">
 				<div class="row margin-bottom-20">
                         <!--Profile Post-->
                         <div class="col-sm-6">
@@ -950,6 +951,7 @@
                             </div>
                         </div>
                         <!--End Profile Event-->
+                    </div>
                     </div>	
 				<div id="personalized-area" class="row"></div>
 			</div>		
