@@ -781,8 +781,8 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<div id="main-content" class="container-fluid" style="min-height:300px;">		
-				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">
+			<div class="breadcrumbs breadcrumbs-personalized">
+				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation"  style="top:-4px;">		
 					<ul class="nav navbar-nav pull-right">
 						<li class="padding-xs-hr no-padding-r">
 							<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-panel">공지 & 이벤트 </button>
@@ -808,7 +808,9 @@
 							</div>
 						</li>
 					</ul>
-				</div><!-- ./navbar-personalized -->
+				</div><!-- ./navbar-personalized -->			
+			</div>
+			<div id="main-content" class="container-fluid" style="min-height:300px;">		
 				<div id="personalized-area" class="row"></div>
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
