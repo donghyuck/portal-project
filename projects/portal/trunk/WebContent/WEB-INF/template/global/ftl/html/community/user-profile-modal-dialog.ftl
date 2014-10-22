@@ -38,7 +38,8 @@
 						saveUrl:  '${request.contextPath}/community/update-my-photo.do?output=json',							   
 						autoUpload: true
 					},
-					upload: function (e) {								         						    								    	 		    	 
+					upload: function (e) {
+					
 					},
 					success : function(e) {								    
 						if( e.response.photo ){
@@ -58,12 +59,14 @@
 					case "#my-profile-social-cfg" :
 						if( !$("#my-profile-social-grid" ).data('kendoGrid') ){
 							$("#my-profile-social-grid" ).kendoGrid({
-								dataSource : common.ui.datasource({
-									url : "/connect/list.json",
-									schema:{
-										data:"connections"
+								dataSource : common.ui.datasource(
+									"/connect/list.json",
+									{
+										schema:{
+											data:"connections"
+										}
 									}
-								}),
+								),
 								selectable: "single",
 								rowTemplate: kendo.template($("#my-profile-social-connection-grid-row-template").html()),	
 								change: function(e) { 				
