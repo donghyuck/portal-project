@@ -161,6 +161,7 @@
 		status : common.ui.status || status,
 		datasource : common.ui.datasource || datasource,
 		ajax : common.ui.ajax || ajax,
+		listview : common.ui.listview || listview,
 	});	
 	
 	
