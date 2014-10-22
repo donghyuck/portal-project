@@ -107,6 +107,13 @@
 			}
 		}
 	}
+	
+	function listview( renderTo, options ){		
+		if(!renderTo.data("kendoListView")){			
+			 renderTo.kendoListView(options);
+		}		
+		return renderTo.data("kendoListView");
+	}
 	/**
 	 * url 
 	 * options 
