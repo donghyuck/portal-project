@@ -108,13 +108,13 @@
 								} 
 							} 
 						}
-					);
+					),
 					template: kendo.template("hello");
 				}
 			);
 		}
-				
-					
+
+
 		-->
 		</script>		
 		<style scoped="scoped">
