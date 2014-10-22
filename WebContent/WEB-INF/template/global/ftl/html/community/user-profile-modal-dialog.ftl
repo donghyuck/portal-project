@@ -582,6 +582,7 @@
                                 <dt>Felis euismod semper eget lacinia</dt>
                                 <dd>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum</dd>
 					</dl>
+					<p>#: email #</p>
 					<p>#: about #</p>
 					<p><i class="fa fa-home"></i> <a href="link">홈</a></p>
 					<hr>
