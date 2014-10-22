@@ -62,7 +62,7 @@
 		<#assign current_menu = action.getNavigator() />					
 		<header  class="cloud <#if current_menu.parent.css??>${current_menu.parent.css}</#if>">			
 				<script>
-				jobs.put(function(){
+				jobs.push(function () {
 					$(".navbar-nav li[data-menu-item='${current_menu.parent.name}']").addClass("active");
 				});
 				</script>
