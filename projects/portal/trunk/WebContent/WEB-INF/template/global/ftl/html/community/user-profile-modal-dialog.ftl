@@ -587,12 +587,12 @@
 					<hr>					
 					<ul class="list-unstyled social-contacts-v2">
 						# for (var i = 0; i < education.length ; i++) { #			
-						<li>#: education[i].school.name#, #if(education[i].year!=null){# #:education[i].year.name# #}# (#:education[i].type#)</li>
+						<li><i class="fa fa-university"></i> #: education[i].school.name#, #if(education[i].year!=null){# #:education[i].year.name# #}# (#:education[i].type#)</li>
 						#}#
 					</ul>
 					<ul class="list-unstyled social-contacts-v2">
 						# for (var i = 0; i < work.length ; i++) { #			
-						<li>#: work[i].employer.name# (#: work[i].startDate#~#: work[i].endDate#)</li>
+						<li><i class="fa fa-building-o"></i> #: work[i].employer.name# (#: work[i].startDate#~#: work[i].endDate#)</li>
 						#}#
 					</ul>
 				</div>					
