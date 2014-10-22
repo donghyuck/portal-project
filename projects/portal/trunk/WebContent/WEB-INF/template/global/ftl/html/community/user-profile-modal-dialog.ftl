@@ -563,7 +563,7 @@
 				</div>	
 			#}else if (providerId === "facebook"){ #	
 				<div class="profile-blog">
-					<img class="rounded-x" src="#= profileImageUrl #" alt="">
+					<img class="rounded-x" src="http://graph.facebook.com/#= id #/picture" alt="">
 					<div class="name-location">
 						<strong>#= name #</strong>
 						#if( location != null ){ #
