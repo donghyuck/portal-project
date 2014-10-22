@@ -824,7 +824,7 @@
 					</div>
 					<div class="col-md-9">
 
-				<div class="profile-body rounded">
+				<div class="profile-body rounded padding-sm">
 				<div class="row margin-bottom-20">
                         <!--Profile Post-->
                         <div class="col-sm-6">
