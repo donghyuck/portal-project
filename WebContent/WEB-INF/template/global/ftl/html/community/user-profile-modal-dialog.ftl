@@ -74,13 +74,21 @@
 									if( selectedCells.length == 1){
 										var selectedCell = this.dataItem( selectedCells );	 										
 										common.ui.ajax({
-											url: "/connect/" + selectedCell.providerId + "/user/lookup.json",
-											success : function(response){
-												var temp = kendo.template($('#my-social-account-details-template').html());	
-												$.extend( response , { providerId : selectedCell.providerId } ); 
-												$("#my-profile-social-details").html( temp( response ) );	
+											"/connect/" + selectedCell.providerId + "/user/lookup.json",
+											{
+												success : function(response){
+													var temp = kendo.template($('#my-social-account-details-template').html());	
+													$.extend( response , { providerId : selectedCell.providerId } ); 
+													$("#my-profile-social-details").html( temp( response ) );	
+												},
+												beforeSend : function(e){
+													kendo.ui.progress($("#my-profile-social-details"), true);			
+												},
+												complete : function(e){
+													kendo.ui.progress($("#my-profile-social-details"), false);			
+												}
 											}
-										});
+										);
 										
 									}
 								}
