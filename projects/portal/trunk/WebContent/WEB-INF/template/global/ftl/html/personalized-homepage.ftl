@@ -106,10 +106,15 @@
 								}else{			
 									return options;		
 								} 
-							} 
+							},
+							schema: {
+								data : "targetAnnounces",
+								model : Announce,
+								total : "totalAnnounceCount"
+							}							 
 						}
 					),
-					template: kendo.template("hello")
+					template: kendo.template("#:announceId#")
 				}
 			);
 		}
