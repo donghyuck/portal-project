@@ -72,9 +72,10 @@
 								change: function(e) { 				
 									var selectedCells = this.select();
 									if( selectedCells.length == 1){
-										var selectedCell = this.dataItem( selectedCells );	 										
+										var selectedCell = this.dataItem( selectedCells );	 					
+										var url = "/connect/" + selectedCell.providerId + "/user/lookup.json" ;					
 										common.ui.ajax({
-											"/connect/" + selectedCell.providerId + "/user/lookup.json",
+											url,
 											{
 												success : function(response){
 													var temp = kendo.template($('#my-social-account-details-template').html());	
