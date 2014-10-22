@@ -88,69 +88,11 @@
 			}
 		}]);	
 		<!-- ============================== -->
-		<!-- display image gallery                                  -->
+		<!-- Announce										   -->
 		<!-- ============================== -->
-		function createGallerySection(){
-			var renderTo = "image-gallery";
-			
-			if( $( "#" +renderTo).length == 0 ){			
-				$(".wrapper .header").after( $("#image-gallery-template").html() );
-				var galleryDataSource =new kendo.data.DataSource({
-					type: 'json',
-					transport: {
-						read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
-						parameterMap: function (options, operation){
-							if (operation != "read" && options) {										                        								                       	 	
-								return { imageId :options.imageId };									                            	
-							}else{
-								 return { startIndex: options.skip, pageSize: options.pageSize }
-							}
-						}
-					},
-					pageSize: 30,
-					error:common.api.handleKendoAjaxError,
-					schema: {
-						model: Image,
-						data : "targetImages",
-						total : "totalTargetImageCount"
-					},
-					serverPaging: true,
-					change : function(){
-						$( "#image-gallery-grid" ).html(
-							kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
-						);		
-						//Grid.init();							
-					}
-				});				
-				
-				common.ui.thumbnailexpanding();
-				
-				$("#image-gallery-pager").kendoPager({
-					refresh : true,					
-					buttonCount : 9,
-					info: false,
-					dataSource : galleryDataSource
-				});					
-				
-				galleryDataSource.read();					
-				
-				common.ui.button({
-					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
-					animate : true
-				});	
-				setTimeout(function(){
-					$( "#" +renderTo).slideDown();
-				}, 500);
-			}
-			
-			if( $( "#" +renderTo).is(":hidden") ){
-				$( "#" +renderTo).slideDown();
-			} 			
-		}
-		<!-- ============================== -->
-		<!-- display notice  panel                                  -->
-		<!-- ============================== -->
-		function showNoticePanel(){
+		function createAnnouncePanel(){
+		
+		
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.panel({
 				appendTo: appendTo,
@@ -242,6 +184,68 @@
 				}
 			});
 		}
+				
+		function createGallerySection(){
+			var renderTo = "image-gallery";
+			
+			if( $( "#" +renderTo).length == 0 ){			
+				$(".wrapper .header").after( $("#image-gallery-template").html() );
+				var galleryDataSource =new kendo.data.DataSource({
+					type: 'json',
+					transport: {
+						read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
+						parameterMap: function (options, operation){
+							if (operation != "read" && options) {										                        								                       	 	
+								return { imageId :options.imageId };									                            	
+							}else{
+								 return { startIndex: options.skip, pageSize: options.pageSize }
+							}
+						}
+					},
+					pageSize: 30,
+					error:common.api.handleKendoAjaxError,
+					schema: {
+						model: Image,
+						data : "targetImages",
+						total : "totalTargetImageCount"
+					},
+					serverPaging: true,
+					change : function(){
+						$( "#image-gallery-grid" ).html(
+							kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
+						);		
+						//Grid.init();							
+					}
+				});				
+				
+				common.ui.thumbnailexpanding();
+				
+				$("#image-gallery-pager").kendoPager({
+					refresh : true,					
+					buttonCount : 9,
+					info: false,
+					dataSource : galleryDataSource
+				});					
+				
+				galleryDataSource.read();					
+				
+				common.ui.button({
+					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
+					animate : true
+				});	
+				setTimeout(function(){
+					$( "#" +renderTo).slideDown();
+				}, 500);
+			}
+			
+			if( $( "#" +renderTo).is(":hidden") ){
+				$( "#" +renderTo).slideDown();
+			} 			
+		}
+		<!-- ============================== -->
+		<!-- display notice  panel                                  -->
+		<!-- ============================== -->
+
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
 		<!-- ============================== -->									
@@ -795,68 +799,25 @@
 					<div class="col-md-9">
 
 				<div class="profile-body rounded padding-sm">
-				<div class="row margin-bottom-20">
-                        <!--Profile Post-->
-                        <div class="col-sm-6">
-                            <div class="panel panel-profile no-bg">
-                                <div class="panel-heading overflow-h">
-                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Notes</h2>
-                                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                                </div>
-                                <div id="scrollbar" class="panel-body contentHolder ps-container">
-                                    <div class="profile-post color-one">
-                                        <span class="profile-post-numb">01</span>
-                                        <div class="profile-post-in">
-                                            <h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
-                                            <p>How to market yourself as a freelance designer</p>
-                                        </div>
-                                    </div>
-                                    <div class="profile-post color-two">
-                                        <span class="profile-post-numb">02</span>
-                                        <div class="profile-post-in">
-                                            <h3 class="heading-xs"><a href="#">Codrops Collective #117</a></h3>
-                                            <p>Web Design &amp; Development News</p>
-                                        </div>
-                                    </div>
-                                    <div class="profile-post color-three">
-                                        <span class="profile-post-numb">03</span>
-                                        <div class="profile-post-in">
-                                            <h3 class="heading-xs"><a href="#">Sketch Toolbox</a></h3>
-                                            <p>Basic prototype of a package manager for Sketch</p>
-                                        </div>
-                                    </div>
-                                    <div class="profile-post color-four">
-                                        <span class="profile-post-numb">04</span>
-                                        <div class="profile-post-in">
-                                            <h3 class="heading-xs"><a href="#">Amazing Portfolio</a></h3>
-                                            <p>Create a free online portfolio lookbook with Readz</p>
-                                        </div>
-                                    </div>
-                                    <div class="profile-post color-five">
-                                        <span class="profile-post-numb">05</span>
-                                        <div class="profile-post-in">
-                                            <h3 class="heading-xs"><a href="#">Discover New Features</a></h3>
-                                            <p>More than 100+ amazing add-ons coming soon...</p>
-                                        </div>
-                                    </div>
-                                    <div class="profile-post color-six">
-                                        <span class="profile-post-numb">06</span>
-                                        <div class="profile-post-in">
-                                            <h3 class="heading-xs"><a href="#">Corporation Plans</a></h3>
-                                            <p>Discussion of new corporation plans</p>
-                                        </div>
-                                    </div>
-                                    <div class="profile-post color-seven">
-                                        <span class="profile-post-numb">07</span>
-                                        <div class="profile-post-in">
-                                            <h3 class="heading-xs"><a href="#">Project Updates</a></h3>
-                                            <p>New features of coming update</p>
-                                        </div>
-                                    </div>
-                                <div class="ps-scrollbar-x-rail" style="width: 389px; display: none; left: 0px; bottom: 2px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 320px; display: inherit; right: 2px;"><div class="ps-scrollbar-y" style="top: 0px; height: 198px;"></div></div></div>
-                            </div>        
-                        </div>
-                        <!--End Profile Post-->
+					<div class="row margin-bottom-20">
+						<!--Announce Post-->
+						<div class="col-sm-6">
+							<div class="panel panel-profile no-bg">
+								<div class="panel-heading overflow-h">
+									<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Notes</h2>
+									<a href="#"><i class="fa fa-cog pull-right"></i></a>
+								</div>
+								<div class="panel-body contentHolder">
+									<div class="profile-post color-one">
+										<span class="profile-post-numb">01</span>
+										<div class="profile-post-in">
+											<h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
+											<p>How to market yourself as a freelance designer</p>
+										</div>
+									</div>
+								</div>
+							</div>	        
+						</div><!--End Announce Post-->
 
                         <!--Profile Event-->
                         <div class="col-sm-6 md-margin-bottom-20">
