@@ -553,7 +553,6 @@
 						<span><i class="fa fa-map-marker"></i> <a href="\\#">#: location #</a> </span>
 					</div>
 					<div class="clearfix margin-bottom-20"></div>
-					<p>#: description #</p>
 					# for (var i = 0; i < blogs.length ; i++) { #												
 					<p><i class="fa fa-globe"></i> <a href="blogs[i].url">#: blogs[i].title #</a></p>					
 					#}# 					
