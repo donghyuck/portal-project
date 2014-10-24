@@ -108,6 +108,16 @@
 		}
 	}
 	
+	function slimScroll( renderTo , options ){
+		options = options || {};
+		if(defined($.slimScroll)) {
+			renderTo.slimScroll( options );
+		}else{
+			
+			
+		}
+	}
+	
 	function listview( renderTo, options ){		
 		if(!renderTo.data("kendoListView")){			
 			 renderTo.kendoListView(options);
@@ -162,6 +172,7 @@
 		datasource : common.ui.datasource || datasource,
 		ajax : common.ui.ajax || ajax,
 		listview : common.ui.listview || listview,
+		slimScroll : common.ui.slimScroll || slimScroll
 	});	
 	
 	
