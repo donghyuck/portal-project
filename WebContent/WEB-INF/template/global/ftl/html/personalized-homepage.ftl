@@ -83,9 +83,10 @@
 		function createAnnouncePanel(){
 		
 			var renderTo = $("#my-announce-panel");
-			var bodyRenderTo = $("#my-announce-panel .panel-body").first();
+			var listRenderTo = $("#my-announce-panel .panel-body.panel-body-list");
+			var viewRenderTo = $("#my-announce-panel .panel-body.panel-body-view");
 			common.ui.listview(
-				bodyRenderTo,
+				listRenderTo,
 				{
 					dataSource : common.ui.datasource(
 						'${request.contextPath}/community/list-announce.do?output=json',
@@ -108,12 +109,14 @@
 					),
 					template: kendo.template($("#announce-listview-item-template").html()),
 					selectable: "single" ,
-					dataBound: function(e){
-					
+					change: function(e){
+						if(!common.ui.visible(viewRenderTo)){
+							viewRenderTo.slideDown();
+						}
 					}
 				}
 			);
-			common.ui.slimScroll(bodyRenderTo, {height: 320});
+			common.ui.slimScroll(listRenderTo, {height: 320});
 		}
 
 
@@ -184,7 +187,9 @@
 									<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
 									<a href="#"><i class="fa fa-cog pull-right"></i></a>
 								</div>
-								<div class="panel-body contentHolder no-border"></div>
+								<div class="panel-body panel-body-cfg" style="display:none;"></div>
+								<div class="panel-body panel-body-view" style="display:none;"></div>
+								<div class="panel-body contentHolder no-border panel-body-list"></div>
 							</div>
 						</div><!--End Announce Post-->
 
