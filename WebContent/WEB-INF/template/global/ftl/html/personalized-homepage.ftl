@@ -197,6 +197,7 @@
 								
 								<div class="panel panel-primary no-padding">
 								
+								
 				<div class="panel-heading">
 					<h4 data-bind="html:subject"></h4>
 					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></small>					
