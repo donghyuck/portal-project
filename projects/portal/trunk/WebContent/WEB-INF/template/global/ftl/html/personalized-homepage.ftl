@@ -9,23 +9,13 @@
 				
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
-			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
-			
-			
-			
-			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
-			
-			'css!${request.contextPath}/styles/common.themes/unify/pages/profile.min.css',
-			
-			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',			
-
-			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',			
+			'css!${request.contextPath}/styles/common.pages/common.onepage.css',			
+			'css!${request.contextPath}/styles/common.themes/unify/pages/profile.min.css',			
+			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',		
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
-			
+			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',		
 			
 						
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
@@ -100,12 +90,14 @@
 					dataSource : common.ui.datasource(
 						'${request.contextPath}/community/list-announce.do?output=json',
 						{
-							parameterMap: function(options, operation) {
-								if( typeof options.objectType === "undefined"  ){
-									return {objectType: <#if action.user.anonymous >30<#else>1</#if> };	
-								}else{			
-									return options;		
-								} 
+							transport : {
+								parameterMap: function(options, operation) {
+									if( typeof options.objectType === "undefined"  ){
+										return {objectType: 30 };	
+									}else{			
+										return options;		
+									} 
+								}
 							},
 							schema: {
 								data : "targetAnnounces",
@@ -114,9 +106,14 @@
 							}							 
 						}
 					),
-					template: kendo.template("#:announceId#")
+					template: kendo.template($("#announce-listview-item-template").html()),
+					selectable: "single" ,
+					dataBound: function(e){
+					
+					}
 				}
 			);
+			common.ui.slimScroll(bodyRenderTo, {height: 320});
 		}
 
 
@@ -127,7 +124,11 @@
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}
-		
+			
+			#my-announce-panel .color-two.k-state-selected{
+				border-left: 2px solid #e74c3c;
+			}
+			
 		</style>   	
 		</#compress>
 	</head>
@@ -180,18 +181,10 @@
 						<div class="col-sm-6">
 							<div id="my-announce-panel" class="panel panel-profile no-bg">
 								<div class="panel-heading overflow-h">
-									<h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil"></i>Notes</h2>
+									<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
 									<a href="#"><i class="fa fa-cog pull-right"></i></a>
 								</div>
-								<div class="panel-body contentHolder">
-									<div class="profile-post color-one">
-										<span class="profile-post-numb">01</span>
-										<div class="profile-post-in">
-											<h3 class="heading-xs"><a href="#">Creative Blog</a></h3>
-											<p>How to market yourself as a freelance designer</p>
-										</div>
-									</div>
-								</div>
+								<div class="panel-body contentHolder no-border"></div>
 							</div>
 						</div><!--End Announce Post-->
 
@@ -199,7 +192,7 @@
                         <div class="col-sm-6 md-margin-bottom-20">
                             <div class="panel panel-profile no-bg">
                                 <div class="panel-heading overflow-h">
-                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-briefcase"></i>Upcoming Events</h2>
+                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil-square-o"></i> 메모</h2>
                                     <a href="#"><i class="fa fa-cog pull-right"></i></a>
                                 </div>
                                 <div id="scrollbar2" class="panel-body contentHolder ps-container">
@@ -441,8 +434,7 @@
 						</div>
 					</div>	
 				</div>
-			</div>
-			
+			</div>			
 		</div>		
 	</div>
 	</script>
@@ -496,7 +488,27 @@
 		</div>
 	</div>
 	<div class="notice-grid no-border-hr no-border-b" style="min-height: 300px"></div>
-	</script>		
+	</script>	
+	
+	<script type="text/x-kendo-template" id="announce-listview-item-template">	
+			<div class="profile-post color-two">
+				<span class="profile-post-numb">
+					<img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150">
+				</span>	
+				<div class="profile-post-in">
+					<h3 class="heading-xs">						
+						# if (objectType == 30) { #
+						<span class="label label-info">공지</span></span>
+						# }else{ #
+						<span class="label label-danger">알림</span></span>
+						# } #		
+						<a href="\\#">#: subject #</a>
+						<p>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
+					</h3>
+					<p>게시 기간 :  #: formattedStartDate() # ~  #: formattedEndDate() #</p>
+				</div>
+			</div>
+	</script>										
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<!-- ./END TEMPLATE -->
