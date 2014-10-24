@@ -118,6 +118,10 @@
 		}
 	}
 	
+	function visible( selector ){
+		return selector.is(":visible");
+	}
+	
 	function listview( renderTo, options ){		
 		if(!renderTo.data("kendoListView")){			
 			 renderTo.kendoListView(options);
@@ -168,6 +172,7 @@
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
+		visible : common.ui.visible || visible,
 		status : common.ui.status || status,
 		datasource : common.ui.datasource || datasource,
 		ajax : common.ui.ajax || ajax,
