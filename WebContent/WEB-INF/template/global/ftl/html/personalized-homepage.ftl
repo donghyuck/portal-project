@@ -502,7 +502,7 @@
 						# }else{ #
 						<span class="label label-danger">알림</span></span>
 						# } #		
-						<a href="\\#">#: subject #</a>
+						<span class="btn-link" >#: subject #</span>
 						<p>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
 					</h3>
 					<p>게시 기간 :  #: formattedStartDate() # ~  #: formattedEndDate() #</p>
