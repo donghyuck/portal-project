@@ -85,6 +85,8 @@
 			var renderTo = $("#my-announce-panel");
 			var listRenderTo = $("#my-announce-panel .panel-body.panel-body-list");
 			var viewRenderTo = $("#my-announce-panel .panel-body.panel-body-view");
+			var announce = new Announce ();
+			kendo.bind(viewRenderTo, announce);			
 			common.ui.listview(
 				listRenderTo,
 				{
@@ -109,7 +111,10 @@
 					),
 					template: kendo.template($("#announce-listview-item-template").html()),
 					selectable: "single" ,
-					change: function(e){
+					change: function(e){						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+						selectedCell.copy( announce );
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
 						}
@@ -188,7 +193,18 @@
 									<a href="#"><i class="fa fa-cog pull-right"></i></a>
 								</div>
 								<div class="panel-body panel-body-cfg" style="display:none;"></div>
-								<div class="panel-body panel-body-view" style="display:none;"></div>
+								<div class="panel-body panel-body-view padding-sm" style="display:none;">
+								
+								<div class="panel panel-primary no-padding">
+								
+				<div class="panel-heading">
+					<h4 data-bind="html:subject"></h4>
+					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></small>					
+				</div>
+				<div class="panel-body padding-sm" data-bind="html:body"></div>	
+			</div>
+								
+								</div>
 								<div class="panel-body contentHolder no-border panel-body-list"></div>
 							</div>
 						</div><!--End Announce Post-->
