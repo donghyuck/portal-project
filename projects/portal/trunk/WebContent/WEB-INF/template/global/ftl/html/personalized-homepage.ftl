@@ -201,7 +201,16 @@
 							<div class="row" >
 								<!--Announce Post-->
 								<div class="col-sm-6">
-									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2></div>
+									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
+										<div id="notice-target-button" class="btn-group" data-toggle="buttons" data-role="extradiobuttons">
+															<label class="btn btn-info btn-sm active rounded-left">
+																<input type="radio" name="notice-target" value="30">사이트
+															</label>
+															<label class="btn btn-info btn-sm rounded-right">
+																<input type="radio" name="notice-target" value="1">회사
+															</label>
+														</div>
+									</div>
 									<div id="my-announce-section">
 										
 												<div class="panel panel-default rounded-bottom my-announce-view"  style="display:none;">
