@@ -527,17 +527,15 @@
 		<a class="pull-left" href="\\#"><img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150"></a>
 		<div class="media-body">
 			<h5 class="media-heading">
-				<strong>#: subject #</strong> 
-			</h5>
-			<div class="name-location">		
-				<p>				
 						# if (objectType == 30) { #
 						<span class="label label-info">공지</span></span>
 						# }else{ #
 						<span class="label label-danger">알림</span></span>
-						# } #		
-				작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
-				
+						# } #				
+				<strong>#: subject #</strong> 
+			</h5>
+			<div class="name-location">		
+				작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>				
 			</div>
 		</div>
 	</div>
