@@ -105,8 +105,7 @@
 								data : "targetAnnounces",
 								model : Announce,
 								total : "totalAnnounceCount"
-							},
-							serverPaging: true							 
+							}
 						}
 					),
 					template: kendo.template($("#announce-listview-item-template").html()),
@@ -114,20 +113,14 @@
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						selectedCell.copy( announce );
-						
+						selectedCell.copy( announce );						
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
 						}
 					}
 				}
 			);
-			$("#my-announce-list-pager").kendoPager({
-					refresh : true,					
-					buttonCount : 9,
-					info: false,
-					dataSource : listRenderTo.data("kendoListView").dataSource
-			});					
+			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
 			common.ui.slimScroll(listRenderTo, {height: 320});
 		}
 
