@@ -195,9 +195,8 @@
 								<!--Announce Post-->
 								<div class="col-sm-6">
 									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2></div>
-									<div id="my-announce-section">
-										<div class="panel panel-default">
-											<div class="panel-body panel-body-view no-padding-hr no-padding-t" style="display:none;">
+									<div id="my-announce-section" class="panel-body-view" style="display:none;">
+										
 												<div class="panel panel-default no-border no-margin-b">
 													<div class="panel-heading">
 														<h4 data-bind="html:subject"></h4>
@@ -213,8 +212,7 @@
 														</ul>	
 													</div>
 													<div class="panel-body padding-sm" data-bind="html:body"></div>	
-												</div>								
-											</div>
+
 										</div>	
 										<div class="panel panel-default">
 											<div class="panel-body contentHolder no-border panel-body-list"></div>		
