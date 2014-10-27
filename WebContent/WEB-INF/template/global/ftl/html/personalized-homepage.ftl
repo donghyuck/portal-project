@@ -149,10 +149,11 @@
 			#my-announce-section .panel-body .k-state-selected
 			{
 				background : #fff;
+				color: #585f69;
 			}
 			#my-announce-section .panel-body .k-state-selected .media-heading strong{
 				font-weight:bold;
-				text-decoration: underline;
+				text-decoration: underline;				
 			}
 			
 		</style>   	
