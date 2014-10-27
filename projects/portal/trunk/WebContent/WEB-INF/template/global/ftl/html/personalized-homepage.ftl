@@ -199,7 +199,7 @@
 										</div>
 										<div class="panel-body panel-body-cfg" style="display:none;"></div>
 										<div class="panel-body panel-body-view no-padding-hr" style="display:none;">
-											<div class="panel panel-default no-border no-margin-b">
+											<div class="panel panel-default no-border no-margin-b no-margin-t">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
 													<ul class="list-unstyled">
