@@ -194,10 +194,9 @@
 							<div class="row margin-bottom-20">
 								<!--Announce Post-->
 								<div class="col-sm-6">
+									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2></div>
+									
 									<div id="my-announce-panel" class="panel panel-default">
-										<div class="panel-heading">
-											<h2 class="panel-title heading-sm"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
-										</div>
 										<div class="panel-body panel-body-cfg" style="display:none;"></div>
 										<div class="panel-body panel-body-view no-padding-hr no-padding-t" style="display:none;">
 											<div class="panel panel-default no-border no-margin-b">
