@@ -81,9 +81,9 @@
 		<!-- ============================== -->
 		function createAnnouncePanel(){
 		
-			var renderTo = $("#my-announce-panel");
-			var listRenderTo = $("#my-announce-panel .panel-body.panel-body-list");
-			var viewRenderTo = $("#my-announce-panel .panel-body.panel-body-view");
+			var renderTo = $("#my-announce-section");
+			var listRenderTo = $("#my-announce-section .panel-body.panel-body-list");
+			var viewRenderTo = $("#my-announce-section .panel-body.panel-body-view");
 			var announce = new Announce ();
 			kendo.bind(viewRenderTo, announce);			
 			common.ui.listview(
@@ -195,30 +195,31 @@
 								<!--Announce Post-->
 								<div class="col-sm-6">
 									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2></div>
-									
-									<div id="my-announce-panel" class="panel panel-default">
-										<div class="panel-body panel-body-cfg" style="display:none;"></div>
-										<div class="panel-body panel-body-view no-padding-hr no-padding-t" style="display:none;">
-											<div class="panel panel-default no-border no-margin-b">
-												<div class="panel-heading">
-													<h4 data-bind="html:subject"></h4>
-													
-													<ul class="list-unstyled">
-														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
-														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
-														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
-														<li class="text-muted">
-															<span data-bind="text:user.photoUrl"></span>
-															<img width="30" height="30" class="img-circle" data-bind="attr:{src:user.photoUrl}" src="/images/common/no-avatar.png">
-														</li>	
-													</ul>	
-												</div>
-												<div class="panel-body padding-sm" data-bind="html:body"></div>	
-											</div>								
-										</div>
-										<div class="panel-body contentHolder no-border panel-body-list"></div>
-									</div>
-								
+									<div id="my-announce-section">
+										<div class="panel panel-default">
+											<div class="panel-body panel-body-view no-padding-hr no-padding-t" style="display:none;">
+												<div class="panel panel-default no-border no-margin-b">
+													<div class="panel-heading">
+														<h4 data-bind="html:subject"></h4>
+														
+														<ul class="list-unstyled">
+															<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
+															<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
+															<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+															<li class="text-muted">
+																<span data-bind="text:user.photoUrl"></span>
+																<img width="30" height="30" class="img-circle" data-bind="attr:{src:user.photoUrl}" src="/images/common/no-avatar.png">
+															</li>	
+														</ul>	
+													</div>
+													<div class="panel-body padding-sm" data-bind="html:body"></div>	
+												</div>								
+											</div>
+										</div>	
+										<div class="panel panel-default">
+											<div class="panel-body contentHolder no-border panel-body-list"></div>		
+										</div>									
+									</div>								
 								</div><!--End Announce Post-->
 								
                         <!--Profile Event-->
