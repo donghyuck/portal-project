@@ -86,9 +86,9 @@
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");
 
-			common.ui.button({
-				renderTo: $("#announce-selector"),
-				type: "radio",
+			common.ui.button(
+				$("#announce-selector"),
+				{
 				change: function(e){
 					alert( kendo.stringify (e) );
 					//listRenderTo.data("kendoListView").dataSource.read();
