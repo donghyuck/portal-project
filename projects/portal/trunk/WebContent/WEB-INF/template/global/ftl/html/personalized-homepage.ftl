@@ -223,7 +223,7 @@
 										</div>	
 										<div class="panel panel-default">
 											<div class="panel-body contentHolder no-border my-announce-list"></div>		
-											<div class="panel-footer no-padding"><div id="my-announce-list-pager" > </div></div>					
+											<div class="panel-footer no-padding"><div id="my-announce-list-pager" class="no-border"> </div></div>					
 										</div>	
 													
 									</div>								
