@@ -216,7 +216,10 @@
 										</div>	
 										<div class="panel panel-default">
 											<div class="panel-body contentHolder no-border my-announce-list"></div>		
-										</div>									
+										</div>	
+										<div class="panel-footer no-padding">
+										
+										</div>								
 									</div>								
 								</div><!--End Announce Post-->
 								
