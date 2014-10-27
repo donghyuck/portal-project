@@ -197,7 +197,7 @@
 									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2></div>
 									<div id="my-announce-section">
 										
-												<div class="panel panel-default announce-view"  style="display:none;">
+												<div class="panel panel-default my-announce-view"  style="display:none;">
 													<div class="panel-heading">
 														<h4 data-bind="html:subject"></h4>
 														
