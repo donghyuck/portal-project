@@ -40,10 +40,13 @@
 	isFunction = kendo.isFunction,
 	extend = $.extend,
 	DataSource = kendo.data.DataSource,
+	Widget = kendo.ui.Widget, 
 	progress = kendo.ui.progress,
 	POST = 'POST',	
 	JSON = 'json',
 	STRING = 'string',
+	CLICK = "click",
+	CHANGE = "change",	
 	UNDEFINED = "undefined";
 	
 	function handleAjaxError(xhr) {
