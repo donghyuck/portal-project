@@ -86,14 +86,15 @@
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");
 
-			common.ui.button(
+			common.ui.buttonsGroup(
 				$("#announce-selector"),
 				{
-				change: function(e){
-					alert( kendo.stringify (e) );
-					//listRenderTo.data("kendoListView").dataSource.read();
+					change: function(e){
+						alert( kendo.stringify (e) );
+						//listRenderTo.data("kendoListView").dataSource.read();
+					}
 				}
-			});	
+			);	
 
 			var announce = new Announce ();
 			kendo.bind(viewRenderTo, announce);			
