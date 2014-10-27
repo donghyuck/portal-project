@@ -1542,18 +1542,59 @@ figure.effect-chico:hover p {
 
 
 /** profile */
-figure.profile {
-	background: transparent;
-}
-figure.profile .name-location {
-	overflow: hidden;	
+/*Media*/
+.profile .media.media-v2 {
+	margin-top: 0;
+	padding: 25px 0 20px;
+	border-top: 1px solid #eee;
 }
 
-figure.profile img {
-	float: left;
+.profile .media.media-v2:first-child {
+	border-top: none;
+}
+
+.profile .media.media-v2 .media.media-v2 {
+	margin-top: 20px;
+	padding-bottom: 0;
+}
+
+.profile .media.media-v2 img.media-object {
 	width: 50px;
 	height: 50px;
-	margin-right: 20px;	
-	opacity: 1;
+	margin-right: 10px;
+}
+
+/*Media Body*/
+.profile .media.media-v2 .media-body {
+	overflow: hidden;
+}
+
+.profile .media.media-v2 .media-body p {
+	color: #777;
+	line-height: 1.4;
+}
+
+/*Media Heading*/
+.profile .media.media-v2 .media-heading {
+	margin: 0 0 5px;
+	font-size: 13px;
+	position: relative;
+}
+
+.profile .media.media-v2 .media-heading a,
+.profile .media.media-v2 .media-heading a:hover {
+	color: #555;
+}
+
+.profile .media.media-v2 .media-heading strong {
+	padding-right: 5px;
+}
+
+.profile .media.media-v2 .media-heading small {
+	top: 7px;
+	right: 0;
+	color: #999;
+	font-size: 12px;
+	position: absolute;
 }
 
