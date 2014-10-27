@@ -189,7 +189,7 @@
 
 
 
-	var Button = Widget.extend({
+	var ButtonsGroup = Widget.extend({
 		init: function(element, options) {
 			var that = this;
 			Widget.fn.init.call(that, element, options);
@@ -203,7 +203,7 @@
 	CHANGE
 	],
 	options: {
-		name:"ExtButton",
+		name:"ButtonsGroup",
 		enable:true
         },
         _value: function(){
@@ -235,8 +235,8 @@
 	common.ui.buttonsGroup = function ( renderTo, options ){		
 		options = options || {};	
 		if( defined(renderTo) ){
-			if(renderTo.data("kendoExtButton")){
-				return	renderTo.data("kendoExtButton");
+			if(renderTo.data("kendoButtonsGroup")){
+				return	renderTo.data("kendoButtonsGroup");
 			}else{
 				return new Button(renderTo, options ); 				 
 			}
