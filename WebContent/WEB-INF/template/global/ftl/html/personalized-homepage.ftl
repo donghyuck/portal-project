@@ -241,7 +241,7 @@
 							<div><!-- /.row -->		
 							<div><!-- /.panel-body -->	
 						</div><!-- /.panel --> 	
-						
+						</div>
 
 						
 					</div><!-- /.col-md-9 -->
