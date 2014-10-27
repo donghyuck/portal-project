@@ -33,7 +33,8 @@
 	});
 		
 })(jQuery);
-// 
+
+
 ;(function($, undefined) {
 	var ui = common.ui,
 	isFunction = kendo.isFunction,
@@ -110,12 +111,6 @@
 	
 	function slimScroll( renderTo , options ){
 		options = options || {};
-		/*if(defined($.slimScroll)) {
-			renderTo.slimScroll( options );
-		}else{
-			
-			
-		}*/
 		renderTo.slimScroll( options );
 	}
 	
@@ -179,10 +174,7 @@
 		error:handleAjaxError 		
 	};	
 
-	
-	
-	/**
-	 */
+
 	function ajax ( url, options ){
 		options = options || {};	
 		var settings = extend(true, {}, DEFAULT_AJAX_SETTING , options ); 
@@ -191,6 +183,63 @@
 		}				
 		$.ajax(settings);		
 	};	
+
+
+
+	var Button = Widget.extend({
+		init: function(element, options) {
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			element = that.wrapper = that.element;
+			options = that.options;
+			that._radio();
+			kendo.notify(that);
+		},
+		events: [
+	CLICK,
+	CHANGE
+	],
+	options: {
+		name:"ExtButton",
+		enable:true
+        },
+        _value: function(){
+        	var that = this;
+        	if(that.radio){
+        		return that.element.find(".active input[type='radio']").val();
+        	}
+        },
+        _radio: function(){
+        	var that = this;
+        	var input = that.element.find("input[type='radio']");
+        	if(input.length > 0){
+        		that.radio = true ;
+        	}else{
+        		that.radio = false ;
+        	}        	
+        	if(that.radio){
+        		that.value = that._value();
+        		input.on(CHANGE, function(e){
+        			if( that.value != this.value ){
+        				that.value = this.value ;
+        				that.trigger( CHANGE, { value: that.value } )
+        			}
+        		} );        		
+        	}
+        }        
+	});
+	
+	common.ui.button = function ( renderTo, options ){		
+		options = options || {};	
+		if( defined(renderTo) ){
+			if(renderTo.data("kendoExtButton")){
+				return	renderTo.data("kendoExtButton");
+			}else{
+				return new Button(renderTo, options ); 				 
+			}
+		}
+	}	
+	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
@@ -200,8 +249,11 @@
 		ajax : common.ui.ajax || ajax,
 		listview : common.ui.listview || listview,
 		pager : common.ui.pager || pager,
-		slimScroll : common.ui.slimScroll || slimScroll
-	});	
+		slimScroll : common.ui.slimScroll || slimScroll,
+		button : common.ui.button || button
+	});
+	
 })(jQuery);
+
 
 
