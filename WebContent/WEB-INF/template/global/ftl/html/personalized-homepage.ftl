@@ -523,14 +523,12 @@
 			<h4 class="media-heading">
 				<strong>#: subject #</strong> 
 			</h4>
-			<p>게시 기간 :  #: formattedStartDate() # ~  #: formattedEndDate() #</p>
 			<div class="name-location">						
 						# if (objectType == 30) { #
 						<span class="label label-info">공지</span></span>
 						# }else{ #
 						<span class="label label-danger">알림</span></span>
 						# } #		
-						<span class="btn-link" >#: subject #</span>
 						<p>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
 					</div>
 		</div>
