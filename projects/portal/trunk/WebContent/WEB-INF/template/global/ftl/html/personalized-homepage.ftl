@@ -86,12 +86,11 @@
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");
 
-			common.ui.buttonsGroup(
+			var announceSelector = common.ui.buttonsGroup(
 				$("#announce-selector"),
 				{
-					change: function(e){
-						alert( kendo.stringify (e.value) );
-						//listRenderTo.data("kendoListView").dataSource.read();
+					change: function(e){						
+						listRenderTo.data("kendoListView").dataSource.read({objectType:e.value});
 					}
 				}
 			);	
@@ -107,7 +106,7 @@
 							transport : {
 								parameterMap: function(options, operation) {
 									if( typeof options.objectType === "undefined"  ){
-										return {objectType: 30 };	
+										return {objectType: announceSelector.value() };	
 									}else{			
 										return options;		
 									} 
