@@ -520,9 +520,9 @@
 	<div class="media media-v2">
 		<a class="pull-left" href="\\#"><img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150"></a>
 		<div class="media-body">
-			<h4 class="media-heading">
+			<h5 class="media-heading">
 				<strong>#: subject #</strong> 
-			</h4>
+			</h5>
 			<div class="name-location">		
 				<p>				
 						# if (objectType == 30) { #
