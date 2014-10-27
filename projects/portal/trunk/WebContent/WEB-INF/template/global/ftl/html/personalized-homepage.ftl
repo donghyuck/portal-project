@@ -529,7 +529,7 @@
 						# }else{ #
 						<span class="label label-danger">알림</span></span>
 						# } #		
-						<p>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
+						<span>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</span>
 					</div>
 		</div>
 	</div>
