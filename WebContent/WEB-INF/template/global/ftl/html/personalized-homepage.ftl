@@ -517,9 +517,7 @@
 			<div class="profile-post rounded">
 				<figure class="profile">
 					<img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150">
-				</figure>	
-				<div class="profile-post-in">
-					<h3 class="heading-xs">						
+					<div class="name-location">						
 						# if (objectType == 30) { #
 						<span class="label label-info">공지</span></span>
 						# }else{ #
@@ -527,7 +525,10 @@
 						# } #		
 						<span class="btn-link" >#: subject #</span>
 						<p>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
-					</h3>
+					</div>
+				</figure>	
+				<div class="profile-post-in">
+					
 					<p>게시 기간 :  #: formattedStartDate() # ~  #: formattedEndDate() #</p>
 				</div>
 			</div>
