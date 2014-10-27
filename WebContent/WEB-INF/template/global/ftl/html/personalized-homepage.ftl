@@ -82,8 +82,8 @@
 		function createAnnouncePanel(){
 		
 			var renderTo = $("#my-announce-section");
-			var listRenderTo = $("#my-announce-section .panel-body.panel-body-list");
-			var viewRenderTo = $("#my-announce-section .panel-body.panel-body-view");
+			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
+			var viewRenderTo = $("#my-announce-section .my-announce-view");
 			var announce = new Announce ();
 			kendo.bind(viewRenderTo, announce);			
 			common.ui.listview(
@@ -195,9 +195,9 @@
 								<!--Announce Post-->
 								<div class="col-sm-6">
 									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2></div>
-									<div id="my-announce-section" class="panel-body-view" style="display:none;">
+									<div id="my-announce-section">
 										
-												<div class="panel panel-default no-border no-margin-b">
+												<div class="panel panel-default announce-view"  style="display:none;">
 													<div class="panel-heading">
 														<h4 data-bind="html:subject"></h4>
 														
@@ -215,7 +215,7 @@
 
 										</div>	
 										<div class="panel panel-default">
-											<div class="panel-body contentHolder no-border panel-body-list"></div>		
+											<div class="panel-body contentHolder no-border my-announce-list"></div>		
 										</div>									
 									</div>								
 								</div><!--End Announce Post-->
