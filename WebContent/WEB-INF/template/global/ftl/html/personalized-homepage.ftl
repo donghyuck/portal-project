@@ -133,8 +133,8 @@
 				margin-top: 5px; 
 			}
 			
-			#my-announce-panel .color-two.k-state-selected{
-				border-left: 2px solid #e74c3c;
+			#my-announce-panel .profile-post.k-state-selected span.btn-link{
+				font-weight:bold;
 			}
 			
 		</style>   	
