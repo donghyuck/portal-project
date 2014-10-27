@@ -148,7 +148,7 @@
 			
 			#my-announce-section .panel-body .k-state-selected
 			{
-				background : #fff;
+				background : #F5F5F5;
 				color: #585f69;
 			}
 			#my-announce-section .panel-body .k-state-selected .media-heading strong{
@@ -237,7 +237,7 @@
 												
 											</div><!-- /.panel -->
 											<div class="panel panel-default">
-												<div class="panel-body contentHolder no-border my-announce-list"></div>
+												<div class="panel-body contentHolder no-border no-padding my-announce-list"></div>
 												<div class="panel-footer no-padding">
 													<div id="my-announce-list-pager" class="no-border"> </div>
 												</div>											
@@ -476,7 +476,7 @@
 	</script>	
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
-	<div class="media media-v2 no-padding-vr">
+	<div class="media media-v2 padding-sm">
 		<a class="pull-left" href="\\#"><img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150"></a>
 		<div class="media-body">
 			<h5 class="media-heading">
