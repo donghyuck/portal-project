@@ -202,14 +202,14 @@
 								<!--Announce Post-->
 								<div class="col-sm-6">
 									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
-										<div id="notice-target-button" class="btn-group" data-toggle="buttons" data-role="extradiobuttons">
-															<label class="btn btn-info btn-sm active rounded-left">
-																<input type="radio" name="notice-target" value="30">사이트
-															</label>
-															<label class="btn btn-info btn-sm rounded-right">
-																<input type="radio" name="notice-target" value="1">회사
-															</label>
-														</div>
+										<div id="notice-target-button" class="btn-group pull-right" data-toggle="buttons" data-role="extradiobuttons">
+											<label class="btn btn-info btn-sm active rounded-left">
+												<input type="radio" name="notice-target" value="30">사이트
+											</label>
+											<label class="btn btn-info btn-sm rounded-right">
+												<input type="radio" name="notice-target" value="1">회사
+											</label>
+										</div>
 									</div>
 									<div id="my-announce-section">
 										
@@ -223,7 +223,7 @@
 															<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
 															<li class="text-muted">
 																<span data-bind="text:user.photoUrl"></span>
-																<img width="30" height="30" class="img-circle" data-bind="attr:{src:user.photoUrl}" src="/images/common/no-avatar.png">
+																<img width="30" height="30" class="img-circle" data-bind="attr:{src:authorPhotoUrll}" src="/images/common/no-avatar.png">
 															</li>	
 														</ul>	
 													</div>
