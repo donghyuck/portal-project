@@ -515,9 +515,9 @@
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 			<div class="profile-post rounded">
-				<span class="profile-post-numb">
+				<figure class="profile">
 					<img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150">
-				</span>	
+				</figure>	
 				<div class="profile-post-in">
 					<h3 class="heading-xs">						
 						# if (objectType == 30) { #
