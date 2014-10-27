@@ -72,18 +72,29 @@
 				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-				createAnnouncePanel();								
+				
+				createAnnounceSection();
+													
 				// END SCRIPT 				
 			}
 		}]);	
 		<!-- ============================== -->
 		<!-- Announce										   -->
 		<!-- ============================== -->
-		function createAnnouncePanel(){
-		
+		function createAnnounceSection(){
 			var renderTo = $("#my-announce-section");
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");
+
+			common.ui.button({
+				renderTo: $("#announce-selector"),
+				type: "radio",
+				change: function(e){
+					alert( kendo.stringify (e) );
+					//listRenderTo.data("kendoListView").dataSource.read();
+				}
+			});	
+
 			var announce = new Announce ();
 			kendo.bind(viewRenderTo, announce);			
 			common.ui.listview(
@@ -122,6 +133,8 @@
 			);
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
 			common.ui.slimScroll(listRenderTo, {height: 320});
+			
+			
 		}
 
 
@@ -193,7 +206,7 @@
 										<!--Announce Post-->
 										<div class="headline">
 											<h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
-											<div id="notice-target-button" class="btn-group pull-right" data-toggle="buttons">
+											<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30">사이트
 												</label>
