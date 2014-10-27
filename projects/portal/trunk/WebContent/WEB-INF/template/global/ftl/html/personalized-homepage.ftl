@@ -197,7 +197,7 @@
 							<div class="panel-body" style="background:#f5f5f5;">
 								<div class="row" >
 									<div class="col-sm-6">
-									<!--Announce Post-->
+										<!--Announce Post-->
 										<div class="headline">
 											<h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
 											<div id="notice-target-button" class="btn-group pull-right" data-toggle="buttons" data-role="extradiobuttons">
@@ -208,8 +208,27 @@
 													<input type="radio" name="notice-target" value="1">회사
 												</label>
 											</div>
-										</div>									
-									<!--End Announce Post-->	
+										</div>			
+										<div id="my-announce-section">	
+											<div class="panel panel-default rounded-bottom my-announce-view"  style="display:none;">
+												<div class="panel-heading">
+													<h4 data-bind="html:subject"></h4>
+													<ul class="list-unstyled">
+															<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
+															<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
+															<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+															<li class="text-muted">
+																<img width="30" height="30" class="img-circle" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png">
+																<ul class="list-unstyled text-muted">
+																	<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
+																	<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
+																</ul>																
+															</li>	
+													</ul>	
+												</div>
+											</div>
+										</div>						
+										<!--End Announce Post-->	
 									</div><!-- /.col-sm-6-->
 								</div><!-- /.row -->
 							</div><!-- /.panel-body -->
