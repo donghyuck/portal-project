@@ -1545,6 +1545,9 @@ figure.effect-chico:hover p {
 figure.profile {
 	background: transparent;
 }
+figure.profile .name-location {
+	overflow: hidden;	
+}
 
 figure.profile img {
 	float: left;
