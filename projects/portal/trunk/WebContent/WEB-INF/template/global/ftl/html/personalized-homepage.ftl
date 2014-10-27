@@ -196,7 +196,21 @@
 						<div class="panel panel-default rounded no-margin-b">
 							<div class="panel-body" style="background:#f5f5f5;">
 								<div class="row" >
-								
+									<div class="col-sm-6">
+									<!--Announce Post-->
+										<div class="headline">
+											<h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
+											<div id="notice-target-button" class="btn-group pull-right" data-toggle="buttons" data-role="extradiobuttons">
+												<label class="btn btn-info btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30">사이트
+												</label>
+												<label class="btn btn-info btn-sm rounded-right">
+													<input type="radio" name="notice-target" value="1">회사
+												</label>
+											</div>
+										</div>									
+									<!--End Announce Post-->	
+									</div><!-- /.col-sm-6-->
 								</div><!-- /.row -->
 							</div><!-- /.panel-body -->
 						</div><!-- /.panel -->
