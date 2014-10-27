@@ -123,15 +123,31 @@
 		return selector.is(":visible");
 	}
 	
-	function listview( renderTo, options ){		
+	var DEFAULT_PAGER_SETTING = {
+			refresh : true,		
+			buttonCount : 9,
+			info: false
+	};	
+	
+	function listview( renderTo, options){		
 		if(!renderTo.data("kendoListView")){			
 			 renderTo.kendoListView(options);
 		}		
 		return renderTo.data("kendoListView");
 	}
+	
+	function pager ( renderTo, options ){		
+		options = options || {};				
+		var settings = extend(true, {}, DEFAULT_PAGER_SETTING , options ); 
+		if(!renderTo.data("kendoPager")){			
+			 renderTo.kendoPager(options);
+		}		
+		return renderTo.data("kendoPager");
+	}
+	
 	/**
-	 * url 
-	 * options 
+	 *  
+	 *  
 	 */
 	var DEFAULT_DATASOURCE_SETTING = {
 			transport:{
@@ -140,9 +156,11 @@
 					dataType : JSON
 				} 				
 			},
+			serverPaging: true,
 			error:handleAjaxError,	
 			pageSize: 10		
-	};	
+	};
+	
 	
 	function datasource(url, options){		
 		options = options || {};		
@@ -161,6 +179,10 @@
 		error:handleAjaxError 		
 	};	
 
+	
+	
+	/**
+	 */
 	function ajax ( url, options ){
 		options = options || {};	
 		var settings = extend(true, {}, DEFAULT_AJAX_SETTING , options ); 
@@ -168,8 +190,7 @@
 			settings.url = url;			
 		}				
 		$.ajax(settings);		
-	};
-	
+	};	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
@@ -178,8 +199,9 @@
 		datasource : common.ui.datasource || datasource,
 		ajax : common.ui.ajax || ajax,
 		listview : common.ui.listview || listview,
+		pager : common.ui.pager || pager,
 		slimScroll : common.ui.slimScroll || slimScroll
 	});	
-	
-	
 })(jQuery);
+
+
