@@ -193,7 +193,7 @@
 										</div>
 										<div class="panel-body panel-body-cfg" style="display:none;"></div>
 										<div class="panel-body panel-body-view " style="display:none; padding:5px;">
-											<div class="panel panel-default no-padding no-margin-b">
+											<div class="panel panel-default no-border no-margin-b">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
 													<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></small>					
@@ -508,7 +508,7 @@
 	</script>	
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
-			<div class="profile-post bg-light">
+			<div class="profile-post rounded">
 				<span class="profile-post-numb">
 					<img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150">
 				</span>	
