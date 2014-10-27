@@ -238,7 +238,7 @@
 			if(renderTo.data("kendoButtonsGroup")){
 				return	renderTo.data("kendoButtonsGroup");
 			}else{
-				return new Button(renderTo, options ); 				 
+				return new ButtonsGroup(renderTo, options ); 				 
 			}
 		}
 	}	
