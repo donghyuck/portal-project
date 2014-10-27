@@ -188,7 +188,7 @@
 							<div class="row margin-bottom-20">
 								<!--Announce Post-->
 								<div class="col-sm-6">
-									<div id="my-announce-panel" class="panel panel-profile no-bg">
+									<div id="my-announce-panel" class="panel panel-default">
 										<div class="panel-heading overflow-h">
 											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
 											<a href="#"><i class="fa fa-cog pull-right"></i></a>
