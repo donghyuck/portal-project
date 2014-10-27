@@ -11,7 +11,7 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
-			'css!${request.contextPath}/styles/common.themes/unify/pages/profile.css',			
+	/*		'css!${request.contextPath}/styles/common.themes/unify/pages/profile.css',			*/
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',	
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',		
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
@@ -182,7 +182,9 @@
 					
 					</div>
 					<div class="col-md-9">
-						<div class="profile-body rounded padding-sm">
+						<div class="panel panel-default rounded">
+							<div class="panel-body">
+							
 							<div class="row margin-bottom-20">
 								<!--Announce Post-->
 								<div class="col-sm-6">
@@ -210,8 +212,9 @@
 										</div>
 										<div class="panel-body contentHolder no-border panel-body-list"></div>
 									</div>
+								
 								</div><!--End Announce Post-->
-
+								
                         <!--Profile Event-->
                         <div class="col-sm-6 md-margin-bottom-20">
                             <div class="panel panel-profile no-bg">
@@ -287,7 +290,7 @@
                     </div>
                     </div>	
 
-						
+						</div>	
 					</div>
 				</div>
 
