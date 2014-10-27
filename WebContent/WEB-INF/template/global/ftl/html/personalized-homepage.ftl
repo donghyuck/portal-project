@@ -196,9 +196,9 @@
 					</div>
 					<div class="col-md-9">
 						<div class="panel panel-default rounded">
-							<div class="panel-body">
+							<div class="panel-body" style="background:#f5f5f5;">
 							
-							<div class="row" style="background:#f5f5f5;">
+							<div class="row" >
 								<!--Announce Post-->
 								<div class="col-sm-6">
 									<div class="headline"><h2><i class="fa fa-bell-o"></i>공지 & 이벤트</h2></div>
