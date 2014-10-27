@@ -10,8 +10,7 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
-			'css!${request.contextPath}/styles/common.themes/unify/pages/profile.css',			
+			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',	
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',	
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',		
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
@@ -518,10 +517,14 @@
 	</script>	
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
-			<div class="profile-post rounded">
-				<figure class="profile">
-					<img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150">
-					<div class="name-location">						
+	<div class="media media-v2">
+		<a class="pull-left" href="\\#"><img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150"></a>
+		<div class="media-body">
+			<h4 class="media-heading">
+				<strong>#: subject #</strong> 
+			</h4>
+			<p>게시 기간 :  #: formattedStartDate() # ~  #: formattedEndDate() #</p>
+			<div class="name-location">						
 						# if (objectType == 30) { #
 						<span class="label label-info">공지</span></span>
 						# }else{ #
@@ -530,12 +533,8 @@
 						<span class="btn-link" >#: subject #</span>
 						<p>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
 					</div>
-				</figure>	
-				<div class="profile-post-in">
-					
-					<p>게시 기간 :  #: formattedStartDate() # ~  #: formattedEndDate() #</p>
-				</div>
-			</div>
+		</div>
+	</div>
 	</script>										
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
