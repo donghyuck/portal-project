@@ -191,11 +191,11 @@
 			</div>
 			<div id="main-content" class="container-fluid content profile" style="min-height:300px;">	
 				<div class="row">
-					<div class="col-md-3 md-margin-bottom-40">
+					<div class="col-md-3">
 					
 					</div>
 					<div class="col-md-9">
-						<div class="panel panel-default rounded">
+						<div class="panel panel-default rounded no-margin-b">
 							<div class="panel-body" style="background:#f5f5f5;">
 							
 							<div class="row" >
@@ -297,8 +297,7 @@
                                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
                                         </div>    
                                     </div>
-                                <div class="ps-scrollbar-x-rail" style="width: 389px; display: none; left: 0px; bottom: 2px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 320px; display: inherit; right: 2px;"><div class="ps-scrollbar-y" style="top: 0px; height: 178px;"></div></div></div>    
-                            </div>
+                               </div>
                         </div>
                         <!--End Profile Event-->
                     </div>
