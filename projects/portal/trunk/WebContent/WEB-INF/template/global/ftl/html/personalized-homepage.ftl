@@ -201,11 +201,13 @@
 											<div class="panel panel-default no-border no-margin-b">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
+													
 													<ul class="list-unstyled">
 														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
 														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
 														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
 														<li class="text-muted">
+															<span data-bind="text:photoUrl"></span>
 															<img width="30" height="30" class="img-circle" data-bind="attr:{src:photoUrl}" src="/images/common/no-avatar.png">
 														</li>	
 													</ul>	
