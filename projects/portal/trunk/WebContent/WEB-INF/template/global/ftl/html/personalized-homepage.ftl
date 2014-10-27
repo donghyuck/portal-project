@@ -198,10 +198,10 @@
 													<h4 data-bind="html:subject"></h4>
 													<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></small>				
 													<ul class="list-unstyled text-muted">
-				<li><span class="label label-primary label-lightweight">게시 기간</span> <span data-bind="text: announce.formattedStartDate">2014-10-22 오후 5:56</span> ~ <span data-bind="text: announce.formattedEndDate">2014-11-20 오후 5:56</span></li>
-				<li><span class="label label-default label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate">2014-10-22 오전 12:00</span></li>
-				<li><span class="label label-default label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate">2014-10-22 오전 12:00</span></li>
-			</ul>	
+														<li><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
+														<li><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
+														<li><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+													</ul>	
 												</div>
 												<div class="panel-body padding-sm" data-bind="html:body"></div>	
 											</div>								
