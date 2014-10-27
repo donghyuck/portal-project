@@ -469,7 +469,7 @@ var Announce = kendo.data.Model.define( {
         creationDate: { type: "date" }
     },
     authorPhotoUrl : function (){
-    	return "/download/profile/" + this.user.username+ "?width=150&height=150";    	
+    	return "/download/profile/" + this.get("user").username+ "?width=150&height=150";    	
     },
     formattedCreationDate : function(){
     	return kendo.toString(this.get("creationDate"), "g");
