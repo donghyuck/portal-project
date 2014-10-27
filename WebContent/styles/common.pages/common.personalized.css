@@ -2,6 +2,8 @@
 /**
 * main 
 */
+
+
 .wrapper{
 	background-color:transparent;
 }
@@ -1536,3 +1538,14 @@ figure.effect-chico:hover p {
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
+
+
+
+/** profile */
+figure.profile img {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 20px;	
+}
+
