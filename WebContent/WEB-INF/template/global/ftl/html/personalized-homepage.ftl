@@ -193,13 +193,12 @@
 								<!--Announce Post-->
 								<div class="col-sm-6">
 									<div id="my-announce-panel" class="panel panel-default">
-										<div class="panel-heading overflow-h">
-											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
-											<a href="#"><i class="fa fa-cog pull-right"></i></a>
+										<div class="panel-heading">
+											<h2 class="panel-title heading-sm"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
 										</div>
 										<div class="panel-body panel-body-cfg" style="display:none;"></div>
-										<div class="panel-body panel-body-view no-padding-hr" style="display:none;">
-											<div class="panel panel-default no-border no-margin-b no-margin-t">
+										<div class="panel-body panel-body-view no-padding-hr no-padding-t" style="display:none;">
+											<div class="panel panel-default no-border no-margin-b">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
 													<ul class="list-unstyled">
