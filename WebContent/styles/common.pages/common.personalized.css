@@ -1542,10 +1542,15 @@ figure.effect-chico:hover p {
 
 
 /** profile */
+figure.profile {}
+	background: transparent;
+}
+
 figure.profile img {
 	float: left;
 	width: 50px;
 	height: 50px;
 	margin-right: 20px;	
+	opacity: 1;
 }
 
