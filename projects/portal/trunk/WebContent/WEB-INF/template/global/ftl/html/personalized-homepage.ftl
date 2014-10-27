@@ -513,7 +513,7 @@
 	</script>	
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
-			<div class="profile-post color-two">
+			<div class="profile-post bg-light">
 				<span class="profile-post-numb">
 					<img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150">
 				</span>	
