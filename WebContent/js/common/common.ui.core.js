@@ -110,12 +110,13 @@
 	
 	function slimScroll( renderTo , options ){
 		options = options || {};
-		if(defined($.slimScroll)) {
+		/*if(defined($.slimScroll)) {
 			renderTo.slimScroll( options );
 		}else{
 			
 			
-		}
+		}*/
+		renderTo.slimScroll( options );
 	}
 	
 	function visible( selector ){
