@@ -200,6 +200,9 @@
 														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
 														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
 														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+														<li class="text-muted">
+															<img width="30" height="30" class="img-circle" data-bind="attr:{src:potoUrl}">
+														</li>	
 													</ul>	
 												</div>
 												<div class="panel-body padding-sm" data-bind="html:body"></div>	
