@@ -1542,7 +1542,7 @@ figure.effect-chico:hover p {
 
 
 /** profile */
-figure.profile {}
+figure.profile {
 	background: transparent;
 }
 
