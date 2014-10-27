@@ -190,9 +190,8 @@
 			</div>
 			<div id="main-content" class="container-fluid content profile" style="min-height:300px;">	
 				<div class="row">
-					<div class="col-md-3">
-					
-					</div>
+					<div class="col-md-3">					
+					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
 						<div class="panel panel-default rounded no-margin-b">
 							<div class="panel-body" style="background:#f5f5f5;">
@@ -239,85 +238,9 @@
 													
 									</div>								
 								</div><!--End Announce Post-->
-								
-                        <!--Profile Event-->
-                        <div class="col-sm-6 md-margin-bottom-20">
-                            <div class="panel panel-profile no-bg">
-                                <div class="panel-heading overflow-h">
-                                    <h2 class="panel-title heading-sm pull-left"><i class="fa fa-pencil-square-o"></i> 메모</h2>
-                                    <a href="#"><i class="fa fa-cog pull-right"></i></a>
-                                </div>
-                                <div id="scrollbar2" class="panel-body contentHolder ps-container">
-                                    <div class="profile-event">
-                                        <div class="date-formats">
-                                            <span>25</span>
-                                            <small>05, 2014</small>
-                                        </div>
-                                        <div class="overflow-h">
-                                            <h3 class="heading-xs"><a href="#">GitHub seminars in Japan.</a></h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
-                                        </div>    
-                                    </div>
-                                    <div class="profile-event">
-                                        <div class="date-formats">
-                                            <span>31</span>
-                                            <small>06, 2014</small>
-                                        </div>
-                                        <div class="overflow-h">
-                                            <h3 class="heading-xs"><a href="#">Bootstrap Update</a></h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
-                                        </div>    
-                                    </div>
-                                    <div class="profile-event">
-                                        <div class="date-formats">
-                                            <span>07</span>
-                                            <small>08, 2014</small>
-                                        </div>
-                                        <div class="overflow-h">
-                                            <h3 class="heading-xs"><a href="#">Apple Conference</a></h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
-                                        </div>    
-                                    </div>
-                                    <div class="profile-event">
-                                        <div class="date-formats">
-                                            <span>22</span>
-                                            <small>10, 2014</small>
-                                        </div>
-                                        <div class="overflow-h">
-                                            <h3 class="heading-xs"><a href="#">Backend Meeting</a></h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
-                                        </div>    
-                                    </div>
-                                    <div class="profile-event">
-                                        <div class="date-formats">
-                                            <span>14</span>
-                                            <small>11, 2014</small>
-                                        </div>
-                                        <div class="overflow-h">
-                                            <h3 class="heading-xs"><a href="#">Google Conference</a></h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
-                                        </div>    
-                                    </div>
-                                    <div class="profile-event">
-                                        <div class="date-formats">
-                                            <span>05</span>
-                                            <small>12, 2014</small>
-                                        </div>
-                                        <div class="overflow-h">
-                                            <h3 class="heading-xs"><a href="#">FontAwesome Update</a></h3>
-                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry printing.</p>
-                                        </div>    
-                                    </div>
-                               </div>
-                        </div>
-                        <!--End Profile Event-->
-                    </div>
-                    </div>	
-
 						</div>	
-					</div>
-				</div>
-
+					</div><!-- /.col-md-9 -->
+				</div><!-- /.row -->
 				<div id="personalized-area" class="row"></div>
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
