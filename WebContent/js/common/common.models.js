@@ -492,6 +492,11 @@ var Announce = kendo.data.Model.define( {
     	this.set("endDate", new Date() );
     },
     copy: function ( target ){
+    	if( typeof this.get("user") === 'object' )
+    		target.set("user", this.get("user") );
+    	if( typeof this.get("properties") === 'object' )
+    		target.set("properties", this.get("properties") );
+    	
     	target.announceId = this.get("announceId");
     	target.set("objectType",this.get("objectType") );
     	target.set("subject",this.get("subject") );
@@ -500,10 +505,7 @@ var Announce = kendo.data.Model.define( {
     	target.set("endDate", this.get("endDate"));
     	target.set("modifiedDate",this.get("modifiedDate") );
     	target.set("creationDate", this.get("creationDate") );
-    	if( typeof this.get("user") === 'object' )
-    		target.set("user", this.get("user") );
-    	if( typeof this.get("properties") === 'object' )
-    		target.set("properties", this.get("properties") );
+
     },
     clone: function () {
     	return new Announce({
