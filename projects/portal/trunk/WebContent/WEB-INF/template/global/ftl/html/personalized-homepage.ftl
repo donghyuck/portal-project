@@ -134,7 +134,7 @@
 				margin-top: 5px; 
 			}
 			
-			#my-announce-panel .k-state-selected
+			#my-announce-section .k-state-selected
 			{
 				background : #fff;
 			}
