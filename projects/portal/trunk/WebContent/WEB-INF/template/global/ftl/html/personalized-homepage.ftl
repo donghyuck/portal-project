@@ -522,7 +522,7 @@
 	</script>	
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
-	<div class="media media-v2">
+	<div class="media media-v2 no-padding-vr">
 		<a class="pull-left" href="\\#"><img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150"></a>
 		<div class="media-body">
 			<h5 class="media-heading">
