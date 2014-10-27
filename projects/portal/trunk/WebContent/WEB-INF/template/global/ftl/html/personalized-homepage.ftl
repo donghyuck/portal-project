@@ -90,7 +90,7 @@
 				$("#announce-selector"),
 				{
 					change: function(e){
-						alert( kendo.stringify (e) );
+						alert( kendo.stringify (e.value) );
 						//listRenderTo.data("kendoListView").dataSource.read();
 					}
 				}
