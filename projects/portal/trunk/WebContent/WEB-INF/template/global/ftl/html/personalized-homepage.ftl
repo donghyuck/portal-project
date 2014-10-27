@@ -138,7 +138,7 @@
 			{
 				background : #fff;
 			}
-			#my-announce-section .k-state-selected .media-heading{
+			#my-announce-section .k-state-selected .media-heading strong{
 				font-weight:bold;
 				text-decoration: underline;
 			}
