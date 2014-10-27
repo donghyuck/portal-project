@@ -232,7 +232,7 @@
         }        
 	});
 	
-	common.ui.button = function ( renderTo, options ){		
+	common.ui.buttonsGroup = function ( renderTo, options ){		
 		options = options || {};	
 		if( defined(renderTo) ){
 			if(renderTo.data("kendoExtButton")){
@@ -253,7 +253,7 @@
 		listview : common.ui.listview || listview,
 		pager : common.ui.pager || pager,
 		slimScroll : common.ui.slimScroll || slimScroll,
-		button : common.ui.button || button
+		buttonsGroup : common.ui.buttonsGroup || buttonsGroup
 	});
 	
 })(jQuery);
