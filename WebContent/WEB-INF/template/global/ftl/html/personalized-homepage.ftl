@@ -182,29 +182,28 @@
 					
 					</div>
 					<div class="col-md-9">
-
-				<div class="profile-body rounded padding-sm">
-					<div class="row margin-bottom-20">
-						<!--Announce Post-->
-						<div class="col-sm-6">
-							<div id="my-announce-panel" class="panel panel-profile no-bg">
-								<div class="panel-heading overflow-h">
-									<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
-									<a href="#"><i class="fa fa-cog pull-right"></i></a>
-								</div>
-								<div class="panel-body panel-body-cfg" style="display:none;"></div>
-								<div class="panel-body panel-body-view " style="display:none; padding:5px;">
-									<div class="panel panel-default no-padding no-margin-b">
-										<div class="panel-heading">
-											<h4 data-bind="html:subject"></h4>
-											<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></small>					
+						<div class="profile-body rounded padding-sm">
+							<div class="row margin-bottom-20">
+								<!--Announce Post-->
+								<div class="col-sm-6">
+									<div id="my-announce-panel" class="panel panel-profile no-bg">
+										<div class="panel-heading overflow-h">
+											<h2 class="panel-title heading-sm pull-left"><i class="fa fa-bell-o"></i>공지 & 이벤트</h2>
+											<a href="#"><i class="fa fa-cog pull-right"></i></a>
 										</div>
-										<div class="panel-body padding-sm" data-bind="html:body"></div>	
-									</div>								
-								</div>
-								<div class="panel-body contentHolder no-border panel-body-list"></div>
-							</div>
-						</div><!--End Announce Post-->
+										<div class="panel-body panel-body-cfg" style="display:none;"></div>
+										<div class="panel-body panel-body-view " style="display:none; padding:5px;">
+											<div class="panel panel-default no-padding no-margin-b">
+												<div class="panel-heading">
+													<h4 data-bind="html:subject"></h4>
+													<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></small>					
+												</div>
+												<div class="panel-body padding-sm" data-bind="html:body"></div>	
+											</div>								
+										</div>
+										<div class="panel-body contentHolder no-border panel-body-list"></div>
+									</div>
+								</div><!--End Announce Post-->
 
                         <!--Profile Event-->
                         <div class="col-sm-6 md-margin-bottom-20">
