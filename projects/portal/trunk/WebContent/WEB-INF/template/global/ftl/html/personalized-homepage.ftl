@@ -132,8 +132,13 @@
 				margin-top: 5px; 
 			}
 			
-			#my-announce-panel .profile-post.k-state-selected span.btn-link{
+			#my-announce-panel .k-state-selected
+			{
+				background : #fff;
+			}
+			#my-announce-panel .k-state-selected .media-heading{
 				font-weight:bold;
+				text-decoration: underline;
 			}
 			
 		</style>   	
