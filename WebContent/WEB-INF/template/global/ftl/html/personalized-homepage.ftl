@@ -222,8 +222,8 @@
 															<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
 															<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
 															<li class="text-muted">
-																<span data-bind="text:user.photoUrl"></span>
-																<img width="30" height="30" class="img-circle" data-bind="attr:{src:authorPhotoUrll}" src="/images/common/no-avatar.png">
+																<span data-bind="text:user.authorPhotoUrl"></span>
+																<img width="30" height="30" class="img-circle" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png">
 															</li>	
 														</ul>	
 													</div>
