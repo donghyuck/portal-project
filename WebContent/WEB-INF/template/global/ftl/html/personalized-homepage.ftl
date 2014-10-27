@@ -106,7 +106,7 @@
 							transport : {
 								parameterMap: function(options, operation) {
 									if( typeof options.objectType === "undefined"  ){
-										return {objectType: announceSelector.value() };	
+										return {objectType: 30 };	
 									}else{			
 										return options;		
 									} 
