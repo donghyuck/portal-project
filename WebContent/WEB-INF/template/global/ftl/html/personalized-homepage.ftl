@@ -194,8 +194,7 @@
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
 						<div class="panel panel-default rounded no-margin-b">
-							<div class="panel-body" style="background:#f5f5f5;">
-							
+							<div class="panel-body" style="background:#f5f5f5;">							
 							<div class="row" >
 								<!--Announce Post-->
 								<div class="col-sm-6">
@@ -238,7 +237,9 @@
 													
 									</div>								
 								</div><!--End Announce Post-->
-						</div>	
+							<div><!-- /.row -->		
+							<div><!-- /.panel-body -->	
+						</div><!-- /.panel --> 	
 					</div><!-- /.col-md-9 -->
 				</div><!-- /.row -->
 				<div id="personalized-area" class="row"></div>
