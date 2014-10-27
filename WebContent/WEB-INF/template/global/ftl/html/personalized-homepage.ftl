@@ -188,6 +188,7 @@
 					</ul>
 				</div><!-- ./navbar-personalized -->			
 			</div>
+			
 			<div id="main-content" class="container-fluid content profile" style="min-height:300px;">	
 				<div class="row">
 					<div class="col-md-3">					
@@ -208,9 +209,8 @@
 											</label>
 										</div>
 									</div>
-									<div id="my-announce-section">
-										
-												<div class="panel panel-default rounded-bottom my-announce-view"  style="display:none;">
+									<div id="my-announce-section">										
+										<div class="panel panel-default rounded-bottom my-announce-view"  style="display:none;">
 													<div class="panel-heading">
 														<h4 data-bind="html:subject"></h4>
 														
@@ -227,24 +227,25 @@
 															</li>	
 														</ul>	
 													</div>
-													<div class="panel-body padding-sm" data-bind="html:body"></div>	
-
+											<div class="panel-body padding-sm" data-bind="html:body"></div>	
 										</div>	
+										
 										<div class="panel panel-default">
 											<div class="panel-body contentHolder no-border my-announce-list"></div>		
 											<div class="panel-footer no-padding"><div id="my-announce-list-pager" class="no-border"> </div></div>					
-										</div>	
-													
-									</div>								
-								</div><!--End Announce Post-->
+										</div>										
+									</div><!--End Announce Post-->																	
+								</div><!-- /.col-sm-6-->								
 							<div><!-- /.row -->		
 							<div><!-- /.panel-body -->	
 						</div><!-- /.panel --> 	
 					</div><!-- /.col-md-9 -->
 				</div><!-- /.row -->
+				
 				<div id="personalized-area" class="row"></div>
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
+	 		
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
 			<!-- ./END FOOTER -->					
