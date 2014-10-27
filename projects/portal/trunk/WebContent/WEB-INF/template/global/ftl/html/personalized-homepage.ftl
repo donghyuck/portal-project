@@ -523,14 +523,16 @@
 			<h4 class="media-heading">
 				<strong>#: subject #</strong> 
 			</h4>
-			<div class="name-location">						
+			<div class="name-location">		
+				<p>				
 						# if (objectType == 30) { #
 						<span class="label label-info">공지</span></span>
 						# }else{ #
 						<span class="label label-danger">알림</span></span>
 						# } #		
-						<span>작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</span>
-					</div>
+				작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>
+				
+			</div>
 		</div>
 	</div>
 	</script>										
