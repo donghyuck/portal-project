@@ -214,19 +214,21 @@
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
 													<ul class="list-unstyled">
-															<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
-															<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
-															<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
-															<li class="text-muted">
-																<img width="30" height="30" class="img-circle" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png">
-																<ul class="list-unstyled text-muted">
-																	<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-																	<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-																</ul>																
-															</li>	
+														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
+														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
+														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+														<li class="text-muted">
+															<img width="30" height="30" class="img-circle" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png">
+															<ul class="list-unstyled text-muted">
+																<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
+																<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
+															</ul>																
+														</li>	
 													</ul>	
-												</div>
-											</div>
+												</div><!-- /.panel-heading -->
+												<div class="panel-body padding-sm" data-bind="html:body"></div>
+												
+											</div><!-- /.panel -->
 										</div>						
 										<!--End Announce Post-->	
 									</div><!-- /.col-sm-6-->
