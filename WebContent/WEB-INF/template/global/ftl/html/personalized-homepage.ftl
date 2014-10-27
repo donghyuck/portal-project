@@ -114,6 +114,8 @@
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
 						selectedCell.copy( announce );
+						
+						alert( kendo.stringify( announce ) );
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
 						}
