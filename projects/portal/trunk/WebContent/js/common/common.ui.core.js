@@ -187,10 +187,8 @@
 		$.ajax(settings);		
 	};	
 
-
-
 	var ButtonsGroup = Widget.extend({
-		init: function(element, options) {
+		init : function(element, options) {
 			var that = this;
 			Widget.fn.init.call(that, element, options);
 			element = that.wrapper = that.element;
@@ -198,38 +196,37 @@
 			that._radio();
 			kendo.notify(that);
 		},
-		events: [
-	CLICK,
-	CHANGE
-	],
-	options: {
-		name:"ButtonsGroup",
-		enable:true
-        },
-        _value: function(){
-        	var that = this;
-        	if(that.radio){
-        		return that.element.find(".active input[type='radio']").val();
-        	}
-        },
-        _radio: function(){
-        	var that = this;
-        	var input = that.element.find("input[type='radio']");
-        	if(input.length > 0){
-        		that.radio = true ;
-        	}else{
-        		that.radio = false ;
-        	}        	
-        	if(that.radio){
-        		that.value = that._value();
-        		input.on(CHANGE, function(e){
-        			if( that.value != this.value ){
-        				that.value = this.value ;
-        				that.trigger( CHANGE, { value: that.value } )
-        			}
-        		} );        		
-        	}
-        }        
+		events : [ CLICK, CHANGE ],
+		options : {
+			name : "ButtonsGroup",
+			enable : true
+		},
+		_value : function() {
+			var that = this;
+			if (that.radio) {
+				return that.element.find(".active input[type='radio']").val();
+			}
+		},
+		_radio : function() {
+			var that = this;
+			var input = that.element.find("input[type='radio']");
+			if (input.length > 0) {
+				that.radio = true;
+			} else {
+				that.radio = false;
+			}
+			if (that.radio) {
+				that.value = that._value();
+				input.on(CHANGE, function(e) {
+					if (that.value != this.value) {
+						that.value = this.value;
+						that.trigger(CHANGE, {
+							value : that.value
+						})
+					}
+				});
+			}
+		}
 	});
 	
 	common.ui.buttonsGroup = function ( renderTo, options ){		
@@ -257,7 +254,8 @@
 		listview : common.ui.listview || listview,
 		pager : common.ui.pager || pager,
 		slimScroll : common.ui.slimScroll || slimScroll,
-		buttonsGroup : common.ui.buttonsGroup || buttonsGroup
+		buttonsGroup : common.ui.buttonsGroup || buttonsGroup,
+		scrollTop: common.ui.scrollTop || scrollTop
 	});
 	
 })(jQuery);
