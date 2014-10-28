@@ -519,7 +519,7 @@
 			var that = this,
 			wrapper = that.wrapper,
 			options = that.options;
-			wrapper.children(EXT_PANEL_BODY).html(options.content);		
+			wrapper.children(PANEL_BODY).html(options.content);		
 		},	
 		refresh: function(){
 			var that = this,
@@ -531,7 +531,7 @@
 			that.trigger(REFRESH, {target: that});			
 		},		
 		content:function(html, data){
-		 	var content = this.wrapper.children(EXT_PANEL_BODY);
+		 	var content = this.wrapper.children(PANEL_BODY);
 		 	if (!defined(html)) {
 		 		return content.html();		 		
 		 	}
