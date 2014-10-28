@@ -276,6 +276,7 @@
 	extend = $.extend,
 	DataSource = kendo.data.DataSource,
 	Widget = kendo.ui.Widget, 
+	template = kendo.template,
 	progress = kendo.ui.progress,
 	POST = 'POST',	
 	JSON = 'json',
