@@ -351,7 +351,7 @@
 	function extPanel (renderTo, options ){		
 		options = options || {};	
 		if( defined(renderTo) ){
-			 return new Panel( $(options.renderTo), options); 
+			 return new Panel( renderTo, options); 
 		} else {		
 			var guid = guid().toLowerCase() ;
 			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
