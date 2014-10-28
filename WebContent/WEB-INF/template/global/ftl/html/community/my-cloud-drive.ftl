@@ -675,7 +675,7 @@
 					<ul class="nav navbar-nav">
 						<li class="padding-xs-hr no-padding-r">
 							<div class="btn-group navbar-btn rounded-bottom">
-								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-eye fa-lg"></i> <span class="hidden-xs">My 이미지 갤러리</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
 								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 							</div>
 						</li>							
@@ -881,7 +881,7 @@
 						<div class="panel panel-default rounded">
 							<div class="panel-heading">						
 							<button type="button" class="btn-close btn-close-grey btn-xs" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp"  data-switch-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
-							<h3 class="panel-title">MY 이미지 갤러리</h3>
+							<h3 class="panel-title"><i class="fa fa-picture-o"></i> MY 포토</h3>
 							</div>
 							<div class="panel-body padding-sm no-padding-hr no-padding-t" style="min-height:300px;">
 								<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
