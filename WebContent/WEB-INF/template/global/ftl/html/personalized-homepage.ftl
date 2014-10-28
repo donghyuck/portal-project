@@ -182,14 +182,17 @@
 			<div class="breadcrumbs breadcrumbs-personalized">
 				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation"  style="top:-4px;">		
 					<ul class="nav navbar-nav pull-right">
-						<li class="padding-xs-hr no-padding-r">
-							<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-panel">공지 & 이벤트 </button>
+						<li>
+							<div class="navbar-btn btn-group" data-toggle="buttons">
+								<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
+								<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+							</div>	
 						</li>
 						<li class="padding-xs-hr no-padding-r">
-						<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-gallery-section" disabled>My 이미지 갤러리 </button>
+						
 						</li>
 						<li class="padding-xs-hr no-padding-r">
-							<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+							
 						</li>							
 						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 						<li class="hidden-xs">
