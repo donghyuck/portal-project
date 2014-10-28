@@ -85,7 +85,7 @@
 		<!-- ============================== -->
 		function createNotificationSection(){
 			var renderTo = $("#my-notification-panel");
-			new common.ui.extPanel( renderTo, {});
+			new common.ui.extPanel( renderTo, { content : "새로운 메시지가 없습니다."});
 		}
 		<!-- ============================== -->
 		<!-- Announce										   -->
