@@ -198,6 +198,7 @@
 		},
 		events : [ CLICK, CHANGE ],
 		options : {
+			prefix: "podo",	
 			name : "ButtonsGroup",
 			enable : true
 		},
@@ -243,6 +244,12 @@
 	function scrollTop(selector){
 		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
 	}
+	
+	
+	
+	
+	
+
 	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
