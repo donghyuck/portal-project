@@ -83,7 +83,7 @@
 		<!-- Notify										   -->
 		<!-- ============================== -->
 		function createNoticeSection(){
-			var renderTo = $("#my-notice-panel");
+			var renderTo = $("#my-notify-panel");
 			new common.ui.extPanel( renderTo, {});
 		}
 		<!-- ============================== -->
