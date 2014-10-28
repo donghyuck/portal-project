@@ -243,6 +243,10 @@
 		}
 	}	
 	
+	common.ui.scrollTop(selector){
+		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
+	}
+	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
