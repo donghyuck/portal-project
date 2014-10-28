@@ -270,6 +270,7 @@
 
 ;(function($, undefined) {
 	var ui = common.ui,
+	guid = common.guid,
 	handleAjaxError = ui.handleAjaxError,
 	defined = ui.defined,
 	isFunction = kendo.isFunction,
@@ -347,6 +348,17 @@
         };		
 	}
 	
+	function panel (renderTo, options ){		
+		options = options || {};	
+		if( defined(renderTo) ){
+			 return new Panel( $(options.renderTo), options); 
+		} else {		
+			var guid = guid().toLowerCase() ;
+			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
+			$("#" + guid ).fadeIn("slow");			
+			return new Panel( $("#" + guid ), options); 
+		}		
+	}
 	
 	var Panel = Widget.extend({
 		init : function(element, options) {
