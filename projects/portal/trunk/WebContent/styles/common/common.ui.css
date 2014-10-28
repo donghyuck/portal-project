@@ -667,6 +667,10 @@ body:not (.right-to-left ) .no-border-l {
 	background: #f5f5f5;
 }
 
+.bg-transparent {
+	background: transparent;
+}
+
 .bs-callout {
 	padding: 20px;
 	margin: 20px 0;
