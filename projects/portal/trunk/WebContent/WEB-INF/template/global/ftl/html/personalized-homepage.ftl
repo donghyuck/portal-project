@@ -187,15 +187,9 @@
 								<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 								<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 							</div>	
-						</li>
-						<li class="padding-xs-hr no-padding-r">
-						
-						</li>
-						<li class="padding-xs-hr no-padding-r">
-							
-						</li>							
-						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+						</li>						
 						<li class="hidden-xs">
+							<p class="navbar-text">레이아웃</p>
 							<div class="btn-group navbar-btn" data-toggle="buttons">
 								<label class="btn btn-info">
 									<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
