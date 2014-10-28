@@ -198,14 +198,14 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="panel panel-primary rounded no-margin-b">
-							<div class="panel-body" style="background:#f5f5f5;">
+							<div class="panel-body">
 							
 							</div>
 						</div><!-- /.panel -->
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
-						<div class="panel panel-default rounded no-margin-b">
-							<div class="panel-body" style="background:#f5f5f5;">
+						<div class="panel panel-default rounded no-margin-b bg-slivergray">
+							<div class="panel-body">
 								<div class="row" >
 									<div class="col-sm-6">
 										<!--Announce Post-->
