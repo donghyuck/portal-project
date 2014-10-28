@@ -84,7 +84,7 @@
 		<!-- ============================== -->
 		function createNoticeSection(){
 			var renderTo = $("#my-notice-panel");
-			new common.ui.Panel( renderTo, {});
+			new common.ui.extPanel( renderTo, {});
 		}
 		<!-- ============================== -->
 		<!-- Announce										   -->
