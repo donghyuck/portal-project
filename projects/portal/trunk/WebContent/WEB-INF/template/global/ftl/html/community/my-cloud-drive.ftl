@@ -675,20 +675,20 @@
 					<ul class="nav navbar-nav">
 						<li class="padding-xs-hr no-padding-r">
 							<div class="btn-group navbar-btn rounded-bottom">
-								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-left" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
-								<button type="button" class="btn-u btn-u-dark-blue rounded-bottom-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue rounded-left" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue rounded-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 							</div>
 						</li>							
 						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 						<li class="hidden-xs">
 							<div class="btn-group navbar-btn" data-toggle="buttons">
-								<label class="btn btn-info rounded-bottom-left">
+								<label class="btn btn-info rounded-left">
 									<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
 								</label>
 								<label class="btn btn-info active">
 							 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
 								</label>
-								<label class="btn btn-info rounded-bottom-right">
+								<label class="btn btn-info rounded-right">
 									<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 								</label>
 							</div>
