@@ -565,7 +565,7 @@
 	
 	
 	extend(ui , {	
-		panel : common.ui.panel || panel
+		ext-panel : common.ui.ext-panel || ext-panel
 	});
 	
 })(jQuery);
