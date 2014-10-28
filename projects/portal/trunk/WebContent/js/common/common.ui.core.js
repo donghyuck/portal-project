@@ -331,6 +331,22 @@
 			footer: template("<div class='panel-footer'></div>")
 		};
 	
+	function sizingAction(actionId, callback) {
+		return function() {
+            var that = this,
+                wrapper = that.wrapper,
+                style = wrapper[0].style,
+                options = that.options;
+
+            if (options.isMaximized || options.isMinimized) {
+                return;
+            }
+            wrapper.children(PANEL_HEADING).find(MINIMIZE_MAXIMIZE).parent().hide().eq(0).before(templates.action({ name: "Restore" }));
+            callback.call(that);
+            return that;
+        };		
+	}
+	
 	
 	var Panel = Widget.extend({
 		init : function(element, options) {
