@@ -73,6 +73,7 @@
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
+				createNotificationSection();
 				createAnnounceSection();
 													
 				// END SCRIPT 				
@@ -82,7 +83,7 @@
 		<!-- ============================== -->
 		<!-- Notify										   -->
 		<!-- ============================== -->
-		function createNoticeSection(){
+		function createNotificationSection(){
 			var renderTo = $("#my-notification-panel");
 			new common.ui.extPanel( renderTo, {});
 		}
