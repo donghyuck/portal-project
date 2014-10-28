@@ -250,6 +250,23 @@
 		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
 	}
 	
+	function enable (element){
+		if( element.is(":disabled") ){
+			element.prop("disabled", false);
+			if( element.is("[data-toggle='button']") ){
+				element.toggleClass("active");
+			}
+		}	
+	}
+	
+	function disable (element){
+		if( !element.is(":disabled") ){
+			element.prop("disabled", true);
+			if( element.is("[data-toggle='button']") ){
+				element.toggleClass("active");
+			}
+		}	
+	}
 	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
