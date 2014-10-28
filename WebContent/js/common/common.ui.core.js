@@ -354,7 +354,7 @@
 			 return new Panel( renderTo, options); 
 		} else {		
 			var guid = guid().toLowerCase() ;
-			$(options.appendTo).append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
+			$('body').append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
 			$("#" + guid ).fadeIn("slow");			
 			return new Panel( $("#" + guid ), options); 
 		}		
