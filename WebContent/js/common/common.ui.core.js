@@ -403,7 +403,6 @@
 			actions: ["Close"],
 			content : null,
 			visible: null,
-			appendTo: BODY,
 			autoBind: false,
 			animation : {
 				open: {},
@@ -444,12 +443,12 @@
 		_actionForIcon: function(icon) {
 			var iconClass = /\bk-i-\w+\b/.exec(icon[0].className)[0];
 			return {
-	                "k-i-close": "_close",
-	                "k-i-maximize": "maximize",
-	                "k-i-minimize": "minimize",
-	                "k-i-restore": "restore",
-	                "k-i-refresh": "refresh",
-	                "k-i-custom": "_custom"
+				"k-i-close": "_close",
+				"k-i-maximize": "maximize",
+				"k-i-minimize": "minimize",
+				"k-i-restore": "restore",
+				"k-i-refresh": "refresh",
+				"k-i-custom": "_custom"
 			}[iconClass];
 		},				
 		
@@ -495,7 +494,6 @@
 			var that = this,
             wrapper = that.wrapper;
 			if( !wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
-				//wrapper.children(EXT_PANEL_BODY).show();				
 				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
 			}			
 			that.options.isMaximized = true;
@@ -503,10 +501,9 @@
 		}),
 		minimize: sizingAction("minimize", function() {
 			var that = this,
-				wrapper = that.wrapper;			//that.element.hide();
+				wrapper = that.wrapper;	
 			that.options.isMinimized = true;
-			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
-				//wrapper.children(EXT_PANEL_BODY).hide();				
+			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){	
 				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
 			}
 		}),
@@ -514,8 +511,6 @@
 			var that = this;
 			var options = that.options;
 			that.wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end().find(MINIMIZE_MAXIMIZE).parent().show().end().end();
-			
-			//that.wrapper.children(EXT_PANEL_BODY).show();			
 			that.wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
 			options.isMaximized = options.isMinimized = false;			
 			return that;
@@ -530,8 +525,6 @@
 			var that = this,
 			wrapper = that.wrapper,
 			options = that.options;
-			//wrapper.children(EXT_PANEL_BODY).html(options.content);
-			
 			if( isFunction(options.handlers.refresh) ){
 				options.handlers.refresh();				
 			}			
@@ -546,7 +539,6 @@
 		 	kendo.bind(content, data);
 		},
 		destroy: function () {
-			//this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
 			 Widget.fn.destroy.call(this);
 			 this.unbind(undefined);
 			 kendo.destroy(this.wrapper);
