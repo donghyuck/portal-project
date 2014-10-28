@@ -197,7 +197,7 @@
 			<div id="main-content" class="container-fluid content profile" style="min-height:300px;">	
 				<div class="row">
 					<div class="col-md-3">
-						<div class="panel panel-primary rounded no-margin-b">
+						<div class="panel panel-primary rounded border-2x">
 							<div class="panel-body">
 							
 							</div>
