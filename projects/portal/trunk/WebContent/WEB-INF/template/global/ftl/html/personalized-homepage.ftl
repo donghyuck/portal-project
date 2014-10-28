@@ -82,10 +82,10 @@
 		<!-- Announce										   -->
 		<!-- ============================== -->
 		function createAnnounceSection(){
+			var announce = new Announce ();
 			var renderTo = $("#my-announce-section");
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");
-
 			var announceSelector = common.ui.buttonsGroup(
 				$("#announce-selector"),
 				{
@@ -93,9 +93,7 @@
 						listRenderTo.data("kendoListView").dataSource.read({objectType:e.value});
 					}
 				}
-			);	
-
-			var announce = new Announce ();
+			);				
 			kendo.bind(viewRenderTo, announce);			
 			common.ui.listview(
 				listRenderTo,
@@ -128,13 +126,13 @@
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
 						}
+						
+						common.ui.scrollTop(listRenderTo);
 					}
 				}
 			);
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
-			common.ui.slimScroll(listRenderTo, {height: 320});
-			
-			
+			common.ui.slimScroll(listRenderTo, { height: 320 });
 		}
 
 
