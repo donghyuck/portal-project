@@ -685,6 +685,9 @@ body:not (.right-to-left ) .no-border-l {
 color: #d9534f;		
 }
 
+.border-x2{
+	border-width: 2px;	
+}
 /* Loader
 ------------------------------------*/
 .page-loader {
