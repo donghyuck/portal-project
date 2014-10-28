@@ -36,7 +36,7 @@
 						
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
-			/*'${request.contextPath}/js/common/common.ui.js',*/
+			'${request.contextPath}/js/common/common.ui.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],			
 			complete: function() {		
@@ -63,7 +63,7 @@
 						if( !currentUser.anonymous ){
 							common.ui.buttonEnabled( $('button[data-toggle="spmenu"]')	);
 							common.ui.buttonEnabled( $('button[data-action="show-gallery-section"]') );
-						}					
+						}
 					}
 				});	
 				
