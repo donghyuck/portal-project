@@ -229,7 +229,7 @@
 		}
 	});
 	
-	common.ui.buttonsGroup = function ( renderTo, options ){		
+	function buttonsGroup ( renderTo, options ){		
 		options = options || {};	
 		if( defined(renderTo) ){
 			if(renderTo.data("kendoButtonsGroup")){
@@ -240,7 +240,7 @@
 		}
 	}	
 	
-	common.ui.scrollTop(selector){
+	function scrollTop(selector){
 		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
 	}
 	
