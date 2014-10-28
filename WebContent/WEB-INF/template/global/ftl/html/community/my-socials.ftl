@@ -85,8 +85,8 @@
 					var template = kendo.template('<label class="btn btn-primary"><input name="selectedSocialConnect" type="checkbox" value="#:socialConnectId#"><i class="fa fa-#= providerId #"></i></label>');
 					var html = kendo.render(template, $this.data());
 					renderTo.html(html);	
-					renderTo.find("label").first().addClass("rounded-bottom-left");
-					renderTo.find("label").last().addClass("rounded-bottom-right");
+					renderTo.find("label").first().addClass("rounded-left");
+					renderTo.find("label").last().addClass("rounded-right");
 					renderTo.find("input[type=checkbox]").bind("change", function(e){		
 						var myConnect = $this.get(this.value);
 						if($(this).is(":checked")){
