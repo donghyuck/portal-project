@@ -196,7 +196,13 @@
 			
 			<div id="main-content" class="container-fluid content profile" style="min-height:300px;">	
 				<div class="row">
-					<div class="col-md-3"></div><!-- /.col-md-3 -->
+					<div class="col-md-3">
+						<div class="panel panel-primary rounded no-margin-b">
+							<div class="panel-body" style="background:#f5f5f5;">
+							
+							</div>
+						</div><!-- /.panel -->
+					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
 						<div class="panel panel-default rounded no-margin-b">
 							<div class="panel-body" style="background:#f5f5f5;">
