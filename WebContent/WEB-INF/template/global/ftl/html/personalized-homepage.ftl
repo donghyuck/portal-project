@@ -198,8 +198,13 @@
 				<div class="row">
 					<div class="col-md-3">
 						<div class="panel panel-primary rounded border-2x">
+							<div class="panel-heading">						
+								<button type="button" class="btn-close btn-close-grey btn-xs" data-dismiss="section" data-target="#image-gallery" data-animate="slideUp" data-switch-target="button[data-action='show-gallery-section']"><span class="sr-only">Close</span></button>
+								<h3 class="panel-title">MY 알림</h3>
+							</div>
 							<div class="panel-body">
-							
+
+														
 							</div>
 						</div><!-- /.panel -->
 					</div><!-- /.col-md-3 -->
