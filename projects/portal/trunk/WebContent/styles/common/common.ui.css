@@ -688,6 +688,14 @@ color: #d9534f;
 .border-2x{
 	border-width: 2px;	
 }
+
+/* Panel 
+------------------------------------*/
+.panel-primary .panel-heading .k-window-actions  .k-icon {
+	background-image: url('Flat/sprite.png');	
+}
+
+
 /* Loader
 ------------------------------------*/
 .page-loader {
