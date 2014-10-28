@@ -127,7 +127,7 @@
 							viewRenderTo.slideDown();
 						}
 						
-						common.ui.scrollTop(listRenderTo);
+						common.ui.scrollTop(viewRenderTo);
 					}
 				}
 			);
