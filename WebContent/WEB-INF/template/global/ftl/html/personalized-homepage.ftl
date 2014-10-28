@@ -78,6 +78,14 @@
 				// END SCRIPT 				
 			}
 		}]);	
+
+		<!-- ============================== -->
+		<!-- Notify										   -->
+		<!-- ============================== -->
+		function createNoticeSection(){
+			var renderTo = $("#my-notice-panel");
+			new common.ui.Panel( renderTo, {});
+		}
 		<!-- ============================== -->
 		<!-- Announce										   -->
 		<!-- ============================== -->
