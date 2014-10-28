@@ -692,7 +692,7 @@ color: #d9534f;
 /* Panel 
 ------------------------------------*/
 .panel-primary .panel-heading .k-window-actions  .k-icon {
-	background-image: url('Flat/sprite.png');	
+	background-image: url('../kendo/Flat/sprite.png');	
 }
 
 
