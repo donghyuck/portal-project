@@ -394,8 +394,13 @@
 				options.visible = element.is(VISIBLE);				
 			}
 			wrapper = that.wrapper = element.closest(PANEL);
-			wrapper.append(templates.heading( extend( templates, options )));
-			wrapper.append(templates.body( {} ) );
+			
+			if( !wrapper.has(PANEL_HEADING) ){
+				wrapper.append(templates.heading( extend( templates, options )));
+			}
+			if( !wrapper.has(PANEL_BODY) ){
+				wrapper.append(templates.body( {} ) );
+			}
 			
 			if (content) {
 				that.render();			
