@@ -185,7 +185,7 @@
 						<li>
 							<div class="navbar-btn btn-group" data-toggle="buttons">
 								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
-								<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-action="show-notice-panel" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+								<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-action="show-notice-panel" disabled><i class="fa fa-bullhorn"></i> <span class="hidden-xs">공지 & 이벤트</span></button>
 							</div>	
 						</li>						
 						<li class="hidden-xs">
