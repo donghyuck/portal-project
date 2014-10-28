@@ -279,6 +279,7 @@
 	Widget = kendo.ui.Widget, 
 	template = kendo.template,
 	progress = kendo.ui.progress,
+	proxy = $.proxy, 
 	POST = 'POST',	
 	JSON = 'json',
 	VISIBLE = ":visible",
