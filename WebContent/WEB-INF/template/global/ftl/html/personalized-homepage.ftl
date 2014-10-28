@@ -234,7 +234,7 @@
 											</div>
 										</div>			
 										<div id="my-announce-section">	
-											<div class="panel panel-default rounded-bottom my-announce-view"  style="display:none;">
+											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
 													<ul class="list-unstyled">
@@ -251,9 +251,8 @@
 													</ul>	
 												</div><!-- /.panel-heading -->
 												<div class="panel-body padding-sm" data-bind="html:body"></div>
-												
 											</div><!-- /.panel -->
-											<div class="panel panel-default">
+											<div class="panel panel-default border-2x">
 												<div class="panel-body contentHolder no-border no-padding my-announce-list"></div>
 												<div class="panel-footer no-padding">
 													<div id="my-announce-list-pager" class="no-border"> </div>
