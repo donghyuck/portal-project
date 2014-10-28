@@ -503,8 +503,8 @@
 			var that = this,
 				wrapper = that.wrapper;	
 			that.options.isMinimized = true;
-			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){	
-				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
+			if( wrapper.children(PANEL_BODY).is(VISIBLE) ){	
+				wrapper.children(PANEL_BODY).slideToggle(200);		
 			}
 		}),
 		restore: function () {
