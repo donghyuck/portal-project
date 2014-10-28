@@ -395,10 +395,10 @@
 			}
 			wrapper = that.wrapper = element.closest(PANEL);
 			
-			if( !wrapper.has(PANEL_HEADING) ){
+			if( !wrapper.children(PANEL_HEADING).length == 0 ){
 				wrapper.append(templates.heading( extend( templates, options )));
 			}
-			if( !wrapper.has(PANEL_BODY) ){
+			if( !wrapper.children(PANEL_BODY).length == 0 ){
 				wrapper.append(templates.body( {} ) );
 			}
 			
