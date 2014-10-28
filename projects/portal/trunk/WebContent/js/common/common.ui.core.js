@@ -348,7 +348,7 @@
         };		
 	}
 	
-	function panel (renderTo, options ){		
+	function extPanel (renderTo, options ){		
 		options = options || {};	
 		if( defined(renderTo) ){
 			 return new Panel( $(options.renderTo), options); 
@@ -577,7 +577,7 @@
 	
 	
 	extend(ui , {	
-		ext-panel : common.ui.ext-panel || ext-panel
+		extPanel : common.ui.extPanel || extPanel
 	});
 	
 })(jQuery);
