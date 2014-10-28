@@ -44,9 +44,15 @@
 	progress = kendo.ui.progress,
 	POST = 'POST',	
 	JSON = 'json',
+	VISIBLE = ":visible",
 	STRING = 'string',
 	CLICK = "click",
 	CHANGE = "change",	
+	OPEN = "open",
+	HIDDEN = "hidden",
+	CURSOR = "cursor",	
+	DEACTIVATE = "deactivate",
+	ACTIVATE = "activate",	
 	UNDEFINED = "undefined";
 	
 	function handleAjaxError(xhr) {
@@ -245,11 +251,6 @@
 	}
 	
 	
-	
-	
-	
-
-	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
@@ -267,4 +268,295 @@
 })(jQuery);
 
 
+;(function($, undefined) {
+	var ui = common.ui,
+	handleAjaxError = ui.handleAjaxError,
+	defined = ui.defined,
+	isFunction = kendo.isFunction,
+	extend = $.extend,
+	DataSource = kendo.data.DataSource,
+	Widget = kendo.ui.Widget, 
+	progress = kendo.ui.progress,
+	POST = 'POST',	
+	JSON = 'json',
+	VISIBLE = ":visible",
+	STRING = 'string',
+	CLICK = "click",
+	HIDDEN = "hidden",
+	CURSOR = "cursor",	
+	VISIBLE = ":visible",
+	HIDDEN = "hidden",
+	CURSOR = "cursor",
+	// events
+	CHANGE = "change", 
+	OPEN = "open",
+	DEACTIVATE = "deactivate",
+	ACTIVATE = "activate",
+	CLOSE = "close",
+	REFRESH = "refresh",
+	CUSTOM = "custom",
+	ERROR = "error",
+	DRAGSTART = "dragstart",
+    DRAGEND = "dragend",		
+	REFRESHICON = ".k-window-titlebar .k-i-refresh",
+	MINIMIZE_MAXIMIZE = ".k-window-actions .k-i-minimize,.k-window-actions .k-i-maximize",
+	UNDEFINED = "undefined";
+	
+	var PANEL = ".panel",
+	PANEL_HEADING = ".panel-heading",
+	PANEL_TITLE = ".panel-title",
+	PANEL_BODY = ".panel-body",
+	PANEL_HEADING_BUTTONS = ".panel-heading .k-window-action",	
+	templates = {
+			wrapper: template("<div class='panel panel-default' />"),	
+			action: template(
+		            "<a role='button' href='\\#' class='k-window-action k-link'>" +
+		                "<span role='presentation' class='k-icon k-i-#= name.toLowerCase() #'>#= name #</span>" +
+		            "</a>"
+		        ),
+			heading: template(
+				"<div class='panel-heading'>" +
+				"<h3 class='panel-title'>#= title #</h3>" +
+				"<div class='k-window-actions panel-header-controls'>" +
+				"<div class='k-window-actions'>" +
+	            "# for (var i = 0; i < actions.length; i++) { #" +
+	                "#= action({ name: actions[i] }) #" +
+	            "# } #" +
+	            "</div>" +			
+				"</div>"	 +
+				"</div>"	
+			) ,
+			body: template("<div class='panel-body'><div class='panel-body-loading'></div></div>"),
+			footer: template("<div class='panel-footer'></div>")
+		};
+	
+	
+	var Panel = Widget.extend({
+		init : function(element, options) {
+			var that = this, wrapper, content, visibility, display, isVisible = false, 
+			suppressActions = options && options.actions && !options.actions.length, id;
+			
+			Widget.fn.init.call(that, element, options);
+			options = that.options;			
+			element = that.element;
+			content = options.content;			
+			
+			if (suppressActions) {
+				options.actions = [];
+			}
 
+			if (!defined(options.visible) || options.visible === null) {
+				options.visible = element.is(VISIBLE);
+			}
+			if (element.is(VISIBLE)) {
+				isVisible = true;				
+			} else {
+				visibility = element.css("visibility");
+				display = element.css("display");
+				element.css({ visibility: HIDDEN, display: "" });
+				element.css({ visibility: visibility, display: display });
+			}			
+			if (!defined(options.visible) || options.visible === null) {
+				options.visible = element.is(VISIBLE);				
+			}
+			wrapper = that.wrapper = element.closest(PANEL);
+			wrapper.append(templates.heading( extend( templates, options )));
+			wrapper.append(templates.body( {} ) );
+			
+			if (content) {
+				that.render();			
+			}
+			
+			if( defined(options.template)){
+				if (!defined(options.data) ){
+					options.data = {};
+				}
+				options.content = options.template(options.data); 
+				that.render();			
+			}
+
+			 if( options.autoBind )
+				kendo.bind(element, options.data );
+			 
+			id = element.attr("id");		
+			
+			wrapper.on("click", "> " + PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
+			 if (options.visible) {
+				 that.trigger(OPEN, {target: that});
+				 that.trigger(ACTIVATE);
+			 }
+			kendo.notify(that);
+		},
+		events:[
+			OPEN,
+			CLOSE,
+			REFRESH,
+			DRAGSTART,
+			DRAGEND,
+			CUSTOM,
+			ERROR
+		],		
+		options : {
+			name : "Panel",
+			title: "",
+			actions: ["Close"],
+			content : null,
+			visible: null,
+			appendTo: BODY,
+			autoBind: false,
+			animation : {
+				open: {},
+				close: {}
+			},
+			refreshContent : true,
+			handlers : {}
+		},
+		data : function( data ){
+			var that = this;
+			if( defined(data)){
+				that.options.data = data;
+			}else{
+				return that.options.data;
+			}
+		},
+		_animations: function() {
+			var options = this.options;
+			if (options.animation === false) {
+				 options.animation = { open: { effects: {} }, close: { hide: true, effects: {} } };				
+			}
+		},
+		_closable: function() {
+			return $.inArray("close", $.map(this.options.actions, function(x) { return x.toLowerCase(); })) > -1;
+		},
+		_panelActionHandler: function(e){
+			if (this._closing) {
+                return;
+            }
+			 var icon = $(e.target).closest(".k-window-action").find(".k-icon");
+			 var action = this._actionForIcon(icon);
+			 if (action) {
+				 e.preventDefault();
+				 this[action]();
+				 return false;
+			 }			 
+		},
+		_actionForIcon: function(icon) {
+			var iconClass = /\bk-i-\w+\b/.exec(icon[0].className)[0];
+			return {
+	                "k-i-close": "_close",
+	                "k-i-maximize": "maximize",
+	                "k-i-minimize": "minimize",
+	                "k-i-restore": "restore",
+	                "k-i-refresh": "refresh",
+	                "k-i-custom": "_custom"
+			}[iconClass];
+		},				
+		
+		_custom: function(systemTriggered){
+			var that = this;
+			that.trigger(CUSTOM, {target: that});
+		},
+		_close: function(systemTriggered) {
+			var that = this,
+				wrapper = that.wrapper,
+				options = that.options,
+				showOptions = options.animation.open,
+				hideOptions = options.animation.close;
+			
+			if (wrapper.is(VISIBLE) && !that.trigger(CLOSE, { userTriggered: !systemTriggered, target: that })) {
+				that._closing = true;
+				 options.visible = false;
+				 wrapper.kendoStop().kendoAnimate({
+					effects: hideOptions.effects || showOptions.effects,
+					reverse: hideOptions.reverse === true,
+					duration: hideOptions.duration,
+					complete: proxy(this._deactivate, this)
+				 });
+			}			
+		},
+		toggleMaximization: function () {
+            if (this._closing) {
+                return this;
+            }
+            return this[this.options.isMaximized ? "restore" : "maximize"]();
+        },		
+		_deactivate: function() {
+			this.wrapper.hide().css("opacity","");
+			this.trigger(DEACTIVATE);			
+			this.destroy();
+        },
+		title : function (text){
+			var that = this,
+				wrapper = that.wrapper,
+				options = that.options;
+		},
+		maximize: sizingAction("maximize", function() {
+			var that = this,
+            wrapper = that.wrapper;
+			if( !wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
+				//wrapper.children(EXT_PANEL_BODY).show();				
+				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
+			}			
+			that.options.isMaximized = true;
+			
+		}),
+		minimize: sizingAction("minimize", function() {
+			var that = this,
+				wrapper = that.wrapper;			//that.element.hide();
+			that.options.isMinimized = true;
+			if( wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
+				//wrapper.children(EXT_PANEL_BODY).hide();				
+				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
+			}
+		}),
+		restore: function () {
+			var that = this;
+			var options = that.options;
+			that.wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end().find(MINIMIZE_MAXIMIZE).parent().show().end().end();
+			
+			//that.wrapper.children(EXT_PANEL_BODY).show();			
+			that.wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
+			options.isMaximized = options.isMinimized = false;			
+			return that;
+		},
+		render: function(){
+			var that = this,
+			wrapper = that.wrapper,
+			options = that.options;
+			wrapper.children(EXT_PANEL_BODY).html(options.content);		
+		},	
+		refresh: function(){
+			var that = this,
+			wrapper = that.wrapper,
+			options = that.options;
+			//wrapper.children(EXT_PANEL_BODY).html(options.content);
+			
+			if( isFunction(options.handlers.refresh) ){
+				options.handlers.refresh();				
+			}			
+			that.trigger(REFRESH, {target: that});			
+		},		
+		content:function(html, data){
+		 	var content = this.wrapper.children(EXT_PANEL_BODY);
+		 	if (!defined(html)) {
+		 		return content.html();		 		
+		 	}
+		 	content.empty().html(html);
+		 	kendo.bind(content, data);
+		},
+		destroy: function () {
+			//this.wrapper.find(".k-resize-handle,.k-window-titlebar").off(NS);
+			 Widget.fn.destroy.call(this);
+			 this.unbind(undefined);
+			 kendo.destroy(this.wrapper);
+			 this.wrapper.empty().remove();
+			 this.wrapper = this.appendTo = this.element = $();
+		}
+	});
+	
+	
+	extend(ui , {	
+		panel : common.ui.panel || panel
+	});
+	
+})(jQuery);
