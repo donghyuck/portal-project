@@ -493,8 +493,8 @@
 		maximize: sizingAction("maximize", function() {
 			var that = this,
             wrapper = that.wrapper;
-			if( !wrapper.children(EXT_PANEL_BODY).is(VISIBLE) ){
-				wrapper.children(EXT_PANEL_BODY).slideToggle(200);		
+			if( !wrapper.children(PANEL_BODY).is(VISIBLE) ){
+				wrapper.children(PANEL_BODY).slideToggle(200);		
 			}			
 			that.options.isMaximized = true;
 			
