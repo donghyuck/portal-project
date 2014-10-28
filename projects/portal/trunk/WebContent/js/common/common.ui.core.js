@@ -198,7 +198,6 @@
 		},
 		events : [ CLICK, CHANGE ],
 		options : {
-			prefix: "podo",	
 			name : "ButtonsGroup",
 			enable : true
 		},
