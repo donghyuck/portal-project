@@ -184,8 +184,8 @@
 					<ul class="nav navbar-nav pull-right">
 						<li>
 							<div class="navbar-btn btn-group" data-toggle="buttons">
-								<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
-								<button type="button" class="btn-u btn-u-blue navbar-btn rounded" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue navbar-btn rounded-left" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
+								<button type="button" class="btn-u btn-u-blue navbar-btn rounded-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 클라우드 저장소</span></button>
 							</div>	
 						</li>						
 						<li class="hidden-xs">
