@@ -72,7 +72,7 @@
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
-				common.ui.buttonGroup("#personalized-buttons", {
+				common.ui.buttonGroup($("#personalized-buttons"), {
 					
 				});
 				
