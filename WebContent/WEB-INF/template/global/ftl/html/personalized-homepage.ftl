@@ -74,7 +74,7 @@
 				
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					click:function(e){
-						alert(event);
+						alert(e.target);
 					}
 				});
 				
