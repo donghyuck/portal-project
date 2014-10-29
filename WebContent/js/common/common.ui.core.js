@@ -301,7 +301,7 @@
 				button.on(
 					CLICK,
 					function(e){
-						that.trigger(CLICK);
+						that.trigger(CLICK, {event: e} );
 					}
 				);				
 			}
