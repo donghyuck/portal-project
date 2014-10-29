@@ -235,7 +235,7 @@
 
 ;(function($, undefined) {
 	var ui = common.ui,
-	defined = ui.defined,
+	defined = common.ui.defined,
 	isFunction = kendo.isFunction,
 	extend = $.extend,
 	DataSource = kendo.data.DataSource,
@@ -278,7 +278,7 @@
 		enable: function(enable) {
 			var that = this,
 			element = that.element;
-			if (enable === undefined) {
+			if (defined(enable)) {
 				enable = true;
 			}
 		},
