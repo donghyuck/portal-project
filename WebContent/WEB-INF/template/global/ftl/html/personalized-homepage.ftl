@@ -100,7 +100,8 @@
 				new common.ui.extPanel( renderTo, { 
 					content : "새로운 메시지가 없습니다." ,
 					close:function(e){
-						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
+						alert("fdas");
+						//common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
 					}
 				});
 			}
