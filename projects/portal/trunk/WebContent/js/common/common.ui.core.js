@@ -45,6 +45,7 @@
 	POST = 'POST',	
 	JSON = 'json',
 	VISIBLE = ":visible",
+	DISABLED = "disabled",
 	STRING = 'string',
 	CLICK = "click",
 	CHANGE = "change",	
@@ -192,59 +193,6 @@
 		}				
 		$.ajax(settings);		
 	};	
-
-	var ButtonsGroup = Widget.extend({
-		init : function(element, options) {
-			var that = this;
-			Widget.fn.init.call(that, element, options);
-			element = that.wrapper = that.element;
-			options = that.options;
-			that._radio();
-			kendo.notify(that);
-		},
-		events : [ CLICK, CHANGE ],
-		options : {
-			name : "ButtonsGroup",
-			enable : true
-		},
-		_value : function() {
-			var that = this;
-			if (that.radio) {
-				return that.element.find(".active input[type='radio']").val();
-			}
-		},
-		_radio : function() {
-			var that = this;
-			var input = that.element.find("input[type='radio']");
-			if (input.length > 0) {
-				that.radio = true;
-			} else {
-				that.radio = false;
-			}
-			if (that.radio) {
-				that.value = that._value();
-				input.on(CHANGE, function(e) {
-					if (that.value != this.value) {
-						that.value = this.value;
-						that.trigger(CHANGE, {
-							value : that.value
-						})
-					}
-				});
-			}
-		}
-	});
-	
-	function buttonsGroup ( renderTo, options ){		
-		options = options || {};	
-		if( defined(renderTo) ){
-			if(renderTo.data("kendoButtonsGroup")){
-				return	renderTo.data("kendoButtonsGroup");
-			}else{
-				return new ButtonsGroup(renderTo, options ); 				 
-			}
-		}
-	}	
 	
 	function scrollTop(selector){
 		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
@@ -286,7 +234,100 @@
 	
 })(jQuery);
 
+;(function($, undefined) {
+	var ui = common.ui,
+	isFunction = kendo.isFunction,
+	extend = $.extend,
+	DataSource = kendo.data.DataSource,
+	Widget = kendo.ui.Widget, 
+	progress = kendo.ui.progress,
+	POST = 'POST',	
+	JSON = 'json',
+	VISIBLE = ":visible",
+	DISABLED = "disabled",
+	STRING = 'string',
+	CLICK = "click",
+	CHANGE = "change",	
+	OPEN = "open",
+	HIDDEN = "hidden",
+	CURSOR = "cursor",	
+	DEACTIVATE = "deactivate",
+	ACTIVATE = "activate",	
+	UNDEFINED = "undefined";
+	
+	var ButtonGroup = Widget.extend({
+		init : function(element, options) {
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			element = that.wrapper = that.element;
+			options = that.options;
+			
+			options.enable = options.enable && !element.attr(DISABLED);
+			that.enable(options.enable);
+			
+			
+			that._radio();
+			kendo.notify(that);
+		},
+		events : [ CLICK, CHANGE ],
+		options : {
+			name : "ButtonGroup",
+			enable: true
+		},
+		enable: function(enable) {
+			var that = this,
+			element = that.element;
+			if (enable === undefined) {
+				enable = true;
+			}
+		},
+		_value : function() {
+			var that = this;
+			if (that.radio) {
+				return that.element.find(".active input[type='radio']").val();
+			}
+		},
+		_radio : function() {
+			var that = this;
+			var input = that.element.find("input[type='radio']");
+			if (input.length > 0) {
+				that.radio = true;
+			} else {
+				that.radio = false;
+			}
+			if (that.radio) {
+				that.value = that._value();
+				input.on(CHANGE, function(e) {
+					if (that.value != this.value) {
+						that.value = this.value;
+						that.trigger(CHANGE, {
+							value : that.value
+						})
+					}
+				});
+			}
+		}
+	});
+	
+	function buttonGroup ( renderTo, options ){		
+		options = options || {};	
+		if( defined(renderTo) ){
+			if(renderTo.data("kendoButtonGroup")){
+				return	renderTo.data("kendoButtonGroup");
+			}else{
+				return new ButtonGroup(renderTo, options ); 				 
+			}
+		}
+	}	
 
+	extend(ui , {	
+		buttonGroup : common.ui.buttonGroup || buttonGroup
+	});
+})(jQuery);
+
+/**
+ * Panel
+ */
 ;(function($, undefined) {
 	var ui = common.ui,
 	guid = common.guid,
