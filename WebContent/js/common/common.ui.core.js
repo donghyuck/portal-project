@@ -308,8 +308,6 @@
 						var action = $this.data("action");
 						var animate = $this.data("animate");
 						
-						alert(target);
-						
 						if( defined(target) ){
 							if( $this.is(":disabled") ){
 								$this.prop("disabled", false);
