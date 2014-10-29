@@ -32,8 +32,7 @@
 			'css!${request.contextPath}/js/codrops/codrops.grid.js',
 				
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
-			'${request.contextPath}/js/common/common.ui.core.js',	
-						
+			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.models.js',
 			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
@@ -101,7 +100,7 @@
 			var renderTo = $("#my-announce-section");
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");
-			var announceSelector = common.ui.buttonsGroup(
+			var announceSelector = common.ui.buttonGroup(
 				$("#announce-selector"),
 				{
 					change: function(e){						
