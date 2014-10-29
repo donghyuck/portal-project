@@ -301,6 +301,17 @@
 				button.on(
 					CLICK,
 					function(e){
+						var $this =  $(this);
+						var target = $this.data("target");
+						var action = $this.data("action");
+						var animate = $this.data("animate");
+						if( defined(target) ){
+							if( $this.is(":disabled") ){
+								element.prop("disabled", false);
+							}else{
+								element.prop("disabled", true);
+							}
+						}						
 						that.trigger(CLICK, {event: e} );
 					}
 				);				
