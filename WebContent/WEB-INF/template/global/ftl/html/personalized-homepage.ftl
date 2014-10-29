@@ -72,6 +72,10 @@
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
+				common.ui.buttonGroup("#personalized-buttons", {
+					
+				});
+				
 				createNotificationSection();
 				createAnnounceSection();
 													
@@ -182,7 +186,7 @@
 				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation"  style="top:-4px;">		
 					<ul class="nav navbar-nav pull-right">
 						<li>
-							<div class="navbar-btn btn-group" data-toggle="buttons">
+							<div id="personalized-buttons" class="navbar-btn btn-group" data-toggle="buttons">
 								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-action="show-notice-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 								<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-action="show-notice-panel" disabled><i class="fa fa-bullhorn"></i> <span class="hidden-xs">공지 & 이벤트</span></button>
 							</div>	
