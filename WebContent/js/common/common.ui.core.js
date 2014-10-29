@@ -307,9 +307,9 @@
 						var animate = $this.data("animate");
 						if( defined(target) ){
 							if( $this.is(":disabled") ){
-								element.prop("disabled", false);
+								$this.prop("disabled", false);
 							}else{
-								element.prop("disabled", true);
+								$this.prop("disabled", true);
 							}
 						}						
 						that.trigger(CLICK, {event: e} );
