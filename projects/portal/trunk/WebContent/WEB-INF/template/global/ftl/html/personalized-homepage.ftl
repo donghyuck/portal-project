@@ -96,13 +96,12 @@
 		<!-- ============================== -->
 		function createNotificationSection(){
 			var renderTo = $("#my-notification-panel");
-			if( renderTo.length ==0 ){
+			if(!renderTo.data("kendoPanel")){
 				new common.ui.extPanel( renderTo, { 
-					content : "새로운 메시지가 없습니다."/* ,
+					content : "새로운 메시지가 없습니다." ,
 					close:function(e){
-						alert("fdas");
-						//common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
-					}*/
+						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
+					}
 				});
 			}
 		}
