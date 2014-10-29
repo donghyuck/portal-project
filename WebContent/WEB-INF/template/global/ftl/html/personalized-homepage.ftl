@@ -73,7 +73,9 @@
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
 				common.ui.buttonGroup($("#personalized-buttons"), {
-					
+					click:function(e){
+						alert($(this).html());
+					}
 				});
 				
 				createNotificationSection();
