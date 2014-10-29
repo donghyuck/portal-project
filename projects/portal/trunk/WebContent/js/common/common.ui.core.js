@@ -315,7 +315,7 @@
 								$this.prop("disabled", true);
 							}
 						}						
-						that.trigger(CLICK, {event: e, target, this } );
+						that.trigger(CLICK, { event: e, target:this } );
 					}
 				);				
 			}
