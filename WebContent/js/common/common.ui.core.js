@@ -226,7 +226,6 @@
 		listview : common.ui.listview || listview,
 		pager : common.ui.pager || pager,
 		slimScroll : common.ui.slimScroll || slimScroll,
-		buttonsGroup : common.ui.buttonsGroup || buttonsGroup,
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable
