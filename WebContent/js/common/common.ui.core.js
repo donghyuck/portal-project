@@ -265,8 +265,9 @@
 			options.enable = options.enable && !element.attr(DISABLED);
 			that.enable(options.enable);
 			
-			
 			that._radio();
+			that._button();
+			
 			kendo.notify(that);
 		},
 		events : [ CLICK, CHANGE ],
@@ -281,22 +282,42 @@
 				enable = true;
 			}
 		},
-		_value : function() {
+		currentValue : function() {
 			var that = this;
 			if (that.radio) {
 				return that.element.find(".active input[type='radio']").val();
 			}
 		},
+		_button : function(){
+			var that = this,
+			element = that.element;
+			var button = element.find("button[type='button']");
+			if (button.length > 0) {
+				that.button = true;
+			} else {
+				that.button = false;
+			}
+			if (that.button) {
+				button.on(
+					CLICK,
+					function(e){
+						that.trigger(CLICK);
+					}
+				);				
+			}
+		},
 		_radio : function() {
-			var that = this;
-			var input = that.element.find("input[type='radio']");
+			var that = this,
+			element = that.element;
+			
+			var input = element.find("input[type='radio']");
 			if (input.length > 0) {
 				that.radio = true;
 			} else {
 				that.radio = false;
-			}
+			}			
 			if (that.radio) {
-				that.value = that._value();
+				that.value = that.currentValue();
 				input.on(CHANGE, function(e) {
 					if (that.value != this.value) {
 						that.value = this.value;
@@ -306,6 +327,7 @@
 					}
 				});
 			}
+			
 		}
 	});
 	
