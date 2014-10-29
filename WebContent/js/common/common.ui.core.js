@@ -235,6 +235,7 @@
 
 ;(function($, undefined) {
 	var ui = common.ui,
+	defined = ui.defined,
 	isFunction = kendo.isFunction,
 	extend = $.extend,
 	DataSource = kendo.data.DataSource,
