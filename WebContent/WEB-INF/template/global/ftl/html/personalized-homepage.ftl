@@ -74,7 +74,10 @@
 				
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					click:function(e){
-						alert(e.target);
+						if( common.ui.defined( e.target ) && $(e.target).data("target") === "#my-notification-panel" ){
+							alert("dfasd") ;
+						}
+						
 					}
 				});
 				
