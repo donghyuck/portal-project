@@ -75,15 +75,12 @@
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					click:function(e){
 						if( common.ui.defined( e.target ) && $(e.target).data("target") === "#my-notification-panel" ){
-							alert("dfasd") ;
+							createNotificationSection();
 						}
-						
 					}
-				});
-				
+				});				
 				createNotificationSection();
 				createAnnounceSection();
-													
 				// END SCRIPT 				
 			}
 		}]);	
@@ -99,7 +96,14 @@
 		<!-- ============================== -->
 		function createNotificationSection(){
 			var renderTo = $("#my-notification-panel");
-			new common.ui.extPanel( renderTo, { content : "새로운 메시지가 없습니다."});
+			if( renderTo.length ==0 ){
+				new common.ui.extPanel( renderTo, { 
+					content : "새로운 메시지가 없습니다." 
+					close:function(e){
+						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
+					}
+				});
+			}
 		}
 		<!-- ============================== -->
 		<!-- Announce										   -->
@@ -192,7 +196,7 @@
 					<ul class="nav navbar-nav pull-right">
 						<li>
 							<div id="personalized-buttons" class="navbar-btn btn-group" data-toggle="buttons">
-								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
+								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-target="#my-notification-panel" disabled><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 								<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-target="#my-memo-panel"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
 							</div>	
 						</li>						
