@@ -67,34 +67,45 @@
 				});	
 				
 				
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");
-				
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");				
 				// personalized grid setting																																					
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-				
+				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					click:function(e){
 						if( common.ui.defined( e.target ) && $(e.target).data("target") === "#my-notification-panel" ){
-							createNotificationSection();
+							createNotificationPanel();
 						}
+						if( common.ui.defined( e.target ) && $(e.target).data("target") === "#my-memo-panel" ){
+							createMemoPanel();
+						}						
 					}
-				});				
-				createNotificationSection();
+				});
 				createAnnounceSection();
 				// END SCRIPT 				
 			}
 		}]);	
 
 		<!-- ============================== -->
-		<!-- image													   -->
+		<!-- Memo													   -->
 		<!-- ============================== -->
-		function createImageSection(){
-			common.ui.listview();
+		function createMemoPanel(){
+			var renderTo = $("#my-memo-panel");
+			if(!renderTo.data("kendoPanel")){
+				new common.ui.extPanel( renderTo, { 
+					content : "새로운 메모가 없습니다." ,
+					deactivateAfterClose : false,
+					close:function(e){
+						common.ui.enable($("#personalized-buttons button[data-target='#my-memo-panel']"));
+					}
+				});
+			}else{
+				renderTo.data("kendoPanel").show();
+			}
 		}
 		<!-- ============================== -->
 		<!-- Notify										   -->
 		<!-- ============================== -->
-		function createNotificationSection(){
+		function createNotificationPanel(){
 			var renderTo = $("#my-notification-panel");
 			if(!renderTo.data("kendoPanel")){
 				new common.ui.extPanel( renderTo, { 
@@ -164,8 +175,6 @@
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
 			common.ui.slimScroll(listRenderTo, { height: 320 });
 		}
-
-
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -224,12 +233,21 @@
 			<div id="main-content" class="container-fluid content profile" style="min-height:300px;">	
 				<div class="row">
 					<div class="col-md-3">
+						
 						<div id="my-notification-panel" class="panel panel-primary rounded border-2x">
 							<div class="panel-heading">
 								<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
 								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
 							<div class="panel-body"></div>
 						</div><!-- /.panel -->
+						
+						<div id="my-memo-panel" class="panel panel-primary rounded border-2x">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
+								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
+							<div class="panel-body"></div>
+						</div><!-- /.panel -->
+												
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
 						<div class="panel panel-default rounded no-margin-b bg-slivergray">
