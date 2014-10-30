@@ -917,3 +917,81 @@
 	});
 	
 })(jQuery);
+
+
+;(function($, undefined) {
+	
+	var ui = common.ui,
+	kendo = window.kendo, 
+	Widget = kendo.ui.Widget, 
+	isPlainObject = $.isPlainObject, 
+	proxy = $.proxy, 
+	extend = $.extend, 
+	placeholderSupported = kendo.support.placeholder, 
+	browser = kendo.support.browser, 
+	isFunction = kendo.isFunction, 
+	UNDEFINED = 'undefined',	
+	AUTHENTICATE = "authenticate",
+	SHOWN = "shown", 
+	ROLE_ADMIN = "ROLE_ADMIN", 
+	ROLE_SYSTEM = "ROLE_SYSTEM", 	
+	LOGIN_URL = "/login",
+	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( externalLoginHost ) == 'string'  ) { #http://#= externalLoginHost ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"), 
+	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
+	guid = common.guid,
+	ajax = ui.ajax,
+	handleAjaxError = ui.handleAjaxError,
+	defined = ui.defined;
+	
+	var Accounts = Widget.extend({
+		init : function(element, options) {
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			options = that.options;
+			that.token = new common.ui.data.User();		
+			that.authenticate();
+		},
+		options : {
+			name : "ExtAccounts",
+			messages : {
+				title : "로그인",
+				loginFail : "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다.",
+				loginError : "잘못된 접근입니다."			
+			}
+		},
+		events : [ AUTHENTICATE, SHOWN ],		
+		authenticate : function() {
+			var that = this;
+			ajax(
+				that.options.url || AUTHENTICATE_URL	,
+				{
+					success : functioni(response){
+						var token = new common.ui.data.User($.extend( response.currentUser, { roles : response.roles }));
+						token.set('isSystem', false);
+						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
+							token.set('isSystem', true);					
+						token.copy(that.token);					
+						that.trigger(AUTHENTICATE,{ token : that.token });		
+						that.refresh();
+					}
+				}
+			);		
+		},
+		refresh : function( ){
+			var that = this;	
+			var renderTo = $(that.element);			
+			if( that.options.template){
+				
+			}			
+		}
+	});
+	
+	function accounts (render, options){
+		return new Accounts(render, options);		
+	}
+	
+	extend(ui, {
+		accounts : common.ui.accounts || accounts		
+	});
+	
+})(jQuery);
