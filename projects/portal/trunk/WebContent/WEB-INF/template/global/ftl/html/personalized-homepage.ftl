@@ -41,10 +41,13 @@
 			complete: function() {		
 				common.ui.setup({
 					features:{
-						backstretch : true,
+						wallpaper : true,
 						lightbox : true,
 						spmenu : true
 					},
+					wallpaper : {
+						slideshow : false
+					}
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD	
