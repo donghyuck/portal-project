@@ -43,6 +43,7 @@
 
 ;(function($, undefined) {
 	var ui = common.ui,
+	random = common.random,
 	isFunction = kendo.isFunction,
 	extend = $.extend,
 	DataSource = kendo.data.DataSource,
@@ -224,9 +225,12 @@
 		features : {
 			culture : true,
 			landing : true,
-			backstretch : false,
+			wallpaper : false,
 			lightbox: false,
 			spmenu: false
+		},
+		wallpaper : {
+			slideshow : true
 		},
 		jobs: []
 	};
@@ -269,8 +273,8 @@
 				culture();				
 			}
 			
-			if(features.backstretch){
-				backstretch();
+			if(features.wallpaper){
+				wallpaper(options.wallpaper);
 			}
 			
 			if(features.landing){				
@@ -302,13 +306,11 @@
 		}		
 		 $(element).fadeOut('slow');
 	}
-
 	
-	function backstretch (options){		
+	function wallpaper (options){		
 		if(!defined($.backstretch)) {
 			return;
-		}		
-		
+		}	
 		options = options || {},
 		dataSource = options.dataSource = datasource( "/community/list-streams-photo.do?output=json" ,{
 			pageSize: 15,
@@ -316,21 +318,24 @@
 				total: "photoCount",
 				data: "photos"
 			} 
-		});		
-
+		});	
 		var template = options.template || kendo.template("/community/view-streams-photo.do?key=#= externalId#")  ;			
 		dataSource.fetch(function(){
 			var photos = this.data();
 			var urls = [];
-			each(photos, function(idx, photo){
-				urls.push(template(photo));
-			});					
+			if ( options.slideshow ){
+				each(photos, function(idx, photo){
+					urls.push(template(photo));
+				});	
+			}else{
+				urls.push(template(photos[random]));
+			}
+			
 			$.backstretch(
 				urls,	
 				{duration: 6000, fade: 750}	
 			);
-		});
-		
+		});		
 	}	
 	
 	var DEFAULT_LIGHTBOX_OPTIONS = {
