@@ -93,29 +93,27 @@
 			$('form[name="signin-fm"]').submit(function(e) {		
 				var btn = $('.btn-signin');
 				btn.button('loading');
-				if( validator.validate() ){        				
-					$.ajax({
-						type: "POST",
-						url: "/login",
-						dataType: 'json',
-						data: $('form[name="signin-fm"]').serialize(),
-						success : function( response ) {   
-							if( response.error ){ 
-								common.ui.alert({
-									renderTo: "#signin-status",
-									data:{message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."}
-								});
-								$("input[type='password']").val("").focus();											
-							} else {        	   
-								$("#signin-status").html("");                         
-								location.href="/main.do";
-							} 	
-						},
-						error:handleKendoAjaxError,
-						complete: function(jqXHR, textStatus ){					
-							btn.button('reset');
+				if( validator.validate() ){
+					common.ui.ajax(
+						"/login", 
+						{
+							success : function( response ) {   
+								if( response.error ){ 
+									common.ui.alert({
+										renderTo: "#signin-status",
+										data:{message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."}
+									});
+									$("input[type='password']").val("").focus();											
+								} else {        	   
+									$("#signin-status").html("");                         
+									location.href="/main.do";
+								} 	
+							},
+							complete: function(jqXHR, textStatus ){					
+								btn.button('reset');
+							}	
 						}
-					});
+					);	
 				}else{        			      
 					btn.button('reset');
 				}			
