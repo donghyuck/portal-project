@@ -263,7 +263,7 @@
 	
 	ui.connect.status = function( options ){
 		options = options || {};		
-		$.ajax({
+		jQuery.ajax({
 			type : POST,
 			url : options.url || "/connect/list.json",
 			data: options.data || {},
