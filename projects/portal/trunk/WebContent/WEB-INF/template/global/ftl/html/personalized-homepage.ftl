@@ -231,7 +231,7 @@
 				</div><!-- ./navbar-personalized -->			
 			</div>
 			
-			<div id="main-content" class="container-fluid content profile" style="min-height:300px;">	
+			<div id="main-content" class="container-fluid content profile no-padding-t" style="min-height:300px;">	
 				<div class="row">
 					<div class="col-md-3">
 						
