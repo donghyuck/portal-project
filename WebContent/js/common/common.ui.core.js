@@ -590,7 +590,22 @@
 				"k-i-custom": "_custom"
 			}[iconClass];
 		},				
-		
+		show : function(){
+			var that = this,
+			wrapper = that.wrapper,
+			options = that.options,
+			showOptions = options.animation.open,			
+			if (!wrapper.is(VISIBLE) ){
+				that._closing = false;
+				 options.visible = true;				
+				 wrapper.kendoStop().kendoAnimate({
+					effects: showOptions.effects || "slide:down fade:in",
+					show: true,
+					duration: showOptions.duration || 1000,
+					
+				 });
+			}
+		},
 		_custom: function(systemTriggered){
 			var that = this;
 			that.trigger(CUSTOM, {target: that});
@@ -608,10 +623,7 @@
 					effects: hideOptions.effects || showOptions.effects,
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
-					complete : options.deactivateAfterClose ? proxy(that._deactivate, that) : function(){ 
-						if(wrapper.is(":visible")){
-							wrapper.hide().css("opacity","");							
-						}
+					complete : function(){ 
 					}
 				 });
 			}			
