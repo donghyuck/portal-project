@@ -257,7 +257,7 @@
 		_features: function(){
 			var that = this,
 			options = that.options,
-			var features = options.features;
+			features = options.features;
 			
 			if( features.culture ){
 				culture();				
