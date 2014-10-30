@@ -418,7 +418,8 @@
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable,
 		animate : common.ui.animate || animate,
-		setup : common.ui.setup || setup
+		setup : common.ui.setup || setup,
+		data : common.ui.data || {},
 	});
 	
 })(jQuery);
