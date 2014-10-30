@@ -1,5 +1,5 @@
 /**
- * COMMON UI CORE
+ * COMMON UI MODELS
  * dependency : jquery
  */
 ;(function($, undefined) {

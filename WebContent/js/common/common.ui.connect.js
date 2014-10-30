@@ -18,6 +18,7 @@
 	OPEN = 'open', 
 	UNDEFINED = 'undefined',
 	CHANGE = "change";
+		
 	ui.connect = ui.connect || {};
 	ui.connect.SocialConnect= kendo.data.Model.define({
 		id : "socialConnectId",
