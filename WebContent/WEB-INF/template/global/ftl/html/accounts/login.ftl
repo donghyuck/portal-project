@@ -31,8 +31,14 @@
 						wallpaper : true,
 						loading:true
 					}
-				});					
-			
+				});			
+				
+				common.ui.ajax("/connect/list.json", {
+					success: function(response){ 
+					alert(kendo.stringify(response));
+					}				
+				});		
+			/**
 				common.ui.connect.status({
 					success: function(data){
 						var renderTo = $("#signin-block .social-icons");
@@ -50,6 +56,7 @@
 						});
 					}
 				});
+				**/
 				prepareSignOn();
 				
 			}
