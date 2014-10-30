@@ -30,7 +30,7 @@
 					}
 				});	  
 				// START SCRIPT					
-				var currentUser = new common.ui.dataUser();			
+				var currentUser = new common.ui.data.User();			
 				$("#account-navbar").extAccounts({
 					authenticate : function( e ){
 						e.token.copy(currentUser);
