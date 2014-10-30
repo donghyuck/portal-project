@@ -257,16 +257,6 @@
 					}
 				}
 			},
-			beforeSend : function () {
-				if( isFunction( options.beforeSend ) ){
-					options.beforeSend() ;
-				}
-			},
-			complete : function () {
-				if( isFunction( options.complete ) ){
-					options.complete() ;
-				}
-			},
 			error:options.error || handleAjaxError ,
 			dataType : JSON
 		});		
