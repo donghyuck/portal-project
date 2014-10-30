@@ -18,11 +18,9 @@
 			'/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
 			'/js/common.plugins/query.backstretch.min.js', 	
 			'/js/bootstrap/3.1.0/bootstrap.min.js',
-			'/js/common/common.models.js',
-			'/js/common/common.api.js',
-			'/js/common/common.ui.js',
 			'/js/common/common.ui.core.js',
-			'/js/common/common.ui.connect.js'
+			'/js/common/common.ui.data.js',
+			'/js/common/common.ui.connect.js'		
 			],
 			complete: function() {
 				// START SCRIPT	
@@ -32,7 +30,7 @@
 					}
 				});	  
 				// START SCRIPT					
-				var currentUser = new User();			
+				var currentUser = new common.ui.dataUser();			
 				$("#account-navbar").extAccounts({
 					authenticate : function( e ){
 						e.token.copy(currentUser);
