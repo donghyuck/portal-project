@@ -325,7 +325,7 @@
 					urls.push(template(photo));
 				});	
 			}else{
-				urls.push(template(photos[random(0, 15)]));
+				urls.push(template(photos[random(0, photos.length)]));
 			}
 			
 			$.backstretch(
