@@ -615,6 +615,7 @@
 			var that = this,
 				wrapper = that.wrapper,
 				options = that.options,
+				deactivateAfterClose = options.deactivateAfterClose,
 				showOptions = options.animation.open,
 				hideOptions = options.animation.close;			
 			if (wrapper.is(VISIBLE) && !that.trigger(CLOSE, { userTriggered: !systemTriggered, target: that })) {
