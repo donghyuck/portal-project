@@ -91,7 +91,7 @@
 	    id: "userId", // the identifier of the model
 	    fields: {
 	    	companyId: {  type: "number", defaultValue: 1 },
-	    	company: Company,
+	    	company: common.ui.data.Company,
 	    	userId: { type: "number", editable: true, defaultValue: -1  },
 	        username: { type: "string", editable: true },
 	        name: { type: "string", editable: true },
