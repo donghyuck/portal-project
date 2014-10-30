@@ -962,10 +962,8 @@
 		events : [ AUTHENTICATE, SHOWN ],		
 		authenticate : function() {
 			var that = this;
-			ajax(
-				that.options.url || AUTHENTICATE_URL	,
-				{
-					success : functioni(response){
+			ajax( that.options.url || AUTHENTICATE_URL, {
+				success : function(response){
 						var token = new common.ui.data.User($.extend( response.currentUser, { roles : response.roles }));
 						token.set('isSystem', false);
 						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
@@ -973,9 +971,8 @@
 						token.copy(that.token);					
 						that.trigger(AUTHENTICATE,{ token : that.token });		
 						that.refresh();
-					}
 				}
-			);		
+			});		
 		},
 		refresh : function( ){
 			var that = this;	
