@@ -308,8 +308,7 @@
 			pageSize: 15,
 			schema: {
 				total: "photoCount",
-				data: "photos",
-				model: Photo
+				data: "photos"
 			} 
 		});		
 
