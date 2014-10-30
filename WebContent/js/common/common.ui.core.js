@@ -225,6 +225,11 @@
 		jobs: []
 	},
 	
+	function setup (options) {
+		options = options || {};
+		return new common.ui.PageSetup(options);		
+	}
+	
 	var Setup = kendo.Class.extend({		
 		init: function(options) {
 			var that = this;
