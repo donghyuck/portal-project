@@ -81,7 +81,7 @@
 					}
 				});
 				createAnnounceSection();
-				common.ui.animate( $("#main-content .panel.bg-slivergray ").first(), {	effects: "slide:down fade:in", show: true, duration: 1000 	} );
+				//
 				// END SCRIPT 				
 			}
 		}]);	
@@ -234,7 +234,7 @@
 				<div class="row">
 					<div class="col-md-3">
 						
-						<div id="my-notification-panel" class="panel panel-primary rounded border-2x" style="display:none">
+						<div id="my-notification-panel" class="panel panel-primary rounded border-2x">
 							<div class="panel-heading">
 								<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
 								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
