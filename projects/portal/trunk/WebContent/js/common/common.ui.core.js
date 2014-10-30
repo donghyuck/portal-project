@@ -600,8 +600,7 @@
 				wrapper = that.wrapper,
 				options = that.options,
 				showOptions = options.animation.open,
-				hideOptions = options.animation.close;
-			
+				hideOptions = options.animation.close;			
 			if (wrapper.is(VISIBLE) && !that.trigger(CLOSE, { userTriggered: !systemTriggered, target: that })) {
 				that._closing = true;
 				 options.visible = false;
@@ -609,7 +608,11 @@
 					effects: hideOptions.effects || showOptions.effects,
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
-					complete : options.deactivateAfterClose ? proxy(that._deactivate, that) : function(){ }
+					complete : options.deactivateAfterClose ? proxy(that._deactivate, that) : function(){ 
+						if(wrapper.is(":visible")){
+							this.wrapper.hide().css("opacity","");							
+						}
+					}
 				 });
 			}			
 		},
