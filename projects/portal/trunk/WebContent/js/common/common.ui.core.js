@@ -602,8 +602,7 @@
 				 wrapper.kendoStop().kendoAnimate({
 					effects: showOptions.effects || "slide:down fade:in",
 					show: true,
-					duration: showOptions.duration || 1000,
-					
+					duration: showOptions.duration || 1000
 				 });
 			}
 		},
