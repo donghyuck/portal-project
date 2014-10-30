@@ -137,7 +137,7 @@
 		    		target.set("properties", this.get("properties"));	    	
 		    }
 		}),
-		Group = kendo.data.Model.define( {
+		Group : kendo.data.Model.define( {
 		    id: "groupId", // the identifier of the model
 		    fields: {
 		    	companyId: { type: "number", defaultValue: 1 },
