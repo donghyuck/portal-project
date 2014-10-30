@@ -246,10 +246,9 @@
 			options = extend(true, {}, DEFAULT_SETUP_SETTING, options);		
 			
 			if(!defined(that.complete))
-				that.complete = false;
-			
-			_features();
-			_jobs();
+				that.complete = false;			
+			that._features();
+			that._jobs();
 			that.complete = true;
 		},
 		_jobs:function(){			
