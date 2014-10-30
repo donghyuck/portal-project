@@ -45,7 +45,7 @@
 						lightbox : true,
 						spmenu : true
 					},
-					worklist:jobs
+					jobs:jobs
 				});				
 				// ACCOUNTS LOAD	
 				var currentUser = new User();			
