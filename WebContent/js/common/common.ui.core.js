@@ -609,8 +609,8 @@
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
 					complete : options.deactivateAfterClose ? proxy(that._deactivate, that) : function(){ 
-						if(wrapper.is(":visible")){
-							this.wrapper.hide().css("opacity","");							
+						if(that.wrapper.is(":visible")){
+							that.wrapper.hide().css("opacity","");							
 						}
 					}
 				 });
