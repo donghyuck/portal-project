@@ -233,6 +233,9 @@
 	
 })(jQuery);
 
+/**
+ * ButtonGroup
+ */
 ;(function($, undefined) {
 	var ui = common.ui,
 	defined = common.ui.defined,
@@ -452,6 +455,7 @@
 	function extPanel (renderTo, options ){		
 		options = options || {};	
 		if( defined(renderTo) ){
+			
 			 return new Panel( renderTo, options); 
 		} else {		
 			var guid = guid().toLowerCase() ;
@@ -604,7 +608,8 @@
 					effects: hideOptions.effects || showOptions.effects,
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
-					complete: proxy(this._deactivate, this)
+					
+					//complete: proxy(this._deactivate, this)
 				 });
 			}			
 		},
