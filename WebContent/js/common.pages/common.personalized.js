@@ -5,7 +5,7 @@ function preparePersonalizedArea( element, minCount, colSize ){
 	{
 		element.append( 
 			template({
-				guid: common.api.guid().toLowerCase(),
+				guid: common.guid().toLowerCase(),
 				colSize: colSize
 			})
 		);		
