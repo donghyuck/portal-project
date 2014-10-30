@@ -695,6 +695,9 @@ color: #d9534f;
 	background-image: url('../kendo/Flat/sprite.png');	
 }
 
+.panel-danger .panel-heading .k-window-actions  a.k-link:hover {
+	background-color: #a94442;
+}
 
 /* Loader
 ------------------------------------*/
