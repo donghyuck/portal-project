@@ -31,11 +31,18 @@
 				});	  
 				// START SCRIPT					
 				var currentUser = new common.ui.data.User();			
+				common.ui.accounts(
+					$("#account-navbar"), {
+					authenticate : function( e ){
+						e.token.copy(currentUser);
+					}	
+				});
+				/*
 				$("#account-navbar").extAccounts({
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					}				
-				});
+				});*/
 				
 				$("button.btn-close").click(function(e){
 					if(typeof window.opener.handleCallbackResult == "function"){	
