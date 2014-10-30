@@ -243,7 +243,7 @@
 	var Setup = kendo.Class.extend({		
 		init: function(options) {
 			var that = this;
-			options = extend(true, {}, DEFAULT_SETUP_SETTING, options);		
+			options = that.options = extend(true, {}, DEFAULT_SETUP_SETTING, options);		
 			
 			if(!defined(that.complete))
 				that.complete = false;			
