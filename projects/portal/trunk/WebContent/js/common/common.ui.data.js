@@ -173,4 +173,23 @@
 		    }
 		})		
 		
+	
+	var ajax = common.ui.ajax;
+	
+	function user (options){	
+		options = options || {};
+		ajax( options.url || '/accounts/get-user.do?output=json', {
+			success : function(response){
+				var user = new common.ui.data.User ();			
+				if( response.error ){ 		
+					if( typeof options.fail === 'function'  )
+						options.fail(response) ;
+				} else {				
+					user = new common.ui.data.User (response.currentUser);	
+				}
+				if( typeof options.success === 'function'  )
+					options.success (user);
+			} 
+		});		
+	}	
 })(jQuery);
