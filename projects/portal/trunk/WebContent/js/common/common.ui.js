@@ -1135,7 +1135,7 @@
 	trimSlashesRegExp = /(^\/|\/$)/g, CHANGE = "change", ERROR = "error", REFRESH = "refresh", OPEN = "open", CLOSE = "close", CLICK = "click", 
 	UNDEFINED = 'undefined', POST = 'POST', 
 	JSON = 'json', 
-	handleKendoAjaxError = common.api.handleKendoAjaxError;
+	handleKendoAjaxError = common.ui.handleAjaxError;
 
 	common.ui.extModalWindow = Widget.extend({
 				init : function(element, options) {
@@ -1282,7 +1282,7 @@
 	var common = window.common = window.common || {};
 	common.ui = common.ui || {};
 	var kendo = window.kendo, Widget = kendo.ui.Widget, isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, trimSlashesRegExp = /(^\/|\/$)/g, CHANGE = "change", APPLY = "apply", ERROR = "error", CLICK = "click", UNDEFINED = 'undefined', POST = 'POST', JSON = 'json', LINK_VALUE_TEMPLATE = kendo
-			.template('<a href="#: linkUrl #" title="#: linkTitle #" #if (linkTarget) { # target="_blank"  # }#>#= linkTitle #</a>'), handleKendoAjaxError = common.api.handleKendoAjaxError;
+			.template('<a href="#: linkUrl #" title="#: linkTitle #" #if (linkTarget) { # target="_blank"  # }#>#= linkTitle #</a>'), handleKendoAjaxError = common.ui.handleAjaxError;
 
 	common.ui.extEditorPopup = Widget
 			.extend({
@@ -1449,7 +1449,7 @@
 			url : template('/download/image/#= linkId #'),
 			download : template('/download/image/#=imageId#/#=name#')
 		},
-		handleKendoAjaxError = common.api.handleKendoAjaxError;
+		handleKendoAjaxError = common.ui.handleAjaxError;
 		common.ui.extImageBrowser = Widget.extend({
 			init : function(element, options) {
 				var that = this;
@@ -1965,7 +1965,7 @@
 					+ '<span class="fa cbp-bipause"></span>'
 					+ '<span class="fa cbp-binext"></span>' + '</div>'
 					+ '</div>'), ITEM_TEMPLATE = kendo
-			.template('<li><img src="/community/view-streams-photo.do?key=#= externalId#" alt="이미지"/></li>'), handleKendoAjaxError = common.api.handleKendoAjaxError;
+			.template('<li><img src="/community/view-streams-photo.do?key=#= externalId#" alt="이미지"/></li>'), handleKendoAjaxError = common.ui.handleAjaxError;
 
 	common.ui.extFullscreenSlideshow = Widget
 			.extend({
@@ -2110,7 +2110,7 @@
 	var common = window.common = window.common || {};
 	common.ui = common.ui || {};
 	var kendo = window.kendo, Widget = kendo.ui.Widget, DataSource = kendo.data.DataSource, isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, POST = 'POST', JSON = 'json', CHANGE = "change", UNDEFINED = 'undefined', MEDIA_FACEBOOK = "facebook", MEDIA_TWITTER = "twitter", MEDIA_TUMBLR = "tumblr", RENDERED
-	handleKendoAjaxError = common.api.handleKendoAjaxError;
+	handleKendoAjaxError = common.ui.handleAjaxError;
 
 	common.ui.extMediaStreamView = Widget
 			.extend({
@@ -2236,7 +2236,7 @@
 	STRING = "string", 
 	UNDEFINED = 'undefined';
 	TEMPLATE = template('<div data-alert class="alert alert-danger animated fadeInDown">#=message#<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button></div>'),
-	handleKendoAjaxError = common.api.handleKendoAjaxError;
+	handleKendoAjaxError = common.ui.handleAjaxError;
 	
 	common.ui.alert = function ( options ){		
 		options = options || {};	
