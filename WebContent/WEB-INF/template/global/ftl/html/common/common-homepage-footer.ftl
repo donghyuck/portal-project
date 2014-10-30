@@ -24,7 +24,7 @@
 						<script type="text/javascript">
 						<!--
 							jobs.push( function(){
-								var announcement = new common.api.Announcement({pageSize: 3}); 			 				
+								var announcement = new common.ui.data.Announcement({pageSize: 3}); 			 				
 								var template = kendo.template($("#footer-notice-template").html());				
 								announcement.dataSource().bind('change', function(){
 									if(this.view().length>0)
