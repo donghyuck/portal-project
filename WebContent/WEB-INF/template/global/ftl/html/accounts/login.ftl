@@ -36,7 +36,7 @@
 				common.ui.ajax("/connect/list.json", {
 					success: function(response){ 
 						var renderTo = $("#signin-block .social-icons");
-						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , data.media );
+						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
 						renderTo.html( html );	
 					}				
 				});		
