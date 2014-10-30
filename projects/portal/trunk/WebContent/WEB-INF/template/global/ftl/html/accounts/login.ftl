@@ -76,7 +76,7 @@
 
 	
 		function prepareSignOn () {		
-			common.api.getUser( {
+			common.ui.data.user( {
 				success : function ( token ) {				
 					if( !token.anonymous ){
 						$("form fieldset").prop("disabled", true);
