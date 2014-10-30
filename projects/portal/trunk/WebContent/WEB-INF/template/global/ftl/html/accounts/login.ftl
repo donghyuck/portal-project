@@ -74,11 +74,11 @@
 	
 		function prepareSignOn () {		
 			common.ui.data.user( {
-				success : function ( token ) {				
-					if( !token.anonymous ){
+				success : function ( user ) {				
+					if( !user.anonymous ){
 						$("form fieldset").prop("disabled", true);
 						var template = kendo.template($("#alert-template").html());	
-						$(".container:first").prepend(template(token));				
+						$(".container:first").prepend(template(user));				
 					}								
 				}				
 			} );		
