@@ -416,7 +416,7 @@
 			remove: remove
 		}, speed, easing, callback );		
 	}
-	
+	/*
 	common.ui.animate = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){			
@@ -430,7 +430,7 @@
 		});
 		return renderTo;		
 	}	
-	
+	*/
 	common.ui.animate_v2 = function (renderTo, animate, always){	
 		var oldCss = renderTo.attr('class');	
 		renderTo.addClass(animate + ' animated' ).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
