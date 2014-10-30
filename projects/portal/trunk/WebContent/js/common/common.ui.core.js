@@ -237,7 +237,7 @@
 	
 	function setup (options) {
 		options = options || {};
-		return new common.ui.PageSetup(options);		
+		return new common.ui.Setup(options);		
 	}
 	
 	var Setup = kendo.Class.extend({		
