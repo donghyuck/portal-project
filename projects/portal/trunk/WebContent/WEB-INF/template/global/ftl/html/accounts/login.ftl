@@ -35,7 +35,9 @@
 				
 				common.ui.ajax("/connect/list.json", {
 					success: function(response){ 
-					alert(kendo.stringify(response));
+						var renderTo = $("#signin-block .social-icons");
+						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , data.media );
+						renderTo.html( html );	
 					}				
 				});		
 			/**
