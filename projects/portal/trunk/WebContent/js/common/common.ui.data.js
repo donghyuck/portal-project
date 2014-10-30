@@ -3,10 +3,11 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
-	var extend = $.extend;
-	extend( common.ui.data, {
+	var ui = common.ui,
+	extend = $.extend;
+	extend( ui.data, {
 		
-		Image : kendo.data.Model.define( {
+		ui.data.Image = kendo.data.Model.define( {
 		    id: "imageId", // the identifier of the model
 		    fields: {
 		    	imageId: { type: "number", editable: false, defaultValue: 0  },   
@@ -43,8 +44,9 @@
 		    	target.set("modifiedDate", this.get("modifiedDate"));
 		    	target.set("index", this.get("index"));
 		    }
-		}),
-		Attachment : kendo.data.Model.define( {
+		});
+
+		ui.data.Attachment = kendo.data.Model.define( {
 		    id: "attachmentId", // the identifier of the model
 		    fields: {
 		    	attachmentId: { type: "number", editable: false, defaultValue: -1  },   
@@ -56,8 +58,9 @@
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" }        
 		    }
-		}),		
-		Company : kendo.data.Model.define( {
+		});
+		
+		ui.data.Company = kendo.data.Model.define( {
 		    id: "companyId", // the identifier of the model
 		    fields: {
 		    	companyId: { type: "number", editable: false, defaultValue: -1  },    	
@@ -83,8 +86,10 @@
 		    	if( typeof this.get("properties") === 'object' )
 		    		target.set("properties", this.get("properties"));
 		    }    
-		}),
-		User : kendo.data.Model.define( {
+		});
+
+
+		ui.data.User = kendo.data.Model.define( {
 		    id: "userId", // the identifier of the model
 		    fields: {
 		    	companyId: {  type: "number", defaultValue: 1 },
@@ -135,8 +140,9 @@
 		    	if( typeof this.get("properties") === 'object' )
 		    		target.set("properties", this.get("properties"));	    	
 		    }
-		}),
-		Group : kendo.data.Model.define( {
+		});
+
+		ui.data.Group = kendo.data.Model.define( {
 		    id: "groupId", // the identifier of the model
 		    fields: {
 		    	companyId: { type: "number", defaultValue: 1 },
@@ -149,15 +155,17 @@
 		        memberCount: { type: "number", editable: true, defaultValue: 0  },
 		        adminCount: { type: "number", editable: true, defaultValue: 0  }       
 		    }
-		}),
-		Property : kendo.data.Model.define( {
+		});
+
+		ui.data.Property = kendo.data.Model.define( {
 		    id: "name", // the identifier of the model
 		    fields: {
 		    	name: { type: "string",  editable: true },
 		    	value:  { type: "string", editable: true }     
 		    }
-		}),
-		Role : kendo.data.Model.define( {
+		});
+
+		ui.data.Role = kendo.data.Model.define( {
 		    id: "roleId", // the identifier of the model
 		    fields: {
 		    	roleId: { type: "number", editable: false, defaultValue: -1  },
@@ -166,6 +174,7 @@
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" }
 		    }
-		})				
+		})		
+		
 	});	
 })(jQuery);
