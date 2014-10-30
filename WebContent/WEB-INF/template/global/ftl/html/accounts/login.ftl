@@ -34,10 +34,11 @@
 				});					
 			
 				common.ui.connect.status({
-					success:function(data){
+					success: function(data){
 						var renderTo = $("#signin-block .social-icons");
 						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , data.media );
 						renderTo.html( html );	
+						
 						$("a[data-action='connect']").click(function(e){
 							var $this = $(this);				
 							$("form[name='signin-fm'] fieldset").attr("disabled", true);									
@@ -47,9 +48,6 @@
 								'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');	
 							return false;								
 						});
-					},
-					error:function(){
-						alert("fdsafdsa");
 					}
 				});
 				prepareSignOn();
