@@ -624,8 +624,7 @@
 					effects: hideOptions.effects || showOptions.effects,
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
-					complete : function(){ 
-					}
+					complete : deactivateAfterClose ? complete: proxy(that._deactivate, that) : function(){}
 				 });
 			}			
 		},
