@@ -21,8 +21,10 @@
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 				
 			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',			
+			
+			/*'${request.contextPath}/js/common/common.api.js',
+			'${request.contextPath}/js/common/common.ui.js',		*/
+				
 			'${request.contextPath}/js/common/common.ui.core.js',
 			'${request.contextPath}/js/common/common.ui.data.js',
 			'${request.contextPath}/js/common/common.ui.connect.js'			
