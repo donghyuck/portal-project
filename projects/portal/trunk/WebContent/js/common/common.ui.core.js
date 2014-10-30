@@ -46,6 +46,7 @@
 	random = common.random,
 	isFunction = kendo.isFunction,
 	extend = $.extend,
+	each = $each,
 	DataSource = kendo.data.DataSource,
 	Widget = kendo.ui.Widget, 
 	progress = kendo.ui.progress,
