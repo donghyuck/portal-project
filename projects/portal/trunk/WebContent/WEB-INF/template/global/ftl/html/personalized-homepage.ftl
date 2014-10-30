@@ -60,8 +60,8 @@
 					},				
 					shown : function(e){
 						if( !currentUser.anonymous ){
-							common.ui.buttonEnabled( $('button[data-toggle="spmenu"]')	);
-							common.ui.buttonEnabled( $('button[data-action="show-gallery-section"]') );
+							common.ui.enable( $('button[data-toggle="spmenu"]')	);
+							common.ui.enable( $('button[data-action="show-gallery-section"]') );
 						}
 					}
 				});	
