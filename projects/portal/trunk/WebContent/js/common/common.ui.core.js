@@ -595,7 +595,7 @@
 			wrapper = that.wrapper,
 			options = that.options,
 			showOptions = options.animation.open;
-			alert("fdsa");
+
 			if( !wrapper.is(VISIBLE) ){
 				that._closing = false;
 				 options.visible = true;				
