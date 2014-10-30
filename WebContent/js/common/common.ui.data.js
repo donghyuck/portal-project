@@ -3,9 +3,8 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
-	var ui = common.ui;
-		
-		ui.data.Image = kendo.data.Model.define( {
+	
+	common.ui.data.Image = kendo.data.Model.define( {
 		    id: "imageId", // the identifier of the model
 		    fields: {
 		    	imageId: { type: "number", editable: false, defaultValue: 0  },   
@@ -44,7 +43,7 @@
 		    }
 		});
 
-		ui.data.Attachment = kendo.data.Model.define( {
+	common.ui.data.Attachment = kendo.data.Model.define( {
 		    id: "attachmentId", // the identifier of the model
 		    fields: {
 		    	attachmentId: { type: "number", editable: false, defaultValue: -1  },   
@@ -58,7 +57,7 @@
 		    }
 		});
 		
-		ui.data.Company = kendo.data.Model.define( {
+	common.ui.data.Company = kendo.data.Model.define( {
 		    id: "companyId", // the identifier of the model
 		    fields: {
 		    	companyId: { type: "number", editable: false, defaultValue: -1  },    	
@@ -87,7 +86,7 @@
 		});
 
 
-		ui.data.User = kendo.data.Model.define( {
+	common.ui.data.User = kendo.data.Model.define( {
 		    id: "userId", // the identifier of the model
 		    fields: {
 		    	companyId: {  type: "number", defaultValue: 1 },
@@ -140,7 +139,7 @@
 		    }
 		});
 
-		ui.data.Group = kendo.data.Model.define( {
+	common.ui.data.Group = kendo.data.Model.define( {
 		    id: "groupId", // the identifier of the model
 		    fields: {
 		    	companyId: { type: "number", defaultValue: 1 },
@@ -155,7 +154,7 @@
 		    }
 		});
 
-		ui.data.Property = kendo.data.Model.define( {
+	common.ui.data.Property = kendo.data.Model.define( {
 		    id: "name", // the identifier of the model
 		    fields: {
 		    	name: { type: "string",  editable: true },
@@ -163,7 +162,7 @@
 		    }
 		});
 
-		ui.data.Role = kendo.data.Model.define( {
+	common.ui.data.Role = kendo.data.Model.define( {
 		    id: "roleId", // the identifier of the model
 		    fields: {
 		    	roleId: { type: "number", editable: false, defaultValue: -1  },
@@ -173,5 +172,5 @@
 		        creationDate: { type: "date" }
 		    }
 		})		
-
+		
 })(jQuery);
