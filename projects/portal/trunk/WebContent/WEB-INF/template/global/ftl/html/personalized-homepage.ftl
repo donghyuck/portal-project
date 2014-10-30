@@ -66,9 +66,9 @@
 					}
 				});	
 				
-				
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");				
-				// personalized grid setting																																					
+				
+				// personalized grid setting				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					click:function(e){
@@ -81,7 +81,6 @@
 					}
 				});
 				createAnnounceSection();
-				//
 				// END SCRIPT 				
 			}
 		}]);	
