@@ -247,6 +247,7 @@
 			url : options.url || "/connect/list.json",
 			data: options.data || {},
 			success : function(response){
+				alert(ddfas);
 				if( typeof response.error === UNDEFINED ){ 		
 					if( isFunction( options.success ) ){						
 						options.success(response) ;
