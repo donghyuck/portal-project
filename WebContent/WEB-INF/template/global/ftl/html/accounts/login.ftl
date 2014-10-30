@@ -94,6 +94,7 @@
 					common.ui.ajax(
 						"/login", 
 						{
+							data: $('form[name="signin-fm"]').serialize(),
 							success : function( response ) {   
 								if( response.error ){ 
 									common.ui.alert({
