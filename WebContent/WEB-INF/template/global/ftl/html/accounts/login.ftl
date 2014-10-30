@@ -47,7 +47,9 @@
 								'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');	
 							return false;								
 						});
-											
+					},
+					error:function(){
+						alert("fdsafdsa");
 					}
 				});
 				prepareSignOn();
