@@ -625,7 +625,15 @@
 					effects: hideOptions.effects || showOptions.effects,
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
-					complete : deactivateAfterClose ? proxy(that._deactivate, that) : function(){}
+					complete : deactivateAfterClose ? proxy(that._deactivate, that) : function(){
+						if( wrapper.is(VISIBLE) ){
+							wrapper.kendoStop().kendoAnimate({
+								effects: hideOptions.effects || "slide:down fade:in",
+								reverse: true,
+								hide : true								
+							 });							
+						}
+					}
 				 });
 			}			
 		},
