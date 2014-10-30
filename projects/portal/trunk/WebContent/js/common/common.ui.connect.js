@@ -229,7 +229,7 @@
 					}
 				}
 			}
-		}}
+		}
 		ajax(
 			options.url || "/connect/signin.json",	
 			options
