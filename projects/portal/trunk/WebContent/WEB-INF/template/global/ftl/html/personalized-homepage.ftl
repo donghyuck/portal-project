@@ -98,9 +98,8 @@
 						common.ui.enable($("#personalized-buttons button[data-target='#my-memo-panel']"));
 					}
 				});
-			}else{
-				renderTo.data("kendoPanel").show();
 			}
+			renderTo.data("kendoPanel").show();
 		}
 		<!-- ============================== -->
 		<!-- Notify										   -->
@@ -115,9 +114,8 @@
 						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
 					}
 				});
-			}else{
-				renderTo.data("kendoPanel").show();
 			}
+			renderTo.data("kendoPanel").show();
 		}
 		<!-- ============================== -->
 		<!-- Announce										   -->
@@ -208,7 +206,7 @@
 					<ul class="nav navbar-nav pull-right">
 						<li>
 							<div id="personalized-buttons" class="navbar-btn btn-group" data-toggle="buttons">
-								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-target="#my-notification-panel" disabled><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
+								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 								<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-target="#my-memo-panel"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
 							</div>	
 						</li>						
