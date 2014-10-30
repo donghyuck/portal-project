@@ -28,7 +28,7 @@
 			
 				common.ui.setup({
 					features:{
-						backstretch : false,
+						wallpaper : false,
 						loading:true
 					}
 				});					
