@@ -225,7 +225,7 @@
 		jobs: []
 	},
 	
-	function setupPage (options) {
+	function setup (options) {
 		options = options || {};
 		return new common.ui.PageSetup(options);		
 	}
@@ -419,7 +419,8 @@
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable,
-		animate : common.ui.animate || animate
+		animate : common.ui.animate || animate,
+		setup : common.ui.setup || setup
 	});
 	
 })(jQuery);
