@@ -696,7 +696,11 @@ color: #d9534f;
 }
 
 .panel-danger .panel-heading .k-window-actions  a.k-link:hover {
-	background-color: #a94442;
+	background-color: #ebccd1;
+}
+
+.panel-warning .panel-heading .k-window-actions  a.k-link:hover {
+	background-color: #faebcc;
 }
 
 /* Loader
