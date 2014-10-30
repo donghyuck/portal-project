@@ -524,7 +524,10 @@
 				 that.trigger(OPEN, {target: that});
 				 that.trigger(ACTIVATE);
 			 }
-			kendo.notify(that);
+			
+			 kendo.notify(that);
+			
+			
 		},
 		events:[
 			OPEN,
@@ -595,7 +598,6 @@
 			wrapper = that.wrapper,
 			options = that.options,
 			showOptions = options.animation.open;
-
 			if( !wrapper.is(VISIBLE) ){
 				that._closing = false;
 				 options.visible = true;				
