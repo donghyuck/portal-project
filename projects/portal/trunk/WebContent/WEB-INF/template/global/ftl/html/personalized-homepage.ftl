@@ -47,7 +47,7 @@
 					},
 					wallpaper : {
 						slideshow : false
-					}
+					},
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD	
