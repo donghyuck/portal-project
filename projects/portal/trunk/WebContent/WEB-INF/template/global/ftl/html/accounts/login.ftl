@@ -33,15 +33,25 @@
 					}
 				});			
 				
-					/**
 				common.ui.ajax("/connect/list.json", {
 					success: function(response){ 
 						var renderTo = $("#signin-block .social-icons");
 						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
 						renderTo.html( html );	
+						
+						$("a[data-action='connect']").click(function(e){
+							var $this = $(this);				
+							$("form[name='signin-fm'] fieldset").attr("disabled", true);									
+							window.open( 
+								"${request.contextPath}/connect/" + $this.data("provider-id") + "/authorize",
+								'popUpWindow', 
+								'height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes');	
+							return false;								
+						});
+						
 					}				
 				});		
-		**/
+		/*
 				common.ui.connect.status({
 					success: function(data){
 					
@@ -61,7 +71,7 @@
 						});
 					}
 				});
-				
+		*/		
 				prepareSignOn();
 				
 			}
