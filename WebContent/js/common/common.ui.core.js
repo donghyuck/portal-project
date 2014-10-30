@@ -66,8 +66,6 @@
 	function handleAjaxError(xhr) {
 		var message = "";		
 		
-		alert(xhr.status);
-		
 		if( typeof xhr === STRING ){
 			message = xhr;			
 		} else {		
