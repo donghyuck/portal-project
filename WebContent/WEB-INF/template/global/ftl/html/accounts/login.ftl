@@ -6,7 +6,7 @@
 		<script type="text/javascript"><!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',			
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
