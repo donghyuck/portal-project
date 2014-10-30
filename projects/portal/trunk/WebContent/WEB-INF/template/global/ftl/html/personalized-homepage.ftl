@@ -251,7 +251,7 @@
 												
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
-						<div class="panel panel-default rounded no-margin-b bg-slivergray" style="display:none;">
+						<div class="panel panel-default rounded no-margin-b bg-slivergray">
 							<div class="panel-body">
 								<div class="row" >
 									<div class="col-sm-6">
