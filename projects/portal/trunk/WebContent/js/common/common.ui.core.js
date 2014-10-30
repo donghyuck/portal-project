@@ -547,7 +547,8 @@
 				close: {}
 			},
 			refreshContent : true,
-			handlers : {}
+			handlers : {},
+			deactivateAfterClose : true
 		},
 		data : function( data ){
 			var that = this;
@@ -608,7 +609,11 @@
 					effects: hideOptions.effects || showOptions.effects,
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
-					
+					complete : function(){
+						if(options.deactivateAfterClose){
+							complete: proxy(that._deactivate, that)
+						}
+					}
 					//complete: proxy(this._deactivate, this)
 				 });
 			}			
