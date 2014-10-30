@@ -213,6 +213,75 @@
 	 * Setup  
 	 *  
 	 */
+	
+	var DEFAULT_SETUP_SETTING = {
+		features : {
+			culture : true,
+			landing : true,
+			backstretch : false,
+			lightbox: false,
+			spmenu: false
+		},
+		jobs: []
+	},
+	
+	var Setup = kendo.Class.extend({		
+		init: function(options) {
+			var that = this;
+			options = extend(true, {}, DEFAULT_SETUP_SETTING, options);		
+			
+			if(!defined(that.complete))
+				that.complete = false;
+			
+			_features();
+			_jobs();
+			that.complete = true;
+		},
+		_jobs:function(){			
+			var that = this;
+			options = that.options,
+			jobs = options.jobs;
+								
+			var initilizer, _i, _len, _ref;
+			 _ref = jobs;			 
+			 for (_i = 0, _len = jobs.length; _i < _len; _i++) {
+				 initilizer = _ref[_i];
+				 $.proxy(initilizer, that)();
+			}							
+		},
+		_features: function(){
+			var that = this,
+			options = that.options,
+			var features = options.features;
+			
+			if( features.culture ){
+				culture();				
+			}
+			
+			if(features.backstretch){
+				backstretch();
+			}
+			
+			if(features.landing){				
+				common.ui.landing();
+			}
+			
+			if(features.spmenu){				
+				enableSpmenu();
+			}
+			
+			if(features.lightbox){				
+				enableLightbox();
+			}	
+		} 		
+	});
+	
+	function culture ( locale ){
+		if( !defined( locale ) )
+			locale = "ko-KR";
+		kendo.culture(locale);				
+	}	
+	
 	function landing (element){		
 		if( typeof element === UNDEFINED )
 			element ='.page-loader' ;
@@ -223,7 +292,9 @@
 		 $(element).fadeOut('slow');
 	}
 
-	function backstretch (options){				
+	
+	function backstretch (options){
+		
 		if(!defined($.backstretch)) {
 			return false;
 		}		
@@ -236,6 +307,7 @@
 				model: Photo
 			} 
 		});		
+
 		var template = options.template || kendo.template("/community/view-streams-photo.do?key=#= externalId#")  ;			
 		dataSource.fetch(function(){
 			var photos = this.data();
@@ -247,7 +319,9 @@
 				urls,	
 				{duration: 6000, fade: 750}	
 			);
+			$.backstretch.
 		});
+		
 	}	
 	
 	var DEFAULT_LIGHTBOX_OPTIONS = {
@@ -263,7 +337,29 @@
 			}	
 		};
 	
-	function lightbox (){		
+	function enableSpmenu(){
+		$(document).on("click","[data-toggle='spmenu']", function(e){
+			var $this = $(this);					
+			var target ;
+			if( $this.prop("tagName").toLowerCase() == "a" ){			
+				target  = $this.attr("href");	
+			}else{
+				if($this.data("target")){
+					target = $this.data("target")
+				}
+			}
+			$("body").toggleClass("modal-open");
+			$(target).toggleClass("cbp-spmenu-open");
+		});
+		$(document).on("click","[data-dismiss='spmenu']", function(e){
+			var $this = $(this);
+			var target  = $this.parent();		
+			$("body").toggleClass("modal-open");
+			target.toggleClass("cbp-spmenu-open");
+		});		
+	}
+	
+	function enableLightbox (){		
 		if(!defined($.magnificPopup)) {
 			return false;
 		}		
