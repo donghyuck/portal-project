@@ -129,10 +129,6 @@
 		return renderTo.data("kendoPager");
 	}
 	
-	/**
-	 *  
-	 *  
-	 */
 	var DEFAULT_DATASOURCE_SETTING = {
 			transport:{
 				read:{
@@ -209,6 +205,104 @@
 	function animate (renderTo, options ){		
 		var options = options || {};
 		renderTo.kendoStop().kendoAnimate(options);
+	}
+
+
+	
+	/**
+	 * Setup  
+	 *  
+	 */
+	function landing (element){		
+		if( typeof element === UNDEFINED )
+			element ='.page-loader' ;
+		
+		if( $(element).length == 0 ){
+			$('body').prepend("<div class='page-loader' ></div>");
+		}		
+		 $(element).fadeOut('slow');
+	}
+
+	function backstretch (options){				
+		if(!defined($.backstretch)) {
+			return false;
+		}		
+		options = options || {},
+		dataSource = options.dataSource = datasource( "/community/list-streams-photo.do?output=json" ,{
+			pageSize: 15,
+			schema: {
+				total: "photoCount",
+				data: "photos",
+				model: Photo
+			} 
+		});		
+		var template = options.template || kendo.template("/community/view-streams-photo.do?key=#= externalId#")  ;			
+		dataSource.fetch(function(){
+			var photos = this.data();
+			var urls = [];
+			each(photos, function(idx, photo){
+				urls.push(template(photo));
+			});					
+			$.backstretch(
+				urls,	
+				{duration: 6000, fade: 750}	
+			);
+		});
+	}	
+	
+	var DEFAULT_LIGHTBOX_OPTIONS = {
+			items:[] ,	
+			type:'image',	
+			mainClass: 	'mfp-no-margins mfp-with-zoom',
+			image: {
+				verticalFit: 	true
+			},
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true
+			}	
+		};
+	
+	function lightbox (){		
+		if(!defined($.magnificPopup)) {
+			return false;
+		}		
+		$(document).on("click","[data-ride='lightbox']", function(e){					
+			var $this = $(this), config = {};				
+			if($this.data("plugin-options")) {
+				config = extend({}, DEFAULT_LIGHTBOX_OPTIONS, opts, $this.data("plugin-options"));	
+			}else{
+				config = DEFAULT_LIGHTBOX_OPTIONS;
+			}		
+			
+			if( $this.data("selector") ){
+				config.items = [];
+				$.each( $($this.data("selector") ) , function( index , value ){
+					var $that = $(value);
+					if( $that.data("largesrc") ){
+						config.items.push({
+							src : $that.data("largesrc")
+						});						
+					}
+				});
+			}else{			
+				if( $this.prop("tagName").toLowerCase() == "img" ){				
+					config.items = {
+						src : $this.attr("src")
+					}				
+				}else{
+					if( $this.children("img").length > 0  ){
+						config.items = [];
+						$.each( $this.children("img"), function( index,  item){
+							config.items.push({
+								src : $(item).attr("src")
+							});
+						});	
+					}
+				}
+			}
+			$.magnificPopup.open(config);
+		} );	
 	}
 	
 	extend(ui , {	
