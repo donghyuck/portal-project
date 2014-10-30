@@ -98,27 +98,6 @@
 		return (typeof x != UNDEFINED);
 	};
 	
-	function status ( selector, status ){
-		var element = selector;
-		if(defined(status)){
-			if( status === 'disable') {
-				if( !element.is(":disabled") ){
-					element.prop("disabled", true);
-					if( element.is("[data-toggle='button']") ){
-						element.toggleClass("active");
-					}
-				}
-			}else if (status === 'enable' ){
-				if( element.is(":disabled") ){
-					element.prop("disabled", false);
-					if( element.is("[data-toggle='button']") ){
-						element.toggleClass("active");
-					}
-				}				
-			}
-		}
-	}
-	
 	function slimScroll( renderTo , options ){
 		options = options || {};
 		renderTo.slimScroll( options );
@@ -197,23 +176,39 @@
 	function scrollTop(selector){
 		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
 	}
+
+	function status ( selector, status ){
+		var element = selector;
+		if(defined(status)){
+			if( status === 'disable') {
+				if( !element.is(":disabled") ){
+					element.prop("disabled", true);
+					if( element.is("[data-toggle='button']") ){
+						element.toggleClass("active");
+					}
+				}
+			}else if (status === 'enable' ){
+				if( element.is(":disabled") ){
+					element.prop("disabled", false);
+					if( element.is("[data-toggle='button']") ){
+						element.toggleClass("active");
+					}
+				}				
+			}
+		}
+	}
 	
 	function enable (element){
-		if( element.is(":disabled") ){
-			element.prop("disabled", false);
-			if( element.is("[data-toggle='button']") ){
-				element.toggleClass("active");
-			}
-		}	
+		status(element, "enable");
 	}
 	
 	function disable (element){
-		if( !element.is(":disabled") ){
-			element.prop("disabled", true);
-			if( element.is("[data-toggle='button']") ){
-				element.toggleClass("active");
-			}
-		}	
+		status(element, "disable");
+	}
+	
+	function animate (renderTo, options ){		
+		var options = options || {};
+		renderTo.kendoStop().kendoAnimate(options);
 	}
 	
 	extend(ui , {	
@@ -228,7 +223,8 @@
 		slimScroll : common.ui.slimScroll || slimScroll,
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
-		disable: common.ui.disable || disable
+		disable: common.ui.disable || disable,
+		animate : common.ui.animate || animate
 	});
 	
 })(jQuery);
