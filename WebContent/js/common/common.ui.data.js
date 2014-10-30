@@ -174,8 +174,7 @@
 		})		
 		
 	
-	var ajax = common.ui.ajax;
-	
+	var ajax = common.ui.ajax;	
 	function user (options){	
 		options = options || {};
 		ajax( options.url || '/accounts/get-user.do?output=json', {
@@ -191,5 +190,9 @@
 					options.success (user);
 			} 
 		});		
-	}	
+	}
+	
+	extend( common.ui.data, {
+		user : user
+	} )
 })(jQuery);
