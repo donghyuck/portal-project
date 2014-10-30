@@ -2467,7 +2467,7 @@
 		REFRESHICON = ".k-window-titlebar .k-i-refresh",
 		MINIMIZE_MAXIMIZE = ".k-window-actions .k-i-minimize,.k-window-actions .k-i-maximize",
 		// error handler
-		handleKendoAjaxError = ccommon.ui.handleAjaxError;	
+		handleKendoAjaxError = common.ui.handleAjaxError;	
 	
 	function defined(x) {
 		return (typeof x != UNDEFINED);
