@@ -220,7 +220,6 @@
 			url : options.url || "/connect/signin.json",
 			data: options.data || {},
 			success : function(response){
-				/**
 				if( typeof response.error === UNDEFINED ){ 		
 					if( isFunction( options.success ) ){						
 						options.success(response) ;
@@ -229,8 +228,7 @@
 					if( isFunction( options.fail ) ){
 						options.fail(response) ;
 					}
-				}*/
-				alert(kendo.stringify(response));
+				}
 			},
 			complete : function () {
 				if( isFunction( options.complete ) ){
@@ -249,7 +247,6 @@
 			url : options.url || "/connect/list.json",
 			data: options.data || {},
 			success : function(response){
-				alert(ddfas);
 				if( typeof response.error === UNDEFINED ){ 		
 					if( isFunction( options.success ) ){						
 						options.success(response) ;
