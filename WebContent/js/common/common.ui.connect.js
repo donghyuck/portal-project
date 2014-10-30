@@ -6,6 +6,7 @@
 	var ui = common.ui, 	
 	handleAjaxError = ui.handleAjaxError,
 	defined = ui.defined,
+	ajax = ui.ajax,
 	extend = $.extend,	
 	Widget = kendo.ui.Widget, 
 	DataSource = kendo.data.DataSource,
@@ -214,7 +215,26 @@
 	} 
 		
 	ui.connect.signin = function (options){
+		
 		options = options || {};		
+		if(!defined(options.success)){
+			options.success = function(response){
+				if( typeof response.error === UNDEFINED ){ 		
+					if( isFunction( options.success ) ){						
+						options.success(response) ;
+					}
+				} else {									
+					if( isFunction( options.fail ) ){
+						options.fail(response) ;
+					}
+				}
+			}
+		}}
+		ajax(
+			options.url || "/connect/signin.json",	
+			options
+		);
+		/*
 		$.ajax({
 			type : POST,
 			url : options.url || "/connect/signin.json",
@@ -237,7 +257,8 @@
 			},
 			error:options.error || handleAjaxError ,
 			dataType : JSON
-		});				
+		});		
+		*/		
 	}
 	
 	ui.connect.status = function( options ){
