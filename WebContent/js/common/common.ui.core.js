@@ -223,7 +223,7 @@
 			spmenu: false
 		},
 		jobs: []
-	},
+	};
 	
 	function setup (options) {
 		options = options || {};
