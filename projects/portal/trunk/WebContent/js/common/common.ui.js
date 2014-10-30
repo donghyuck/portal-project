@@ -678,7 +678,7 @@
 	LOGIN_URL = "/login",
 	CALLBACK_URL_TEMPLATE = kendo.template("#if ( typeof( externalLoginHost ) == 'string'  ) { #http://#= externalLoginHost ## } #/community/connect-socialnetwork.do?media=#= media #&domainName=#= domain #"), 
 	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
-	handleKendoAjaxError = common.api.handleKendoAjaxError;	
+	handleKendoAjaxError = common.ui.handleAjaxError;	
 	common.ui.ExtAccounts = Widget.extend({
 		init : function(element, options) {
 			var that = this;
@@ -2467,7 +2467,7 @@
 		REFRESHICON = ".k-window-titlebar .k-i-refresh",
 		MINIMIZE_MAXIMIZE = ".k-window-actions .k-i-minimize,.k-window-actions .k-i-maximize",
 		// error handler
-		handleKendoAjaxError = common.api.handleKendoAjaxError;	
+		handleKendoAjaxError = ccommon.ui.handleAjaxError;	
 	
 	function defined(x) {
 		return (typeof x != UNDEFINED);
