@@ -594,8 +594,9 @@
 			var that = this,
 			wrapper = that.wrapper,
 			options = that.options,
-			showOptions = options.animation.open,			
-			if (!wrapper.is(VISIBLE) ){
+			showOptions = options.animation.open;
+			
+			if( !wrapper.is(VISIBLE) ){
 				that._closing = false;
 				 options.visible = true;				
 				 wrapper.kendoStop().kendoAnimate({
