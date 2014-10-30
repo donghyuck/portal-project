@@ -609,12 +609,7 @@
 					effects: hideOptions.effects || showOptions.effects,
 					reverse: hideOptions.reverse === true,
 					duration: hideOptions.duration,
-					complete : function(){
-						if(options.deactivateAfterClose){
-							complete: proxy(that._deactivate, that)
-						}
-					}
-					//complete: proxy(this._deactivate, this)
+					complete : options.deactivateAfterClose ? proxy(that._deactivate, that) : function(){ }
 				 });
 			}			
 		},
