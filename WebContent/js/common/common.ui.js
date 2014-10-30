@@ -684,7 +684,7 @@
 			var that = this;
 			Widget.fn.init.call(that, element, options);
 			options = that.options;
-			that.token = new User();		
+			that.token = new common.ui.data.User();		
 			that.authenticate();
 		},
 		options : {
@@ -818,7 +818,7 @@
 				type : 'POST',
 				url : that.options.url || AUTHENTICATE_URL,
 				success : function(response) {
-					var token = new User($.extend( response.currentUser, { roles : response.roles }));
+					var token = new common.ui.data.User($.extend( response.currentUser, { roles : response.roles }));
 					token.set('isSystem', false);
 					if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
 						token.set('isSystem', true);					
@@ -887,7 +887,7 @@
 						type : 'POST',
 						url : that.options.ajax.url,
 						success : function(response) {
-							user = new User($.extend(response.currentUser, {
+							user = new common.ui.data.User($.extend(response.currentUser, {
 								roles : response.roles
 							}));
 							user.set('isSystem', false);
@@ -990,7 +990,7 @@
 					that.element.off(NS);
 					open = false;
 				},
-				token : new User({})
+				token : new common.ui.data.User({})
 			});
 
 	$.fn.extend({
