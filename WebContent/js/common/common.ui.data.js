@@ -144,7 +144,7 @@
 	    id: "groupId", // the identifier of the model
 	    fields: {
 	    	companyId: { type: "number", defaultValue: 1 },
-	    	company: Company,
+	    	company: common.ui.data.Company,
 	        groupId: { type: "number", editable: false, defaultValue: -1  },
 	        name: { type: "string", editable: true, validation: { required: true }},
 	        description: { type: "string", editable: true },
