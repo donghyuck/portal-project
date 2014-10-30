@@ -3,7 +3,10 @@
  * dependency : common.ui.core, common.ui.kendo
  */
 ;(function($, undefined) {
-	var common.ui;
+	var ui = common.ui;
+	ui.community = common.ui.community || {};
+	
+	
 	
 	
 	
