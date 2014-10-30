@@ -34,6 +34,7 @@
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
 			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.models.js',
+			'${request.contextPath}/js/common/common.api.js',
 			'${request.contextPath}/js/common/common.ui.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],			
