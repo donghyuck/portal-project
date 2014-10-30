@@ -173,6 +173,5 @@
 		        creationDate: { type: "date" }
 		    }
 		})		
-		
-	});	
+
 })(jQuery);
