@@ -3,9 +3,8 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
-	var ui = common.ui,
-	extend = $.extend;
-	extend( ui.data, {
+	var extend = $.extend;
+	extend( common.ui.data, {
 		
 		Image : kendo.data.Model.define( {
 		    id: "imageId", // the identifier of the model
