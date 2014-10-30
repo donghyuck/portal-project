@@ -213,8 +213,6 @@
 		var options = options || {};
 		renderTo.kendoStop().kendoAnimate(options);
 	}
-
-
 	
 	/**
 	 * Setup  
