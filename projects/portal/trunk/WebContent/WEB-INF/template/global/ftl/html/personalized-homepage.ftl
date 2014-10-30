@@ -81,6 +81,7 @@
 					}
 				});
 				createAnnounceSection();
+				common.ui.animate( $("#main-content .panel.bg-slivergray ").first(), {	effects: "slide:down fade:in", show: true, duration: 1000 	} );
 				// END SCRIPT 				
 			}
 		}]);	
@@ -172,6 +173,7 @@
 			);
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
 			common.ui.slimScroll(listRenderTo, { height: 320 });
+			
 		}
 		-->
 		</script>		
@@ -248,7 +250,7 @@
 												
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
-						<div class="panel panel-default rounded no-margin-b bg-slivergray">
+						<div class="panel panel-default rounded no-margin-b bg-slivergray" style="display:none;">
 							<div class="panel-body">
 								<div class="row" >
 									<div class="col-sm-6">
