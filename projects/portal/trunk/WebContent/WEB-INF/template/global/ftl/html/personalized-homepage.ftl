@@ -104,6 +104,8 @@
 						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
 					}
 				});
+			}else{
+				renderTo.data("kendoPanel").show();
 			}
 		}
 		<!-- ============================== -->
