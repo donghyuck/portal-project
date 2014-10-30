@@ -173,6 +173,7 @@
 			);
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
 			common.ui.slimScroll(listRenderTo, { height: 320 });
+			common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );
 			
 		}
 		-->
@@ -266,7 +267,7 @@
 												</label>
 											</div>
 										</div>			
-										<div id="my-announce-section">	
+										<div id="my-announce-section" style="display:none;">	
 											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
