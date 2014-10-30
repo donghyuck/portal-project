@@ -277,7 +277,7 @@
 			}
 			
 			if(features.landing){				
-				common.ui.landing();
+				landing();
 			}
 			
 			if(features.spmenu){				
