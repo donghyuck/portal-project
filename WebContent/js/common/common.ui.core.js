@@ -225,7 +225,7 @@
 		jobs: []
 	},
 	
-	function setup (options) {
+	function setupPage (options) {
 		options = options || {};
 		return new common.ui.PageSetup(options);		
 	}
