@@ -298,11 +298,11 @@
 	}
 
 	
-	function backstretch (options){
-		
+	function backstretch (options){		
 		if(!defined($.backstretch)) {
-			return false;
+			return;
 		}		
+		
 		options = options || {},
 		dataSource = options.dataSource = datasource( "/community/list-streams-photo.do?output=json" ,{
 			pageSize: 15,
@@ -324,7 +324,6 @@
 				urls,	
 				{duration: 6000, fade: 750}	
 			);
-			$.backstretch.
 		});
 		
 	}	
