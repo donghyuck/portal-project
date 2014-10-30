@@ -990,7 +990,7 @@
 					that.element.off(NS);
 					open = false;
 				},
-				token : new common.ui.data.User({})
+				token : new common.ui.data.User()
 			});
 
 	$.fn.extend({
