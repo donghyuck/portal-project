@@ -1018,7 +1018,6 @@
 				content = that.options.template(that.token);
 			}				
 			element.html(content);
-			alert( kendo.stringify(that.token) );
 			kendo.bind(element, that.token);
 			that.trigger(SHOWN);
 		}
