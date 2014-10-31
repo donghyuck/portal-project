@@ -19,29 +19,29 @@
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',			
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 			
 			'${request.contextPath}/js/common/common.ui.core.js',		
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'],
+			'${request.contextPath}/js/common/common.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js'],
 			complete: function() {
 						
 				common.ui.setup({
 					features:{
-						backstretch : false
+						wallpaper : true,
 					},
-					worklist:jobs
+					jobs:jobs
 				});	
 				
 				// ACCOUNTS LOAD	
-				var currentUser = new User();			
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
+				var currentUser = new common.ui.data.User();			
+				common.ui.accounts($("#account-navbar"), {
+					content : $("#account-navbar-template").html(),
+					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-					}				
-				});			
+						if( !currentUser.anonymous ){
+							
+						}
+					}
+				});	
 				<#if !action.user.anonymous ></#if>	
 			}
 		}]);	
