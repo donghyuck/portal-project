@@ -111,7 +111,7 @@
 		    },
 		    photoUrl : function (){
 		    	if( this.get("anonymous") )
-		    		return =  "/images/common/anonymous.png";		    	
+		    		return "/images/common/anonymous.png";		    	
 		    	return '/download/profile/' +   this.get("username") + "?width=150&height=150";	    	
 		    },    
 		    hasRole : function ( role ) {
