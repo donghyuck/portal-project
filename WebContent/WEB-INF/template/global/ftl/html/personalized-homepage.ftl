@@ -52,10 +52,7 @@
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
 				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
+					template : kendo.template($("#account-navbart-template").html()),
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					},				
