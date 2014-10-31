@@ -186,16 +186,25 @@
 		if(defined(status)){
 			if( status === 'disable') {
 				if( !element.is(":disabled") ){
-					element.prop("disabled", true);
-					if( element.is("[data-toggle='button']") ){
-						element.toggleClass("active");
+					if( element.is("label") )
+					{
+						element.toggleClass("disabled", true);						
+					}else{
+						element.prop("disabled", true);
+						if( element.is("[data-toggle='button']") ){
+							element.toggleClass("active");
+						}
 					}
 				}
 			}else if (status === 'enable' ){
 				if( element.is(":disabled") ){
-					element.prop("disabled", false);
-					if( element.is("[data-toggle='button']") ){
-						element.toggleClass("active");
+					if( element.is("label") ){						
+						element.toggleClass("disabled", true);						
+					}else{
+						element.prop("disabled", false);
+						if( element.is("[data-toggle='button']") ){
+							element.toggleClass("active");
+						}					
 					}
 				}				
 			}
