@@ -930,6 +930,7 @@
 	placeholderSupported = kendo.support.placeholder, 
 	browser = kendo.support.browser, 
 	isFunction = kendo.isFunction, 
+	template = kendo.template,
 	UNDEFINED = 'undefined',	
 	AUTHENTICATE = "authenticate",
 	SHOWN = "shown", 
@@ -941,7 +942,12 @@
 	guid = common.guid,
 	ajax = ui.ajax,
 	handleAjaxError = ui.handleAjaxError,
-	defined = ui.defined;
+	defined = ui.defined,
+	templates = {
+		
+		
+		
+	};
 	
 	var Accounts = Widget.extend({
 		init : function(element, options) {
@@ -949,6 +955,7 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;
 			that.token = new common.ui.data.User();		
+			that.render();
 			that.authenticate();
 		},
 		options : {
@@ -973,6 +980,10 @@
 						that.refresh();
 				}
 			});		
+		},
+		render : function(){
+			
+			
 		},
 		refresh : function( ){
 			var that = this;	
