@@ -971,13 +971,17 @@
 			content = options.content;
 			id = element.attr("id");
 			
-			if( options.render ){
+			alert( options.render );
+			
+			if( options.render ){				
+				if(that.options.content){
+					content = that.options.content;
+				}				
 				that.refresh();
 				if(options.allowToSignIn && element.is(":hidden")){
 					element.show();					
 				}
 			}
-			
 			that.authenticate();			
 			kendo.notify(that);
 		},
@@ -1010,16 +1014,10 @@
 		refresh : function( ){
 			var that = this ,
 			element = that.element,
-			content ;			
-			
-			if(that.options.content){
-				content = that.options.content;
-			}
-			
+			content = that.content ;				
 			if( defined(that.options.template) ){
 				content = that.options.template(that.token);
-			}	
-			
+			}				
 			element.html(that.content);
 			kendo.bind(element, that.token);
 			that.trigger(SHOWN);
