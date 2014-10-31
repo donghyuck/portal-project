@@ -110,10 +110,9 @@
 		        roles: {}
 		    },
 		    photoUrl : function (){
-		    	var username = this.get("username");
 		    	if( this.get("anonymous") )
-		    		username =  "anonymous";		    	
-		    	return '/download/profile/' +  username + "?width=150&height=150";	    	
+		    		return =  "/images/common/anonymous.png";		    	
+		    	return '/download/profile/' +   this.get("username") + "?width=150&height=150";	    	
 		    },    
 		    hasRole : function ( role ) {
 		    	if( typeof( this.roles ) != "undefined" && $.inArray( role, this.roles ) >= 0 )
