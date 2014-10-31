@@ -51,7 +51,7 @@
 				});				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-				$("#account-navbar").extAccounts({
+				common.ui.accounts($("#account-navbar"), {
 					template : kendo.template($("#account-navbar-template").html()),
 					authenticate : function( e ){
 						e.token.copy(currentUser);
@@ -63,6 +63,7 @@
 						}
 					}
 				});					
+				
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
 				// personalized grid setting				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
