@@ -58,10 +58,9 @@
 					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-						if( e.token.anonymous ){
+						if( currentUser ){
 							common.ui.disable( $("#announce-selector .btn").last() );
 						}
-						alert( kendo.stringify(currentUser ) );
 					}
 				});					
 				
