@@ -26,20 +26,15 @@
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
 			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
-			
-		/*	'css!${request.contextPath}/js/codrops/codrops.grid.js',*/
-				
+			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 					
 			'${request.contextPath}/js/pdfobject/pdfobject.js',			
 			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.ui.data.js',
 			'${request.contextPath}/js/common/common.ui.community.js',
-			/*
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.ui.js',*/
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],			
 			complete: function() {		
+				
 				common.ui.setup({
 					features:{
 						wallpaper : true,
@@ -51,19 +46,18 @@
 					},
 					jobs:jobs
 				});				
-				// ACCOUNTS LOAD	
+				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				common.ui.accounts($("#account-navbar"), {
-					content : $("#account-navbar-template").html(),
+					template : kendo.template($("#account-navbar-template").html()),
 					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-						if( !currentUser.anonymous ){
-							common.ui.enable( $("#announce-selector .btn").last() );
+						if( !currentUser.anonymous ){		
+							common.ui.enable( $("#announce-selector .btn").last() );					
 						}
 					}
 				});					
-				
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
 				// personalized grid setting				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
