@@ -52,7 +52,7 @@
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
 				common.ui.accounts($("#account-navbar"), {
-					template : kendo.template($("#account-navbar-template").html()),
+					content : $("#account-navbar-template").html(),
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					},				
