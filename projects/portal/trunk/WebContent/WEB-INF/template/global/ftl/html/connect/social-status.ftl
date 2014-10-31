@@ -33,6 +33,7 @@
 				var currentUser = new common.ui.data.User();			
 				common.ui.accounts(
 					$("#account-navbar"), {
+					render : false,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					}	
