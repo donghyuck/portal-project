@@ -1014,6 +1014,14 @@
 				}
 			});		
 		},
+		_fireExpendEvent : function (){
+			var that = this;
+			if($("body").hasClass("aside-menu-in") ){
+				that.trigger(EXPAND);
+			}else{
+				that.trigger(COLLAPSE);
+			}
+		},
 		refresh : function( ){			
 			var that = this ,
 			options = that.options,
@@ -1034,14 +1042,11 @@
 					$( target + ' button.btn-close:first').click(function(e){
 						
 						$("body").toggleClass("aside-menu-in");
-						
-						//that.trigger(EXPAND);
+						that._fireExpendEvent();
 					});						
 					aside.click(function(e){
 						$("body").toggleClass("aside-menu-in");
-						
-						//that.trigger(EXPAND);
-						
+						that._fireExpendEvent();
 						return false;							
 					});							
 				}
