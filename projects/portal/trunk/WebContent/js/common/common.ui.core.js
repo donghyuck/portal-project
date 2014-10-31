@@ -188,7 +188,7 @@
 				if( !element.is(":disabled") ){
 					if( element.is("label") )
 					{
-						element.toggleClass("disabled", true);						
+						element.toggleClass("disabled");						
 					}else{
 						element.prop("disabled", true);
 						if( element.is("[data-toggle='button']") ){
@@ -199,7 +199,7 @@
 			}else if (status === 'enable' ){
 				if( element.is(":disabled") ){
 					if( element.is("label") ){						
-						element.toggleClass("disabled", true);						
+						element.toggleClass("disabled");						
 					}else{
 						element.prop("disabled", false);
 						if( element.is("[data-toggle='button']") ){
