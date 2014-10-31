@@ -59,7 +59,7 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 						if( currentUser ){
-							common.ui.disable( $("#announce-selector .btn").last() );
+							common.ui.enable( $("#announce-selector .btn").last() );
 						}
 					}
 				});					
@@ -253,7 +253,7 @@
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30">사이트
 												</label>
-												<label class="btn btn-info btn-sm rounded-right">
+												<label class="btn btn-info btn-sm rounded-right disabled">
 													<input type="radio" name="notice-target" value="1">회사
 												</label>
 											</div>
