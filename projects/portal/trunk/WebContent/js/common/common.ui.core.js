@@ -955,7 +955,8 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;
 			that.token = new common.ui.data.User();		
-			that.refresh();
+			
+			
 			that.authenticate();
 		},
 		options : {
@@ -982,7 +983,10 @@
 				}
 			});		
 		},
-		render : function(){
+		show : function(){
+				
+		},
+		refresh : function( ){
 			var that = this;	
 			var renderTo = $(that.element);			
 			if( defined(that.options.template) ){
@@ -990,9 +994,6 @@
 			}				
 			renderTo.html(that.content);
 			kendo.bind(renderTo, that.token);
-		},
-		refresh : function( ){
-			that.render();
 			that.trigger(SHOWN);
 		}
 	});
