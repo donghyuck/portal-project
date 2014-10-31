@@ -1022,7 +1022,7 @@
 			
 			element.html(content);
 			
-			if( optons.expand ){
+			if( options.expand ){
 				var aside= element.find('.navbar-toggle-aside-menu');	
 				if( aside.length > 0 ){	
 					var target = aside.attr("href");	
