@@ -53,14 +53,9 @@
 				var currentUser = new common.ui.data.User();			
 				common.ui.accounts($("#account-navbar"), {
 					content : $("#account-navbar-template").html(),
+					allowToSignIn : ${ acton.user.anonymous ? "false" : "true"  },
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-					},				
-					shown : function(e){
-						if( !currentUser.anonymous ){
-							common.ui.enable( $('button[data-toggle="spmenu"]')	);
-							common.ui.enable( $('button[data-action="show-gallery-section"]') );
-						}
 					}
 				});					
 				
