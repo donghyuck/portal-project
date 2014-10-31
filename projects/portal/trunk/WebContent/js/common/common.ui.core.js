@@ -968,7 +968,7 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;			
 			element = that.element;
-			content = options.content;
+			content = that.content = options.content;
 			id = element.attr("id");
 						
 			if( options.render ){				
