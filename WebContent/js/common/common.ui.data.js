@@ -89,9 +89,9 @@
 	common.ui.data.User = kendo.data.Model.define( {
 		    id: "userId", // the identifier of the model
 		    fields: {
-		    	companyId: {  type: "number", defaultValue: 1 },
+		    	companyId: {  type: "number", defaultValue: 0 },
 		    	company: common.ui.data.Company,
-		    	userId: { type: "number", editable: true, defaultValue: -1  },
+		    	userId: { type: "number", editable: true, defaultValue: 0  },
 		        username: { type: "string", editable: true, defaultValue: "anonymous" },
 		        name: { type: "string", editable: true },
 		        email: { type: "string" , editable: true },
