@@ -58,7 +58,7 @@
 					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-						if( currentUser ){
+						if( !currentUser.anonymous ){
 							common.ui.enable( $("#announce-selector .btn").last() );
 						}
 					}
