@@ -960,7 +960,7 @@
 		},
 		options : {
 			name : "ExtAccounts",
-			allowLoginPopup,
+			allowLoginPopup : false,
 			content : "",
 			messages : {
 				title : "로그인",
