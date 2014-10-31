@@ -992,7 +992,7 @@
 			kendo.bind(renderTo, that.token);
 		},
 		refresh : function( ){
-			render();
+			that.render();
 			that.trigger(SHOWN);
 		}
 	});
