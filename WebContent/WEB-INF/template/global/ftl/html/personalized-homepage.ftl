@@ -113,7 +113,7 @@
 		<!-- Announce										   -->
 		<!-- ============================== -->
 		function createAnnounceSection(){
-			var announce = new Announce ();
+			var announce = new common.ui.data.Announce ();
 			var renderTo = $("#my-announce-section");
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");
@@ -143,7 +143,7 @@
 							},
 							schema: {
 								data : "targetAnnounces",
-								model : Announce,
+								model : common.ui.data.Announce,
 								total : "totalAnnounceCount"
 							}
 						}
