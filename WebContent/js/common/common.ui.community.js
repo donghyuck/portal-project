@@ -51,6 +51,7 @@
 
 	    }
 	});
+
 	
 	common.ui.data.Timeline =  kendo.data.Model.define({
 		id : "timelineId",
