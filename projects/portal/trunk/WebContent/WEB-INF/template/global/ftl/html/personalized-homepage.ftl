@@ -54,7 +54,7 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 						if( !currentUser.anonymous ){		
-							common.ui.enable( $("#announce-selector .btn").last() );					
+							$("#announce-selector label.btn").last().removeClass("disabled"); 
 						}
 					}
 				});					
