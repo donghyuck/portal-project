@@ -59,7 +59,6 @@
 					</#if>
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-
 					},				
 					shown : function(e){
 						if( !currentUser.anonymous ){
@@ -67,10 +66,8 @@
 							common.ui.enable( $('button[data-action="show-gallery-section"]') );
 						}
 					}
-				});	
-				
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");				
-				
+				});					
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
 				// personalized grid setting				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
 				common.ui.buttonGroup($("#personalized-buttons"), {
