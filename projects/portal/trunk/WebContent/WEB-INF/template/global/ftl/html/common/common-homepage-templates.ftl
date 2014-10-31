@@ -145,9 +145,10 @@
 <!-- ============================== -->
 <script id="account-navbar-template" type="text/x-kendo-template">
 	<li class="account">
-		<a href="#my-aside-menu" class="btn btn-link btn-account dropdown-toggle navbar-toggle-aside-menu">
-			<img src="${request.contextPath}/images/common/anonymous.png" data-bind="attr: { src: photoUrl, alt:name }"  class="rounded-top" height="34">
+		<a href="\\#my-aside-menu" class="btn btn-link btn-account dropdown-toggle navbar-toggle-aside-menu">
+			<img src="#:photoUrl#" class="rounded-top" height="34">
 		</a>
+		
 	</li>	
 </script>
 
@@ -175,10 +176,6 @@
 				<li><a href="\\#"><i class="fa fa-user"></i>#:name#</a></li>
 				<li><a href="\\#"><i class="fa fa-envelope"></i>#:email #</a></li>
 				<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
-				<!--
-				<li><a href="\\#"><i class="fa fa-phone"></i></a></li>
-				<li><a href="\\#"><i class="fa fa-globe"></i></a></li>			
-				-->
 			</ul>		
 			<div class="btn-group btn-group-sm">
 				<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
