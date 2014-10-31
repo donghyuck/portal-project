@@ -84,18 +84,33 @@
 		    		target.set("properties", this.get("properties"));
 		    }    
 		});
-
-
+	
+	var ANONYMOUS_PHOTO_URL = "/images/common/anonymous.png" ;	
+	function photoUrl ( user , width , height ){		
+		if( !common.ui.defined( user ))
+		{
+			return ANONYMOUS_PHOTO_URL 
+		}
+		if( typeof user.username === 'string'){
+			var _photoUrl = "/download/profile/" + user.username;	
+			if( typeof width === "number" && typeof height === "number" ){
+				_photoUrl = _photoUrl + "?width=" + width + "&height=" + height ;
+			}
+			return _photoUrl ;
+		}
+		return ANONYMOUS_PHOTO_URL ;
+	}
+	
 	common.ui.data.User = kendo.data.Model.define( {
 		    id: "userId", // the identifier of the model
 		    fields: {
 		    	companyId: {  type: "number", defaultValue: 0 },
 		    	company: common.ui.data.Company,
-		    	userId: { type: "number", editable: true, defaultValue: 0  },
-		        username: { type: "string", editable: true, defaultValue: "anonymous" },
-		        name: { type: "string", editable: true },
-		        email: { type: "string" , editable: true },
-		        password: { type: "string" , editable: true },
+		    	userId: { type: "number", editable: false, defaultValue: 0  },
+		        username: { type: "string", defaultValue: "anonymous" },
+		        name: { type: "string" },
+		        email: { type: "string" },
+		        password: { type: "string" },
 		        creationDate: { type: "date" },
 		        modifiedDate: { type: "date" },
 		        lastLoggedIn: { type: "date" },
@@ -105,15 +120,11 @@
 		        emailVisible: {type: "boolean" },
 		        formattedLastLoggedIn : { type: "string" },
 		        formattedLastProfileUpdate : { type: "string" },
-		        isSystem: { type:"boolean", defaultVlaue: false },
-		        anonymous : { type:"boolean", defaultVlaue: true },
+		        isSystem: { type:"boolean", defaultValue: false },
+		        anonymous : { type:"boolean",  defaultValue: true},
+		        photoUrl : { type: "string" , defaultValue: "/images/common/anonymous.png" },
 		        roles: {}
 		    },
-		    photoUrl : function (){
-		    	if( this.get("anonymous") )
-		    		return "/images/common/anonymous.png";		    	
-		    	return '/download/profile/' +   this.get("username") + "?width=150&height=150";	    	
-		    },    
 		    hasRole : function ( role ) {
 		    	if( typeof( this.roles ) != "undefined" && $.inArray( role, this.roles ) >= 0 )
 					return true
@@ -122,7 +133,8 @@
 		    },
 		    copy : function ( target ){
 		    	target.userId = this.get("userId");
-		    	target.set("username", this.get("username"));
+		    	target.set("username", this.get("username"));		    	
+		    	target.set("photoUrl", photoUrl(this, 150, 150));	
 		    	target.set("name", this.get("name"));
 		    	target.set("email", this.get("email"));
 		    	target.set("creationDate", this.get("creationDate"));
@@ -133,7 +145,7 @@
 		    	target.set("emailVisible", this.get("emailVisible"));
 		    	target.set("anonymous", this.get("anonymous"));
 		    	target.set("company", this.get("company"));		
-		    	target.set("isSystem", this.get("isSystem"));
+		    	target.set("isSystem", this.get("isSystem"));	
 		    	if( typeof this.get("roles") === 'object' )
 		    		target.set("roles", this.get("roles") );	
 		    	if( typeof this.get("properties") === 'object' )
