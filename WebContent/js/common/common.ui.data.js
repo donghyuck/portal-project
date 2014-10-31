@@ -121,6 +121,7 @@
 					return false;    	
 		    },
 		    copy : function ( target ){
+		    	alert( kendoui.stringify( target ) );
 		    	target.userId = this.get("userId");
 		    	target.set("username", this.get("username"));
 		    	target.set("name", this.get("name"));
