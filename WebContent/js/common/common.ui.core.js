@@ -977,13 +977,17 @@
 							token.set('isSystem', true);					
 						token.copy(that.token);					
 						that.trigger(AUTHENTICATE,{ token : that.token });		
-						that.refresh();
+						//that.refresh();
 				}
 			});		
 		},
 		render : function(){
-			
-			
+			var that = this;	
+			var renderTo = $(that.element);			
+			if( that.options.template){
+				renderTo.html(that.options.template(that.token));
+				kendo.bind(renderTo, that.token);
+			}				
 		},
 		refresh : function( ){
 			var that = this;	
