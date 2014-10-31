@@ -955,11 +955,13 @@
 			Widget.fn.init.call(that, element, options);
 			options = that.options;
 			that.token = new common.ui.data.User();		
-			that.render();
+			that.refresh();
 			that.authenticate();
 		},
 		options : {
 			name : "ExtAccounts",
+			allowLoginPopup,
+			content : "",
 			messages : {
 				title : "로그인",
 				loginFail : "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다.",
@@ -977,26 +979,21 @@
 							token.set('isSystem', true);					
 						token.copy(that.token);					
 						that.trigger(AUTHENTICATE,{ token : that.token });		
-						//that.refresh();
 				}
 			});		
 		},
 		render : function(){
 			var that = this;	
 			var renderTo = $(that.element);			
-			if( that.options.template){
-				renderTo.html(that.options.template(that.token));
-				kendo.bind(renderTo, that.token);
+			if( defined(that.options.template) ){
+				that.content = that.options.template(that.token);
 			}				
+			renderTo.html(that.content);
+			kendo.bind(renderTo, that.token);
 		},
 		refresh : function( ){
-			var that = this;	
-			//var renderTo = $(that.element);			
-			
-			alert( that.element.html() );
-			if( that.options.template){
-				
-			}			
+			render();
+			that.trigger(SHOWN);
 		}
 	});
 	
