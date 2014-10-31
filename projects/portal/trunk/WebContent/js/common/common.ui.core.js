@@ -934,6 +934,7 @@
 	kendo = window.kendo, 
 	Widget = kendo.ui.Widget, 
 	isPlainObject = $.isPlainObject, 
+	ObservableObject = kendo.data.ObservableObject,
 	proxy = $.proxy, 
 	extend = $.extend, 
 	placeholderSupported = kendo.support.placeholder, 
@@ -943,6 +944,8 @@
 	UNDEFINED = 'undefined',	
 	AUTHENTICATE = "authenticate",
 	SHOWN = "shown", 
+	EXPAND = "expand",
+	COLLAPSE = "collapse",
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 	
 	LOGIN_URL = "/login",
@@ -963,24 +966,21 @@
 			var that = this,
 			token = that.token = new common.ui.data.User(),
 			content,
-			id;
-			
+			id;			
 			Widget.fn.init.call(that, element, options);
 			options = that.options;			
-			element = that.element;
-			content = that.content = options.content;
-			id = element.attr("id");
-						
-			if( options.render ){				
-				if(that.options.content){
-					content = that.options.content;
-				}				
-				that.refresh();
+			element = that.element;			
+			content = that.content = options.content;			
+			id = element.attr("id");			
+			if( options.render ){
+				if( defined(that.options.template) ){
+					content = that.options.template(token);
+				}
 				if(options.allowToSignIn && element.is(":hidden")){
 					element.show();					
 				}
 			}
-			that.authenticate();			
+			that.authenticate();
 			kendo.notify(that);
 		},
 		options : {
@@ -993,9 +993,10 @@
 				title : "로그인",
 				loginFail : "입력한 사용자 이름 또는 비밀번호가 잘못되었습니다.",
 				loginError : "잘못된 접근입니다."			
-			}
+			},
+			expand: true
 		},
-		events : [ AUTHENTICATE, SHOWN ],		
+		events : [ AUTHENTICATE, SHOWN, EXPAND, COLLAPSE ],		
 		authenticate : function() {
 			var that = this;
 			ajax( that.options.url || AUTHENTICATE_URL, {
@@ -1003,22 +1004,48 @@
 						var token = new common.ui.data.User($.extend( response.currentUser, { roles : response.roles }));
 						token.set('isSystem', false);
 						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
-							token.set('isSystem', true);					
-						token.copy(that.token);					
-						that.trigger(AUTHENTICATE,{ token : that.token });	
+							token.set('isSystem', true);			
+						token.copy(that.token);	
+						if( that.options.render && defined(that.options.template) ){
+							that.content = that.options.template(that.token);
+							that.refresh();
+						}
+						that.trigger(AUTHENTICATE,{ token : that.token });
 				}
 			});		
 		},
 		refresh : function( ){			
 			var that = this ,
+			options = that.options,
 			element = that.element,
-			content = that.content ;				
+			content = that.content ;									
 			
-			if( defined(that.options.template) ){
-				content = that.options.template(that.token);
-			}				
 			element.html(content);
-			kendo.bind(element, that.token);
+			
+			if( optons.expand ){
+				var aside= element.find('.navbar-toggle-aside-menu');	
+				if( aside.length > 0 ){	
+					var target = aside.attr("href");	
+					if($(target).length == 0 )
+					{
+						var template = kendo.template($("#account-sidebar-template").html());
+						$("body").append( template(that.token) );
+					}						
+					$( target + ' button.btn-close:first').click(function(e){
+						
+						$("body").toggleClass("aside-menu-in");
+						
+						//that.trigger(EXPAND);
+					});						
+					aside.click(function(e){
+						$("body").toggleClass("aside-menu-in");
+						
+						//that.trigger(EXPAND);
+						
+						return false;							
+					});							
+				}
+			}			
 			that.trigger(SHOWN);
 		}
 	});
