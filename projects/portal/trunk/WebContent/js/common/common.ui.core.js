@@ -1017,10 +1017,7 @@
 			
 			if( defined(that.options.template) ){
 				content = that.options.template(that.token);
-			}	
-			
-			alert( content);
-			
+			}				
 			element.html(content);
 			kendo.bind(element, that.token);
 			that.trigger(SHOWN);
