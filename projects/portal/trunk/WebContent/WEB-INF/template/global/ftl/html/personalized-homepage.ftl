@@ -61,6 +61,7 @@
 						if( e.token.anonymous ){
 							common.ui.disable( $("#announce-selector .btn").last() );
 						}
+						alert( kendo.stringify(currentUser ) );
 					}
 				});					
 				
