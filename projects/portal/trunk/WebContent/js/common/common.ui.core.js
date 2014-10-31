@@ -951,17 +951,29 @@
 	
 	var Accounts = Widget.extend({
 		init : function(element, options) {
-			var that = this;
+			var that = this
+			token = new common.ui.data.User(),
+			content,
+			id;
+			
 			Widget.fn.init.call(that, element, options);
-			options = that.options;
-			that.token = new common.ui.data.User();		
+			options = that.options;			
+			element = that.element;
+			content = options.content;
 			
+
+			id = element.attr("id");
+			if(  defined(content) ||  defined(that.options.template) ){
+				that.refresh();
+			}
 			
-			that.authenticate();
+			that.authenticate();			
+			kendo.notify(that);
 		},
 		options : {
 			name : "ExtAccounts",
-			allowLoginPopup : false,
+			allowToSignIn : false,
+			allowToSignUp : false,
 			content : "",
 			messages : {
 				title : "로그인",
@@ -979,19 +991,22 @@
 						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
 							token.set('isSystem', true);					
 						token.copy(that.token);					
-						that.trigger(AUTHENTICATE,{ token : that.token });		
+						that.trigger(AUTHENTICATE,{ token : that.token });	
 				}
 			});		
 		},
-		show : function(){
-				
-		},
 		refresh : function( ){
-			var that = this;	
-			var renderTo = $(that.element);			
+			var that = this ,
+			renderTo = $(that.element),
+			content ;			
+			
+			if(that.options.content)
+				content = that.options.content;
+			
 			if( defined(that.options.template) ){
-				that.content = that.options.template(that.token);
-			}				
+				content = that.options.template(that.token);
+			}	
+			
 			renderTo.html(that.content);
 			kendo.bind(renderTo, that.token);
 			that.trigger(SHOWN);
