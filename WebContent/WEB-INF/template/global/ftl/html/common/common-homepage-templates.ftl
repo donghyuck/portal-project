@@ -146,7 +146,7 @@
 <script id="account-navbar-template" type="text/x-kendo-template">
 	<li class="account">
 		<a href="#my-aside-menu" class="btn btn-link btn-account dropdown-toggle navbar-toggle-aside-menu">
-			<img src="${request.contextPath}/images/common/anonymous.png" data-bind="attr:{src: photoUrl }"  class="rounded-top" height="34">
+			<img src="${request.contextPath}/images/common/anonymous.png" data-bind="attr: { src: photoUrl, alt:name }"  class="rounded-top" height="34">
 		</a>
 	</li>	
 </script>
