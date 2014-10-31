@@ -132,7 +132,7 @@
 					}
 				}
 			);				
-			kendo.bind(viewRenderTo, announce);			
+			kendo.bind(viewRenderTo, announce);
 			common.ui.listview(
 				listRenderTo,
 				{
@@ -163,8 +163,7 @@
 						selectedCell.copy( announce );						
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
-						}
-						
+						}						
 						common.ui.scrollTop(renderTo);
 					}
 				}
