@@ -963,9 +963,18 @@
 			
 
 			id = element.attr("id");
+			
+			
+			
 			if(  defined(content) ||  defined(that.options.template) ){
+				if(options.allowToSignIn && element.is(":hidden")){
+					element.show();					
+				}
 				that.refresh();
 			}
+			
+			
+			
 			
 			that.authenticate();			
 			kendo.notify(that);
@@ -997,7 +1006,7 @@
 		},
 		refresh : function( ){
 			var that = this ,
-			renderTo = $(that.element),
+			element = that.element,
 			content ;			
 			
 			if(that.options.content)
@@ -1007,7 +1016,7 @@
 				content = that.options.template(that.token);
 			}	
 			
-			renderTo.html(that.content);
+			element.html(that.content);
 			kendo.bind(renderTo, that.token);
 			that.trigger(SHOWN);
 		}
