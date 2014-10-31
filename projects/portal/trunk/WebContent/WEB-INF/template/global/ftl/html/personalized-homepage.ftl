@@ -55,7 +55,6 @@
 					template : kendo.template($("#account-navbar-template").html()),
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-						alert( kendo.stringify(e.token));
 					},				
 					shown : function(e){
 						if( !currentUser.anonymous ){
