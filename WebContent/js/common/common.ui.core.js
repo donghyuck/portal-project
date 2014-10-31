@@ -991,7 +991,9 @@
 		},
 		refresh : function( ){
 			var that = this;	
-			var renderTo = $(that.element);			
+			//var renderTo = $(that.element);			
+			
+			alert( that.element.html() );
 			if( that.options.template){
 				
 			}			
