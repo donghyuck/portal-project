@@ -92,7 +92,7 @@
 		    	companyId: {  type: "number", defaultValue: 1 },
 		    	company: common.ui.data.Company,
 		    	userId: { type: "number", editable: true, defaultValue: -1  },
-		        username: { type: "string", editable: true },
+		        username: { type: "string", editable: true, defaultValue: "anonymous" },
 		        name: { type: "string", editable: true },
 		        email: { type: "string" , editable: true },
 		        password: { type: "string" , editable: true },
