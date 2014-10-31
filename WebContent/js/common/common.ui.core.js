@@ -960,21 +960,14 @@
 			options = that.options;			
 			element = that.element;
 			content = options.content;
-			
-
 			id = element.attr("id");
 			
-			
-			
 			if(  defined(content) ||  defined(that.options.template) ){
+				that.refresh();
 				if(options.allowToSignIn && element.is(":hidden")){
 					element.show();					
 				}
-				that.refresh();
 			}
-			
-			
-			
 			
 			that.authenticate();			
 			kendo.notify(that);
