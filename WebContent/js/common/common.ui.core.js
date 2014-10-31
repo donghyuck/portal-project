@@ -1001,7 +1001,12 @@
 	});
 	
 	function accounts (render, options){
-		return new Accounts(render, options);		
+		if( !render.data("kendoExtAccounts") )
+		{
+			return new Accounts(render, options);				
+		}else{
+			return render.data("kendoExtAccounts");
+		}				
 	}
 	
 	extend(ui, {
