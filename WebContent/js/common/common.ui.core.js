@@ -952,7 +952,7 @@
 	var Accounts = Widget.extend({
 		init : function(element, options) {
 			var that = this,
-			token = new common.ui.data.User(),
+			token = that.token = new common.ui.data.User(),
 			content,
 			id;
 			
