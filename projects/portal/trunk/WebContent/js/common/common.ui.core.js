@@ -1010,7 +1010,7 @@
 			}	
 			
 			element.html(that.content);
-			kendo.bind(renderTo, that.token);
+			kendo.bind(element, that.token);
 			that.trigger(SHOWN);
 		}
 	});
