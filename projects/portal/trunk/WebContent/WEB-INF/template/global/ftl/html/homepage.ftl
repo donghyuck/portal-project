@@ -19,7 +19,7 @@
 			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',			
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 			
 			'${request.contextPath}/js/common/common.ui.core.js',		
-			'${request.contextPath}/js/common/common.data.js',
+			'${request.contextPath}/js/common/common.ui.data.js',
 			'${request.contextPath}/js/common/common.ui.community.js'],
 			complete: function() {
 						
