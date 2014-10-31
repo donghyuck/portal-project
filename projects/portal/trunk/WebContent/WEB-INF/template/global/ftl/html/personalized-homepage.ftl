@@ -53,7 +53,7 @@
 				var currentUser = new common.ui.data.User();			
 				common.ui.accounts($("#account-navbar"), {
 					content : $("#account-navbar-template").html(),
-					allowToSignIn : ${ acton.user.anonymous ? "false" : "true"  },
+					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 					}
