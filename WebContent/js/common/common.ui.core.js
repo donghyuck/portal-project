@@ -970,9 +970,7 @@
 			element = that.element;
 			content = options.content;
 			id = element.attr("id");
-			
-			alert( options.render );
-			
+						
 			if( options.render ){				
 				if(that.options.content){
 					content = that.options.content;
@@ -1012,13 +1010,18 @@
 			});		
 		},
 		refresh : function( ){
+			
 			var that = this ,
 			element = that.element,
 			content = that.content ;				
+			
 			if( defined(that.options.template) ){
 				content = that.options.template(that.token);
-			}				
-			element.html(that.content);
+			}	
+			
+			alert( content);
+			
+			element.html(content);
 			kendo.bind(element, that.token);
 			that.trigger(SHOWN);
 		}
