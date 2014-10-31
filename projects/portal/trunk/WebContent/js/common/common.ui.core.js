@@ -971,7 +971,7 @@
 			content = options.content;
 			id = element.attr("id");
 			
-			if(  defined(content) ||  defined(that.options.template) ){
+			if( options.render ){
 				that.refresh();
 				if(options.allowToSignIn && element.is(":hidden")){
 					element.show();					
@@ -985,6 +985,7 @@
 			name : "ExtAccounts",
 			allowToSignIn : false,
 			allowToSignUp : false,
+			render : true,
 			content : "",
 			messages : {
 				title : "로그인",
@@ -1011,8 +1012,9 @@
 			element = that.element,
 			content ;			
 			
-			if(that.options.content)
+			if(that.options.content){
 				content = that.options.content;
+			}
 			
 			if( defined(that.options.template) ){
 				content = that.options.template(that.token);
