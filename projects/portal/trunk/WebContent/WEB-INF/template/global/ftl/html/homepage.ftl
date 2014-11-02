@@ -25,7 +25,7 @@
 						
 				common.ui.setup({
 					features:{
-						wallpaper : true,
+						wallpaper : false,
 					},
 					jobs:jobs
 				});	
