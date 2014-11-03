@@ -131,18 +131,26 @@
 				common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");
 				
 				galleryDataSource.read();	
-				
+				common.ui.animate(
+					$( "#" +renderTo),
+					{
+					effects: "slide:down fade:in",
+					show: true,
+					duration: showOptions.duration || 1000
+				 });
+				 
 				
 				/**
 				common.ui.buttons({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
 					animate : true
 				});	
-				*/
+				
 				
 				setTimeout(function(){
 					$( "#" +renderTo).slideDown();
-				}, 500);				
+				}, 500);		
+				*/		
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).slideDown();
