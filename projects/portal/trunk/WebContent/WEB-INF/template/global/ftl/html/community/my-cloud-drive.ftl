@@ -87,7 +87,7 @@
 					handlers :{
 						"show-gallery-section" : function(e){
 							common.ui.disable($(e.target));
-
+							createGallerySection();
 						}
 					}				
 				});							
