@@ -418,7 +418,10 @@
 			options.template = kendo.template(options.template);
 		}
 		
-		var template = options.template || DEFAULT_THUMBNAIL_EXPAND_TEMPLATE ;
+		var template = options.template || DEFAULT_THUMBNAIL_EXPAND_TEMPLATE,
+		previewHeight = options.previewHeight || DEFAULT_THUMBNAIL_EXPAND_HEIGHT,
+		marginExpanded  = options.marginExpanded || DEFAULT_THUMBNAIL_EXPAND_MARGIN;
+		
 		$(document).on(CLICK, DEFAULT_THUMBNAIL_EXPAND_CLOSE, function(e){
 			var self = $(this),
 			$gallery = self.closest("."+DEFAULT_THUMBNAIL_EXPAND_GRIDCLASS),
