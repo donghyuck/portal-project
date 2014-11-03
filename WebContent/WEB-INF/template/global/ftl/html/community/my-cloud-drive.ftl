@@ -56,8 +56,8 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 						if( !currentUser.anonymous ){		
-							common.ui.enable( $('button[data-toggle="spmenu"]')	);
-							common.ui.enable( $('button[data-action="show-gallery-section"]') );							
+							common.ui.enable( $("#personalized-buttons button"	);
+							//common.ui.enable( $('button[data-action="show-gallery-section"]') );							
 						}
 					}
 				});	
