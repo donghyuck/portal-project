@@ -484,7 +484,7 @@
 					}
 				} ).attr( 'src', data.src );
 			}
-			scrollTop(preview, -155); 
+			scrollTop(preview, -160); 
 			
 			return false;
 		});	
