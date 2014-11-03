@@ -391,6 +391,10 @@
 	
 	var DEFAULT_THUMBNAIL_EXPAND_HEIGHT = 500,
 		DEFAULT_THUMBNAIL_EXPAND_MARGIN = 10,
+		DEFAULT_THUMBNAIL_EXPANDERCLASS = "og-expander",
+		DEFAULT_THUMBNAIL_EXPANDER_ITEMS = "li." + DEFAULT_THUMBNAIL_EXPANDERCLASS,
+		DEFAULT_THUMBNAIL_EXPAND_GRIDCLASS = "og-grid",
+		DEFAULT_THUMBNAIL_EXPAND_CLOSE = "span.og-close",
 		DEFAULT_THUMBNAIL_EXPAND_TEMPLATE = kendo.template(
 			'<div class="og-expander animated slideDown">' +
 			'<div class="og-expander-inner">' + 
