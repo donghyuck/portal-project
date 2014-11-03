@@ -527,6 +527,8 @@
 							$this.toggleClass("active");
 						}
 						
+						alert("1" : defined(action) && defined(options.handlers) );
+						alert("2" : isFunction(options.handlers[action]) );
 						if(defined(action) && defined(options.handlers))
 						{
 							if (isFunction(options.handlers[action])) {
