@@ -538,8 +538,18 @@
 		selector.on("click", function(e){		
 			var $this = $(this),
 			dismiss = $this.data("dismiss"),
+			action = $this.data("action"),
 			dismiss_target = $this.data("dismiss-target"),
 			toggle_target = $this.data("toggle-target");
+			
+
+			if(defined(action) && defined(options.handlers))
+			{
+				if (isFunction(options.handlers[action])) {
+					var fn = options.handlers[action];
+					fn($.Event("click",  { event: e, target:this } ));
+				}
+			}
 			
 			if(dismiss === "panel"){
 				var target = $(dismiss_target);
@@ -561,6 +571,9 @@
 					enable(target);
 				}
 			}
+
+			
+			
 		});
 	}
 	
