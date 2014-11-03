@@ -290,7 +290,7 @@
 			}
 			
 			if(features.spmenu){				
-				enableSpmenu();
+				spmenu();
 			}
 			
 			if(features.lightbox){				
@@ -520,9 +520,7 @@
 						var target = $this.data("target");
 						var action = $this.data("action");
 						var animate = $this.data("animate");					
-						var toggle_target = $this.data("toggle-target");
-						
-						
+						var toggle_target = $this.data("toggle-target");						
 						if($this.hasClass("btn-u")){
 							$this.toggleClass("active");
 						}
@@ -533,31 +531,6 @@
 								fn($.Event("click",  { event: e, target:this } ));
 							}
 						}
-						/*
-						if( defined(target) ){
-							if( $this.is(":disabled") ){
-								$this.prop("disabled", false);
-							}else{
-								$this.prop("disabled", true);
-							}
-						}
-						*/
-						/*
-						if( defined(toggle_target) ){
-							if($(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button" ){
-								
-								enable($(toggle_target));
-							}
-						}
-						
-						if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){	
-							
-							disable(renderTo);
-							enable($(toggle_target));
-							
-							
-						}
-						*/
 						that.trigger(CLICK, { event: e, target:this } );
 					}
 				);				
