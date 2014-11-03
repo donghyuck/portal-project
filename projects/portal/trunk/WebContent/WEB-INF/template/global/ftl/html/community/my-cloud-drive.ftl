@@ -76,9 +76,9 @@
 					//e.preventDefault();		
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-files' ){					
-						createAttachmentListView();
+						//createAttachmentListView();
 					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
-						createPhotoListView();
+						//createPhotoListView();
 					}					
 				});
 				$('#myTab a:first').tab('show') ;
