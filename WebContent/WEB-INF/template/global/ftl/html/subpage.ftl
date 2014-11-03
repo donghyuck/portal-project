@@ -10,7 +10,7 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
@@ -18,31 +18,31 @@
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'],
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js'],
 			complete: function() {
 				// START SCRIPT	
 
 				common.ui.setup({
 					features:{
-						backstretch : false
+						wallpaper : false,
 					},
-					worklist:jobs
+					jobs:jobs
 				});	
-
-				// START SCRIPT					
-				var currentUser = new User();			
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
+				
+				// ACCOUNTS LOAD	
+				var currentUser = new common.ui.data.User();			
+				common.ui.accounts($("#account-navbar"), {
+					template : kendo.template($("#account-navbar-template").html()),
+					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-					}				
-				});
+						if( !currentUser.anonymous ){							
+						}
+					}
+				});	
 				
 				<#if !action.user.anonymous ></#if>	
 				// END SCRIPT
