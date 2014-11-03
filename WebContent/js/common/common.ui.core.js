@@ -206,7 +206,7 @@
 		if( defined( url) ){
 			settings.url = url;			
 		}				
-		$.ajax(settings);		
+		return $.ajax(settings);		
 	};	
 	
 	function scrollTop(selector , margin ){
