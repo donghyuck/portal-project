@@ -336,7 +336,7 @@
 				}
 			}
 			//$("body").toggleClass("modal-open");
-			target.trigger("open");
+			$(target).trigger("open");
 			$(target).toggleClass("cbp-spmenu-open");
 		
 		});
