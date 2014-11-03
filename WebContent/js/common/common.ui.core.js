@@ -529,7 +529,7 @@
 		ajax : common.ui.ajax || ajax,
 		listview : common.ui.listview || listview,
 		pager : common.ui.pager || pager,
-		thumbnailExpanding : common.ui.thumbnailExpanding || thumbnailExpanding,
+		thumbnail : common.ui.thumbnail || { expanding : thumbnailExpanding },
 		slimScroll : common.ui.slimScroll || slimScroll,
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
