@@ -590,6 +590,7 @@
 		buttons : common.ui.buttons || buttons,
 		animate : common.ui.animate || animate,
 		fx : kendo.fx,
+		exists : exists,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
 	});
