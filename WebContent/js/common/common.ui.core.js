@@ -523,7 +523,7 @@
 						var toggle_target = $this.data("toggle-target");
 						
 						
-						if($this.hasClass("u-btn")){
+						if($this.hasClass("btn-u")){
 							$this.toggleClass("active");
 						}
 						
