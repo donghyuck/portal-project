@@ -63,12 +63,14 @@
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					click:function(e){
+					/*
 						if( common.ui.defined( e.target ) && $(e.target).data("target") === "#my-notification-panel" ){
 							createNotificationPanel();
 						}
 						if( common.ui.defined( e.target ) && $(e.target).data("target") === "#my-memo-panel" ){
 							createMemoPanel();
-						}						
+						}				
+						*/		
 					}
 				});
 				createAnnounceSection();
