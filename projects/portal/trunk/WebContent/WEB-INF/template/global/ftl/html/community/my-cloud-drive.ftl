@@ -131,13 +131,7 @@
 				common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");
 				
 				galleryDataSource.read();	
-				common.ui.animate(
-					$( "#" +renderTo),
-					{
-					effects: "slide:down fade:in",
-					show: true,
-					duration: 1000
-				 });
+			
 				 
 				
 				/**
@@ -153,7 +147,13 @@
 				*/		
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
-				$( "#" +renderTo).slideDown();
+				common.ui.animate(
+					$( "#" +renderTo),
+					{
+					effects: "slide:down fade:in",
+					show: true,
+					duration: 1000
+				 });
 			} 			
 		}
 
