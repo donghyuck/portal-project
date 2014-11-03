@@ -68,8 +68,8 @@
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 												
 				// photo panel showing				
-				$("#personalized-controls-section").on("change", function(e){
-					alert($(this).html());
+				$("#personalized-controls-section").on("open", function(e){
+					alert( "hello" );
 				});
 				
 				
