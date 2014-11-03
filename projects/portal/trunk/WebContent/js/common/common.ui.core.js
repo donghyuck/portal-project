@@ -529,7 +529,7 @@
 						if(defined(action) && defined(options.handlers))
 						{
 							if (isFunction(options.handlers[action])) {
-								var fn = options.handlers[action];
+								var fn = proxy(options.handlers[action], { event: e, target:this });
 								fn();
 							}
 						}
