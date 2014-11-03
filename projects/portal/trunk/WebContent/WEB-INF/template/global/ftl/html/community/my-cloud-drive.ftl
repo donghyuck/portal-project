@@ -70,9 +70,6 @@
 												
 				// photo panel showing				
 				createPhotoListView();								
-				//	$('#photo-list-view').data('kendoListView').one('dataBound', function(){
-				//		this.select(this.element.children().first());
-				//	});
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
@@ -86,11 +83,12 @@
 				});
 				$('#myTab a:first').tab('show') ;
 
+
 				common.ui.button({
 					renderTo: "button[data-action='show-gallery-section']",
 					click:function(e){
 						createGallerySection();
-						common.ui.buttonDisabled($(this));
+						common.ui.disable($(this));
 					}
 				});
 							
