@@ -47,6 +47,7 @@
 	isFunction = kendo.isFunction,
 	extend = $.extend,
 	each = $.each,
+	proxy = $.proxy,
 	DataSource = kendo.data.DataSource,
 	Widget = kendo.ui.Widget, 
 	progress = kendo.ui.progress,
@@ -294,7 +295,7 @@
 			}
 			
 			if(features.lightbox){				
-				enableLightbox();
+				lightbox();
 			}	
 		} 		
 	});
@@ -384,7 +385,7 @@
 		
 	}
 	
-	function enableLightbox (){		
+	function lightbox (){		
 		if(!defined($.magnificPopup)) {
 			return false;
 		}		
@@ -426,6 +427,99 @@
 		} );	
 	}
 	
+	var DEFAULT_THUMBNAIL_EXPAND_HEIGHT = 500,
+		DEFAULT_THUMBNAIL_EXPAND_MARGIN = 10,
+		DEFAULT_THUMBNAIL_EXPANDERCLASS = "og-expander",
+		DEFAULT_THUMBNAIL_EXPANDER_ITEMS = "li." + DEFAULT_THUMBNAIL_EXPANDERCLASS,
+		DEFAULT_THUMBNAIL_EXPAND_GRIDCLASS = "og-grid",
+		DEFAULT_THUMBNAIL_EXPAND_CLOSE = "span.og-close",
+		DEFAULT_THUMBNAIL_EXPAND_TEMPLATE = kendo.template(
+			'<div class="og-expander animated slideDown">' +
+			'<div class="og-expander-inner">' + 
+			'<span class="og-close"></span>' + 
+			'<div class="og-fullimg">' +
+			'<div class="og-loading" style="display: none;"></div>'+
+			'<img src="#= src #" style="display: inline;" class="animated fadeIn" ></div>' + 
+			'<div class="og-details">' + 
+			'<h3></h3>' + 
+			'<p></p>' + 
+			'<a href="\\#">Visit website</a>' +
+			'</div>' +
+			'</div>' +
+			'</div>'
+		); 
+	
+	function thumbnailExpanding ( options ){ 
+		options = options || {};
+		var template = options.template || DEFAULT_THUMBNAIL_EXPAND_TEMPLATE ;
+		$(document).on(CLICK, DEFAULT_THUMBNAIL_EXPAND_CLOSE, function(e){
+			var self = $(this),
+			$gallery = self.closest("."+DEFAULT_THUMBNAIL_EXPAND_GRIDCLASS),
+			$items = $gallery.children("li"),
+			$previewEl = $gallery.find("."+DEFAULT_THUMBNAIL_EXPANDERCLASS),
+			$expandedItem = $gallery.children(DEFAULT_THUMBNAIL_EXPANDER_ITEMS);
+			onEndFn = function(){					
+				if( kendo.support.transitions ){
+					$(this).off( kendo.support.transitions.event );				
+				}
+				$items.removeClass(DEFAULT_THUMBNAIL_EXPANDERCLASS);
+				$previewEl.remove();
+			};
+			setTimeout(proxy( function() {
+				$previewEl.css( 'height', 0 );
+				$expandedItem.css( 'height', '0px' ).on( kendo.support.transitions.event, onEndFn );
+				if( ! kendo.support.transitions.css ) {
+					onEndFn.call();
+				}
+			}, this ), 25);	
+		});		
+
+		$(document).on("click","[data-ride='expanding']", function(e){		
+			var $this = $(this);
+			var $gallery = $( $this.data("target-gallery") );
+			var $items = $gallery.children("li");
+			var $parent = $this.parent();						
+			var data = {
+				src : $this.data("largesrc") ,	
+				title : $this.data("title"),
+				description : $this.data("description")
+			};			
+			$gallery.children(DEFAULT_THUMBNAIL_EXPANDER_ITEMS).removeClass(DEFAULT_THUMBNAIL_EXPANDERCLASS);
+			$parent.addClass( DEFAULT_THUMBNAIL_EXPANDERCLASS );							
+			var height = $this.height();
+			var position = $parent.offset().top;			
+			var preview = $gallery.find("." + DEFAULT_THUMBNAIL_EXPANDERCLASS );
+			if(preview.length === 0){
+				$parent.append(options.template(data));	
+				$items.css("height", "");
+				preview = $parent.children("."+DEFAULT_THUMBNAIL_EXPANDERCLASS ).css("height", previewHeight )
+				$parent.css("height", previewHeight + height + marginExpanded );
+				preview.css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );
+				$parent.css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );				
+			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
+				preview.slideUp(150, function(){
+					preview.remove();
+					$parent.append(template(data));	
+					$items.css("height", "");
+					preview = $parent.children("."+ DEFAULT_THUMBNAIL_EXPANDERCLASS ).css("height", previewHeight );					
+					$parent.css("height", previewHeight + height + marginExpanded );
+				});				
+			}else{
+				var $loading = preview.find(".og-loading");
+				var $largeImg = preview.find("img");				
+				$largeImg.hide();				$loading.show();				
+				$( '<img/>' ).load( function() {
+					var $img = $( this );
+					if( $img.attr( 'src' ) === data.src ) {
+						$loading.hide();
+						$largeImg.attr("src", data.src ).show();
+					}
+				} ).attr( 'src', data.src );
+			}			
+			return false;
+		});		
+	}	
+	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
@@ -435,6 +529,7 @@
 		ajax : common.ui.ajax || ajax,
 		listview : common.ui.listview || listview,
 		pager : common.ui.pager || pager,
+		thumbnailExpanding : common.ui.thumbnailExpanding || thumbnailExpanding,
 		slimScroll : common.ui.slimScroll || slimScroll,
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
