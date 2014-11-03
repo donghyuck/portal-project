@@ -609,10 +609,10 @@
 	}
 	
 	function exists ( element ){
-		if( defined( element.data("role") ) )
-			return true;
+		if( typeof $("#photo-files").data("role") === "undefined" ) )
+			return false;
 		else 
-			false;
+			true;
 	} 
 	
 	
