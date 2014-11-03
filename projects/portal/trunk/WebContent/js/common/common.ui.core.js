@@ -485,7 +485,9 @@
 						$largeImg.attr("src", data.src ).show();
 					}
 				} ).attr( 'src', data.src );
-			}			
+			}
+			
+			
 			return false;
 		});	
 	}	
@@ -571,8 +573,10 @@
 		listview : common.ui.listview || listview,
 		pager : common.ui.pager || pager,
 		thumbnail : common.ui.thumbnail || { expanding : thumbnailExpanding },
-		slimScroll : common.ui.slimScroll || slimScroll,
-		scrollTop: common.ui.scrollTop || scrollTop,
+		scroll : common.ui.scroll || {
+			slim : slimScroll, 
+			top : scrollTop
+		},
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable,
 		buttons : common.ui.buttons || buttons,
