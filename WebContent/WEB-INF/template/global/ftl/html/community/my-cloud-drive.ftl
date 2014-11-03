@@ -151,7 +151,8 @@
 
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
-		<!-- ============================== -->									
+		<!-- ============================== -->							
+		/**		
 		function createAttachmentListView(){			
 			if( !$('#attachment-list-view').data('kendoListView') ){														
 				var attachementTotalModle = kendo.observable({ 
@@ -269,10 +270,11 @@
 				);						
 			}		
 		}
-		
+		**/
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
-		<!-- ============================== -->						
+		<!-- ============================== -->			
+		/**			
 		function createPhotoListView(){
 			if( !$('#photo-list-view').data('kendoListView') ){			
 				$("#photo-list-view").kendoListView({
@@ -416,10 +418,11 @@
 				);
 			}
 		}
-
+**/
 		<!-- ============================== -->
 		<!-- display attachement panel                          -->
 		<!-- ============================== -->			
+		/**
 		function displayAttachmentPanel(){					
 			var renderToString =  "attachement-panel-0";	
 			var attachPlaceHolder = $("#attachment-list-view").data( "attachPlaceHolder" );					
@@ -487,7 +490,7 @@
 			var panel = $("#" + renderToString ).data("extPanel");
 			panel.show();		
 		}	
-						
+				**/		
 		<!-- ============================== -->
 		<!-- display photo  panel                                  -->
 		<!-- ============================== -->
