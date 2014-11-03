@@ -454,24 +454,24 @@
 				title : $this.data("title"),
 				description : $this.data("description")
 			};			
-			$gallery.children(DEFAULT_THUMBNAIL_EXPANDER_ITEMS).removeClass(DEFAULT_THUMBNAIL_EXPANDERCLASS);
-			$parent.addClass( DEFAULT_THUMBNAIL_EXPANDERCLASS );							
+			$gallery.children("li.og-expanded").removeClass("og-expanded");
+			$parent.addClass( 'og-expanded' );							
 			var height = $this.height();
 			var position = $parent.offset().top;			
-			var preview = $gallery.find("." + DEFAULT_THUMBNAIL_EXPANDERCLASS );
+			var preview = $gallery.find(".og-expander");
 			if(preview.length === 0){
 				$parent.append(options.template(data));	
 				$items.css("height", "");
-				preview = $parent.children("."+DEFAULT_THUMBNAIL_EXPANDERCLASS ).css("height", previewHeight )
+				preview = $parent.children(".og-expander").css("height", previewHeight )
 				$parent.css("height", previewHeight + height + marginExpanded );
 				preview.css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );
 				$parent.css( 'transition', 'height ' + 350 + 'ms ' + 'ease' );				
 			}else if ( ( position + height + marginExpanded ) != preview.offset().top ) {
 				preview.slideUp(150, function(){
 					preview.remove();
-					$parent.append(template(data));	
+					$parent.append(options.template(data));	
 					$items.css("height", "");
-					preview = $parent.children("."+ DEFAULT_THUMBNAIL_EXPANDERCLASS ).css("height", previewHeight );					
+					preview = $parent.children(".og-expander").css("height", previewHeight );					
 					$parent.css("height", previewHeight + height + marginExpanded );
 				});				
 			}else{
@@ -487,7 +487,7 @@
 				} ).attr( 'src', data.src );
 			}			
 			return false;
-		});		
+		});	
 	}	
 	
 	function status ( selector, status ){
