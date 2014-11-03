@@ -532,7 +532,9 @@
 						if(defined(action) && defined(options.handlers))
 						{
 							if (isFunction(options.handlers[action])) {
-								proxy( options.handlers[action] , e );
+								options.handlers[action];
+								
+								//proxy( options.handlers[action] , e );
 							}
 						}
 						/*
