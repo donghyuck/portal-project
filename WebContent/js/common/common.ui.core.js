@@ -182,44 +182,6 @@
 		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
 	}
 
-	function status ( selector, status ){
-		var element = selector;
-		if(defined(status)){
-			if( status === 'disable') {
-				if( !element.is(":disabled") ){
-					if( element.is("label") )
-					{
-						element.toggleClass("disabled");						
-					}else{
-						element.prop("disabled", true);
-						if( element.is("[data-toggle='button']") ){
-							//element.toggleClass("active");
-						}
-					}
-				}
-			}else if (status === 'enable' ){
-				if( element.is(":disabled") ){
-					if( element.is("label") ){						
-						element.toggleClass("disabled");						
-					}else{
-						element.prop("disabled", false);
-						if( element.is("[data-toggle='button']") ){
-							//element.toggleClass("active");
-						}					
-					}
-				}				
-			}
-		}
-	}
-	
-	function enable (element){
-		status(element, "enable");
-	}
-	
-	function disable (element){
-		status(element, "disable");
-	}
-	
 	
 	function animate (renderTo, options ){		
 		var options = options || {};
@@ -525,6 +487,77 @@
 		});		
 	}	
 	
+	function status ( selector, status ){
+		var element = selector;
+		if(defined(status)){
+			if( status === 'disable') {
+				if( !element.is(":disabled") ){
+					if( element.is("label") )
+					{
+						element.toggleClass("disabled");						
+					}else{
+						element.prop("disabled", true);
+						if( element.is("[data-toggle='button']") ){
+							//element.toggleClass("active");
+						}
+					}
+				}
+			}else if (status === 'enable' ){
+				if( element.is(":disabled") ){
+					if( element.is("label") ){						
+						element.toggleClass("disabled");						
+					}else{
+						element.prop("disabled", false);
+						if( element.is("[data-toggle='button']") ){
+							//element.toggleClass("active");
+						}					
+					}
+				}				
+			}
+		}
+	}
+	
+	function enable (element){
+		status(element, "enable");
+	}
+	
+	function disable (element){
+		status(element, "disable");
+	}	
+
+	function buttons (selector, options) {
+		if( typeof selector === "string") ){
+			selector = $(selector);	
+		}
+		selector.on("click", function(e){		
+			var $this = $(this),
+			dismiss = $this.data("dismiss"),
+			dismiss_target = $this.data("dismiss-target"),
+			toggle_target = $this.data("toggle-target");
+			
+			if(dismiss === "panel"){
+				var target = $(dismiss_target);
+				if($this.data("animate")){
+					$(dismiss_target).kendoStop().kendoAnimate({
+						effects:"slide:down fade:in",
+						reverse: true,
+						hide : true								
+					 });						
+				}else{
+					$(dismiss_target).hide();	
+				}	
+			}
+			if(toggle_target){
+				var target = $(toggle_target);
+				if( target.is("[data-toggle='button']") || target.is("button") )
+				{
+					target.toggleClass("active");
+					enable(target);
+				}
+			}
+		});
+	}
+	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
@@ -539,6 +572,7 @@
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable,
+		buttons : common.ui.buttons || buttons,
 		animate : common.ui.animate || animate,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
@@ -571,7 +605,7 @@
 	DEACTIVATE = "deactivate",
 	ACTIVATE = "activate",	
 	UNDEFINED = "undefined";
-	
+		
 	var ButtonGroup = Widget.extend({
 		init : function(element, options) {
 			var that = this;
@@ -664,31 +698,6 @@
 		}
 	});
 
-
-	function button (renderTo, options){		
-		if( typeof renderTo === "string" ){	
-			renderTo = $(options.renderTo);
-		}
-		if( renderTo.data("dismiss") && renderTo.data("target")  )
-		{
-			renderTo.click(function(e){
-				$this =  $(this);
-				var target = $this.data("target");
-				if( $(target).length > 0 ){
-					if($this.data("animate")){
-						$(target).slideUp();
-					}else{
-						$(target).hide();
-					}						
-				}		
-				var toggle_target = $this.data("toggle-target");
-				if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){	
-					disable(renderTo);
-					enable($(toggle_target));
-				}				
-			});				
-		}
-	}
 	
 	function buttonGroup ( renderTo, options ){		
 		options = options || {};	
