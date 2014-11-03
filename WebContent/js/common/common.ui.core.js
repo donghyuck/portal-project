@@ -623,6 +623,8 @@
 		buttons : common.ui.buttons || buttons,
 		animate : common.ui.animate || animate,
 		fx : kendo.fx,
+		upload : common.ui.upload || upload,
+		observable : kendo.observable,
 		exists : exists,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
