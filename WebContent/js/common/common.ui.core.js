@@ -32,10 +32,23 @@
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
+	function valid ( type, value ){
+		if( type === "url" ){
+			 var urlregex = new RegExp("^(http|https|ftp)\://[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(:[a-zA-Z0-9]*)?/?([a-zA-Z0-9\-\._\?\,\'/\\\+&amp;%\$#\=~])*$");
+			 return urlregex.test(value);
+		}else if (type === "email"){
+			var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+			return expr.test(email);
+		}		
+		return false;
+	}	
+		
+	
 	extend(common, {	
 		ui: common.ui || {},
 		random : common.random || random,
-		guid : common.guid || guid
+		guid : common.guid || guid,
+		valid : common.valid || valid
 	});
 		
 })(jQuery);
