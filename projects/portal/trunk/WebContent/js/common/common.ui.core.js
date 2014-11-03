@@ -236,7 +236,8 @@
 					}						
 				}		
 				var toggle_target = $this.data("toggle-target");
-				if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){		
+				if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){	
+					disable(renderTo);
 					enable($(toggle_target));
 				}				
 			});				
@@ -459,6 +460,7 @@
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable,
+		button: common.ui.button || button,
 		animate : common.ui.animate || animate,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
