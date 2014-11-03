@@ -156,7 +156,7 @@
 				});								
 				*/
 				
-				common.ui.thumbnailexpanding({ template:kendo.template($("#image-gallery-expanding-template").html()) });			
+				common.ui.thumbnail-expanding({ template:kendo.template($("#image-gallery-expanding-template").html()) });			
 				
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
 				
