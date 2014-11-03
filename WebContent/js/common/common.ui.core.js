@@ -431,6 +431,7 @@
 				}
 				$items.removeClass( 'og-expanded' );
 				$previewEl.remove();
+				
 			};
 			setTimeout( $.proxy( function() {
 				$previewEl.css( 'height', 0 );
@@ -483,7 +484,7 @@
 					}
 				} ).attr( 'src', data.src );
 			}
-			scrollTop(preview); 
+			scrollTop(preview, -155); 
 			
 			return false;
 		});	
