@@ -609,7 +609,7 @@
 	}
 	
 	function exists ( element ){
-		if( defined(element.data("role")) )
+		if( defined( element.data("role") ) )
 			return true;
 		else 
 			false;
