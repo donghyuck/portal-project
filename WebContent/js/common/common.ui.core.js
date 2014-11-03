@@ -526,7 +526,7 @@
 	}	
 
 	function buttons (selector, options) {
-		if( typeof selector === "string") ){
+		if( typeof selector === "string" ){
 			selector = $(selector);	
 		}
 		selector.on("click", function(e){		
