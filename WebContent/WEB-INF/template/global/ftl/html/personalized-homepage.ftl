@@ -64,10 +64,11 @@
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"show-notification-panel" : function(e){
-						alert($(e.target).html());
+							common.ui.disable($(e.target));
 							createNotificationPanel();
 						},
 						"show-memo-panel" : function(e){
+							common.ui.disable($(e.target));
 							createMemoPanel();
 						}
 					},
