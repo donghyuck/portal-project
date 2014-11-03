@@ -64,7 +64,7 @@
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"show-notification-panel" : function(e){
-							alert("1");
+						alert($(this).html());
 							createNotificationPanel();
 						},
 						"show-memo-panel" : function(e){
