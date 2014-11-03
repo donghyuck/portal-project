@@ -39,7 +39,7 @@
 					features:{
 						wallpaper : true,
 						lightbox : true,
-						spmenu : true
+						spmenu : false
 					},
 					wallpaper : {
 						slideshow : false
