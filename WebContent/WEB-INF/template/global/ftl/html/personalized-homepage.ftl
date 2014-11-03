@@ -196,8 +196,8 @@
 					<ul class="nav navbar-nav pull-right">
 						<li>
 							<div id="personalized-buttons" class="navbar-btn btn-group">
-								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
-								<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-target="#my-memo-panel"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
+								<button type="button" class="btn-u btn-u-blue-blue rounded-left" data-toggle="button" data-target="#my-notification-panel" aria-pressed="false"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
+								<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
 							</div>	
 						</li>						
 						<li class="hidden-xs">
