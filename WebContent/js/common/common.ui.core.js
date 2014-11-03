@@ -192,7 +192,7 @@
 					}else{
 						element.prop("disabled", true);
 						if( element.is("[data-toggle='button']") ){
-							element.toggleClass("active");
+							//element.toggleClass("active");
 						}
 					}
 				}
@@ -203,7 +203,7 @@
 					}else{
 						element.prop("disabled", false);
 						if( element.is("[data-toggle='button']") ){
-							element.toggleClass("active");
+							//element.toggleClass("active");
 						}					
 					}
 				}				
