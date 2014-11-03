@@ -137,6 +137,24 @@
 		}		
 		return renderTo.data("kendoPager");
 	}
+
+	var DEFAULT_UPLOAD_SETTING = {
+		multiple : true,
+		width: 300,
+		showFileList : false,
+		async: {			
+			autoUpload: true
+		}
+	};
+	
+	function upload(renderTo, options){
+		if(!renderTo.data("kendoUpload")){		
+			options = options || {};		
+			var settings = extend(true, {}, DEFAULT_UPLOAD_SETTING , options ); 
+			renderTo.kendoUpload(settings);
+		}		
+		return renderTo.data("kendoUpload");		
+	}
 	
 	var DEFAULT_DATASOURCE_SETTING = {
 			transport:{
@@ -583,6 +601,8 @@
 		else 
 			false;
 	} 
+	
+	
 	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
