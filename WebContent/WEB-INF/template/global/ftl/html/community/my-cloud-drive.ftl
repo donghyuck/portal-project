@@ -12,7 +12,7 @@
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',						
-			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
+			/*'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',*/
 			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',					
 			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',			
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
@@ -29,7 +29,7 @@
 			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 					
-			'css!${request.contextPath}/js/codrops/codrops.grid.js',				
+		/*	'css!${request.contextPath}/js/codrops/codrops.grid.js',				*/
 			'${request.contextPath}/js/pdfobject/pdfobject.js',	
 			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.ui.data.js',
