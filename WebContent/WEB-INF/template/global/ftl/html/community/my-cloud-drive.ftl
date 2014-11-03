@@ -126,53 +126,13 @@
 						}
 					}
 				);
-				
-				/*			
-				var galleryDataSource =new kendo.data.DataSource({
-					type: 'json',
-					transport: {
-						read: { url:'${request.contextPath}/community/list-my-image.do?output=json', type: 'POST' },
-						parameterMap: function (options, operation){
-							if (operation != "read" && options) {										                        								                       	 	
-								return { imageId :options.imageId };									                            	
-							}else{
-								 return { startIndex: options.skip, pageSize: options.pageSize }
-							}
-						}
-					},
-					pageSize: 30,
-					error:common.ui.handleAjaxError,
-					schema: {
-						model: Image,
-						data : "targetImages",
-						total : "totalTargetImageCount"
-					},
-					serverPaging: true,
-					change : function(){
-						$( "#image-gallery-grid" ).html(
-							kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
-						);	
-					}
-				});								
-				*/
-				
 				common.ui.thumbnail.expanding({ template: $("#image-gallery-expanding-template").html() });			
-				
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
-				
-				/*	
-				$("#image-gallery-pager").kendoPager({
-					refresh : true,					
-					buttonCount : 9,
-					info: false,
-					dataSource : galleryDataSource
-				});	
-				*/
-						
 				galleryDataSource.read();	
+				common.ui.buttons("#image-gallery button[data-dismiss='section'][data-target]");
 				
 				/**
-				common.ui.button({
+				common.ui.buttons({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
 					animate : true
 				});	
@@ -180,8 +140,7 @@
 				
 				setTimeout(function(){
 					$( "#" +renderTo).slideDown();
-				}, 500);
-				
+				}, 500);				
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).slideDown();
