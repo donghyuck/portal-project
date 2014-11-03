@@ -8,7 +8,7 @@
 		var jobs = [];					
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/jquery.bxslider/jquery.bxslider.css',
 			'css!${request.contextPath}/styles/jquery.flexslider/flexslider.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',						
@@ -26,46 +26,43 @@
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 					
 			'css!${request.contextPath}/js/codrops/codrops.grid.js',				
 			'${request.contextPath}/js/pdfobject/pdfobject.js',	
-			'${request.contextPath}/js/common/common.ui.core.js',		
-			'${request.contextPath}/js/common/common.ui.connect.js',		
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],			
 			complete: function() {		
+			
 				common.ui.setup({
 					features:{
-						backstretch : false,
+						wallpaper : true,
 						lightbox : true,
 						spmenu : true
 					},
-					worklist:jobs
+					wallpaper : {
+						slideshow : false
+					},
+					jobs:jobs
 				});				
 				// ACCOUNTS LOAD	
-				var currentUser = new User();			
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
+				var currentUser = new common.ui.data.User();			
+				common.ui.accounts($("#account-navbar"), {
+					template : kendo.template($("#account-navbar-template").html()),
+					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-
-					},				
-					shown : function(e){
-						if( !currentUser.anonymous ){
-							common.ui.buttonEnabled( $('button[data-toggle="spmenu"]')	);
-							common.ui.buttonEnabled( $('button[data-action="show-gallery-section"]') );
-						}					
+						if( !currentUser.anonymous ){		
+							common.ui.enable( $('button[data-toggle="spmenu"]')	);
+							common.ui.enable( $('button[data-action="show-gallery-section"]') );							
+						}
 					}
 				});	
-				
+
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");
 				
 				// personalized grid setting																																					
