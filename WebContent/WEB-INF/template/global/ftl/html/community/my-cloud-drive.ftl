@@ -66,23 +66,24 @@
 				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-												
-				// photo panel showing				
-				$("#personalized-controls-section").on("open", function(e){
-					createPhotoListView();
-				});
-																			
-				// 4. Right Tabs								
+																															
+				// SpMenu Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					//e.preventDefault();		
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-files' ){					
 						//createAttachmentListView();
 					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
-						//createPhotoListView();
+						createPhotoListView();
 					}					
 				});
-				$('#myTab a:first').tab('show') ;
+				
+				// SpMenu Tabs select first				
+				$("#personalized-controls-section").on("open", function(e){
+					$('#myTab a:first').tab('show') ;
+				});
+				
+				
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"show-gallery-section" : function(e){
