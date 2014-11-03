@@ -207,8 +207,6 @@
 						}					
 					}
 				}				
-			}else if (status === 'active' ){
-				element.toggleClass("active");
 			}
 		}
 	}
@@ -524,6 +522,10 @@
 						var animate = $this.data("animate");					
 						var toggle_target = $this.data("toggle-target");
 						
+						
+						if($this.hasClass("u-btn")){
+							$this.toggleClass("active");
+						}
 						
 						if(defined(action) && defined(options.handlers))
 						{
