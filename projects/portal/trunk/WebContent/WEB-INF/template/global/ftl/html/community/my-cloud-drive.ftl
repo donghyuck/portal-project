@@ -68,6 +68,11 @@
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 												
 				// photo panel showing				
+				$("#personalized-controls-section").on("change", function(e){
+					alert($(this).html());
+				});
+				
+				
 				//createPhotoListView();								
 																			
 				// 4. Right Tabs								
@@ -81,7 +86,6 @@
 					}					
 				});
 				$('#myTab a:first').tab('show') ;
-
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"show-gallery-section" : function(e){
