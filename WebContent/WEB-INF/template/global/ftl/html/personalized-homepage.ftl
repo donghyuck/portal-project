@@ -115,6 +115,7 @@
 					content : "새로운 메시지가 없습니다." ,
 					deactivateAfterClose : false,
 					close:function(e){
+						$("#personalized-buttons button[data-target='#my-notification-panel']").toggleClass("active");
 						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
 					}
 				});
