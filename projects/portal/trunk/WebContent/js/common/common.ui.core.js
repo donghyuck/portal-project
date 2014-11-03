@@ -451,6 +451,11 @@
 	
 	function thumbnailExpanding ( options ){ 
 		options = options || {};
+		if( defined(options.template) && typeof options.template === STRING )
+		{
+			options.template = kendo.template(options.template);
+		}
+		
 		var template = options.template || DEFAULT_THUMBNAIL_EXPAND_TEMPLATE ;
 		$(document).on(CLICK, DEFAULT_THUMBNAIL_EXPAND_CLOSE, function(e){
 			var self = $(this),
