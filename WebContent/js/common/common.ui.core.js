@@ -532,8 +532,8 @@
 						if(defined(action) && defined(options.handlers))
 						{
 							if (isFunction(options.handlers[action])) {
-								options.handlers[action];
-								
+								var fn = options.handlers[action];
+								fn();
 								//proxy( options.handlers[action] , e );
 							}
 						}
