@@ -191,6 +191,17 @@
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 				});						
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });			
+				
+				common.ui.buttons($("#my-photo-stream button.btn-control-group"), {
+					handlers : {
+						"upload" : function(e){
+						
+						},
+						"upload-close" : function(e){
+							$("#my-photo-stream .panel-upload").slideToggle(200);		
+						}	
+					}
+				});
 			}
 		}					
 		-->
