@@ -336,14 +336,17 @@
 				}
 			}
 			//$("body").toggleClass("modal-open");
+			target.trigger("open");
 			$(target).toggleClass("cbp-spmenu-open");
+		
 		});
 		
 		$(document).on("click","[data-dismiss='spmenu']", function(e){
 			var $this = $(this);
 			var target  = $this.parent();		
 			//$("body").toggleClass("modal-open");
-			target.toggleClass("cbp-spmenu-open");
+			target.trigger("close");
+			target.toggleClass("cbp-spmenu-open");			
 		});
 		
 	}
