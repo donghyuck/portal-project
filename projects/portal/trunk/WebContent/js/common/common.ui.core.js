@@ -564,6 +564,13 @@
 		});
 	}
 	
+	function exists ( element ){
+		if( element.data("role") )
+			return true;
+		else 
+			false;
+	} 
+	
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
