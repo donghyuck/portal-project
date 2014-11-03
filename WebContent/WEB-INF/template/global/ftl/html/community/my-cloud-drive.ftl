@@ -100,7 +100,34 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery";			
 			if( $( "#" +renderTo).length == 0 ){			
-				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );				
+				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
+				var galleryDataSource = common.ui.datasource(
+					'${request.contextPath}/community/list-my-image.do?output=json',
+					{
+						transport:{
+							parameterMap: function (options, operation){
+								if (operation != "read" && options) {										                        								                       	 	
+									return { imageId :options.imageId };									                            	
+								}else{
+									 return { startIndex: options.skip, pageSize: options.pageSize }
+								}
+							}						
+						},
+						pageSize: 30,
+						schema: {
+							model: common.ui.data.Image,
+							data : "targetImages",
+							total : "totalTargetImageCount"
+						},
+						change : function(){
+							$( "#image-gallery-grid" ).html(
+								kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
+							);	
+						}
+					}
+				);
+				
+				/*			
 				var galleryDataSource =new kendo.data.DataSource({
 					type: 'json',
 					transport: {
@@ -127,21 +154,34 @@
 						);	
 					}
 				});								
-				common.ui.thumbnailexpanding({ template:kendo.template($("#image-gallery-expanding-template").html()) });				
+				*/
+				
+				common.ui.thumbnailexpanding({ template:kendo.template($("#image-gallery-expanding-template").html()) });			
+				
+				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
+				
+				/*	
 				$("#image-gallery-pager").kendoPager({
 					refresh : true,					
 					buttonCount : 9,
 					info: false,
 					dataSource : galleryDataSource
-				});			
+				});	
+				*/
+						
 				galleryDataSource.read();	
+				
+				/**
 				common.ui.button({
 					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
 					animate : true
 				});	
+				*/
+				
 				setTimeout(function(){
 					$( "#" +renderTo).slideDown();
 				}, 500);
+				
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				$( "#" +renderTo).slideDown();
