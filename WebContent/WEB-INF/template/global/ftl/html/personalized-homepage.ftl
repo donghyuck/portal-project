@@ -66,7 +66,7 @@
 						"show-notification-panel" : function(e){
 							createNotificationPanel();
 						},
-						"show-meno-panel" : function(e){
+						"show-memo-panel" : function(e){
 							createMemoPanel();
 						}
 					},
