@@ -68,7 +68,7 @@
 						},
 						"show-meno-panel" : function(e){
 							createMemoPanel();
-						},
+						}
 					}
 					click:function(e){
 					/*
