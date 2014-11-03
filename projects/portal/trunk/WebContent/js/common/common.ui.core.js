@@ -219,30 +219,6 @@
 		status(element, "disable");
 	}
 	
-	function button (renderTo, options){		
-		if( typeof renderTo === "string" ){	
-			renderTo = $(options.renderTo);
-		}
-		if( renderTo.data("dismiss") && renderTo.data("target")  )
-		{
-			renderTo.click(function(e){
-				$this =  $(this);
-				var target = $this.data("target");
-				if( $(target).length > 0 ){
-					if($this.data("animate")){
-						$(target).slideUp();
-					}else{
-						$(target).hide();
-					}						
-				}		
-				var toggle_target = $this.data("toggle-target");
-				if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){	
-					disable(renderTo);
-					enable($(toggle_target));
-				}				
-			});				
-		}
-	}
 	
 	function animate (renderTo, options ){		
 		var options = options || {};
@@ -476,6 +452,7 @@
 	defined = common.ui.defined,
 	isFunction = kendo.isFunction,
 	extend = $.extend,
+	proxy = $.proxy,
 	DataSource = kendo.data.DataSource,
 	Widget = kendo.ui.Widget, 
 	progress = kendo.ui.progress,
@@ -528,6 +505,7 @@
 		},
 		_button : function(){
 			var that = this,
+			options = that.options,
 			element = that.element;
 			var button = element.find("button[type='button']");
 			if (button.length > 0) {
@@ -539,20 +517,44 @@
 				button.on(
 					CLICK,
 					function(e){
-						var $this =  $(this);
-						
-						
+						var $this =  $(this);						
 						var target = $this.data("target");
 						var action = $this.data("action");
-						var animate = $this.data("animate");
+						var animate = $this.data("animate");					
+						var toggle_target = $this.data("toggle-target");
 						
+						
+						if(defined(action) && defined(options.handlers))
+						{
+							if (isFunction(options.handlers[action])) {
+								proxy( options.handlers[action] , e );
+							}
+						}
+						/*
 						if( defined(target) ){
 							if( $this.is(":disabled") ){
 								$this.prop("disabled", false);
 							}else{
 								$this.prop("disabled", true);
 							}
-						}						
+						}
+						*/
+						/*
+						if( defined(toggle_target) ){
+							if($(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button" ){
+								
+								enable($(toggle_target));
+							}
+						}
+						
+						if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){	
+							
+							disable(renderTo);
+							enable($(toggle_target));
+							
+							
+						}
+						*/
 						that.trigger(CLICK, { event: e, target:this } );
 					}
 				);				
@@ -582,6 +584,32 @@
 			
 		}
 	});
+
+
+	function button (renderTo, options){		
+		if( typeof renderTo === "string" ){	
+			renderTo = $(options.renderTo);
+		}
+		if( renderTo.data("dismiss") && renderTo.data("target")  )
+		{
+			renderTo.click(function(e){
+				$this =  $(this);
+				var target = $this.data("target");
+				if( $(target).length > 0 ){
+					if($this.data("animate")){
+						$(target).slideUp();
+					}else{
+						$(target).hide();
+					}						
+				}		
+				var toggle_target = $this.data("toggle-target");
+				if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){	
+					disable(renderTo);
+					enable($(toggle_target));
+				}				
+			});				
+		}
+	}
 	
 	function buttonGroup ( renderTo, options ){		
 		options = options || {};	
