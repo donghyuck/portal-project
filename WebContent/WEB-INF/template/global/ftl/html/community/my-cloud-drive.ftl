@@ -69,7 +69,7 @@
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 												
 				// photo panel showing				
-				createPhotoListView();								
+				//createPhotoListView();								
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
