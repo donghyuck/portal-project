@@ -83,15 +83,14 @@
 				});
 				$('#myTab a:first').tab('show') ;
 
+				common.ui.buttonGroup($("#personalized-buttons"), {
+					handlers :{
+						"show-gallery-section" : function(e){
+							common.ui.disable($(e.target));
 
-				common.ui.button({
-					renderTo: "button[data-action='show-gallery-section']",
-					click:function(e){
-						createGallerySection();
-						common.ui.disable($(this));
-					}
-				});
-							
+						}
+					}				
+				});							
 				// END SCRIPT 				
 			}
 		}]);	
@@ -172,9 +171,13 @@
 				<div class="navbar navbar-personalized navbar-inverse padding-xs pull-right" role="navigation" style="top:-4px;">									
 					<ul class="nav navbar-nav">
 						<li class="padding-xs-hr no-padding-r">
-							<div class="btn-group navbar-btn rounded-bottom">
-								<button type="button" class="btn-u btn-u-dark-blue rounded-left" data-toggle="button" data-action="show-gallery-section"><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
-								<button type="button" class="btn-u btn-u-dark-blue rounded-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
+							<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
+								<button type="button" class="btn-u btn-u-dark-blue rounded-left" 
+									data-toggle="button" 
+									data-action="show-gallery-section"><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
+								<button type="button" class="btn-u btn-u-dark-blue rounded-right" 
+									data-toggle="spmenu" 
+									data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
 							</div>
 						</li>							
 						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
