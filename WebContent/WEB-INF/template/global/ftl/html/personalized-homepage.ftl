@@ -98,6 +98,7 @@
 					content : "새로운 메모가 없습니다." ,
 					deactivateAfterClose : false,
 					close:function(e){
+						$("#personalized-buttons button[data-target='#my-memo-panel']").toggleClass("active");
 						common.ui.enable($("#personalized-buttons button[data-target='#my-memo-panel']"));
 					}
 				});
