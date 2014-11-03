@@ -219,6 +219,30 @@
 		status(element, "disable");
 	}
 	
+	function button (renderTo, options){		
+		if( typeof renderTo === "string" ){	
+			renderTo = $(options.renderTo);
+		}
+		if( renderTo.data("dismiss") && renderTo.data("target")  )
+		{
+			renderTo.click(function(e){
+				$this =  $(this);
+				var target = $this.data("target");
+				if( $(target).length > 0 ){
+					if($this.data("animate")){
+						$(target).slideUp();
+					}else{
+						$(target).hide();
+					}						
+				}		
+				var toggle_target = $this.data("toggle-target");
+				if( $(toggle_target).length > 0 && $(toggle_target).prop("tagName").toLowerCase() == "button"){		
+					enable($(toggle_target));
+				}				
+			});				
+		}
+	}
+	
 	function animate (renderTo, options ){		
 		var options = options || {};
 		renderTo.kendoStop().kendoAnimate(options);
@@ -567,7 +591,7 @@
 			}
 		}
 	}	
-
+	
 	extend(ui , {	
 		buttonGroup : common.ui.buttonGroup || buttonGroup
 	});
