@@ -144,7 +144,57 @@
 				 });
 			} 			
 		}
-					
+		<!-- ============================== -->
+		<!-- create my photo grid									-->
+		<!-- ============================== -->			
+			
+		function createPhotoListView(){
+			if( !common.ui.exists($('#photo-list-view')) ){
+				common.ui.listview(
+					$('#photo-list-view'),
+					{
+						dataSource : common.ui.datasource(
+							'${request.contextPath}/community/list-my-image.do?output=json',
+							{
+								transport : {
+									parameterMap :  function (options, operation){
+										if (operation != "read" && options) {										                        								                       	 	
+											return { imageId :options.imageId };									                            	
+										}else{
+											 return { startIndex: options.skip, pageSize: options.pageSize }
+										}
+									}
+								},
+								pageSize: 12,
+								schema: {
+									model: common.ui.data.Image,
+									data : "targetImages",
+									total : "totalTargetImageCount"
+								}
+							}
+						),
+						selectable: "single",
+						change: function(e) {
+							var data = this.dataSource.view() ;
+							var current_index = this.select().index();
+							var total_index = this.dataSource.view().length -1 ;
+							var list_view_pager = $("#photo-list-pager").data("kendoPager");	
+							var item = data[current_index];								
+							//$("#photo-list-view").data( "photoPlaceHolder", item );														
+							//displayPhotoPanel( ) ;	
+						},
+						navigatable: false,
+						template: kendo.template($("#photo-list-view-template").html())
+					}
+				);			
+				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
+				common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+				}).on("mouseleave", ".img-wrapper", function(e) {
+					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+				});						
+				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });			
+			}
+		}					
 		-->
 		</script>		
 		<style scoped="scoped">
