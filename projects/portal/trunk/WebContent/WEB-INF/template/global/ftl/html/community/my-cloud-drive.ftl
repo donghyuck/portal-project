@@ -69,11 +69,8 @@
 												
 				// photo panel showing				
 				$("#personalized-controls-section").on("open", function(e){
-					alert( "hello" );
+					createPhotoListView();
 				});
-				
-				
-				//createPhotoListView();								
 																			
 				// 4. Right Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
