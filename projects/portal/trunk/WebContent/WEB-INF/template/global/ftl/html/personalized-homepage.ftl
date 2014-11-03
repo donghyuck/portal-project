@@ -69,7 +69,7 @@
 						"show-meno-panel" : function(e){
 							createMemoPanel();
 						}
-					}
+					},
 					click:function(e){
 					/*
 						if( common.ui.defined( e.target ) && $(e.target).data("target") === "#my-notification-panel" ){
