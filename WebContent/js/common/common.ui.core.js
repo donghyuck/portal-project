@@ -359,7 +359,8 @@
 			}	
 		};
 	
-	function enableSpmenu(){
+	function spmenu(options){
+				
 		$(document).on("click","[data-toggle='spmenu']", function(e){
 			var $this = $(this);					
 			var target ;
@@ -370,15 +371,17 @@
 					target = $this.data("target")
 				}
 			}
-			$("body").toggleClass("modal-open");
+			//$("body").toggleClass("modal-open");
 			$(target).toggleClass("cbp-spmenu-open");
 		});
+		
 		$(document).on("click","[data-dismiss='spmenu']", function(e){
 			var $this = $(this);
 			var target  = $this.parent();		
-			$("body").toggleClass("modal-open");
+			//$("body").toggleClass("modal-open");
 			target.toggleClass("cbp-spmenu-open");
-		});		
+		});
+		
 	}
 	
 	function enableLightbox (){		
