@@ -392,10 +392,6 @@
 	
 	var DEFAULT_THUMBNAIL_EXPAND_HEIGHT = 500,
 		DEFAULT_THUMBNAIL_EXPAND_MARGIN = 10,
-		DEFAULT_THUMBNAIL_EXPANDERCLASS = "og-expander",
-		DEFAULT_THUMBNAIL_EXPANDER_ITEMS = "li." + DEFAULT_THUMBNAIL_EXPANDERCLASS,
-		DEFAULT_THUMBNAIL_EXPAND_GRIDCLASS = "og-grid",
-		DEFAULT_THUMBNAIL_EXPAND_CLOSE = "span.og-close",
 		DEFAULT_THUMBNAIL_EXPAND_TEMPLATE = kendo.template(
 			'<div class="og-expander animated slideDown">' +
 			'<div class="og-expander-inner">' + 
@@ -423,27 +419,27 @@
 		previewHeight = options.previewHeight || DEFAULT_THUMBNAIL_EXPAND_HEIGHT,
 		marginExpanded  = options.marginExpanded || DEFAULT_THUMBNAIL_EXPAND_MARGIN;
 		
-		$(document).on(CLICK, DEFAULT_THUMBNAIL_EXPAND_CLOSE, function(e){
+		$(document).on("click", "span.og-close", function(e){
 			var self = $(this),
-			$gallery = self.closest("."+DEFAULT_THUMBNAIL_EXPAND_GRIDCLASS),
+			$gallery = self.closest(".og-grid"),
 			$items = $gallery.children("li"),
-			$previewEl = $gallery.find("."+DEFAULT_THUMBNAIL_EXPANDERCLASS),
-			$expandedItem = $gallery.children(DEFAULT_THUMBNAIL_EXPANDER_ITEMS);
+			$previewEl = $gallery.find(".og-expander"),
+			$expandedItem = $gallery.children("li.og-expanded");
 			onEndFn = function(){					
 				if( kendo.support.transitions ){
 					$(this).off( kendo.support.transitions.event );				
 				}
-				$items.removeClass(DEFAULT_THUMBNAIL_EXPANDERCLASS);
+				$items.removeClass( 'og-expanded' );
 				$previewEl.remove();
 			};
-			setTimeout(proxy( function() {
+			setTimeout( $.proxy( function() {
 				$previewEl.css( 'height', 0 );
 				$expandedItem.css( 'height', '0px' ).on( kendo.support.transitions.event, onEndFn );
 				if( ! kendo.support.transitions.css ) {
 					onEndFn.call();
 				}
 			}, this ), 25);	
-		});		
+		});	
 
 		$(document).on("click","[data-ride='expanding']", function(e){		
 			var $this = $(this);
