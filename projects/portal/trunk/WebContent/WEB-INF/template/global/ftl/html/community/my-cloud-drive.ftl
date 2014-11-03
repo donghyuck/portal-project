@@ -195,7 +195,8 @@
 				common.ui.buttons($("#my-photo-stream button.btn-control-group"), {
 					handlers : {
 						"upload" : function(e){
-						
+							$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
+							$("#my-photo-stream .panel-upload").slideToggle(200);	
 						},
 						"upload-close" : function(e){
 							$("#my-photo-stream .panel-upload").slideToggle(200);		
