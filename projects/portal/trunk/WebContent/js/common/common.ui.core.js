@@ -436,7 +436,6 @@
 		scrollTop: common.ui.scrollTop || scrollTop,
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable,
-		button: common.ui.button || button,
 		animate : common.ui.animate || animate,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
