@@ -29,7 +29,6 @@
 			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 					
-		/*	'css!${request.contextPath}/js/codrops/codrops.grid.js',				*/
 			'${request.contextPath}/js/pdfobject/pdfobject.js',	
 			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.ui.data.js',
