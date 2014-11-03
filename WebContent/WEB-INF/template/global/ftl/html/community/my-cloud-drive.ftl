@@ -136,7 +136,7 @@
 					{
 					effects: "slide:down fade:in",
 					show: true,
-					duration: showOptions.duration || 1000
+					duration: 1000
 				 });
 				 
 				
