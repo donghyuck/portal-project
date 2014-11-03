@@ -321,7 +321,7 @@
 		}
 	});	
 		
-	var ajax = common.ui.ajax,
+	var ajax = common.ui.ajax,	
 	extend = $.extend;
 	function user (options){	
 		options = options || {};
@@ -340,7 +340,30 @@
 		});		
 	}
 	
+	function uploadMyImageByUrl = function (options){
+		options = options || {};
+		ajax(
+			options.url || '/community/upload-my-image-by-url.do?output=json', 
+			{
+				data: { item: kendo.stringify(options.data)} ,
+				success : function(response){
+					if( response.error ){ 												
+						if( kendo.isFunction (options.fail) )
+							options.fail(response) ;
+					} else {					
+						if( kendo.isFunction(options.success) )
+							options.success(response) ;					
+					}
+				},
+			}
+		); 		
+	}
+	
+	
 	extend( common.ui.data, {
-		user : user
+		user : user ,
+		image : {
+			upload : uploadMyImageByUrl			
+		}
 	} )
 })(jQuery);
