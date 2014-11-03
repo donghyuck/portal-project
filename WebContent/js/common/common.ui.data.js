@@ -356,7 +356,10 @@
 					}
 				},
 			}
-		); 		
+		).always( function () {
+			if( kendo.isFunction( options.always ))
+				options.always( ) ;					
+		});	
 	}
 	
 	
