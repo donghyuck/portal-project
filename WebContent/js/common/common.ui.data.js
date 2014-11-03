@@ -340,7 +340,7 @@
 		});		
 	}
 	
-	function uploadMyImageByUrl = function (options){
+	function uploadMyImageByUrl (options){
 		options = options || {};
 		ajax(
 			options.url || '/community/upload-my-image-by-url.do?output=json', 
