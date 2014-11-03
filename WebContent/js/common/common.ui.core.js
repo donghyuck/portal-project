@@ -130,10 +130,10 @@
 	}
 	
 	function pager ( renderTo, options ){		
-		options = options || {};				
-		var settings = extend(true, {}, DEFAULT_PAGER_SETTING , options ); 
-		if(!renderTo.data("kendoPager")){			
-			 renderTo.kendoPager(settings);
+		if(!renderTo.data("kendoPager")){		
+			options = options || {};		
+			var settings = extend(true, {}, DEFAULT_PAGER_SETTING , options ); 
+			renderTo.kendoPager(settings);
 		}		
 		return renderTo.data("kendoPager");
 	}
