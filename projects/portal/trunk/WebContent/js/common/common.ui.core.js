@@ -178,8 +178,9 @@
 		$.ajax(settings);		
 	};	
 	
-	function scrollTop(selector){
-		$('html, body').animate({scrollTop: selector.offset().top}, 1000);
+	function scrollTop(selector , margin ){
+		margin = margin || 0; 
+		$('html, body').animate({scrollTop: ( selector.offset().top + margin)  }, 1000);
 	}
 
 	
