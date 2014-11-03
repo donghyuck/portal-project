@@ -128,8 +128,10 @@
 				);
 				common.ui.thumbnail.expanding({ template: $("#image-gallery-expanding-template").html() });			
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
-				galleryDataSource.read();	
 				common.ui.buttons("#image-gallery button[data-dismiss='section'][data-target]");
+				
+				galleryDataSource.read();	
+				
 				
 				/**
 				common.ui.buttons({
