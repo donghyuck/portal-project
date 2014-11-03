@@ -486,7 +486,7 @@
 					}
 				} ).attr( 'src', data.src );
 			}
-			
+			scrollTop(preview); 
 			
 			return false;
 		});	
