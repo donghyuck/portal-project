@@ -128,23 +128,8 @@
 				);
 				common.ui.thumbnail.expanding({ template: $("#image-gallery-expanding-template").html() });			
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
-				common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");
-				
+				common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
 				galleryDataSource.read();	
-			
-				 
-				
-				/**
-				common.ui.buttons({
-					renderTo : "#image-gallery button[data-dismiss='section'][data-target]",
-					animate : true
-				});	
-				
-				
-				setTimeout(function(){
-					$( "#" +renderTo).slideDown();
-				}, 500);		
-				*/		
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
 				common.ui.animate(
@@ -156,7 +141,6 @@
 				 });
 			} 			
 		}
-
 					
 		-->
 		</script>		
