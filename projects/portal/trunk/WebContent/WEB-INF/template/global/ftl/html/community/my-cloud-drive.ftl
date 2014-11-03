@@ -115,7 +115,7 @@
 						}
 					},
 					pageSize: 30,
-					error:common.api.handleKendoAjaxError,
+					error:common.ui.handleAjaxError,
 					schema: {
 						model: Image,
 						data : "targetImages",
