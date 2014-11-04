@@ -11,6 +11,9 @@
 	<div class="file-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
+		<div class="pull-right">
+			<a class="btn btn-link" href="\\#"><i class="fa fa-info-circle fa-3x"></i></a>
+		</div>		
 	</div>
 </div>
 
@@ -25,7 +28,9 @@
 	<div class="img-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
-		<button class="btn-u btn-u-light-green" type="button"><i class="fa fa-reply-all"></i></button>
+		<div class="pull-right">
+			<a class="btn btn-link" href="\\#"><i class="fa fa-eye fa-3x"></i></a>
+		</div>
 	</div>
 </div>
 </script>	
