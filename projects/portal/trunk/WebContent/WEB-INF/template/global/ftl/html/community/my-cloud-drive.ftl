@@ -237,6 +237,7 @@
 					var data = common.ui.listview($('#attachment-list-view')).dataSource.view();					
 					var item = data[index];			
 					alert( common.ui.stringify( item ) );		
+					common.ui.disable($(this));
 				});
 								
 				common.ui.buttons(
@@ -325,6 +326,7 @@
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
 					alert( common.ui.stringify( item ) );		
+					common.ui.disable($(this));
 				});
 				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
