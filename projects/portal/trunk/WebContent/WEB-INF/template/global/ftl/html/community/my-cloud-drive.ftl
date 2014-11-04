@@ -180,7 +180,7 @@
 								},
 								pageSize: 12,
 								schema: {
-									model: Attachment,
+									model: common.ui.data.Attachment,
 									data : "targetAttachments",
 									total : "totalTargetAttachmentCount"
 								},
