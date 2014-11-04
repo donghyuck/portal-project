@@ -158,16 +158,6 @@
 	animation-name: fadeIn;
 } 
 
-.file-wrapper a[disabled], .img-wrapper a[disabled]{
-	pointer-events: none;
-	cursor: not-allowed;
-	-webkit-animation-name: none;
-	animation-name: none;	
-	opacity: 0;
-	pointer-events: none;
-	cursor: not-allowed;	
-}
-
 /**
 * pdf view 
 **/
