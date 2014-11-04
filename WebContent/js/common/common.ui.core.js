@@ -613,10 +613,7 @@
 		if( typeof element === "string")
 			element = $(element);
 		
-		if( typeof element.data("role") === "string" )
-			return true;
-		else 
-			false;
+		return  defined( element.data("role") );
 	} 
 	
 	
