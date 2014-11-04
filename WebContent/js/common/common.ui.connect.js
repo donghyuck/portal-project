@@ -21,6 +21,7 @@
 	CHANGE = "change";
 		
 	ui.connect = ui.connect || {};
+	
 	ui.connect.SocialConnect= kendo.data.Model.define({
 		id : "socialConnectId",
 		fields: { 
@@ -283,29 +284,20 @@
 		});		
 	}
 	
-	ui.connect.newConnectListDataSource = function(handlers){
-		var handlers = handlers || {};
-		var dataSource =  DataSource.create({
-			transport: {
-				read: {
-					type :POST,
-					dataType : JSON, 
-					url : '/connect/list.json'
-				} 
-			},
-			pageSize: 10,
-			error:handleAjaxError,				
-			schema: {
-				data : "connections",
-				model : ui.connect.SocialConnect
-			}				
-		});
-		if( isFunction(handlers.dataBound) ){
-			dataSource.bind("dataBound", handlers.dataBound );
-		}
-		if( isFunction(handlers.change) ){
-			dataSource.bind(CHANGE, handlers.change );
-		}
-		return dataSource;
+	function newConnectListDataSource (options){
+		
+		options = options || {};
+		options.schema = {
+			data : "connections"	
+			model : ui.connect.SocialConnect
+		};
+		return common.ui.datasource('/connect/list.json', options);		
 	}	
+	
+	$.extend(u.connect , {
+		list : {
+			datasource : newConnectListDataSource			
+		}
+	});
+	
 })(jQuery);
