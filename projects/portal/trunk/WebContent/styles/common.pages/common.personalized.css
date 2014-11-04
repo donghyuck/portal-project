@@ -158,7 +158,7 @@
 	animation-name: fadeIn;
 } 
 
-.file-wrapper:hover a[disabled], .img-wrapper:hover a[disabled]{
+.file-wrapper a:hover[disabled], .img-wrapper a:hover[disabled]{
 	pointer-events: none;
 	cursor: not-allowed;
 	opacity: .65;
