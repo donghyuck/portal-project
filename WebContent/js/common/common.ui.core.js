@@ -614,47 +614,6 @@
 		selector.each(function(index) {
 			$(this).on("click",clickFn);					
 		});
-		/*
-		selector.on("click", function(e){		
-			var $this = $(this),
-			dismiss = $this.data("dismiss"),
-			action = $this.data("action"),
-			dismiss_target = $this.data("dismiss-target"),
-			toggle_target = $this.data("toggle-target");
-			
-
-			if(defined(action) && defined(options.handlers))
-			{
-				if (isFunction(options.handlers[action])) {
-					var fn = options.handlers[action];
-					fn($.Event("click",  { event: e, target:this } ));
-				}
-			}
-			
-			if(dismiss === "panel"){
-				var target = $(dismiss_target);
-				if($this.data("animate")){
-					$(dismiss_target).kendoStop().kendoAnimate({
-						effects:"slide:down fade:in",
-						reverse: true,
-						hide : true								
-					 });						
-				}else{
-					$(dismiss_target).hide();	
-				}	
-			}
-			if(toggle_target){
-				var target = $(toggle_target);
-				if( target.is("[data-toggle='button']") || target.is("button") )
-				{
-					target.toggleClass("active");
-					enable(target);
-				}
-			}
-
-			
-			
-		});*/
 	}
 	
 	function exists ( element ){
@@ -685,6 +644,7 @@
 		buttons : common.ui.buttons || buttons,
 		animate : common.ui.animate || animate,
 		fx : kendo.fx,
+		bind : kendo.bind,
 		upload : common.ui.upload || upload,
 		observable : kendo.observable,
 		exists : exists,
