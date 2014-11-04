@@ -294,7 +294,7 @@
 		return common.ui.datasource('/connect/list.json', options);		
 	}	
 	
-	$.extend(u.connect , {
+	$.extend(ui.connect , {
 		list : {
 			datasource : newConnectListDataSource			
 		}
