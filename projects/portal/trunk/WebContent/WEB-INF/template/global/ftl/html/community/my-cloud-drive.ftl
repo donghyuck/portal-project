@@ -195,6 +195,7 @@
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action='upload']"), {
 					handlers : {
 						"upload" : function(e){
+							alert("ss");
 							if( common.ui.exists($("#photo-files")) ){
 								common.ui.upload($("#photo-files"),{
 									async: {
