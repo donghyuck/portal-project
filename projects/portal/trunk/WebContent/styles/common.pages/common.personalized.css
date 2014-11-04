@@ -142,7 +142,6 @@
 	margin-left: 40px;
 	text-align: center;
 	position: absolute;
-	
 }
 
 .btn-u.btn-icon {
@@ -159,11 +158,10 @@
 	animation-name: fadeIn;
 } 
 
-.file-wrapper a[disabled], .img-wrapper a[disabled]{
+.file-wrapper:hover a[disabled], .img-wrapper:hover a[disabled]{
 	pointer-events: none;
 	cursor: not-allowed;
 	opacity: .65;
-	box-shadow: none;
 }
 
 /**
