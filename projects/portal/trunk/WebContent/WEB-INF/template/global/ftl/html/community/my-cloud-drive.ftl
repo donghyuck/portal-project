@@ -84,7 +84,7 @@
 					//e.preventDefault();		
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-files' ){					
-						//createAttachmentListView();
+						createAttachmentListView();
 					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
 						createPhotoListView();
 					}					
@@ -147,19 +147,15 @@
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
 		<!-- ============================== -->		
-		function createAttachmentListView(){			
-		
+		function createAttachmentListView(){					
 			if( !common.ui.exists($('#attachment-list-view')) ){
 				var attachementTotalModle = common.ui.observable({ 
 					totalAttachCount : "0",
 					totalImageCount : "0",
 					totalFileCount : "0"							
-				});	
-				
-			}
-		
-			if( !$('#attachment-list-view').data('kendoListView') ){			
-			
+				});					
+			}		
+			if( !$('#attachment-list-view').data('kendoListView') ){						
 				var attachementTotalModle = kendo.observable({ 
 					totalAttachCount : "0",
 					totalImageCount : "0",
@@ -214,14 +210,12 @@
 								attachementTotalModle.set("totalAttachCount", totalCount);
 							}
 						}											
-				});
-				
+				});				
 				common.ui.listview($("#attachment-list-view")).on("mouseenter",  ".file-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".file-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().reverse();
-				});															
-				
+				});	
 				$("input[name='attachment-list-view-filters']").on("change", function () {
 					var attachment_list_view = common.ui.listview($("#attachment-list-view"));
 					switch(this.value){
