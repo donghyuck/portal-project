@@ -148,7 +148,7 @@
 	padding:0;
 }
 
-.file-wrapper a:hover, .img-wrapper a:hover  {
+.file-wrapper:hover a, .img-wrapper:hover a {
 	opacity: 1;
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
@@ -158,7 +158,7 @@
 	animation-name: fadeIn;
 } 
 
-.file-wrapper a:hover[disabled], .img-wrapper a:hover[disabled]{
+.file-wrapper:hover a[disabled], .img-wrapper:hover a[disabled]{
 	pointer-events: none;
 	cursor: not-allowed;
 	opacity: .65;
