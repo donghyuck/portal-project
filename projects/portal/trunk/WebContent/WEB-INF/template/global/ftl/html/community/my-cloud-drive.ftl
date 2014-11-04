@@ -472,7 +472,7 @@
 									</div>
 								</div>
 							<div class="panel panel-default">
-								<div class="panel-body bg-lightgray border-b">
+								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
 									<p class="pull-right">				
@@ -480,13 +480,13 @@
 									</p>	
 									</#if>																										
 									<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-										<label class="btn btn-sm btn-warning active">
+										<label class="btn btn-sm btn-warning rounded-left active">
 											<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
 										</label>
 										<label class="btn btn-sm btn-warning">
 											<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
 										</label>
-										<label class="btn btn-sm btn-warning">
+										<label class="btn btn-sm btn-warning rounded-right">
 											<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
 										</label>	
 									</div>												
@@ -543,7 +543,7 @@
 												</div>	
 
 							<div class="panel panel-default">			
-								<div class="panel-body bg-lightgray border-b">
+								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
 									<p class="pull-right">				
