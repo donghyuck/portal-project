@@ -164,7 +164,8 @@
 }
 
 .file-wrapper:hover a[disabled], .img-wrapper:hover a[disabled]{
-	opacity: .65;
+	opacity: .25;
+	cursor: not-allowed;
 }
 
 /**
