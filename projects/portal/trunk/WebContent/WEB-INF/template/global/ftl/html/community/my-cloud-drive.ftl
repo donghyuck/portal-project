@@ -196,7 +196,7 @@
 					handlers : {
 						"upload" : function(e){
 							alert(common.ui.exists($("#photo-files")));
-							if( common.ui.exists($("#photo-files")) ){
+							if( !common.ui.exists($("#photo-files")) ){
 								common.ui.upload($("#photo-files"),{
 									async: {
 										saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json'
