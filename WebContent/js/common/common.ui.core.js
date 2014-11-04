@@ -655,6 +655,7 @@
 		exists : exists,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
+		connect : common.ui.connect || {}
 	});
 	
 })(jQuery);
