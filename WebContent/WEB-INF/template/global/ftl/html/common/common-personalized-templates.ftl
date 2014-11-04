@@ -8,7 +8,7 @@
 	# } else { #		
 	<img src="${request.contextPath}/images/common/icons/file/blank.png"></a>
 	# } #	
-	<a class="btn-u btn-u-dark btn-icon btn-circle btn-lg"><i class="fa fa-info"></i></a>
+	<a class="btn-u btn-u-blue btn-icon btn-circle btn-lg"><i class="fa fa-info"></i></a>
 	<div class="file-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
@@ -20,7 +20,7 @@
 <div class="img-wrapper">			
 	#if (contentType.match("^image") ) {#
 	<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#:imageId#" alt="#:name# 이미지" />
-	<a class="btn-u btn-u-dark btn-icon btn-circle btn-lg"><i class="fa fa-info"></i></a>
+	<a class="btn-u btn-u-blue btn-icon btn-circle btn-lg"><i class="fa fa-info"></i></a>
 	# } else { #			
 	<img src="http://placehold.it/146x146&amp;text=[file]"></a>
 	# } #	
