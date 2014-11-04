@@ -113,8 +113,9 @@
 		<!-- ============================== -->		
 		function showMediaPanel(connect){				
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
-			var panel = common.ui.panel({ 
-				appendTo: appendTo,
+			var panel = common.ui.extPanel(
+			appendTo,
+			{ 
 				title: "<i class='fa fa-" + connect.providerId + " fa-fw'></i>" + connect.providerId  , 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
 				data: connect,
