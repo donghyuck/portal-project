@@ -163,9 +163,13 @@
 	cursor: not-allowed;
 	-webkit-animation-name: none;
 	animation-name: none;	
-	opacity: .25;
+	opacity: 0;
 	pointer-events: none;
 	cursor: not-allowed;	
+}
+
+.file-wrapper:hover a[disabled], .img-wrapper:hover a[disabled] {
+	opacity: .1;
 }
 
 /**
