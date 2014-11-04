@@ -89,7 +89,7 @@
 		function createConnectedSocialNav(){				
 			var renderTo = $('#navbar-btn-my-streams');	
 			var myConnectBtn = renderTo.find('button[data-action="media-list"]').button('loading');	
-			var myConnectDataSource = common.ui.connect.newConnectListDataSource({
+			var myConnectDataSource = common.ui.connect.list.datasource({
 				change:function(e){
 					var $this = this;
 					var template = kendo.template('<label class="btn btn-primary"><input name="selectedSocialConnect" type="checkbox" value="#:socialConnectId#"><i class="fa fa-#= providerId #"></i></label>');
