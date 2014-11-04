@@ -234,7 +234,7 @@
 				
 				$("#attachment-list-view").on("click", ".file-wrapper a", function(e){
 					var index = $(this).closest("[data-uid]").index();
-					var data = common.ui.listview($('#attachment-list-view')).view();					
+					var data = common.ui.listview($('#attachment-list-view')).dataSource.view();					
 					var item = data[index];			
 					alert( common.ui.stringify( item ) );		
 				});
@@ -322,7 +322,7 @@
 				
 				$("#photo-list-view").on("click", ".img-wrapper a", function(e){
 					var index = $(this).closest("[data-uid]").index();
-					var data = common.ui.listview($('#photo-list-view')).view();					
+					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
 					alert( common.ui.stringify( item ) );		
 				});
