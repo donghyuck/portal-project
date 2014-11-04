@@ -11,9 +11,7 @@
 	<div class="file-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
-		<div class="pull-right">
-			<a class="btn btn-link" href="\\#"><i class="fa fa-eye fa-3x"></i></a>
-		</div>		
+		<a class="btn btn-danger btn-icon btn-circle btn-lg"><i class="fa fa-times"></i></a>		
 	</div>
 </div>
 
