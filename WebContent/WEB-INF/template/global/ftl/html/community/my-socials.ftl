@@ -17,44 +17,53 @@
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
 			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common/common.ui.core.js',
-			'${request.contextPath}/js/common/common.ui.connect.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],
 			complete: function() {			
 			
+				// FEATURES SETUP	
 				common.ui.setup({
 					features:{
-						backstretch : false,
+						wallpaper : true,
 						lightbox : true,
-						landing : true
-					}
-				});
-				var currentUser = new User();		
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
+						spmenu : true
+					},
+					wallpaper : {
+						slideshow : false
+					},
+					jobs:jobs
+				});		
+				
+				// ACCOUNTS LOAD	
+				var currentUser = new common.ui.data.User();			
+				common.ui.accounts($("#account-navbar"), {
+					template : kendo.template($("#account-navbar-template").html()),
+					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
 						e.token.copy(currentUser);
-					},				
-					shown : function(e){					
-						createConnectedSocialNav();	
+						if( !currentUser.anonymous ){		
+							common.ui.enable( $("#personalized-buttons button")	);
+							//common.ui.enable( $('button[data-action="show-gallery-section"]') );							
+						}
 					}
-				});						
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");				
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
+				});	
 				
-				$(document).on("click","[data-upload='photo']", function(e){		
+				// menu active setting		
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");			
+					
+				// personalized grid setting																																					
+				preparePersonalizedArea($("#personalized-area"), 3, 6 );
 				
+				
+				/*				
+				$(document).on("click","[data-upload='photo']", function(e){						
 					var btn = $(this) ;
 					btn.parent().toggleClass('active');
 					btn.button('loading');
@@ -71,6 +80,7 @@
 									});
 					
 				});
+				*/
 			}
 		}]);	
 		<!-- ============================== -->
