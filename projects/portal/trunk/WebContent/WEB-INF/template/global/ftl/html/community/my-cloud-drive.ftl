@@ -188,7 +188,7 @@
 								filter :  { field: "contentType", operator: "neq", value: "" }							
 							}
 						),
-						selectable: false,				
+						selectable: "single",				
 						change: function(e) {									
 							var data = this.dataSource.view() ;
 							var item = data[this.select().index()];		
