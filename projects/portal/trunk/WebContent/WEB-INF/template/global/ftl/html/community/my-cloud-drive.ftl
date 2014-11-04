@@ -231,6 +231,14 @@
 					}
 				});				
 				common.ui.pager($("#pager"),{ buttonCount : 5, dataSource : common.ui.listview($("#attachment-list-view")).dataSource });			
+				
+				$("#attachment-list-view").on("click", ".file-wrapper a", function(e){
+					var index = $(this).closest("[data-uid]").index();
+					var data = common.ui.listview($('#attachment-list-view')).view();					
+					var item = data[index];			
+					alert( common.ui.stringify( item ) );		
+				});
+								
 				common.ui.buttons(
 					$("#my-files button.btn-control-group"),
 					{
