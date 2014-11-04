@@ -3,26 +3,8 @@
  * dependency : common.ui.core, common.ui.kendo
  */
 ;(function($, undefined) {
-	var ui = common.ui, 	
-	handleAjaxError = ui.handleAjaxError,
-	defined = ui.defined,
-	ajax = ui.ajax,
-	extend = $.extend,	
-	Widget = kendo.ui.Widget, 
-	DataSource = kendo.data.DataSource,
-	proxy = $.proxy, 	
-	isFunction = kendo.isFunction,
-	OBJECT = 'object',
-	STRING = 'string',
-	GET = 'GET',
-	POST = 'POST',
-	OPEN = 'open', 
-	UNDEFINED = 'undefined',
-	CHANGE = "change";
 		
-	ui.connect = ui.connect || {};
-	
-	ui.connect.SocialConnect= kendo.data.Model.define({
+	common.ui.connect.SocialConnect= kendo.data.Model.define({
 		id : "socialConnectId",
 		fields: { 
 			socialConnectId: { type: "number", editable: false, defaultValue: 0 },
@@ -57,8 +39,27 @@
 	    		target.set("properties", this.get("properties") );
 	    }
 	});
+})(jQuery);
 
-	ui.connect.row = function(current, totalSize){
+;(function($, undefined) {
+		var ui = common.ui, 	
+		handleAjaxError = ui.handleAjaxError,
+		defined = ui.defined,
+		ajax = ui.ajax,
+		extend = $.extend,	
+		Widget = kendo.ui.Widget, 
+		DataSource = kendo.data.DataSource,
+		proxy = $.proxy, 	
+		isFunction = kendo.isFunction,
+		OBJECT = 'object',
+		STRING = 'string',
+		GET = 'GET',
+		POST = 'POST',
+		OPEN = 'open', 
+		UNDEFINED = 'undefined',
+		CHANGE = "change";
+		
+	function row (current, totalSize){
 		if( current == 0 )
 			return true;
 		else if( totalSize >= 3 && ( current == 1 || current == 4 || current == 5 || current == 7) )
@@ -66,7 +67,7 @@
 		return false;
 	}
 
-	ui.connect.columns = function(current, totalSize){
+	function columns (current, totalSize){
 		if( totalSize == 1 )
 			return 12;
 		else if ( totalSize == 2)
@@ -109,14 +110,13 @@
 		return false;
 	}
 		
-	ui.connect.userProfile = function( providerId, userId, callback, error ){
+	function userProfile ( providerId, userId, callback, error ){
 		var options = options || {};		
 		switch (providerId){
 			case "facebook":
 				options.url = "/connect/facebook/user/lookup.json";
 				break;			
-		}
-		
+		}		
 		$.ajax({
 			type : POST,
 			url : options.url,
@@ -133,7 +133,7 @@
 		});
 	}
 	
-	ui.connect.profile = function( options ){	
+	function profile ( options ){	
 		$.ajax({
 			type : POST,
 			url : options.url,
@@ -165,7 +165,7 @@
 	}
 	
 	
-	ui.connect.listview = function (renderTo, connect, options ){
+	function listview (renderTo, connect, options ){
 		if(!renderTo.data("kendoListView")){			
 			var _data = {
 				parameterMap : function(options, operation) {
@@ -215,8 +215,7 @@
 		return renderTo.data("kendoListView");
 	} 
 		
-	ui.connect.signin = function (options){
-		
+	function signin (options){		
 		options = options || {};		
 		if(!defined(options.success)){
 			options.success = function(response){
@@ -262,7 +261,7 @@
 		*/		
 	}
 	
-	ui.connect.status = function( options ){
+	function status( options ){
 		options = options || {};		
 		jQuery.ajax({
 			type : POST,
@@ -295,6 +294,14 @@
 	}	
 	
 	$.extend(ui.connect , {
+		row : common.ui.connect.row || row,
+		columns : common.ui.connect.columns || columns,
+		userProfile : common.ui.connect.userProfile || userProfile,
+		profile : common.ui.connect.profile || profile,
+		listview : common.ui.connect.listview || listview,
+		listview : common.ui.connect.listview || listview,
+		signin : common.ui.connect.signin || signin,
+		status : common.ui.connect.status || status,
 		list : {
 			datasource : newConnectListDataSource			
 		}
