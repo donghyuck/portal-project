@@ -241,6 +241,10 @@ border-bottom: solid 2px #616161;
 	border-top: 1px solid #e4e4e4
 }
 
+.border-b {
+	border-top: 1px solid #e4e4e4
+}
+
 .no-border {
 	border-width: 0 !important
 }
