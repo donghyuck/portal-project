@@ -49,8 +49,7 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 						if( !currentUser.anonymous ){		
-							common.ui.enable( $("#personalized-buttons button")	);
-							//common.ui.enable( $('button[data-action="show-gallery-section"]') );							
+							createConnectedSocialNav();						
 						}
 					}
 				});	
