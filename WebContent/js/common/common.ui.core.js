@@ -610,7 +610,7 @@
 	}
 	
 	function exists ( element ){
-		if( typeof element === string)
+		if( typeof element === "string")
 			element = $(element);
 		
 		if( typeof element.data("role") === "string" )
