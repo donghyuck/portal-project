@@ -35,8 +35,9 @@
 			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],			
-			complete: function() {		
-			
+			complete: function() {			
+					
+				// FEATURES SETUP	
 				common.ui.setup({
 					features:{
 						wallpaper : true,
@@ -62,10 +63,21 @@
 					}
 				});	
 
+				// menu active setting	
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");
 				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
+				
+				// personalized buttons setting							
+				common.ui.buttonGroup($("#personalized-buttons"), {
+					handlers :{
+						"show-gallery-section" : function(e){
+							common.ui.disable($(e.target));
+							createGallerySection();
+						}
+					}				
+				});	
 																															
 				// SpMenu Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
@@ -81,17 +93,7 @@
 				// SpMenu Tabs select first				
 				$("#personalized-controls-section").on("open", function(e){
 					$('#myTab a:first').tab('show') ;
-				});
-				
-				
-				common.ui.buttonGroup($("#personalized-buttons"), {
-					handlers :{
-						"show-gallery-section" : function(e){
-							common.ui.disable($(e.target));
-							createGallerySection();
-						}
-					}				
-				});							
+				});				
 				// END SCRIPT 				
 			}
 		}]);	
@@ -186,12 +188,11 @@
 					}
 				);			
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
-				common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 				});						
-				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });			
-				
+				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
 					handlers : {
 						"upload" : function(e){				
@@ -325,7 +326,7 @@
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- tab-v1 -->
-				<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
+				<button type="button" class="btn-close" data-dismiss='spmenu' data-toggle-target="#personalized-buttons button[data-toggle='spmenu']">Close</button>
 				<div class="tab-v1" >			
 					<h5 class="side-section-title white">My 클라우드 저장소</h5>			
 					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
