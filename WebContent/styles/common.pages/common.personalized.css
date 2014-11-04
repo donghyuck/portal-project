@@ -67,7 +67,7 @@
 	width: 32.99%;
 	height: 170px;
 	padding: 0;
-	cursor: pointer;
+	cursor: default;
 	overflow: hidden;	
 }
 
@@ -131,6 +131,9 @@
 	color: #fff;
 }
 
+.k-selectable .img-wrapper , .k-selectable .file-wrapper {
+	cursor: pointer;
+}
 
 /**
 * pdf view 
