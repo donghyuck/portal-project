@@ -148,10 +148,10 @@
 	padding:0;
 }
 
-.file-wrapper:hover a, .img-wrapper:hover a {
+.file-wrapper.:hover a, .img-wrapper:hover a {
 	opacity: 1;
-	-webkit-animation-duration: 1s;
-	animation-duration: 1s;
+	-webkit-animation-duration: .5s;
+	animation-duration: .5s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;	
 	-webkit-animation-name: fadeIn;
