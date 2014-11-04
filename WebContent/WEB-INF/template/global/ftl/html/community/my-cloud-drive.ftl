@@ -265,8 +265,7 @@
 		}				
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
-		<!-- ============================== -->			
-			
+		<!-- ============================== -->				
 		function createPhotoListView(){
 			if( !common.ui.exists($('#photo-list-view')) ){
 				common.ui.listview(
@@ -314,7 +313,10 @@
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
 				
 				$("#photo-list-view").on("click", ".img-wrapper a", function(e){
-					alert($(this).closest("[data-uid]").index());
+					var index = $(this).closest("[data-uid]").index();
+					var data = common.ui.listview($('#photo-list-view')).view();					
+					var item = data[index];			
+					alert( common.ui.stringify( item ) );		
 				});
 				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
