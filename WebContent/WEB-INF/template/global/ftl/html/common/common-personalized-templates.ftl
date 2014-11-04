@@ -12,7 +12,7 @@
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
 		<div class="pull-right">			
-			<a class="btn btn-danger btn-icon btn-circle btn-lg"><i class="fa fa-cog"></i></a>		
+			<a class="btn btn-info btn-icon btn-circle btn-lg"><i class="fa fa-info"></i></a>		
 		</div>
 	</div>
 </div>
@@ -29,7 +29,7 @@
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
 		<div class="pull-right">			
-			<a class="btn btn-danger btn-icon btn-circle btn-lg"><i class="fa fa-info"></i></a>		
+			<a class="btn btn-primary btn-icon btn-circle btn-lg"><i class="fa fa-info"></i></a>
 		</div>
 	</div>
 </div>
