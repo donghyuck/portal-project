@@ -25,6 +25,7 @@
 	<div class="img-description">
 		<h3>#:name#</h3>
 		<p>#:size# 바이트</p>
+		<button class="btn-u btn-u-light-green" type="button"><i class="fa fa-reply-all"></i></button>
 	</div>
 </div>
 </script>	
