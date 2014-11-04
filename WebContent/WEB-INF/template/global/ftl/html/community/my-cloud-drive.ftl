@@ -155,8 +155,8 @@
 					totalFileCount : "0"							
 				});					
 			}		
-			if( !$('#attachment-list-view').data('kendoListView') ){						
-				var attachementTotalModle = kendo.observable({ 
+			if( !common.ui.exists($('#attachment-list-view')) ){						
+				var attachementTotalModle = common.ui.observable({ 
 					totalAttachCount : "0",
 					totalImageCount : "0",
 					totalFileCount : "0"							
