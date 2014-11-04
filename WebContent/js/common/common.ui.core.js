@@ -375,10 +375,17 @@
 		
 		$(document).on("click","[data-dismiss='spmenu']", function(e){
 			var $this = $(this);
+			
 			var target  = $this.parent();		
 			//$("body").toggleClass("modal-open");
+			var toggle = $this.data("toggle-target");
+			if(defined(toggle)){
+				if($(toggle).is(".active") )
+					$(toggle).removeClass("active");
+			}
+			
 			target.trigger("close");
-			target.toggleClass("cbp-spmenu-open");			
+			target.toggleClass("cbp-spmenu-open");
 		});
 		
 	}
