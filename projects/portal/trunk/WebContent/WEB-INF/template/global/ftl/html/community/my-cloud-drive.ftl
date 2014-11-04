@@ -129,9 +129,15 @@
 						}
 					}
 				);
+				$("#photo-list-view").on("click", ".img-wrapper a", function(e){
+					alert($(this).index());
+				});
 				common.ui.thumbnail.expanding({ template: $("#image-gallery-expanding-template").html() });			
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
-				common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
+				common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");	
+				
+				
+				
 				galleryDataSource.read();	
 			}
 			if( $( "#" +renderTo).is(":hidden") ){
