@@ -805,9 +805,9 @@ width: 99%;
 --------------------------------------*/
 
 .btn-circle {
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
+	-webkit-border-radius: 50% !important;
+	-moz-border-radius: 50% !important;
+	border-radius: 50% !important;
 }
 
 .btn-icon {
