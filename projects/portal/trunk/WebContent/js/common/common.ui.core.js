@@ -887,9 +887,16 @@
 		options = options || {};	
 		if( defined(renderTo) ){
 			if( typeof renderTo === "string")
-				renderTo = $(renderTo);
+				renderTo = $(renderTo);			
 			
-			 return new Panel( renderTo, options); 
+			if( !renderTo.is(".panel") && renderTo.children().length == 0 )
+			{
+				var guid = guid().toLowerCase() ;
+				renderTo.append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
+				return new Panel( $("#" + guid ), options); 
+			}else{			
+				return new Panel( renderTo, options); 
+			}
 		} else {		
 			var guid = guid().toLowerCase() ;
 			$('body').append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
