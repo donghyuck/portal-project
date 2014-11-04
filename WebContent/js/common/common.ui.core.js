@@ -578,8 +578,8 @@
 			if(defined(action) && defined(options.handlers))
 			{
 				if (isFunction(options.handlers[action])) {
-					var fn = options.handlers[action];
-					fn($.Event("click",  { event: e, target:this } ));
+					var actionFn = options.handlers[action];
+					actionFn($.Event("click",  { event: e, target:this } ));
 				}
 			}			
 			if(dismiss === "panel"){
