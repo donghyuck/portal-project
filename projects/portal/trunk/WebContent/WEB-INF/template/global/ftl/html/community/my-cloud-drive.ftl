@@ -145,6 +145,131 @@
 			} 			
 		}
 		<!-- ============================== -->
+		<!-- create my attachment grid							-->
+		<!-- ============================== -->		
+		function createAttachmentListView(){			
+		
+			if( !common.ui.exists($('#attachment-list-view')) ){
+				var attachementTotalModle = common.ui.observable({ 
+					totalAttachCount : "0",
+					totalImageCount : "0",
+					totalFileCount : "0"							
+				});	
+				
+			}
+		
+			if( !$('#attachment-list-view').data('kendoListView') ){			
+			
+				var attachementTotalModle = kendo.observable({ 
+					totalAttachCount : "0",
+					totalImageCount : "0",
+					totalFileCount : "0"							
+				});
+				common.ui.bind($("#attachment-list-filter"), attachementTotalModle);
+				common.ui.listview(
+					$("#attachment-list-view"),
+					{				
+						dataSource : common.ui.datasource(
+							"${request.contextPath}/community/list-my-attachement.do?output=json", 
+							{
+								transport:{
+									destroy: { url:"${request.contextPath}/community/delete-my-attachment.do?output=json", type:"POST" }, 
+									parameterMap: function (options, operation){
+										if (operation != "read" && options) {										                        								                       	 	
+											return { attachmentId :options.attachmentId };									                            	
+										}else{
+											 return { startIndex: options.skip, pageSize: options.pageSize }
+										}
+									}
+								},
+								pageSize: 12,
+								schema: {
+									model: Attachment,
+									data : "targetAttachments",
+									total : "totalTargetAttachmentCount"
+								},
+								sort: { field: "attachmentId", dir: "desc" },
+								filter :  { field: "contentType", operator: "neq", value: "" }							
+							}
+						),
+						selectable: false,				
+						change: function(e) {									
+							var data = this.dataSource.view() ;
+							var item = data[this.select().index()];		
+							$("#attachment-list-view").data( "attachPlaceHolder", item );												
+							//displayAttachmentPanel( ) ;	
+						},		
+						navigatable: false,
+						template: kendo.template($("#attachment-list-view-template").html()),			
+						dataBound: function(e) {
+							//var attachment_list_view = common.ui.$('#attachment-list-view').data('kendoListView');
+							var filter =  this.dataSource.filter().filters[0].value;
+							var totalCount = this.dataSource.total();
+							if( filter == "image" ) 
+							{
+								attachementTotalModle.set("totalImageCount", totalCount);
+							} else if ( filter == "application" ) {
+								attachementTotalModle.set("totalFileCount", totalCount);
+							} else {
+								attachementTotalModle.set("totalAttachCount", totalCount);
+							}
+						}											
+				});
+				
+				common.ui.listview($("#attachment-list-view")).on("mouseenter",  ".file-wrapper", function(e) {
+					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().play();
+				}).on("mouseleave", ".file-wrapper", function(e) {
+					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().reverse();
+				});															
+				
+				$("input[name='attachment-list-view-filters']").on("change", function () {
+					var attachment_list_view = common.ui.listview($("#attachment-list-view"));
+					switch(this.value){
+							case "all" :
+								attachment_list_view.dataSource.filter(  { field: "contentType", operator: "neq", value: "" } ) ; 
+								break;
+							case "image" :
+								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "image" }) ; 
+								break;
+							case "file" :
+								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
+								break;
+					}
+				});				
+				common.ui.pager($("#pager"),{ buttonCount : 5, dataSource : common.ui.listview($("#attachment-list-view")).dataSource });			
+				common.ui.buttons(
+					$("#my-files button.btn-control-group"),
+					{
+						handlers : {
+							upload : function(e){
+								if( common.ui.exists($('#attachment-files')) ){
+									common.ui.upload(
+										$("#attachment-files"),
+										{
+											multiple : false,
+											async : {
+												saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',
+											},
+											success : function(e) {								    
+												if( e.response.targetAttachment ){
+													e.response.targetAttachment.attachmentId;
+													common.ui.listview($("#attachment-list-view")).dataSource.read(); 
+												}				
+											}
+										}
+									);
+								}								
+								$("#my-files .panel-upload").slideToggle(200);			
+							},
+							'upload-close' : function(e){
+								$("#my-files .panel-upload").slideToggle(200);			
+							}	
+						}
+					}
+				);				
+			}		
+		}				
+		<!-- ============================== -->
 		<!-- create my photo grid									-->
 		<!-- ============================== -->			
 			
