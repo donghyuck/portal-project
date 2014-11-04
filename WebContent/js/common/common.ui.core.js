@@ -158,7 +158,10 @@
 		localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일들을 이곳에 끌어 놓으세요.' },
 		async: {			
 			autoUpload: true
-		}
+		},
+		upload: function (e) {								         
+	    	 e.data = {};														    								    	 		    	 
+	    }
 	};
 	
 	function upload(renderTo, options){
