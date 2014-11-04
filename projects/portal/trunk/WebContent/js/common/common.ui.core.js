@@ -886,6 +886,8 @@
 	function extPanel (renderTo, options ){		
 		options = options || {};	
 		if( defined(renderTo) ){
+			if( typeof renderTo === "string")
+				renderTo = $(renderTo);
 			
 			 return new Panel( renderTo, options); 
 		} else {		
