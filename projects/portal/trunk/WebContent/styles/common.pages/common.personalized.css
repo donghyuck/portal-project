@@ -168,10 +168,6 @@
 	cursor: not-allowed;	
 }
 
-.file-wrapper:hover a[disabled], .img-wrapper:hover a[disabled] {
-	opacity: .1;
-}
-
 /**
 * pdf view 
 **/
