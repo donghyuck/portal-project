@@ -283,12 +283,11 @@
 		});		
 	}
 	
-	function newConnectListDataSource (options){
-		
+	function newConnectListDataSource (options){		
 		options = options || {};
 		options.schema = {
-			data : "connections"	
-			model : ui.connect.SocialConnect
+			data : "connections",	
+			model : common.ui.connect.SocialConnect
 		};
 		return common.ui.datasource('/connect/list.json', options);		
 	}	
