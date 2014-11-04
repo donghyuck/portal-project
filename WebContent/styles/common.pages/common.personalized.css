@@ -148,7 +148,7 @@
 	padding:0;
 }
 
-.file-wrapper:hover a, .img-wrapper:hover a {
+.file-wrapper a:hover, .img-wrapper a:hover  {
 	opacity: 1;
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
