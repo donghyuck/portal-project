@@ -458,7 +458,7 @@
 					<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
 						<!-- start attachement tab-pane -->
 						<div class="tab-pane" id="my-files">
-								<div class="panel panel-default panel-upload no-margin-b no-border-b" style="display:none;">
+								<div class="panel panel-primary panel-upload no-margin-b border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 								</div>						
@@ -472,7 +472,7 @@
 									</div>
 								</div>
 							<div class="panel panel-default">
-								<div class="panel-body">
+								<div class="panel-body bg-lightgray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
 									<p class="pull-right">				
@@ -501,11 +501,11 @@
 						</div><!-- end attachements  tab-pane -->		
 						<!-- start photos  tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
-												<div class="panel panel-default panel-upload no-margin-b no-border-b" style="display:none;">
-							<div class="panel-heading">
-								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
-							</div>												
-													<div class="panel-body">
+							<div class="panel panel-primary panel-upload no-margin-b border-2x" style="display:none;">
+								<div class="panel-heading">
+									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+								</div>												
+														<div class="panel-body">
 														<#if !action.user.anonymous >			
 														<div class="page-header text-primary">
 															<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
@@ -543,7 +543,7 @@
 												</div>	
 
 							<div class="panel panel-default">			
-								<div class="panel-body">
+								<div class="panel-body bg-lightgray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
 									<p class="pull-right">				
