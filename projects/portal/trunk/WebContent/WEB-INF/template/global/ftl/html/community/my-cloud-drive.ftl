@@ -314,7 +314,7 @@
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
 				
 				$("#photo-list-view").on("click", ".img-wrapper a", function(e){
-					alert($(this).closest("[data-uid]"));
+					alert($(this).closest("[data-uid]").index());
 				});
 				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
