@@ -645,6 +645,7 @@
 		animate : common.ui.animate || animate,
 		fx : kendo.fx,
 		bind : kendo.bind,
+		template : kendo.template,
 		upload : common.ui.upload || upload,
 		observable : kendo.observable,
 		exists : exists,
