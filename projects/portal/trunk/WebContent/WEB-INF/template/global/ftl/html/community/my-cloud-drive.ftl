@@ -211,7 +211,7 @@
 							}
 						}											
 				});				
-				common.ui.listview($("#attachment-list-view")).on("mouseenter",  ".file-wrapper", function(e) {
+				$("#attachment-list-view").on("mouseenter",  ".file-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".file-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().reverse();
