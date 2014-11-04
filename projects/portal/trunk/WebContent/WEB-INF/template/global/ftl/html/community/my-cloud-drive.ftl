@@ -236,7 +236,7 @@
 					{
 						handlers : {
 							upload : function(e){
-								if( common.ui.exists($('#attachment-files')) ){
+								if( !common.ui.exists($('#attachment-files')) ){
 									common.ui.upload(
 										$("#attachment-files"),
 										{
