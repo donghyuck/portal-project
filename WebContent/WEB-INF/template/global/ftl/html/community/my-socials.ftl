@@ -138,7 +138,8 @@
 					var view = e.target.element.find(".panel-body ul.media-list");
 					common.ui.connect.listview( view, connect );
 				}
-			}).show();	
+			});
+			panel.show();
 		}
 				
 		function mediaEditorSource (media){			
