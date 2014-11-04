@@ -603,10 +603,10 @@
 				}
 			}			
 		};		
+		
 		selector.each(function(index) {
-			$(this).on("click",clickFn);	
-				
-		}
+			$(this).on("click",clickFn);					
+		});
 		/*
 		selector.on("click", function(e){		
 			var $this = $(this),
