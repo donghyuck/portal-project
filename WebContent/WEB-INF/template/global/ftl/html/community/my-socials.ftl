@@ -23,6 +23,7 @@
 			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
 			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.connect.js',
 			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js'
 			],
