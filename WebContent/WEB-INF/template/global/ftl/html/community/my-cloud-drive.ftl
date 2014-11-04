@@ -192,7 +192,7 @@
 				});						
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });			
 				
-				common.ui.buttons($("#my-photo-stream button.btn-control-group"), {
+				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action='upload']"), {
 					handlers : {
 						"upload" : function(e){
 							if( common.ui.exists($("#photo-files")) ){
@@ -265,6 +265,9 @@
 					}
 				});
 			}
+			
+			
+			
 		}					
 		-->
 		</script>		
