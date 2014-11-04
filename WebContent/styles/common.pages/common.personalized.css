@@ -149,7 +149,7 @@
 }
 
 .file-wrapper:hover a, .img-wrapper:hover a {
-	
+	opacity: 1;
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;
 } 
