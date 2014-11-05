@@ -268,6 +268,40 @@
 				);				
 			}		
 		}				
+		
+		function showAttachmentPanel(attachment){				
+			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
+			var panel = common.ui.extPanel(
+			appendTo,
+			{ 
+				title: "<i class="fa fa-file-o"></i> " + attachment.name  , 
+				actions:["Custom", "Minimize", "Close"],
+				data: attachment,
+				css : "panel-danger",
+				//scrollTop : true,
+				//template: kendo.template("<ul class='media-list no-border' style='min-height:150px;'></ul>"),
+				close: function(e) {
+					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
+					//	$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("active");	
+				},
+				refresh: function(e){
+					//var view = e.target.element.find(".panel-body ul.media-list");
+					//if( common.ui.exists(view) ){
+					//	comon.ui.listview(view).refersh();
+					//}
+				},
+				custom: function(e){
+					
+					alert("준비중입니다.");
+				},
+				open: function(e){
+					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
+					//var renderTo = e.target.element.find(".panel-body ul.media-list");
+					//common.ui.connect.listview( renderTo, connect );
+				}
+			});
+			panel.show();		
+		}
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
 		<!-- ============================== -->				
