@@ -294,13 +294,14 @@
 	
 	$.extend(ui.connect , {
 		row : common.ui.connect.row || row,
-		columns : common.ui.connect.columns || columns,
-		userProfile : common.ui.connect.userProfile || userProfile,
-		profile : common.ui.connect.profile || profile,
-		listview : common.ui.connect.listview || listview,
+		columns : common.ui.connect.columns || columns,		
 		listview : common.ui.connect.listview || listview,
 		signin : common.ui.connect.signin || signin,
 		status : common.ui.connect.status || status,
+		user : {
+			lookup : common.ui.connect.userProfile || userProfile,
+			profile : common.ui.connect.profile || profile,
+		},
 		list : {
 			datasource : newConnectListDataSource			
 		}
