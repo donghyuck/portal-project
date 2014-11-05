@@ -433,11 +433,9 @@
 				data: image,
 				template : common.ui.template($("#photo-view-template").html()),
 				css : "panel-primary",
-				custom: function(e){					
-
+				custom: function(e){
 					var body = e.target.element.children(".panel-custom-body");
-					alert( body.contents() );
-					if( body.contents() ==0 ){
+					if( body.children().length == 0 ){
 						body.html($("#photo-editor-modal-template").html());
 					}
 				},
