@@ -135,7 +135,7 @@
 	cursor: pointer;
 }
 
-.img-wrapper  a, .file-wrapper  a{
+.img-wrapper  a, .file-wrapper  a, .img-wrapper  button, .file-wrapper  button{
 	left: 50%;
 	opacity: 0;
 	bottom: 20px;
@@ -148,7 +148,7 @@
 	padding:0;
 }
 
-.file-wrapper:hover a, .img-wrapper:hover a {
+.file-wrapper:hover a, .img-wrapper:hover a, .file-wrapper:hover button, .img-wrapper:hover button {
 	opacity: 1;
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
