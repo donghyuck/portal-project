@@ -112,7 +112,7 @@
 		<!-- display media stream panel                        -->
 		<!-- ============================== -->		
 		function showMediaPanel(connect){				
-			alert( "" );
+			
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.extPanel(
 			appendTo,
