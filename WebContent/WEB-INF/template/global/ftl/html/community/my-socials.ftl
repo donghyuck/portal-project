@@ -508,7 +508,7 @@
 							# var photo = photos[i] ; #							
 						<div class="col-xs-#=common.ui.connect.columns(i, totalPhoto)# no-padding">
 							<figure>
-							<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive lightbox" style="padding:0px 1px 1px 0px;" data-ride="lightbox">
+							<img src="#: photo.sizes[1].url  #" alt="media" class="img-responsive lightbox" style="padding:0px 1px 1px 0px;" data-ride="lightbox" #if(totalPhoto>1){# data-uuu="[data-uid='#=uid#'] figure img" #}#>
 								<figcaption class="no-padding-hr" style="height:10px;">									
 									<button type="button" class="btn btn-primary btn-sm rounded-3x custom-upload-by-url" data-upload="photo" data-source="#:postUrl#" data-url="#: photo.sizes[0].url #" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' ><i class="fa fa-cloud-upload"></i> #if( common.ui.connect.columns(i, totalPhoto) > 4 ){ # My 클라우드로 복사 #}#</button>
 								</figcaption>
