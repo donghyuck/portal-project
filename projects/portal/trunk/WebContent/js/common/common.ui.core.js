@@ -1079,7 +1079,7 @@
 			wrapper = that.wrapper,
 			options = that.options;
 			wrapper.children(CUSTOM_PANEL_BODY).slideToggle(200);
-			that.trigger(CUSTOM, {target: that});
+			that.trigger(CUSTOM,  { event: e, target:that });
 		},
 		_close: function(systemTriggered) {
 			var that = this,
