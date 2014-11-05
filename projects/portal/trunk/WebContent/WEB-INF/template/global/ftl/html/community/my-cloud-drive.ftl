@@ -278,7 +278,6 @@
 				actions:["Custom", "Minimize", "Close"],
 				data: attachment,
 				css : "panel-danger",
-			//	template: kendo.template("<div id=''> </div>"),
 				close: function(e) {
 					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
 					//	$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("active");	
@@ -295,21 +294,13 @@
 				},
 				open: function(e){
 					var data = e.target.data(),
-					uid = e.target.element.attr("id");					
-					e.target.element.find(".panel-body").html("<div id='"+ uid + "-fileview'></div>"); 
+					uid = e.target.element.attr("id"),
+					embed = uid + "-fileview"; 		
 					
-					alert( data.contentType === "application/pdf" );
-					if( data.contentType === "application/pdf" ){					
-						var myPdf = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(
-						e.target.element.find(".panel-body")
-						);				
-					}
-					
-					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
-					//var renderTo = e.target.element.find(".panel-body ul.media-list");
-					//common.ui.connect.listview( renderTo, connect );
-					
-					
+					if( data.contentType === "application/pdf" ){	
+						e.target.element.find(".panel-body").html("<div id='"+ embed + "' style="min-height:400px;"></div>"); 				
+						var myPdf = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
+					}				
 				}
 			});
 			panel.show();		
