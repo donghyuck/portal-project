@@ -233,7 +233,7 @@
 					var data = common.ui.listview($('#attachment-list-view')).dataSource.view();					
 					var item = data[index];			
 					showAttachmentPanel(item);
-					$(this).addClass("active");
+					$(this).addClass("disabled");
 				});
 								
 				common.ui.buttons(
@@ -278,18 +278,7 @@
 				actions:["Custom", "Minimize", "Close"],
 				data: attachment,
 				css : "panel-danger",
-				close: function(e) {
-					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
-					//	$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("active");	
-				},
-				refresh: function(e){
-					//var view = e.target.element.find(".panel-body ul.media-list");
-					//if( common.ui.exists(view) ){
-					//	comon.ui.listview(view).refersh();
-					//}
-				},
-				custom: function(e){
-					
+				custom: function(e){					
 					alert("준비중입니다.");
 				},
 				open: function(e){
@@ -352,15 +341,15 @@
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 				});						
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
-				
-				$("#photo-list-view").on("click", ".img-wrapper a", function(e){
+
+				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
-					alert( common.ui.stringify( item ) );		
-					$(this).remove();
-				});
-				
+					showPhotoPanel(item);
+					$(this).addClass("disabled");
+				});					
+									
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
 					handlers : {
 						"upload" : function(e){				
@@ -433,7 +422,32 @@
 					}
 				});
 			}			
-		}					
+		}	
+		function showPhotoPanel(image){				
+			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
+			var panel = common.ui.extPanel(
+			appendTo,
+			{ 
+				title: '<i class="fa fa-file-o"></i> ' + image.name  , 
+				actions:["Custom", "Minimize", "Close"],
+				data: image,
+				css : "panel-danger",
+				custom: function(e){					
+					alert("준비중입니다.");
+				},
+				open: function(e){
+					var data = e.target.data(),
+					//uid = e.target.element.attr("id"),
+					//embed = uid + "-fileview"; 
+					//if( data.contentType === "application/pdf" ){	
+					//	e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='height:500px;'></div>"); 				
+					//	var myPdf = new PDFObject({ url: "${request.contextPath}/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
+					//}				
+				}
+			});
+			panel.show();		
+		}
+								
 		-->
 		</script>		
 		<style scoped="scoped">
