@@ -127,7 +127,7 @@
 					}
 				},
 				custom: function(e){
-					e.target 
+					
 					alert("준비중입니다.");
 				},
 				open: function(e){
