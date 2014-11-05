@@ -434,7 +434,11 @@
 				template : common.ui.template($("#photo-view-template").html()),
 				css : "panel-primary",
 				custom: function(e){					
-					alert("준비중입니다.");
+
+					var body = e.target.element.children(".panel-custom-body");
+					if( body.length ==0 ){
+						body.html($("#photo-editor-modal-template").html());
+					}
 				},
 				open: function(e){
 					//var data = e.target.data(),
