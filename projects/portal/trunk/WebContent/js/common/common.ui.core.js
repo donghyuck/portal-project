@@ -843,6 +843,7 @@
 	PANEL_HEADING = ".panel-heading",
 	PANEL_TITLE = ".panel-title",
 	PANEL_BODY = ".panel-body",
+	PANEL_FOOTER = ".panel-footer",
 	PANEL_HEADING_BUTTONS = ".panel-heading .k-window-action",	
 	templates = {
 			wrapper: template("<div class='panel panel-default' />"),	
@@ -946,6 +947,16 @@
 				wrapper.append(templates.body( {} ) );
 			}
 			
+			if(wrapper.children(PANEL_FOOTER).length == 0 && options.scrollTop  ){
+				wrapper.append(templates.footer( {} ) );
+				var footer = wrapper.children(PANEL_FOOTER);
+				footer.addClass("text-right");
+				footer.append('<button class="btn btn-info btn-sm rounded" type="button" data-action="scrollTop"><i class="fa fa-chevron-circle-up"></i> 맨위로</button>');
+				wrapper.find("button[data-action='scrollTop']").click(function(e){
+					common.ui.scroll.top(wrapper);			
+				});
+			}
+			
 			if (content) {
 				that.render();			
 			}
@@ -961,14 +972,13 @@
 			 if( options.autoBind )
 				kendo.bind(element, options.data );
 			 
-			id = element.attr("id");		
+			id = element.attr("id");
 			
 			wrapper.on("click", "> " + PANEL_HEADING_BUTTONS, proxy(that._panelActionHandler, that));
 			 if (options.visible) {
 				 that.trigger(OPEN, {target: that});
 				 that.trigger(ACTIVATE);
-			 }
-			
+			 }			
 			 kendo.notify(that);
 			
 			
@@ -989,6 +999,7 @@
 			content : null,
 			visible: null,
 			autoBind: false,
+			scrollTop : false,
 			animation : {
 				open: {},
 				close: {}
