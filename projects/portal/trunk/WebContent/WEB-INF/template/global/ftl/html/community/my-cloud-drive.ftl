@@ -274,7 +274,7 @@
 			var panel = common.ui.extPanel(
 			appendTo,
 			{ 
-				title: "<i class="fa fa-file-o"></i> " + attachment.name  , 
+				title: '<i class="fa fa-file-o"></i> ' + attachment.name  , 
 				actions:["Custom", "Minimize", "Close"],
 				data: attachment,
 				css : "panel-danger",
