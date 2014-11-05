@@ -88,7 +88,7 @@
 				var btn = $(this) ;
 				btn.parent().toggleClass('active');
 				btn.button('loading');
-				common.data.image.upload({
+				common.ui.data.image.upload({
 					data : {sourceUrl: btn.data('source'), imageUrl: btn.data('url')} ,
 					success : function(response){
 						btn.attr("disabled", "disabled");
