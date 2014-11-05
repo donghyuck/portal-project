@@ -849,7 +849,7 @@
 	PANEL_HEADING = ".panel-heading",
 	PANEL_TITLE = ".panel-title",
 	PANEL_BODY = ".panel-body",
-	CUSTOM_PANEL_BODY = ".panel-body.custom-panel-body",
+	CUSTOM_PANEL_BODY = ".panel-custom-body",
 	PANEL_FOOTER = ".panel-footer",
 	PANEL_HEADING_BUTTONS = ".panel-heading .k-window-action",	
 	templates = {
@@ -872,7 +872,7 @@
 				"</div>"	
 			) ,
 			body: template("<div class='panel-body'><div class='panel-body-loading'></div></div>"),
-			customBody: template("<div class='panel-body custom-panel-body'></div>"),
+			customBody: template("<div class='padding-sm'></div>"),
 			footer: template("<div class='panel-footer'></div>")
 		};
 	
@@ -989,9 +989,7 @@
 				 that.trigger(OPEN, {target: that});
 				 that.trigger(ACTIVATE);
 			 }			
-			 kendo.notify(that);
-			
-			
+			 kendo.notify(that);			
 		},
 		events:[
 			OPEN,
