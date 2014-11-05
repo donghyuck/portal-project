@@ -428,11 +428,11 @@
 			var panel = common.ui.extPanel(
 			appendTo,
 			{ 
-				title: '<i class="fa fa-file-o"></i> ' + image.name  , 
+				title: '<i class="fa fa-picture-o"></i> ' + image.name  , 
 				actions:["Custom", "Minimize", "Close"],
 				data: image,
 				template : common.ui.template($("#photo-view-template").html()),
-				css : "panel-danger",
+				css : "panel-primary",
 				custom: function(e){					
 					alert("준비중입니다.");
 				},
