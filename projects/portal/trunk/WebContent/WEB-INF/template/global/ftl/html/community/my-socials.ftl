@@ -152,8 +152,6 @@
 				}
 			}
 		}
-		
-
 				
 		function displayMediaPanel(media){				
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
@@ -374,24 +372,7 @@
 			kendo.fx($( '#'+ renderToString ).parent()).zoom("in").startValue(0).endValue(1).reverse().then( function(e){
 				$("#" + renderToString ).parent().remove();
 			});							
-		}
-
-		<!-- ============================== -->
-		<!-- create info alert 										-->
-		<!-- ============================== -->							
-		function createInfoPanel(){		
-			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
-			var renderTo = common.api.guid();
-			appendTo.extAlert({
-				template :  kendo.template($("#alert-panel-template").html()),
-				data : { id: renderTo },
-				close : function () {
-					$( '#'+ renderTo ).remove();
-				}
-			});
-			kendo.fx($( '#'+ renderTo )).zoom("in").startValue(0).endValue(1).play();		
-		}	
-				
+		}				
 		-->
 		</script>		
 		<style scoped="scoped">
