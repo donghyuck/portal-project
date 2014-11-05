@@ -126,13 +126,6 @@
 </script>
 
 <script id="photo-editor-modal-template" type="text/x-kendo-template">
-	<div class='modal fade' tabindex='-1' role='dialog' aria-hidden='true'>
-		<div class='modal-dialog'>
-			<div class='modal-content'>
-				<div class='modal-header'>
-					<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>
-					<h5 class='modal-title' data-bind="text: image.name">포토 수정</h5>
-				</div>
 				<div class='modal-body'>					
 					<div class="page-header no-margin-t">
 						<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
@@ -157,11 +150,5 @@
 					<div class="photo-props-grid" style="min-height: 300px"></div>
 																
 				</div>
-				<div class='modal-footer'>		
-					<!--<button type="button" class="btn btn-primary custom-update" disabled="disabled">확인</button>	-->
-					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>확인</button>				
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+				
 </script>	
