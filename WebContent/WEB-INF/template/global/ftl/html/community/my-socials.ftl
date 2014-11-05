@@ -122,7 +122,7 @@
 				},
 				refresh: function(e){
 					var view = e.target.element.find(".panel-body ul.media-list");
-					if( common.ui.exists(view) )
+					if( common.ui.exists(view) ){
 						comon.ui.listview(view).refersh();
 					}
 				},
