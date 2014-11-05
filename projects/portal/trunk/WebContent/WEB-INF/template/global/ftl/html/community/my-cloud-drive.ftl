@@ -232,8 +232,8 @@
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#attachment-list-view')).dataSource.view();					
 					var item = data[index];			
-					alert( common.ui.stringify( item ) );		
-					$(this).remove();
+					showAttachmentPanel(item);
+					$(this).addClass("active");
 				});
 								
 				common.ui.buttons(
