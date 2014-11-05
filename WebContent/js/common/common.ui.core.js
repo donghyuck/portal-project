@@ -872,7 +872,7 @@
 				"</div>"	
 			) ,
 			body: template("<div class='panel-body'><div class='panel-body-loading'></div></div>"),
-			customBody: template("<div class='panel-custom-body padding-sm'></div>"),
+			customBody: template("<div class='panel-custom-body padding-sm bg-slivergray border-b'></div>"),
 			footer: template("<div class='panel-footer'></div>")
 		};
 	
@@ -1075,7 +1075,10 @@
 			}
 		},
 		_custom: function(systemTriggered){
-			var that = this;
+			var that = this
+			wrapper = that.wrapper,
+			options = that.options;
+			wrapper.children(CUSTOM_PANEL_BODY).toggleClass("hidden");
 			that.trigger(CUSTOM, {target: that});
 		},
 		_close: function(systemTriggered) {
