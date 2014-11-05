@@ -1115,6 +1115,9 @@
 			if( !wrapper.children(PANEL_BODY).is(VISIBLE) ){
 				wrapper.children(PANEL_BODY).slideToggle(200);		
 			}			
+			if( !wrapper.children(PANEL_FOOTER).is(VISIBLE) ){	
+				wrapper.children(PANEL_FOOTER).show();
+			}			
 			that.options.isMaximized = true;
 			
 		}),
@@ -1124,6 +1127,9 @@
 			that.options.isMinimized = true;
 			if( wrapper.children(PANEL_BODY).is(VISIBLE) ){	
 				wrapper.children(PANEL_BODY).slideToggle(200);		
+			}
+			if( wrapper.children(PANEL_FOOTER).is(VISIBLE) ){	
+				wrapper.children(PANEL_FOOTER).hide();
 			}
 		}),
 		restore: function () {
