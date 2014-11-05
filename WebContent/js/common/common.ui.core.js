@@ -872,7 +872,7 @@
 				"</div>"	
 			) ,
 			body: template("<div class='panel-body'><div class='panel-body-loading'></div></div>"),
-			customBody: template("<div class='padding-sm'></div>"),
+			customBody: template("<div class='panel-custom-body padding-sm'></div>"),
 			footer: template("<div class='panel-footer'></div>")
 		};
 	
