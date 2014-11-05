@@ -278,8 +278,7 @@
 				actions:["Custom", "Minimize", "Close"],
 				data: attachment,
 				css : "panel-danger",
-				//scrollTop : true,
-				//template: kendo.template("<ul class='media-list no-border' style='min-height:150px;'></ul>"),
+			//	template: kendo.template("<div id=''> </div>"),
 				close: function(e) {
 					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
 					//	$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("active");	
@@ -295,9 +294,17 @@
 					alert("준비중입니다.");
 				},
 				open: function(e){
+					var data = e.target.data();
+					if( data == "application/pdf" ){
+					
+						var myPdf = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed("pdf-view");				
+					}
+					
 					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
 					//var renderTo = e.target.element.find(".panel-body ul.media-list");
 					//common.ui.connect.listview( renderTo, connect );
+					
+					
 				}
 			});
 			panel.show();		
