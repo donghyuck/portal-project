@@ -954,7 +954,9 @@
 			if( wrapper.children(PANEL_BODY).length == 0 ){
 				wrapper.append(templates.body( {} ) );
 			}
-			
+			if( wrapper.children(CUSTOM_PANEL_BODY).length == 0 ){
+				wrapper.append(templates.customBody({}));
+			}
 			if(wrapper.children(PANEL_FOOTER).length == 0 && options.scrollTop  ){
 				wrapper.append(templates.footer( {} ) );
 				var footer = wrapper.children(PANEL_FOOTER);
