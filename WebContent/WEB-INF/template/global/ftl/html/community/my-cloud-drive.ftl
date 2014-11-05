@@ -298,7 +298,7 @@
 					uid = e.target.element.attr("id");					
 					e.target.element.find(".panel-body").html("<div id='#"+ uid + "-fileview'></div>"); 
 					
-					alert( common.ui.stringify(data));
+					alert( data.contentType === "application/pdf" );
 					if( data.contentType === "application/pdf" ){					
 						var myPdf = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed( uid + "-fileview");				
 					}
