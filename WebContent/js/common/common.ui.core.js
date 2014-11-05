@@ -849,6 +849,7 @@
 	PANEL_HEADING = ".panel-heading",
 	PANEL_TITLE = ".panel-title",
 	PANEL_BODY = ".panel-body",
+	CUSTOM_PANEL_BODY = ".panel-body.custom-panel-body",
 	PANEL_FOOTER = ".panel-footer",
 	PANEL_HEADING_BUTTONS = ".panel-heading .k-window-action",	
 	templates = {
@@ -871,6 +872,7 @@
 				"</div>"	
 			) ,
 			body: template("<div class='panel-body'><div class='panel-body-loading'></div></div>"),
+			customBody: template("<div class='panel-body custom-panel-body'></div>"),
 			footer: template("<div class='panel-footer'></div>")
 		};
 	
@@ -1183,8 +1185,6 @@
 			 this.wrapper = this.appendTo = this.element = $();
 		}
 	});
-	
-	
 	extend(ui , {	
 		extPanel : common.ui.extPanel || extPanel
 	});
