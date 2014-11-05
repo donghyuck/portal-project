@@ -298,7 +298,7 @@
 					embed = uid + "-fileview"; 		
 					
 					if( data.contentType === "application/pdf" ){	
-						e.target.element.find(".panel-body").html("<div id='"+ embed + "' style="min-height:400px;"></div>"); 				
+						e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='min-height:400px;'></div>"); 				
 						var myPdf = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
 					}				
 				}
