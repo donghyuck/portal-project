@@ -228,7 +228,7 @@
 				});				
 				common.ui.pager($("#pager"),{ buttonCount : 5, dataSource : common.ui.listview($("#attachment-list-view")).dataSource });			
 				
-				$("#attachment-list-view").on("click", ".file-wrapper a", function(e){
+				$("#attachment-list-view").on("click", ".file-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#attachment-list-view')).dataSource.view();					
 					var item = data[index];			
@@ -252,7 +252,7 @@
 											success : function(e) {								    
 												if( e.response.targetAttachment ){
 													e.response.targetAttachment.attachmentId;
-													common.ui.listview($("#attachment-list-view")).dataSource.read(); 
+													common.ui.listview($("#attachment-list-view")).refresh();
 												}				
 											}
 										}
@@ -369,8 +369,7 @@
 										}				
 										if( !hasError ){
 											var btn = $(e.target);
-											btn.button('loading');		
-																					
+											btn.button('loading');			
 											common.ui.data.image.upload( {
 												data : this.data ,
 												success : function(response){
@@ -397,10 +396,7 @@
 						}	
 					}
 				});
-			}
-			
-			
-			
+			}			
 		}					
 		-->
 		</script>		
