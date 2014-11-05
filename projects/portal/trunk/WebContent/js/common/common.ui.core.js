@@ -887,9 +887,9 @@
 		options = options || {};	
 		
 		var Fn = function( selector, setting){		
-			var guid = guid().toLowerCase() ;
-			selector.append( "<div id='" + guid+ "'  class='panel panel-default no-padding-hr'></div>");		
-			return new Panel( $("#" + guid ), setting); 
+			var uid = guid().toLowerCase() ;
+			selector.append( "<div id='" + uid+ "'  class='panel panel-default no-padding-hr'></div>");		
+			return new Panel( $("#" + uid ), setting); 
 		}
 		
 		if( defined(renderTo) ){
@@ -901,7 +901,6 @@
 				return new Panel( renderTo, options);
 			}
 		} else {		
-			var guid = guid().toLowerCase() ;
 			return Fn($('body'), options);				
 		}		
 	}
