@@ -278,6 +278,7 @@
 				actions:["Custom", "Minimize", "Close"],
 				data: attachment,
 				css : "panel-danger",
+				content : "",
 			//	template: kendo.template("<div id=''> </div>"),
 				close: function(e) {
 					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
