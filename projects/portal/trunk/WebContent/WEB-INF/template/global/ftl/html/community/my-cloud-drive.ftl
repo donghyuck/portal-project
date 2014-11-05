@@ -431,6 +431,7 @@
 				title: '<i class="fa fa-file-o"></i> ' + image.name  , 
 				actions:["Custom", "Minimize", "Close"],
 				data: image,
+				template : common.ui.template($("photo-view-template").html()),
 				css : "panel-danger",
 				custom: function(e){					
 					alert("준비중입니다.");
