@@ -872,7 +872,7 @@
 				"</div>"	
 			) ,
 			body: template("<div class='panel-body'><div class='panel-body-loading'></div></div>"),
-			customBody: template("<div class='panel-custom-body padding-sm bg-slivergray border-b hidden'></div>"),
+			customBody: template("<div class='panel-custom-body padding-sm bg-slivergray border-b' style='display:none;'></div>"),
 			footer: template("<div class='panel-footer'></div>")
 		};
 	
@@ -1078,7 +1078,7 @@
 			var that = this
 			wrapper = that.wrapper,
 			options = that.options;
-			wrapper.children(CUSTOM_PANEL_BODY).toggleClass("hidden");
+			wrapper.children(CUSTOM_PANEL_BODY).slideToggle(200);
 			that.trigger(CUSTOM, {target: that});
 		},
 		_close: function(systemTriggered) {
