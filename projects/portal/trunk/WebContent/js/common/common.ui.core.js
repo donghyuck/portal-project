@@ -417,7 +417,7 @@
 						if( $that.prop("tagName").toLowerCase() == "img" ){				
 							config.items.push({
 								src : $that.attr("src")
-							}				
+							});			
 						}						
 					}
 				});
