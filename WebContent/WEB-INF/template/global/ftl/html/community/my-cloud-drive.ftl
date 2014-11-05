@@ -436,8 +436,8 @@
 				custom: function(e){					
 
 					var body = e.target.element.children(".panel-custom-body");
-					alert( body.length );
-					if( body.length ==0 ){
+					alert( body.contents() );
+					if( body.contents() ==0 ){
 						body.html($("#photo-editor-modal-template").html());
 					}
 				},
