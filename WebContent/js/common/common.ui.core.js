@@ -1112,8 +1112,8 @@
         },
 		title : function (text){
 			var that = this,
-				wrapper = that.wrapper,
-				options = that.options;
+			wrapper = that.wrapper,
+			options = that.options;
 		},
 		maximize: sizingAction("maximize", function() {
 			var that = this,
@@ -1139,10 +1139,12 @@
 			}
 		}),
 		restore: function () {
-			var that = this;
-			var options = that.options;
-			that.wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end().find(MINIMIZE_MAXIMIZE).parent().show().end().end();
-			that.wrapper.children(PANEL_BODY).slideToggle(200);		
+			var that = this,
+			wrapper = that.wrapper,
+			options = that.options;
+			
+			wrapper.find(".panel-heading .k-i-restore").parent().remove().end().end().find(MINIMIZE_MAXIMIZE).parent().show().end().end();
+			wrapper.children(PANEL_BODY).slideToggle(200);		
 			
 			if( !wrapper.children(PANEL_FOOTER).is(VISIBLE) ){	
 				wrapper.children(PANEL_FOOTER).show();
