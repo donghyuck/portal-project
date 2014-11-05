@@ -296,7 +296,7 @@
 				open: function(e){
 					var data = e.target.data(),
 					uid = e.target.element.attr("id");					
-					e.target.element.find(".panel-body).html("<div id='#"+ uid + "-fileview'></div>"); 
+					e.target.element.find(".panel-body").html("<div id='#"+ uid + "-fileview'></div>"); 
 					
 					alert( common.ui.stringify(data));
 					if( data == "application/pdf" ){					
