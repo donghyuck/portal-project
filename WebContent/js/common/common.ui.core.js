@@ -1154,7 +1154,7 @@
 	
 	
 	extend(ui , {	
-		panel : common.ui.extPanel || extPanel
+		extPanel : common.ui.extPanel || extPanel
 	});
 	
 })(jQuery);
