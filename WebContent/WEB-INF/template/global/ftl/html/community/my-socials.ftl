@@ -122,11 +122,12 @@
 				},
 				refresh: function(e){
 					var view = e.target.element.find(".panel-body ul.media-list");
-					if(view.data("kendoListView")){
-						view.data("kendoListView").dataSource.read();
+					if( common.ui.exists(view) )
+						comon.ui.listview(view).refersh();
 					}
 				},
 				custom: function(e){
+					e.target 
 					alert("준비중입니다.");
 				},
 				open: function(e){
