@@ -60,27 +60,6 @@
 					
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-				
-				
-				/*				
-				$(document).on("click","[data-upload='photo']", function(e){						
-					var btn = $(this) ;
-					btn.parent().toggleClass('active');
-					btn.button('loading');
-					common.api.uploadMyImageByUrl({
-										data : {sourceUrl: btn.data('source'), imageUrl: btn.data('url')} ,
-										success : function(response){
-											btn.attr("disabled", "disabled");
-											btn.addClass('hide');
-										},
-										always : function(){
-											btn.parent().toggleClass('active');
-											btn.button('reset');
-										}
-									});
-					
-				});
-				*/
 			}
 		}]);	
 		<!-- ============================== -->
@@ -106,7 +85,26 @@
 						}
 					});								
 				}
-			}).read();		
+			}).read();
+			
+				$(document).on("click","[data-upload='photo']", function(e){						
+					var btn = $(this) ;
+					btn.parent().toggleClass('active');
+					btn.button('loading');
+					common.data.image.upload({
+										data : {sourceUrl: btn.data('source'), imageUrl: btn.data('url')} ,
+										success : function(response){
+											btn.attr("disabled", "disabled");
+											btn.addClass('hide');
+										},
+										always : function(){
+											btn.parent().toggleClass('active');
+											btn.button('reset');
+										}
+									});
+					
+				});
+									
 		}	
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
