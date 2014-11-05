@@ -278,7 +278,6 @@
 				actions:["Custom", "Minimize", "Close"],
 				data: attachment,
 				css : "panel-danger",
-				content : "",
 			//	template: kendo.template("<div id=''> </div>"),
 				close: function(e) {
 					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
@@ -295,10 +294,13 @@
 					alert("준비중입니다.");
 				},
 				open: function(e){
-					var data = e.target.data();
+					var data = e.target.data(),
+					uid = e.target.element.attr("id");					
+					e.target.element.find(".panel-body).html("<div id='#"+ uid + "-fileview'></div>"); 
+					
 					alert( common.ui.stringify(data));
 					if( data == "application/pdf" ){					
-						var myPdf = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed( e.target.element.children(".panel-body"));				
+						var myPdf = new PDFObject({ url: "${request.contextPath}/community/view-my-attachment.do?attachmentId=" + data.attachmentId, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed( uid + "-fileview");				
 					}
 					
 					//$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
