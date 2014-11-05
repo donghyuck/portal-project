@@ -120,6 +120,7 @@
 				actions:["Custom", "Minimize", "Refresh", "Close"],
 				data: connect,
 				css : "panel-primary",
+				scrollTop : true,
 				template: kendo.template("<ul class='media-list no-border' style='min-height:150px;'></ul>"),
 				close: function(e) {
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");	
