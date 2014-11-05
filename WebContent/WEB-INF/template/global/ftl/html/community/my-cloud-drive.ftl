@@ -436,7 +436,7 @@
 				custom: function(e){
 					var body = e.target.element.children(".panel-custom-body");
 					alert(body.children().length );
-					if( body.children().length == 0 ){
+					if( body.children().length === 0 ){
 						body.html($("#photo-editor-modal-template").html());
 					}
 				},
