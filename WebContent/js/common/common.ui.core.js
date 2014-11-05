@@ -934,6 +934,10 @@
 				options.visible = element.is(VISIBLE);				
 			}
 			wrapper = that.wrapper = element.closest(PANEL);
+			if(options.css){
+				wrapper.removeClass("default-panel");
+				wrapper.addClass(options.css);
+			}
 			
 			if( wrapper.children(PANEL_HEADING).length == 0 ){
 				wrapper.append(templates.heading( extend( templates, options )));
