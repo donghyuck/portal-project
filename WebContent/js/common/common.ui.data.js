@@ -171,7 +171,7 @@
 	common.ui.data.Property = kendo.data.Model.define( {
 		    id: "name", // the identifier of the model
 		    fields: {
-		    	name: { type: "string",  editable: true },
+		    	name: { type: "string",  editable: false },
 		    	value:  { type: "string", editable: true }     
 		    }
 		});
