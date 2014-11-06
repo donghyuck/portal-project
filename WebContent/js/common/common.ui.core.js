@@ -526,7 +526,8 @@
 			}else{
 				var $loading = preview.find(".og-loading");
 				var $largeImg = preview.find("img");				
-				$largeImg.hide();				$loading.show();				
+				$largeImg.hide();				
+				$loading.show();				
 				$( '<img/>' ).load( function() {
 					var $img = $( this );
 					if( $img.attr( 'src' ) === data.src ) {
