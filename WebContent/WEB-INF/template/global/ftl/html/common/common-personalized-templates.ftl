@@ -125,30 +125,24 @@
 	</figure>
 </script>
 
-<script id="photo-editor-modal-template" type="text/x-kendo-template">
-				<div class='modal-body'>					
-					<div class="page-header no-margin-t">
-						<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
-					</div>
-					<div class="btn-group btn-group-sm" data-toggle="buttons">
-						<label class="btn btn-success active">
-						<input type="radio"  class="js-switch"  name="photo-public-shared" value="1">모두에게 공개
-						</label>
-						<label class="btn btn-success">
-						<input type="radio"  class="js-switch"  name="photo-public-shared" value="0"> 비공개
-						</label>
-					</div>	
-																	
-					<div class="page-header">
-						<h4 class="text-primary"><i class="fa fa-upload"></i> <strong>이미지 변경</strong> <small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h4>
-					</div>
-					<input name="update-photo-file" type="file" class="pull-right" />	
-										
-					<div class="page-header">
-						<h4 class="text-primary"><i class="fa fa-bars"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
-					</div>
-					<div class="photo-props-grid" style="min-height: 300px"></div>
-																
-				</div>
-				
+<script id="photo-editor-modal-template" type="text/x-kendo-template">`			
+<div class="page-header no-margin-t">
+	<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
+</div>
+<div class="btn-group btn-group-sm" data-toggle="buttons">
+	<label class="btn btn-success active">
+		<input type="radio"  class="js-switch"  name="photo-public-shared" value="1">모두에게 공개
+	</label>
+	<label class="btn btn-success">
+		<input type="radio"  class="js-switch"  name="photo-public-shared" value="0"> 비공개
+	</label>
+</div>	
+<div class="page-header">
+	<h4 class="text-primary"><i class="fa fa-upload"></i> <strong>이미지 변경</strong> <small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h4>
+</div>
+<input name="update-photo-file" type="file" class="pull-right" />	
+<div class="page-header">
+	<h4 class="text-primary"><i class="fa fa-bars"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
+</div>
+<div class="photo-props-grid" style="min-height: 300px"></div>
 </script>	
