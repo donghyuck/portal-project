@@ -135,6 +135,13 @@
 			info: false
 	};	
 	
+	function grid(renderTo, options){
+		if(!renderTo.data("kendoGrid")){			
+			 renderTo.kendoGrid(options);
+		}		
+		return renderTo.data("kendoGrid");
+	}
+	
 	function listview( renderTo, options){		
 		if(!renderTo.data("kendoListView")){			
 			 renderTo.kendoListView(options);
@@ -643,6 +650,7 @@
 		datasource : common.ui.datasource || datasource,
 		ajax : common.ui.ajax || ajax,
 		listview : common.ui.listview || listview,
+		grid : common.ui.grid || grid,
 		pager : common.ui.pager || pager,
 		thumbnail : common.ui.thumbnail || { expanding : thumbnailExpanding },
 		scroll : common.ui.scroll || {
