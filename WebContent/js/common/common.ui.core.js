@@ -1149,7 +1149,6 @@
 			var that = this,
 			wrapper = that.wrapper;	
 			that.options.isMinimized = true;
-
 			if( wrapper.children(CUSTOM).is(VISIBLE) ){
 				wrapper.children(CUSTOM).slideToggle(200);		
 			}			
