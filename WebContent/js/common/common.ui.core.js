@@ -1135,6 +1135,7 @@
 		maximize: sizingAction("maximize", function() {
 			var that = this,
             wrapper = that.wrapper;
+				
 			if( !wrapper.children(PANEL_BODY).is(VISIBLE) ){
 				wrapper.children(PANEL_BODY).slideToggle(200);		
 			}			
@@ -1148,6 +1149,11 @@
 			var that = this,
 			wrapper = that.wrapper;	
 			that.options.isMinimized = true;
+
+			if( wrapper.children(CUSTOM).is(VISIBLE) ){
+				wrapper.children(CUSTOM).slideToggle(200);		
+			}			
+			
 			if( wrapper.children(PANEL_BODY).is(VISIBLE) ){	
 				wrapper.children(PANEL_BODY).slideToggle(200);		
 			}
