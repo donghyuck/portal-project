@@ -53,6 +53,13 @@
 						that.options.authenticate(e);
 				}
 			});
+			common.ui.accounts($("#" +renderTo ), {
+				authenticate : function( e ){
+					e.token.copy(currentUser);
+					if( !currentUser.anonymous ){							
+					}
+				}
+			});				
 		},
 		_createCompanySelector : function(){	
 			var that = this;
