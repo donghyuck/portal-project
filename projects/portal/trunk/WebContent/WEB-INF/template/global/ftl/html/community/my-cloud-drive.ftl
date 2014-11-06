@@ -336,11 +336,13 @@
 						template: kendo.template($("#photo-list-view-template").html())
 					}
 				);			
+				
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-				});						
+				});					
+					
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
 
 				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
@@ -348,7 +350,7 @@
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
 					showPhotoPanel(item);
-					$(this).addClass("disabled");
+					//$(this).addClass("disabled");
 				});					
 									
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
