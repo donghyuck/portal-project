@@ -435,16 +435,19 @@
 				template : common.ui.template($("#photo-view-template").html()),
 				css : "panel-primary",
 				custom: function(e){
-					var body = e.target.element.children(".panel-custom-body");
+					var $this = e.target; 
+					var body = $this.element.children(".panel-custom-body");
 					var publicStream = body.find("input[name='photo-public-shared']");
 					
 					alert(body.children().length );
 					if( body.children().length === 0 ){
-						body.html($("#photo-editor-modal-template").html());
-						
-						//common.ui.data.image.streams(
-						alert( this.data.imageId );
-						
+						body.html($("#photo-editor-modal-template").html());						
+						common.ui.data.image.streams($this.data.imageId function(data){
+							if( data.length > 0 )
+								publicStream.first().click();
+							else
+								publicStream.last().click();	
+						});						
 					}
 				},
 				open: function(e){
