@@ -443,6 +443,7 @@
 						
 						var publicStream = body.find("input[name='photo-public-shared']");
 						var upload = body.find("input[name='update-photo-file']");
+						var grid = body.find(".photo-props-grid");				
 											
 						common.ui.upload( upload, {
 							async : {
@@ -452,11 +453,32 @@
 							upload: function (e) {				
 								e.data = { imageId: $this.data().imageId };
 							},
-							success: function (e) {			
-							
+							success: function (e) {							
 							}
 						} );
-															
+
+						common.ui.grid(grid, {
+							dataSource : common.ui.data.image.property.datasource($this.data().imageId),
+							columns: [
+								{ title: "속성", field: "name" },
+								{ title: "값",   field: "value" },
+								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+							],
+							pageable: false,
+							resizable: true,
+							editable : true,
+							scrollable: true,
+							autoBind: true,
+							height: 180,
+							toolbar: [
+								{ name: "create", text: "추가" },
+								{ name: "save", text: "저장" },
+								{ name: "cancel", text: "취소" }
+							],				     
+							change: function(e) {
+							}
+						});		
+																							
 						common.ui.data.image.streams($this.data().imageId, function(data){
 							if( data.length > 0 )
 								publicStream.first().click();
