@@ -384,14 +384,13 @@
 			},
 			error:common.api.handleKendoAjaxError
 		});
-	}
-	
+	}	
 	
 	extend( common.ui.data, {
 		user : user ,
 		image : {
-			upload : uploadMyImageByUrl,
-			property : { datasource : imagePorpertyDataSource }
+			upload : uploadMyImageByUrl ,
+			property : { datasource: imagePorpertyDataSource }
 		}
 	} )
 })(jQuery);
