@@ -152,10 +152,8 @@
 		});	
 	};		
 	
-	extend( common.ui.data, {
-		image : {
-			streams : getImageStreams			
-		}
+	extend( common.ui.data.image, {
+		streams : getImageStreams		
 	} );
 	
 	
