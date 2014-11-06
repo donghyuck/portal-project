@@ -438,10 +438,41 @@
 					var $this = e.target; 
 					var body = $this.element.children(".panel-custom-body");
 					var publicStream = body.find("input[name='photo-public-shared']");
+					var upload = body.find("input[name='update-photo-file']");
 					
 					alert(body.children().length );
 					if( body.children().length === 0 ){
-						body.html($("#photo-editor-modal-template").html());						
+						body.html($("#photo-editor-modal-template").html());
+						common.ui.upload( upload, {
+							async : {
+								saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
+							},
+							localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+							upload: function (e) {				
+								e.data = { imageId: $this.data().imageId };
+							},
+							success: function (e) {			
+							
+							}
+						} );
+						upload.kendoUpload({
+										showFileList: false,
+										multiple: false,
+										async: {
+											saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
+											autoUpload: true
+										},
+										localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+										upload: function (e) {				
+											e.data = { imageId: photoEditorSource().imageId };
+										},
+										success: function (e) {				
+											if( e.response.targetImage ){
+												$('#photo-list-view').data('kendoListView').dataSource.read();
+											}
+										} 
+									});				
+									
 						common.ui.data.image.streams($this.data().imageId, function(data){
 							if( data.length > 0 )
 								publicStream.first().click();
