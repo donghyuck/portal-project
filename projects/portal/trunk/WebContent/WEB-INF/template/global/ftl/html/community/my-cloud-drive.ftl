@@ -437,12 +437,13 @@
 				custom: function(e){
 					var $this = e.target; 
 					var body = $this.element.children(".panel-custom-body");
-					var publicStream = body.find("input[name='photo-public-shared']");
-					var upload = body.find("input[name='update-photo-file']");
-					
-					alert(body.children().length );
 					if( body.children().length === 0 ){
+						
 						body.html($("#photo-editor-modal-template").html());
+						
+						var publicStream = body.find("input[name='photo-public-shared']");
+						var upload = body.find("input[name='update-photo-file']");
+											
 						common.ui.upload( upload, {
 							async : {
 								saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
