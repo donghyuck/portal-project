@@ -55,9 +55,8 @@
 			});
 			common.ui.accounts($("#" +renderTo ), {
 				authenticate : function( e ){
-					e.token.copy(currentUser);
-					if( !currentUser.anonymous ){							
-					}
+					if( isFunction( that.options.authenticate ) )
+						that.options.authenticate(e);
 				}
 			});				
 		},
