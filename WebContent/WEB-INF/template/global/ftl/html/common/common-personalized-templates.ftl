@@ -115,7 +115,7 @@
 <!-- my photo template                                   -->
 <!-- ============================== -->
 <script type="text/x-kendo-template" id="photo-view-template">	
-	<figure class="effect-marley" data-ride="lightbox" >
+	<figure class="effect-marley box-shadow shadow-effect-2" data-ride="lightbox" >
 		<img src="${request.contextPath}/community/download-my-image.do?imageId=#:imageId#" alt="#:name# 이미지"/>
 		<figcaption>
 			<h2>#: name # <span></span></h2>
