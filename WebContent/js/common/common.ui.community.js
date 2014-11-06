@@ -141,7 +141,7 @@
 	function getImageStreams ( imageId , callback ){		
 		$.ajax({
 			type : 'GET',
-			url : urlTemplate({service:"image", objectId:imageId , action:"stream"}) ,
+			url : urlTemplate({ service:"image", objectId:imageId, action:"stream"}) ,
 			data: { imageId : options.imageId },
 			success : function(response){
 				if( isFunction(callback) )
