@@ -131,11 +131,32 @@
 })(jQuery);
 
 ;(function($, undefined) {
-	var ui = common.ui;
-	ui.community = common.ui.community || {};
+	var ui = common.ui,
+	ajax = common.ui.ajax,	
+	handleAjaxError = common.ui.handleAjaxError,
+	isFunction = kendo.isFunction,
+	urlTemplate = kendo.template("/data/#=service#/#=objectId#/#=action#"),
+	extend = $.extend;
 	
+	function getImageStreams ( imageId , callback ){		
+		$.ajax({
+			type : 'GET',
+			url : urlTemplate({service:"image", objectId:imageId , action:"stream"}) ,
+			data: { imageId : options.imageId },
+			success : function(response){
+				if( isFunction(callback) )
+					callback(response) ;	
+			},
+			error:options.error || handleKendoAjaxError,
+			dataType : "json"
+		});	
+	};		
 	
-	
+	extend( common.ui.data, {
+		image : {
+			streams : getImageStreams			
+		}
+	} )
 	
 	
 })(jQuery);
