@@ -144,5 +144,5 @@
 <div class="page-header">
 	<h4 class="text-primary"><i class="fa fa-cfg"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
 </div>
-<div class="photo-props-grid" style="min-height: 300px"></div>
+<div class="photo-props-grid"></div>
 </script>	
