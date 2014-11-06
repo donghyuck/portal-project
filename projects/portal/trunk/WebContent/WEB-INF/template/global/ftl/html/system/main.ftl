@@ -38,8 +38,8 @@
 				// 1-2.  페이지 렌딩
 				common.ui.landing();				
 				// 1-3.  관리자  로딩
-				var currentUser = new User();
-				var targetCompany = new Company();	
+				var currentUser = new common.ui.data.User();
+				var targetCompany = new common.ui.data.Company();	
 				common.ui.admin.setup({
 					authenticate : function(e){
 						e.token.copy(currentUser);
