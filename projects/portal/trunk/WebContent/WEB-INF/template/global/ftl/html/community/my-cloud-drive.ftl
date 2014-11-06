@@ -436,9 +436,15 @@
 				css : "panel-primary",
 				custom: function(e){
 					var body = e.target.element.children(".panel-custom-body");
+					var publicStream = body.find("input[name='photo-public-shared']");
+					
 					alert(body.children().length );
 					if( body.children().length === 0 ){
 						body.html($("#photo-editor-modal-template").html());
+						
+						//common.ui.data.image.streams(
+						alert( this.data.imageId );
+						
 					}
 				},
 				open: function(e){
