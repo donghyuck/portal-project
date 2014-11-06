@@ -322,6 +322,7 @@
 	});	
 		
 	var ajax = common.ui.ajax,	
+	DataSource = kendo.data.DataSource,
 	extend = $.extend;
 	function user (options){	
 		options = options || {};
@@ -362,10 +363,35 @@
 		});	
 	}
 	
+	function imagePorpertyDataSource(imageId){
+		var serviceUrl = "/data/image/"+ imageId + "/property?output=json";		
+		return DataSource.create({		
+			transport: { 
+				read: { url:serviceUrl, type:'GET' },
+				create: { url:serviceUrl, type:'POST' },
+				update: { url:serviceUrl, type:'POST'  },
+				destroy: { url:serviceUrl, type:'DELETE' },
+		 		parameterMap: function (options, operation){			
+					if (operation !== "read" && options.models) {
+						return { imageId: imageId, items: kendo.stringify(options.models)};
+					} 
+					return { imageId: imageId }
+				}
+			},						
+			batch: true, 
+			schema: {
+				model: common.ui.data.Property
+			},
+			error:common.api.handleKendoAjaxError
+		});
+	}
+	
+	
 	extend( common.ui.data, {
 		user : user ,
 		image : {
-			upload : uploadMyImageByUrl			
+			upload : uploadMyImageByUrl,
+			property : { datasource : imagePorpertyDataSource }
 		}
 	} )
 })(jQuery);
