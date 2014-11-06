@@ -318,8 +318,11 @@
 			searchesPerSecond : { type: "number", editable: false, defaultValue: 0 },
 			averageSearchTime : { type: "number", editable: false, defaultValue: 0 },
 			writerQueueLength : { type: "number", editable: false, defaultValue: 0 }			
-		}
+		}	
 	});	
+})(jQuery);
+
+;(function($, undefined) {
 		
 	var ajax = common.ui.ajax,	
 	DataSource = kendo.data.DataSource,
@@ -392,5 +395,6 @@
 			upload : uploadMyImageByUrl ,
 			property : { datasource: imagePorpertyDataSource }
 		}
-	} )
+	} );
+	
 })(jQuery);
