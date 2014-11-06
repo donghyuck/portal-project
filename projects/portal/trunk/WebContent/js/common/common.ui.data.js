@@ -362,7 +362,6 @@
 		});	
 	}
 	
-	
 	extend( common.ui.data, {
 		user : user ,
 		image : {
