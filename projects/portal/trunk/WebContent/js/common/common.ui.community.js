@@ -147,7 +147,7 @@
 				if( isFunction(callback) )
 					callback(response) ;	
 			},
-			error:options.error || handleKendoAjaxError,
+			error:handleAjaxError,
 			dataType : "json"
 		});	
 	};		
