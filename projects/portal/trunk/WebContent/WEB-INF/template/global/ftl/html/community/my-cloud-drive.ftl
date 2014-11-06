@@ -458,7 +458,7 @@
 							success: function (e) {							
 							}
 						} );
-						common.ui.data.image.property.datasource($this.data().imageId);
+
 						common.ui.grid(grid, {
 							dataSource : common.ui.data.image.property.datasource($this.data().imageId),
 							columns: [
