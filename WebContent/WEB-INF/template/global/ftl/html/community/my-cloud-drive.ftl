@@ -442,7 +442,7 @@
 					alert(body.children().length );
 					if( body.children().length === 0 ){
 						body.html($("#photo-editor-modal-template").html());						
-						common.ui.data.image.streams($this.data.imageId function(data){
+						common.ui.data.image.streams($this.data.imageId, function(data){
 							if( data.length > 0 )
 								publicStream.first().click();
 							else
