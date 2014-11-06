@@ -377,7 +377,7 @@
 					target = $this.data("target")
 				}
 			}
-			//$("body").toggleClass("modal-open");
+			$("body").css("overflow-y: hidden;");
 			$(target).trigger("open");
 			$(target).toggleClass("cbp-spmenu-open");
 		
@@ -387,7 +387,7 @@
 			var $this = $(this);
 			
 			var target  = $this.parent();		
-			//$("body").toggleClass("modal-open");
+			$("body").css("overflow-y: auto;");
 			var toggle = $this.data("toggle-target");
 			if(defined(toggle)){
 				if($(toggle).is(".active") )
