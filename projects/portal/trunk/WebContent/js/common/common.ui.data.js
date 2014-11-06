@@ -326,6 +326,7 @@
 		
 	var ajax = common.ui.ajax,	
 	DataSource = kendo.data.DataSource,
+	handleAjaxError = common.ui.handleAjaxError,
 	extend = $.extend;
 	function user (options){	
 		options = options || {};
@@ -385,7 +386,7 @@
 			schema: {
 				model: common.ui.data.Property
 			},
-			error:common.api.handleKendoAjaxError
+			error:handleAjaxError
 		});
 	}	
 	
