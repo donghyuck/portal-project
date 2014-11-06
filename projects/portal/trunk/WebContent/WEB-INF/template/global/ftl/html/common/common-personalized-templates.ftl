@@ -130,11 +130,11 @@
 	<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
 </div>
 <div class="btn-group btn-group-sm" data-toggle="buttons">
-	<label class="btn btn-success active">
-		<input type="radio"  class="js-switch"  name="photo-public-shared" value="1">모두에게 공개
+	<label class="btn btn-success rounded-left">
+		<input type="radio"  class="js-switch"  name="photo-public-shared" value="0">모두에게 공개
 	</label>
-	<label class="btn btn-success">
-		<input type="radio"  class="js-switch"  name="photo-public-shared" value="0"> 비공개
+	<label class="btn btn-success rounded-right active">
+		<input type="radio"  class="js-switch"  name="photo-public-shared" value="1"> 비공개
 	</label>
 </div>	
 <div class="page-header">
