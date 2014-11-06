@@ -1149,8 +1149,8 @@
 			var that = this,
 			wrapper = that.wrapper;	
 			that.options.isMinimized = true;
-			if( wrapper.children(CUSTOM).is(VISIBLE) ){
-				wrapper.children(CUSTOM).slideToggle(200);		
+			if( wrapper.children(CUSTOM_PANEL_BODY).is(VISIBLE) ){
+				wrapper.children(CUSTOM_PANEL_BODY).slideToggle(200);		
 			}			
 			
 			if( wrapper.children(PANEL_BODY).is(VISIBLE) ){	
