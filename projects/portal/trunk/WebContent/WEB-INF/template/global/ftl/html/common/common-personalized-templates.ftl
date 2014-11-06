@@ -125,7 +125,7 @@
 	</figure>
 </script>
 
-<script id="photo-editor-modal-template" type="text/x-kendo-template">`			
+<script id="photo-editor-modal-template" type="text/x-kendo-template">
 <div class="page-header no-margin-t">
 	<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
 </div>
