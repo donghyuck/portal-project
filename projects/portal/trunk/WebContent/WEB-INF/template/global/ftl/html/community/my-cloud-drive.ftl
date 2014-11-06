@@ -455,24 +455,7 @@
 							
 							}
 						} );
-						upload.kendoUpload({
-										showFileList: false,
-										multiple: false,
-										async: {
-											saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
-											autoUpload: true
-										},
-										localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
-										upload: function (e) {				
-											e.data = { imageId: photoEditorSource().imageId };
-										},
-										success: function (e) {				
-											if( e.response.targetImage ){
-												$('#photo-list-view').data('kendoListView').dataSource.read();
-											}
-										} 
-									});				
-									
+															
 						common.ui.data.image.streams($this.data().imageId, function(data){
 							if( data.length > 0 )
 								publicStream.first().click();
