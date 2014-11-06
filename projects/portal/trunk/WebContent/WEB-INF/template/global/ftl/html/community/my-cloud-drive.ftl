@@ -471,7 +471,7 @@
 							editable : true,
 							scrollable: true,
 							autoBind: true,
-							height: 180,
+							height: 250,
 							toolbar: [
 								{ name: "create", text: "추가" },
 								{ name: "save", text: "저장" },
