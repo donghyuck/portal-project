@@ -8,7 +8,7 @@
 		<script type="text/javascript"> 
 		yepnope([{
 			load: [ 
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',			
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',			
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
@@ -21,24 +21,18 @@
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',						
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',	
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',	
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 			
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',			
-			'${request.contextPath}/js/common/common.models.js',       	    
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common/common.ui.admin.js',			
 			'${request.contextPath}/js/ace/ace.js'
 			],        	   
 			complete: function() {               
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
-				var currentUser = new User();	
 				
 				var detailsModel = kendo.observable({
 					company : new Company(),
@@ -78,25 +72,29 @@
 					}	
 				});
 				
-				$("#company-details").data("model", detailsModel );				
-				common.ui.admin.setup({
-					authenticate: function(e){
+				$("#company-details").data("model", detailsModel );			
+
+				var currentUser = new common.ui.data.User();
+				var targetCompany = new common.ui.data.Company();	
+				common.ui.admin.setup({					 
+					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(detailsModel.company);
+					change: function(e){
+						e.data.copy(detailsModel.company);
 						detailsModel.isEnabled = true;
 						kendo.bind($("#company-details"), detailsModel );				
 						$("#website-grid").data("kendoGrid").dataSource.read(); 
 					}
-				});	 
+				});	
+						
 				createSiteGrid();	
 			}	
 		}]);
 				
 		function getSelectedCompany(){
-			var setup = common.ui.admin.setup();
-			return setup.companySelector.dataItem(setup.companySelector.select());
+			var companySelector = common.ui.admin.setup().companySelector();
+			return companySelector.dataItem(companySelector.select());
 		}
 		
 		function createSiteGrid(){	
@@ -118,9 +116,9 @@
 									schema: {
 										total: "targetWebSiteCount",
 										data: "targetWebSites",
-										model : common.models.WebSite
+										model : common.ui.data.WebSite
 									},
-									error: common.api.handleKendoAjaxError
+									error: common.ui.handleAjaxError
 								},
 								/* toolbar: [ { name: "create", text: "웹 사이트 추가" } ],      */
 								columns:[
@@ -160,7 +158,7 @@
 			var grid = renderTo.data('kendoGrid');			
 			var selectedCells = grid.select();			
 			if( selectedCells.length == 0){
-				return new common.models.WebSite();
+				return new common.ui.data.WebSite();
 			}else{			
 				var selectedCell = grid.dataItem( selectedCells );   
 				return selectedCell;
