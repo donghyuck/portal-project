@@ -163,7 +163,7 @@
 										data: "setupApplicationProperties",
 										model: common.ui.data.Property
 									}
-								}),
+								},
 								columns: [
 										{ title: "속성", field: "name", width:400 },
 										{ title: "값",   field: "value"}
