@@ -107,6 +107,7 @@
 						that.trigger(CHANGE, { "fieldName" : "company", target:item } );
 					},
 					dataBound : function(e){
+						var item = this.dataSource.get(this.value());		
 						that.trigger(CHANGE, { "fieldName" : "company", target:item } );
 					}
 				});		
