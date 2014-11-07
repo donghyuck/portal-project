@@ -76,7 +76,12 @@
 					token.set('isSystem', false);
 					if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
 						token.set('isSystem', true);			
-					token.copy(that.token);	
+					
+					if( that.token ){
+						token.copy(that.token);	
+					}else{
+						that.token = token ;
+					}
 					that.trigger(AUTHENTICATE,{ token : that.token });
 				}
 			});		
