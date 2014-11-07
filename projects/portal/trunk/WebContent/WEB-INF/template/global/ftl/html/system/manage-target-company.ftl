@@ -117,8 +117,16 @@
 					changed: function(e){
 						e.data.copy(detailsModel.company);
 						detailsModel.isEnabled = true;
+						
+						alert(common.ui.stringify(e.data));
+						
 						kendo.bind($("#company-details"), detailsModel );				
+						
+						
+						
 						displayCompanyDetails();	
+						
+						
 					}
 				});	
 			}	
