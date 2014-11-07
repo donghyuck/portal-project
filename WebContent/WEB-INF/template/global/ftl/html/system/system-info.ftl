@@ -160,6 +160,7 @@
 										data: "setupApplicationProperties",
 										model: common.ui.data.Property
 									},
+									serverPaging : false,
 									page : 1
 								}),
 								columns: [
