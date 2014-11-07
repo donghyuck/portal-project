@@ -241,7 +241,7 @@
 			var selectedCells = grid.select();
 			
 			if( selectedCells.length == 0){
-				return new Menu();
+				return new common.ui.data.Menu();
 			}else{			
 				var selectedCell = grid.dataItem( selectedCells );   
 				return selectedCell;
@@ -256,7 +256,7 @@
 			if( !renderTo.data("model"))
 			{
 				var  editorModel = kendo.observable({
-					menu : new Menu()
+					menu : new common.ui.data.Menu()
 				});					
 				kendo.bind(renderTo, editorModel);
 				renderTo.data("model", editorModel );					
