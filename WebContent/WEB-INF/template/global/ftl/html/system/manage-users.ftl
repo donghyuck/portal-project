@@ -31,7 +31,7 @@
             complete: function() {       
 			
 				var targetCompany = kendo.observable({
-					company : new Company(),
+					company : new common.ui.data.Company(),
 					isEnabled : false,
 					addUser : function(e){
 						alert("준비중입니다.") ;
