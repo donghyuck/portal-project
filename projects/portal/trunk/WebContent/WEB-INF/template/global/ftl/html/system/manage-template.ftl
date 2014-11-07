@@ -7,7 +7,7 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/jquery.jgrowl/jquery.jgrowl.min.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
@@ -20,33 +20,27 @@
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
 			'${request.contextPath}/js/jquery.jgrowl/jquery.jgrowl.min.js',			
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',			
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
-			
-			'${request.contextPath}/js/common/common.models.js',       	    
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common/common.ui.admin.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
+			'${request.contextPath}/js/common/common.ui.admin.js',	
 			'${request.contextPath}/js/ace/ace.js'			
 			],
 			complete: function() {
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
-				var currentUser = new User();
-				var targetCompany = new Company();	
-				common.ui.admin.setup({
+				var currentUser = new common.ui.data.User();
+				var targetCompany = new common.ui.data.Company();	
+				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(targetCompany);
+					changed: function(e){
+						e.data.copy(targetCompany);
 					}
-				});					
+				});				
 				
 				$('#template-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
@@ -79,7 +73,7 @@
 								hasChildren: "directory"
 							}
 						},
-						error: common.api.handleKendoAjaxError					
+						error: common.ui.handleAjaxError					
 					},
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
@@ -109,7 +103,7 @@
 								hasChildren: "directory"
 							}
 						},
-						error: common.api.handleKendoAjaxError					
+						error: common.ui.handleAjaxError					
 					},
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
@@ -125,7 +119,7 @@
 			var renderTo = $('#template-details');			
 			if(!renderTo.data("model")){					
 				var detailsModel = kendo.observable({
-					file : new common.models.FileInfo(),
+					file : new common.ui.data.FileInfo(),
 					content : "",
 					supportCustomized : false,
 					supportUpdate : false,
@@ -188,9 +182,9 @@
 	    		renderTo.data("model").set("supportSvn", true); 
 	    	}  
 	    	if(!filePlaceHolder.directory){
-				common.api.callback(  
+				common.ui.ajax(
+				"${request.contextPath}/secure/view-template-content.do?output=json" , 
 				{
-					url :"${request.contextPath}/secure/view-template-content.do?output=json", 
 					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
 					success : function(response){
 						ace.edit("htmleditor").setValue( response.targetFileContent );	
@@ -229,7 +223,7 @@
 								schema: {
 									total: "totalCompanyCount",
 									data: "companies",
-									model : Company
+									model : common.ui.data.Company
 								}
 							}
 						});							
@@ -250,7 +244,7 @@
 								schema: {
 									total: "targetWebSiteCount",
 									data: "targetWebSites",
-									model : common.models.WebSite
+									model : common.ui.data.WebSite
 								}
 							}						
 						}).data("kendoDropDownList");										
