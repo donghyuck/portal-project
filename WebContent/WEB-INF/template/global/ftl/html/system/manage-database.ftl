@@ -133,7 +133,7 @@
 				kendo.bind( renderTo, detailsModel );
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
-					common.api.callback(
+					common.ui.ajax(
 					"${request.contextPath}/secure/get-database-browser-table.do?output=json",
 					{
 						data : { targetTableName : $this.data("table") },
