@@ -126,7 +126,10 @@
 		}		
 	}	
 	
-	
+	extend(common.ui.admin, {
+		setup : setup
+		
+	} );
 	/*
 	common.ui.admin.Setup = kendo.Class.extend({		
 		init : function (options){			
