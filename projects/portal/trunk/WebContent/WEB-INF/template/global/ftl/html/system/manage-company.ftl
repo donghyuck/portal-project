@@ -165,7 +165,7 @@
 								schema: {
 									total: "totalMenuCount",
 									data: "targetMenus",
-									model: Menu
+									model: common.ui.data.Menu
 								},
 								pageSize: 15,
 								serverPaging: true,
@@ -323,7 +323,7 @@
 								batch: false, 
 								schema: {
 									data: "roles",
-									model: Role
+									model: common.ui.data.Role
 								},
 								error:common.ui.handleAjaxError
 							},
