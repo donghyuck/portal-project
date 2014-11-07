@@ -174,25 +174,31 @@
 						}
 					}else if(  $(this).attr('href') == '#database-info' ){
 						if(! common.ui.exists($("#database-info-grid")) ){
-							common.ui.grid( $('#database-info-grid'),{
-								dataSource : common.ui.datasource('${request.contextPath}/secure/view-system-databases.do?output=json', {
-									batch: false, 
-									schema: {
+							$('#database-info-grid').kendoGrid({
+									dataSource: {
+										transport: { 
+											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+										},						
+										batch: false, 
+										schema: {
 										data: "databaseInfos",
-										model: common.ui.data.DatabaseInfo
-									}
-								}),
-								columns: [
+											model: DatabaseInfo
+										},
+										error:common.api.handleKendoAjaxError
+									},
+									columns: [
 										{ title: "데이터베이스", field: "databaseVersion"},
 										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
 										{ title: "ISOLATION", field: "isolationLevel", width:90 },
-								],
-								pageable: false,
-								resizable: true,
-								editable : false,
-								scrollable: true,
-								height: 200
-							});						
+									],
+									pageable: false,
+									resizable: true,
+									editable : false,
+									scrollable: true,
+									height: 200,
+									change: function(e) {
+									}
+								});
 						}					
 					}
 					$(this).tab('show');		
