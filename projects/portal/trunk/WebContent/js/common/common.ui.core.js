@@ -1211,6 +1211,81 @@
 	
 })(jQuery);
 
+;(function($, undefined) {
+	var ui = common.ui,
+	kendo = window.kendo, 
+	Widget = kendo.Widget,
+	extend = $.extend,
+	isPlainObject = $.isPlainObject,
+	DataSource = kendo.data.DataSource,
+	handleAjaxError = common.ui.handleAjaxError ;
+	
+	var Navigator = Widget.extend({		
+		init : function(element, options) {			
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			options = that.options;
+			element = that.element;
+			that.refresh();
+		},
+		options : {
+			name : "Navigator"
+		},
+		refresh : function(){
+			var that = this;
+			var rendorTo = that.element;
+			rendorTo.html(
+				'<form name="teleportation-form" method="POST" accept-charset="utf-8">' +
+				'<input type="hidden" name="output" value="html" />' +		
+				'</form>'						
+			);
+		},
+		teleport : function(params){			
+			var that = this;			
+			var template = kendo.template('<input type="hidden" name="#=name #" value="#=value #"/>');
+			var form = that.element.find('form');
+			if( typeof params === UNDEFINED ){
+				params = params || {};				
+			}									
+			
+			form.find('input[name!="output"]').remove();			
+			if(isPlainObject(params)){
+				$.each( params , function(propertyName, valueOfProperty ){
+					if(propertyName === 'action'){
+						form.attr('action', valueOfProperty );
+					}else{	
+						if( that.element.find('input[name="'+ propertyName + '"]').length === 0  ){			
+							var html = template({name:propertyName , value:valueOfProperty });											
+							form.append(html);							
+						}else{							
+							that.element.find('input[name="'+ propertyName + '"]').val(valueOfProperty);
+						}
+					}
+				});
+			}			
+			form.submit();
+		}
+	});
+	
+	function navigator (options){
+		options = options || {};				
+		if( typeof options.renderTo === UNDEFINED ){
+			options.renderTo = 'teleportation';			
+		}				
+		if ($("#" +options.renderTo ).length == 0) {
+			$('body').append(	'<div id="' +options.renderTo + '" style="display:none;"></div>');
+		}		
+		if(! common.ui.exists$("#" +options.renderTo ) ){
+			new Navigator( $("#" +options.renderTo ), options);
+		}		
+		return $("#" +options.renderTo ).data('kendoNavigator');
+	}
+	
+	extend(common.ui, {
+		navigator : navigator		
+	});
+	
+})(jQuery);
 
 ;(function($, undefined) {
 	
@@ -1239,11 +1314,7 @@
 	ajax = ui.ajax,
 	handleAjaxError = ui.handleAjaxError,
 	defined = ui.defined,
-	templates = {
-		
-		
-		
-	};
+	templates = {};
 	
 	var Accounts = Widget.extend({
 		init : function(element, options) {
