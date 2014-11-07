@@ -163,14 +163,10 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 	
 	function setup (options){	
 		options = options || {};
-		//if( $("#main-wrapper").text().length > 0 ){	
-			if(!$("#main-wrapper").data("kendoSetup") ){
-				new Setup($("#main-wrapper"), options);	
-			}
-			return $("#main-wrapper").data("kendoSetup");
-		//}else{
-		//	return Setup($("#main-wrapper"), options);	
-		//}		
+		if(!$("#main-wrapper").data("kendoSetup") ){
+			new Setup($("#main-wrapper"), options);	
+		}
+		return $("#main-wrapper").data("kendoSetup");
 	}	
 	
 
