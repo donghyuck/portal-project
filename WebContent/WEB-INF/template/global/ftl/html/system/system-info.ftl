@@ -182,9 +182,9 @@
 										batch: false, 
 										schema: {
 										data: "databaseInfos",
-											model: DatabaseInfo
+											model: comon.ui.data.DatabaseInfo
 										},
-										error:common.api.handleKendoAjaxError
+										error:common.ui.handleAjaxError
 									},
 									columns: [
 										{ title: "데이터베이스", field: "databaseVersion"},
