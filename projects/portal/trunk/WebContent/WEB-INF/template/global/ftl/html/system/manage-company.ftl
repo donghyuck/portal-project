@@ -171,7 +171,7 @@
 								serverPaging: true,
 								serverFiltering: false,
 								serverSorting: false,  
-								error:common.api.handleKendoAjaxError
+								error:common.ui.handleAjaxError
 							},
 							columns: [
 								{ title: "ID", field: "menuId",  width:50 },
@@ -502,7 +502,7 @@
 							data: "users",
 							model: common.ui.data.User
 						},
-						error:common.api.handleKendoAjaxError,
+						error:common.ui.handleAjaxError,
 						batch: false,
 						pageSize: 10,
 						serverPaging: true,
@@ -551,7 +551,7 @@
 								data: "companyGroups",
 								model: common.ui.data.Group
 							},
-							error:common.api.handleKendoAjaxError
+							error:common.ui.handleAjaxError
 						},
 						height: 300,
 						scrollable: true,
