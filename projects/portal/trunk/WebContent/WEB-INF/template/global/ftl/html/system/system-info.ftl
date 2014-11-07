@@ -7,7 +7,7 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
@@ -20,35 +20,26 @@
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',			
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
-			
-			'${request.contextPath}/js/common/common.models.js',       	    
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common/common.ui.admin.js'
 			],
 			complete: function() {
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
-				var currentUser = new User();
-				var targetCompany = new Company();	
-				common.ui.admin.setup({
+				var currentUser = new common.ui.data.User();
+				var targetCompany = new common.ui.data.Company();	
+				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(targetCompany);
+					changed: function(e){
+						e.data.copy(targetCompany);
 					}
 				});		
-				
-				
-				
 				// memory dataSource
 				var dataSource = new kendo.data.DataSource({
 					transport: {
@@ -58,7 +49,7 @@
 							dataType : 'json'
 						}
 					},
-					error:common.api.handleKendoAjaxError,
+					error:common.ui.handleAjaxError,
 					schema: { 
 						data: function(response){
 							return [ response ] ; 
@@ -150,7 +141,7 @@
 							dataType : 'json'
 						}
 					},
-					error:common.api.handleKendoAjaxError,
+					error:common.ui.handleAjaxError,
 					schema: { 
 						data: "diskUsages"
                     },
@@ -170,7 +161,7 @@
 						kendo.bind($(".system-details"), data.systemInfo );			
 						kendo.bind($(".license-details"), data.licenseInfo );					
 					},
-					error:common.api.handleKendoAjaxError,
+					error:common.ui.handleAjaxError,
 					dataType : "json"
 				});	
 						
@@ -185,9 +176,9 @@
 										 },
 										 schema: {
 					                            data: "setupApplicationProperties",
-					                            model: Property
+					                            model: common.ui.data.Property
 					                     },
-					                     error:handleKendoAjaxError
+					                     error:common.ui.handleAjaxError
 								     },
 								     columns: [
 								         { title: "속성", field: "name", width:400 },
@@ -212,9 +203,9 @@
 										batch: false, 
 										schema: {
 										data: "databaseInfos",
-											model: DatabaseInfo
+											model: common.ui.data.DatabaseInfo
 										},
-										error:common.api.handleKendoAjaxError
+										error:common.ui.handleAjaxError
 									},
 									columns: [
 										{ title: "데이터베이스", field: "databaseVersion"},
