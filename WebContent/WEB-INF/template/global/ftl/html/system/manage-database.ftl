@@ -236,9 +236,9 @@
 	    		renderTo.data("model").set("supportSvn", true); 
 	    	}  
 	    	if(!filePlaceHolder.directory){
-				common.api.callback(  
-				{
-					url :"${request.contextPath}/secure/view-sql-file-content.do?output=json", 
+				common.ui.ajax(  
+				"${request.contextPath}/secure/view-sql-file-content.do?output=json", 
+				{					
 					data : { path:  filePlaceHolder.path },
 					success : function(response){
 						ace.edit("xmleditor").setValue( response.targetFileContent );	
