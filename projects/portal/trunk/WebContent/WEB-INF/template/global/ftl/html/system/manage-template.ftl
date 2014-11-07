@@ -37,7 +37,7 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					changed: function(e){
+					change: function(e){
 						e.data.copy(targetCompany);
 					}
 				});				
