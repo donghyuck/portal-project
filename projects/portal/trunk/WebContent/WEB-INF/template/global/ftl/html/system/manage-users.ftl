@@ -363,7 +363,7 @@
 						data: "userRoles",
 						model: common.ui.data.Role
 					},
-					error:common.ui.handleAjaxError
+					error:common.ui.handleAjaxError,
 					change: function(e) {                
 						var multiSelect = $("#user-role-select").data("kendoMultiSelect");
 						var selectedRoleIDs = "";			                        		
