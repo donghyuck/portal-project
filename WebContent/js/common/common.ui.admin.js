@@ -1,6 +1,36 @@
 /**
  * COMMON ADMIN UI DEFINE
  */
+
+	common.ui.data.FileInfo =  kendo.data.Model.define({
+		id : "path",
+		hasChildren: "directory",
+		fields: { 
+			absolutePath: { type: "string", defaultValue: "" },
+			name: { type: "string", defaultValue: "." },
+			path: { type: "string", defaultValue: "." },
+			size: { type: "number", defaultValue: 0 },
+			directory: { type: "boolean", defaultValue: false },
+			customized : { type: "boolean", defaultValue: false },
+	        lastModifiedDate: { type: "date"}
+		},
+	    formattedLastModifiedDate : function(){
+	    	return kendo.toString(this.get("lastModifiedDate"), "g");
+	    },		
+	    formattedSize : function(){
+	    	return kendo.toString(this.get("size"), "##,#");
+	    },
+	    copy: function ( target ){
+	    	target.path = this.get("path");
+	    	target.set("customized",this.get("customized") );
+	    	target.set("absolutePath",this.get("absolutePath") );
+	    	target.set("name", this.get("name"));
+	    	target.set("size",this.get("size") );
+	    	target.set("directory", this.get("directory"));
+	    	target.set("lastModifiedDate",this.get("lastModifiedDate") );
+	    }
+	});
+	
 (function($, undefined) {
 	var common = window.common = window.common || {};
 	common.ui =  common.ui || {},
