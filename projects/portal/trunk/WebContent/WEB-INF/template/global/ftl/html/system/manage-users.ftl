@@ -24,20 +24,12 @@
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
-			
-			'${request.contextPath}/js/common/common.models.js',       	    
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common/common.ui.admin.js'],        	   
             complete: function() {       
-
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
-				var currentUser = new User();
-				
+			
 				var targetCompany = kendo.observable({
 					company : new Company(),
 					isEnabled : false,
@@ -61,6 +53,23 @@
 				);
 				
 				kendo.bind($("#user-list-panel"), targetCompany );					
+
+				var currentUser = new common.ui.data.User();
+				common.ui.admin.setup({					 
+					authenticate : function(e){
+						e.token.copy(currentUser);
+					},
+					change: function(e){
+						e.data.copy(targetCompany.company);
+						if( !$('#user-list-panel').is(":visible") ){
+							$('#user-list-panel').show();
+						}
+						$("#user-grid").data("kendoGrid").dataSource.read();
+					}
+				});	
+				
+
+/*
 				common.ui.admin.setup({
 					authenticate: function(e){
 						e.token.copy(currentUser);
@@ -82,7 +91,7 @@
 						}
 					}
 				});
-				
+		*/		
 				// 1. USER GRID 		        
 				var user_grid = $("#user-grid").kendoGrid({
                     dataSource: {
@@ -96,7 +105,7 @@
                         schema: {
                             total: "totalUserCount",
                             data: "users",
-                            model: User
+                            model: common.ui.data.User
                         },
                         error:handleKendoAjaxError,
                         batch: false,
@@ -167,7 +176,7 @@
 			if( $('#user-details').text().trim().length	== 0 ){
 				renderTo.html(kendo.template($('#user-details-template').html()));
 				var detailsModel = kendo.observable({
-					user : new User(),
+					user : new common.ui.data.User(),
 					isVisible : false,
 					isChanged : false,
 					isChangable : false,
@@ -204,7 +213,7 @@
 								$("#user-group-grid").data("kendoGrid").dataSource.read();
 								 $('#group-role-selected').data("kendoMultiSelect").dataSource.read();
 							},
-							error:handleKendoAjaxError
+							error:common.ui.handleAjaxError
 						});		
 						return false;					
 					},
@@ -222,7 +231,7 @@
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
 							},								
-							error: common.api.handleKendoAjaxError,
+							error:common.ui.handleAjaxError,
 							dataType : "json"
 						});	
 						return false;
@@ -320,10 +329,10 @@
 									                    },
 									                    schema: { 
 						                            		data: "userGroupRoles",
-						                            		model: Role
+						                            		model: common.ui.data.Role
 						                        		}
 									                },
-						error: common.api.handleKendoAjaxError,
+						error:common.ui.handleAjaxError,
 						                        	dataBound: function(e) {
 						                        		var multiSelect = $("#group-role-selected").data("kendoMultiSelect");
 						                        		var selectedRoleIDs = "";
@@ -352,9 +361,9 @@
 					},
 					schema: {
 						data: "userRoles",
-						model: Role
+						model: common.ui.data.Role
 					},
-					error: common.api.handleKendoAjaxError,
+					error:common.ui.handleAjaxError
 					change: function(e) {                
 						var multiSelect = $("#user-role-select").data("kendoMultiSelect");
 						var selectedRoleIDs = "";			                        		
@@ -386,7 +395,7 @@
 							model: Role
 						}
 					},
-					error: common.api.handleKendoAjaxError,
+					error:common.ui.handleAjaxError
 					dataBound: function(e) {
 						selectedRoleDataSource.read();   	
 					},	
@@ -406,7 +415,7 @@
 							success : function( response ){		
 								// need refresh ..
 							},
-							error: common.api.handleKendoAjaxError
+							error:common.ui.handleAjaxError
 						});												
 						multiSelect.readonly(false);
 					}
@@ -435,9 +444,9 @@
 						batch: true, 
 						schema: {
 							data: "targetUserProperty",
-							model: Property
+							model: common.ui.data.Property
 						},
-						error: common.api.handleKendoAjaxError
+						error:common.ui.handleAjaxError
 					},
 					columns: [
 									    { title: "이름", field: "name" , width: "200px",  locked:true},
@@ -498,9 +507,9 @@
 						},
 						schema: {
 							data: "companyGroups",
-							model: Group
+							model: common.ui.data.Group
 						},
-						error:handleKendoAjaxError
+						error:common.ui.handleAjaxError
 					},
 					select:function(e){
 						resetFormErrorStates($("#groups"));
@@ -529,9 +538,9 @@
 						},
 						schema: {
 							data: "userGroups",
-							model: Group
+							model: common.ui.data.Group
 						},
-						error:handleKendoAjaxError
+						error:common.ui.handleAjaxError
 					},
 					scrollable: true,
 					height: '100%',
@@ -550,7 +559,7 @@
 										$('#user-group-grid').data('kendoGrid').dataSource.read();
 										$('#group-role-selected').data("kendoMultiSelect").dataSource.read();
 									},
-									error: common.api.handleKendoAjaxError,
+									error:common.ui.handleAjaxError
 									dataType : "json"
 								});								                       		
 							}
@@ -632,7 +641,7 @@
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
 							},
-							error: common.api.handleKendoAjaxError,
+							error:common.ui.handleAjaxError
 							dataType : "json"
 						});							
 					}
