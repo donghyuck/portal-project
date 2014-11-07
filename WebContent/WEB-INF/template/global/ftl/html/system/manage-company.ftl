@@ -62,9 +62,8 @@
 				});
 				*/
 				
-				common.ui.handleButtonActionEvents(
-					$("button.btn-control-group"), 
-					{event: 'click', handlers: {
+				common.ui.buttons(	$("button.btn-control-group"), {
+					handlers: {
 						'create-company' : function(e){
 							$("#company-grid").data('kendoGrid').addRow();			
 						}, 	
@@ -80,8 +79,8 @@
 						role : function(e){					
 							showRoleWindow();			
 						}  						 
-					}}
-				);
+					}
+				});
 
 				var company_grid = $("#company-grid").kendoGrid({
 					dataSource: {	
