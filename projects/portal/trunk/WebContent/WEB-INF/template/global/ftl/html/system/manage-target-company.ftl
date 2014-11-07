@@ -8,7 +8,7 @@
 		<script type="text/javascript"> 
 		yepnope([{
 			load: [ 
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',			
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',			
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
@@ -26,22 +26,17 @@
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 			
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',			
-			'${request.contextPath}/js/common/common.models.js',       	    
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common/common.ui.admin.js',			
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
+			'${request.contextPath}/js/common/common.ui.admin.js'	
 			'${request.contextPath}/js/ace/ace.js'
 			],        	   
 			complete: function() {               
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
-				var currentUser = new User();	
-				
+
+								
 				var detailsModel = kendo.observable({
-					company : new Company(),
+					company : new common.ui.data.Company(),
 					isEnabled : false,
 					properties : new kendo.data.DataSource({
 						transport: { 
@@ -59,9 +54,9 @@
 						batch: true, 
 						schema: {
 							data: "targetCompanyProperty",
-							model: Property
+							model: common.ui.data.Property
 						},
-						error : common.api.handleKendoAjaxError
+						error : common.ui.data.handleAjaxError
 					}),
 					toggleOptionPanel:function(e){					
 						var action = $(e.target).attr('data-action');
@@ -82,7 +77,7 @@
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
 							},
-							error:common.api.handleKendoAjaxError,
+							error:common.ui.handleAjaxError,
 							dataType : "json"
 						});						
 						return false;
@@ -116,19 +111,19 @@
 				});
 				
 				$("#company-details").data("model", detailsModel );				
-				common.ui.admin.setup({
-					authenticate: function(e){
+							
+				var currentUser = new common.ui.data.User();
+				common.ui.admin.setup({					 
+					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(detailsModel.company);
+					changed: function(e){
+						e.data.copy(detailsModel.company);
 						detailsModel.isEnabled = true;
 						kendo.bind($("#company-details"), detailsModel );				
 						displayCompanyDetails();	
 					}
-				});	 
-				 // 4. PAGE MAIN		
-
+				});	
 			}	
 		}]);
 		
@@ -157,8 +152,8 @@
 		}
 		
 		function getSelectedCompany(){
-			var setup = common.ui.admin.setup();
-			return setup.companySelector.dataItem(setup.companySelector.select());
+			var companySelector = common.ui.admin.setup().companySelector();
+			return companySelector.dataItem(companySelector.select());
 		}
 
 		function openCompanyUpdateModal(){
@@ -208,9 +203,9 @@
 							schema: {
 								data: "targetLogoImages",
 								total: "targetLogoImageCount",
-								model : common.models.Logo
+								model : common.ui.data.Logo
 							},
-							error: common.api.handleKendoAjaxError
+							error: common.ui.handleAjaxError
 						},
 						autoBind: true,
 						columns:[
@@ -311,7 +306,7 @@
 								},
 								error: function(){
 									socialWindow.close();
-									common.api.handleKendoAjaxError();
+									common.ui.handleAjaxError();
 								},
 								dataType : 'json'
 							});
@@ -371,13 +366,13 @@
 									schema: {
 										total: "totalTargetAttachmentCount",
 										data: "targetAttachments",
-										model : Attachment
+										model : common.ui.data.Attachment
 									},
 									pageSize: 15,
 									serverPaging: true,
 									serverFiltering: false,
 									serverSorting: false,                        
-									error: common.api.handleKendoAjaxError
+									error: common.ui.handleAjaxError
 								},
 								columns:[
 									{ field: "attachmentId", title: "ID",  width: 50, filterable: false, sortable: false },
@@ -441,8 +436,7 @@
 										parameterMap: function (options, operation){
 											if (operation != "read" && options) {										                        								                       	 	
 												return { objectType: 1, objectId : selectedCompany.companyId , item: kendo.stringify(options)};									                            	
-											}else{
-												
+											}else{												
 												return { startIndex: options.skip, pageSize: options.pageSize, objectType: 1, objectId: selectedCompany.companyId }
 											}
 										} 
@@ -450,13 +444,13 @@
 									schema: {
 										total: "totalTargetImageCount",
 										data: "targetImages",
-										model : Image
+										model : common.ui.data.Image
 									},
 									pageSize: 15,
 									serverPaging: true,
 									serverFiltering: false,
 									serverSorting: false,                        
-									error: common.api.handleKendoAjaxError
+									error: common.ui.handleAjaxError
 								},
 								columns:[
 									{ field: "imageId", title: "ID",  width: 50, filterable: false, sortable: false  },
