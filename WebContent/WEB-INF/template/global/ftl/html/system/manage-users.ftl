@@ -395,7 +395,7 @@
 							model: Role
 						}
 					},
-					error:common.ui.handleAjaxError
+					error:common.ui.handleAjaxError,
 					dataBound: function(e) {
 						selectedRoleDataSource.read();   	
 					},	
@@ -559,7 +559,7 @@
 										$('#user-group-grid').data('kendoGrid').dataSource.read();
 										$('#group-role-selected').data("kendoMultiSelect").dataSource.read();
 									},
-									error:common.ui.handleAjaxError
+									error:common.ui.handleAjaxError,
 									dataType : "json"
 								});								                       		
 							}
@@ -641,7 +641,7 @@
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
 							},
-							error:common.ui.handleAjaxError
+							error:common.ui.handleAjaxError,
 							dataType : "json"
 						});							
 					}
