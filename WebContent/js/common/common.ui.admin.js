@@ -7,6 +7,7 @@
 	common.ui.admin = common.ui.admin || {};
 	
 	var kendo = window.kendo,
+	ajax = common.ui.ajax,
 	Widget = kendo.ui.Widget,
 	Class = kendo.Class,
 	extend = $.extend,
@@ -14,13 +15,119 @@
 	isFunction = kendo.isFunction,
 	UNDEFINED = 'undefined',
 	POST = 'POST',
+	CLICK = 'click',
+	CHANGE = 'change',
+	AUTHENTICATE = 'authenticate',
+	COMPLETE = 'complete',
+	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
+	ROLE_ADMIN = "ROLE_ADMIN", 
+	ROLE_SYSTEM = "ROLE_SYSTEM", 	
 	OBJECT_TYPE = 30 ,
 	ACCOUNT_RENDER_ID = "account-panel",
-	COMPANY_SELECTOR_RENDER_ID = "targetCompany",
 	JSON = 'json';
-		
 	
 	
+	
+	var Setup = Widget.extend({		
+		init : function(element, options) {
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			options = that.options;
+			that.complete();
+			kendo.notify(that);
+		},
+		options : {
+			name : "Setup",
+		},
+		events : [ CLICK, CHANGE, AUTHENTICATE, COMPLETE ],
+		complete : function(){
+			var that = this,
+			options = that.options, 			
+			cfg = { features : {}, jobs : [] };
+			
+			cfg.features = options.features || {} ;
+			cfg.jobs =  options.jobs || [] ;			
+			common.ui.setup(cfg);		
+			
+			authenticate();
+			
+			$('.menu-content-profile .close').click(function () {
+				var $p = $(this).parents('.menu-content');
+				$p.addClass('fadeOut');
+				setTimeout(function () {
+					$p.css({ height: $p.outerHeight(), overflow: 'hidden' }).animate({'padding-top': 0, height: $('#main-navbar').outerHeight()}, 500, function () {
+						$p.remove();
+					});
+				}, 300);
+				return false;
+			});
+			
+			that._pixelAdmin = window.PixelAdmin;
+			that._pixelAdmin..start([]);	
+			
+			
+		},
+		authenticate : function() {
+			var that = this;
+			ajax( that.options.authenticateUrl || AUTHENTICATE_URL, {
+				success : function(response){
+					var token = new common.ui.data.User($.extend( response.currentUser, { roles : response.roles }));
+					token.set('isSystem', false);
+					if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
+						token.set('isSystem', true);			
+					token.copy(that.token);	
+					that.trigger(AUTHENTICATE,{ token : that.token });
+				}
+			});		
+		},
+		companySelector : function(){	
+			var that = this,
+			renderTo = $("#targetCompany");		
+			if(!renderTo.data("kendoDropDownList")){
+				renderTo.kendoDropDownList({
+					dataTextField: 'displayName',	
+					dataValueField: 'companyId',
+					dataSource: {
+						serverFiltering: false,
+						transport: {
+							read: {
+								dataType: JSON,
+								url: '/secure/list-company.do?output=json',
+								type: POST
+							}
+						},
+						schema: { 
+							data: "companies",
+							model : Company
+						}
+					},
+					change : function (e){
+						var item = this.dataSource.get(this.value());					
+						that.trigger(CHANGE, { "fieldName" : "company", target:item } );
+					},
+					dataBound : function(e){
+						that.trigger(CHANGE, { "fieldName" : "company", target:item } );
+					}
+				});		
+			}
+			return renderTo.data("kendoDropDownList");
+		}	
+	});
+	
+	function setup (options){	
+		options = options || {};
+		if( $("#main-wrapper").text().length > 0 ){	
+			if(!$("#main-wrapper").data("kendoSetup") ){
+				Setup($("#main-wrapper"), options);	
+			}
+			return $("#main-wrapper").data("kendoSetup");
+		}else{
+			return Setup($("#main-wrapper"), options);	
+		}		
+	}	
+	
+	
+	/*
 	common.ui.admin.Setup = kendo.Class.extend({		
 		init : function (options){			
 			var that = this;
@@ -186,6 +293,7 @@
 			
 		}
 	});	
+	*/
 	
 })(jQuery);
 
@@ -193,18 +301,5 @@ common.ui.admin.switcherEnabled = function(name) {
 	return $('input[role="switcher"][name="' + name + '"]').is(":checked") ;	
 }
 
-common.ui.admin.setup = function (options){	
-	options = options || {};
-	if( $("#main-wrapper").text().length > 0 ){	
-		if( $("#main-wrapper").data("admin-setup") ){
-			return $("#main-wrapper").data("admin-setup");		
-		}else{			
-			var setup = new common.ui.admin.Setup(options);	
-			 $("#main-wrapper").data("admin-setup", setup );
-			 return setup;
-		}
-	}else{
-		return new common.ui.admin.Setup(options);	
-	}		
-}
+
 	
