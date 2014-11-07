@@ -165,11 +165,12 @@
 										{ title: "속성", field: "name", width:400 },
 										{ title: "값",   field: "value"}
 									],
-									pageable: false,
-									resizable: true,
-									editable : false,
-									scrollable: true,
-									height: 600
+								pageable: false,
+								resizable: true,
+								editable : false,
+								scrollable: true,
+								height: 600,
+								autoBind : true
 							});									
 						}
 					}else if(  $(this).attr('href') == '#database-info' ){
@@ -191,7 +192,8 @@
 								resizable: true,
 								editable : false,
 								scrollable: true,
-								height: 200
+								height: 200,
+								autoBind : true
 							});						
 						}					
 					}
