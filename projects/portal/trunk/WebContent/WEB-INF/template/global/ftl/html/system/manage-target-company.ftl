@@ -35,10 +35,10 @@
 			complete: function() {               
 
 								
-				var detailsModel = kendo.observable({
+				var detailsModel = common.ui.observable({
 					company : new common.ui.data.Company(),
 					isEnabled : false,
-					properties : new kendo.data.DataSource({
+					properties : common.ui.data.properties.datasource({
 						transport: { 
 							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
 							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
@@ -50,13 +50,10 @@
 								} 
 								return { companyId: getSelectedCompany().companyId }
 							}
-						},	
-						batch: true, 
-						schema: {
-							data: "targetCompanyProperty",
-							model: common.ui.data.Property
 						},
-						error : common.ui.data.handleAjaxError
+						schema: {
+							data: "targetCompanyProperty"
+						}
 					}),
 					toggleOptionPanel:function(e){					
 						var action = $(e.target).attr('data-action');
