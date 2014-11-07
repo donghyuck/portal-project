@@ -198,7 +198,7 @@
 			var renderTo = $('#sql-details');			
 			if(!renderTo.data("model")){					
 				var detailsModel = kendo.observable({
-					file : new common.ui.data..FileInfo(),
+					file : new common.ui.data.FileInfo(),
 					content : "",
 					supportCustomized : false,
 					supportUpdate : false,
