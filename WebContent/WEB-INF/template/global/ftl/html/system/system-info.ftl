@@ -177,6 +177,7 @@
 							common.ui.grid($('#database-info-grid'), {
 									dataSource: common.ui.datasource( '/secure/view-system-databases.do?output=json', {
 										batch: false, 
+										serverPaging:false,
 										schema: {
 											data: "databaseInfos",
 											model: common.ui.data.DatabaseInfo
