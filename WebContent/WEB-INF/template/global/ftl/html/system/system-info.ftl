@@ -159,7 +159,8 @@
 									schema: {
 										data: "setupApplicationProperties",
 										model: common.ui.data.Property
-									}
+									},
+									page : 1
 								}),
 								columns: [
 										{ title: "속성", field: "name", width:400 },
