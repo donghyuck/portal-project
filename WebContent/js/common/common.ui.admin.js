@@ -104,11 +104,11 @@
 					},
 					change : function (e){
 						var item = this.dataSource.get(this.value());					
-						that.trigger(CHANGE, { "fieldName" : "company", target:item } );
+						that.trigger(CHANGE, { "fieldName" : "company", data:item } );
 					},
 					dataBound : function(e){
-						var item = this.dataSource.get(this.value());		
-						that.trigger(CHANGE, { "fieldName" : "company", target:item } );
+						var item = this.dataSource.get(this.value());			
+						that.trigger(CHANGE, { "fieldName" : "company", data:item } );
 					}
 				});		
 			}
