@@ -169,8 +169,6 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 		return $("#main-wrapper").data("kendoSetup");
 	}	
 	
-
-
 	function bytesToSize(bytes, precision) {
 		var kilobyte = 1024;
 		var megabyte = kilobyte * 1024;
