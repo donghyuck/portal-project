@@ -155,12 +155,14 @@
 					if(  $(this).attr('href') == '#setup-info' ){
 						if(!common.ui.exists($("#setup-props-grid")) ){
 							common.ui.grid($('#setup-props-grid'), {
-								dataSource : common.ui.datasource( '${request.contextPath}/secure/view-system-setup-props.do?output=json', {
+								dataSource : {
+									transport: { 
+										read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+									},
 									schema: {
 										data: "setupApplicationProperties",
 										model: common.ui.data.Property
-									},
-									serverPaging : false
+									}
 								}),
 								columns: [
 										{ title: "속성", field: "name", width:400 },
