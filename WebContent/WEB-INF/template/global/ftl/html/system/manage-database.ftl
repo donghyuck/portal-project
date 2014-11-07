@@ -228,8 +228,7 @@
 	    		renderTo.data("model").set("supportCustomized", true); 
 	    	}else{
 	    		renderTo.data("model").set("supportCustomized", false); 
-	    	}
-	    	
+	    	}	    	
 	    	if( filePlaceHolder.path.indexOf( ".svn" ) != -1 ) {
 	    		renderTo.data("model").set("supportSvn", false); 
 	    	}else{
