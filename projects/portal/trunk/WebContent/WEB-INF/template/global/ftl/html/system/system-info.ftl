@@ -175,6 +175,13 @@
 					}else if(  $(this).attr('href') == '#database-info' ){
 						if(! common.ui.exists($("#database-info-grid")) ){
 							common.ui.grid($('#database-info-grid'), {
+									dataSource: common.ui.datasource( '/secure/view-system-databases.do?output=json', {
+										batch: false, 
+										schema: {
+											data: "databaseInfos",
+											model: common.ui.data.DatabaseInfo
+										}									
+									}),/*
 									dataSource: {
 										transport: { 
 											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
@@ -185,7 +192,7 @@
 											model: common.ui.data.DatabaseInfo
 										},
 										error:common.ui.handleAjaxError
-									},
+									},*/
 									columns: [
 										{ title: "데이터베이스", field: "databaseVersion"},
 										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
