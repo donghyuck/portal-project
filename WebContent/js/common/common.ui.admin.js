@@ -64,7 +64,7 @@
 			});
 			
 			that._pixelAdmin = window.PixelAdmin;
-			that._pixelAdmin..start([]);	
+			that._pixelAdmin.start([]);	
 			
 		
 		},
