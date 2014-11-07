@@ -30,21 +30,16 @@
 			'${request.contextPath}/js/common/common.ui.admin.js'
 			],
 			complete: function() {
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
-				var currentUser = new User();
-				var targetCompany = new Company();	
-				common.ui.admin.setup({
+				var currentUser = new common.ui.data.User();
+				var targetCompany = new common.ui.data.Company();	
+				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(targetCompany);
+					changed: function(e){
+						e.data.copy(targetCompany);
 					}
-				});					
+				});				
 				
 				createCacheStatsGrid();	
 				// END SCRIPT
@@ -60,10 +55,10 @@
 						},
 						schema: {
 							data: "allCacheStats",
-							model : common.models.CacheStats 
+							model : common.ui.data.CacheStats 
 						},
 						sort: { field: "cacheName", dir: "asc" },
-						error: common.api.handleKendoAjaxError
+						error: common.ui.handleAjaxError
 					},
 					columns: [
 						{ field: "cacheName", title: "Cache", width:80,  filterable: true, sortable: true , template: '#: cacheName # <button class="btn btn-xs btn-labeled btn-danger pull-right" data-action="cache-removeAll" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><span class="btn-label icon fa fa-bolt"></span>캐쉬 비우기</button>' }, 
@@ -102,7 +97,7 @@
 			var grid = renderTo.data('kendoGrid');			
 			var selectedCells = grid.select();			
 			if( selectedCells.length == 0){
-				return new common.models.CacheStats();
+				return new common.ui.data.CacheStats();
 			}else{			
 				var selectedCell = grid.dataItem( selectedCells );   
 				return selectedCell;
