@@ -181,8 +181,8 @@
 										},						
 										batch: false, 
 										schema: {
-										data: "databaseInfos",
-											model: comon.ui.data.DatabaseInfo
+											data: "databaseInfos",
+											model: common.ui.data.DatabaseInfo
 										},
 										error:common.ui.handleAjaxError
 									},
