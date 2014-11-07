@@ -415,7 +415,7 @@
 			property : { datasource: imagePorpertyDataSource }
 		},
 		porperties : {		
-			dataSource: createPorpertyDataSource
+			datasource: createPorpertyDataSource
 		}
 	} );
 	
