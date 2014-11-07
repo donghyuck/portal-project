@@ -155,7 +155,7 @@
 					if(  $(this).attr('href') == '#setup-info' ){
 						if(!common.ui.exists($("#setup-props-grid")) ){
 							common.ui.grid($('#setup-props-grid'), {
-								dataSource : common.ui.datasource( '${request.contextPath}/secure/view-system-setup-props.do?output=json',{
+								dataSource : common.ui.datasource( '${request.contextPath}/secure/view-system-setup-props.do?output=json', {
 									schema: {
 										data: "setupApplicationProperties",
 										model: common.ui.data.Property
@@ -169,14 +169,13 @@
 								resizable: true,
 								editable : false,
 								scrollable: true,
-								height: 600,
-								autoBind : true
+								height: 600
 							});									
 						}
 					}else if(  $(this).attr('href') == '#database-info' ){
 						if(! common.ui.exists($("#database-info-grid")) ){
 							common.ui.grid( $('#database-info-grid'),{
-								dataSource : common.ui.datasource('${request.contextPath}/secure/view-system-databases.do?output=json' ,{
+								dataSource : common.ui.datasource('${request.contextPath}/secure/view-system-databases.do?output=json', {
 									batch: false, 
 									schema: {
 										data: "databaseInfos",
@@ -192,8 +191,7 @@
 								resizable: true,
 								editable : false,
 								scrollable: true,
-								height: 200,
-								autoBind : true
+								height: 200
 							});						
 						}					
 					}
