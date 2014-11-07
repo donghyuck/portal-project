@@ -51,8 +51,7 @@
 						var data = this.data()[0];						
 						common.ui.bind($(".memory-details"), data.memoryInfo );		
 											
-						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){
-						
+						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
