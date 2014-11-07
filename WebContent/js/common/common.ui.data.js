@@ -391,11 +391,31 @@
 		});
 	}	
 	
+	
+	var DEFAULT_PROPERTY_DATASOURCE_CFG = {
+		transport: { 			
+		},
+		batch: true, 
+		schema: {
+			model: common.ui.data.Property
+		},
+		error : handleAjaxError
+	};
+	
+	function createPorpertyDataSource (options){
+		options = options || {};		
+		var settings = extend(true, {}, DEFAULT_PROPERTY_DATASOURCE_CFG , options ); 
+		return DataSource.create(settings);		
+	}
+	
 	extend( common.ui.data, {
 		user : user ,
 		image : {
 			upload : uploadMyImageByUrl ,
 			property : { datasource: imagePorpertyDataSource }
+		},
+		porperties : {		
+			datasource: createPorpertyDataSource
 		}
 	} );
 	
