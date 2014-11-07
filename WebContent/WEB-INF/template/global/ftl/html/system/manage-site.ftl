@@ -35,7 +35,7 @@
 			complete: function() {               
 				
 				var detailsModel = kendo.observable({
-					company : new Company(),
+					company : new common.ui.data.Company(),
 					isEnabled : false,
 					addWebSite:function(e){					
 						alert("준비중입니다...");
@@ -53,7 +53,7 @@
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
 							},
-							error:common.api.handleKendoAjaxError,
+							error:common.ui.handleAjaxError,
 							dataType : "json"
 						});						
 						return false;
