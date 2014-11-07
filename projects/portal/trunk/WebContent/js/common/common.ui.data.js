@@ -414,7 +414,7 @@
 			upload : uploadMyImageByUrl ,
 			property : { datasource: imagePorpertyDataSource }
 		},
-		porperties : {		
+		properties : {		
 			datasource: createPorpertyDataSource
 		}
 	} );
