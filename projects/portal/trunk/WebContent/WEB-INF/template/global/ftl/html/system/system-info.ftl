@@ -175,9 +175,11 @@
 					}else if(  $(this).attr('href') == '#database-info' ){
 						if(! common.ui.exists($("#database-info-grid")) ){
 							common.ui.grid($('#database-info-grid'), {
-									dataSource: common.ui.datasource( '/secure/view-system-databases.do?output=json', {
+									dataSource: common.ui.datasource( null, {
+										transport: { 
+											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+										},						
 										batch: false, 
-										serverPaging:false,
 										schema: {
 											data: "databaseInfos",
 											model: common.ui.data.DatabaseInfo
