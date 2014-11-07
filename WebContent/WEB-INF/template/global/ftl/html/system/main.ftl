@@ -33,19 +33,15 @@
 			'${request.contextPath}/js/common/common.ui.admin.js'
 			],
 			complete: function() {
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
+
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
-				common.ui.admin.setup({
+				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(targetCompany);
+					changed: function(e){
+						item.copy(e.target);
 					}
 				});		
 				// END SCRIPT
