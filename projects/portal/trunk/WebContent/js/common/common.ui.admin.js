@@ -50,6 +50,7 @@
 			common.ui.setup(cfg);		
 			
 			authenticate();
+			companySelector();
 			
 			$('.menu-content-profile .close').click(function () {
 				var $p = $(this).parents('.menu-content');
@@ -65,7 +66,7 @@
 			that._pixelAdmin = window.PixelAdmin;
 			that._pixelAdmin..start([]);	
 			
-			
+		
 		},
 		authenticate : function() {
 			var that = this;
