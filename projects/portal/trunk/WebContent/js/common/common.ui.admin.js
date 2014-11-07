@@ -99,7 +99,7 @@
 						},
 						schema: { 
 							data: "companies",
-							model : Company
+							model : common.ui.data.Company
 						}
 					},
 					change : function (e){
