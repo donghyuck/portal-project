@@ -160,8 +160,7 @@
 										data: "setupApplicationProperties",
 										model: common.ui.data.Property
 									},
-									serverPaging : false,
-									page : 1
+									serverPaging : false
 								}),
 								columns: [
 										{ title: "속성", field: "name", width:400 },
