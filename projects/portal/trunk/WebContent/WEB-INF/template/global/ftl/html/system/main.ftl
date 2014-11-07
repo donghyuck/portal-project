@@ -7,25 +7,18 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
-			
-			'css!${request.contextPath}/styles/common.plugins/animate.css',
-			
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/common.plugins/animate.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
-
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',	
-			
+			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',				
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
-					
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',		
-				
+			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',					
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',						
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
-			
+			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 			
 			'${request.contextPath}/js/common.admin/pixel.admin.js',
 			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.ui.data.js',
@@ -41,7 +34,7 @@
 						e.token.copy(currentUser);
 					},
 					changed: function(e){
-						item.copy(e.target);
+						e.data.copy(targetCompany);
 					}
 				});		
 				// END SCRIPT
