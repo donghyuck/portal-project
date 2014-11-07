@@ -41,90 +41,86 @@
 					}
 				});		
 				// memory dataSource
-				var dataSource = new kendo.data.DataSource({
-					transport: {
-						read: {
-							url: '${request.contextPath}/secure/view-system-memory.do?output=json', // the remove service url
-							type:'POST',
-							dataType : 'json'
+				var dataSource = common.ui.datasource(
+					'${request.contextPath}/secure/view-system-memory.do?output=json',
+					{
+						schema: { 
+							data: function(response){
+								return [ response ] ; 
+							}
+						},
+						change: function( e 	) { // subscribe to the CHANGE event of the data source
+							var data = this.data()[0];						
+							common.ui.bind($(".memory-details"), data.memoryInfo );		
+											
+							if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){
+								$("#mem-gen-gauge").kendoRadialGauge({
+									theme: "white",
+									pointer: {
+										value: data.memoryInfo.usedHeap.megabytes,
+										color: "#ea7001"									
+									},
+									scale: {
+										majorUnit: 100,
+										minorUnit: 10,
+										startAngle: -30,
+	                            		endAngle: 210,
+										max: data.memoryInfo.maxHeap.megabytes,
+										ranges: [
+											{
+												from:  ( data.memoryInfo.maxHeap.megabytes -  ( ( data.memoryInfo.maxHeap.megabytes / 10 ) * 2 ) ) ,
+												to:  ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
+												color: "#ff7a00"
+											}, {
+												from: ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
+												to: data.memoryInfo.maxHeap.megabytes,
+												color: "#c20000"
+											}
+										]			
+									}
+								});						
+							}else{
+								$("#mem-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedHeap.megabytes );
+							}					
+							
+							if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
+								$("#perm-gen-gauge").kendoRadialGauge({
+									theme: "white",
+									pointer: {
+										value: data.memoryInfo.usedPermGen.megabytes,
+										color: "#ea7001"		
+									},
+									scale: {
+										majorUnit: 50,
+										minorUnit: 10,
+										startAngle: -30,
+	                            		endAngle: 210,
+										max: data.memoryInfo.maxPermGen.megabytes,
+										ranges: [
+											{
+												from:  ( data.memoryInfo.maxPermGen.megabytes -  ( ( data.memoryInfo.maxPermGen.megabytes / 10 ) * 2 ) ) ,
+												to:  ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
+												color: "#ff7a00"
+											}, {
+												from: ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
+												to: data.memoryInfo.maxPermGen.megabytes,
+												color: "#c20000"
+											}
+										]								
+									}
+								});		
+								}else{
+									$("#perm-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedPermGen.megabytes );
+								}	
+							}
 						}
-					},
-					error:common.ui.handleAjaxError,
-					schema: { 
-						data: function(response){
-							return [ response ] ; 
-						}
-                    },
-					change: function( e 	) { // subscribe to the CHANGE event of the data source
-						var data = this.data()[0];						
-						kendo.bind($(".memory-details"), data.memoryInfo );						
-						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){
-							$("#mem-gen-gauge").kendoRadialGauge({
-								theme: "white",
-								pointer: {
-									value: data.memoryInfo.usedHeap.megabytes,
-									color: "#ea7001"									
-								},
-								scale: {
-									majorUnit: 100,
-									minorUnit: 10,
-									startAngle: -30,
-                            		endAngle: 210,
-									max: data.memoryInfo.maxHeap.megabytes,
-									ranges: [
-										{
-											from:  ( data.memoryInfo.maxHeap.megabytes -  ( ( data.memoryInfo.maxHeap.megabytes / 10 ) * 2 ) ) ,
-											to:  ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
-											color: "#ff7a00"
-										}, {
-											from: ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
-											to: data.memoryInfo.maxHeap.megabytes,
-											color: "#c20000"
-										}
-									]			
-								}
-							});						
-						}else{
-							$("#mem-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedHeap.megabytes );
-						}					
-						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
-							$("#perm-gen-gauge").kendoRadialGauge({
-								theme: "white",
-								pointer: {
-									value: data.memoryInfo.usedPermGen.megabytes,
-									color: "#ea7001"		
-								},
-								scale: {
-									majorUnit: 50,
-									minorUnit: 10,
-									startAngle: -30,
-                            		endAngle: 210,
-									max: data.memoryInfo.maxPermGen.megabytes,
-									ranges: [
-										{
-											from:  ( data.memoryInfo.maxPermGen.megabytes -  ( ( data.memoryInfo.maxPermGen.megabytes / 10 ) * 2 ) ) ,
-											to:  ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
-											color: "#ff7a00"
-										}, {
-											from: ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
-											to: data.memoryInfo.maxPermGen.megabytes,
-											color: "#c20000"
-										}
-									]								
-								}
-							});		
-						}else{
-							$("#perm-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedPermGen.megabytes );
-						}	
 					}
-				});				
-				dataSource.read();		
-								
+				);				
+				dataSource.read();										
 				var timer = setInterval(function () {
 					dataSource.read();
 					//clearInterval(timer);
 				}, 6000);		
-
 				displayDiskUsage();
 				displaySystemDetails();					
 				// END SCRIPT
@@ -133,15 +129,9 @@
 		
 		function displayDiskUsage () {
 			var template = kendo.template( $("#disk-usage-row-template").html() );
-			var dataSource = new kendo.data.DataSource({
-					transport: {
-						read: {
-							url: '${request.contextPath}/secure/view-system-diskusage.do?output=json', // the remove service url
-							type:'POST',
-							dataType : 'json'
-						}
-					},
-					error:common.ui.handleAjaxError,
+			var dataSource = common.ui.datasource(
+				'${request.contextPath}/secure/view-system-diskusage.do?output=json', // the remove service url
+				{
 					schema: { 
 						data: "diskUsages"
                     },
@@ -153,73 +143,59 @@
 		}		
 				
 		function displaySystemDetails (){		
-				$.ajax({
-					type : 'POST',
-					url : '${request.contextPath}/secure/view-system-details.do?output=json',
+			common.ui.ajax(
+				'${request.contextPath}/secure/view-system-details.do?output=json',
+				{
 					success : function( response ){
 						var data = response ;	
 						kendo.bind($(".system-details"), data.systemInfo );			
 						kendo.bind($(".license-details"), data.licenseInfo );					
-					},
-					error:common.ui.handleAjaxError,
-					dataType : "json"
-				});	
+					}
+			});	
 						
 				$('#myTab a').click(function (e) {
 					e.preventDefault();					
 					if(  $(this).attr('href') == '#setup-info' ){
-						if(!$("#setup-props-grid").data("kendoGrid")){
-							$('#setup-props-grid').kendoGrid({
-								     dataSource: {
-										transport: { 
-											read: { url:'${request.contextPath}/secure/view-system-setup-props.do?output=json', type:'post' }									
-										 },
-										 schema: {
-					                            data: "setupApplicationProperties",
-					                            model: common.ui.data.Property
-					                     },
-					                     error:common.ui.handleAjaxError
-								     },
-								     columns: [
-								         { title: "속성", field: "name", width:400 },
-								         { title: "값",   field: "value"}
-								     ],
-									pageable: false,
-									resizable: true,
-									editable : false,
-									scrollable: true,
-									height: 600,
-									change: function(e) {}
-							});			
-							//$("#setup-props-grid").attr('style','');	    				
-						}
-					}else if(  $(this).attr('href') == '#database-info' ){
-						if(! $("#database-info-grid").data("kendoGrid")){
-								$('#database-info-grid').kendoGrid({
-									dataSource: {
-										transport: { 
-											read: { url:'${request.contextPath}/secure/view-system-databases.do?output=json', type:'post' }
-										},						
-										batch: false, 
-										schema: {
-										data: "databaseInfos",
-											model: common.ui.data.DatabaseInfo
-										},
-										error:common.ui.handleAjaxError
-									},
-									columns: [
-										{ title: "데이터베이스", field: "databaseVersion"},
-										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
-										{ title: "ISOLATION", field: "isolationLevel", width:90 },
+						if(!common.ui.exists($("#setup-props-grid")) ){
+							common.ui.grid($('#setup-props-grid'), {
+								dataSource : common.ui.datasource( '${request.contextPath}/secure/view-system-setup-props.do?output=json',{
+									schema: {
+										data: "setupApplicationProperties",
+										model: common.ui.data.Property
+									}
+								}),
+								columns: [
+										{ title: "속성", field: "name", width:400 },
+										{ title: "값",   field: "value"}
 									],
 									pageable: false,
 									resizable: true,
 									editable : false,
 									scrollable: true,
-									height: 200,
-									change: function(e) {
+									height: 600
+							});									
+						}
+					}else if(  $(this).attr('href') == '#database-info' ){
+						if(! common.ui.exists($("#database-info-grid")) ){
+							common.ui.grid( $('#database-info-grid'),{
+								dataSource : common.ui.datasource('${request.contextPath}/secure/view-system-databases.do?output=json' ,{
+									batch: false, 
+									schema: {
+										data: "databaseInfos",
+										model: common.ui.data.DatabaseInfo
 									}
-								});									
+								}),
+								columns: [
+										{ title: "데이터베이스", field: "databaseVersion"},
+										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
+										{ title: "ISOLATION", field: "isolationLevel", width:90 },
+								],
+								pageable: false,
+								resizable: true,
+								editable : false,
+								scrollable: true,
+								height: 200
+							});						
 						}					
 					}
 					$(this).tab('show');		
