@@ -41,19 +41,18 @@
 					}
 				});		
 				// memory dataSource
-				var dataSource = common.ui.datasource(
-					'${request.contextPath}/secure/view-system-memory.do?output=json',
-					{
-						schema: { 
-							data: function(response){
-								return [ response ] ; 
-							}
-						},
-						change: function( e 	) { // subscribe to the CHANGE event of the data source
-							var data = this.data()[0];						
-							common.ui.bind($(".memory-details"), data.memoryInfo );		
+				var dataSource = common.ui.datasource(	'${request.contextPath}/secure/view-system-memory.do?output=json',	{
+					schema: { 
+						data: function(response){
+							return [ response ] ; 
+						}
+					},
+					change: function( e 	) { // subscribe to the CHANGE event of the data source
+						var data = this.data()[0];						
+						common.ui.bind($(".memory-details"), data.memoryInfo );		
 											
-							if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){
+						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){
+						
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
@@ -79,11 +78,11 @@
 										]			
 									}
 								});						
-							}else{
-								$("#mem-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedHeap.megabytes );
-							}					
+						}else{
+							$("#mem-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedHeap.megabytes );
+						}					
 							
-							if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
+						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
 								$("#perm-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
@@ -109,13 +108,11 @@
 										]								
 									}
 								});		
-								}else{
-									$("#perm-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedPermGen.megabytes );
-								}	
-							}
+						}else{
+							$("#perm-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedPermGen.megabytes );
 						}
 					}
-				);				
+				});				
 				dataSource.read();										
 				var timer = setInterval(function () {
 					dataSource.read();
