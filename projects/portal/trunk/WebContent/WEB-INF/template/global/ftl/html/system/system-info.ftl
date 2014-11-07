@@ -157,7 +157,7 @@
 							common.ui.grid($('#setup-props-grid'), {
 								dataSource : {
 									transport: { 
-										read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+										read: { url:'/secure/view-system-setup-props.do?output=json', type:'post' }
 									},
 									schema: {
 										data: "setupApplicationProperties",
@@ -178,16 +178,6 @@
 					}else if(  $(this).attr('href') == '#database-info' ){
 						if(! common.ui.exists($("#database-info-grid")) ){
 							common.ui.grid($('#database-info-grid'), {
-									/*dataSource: common.ui.datasource( null, {
-										transport: { 
-											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
-										},						
-										batch: false, 
-										schema: {
-											data: "databaseInfos",
-											model: common.ui.data.DatabaseInfo
-										}									
-									}),*/
 									dataSource: {
 										transport: { 
 											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
