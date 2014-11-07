@@ -29,7 +29,7 @@
 			'${request.contextPath}/js/common/common.ui.core.js',							
 			'${request.contextPath}/js/common/common.ui.data.js',
 			'${request.contextPath}/js/common/common.ui.community.js',
-			'${request.contextPath}/js/common/common.ui.admin.js'	
+			'${request.contextPath}/js/common/common.ui.admin.js',
 			'${request.contextPath}/js/ace/ace.js'
 			],        	   
 			complete: function() {               
