@@ -174,7 +174,7 @@
 						}
 					}else if(  $(this).attr('href') == '#database-info' ){
 						if(! common.ui.exists($("#database-info-grid")) ){
-							$('#database-info-grid').kendoGrid({
+							common.ui.grid($('#database-info-grid'), {
 									dataSource: {
 										transport: { 
 											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
