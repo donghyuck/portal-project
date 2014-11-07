@@ -515,13 +515,13 @@
 				<td>
 					#: absolutePath #
 				</td>
-				<td>#: common.api.bytesToSize(totalSpace - freeSpace) #
+				<td>#: common.ui.admin.bytesToSize(totalSpace - freeSpace) #
 					<small class="text-light-gray">#= kendo.toString(( totalSpace - freeSpace), '\\#\\#,\\#') #</small>
 				</td>
-				<td>#: common.api.bytesToSize(usableSpace) #
+				<td>#: common.ui.admin.bytesToSize(usableSpace) #
 					<small class="text-light-gray">#= kendo.toString(usableSpace, '\\#\\#,\\#') #</small>
 				</td>
-				<td>#: common.api.bytesToSize(totalSpace) #
+				<td>#: common.ui.admin.bytesToSize(totalSpace) #
 					<small class="text-light-gray">#= kendo.toString(totalSpace, '\\#\\#,\\#') #</small>
 				</td>
 			</tr>
