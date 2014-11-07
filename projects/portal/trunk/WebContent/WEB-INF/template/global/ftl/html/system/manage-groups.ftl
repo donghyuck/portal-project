@@ -8,7 +8,7 @@
         <!--
         yepnope([{
             load: [ 	       
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.plugins/animate.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
@@ -25,18 +25,17 @@
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 			
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',			
-			'${request.contextPath}/js/common/common.models.js',       	    
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common/common.ui.admin.js',			
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
+			'${request.contextPath}/js/common/common.ui.admin.js',		
 			'${request.contextPath}/js/ace/ace.js'			
 			],        	   
             complete: function() { 
 
 				// 1-1.  셋업
-				var currentUser = new User();	
 				var detailsModel = kendo.observable({
-					company : new Company(),
+					company : new common.ui.data.Company(),
 					isEnabled : false,
 					addGroup : function(e){
 						$("#group-grid").data('kendoGrid').addRow();		
@@ -54,24 +53,26 @@
 							}
 						}
 					}
-				);
-				common.ui.admin.setup({	
-					authenticate: function(e){
+				);	
+								
+				var currentUser = new common.ui.data.User();
+				
+				common.ui.admin.setup({					 
+					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(detailsModel.company);
+					change: function(e){
+						e.data.copy(detailsModel.company);
 						detailsModel.isEnabled = true;
 						kendo.bind($("#company-details"), detailsModel );				
 						$("#group-grid").data("kendoGrid").dataSource.read();
-					},
-					switcherChanged: function( name , value ){						
-					}					
-				});								
-																			
+					}
+				});	
+								
+																		
 				
 				// 1. GROUP GRID			        
-			        var selectedGroup = new Group();		      
+			        var selectedGroup = new common.ui.data.Group();		      
 			        var group_grid = $("#group-grid").kendoGrid({
 	                    dataSource: {	
 	                        transport: { 
@@ -89,13 +90,13 @@
 	                        schema: {
 	                            total: "totalGroupCount",
 	                            data: "groups",
-	                            model : Group
+	                            model : common.ui.data.Group
 	                        },
 	                        pageSize: 15,
 	                        serverPaging: true,
 	                        serverFiltering: false,
 	                        serverSorting: false,                        
-	                        error: handleKendoAjaxError
+	                        error: common.ui.handleAjaxError
 	                    },
 	                    columns: [
 	                        { field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
@@ -147,9 +148,9 @@
 														batch: true, 
 														schema: {
 															data: "targetGroupProperty",
-															model: Property
+															model: common.ui.data.Property
 														},
-														error:handleKendoAjaxError
+														error:comon.ui.handleAjaxError
 													},
 													columns: [
 														{ title: "속성", field: "name" },
@@ -193,9 +194,9 @@
 														schema: {
 															total: "totalGroupUserCount",
 															data: "groupUsers",
-															model: User
+															model: common.ui.data.User
 														},
-														error:handleKendoAjaxError,
+														error:common.ui.handleAjaxError,
 														autoSync: true,
 														batch: true,
 														serverPaging: true,
@@ -259,13 +260,13 @@
 																schema: {
 													                   total: "foundUserCount",
 													                   data: "foundUsers",
-													                   model: User
+													                   model: common.ui.data.User
 													           },
 													           serverPaging: false,
 													           serverSorting: false,
 													           serverFiltering: false,
 													           pageSize:10,
-													           error: handleKendoAjaxError                             
+													           error: common.ui.handleAjaxError                             
 													        },
 													    	scrollable: true,
 													       	sortable: true,
@@ -311,9 +312,9 @@
 												    },
 												    schema: {
 									                	data: "groupRoles",
-									                    model: Role
+									                    model: common.ui.data.Role
 									                },
-									                error:handleKendoAjaxError,
+									                error:common.ui.handleAjaxError,
 									                change: function(e) {                
 						                        		var multiSelect = $("#group-role-select").data("kendoMultiSelect");
 						                        		var selectedRoleIDs = "";
@@ -341,10 +342,10 @@
 									                    },
 									                    schema: { 
 						                            		data: "roles",
-						                            		model: Role
+						                            		model: common.ui.data.Role
 						                        		}
 									                },
-						                        	error:handleKendoAjaxError,
+						                        	error:common.ui.handleAjaxError,
 						                        	dataBound: function(e) {
 						                        		 selectedRoleDataSource.read();   	
 						                        	},			                        	
@@ -365,7 +366,7 @@
 																// need refresh ..			
 																// alert( kendo.stringify( response ) );							    
 															},
-															error:handleKendoAjaxError
+															error:common.ui.handleAjaxError
 														});												
 														multiSelect.readonly(false);
 						                        	}
@@ -384,7 +385,7 @@
 						    var selectedCells = this.select();				
 						    if(selectedCells.length == 0 )
 						    {
-						    	selectedGroup = new Group({});
+						    	selectedGroup = new common.ui.data.Group({});
 						    	kendo.bind($(".details"), selectedGroup );		
 								$("#group-details").hide(); 	 			    	
 						    }   
@@ -438,7 +439,7 @@
 								        });	
 										group_memeber_grid.dataSource.read();
 									},
-									error:handleKendoAjaxError
+									error:common.ui.handleAjaxError
 								});						        
 					        }else{
 					        	alert('선택된 사용자가 없습니다.');
