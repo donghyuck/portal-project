@@ -166,7 +166,7 @@
 		}		
 		
 		function goSite (){					
-			common.api.teleportation().teleport({
+			common.ui.navigator().teleport({
 				action : '${request.contextPath}/secure/view-site.do',
 				targetSiteId : getSelectedSite().webSiteId
 			});						
