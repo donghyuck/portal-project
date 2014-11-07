@@ -500,7 +500,7 @@
 						schema: {
 							total: "totalUserCount",
 							data: "users",
-							model: User
+							model: common.ui.data.User
 						},
 						error:common.api.handleKendoAjaxError,
 						batch: false,
@@ -549,7 +549,7 @@
 							},
 							schema: {
 								data: "companyGroups",
-								model: Group
+								model: common.ui.data.Group
 							},
 							error:common.api.handleKendoAjaxError
 						},
