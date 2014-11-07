@@ -100,13 +100,13 @@
 						schema: {
 							total: "totalCompanyCount",
 							data: "companies",
-							model : Company
+							model : common.ui.data.Company
 						},
 						pageSize: 15,
 						serverPaging: true,
 						serverFiltering: false,
 						serverSorting: false,                        
-						error: common.api.handleKendoAjaxError
+						error: common.ui.handleAjaxError
 					},
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
@@ -220,7 +220,7 @@
 									success : function( response ){									
 										$('#menu-grid').data('kendoGrid').dataSource.read();	
 									},
-									error: common.api.handleKendoAjaxError,
+									error: common.ui.handleAjaxError,
 									dataType : "json",
 									complete: function(jqXHR, textStatus ){					
 										btn.button('reset');
@@ -326,7 +326,7 @@
 									data: "roles",
 									model: Role
 								},
-								error:common.api.handleKendoAjaxError
+								error:common.ui.handleAjaxError
 							},
 							columns: [
 								{ title: "ID", field: "roleId",  width:40 },
@@ -384,7 +384,7 @@
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
 				var detailsModel = kendo.observable({
-					company : new Company(),
+					company : new common.ui.data.Company(),
 					logoUrl : "",
 					memberCount : 0 ,
 					groupCount : 0 
@@ -459,9 +459,9 @@
 						batch: true, 
 						schema: {
 							data: "targetCompanyProperty",
-							model: Property
+							model: common.ui.data.Property
 						},
-						error:common.api.handleKendoAjaxError
+						error:common.ui.handleAjaxError
 					},
 					columns: [
 						{ title: "속성", field: "name", width: 250 },
