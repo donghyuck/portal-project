@@ -13,40 +13,33 @@
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
 			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
-			
+			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',				
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
 			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
 			'${request.contextPath}/js/jquery.jgrowl/jquery.jgrowl.min.js',			
-			'${request.contextPath}/js/bootstrap/3.0.3/bootstrap.min.js',			
+			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',			
 			'${request.contextPath}/js/common.plugins/fastclick.js', 
 			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
 			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
-			
-			'${request.contextPath}/js/common/common.models.js',       	    
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/common/common.ui.admin.js',
+			'${request.contextPath}/js/common/common.ui.core.js',							
+			'${request.contextPath}/js/common/common.ui.data.js',
+			'${request.contextPath}/js/common/common.ui.community.js',
+			'${request.contextPath}/js/common/common.ui.admin.js',	
 			'${request.contextPath}/js/ace/ace.js'			
 			],
 			complete: function() {
-				// 1-1.  한글 지원을 위한 로케일 설정
-				common.api.culture();
-				// 1-2.  페이지 렌딩
-				common.ui.landing();				
-				// 1-3.  관리자  로딩
-				var currentUser = new User();
-				var targetCompany = new Company();	
-				common.ui.admin.setup({
+				var currentUser = new common.ui.data.User();
+				var targetCompany = new common.ui.data.Company();	
+				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},
-					companyChanged: function(item){
-						item.copy(targetCompany);
+					changed: function(e){
+						e.data.copy(targetCompany);
 					}
-				});
+				});	
 				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
@@ -61,10 +54,6 @@
 				});
 				
 				$('#database-details-tabs a:first').tab('show');		
-				
-								
-				//createDatabasePanel();
-				//createTablePanel();									
 				// END SCRIPT
 			}
 		}]);		
@@ -101,9 +90,9 @@
 		} 		
 		
 		function extractDatabaseTableInfo(renderTo){
-			common.api.callback(  
-			{
-				url :"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
+			common.ui.ajax(
+			"${request.contextPath}/secure/list-database-browser-tables.do?output=json", 
+			{				
 				data : {  },
 				success : function(response){					
 					var model = getDBDetailsModel();
@@ -144,8 +133,9 @@
 				kendo.bind( renderTo, detailsModel );
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
-					common.api.callback({
-						url :"${request.contextPath}/secure/get-database-browser-table.do?output=json", 
+					common.api.callback(
+					"${request.contextPath}/secure/get-database-browser-table.do?output=json",
+					{
 						data : { targetTableName : $this.data("table") },
 						success : function(response){
 							detailsModel.set("name", response.targetTable.name);
@@ -184,7 +174,7 @@
 								hasChildren: "directory"
 							}
 						},
-						error: common.api.handleKendoAjaxError					
+						error: common.ui.handleAjaxError					
 					},
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
