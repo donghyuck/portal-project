@@ -107,7 +107,7 @@
                             data: "users",
                             model: common.ui.data.User
                         },
-                        error:handleKendoAjaxError,
+                        error: common.ui.handleAjaxError,
                         batch: false,
                         pageSize: 15,
                         serverPaging: true,
