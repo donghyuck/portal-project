@@ -117,14 +117,14 @@
 	
 	function setup (options){	
 		options = options || {};
-		if( $("#main-wrapper").text().length > 0 ){	
+		//if( $("#main-wrapper").text().length > 0 ){	
 			if(!$("#main-wrapper").data("kendoSetup") ){
-				Setup($("#main-wrapper"), options);	
+				new Setup($("#main-wrapper"), options);	
 			}
 			return $("#main-wrapper").data("kendoSetup");
-		}else{
-			return Setup($("#main-wrapper"), options);	
-		}		
+		//}else{
+		//	return Setup($("#main-wrapper"), options);	
+		//}		
 	}	
 	
 	extend(common.ui.admin, {
