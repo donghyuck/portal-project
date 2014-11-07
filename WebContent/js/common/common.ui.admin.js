@@ -49,8 +49,8 @@
 			cfg.jobs =  options.jobs || [] ;			
 			common.ui.setup(cfg);		
 			
-			authenticate();
-			companySelector();
+			that.authenticate();
+			that.companySelector();
 			
 			$('.menu-content-profile .close').click(function () {
 				var $p = $(this).parents('.menu-content');
