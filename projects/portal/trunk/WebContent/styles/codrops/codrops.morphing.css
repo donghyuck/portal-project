@@ -79,7 +79,7 @@ right: 0px;
 	right: 5px;
 }
 
-.panel .morphing.open button[data-action='morphing'] {
+.panel .morphing.open button[data-toggle='button'][data-action='morphing'] {
 	display:none;
 }
 
