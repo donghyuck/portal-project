@@ -249,7 +249,7 @@
 									<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
 									<div class="headline">
 										<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
-										<div id="new-announce-selector" class="btn-group pull-right" data-toggle="buttons" data-role="buttongroup">
+										<div id="new-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
 											<label class="btn btn-info btn-sm active rounded-left">
 												<input type="radio" name="notice-target" value="30">사이트
 											</label>
