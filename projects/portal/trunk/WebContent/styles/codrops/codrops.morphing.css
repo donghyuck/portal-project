@@ -78,3 +78,7 @@ right: 0px;
 .panel .morphing.open {
 	right: 5px;
 }
+
+.panel .morphing.open button[data-action='morphing'] {
+	display:none;
+} 
