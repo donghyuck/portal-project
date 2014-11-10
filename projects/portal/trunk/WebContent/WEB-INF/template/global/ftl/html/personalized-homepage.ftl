@@ -287,7 +287,7 @@
 												</label>
 											</div>
 										</div>				
-										<h5 data-bind="visible: isNew">
+										<h5 data-bind="visible: new">
 											<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
 										</h5>		
 										<div class="panel panel-default">
