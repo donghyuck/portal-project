@@ -46,19 +46,18 @@
 						landing:true
 					}
 				});	
-				var currentUser = new common.ui.data.User();			
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if WebSiteUtils.isAllowedSignIn(action.webSite) ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
+				var currentUser = new common.ui.data.User();		
+				common.ui.accounts($("#account-navbar"), {
+					template : kendo.template($("#account-navbar-template").html()),
+					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
 					authenticate : function( e ){
-						e.token.copy(currentUser);					
-					},
-					shown : function(e){				
-							
-					},									
-				});	
+						e.token.copy(currentUser);
+						if( !currentUser.anonymous ){		
+							$("#announce-selector label.btn").last().removeClass("disabled"); 
+						}
+					}
+				});		
+
 				preparePersonalizedArea($("#personalized-area"), 3, 4 );
 				
 				// 2. SPMenu Right Tabs								
