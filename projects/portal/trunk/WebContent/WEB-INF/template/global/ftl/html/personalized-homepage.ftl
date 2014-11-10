@@ -182,8 +182,7 @@
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
 					announce : new common.ui.data.Announce(),
-					new: false, 
-					visible: false,
+					new: true,
 					changed : false,
 					close : function(e){
 					
@@ -191,12 +190,13 @@
 					}
 				});
 				model.bind("change", function(e){
-				
+					if( e.field == "announce" ){ 				
 				
 				});
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);
 			}
+			renderTo.data("model").set("changed", false);
 		}
 		-->
 		</script>		
