@@ -177,12 +177,10 @@
 			common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
 		}
 		
-		
-		
 		function createAnnounceEditorSection(){
-			var renderTo = $(".morphing ");
+			var renderTo = $(".morphing");			
 			if( !renderTo.data("model")){
-				var  common.ui.observable({ 
+				var model =  common.ui.observable({ 
 					announce : new common.ui.data.Announce(),
 					new: false, 
 					visible: false,
