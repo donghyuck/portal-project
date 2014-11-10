@@ -46,7 +46,7 @@
 						landing:true
 					}
 				});	
-				var currentUser = new User();			
+				var currentUser = new common.ui.data.User();			
 				$("#account-navbar").extAccounts({
 					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
 					<#if WebSiteUtils.isAllowedSignIn(action.webSite) ||  !action.user.anonymous  >
