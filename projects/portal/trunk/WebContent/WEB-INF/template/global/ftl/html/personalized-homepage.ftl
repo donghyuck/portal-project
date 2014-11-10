@@ -244,12 +244,6 @@
 						<div class="panel panel-default rounded no-margin-b bg-slivergray">
 							<div class="panel-body">
 							<div class="morphing">
-								<button class="btn-u btn-u-red btn-u-sm rounded-top" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 공유</span></button>
-								<div class="morphing-content m-t-xs">
-									fdasf
-								</div>
-							</div>	
-							<div class="morphing">
 								<button class="btn-u btn-u-red btn-u-sm rounded-top" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
 								<div class="morphing-content m-t-xs">
 								
