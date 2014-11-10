@@ -48,7 +48,7 @@ height: 0;
 .morphing.open .morphing-content {
 opacity: 1;
 height: auto;
-overflow: visible;
+overflow: hidden;
 pointer-events: auto;
 -webkit-transition: opacity 0.3s 0.5s;
 transition: opacity 0.3s 0.5s;
