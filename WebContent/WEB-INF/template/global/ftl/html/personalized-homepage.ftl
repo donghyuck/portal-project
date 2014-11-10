@@ -244,7 +244,8 @@
 							<div class="panel-body">
 							<div class="morphing">
 								<button class="btn-u btn-u-red btn-u-sm" type="button">새로운 공지/이벤트 작성</button>
-								<div class="morphing-content bg-slivergray row">
+								<div class="morphing-content">
+								fafasd
 								</div>
 							</div>
 							</div>
