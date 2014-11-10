@@ -1,0 +1,26 @@
+@CHARSET "utf-8";
+
+.morphing {
+width: 200px;
+min-height: 40px;
+background: #f1f1f1;
+position: absolute;
+z-index: 10000;
+top: 50px;
+right: 50px;
+-webkit-transform-origin: 100% 0;
+transform-origin: 100% 0;
+-webkit-transition-property: min-height, width, top, right;
+transition-property: min-height, width, top, right;
+-webkit-transition-duration: 0.5s;
+transition-duration: 0.5s;
+-webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+transition-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.morphsearch.open {
+width: 100%;
+min-height: 100%;
+top: 0px;
+right: 0px;
+}
