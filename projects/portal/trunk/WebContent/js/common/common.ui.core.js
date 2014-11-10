@@ -2002,3 +2002,291 @@
 		}
 	});
 })(jQuery);
+(function($, undefined) {
+	var kendo = window.kendo, Widget = kendo.ui.Widget, 
+	isPlainObject = $.isPlainObject, proxy = $.proxy, extend = $.extend, placeholderSupported = kendo.support.placeholder, browser = kendo.support.browser, isFunction = kendo.isFunction, 
+	trimSlashesRegExp = /(^\/|\/$)/g, CHANGE = "change", ERROR = "error", REFRESH = "refresh", OPEN = "open", CLOSE = "close", CLICK = "click", 
+	UNDEFINED = 'undefined', POST = 'POST', 
+	JSON = 'json', 
+	handleKendoAjaxError = common.ui.handleAjaxError;
+
+	common.ui.extModalWindow = Widget.extend({
+				init : function(element, options) {
+					var that = this;
+					Widget.fn.init.call(that, element, options);
+					options = that.options;
+					that.refresh();
+				},
+				events : [ ERROR, CHANGE, CLICK, OPEN, REFRESH, CLOSE ],
+				options : {
+					name : "ExtModalWindow",
+				},
+				open : function() {
+					var that = this;
+					if (typeof that.options.backdrop === 'string') {
+						that._modal().modal({
+							backdrop : that.options.backdrop,
+							show : true
+						});
+					} else {
+						that._modal().modal('show');
+					}
+				},
+				close : function() {
+					var that = this;
+					that._modal().modal('hide');
+				},
+				refresh : function() {
+					var that = this;
+					that._createDialog();
+				},
+				destroy : function() {
+					var that = this;
+					Widget.fn.destroy.call(that);
+					$(that.element).remove();
+				},
+				data : function( data ){
+					var that = this;
+					if( typeof data === UNDEFINED ){
+						return that.options.data;
+					}else{						
+						that.options.data = data;
+					}
+				},				
+				_modal : function() {
+					var that = this;
+					return that.element.children('.modal');
+				},
+				_changeState : function(enabled) {
+					var that = this;
+					if (enabled) {
+						that.element.find('.modal-footer .btn.custom-update').removeAttr('disabled');
+					} else {
+						that.element.find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');
+					}
+				},
+				_createDialog : function() {
+					var that = this;
+					var template = that._dialogTemplate();
+					that.element.html(template({
+						title : that.options.title || ""
+					}));
+					if (typeof that.options.data === 'object') {
+						kendo.bind(that._modal(), that.options.data);
+						if (that.options.data instanceof kendo.data.ObservableObject) {
+							that.options.data.bind("change", function(e) {
+								that.trigger(CHANGE, {
+									field : e.field,
+									element : that._modal()[0],
+									data : that.options.data
+								});
+							});
+						}
+					}
+					that._modal().css('z-index', '2000');
+					that.element.find('.modal').on('show.bs.modal', function(e) {
+						that.trigger(OPEN, {
+							element : that._modal()[0],
+							target: that
+						});
+					});
+					that.element.find('.modal').on('hide.bs.modal', function(e) {
+						that.trigger(CLOSE, {
+							element : that._modal()[0]
+						});
+					});
+
+					that.trigger(REFRESH, {
+						element : that._modal()[0]
+					});
+				},
+				_dialogTemplate : function() {
+					var that = this;
+					
+					if (typeof that.options.template === UNDEFINED) {
+						return kendo
+								.template("<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>"
+										+ "<div class='modal-dialog modal-lg'>"
+										+ "<div class='modal-content'>"
+										+ "<div class='modal-header'>"
+										+ "<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>"
+										+ "<h5 class='modal-title'>#= title #</h5>"
+										+ "</div>"
+										+ "<div class='modal-body'>"
+										+ "</div>"
+										+ "<div class='modal-footer'>"
+										+ "</div>"
+										+ "</div><!-- /.modal-content -->"
+										+ "</div><!-- /.modal-dialog -->"
+										+ "</div><!-- /.modal -->");
+					} else if (isFunction( that.options.template )) {
+						return that.options.template;
+					} else if (typeof that.options.template === 'string') {
+						return kendo.template(that.options.template);
+					}
+				}
+			});
+
+	function modal (options){
+		options = options || {};	
+		if( typeof options.renderTo === "string" ){
+			if( $("#"+options.renderTo).length === 0 ){
+				$('body').append("<section id='"+ options.renderTo  +"'></section>");
+			}
+			if( !$("#"+options.renderTo).data("kendoExtModalWindow") ){
+				return new ExtModalWindow($("#"+options.renderTo), options);
+			}else{
+				return $("#"+options.renderTo).data("kendoExtModalWindow");
+			}
+		}
+	} 
+	
+	$.fn.extend( common.ui {
+		"modal" : modal		
+	});
+	
+	$.fn.extend({
+		extModalWindow : function(options) {
+			return new ExtModalWindow(this, options);
+		}
+	});
+})(jQuery);
+
+/**
+ * extEditorPopup widget
+ */
+(function($, undefined) {
+	var kendo = window.kendo, 
+	Widget = kendo.ui.Widget, 
+	isPlainObject = $.isPlainObject, 
+	proxy = $.proxy, 
+	extend = $.extend, 
+	placeholderSupported = kendo.support.placeholder, 
+	browser = kendo.support.browser, 
+	isFunction = kendo.isFunction, 
+	trimSlashesRegExp = /(^\/|\/$)/g, 
+	CHANGE = "change", APPLY = "apply", ERROR = "error", CLICK = "click", UNDEFINED = 'undefined', POST = 'POST', JSON = 'json', 
+	LINK_VALUE_TEMPLATE = kendo.template('<a href="#: linkUrl #" title="#: linkTitle #" #if (linkTarget) { # target="_blank"  # }#>#= linkTitle #</a>'), handleKendoAjaxError = common.ui.handleAjaxError;
+
+	var ExtEditorPopup = Widget
+			.extend({
+				init : function(element, options) {
+					var that = this;
+					Widget.fn.init.call(that, element, options);
+					options = that.options;
+					that.refresh();
+				},
+				events : [ ERROR, CHANGE, APPLY ],
+				options : {
+					name : "ExtEditorPopup",
+					transport : {
+
+					}
+				},
+				show : function() {
+					var that = this;
+					that._modal().modal('show');
+				},
+				close : function() {
+					var that = this;
+					that._modal().modal('hide');
+				},
+				refresh : function() {
+					var that = this;
+					that._createDialog();
+				},
+				destroy : function() {
+					var that = this;
+					Widget.fn.destroy.call(that);
+					$(that.element).remove();
+				},
+				data : function() {
+					var that = this;
+					return that._data;
+				},
+				_modal : function() {
+					var that = this;
+					return that.element.children('.modal');
+				},
+				_changeState : function(enabled) {
+					var that = this;
+					if (enabled) {
+						that.element.find('.modal-footer .btn.custom-update').removeAttr('disabled');
+					} else {
+						that.element.find('.modal-footer .btn.custom-update').attr('disabled', 'disabled');
+					}
+				},
+				_createDialog : function() {
+					var that = this;
+					var template = that._dialogTemplate();
+
+					that.element.html(template({
+						title : that.options.title || "",
+						type : that.options.type
+					}));
+					if (that.options.type == 'createLink') {
+						that._data = kendo.observable({
+							linkUrl : "",
+							linkTitle : "",
+							linkTarget : false
+						});
+						that._data.bind("change", function(e) {
+							if (e.field == 'linkUrl') {
+								if (that._data.get(e.field).length > 0)
+									that._changeState(true);
+								else
+									that._changeState(false);
+							}
+						});
+					}
+					kendo.bind(that.element, that._data);
+
+					that.element.children('.modal').css('z-index', '2000');
+					that.element.find('.modal').on(
+							'show.bs.modal',
+							function(e) {
+								if (that.options.type == 'createLink') {
+									that.element.find('input').val('');
+									that.element.find('input[type="checkbox"]')
+											.removeAttr('checked');
+								}
+								that._changeState(false);
+							});
+
+					that.element.find('.modal-footer .btn.custom-update').click(function() {
+								that.trigger(APPLY, {
+									html : LINK_VALUE_TEMPLATE(that._data)
+								});
+							});
+				},
+				_dialogTemplate : function() {
+					var that = this;
+					if (typeof that.options.template === UNDEFINED) {
+						return kendo.template("<div class='modal editor-popup fade' tabindex='-1' role='dialog' aria-hidden='true'>"
+										+ "<div class='modal-dialog modal-sm'>"
+										+ "<div class='modal-content'>"
+										+ "<div class='modal-header'>"
+										+ "<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>"
+										+ "<h5 class='modal-title'>#= title #</h5>"
+										+ "</div>"
+										+ "<div class='modal-body'>"
+										+ "</div>"
+										+ "<div class='modal-footer'>"
+										+ "</div>"
+										+ "</div><!-- /.modal-content -->"
+										+ "</div><!-- /.modal-dialog -->"
+										+ "</div><!-- /.modal -->");
+					} else if (typeof that.options.template === 'object') {
+						return that.options.template;
+					} else if (typeof that.options.template === 'string') {
+						return kendo.template(that.options.template);
+					}
+				}
+			});
+
+	$.fn.extend({
+		extEditorPopup : function(options) {
+			return new ExtEditorPopup(this, options);
+		}
+	});
+})(jQuery);
