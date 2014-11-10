@@ -1462,6 +1462,7 @@
 		Widget = kendo.ui.Widget, 
 		isPlainObject = $.isPlainObject, 
 		ui = common.ui,
+		guid = common.guid,
 		proxy = $.proxy, 
 		extend = $.extend, 
 		template = kendo.template,
@@ -1505,12 +1506,12 @@
 				Widget.fn.init.call(that, element, options);
 				options = that.options;
 				options.guid = {
-					title_guid : common.api.guid().toLowerCase(),
-					url_guid : common.api.guid().toLowerCase(),
-					upload_guid : common.api.guid().toLowerCase(),
-					my_guid : common.api.guid().toLowerCase(),
-					domain_guid : common.api.guid().toLowerCase(),
-					website_guid : common.api.guid().toLowerCase()
+					title_guid : guid().toLowerCase(),
+					url_guid : guid().toLowerCase(),
+					upload_guid : guid().toLowerCase(),
+					my_guid : guid().toLowerCase(),
+					domain_guid : guid().toLowerCase(),
+					website_guid : guid().toLowerCase()
 				};
 				that.refresh();
 			},
