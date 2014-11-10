@@ -79,7 +79,7 @@
 				createAnnounceSection();
 				
 				$(".morphing ").bind("open.morphing", function(e){
-					alert("dfas");				
+					createAnnounceEditorSection();		
 				});
 				
 				// END SCRIPT 				
@@ -104,7 +104,7 @@
 			renderTo.data("kendoPanel").show();
 		}
 		<!-- ============================== -->
-		<!-- Notify										   -->
+		<!-- Notify														-->
 		<!-- ============================== -->
 		function createNotificationPanel(){
 			var renderTo = $("#my-notification-panel");
@@ -121,7 +121,7 @@
 			renderTo.data("kendoPanel").show();
 		}
 		<!-- ============================== -->
-		<!-- Announce										   -->
+		<!-- Announce												-->
 		<!-- ============================== -->
 		function createAnnounceSection(){
 			var announce = new common.ui.data.Announce ();
@@ -175,6 +175,30 @@
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
 			common.ui.scroll.slim(listRenderTo, { height: 320 });
 			common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
+		}
+		
+		
+		
+		function createAnnounceEditorSection(){
+			var renderTo = $(".morphing ");
+			if( !renderTo.data("model")){
+				var  common.ui.observable({ 
+					announce : new common.ui.data.Announce(),
+					new: false, 
+					visible: false,
+					changed : false,
+					close : function(e){
+					
+					
+					}
+				});
+				model.bind("change", function(e){
+				
+				
+				});
+				kendo.bind( renderTo, model);
+				renderTo.data("model", model);
+			}
 		}
 		-->
 		</script>		
