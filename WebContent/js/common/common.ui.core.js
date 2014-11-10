@@ -304,7 +304,7 @@
 				lightbox();
 			}
 			if(features.morphing){				
-				$(document).on("click","[data-toggle='morphing']", function(e){
+				$(document).on("click","[data-toggle='morphing'], [data-action='morphing']", function(e){
 					if( $(this).data("target")){
 						
 					}else{
