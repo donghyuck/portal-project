@@ -1461,7 +1461,7 @@
 	var kendo = window.kendo, 
 		Widget = kendo.ui.Widget, 
 		isPlainObject = $.isPlainObject, 
-		ui, common.ui,
+		ui = common.ui,
 		proxy = $.proxy, 
 		extend = $.extend, 
 		template = kendo.template,
