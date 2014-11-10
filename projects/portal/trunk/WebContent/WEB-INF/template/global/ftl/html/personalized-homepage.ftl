@@ -242,15 +242,13 @@
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
 						<div class="panel panel-default rounded no-margin-b bg-slivergray">
-							
-							<div class="morphing">
-							
 							<div class="panel-body">
+							<div class="morphing">
 								<button class="btn-u btn-u-red btn-u-sm rounded-top" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
 								<div class="morphing-content m-t-xs">
 								
 								
-								<button type="button" class="btn-close btn-close-grey btn-xs"><span class="sr-only">Close</span></button>
+								<button type="button" class="btn-close btn-close-grey btn-xs" ><span class="sr-only">Close</span></button>
 								
 								
 		
