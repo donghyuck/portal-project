@@ -31,7 +31,8 @@ position: absolute;
 pointer-events: none;
 */
 opacity: 0;
-
+height:auto;
+min-height: 100%;
 }
 
 .panel .morphing {
