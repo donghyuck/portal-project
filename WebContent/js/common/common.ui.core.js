@@ -344,7 +344,9 @@
 				data: "photos"
 			},
 			change : function(e){
-				var view = this.view();
+				var view = this.view(),
+				urls = [];
+				
 				if ( options.slideshow ){
 					each(view, function(idx, photo){
 						urls.push(template(photo));
