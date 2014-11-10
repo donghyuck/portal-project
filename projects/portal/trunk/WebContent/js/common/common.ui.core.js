@@ -242,7 +242,8 @@
 			landing : true,
 			wallpaper : false,
 			lightbox: false,
-			spmenu: false
+			spmenu: false,
+			morphing: false
 		},
 		wallpaper : {
 			slideshow : true
@@ -301,7 +302,16 @@
 			
 			if(features.lightbox){				
 				lightbox();
-			}	
+			}
+			if(features.morphing){				
+				$(document).on("click","[data-toggle='morphing']", function(e){
+					if( $(this).data("target")){
+						$(this).closest(".morphing").toggleClass("open");
+					}else{
+						
+					}
+				});
+			}			
 		} 		
 	});
 	
@@ -326,14 +336,29 @@
 			return;
 		}	
 		options = options || {},
-		dataSource = options.dataSource = datasource( "/community/list-streams-photo.do?output=json" ,{
+		template = options.template || kendo.template("/community/view-streams-photo.do?key=#= externalId#"),
+		dataSource = options.dataSource = datasource( "/community/list-streams-photo.do?output=json", {
 			pageSize: 15,
 			schema: {
 				total: "photoCount",
 				data: "photos"
-			} 
-		});	
-		var template = options.template || kendo.template("/community/view-streams-photo.do?key=#= externalId#")  ;			
+			},
+			change : function(e){
+				var view = this.view();
+				if ( options.slideshow ){
+					each(view, function(idx, photo){
+						urls.push(template(photo));
+					});	
+				}else{
+					urls.push(template(view[random(0, view.length)]));
+				}
+				$.backstretch(
+						urls,	
+						{duration: 6000, fade: 750}	
+				);
+			}
+		}).read();	
+			/*
 		dataSource.fetch(function(){
 			var photos = this.data();
 			var urls = [];
@@ -349,7 +374,7 @@
 				urls,	
 				{duration: 6000, fade: 750}	
 			);
-		});		
+		});		*/
 	}	
 	
 	var DEFAULT_LIGHTBOX_OPTIONS = {
