@@ -244,7 +244,7 @@
 						<div class="panel panel-default rounded no-margin-b bg-slivergray">
 							<div class="panel-body">
 							<div class="morphing">
-								<button class="btn-u btn-u-red btn-u-sm" type="button" data-toggle="morphing">새로운 공지/이벤트 작성</button>
+								<button class="btn-u btn-u-red btn-u-sm rounded-top" type="button" data-toggle="morphing">새로운 공지/이벤트 작성</button>
 								<div class="morphing-content"><table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -254,36 +254,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td><button class="btn-u" type="button">Button Default</button></td>
-                                <td><code>btn-u</code></td>
-                                <td>Default Unify Template button style</td>
-                            </tr>
-                            <tr>
-                                <td><button class="btn-u btn-u-blue" type="button">Button Blue</button></td>
-                                <td><code>btn-u btn-u-blue</code></td>
-                                <td>Blue Button Style</td>
-                            </tr>
-                            <tr>
-                                <td><button class="btn-u btn-u-red" type="button">Button Red</button></td>
-                                <td><code>btn-u btn-u-red</code></td>
-                                <td>Red Button Style</td>
-                            </tr>
-                            <tr>
-                                <td><button class="btn-u btn-u-orange" type="button">Button Orange</button></td>
-                                <td><code>btn-u btn-u-orange</code></td>
-                                <td>Orange Button Style</td>
-                            </tr>
-                            <tr>
-                                <td><button class="btn-u btn-u-sea" type="button">Button Turquoise</button></td>
-                                <td><code>btn-u btn-u-sea</code></td>
-                                <td>Turquoise Button Style</td>
-                            </tr>
-                            <tr>
-                                <td><button class="btn-u btn-u-green" type="button">Button Green</button></td>
-                                <td><code>btn-u btn-u-green</code></td>
-                                <td>Green Button Style</td>
-                            </tr>
+
+
                             <tr>
                                 <td><button class="btn-u btn-u-yellow" type="button">Button Yellow</button></td>
                                 <td><code>btn-u btn-u-yellow</code></td>
