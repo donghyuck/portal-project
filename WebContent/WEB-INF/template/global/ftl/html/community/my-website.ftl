@@ -139,7 +139,7 @@
 							} 
 						},
 						pageSize: 10,
-						error:common.api.handleKendoAjaxError,
+						error:common.ui.handleAjaxError,
 						schema: {
 							data : "targetAnnounces",
 							model : Announce,
@@ -395,7 +395,7 @@
 								}
 							},
 							pageSize: 12,
-							error:common.api.handleKendoAjaxError,
+							error:common.ui.handleAjaxError,
 							schema: {
 								model: Attachment,
 								data : "targetAttachments",
@@ -511,7 +511,7 @@
 								}
 							},
 							pageSize: 12,
-							error:common.api.handleKendoAjaxError,
+							error:common.ui.handleAjaxError,
 							schema: {
 								model: Image,
 								data : "targetImages",
@@ -696,7 +696,7 @@
 										success : function( response ){
 											$('#' + renderToString ).remove();
 										},
-										error:common.api.handleKendoAjaxError
+										error:common.ui.handleAjaxError
 									});
 									*/								
 								}
@@ -782,9 +782,9 @@
 										batch: true, 
 										schema: {
 											data: "targetImageProperty",
-											model: Property
+											model: common.ui.data.Property
 										},
-										error:common.api.handleKendoAjaxError
+										error:common.ui.handleAjaxError
 									},
 									columns: [
 										{ title: "속성", field: "name" },
