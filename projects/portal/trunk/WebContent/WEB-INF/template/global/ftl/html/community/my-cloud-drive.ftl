@@ -477,6 +477,7 @@
 								{ name: "cancel", text: "취소" }
 							],				     
 							change: function(e) {
+								this.refresh();
 							}
 						});		
 																							
