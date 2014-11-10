@@ -18,7 +18,7 @@ transition-duration: 0.5s;
 transition-timing-function: cubic-bezier(0.7,0,0.3,1);
 }
 
-.morphsearch.open {
+.morphing.open {
 width: 100%;
 min-height: 100%;
 top: 0px;
