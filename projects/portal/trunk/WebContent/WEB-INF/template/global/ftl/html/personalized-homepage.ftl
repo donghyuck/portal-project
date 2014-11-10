@@ -191,6 +191,8 @@
 				});
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);
+				var bodyEditor =  $("#announce-editor-body" );
+				createEditor( "announce-editor" , bodyEditor );				
 			}
 			renderTo.data("model").set("changed", false);
 		}
@@ -300,7 +302,7 @@
 														</div>
 													</div>
 													<label class="control-label">본문</label>
-													<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
+													<textarea id="announce-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
 												</div>						
 											</div>				
 										</div>
