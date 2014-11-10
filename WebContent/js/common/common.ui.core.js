@@ -2141,7 +2141,7 @@
 		}
 	} 
 	
-	$.fn.extend( common.ui {
+	$.fn.extend( common.ui, {
 		"modal" : modal		
 	});
 	
