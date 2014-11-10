@@ -1995,7 +1995,7 @@
 	});
 	
 		
-	$.fn.extend( {}
+	$.fn.extend({
 		extImageBrowser : function(options) {
 			return new ExtImageBrowser(this, options);
 		}
