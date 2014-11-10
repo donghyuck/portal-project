@@ -613,6 +613,7 @@
 	</script>										
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
+	<#include "/html/common/common-editor-templates.ftl" >	
 	<!-- ./END TEMPLATE -->
 	</body>    
 </html>
