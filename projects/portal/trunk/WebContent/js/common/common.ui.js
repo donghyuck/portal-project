@@ -123,8 +123,7 @@
 	
 	common.ui.thumbnailexpanding =  function( options ){
 		var previewHeight = 500,
-		marginExpanded = 10;
-		
+		marginExpanded = 10;		
 		options = options || {};
 		
 		if(!defined(options.template)){
