@@ -306,9 +306,9 @@
 			if(features.morphing){				
 				$(document).on("click","[data-toggle='morphing']", function(e){
 					if( $(this).data("target")){
-						$(this).closest(".morphing").toggleClass("open");
-					}else{
 						
+					}else{
+						$(this).closest(".morphing").toggleClass("open");
 					}
 				});
 			}			
