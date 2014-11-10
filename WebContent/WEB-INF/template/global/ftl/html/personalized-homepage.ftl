@@ -244,7 +244,7 @@
 						<div class="panel panel-default rounded no-margin-b bg-slivergray">
 							<div class="panel-body">
 							<div class="morphing">
-								<button class="btn-u btn-u-red btn-u-sm rounded-top" type="button" data-toggle="morphing">새로운 공지/이벤트 작성</button>
+								<button class="btn-u btn-u-red btn-u-sm rounded-top" type="button" data-toggle="morphing"><i class="fa fa-plus"></i>새로운 공지/이벤트 작성</button>
 								<div class="morphing-content"><table class="table table-bordered table-striped">
                         <thead>
                             <tr>
