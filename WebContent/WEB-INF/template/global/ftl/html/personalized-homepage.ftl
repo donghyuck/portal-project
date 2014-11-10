@@ -246,13 +246,22 @@
 							<div class="morphing no-padding-t">
 								<button class="btn-u btn-u-red rounded-bottom pull-right" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
 								<div class="morphing-content m-t-xs">
-								
-								
-								<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
-								
-								
+									<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
+									<div class="headline">
+										<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
+										<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons" data-role="buttongroup">
+											<label class="btn btn-info btn-sm active rounded-left">
+												<input type="radio" name="notice-target" value="30">사이트
+											</label>
+											<label class="btn btn-info btn-sm rounded-right">
+												<input type="radio" name="notice-target" value="1">회사
+											</label>
+										</div>
+									</div>								
 		
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
+
+
 			<h5 data-bind="visible: isNew">
 				<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
 			</h5>		
