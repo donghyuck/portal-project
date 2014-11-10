@@ -55,7 +55,8 @@
 					authenticate : function( e ){
 						e.token.copy(currentUser);
 						if( !currentUser.anonymous ){		
-							$("#announce-selector label.btn").last().removeClass("disabled"); 
+							$("#announce-selector label.btn").last().removeClass("disabled");
+							 
 						}
 					}
 				});					
@@ -74,7 +75,13 @@
 						}
 					}
 				});
+				
 				createAnnounceSection();
+				
+				$(".morphing ").bind("open.morphing", function(e){
+					alert("dfas");				
+				});
+				
 				// END SCRIPT 				
 			}
 		}]);	
