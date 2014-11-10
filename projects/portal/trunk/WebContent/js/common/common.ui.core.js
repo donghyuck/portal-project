@@ -1214,7 +1214,7 @@
 ;(function($, undefined) {
 	var ui = common.ui,
 	kendo = window.kendo, 
-	Widget = kendo.Widget,
+	Widget = kendo.ui.Widget,
 	extend = $.extend,
 	isPlainObject = $.isPlainObject,
 	DataSource = kendo.data.DataSource,
