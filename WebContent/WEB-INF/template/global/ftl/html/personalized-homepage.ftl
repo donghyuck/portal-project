@@ -245,13 +245,13 @@
 							<div class="panel-body">
 							<div class="morphing">
 								<button class="btn-u btn-u-red btn-u-sm rounded-top" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
-								<div class="morphing-content">
+								<div class="morphing-content m-t-xs">
 								
 								
 								
 								
 								
-		<div class="animated fadeIn" data-bind="visible:visible">
+		
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 			<h5 data-bind="visible: isNew">
 				<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
@@ -275,7 +275,7 @@
 					</div>					
 			</div>					
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-		</div>										
+										
 								
 								
 								
