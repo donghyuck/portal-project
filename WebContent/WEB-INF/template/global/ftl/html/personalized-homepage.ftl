@@ -242,7 +242,7 @@
 					<div class="col-md-9">
 						<div class="panel panel-default rounded no-margin-b bg-slivergray">
 							<div class="panel-body">
-							<div class="morphing padding-sm">
+							<div class="morphing">
 								<button class="btn-u btn-u-red btn-u-sm" type="button">새로운 공지/이벤트 작성</button>
 							
 							
