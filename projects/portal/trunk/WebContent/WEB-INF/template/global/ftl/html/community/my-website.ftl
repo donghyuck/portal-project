@@ -72,12 +72,9 @@
 				});
 				
 				// 3. Notice	 Section
-				common.ui.button({
-					renderTo: "button[data-action='show-notice-section']",
-					click:function(e){
+				$("button[data-action='show-notice-section']").click(function(e){
 						createNoticeSection();
 						common.ui.buttonDisabled($(this));
-					}
 				});
 					
 				$('#myTab a:first').tab('show') ;
