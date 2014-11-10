@@ -243,49 +243,46 @@
 					<div class="col-md-9">
 						<div class="panel panel-default rounded no-margin-b bg-slivergray">
 							<div class="panel-body">
-							<div class="morphing no-padding-t">
-								<button class="btn-u btn-u-red rounded-bottom pull-right" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
-								<div class="morphing-content m-t-xs">
-									<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
-									<div class="headline">
-										<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
-										<div id="new-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
-											<label class="btn btn-info btn-sm active rounded-left">
-												<input type="radio" name="notice-target" value="30">사이트
-											</label>
-											<label class="btn btn-info btn-sm rounded-right">
-												<input type="radio" name="notice-target" value="1">회사
-											</label>
+								<div class="morphing no-padding-t">
+									<button class="btn-u btn-u-red rounded-bottom pull-right" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
+									<div class="morphing-content m-t-xs">
+										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
+										<div class="headline">
+											<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
+											<div id="new-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
+												<label class="btn btn-info btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30">사이트
+												</label>
+												<label class="btn btn-info btn-sm rounded-right">
+													<input type="radio" name="notice-target" value="1">회사
+												</label>
+											</div>
+										</div>				
+										<h5 data-bind="visible: isNew">
+											<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
+										</h5>		
+										<div class="panel panel-default">
+											<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
+												<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
+											</div>			
+											<div class="panel-body"  style="padding:5px;">									
+												<div  class="form">
+													<div class="form-group">
+														<label class="control-label">공지 기간</label>
+														<div class="col-sm-12" >
+															<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
+															<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
+														</div>
+													</div>
+													<label class="control-label">본문</label>
+													<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
+												</div>						
+											</div>
+											<div class="panel-footer">
+												<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
+											</div>					
 										</div>
-									</div>								
-		
-									<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}"  data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-
-
-			<h5 data-bind="visible: isNew">
-				<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
-			</h5>		
-			<div class="panel panel-default">
-					<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
-						<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
-					</div>			
-					<div class="panel-body"  style="padding:5px;">									
-						<div  class="form">
-							<div class="form-group">
-								<label class="control-label">공지 기간</label>
-								<div class="col-sm-12" >
-									<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
-									<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
-								</div>
-							</div>
-							<label class="control-label">본문</label>
-							<textarea id="notice-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
-						</div>						
-					</div>					
-			</div>					
-			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-			</div>
-
+									</div>
 								</div>
 							</div>
 							<div class="panel-body">
