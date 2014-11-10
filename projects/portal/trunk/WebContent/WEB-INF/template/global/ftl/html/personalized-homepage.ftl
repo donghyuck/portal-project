@@ -248,7 +248,7 @@
 								<div class="morphing-content m-t-xs">
 								
 								
-								<button type="button" class="btn-close btn-close-grey btn-xs" ><span class="sr-only">Close</span></button>
+								<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
 								
 								
 		
