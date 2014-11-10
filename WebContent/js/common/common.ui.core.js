@@ -305,11 +305,15 @@
 			}
 			if(features.morphing){				
 				$(document).on("click","[data-toggle='morphing'], [data-action='morphing']", function(e){
-					if( $(this).data("target")){
+					var taget ,
+					$this = $(this);					
+					if( $this.data("target")){
 						
 					}else{
-						$(this).closest(".morphing").toggleClass("open");
+						taget = $(this).closest(".morphing");
 					}
+					taget.trigger(e = $.Event('open.morphing'))
+					target.toggleClass("open");
 				});
 			}			
 		} 		
