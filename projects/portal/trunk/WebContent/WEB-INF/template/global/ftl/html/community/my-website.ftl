@@ -549,9 +549,9 @@
 					dataSource : $('#photo-list-view').data('kendoListView').dataSource
 				});	
 				
-				common.ui.handleButtonActionEvents(
+				common.ui.buttons(
 					$("#website-photo-stream button.btn-control-group"), 
-					{event: 'click', handlers: {
+					{ handlers: {
 						upload : function(e){
 							if( !$("#photo-files").data("kendoUpload")	){					
 								$("#photo-files").kendoUpload({
