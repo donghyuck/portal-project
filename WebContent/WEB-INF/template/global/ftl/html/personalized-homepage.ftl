@@ -275,78 +275,9 @@
 					</div>					
 			</div>					
 			<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-										
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								
-								<table class="table table-bordered table-striped">
-                        <thead>
-                            <tr>
-                                <th>Button</th>
-                                <th>class=""</th>
-                                <th>Description</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+			</div>
 
-
-                            <tr>
-                                <td><button class="btn-u btn-u-yellow" type="button">Button Yellow</button></td>
-                                <td><code>btn-u btn-u-yellow</code></td>
-                                <td>Yellow Button Style</td>
-                            </tr>                    
-                            <tr>
-                                <td><button class="btn-u btn-u-default" type="button">Button Grey</button></td>
-                                <td><code>btn-u btn-u-default</code></td>
-                                <td>Grey Button Style</td>
-                            </tr>                    
-                            <tr>
-                                <td><button class="btn-u btn-u-dark" type="button">Button Dark</button></td>
-                                <td><code>btn-u btn-u-dark</code></td>
-                                <td>New Dark Button Style</td>
-                            </tr>                    
-                            <tr>
-                                <td><button class="btn-u btn-u-purple" type="button">Button Purple</button></td>
-                                <td><code>btn-u btn-u-purple</code></td>
-                                <td>New Purple Button Style</td>
-                            </tr>                    
-                            <tr>
-                                <td><button class="btn-u btn-u-aqua" type="button">Button Aqua</button></td>
-                                <td><code>btn-u btn-u-aqua</code></td>
-                                <td>New Aqua Button Style</td>
-                            </tr>                    
-                            <tr>
-                                <td><button class="btn-u btn-u-brown" type="button">Button Brown</button></td>
-                                <td><code>btn-u btn-u-brown</code></td>
-                                <td>New Brown Button Style</td>
-                            </tr>                    
-                            <tr>
-                                <td><button class="btn-u btn-u-dark-blue" type="button">Button Dark Blue</button></td>
-                                <td><code>btn-u btn-u-dark-blue</code></td>
-                                <td>New Dark Blue Button Style</td>
-                            </tr>                    
-                            <tr>
-                                <td><button class="btn-u btn-u-light-green" type="button">Button Light Green</button></td>
-                                <td><code>btn-u btn-u-light-green</code></td>
-                                <td>New Light Green Style</td>
-                            </tr>                    
-                        </tbody>
-                    </table>
-</div>
-
-							</div>
+								</div>
 							</div>
 							<div class="panel-body">
 								<div class="row" >
