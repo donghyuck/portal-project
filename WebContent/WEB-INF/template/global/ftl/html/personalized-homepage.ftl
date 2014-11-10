@@ -39,7 +39,8 @@
 					features:{
 						wallpaper : true,
 						lightbox : true,
-						spmenu : false
+						spmenu : false,
+						morphing : true
 					},
 					wallpaper : {
 						slideshow : false
