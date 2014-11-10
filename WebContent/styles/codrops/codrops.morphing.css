@@ -81,4 +81,10 @@ right: 0px;
 
 .panel .morphing.open button[data-action='morphing'] {
 	display:none;
-} 
+}
+
+
+.morphing .btn-close {
+	top: 15px;
+	right: 15px;
+}
