@@ -245,6 +245,89 @@
 							<div class="panel-body">
 							<div class="morphing">
 								<button class="btn-u btn-u-red btn-u-sm" type="button" data-toggle="morphing">새로운 공지/이벤트 작성</button>
+								<div class="morphing-content"><table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Button</th>
+                                <th>class=""</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><button class="btn-u" type="button">Button Default</button></td>
+                                <td><code>btn-u</code></td>
+                                <td>Default Unify Template button style</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn-u btn-u-blue" type="button">Button Blue</button></td>
+                                <td><code>btn-u btn-u-blue</code></td>
+                                <td>Blue Button Style</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn-u btn-u-red" type="button">Button Red</button></td>
+                                <td><code>btn-u btn-u-red</code></td>
+                                <td>Red Button Style</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn-u btn-u-orange" type="button">Button Orange</button></td>
+                                <td><code>btn-u btn-u-orange</code></td>
+                                <td>Orange Button Style</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn-u btn-u-sea" type="button">Button Turquoise</button></td>
+                                <td><code>btn-u btn-u-sea</code></td>
+                                <td>Turquoise Button Style</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn-u btn-u-green" type="button">Button Green</button></td>
+                                <td><code>btn-u btn-u-green</code></td>
+                                <td>Green Button Style</td>
+                            </tr>
+                            <tr>
+                                <td><button class="btn-u btn-u-yellow" type="button">Button Yellow</button></td>
+                                <td><code>btn-u btn-u-yellow</code></td>
+                                <td>Yellow Button Style</td>
+                            </tr>                    
+                            <tr>
+                                <td><button class="btn-u btn-u-default" type="button">Button Grey</button></td>
+                                <td><code>btn-u btn-u-default</code></td>
+                                <td>Grey Button Style</td>
+                            </tr>                    
+                            <tr>
+                                <td><button class="btn-u btn-u-dark" type="button">Button Dark</button></td>
+                                <td><code>btn-u btn-u-dark</code></td>
+                                <td>New Dark Button Style</td>
+                            </tr>                    
+                            <tr>
+                                <td><button class="btn-u btn-u-purple" type="button">Button Purple</button></td>
+                                <td><code>btn-u btn-u-purple</code></td>
+                                <td>New Purple Button Style</td>
+                            </tr>                    
+                            <tr>
+                                <td><button class="btn-u btn-u-aqua" type="button">Button Aqua</button></td>
+                                <td><code>btn-u btn-u-aqua</code></td>
+                                <td>New Aqua Button Style</td>
+                            </tr>                    
+                            <tr>
+                                <td><button class="btn-u btn-u-brown" type="button">Button Brown</button></td>
+                                <td><code>btn-u btn-u-brown</code></td>
+                                <td>New Brown Button Style</td>
+                            </tr>                    
+                            <tr>
+                                <td><button class="btn-u btn-u-dark-blue" type="button">Button Dark Blue</button></td>
+                                <td><code>btn-u btn-u-dark-blue</code></td>
+                                <td>New Dark Blue Button Style</td>
+                            </tr>                    
+                            <tr>
+                                <td><button class="btn-u btn-u-light-green" type="button">Button Light Green</button></td>
+                                <td><code>btn-u btn-u-light-green</code></td>
+                                <td>New Light Green Style</td>
+                            </tr>                    
+                        </tbody>
+                    </table>
+</div>
+
 							</div>
 							</div>
 							<div class="panel-body">
