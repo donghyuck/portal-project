@@ -189,10 +189,6 @@
 					
 					}
 				});
-				model.bind("change", function(e){
-					if( e.field == "announce" ){ 				
-				
-				});
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);
 			}
