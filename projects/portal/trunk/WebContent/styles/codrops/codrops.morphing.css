@@ -45,6 +45,7 @@ height: 0;
 	background: #f1f1f1;
 	padding: 15px;
 	border-radius: 4px !important;
+	z-index: 90;
 }
 
 .morphing.open .morphing-content {
