@@ -140,7 +140,7 @@
 			model.bind("change", function(e){
 				
 				if( e.field == "announce.user" ){ 				
-					alert( this.isNew() );	
+					alert( model.isNew() );	
 					alert( e.value ) ;
 				}
 			});
