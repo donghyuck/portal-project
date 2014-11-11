@@ -2011,9 +2011,9 @@
 	trimSlashesRegExp = /(^\/|\/$)/g, CHANGE = "change", ERROR = "error", REFRESH = "refresh", OPEN = "open", CLOSE = "close", CLICK = "click", 
 	UNDEFINED = 'undefined', POST = 'POST', 
 	JSON = 'json', 
-	handleKendoAjaxError = common.ui.handleAjaxError;
+	handleAjaxError = common.ui.handleAjaxError;
 
-	common.ui.extModalWindow = Widget.extend({
+	var ExtModalWindow = Widget.extend({
 				init : function(element, options) {
 					var that = this;
 					Widget.fn.init.call(that, element, options);
