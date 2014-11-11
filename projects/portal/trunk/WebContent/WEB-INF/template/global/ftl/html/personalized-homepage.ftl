@@ -78,10 +78,9 @@
 					}
 				});
 				
-				createAnnounceSection();
-				
+				createAnnounceSection();				
 				$(".morphing ").bind("open.morphing", function(e){
-					createAnnounceEditorSection();		
+					createAnnounceEditorSection();
 				});
 				
 				// END SCRIPT 				
@@ -130,6 +129,7 @@
 		<!-- Announce												-->
 		<!-- ============================== -->
 		function createAnnounceSection(){
+			
 			var renderTo = $("#my-announce-section");
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");			
@@ -138,9 +138,12 @@
 				draft: true,
 				changed : false,
 				editable : false,
-				close : function(e){
+				edit : function(e){
+					createAnnounceEditorSection(this);
+					$("[data-toggle='button'][data-action='morphing']").click();
 				}
 			});
+			
 			model.bind("change", function(e){				
 				if( e.field == "announce.user" ){ 				
 					if( getCurrentUser().userId == this.get(e.field).userId )
