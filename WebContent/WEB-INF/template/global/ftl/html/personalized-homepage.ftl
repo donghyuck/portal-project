@@ -179,7 +179,8 @@
 			common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
 		}
 		
-		function createAnnounceEditorSection(){
+		function createAnnounceEditorSection(source){
+			
 			var renderTo = $(".morphing");			
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
@@ -196,6 +197,12 @@
 				var bodyEditor =  $("#announce-editor-body" );
 				createEditor( "announce-editor" , bodyEditor );				
 			}
+			
+			if( common.ui.defined(source) ){
+				source.copy( renderTo.data("model").announce );
+				renderTo.data("model") 
+			}
+			
 			renderTo.data("model").set("changed", false);
 		}
 		-->
