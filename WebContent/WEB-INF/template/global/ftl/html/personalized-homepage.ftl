@@ -138,9 +138,7 @@
 				editable : false,
 				edit : function(e){
 					e.stopPropagation();
-					alert( "call" );
 					createAnnounceEditorSection(this);
-					alert( "check" );
 					$("[data-toggle='button'][data-action='morphing']").click(); 
 					
 				}
@@ -203,6 +201,7 @@
 		
 		function createAnnounceEditorSection(source){			
 			var renderTo = $(".morphing");			
+		
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
 					announce : new common.ui.data.Announce(),
