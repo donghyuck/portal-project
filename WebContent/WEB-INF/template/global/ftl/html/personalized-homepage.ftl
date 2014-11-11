@@ -333,7 +333,7 @@
 											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
-													<div class="panel-header-controls" data-bind="visible:permissions" >
+													<div class="panel-header-controls">
 														<button class="btn-u btn-u-red u-btn-sm" type="button"><i class="fa fa-pencil"></i> 편집</button>
 													</div>
 													<ul class="list-unstyled">
