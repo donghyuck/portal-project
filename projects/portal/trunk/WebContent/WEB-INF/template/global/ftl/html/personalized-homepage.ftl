@@ -265,7 +265,7 @@
 				
 				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
 					change: function(e){						
-						
+						alert(e.target.value);
 					}
 				});	
 			
