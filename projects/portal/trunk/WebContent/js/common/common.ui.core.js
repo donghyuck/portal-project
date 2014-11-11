@@ -759,6 +759,15 @@
 				enable = true;
 			}
 		},
+		select: function( value ){
+			var that = this;
+			if (that.radio) {
+				if( value != that.value ){
+					that.element.find("input[type='radio'][value='"+ value +"']"	).click();			
+				}						 
+			}		
+			
+		},
 		currentValue : function() {
 			var that = this;
 			if (that.radio) {
