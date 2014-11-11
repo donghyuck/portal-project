@@ -1,5 +1,4 @@
-function preparePersonalizedArea( element, minCount, colSize ){
-	
+function preparePersonalizedArea( element, minCount, colSize ){	
 	var template = kendo.template("<div id='#= guid #' class='personalized-panels-group col-sm-#= colSize#'></div>");
 	for ( var  i = 1 ; i < minCount + 1 ; i ++  )
 	{
@@ -9,10 +8,8 @@ function preparePersonalizedArea( element, minCount, colSize ){
 				colSize: colSize
 			})
 		);		
-	}	
-	
-	element.data("sizePlaceHolder", { oldValue: colSize , newValue : colSize} );	
-	
+	}		
+	element.data("sizePlaceHolder", { oldValue: colSize , newValue : colSize} );		
 	$("input[name='personalized-area-col-size']").bind("change", function(e){
 		var grid_col_size = element.data("sizePlaceHolder");
 		grid_col_size.oldValue = grid_col_size.newValue;
@@ -24,7 +21,6 @@ function preparePersonalizedArea( element, minCount, colSize ){
 		});
 	});	
 }
-
 
 function getNextPersonalizedColumn (element){
 	var minValue;
@@ -38,11 +34,13 @@ function getNextPersonalizedColumn (element){
 			return false;
 		}else{			
 			if ( height && (!minItem || height < minValue)) {
-				minItem = $this;;
+				minItem = $this;
 				minValue = height;
 			}			
 		}
 	});	
 	return minItem;
 } 
+
+
 
