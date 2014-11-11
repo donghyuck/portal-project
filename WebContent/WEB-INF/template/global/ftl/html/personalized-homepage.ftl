@@ -140,7 +140,7 @@
 			model.bind("change", function(e){
 				
 				if( e.field == "announce.user" ){ 				
-					alert( e.data ) ;
+					alert( kendo.stringify( this.get( e.field ) ) ) ;
 				}
 			});
 			var announceSelector = common.ui.buttonGroup(
