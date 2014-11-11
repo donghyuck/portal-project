@@ -265,7 +265,7 @@
 				
 				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
 					change: function(e){						
-						listRenderTo.data("kendoListView").dataSource.read({objectType:e.value});
+						
 					}
 				});	
 			
