@@ -362,8 +362,8 @@
 														<li class="text-muted">
 															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 															<ul class="list-unstyled text-muted">
-																<li><span data-bind="visible:announce.user.nameVisible, text: user.name"></span><code data-bind="text: announce.user.username"></code></li>
-																<li><span data-bind="visible:announce.user.emailVisible, text: user.email"></span></li>
+																<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
+																<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
 															</ul>																
 														</li>	
 													</ul>	
