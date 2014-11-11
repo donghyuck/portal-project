@@ -1513,9 +1513,6 @@
 					domain_guid : guid().toLowerCase(),
 					website_guid : guid().toLowerCase()
 				};
-				
-				alert( guid() );
-				
 				that.refresh();
 			},
 			events : [ ERROR, CHANGE, APPLY ],
