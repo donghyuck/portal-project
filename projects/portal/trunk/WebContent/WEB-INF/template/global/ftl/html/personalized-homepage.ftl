@@ -265,6 +265,7 @@
 				
 				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
 					change: function(e){		
+						alert( e.target.value );
 						if( e.target.value != model.get("announce.objectType") )				
 							model.set("announce.objectType", e.target.value );
 					}
