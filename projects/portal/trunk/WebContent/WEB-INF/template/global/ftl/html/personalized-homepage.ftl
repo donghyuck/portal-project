@@ -270,7 +270,7 @@
 				});	
 			
 				model.bind("change", function(e){				
-					if( e.field == "announce.objectType" ){ 		
+					if( e.field == "announce" ){ 		
 						alert("2");		
 						//if( getCurrentUser().userId == this.get(e.field).userId )
 						//	this.set("editable", true);
