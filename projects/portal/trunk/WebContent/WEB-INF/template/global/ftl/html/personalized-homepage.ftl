@@ -138,9 +138,10 @@
 				}
 			});
 			model.bind("change", function(e){
-				alert( e.field ) ;
-				if( e.field == "user" ){ 				
+				
+				if( e.field == "announce.user" ){ 				
 					alert( this.isNew() );	
+					alert( e.value ) ;
 				}
 			});
 			var announceSelector = common.ui.buttonGroup(
