@@ -140,7 +140,7 @@
 			model.bind("change", function(e){
 				
 				if( e.field == "announce.user" ){ 				
-					alert( e.value ) ;
+					alert( e.data ) ;
 				}
 			});
 			var announceSelector = common.ui.buttonGroup(
