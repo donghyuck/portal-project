@@ -287,6 +287,7 @@
 				source.announce.copy( renderTo.data("model").announce );
 				renderTo.data("model").set("new", false); 
 			}else{
+				common.ui.data.EMPTY_ANNOUNCE.copy(renderTo.data("model").announce );				
 				renderTo.data("model").set("new", true); 
 			}			
 			renderTo.data("model").set("changed", false);
