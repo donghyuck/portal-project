@@ -138,6 +138,7 @@
 				}
 			});
 			model.bind("change", function(e){
+				alert( e.field ) ;
 				if( e.field == "user" ){ 				
 					alert( stringify( e.value ) );				
 				}
