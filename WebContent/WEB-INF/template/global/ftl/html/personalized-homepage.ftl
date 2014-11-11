@@ -206,9 +206,7 @@
 					announce : new common.ui.data.Announce(),
 					new: true,
 					changed : false,
-					close : function(e){
-					
-					
+					close : function(e){					
 					}
 				});
 				kendo.bind( renderTo, model);
