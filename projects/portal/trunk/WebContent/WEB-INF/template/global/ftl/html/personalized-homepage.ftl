@@ -333,6 +333,9 @@
 											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;">
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
+													<div class="pull-right" >
+														<button class="btn-u btn-brd btn-brd-hover btn-u-red btn-u-sm" type="button"><i class="fa fa-pencil"></i> Default Button</button>
+													</div>
 													<ul class="list-unstyled">
 														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
 														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
