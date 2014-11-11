@@ -32,6 +32,7 @@
 			'${request.contextPath}/js/common/common.ui.data.js',
 			'${request.contextPath}/js/common/common.ui.community.js',
 			'${request.contextPath}/js/common.pages/common.personalized.js',
+			'${request.contextPath}/js/ace/ace.js',
 			'${request.contextPath}/js/common.pages/common.code-editor.js'
 			],			
 			complete: function() {		
