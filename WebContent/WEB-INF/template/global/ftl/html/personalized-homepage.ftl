@@ -345,24 +345,24 @@
 										<div id="my-announce-section" style="display:none;">	
 											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;">
 												<div class="panel-heading">
-													<h4 data-bind="html:subject"></h4>
-													<div class="panel-header-controls">
+													<h4 data-bind="html:announce.subject"></h4>
+													<div class="panel-header-controls" data-bind="visible:editable">
 														<button class="btn-u btn-u-red u-btn-sm" type="button"><i class="fa fa-pencil"></i> 편집</button>
 													</div>
 													<ul class="list-unstyled">
-														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
-														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
-														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
+														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
+														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
 														<li class="text-muted">
-															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 															<ul class="list-unstyled text-muted">
-																<li><span data-bind="visible:user.nameVisible, text: user.name"></span><code data-bind="text: user.username"></code></li>
-																<li><span data-bind="visible:user.emailVisible, text: user.email"></span></li>
+																<li><span data-bind="visible:announce.user.nameVisible, text: user.name"></span><code data-bind="text: announce.user.username"></code></li>
+																<li><span data-bind="visible:announce.user.emailVisible, text: user.email"></span></li>
 															</ul>																
 														</li>	
 													</ul>	
 												</div><!-- /.panel-heading -->
-												<div class="panel-body padding-sm" data-bind="html:body"></div>
+												<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
 											</div><!-- /.panel -->
 											<div class="panel panel-default border-2x">
 												<div class="panel-body contentHolder no-border no-padding my-announce-list"></div>
