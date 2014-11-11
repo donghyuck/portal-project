@@ -264,17 +264,15 @@
 				});
 				
 				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
-					change: function(e){						
-						alert(e.target.value);
+					change: function(e){		
+						if( e.target.value != model.get("announce.objectType") )				
+							model.set("announce.objectType", e.target.value );
 					}
 				});	
 			
 				model.bind("change", function(e){	
-							alert(e.field);		
-					if( e.field == "announce" ){ 		
-						alert("2");		
-						//if( getCurrentUser().userId == this.get(e.field).userId )
-						//	this.set("editable", true);
+					if( e.field == "announce.objectType" && this.get(e.field) != announceSelector.value ){ 		
+						announceSelector.select(this.get(e.field));
 					}
 				});
 				
