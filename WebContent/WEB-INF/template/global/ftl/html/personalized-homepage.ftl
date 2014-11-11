@@ -236,6 +236,7 @@
 								success : function(response){									
 									var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 									common.ui.listview(listRenderTo).dataSource.read();
+									$this.close();
 								},
 								fail: function(){								
 									common.ui.notification({
