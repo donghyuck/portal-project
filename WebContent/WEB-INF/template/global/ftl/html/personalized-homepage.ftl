@@ -137,10 +137,12 @@
 				announce : new common.ui.data.Announce(),
 				editable : false,
 				edit : function(e){
+					e.stopPropagation();
 					alert( "call" );
 					createAnnounceEditorSection(this);
 					alert( "check" );
-					$("[data-toggle='button'][data-action='morphing']").click();
+					$("[data-toggle='button'][data-action='morphing']").click(); 
+					
 				}
 			});
 			
