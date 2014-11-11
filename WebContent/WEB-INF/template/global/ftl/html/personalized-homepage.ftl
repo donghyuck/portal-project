@@ -269,6 +269,14 @@
 					}
 				});	
 			
+				model.bind("change", function(e){				
+					if( e.field == "announce.objectType" ){ 		
+						alert("2");		
+						//if( getCurrentUser().userId == this.get(e.field).userId )
+						//	this.set("editable", true);
+					}
+				});
+				
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);
 				var bodyEditor =  $("#announce-editor-body" );
