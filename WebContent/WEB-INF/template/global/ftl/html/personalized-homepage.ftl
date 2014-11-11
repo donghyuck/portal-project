@@ -233,8 +233,9 @@
 							'${request.contextPath}/community/update-announce.do?output=json',
 							{
 								data : { item: kendo.stringify( $this.announce ) },
-								success : function(response){
-									$("#notice-grid").data('kendoGrid').dataSource.read();
+								success : function(response){									
+									var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
+									common.ui.listview(listRenderTo).dataSource.read();
 								},
 								fail: function(){								
 									common.ui.notification({
@@ -251,7 +252,7 @@
 								requestEnd : function(){
 									kendo.ui.progress(renderTo, false);
 								},
-								always : function(e){
+								complete : function(e){
 									btn.button('reset');
 								}
 							});					
