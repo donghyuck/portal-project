@@ -140,7 +140,7 @@
 			model.bind("change", function(e){
 				alert( e.field ) ;
 				if( e.field == "user" ){ 				
-					alert( stringify( e.value ) );				
+					alert( this.isNew() );	
 				}
 			});
 			var announceSelector = common.ui.buttonGroup(
