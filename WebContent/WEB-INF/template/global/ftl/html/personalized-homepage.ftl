@@ -283,6 +283,8 @@
 				createEditor( "announce-editor" , bodyEditor );				
 			}
 			
+			alert( source );
+			
 			if( source ){
 				source.announce.copy( renderTo.data("model").announce );
 				renderTo.data("model").set("new", false); 
