@@ -334,7 +334,7 @@
 												<div class="panel-heading">
 													<h4 data-bind="html:subject"></h4>
 													<div class="panel-header-controls" >
-														<button class="btn btn-sm btn-primary" type="button"><i class="fa fa-pencil"></i> 편집</button>
+														<button class="btn-u btn-u-red u-btn-sm" type="button"><i class="fa fa-pencil"></i> 편집</button>
 													</div>
 													<ul class="list-unstyled">
 														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
