@@ -126,10 +126,17 @@
 		<!-- Announce												-->
 		<!-- ============================== -->
 		function createAnnounceSection(){
-			var announce = new common.ui.data.Announce ();
 			var renderTo = $("#my-announce-section");
 			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
-			var viewRenderTo = $("#my-announce-section .my-announce-view");
+			var viewRenderTo = $("#my-announce-section .my-announce-view");			
+			var model =  common.ui.observable({ 
+				announce : new common.ui.data.Announce(),
+				draft: true,
+				changed : false,
+				editable : false,
+				close : function(e){
+				}
+			});
 			var announceSelector = common.ui.buttonGroup(
 				$("#announce-selector"),
 				{
@@ -138,7 +145,7 @@
 					}
 				}
 			);				
-			kendo.bind(viewRenderTo, announce);
+			kendo.bind(viewRenderTo, model );
 			common.ui.listview(
 				listRenderTo,
 				{
@@ -166,7 +173,7 @@
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						selectedCell.copy( announce );						
+						selectedCell.copy( model.announce );						
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
 						}						
@@ -179,8 +186,7 @@
 			common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
 		}
 		
-		function createAnnounceEditorSection(source){
-			
+		function createAnnounceEditorSection(source){			
 			var renderTo = $(".morphing");			
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
@@ -609,11 +615,11 @@
 		<a class="pull-left" href="\\#"><img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150"></a>
 		<div class="media-body">
 			<h5 class="media-heading">
-						# if (objectType == 30) { #
-						<span class="label label-info">공지</span></span>
-						# }else{ #
-						<span class="label label-danger">알림</span></span>
-						# } #				
+				# if (objectType == 30) { #
+					<span class="label label-info">공지</span></span>
+				# }else{ #
+					<span class="label label-danger">알림</span></span>
+				# } #				
 				<strong>#: subject #</strong> 
 			</h5>
 			<div class="name-location">		
