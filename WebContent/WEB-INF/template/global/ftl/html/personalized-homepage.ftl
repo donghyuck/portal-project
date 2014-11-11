@@ -279,10 +279,10 @@
 										<div class="headline">
 											<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
 											<div id="new-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
-												<label class="btn btn-info btn-sm active rounded-left">
+												<label class="btn btn-success btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30">사이트
 												</label>
-												<label class="btn btn-info btn-sm rounded-right">
+												<label class="btn btn-success btn-sm rounded-right">
 													<input type="radio" name="notice-target" value="1">회사
 												</label>
 											</div>
