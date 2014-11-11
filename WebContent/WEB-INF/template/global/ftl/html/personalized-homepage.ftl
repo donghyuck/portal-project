@@ -135,8 +135,6 @@
 			var viewRenderTo = $("#my-announce-section .my-announce-view");			
 			var model =  common.ui.observable({ 
 				announce : new common.ui.data.Announce(),
-				draft: true,
-				changed : false,
 				editable : false,
 				edit : function(e){
 					createAnnounceEditorSection(this);
