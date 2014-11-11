@@ -219,7 +219,9 @@
 			
 			if( common.ui.defined(source) ){
 				source.copy( renderTo.data("model").announce );
-				renderTo.data("model") 
+				renderTo.data("model").set("new", false); 
+			}else{
+				renderTo.data("model").set("new", true); 
 			}
 			
 			renderTo.data("model").set("changed", false);
