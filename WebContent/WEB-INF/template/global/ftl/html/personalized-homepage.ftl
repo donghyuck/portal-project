@@ -137,8 +137,9 @@
 				announce : new common.ui.data.Announce(),
 				editable : false,
 				edit : function(e){
-				alert( "call" );
+					alert( "call" );
 					createAnnounceEditorSection(this);
+					alert( "check" );
 					$("[data-toggle='button'][data-action='morphing']").click();
 				}
 			});
