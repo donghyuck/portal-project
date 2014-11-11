@@ -163,8 +163,7 @@
 				listRenderTo,
 				{
 					dataSource : common.ui.datasource(
-						//'${request.contextPath}/community/list-announce.do?output=json',
-						"/data/announce/list.json",
+						"${request.contextPath}/data/announce/list.json",
 						{
 							transport : {
 								parameterMap: function(options, operation) {
