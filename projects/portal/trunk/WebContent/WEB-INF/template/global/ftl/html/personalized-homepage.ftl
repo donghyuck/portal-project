@@ -362,7 +362,7 @@
 												<div class="panel-heading">
 													<h4 data-bind="html:announce.subject"></h4>
 													<div class="panel-header-controls" data-bind="visible:editable">
-														<button class="btn btn-primary btn-xs rounded" type="button"><i class="fa fa-pencil"></i> 편집</button>
+														<button class="btn btn-primary btn-xs rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i> 편집</button>
 													</div>
 													<ul class="list-unstyled">
 														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
