@@ -87,7 +87,11 @@
 				// END SCRIPT 				
 			}
 		}]);	
-
+	
+		function getCurrentUser () {
+			return common.ui.accounts($("#account-navbar") ).token ;
+		}		
+		
 		<!-- ============================== -->
 		<!-- Memo													   -->
 		<!-- ============================== -->
@@ -137,10 +141,10 @@
 				close : function(e){
 				}
 			});
-			model.bind("change", function(e){
-				
+			model.bind("change", function(e){				
 				if( e.field == "announce.user" ){ 				
-					alert( kendo.stringify( this.get( e.field ) ) ) ;
+					if( getCurrentUser().userId == this.get(e.field).userId )
+						this.set("editable", true);
 				}
 			});
 			var announceSelector = common.ui.buttonGroup(
