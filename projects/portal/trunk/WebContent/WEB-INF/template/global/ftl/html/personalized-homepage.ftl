@@ -176,9 +176,9 @@
 								}
 							},
 							schema: {
-								data : "targetAnnounces",
+								data : "announces",
 								model : common.ui.data.Announce,
-								total : "totalAnnounceCount"
+								total : "totalCount"
 							}
 						}
 					),
