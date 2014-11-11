@@ -205,9 +205,11 @@
 					new: true,
 					changed : false,
 					update : function(e){
-						var btn = $(e.target);
+						var $this = this, 
+						btn = $(e.target);
+						
 						btn.button('loading');
-						if( this.announce.subject.length == 0 || this.announce.body.length == 0 ){
+						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
 							common.ui.notification({
 								title:"공지 입력 오류", 
 								message: "제목 또는 본문을 입력하세요." ,
@@ -217,7 +219,7 @@
 							});
 							return ;
 						}
-						if( this.announce.startDate >= this.announce.endDate  ){
+						if( $this.announce.startDate >= $this.announce.endDate  ){
 							common.ui.notification({
 								title:"공지 기간 입력 오류", 
 								message: "시작일자가 종료일자보다 이후일 수 없습니다." ,
@@ -230,7 +232,7 @@
 						common.ui.ajax(
 							'${request.contextPath}/community/update-announce.do?output=json',
 							{
-								data : { item: kendo.stringify( this.announce.clone() ) },
+								data : { item: kendo.stringify( $this.announce ) },
 								success : function(response){
 									$("#notice-grid").data('kendoGrid').dataSource.read();
 								},
