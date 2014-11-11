@@ -269,7 +269,8 @@
 					}
 				});	
 			
-				model.bind("change", function(e){				
+				model.bind("change", function(e){	
+							alert(e.field);		
 					if( e.field == "announce" ){ 		
 						alert("2");		
 						//if( getCurrentUser().userId == this.get(e.field).userId )
