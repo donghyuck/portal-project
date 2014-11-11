@@ -137,6 +137,11 @@
 				close : function(e){
 				}
 			});
+			model.bind("change", function(e){
+				if( e.field == "user" ){ 				
+					alert( stringify( e.value ) );				
+				}
+			});
 			var announceSelector = common.ui.buttonGroup(
 				$("#announce-selector"),
 				{
