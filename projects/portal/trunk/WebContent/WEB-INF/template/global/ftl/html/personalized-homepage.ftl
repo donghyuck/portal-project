@@ -80,7 +80,7 @@
 				
 				createAnnounceSection();				
 				$(".morphing ").bind("open.morphing", function(e){
-					createAnnounceEditorSection();
+					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
 				});
 				
 				// END SCRIPT 				
@@ -139,7 +139,7 @@
 				edit : function(e){
 					e.stopPropagation();
 					createAnnounceEditorSection(this);
-					$("[data-toggle='button'][data-action='morphing']").click(); 
+					$(".morphing ").toggleClass("open");
 					
 				}
 			});
