@@ -765,8 +765,7 @@
 				if( value != that.value ){
 					that.element.find("input[type='radio'][value='"+ value +"']"	).click();			
 				}						 
-			}		
-			
+			}	
 		},
 		currentValue : function() {
 			var that = this;
