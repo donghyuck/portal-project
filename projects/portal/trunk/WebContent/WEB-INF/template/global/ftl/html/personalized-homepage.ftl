@@ -184,6 +184,9 @@
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
+						
+						alert( kendo.stringify(model.announce) );
+						
 						selectedCell.copy( model.announce );						
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
