@@ -285,7 +285,7 @@
 					renderTo.data("model").set("new", false); 
 				}else{
 					renderTo.data("model").set("new", false); 
-					announceSelector.select(common.ui.buttonGroup($("#announce-selector")).value);
+					renderTo.data("model").set("announce.objectType", common.ui.buttonGroup($("#announce-selector")).value); 
 				} 
 			}		
 			renderTo.data("model").set("changed", false);
