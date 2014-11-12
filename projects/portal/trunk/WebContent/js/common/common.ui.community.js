@@ -11,6 +11,7 @@
 	    fields: {
 	    	announceId: { type: "number", editable: false, defaultValue: 0 },
 	    	objectType: { type: "number", editable: true, defaultValue: 0 },	
+	    	objectId: { type: "number", editable: true, defaultValue: 0 },	
 	    	subject: { type: "string", editable: true },
 	    	body: { type: "string", editable: true },
 	    	startDate: { type: "date",  editable: true },
