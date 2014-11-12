@@ -159,9 +159,7 @@
 				}
 			);				
 			kendo.bind(viewRenderTo, model );
-			common.ui.listview(
-				listRenderTo,
-				{
+			common.ui.listview(	listRenderTo, {
 					dataSource : common.ui.datasource(
 						"${request.contextPath}/data/announce/list.json",
 						{
@@ -200,8 +198,7 @@
 		}
 		
 		function createAnnounceEditorSection(source){			
-			var renderTo = $(".morphing");			
-		
+			var renderTo = $(".morphing");		
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
 					announce : new common.ui.data.Announce(),
@@ -263,10 +260,8 @@
 							});					
 					},
 					close : function(e){					
-					
 					}
-				});
-				
+				});				
 				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
 					change: function(e){							
 						if( e.value != model.get("announce.objectType") ){				
