@@ -136,14 +136,13 @@
 			var model =  common.ui.observable({ 
 				announce : new common.ui.data.Announce(),
 				editable : false,
+				visible : false,
 				edit : function(e){
 					e.stopPropagation();
 					createAnnounceEditorSection(this.announce);
-					$(".morphing ").toggleClass("open");
-					
+					$(".morphing ").toggleClass("open");					
 				}
-			});
-			
+			});			
 			model.bind("change", function(e){				
 				if( e.field == "announce.user" ){ 				
 					if( getCurrentUser().userId == this.get(e.field).userId )
@@ -181,13 +180,14 @@
 					),
 					template: kendo.template($("#announce-listview-item-template").html()),
 					selectable: "single" ,
+					dataBound: function(e){
+						model.set("visible", false);
+					},
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						
-						alert( kendo.stringify(model.announce) );
-						
-						selectedCell.copy( model.announce );						
+						selectedCell.copy( model.announce );			
+						model.set("visible", false);			
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
 						}						
@@ -262,7 +262,8 @@
 								}
 							});					
 					},
-					close : function(e){					
+					close : function(e){		
+						$(".morphing ").toggleClass("open");			
 					}
 				});				
 				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
