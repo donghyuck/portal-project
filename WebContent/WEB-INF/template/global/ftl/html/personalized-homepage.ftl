@@ -236,6 +236,7 @@
 							'${request.contextPath}/data/announce/save.json',
 							{
 								data : kendo.stringify( $this.announce ),
+								contentType : "application/json",
 								success : function(response){									
 									var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 									common.ui.listview(listRenderTo).dataSource.read();
