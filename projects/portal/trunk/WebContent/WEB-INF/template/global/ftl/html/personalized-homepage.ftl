@@ -138,7 +138,7 @@
 				editable : false,
 				edit : function(e){
 					e.stopPropagation();
-					createAnnounceEditorSection(this);
+					createAnnounceEditorSection(this.announce);
 					$(".morphing ").toggleClass("open");
 					
 				}
@@ -272,29 +272,25 @@
 							model.set("announce.objectType", e.value );
 						}
 					}
-				});	
-			
+				});				
 				model.bind("change", function(e){	
 					if( e.field == "announce.objectType" && this.get(e.field) != announceSelector.value ){ 		
 						announceSelector.select(this.get(e.field));
 					}
-				});
-				
+				});				
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);
 				var bodyEditor =  $("#announce-editor-body" );
 				createEditor( "announce-editor" , bodyEditor );				
 			}
-			
-			alert( source );
-			
 			if( source ){
-				source.announce.copy( renderTo.data("model").announce );
-				renderTo.data("model").set("new", false); 
-			}else{
-				//common.ui.data.EMPTY_ANNOUNCE.copy(renderTo.data("model").announce );				
-				//renderTo.data("model").set("new", true); 
-			}			
+				source.copy( renderTo.data("model").announce );
+				if( source.announceId === 0 ){
+					renderTo.data("model").set("new", false); 
+				}else{
+					renderTo.data("model").set("new", false); 
+				} 
+			}		
 			renderTo.data("model").set("changed", false);
 		}
 		-->
