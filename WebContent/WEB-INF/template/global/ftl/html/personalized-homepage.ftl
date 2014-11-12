@@ -233,7 +233,7 @@
 							return ;
 						}
 						common.ui.ajax(
-							'${request.contextPath}/community/update-announce.do?output=json',
+							'${request.contextPath}/data/announce/save.json',
 							{
 								data : { item: kendo.stringify( $this.announce ) },
 								success : function(response){									
