@@ -426,7 +426,7 @@
 											</div>
 										</div>			
 										<div id="my-announce-section" style="display:none;">	
-											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;">
+											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;"  data-bind="visible: visible">
 												<div class="panel-heading">
 													<h4 data-bind="html:announce.subject"></h4>
 													<div class="panel-header-controls" data-bind="visible:editable">
