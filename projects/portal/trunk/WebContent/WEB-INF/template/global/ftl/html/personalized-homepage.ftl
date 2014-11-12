@@ -235,7 +235,7 @@
 						common.ui.ajax(
 							'${request.contextPath}/data/announce/save.json',
 							{
-								data : { item: kendo.stringify( $this.announce ) },
+								data : kendo.stringify( $this.announce ),
 								success : function(response){									
 									var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
 									common.ui.listview(listRenderTo).dataSource.read();
