@@ -809,8 +809,7 @@
 		},
 		_radio : function() {
 			var that = this,
-			element = that.element;
-			
+			element = that.element;			
 			var input = element.find("input[type='radio']");
 			if (input.length > 0) {
 				that.radio = true;
@@ -1477,6 +1476,7 @@
 		placeholderSupported = kendo.support.placeholder, 
 		browser = kendo.support.browser, 
 		isFunction = kendo.isFunction, 
+		handleAjaxError = ui.handleAjaxError,
 		trimSlashesRegExp = /(^\/|\/$)/g, 
 		CHANGE = "change", 
 		APPLY = "apply", 
@@ -1609,7 +1609,7 @@
 												}
 											},
 											pageSize : 12,
-											error : handleKendoAjaxError,
+											error : handleAjaxError,
 											schema : {
 												model : Image,
 												data : "targetImages",
@@ -1656,6 +1656,7 @@
 							break;
 						case "#" + that.options.guid[TAB_PANE_DOMAIN_ID]:
 							// domain images
+						
 							if (!my_list_view.data('kendoListView')) {
 												my_list_view.kendoListView({
 															dataSource : {
@@ -1830,7 +1831,7 @@
 											}
 										},
 										pageSize : 12,
-										error : handleKendoAjaxError,
+										error : handleAjaxError,
 										schema : {
 											model : Image,
 											data : "targetImages",
