@@ -104,13 +104,13 @@
 													</div>
 													<div class="col-xs-4"><button type="button" class="btn btn-info btn-sm btn-block btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> &nbsp; 이미지 업로드</button></div>
 												</div>
-												<div id="#=upload_guid#-selected" class="funny-boxes funny-boxes-top-sea no-margin"></div>
+												<div id="#=guid[0]#-selected" class="funny-boxes funny-boxes-top-sea no-margin"></div>
 											</div>
 											<div class="panel-body scrollable" style="max-height:450px; padding:5px;">
-												<div id="#=upload_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
+												<div id="#=guid[0]#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 											</div>	
 											<div class="panel-footer" style="padding:0px;">
-												<div id="#=upload_guid#-list-pager" class="k-pager-wrap"></div>
+												<div id="#=guid[0]#-list-pager" class="k-pager-wrap"></div>
 											</div>
 										</div>						
 									</div>														  
@@ -119,13 +119,13 @@
 									<h5 ><i class="fa fa-picture-o"></i> <strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 									<div class="panel panel-default panel-flat">								
 										<div class="panel-body no-padding"  style="border-bottom: 1px solid \\#e5e5e5;">	
-											<div id="#=my_guid#-selected" class="funny-boxes no-margin"></div>
+											<div id="#=guid[1]#-selected" class="funny-boxes no-margin"></div>
 										</div>
 										<div class="panel-body scrollable color4" style="max-height:450px;">
-											<div id="#=my_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
+											<div id="#=guid[1]#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 										</div>	
 										<div class="panel-footer" style="padding:0px;">
-											<div id="#=my_guid#-list-pager" class="k-pager-wrap"></div>
+											<div id="#=guid[1]#-list-pager" class="k-pager-wrap"></div>
 										</div>
 									</div>																											  
 								</div>
@@ -133,13 +133,13 @@
 								<h5 ><i class="fa fa-picture-o"></i> <strong>도메인 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 								<div class="panel panel-default panel-flat">			
 									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
-										<div id="#=domain_guid#-selected" class="funny-boxes no-margin"></div>
+										<div id="#=guid[2]#-selected" class="funny-boxes no-margin"></div>
 									</div>													
 									<div class="panel-body scrollable color4" style="max-height:450px;">
-										<div id="#=domain_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
+										<div id="#=guid[2]#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
 									<div class="panel-footer" style="padding:0px;">
-										<div id="#=domain_guid#-list-pager" class="k-pager-wrap"></div>
+										<div id="#=guid[2]#-list-pager" class="k-pager-wrap"></div>
 									</div>
 								</div>														  
 							  </div>
@@ -147,13 +147,13 @@
 								<h5 ><i class="fa fa-picture-o"></i> <strong>사이트 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>	
 								<div class="panel panel-default panel-flat">								
 									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
-										<div id="#=website_guid#-selected" class="funny-boxes no-margin"></div>
+										<div id="#=guid[3]#-selected" class="funny-boxes no-margin"></div>
 									</div>									
 									<div class="panel-body scrollable color4" style="max-height:450px;">
-										<div id="#=website_guid#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
+										<div id="#=guid[3]#-list-view" class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
 									<div class="panel-footer" style="padding:0px;">
-										<div id="#=website_guid#-list-pager" class="k-pager-wrap"></div>
+										<div id="#=guid[3]#-list-pager" class="k-pager-wrap"></div>
 									</div>
 								</div>														  
 							  </div>							  
