@@ -1725,14 +1725,14 @@
 								
 							}							
 							break;
-						case "#" + that.options.guid[3]:
-							createImagePanel(tab_pane, 1);
+						case "#" + that.options.guid[1]:
+							createImagePanel(tab_pane, 2);
 							break;
 						case "#" + that.options.guid[2]:
 							createImagePanel(tab_pane, 30);
 							break;
-						case "#"+ that.options.guid[2]:
-							createImagePanel(tab_pane, 30);
+						case "#"+ that.options.guid[3]:
+							createImagePanel(tab_pane, 1);
 							break;
 						case "#" + that.options.guid[4]:
 							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
