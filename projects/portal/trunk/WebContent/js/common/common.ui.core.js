@@ -1517,18 +1517,8 @@
 			init : function(element, options) {
 				var that = this;
 				Widget.fn.init.call(that, element, options);
-				options = that.options;
-				
-				
-				
-				options.guid = {
-					title_guid : guid().toLowerCase(),
-					url_guid : guid().toLowerCase(),
-					upload_guid : guid().toLowerCase(),
-					my_guid : guid().toLowerCase(),
-					domain_guid : guid().toLowerCase(),
-					website_guid : guid().toLowerCase()
-				};
+				options = that.options;				
+				options.guids = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];
 				that.refresh();
 			},
 			events : [ ERROR, CHANGE, APPLY ],
