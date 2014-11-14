@@ -2175,7 +2175,7 @@
 	isFunction = kendo.isFunction, 
 	trimSlashesRegExp = /(^\/|\/$)/g, 
 	CHANGE = "change", APPLY = "apply", ERROR = "error", CLICK = "click", UNDEFINED = 'undefined', POST = 'POST', JSON = 'json', 
-	LINK_VALUE_TEMPLATE = kendo.template('<a href="#: linkUrl #" title="#: linkTitle #" #if (linkTarget) { # target="_blank"  # }#>#= linkTitle #</a>'), handleKendoAjaxError = common.ui.handleAjaxError;
+	LINK_VALUE_TEMPLATE = kendo.template('<a href="#: linkUrl #" title="#: linkTitle #" #if (linkTarget) { # target="_blank"  # }#>#= linkTitle #</a>'), handleAjaxError = common.ui.handleAjaxError;
 
 	var ExtEditorPopup = Widget
 			.extend({
