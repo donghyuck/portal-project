@@ -1723,13 +1723,13 @@
 							}							
 							break;
 						case "#" + that.options.guid[1]:
-							createImagePanel(tab_pane, 2);
+							createImagePanel(tab_pane, 2, 0 , that._changeState );
 							break;
 						case "#" + that.options.guid[2]:
-							createImagePanel(tab_pane, 30);
+							createImagePanel(tab_pane, 30, 0 , that._changeState);
 							break;
 						case "#"+ that.options.guid[3]:
-							createImagePanel(tab_pane, 1);
+							createImagePanel(tab_pane, 1, 0 , that._changeState);
 							break;
 						case "#" + that.options.guid[4]:
 							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
@@ -1822,13 +1822,9 @@
 			_changeState : function(enabled) {
 				var that = this;
 				if (enabled) {
-					that.element.find(
-							'.modal-footer .btn.custom-insert-img')
-							.removeAttr('disabled');
+					that.element.find(	'.modal-footer .btn.custom-insert-img').removeAttr('disabled');
 				} else {
-					that.element.find(
-							'.modal-footer .btn.custom-insert-img').attr(
-							'disabled', 'disabled');
+					that.element.find('.modal-footer .btn.custom-insert-img').attr('disabled', 'disabled');
 				}
 			},
 			_dialogTemplate : function() {
