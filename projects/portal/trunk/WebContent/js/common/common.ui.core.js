@@ -1573,7 +1573,9 @@
 			}).on(	"mouseleave", ".img-wrapper",function(e) {
 				kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 			});			
+			
 			my_list_pager.kendoPager({refresh : true, buttonCount : 5, 	dataSource : listview.dataSource });			
+		
 		}else{
 			my_list_view.data('kendoListView').clearSelection();			
 		}	
