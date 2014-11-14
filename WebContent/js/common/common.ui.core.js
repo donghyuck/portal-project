@@ -1512,7 +1512,7 @@
 		var my_selected = element.find("image-selected");
 		var my_list_view =  element.find("image-listview");
 		var my_list_pager =  element.find("image-pager");
-		if( !common.ui.exist(my_list_view)){
+		if( !common.ui.exists(my_list_view)){
 			var listview = my_list_view.kendoListView({
 				dataSource : {
 					type :JSON,
