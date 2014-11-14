@@ -1653,8 +1653,8 @@
 							}							
 							break;
 						case "#" + that.options.guid[3]:
-							// domain images
-						
+							// domain images						
+							alert( my_list_view.html() );
 							if (!my_list_view.data('kendoListView')) {
 												my_list_view.kendoListView({
 															dataSource : {
