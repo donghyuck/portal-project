@@ -1560,7 +1560,7 @@
 				dataBound : function(e) {
 					my_selected.html('');
 					if(isFunction(changeState))
-						changeState(true);
+						changeState(false);
 				}				
 			});			
 			my_list_view.on("mouseenter", ".img-wrapper", function(e) {
@@ -1571,6 +1571,8 @@
 			my_list_pager.kendoPager({refresh : true, buttonCount : 5, 	dataSource : my_list_view.data('kendoListView').dataSource });		
 		}else{
 			my_list_view.data('kendoListView').clearSelection();			
+			if(isFunction(changeState))
+				changeState(false);
 		}	
 		
 	}
