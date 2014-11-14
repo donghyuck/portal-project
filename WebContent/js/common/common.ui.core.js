@@ -1821,6 +1821,8 @@
 			},
 			_changeState : function(enabled) {
 				var that = this;
+				
+				alert( that.element.html() );
 				if (enabled) {
 					that.element.find(	'.modal-footer .btn.custom-insert-img').removeAttr('disabled');
 				} else {
