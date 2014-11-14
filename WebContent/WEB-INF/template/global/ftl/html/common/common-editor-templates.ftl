@@ -81,17 +81,17 @@
 						<div class="col-sm-3 no-padding">
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
-							  <li class="no-margin-t"><a href="\\##=upload_guid#" data-toggle="tab">업로드</a></li>
-							  <li class="no-margin-t"><a href="\\##=my_guid#" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li class="no-margin-t"><a href="\\##=website_guid#" data-toggle="tab">My 사이트에서 선택</a></li>
-							  <li class="no-margin-t"><a href="\\##=domain_guid#" data-toggle="tab">My 회사에서 선택</a></li>
-							  <li class="no-margin-t"><a href="\\##=url_guid#" data-toggle="tab">URL에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=guids[0]#" data-toggle="tab">업로드</a></li>
+							  <li class="no-margin-t"><a href="\\##=guids[1]#" data-toggle="tab">My 포토에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=guids[2]#" data-toggle="tab">My 사이트에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=guids[3]#" data-toggle="tab">My 회사에서 선택</a></li>
+							  <li class="no-margin-t"><a href="\\##=guids[4]#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-9 padding-sm" style="border-left: 1px solid \\#e5e5e5; background:\\#f5f5f5; min-height:250px;">
 							<!-- Tab panes -->
 							<div class="tab-content">
-								<div class="tab-pane fade  active" id=#:upload_guid#>
+								<div class="tab-pane fade  active" id=#:guids[0]#>
 									<div class="text-primary">
 										<h5 ><i class="fa fa-upload"></i> <strong>업로드</strong>&nbsp;<small> 삽입할 이미지를 선택하세요.</small></h5>
 										<div class="panel panel-default">			
@@ -115,7 +115,7 @@
 										</div>						
 									</div>														  
 								</div>
-								<div class="tab-pane fade" id=#:my_guid#>
+								<div class="tab-pane fade" id=#:guids[1]#>
 									<h5 ><i class="fa fa-picture-o"></i> <strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 									<div class="panel panel-default panel-flat">								
 										<div class="panel-body no-padding"  style="border-bottom: 1px solid \\#e5e5e5;">	
@@ -129,7 +129,7 @@
 										</div>
 									</div>																											  
 								</div>
-							  <div class="tab-pane fade" id=#:domain_guid#>
+							  <div class="tab-pane fade" id=#:guids[2]#>
 								<h5 ><i class="fa fa-picture-o"></i> <strong>도메인 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 								<div class="panel panel-default panel-flat">			
 									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
@@ -143,7 +143,7 @@
 									</div>
 								</div>														  
 							  </div>
- 							  <div class="tab-pane fade" id=#:website_guid#>
+ 							  <div class="tab-pane fade" id=#:guids[3]#>
 								<h5 ><i class="fa fa-picture-o"></i> <strong>사이트 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>	
 								<div class="panel panel-default panel-flat">								
 									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
@@ -157,7 +157,7 @@
 									</div>
 								</div>														  
 							  </div>							  
-							  <div class="tab-pane fade" id=#:url_guid#>
+							  <div class="tab-pane fade" id=#:guids[4]#>
 								<h5 ><i class="fa fa-link"></i> <strong>URL 이미지</strong>&nbsp;<small>삽입할 이미지 URL 경로를 입력하세요.</small></h5>
 								<div class='form-group'>					
 									<input type="url" name="custom-selected-url" class="form-control" placeholder="URL 입력">
