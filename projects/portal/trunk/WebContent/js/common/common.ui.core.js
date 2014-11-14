@@ -1654,7 +1654,7 @@
 							break;
 						case "#" + that.options.guid[3]:
 							// domain images						
-							alert( my_list_view.html() );
+							alert( my_list_view.attr("id") );
 							if (!my_list_view.data('kendoListView')) {
 												my_list_view.kendoListView({
 															dataSource : {
