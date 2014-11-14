@@ -1534,6 +1534,7 @@
 			events : [ ERROR, CHANGE, APPLY ],
 			options : {
 				name : "ExtImageBrowser",
+				title: null,
 				transport : {}
 			},
 			show : function() {
