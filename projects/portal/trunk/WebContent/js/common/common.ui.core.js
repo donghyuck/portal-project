@@ -1733,7 +1733,7 @@
 							break;
 						case "#" + that.options.guid[4]:
 							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
-							var selected_img = $("#" + that.options.guid[TAB_PANE_URL_ID]).children('img');
+							var selected_img = $("#" + that.options.guid[4]).children('img');
 							form_input.val("");
 							if (form_input.parent().hasClass('has-error'))
 								form_input.parent().removeClass('has-error');
