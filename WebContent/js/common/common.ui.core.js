@@ -1567,15 +1567,17 @@
 					//my_selected.html('');
 					//that._changeState(false);
 				}				
-			});
-			
+			});			
 			my_list_view.on("mouseenter", ".img-wrapper", function(e) {
 				kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 			}).on(	"mouseleave", ".img-wrapper",function(e) {
 				kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 			});			
 			my_list_pager.kendoPager({refresh : true, buttonCount : 5, 	dataSource : listview.dataSource });			
-		}		
+		}else{
+			my_list_view.data('kendoListView').clearSelection();			
+		}	
+		
 	}
 	
 		var ExtImageBrowser = Widget.extend({
@@ -1725,239 +1727,25 @@
 							break;
 						case "#" + that.options.guid[3]:
 							createImagePanel(tab_pane, 1);
-						/**
-							if (!my_list_view.data('kendoListView')) {
-								my_list_view.kendoListView({
-									dataSource : {
-										type : 'json',
-										transport : {
-											read : {
-												url : '/data/image/list.json?output=json',
-												type : 'POST'
-											},
-											parameterMap : function(	options, operation) {
-												if (operation != "read" && options) {
-													return {};
-												} else {
-													return {
-														objectType: 1,	
-														startIndex : options.skip,
-														pageSize : options.pageSize
-													}
-												}
-											}
-										},
-										pageSize : 12,
-										error : handleAjaxError,
-										schema : {
-											model : common.ui.data.Image,
-											data : "images",
-											total : "totalCount"
-										},
-										erverPaging : true
-									},
-										selectable : "single",
-										change : function(e) {
-										var data = this.dataSource.view();
-										var current_index = this.select().index();
-										if (current_index >= 0) {
-											var item = data[current_index];
-											var imageId = item.imageId;
-											if (imageId > 0) {
-												that._getImageLink(item, function(data) {
-													if (typeof data.imageLink === 'object') {
-														my_list_view.data("linkId",data.imageLink.linkId);
-														that._changeState(true);
-														my_selected.html(templates.selected(item));
-													}
-												});
-											}
-										}
-									},
-									navigatable : false,
-									template : kendo.template($("#photo-list-view-template").html()),
-									dataBound : function(e) {
-										my_selected.html('');
-										that._changeState(false);
-									}
-								});
-												my_list_view.on(
-																"mouseenter",
-																".img-wrapper",
-																function(e) {
-																	kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
-																})
-														.on(
-																"mouseleave",
-																".img-wrapper",
-																function(e) {
-																	kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-																});
-												my_list_pager
-														.kendoPager({
-															refresh : true,
-															buttonCount : 5,
-															dataSource : my_list_view
-																	.data('kendoListView').dataSource
-														});
-											} else {
-												my_list_view.data(
-														'kendoListView')
-														.clearSelection();
-							}
-							*/
 							break;
 						case "#" + that.options.guid[2]:
-							// website images
-							if (!my_list_view.data('kendoListView')) {
-								my_list_view.kendoListView({
-									dataSource : {
-										type : 'json',
-										transport : {
-											read : {
-												url : '/community/list-my-website-image.do?output=json',
-												type : 'POST'
-											},
-											parameterMap : function(options, operation) {
-												if (operation != "read" && options) {
-													return {};
-												} else {
-													return {
-														startIndex : options.skip,
-														pageSize : options.pageSize
-													}
-												}
-											}
-										},
-										pageSize : 12,
-										error : handleAjaxError,
-										schema : {
-											model : Image,
-											data : "targetImages",
-											total : "totalTargetImageCount"
-										},
-										serverPaging : true
-									},
-									selectable : "single",
-									change : function(e) {
-										var data = this.dataSource.view();
-										var current_index = this.select().index();
-										if (current_index >= 0) {
-											var item = data[current_index];
-											var imageId = item.imageId;
-											if (imageId > 0) {
-												that._getImageLink(item, function(data) {
-													if (typeof data.imageLink === 'object') {
-														my_list_view.data("linkId", data.imageLink.linkId);
-														that._changeState(true);
-														my_selected.html(templates.selected(item));
-													}
-												});
-											}
-										}
-									},
-									navigatable : false,
-									template : kendo.template($("#photo-list-view-template").html()),
-									dataBound : function(e) {
-										my_selected.html("");
-										that._changeState(false);
-									}
-								});
-								my_list_view.on("mouseenter",".img-wrapper", function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
-								}).on("mouseleave", ".img-wrapper",function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-								});												
-								my_list_pager.kendoPager({
-									refresh : true,
-									buttonCount : 5,
-									dataSource : my_list_view.data('kendoListView').dataSource
-								});
-							} else {
-								my_list_view.data('kendoListView').clearSelection();
-							}
+							createImagePanel(tab_pane, 30);
 							break;
-						case "#"+ that.options.guid[1]:
-							if (!my_list_view.data('kendoListView')) {
-								my_list_view.kendoListView({
-									dataSource : {
-										type : 'json',
-										transport : {
-											read : {
-												url : '/community/list-my-image.do?output=json',
-												type : 'POST'
-											},
-											parameterMap : function(options,operation) {
-												if (operation != "read"&& options) {
-													return {};
-												} else {
-													return {
-														startIndex : options.skip,
-														pageSize : options.pageSize
-													}
-												}
-											}
-										},
-										pageSize : 12,
-										error : handleAjaxError,
-										schema : {
-											model : Image,
-											data : "targetImages",
-											total : "totalTargetImageCount"
-										},
-										serverPaging : true
-									},
-									selectable : "single",
-									change : function(e) {
-										var data = this.dataSource.view();
-										var current_index = this.select().index();
-										if (current_index >= 0) {
-											var item = data[current_index];
-											var imageId = item.imageId;
-											if (imageId > 0) {
-												that._getImageLink(item,function(data) {
-												if (typeof data.imageLink === 'object') {
-													my_list_view.data("linkId",data.imageLink.linkId);
-													that._changeState(true);
-													my_selected.html(templates.selected(item));
-												}
-											});
-										}
-									}
-								},
-								navigatable : false,
-									template : kendo.template($("#photo-list-view-template").html()),
-									dataBound : function(e) {
-										my_selected.html("");
-										that._changeState(false);
-									}
-								});
-								my_list_view.on("mouseenter",".img-wrapper",function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
-								}).on("mouseleave",".img-wrapper",function(e) {
-									kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-								});
-								my_list_pager.kendoPager({
-									refresh : true,
-									buttonCount : 5,
-									dataSource : my_list_view.data('kendoListView').dataSource
-								});
-							} else {
-								my_list_view.data('kendoListView').clearSelection();
-							}
+						case "#"+ that.options.guid[2]:
+							createImagePanel(tab_pane, 30);
 							break;
 						case "#" + that.options.guid[4]:
-											var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
-											var selected_img = $("#" + that.options.guid[TAB_PANE_URL_ID]).children('img');
-											form_input.val("");
-											if (form_input.parent().hasClass('has-error'))
-												form_input.parent().removeClass('has-error');
-											if (form_input.parent().hasClass('has-success'))
-												form_input.parent().removeClass('has-success');
-											if (!selected_img.hasClass('hide'))
-												selected_img.addClass('hide');
-											break;
-										}
+							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
+							var selected_img = $("#" + that.options.guid[TAB_PANE_URL_ID]).children('img');
+							form_input.val("");
+							if (form_input.parent().hasClass('has-error'))
+								form_input.parent().removeClass('has-error');
+							if (form_input.parent().hasClass('has-success'))
+								form_input.parent().removeClass('has-success');
+							if (!selected_img.hasClass('hide'))
+								selected_img.addClass('hide');
+							break;
+						}
 				}); //end of tabs
 				
 				// handle select image url 
