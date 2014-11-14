@@ -1482,7 +1482,12 @@
 		APPLY = "apply", 
 		ERROR = "error", 
 		CLICK = "click", 
-		MODAL_TITIL_ID = "title_guid", TAB_PANE_URL_ID = "url_guid", TAB_PANE_UPLOAD_ID = "upload_guid", TAB_PANE_MY_ID = "my_guid", TAB_PANE_WEBSITE_ID = "website_guid", TAB_PANE_DOMAIN_ID = "domain_guid", 
+		MODAL_TITIL_ID = "title_guid", 
+		TAB_PANE_URL_ID = "url_guid", 
+		TAB_PANE_UPLOAD_ID = "upload_guid", 
+		TAB_PANE_MY_ID = "my_guid", 
+		TAB_PANE_WEBSITE_ID = "website_guid", 
+		TAB_PANE_DOMAIN_ID = "domain_guid", 
 		UNDEFINED = 'undefined',
 		POST = 'POST', 
 		JSON = 'json', 
@@ -1510,9 +1515,12 @@
 		handleAjaxError = common.ui.handleAjaxError;
 		var ExtImageBrowser = Widget.extend({
 			init : function(element, options) {
-				var that = this;
+				var that = this, wrapper ;
 				Widget.fn.init.call(that, element, options);
 				options = that.options;
+				wrapper = that.wrapper = element.closest(PANEL);
+				
+				
 				options.guid = {
 					title_guid : guid().toLowerCase(),
 					url_guid : guid().toLowerCase(),
@@ -1570,7 +1578,8 @@
 			_createDialog : function() {
 				var that = this;
 				var template = that._dialogTemplate();
-				that.element.html(template(that.options.guid));				
+				that.element.html(template( that.options ));
+				
 				that.element.children('.modal').css('z-index', '2000');
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 					e.target // activated tab
@@ -1982,12 +1991,12 @@
 				var that = this;
 				if (typeof that.options.template === UNDEFINED) {
 					return kendo.template(
-						"<div class='modal fade' tabindex='-1' role='dialog' aria-labelledby=#:id# aria-hidden='true'>"	+ 
+						"<div class='modal fade'>"	+ 
 						"<div class='modal-dialog modal-lg'>" + 
 						"<div class='modal-content'>" + 
 						"<div class='modal-header'>" + 
 						"<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>&times;</button>" + 
-						"<h5 class='modal-title' id=#: id #>이미지 삽입</h5>" + 
+						"<h5 class='modal-title'>#if( title ){# #: title # #} else { # 이미지 삽입 #}#</h5>" + 
 						"</div>" + 
 						"<div class='modal-body'>" + 
 						"</div>" + 
