@@ -1509,9 +1509,9 @@
 		handleAjaxError = common.ui.handleAjaxError;
 	
 	function createImagePanel(element, objectType ){
-		var my_selected = $(tab_pane_id + "-selected");
-		var my_list_view = $(tab_pane_id + "-list-view");
-		var my_list_pager = $(tab_pane_id + "-list-pager");		
+		var my_selected = element.find("image-selected");
+		var my_list_view =  element.find("image-listview");
+		var my_list_pager =  element.find("image-pager");
 		if( !common.ui.exist(my_list_view)){
 			var listview = my_list_view.kendoListView({
 				dataSource : {
