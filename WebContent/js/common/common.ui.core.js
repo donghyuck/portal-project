@@ -1569,6 +1569,8 @@
 			_createDialog : function() {
 				var that = this;
 				var template = that._dialogTemplate();
+				
+				alert( kendo.stringify(that.options) );
 				that.element.html(template( that.options ));
 				
 				//wrapper = that.wrapper = element.closest(PANEL);
