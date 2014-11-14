@@ -1482,12 +1482,6 @@
 		APPLY = "apply", 
 		ERROR = "error", 
 		CLICK = "click", 
-		MODAL_TITIL_ID = "title_guid", 
-		TAB_PANE_URL_ID = "url_guid", 
-		TAB_PANE_UPLOAD_ID = "upload_guid", 
-		TAB_PANE_MY_ID = "my_guid", 
-		TAB_PANE_WEBSITE_ID = "website_guid", 
-		TAB_PANE_DOMAIN_ID = "domain_guid", 
 		UNDEFINED = 'undefined',
 		POST = 'POST', 
 		JSON = 'json', 
@@ -1569,25 +1563,24 @@
 			_createDialog : function() {
 				var that = this;
 				var template = that._dialogTemplate();
-				
-				alert( kendo.stringify(that.options) );
+
 				that.element.html(template( that.options ));
-				
-				//wrapper = that.wrapper = element.closest(PANEL);
-				
-				
 				that.element.children('.modal').css('z-index', '2000');
+				
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 					e.target // activated tab
 					e.relatedTarget // previous tab
 					that._changeState(false);
 					var tab_pane_id = $(e.target).attr('href');
 					var tab_pane = $(tab_pane_id);
+					
+					
 					var my_selected = $(tab_pane_id + "-selected");
 					var my_list_view = $(tab_pane_id + "-list-view");
 					var my_list_pager = $(tab_pane_id + "-list-pager");						
+					
 					switch (tab_pane_id) {
-						case "#" + that.options.guid[TAB_PANE_UPLOAD_ID]:					
+						case "#" + that.options.guid[0]:					
 							if(that._objectId() > 0){							
 								// list view 
 								if (!my_list_view.data('kendoListView')) {
@@ -1659,7 +1652,7 @@
 								
 							}							
 							break;
-						case "#" + that.options.guid[TAB_PANE_DOMAIN_ID]:
+						case "#" + that.options.guid[3]:
 							// domain images
 						
 							if (!my_list_view.data('kendoListView')) {
@@ -1744,7 +1737,7 @@
 														.clearSelection();
 							}
 							break;
-						case "#" + that.options.guid[TAB_PANE_WEBSITE_ID]:
+						case "#" + that.options.guid[2]:
 							// website images
 							if (!my_list_view.data('kendoListView')) {
 								my_list_view.kendoListView({
@@ -1814,7 +1807,7 @@
 								my_list_view.data('kendoListView').clearSelection();
 							}
 							break;
-						case "#"+ that.options.guid[TAB_PANE_MY_ID]:
+						case "#"+ that.options.guid[1]:
 							if (!my_list_view.data('kendoListView')) {
 								my_list_view.kendoListView({
 									dataSource : {
@@ -1883,7 +1876,7 @@
 								my_list_view.data('kendoListView').clearSelection();
 							}
 							break;
-						case "#" + that.options.guid[TAB_PANE_URL_ID]:
+						case "#" + that.options.guid[4]:
 											var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
 											var selected_img = $("#" + that.options.guid[TAB_PANE_URL_ID]).children('img');
 											form_input.val("");
