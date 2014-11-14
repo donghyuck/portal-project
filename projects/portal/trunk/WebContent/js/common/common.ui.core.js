@@ -1541,7 +1541,7 @@
 						data : "images",
 						total : "totalCount"
 					},
-					erverPaging : true					
+					serverPaging : true					
 				},
 				selectable : "single",
 				change : function(e) {
