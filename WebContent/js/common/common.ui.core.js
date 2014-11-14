@@ -1515,10 +1515,10 @@
 		handleAjaxError = common.ui.handleAjaxError;
 		var ExtImageBrowser = Widget.extend({
 			init : function(element, options) {
-				var that = this, wrapper ;
+				var that = this;
 				Widget.fn.init.call(that, element, options);
 				options = that.options;
-				wrapper = that.wrapper = element.closest(PANEL);
+				
 				
 				
 				options.guid = {
@@ -1579,6 +1579,9 @@
 				var that = this;
 				var template = that._dialogTemplate();
 				that.element.html(template( that.options ));
+				
+				//wrapper = that.wrapper = element.closest(PANEL);
+				
 				
 				that.element.children('.modal').css('z-index', '2000');
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
