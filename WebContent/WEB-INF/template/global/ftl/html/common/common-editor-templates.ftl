@@ -8,7 +8,7 @@
 		.image-broswer .image-listview .img-wrapper.k-state-selected:after , .file-broswer .file-listview .file-wrapper.k-state-selected:after  {
 			top: 10px;
 			right: 15px;
-			content: "\f05d";
+			content: "\\f05d";
 			font-size: 4em;
 			position: absolute;
 			font-weight: normal;
@@ -19,7 +19,7 @@
 		.image-broswer .image-selected:after {
 			top: 50px;
 			right: 25px;
-			content: "\f0c6";
+			content: "\\f0c6";
 			font-size: 4em;
 			position: absolute;
 			font-weight: normal;
