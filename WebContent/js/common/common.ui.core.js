@@ -1508,7 +1508,7 @@
 		},
 		handleAjaxError = common.ui.handleAjaxError;
 	
-	function createImagePanel(element, objectType, objectId,  changeState){
+	function createImagePanel(element, objectType, objectId, changeState, changeStateEl){
 		var my_selected = element.find(".image-selected");
 		var my_list_view =  element.find(".image-listview");
 		var my_list_pager =  element.find(".image-pager");
@@ -1552,7 +1552,7 @@
 						var imageId = item.imageId;
 						my_selected.html(templates.selected(item));
 						if(isFunction(changeState))
-							changeState(true);
+							changeState(changeStateEl, true);
 					}
 				},
 				navigatable : false,
@@ -1560,7 +1560,7 @@
 				dataBound : function(e) {
 					my_selected.html('');
 					if(isFunction(changeState))
-						changeState(false);
+						changeState(changeStateEl, false);
 				}				
 			});			
 			my_list_view.on("mouseenter", ".img-wrapper", function(e) {
@@ -1572,7 +1572,7 @@
 		}else{
 			my_list_view.data('kendoListView').clearSelection();			
 			if(isFunction(changeState))
-				changeState(false);
+				changeState(changeStateEl, false);
 		}	
 		
 	}
@@ -1640,12 +1640,14 @@
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 					e.target // activated tab
 					e.relatedTarget // previous tab
-					that._changeState(false);					
+					
 					var tab_pane_id = $(e.target).attr('href');
-					var tab_pane = $(tab_pane_id);				
+					var tab_pane = $(tab_pane_id);			
+					var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
 					var my_selected = tab_pane.find(".image-selected");
 					var my_list_view =  tab_pane.find(".image-listview");
-					var my_list_pager =  tab_pane.find(".image-pager");					
+					var my_list_pager =  tab_pane.find(".image-pager");			
+					that._changeState(my_insert_btn, false);	
 					switch (tab_pane_id) {
 						case "#" + that.options.guid[0]:					
 							if(that._objectId() > 0){							
@@ -1691,7 +1693,7 @@
 												var item = data[current_index];
 												var imageId = item.imageId;
 												if (imageId > 0) {
-													that._changeState(true);
+													that._changeState(my_insert_btn, true);
 													tab_pane.find('.panel').prepend(templates.selected(item));													
 												}
 											}
@@ -1700,7 +1702,7 @@
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
 											tab_pane.find('.panel-body.custom-selected-image').remove();
-											that._changeState(false);
+											that._changeState(my_insert_btn, false);
 										}
 									});
 									my_list_view.on("mouseenter",".img-wrapper", function(e) {
@@ -1720,13 +1722,13 @@
 							}							
 							break;
 						case "#" + that.options.guid[1]:
-							createImagePanel(tab_pane, 2, 0 , that._changeState );
+							createImagePanel(tab_pane, 2, 0 , that._changeState, my_insert_btn );
 							break;
 						case "#" + that.options.guid[2]:
-							createImagePanel(tab_pane, 30, 0 , that._changeState);
+							createImagePanel(tab_pane, 30, 0 , that._changeState, my_insert_btn);
 							break;
 						case "#"+ that.options.guid[3]:
-							createImagePanel(tab_pane, 1, 0 , that._changeState);
+							createImagePanel(tab_pane, 1, 0 , that._changeState, my_insert_btn);
 							break;
 						case "#" + that.options.guid[4]:
 							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
@@ -1755,7 +1757,7 @@
 												form_input.parent().removeClass('has-error');
 											if (form_input.parent().hasClass('has-success'))
 												form_input.parent().removeClass('has-success');
-											that._changeState(false);
+											that._changeState(my_insert_btn, false);
 										} else {
 											selected_img.attr('src',form_input.val()).load(
 															function() {
@@ -1763,7 +1765,7 @@
 																	form_input.parent().removeClass('has-error');
 																form_input.parent().addClass('has-success');
 																selected_img.removeClass('hide');
-																that._changeState(true);
+																that._changeState(my_insert_btn, true);
 															}).error(
 															function() {
 																if (!selected_img.hasClass('hide'))
@@ -1771,7 +1773,7 @@
 																if (form_input.parent().hasClass('has-success'))
 																	form_input.parent().removeClass('has-success');
 																form_input.parent().addClass('has-error');
-																that._changeState(false);
+																that._changeState(my_insert_btn, false);
 															});
 										}
 				});
@@ -1816,9 +1818,9 @@
 				var that = this;
 				return that.element.find('.tab-content > .tab-pane.active');
 			},
-			_changeState : function(enabled) {
+			_changeState : function(changeStateEl, enabled) {
 				var that = this;				
-				alert( that + ", " + that.element );
+				alert( that + ", " + changeStateEl );
 				if (enabled) {
 					that.element.find(	'.modal-footer .btn.custom-insert-img').removeAttr('disabled');
 				} else {
