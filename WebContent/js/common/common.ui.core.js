@@ -1614,7 +1614,7 @@
 				$(that.element).remove();
 			},
 			_getImageLink : function(image, callback) {
-				ajax("/data/image/" + image.imageId + "/link.json", {
+				ajax("/data/image/" + image.imageId + "/link.json?output=json", {
 					success : function(data) {
 						callback(data);
 					}					
