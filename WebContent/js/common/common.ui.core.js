@@ -1556,7 +1556,7 @@
 					}
 				},
 				navigatable : false,
-				template : kendo.template($("#photo-list-view-template").html()),
+				template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 				dataBound : function(e) {
 					my_selected.html('');
 					if(isFunction(changeState))
