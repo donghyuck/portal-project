@@ -1012,10 +1012,11 @@
 				var footer = wrapper.children(PANEL_FOOTER);
 				footer.addClass("text-right");
 				footer.append('<button class="btn btn-info btn-sm rounded" type="button" data-action="scrollTop"><i class="fa fa-chevron-circle-up"></i> 맨위로</button>');
-				wrapper.find("button[data-action='scrollTop']").click(function(e){
-					common.ui.scroll.top(wrapper);			
-				});
 			}
+			
+			wrapper.find("button[data-action='scrollTop']").click(function(e){
+				common.ui.scroll.top(wrapper);			
+			});
 			
 			if (content) {
 				that.render();			
