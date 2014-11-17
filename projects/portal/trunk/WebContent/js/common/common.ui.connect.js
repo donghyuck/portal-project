@@ -169,7 +169,7 @@
 		if(!renderTo.data("kendoListView")){			
 			var _data = {
 				parameterMap : function(options, operation) {
-					return {};
+					return options;
 				}
 			};
 			switch (connect.providerId){
@@ -194,7 +194,8 @@
 						read : {
 							type : POST,
 							url : _data.url || ""
-						}
+						},
+						parameterMap : _data.parameterMap
 					},
 					schema:{
 						data : _data.data						
