@@ -17,15 +17,15 @@
 			color: \\#fff;
 		}
 		.image-broswer .image-selected:after {
-			top: 10px;
-			right: 15px;
-			content: "\f05d";
-			font-size: 20px;
+			top: 50px;
+			right: 25px;
+			content: "\f0c6";
+			font-size: 30px;
 			position: absolute;
 			font-weight: normal;
 			display: inline-block;
 			font-family: FontAwesome;
-			color: \\#ccc;		
+			color: \\#222222;
 		}
 			
 		.image-broswer .image-selected{
