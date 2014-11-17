@@ -1786,7 +1786,8 @@
 						case that.options.guid[4]:
 							var selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();
 							if( selected_url.length > 0){
-								that.trigger(APPLY, { html : templates.image({ url : selected_url }) });								
+								that.trigger(APPLY, { html : templates.image({ url : selected_url }) });
+								that._changeState(my_insert_btn, false);
 							}
 						break;
 						default:			
@@ -1795,11 +1796,14 @@
 							$.each( active_list_view.data('kendoListView').select(), function(index, item){
 								var image = active_data[$(item).index()];
 								that._getImageLink(image, function(data){
-									alert( stringify(data));
-									
+									if(!defined(data.error)){
+										
+										
+									}
 								});
 								//selected_url =  templates.download(image);		
-							});								
+							})
+							that._changeState(my_insert_btn, false);;								
 					}
 				});	
 			},
