@@ -133,10 +133,10 @@
 					var renderTo = e.target.element.find(".panel-body ul.media-list"),
 					footer = renderTo.find(".panel-footer");
 					
-					footer.append('<btn <button class="btn btn-info btn-sm rounded" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
+					
 					
 					common.ui.connect.listview( renderTo, connect );
-					
+					footer.append('<btn <button class="btn btn-info btn-sm rounded" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
 					
 					alert("ss");
 				}
