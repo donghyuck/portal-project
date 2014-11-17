@@ -1817,7 +1817,8 @@
 				return that.element.find('.tab-content > .tab-pane.active');
 			},
 			_changeState : function(enabled) {
-				var that = this;								
+				var that = this;				
+				alert( that + ", " + that.element );
 				if (enabled) {
 					that.element.find(	'.modal-footer .btn.custom-insert-img').removeAttr('disabled');
 				} else {
