@@ -1636,21 +1636,22 @@
 			_createDialog : function() {
 				var that = this;
 				var template = that._dialogTemplate();
-
+				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
+				
 				that.element.html(template( that.options ));
 				that.element.children('.modal').css('z-index', '2000');
 				
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-					e.target // activated tab
-					e.relatedTarget // previous tab
 					
+					e.target // activated tab
+					e.relatedTarget // previous tab					
 					var tab_pane_id = $(e.target).attr('href');
-					var tab_pane = $(tab_pane_id);			
-					var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
+					var tab_pane = $(tab_pane_id);								
 					var my_selected = tab_pane.find(".image-selected");
 					var my_list_view =  tab_pane.find(".image-listview");
 					var my_list_pager =  tab_pane.find(".image-pager");			
 					that._changeState(my_insert_btn, false);	
+					
 					switch (tab_pane_id) {
 						case "#" + that.options.guid[0]:					
 							if(that._objectId() > 0){							
@@ -1748,46 +1749,45 @@
 				}); //end of tabs
 				
 				// handle select image url 
-				that.element.find('.modal-body input[name="custom-selected-url"]').on(
-									'change',
+				that.element.find('.modal-body input[name="custom-selected-url"]').on( 'change',
+					function() {
+						var form_input = $(this);
+						var selected_img = $("#"+ that.options.guid[4]).children('img');
+						if (form_input.val().length == 0) {
+							if (!selected_img.hasClass('hide'))
+								selected_img.addClass('hide');
+								if (form_input.parent().hasClass('has-error'))
+									form_input.parent().removeClass('has-error');
+								if (form_input.parent().hasClass('has-success'))
+									form_input.parent().removeClass('has-success');
+								that._changeState(my_insert_btn, false);
+							} else {
+								selected_img.attr('src',form_input.val()).load(
 									function() {
-										var form_input = $(this);
-										var selected_img = $("#"+ that.options.guid[TAB_PANE_URL_ID]).children('img');
-										if (form_input.val().length == 0) {
+										if (form_input.parent().hasClass('has-error'))
+											form_input.parent().removeClass('has-error');
+										form_input.parent().addClass('has-success');
+										selected_img.removeClass('hide');
+										that._changeState(my_insert_btn, true);
+									}).error(
+										function() {
 											if (!selected_img.hasClass('hide'))
 												selected_img.addClass('hide');
-											if (form_input.parent().hasClass('has-error'))
-												form_input.parent().removeClass('has-error');
 											if (form_input.parent().hasClass('has-success'))
 												form_input.parent().removeClass('has-success');
+											form_input.parent().addClass('has-error');
 											that._changeState(my_insert_btn, false);
-										} else {
-											selected_img.attr('src',form_input.val()).load(
-															function() {
-																if (form_input.parent().hasClass('has-error'))
-																	form_input.parent().removeClass('has-error');
-																form_input.parent().addClass('has-success');
-																selected_img.removeClass('hide');
-																that._changeState(my_insert_btn, true);
-															}).error(
-															function() {
-																if (!selected_img.hasClass('hide'))
-																	selected_img.addClass('hide');
-																if (form_input.parent().hasClass('has-success'))
-																	form_input.parent().removeClass('has-success');
-																form_input.parent().addClass('has-error');
-																that._changeState(my_insert_btn, false);
-															});
-										}
-				});
+									});
+							}
+					});
 
 				// handle insert 		
-				that.element.find('.modal-footer .btn.custom-insert-img').on('click', function() {						
+				my_insert_btn.on('click', function() {						
 					var tab_pane = that._activePane();
 					var tab_pane_id	= tab_pane.attr('id');
 					var selected_url = '';					
 					switch (tab_pane_id) {
-						case that.options.guid[TAB_PANE_URL_ID]:
+						case that.options.guid[4]:
 							selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();							
 						break;
 						default:					
