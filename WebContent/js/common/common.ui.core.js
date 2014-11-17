@@ -1697,7 +1697,7 @@
 											}
 										},
 										navigatable : false,
-										template : kendo.template($("#photo-list-view-template").html()),
+										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
 											tab_pane.find('.panel-body.custom-selected-image').remove();
 											that._changeState(false);
