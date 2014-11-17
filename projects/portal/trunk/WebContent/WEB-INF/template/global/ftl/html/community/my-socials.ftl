@@ -104,8 +104,7 @@
 		<!-- ============================== -->
 		<!-- display media stream panel                        -->
 		<!-- ============================== -->		
-		function showMediaPanel(connect){				
-			
+		function showMediaPanel(connect){	
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.extPanel(
 			appendTo,
@@ -126,8 +125,7 @@
 						comon.ui.listview(view).refersh();
 					}
 				},
-				custom: function(e){
-					
+				custom: function(e){					
 					alert("준비중입니다.");
 				},
 				open: function(e){
@@ -222,7 +220,6 @@
 					# var media = entities.media[i] ; #					
 					<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-responsive">
 					# } #
-										
 					<ul class="list-unstyled list-inline text-muted">
                             <li><i class="fa fa-retweet"></i> #= retweetCount #</li>
                             <li><i class="fa fa-star-o"></i> #= favoriteCount #</li>
