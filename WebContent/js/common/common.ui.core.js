@@ -1800,7 +1800,6 @@
 										that.trigger(APPLY, { html : templates.image(templates.linkUrl( data )) });										
 									}
 								});
-								//selected_url =  templates.download(image);		
 							})
 							that._changeState(my_insert_btn, false);	
 					}
