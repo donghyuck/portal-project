@@ -130,12 +130,9 @@
 				},
 				open: function(e){
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
-					var renderTo = e.target.element.find(".panel-body ul.media-list"),
-					footer = renderTo.find(".panel-footer");
-					
-					
-					
+					var renderTo = e.target.element.find(".panel-body ul.media-list");
 					common.ui.connect.listview( renderTo, connect );
+					var footer = renderTo.find(".panel-footer");
 					footer.append('<btn <button class="btn btn-info btn-sm rounded" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
 					
 					alert("ss");
