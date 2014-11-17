@@ -12,7 +12,7 @@
 			margin-top: -5px;
 		}
 
-		.img-wrapper {
+		.image-broswer .img-wrapper {
 			float: left;
 			position: relative;
 			width: 32.99%;
@@ -22,12 +22,12 @@
 			overflow: hidden;		
 		}
 		
-		.img-wrapper img{
+		.image-broswer .img-wrapper img{
 			width: 100%;
 			height: 100%;
 		}
 				
-		.img-description {
+		.image-broswer .img-wrapper .img-description {
 			position: absolute;
 			top: 0;
 			width: 100%	;
@@ -36,7 +36,7 @@
 			background-color: rgba(0,0,0,0.8)
 		}
 	
-		.img-wrapper h3
+		.image-broswer .img-wrapper h3
 		{
 			margin: 0;
             padding: 10px 10px 0 10px;
@@ -47,7 +47,7 @@
             word-wrap: break-word;
 		}
 
-		.img-wrapper p {
+		.image-broswer .img-wrapper p {
 			color: \\#ffffff;
 			font-weight: normal;
 			padding: 0 10px;
@@ -55,7 +55,7 @@
 		}		
 		
 		
-		.k-listview:after, .attach dl:after {
+		.image-broswer .k-listview:after, .attach dl:after {
 			content: ".";
 			display: block;
 			height: 0;
@@ -63,7 +63,7 @@
 			visibility: hidden;
 		}
 		
-		.k-pager-wrap {
+		.image-broswer .k-pager-wrap {
 			border : 0px;
 			border-width: 0px;
 			background : transparent;
