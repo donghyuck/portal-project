@@ -1470,6 +1470,7 @@
 		isPlainObject = $.isPlainObject, 
 		ui = common.ui,
 		defined = common.ui.defined,
+		ajax = common.ui.ajax,
 		guid = common.guid,
 		proxy = $.proxy, 
 		extend = $.extend, 
@@ -1613,11 +1614,10 @@
 				$(that.element).remove();
 			},
 			_getImageLink : function(image, callback) {
-				common.api.getImagelink({
-					imageId : image.imageId,
+				ajax("/data/image/" + image.imageId + "/link.json", {
 					success : function(data) {
 						callback(data);
-					}
+					}					
 				});
 			},
 			_modal : function() {
@@ -1778,7 +1778,6 @@
 									});
 							}
 					});
-
 				// handle insert 		
 				my_insert_btn.on('click', function() {						
 					var active_pane = that._activePane();
