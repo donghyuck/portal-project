@@ -1494,12 +1494,14 @@
 				'</div>' +
 				'<div class="col-xs-10">' +						
 				'<h5><span class="label label-warning label-lightweight">#: contentType #</span> #:name# <small>(#: formattedSize() #)</small></h5>' +
+				/**
 				'<ul class="list-unstyled">' +
 				'<li><i class="fa fa-user color-green"></i></li>' +
 				'<li><i class="fa fa-calendar color-green"></i> #: formattedCreationDate() #</li>' +
 				'<li><i class="fa fa-calendar color-green"></i> #: formattedModifiedDate() #</li>' +
 				'<li><i class="fa fa-tags color-green"></i></li>' +
 				'</ul>' +
+				**/
 				'</div>' +
 				'</div>'					
 			),
