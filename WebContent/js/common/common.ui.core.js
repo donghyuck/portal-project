@@ -1627,7 +1627,7 @@
 			_objectId : function(){
 				var that = this;
 				if( typeof that.options.data === 'object' ){	
-					if( that.options.data instanceof common.models.Page ){
+					if( that.options.data instanceof common.ui.data.Page ){
 						return that.options.data.pageId ;
 					}
 				}
