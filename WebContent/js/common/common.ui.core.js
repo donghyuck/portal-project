@@ -1802,7 +1802,7 @@
 								});
 								//selected_url =  templates.download(image);		
 							})
-							that._changeState(my_insert_btn, false);;								
+							that._changeState(my_insert_btn, false);	
 					}
 				});	
 			},
