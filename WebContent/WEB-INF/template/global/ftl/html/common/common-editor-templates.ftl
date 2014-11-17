@@ -14,7 +14,7 @@
 			font-weight: normal;
 			display: inline-block;
 			font-family: FontAwesome;
-			color: #fff;
+			color: \\#fff;
 		}
 			
 		.image-broswer .img-wrapper {
