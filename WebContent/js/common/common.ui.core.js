@@ -1797,7 +1797,11 @@
 								var image = active_data[$(item).index()];
 								that._getImageLink(image, function(data){
 									if(!defined(data.error)){
-										that.trigger(APPLY, { html : templates.image(templates.linkUrl( data )) });										
+										that.trigger(APPLY, { 
+											html : templates.image({ 
+												url: templates.linkUrl( data )
+											})
+										});										
 									}
 								});
 							})
