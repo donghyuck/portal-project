@@ -32,7 +32,7 @@ function createEditor( renderToString, bodyEditor ){
 					"/styles/fonts/nanumgothic.css",
 					"/styles/bootstrap/3.1.1/bootstrap.min.css",
 					"/styles/fonts/nanumgothic.css",
-					"/styles/common.themes/unify/style.css.css"
+					"/styles/common.themes/unify/style.css.css",
 					"/styles/common/common.ui.css"
 				]
 		});
