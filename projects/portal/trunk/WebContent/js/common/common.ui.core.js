@@ -1782,7 +1782,7 @@
 				// handle insert 		
 				my_insert_btn.on('click', function() {						
 					var active_pane = that._activePane();
-					var active_pane_id	= tab_pane.attr('id');			
+					var active_pane_id	= active_pane.attr('id');			
 					switch (active_pane_id) {
 						case that.options.guid[4]:
 							var selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();
