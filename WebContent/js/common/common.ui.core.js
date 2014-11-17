@@ -1489,10 +1489,10 @@
 		templates = {
 			selected : template(
 				'<div class="row">' +
-				'<div class="col-xs-4">'+
+				'<div class="col-xs-2">'+
 				'<img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" alt="#=name#" class="img-responsive">' +
 				'</div>' +
-				'<div class="col-xs-8">' +						
+				'<div class="col-xs-10">' +						
 				'<h5><span class="label label-warning label-lightweight">#: contentType #</span> #:name# <small>(#: formattedSize() #)</small></h5>' +
 				'<ul class="list-unstyled">' +
 				'<li><i class="fa fa-user color-green"></i></li>' +
