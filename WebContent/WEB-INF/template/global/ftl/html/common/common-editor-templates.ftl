@@ -9,7 +9,7 @@
 			top: 10px;
 			right: 15px;
 			content: "\\f05d";
-			font-size: 4em;
+			font-size: 3em;
 			position: absolute;
 			font-weight: normal;
 			display: inline-block;
@@ -18,9 +18,9 @@
 		}
 		.image-broswer .image-selected:after {
 			top: 50px;
-			right: 25px;
+			right: 30px;
 			content: "\\f0c6";
-			font-size: 4em;
+			font-size: 3em;
 			position: absolute;
 			font-weight: normal;
 			display: inline-block;
