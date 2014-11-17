@@ -1826,6 +1826,8 @@
 				if(!defined(changeStateEl)){
 					changeStateEl = that.element.find(	'.modal-footer .btn.custom-insert-img');					
 				}
+				
+				alert(changeStateEl.html() );
 				if (enabled) {
 					changeStateEl.removeAttr('disabled');
 				} else {
