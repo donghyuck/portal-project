@@ -194,13 +194,6 @@
 						read : {
 							type : POST,
 							url : _data.url || ""
-						},
-						parameterMap : _data.parameterMap || function(options, operation) {
-							if (operation != "read" && options) {
-								return {};
-							} else {
-								return options;
-							}
 						}
 					},
 					schema:{
