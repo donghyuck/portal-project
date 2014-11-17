@@ -1781,37 +1781,23 @@
 
 				// handle insert 		
 				my_insert_btn.on('click', function() {						
-					var tab_pane = that._activePane();
-					var tab_pane_id	= tab_pane.attr('id');
-					var selected_url = '';					
-					switch (tab_pane_id) {
+					var active_pane = that._activePane();
+					var active_pane_id	= tab_pane.attr('id');			
+					switch (active_pane_id) {
 						case that.options.guid[4]:
-							selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();							
+							var selected_url = that.element.find('.modal-body input[name="custom-selected-url"]').val();
+							if( selected_url.length > 0){
+								that.trigger(APPLY, { html : templates.image({ url : selected_url }) });								
+							}
 						break;
-						default:					
-							var active_list_view = $( "#" + tab_pane_id + "-list-view").data('kendoListView');
-							var data = active_list_view.dataSource.view();						
-							$.each( active_list_view.select(), function(index, item){
+						default:			
+							var active_list_view =  active_pane.find(".image-listview");
+							var data = active_list_view.data('kendoListView').dataSource.view();						
+							$.each( active_list_view.data('kendoListView').select(), function(index, item){
 								var image = data[$(item).index()];
-								// website (public) 
-								if( image.objectType === 30 )
-								{
-									selected_url =  templates.download(image);									
-								}else{
-									that._getImageLink(image, function(data) {
-										if (typeof data.imageLink === 'object') {
-											selected_url = templates.url(data.imageLink);
-										}
-									});								
-								}
+								alert( image.imageId);
+								//selected_url =  templates.download(image);		
 							});								
-					}
-					if( selected_url.length > 0){
-						that.trigger(APPLY, {
-							html : templates.image({
-								url : selected_url
-							})
-						});
 					}
 				});	
 			},
@@ -1824,9 +1810,6 @@
 				if(!defined(changeStateEl)){
 					changeStateEl = that.element.find(	'.modal-footer .btn.custom-insert-img');					
 				}
-				
-				alert(changeStateEl.html() );
-				
 				if (enabled) {
 					changeStateEl.removeAttr('disabled');
 				} else {
