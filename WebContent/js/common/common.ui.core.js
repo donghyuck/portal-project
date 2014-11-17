@@ -1635,12 +1635,10 @@
 			},
 			_createDialog : function() {
 				var that = this;
-				var template = that._dialogTemplate();
-				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
-				
+				var template = that._dialogTemplate();								
 				that.element.html(template( that.options ));
-				that.element.children('.modal').css('z-index', '2000');
-				
+				that.element.children('.modal').css('z-index', '2000');				
+				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 					
 					e.target // activated tab
@@ -1828,6 +1826,7 @@
 				}
 				
 				alert(changeStateEl.html() );
+				
 				if (enabled) {
 					changeStateEl.removeAttr('disabled');
 				} else {
