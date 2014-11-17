@@ -1490,7 +1490,7 @@
 			selected : template(
 				'<div class="row">' +
 				'<div class="col-xs-2">'+
-				'<img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" alt="#=name#" class="img-responsive">' +
+				'<img src="/community/download-my-domain-image.do?imageId=#=imageId#&width=150&height=150" alt="#=name#" class="img-responsive" data-id="#=imageId#">' +
 				'</div>' +
 				'<div class="col-xs-10">' +						
 				'<h5><span class="label label-warning label-lightweight">#: contentType #</span> #:name# <small>(#: formattedSize() #)</small></h5>' +
