@@ -1640,15 +1640,12 @@
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
 					e.target // activated tab
 					e.relatedTarget // previous tab
-					that._changeState(false);
+					that._changeState(false);					
 					var tab_pane_id = $(e.target).attr('href');
-					var tab_pane = $(tab_pane_id);
-					
-					
-					var my_selected = $(tab_pane_id + "-selected");
-					var my_list_view = $(tab_pane_id + "-list-view");
-					var my_list_pager = $(tab_pane_id + "-list-pager");						
-					
+					var tab_pane = $(tab_pane_id);				
+					var my_selected = tab_pane.find(".image-selected");
+					var my_list_view =  tab_pane.find(".image-listview");
+					var my_list_pager =  tab_pane.find(".image-pager");					
 					switch (tab_pane_id) {
 						case "#" + that.options.guid[0]:					
 							if(that._objectId() > 0){							
@@ -1820,8 +1817,7 @@
 				return that.element.find('.tab-content > .tab-pane.active');
 			},
 			_changeState : function(enabled) {
-				var that = this;
-				
+				var that = this;				
 				alert( that.element.html() );
 				if (enabled) {
 					that.element.find(	'.modal-footer .btn.custom-insert-img').removeAttr('disabled');
