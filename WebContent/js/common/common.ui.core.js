@@ -1507,7 +1507,7 @@
 				'</div>'					
 			),
 			image : template('<img src="#: url #" class="img-responsive"/>'),
-			url : template('/download/image/#= linkId #'),
+			linkUrl : template('/download/image/#= linkId #'),
 			download : template('/download/image/#=imageId#/#=name#')
 		},
 		handleAjaxError = common.ui.handleAjaxError;
@@ -1797,8 +1797,7 @@
 								var image = active_data[$(item).index()];
 								that._getImageLink(image, function(data){
 									if(!defined(data.error)){
-										
-										
+										that.trigger(APPLY, { html : templates.image(templates.linkUrl( data )) });										
 									}
 								});
 								//selected_url =  templates.download(image);		
