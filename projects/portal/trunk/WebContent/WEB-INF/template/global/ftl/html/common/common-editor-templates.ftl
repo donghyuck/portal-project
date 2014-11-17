@@ -9,7 +9,7 @@
 			top: 10px;
 			right: 15px;
 			content: "\f05d";
-			font-size: 15px;
+			font-size: 4em;
 			position: absolute;
 			font-weight: normal;
 			display: inline-block;
@@ -20,7 +20,7 @@
 			top: 50px;
 			right: 25px;
 			content: "\f0c6";
-			font-size: 30px;
+			font-size: 4em;
 			position: absolute;
 			font-weight: normal;
 			display: inline-block;
