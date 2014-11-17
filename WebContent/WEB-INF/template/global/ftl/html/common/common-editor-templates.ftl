@@ -243,7 +243,7 @@
 		</div><!-- /.modal -->				
 	</script>
 	
-<script type="text/x-kendo-tmpl" id="photo-list-view-template">
+<script type="text/x-kendo-tmpl" id="image-broswer-photo-list-view-template">
 	<div class="img-wrapper">			
 			#if (contentType.match("^image") ) {#
 				<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#:imageId#" alt="#:name# 이미지" />
