@@ -118,16 +118,12 @@
 										<h5 ><i class="fa fa-upload"></i> <strong>업로드</strong>&nbsp;<small> 삽입할 이미지를 선택하세요.</small></h5>
 										<div class="panel panel-default">			
 											<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">
-												<div class="row padding-sm">
-													<div class="col-xs-8">
-														<p class="text-muted">
-															<small><i class="fa fa-info"></i> 업로드 버튼을 클릭하여 여러개의 파일을 한번에 업로드할 수 있습니다.</small>		
-														</p>
-													</div>
-													<div class="col-xs-4"><button type="button" class="btn btn-info btn-sm btn-block btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> &nbsp; 이미지 업로드</button></div>
-												</div>
-												<div class="image-selected funny-boxes funny-boxes-top-sea no-margin" data-xtype></div>
+												<p class="text-muted">
+													<small><i class="fa fa-info"></i> 업로드 버튼을 클릭하여 여러개의 파일을 한번에 업로드할 수 있습니다.</small>		
+												</p>
+												<button type="button" class="btn btn-info btn-sm pull-right btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> &nbsp; 이미지 업로드</button>												
 											</div>
+											<div class="panel-body image-selected"></div>
 											<div class="panel-body scrollable" style="max-height:450px; padding:5px;">
 												<div class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 											</div>	
