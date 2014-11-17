@@ -117,9 +117,7 @@
 								<div class="tab-pane fade" id=#:guid[1]#>
 									<h5 ><i class="fa fa-picture-o"></i> <strong>MY 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 									<div class="panel panel-default panel-flat">								
-										<div class="panel-body no-padding"  style="border-bottom: 1px solid \\#e5e5e5;">	
-											<div class="image-selected funny-boxes no-margin"></div>
-										</div>
+										<div class="panel-body image-selected"  style="border-bottom: 1px solid #e5e5e5; padding:5px;"></div>
 										<div class="panel-body scrollable color4" style="max-height:450px;">
 											<div class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 										</div>	
@@ -131,9 +129,7 @@
 							  <div class="tab-pane fade" id=#:guid[2]#>
 								<h5 ><i class="fa fa-picture-o"></i> <strong>사이트 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>
 								<div class="panel panel-default panel-flat">			
-									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
-										<div class="image-selected funny-boxes no-margin"></div>
-									</div>													
+									<div class="panel-body image-selected"  style="border-bottom: 1px solid #e5e5e5; padding:5px;"></div>													
 									<div class="panel-body scrollable color4" style="max-height:450px;">
 										<div class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
@@ -145,9 +141,7 @@
  							  <div class="tab-pane fade" id=#:guid[3]#>
 								<h5 ><i class="fa fa-picture-o"></i> <strong>회사 이미지</strong>&nbsp;<small>삽입할 이미지를 선택하세요.</small></h5>	
 								<div class="panel panel-default panel-flat">								
-									<div class="panel-body no-padding" style="border-bottom: 1px solid \\#e5e5e5;">	
-										<div class="image-selected funny-boxes no-margin"></div>
-									</div>									
+									<div class="panel-body image-selected"  style="border-bottom: 1px solid #e5e5e5; padding:5px;"></div>>									
 									<div class="panel-body scrollable color4" style="max-height:450px;">
 										<div class="image-listview" style="padding:0px; border: 0px; min-height: 200px;"></div>
 									</div>	
