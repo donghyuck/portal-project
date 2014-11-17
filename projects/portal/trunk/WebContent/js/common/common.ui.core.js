@@ -1469,6 +1469,7 @@
 		Widget = kendo.ui.Widget, 
 		isPlainObject = $.isPlainObject, 
 		ui = common.ui,
+		defined = common.ui.defined,
 		guid = common.guid,
 		proxy = $.proxy, 
 		extend = $.extend, 
@@ -1820,11 +1821,13 @@
 			},
 			_changeState : function(changeStateEl, enabled) {
 				var that = this;				
-				alert( that + ", " + changeStateEl );
+				if(!defined(changeStateEl)){
+					changeStateEl = that.element.find(	'.modal-footer .btn.custom-insert-img');					
+				}
 				if (enabled) {
-					that.element.find(	'.modal-footer .btn.custom-insert-img').removeAttr('disabled');
+					changeStateEl.removeAttr('disabled');
 				} else {
-					that.element.find('.modal-footer .btn.custom-insert-img').attr('disabled', 'disabled');
+					changeStateEl.attr('disabled', 'disabled');
 				}
 			},
 			_dialogTemplate : function() {
