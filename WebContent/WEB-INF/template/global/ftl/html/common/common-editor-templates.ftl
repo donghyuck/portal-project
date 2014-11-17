@@ -9,7 +9,6 @@
 			-webkit-transition: all .2s ease-in-out;
 			transition: all .2s ease-in-out;
 			position: relative;
-			margin-top: -5px;
 		}
 
 		.image-broswer .img-wrapper {
