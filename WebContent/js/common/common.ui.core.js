@@ -1791,10 +1791,13 @@
 						break;
 						default:			
 							var active_list_view =  active_pane.find(".image-listview");
-							var data = active_list_view.data('kendoListView').dataSource.view();						
+							var active_data = active_list_view.data('kendoListView').dataSource.view();						
 							$.each( active_list_view.data('kendoListView').select(), function(index, item){
-								var image = data[$(item).index()];
-								alert( image.imageId);
+								var image = active_data[$(item).index()];
+								that._getImageLink(image, function(data){
+									alert( stringify(data));
+									
+								});
 								//selected_url =  templates.download(image);		
 							});								
 					}
