@@ -131,14 +131,17 @@
 				open: function(e){
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");					
 					var renderTo = e.target.element.find(".panel-body ul.media-list");
-					common.ui.connect.listview( renderTo, connect );										
-					var footer = e.target.element.find(".panel-footer");
-					footer.prepend('<button class="btn btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
-					footer.find("[data-action='more']").click(function(e){
-						var data = common.ui.connect.listview( renderTo ).dataSource.view();	
-						alert(data[data.length -1].id);
-						common.ui.connect.listview( renderTo ).dataSource.read({sinceId: data[data.length -1].id});
-					});
+					common.ui.connect.listview( renderTo, connect );			
+					
+					if( connect.providerId === 'tumblr' ){							
+						var footer = e.target.element.find(".panel-footer");
+						footer.prepend('<button class="btn btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
+						footer.find("[data-action='more']").click(function(e){
+							var data = common.ui.connect.listview( renderTo ).dataSource.view();	
+							alert(data[data.length -1].id);
+							common.ui.connect.listview( renderTo ).dataSource.read({sinceId: data[data.length -1].id});
+						});
+					}
 				}
 			});
 			panel.show();
