@@ -132,6 +132,7 @@
 					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");		
 					var renderTo = e.target.element.find(".panel-body ul.media-list");
 					common.ui.connect.listview( renderTo, connect );
+					alert("ss");
 				}
 			});
 			panel.show();
