@@ -16,6 +16,17 @@
 			font-family: FontAwesome;
 			color: \\#fff;
 		}
+		.image-broswer .image-selected:after {
+			top: 10px;
+			right: 15px;
+			content: "\f05d";
+			font-size: 20px;
+			position: absolute;
+			font-weight: normal;
+			display: inline-block;
+			font-family: FontAwesome;
+			color: \\#ccc;		
+		}
 			
 		.image-broswer .image-selected{
 			border-bottom: 2px solid \\#e5e5e5;
