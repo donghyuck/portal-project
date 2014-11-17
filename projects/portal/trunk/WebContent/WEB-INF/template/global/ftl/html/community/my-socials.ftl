@@ -134,7 +134,7 @@
 					var renderTo = e.target.element.find(".panel-body ul.media-list");
 					common.ui.connect.listview( renderTo, connect );
 					var footer = e.target.element.find(".panel-footer");
-					footer.prepend('<btn <button class="btn btn-info btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
+					footer.prepend('<btn <button class="btn btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
 					
 					alert(footer.html());
 				}
