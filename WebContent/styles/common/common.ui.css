@@ -218,6 +218,24 @@ border-bottom: solid 2px #616161;
 	display: inline-block;
 	border-bottom: solid 2px #aaa;	
 }
+
+.v-header-shadow {
+	background: url(/images/common/header/shadow-top.png) no-repeat;
+	position: absolute;
+	-moz-background-size: 100% 100%;
+	-o-background-size: 100% 100%;
+	background-size: 100% 100%;
+	left: 0;
+	right: 0;
+	height: 40px;
+	width: 80%;
+	bottom: -40px;
+	margin-left: auto;
+	opacity: 0.6;
+	margin-right: auto;
+}
+
+
 /*
 * Utility 
 **/
