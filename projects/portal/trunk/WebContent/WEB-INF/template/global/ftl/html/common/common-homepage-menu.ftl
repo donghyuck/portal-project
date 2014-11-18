@@ -83,8 +83,9 @@
 							</ul>				
 						</div>						
 					</div>
-				</nav>
-			</div>
+				</nav><!-- /.topbar -->
+				<span class="v-header-shadow"></span>
+			</div><!-- /.header -->
 			</#if>		
 			<!-- END MENU -->		
 			<!-- START My profile Modal -->
