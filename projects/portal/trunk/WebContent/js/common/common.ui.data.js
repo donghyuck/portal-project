@@ -378,7 +378,7 @@
 		 		parameterMap: function (options, operation){			
 					if (operation !== "read" && options.models) {
 						alert(kendo.stringify(options));
-						return kendo.stringify(options);//{ imageId: imageId, items: kendo.stringify(options.models)};
+						return kendo.stringify(options.models);//{ imageId: imageId, items: kendo.stringify(options.models)};
 					} 
 					return { imageId: imageId }
 				}
