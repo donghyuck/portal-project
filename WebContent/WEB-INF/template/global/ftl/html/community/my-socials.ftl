@@ -138,10 +138,9 @@
 						that.options.pageIndex: 0 ;
 						var footer =that.element.find(".panel-footer");
 						footer.prepend('<button class="btn btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
-						footer.find("[data-action='more']").click(function(e){
-							var listview = common.ui.connect.listview( renderTo );
-							listview.options.pageIndex = listview.options.pageIndex + listview.options.pageSize ;
-							var data = listview.dataSource.view();	
+						footer.find("[data-action='more']").click(function(e){							
+							that.options.pageIndex = that.options.pageIndex + that.options.pageSize ;
+							var data = common.ui.connect.listview( renderTo ).dataSource.view();	
 							common.ui.connect.listview( renderTo ).dataSource.read({offset: listview.options.pageIndex });
 						});
 					}
