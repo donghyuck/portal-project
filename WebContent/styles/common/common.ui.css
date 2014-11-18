@@ -219,6 +219,7 @@ border-bottom: solid 2px #616161;
 	border-bottom: solid 2px #aaa;	
 }
 
+/** v header and bg **/
 .v-header-shadow {
 	background: url(/images/common/header/shadow-top.png) no-repeat;
 	position: absolute;
@@ -235,6 +236,16 @@ border-bottom: solid 2px #616161;
 	margin-right: auto;
 }
 
+.v-bg-stylish.v-bg-stylish-v1 {
+	background-position: center top;
+	-moz-background-size: auto;
+}
+
+.v-page-heading.v-bg-stylish.v-bg-stylish-v1 {
+	background-color: #f7f7f7;
+	border-color: #DDDDDD;
+	background-image: url(/images/common/header/page-heading-bg.png);
+}
 
 /*
 * Utility 
