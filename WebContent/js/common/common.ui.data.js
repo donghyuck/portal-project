@@ -377,7 +377,6 @@
 				destroy: { url:serviceUrl, type:'DELETE' ,contentType : "application/json"},
 		 		parameterMap: function (options, operation){			
 					if (operation !== "read" && options.models) {
-						alert(kendo.stringify(options));
 						return kendo.stringify(options.models);//{ imageId: imageId, items: kendo.stringify(options.models)};
 					} 
 					return { imageId: imageId }
