@@ -66,7 +66,7 @@
 					$(".navbar-nav li[data-menu-item='${current_menu.parent.name}']").addClass("active");
 				});
 				</script>
-				<div class="breadcrumbs">
+				<div class="breadcrumbs v-page-heading v-bg-stylish v-bg-stylish-v1">
 			        <div class="container">
 			            <h1 class="pull-left">${ current_menu.title }
 			            	<small>
