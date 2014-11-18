@@ -319,8 +319,8 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation"  style="top:-4px;">		
+			
+				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">		
 					<ul class="nav navbar-nav pull-right">
 						<li>
 							<div id="personalized-buttons" class="navbar-btn btn-group">
@@ -344,7 +344,7 @@
 						</li>
 					</ul>
 				</div><!-- ./navbar-personalized -->			
-			</div>
+		
 			
 			<div id="main-content" class="container-fluid content profile no-padding-t" style="min-height:300px;">	
 				<div class="row">
