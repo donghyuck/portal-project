@@ -25,7 +25,11 @@
 <style>
 
 	.header {
-		border-bottom: solid 2px #F5F5F5;
+		/*border-bottom: solid 2px #F5F5F5;*/
+		width: 100%;
+		top: 0px;
+		padding-top: 0px !important;
+		border-bottom: 1px solid rgba(228, 228, 228, 0.23);		
 	}	
 	
 	.header .navbar-brand {
