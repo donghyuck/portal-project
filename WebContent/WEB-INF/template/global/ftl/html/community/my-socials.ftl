@@ -141,7 +141,7 @@
 						footer.find("[data-action='more']").click(function(e){							
 							that.options.pageIndex = that.options.pageIndex + that.options.pageSize ;
 							var data = common.ui.connect.listview( renderTo ).dataSource.view();	
-							common.ui.connect.listview( renderTo ).dataSource.read({offset: listview.options.pageIndex });
+							common.ui.connect.listview( renderTo ).dataSource.read({offset: that.options.pageIndex });
 						});
 					}
 				}
