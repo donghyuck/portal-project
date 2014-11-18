@@ -303,7 +303,7 @@
 					$('#photo-list-view'),
 					{
 						dataSource : common.ui.datasource(
-							'${request.contextPath}/community/list-my-image.do?output=json',
+							'${request.contextPath}/data/image/list.json?output=json',
 							{
 								transport : {
 									parameterMap :  function (options, operation){
@@ -317,8 +317,8 @@
 								pageSize: 12,
 								schema: {
 									model: common.ui.data.Image,
-									data : "targetImages",
-									total : "totalTargetImageCount"
+									data : "images",
+									total : "totalCount"
 								}
 							}
 						),
