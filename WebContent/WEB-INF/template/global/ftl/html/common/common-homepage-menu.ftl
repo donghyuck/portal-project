@@ -84,7 +84,7 @@
 						</div>						
 					</div>
 				</nav><!-- /.topbar -->
-				<span class="v-header-shadow"></span>
+				<!--<span class="v-header-shadow"></span>-->
 			</div><!-- /.header -->
 			</#if>		
 			<!-- END MENU -->		
