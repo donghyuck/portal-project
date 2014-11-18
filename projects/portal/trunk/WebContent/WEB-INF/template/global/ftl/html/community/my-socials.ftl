@@ -138,7 +138,7 @@
 						footer.prepend('<button class="btn btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
 						footer.find("[data-action='more']").click(function(e){
 							var data = common.ui.connect.listview( renderTo ).dataSource.view();	
-							common.ui.connect.listview( renderTo ).dataSource.read({sinceId: data[data.length -1].id});
+							common.ui.connect.listview( renderTo ).dataSource.read({offset: 19});
 						});
 					}
 				}
