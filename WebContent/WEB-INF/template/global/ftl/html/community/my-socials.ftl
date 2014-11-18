@@ -129,16 +129,20 @@
 					alert("준비중입니다.");
 				},
 				open: function(e){
-					$('#navbar-btn-my-streams').find('input[value="' + e.target.data().socialConnectId + '"]').parent().toggleClass("disabled");					
-					var renderTo = e.target.element.find(".panel-body ul.media-list");
-					common.ui.connect.listview( renderTo, connect );			
-					
+					var that = e.target;					
+					$('#navbar-btn-my-streams').find('input[value="' + that.data().socialConnectId + '"]').parent().toggleClass("disabled");					
+					var renderTo = that.element.find(".panel-body ul.media-list");
+					common.ui.connect.listview( renderTo, connect );
 					if( connect.providerId === 'tumblr' ){							
-						var footer = e.target.element.find(".panel-footer");
+						that.options.pageSize = 20 ;
+						that.options.pageIndex: 0 ;
+						var footer =that.element.find(".panel-footer");
 						footer.prepend('<button class="btn btn-primary btn-sm rounded m-r-xs" type="button" data-action="more"><i class="fa fa-angle-double-down"></i> 더 보기</button>');
 						footer.find("[data-action='more']").click(function(e){
-							var data = common.ui.connect.listview( renderTo ).dataSource.view();	
-							common.ui.connect.listview( renderTo ).dataSource.read({offset: 19});
+							var listview = common.ui.connect.listview( renderTo );
+							listview.options.pageIndex = listview.options.pageIndex + listview.options.pageSize ;
+							var data = listview.dataSource.view();	
+							common.ui.connect.listview( renderTo ).dataSource.read({offset: listview.options.pageIndex });
 						});
 					}
 				}
