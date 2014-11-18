@@ -372,9 +372,9 @@
 		return DataSource.create({		
 			transport: { 
 				read: { url:serviceUrl, type:'GET' },
-				create: { url:serviceUrl, type:'POST' },
-				update: { url:serviceUrl, type:'POST'  },
-				destroy: { url:serviceUrl, type:'DELETE' },
+				create: { url:serviceUrl, type:'POST' ,contentType : "application/json" },
+				update: { url:serviceUrl, type:'POST'  ,contentType : "application/json"},
+				destroy: { url:serviceUrl, type:'DELETE' ,contentType : "application/json"},
 		 		parameterMap: function (options, operation){			
 					if (operation !== "read" && options.models) {
 						alert(kendo.stringify(options));
