@@ -33,6 +33,11 @@
 	border-bottom: solid 2px #7c8082;
 }
 
+.header .navbar-default .navbar-nav > .active > a:hover {
+	color:#7c8082;	
+	border-bottom: solid 2px #7c8082;
+}
+
 .header .dropdown-menu {
 	border-top: solid 2px #7c8082;
 }
