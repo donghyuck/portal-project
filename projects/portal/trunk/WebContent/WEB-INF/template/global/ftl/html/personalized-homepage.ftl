@@ -427,6 +427,9 @@
 										</div>
 										<div id="my-announce-section" style="display:none;">												
 											<div class="panel panel-default">
+												<div class="panel-heading">
+												
+												</div>
 												<div class="panel-body no-border no-padding my-announce-list"></div>
 												<div class="panel-footer no-padding">
 													<div id="my-announce-list-pager" class="no-border"> </div>
