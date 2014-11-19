@@ -65,6 +65,10 @@
 	width :300px;
 }
 
+.panel .morphing.open button[data-toggle='button'][data-action='morphing'] {
+	display:none;
+}
+
 /**
 * image grid
 */
