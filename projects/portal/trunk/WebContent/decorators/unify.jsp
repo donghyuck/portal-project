@@ -28,6 +28,7 @@
 		width: 100%;
 		top: 0px;
 		padding-top: 0px !important;
+		background: #fff;
 		border-bottom: 1px solid rgba(228, 228, 228, 0.23);		
 	}	
 	
@@ -37,11 +38,7 @@
 	.header .navbar-default {
 		background: transparent;
 	}
-	
-	.header .navbar-default .navbar-nav > li > a {
-		color: #444;
-	}
-	
+		
 	.k-loading-image {
 		background-image: url('/images/common/loader/loading-transparent-bg.gif');
 	}
