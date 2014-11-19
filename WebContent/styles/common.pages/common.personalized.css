@@ -22,7 +22,8 @@
 }
 
 .topbar ul.loginbar > li > a:hover {
-	color: #7c8082;	
+	color: #7c8082;
+	text-decoration: none;	
 }
 
 
