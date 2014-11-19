@@ -9,7 +9,7 @@
 }
 		
 .wrapper .header {
-	background-color: rgba(0, 0, 0, 0.4);
+	background-color: rgba(0, 0, 0, 0.6);
 	border-bottom: none;
 	box-shadow : none;
 }
@@ -44,6 +44,7 @@
 	z-index: 100;
 	border: 0px;
 	padding: 0;
+	color:#666;
 }
 
 
