@@ -424,18 +424,15 @@
 													<input type="radio" name="notice-target" value="1">회사
 												</label>
 											</div>
-										</div>			
-										
-										<div id="my-announce-section" style="display:none;">	
-											
-											<div class="panel panel-default border-2x">
-												<div class="panel-body contentHolder no-border no-padding my-announce-list"></div>
+										</div>
+										<div id="my-announce-section" style="display:none;">												
+											<div class="panel panel-default">
+												<div class="panel-body no-border no-padding my-announce-list"></div>
 												<div class="panel-footer no-padding">
 													<div id="my-announce-list-pager" class="no-border"> </div>
 												</div>											
 											</div><!-- /.panel -->
-										</div>
-																				
+										</div>																				
 									</div><!-- /.col-sm-6-->
 									<div class="col-sm-6">
 										<!--Image Post-->	
