@@ -435,10 +435,6 @@
 										</div>																				
 									</div><!-- /.col-sm-6-->
 									<div class="col-sm-6">
-										<!--Image Post-->	
-										<div class="headline">
-											<h2><i class="fa fa-picture-o"></i>포토 스트림</h2>
-										</div>											
 										<div class="panel panel-default no-margin-b rounded-bottom my-announce-view"  style="display:none;"  data-bind="visible: visible">
 												<div class="panel-heading">
 													<h4 data-bind="html:announce.subject"></h4>
