@@ -37,18 +37,6 @@ width: 100%;
 height: 0;
 }
 
-.panel .morphing {
-	top: 0px;
-	right: 15px;
-	/*padding-right : 15px;	
-	padding-left : 15px;	*/
-	background: #f1f1f1;
-	padding: 15px;
-	border-radius: 4px !important;
-	z-index: 90;
-	width :300px;
-}
-
 .morphing.open .morphing-content {
 opacity: 1;
 height: auto;
