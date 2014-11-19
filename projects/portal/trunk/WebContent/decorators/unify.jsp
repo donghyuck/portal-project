@@ -28,7 +28,6 @@
 		width: 100%;
 		top: 0px;
 		padding-top: 0px !important;
-		background: #fff;
 		border-bottom: 1px solid rgba(228, 228, 228, 0.23);		
 	}	
 	
