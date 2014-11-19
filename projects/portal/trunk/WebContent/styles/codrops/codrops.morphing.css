@@ -61,14 +61,11 @@ min-height: 100%;
 top: 0px;
 right: 0px;
 }
-
+/**
 .panel .morphing.open {
 	right: 5px;
 }
-
-.panel .morphing.open button[data-toggle='button'][data-action='morphing'] {
-	display:none;
-}
+*/
 
 
 .morphing .btn-close {
