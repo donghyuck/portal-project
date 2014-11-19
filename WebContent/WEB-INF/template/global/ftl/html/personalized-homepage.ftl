@@ -410,7 +410,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="panel-body">
+							<div id="my-announce-section" style="display:none;" class="panel-body">
 								<div class="row" >
 									<div class="col-sm-6">
 										<!--Announce Post-->
@@ -425,7 +425,7 @@
 												</label>
 											</div>		
 										</div>
-										<div id="my-announce-section" style="display:none;">												
+										<div>												
 											<div class="panel panel-default no-margin-b">
 												<div class="panel-body no-border no-padding my-announce-list"></div>
 												<div class="panel-footer no-padding">
@@ -459,8 +459,7 @@
 													</ul>	
 												</div><!-- /.panel-heading -->
 												<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
-											</div><!-- /.panel -->
-												
+											</div><!-- /.panel -->												
 									</div><!-- /.col-sm-6-->
 								</div><!-- /.row -->
 							</div><!-- /.panel-body -->
