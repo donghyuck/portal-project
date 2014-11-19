@@ -24,6 +24,10 @@
 	color: #fff;
 }
 
+.header .navbar-default .navbar-nav > .active > a {
+	color: #7c8082;
+}
+
 .topbar ul.loginbar > li > a {
 	color: #fff;	
 }
@@ -50,6 +54,7 @@
 .breadcrumbs-personalized .navbar-default {
 	background-color: transparent;	
 }
+
 
 .overlay-zoom .zoom-icon {
 	left:0;
