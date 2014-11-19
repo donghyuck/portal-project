@@ -27,12 +27,12 @@
 .header .navbar-default .navbar-nav > .active > a {
 }
 
-.topbar ul.loginbar > li > a {	
-	color: #7c8082;
+.topbar ul.loginbar > li > a {
+	color: #fff;	
 }
 
 .topbar ul.loginbar > li > a:hover {
-	color: #fff;	
+	color: #7c8082;
 	text-decoration: none;	
 }
 
