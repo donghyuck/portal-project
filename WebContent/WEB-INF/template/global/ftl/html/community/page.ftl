@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<html decorator="homepage">
+<html decorator="unify">
 	<head>
 		<title> ${action.targetPage.title}</title>
 		<#compress>				
