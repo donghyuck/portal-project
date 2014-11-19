@@ -13,6 +13,12 @@
 	border-bottom: none;
 }
 
+.wrapper .header .navbar {
+	-webkit-transition: background .3s ease-in-out,padding .3s ease-in-out;
+	-moz-transition: background .3s ease-in-out,padding .3s ease-in-out;
+	transition: background .3s ease-in-out,padding .3s ease-in-out;
+}
+
 .header .navbar-default .navbar-nav > li > a {
 	color: #fff;
 }
