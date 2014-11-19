@@ -21,11 +21,10 @@
 }
 
 .header .navbar-default .navbar-nav > li > a {
-	color: #fff;
+	color: #7c8082;
 }
 
 .header .navbar-default .navbar-nav > .active > a {
-	color: #7c8082;
 }
 
 .topbar ul.loginbar > li > a {
