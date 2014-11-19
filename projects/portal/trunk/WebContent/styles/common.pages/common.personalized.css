@@ -51,11 +51,11 @@
 	text-decoration: none;	
 }
 
-.header-transparent .navbar-default .navbar-nav > li > a.btn-account:hover, .header .navbar-default .navbar-nav > li > a.btn-account:focus, .header .navbar-default .navbar-nav > li >  a.btn-account:active {
+.header-transparent .navbar-default .navbar-nav > li > a.btn-account:hover, .header-transparent .navbar-default .navbar-nav > li > a.btn-account:focus, .header-transparent .navbar-default .navbar-nav > li >  a.btn-account:active {
 	color : #7c8082;
 }
 
-.header-transparent .navbar-default .navbar-nav > li > a:hover, .header .navbar-default .navbar-nav > .active > a {
+.header-transparent .navbar-default .navbar-nav > li > a:hover, .header-transparent .navbar-default .navbar-nav > .active > a {
 	border-bottom: solid 2px #7c8082;
 }
 
