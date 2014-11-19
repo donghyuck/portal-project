@@ -47,6 +47,9 @@
 	color:#666;
 }
 
+.breadcrumbs-personalized .navbar-default {
+	background-color: transparent;	
+}
 
 .overlay-zoom .zoom-icon {
 	left:0;
