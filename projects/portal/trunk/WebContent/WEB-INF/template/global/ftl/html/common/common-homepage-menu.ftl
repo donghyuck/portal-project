@@ -55,10 +55,9 @@
 								<#if WebSiteUtils.isUserAccessAllowed(request, item) >
 								<#if  item.components?has_content >
 									<li class="dropdown" data-menu-item="${item.name}">
-										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title} <#if item.layout?? >${item.layout}</#if></a>
+										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown"><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 										<ul class="dropdown-menu">
-										<#list item.components as sub_item >
-											<#if sub_item.layout?? >${sub_item.layout}</#if>
+										<#list item.components as sub_item >											
 											<#if sub_item.components?has_content >												
 												<li class="dropdown-submenu" data-menu-item="${sub_item.name}">
 													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a>
