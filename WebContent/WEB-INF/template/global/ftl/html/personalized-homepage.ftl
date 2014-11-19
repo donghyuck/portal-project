@@ -386,7 +386,7 @@
 										<h5 data-bind="visible: new">
 											<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
 										</h5>		
-										<div class="panel panel-default">
+										<div class="panel panel-default ">
 											<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
 												<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
 											</div>			
@@ -439,7 +439,7 @@
 										<div class="headline">
 											<h2><i class="fa fa-picture-o"></i>포토 스트림</h2>
 										</div>											
-										<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;"  data-bind="visible: visible">
+										<div class="panel panel-default no-margin-b rounded-bottom my-announce-view"  style="display:none;"  data-bind="visible: visible">
 												<div class="panel-heading">
 													<h4 data-bind="html:announce.subject"></h4>
 													<div class="panel-header-controls" data-bind="visible:editable">
