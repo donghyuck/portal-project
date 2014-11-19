@@ -55,6 +55,9 @@
 /**
 * marphing
 */
+.panel .morphing.open {
+	padding:15px;	
+}
 .panel .morphing {
 	top: 0px;
 	right: 0px;
