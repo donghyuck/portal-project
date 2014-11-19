@@ -46,6 +46,13 @@
 	text-decoration: none;	
 }
 
+.header .navbar-default .navbar-nav > li > a.btn-account {
+	opacity: 1;
+}
+
+.header .navbar-default .navbar-nav > li > a.btn-account : hover {
+	opacity: .7;
+}
 
 .wrapper .k-grid-content {
 	min-height : 300px;
