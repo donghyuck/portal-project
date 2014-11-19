@@ -40,7 +40,7 @@
 	}
 	
 	.header .navbar-default .navbar-nav > li > a {
-		color: #444;
+		color: #FFF;
 	}
 	
 	.k-loading-image {
