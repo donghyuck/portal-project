@@ -416,7 +416,7 @@
 										<!--Announce Post-->
 										<div class="headline">
 											<h2><i class="fa fa-bullhorn"></i>공지 & 이벤트</h2>
-											<div id="announce-selector" class="btn-group" data-toggle="buttons">
+											<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30">사이트
 												</label>
