@@ -419,8 +419,8 @@
 										</div>
 										<div id="my-announce-section" style="display:none;">												
 											<div class="panel panel-default">
-												<div class="panel-heading text-right no-padding">
-													<small class="text-mutued">공지&amp;이벤트 출처을 선택하세요 <i class="fa fa-long-arrow-right"></i></small>
+												<div class="panel-heading text-right">
+													<small class="text-muted">공지&amp;이벤트 출처을 선택하세요 <i class="fa fa-long-arrow-right"></i></small>
 													<div id="announce-selector" class="btn-group" data-toggle="buttons">
 														<label class="btn btn-info btn-sm active rounded-left">
 															<input type="radio" name="notice-target" value="30">사이트
