@@ -366,7 +366,7 @@
 												
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
-						<div class="panel panel-default rounded no-margin-b">
+						<div class="panel panel-default rounded no-margin-b" style="position:relative">
 							<div class="panel-body">
 								<div class="morphing no-padding-t">
 									<button class="btn-u btn-u-red rounded-bottom pull-right" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
