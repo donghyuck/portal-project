@@ -8,54 +8,54 @@
 	background-color:transparent;
 }
 		
-.wrapper .header {
+.wrapper .header-transparent {
 	background-color: rgba(0, 0, 0, 0.6);
 	border-bottom: none;
 	box-shadow : none;
 }
 
-.wrapper .header .navbar {
+.wrapper .header-transparent .navbar {
 	-webkit-transition: background .3s ease-in-out,padding .3s ease-in-out;
 	-moz-transition: background .3s ease-in-out,padding .3s ease-in-out;
 	transition: background .3s ease-in-out,padding .3s ease-in-out;
 }
 
-.header .navbar-default .navbar-nav > li > a {
+.header-transparent .navbar-default .navbar-nav > li > a {
 	color: #fff;
 }
 
-.header .navbar-default .navbar-nav > li > a:hover {
+.header-transparent .navbar-default .navbar-nav > li > a:hover {
 	color: #7c8082;
 }
 
-.header .navbar-default .navbar-nav > .active > a {
+.header-transparent .navbar-default .navbar-nav > .active > a {
 	color:#7c8082;	
 	border-bottom: solid 2px #7c8082;
 }
 
-.header .navbar-default .navbar-nav > .active > a:hover {
+.header-transparent .navbar-default .navbar-nav > .active > a:hover {
 	color:#7c8082;	
 	border-bottom: solid 2px #7c8082;
 }
 
-.header .dropdown-menu {
+.header-transparent .dropdown-menu {
 	border-top: solid 2px #7c8082;
 }
 
-.topbar ul.loginbar > li > a {
+.header-transparent .topbar ul.loginbar > li > a {
 	color: #fff;	
 }
 
-.topbar ul.loginbar > li > a:hover {
+.header-transparent .topbar ul.loginbar > li > a:hover {
 	color: #7c8082;
 	text-decoration: none;	
 }
 
-.header .navbar-default .navbar-nav > li > a.btn-account:hover, .header .navbar-default .navbar-nav > li > a.btn-account:focus, .header .navbar-default .navbar-nav > li >  a.btn-account:active {
+.header-transparent .navbar-default .navbar-nav > li > a.btn-account:hover, .header .navbar-default .navbar-nav > li > a.btn-account:focus, .header .navbar-default .navbar-nav > li >  a.btn-account:active {
 	color : #7c8082;
 }
 
-.header .navbar-default .navbar-nav > li > a:hover, .header .navbar-default .navbar-nav > .active > a {
+.header-transparent .navbar-default .navbar-nav > li > a:hover, .header .navbar-default .navbar-nav > .active > a {
 	border-bottom: solid 2px #7c8082;
 }
 
