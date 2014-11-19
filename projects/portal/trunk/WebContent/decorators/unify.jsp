@@ -25,10 +25,10 @@
 <style>
 
 	.header {
-		/*border-bottom: solid 2px #F5F5F5;*/
 		width: 100%;
 		top: 0px;
 		padding-top: 0px !important;
+		background: rgba(0,0,0,0.7);
 		border-bottom: 1px solid rgba(228, 228, 228, 0.23);		
 	}	
 	
@@ -36,7 +36,7 @@
 		height:20px;
 	}
 	.header .navbar-default {
-		background: #fff;
+		background: transparent;		
 	}
 	
 	.header .navbar-default .navbar-nav > li > a {
