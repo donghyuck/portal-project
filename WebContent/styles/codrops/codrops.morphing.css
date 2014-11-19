@@ -53,9 +53,7 @@ transition: opacity 0.3s 0.5s;
 */
 }
 
-.panel .morphing-content {
-	background: #f1f1f1;
-}
+
 
 .morphing.open {
 width: 100%;
