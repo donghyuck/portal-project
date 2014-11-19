@@ -320,7 +320,7 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-default" role="navigation">	
+				<div class="navbar navbar-default no-margin-b" role="navigation">	
 					<div class="container">
 						<ul class="nav navbar-nav">
 							 <li class="active"><a href="#">MY 홈<span class="sr-only">(current)</span></a></li>
@@ -350,8 +350,6 @@
 							</li>
 						</ul>						
 					</div>
-				</div>
-				<div class="navbar navbar-personalized" role="navigation">		
 				</div><!-- ./navbar-personalized -->			
 			</div>
 			
