@@ -319,6 +319,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
+			${webSite}
 			<div class="breadcrumbs breadcrumbs-personalized">
 				<div class="navbar navbar-default no-margin-b" role="navigation">	
 					<div class="container">
