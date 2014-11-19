@@ -10,6 +10,7 @@
 		
 .wrapper .header {
 	background-color: rgba(0, 0, 0, 0.4);
+	border-bottom: none;
 }
 
 .header .navbar-default .navbar-nav > li > a {
