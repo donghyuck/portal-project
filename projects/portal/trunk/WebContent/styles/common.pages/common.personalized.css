@@ -40,6 +40,7 @@
 
 .breadcrumbs-personalized{
 	background-color: rgba(242,242,242,0.85);
+	background-image : none;
 	z-index: 100;
 	border: 0px;
 	padding: 0;
