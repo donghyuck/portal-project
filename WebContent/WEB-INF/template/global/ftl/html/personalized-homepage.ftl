@@ -416,19 +416,20 @@
 										<!--Announce Post-->
 										<div class="headline">
 											<h2><i class="fa fa-bullhorn"></i>공지 & 이벤트</h2>
+											<div id="announce-selector" class="btn-group" data-toggle="buttons">
+												<label class="btn btn-info btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30">사이트
+												</label>
+												<label class="btn btn-info btn-sm rounded-right disabled">
+													<input type="radio" name="notice-target" value="1">회사
+												</label>
+											</div>		
 										</div>
 										<div id="my-announce-section" style="display:none;">												
 											<div class="panel panel-default">
 												<div class="panel-heading text-right">
 													<small class="text-muted">공지&amp;이벤트 출처을 선택하세요 <i class="fa fa-long-arrow-right"></i></small>
-													<div id="announce-selector" class="btn-group" data-toggle="buttons">
-														<label class="btn btn-info btn-sm active rounded-left">
-															<input type="radio" name="notice-target" value="30">사이트
-														</label>
-														<label class="btn btn-info btn-sm rounded-right disabled">
-															<input type="radio" name="notice-target" value="1">회사
-														</label>
-													</div>													
+																								
 												</div>
 												<div class="panel-body no-border no-padding my-announce-list"></div>
 												<div class="panel-footer no-padding">
