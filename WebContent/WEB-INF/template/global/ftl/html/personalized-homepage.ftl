@@ -320,38 +320,38 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-personalized" role="navigation">	
+				<div class="navbar navbar-default" role="navigation">	
 					<div class="container">
 						<ul class="nav navbar-nav">
 							 <li class="active"><a href="#">MY 홈<span class="sr-only">(current)</span></a></li>
-							 <li class="active"><a href="#">MY 드라이버<span class="sr-only">(current)</span></a></li>
-							 <li class="active"><a href="#">MY 쇼셜<span class="sr-only">(current)</span></a></li>
+							 <li class=""><a href="#">MY 드라이버<span class="sr-only">(current)</span></a></li>
+							 <li class=""><a href="#">MY 쇼셜<span class="sr-only">(current)</span></a></li>
 						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li>
+								<div id="personalized-buttons" class="navbar-btn btn-group">
+									<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
+									<button type="button" class="btn-u btn-u-sea rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
+								</div>	
+							</li>						
+							<li class="hidden-xs">
+								<p class="navbar-text">레이아웃</p>
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info rounded-left">
+										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+									</label>
+									<label class="btn btn-info active">
+								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+									</label>
+									<label class="btn btn-info rounded-right">
+										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+									</label>
+								</div>
+							</li>
+						</ul>						
 					</div>
 				</div>
 				<div class="navbar navbar-personalized" role="navigation">		
-					<ul class="nav navbar-nav pull-right">
-						<li>
-							<div id="personalized-buttons" class="navbar-btn btn-group">
-								<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
-								<button type="button" class="btn-u btn-u-sea rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
-							</div>	
-						</li>						
-						<li class="hidden-xs">
-							<p class="navbar-text">레이아웃</p>
-							<div class="btn-group navbar-btn" data-toggle="buttons">
-								<label class="btn btn-info rounded-left">
-									<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-								</label>
-								<label class="btn btn-info active">
-							 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-								</label>
-								<label class="btn btn-info rounded-right">
-									<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-								</label>
-							</div>
-						</li>
-					</ul>
 				</div><!-- ./navbar-personalized -->			
 			</div>
 			
