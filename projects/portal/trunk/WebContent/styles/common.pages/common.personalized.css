@@ -16,6 +16,10 @@
 		color: #fff;
 }
 
+.topbar ul.loginbar > li > a, .topbar ul.loginbar > li > a:hover {
+	color: #fff;	
+}
+
 .wrapper .k-grid-content {
 	min-height : 300px;
 }
