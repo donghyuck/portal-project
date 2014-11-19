@@ -426,11 +426,7 @@
 											</div>		
 										</div>
 										<div id="my-announce-section" style="display:none;">												
-											<div class="panel panel-default">
-												<div class="panel-heading text-right">
-													<small class="text-muted">공지&amp;이벤트 출처을 선택하세요 <i class="fa fa-long-arrow-right"></i></small>
-																								
-												</div>
+											<div class="panel panel-default no-margin-b">
 												<div class="panel-body no-border no-padding my-announce-list"></div>
 												<div class="panel-footer no-padding">
 													<div id="my-announce-list-pager" class="no-border"> </div>
