@@ -48,6 +48,15 @@
 	left:0;
 }
 
+/**
+* marphing
+*/
+.panel .morphing {
+	float: right;
+	right: 0px;
+	min-height:30px;
+	padding: 0px;
+}
 
 /**
 * image grid
