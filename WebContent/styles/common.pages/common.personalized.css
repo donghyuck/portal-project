@@ -30,9 +30,6 @@
 
 .header .navbar-default .navbar-nav > .active > a {
 	color:#7c8082;	
-}
-
-.header .navbar-default .navbar-nav > .active > a {
 	border-bottom: solid 2px #7c8082;
 }
 
