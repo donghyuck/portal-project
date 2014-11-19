@@ -425,8 +425,24 @@
 												</label>
 											</div>
 										</div>			
+										
 										<div id="my-announce-section" style="display:none;">	
-											<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;"  data-bind="visible: visible">
+											
+											<div class="panel panel-default border-2x">
+												<div class="panel-body contentHolder no-border no-padding my-announce-list"></div>
+												<div class="panel-footer no-padding">
+													<div id="my-announce-list-pager" class="no-border"> </div>
+												</div>											
+											</div><!-- /.panel -->
+										</div>
+																				
+									</div><!-- /.col-sm-6-->
+									<div class="col-sm-6">
+										<!--Image Post-->	
+										<div class="headline">
+											<h2><i class="fa fa-picture-o"></i>포토 스트림</h2>
+										</div>											
+										<div class="panel panel-default border-2x rounded-bottom my-announce-view"  style="display:none;"  data-bind="visible: visible">
 												<div class="panel-heading">
 													<h4 data-bind="html:announce.subject"></h4>
 													<div class="panel-header-controls" data-bind="visible:editable">
@@ -447,21 +463,7 @@
 												</div><!-- /.panel-heading -->
 												<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
 											</div><!-- /.panel -->
-											<div class="panel panel-default border-2x">
-												<div class="panel-body contentHolder no-border no-padding my-announce-list"></div>
-												<div class="panel-footer no-padding">
-													<div id="my-announce-list-pager" class="no-border"> </div>
-												</div>											
-											</div><!-- /.panel -->
-										</div>						
-										<!--End Announce Post-->	
-									</div><!-- /.col-sm-6-->
-									<div class="col-sm-6">
-										<!--Image Post-->	
-										<div class="headline">
-											<h2><i class="fa fa-picture-o"></i>포토 스트림</h2>
-										</div>											
-										<!--End Image Post-->	
+												
 									</div><!-- /.col-sm-6-->
 								</div><!-- /.row -->
 							</div><!-- /.panel-body -->
