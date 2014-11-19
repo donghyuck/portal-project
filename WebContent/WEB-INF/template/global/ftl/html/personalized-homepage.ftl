@@ -319,7 +319,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			
+			<div class="breadcrumbs breadcrumbs-personalized">
 				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">		
 					<ul class="nav navbar-nav pull-right">
 						<li>
@@ -344,7 +344,7 @@
 						</li>
 					</ul>
 				</div><!-- ./navbar-personalized -->			
-		
+			</div>
 			
 			<div id="main-content" class="container-fluid content no-padding-t" style="min-height:300px;">	
 				<div class="row">
