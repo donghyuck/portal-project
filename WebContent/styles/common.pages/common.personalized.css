@@ -55,10 +55,11 @@
 	opacity: .7;
 }
 
-.header .navbar-default .navbar-nav > li.open > a.btn-account {
+.header .navbar-default .navbar-nav > li > a:hover, .header .navbar-default .navbar-nav > .active > a {
 	opacity: .7;
 	border-bottom: solid 2px #7c8082;
 }
+
 
 .wrapper .k-grid-content {
 	min-height : 300px;
