@@ -320,7 +320,16 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation">		
+				<div class="navbar navbar-personalized" role="navigation">	
+					<div class="container">
+						<ul class="nav navbar-nav">
+							 <li class="active"><a href="#">MY 홈<span class="sr-only">(current)</span></a></li>
+							 <li class="active"><a href="#">MY 드라이버<span class="sr-only">(current)</span></a></li>
+							 <li class="active"><a href="#">MY 쇼셜<span class="sr-only">(current)</span></a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="navbar navbar-personalized" role="navigation">		
 					<ul class="nav navbar-nav pull-right">
 						<li>
 							<div id="personalized-buttons" class="navbar-btn btn-group">
