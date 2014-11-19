@@ -11,6 +11,7 @@
 .wrapper .header {
 	background-color: rgba(0, 0, 0, 0.4);
 	border-bottom: none;
+	box-shadow : none;
 }
 
 .wrapper .header .navbar {
