@@ -1,6 +1,6 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
-	<head>
+<head>
 		<title> ${action.targetPage.title}</title>
 		<#compress>				
 		<script type="text/javascript">
