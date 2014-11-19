@@ -191,7 +191,7 @@
 						if(!common.ui.visible(viewRenderTo)){
 							viewRenderTo.slideDown();
 						}						
-						common.ui.scroll.top(renderTo, -20);
+						common.ui.scroll.top(viewRenderTo, -20);
 					}
 				}
 			);
