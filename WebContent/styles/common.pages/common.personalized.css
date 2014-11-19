@@ -28,6 +28,10 @@
 	color:#4765a0;	
 }
 
+.header .navbar-default .navbar-nav > .active > a {
+	border-bottom: solid 2px #4765a0;
+}
+
 .topbar ul.loginbar > li > a {
 	color: #fff;	
 }
