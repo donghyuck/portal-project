@@ -57,33 +57,37 @@
 								<#if  item.components?has_content >
 								<!-- item.layout -->
 								<#if item.layout??>
-								
+								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
+									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
+									<ul class="dropdown-menu">
+									</ul>
+								</li>
 								<#else>
-									<li class="dropdown" data-menu-item="${item.name}">
-										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
-										<ul class="dropdown-menu">
-										<#list item.components as sub_item >											
-											<#if sub_item.components?has_content >												
-												<li class="dropdown-submenu" data-menu-item="${sub_item.name}">
-													<a href="#" class="dropdown-toggle" data-toggle="dropdown"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a>
-													<ul class="dropdown-menu">
-														<#list sub_item.components as sub_sub_item >
-														<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>
-														</#list>
-													</ul>
-												</li>
-											<#else>								
-												<li><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
-											</#if>								
-										</#list>
-										</ul>
-									</li>											
+								<li class="dropdown" data-menu-item="${item.name}">
+									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
+									<ul class="dropdown-menu">
+									<#list item.components as sub_item >											
+										<#if sub_item.components?has_content >												
+										<li class="dropdown-submenu" data-menu-item="${sub_item.name}">
+											<a href="#" class="dropdown-toggle" data-toggle="dropdown"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a>
+												<ul class="dropdown-menu">
+													<#list sub_item.components as sub_sub_item >
+													<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>
+													</#list>
+												</ul>
+											</li>
+										<#else>								
+											<li><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
+										</#if>								
+									</#list>
+									</ul>
+								</li>											
 								</#if>
 								<!-- ./item.layout -->									
 								<#else>
-									<li>
-										<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
-									</li>
+								<li>
+									<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
+								</li>
 								</#if>
 								</#if>		
 								</#list>
