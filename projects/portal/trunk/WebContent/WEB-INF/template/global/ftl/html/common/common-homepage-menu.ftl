@@ -73,7 +73,16 @@
 																<li data-menu-item="${sub_sub_item.name}"><a href="${sub_sub_item.page}">${ sub_sub_item.title }</a></li>																
 																</#list>
 																<#else>
-																<#if sub_item.description ??><small>${sub_item.description}</small></#if>
+																<#if sub_item.description ??>
+																	
+																	<h3>
+																	<small>
+																	<i class="fa fa-quote-left"></i>
+																	${sub_item.description}
+																	<i class="fa fa-quote-right"></i>
+																	</small>
+																	<h3>	
+																</#if>
 																<li data-menu-item="${sub_item.name}">
 																	<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${ sub_item.title }</a>																	
 																</li>
