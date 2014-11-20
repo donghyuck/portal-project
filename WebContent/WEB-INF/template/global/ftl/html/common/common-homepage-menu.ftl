@@ -74,14 +74,15 @@
 																</#list>
 																<#else>
 																<#if sub_item.description ??>
-																	
+																<li>	
 																	<h3>
 																	<small>
 																	<i class="fa fa-quote-left"></i>
 																	${sub_item.description}
 																	<i class="fa fa-quote-right"></i>
 																	</small>
-																	<h3>	
+																	</h3>	
+																</li>		
 																</#if>
 																<li data-menu-item="${sub_item.name}">
 																	<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${ sub_item.title }</a>																	
