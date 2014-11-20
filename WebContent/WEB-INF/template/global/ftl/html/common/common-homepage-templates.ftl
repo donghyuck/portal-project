@@ -144,11 +144,10 @@
 <!-- Top Nav Account Status Template               -->
 <!-- ============================== -->
 <script id="account-navbar-template" type="text/x-kendo-template">
-	<li class="account">
-		<a href="\\#my-aside-menu" class="btn btn-link btn-account dropdown-toggle navbar-toggle-aside-menu">
+	<li>
+		<a href="\\#my-aside-menu" class="btn btn-link btn-avatar btn-account dropdown-toggle navbar-toggle-aside-menu">
 			<img src="#:photoUrl#" class="rounded-top" height="34">
-		</a>
-		
+		</a>		
 	</li>	
 </script>
 
