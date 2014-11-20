@@ -6,6 +6,31 @@
 	background-size: 300px auto;
 }
 
+.header .navbar .nav>li>a.avatar:hover{
+	background-position: -182px -236px;
+	text-decoration: none;
+}
+
+.header .navbar .nav>li>a.avatar:hover  span {
+	background-position: -182px -236px;
+	text-decoration: none;
+}
+
+.header .navbar .nav>li>a.avatar:after {
+	right: -4px;
+	display: block;
+	content: "";
+	width: 21px;
+	height: 19px;
+	background-position: 0 0;
+	position: absolute;
+	top: 14px;	
+	background-image: url(/images/common/icons/sitechrome.png);
+	background-repeat: no-repeat;
+	background-size: 300px auto;	
+}
+
+
 .avatar-btn {
 	border-radius: 50% !important;
 	top: 2px;
