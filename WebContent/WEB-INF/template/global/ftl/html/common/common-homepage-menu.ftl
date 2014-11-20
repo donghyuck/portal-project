@@ -128,7 +128,11 @@
 								</#list>			
 								<li>
 									<i class="avatar fa fa-user avatar-btn"></i>
-								</li>			
+								</li>		
+								<li><a href="#" data-feature-name="u_account"> 안당 </a>
+  
+									
+								</li>	
 							</ul>				
 						</div>						
 					</div>
