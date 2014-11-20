@@ -126,6 +126,9 @@
 								</#if>
 								</#if>		
 								</#list>
+								<li>
+									<i class="search fa fa-user avatar-btn search-btn"></i>
+								</li>								
 							</ul>				
 						</div>						
 					</div>
