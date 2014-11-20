@@ -12,7 +12,11 @@
 	text-decoration: none;
 }
 
-.header .navbar .nav>li>a.avatar  span.avatar-name {
+.header .navbar .nav>li>a.avatar  span{
+	display: block;
+}
+
+.header .navbar .nav>li>a.avatar  span.u-account-name {
 	padding-left: 22px;
 	padding-right: 2px;	
 }
