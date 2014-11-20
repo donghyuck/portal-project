@@ -66,14 +66,14 @@
 													<div class="row equal-height">
 														<#list item.components as sub_item>														
 														<div class="col-md-3 equal-height-in">
-															<ul class="list-unstyled equal-height-list">
-																<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>
+															<ul class="list-unstyled equal-height-list">																
 																<#if sub_item.components?has_content >	
+																<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>
 																<#list sub_item.components as sub_sub_item >
 																<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>																
 																</#list>
 																<#else>
-																
+																<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>
 																</#if>
 															</ul>
 														</div>														
