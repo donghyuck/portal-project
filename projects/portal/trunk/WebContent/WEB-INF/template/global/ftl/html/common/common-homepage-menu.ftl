@@ -67,7 +67,14 @@
 														<#list item.components as sub_item>														
 														<div class="col-md-3 equal-height-in">
 															<ul class="list-unstyled equal-height-list">
-																<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>															
+																<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>
+																<#if sub_item.components?has_content >	
+																<#list sub_item.components as sub_sub_item >
+																<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>																
+																</#list>
+																<#else>
+																
+																</#if>
 															</ul>
 														</div>														
 														</#list>													
