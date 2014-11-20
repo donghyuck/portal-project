@@ -16,18 +16,20 @@
 					<div class="container">
 						<!-- Topbar Navigation -->
 						<ul class="loginbar pull-right">
-							<li>
-								<i class="fa fa-globe"></i>
-								<a>언어</a>
-								<ul class="lenguages">
-									<li class="active">
-										<a href="#">한국어 <i class="fa fa-check"></i></a> 
-									</li>
-								</ul>
-							</li>
-							<li class="topbar-devider"></li>   
-							<li><a href="##\">도움말</a></li>  
-						</ul>
+		                    <li class="languagesSelector">
+		                        <i class="fa fa-globe"></i>
+		                        <a>Languages</a>
+		                        <ul class="languages">
+		                            <li class="active">
+		                                <a href="#">한국어 <i class="fa fa-check"></i></a> 
+		                            </li>
+		                        </ul>
+		                    </li>
+		                    <li class="topbar-devider"></li>   
+		                    <li><a href="page_faq.html">도움말</a></li>  
+		                    <li class="topbar-devider"></li>   
+		                    <li><a href="page_login.html">로그인</a></li>   
+		                </ul>
 						<!-- End Topbar Navigation -->
 					</div>
 				</div>
@@ -87,6 +89,8 @@
 				<!--<span class="v-header-shadow"></span>-->
 			</div><!-- /.header -->
 			</#if>		
+			
+			
 			<!-- END MENU -->		
 			<!-- START My profile Modal -->
 			<div class="modal fade" id="myProfileModal" tabindex="-1" role="dialog" aria-labelledby="myProfileModalLabel" aria-hidden="true">
