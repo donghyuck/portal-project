@@ -17,7 +17,7 @@
 						<ul class="loginbar pull-right">
 		                    <li class="languagesSelector">
 		                        <i class="fa fa-globe"></i>
-		                        <a>Languages</a>
+		                        <a>언어</a>
 		                        <ul class="languages">
 		                            <li class="active">
 		                                <a href="#">한국어 <i class="fa fa-check"></i></a> 
