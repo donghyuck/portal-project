@@ -74,8 +74,7 @@
 																</#list>
 																<#else>
 																<li data-menu-item="${sub_item.name}">
-																	<a href="${sub_item.page}">${ sub_item.title }</a>
-																	<#if sub_item.description ??><p>${sub_item.description}</p></#if>
+																	<a href="${sub_item.page}">${ sub_item.title } <#if sub_item.description ??><small>${sub_item.description}</small></#if></a>																	
 																</li>
 																</#if>
 															</ul>
