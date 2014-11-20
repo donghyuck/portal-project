@@ -127,7 +127,7 @@
 								</#if>		
 								</#list>			
 								<li>
-									<i class="avata fa fa-user avatar-btn"></i>
+									<i class="avatar fa fa-user avatar-btn"></i>
 								</li>			
 							</ul>				
 						</div>						
