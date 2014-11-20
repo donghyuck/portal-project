@@ -60,7 +60,22 @@
 								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
-									<#list item.components as sub_item >
+										<li>
+											<div class="mega-menu-content disable-icons">
+												<div class="container">
+													<div class="row equal-height">
+												
+												
+													
+													</div>
+												</div>
+											</div>
+										</li>			
+									
+									
+									
+									<!--
+									<#list item.components as sub_item>
 										<li>
 											<div class="mega-menu-content disable-icons">
 												<div class="container">
@@ -79,6 +94,9 @@
 											</div>				
 										</li>
 									</#list>
+									-->
+									
+									
 									</ul>
 								</li>
 								<#else>
