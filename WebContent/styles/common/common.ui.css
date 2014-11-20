@@ -2,6 +2,7 @@
 ------------------------------------*/
 .header .navbar .nav>li>a.avatar {
 	background-image: url(/images/common/icons/sitechrome.png);
+	background-position: 6px -236px;
 	background-repeat: no-repeat;
 	background-size: 300px auto;
 }
@@ -9,6 +10,11 @@
 .header .navbar .nav>li>a.avatar:hover{
 	background-position: -182px -236px;
 	text-decoration: none;
+}
+
+.header .navbar .nav>li>a.avatar  span.avatar-name {
+	padding-left: 22px;
+	padding-right: 2px;	
 }
 
 .header .navbar .nav>li>a.avatar:hover  span {
