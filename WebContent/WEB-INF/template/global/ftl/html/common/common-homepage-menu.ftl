@@ -129,9 +129,7 @@
 								<li>
 									<i class="avatar fa fa-user avatar-btn"></i>
 								</li>		
-								<li><a href="#" data-feature-name="u_account"> 안당 </a>
-  
-									
+								<li><a href="#" data-feature-name="u_account" class="avatar"> <span>안당<span> </a>
 								</li>	
 							</ul>				
 						</div>						
