@@ -32,7 +32,7 @@
 						<!-- End Topbar Navigation -->
 					</div>
 				</div>
-				<nav class="navbar navbar-default" role="navigation">
+				<nav class="navbar navbar-default mega-menu" role="navigation">
 					<div class="container">
 						<!-- Brand and toggle get grouped for better mobile display -->
 						<div class="navbar-header">
