@@ -26,8 +26,10 @@
 							</li>
 							<li class="topbar-devider"></li>   
 							<li><a href="page_faq.html">도움말</a></li>  
+							<#if action.user.anonymous >
 							<li class="topbar-devider"></li>   
 							<li><a href="page_login.html">로그인</a></li>   
+							</#if>
 						</ul>
 						<!-- End Topbar Navigation -->
 					</div>
