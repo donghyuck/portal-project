@@ -92,33 +92,7 @@
 													</div>
 												</div>
 											</div>
-										</li>			
-									
-									
-									
-									<!--
-									<#list item.components as sub_item>
-										<li>
-											<div class="mega-menu-content disable-icons">
-												<div class="container">
-													<div class="row equal-height">
-														<div class="col-md-3 equal-height-in">
-															<ul class="list-unstyled equal-height-list">
-															<#if sub_item.components?has_content >	
-																<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>
-															<#else>
-																<li data-menu-item="${sub_item.name}"><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>													
-															</#if>
-															</ul>
-														</div>
-													</div>
-												</div>			
-											</div>				
-										</li>
-									</#list>
-									-->
-									
-									
+										</li>	
 									</ul>
 								</li>
 								<#else>
