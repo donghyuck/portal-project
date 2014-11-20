@@ -2,8 +2,7 @@
 			<#if action.user.anonymous >
 			<script type="text/javascript">
 			<!--
-			function signinCallbackResult( media, onetime, success ){
-			
+			function signinCallbackResult( media, onetime, success ){			
 			}		
 			-->
 			</script>
