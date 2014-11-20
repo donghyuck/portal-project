@@ -3,16 +3,14 @@
                  architecture.common.exception.Codeable,
                  architecture.common.util.I18nTextUtils,
                  architecture.ee.util.OutputFormat,
-                 architecture.security.user.*,
+                 architecture.common.user.*,
+                 architecture.user.*,
                  architecture.ee.web.util.WebApplicationHelper,
-                 architecture.ee.web.util.ParamUtils" %><%GroupManager gm = WebApplicationHelper.getComponent(GroupManager.class);
-                 try{
-                	 
-                 	Group g = gm.getMenu("developer");
-out.println( g);
-                 }catch(GroupNotFoundException e){
-                	 gm.createGroup("developer");
-                 }%>                 
+                 architecture.ee.web.util.ParamUtils" %><%
+                 GroupManager gm = WebApplicationHelper.getComponent(GroupManager.class);
+                 gm.getGroups();
+                 
+                 %>                 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
