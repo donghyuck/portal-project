@@ -15,20 +15,20 @@
 					<div class="container">
 						<!-- Topbar Navigation -->
 						<ul class="loginbar pull-right">
-		                    <li class="languagesSelector">
-		                        <i class="fa fa-globe"></i>
-		                        <a>언어</a>
-		                        <ul class="languages">
-		                            <li class="active">
-		                                <a href="#">한국어 <i class="fa fa-check"></i></a> 
-		                            </li>
-		                        </ul>
-		                    </li>
-		                    <li class="topbar-devider"></li>   
-		                    <li><a href="page_faq.html">도움말</a></li>  
-		                    <li class="topbar-devider"></li>   
-		                    <li><a href="page_login.html">로그인</a></li>   
-		                </ul>
+							<li class="languagesSelector">
+								<i class="fa fa-globe"></i>
+								<a>언어</a>
+								<ul class="languages">
+									<li class="active">
+										<a href="#">한국어 <i class="fa fa-check"></i></a> 
+									</li>
+								</ul>
+							</li>
+							<li class="topbar-devider"></li>   
+							<li><a href="page_faq.html">도움말</a></li>  
+							<li class="topbar-devider"></li>   
+							<li><a href="page_login.html">로그인</a></li>   
+						</ul>
 						<!-- End Topbar Navigation -->
 					</div>
 				</div>
@@ -55,6 +55,36 @@
 								<#list webSiteMenu.components as item >
 								<#if WebSiteUtils.isUserAccessAllowed(request, item) >
 								<#if  item.components?has_content >
+									<#if item.layout??>
+									<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
+										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
+										<ul class="dropdown-menu">
+										<#list item.components as sub_item >		
+											<li>
+												<div class="mega-menu-content disable-icons">
+													<div class="container">
+														<div class="row equal-height">
+															<div class="col-md-3 equal-height-in">
+																<ul class="list-unstyled equal-height-list">																	
+																	<#if sub_item.components?has_content >
+																	<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>
+																	<#list sub_item.components as sub_sub_item >
+																	<li data-menu-item="${sub_sub_item.name}"><a href="${sub_item.page}">${ sub_sub_item.title }</a></li>																	
+																	</list>
+																	<#else>
+																	<li data-menu-item="${sub_item.name}"><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
+																	</#if>																
+																</ul>
+															</div>	
+														</div>
+													</div>
+												</div>
+											</li>		
+											
+										</#list>	
+										</ul>
+									</li>
+									<#else>	
 									<li class="dropdown" data-menu-item="${item.name}">
 										<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 										<ul class="dropdown-menu">
@@ -73,7 +103,8 @@
 											</#if>								
 										</#list>
 										</ul>
-									</li>
+									</li>									
+									</#if> 
 								<#else>
 									<li>
 										<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
