@@ -1,5 +1,11 @@
 /* Menu Buttons 
 ------------------------------------*/
+.header .navbar .nav>li>a.avatar {
+	background-image: url(/images/common/icons/sitechrome.png);
+	background-repeat: no-repeat;
+	background-size: 300px auto;
+}
+
 .avatar-btn {
 	border-radius: 50% !important;
 	top: 2px;
