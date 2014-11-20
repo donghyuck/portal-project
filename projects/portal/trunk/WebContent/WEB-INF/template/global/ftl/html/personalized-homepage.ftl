@@ -10,8 +10,8 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',	
-			'css!${request.contextPath}/styles/common.pages/common.onepage.css',	
+			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
+		/*	'css!${request.contextPath}/styles/common.pages/common.onepage.css',	*/
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',		
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
@@ -319,7 +319,10 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			${webSiteMenu}
+			<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
+				${ item.title }
+			</#list>
+			
 			<div class="breadcrumbs breadcrumbs-personalized">
 				<div class="navbar navbar-default no-margin-b" role="navigation">	
 					<div class="container">
