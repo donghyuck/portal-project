@@ -42,5 +42,8 @@ function getNextPersonalizedColumn (element){
 	return minItem;
 } 
 
+function getCurrentUser () {
+	return common.ui.accounts().token ;
+}
 
 
