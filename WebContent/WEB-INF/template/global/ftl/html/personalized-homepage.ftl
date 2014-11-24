@@ -84,9 +84,7 @@
 			}
 		}]);	
 	
-		function getCurrentUser () {
-			return common.ui.accounts().token ;
-		}		
+	
 		
 		<!-- ============================== -->
 		<!-- Memo													   -->
