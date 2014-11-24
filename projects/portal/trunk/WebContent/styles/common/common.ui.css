@@ -27,6 +27,10 @@
 	padding-left: 35px;
 }
 
+.header .navbar .nav>li>.u-accounts:hover{
+	color: #999;
+}
+
 .header .navbar .nav>li>.setting {
 	color: #666;
 	cursor: pointer;
