@@ -754,7 +754,7 @@
 			options = that.options;
 			
 			if(!element.data("target-object-id")){
-				ement.data("target-object-id", guid());
+				element.data("target-object-id", guid());
 			}	
 			that.authenticate();
 			kendo.notify(that);
