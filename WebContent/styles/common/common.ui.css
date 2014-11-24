@@ -33,6 +33,11 @@
 .u-accounts .u-accounts-name {
 	padding-left: 40px;
 }
+.u-accounts .u-accounts-name : after {
+	top: 9px;
+	right: 15px;
+	content: "\f03b";
+}
 
 
 .header .navbar .nav>li>.u-accounts:hover{
