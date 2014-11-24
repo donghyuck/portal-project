@@ -48,7 +48,7 @@
 						}
 					}
 				});	
-				
+				*/
 				<#if !action.user.anonymous ></#if>	
 			}
 		}]);	
