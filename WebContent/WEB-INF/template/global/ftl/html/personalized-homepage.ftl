@@ -320,7 +320,7 @@
 					<div class="container">
 						<ul class="nav navbar-nav">
 							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
-								<li data-menu-item="${item.name}"><a href="#">${item.title}<span class="sr-only">(current)</span></a></li>
+								<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
 							</#list>	
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
