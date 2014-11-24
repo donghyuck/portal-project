@@ -772,10 +772,11 @@
 				}
 			});
 		},
-		refresh : function(){
+		refresh : function (){
 			
 		}
 	});
+	
 	extend(ui, {
 		accounts : common.ui.accounts || accounts		
 	});
