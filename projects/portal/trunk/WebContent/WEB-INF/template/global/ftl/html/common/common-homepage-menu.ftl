@@ -53,7 +53,7 @@
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
 							<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs" style="display:none;"></ul>
 							<!-- /account -->
-							<ul class="nav navbar-nav">
+							<ul id="u-navbar" class="nav navbar-nav">
 								<#list webSiteMenu.components as item >
 								<#if WebSiteUtils.isUserAccessAllowed(request, item) >
 								<#if  item.components?has_content >
