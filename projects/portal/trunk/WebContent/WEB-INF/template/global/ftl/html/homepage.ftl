@@ -35,20 +35,8 @@
 					jobs:jobs
 				});	
 				
-				// ACCOUNTS LOAD	
-				
+				// ACCOUNTS LOAD					
 				var currentUser = new common.ui.data.User();			
-				/*
-				common.ui.accounts($("#account-navbar"), {
-					template : kendo.template($("#account-navbar-template").html()),
-					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if( !currentUser.anonymous ){							
-						}
-					}
-				});	
-				*/
 				<#if !action.user.anonymous ></#if>	
 			}
 		}]);	
