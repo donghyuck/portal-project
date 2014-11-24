@@ -12,7 +12,7 @@
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',						
 			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
 			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',					
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
+			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
 			'css!${request.contextPath}/styles/common.plugins/box-shadows.css',	
 			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
@@ -39,7 +39,15 @@
 					features:{
 						wallpaper : true,
 						lightbox : true,
-						spmenu : true
+						spmenu : true,
+						accounts : {
+							authenticate : function(e){
+								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+									common.ui.enable( $("#personalized-buttons button")	);					 
+								}
+							} 
+						}		
 					},
 					wallpaper : {
 						slideshow : false
@@ -48,20 +56,9 @@
 				});				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-				common.ui.accounts($("#account-navbar"), {
-					template : kendo.template($("#account-navbar-template").html()),
-					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if( !currentUser.anonymous ){		
-							common.ui.enable( $("#personalized-buttons button")	);
-							//common.ui.enable( $('button[data-action="show-gallery-section"]') );							
-						}
-					}
-				});	
 
 				// menu active setting	
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_2']").addClass("active");
 				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
