@@ -14,7 +14,7 @@
 			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',					
 			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
 			'css!${request.contextPath}/styles/common.plugins/box-shadows.css',	
-			'css!${request.contextPath}/styles/common.pages/common.onepage.css',
+		/*	'css!${request.contextPath}/styles/common.pages/common.onepage.css',*/
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 				
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
