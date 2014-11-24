@@ -9,7 +9,7 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
+			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',	
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
