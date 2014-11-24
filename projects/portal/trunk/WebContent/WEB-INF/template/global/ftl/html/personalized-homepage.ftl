@@ -59,7 +59,7 @@
 				});				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
 				// personalized grid setting				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
 				common.ui.buttonGroup($("#personalized-buttons"), {
