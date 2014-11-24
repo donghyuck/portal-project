@@ -37,6 +37,10 @@
 	top: 9px;
 	right: 15px;
 	content: "\f03b";
+	position: absolute;
+	font-weight: normal;
+	display: inline-block;
+	font-family: FontAwesome;	
 }
 
 
