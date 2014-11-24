@@ -787,7 +787,7 @@
 			if( token.anonymous ){
 				alert( element.html() );				
 			}else{
-				
+				element.find(".u-accounts-name").html( token.get("name") );
 			}
 			alert(element.data("target-object-id"));				
 		}
