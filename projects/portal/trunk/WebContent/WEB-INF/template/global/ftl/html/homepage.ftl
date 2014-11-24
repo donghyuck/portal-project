@@ -27,7 +27,9 @@
 					features:{
 						wallpaper : false,
 						accounts : {
+							authenticate : function(e){
 							
+							} 
 						}
 					},
 					jobs:jobs
@@ -46,7 +48,7 @@
 						}
 					}
 				});	
-				*/
+				
 				<#if !action.user.anonymous ></#if>	
 			}
 		}]);	
