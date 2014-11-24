@@ -754,10 +754,6 @@
 			Widget.fn.init.call(that, element, options);
 			element = that.wrapper = that.element;
 			options = that.options;
-			
-			if(!element.data("target-object-id")){
-				element.data("target-object-id", guid());
-			}	
 			that.authenticate();
 			kendo.notify(that);
 		},
@@ -784,15 +780,18 @@
 		refresh : function (){
 			var that = this,
 			token = that.token,
-			element = that.element;			
-		
+			element = that.element;		
 			if( token.anonymous ){
-				alert( element.html() );				
+				alert( element.html() );
 			}else{
 				element.find(".u-accounts-name").html( token.get("name") );
 				element.find(".u-accounts-photo").css("background-image", templates.photoCss(token) );
+				var aside = $("#" + token.uid );
+				if( aside.length === 0 ){	
+					var template = kendo.template($("#account-sidebar-template").html());
+					$("body").append( template( token) );					
+				}				
 			}
-			alert(element.data("target-object-id"));				
 		}
 	});
 	
