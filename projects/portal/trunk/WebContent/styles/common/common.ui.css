@@ -1,6 +1,60 @@
 /* Menu Buttons 
 ------------------------------------*/
+/* Setting
+------------------------------------*/
+.header .navbar .nav>li>.setting {
+	color: #aaa;
+	cursor: pointer;
+	min-width: 35px;
+	font-size: 15px;
+	text-align: center;
+	background: #f7f7f7;
+	padding: 11px 0 12px;
+	display: inline-block;
+	border-bottom: solid 2px #aaa;
+}
+
+@media ( min-width : 992px) {
+	.header .navbar .nav>li>.setting {
+		bottom: -2px;
+		position: relative;
+	}
+}
+
+.header .navbar .nav>li>.setting:hover {
+	color: #72c02c;
+	background: #f7f7f7;
+	border-bottom-color: #72c02c;
+}
+
+@media ( max-width : 991px) {
+	.header .navbar .nav>li>.setting {
+		color: #999;
+		width: 35px;
+		height: 34px;
+		text-align: left;
+		background: #eee;
+		line-height: 12px;
+		text-align: center;
+		margin: 5px 10px 0;
+		border-bottom: none;
+	}
+	.header .navbar .nav>li>.setting:hover {
+		background: #5fb611;
+		color: #fff !important;
+	}
+}	
+	
+
+
 .header .navbar .nav>li>a.avatar {
+	padding-right: 0;
+	padding-left: 12px;
+	min-width: 21px;
+	margin : 0;
+	margin-right: 12px;
+	right: -4px;
+	padding: 11px 10px 6px 10px;
 	background-image: url(/images/common/icons/sitechrome.png);
 	background-position: 6px -236px;
 	background-repeat: no-repeat;
