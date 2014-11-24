@@ -42,7 +42,15 @@
 						wallpaper : true,
 						lightbox : true,
 						spmenu : false,
-						morphing : true
+						morphing : true,
+						accounts : {
+							authenticate : function(e){
+								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+									$("#announce-selector label.btn").last().removeClass("disabled");									 
+								}
+							} 
+						}						
 					},
 					wallpaper : {
 						slideshow : false
@@ -51,17 +59,6 @@
 				});				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
-				common.ui.accounts($("#account-navbar"), {
-					template : kendo.template($("#account-navbar-template").html()),
-					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if( !currentUser.anonymous ){		
-							$("#announce-selector label.btn").last().removeClass("disabled");
-							 
-						}
-					}
-				});					
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");		
 				// personalized grid setting				
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
@@ -320,7 +317,8 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
-				${ item.title }
+				${ item.title  }
+
 			</#list>
 			
 			<div class="breadcrumbs breadcrumbs-personalized">
