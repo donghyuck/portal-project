@@ -748,8 +748,14 @@
 	var UserAssistanceBar = Widget.extend({
 		init : function(element, options) {
 			var that = this,
+			element = that.element,
 			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
+			
+			if(!defined(element.data("target-object-id"))){
+				element.data("target-object-id", guid());
+			}
+			
 			that.authenticate();
 			kendo.notify(that);
 		},
@@ -777,8 +783,10 @@
 			var that = this,
 			token = that.token,
 			element = that.element;
-			if( !token.isNew()){
+			if( token.anonymous ){
 				alert( element.html() );				
+			}else{
+								
 			}
 		}
 	});
