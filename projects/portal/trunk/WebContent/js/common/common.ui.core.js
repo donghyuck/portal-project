@@ -407,7 +407,7 @@
 					target_object = $("#" + $this.data("target-object-id"));
 				}
 			}
-			alert($this.data("target-object-id"));
+			alert(target_object.html());
 			
 			$("body").css("overflow-y: hidden;");
 			target_object.trigger("open");
