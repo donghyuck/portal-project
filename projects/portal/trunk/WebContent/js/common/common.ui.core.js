@@ -750,7 +750,6 @@
 			var that = this,
 			token = that.token = new common.ui.data.User(),
 			Widget.fn.init.call(that, element, options);
-
 			kendo.notify(that);
 		},
 		options : {
