@@ -24,6 +24,7 @@
 	position: absolute;
 	height: 32px;
 	width: 32px;
+	opacity: .4;
 }
 
 .u-accounts .u-accounts-name {
