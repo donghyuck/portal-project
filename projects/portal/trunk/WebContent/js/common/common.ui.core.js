@@ -752,7 +752,7 @@
 			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
 			
-			if(!defined(element.data("target-object-id"))){
+			if(!element.data("target-object-id")){
 				element.data("target-object-id", guid());
 			}
 			
@@ -786,8 +786,9 @@
 			if( token.anonymous ){
 				alert( element.html() );				
 			}else{
-								
+				
 			}
+			alert(element.data("target-object-id"));				
 		}
 	});
 	
