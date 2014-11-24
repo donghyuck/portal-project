@@ -8,8 +8,9 @@
 	min-width: 35px;
 	font-size: 15px;
 	text-align: left;
-	padding: 11px 0 12px;
+	padding: 5px 10px 0px 10px;
 	display: inline-block;
+	border:0;
 }
 
 .u-accounts-photo {
