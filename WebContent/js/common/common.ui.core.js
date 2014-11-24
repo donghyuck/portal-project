@@ -809,6 +809,9 @@
 					});
 				}				
 			}
+			if( element.is(":hidden") )
+				element.show();
+			
 			that.trigger(SHOWN);
 		}
 	});
