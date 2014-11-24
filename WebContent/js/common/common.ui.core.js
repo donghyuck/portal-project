@@ -724,14 +724,18 @@
 		applyTo = options.applyTo || $("#u-navbar"),
 		renderTo = applyTo.find("[data-feature-name='u-accounts']") ;
 		if( renderTo.length == 1  ){
-			// html  exist 
-			alert(renderTo.html()) ;
-			
+			// html  exist 			
 		}else{
 			// html not exist. 
-			// append
-			
-		}		
+			// append			
+		}
+		
+		if( !render.data("kendoExtAccounts") )
+		{
+			return new Accounts(render, options);				
+		}else{
+			return render.data("kendoExtAccounts");
+		}				
 	}	
 
 	extend(ui, {
