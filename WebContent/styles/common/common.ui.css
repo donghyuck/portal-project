@@ -185,10 +185,6 @@ a.navbar-toggle-inverse :hover {
 	color: #2980b9;
 }
 
-.breadcrumbs .navbar-default .navbar-nav>.active>a, .breadcrumbs .navbar-default .navbar-nav>.active>a:hover, .breadcrumbs .navbar-default .navbar-nav>.active>a:focus {
-	background-color: transparent;
-	border-bottom: solid 2px;
-}
 
 /*Aside Menu
 ------------------------------------*/
@@ -1132,6 +1128,21 @@ article>h3.title:after {
 	border-style: none none solid;
 	border-width: 4px 0px 1px;
 	padding: 10px 15px;
+}
+
+
+.panel-heading .panel-header-controls {
+	float: right;
+	margin-top: -20px;
+}
+
+.panel-heading-controls>* {
+	display: block;
+	float: left;
+}
+
+.scrollable{
+overflow-y: auto;	
 }
 
 /* Buttons
