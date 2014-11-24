@@ -163,7 +163,7 @@
 	</li>	
 </script>	
 <script id="account-sidebar-template" type="text/x-kendo-template">
-	<section id="my-aside-menu" class="aside-menu">	
+	<section id="#= uid #" class="aside-menu" data-feature-name="u-accounts-sidebar">	
 		<button type="button" class="btn-close btn-sm">Close</button>		
 		<h5 class="side-section-title">Optional sidebar menu</h5>		
 		# if ( !anonymous ) { # 	
