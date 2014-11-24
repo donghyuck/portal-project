@@ -792,7 +792,8 @@
 			token = that.token,
 			element = that.element;		
 			if( token.anonymous ){
-				alert( element.html() );
+				if ( element.is(":visible") )
+					element.hide();
 			}else{
 				element.children(".u-accounts-name").html( token.get("name") );
 				element.children(".u-accounts-photo").css("background-image", templates.photoCss(token) );
@@ -809,7 +810,7 @@
 					});
 				}				
 			}
-			if( element.is(":hidden") )
+			if ( !token.anonymous &&  element.is(":hidden") )
 				element.show();
 			
 			that.trigger(SHOWN);
