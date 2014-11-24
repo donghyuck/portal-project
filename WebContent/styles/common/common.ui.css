@@ -2,6 +2,17 @@
 ------------------------------------*/
 /* Setting
 ------------------------------------*/
+
+.u_account_photo {
+	background-size: 32px 32px;
+	border-radius: 50%;
+	display: block;
+	margin: -1px;
+	height: 32px;
+	width: 32px;
+}
+
+
 .header .navbar .nav>li>.setting {
 	color: #666;
 	cursor: pointer;
