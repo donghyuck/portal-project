@@ -134,9 +134,7 @@
 										<span class="u-accounts-name">안당</span>
 										<i class="setting fa fa-outdent"></i>
 									</a>
-								</li>		
-								<li><a href="#" data-feature-name="u_account" class="avatar"> <span class="u-account-name">안당</span> </a>
-								</li>	
+								</li>
 							</ul>				
 						</div>						
 					</div>
