@@ -129,7 +129,7 @@
 								</#list>			
 								<li>
 									
-									<a href="#" data-feature-name="u-accounts" class="avatar">
+									<a href="#" data-feature-name="u-accounts" class="u-accounts">
 										<span class="u-accounts-photo" style="background-image: url( '/download/profile/andang?width=150&amp;height=150' );"></span>
 										<span class="u-accounts-name">안당</span>
 										<i class="setting fa fa-outdent"></i>
