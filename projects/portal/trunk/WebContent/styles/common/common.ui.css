@@ -24,17 +24,23 @@
 	position: absolute;
 	height: 32px;
 	width: 32px;
-	opacity: .4;
+	opacity: .8;
 }
 
 .u-accounts .u-accounts-name {
 	padding-left: 35px;
 }
 
+
 .header .navbar .nav>li>.u-accounts:hover{
 	color: #333;
 	background: #f7f7f7;	
 }
+
+.header .navbar .nav>li>.u-accounts:hover .u-accounts-photo{
+	opacity: 1;
+}
+
 
 .header .navbar .nav>li>.setting {
 	color: #666;
