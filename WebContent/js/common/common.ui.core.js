@@ -752,10 +752,6 @@
 			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
 			
-			if(!element.data("target-object-id")){
-				element.data("target-object-id", guid());
-			}
-			
 			that.authenticate();
 			kendo.notify(that);
 		},
