@@ -778,6 +778,11 @@
 			var that = this,
 			token = that.token,
 			element = that.element;
+			
+			if(!element.data("target-object-id")){
+				element.data("target-object-id", guid());
+			}
+			
 			if( token.anonymous ){
 				alert( element.html() );				
 			}else{
