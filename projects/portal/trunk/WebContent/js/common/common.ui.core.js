@@ -319,14 +319,18 @@
 		} 		
 	});
 	
-	function accounts(options){
+	function accounts(options){		
+		var options = options || {},
+		renderTo = options.renderTo || $("#u-navbar");		
+		
+		alert( renderTo.html() );
 		
 		if( $("[data-feature-name='u-accounts']") ){
-			
-		}
 		
+		}else{
+		
+		}		
 	}
-	
 	
 	function culture ( locale ){
 		if( !defined( locale ) )
@@ -358,8 +362,7 @@
 			},
 			change : function(e){
 				var view = this.view(),
-				urls = [];
-				
+				urls = [];				
 				if ( options.slideshow ){
 					each(view, function(idx, photo){
 						urls.push(template(photo));
@@ -372,24 +375,7 @@
 						{duration: 6000, fade: 750}	
 				);
 			}
-		}).read();	
-			/*
-		dataSource.fetch(function(){
-			var photos = this.data();
-			var urls = [];
-			if ( options.slideshow ){
-				each(photos, function(idx, photo){
-					urls.push(template(photo));
-				});	
-			}else{
-				urls.push(template(photos[random(0, photos.length)]));
-			}
-			
-			$.backstretch(
-				urls,	
-				{duration: 6000, fade: 750}	
-			);
-		});		*/
+		}).read();			
 	}	
 	
 	var DEFAULT_LIGHTBOX_OPTIONS = {
