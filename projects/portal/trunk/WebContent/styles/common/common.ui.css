@@ -13,15 +13,19 @@
 	bottom: -2px;
 }
 
-.u-accounts-photo {
+.u-accounts .u-accounts-photo {
 	background-size: 32px 32px;
 	border-radius: 50%;
 	display: inline-block;
-	margin: -1px;
+	margin-top: -7px;
+	position: absolute;
 	height: 32px;
 	width: 32px;
 }
 
+.u-accounts .u-accounts-name {
+	padding-left: 35px;
+}
 
 .header .navbar .nav>li>.setting {
 	color: #666;
