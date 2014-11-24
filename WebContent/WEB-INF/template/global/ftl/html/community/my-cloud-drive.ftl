@@ -519,35 +519,36 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-personalized navbar-inverse padding-xs pull-right" role="navigation" style="top:-4px;">	
-					<ul class="nav navbar-nav">
-						<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
-						<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
-						</#list>	
-					</ul>
-																		
-					<ul class="nav navbar-nav">
-						<li class="padding-xs-hr no-padding-r">
-							<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
-								<button type="button" class="btn-u btn-u-dark-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
-								<button type="button" class="btn-u btn-u-dark-blue rounded-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
-							</div>
-						</li>							
-						<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-						<li class="hidden-xs">
-							<div class="btn-group navbar-btn" data-toggle="buttons">
-								<label class="btn btn-info rounded-left">
-									<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-								</label>
-								<label class="btn btn-info active">
-							 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-								</label>
-								<label class="btn btn-info rounded-right">
-									<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-								</label>
-							</div>
-						</li>
-					</ul>				
+				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
+					<div class="container">
+						<ul class="nav navbar-nav">
+							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
+							<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
+							</#list>	
+						</ul>																		
+						<ul class="nav navbar-nav">
+							<li class="padding-xs-hr no-padding-r">
+								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
+									<button type="button" class="btn-u btn-u-dark-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
+									<button type="button" class="btn-u btn-u-dark-blue rounded-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
+								</div>
+							</li>							
+							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
+							<li class="hidden-xs">
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info rounded-left">
+										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+									</label>
+									<label class="btn btn-info active">
+								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+									</label>
+									<label class="btn btn-info rounded-right">
+										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+									</label>
+								</div>
+							</li>
+						</ul>				
+					</div>	
 				</div><!-- ./navbar-personalized -->			
 			</div>
 			
