@@ -724,7 +724,9 @@
 	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 		
-	templates = {};
+	templates = {
+		photoCss : template("url( '/download/profile/#= username #?width=150&amp;height=150' )")
+	};
 	
 	function accounts( options ){		
 		var options = options || {},
@@ -788,6 +790,7 @@
 				alert( element.html() );				
 			}else{
 				element.find(".u-accounts-name").html( token.get("name") );
+				element.find(".u-accounts-photo").css("background-image", templates.photoCss(token) );
 			}
 			alert(element.data("target-object-id"));				
 		}
