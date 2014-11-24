@@ -24,7 +24,7 @@
 }
 
 .header .navbar .nav>li>.setting:hover {
-	color:#999;
+	color:#333;
 	/*color: #72c02c;*/
 	background: #f7f7f7;
 	border-bottom-color: #72c02c;
