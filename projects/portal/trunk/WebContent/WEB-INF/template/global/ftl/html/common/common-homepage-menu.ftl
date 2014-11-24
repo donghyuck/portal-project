@@ -123,6 +123,7 @@
 								<li>
 									<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
 								</li>
+								
 								</#if>
 								</#if>		
 								</#list>			
