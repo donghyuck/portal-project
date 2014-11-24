@@ -719,18 +719,18 @@
 	defined = ui.defined,
 	templates = {};
 	
-	function accounts(options){		
-		
-		alert( arguments.length );
-		
+	function accounts( options ){		
 		var options = options || {},
 		applyTo = options.applyTo || $("#u-navbar"),
 		renderTo = applyTo.find("[data-feature-name='u-accounts']") ;
-		
 		if( renderTo.length == 1  ){
 			// html  exist 
+			alert(renderTo.html()) ;
+			
 		}else{
-			// html not exist.
+			// html not exist. 
+			// append
+			
 		}		
 	}	
 
