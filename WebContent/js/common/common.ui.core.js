@@ -748,7 +748,7 @@
 	var UserAssistanceBar = Widget.extend({
 		init : function(element, options) {
 			var that = this,
-			token = that.token = new common.ui.data.User(),
+			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
 			kendo.notify(that);
 		},
