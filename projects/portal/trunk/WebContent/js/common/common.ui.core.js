@@ -717,6 +717,13 @@
 	ajax = ui.ajax,
 	handleAjaxError = ui.handleAjaxError,
 	defined = ui.defined,
+	AUTHENTICATE = "authenticate",
+	SHOWN = "shown", 
+	EXPAND = "expand",
+	COLLAPSE = "collapse",
+	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",
+	ROLE_ADMIN = "ROLE_ADMIN", 
+	ROLE_SYSTEM = "ROLE_SYSTEM", 		
 	templates = {};
 	
 	function accounts( options ){		
@@ -730,14 +737,46 @@
 			// append			
 		}
 		
-		if( !render.data("kendoExtAccounts") )
+		if( !render.data("kendoUserAssistanceBar") )
 		{
-			return new Accounts(render, options);				
+			return new ExtAccounts(render, options);				
 		}else{
-			return render.data("kendoExtAccounts");
+			return render.data("kendoUserAssistanceBar");
 		}				
 	}	
+	
+	var UserAssistanceBar = Widget.extend({
+		init : function(element, options) {
+			var that = this,
+			token = that.token = new common.ui.data.User(),
+			Widget.fn.init.call(that, element, options);
 
+			kendo.notify(that);
+		},
+		options : {
+			name : "UserAssistanceBar",
+			allowToSignIn : false,
+			allowToSignUp : false,
+		},
+		events : [ AUTHENTICATE, SHOWN, EXPAND, COLLAPSE ],
+		authenticate : function() {
+			var that = this;
+			ajax( that.options.url || AUTHENTICATE_URL , {
+				success : function(response){
+						var token = new common.ui.data.User(extend( response.currentUser, { roles : response.roles }));
+						token.set('isSystem', false);
+						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
+							token.set('isSystem', true);			
+						token.copy(that.token);	
+						that.refresh();
+						that.trigger(AUTHENTICATE,{ token : that.token });
+				}
+			});
+		},
+		refresh : function(){
+			
+		}
+	});
 	extend(ui, {
 		accounts : common.ui.accounts || accounts		
 	});
