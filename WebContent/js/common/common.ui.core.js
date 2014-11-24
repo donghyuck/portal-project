@@ -412,6 +412,7 @@
 			target_object.toggleClass("cbp-spmenu-open");	
 		});
 		
+		
 		$(document).on("click","[data-toggle='spmenu']", function(e){
 			var $this = $(this);					
 			var target ;
