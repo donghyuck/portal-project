@@ -519,7 +519,13 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-personalized navbar-inverse padding-xs pull-right" role="navigation" style="top:-4px;">									
+				<div class="navbar navbar-personalized navbar-inverse padding-xs pull-right" role="navigation" style="top:-4px;">	
+					<ul class="nav navbar-nav">
+						<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
+						<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
+						</#list>	
+					</ul>
+																		
 					<ul class="nav navbar-nav">
 						<li class="padding-xs-hr no-padding-r">
 							<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
