@@ -403,7 +403,7 @@
 			if( $this.prop("tagName").toLowerCase() == "a" ){			
 				target_object  = $($this.attr("href"));	
 			}else{
-				if($this.data("target")){
+				if($this.data("target-object-id")){
 					target_object = $("#" + $this.data("target-object-id"));
 				}
 			}
