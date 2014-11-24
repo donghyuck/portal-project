@@ -777,6 +777,16 @@
 				}
 			});
 		},
+		_toggle : function (){
+			var that = this;			
+			$("body").toggleClass("aside-menu-in");
+			
+			if($("body").hasClass("aside-menu-in") ){
+				that.trigger(EXPAND);
+			}else{
+				that.trigger(COLLAPSE);
+			}
+		},
 		refresh : function (){
 			var that = this,
 			token = that.token,
@@ -784,14 +794,22 @@
 			if( token.anonymous ){
 				alert( element.html() );
 			}else{
-				element.find(".u-accounts-name").html( token.get("name") );
-				element.find(".u-accounts-photo").css("background-image", templates.photoCss(token) );
-				var aside = $("#" + token.uid );
-				if( aside.length === 0 ){	
-					var template = kendo.template($("#account-sidebar-template").html());
-					$("body").append( template( token) );					
+				element.children(".u-accounts-name").html( token.get("name") );
+				element.children(".u-accounts-photo").css("background-image", templates.photoCss(token) );
+				if( $("#" + token.uid ).length === 0 ){	
+					var template = kendo.template($("#account-sidebar-template").html());					
+					$("body").append( template( token) );										
+					$( "#" + token.uid  + ' button.btn-close:first').click(function(e){						
+						that._toggle();
+						return false;
+					});							
+					element.click(function(e){						
+						that._toggle();
+						return false;
+					});
 				}				
 			}
+			that.trigger(SHOWN);
 		}
 	});
 	
