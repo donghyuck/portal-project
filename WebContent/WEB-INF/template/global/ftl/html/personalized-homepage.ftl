@@ -316,7 +316,7 @@
 			<!-- START MAIN CONTENT -->
 		
 			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-default no-margin-b" role="navigation">	
+				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
 					<div class="container">
 						<ul class="nav navbar-nav">
 							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
