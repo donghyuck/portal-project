@@ -407,8 +407,6 @@
 					target_object = $("#" + $this.data("target-object-id"));
 				}
 			}
-			alert(target_object);
-			
 			$("body").css("overflow-y: hidden;");
 			target_object.trigger("open");
 			target_object.toggleClass("cbp-spmenu-open");	
