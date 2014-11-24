@@ -85,7 +85,7 @@
 		}]);	
 	
 		function getCurrentUser () {
-			return common.ui.accounts($("#account-navbar") ).token ;
+			return common.ui.accounts().token ;
 		}		
 		
 		<!-- ============================== -->
