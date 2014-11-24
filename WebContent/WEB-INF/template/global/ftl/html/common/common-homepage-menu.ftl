@@ -127,7 +127,7 @@
 								</#if>		
 								</#list>			
 								<li>
-									<i class="setting fa fa-cog" data-feature-name="u_smenu"></i>
+									<i class="setting fa fa-outdent" data-feature-name="u_smenu"></i>
 								</li>		
 								<li><a href="#" data-feature-name="u_account" class="avatar"> <span class="u-account-name">안당</span> </a>
 								</li>	
