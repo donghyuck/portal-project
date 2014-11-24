@@ -725,7 +725,7 @@
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 		
 	templates = {
-		photoCss : template("url( '/download/profile/#= username #?width=150&amp;height=150' )")
+		photoCss : template("url( '/download/profile/#= username #?width=150&height=150' )")
 	};
 	
 	function accounts( options ){		
