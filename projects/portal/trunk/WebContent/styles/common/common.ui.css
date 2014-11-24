@@ -19,7 +19,9 @@
 
 .u-accounts .u-accounts-photo {
 	background-size: 32px 32px;
-	border-radius: 50% !important;
+	/*border-radius: 50% !important;*/
+	border-top-left-radius: 4px !important;
+	border-top-right-radius: 4px !important;
 	display: inline-block;
 	top: 4px;
 	position: absolute;
