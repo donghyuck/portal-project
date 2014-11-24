@@ -34,7 +34,15 @@
 					features:{
 						wallpaper : true,
 						lightbox : true,
-						spmenu : true
+						spmenu : true,
+						accounts : {
+							authenticate : function(e){
+								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+									createConnectedSocialNav();												 
+								}
+							} 
+						}	
 					},
 					wallpaper : {
 						slideshow : false
@@ -44,19 +52,9 @@
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-				common.ui.accounts($("#account-navbar"), {
-					template : kendo.template($("#account-navbar-template").html()),
-					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if( !currentUser.anonymous ){		
-							createConnectedSocialNav();						
-						}
-					}
-				});	
 				
 				// menu active setting		
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED']").addClass("active");			
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_3']").addClass("active");			
 					
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
