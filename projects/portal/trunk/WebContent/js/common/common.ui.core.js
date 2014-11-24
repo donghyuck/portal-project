@@ -737,11 +737,11 @@
 			// append			
 		}
 		
-		if( !render.data("kendoUserAssistanceBar") )
+		if( !renderTo.data("kendoUserAssistanceBar") )
 		{
-			return new UserAssistanceBar(render, options);				
+			return new UserAssistanceBar(renderTo, options);				
 		}else{
-			return render.data("kendoUserAssistanceBar");
+			return renderTo.data("kendoUserAssistanceBar");
 		}				
 	}	
 	
