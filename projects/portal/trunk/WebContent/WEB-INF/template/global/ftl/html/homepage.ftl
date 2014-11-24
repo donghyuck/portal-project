@@ -26,6 +26,9 @@
 				common.ui.setup({
 					features:{
 						wallpaper : false,
+						accounts : {
+							
+						}
 					},
 					jobs:jobs
 				});	
@@ -33,7 +36,7 @@
 				// ACCOUNTS LOAD	
 				
 				var currentUser = new common.ui.data.User();			
-				/*
+				
 				common.ui.accounts($("#account-navbar"), {
 					template : kendo.template($("#account-navbar-template").html()),
 					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
@@ -43,7 +46,7 @@
 						}
 					}
 				});	
-				*/
+				
 				<#if !action.user.anonymous ></#if>	
 			}
 		}]);	
