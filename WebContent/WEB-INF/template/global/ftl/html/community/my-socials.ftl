@@ -157,18 +157,18 @@
 	<body id="doc" class="bg-dark">
 		<div class="page-loader"></div>
 		<div class="wrapper">
-		<!-- START HEADER -->		
-		<#include "/html/common/common-homepage-menu.ftl" >		
-		<!-- END HEADER -->	
-		<!-- START MAIN CONTENT -->
-		<div class="breadcrumbs breadcrumbs-personalized">		
-				<div class="navbar navbar-personalized navbar-inverse padding-xs" role="navigation" style="top:-4px;">
-								<ul class="nav navbar-nav pull-right">
-									<li>
-										<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
-											<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-										</div>
-									</li>								
+			<!-- START HEADER -->		
+			<#include "/html/common/common-homepage-menu.ftl" >		
+			<!-- END HEADER -->	
+			<!-- START MAIN CONTENT -->
+			<div class="breadcrumbs breadcrumbs-personalized">
+				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
+					<div class="container">
+						<ul class="nav navbar-nav">
+							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
+							<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
+							</#list>	
+						</ul>								
 									<li class="hidden-xs">
 										<p class="navbar-text">레이아웃</p>
 										<div class="btn-group navbar-btn" data-toggle="buttons">
@@ -185,11 +185,12 @@
 									</li> 		
 								</ul>
 					</div><!-- ./navbar-personalized -->	
-		</div>
-		<div id="main-content" class="container-fluid" style="min-height:300px;">			
+				</div>	
+			</div>
+			<div id="main-content" class="container-fluid" style="min-height:300px;">			
 				<div id="personalized-area" class="row"></div>	
-		</div>
-		<!-- END MAIN CONTENT -->		
+			</div>
+			<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->
