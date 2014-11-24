@@ -128,7 +128,7 @@
 								</#if>		
 								</#list>			
 								<li>
-									<i class="setting fa fa-outdent"></i><span class="u-accounts-name">안당</span><i class="setting fa fa-outdent" data-feature-name="u_accounts"  data-target-object-id="my-aside-menu"></i>
+									<i class="setting fa fa-user"></i><span class="u-accounts-name">안당</span><i class="setting fa fa-outdent" data-feature-name="u_accounts"  data-target-object-id="my-aside-menu"></i>
 								</li>		
 								<li><a href="#" data-feature-name="u_account" class="avatar"> <span class="u-account-name">안당</span> </a>
 								</li>	
