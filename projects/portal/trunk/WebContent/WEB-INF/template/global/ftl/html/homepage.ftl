@@ -27,7 +27,6 @@
 					features:{
 						wallpaper : false,
 						accounts : {
-							renderTo: $("#u-navbar"),
 							authenticate : function(e){
 							
 							} 
