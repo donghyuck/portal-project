@@ -287,15 +287,15 @@
 			if( features.culture ){
 				culture();				
 			}
-			
-			if(features.wallpaper){
-				wallpaper(options.wallpaper);
-			}
-			
 			if(features.landing){				
 				landing();
 			}
-			
+			if(defined(features.accounts)){
+				accounts(features.accounts);				
+			}			
+			if(features.wallpaper){
+				wallpaper(options.wallpaper);
+			}
 			if(features.spmenu){				
 				spmenu();
 			}
@@ -318,6 +318,15 @@
 			}			
 		} 		
 	});
+	
+	function accounts(options){
+		
+		if( $("[data-feature-name='u-accounts']") ){
+			
+		}
+		
+	}
+	
 	
 	function culture ( locale ){
 		if( !defined( locale ) )
@@ -1341,6 +1350,8 @@
 	
 })(jQuery);
 
+
+/**
 ;(function($, undefined) {
 	
 	var ui = common.ui,
@@ -1478,7 +1489,7 @@
 	});
 	
 })(jQuery);
-
+**/
 
 (function($, undefined) {
 	var kendo = window.kendo, 
