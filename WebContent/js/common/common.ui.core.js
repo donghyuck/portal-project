@@ -748,7 +748,6 @@
 	var UserAssistanceBar = Widget.extend({
 		init : function(element, options) {
 			var that = this,
-			element = that.element,
 			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
 			
