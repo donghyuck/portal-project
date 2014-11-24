@@ -28,7 +28,7 @@
 						wallpaper : false,
 						accounts : {
 							authenticate : function(e){
-								alert( e.token );
+								e.token.copy(currentUser);
 							} 
 						}
 					},
