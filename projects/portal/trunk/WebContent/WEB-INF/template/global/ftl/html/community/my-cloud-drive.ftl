@@ -526,7 +526,7 @@
 							<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
 							</#list>	
 						</ul>																		
-						<ul class="nav navbar-nav">
+						<ul class="nav navbar-nav navbar-right">
 							<li class="padding-xs-hr no-padding-r">
 								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
 									<button type="button" class="btn-u btn-u-dark-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
