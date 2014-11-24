@@ -11,7 +11,9 @@
 	background: #f7f7f7;
 	padding: 11px 0 12px;
 	display: inline-block;
-	border-bottom: solid 2px #aaa;
+	/*border-bottom: solid 2px #aaa;*/
+	border-top-left-radius: 4px !important;
+	border-top-right-radius: 4px !important;
 }
 
 @media ( min-width : 992px) {
@@ -22,7 +24,8 @@
 }
 
 .header .navbar .nav>li>.setting:hover {
-	color: #72c02c;
+	color:#999;
+	/*color: #72c02c;*/
 	background: #f7f7f7;
 	border-bottom-color: #72c02c;
 }
