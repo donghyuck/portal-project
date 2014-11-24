@@ -750,7 +750,12 @@
 			var that = this,
 			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
+			element = that.wrapper = that.element;
+			options = that.options;
 			
+			if(!element.data("target-object-id")){
+				ement.data("target-object-id", guid());
+			}	
 			that.authenticate();
 			kendo.notify(that);
 		},
@@ -777,12 +782,8 @@
 		refresh : function (){
 			var that = this,
 			token = that.token,
-			element = that.element;
-			
-			if(!element.data("target-object-id")){
-				element.data("target-object-id", guid());
-			}
-			
+			element = that.element;			
+		
 			if( token.anonymous ){
 				alert( element.html() );				
 			}else{
