@@ -750,6 +750,7 @@
 			var that = this,
 			token = that.token = new common.ui.data.User();
 			Widget.fn.init.call(that, element, options);
+			that.authenticate();
 			kendo.notify(that);
 		},
 		options : {
@@ -773,7 +774,12 @@
 			});
 		},
 		refresh : function (){
-			
+			var that = this,
+			token = that.token,
+			element = that.element;
+			if( !token.isNew()){
+				alert( element.html() );				
+			}
 		}
 	});
 	
