@@ -128,7 +128,7 @@
 								</#if>		
 								</#list>			
 								<li>
-									<a href="#" data-feature-name="u-accounts" class="u-accounts">
+									<a href="#" data-feature-name="u-accounts" class="u-accounts" style="display:none;">
 										<span class="u-accounts-photo" style="background-image: url( '/images/common/anonymous.png' );"></span>
 										<span class="u-accounts-name"><i class="setting fa fa-outdent"></i></span>
 									</a>
