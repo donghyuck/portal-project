@@ -739,7 +739,7 @@
 		
 		if( !render.data("kendoUserAssistanceBar") )
 		{
-			return new ExtAccounts(render, options);				
+			return new UserAssistanceBar(render, options);				
 		}else{
 			return render.data("kendoUserAssistanceBar");
 		}				
