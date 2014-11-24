@@ -129,9 +129,10 @@
 								</#list>			
 								<li>
 									<a href="#" data-feature-name="u-accounts" class="u-accounts" style="display:none;">
-										<span style="padding-right: 5px;"><i class="fa fa-caret-left"></i></span>									
+										<!--<span style="padding-right: 5px;"><i class="fa fa-caret-left"></i></span>				-->					
 										<span class="u-accounts-photo" style="background-image: url( '/images/common/anonymous.png' );"></span>
-										<span class="u-accounts-name"><i class="setting fa fa-outdent"></i></span>
+										<span class="u-accounts-name"></span>
+										<i class="setting fa fa-outdent"></i>
 									</a>
 								</li>
 							</ul>				
