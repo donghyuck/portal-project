@@ -15,7 +15,7 @@
 .u-accounts-photo {
 	background-size: 32px 32px;
 	border-radius: 50%;
-	display: block;
+	display: inline-block;
 	margin: -1px;
 	height: 32px;
 	width: 32px;
