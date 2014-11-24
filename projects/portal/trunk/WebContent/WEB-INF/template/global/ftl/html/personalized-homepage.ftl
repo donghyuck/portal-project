@@ -314,13 +314,14 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
+		
 			<div class="breadcrumbs breadcrumbs-personalized">
 				<div class="navbar navbar-default no-margin-b" role="navigation">	
 					<div class="container">
 						<ul class="nav navbar-nav">
-							 <li class="active"><a href="#">MY 홈<span class="sr-only">(current)</span></a></li>
-							 <li class=""><a href="#">MY 드라이버<span class="sr-only">(current)</span></a></li>
-							 <li class=""><a href="#">MY 쇼셜<span class="sr-only">(current)</span></a></li>
+							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
+								<li class="active"><a href="#">${item.title}<span class="sr-only">(current)</span></a></li>
+							</#list>	
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
 							<li>
