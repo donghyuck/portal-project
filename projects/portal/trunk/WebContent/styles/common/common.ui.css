@@ -273,6 +273,11 @@ body.aside-menu-in .aside-menu {
 	right: 0px;
 }
 
+.panel-heading .btn-close.btn-xs , .panel-heading .btn-close.btn-sm {
+	position: relative;
+	float: right;
+}
+
 .close-sm {
 	position: absolute;
 	width: 40px;
