@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<html decorator="homepage">
+<html decorator="unify">
 <head>
 <#compress>
 		<title><#if action.webSite ?? >${action.webSite.displayName } 로그인<#else>로그인</#if></title>
@@ -8,8 +8,7 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',			
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
-			'css!${request.contextPath}/styles/common.plugins/animate.css',
+			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
 			'css!${request.contextPath}/styles/jquery.jgrowl/jquery.jgrowl.min.css',
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jquery.plugins/jquery.ui.shake.min.js',
