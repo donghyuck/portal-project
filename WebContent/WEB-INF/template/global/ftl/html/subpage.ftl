@@ -11,8 +11,7 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
-			'css!${request.contextPath}/styles/common.plugins/animate.css',
+			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
@@ -28,22 +27,20 @@
 				common.ui.setup({
 					features:{
 						wallpaper : false,
+						accounts : {
+							authenticate : function(e){
+								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+													 
+								}
+							} 
+						}		
 					},
 					jobs:jobs
 				});	
 				
 				// ACCOUNTS LOAD	
-				var currentUser = new common.ui.data.User();			
-				common.ui.accounts($("#account-navbar"), {
-					template : kendo.template($("#account-navbar-template").html()),
-					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if( !currentUser.anonymous ){							
-						}
-					}
-				});	
-				
+				var currentUser = new common.ui.data.User();							
 				<#if !action.user.anonymous ></#if>	
 				// END SCRIPT
 			}
