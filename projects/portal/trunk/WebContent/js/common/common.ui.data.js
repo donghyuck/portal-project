@@ -368,16 +368,15 @@
 	}
 	
 	function imagePorpertyDataSource(imageId){
-		var serviceUrl = "/data/image/"+ imageId + "/property?output=json";		
 		return DataSource.create({		
 			transport: { 
-				read: { url:serviceUrl, type:'GET' },
-				create: { url:serviceUrl, type:'POST' ,contentType : "application/json" },
-				update: { url:serviceUrl, type:'POST'  ,contentType : "application/json"},
-				destroy: { url:serviceUrl, type:'DELETE' ,contentType : "application/json"},
+				read: { url:"/data/images/properties/list.json?output=json", type:'GET' },
+				create: { url:"/data/images/properties/update.json?output=json" + "&imageId=" + imageId, type:'POST' ,contentType : "application/json" },
+				update: { url:"/data/images/properties/update.json?output=json" + "&imageId=" + imageId, type:'POST'  ,contentType : "application/json"},
+				destroy: { url:"/data/images/properties/delete.json?output=json" +  "&imageId=" + imageId, type:'POST' ,contentType : "application/json"},
 		 		parameterMap: function (options, operation){			
 					if (operation !== "read" && options.models) {
-						return kendo.stringify(options.models);//{ imageId: imageId, items: kendo.stringify(options.models)};
+						return kendo.stringify(options.models);
 					} 
 					return { imageId: imageId }
 				}
