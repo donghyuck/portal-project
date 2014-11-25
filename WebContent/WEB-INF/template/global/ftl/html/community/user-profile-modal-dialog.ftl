@@ -5,7 +5,7 @@
 		<!--
 						
 			var myProfileModel = new kendo.data.ObservableObject({
-				user : $("#account-navbar").data("kendoExtAccounts").token, 
+				user : common.ui.accounts().token,
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
