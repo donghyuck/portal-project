@@ -1,6 +1,6 @@
 /* Menu Buttons 
 ------------------------------------*/
-/* Account 
+/* User Navigation Bar 
 ------------------------------------*/
 .header .navbar .nav>li>.u-accounts {
 	color: #999;
@@ -44,8 +44,6 @@
 .header .navbar .nav>li>.u-accounts:hover .u-accounts-photo{
 	opacity: 1;
 }
-
-
 
 .header .navbar .nav>li>a.avatar {
 	padding-right: 0;
@@ -186,7 +184,7 @@ a.navbar-toggle-inverse :hover {
 }
 
 
-/*Aside Menu
+/* Aside Menu
 ------------------------------------*/
 .wrapper {
 	position: relative;
