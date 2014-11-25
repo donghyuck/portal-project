@@ -159,7 +159,7 @@
 					$("#attachment-list-view"),
 					{				
 						dataSource : common.ui.datasource(
-							"${request.contextPath}/community/list-my-attachement.do?output=json", 
+							"${request.contextPath}/data/files/list.json?output=json", 
 							{
 								transport:{
 									destroy: { url:"${request.contextPath}/community/delete-my-attachment.do?output=json", type:"POST" }, 
@@ -174,8 +174,8 @@
 								pageSize: 12,
 								schema: {
 									model: common.ui.data.Attachment,
-									data : "targetAttachments",
-									total : "totalTargetAttachmentCount"
+									data : "files",
+									total : "totalCount"
 								},
 								sort: { field: "attachmentId", dir: "desc" },
 								filter :  { field: "contentType", operator: "neq", value: "" }							
