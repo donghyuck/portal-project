@@ -340,11 +340,11 @@
 			return;
 		}	
 		options = options || {},
-		template = options.template || kendo.template("/community/view-streams-photo.do?key=#= externalId#"),
-		dataSource = options.dataSource = datasource( "/community/list-streams-photo.do?output=json", {
+		template = options.template || kendo.template("/download/streams/#= externalId#"),
+		dataSource = options.dataSource = datasource( "/data/streams/photos/list.json?output=json", {
 			pageSize: 15,
 			schema: {
-				total: "photoCount",
+				total: "totalCount",
 				data: "photos"
 			},
 			change : function(e){
