@@ -299,7 +299,7 @@
 					$('#photo-list-view'),
 					{
 						dataSource : common.ui.datasource(
-							'${request.contextPath}/data/image/list.json?output=json',
+							'${request.contextPath}/data/images/list.json?output=json',
 							{
 								transport : {
 									parameterMap :  function (options, operation){
