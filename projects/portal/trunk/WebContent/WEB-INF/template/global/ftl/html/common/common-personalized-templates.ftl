@@ -19,7 +19,7 @@
 <script type="text/x-kendo-tmpl" id="photo-list-view-template">
 <div class="img-wrapper">			
 	#if (contentType.match("^image") ) {#
-	<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#:imageId#" alt="#:name# 이미지" />
+	<img src="${request.contextPath}/download/image/#= imageId #/#=name#?width=150&height=150" alt="#:name# 이미지" />
 	<button type="button" class="btn btn-danger btn-sm rounded-3x"><i class="fa fa-eye"></i> 이미지 보기</button>
 	# } else { #			
 	<img src="http://placehold.it/146x146&amp;text=[file]"></a>
