@@ -14,7 +14,6 @@
 			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',					
 			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
 			'css!${request.contextPath}/styles/common.plugins/box-shadows.css',	
-		/*	'css!${request.contextPath}/styles/common.pages/common.onepage.css',*/
 			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
 				
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
@@ -99,7 +98,7 @@
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
 				var galleryDataSource = common.ui.datasource(
-					'${request.contextPath}/community/list-my-image.do?output=json',
+					'${request.contextPath}/data/images/list.json?output=json',
 					{
 						transport:{
 							parameterMap: function (options, operation){
@@ -113,8 +112,8 @@
 						pageSize: 30,
 						schema: {
 							model: common.ui.data.Image,
-							data : "targetImages",
-							total : "totalTargetImageCount"
+							data : "images",
+							total : "totalCount"
 						},
 						change : function(){
 							$( "#image-gallery-grid" ).html(
@@ -347,7 +346,6 @@
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
 					showPhotoPanel(item);
-					//$(this).addClass("disabled");
 				});					
 									
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
@@ -436,14 +434,11 @@
 				custom: function(e){
 					var $this = e.target; 
 					var body = $this.element.children(".panel-custom-body");
-					if( body.children().length === 0 ){
-						
-						body.html($("#photo-editor-modal-template").html());
-						
+					if( body.children().length === 0 ){						
+						body.html($("#photo-editor-modal-template").html());						
 						var publicStream = body.find("input[name='photo-public-shared']");
 						var upload = body.find("input[name='update-photo-file']");
-						var grid = body.find(".photo-props-grid");				
-											
+						var grid = body.find(".photo-props-grid");		
 						common.ui.upload( upload, {
 							async : {
 								saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
@@ -718,9 +713,9 @@
 	
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" class="zoomer" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
+		<a href="\\#" class="zoomer" data-largesrc="${request.contextPath}/download/image/#= imageId #/#= name #" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
 			<span class="overlay-zoom">
-				<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" class="img-responsive animated zoomIn" />
+				<img src="${request.contextPath}/download/image/#= imageId #/#= name #?width=150&height=150&imageId=#= imageId#" class="img-responsive animated zoomIn" />
 				<span class="zoom-icon"></span>
 			</span>
 		</a>	
