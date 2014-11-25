@@ -340,7 +340,7 @@
 			return;
 		}	
 		options = options || {},
-		template = options.template || kendo.template("/download/streams/#= externalId#"),
+		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
 		dataSource = options.dataSource = datasource( "/data/streams/photos/list.json?output=json", {
 			pageSize: 15,
 			schema: {
