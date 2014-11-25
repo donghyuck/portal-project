@@ -146,7 +146,7 @@
 		$.ajax({
 			type : 'GET',
 			url : "/data/streams/photos/get.json?output=json",
-			data: { imageId : options.imageId },
+			data: { imageId : imageId },
 			success : function(response){
 				if( isFunction(callback) )
 					callback(response) ;	
