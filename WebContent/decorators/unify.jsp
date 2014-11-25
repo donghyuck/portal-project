@@ -34,6 +34,7 @@
 	.header .navbar-brand {
 		height:20px;
 	}
+	
 	.header .navbar-default {
 		background: transparent;
 	}
