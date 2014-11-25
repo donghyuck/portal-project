@@ -139,7 +139,6 @@
 	ajax = common.ui.ajax,	
 	handleAjaxError = common.ui.handleAjaxError,
 	isFunction = kendo.isFunction,
-	urlTemplate = kendo.template("/data/#=service#/#=objectId#/#=action#"),
 	extend = $.extend;
 	
 	function getImageStreams ( imageId , callback ){		
