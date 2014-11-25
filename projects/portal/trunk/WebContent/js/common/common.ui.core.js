@@ -1641,7 +1641,7 @@
 					type :JSON,
 					transport : {
 						read : {
-							url : '/data/image/list.json?output=json',
+							url : '/data/images/list.json?output=json',
 							type : POST
 						},
 						parameterMap : function(	options, operation) {
@@ -1733,7 +1733,8 @@
 				$(that.element).remove();
 			},
 			_getImageLink : function(image, callback) {
-				ajax("/data/image/" + image.imageId + "/link.json?output=json", {
+				ajax("/data/images/link.json?output=json", {
+					data : { imageId : image.imageId },	
 					success : function(data) {
 						callback(data);
 					}					
@@ -1779,7 +1780,7 @@
 											type : 'json',
 											transport : {
 												read : {
-													url : '/community/list-my-page-image.do?output=json',
+													url : '/data/images/list.json?output=json',
 													type : 'POST'
 												},
 												parameterMap : function(options, operation) {
@@ -1791,7 +1792,8 @@
 														return {
 															startIndex : options.skip,
 															pageSize : options.pageSize,
-															pageId : options.pageId || that._objectId()
+															objectType : 31,
+															objectId : options.pageId || that._objectId()
 														}
 													}
 												}
@@ -1800,8 +1802,8 @@
 											error : handleAjaxError,
 											schema : {
 												model : Image,
-												data : "targetImages",
-												total : "totalTargetImageCount"
+												data : "images",
+												total : "totalCount"
 											},
 											serverPaging : true
 										},
