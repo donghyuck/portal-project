@@ -186,7 +186,6 @@
 							var data = this.dataSource.view() ;
 							var item = data[this.select().index()];		
 							$("#attachment-list-view").data( "attachPlaceHolder", item );												
-							//displayAttachmentPanel( ) ;	
 						},		
 						navigatable: false,
 						template: kendo.template($("#attachment-list-view-template").html()),			
