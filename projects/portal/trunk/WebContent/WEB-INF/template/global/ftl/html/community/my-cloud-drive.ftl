@@ -470,6 +470,8 @@
 							}
 						});			
 						
+						alert( kendo.stringify( $this.data() );
+						
 						common.ui.data.image.streams($this.data().imageId, function(data){
 							alert(kendo.stringify(data));
 							if( data.length > 0 )
@@ -482,9 +484,9 @@
 							var oldValue =  $this.data().shared ;
 							if( oldValue != newValue){
 								if(newValue){
-									common.ui.data.image.unshare($this.data().imageId);						
+									common.ui.data.image.unshare($this.data().imageId);	
 								}else{
-									common.ui.data.image.share($this.data().imageId);					
+									common.ui.data.image.share($this.data().imageId);
 								}
 							}
 						});	
