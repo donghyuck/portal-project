@@ -409,7 +409,7 @@
 	extend( common.ui.data, {
 		user : user ,
 		image : {
-			upload : uploadMyImageByUrl ,
+			uploadByUrl : uploadMyImageByUrl ,
 			property : { datasource: imagePorpertyDataSource }
 		},
 		properties : {		
