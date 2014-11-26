@@ -595,7 +595,7 @@
 										</#if>								
 									</div>
 								</div>
-							<div class="panel panel-default">
+							<div class="panel panel-default no-margin-b">
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
@@ -666,7 +666,7 @@
 													</div>
 												</div>	
 
-							<div class="panel panel-default">			
+							<div class="panel panel-default no-margin-b">			
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
 									<#if !action.user.anonymous >		
