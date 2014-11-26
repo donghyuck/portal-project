@@ -470,7 +470,7 @@
 							}
 						});			
 						
-						alert( kendo.stringify( $this.data() );
+						alert( kendo.stringify( $this.data() ));
 						
 						common.ui.data.image.streams($this.data().imageId, function(data){
 							alert(kendo.stringify(data));
