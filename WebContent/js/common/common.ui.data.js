@@ -351,6 +351,7 @@
 			options.url || '/data/images/upload_by_url.json?output=json', 
 			{
 				data: kendo.stringify(options.data),
+				contentType : "application/json",
 				success : function(response){
 					if( response.error ){ 												
 						if( kendo.isFunction (options.fail) )
