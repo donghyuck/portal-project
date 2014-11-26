@@ -393,7 +393,7 @@
 			target_object.trigger("open");
 			target_object.toggleClass("cbp-spmenu-open");	
 		});
-		
+		/**
 		
 		$(document).on("click","[data-toggle='spmenu']", function(e){
 			var $this = $(this);					
@@ -409,10 +409,10 @@
 			$(target).trigger("open");
 			$(target).toggleClass("cbp-spmenu-open");		
 		});
+		**/
 		
 		$(document).on("click","[data-dismiss='spmenu']", function(e){
-			var $this = $(this);
-			
+			var $this = $(this);			
 			var target  = $this.parent();		
 			$("body").css("overflow-y: auto;");
 			var toggle = $this.data("toggle-target");
