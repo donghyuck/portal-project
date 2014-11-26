@@ -144,7 +144,7 @@
 	function unsharing( imageId, callback ){
 		$.ajax({
 			type : 'POST',
-			url : options.url || '/streams/photos/delete.json?output=json' ,
+			url : '/streams/photos/delete.json?output=json' ,
 			data: { imageId : imageId },
 			success : function(response){
 				if( isFunction(callback) )
@@ -158,7 +158,7 @@
 	function sharing( imageId , callback ){
 		$.ajax({
 			type : 'POST',
-			url : options.url || '/streams/photos/insert.json?output=json' ,
+			url : '/data/streams/photos/insert.json?output=json' ,
 			data: { imageId : imageId },
 			success : function(response){
 				if( isFunction(callback) )
