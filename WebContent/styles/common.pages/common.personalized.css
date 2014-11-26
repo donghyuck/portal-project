@@ -97,7 +97,7 @@
 	/*padding: 15px;*/
 	border-radius: 4px !important;
 	z-index: 90;
-	width :300px;
+	width :0;
 	min-height:34px;
 }
 
