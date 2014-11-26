@@ -347,7 +347,7 @@
 							if( !common.ui.exists($("#photo-files")) ){
 								common.ui.upload($("#photo-files"),{
 									async: {
-										saveUrl:  '${request.contextPath}/images/update_with_media.json?output=json'
+										saveUrl:  '${request.contextPath}/data/images/update_with_media.json?output=json'
 									},
 									success : function(e) {	
 										var photo_list_view = common.ui.listview($('#photo-list-view'));
