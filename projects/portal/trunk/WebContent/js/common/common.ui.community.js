@@ -141,7 +141,35 @@
 	isFunction = kendo.isFunction,
 	extend = $.extend;
 	
-	function getImageStreams ( imageId , callback ){		
+	function unsharing( imageId, callback ){
+		$.ajax({
+			type : 'POST',
+			url : options.url || '/streams/photos/delete.json?output=json' ,
+			data: { imageId : imageId },
+			success : function(response){
+				if( isFunction(callback) )
+					callback(response) ;	
+			},
+			error:handleAjaxError,
+			dataType : "json"
+		});	
+	}
+	
+	function sharing( imageId , callback ){
+		$.ajax({
+			type : 'POST',
+			url : options.url || '/streams/photos/insert.json?output=json' ,
+			data: { imageId : imageId },
+			success : function(response){
+				if( isFunction(callback) )
+					callback(response) ;	
+			},
+			error:handleAjaxError,
+			dataType : "json"
+		});	
+	}
+	
+	function details ( imageId , callback ){		
 		$.ajax({
 			type : 'GET',
 			url : "/data/streams/photos/get.json?output=json",
@@ -156,7 +184,9 @@
 	};		
 	
 	extend( common.ui.data.image, {
-		streams : getImageStreams		
+		share : sharing ,
+		unshare : unsharing	,
+		streams : details		
 	} );
 	
 	
