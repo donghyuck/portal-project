@@ -469,9 +469,9 @@
 							change: function(e) {
 								this.refresh();
 							}
-						});		
-																							
+						});																
 						common.ui.data.image.streams($this.data().imageId, function(data){
+							alert(stringify(data));
 							if( data.length > 0 )
 								publicStream.first().click();
 							else
