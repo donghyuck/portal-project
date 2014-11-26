@@ -414,13 +414,12 @@
 		$(document).on("click","[data-dismiss='spmenu']", function(e){
 			var $this = $(this);			
 			var target  = $this.parent();
-			$("body").css("overflow-y" , "auto");
-			var toggle = $this.data("toggle-target");
-			if(defined(toggle)){
-				if($(toggle).is(".active") )
-					$(toggle).removeClass("active");
+			$("body").css("overflow-y" , "auto");			
+			if($this.data("target-object-id")){
+				var target = $("#" + $this.data("target-object-id"));
+				if(target.is(".active") )
+					targetremoveClass("active");
 			}
-			
 			target.trigger("close");
 			target.toggleClass("cbp-spmenu-open");
 		});
