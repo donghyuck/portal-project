@@ -144,7 +144,7 @@
 	function unsharing( imageId, callback ){
 		$.ajax({
 			type : 'POST',
-			url : '/streams/photos/delete.json?output=json' ,
+			url : '/data/streams/photos/delete.json?output=json' ,
 			data: { imageId : imageId },
 			success : function(response){
 				if( isFunction(callback) )
