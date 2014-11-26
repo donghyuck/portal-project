@@ -470,28 +470,26 @@
 							}
 						});			
 						
-						$this.data().set("shared", false );
-						alert( kendo.stringify( $this.data().shared ));
-						
-						common.ui.data.image.streams($this.data().imageId, function(data){
-							alert(kendo.stringify(data));
-							if( data.length > 0 )
-								streams.first().click();
-							else
-								streams.last().click();	
-						});			
-									
-						streams.on("change", function(e){
-							var newValue = ( this.value == 1 ) ;
-							var oldValue =  $this.data().shared ;
-							if( oldValue != newValue){
+						//$this.data().set("shared", false );
+						var Fn = function(){
+							streams.on("change", function(e){
+								var newValue = ( this.value == 1 ) ;
 								if(newValue){
 									common.ui.data.image.unshare($this.data().imageId);	
 								}else{
 									common.ui.data.image.share($this.data().imageId);
 								}
-							}
-						});	
+							});						
+						}			
+						common.ui.data.image.streams($this.data().imageId, function(data){
+							if( data.length > 0 )
+								streams.first().click();
+							else
+								streams.last().click();	
+							Fn();	
+						});			
+						
+							
 					}
 				},
 				open: function(e){
