@@ -348,9 +348,9 @@
 	function uploadMyImageByUrl (options){
 		options = options || {};
 		ajax(
-			options.url || '/community/upload-my-image-by-url.do?output=json', 
+			options.url || '/data/images/upload_by_url.json?output=json', 
 			{
-				data: { item: kendo.stringify(options.data)} ,
+				data: kendo.stringify(options.data),
 				success : function(response){
 					if( response.error ){ 												
 						if( kendo.isFunction (options.fail) )
