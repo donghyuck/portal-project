@@ -522,8 +522,8 @@
 						<ul class="nav navbar-nav navbar-right">
 							<li class="padding-xs-hr no-padding-r">
 								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
-									<button type="button" class="btn-u btn-u-dark-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
-									<button type="button" class="btn-u btn-u-dark-blue rounded-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
+									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
+									<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="spmenu" data-target="#personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
 								</div>
 							</li>							
 							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
