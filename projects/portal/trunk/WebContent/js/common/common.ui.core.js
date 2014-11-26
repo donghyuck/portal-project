@@ -416,7 +416,7 @@
 			var target  = $this.parent();
 			$("body").css("overflow-y" , "auto");			
 			if($this.data("target-object-id")){
-				var target = $("#" + $this.data("target-object-id"));
+				var target = $($this.data("target-object"));
 				if(target.is(".active") )
 					targetremoveClass("active");
 			}
