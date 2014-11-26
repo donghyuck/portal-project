@@ -323,8 +323,6 @@
 							var total_index = this.dataSource.view().length -1 ;
 							var list_view_pager = $("#photo-list-pager").data("kendoPager");	
 							var item = data[current_index];								
-							//$("#photo-list-view").data( "photoPlaceHolder", item );														
-							//displayPhotoPanel( ) ;	
 						},
 						navigatable: false,
 						template: kendo.template($("#photo-list-view-template").html())
@@ -335,17 +333,14 @@
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-				});					
-					
-				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
-
+				});										
+				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });
 				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
 					showPhotoPanel(item);
-				});					
-									
+				});									
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
 					handlers : {
 						"upload" : function(e){				
@@ -371,6 +366,7 @@
 									upload: function(e) {
 										e.preventDefault();	
 										var hasError = false;	
+										
 										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
 										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
 											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");			
@@ -391,7 +387,7 @@
 										if( !hasError ){
 											var btn = $(e.target);
 											btn.button('loading');			
-											common.ui.data.image.upload( {
+											common.ui.data.image.uploadByUrl( {
 												data : this.data ,
 												success : function(response){
 													var photo_list_view = common.ui.listview($('#photo-list-view'));
