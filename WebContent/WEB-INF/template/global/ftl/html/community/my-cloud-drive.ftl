@@ -470,6 +470,13 @@
 							}
 						});			
 						
+						common.ui.data.image.streams($this.data().imageId, function(data){
+							alert(kendo.stringify(data));
+							if( data.length > 0 )
+								streams.first().click();
+							else
+								streams.last().click();	
+						});						
 						streams.on("change", function(e){
 							var newValue = ( this.value == 1 ) ;
 							var oldValue =  $this.data().shared ;
@@ -480,15 +487,7 @@
 									common.ui.data.image.share($this.data().imageId);					
 								}
 							}
-						});				
-															
-						common.ui.data.image.streams($this.data().imageId, function(data){
-							alert(kendo.stringify(data));
-							if( data.length > 0 )
-								streams.first().click();
-							else
-								streams.last().click();	
-						});						
+						});	
 					}
 				},
 				open: function(e){
