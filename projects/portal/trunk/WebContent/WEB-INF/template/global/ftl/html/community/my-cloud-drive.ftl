@@ -483,7 +483,7 @@
 						});				
 															
 						common.ui.data.image.streams($this.data().imageId, function(data){
-							alert(stringify(data));
+							alert(kendo.stringify(data));
 							if( data.length > 0 )
 								streams.first().click();
 							else
