@@ -470,6 +470,7 @@
 							}
 						});			
 						
+						$this.data().set("shared", false );
 						alert( kendo.stringify( $this.data().shared ));
 						
 						common.ui.data.image.streams($this.data().imageId, function(data){
@@ -478,7 +479,8 @@
 								streams.first().click();
 							else
 								streams.last().click();	
-						});						
+						});			
+									
 						streams.on("change", function(e){
 							var newValue = ( this.value == 1 ) ;
 							var oldValue =  $this.data().shared ;
