@@ -42,8 +42,10 @@ opacity: 1;
 height: auto;
 overflow: hidden;
 pointer-events: auto;
+/*
 -webkit-transition: opacity 0.3s 0.5s;
 transition: opacity 0.3s 0.5s;
+*/
 /*
 height: auto;
 overflow: visible;
