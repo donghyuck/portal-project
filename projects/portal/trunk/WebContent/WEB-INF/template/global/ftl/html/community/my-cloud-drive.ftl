@@ -434,7 +434,7 @@
 					var body = $this.element.children(".panel-custom-body");
 					if( body.children().length === 0 ){						
 						body.html($("#photo-editor-modal-template").html());						
-						var publicStream = body.find("input[name='photo-public-shared']");
+						var streams = body.find("input[name='photo-public-shared']");
 						var upload = body.find("input[name='update-photo-file']");
 						var grid = body.find(".photo-props-grid");		
 						common.ui.upload( upload, {
@@ -447,8 +447,7 @@
 							},
 							success: function (e) {							
 							}
-						} );
-
+						});
 						common.ui.grid(grid, {
 							dataSource : common.ui.data.image.property.datasource($this.data().imageId),
 							columns: [
@@ -469,13 +468,26 @@
 							change: function(e) {
 								this.refresh();
 							}
-						});																
+						});			
+						
+						streams.on("change", function(e){
+							var newValue = ( this.value == 1 ) ;
+							var oldValue =  $this.data().shared ;
+							if( oldValue != newValue){
+								if(newValue){
+									common.ui.data.image.unshare($this.data().imageId);						
+								}else{
+									common.ui.data.image.share($this.data().imageId);					
+								}
+							}
+						});				
+															
 						common.ui.data.image.streams($this.data().imageId, function(data){
 							alert(stringify(data));
 							if( data.length > 0 )
-								publicStream.first().click();
+								streams.first().click();
 							else
-								publicStream.last().click();	
+								streams.last().click();	
 						});						
 					}
 				},
