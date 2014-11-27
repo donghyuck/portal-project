@@ -245,7 +245,7 @@
 												saveUrl:  '${request.contextPath}/data/files/upload.json?output=json',
 											},
 											success : function(e) {								    
-												common.ui.listview($("#attachment-list-view")).refresh();			
+												common.ui.listview($("#attachment-list-view")).dataSource.read();						
 											}
 										}
 									);
