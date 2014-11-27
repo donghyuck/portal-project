@@ -5,7 +5,7 @@
 <div class="file-wrapper">
 	#if (contentType.match("^image") ) {#
 	<img src="${request.contextPath}/download/file/#= attachmentId #/#= name #?thumbnail=true" alt="#:name# 이미지" />		
-	#else  if (contentType.match("pdf^") ) {#
+	# } else  if (contentType.match("pdf^") ) {#
 	fdsa
 	# } else { #		
 	<img src="${request.contextPath}/images/common/icons/file/blank.png"></a>
