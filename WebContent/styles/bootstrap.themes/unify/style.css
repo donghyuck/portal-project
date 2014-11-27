@@ -16,7 +16,7 @@
 /*Import CSS Plugins*/
 @import url(../../common.plugins/animate.css);
 @import url(plugins/box-shadows.css);
-@import url(plugins/style-switcher.css);
+/*@import url(plugins/style-switcher.css);*/
 
 /*Import Headers*/
 @import url(headers/header-default.css);
