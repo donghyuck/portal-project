@@ -242,7 +242,7 @@
 										{
 											multiple : false,
 											async : {
-												saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',
+												saveUrl:  '${request.contextPath}/data/files/upload.json?output=json',
 											},
 											success : function(e) {								    
 												common.ui.listview($("#attachment-list-view")).refresh();			
