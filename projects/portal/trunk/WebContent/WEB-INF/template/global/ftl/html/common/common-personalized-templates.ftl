@@ -4,7 +4,7 @@
 <script type="text/x-kendo-tmpl" id="attachment-list-view-template">
 <div class="file-wrapper">
 	#if (contentType.match("^image") ) {#
-	<img src="${request.contextPath}/download/file/#= attachmentId #/#= name #?width=150&height=150" alt="#:name# 이미지" />		
+	<img src="${request.contextPath}/download/file/#= attachmentId #/#= name #?thumbnail=true" alt="#:name# 이미지" />		
 	# } else { #		
 	<img src="${request.contextPath}/images/common/icons/file/blank.png"></a>
 	# } #	
