@@ -245,10 +245,7 @@
 												saveUrl:  '${request.contextPath}/community/save-my-attachments.do?output=json',
 											},
 											success : function(e) {								    
-												if( e.response.targetAttachment ){
-													e.response.targetAttachment.attachmentId;
-													common.ui.listview($("#attachment-list-view")).refresh();
-												}				
+												common.ui.listview($("#attachment-list-view")).refresh();			
 											}
 										}
 									);
