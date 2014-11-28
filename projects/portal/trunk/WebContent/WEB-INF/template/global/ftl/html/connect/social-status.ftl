@@ -3,9 +3,8 @@
 	<head>
 		<title></title>
 		<#compress>	
-		<link rel="stylesheet" href="/styles/font-awesome/4.0.3/font-awesome.min.css">
-		<link rel="stylesheet" href="/styles/common.themes/unify/plugins/brand-buttons/brand-buttons.min.css">
-		<link rel="stylesheet" href="/styles/common.themes/unify/pages/profile.min.css">
+		<link rel="stylesheet" href="/styles/font-awesome/4.2.0/font-awesome.min.css">
+<!--		<link rel="stylesheet" href="/styles/common.themes/unify/pages/profile.min.css">-->
 		<link rel="stylesheet" href="/styles/jquery.jgrowl/jquery.jgrowl.min.css">
 		<script type="text/javascript">
 		<!--
@@ -17,7 +16,7 @@
 			'/js/kendo.extension/kendo.ko_KR.js',			
 			'/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
 			'/js/common.plugins/query.backstretch.min.js', 	
-			'/js/bootstrap/3.1.0/bootstrap.min.js',
+			'/js/bootstrap/3.3.0/bootstrap.min.js',
 			'/js/common/common.ui.core.js',
 			'/js/common/common.ui.data.js',
 			'/js/common/common.ui.connect.js'		
