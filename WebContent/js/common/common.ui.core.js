@@ -720,7 +720,7 @@
 	SHOWN = "shown", 
 	EXPAND = "expand",
 	COLLAPSE = "collapse",
-	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",
+	AUTHENTICATE_URL = "/data/accounts/details.json?output=json",
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 		
 	templates = {
@@ -766,7 +766,7 @@
 			var that = this;
 			ajax( that.options.url || AUTHENTICATE_URL , {
 				success : function(response){
-						var token = new common.ui.data.User(extend( response.currentUser, { roles : response.roles }));
+						var token = new common.ui.data.User(extend( response.user, { roles : response.roles }));
 						token.set('isSystem', false);
 						if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
 							token.set('isSystem', true);			
