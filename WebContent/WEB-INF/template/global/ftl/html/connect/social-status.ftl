@@ -4,8 +4,6 @@
 		<title></title>
 		<#compress>	
 		<link rel="stylesheet" href="/styles/font-awesome/4.2.0/font-awesome.min.css">
-<!--		<link rel="stylesheet" href="/styles/common.themes/unify/pages/profile.min.css">-->
-		<link rel="stylesheet" href="/styles/jquery.jgrowl/jquery.jgrowl.min.css">
 		<script type="text/javascript">
 		<!--
 		yepnope([{
