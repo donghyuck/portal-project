@@ -330,7 +330,7 @@
 	extend = $.extend;
 	function user (options){	
 		options = options || {};
-		ajax( options.url || '/data/accounts/details.json?output=json', {
+		ajax( options.url || '/data/accounts/get.json?output=json', {
 			success : function(response){
 				var user = new common.ui.data.User ();			
 				if( response.error ){ 		
