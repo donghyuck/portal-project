@@ -720,7 +720,7 @@
 	SHOWN = "shown", 
 	EXPAND = "expand",
 	COLLAPSE = "collapse",
-	AUTHENTICATE_URL = "/data/accounts/details.json?output=json",
+	AUTHENTICATE_URL = "/data/accounts/get.json?output=json",
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 		
 	templates = {
