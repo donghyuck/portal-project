@@ -114,15 +114,14 @@
 									
 					<#if profile ?? >
 					<div class="profile-blog">
-							<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
-							<div class="name-location">
-								<strong>${connect.displayName}</strong>
-							</div>
+						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
+						<div class="name-location">
+							<strong>${connect.displayName}</strong>
+						</div>
 							
-							<#if connect.profileUrl ?? >
-							<p><a href="${connect.profileUrl }" class="btn-link">홈</a></p>
-							</#if>						
-					
+						<#if connect.profileUrl ?? >
+						<p><a href="${connect.profileUrl }" class="btn-link">홈</a></p>
+						</#if>
 					</#if>
 					
 				</div>
