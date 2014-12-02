@@ -26,24 +26,29 @@
 
 				common.ui.setup({
 					features:{
-						wallpaper : false,
+						wallpaper : true,
+						lightbox : true,
+						spmenu : false,
+						morphing : true,
+						accounts : {
+							authenticate : function(e){
+								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+									$("#announce-selector label.btn").last().removeClass("disabled");									 
+								}
+							} 
+						}						
+					},
+					wallpaper : {
+						slideshow : false
 					},
 					jobs:jobs
-				});	
+				});		
 				
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-				common.ui.accounts($("#account-navbar"), {
-					template : kendo.template($("#account-navbar-template").html()),
-					allowToSignIn : <#if action.user.anonymous >false<#else>true</#if>,
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-						if( !currentUser.anonymous ){							
-						}
-					}
-				});	
-				
-				<#if !action.user.anonymous ></#if>	
+								
+			
 				// END SCRIPT
 			}
 		}]);	
