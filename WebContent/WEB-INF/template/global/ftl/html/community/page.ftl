@@ -1,8 +1,9 @@
 <#ftl encoding="UTF-8"/>
 <#assign contextPath = rc.contextPath >
+<#assign page = action.builder.getPage() >
 <html decorator="unify">
 <head>
-		<title>${action.builder.getPage().title}</title>
+		<title>${page.title}</title>
 		<#compress>
 		<script type="text/javascript">
 		<!--		
@@ -69,7 +70,7 @@
 									
 		<!-- START MAIN CONTENT -->	
 		<div class="container content">
-${action.builder.page}
+${page}
 		</div><!-- /.container -->		
 		<!-- END MAIN CONTENT -->	
  		<!-- START FOOTER -->
