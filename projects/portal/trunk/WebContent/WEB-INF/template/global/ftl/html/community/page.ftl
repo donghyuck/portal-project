@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<#assign request = request.request >
+<#assign request = rc.request >
 <html decorator="unify">
 <head>
 		<title>..</title>
