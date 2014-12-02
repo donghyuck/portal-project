@@ -2,7 +2,7 @@
 <#assign contextPath = rc.contextPath >
 <html decorator="unify">
 <head>
-		<title>${action.builder.page.title}</title>
+		<title>${action.builder.getPage().title}</title>
 		<#compress>
 		<script type="text/javascript">
 		<!--		
