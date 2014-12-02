@@ -1,8 +1,8 @@
-<#ftl encoding="UTF-8"/>
+
 <#assign contextPath = rc.contextPath >
 <html decorator="unify">
 <head>
-		<title>..</title>
+		<title>${action.builder.page.title}</title>
 		<#compress>
 		<script type="text/javascript">
 		<!--		
