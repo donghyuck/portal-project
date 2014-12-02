@@ -69,7 +69,7 @@
 									
 		<!-- START MAIN CONTENT -->	
 		<div class="container content">
-
+${action.builder.page}
 		</div><!-- /.container -->		
 		<!-- END MAIN CONTENT -->	
  		<!-- START FOOTER -->
