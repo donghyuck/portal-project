@@ -56,7 +56,7 @@
 							<!-- /account -->
 							<ul id="u-navbar" class="nav navbar-nav">
 								<#list webSiteMenu.components as item >
-								<#if WebSiteUtils.isUserAccessAllowed(Request, item) >
+								<#if WebSiteUtils.isUserAccessAllowed(Request.request, item) >
 								<#if  item.components?has_content >
 								<!-- item.layout -->
 								<#if item.layout??>
