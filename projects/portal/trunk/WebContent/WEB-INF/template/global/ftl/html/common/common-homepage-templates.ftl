@@ -39,7 +39,7 @@
 	</div>													
 	<div class="media">
 		<a class="pull-left" href="\\#">
-			<img src="${request.contextPath}/download/profile/#: user.photoUrl #?width=150&height=150" width="30" height="30" class="img-rounded">
+			<img src="${contextPath}/download/profile/#: user.photoUrl #?width=150&height=150" width="30" height="30" class="img-rounded">
 		</a>
 		<div class="media-body">
 			<h5 class="media-heading">
@@ -155,9 +155,9 @@
 	<li class="account">
 		<a href="\\#my-aside-menu" class="btn btn-link btn-account dropdown-toggle navbar-toggle-aside-menu">
 		# if ( anonymous ) { # 
-			<img src="${request.contextPath}/images/common/anonymous.png" height="34"/>	
+			<img src="${contextPath}/images/common/anonymous.png" height="34"/>	
 		# }else{ # 
-			<img src="${request.contextPath}/download/profile/#: username #?width=100&height=150" class="rounded-top" height="34">
+			<img src="${contextPath}/download/profile/#: username #?width=100&height=150" class="rounded-top" height="34">
 		# } #
 		</a>
 	</li>	
@@ -168,7 +168,7 @@
 		<h5 class="side-section-title">Optional sidebar menu</h5>		
 		# if ( !anonymous ) { # 	
 		<div class="account-content" >		
-			<img class="img-profile img-rounded" src="${request.contextPath}/download/profile/#: username #?width=100&height=150" />
+			<img class="img-profile img-rounded" src="${contextPath}/download/profile/#: username #?width=100&height=150" />
 			<div class="margin-bottom-10">		
 			</div>
 			<ul class="list-unstyled who margin-bottom-30">
