@@ -3,7 +3,7 @@
 <head>
 		<title>..</title>
 		<#compress>				
-		<#assign request = Request>
+		<#assign request = Request >
 		<script type="text/javascript">
 		<!--		
 
@@ -11,8 +11,8 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
+			'css!${Request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!${Request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
 			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
