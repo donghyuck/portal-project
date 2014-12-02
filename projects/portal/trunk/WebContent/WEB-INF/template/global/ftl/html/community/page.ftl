@@ -3,6 +3,7 @@
 <head>
 		<title>..</title>
 		<#compress>				
+		<#assign request = Request>
 		<script type="text/javascript">
 		<!--		
 
