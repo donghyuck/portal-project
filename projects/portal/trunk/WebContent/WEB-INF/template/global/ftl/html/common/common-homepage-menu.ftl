@@ -48,14 +48,15 @@
 							<a class="navbar-brand" href="/main.do">
 								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="Logo">
 							</a>
-						</div>												
+						</div>										
+								
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
 							<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs" style="display:none;"></ul>
 							<!-- /account -->
 							<ul id="u-navbar" class="nav navbar-nav">
 								<#list webSiteMenu.components as item >
-								<#if WebSiteUtils.isUserAccessAllowed(request, item) >
+								<#if WebSiteUtils.isUserAccessAllowed(Request, item) >
 								<#if  item.components?has_content >
 								<!-- item.layout -->
 								<#if item.layout??>
