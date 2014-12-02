@@ -1,4 +1,4 @@
-
+<#ftl encoding="UTF-8"/>
 <#assign contextPath = rc.contextPath >
 <html decorator="unify">
 <head>
