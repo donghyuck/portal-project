@@ -1,11 +1,12 @@
 <#ftl encoding="UTF-8"/>
+<#assing request = request.request >
 <html decorator="unify">
 <head>
 		<title>..</title>
 		<#compress>
 		<script type="text/javascript">
 		<!--		
-
+		
 		var jobs = [];	
 		
 		yepnope([{
