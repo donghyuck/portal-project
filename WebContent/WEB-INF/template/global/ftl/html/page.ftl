@@ -1,4 +1,5 @@
 <#ftl encoding="UTF-8"/>
+<#assign contextPath = request.contextPath >
 <html decorator="unify">
 	<head>
 		<title> ${action.targetContent.subject}</title>

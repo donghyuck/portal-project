@@ -1,4 +1,5 @@
 <#ftl encoding="UTF-8"/>
+<#assign contextPath = request.contextPath >
 <html decorator="secure-metro">
 	<head>
 		<title>트위터 인증</title>

@@ -1,4 +1,5 @@
 <#ftl encoding="UTF-8"/>
+<#assign contextPath = request.contextPath >
 <html decorator="homepage">
 <head>
 		<title>오시는길</title>
