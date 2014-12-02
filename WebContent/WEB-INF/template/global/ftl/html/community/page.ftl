@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<#assign request = rc.request >
+<#assign contextPath = rc.contextPath >
 <html decorator="unify">
 <head>
 		<title>..</title>
@@ -11,17 +11,17 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
-			'${request.contextPath}/js/common/common.ui.core.js',							
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.community.js'],
+			'css!${contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!${contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
+			'${contextPath}/js/jquery/1.10.2/jquery.min.js',
+			'${contextPath}/js/jgrowl/jquery.jgrowl.min.js',
+			'${contextPath}/js/kendo/kendo.web.min.js',
+			'${contextPath}/js/kendo.extension/kendo.ko_KR.js',			
+			'${contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
+			'${contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
+			'${contextPath}/js/common/common.ui.core.js',							
+			'${contextPath}/js/common/common.ui.data.js',
+			'${contextPath}/js/common/common.ui.community.js'],
 			complete: function() {
 				// START SCRIPT	
 
