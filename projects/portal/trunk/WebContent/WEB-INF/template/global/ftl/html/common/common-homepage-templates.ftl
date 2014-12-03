@@ -39,7 +39,7 @@
 	</div>													
 	<div class="media">
 		<a class="pull-left" href="\\#">
-			<img src="${contextPath}/download/profile/#: user.photoUrl #?width=150&height=150" width="30" height="30" class="img-rounded">
+			<img src="<@spring.url '/download/profile/#: user.photoUrl #?width=150&height=150'/>" width="30" height="30" class="img-rounded">
 		</a>
 		<div class="media-body">
 			<h5 class="media-heading">
@@ -155,9 +155,9 @@
 	<li class="account">
 		<a href="\\#my-aside-menu" class="btn btn-link btn-account dropdown-toggle navbar-toggle-aside-menu">
 		# if ( anonymous ) { # 
-			<img src="${contextPath}/images/common/anonymous.png" height="34"/>	
+			<img src="<@spring.url '/images/common/anonymous.png'/>" height="34"/>	
 		# }else{ # 
-			<img src="${contextPath}/download/profile/#: username #?width=100&height=150" class="rounded-top" height="34">
+			<img src="<@spring.url '/download/profile/#: username #?width=100&height=150'/>" class="rounded-top" height="34">
 		# } #
 		</a>
 	</li>	
@@ -168,7 +168,7 @@
 		<h5 class="side-section-title">Optional sidebar menu</h5>		
 		# if ( !anonymous ) { # 	
 		<div class="account-content" >		
-			<img class="img-profile img-rounded" src="${contextPath}/download/profile/#: username #?width=100&height=150" />
+			<img class="img-profile img-rounded" src="<@spring.url '/download/profile/#: username #?width=100&height=150'/>" />
 			<div class="margin-bottom-10">		
 			</div>
 			<ul class="list-unstyled who margin-bottom-30">
@@ -177,12 +177,12 @@
 				<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
 			</ul>		
 			<div class="btn-group btn-group-sm">
-				<a href="/community/view-myprofile.do?view=modal-dialog" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+				<a href="<@spring.url '/community/view-myprofile.do?view=modal-dialog'/>" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
 				#if ( isSystem ) {#
-				<a href="/secure/main.do" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
+				<a href="<@spring.url '/secure/main.do'/>" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
 				# } #			
 			</div>
-			<a href="/logout" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
+			<a href="<@spring.url '/logout'/>" class="btn btn-danger btn-sm pull-right"><i class="fafa-sign-out"></i> 로그아웃</a>
 		</div>
 		
 		<h5 class="side-section-title">MY CLOUD DRIVE</h5>
@@ -190,26 +190,21 @@
 			<div class="row">
 				<div class="col-xs-6">
 			<div class="side-section-nav">	
-
 			</div>				 
 				 </div>
 				<div class="col-xs-6">
 					<h3 class="heading-xs">전체 사용량 <span class="pull-right">88%</span></h3>
-                                    <div class="progress progress-u progress-xs">
-                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
-                                        </div>
-                                    </div>
-
-                                    <h3 class="heading-xs">메일 <span class="pull-right">76%</span></h3>
-                                    <div class="progress progress-u progress-xs">
-                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%">
-                                        </div>
-                                    </div>
-
-                                    <h3 class="heading-xs">파일<span class="pull-right">97%</span></h3>
-                                    <div class="progress progress-u progress-xs">
-                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%">
-                                        </div>
+					<div class="progress progress-u progress-xs">
+						<div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%"></div>
+					</div>
+					<h3 class="heading-xs">메일 <span class="pull-right">76%</span></h3>
+					<div class="progress progress-u progress-xs">
+						<div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="76" aria-valuemin="0" aria-valuemax="100" style="width: 76%"></div>
+					</div>
+					<h3 class="heading-xs">파일<span class="pull-right">97%</span></h3>
+					<div class="progress progress-u progress-xs">
+						<div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="97" aria-valuemin="0" aria-valuemax="100" style="width: 97%">
+					</div>
 					</div>				
 				 </div>			 
 			</div>
