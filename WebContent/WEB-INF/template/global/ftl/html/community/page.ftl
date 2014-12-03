@@ -1,5 +1,4 @@
 <#ftl encoding="UTF-8"/>
-<#import "/org/springframework/web/servlet/view/freemarker/spring.ftl" as spring/>
 <#assign contextPath = rc.contextPath >
 <#assign page = action.builder.getPage() >
 <html decorator="unify">
