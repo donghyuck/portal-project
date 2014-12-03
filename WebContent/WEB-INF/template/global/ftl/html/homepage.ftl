@@ -1,4 +1,5 @@
 <#ftl encoding="UTF-8"/>
+<#import "/spring.ftl" as spring/>
 <#assign contextPath = request.contextPath >
 <html decorator="unify">
 <head>
