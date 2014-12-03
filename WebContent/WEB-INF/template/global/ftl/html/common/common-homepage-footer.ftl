@@ -70,7 +70,7 @@
 					<div class="col-md-12 col-sm-12">
 						<div class="copyright-text">
 							<#if action.webSite ?? >${.now?string("yyyy")} &copy; ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
-							<a href="${contextPath}/content.do?contentId=2">개인정보 취급방침</a> | <a href="${contextPath}/content.do?contentId=1">이용약관</a>
+							<a href="<@spring.url '/content.do?contentId=2'/>">개인정보 취급방침</a> | <a href="<@spring.url '/content.do?contentId=1'/>">이용약관</a>
 						</div>
 					</div>
 				</div><!--/row--> 
