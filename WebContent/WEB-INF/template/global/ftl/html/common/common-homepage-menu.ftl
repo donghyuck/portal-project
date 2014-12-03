@@ -43,7 +43,7 @@
 								<span class="fa fa-bars"></span>
 							</button>
 							<a href="#" class="navbar-toggle-account visible-xs no-padding no-border">
-								<# if ( anonymous ) { > 
+								<# if anonymous > 
 									<img src="<@spring.url '/images/common/anonymous.png'/>" height="34"/>	
 								<#else> 
 									<img src="<@spring.url '/download/profile/#: username #?width=100&height=150'/>" class="rounded-top" height="34">
