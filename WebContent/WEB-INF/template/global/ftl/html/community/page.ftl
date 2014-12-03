@@ -14,7 +14,7 @@
 			load: [
 			'css!${contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
-			'${contextPath}/js/jquery/1.10.2/jquery.min.js',
+			'<@spring.url relativeUrl/>/js/jquery/1.10.2/jquery.min.js',
 			'${contextPath}/js/jgrowl/jquery.jgrowl.min.js',
 			'${contextPath}/js/kendo/kendo.web.min.js',
 			'${contextPath}/js/kendo.extension/kendo.ko_KR.js',			
