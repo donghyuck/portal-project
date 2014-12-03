@@ -63,10 +63,30 @@
 		<!-- START HEADER -->
 		<#include "/html/common/common-homepage-menu.ftl" >	
 		<!-- END HEADER -->
-		<header  class="cloud">			
-			
+		<#if action.isSetNavigator()  >
+		<#assign navigator = action.getNavigator() />					
+		<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">			
+				<script>
+				jobs.push(function () {
+					$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
+				});
+				</script>
+				<div class="breadcrumbs">
+			        <div class="container">
+			            <h1 class="pull-left">${ navigator.title }
+			            	<small>
+			            		<i class="fa fa-quote-left"></i>&nbsp;${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
+			            	</small>
+			            </h1>
+			            <ul class="pull-right breadcrumb">
+					        <li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
+					        <li><a href="">${navigator.parent.title}</a></li>
+					    	<li class="active">${navigator.title}</li>
+			            </ul>
+			        </div>
+			    </div>	
 		</header>	
-									
+		</#if>					
 		<!-- START MAIN CONTENT -->	
 		<div class="container content">
 		${page}
