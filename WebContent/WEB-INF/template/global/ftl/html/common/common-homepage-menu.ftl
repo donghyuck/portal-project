@@ -28,7 +28,7 @@
 							<li><a href="page_faq.html">도움말</a></li>  
 							<#if action.user.anonymous >
 							<li class="topbar-devider"></li>   
-							<li><a href="${request.contextPath}/accounts/login.do?ver=1">로그인</a></li>   
+							<li><a href="<@spring.url '/accounts/login.do?ver=1'/>">로그인</a></li>   
 							</#if>
 						</ul>
 						<!-- End Topbar Navigation -->
@@ -43,10 +43,10 @@
 								<span class="fa fa-bars"></span>
 							</button>
 							<a href="#" class="navbar-toggle-account visible-xs no-padding no-border">
-							<img src="/download/profile/andang?width=100&amp;height=150">			
+							<img src="<@spring.url '/download/profile/${action.user.username}?width=100&amp;height=150'/>">			
 							</a>							
 							<a class="navbar-brand" href="/main.do">
-								<img id="logo-header" src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="Logo">
+								<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="Logo">
 							</a>
 						</div>										
 								
@@ -131,7 +131,7 @@
 								<li>
 									<a href="#" data-feature-name="u-accounts" class="u-accounts" style="display:none;">
 										<!--<span style="padding-right: 5px;"><i class="fa fa-caret-left"></i></span>				-->					
-										<span class="u-accounts-photo" style="background-image: url( '/images/common/anonymous.png' );"></span>
+										<span class="u-accounts-photo" style="background-image: url( '<@spring.url "/images/common/anonymous.png"/>' );"></span>
 										<span class="u-accounts-name"></span>
 										<i class="setting fa fa-outdent"></i>
 									</a>
