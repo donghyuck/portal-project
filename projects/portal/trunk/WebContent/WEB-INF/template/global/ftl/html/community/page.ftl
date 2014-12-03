@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<#assign page = action.builder.getPage() >
+<#assign page = action.getPage() >
 <html decorator="unify">
 <head>
 		<title>${page.title}</title>
@@ -69,7 +69,7 @@
 									
 		<!-- START MAIN CONTENT -->	
 		<div class="container content">
-${page}
+		${page}
 		</div><!-- /.container -->		
 		<!-- END MAIN CONTENT -->	
  		<!-- START FOOTER -->
