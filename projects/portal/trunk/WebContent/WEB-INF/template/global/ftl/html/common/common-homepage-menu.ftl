@@ -46,7 +46,7 @@
 								<#if action.user.anonymous > 
 									<img src="<@spring.url '/images/common/anonymous.png'/>" height="34"/>	
 								<#else> 
-									<img src="<@spring.url '/download/profile/#: username #?width=100&height=150'/>" class="rounded-top" height="34">
+									<img src="<@spring.url '/download/profile/${action.user.username}?width=100&height=150'/>" class="rounded-top" height="34">
 								</#if>		
 							</a>							
 							<a class="navbar-brand" href="/main.do">
