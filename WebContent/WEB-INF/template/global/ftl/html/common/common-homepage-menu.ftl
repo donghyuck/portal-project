@@ -43,7 +43,11 @@
 								<span class="fa fa-bars"></span>
 							</button>
 							<a href="#" class="navbar-toggle-account visible-xs no-padding no-border">
-							<img src="<@spring.url '/download/profile/${action.user.username}?width=100&amp;height=150'/>">			
+								<# if ( anonymous ) { > 
+									<img src="<@spring.url '/images/common/anonymous.png'/>" height="34"/>	
+								<#else> 
+									<img src="<@spring.url '/download/profile/#: username #?width=100&height=150'/>" class="rounded-top" height="34">
+								</#if>		
 							</a>							
 							<a class="navbar-brand" href="/main.do">
 								<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="Logo">
