@@ -15,14 +15,14 @@
 			'css!${contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${contextPath}/styles/bootstrap.themes/unify/colors/blue.css',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
-			'${contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${contextPath}/js/kendo/kendo.web.min.js',
-			'${contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'${contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
-			'${contextPath}/js/common/common.ui.core.js',							
-			'${contextPath}/js/common/common.ui.data.js',
-			'${contextPath}/js/common/common.ui.community.js'],
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>'],
 			complete: function() {
 				// START SCRIPT	
 
