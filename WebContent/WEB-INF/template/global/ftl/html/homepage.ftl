@@ -13,7 +13,7 @@
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
 			'${request.contextPath}/js/kendo/kendo.web.min.js',
 			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
