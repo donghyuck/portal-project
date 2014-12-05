@@ -65,7 +65,7 @@
 							<#if item.layout??>
 								<#if item.layout == "pills" >									
 								<li>
-									<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
+									<a href="${item.page}"><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</a>
 								</li>						
 								<#elseif item.layout == "mega">
 								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
@@ -131,7 +131,7 @@
 							<!-- ./item.layout -->									
 						<#else>
 							<li>
-								<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
+								<a href="${item.page}"><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</a>
 							</li>								
 						</#if>
 					</#if>		
