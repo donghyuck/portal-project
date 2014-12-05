@@ -10,31 +10,31 @@
 				
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
-		/*	'css!${request.contextPath}/styles/common.pages/common.onepage.css',	*/
-			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',		
-			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',
-			'css!${request.contextPath}/styles/codrops/codrops.morphing.css',			
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
-			'${request.contextPath}/js/jquery.easing/jquery.easing.1.3.js',		
-			'${request.contextPath}/js/jquery.bxslider/jquery.bxslider.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/bootstrap/3.3.0/bootstrap.min.js',
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 					
-			'${request.contextPath}/js/pdfobject/pdfobject.js',			
-			'${request.contextPath}/js/common/common.ui.core.js',							
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.community.js',
-			'${request.contextPath}/js/common.pages/common.personalized.js',
-			'${request.contextPath}/js/ace/ace.js',
-			'${request.contextPath}/js/common.pages/common.code-editor.js'
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
+		/*	'css!<@spring.url "/styles/common.pages/common.onepage.css"/>',	*/
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
+			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
+			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
+			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',			
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
+			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
+			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
+			'<@spring.url "/js/bootstrap/3.3.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
+			'<@spring.url "/js/pdfobject/pdfobject.js"/>',			
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>',
+			'<@spring.url "/js/common.pages/common.personalized.js"/>',
+			'<@spring.url "/js/ace/ace.js"/>',
+			'<@spring.url "/js/common.pages/common.code-editor.js"/>'
 			],			
 			complete: function() {		
 				
@@ -156,7 +156,7 @@
 			kendo.bind(viewRenderTo, model );
 			common.ui.listview(	listRenderTo, {
 					dataSource : common.ui.datasource(
-						"${request.contextPath}/data/announce/list.json",
+						"<@spring.url "/data/announce/list.json"/>",
 						{
 							transport : {
 								parameterMap: function(options, operation) {
@@ -229,7 +229,7 @@
 							return ;
 						}
 						common.ui.ajax(
-							'${request.contextPath}/data/announce/save.json',
+							'<@spring.url "/data/announce/save.json"/>',
 							{
 								data : kendo.stringify( $this.announce ),
 								contentType : "application/json",
@@ -605,19 +605,19 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
-	<li class="item"><a href="\\#" class=""><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
+	<li class="item"><a href="\\#" class=""><img src="<@spring.url "/community/download-my-image.do?width=150&height=150&imageId=#= imageId#'/>" alt="" /></a></li>
 	</script>
 		
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
 	<div class="superbox-list" data-ride="gallery" >
-		<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" data-img="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
+		<img src="<@spring.url '/community/download-my-image.do?width=150&height=150&imageId=#= imageId#'/>" data-img="<@spring.url "/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
 	</div>			
 	</script>
 
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" data-largesrc="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
-			<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" class="animated zoomIn" />
+		<a href="\\#" data-largesrc="<@spring.url "/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
+			<img src="<@spring.url '/community/download-my-image.do?width=150&height=150&imageId=#= imageId#'/>" class="animated zoomIn" />
 		</a>	
 	</li>			
 	</script>
