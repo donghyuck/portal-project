@@ -11,8 +11,7 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
-		/*	'css!<@spring.url "/styles/common.pages/common.onepage.css"/>',	*/
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
@@ -605,18 +604,18 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
-	<li class="item"><a href="\\#" class=""><img src="<@spring.url "/community/download-my-image.do?width=150&height=150&imageId=#= imageId#'/>" alt="" /></a></li>
+	<li class="item"><a href="\\#" class=""><img src="<@spring.url "/community/download-my-image.do?width=150&height=150&imageId=#= imageId#"/>" alt="" /></a></li>
 	</script>
 		
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
 	<div class="superbox-list" data-ride="gallery" >
-		<img src="<@spring.url '/community/download-my-image.do?width=150&height=150&imageId=#= imageId#'/>" data-img="<@spring.url "/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
+		<img src="<@spring.url '/community/download-my-image.do?width=150&height=150&imageId=#= imageId#'/>" data-img="<@spring.url "/community/download-my-image.do?imageId=#= imageId#"/>" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
 	</div>			
 	</script>
 
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" data-largesrc="<@spring.url "/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
+		<a href="\\#" data-largesrc="<@spring.url "/community/download-my-image.do?imageId=#= imageId#" data-title="#=name#" data-description="#=name#"/>" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
 			<img src="<@spring.url '/community/download-my-image.do?width=150&height=150&imageId=#= imageId#'/>" class="animated zoomIn" />
 		</a>	
 	</li>			
