@@ -53,12 +53,18 @@
 
 .topbar .u-accounts:hover {
 	text-decoration: none;
+}
+
+.topbar .u-accounts:hover  .u-accounts-name {
 	font-wight: 600
 }
 
 .topbar .u-accounts:hover .u-accounts-photo {
 	opacity: 1;
 }	
+
+
+
 
 .header .navbar .nav>li>.u-accounts:hover{
 	color: #333;
