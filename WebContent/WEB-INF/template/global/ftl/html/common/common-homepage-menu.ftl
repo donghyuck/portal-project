@@ -14,7 +14,7 @@
 				<div class="topbar">
 					<div class="container">
 						<!-- Topbar Navigation -->
-						<ul class="loginbar pull-right">
+						<ul id="u-navbar" class="loginbar pull-right">
 							<li class="languagesSelector">
 								<i class="fa fa-globe"></i>
 								<a>언어</a>
@@ -26,6 +26,12 @@
 							</li>
 							<li class="topbar-devider"></li>   
 							<li><a href="page_faq.html">도움말</a></li>  
+							<li>
+							<a href="#" data-feature-name="u-accounts" class="u-accounts" style="display:none;">
+								<span class="u-accounts-photo" style="background-image: url( '<@spring.url "/images/common/anonymous.png"/>' );"></span>
+								<span class="u-accounts-name"></span>
+							</a>			
+							</li>
 							<#if action.user.anonymous >
 							<li class="topbar-devider"></li>   
 							<li><a href="<@spring.url '/accounts/login.do?ver=1'/>">로그인</a></li>   
@@ -58,9 +64,9 @@
 								
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
-							<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs" style="display:none;"></ul>
+							<!--<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs" style="display:none;"></ul>-->
 							<!-- /account -->
-							<ul id="u-navbar" class="nav navbar-nav">
+							<ul class="nav navbar-nav">
 				<#list webSiteMenu.components as item >
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
 						<#if  item.components?has_content >
@@ -137,7 +143,7 @@
 							</li>								
 						</#if>
 					</#if>		
-				</#list>			
+				</#list>			<!--
 								<li>
 									<a href="#" data-feature-name="u-accounts" class="u-accounts" style="display:none;">
 										<!--<span style="padding-right: 5px;"><i class="fa fa-caret-left"></i></span>				-->					
@@ -145,7 +151,7 @@
 										<span class="u-accounts-name"></span>
 										<i class="setting fa fa-outdent"></i>
 									</a>
-								</li>
+								</li>-->
 							</ul>				
 						</div>						
 					</div>
