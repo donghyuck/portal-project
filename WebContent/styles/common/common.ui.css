@@ -38,9 +38,13 @@
 .header .navbar .nav>li>.u-accounts:hover{
 	color: #333;
 	/*background: #f7f7f7;	*/
-	font-wight:600;
 	border-bottom: solid 2px transparent;
 }
+
+.header .navbar .nav>li>.u-accounts:hover .u-accounts-name{
+	font-wight:600;
+}
+
 
 .header .navbar .nav>li>.u-accounts:hover .u-accounts-photo{
 	opacity: 1;
