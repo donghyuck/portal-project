@@ -34,10 +34,10 @@
 .u-accounts .u-accounts-name {
 	padding-left: 40px;
 }
-.topbar  .u-accounts {
+.topbar li> .u-accounts {
 	padding-left: 10px;
 }
-.topbar .u-accounts-photo {
+.topbar li> .u-accounts-photo {
 	background-size: 16px 16px;
 	border-top-left-radius: 2px !important;
 	border-top-right-radius: 2px !important;
@@ -47,19 +47,19 @@
 	opacity: .5;
 }
 
-.topbar .u-accounts-name {
+.topbar li> .u-accounts-name {
 	padding-left: 20px;
 }
 
-.topbar .u-accounts:hover {
+.topbar li>.u-accounts:hover {
 	text-decoration: none;
 }
 
-.topbar .u-accounts:hover  .u-accounts-name {
+.topbar li>.u-accounts:hover  .u-accounts-name {
 	font-weight: 800;
 }
 
-.topbar .u-accounts:hover .u-accounts-photo {
+.topbar li> .u-accounts:hover .u-accounts-photo {
 	opacity: 1;
 }	
 
