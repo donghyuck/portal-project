@@ -68,7 +68,7 @@
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
 							<!--<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs" style="display:none;"></ul>-->
 							<!-- /account -->
-							<ul class="nav navbar-nav">
+							<ul class="nav navbar-nav navbar-left">
 				<#list webSiteMenu.components as item >
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
 						<#if  item.components?has_content >
