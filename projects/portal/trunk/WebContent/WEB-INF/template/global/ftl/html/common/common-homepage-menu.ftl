@@ -8,8 +8,8 @@
 			</script>
 			</#if>		
 			<#if action.webSite ?? >
-			<#assign webSite = action.webSite />				
-			<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />
+				<#assign webSite = action.webSite />				
+				<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />
 			<div class="header">
 				<div class="topbar">
 					<div class="container">
@@ -59,11 +59,14 @@
 							<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs" style="display:none;"></ul>
 							<!-- /account -->
 							<ul id="u-navbar" class="nav navbar-nav">
-								<#list webSiteMenu.components as item >
-								<#if WebSiteUtils.isUserAccessAllowed(item) >
-								<#if  item.components?has_content >
-								<!-- item.layout -->
-								<#if item.layout??>
+				<#list webSiteMenu.components as item >
+					<#if WebSiteUtils.isUserAccessAllowed(item) >
+						<#if  item.components?has_content >
+							<#if item.layout??>
+								<#if item.layout == "pills" >
+									
+						
+								<#elseif item.layout == "mega">
 								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
@@ -102,7 +105,8 @@
 										</li>	
 									</ul>
 								</li>
-								<#else>
+								</#if>
+							<#else>
 								<li class="dropdown" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
@@ -122,16 +126,16 @@
 									</#list>
 									</ul>
 								</li>											
-								</#if>
-								<!-- ./item.layout -->									
-								<#else>
-								<li>
-									<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
-								</li>
+							</#if>
+							<!-- ./item.layout -->									
+						<#else>
+							<li>
+								<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
+							</li>
 								
-								</#if>
-								</#if>		
-								</#list>			
+						</#if>
+					</#if>		
+				</#list>			
 								<li>
 									<a href="#" data-feature-name="u-accounts" class="u-accounts" style="display:none;">
 										<!--<span style="padding-right: 5px;"><i class="fa fa-caret-left"></i></span>				-->					
