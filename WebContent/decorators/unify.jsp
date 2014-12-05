@@ -22,13 +22,12 @@
 <script src="<%= architecture.ee.web.util.ServletUtils.getContextPath(request) %>/js/yepnope/1.5.4/yepnope.min.js"></script>
 <decorator:head />
 <style>
-
 	.header {
 		width: 100%;
 		top: 0px;
 		padding-top: 0px !important;
 		background: #fff;
-		border-bottom: 1px solid rgba(228, 228, 228, 0.23);		
+		border-bottom: 1px solid rgba(228, 228, 228, 0.23);				
 	}	
 	
 	.header .navbar-brand {
@@ -37,6 +36,10 @@
 	
 	.header .navbar-default {
 		background: transparent;
+		box-shadow: 0 2px 2px rgba(0,0,0,.2);
+		-moz-transform: translateZ(0);
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
 	}
 		
 	.k-loading-image {
