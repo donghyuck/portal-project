@@ -35,6 +35,16 @@
 	padding-left: 40px;
 }
 
+.topbar .u-accounts-photo {
+	background-size: 16px 16px;
+	border-top-left-radius: 2px !important;
+	border-top-right-radius: 2px !important;
+	top: 0px;
+	height: 16px;
+	width: 16px;
+	opacity: .5;
+}
+
 .header .navbar .nav>li>.u-accounts:hover{
 	color: #333;
 	/*background: #f7f7f7;	*/
