@@ -63,6 +63,7 @@
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
 						<#if  item.components?has_content >
 							<#if item.layout??>
+							${item.layout}
 								<#if item.layout == "pills" >									
 								<li>
 									<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
