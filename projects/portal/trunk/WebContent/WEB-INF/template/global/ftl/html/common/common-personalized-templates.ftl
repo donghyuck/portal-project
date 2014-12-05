@@ -4,11 +4,11 @@
 <script type="text/x-kendo-tmpl" id="attachment-list-view-template">
 <div class="file-wrapper">
 	#if (contentType.match("^image") ) {#
-	<img src="${request.contextPath}/download/file/#= attachmentId #/#= name #?thumbnail=true" alt="#:name# 이미지" />		
+	<img src="<@spring.url '/download/file/#= attachmentId #/#= name #?thumbnail=true'/>" alt="#:name# 이미지" />		
 	# } else  if (contentType.match("pdf$") ) {#
-	<img src="${request.contextPath}/download/file/#= attachmentId #/#= name #?thumbnail=true" alt="#:name# PDF" />		
+	<img src="<@spring.url '/download/file/#= attachmentId #/#= name #?thumbnail=true'/>" alt="#:name# PDF" />		
 	# } else { #		
-	<img src="${request.contextPath}/images/common/icons/file/blank.png"></a>
+	<img src="<@spring.url '/images/common/icons/file/blank.png'/>"></a>
 	# } #	
 	<button type="button" class="btn btn-primary btn-sm rounded-3x"><i class="fa fa-eye"></i> 파일보기</button>
 	<div class="file-description">
@@ -21,7 +21,7 @@
 <script type="text/x-kendo-tmpl" id="photo-list-view-template">
 <div class="img-wrapper">			
 	#if (contentType.match("^image") ) {#
-	<img src="${request.contextPath}/download/image/#= imageId #/#=name#?width=150&height=150" alt="#:name# 이미지" />
+	<img src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name# 이미지" />
 	<button type="button" class="btn btn-danger btn-sm rounded-3x"><i class="fa fa-eye"></i> 이미지 보기</button>
 	# } else { #			
 	<img src="http://placehold.it/146x146&amp;text=[file]"></a>
@@ -50,7 +50,7 @@
 		<div class="panel-body hide grey">
 			<button type="button" class="close" aria-hidden="true">&times;</button>			
 			<div class="btn-group dropup">
-				<a class="btn btn-info" href="${request.contextPath}/community/download-my-attachment.do?attachmentId=#= attachmentId #" ><i class="fa fa-download"></i>&nbsp; 다운로드</a>
+				<a class="btn btn-info" href="<@spring.url '/community/download-my-attachment.do?attachmentId=#= attachmentId #'/>" ><i class="fa fa-download"></i>&nbsp; 다운로드</a>
 				<button  type="button" class="btn btn-info"><i class="fa fa-share"></i>&nbsp; 공유</button>	
 				<button  type="button" class="btn btn-info"><i class="fa fa-comment-o"></i>&nbsp; 댓글 추가</button>						
 			</div>			
@@ -67,7 +67,7 @@
 		</div>					
 		<div class="panel-body">			
 			#if (contentType.match("^image") ) {#			
-			<img src="${request.contextPath}/community/view-my-attachment.do?attachmentId=#= attachmentId #" alt="#:name# 이미지" class="img-responsive"/>			
+			<img src="<@spring.url '/community/view-my-attachment.do?attachmentId=#= attachmentId #'/>" alt="#:name# 이미지" class="img-responsive"/>			
 			# } else { #		
 				#if (contentType == "application/pdf" ) {#
 				<div id="pdf-view"></div>
@@ -118,7 +118,7 @@
 <!-- ============================== -->
 <script type="text/x-kendo-template" id="photo-view-template">	
 	<figure class="effect-marley box-shadow shadow-effect-2" data-ride="lightbox" >
-		<img src="${request.contextPath}/download/image/#=imageId#/#=name#" alt="#:name# 이미지"/>
+		<img src="<@spring.url '/download/image/#=imageId#/#=name#'/>" alt="#:name# 이미지"/>
 		<figcaption>
 			<h2>#: name # <span></span></h2>
 			<p>#= formattedModifiedDate() #</p>

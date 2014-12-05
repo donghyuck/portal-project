@@ -168,7 +168,7 @@
 		<h5 class="side-section-title">Optional sidebar menu</h5>		
 		# if ( !anonymous ) { # 	
 		<div class="account-content" >		
-			<img class="img-profile img-rounded" src="<@spring.url '/download/profile/#: username #?width=100&height=150'/>" />
+			<img class="img-profile img-rounded" src="<@spring.url '/download/profile/#: username #?width=100&height=150'/>" />			
 			<div class="margin-bottom-10">		
 			</div>
 			<ul class="list-unstyled who margin-bottom-30">

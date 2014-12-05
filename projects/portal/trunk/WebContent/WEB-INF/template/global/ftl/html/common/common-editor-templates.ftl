@@ -258,7 +258,7 @@
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-list-view-template">
 	<div class="img-wrapper">			
 			#if (contentType.match("^image") ) {#
-				<img src="${request.contextPath}/download/image/#=imageId#/#=name#?width=150&height=150" alt="#:name# 이미지" />
+				<img src="<@spring.url '/download/image/#=imageId#/#=name#?width=150&height=150'/>" alt="#:name# 이미지" />
 			# } else { #			
 				<img src="http://placehold.it/146x146&amp;text=[file]"></a>
 			# } #	
