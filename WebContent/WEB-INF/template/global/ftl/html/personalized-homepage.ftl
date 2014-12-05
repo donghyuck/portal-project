@@ -154,7 +154,7 @@
 			kendo.bind(viewRenderTo, model );
 			common.ui.listview(	listRenderTo, {
 					dataSource : common.ui.datasource(
-						"<@spring.url "/data/announce/list.json"/>",
+						'<@spring.url "/data/announce/list.json"/>',
 						{
 							transport : {
 								parameterMap: function(options, operation) {
