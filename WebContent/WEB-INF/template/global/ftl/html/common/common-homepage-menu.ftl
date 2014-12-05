@@ -63,9 +63,10 @@
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
 						<#if  item.components?has_content >
 							<#if item.layout??>
-								<#if item.layout == "pills" >
-									
-						
+								<#if item.layout == "pills" >									
+								<li>
+									<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
+								</li>						
 								<#elseif item.layout == "mega">
 								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
@@ -131,8 +132,7 @@
 						<#else>
 							<li>
 								<a href="${item.page}"><#if item.icon?? ><i class="fa fa-${item.icon}"></i></#if> ${item.title}</a>
-							</li>
-								
+							</li>								
 						</#if>
 					</#if>		
 				</#list>			
