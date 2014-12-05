@@ -64,7 +64,7 @@
 						<#if  item.components?has_content >
 							<#if item.layout??>
 								<#if item.layout == "pills" >									
-								<li>
+								<li data-menu-item="${item.name}">
 									<a href="${item.page}"><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</a>
 								</li>						
 								<#elseif item.layout == "mega">
@@ -122,7 +122,7 @@
 												</ul>
 											</li>
 										<#else>								
-											<li><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
+											<li><a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa ${sub_item.icon}"></i></#if> ${sub_item.title}</a></li>
 										</#if>								
 									</#list>
 									</ul>
