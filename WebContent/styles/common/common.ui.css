@@ -34,7 +34,9 @@
 .u-accounts .u-accounts-name {
 	padding-left: 40px;
 }
-
+.topbar  .u-accounts {
+	padding-left: 10px;
+}
 .topbar .u-accounts-photo {
 	background-size: 16px 16px;
 	border-top-left-radius: 2px !important;
@@ -44,6 +46,11 @@
 	width: 16px;
 	opacity: .5;
 }
+
+.topbar .u-accounts-name {
+	padding-left: 20px;
+}
+
 
 .header .navbar .nav>li>.u-accounts:hover{
 	color: #333;
