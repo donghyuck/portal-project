@@ -39,6 +39,7 @@
 	color: #333;
 	/*background: #f7f7f7;	*/
 	border-bottom: solid 2px transparent;
+	font-weight: 600;
 }
 
 .header .navbar .nav>li>.u-accounts:hover .u-accounts-name{
