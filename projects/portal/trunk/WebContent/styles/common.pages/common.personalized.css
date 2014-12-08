@@ -1697,7 +1697,7 @@ figure.effect-chico:hover p {
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
-.personalized-content{
+.personalized-session-content{
 	background: #fafafa;
 	color: #222;
 	display: none;
@@ -1707,7 +1707,7 @@ figure.effect-chico:hover p {
 	position: relative;		
 }
 
-.personalized-content > .close {
+.personalized-session-content > .close {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -1724,23 +1724,26 @@ figure.effect-chico:hover p {
 	opacity:.5;
 }
 
-.personalized-content > .close:hover {
+.personalized-session-content > .close:hover {
 	opacity:1;	
 }
 
-.personalized-content.personalized-content-transparent{
+.personalized-session-content.personalized-session-content-transparent{
 	background: transparent;
 }
 
-.personalized-content.personalized-content-transparent > .close {
+.personalized-session-content.personalized-session-content-transparent > .close {
 	background: url(/images/cross.png) no-repeat center center;
 	background-size: 25px;	
 }
 
-.personalized.open  .personalized-content {
+.personalized-session.open  .personalized-session-content {
 	display: block;
 }
 
+.personalized-session-header {
+	padding : 10px;	
+}
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
