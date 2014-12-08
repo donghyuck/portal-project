@@ -387,7 +387,7 @@
 							<div id="my-announce-section" style="display:none;" class="panel-body">
 								<div class="row" >
 									<div class="col-sm-6">
-										<!--Announce Post-->
+										<!--Announce Post--><!--
 										<div class="headline">
 											<h2><i class="fa fa-bullhorn"></i>공지 & 이벤트</h2>
 											<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons">
@@ -398,7 +398,7 @@
 													<input type="radio" name="notice-target" value="1">회사
 												</label>
 											</div>		
-										</div>
+										</div>-->
 										<div>												
 											<div class="panel panel-default no-margin-b">
 												<div class="panel-body no-border no-padding my-announce-list"></div>
