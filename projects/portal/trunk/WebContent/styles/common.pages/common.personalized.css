@@ -84,26 +84,7 @@
 	left:0;
 }
 
-/**
-* marphing
-*/
-.panel .morphing.open {
-	padding:15px;	
-}
-.panel .morphing {
-	top: 0px;
-	right: 0px;
-	background: #f1f1f1;
-	/*padding: 15px;*/
-	border-radius: 4px !important;
-	z-index: 90;
-	width :0;
-	min-height:34px;
-}
 
-.panel .morphing.open button[data-toggle='button'][data-action='morphing'] {
-	display:none;
-}
 
 /**
 * image grid
@@ -1720,4 +1701,25 @@ figure.effect-chico:hover p {
 	border-color: #ddd;
 	margin-bottom: 0 !important;
 	border-radius: 4px !important;
+}
+
+/**
+* marphing
+*/
+.panel .morphing.open {
+	padding:15px;	
+}
+.panel .morphing {
+	top: 0px;
+	right: 0px;
+	background: #f1f1f1;
+	/*padding: 15px;*/
+	border-radius: 4px !important;
+	z-index: 90;
+	width :0;
+	min-height:34px;
+}
+
+.panel .morphing.open button[data-toggle='button'][data-action='morphing'] {
+	display:none;
 }
