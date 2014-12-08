@@ -350,7 +350,7 @@
 						</ul>						
 					</div>
 				</div><!-- ./navbar-personalized -->			
-			</div>			
+			</div><!--		
 			<section class="personalized-session open" >
 					<div class="container">
 						<div class="row">				
@@ -367,10 +367,11 @@
 				</div>
 						</div>
 					</div>				
-			</section>
+			</section>-->
+			
 			<section class="personalized-session open" >
-				<div class="personalized-session-header ">
-					<div class="container">
+				<div class="container">
+				<div class="personalized-session-header ">					
 					<div class="headline">
 						<h4 class="no-border"><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 						<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons" data-role="buttongroup">
@@ -381,7 +382,6 @@
 								<input type="radio" name="notice-target" value="1">회사
 							</label>
 						</div>		
-					</div>
 					</div>
 				</div>
 				<div class="personalized-session-content">
@@ -435,7 +435,7 @@
 									</div><!-- /.col-sm-6-->
 								</div><!-- /.row -->
 							</div><!-- /.panel-body -->
-											
+					</div>						
 				</div>
 			</section>
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">	
