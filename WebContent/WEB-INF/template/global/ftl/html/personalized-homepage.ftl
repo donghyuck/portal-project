@@ -370,7 +370,7 @@
 				<div class="personalized-session-header ">
 					<div class="container">
 					<div class="headline">
-						<h4 class="no-border"><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요.</small></h4>
+						<h4 class="no-border"><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 						<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons" data-role="buttongroup">
 							<label class="btn btn-info btn-sm active rounded-left">
 								<input type="radio" name="notice-target" value="30">사이트
