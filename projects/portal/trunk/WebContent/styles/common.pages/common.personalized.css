@@ -1724,7 +1724,7 @@ figure.effect-chico:hover p {
 	opacity:.5;
 }
 
-.personalized-content > .close : hover {
+.personalized-content > .close:hover {
 	opacity:1;	
 }
 
