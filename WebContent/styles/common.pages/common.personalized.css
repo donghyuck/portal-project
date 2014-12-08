@@ -1737,6 +1737,10 @@ figure.effect-chico:hover p {
 	background-size: 25px;	
 }
 
+.personalized.open  .personalized-content {
+	display: block;
+}
+
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
