@@ -1759,8 +1759,17 @@ figure.effect-chico:hover p {
 
 .personalized-session-header {
 	background: #ececec;
-	color: #222;	
+	color: #616161;	
 	padding : 15px 10px;	
+}
+
+.personalized-session-header .headline {
+	color: #616161;		
+	border-bottom: 1px solid #cfcfcf;
+	-webkit-font-smoothing: antialiased;
+	-moz-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+	font-smoothing: antialiased;	
 }
 /** ------------------------------------------------- */
 /** Panel                                                      */
