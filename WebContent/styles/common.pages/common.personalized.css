@@ -1697,6 +1697,25 @@ figure.effect-chico:hover p {
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
+.personalized-content{
+	background: #fafafa;
+	color: #222;
+	display: none;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	z-index: 1;
+	position: relative;		
+}
+
+.personalized-content > .close {
+	width: 20px;
+	height: 20px;
+	background: url(/images/cross-grey.png) no-repeat center center;
+}
+
+/** ------------------------------------------------- */
+/** Panel                                                      */
+/** ------------------------------------------------- */
 .panel-notice {
 	border-color: #ddd;
 	margin-bottom: 0 !important;
