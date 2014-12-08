@@ -1771,6 +1771,16 @@ figure.effect-chico:hover p {
 	-ms-font-smoothing: antialiased;
 	font-smoothing: antialiased;	
 }
+
+.personalized-session .aside-bg {
+background: #dedede;
+box-shadow: -2px 0 2px rgba(0,0,0,.1) inset;
+display: block;
+height: 200%;
+position: absolute;
+top: -50%;
+}
+
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
