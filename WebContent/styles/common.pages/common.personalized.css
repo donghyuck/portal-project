@@ -1773,7 +1773,7 @@ figure.effect-chico:hover p {
 }
 
 .personalized-session .aside-bg {
-background: #dedede;
+/*background: #dedede;*/
 box-shadow: -2px 0 2px rgba(0,0,0,.1) inset;
 display: block;
 /*
