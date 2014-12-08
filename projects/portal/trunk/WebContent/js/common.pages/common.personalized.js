@@ -1,5 +1,15 @@
+/*var template = kendo.template(
+	'<div class="project-content" style="display: none;">'
+		'<div class="project-content" style="display: none;">'
+	'</div>'	
+);
+*/
 function preparePersonalizedArea( element, minCount, colSize ){	
+	
+	
+	
 	var template = kendo.template("<div id='#= guid #' class='personalized-panels-group col-sm-#= colSize#'></div>");
+	
 	for ( var  i = 1 ; i < minCount + 1 ; i ++  )
 	{
 		element.append( 
