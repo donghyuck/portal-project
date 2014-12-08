@@ -352,7 +352,7 @@
 			</div>			
 			<section>
 				
-				<div class="personalized-content">
+				<div class="personalized-content personalized-content-transparent">
 					<span class="close"></span>
 					<div class="container">
 						<div class="row">
