@@ -389,7 +389,8 @@
 					<div class="container">
 							<div id="my-announce-section" style="display:none;" class="panel-body">
 								<div class="row" >
-									<div class="col-sm-6">
+									<div class="col-sm-6 aside-bg">
+									<div class="aside "></div>
 										<!--Announce Post--><!--
 										<div class="headline">
 											<h2><i class="fa fa-bullhorn"></i>공지 & 이벤트</h2>
