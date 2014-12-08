@@ -351,6 +351,7 @@
 				</div><!-- ./navbar-personalized -->			
 			</div>			
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">	
+				<div id="personalized-area" class="row"></div>
 				<div class="row">
 					<div class="col-md-3">
 						
@@ -366,8 +367,7 @@
 								<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
 								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
 							<div class="panel-body"></div>
-						</div><!-- /.panel -->
-												
+						</div><!-- /.panel -->												
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
 						<div class="panel panel-notice">
@@ -469,7 +469,7 @@
 					</div><!-- /.col-md-9 -->
 				</div><!-- /.row -->
 				
-				<div id="personalized-area" class="row"></div>
+				
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
 	 		
