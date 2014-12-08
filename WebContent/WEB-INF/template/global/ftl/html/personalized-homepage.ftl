@@ -350,7 +350,8 @@
 						</ul>						
 					</div>
 				</div><!-- ./navbar-personalized -->			
-			</div>		
+			</div>	
+			<!--	
 			<section class="personalized-session open" >
 					<div class="container">
 						<div class="row">				
@@ -384,7 +385,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="personalized-session-content">
+				<div class="personalized-session-content no-padding">
 					<div class="container">
 							<div id="my-announce-section" style="display:none;" class="panel-body">
 								<div class="row" >
