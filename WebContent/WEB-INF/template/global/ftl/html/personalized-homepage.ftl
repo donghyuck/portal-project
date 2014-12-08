@@ -350,7 +350,7 @@
 					</div>
 				</div><!-- ./navbar-personalized -->			
 			</div>			
-			<section>
+			<section class="personalized open" >
 				<div class="personalized-content">
 				<h2 class="h1">Alaskan Beauty</h2>
 				</div>
