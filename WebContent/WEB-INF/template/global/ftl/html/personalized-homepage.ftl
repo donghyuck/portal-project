@@ -350,11 +350,11 @@
 					</div>
 				</div><!-- ./navbar-personalized -->			
 			</div>			
-			<section class="personalized open" >
-				<div class="personalized-content">
+			<section class="personalized-session open" >
+				<div class="personalized-session-header ">
 				<h2 class="h1">Alaskan Beauty</h2>
 				</div>
-				<div class="personalized-content personalized-content-transparent">
+				<div class="personalized-session-content personalized-session-content-transparent">
 					<span class="close"></span>
 					<div class="container">
 						<div class="row">
