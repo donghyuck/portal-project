@@ -387,7 +387,7 @@
 				</div>
 				<div class="personalized-session-content no-padding">
 					<div class="container">
-							<div id="my-announce-section" style="display:none;" class="panel-body">
+							<div id="my-announce-section" style="display:none;" class="">
 								<div class="row" >
 									<div class="col-sm-6 aside-bg">
 									<div class="aside "></div>
