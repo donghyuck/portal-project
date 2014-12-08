@@ -351,7 +351,7 @@
 				</div><!-- ./navbar-personalized -->			
 			</div>			
 			<section>
-				
+				<h2 class="h1">Alaskan Beauty</h2>
 				<div class="personalized-content personalized-content-transparent">
 					<span class="close"></span>
 					<div class="container">
