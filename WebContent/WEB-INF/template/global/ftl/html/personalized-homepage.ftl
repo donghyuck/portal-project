@@ -355,8 +355,8 @@
 			<section class="personalized-session open" >
 					<div class="container">
 						<div class="row">				
-				<div class="personalized-session-header ">
-				<h2 class="h1">Alaskan Beauty</h2>
+				<div class="personalized-session-heading ">
+				<h2 class="personalized-session-title">Alaskan Beauty</h2>
 					<div class="single-icon"> <i class="icon-flat mega-phone"></i>mega-phone</div>
 					<div class="single-icon"> <i class="icon-flat note-pad"></i>note-pad</div>				
 				</div>
@@ -370,9 +370,9 @@
 					</div>				
 			</section>-->
 			<section class="personalized-session open" >
-				<div class="personalized-session-header no-padding">
+				<div class="personalized-session-heading">
 					<div class="container">
-					<div class="headline no-border no-margin-b">
+					<div class="personalized-session-title">
 						<h4 class="no-border"><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 						<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons" data-role="buttongroup">
 							<label class="btn btn-info btn-sm active rounded-left">
@@ -385,7 +385,7 @@
 					</div>
 					</div>
 				</div>
-				<div class="personalized-session-content no-padding">
+				<div class="personalized-session-content">
 					<div class="container">
 							<div id="my-announce-section" style="display:none;" class="">
 								<div class="row" >
