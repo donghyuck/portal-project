@@ -370,7 +370,7 @@
 												
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
-						<div class="panel panel-default rounded no-margin-b" style="position:relative">
+						<div class="panel panel-notice">
 							<#if !action.user.anonymous >
 							<div class="panel-body">
 								<div class="morphing no-padding-t" >
