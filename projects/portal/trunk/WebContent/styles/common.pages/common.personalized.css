@@ -1708,9 +1708,18 @@ figure.effect-chico:hover p {
 }
 
 .personalized-content > .close {
-	width: 20px;
-	height: 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 50px;
+	font-size: 40px;
+	display: block;
+	width: 50px;
+	text-align: center;
 	background: url(/images/cross-grey.png) no-repeat center center;
+	background-size: 20px;
+	content: "";
+	display: block;
 }
 
 /** ------------------------------------------------- */
