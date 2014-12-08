@@ -352,6 +352,8 @@
 				</div><!-- ./navbar-personalized -->			
 			</div>			
 			<section class="personalized-session open" >
+					<div class="container">
+						<div class="row">				
 				<div class="personalized-session-header ">
 				<h2 class="h1">Alaskan Beauty</h2>
 					<div class="single-icon"> <i class="icon-flat mega-phone"></i>mega-phone</div>
@@ -359,12 +361,12 @@
 				</div>
 				<div class="personalized-session-content personalized-session-content-transparent arrow-up">
 					<span class="close"></span>
-					<div class="container">
-						<div class="row">
+
 						
-						</div>
-					</div>
+
 				</div>
+						</div>
+					</div>				
 			</section>
 			<section class="personalized-session open" >
 				<div class="personalized-session-header ">
