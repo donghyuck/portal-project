@@ -353,7 +353,7 @@
 			<section>
 				
 				<div class="personalized-content">
-					<span class="close">×</span>
+					<span class="close"></span>
 					<div class="container">
 						<div class="row">
 						
