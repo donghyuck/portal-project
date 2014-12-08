@@ -1697,9 +1697,12 @@ figure.effect-chico:hover p {
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
-.personalized-session-content{
+.personalized-session {
 	background: #ececec;
-	color: #222;
+	color: #616161;
+}
+
+.personalized-session-content{
 	display: none;
 	padding-top: 50px;
 	padding-bottom: 50px;
@@ -1758,13 +1761,10 @@ figure.effect-chico:hover p {
 }
 
 .personalized-session-header {
-	background: #ececec;
-	color: #616161;	
 	padding : 15px 10px;	
 }
 
 .personalized-session-header .headline {
-	color: #616161;		
 	border-bottom: 1px solid #cfcfcf;
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
