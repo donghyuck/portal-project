@@ -1776,9 +1776,10 @@ figure.effect-chico:hover p {
 background: #dedede;
 box-shadow: -2px 0 2px rgba(0,0,0,.1) inset;
 display: block;
+/*
 height: 200%;
 position: absolute;
-top: -50%;
+top: -50%;*/
 }
 
 /** ------------------------------------------------- */
