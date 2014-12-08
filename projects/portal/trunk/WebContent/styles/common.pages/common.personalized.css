@@ -1707,6 +1707,22 @@ figure.effect-chico:hover p {
 	position: relative;		
 }
 
+.personalized-session-content.arrow-up {
+	
+}
+
+.personalized-session-content.arrow-up:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #252525;
+	left: 50%;
+	margin-left: -10px;
+	top: -20px;	
+}
 .personalized-session-content > .close {
 	position: absolute;
 	top: 0;
