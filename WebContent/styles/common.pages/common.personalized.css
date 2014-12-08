@@ -1654,9 +1654,10 @@ figure.effect-chico:hover p {
 }
 
 
-
-/** profile */
-/*Media*/
+/** ------------------------------------------------- */
+/** profile                                                      */
+/** ------------------------------------------------- */
+/* Media */
 .profile .media.media-v2 {
 	margin-top: 0;
 	padding: 25px 0 20px;
@@ -1712,3 +1713,11 @@ figure.effect-chico:hover p {
 	position: absolute;
 }
 
+/** ------------------------------------------------- */
+/** Panel                                                      */
+/** ------------------------------------------------- */
+.panle .panel-notice {
+	border-color: #ddd;
+	margin-bottom: 0 !important;
+	border-radius: 4px !important;
+}
