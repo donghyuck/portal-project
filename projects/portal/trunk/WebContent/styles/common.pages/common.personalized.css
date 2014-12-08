@@ -1721,10 +1721,16 @@ figure.effect-chico:hover p {
 	background-size: 25px;
 	content: "";
 	display: block;
+	opacity:.5;
+}
+
+.personalized-content > .close : hover {
+	opacity:1;	
 }
 
 .personalized-content.personalized-content-transparent{
 	background: transparent;
+	background-size: 25px;
 }
 
 .personalized-content.personalized-content-transparent > .close {
