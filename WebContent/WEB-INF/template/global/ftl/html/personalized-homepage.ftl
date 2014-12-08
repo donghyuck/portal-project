@@ -354,7 +354,7 @@
 				<div class="personalized-session-header ">
 				<h2 class="h1">Alaskan Beauty</h2>
 				</div>
-				<div class="personalized-session-content personalized-session-content-transparent">
+				<div class="personalized-session-content personalized-session-content-transparent arrow-up">
 					<span class="close"></span>
 					<div class="container">
 						<div class="row">
