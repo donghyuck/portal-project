@@ -366,7 +366,14 @@
 					</div>
 				</div>
 			</section>
-			
+			<section class="personalized-session open" >
+				<div class="personalized-session-header ">
+				
+				</div>
+				<div class="personalized-session-content personalized-session-content-transparent">
+				
+				</div>
+			</section>
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">	
 				<div id="personalized-area" class="row"></div>
 				<div class="row">
