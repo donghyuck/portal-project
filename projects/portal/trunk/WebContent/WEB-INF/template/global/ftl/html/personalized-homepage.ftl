@@ -11,7 +11,8 @@
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
-			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',			
@@ -353,6 +354,8 @@
 			<section class="personalized-session open" >
 				<div class="personalized-session-header ">
 				<h2 class="h1">Alaskan Beauty</h2>
+					<div class="single-icon"> <i class="icon-flat mega-phone"></i>mega-phone</div>
+					<div class="single-icon"> <i class="icon-flat note-pad"></i>note-pad</div>				
 				</div>
 				<div class="personalized-session-content personalized-session-content-transparent arrow-up">
 					<span class="close"></span>
