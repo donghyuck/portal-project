@@ -1697,7 +1697,7 @@ figure.effect-chico:hover p {
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
-.panel.panel-notice {
+.panel-notice {
 	border-color: #ddd;
 	margin-bottom: 0 !important;
 	border-radius: 4px !important;
