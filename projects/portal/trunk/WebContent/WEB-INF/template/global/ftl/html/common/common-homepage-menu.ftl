@@ -77,7 +77,7 @@
 								<li data-menu-item="${item.name}">
 									<a href="${item.page}"><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</a>
 								</li>						
-								<#elseif item.layout == "mega">
+								<#elseif item.layout == "mega-menu">
 								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
