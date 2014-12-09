@@ -87,7 +87,7 @@
 															<#if sub_item.description ??>
 															<p>${sub_item.description}</p>
 															</#if>		
-															<a href="${sub_item.page}" class="btn-u btn-u-dark">Read More</button>													
+															<a href="${sub_item.page}" class="btn-u btn-u-dark">Read More</a>													
 															</div>		
 															</#if>
 															<!--
