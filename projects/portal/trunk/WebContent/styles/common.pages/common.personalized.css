@@ -1703,6 +1703,12 @@ figure.effect-chico:hover p {
 	position: relative;
 }
 
+.personalized-session .morphing {
+	top:0;
+	right:0;
+	
+}
+
 .personalized-session-content{
 	display: none;
 	/*padding-top: 50px;
