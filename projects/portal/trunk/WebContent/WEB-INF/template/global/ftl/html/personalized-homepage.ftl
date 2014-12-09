@@ -396,7 +396,27 @@
 									<div id="my-announce-list-pager" class=""> </div>
 									</div>
 									<div class="col-sm-6">
-									fdsafds
+										<div class="panel no-margin-b my-announce-view"  style="display:none;"  data-bind="visible: visible">
+												<div class="panel-heading">
+													<h4 data-bind="html:announce.subject"></h4>
+													<div class="panel-header-controls" data-bind="visible:editable">
+														<button class="btn btn-primary btn-xs rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i> 편집</button>
+													</div>
+													<ul class="list-unstyled">
+														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
+														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
+														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
+														<li class="text-muted">
+															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+															<ul class="list-unstyled text-muted">
+																<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
+																<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
+															</ul>																
+														</li>	
+													</ul>	
+												</div><!-- /.panel-heading -->
+												<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
+											</div><!-- /.panel -->								
 									</div>						
 								</div>								
 					</div>
@@ -427,27 +447,7 @@
 										</div>																				
 									</div><!-- /.col-sm-6-->
 									<div class="col-sm-6">
-										<div class="panel no-margin-b my-announce-view"  style="display:none;"  data-bind="visible: visible">
-												<div class="panel-heading">
-													<h4 data-bind="html:announce.subject"></h4>
-													<div class="panel-header-controls" data-bind="visible:editable">
-														<button class="btn btn-primary btn-xs rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i> 편집</button>
-													</div>
-													<ul class="list-unstyled">
-														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
-														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
-														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
-														<li class="text-muted">
-															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-															<ul class="list-unstyled text-muted">
-																<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-																<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-															</ul>																
-														</li>	
-													</ul>	
-												</div><!-- /.panel-heading -->
-												<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
-											</div><!-- /.panel -->												
+				
 									</div><!-- /.col-sm-6-->
 								</div><!-- /.row -->
 							</div><!-- /.panel-body -->
