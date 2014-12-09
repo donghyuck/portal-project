@@ -1726,7 +1726,6 @@ figure.effect-chico:hover p {
 	display: none;
 	/*padding-top: 50px;
 	padding-bottom: 50px;*/
-	z-index: 1000;
 	position: relative;		
 }
 
