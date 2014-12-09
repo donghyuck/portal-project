@@ -372,7 +372,37 @@
 				<div class="personalized-session-content arrow-up">
 					<span class="close"></span>
 
-						
+					<div class="container">
+							<div  style="display:none;" class="">
+								<div class="row" >
+									<div class="col-sm-6 aside-bg">
+										<!--Announce Post--><!--
+										<div class="headline">
+											<h2><i class="fa fa-bullhorn"></i>공지 & 이벤트</h2>
+											<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons">
+												<label class="btn btn-info btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30">사이트
+												</label>
+												<label class="btn btn-info btn-sm rounded-right disabled">
+													<input type="radio" name="notice-target" value="1">회사
+												</label>
+											</div>		
+										</div>-->
+										<div>												
+											<div class="panel panel-default">
+												
+												<div class="panel-footer no-padding">
+													
+												</div>											
+											</div><!-- /.panel -->
+										</div>																				
+									</div><!-- /.col-sm-6-->
+									<div class="col-sm-6">
+				
+									</div><!-- /.col-sm-6-->
+								</div><!-- /.row -->
+							</div><!-- /.panel-body -->
+					</div>							
 
 				</div>				
 			</section>
@@ -489,38 +519,6 @@
 							</div>						
 						</div>								
 					</div>
-				
-					<div class="container">
-							<div  style="display:none;" class="">
-								<div class="row" >
-									<div class="col-sm-6 aside-bg">
-										<!--Announce Post--><!--
-										<div class="headline">
-											<h2><i class="fa fa-bullhorn"></i>공지 & 이벤트</h2>
-											<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons">
-												<label class="btn btn-info btn-sm active rounded-left">
-													<input type="radio" name="notice-target" value="30">사이트
-												</label>
-												<label class="btn btn-info btn-sm rounded-right disabled">
-													<input type="radio" name="notice-target" value="1">회사
-												</label>
-											</div>		
-										</div>-->
-										<div>												
-											<div class="panel panel-default">
-												
-												<div class="panel-footer no-padding">
-													
-												</div>											
-											</div><!-- /.panel -->
-										</div>																				
-									</div><!-- /.col-sm-6-->
-									<div class="col-sm-6">
-				
-									</div><!-- /.col-sm-6-->
-								</div><!-- /.row -->
-							</div><!-- /.panel-body -->
-					</div>						
 				</div>
 			</section>
 			
