@@ -356,35 +356,22 @@
 					<span class="close"></span>
 
 					<div class="container">
-							<div  style="display:none;" class="">
-								<div class="row" >
-									<div class="col-sm-6 aside-bg">
-										<!--Announce Post--><!--
-										<div class="headline">
-											<h2><i class="fa fa-bullhorn"></i>공지 & 이벤트</h2>
-											<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons">
-												<label class="btn btn-info btn-sm active rounded-left">
-													<input type="radio" name="notice-target" value="30">사이트
-												</label>
-												<label class="btn btn-info btn-sm rounded-right disabled">
-													<input type="radio" name="notice-target" value="1">회사
-												</label>
-											</div>		
-										</div>-->
-										<div>												
-											<div class="panel panel-default">
-												
-												<div class="panel-footer no-padding">
-													
-												</div>											
-											</div><!-- /.panel -->
-										</div>																				
-									</div><!-- /.col-sm-6-->
-									<div class="col-sm-6">
-				
-									</div><!-- /.col-sm-6-->
-								</div><!-- /.row -->
-							</div><!-- /.panel-body -->
+				<div class="row">
+					<div class="col-md-3">						
+						<div id="my-notification-panel" class="panel panel-danger rounded border-2x" style="display:none;">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
+								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
+							<div class="panel-body"></div>
+						</div><!-- /.panel -->						
+						<div id="my-memo-panel" class="panel panel-primary rounded border-2x" style="display:none">
+							<div class="panel-heading">
+								<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
+								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
+							<div class="panel-body"></div>
+						</div><!-- /.panel -->																
+					</div><!-- /.col-md-3 -->
+				</div><!-- /.row -->
 					</div>							
 
 				</div>				
@@ -507,22 +494,7 @@
 			
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">	
 				<div id="personalized-area" class="row"></div>
-				<div class="row">
-					<div class="col-md-3">						
-						<div id="my-notification-panel" class="panel panel-danger rounded border-2x" style="display:none;">
-							<div class="panel-heading">
-								<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
-								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-							<div class="panel-body"></div>
-						</div><!-- /.panel -->						
-						<div id="my-memo-panel" class="panel panel-primary rounded border-2x" style="display:none">
-							<div class="panel-heading">
-								<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
-								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-							<div class="panel-body"></div>
-						</div><!-- /.panel -->																
-					</div><!-- /.col-md-3 -->
-				</div><!-- /.row -->
+				
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
 	 		
