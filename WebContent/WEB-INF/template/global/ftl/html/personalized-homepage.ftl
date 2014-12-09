@@ -393,7 +393,7 @@
 								<div class="row">
 									<div class="col-sm-6 padding-sm aside-bg">
 									<div class="my-announce-list no-border"></div>
-									<div id="my-announce-list-pager"> </div>
+									<div id="my-announce-list-pager" class="no-border-hr no-border-b"> </div>
 									</div>
 									<div class="col-sm-6">
 									fdsafds
