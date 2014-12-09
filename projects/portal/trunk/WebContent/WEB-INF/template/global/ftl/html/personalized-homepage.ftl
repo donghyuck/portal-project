@@ -401,7 +401,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="personalized-session-content arrow-up">
+										<div class="personalized-session-content">
 											<div class="container">
 												<div class="row">
 													<div class="col-sm-12 p-sm">													
@@ -454,7 +454,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="my-announce-section" class="personalized-session-content">
+				<div id="my-announce-section" class="personalized-session-content  arrow-up">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-6 p-sm aside-bg">
