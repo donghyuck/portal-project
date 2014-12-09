@@ -237,7 +237,7 @@
 								data : kendo.stringify( $this.announce ),
 								contentType : "application/json",
 								success : function(response){									
-									var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
+									var listRenderTo = $("#my-announce-section .my-announce-list");
 									common.ui.listview(listRenderTo).dataSource.read();
 									$this.close();
 								},
