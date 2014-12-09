@@ -84,6 +84,9 @@
 															<#else>
 															<div class="col-md-3 equal-height-in no-border">
 															<h3 class="mega-menu-heading">${ sub_item.title }</h3>	
+															<#if sub_item.description ??>
+															<p>${sub_item.description}</p>
+															</#if>															
 															</div>		
 															</#if>
 															<!--
