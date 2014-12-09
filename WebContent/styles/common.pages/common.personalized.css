@@ -1712,7 +1712,7 @@ figure.effect-chico:hover p {
 	width: 200px;
 }
 
-.personalized-session .morphing button[data-action='morphing'] {
+.personalized-session .morphing button[data-toggle='morphing'] {
 	position: absolute;
 	right:0;
 }
