@@ -50,25 +50,14 @@
 							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">								
 								<span class="sr-only">${webSite.description} toggle navigation</span>
 								<span class="fa fa-bars"></span>
-							</button>
-							<!--
-							<a href="#" class="navbar-toggle-account visible-xs no-padding no-border">
-								<#if action.user.anonymous > 
-									<img src="<@spring.url '/images/common/anonymous.png'/>" height="34"/>	
-								<#else> 
-									<img src="<@spring.url '/download/profile/${action.user.username}?width=100&height=150'/>" class="rounded-top" height="34">
-								</#if>		
-							</a>				
-							-->			
+							</button>	
 							<a class="navbar-brand" href="/main.do">
 								<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="Logo">
 							</a>
-						</div>										
-								
+						</div>	
 						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
-							<!--<ul id="account-navbar" class="nav navbar-nav navbar-right hidden-xs" style="display:none;"></ul>-->
-							<!-- /account -->
+
 							<ul class="nav navbar-nav navbar-left">
 				<#list webSiteMenu.components as item >
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
@@ -83,7 +72,7 @@
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
 										<li>
-											<div class="mega-menu-content disable-icons">
+											<div class="mega-menu-content disable-icons padding-sm">
 												<div class="container">
 													<div class="row equal-height">													
 														<#list item.components as sub_item>														
