@@ -1711,6 +1711,14 @@ figure.effect-chico:hover p {
 	width: 200px;
 }
 
+.personalized-session .morphing button[data-action='morphing'] {
+	position: absolute;
+}
+
+.personalized-session .morphing.open button[data-action='morphing']  span {
+	display:none;
+}
+
 .personalized-session-content{
 	display: none;
 	/*padding-top: 50px;
