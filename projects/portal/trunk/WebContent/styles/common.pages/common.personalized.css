@@ -1704,8 +1704,8 @@ figure.effect-chico:hover p {
 
 .personalized-session-content{
 	display: none;
-	padding-top: 50px;
-	padding-bottom: 50px;
+	/*padding-top: 50px;
+	padding-bottom: 50px;*/
 	z-index: 1;
 	position: relative;		
 }
