@@ -375,12 +375,23 @@
 									<button class="btn-u btn-u-red animated fadeInLeft" type="button" data-toggle="button" data-action="morphing" style="top: -1px; right: -1px; position: absolute;"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
 									
 									<div class="morphing-content">
+										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
+										<div class="personalized-session-heading">
+											<div class="container">
+												<div class="personalized-session-title">
+													<h4><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+													<div class="personalized-session-heading-controls">
+														
+													</div>		
+												</div>
+											</div>
+										</div>
 									
 										<div calss="container">
 											<div class="row">
 												<div class="col-xs-12">
 									
-										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
+																		
 										<div class="headline">
 											<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
 											<div id="edit-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
