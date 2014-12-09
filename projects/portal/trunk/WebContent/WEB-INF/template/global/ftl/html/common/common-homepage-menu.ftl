@@ -86,7 +86,8 @@
 															<h3 class="mega-menu-heading">${ sub_item.title }</h3>	
 															<#if sub_item.description ??>
 															<p>${sub_item.description}</p>
-															</#if>															
+															</#if>		
+															<a href="${sub_item.page}" class="btn-u btn-u-dark">Read More</button>													
 															</div>		
 															</#if>
 															<!--
