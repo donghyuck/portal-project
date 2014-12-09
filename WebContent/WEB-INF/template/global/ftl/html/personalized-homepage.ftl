@@ -126,7 +126,7 @@
 		function createAnnounceSection(){
 			
 			var renderTo = $("#my-announce-section");
-			var listRenderTo = $("#my-announce-section .panel-body.my-announce-list");
+			var listRenderTo = $("#my-announce-section .my-announce-list");
 			var viewRenderTo = $("#my-announce-section .my-announce-view");			
 			var model =  common.ui.observable({ 
 				announce : new common.ui.data.Announce(),
