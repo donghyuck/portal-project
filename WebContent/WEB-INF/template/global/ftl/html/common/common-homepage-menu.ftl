@@ -87,7 +87,7 @@
 																<#if sub_item.description ??>
 																<p>${sub_item.description}</p>
 																</#if>		
-																<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if></a>																														
+																<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="${sub_item.icon}"></i></#if></a>																														
 															</div>		
 															</#if>
 															<!--
