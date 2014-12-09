@@ -680,6 +680,10 @@ body:not  (.right-to-left  ) .no-border-l {
 	padding-right: 0 !important
 }
 
+.no-padding-l {
+	padding-left: 0 !important
+}
+
 /* MARGINS & PADDINGS */
 .p-xxs {
 	padding: 5px;
