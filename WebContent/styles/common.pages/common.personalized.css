@@ -1700,6 +1700,7 @@ figure.effect-chico:hover p {
 .personalized-session {
 	background: #ececec;
 	color: #616161;
+	position: relative;
 }
 
 .personalized-session-content{
