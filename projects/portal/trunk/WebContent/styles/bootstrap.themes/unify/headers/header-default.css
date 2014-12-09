@@ -686,6 +686,11 @@
 	border-bottom: 1px solid #dedede;
 }
 
+header .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu li a {
+	padding: 0;
+	border-bottom: none;
+}
+
 
 @media ( min-width : 992px) {
 	.header .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu {
