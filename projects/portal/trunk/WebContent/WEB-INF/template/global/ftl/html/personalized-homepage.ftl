@@ -390,6 +390,21 @@
 				</div>
 				<div class="personalized-session-content">
 					<div class="container">
+						<div class="row">
+							<div class="col-sm-12">
+								<div class="panel panel-default">
+									<div class="panel-body">
+									
+									</div>
+									<div class="panel-footer no-padding">
+									
+									</div>						
+								</div>
+							</div>
+						</div>
+					</div>
+				
+					<div class="container">
 							<div id="my-announce-section" style="display:none;" class="">
 								<div class="row" >
 									<div class="col-sm-6 aside-bg">
