@@ -390,8 +390,6 @@
 				</div>
 				<div id="my-announce-section" class="personalized-session-content">
 					<div class="container">
-						<div class="panel panel-default">
-							<div class="panel-body no-padding-vr">
 								<div class="row">
 									<div class="col-sm-6 padding-sm aside-bg">
 									<div class="my-announce-list no-border"></div>
@@ -401,8 +399,6 @@
 									fdsafds
 									</div>						
 								</div>								
-							</div>						
-						</div>
 					</div>
 				
 					<div class="container">
