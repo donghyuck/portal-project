@@ -330,6 +330,18 @@
 							</#list>	
 						</ul>
 						</#if>
+						
+					</div>
+				</div><!-- ./navbar-personalized -->			
+			</div>	
+
+			<section class="personalized-session open" >
+				<div class="personalized-session-heading">
+					<div class="container">
+						<div class="personalized-session-title">
+							<h4><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<div class="personalized-session-heading-controls">
+
 						<ul class="nav navbar-nav navbar-right">
 							<li>
 								<div id="personalized-buttons" class="navbar-btn btn-group">
@@ -352,28 +364,18 @@
 								</div>
 							</li>
 						</ul>						
-					</div>
-				</div><!-- ./navbar-personalized -->			
-			</div>	
-			
-			<!--	
-			<section class="personalized-session open" >
-					<div class="container">
-						<div class="row">				
-				<div class="personalized-session-heading ">
-				<h2 class="personalized-session-title">Alaskan Beauty</h2>
-					<div class="single-icon"> <i class="icon-flat mega-phone"></i>mega-phone</div>
-					<div class="single-icon"> <i class="icon-flat note-pad"></i>note-pad</div>				
+														
+							</div>		
+						</div>
+					</div>				
 				</div>
-				<div class="personalized-session-content personalized-session-content-transparent arrow-up">
+				<div class="personalized-session-content arrow-up">
 					<span class="close"></span>
 
 						
 
-				</div>
-						</div>
-					</div>				
-			</section>-->
+				</div>				
+			</section>
 			<section class="personalized-session open" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >
