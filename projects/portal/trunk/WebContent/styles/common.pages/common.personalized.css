@@ -1760,12 +1760,12 @@ figure.effect-chico:hover p {
 	display: block;
 }
 
-.personalized-session-header {
+.personalized-session-heading {
 	padding : 15px 10px;	
+	border-bottom: 1px solid #cfcfcf;
 }
 
-.personalized-session-header .headline {
-	border-bottom: 1px solid #cfcfcf;
+.personalized-session-heading .personalized-session-title {		
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-ms-font-smoothing: antialiased;
