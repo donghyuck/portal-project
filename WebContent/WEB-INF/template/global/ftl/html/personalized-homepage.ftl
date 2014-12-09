@@ -402,6 +402,23 @@
 													<div class="panel-header-controls" data-bind="visible:editable">
 														<button class="btn btn-primary btn-xs rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i> 편집</button>
 													</div>
+													<dl class="dl-horizontal text-muted m-b-xs">
+														<dt><strong>게시 기간</strong></dt>
+														<dd><span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span>
+															<span><a class="pull-right" href="#"><i class="fa fa-pencil"></i></a></span>
+														</dd>
+														<hr>
+														<dt><strong>생성일</strong></dt>
+														<dd><span data-bind="text: announce.formattedCreationDate"></span>
+															<span><a class="pull-right" href="#"><i class="fa fa-pencil"></i></a></span>
+														</dd>
+														<hr>	
+														<dt><strong>수정일</strong></dt>
+														<dd><span data-bind="text: announce.formattedModifiedDate"></span>
+															<span><a class="pull-right" href="#"><i class="fa fa-pencil"></i></a></span>
+														</dd>
+														<hr>																												
+													</dl>
 													<ul class="list-unstyled">
 														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
 														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
