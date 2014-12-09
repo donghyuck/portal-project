@@ -383,7 +383,7 @@
 										<input type="radio" name="notice-target" value="1">회사
 									</label>
 								</div>
-								<button class="btn btn-danger btn-sm" type="button" ><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 &amp; 이벤트</span></button>
+								<button class="btn btn-danger rounded btn-sm" type="button" ><i class="fa fa-plus fa-lg"></i> <span class="hidden-xs"> 새로운 공지 &amp; 이벤트</span></button>
 							</div>		
 						</div>
 					</div>
@@ -396,7 +396,7 @@
 									<div id="my-announce-list-pager" class=""> </div>
 									</div>
 									<div class="col-sm-6 p-sm">
-										<div class="panel no-margin-b my-announce-view"  style="display:none;"  data-bind="visible: visible">
+										<div class="panel panel-default no-margin-b my-announce-view"  style="display:none;"  data-bind="visible: visible">
 												<div class="panel-heading">
 													<h4 data-bind="html:announce.subject"></h4>
 													<div class="panel-header-controls" data-bind="visible:editable">
