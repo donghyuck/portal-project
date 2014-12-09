@@ -72,15 +72,19 @@
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
 										<li>
-											<div class="mega-menu-content disable-icons padding-sm">
+											<div class="mega-menu-content disable-icons">
 												<div class="container">
 													<div class="row equal-height">													
 														<#list item.components as sub_item>														
-														<div class="col-md-3 equal-height-in">
+														
 															<#if sub_item.components?has_content >
+															
 															1
+															</div>		
 															<#else>
+															<div class="col-md-3 equal-height-in no-border">
 															<h3 class="mega-menu-heading">${ sub_item.title }</h3>	
+															</div>		
 															</#if>
 															<!--
 																<ul class="list-unstyled equal-height-list">
@@ -108,7 +112,7 @@
 															
 																
 															
-														</div>														
+																										
 														</#list>
 														
 																											
