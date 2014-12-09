@@ -459,7 +459,7 @@
 								<div id="my-announce-list-pager" class=""> </div>
 							</div>
 								<div class="col-sm-6 p-sm">
-									<div class="panel panel-default no-margin-b my-announce-view animated fadeInLeft"  style="display:none;"  data-bind="visible: visible">
+									<div class="panel panel-default no-margin-b my-announce-view animated fadeInRight"  style="display:none;"  data-bind="visible: visible">
 										<div class="panel-heading">
 											<h4 data-bind="html:announce.subject"></h4>
 											<div class="panel-header-controls" data-bind="visible:editable">
