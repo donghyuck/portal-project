@@ -391,9 +391,9 @@
 				<div id="my-announce-section" class="personalized-session-content">
 					<div class="container">
 								<div class="row">
-									<div class="col-sm-6 padding-sm aside-bg">
-									<div class="my-announce-list no-border"></div>
-									<div id="my-announce-list-pager" class="no-border-hr no-border-b"> </div>
+									<div class="col-sm-6 p-sm aside-bg">
+									<div class="my-announce-list no-border-b"></div>
+									<div id="my-announce-list-pager" class=""> </div>
 									</div>
 									<div class="col-sm-6">
 									fdsafds
