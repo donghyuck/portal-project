@@ -355,6 +355,7 @@
 					</div>
 				</div><!-- ./navbar-personalized -->			
 			</div>	
+			
 			<!--	
 			<section class="personalized-session open" >
 					<div class="container">
