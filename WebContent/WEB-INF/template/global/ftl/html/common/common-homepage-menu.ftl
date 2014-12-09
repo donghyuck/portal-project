@@ -85,6 +85,9 @@
 											<div class="mega-menu-content disable-icons">
 												<div class="container">
 													<div class="row equal-height">
+													
+													
+													
 														<#list item.components as sub_item>														
 														<div class="col-md-3 equal-height-in">
 															<ul class="list-unstyled equal-height-list">																
@@ -109,7 +112,9 @@
 																</#if>
 															</ul>
 														</div>														
-														</#list>													
+														</#list>
+														
+																											
 													</div>
 												</div>
 											</div>
