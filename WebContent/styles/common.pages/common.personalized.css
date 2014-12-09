@@ -1710,6 +1710,7 @@ figure.effect-chico:hover p {
 	height:0;
 	min-height: 0;
 	width: 200px;
+	z-index : 10;
 }
 
 .personalized-session .morphing button[data-toggle='morphing'] {
@@ -1727,6 +1728,7 @@ figure.effect-chico:hover p {
 	/*padding-top: 50px;
 	padding-bottom: 50px;*/
 	position: relative;		
+	background: #fff;
 }
 
 .personalized-session-content.arrow-up {
@@ -1740,7 +1742,7 @@ figure.effect-chico:hover p {
 	height: 0;
 	border-left: 20px solid transparent;
 	border-right: 20px solid transparent;
-	border-bottom: 20px solid #252525;
+	border-bottom: 20px solid #fff;
 	left: 50%;
 	margin-left: -10px;
 	top: -20px;	
