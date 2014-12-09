@@ -232,7 +232,7 @@
 							return ;
 						}
 						common.ui.ajax(
-							'<@spring.url "/data/announce/save.json"/>',
+							'<@spring.url "/data/announce/update.json"/>',
 							{
 								data : kendo.stringify( $this.announce ),
 								contentType : "application/json",
