@@ -11,7 +11,7 @@
 				<#assign webSite = action.webSite />				
 				<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />
 				
-			<div class="header-v5">
+			<div class="header">
 				<div class="topbar">
 					<div class="container">
 						<!-- Topbar Navigation -->
