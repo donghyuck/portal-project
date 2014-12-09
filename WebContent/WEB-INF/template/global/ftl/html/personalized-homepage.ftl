@@ -191,7 +191,7 @@
 				}
 			);
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
-			common.ui.scroll.slim(listRenderTo, { height: 320 });
+			//common.ui.scroll.slim(listRenderTo, { height: 320 });
 			common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
 		}
 		
@@ -388,9 +388,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="personalized-session-content">
+				<div id="my-announce-section" class="personalized-session-content">
 					<div class="container">
-
 						<div class="panel panel-default">
 							<div class="panel-body no-padding-vr">
 								<div class="row">
@@ -406,7 +405,7 @@
 					</div>
 				
 					<div class="container">
-							<div id="my-announce-section" style="display:none;" class="">
+							<div  style="display:none;" class="">
 								<div class="row" >
 									<div class="col-sm-6 aside-bg">
 										<!--Announce Post--><!--
