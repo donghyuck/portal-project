@@ -352,9 +352,8 @@
 						</div>
 					</div>				
 				</div>
-				<div class="personalized-session-content arrow-up" style="background:#fff;">
+				<div class="personalized-session-content arrow-up">
 					<span class="close"></span>
-
 					<div class="container" style="min-height:150px;">
 				<div class="row p-sm">
 					<div class="col-md-3">						
