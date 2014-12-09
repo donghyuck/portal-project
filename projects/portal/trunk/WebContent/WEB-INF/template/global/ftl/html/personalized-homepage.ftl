@@ -373,7 +373,13 @@
 							<#if !action.user.anonymous >
 								<div class="morphing" >
 									<button class="btn-u btn-u-red animated fadeInLeft" type="button" data-toggle="button" data-action="morphing" style="top: -1px; right: -1px; position: absolute;"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
-									<div class="morphing-content m-t-xs">
+									
+									<div class="morphing-content">
+									
+										<div calss="container">
+											<div class="row">
+												<div class="col-xs-12">
+									
 										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
 										<div class="headline">
 											<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
@@ -407,9 +413,13 @@
 												</div>						
 											</div>				
 										</div>
+										
 										<div class="text-right">
 											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 										</div>	
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
 							
