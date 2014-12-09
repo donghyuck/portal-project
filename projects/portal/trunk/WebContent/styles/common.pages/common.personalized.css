@@ -1701,6 +1701,7 @@ figure.effect-chico:hover p {
 	background: #ececec;
 	color: #616161;
 	position: relative;
+	z-index : 1px;
 }
 
 .personalized-session .morphing {
