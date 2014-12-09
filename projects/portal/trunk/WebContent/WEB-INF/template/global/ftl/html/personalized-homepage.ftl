@@ -76,9 +76,6 @@
 				});
 				
 				createAnnounceSection();				
-				$(".morphing ").bind("open.morphing", function(e){
-					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
-				});
 				
 				// END SCRIPT 				
 			}
@@ -132,10 +129,15 @@
 				announce : new common.ui.data.Announce(),
 				editable : false,
 				visible : false,
+				new : function(e){
+					e.stopPropagation();
+					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
+					$(".morphing").toggleClass("open");					
+				},
 				edit : function(e){
 					e.stopPropagation();
 					createAnnounceEditorSection(this.announce);
-					$(".morphing ").toggleClass("open");					
+					$(".morphing").toggleClass("open");					
 				}
 			});			
 			model.bind("change", function(e){				
@@ -444,7 +446,7 @@
 										<input type="radio" name="notice-target" value="1">회사
 									</label>
 								</div>
-								<button class="btn btn-danger rounded btn-sm" type="button" ><i class="fa fa-plus fa-lg"></i> <span class="hidden-xs"> 새로운 공지 &amp; 이벤트</span></button>
+								<button class="btn btn-danger rounded btn-sm" type="button" data-bind="click:new"><i class="fa fa-plus fa-lg"></i> <span class="hidden-xs"> 새로운 공지 &amp; 이벤트</span></button>
 							</div>		
 						</div>
 					</div>
