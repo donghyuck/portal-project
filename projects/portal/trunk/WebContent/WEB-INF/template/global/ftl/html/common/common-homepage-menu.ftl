@@ -82,7 +82,7 @@
 															1
 															</div>		
 															<#else>
-															<div class="col-md-3 equal-height-in no-border">
+															<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30 no-border">
 															<h3 class="mega-menu-heading">${ sub_item.title }</h3>	
 															<#if sub_item.description ??>
 															<p>${sub_item.description}</p>
