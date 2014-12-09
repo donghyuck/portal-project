@@ -322,7 +322,7 @@
 				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
-							<h4><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<h4><i class="icon-flat person"></i> <small>알림 메싲와 메모를 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 							<div class="personalized-session-heading-controls">
 
 						<ul class="nav navbar-nav navbar-right">
