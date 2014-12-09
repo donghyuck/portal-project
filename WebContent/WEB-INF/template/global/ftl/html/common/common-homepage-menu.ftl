@@ -84,13 +84,12 @@
 										<li>
 											<div class="mega-menu-content disable-icons">
 												<div class="container">
-													<div class="row equal-height">
-													
-													
-													
+													<div class="row equal-height">													
 														<#list item.components as sub_item>														
 														<div class="col-md-3 equal-height-in">
-															<ul class="list-unstyled equal-height-list">																
+															<ul class="list-unstyled equal-height-list">
+															
+															<!--
 																<#if sub_item.components?has_content >	
 																<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>
 																<#list sub_item.components as sub_sub_item >
@@ -110,6 +109,9 @@
 																</li>		
 																</#if>
 																</#if>
+															-->
+															
+																
 															</ul>
 														</div>														
 														</#list>
