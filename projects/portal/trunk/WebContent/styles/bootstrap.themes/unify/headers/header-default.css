@@ -676,12 +676,27 @@
 	overflow: hidden;
 }
 
+.header h3.mega-menu-heading {
+	color: #555;
+	font-size: 18px;
+	font-weight: 400;
+	margin-bottom: 5px;
+	padding-bottom: 5px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #dedede;
+}
+
+
 @media ( min-width : 992px) {
 	.header .mega-menu .dropdown.mega-menu-fullwidth .dropdown-menu {
 		margin-left: 10px;
 		margin-right: 15px;
 	}
 }
+
+
+
+
 
 /*Equal Height Lists*/
 @media ( min-width : 992px) {
