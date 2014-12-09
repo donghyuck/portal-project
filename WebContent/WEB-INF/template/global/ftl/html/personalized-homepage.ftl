@@ -76,6 +76,9 @@
 				});
 				
 				createAnnounceSection();				
+				$(".morphing ").bind("open.morphing", function(e){
+					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
+				});
 				
 				// END SCRIPT 				
 			}
@@ -364,6 +367,9 @@
 				</div>
 				<div class="personalized-session-content personalized-session-content-transparent arrow-up">
 					<span class="close"></span>
+
+						
+
 				</div>
 						</div>
 					</div>				
@@ -443,7 +449,7 @@
 										<input type="radio" name="notice-target" value="1">회사
 									</label>
 								</div>
-								<button class="btn btn-danger rounded btn-sm" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-plus fa-lg"></i> <span class="hidden-xs"> 새로운 공지 &amp; 이벤트</span></button>
+								<button class="btn btn-danger rounded btn-sm" type="button" data-toggle="button" data-action="morphing" ><i class="fa fa-plus fa-lg"></i> <span class="hidden-xs"> 새로운 공지 &amp; 이벤트</span></button>
 							</div>		
 						</div>
 					</div>
@@ -456,7 +462,7 @@
 								<div id="my-announce-list-pager" class=""> </div>
 							</div>
 								<div class="col-sm-6 p-sm">
-									<div class="panel panel-default no-margin-b my-announce-view animated fadeInRight"  style="display:none;"  data-bind="visible: visible">
+									<div class="panel panel-default no-margin-b my-announce-view animated fadeIn"  style="display:none;"  data-bind="visible: visible">
 										<div class="panel-heading">
 											<h4 data-bind="html:announce.subject"></h4>
 											<div class="panel-header-controls" data-bind="visible:editable">
