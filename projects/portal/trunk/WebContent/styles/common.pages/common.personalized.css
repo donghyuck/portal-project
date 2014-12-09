@@ -1706,6 +1706,7 @@ figure.effect-chico:hover p {
 .personalized-session .morphing {
 	top:0;
 	right:0;
+	height:0;
 	min-height: 0;
 	width: 200px;
 }
