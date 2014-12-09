@@ -90,7 +90,7 @@
 															<#if sub_item.components?has_content >
 															1
 															<#else>
-															2
+															<h3 class="mega-menu-heading">${ sub_sub_item.title }</h3>	
 															</#if>
 															<!--
 																<ul class="list-unstyled equal-height-list">
