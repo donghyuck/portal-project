@@ -395,7 +395,7 @@
 									<div class="my-announce-list no-border-b"></div>
 									<div id="my-announce-list-pager" class=""> </div>
 									</div>
-									<div class="col-sm-6">
+									<div class="col-sm-6 p-xxs">
 										<div class="panel no-margin-b my-announce-view"  style="display:none;"  data-bind="visible: visible">
 												<div class="panel-heading">
 													<h4 data-bind="html:announce.subject"></h4>
