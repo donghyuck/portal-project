@@ -1717,7 +1717,8 @@ figure.effect-chico:hover p {
 	right:0;
 }
 .personalized-session .morphing.open button[data-toggle='morphing']{
-	display:none;
+	-webkit-animation-name: fadeOutLeft;
+	animation-name: fadeOutLeft;
 }
 .personalized-session .morphing.open button[data-toggle='morphing']  span {
 	display:none;
