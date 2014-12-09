@@ -432,22 +432,9 @@
 													</div>
 												</div>
 											</div>
-										</div>
-																
-									
-										<div calss="container">
-											<div class="row">
-												<div class="col-xs-12">
-									
-																		
-										<div class="headline">
-											<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
-
-										</div>				
-
+										</div>	
 									</div>
-								</div>
-							
+								</div>								
 							</#if>
 										
 				<div class="personalized-session-heading">
