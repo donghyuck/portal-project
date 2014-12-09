@@ -372,17 +372,19 @@
 			<section class="personalized-session open" >
 				<div class="personalized-session-heading">
 					<div class="container">
-					<div class="personalized-session-title">
-						<h4 class="no-border"><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
-						<div id="announce-selector" class="btn-group pull-right" data-toggle="buttons" data-role="buttongroup">
-							<label class="btn btn-info btn-sm active rounded-left">
-								<input type="radio" name="notice-target" value="30">사이트
-							</label>
-							<label class="btn btn-info btn-sm rounded-right disabled">
-								<input type="radio" name="notice-target" value="1">회사
-							</label>
-						</div>		
-					</div>
+						<div class="personalized-session-title">
+							<h4><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<div class="personalized-session-heading-controls">
+								<div id="announce-selector" class="btn-group" data-toggle="buttons" data-role="buttongroup">
+									<label class="btn btn-info btn-sm active rounded-left">
+										<input type="radio" name="notice-target" value="30">사이트
+									</label>
+									<label class="btn btn-info btn-sm rounded-right disabled">
+										<input type="radio" name="notice-target" value="1">회사
+									</label>
+								</div>
+							</div>		
+						</div>
 					</div>
 				</div>
 				<div class="personalized-session-content">
