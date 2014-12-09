@@ -322,7 +322,7 @@
 				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
-							<h4><i class="icon-flat person"></i> <small>알림 메싲와 메모를 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<h4><i class="icon-flat person"></i> <small>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 							<div class="personalized-session-heading-controls">
 
 						<ul class="nav navbar-nav navbar-right">
@@ -355,7 +355,7 @@
 				<div class="personalized-session-content arrow-up">
 					<span class="close"></span>
 
-					<div class="container">
+					<div class="container" style="min-height:150px;">
 				<div class="row p-sm">
 					<div class="col-md-3">						
 						<div id="my-notification-panel" class="panel panel-danger rounded border-2x" style="display:none;">
