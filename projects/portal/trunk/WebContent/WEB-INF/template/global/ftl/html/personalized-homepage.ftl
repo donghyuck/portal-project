@@ -318,7 +318,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-session open" >
+			<section class="personalized-session border-b open" >
 				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
@@ -377,7 +377,7 @@
 
 				</div>				
 			</section>
-			<section class="personalized-session open" >
+			<section class="personalized-session border-b open" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >
 								
@@ -401,7 +401,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="personalized-session-content arrow-up">
+										<div class="personalized-session-content">
 											<div class="container">
 												<div class="row">
 													<div class="col-sm-12 p-sm">													
