@@ -1715,15 +1715,13 @@ figure.effect-chico:hover p {
 .personalized-session .morphing button[data-toggle='morphing'] {
 	position: absolute;
 	right:0;
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;	
 }
 .personalized-session .morphing.open button[data-toggle='morphing']{
 	-webkit-animation-name: fadeOutLeft;
 	animation-name: fadeOutLeft;
 }
-.personalized-session .morphing.open button[data-toggle='morphing']  span {
-	display:none;
-}
-
 .personalized-session-content{
 	display: none;
 	/*padding-top: 50px;
