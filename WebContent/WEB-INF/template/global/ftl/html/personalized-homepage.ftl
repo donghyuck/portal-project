@@ -76,10 +76,6 @@
 				});
 				
 				createAnnounceSection();				
-				$(".morphing ").bind("open.morphing", function(e){
-					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
-				});
-				
 				// END SCRIPT 				
 			}
 		}]);	
@@ -377,9 +373,9 @@
 			<section class="personalized-session open" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >
-								<!--
+								
 									<button class="btn-u btn-u-red animated fadeInLeft" type="button" data-toggle="button" data-action="morphing"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
-									-->
+									
 									<div class="morphing-content">
 										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
 										<div class="personalized-session-heading">
