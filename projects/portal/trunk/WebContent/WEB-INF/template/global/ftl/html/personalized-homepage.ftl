@@ -397,17 +397,15 @@
 										<div class="personalized-session-content">
 											<div class="container">
 												<div class="row">
-													<div class="col-sm-12 p-sm">
-													
+													<div class="col-sm-12 p-sm">													
 														<h5 data-bind="visible: new">
 															<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
-														</h5>		
-														
+														</h5>
 														<div class="panel panel-default ">
 															<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
 																<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
 															</div>			
-															<div class="panel-body"  style="padding:5px;">									
+															<div class="panel-body p-xxs">									
 																<div  class="form">
 																	<div class="form-group">
 																		<label class="control-label">공지 기간</label>
@@ -424,16 +422,11 @@
 														<div class="text-right">
 															<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 														</div>	
-														</div>
-													</div>
-												</div>
-																							
-													
 													</div>
 												</div>
 											</div>
-										</div>	
-									</div>
+										</div>
+									</div>														
 								</div>								
 							</#if>
 										
