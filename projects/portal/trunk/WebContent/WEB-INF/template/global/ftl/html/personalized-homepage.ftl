@@ -371,8 +371,7 @@
 			</section>-->
 			<section class="personalized-session open" >
 							<#if !action.user.anonymous >
-							<div class="panel-body">
-								<div class="morphing no-padding-t" >
+								<div class="morphing" >
 									<button class="btn-u btn-u-red animated fadeInLeft" type="button" data-toggle="button" data-action="morphing" style="top: -1px; right: -1px; position: absolute;"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
 									<div class="morphing-content m-t-xs">
 										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
@@ -413,7 +412,7 @@
 										</div>	
 									</div>
 								</div>
-							</div>
+							
 							</#if>
 										
 				<div class="personalized-session-heading">
