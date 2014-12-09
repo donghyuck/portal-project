@@ -395,10 +395,10 @@
 							<div class="panel-body no-padding-vr">
 								<div class="row">
 									<div class="col-sm-6 aside-bg">
-									
+									fdsafdsafdsa
 									</div>
 									<div class="col-sm-6">
-									
+									fdsafds
 									</div>						
 								</div>								
 							</div>						
