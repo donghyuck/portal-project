@@ -1716,10 +1716,10 @@ figure.effect-chico:hover p {
 	position: absolute;
 	right:0;
 }
-.personalized-session .morphing.open button[data-action='morphing']{
+.personalized-session .morphing.open button[data-toggle='morphing']{
 	right:initial;
 }
-.personalized-session .morphing.open button[data-action='morphing']  span {
+.personalized-session .morphing.open button[data-toggle='morphing']  span {
 	display:none;
 }
 
