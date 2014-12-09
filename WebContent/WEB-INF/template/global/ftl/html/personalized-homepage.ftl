@@ -383,6 +383,7 @@
 										<input type="radio" name="notice-target" value="1">회사
 									</label>
 								</div>
+								<button class="btn-u btn-u-red" type="button" data-toggle="button"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 &amp; 이벤트</span></button>
 							</div>		
 						</div>
 					</div>
