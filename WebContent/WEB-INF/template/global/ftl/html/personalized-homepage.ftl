@@ -370,6 +370,52 @@
 					</div>				
 			</section>-->
 			<section class="personalized-session open" >
+							<#if !action.user.anonymous >
+							<div class="panel-body">
+								<div class="morphing no-padding-t" >
+									<button class="btn-u btn-u-red animated fadeInLeft" type="button" data-toggle="button" data-action="morphing" style="top: -1px; right: -1px; position: absolute;"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
+									<div class="morphing-content m-t-xs">
+										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
+										<div class="headline">
+											<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
+											<div id="edit-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
+												<label class="btn btn-success btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30">사이트
+												</label>
+												<label class="btn btn-success btn-sm rounded-right">
+													<input type="radio" name="notice-target" value="1">회사
+												</label>
+											</div>
+										</div>				
+										<h5 data-bind="visible: new">
+											<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
+										</h5>		
+										<div class="panel panel-default ">
+											<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
+												<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
+											</div>			
+											<div class="panel-body"  style="padding:5px;">									
+												<div  class="form">
+													<div class="form-group">
+														<label class="control-label">공지 기간</label>
+														<div class="col-sm-12" >
+															<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
+															<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
+														</div>
+													</div>
+													<label class="control-label">본문</label>
+													<textarea id="announce-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
+												</div>						
+											</div>				
+										</div>
+										<div class="text-right">
+											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
+										</div>	
+									</div>
+								</div>
+							</div>
+							</#if>
+										
 				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
@@ -390,39 +436,39 @@
 				</div>
 				<div id="my-announce-section" class="personalized-session-content">
 					<div class="container">
-								<div class="row">
-									<div class="col-sm-6 p-sm aside-bg">
-									<div class="my-announce-list no-border-b"></div>
-									<div id="my-announce-list-pager" class=""> </div>
-									</div>
-									<div class="col-sm-6 p-sm">
-										<div class="panel panel-default no-margin-b my-announce-view animated fadeInLeft"  style="display:none;"  data-bind="visible: visible">
-												<div class="panel-heading">
-													<h4 data-bind="html:announce.subject"></h4>
-													<div class="panel-header-controls" data-bind="visible:editable">
-														<button class="btn btn-primary btn-sm rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i>  편집</button>
-													</div>
-													<ul class="list-unstyled">
-														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
-														<hr>	
-														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
-														<hr>	
-														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
-														<hr>	
-														<li class="text-muted">
-															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-															<ul class="list-unstyled text-muted">
-																<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-																<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-															</ul>																
-														</li>	
-														<hr>	
-													</ul>	
-												</div><!-- /.panel-heading -->
-												<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
-											</div><!-- /.panel -->								
-									</div>						
-								</div>								
+						<div class="row">
+							<div class="col-sm-6 p-sm aside-bg">
+								<div class="my-announce-list no-border-b"></div>
+								<div id="my-announce-list-pager" class=""> </div>
+							</div>
+								<div class="col-sm-6 p-sm">
+									<div class="panel panel-default no-margin-b my-announce-view animated fadeInLeft"  style="display:none;"  data-bind="visible: visible">
+										<div class="panel-heading">
+											<h4 data-bind="html:announce.subject"></h4>
+											<div class="panel-header-controls" data-bind="visible:editable">
+												<button class="btn btn-primary btn-sm rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i>  편집</button>
+											</div>
+											<ul class="list-unstyled">
+												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
+												<hr>	
+												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
+												<hr>	
+												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
+												<hr>	
+												<li class="text-muted">
+													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+													<ul class="list-unstyled text-muted">
+														<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
+														<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
+													</ul>																
+												</li>	
+												<hr>	
+											</ul>	
+										</div><!-- /.panel-heading -->
+									<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
+								</div><!-- /.panel -->								
+							</div>						
+						</div>								
 					</div>
 				
 					<div class="container">
@@ -480,51 +526,7 @@
 					</div><!-- /.col-md-3 -->
 					<div class="col-md-9">
 						<div class="panel panel-notice">
-							<#if !action.user.anonymous >
-							<div class="panel-body">
-								<div class="morphing no-padding-t" >
-									<button class="btn-u btn-u-red animated fadeInLeft" type="button" data-toggle="button" data-action="morphing" style="top: -1px; right: -1px; position: absolute;"><i class="fa fa-pencil fa-lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>
-									<div class="morphing-content m-t-xs">
-										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>								
-										<div class="headline">
-											<h2><i class="fa fa-bullhorn"></i>공지 &amp; 이벤트</h2>
-											<div id="edit-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
-												<label class="btn btn-success btn-sm active rounded-left">
-													<input type="radio" name="notice-target" value="30">사이트
-												</label>
-												<label class="btn btn-success btn-sm rounded-right">
-													<input type="radio" name="notice-target" value="1">회사
-												</label>
-											</div>
-										</div>				
-										<h5 data-bind="visible: new">
-											<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
-										</h5>		
-										<div class="panel panel-default ">
-											<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
-												<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
-											</div>			
-											<div class="panel-body"  style="padding:5px;">									
-												<div  class="form">
-													<div class="form-group">
-														<label class="control-label">공지 기간</label>
-														<div class="col-sm-12" >
-															<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
-															<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
-														</div>
-													</div>
-													<label class="control-label">본문</label>
-													<textarea id="announce-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
-												</div>						
-											</div>				
-										</div>
-										<div class="text-right">
-											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-										</div>	
-									</div>
-								</div>
-							</div>
-							</#if>
+
 
 						</div><!-- /.panel -->
 					</div><!-- /.col-md-9 -->
