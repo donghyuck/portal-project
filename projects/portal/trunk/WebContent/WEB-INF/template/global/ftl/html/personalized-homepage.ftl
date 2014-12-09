@@ -318,23 +318,6 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-		
-			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
-					<div class="container">
-						<#if action.webSite ?? >
-						<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />
-						<ul class="nav navbar-nav">
-							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
-								<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
-							</#list>	
-						</ul>
-						</#if>
-						
-					</div>
-				</div><!-- ./navbar-personalized -->			
-			</div>	
-
 			<section class="personalized-session open" >
 				<div class="personalized-session-heading">
 					<div class="container">
