@@ -295,12 +295,12 @@
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}			
-			#my-announce-section .panel-body .k-state-selected
+			#my-announce-section .personalized-session-content .k-state-selected
 			{
 				background : #F5F5F5;
 				color: #585f69;
 			}
-			#my-announce-section .panel-body .k-state-selected .media-heading strong{
+			#my-announce-section .personalized-session-content .k-state-selected .media-heading strong{
 				font-weight:bold;
 				text-decoration: underline;				
 			}			
