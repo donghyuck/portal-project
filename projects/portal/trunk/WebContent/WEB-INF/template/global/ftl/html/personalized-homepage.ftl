@@ -394,7 +394,8 @@
 							<div class="panel-body no-padding-vr">
 								<div class="row">
 									<div class="col-sm-6 aside-bg">
-									fdsafdsafdsa
+									<div class="my-announce-list"></div>
+									<div id="my-announce-list-pager"> </div>
 									</div>
 									<div class="col-sm-6">
 									fdsafds
@@ -422,9 +423,9 @@
 										</div>-->
 										<div>												
 											<div class="panel panel-default">
-												<div class="panel-body no-border no-padding my-announce-list"></div>
+												
 												<div class="panel-footer no-padding">
-													<div id="my-announce-list-pager" class="no-border"> </div>
+													
 												</div>											
 											</div><!-- /.panel -->
 										</div>																				
