@@ -1795,7 +1795,7 @@ figure.effect-chico:hover p {
 	height:0;
 */
 	display:none;
-	min-height:150px;
+	min-height:300px;
 	/*
 	-webkit-animation-name: fadeOutUp;
 	animation-name: fadeOutUp;*/
