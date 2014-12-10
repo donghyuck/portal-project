@@ -519,7 +519,23 @@
 					<div class="container">
 						<div class="personalized-session-title">
 							<h4><i class="icon-flat folder"></i> <small>PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></small></h4>
-							<div class="personalized-session-heading-controls"></div>		
+							<div class="personalized-session-heading-controls">
+								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
+									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
+									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
+								</div>							
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info rounded-left">
+										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+									</label>
+									<label class="btn btn-info active">
+								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+									</label>
+									<label class="btn btn-info rounded-right">
+										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+									</label>
+								</div>							
+							</div>		
 						</div>
 					</div>				
 				</div>			
@@ -534,24 +550,11 @@
 						</ul>																		
 						<ul class="nav navbar-nav navbar-right">
 							<li class="padding-xs-hr no-padding-r">
-								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
-									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
-									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
-								</div>
+
 							</li>							
 							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
 							<li class="hidden-xs">
-								<div class="btn-group navbar-btn" data-toggle="buttons">
-									<label class="btn btn-info rounded-left">
-										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-									</label>
-									<label class="btn btn-info active">
-								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-									</label>
-									<label class="btn btn-info rounded-right">
-										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-									</label>
-								</div>
+
 							</li>
 						</ul>				
 					</div>	
