@@ -97,7 +97,7 @@
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
 				var galleryDataSource = common.ui.datasource(
-					'<@spring.url "/data/images/list.json?output=json"/>',
+					'${request.contextPath}/data/images/list.json?output=json',
 					{
 						transport:{
 							parameterMap: function (options, operation){
@@ -158,10 +158,10 @@
 					$("#attachment-list-view"),
 					{				
 						dataSource : common.ui.datasource(
-							"<@spring.url "/data/files/list.json?output=json"/>", 
+							"${request.contextPath}/data/files/list.json?output=json", 
 							{
 								transport:{
-									destroy: { url:"<@spring.url "/community/delete-my-attachment.do?output=json"/>", type:"POST" }, 
+									destroy: { url:"${request.contextPath}/community/delete-my-attachment.do?output=json", type:"POST" }, 
 									parameterMap: function (options, operation){
 										if (operation != "read" && options) {										                        								                       	 	
 											return { attachmentId :options.attachmentId };									                            	
@@ -242,7 +242,7 @@
 										{
 											multiple : false,
 											async : {
-												saveUrl:  '<@spring.url "/data/files/upload.json?output=json"/>',
+												saveUrl:  '${request.contextPath}/data/files/upload.json?output=json',
 											},
 											success : function(e) {								    
 												common.ui.listview($("#attachment-list-view")).dataSource.read();						
@@ -279,9 +279,9 @@
 					embed = uid + "-fileview"; 
 					if( data.contentType === "application/pdf" ){	
 						e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='height:500px;'></div>"); 				
-						var myPdf = new PDFObject({ url: <@spring.url "/download/file/"/> + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
+						var myPdf = new PDFObject({ url: "${request.contextPath}/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
 					}else if( data.contentType.match("^image")){ // === "application/pdf" ){				
-						var template = kendo.template('<div class="box-shadow shadow-effect-2 rounded"><img class="img-responsive rounded img-bordered" src="<@spring.url "/download/file/#= attachmentId#/#= name#" alt=""></div>');
+						var template = kendo.template('<div class="box-shadow shadow-effect-2 rounded"><img class="img-responsive rounded img-bordered" src="${request.contextPath}/download/file/#= attachmentId#/#= name#" alt=""></div>');
 						e.target.element.find(".panel-body").html(template(data));
 					}
 				}
@@ -297,7 +297,7 @@
 					$('#photo-list-view'),
 					{
 						dataSource : common.ui.datasource(
-							'<@spring.url "/data/images/list.json?output=json"/>',
+							'${request.contextPath}/data/images/list.json?output=json',
 							{
 								transport : {
 									parameterMap :  function (options, operation){
@@ -347,7 +347,7 @@
 							if( !common.ui.exists($("#photo-files")) ){
 								common.ui.upload($("#photo-files"),{
 									async: {
-										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json"/>'
+										saveUrl:  '${request.contextPath}/data/images/update_with_media.json?output=json'
 									},
 									success : function(e) {	
 										var photo_list_view = common.ui.listview($('#photo-list-view'));
@@ -434,7 +434,8 @@
 						var grid = body.find(".photo-props-grid");		
 						common.ui.upload( upload, {
 							async : {
-								saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json"/>'
+								//saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
+								saveUrl:  '${request.contextPath}/data/images/update_with_media.json?output=json'
 							},
 							localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
 							upload: function (e) {				
@@ -487,7 +488,15 @@
 							
 					}
 				},
-				open: function(e){								
+				open: function(e){
+					//var data = e.target.data(),
+					//uid = e.target.element.attr("id"),
+					//embed = uid + "-fileview"; 
+					//if( data.contentType === "application/pdf" ){	
+					//	e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='height:500px;'></div>"); 				
+					//	var myPdf = new PDFObject({ url: "${request.contextPath}/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
+					//}	
+								
 				}
 			});
 			panel.show();		
@@ -495,10 +504,12 @@
 								
 		-->
 		</script>		
-		<style scoped="scoped">			
+		<style scoped="scoped">
+			
 			#image-gallery-pager { 
 				margin-top: 5px; 
-			}		
+			}
+		
 		</style>   	
 		</#compress>
 	</head>
@@ -512,7 +523,11 @@
 			<div class="breadcrumbs breadcrumbs-personalized">
 				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
 					<div class="container">
-																
+						<ul class="nav navbar-nav">
+							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
+							<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
+							</#list>	
+						</ul>																		
 						<ul class="nav navbar-nav navbar-right">
 							<li class="padding-xs-hr no-padding-r">
 								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
@@ -675,12 +690,12 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
-	<li class="item"><a href="\\#" class=""><img src="<@spring.url "/community/download-my-image.do?width=150&height=150&imageId=#= imageId#"/>" alt="" /></a></li>
+	<li class="item"><a href="\\#" class=""><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
 	</script>
 		
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
 	<div class="superbox-list" data-ride="gallery" >
-		<img src="<@spring.url "/community/download-my-image.do?width=150&height=150&imageId=#= imageId#"/>" data-img="<@spring.url '/community/download-my-image.do?imageId=#= imageId#'/>" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
+		<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" data-img="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
 	</div>			
 	</script>
 
@@ -705,9 +720,9 @@
 	
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" class="zoomer" data-largesrc="<@spring.url "/download/image/#= imageId #/#= name #"/>" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
+		<a href="\\#" class="zoomer" data-largesrc="${request.contextPath}/download/image/#= imageId #/#= name #" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
 			<span class="overlay-zoom">
-				<img src="<@spring.url "/download/image/#= imageId #/#= name #?width=150&height=150&imageId=#= imageId#"/>" class="img-responsive animated zoomIn" />
+				<img src="${request.contextPath}/download/image/#= imageId #/#= name #?width=150&height=150&imageId=#= imageId#" class="img-responsive animated zoomIn" />
 				<span class="zoom-icon"></span>
 			</span>
 		</a>	
