@@ -162,38 +162,35 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
+			<section class="personalized-session bg-trans" >
+				<div class="personalized-session-heading">
 					<div class="container">
-						<ul class="nav navbar-nav">
-							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
-							<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
-							</#list>	
-						</ul>						
-								<ul class="nav navbar-nav pull-right">
-									<li>
-										<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
-											<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-										</div>
-									</li>								
-									<li class="hidden-xs">
-										<p class="navbar-text">레이아웃</p>
-										<div class="btn-group navbar-btn" data-toggle="buttons">
-											<label class="btn btn-info rounded-left">
-												<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-											</label>
-											<label class="btn btn-info active">
-										 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-											</label>
-											<label class="btn btn-info rounded-right">
-												<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-											</label>
-										</div>
-									</li> 		
-								</ul>
-					</div><!-- ./navbar-personalized -->	
-				</div>	
-			</div>
+						<div class="personalized-session-title">
+							<h4><i class="icon-flat folder"></i> <small>PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<div class="personalized-session-heading-controls">
+								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
+									<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+								</div>							
+								<div class="btn-group navbar-btn" data-toggle="buttons">
+									<label class="btn btn-info rounded-left">
+										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+									</label>
+									<label class="btn btn-info active">
+								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+									</label>
+									<label class="btn btn-info rounded-right">
+										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+									</label>
+								</div>							
+							</div>		
+						</div>
+					</div>				
+				</div>
+				<div class="personalized-session-content animated arrow-up">
+					<span class="close"></span>
+				</div>			
+			</div>						
+						
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">			
 				<div id="personalized-area" class="row"></div>	
 			</div>
