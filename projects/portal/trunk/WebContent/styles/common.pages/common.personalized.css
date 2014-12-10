@@ -1849,6 +1849,11 @@ figure.effect-chico:hover p {
 	white-space: nowrap;
 }
 
+.personalized-session-title > i.icon-flat {
+	margin-top:20px;
+	
+}
+
 .personalized-session .aside-bg {
 /*background: #dedede;*/
 box-shadow: -2px 0 2px rgba(0,0,0,.1) inset;
