@@ -14,7 +14,7 @@
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',					
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
-				
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
