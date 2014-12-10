@@ -322,7 +322,8 @@
 				<div class="personalized-session-heading bg-dark">
 					<div class="container">
 						<div class="personalized-session-title">
-							<h4><i class="icon-flat home"></i> <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h4>
+							<i class="icon-flat home"></i>
+							<h2>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h2>
 							<div class="personalized-session-heading-controls">
 								<div id="personalized-buttons" class="navbar-btn btn-group">
 									<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
