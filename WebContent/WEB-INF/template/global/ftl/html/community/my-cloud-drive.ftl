@@ -514,7 +514,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-session border-b open" >
+			<section class="personalized-session bg-trans border-b open" >
 				<div class="personalized-session-heading bg-dark">
 					<div class="container">
 						<div class="personalized-session-title">
