@@ -133,22 +133,9 @@
 				});				
 				galleryDataSource.read();	
 			}
-			
 			if( !$(".personalized-session").hasClass("open") ){
 				$(".personalized-session").addClass("open");
 			}
-			
-			/*
-			if( $( "#" +renderTo).is(":hidden") ){
-				common.ui.animate(
-					$( "#" +renderTo),
-					{
-					effects: "slide:down fade:in",
-					show: true,
-					duration: 1000
-				 });
-			} 		
-			*/	
 		}
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
@@ -535,7 +522,7 @@
 							<h4><i class="icon-flat folder"></i> <small>PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></small></h4>
 							<div class="personalized-session-heading-controls">
 								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
-									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토</span></button>
+									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토 탐색기</span></button>
 									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
 								</div>							
 								<div class="btn-group navbar-btn" data-toggle="buttons">
