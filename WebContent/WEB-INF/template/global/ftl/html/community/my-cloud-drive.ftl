@@ -490,12 +490,7 @@
 				open: function(e){
 					//var data = e.target.data(),
 					//uid = e.target.element.attr("id"),
-					//embed = uid + "-fileview"; 
-					//if( data.contentType === "application/pdf" ){	
-					//	e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='height:500px;'></div>"); 				
-					//	var myPdf = new PDFObject({ url: "${request.contextPath}/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
-					//}	
-								
+					//embed = uid + "-fileview"; 								
 				}
 			});
 			panel.show();		
