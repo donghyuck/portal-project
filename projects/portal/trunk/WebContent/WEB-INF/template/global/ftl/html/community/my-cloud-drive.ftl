@@ -97,7 +97,7 @@
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
 				var galleryDataSource = common.ui.datasource(
-					'${request.contextPath}/data/images/list.json?output=json',
+					'<@spring.url "/data/images/list.json?output=json" />',
 					{
 						transport:{
 							parameterMap: function (options, operation){
