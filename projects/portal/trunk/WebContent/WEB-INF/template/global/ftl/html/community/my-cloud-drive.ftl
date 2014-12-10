@@ -738,7 +738,7 @@
 						</div>			
 						-->			
 						<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
-						<div id="image-gallery-pager" class="k-pager-wrap no-border no-margin-t "></div>
+						<div id="image-gallery-pager" class="k-pager-wrap no-border"></div>
 					</div>	
 				</div>			
 		</div>	
