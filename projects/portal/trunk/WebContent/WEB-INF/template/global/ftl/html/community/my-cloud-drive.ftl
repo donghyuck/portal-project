@@ -95,9 +95,7 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery";			
 			if( $( "#" +renderTo).length == 0 ){			
-				//$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
-				$('.wrapper .personalized-session-content').append($("#image-gallery-template").html());
-				
+				$('.wrapper .personalized-session-content').first().append($("#image-gallery-template").html());
 				var galleryDataSource = common.ui.datasource(
 					'<@spring.url "/data/images/list.json?output=json" />',
 					{
@@ -543,9 +541,6 @@
 				</div>
 				<div class="personalized-session-content arrow-up">
 					<span class="close"></span>
-					<div class="container-fluid p-t-sm">
-						
-					</div>
 				</div>			
 			</div>						
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">
@@ -724,9 +719,7 @@
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
-	<div id="image-gallery" class="one-page  no-padding-t no-border" style="display:none;">
-		<div class="one-page-inner no-padding-t">
-			<div class="container">
+	<div id="image-gallery" class="container" style="display:none;">
 				<div class="row">
 					<div class="col-xs-12 padding-sm">					
 						<div class="panel panel-default rounded">
@@ -741,8 +734,6 @@
 							<div class="panel-footer no-padding"><div id="image-gallery-pager" class="k-pager-wrap no-border no-margin-t "></div></div>
 						</div>						
 					</div>	
-				</div>			
-			</div>
 		</div>	
 	</div>
 	</script>
