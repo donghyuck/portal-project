@@ -12,6 +12,7 @@
 		yepnope([{
 			load: [
 			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
