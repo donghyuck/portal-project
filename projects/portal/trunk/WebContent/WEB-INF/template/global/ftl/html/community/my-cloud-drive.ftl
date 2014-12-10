@@ -1,5 +1,4 @@
 <#ftl encoding="UTF-8"/>
-<#assign contextPath = request.contextPath >
 <html decorator="unify">
 <head>
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
@@ -9,27 +8,27 @@
 		var jobs = [];					
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',						
-			'css!${request.contextPath}/styles/codrops/codrops.grid.min.css',
-			'css!${request.contextPath}/styles/codrops/codrops.cbp-spmenu.css',					
-			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
-			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css',						
+			'css!<@spring.url "/styles/codrops/codrops.grid.min.css',
+			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css',					
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css',	
+			'css!<@spring.url "/styles/common.pages/common.personalized.css',
 				
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 					
-			'${request.contextPath}/js/pdfobject/pdfobject.js',	
-			'${request.contextPath}/js/common/common.ui.core.js',							
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.community.js',
-			'${request.contextPath}/js/common.pages/common.personalized.js'
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js',
+			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
+			'<@spring.url "/js/kendo/kendo.web.min.js',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
+			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js',
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js', 		
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js', 					
+			'<@spring.url "/js/pdfobject/pdfobject.js',	
+			'<@spring.url "/js/common/common.ui.core.js',							
+			'<@spring.url "/js/common/common.ui.data.js',
+			'<@spring.url "/js/common/common.ui.community.js',
+			'<@spring.url "/js/common.pages/common.personalized.js'
 			],			
 			complete: function() {			
 					
@@ -98,7 +97,7 @@
 			if( $( "#" +renderTo).length == 0 ){			
 				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
 				var galleryDataSource = common.ui.datasource(
-					'${request.contextPath}/data/images/list.json?output=json',
+					'<@spring.url "/data/images/list.json?output=json"/>',
 					{
 						transport:{
 							parameterMap: function (options, operation){
@@ -159,10 +158,10 @@
 					$("#attachment-list-view"),
 					{				
 						dataSource : common.ui.datasource(
-							"${request.contextPath}/data/files/list.json?output=json", 
+							"<@spring.url "/data/files/list.json?output=json"/>", 
 							{
 								transport:{
-									destroy: { url:"${request.contextPath}/community/delete-my-attachment.do?output=json", type:"POST" }, 
+									destroy: { url:"<@spring.url "/community/delete-my-attachment.do?output=json"/>", type:"POST" }, 
 									parameterMap: function (options, operation){
 										if (operation != "read" && options) {										                        								                       	 	
 											return { attachmentId :options.attachmentId };									                            	
@@ -243,7 +242,7 @@
 										{
 											multiple : false,
 											async : {
-												saveUrl:  '${request.contextPath}/data/files/upload.json?output=json',
+												saveUrl:  '<@spring.url "/data/files/upload.json?output=json"/>',
 											},
 											success : function(e) {								    
 												common.ui.listview($("#attachment-list-view")).dataSource.read();						
@@ -280,9 +279,9 @@
 					embed = uid + "-fileview"; 
 					if( data.contentType === "application/pdf" ){	
 						e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='height:500px;'></div>"); 				
-						var myPdf = new PDFObject({ url: "${request.contextPath}/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
+						var myPdf = new PDFObject({ url: "<@spring.url "/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
 					}else if( data.contentType.match("^image")){ // === "application/pdf" ){				
-						var template = kendo.template('<div class="box-shadow shadow-effect-2 rounded"><img class="img-responsive rounded img-bordered" src="${request.contextPath}/download/file/#= attachmentId#/#= name#" alt=""></div>');
+						var template = kendo.template('<div class="box-shadow shadow-effect-2 rounded"><img class="img-responsive rounded img-bordered" src="<@spring.url "/download/file/#= attachmentId#/#= name#" alt=""></div>');
 						e.target.element.find(".panel-body").html(template(data));
 					}
 				}
@@ -298,7 +297,7 @@
 					$('#photo-list-view'),
 					{
 						dataSource : common.ui.datasource(
-							'${request.contextPath}/data/images/list.json?output=json',
+							'<@spring.url "/data/images/list.json?output=json"/>',
 							{
 								transport : {
 									parameterMap :  function (options, operation){
@@ -348,7 +347,7 @@
 							if( !common.ui.exists($("#photo-files")) ){
 								common.ui.upload($("#photo-files"),{
 									async: {
-										saveUrl:  '${request.contextPath}/data/images/update_with_media.json?output=json'
+										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json"/>'
 									},
 									success : function(e) {	
 										var photo_list_view = common.ui.listview($('#photo-list-view'));
@@ -435,8 +434,8 @@
 						var grid = body.find(".photo-props-grid");		
 						common.ui.upload( upload, {
 							async : {
-								//saveUrl:  '${request.contextPath}/community/update-my-image.do?output=json',
-								saveUrl:  '${request.contextPath}/data/images/update_with_media.json?output=json'
+								//saveUrl:  '<@spring.url "/community/update-my-image.do?output=json"/>',
+								saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json"/>'
 							},
 							localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
 							upload: function (e) {				
@@ -495,7 +494,7 @@
 					//embed = uid + "-fileview"; 
 					//if( data.contentType === "application/pdf" ){	
 					//	e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='height:500px;'></div>"); 				
-					//	var myPdf = new PDFObject({ url: "${request.contextPath}/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
+					//	var myPdf = new PDFObject({ url: <@spring.url "/download/file/"/> + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
 					//}	
 								
 				}
@@ -691,12 +690,12 @@
 	<!-- gallery template                                        -->
 	<!-- ============================== -->
 	<script type="text/x-kendo-template" id="image-gallery-thumbnail-template">
-	<li class="item"><a href="\\#" class=""><img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" alt="" /></a></li>
+	<li class="item"><a href="\\#" class=""><img src="<@spring.url "/community/download-my-image.do?width=150&height=150&imageId=#= imageId#"/>" alt="" /></a></li>
 	</script>
 		
 	<script type="text/x-kendo-template" id="image-gallery-item-template">	
 	<div class="superbox-list" data-ride="gallery" >
-		<img src="${request.contextPath}/community/download-my-image.do?width=150&height=150&imageId=#= imageId#" data-img="${request.contextPath}/community/download-my-image.do?imageId=#= imageId#" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
+		<img src="<@spring.url "/community/download-my-image.do?width=150&height=150&imageId=#= imageId#"/>" data-img="<@spring.url "/community/download-my-image.do?imageId=#= imageId#"/>" alt="" title="#: name #" class="superbox-img superbox-img-thumbnail animated zoomIn">
 	</div>			
 	</script>
 
@@ -721,9 +720,9 @@
 	
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" class="zoomer" data-largesrc="${request.contextPath}/download/image/#= imageId #/#= name #" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
+		<a href="\\#" class="zoomer" data-largesrc="<@spring.url "/download/image/#= imageId #/#= name #"/>" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
 			<span class="overlay-zoom">
-				<img src="${request.contextPath}/download/image/#= imageId #/#= name #?width=150&height=150&imageId=#= imageId#" class="img-responsive animated zoomIn" />
+				<img src="<@spring.url "/download/image/#= imageId #/#= name #?width=150&height=150&imageId=#= imageId#"/>" class="img-responsive animated zoomIn" />
 				<span class="zoom-icon"></span>
 			</span>
 		</a>	
