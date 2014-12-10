@@ -1730,7 +1730,7 @@ figure.effect-chico:hover p {
 	animation-name: fadeOutLeft;
 }
 .personalized-session-content{
-	display: none;
+	/*display: none;*/
 	/*padding-top: 50px;
 	padding-bottom: 50px;*/
 	position: relative;		
@@ -1789,12 +1789,16 @@ figure.effect-chico:hover p {
 
 
 .personalized-session  .personalized-session-content {
+	opacity: 0;
+	visibility: hidden;	
 	-webkit-animation-name: fadeOutUp;
 	animation-name: fadeOutUp;
 }
 
 .personalized-session.open  .personalized-session-content {
-	display: block;
+	/*display: block;*/
+	opacity: 1;
+	visibility: visible;		
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;	
 }
