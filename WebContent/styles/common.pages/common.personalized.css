@@ -1701,7 +1701,7 @@ figure.effect-chico:hover p {
 	background: #ececec;
 	color: #616161;
 	position: relative;
-	z-index : 1px;
+	z-index : 1;
 }
 
 
@@ -1735,6 +1735,7 @@ figure.effect-chico:hover p {
 	padding-bottom: 50px;*/
 	position: relative;		
 	background: #fff;
+	z-index:2;
 }
 
 .personalized-session-content.arrow-up {
@@ -1793,7 +1794,9 @@ figure.effect-chico:hover p {
 	visibility: hidden;	
 	height:0;
 */
-	display:none;/*
+	display:none;
+	min-height:150px;
+	/*
 	-webkit-animation-name: fadeOutUp;
 	animation-name: fadeOutUp;*/
 /*	transition:visibility 0s linear 0.5s,opacity 0.5s linear;*/
