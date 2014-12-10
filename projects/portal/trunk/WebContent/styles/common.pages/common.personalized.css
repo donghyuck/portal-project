@@ -1787,8 +1787,16 @@ figure.effect-chico:hover p {
 	background-size: 25px;	
 }
 
+
+.personalized-session  .personalized-session-content {
+	-webkit-animation-name: fadeOutUp;
+	animation-name: fadeOutUp;
+}
+
 .personalized-session.open  .personalized-session-content {
 	display: block;
+	-webkit-animation-name: fadeInDown;
+	animation-name: fadeInDown;	
 }
 
 .personalized-session-heading {
