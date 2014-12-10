@@ -1,5 +1,4 @@
 <#ftl encoding="UTF-8"/>
-<#assign contextPath = request.contextPath >
 <html decorator="unify">
 <head>
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
@@ -9,24 +8,25 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
-			'css!${request.contextPath}/styles/common.pages/common.personalized.css',
-			'css!${request.contextPath}/styles/jquery.magnific-popup/magnific-popup.css',	
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 		
-			'${request.contextPath}/js/jquery.magnific-popup/jquery.magnific-popup.min.js',	
-			'${request.contextPath}/js/common/common.ui.core.js',							
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.connect.js',
-			'${request.contextPath}/js/common/common.ui.community.js',
-			'${request.contextPath}/js/common.pages/common.personalized.js'
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
+			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',	
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',	
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
+			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 		
+			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.connect.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>',
+			'<@spring.url "/js/common.pages/common.personalized.js"/>'
 			],
 			complete: function() {			
 			
