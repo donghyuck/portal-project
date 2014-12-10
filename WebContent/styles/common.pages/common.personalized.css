@@ -1793,6 +1793,7 @@ figure.effect-chico:hover p {
 }
 
 .personalized-session.open  .personalized-session-content {
+	visibility: visible;
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;		
 }
