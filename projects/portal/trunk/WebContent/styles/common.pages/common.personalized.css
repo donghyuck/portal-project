@@ -1731,7 +1731,7 @@ figure.effect-chico:hover p {
 }
 .personalized-session-content{
 	visibility:hidden;
-	transition:visibility 0s linear 0.5s;
+	transition:visibility 0s; 
 	position: relative;		
 	background: #fff;
 }
