@@ -126,6 +126,12 @@
 				common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");					
 				galleryDataSource.read();	
 			}
+			
+			if( !$(".personalized-session").hasClass("open") ){
+				$(".personalized-session").addClass("open");
+			}
+			
+			/*
 			if( $( "#" +renderTo).is(":hidden") ){
 				common.ui.animate(
 					$( "#" +renderTo),
@@ -134,7 +140,8 @@
 					show: true,
 					duration: 1000
 				 });
-			} 			
+			} 		
+			*/	
 		}
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
