@@ -324,16 +324,10 @@
 						<div class="personalized-session-title">
 							<h4><i class="icon-flat home"></i> <small>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 							<div class="personalized-session-heading-controls">
-
-						<ul class="nav navbar-nav navbar-right">
-							<li>
 								<div id="personalized-buttons" class="navbar-btn btn-group">
 									<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 									<button type="button" class="btn-u btn-u-sea rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
 								</div>	
-							</li>						
-							<li class="hidden-xs">
-								<p class="navbar-text">레이아웃</p>
 								<div class="btn-group navbar-btn" data-toggle="buttons">
 									<label class="btn btn-info rounded-left">
 										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
@@ -344,10 +338,7 @@
 									<label class="btn btn-info rounded-right">
 										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 									</label>
-								</div>
-							</li>
-						</ul>						
-														
+								</div>														
 							</div>		
 						</div>
 					</div>				
