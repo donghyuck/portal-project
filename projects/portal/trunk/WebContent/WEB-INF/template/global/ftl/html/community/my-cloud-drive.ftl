@@ -279,7 +279,7 @@
 					embed = uid + "-fileview"; 
 					if( data.contentType === "application/pdf" ){	
 						e.target.element.find(".panel-body").html("<div id='"+ embed + "' style='height:500px;'></div>"); 				
-						var myPdf = new PDFObject({ url: "<@spring.url "/download/file/" + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
+						var myPdf = new PDFObject({ url: <@spring.url "/download/file/"/> + data.attachmentId + "/" + data.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed(embed);
 					}else if( data.contentType.match("^image")){ // === "application/pdf" ){				
 						var template = kendo.template('<div class="box-shadow shadow-effect-2 rounded"><img class="img-responsive rounded img-bordered" src="<@spring.url "/download/file/#= attachmentId#/#= name#" alt=""></div>');
 						e.target.element.find(".panel-body").html(template(data));
