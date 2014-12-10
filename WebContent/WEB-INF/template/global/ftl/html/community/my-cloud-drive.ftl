@@ -726,7 +726,7 @@
 	</script>
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
-	<div id="image-gallery" class="container" style="display:none;">
+	<div id="image-gallery" class="container">
 				<div class="row">
 					<div class="col-xs-12 padding-sm">			
 					
