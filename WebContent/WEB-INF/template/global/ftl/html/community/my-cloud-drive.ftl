@@ -95,7 +95,9 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery";			
 			if( $( "#" +renderTo).length == 0 ){			
-				$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
+				//$(".wrapper .breadcrumbs").after( $("#image-gallery-template").html() );	
+				$('.wrapper .personalized-session-content').append($("#image-gallery-template").html());
+				
 				var galleryDataSource = common.ui.datasource(
 					'<@spring.url "/data/images/list.json?output=json" />',
 					{
