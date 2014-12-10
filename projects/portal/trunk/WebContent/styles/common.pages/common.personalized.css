@@ -1792,9 +1792,10 @@ figure.effect-chico:hover p {
 	opacity: 0;
 	visibility: hidden;	
 	height:0;
-	transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+
 	-webkit-animation-name: fadeOutUp;
 	animation-name: fadeOutUp;
+	transition:visibility 0s linear 0.5s,opacity 0.5s linear;
 }
 
 .personalized-session.open  .personalized-session-content {
