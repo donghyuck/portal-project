@@ -1716,6 +1716,7 @@ figure.effect-chico:hover p {
 .personalized-session .morphing button[data-toggle='morphing'] {
 	position: absolute;
 	right:0;
+	top: -1px;
 	-webkit-animation-name: fadeInLeft;
 	animation-name: fadeInLeft;	
 }
