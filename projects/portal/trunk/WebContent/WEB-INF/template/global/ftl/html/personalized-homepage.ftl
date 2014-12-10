@@ -322,7 +322,7 @@
 				<div class="personalized-session-heading bg-dark">
 					<div class="container">
 						<div class="personalized-session-title">
-							<h4><i class="icon-flat person"></i> <small>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<h4><i class="icon-flat home"></i> <small>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 							<div class="personalized-session-heading-controls">
 
 						<ul class="nav navbar-nav navbar-right">
