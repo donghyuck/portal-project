@@ -514,18 +514,16 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-session bg-trans border-b open" >
+			<section class="personalized-session bg-trans open" >
 				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
 							<h4><i class="icon-flat folder"></i> <small>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
-							<div class="personalized-session-heading-controls">
-							</div>		
+							<div class="personalized-session-heading-controls"></div>		
 						</div>
 					</div>				
 				</div>			
-			</div>
-			
+			</div>			
 			<div class="breadcrumbs breadcrumbs-personalized">
 				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
 					<div class="container">
