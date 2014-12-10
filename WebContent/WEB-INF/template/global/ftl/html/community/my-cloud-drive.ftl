@@ -538,10 +538,16 @@
 							</div>		
 						</div>
 					</div>				
+				</div>
+				<div class="personalized-session-content arrow-up">
+					<span class="close"></span>
+					<div class="container-fluid">
+						<div id="personalized-area" class="row"></div>
+					</div>
 				</div>			
 			</div>						
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">
-				<div id="personalized-area" class="row"></div>
+				
 			</div>		
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
