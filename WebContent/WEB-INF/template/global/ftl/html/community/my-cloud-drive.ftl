@@ -546,7 +546,7 @@
 						</div>
 					</div>				
 				</div>
-				<div class="personalized-session-content arrow-up">
+				<div class="personalized-session-content animated arrow-up">
 					<span class="close"></span>
 				</div>			
 			</div>						
