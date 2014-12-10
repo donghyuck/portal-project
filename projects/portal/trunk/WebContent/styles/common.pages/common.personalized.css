@@ -1704,6 +1704,11 @@ figure.effect-chico:hover p {
 	z-index : 1px;
 }
 
+
+.personalized-session.bg-trans {
+	background-color: rgba(245,245,245,.6);
+}
+
 .personalized-session .morphing {
 	top:0;
 	right:0;
