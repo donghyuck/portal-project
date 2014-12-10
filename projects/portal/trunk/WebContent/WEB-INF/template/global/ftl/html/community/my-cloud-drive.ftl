@@ -130,8 +130,6 @@
 					var target = $("[data-action='show-gallery-section']");
 					target.toggleClass("active");
 					common.ui.enable(target);
-					
-					
 				});				
 				galleryDataSource.read();	
 			}
