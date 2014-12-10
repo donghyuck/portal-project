@@ -126,12 +126,12 @@
 				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
 				$(".personalized-session:first .personalized-session-content>.close").click(function(e){
 					var target = $("[data-action='show-gallery-section']");
-					
+					/*
 					target.kendoStop().kendoAnimate({
 						effects:"slide:down fade:in",
 						reverse: true,
 						hide : true								
-					 })
+					 })*/
 					$(".personalized-session").removeClass("open");
 					target.toggleClass("active");
 					common.ui.enable(target);
