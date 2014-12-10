@@ -1829,15 +1829,25 @@ figure.effect-chico:hover p {
 	-ms-font-smoothing: antialiased;
 	font-smoothing: antialiased;	
 }
-.personalized-session-title  h4 span{
-color: #9e9e9e;
-display: block;
-font-size: .8em;
-font-weight: 500;
-height: 1em;
-margin-right: .1em;
-vertical-align: top;
-white-space: nowrap;
+
+.personalized-session-title h2, .personalized-session-title h3, .personalized-session-title h4 {		
+	color: #616161;
+	display: inline-block;
+	font-size: .95em;
+	font-weight: 400;
+	margin-top: .7em;
+	text-align: right;
+	vertical-align: top;
+}
+.personalized-session-title  h2 span, .personalized-session-title  h3 span, .personalized-session-title  h4 span{
+	color: #9e9e9e;
+	display: block;
+	font-size: .8em;
+	font-weight: 500;
+	height: 1em;
+	margin-right: .1em;
+	vertical-align: top;
+	white-space: nowrap;
 }
 
 .personalized-session .aside-bg {
