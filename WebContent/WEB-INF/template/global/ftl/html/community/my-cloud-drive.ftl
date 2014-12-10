@@ -541,7 +541,7 @@
 				</div>
 				<div class="personalized-session-content arrow-up">
 					<span class="close"></span>
-					<div class="container-fluid">
+					<div class="container-fluid p-t-sm">
 						<div id="personalized-area" class="row"></div>
 					</div>
 				</div>			
