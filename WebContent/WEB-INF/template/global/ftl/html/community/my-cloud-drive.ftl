@@ -521,7 +521,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-session bg-trans open" >
+			<section class="personalized-session bg-trans" >
 				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
