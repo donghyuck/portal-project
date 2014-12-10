@@ -297,7 +297,7 @@
 					$('#photo-list-view'),
 					{
 						dataSource : common.ui.datasource(
-							'${request.contextPath}/data/images/list.json?output=json',
+							'<@spring.url "/data/images/list.json?output=json" />',
 							{
 								transport : {
 									parameterMap :  function (options, operation){
@@ -347,7 +347,7 @@
 							if( !common.ui.exists($("#photo-files")) ){
 								common.ui.upload($("#photo-files"),{
 									async: {
-										saveUrl:  '${request.contextPath}/data/images/update_with_media.json?output=json'
+										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
 									},
 									success : function(e) {	
 										var photo_list_view = common.ui.listview($('#photo-list-view'));
