@@ -125,7 +125,7 @@
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
 				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
 				$(".personalized-session:first .personalized-session-content>.close").click(function(e){
-					var $this = $(this),
+					var $this = $(this);
 					$this.parent().kendoStop().kendoAnimate({
 						effects:"slide:down fade:in",
 						reverse: true,
