@@ -474,7 +474,6 @@
 												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
 												<hr>	
 												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
-												<hr>	
 												<li class="text-muted">
 													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 													<ul class="list-unstyled text-muted">
