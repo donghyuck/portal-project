@@ -166,7 +166,7 @@
 				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
-							<h4><i class="icon-flat folder"></i> <small>PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<h4><i class="icon-flat coffe-cup"></i> <small>연결된 쇼셜 콘텐츠들을 쉽고 편리하게 확인할 수 있습니다. <i class="fa fa-long-arrow-right"></i></small></h4>
 							<div class="personalized-session-heading-controls">
 								<div id="navbar-btn-my-streams" class="navbar-btn btn-group" data-toggle="buttons">
 									<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
