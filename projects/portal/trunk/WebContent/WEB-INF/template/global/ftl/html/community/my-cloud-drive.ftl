@@ -714,9 +714,9 @@
 	
 	<script type="text/x-kendo-template" id="image-gallery-grid-template">	
 	<li>
-		<a href="\\#" class="zoomer" data-largesrc="${request.contextPath}/download/image/#= imageId #/#= name #" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
+		<a href="\\#" class="zoomer" data-largesrc="<@spring.url "/download/image/#= imageId #/#= name #"/>" data-title="#=name#" data-description="#=name#" data-ride="expanding" data-target-gallery="\\#image-gallery-grid" >
 			<span class="overlay-zoom">
-				<img src="${request.contextPath}/download/image/#= imageId #/#= name #?width=150&height=150&imageId=#= imageId#" class="img-responsive animated zoomIn" />
+				<img src="<@spring.url "/download/image/#= imageId #/#= name #?width=150&height=150&imageId=#= imageId#" />" class="img-responsive animated zoomIn" />
 				<span class="zoom-icon"></span>
 			</span>
 		</a>	
