@@ -323,7 +323,7 @@
 					<div class="container">
 						<div class="personalized-session-title">
 							<i class="icon-flat home"></i>
-							<h2>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h2>
+							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-session-heading-controls">
 								<div id="personalized-buttons" class="navbar-btn btn-group">
 									<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
@@ -371,8 +371,7 @@
 			</section>
 			<section class="personalized-session open" >
 							<#if !action.user.anonymous >
-								<div class="morphing" >
-								
+								<div class="morphing" >								
 									<button class="btn-u btn-u-red animated" type="button" data-toggle="morphing" data-action="morphing"><i class="fa fa-plus lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>									
 									<div class="morphing-content">
 										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
