@@ -378,7 +378,8 @@
 										<div class="personalized-session-heading">
 											<div class="container">
 												<div class="personalized-session-title">
-													<h4><i class="icon-flat mega-phone"></i> <small>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+													<i class="icon-flat mega-phone"></i>
+													<h4>공지 &amp; 이벤트 <span>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></span></h4>
 													<div class="personalized-session-heading-controls">
 														<div id="edit-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
 															<label class="btn btn-success btn-sm active rounded-left">
