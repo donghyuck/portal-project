@@ -368,7 +368,7 @@
 
 				</div>				
 			</section>
-			<section class="personalized-session border-b open" >
+			<section class="personalized-session open" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >
 								
@@ -445,10 +445,10 @@
 						</div>
 					</div>
 				</div>
-				<div id="my-announce-section" class="personalized-session-content">
+				<div id="my-announce-section" class="personalized-session-content arrow-up">
 					<div class="container">
 						<div class="row">
-							<div class="col-sm-6 p-sm aside-bg">
+							<div class="col-sm-6 p-sm">
 								<div class="my-announce-list no-border-b"></div>
 								<div id="my-announce-list-pager" class=""> </div>
 							</div>
