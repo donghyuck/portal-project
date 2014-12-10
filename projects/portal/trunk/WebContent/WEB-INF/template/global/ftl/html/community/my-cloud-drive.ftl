@@ -539,28 +539,7 @@
 						</div>
 					</div>				
 				</div>			
-			</div>			
-			<div class="breadcrumbs breadcrumbs-personalized">
-				<div class="navbar navbar-default no-margin-b no-border" role="navigation">	
-					<div class="container">
-						<ul class="nav navbar-nav">
-							<#list WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_PERSONALIZED").components as item >
-							<li data-menu-item="${item.name}"><a href="${item.page}">${item.title}<span class="sr-only">(current)</span></a></li>
-							</#list>	
-						</ul>																		
-						<ul class="nav navbar-nav navbar-right">
-							<li class="padding-xs-hr no-padding-r">
-
-							</li>							
-							<li class="hidden-xs"><p class="navbar-text">레이아웃</p> </li>
-							<li class="hidden-xs">
-
-							</li>
-						</ul>				
-					</div>	
-				</div><!-- ./navbar-personalized -->			
-			</div>
-			
+			</div>						
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">
 				<div id="personalized-area" class="row"></div>
 			</div>		
