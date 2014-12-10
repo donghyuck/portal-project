@@ -242,7 +242,7 @@
 										{
 											multiple : false,
 											async : {
-												saveUrl:  '${request.contextPath}/data/files/upload.json?output=json',
+												saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />',
 											},
 											success : function(e) {								    
 												common.ui.listview($("#attachment-list-view")).dataSource.read();						
