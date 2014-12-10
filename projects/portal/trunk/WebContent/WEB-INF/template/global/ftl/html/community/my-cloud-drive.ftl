@@ -158,10 +158,10 @@
 					$("#attachment-list-view"),
 					{				
 						dataSource : common.ui.datasource(
-							"${request.contextPath}/data/files/list.json?output=json", 
+							'<@spring.url "/data/files/list.json?output=json" />', 
 							{
 								transport:{
-									destroy: { url:"${request.contextPath}/community/delete-my-attachment.do?output=json", type:"POST" }, 
+									destroy: { url: '<@spring.url "/community/delete-my-attachment.do?output=json" />', type:"POST" }, 
 									parameterMap: function (options, operation){
 										if (operation != "read" && options) {										                        								                       	 	
 											return { attachmentId :options.attachmentId };									                            	
