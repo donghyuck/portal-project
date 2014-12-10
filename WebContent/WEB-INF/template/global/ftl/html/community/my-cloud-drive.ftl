@@ -495,12 +495,10 @@
 								
 		-->
 		</script>		
-		<style scoped="scoped">
-			
+		<style scoped="scoped">			
 			#image-gallery-pager { 
 				margin-top: 5px; 
-			}
-		
+			}		
 		</style>   	
 		</#compress>
 	</head>
