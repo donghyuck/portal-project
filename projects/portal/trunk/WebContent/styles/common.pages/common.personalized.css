@@ -1787,7 +1787,7 @@ figure.effect-chico:hover p {
 
 
 .personalized-session  .personalized-session-content {
-	visibility: hidden;
+	display:hidden
 	transition:visibility 0s linear 0.5s	
 	-webkit-animation-name: fadeOutUp;
 	animation-name: fadeOutUp;
