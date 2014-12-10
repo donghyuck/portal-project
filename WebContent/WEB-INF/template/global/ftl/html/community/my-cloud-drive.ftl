@@ -125,10 +125,20 @@
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
 				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
 				$(".personalized-session:first .personalized-session-content>.close").click(function(e){
-					var target = $("[data-action='show-gallery-section']");
+					
+					$(this)parent().kendoStop().kendoAnimate({
+						effects:"slide:down fade:in",
+						reverse: true,
+						hide : true								
+					 });		
+					
 					$(".personalized-session").removeClass("open");
+					
+					var target = $("[data-action='show-gallery-section']");
 					target.toggleClass("active");
 					common.ui.enable(target);
+					
+					
 				});				
 				galleryDataSource.read();	
 			}
