@@ -515,10 +515,10 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<section class="personalized-session bg-trans border-b open" >
-				<div class="personalized-session-heading bg-dark">
+				<div class="personalized-session-heading">
 					<div class="container">
 						<div class="personalized-session-title">
-							<h4><i class="icon-flat person"></i> <small>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
+							<h4><i class="icon-flat folder"></i> <small>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></small></h4>
 							<div class="personalized-session-heading-controls">
 							</div>		
 						</div>
