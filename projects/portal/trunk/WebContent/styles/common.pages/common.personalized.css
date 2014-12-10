@@ -1731,8 +1731,7 @@ figure.effect-chico:hover p {
 }
 .personalized-session-content{
 	visibility:hidden;
-	/*padding-top: 50px;
-	padding-bottom: 50px;*/
+	transition:visibility 0s linear 0.5s
 	position: relative;		
 	background: #fff;
 }
@@ -1794,7 +1793,7 @@ figure.effect-chico:hover p {
 }
 
 .personalized-session.open  .personalized-session-content {
-	display: block;
+	visibility:visible;
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;		
 }
