@@ -434,7 +434,6 @@
 						var grid = body.find(".photo-props-grid");		
 						common.ui.upload( upload, {
 							async : {
-								//saveUrl:  '<@spring.url "/community/update-my-image.do?output=json"/>',
 								saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json"/>'
 							},
 							localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
