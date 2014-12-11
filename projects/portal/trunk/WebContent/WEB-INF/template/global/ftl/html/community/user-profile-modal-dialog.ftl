@@ -150,8 +150,10 @@
 		}
 		
 		#my-profile-dialog .tab-content .tab-pane {
-			padding: 20px;
+			padding: 15px;
 			background: #fff;
+			border-bottom-left-radius: 8px !important;
+			border-bottom-right-radius: 8px !important;
 		}
 		
 		#my-profile-dialog .tab-content .tab-pane hr{
