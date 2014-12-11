@@ -170,7 +170,7 @@
 		}
 		
 		#my-profile-dialog .profile-bio span {
-			display: block;
+			display: inline-block;
 		}
 		
 		#my-profile-dialog .profile-bio hr {
