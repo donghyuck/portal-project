@@ -328,7 +328,7 @@
 														<div class="col-sm-10">
 															<div class="input-group">
 																<span class="input-group-addon"><i class="fa fa-user"></i></span>
-																<input type="text" name="name" value="${ user.name }"  data-bind="value: user.name"  class="form-control" placeholder="이름" required="" validationmessage="이름을 입력하여 주세요.">
+																<input type="text" name="name" value="${ user.name }"  data-bind="value: bag.name"  class="form-control" placeholder="이름" required="" validationmessage="이름을 입력하여 주세요.">
 															</div>	
 														</div>
 													</div>
@@ -337,17 +337,17 @@
 														<div class="col-sm-10">
 															<div class="input-group">
 																<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-																<input type="email" name="email" value="${ user.email }" data-bind="value: user.email"  class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
+																<input type="email" name="email" value="${ user.email }" data-bind="value: bag.email"  class="form-control" placeholder="이메일" pattern="[^-][A-Za-z0-9]{2,20}" required="" validationmessage="이메일 주소를 입력하여 주세요.">
 															</div>
 														</div>
 													</div>
 													<div class="form-group">
 														<div class="col-sm-offset-2 col-sm-10">
 															<label class="checkbox-inline">
-																<input type="checkbox" data-bind="checked: user.nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
+																<input type="checkbox" data-bind="checked: bag.nameVisible" <#if user.nameVisible >checked="checked"</#if>> 이름 공걔
 															</label>
 															<label class="checkbox-inline">
-																<input type="checkbox" data-bind="checked: user.emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
+																<input type="checkbox" data-bind="checked: bag.emailVisible" <#if user.emailVisible >checked="checked"</#if>> 메일 공개
 															</label>
 														</div>
 													</div>	
