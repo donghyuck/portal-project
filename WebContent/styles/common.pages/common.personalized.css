@@ -1802,7 +1802,7 @@ figure.effect-chico:hover p {
 	animation-name: fadeInDown;	
 }
 
-.personalized-session.close  .personalized-session-content {
+.personalized-session.folded  .personalized-session-content {
 	-webkit-animation-name: fadeOutUp;
 	animation-name: fadeOutUp;	
 }
