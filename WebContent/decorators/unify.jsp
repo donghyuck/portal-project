@@ -43,6 +43,15 @@
 		transform: translateZ(0);
 		*/
 	}
+	
+	.header .dropdown-menu {
+		border-bottom: solid 2px rgba(228, 228, 228, 0.5);
+	}
+	
+	.breadcrumbs {
+		border-bottom: solid 1px rgba(228, 228, 228, 0.23);
+	}
+	
 	.footer .copyright .copyright-text {
 		line-height: 40px;
 	}	
