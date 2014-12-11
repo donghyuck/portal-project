@@ -270,7 +270,7 @@
 									<p class="text-danger"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
 									<br/>								
 									<dl class="dl-horizontal">
-										<dt><span class="label rounded-2x label-light">아이디</span></dt>
+										<dt><strong>아이디</strong></dt>
 										<dd>
 											<span data-bind="text:user.username" >${ user.username }</span>									
 										</dd>
