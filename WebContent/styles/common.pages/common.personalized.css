@@ -1796,7 +1796,8 @@ figure.effect-chico:hover p {
 	visibility: hidden;	
 	height:0;
 */
-	display:none;
+	-webkit-animation-name: fadeOutIn;
+	animation-name: fadeOutIn;	
 	min-height:300px;
 	/*
 	-webkit-animation-name: fadeOutUp;
@@ -1805,15 +1806,9 @@ figure.effect-chico:hover p {
 }
 
 .personalized-session.open  .personalized-session-content {
-	display: block;
+	visibility: visible;	
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;	
-}
-
-.personalized-session.close  .personalized-session-content {
-	display: block;
-	-webkit-animation-name: fadeOutIn;
-	animation-name: fadeOutIn;	
 }
 
 .personalized-session-heading {
