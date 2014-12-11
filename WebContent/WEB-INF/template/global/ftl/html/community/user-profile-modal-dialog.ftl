@@ -174,7 +174,7 @@
 		}
 		
 		#my-profile-dialog .profile-bio hr {
-			margin: 12px 0 10px;
+			margin: 6px 0 5px;
 		}	
 		
 		#my-profile-dialog .profile-bio {
@@ -242,9 +242,9 @@
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
 									<ul class="list-unstyled">
-										<li class="text-muted"><span class="label label-info label-lightweight">직업</span> <i class="fa fa-question fa-lg text-muted"></i></li>
+										<li class="text-muted"><span class="label rounded-2x label-dark">직업</span> <i class="fa fa-question fa-lg text-muted"></i></li>
 										<hr>
-										<li class="text-muted"><span class="label label-info label-lightweight">직무</span> <i class="fa fa-question fa-lg text-muted"></i></li>
+										<li class="text-muted"><span class="label rounded-2x label-light">직무</span> <i class="fa fa-question fa-lg text-muted"></i></li>
 										<hr>										
 									</ul>
 									<p>하이</p>									
