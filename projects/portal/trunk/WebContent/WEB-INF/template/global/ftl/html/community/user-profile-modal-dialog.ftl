@@ -1,5 +1,4 @@
 <#ftl encoding="UTF-8"/>
-<#assign contextPath = request.contextPath >
 <html decorator="none">
 	<body>
 		<script type="text/javascript">
@@ -36,7 +35,7 @@
 					showFileList : false,
 					localization:{ select : '사진 선택' , dropFilesHere : '업로드할 이미지를 이곳에 끌어 놓으세요.' },
 					async: {
-						saveUrl:  '${request.contextPath}/community/update-my-photo.do?output=json',							   
+						saveUrl:  '<@spring.url "/community/update-my-photo.do?output=json"/>',							   
 						autoUpload: true
 					},
 					upload: function (e) {
@@ -61,7 +60,7 @@
 						if( !$("#my-profile-social-grid" ).data('kendoGrid') ){
 							$("#my-profile-social-grid" ).kendoGrid({
 								dataSource : common.ui.datasource(
-									"/connect/list.json",
+									"<@spring.url "/connect/list.json"/>",
 									{
 										schema:{
 											data:"connections"
@@ -75,7 +74,7 @@
 									if( selectedCells.length == 1){
 										var selectedCell = this.dataItem( selectedCells );	 						
 										common.ui.ajax(
-											"/connect/" + selectedCell.providerId + "/user/lookup.json",
+											"<@spring.url "/connect/"/>" + selectedCell.providerId + "/user/lookup.json",
 											{
 												success : function(response){
 													var temp = kendo.template($('#my-social-account-details-template').html());	
