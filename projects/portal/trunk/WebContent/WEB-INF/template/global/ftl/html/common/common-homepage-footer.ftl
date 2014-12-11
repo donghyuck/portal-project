@@ -1,5 +1,5 @@
 <!--=== Footer ===-->
-<footer>
+<footer class="footer-v1">
 	<div class="footer">
 		<div class="container">
 			<div class="footer-wrapper">
