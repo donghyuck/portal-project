@@ -7,11 +7,13 @@
 						
 			var myProfileModel = new kendo.data.ObservableObject({
 				user : common.ui.accounts().token,
+				bag : new common.ui.data.User(),
 				click: function(e){
 					var btn = $(e.target),
 					action = btn.data("action");
 					switch (action) {
 						case "basic-modify-mode" :
+							this.user.copy( this.bag );
 							common.ui.status( $("button[data-action='basic-modify-mode']") , "disable" );
 							$("#my-profile-basic-cfg .dl-horizontal").fadeOut("fast", function(e){
 								$("#my-profile-basic-cfg .panel").fadeIn();
