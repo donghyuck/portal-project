@@ -177,7 +177,7 @@
 				<li><a href="\\#"><i class="fa fa-building"></i>#:company.displayName #</a></li>
 			</ul>		
 			<div class="btn-group btn-group-sm">
-				<a href="<@spring.url '/community/view-myprofile.do?view=modal-dialog'/>" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
+				<a href="<@spring.url '/display/dialog.html?source=/html/community/user-profile-modal-dialog'/>" class="btn btn-primary" data-toggle="modal" data-target="\\#myProfileModal" ><i class="fa fa-user"></i> 프로필 보기</a>
 				#if ( isSystem ) {#
 				<a href="<@spring.url '/secure/main.do'/>" class="btn btn-primary"><i class="fafa-sign-out"></i> 시스템 관리</a>
 				# } #			
