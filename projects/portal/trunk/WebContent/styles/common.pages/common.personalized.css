@@ -1803,9 +1803,8 @@ figure.effect-chico:hover p {
 }
 
 .personalized-session.close  .personalized-session-content {
-	display: block;
-	-webkit-animation-name: fadeOutIn;
-	animation-name: fadeOutIn;	
+	-webkit-animation-name: fadeOutUp;
+	animation-name: fadeOutUp;	
 }
 
 .personalized-session-heading {
