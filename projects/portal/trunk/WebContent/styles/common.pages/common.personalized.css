@@ -1792,15 +1792,20 @@ figure.effect-chico:hover p {
 
 
 .personalized-session  .personalized-session-content {
-	display:none
-	-webkit-animation-name: fadeOutUp;
-	animation-name: fadeOutUp;	
+	display:none;
+	min-height:300px;
 }
 
 .personalized-session.open  .personalized-session-content {
-	display:block;
+	display: block;
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;	
+}
+
+.personalized-session.close  .personalized-session-content {
+	display: block;
+	-webkit-animation-name: fadeOutIn;
+	animation-name: fadeOutIn;	
 }
 
 .personalized-session-heading {
