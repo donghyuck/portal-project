@@ -312,8 +312,7 @@
 										</#if>								
 										<dt><strong>롤</strong></dt>
 										<dd>																																		
-										</dd>
-										<hr>																									
+										</dd>																						
 									</dl>	
 									<div class="panel panel-profile no-margin-b rounded" style="display:none;">
 										<div class="panel-heading overflow-h">
