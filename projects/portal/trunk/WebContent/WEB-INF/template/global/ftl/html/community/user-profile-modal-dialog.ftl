@@ -310,7 +310,7 @@
 										</dd>
 										<hr>									
 										</#if>								
-										<dt><strong>롤</strong></dt>
+										<dt><strong>권한</strong></dt>
 										<dd>																																		
 										</dd>																						
 									</dl>	
