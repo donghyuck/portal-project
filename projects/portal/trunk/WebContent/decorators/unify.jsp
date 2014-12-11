@@ -36,12 +36,6 @@
 	
 	.header .navbar-default {
 		background: transparent;
-		/*
-		box-shadow: 0 2px 2px rgba(0,0,0,.2);
-		-moz-transform: translateZ(0);
-		-webkit-transform: translateZ(0);
-		transform: translateZ(0);
-		*/
 	}
 	
 	.header .dropdown-menu {
@@ -55,6 +49,11 @@
 	.footer .copyright .copyright-text {
 		line-height: 40px;
 	}	
+	
+	.footer .headline {
+		border-bottom: 2px solid #fff;
+	}
+	
 	.k-loading-image {
 		background-image: url('/images/common/loader/loading-transparent-bg.gif');
 	}
