@@ -1,4 +1,5 @@
 <#ftl encoding="UTF-8"/>
+<#assign user = action.user />			
 <html decorator="none">
 	<body>
 		<script type="text/javascript">
