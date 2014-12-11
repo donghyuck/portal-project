@@ -1854,6 +1854,9 @@ figure.effect-chico:hover p {
 margin: 5px 0 4px;
 }
 
+.personalized-session-content .k-editor {
+	border-width: 0 !important;	
+}
 /** ------------------------------------------------- */
 /** Panel                                                      */
 /** ------------------------------------------------- */
