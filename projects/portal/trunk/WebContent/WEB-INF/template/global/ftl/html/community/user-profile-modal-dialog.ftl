@@ -307,10 +307,7 @@
 										<hr>									
 										</#if>								
 										<dt><strong>롤</strong></dt>
-										<dd>
-											<#list roles as item >								
-												<span class="label label-success rounded"><i class="fa fa-key"></i> ${item}</span>						
-											</#list>																																				
+										<dd>																																		
 										</dd>
 										<hr>																									
 									</dl>	
