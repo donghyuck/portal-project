@@ -227,7 +227,7 @@
 							<div class="row">
 								<div class="col-md-5">
 									<div class="dropdown">
-									<img id="my-photo-image" class="img-responsive md-margin-bottom-10" src="/download/profile/${user.username}" alt="">
+									<img id="my-photo-image" class="img-responsive md-margin-bottom-10" src="<@spring.url "/download/profile/${user.username}"/>" alt="">
 									<a class="btn-u btn-u-sm dropdown-toggle" href="#" data-toggle="dropdown">
 									사진변경	
 									</a>
@@ -241,11 +241,13 @@
 								</div>
 								<div class="col-md-7">
 									<h2><#if user.nameVisible >${user.name}<#else>${user.username}</#if></h2>
-									<span><strong>Job:</strong> <i class="fa fa-question text-muted"></i></span>
-									<span><strong>Position:</strong> <i class="fa fa-question text-muted"></i></span>
-									<hr>
-									<p>하이</p>
-									
+									<ul class="list-unstyled">
+										<li class="text-muted"><span class="label label-info label-lightweight">직업</span> <i class="fa fa-question fa-lg text-muted"></i></li>
+										<hr>
+										<li class="text-muted"><span class="label label-info label-lightweight">직무</span> <i class="fa fa-question fa-lg text-muted"></i></li>
+										<hr>										
+									</ul>
+									<p>하이</p>									
 								</div>
 							</div>    
 						</div><!-- /.profile-bio -->			
