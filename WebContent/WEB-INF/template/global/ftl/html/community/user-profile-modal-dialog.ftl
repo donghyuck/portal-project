@@ -178,7 +178,6 @@
 		}	
 		
 		#my-profile-dialog .profile-bio {
-			background: #fff;
 			position: relative;
 			padding: 15px 10px 5px 15px;
 		}		
@@ -223,7 +222,7 @@
 				</div>
 				<div class="modal-body no-padding">
 					<div class="profile-body">						
-						<div class="profile-bio rounded margin-bottom-20">
+						<div class="profile-bio rounded m-b-sm">
 							<div class="row">
 								<div class="col-md-5">
 									<div class="dropdown">
@@ -265,7 +264,7 @@
 									<h2 class="heading-md">이름과 메일 주소, 이름(메일) 공개 여부를 확인하세요. 
 										<button class="btn btn-primary btn-sm rounded pull-right" data-action="basic-modify-mode" data-toggle="button" data-bind="click: click"><i class="fa fa-pencil"></i> 변경</button>
 									</h2>
-									<p class="text-muted"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
+									<p class="text-danger"><i class="fa fa-info"></i> 마지막으로 ${user.lastProfileUpdate} 일에 사용자 정보를 수정하였습니다. </p>
 									<br/>								
 									<dl class="dl-horizontal">
 										<dt><strong>아이디</strong></dt>
