@@ -43,7 +43,9 @@
 		transform: translateZ(0);
 		*/
 	}
-		
+	.footer .copyright .copyright-text {
+		line-height: 40px;
+	}	
 	.k-loading-image {
 		background-image: url('/images/common/loader/loading-transparent-bg.gif');
 	}
