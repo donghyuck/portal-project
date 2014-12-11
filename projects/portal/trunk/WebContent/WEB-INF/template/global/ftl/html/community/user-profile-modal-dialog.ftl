@@ -146,6 +146,7 @@
 		#my-profile-dialog .profile-body {
 			background: #f7f7f7;
 			padding: 20px;
+			font-size : 14px;
 		}
 		
 		#my-profile-dialog .tab-content .tab-pane {
