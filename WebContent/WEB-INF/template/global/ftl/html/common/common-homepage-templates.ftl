@@ -126,7 +126,10 @@
 <!-- Footer Template            						   -->
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="footer-notice-template">				
-	<li><i class="fa fa-angle-right"></i> <a href="javascript:teleportToNotice( #= announceId # );">#:subject#</a></li>
+	<li>
+		<a href="javascript:teleportToNotice( #= announceId # );"><i class="fa fa-angle-right"></i> #:subject# </a>
+		<small>#= formattedModifiedDate #</small>
+	</li>
 			<!--		   							
 	<dl class="dl-horizontal">
 		<dt>
