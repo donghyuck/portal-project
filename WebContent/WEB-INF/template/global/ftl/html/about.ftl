@@ -254,7 +254,6 @@
 					</div>
 				</div>
 			</div><!-- /.container -->		
-			</#if>
 			<!-- END MAIN CONTENT -->	
 			</#if>	
 	 		<!-- START FOOTER -->
