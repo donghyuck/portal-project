@@ -1593,6 +1593,10 @@ span.label-dark,span.badge-dark {
 	background: url(images/icons/social/googleplus.png) no-repeat;
 }
 
+.social_google {
+	background: url(images/icons/social/googleplus.png) no-repeat;
+}
+
 .social_jolicloud {
 	background: url(images/icons/social/jolicloud.png) no-repeat;
 }
