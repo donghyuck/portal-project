@@ -1,5 +1,4 @@
 <#ftl encoding="UTF-8"/>
-<#assign contextPath = request.contextPath >
 <html decorator="homepage">
 <head>
 		<title>기업소개</title>
@@ -10,83 +9,41 @@
 				
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.pages/common.timeline-v2.min.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
-			
-			'css!${request.contextPath}/styles/common/common.timeline.css',
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-			'${request.contextPath}/js/common/common.models.js',			
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'],
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',		
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>'],
 			complete: function() {
 			
 				common.ui.setup({
 					features:{
-						backstretch : false
+						wallpaper : false,
+						lightbox : true,
+						spmenu : false,
+						morphing : false,
+						accounts : {
+							authenticate : function(e){
+								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+															 
+								}
+							} 
+						}						
 					},
-					worklist:jobs
+					jobs:jobs
 				});	
 
 				// ACCOUNTS LOAD	
-				var currentUser = new User();			
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-					}				
-				});	
-				
-				
-				// Start : Company Social Content 
-				<#list action.connectedCompanySocialNetworks  as item >				
-				<#assign stream_name = item.serviceProviderName + "_streams_" + item.socialAccountId  />	
-				<#assign panel_element_id = "#" + item.serviceProviderName + "-panel-" + item.socialAccountId  />	
-											
-				var ${stream_name} = new MediaStreams(${ item.socialAccountId}, "${item.serviceProviderName}" );							
-				<#if  item.serviceProviderName == "twitter" >
-				${stream_name}.setTemplate ( kendo.template($("#twitter-timeline-template").html()) );				
-				<#elseif  item.serviceProviderName == "facebook" >
-				${stream_name}.setTemplate( kendo.template($("#facebook-homefeed-template").html()) );
-				</#if>
-				${stream_name}.createDataSource({ 
-					transport : {
-						parameterMap : function ( options,  operation) {
-							return { objectType : 1 };
-						} 
-					}
-				});
-							
-				${stream_name}.dataSource.read();
-				
-				$( "${panel_element_id} .panel-header-actions a").each(function( index ) {
-					var header_action = $(this);
-					header_action.click(function (e){
-						e.preventDefault();		
-						var header_action_icon = header_action.find('span');
-						if (header_action.text() == "Minimize" || header_action.text() == "Maximize"){
-							$("${panel_element_id} .panel-body").toggleClass("hide");				
-							if( header_action_icon.hasClass("k-i-maximize") ){
-								header_action_icon.removeClass("k-i-maximize");
-								header_action_icon.addClass("k-i-minimize");
-							}else{
-								header_action_icon.removeClass("k-i-minimize");
-								header_action_icon.addClass("k-i-maximize");
-							}
-						} else if (header_action.text() == "Refresh"){								
-							${stream_name}.dataSource.read();							
-						} 
-					});								
-				});				
-				</#list>	
+			var currentUser = new common.ui.data.User();			
+			
 				<#if !action.user.anonymous >							
 				</#if>	
 				// END SCRIPT            
