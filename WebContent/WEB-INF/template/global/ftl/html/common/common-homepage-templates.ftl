@@ -128,7 +128,7 @@
 <script type="text/x-kendo-tmpl" id="footer-notice-template">				
 	<li>
 		<a href="javascript:teleportToNotice( #= announceId # );"><i class="fa fa-angle-right"></i> #:subject# </a>
-		<small>#= formattedModifiedDate #</small>
+		<small>#: formattedModifiedDate() #</small>
 	</li>
 			<!--		   							
 	<dl class="dl-horizontal">
