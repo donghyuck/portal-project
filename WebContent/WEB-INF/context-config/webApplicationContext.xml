@@ -26,11 +26,11 @@
 	<import resource="classpath:context/userSubsystemContext.xml"/>
 
 	
-	<!-- <import resource="classpath:context/securitySubsystemContext.xml"/>-->	
+	<import resource="classpath:context/securitySubsystemContext.xml"/>
 	<import resource="classpath:context/struts2SubsystemContext.xml"/>
 	<import resource="classpath:context/webSubsystemContext.xml"/>
 	<import resource="classpath:context/communitySubsystemContext.xml"/>
 	
-	<bean class="architecture.user.spring.config.SecurityConfig"/>
+	<!-- <bean class="architecture.user.spring.config.SecurityConfig"/>-->
 	
 </beans>
