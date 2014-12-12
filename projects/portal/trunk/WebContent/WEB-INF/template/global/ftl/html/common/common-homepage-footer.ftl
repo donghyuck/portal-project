@@ -32,8 +32,8 @@
 									if(this.view().length>0){
 										$("#footer-announcement").html(kendo.render(template, this.view()))
 									}
-								}); 					
-							}).read();
+								}).read(); 					
+							});
 					-->
 					</script>
 					<ul id="footer-announcement" class="footer-content list-unstyled">
