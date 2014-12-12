@@ -33,7 +33,7 @@
 										$("#footer-announcement").html(kendo.render(template, this.view()))
 									}
 								}); 					
-							});
+							}).read();
 					-->
 					</script>
 					<ul id="footer-announcement" class="footer-content list-unstyled">
