@@ -32,6 +32,5 @@
 	<import resource="classpath:context/communitySubsystemContext.xml"/>
 	
 	<bean class="architecture.user.spring.config.SecurityConfig"/>
-	<bean class="org.springframework.config.java.process.ConfigurationPostProcessor"/>
 	
 </beans>
