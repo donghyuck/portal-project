@@ -36,7 +36,7 @@
 							});
 					-->
 					</script>
-					<ul id="footer-announcement" class="footer-content list-unstyled">
+					<ul id="footer-announcement" class="list-unstyled latest-list">
 					</ul>	
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
