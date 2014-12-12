@@ -91,6 +91,7 @@ PC9saWNlbnNlPg==</file>
 					<clientId>445731874097-uelikgps50117el87sqpn82ldkkapjn9.apps.googleusercontent.com</clientId>
 					<clientSecret>efQAMphZZaHPcKrzN4j0DA_y</clientSecret>				
 					<callbackUrl>http://222.122.63.146/connect/google</callbackUrl>
+					<scope>https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar https://www.googleapis.com/auth/calendar</scope>
 					<allowSignin>true</allowSignin>
 					<allowSignup>false</allowSignup>					
 				</google>					
