@@ -16,13 +16,24 @@
 					<script type="text/javascript">
 					<!--
 							jobs.push( function(){
-								//var announcement = new common.api.Announcement({pageSize: 3});  				
-								//var template = kendo.template($("#footer-notice-template").html());				
-								//announcement.dataSource().bind('change', function(){
-								//	if(this.view().length>0)
-								//		$("#footer-recent-announces").html(kendo.render(template, this.view()))
-								//}).read();							
-							} );
+								var announcement = common.ui.datasource(
+									'<@spring.url "/data/announce/list.json"/>',
+									{
+										schema: {
+											data : "announces",
+											model : common.ui.data.Announce,
+											total : "totalCount"
+										},
+										pageSize: 5											
+									}
+								);
+								var template = kendo.template($("#footer-notice-template").html());		
+								announcement.bind('change', function(){
+									if(this.view().length>0){
+										$("#footer-recent-announces").html(kendo.render(template, this.view()))
+									}
+								}); 					
+							});
 					-->
 					</script>
 					<ul id="footer-recent-announces" class="footer-content list-unstyled">
