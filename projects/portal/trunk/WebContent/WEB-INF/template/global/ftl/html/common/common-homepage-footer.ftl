@@ -30,13 +30,13 @@
 								var template = kendo.template($("#footer-notice-template").html());		
 								announcement.bind('change', function(){
 									if(this.view().length>0){
-										$("#footer-recent-announces").html(kendo.render(template, this.view()))
+										$("#footer-announcement").html(kendo.render(template, this.view()))
 									}
 								}); 					
 							});
 					-->
 					</script>
-					<ul id="footer-recent-announces" class="footer-content list-unstyled">
+					<ul id="footer-announcement" class="footer-content list-unstyled">
 					</ul>	
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
