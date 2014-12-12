@@ -51,22 +51,7 @@
 		}]);	
 		-->
 		</script>		
-		<style scoped="scoped">
-		blockquote p {
-			font-size: 15px;
-		}
-
-		.k-grid table tr.k-state-selected{
-			background: #428bca;
-			color: #ffffff; 
-		}
-		
-
-		.cbp_tmtimeline > li .cbp_tmicon { 
-			position : relative;
-		}
-					
-						
+		<style scoped="scoped">						
 		</style>   	
 	</head>
 	<body>
@@ -77,6 +62,8 @@
 			<!-- END HEADER -->
 			<div class="container content">
 				<div class="row">
+				
+				
 				</div>
 			</div><!-- /.container -->		
 	 		<!-- START FOOTER -->
