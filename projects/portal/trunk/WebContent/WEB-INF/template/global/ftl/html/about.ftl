@@ -254,6 +254,198 @@
 					</div>
 				</div>
 			</div><!-- /.container -->		
+
+<div class="container content">		
+    	<div class="row margin-bottom-40">
+        	<div class="col-md-6 md-margin-bottom-40">
+                <p>Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone. Lorem sequat ipsum dolor lorem sit amet, consectetur adipiscing dolor elit. Unify is an incredibly beautiful responsive Bootstrap Template for It works on all major web.</p>
+                <ul class="list-unstyled">
+                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida</li>
+                    <li><i class="fa fa-check color-green"></i> Corporate and Creative</li>
+                    <li><i class="fa fa-check color-green"></i> Responsive Bootstrap Template</li>
+                    <li><i class="fa fa-check color-green"></i> Elit non mi porta gravida</li>
+                    <li><i class="fa fa-check color-green"></i> Award winning digital agency</li>
+                </ul><br>
+
+                <!-- Blockquotes -->
+                <blockquote class="hero-unify">
+                    <p>Award winning digital agency. We bring a personal and effective approach to every project we work on, which is why.</p>
+                    <small>CEO Jack Bour</small>
+                </blockquote>
+            </div>
+
+        	<div class="col-md-6 md-margin-bottom-40">
+                <div class="responsive-video">
+                    <iframe src="http://player.vimeo.com/video/9679622" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe> 
+                </div>
+            </div>
+        </div><!--/row-->
+
+    	<!-- Meer Our Team -->
+    	<div class="headline"><h2>Meet Our Team</h2></div>
+        <div class="row team">
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/1.jpg" alt="">
+                    <h3><a>Jack Bour</a> <small>Chief Executive Officer</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/3.jpg" alt="">
+                    <h3><a>Kate Metus</a> <small>Project Manager</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/2.jpg" alt="">
+                    <h3><a>Porta Gravida</a> <small>VP of Operations</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="thumbnail-style">
+                    <img class="img-responsive" src="assets/img/team/4.jpg" alt="">
+                    <h3><a>Donec Elit</a> <small>Director, R &amp; D Talent</small></h3>
+                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
+                    <ul class="list-unstyled list-inline team-socail">
+                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--/team-->
+    	<!-- End Meer Our Team -->
+
+        <!-- Our Clients -->
+        <div id="clients-flexslider" class="flexslider home clients">
+            <div class="headline"><h2>Our Clients</h2></div>    
+            
+        <div class="flex-viewport" style="overflow: hidden; position: relative;"><ul class="slides" style="width: 3400%; -webkit-transition: 0.6s; transition: 0.6s; -webkit-transform: translate3d(-506.666666666667px, 0px, 0px);">
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/hp_grey.png" alt=""> 
+                        <img src="assets/img/clients/hp.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/igneus_grey.png" alt=""> 
+                        <img src="assets/img/clients/igneus.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/vadafone_grey.png" alt=""> 
+                        <img src="assets/img/clients/vadafone.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/walmart_grey.png" alt=""> 
+                        <img src="assets/img/clients/walmart.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/shell_grey.png" alt=""> 
+                        <img src="assets/img/clients/shell.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/natural_grey.png" alt=""> 
+                        <img src="assets/img/clients/natural.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/aztec_grey.png" alt=""> 
+                        <img src="assets/img/clients/aztec.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/gamescast_grey.png" alt=""> 
+                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/cisco_grey.png" alt=""> 
+                        <img src="assets/img/clients/cisco.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/everyday_grey.png" alt=""> 
+                        <img src="assets/img/clients/everyday.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/cocacola_grey.png" alt=""> 
+                        <img src="assets/img/clients/cocacola.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/spinworkx_grey.png" alt=""> 
+                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/shell_grey.png" alt=""> 
+                        <img src="assets/img/clients/shell.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/natural_grey.png" alt=""> 
+                        <img src="assets/img/clients/natural.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/gamescast_grey.png" alt=""> 
+                        <img src="assets/img/clients/gamescast.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/everyday_grey.png" alt=""> 
+                        <img src="assets/img/clients/everyday.png" class="color-img" alt="">
+                    </a>
+                </li>
+                <li style="width: 125.666666666667px; float: left; display: block;">
+                    <a href="#">
+                        <img src="assets/img/clients/spinworkx_grey.png" alt=""> 
+                        <img src="assets/img/clients/spinworkx.png" class="color-img" alt="">
+                    </a>
+                </li>
+            </ul></div></div><!--/flexslider-->
+        <!-- //End Our Clients -->
+    </div>
+			
 			<!-- END MAIN CONTENT -->	
 			</#if>	
 	 		<!-- START FOOTER -->
