@@ -41,16 +41,11 @@ function setupPersonalizedSection(){
 		});
 		
 		$section.find(".personalized-session-content>.close").click(function(e){
-			var $parent = $(this).parent();
-			
+			var $parent = $(this).parent();			
 			if( common.ui.defined(kendo.support.transitions) ){	
-				var trName = kendo.support.transitions.event + " animationend";
-				$section.one( trName, function(e) {
+				$section.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					$section.removeClass("open out");				
-				});		
-				$parent.one( trName, function(e) {
-					$section.removeClass("open out");				
-				});						
+				});					
 			}else{
 				$section.removeClass("open out");	
 			}
