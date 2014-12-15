@@ -30,12 +30,12 @@ function preparePersonalizedArea( element, minCount, colSize ){
 	});	
 }
 
+
 function setupPersonalizedSection(){
 	$("section.personalized-session").each(function(index){
-		$section = $( this );			
-		alert( $section.html() );
+		var $section = $( this );			
 		$section.find(".personalized-session-content>.close").click(function(e){
-			$parent = $(this).parent();
+			var $parent = $(this).parent();
 			$section.addClass("out");
 			if( common.ui.defined(kendo.support.transitions.event) ){
 				$parent.one(kendo.support.transitions.event, function(e) {
