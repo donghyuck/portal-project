@@ -1738,7 +1738,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	opacity : 1;
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;
-	height:auto;
+	max-height: none;
 }
 
 .personalized-session.folded  .personalized-session-content {
