@@ -79,7 +79,8 @@
 				createAnnounceSection();				
 				$(".morphing ").bind("open.morphing", function(e){
 					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
-				});				
+				});					
+				setupPersonalizedSection();			
 				// END SCRIPT 				
 			}
 		}]);	
