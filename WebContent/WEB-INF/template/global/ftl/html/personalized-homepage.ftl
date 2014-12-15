@@ -321,6 +321,7 @@
 			<!-- START MAIN CONTENT -->
 			<section class="personalized-session border-b open" >
 				<div class="personalized-session-heading bg-dark">
+					<span class="open"></span>
 					<div class="container">
 						<div class="personalized-session-title">
 							<i class="icon-flat home"></i>
