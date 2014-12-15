@@ -36,7 +36,7 @@ function setupPersonalizedSection(){
 		var $section = $( this );			
 		$section.find(".personalized-session-content>.close").click(function(e){
 			var $parent = $(this).parent();
-			$section.addClass("out");
+			
 			if( common.ui.defined(kendo.support.transitions.event) ){
 				$section.one(kendo.support.transitions.event, function(e) {
 					$section.removeClass("open out");				
@@ -44,6 +44,7 @@ function setupPersonalizedSection(){
 			}else{
 				$section.removeClass("open out");	
 			}
+			$section.addClass("out");
 		});
 	});
 	
