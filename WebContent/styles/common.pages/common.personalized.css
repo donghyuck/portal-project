@@ -1725,12 +1725,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .personalized-session  .personalized-session-content {
 	display: none;
 	min-height: 300px;
+	visibility: hidden;
 }
 
 .personalized-session.open  .personalized-session-content {
-	
+	visibility: visible;
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;
+	
 }
 
 .personalized-session.folded  .personalized-session-content {
