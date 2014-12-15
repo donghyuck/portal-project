@@ -376,7 +376,7 @@
 									<button class="btn-u btn-u-red animated" type="button" data-toggle="morphing" data-action="morphing"><i class="fa fa-plus lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>									
 									<div class="morphing-content">
 										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
-										<div class="personalized-session-heading">
+										<div class="personalized-session-heading  bg-dark">
 											<div class="container">
 												<div class="personalized-session-title">
 													<i class="icon-flat mega-phone"></i>
@@ -430,7 +430,7 @@
 								</div>								
 							</#if>
 										
-				<div class="personalized-session-heading">
+				<div class="personalized-session-heading  bg-dark">
 					<div class="container">
 						<div class="personalized-session-title">
 							<i class="icon-flat mega-phone"></i>
