@@ -36,9 +36,13 @@ function setupPersonalizedSection(){
 		$this.find(".personalized-session-content>.close").click(function(e){
 			$parent = $(this).parent();
 			$parent.addClass("out");
-			$parent.one('transitionend', function(e) {
-				$parent.removeClass("open out");				
-			});
+			if( common.ui.defined(kendo.support.transitions.event) ){
+				$parent.one('transitionend', function(e) {
+					$parent.removeClass("open out");				
+				});
+			}else{
+				$parent.removeClass("open out");	
+			}
 		});
 	});
 	
