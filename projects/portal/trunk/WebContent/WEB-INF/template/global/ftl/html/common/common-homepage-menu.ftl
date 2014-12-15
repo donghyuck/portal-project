@@ -55,9 +55,7 @@
 								<img id="logo-header" src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42" class="img-circle" alt="Logo">
 							</a>
 						</div>	
-						<!-- Collect the nav links, forms, and other content for toggling -->
 						<div class="collapse navbar-collapse navbar-responsive-collapse ">
-
 							<ul class="nav navbar-nav navbar-left">
 				<#list webSiteMenu.components as item >
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
@@ -75,8 +73,7 @@
 											<div class="mega-menu-content disable-icons">
 												<div class="container">
 													<div class="row equal-height">													
-														<#list item.components as sub_item>														
-														
+														<#list item.components as sub_item>
 															<#if sub_item.components?has_content >
 															<div class="col-md-3 col-sm-12 col-xs-12 md-margin-bottom-30 no-border">
 															1
@@ -90,36 +87,7 @@
 																<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="${sub_item.icon}"></i></#if></a>																														
 															</div>		
 															</#if>
-															<!--
-																<ul class="list-unstyled equal-height-list">
-																<#if sub_item.components?has_content >	
-																<li><h3><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${sub_item.title}</h3></li>
-																<#list sub_item.components as sub_sub_item >
-																<li data-menu-item="${sub_sub_item.name}"><a href="${sub_sub_item.page}">${ sub_sub_item.title }</a></li>																
-																</#list>
-																<#else>
-																<li data-menu-item="${sub_item.name}">
-																	<a href="${sub_item.page}"><#if sub_item.icon?? ><i class="fa fa-${sub_item.icon}"></i></#if> ${ sub_item.title }</a>																	
-																</li>
-																<#if sub_item.description ??>
-																<li>	
-																	<h3>
-																	<small>
-																	${sub_item.description}
-																	</small>
-																	</h3>	
-																</li>		
-																</#if>
-																</#if>
-																</ul>
-															-->
-															
-																
-															
-																										
 														</#list>
-														
-																											
 													</div>
 												</div>
 											</div>
@@ -155,15 +123,7 @@
 							</li>								
 						</#if>
 					</#if>		
-				</#list>			<!--
-								<li>
-									<a href="#" data-feature-name="u-accounts" class="u-accounts" style="display:none;">
-										<span style="padding-right: 5px;"><i class="fa fa-caret-left"></i></span>					
-										<span class="u-accounts-photo" style="background-image: url( '<@spring.url "/images/common/anonymous.png"/>' );"></span>
-										<span class="u-accounts-name"></span>
-										<i class="setting fa fa-outdent"></i>
-									</a>
-								</li>-->
+				</#list>		
 							</ul>				
 						</div>						
 					</div>
