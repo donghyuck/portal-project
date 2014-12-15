@@ -1723,23 +1723,20 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 .personalized-session  .personalized-session-content {
-	overflow-y: hidden;
-	max-height: 0;
+	display: none;
 	visibility: hidden;
-	opacity : 0;
 }
 
 .personalized-session.open  .personalized-session-content {
+	display: block;
 	visibility: visible;
-	opacity : 1;
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;
-	max-height: none;
 }
 
-.personalized-session.folded  .personalized-session-content {
-	-webkit-animation-name: fadeOutUp;
-	animation-name: fadeOutUp;
+.personalized-session.out  .personalized-session-content {
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
 }
 
 .personalized-session-heading {
@@ -1751,8 +1748,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	position: absolute;
 	top: 0;
 	right: 0;
-	line-height: 50px;
-	
+	line-height: 50px;	
 	display: block;
 	width: 50px;
 	height: 50px;
