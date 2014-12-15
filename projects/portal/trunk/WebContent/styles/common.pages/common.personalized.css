@@ -1678,10 +1678,6 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 .personalized-session-content {
-	/*display: none;*/
-	/*padding-top: 50px;
-	padding-bottom: 50px;*/
-	position: relative;
 	background: #fff;
 	z-index: 2;
 }
