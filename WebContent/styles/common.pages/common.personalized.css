@@ -1723,15 +1723,17 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 .personalized-session  .personalized-session-content {
-	min-height: 300px;
+	height: 0px;
 	visibility: hidden;
+	opacity : 0;
 }
 
 .personalized-session.open  .personalized-session-content {
 	visibility: visible;
+	opacity : 1;
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;
-	
+	height:auto;
 }
 
 .personalized-session.folded  .personalized-session-content {
