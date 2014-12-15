@@ -1648,7 +1648,6 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .personalized-session {
 	color: #616161;
 	position: relative;
-	z-index: 1;
 }
 
 .personalized-session.bg-trans {
@@ -1679,7 +1678,6 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .personalized-session-content {
 	background: #fff;
-	z-index: 2;
 }
 
 .personalized-session-content.arrow-up {
@@ -1724,23 +1722,13 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	height: 500px;
 }
 
-.personalized-session-content.personalized-session-content-transparent {
-	background: transparent;
-}
-
-.personalized-session-content.personalized-session-content-transparent>.close
-	{
-	background: url(/images/cross.png) no-repeat center center;
-	background-size: 25px;
-}
-
 .personalized-session  .personalized-session-content {
 	display: none;
 	min-height: 300px;
 }
 
 .personalized-session.open  .personalized-session-content {
-	display: block;
+	
 	-webkit-animation-name: fadeInDown;
 	animation-name: fadeInDown;
 }
