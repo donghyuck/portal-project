@@ -34,6 +34,11 @@ function preparePersonalizedArea( element, minCount, colSize ){
 function setupPersonalizedSection(){
 	$("section.personalized-session").each(function(index){
 		var $section = $( this );			
+		$section.find(".personalized-session-heading>.open").click(function(e){
+			var $parent = $(this).parent();			
+			$section.toggleClass("open");
+		});
+		
 		$section.find(".personalized-session-content>.close").click(function(e){
 			var $parent = $(this).parent();
 			
