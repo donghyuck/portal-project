@@ -1752,17 +1752,23 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	top: 0;
 	right: 0;
 	line-height: 50px;
-	font-size: 40px;
+	
 	display: block;
 	width: 50px;
 	height: 50px;
 	text-align: center;
-	background: url(/images/cross-grey.png) no-repeat center center;
-	background-size: 25px;
-	content: "f103";
+/*	background: url(/images/cross-grey.png) no-repeat center center;
+	background-size: 25px;*/
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 3em;
+	content: "\f103";
 	display: block;
 	opacity: .5;	
 } 
+
+.personalized-session-content>.open:hover {
+	opacity: 1;
+}
 
 .personalized-session-heading .personalized-session-heading-controls {
 	float: right;
