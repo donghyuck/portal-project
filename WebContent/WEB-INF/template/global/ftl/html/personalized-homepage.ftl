@@ -197,7 +197,7 @@
 			);
 			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
 			//common.ui.scroll.slim(listRenderTo, { height: 320 });
-			common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
+			//common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
 		}
 		
 		function createAnnounceEditorSection(source){			
