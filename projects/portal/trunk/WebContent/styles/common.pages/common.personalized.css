@@ -1769,6 +1769,10 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	opacity: 1;
 }
 
+.personalized-session.open .personalized-session-heading>.open {
+	display: none;
+}
+
 .personalized-session-heading .personalized-session-heading-controls {
 	float: right;
 	margin-top: -30px;
