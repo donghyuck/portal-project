@@ -34,7 +34,7 @@ function setupPersonalizedSection(){
 	$("section.personalized-session").each(function(index){
 		$this = $( this );		
 		$this.find(".personalized-session-content>.close").click(function(e){
-			$parent = $(this).parent();
+			$parent = $(this).closest(".personalized-session");
 			$parent.addClass("out");
 			if( common.ui.defined(kendo.support.transitions.event) ){
 				$parent.one('transitionend', function(e) {
