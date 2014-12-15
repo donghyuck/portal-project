@@ -1769,7 +1769,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .personalized-session-heading>.open:before{
 	content: "\f103";
 }
-.personalized-session-content>.open:hover {
+.personalized-session-heading>.open:hover {
 	opacity: 1;
 }
 
