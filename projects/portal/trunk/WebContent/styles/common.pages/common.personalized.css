@@ -1761,7 +1761,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;	
-	font-size: 3em;	
+	font-size: 4em;	
 	display: block;
 	opacity: .5;	
 } 
