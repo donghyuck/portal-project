@@ -6,8 +6,6 @@
 */
 function preparePersonalizedArea( element, minCount, colSize ){	
 	
-	
-	
 	var template = kendo.template("<div id='#= guid #' class='personalized-panels-group col-sm-#= colSize#'></div>");
 	
 	for ( var  i = 1 ; i < minCount + 1 ; i ++  )
@@ -30,6 +28,20 @@ function preparePersonalizedArea( element, minCount, colSize ){
 			personalized_panels_group.addClass("col-sm-" + grid_col_size.newValue );		
 		});
 	});	
+}
+
+function setupPersonalizedSection(){
+	$("section.personalized-session").each(function(index){
+		$this = $( this );		
+		$this.children(".personalized-session-content>close").click(function(e){
+			$parent = $(this).parent();
+			$parent.addClass("out");
+			$parent.one('transitionend', function(e) {
+				$parent.removeClass("open out");				
+			});
+		});
+	});
+	
 }
 
 function getNextPersonalizedColumn (element){
