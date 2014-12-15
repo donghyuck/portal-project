@@ -37,7 +37,7 @@ function setupPersonalizedSection(){
 			$parent = $(this).closest(".personalized-session");
 			$parent.addClass("out");
 			if( common.ui.defined(kendo.support.transitions.event) ){
-				$parent.one('transitionend', function(e) {
+				$parent.one(kendo.support.transitions.event, function(e) {
 					$parent.removeClass("open out");				
 				});
 			}else{
