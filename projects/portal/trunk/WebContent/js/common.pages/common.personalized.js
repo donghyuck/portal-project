@@ -32,6 +32,7 @@ function preparePersonalizedArea( element, minCount, colSize ){
 
 
 function setupPersonalizedSection(){
+	
 	$("section.personalized-session").each(function(index){
 		var $section = $( this );			
 		$section.find(".personalized-session-heading>.open").click(function(e){
@@ -42,10 +43,14 @@ function setupPersonalizedSection(){
 		$section.find(".personalized-session-content>.close").click(function(e){
 			var $parent = $(this).parent();
 			
-			if( common.ui.defined(kendo.support.transitions) ){
-				$section.one( kendo.support.transitions.event + ' animationend', function(e) {
+			if( common.ui.defined(kendo.support.transitions) ){	
+				var trName = kendo.support.transitions.event + " animationend";
+				$section.one( trName, function(e) {
 					$section.removeClass("open out");				
 				});		
+				$parent.one( trName, function(e) {
+					$section.removeClass("open out");				
+				});						
 			}else{
 				$section.removeClass("open out");	
 			}
