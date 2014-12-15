@@ -38,7 +38,7 @@ function setupPersonalizedSection(){
 			var $parent = $(this).parent();
 			
 			if( common.ui.defined(kendo.support.transitions.event) ){
-				$section.one(kendo.support.transitions.event, function(e) {
+				$parent.one(kendo.support.transitions.event, function(e) {
 					$section.removeClass("open out");				
 				});
 			}else{
