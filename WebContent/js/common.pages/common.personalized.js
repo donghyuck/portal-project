@@ -42,13 +42,10 @@ function setupPersonalizedSection(){
 		$section.find(".personalized-session-content>.close").click(function(e){
 			var $parent = $(this).parent();
 			
-			if( common.ui.defined(kendo.support.transitions.event) ){
-				$parent.one(kendo.support.transitions.event, function(e) {
+			if( common.ui.defined(kendo.support.transitions) ){
+				$parent.one(kendo.support.transitions.event + ' animationend', function(e) {
 					$section.removeClass("open out");				
-				});
-				$section.one(kendo.support.transitions.event, function(e) {
-					$section.removeClass("open out");				
-				});				
+				});		
 			}else{
 				$section.removeClass("open out");	
 			}
