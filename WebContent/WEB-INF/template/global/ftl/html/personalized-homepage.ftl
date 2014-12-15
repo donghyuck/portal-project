@@ -448,7 +448,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="my-announce-section" class="personalized-session-content arrow-down">
+				<div id="my-announce-section" class="personalized-session-content animated arrow-down">
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-6 p-sm">
