@@ -431,7 +431,7 @@
 							</#if>
 										
 				<div class="personalized-session-heading  bg-dark">
-					<span class="close"></open>
+					<span class="open"></span>
 					<div class="container">
 						<div class="personalized-session-title">
 							<i class="icon-flat mega-phone"></i>
