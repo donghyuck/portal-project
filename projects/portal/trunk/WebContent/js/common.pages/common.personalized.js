@@ -32,16 +32,16 @@ function preparePersonalizedArea( element, minCount, colSize ){
 
 function setupPersonalizedSection(){
 	$("section.personalized-session").each(function(index){
-		$this = $( this );		
-		$this.find(".personalized-session-content>.close").click(function(e){
-			$parent = $(this).closest(".personalized-session");
-			$parent.addClass("out");
+		$session = $( this );				
+		$session.find(".personalized-session-content>.close").click(function(e){
+			$parent = $(this).closest(".personalized-session-content");
+			$session.addClass("out");
 			if( common.ui.defined(kendo.support.transitions.event) ){
 				$parent.one(kendo.support.transitions.event, function(e) {
-					$parent.removeClass("open out");				
+					$session.removeClass("open out");				
 				});
 			}else{
-				$parent.removeClass("open out");	
+				$session.removeClass("open out");	
 			}
 		});
 	});
