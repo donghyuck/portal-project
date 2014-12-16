@@ -1652,6 +1652,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .personalized-section-content {
 	background: #fff;
+	position: relative;
 }
 
 .personalized-section-content.arrow-up:after {
@@ -1753,7 +1754,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .personalized-session-content {
 	background: #fff;
-	position:relative;
+	
 }
 
 .personalized-session-content.arrow-up {
