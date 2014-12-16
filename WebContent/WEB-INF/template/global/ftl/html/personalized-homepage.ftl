@@ -433,7 +433,7 @@
 							</#if>
 										
 				<div class="personalized-section-heading">
-					<span class="open"></span>
+					<span class="open animated"></span>
 					<div class="container">
 						<div class="personalized-section-title">
 							<i class="icon-flat mega-phone"></i>
@@ -451,7 +451,8 @@
 						</div>
 					</div>
 				</div>
-				<div id="my-announce-section" class="personalized-session-content animated arrow-down">
+				<div id="my-announce-section" class="personalized-section-content animated arrow-down">
+					<span class="close animated"></span>
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-6 p-sm">
