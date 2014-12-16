@@ -96,8 +96,13 @@
 		<!-- ============================== -->
 		function createGallerySection(){
 			var renderTo = "image-gallery";			
+			
+			var $section = $('.wrapper .personalized-section').first();		
+			var section_heading = $section.children(".personalized-section-heading");
+			var section_content = $section.children(".personalized-section-content");
+		
 			if( $( "#" +renderTo).length == 0 ){			
-				$('.wrapper .personalized-section-content').first().append($("#image-gallery-template").html());
+				section_content.append($("#image-gallery-template").html());
 				var galleryDataSource = common.ui.datasource(
 					'<@spring.url "/data/images/list.json?output=json" />',
 					{
@@ -125,20 +130,21 @@
 				);
 				common.ui.thumbnail.expanding({ template: $("#image-gallery-expanding-template").html() });			
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
-				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
-				$(".personalized-section:first .personalized-session-content>.close").click(function(e){
+				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");							
+				$section.find(".personalized-section-content>.close").click(function(e){ 
 					var $this = $(this);
-					$(".personalized-section").toggleClass("open");
-					$(".personalized-section").slideUp("slow");										
-					var target = $("[data-action='show-gallery-section']");
-					target.toggleClass("active");					
-					common.ui.enable(target);
-				});				
+					$section.toggleClass("open");
+					section_content.slideUp("slow", function(){
+						var target = $("[data-action='show-gallery-section']");
+						target.toggleClass("active");					
+						common.ui.enable(target);
+					});	
+				});						
 				galleryDataSource.read();	
 			}
-			if( !$(".personalized-session").hasClass("open") ){
-				$(".personalized-session").addClass("open");
-				$(".personalized-section").slideDown("slow");				
+			if( section_content.is("hidden") ){
+				$section.toggleClass("open");
+				section_content.slideDown("slow");				
 			}
 		}
 		<!-- ============================== -->
