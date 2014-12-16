@@ -451,7 +451,7 @@
 						</div>
 					</div>
 				</div>
-				<div id="my-announce-section" class="personalized-section-content animated arrow-down">
+				<div id="my-announce-section" class="personalized-section-content animated arrow-up">
 					<span class="close animated"></span>
 					<div class="container">
 						<div class="row">
