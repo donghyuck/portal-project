@@ -579,7 +579,7 @@
 						</div>
 					</div>				
 				</div>
-				<div class="personalized-section-content animated arrow-up">
+				<div class="personalized-section-content animated arrow-up" style="display:block;">
 					<span class="close animated"></span>
 					
 				</div>				
