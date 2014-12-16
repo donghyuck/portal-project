@@ -527,7 +527,6 @@
 			<!-- START MAIN CONTENT -->
 			<section class="personalized-section bg-transparent" >
 				<div class="personalized-section-heading">
-					<span class="open animated"></span>
 					<div class="container">
 						<div class="personalized-section-title">
 							<i class="icon-flat folder"></i>
