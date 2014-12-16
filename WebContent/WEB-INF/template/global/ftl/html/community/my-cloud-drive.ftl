@@ -535,18 +535,7 @@
 								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
 									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토 탐색기</span></button>
 									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
-								</div>			<!--				
-								<div class="btn-group navbar-btn" data-toggle="buttons">
-									<label class="btn btn-info rounded-left">
-										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-									</label>
-									<label class="btn btn-info active">
-								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-									</label>
-									<label class="btn btn-info rounded-right">
-										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-									</label>
-								</div>-->							
+								</div>					
 							</div>		
 						</div>
 					</div>				
@@ -558,23 +547,22 @@
 
 			<section class="personalized-section bg-grid open" >
 				<div class="personalized-section-content animated" style="display:block;">
-
 					<div class="container-fluid padding-sm">
 						<div class="row">
 							<div class="col-sm-12">
-														<div class="pull-right p-sm">
-								<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
-									<label class="btn btn-info rounded-left">
-										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-									</label>
-									<label class="btn btn-info active">
-								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-									</label>
-									<label class="btn btn-info rounded-right">
-										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-									</label>
-								</div>														
-							</div>	
+								<div class="pull-right p-sm">
+									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
+										<label class="btn btn-info rounded-left">
+											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+										</label>
+										<label class="btn btn-info active">
+									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+										</label>
+										<label class="btn btn-info rounded-right">
+											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+										</label>
+									</div>														
+								</div>	
 							</div>
 						</div>
 						<div id="personalized-area" class="row"></div>
