@@ -1776,7 +1776,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	animation-name: fadeOut;
 }
 
-
+.personalized-section-content .k-listview {
+	height: 500px;
+}
 
 
 
