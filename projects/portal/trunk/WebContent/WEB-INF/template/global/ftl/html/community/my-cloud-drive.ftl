@@ -142,7 +142,7 @@
 				});						
 				galleryDataSource.read();	
 			}
-			if( section_content.is("hidden") ){
+			if( section_content.is(":hidden") ){
 				$section.toggleClass("open");
 				section_content.slideDown("slow");				
 			}
