@@ -39,8 +39,11 @@ function setupPersonalizedSection(){
 		var section_content = $section.children(".personalized-section-content");
 
 		$section.find(".personalized-section-heading>.open").click(function(e){
-			//var $parent = $(this).parent();			
-			//$section.toggleClass("open");
+			if(section_content.is(":hidden")){
+				section_content.slideDown("slow", function(){
+					$section.toggleClass("open");					
+				});					
+			}
 		});
 		
 		$section.find(".personalized-section-content>.close").click(function(e){
