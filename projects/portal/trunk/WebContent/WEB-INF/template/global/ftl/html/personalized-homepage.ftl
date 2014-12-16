@@ -456,8 +456,8 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-6 p-sm">
-								<div class="my-announce-list no-border-b"></div>
-								<div id="my-announce-list-pager" class=""> </div>
+								<div class="my-announce-list"></div>
+								<div id="my-announce-list-pager"> </div>
 							</div>
 								<div class="col-sm-6 p-sm">
 									<div class="panel panel-default no-border no-margin-b my-announce-view animated fadeIn"  style="display:none;"  data-bind="visible: visible">
