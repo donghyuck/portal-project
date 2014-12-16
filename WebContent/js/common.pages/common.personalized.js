@@ -33,21 +33,21 @@ function preparePersonalizedArea( element, minCount, colSize ){
 
 function setupPersonalizedSection(){
 	
-	$("section.personalized-session").each(function(index){
+	$("section.personalized-section").each(function(index){
 		var $section = $( this );			
-		$section.find(".personalized-session-heading>.open").click(function(e){
+		$section.find(".personalized-section-heading>.open").click(function(e){
 			var $parent = $(this).parent();			
-			$section.toggleClass("open");
+			//$section.toggleClass("open");
 		});
 		
-		$section.find(".personalized-session-content>.close").click(function(e){
+		$section.find(".personalized-section-content>.close").click(function(e){
 			var $parent = $(this).parent();			
 			if( common.ui.defined(kendo.support.transitions) ){	
 				$section.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
-					$section.removeClass("open out");				
+					$parent.slideUp("slow");		
 				});					
 			}else{
-				$section.removeClass("open out");	
+				$parent.slideUp("slow");
 			}
 			$section.addClass("out");
 		});
