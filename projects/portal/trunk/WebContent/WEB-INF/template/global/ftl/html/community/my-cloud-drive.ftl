@@ -767,7 +767,7 @@
 		<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
 		<div class="container">
 			<div class="row">
-				<div class="col-xs-12 padding-sm">
+				<div class="col-md-offset-4 col-sm-6 col-xs-12  padding-sm">
 					<div id="image-gallery-pager" class="k-pager-wrap no-border"></div>
 				</div>	
 			</div>			
