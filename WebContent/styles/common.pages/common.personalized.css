@@ -1748,7 +1748,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .personalized-section-content>.open {
 	position: absolute;
-	top: 0;
+	bottom: 0px;
 	right: 0;
 	line-height: 50px;
 	font-size: 40px;
