@@ -571,7 +571,7 @@
 									</label>
 								</div>														
 							</div>	
-					<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">
+					<div class="container-fluid padding-sm">
 						<div id="personalized-area" class="row"></div>
 					</div>													
 				</div>				
