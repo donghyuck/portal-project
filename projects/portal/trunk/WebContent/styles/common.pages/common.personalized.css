@@ -1739,6 +1739,36 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background-color: rgba(245, 245, 245, .85);
 }
 
+.personalized-section-heading>.open{
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 50px;	
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	font: normal normal normal 14px/1 FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;	
+	font-size: 4em;	
+	display: block;
+	opacity: .5;	
+} 
+
+.personalized-section-heading>.open:before{
+	content: "\f103";
+}
+.personalized-section-heading>.open:hover {
+	opacity: 1;
+}
+
+.personalized-section.open .personalized-section-heading>.open {
+	display: none;
+}
+
+
 
 
 
