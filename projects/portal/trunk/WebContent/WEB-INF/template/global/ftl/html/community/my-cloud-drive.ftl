@@ -561,7 +561,7 @@
 					<span class="open animated"></span>
 					<div class="container">
 						<div class="personalized-section-title">
-							<i class="icon-flat home"></i>
+							<i class="icon-flat finder"></i>
 							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">
 								<div class="btn-group navbar-btn" data-toggle="buttons">
@@ -764,7 +764,7 @@
 	
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery" >
-		<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
+		<ul id="image-gallery-grid" class="og-grid"></ul>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-4 col-sm-6 col-xs-12  padding-sm">
