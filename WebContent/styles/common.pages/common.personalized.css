@@ -1649,6 +1649,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	color: #616161;
 	background-color: #fff;
 	position:relative;
+	margin-bottom: 15px;
 }
 
 .personalized-section-content {
