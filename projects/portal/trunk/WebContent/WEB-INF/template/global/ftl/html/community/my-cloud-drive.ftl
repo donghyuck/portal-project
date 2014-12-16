@@ -557,7 +557,7 @@
 			</section>		
 
 			<section class="personalized-section bg-grid open" >
-				<div class="personalized-section-content animated arrow-up" style="display:block;">
+				<div class="personalized-section-content animated" style="display:block;">
 							<div class="pull-right p-sm">
 								<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
 									<label class="btn btn-info rounded-left">
