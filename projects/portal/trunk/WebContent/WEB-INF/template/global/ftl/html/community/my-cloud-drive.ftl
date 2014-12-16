@@ -517,11 +517,11 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-session bg-trans" >
-				<div class="personalized-session-heading">
+			<section class="personalized-section bg-trans" >
+				<div class="personalized-section-heading">
 					<span class="open animated"></span>
 					<div class="container">
-						<div class="personalized-session-title">
+						<div class="personalized-section-title">
 							<i class="icon-flat folder"></i>
 							<h3>MY 드라이브 <span>PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정	리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-session-heading-controls">
@@ -544,7 +544,7 @@
 						</div>
 					</div>				
 				</div>
-				<div class="personalized-session-content animated arrow-up">
+				<div class="personalized-section-content animated arrow-up">
 					<span class="close animated"></span>
 				</div>			
 			</div>						
