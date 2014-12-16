@@ -557,9 +557,7 @@
 			</section>		
 
 			<section class="personalized-section bg-grid open" >
-				<div class="personalized-section-heading">
-						<div class="personalized-section-title">
-							<h3><span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
+				<div class="personalized-section-content animated arrow-up" style="display:block;">
 							<div class="personalized-section-heading-controls">
 								<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
 									<label class="btn btn-info rounded-left">
@@ -572,12 +570,7 @@
 										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 									</label>
 								</div>														
-							</div>		
-						</div>
-									
-				</div>
-				<div class="personalized-section-content animated arrow-up" style="display:block;">
-					
+							</div>						
 				</div>				
 			</section><!-- /.section -->
 			
