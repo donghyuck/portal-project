@@ -320,14 +320,14 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-session border-b open" >
-				<div class="personalized-session-heading bg-dark">
+			<section class="personalized-section" >
+				<div class="personalized-section-heading">
 					<span class="open"></span>
 					<div class="container">
-						<div class="personalized-session-title">
+						<div class="personalized-section-title">
 							<i class="icon-flat home"></i>
 							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
-							<div class="personalized-session-heading-controls">
+							<div class="personalized-section-heading-controls">
 								<div id="personalized-buttons" class="navbar-btn btn-group">
 									<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 									<button type="button" class="btn-u btn-u-sea rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
@@ -347,31 +347,31 @@
 						</div>
 					</div>				
 				</div>
-				<div class="personalized-session-content animated arrow-up">
+				<div class="personalized-section-content animated arrow-up">
 					<span class="close"></span>
 					<div class="container" style="min-height:150px;">
-				<div class="row p-sm">
-					<div class="col-md-3">						
-						<div id="my-notification-panel" class="panel panel-danger rounded border-2x" style="display:none;">
-							<div class="panel-heading">
-								<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
-								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-							<div class="panel-body"></div>
-						</div><!-- /.panel -->			
-					</div><!-- /.col-md-3 -->
-					<div class="col-md-3">				
-						<div id="my-memo-panel" class="panel panel-primary rounded border-2x" style="display:none">
-							<div class="panel-heading">
-								<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
-								<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-							<div class="panel-body"></div>
-						</div><!-- /.panel -->																
-					</div><!-- /.col-md-3 -->
-				</div><!-- /.row -->
-					</div>							
-
+						<div class="row p-sm">
+							<div class="col-md-3">						
+								<div id="my-notification-panel" class="panel panel-danger rounded border-2x" style="display:none;">
+									<div class="panel-heading">
+										<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
+										<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
+									<div class="panel-body"></div>
+								</div><!-- /.panel -->			
+							</div><!-- /.col-md-3 -->
+							<div class="col-md-3">				
+								<div id="my-memo-panel" class="panel panel-primary rounded border-2x" style="display:none">
+									<div class="panel-heading">
+										<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
+										<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
+									<div class="panel-body"></div>
+								</div><!-- /.panel -->																
+							</div><!-- /.col-md-3 -->
+						</div><!-- /.row -->
+					</div>
 				</div>				
-			</section>
+			</section><!-- /.section -->
+			
 			<section class="personalized-session open" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >								
