@@ -87,7 +87,7 @@
 					$('#myTab a:first').tab('show') ;
 				});			
 				
-				setupPersonalizedSection();				
+				//setupPersonalizedSection();				
 				// END SCRIPT 				
 			}
 		}]);	
@@ -128,15 +128,17 @@
 				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
 				$(".personalized-section:first .personalized-session-content>.close").click(function(e){
 					var $this = $(this);
-					$(".personalized-section").removeClass("open");					
+					$(".personalized-section").toggleClass("open");
+					$(".personalized-section").slideUp("slow");										
 					var target = $("[data-action='show-gallery-section']");
-					target.toggleClass("active");
+					target.toggleClass("active");					
 					common.ui.enable(target);
 				});				
 				galleryDataSource.read();	
 			}
 			if( !$(".personalized-session").hasClass("open") ){
-				$(".personalized-session").addClass("open");
+				$(".personalized-session").toggleClass("open");
+				$(".personalized-section").slideDown("slow");				
 			}
 		}
 		<!-- ============================== -->
