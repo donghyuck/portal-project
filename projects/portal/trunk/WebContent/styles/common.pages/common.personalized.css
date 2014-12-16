@@ -1778,6 +1778,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .personalized-section-content .k-listview {
 	height: 500px;
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
 }
 
 .personalized-section-content .k-pager-wrap {
