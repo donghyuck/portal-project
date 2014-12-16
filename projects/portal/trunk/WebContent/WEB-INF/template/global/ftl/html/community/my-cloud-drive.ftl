@@ -550,7 +550,7 @@
 					<div class="container-fluid padding-sm">
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="pull-right p-sm">
+								<div class="pull-right">
 									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
 										<label class="btn btn-info rounded-left">
 											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
