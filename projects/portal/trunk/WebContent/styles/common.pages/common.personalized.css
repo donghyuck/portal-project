@@ -1828,6 +1828,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	min-height:300px;
 }
 
+.personalized-section.bg-grid .personalized-section-heading{
+	padding: 5px 5px;
+}
+
+.personalized-section.bg-grid .personalized-section-heading .personalized-section-heading-controls {
+	margin-top : 0;
+}
+
 .personalized-session {
 	color: #616161;
 	position: relative;
