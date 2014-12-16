@@ -559,7 +559,7 @@
 			<section class="personalized-section bg-grid open" >
 				<div class="personalized-section-heading">
 						<div class="personalized-section-title">
-							<h3></h3>
+							<h3><span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">
 								<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
 									<label class="btn btn-info rounded-left">
