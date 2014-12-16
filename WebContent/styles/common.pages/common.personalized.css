@@ -1648,6 +1648,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .personalized-section {
 	color: #616161;
 	background-color: #fff;
+	position:relative;
 }
 
 .personalized-section-content {
@@ -1746,7 +1747,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .personalized-section-heading>.open{
 	position: absolute;
-	top: 0;
+	top: 35px;
 	right: 0;
 	line-height: 50px;	
 	display: block;
