@@ -1666,6 +1666,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	left: 50%;
 	margin-left: -10px;
 	top: -20px;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;		
 }
 
 .personalized-section-heading {
@@ -1730,6 +1732,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	content: "";
 	display: block;
 	opacity: .5;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;		
 }
 
 .personalized-section-content>.close:hover {
