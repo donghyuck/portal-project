@@ -1804,7 +1804,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .personalized-section .morphing button[data-toggle='morphing'] {
 	position: absolute;
 	right: 0;
-	top: -1px;
+	top: 0;
 	-webkit-animation-name: fadeInLeft;
 	animation-name: fadeInLeft;
 }
