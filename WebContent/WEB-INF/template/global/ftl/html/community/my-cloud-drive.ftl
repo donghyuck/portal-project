@@ -554,7 +554,10 @@
 				<div class="personalized-section-content animated arrow-up">
 					<span class="close animated"></span>
 				</div>			
-			</div>						
+			</section>		
+
+			
+							
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">
 				<div id="personalized-area" class="row"></div>
 			</div>		
