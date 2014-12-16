@@ -1833,7 +1833,10 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 .personalized-section.bg-grid .personalized-section-heading .personalized-section-heading-controls {
-	margin-top : 0;
+position: absolute;
+right: 0;
+bottom: 0;
+padding: 5px;
 }
 
 .personalized-session {
