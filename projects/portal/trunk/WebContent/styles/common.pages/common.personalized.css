@@ -1729,7 +1729,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	width: 50px;
 	height: 50px;
 	text-align: center;
-	background: url(/images/cross-grey.png) no-repeat center center;
+	background: url(/images/grey-cross.png) no-repeat center center;
 	background-size: 25px;
 	content: "";
 	display: block;
@@ -1746,6 +1746,25 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background-color: rgba(245, 245, 245, .85);
 }
 
+.personalized-section-content>.open {
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 50px;
+	font-size: 40px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	background: url(/images/grey-angle-double-down.png) no-repeat center center;
+	background-size: 25px;
+	content: "";
+	display: block;
+	opacity: .5;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;		
+}
+/*
 .personalized-section-heading>.open{
 	position: absolute;
 	bottom: 0px;
@@ -1769,6 +1788,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .personalized-section-heading>.open:before{
 	content: "\f103";
 }
+*/
 .personalized-section-heading>.open:hover {
 	opacity: 1;
 }
