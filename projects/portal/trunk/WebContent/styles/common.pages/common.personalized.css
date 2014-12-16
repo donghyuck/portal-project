@@ -1780,8 +1780,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	height: 500px;
 }
 
-
-
+.personalized-section-content .k-pager-wrap {
+	border-bottom: 0;
+	border-left: 0;
+	border-right: 0;
+}
 
 .personalized-session {
 	color: #616161;
