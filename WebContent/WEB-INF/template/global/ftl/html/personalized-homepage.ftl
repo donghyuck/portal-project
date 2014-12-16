@@ -322,7 +322,7 @@
 			<!-- START MAIN CONTENT -->
 			<section class="personalized-section bg-transparent open" >
 				<div class="personalized-section-heading">
-					<span class="open"></span>
+					<span class="open animated"></span>
 					<div class="container">
 						<div class="personalized-section-title">
 							<i class="icon-flat home"></i>
@@ -348,7 +348,7 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">
-					<span class="close"></span>
+					<span class="close animated"></span>
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
 							<div class="col-md-3">						
