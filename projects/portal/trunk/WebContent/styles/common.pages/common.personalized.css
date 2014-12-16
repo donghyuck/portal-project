@@ -1756,7 +1756,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	width: 50px;
 	height: 50px;
 	text-align: center;
-	background: url(/images/grey-angle-double-down.png) no-repeat center center;
+	background: url(/images/common/grey-angle-double-down.png) no-repeat center center;
 	background-size: 25px;
 	content: "";
 	display: block;
@@ -1898,7 +1898,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	width: 50px;
 	height: 50px;
 	text-align: center;
-	background: url(/images/cross-grey.png) no-repeat center center;
+	background: url(/images/common/cross-grey.png) no-repeat center center;
 	background-size: 25px;
 	content: "";
 	display: block;
