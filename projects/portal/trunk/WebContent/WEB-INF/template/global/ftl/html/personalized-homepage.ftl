@@ -372,7 +372,7 @@
 				</div>				
 			</section><!-- /.section -->
 			
-			<section class="personalized-session open" >
+			<section class="personalized-section bg-transparent open" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >								
 									<button class="btn-u btn-u-red animated" type="button" data-toggle="morphing" data-action="morphing"><i class="fa fa-plus lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>									
@@ -432,13 +432,13 @@
 								</div>								
 							</#if>
 										
-				<div class="personalized-session-heading  bg-dark">
+				<div class="personalized-section-heading">
 					<span class="open"></span>
 					<div class="container">
-						<div class="personalized-session-title">
+						<div class="personalized-section-title">
 							<i class="icon-flat mega-phone"></i>
 							<h4> 공지 &amp; 이벤트 <span>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></span></h4>
-							<div class="personalized-session-heading-controls">
+							<div class="personalized-section-heading-controls">
 								<div id="announce-selector" class="btn-group" data-toggle="buttons" data-role="buttongroup">
 									<label class="btn btn-info btn-sm active rounded-left">
 										<input type="radio" name="notice-target" value="30">사이트
