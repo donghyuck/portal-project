@@ -558,11 +558,10 @@
 
 			<section class="personalized-section bg-grid open" >
 				<div class="personalized-section-heading">
-					<span class="open animated"></span>
-					<div class="container">
 						<div class="personalized-section-title">
+							<h3></h3>
 							<div class="personalized-section-heading-controls">
-								<div class="btn-group navbar-btn" data-toggle="buttons">
+								<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
 									<label class="btn btn-info rounded-left">
 										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
 									</label>
@@ -575,10 +574,9 @@
 								</div>														
 							</div>		
 						</div>
-					</div>				
+									
 				</div>
 				<div class="personalized-section-content animated arrow-up" style="display:block;">
-					<span class="close animated"></span>
 					
 				</div>				
 			</section><!-- /.section -->
