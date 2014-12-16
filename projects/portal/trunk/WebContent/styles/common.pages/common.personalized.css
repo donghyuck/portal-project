@@ -1735,6 +1735,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	opacity: 1;
 }
 
+.personalized-section.bg-transparent {
+	background-color: rgba(245, 245, 245, .85);
+}
 
 
 
