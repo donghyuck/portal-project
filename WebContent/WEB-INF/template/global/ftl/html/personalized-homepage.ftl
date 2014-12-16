@@ -320,7 +320,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-section bg-transparent open" >
+			<section class="personalized-section bg-transparent" >
 				<div class="personalized-section-heading">
 					<span class="open animated"></span>
 					<div class="container">
@@ -372,7 +372,7 @@
 				</div>				
 			</section><!-- /.section -->
 			
-			<section class="personalized-section bg-transparent open" >
+			<section class="personalized-section bg-transparent" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >								
 									<button class="btn-u btn-u-red animated" type="button" data-toggle="morphing" data-action="morphing"><i class="fa fa-plus lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>									
