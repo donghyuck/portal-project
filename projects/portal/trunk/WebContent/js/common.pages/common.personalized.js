@@ -46,7 +46,7 @@ function setupPersonalizedSection(){
 		$section.find(".personalized-section-content>.close").click(function(e){
 			if(section_content.is(":visible")){
 				section_content.slideUp("slow", function(){
-					section_content.toggleClass("open");					
+					$section.toggleClass("open");					
 				});				
 			}	
 			/*
