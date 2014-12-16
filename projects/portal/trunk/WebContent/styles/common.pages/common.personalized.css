@@ -1756,6 +1756,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	font-size: 4em;	
 	display: block;
 	opacity: .5;	
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;	
 } 
 
 .personalized-section-heading>.open:before{
@@ -1766,7 +1768,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 .personalized-section.open .personalized-section-heading>.open {
-	display: none;
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
 }
 
 
