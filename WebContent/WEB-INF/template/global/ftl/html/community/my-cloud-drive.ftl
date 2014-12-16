@@ -733,21 +733,7 @@
 	<script type="text/x-kendo-template" id="image-gallery-template">	
 	<div id="image-gallery" class="container">
 				<div class="row">
-					<div class="col-xs-12 padding-sm">			
-					
-						<!--	
-						<div class="panel panel-default rounded">
-							<div class="panel-heading">						
-							<button type="button" class="btn-close btn-close-grey btn-xs" data-dismiss="panel" data-dismiss-target="#image-gallery" data-animate="slideUp"  data-toggle-target="button[data-action='show-gallery-section']" ><span class="sr-only">Close</span></button>
-							<h3 class="panel-title"><i class="fa fa-picture-o"></i> MY 포토(업로드 및 수정)</h3>
-							</div>
-							<div class="panel-body padding-sm no-padding-hr no-padding-t" style="min-height:300px;">
-								
-								<div id="image-gallery-slider" class="superbox"></div>
-							</div>
-							<div class="panel-footer no-padding"></div>
-						</div>			
-						-->			
+					<div class="col-xs-12 padding-sm">				
 						<ul id="image-gallery-grid" class="og-grid no-padding"></ul>
 						<div id="image-gallery-pager" class="k-pager-wrap no-border"></div>
 					</div>	
