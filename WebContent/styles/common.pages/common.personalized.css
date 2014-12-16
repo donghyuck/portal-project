@@ -1653,6 +1653,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .personalized-section-content {
 	background: #fff;
 	position: relative;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;		
 }
 
 .personalized-section-content.arrow-up:after {
@@ -1665,9 +1667,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border-bottom: 20px solid #fff;
 	left: 50%;
 	margin-left: -10px;
-	top: -20px;
-	-webkit-animation-name: fadeIn;
-	animation-name: fadeIn;		
+	top: -20px;	
 }
 
 .personalized-section-heading {
