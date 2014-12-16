@@ -137,7 +137,7 @@
 				galleryDataSource.read();	
 			}
 			if( !$(".personalized-session").hasClass("open") ){
-				$(".personalized-session").toggleClass("open");
+				$(".personalized-session").addClass("open");
 				$(".personalized-section").slideDown("slow");				
 			}
 		}
