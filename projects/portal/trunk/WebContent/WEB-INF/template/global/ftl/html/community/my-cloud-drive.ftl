@@ -97,7 +97,7 @@
 		function createGallerySection(){
 			var renderTo = "image-gallery";			
 			if( $( "#" +renderTo).length == 0 ){			
-				$('.wrapper .personalized-session-content').first().append($("#image-gallery-template").html());
+				$('.wrapper .personalized-section-content').first().append($("#image-gallery-template").html());
 				var galleryDataSource = common.ui.datasource(
 					'<@spring.url "/data/images/list.json?output=json" />',
 					{
@@ -126,9 +126,9 @@
 				common.ui.thumbnail.expanding({ template: $("#image-gallery-expanding-template").html() });			
 				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
 				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");				
-				$(".personalized-session:first .personalized-session-content>.close").click(function(e){
+				$(".personalized-section:first .personalized-session-content>.close").click(function(e){
 					var $this = $(this);
-					$(".personalized-session").removeClass("open");					
+					$(".personalized-section").removeClass("open");					
 					var target = $("[data-action='show-gallery-section']");
 					target.toggleClass("active");
 					common.ui.enable(target);
