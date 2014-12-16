@@ -1746,7 +1746,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background-color: rgba(245, 245, 245, .85);
 }
 
-.personalized-section-content>.open {
+.personalized-section-heading>.open {
 	position: absolute;
 	bottom: 0px;
 	right: 0;
