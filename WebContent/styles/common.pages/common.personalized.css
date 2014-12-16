@@ -1789,6 +1789,30 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border-right: 0;
 }
 
+
+.personalized-section .morphing {
+	top: 0;
+	right: 0;
+	height: 0;
+	min-height: 0;
+	width: 200px;
+	z-index: 10;
+}
+
+.personalized-section .morphing button[data-toggle='morphing'] {
+	position: absolute;
+	right: 0;
+	top: -1px;
+	-webkit-animation-name: fadeInLeft;
+	animation-name: fadeInLeft;
+}
+
+.personalized-section .morphing.open button[data-toggle='morphing'] {
+	-webkit-animation-name: fadeOutLeft;
+	animation-name: fadeOutLeft;
+}
+
+
 .personalized-session {
 	color: #616161;
 	position: relative;
