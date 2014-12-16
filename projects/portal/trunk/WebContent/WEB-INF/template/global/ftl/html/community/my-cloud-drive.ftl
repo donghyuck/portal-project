@@ -85,7 +85,9 @@
 				// SpMenu Tabs select first				
 				$("#personalized-controls-section").on("open", function(e){
 					$('#myTab a:first').tab('show') ;
-				});				
+				});			
+				
+				setupPersonalizedSection();				
 				// END SCRIPT 				
 			}
 		}]);	
@@ -517,6 +519,7 @@
 			<!-- START MAIN CONTENT -->
 			<section class="personalized-session bg-trans" >
 				<div class="personalized-session-heading">
+					<span class="open animated"></span>
 					<div class="container">
 						<div class="personalized-session-title">
 							<i class="icon-flat folder"></i>
@@ -542,7 +545,7 @@
 					</div>				
 				</div>
 				<div class="personalized-session-content animated arrow-up">
-					<span class="close"></span>
+					<span class="close animated"></span>
 				</div>			
 			</div>						
 			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">
