@@ -44,8 +44,16 @@ function setupPersonalizedSection(){
 		});
 		
 		$section.find(".personalized-section-content>.close").click(function(e){
-			if(section_content.is(":visible"))
+			if(section_content.is(":visible")){
 				section_content.slideUp("slow");		
+				if( common.ui.defined(kendo.support.transitions) ){	
+					section_content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+						section_content.toggleClass("open");
+					});					
+				}else{
+					section_content.toggleClass("open");
+				}			
+			}	
 			/*
 			if( common.ui.defined(kendo.support.transitions) ){	
 				section_content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
