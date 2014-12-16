@@ -547,8 +547,8 @@
 
 			<section class="personalized-section bg-grid open" >
 				<div class="personalized-section-content animated" style="display:block;">
-					<div class="container-fluid padding-sm">
-						<div class="row">
+					<div class="container-fluid p-xs">
+						<div class="row m-b-xs">
 							<div class="col-sm-12">
 								<div class="pull-right">
 									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
