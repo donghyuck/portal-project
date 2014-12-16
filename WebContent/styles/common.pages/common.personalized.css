@@ -1657,6 +1657,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	position: relative;
 	-webkit-animation-name: fadeIn;
 	animation-name: fadeIn;		
+	display: none;
 }
 
 .personalized-section-content.arrow-up:after {
