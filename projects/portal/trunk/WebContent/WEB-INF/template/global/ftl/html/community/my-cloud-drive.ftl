@@ -558,7 +558,11 @@
 
 			<section class="personalized-section bg-grid open" >
 				<div class="personalized-section-content animated" style="display:block;">
-							<div class="pull-right p-sm">
+
+					<div class="container-fluid padding-sm">
+						<div class="row">
+							<div class="col-sm-12">
+														<div class="pull-right p-sm">
 								<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
 									<label class="btn btn-info rounded-left">
 										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
@@ -571,7 +575,8 @@
 									</label>
 								</div>														
 							</div>	
-					<div class="container-fluid padding-sm">
+							</div>
+						</div>
 						<div id="personalized-area" class="row"></div>
 					</div>													
 				</div>				
