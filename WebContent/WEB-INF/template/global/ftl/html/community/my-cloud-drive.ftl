@@ -556,7 +556,7 @@
 				</div>			
 			</section>		
 
-			<section class="personalized-section bg-transparent" >
+			<section class="personalized-section bg-grid" >
 				<div class="personalized-section-heading">
 					<span class="open animated"></span>
 					<div class="container">
