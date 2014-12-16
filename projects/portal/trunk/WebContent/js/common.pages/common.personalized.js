@@ -37,22 +37,21 @@ function setupPersonalizedSection(){
 		var $section = $( this );		
 		var section_heading = $section.children(".personalized-section-heading");
 		var section_content = $section.children(".personalized-section-content");
-		alert(section_heading.html());
+
 		$section.find(".personalized-section-heading>.open").click(function(e){
-			var $parent = $(this).parent();			
+			//var $parent = $(this).parent();			
 			//$section.toggleClass("open");
 		});
 		
 		$section.find(".personalized-section-content>.close").click(function(e){
-			var $parent = $(this).parent();			
+			
 			if( common.ui.defined(kendo.support.transitions) ){	
-				$section.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
-					$parent.slideUp("slow");		
+				section_content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+					section_content.slideUp("slow");		
 				});					
 			}else{
-				$parent.slideUp("slow");
+				section_content.slideUp("slow");
 			}
-			$section.addClass("out");
 		});
 	});
 	
