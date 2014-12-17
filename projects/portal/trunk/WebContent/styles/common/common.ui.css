@@ -304,6 +304,25 @@ body.aside-menu-in .aside-menu {
 	right: 0px;
 }
 
+.btn-down {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 25px;
+	right: 25px;
+	cursor: pointer;	
+	background: url(/images/common/white-angle-down.png) no-repeat center center;	
+} 
+
+.btn-down.btn-down-grey {
+	background: url(/images/common/grey-angle-down.png) no-repeat center center;		
+}
+.btn-down.btn-xs {
+	width: 20px;
+	height: 20px;	
+}	
+	
+
 .panel-heading .btn-close.btn-xs , .panel-heading .btn-close.btn-sm {
 	position: relative;
 	float: right;
@@ -335,6 +354,7 @@ body.aside-menu-in .aside-menu {
 	-moz-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 }
+
 
 .close-sm:hover::before,.close-sm:hover::after {
 	background: #333;
@@ -1060,6 +1080,7 @@ body:not  (.right-to-left  ) .no-border-l {
 .bg-transparent {
 	background: transparent;
 }
+
 
 .bs-callout {
 	padding: 20px;
