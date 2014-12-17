@@ -380,7 +380,7 @@
 								});		
 								var model = common.ui.observable({
 									data : {
-										objectType : 2;
+										objectType : 2,
 										sourceUrl : null, 
 										imageUrl : null
 									},
