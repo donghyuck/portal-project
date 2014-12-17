@@ -1747,6 +1747,12 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background-color: rgba(245, 245, 245, .85);
 }
 
+.personalized-section .personalized-section-content {
+	display: block;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;			
+}
+
 .personalized-section-heading>.open {
 	position: absolute;
 	bottom: 0px;
