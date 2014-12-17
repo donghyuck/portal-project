@@ -370,6 +370,9 @@
 									async: {
 										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
 									},
+									upload: function(e){
+										e.data = {objectType:getMyDriverPhotoSource()};
+									},
 									success : function(e) {	
 										var photo_list_view = common.ui.listview($('#photo-list-view'));
 										photo_list_view.dataSource.read();								
