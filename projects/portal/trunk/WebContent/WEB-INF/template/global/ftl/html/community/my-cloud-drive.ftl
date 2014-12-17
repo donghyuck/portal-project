@@ -685,6 +685,19 @@
 									<p class="pull-right">				
 										<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
 									</p>	
+									
+									<div class="btn-group" data-toggle="buttons" id="image-source-list">
+										<label class="btn btn-sm btn-warning rounded-left active">
+											<input type="radio" name="image-source"  value="all"> 전체
+										</label>
+										<label class="btn btn-sm btn-warning">
+											<input type="radio" name="image-source"  value="image"><i class="fa fa-filter"></i> 이미지
+										</label>
+										<label class="btn btn-sm btn-warning rounded-right">
+											<input type="radio" name="image-source"  value="file"><i class="fa fa-filter"></i> 파일
+										</label>	
+									</div>	
+																		
 									</#if>											
 								</div>
 								<div class="panel-body sm-padding" style="min-height:450px;">
