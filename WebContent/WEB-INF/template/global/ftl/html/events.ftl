@@ -1,5 +1,4 @@
 <#ftl encoding="UTF-8"/>
-<#assign contextPath = request.contextPath >
 <html decorator="homepage">
 <head>
 		<title>기업소개</title>
@@ -10,43 +9,42 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.1.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',		
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',			
-			'${request.contextPath}/js/common/common.ui.js',
-			'${request.contextPath}/js/jquery.extension/modernizr.custom.js',
-			'${request.contextPath}/js/jquery.extension/classie.js',
-			],
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/unify/pages/feature_timeline-v2.css"/>',		
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>'],
 			complete: function() {
 			
 				common.ui.setup({
 					features:{
-						backstretch : false
+						wallpaper : false,
+						lightbox : true,
+						spmenu : false,
+						morphing : false,
+						accounts : {
+							authenticate : function(e){
+								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+															 
+								}
+							} 
+						}						
 					},
-					worklist:jobs
+					jobs:jobs
 				});	
 
 				// ACCOUNTS LOAD	
-				var currentUser = new User();			
-				$("#account-navbar").extAccounts({
-					externalLoginHost: "${ServletUtils.getLocalHostAddr()}",	
-					<#if action.isAllowedSignIn() ||  !action.user.anonymous  >
-					template : kendo.template($("#account-template").html()),
-					</#if>
-					authenticate : function( e ){
-						e.token.copy(currentUser);
-					}				
-				});		
-
-				// 1. Announces 				
-				//$("#announce-grid").data( "announcePlaceHolder", new Announce () );					
+				var currentUser = new common.ui.data.User();			
+	/*		
 				$("#announce-grid").kendoGrid({
 					dataSource: new kendo.data.DataSource({
 						transport: {
@@ -85,7 +83,8 @@
 						$("#announce-grid").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement();
 					}			
-				});							
+				});		
+*/									
 				<#if !action.user.anonymous >				
 				
 				</#if>	
