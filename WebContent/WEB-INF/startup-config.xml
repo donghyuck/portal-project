@@ -127,7 +127,7 @@ PC9saWNlbnNlPg==</file>
 		</image>
 		
 		<multipart>
-			<maxUploadSize>100000</maxUploadSize>
+			<maxUploadSize>31457280</maxUploadSize><!--  30MB  -->
 		</multipart>
 		
 		<download>
