@@ -215,22 +215,24 @@
 						btn.button('loading');
 						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
 							common.ui.notification({
-								title:"공지 입력 오류", 
-								message: "제목 또는 본문을 입력하세요." ,
 								hide:function(e){
 									btn.button('reset');
 								}
-							});
+							}).show(
+								{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
+								"error"
+							);
 							return ;
 						}
 						if( $this.announce.startDate >= $this.announce.endDate  ){
 							common.ui.notification({
-								title:"공지 기간 입력 오류", 
-								message: "시작일자가 종료일자보다 이후일 수 없습니다." ,
 								hide:function(e){
 									btn.button('reset');
 								}
-							});
+							}).show(
+								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
+								"error"
+							);							
 							return ;
 						}
 						common.ui.ajax(
@@ -245,12 +247,13 @@
 								},
 								fail: function(){								
 									common.ui.notification({
-									title:"저장 오류", 
-									message: "시스템 운영자에게 문의하여 주십시오." ,
-									hide:function(e){
-										btn.button('reset');
-									}
-									});								
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
 								},
 								requestStart : function(){
 									kendo.ui.progress(renderTo, true);
