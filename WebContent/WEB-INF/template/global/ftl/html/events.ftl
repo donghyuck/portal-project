@@ -44,6 +44,45 @@
 
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
+				common.ui.listview(	listRenderTo, {
+					dataSource : common.ui.datasource(
+						'<@spring.url "/data/announce/list.json"/>',
+						{
+						/*
+							transport : {
+								parameterMap: function(options, operation) {
+									if( typeof options.objectType === "undefined"  ){
+										return {objectType: announceSelector.value };	
+									}else{			
+										return options;		
+									} 
+								}
+							},*/
+							pageSize: 15,
+							schema: {
+								data : "announces",
+								model : common.ui.data.Announce,
+								total : "totalCount"
+							}
+						}
+					),
+					rowTemplate: kendo.template($("#announce-row-template").html()),
+					sortable: true,
+					pageable: false,
+					selectable: "single" ,
+					dataBound: function(e){
+						model.set("visible", false);
+					},
+					change: function(e){						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+						$("#announce-grid").data( "announcePlaceHolder", selectedCell );
+						displayAnnouncement();
+					}
+				}
+			);
+			
+				
 	/*		
 				$("#announce-grid").kendoGrid({
 					dataSource: new kendo.data.DataSource({
