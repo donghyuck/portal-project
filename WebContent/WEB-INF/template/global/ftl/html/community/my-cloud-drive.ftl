@@ -688,7 +688,7 @@
 									
 									<div class="btn-group" data-toggle="buttons" id="image-source-list">
 										<label class="btn btn-sm btn-danger rounded-left active">
-											<input type="radio" name="image-source"  value="all"><i class="fa fa-user"></i> 
+											<input type="radio" name="image-source"  value="all"><i class="fa fa-user"></i> ME
 										</label>
 										<label class="btn btn-sm btn-danger">
 											<input type="radio" name="image-source"  value="image"><i class="fa fa-building-o"></i> 회사
