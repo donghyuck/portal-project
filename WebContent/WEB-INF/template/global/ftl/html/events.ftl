@@ -156,7 +156,7 @@
 			text-align: center;
 		}
 
-		#announce-grid .k-grid .k-state-selected {
+		#announce-grid.k-grid .k-state-selected {
 			background: #F5F5F5;
 			color: #585f69;
 		}
