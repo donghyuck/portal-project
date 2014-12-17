@@ -44,7 +44,7 @@
 
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-				common.ui.listview(	listRenderTo, {
+				common.ui.listview(	$("#announce-grid"), {
 					dataSource : common.ui.datasource(
 						'<@spring.url "/data/announce/list.json"/>',
 						{
