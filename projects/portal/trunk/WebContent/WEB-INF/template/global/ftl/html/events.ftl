@@ -70,9 +70,6 @@
 					sortable: true,
 					pageable: false,
 					selectable: "single" ,
-					dataBound: function(e){
-						model.set("visible", false);
-					},
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
