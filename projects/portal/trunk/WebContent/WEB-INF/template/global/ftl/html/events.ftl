@@ -154,7 +154,12 @@
 		#announce-list-section .k-grid-header .k-header {
 			text-align: center;
 		}
-							
+
+		#announce-grid .k-grid .k-state-selected {
+			background: #F5F5F5;
+			color: #585f69;
+		}
+									
 		</style>   	
 	</head>
 	<body>
