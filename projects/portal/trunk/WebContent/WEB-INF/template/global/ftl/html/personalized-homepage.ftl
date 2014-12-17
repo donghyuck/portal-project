@@ -142,6 +142,7 @@
 				edit : function(e){
 					e.stopPropagation();
 					createAnnounceEditorSection(this.announce);
+					common.ui.scroll.top(renderTo);
 					$(".morphing").toggleClass("open");					
 				}
 			});			
