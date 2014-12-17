@@ -302,6 +302,10 @@
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
 		<!-- ============================== -->				
+		function getPhotoSource(){
+			return $("#image-source-list input[type=radio][name=image-source]:checked").val();			
+		}
+		
 		function createPhotoListView(){
 			if( !common.ui.exists($('#photo-list-view')) ){
 				common.ui.listview(
