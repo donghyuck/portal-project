@@ -668,7 +668,7 @@
 	} 
 
 	var DEFAULT_NOTIFICATION_SETTING = {
-		autoHideAfter : 5000;	
+		autoHideAfter : 5000,
 		position : {	pinned : true, top : 10, right : 10 },	
 		stacking : "down",
 		templates : [{
