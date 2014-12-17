@@ -320,7 +320,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-section bg-transparent" >
+			<section class="personalized-section bg-transparent open" >
 				<div class="personalized-section-heading">
 					<span class="open animated"></span>
 					<div class="container">
@@ -331,17 +331,6 @@
 								<div id="personalized-buttons" class="navbar-btn btn-group">
 									<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 									<button type="button" class="btn-u btn-u-sea rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
-								</div>	
-								<div class="btn-group navbar-btn" data-toggle="buttons">
-									<label class="btn btn-info rounded-left">
-										<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-									</label>
-									<label class="btn btn-info active">
-								 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-									</label>
-									<label class="btn btn-info rounded-right">
-										<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-									</label>
 								</div>														
 							</div>		
 						</div>
@@ -490,11 +479,31 @@
 					</div>
 				</div>
 			</section>
-			
-			<div id="main-content" class="container-fluid padding-sm" style="min-height:300px;">	
-				<div id="personalized-area" class="row"></div>
-				
-			</div>		
+
+			<section class="personalized-section bg-grid open" >
+				<div class="personalized-section-content animated" style="display:block;">
+					<div class="container-fluid p-xs">
+						<div class="row m-b-xs">
+							<div class="col-sm-12">
+								<div class="pull-right">
+									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
+										<label class="btn btn-info rounded-left">
+											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+										</label>
+										<label class="btn btn-info active">
+									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+										</label>
+										<label class="btn btn-info rounded-right">
+											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+										</label>
+									</div>														
+								</div>	
+							</div>
+						</div>
+						<div id="personalized-area" class="row"></div>
+					</div>													
+				</div>				
+			</section><!-- /.section -->
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
