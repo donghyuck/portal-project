@@ -245,10 +245,8 @@
 			<div class="panel panel-default no-border">
 				<div class="panel-heading rounded-top">
 					<span class="close-sm"></span>
-					<h4 data-bind="html:subject"></h4>
-					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>			
-					
-<ul class="list-unstyled">
+					<h4 data-bind="html:subject"></h4>					
+					<ul class="list-unstyled">
 												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
 												<hr>	
 												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
@@ -263,8 +261,7 @@
 													</ul>																
 												</li>	
 												<hr>	
-											</ul>	
-																		
+					</ul>											
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:body"></div>	
 			</div>
