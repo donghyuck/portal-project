@@ -256,7 +256,7 @@
 													<img width="30" height="30" class="img-circle pull-left" src="#= authorPhotoUrl() #" style="margin-right:10px;">
 													<ul class="list-unstyled text-muted">
 														<li>#if(user.nameVisible){ # #: user.name # #}#<code>#: user.username #</code></li>
-														#if(user.emailVisible)#
+														#if(user.emailVisible){#
 														<li>#: user.email #</li>
 														#}#
 													</ul>																
