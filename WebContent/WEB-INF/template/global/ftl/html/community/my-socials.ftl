@@ -230,7 +230,7 @@
 					#}#
 				</a>
 				<div class="media-body">
-					<h5 class="media-heading">
+					<h5 class="media-heading p-xs">
 						 #if(retweet){# 
 						 <small><i class="fa fa-retweet"></i>&nbsp; #: user.name # 님이 리트윗함 </small> 
 						 <p>#= retweetedStatus.user.name # <small>@#= retweetedStatus.user.screenName #</small></p>
@@ -247,11 +247,10 @@
 					# var media = entities.media[i] ; #					
 					<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-responsive">
 					# } #
-					<ul class="list-unstyled list-inline text-muted">
+					<ul class="list-unstyled list-inline text-muted ">
                             <li><i class="fa fa-retweet"></i> #= retweetCount #</li>
                             <li><i class="fa fa-star-o"></i> #= favoriteCount #</li>
                      </ul>
-                        
 				</div>
 			</li>
 		</script>
@@ -295,7 +294,7 @@
 				<img src="http://graph.facebook.com/#=from.id#/picture" style="width:48px;" alt="#: from.name #" class="media-object img-circle">
 			</a>
 			<div class="media-body">
-				<h5 class="media-heading">
+				<h5 class="media-heading p-xs">
 					#:from.name#
 					#if( to != null ){ # 
 					<i class="fa fa-angle-right"></i>  #:to[0].name # 					
@@ -305,9 +304,7 @@
 					#}#
 				</h5> 	
 				# if ( story != null ) { #
-				<div style="padding-bottom:10px;">						
 				<span class="label label-blue rounded"><i class="fa fa-quote-left"></i> #: story # <i class="fa fa-quote-right"></i></span>
-				</div>
 				# } #		
 									
 				# if ( type === 'STATUS' ) { #
