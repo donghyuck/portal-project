@@ -340,6 +340,8 @@
 					}
 				);			
 				
+				$("input[name='attachment-list-view-filters']").on("change", function () {
+				
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".img-wrapper", function(e) {
@@ -688,13 +690,13 @@
 									
 									<div class="btn-group" data-toggle="buttons" id="image-source-list">
 										<label class="btn btn-sm btn-danger rounded-left active">
-											<input type="radio" name="image-source"  value="all"><i class="fa fa-user"></i> ME
+											<input type="radio" name="image-source"  value="2" selected><i class="fa fa-user"></i> ME
 										</label>
 										<label class="btn btn-sm btn-danger rounded-right">
-											<input type="radio" name="image-source"  value="file"><i class="fa fa-globe"></i> SITE
+											<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
 										</label>											
 										<label class="btn btn-sm btn-danger">
-											<input type="radio" name="image-source"  value="image"><i class="fa fa-building-o"></i> COMPANY
+											<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
 										</label>
 
 									</div>	
