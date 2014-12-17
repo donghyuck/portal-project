@@ -27,7 +27,8 @@
 		top: 0px;
 		padding-top: 0px !important;
 		background: #fff;
-		border-bottom: 2px solid rgba(228, 228, 228, 0.23);	
+		border-bottom: 2px solid rgba(150, 150, 150, 0.23);	
+		background: url(/images/common/pattern.png) repeat;
 	}	
 	
 	.header .navbar-brand {
