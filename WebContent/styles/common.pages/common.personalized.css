@@ -1652,9 +1652,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	margin-bottom: 15px;
 }
 
-.personalized-section.open {
-	margin-bottom: 0;
-}
+
 
 .personalized-section-content {
 	background: #fff;
