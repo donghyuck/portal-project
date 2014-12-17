@@ -1783,7 +1783,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 }
 
 .personalized-section-content .k-listview {
-	height: 500px;
+	min-height: 400px;
 	border-top: 0;
 	border-bottom: 0;
 	border-left: 0;
