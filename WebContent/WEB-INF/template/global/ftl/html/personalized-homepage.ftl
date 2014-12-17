@@ -136,8 +136,9 @@
 				new : function(e){
 					e.stopPropagation();
 					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
-					common.ui.scroll.top(renderTo.parent());
-					$(".morphing").toggleClass("open");					
+					
+					$(".morphing").toggleClass("open");	
+					common.ui.scroll.top(renderTo.parent());				
 				},
 				edit : function(e){
 					e.stopPropagation();
