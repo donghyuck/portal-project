@@ -77,16 +77,14 @@
 				});
 				
 				createAnnounceSection();				
-				$(".morphing ").bind("open.morphing", function(e){
-					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
+				$(".morphing").bind("open.morphing", function(e){
+					common.ui.scroll.top($("#my-announce-section").parent());
+					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);					
 				});					
 				setupPersonalizedSection();			
 				// END SCRIPT 				
 			}
-		}]);	
-	
-	
-		
+		}]);			
 		<!-- ============================== -->
 		<!-- Memo													   -->
 		<!-- ============================== -->
@@ -135,15 +133,13 @@
 				visible : false,
 				new : function(e){
 					e.stopPropagation();
-					alert(1);
-					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
 					common.ui.scroll.top(renderTo.parent());
 					$(".morphing").toggleClass("open");					
 				},
 				edit : function(e){
 					e.stopPropagation();
-					createAnnounceEditorSection(this.announce);
 					common.ui.scroll.top(renderTo.parent());
+					createAnnounceEditorSection(this.announce);
 					$(".morphing").toggleClass("open");					
 				}
 			});			
