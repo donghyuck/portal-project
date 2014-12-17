@@ -690,12 +690,13 @@
 										<label class="btn btn-sm btn-danger rounded-left active">
 											<input type="radio" name="image-source"  value="all"><i class="fa fa-user"></i> ME
 										</label>
-										<label class="btn btn-sm btn-danger">
-											<input type="radio" name="image-source"  value="image"><i class="fa fa-building-o"></i> 회사
-										</label>
 										<label class="btn btn-sm btn-danger rounded-right">
-											<input type="radio" name="image-source"  value="file"><i class="fa fa-globe"></i> 사이트
-										</label>	
+											<input type="radio" name="image-source"  value="file"><i class="fa fa-globe"></i> SITE
+										</label>											
+										<label class="btn btn-sm btn-danger">
+											<input type="radio" name="image-source"  value="image"><i class="fa fa-building-o"></i> COMPANY
+										</label>
+
 									</div>	
 																		
 									</#if>											
