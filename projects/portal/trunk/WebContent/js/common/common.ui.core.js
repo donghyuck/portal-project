@@ -728,7 +728,7 @@
 		exists : exists,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
-		notification : common.ui.notification || {},
+		notification : common.ui.notification || notification,
 		connect : common.ui.connect || {}
 	});
 	
