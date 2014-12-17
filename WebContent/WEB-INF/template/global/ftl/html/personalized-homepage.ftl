@@ -361,7 +361,7 @@
 				</div>				
 			</section><!-- /.section -->
 			
-			<section class="personalized-section bg-transparent" >
+			<section class="personalized-section bg-transparent open" >
 							<#if !action.user.anonymous >
 								<div class="morphing" >								
 									<button class="btn-u btn-u-red animated" type="button" data-toggle="morphing" data-action="morphing"><i class="fa fa-plus lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>									
