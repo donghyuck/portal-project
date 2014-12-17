@@ -136,13 +136,13 @@
 				new : function(e){
 					e.stopPropagation();
 					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
-					common.ui.scroll.top(renderTo);
+					common.ui.scroll.top(renderTo.parent());
 					$(".morphing").toggleClass("open");					
 				},
 				edit : function(e){
 					e.stopPropagation();
 					createAnnounceEditorSection(this.announce);
-					common.ui.scroll.top(renderTo);
+					common.ui.scroll.top(renderTo.parent());
 					$(".morphing").toggleClass("open");					
 				}
 			});			
