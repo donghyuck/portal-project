@@ -213,6 +213,9 @@
 						btn = $(e.target);
 						
 						btn.button('loading');
+						
+						alert( common.ui.stringify( $this.announce ) );
+						
 						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
 							common.ui.notification({
 								hide:function(e){
