@@ -171,7 +171,8 @@
 						<div id="announce-grid"></div>												
 					</div>				
 				</div>
-			</div>									 			
+			</div>			
+			</#if>						 			
 			<!-- END MAIN CONTENT -->	
 
  			<!-- START FOOTER -->
