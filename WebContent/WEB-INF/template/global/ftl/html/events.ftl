@@ -152,10 +152,14 @@
 			font-size: 15px;
 		}
 
-		#announce-list-section .k-grid-header .k-header {
+		#announce-view-panel .k-grid-header .k-header {
 			text-align: center;
 		}
-
+		
+		#announce-view-panel .close-sm {
+			top:10px;
+		}
+		
 		#announce-view-panel hr {
 			margin: 5px 0 4px;
 		}
