@@ -156,6 +156,9 @@
 			text-align: center;
 		}
 
+		#announce-view-panel .personalized-section hr {
+			margin: 5px 0 4px;
+		}
 		#announce-grid.k-grid .k-state-selected {
 			background: #F5F5F5;
 			color: #585f69;
