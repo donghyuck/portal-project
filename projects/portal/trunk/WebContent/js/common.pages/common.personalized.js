@@ -40,18 +40,18 @@ function setupPersonalizedSection(){
 
 		$section.find(".personalized-section-heading>.open").click(function(e){
 			if(section_content.is(":hidden")){
-				$section.toggleClass("open");					
+						
 				section_content.slideDown("slow", function(){
-				
+					$section.toggleClass("open");			
 				});					
 			}
 		});
 		
 		$section.find(".personalized-section-content>.close").click(function(e){
 			if(section_content.is(":visible")){
-				$section.toggleClass("open");			
+				
 				section_content.slideUp("slow", function(){
-							
+					$section.toggleClass("open");					
 				});				
 			}	
 			/*
