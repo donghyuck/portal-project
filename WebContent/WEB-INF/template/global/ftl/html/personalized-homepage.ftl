@@ -135,6 +135,7 @@
 				visible : false,
 				new : function(e){
 					e.stopPropagation();
+					alert(1);
 					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);
 					common.ui.scroll.top(renderTo.parent());
 					$(".morphing").toggleClass("open");					
