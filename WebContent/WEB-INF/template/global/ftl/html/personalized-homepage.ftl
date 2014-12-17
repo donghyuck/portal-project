@@ -328,7 +328,7 @@
 							<i class="icon-flat home"></i>
 							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">
-								<div id="personalized-buttons" class="navbar-btn btn-group">
+								<div id="personalized-buttons" class="btn-group">
 									<button type="button" class="btn-u btn-u-sea rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
 									<button type="button" class="btn-u btn-u-sea rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
 								</div>														
