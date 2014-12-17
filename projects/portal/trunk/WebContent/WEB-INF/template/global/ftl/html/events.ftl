@@ -44,7 +44,7 @@
 
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-				common.ui.listview(	$("#announce-grid"), {
+				common.ui.grid(	$("#announce-grid"), {
 					dataSource : common.ui.datasource(
 						'<@spring.url "/data/announce/list.json"/>',
 						{
@@ -66,6 +66,10 @@
 							}
 						}
 					),
+					columns: [
+						{field: "subject", title: "제목", sortable : false },
+						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
+					],					
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					sortable: true,
 					pageable: false,
