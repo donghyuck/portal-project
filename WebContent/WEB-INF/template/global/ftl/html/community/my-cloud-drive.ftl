@@ -688,13 +688,13 @@
 									
 									<div class="btn-group" data-toggle="buttons" id="image-source-list">
 										<label class="btn btn-sm btn-danger rounded-left active">
-											<input type="radio" name="image-source"  value="all"> 
+											<input type="radio" name="image-source"  value="all"><i class="fa fa-user"></i> 
 										</label>
 										<label class="btn btn-sm btn-danger">
-											<input type="radio" name="image-source"  value="image"><i class="fa fa-filter"></i> 이미지
+											<input type="radio" name="image-source"  value="image"><i class="fa fa-building-o"></i> 회사
 										</label>
 										<label class="btn btn-sm btn-danger rounded-right">
-											<input type="radio" name="image-source"  value="file"><i class="fa fa-filter"></i> 파일
+											<input type="radio" name="image-source"  value="file"><i class="fa fa-globe"></i> 사이트
 										</label>	
 									</div>	
 																		
