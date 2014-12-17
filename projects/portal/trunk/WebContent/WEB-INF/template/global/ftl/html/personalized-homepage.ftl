@@ -287,11 +287,11 @@
 			}
 			if( source ){
 				source.copy( renderTo.data("model").announce );
+				renderTo.data("model").set("announce.objectType", common.ui.buttonGroup($("#announce-selector")).value); 
 				if( source.announceId === 0 ){
 					renderTo.data("model").set("new", false); 
 				}else{
-					renderTo.data("model").set("new", false); 
-					renderTo.data("model").set("announce.objectType", common.ui.buttonGroup($("#announce-selector")).value); 
+					renderTo.data("model").set("new", false); 					
 				} 
 			}		
 			renderTo.data("model").set("changed", false);
