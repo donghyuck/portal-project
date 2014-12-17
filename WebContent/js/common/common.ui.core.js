@@ -58,6 +58,7 @@
 	var ui = common.ui,
 	random = common.random,
 	isFunction = kendo.isFunction,
+	guid = common.guid,
 	extend = $.extend,
 	each = $.each,
 	proxy = $.proxy,
