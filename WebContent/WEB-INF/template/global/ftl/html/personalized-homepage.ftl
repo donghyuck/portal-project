@@ -400,10 +400,10 @@
 													<div class="personalized-session-heading-controls">
 														<div id="edit-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
 															<label class="btn btn-success btn-sm active rounded-left">
-																<input type="radio" name="notice-target" value="30">사이트
+																<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
 															</label>
 															<label class="btn btn-success btn-sm rounded-right">
-																<input type="radio" name="notice-target" value="1">회사
+																<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 															</label>
 														</div>														
 													</div>		
@@ -455,10 +455,10 @@
 							<div class="personalized-section-heading-controls">
 								<div id="announce-selector" class="btn-group" data-toggle="buttons" data-role="buttongroup">
 									<label class="btn btn-info btn-sm active rounded-left">
-										<input type="radio" name="notice-target" value="30">사이트
+										<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
 									</label>
 									<label class="btn btn-info btn-sm rounded-right disabled">
-										<input type="radio" name="notice-target" value="1">회사
+										<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 									</label>
 								</div>
 							</div>		
