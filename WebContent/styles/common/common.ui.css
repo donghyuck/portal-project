@@ -1291,11 +1291,11 @@ overflow-y: auto;
 	color: #666;
 }
 
-.breadcrumbs-list>li:before, .breadcrumbs-list>li:after {
+.breadcrumbs-list>li:before {
 	content: "\f105" ;
 }
 
-.breadcrumbs-list>li:before, .breadcrumbs-list>li:after {
+.breadcrumbs-list>li:before {
 	display: inline-block;
 	position: relative;
 	top: -0.125em;
