@@ -532,7 +532,7 @@
 							<i class="icon-flat folder"></i>
 							<h3>MY 드라이브 <span>PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정	리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">
-								<div id="personalized-buttons" class="btn-group navbar-btn rounded-bottom">
+								<div id="personalized-buttons" class="btn-group">
 									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토 탐색기</span></button>
 									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
 								</div>					
