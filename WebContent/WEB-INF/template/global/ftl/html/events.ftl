@@ -241,13 +241,29 @@
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
 			<div class="panel panel-default no-border">
 				<div class="panel-heading rounded-top">
-					
-					<!-- 
-					<button type="button" class="btn-close btn-close-grey"><span class="sr-only">Close</span></button>
-					-->
 					<span class="close-sm"></span>
 					<h4 data-bind="html:subject"></h4>
-					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>					
+					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>			
+					
+					<ul class="list-unstyled">
+												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~ #: formattedEndDate() #</li>
+												<hr>	
+												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> #: formattedCreationDate() #</li>
+												<hr>	
+												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> #: formattedModifiedDate() #</li>
+												<hr>	
+												<li class="text-muted">
+													<img width="30" height="30" class="img-circle pull-left" src="#= authorPhotoUrl() #" style="margin-right:10px;">
+													<ul class="list-unstyled text-muted">
+														<li>#if(user.nameVisible){ # #: user.name # #}#<code>#: user.username #</code></li>
+														#if(user.emailVisible)#
+														<li>#: user.email #</li>
+														#}#
+													</ul>																
+												</li>	
+												<hr>	
+											</ul>	
+																		
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:body"></div>	
 			</div>
