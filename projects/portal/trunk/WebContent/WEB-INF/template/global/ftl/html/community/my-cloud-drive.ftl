@@ -380,6 +380,7 @@
 								});		
 								var model = common.ui.observable({
 									data : {
+										objectType : 2;
 										sourceUrl : null, 
 										imageUrl : null
 									},
@@ -411,6 +412,7 @@
 										if( !hasError ){
 											var btn = $(e.target);
 											btn.button('loading');			
+											this.data.objectType = getMyDriverPhotoSource();
 											common.ui.data.image.uploadByUrl( {
 												data : this.data ,
 												success : function(response){
