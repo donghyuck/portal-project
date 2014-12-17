@@ -122,60 +122,61 @@
 		<!-- START HEADER -->
 		
 		<div class="wrapper">
-		<!-- START HEADER -->
-		<#include "/html/common/common-homepage-menu.ftl" >	
-		<#assign hasWebSitePage = action.hasWebSitePage("pages.events.pageId") />
-		<#assign menuName = action.targetPage.getProperty("page.menu.name", "USER_MENU") />
-		<#assign menuItemName = action.targetPage.getProperty("navigator.selected.name", "MENU_1_3") />
-		<#assign current_menu = action.getWebSiteMenu(menuName, menuItemName) />				
-		<header  class="cloud <#if current_menu.parent.css??>${current_menu.parent.css}</#if>">
-			<header  class="cloud <#if current_menu.parent.css??>${current_menu.parent.css}</#if>">			
+			<!-- START HEADER -->
+			<#include "/html/common/common-homepage-menu.ftl" >	
+			<#if action.webSite ?? >
+				<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />
+				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_1_3") />
+			<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">			
+			<script>
+				jobs.push(function () {
+					$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
+				});
+			</script>
 				<div class="breadcrumbs">
-			        <div class="container">
-			            <h1 class="pull-left">${ current_menu.title }
-			            	<small>
-			            		<i class="fa fa-quote-left"></i>&nbsp;${ current_menu.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
-			            	</small>
-			            </h1>
-			            <ul class="pull-right breadcrumb">
-					        <li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
-					        <li><a href="">${current_menu.parent.title}</a></li>
-					    	<li class="active">${current_menu.title}</li>
-			            </ul>
-			        </div>
-			    </div>		
+					<div class="container">
+						<h1 class="pull-left">${ navigator.title }
+							<small>
+								<i class="fa fa-quote-left"></i>&nbsp;${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
+							</small>
+						</h1>
+						<ul class="pull-right breadcrumb">
+							<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
+							<li><a href="">${navigator.parent.title}</a></li>
+							<li class="active">${navigator.title}</li>
+						</ul>
+					</div>
+				</div>	
 			</header>
-		<!-- END HEADER -->			
-		<!-- START MAIN CONTENT -->	
-		<div class="container content">			
-			<div class="row">
-				<div class="col-lg-3 visible-lg">		
-					<!-- start side menu -->		
-					<div class="headline"><h4> ${current_menu.parent.title} </h4></div>  
-	               	<p class="margin-bottom-25"><small>${current_menu.parent.description!" " }</small></p>							
-					<div class="list-group">
-					<#list current_menu.parent.components as item >
-						<#if item.name ==  current_menu.name >
-						<a href="${item.page}" class="list-group-item active">${ item.title } </a>
-						<#else>
-						<a href="${item.page}" class="list-group-item">${ item.title } </a>
-						</#if>						
-					</#list>										
-					</div>	
-					<!-- end side menu -->				
+			<!-- END HEADER -->			
+			<!-- START MAIN CONTENT -->	
+			<div class="container content">			
+				<div class="row">
+					<div class="col-lg-3 visible-lg">	
+						<div class="headline"><h4> ${navigator.parent.title} </h4></div>  
+	                	<p class="margin-bottom-25"><small>${navigator.parent.description!" " }</small></p>					
+						<div class="list-group">
+						<#list navigator.parent.components as item >
+							<#if item.name ==  navigator.name >
+							<a href="${item.page}" class="list-group-item active">${ item.title } </a>
+							<#else>
+							<a href="${item.page}" class="list-group-item">${ item.title } </a>
+							</#if>						
+						</#list>
+						</div>
+					</div>
+					<div class="col-lg-9" style="min-height: 500px;">			
+						<div id="announce-view-panel" style="display:none;"></div>
+						<h5><small><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
+						<div id="announce-grid"></div>												
+					</div>				
 				</div>
-				<div class="col-lg-9" style="min-height: 500px;">			
-					<div id="announce-view-panel" style="display:none;"></div>
-					<h5><small><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
-					<div id="announce-grid"></div>												
-				</div>				
-			</div>
-		</div>									 			
-		<!-- END MAIN CONTENT -->	
+			</div>									 			
+			<!-- END MAIN CONTENT -->	
 
- 		<!-- START FOOTER -->
-		<#include "/html/common/common-homepage-footer.ftl" >		
-		<!-- END FOOTER -->	
+ 			<!-- START FOOTER -->
+			<#include "/html/common/common-homepage-footer.ftl" >		
+			<!-- END FOOTER -->	
 		</div>
 		
 		<!-- START TEMPLATE -->
