@@ -302,7 +302,7 @@
 		<!-- ============================== -->
 		<!-- create my photo grid									-->
 		<!-- ============================== -->				
-		function getPhotoSource(){
+		function getMyDriverPhotoSource(){
 			return $("#image-source-list input[type=radio][name=image-source]:checked").val();			
 		}
 		
@@ -317,9 +317,9 @@
 								transport : {
 									parameterMap :  function (options, operation){
 										if (operation != "read" && options) {										                        								                       	 	
-											return { imageId :options.imageId };									                            	
+											return { objectType:getMyDriverPhotoSource() , imageId :options.imageId };									                            	
 										}else{
-											 return { startIndex: options.skip, pageSize: options.pageSize }
+											 return { objectType:getMyDriverPhotoSource(), startIndex: options.skip, pageSize: options.pageSize }
 										}
 									}
 								},
