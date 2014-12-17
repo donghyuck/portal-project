@@ -690,7 +690,7 @@
 									
 									<div class="btn-group" data-toggle="buttons" id="image-source-list">
 										<label class="btn btn-sm btn-danger rounded-left active">
-											<input type="radio" name="image-source"  value="2" selected><i class="fa fa-user"></i> ME
+											<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
 										</label>
 										<label class="btn btn-sm btn-danger rounded-right">
 											<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
