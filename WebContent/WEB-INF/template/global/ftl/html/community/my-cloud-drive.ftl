@@ -344,13 +344,16 @@
 					}
 				);			
 				
-				//$("input[name='attachment-list-view-filters']").on("change", function () {
+				$("#image-source-list input[type=radio][name=image-source]").on("change", function () {
+					common.ui.listview($('#photo-list-view')).dataSource.read();	
+				});
 				
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-				});										
+				});		
+												
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });
 				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
@@ -358,6 +361,7 @@
 					var item = data[index];			
 					showPhotoPanel(item);
 				});									
+				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
 					handlers : {
 						"upload" : function(e){				
