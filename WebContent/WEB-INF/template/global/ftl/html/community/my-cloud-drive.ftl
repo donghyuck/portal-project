@@ -687,13 +687,13 @@
 									</p>	
 									
 									<div class="btn-group" data-toggle="buttons" id="image-source-list">
-										<label class="btn btn-sm btn-warning rounded-left active">
-											<input type="radio" name="image-source"  value="all"> 전체
+										<label class="btn btn-sm btn-danger rounded-left active">
+											<input type="radio" name="image-source"  value="all"> 
 										</label>
-										<label class="btn btn-sm btn-warning">
+										<label class="btn btn-sm btn-danger">
 											<input type="radio" name="image-source"  value="image"><i class="fa fa-filter"></i> 이미지
 										</label>
-										<label class="btn btn-sm btn-warning rounded-right">
+										<label class="btn btn-sm btn-danger rounded-right">
 											<input type="radio" name="image-source"  value="file"><i class="fa fa-filter"></i> 파일
 										</label>	
 									</div>	
