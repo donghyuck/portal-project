@@ -147,6 +147,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">
+		
 		blockquote p {
 			font-size: 15px;
 		}
