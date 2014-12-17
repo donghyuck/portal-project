@@ -340,7 +340,7 @@
 					}
 				);			
 				
-				$("input[name='attachment-list-view-filters']").on("change", function () {
+				//$("input[name='attachment-list-view-filters']").on("change", function () {
 				
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
