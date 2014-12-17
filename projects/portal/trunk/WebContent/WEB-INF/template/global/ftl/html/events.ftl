@@ -51,7 +51,7 @@
 							read: {
 								type : 'POST',
 								dataType : "json", 
-								url : '${request.contextPath}/community/list-announce.do?output=json'
+								url : '/community/list-announce.do?output=json'
 							},
 							parameterMap: function(options, operation) {
 								if (operation != "read" && options.models) {
