@@ -666,7 +666,40 @@
 		
 		return  defined( element.data("role") );
 	} 
+
+	var DEFAULT_NOTIFICATION_SETTING = {
+		autoHideAfter : 5000;	
+		position : {	pinned : true, top : 10, right : 10 },	
+		stacking : "down",
+		templates : [{
+			type : "mail",
+			template : '<div class="notification-mail"><img src="/images/common/notification/error-info.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+		},
+		{
+			type : "error",
+			template : '<div class="notification-error rounded"><img src="/images/common/notification/error-icon.png" /><h3>#= title #</h3><p>#= message #</p></div>'
+		},
+		{
+			type : "success",
+			template : '<div class="notification-success"><img src="/images/common/notification/success-icon.png" /><h3>#= title #</h3><p><small>#= message #</small></p></div>'
+		} ]		
+	};
 	
+	function notification (options) {
+		options = options || {};
+		var uid = guid();
+		var renderToString = "#" + uid ;
+		if ($(renderToString).length == 0) {
+			$('body').append(	'<span id="' + uid + '" style="display:none;"></span>');
+		}
+		var settings = extend(true, {}, DEFAULT_NOTIFICATION_SETTING , options ); 
+		var renderTo = $(renderToString) ;
+		if (!renderTo.data("kendoNotification")) {
+			renderTo	.kendoNotification(settings);
+		}
+		return renderTo.data("kendoNotification");
+	};
+
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
 		defined : common.ui.defined || defined,
@@ -695,6 +728,7 @@
 		exists : exists,
 		setup : common.ui.setup || setup,
 		data : common.ui.data || {},
+		notification : common.ui.notification || {},
 		connect : common.ui.connect || {}
 	});
 	
