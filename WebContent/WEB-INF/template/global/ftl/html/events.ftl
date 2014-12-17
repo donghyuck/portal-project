@@ -245,20 +245,18 @@
 					<h4 data-bind="html:subject"></h4>
 					<small class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~  #: formattedEndDate() #</small>			
 					
-					<ul class="list-unstyled">
-												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> #: formattedStartDate() # ~ #: formattedEndDate() #</li>
+<ul class="list-unstyled">
+												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
 												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> #: formattedCreationDate() #</li>
+												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
 												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> #: formattedModifiedDate() #</li>
+												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
 												<hr>	
 												<li class="text-muted">
-													<img width="30" height="30" class="img-circle pull-left" src="#= authorPhotoUrl() #" style="margin-right:10px;">
+													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 													<ul class="list-unstyled text-muted">
-														<li>#if(user.nameVisible){ # #: user.name # #}#<code>#: user.username #</code></li>
-														#if(user.emailVisible){#
-														<li>#: user.email #</li>
-														#}#
+														<li><span data-bind="visible:user.nameVisible, text: user.name"></span><code data-bind="text: user.username"></code></li>
+														<li><span data-bind="visible:user.emailVisible, text: user.email"></span></li>
 													</ul>																
 												</li>	
 												<hr>	
