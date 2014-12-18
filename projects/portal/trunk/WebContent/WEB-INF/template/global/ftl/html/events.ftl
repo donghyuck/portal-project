@@ -143,11 +143,6 @@
 								${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 							</small>
 						</h2>
-						<blockquote class="bigTitle">
-							Being a famous designer<br>
-							is like being a famous dentist<br>
-							<small>NOREEN MORIOKA</small>
-						</blockquote>
 						<ul class="pull-right breadcrumb">
 							<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
 							<li><a href="">${navigator.parent.title}</a></li>
