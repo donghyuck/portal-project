@@ -1258,7 +1258,9 @@ overflow-y: auto;
 .breadcrumbs {
 	padding: 20px 0 5px;
 }
-
+.breadcrumb-v1 .breadcrumb {
+	top:14px;
+}
 .breadcrumb-v1 .breadcrumb>li+li:before {
 	padding: 0 5px;
 	color: #9D9B9B;
