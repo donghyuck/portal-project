@@ -143,11 +143,13 @@
 								${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 							</small>
 						</h2>
-						<ul class="pull-right breadcrumb">
-							<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
-							<li><a href="">${navigator.parent.title}</a></li>
-							<li class="active">${navigator.title}</li>
-						</ul>
+						<div class="pull-right breadcrumb-v1">
+							<ul class="breadcrumb">
+								<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
+								<li><a href="">${navigator.parent.title}</a></li>
+								<li class="active">${navigator.title}</li>
+							</ul>
+						</div>
 					</div>
 				</div>	
 			</header>
