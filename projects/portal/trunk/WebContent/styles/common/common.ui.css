@@ -1253,8 +1253,29 @@ overflow-y: auto;
 	line-height: 34px;
 }
 
-/* .breadcrumbs-list
+/* .breadcrumbs
 --------------------------------------*/
+.breadcrumb-v1 .breadcrumb>li+li:before {
+	padding: 0 5px;
+	color: #9D9B9B;
+	content: "\f105 ";
+	/*
+	font: normal normal normal 1.2em FontAwesome;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	*/
+	top: 1.2px;
+	
+	position: relative;
+	font-family: 'FontAwesome';'
+	font-style: normal;
+	font-weight: inherit;
+	font-size: 1em;
+	line-height: 1;
+	text-decoration: none;	
+}
+
+
 .breadcrumbs-list {
 	color: #666;
 	padding-bottom: 16px;
@@ -1312,3 +1333,5 @@ overflow-y: auto;
 	position: relative;
 	z-index: 1;
 }
+
+
