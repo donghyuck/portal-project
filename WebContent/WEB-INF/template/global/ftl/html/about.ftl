@@ -7,7 +7,7 @@
 			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
 			<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
 			<title>${navigator.title}</title>
-		</#if>"	
+		</#if>	
 		<script type="text/javascript">
 		<!--
 
