@@ -1270,14 +1270,23 @@ overflow-y: auto;
 }
 .breadcrumbs h2{
 	font-size: 2.2em;
-	font-weight: bold;
+	font-weight: normal;
 	line-height: 30px;
+	text-transform: uppercase;
+	text-align: left;
+	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+	letter-spacing: 0.1em;
 }
-
+.breadcrumbs h2 small{
+	display: block;
+	color: #777;
+	line-height: 2em;
+	font-size: 55%;
+}
 .breadcrumbs h2 small:before{
 	content: "\f10d";
 	font-family: 'FontAwesome';'
-	margin-right: 0.5em;	
+	margin-right: 0.5em;		
 } 
 
 .breadcrumbs h2 small:after{
