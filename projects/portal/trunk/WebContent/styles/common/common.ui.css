@@ -1289,6 +1289,6 @@ overflow-y: auto;
 
 .breadcrumbs lockquote:after {
 	content: "\f10e";
-	font-family: 'FontAwesome';'
+	font-family: 'FontAwesome';
 	margin-left: 0.5em;
 }
