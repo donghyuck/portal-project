@@ -48,16 +48,6 @@
 					dataSource : common.ui.datasource(
 						'<@spring.url "/data/announce/list.json"/>',
 						{
-						/*
-							transport : {
-								parameterMap: function(options, operation) {
-									if( typeof options.objectType === "undefined"  ){
-										return {objectType: announceSelector.value };	
-									}else{			
-										return options;		
-									} 
-								}
-							},*/
 							pageSize: 15,
 							schema: {
 								data : "announces",
@@ -80,51 +70,7 @@
 						$("#announce-grid").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement();
 					}
-				}
-			);
-			
-				
-	/*		
-				$("#announce-grid").kendoGrid({
-					dataSource: new kendo.data.DataSource({
-						transport: {
-							read: {
-								type : 'POST',
-								dataType : "json", 
-								url : '/community/list-announce.do?output=json'
-							},
-							parameterMap: function(options, operation) {
-								if (operation != "read" && options.models) {
-									return {models: kendo.stringify(options.models)};
-								}else{
-									return {objectType:30}
-								}
-							},
-						},
-						pageSize: 15,
-						error:common.api.handleKendoAjaxError,				
-						schema: {
-							data : "targetAnnounces",
-							model : Announce
-						}
-					}),	
-					columns: [
-						{field: "subject", title: "제목", sortable : false },
-						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
-					],
-					sortable: true,
-					pageable: false,
-					selectable: "single",
-					rowTemplate: kendo.template($("#announce-row-template").html()),
-					height: 430,
-					change: function(e) { 
-						var selectedCells = this.select();
-						var selectedCell = this.dataItem( selectedCells );	
-						$("#announce-grid").data( "announcePlaceHolder", selectedCell );
-						displayAnnouncement();
-					}			
-				});		
-*/									
+				});
 				<#if !action.user.anonymous >				
 				
 				</#if>	
@@ -132,11 +78,9 @@
 			}
 		}]);	
 		
-		function displayAnnouncement () {			
-
+		function displayAnnouncement () {		
 			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );			
-			var template = kendo.template($('#announce-view-panel-template').html());			
-			
+			var template = kendo.template($('#announce-view-panel-template').html());		
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );
 			$("#announce-view-panel").slideDown();
