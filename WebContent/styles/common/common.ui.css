@@ -1268,7 +1268,23 @@ overflow-y: auto;
 	line-height: 1;
 	text-decoration: none;	
 }
+.breadcrumbs h2{
+	font-size: 2.2em;
+	font-weight: bold;
+	line-height: 30px;
+}
 
+.breadcrumbs h2 small:before{
+	content: "\f10d";
+	font-family: 'FontAwesome';'
+	margin-right: 0.5em;	
+} 
+
+.breadcrumbs h2 small:after{
+	content: "\f10e";
+	font-family: 'FontAwesome';'
+	margin-right: 0.5em;	
+} 
 .breadcrumbs blockquote {
 	margin-bottom: 0;
 	font-weight: 300;
