@@ -6,8 +6,8 @@
 		<#if action.webSite ?? >
 			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
 			<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
-		</#if>"
-		<title>기업소개</title>
+			<title>${navigator.title}</title>
+		</#if>"		
 		<script type="text/javascript">
 		<!--
 		
