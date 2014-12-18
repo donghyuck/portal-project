@@ -138,11 +138,11 @@
 			</script>
 				<div class="breadcrumbs">
 					<div class="container">
-						<h1 class="pull-left">${ navigator.title }
+						<h2 class="pull-left">${ navigator.title }
 							<small>
-								<i class="fa fa-quote-left"></i>&nbsp;${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
+								${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 							</small>
-						</h1>
+						</h2>
 						<blockquote class="bigTitle">
 							Being a famous designer<br>
 							is like being a famous dentist<br>
