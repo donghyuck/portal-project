@@ -95,7 +95,17 @@
 				<div class="row">
 					<div class="col-lg-3 visible-lg">	
 						<div class="headline"><h4> ${navigator.parent.title} </h4></div>  
-	                	<p class="margin-bottom-25"><small>${navigator.parent.description!" " }</small></p>					
+	                	<p class="margin-bottom-25"><small>${navigator.parent.description!" " }</small></p>		
+						<ul class="nav nav-pills nav-stacked">	
+						<#list navigator.parent.components as item >
+							
+							<#if item.name ==  navigator.name >	
+							<li role="presentation" ><a href="${item.page}" class="list-group-item active">${ item.title } </a></li>
+							<#else>
+							<li role="presentation"><a href="${item.page}" class="list-group-item active">${ item.title } </a></li>
+							</#if>						
+						</#list>
+						</ul>		
 						<div class="list-group">
 						<#list navigator.parent.components as item >
 							<#if item.name ==  navigator.name >
