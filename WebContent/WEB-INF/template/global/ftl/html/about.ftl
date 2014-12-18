@@ -1,7 +1,13 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
-<head>
-		<title>기업소개</title>
+	<head>
+	<#assign pageMenuName = "USER_MENU" />
+	<#assign pageMenuItemName = "MENU_1_3" />
+		<#if action.webSite ?? >
+			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
+			<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
+			<title>${navigator.title}</title>
+		</#if>"	
 		<script type="text/javascript">
 		<!--
 
@@ -61,8 +67,8 @@
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
 			<#if action.webSite ?? >
-				<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />
-				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, "MENU_1_1") />
+				<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
+				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
 			<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">			
 			<script>
 				jobs.push(function () {
@@ -80,7 +86,7 @@
 							<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
 							<li><a href="">${navigator.parent.title}</a></li>
 							<li class="active">${navigator.title}</li>
-						</ul>
+						</ul>								
 					</div>
 				</div>	
 			</header>					
