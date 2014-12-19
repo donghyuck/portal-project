@@ -1293,6 +1293,8 @@ border-bottom: 1px solid whiteSmoke;
 	color: #777;
 	line-height: 2em;
 	font-size: 55%;
+	border-top: solid 1px #ccc;
+	margin-top: 10px;
 }
 .breadcrumbs h2 small:before{
 	content: "\f10d";
