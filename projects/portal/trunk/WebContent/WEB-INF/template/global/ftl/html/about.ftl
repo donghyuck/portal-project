@@ -199,7 +199,7 @@
 
         <div class="row margin-bottom-40">
             <!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+            <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-spring.png" alt="">       
                     <p>
@@ -209,7 +209,7 @@
             </div>
             <!-- End Simple Block -->
              <!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+            <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/logo-oss-hadoop.png" alt="">       
                     <p>
@@ -219,7 +219,7 @@
             </div>
             <!-- End Simple Block -->
             <!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+            <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-groovy.png" alt="">       
                     <p>
@@ -231,7 +231,7 @@
 		</div>
 		<div class="row margin-bottom-40">
             <!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+            <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-redis.png" alt="">       
                     <p>
@@ -241,7 +241,7 @@
             </div>
             <!-- End Simple Block -->   
             <!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+            <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-openchorus.png" alt="">       
                     <p>
@@ -251,7 +251,7 @@
             </div>
             <!-- End Simple Block -->        
 			<!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+            <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/logo-oss-tomcat.png" alt="">       
                     <p>
@@ -263,7 +263,7 @@
 		</div>
 		<div class="row margin-bottom-40">
 			<!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+            <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/oss-logo-apache.png" alt="">       
                     <p>
