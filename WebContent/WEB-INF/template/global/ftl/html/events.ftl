@@ -139,11 +139,13 @@
 				<div class="breadcrumbs">
 					<div class="container">
 						<div class="row">
-							<h2 class="pull-left">${ navigator.title }</h2>
-							<p>
-								<small>
+							<h2 class="pull-left">${ navigator.title }
+							<small>
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
-								</small>							
+								</small>	
+							</h2>
+							<p>
+														
 							</p>
 							<div class="pull-right breadcrumb-v1">
 								<ul class="breadcrumb">
