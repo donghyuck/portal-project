@@ -193,8 +193,8 @@
 			
 <div class="container content">
         <div class="title-box-v2">
-            <h2>오픈소스<span class="color-green">life</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            <h2>오픈소스<span class="color-green"></span></h2>
+            <p></p>
         </div>
 
         <div class="row margin-bottom-40">
@@ -202,7 +202,9 @@
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-spring.png" alt="">       
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
+                    <p>
+					Spring is the most popular and complete application development framework for enterprise Java™. Spring projects provide comprehensive infrastructure support for developing Java applications. Millions of developers use Spring to build modern Web and enterprise applications The Spring Framework is released under version 2.0 of the Apache License. Learn more about open source Spring projects.	
+					</p>
                 </div>  
             </div>
             <!-- End Simple Block -->
@@ -210,7 +212,9 @@
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/logo-oss-hadoop.png" alt="">       
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
+                    <p>
+					The popular Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage.
+					</p>
                 </div>  
             </div>
             <!-- End Simple Block -->
@@ -218,7 +222,9 @@
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-groovy.png" alt="">       
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
+                    <p>
+					Groovy is an agile and dynamic language for the Java Virtual Machine that builds upon the strengths of Java but has additional power features inspired by languages like Python, Ruby and Smalltalk Groovy makes modern programming features available to Java developers with almost-zero learning curve.	
+					</p>
                 </div>  
             </div>
             <!-- End Simple Block -->
@@ -226,7 +232,9 @@
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
                     <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-redis.png" alt="">       
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
+                    <p>
+                    Redis is an open-source, networked, in-memory, key-value data store with optional durability. It is written in ANSI C. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets. Redis is open source software released under the terms of the three clause BSD license. Redis is the most popular key-value store in the cloud.
+                    </p>
                 </div>  
             </div>
             <!-- End Simple Block -->                                   
