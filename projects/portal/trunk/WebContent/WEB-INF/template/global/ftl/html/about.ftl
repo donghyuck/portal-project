@@ -2,7 +2,7 @@
 <html decorator="unify">
 	<head>
 	<#assign pageMenuName = "USER_MENU" />
-	<#assign pageMenuItemName = "MENU_1_3" />
+	<#assign pageMenuItemName = "MENU_1_1" />
 		<#if action.webSite ?? >
 			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
 			<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
@@ -100,15 +100,6 @@
 					<div class="col-lg-3 visible-lg">	
 						<div class="headline"><h4> ${navigator.parent.title} </h4></div>  
 	                	<p class="margin-bottom-25"><small>${navigator.parent.description!" " }</small></p>		
-						<ul class="nav nav-pills nav-stacked">	
-						<#list navigator.parent.components as item >							
-							<#if item.name ==  navigator.name >	
-							<li role="presentation" class="active"><a href="${item.page}">${ item.title } </a></li>
-							<#else>
-							<li role="presentation"><a href="${item.page}">${ item.title } </a></li>
-							</#if>						
-						</#list>
-						</ul>		
 						<div class="list-group">
 						<#list navigator.parent.components as item >
 							<#if item.name ==  navigator.name >
