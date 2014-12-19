@@ -201,7 +201,7 @@
             <!-- Begin Easy Block v2 -->                
             <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-spring.png" alt="">       
+                    <img class="img-responsive p-sm" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-spring.png" alt="">       
                     <p>
 					Spring is the most popular and complete application development framework for enterprise Java™. Spring projects provide comprehensive infrastructure support for developing Java applications. Millions of developers use Spring to build modern Web and enterprise applications The Spring Framework is released under version 2.0 of the Apache License. Learn more about open source Spring projects.	
 					</p>
@@ -211,7 +211,7 @@
              <!-- Begin Easy Block v2 -->                
             <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/logo-oss-hadoop.png" alt="">       
+                    <img class="img-responsive p-sm" src="http://www.pivotal.io/assets/images/oss/logo-oss-hadoop.png" alt="">       
                     <p>
 					The popular Apache Hadoop software library is a framework that allows for the distributed processing of large data sets across clusters of computers using simple programming models. It is designed to scale up from single servers to thousands of machines, each offering local computation and storage.
 					</p>
@@ -221,7 +221,7 @@
             <!-- Begin Easy Block v2 -->                
             <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-groovy.png" alt="">       
+                    <img class="img-responsive p-sm" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-groovy.png" alt="">       
                     <p>
 					Groovy is an agile and dynamic language for the Java Virtual Machine that builds upon the strengths of Java but has additional power features inspired by languages like Python, Ruby and Smalltalk Groovy makes modern programming features available to Java developers with almost-zero learning curve.	
 					</p>
@@ -233,7 +233,7 @@
             <!-- Begin Easy Block v2 -->                
             <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-redis.png" alt="">       
+                    <img class="img-responsive p-sm" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-redis.png" alt="">       
                     <p>
                     Redis is an open-source, networked, in-memory, key-value data store with optional durability. It is written in ANSI C. It is often referred to as a data structure server since keys can contain strings, hashes, lists, sets and sorted sets. Redis is open source software released under the terms of the three clause BSD license. Redis is the most popular key-value store in the cloud.
                     </p>
@@ -243,7 +243,7 @@
             <!-- Begin Easy Block v2 -->                
             <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-openchorus.png" alt="">       
+                    <img class="img-responsive p-sm" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-openchorus.png" alt="">       
                     <p>
                    The OpenChorus project aims to develop a platform for collaborative data science with Greenplum customers, data science practitioners, open source developers, and a variety of like-minded partners, while facilitating an open dialogue about the future of predictive analytics.
                    </p>
@@ -253,7 +253,7 @@
 			<!-- Begin Easy Block v2 -->                
             <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/logo-oss-tomcat.png" alt="">       
+                    <img class="img-responsive p-sm" src="http://www.pivotal.io/assets/images/oss/logo-oss-tomcat.png" alt="">       
                     <p>
                   Apache Tomcat is a popular open source application server that implements the Java Servlet, JavaServer Pages, Java Unified Expression Language and Java WebSocket technologies. Apache Tomcat powers numerous large-scale, mission-critical web applications, including those written in Spring, across a diverse range of industries and organizations, and is released under the Apache License version 2.
                   </p>
@@ -265,7 +265,7 @@
 			<!-- Begin Easy Block v2 -->                
             <div class="col-md-4 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/oss-logo-apache.png" alt="">       
+                    <img class="img-responsive p-sm" src="http://www.pivotal.io/assets/images/oss/oss-logo-apache.png" alt="">       
                     <p>
                   Apache HTTP Server is the most popular web server on the Internet, powering over 100 million websites, and one of the oldest open source projects in use today. Apache HTTP Server provides functionality around authentication, security and content delivery and is released under the Apache License version 2.
                   </p>
