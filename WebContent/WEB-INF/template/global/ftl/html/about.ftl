@@ -283,7 +283,7 @@
                 <div class="thumbnail-style">
                     <img class="img-responsive" src="assets/img/team/1.jpg" alt="">
                     <h3><a>Antonio</a> <small>Software Architect</small></h3>
-                    <p>열정만 있는 소프트웨어 아키텍트이자 자바 개발자.</p>
+                    <p>열정만 있는 소프트웨어 아키텍트이자 게으른 자바 개발자.</p>
                     <ul class="list-unstyled list-inline team-socail">
                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
