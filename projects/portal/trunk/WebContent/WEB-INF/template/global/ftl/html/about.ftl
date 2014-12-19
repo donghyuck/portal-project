@@ -190,8 +190,12 @@
         <!-- About Description -->
     </div>
     			
-<article class="bg-slivergray">			
-<div class="container content">
+	<article class="bg-slivergray">			
+		<div class="container content">
+			<blockquote>
+				<h2>오픈소스 서비스<span class="color-green"></span></h2>
+				<footer>메르디앙은 오픈소스들에 대한 프리미엄 지원 및 개발자 지원 서비스를 제공하고 있습니다. </footer>
+			</blockquote>
         <div class="title-box-v2">
             <h2>오픈소스 서비스<span class="color-green"></span></h2>
             <p>메르디앙은 오픈소스들에 대한 프리미엄 지원 및 개발자 지원 서비스를 제공하고 있습니다. </p>
