@@ -274,32 +274,8 @@
             <!-- End Simple Block -->                                                    
         </div>
     </div>
+    
 <div class="container content">		
-    	<div class="row margin-bottom-40">
-        	<div class="col-md-6 md-margin-bottom-40">
-                <p>Unify is an incredibly beautiful responsive Bootstrap Template for corporate and creative professionals. It works on all major web browsers, tablets and phone. Lorem sequat ipsum dolor lorem sit amet, consectetur adipiscing dolor elit. Unify is an incredibly beautiful responsive Bootstrap Template for It works on all major web.</p>
-                <ul class="list-unstyled">
-                    <li><i class="fa fa-check color-green"></i> Donec id elit non mi porta gravida</li>
-                    <li><i class="fa fa-check color-green"></i> Corporate and Creative</li>
-                    <li><i class="fa fa-check color-green"></i> Responsive Bootstrap Template</li>
-                    <li><i class="fa fa-check color-green"></i> Elit non mi porta gravida</li>
-                    <li><i class="fa fa-check color-green"></i> Award winning digital agency</li>
-                </ul><br>
-
-                <!-- Blockquotes -->
-                <blockquote class="hero-unify">
-                    <p>Award winning digital agency. We bring a personal and effective approach to every project we work on, which is why.</p>
-                    <small>CEO Jack Bour</small>
-                </blockquote>
-            </div>
-
-        	<div class="col-md-6 md-margin-bottom-40">
-                <div class="responsive-video">
-                    <iframe src="http://player.vimeo.com/video/9679622" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe> 
-                </div>
-            </div>
-        </div><!--/row-->
-
     	<!-- Meer Our Team -->
     	<div class="headline"><h2>Meet Our Team</h2></div>
         <div class="row team">
