@@ -77,18 +77,20 @@
 			</script>
 				<div class="breadcrumbs">
 					<div class="container">
-						<h1 class="pull-left">${ navigator.title }
-							<small>
-								<i class="fa fa-quote-left"></i>&nbsp;${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }&nbsp;<i class="fa fa-quote-right"></i>
-							</small>
-						</h1>
-						<div class="pull-right breadcrumb-v1">
-							<ul class="breadcrumb">
-								<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
-								<li><a href="">${navigator.parent.title}</a></li>
-								<li class="active">${navigator.title}</li>
-							</ul>								
-						</div>						
+						<div class="row">
+							<h2 class="pull-left">${ navigator.title }
+							<small class="page-summary">
+									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
+								</small>	
+							</h2>
+							<div class="pull-right breadcrumb-v1">
+								<ul class="breadcrumb">
+									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
+									<li><a href="">${navigator.parent.title}</a></li>
+									<li class="active">${navigator.title}</li>
+								</ul>
+							</div>	
+						</div>
 					</div>
 				</div>	
 			</header>					
