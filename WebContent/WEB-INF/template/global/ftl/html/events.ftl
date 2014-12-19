@@ -140,7 +140,7 @@
 					<div class="container">
 						<div class="row">
 							<h2 class="pull-left">${ navigator.title }
-							<small>
+							<small class="page-summary">
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 								</small>	
 							</h2>
