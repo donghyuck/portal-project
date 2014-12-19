@@ -1270,6 +1270,8 @@ overflow-y: auto;
 	position: absolute;
 	bottom: 0;
 	right: 0;
+	top: initial;
+	margin: 0;
 }
 .breadcrumb-v1 .breadcrumb>li+li:before {
 	padding: 0 5px;
