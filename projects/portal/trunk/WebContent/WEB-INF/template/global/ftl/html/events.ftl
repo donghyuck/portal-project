@@ -170,22 +170,7 @@
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
 				<div class="row">
-					<div class="col-lg-3 visible-lg">	
-						<div class="headline"><h4> ${navigator.parent.title} </h4></div>  
-						<#if navigator.parent.description ?? >
-	                	<p class="margin-bottom-25"><small>${navigator.parent.description }</small></p>		
-	                	</#if>	
-						<div class="list-group">
-						<#list navigator.parent.components as item >
-							<#if item.name ==  navigator.name >
-							<a href="${item.page}" class="list-group-item active">${ item.title } </a>
-							<#else>
-							<a href="${item.page}" class="list-group-item">${ item.title } </a>
-							</#if>						
-						</#list>
-						</div>
-					</div>
-					<div class="col-lg-9" style="min-height: 500px;">			
+					<div class="col-lg-12" style="min-height: 500px;">			
 						<div id="announce-view-panel" style="display:none;"></div>
 						<h5><small><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
 						<div id="announce-grid"></div>												
@@ -194,7 +179,6 @@
 			</div>			
 			</#if>						 			
 			<!-- END MAIN CONTENT -->	
-
  			<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
 			<!-- END FOOTER -->	
