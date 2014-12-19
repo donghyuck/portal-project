@@ -121,7 +121,7 @@
                         <img class="img-responsive" src="/download/image/2131/opensource.jpg" alt="" style="max-height: 400px;">
                     </div>
                     <div class="item">
-                        <img class="img-responsive" src="assets/img/team/team2.jpg" alt="">
+                        <img class="img-responsive" src="/download/image/2132/opensource.jpg" alt="" style="max-height: 400px;">
                     </div>
                 </div>
 
