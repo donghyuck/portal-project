@@ -146,9 +146,6 @@
 							</h2>
 							<div class="pull-right">
 							<ul class="nav nav-pills pull-right">
-								<li role="presentation" class="active"><a href="#">Home</a></li>
-								<li role="presentation"><a href="#">Profile</a></li>
-								<li role="presentation"><a href="#">Messages</a></li>
 							<#list navigator.parent.components as item >
 								<#if item.name ==  navigator.name >
 								<li role="presentation" class="active"><a href="${item.page}">${ item.title }</a></li>
