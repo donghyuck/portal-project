@@ -228,6 +228,8 @@
                 </div>  
             </div>
             <!-- End Simple Block -->
+		</div>
+		<div class="row margin-bottom-40">
             <!-- Begin Easy Block v2 -->                
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
@@ -257,7 +259,9 @@
                   </p>
                 </div>  
             </div>
-            <!-- End Simple Block -->                     
+            <!-- End Simple Block -->      
+		</div>
+		<div class="row margin-bottom-40">
 			<!-- Begin Easy Block v2 -->                
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
