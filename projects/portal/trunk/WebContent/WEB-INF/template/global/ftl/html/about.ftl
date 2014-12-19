@@ -193,7 +193,7 @@
 			
 <div class="container content">
         <div class="title-box-v2">
-            <h2>오픈소스 지원<span class="color-green"></span></h2>
+            <h2>오픈소스 서비스<span class="color-green"></span></h2>
             <p>메르딩앙은 오픈소스들에 대한 프리미엄 지원 및 개발자 지원 서비스를 제공합니다. </p>
         </div>
 
