@@ -238,63 +238,6 @@
                 </div>  
             </div>
             <!-- End Simple Block -->                                   
-         </div>
-
-        <div class="row">
-            <!-- Begin Easy Block v2 -->
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
-                <div class="simple-block">
-                    <div data-ride="carousel" class="carousel slide" id="carousel-example-generic-2">
-                        <ol class="carousel-indicators">
-                            <li data-slide-to="0" data-target="#carousel-example-generic-2" class="rounded-x"></li>
-                            <li data-slide-to="1" data-target="#carousel-example-generic-2" class="rounded-x"></li>
-                            <li data-slide-to="2" data-target="#carousel-example-generic-2" class="rounded-x active"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="item">
-                                <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-3.1.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-3.3.jpg" alt="">
-                            </div>
-                            <div class="item active">
-                                <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-2.1.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
-                </div>    
-            </div>
-            <!-- End Simple Block -->
-            
-            <!-- Begin Easy Block v2 -->
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
-                <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-1.jpg" alt="">
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
-                </div>
-            </div>
-            <!-- End Simple Block -->
-            
-            <!-- Begin Easy Block v2 -->
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
-                <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-2.2.jpg" alt="">
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
-                </div>
-            </div>
-            <!-- End Simple Block -->
-
-            <!-- Begin Easy Block v2 -->                
-            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
-                <div class="simple-block">
-                    <div class="responsive-video">
-                        <iframe frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="//player.vimeo.com/video/70528799"></iframe>     
-                    </div>    
-                    <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
-                </div>  
-            </div>
-            <!-- End Simple Block -->
         </div>
     </div>
 <div class="container content">		
