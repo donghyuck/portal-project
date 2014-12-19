@@ -190,7 +190,7 @@
         <!-- About Description -->
     </div>
     			
-			
+<div class="bg-slivergray">			
 <div class="container content">
         <div class="title-box-v2">
             <h2>오픈소스 서비스<span class="color-green"></span></h2>
@@ -274,7 +274,7 @@
             <!-- End Simple Block -->                                                    
         </div>
     </div>
-    
+</div>
 <div class="container content">		
     	<!-- Meer Our Team -->
     	<div class="headline"><h2>프로젝트 멤버</h2></div>
