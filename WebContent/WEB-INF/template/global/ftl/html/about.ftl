@@ -237,7 +237,37 @@
                     </p>
                 </div>  
             </div>
-            <!-- End Simple Block -->                                   
+            <!-- End Simple Block -->   
+            <!-- Begin Easy Block v2 -->                
+            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+                <div class="simple-block">
+                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-openchorus.png" alt="">       
+                    <p>
+                   The OpenChorus project aims to develop a platform for collaborative data science with Greenplum customers, data science practitioners, open source developers, and a variety of like-minded partners, while facilitating an open dialogue about the future of predictive analytics.
+                   </p>
+                </div>  
+            </div>
+            <!-- End Simple Block -->        
+			<!-- Begin Easy Block v2 -->                
+            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+                <div class="simple-block">
+                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/logo-oss-tomcat.png" alt="">       
+                    <p>
+                  Apache Tomcat is a popular open source application server that implements the Java Servlet, JavaServer Pages, Java Unified Expression Language and Java WebSocket technologies. Apache Tomcat powers numerous large-scale, mission-critical web applications, including those written in Spring, across a diverse range of industries and organizations, and is released under the Apache License version 2.
+                  </p>
+                </div>  
+            </div>
+            <!-- End Simple Block -->                     
+			<!-- Begin Easy Block v2 -->                
+            <div class="col-md-3 col-sm-6 md-margin-bottom-20">
+                <div class="simple-block">
+                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/oss-logo-apache.png" alt="">       
+                    <p>
+                  Apache HTTP Server is the most popular web server on the Internet, powering over 100 million websites, and one of the oldest open source projects in use today. Apache HTTP Server provides functionality around authentication, security and content delivery and is released under the Apache License version 2.
+                  </p>
+                </div>  
+            </div>
+            <!-- End Simple Block -->                                                    
         </div>
     </div>
 <div class="container content">		
