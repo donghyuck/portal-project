@@ -1264,6 +1264,9 @@ overflow-y: auto;
 	position: relative;
 }
 
+.breadcrumbs.arrow-up {
+	border-bottom:0;
+}
 .breadcrumbs.arrow-up:after{
 	content: ' ';
 	position: absolute;
