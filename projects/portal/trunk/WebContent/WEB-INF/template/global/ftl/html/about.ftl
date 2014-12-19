@@ -115,7 +115,7 @@
 
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img class="img-responsive" src="/download/image/2111/competence-key_174329024.jpg" alt="">
+                        <img class="img-responsive" src="/download/image/2111/competence-key_174329024.jpg" alt="" style="max-height: 400px;">
                     </div>
                     <div class="item">
                         <img class="img-responsive" src="assets/img/team/team3.jpg" alt="">
