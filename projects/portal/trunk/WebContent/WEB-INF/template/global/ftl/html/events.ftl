@@ -136,7 +136,7 @@
 					$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
 				});
 			</script>
-				<div class="breadcrumbs">
+				<div class="breadcrumbs arrow-up">
 					<div class="container">
 						<div class="row">
 							<h2 class="pull-left">${ navigator.title }
