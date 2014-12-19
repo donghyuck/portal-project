@@ -193,7 +193,7 @@
 			
 <div class="container content">
         <div class="title-box-v2">
-            <h2>Company <span class="color-green">life</span></h2>
+            <h2>오픈소스<span class="color-green">life</span></h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
 
@@ -201,58 +201,36 @@
             <!-- Begin Easy Block v2 -->                
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-1.3.jpg" alt="">       
+                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-spring.png" alt="">       
                     <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
                 </div>  
             </div>
             <!-- End Simple Block -->
-            
-            <!-- Begin Easy Block v2 -->
+             <!-- Begin Easy Block v2 -->                
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <div class="responsive-video">
-                        <iframe frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="//player.vimeo.com/video/67167840?title=0&amp;byline=0&amp;portrait=0"></iframe>
-                    </div>    
+                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/assets/images/oss/logo-oss-hadoop.png" alt="">       
                     <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
-                </div>
+                </div>  
             </div>
             <!-- End Simple Block -->
-            
-            <!-- Begin Easy Block v2 -->
+            <!-- Begin Easy Block v2 -->                
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <div data-ride="carousel" class="carousel slide" id="carousel-example-generic">
-                        <ol class="carousel-indicators">
-                            <li data-slide-to="0" data-target="#carousel-example-generic" class="rounded-x"></li>
-                            <li data-slide-to="1" data-target="#carousel-example-generic" class="rounded-x active"></li>
-                            <li data-slide-to="2" data-target="#carousel-example-generic" class="rounded-x"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="item">
-                                <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-4.1.jpg" alt="">
-                            </div>
-                            <div class="item active">
-                                <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-3.2.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-4.3.jpg" alt="">
-                            </div>
-                        </div>
-                    </div>
+                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-groovy.png" alt="">       
                     <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
-                </div>
+                </div>  
             </div>
             <!-- End Simple Block -->
-            
-            <!-- Begin Easy Block v2 -->
+            <!-- Begin Easy Block v2 -->                
             <div class="col-md-3 col-sm-6 md-margin-bottom-20">
                 <div class="simple-block">
-                    <img class="img-responsive img-bordered" src="assets/img/job/high-rated-job-2.3.jpg" alt="">
+                    <img class="img-responsive img-bordered" src="http://www.pivotal.io/sites/all/themes/gopo13/images/oss-logo-redis.png" alt="">       
                     <p>Pellentesque et erat ac massa cursus porttitor eget sed magna.</p>
-                </div>    
+                </div>  
             </div>
-            <!-- End Simple Block -->
-        </div>
+            <!-- End Simple Block -->                                   
+         </div>
 
         <div class="row">
             <!-- Begin Easy Block v2 -->
