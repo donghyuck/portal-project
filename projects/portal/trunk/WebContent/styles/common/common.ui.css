@@ -1275,11 +1275,15 @@ overflow-y: auto;
 	text-decoration: none;	
 }
 .breadcrumbs h2{
+	font-size:46px;
+	line-height:46pxl
+	/*
 	font-size: 2.2em;
 	font-weight: normal;
 	line-height: 30px;
 	text-transform: uppercase;
 	text-align: left;
+	*/
 }
 .breadcrumbs h2 small{
 	display: block;
