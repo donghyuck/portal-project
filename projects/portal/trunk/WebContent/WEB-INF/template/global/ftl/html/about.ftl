@@ -99,7 +99,9 @@
 				<div class="row">
 					<div class="col-lg-3 visible-lg">	
 						<div class="headline"><h4> ${navigator.parent.title} </h4></div>  
-	                	<p class="margin-bottom-25"><small>${navigator.parent.description!" " }</small></p>		
+						<#if navigator.parent.description ?? >
+	                	<p class="margin-bottom-25"><small>${navigator.parent.description }</small></p>		
+	                	</#if>
 						<div class="list-group">
 						<#list navigator.parent.components as item >
 							<#if item.name ==  navigator.name >
