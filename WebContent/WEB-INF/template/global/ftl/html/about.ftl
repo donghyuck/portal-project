@@ -277,12 +277,12 @@
     
 <div class="container content">		
     	<!-- Meer Our Team -->
-    	<div class="headline"><h2>Meet Our Team</h2></div>
+    	<div class="headline"><h2>프로젝트 멤버</h2></div>
         <div class="row team">
             <div class="col-sm-3">
                 <div class="thumbnail-style">
                     <img class="img-responsive" src="assets/img/team/1.jpg" alt="">
-                    <h3><a>Jack Bour</a> <small>Chief Executive Officer</small></h3>
+                    <h3><a>Antonio</a> <small>Software Architect</small></h3>
                     <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
                     <ul class="list-unstyled list-inline team-socail">
                     	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
