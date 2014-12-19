@@ -144,7 +144,21 @@
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 								</small>	
 							</h2>
-							<div class="pull-right breadcrumb-v1">
+							<div class="pull-right">
+							<ul class="nav nav-pills pull-right">
+								<li role="presentation" class="active"><a href="#">Home</a></li>
+								<li role="presentation"><a href="#">Profile</a></li>
+								<li role="presentation"><a href="#">Messages</a></li>
+							<#list navigator.parent.components as item >
+								<#if item.name ==  navigator.name >
+								<li role="presentation" class="active"><a href="${item.page}">${ item.title }</a></li>
+								<#else>
+								<li role="presentation"><a href="${item.page}">${ item.title }</a></li>
+								</#if>						
+							</#list>								
+							</ul>
+							</div>
+							<div class="breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
 									<li><a href="">${navigator.parent.title}</a></li>
