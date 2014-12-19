@@ -1294,6 +1294,8 @@ overflow-y: auto;
 	font-size: 55%;
 	border-top: solid 1px #ccc;
 	margin-top: 10px;
+	padding: 0 5px;
+	font-size::15px;
 }
 .breadcrumbs h2 small:before{
 	content: "\f10d";
