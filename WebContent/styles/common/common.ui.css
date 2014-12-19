@@ -1311,7 +1311,7 @@ overflow-y: auto;
 }
 
 
-.breadcrumbs h2 small{
+.breadcrumbs h2 small , article h2 small {
 	display: block;
 	color: #777;
 	line-height: 2em;
@@ -1320,38 +1320,14 @@ overflow-y: auto;
 	margin-top: 10px;
 	padding: 0 5px;
 }
-.breadcrumbs h2 small:before{
+.breadcrumbs h2 small:before, article h2 small:before{
 	content: "\f10d";
 	font-family: 'FontAwesome';'
 	margin-right: 0.5em;		
 } 
 
-.breadcrumbs h2 small:after{
+.breadcrumbs h2 small:after, article h2 small:after{
 	content: "\f10e";
 	font-family: 'FontAwesome';'
 	margin-right: 0.5em;	
-}
-
-article blockquote {
-	margin-bottom: 0;
-	font-weight: 300;
-	font-family: 'Open Sans', sans-serif;
-	padding-left: 0;
-	border: none;
-	text-transform: uppercase;
-	text-align: center;
-	text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-	letter-spacing: 0.1em;
-}
-
-article blockquote:before {
-	content: "\f10d";
-	font-family: 'FontAwesome';'
-	margin-right: 0.5em;
-}
-
-article lockquote:after {
-	content: "\f10e";
-	font-family: 'FontAwesome';
-	margin-left: 0.5em;
 }
