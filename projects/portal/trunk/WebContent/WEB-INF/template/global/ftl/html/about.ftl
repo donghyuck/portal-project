@@ -99,7 +99,7 @@
 			<div class="container content">
 				<div class="title-box-v2">
 					<p>
-					우리는 오픈 소스 소프트웨어 개발자 그룹으로 웹을 기반으로 하는 응용프로그램 개발을 돕는 여러가지 도구들을 만들고 있습니다.		
+					메르딩앙은 오픈 소스 소프트웨어 개발자 그룹으로 웹을 기반으로 하는 응용프로그램 개발을 돕는 여러가지 도구들을 만들고 있습니다.		
 					또한 다수의 우수한 오픈소스 기술들을 사용하고 있습니다.								
 					</p>
 				</div>
@@ -193,8 +193,8 @@
 			
 <div class="container content">
         <div class="title-box-v2">
-            <h2>오픈소스<span class="color-green"></span></h2>
-            <p></p>
+            <h2>오픈소스 지원<span class="color-green"></span></h2>
+            <p>메르딩앙은 오픈소스들에 대한 프리미엄 지원 및 개발자 지원 서비스를 제공합니다. </p>
         </div>
 
         <div class="row margin-bottom-40">
