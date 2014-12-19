@@ -290,43 +290,7 @@
                     	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="thumbnail-style">
-                    <img class="img-responsive" src="assets/img/team/3.jpg" alt="">
-                    <h3><a>Kate Metus</a> <small>Project Manager</small></h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
-                    <ul class="list-unstyled list-inline team-socail">
-                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="thumbnail-style">
-                    <img class="img-responsive" src="assets/img/team/2.jpg" alt="">
-                    <h3><a>Porta Gravida</a> <small>VP of Operations</small></h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
-                    <ul class="list-unstyled list-inline team-socail">
-                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-3">
-                <div class="thumbnail-style">
-                    <img class="img-responsive" src="assets/img/team/4.jpg" alt="">
-                    <h3><a>Donec Elit</a> <small>Director, R &amp; D Talent</small></h3>
-                    <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem...</p>
-                    <ul class="list-unstyled list-inline team-socail">
-                    	<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                    	<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                    </ul>
-                </div>
-            </div>
+            </div>            
         </div><!--/team-->
     	<!-- End Meer Our Team -->
     </div>
