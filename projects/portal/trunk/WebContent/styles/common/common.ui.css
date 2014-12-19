@@ -1261,11 +1261,15 @@ overflow-y: auto;
 
 .breadcrumbs {
 	padding: 20px 0 5px;
+	position: relative;
+}
+.breadcrumbs .container {
+	position:relative;
 }
 .breadcrumb-v1 .breadcrumb {
-top:70px;	
-/* margin-top: -60px; */
-margin-right: 15px;	
+	position: absolute;
+	bottom: 0;
+	right: 0;
 }
 .breadcrumb-v1 .breadcrumb>li+li:before {
 	padding: 0 5px;
