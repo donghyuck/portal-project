@@ -1330,8 +1330,9 @@ overflow-y: auto;
 	content: "\f10e";
 	font-family: 'FontAwesome';'
 	margin-right: 0.5em;	
-} 
-.breadcrumbs blockquote {
+}
+
+article blockquote {
 	margin-bottom: 0;
 	font-weight: 300;
 	font-family: 'Open Sans', sans-serif;
@@ -1343,13 +1344,13 @@ overflow-y: auto;
 	letter-spacing: 0.1em;
 }
 
-.breadcrumbs blockquote:before {
+article blockquote:before {
 	content: "\f10d";
 	font-family: 'FontAwesome';'
 	margin-right: 0.5em;
 }
 
-.breadcrumbs lockquote:after {
+article lockquote:after {
 	content: "\f10e";
 	font-family: 'FontAwesome';
 	margin-left: 0.5em;
