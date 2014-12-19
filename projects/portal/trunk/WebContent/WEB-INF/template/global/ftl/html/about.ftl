@@ -96,11 +96,12 @@
 			</header>					
 			<!-- START MAIN CONTENT -->	
 
-<div class="container content">
-        <div class="title-box-v2">
-            <h2>About <span class="color-green">Unify</span></h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
+			<div class="container content">
+				<div class="title-box-v2">
+					<p>
+					우리는 웹을 기반으로 하는 응용프로그램 개발을 돕는 여러가지 도구들을 만들고 있습니다.					
+					</p>
+				</div>
 
         <!-- About Sldier -->
         <div class="shadow-wrapper margin-bottom-50">
