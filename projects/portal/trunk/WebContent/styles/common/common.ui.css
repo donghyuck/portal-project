@@ -1269,7 +1269,7 @@ overflow-y: auto;
 .breadcrumb-v1 .breadcrumb {
 	position: absolute;
 	bottom: 0;
-	right: 0;
+	right: 10px;
 	top: initial;
 	margin: 0;
 }
