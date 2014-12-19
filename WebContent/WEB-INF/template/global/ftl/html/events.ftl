@@ -144,9 +144,6 @@
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 								</small>	
 							</h2>
-							<p>
-														
-							</p>
 							<div class="pull-right breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
