@@ -1277,7 +1277,7 @@ overflow-y: auto;
 	border-bottom: 20px solid #fff;
 	left: 50%;
 	margin-left: -10px;
-	top: 0;;
+	bottom: 0;
 } 
 
 .breadcrumbs .container {
