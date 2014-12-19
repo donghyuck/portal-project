@@ -1263,8 +1263,8 @@ overflow-y: auto;
 	padding: 20px 0 5px;
 }
 .breadcrumb-v1 .breadcrumb {
-	
-margin-top: -60px;
+top:70px;	
+/* margin-top: -60px; */
 margin-right: 15px;	
 }
 .breadcrumb-v1 .breadcrumb>li+li:before {
