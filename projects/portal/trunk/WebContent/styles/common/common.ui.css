@@ -1255,6 +1255,10 @@ overflow-y: auto;
 
 /* .breadcrumbs
 --------------------------------------*/
+.page-summary {
+	font-size : 15px;
+} 
+
 .breadcrumbs {
 	padding: 20px 0 5px;
 }
@@ -1279,14 +1283,9 @@ overflow-y: auto;
 	line-height:46px;
 	padding: 15px 3px;
 	margin: 0 0 0 0;
-/*
-	font-size: 2.2em;
-	font-weight: normal;
-	line-height: 30px;
-	text-transform: uppercase;
-	text-align: left;
-	*/
 }
+
+
 .breadcrumbs h2 small{
 	display: block;
 	color: #777;
@@ -1295,7 +1294,6 @@ overflow-y: auto;
 	border-top: solid 1px #ccc;
 	margin-top: 10px;
 	padding: 0 5px;
-	font-size::15px;
 }
 .breadcrumbs h2 small:before{
 	content: "\f10d";
