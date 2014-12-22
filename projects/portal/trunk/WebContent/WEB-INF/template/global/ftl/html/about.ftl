@@ -139,7 +139,7 @@
 				</div>
 
 					<!-- Meer Our Team -->
-					<div class="headline"><h2>프로젝트 멤버</h2></div>
+					<div class="headline"><h2>멤버 소개</h2></div>
 					<div class="row team">
 						<div class="col-sm-3">
 							<div class="thumbnail-style">
