@@ -1347,3 +1347,8 @@ overflow-y: auto;
 .text-md {
 	font-size : 1.4em;
 }
+
+.bg-pattern {
+	background-image: url(/images/common/pattern.png);
+	background-repeat: repeat;	
+}
