@@ -1331,3 +1331,7 @@ overflow-y: auto;
 	font-family: 'FontAwesome';'
 	margin-right: 0.5em;	
 }
+
+.breadcrumbs .nav  a:hover {
+	color:#ccc;
+}
