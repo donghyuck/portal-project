@@ -168,7 +168,7 @@
 			<div class="title-box-v2">
 				<h2>
 					오픈소스 서비스
-					<small class="no-border">아래의 오픈소스 기술들을 사용하면서 얻어진 유용한 것들을 제공하고 있습니다. </small>
+					<small class="no-border"> 우리는 아래의 오픈소스 기술들을 사용하면서 얻어진 유용한 것들을 제공합니다. </small>
 				</h2>
 			</div>
 
