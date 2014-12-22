@@ -160,15 +160,15 @@
 					</div><!--/team-->
 				<!-- End Meer Our Team -->				
 			</div>
-    			
-	<article class="bg-slivergray">			
-		<div class="container content">
-        <div class="title-box-v2">
-            <h2>
-            오픈소스 서비스
-            <small class="no-border"> 메르디앙은 오픈소스들에 대한 프리미엄 지원 및 개발자 지원 서비스를 제공하고 있습니다. </small>
-            </h2>
-        </div>
+		
+		<article class="bg-slivergray">			
+			<div class="container">
+			<div class="title-box-v2">
+				<h2>
+					오픈소스 서비스
+					<small class="no-border">아래의 오픈소스 기술들을 사용하면서 얻어진 유용한 것들을 제공하고 있습니다. </small>
+				</h2>
+			</div>
 
         <div class="row margin-bottom-40">
             <!-- Begin Easy Block v2 -->                
