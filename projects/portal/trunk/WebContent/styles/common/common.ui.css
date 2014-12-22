@@ -1343,6 +1343,10 @@ overflow-y: auto;
 	border-bottom : 2px solid #428bca;
 }
 
+.title-box-v2 h1 {
+	font-size: 3em;
+	text-transform: uppercase;
+}
 
 .text-md {
 	font-size : 1.4em;
