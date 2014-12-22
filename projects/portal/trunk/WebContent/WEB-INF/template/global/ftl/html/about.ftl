@@ -250,9 +250,6 @@
         </div>
     </div>
 </article>
-<div class="container content">		
-
-    </div>
 			
 			<!-- END MAIN CONTENT -->	
 			</#if>	
