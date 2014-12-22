@@ -149,8 +149,9 @@ PC9saWNlbnNlPg==</file>
 	<security>
 		<authentication>
 			<loginVer>1</loginVer>
-		    <disallowGuest>false</disallowGuest>
-		    <authority>ROLE_USER</authority>		
+			<template>/html/accounts/login.ftl</template>
+			<disallowGuest>false</disallowGuest>
+			<authority>ROLE_USER</authority>		
 			<encoding>
 				<algorithm>SHA-256</algorithm>
 			</encoding>
