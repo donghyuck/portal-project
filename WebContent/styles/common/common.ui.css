@@ -541,7 +541,9 @@ padding: 20px 10px;
 	color: #555;
 	font-size: 18px;
 	font-weight: 400;
-	margin-bottom: 5px;
+	/*margin-bottom: 5px;*/
+	margin-top: 3px;
+	padding-left: 10px;
 	padding-bottom: 5px;
 	text-transform: uppercase;
 	border-bottom: 1px solid #dedede;
