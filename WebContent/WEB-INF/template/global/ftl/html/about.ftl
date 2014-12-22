@@ -164,7 +164,7 @@
 			</div>
 		
 		<article class="bg-slivergray">			
-			<div class="container">
+			<div class="container content">
 			<div class="title-box-v2">
 				<h2>
 					오픈소스 서비스
