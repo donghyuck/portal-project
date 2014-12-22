@@ -1311,7 +1311,7 @@ overflow-y: auto;
 }
 
 
-.breadcrumbs h2 small , article h2 small {
+.breadcrumbs h2 small , article h2 small, article h1 small {
 	display: block;
 	color: #777;
 	line-height: 2em;
@@ -1320,13 +1320,13 @@ overflow-y: auto;
 	margin-top: 10px;
 	padding: 0 5px;
 }
-.breadcrumbs h2 small:before, article h2 small:before{
+.breadcrumbs h2 small:before, article h2 small:before, article h1 small:before{
 	content: "\f10d";
 	font-family: 'FontAwesome';'
 	margin-right: 0.5em;		
 } 
 
-.breadcrumbs h2 small:after, article h2 small:after{
+.breadcrumbs h2 small:after, article h2 small:after, article h1 small:after{
 	content: "\f10e";
 	font-family: 'FontAwesome';'
 	margin-right: 0.5em;	
