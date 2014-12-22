@@ -1334,4 +1334,5 @@ overflow-y: auto;
 
 .breadcrumbs .nav  a:hover {
 	color:#ccc;
+	background : none;
 }
