@@ -1338,6 +1338,7 @@ overflow-y: auto;
 }
 
 .breadcrumbs .nav-pills>li.active>a, .breadcrumbs  .nav-pills>li.active>a:hover, .breadcrumbs .nav-pills>li.active>a:focus {
+	color:#555;
 	background : none;
 	border-bottom : 2px solid #428bca;
 }
