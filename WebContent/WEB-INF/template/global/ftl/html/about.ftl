@@ -166,10 +166,10 @@
 		<article class="bg-slivergray">			
 			<div class="container content no-padding-b">
 			<div class="title-box-v2">
-				<h2>
+				<h1>
 					오픈소스 서비스
 					<small class="no-border"> 우리는 아래의 오픈소스 기술들을 사용하면서 얻어진 유용한 것들을 제공합니다. </small>
-				</h2>
+				</h1>
 			</div>
 
         <div class="row margin-bottom-40">
