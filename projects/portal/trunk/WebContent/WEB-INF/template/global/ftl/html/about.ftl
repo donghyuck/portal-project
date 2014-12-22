@@ -98,15 +98,15 @@
 			<div class="container content">
 				<div class="row margin-bottom-40">
 					<div class="col-md-6 md-margin-bottom-40">
-						<p style="font-size:1.6em;">
+						<p class="text=md">
 						<span class="dropcap-bg">메</span>르딩앙은 오픈 소스 소프트웨어 개발자 그룹으로 엔터프라이즈 수준의 응용프로그램과 콤포넌트들을 만들고 있습니다.
 						</p>
 						<hr class="devider devider-db-dashed">
-						<p style="font-size:1.6em;">
+						<p class="text=md">
 						특히 우리는 완전한 100% 프로그램을 만드는 것이 목표가 아닌 누군가의 아이디어를 구현하기 위한 서비스 또는 제품 개발을 돕는 응용프로그램과 콤포넌트들 만드는 것을 목표로 하고 있습니다.
 						</p>
 						<hr class="devider devider-db-dashed">
-						<p style="font-size:1.6em;">
+						<p class="text=md">
 						또한 우리 스스로 역시 생산성 향상을 위하여 다수의 우수한 오픈소스 기술들을 사용하고 있으며 이러한 과정에서 얻어진 유용한 것들을 모두와 공유합니다.								
 						</p>
 					</div>
