@@ -183,7 +183,7 @@
 		        </label>		         
 		        <div class="row margin-bottom-20">
 		            <div class="col-md-10 col-md-offset-1">
-		                <span class="label label-primary">접속 IP</span>&nbsp;<small>${ Request.getRequest().getRemoteAddr() }</small><span class="label label-warning"></span>
+		                <span class="label label-primary">접속 IP</span>&nbsp;<small>${ action.getRemoteAddr() }</small><span class="label label-warning"></span>
 		            </div>
 		        </div>
 		        <div class="row">
