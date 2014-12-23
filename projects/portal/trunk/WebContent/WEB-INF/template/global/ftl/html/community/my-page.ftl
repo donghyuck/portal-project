@@ -71,6 +71,10 @@
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->
+		function getMyPageSource(){
+			return $("#page-source-list input[type=radio][name=page-source]:checked").val();			
+		}
+				
 		function createPageSection(){
 			var renderTo = $("#my-page-grid");
 			common.ui.grid( renderTo, {
@@ -79,7 +83,7 @@
 					transport: { 
 						read: { url:'/secure/list-website-page.do?output=json', type: 'POST' },
 						parameterMap: function (options, type){
-							return { startIndex: options.skip, pageSize: options.pageSize,  objectType: 2 }
+							return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
 						}
 					},
 					schema: {
@@ -127,7 +131,11 @@
 				dataBound: function(e){		
 					$("button.btn-page-control-group").attr("disabled", "disabled");
 				}			
-			} );			
+			} );		
+			
+			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
+					common.ui.grid(renderTo).dataSource.read();	
+			});				
 		}
 		
 		
@@ -351,15 +359,15 @@
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
 							<div class="p-xxs">
-							<div class="btn-group" data-toggle="buttons" id="image-source-list">
+							<div class="btn-group" data-toggle="buttons" id="page-source-list">
 								<label class="btn btn-sm btn-danger rounded-left active">
-									<input type="radio" name="image-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
+									<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
 								</label>
 								<label class="btn btn-sm btn-danger">
-									<input type="radio" name="image-source" value="30"><i class="fa fa-globe"></i> SITE
+									<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
 								</label>											
 								<label class="btn btn-sm btn-danger rounded-right">
-									<input type="radio" name="image-source" value="1"><i class="fa fa-building-o"></i> COMPANY
+									<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
 								</label>
 							</div>
 							</div>
