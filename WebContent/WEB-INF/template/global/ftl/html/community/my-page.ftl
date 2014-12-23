@@ -351,6 +351,18 @@
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
 							
+							<div class="btn-group" data-toggle="buttons" id="image-source-list">
+										<label class="btn btn-sm btn-danger rounded-left active">
+											<input type="radio" name="image-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
+										</label>
+										<label class="btn btn-sm btn-danger">
+											<input type="radio" name="image-source" value="30"><i class="fa fa-globe"></i> SITE
+										</label>											
+										<label class="btn btn-sm btn-danger rounded-right">
+											<input type="radio" name="image-source" value="1"><i class="fa fa-building-o"></i> COMPANY
+										</label>
+
+									</div>
 							<div id="my-page-grid"></div>
 							
 							
