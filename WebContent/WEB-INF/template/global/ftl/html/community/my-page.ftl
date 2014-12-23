@@ -81,7 +81,7 @@
 				dataSource: {
 					serverFiltering: false,
 					transport: { 
-						read: { url:'/secure/list-website-page.do?output=json', type: 'POST' },
+						read: { url:'/data/pages/list.json?output=json', type: 'POST' },
 						parameterMap: function (options, type){
 							return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
 						}
