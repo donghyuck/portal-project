@@ -125,7 +125,7 @@
 			width: 380px;
 			padding: 20px;
 			margin: 60px auto;
-			rgba(255, 255, 255, .8)
+			rgba(255, 255, 255, .8);
 		}
 		
 		.nav>li>a{
