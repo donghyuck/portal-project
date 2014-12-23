@@ -164,7 +164,7 @@
 						<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 						<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 					</ul>
-<div class="note">You may use these HTML tags and attributes: &lt;a href="" title=""&gt;, &lt;abbr title=""&gt;, &lt;acronym title=""&gt;, &lt;b&gt;, &lt;blockquote cite=""&gt;, &lt;cite&gt;, &lt;code&gt;, &lt;del datetime=""&gt;, &lt;em&gt;, &lt;i&gt;, &lt;q cite=""&gt;, &lt;strike&gt;, &lt;strong&gt;.</div>					
+<div class="note">쇼셜 로그인을 통한 인증을 지원합니다.</div>					
 		            <#assign webSite = action.webSite
 		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
 		            <#if isAllowedSignup >
