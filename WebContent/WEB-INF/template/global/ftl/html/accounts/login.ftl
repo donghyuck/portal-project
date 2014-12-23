@@ -199,12 +199,7 @@
 								<div id="signin-status"  class="col-sm-12"></div>
 							</div>
 						</section>						
-						<section>
-							<div class="row">
-								<div class="col-md-12">
-									<i class="fa fa-info-circle"></i> ${ action.getRemoteAddr() } 에서 접속함.
-								</div>
-							</div>
+						<div class="note"><i class="fa fa-info-circle"></i> ${ action.getRemoteAddr() } 에서 접속함.</div>
 						</section>
 					</fieldset>				
 					<footer>
