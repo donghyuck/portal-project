@@ -78,7 +78,7 @@
 					transport: { 
 						read: { url:'/secure/list-website-page.do?output=json', type: 'POST' },
 						parameterMap: function (options, type){
-							return { startIndex: options.skip, pageSize: options.pageSize,  targetSiteId: sitePlaceHolder.webSiteId }
+							return { startIndex: options.skip, pageSize: options.pageSize,  objectType: 2 }
 						}
 					},
 					schema: {
