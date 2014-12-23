@@ -35,7 +35,7 @@
 							</li>
 							<#if action.user.anonymous >
 							<li class="topbar-devider"></li>   
-							<li><a href="<@spring.url '/accounts/login.do?ver=1'/>">로그인</a></li>   
+							<li><a href="<@spring.url '/accounts/login?ver=1'/>">로그인</a></li>   
 							<li class="topbar-devider"></li>   
 							<li><a href="<@spring.url '/accounts/login.do?ver=1'/>">회원가입</a></li>   
 							</#if>
