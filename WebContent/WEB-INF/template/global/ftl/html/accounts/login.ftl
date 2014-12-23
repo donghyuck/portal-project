@@ -90,7 +90,7 @@
 				btn.button('loading');
 				if( validator.validate() ){
 					common.ui.ajax(
-						"<@spring.url "/login"/>", 
+						"<@spring.url "/login_auth"/>", 
 						{
 							data: $('form[name="signin-fm"]').serialize(),
 							success : function( response ) {   
