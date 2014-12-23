@@ -176,13 +176,13 @@
 						<section>
 							<label class="input">
 								<i class="icon-append fa fa-envelope"></i>
-								<input type="text" name="username" placeholder="아이디 또는 이메일">
+								<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
 							</label>
 						</section>
 						<section>
 							<label class="input">
 								<i class="icon-append fa fa-lock"></i>
-								<input type="password" name="password" placeholder="비밀번호">
+								<input type="password" name="password" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." >
 							</label>
 						</section>
 						<section>
@@ -192,6 +192,9 @@
 									<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 								</div>
 							</div>
+						</section>
+						<section>
+							<span class="label label-primary">접속 IP</span>&nbsp;<small>${ action.getRemoteAddr() }</small><span class="label label-warning"></span>
 						</section>
 					</fieldset>				
 				
