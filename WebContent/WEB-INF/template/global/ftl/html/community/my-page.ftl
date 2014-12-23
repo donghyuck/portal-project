@@ -350,7 +350,7 @@
 					<span class="close animated"></span>
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
-							<div class="pull-right p-xxs">
+							<div class="p-xxs">
 							<div class="btn-group" data-toggle="buttons" id="image-source-list">
 								<label class="btn btn-sm btn-danger rounded-left active">
 									<input type="radio" name="image-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
