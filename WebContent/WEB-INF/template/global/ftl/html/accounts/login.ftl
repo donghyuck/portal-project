@@ -156,20 +156,20 @@
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
 			<div id="signin-block" class="reg-block sky-form pull-right animated swing">
-				<div class="reg-block-header">		        
-					<h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
+				<header>
+					<img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인">
 					<ul class="social-icons text-center">
-		                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
-		                <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
-		                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
-		                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
+						<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
+						<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
+						<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
+						<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 					</ul>
 		            <#assign webSite = action.webSite
 		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
 		            <#if isAllowedSignup >
 					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>
-					 </#if>					
-		        </div>				
+					 </#if>						
+				</header>
 				<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
 					<input type="hidden" name="output" value="json" />
 					<fieldset>
