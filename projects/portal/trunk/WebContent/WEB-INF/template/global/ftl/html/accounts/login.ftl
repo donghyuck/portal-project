@@ -185,6 +185,14 @@
 								<input type="password" name="password" placeholder="비밀번호">
 							</label>
 						</section>
+						<section>
+							<div class="row">
+								<div class="col col-4"></div>
+								<div class="col col-8">
+									<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
+								</div>
+							</div>
+						</section>
 					</fieldset>				
 				
 				<fieldset>
