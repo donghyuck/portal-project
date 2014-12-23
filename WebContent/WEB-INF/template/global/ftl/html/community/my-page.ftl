@@ -327,7 +327,7 @@
 					<div class="container">
 						<div class="personalized-section-title">
 							<i class="icon-flat home"></i>
-							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
+							<h3>MY 페이지 <span>생각나는 내용을 적어보고, 수업 내용과 모임 메모를 기록하고, 웹 콘텐츠를 캡처하여 붙이고, 할 일 목록을 만들고, 아이디어를 구상하고 스케치할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">
 								<div id="personalized-buttons" class="btn-group">
 									<button type="button" class="btn-u btn-u-blue rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
