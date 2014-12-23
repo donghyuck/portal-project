@@ -155,7 +155,7 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
-			<div id="signin-block" class="reg-block pull-right animated swing">
+			<div id="signin-block" class="reg-block sky-form pull-right animated swing">
 				<div class="reg-block-header">		        
 					<h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 					<ul class="social-icons text-center">
@@ -170,9 +170,25 @@
 					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>
 					 </#if>					
 		        </div>				
-				<form name="signin-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
+				<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
+					<input type="hidden" name="output" value="json" />
+					<fieldset>
+						<section>
+							<label class="input">
+								<i class="icon-append fa fa-envelope"></i>
+								<input type="text" name="username" placeholder="아이디 또는 이메일">
+							</label>
+						</section>
+						<section>
+							<label class="input">
+								<i class="icon-append fa fa-lock"></i>
+								<input type="password" name="password" placeholder="비밀번호">
+							</label>
+						</section>
+					</fieldset>				
+				
 				<fieldset>
-				<input type="hidden" name="output" value="json" />		    
+
 		        <div class="input-group margin-bottom-20">
 		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 		            <input type="text" name="username" class="form-control" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
