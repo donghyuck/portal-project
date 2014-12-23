@@ -61,30 +61,75 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
-				// personalized grid setting	
-				/*			
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
-				common.ui.buttonGroup($("#personalized-buttons"), {
-					handlers :{
-						"show-notification-panel" : function(e){
-							common.ui.disable($(e.target));
-							createNotificationPanel();
-						},
-						"show-memo-panel" : function(e){
-							common.ui.disable($(e.target));
-							createMemoPanel();
-						}
-					}
-				});
-				*/
+				
 				setupPersonalizedSection();			
 				// END SCRIPT 				
 			}
 		}]);			
 
 		<!-- ============================== -->
-		<!-- Announce												-->
+		<!-- Page														-->
 		<!-- ============================== -->
+		function createPageSection(){
+			var renderTo = $("#my-page-grid");
+			common.ui.grid( renderTo, {
+				dataSource: {
+					serverFiltering: false,
+					transport: { 
+						read: { url:'/secure/list-website-page.do?output=json', type: 'POST' },
+						parameterMap: function (options, type){
+							return { startIndex: options.skip, pageSize: options.pageSize,  targetSiteId: sitePlaceHolder.webSiteId }
+						}
+					},
+					schema: {
+						total: "totalCount",
+						data: "pages",
+						model: common.ui.data.Page
+					},
+					error:common.ui.handleAjaxError,
+					batch: false,
+					pageSize: 15,
+					serverPaging: true,
+					serverFiltering: false,
+					serverSorting: false
+				},
+				columns: [
+					{ field: "pageId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
+					{ field: "name", title: "이름", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}}, 
+					{ field: "title", title: "제목", width: 350 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template: $('#webpage-title-template').html() }, 
+					{ field: "versionId", title: "버전", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+					{ field: "pageState", title: "상태", width: 120, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template: '#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#'},
+					{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+					{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+					{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],         
+				filterable: true,
+				sortable: true,
+				resizable: true,
+				pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+				selectable: 'row',
+				height: '100%',
+				change: function(e) {                    
+					var selectedCells = this.select();                 
+					if( selectedCells.length > 0){ 
+						var selectedCell = this.dataItem( selectedCells ); 
+						/*
+						setPageEditorSource(selectedCell);
+						if( selectedCell.pageId > 0 ){
+							if( selectedCell.pageState === 'PUBLISHED' )
+								$('button.btn-page-control-group[data-action="page-delete"]').removeAttr("disabled");
+							else
+								$('button.btn-page-control-group').removeAttr("disabled");
+						}
+						*/
+ 					} 						
+				},
+				dataBound: function(e){		
+					$("button.btn-page-control-group").attr("disabled", "disabled");
+				}			
+			} );			
+		}
+		
+		
 		function createAnnounceSection(){
 			
 			var renderTo = $("#my-announce-section");
@@ -305,7 +350,7 @@
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
 							
-							
+							<div id="my-page-grid"></div>
 							
 							
 						</div><!-- /.row -->
