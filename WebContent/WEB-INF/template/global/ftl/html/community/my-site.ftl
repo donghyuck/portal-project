@@ -326,7 +326,7 @@
 					<span class="open animated"></span>
 					<div class="container">
 						<div class="personalized-section-title">
-							<i class="icon-flat home"></i>
+							<i class="icon-flat settings2"></i>
 							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">
 								<div id="personalized-buttons" class="btn-group">
