@@ -8,9 +8,7 @@
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/sky-forms.css"/>',	
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
-			'css!<@spring.url "/styles/common.pages/common.signup_signon.css"/>',			
-			
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>' 
 			'css!<@spring.url "/styles/jquery.jgrowl/jquery.jgrowl.min.css"/>',
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jquery.plugins/jquery.ui.shake.min.js"/>',
