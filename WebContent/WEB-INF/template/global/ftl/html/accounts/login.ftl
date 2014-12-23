@@ -195,22 +195,20 @@
 						</section>
 						<section>
 							<div class="row">
+								<div id="signin-status"  class="col-sm-12"></div>
+							</div>
+						</section>						
+						<section>
+							<div class="row">
 								<div class="col-md-12">
 									<i class="fa fa-info-circle"></i> ${ action.getRemoteAddr() } 에서 접속함.
 								</div>
 							</div>
 						</section>
 					</fieldset>				
-				
-				<fieldset>
-					<div class="row">
-						<div id="signin-status"  class="col-sm-12"></div>
-					</div>
-					<div class="row">
-						<div class="col-sm-12">
-							<button type="submit" class="btn btn-primary btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
-						</div>
-					</div>
+					<footer>
+						<button type="submit" class="btn btn-primary btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+					</footer>
 		        </fieldset><!-- /fieldset -->
 		        </form><!-- /form -->
 		    </div><!-- /.reg-block -->
