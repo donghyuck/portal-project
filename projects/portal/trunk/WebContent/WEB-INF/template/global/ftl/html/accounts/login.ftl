@@ -195,11 +195,10 @@
 						</section>
 						<section>
 							<div class="row">
-								<div class="col-md-10 col-md-offset-1">
+								<div class="col-md-12">
 									${ action.getRemoteAddr() } 에서 접속함.
 								</div>
 							</div>
-							<span class="label label-primary">접속 IP</span>&nbsp;<small>${ action.getRemoteAddr() }</small><span class="label label-warning"></span>
 						</section>
 					</fieldset>				
 				
