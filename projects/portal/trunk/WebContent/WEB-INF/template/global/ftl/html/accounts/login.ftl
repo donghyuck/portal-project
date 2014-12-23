@@ -157,13 +157,14 @@
 		<div class="container" style="min-height:450px;">
 			<div id="signin-block" class="reg-block sky-form pull-right animated swing">
 				<header>
-					<img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인">
+					<img src="/download/logo/company/${action.webSite.company.name}" height="64" class="img-circle" alt="로그인">
 					<ul class="social-icons text-center">
 						<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 						<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
 						<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 						<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 					</ul>
+<div class="note">You may use these HTML tags and attributes: &lt;a href="" title=""&gt;, &lt;abbr title=""&gt;, &lt;acronym title=""&gt;, &lt;b&gt;, &lt;blockquote cite=""&gt;, &lt;cite&gt;, &lt;code&gt;, &lt;del datetime=""&gt;, &lt;em&gt;, &lt;i&gt;, &lt;q cite=""&gt;, &lt;strike&gt;, &lt;strong&gt;.</div>					
 		            <#assign webSite = action.webSite
 		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
 		            <#if isAllowedSignup >
