@@ -149,7 +149,7 @@ PC9saWNlbnNlPg==</file>
 	<security>
 		<authentication>
 			<loginVer>1</loginVer>
-			<template>/html/accounts/login.ftl</template>
+			<template>/html/accounts/login</template>
 			<disallowGuest>false</disallowGuest>
 			<authority>ROLE_USER</authority>		
 			<encoding>
