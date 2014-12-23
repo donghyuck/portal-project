@@ -204,33 +204,14 @@
 					</fieldset>				
 				
 				<fieldset>
-
-		        <div class="input-group margin-bottom-20">
-		            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-		            <input type="text" name="username" class="form-control" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
-		        </div>
-		        <div class="input-group margin-bottom-20">
-		            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-		            <input type="password" name="password" class="form-control" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." >
-		        </div>
-		        <hr class="no-margin">
-		        <label class="checkbox">
-		            <input type="checkbox"> 
-		            <p>로그인 상태 유지</p>
-		        </label>		         
-		        <div class="row margin-bottom-20">
-		            <div class="col-md-10 col-md-offset-1">
-		                <span class="label label-primary">접속 IP</span>&nbsp;<small>${ action.getRemoteAddr() }</small><span class="label label-warning"></span>
-		            </div>
-		        </div>
-		        <div class="row">
-		            <div id="signin-status"  class="col-sm-12"></div>
-		        </div>
-		        <div class="row">
-		            <div class="col-md-10 col-md-offset-1">
-		                <button type="submit" class="btn btn-primary btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
-		            </div>
-		        </div>
+					<div class="row">
+						<div id="signin-status"  class="col-sm-12"></div>
+					</div>
+					<div class="row">
+						<div class="col-md-10 col-md-offset-1">
+							<button type="submit" class="btn btn-primary btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+						</div>
+					</div>
 		        </fieldset><!-- /fieldset -->
 		        </form><!-- /form -->
 		    </div><!-- /.reg-block -->
