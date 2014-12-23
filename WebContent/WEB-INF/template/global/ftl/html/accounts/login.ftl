@@ -162,7 +162,7 @@
 		            <#assign webSite = action.webSite
 		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
 		            <#if isAllowedSignup >
-					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="{request.contextPath}/accounts/signup.do">회원가입</a></p>
+					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>
 					 </#if>					
 		        </div>				
 				<form name="signin-fm" class="form-horizontal" role="form" method="POST" accept-charset="utf-8">
@@ -183,7 +183,7 @@
 		        </label>		         
 		        <div class="row margin-bottom-20">
 		            <div class="col-md-10 col-md-offset-1">
-		                <span class="label label-primary">접속 IP</span>&nbsp;<small>${ request.getRemoteAddr() }</small><span class="label label-warning"></span>
+		                <span class="label label-primary">접속 IP</span>&nbsp;<small>${ Request.getRemoteAddr() }</small><span class="label label-warning"></span>
 		            </div>
 		        </div>
 		        <div class="row">
