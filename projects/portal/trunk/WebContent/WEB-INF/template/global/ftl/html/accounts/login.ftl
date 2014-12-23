@@ -7,9 +7,10 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.signup_signon.css"/>',			
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/sky-forms.css"/>',	
+			
 			'css!<@spring.url "/styles/jquery.jgrowl/jquery.jgrowl.min.css"/>',
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jquery.plugins/jquery.ui.shake.min.js"/>',
@@ -33,7 +34,7 @@
 					}
 				});			
 				
-				common.ui.ajax("/connect/list.json", {
+				common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 					success: function(response){ 
 						var renderTo = $("#signin-block .social-icons");
 						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
@@ -91,7 +92,7 @@
 				btn.button('loading');
 				if( validator.validate() ){
 					common.ui.ajax(
-						"/login", 
+						"<@spring.url "/login"/>", 
 						{
 							data: $('form[name="signin-fm"]').serialize(),
 							success : function( response ) {   
@@ -103,7 +104,7 @@
 									$("input[type='password']").val("").focus();											
 								} else {        	   
 									$("#signin-status").html("");                         
-									location.href="/main.do";
+									location.href="<@spring.url "/main.do"/>";
 								} 	
 							},
 							complete: function(jqXHR, textStatus ){					
@@ -153,12 +154,10 @@
 				<div class="reg-block-header">		        
 					<h2><img src="/download/logo/company/${action.webSite.company.name}" height="42" class="img-circle" alt="로그인"></h2>
 					<ul class="social-icons text-center">
-					
 		                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 		                <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
 		                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 		                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
-					
 					</ul>
 		            <#assign webSite = action.webSite
 		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
