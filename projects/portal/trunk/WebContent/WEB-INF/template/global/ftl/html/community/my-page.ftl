@@ -328,7 +328,7 @@
 		} 
 
 		#my-page .details,  {
-
+			display:none;	
 		} 
 
 		#my-page.compose .master  {
