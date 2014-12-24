@@ -367,8 +367,6 @@
 		}
 
 		#my-page.compose.out .details  {
-			-webkit-animation-name: fadeOut;
-			animation-name: fadeOut;
 			height:0px;							
 		}
 						
