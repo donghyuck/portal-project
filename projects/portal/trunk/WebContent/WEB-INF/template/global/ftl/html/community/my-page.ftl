@@ -342,8 +342,8 @@
 		} 
 
 		#my-page.compose .details  {
-			-webkit-animation-name: fadeInDown;
-			animation-name: fadeInDown;		
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;		
 			opacity: 1;
 			visibility: visible;		
 		} 
