@@ -346,7 +346,7 @@
 			animation-name: fadeOutRight;	
 		}
 		
-		button[disabled=disabled]{
+		.btn[disabled]{
 			cursor: not-allowed;
 			pointer-events: auto;		
 		} 
