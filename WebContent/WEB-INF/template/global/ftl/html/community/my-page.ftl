@@ -316,32 +316,17 @@
 		-->
 		</script>		
 		<style scoped="scoped">			
-		
-		.k-grid td > a.k-button, .k-grid tr[aria-selected="false"] > td > a.k-button {
-			display : none; 
-		}
-						
-		.k-grid tr[aria-selected="true"] > td > a.k-button {
-			display : inline; 
-		}
 
-		.k-grid td > .btn, .k-grid tr[aria-selected="false"] > td .btn, .k-grid td > a.btn, .k-grid tr[aria-selected="false"] > td a.btn{
+		.k-grid tr[aria-selected=false] > td  .btn {
 			cursor: not-allowed;
 			pointer-events: none;
 			opacity: .65;
-			filter: alpha(opacity=65);
-			-webkit-box-shadow: none;
-			box-shadow: none;
-			display:hidden;
-		}					
+		}
 
-		.k-grid tr[aria-selected="true"] > td > .btn , .k-grid tr[aria-selected="true"] > td  a.btn {
+		.k-grid tr[aria-selected=true] > td  .btn {
 			cursor: pointer;
 			pointer-events: auto;
 			opacity: 1;
-			filter: none;
-			-webkit-box-shadow: none;
-			box-shadow: none;
 		}
 							
 		</style>   	
