@@ -333,13 +333,14 @@
 
 		#my-page.compose .master  {
 			-webkit-animation-name: zoomOut;
-			animation-name: zoomOut;						
+			animation-name: zoomOut;			
+			height:0px;			
 		} 
 
 		#my-page.compose .details  {
 			-webkit-animation-name: fadeInUp;
 			animation-name: fadeInUp;		
-			display:visible;	
+			display:block;	
 		} 
 				
 		.k-grid tr > td  .btn-group {
