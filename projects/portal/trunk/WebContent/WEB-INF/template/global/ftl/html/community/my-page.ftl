@@ -388,10 +388,8 @@
 										<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
 									</label>
 								</div>
-								<button class="btn btn-sm btn-danger btn-control-group" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
-								<div class="btn-group">
-									<button type="button" class="btn btn-primary btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
-								</div>
+								<button type="button" class="btn btn-sm btn-danger" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+								<button type="button" class="btn btn-primary btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
 							</div>
 							<div id="my-page-grid"></div>
 							
@@ -534,6 +532,7 @@
 		#: name #</span>
 		<div class="btn-group btn-group-xs pull-right">
 			<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
+			<a href="\\#" onclick="doPageDelete(); return false;" class="btn btn-info btn-sm">삭제</a>
 			<a href="\\#" onclick="doPagePreview(); return false;" class="btn btn-info btn-sm">미리보기</a>
 		</div>	
 	</script>																				
