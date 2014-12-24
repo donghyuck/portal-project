@@ -136,8 +136,17 @@
 			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
 					common.ui.grid(renderTo).dataSource.read();	
 			});				
+			
+			$("#my-page-view span.back").click(function(e){
+				$("#my-page").toggleClass("compose");						
+			});
 		}
 		
+		
+		function doPageEdit(){		
+			$("#my-page").toggleClass("compose");			
+		}
+				
 		
 		function createAnnounceSection(){
 			
@@ -314,11 +323,7 @@
 			renderTo.data("model").set("changed", false);
 		}
 		
-		function doPageEdit(){
-		
-			$("#my-page").toggleClass("compose");			
-			
-		}
+
 		-->
 		</script>		
 		<style scoped="scoped">			
