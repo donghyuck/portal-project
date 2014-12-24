@@ -352,7 +352,21 @@
 			opacity: 1;
 			visibility: visible;		
 		} 
-				
+		
+		#my-page.compose.out .master  {
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;		
+			opacity: 1;
+			visibility: visible;
+			height:auto;						
+		}
+
+		#my-page.compose.out .details  {
+			-webkit-animation-name: zoomOut;
+			animation-name: zoomOut;
+			height:0px;							
+		}
+						
 		.k-grid tr > td  .btn-group {
 			-webkit-animation-duration: 1s;
 			animation-duration: 1s;
