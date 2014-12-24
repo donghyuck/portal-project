@@ -357,6 +357,7 @@
 			animation-name: fadeInUp;		
 			opacity: 1;
 			visibility: visible;		
+			height:auto;		
 		} 
 		
 		#my-page.compose.out .master  {
