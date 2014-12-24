@@ -390,8 +390,7 @@
 								</div>
 								<button class="btn btn-sm btn-danger btn-control-group" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 								<div class="btn-group">
-									<button type="button" class="btn btn-info btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
-									<button type="button" class="btn btn-info btn-sm" data-action="page-delete" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;"><i class="fa fa-trash-o"></i> 삭제</button>
+									<button type="button" class="btn btn-primary btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
 								</div>
 							</div>
 							<div id="my-page-grid"></div>
