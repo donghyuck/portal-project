@@ -507,7 +507,14 @@
 			<div class="cbp-spmenu-overlay"></div>			
 			<!-- ./END RIGHT SLIDE MENU -->
 							
-		<!-- START TEMPLATE -->																	
+	<!-- START TEMPLATE -->				
+	<script id="webpage-name-template" type="text/x-kendo-template">
+		<span class="label label-primary label-lightweight">#= name #</span>
+		<div class="btn-group btn-group-xs">
+			<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
+			<a href="\\#" onclick="doPagePreview(); return false;" class="btn btn-info btn-sm">미리보기</a>
+		</div>	
+	</script>																				
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<#include "/html/common/common-editor-templates.ftl" >	
