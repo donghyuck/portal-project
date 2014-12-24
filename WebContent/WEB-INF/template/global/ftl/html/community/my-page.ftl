@@ -345,6 +345,11 @@
 			-webkit-animation-name: fadeOutRight;
 			animation-name: fadeOutRight;	
 		}
+		
+		button[disabled=disabled]{
+			cursor: not-allowed;
+			pointer-events: auto;		
+		} 
 						
 		</style>   	
 		</#compress>
