@@ -317,6 +317,36 @@
 		</script>		
 		<style scoped="scoped">			
 
+		.k-grid tr > td  .btn-group {
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;		
+			cursor: not-allowed;
+			pointer-events: none;			
+			opacity: 0;
+			visibility: hidden;						
+		}
+
+		.k-grid tr[aria-selected=true] > td  .btn-group {
+			opacity: 1;
+			visibility: visible;
+			cursor: pointer;
+			pointer-events: auto;				
+			-webkit-animation-name: fadeInRight;
+			animation-name: fadeInRight;	
+		}
+		
+		.k-grid tr[aria-selected=false] > td  .btn-group {
+			opacity: 1;
+			visibility: visible;
+			cursor: pointer;
+			pointer-events: auto;				
+			-webkit-animation-name: fadeOutRight;
+			animation-name: fadeOutRight;	
+		}
+				
+/*
 		.k-grid tr > td  .btn {
 			cursor: not-allowed;
 			pointer-events: none;
@@ -330,7 +360,7 @@
 			opacity: 1;
 			visibility: visible;
 		}
-							
+*/							
 		</style>   	
 		</#compress>
 	</head>
