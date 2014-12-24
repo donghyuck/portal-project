@@ -392,7 +392,6 @@
 			<!-- START MAIN CONTENT -->
 			<section class="personalized-section bg-transparent no-margin-b open" >
 				<div class="personalized-section-heading">
-					<span class="open animated"></span>
 					<div class="container">
 						<div class="personalized-section-title">
 							<i class="icon-flat pencil"></i>
@@ -406,8 +405,7 @@
 						</div>
 					</div>				
 				</div>
-				<div class="personalized-section-content animated arrow-up">
-					<span class="close animated"></span>					
+				<div class="personalized-section-content animated arrow-up">	
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
 							<div id="my-page">
