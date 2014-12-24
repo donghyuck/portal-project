@@ -338,7 +338,8 @@
 
 		#my-page.compose .details  {
 			-webkit-animation-name: fadeInUp;
-			animation-name: fadeInUp;			
+			animation-name: fadeInUp;		
+			display:visible;	
 		} 
 				
 		.k-grid tr > td  .btn-group {
