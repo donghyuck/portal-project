@@ -367,6 +367,8 @@
 		}
 
 		#my-page.compose.out .details  {
+			opacity: 0;
+			visibility: hidden;		
 			height:0px;							
 		}
 						
