@@ -316,12 +316,31 @@
 		
 		function doPageEdit(){
 		
-		
+			$("#my-page").toggleClass("compose");			
+			
 		}
 		-->
 		</script>		
 		<style scoped="scoped">			
 
+		#my-page .master,  {
+			
+		} 
+
+		#my-page .details,  {
+
+		} 
+
+		#my-page.compose .master,  {
+			-webkit-animation-name: fadeOutUp;
+			animation-name: fadeOutUp;						
+		} 
+
+		#my-page.compose .details,  {
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;			
+		} 
+				
 		.k-grid tr > td  .btn-group {
 			-webkit-animation-duration: 1s;
 			animation-duration: 1s;
@@ -387,7 +406,7 @@
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
 							<div id="my-page">
-								<div id="my-page-list">
+								<div id="my-page-list" class="master animated">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
 											<label class="btn btn-sm btn-danger rounded-left active">
@@ -405,7 +424,7 @@
 									</div>
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
-								<div id="my-page-view">
+								<div id="my-page-view" class="details animated">
 								
 								
 								
