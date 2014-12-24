@@ -324,23 +324,26 @@
 		<style scoped="scoped">			
 
 		#my-page .master  {
-			
+			height:auto;		
 		} 
 
 		#my-page .details  {
-			display:none;	
+			opacity: 0;
+			visibility: hidden;		
+			height:0px;		
 		} 
 
 		#my-page.compose .master  {
 			-webkit-animation-name: zoomOut;
-			animation-name: zoomOut;			
+			animation-name: zoomOut;
 			height:0px;			
 		} 
 
 		#my-page.compose .details  {
 			-webkit-animation-name: fadeInUp;
 			animation-name: fadeInUp;		
-			display:block;	
+			opacity: 1;
+			visibility: visible;		
 		} 
 				
 		.k-grid tr > td  .btn-group {
