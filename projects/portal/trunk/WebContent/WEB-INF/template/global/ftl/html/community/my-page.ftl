@@ -345,22 +345,7 @@
 			-webkit-animation-name: fadeOutRight;
 			animation-name: fadeOutRight;	
 		}
-				
-/*
-		.k-grid tr > td  .btn {
-			cursor: not-allowed;
-			pointer-events: none;
-			opacity: 0;
-			visibility: hidden;
-		}
-
-		.k-grid tr[aria-selected=true] > td  .btn {
-			cursor: pointer;
-			pointer-events: auto;
-			opacity: 1;
-			visibility: visible;
-		}
-*/							
+						
 		</style>   	
 		</#compress>
 	</head>
@@ -392,17 +377,22 @@
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
 							<div class="p-xxs">
-							<div class="btn-group" data-toggle="buttons" id="page-source-list">
-								<label class="btn btn-sm btn-danger rounded-left active">
-									<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
-								</label>
-								<label class="btn btn-sm btn-danger">
-									<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
-								</label>											
-								<label class="btn btn-sm btn-danger rounded-right">
-									<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
-								</label>
-							</div>
+								<div class="btn-group" data-toggle="buttons" id="page-source-list">
+									<label class="btn btn-sm btn-danger rounded-left active">
+										<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
+									</label>
+									<label class="btn btn-sm btn-danger">
+										<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
+									</label>											
+									<label class="btn btn-sm btn-danger rounded-right">
+										<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
+									</label>
+								</div>
+								<button class="btn btn-sm btn-danger btn-control-group" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+								<div class="btn-group">
+									<button type="button" class="btn btn-info btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
+									<button type="button" class="btn btn-info btn-sm" data-action="page-delete" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;"><i class="fa fa-trash-o"></i> 삭제</button>
+								</div>
 							</div>
 							<div id="my-page-grid"></div>
 							
