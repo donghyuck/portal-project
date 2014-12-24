@@ -369,7 +369,9 @@
 		#my-page.compose.out .details  {
 			opacity: 0;
 			visibility: hidden;		
-			height:0px;							
+			height:0px;				
+			-webkit-animation-name: fadeOutUp;
+			animation-name: fadeOutUp;							
 		}
 						
 		.k-grid tr > td  .btn-group {
