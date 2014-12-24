@@ -317,7 +317,7 @@
 		</script>		
 		<style scoped="scoped">			
 
-		.k-grid tr[aria-selected=false] > td  .btn {
+		.k-grid tr > td  .btn {
 			cursor: not-allowed;
 			pointer-events: none;
 			opacity: .65;
