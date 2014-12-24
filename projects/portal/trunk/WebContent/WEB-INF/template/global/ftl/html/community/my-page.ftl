@@ -316,18 +316,32 @@
 		-->
 		</script>		
 		<style scoped="scoped">			
-			#image-gallery-pager { 
-				margin-top: 5px; 
-			}			
-			#my-announce-section .k-listview .k-state-selected
-			{
-				background : #F5F5F5;
-				color: #585f69;
-			}
-			#my-announce-section .k-listview .k-state-selected .media-heading strong{
-				font-weight:bold;
-				text-decoration: underline;				
-			}			
+		
+		.k-grid td > a.k-button, .k-grid tr[aria-selected="false"] > td > a.k-button {
+			display : none; 
+		}
+						
+		.k-grid tr[aria-selected="true"] > td > a.k-button {
+			display : inline; 
+		}
+
+		.k-grid td > .btn, .k-grid tr[aria-selected="false"] > td .btn, .k-grid td > a.btn, .k-grid tr[aria-selected="false"] > td a.btn{
+			cursor: not-allowed;
+			pointer-events: none;
+			opacity: .65;
+			filter: alpha(opacity=65);
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}			
+		.k-grid tr[aria-selected="true"] > td > .btn , .k-grid tr[aria-selected="true"] > td  a.btn {
+			cursor: pointer;
+			pointer-events: auto;
+			opacity: 1;
+			filter: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+		}
+							
 		</style>   	
 		</#compress>
 	</head>
