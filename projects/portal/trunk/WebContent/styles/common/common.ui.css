@@ -1373,4 +1373,5 @@ span.back {
 	content: "";
 	display: block;
 	opacity: 1;	
+	cursor: pointer;
 } 
