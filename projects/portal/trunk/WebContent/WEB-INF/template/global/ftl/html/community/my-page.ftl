@@ -480,8 +480,8 @@
                         <div class="row">
                             <section class="col col-6">
                                 <label class="input">
-                                    <i class="icon-prepend fa fa-user"></i>
-                                    <input type="text" name="fname" placeholder="템플릿 경로">
+                                    <i class="icon-prepend fa fa-file-code-o"></i>
+                                    <input type="text" name="fname" placeholder="템플릿">
                                 </label>
                             </section>
                             <section class="col col-6">
