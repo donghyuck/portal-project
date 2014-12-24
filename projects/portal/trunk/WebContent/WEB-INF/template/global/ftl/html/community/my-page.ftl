@@ -323,11 +323,11 @@
 		</script>		
 		<style scoped="scoped">			
 
-		#my-page .master,  {
+		#my-page .master  {
 			
 		} 
 
-		#my-page .details,  {
+		#my-page .details  {
 			display:none;	
 		} 
 
