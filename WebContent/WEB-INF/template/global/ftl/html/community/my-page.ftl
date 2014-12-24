@@ -138,7 +138,12 @@
 			});				
 			
 			$("#my-page-view span.back").click(function(e){
-				$("#my-page").toggleClass("compose");						
+				
+				$("#my-page").one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+					$("#my-page").removeClass("compose out");
+				});	
+				$("#my-page").addClass("out");	
+				//$("#my-page").toggleClass("compose");						
 			});
 		}
 		
