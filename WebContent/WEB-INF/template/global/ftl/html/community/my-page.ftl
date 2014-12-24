@@ -359,16 +359,16 @@
 		} 
 		
 		#my-page.compose.out .master  {
-			-webkit-animation-name: fadeInUp;
-			animation-name: fadeInUp;		
+			-webkit-animation-name: zoomIn;
+			animation-name: zoomIn;		
 			opacity: 1;
 			visibility: visible;
 			height:auto;						
 		}
 
 		#my-page.compose.out .details  {
-			-webkit-animation-name: zoomOut;
-			animation-name: zoomOut;
+			-webkit-animation-name: fadeOutUp;
+			animation-name: fadeOutUp;
 			height:0px;							
 		}
 						
