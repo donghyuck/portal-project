@@ -460,7 +460,7 @@
 									
 									
 									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
-                    <header>Checkout form</header>
+                    <header></header>
                     
                     <fieldset>                  
                         <div class="row">
