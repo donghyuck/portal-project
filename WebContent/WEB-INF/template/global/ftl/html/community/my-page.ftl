@@ -332,8 +332,8 @@
 		} 
 
 		#my-page.compose .master  {
-			-webkit-animation-name: fadeOutUp;
-			animation-name: fadeOutUp;						
+			-webkit-animation-name: zoomOut;
+			animation-name: zoomOut;						
 		} 
 
 		#my-page.compose .details  {
