@@ -313,6 +313,11 @@
 			}		
 			renderTo.data("model").set("changed", false);
 		}
+		
+		function doPageEdit(){
+		
+		
+		}
 		-->
 		</script>		
 		<style scoped="scoped">			
@@ -378,29 +383,44 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">
-					<span class="close animated"></span>
+					<span class="close animated"></span>					
 					<div class="container" style="min-height:150px;">
 						<div class="row p-sm">
-							<div class="p-xxs">
-								<div class="btn-group" data-toggle="buttons" id="page-source-list">
-									<label class="btn btn-sm btn-danger rounded-left active">
-										<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
-									</label>
-									<label class="btn btn-sm btn-danger">
-										<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
-									</label>											
-									<label class="btn btn-sm btn-danger rounded-right">
-										<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
-									</label>
-								</div>
-								<button type="button" class="btn btn-sm btn-danger" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
-								<button type="button" class="btn btn-primary btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
-							</div>
-							<div id="my-page-grid"></div>
-							
-							
+							<div id="my-page">
+								<div id="my-page-list">
+									<div class="p-xxs">
+										<div class="btn-group" data-toggle="buttons" id="page-source-list">
+											<label class="btn btn-sm btn-danger rounded-left active">
+												<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
+											</label>
+											<label class="btn btn-sm btn-danger">
+												<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
+											</label>											
+											<label class="btn btn-sm btn-danger rounded-right">
+												<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
+											</label>
+										</div>
+										<button type="button" class="btn btn-sm btn-danger" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+										<button type="button" class="btn btn-primary btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
+									</div>
+									<div id="my-page-grid"></div>
+								</div><!-- /.my-page-list -->
+								<div id="my-page-view">
+								
+								
+								
+								
+								
+								
+								</div><!-- /.my-page-view -->
+							</div><!-- /.my-page -->
 						</div><!-- /.row -->
-					</div>
+					</div><!-- /.container -->
+					
+					<div class="container" style="min-height:150px;">
+					
+					</div>					
+					
 				</div>				
 			</section><!-- /.section -->
 			<!-- ./END MAIN CONTENT -->	
