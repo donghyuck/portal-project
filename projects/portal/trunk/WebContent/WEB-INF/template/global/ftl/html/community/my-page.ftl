@@ -320,13 +320,15 @@
 		.k-grid tr > td  .btn {
 			cursor: not-allowed;
 			pointer-events: none;
-			opacity: .65;
+			opacity: 0;
+			visibility: hidden;
 		}
 
 		.k-grid tr[aria-selected=true] > td  .btn {
 			cursor: pointer;
 			pointer-events: auto;
 			opacity: 1;
+			visibility: visible;
 		}
 							
 		</style>   	
