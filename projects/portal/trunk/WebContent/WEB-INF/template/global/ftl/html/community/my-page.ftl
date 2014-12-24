@@ -485,10 +485,7 @@
                                 </label>
                             </section>
                             <section class="col col-6">
-                                <label class="input">
-                                    <i class="icon-prepend fa fa-user"></i>
-                                    <input type="text" name="lname" placeholder="Last name">
-                                </label>
+                                <button class="btn-u btn-brd btn-brd-hover btn-u-red btn-u-sm" type="button"><i class="fa fa-envelope-o"></i> 프로퍼티 설정</button>
                             </section>
                         </div>
                         
