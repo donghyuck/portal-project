@@ -509,8 +509,8 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="webpage-title-template" type="text/x-kendo-template">
-		<span class="label label-primary label-lightweight">#= name #</span>
-		<div class="btn-group btn-group-xs">
+		#: name #</span>
+		<div class="btn-group btn-group-xs pull-right">
 			<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
 			<a href="\\#" onclick="doPagePreview(); return false;" class="btn btn-info btn-sm">미리보기</a>
 		</div>	
