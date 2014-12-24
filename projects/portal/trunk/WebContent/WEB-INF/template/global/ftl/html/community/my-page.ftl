@@ -332,7 +332,9 @@
 			filter: alpha(opacity=65);
 			-webkit-box-shadow: none;
 			box-shadow: none;
-		}			
+			display:hidden;
+		}					
+
 		.k-grid tr[aria-selected="true"] > td > .btn , .k-grid tr[aria-selected="true"] > td  a.btn {
 			cursor: pointer;
 			pointer-events: auto;
