@@ -361,7 +361,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-section bg-transparent open" >
+			<section class="personalized-section bg-transparent no-margin-b open" >
 				<div class="personalized-section-heading">
 					<span class="open animated"></span>
 					<div class="container">
