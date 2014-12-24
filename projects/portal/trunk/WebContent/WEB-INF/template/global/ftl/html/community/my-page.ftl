@@ -324,7 +324,9 @@
 		<style scoped="scoped">			
 
 		#my-page .master  {
-			height:auto;		
+			opacity: 1;
+			visibility: visible;		
+			height:auto;					
 		} 
 
 		#my-page .details  {
