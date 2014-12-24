@@ -370,8 +370,6 @@
 			opacity: 0;
 			visibility: hidden;		
 			height:0px;				
-			-webkit-animation-name: fadeOutUp;
-			animation-name: fadeOutUp;							
 		}
 						
 		.k-grid tr > td  .btn-group {
