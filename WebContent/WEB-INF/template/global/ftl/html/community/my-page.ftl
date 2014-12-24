@@ -106,7 +106,7 @@
 					{ field: "pageState", title: "상태", width: 120, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template: '#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#'},
 					{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'#if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
 					{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
-					{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],         
+					{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
 				filterable: true,
 				sortable: true,
 				resizable: true,
@@ -508,7 +508,7 @@
 			<!-- ./END RIGHT SLIDE MENU -->
 							
 	<!-- START TEMPLATE -->				
-	<script id="webpage-name-template" type="text/x-kendo-template">
+	<script id="webpage-title-template" type="text/x-kendo-template">
 		<span class="label label-primary label-lightweight">#= name #</span>
 		<div class="btn-group btn-group-xs">
 			<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
