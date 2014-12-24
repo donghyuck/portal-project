@@ -424,7 +424,7 @@
 									</div>
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
-								<div id="my-page-view" class="details animated">
+								<div id="my-page-view" class="details animated bg-dark" style="display:none;min-height:150px;">
 								
 								
 								
