@@ -460,7 +460,7 @@
 									
 									
 									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
-                    <header></header>
+                    <header>&nbsp;</header>
                     
                     <fieldset>                  
                         <div class="row">
