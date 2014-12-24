@@ -331,12 +331,12 @@
 
 		} 
 
-		#my-page.compose .master,  {
+		#my-page.compose .master  {
 			-webkit-animation-name: fadeOutUp;
 			animation-name: fadeOutUp;						
 		} 
 
-		#my-page.compose .details,  {
+		#my-page.compose .details  {
 			-webkit-animation-name: fadeInUp;
 			animation-name: fadeInUp;			
 		} 
