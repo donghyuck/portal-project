@@ -526,17 +526,7 @@
 													</section>
 												</div>
 												<div class="col col-6">
-												
-												</div>
-											</div>
-											
-										</fieldset>
-										<fieldset>
-											<div class="row">
-												
-												<section class="col col-6">
-												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>
-												<div data-role="grid"
+													<div data-role="grid"
 													date-scrollable="false"
 													data-editable="true"
 													data-autoBind="false"
@@ -547,7 +537,17 @@
 														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
 													]"
 													data-bind="source: properties, visible: isVisible"
-													style="height: 300px"></div>
+													style="height: 300px"></div>												
+												</div>
+											</div>
+											
+										</fieldset>
+										<fieldset>
+											<div class="row">
+												
+												<section class="col col-6">
+												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>
+												
 												</section>
 											</div>
 										</fieldset>                    
