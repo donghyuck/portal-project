@@ -155,7 +155,8 @@
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
 					page : new common.ui.data.Page()
-				});				
+				});
+				renderTo.data("model", model);
 				kendo.bind(renderTo, model );
 			}
 			source.copy( renderTo.data("model").page );
