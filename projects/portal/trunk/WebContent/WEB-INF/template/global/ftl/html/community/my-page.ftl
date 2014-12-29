@@ -144,7 +144,7 @@
 			var grid = common.ui.grid( renderTo );
 			var selectedCells = grid.select();
 			if( selectedCells.length > 0){ 
-				var selectedCell = this.dataItem( selectedCells ); 
+				var selectedCell = grid.dataItem( selectedCells ); 
 				createPageEditor(selectedCell);
 			}
 			$("#my-page").addClass("compose in");	
