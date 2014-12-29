@@ -489,23 +489,19 @@
 												</label>
 											</section>
 										</fieldset>
-                                        
-                    <fieldset>                  
-                        <div class="row">
-                            <section class="col col-6">
-                                <label class="input">
-                                    <i class="icon-prepend fa fa-file-code-o"></i>
-                                    <input type="text" name="fname" placeholder="템플릿">
-                                </label>
-                            </section>
-                            <section class="col col-6">
-                                <button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 페이지 프로퍼티 설정</button>
-                            </section>
-                        </div>
-                    </fieldset>
-                    
-
-                    
+										<fieldset>
+											<div class="row">
+												<section class="col col-6">
+													<label class="input">
+														<i class="icon-prepend fa fa-file-code-o"></i>
+														<input type="text" name="fname" placeholder="템플릿">
+													</label>
+												</section>
+												<section class="col col-6">
+												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 페이지 프로퍼티 설정</button>
+												</section>
+											</div>
+										</fieldset>                    
                     <fieldset>
                         <section>
                            
