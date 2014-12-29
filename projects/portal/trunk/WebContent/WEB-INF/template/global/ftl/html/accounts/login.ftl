@@ -155,9 +155,9 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
-			<div id="signin-block" class="reg-block sky-form pull-right animated swing">
-				<header>
-					<img src="/download/logo/company/${action.webSite.company.name}" height="64" class="img-circle" alt="로그인">
+			<div id="signin-block" class="reg-block sky-form pull-right animated swing no-padding">
+				<header class="text-center">
+					<img src="/download/logo/company/${action.webSite.company.name}" height="80%" class="img-circle" alt="로그인">
 					<ul class="social-icons text-center">
 						<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 						<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
