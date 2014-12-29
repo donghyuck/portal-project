@@ -380,8 +380,8 @@
 		}
 
 		#my-page.compose.out .details  {
-			-webkit-animation-name: fadeOut;
-			animation-name: fadeOut;
+			-webkit-animation-name: bounceOutUp;
+			animation-name: bounceOutUp;
 			height:0px;				
 		}
 						
