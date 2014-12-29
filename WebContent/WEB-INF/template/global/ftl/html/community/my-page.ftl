@@ -480,16 +480,15 @@
 										<fieldset>
 											<section>
 												<label for="file" class="input">
-													<input type="text" name="address" placeholder="제목">
+													<input type="text" name="address" placeholder="제목" data-bind="value: page.title">
 												</label>
 											</section>
-                        
-                        <section>
-                            <label class="textarea">
-                                <textarea rows="3" name="info" placeholder="요약"></textarea>
-                            </label>
-                        </section>
-                    </fieldset>
+											<section>
+												<label class="textarea">
+													<textarea rows="3" name="info" placeholder="요약" data-bind="value: page.summary"></textarea>
+												</label>
+											</section>
+										</fieldset>
                                         
                     <fieldset>                  
                         <div class="row">
