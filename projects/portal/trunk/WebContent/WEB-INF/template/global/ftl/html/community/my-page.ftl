@@ -368,8 +368,8 @@
 		} 
 				
 		#my-page.compose.out .master  {
-			-webkit-animation-name: zoomIn;
-			animation-name: zoomIn;		
+			-webkit-animation-name: bounceInUp;
+			animation-name: bounceInUp;			
 			opacity: 1;
 			visibility: visible;
 			height:auto;						
