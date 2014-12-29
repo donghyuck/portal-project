@@ -355,7 +355,6 @@
 		#my-page.compose.in .master  {
 			-webkit-animation-name: zoomOut;
 			animation-name: zoomOut;
-			height:0px;			
 		} 
 
 		#my-page.compose.in .details  {
