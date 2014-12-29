@@ -63,6 +63,10 @@
 	min-height: 300px;
 }
 
+.details  .k-grid-content {
+	min-height: 150px;
+}
+
 .breadcrumbs-personalized {
 	background-color: rgba(245, 245, 245, .6);
 	background-image: none;
