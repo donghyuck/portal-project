@@ -376,8 +376,8 @@
 		}
 
 		#my-page.compose.out .details  {
-			-webkit-animation-name: zoomOut;
-			animation-name: zoomOut;
+			-webkit-animation-name: bounceOutUp;
+			animation-name: bounceOutUp;
 			height:0px;				
 		}
 						
