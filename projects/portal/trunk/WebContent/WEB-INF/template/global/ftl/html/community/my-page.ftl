@@ -418,51 +418,7 @@
 			cursor: not-allowed;
 			pointer-events: auto;		
 		} 
-
-
-	.pt-perspective {
-		position: relative;
-		width: 100%;
-		height: 100%;
-		-webkit-perspective: 1200px;
-		-moz-perspective: 1200px;
-		perspective: 1200px;
-	}
-	
-	.pt-page {
-		width: 100%;
-		height: 100%;
-		position: absolute;
-		top: 0;
-		left: 0;
-		visibility: hidden;
-		overflow: hidden;
-		-webkit-backface-visibility: hidden;
-		-moz-backface-visibility: hidden;
-		backface-visibility: hidden;
-		-webkit-transform: translate3d(0, 0, 0);
-		-moz-transform: translate3d(0, 0, 0);
-		transform: translate3d(0, 0, 0);
-		-webkit-transform-style: preserve-3d;
-		-moz-transform-style: preserve-3d;
-		transform-style: preserve-3d;
-	}
-	
-	.pt-page-current,
-	.no-js .pt-page {
-		visibility: visible;
-		z-index: 1;
-	}
-	
-	.no-js body {
-		overflow: auto;
-	}
-	
-	.pt-page-ontop {
-		z-index: 999;
-	}
-
-						
+			
 		</style>   	
 		</#compress>
 	</head>
@@ -489,7 +445,7 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
-					<div class="container" style="min-height:150px;">
+					<div class="container" style="min-height:450px;">
 						<div class="row p-sm">
 							<div id="my-page">
 								<div id="my-page-list" class="master animated">
