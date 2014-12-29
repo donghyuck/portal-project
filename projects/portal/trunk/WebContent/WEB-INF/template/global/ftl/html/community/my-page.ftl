@@ -144,8 +144,7 @@
 				$("#my-page").one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					$("#my-page").removeClass("compose out");
 				});	
-				$("#my-page").addClass("out");	
-				//$("#my-page").toggleClass("compose");						
+				$("#my-page").addClass("out");
 			});
 		}
 
@@ -161,7 +160,14 @@
 		}
 				
 		function createPageEditor(source){
-		
+			var renderTo = $("#my-page-view");
+			if( !renderTo.data("model")){
+				var model =  common.ui.observable({ 
+					page : new common.ui.data.Page()
+				});				
+				kendo.bind(renderTo, model );
+			}
+			source.copy( renderTo.data("model").page );
 		}
 		
 		function createAnnounceSection(){
