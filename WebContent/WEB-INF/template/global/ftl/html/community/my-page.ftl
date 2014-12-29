@@ -376,6 +376,8 @@
 		}
 
 		#my-page.compose.out .details  {
+			opacity: 1;
+			visibility: visible;		
 			-webkit-animation-name: fadeOutUp;
 			animation-name: fadeOutUp;
 			height:0px;				
