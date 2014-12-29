@@ -171,9 +171,9 @@
 						batch: true, 
 						schema: {
 							data: "targetPageProperty",
-							model: Property
+							model: common.ui.data.Property
 						},
-						error : common.api.handleKendoAjaxError
+						error:common.ui.handleAjaxError
 					}),
 					isVisible : true
 				});
