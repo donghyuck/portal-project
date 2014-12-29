@@ -477,12 +477,20 @@
 									<span class="back"></span>
 									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
 										<header>&nbsp;</header>
-										<fieldset>
-											<section>
-												<label for="file" class="input">
-													<input type="text" name="address" placeholder="제목" data-bind="value: page.title">
-												</label>
-											</section>
+										<fieldset>											
+											<div class="row">
+												<section>
+													<label for="file" class="input">
+														<input type="text" name="address" placeholder="제목" data-bind="value: page.title">
+													</label>
+												</section>
+												<section class="col col-2">
+													<label class="input state-error">
+														<input type="text" name="cvv" id="cvv" placeholder="CVV2" class="invalid">
+													</label><em for="cvv" class="invalid">Digits only</em>
+												</section>
+											</div>
+											
 											<section>
 												<label class="textarea">
 													<textarea rows="3" name="info" placeholder="요약" data-bind="value: page.summary"></textarea>
