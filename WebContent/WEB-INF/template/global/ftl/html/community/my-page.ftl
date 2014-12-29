@@ -486,7 +486,7 @@
 												</section>
 												<section class="col col-2">
 													<label class="input state-error">
-														<input type="text" name="cvv" id="cvv" placeholder="CVV2" class="invalid">
+														<input type="text" name="cvv" id="cvv" placeholder="CVV2" class="invalid" data-bind="text: page.versionId">
 													</label><em for="cvv" class="invalid">Digits only</em>
 												</section>
 											</div>
