@@ -154,7 +154,28 @@
 			var renderTo = $("#my-page-view");
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
-					page : new common.ui.data.Page()
+					page : new common.ui.data.Page(),
+					properties : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'/secure/list-website-page-property.do?output=json', type:'post' },
+							create: { url:'/secure/update-website-page-property.do?output=json', type:'post' },
+							update: { url:'/secure/update-website-page-property.do?output=json', type:'post'  },
+							destroy: { url:'/secure/delete-website-page-property.do?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { targetPageId: model.page.pageId, items: kendo.stringify(options.models)};
+								} 
+								return { targetPageId: model.page.pageId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							data: "targetPageProperty",
+							model: Property
+						},
+						error : common.api.handleKendoAjaxError
+					}),
+					isVisible : true
 				});
 				renderTo.data("model", model);
 				kendo.bind(renderTo, model );
@@ -507,6 +528,18 @@
 												</section>
 												<section class="col col-6">
 												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>
+												<div data-role="grid"
+													date-scrollable="false"
+													data-editable="true"
+													data-autoBind="false"
+													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+													data-columns="[
+														{ 'title': '이름',  'field': 'name', 'width': 200 },
+														{ 'title': '값', 'field': 'value' },
+														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+													]"
+													data-bind="source: properties, visible: isVisible"
+													style="height: 300px"></div>
 												</section>
 											</div>
 										</fieldset>                    
