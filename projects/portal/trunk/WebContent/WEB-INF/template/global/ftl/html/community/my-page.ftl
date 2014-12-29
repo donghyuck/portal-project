@@ -506,7 +506,7 @@
 													</label>
 												</section>
 												<section class="col col-6">
-												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 페이지 프로퍼티 설정</button>
+												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>
 												</section>
 											</div>
 										</fieldset>                    
