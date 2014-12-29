@@ -348,9 +348,13 @@
 		} 
 
 		#my-page.compose .master  {
+			opacity: 1;
+			visibility: visible;				
 		} 
 
 		#my-page.compose .details  {
+			opacity: 1;
+			visibility: visible;		
 		} 
 
 		#my-page.compose.in .master  {
@@ -362,22 +366,16 @@
 		#my-page.compose.in .details  {
 			-webkit-animation-name: bounceInUp;
 			animation-name: bounceInUp;		
-			opacity: 1;
-			visibility: visible;		
 			height:auto;		
 		} 
 				
 		#my-page.compose.out .master  {		
 			-webkit-animation-name: zoomIn;
 			animation-name: zoomIn;			
-			opacity: 1;
-			visibility: visible;
 			height:auto;						
 		}
 
 		#my-page.compose.out .details  {
-			opacity: 1;
-			visibility: visible;		
 			-webkit-animation-name: fadeOut;
 			animation-name: fadeOut;
 			height:0px;				
