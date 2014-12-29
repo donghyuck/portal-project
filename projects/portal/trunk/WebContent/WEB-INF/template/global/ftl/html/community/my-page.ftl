@@ -148,7 +148,15 @@
 				//$("#my-page").toggleClass("compose");						
 			});
 		}
-		
+
+		function setPageEditorSource(source){		
+			var renderTo = $("#my-page-view" );						
+			if( !renderTo.data("pagePlaceHolder") ){
+				renderTo.data("pagePlaceHolder", new common.ui.data.Page() );
+				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));
+			}		
+			source.copy(renderTo.data("pagePlaceHolder"));
+		}		
 		
 		function doPageEdit(){
 			
