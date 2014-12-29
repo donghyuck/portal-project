@@ -479,21 +479,21 @@
 										<header>&nbsp;</header>
 										<fieldset>											
 											<div class="row">
-												<section class="col col-10">
+												<section class="col col-11">
 													<label for="file" class="input">
-														<input type="text" name="address" placeholder="제목" data-bind="value: page.title">
+														<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 													</label>
 												</section>
-												<section class="col col-2">
+												<section class="col col-1">
 													<label class="input state-disabled">
-														<input type="text" name="cvv" id="cvv" placeholder="CVV2" data-bind="value: page.versionId" >
+														<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
 													</label>
 												</section>
 											</div>
 											
 											<section>
 												<label class="textarea">
-													<textarea rows="3" name="info" placeholder="요약" data-bind="value: page.summary"></textarea>
+													<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
 												</label>
 											</section>
 										</fieldset>
