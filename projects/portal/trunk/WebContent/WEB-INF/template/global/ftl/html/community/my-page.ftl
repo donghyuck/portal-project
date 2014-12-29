@@ -149,8 +149,8 @@
 		}
 		
 		
-		function doPageEdit(){		
-			$("#my-page").toggleClass("compose");			
+		function doPageEdit(){			
+			$("#my-page").addClass("compose in");		
 		}
 				
 		
@@ -347,19 +347,25 @@
 		} 
 
 		#my-page.compose .master  {
+		} 
+
+		#my-page.compose .details  {
+		} 
+
+		#my-page.compose.in .master  {
 			-webkit-animation-name: zoomOut;
 			animation-name: zoomOut;
 			height:0px;			
 		} 
 
-		#my-page.compose .details  {
+		#my-page.compose.in .details  {
 			-webkit-animation-name: bounceInUp;
 			animation-name: bounceInUp;		
 			opacity: 1;
 			visibility: visible;		
 			height:auto;		
 		} 
-		
+				
 		#my-page.compose.out .master  {
 			-webkit-animation-name: zoomIn;
 			animation-name: zoomIn;		
