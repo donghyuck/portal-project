@@ -511,21 +511,29 @@
 													</label>
 												</section>
 											</div>
+											<div class="row">
+												<div class="col col-6">
+													<section>
+														<label class="textarea">
+															<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+														</label>
+													</section>
+													<section>
+														<label class="input">
+															<i class="icon-prepend fa fa-file-code-o"></i>
+															<input type="text" name="fname" placeholder="템플릿">
+														</label>
+													</section>
+												</div>
+												<div class="col col-6">
+												
+												</div>
+											</div>
 											
-											<section>
-												<label class="textarea">
-													<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
-												</label>
-											</section>
 										</fieldset>
 										<fieldset>
 											<div class="row">
-												<section class="col col-6">
-													<label class="input">
-														<i class="icon-prepend fa fa-file-code-o"></i>
-														<input type="text" name="fname" placeholder="템플릿">
-													</label>
-												</section>
+												
 												<section class="col col-6">
 												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>
 												<div data-role="grid"
