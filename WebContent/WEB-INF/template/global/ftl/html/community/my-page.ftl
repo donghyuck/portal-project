@@ -149,7 +149,8 @@
 		}
 		
 		
-		function doPageEdit(){			
+		function doPageEdit(){
+			
 			$("#my-page").addClass("compose in");		
 		}
 				
@@ -355,6 +356,7 @@
 		#my-page.compose.in .master  {
 			-webkit-animation-name: zoomOut;
 			animation-name: zoomOut;
+			height:0px;			
 		} 
 
 		#my-page.compose.in .details  {
@@ -374,8 +376,8 @@
 		}
 
 		#my-page.compose.out .details  {
-			opacity: 0;
-			visibility: hidden;		
+			-webkit-animation-name: zoomOut;
+			animation-name: zoomOut;
 			height:0px;				
 		}
 						
