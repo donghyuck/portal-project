@@ -466,7 +466,8 @@
 									</div>
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
-								<div id="my-page-view" class="details animated bg-dark">
+								<div id="my-page-view" class="details animated bg-dark">								
+								<div class="container no-padding">
 									<span class="back"></span>
 									
 									
@@ -519,7 +520,7 @@
 								
 								
 								
-								
+								</div>
 								</div><!-- /.my-page-view -->
 							</div><!-- /.my-page -->
 						</div><!-- /.row -->
