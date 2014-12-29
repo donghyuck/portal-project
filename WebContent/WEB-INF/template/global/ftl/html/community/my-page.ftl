@@ -353,8 +353,8 @@
 		} 
 
 		#my-page.compose .details  {
-			-webkit-animation-name: fadeInUp;
-			animation-name: fadeInUp;		
+			-webkit-animation-name: bounceInUp;
+			animation-name: bounceInUp;		
 			opacity: 1;
 			visibility: visible;		
 			height:auto;		
