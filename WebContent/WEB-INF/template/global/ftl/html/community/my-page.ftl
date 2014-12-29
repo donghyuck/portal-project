@@ -370,9 +370,11 @@
 		} 
 				
 		#my-page.compose.out .master  {		
+		/*
 			-webkit-animation-name: zoomIn;
 			animation-name: zoomIn;			
-			height:auto;						
+			height:auto;	
+		*/						
 		}
 
 		#my-page.compose.out .details  {
