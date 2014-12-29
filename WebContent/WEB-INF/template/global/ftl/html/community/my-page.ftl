@@ -479,7 +479,7 @@
 										<header>&nbsp;</header>
 										<fieldset>											
 											<div class="row">
-												<section>
+												<section class="col col-10">
 													<label for="file" class="input">
 														<input type="text" name="address" placeholder="제목" data-bind="value: page.title">
 													</label>
