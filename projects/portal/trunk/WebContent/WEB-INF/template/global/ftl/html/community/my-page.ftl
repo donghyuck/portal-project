@@ -367,13 +367,12 @@
 			height:auto;		
 		} 
 				
-		#my-page.compose.out .master  {
-		/*
+		#my-page.compose.out .master  {		
 			-webkit-animation-name: zoomIn;
 			animation-name: zoomIn;			
 			opacity: 1;
 			visibility: visible;
-			height:auto;						*/
+			height:auto;						
 		}
 
 		#my-page.compose.out .details  {
