@@ -485,9 +485,9 @@
 													</label>
 												</section>
 												<section class="col col-2">
-													<label class="input state-error">
-														<input type="text" name="cvv" id="cvv" placeholder="CVV2" class="invalid" data-bind="value: page.versionId" >
-													</label><em for="cvv" class="invalid">Digits only</em>
+													<label class="input state-disabled">
+														<input type="text" name="cvv" id="cvv" placeholder="CVV2" data-bind="value: page.versionId" >
+													</label>
 												</section>
 											</div>
 											
