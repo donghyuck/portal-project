@@ -475,17 +475,14 @@
 								<div id="my-page-view" class="details animated bg-dark">								
 								<div class="container no-padding">
 									<span class="back"></span>
-									
-									
 									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
-                    <header>&nbsp;</header>
-                    
-                    <fieldset>
-                        <section>
-                            <label for="file" class="input">
-                                <input type="text" name="address" placeholder="제목">
-                            </label>
-                        </section>
+										<header>&nbsp;</header>
+										<fieldset>
+											<section>
+												<label for="file" class="input">
+													<input type="text" name="address" placeholder="제목">
+												</label>
+											</section>
                         
                         <section>
                             <label class="textarea">
@@ -503,7 +500,7 @@
                                 </label>
                             </section>
                             <section class="col col-6">
-                                <button class="btn-u btn-brd btn-brd-hover btn-u-red btn-u-sm" type="button"><i class="fa fa-cog"></i> 페이지 프로퍼티 설정</button>
+                                <button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 페이지 프로퍼티 설정</button>
                             </section>
                         </div>
                     </fieldset>
