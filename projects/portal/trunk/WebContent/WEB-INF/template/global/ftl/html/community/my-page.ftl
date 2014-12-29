@@ -149,6 +149,11 @@
 			}
 			$("#my-page").addClass("compose in");	
 		}
+		
+		function getPageEditorSource(){
+			var renderTo = $("#my-page-view");
+			return renderTo.data("model");		
+		}
 				
 		function createPageEditor(source){
 			var renderTo = $("#my-page-view");
@@ -157,20 +162,19 @@
 					page : new common.ui.data.Page(),
 					properties : new kendo.data.DataSource({
 						transport: { 
-							read: { url:'/secure/list-website-page-property.do?output=json', type:'post' },
-							create: { url:'/secure/update-website-page-property.do?output=json', type:'post' },
-							update: { url:'/secure/update-website-page-property.do?output=json', type:'post'  },
-							destroy: { url:'/secure/delete-website-page-property.do?output=json', type:'post' },
+							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
+							create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
+							update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
+							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
 					 		parameterMap: function (options, operation){			
 						 		if (operation !== "read" && options.models) {
-						 			return { targetPageId: model.page.pageId, items: kendo.stringify(options.models)};
+						 			return { pageId: getPageEditorSource().page.pageId, items: kendo.stringify(options.models)};
 								} 
-								return { targetPageId: model.page.pageId }
+								return { pageId: getPageEditorSource().page.pageId }
 							}
 						},	
 						batch: true, 
 						schema: {
-							data: "targetPageProperty",
 							model: common.ui.data.Property
 						},
 						error:common.ui.handleAjaxError
