@@ -119,15 +119,6 @@
 					var selectedCells = this.select();                 
 					if( selectedCells.length > 0){ 
 						var selectedCell = this.dataItem( selectedCells ); 
-						/*
-						setPageEditorSource(selectedCell);
-						if( selectedCell.pageId > 0 ){
-							if( selectedCell.pageState === 'PUBLISHED' )
-								$('button.btn-page-control-group[data-action="page-delete"]').removeAttr("disabled");
-							else
-								$('button.btn-page-control-group').removeAttr("disabled");
-						}
-						*/
  					} 						
 				},
 				dataBound: function(e){		
