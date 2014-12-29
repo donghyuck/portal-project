@@ -368,16 +368,16 @@
 		} 
 				
 		#my-page.compose.out .master  {
-			-webkit-animation-name: bounceInUp;
-			animation-name: bounceInUp;			
+			-webkit-animation-name: zoomIn;
+			animation-name: zoomIn;			
 			opacity: 1;
 			visibility: visible;
 			height:auto;						
 		}
 
 		#my-page.compose.out .details  {
-			-webkit-animation-name: bounceOutUp;
-			animation-name: bounceOutUp;
+			-webkit-animation-name: bounceOutDown;
+			animation-name: bounceOutDown;
 			height:0px;				
 		}
 						
