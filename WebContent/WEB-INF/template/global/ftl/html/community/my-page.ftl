@@ -353,6 +353,8 @@
 		} 
 
 		#my-page.compose .details  {
+			position: absolute;
+			top: 10px;
 			opacity: 1;
 			visibility: visible;		
 		} 
