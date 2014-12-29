@@ -373,15 +373,15 @@
 		} 
 				
 		#my-page.compose.out .master  {		
-			-webkit-animation-name: zoomIn;
-			animation-name: zoomIn;			
+			-webkit-animation-name: bounceInUp;
+			animation-name: bounceInUp;			
 			height:auto;	
 			
 		}
 
 		#my-page.compose.out .details  {
-			-webkit-animation-name: bounceOutUp;
-			animation-name: bounceOutUp;
+			-webkit-animation-name: zoomOut;
+			animation-name: zoomOut;
 			height:0px;				
 		}
 						
