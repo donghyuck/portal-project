@@ -149,20 +149,20 @@
 			});
 		}
 
-		function setPageEditorSource(source){		
-			var renderTo = $("#my-page-view" );						
-			if( !renderTo.data("pagePlaceHolder") ){
-				renderTo.data("pagePlaceHolder", new common.ui.data.Page() );
-				kendo.bind(renderTo, renderTo.data("pagePlaceHolder"));
-			}		
-			source.copy(renderTo.data("pagePlaceHolder"));
-		}		
-		
 		function doPageEdit(){
-			
-			$("#my-page").addClass("compose in");		
+			var renderTo = $("#my-page-grid");
+			var grid = common.ui.grid( renderTo );
+			var selectedCells = grid.select();
+			if( selectedCells.length > 0){ 
+				var selectedCell = this.dataItem( selectedCells ); 
+				createPageEditor(selectedCell);
+			}
+			$("#my-page").addClass("compose in");	
 		}
 				
+		function createPageEditor(source){
+		
+		}
 		
 		function createAnnounceSection(){
 			
