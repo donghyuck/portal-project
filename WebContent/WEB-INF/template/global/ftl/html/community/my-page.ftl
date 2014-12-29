@@ -139,7 +139,7 @@
 			});				
 			
 			$("#my-page-view span.back").click(function(e){
-				
+				$("#my-page").removeClass("in");
 				$("#my-page").one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					$("#my-page").removeClass("compose out");
 				});	
