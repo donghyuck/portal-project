@@ -541,7 +541,7 @@
 														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
 													]"
 													data-bind="source: properties, visible: isVisible"
-													style="border-color:#ccc;"></div>												
+													style="border-color:#bbb;"></div>												
 												</div>
 											</div>
 											
