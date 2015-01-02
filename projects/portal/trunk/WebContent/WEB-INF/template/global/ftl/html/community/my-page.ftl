@@ -155,8 +155,6 @@
 			return renderTo.data("model");		
 		}
 
-		
-
 		function createPageEditor(source){
 			var renderTo = $("#my-page-view");
 			if( !renderTo.data("model")){
@@ -186,10 +184,16 @@
 				source.copy( model.page );
 				renderTo.data("model", model);
 				kendo.bind(renderTo, model );
+				
+				var bodyEditor =  $("#page-editor-body" );
+				createEditor( "page-editor" , bodyEditor );			
+				
 			}else{
 				source.copy( renderTo.data("model").page );
 			}	
 		}
+		
+		
 		
 		function createAnnounceSection(){
 			
@@ -578,7 +582,7 @@
 															</div>
 															<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
 																<div class="panel-body">
-
+																	
 																</div>
 															</div>
 														</div>					
@@ -606,6 +610,8 @@
 											</div>
 										</fieldset>
 										<fieldset>
+											<textarea id="page-editor-body" class="no-border" data-bind='value:page.body' style="height:500px;"></textarea>
+											
 											<div class="row">												
 												<section class="col col-6">
 												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>												
