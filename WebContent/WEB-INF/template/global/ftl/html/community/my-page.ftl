@@ -155,6 +155,28 @@
 			return renderTo.data("model");		
 		}
 				
+		function createPagePropertyDataSource(){
+			return new kendo.data.DataSource({
+				transport: { 
+					read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
+					create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
+					update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
+					destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
+			 		parameterMap: function (options, operation){			
+				 		if (operation !== "read" && options.models) {
+							return { pageId: getPageEditorSource().page.pageId, items: kendo.stringify(options.models)};
+						} 
+						return { pageId: getPageEditorSource().page.pageId }
+					}
+				},
+				batch: true, 
+				schema: {
+					model: common.ui.data.Property
+				},
+				error:common.ui.handleAjaxError
+			});	
+		}		
+				
 		function createPageEditor(source){
 			var renderTo = $("#my-page-view");
 			if( !renderTo.data("model")){
@@ -182,6 +204,29 @@
 					}),
 					isVisible : true
 				});
+				
+				common.ui.grid($("#page-property-grid"), {
+					dataSource : createPagePropertyDataSource(),
+					columns: [
+						{ title: "속성", field: "name" },
+						{ title: "값",   field: "value" },
+						{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+					],
+					pageable: false,
+					resizable: true,
+					editable : true,
+					scrollable: true,
+					autoBind: true,
+					toolbar: [
+						{ name: "create", text: "추가" },
+						{ name: "save", text: "저장" },
+						{ name: "cancel", text: "취소" }
+					],				     
+					change: function(e) {
+						this.refresh();
+					}
+				});			
+						
 				renderTo.data("model", model);
 				kendo.bind(renderTo, model );
 			}
@@ -536,6 +581,7 @@
 															</div>
 															<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
 																<div class="panel-body no-padding">
+																	<div id="page-property-grid"></div>
 																	<div data-role="grid"
 																		date-scrollable="false"
 																		data-editable="true"
