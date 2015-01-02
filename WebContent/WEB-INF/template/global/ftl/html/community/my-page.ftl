@@ -560,7 +560,7 @@
 															<div class="panel-heading">
 																<h4 class="panel-title">
 																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-																	파
+																	파일
 																	</a>
 																</h4>
 															</div>
