@@ -190,6 +190,7 @@
 				
 			}else{
 				source.copy( renderTo.data("model").page );
+				renderTo.data("model").properties.read();
 			}	
 		}
 		
@@ -614,7 +615,7 @@
 											</div>
 										</fieldset>
 										<section class="no-margin">	
-											<textarea id="page-editor-body" class="no-border" data-bind='value:page.body' style="height:500px;"></textarea>
+											<textarea id="page-editor-body" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
 										</section>											
 										<footer>
 											<button type="submit" class="btn-u">Continue</button>
