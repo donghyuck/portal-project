@@ -518,6 +518,11 @@
 											<div class="row">
 												<div class="col col-6">
 													<section>
+														<label class="input state-disabled">
+															<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
+														</label>
+													</section>
+													<section>
 														<label class="input">
 															<i class="icon-prepend fa fa-file-code-o"></i>
 															<input type="text" name="fname" placeholder="템플릿">
