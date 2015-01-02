@@ -170,6 +170,7 @@
 						 		if (operation !== "read" && options.models) {
 						 			return { pageId: getPageEditorSource().page.pageId, items: kendo.stringify(options.models)};
 								} 
+								alert(getPageEditorSource().page.pageId);
 								return { pageId: getPageEditorSource().page.pageId }
 							}
 						},	
