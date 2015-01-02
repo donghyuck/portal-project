@@ -510,7 +510,6 @@
 											<div class="row">
 												<div class="col col-12">
 													<section>
-														<label class="label">Text input</label>
 														<label for="title" class="input">
 															<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 														</label>
