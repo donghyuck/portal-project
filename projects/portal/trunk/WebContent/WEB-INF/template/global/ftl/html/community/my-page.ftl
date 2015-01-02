@@ -500,7 +500,6 @@
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
 								<div id="my-page-view" class="details animated bg-dark">								
-								<div class="container no-padding">
 									<span class="back"></span>
 									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
 										<header>&nbsp;</header>
@@ -598,9 +597,7 @@
 										<footer>
 											<button type="submit" class="btn-u">Continue</button>
 										</footer>
-									</form>
-									<!-- /.form >	
-								</div>
+									</form><!-- /.form >	
 								</div><!-- /.my-page-view -->
 							</div><!-- /.my-page -->
 						</div><!-- /.row -->
