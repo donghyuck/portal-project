@@ -390,13 +390,14 @@
 		} 
 
 		#my-page.compose.in .master  {
-			height:0px;			
-			display:none;
+			opacity: 0;
+			visibility: hidden;		
+			height:0px;				
 		} 
 
 		#my-page.compose.in .details  {
-			-webkit-animation-name: fadeInLeft;
-			animation-name: fadeInLeft;		
+			-webkit-animation-name: fadeInDown;
+			animation-name: fadeInDown;		
 			height:auto;		
 		} 
 				
