@@ -202,6 +202,7 @@
 						}else{
 							$("label[for=title]").removeClass("state-error");
 						}
+						return false;
 					}
 				});				
 				source.copy( model.page );
