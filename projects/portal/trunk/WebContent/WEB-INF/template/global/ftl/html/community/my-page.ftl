@@ -533,8 +533,8 @@
 												<div class="col col-6">
 													<div class="tab-v2">
 														<ul class="nav nav-tabs">
-															<li class="active"><a href="#home-1" data-toggle="tab">Home</a></li>
-															<li class=""><a href="#profile-1" data-toggle="tab">Profile</a></li>
+															<li class="active"><a href="#home-1" data-toggle="tab">속성</a></li>
+															<li class=""><a href="#profile-1" data-toggle="tab">파일</a></li>
 														</ul>	
 														<div class="tab-content">
 															<div class="tab-pane fade active in" id="home-1">
