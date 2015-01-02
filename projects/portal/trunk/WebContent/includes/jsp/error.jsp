@@ -3,6 +3,7 @@
                  architecture.common.exception.Codeable,
                  architecture.common.util.I18nTextUtils,
                  architecture.ee.util.OutputFormat,
+                 architecture.common.user.authentication.UnAuthorizedException,
                  architecture.ee.web.util.WebApplicationHelper,
                  architecture.ee.web.util.ParamUtils" %><%
                  
@@ -33,6 +34,11 @@
 		}
 		exceptionClassName =  ex.getClass().getName();
 		exceptionMessage = ex.getMessage() ;
+		
+		if( ex.getCause() != null && ex.getCause() instanceof UnAuthorizedException  ){
+			exceptionClassName = ex.getCause().getClass().getName();
+			exceptionMessage = "요청하신 작업에 대한 권한이 없습니다.";
+		} 
 	}
 		
     if(format == OutputFormat.XML ){
