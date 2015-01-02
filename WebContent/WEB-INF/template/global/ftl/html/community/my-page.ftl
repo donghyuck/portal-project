@@ -510,7 +510,8 @@
 											<div class="row">
 												<div class="col col-12">
 													<section>
-														<label for="file" class="input">
+														<label class="label">Text input</label>
+														<label for="title" class="input">
 															<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 														</label>
 													</section>
@@ -519,6 +520,7 @@
 											<div class="row">
 												<div class="col col-6">
 													<section>
+														
 														<label class="input state-disabled">
 															<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
 														</label>
