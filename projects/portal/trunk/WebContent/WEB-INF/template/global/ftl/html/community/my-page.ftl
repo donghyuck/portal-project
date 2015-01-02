@@ -228,7 +228,7 @@
 						
 						common.api.callback(  
 						{
-							url :"/data/pages/update_state.json?output=json", 
+							url :"/data/pages/update.json?output=json", 
 							data : kendo.stringify(this.page) ,
 							success : function(response){
 								common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
