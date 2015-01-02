@@ -229,7 +229,7 @@
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
-								data : kendo.stringify(this.page) ,
+								data : kendo.stringify($this.page) ,
 								contentType : "application/json",
 								success : function(response){
 									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
