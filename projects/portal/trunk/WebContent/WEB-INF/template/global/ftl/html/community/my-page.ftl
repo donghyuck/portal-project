@@ -391,6 +391,7 @@
 
 		#my-page.compose.in .master  {
 			height:0px;			
+			display:none;
 		} 
 
 		#my-page.compose.in .details  {
