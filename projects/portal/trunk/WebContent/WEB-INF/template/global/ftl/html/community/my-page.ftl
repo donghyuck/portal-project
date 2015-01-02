@@ -609,8 +609,9 @@
 												</div>
 											</div>
 										</fieldset>
+										<textarea id="page-editor-body" class="no-border" data-bind='value:page.body' style="height:500px;"></textarea>
 										<fieldset>
-											<textarea id="page-editor-body" class="no-border" data-bind='value:page.body' style="height:500px;"></textarea>
+											
 											
 											<div class="row">												
 												<section class="col col-6">
