@@ -391,6 +391,7 @@
 		#my-page.compose .details  {
 			opacity: 1;
 			visibility: visible;		
+		
 		} 
 
 		#my-page.compose.in .master  {
@@ -403,13 +404,16 @@
 			opacity: 1;
 			visibility: visible;		
 			height:auto;		
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;				
 		} 
 				
 		#my-page.compose.out .master  {		
 			opacity: 1;
 			visibility: visible;			
 			height:auto;	
-			
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;				
 		}
 
 		#my-page.compose.out .details  {
