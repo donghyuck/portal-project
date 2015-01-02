@@ -402,15 +402,15 @@
 		} 
 				
 		#my-page.compose.out .master  {		
-			-webkit-animation-name: bounceInUp;
+			-webkit-animation-name: fadeInRight;
 			animation-name: bounceInUp;			
 			height:auto;	
 			
 		}
 
 		#my-page.compose.out .details  {
-			-webkit-animation-name: zoomOut;
-			animation-name: zoomOut;
+			-webkit-animation-name: fadeOutLeft;
+			animation-name: fadeOutLeft;
 			height:0px;				
 		}
 		
