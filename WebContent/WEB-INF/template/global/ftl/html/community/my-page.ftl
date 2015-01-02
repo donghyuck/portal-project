@@ -184,11 +184,12 @@
 					}),
 					isVisible : true
 				});				
-				source.copy( renderTo.data("model").page );
+				source.copy( model.page );
 				renderTo.data("model", model);
 				kendo.bind(renderTo, model );
-			}
-			source.copy( renderTo.data("model").page );
+			}else{
+				source.copy( renderTo.data("model").page );
+			}	
 		}
 		
 		function createAnnounceSection(){
