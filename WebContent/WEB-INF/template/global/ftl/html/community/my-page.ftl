@@ -226,26 +226,26 @@
 								$("label[for=summary]").removeClass("state-error");
 						}
 						
-						common.api.callback(  
-						{
-							url :"/data/pages/update.json?output=json", 
-							data : kendo.stringify(this.page) ,
-							success : function(response){
-								common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
-								$("#my-page-grid").data('kendoGrid').dataSource.read();
-							},
-							fail: function(){								
-								common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
-							},
-							requestStart : function(){
-								kendo.ui.progress(renderTo, true);
-							},
-							requestEnd : function(){
-								kendo.ui.progress(renderTo, false);
-							},
-							always : function(e){
-								btn.button('reset');
-							}							
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify(this.page) ,
+								success : function(response){
+									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
+									$("#my-page-grid").data('kendoGrid').dataSource.read();
+								},
+								fail: function(){								
+									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
 						});
 												
 						return false;
