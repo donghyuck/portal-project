@@ -170,10 +170,9 @@
 							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
 					 		parameterMap: function (options, operation){			
 						 		if (operation !== "read" && options.models) {
-						 			return { pageId: getPageEditorSource().page.pageId, items: kendo.stringify(options.models)};
+						 			return { pageId: model.page.pageId, items: kendo.stringify(options.models)};
 								} 
-								alert(model.page.pageId);
-								return { pageId: getPageEditorSource().page.pageId }
+								return { pageId: model.page.pageId }
 							}
 						},	
 						batch: true, 
