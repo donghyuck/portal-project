@@ -535,23 +535,41 @@
 															<div class="panel-heading">
 																<h4 class="panel-title">
 																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
-																	Collapsible Group Item #1
+																	속성
 																	</a>
 																</h4>
 															</div>
 															<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
 																<div class="panel-body">
-																	<div class="row">
-																		<div class="col-md-4">
-																			<img class="img-responsive" src="assets/img/new/img5.jpg" alt="">
-																		</div>
-																		<div class="col-md-8">
-																		 Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
-																		</div>
-																	</div>
+																	<div data-role="grid"
+																		date-scrollable="false"
+																		data-editable="true"
+																		data-autoBind="false"
+																		data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+																		data-columns="[
+																			{ 'title': '이름',  'field': 'name', 'width': 200 },
+																			{ 'title': '값', 'field': 'value' },
+																			{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+																		]"
+																		data-bind="source: properties, visible: isVisible"
+																		style="border-color:#bbb;"></div>	
 																</div>
 															</div>
 														</div>
+														<div class="panel panel-default">
+															<div class="panel-heading">
+																<h4 class="panel-title">
+																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
+																	파일
+																	</a>
+																</h4>
+															</div>
+															<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
+																<div class="panel-body">
+
+																</div>
+															</div>
+														</div>														
 													</div>
 													<div class="tab-v2">
 														<ul class="nav nav-tabs">
@@ -560,18 +578,7 @@
 														</ul>	
 														<div class="tab-content">
 															<div class="tab-pane fade active in" id="home-1">
-																<div data-role="grid"
-																	date-scrollable="false"
-																	data-editable="true"
-																	data-autoBind="false"
-																	data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-																	data-columns="[
-																		{ 'title': '이름',  'field': 'name', 'width': 200 },
-																		{ 'title': '값', 'field': 'value' },
-																		{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
-																	]"
-																	data-bind="source: properties, visible: isVisible"
-																	style="border-color:#bbb;"></div>		
+																	
 													
 															</div>
 															<div class="tab-pane fade" id="profile-1">
