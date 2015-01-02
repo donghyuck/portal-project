@@ -415,6 +415,10 @@
 			animation-name: zoomOut;
 			height:0px;				
 		}
+		
+		.acc-v1	.panel-default {
+			border-color: #bbb;
+		}
 						
 		.k-grid tr > td  .btn-group {
 			-webkit-animation-duration: 1s;
