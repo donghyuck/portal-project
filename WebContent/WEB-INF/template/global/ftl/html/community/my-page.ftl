@@ -206,7 +206,7 @@
 				});
 				
 				renderTo.data("model", model);
-				
+				/*
 				common.ui.grid($("#page-property-grid"), {
 					dataSource : createPagePropertyDataSource(),
 					columns: [
@@ -228,7 +228,7 @@
 						this.refresh();
 					}
 				});			
-						
+					*/	
 				
 				kendo.bind(renderTo, model );
 			}
