@@ -44,6 +44,7 @@ function createEditor( renderToString, bodyEditor, options ){
 }
 
 function createCodeEditor( renderToString, editor, options ) {		
+	
 	if( $("#"+ renderToString).length == 0 ){
 		$('body').append('<div id="'+ renderToString +'"></div>');
 	}							
