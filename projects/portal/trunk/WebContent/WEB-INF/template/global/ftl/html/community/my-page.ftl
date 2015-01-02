@@ -398,6 +398,8 @@
 			opacity: 0;
 			visibility: hidden;		
 			height:0px;				
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;							
 		} 
 
 		#my-page.compose.in .details  {
@@ -419,6 +421,8 @@
 		#my-page.compose.out .details  {
 			opacity: 0;
 			visibility: hidden;		
+			-webkit-animation-name: fadeOut;
+			animation-name: fadeOut;				
 			height:0px;				
 		}
 		
