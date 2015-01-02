@@ -509,8 +509,7 @@
 														<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 													</label>
 												</section>
-											</div>
-											
+											</div>											
 											<div class="row">
 												<div class="col col-6">
 													<section>
@@ -538,8 +537,19 @@
 														</ul>	
 														<div class="tab-content">
 															<div class="tab-pane fade active in" id="home-1">
-																<h4>Heading Sample 1</h4>
-																<p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
+																<div data-role="grid"
+																	date-scrollable="false"
+																	data-editable="true"
+																	data-autoBind="false"
+																	data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+																	data-columns="[
+																		{ 'title': '이름',  'field': 'name', 'width': 200 },
+																		{ 'title': '값', 'field': 'value' },
+																		{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+																	]"
+																	data-bind="source: properties, visible: isVisible"
+																	style="border-color:#bbb;"></div>		
+													
 															</div>
 															<div class="tab-pane fade" id="profile-1">
 																<img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/5.jpg">                         
@@ -547,50 +557,22 @@
 																<p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
 															</div>
 														</div>												
+													</div>
 												</div>
-													<section>
-													<div data-role="grid"
-													date-scrollable="false"
-													data-editable="true"
-													data-autoBind="false"
-													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-													data-columns="[
-														{ 'title': '이름',  'field': 'name', 'width': 200 },
-														{ 'title': '값', 'field': 'value' },
-														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
-													]"
-													data-bind="source: properties, visible: isVisible"
-													style="border-color:#bbb;"></div>												
-												</div>
-												</section>
 											</div>
-											
 										</fieldset>
 										<fieldset>
-											<div class="row">
-												
+											<div class="row">												
 												<section class="col col-6">
-												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>
-												
+												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>												
 												</section>
 											</div>
-										</fieldset>                    
-                    <fieldset>
-                        <section>
-                           
-                        </section>                  
-                        
-                    </fieldset>
-                    
-                    <footer>
-                        <button type="submit" class="btn-u">Continue</button>
-                    </footer>
-                </form>
-										
-							
-								
-								
-								
+										</fieldset>
+										<footer>
+											<button type="submit" class="btn-u">Continue</button>
+										</footer>
+									</form>
+									<!-- /.form >	
 								</div>
 								</div><!-- /.my-page-view -->
 							</div><!-- /.my-page -->
