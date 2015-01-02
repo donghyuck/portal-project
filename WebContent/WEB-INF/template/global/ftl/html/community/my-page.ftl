@@ -390,13 +390,13 @@
 		} 
 
 		#my-page.compose.in .master  {
-			-webkit-animation-name: fadeOutLeft;
+			-webkit-animation-name: fadeOutRight;
 			animation-name: zoomOut;
 			height:0px;			
 		} 
 
 		#my-page.compose.in .details  {
-			-webkit-animation-name: fadeInRight;
+			-webkit-animation-name: fadeInLeft;
 			animation-name: bounceInUp;		
 			height:auto;		
 		} 
