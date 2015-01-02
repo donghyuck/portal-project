@@ -613,18 +613,9 @@
 												</div>
 											</div>
 										</fieldset>
-										<section>	
+										<section class="no-margin">	
 											<textarea id="page-editor-body" class="no-border" data-bind='value:page.body' style="height:500px;"></textarea>
-										</section>	
-										<fieldset>
-											
-											
-											<div class="row">												
-												<section class="col col-6">
-												<button class="btn-u btn-brd btn-brd-hover btn-u-blue  btn-u-sm" type="button"><i class="fa fa-cog"></i> 프로퍼티</button>												
-												</section>
-											</div>
-										</fieldset>
+										</section>											
 										<footer>
 											<button type="submit" class="btn-u">Continue</button>
 										</footer>
