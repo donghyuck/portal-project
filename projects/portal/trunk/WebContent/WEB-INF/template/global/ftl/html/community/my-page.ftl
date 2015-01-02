@@ -390,8 +390,6 @@
 		} 
 
 		#my-page.compose.in .master  {
-			-webkit-animation-name: fadeOutRight;
-			animation-name: fadeOutRight;
 			height:0px;			
 		} 
 
