@@ -205,6 +205,8 @@
 					isVisible : true
 				});
 				
+				renderTo.data("model", model);
+				
 				common.ui.grid($("#page-property-grid"), {
 					dataSource : createPagePropertyDataSource(),
 					columns: [
@@ -227,7 +229,7 @@
 					}
 				});			
 						
-				renderTo.data("model", model);
+				
 				kendo.bind(renderTo, model );
 			}
 			source.copy( renderTo.data("model").page );
