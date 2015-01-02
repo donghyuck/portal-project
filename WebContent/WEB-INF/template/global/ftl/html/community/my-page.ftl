@@ -190,7 +190,8 @@
 						btn.button('loading');
 						
 						if( $this.page.title.length == 0 ){
-							$("label[for=title]").addClass("state-error");
+							if(!$("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").addClass("state-error");							
 							common.ui.notification({
 								hide:function(e){
 									btn.button('reset');
@@ -199,9 +200,31 @@
 								{	title:"입력 오류", message: "제목을 입력하세요."	},
 								"error"
 							);
-						}else{
-							$("label[for=title]").removeClass("state-error");
+							return false;
+						}						
+						else{
+							if($("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").removeClass("state-error");
 						}
+												
+						if($this.page.summary.length == 0 ){
+							if(!$("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").removeClass("state-error");
+						}
+												
 						return false;
 					}
 				});				
