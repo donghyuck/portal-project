@@ -551,8 +551,7 @@
 																			{ 'title': '값', 'field': 'value' },
 																			{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
 																		]"
-																		data-bind="source: properties, visible: isVisible"
-																		style="border-color:#bbb;"></div>	
+																		data-bind="source: properties, visible: isVisible"></div>	
 																</div>
 															</div>
 														</div>
