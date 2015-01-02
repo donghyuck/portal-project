@@ -518,18 +518,19 @@
 											<div class="row">
 												<div class="col col-6">
 													<section>
-														<label class="textarea">
-															<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
-														</label>
-													</section>
-													<section>
 														<label class="input">
 															<i class="icon-prepend fa fa-file-code-o"></i>
 															<input type="text" name="fname" placeholder="템플릿">
 														</label>
 													</section>
+													<section>
+														<label class="textarea">
+															<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+														</label>
+													</section>
 												</div>
 												<div class="col col-6">
+													<section>
 													<div data-role="grid"
 													date-scrollable="false"
 													data-editable="true"
@@ -543,6 +544,7 @@
 													data-bind="source: properties, visible: isVisible"
 													style="border-color:#bbb;"></div>												
 												</div>
+												</section>
 											</div>
 											
 										</fieldset>
