@@ -465,7 +465,6 @@
 		} 
 		
 		#my-page 	span.back {
-			position:relative;
 			top:inherit;
 			left:inherit;
 		}
