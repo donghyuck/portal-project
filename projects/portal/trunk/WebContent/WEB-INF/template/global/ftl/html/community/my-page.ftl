@@ -508,7 +508,7 @@
 										<header>&nbsp;</header>
 										<fieldset>											
 											<div class="row">
-												<div class="col col-12">
+												<div class="col col-11">
 													<section>
 														<label for="title" class="input">
 															<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
