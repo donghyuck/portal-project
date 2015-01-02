@@ -391,19 +391,19 @@
 
 		#my-page.compose.in .master  {
 			-webkit-animation-name: fadeOutRight;
-			animation-name: zoomOut;
+			animation-name: fadeOutRight;
 			height:0px;			
 		} 
 
 		#my-page.compose.in .details  {
 			-webkit-animation-name: fadeInLeft;
-			animation-name: bounceInUp;		
+			animation-name: fadeInLeft;		
 			height:auto;		
 		} 
 				
 		#my-page.compose.out .master  {		
 			-webkit-animation-name: fadeInRight;
-			animation-name: bounceInUp;			
+			animation-name: fadeInRight;			
 			height:auto;	
 			
 		}
