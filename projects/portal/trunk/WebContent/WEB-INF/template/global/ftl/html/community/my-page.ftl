@@ -463,6 +463,12 @@
 			cursor: not-allowed;
 			pointer-events: auto;		
 		} 
+		
+		#my-page 	span.back {
+			position:relative;
+			top:inherit;
+			left:inherit;
+		}
 			
 		</style>   	
 		</#compress>
