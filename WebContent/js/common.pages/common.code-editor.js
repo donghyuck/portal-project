@@ -1,11 +1,15 @@
 <!-- ============================== -->
 <!-- Utils for editor									       -->
 <!-- ============================== -->						
-function createEditor( renderToString, bodyEditor ){
+function createEditor( renderToString, bodyEditor, options ){
+	options =  options || {};
+	
 	if(!bodyEditor.data("kendoEditor") ){			
 		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-		var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor);									
+		var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor, options );							
+		
+		
 		bodyEditor.kendoEditor({
 				tools : [ 'bold', 'italic', 'insertUnorderedList', 'insertOrderedList',
 					{	
@@ -39,7 +43,7 @@ function createEditor( renderToString, bodyEditor ){
 	}			
 }
 
-function createCodeEditor( renderToString, editor ) {		
+function createCodeEditor( renderToString, editor, options ) {		
 	if( $("#"+ renderToString).length == 0 ){
 		$('body').append('<div id="'+ renderToString +'"></div>');
 	}							
