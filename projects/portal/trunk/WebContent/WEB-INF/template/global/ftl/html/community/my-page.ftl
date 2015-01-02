@@ -504,14 +504,9 @@
 										<header>&nbsp;</header>
 										<fieldset>											
 											<div class="row">
-												<section class="col col-11">
+												<section class="col col-12">
 													<label for="file" class="input">
 														<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-													</label>
-												</section>
-												<section class="col col-1">
-													<label class="input state-disabled">
-														<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
 													</label>
 												</section>
 											</div>
