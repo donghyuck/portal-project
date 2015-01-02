@@ -38,7 +38,7 @@
 		if( ex.getCause() != null && ex.getCause() instanceof UnAuthorizedException  ){
 			exceptionClassName = ex.getCause().getClass().getName();
 			exceptionMessage = "요청하신 작업에 대한 권한이 없습니다.";
-			response.setStatus(404);
+			response.setStatus(403);
 		} 
 	}
 		
