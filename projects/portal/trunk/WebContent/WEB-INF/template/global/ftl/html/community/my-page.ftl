@@ -157,6 +157,7 @@
 
 		function createPageEditor(source){
 			var renderTo = $("#my-page-view");
+			$("#sky-form label.state-error").removeClass("state-error");
 			
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
