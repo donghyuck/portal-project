@@ -472,6 +472,10 @@
 			top:inherit;
 			left:inherit;
 		}
+		
+		#my-page .k-editor {
+			border:0px;
+		}
 			
 		</style>   	
 		</#compress>
