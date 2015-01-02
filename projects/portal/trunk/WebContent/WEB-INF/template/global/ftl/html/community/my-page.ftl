@@ -396,14 +396,14 @@
 		} 
 
 		#my-page.compose.in .details  {
-			-webkit-animation-name: fadeInDown;
-			animation-name: fadeInDown;		
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;		
 			height:auto;		
 		} 
 				
 		#my-page.compose.out .master  {		
-			-webkit-animation-name: fadeInDown;
-			animation-name: fadeInDown;			
+			-webkit-animation-name: fadeInUp;
+			animation-name: fadeInUp;			
 			height:auto;	
 			
 		}
