@@ -540,7 +540,7 @@
 																</h4>
 															</div>
 															<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
-																<div class="panel-body">
+																<div class="panel-body no-padding">
 																	<div data-role="grid"
 																		date-scrollable="false"
 																		data-editable="true"
@@ -551,7 +551,8 @@
 																			{ 'title': '값', 'field': 'value' },
 																			{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
 																		]"
-																		data-bind="source: properties, visible: isVisible"></div>	
+																		data-bind="source: properties, visible: isVisible"
+																		style="border:0px;"></div>	
 																</div>
 															</div>
 														</div>
@@ -559,7 +560,7 @@
 															<div class="panel-heading">
 																<h4 class="panel-title">
 																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-																	파일
+																	파
 																	</a>
 																</h4>
 															</div>
