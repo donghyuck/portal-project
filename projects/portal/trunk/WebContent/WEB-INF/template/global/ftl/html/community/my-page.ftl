@@ -519,12 +519,7 @@
 											</div>											
 											<div class="row">
 												<div class="col col-6">
-													<section>
-														
-														<label class="input state-disabled">
-															<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
-														</label>
-													</section>
+
 													<section>
 														<label class="input">
 															<i class="icon-prepend fa fa-file-code-o"></i>
@@ -577,7 +572,25 @@
 
 																</div>
 															</div>
-														</div>														
+														</div>					
+														<div class="panel panel-default">
+															<div class="panel-heading">
+																<h4 class="panel-title">
+																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
+																	버전
+																	</a>
+																</h4>
+															</div>
+															<div id="collapse-Three" class="panel-collapse collapse" style="height: 0px;">
+																<div class="panel-body">
+													<section>														
+														<label class="input state-disabled">
+															<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
+														</label>
+													</section>
+																</div>
+															</div>
+														</div>																												
 													</div>													
 												</div>
 											</div>
