@@ -198,7 +198,6 @@
 								{	title:"입력 오류", message: "제목을 입력하세요."	},
 								"error"
 							);
-							return ;
 						}else{
 							$("label[for=title]").removeClass("state-error");
 						}
