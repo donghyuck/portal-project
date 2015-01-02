@@ -828,7 +828,7 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="webpage-title-template" type="text/x-kendo-template">
-		#: name #</span>
+		#: title #</span>
 		<div class="btn-group btn-group-xs pull-right">
 			<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
 			<a href="\\#" onclick="doPageDelete(); return false;" class="btn btn-info btn-sm">삭제</a>
