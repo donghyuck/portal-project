@@ -225,7 +225,7 @@
 							if($("label[for=summary]").hasClass("state-error"))
 								$("label[for=summary]").removeClass("state-error");
 						}
-						
+						$this.page.pageState = null;
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
