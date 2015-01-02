@@ -179,7 +179,30 @@
 						},
 						error:common.ui.handleAjaxError
 					}),
-					isVisible : true
+					isVisible : true,
+					close:function(e){
+						$("#my-page-view span.back").click();
+					},
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');
+						
+						if( $this.page.title.length == 0 ){
+							$("label[for=title]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "제목을 입력하세요."	},
+								"error"
+							);
+							return ;
+						}else{
+							$("label[for=title]").removeClass("state-error");
+						}
+					}
 				});				
 				source.copy( model.page );
 				renderTo.data("model", model);
