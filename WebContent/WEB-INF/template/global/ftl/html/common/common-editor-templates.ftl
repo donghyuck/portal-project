@@ -36,6 +36,7 @@
 
 		.image-broswer .image-selected img{
 			height:120px;
+			width:120px;
 		}	
 					
 		.image-broswer .img-wrapper {
