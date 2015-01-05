@@ -656,7 +656,7 @@
 															</div>
 															<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
 																<div class="panel-body">
-																	
+																서비스 준비중 입니다.	
 																</div>
 															</div>
 														</div>					
