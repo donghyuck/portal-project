@@ -8,7 +8,7 @@
 		.image-broswer .image-listview .img-wrapper.k-state-selected:after , .file-broswer .file-listview .file-wrapper.k-state-selected:after  {
 			top: 10px;
 			right: 15px;
-			content: "\\f05d";
+			content: "\\f00c";
 			font-size: 3em;
 			position: absolute;
 			font-weight: normal;
@@ -37,8 +37,8 @@
 		.image-broswer .img-wrapper {
 			float: left;
 			position: relative;
-			width: 32.99%;
-			height: 170px;
+			width: 120px;
+			height: 120px;
 			padding: 0;
 			cursor: pointer;
 			overflow: hidden;		
