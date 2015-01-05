@@ -25,7 +25,7 @@
 			font-weight: normal;
 			display: inline-block;
 			font-family: FontAwesome;
-			color: \\#222222;
+			color: \\#46b8da;
 		}
 			
 		.image-broswer .image-selected{
