@@ -122,14 +122,14 @@
 								<div class="tab-pane fade  active" id=#:guid[0]#>
 									<div class="text-primary">
 										<h5 ><i class="fa fa-upload"></i> <strong>업로드</strong>&nbsp;<small> 삽입할 이미지를 선택하세요.</small></h5>
-										<div class="panel panel-default">			
+										<div class="panel panel-default">		
+											<div class="panel-body image-selected"></div>	
 											<div class="panel-body padding-sm" style="border-bottom: 1px solid \\#e5e5e5;">
 												<p class="text-muted">
 													<small><i class="fa fa-info"></i> 업로드 버튼을 클릭하여 여러개의 파일을 한번에 업로드할 수 있습니다.</small>		
 												</p>
 												<button type="button" class="btn btn-info btn-sm pull-right btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> &nbsp; 이미지 업로드</button>												
-											</div>
-											<div class="panel-body image-selected"></div>
+											</div>											
 											<div class="panel-body scrollable" style="max-height:450px; padding:5px;">
 												<div class="image-listview" style="padding:0px; border: 0px; min-height: 360px;"></div>
 											</div>	
