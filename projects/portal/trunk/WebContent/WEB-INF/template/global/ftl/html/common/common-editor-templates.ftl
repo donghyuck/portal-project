@@ -29,9 +29,9 @@
 		}
 			
 		.image-broswer .image-selected{
-			border-bottom: 2px solid \\#e5e5e5;
+			border-bottom: 1px solid \\#e5e5e5;
 			padding: 5px;
-			min-height:80px;
+			min-height:132px;
 		}	
 
 		.image-broswer .image-selected img{
