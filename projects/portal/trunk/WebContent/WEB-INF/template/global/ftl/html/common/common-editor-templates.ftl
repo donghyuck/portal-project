@@ -35,7 +35,7 @@
 		}	
 
 		.image-broswer .image-selected img{
-			height:120px
+			height:120px;
 		}	
 					
 		.image-broswer .img-wrapper {
