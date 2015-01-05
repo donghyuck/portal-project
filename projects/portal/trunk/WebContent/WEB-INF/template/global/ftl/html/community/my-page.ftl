@@ -546,7 +546,11 @@
 		#my-page .k-editor {
 			border:0px;
 		}
-			
+		
+		.sky-form fieldset {
+			background: #fff;
+		}
+		
 		</style>   	
 		</#compress>
 	</head>
