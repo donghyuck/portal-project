@@ -9,7 +9,7 @@
 			top: 10px;
 			right: 15px;
 			content: "\\f00c";
-			font-size: 3em;
+			font-size: 2em;
 			position: absolute;
 			font-weight: normal;
 			display: inline-block;
