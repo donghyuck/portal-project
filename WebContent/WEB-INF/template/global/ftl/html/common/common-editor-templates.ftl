@@ -33,7 +33,11 @@
 			padding: 5px;
 			min-height:80px;
 		}	
-			
+
+		.image-broswer .image-selected img{
+			height:120px
+		}	
+					
 		.image-broswer .img-wrapper {
 			float: left;
 			position: relative;
