@@ -624,7 +624,7 @@
 															<div class="panel-heading">
 																<h4 class="panel-title">
 																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
-																	속성
+																	<i class="fa fa-cog"></i> 속성
 																	</a>
 																</h4>
 															</div>
@@ -650,7 +650,7 @@
 															<div class="panel-heading">
 																<h4 class="panel-title">
 																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-																	파일
+																	<i class="fa fa-floppy-o"></i> 파일
 																	</a>
 																</h4>
 															</div>
@@ -664,7 +664,7 @@
 															<div class="panel-heading">
 																<h4 class="panel-title">
 																	<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
-																	버전
+																	<i class="fa fa-history"></i> 버전
 																	</a>
 																</h4>
 															</div>
