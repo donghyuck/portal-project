@@ -19,7 +19,7 @@
 		.image-broswer .image-selected:after {
 			top: 50px;
 			right: 30px;
-			content: "\\f0c6";
+			content: "\\f093";
 			font-size: 3em;
 			position: absolute;
 			font-weight: normal;
