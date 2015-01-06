@@ -130,6 +130,10 @@
 					common.ui.grid(renderTo).dataSource.read();	
 			});				
 			
+			$("button[data-action=page-create]").click(function(e){
+				createNewPage();
+			});
+			
 			$("#my-page-view span.back").click(function(e){
 				$("#my-page").removeClass("in");
 				$("#my-page").one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
@@ -139,6 +143,14 @@
 			});
 		}
 
+		function createNewPage(){
+			var page = new common.ui.data.Page();
+			page.objectType = getMyPageSource();
+			
+			createPageEditor(page);
+			$("#my-page").addClass("compose in");	
+		}
+		
 		function doPageEdit(){
 			var renderTo = $("#my-page-grid");
 			var grid = common.ui.grid( renderTo );
