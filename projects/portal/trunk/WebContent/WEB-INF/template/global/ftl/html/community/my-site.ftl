@@ -595,6 +595,19 @@
 						<div class="personalized-section-title">
 							<i class="icon-flat  settings2"></i>
 							<h3>MY 사이트 <span style="height:2.6em;"> 웹사이트의 메뉴, 페이지, 이미지들을 쉽고 빠르게 생성하고 수정할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
+								<div class="personalized-section-heading-controls">
+										<div class="btn-group" data-toggle="buttons" id="page-source-list">
+											<label class="btn btn-sm btn-danger rounded-left active">
+												<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
+											</label>
+											<label class="btn btn-sm btn-danger">
+												<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
+											</label>											
+											<label class="btn btn-sm btn-danger rounded-right">
+												<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
+											</label>
+										</div>				
+							</div>							
 							<div class="personalized-section-heading-controls">
 								<div id="personalized-buttons" class="btn-group">
 									<button type="button" class="btn-u btn-u-blue rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
