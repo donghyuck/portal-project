@@ -652,7 +652,7 @@
 							<div id="my-site-notice" class="collapse">
 							hello
 							</div>	
-							<div id="my-site-page" class="collapse">
+							<div id="my-site-page" class="">
 							hello
 							</div>																					
 							<div id="my-page">
