@@ -617,13 +617,15 @@
 							<i class="icon-flat  settings2"></i>
 							<h3>MY 사이트 <span style="height:2.6em;"> 웹사이트의 메뉴, 페이지, 이미지들을 쉽고 빠르게 생성하고 수정할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
 								<div class="personalized-section-heading-controls">
+								
+								<div class="btn-group" data-toggle="buttons">
 								<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
 								<i class="fa fa-sitemap"></i> 메뉴
 								</button>
 								<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-template" aria-expanded="false" aria-controls="my-site-template">
 								<i class="fa fa-file-code-o"></i> 템플릿
 								</button>
-								
+								</div>
 										<div class="btn-group" data-toggle="buttons">
 											<label class="btn btn-sm btn-primary rounded-left">
 												<input type="radio" name="page-action-list" value="menu" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" ><i class="fa fa-sitemap"></i> 메뉴
