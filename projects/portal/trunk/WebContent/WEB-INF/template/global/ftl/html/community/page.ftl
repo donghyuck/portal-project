@@ -108,7 +108,7 @@
 					</div>
 				</div>
 				<div class="col-lg-9">		
-					<div class="content-main-section" style="min-height:300px;">
+					<div class="content-main-section text-md" style="min-height:300px;">
 					${ action.bodyText }
 					</div>
 				</div>
