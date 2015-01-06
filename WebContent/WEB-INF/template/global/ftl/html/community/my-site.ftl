@@ -71,6 +71,19 @@
 					var $this = $(this);
 					alert( $this.attr("aria-controls") );
 				});
+				/*
+			$(".personalized-section input[type=radio][name=page-action-list]").on("change", function () {
+				$this = $(this);
+				alert( $this.val() );
+				switch( $this.val() )
+				{
+					case "menu":
+						createMenuSection();				
+					break;				
+				}
+			});	
+*/		
+
 				// END SCRIPT 				
 			}
 		}]);			
@@ -140,18 +153,7 @@
 					$("button.btn-page-control-group").attr("disabled", "disabled");
 				}			
 			} );		
-/*
-			$(".personalized-section input[type=radio][name=page-action-list]").on("change", function () {
-				$this = $(this);
-				alert( $this.val() );
-				switch( $this.val() )
-				{
-					case "menu":
-						createMenuSection();				
-					break;				
-				}
-			});	
-*/						
+				
 			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
 					common.ui.grid(renderTo).dataSource.read();	
 			});				
