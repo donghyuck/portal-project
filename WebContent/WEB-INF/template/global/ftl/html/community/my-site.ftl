@@ -71,8 +71,18 @@
 		}]);			
 
 		<!-- ============================== -->
+		<!-- MENU														-->
+		<!-- ============================== -->
+		function createPageSection(){
+			var renderTo = $("#my-site-menu");
+			renderTo.slideDown();
+		
+		}
+		
+		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->
+		
 		function getMyPageSource(){
 			return $("#page-source-list input[type=radio][name=page-source]:checked").val();			
 		}
@@ -129,6 +139,12 @@
 			$(".personalized-section input[type=radio][name=page-action-list]").on("change", function () {
 				$this = $(this);
 				alert( $this.val() );
+				switch( $this.val() )
+				{
+					case "menu"
+						createPageSection();				
+					break;				
+				}
 			});	
 						
 			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
