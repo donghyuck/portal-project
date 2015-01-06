@@ -657,7 +657,7 @@
 												</div>
 												<div class="col col-6">
 													<section>
-														<label for="summary" class="input">
+														<label for="summary" class="select">
 															<select data-role="combobox"
 													            data-text-field="name"
 													            data-value-field="value"
