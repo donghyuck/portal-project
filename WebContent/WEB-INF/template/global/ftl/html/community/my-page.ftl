@@ -661,7 +661,7 @@
 															<select data-role="combobox"
 													            data-text-field="name"
 													            data-value-field="value"
-													            data-bind="source: stateSource, value: page.state"></select>
+													            data-bind="source: stateSource, value: page.pageState"></select>
 														</label>
 													</section>
 													<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: isAllowToFileAndProps">
