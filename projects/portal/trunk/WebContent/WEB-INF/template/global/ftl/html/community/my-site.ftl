@@ -607,13 +607,7 @@
 												<input type="radio" name="page-action" value="1"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 											</label>
 										</div>				
-							</div>							
-							<div class="personalized-section-heading-controls">
-								<div id="personalized-buttons" class="btn-group">
-									<button type="button" class="btn-u btn-u-blue rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
-									<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
-								</div>														
-							</div>		
+							</div>
 						</div>
 					</div>				
 				</div>
