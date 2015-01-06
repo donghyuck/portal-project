@@ -622,7 +622,7 @@
 								</a>
 										<div class="btn-group" data-toggle="buttons">
 											<label class="btn btn-sm btn-primary rounded-left">
-												<input type="radio" name="page-action-list" value="menu"><i class="fa fa-sitemap"></i> 메뉴
+												<input type="radio" name="page-action-list" value="menu" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" ><i class="fa fa-sitemap"></i> 메뉴
 											</label>
 											<label class="btn btn-sm btn-primary">
 												<input type="radio" name="page-action-list" value="template"><i class="fa fa-file-code-o"></i> 템플릿
