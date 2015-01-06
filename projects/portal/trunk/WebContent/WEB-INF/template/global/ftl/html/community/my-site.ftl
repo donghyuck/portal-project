@@ -598,13 +598,13 @@
 								<div class="personalized-section-heading-controls">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
 											<label class="btn btn-sm btn-danger rounded-left active">
-												<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
+												<input type="radio" name="page-action" value="2" checked="checked"><i class="fa fa-user"></i> ME
 											</label>
 											<label class="btn btn-sm btn-danger">
-												<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
+												<input type="radio" name="page-action" value="30"><i class="fa fa-globe"></i> SITE
 											</label>											
 											<label class="btn btn-sm btn-danger rounded-right">
-												<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
+												<input type="radio" name="page-action" value="1"><i class="fa fa-building-o"></i> COMPANY
 											</label>
 										</div>				
 							</div>							
