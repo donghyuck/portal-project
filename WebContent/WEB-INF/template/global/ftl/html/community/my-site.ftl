@@ -125,7 +125,11 @@
 					$("button.btn-page-control-group").attr("disabled", "disabled");
 				}			
 			} );		
-			
+
+			$("#site-action-list input[type=radio][name=site-action]").on("change", function () {
+					common.ui.grid(renderTo).dataSource.read();	
+			});	
+						
 			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
 					common.ui.grid(renderTo).dataSource.read();	
 			});				
@@ -596,15 +600,15 @@
 							<i class="icon-flat  settings2"></i>
 							<h3>MY 사이트 <span style="height:2.6em;"> 웹사이트의 메뉴, 페이지, 이미지들을 쉽고 빠르게 생성하고 수정할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
 								<div class="personalized-section-heading-controls">
-										<div class="btn-group" data-toggle="buttons" id="page-source-list">
+										<div class="btn-group" data-toggle="buttons">
 											<label class="btn btn-sm btn-primary rounded-left active">
-												<input type="radio" name="page-action" value="2" checked="checked"><i class="fa fa-sitemap"></i> 메뉴
+												<input type="radio" name="page-action-list" value="2" checked="checked"><i class="fa fa-sitemap"></i> 메뉴
 											</label>
 											<label class="btn btn-sm btn-primary">
-												<input type="radio" name="page-action" value="30"><i class="fa fa-file-code-o"></i> 템플릿
+												<input type="radio" name="page-action-list" value="30"><i class="fa fa-file-code-o"></i> 템플릿
 											</label>											
 											<label class="btn btn-sm btn-primary rounded-right">
-												<input type="radio" name="page-action" value="1"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
+												<input type="radio" name="page-action-list" value="1"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 											</label>
 										</div>				
 							</div>
