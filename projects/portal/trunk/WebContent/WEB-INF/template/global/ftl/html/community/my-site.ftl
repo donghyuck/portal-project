@@ -648,7 +648,13 @@
 							</div>
 							<div id="my-site-template" class="collapse">
 							hello
-							</div>							
+							</div>	
+							<div id="my-site-notice" class="collapse">
+							hello
+							</div>	
+							<div id="my-site-page" class="collapse">
+							hello
+							</div>																					
 							<div id="my-page">
 								<div id="my-page-list" class="master animated">
 									<div class="p-xxs">
