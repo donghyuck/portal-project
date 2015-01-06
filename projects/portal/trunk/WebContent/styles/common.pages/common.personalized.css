@@ -129,8 +129,8 @@
 .image-listview .img-wrapper,.file-listview .file-wrapper {
 	float: left;
 	position: relative;
-	width: 32.99%;
-	height: 170px;
+	width: 24.99%;
+	height: 150px;
 	padding: 0;
 	cursor: default;
 	overflow: hidden;
@@ -218,7 +218,7 @@
 	left: 0;
 	opacity: 0;
 	bottom: 20px;
-	margin-left: 40px;
+	margin-left: 25px;
 	text-align: center;
 	position: absolute;
 }
