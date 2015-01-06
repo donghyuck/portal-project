@@ -619,7 +619,7 @@
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container" style="min-height:450px;">
 						<div class="row p-sm">
-							<div id="my-site-menu">
+							<div id="my-site-menu" style="min-height: 500px; display:none;">
 							
 							</div>
 							<div id="my-page">
