@@ -66,6 +66,11 @@
 				
 				setupPersonalizedSection();			
 				createPageSection();
+				
+				$("button[data-toggle=collapse]").click(function(e){
+					var $this = $(this);
+					alert( $this.attr("aria-controls") );
+				});
 				// END SCRIPT 				
 			}
 		}]);			
@@ -619,12 +624,12 @@
 								<div class="personalized-section-heading-controls">
 								
 								<div class="btn-group" data-toggle="buttons">
-								<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
-								<i class="fa fa-sitemap"></i> 메뉴
-								</button>
-								<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-template" aria-expanded="false" aria-controls="my-site-template">
-								<i class="fa fa-file-code-o"></i> 템플릿
-								</button>
+									<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
+									<i class="fa fa-sitemap"></i> 메뉴
+									</button>
+									<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-template" aria-expanded="false" aria-controls="my-site-template">
+									<i class="fa fa-file-code-o"></i> 템플릿
+									</button>
 								</div>
 										<div class="btn-group" data-toggle="buttons">
 											<label class="btn btn-sm btn-primary rounded-left">
