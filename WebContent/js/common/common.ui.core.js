@@ -1645,7 +1645,7 @@
 					/**
 				'<div class="row">' +
 				'<div class="col-xs-2">'+ **/
-				'<img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated fadeInRight" data-id="#=imageId#">'
+				'<img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated fadeInUp" data-id="#=imageId#">'
 				/**
 				'</div>' +
 				'<div class="col-xs-10">' +						
