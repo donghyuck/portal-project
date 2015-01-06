@@ -620,6 +620,10 @@
 								<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
 								<i class="fa fa-sitemap"></i> 메뉴
 								</button>
+								<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-template" aria-expanded="false" aria-controls="my-site-template">
+								<i class="fa fa-file-code-o"></i> 템플릿
+								</button>
+								
 										<div class="btn-group" data-toggle="buttons">
 											<label class="btn btn-sm btn-primary rounded-left">
 												<input type="radio" name="page-action-list" value="menu" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" ><i class="fa fa-sitemap"></i> 메뉴
@@ -644,6 +648,9 @@
 							<div id="my-site-menu" class="collapse">
 							hello
 							</div>
+							<div id="my-site-template" class="collapse">
+							hello
+							</div>							
 							<div id="my-page">
 								<div id="my-page-list" class="master animated">
 									<div class="p-xxs">
