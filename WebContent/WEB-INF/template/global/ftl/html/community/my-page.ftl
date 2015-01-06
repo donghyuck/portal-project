@@ -202,9 +202,6 @@
 						error:common.ui.handleAjaxError
 					}),
 					isVisible : true,
-					isAllowToFileAndProps : function(){
-						return (this.page.pageId > 0);
-					},
 					close:function(e){
 						$("#my-page-view span.back").click();
 						common.ui.scroll.top($(".personalized-section").first());
@@ -285,7 +282,13 @@
 				source.copy( renderTo.data("model").page );				
 				if(renderTo.data("model").page.pageId > 0 )
 					renderTo.data("model").properties.read();
-			}					
+			}	
+			
+			if(renderTo.data("model").page.pageId > 0) {
+				renderTo.data("model").set("isAllowToFileAndProps", true);
+			} else {
+				renderTo.data("model").set("isAllowToFileAndProps", false);
+			}							
 		}
 		
 		
