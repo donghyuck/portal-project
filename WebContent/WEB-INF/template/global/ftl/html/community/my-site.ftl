@@ -624,9 +624,12 @@
 											<label class="btn btn-sm btn-primary">
 												<input type="radio" name="page-action-list" value="template"><i class="fa fa-file-code-o"></i> 템플릿
 											</label>											
-											<label class="btn btn-sm btn-primary rounded-right active">
-												<input type="radio" name="page-action-list" value="notice" checked="checked"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
+											<label class="btn btn-sm btn-primary rounded-right">
+												<input type="radio" name="page-action-list" value="notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 											</label>
+											<label class="btn btn-sm btn-primary rounded-right active">
+												<input type="radio" name="page-action-list" value="notice" checked="checked"><i class="fa fa-file-o"></i> 페이지
+											</label>											
 										</div>				
 							</div>
 						</div>
