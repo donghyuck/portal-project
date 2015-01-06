@@ -649,7 +649,7 @@
 							<div id="my-site-notice" class="collapse">
 							hello
 							</div>																					
-							<div id="my-page" class="collapse in">
+							<div id="my-page">
 								<div id="my-page-list" class="master animated">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
