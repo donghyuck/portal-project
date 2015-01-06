@@ -141,7 +141,7 @@
 				alert( $this.val() );
 				switch( $this.val() )
 				{
-					case "menu"
+					case "menu":
 						createPageSection();				
 					break;				
 				}
