@@ -619,7 +619,7 @@
 								<div class="personalized-section-heading-controls">
 								<button class="btn btn-primary" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
 								<i class="fa fa-sitemap"></i> 메뉴
-								</a>
+								</button>
 										<div class="btn-group" data-toggle="buttons">
 											<label class="btn btn-sm btn-primary rounded-left">
 												<input type="radio" name="page-action-list" value="menu" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" ><i class="fa fa-sitemap"></i> 메뉴
