@@ -184,6 +184,7 @@
 					isVisible : true,
 					close:function(e){
 						$("#my-page-view span.back").click();
+						common.ui.scroll.top($(".personalized-section").first());
 					},
 					update : function(e){
 						var $this = this, 
@@ -233,8 +234,7 @@
 								success : function(response){
 									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
 									$("#my-page-grid").data('kendoGrid').dataSource.read();
-									$this.close();
-									common.ui.scroll.top($(".personalized-section").first());
+									$this.close();									
 								},
 								fail: function(){								
 									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
