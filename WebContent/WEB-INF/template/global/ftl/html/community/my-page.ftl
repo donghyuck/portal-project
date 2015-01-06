@@ -614,7 +614,7 @@
 												<div class="col col-6">
 													<section>
 														<label class="input">
-															<i class="icon-prepend fa fa-file-code-o"></i>
+															<i class="icon-prepend fa fa-file-text-o"></i>
 															<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
 														</label>
 													</section>
