@@ -69,21 +69,22 @@
 				
 				$("button[data-toggle=collapse]").click(function(e){
 					var $this = $(this);
+					switch( $this.attr("aria-controls") ){
+						case "my-site-menu":
+							createMenuSection();				
+						break;
+						case "my-site-template":
+		
+						break;
+						case "my-site-page":
+		
+						break;			
+						case "my-site-notice":
+		
+						break;															
+					}
 					alert( $this.attr("aria-controls") );
 				});
-				/*
-			$(".personalized-section input[type=radio][name=page-action-list]").on("change", function () {
-				$this = $(this);
-				alert( $this.val() );
-				switch( $this.val() )
-				{
-					case "menu":
-						createMenuSection();				
-					break;				
-				}
-			});	
-*/		
-
 				// END SCRIPT 				
 			}
 		}]);			
@@ -92,11 +93,8 @@
 		<!-- MENU														-->
 		<!-- ============================== -->
 		function createMenuSection(){
-			var renderTo = $("#my-site-menu");
-			renderTo.slideDown();
-		
-		}
-		
+			var renderTo = $("#my-site-menu");		
+		}		
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->
@@ -632,21 +630,13 @@
 									<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-template" aria-expanded="false" aria-controls="my-site-template">
 									<i class="fa fa-file-code-o"></i> 템플릿
 									</button>
+									<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-notice" aria-expanded="false" aria-controls="my-site-notice">
+									<i class="fa fa-bullhorn"></i> 공지 및 이벤트
+									</button>
+									<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-page" aria-expanded="true" aria-controls="my-site-page">
+									<i class="fa fa-file-o"></i> 페이지
+									</button>																		
 								</div>
-										<div class="btn-group" data-toggle="buttons">
-											<label class="btn btn-sm btn-primary rounded-left">
-												<input type="radio" name="page-action-list" value="menu" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" ><i class="fa fa-sitemap"></i> 메뉴
-											</label>
-											<label class="btn btn-sm btn-primary">
-												<input type="radio" name="page-action-list" value="template"><i class="fa fa-file-code-o"></i> 템플릿
-											</label>											
-											<label class="btn btn-sm btn-primary">
-												<input type="radio" name="page-action-list" value="notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
-											</label>
-											<label class="btn btn-sm btn-primary rounded-right active">
-												<input type="radio" name="page-action-list" value="page" checked="checked"><i class="fa fa-file-o"></i> 페이지
-											</label>											
-										</div>				
 							</div>
 						</div>
 					</div>				
