@@ -620,13 +620,13 @@
 							<h3>MY 사이트 <span style="height:2.6em;"> 웹사이트의 메뉴, 페이지, 이미지들을 쉽고 빠르게 생성하고 수정할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">								
 									<div class="btn-group" data-toggle="buttons">
-										<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
+										<button class="btn btn-primary btn-sm rounded-left" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
 										<i class="fa fa-sitemap"></i> 메뉴
 										</button>
 										<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-template" aria-expanded="false" aria-controls="my-site-template">
 										<i class="fa fa-file-code-o"></i> 템플릿
 										</button>
-										<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-notice" aria-expanded="false" aria-controls="my-site-notice">
+										<button class="btn btn-primary btn-sm rounded-right" data-toggle="collapse" data-target="#my-site-notice" aria-expanded="false" aria-controls="my-site-notice">
 										<i class="fa fa-bullhorn"></i> 공지 및 이벤트
 										</button>
 																	
