@@ -128,7 +128,7 @@
 
 			$(".personalized-section input[type=radio][name=page-action-list]").on("change", function () {
 				$this = $(this);
-				alert( $this.html() );
+				alert( $this.val() );
 			});	
 						
 			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
