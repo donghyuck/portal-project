@@ -641,7 +641,7 @@
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container" style="min-height:450px;">
 						<div class="row p-sm">
-							<div id="my-site-menu" style="display:none;">
+							<div id="my-site-menu" class="collapse">
 							hello
 							</div>
 							<div id="my-page">
