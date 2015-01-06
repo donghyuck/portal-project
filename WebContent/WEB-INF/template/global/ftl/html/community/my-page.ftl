@@ -277,13 +277,7 @@
 				source.copy( renderTo.data("model").page );				
 				if(renderTo.data("model").page.pageId > 0 )
 					renderTo.data("model").properties.read();
-			}	
-			/*
-			if(renderTo.data("model").page.pageId > 0 ){
-				renderTo.data("model").set("isAllowToFileAndProps", true);
-			}else{
-				renderTo.data("model").set("isAllowToFileAndProps", false);
-			}*/						
+			}					
 		}
 		
 		
