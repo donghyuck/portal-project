@@ -629,9 +629,7 @@
 										<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-notice" aria-expanded="false" aria-controls="my-site-notice">
 										<i class="fa fa-bullhorn"></i> 공지 및 이벤트
 										</button>
-										<button class="btn btn-primary btn-sm collapsed active" data-toggle="collapse" data-target="#my-page" aria-expanded="true" aria-controls="my-page">
-										<i class="fa fa-file-o"></i> 페이지
-										</button>																		
+																	
 									</div>
 							</div>
 						</div>
