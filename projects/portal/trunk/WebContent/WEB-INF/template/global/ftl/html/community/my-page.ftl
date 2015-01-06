@@ -615,9 +615,17 @@
 													<section>
 														<label class="input">
 															<i class="icon-prepend fa fa-file-code-o"></i>
-															<input type="text" name="fname" placeholder="템플릿">
+															<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
 														</label>
 													</section>
+																									
+													<section>
+														<label class="input">
+															<i class="icon-prepend fa fa-file-code-o"></i>
+															<input type="text" name="template" placeholder="템플릿">
+														</label>
+													</section>
+													
 													<section>
 														<label for="summary" class="textarea">
 															<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
