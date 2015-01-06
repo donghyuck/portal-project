@@ -174,6 +174,14 @@
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
 					page : new common.ui.data.Page(),
+					stateSource : [
+						{name: "" , value: "INCOMPLETE"},
+						{name: "승인" , value: "APPROVAL"},
+						{name: "게시" , value: "PUBLISHED"},
+						{name: "거절" , value: "REJECTED"},
+						{name: "보관" , value: "ARCHIVED"},
+						{name: "삭제" , value: "DELETED"}
+					],
 					properties : new kendo.data.DataSource({
 						transport: { 
 							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
@@ -648,6 +656,14 @@
 													</section>
 												</div>
 												<div class="col col-6">
+													<section>
+														<label for="summary" class="input">
+															<select data-role="combobox"
+													            data-text-field="name"
+													            data-value-field="value"
+													            data-bind="source: stateSource, value: page.state"></select>
+														</label>
+													</section>
 													<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: isAllowToFileAndProps">
 														<div class="panel panel-default">
 															<div class="panel-heading">
