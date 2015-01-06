@@ -261,8 +261,7 @@
 								complete : function(e){
 									btn.button('reset');
 								}							
-						});
-												
+						});												
 						return false;
 					}
 				});				
@@ -274,13 +273,15 @@
 				
 			}else{
 				source.copy( renderTo.data("model").page );				
-				if(renderTo.data("model").page.pageId > 0 ){
-					renderTo.data("model").set("isAllowToFileAndProps", true);	
+				if(renderTo.data("model").page.pageId > 0 )
 					renderTo.data("model").properties.read();
-				}else{
-					renderTo.data("model").set("isAllowToFileAndProps", false);	
-				}
 			}	
+			
+			if(renderTo.data("model").page.pageId > 0 ){
+				renderTo.data("model").set("isAllowToFileAndProps", true);
+			}else{
+				renderTo.data("model").set("isAllowToFileAndProps", false);
+			}						
 		}
 		
 		
