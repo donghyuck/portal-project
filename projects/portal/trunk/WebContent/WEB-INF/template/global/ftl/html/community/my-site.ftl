@@ -73,7 +73,7 @@
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
-		function createPageSection(){
+		function createMenuSection(){
 			var renderTo = $("#my-site-menu");
 			renderTo.slideDown();
 		
@@ -142,7 +142,7 @@
 				switch( $this.val() )
 				{
 					case "menu":
-						createPageSection();				
+						createMenuSection();				
 					break;				
 				}
 			});	
