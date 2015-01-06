@@ -146,7 +146,7 @@
 		function createNewPage(){
 			var page = new common.ui.data.Page();
 			page.objectType = getMyPageSource();
-			
+			page.bodyContent = { bodyText: "" };
 			createPageEditor(page);
 			$("#my-page").addClass("compose in");	
 		}
