@@ -75,10 +75,7 @@
 						break;
 						case "my-site-template":
 		
-						break;
-						case "my-site-page":
-		
-						break;			
+						break;	
 						case "my-site-notice":
 		
 						break;															
@@ -632,7 +629,7 @@
 										<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-notice" aria-expanded="false" aria-controls="my-site-notice">
 										<i class="fa fa-bullhorn"></i> 공지 및 이벤트
 										</button>
-										<button class="btn btn-primary btn-sm collapsed active" data-toggle="collapse" data-target="#my-site-page" aria-expanded="true" aria-controls="my-site-page">
+										<button class="btn btn-primary btn-sm collapsed active" data-toggle="collapse" data-target="#my-page" aria-expanded="true" aria-controls="my-page">
 										<i class="fa fa-file-o"></i> 페이지
 										</button>																		
 									</div>
@@ -651,11 +648,8 @@
 							</div>	
 							<div id="my-site-notice" class="collapse">
 							hello
-							</div>	
-							<div id="my-site-page" class="collapse in">
-							hello
 							</div>																					
-							<div id="my-page">
+							<div id="my-page" class="collapse in">
 								<div id="my-page-list" class="master animated">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
