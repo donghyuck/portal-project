@@ -624,7 +624,7 @@
 											<label class="btn btn-sm btn-primary">
 												<input type="radio" name="page-action-list" value="template"><i class="fa fa-file-code-o"></i> 템플릿
 											</label>											
-											<label class="btn btn-sm btn-primary rounded-right">
+											<label class="btn btn-sm btn-primary">
 												<input type="radio" name="page-action-list" value="notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 											</label>
 											<label class="btn btn-sm btn-primary rounded-right active">
