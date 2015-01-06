@@ -273,7 +273,9 @@
 				
 			}else{
 				source.copy( renderTo.data("model").page );
-				renderTo.data("model").properties.read();
+				
+				if(renderTo.data("model").page.pageId > 0 )
+					renderTo.data("model").properties.read();
 			}	
 		}
 		
