@@ -195,7 +195,7 @@
 					}),
 					isVisible : true,
 					isAllowToFileAndProps : function(){
-						return (this.page.pageId > 0)
+						return (this.page.pageId > 0);
 					},
 					close:function(e){
 						$("#my-page-view span.back").click();
