@@ -628,7 +628,7 @@
 												<input type="radio" name="page-action-list" value="notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 											</label>
 											<label class="btn btn-sm btn-primary rounded-right active">
-												<input type="radio" name="page-action-list" value="notice" checked="checked"><i class="fa fa-file-o"></i> 페이지
+												<input type="radio" name="page-action-list" value="page" checked="checked"><i class="fa fa-file-o"></i> 페이지
 											</label>											
 										</div>				
 							</div>
