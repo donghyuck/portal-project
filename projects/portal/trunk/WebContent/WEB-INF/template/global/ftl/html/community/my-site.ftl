@@ -126,8 +126,9 @@
 				}			
 			} );		
 
-			$("#site-action-list input[type=radio][name=site-action]").on("change", function () {
-					common.ui.grid(renderTo).dataSource.read();	
+			$(".personalized-section input[type=radio][name=page-action-list]").on("change", function () {
+				$this = $(this);
+				alert( $this.html() );
 			});	
 						
 			$("#page-source-list input[type=radio][name=page-source]").on("change", function () {
