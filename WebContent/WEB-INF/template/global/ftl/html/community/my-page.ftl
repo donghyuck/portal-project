@@ -657,12 +657,7 @@
 												</div>
 												<div class="col col-6">
 													<section>
-														<label for="summary" class="select">
-															<select data-role="combobox"
-													            data-text-field="name"
-													            data-value-field="value"
-													            data-bind="source: stateSource, value: page.pageState"></select>
-														</label>
+														<span class="label label-dark" data-bind="text:page.pageState"></span>
 													</section>
 													<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: isAllowToFileAndProps">
 														<div class="panel panel-default">
