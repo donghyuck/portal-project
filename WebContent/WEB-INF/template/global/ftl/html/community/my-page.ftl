@@ -194,6 +194,7 @@
 						error:common.ui.handleAjaxError
 					}),
 					isVisible : true,
+					isAllowToFileAndProps : true,
 					close:function(e){
 						$("#my-page-view span.back").click();
 						common.ui.scroll.top($(".personalized-section").first());
@@ -272,10 +273,13 @@
 				createEditor( "page-editor" , bodyEditor );			
 				
 			}else{
-				source.copy( renderTo.data("model").page );
-				
-				if(renderTo.data("model").page.pageId > 0 )
+				source.copy( renderTo.data("model").page );				
+				if(renderTo.data("model").page.pageId > 0 ){
+					renderTo.data("model").set("isAllowToFileAndProps", true);	
 					renderTo.data("model").properties.read();
+				}else{
+					renderTo.data("model").set("isAllowToFileAndProps", false);	
+				}
 			}	
 		}
 		
@@ -647,7 +651,7 @@
 													</section>
 												</div>
 												<div class="col col-6">
-													<div class="panel-group acc-v1" id="accordion-1">
+													<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:isAllowToFileAndProps">
 														<div class="panel panel-default">
 															<div class="panel-heading">
 																<h4 class="panel-title">
