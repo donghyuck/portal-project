@@ -1645,7 +1645,7 @@
 					/**
 				'<div class="row">' +
 				'<div class="col-xs-2">'+ **/
-				'<img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive" data-id="#=imageId#">'
+				'<img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated fadeInRight" data-id="#=imageId#">'
 				/**
 				'</div>' +
 				'<div class="col-xs-10">' +						
@@ -1711,7 +1711,9 @@
 					if (current_index >= 0) {
 						var item = data[current_index];
 						var imageId = item.imageId;
+						
 						my_selected.html(templates.selected(item));
+						
 						if(isFunction(changeState))
 							changeState(changeStateEl, true);
 					}
