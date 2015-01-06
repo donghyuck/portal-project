@@ -117,7 +117,7 @@
 }
 
 /**
-* image broswer .. 
+* image broswer .. (side menu)
 */
 .image-listview.k-listview,.file-listview.k-listview {
 	width: 100%;
@@ -146,6 +146,8 @@
 	background-color: rgba(0, 0, 0, 0.8);
 	display: none;
 }
+
+
 
 .image-listview .img-wrapper>img,.file-listview .file-wrapper>img {
 	top: 0;
@@ -236,6 +238,8 @@
 	animation-name: fadeIn;
 }
 
+
+
 /**
 * pdf view 
 **/
@@ -312,11 +316,11 @@
 }
 
 #personalized-controls-section.cbp-spmenu-vertical {
-	width: 565px;
+	width: 660px;
 }
 
 #personalized-controls-section.cbp-spmenu-right {
-	right: -565px;
+	right: -660px;
 	z-index: 2000;
 }
 
