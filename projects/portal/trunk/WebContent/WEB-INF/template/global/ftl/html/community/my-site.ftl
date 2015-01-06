@@ -603,13 +603,13 @@
 								<div class="personalized-section-heading-controls">
 										<div class="btn-group" data-toggle="buttons">
 											<label class="btn btn-sm btn-primary rounded-left active">
-												<input type="radio" name="page-action-list" value="2" checked="checked"><i class="fa fa-sitemap"></i> 메뉴
+												<input type="radio" name="page-action-list" value="menu"><i class="fa fa-sitemap"></i> 메뉴
 											</label>
 											<label class="btn btn-sm btn-primary">
-												<input type="radio" name="page-action-list" value="30"><i class="fa fa-file-code-o"></i> 템플릿
+												<input type="radio" name="page-action-list" value="template"><i class="fa fa-file-code-o"></i> 템플릿
 											</label>											
 											<label class="btn btn-sm btn-primary rounded-right">
-												<input type="radio" name="page-action-list" value="1"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
+												<input type="radio" name="page-action-list" value="notice" checked="checked"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 											</label>
 										</div>				
 							</div>
