@@ -69,9 +69,18 @@
 				createTemplateSection();
 				
 				$("input[type=radio][name=my-site-action]").on("change", function () {
-					$this = $(this);
-					$(".personalized-section-content .container > div:visible").slideUp()
-					$("#" + $this.attr("aria-controls") ).slideDown();
+					var $this = $(this);
+					var target = $this.attr("aria-controls");
+					$(".personalized-section-content .container > div:visible").slideUp()					
+					$("#" + target ).slideDown();
+					switch( target ){
+						case "my-site-menu":
+							createMenuSection();				
+						break;
+						case "my-site-template":
+							$('#template-tree a:first').tab('show');				
+						break;	
+					}
 				});
 			
 				$("button[data-toggle=collapse]").click(function(e){
