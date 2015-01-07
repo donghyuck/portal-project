@@ -694,7 +694,7 @@
 										<li><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
 									</ul>	
 									<div class="tab-content">
-										<div class="tab-pane fade active in" id="template-tree-view">
+										<div class="tab-pane fade" id="template-tree-view">
 											<h4>Heading Sample 1</h4>
 											<p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
 										</div>
