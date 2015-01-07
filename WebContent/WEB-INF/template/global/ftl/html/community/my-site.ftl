@@ -115,10 +115,7 @@
 							}
 						},
 						schema: {		
-							model: {
-								id: "path",
-								hasChildren: "directory"
-							}
+							model: common.ui.data.FileInfo
 						},
 						filter:[
 							{field: "name", operator : "neq", value:".svn" }
@@ -163,14 +160,7 @@
 						return false;
 					},
 					setFile : function( fileToUse ) {
-						this.file.set("path", fileToUse.path); 
-						this.file.set("customized", fileToUse.customized); 
-				    	this.file.set("absolutePath", fileToUse.absolutePath );
-				    	this.file.set("name", fileToUse.name );
-				    	this.file.set("size", fileToUse.size );
-				    	this.file.set("directory", fileToUse.directory );
-				    	this.file.set("lastModifiedDate", fileToUse.lastModifiedDate );	
-				    	
+						fileToUse.copy( this.file );				    	
 				    	if( !this.file.customized && !this.file.directory ) 
 				    	{
 				    		this.set("supportCustomized", true); 
