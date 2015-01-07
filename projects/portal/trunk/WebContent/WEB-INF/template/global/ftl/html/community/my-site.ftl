@@ -817,25 +817,15 @@
 								</div>
 								<div class="col-sm-8">								
 									<div id="template-editor" class="panel panel-default">
-										<div class="panel-heading">
-											<span data-bind="text:file.name">&nbsp;</span>
-											<div class="panel-heading-controls">
-												<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-												<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
-											</div>
-										</div>			
 										<div class="panel-body padding-sm">										
 											<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 											<div class="pull-right text-muted">
 												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-											</div>												
-										</div>
-										<div class="panel-body padding-sm">		
-											<div class="sky-form">
-												<section class="col col-5">             
-													<label class="toggle"><input type="checkbox" name="checkbox-toggle"><i class="rounded-4x"></i>Desiderata</label>   
-												</section>
 											</div>
+											
+																							<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
+												<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
+																							
 										</div>
 										<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 										<div class="panel-footer no-padding-vr"></div>
