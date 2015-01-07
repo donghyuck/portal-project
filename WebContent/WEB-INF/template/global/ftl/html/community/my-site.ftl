@@ -731,7 +731,7 @@
 								</div>
 								<div class="col-sm-8">
 								
-									<div id="template-editor" class="panel panel-primary">
+									<div id="template-editor" class="panel panel-default">
 										<div class="panel-heading">
 											<span data-bind="text:file.name">&nbsp;</span>
 											<div class="panel-heading-controls">
