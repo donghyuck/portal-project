@@ -785,7 +785,7 @@
 								
 							</div>
 						</div>
-						<div id="my-site-template" class="collapse bg-slivergray rounded-2x">
+						<div id="my-site-template" class="collapse bg-slivergray rounded-2x margin-top-20">
 							<div class="row p-sm">
 								<div class="col-sm-4">								
 								<div class="tab-v1">								
