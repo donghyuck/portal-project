@@ -160,6 +160,7 @@
 						return false;
 					},
 					setFile : function( fileToUse ) {
+						alert(kendo.stringify(fileToUse));
 						this.file.path = fileToUse.get("path");
 						this.file.set("customized", fileToUse.get("customized") );
 						this.file.set("absolutePath", fileToUse.get("absolutePath") );
@@ -180,7 +181,7 @@
 							this.set("supportSvn", true); 
 						}  
 						
-						alert(kendo.stringify(this.file));
+						
 						
 						if(!this.file.directory){
 							common.ui.ajax(
