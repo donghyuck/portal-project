@@ -148,6 +148,7 @@
 				var model = kendo.observable({
 					file : new common.ui.data.FileInfo(),
 					content : "",
+					visible : false,
 					supportCustomized : false,
 					supportUpdate : false,
 					supportSvn : true,
@@ -160,7 +161,7 @@
 						return false;
 					},
 					setFile : function( fileToUse ) {
-						alert(kendo.stringify(fileToUse));
+	
 						this.file.path = fileToUse.get("path");
 						this.file.set("customized", fileToUse.get("customized") );
 						this.file.set("absolutePath", fileToUse.get("absolutePath") );
@@ -179,9 +180,7 @@
 							this.set("supportSvn", false); 
 						}else{
 							this.set("supportSvn", true); 
-						}  
-						
-						
+						}
 						
 						if(!this.file.directory){
 							common.ui.ajax(
@@ -192,7 +191,8 @@
 									ace.edit("htmleditor").setValue( response.fileContent );	
 								}
 							}); 
-				    	}		    					    			
+				    	}
+				    	this.set("visible", true);		    					    			
 					}, 
 					createCustomizedTemplate : function(e){
 						e.preventDefault();						
