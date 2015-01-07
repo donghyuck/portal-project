@@ -71,7 +71,7 @@
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
-					$(".personalized-section-content .container > div:visible").slideUp()					
+					$(".personalized-section-content .container > div:visible").fadeOut()					
 					$("#" + target ).slideDown();
 					switch( target ){
 						case "my-site-menu":
@@ -830,6 +830,7 @@
 								
 							</div>
 						</div>
+						
 						<div id="my-site-template" class="bg-slivergray rounded-2x margin-top-20" style="display:none;">
 							<div class="row p-sm">
 								<div class="col-sm-4">								
