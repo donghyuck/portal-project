@@ -740,7 +740,7 @@
 			background: #fff;
 		}
 		
-		#htmleditor .ace_editor {
+		#htmleditor.ace_editor {
 			min-height: 500px;			
 		}
 		
