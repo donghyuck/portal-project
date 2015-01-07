@@ -108,7 +108,11 @@
 				renderTo.kendoTreeView({
 					dataSource: {
 						transport: { 
-							read: { url: '<@spring.url "/secure/data/template/list.json?output=json"/>' , type: 'POST' }
+							read: { url: '<@spring.url "/secure/data/template/list.json?output=json"/>' , type: 'POST' },
+							parameterMap: function ( options, operation){			
+								options.customized = customized;
+								return options ;
+							}
 						},
 						schema: {		
 							model: {
