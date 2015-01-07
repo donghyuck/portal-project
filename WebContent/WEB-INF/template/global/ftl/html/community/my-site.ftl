@@ -141,11 +141,8 @@
 			var selectedCell = tree.dataItem( selectedCells );   
 			return selectedCell ;
 		}		
-		
-		
-		
+				
 		function createTemplateEditor(file){
-
 			var renderTo = $('#template-editor');			
 			if(!renderTo.data("model")){					
 				var model = kendo.observable({
@@ -164,18 +161,18 @@
 					},
 					setFile : function( fileToUse ) {
 						fileToUse.copy( this.file );				    	
-				    	if( !this.file.customized && !this.file.directory ) 
-				    	{
-				    		this.set("supportCustomized", true); 
-				    	}else{
-				    		this.set("supportCustomized", false); 
-				    	}				    	
-				    	if( this.file.path.indexOf( ".svn" ) != -1 ) {
-				    		this.set("supportSvn", false); 
-				    	}else{
-				    		this.set("supportSvn", true); 
-				    	}  
-				    	if(!this.file.directory){
+						if( !this.file.customized && !this.file.directory ) 
+						{
+							this.set("supportCustomized", true); 
+						}else{
+							this.set("supportCustomized", false); 
+						}				    	
+						if( this.file.path.indexOf( ".svn" ) != -1 ) {
+							this.set("supportSvn", false); 
+						}else{
+							this.set("supportSvn", true); 
+						}  
+						if(!this.file.directory){
 							common.ui.ajax(
 							'<@spring.url "/secure/data/template/get.json?output=json" />' , 
 							{
