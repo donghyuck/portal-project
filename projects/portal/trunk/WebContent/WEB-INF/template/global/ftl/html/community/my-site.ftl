@@ -690,7 +690,7 @@
 						<div id="my-site-template" class="collapse bg-slivergray rounded-2x">
 							<div class="row p-sm">
 								<div class="col-sm-4">								
-								<div class="tab-v2">								
+								<div class="tab-v1">								
 									<ul class="nav nav-tabs" id="template-tree">
 										<li><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
 										<li><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
