@@ -67,6 +67,7 @@
 				setupPersonalizedSection();			
 				createPageSection();
 				createTemplateSection();
+				createWebsiteSection();
 				
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
@@ -90,6 +91,19 @@
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
+		function createWebsiteSection(){
+
+			common.ui.ajax(
+				'<@spring.url "/secure/data/website/get.json?output=json" />' , 
+				{
+					success : function(response){
+						alert( kendo.stringify() );
+					}
+				}
+			);
+		}
+		
+		
 		function createTemplateSection(){
 			$('#template-tree').on( 'show.bs.tab', function (e) {		
 				var show_bs_tab = $(e.target);
