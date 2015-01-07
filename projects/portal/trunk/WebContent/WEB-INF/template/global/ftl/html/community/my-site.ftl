@@ -84,22 +84,6 @@
 						break;	
 					}
 				});
-			
-				$("button[data-toggle=collapse]").click(function(e){
-					var $this = $(this);
-					switch( $this.attr("aria-controls") ){
-						case "my-site-menu":
-							createMenuSection();				
-						break;
-						case "my-site-template":
-							$('#template-tree a:first').tab('show');				
-						break;	
-						case "my-site-notice":
-		
-						break;															
-					}
-					alert( $this.attr("aria-controls") );
-				});
 				// END SCRIPT 				
 			}
 		}]);			
