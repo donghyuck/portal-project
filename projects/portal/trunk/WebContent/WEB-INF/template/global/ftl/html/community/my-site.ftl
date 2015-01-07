@@ -156,7 +156,7 @@
 						return false;
 					},
 					openFileCopyModal : function(e){
-						showFileCopyModal();
+						alert("준비중입니다");
 						return false;
 					},
 					setFile : function( fileToUse ) {
