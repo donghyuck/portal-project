@@ -67,14 +67,14 @@
 				setupPersonalizedSection();			
 				createPageSection();
 				
-				$("button[data-toggle=collapse]").one( "click" , function(e){
+				$("button[data-toggle=collapse]").click(function(e){
 					var $this = $(this);
 					switch( $this.attr("aria-controls") ){
 						case "my-site-menu":
 							createMenuSection();				
 						break;
 						case "my-site-template":
-		
+							$('#template-tree a:first').tab('show');				
 						break;	
 						case "my-site-notice":
 		
@@ -89,20 +89,43 @@
 		<!-- MENU														-->
 		<!-- ============================== -->
 		function createTemplateSection(){
-			var renderTo = $("#my-site-template");		
-			
 			$('#template-tree').on( 'show.bs.tab', function (e) {		
 				var show_bs_tab = $(e.target);
 				switch( show_bs_tab.attr('href') ){
 					case "#template-tree-view" :
-						createPathFinder();
+						createTemplateTree($("#template-tree-view"), false);
 						break;
 					case  '#custom-template-tree-view' :
-						createCustomPathFinder();
+						createTemplateTree($("#custom-template-tree-view"), true);
 						break;
 				}					
 			});
 		}	
+		
+		function createTemplateTree(renderTo, customized){
+			if( !renderTo.data('kendoTreeView') ){					
+				renderTo.kendoTreeView({
+					dataSource: {
+						transport: { 
+							read: { url:''<@spring.url "/secure/data/template/list.json?output=json', type: 'POST' }
+						},
+						schema: {		
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						},
+						error: common.ui.handleAjaxError					
+					},
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {
+						//var filePlaceHolder = getSelectedTemplateFile($("#template-tree-view"));
+						//showTemplateDetails(filePlaceHolder);
+					}
+				});
+			}
+		}
 		
 		<!-- ============================== -->
 		<!-- MENU														-->
@@ -961,7 +984,14 @@
 			<a href="\\#" onclick="doPageDelete(); return false;" class="btn btn-info btn-sm">삭제</a>
 			<a href="\\#" onclick="doPagePreview(); return false;" class="btn btn-info btn-sm">미리보기</a>
 		</div>	
-	</script>																				
+	</script>
+	<script id="treeview-template" type="text/kendo-ui-template">
+	#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
+		#: item.name # 
+		# if (!item.items) { #
+		<a class='delete-link' href='\#'></a> 
+		# } #
+	</script>																			
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<#include "/html/common/common-editor-templates.ftl" >	
