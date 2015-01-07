@@ -687,7 +687,24 @@
 					<div class="container" style="min-height:450px;">						
 						<div id="my-site-menu" class="collapse">
 							<div class="row p-sm">
-								
+
+
+						<div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="fa fa-tasks"></i>메뉴</h3>
+                            </div>
+                            <div class="panel-body">
+                        		<div class="row">
+                        			<div class="col-sm-4">
+                        			ss
+                        			</div>
+                        			<div class="col-sm-8">
+                        			ss
+                        			</div>
+                        		</div>
+                        	</div>
+                        </div>
+                        								
 								
 							</div>
 						</div>
