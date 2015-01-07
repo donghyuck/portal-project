@@ -795,7 +795,7 @@
 								</div>
 								</div>
 								<div class="col-sm-8">								
-									<div id="template-editor" class="panel panel-default" data-bind="visible: visible" style="display:none;">
+									<div id="template-editor" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
 										<div class="panel-body padding-sm bg-slivergray">
 											<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 											<div class="pull-right text-muted">
