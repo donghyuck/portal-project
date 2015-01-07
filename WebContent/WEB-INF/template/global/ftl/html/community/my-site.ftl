@@ -830,6 +830,13 @@
 												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
 											</div>												
 										</div>
+										<div class="panel-body padding-sm">		
+											<div class="sky-form">
+												<section class="col col-5">             
+													<label class="toggle"><input type="checkbox" name="checkbox-toggle"><i class="rounded-4x"></i>Desiderata</label>   
+												</section>
+											</div>
+										</div>
 										<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 										<div class="panel-footer no-padding-vr"></div>
 									</div>	
