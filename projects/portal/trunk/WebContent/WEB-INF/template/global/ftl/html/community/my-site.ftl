@@ -874,7 +874,7 @@
 						</div>	
 						<div id="my-page">
 							<div class="row p-sm">
-								<div id="my-page-list" class="master animated">
+								<div id="my-page-list">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
 											<label class="btn btn-sm btn-danger rounded-left active">
@@ -892,7 +892,7 @@
 									</div>
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
-								<div id="my-page-view" class="details animated bg-dark">								
+								<div id="my-page-view" style="display:none;">								
 									<span class="back"></span>
 									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
 										<header>&nbsp;</header>
