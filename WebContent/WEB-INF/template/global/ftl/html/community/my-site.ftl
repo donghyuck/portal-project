@@ -326,7 +326,7 @@
 			page.objectType = getMyPageSource();
 			page.bodyContent = { bodyText: "" };
 			createPageEditor(page);
-			$("#my-page").addClass("compose in");	
+			//$("#my-page").addClass("compose in");	
 		}
 		
 		function doPageEdit(){
@@ -337,7 +337,7 @@
 				var selectedCell = grid.dataItem( selectedCells ); 
 				createPageEditor(selectedCell);
 			}
-			$("#my-page").addClass("compose in");	
+			//$("#my-page").addClass("compose in");	
 		}
 		
 		function getPageEditorSource(){
