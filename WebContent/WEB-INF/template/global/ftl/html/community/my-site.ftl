@@ -771,9 +771,12 @@
 									</label>
 									<label class="btn btn-sm btn-danger">
 										<input type="radio" name="my-site-action" aria-controls="my-site-template"><i class="fa fa-file-code-o"></i> 템플릿
+									</label>	
+									<label class="btn btn-sm btn-danger">
+										<input type="radio" name="my-site-action" aria-controls="my-site-notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 									</label>											
 									<label class="btn btn-sm btn-danger rounded-right">
-										<input type="radio" name="my-site-action" aria-controls="my-site-notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
+										<input type="radio" name="my-site-action" aria-controls="my-page"><i class="fa fa-file-o"></i> 페이지
 									</label>
 								</div>
 							
