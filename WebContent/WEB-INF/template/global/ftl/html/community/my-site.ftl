@@ -178,6 +178,7 @@
 						}else{
 							this.set("supportSvn", true); 
 						}  
+						alert(kendo.stringify(this.file));
 						if(!this.file.directory){
 							common.ui.ajax(
 							'<@spring.url "/secure/data/template/get.json?output=json" />' , 
