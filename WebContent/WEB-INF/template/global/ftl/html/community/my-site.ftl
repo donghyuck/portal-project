@@ -115,7 +115,10 @@
 							}
 						},
 						schema: {		
-							model: common.ui.data.FileInfo
+							model: {
+								id : "path",
+								hasChildren: "directory"
+							}
 						},
 						filter:[
 							{field: "name", operator : "neq", value:".svn" }
