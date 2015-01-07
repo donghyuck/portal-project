@@ -636,15 +636,15 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
-					<div class="container" style="min-height:450px;">
-						<div class="row p-sm">
-							<div id="my-site-menu" class="collapse">
-							
-							
-							
-							
+					<div class="container" style="min-height:450px;">						
+						<div id="my-site-menu" class="collapse">
+							<div class="row p-sm">
+								
+								
 							</div>
-							<div id="my-site-template" class="collapse">
+						</div>
+						<div id="my-site-template" class="collapse">
+							<div class="row p-sm">
 								<div class="col-sm-4">								
 								<div class="tab-v2">								
 									<ul class="nav nav-tabs">
@@ -665,10 +665,15 @@
 								</div>
 								</div>
 							</div>	
-							<div id="my-site-notice" class="collapse">
+						</div>
+						<div id="my-site-notice" class="collapse">
+							<div class="row p-sm">
 							hello
+							
 							</div>																					
-							<div id="my-page">
+						</div>	
+						<div id="my-page">
+							<div class="row p-sm">
 								<div id="my-page-list" class="master animated">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
