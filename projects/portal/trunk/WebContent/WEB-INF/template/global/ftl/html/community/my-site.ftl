@@ -117,7 +117,7 @@
 							}
 						},
 						filter:[
-							{field: "name", operator : "startswith", value:".svn" }
+							{field: "name", operator : "neq", value:".svn" }
 						],
 						error: common.ui.handleAjaxError					
 					},
