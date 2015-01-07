@@ -116,6 +116,9 @@
 								hasChildren: "directory"
 							}
 						},
+						filter:[
+							{field: "name", operator : "startswith", value:".svn" }
+						],
 						error: common.ui.handleAjaxError					
 					},
 					template: kendo.template($("#treeview-template").html()),
