@@ -766,17 +766,17 @@
 							<div class="personalized-section-heading-controls">								
 							
 								<div class="btn-group" data-toggle="buttons">
-									<label class="btn btn-sm btn-danger rounded-left active">
-										<input type="radio" name="my-site-action" checked="checked" aria-controls="my-site-menu"><i class="fa fa-sitemap"></i> 메뉴
+									<label class="btn btn-sm btn-primary rounded-left">
+										<input type="radio" name="my-site-action" aria-controls="my-site-menu"><i class="fa fa-sitemap"></i> 메뉴
 									</label>
-									<label class="btn btn-sm btn-danger">
+									<label class="btn btn-sm btn-primary">
 										<input type="radio" name="my-site-action" aria-controls="my-site-template"><i class="fa fa-file-code-o"></i> 템플릿
 									</label>	
-									<label class="btn btn-sm btn-danger">
+									<label class="btn btn-sm btn-primary">
 										<input type="radio" name="my-site-action" aria-controls="my-site-notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 									</label>											
-									<label class="btn btn-sm btn-danger rounded-right">
-										<input type="radio" name="my-site-action" aria-controls="my-page"><i class="fa fa-file-o"></i> 페이지
+									<label class="btn btn-sm btn-primary rounded-right active">
+										<input type="radio" name="my-site-action" aria-controls="my-page" checked="checked" ><i class="fa fa-file-o"></i> 페이지
 									</label>
 								</div>
 							
