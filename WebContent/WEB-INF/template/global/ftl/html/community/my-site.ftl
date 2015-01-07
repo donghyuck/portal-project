@@ -66,6 +66,7 @@
 				
 				setupPersonalizedSection();			
 				createPageSection();
+				createTemplateSection();
 				
 				$("button[data-toggle=collapse]").click(function(e){
 					var $this = $(this);
