@@ -203,12 +203,12 @@
 					}
 				});					
 				kendo.bind(renderTo, model );	
-				renderTo.data("model", model );		
-				
+				renderTo.data("model", model );	
 				var editor = ace.edit("htmleditor");		
 				editor.getSession().setMode("ace/mode/ftl");
-				editor.getSession().setUseWrapMode(true);					
-			
+				editor.getSession().setUseWrapMode(true);	
+			}else{
+				renderTo.data("model").setFile(file);
 			}		
 		}
 		
