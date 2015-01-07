@@ -97,8 +97,9 @@
 				'<@spring.url "/secure/data/website/get.json?output=json" />' , 
 				{
 					success : function(response){
-						alert( kendo.stringify() );
-					}
+						alert( kendo.stringify(response) );
+					},
+					error: common.ui.handleAjaxError		
 				}
 			);
 		}
