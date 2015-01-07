@@ -67,7 +67,7 @@
 				setupPersonalizedSection();			
 				createPageSection();
 				
-				$("button[data-toggle=collapse]").click(function(e){
+				$("button[data-toggle=collapse]").one( "click" , function(e){
 					var $this = $(this);
 					switch( $this.attr("aria-controls") ){
 						case "my-site-menu":
@@ -90,6 +90,18 @@
 		<!-- ============================== -->
 		function createTemplateSection(){
 			var renderTo = $("#my-site-template");		
+			
+			$('#template-tree').on( 'show.bs.tab', function (e) {		
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.attr('href') ){
+					case "#template-tree-view" :
+						createPathFinder();
+						break;
+					case  '#custom-template-tree-view' :
+						createCustomPathFinder();
+						break;
+				}					
+			});
 		}	
 		
 		<!-- ============================== -->
