@@ -71,8 +71,10 @@
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
-					$(".personalized-section-content .container > div:visible").fadeOut()					
-					$("#" + target ).slideDown();
+					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
+						$("#" + target ).slideDown();
+					});					
+					
 					switch( target ){
 						case "my-site-menu":
 							createMenuSection();				
