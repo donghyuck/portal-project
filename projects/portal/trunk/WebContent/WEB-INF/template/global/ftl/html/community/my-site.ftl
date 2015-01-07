@@ -68,6 +68,11 @@
 				createPageSection();
 				createTemplateSection();
 				
+				$("input[type=radio][name=my-site-action]").on("change", function () {
+					$this = $(this);
+					alert($this.html());
+				});
+			
 				$("button[data-toggle=collapse]").click(function(e){
 					var $this = $(this);
 					switch( $this.attr("aria-controls") ){
@@ -759,6 +764,19 @@
 							<i class="icon-flat  settings2"></i>
 							<h3>MY 사이트 <span style="height:2.6em;"> 웹사이트의 메뉴, 페이지, 이미지들을 쉽고 빠르게 생성하고 수정할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">								
+							
+								<div class="btn-group" data-toggle="buttons">
+									<label class="btn btn-sm btn-danger rounded-left active">
+										<input type="radio" name="my-site-action" checked="checked" aria-controls="my-site-menu"><i class="fa fa-sitemap"></i> 메뉴
+									</label>
+									<label class="btn btn-sm btn-danger">
+										<input type="radio" name="my-site-action" aria-controls="my-site-template"><i class="fa fa-file-code-o"></i> 템플릿
+									</label>											
+									<label class="btn btn-sm btn-danger rounded-right">
+										<input type="radio" name="my-site-action" aria-controls="my-site-notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
+									</label>
+								</div>
+							
 									<div class="btn-group" data-toggle="buttons">
 										<button class="btn btn-primary btn-sm rounded-left" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
 										<i class="fa fa-sitemap"></i> 메뉴
