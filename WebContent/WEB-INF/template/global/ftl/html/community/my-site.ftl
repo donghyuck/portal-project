@@ -72,7 +72,7 @@
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
 					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
-						$("#" + target ).slideDown();
+						$("#" + target ).fadeIn();
 					});					
 					
 					switch( target ){
