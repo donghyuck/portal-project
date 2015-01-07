@@ -798,7 +798,7 @@
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container" style="min-height:450px;">						
-						<div id="my-site-menu" class="collapse">
+						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20">
 							<div class="row p-sm">
 
 
@@ -821,7 +821,7 @@
 								
 							</div>
 						</div>
-						<div id="my-site-template" class="collapse bg-slivergray rounded-2x margin-top-20">
+						<div id="my-site-template" class="bg-slivergray rounded-2x margin-top-20">
 							<div class="row p-sm">
 								<div class="col-sm-4">								
 								<div class="tab-v1">								
