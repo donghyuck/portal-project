@@ -673,8 +673,7 @@
 										</button>
 										<button class="btn btn-primary btn-sm rounded-right" data-toggle="collapse" data-target="#my-site-notice" aria-expanded="false" aria-controls="my-site-notice">
 										<i class="fa fa-bullhorn"></i> 공지 및 이벤트
-										</button>
-																	
+										</button>																	
 									</div>
 							</div>
 						</div>
@@ -688,7 +687,7 @@
 								
 							</div>
 						</div>
-						<div id="my-site-template" class="collapse">
+						<div id="my-site-template" class="collapse bg-slivergray rounded-2x">
 							<div class="row p-sm">
 								<div class="col-sm-4">								
 								<div class="tab-v2">								
