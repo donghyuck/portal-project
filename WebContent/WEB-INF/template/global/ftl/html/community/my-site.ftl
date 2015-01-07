@@ -85,7 +85,13 @@
 				// END SCRIPT 				
 			}
 		}]);			
-
+		<!-- ============================== -->
+		<!-- MENU														-->
+		<!-- ============================== -->
+		function createTemplateSection(){
+			var renderTo = $("#my-site-template");		
+		}	
+		
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
@@ -648,15 +654,15 @@
 								<div class="col-sm-4">								
 								<div class="tab-v2">								
 									<ul class="nav nav-tabs">
-										<li class="active"><a href="#home-1" data-toggle="tab">Home</a></li>
-										<li class=""><a href="#profile-1" data-toggle="tab">Profile</a></li>
+										<li class="active"><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
+										<li class=""><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
 									</ul>	
 									<div class="tab-content">
-										<div class="tab-pane fade active in" id="home-1">
+										<div class="tab-pane fade active in" id="template-tree-view">
 											<h4>Heading Sample 1</h4>
 											<p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
 										</div>
-										<div class="tab-pane fade" id="profile-1">
+										<div class="tab-pane fade" id="custom-template-tree-view">
 											<img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/5.jpg">                         
 											<h4>Heading Sample 2</h4>
 											<p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
