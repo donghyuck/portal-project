@@ -70,7 +70,8 @@
 				
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					$this = $(this);
-					alert($this.attr("aria-controls"));
+					$(".personalized-section-content .container > div:visible").slideUp()
+					$("#" + $this.attr("aria-controls") ).slideDown();
 				});
 			
 				$("button[data-toggle=collapse]").click(function(e){
