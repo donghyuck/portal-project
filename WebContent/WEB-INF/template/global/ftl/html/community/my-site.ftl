@@ -313,11 +313,9 @@
 			});
 			
 			$("#my-page-view span.back").click(function(e){
-				//$("#my-page").removeClass("in");
-				//$("#my-page").one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
-				//	$("#my-page").removeClass("compose out");
-				//});	
-				//$("#my-page").addClass("out");
+				$("#my-page-view").fadeOut(function(e){
+					$("#my-page-list").fadeIn();
+				});			
 			});
 		}
 
@@ -326,8 +324,6 @@
 			page.objectType = getMyPageSource();
 			page.bodyContent = { bodyText: "" };
 			createPageEditor(page);
-			
-			//$("#my-page").addClass("compose in");	
 			$("#my-page-list").fadeOut(function(e){
 				$("#my-page-view").fadeIn();
 			});
@@ -341,7 +337,9 @@
 				var selectedCell = grid.dataItem( selectedCells ); 
 				createPageEditor(selectedCell);
 			}
-			//$("#my-page").addClass("compose in");	
+			$("#my-page-list").fadeOut(function(e){
+				$("#my-page-view").fadeIn();
+			});
 		}
 		
 		function getPageEditorSource(){
