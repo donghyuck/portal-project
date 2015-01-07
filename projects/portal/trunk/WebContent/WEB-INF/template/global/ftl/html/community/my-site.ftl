@@ -213,6 +213,7 @@
 						return false;
 					}
 				});					
+				model.setFile(file);
 				kendo.bind(renderTo, model );	
 				renderTo.data("model", model );	
 				var editor = ace.edit("htmleditor");		
