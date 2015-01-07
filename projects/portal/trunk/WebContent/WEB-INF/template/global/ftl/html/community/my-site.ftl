@@ -653,7 +653,7 @@
 							<div class="row p-sm">
 								<div class="col-sm-4">								
 								<div class="tab-v2">								
-									<ul class="nav nav-tabs">
+									<ul class="nav nav-tabs" id="template-tree">
 										<li class="active"><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
 										<li class=""><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
 									</ul>	
