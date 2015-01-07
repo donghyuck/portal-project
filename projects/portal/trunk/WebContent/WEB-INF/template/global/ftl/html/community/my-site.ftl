@@ -799,8 +799,7 @@
 									</div>
 								</div>
 								</div>
-								<div class="col-sm-8">
-								
+								<div class="col-sm-8">								
 									<div id="template-editor" class="panel panel-default">
 										<div class="panel-heading">
 											<span data-bind="text:file.name">&nbsp;</span>
@@ -809,25 +808,21 @@
 												<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
 											</div>
 										</div>			
-										<div class="panel-body padding-sm">
-										
+										<div class="panel-body padding-sm">										
 											<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 											<div class="pull-right text-muted">
 												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-											</div>
-												
+											</div>												
 										</div>
 										<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 										<div class="panel-footer no-padding-vr"></div>
-									</div>					
-								
+									</div>	
 								</div>
 							</div>	
 						</div>
 						<div id="my-site-notice" class="collapse">
 							<div class="row p-sm">
-							hello
-							
+							hello							
 							</div>																					
 						</div>	
 						<div id="my-page">
