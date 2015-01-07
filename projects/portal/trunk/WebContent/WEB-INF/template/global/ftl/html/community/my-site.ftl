@@ -70,7 +70,7 @@
 				
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					$this = $(this);
-					alert($this.html());
+					alert($this.attr("aria-controls"));
 				});
 			
 				$("button[data-toggle=collapse]").click(function(e){
