@@ -6,7 +6,6 @@
 
 	common.ui.data.FileInfo =  kendo.data.Model.define({
 		id : "path",
-		hasChildren: "directory",
 		fields: { 
 			absolutePath: { type: "string", defaultValue: "" },
 			name: { type: "string", defaultValue: "." },
@@ -21,6 +20,9 @@
 	    },		
 	    formattedSize : function(){
 	    	return kendo.toString(this.get("size"), "##,#");
+	    },
+	    hasChildren : function(){
+	    	return this.get("directory");	    	
 	    },
 	    copy: function ( target ){
 	    	target.path = this.get("path");
