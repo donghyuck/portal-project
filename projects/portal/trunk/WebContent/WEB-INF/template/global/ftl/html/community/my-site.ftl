@@ -326,7 +326,11 @@
 			page.objectType = getMyPageSource();
 			page.bodyContent = { bodyText: "" };
 			createPageEditor(page);
+			
 			//$("#my-page").addClass("compose in");	
+			$("#my-page-list").fadeOut(function(e){
+				$("#my-page-view").fadeIn();
+			});
 		}
 		
 		function doPageEdit(){
