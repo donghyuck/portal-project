@@ -160,7 +160,13 @@
 						return false;
 					},
 					setFile : function( fileToUse ) {
-						fileToUse.copy( this.file );				    	
+				    	this.file.path = fileToUse.get("path");
+				    	this.file.set("customized",fileToUse.get("customized") );
+				    	this.file.set("absolutePath",fileToUse.get("absolutePath") );
+				    	this.file.set("name", fileToUse.get("name"));
+				    	this.file.set("size",fileToUse.get("size") );
+				    	this.file.set("directory", fileToUse.get("directory"));
+				    	this.file.set("lastModifiedDate",fileToUse.get("lastModifiedDate") );	    	
 						if( !this.file.customized && !this.file.directory ) 
 						{
 							this.set("supportCustomized", true); 
