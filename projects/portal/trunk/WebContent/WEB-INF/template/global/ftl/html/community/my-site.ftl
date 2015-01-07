@@ -128,11 +128,98 @@
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
-						//var filePlaceHolder = getSelectedTemplateFile($("#template-tree-view"));
-						//showTemplateDetails(filePlaceHolder);
+						var file = getSelectedTemplateFile(renderTo);
+						createTemplateEditor(file);
 					}
 				});
 			}
+		}
+		
+		function getSelectedTemplateFile( renderTo ){			
+			var tree = renderTo.data('kendoTreeView');			
+			var selectedCells = tree.select();			
+			var selectedCell = tree.dataItem( selectedCells );   
+			return selectedCell ;
+		}		
+		
+		
+		
+		function createTemplateEditor(file){
+
+			var renderTo = $('#template-editor');			
+			if(!renderTo.data("model")){					
+				var model = kendo.observable({
+					file : new common.ui.data.FileInfo(),
+					content : "",
+					supportCustomized : false,
+					supportUpdate : false,
+					supportSvn : true,
+					openFileUpdateModal : function(){
+						alert("준비중입니다");
+						return false;
+					},
+					openFileCopyModal : function(e){
+						showFileCopyModal();
+						return false;
+					},
+					setFile : function( fileToUse ) {
+						this.file.set("path", fileToUse.path); 
+						this.file.set("customized", fileToUse.customized); 
+				    	this.file.set("absolutePath", fileToUse.absolutePath );
+				    	this.file.set("name", fileToUse.name );
+				    	this.file.set("size", fileToUse.size );
+				    	this.file.set("directory", fileToUse.directory );
+				    	this.file.set("lastModifiedDate", fileToUse.lastModifiedDate );	
+				    	
+				    	if( !this.file.customized && !this.file.directory ) 
+				    	{
+				    		this.set("supportCustomized", true); 
+				    	}else{
+				    		this.set("supportCustomized", false); 
+				    	}				    	
+				    	if( this.file.path.indexOf( ".svn" ) != -1 ) {
+				    		this.set("supportSvn", false); 
+				    	}else{
+				    		this.set("supportSvn", true); 
+				    	}  
+				    	if(!this.file.directory){
+							common.ui.ajax(
+							'<@spring.url "/secure/data/template/get.json?output=json" />' , 
+							{
+								data : { path:  this.file.path , customized: this.file.customized },
+								success : function(response){
+									ace.edit("htmleditor").setValue( response.fileContent );	
+								}
+							}); 
+				    	}		    					    			
+					}, 
+					createCustomizedTemplate : function(e){
+						e.preventDefault();						
+						$this = $(e.target);
+						$this.button("loading");
+						var input1 =  $("#file-copy-modal-input-sites").val();
+						var input2 =  $("#file-copy-modal-input-target").val();						
+						if( input1.length == 0 || input2.length == 0 ){
+							if( !$("#file-copy-modal .tab-content").hasClass("has-error") ){
+								$("#file-copy-modal .tab-content").addClass("has-error");
+							}	
+						}else{
+							if( $("#file-copy-modal .tab-content").hasClass("has-error") ){
+								$("#file-copy-modal .tab-content").removeClass("has-error");
+							}						
+						}						
+						$this.button("reset");																		
+						return false;
+					}
+				});					
+				kendo.bind(renderTo, model );	
+				renderTo.data("model", model );		
+				
+				var editor = ace.edit("htmleditor");		
+				editor.getSession().setMode("ace/mode/ftl");
+				editor.getSession().setUseWrapMode(true);					
+			
+			}		
 		}
 		
 		<!-- ============================== -->
