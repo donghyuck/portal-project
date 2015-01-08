@@ -92,16 +92,19 @@
 		<!-- MENU														-->
 		<!-- ============================== -->
 		function createWebsiteSection(){
-
 			common.ui.ajax(
 				'<@spring.url "/secure/data/website/get.json?output=json" />' , 
 				{
 					success : function(response){
-						alert( kendo.stringify(response) );
+					
+						var site = new common.ui.data.WebSite(response);
+						alert( kendo.stringify(site) );
 					},
 					error: common.ui.handleAjaxError		
 				}
 			);
+			
+			
 		}
 		
 		
