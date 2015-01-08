@@ -782,10 +782,10 @@
 							</div>
 						</div>
 						
-						<div id="my-site-template" class="bg-slivergray rounded-2x" style="display:none;">
+						<div id="my-site-template" style="display:none;">
 							<div class="row">
 								<div class="col-sm-4">								
-								<div class="tab-v1">								
+								<div class="tab-v1 bg-slivergray rounded-2x">								
 									<ul class="nav nav-tabs" id="template-tree">
 										<li><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
 										<li><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
