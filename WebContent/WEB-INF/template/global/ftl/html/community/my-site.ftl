@@ -106,8 +106,7 @@
 					},
 					error: common.ui.handleAjaxError		
 				}
-			);			
-			
+			);		
 		}
 		
 		
@@ -764,7 +763,7 @@
 						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20" style="display:none;">
 							<div class="row p-sm">
 								<div class="panel panel-default">
-								
+									<div id="xmleditor" class="panel-body bordered no-border-hr"></div>
 								</div>
 							</div>
 						</div>
