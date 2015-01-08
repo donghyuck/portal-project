@@ -784,7 +784,7 @@
 						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20 website-details" style="display:none;">
 							<div class="row p-sm">
 								<div class="col-sm-12">
-									<h2><span data-bind="text:website.menu.title"></span>   <small data-bind="text:website.menu.name"></small></h2>
+									<h4><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</h2>
 									<div id="xmleditor"></div>
 									<div class="pull-right margin-top-20">
 										<button class="btn-u rounded action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
