@@ -94,8 +94,7 @@
 		function createWebsiteSection(){				
 			var model = kendo.observable({
 				website : new common.ui.data.WebSite(),
-				updateMenuData : function(e){
-				
+				updateMenuData : function(e){				
 				alert("준비중입니다.");
 				},
 				menuDataUpdated : false,
@@ -108,7 +107,6 @@
 								var site = new common.ui.data.WebSite(response);
 								site.copy($this.website);
 								$this.menuDataUpdated = false;
-								alert("updated0");
 							}
 						}
 					);						
@@ -121,18 +119,14 @@
 			editor.getSession().setUseWrapMode(true);			
 			editor.getSession().on("change", function(e){
 				model.set("menuDataUpdated", true);
-				
-				alert( common.ui.stringify(e) );
 			});			
 			model.bind("change", function(e){		
 				var sender = e.sender ;
 				if( e.field.match('^website.menu')){
 				 	editor.setValue( sender.website.menu.menuData );	
-				 	alert("updated2");
 				}
 			});								
-			common.ui.bind($(".website-details"), model);
-			
+			common.ui.bind($(".website-details"), model);			
 			model.refresh();			
 		}
 		
