@@ -94,6 +94,11 @@
 		function createWebsiteSection(){				
 			var model = kendo.observable({
 				website : new common.ui.data.WebSite(),
+				updateMenuData : function(e){
+				
+				
+				},
+				menuDataUpdated : false,
 				refresh : function(){
 					var $this = this;
 					common.ui.ajax(
@@ -102,6 +107,7 @@
 							success : function(response){					
 								var site = new common.ui.data.WebSite(response);
 								site.copy($this.website);
+								$this.menuDataUpdated = false;
 							}
 						}
 					);						
@@ -112,7 +118,9 @@
 			editor.setTheme("ace/theme/monokai");
 			editor.getSession().setMode("ace/mode/xml");
 			editor.getSession().setUseWrapMode(true);			
-						
+			editor.getSession().on("change", function(e){
+				model.set("menuDataUpdated", true);
+			});			
 			model.bind("change", function(e){		
 				var sender = e.sender ;
 				if( e.field.match('^website.menu')){
@@ -779,8 +787,9 @@
 							<div class="row p-sm">
 								<div class="col-sm-12">
 									<div id="xmleditor"></div>
-									<div class="pull-right">
-										<button class="btn btn-success btn-sm rounded"> 저장 </button>
+									<div class="pull-right margin-top-20">
+										<button class="btn btn-success btn-sm rounded" data-bind="enabled:menuDataUpdated, click:updateMenuData"> 저장 </button>
+										<button class="btn btn-success btn-sm rounded" data-bind="click:refresh"> 새로고침 </button>
 									</div>
 								</div>
 							</div>
