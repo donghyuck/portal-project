@@ -96,7 +96,7 @@
 				website : new common.ui.data.WebSite(),
 				updateMenuData : function(e){
 				
-				
+				alert("준비중입니다.");
 				},
 				menuDataUpdated : false,
 				refresh : function(){
