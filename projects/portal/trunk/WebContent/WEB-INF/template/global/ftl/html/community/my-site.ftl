@@ -96,6 +96,7 @@
 				website : new common.ui.data.WebSite(),
 				refresh : function(){
 					var $this = $(this);
+					alert( kendo.stringify(this.website) );
 					alert( kendo.stringify($this.website) );
 					common.ui.ajax(
 						'<@spring.url "/secure/data/website/get.json?output=json" />' , 
