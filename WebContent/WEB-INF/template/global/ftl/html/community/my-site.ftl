@@ -95,17 +95,13 @@
 			var model = kendo.observable({
 				website : new common.ui.data.WebSite(),
 				refresh : function(){
-					var $this = $(this);
-					alert( kendo.stringify(this.website) );
-					alert( kendo.stringify($this.website) );
+					var $this = this;
 					common.ui.ajax(
 						'<@spring.url "/secure/data/website/get.json?output=json" />' , 
 						{
 							success : function(response){					
 								var site = new common.ui.data.WebSite(response);
-								
-								alert( kendo.stringify($this.website) );
-								//site.copy($this.website);
+								site.copy($this.website);
 							}
 						}
 					);						
