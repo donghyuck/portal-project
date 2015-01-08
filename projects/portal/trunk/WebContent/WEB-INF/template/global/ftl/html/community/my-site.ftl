@@ -791,8 +791,8 @@
 								<div class="col-sm-12">
 									<div id="xmleditor"></div>
 									<div class="pull-right margin-top-20">
-										<button class="btn btn-success btn-sm rounded" data-bind="enabled:menuDataUpdated, click:updateMenuData"> 저장 </button>
-										<button class="btn btn-success btn-sm rounded" data-bind="click:refresh"> 새로고침 </button>
+										<button class="btn-u rounded action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
+										<button class="btn-u btn-u-default btn-u-small rounded action-refresh" data-bind="click:refresh"> 새로고침 </button>
 									</div>
 								</div>
 							</div>
