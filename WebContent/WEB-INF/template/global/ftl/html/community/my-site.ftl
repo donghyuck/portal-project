@@ -93,33 +93,35 @@
 		<!-- ============================== -->
 		function createWebsiteSection(){				
 			var model = kendo.observable({
-				website : new common.ui.data.WebSite()
-			});			
-			var editor = ace.edit("xmleditor");
-			
+				website : new common.ui.data.WebSite(),
+				refresh : function(){
+					var $this = $(this);
+					common.ui.ajax(
+						'<@spring.url "/secure/data/website/get.json?output=json" />' , 
+						{
+							success : function(response){					
+								var site = new common.ui.data.WebSite(response);
+								site.copy($this.website);
+							}
+						}
+					);						
+				}
+			});	
+								
+			var editor = ace.edit("xmleditor");			
 			editor.setTheme("ace/theme/monokai");
 			editor.getSession().setMode("ace/mode/xml");
-			editor.getSession().setUseWrapMode(true);
+			editor.getSession().setUseWrapMode(true);			
 						
 			model.bind("change", function(e){		
 				var sender = e.sender ;
 				if( e.field.match('^website.menu')){
 				 	editor.setValue( sender.website.menu.menuData );	
 				}
-			});
-								
-			common.ui.bind($(".website-details"), model);			
-			common.ui.ajax(
-				'<@spring.url "/secure/data/website/get.json?output=json" />' , 
-				{
-					success : function(response){					
-						var site = new common.ui.data.WebSite(response);
-						site.copy(model.website);
-						//editor.setValue( model.website.menu.menuData );	
-					},
-					error: common.ui.handleAjaxError		
-				}
-			);		
+			});								
+			common.ui.bind($(".website-details"), model);
+			
+			model.refresh();			
 		}
 		
 		
