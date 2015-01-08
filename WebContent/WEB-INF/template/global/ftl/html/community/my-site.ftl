@@ -783,7 +783,7 @@
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container" style="min-height:450px;">						
-						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20" style="display:none;">
+						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20 website-details" style="display:none;">
 							<div class="row p-sm">
 								<div class="col-sm-12">
 									<div id="xmleditor"></div>
