@@ -91,19 +91,22 @@
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
-		function createWebsiteSection(){
+		function createWebsiteSection(){				
+			var model = kendo.observable({
+				website : new common.ui.data.WebSite()
+			});
+			common.ui.bind($(".website-details"), model);			
 			common.ui.ajax(
 				'<@spring.url "/secure/data/website/get.json?output=json" />' , 
 				{
 					success : function(response){
 					
 						var site = new common.ui.data.WebSite(response);
-						alert( kendo.stringify(site) );
+						site.copy(model.website);
 					},
 					error: common.ui.handleAjaxError		
 				}
-			);
-			
+			);			
 			
 		}
 		
