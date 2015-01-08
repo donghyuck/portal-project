@@ -109,7 +109,7 @@
 			});	
 								
 			var editor = ace.edit("xmleditor");			
-			//editor.setTheme("ace/theme/monokai");
+			editor.setTheme("ace/theme/monokai");
 			editor.getSession().setMode("ace/mode/xml");
 			editor.getSession().setUseWrapMode(true);			
 						
@@ -777,8 +777,10 @@
 					<div class="container" style="min-height:450px;">						
 						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20" style="display:none;">
 							<div class="row p-sm">
-								<div class="panel panel-default">
-									<div id="xmleditor" class="panel-body bordered no-border-hr"></div>
+								<div class="col-sm-12">
+									<div class="panel panel-default">
+										<div id="xmleditor" class="panel-body no-border"></div>
+									</div>
 								</div>
 							</div>
 						</div>
