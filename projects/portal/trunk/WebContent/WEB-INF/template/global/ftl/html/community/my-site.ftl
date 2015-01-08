@@ -763,18 +763,6 @@
 										<input type="radio" name="my-site-action" aria-controls="my-page" checked="checked" ><i class="fa fa-file-o"></i> 페이지
 									</label>
 								</div>
-							
-									<div class="btn-group" data-toggle="buttons">
-										<button class="btn btn-primary btn-sm rounded-left" data-toggle="collapse" data-target="#my-site-menu" aria-expanded="false" aria-controls="my-site-menu">
-										<i class="fa fa-sitemap"></i> 메뉴
-										</button>
-										<button class="btn btn-primary btn-sm" data-toggle="collapse" data-target="#my-site-template" aria-expanded="false" aria-controls="my-site-template">
-										<i class="fa fa-file-code-o"></i> 템플릿
-										</button>
-										<button class="btn btn-primary btn-sm rounded-right" data-toggle="collapse" data-target="#my-site-notice" aria-expanded="false" aria-controls="my-site-notice">
-										<i class="fa fa-bullhorn"></i> 공지 및 이벤트
-										</button>																	
-									</div>
 							</div>
 						</div>
 					</div>				
