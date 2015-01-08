@@ -102,7 +102,7 @@
 							success : function(response){					
 								var site = new common.ui.data.WebSite(response);
 								
-								alert( kendo.stringify( site ) );
+								alert( kendo.stringify( $this.website ) );
 								site.copy($this.website);
 							}
 						}
