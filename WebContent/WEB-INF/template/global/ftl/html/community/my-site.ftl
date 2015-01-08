@@ -768,9 +768,9 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
-					<div class="container" style="min-height:450px;">						
-						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20 website-details" style="display:none;">
-							<div class="row p-sm">
+					<div class="container content" style="min-height:450px;">						
+						<div id="my-site-menu" class="bg-slivergray rounded-2x website-details" style="display:none;">
+							<div class="row">
 								<div class="col-sm-12">
 									<h4><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</h2>
 									<div id="xmleditor"></div>
@@ -782,8 +782,8 @@
 							</div>
 						</div>
 						
-						<div id="my-site-template" class="bg-slivergray rounded-2x margin-top-20" style="display:none;">
-							<div class="row p-sm">
+						<div id="my-site-template" class="bg-slivergray rounded-2x" style="display:none;">
+							<div class="row">
 								<div class="col-sm-4">								
 								<div class="tab-v1">								
 									<ul class="nav nav-tabs" id="template-tree">
@@ -817,12 +817,12 @@
 							</div>	
 						</div>
 						<div id="my-site-notice" style="display:none;">
-							<div class="row p-sm">
+							<div class="row">
 							hello							
 							</div>																					
 						</div>	
 						<div id="my-page">
-							<div class="row p-sm">
+							<div class="row">
 								<div id="my-page-list">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
