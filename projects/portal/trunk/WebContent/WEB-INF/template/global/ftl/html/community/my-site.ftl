@@ -120,6 +120,7 @@
 			editor.getSession().setUseWrapMode(true);			
 			editor.getSession().on("change", function(e){
 				model.set("menuDataUpdated", true);
+				alert("updated");
 			});			
 			model.bind("change", function(e){		
 				var sender = e.sender ;
