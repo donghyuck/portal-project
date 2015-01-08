@@ -103,8 +103,8 @@
 						
 			model.bind("change", function(e){		
 				var sender = e.sender ;
-				if( e.field.match('^website.menu')){ 
-				 	alert( sender.website.menu.menuData );
+				if( e.field.match('^website.menu')){
+				 	editor.setValue( sender.website.menu.menuData );	
 				}
 			});
 								
