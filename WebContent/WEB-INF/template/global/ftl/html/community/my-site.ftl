@@ -101,6 +101,8 @@
 						{
 							success : function(response){					
 								var site = new common.ui.data.WebSite(response);
+								
+								alert( kendo.stringify( site ) );
 								site.copy($this.website);
 							}
 						}
