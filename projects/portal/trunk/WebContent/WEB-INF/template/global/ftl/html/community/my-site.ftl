@@ -778,8 +778,9 @@
 						<div id="my-site-menu" class="bg-slivergray rounded-2x margin-top-20" style="display:none;">
 							<div class="row p-sm">
 								<div class="col-sm-12">
-									<div class="panel panel-default">
-										<div id="xmleditor" class="panel-body no-border"></div>
+									<div id="xmleditor"></div>
+									<div class="pull-right">
+										<button class="btn btn-success btn-sm rounded"> 저장 </button>
 									</div>
 								</div>
 							</div>
