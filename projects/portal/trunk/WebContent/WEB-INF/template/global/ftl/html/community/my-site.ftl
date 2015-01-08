@@ -768,15 +768,23 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
-					<div class="container content" style="min-height:450px;">						
+					<div class="container content" style="min-height:450px;">		
+									
 						<div id="my-site-menu" class="bg-slivergray rounded-2x website-details" style="display:none;">
 							<div class="row">
 								<div class="col-sm-12">
-									<h4><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</h2>
-									<div id="xmleditor"></div>
-									<div class="pull-right margin-top-20">
+									<div class="sky-form">
+										<header><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</header>
+										<div id="xmleditor"></div>
+										<footer>
 										<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
-										<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>
+										<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
+										</footer>
+									</div>
+									<h4><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</h2>
+									
+									<div class="pull-right margin-top-20">
+
 									</div>
 								</div>
 							</div>
