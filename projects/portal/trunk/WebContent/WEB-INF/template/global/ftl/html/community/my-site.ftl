@@ -108,6 +108,7 @@
 								var site = new common.ui.data.WebSite(response);
 								site.copy($this.website);
 								$this.menuDataUpdated = false;
+								alert("updated0");
 							}
 						}
 					);						
@@ -120,12 +121,13 @@
 			editor.getSession().setUseWrapMode(true);			
 			editor.getSession().on("change", function(e){
 				model.set("menuDataUpdated", true);
-				alert("updated");
+				alert("updated1");
 			});			
 			model.bind("change", function(e){		
 				var sender = e.sender ;
 				if( e.field.match('^website.menu')){
 				 	editor.setValue( sender.website.menu.menuData );	
+				 	alert("updated2");
 				}
 			});								
 			common.ui.bind($(".website-details"), model);
