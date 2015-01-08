@@ -775,16 +775,17 @@
 								<div class="col-sm-12">
 									<div class="sky-form">
 										<header><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</header>
+										<fieldset>
+											<div class="row">
+												<div class="col-sm-6"></div>
+												<div class="col-sm-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" checked=""><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+											</div>
+										</fieldset>
 										<div id="xmleditor"></div>
-										<footer>
-										<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
-										<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
+										<footer class="pull-right">
+											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
+											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
 										</footer>
-									</div>
-									<h4><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</h2>
-									
-									<div class="pull-right margin-top-20">
-
 									</div>
 								</div>
 							</div>
