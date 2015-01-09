@@ -500,8 +500,7 @@
 		function createNoticeSection(){
 			var renderTo = $("#my-notice-listview");
 			if( !common.ui.exists(renderTo)){
-				var now = new Date();
-				now.setFullYear(now.getFullYear()-1);				
+				var now = new Date();			
 				var model = new common.ui.observable({ 
 					startDate : null,
 					endDate : null,
@@ -514,14 +513,13 @@
 						} else if ($this.endDate) {
 							sDatePicker.max( $this.endDate );
 						} else {
-							$this.endDate = new Date();
+							$this.endDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
 							sDatePicker.max( $this.endDate );
 							eDatePicker.min( $this.endDate );
 						}
 					},
 					endDateChange:function(e){
 						var $this = this;
-						alert($this.endDate);
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
 						var eDatePicker = $("#noticeEndDatePicker").data("kendoDatePicker");		
 						if( $this.endDate ){
@@ -529,7 +527,7 @@
 						}else if ($this.startDate){
 							eDatePicker.min($this.startDate);
 						}else{
-							$this.endDate = new Date();
+							$this.endDate = new Date(now.getFullYear(), now.getMonth(), now.getDay());
 							sDatePicker.max( $this.endDate );
 							eDatePicker.min( $this.endDate );							
 						}
