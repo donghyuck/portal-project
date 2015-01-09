@@ -875,9 +875,9 @@
 							</div>	
 						</div>
 						<div id="my-site-notice" style="display:none;">
-							<div class="row">
-								<div id="my-notice-list">		
-								
+
+								<div id="my-notice-list">	
+									<div class="row">
 									<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 										<label class="btn btn-info btn-sm active rounded-left">
 											<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
@@ -886,11 +886,14 @@
 											<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 										</label>
 									</div>
+								
 																
 									<div id="my-notice-listview"></div>
 									<div id="my-notice-listview-pager"></div>
-								</div>				
+								</div>	
+								</div			
 								<div id="my-notice-view" style="display:none;">
+									<div class="row">
 									<span class="back"></span>
 									<div class="sky-form">
 										<header>&nbsp;</header>
@@ -899,8 +902,9 @@
 											<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>	
 										</footer>
 									</div>
+									</div>	
 								</div>	
-							</div>																					
+																											
 						</div>	
 						<div id="my-page">
 							<div class="row">
