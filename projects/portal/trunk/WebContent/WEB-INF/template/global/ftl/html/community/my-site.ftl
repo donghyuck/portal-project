@@ -504,12 +504,17 @@
 					startDate : null,
 					endDate : null,
 					startDateChange: function(e) {
-						var $this = this, target = $(e.target);		
-						
-						
-						alert(target );
+						var $this = this;
+						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
+						var eDatePicker = $("noticeEndDatePicker").data("kendoDatePicker");
 						if( $this.startDate ){
-							
+							eDatePicker.min($this.startDate);
+						} else if ($this.endDate) {
+							sDatePicker.max( $this.endDate );
+						} else {
+							$this.endDate = new Date();
+							sDatePicker.max( $this.endDate );
+							eDatePicker.min($this.endDate);
 						}
 					},
 					endDateChange:function(e){
@@ -906,8 +911,8 @@
 													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 												</label>
 											</div>
-											<input data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
-											<input data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
+											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
+											<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
 												
 											<div id="my-notice-listview"></div>
 											<div id="my-notice-listview-pager"></div>									
