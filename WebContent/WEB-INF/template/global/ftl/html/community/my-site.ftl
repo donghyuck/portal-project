@@ -505,8 +505,10 @@
 					endDate : null,
 					startDateChange: function(e) {
 						var $this = this;
+						
+						
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
-						var eDatePicker = $("noticeEndDatePicker").data("kendoDatePicker");
+						var eDatePicker = $("#noticeEndDatePicker").data("kendoDatePicker");						
 						if( $this.startDate ){
 							eDatePicker.min($this.startDate);
 						} else if ($this.endDate) {
@@ -521,7 +523,6 @@
 						var $this = this;
 					}				
 				});
-				
 				common.ui.bind($("#my-site-notice"), model );				
 			
 				var noticeSourceList = common.ui.buttonGroup(
