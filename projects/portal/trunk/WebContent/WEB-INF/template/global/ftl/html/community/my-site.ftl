@@ -533,6 +533,7 @@
 						}
 					},
 					refresh : function(e){
+					alert(common.ui.stringify(model.startDate));
 						common.ui.listview(renderTo).dataSource.read({objectType:noticeSourceList.value, startDate: common.ui.stringify(model.startDate), endDate: common.ui.stringify(model.endDate) });					
 					}	
 				});
