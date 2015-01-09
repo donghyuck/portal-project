@@ -503,8 +503,8 @@
 				var now = new Date();
 				now.setFullYear(now.getFullYear()-1);				
 				var model = new common.ui.observable({ 
-					startDate : now,
-					endDate : new Date(),
+					startDate : null,
+					endDate : null,
 					startDateChange: function(e) {
 						var $this = this;
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
