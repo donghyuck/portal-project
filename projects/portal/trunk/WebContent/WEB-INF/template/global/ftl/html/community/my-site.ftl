@@ -876,7 +876,7 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 
-								<div id="my-notice-list">	
+							<div id="my-notice-list">	
 									<div class="row">
 										<div class="col-sm-5">
 											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
@@ -893,8 +893,8 @@
 										<div class="col-sm-7">
 										
 										</div>	
-								</div>	
-								</div			
+								</div>
+							</div>		
 								<div id="my-notice-view" style="display:none;">
 									<div class="row">
 									<span class="back"></span>
@@ -908,7 +908,7 @@
 									</div>	
 								</div>	
 																											
-						</div>	
+						</div><!-- /. my-site-notice -->	
 						<div id="my-page">
 							<div class="row">
 								<div id="my-page-list">
