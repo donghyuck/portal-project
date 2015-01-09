@@ -553,7 +553,7 @@
 								transport : {
 									parameterMap: function(options, operation) {
 										if( typeof options.objectType === "undefined"  ){
-											return {objectType: noticeSourceList.value };	
+											return {objectType: noticeSourceList.value, startDate: model.startDate, endDate: model.endDate };	
 										}else{			
 											return options;		
 										} 
