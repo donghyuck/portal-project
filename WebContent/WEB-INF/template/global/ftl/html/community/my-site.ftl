@@ -501,11 +501,11 @@
 			var renderTo = $("#my-notice-listview");
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();
-				now.setFullYear(now.getFullYear());
+				now.setFullYear(now.getFullYear()-1);
 				
 				var model = new common.ui.observable({ 
-					startDate : new Date(),
-					endDate : now,
+					startDate : now,
+					endDate : new Date(),
 					startDateChange: function(e) {
 						var $this = this;
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
