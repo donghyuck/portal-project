@@ -878,18 +878,21 @@
 
 								<div id="my-notice-list">	
 									<div class="row">
-									<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-										<label class="btn btn-info btn-sm active rounded-left">
-											<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-										</label>
-										<label class="btn btn-info btn-sm rounded-right">
-											<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-										</label>
-									</div>
-								
-																
-									<div id="my-notice-listview"></div>
-									<div id="my-notice-listview-pager"></div>
+										<div class="col-sm-5">
+											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+												<label class="btn btn-info btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+												</label>
+												<label class="btn btn-info btn-sm rounded-right">
+													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+												</label>
+											</div>	
+											<div id="my-notice-listview"></div>
+											<div id="my-notice-listview-pager"></div>									
+										</div>
+										<div class="col-sm-7">
+										
+										</div>	
 								</div>	
 								</div			
 								<div id="my-notice-view" style="display:none;">
