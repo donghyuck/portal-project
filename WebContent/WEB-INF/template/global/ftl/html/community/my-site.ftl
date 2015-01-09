@@ -502,8 +502,8 @@
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();			
 				var model = new common.ui.observable({ 
-					startDate : null,
-					endDate : null,
+					startDate : new Date(now.getFullYear()-1, now.getMonth(), now.getDay()),
+					endDate : now,
 					startDateChange: function(e) {
 						var $this = this;
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
@@ -533,9 +533,7 @@
 						}
 					},
 					refresh : function(e){
-					alert( model.startDate);
-					alert(common.ui.stringify(model.startDate));
-						common.ui.listview(renderTo).dataSource.read({objectType:noticeSourceList.value, startDate: common.ui.stringify(model.startDate), endDate: common.ui.stringify(model.endDate) });					
+						common.ui.listview(renderTo).dataSource.read();					
 					}	
 				});
 				common.ui.bind($("#my-site-notice"), model );				
@@ -544,7 +542,7 @@
 					$("#notice-source-list"),
 					{
 						change: function(e){						
-							common.ui.listview(renderTo).dataSource.read({objectType:e.value, startDate: common.ui.stringify(model.startDate), endDate: common.ui.stringify(model.endDate) });
+							common.ui.listview(renderTo).dataSource.read({objectType:e.value, startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() });
 						}
 					}
 				);
@@ -554,8 +552,8 @@
 							{
 								transport : {
 									parameterMap: function(options, operation) {
-										if( typeof options.objectType === "undefined"  ){
-											return {objectType: noticeSourceList.value, startDate: common.ui.stringify(model.startDate), endDate: common.ui.stringify(model.endDate) };	
+										if( typeof options.objectType === "undefined"  ){	
+											return {objectType: noticeSourceList.value, startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() };	
 										}else{			
 											return options;		
 										} 
