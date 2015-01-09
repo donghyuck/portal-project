@@ -928,8 +928,10 @@
 											</div>
 											</div>
 											<hr/>
-											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
 											<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
+											<button class="btn-u btn-u-default btn-u-small" data-bind="click:refresh"><i class="fa fa-search"></i> </button>
+											
 											<div id="my-notice-listview"></div>
 											<div id="my-notice-listview-pager"></div>									
 										</div>
