@@ -917,6 +917,7 @@
 							<div id="my-notice-list">	
 									<div class="row">
 										<div class="col-sm-5">
+											<div class="p-xxs">
 											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
@@ -924,6 +925,7 @@
 												<label class="btn btn-info btn-sm rounded-right">
 													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 												</label>
+											</div>
 											</div>
 											<label class="label">Select date range</label>
 											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
