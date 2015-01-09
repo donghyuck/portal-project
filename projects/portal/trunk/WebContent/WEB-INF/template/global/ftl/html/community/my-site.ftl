@@ -927,11 +927,9 @@
 												</label>
 											</div>
 											</div>
-											<label class="label">Select date range</label>
-											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
-											<label class="label">Select date range</label>
-											<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
-												
+											
+											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
+											<p class="help-block">검색 기간을 선택하세요.</p>	
 											<div id="my-notice-listview"></div>
 											<div id="my-notice-listview-pager"></div>									
 										</div>
