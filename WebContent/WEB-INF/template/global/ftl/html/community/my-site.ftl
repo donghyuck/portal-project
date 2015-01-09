@@ -504,9 +504,10 @@
 					startDate : null,
 					endDate : null,
 					startDateChange: function(e) {
-						var $this = this;
+						var $this = this, target = $(e.target);		
 						
-						alert( kendo.stringify( e.val ) );
+						
+						alert(target.html() );
 						if( $this.startDate ){
 							
 						}
