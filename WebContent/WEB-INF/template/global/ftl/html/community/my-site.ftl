@@ -506,7 +506,7 @@
 					startDateChange: function(e) {
 						var $this = this;
 						
-						alert( kendo.stringify( e ) );
+						alert( kendo.stringify( e.val ) );
 						if( $this.startDate ){
 							
 						}
