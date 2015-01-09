@@ -533,7 +533,7 @@
 						}
 					},
 					refresh : function(e){
-						common.ui.listview(renderTo).dataSource.read({objectType:noticeSourceList.value, startDate: model.startDate, endDate: model.endDate });					
+						common.ui.listview(renderTo).dataSource.read({objectType:noticeSourceList.value, startDate: common.ui.stringify(model.startDate), endDate: common.ui.stringify(model.endDate) });					
 					}	
 				});
 				common.ui.bind($("#my-site-notice"), model );				
@@ -542,7 +542,7 @@
 					$("#notice-source-list"),
 					{
 						change: function(e){						
-							common.ui.listview(renderTo).dataSource.read({objectType:e.value, startDate: model.startDate, endDate: model.endDate });
+							common.ui.listview(renderTo).dataSource.read({objectType:e.value, startDate: common.ui.stringify(model.startDate), endDate: common.ui.stringify(model.endDate) });
 						}
 					}
 				);
@@ -553,7 +553,7 @@
 								transport : {
 									parameterMap: function(options, operation) {
 										if( typeof options.objectType === "undefined"  ){
-											return {objectType: noticeSourceList.value, startDate: model.startDate, endDate: model.endDate };	
+											return {objectType: noticeSourceList.value, startDate: common.ui.stringify(model.startDate), endDate: common.ui.stringify(model.endDate) };	
 										}else{			
 											return options;		
 										} 
