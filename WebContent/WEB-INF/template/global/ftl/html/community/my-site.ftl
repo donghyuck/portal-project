@@ -777,10 +777,10 @@
 								<div class="col-sm-12">
 									<div class="sky-form">
 										<header><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</header>
-										<fieldset>
+										<fieldset class="padding-sm">
 											<div class="row">
-												<div class="col-sm-6"></div>
-												<div class="col-sm-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+												<div class="col-md-9"></div>
+												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 											</div>
 										</fieldset>
 										<div id="xmleditor"></div>
