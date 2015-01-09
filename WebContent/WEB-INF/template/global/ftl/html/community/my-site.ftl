@@ -498,8 +498,55 @@
 		<!-- Notice														-->
 		<!-- ============================== -->
 		function createNoticeSection(){
-		
-		
+			var renderTo = $("#my-notice-listview");
+			if( !common.ui.exists(renderTo)){
+				var noticeSourceList = common.ui.buttonGroup(
+					$("#notice-source-list"),
+					{
+						change: function(e){						
+							common.ui.listview(renderTo).dataSource.read({objectType:e.value});
+						}
+					}
+				);
+				common.ui.listview(	renderTo, {
+						dataSource : common.ui.datasource(
+							'<@spring.url "/data/announce/list.json"/>',
+							{
+								transport : {
+									parameterMap: function(options, operation) {
+										if( typeof options.objectType === "undefined"  ){
+											return {objectType: noticeSourceList.value };	
+										}else{			
+											return options;		
+										} 
+									}
+								},
+								schema: {
+									data : "announces",
+									model : common.ui.data.Announce,
+									total : "totalCount"
+								}
+							}
+						),
+						template: kendo.template($("#announce-listview-item-template").html()),
+						selectable: "single" ,
+						dataBound: function(e){
+							//model.set("visible", false);
+						},
+						change: function(e){						
+							var selectedCells = this.select();
+							var selectedCell = this.dataItem( selectedCells );	
+							//selectedCell.copy( model.announce );			
+							//model.set("visible", false);			
+							//if(!common.ui.visible(viewRenderTo)){
+							//	viewRenderTo.slideDown();
+							//}						
+							//common.ui.scroll.top(viewRenderTo, -20);
+						}
+					}
+				);
+				common.ui.pager($("#my-notice-listview-pager"), {dataSource: common.ui.listview(renderTo).dataSource });			
+			}		
 		}
 				
 		
@@ -752,8 +799,7 @@
 						<div class="personalized-section-title">
 							<i class="icon-flat  settings2"></i>
 							<h3>MY 사이트 <span style="height:2.6em;"> 웹사이트의 메뉴, 페이지, 이미지들을 쉽고 빠르게 생성하고 수정할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
-							<div class="personalized-section-heading-controls">								
-							
+							<div class="personalized-section-heading-controls">		
 								<div class="btn-group" data-toggle="buttons">
 									<label class="btn btn-sm btn-primary rounded-left">
 										<input type="radio" name="my-site-action" aria-controls="my-site-menu"><i class="fa fa-sitemap"></i> 메뉴
@@ -773,8 +819,7 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
-					<div class="container content" style="min-height:450px;">		
-									
+					<div class="container content" style="min-height:450px;">											
 						<div id="my-site-menu" class="bg-slivergray rounded-2x website-details" style="display:none;">
 							<div class="row">
 								<div class="col-sm-12">
@@ -794,8 +839,7 @@
 									</div>
 								</div>
 							</div>
-						</div>
-						
+						</div>						
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
 								<div class="col-sm-4">								
@@ -833,7 +877,18 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list">		
-									<div id="my-notice-grid"></div>
+								
+									<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+										<label class="btn btn-info btn-sm active rounded-left">
+											<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+										</label>
+										<label class="btn btn-info btn-sm rounded-right">
+											<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+										</label>
+									</div>
+																
+									<div id="my-notice-listview"></div>
+									<div id="my-notice-listview-pager"></div>
 								</div>				
 								<div id="my-notice-view" style="display:none;">
 									<span class="back"></span>
