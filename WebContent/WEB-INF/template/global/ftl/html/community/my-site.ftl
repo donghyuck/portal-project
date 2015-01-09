@@ -501,8 +501,7 @@
 			var renderTo = $("#my-notice-listview");
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();
-				now.setFullYear(now.getFullYear()-1);
-				
+				now.setFullYear(now.getFullYear()-1);				
 				var model = new common.ui.observable({ 
 					startDate : now,
 					endDate : new Date(),
@@ -534,6 +533,9 @@
 							sDatePicker.max( $this.endDate );
 							eDatePicker.min( $this.endDate );							
 						}
+					},
+					refresh : function(e){
+						common.ui.listview(renderTo).dataSource.read({objectType:noticeSourceList.value, startDate: model.startDate, endDate: model.endDate });					
 					}	
 				});
 				common.ui.bind($("#my-site-notice"), model );				
@@ -542,7 +544,7 @@
 					$("#notice-source-list"),
 					{
 						change: function(e){						
-							common.ui.listview(renderTo).dataSource.read({objectType:e.value});
+							common.ui.listview(renderTo).dataSource.read({objectType:e.value, startDate: model.startDate, endDate: model.endDate });
 						}
 					}
 				);
