@@ -500,6 +500,13 @@
 		function createNoticeSection(){
 			var renderTo = $("#my-notice-listview");
 			if( !common.ui.exists(renderTo)){
+				var model = new common.ui.observable({ 
+					startDate : new Date(),
+					endDate : new Date()				
+				});
+				
+				common.ui.bind($("#my-site-notice"), model );				
+			
 				var noticeSourceList = common.ui.buttonGroup(
 					$("#notice-source-list"),
 					{
