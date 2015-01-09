@@ -74,11 +74,10 @@
 					var target = $this.attr("aria-controls");
 					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
 						$("#" + target ).fadeIn();
-					});					
-					
+					});	
 					switch( target ){
-						case "my-site-menu":
-							createMenuSection();				
+						case "my-site-notice":
+							createNoticeSection();				
 						break;
 						case "my-site-template":
 							$('#template-tree a:first').tab('show');				
@@ -132,7 +131,9 @@
 			model.refresh();			
 		}
 		
-		
+		<!-- ============================== -->
+		<!-- TEMPLATE												-->
+		<!-- ============================== -->		
 		function createTemplateSection(){
 			$('#template-tree').on( 'show.bs.tab', function (e) {		
 				var show_bs_tab = $(e.target);
@@ -268,12 +269,7 @@
 			}		
 		}
 		
-		<!-- ============================== -->
-		<!-- MENU														-->
-		<!-- ============================== -->
-		function createMenuSection(){
-			var renderTo = $("#my-site-menu");		
-		}		
+
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->
@@ -498,7 +494,14 @@
 			}							
 		}
 		
+		<!-- ============================== -->
+		<!-- Notice														-->
+		<!-- ============================== -->
+		function createNoticeSection(){
 		
+		
+		}
+				
 		
 		function createAnnounceSection(){
 			
@@ -829,7 +832,19 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
-							hello							
+								<div id="my-notice-list">		
+									<div id="my-notice-grid"></div>
+								</div>				
+								<div id="my-notice-view" style="display:none;">
+									<span class="back"></span>
+									<div class="sky-form">
+										<header>&nbsp;</header>
+										<footer class="text-right">
+											<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+											<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>	
+										</footer>
+									</div>
+								</div>	
 							</div>																					
 						</div>	
 						<div id="my-page">
@@ -854,7 +869,7 @@
 								</div><!-- /.my-page-list -->
 								<div id="my-page-view" style="display:none;">								
 									<span class="back"></span>
-									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
+									<form action="" class="sky-form" novalidate="novalidate">
 										<header>&nbsp;</header>
 										<fieldset>											
 											<section>
