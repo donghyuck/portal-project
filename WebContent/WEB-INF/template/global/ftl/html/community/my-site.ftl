@@ -505,8 +505,6 @@
 					endDate : null,
 					startDateChange: function(e) {
 						var $this = this;
-						
-						
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
 						var eDatePicker = $("#noticeEndDatePicker").data("kendoDatePicker");						
 						if( $this.startDate ){
@@ -516,12 +514,23 @@
 						} else {
 							$this.endDate = new Date();
 							sDatePicker.max( $this.endDate );
-							eDatePicker.min($this.endDate);
+							eDatePicker.min( $this.endDate );
 						}
 					},
 					endDateChange:function(e){
 						var $this = this;
-					}				
+						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
+						var eDatePicker = $("#noticeEndDatePicker").data("kendoDatePicker");		
+						if( $this.endDate ){
+							sDatePicker.max($this.endDate);
+						}else if ($this.startDate){
+							eDatePicker.min($this.startDate);
+						}else{
+							$this.endDate = new Date();
+							sDatePicker.max( $this.endDate );
+							eDatePicker.min( $this.endDate );							
+						}
+					}	
 				});
 				common.ui.bind($("#my-site-notice"), model );				
 			
