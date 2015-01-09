@@ -519,6 +519,7 @@
 					},
 					endDateChange:function(e){
 						var $this = this;
+						alert($this.endDate);
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
 						var eDatePicker = $("#noticeEndDatePicker").data("kendoDatePicker");		
 						if( $this.endDate ){
