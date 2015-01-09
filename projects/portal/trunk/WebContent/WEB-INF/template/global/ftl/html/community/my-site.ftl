@@ -925,7 +925,9 @@
 													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 												</label>
 											</div>
+											<label class="label">Select date range</label>
 											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
+											<label class="label">Select date range</label>
 											<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
 												
 											<div id="my-notice-listview"></div>
