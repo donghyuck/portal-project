@@ -507,7 +507,7 @@
 						var $this = this, target = $(e.target);		
 						
 						
-						alert(target.html() );
+						alert(target );
 						if( $this.startDate ){
 							
 						}
