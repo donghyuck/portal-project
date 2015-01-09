@@ -501,8 +501,17 @@
 			var renderTo = $("#my-notice-listview");
 			if( !common.ui.exists(renderTo)){
 				var model = new common.ui.observable({ 
-					startDate : new Date(),
-					endDate : new Date()				
+					startDate : null,
+					endDate : null,
+					startDateChange: function(e) {
+						var $this = this;
+						if( $this.startDate ){
+							
+						}
+					},
+					endDateChange:function(e){
+						var $this = this;
+					}				
 				});
 				
 				common.ui.bind($("#my-site-notice"), model );				
