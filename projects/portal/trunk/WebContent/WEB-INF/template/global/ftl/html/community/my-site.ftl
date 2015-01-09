@@ -886,7 +886,10 @@
 												<label class="btn btn-info btn-sm rounded-right">
 													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 												</label>
-											</div>	
+											</div>
+											<input data-role="datepicker" data-bind="value: startDate" />
+											<input data-role="datepicker" data-bind="value: endDate" />
+												
 											<div id="my-notice-listview"></div>
 											<div id="my-notice-listview-pager"></div>									
 										</div>
