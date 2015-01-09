@@ -98,6 +98,7 @@
 				alert("준비중입니다.");
 				},
 				menuDataUpdated : false,
+				useWrapMode : false,
 				refresh : function(){
 					var $this = this;
 					common.ui.ajax(
@@ -115,8 +116,7 @@
 								
 			var editor = ace.edit("xmleditor");			
 			editor.setTheme("ace/theme/monokai");
-			editor.getSession().setMode("ace/mode/xml");
-			editor.getSession().setUseWrapMode(true);			
+			editor.getSession().setMode("ace/mode/xml");					
 			editor.getSession().on("change", function(e){
 				model.set("menuDataUpdated", true);
 			});			
@@ -124,6 +124,8 @@
 				var sender = e.sender ;
 				if( e.field.match('^website.menu')){
 				 	editor.setValue( sender.website.menu.menuData );	
+				}else if (e.field.match('^useWrapMode')){
+					editor.getSession().setUseWrapMode(true);
 				}
 			});								
 			common.ui.bind($(".website-details"), model);			
@@ -778,7 +780,7 @@
 										<fieldset>
 											<div class="row">
 												<div class="col-sm-6"></div>
-												<div class="col-sm-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" checked=""><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+												<div class="col-sm-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 											</div>
 										</fieldset>
 										<div id="xmleditor"></div>
