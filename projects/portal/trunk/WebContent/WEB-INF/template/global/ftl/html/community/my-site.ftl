@@ -500,9 +500,12 @@
 		function createNoticeSection(){
 			var renderTo = $("#my-notice-listview");
 			if( !common.ui.exists(renderTo)){
+				var now = new Date();
+				now.setFullYear(now.getFullYear());
+				
 				var model = new common.ui.observable({ 
-					startDate : null,
-					endDate : null,
+					startDate : new Date(),
+					endDate : now,
 					startDateChange: function(e) {
 						var $this = this;
 						var sDatePicker = $("#noticeStartDatePicker").data("kendoDatePicker");
