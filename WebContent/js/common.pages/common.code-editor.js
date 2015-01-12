@@ -92,7 +92,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			open : function(){
 				editor.data("kendoEditor").value( _editor.getValue() );				
 			}			
-		});;
+		});
 	}	
 }
 		
