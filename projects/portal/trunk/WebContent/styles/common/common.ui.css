@@ -599,6 +599,11 @@ padding: 20px 10px;
 	border-top-width: 0 !important
 }
 
+.no-border-b {
+	border-bottom-width: 0 !important
+}
+
+
 body:not  (.right-to-left  ) .no-border-r {
 	border-right-width: 0 !important
 }
