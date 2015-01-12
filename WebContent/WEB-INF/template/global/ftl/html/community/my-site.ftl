@@ -922,6 +922,16 @@
 							</div>	
 						</div>
 						<div id="my-site-notice" style="display:none;">
+							<div class="row">
+								<div class="col-sm-5">
+								</div>
+								<div class="col-sm-7">
+								</div>								
+							</div>
+	
+								
+								
+								
 							<div id="my-notice-list">	
 									<div class="row">
 										<div class="col-sm-5">
