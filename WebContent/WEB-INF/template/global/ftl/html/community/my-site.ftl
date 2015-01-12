@@ -502,7 +502,7 @@
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();			
 				var model = new common.ui.observable({ 
-					notice : common.ui.data.Announce(),
+					notice : new common.ui.data.Announce(),
 					visible : false,
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
