@@ -45,7 +45,7 @@
 	    	body: { type: "string", editable: true },
 	    	startDate: { type: "date",  editable: true },
 	    	endDate: { type: "date" ,  editable: true},
-	    	user : { type: "User" },
+	    	user : { type: "common.ui.data.User" },
 	        modifiedDate: { type: "date"},
 	        creationDate: { type: "date" }
 	    },
