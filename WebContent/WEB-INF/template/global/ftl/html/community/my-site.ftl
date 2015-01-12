@@ -935,7 +935,17 @@
 												</label>
 											</div>	
 										</header>
-									
+										<fieldset>
+											<section>
+												<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
+												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>											
+											</section>
+											<section>
+									<div id="my-notice-listview" class="bordered no-border-b"></div>
+									<div id="my-notice-listview-pager" class="bordered"></div>												
+											</section>
+										</fieldset>
 									</div>
 									
 									<div class="p-xxs">
@@ -943,14 +953,11 @@
 									</div>
 									<hr/>
 									<div class="p-xxs">
-										<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
-										<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
-									</div>		
+										</div>		
 									<div class="p-xxs">
-										<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
+										
 									</div>									
-									<div id="my-notice-listview" class="bordered no-border-b"></div>
-									<div id="my-notice-listview-pager" class="bordered"></div>										
+									
 								</div>
 								<div id="my-notice-view" class="col-sm-8">
 
