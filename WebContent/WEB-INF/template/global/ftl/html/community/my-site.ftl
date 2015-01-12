@@ -924,13 +924,13 @@
 						<div id="my-site-notice" style="display:none;">
 						<div data-role="splitter"
 							data-panes="[
-								{ collapsible: true },
-								{ collapsible: false, size: '70px' }
+								{ collapsible: true , size="350px"},
+								{ collapsible: false}
 							 ]"
 						data-orientation="horizontal"
 						style="width: 100%">
-							<div>a</div>
-							<div>b</div>						
+							<div><div class="pane-content">a</div></div>	
+							<div><div class="pane-content">b</div></div>							
 						</div>
 							<div class="row">
 								<div id="my-notice-list" style="float:left; width:350px;">
