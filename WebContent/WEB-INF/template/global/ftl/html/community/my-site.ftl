@@ -536,8 +536,7 @@
 						}
 					},
 					refresh : function(e){
-						common.ui.listview(renderTo).dataSource.read();		
-						common.ui.grid(renderTo2).dataSource.read();					
+						common.ui.grid(renderTo).dataSource.read();					
 					}	
 				});
 				common.ui.bind($("#my-site-notice"), model );				
