@@ -86,12 +86,14 @@ function createCodeEditor( renderToString, editor, options ) {
 		var editor = ace.edit(renderToString);
 		editor.getSession().setMode(settings.mode);
 		editor.getSession().setUseWrapMode(settings.useWrapMode);
-		return {
-			open : function (){
-				editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
-				alert("hello");				
+		
+		var code = new kendo.Class.extend({
+			open : function(){
+				editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );				
 			}			
-		};
+		});
+		
+		return new code();
 	}	
 }
 		
