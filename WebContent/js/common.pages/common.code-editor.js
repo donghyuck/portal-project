@@ -85,7 +85,7 @@ function createCodeEditor( renderToString, editor, options ) {
 		var editor = ace.edit(renderToString);
 		editor.getSession().setMode(settings.mode);
 		editor.getSession().setUseWrapMode(settings.useWrapMode);
-		retrun {
+		return {
 			open : function (){
 				editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
 				alert("hello");				
