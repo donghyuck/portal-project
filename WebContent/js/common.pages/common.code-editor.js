@@ -9,6 +9,7 @@ function createEditor( renderToString, bodyEditor, options ){
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		
+		htmlEditor.open();
 		
 		bodyEditor.kendoEditor({
 				tools : [ 'bold', 'italic', 'insertUnorderedList', 'insertOrderedList',
@@ -86,9 +87,10 @@ function createCodeEditor( renderToString, editor, options ) {
 		var _editor = ace.edit(renderToString);
 		_editor.getSession().setMode(settings.mode);
 		_editor.getSession().setUseWrapMode(settings.useWrapMode);		
+		
 		return new kendo.Class.extend({
 			open : function(){
-				this.editor.data("kendoEditor").value( _editor.getValue() );				
+				editor.data("kendoEditor").value( _editor.getValue() );				
 			}			
 		});;
 	}	
