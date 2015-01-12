@@ -43,40 +43,55 @@ function createEditor( renderToString, bodyEditor, options ){
 	}			
 }
 
+var DEFAULT_ACE_EDITOR_SETTING = {
+	modal : true,
+	mode : "ace/mode/xml",
+	useWrapMode : true		
+}
+
 function createCodeEditor( renderToString, editor, options ) {		
-	options = options || {};
-	if( !options.modal ){
+	options = options || {};		
+	var settings = $.extend(true, {}, DEFAULT_ACE_EDITOR_SETTING , options ); 
+	
+	if( settings.modal ){		
+		if( $("#"+ renderToString).length == 0 ){
+			$("body").append('<div id="'+ renderToString +'"></div>');	
+		}
+		if( !renderTo.data('kendoExtModalWindow') ){				
+			renderTo.extModalWindow({
+				title : "HTML",
+				backdrop : 'static',
+				template : $("#code-editor-modal-template").html(),
+				refresh : function(e){
+					var editor = ace.edit("htmleditor");
+					editor.getSession().setMode(settings.mode);
+					editor.getSession().setUseWrapMode(settings.useWrapMode);
+				},
+				open: function (e){
+					ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
+				}					
+			});				
+			renderTo.find('button.custom-update').click(function () {
+				var btn = $(this)			
+				editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
+				renderTo.data('kendoExtModalWindow').close();
+			});			
+		}	
+		return renderTo.data('kendoExtModalWindow');			
+	}else{	
 		if( $("#"+ renderToString).length == 0 ){
 			editor.parent().append('<div id="'+ renderToString +'"></div>');	
-		}
-		
-		
-		return ;
-	}
-	
-	
-	var renderTo = $("#"+ renderToString);		
-	if( !renderTo.data('kendoExtModalWindow') ){						
-		renderTo.extModalWindow({
-			title : "HTML",
-			backdrop : 'static',
-			template : $("#code-editor-modal-template").html(),
-			refresh : function(e){
-				var editor = ace.edit("htmleditor");
-				editor.getSession().setMode("ace/mode/xml");
-				editor.getSession().setUseWrapMode(true);
-			},
-			open: function (e){
-				ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
-			}					
-		});					
-		renderTo.find('button.custom-update').click(function () {
-			var btn = $(this)			
-			editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
-			renderTo.data('kendoExtModalWindow').close();
-		});
-	}
-	return renderTo.data('kendoExtModalWindow');			
+		}	
+		var editor = ace.edit(renderToString);
+		editor.getSession().setMode(settings.mode);
+		editor.getSession().setUseWrapMode(settings.useWrapMode);
+		retrun {
+			open : function (){
+				editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
+				alert("hello");				
+			}			
+		};
+	}	
 }
 		
 function createEditorImageBroswer(renderToString, editor ){			
