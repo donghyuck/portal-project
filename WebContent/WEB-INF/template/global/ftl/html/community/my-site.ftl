@@ -590,7 +590,7 @@
 						if( selectedCells.length > 0){ 
 							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy( model.notice );
-								model.set("visible", true);								
+							model.set("visible", true);								
 	 					} 						
 					},
 					dataBound: function(e){		
@@ -610,12 +610,21 @@
 						var $this = this, 
 						
 					}	
-				});	
+					});	
+				kendo.bind( renderTo, model);
+				renderTo.data("model", model);	
+				var bodyEditor =  $("#notice-editor-body" );
+				createEditor( "notice-editor" , bodyEditor );
 			}	
-			kendo.bind( renderTo, model);
-			renderTo.data("model", model);	
-			var bodyEditor =  $("#notice-editor-body" );
-			createEditor( "notice-editor" , bodyEditor );					
+			if( source ){
+				source.copy( renderTo.data("model").notice );
+				renderTo.data("model").set("notice.objectType", common.ui.buttonGroup($("#notice-source-list")).value); 
+				if( source.announceId === 0 ){
+					renderTo.data("model").set("new", false); 
+				}else{
+					renderTo.data("model").set("new", false); 					
+				} 
+			}
 		}
 
 		function createAnnounceEditorSection(source){			
