@@ -927,10 +927,10 @@
 								{ collapsible: false },
 								{ collapsible: false, size: '70px' }
 							 ]"
-						data-orientation="vertical"
+						data-orientation="horizontal"
 						style="width: 420px">
-							<div></div>
-							<div></div>						
+							<div>a</div>
+							<div>b</div>						
 						</div>
 							<div class="row">
 								<div id="my-notice-list" style="float:left; width:350px;">
