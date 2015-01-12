@@ -563,7 +563,7 @@
 					},					
 					schema: {
 						total: "totalCount",
-						data: "pages",
+						data: "announces",
 						model: common.ui.data.Announce
 					},
 					batch: false,
