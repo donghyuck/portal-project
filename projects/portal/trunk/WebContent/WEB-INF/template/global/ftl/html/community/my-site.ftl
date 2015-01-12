@@ -949,7 +949,24 @@
 										
 											<div class="sky-form">
 												<header data-bind="html:notice.subject"></header>
-												<fieldset>fsad</fieldset>
+												<fieldset>
+													<ul class="list-unstyled">
+														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
+														<hr>	
+														<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: notice.formattedCreationDate"></span></li>
+														<hr>	
+														<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: notice.formattedModifiedDate"></span></li>
+														<hr>	
+														<li class="text-muted">
+															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:notice.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+															<ul class="list-unstyled text-muted">
+																<li><span data-bind="visible: notice.user.nameVisible, text: notice.user.name"></span><code data-bind="text: notice.user.username"></code></li>
+																<li><span data-bind="visible: notice.user.emailVisible, text: notice.user.email"></span></li>
+															</ul>																
+														</li>	
+														<hr>	
+													</ul>	
+												</fieldset>
 												<fieldset>fsad</fieldset>
 												<section class="padding-sm" data-bind="html:notice.body">fdsaf</section>
 												<footer class="text-right">
