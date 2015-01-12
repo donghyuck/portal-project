@@ -615,6 +615,7 @@
 				var bodyEditor =  $("#notice-editor-body" );
 				createEditor( "notice-editor" , bodyEditor );
 			}	
+			
 			if( source ){
 				source.copy( renderTo.data("model").notice );
 				renderTo.data("model").set("notice.objectType", common.ui.buttonGroup($("#notice-source-list")).value); 
