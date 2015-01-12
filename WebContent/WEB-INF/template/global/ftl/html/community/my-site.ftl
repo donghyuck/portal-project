@@ -502,6 +502,7 @@
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();			
 				var model = new common.ui.observable({ 
+					notice : common.ui.data.Announce(),
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
 					startDateChange: function(e) {
@@ -574,7 +575,7 @@
 						change: function(e){						
 							var selectedCells = this.select();
 							var selectedCell = this.dataItem( selectedCells );	
-							//selectedCell.copy( model.announce );			
+							selectedCell.copy( model.notice );
 							//model.set("visible", false);			
 							//if(!common.ui.visible(viewRenderTo)){
 							//	viewRenderTo.slideDown();
