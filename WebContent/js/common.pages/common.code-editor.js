@@ -100,9 +100,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			}			
 		});
 		
-		return new p({
-			_editor, editor
-		});
+		return new p(_editor, editor);
 	}	
 }
 		
