@@ -952,29 +952,29 @@
 									<div id="my-notice-grid"></div>															
 								</div>
 								<div id="my-notice-view" class="col-sm-8">
-											<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
-												<header data-bind="html:notice.subject"></header>
-												<fieldset>
-													<ul class="list-unstyled margin-bottom-30">
-														<li class="p-xxs"><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
-														<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: notice.formattedCreationDate"></span></li>
-														<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: notice.formattedModifiedDate"></span></li>
-														<li class="p-xxs">
-															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:notice.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-															<ul class="list-unstyled text-muted">
-																<li><span data-bind="visible: notice.user.nameVisible, text: notice.user.name"></span><code data-bind="text: notice.user.username"></code></li>
-																<li><span data-bind="visible: notice.user.emailVisible, text: notice.user.email"></span></li>
-															</ul>															
-														</li>
-													</ul>
-													<div class="text-right">
-														<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">편집</button>
-													</div>													
-												</fieldset>
-												<fieldset>
-													<section  data-bind="html:notice.body"></section>
-												</fieldset>												
-											</div>								
+									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
+										<header data-bind="html:notice.subject"></header>
+										<fieldset>
+											<ul class="list-unstyled margin-bottom-30">
+												<li class="p-xxs"><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
+												<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: notice.formattedCreationDate"></span></li>
+												<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: notice.formattedModifiedDate"></span></li>
+												<li class="p-xxs">
+													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:notice.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+													<ul class="list-unstyled text-muted">
+														<li><span data-bind="visible: notice.user.nameVisible, text: notice.user.name"></span><code data-bind="text: notice.user.username"></code></li>
+														<li><span data-bind="visible: notice.user.emailVisible, text: notice.user.email"></span></li>
+													</ul>															
+												</li>
+											</ul>
+											<div class="text-right">
+												<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">편집</button>
+											</div>													
+										</fieldset>
+										<fieldset>
+											<section  data-bind="html:notice.body"></section>
+										</fieldset>												
+									</div>								
 								</div>													
 							</div>
 						</div><!-- /. my-site-notice -->	
