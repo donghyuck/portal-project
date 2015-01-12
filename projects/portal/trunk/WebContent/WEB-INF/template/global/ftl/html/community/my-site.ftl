@@ -545,8 +545,7 @@
 					$("#notice-source-list"),
 					{
 						change: function(e){						
-							common.ui.listview(renderTo).dataSource.read({objectType:e.value, startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() });
-							common.ui.grid(renderTo2).dataSource.read({objectType:e.value});
+							common.ui.grid(renderTo).dataSource.read({objectType:e.value});
 						}
 					}
 				);
