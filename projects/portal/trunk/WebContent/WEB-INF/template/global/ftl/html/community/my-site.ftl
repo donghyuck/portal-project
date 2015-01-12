@@ -497,8 +497,7 @@
 		<!-- ============================== -->
 		<!-- Notice														-->
 		<!-- ============================== -->
-		function createNoticeSection(){
-			
+		function createNoticeSection(){			
 			var renderTo = $("#my-notice-grid");
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();			
@@ -544,8 +543,7 @@
 						common.ui.grid(renderTo).dataSource.read();					
 					}	
 				});
-				common.ui.bind($("#my-notice-list, #my-notice-view"), model );				
-			
+				common.ui.bind($("#my-notice-list, #my-notice-view"), model );	
 				var noticeSourceList = common.ui.buttonGroup(
 					$("#notice-source-list"),
 					{
@@ -592,8 +590,7 @@
 						if( selectedCells.length > 0){ 
 							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy( model.notice );
-								model.set("visible", true);
-								
+								model.set("visible", true);								
 	 					} 						
 					},
 					dataBound: function(e){		
@@ -603,9 +600,22 @@
 			}		
 		}
 		
-		function createNoticeEditorSection(notice){
-		
-		
+		function createNoticeEditorSection(source){
+			var renderTo = $("my-notice-edit");		
+			if( !renderTo.data("model")){
+				var model =  common.ui.observable({ 
+					notice : new common.ui.data.Announce(),
+					new: true,
+					update : function(e){
+						var $this = this, 
+						
+					}	
+				});	
+			}	
+			kendo.bind( renderTo, model);
+			renderTo.data("model", model);	
+			var bodyEditor =  $("#notice-editor-body" );
+			createEditor( "notice-editor" , bodyEditor );					
 		}
 
 		function createAnnounceEditorSection(source){			
