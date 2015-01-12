@@ -1011,8 +1011,8 @@
 										</fieldset>												
 									</div>								
 								</div>
-								<div id="my-notice-edit" class="col-sm-8" >
-									<div class="sky-form" style="display:none;">
+								<div id="my-notice-edit" class="col-sm-8" style="display:none;">
+									<div class="sky-form" >
 										<header>
 											<h5 data-bind="visible: new">
 												<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
