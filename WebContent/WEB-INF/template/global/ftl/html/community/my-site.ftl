@@ -924,15 +924,22 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">
+									<div class="sky-form"
+										<header>
+											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+												<label class="btn btn-info btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+												</label>
+												<label class="btn btn-info btn-sm rounded-right">
+													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+												</label>
+											</div>	
+										</header>
+									
+									</div>
+									
 									<div class="p-xxs">
-										<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-											<label class="btn btn-info btn-sm active rounded-left">
-												<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-											</label>
-											<label class="btn btn-info btn-sm rounded-right">
-												<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-											</label>
-										</div>
+										
 									</div>
 									<hr/>
 									<div class="p-xxs">
