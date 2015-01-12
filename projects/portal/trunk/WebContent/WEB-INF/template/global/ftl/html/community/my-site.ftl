@@ -498,9 +498,8 @@
 		<!-- Notice														-->
 		<!-- ============================== -->
 		function createNoticeSection(){
-			var renderTo = $("#my-notice-listview");
-
-
+			
+			var renderTo = $("#my-notice-grid");
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();			
 				var model = new common.ui.observable({ 
@@ -552,96 +551,52 @@
 						}
 					}
 				);
-				
-			var renderTo2 = $("#my-notice-grid");
-			common.ui.grid( renderTo2, {
-				dataSource: {
-					serverFiltering: false,
-					transport: { 
-						read: { url:'<@spring.url "/data/announce/list.json"/>', type: 'POST' },
-						parameterMap: function (options, type){
-							return {objectType: common.ui.defined(options.objectType) ? options.objectType :noticeSourceList.value , startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() }						
-						}
-					},					
-					schema: {
-						total: "totalCount",
-						data: "announces",
-						model: common.ui.data.Announce
-					},
-					batch: false,
-					pageSize: 15,
-					serverPaging: false,
-					serverFiltering: false,
-					serverSorting: false
-				},
-				columns: [
-					{ field: "announceId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
-					{ field: "subject", title: "제목", width: 350, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}},					
-					{ field: "subject", title: "소스", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center"},	template: '# if (objectType == 30) { # <span class="label label-info">웹사이트</span>	# }else{ # <span class="label label-danger">회사</span># } #	' },					
-					{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'<img width="25" height="25" class="img-circle" src="#: authorPhotoUrl() #" style="margin-right:10px;"> #if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
-					{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
-					{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
-				filterable: true,
-				sortable: true,
-				resizable: true,
-				pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-				selectable: 'row',
-				height: '100%',
-				change: function(e) {                    
-					var selectedCells = this.select();                 
-					if( selectedCells.length > 0){ 
-						var selectedCell = this.dataItem( selectedCells ); 
-						selectedCell.copy( model.notice );
-							model.set("visible", true);
-							
- 					} 						
-				},
-				dataBound: function(e){		
-					//$("button.btn-page-control-group").attr("disabled", "disabled");
-				}			
-			} );		
-			
-							
-				common.ui.listview(	renderTo, {
-						dataSource : common.ui.datasource(
-							'<@spring.url "/data/announce/list.json"/>',
-							{
-								transport : {
-									parameterMap: function(options, operation) {
-										if( typeof options.objectType === "undefined"  ){	
-											return {objectType: noticeSourceList.value, startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() };	
-										}else{			
-											return options;		
-										} 
-									}
-								},
-								serverPaging: false,
-								schema: {
-									data : "announces",
-									model : common.ui.data.Announce
-								}
+				common.ui.grid( renderTo, {
+					dataSource: {
+						serverFiltering: false,
+						transport: { 
+							read: { url:'<@spring.url "/data/announce/list.json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return {objectType: common.ui.defined(options.objectType) ? options.objectType :noticeSourceList.value , startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() }						
 							}
-						),
-						template: kendo.template($("#notice-listview-item-template").html()),
-						selectable: "single" ,
-						dataBound: function(e){
-							model.set("visible", false);
+						},					
+						schema: {
+							total: "totalCount",
+							data: "announces",
+							model: common.ui.data.Announce
 						},
-						change: function(e){						
-							var selectedCells = this.select();
-							var selectedCell = this.dataItem( selectedCells );	
-							
+						batch: false,
+						pageSize: 15,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false
+					},
+					columns: [
+						{ field: "announceId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
+						{ field: "subject", title: "제목", width: 350, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}},					
+						{ field: "subject", title: "소스", width: 80, headerAttributes: { "class": "table-header-cell", style: "text-align: center"},	template: '# if (objectType == 30) { # <span class="label label-info">웹사이트</span>	# }else{ # <span class="label label-danger">회사</span># } #	' },					
+						{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'<img width="25" height="25" class="img-circle" src="#: authorPhotoUrl() #" style="margin-right:10px;"> #if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
+						{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+						{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
+					filterable: true,
+					sortable: true,
+					resizable: true,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+					selectable: 'row',
+					height: '100%',
+					change: function(e) {                    
+						var selectedCells = this.select();                 
+						if( selectedCells.length > 0){ 
+							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy( model.notice );
-							model.set("visible", true);
-										
-							//if(!common.ui.visible(viewRenderTo)){
-							//	viewRenderTo.slideDown();
-							//}						
-							//common.ui.scroll.top(viewRenderTo, -20);
-						}
-					}
-				);
-				common.ui.pager($("#my-notice-listview-pager"), {dataSource: common.ui.listview(renderTo).dataSource });			
+								model.set("visible", true);
+								
+	 					} 						
+					},
+					dataBound: function(e){		
+						//$("button.btn-page-control-group").attr("disabled", "disabled");
+					}			
+				} );	
 			}		
 		}
 				
