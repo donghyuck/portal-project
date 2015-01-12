@@ -537,7 +537,8 @@
 						}
 					},
 					refresh : function(e){
-						common.ui.listview(renderTo).dataSource.read();					
+						common.ui.listview(renderTo).dataSource.read();		
+						common.ui.grid(renderTo2).dataSource.read();					
 					}	
 				});
 				common.ui.bind($("#my-site-notice"), model );				
@@ -547,6 +548,7 @@
 					{
 						change: function(e){						
 							common.ui.listview(renderTo).dataSource.read({objectType:e.value, startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() });
+							common.ui.grid(renderTo2).dataSource.read({objectType:e.value});
 						}
 					}
 				);
