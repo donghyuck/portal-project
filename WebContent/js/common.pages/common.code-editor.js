@@ -9,7 +9,7 @@ function createEditor( renderToString, bodyEditor, options ){
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		
-		htmlEditor.open();
+		alert( htmlEditor );
 		
 		bodyEditor.kendoEditor({
 				tools : [ 'bold', 'italic', 'insertUnorderedList', 'insertOrderedList',
