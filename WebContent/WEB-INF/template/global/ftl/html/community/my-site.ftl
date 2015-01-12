@@ -626,6 +626,10 @@
 					renderTo.data("model").set("new", false); 					
 				} 
 			}
+			
+			$("#my-notice-view").fadeOut( "slow", function(e){
+				renderTo.fadeIn();
+			} );
 		}
 
 		function createAnnounceEditorSection(source){			
@@ -1008,7 +1012,7 @@
 									</div>								
 								</div>
 								<div id="my-notice-edit" class="col-sm-8" >
-									<div class="sky-form" style="display:none;"  data-bind="visible: visible">
+									<div class="sky-form" style="display:none;">
 										<header>
 											<h5 data-bind="visible: new">
 												<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
