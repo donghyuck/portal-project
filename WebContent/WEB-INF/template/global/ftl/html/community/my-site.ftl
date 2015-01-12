@@ -1024,13 +1024,14 @@
 													<input type="text" name="title" placeholder="제목" data-bind="value: notice.subject" >
 												</label>
 											</section>		
+											<section>
+												<label class="label">공지 기간</label>
+												<input data-role="datetimepicker" data-bind="value:notice.startDate"> ~ <input data-role="datetimepicker" data-bind="value:notice.endDate">
+												<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
+											</section>		
 											<div class="row">
 												<div class="col col-6">
-													<section>
-														<label class="label">공지 기간</label>
-														<input data-role="datetimepicker" data-bind="value:notice.startDate"> ~ <input data-role="datetimepicker" data-bind="value:notice.endDate">
-														<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
-													</section>												
+																							
 												</div>
 												<div class="col col-6">
 												</div>												
