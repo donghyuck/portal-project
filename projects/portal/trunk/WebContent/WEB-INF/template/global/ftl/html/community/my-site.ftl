@@ -602,7 +602,7 @@
 		
 		function createNoticeEditorSection(source){
 			alert( source );
-			var renderTo = $("my-notice-edit");		
+			var renderTo = $("#my-notice-edit");		
 			if( !renderTo.data("model")){
 				var model =  common.ui.observable({ 
 					notice : new common.ui.data.Announce(),
