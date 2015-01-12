@@ -951,9 +951,7 @@
 									<div class="p-xxs text-right">
 										<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 									</div>		
-									<div id="my-notice-grid"></div>							
-									<div id="my-notice-listview" class="bordered no-border-b"></div>
-									<div id="my-notice-listview-pager" class="bordered"></div>										
+									<div id="my-notice-grid"></div>															
 								</div>
 								<div id="my-notice-view" class="col-sm-8">
 											<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
