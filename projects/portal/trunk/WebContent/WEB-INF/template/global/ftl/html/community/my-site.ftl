@@ -928,7 +928,7 @@
 								{ collapsible: false, size: '70px' }
 							 ]"
 						data-orientation="horizontal"
-						style="width: 420px">
+						style="width: 100%">
 							<div>a</div>
 							<div>b</div>						
 						</div>
