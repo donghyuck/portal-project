@@ -565,7 +565,7 @@ padding: 20px 10px;
 }
 
 .bordered {
-	border: 1px solid #e4e4e4
+	border: 1px solid #e4e4e4 !important;
 }
 
 .bordered[class*=bg-],[class*=bg-] .border-t {
@@ -1117,6 +1117,8 @@ body:not  (.right-to-left  ) .no-border-l {
 .panel-warning .panel-heading .k-window-actions  a.k-link:hover {
 	background-color: #ebccd1;
 }
+
+
 
 /* Loader
 ------------------------------------*/
