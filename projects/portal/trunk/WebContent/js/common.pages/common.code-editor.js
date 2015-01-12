@@ -91,14 +91,17 @@ function createCodeEditor( renderToString, editor, options ) {
 		var p = kendo.Class.extend({			
 			ace : null,
 			editor : null,
+			init: function(ace, editor) {
+				this.editor = editor;
+				this.ace = ace;
+			},
 			open : function(){				
 				this.editor.data("kendoEditor").value( this.ace.getValue() );				
 			}			
 		});
 		
 		return new p({
-			ace : _editor,
-			editor : editor
+			_editor, editor
 		});
 	}	
 }
