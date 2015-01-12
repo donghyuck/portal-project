@@ -947,6 +947,16 @@
 										</div>
 										<div class="col-sm-7">
 										
+											<div class="sky-form">
+												<header data-bind="html:notice.subject"></header>
+												<fieldset>fsad</fieldset>
+												<section>fdsaf</section>
+												<footer class="text-right">
+													<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+													<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>	
+												</footer>
+											</div>
+										
 										
 								<div class="panel panel-default no-border no-margin-b animated fadeIn"  style="display:none;"  data-bind="visible: visible">
 									<div class="panel-heading">
@@ -955,7 +965,7 @@
 											<button class="btn btn-primary btn-sm rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i>  편집</button>
 										</div>
 										<ul class="list-unstyled">
-											<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:noticeformattedEndDate"></span></li>
+											<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
 											<hr>	
 											<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: notice.formattedCreationDate"></span></li>
 											<hr>	
