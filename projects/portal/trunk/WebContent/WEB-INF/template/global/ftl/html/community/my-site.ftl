@@ -950,6 +950,14 @@
 											<div class="sky-form">
 												<header data-bind="html:notice.subject"></header>
 												<fieldset>
+													<ul class="list-unstyled margin-bottom-30">
+														<li><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
+													</ul>
+													<ul class="list-unstyled list-inline blog-info">
+														<li><i class="fa fa-calendar"></i> February 02, 2013</li>
+														<li><i class="fa fa-pencil"></i> Diana Anderson</li>
+														<li><i class="fa fa-comments"></i> <a href="#">24 Comments</a></li>
+													</ul>
 													<ul class="list-unstyled">
 														<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
 														<hr>	
