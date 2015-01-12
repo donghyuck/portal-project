@@ -947,7 +947,7 @@
 										</div>
 										<div class="col-sm-7">
 										
-											<div class="sky-form" style="display:none;"  data-bind="visible: visible">
+											<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
 												<header data-bind="html:notice.subject"></header>
 												<fieldset>
 													<ul class="list-unstyled margin-bottom-30">
