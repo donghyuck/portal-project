@@ -608,6 +608,7 @@
 					new: true,
 					update : function(e){
 						var $this = this;
+					}	
 				});	
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);	
