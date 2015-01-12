@@ -578,7 +578,7 @@
 							var selectedCell = this.dataItem( selectedCells );	
 							
 							selectedCell.copy( model.notice );
-							model.set("visible", false);
+							model.set("visible", true);
 										
 							//if(!common.ui.visible(viewRenderTo)){
 							//	viewRenderTo.slideDown();
