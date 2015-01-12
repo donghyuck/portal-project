@@ -614,7 +614,7 @@
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);	
 				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor );
+				createEditor( "notice-editor" , bodyEditor, { modal : false , renderTo:"notice-code-editor"} );
 			}	
 			
 			if( source ){
@@ -1040,6 +1040,7 @@
 										<section class="no-margin">	
 											<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
 										</section>	
+										
 										<footer class="text-right">
 											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 										</footer>										
