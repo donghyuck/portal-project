@@ -952,6 +952,8 @@
 												<fieldset>
 													<ul class="list-unstyled margin-bottom-30">
 														<li><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
+														<li><strong>생성일:</strong> <span data-bind="text: notice.formattedCreationDate"></span></li>
+														<li><strong>수정일:</strong> <span data-bind="text: notice.formattedModifiedDate"></span></li>
 													</ul>
 													<ul class="list-unstyled list-inline blog-info">
 														<li><i class="fa fa-calendar"></i> February 02, 2013</li>
