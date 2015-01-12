@@ -85,15 +85,12 @@ function createCodeEditor( renderToString, editor, options ) {
 		}	
 		var _editor = ace.edit(renderToString);
 		_editor.getSession().setMode(settings.mode);
-		_editor.getSession().setUseWrapMode(settings.useWrapMode);
-		
-		var p = new kendo.Class.extend({
+		_editor.getSession().setUseWrapMode(settings.useWrapMode);		
+		return new kendo.Class.extend({
 			open : function(){
 				this.editor.data("kendoEditor").value( _editor.getValue() );				
 			}			
-		});
-		
-		return new p();
+		});;
 	}	
 }
 		
