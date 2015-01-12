@@ -922,6 +922,16 @@
 							</div>	
 						</div>
 						<div id="my-site-notice" style="display:none;">
+						<div data-role="splitter"
+							data-panes="[
+								{ collapsible: false },
+								{ collapsible: false, size: '70px' }
+							 ]"
+						data-orientation="vertical"
+						style="width: 420px">
+							<div></div>
+							<div></div>						
+						</div>
 							<div class="row">
 								<div id="my-notice-list" style="float:left; width:350px;">
 									<div class="p-xxs">
