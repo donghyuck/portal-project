@@ -83,13 +83,13 @@ function createCodeEditor( renderToString, editor, options ) {
 		if( $("#"+ renderToString).length == 0 ){
 			editor.parent().append('<div id="'+ renderToString +'"></div>');	
 		}	
-		var editor = ace.edit(renderToString);
-		editor.getSession().setMode(settings.mode);
-		editor.getSession().setUseWrapMode(settings.useWrapMode);
+		var _editor = ace.edit(renderToString);
+		_editor.getSession().setMode(settings.mode);
+		_editor.getSession().setUseWrapMode(settings.useWrapMode);
 		
 		var p = new kendo.Class.extend({
 			open : function(){
-				editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );				
+				this.editor.data("kendoEditor").value( _editor.edit("htmleditor").getValue() );				
 			}			
 		});
 		
