@@ -607,10 +607,8 @@
 					notice : new common.ui.data.Announce(),
 					new: true,
 					update : function(e){
-						var $this = this, 
-						
-					}	
-					});	
+						var $this = this;
+				});	
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);	
 				var bodyEditor =  $("#notice-editor-body" );
