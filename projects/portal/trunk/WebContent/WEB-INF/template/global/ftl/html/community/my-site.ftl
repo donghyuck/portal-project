@@ -508,7 +508,7 @@
 					edit : function(e){
 						e.stopPropagation();
 						common.ui.scroll.top($("#my-site-notice").parent());
-						createNoticeEditorSection(this.announce);	
+						createNoticeEditorSection(this.notice);	
 					},
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
@@ -602,84 +602,12 @@
 				} );	
 			}		
 		}
-				
 		
-		function createAnnounceSection(){
-			
-			var renderTo = $("#my-announce-section");
-			var listRenderTo = $("#my-announce-section .my-announce-list");
-			var viewRenderTo = $("#my-announce-section .my-announce-view");			
-			var model =  common.ui.observable({ 
-				announce : new common.ui.data.Announce(),
-				editable : false,
-				visible : false,
-				new : function(e){
-					e.stopPropagation();
-					common.ui.scroll.top(renderTo.parent());
-					$(".morphing").toggleClass("open");					
-				},
-				edit : function(e){
-					e.stopPropagation();
-					common.ui.scroll.top(renderTo.parent());
-					createAnnounceEditorSection(this.announce);
-					$(".morphing").toggleClass("open");					
-				}
-			});			
-			model.bind("change", function(e){				
-				if( e.field == "announce.user" ){ 				
-					if( getCurrentUser().userId == this.get(e.field).userId )
-						this.set("editable", true);
-				}
-			});
-			var announceSelector = common.ui.buttonGroup(
-				$("#announce-selector"),
-				{
-					change: function(e){						
-						listRenderTo.data("kendoListView").dataSource.read({objectType:e.value});
-					}
-				}
-			);				
-			kendo.bind(viewRenderTo, model );
-			common.ui.listview(	listRenderTo, {
-					dataSource : common.ui.datasource(
-						'<@spring.url "/data/announce/list.json"/>',
-						{
-							transport : {
-								parameterMap: function(options, operation) {
-									if( typeof options.objectType === "undefined"  ){
-										return {objectType: announceSelector.value };	
-									}else{			
-										return options;		
-									} 
-								}
-							},
-							schema: {
-								data : "announces",
-								model : common.ui.data.Announce,
-								total : "totalCount"
-							}
-						}
-					),
-					template: kendo.template($("#announce-listview-item-template").html()),
-					selectable: "single" ,
-					dataBound: function(e){
-						model.set("visible", false);
-					},
-					change: function(e){						
-						var selectedCells = this.select();
-						var selectedCell = this.dataItem( selectedCells );	
-						selectedCell.copy( model.announce );			
-						model.set("visible", false);			
-						if(!common.ui.visible(viewRenderTo)){
-							viewRenderTo.slideDown();
-						}						
-						common.ui.scroll.top(viewRenderTo, -20);
-					}
-				}
-			);
-			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
+		function createNoticeEditorSection(notice){
+		
+		
 		}
-		
+
 		function createAnnounceEditorSection(source){			
 			var renderTo = $(".morphing");		
 			if( !renderTo.data("model")){
@@ -776,6 +704,84 @@
 			}		
 			renderTo.data("model").set("changed", false);
 		}
+				
+		function createAnnounceSection(){
+			
+			var renderTo = $("#my-announce-section");
+			var listRenderTo = $("#my-announce-section .my-announce-list");
+			var viewRenderTo = $("#my-announce-section .my-announce-view");			
+			var model =  common.ui.observable({ 
+				announce : new common.ui.data.Announce(),
+				editable : false,
+				visible : false,
+				new : function(e){
+					e.stopPropagation();
+					common.ui.scroll.top(renderTo.parent());
+					$(".morphing").toggleClass("open");					
+				},
+				edit : function(e){
+					e.stopPropagation();
+					common.ui.scroll.top(renderTo.parent());
+					createAnnounceEditorSection(this.announce);
+					$(".morphing").toggleClass("open");					
+				}
+			});			
+			model.bind("change", function(e){				
+				if( e.field == "announce.user" ){ 				
+					if( getCurrentUser().userId == this.get(e.field).userId )
+						this.set("editable", true);
+				}
+			});
+			var announceSelector = common.ui.buttonGroup(
+				$("#announce-selector"),
+				{
+					change: function(e){						
+						listRenderTo.data("kendoListView").dataSource.read({objectType:e.value});
+					}
+				}
+			);				
+			kendo.bind(viewRenderTo, model );
+			common.ui.listview(	listRenderTo, {
+					dataSource : common.ui.datasource(
+						'<@spring.url "/data/announce/list.json"/>',
+						{
+							transport : {
+								parameterMap: function(options, operation) {
+									if( typeof options.objectType === "undefined"  ){
+										return {objectType: announceSelector.value };	
+									}else{			
+										return options;		
+									} 
+								}
+							},
+							schema: {
+								data : "announces",
+								model : common.ui.data.Announce,
+								total : "totalCount"
+							}
+						}
+					),
+					template: kendo.template($("#announce-listview-item-template").html()),
+					selectable: "single" ,
+					dataBound: function(e){
+						model.set("visible", false);
+					},
+					change: function(e){						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+						selectedCell.copy( model.announce );			
+						model.set("visible", false);			
+						if(!common.ui.visible(viewRenderTo)){
+							viewRenderTo.slideDown();
+						}						
+						common.ui.scroll.top(viewRenderTo, -20);
+					}
+				}
+			);
+			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
+		}
+		
+
 		
 
 		-->
