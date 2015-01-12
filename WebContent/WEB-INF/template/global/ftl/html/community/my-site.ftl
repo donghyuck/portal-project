@@ -924,10 +924,10 @@
 						<div id="my-site-notice" style="display:none;">
 						<div data-role="splitter"
 							data-panes="[
-								{ collapsible: true, size: "300px"},
+								{ collapsible: true, size: '300px'},
 								{ collapsible: true}
 							 ]"
-							 data-orientation-="horizontal"
+						data-orientation-="horizontal"
 						style="width: 100%">
 						
 							<div>dfasdsa</div>	
