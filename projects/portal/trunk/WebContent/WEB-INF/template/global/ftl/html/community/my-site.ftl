@@ -539,7 +539,7 @@
 						common.ui.grid(renderTo).dataSource.read();					
 					}	
 				});
-				common.ui.bind($("#my-site-notice"), model );				
+				common.ui.bind($("#my-notice-list, #my-notice-view"), model );				
 			
 				var noticeSourceList = common.ui.buttonGroup(
 					$("#notice-source-list"),
@@ -975,8 +975,9 @@
 											<section  data-bind="html:notice.body"></section>
 										</fieldset>												
 									</div>								
-								</div>													
-							</div>
+								</div>
+																					
+							</div><!-- /.row -->
 						</div><!-- /. my-site-notice -->	
 						<div id="my-page">
 							<div class="row">
