@@ -927,6 +927,7 @@
 								{ collapsible: true, size: "300px"},
 								{ collapsible: true}
 							 ]"
+							 data-orientation-="horizontal"
 						style="width: 100%">
 						
 							<div>dfasdsa</div>	
