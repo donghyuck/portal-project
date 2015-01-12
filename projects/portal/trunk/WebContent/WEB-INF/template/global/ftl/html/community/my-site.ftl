@@ -924,7 +924,7 @@
 						<div id="my-site-notice" style="display:none;">
 						<div data-role="splitter"
 							data-panes="[
-								{ collapsible: false },
+								{ collapsible: true },
 								{ collapsible: false, size: '70px' }
 							 ]"
 						data-orientation="horizontal"
