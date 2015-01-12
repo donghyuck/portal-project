@@ -945,8 +945,7 @@
 											<div id="my-notice-listview" class="bordered no-border-b"></div>
 											<div id="my-notice-listview-pager" class="bordered"></div>									
 										</div>
-										<div class="col-sm-7">
-										
+										<div class="col-sm-7">										
 											<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
 												<header data-bind="html:notice.subject"></header>
 												<fieldset>
@@ -971,34 +970,6 @@
 													<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>	
 												</footer>
 											</div>
-										
-										
-								<div class="panel panel-default no-border no-margin-b animated fadeIn"  style="display:none;"  data-bind="visible: visible">
-									<div class="panel-heading">
-										<h4 data-bind="html:notice.subject"></h4>
-										<div class="panel-header-controls" data-bind="visible:editable">
-											<button class="btn btn-primary btn-sm rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i>  편집</button>
-										</div>
-										<ul class="list-unstyled">
-											<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
-											<hr>	
-											<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: notice.formattedCreationDate"></span></li>
-											<hr>	
-											<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: notice.formattedModifiedDate"></span></li>
-											<hr>	
-											<li class="text-muted">
-												<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:notice.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-												<ul class="list-unstyled text-muted">
-													<li><span data-bind="visible: notice.user.nameVisible, text: notice.user.name"></span><code data-bind="text: notice.user.username"></code></li>
-													<li><span data-bind="visible: notice.user.emailVisible, text: notice.user.email"></span></li>
-												</ul>																
-											</li>	
-											<hr>	
-										</ul>	
-									</div><!-- /.panel-heading -->
-									<div class="panel-body padding-sm" data-bind="html:notice.body"></div>
-								</div><!-- /.panel -->															
-										
 										
 										</div>	
 								</div>
