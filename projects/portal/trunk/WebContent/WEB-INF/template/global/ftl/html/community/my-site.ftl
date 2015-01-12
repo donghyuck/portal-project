@@ -923,23 +923,12 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
-								<div style="float:left; width:350px;">
-								</div>
-								<div style="float:left; width:auto;">
-								</div>								
-							</div>
-	
-								
-								
-								
-							<div id="my-notice-list">	
-									<div class="row">
-										<div class="col-sm-5">
-											<div class="p-xxs">
-											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-												<label class="btn btn-info btn-sm active rounded-left">
-													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-												</label>
+								<div id="my-notice-list" style="float:left; width:350px;">
+									<div class="p-xxs">
+										<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+											<label class="btn btn-info btn-sm active rounded-left">
+												<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+											</label>
 												<label class="btn btn-info btn-sm rounded-right">
 													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 												</label>
@@ -952,7 +941,19 @@
 											<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 											</div>											
 											<div id="my-notice-listview" class="bordered no-border-b"></div>
-											<div id="my-notice-listview-pager" class="bordered"></div>									
+											<div id="my-notice-listview-pager" class="bordered"></div>										
+								</div>
+								<div style="float:left; width:auto;">
+								</div>								
+							</div>
+	
+								
+								
+								
+							<div >	
+									<div class="row">
+										<div class="col-sm-5">
+																		
 										</div>
 										<div class="col-sm-7">										
 											<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
