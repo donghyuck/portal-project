@@ -922,19 +922,8 @@
 							</div>	
 						</div>
 						<div id="my-site-notice" style="display:none;">
-						<div data-role="splitter"
-							data-panes="[
-								{ collapsible: true, size: '300px'},
-								{ collapsible: true}
-							 ]"
-						data-orientation-="horizontal"
-						style="width: 100%">
-						
-							<div>dfasdsa</div>	
-							<div>b</div>				
-						</div>
 							<div class="row">
-								<div id="my-notice-list" style="float:left; width:350px;">
+								<div id="my-notice-list" class="col-sm-4">
 									<div class="p-xxs">
 										<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 											<label class="btn btn-info btn-sm active rounded-left">
@@ -954,7 +943,7 @@
 									<div id="my-notice-listview" class="bordered no-border-b"></div>
 									<div id="my-notice-listview-pager" class="bordered"></div>										
 								</div>
-								<div id="my-notice-view" style="float:left; width:auto;">
+								<div id="my-notice-view" class="col-sm-8">
 
 											<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
 												<header data-bind="html:notice.subject"></header>
