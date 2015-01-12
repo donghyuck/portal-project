@@ -95,8 +95,9 @@ function createCodeEditor( renderToString, editor, options ) {
 				this.editor = editor;
 				this.ace = ace;
 			},
-			open : function(){				
-				this.editor.data("kendoEditor").value( this.ace.getValue() );				
+			open : function(){		
+				this.editor.faceOut();
+				this.ace.setValue( this.editor.data("kendoEditor").value() )
 			}			
 		});
 		
