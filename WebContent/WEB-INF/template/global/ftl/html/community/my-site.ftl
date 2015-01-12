@@ -950,7 +950,8 @@
 											<div class="sky-form">
 												<header data-bind="html:notice.subject"></header>
 												<fieldset>fsad</fieldset>
-												<section>fdsaf</section>
+												<fieldset>fsad</fieldset>
+												<section class="padding-sm" data-bind="html:notice.body">fdsaf</section>
 												<footer class="text-right">
 													<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 													<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>	
