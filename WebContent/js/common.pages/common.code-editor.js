@@ -7,7 +7,7 @@ function createEditor( renderToString, bodyEditor, options ){
 	if(!bodyEditor.data("kendoEditor") ){			
 		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-		var htmlEditor = createCodeEditor(renderToString + "-html-editor", bodyEditor, options );							
+		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		
 		
 		bodyEditor.kendoEditor({
