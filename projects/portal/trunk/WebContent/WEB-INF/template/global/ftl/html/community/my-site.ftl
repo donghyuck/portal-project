@@ -505,6 +505,11 @@
 				var model = new common.ui.observable({ 
 					notice : new common.ui.data.Announce(),
 					visible : false,
+					edit : function(e){
+						e.stopPropagation();
+						common.ui.scroll.top($("#my-site-notice").parent());
+						createNoticeEditorSection(this.announce);	
+					},
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
 					startDateChange: function(e) {
