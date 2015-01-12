@@ -92,7 +92,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			ace : null,
 			editor : null,
 			open : function(){				
-				this.editor.data("kendoEditor").value( ace.getValue() );				
+				this.editor.data("kendoEditor").value( this.ace.getValue() );				
 			}			
 		});
 		
