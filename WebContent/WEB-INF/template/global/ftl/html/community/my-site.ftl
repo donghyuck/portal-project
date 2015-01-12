@@ -951,13 +951,10 @@
 												<header data-bind="html:notice.subject"></header>
 												<fieldset>
 													<ul class="list-unstyled margin-bottom-30">
-														<li><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
-														<hr/>	
-														<li><strong>생성일:</strong> <span data-bind="text: notice.formattedCreationDate"></span></li>
-														<hr/>
-														<li><strong>수정일:</strong> <span data-bind="text: notice.formattedModifiedDate"></span></li>
-														<hr/>
-														<li>
+														<li class="p-xxs"><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
+														<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: notice.formattedCreationDate"></span></li>
+														<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: notice.formattedModifiedDate"></span></li>
+														<li class="p-xxs">
 															<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:notice.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 															<ul class="list-unstyled text-muted">
 																<li><span data-bind="visible: notice.user.nameVisible, text: notice.user.name"></span><code data-bind="text: notice.user.username"></code></li>
