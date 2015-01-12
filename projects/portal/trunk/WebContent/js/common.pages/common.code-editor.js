@@ -89,12 +89,17 @@ function createCodeEditor( renderToString, editor, options ) {
 		_editor.getSession().setUseWrapMode(settings.useWrapMode);		
 		
 		var p = kendo.Class.extend({			
-			open : function(){
-				editor.data("kendoEditor").value( _editor.getValue() );				
+			ace : null,
+			editor : null,
+			open : function(){				
+				this.editor.data("kendoEditor").value( ace.getValue() );				
 			}			
 		});
 		
-		return new p();
+		return new p({
+			ace : _editor,
+			editor : editor
+		});
 	}	
 }
 		
