@@ -89,7 +89,7 @@ function createCodeEditor( renderToString, editor, options ) {
 		
 		var p = new kendo.Class.extend({
 			open : function(){
-				this.editor.data("kendoEditor").value( _editor.edit("htmleditor").getValue() );				
+				this.editor.data("kendoEditor").value( _editor.getValue() );				
 			}			
 		});
 		
