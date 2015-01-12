@@ -924,40 +924,27 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">
-									<div class="sky-form">
-										<header>
-											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-												<label class="btn btn-info btn-sm active rounded-left">
-													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-												</label>
-												<label class="btn btn-info btn-sm rounded-right">
-													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-												</label>
-											</div>	
-										</header>
-										<fieldset>
-											<section>
-												<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
-												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
-												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>											
-											</section>
-											<section>
-									<div id="my-notice-listview" class="bordered no-border-b"></div>
-									<div id="my-notice-listview-pager" class="bordered"></div>												
-											</section>
-										</fieldset>
-									</div>
-									
+					
 									<div class="p-xxs">
-										
+										<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+											<label class="btn btn-info btn-sm active rounded-left">
+												<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+											</label>
+											<label class="btn btn-info btn-sm rounded-right">
+												<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+											</label>
+										</div>
 									</div>
 									<hr/>
 									<div class="p-xxs">
-										</div>		
+										<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+										<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
+									</div>		
 									<div class="p-xxs">
-										
+										<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 									</div>									
-									
+									<div id="my-notice-listview" class="bordered no-border-b"></div>
+									<div id="my-notice-listview-pager" class="bordered"></div>										
 								</div>
 								<div id="my-notice-view" class="col-sm-8">
 
