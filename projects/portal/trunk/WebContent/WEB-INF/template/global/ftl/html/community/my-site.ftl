@@ -606,6 +606,7 @@
 				var model =  common.ui.observable({ 
 					notice : new common.ui.data.Announce(),
 					new: true,
+					visible : true,
 					update : function(e){
 						var $this = this;
 					}	
