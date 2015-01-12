@@ -503,6 +503,7 @@
 				var now = new Date();			
 				var model = new common.ui.observable({ 
 					notice : common.ui.data.Announce(),
+					visible : false,
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
 					startDateChange: function(e) {
@@ -570,13 +571,15 @@
 						template: kendo.template($("#notice-listview-item-template").html()),
 						selectable: "single" ,
 						dataBound: function(e){
-							//model.set("visible", false);
+							model.set("visible", false);
 						},
 						change: function(e){						
 							var selectedCells = this.select();
 							var selectedCell = this.dataItem( selectedCells );	
+							
 							selectedCell.copy( model.notice );
-							//model.set("visible", false);			
+							model.set("visible", false);
+										
 							//if(!common.ui.visible(viewRenderTo)){
 							//	viewRenderTo.slideDown();
 							//}						
