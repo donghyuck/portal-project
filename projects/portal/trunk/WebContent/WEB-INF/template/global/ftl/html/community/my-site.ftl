@@ -927,10 +927,10 @@
 								{ collapsible: true},
 								{ collapsible: false}
 							 ]"
-						data-orientation="horizontal"
 						style="width: 100%">
-							<div><div class="pane-content">a</div></div>	
-							<div><div class="pane-content">b</div></div>							
+						
+							<div id="left-pane"><div class="pane-content">a</div></div>	
+							<div id="center-pane"><div class="pane-content">b</div></div>							
 						</div>
 							<div class="row">
 								<div id="my-notice-list" style="float:left; width:350px;">
