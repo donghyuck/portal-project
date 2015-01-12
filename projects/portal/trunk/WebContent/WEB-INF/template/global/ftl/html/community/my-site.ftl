@@ -923,9 +923,9 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
-								<div class="col-sm-5">
+								<div style="float:left; width:350px;">
 								</div>
-								<div class="col-sm-7">
+								<div style="float:left; width:auto;">
 								</div>								
 							</div>
 	
