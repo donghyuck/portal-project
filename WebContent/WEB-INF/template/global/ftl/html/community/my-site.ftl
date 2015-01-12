@@ -924,8 +924,8 @@
 						<div id="my-site-notice" style="display:none;">
 						<div data-role="splitter"
 							data-panes="[
-								{ collapsible: true},
-								{ collapsible: false}
+								{ collapsible: true, size: "100px"},
+								{ collapsible: false }
 							 ]"
 						style="width: 100%">
 						
