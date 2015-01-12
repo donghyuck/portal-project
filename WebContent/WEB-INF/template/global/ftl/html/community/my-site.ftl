@@ -559,10 +559,10 @@
 										} 
 									}
 								},
+								serverPaging: false,
 								schema: {
 									data : "announces",
-									model : common.ui.data.Announce,
-									total : "totalCount"
+									model : common.ui.data.Announce
 								}
 							}
 						),
