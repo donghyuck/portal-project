@@ -68,8 +68,13 @@
 	    	return kendo.toString(this.get("endDate"), "g");
 	    },    
 	    copy: function ( target ){
+	    	
+	    	alert( kendo.stringify( target ));
+	    	
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set("user", this.get("user") );
+	    	
+	    	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.set("properties", this.get("properties") );	    	
 	    	target.announceId = this.get("announceId");
