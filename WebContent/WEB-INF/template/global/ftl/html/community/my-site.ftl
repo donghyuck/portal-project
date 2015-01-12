@@ -821,6 +821,11 @@
 			min-height: 500px;			
 		}
 		
+		#my-notice-listview.k-listview .k-state-selected
+		{
+			background : #F5F5F5;
+			color: #585f69;
+		}		
 		</style>   	
 		</#compress>
 	</head>
@@ -928,9 +933,11 @@
 											</div>
 											</div>
 											<hr/>
+											<div class="p-xxs">
 											<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
 											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
-											<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>											
+											<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
+											</div>											
 											<div id="my-notice-listview"></div>
 											<div id="my-notice-listview-pager"></div>									
 										</div>
