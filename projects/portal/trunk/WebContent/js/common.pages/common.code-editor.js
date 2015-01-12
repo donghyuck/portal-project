@@ -96,7 +96,7 @@ function createCodeEditor( renderToString, editor, options ) {
 				this.ace = ace;
 			},
 			open : function(){		
-				this.editor.faceOut();
+				this.editor.fadeOut();
 				this.ace.setValue( this.editor.data("kendoEditor").value() )
 			}			
 		});
