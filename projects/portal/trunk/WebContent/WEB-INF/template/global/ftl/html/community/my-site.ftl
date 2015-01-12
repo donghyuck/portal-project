@@ -922,7 +922,6 @@
 							</div>	
 						</div>
 						<div id="my-site-notice" style="display:none;">
-
 							<div id="my-notice-list">	
 									<div class="row">
 										<div class="col-sm-5">
@@ -974,19 +973,8 @@
 										</div>	
 								</div>
 							</div>		
-								<div id="my-notice-view" style="display:none;">
-									<div class="row">
-									<span class="back"></span>
-									<div class="sky-form">
-										<header>&nbsp;</header>
-										<footer class="text-right">
-											<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
-											<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>	
-										</footer>
-									</div>
-									</div>	
-								</div>	
-																											
+							<div id="my-notice-view" style="display:none;">
+							</div>
 						</div><!-- /. my-site-notice -->	
 						<div id="my-page">
 							<div class="row">
