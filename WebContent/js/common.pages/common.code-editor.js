@@ -45,7 +45,7 @@ function createEditor( renderToString, bodyEditor, options ){
 
 function createCodeEditor( renderToString, editor, options ) {		
 	
-	if( common.ui.defined(options.editor) ){
+	if( common.ui.defined(options) ){
 		
 		
 		return ;
