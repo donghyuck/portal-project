@@ -932,8 +932,7 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
-								<div id="my-notice-list" class="col-sm-4">
-					
+								<div id="my-notice-list" class="col-sm-4">					
 									<div class="p-xxs">
 										<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 											<label class="btn btn-info btn-sm active rounded-left">
@@ -957,7 +956,6 @@
 									<div id="my-notice-listview-pager" class="bordered"></div>										
 								</div>
 								<div id="my-notice-view" class="col-sm-8">
-
 											<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
 												<header data-bind="html:notice.subject"></header>
 												<fieldset>
@@ -981,25 +979,7 @@
 													<section  data-bind="html:notice.body"></section>
 												</fieldset>												
 											</div>								
-								
-								</div>								
-							</div>
-	
-								
-								
-								
-							<div >	
-									<div class="row">
-										<div class="col-sm-5">
-																		
-										</div>
-										<div class="col-sm-7">										
-											
-										
-										</div>	
-								</div>
-							</div>		
-							<div id="my-notice-view" style="display:none;">
+								</div>													
 							</div>
 						</div><!-- /. my-site-notice -->	
 						<div id="my-page">
