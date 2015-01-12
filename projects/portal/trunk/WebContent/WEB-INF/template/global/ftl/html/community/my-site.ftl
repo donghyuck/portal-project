@@ -987,7 +987,40 @@
 										</fieldset>												
 									</div>								
 								</div>
-																					
+								<div id="my-notice-edit" class="col-sm-8">
+
+											<div class="container">
+												<div class="row">
+													<div class="col-sm-12 p-sm">													
+														<h5 data-bind="visible: new">
+															<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
+														</h5>
+														<div class="panel panel-default ">
+															<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
+																<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: notice.subject"  class="form-control" placeholder="제목" /></h4>		
+															</div>			
+															<div class="panel-body p-xxs">									
+																<div  class="form">
+																	<div class="form-group">
+																		<label class="control-label">공지 기간</label>
+																		<div class="col-sm-12" >
+																			<input data-role="datetimepicker" data-bind="value:notice.startDate"> ~ <input data-role="datetimepicker" data-bind="value:notice.endDate">
+																			<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
+																		</div>
+																	</div>
+																	<label class="control-label">본문</label>
+																	<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
+																</div>						
+															</div>				
+														</div>										
+														<div class="text-right">
+															<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
+														</div>	
+													</div>
+												</div>
+											</div>
+																			
+								</div>													
 							</div><!-- /.row -->
 						</div><!-- /. my-site-notice -->	
 						<div id="my-page">
