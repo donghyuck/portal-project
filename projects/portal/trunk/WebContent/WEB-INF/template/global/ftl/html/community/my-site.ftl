@@ -499,6 +499,8 @@
 		<!-- ============================== -->
 		function createNoticeSection(){
 			var renderTo = $("#my-notice-listview");
+
+
 			if( !common.ui.exists(renderTo)){
 				var now = new Date();			
 				var model = new common.ui.observable({ 
@@ -548,6 +550,53 @@
 						}
 					}
 				);
+				
+			var renderTo2 = $("#my-notice-grid");
+			common.ui.grid( renderTo2, {
+				dataSource: {
+					serverFiltering: false,
+					transport: { 
+						read: { url:'<@spring.url "/data/announce/list.json"/>', type: 'POST' },
+						parameterMap: function (options, type){
+							return {objectType: noticeSourceList.value, startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() }
+						}
+					},					
+					schema: {
+						total: "totalCount",
+						data: "pages",
+						model: common.ui.data.Announce
+					},
+					batch: false,
+					pageSize: 15,
+					serverPaging: false,
+					serverFiltering: false,
+					serverSorting: false
+				},
+				columns: [
+					{ field: "announceId", title: "ID", width:50,  filterable: false, sortable: false , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }}, 
+					{ field: "subject", title: "제목", width: 350, headerAttributes: { "class": "table-header-cell", style: "text-align: center"}}, 
+				/*	{ field: "title", title: "제목", width: 350 , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template: $('#webpage-title-template').html() }, */
+					{ field: "user.username", title: "작성자", width: 100, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, template:'#if ( user.nameVisible ) {# #: user.name # #} else{ # #: user.username # #}#' },
+					{ field: "creationDate",  title: "생성일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+					{ field: "modifiedDate", title: "수정일", width: 120,  format:"{0:yyyy.MM.dd}", headerAttributes: { "class": "table-header-cell", style: "text-align: center" } } ],
+				filterable: true,
+				sortable: true,
+				resizable: true,
+				pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+				selectable: 'row',
+				height: '100%',
+				change: function(e) {                    
+					var selectedCells = this.select();                 
+					if( selectedCells.length > 0){ 
+						var selectedCell = this.dataItem( selectedCells ); 
+ 					} 						
+				},
+				dataBound: function(e){		
+					//$("button.btn-page-control-group").attr("disabled", "disabled");
+				}			
+			} );		
+			
+							
 				common.ui.listview(	renderTo, {
 						dataSource : common.ui.datasource(
 							'<@spring.url "/data/announce/list.json"/>',
@@ -942,7 +991,8 @@
 									</div>		
 									<div class="p-xxs text-right">
 										<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
-									</div>									
+									</div>		
+									<div id="my-notice-grid"></div>							
 									<div id="my-notice-listview" class="bordered no-border-b"></div>
 									<div id="my-notice-listview-pager" class="bordered"></div>										
 								</div>
