@@ -938,8 +938,8 @@
 											<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" /> 	~ 	<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
 											<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 											</div>											
-											<div id="my-notice-listview"></div>
-											<div id="my-notice-listview-pager"></div>									
+											<div id="my-notice-listview" class="bordered no-border-b"></div>
+											<div id="my-notice-listview-pager" class="bordered"></div>									
 										</div>
 										<div class="col-sm-7">
 										
