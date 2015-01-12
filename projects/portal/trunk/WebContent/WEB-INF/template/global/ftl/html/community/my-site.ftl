@@ -979,7 +979,7 @@
 												</li>
 											</ul>
 											<div class="text-right">
-												<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">편집</button>
+												<button type="button" class="btn-u" data-bind="events:{click:edit}">편집</button>
 											</div>													
 										</fieldset>
 										<fieldset>
