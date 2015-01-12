@@ -88,11 +88,13 @@ function createCodeEditor( renderToString, editor, options ) {
 		_editor.getSession().setMode(settings.mode);
 		_editor.getSession().setUseWrapMode(settings.useWrapMode);		
 		
-		return new kendo.Class.extend({
+		var p = kendo.Class.extend({			
 			open : function(){
 				editor.data("kendoEditor").value( _editor.getValue() );				
 			}			
 		});
+		
+		return new p();
 	}	
 }
 		
