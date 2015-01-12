@@ -45,9 +45,15 @@ function createEditor( renderToString, bodyEditor, options ){
 
 function createCodeEditor( renderToString, editor, options ) {		
 	
+	if( common.ui.defined(options.editor) ){
+		
+		
+		return ;
+	}
+	
 	if( $("#"+ renderToString).length == 0 ){
 		$('body').append('<div id="'+ renderToString +'"></div>');
-	}							
+	}
 	var renderTo = $("#"+ renderToString);		
 	if( !renderTo.data('kendoExtModalWindow') ){						
 		renderTo.extModalWindow({
