@@ -855,7 +855,7 @@
 			left:inherit;
 		}
 		
-		#my-page .k-editor {
+		#my-page .k-editor, #my-site-notice .k-editor {
 			border:0px;
 		}
 		
