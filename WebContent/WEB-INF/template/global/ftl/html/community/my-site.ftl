@@ -558,7 +558,7 @@
 					transport: { 
 						read: { url:'<@spring.url "/data/announce/list.json"/>', type: 'POST' },
 						parameterMap: function (options, type){
-							return {objectType: noticeSourceList.value, startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() }
+							return {objectType: common.ui.defined(options.objectType) ? options.objectType :noticeSourceList.value , startDate: model.startDate.toJSON(), endDate: model.endDate.toJSON() }						
 						}
 					},					
 					schema: {
