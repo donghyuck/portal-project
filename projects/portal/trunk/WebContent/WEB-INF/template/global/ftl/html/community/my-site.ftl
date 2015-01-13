@@ -987,7 +987,8 @@
 													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 												</label>
 											</div>
-											<p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.</p>
+											<hr/>
+											<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
 										</div>
 									</div>										
 									<div class="p-xxs">
