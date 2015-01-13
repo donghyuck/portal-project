@@ -1038,22 +1038,20 @@
 											</div>		
 										</fieldset>
 										<section class="no-margin">	
-										<div class="tab-v1">
-										<div role="tabpanel">
-											<!-- Nav tabs -->
-											
-											<ul class="nav nav-tabs" role="tablist">
-												<li role="presentation" class="active"><a href="#home" aria-controls="my-notice-editor-ui" role="tab" data-toggle="tab">Home</a></li>
-												<li role="presentation"><a href="#profile" aria-controls="my-notice-editor-code" role="tab" data-toggle="tab">Profile</a></li>
-											</ul>
-										
-											<!-- Tab panes -->
-											<div class="tab-content">
-												<div role="tabpanel" class="tab-pane active" id="my-notice-editor-ui">...</div>
-												<div role="tabpanel" class="tab-pane" id="my-notice-editor-code">...</div>
+											<div class="tab-v1">
+												<div role="tabpanel">
+													<!-- Nav tabs -->													
+													<ul class="nav nav-tabs" role="tablist">
+														<li role="presentation" class="active"><a href="#home" aria-controls="my-notice-editor-ui" role="tab" data-toggle="tab">Home</a></li>
+														<li role="presentation"><a href="#profile" aria-controls="my-notice-editor-code" role="tab" data-toggle="tab">Profile</a></li>
+													</ul>												
+													<!-- Tab panes -->
+													<div class="tab-content">
+														<div role="tabpanel" class="tab-pane active" id="my-notice-editor-ui">...</div>
+														<div role="tabpanel" class="tab-pane" id="my-notice-editor-code">...</div>
+													</div>
+												</div>
 											</div>
-										</div>
-										</div>
 										</section>	
 										<section class="no-margin">	
 											<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
