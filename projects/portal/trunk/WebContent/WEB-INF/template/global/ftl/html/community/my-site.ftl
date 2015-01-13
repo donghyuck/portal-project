@@ -988,6 +988,7 @@
 												</label>
 											</div>
 											<hr/>
+											<p class="help-block text-info"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
 											<div class="form-group">
 												<label for="noticeStartDatePicker" class="m-r-md">시작일시</label>
 												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
@@ -996,7 +997,7 @@
 												<label for="noticeEndDatePicker" class="m-r-md">종료일시</label>
 												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
 											</div>	
-											<p class="help-block"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+											
 											<div class="p-xxs text-right">
 												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 											</div>
