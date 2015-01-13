@@ -863,6 +863,11 @@
 			background: #fff;
 		}
 		
+		#my-notice-grid.l-grid {
+			height:550px;
+		}
+		
+		
 		#xmleditor.ace_editor, #htmleditor.ace_editor , #my-notice-edit  .ace_editor{
 			min-height: 500px;			
 		}
