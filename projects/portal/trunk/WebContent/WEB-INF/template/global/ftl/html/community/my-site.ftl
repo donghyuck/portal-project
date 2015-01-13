@@ -588,7 +588,7 @@
 					resizable: true,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: 'row',
-					/*height: '550px',*/
+					height: '100%',
 					change: function(e) {                    
 						var selectedCells = this.select();                 
 						if( selectedCells.length > 0){ 
