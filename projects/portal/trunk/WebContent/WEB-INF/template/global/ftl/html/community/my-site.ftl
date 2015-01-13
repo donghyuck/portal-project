@@ -869,7 +869,7 @@
 		}
 		
 		#my-notice-grid.k-grid {
-			height:600px;
+			height:550px;
 		}
 		
 		
