@@ -872,8 +872,9 @@
 			background: #fff;
 		}
 		
-		#my-notice-grid.k-grid {
-			height:550px;
+		
+		#my-notice-grid .wrapper .k-grid-content {
+			height:530px;
 		}
 		
 		
