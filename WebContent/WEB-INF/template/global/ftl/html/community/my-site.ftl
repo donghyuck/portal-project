@@ -1042,8 +1042,8 @@
 												<div role="tabpanel">
 													<!-- Nav tabs -->													
 													<ul class="nav nav-tabs" role="tablist" id="my-notice-editor-tabs">
-														<li role="presentation" class="active"><a href="#my-notice-editor-ui" aria-controls="my-notice-editor-ui" role="tab" data-toggle="tab">글쓰기</a></li>
-														<li role="presentation"><a href="#my-notice-editor-code" aria-controls="my-notice-editor-code" role="tab" data-toggle="tab">코드</a></li>
+														<li role="presentation" class="active"><a href="#my-notice-editor-ui" aria-controls="my-notice-editor-ui" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+														<li role="presentation"><a href="#my-notice-editor-code" aria-controls="my-notice-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
 													</ul>												
 													<!-- Tab panes -->
 													<div class="tab-content">
