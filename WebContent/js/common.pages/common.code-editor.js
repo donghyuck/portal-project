@@ -87,7 +87,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			}
 		}		
 		
-		var tabpanel = editor.closest("[role=tabpanel]")
+		var tabpanel = editor.closest("[role=tabpanel]");
 		tabpanel.find('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
 			e.target ; // newly activated tab
 			e.relatedTarget ; // previous active tab
