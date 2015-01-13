@@ -509,6 +509,10 @@
 						common.ui.scroll.top($("#my-site-notice").parent());
 						createNoticeEditorSection(this.notice);	
 					},
+					create : function(e){
+						var empty = new common.ui.data.Announce()
+						empty.objectType = ;
+					},
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
 					startDateChange: function(e) {
@@ -623,9 +627,9 @@
 			}	
 			
 			if( source ){
-				source.copy( renderTo.data("model").notice );
-				renderTo.data("model").set("notice.objectType", common.ui.buttonGroup($("#notice-source-list")).value); 
+				source.copy( renderTo.data("model").notice );				
 				if( source.announceId === 0 ){
+					renderTo.data("model").set("notice.objectType", common.ui.buttonGroup($("#notice-source-list")).value); 
 					renderTo.data("model").set("new", false); 
 				}else{
 					renderTo.data("model").set("new", false); 					
