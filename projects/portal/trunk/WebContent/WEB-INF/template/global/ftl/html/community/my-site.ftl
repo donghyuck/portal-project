@@ -614,7 +614,7 @@
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);	
 				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor, { modal : false} );
+				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo:"my-notice-editor-code"} );
 			}	
 			
 			if( source ){
@@ -1037,7 +1037,7 @@
 												</div>												
 											</div>		
 										</fieldset>
-										<section class="no-margin">	
+										<section class="no-margin p-sm">	
 											<div class="tab-v1">
 												<div role="tabpanel">
 													<!-- Nav tabs -->													
@@ -1047,14 +1047,16 @@
 													</ul>												
 													<!-- Tab panes -->
 													<div class="tab-content">
-														<div role="tabpanel" class="tab-pane active" id="my-notice-editor-ui">...</div>
-														<div role="tabpanel" class="tab-pane" id="my-notice-editor-code">...</div>
+														<div role="tabpanel" class="tab-pane active" id="my-notice-editor-ui">
+															<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
+														</div>
+														<div role="tabpanel" class="tab-pane" id="my-notice-editor-code"></div>
 													</div>
 												</div>
 											</div>
 										</section>	
 										<section class="no-margin">	
-											<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
+											
 										</section>	
 										
 										<footer class="text-right">
