@@ -8,29 +8,40 @@ function createEditor( renderToString, bodyEditor, options ){
 		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
+		var htmlEditorTools = [
+			'bold', 
+			'italic', 
+			'insertUnorderedList', 
+			'insertOrderedList',
+			{	
+				name: "createLink",
+				exec: function(e){
+					linkPopup.show();
+					return false;
+				}
+			},
+			'unlink', 
+			{	
+				name: "insertImage",
+				exec: function(e){
+					imageBroswer.show();
+					return false;
+				}
+			},
+		];
+		
+		if( options.modal ){
+			htmlEditorTools.push({
+				name: 'viewHtml',
+				exec: function(e){
+					htmlEditor.open();
+					return false;
+				}
+			});
+		}
 		
 		bodyEditor.kendoEditor({
-				tools : [ 'bold', 'italic', 'insertUnorderedList', 'insertOrderedList',
-					{	
-						name: "createLink",
-						exec: function(e){
-							linkPopup.show();
-							return false;
-						}},
-					'unlink', 
-					{	
-						name: "insertImage",
-						exec: function(e){
-							imageBroswer.show();
-							return false;
-						}},
-					{
-						name: 'viewHtml',
-						exec: function(e){
-							htmlEditor.open();
-							return false;
-						}}							
-				],
+				tools :htmlEditorTools,
 				stylesheets: [
 					"/styles/fonts/nanumgothic.css",
 					"/styles/bootstrap/3.1.1/bootstrap.min.css",
