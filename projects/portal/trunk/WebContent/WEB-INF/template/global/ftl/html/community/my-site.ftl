@@ -975,16 +975,23 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
-								<div id="my-notice-list" class="col-sm-4">					
-									<div class="p-xxs">
-										<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-											<label class="btn btn-info btn-sm active rounded-left">
-												<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-											</label>
-											<label class="btn btn-info btn-sm rounded-right">
-												<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-											</label>
+								<div id="my-notice-list" class="col-sm-4">		
+									<i class="icon-flat mega-phone"></i>	
+									<div class="shadow-wrapper">
+										<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+												<label class="btn btn-info btn-sm active rounded-left">
+													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+												</label>
+												<label class="btn btn-info btn-sm rounded-right">
+													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+												</label>
+											</div>
+											<p>Et harum quidem rerum facilis est et expedita distinctio lorem ipsum dolor sit amet consectetur adipiscing elit. Ut non libero consectetur adipiscing elit magna. Sed et quam lacus. Fusce condimentum eleifend enim a feugiat.</p>
 										</div>
+									</div>										
+									<div class="p-xxs">
+										
 									</div>
 									<hr/>
 									<div class="p-xxs">
