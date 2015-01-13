@@ -1044,6 +1044,13 @@
 													<ul class="nav nav-tabs" role="tablist" id="my-notice-editor-tabs">
 														<li role="presentation" class="active"><a href="#my-notice-editor-ui" aria-controls="my-notice-editor-ui" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
 														<li role="presentation"><a href="#my-notice-editor-code" aria-controls="my-notice-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+														<li role="presentation" class="dropdown">
+															<a href="#" id="my-notice-editor-drop" class="dropdown-toggle" data-toggle="dropdown" aria-controls="my-notice-editor-drop-contents" aria-expanded="false">Dropdown <span class="caret"></span></a>
+															<ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="my-notice-editor-drop-contents">
+																<li><a href="#dropdown1" tabindex="-1" role="tab" id="dropdown1-tab" data-toggle="tab" aria-controls="dropdown1">@fat</a></li>
+																<li><a href="#dropdown2" tabindex="-1" role="tab" id="dropdown2-tab" data-toggle="tab" aria-controls="dropdown2">@mdo</a></li>
+															</ul>
+														</li>
 													</ul>												
 													<!-- Tab panes -->
 													<div class="tab-content no-padding">
