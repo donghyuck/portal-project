@@ -9,8 +9,6 @@ function createEditor( renderToString, bodyEditor, options ){
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
 		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		
-		alert( htmlEditor );
-		
 		bodyEditor.kendoEditor({
 				tools : [ 'bold', 'italic', 'insertUnorderedList', 'insertOrderedList',
 					{	
@@ -96,7 +94,7 @@ function createCodeEditor( renderToString, editor, options ) {
 				this.ace = ace;
 			},
 			open : function(){		
-				this.editor.fadeOut();
+				this.editor.closest(".k-editor").hide();
 				this.ace.setValue( this.editor.data("kendoEditor").value() )
 			}			
 		});
