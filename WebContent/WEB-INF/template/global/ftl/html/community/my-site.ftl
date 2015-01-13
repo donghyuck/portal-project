@@ -599,6 +599,8 @@
 					},
 					dataBound: function(e){		
 						//$("button.btn-page-control-group").attr("disabled", "disabled");
+						model.set("visible", false);							
+						
 					}			
 				} );	
 			}		
