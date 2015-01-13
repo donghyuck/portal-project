@@ -1046,7 +1046,7 @@
 														<li role="presentation"><a href="#my-notice-editor-code" aria-controls="my-notice-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
 													</ul>												
 													<!-- Tab panes -->
-													<div class="tab-content">
+													<div class="tab-content no-padding">
 														<div role="tabpanel" class="tab-pane active" id="my-notice-editor-ui">
 															<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
 														</div>
