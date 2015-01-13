@@ -1005,7 +1005,7 @@
 									</div>		
 									<div id="my-notice-grid"></div>															
 								</div>
-								<div id="my-notice-view" class="col-sm-8">
+								<div id="my-notice-view" class="col-sm-8 m-t-sm">
 									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
 										<header data-bind="html:notice.subject"></header>
 										<fieldset>
@@ -1030,7 +1030,7 @@
 										</fieldset>												
 									</div>								
 								</div>
-								<div id="my-notice-edit" class="col-sm-8" style="display:none;">
+								<div id="my-notice-edit" class="col-sm-8  m-t-sm" style="display:none;">
 									<span class="back" data-bind="events{click:close}"></span>
 									<div class="sky-form" >
 										<header>&nbsp;</header> 
