@@ -715,7 +715,7 @@
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);
 				var bodyEditor =  $("#announce-editor-body" );
-				createEditor( "announce-editor" , bodyEditor, { modal : false  } );				
+				createEditor( "announce-editor" , bodyEditor, { modal : false , theme: "ace/theme/monokai" } );				
 			}
 			if( source ){
 				source.copy( renderTo.data("model").announce );
