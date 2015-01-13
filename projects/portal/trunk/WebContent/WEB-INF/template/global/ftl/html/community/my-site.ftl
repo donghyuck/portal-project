@@ -611,8 +611,8 @@
 						var $this = this;
 					},
 					close : function(e){
-						renderTo.faceOut("slow", function(e){
-							$("#my-notice-view").faceIn();
+						renderTo.fadeOut("slow", function(e){
+							$("#my-notice-view").fadeIn();
 						});
 					},	
 				});	
