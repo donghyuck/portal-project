@@ -31,6 +31,8 @@ function createEditor( renderToString, bodyEditor, options ){
 			},
 		];
 				
+		alert( kendoui.stringify(options));
+		
 		if( options.modal ){
 			htmlEditorTools.push({
 				name: 'viewHtml',
