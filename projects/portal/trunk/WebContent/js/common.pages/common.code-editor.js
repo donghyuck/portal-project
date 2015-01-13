@@ -84,7 +84,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			editor.parent().append('<div id="'+ renderToString +'" style="display:none;"></div>');	
 		}	
 		var _editor = ace.edit(renderToString);
-		_editor.getSession().setTheme(settings.theme);
+		_editor.setTheme(settings.theme);
 		_editor.getSession().setMode(settings.mode);
 		_editor.getSession().setUseWrapMode(settings.useWrapMode);		
 		
