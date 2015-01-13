@@ -85,9 +85,11 @@ function createCodeEditor( renderToString, editor, options ) {
 			}else{				
 				editor.parent().append('<div id="'+ renderToString +'"></div>');					
 			}
-		}		
+		}				
 		
 		var tabpanel = editor.closest("[role=tabpanel]");
+		alert(tabpanel.html() );
+		
 		tabpanel.find('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
 			e.target ; // newly activated tab
 			e.relatedTarget ; // previous active tab
