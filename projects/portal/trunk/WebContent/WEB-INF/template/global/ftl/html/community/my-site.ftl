@@ -614,7 +614,7 @@
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);	
 				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo:"my-notice-editor-code"} );
+				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo: $("#my-notice-editor-code") } );
 			}	
 			
 			if( source ){
