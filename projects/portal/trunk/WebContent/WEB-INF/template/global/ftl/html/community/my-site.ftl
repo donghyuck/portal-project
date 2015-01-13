@@ -614,7 +614,7 @@
 				kendo.bind( renderTo, model);
 				renderTo.data("model", model);	
 				var bodyEditor =  $("#notice-editor-body" );
-				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo: $("#my-notice-editor-code") } );
+				createEditor( "notice-editor" , bodyEditor, { modal : false , appendTo: $("#my-notice-editor-code"), tab: $("#my-notice-editor-tabs") } );
 			}	
 			
 			if( source ){
@@ -1041,7 +1041,7 @@
 											<div class="tab-v1">
 												<div role="tabpanel">
 													<!-- Nav tabs -->													
-													<ul class="nav nav-tabs" role="tablist">
+													<ul class="nav nav-tabs" role="tablist" id="my-notice-editor-tabs">
 														<li role="presentation" class="active"><a href="#my-notice-editor-ui" aria-controls="my-notice-editor-ui" role="tab" data-toggle="tab">글쓰기</a></li>
 														<li role="presentation"><a href="#my-notice-editor-code" aria-controls="my-notice-editor-code" role="tab" data-toggle="tab">코드</a></li>
 													</ul>												
