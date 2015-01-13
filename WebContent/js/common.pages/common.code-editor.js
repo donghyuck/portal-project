@@ -45,6 +45,7 @@ function createEditor( renderToString, bodyEditor, options ){
 var DEFAULT_ACE_EDITOR_SETTING = {
 	modal : true,
 	mode : "ace/mode/xml",
+	theme : "ace/theme/twilight",
 	useWrapMode : true		
 }
 
@@ -83,6 +84,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			editor.parent().append('<div id="'+ renderToString +'" style="display:none;"></div>');	
 		}	
 		var _editor = ace.edit(renderToString);
+		_editor.getSession().setMode(settings.theme);
 		_editor.getSession().setMode(settings.mode);
 		_editor.getSession().setUseWrapMode(settings.useWrapMode);		
 		
