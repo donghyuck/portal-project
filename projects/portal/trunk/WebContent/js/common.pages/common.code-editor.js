@@ -87,17 +87,14 @@ function createCodeEditor( renderToString, editor, options ) {
 			}
 		}				
 		
-		var tabpanel = editor.closest("[role=tabpanel]");
-		alert(editor.html() );
-		alert(tabpanel.html() );
-		
-		tabpanel.find('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
-			e.target ; // newly activated tab
-			e.relatedTarget ; // previous active tab
-			alert( $(e.target).html() );
-		});
-		
-		
+		if( common.ui.defined(settings.tab)){
+			settings.tab.find('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+				e.target ; // newly activated tab
+				e.relatedTarget ; // previous active tab
+				alert( $(e.target).html() );
+			});			
+		}
+	
 		var _editor = ace.edit(renderToString);
 		_editor.setTheme(settings.theme);
 		_editor.getSession().setMode(settings.mode);
