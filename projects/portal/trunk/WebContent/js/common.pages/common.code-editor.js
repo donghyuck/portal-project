@@ -31,7 +31,7 @@ function createEditor( renderToString, bodyEditor, options ){
 			},
 		];
 				
-		alert( kendoui.stringify(options));
+		alert( kendo.stringify(options));
 		
 		if( options.modal ){
 			htmlEditorTools.push({
