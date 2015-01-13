@@ -3,7 +3,8 @@
 <!-- ============================== -->						
 function createEditor( renderToString, bodyEditor, options ){
 	options =  options || {};
-	
+	 options.modal =  options.modal || true;
+	 
 	if(!bodyEditor.data("kendoEditor") ){			
 		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
@@ -29,7 +30,7 @@ function createEditor( renderToString, bodyEditor, options ){
 				}
 			},
 		];
-		
+				
 		if( options.modal ){
 			htmlEditorTools.push({
 				name: 'viewHtml',
