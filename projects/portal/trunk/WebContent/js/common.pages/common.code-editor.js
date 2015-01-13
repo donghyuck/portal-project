@@ -80,7 +80,7 @@ function createCodeEditor( renderToString, editor, options ) {
 		return renderTo.data('kendoExtModalWindow');			
 	}else{	
 		if( $("#"+ renderToString).length == 0 ){
-			editor.parent().append('<div id="'+ renderToString +'"></div>');	
+			editor.parent().append('<div id="'+ renderToString +'" style="display:none;"></div>');	
 		}	
 		var _editor = ace.edit(renderToString);
 		_editor.getSession().setMode(settings.mode);
@@ -94,7 +94,9 @@ function createCodeEditor( renderToString, editor, options ) {
 				this.ace = ace;
 			},
 			open : function(){		
-				this.editor.closest(".k-editor").hide();
+				this.editor.closest(".k-editor").hide(function(e){
+					$("#"+renderToString).fadeIn();					
+				});
 				this.ace.setValue( this.editor.data("kendoEditor").value() )
 			}			
 		});
