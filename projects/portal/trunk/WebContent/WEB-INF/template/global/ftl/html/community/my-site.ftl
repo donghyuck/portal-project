@@ -988,7 +988,7 @@
 												</label>
 											</div>
 											<hr/>
-											<p class="help-block text-info"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+											<p class="help-block padding-sm-vr"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
 											<div class="form-group">
 												<label for="noticeStartDatePicker" class="m-r-md">시작일시</label>
 												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
