@@ -480,6 +480,7 @@
 				kendo.bind(renderTo, model );				
 				var bodyEditor =  $("#page-editor-body" );
 				createEditor( "page-editor" , bodyEditor );			
+				//createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : true } );
 				
 			}else{
 				source.copy( renderTo.data("model").page );				
