@@ -1062,11 +1062,7 @@
 													</div>
 												</div>
 											</div>
-										</section>	
-										<section class="no-margin">	
-											
-										</section>	
-										
+										</section>											
 										<footer class="text-right">
 											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 
 											<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
