@@ -611,12 +611,62 @@
 					notice : new common.ui.data.Announce(),
 					new: true,
 					visible : true,
-					update : function(e){
-						
+					update : function(e){						
 						var $this = this, 
 						btn = $(e.target);						
 						btn.button('loading');
-						alert(kendo.stringify($this.notice));
+						
+						if( $this.notice.subject.length == 0 || $this.notice.body.length == 0 ){
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
+								"error"
+							);
+							return ;
+						}
+						if( $this.notice.startDate >= $this.notice.endDate  ){
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
+								"error"
+							);							
+							return ;
+						}
+						common.ui.ajax(
+							'<@spring.url "/data/announce/update.json"/>',
+							{
+								data : kendo.stringify( $this.notice ),
+								contentType : "application/json",
+								success : function(response){									
+									common.ui.grid((listRenderTo).dataSource.read();
+									$this.close();
+								},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}
+							});	
 					},
 					close : function(e){
 						renderTo.fadeOut("slow", function(e){
@@ -685,7 +735,7 @@
 								contentType : "application/json",
 								success : function(response){									
 									var listRenderTo = $("#my-announce-section .my-announce-list");
-									common.ui.listview(listRenderTo).dataSource.read();
+									common.ui.listview($("#my-notice-grid")).dataSource.read();
 									$this.close();
 								},
 								fail: function(){								
