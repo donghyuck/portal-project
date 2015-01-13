@@ -72,23 +72,24 @@ function createCodeEditor( renderToString, editor, options ) {
 			$("body").append('<div id="'+ renderToString +'"></div>');	
 		}
 		var renderTo = $("#"+ renderToString);	
+		
 		if( !renderTo.data('kendoExtModalWindow') ){				
 			renderTo.extModalWindow({
 				title : "HTML",
 				backdrop : 'static',
 				template : $("#code-editor-modal-template").html(),
 				refresh : function(e){
-					var editor = ace.edit("htmleditor");
+					var editor = ace.edit("modal-htmleditor");
 					editor.getSession().setMode(settings.mode);
 					editor.getSession().setUseWrapMode(settings.useWrapMode);
 				},
 				open: function (e){
-					ace.edit("htmleditor").setValue(editor.data('kendoEditor').value());
+					ace.edit("modal-htmleditor").setValue(editor.data('kendoEditor').value());
 				}					
 			});				
 			renderTo.find('button.custom-update').click(function () {
 				var btn = $(this)			
-				editor.data("kendoEditor").value( ace.edit("htmleditor").getValue() );
+				editor.data("kendoEditor").value( ace.edit("modal-htmleditor").getValue() );
 				renderTo.data('kendoExtModalWindow').close();
 			});			
 		}	
@@ -100,7 +101,7 @@ function createCodeEditor( renderToString, editor, options ) {
 			}else{				
 				editor.parent().append('<div id="'+ renderToString +'"></div>');					
 			}
-		}				
+		}
 		
 		var _editor = ace.edit(renderToString);
 		_editor.setTheme(settings.theme);
