@@ -999,6 +999,7 @@
 											</div>	
 											
 											<div class="p-xxs text-right">
+												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 											</div>
 										</div>
