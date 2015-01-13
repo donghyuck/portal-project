@@ -87,21 +87,12 @@ function createCodeEditor( renderToString, editor, options ) {
 			}
 		}				
 		
-		if( common.ui.defined(settings.tab)){
-			settings.tab.find('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
-				e.target ; // newly activated tab
-				e.relatedTarget ; // previous active tab
-				alert( $(e.target).data("action-target"));
-				
-			});			
-		}
-	
 		var _editor = ace.edit(renderToString);
 		_editor.setTheme(settings.theme);
 		_editor.getSession().setMode(settings.mode);
 		_editor.getSession().setUseWrapMode(settings.useWrapMode);		
 		
-		var p = kendo.Class.extend({			
+		var controllerClass = kendo.Class.extend({			
 			ace : null,
 			editor : null,
 			init: function(ace, editor) {
@@ -109,15 +100,31 @@ function createCodeEditor( renderToString, editor, options ) {
 				this.ace = ace;
 			},
 			open : function(){		
-				/*this.editor.closest(".k-editor").hide(function(e){
-					$("#"+renderToString).fadeIn();					
-				});
-				*/
 				this.ace.setValue( this.editor.data("kendoEditor").value() )
-			}			
+			},
+			close : function(){
+				this.editor.data("kendoEditor").value( this.ace.getValue() );
+			}				
 		});
 		
-		return new p(_editor, editor);
+		var controller = new controllerClass(_editor, editor);
+
+		if( common.ui.defined(settings.tab)){
+			settings.tab.find('a[data-toggle="tab"]').on('shown.bs.tab', function(e){
+				e.target ; // newly activated tab
+				e.relatedTarget ; // previous active tab
+				switch($(e.target).data("action-target")){
+				case "editor" :
+					controller.close();
+					break;
+				case "ace" :
+					controller.open();
+					break;				
+				}				
+			});			
+		}
+		
+		return controller;
 	}	
 }
 		
