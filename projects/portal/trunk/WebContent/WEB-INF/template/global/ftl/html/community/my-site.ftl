@@ -1415,6 +1415,7 @@
 			<a href="\\#" onclick="doPagePreview(); return false;" class="btn btn-info btn-sm">미리보기</a>
 		</div>	
 	</script>
+	
 	<script id="treeview-template" type="text/kendo-ui-template">
 	#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
 		#: item.name # 
