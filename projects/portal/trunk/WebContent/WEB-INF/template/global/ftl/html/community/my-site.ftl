@@ -596,7 +596,7 @@
 							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy( model.notice );
 							if( $("#my-notice-edit").is(":visible") ){
-								$("#my-notice-edit").faceOut(function(){
+								$("#my-notice-edit").fadeOut(function(){
 									model.set("visible", true);		
 								});
 							}else{
