@@ -990,7 +990,7 @@
 											<hr/>
 											<div class="form-group">
 												<label for="noticeStartDatePicker">시작일시</label>
-												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
+												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" class="text-right" />
 											</div>											
 											<div class="form-group">
 												<label for="noticeEndDatePicker">종료일시</label>
