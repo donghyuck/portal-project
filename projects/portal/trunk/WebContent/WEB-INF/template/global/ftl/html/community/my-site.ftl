@@ -597,11 +597,10 @@
 							selectedCell.copy( model.notice );
 							if( $("#my-notice-edit").is(":visible") ){
 								$("#my-notice-edit").fadeOut(function(){
-									model.set("visible", true);		
+									$("#my-notice-view").fadeIn();		
 								});
-							}else{
-								model.set("visible", true);				
-							}											
+							}
+							model.set("visible", true);														
 	 					} 						
 					},
 					dataBound: function(e){		
