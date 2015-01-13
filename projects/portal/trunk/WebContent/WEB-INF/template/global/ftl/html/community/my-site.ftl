@@ -595,7 +595,13 @@
 						if( selectedCells.length > 0){ 
 							var selectedCell = this.dataItem( selectedCells ); 
 							selectedCell.copy( model.notice );
-							model.set("visible", true);								
+							if( $("#my-notice-edit").is(":visible") ){
+								$("#my-notice-edit").faceOut(function(){
+									model.set("visible", true);		
+								});
+							}else{
+								model.set("visible", true);				
+							}											
 	 					} 						
 					},
 					dataBound: function(e){		
