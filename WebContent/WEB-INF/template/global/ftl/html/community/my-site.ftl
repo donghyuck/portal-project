@@ -855,7 +855,7 @@
 			pointer-events: auto;		
 		} 
 		
-		#my-page 	span.back {
+		#my-page 	span.back, #my-notice-edit 	span.back {
 			top:inherit;
 			left:inherit;
 		}
@@ -1022,6 +1022,7 @@
 									</div>								
 								</div>
 								<div id="my-notice-edit" class="col-sm-8" style="display:none;">
+									<span class="back" data-bind="events{click:close}"></span>
 									<div class="sky-form" >
 										<header data-bind="visible: new">
 											<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
