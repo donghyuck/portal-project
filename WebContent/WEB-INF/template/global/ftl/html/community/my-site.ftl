@@ -511,7 +511,7 @@
 					},
 					create : function(e){
 						var empty = new common.ui.data.Announce()
-						empty.objectType = ;
+						createNoticeEditorSection(empty);
 					},
 					startDate : new Date(now.getFullYear(), now.getMonth(), 1),
 					endDate : now,
