@@ -29,10 +29,7 @@ function createEditor( renderToString, bodyEditor, options ){
 					return false;
 				}
 			},
-		];
-				
-		alert( kendo.stringify(options));
-		
+		];		
 		if( options.modal ){
 			htmlEditorTools.push({
 				name: 'viewHtml',
