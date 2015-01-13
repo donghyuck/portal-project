@@ -873,7 +873,7 @@
 		}
 		
 		
-		#my-notice-grid .wrapper .k-grid-content {
+		#my-notice-grid .k-grid-content {
 			height:530px;
 		}
 		
