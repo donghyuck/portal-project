@@ -1024,11 +1024,10 @@
 								<div id="my-notice-edit" class="col-sm-8" style="display:none;">
 									<span class="back" data-bind="events{click:close}"></span>
 									<div class="sky-form" >
-										<header data-bind="visible: new">
-											<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
-										</header> 
+										<header>&nbsp;</header> 
 										<fieldset class="padding-sm">
 											<section>
+												<label class="label"  data-bind="visible: new">공지 기간</label>
 												<label for="title" class="input">
 													<input type="text" name="title" placeholder="제목" data-bind="value: notice.subject" >
 												</label>
