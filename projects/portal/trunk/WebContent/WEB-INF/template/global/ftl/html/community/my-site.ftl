@@ -1027,7 +1027,7 @@
 										<header>&nbsp;</header> 
 										<fieldset class="padding-sm">
 											<section>
-												<label class="label"  data-bind="visible: new">공지 기간</label>
+												<label class="label">제목</label>
 												<label for="title" class="input">
 													<input type="text" name="title" placeholder="제목" data-bind="value: notice.subject" >
 												</label>
