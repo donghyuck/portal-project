@@ -863,7 +863,7 @@
 			background: #fff;
 		}
 		
-		#my-notice-grid.l-grid {
+		#my-notice-grid.k-grid {
 			height:550px;
 		}
 		
