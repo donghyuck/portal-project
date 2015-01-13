@@ -52,7 +52,6 @@ var DEFAULT_ACE_EDITOR_SETTING = {
 function createCodeEditor( renderToString, editor, options ) {		
 	options = options || {};		
 	var settings = $.extend(true, {}, DEFAULT_ACE_EDITOR_SETTING , options ); 
-	alert( kendo.stringify(settings));
 	if( settings.modal ){		
 		if( $("#"+ renderToString).length == 0 ){
 			$("body").append('<div id="'+ renderToString +'"></div>');	
