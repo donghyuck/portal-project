@@ -644,7 +644,7 @@
 								data : kendo.stringify( $this.notice ),
 								contentType : "application/json",
 								success : function(response){									
-									common.ui.grid((listRenderTo).dataSource.read();
+									common.ui.grid(($("#my-notice-grid")).dataSource.read();
 									$this.close();
 								},
 								fail: function(){								
