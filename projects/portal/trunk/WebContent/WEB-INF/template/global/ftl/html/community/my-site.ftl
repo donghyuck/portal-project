@@ -1018,13 +1018,13 @@
 												<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
 											</h5>
 										</header> 
-										<fieldset>
+										<fieldset class="padding-sm">
 											<section>
 												<label for="title" class="input">
 													<input type="text" name="title" placeholder="제목" data-bind="value: notice.subject" >
 												</label>
 											</section>		
-											<section>
+											<section class="no-margin">
 												<label class="label">공지 기간</label>
 												<input data-role="datetimepicker" data-bind="value:notice.startDate"> ~ <input data-role="datetimepicker" data-bind="value:notice.endDate">
 												<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
