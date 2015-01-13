@@ -237,7 +237,7 @@
 
 	<script id="code-editor-modal-template" type="text/x-kendo-template">
 	<style type="text/css" media="screen">
-		\\##=ace#{ 
+		\\#modal-htmleditor { 
 			height: 600px;
 			border: 0px solid \\#ddd;
 		}		
@@ -250,7 +250,7 @@
 						<h5 class='modal-title'>#= title #</h5>
 					</div>
 					<div class='modal-body' style="padding:0px;">					
-						<div id="#=ace #"></div>									
+						<div id="modal-htmleditor"></div>									
 					</div>
 					<div class='modal-footer' style="margin-top: 0px;">
 						<button type="button" class="btn btn-primary btn-sm custom-update" data-bind="events:{ click: onSave }" >확인</button>		
