@@ -616,7 +616,7 @@
 						var $this = this, 
 						btn = $(e.target);						
 						btn.button('loading');
-						alert(kendou.stringify($this.notice));
+						alert(kendo.stringify($this.notice));
 					},
 					close : function(e){
 						renderTo.fadeOut("slow", function(e){
