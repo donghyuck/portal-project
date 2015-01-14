@@ -94,7 +94,42 @@
 			var model = kendo.observable({
 				website : new common.ui.data.WebSite(),
 				updateMenuData : function(e){				
-				alert("준비중입니다.");
+					alert("준비중입니다.");
+					var $this = this;
+					var btn = $(e.target);						
+					btn.button('loading');
+							
+						common.ui.ajax(
+							'<@spring.url "/data/menu/update.json"/>',
+							{
+								data : kendo.stringify( $this.notice ),
+								contentType : "application/json",
+								success : function(response){									
+									//common.ui.grid($("#my-notice-grid")).dataSource.read();
+									//$this.close();
+									$this.refresh();
+								},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress($("#my-site-menu"), true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress($("#my-site-menu"), false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}
+							});	
+											
 				},
 				menuDataUpdated : false,
 				useWrapMode : false,
