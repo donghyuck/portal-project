@@ -160,8 +160,6 @@
 				var sender = e.sender ;
 				if( e.field.match('^website.menu')){
 				 	editor.setValue( sender.website.menu.menuData );	
-				}else if (e.field.match('^useWrapMode')){
-					editor.getSession().setUseWrapMode(sender.website.useWrapMode);
 				}
 			});								
 			common.ui.bind($(".website-details"), model);			
