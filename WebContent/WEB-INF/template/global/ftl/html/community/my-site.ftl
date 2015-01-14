@@ -1080,7 +1080,7 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">		
-									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-md"></i></h2>			
+									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>			
 										<div class="bg-slivergray rounded-bottom p-sm">
 											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
