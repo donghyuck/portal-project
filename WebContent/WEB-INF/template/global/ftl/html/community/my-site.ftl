@@ -132,6 +132,9 @@
 				},
 				menuDataUpdated : false,
 				useWrapMode : false,
+				useWrap : function(e){
+					alert(this.useWrapMode);
+				},
 				refresh : function(){
 					var $this = this;
 					common.ui.ajax(
@@ -1028,7 +1031,7 @@
 										<fieldset class="padding-sm">
 											<div class="row">
 												<div class="col-md-9"></div>
-												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, change:useWrap"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 											</div>
 										</fieldset>
 										<div id="xmleditor"></div>
