@@ -94,19 +94,18 @@
 			var model = kendo.observable({
 				website : new common.ui.data.WebSite(),
 				updateMenuData : function(e){				
-					alert("준비중입니다.");
+					
 					var $this = this;
 					var btn = $(e.target);						
-					btn.button('loading');							
+					btn.button('loading');				
+					
+					$this.website.menu.menuData = ace.edit("xmleditor").getValue();
 						common.ui.ajax(
 							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.website.menu ),
 								contentType : "application/json",
 								success : function(response){									
-									//common.ui.grid($("#my-notice-grid")).dataSource.read();
-									//$this.close();
-									$this.refresh();
 								},
 								fail: function(){								
 									common.ui.notification({
@@ -125,6 +124,7 @@
 									kendo.ui.progress($("#my-site-menu"), false);
 								},
 								complete : function(e){
+									$this.refresh();
 									btn.button('reset');
 								}
 							});	
