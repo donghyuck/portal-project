@@ -133,7 +133,7 @@
 				menuDataUpdated : false,
 				useWrapMode : false,
 				useWrap : function(e){
-					alert(this.useWrapMode);
+					ace.edit("xmleditor").getSession().setUseWrapMode(this.useWrapMode);
 				},
 				refresh : function(){
 					var $this = this;
