@@ -1044,7 +1044,7 @@
 							
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
-								<div class="col-sm-4">		
+								<div class="col-sm-4 bg-slivergray rounded-2x p-sm">		
 									<h2 class="page-header no-margin"><i class="icon-flat document2 m-b-n-md"></i></h2>						
 									<div class="tab-v1 bg-slivergray rounded-bottom p-sm">								
 										<ul class="nav nav-tabs" id="template-tree">
@@ -1079,9 +1079,9 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
-								<div id="my-notice-list" class="col-sm-4">		
+								<div id="my-notice-list" class="col-sm-4 bg-slivergray rounded-2x p-sm">		
 									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>			
-										<div class="bg-slivergray rounded-bottom p-sm">
+										<div class="p-sm">
 											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
