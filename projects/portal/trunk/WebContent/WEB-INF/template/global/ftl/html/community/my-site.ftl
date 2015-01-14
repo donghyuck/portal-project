@@ -1043,7 +1043,8 @@
 						</div>						
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
-								<div class="col-sm-4">								
+								<div class="col-sm-4">		
+									<h2 class="page-header no-margin"><i class="icon-flat pencil"></i></h2>						
 								<div class="tab-v1 bg-slivergray rounded-2x p-sm">								
 									<ul class="nav nav-tabs" id="template-tree">
 										<li><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
