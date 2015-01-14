@@ -156,6 +156,7 @@
 			});			
 			model.bind("change", function(e){		
 				var sender = e.sender ;
+				alert( e.field );
 				if( e.field.match('^website.menu')){
 				 	editor.setValue( sender.website.menu.menuData );	
 				}else if (e.field.match('^useWrapMode')){
