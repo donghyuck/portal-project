@@ -1040,21 +1040,22 @@
 									</div>
 								</div>
 							</div>
-						</div>						
+						</div>					
+							
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
 								<div class="col-sm-4">		
-									<h2 class="page-header no-margin"><i class="icon-flat pencil"></i></h2>						
-								<div class="tab-v1 bg-slivergray rounded-bottom p-sm">								
-									<ul class="nav nav-tabs" id="template-tree">
-										<li><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
-										<li><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
-									</ul>	
-									<div class="tab-content">
-										<div class="tab-pane fade" id="template-tree-view"></div>
-										<div class="tab-pane fade" id="custom-template-tree-view"></div>
+									<h2 class="page-header no-margin"><i class="icon-flat document2"></i></h2>						
+									<div class="tab-v1 bg-slivergray rounded-bottom p-sm">								
+										<ul class="nav nav-tabs" id="template-tree">
+											<li><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
+											<li><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
+										</ul>	
+										<div class="tab-content">
+											<div class="tab-pane fade" id="template-tree-view"></div>
+											<div class="tab-pane fade" id="custom-template-tree-view"></div>
+										</div>
 									</div>
-								</div>
 								</div>
 								<div class="col-sm-8">								
 									<div id="template-editor" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
