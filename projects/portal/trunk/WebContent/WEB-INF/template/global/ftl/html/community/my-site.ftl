@@ -102,7 +102,7 @@
 						common.ui.ajax(
 							'<@spring.url "/data/menu/update.json"/>',
 							{
-								data : kendo.stringify( $this.notice ),
+								data : kendo.stringify( $this.website.menu ),
 								contentType : "application/json",
 								success : function(response){									
 									//common.ui.grid($("#my-notice-grid")).dataSource.read();
