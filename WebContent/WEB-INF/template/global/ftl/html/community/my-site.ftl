@@ -1045,7 +1045,7 @@
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
 								<div class="col-sm-4">		
-									<h2 class="page-header no-margin"><i class="icon-flat document2 m-b-n-sm"></i></h2>						
+									<h2 class="page-header no-margin"><i class="icon-flat document2 m-b-n-md"></i></h2>						
 									<div class="tab-v1 bg-slivergray rounded-bottom p-sm">								
 										<ul class="nav nav-tabs" id="template-tree">
 											<li><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
@@ -1080,9 +1080,8 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">		
-									<i class="icon-flat mega-phone"></i>	
-									<div class="shadow-wrapper">
-										<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
+									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-md"></i></h2>			
+										<div class="bg-slivergray rounded-bottom p-sm">
 											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
@@ -1106,9 +1105,8 @@
 												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
 												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 											</div>
-										</div>
-									</div>		
-									<div id="my-notice-grid"></div>															
+										</div>		
+										<div id="my-notice-grid"></div>															
 								</div>
 								<div id="my-notice-view" class="col-sm-8 m-t-sm">
 									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
