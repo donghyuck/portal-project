@@ -99,7 +99,7 @@
 					var btn = $(e.target);						
 					btn.button('loading');							
 						common.ui.ajax(
-							'<@spring.url "/data/menu/update.json"/>',
+							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
 							{
 								data : kendo.stringify( $this.website.menu ),
 								contentType : "application/json",
