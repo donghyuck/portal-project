@@ -97,8 +97,7 @@
 					alert("준비중입니다.");
 					var $this = this;
 					var btn = $(e.target);						
-					btn.button('loading');
-							
+					btn.button('loading');							
 						common.ui.ajax(
 							'<@spring.url "/data/menu/update.json"/>',
 							{
@@ -156,11 +155,10 @@
 			});			
 			model.bind("change", function(e){		
 				var sender = e.sender ;
-				alert( e.field );
 				if( e.field.match('^website.menu')){
 				 	editor.setValue( sender.website.menu.menuData );	
 				}else if (e.field.match('^useWrapMode')){
-					editor.getSession().setUseWrapMode(true);
+					editor.getSession().setUseWrapMode(sender.website.useWrapMode);
 				}
 			});								
 			common.ui.bind($(".website-details"), model);			
