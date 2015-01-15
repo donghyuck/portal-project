@@ -1045,7 +1045,7 @@
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
 								<div class="col-sm-4">
-									<h2 class="page-header no-margin no-border"><i class="icon-flat document2 m-b-n-md"></i></h2>								
+									<i class="icon-flat folder"></i>					
 									<div class="sky-form">
 										<fieldset class="padding-sm">
 											<div class="tab-v1 p-xxs">								
@@ -1084,7 +1084,7 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">		
-									<h2 class="page-header no-margin no-border"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>	
+									<i class="icon-flat mega-phone"></i>
 									<div class="sky-form">
 										<fieldset class="padding-sm">
 											<p class="help-block"><i class="fa fa-info"></i> 소스와 검색 기간을 선택하세요.</p>	
