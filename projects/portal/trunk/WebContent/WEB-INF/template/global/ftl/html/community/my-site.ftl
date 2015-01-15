@@ -1080,8 +1080,10 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4 bg-slivergray rounded-2x p-sm">		
-									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>			
-										<div class="p-sm">
+								
+									<div class="sky-form" >
+										<header>&nbsp;</header> 
+										<fieldset class="padding-sm">
 											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
@@ -1089,16 +1091,29 @@
 												<label class="btn btn-info btn-sm rounded-right">
 													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
 												</label>
-											</div>
-											<hr/>
+											</div>										
+										</fieldset>
+										<fieldset class="padding-sm">
+											<section class="no-margin">
+												<label for="noticeStartDatePicker" class="m-r-md">시작일시</label>
+												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
+											</section>
+											<section class="no-margin">
+												<label for="noticeEndDatePicker" class="m-r-md">종료일시</label>
+												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />												
+											</section>
+										</fieldset>
+										<div id="my-notice-grid"></div>					
+									</div>
+									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>			
+										<div class="p-sm">
+											
 											<p class="help-block padding-sm-vr"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
 											<div class="form-group">
-												<label for="noticeStartDatePicker" class="m-r-md">시작일시</label>
-												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />
+
 											</div>											
 											<div class="form-group">
-												<label for="noticeEndDatePicker" class="m-r-md">종료일시</label>
-												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />
+
 											</div>	
 											
 											<div class="p-xxs text-right">
@@ -1106,7 +1121,7 @@
 												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
 											</div>
 										</div>		
-										<div id="my-notice-grid"></div>															
+																				
 								</div>
 								<div id="my-notice-view" class="col-sm-8 m-t-sm">
 									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
