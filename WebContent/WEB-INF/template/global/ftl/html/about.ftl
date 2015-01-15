@@ -83,13 +83,15 @@
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 								</small>	
 							</h2>
+							<#if navigator.parent.layout?? && navigator.parent.layout == "pills" >
 							<div class="pull-right">
 								<div class="btn-group">
 								<#list navigator.parent.components as item >								
 									<a class="btn btn-info btn-sm <#if navigator.parent.components?seq_index_of(item) == 0>rounded-left<#elseif navigator.parent.components?seq_index_of(item) == (navigator.parent.components?size - 1)  >rounded-right</#if> <#if item.name ==  navigator.name >active</#if>" href="${item.page}">${ item.title }</a>					
 								</#list>		
 								</div>
-							</div>								
+							</div>
+							</#if>								
 							<div class="pull-right breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
