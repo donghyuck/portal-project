@@ -3,21 +3,21 @@
 	<head>
 		<title></title>
 		<#compress>	
-		<link rel="stylesheet" href="/styles/font-awesome/4.2.0/font-awesome.min.css">
+		<link rel="stylesheet" href="<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>">
 		<script type="text/javascript">
 		<!--
 		yepnope([{
 			load: [
-			'/js/jquery/1.10.2/jquery.min.js',
-			'/js/jgrowl/jquery.jgrowl.min.js',
-			'/js/kendo/kendo.web.min.js',
-			'/js/kendo.extension/kendo.ko_KR.js',			
-			'/js/kendo/cultures/kendo.culture.ko-KR.min.js',		
-			'/js/common.plugins/query.backstretch.min.js', 	
-			'/js/bootstrap/3.3.0/bootstrap.min.js',
-			'/js/common/common.ui.core.js',
-			'/js/common/common.ui.data.js',
-			'/js/common/common.ui.connect.js'		
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 	
+			'<@spring.url "/js/bootstrap/3.3.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.connect.js"/>'		
 			],
 			complete: function() {
 				// START SCRIPT	
@@ -48,14 +48,6 @@
 						window.close();
 					}
 				}
-				/**
-				common.api.social.profile({
-					url : "/connect/${connect.providerId}/user/lookup.json",
-					success : function( data ){
-						
-					}
-				});
-				**/
 				</#if>
 				// END SCRIPT            
 			}
@@ -84,7 +76,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2><i class="fa fa-${connect.providerId}"></i> Status <#if connect.displayName ?? ><small>${connect.displayName}</small></#if></h2>				
+					<h2><i class="fa fa-${connect.providerId}"></i> 연결 상태   <#if connect.displayName ?? ><small> ${connect.displayName} </small></#if></h2>				
 					<button type="button" class="btn-close btn-close-grey btn-sm" style="top:0px;"><span class="sr-only">Close</span></button>
 				</div>
 			</div>
@@ -92,8 +84,7 @@
 		</div>
 		<div class="profile container content">	
 			<div class="row">
-				<div class="col-md-8 col-md-offset-2">
-				
+				<div class="col-md-8 col-md-offset-2">				
 					<#if error ?? >
 					<div class="error-v1 rounded">
 						<p>${error?html}</p>
@@ -110,8 +101,7 @@
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
 					</div>
-					</#if>	
-									
+					</#if>										
 					<#if profile ?? >
 					<div class="profile-blog">
 						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
@@ -122,8 +112,7 @@
 						<#if connect.profileUrl ?? >
 						<p><a href="${connect.profileUrl }" class="btn-link">홈</a></p>
 						</#if>
-					</#if>
-					
+					</#if>					
 				</div>
 			</div>
 		</div>
