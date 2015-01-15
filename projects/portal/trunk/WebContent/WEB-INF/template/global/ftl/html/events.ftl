@@ -146,13 +146,8 @@
 							</h2>
 							<div class="pull-right">
 							<div class="btn-group">
-							<#list navigator.parent.components as item >
-								${ navigator.parent.components?seq_index_of(item) }
-								<#if item.name ==  navigator.name >
-								<a class="btn-u btn-u-dark-blue btn-u-sm active" href="#">${ item.title }</a>
-								<#else>
-								<a class="btn-u btn-u-dark-blue btn-u-sm" href="${item.page}">${ item.title }</a>
-								</#if>
+							<#list navigator.parent.components as item >								
+								<a class="btn-u btn-u-dark-blue btn-u-sm <#if navigator.parent.components?seq_index_of(item) == 0>rounded-left<#else if navigator.parent.components?seq_index_of(item) == (navigator.parent.components?size - 1)  >rounded-right</#if> <#if item.name ==  navigator.name >active</#if>" href="${item.page}">${ item.title }</a>					
 							</#list>		
 							</div>
 							</div>							
