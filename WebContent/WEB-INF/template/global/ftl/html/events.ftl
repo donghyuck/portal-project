@@ -154,18 +154,7 @@
 								</#if>
 							</#list>		
 							</div>
-
-							<ul class="nav nav-pills pull-right">
-							<#list navigator.parent.components as item >
-								<#if item.name ==  navigator.name >
-								<li role="presentation" class="active"><a href="${item.page}">${ item.title }</a></li>
-								<#else>
-								<li role="presentation"><a href="${item.page}">${ item.title }</a></li>
-								</#if>						
-							</#list>								
-							</ul>
-							</div>
-							
+							</div>							
 							<div class="breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
