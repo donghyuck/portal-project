@@ -107,7 +107,7 @@
 					<div class="profile-blog">
 						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
 						<div class="name-location">
-							<strong><#if connect ?? >${connect.displayName}</#if></strong>
+							<strong><#if connect ?? >${connect}</#if></strong>
 						</div>
 							
 						<#if connect.profileUrl ?? >
