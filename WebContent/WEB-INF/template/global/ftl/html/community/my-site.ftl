@@ -1122,7 +1122,7 @@
 									</div>																				
 								</div>
 								<div id="my-notice-view" class="col-sm-8">
-									<span class="visible-sm  m-t-sm" ></span>		
+									<span class="hidden-lg  m-t-sm" ></span>		
 									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
 										<header data-bind="html:notice.subject"></header>
 										<fieldset>
