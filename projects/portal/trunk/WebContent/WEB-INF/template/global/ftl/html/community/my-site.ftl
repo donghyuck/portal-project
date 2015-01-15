@@ -1080,12 +1080,8 @@
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">		
-									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>	
-									<div class="sky-form" >
-										<header>&nbsp;</header> 
-										<fieldset class="padding-sm">
-										
-										</fieldset>
+									<h2 class="page-header no-margin no-border"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>	
+									<div class="sky-form">
 										<fieldset class="padding-sm">
 											<p class="help-block"><i class="fa fa-info"></i> 소스와 검색 기간을 선택하세요.</p>	
 											<div class="row">
@@ -1118,7 +1114,7 @@
 												</section>
 											</div>																				
 										</fieldset>
-										<div id="my-notice-grid" class="no-border-hr"></div>					
+										<div id="my-notice-grid" class="no-border-hr no-border-b"></div>					
 									</div>																				
 								</div>
 								<div id="my-notice-view" class="col-sm-8 m-t-sm">
