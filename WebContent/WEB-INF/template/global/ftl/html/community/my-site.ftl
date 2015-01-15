@@ -1095,15 +1095,20 @@
 											</div>										
 										</fieldset>
 										<fieldset class="padding-sm">
-											<section>
+											<div class="row">
+											<section class="col-lg-6">
 												<label for="noticeStartDatePicker" class="label">시작일시</label>
 												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
-											</section>										
+											</section>
+											<section class="col-lg-6">
+												<label for="noticeEndDatePicker" class="label">종료일시</label>
+												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />													
+											</section>
+											</div>										
 										</fieldset>
 										<fieldset class="padding-sm">
 											<section>
-												<label for="noticeEndDatePicker" class="label">종료일시</label>
-												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />												
+										
 											</section>
 										</fieldset>
 										<div id="my-notice-grid"></div>					
