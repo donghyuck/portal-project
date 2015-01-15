@@ -1113,14 +1113,14 @@
 											</div>		
 											<div class="row">
 												<section class="col-sm-12 text-right">
-												
+													<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
+													<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
 												</section>
 											</div>																				
 										</fieldset>
 										<fieldset class="padding-sm">
 											<section>
-												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
-												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>										
+										
 											</section>
 										</fieldset>
 										<div id="my-notice-grid"></div>					
