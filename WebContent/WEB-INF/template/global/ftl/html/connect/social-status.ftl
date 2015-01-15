@@ -77,7 +77,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2><i class="fa fa-${connect.providerId}"></i> 연결 상태   <#if connect ?? ><small> ${connect} </small></#if></h2>				
+					<h2><i class="fa fa-${connect.providerId}"></i> 연결 상태   <#if connect.displayName ?? ><small> ${connect.displayName} </small></#if></h2>				
 					<button type="button" class="btn-close btn-close-grey btn-sm" style="top:0px;"><span class="sr-only">Close</span></button>
 				</div>
 			</div>
