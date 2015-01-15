@@ -148,9 +148,9 @@
 							<div class="btn-group">
 							<#list navigator.parent.components as item >
 								<#if item.name ==  navigator.name >
-								<a class="btn btn-primary active" href="#">${ item.title }</a>
+								<a class="btn-u btn-u-dark-blue btn-u-sm active" href="#">${ item.title }</a>
 								<#else>
-								<a class="btn btn-primary" href="${item.page}">${ item.title }</a>
+								<a class="btn-u btn-u-dark-blue btn-u-sm" href="${item.page}">${ item.title }</a>
 								</#if>
 							</#list>		
 							</div>
