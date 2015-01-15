@@ -92,8 +92,7 @@
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
 					</div>
-					</#if>
-					
+					</#if>					
 					<#if social_provider_error ?? >
 					<div class="error-v1 rounded">
 						<p>${social_provider_error?html}</p>
@@ -103,6 +102,7 @@
 					</div>
 					</#if>										
 					<#if profile ?? >
+					<i class="icon-flat person"></i>
 					<div class="profile-blog">
 						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
 						<div class="name-location">
