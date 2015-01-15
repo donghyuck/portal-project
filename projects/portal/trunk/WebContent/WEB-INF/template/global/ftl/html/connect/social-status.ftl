@@ -8,6 +8,7 @@
 		<!--
 		yepnope([{
 			load: [
+			'css!common.flat-icons.css"/>',
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
@@ -76,7 +77,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-12">
-					<h2><i class="fa fa-${connect.providerId}"></i> 연결 상태   <#if connect.displayName ?? ><small> ${connect.displayName} </small></#if></h2>				
+					<h2><i class="fa fa-${connect.providerId}"></i> 연결 상태   <#if connect ?? ><small> ${connect.displayName} </small></#if></h2>				
 					<button type="button" class="btn-close btn-close-grey btn-sm" style="top:0px;"><span class="sr-only">Close</span></button>
 				</div>
 			</div>
