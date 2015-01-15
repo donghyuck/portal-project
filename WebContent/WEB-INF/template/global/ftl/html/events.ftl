@@ -144,7 +144,7 @@
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 								</small>	
 							</h2>
-							<#if navigator.parent.layout?? && navigator.parent.layout == "pills" }>
+							<#if navigator.parent.layout?? && navigator.parent.layout == "pills" >
 							<div class="pull-right">
 								<div class="btn-group">
 								<#list navigator.parent.components as item >								
