@@ -1084,6 +1084,7 @@
 									<div class="sky-form" >
 										<header>&nbsp;</header> 
 										<fieldset class="padding-sm">
+											<label class="label">소스</label>
 											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 												<label class="btn btn-info btn-sm active rounded-left">
 													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
@@ -1097,7 +1098,9 @@
 											<section>
 												<label for="noticeStartDatePicker" class="label">시작일시</label>
 												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
-											</section>
+											</section>										
+										</fieldset>
+										<fieldset class="padding-sm">
 											<section>
 												<label for="noticeEndDatePicker" class="label">종료일시</label>
 												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />												
