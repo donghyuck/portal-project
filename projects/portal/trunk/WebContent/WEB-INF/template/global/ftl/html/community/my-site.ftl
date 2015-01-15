@@ -1079,7 +1079,7 @@
 						</div>
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
-								<div id="my-notice-list" class="col-sm-4 bg-slivergray rounded-2x p-sm">		
+								<div id="my-notice-list" class="col-sm-4">		
 								
 									<div class="sky-form" >
 										<header>&nbsp;</header> 
