@@ -146,7 +146,7 @@
 							</h2>
 							<div class="pull-right">
 							<div class="btn-group">
-							<#set navigator_parent_components_cnt = navigator.parent.components.size /> 
+							<#assign navigator_parent_components_cnt = navigator.parent.components.size /> 
 							<#list navigator.parent.components as item >
 								<#if item.name ==  navigator.name >
 								<a class="btn-u btn-u-dark-blue btn-u-sm active" href="#">${ item.title }</a>
