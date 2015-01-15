@@ -1058,7 +1058,7 @@
 													<div class="tab-pane fade" id="custom-template-tree-view"></div>
 												</div>
 											</div>										
-										</div>
+										</fieldset>
 									</div>									
 								</div>
 								<div class="col-sm-8">								
