@@ -1095,11 +1095,11 @@
 										</fieldset>
 										<fieldset class="padding-sm">
 											<section class="no-margin">
-												<label for="noticeStartDatePicker" class="m-r-md">시작일시</label>
+												<label for="noticeStartDatePicker" class="label">시작일시</label>
 												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
 											</section>
 											<section class="no-margin">
-												<label for="noticeEndDatePicker" class="m-r-md">종료일시</label>
+												<label for="noticeEndDatePicker" class="label">종료일시</label>
 												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />												
 											</section>
 										</fieldset>
