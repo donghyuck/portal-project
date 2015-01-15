@@ -1148,7 +1148,7 @@
 									</div>								
 								</div>
 								<div id="my-notice-edit" class="col-sm-8" style="display:none;">
-									<span class="visible-sm  m-t-sm" ></span>					
+									<span class="hidden-lg  m-t-sm" ></span>		
 									<span class="back" data-bind="events{click:close}"></span>
 									<div class="sky-form" >
 										<header>&nbsp;</header> 
@@ -1219,7 +1219,7 @@
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
 								<div id="my-page-view" style="display:none;">	
-											
+									<span class="hidden-lg  m-t-sm" ></span>				
 									<span class="back"></span>
 									<form action="" class="sky-form" novalidate="novalidate">
 										<header>&nbsp;</header>
