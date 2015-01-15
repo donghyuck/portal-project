@@ -1100,7 +1100,8 @@
 													</div>												
 												</section>
 											</div>
-											<div class="row">
+											<p class="help-block padding-sm-vr"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+											<div class="row">											
 											<section class="col-lg-6">
 												<label for="noticeStartDatePicker" class="label">시작일시</label>
 												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
@@ -1109,11 +1110,17 @@
 												<label for="noticeEndDatePicker" class="label">종료일시</label>
 												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />													
 											</section>
-											</div>										
+											</div>		
+											<div class="row">
+												<section class="col-sm-12 text-right">
+												
+												</section>
+											</div>																				
 										</fieldset>
 										<fieldset class="padding-sm">
 											<section>
-										
+												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
+												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>										
 											</section>
 										</fieldset>
 										<div id="my-notice-grid"></div>					
@@ -1121,7 +1128,7 @@
 									<h2 class="page-header no-margin"><i class="icon-flat mega-phone m-b-n-sm"></i></h2>			
 										<div class="p-sm">
 											
-											<p class="help-block padding-sm-vr"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+											
 											<div class="form-group">
 
 											</div>											
@@ -1130,8 +1137,7 @@
 											</div>	
 											
 											<div class="p-xxs text-right">
-												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
-												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>
+
 											</div>
 										</div>		
 																				
