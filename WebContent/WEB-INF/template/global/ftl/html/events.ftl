@@ -145,6 +145,16 @@
 								</small>	
 							</h2>
 							<div class="pull-right">
+							<div class="btn-group">
+							<#list navigator.parent.components as item >
+								<#if item.name ==  navigator.name >
+								<a class="btn btn-primary active" href="#">${ item.title }</a>
+								<#else>
+								<a class="btn btn-primary" href="${item.page}">${ item.title }</a>
+								</#if>
+							</#list>		
+							</div>
+
 							<ul class="nav nav-pills pull-right">
 							<#list navigator.parent.components as item >
 								<#if item.name ==  navigator.name >
@@ -155,6 +165,7 @@
 							</#list>								
 							</ul>
 							</div>
+							
 							<div class="breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
