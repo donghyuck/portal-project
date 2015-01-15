@@ -60,8 +60,7 @@
 				<#list webSiteMenu.components as item >
 					<#if WebSiteUtils.isUserAccessAllowed(item) >
 						<#if  item.components?has_content >
-							<#if item.layout??>			
-								<#if item.layout == "mega-menu">
+							<#if item.layout?? && item.layout == "mega-menu">			
 								<li class="dropdown mega-menu-fullwidth" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
 									<ul class="dropdown-menu">
@@ -90,7 +89,6 @@
 										</li>	
 									</ul>
 								</li>
-								</#if>
 							<#else>
 								<li class="dropdown" data-menu-item="${item.name}">
 									<a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" ><#if item.icon?? ><i class="fa ${item.icon} fa-lg"></i></#if> ${item.title}</a>
