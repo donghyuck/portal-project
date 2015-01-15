@@ -1087,6 +1087,7 @@
 										
 										</fieldset>
 										<fieldset class="padding-sm">
+											<p class="help-block"><i class="fa fa-info"></i>소스와 검색 기간을 선택하세요.</p>	
 											<div class="row">
 												<section class="col-sm-12">
 													<label class="label">소스</label>
@@ -1099,17 +1100,16 @@
 														</label>
 													</div>												
 												</section>
-											</div>
-											<p class="help-block padding-sm-vr"><i class="fa fa-info"></i> 검색 기간을 선택하세요.</p>	
+											</div>											
 											<div class="row">											
-											<section class="col-lg-6">
-												<label for="noticeStartDatePicker" class="label">시작일시</label>
-												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
-											</section>
-											<section class="col-lg-6">
-												<label for="noticeEndDatePicker" class="label">종료일시</label>
-												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />													
-											</section>
+												<section class="col-lg-6">
+													<label for="noticeStartDatePicker" class="label">시작일시</label>
+													<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
+												</section>
+												<section class="col-lg-6">
+													<label for="noticeEndDatePicker" class="label">종료일시</label>
+													<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />													
+												</section>
 											</div>		
 											<div class="row">
 												<section class="col-sm-12 text-right">
@@ -1117,11 +1117,6 @@
 													<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
 												</section>
 											</div>																				
-										</fieldset>
-										<fieldset class="padding-sm">
-											<section>
-										
-											</section>
 										</fieldset>
 										<div id="my-notice-grid"></div>					
 									</div>
