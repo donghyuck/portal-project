@@ -140,6 +140,9 @@
 					common.ui.ajax(
 						'<@spring.url "/secure/data/website/get.json?output=json" />' , 
 						{
+							data : {
+								refresh : true,
+							},
 							success : function(response){					
 								var site = new common.ui.data.WebSite(response);
 								site.copy($this.website);
