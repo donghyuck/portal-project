@@ -1084,17 +1084,22 @@
 									<div class="sky-form" >
 										<header>&nbsp;</header> 
 										<fieldset class="padding-sm">
-											<label class="label">소스</label>
-											<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-												<label class="btn btn-info btn-sm active rounded-left">
-													<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-												</label>
-												<label class="btn btn-info btn-sm rounded-right">
-													<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-												</label>
-											</div>										
+										
 										</fieldset>
 										<fieldset class="padding-sm">
+											<div class="row">
+												<section class="col-sm-12">
+													<label class="label">소스</label>
+													<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+														<label class="btn btn-info btn-sm active rounded-left">
+															<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+														</label>
+														<label class="btn btn-info btn-sm rounded-right">
+															<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+														</label>
+													</div>												
+												</section>
+											</div>
 											<div class="row">
 											<section class="col-lg-6">
 												<label for="noticeStartDatePicker" class="label">시작일시</label>
