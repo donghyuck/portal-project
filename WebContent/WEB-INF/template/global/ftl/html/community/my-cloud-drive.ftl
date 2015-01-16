@@ -599,7 +599,15 @@
 				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='personalized-controls-section']">Close</button>
 				<h5 class="side-section-title white">My 클라우드 저장소</h5>	
 				<!-- details -->
-				<div>
+				<div style="
+				    position: absolute;
+				    display: none;
+				    background: #FDFAFA;
+				    top: 80px;
+				    min-height: 700%;
+				    z-index: 1000;
+				    width: 100%;
+				">
 									
 				</div>
 				<!-- tab-v1 -->
