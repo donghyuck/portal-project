@@ -1352,8 +1352,7 @@
 			<!-- ./END FOOTER -->					
 		</div>				
 			<!-- START RIGHT SLIDE MENU -->
-			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
-				
+			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
 				<h5 class="side-section-title white">My 클라우드 저장소</h5>		
 				<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
 				<!-- tab-v1 -->
