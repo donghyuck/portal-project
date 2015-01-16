@@ -598,6 +598,10 @@
 				
 				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='personalized-controls-section']">Close</button>
 				<h5 class="side-section-title white">My 클라우드 저장소</h5>	
+				<!-- details -->
+				<div>
+									
+				</div>
 				<!-- tab-v1 -->
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
