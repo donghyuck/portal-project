@@ -73,7 +73,7 @@
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
 					//alert($("#" + target ).html());				
-					
+					alert($("#" + target ).data("feature-on"));
 					if( !$("#" + target ).data("feature-on") ){
 						$("#" + target ).data("feature-on", true );
 					} 
