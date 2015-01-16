@@ -84,10 +84,15 @@
 							break;	
 						}
 						$("#" + target ).data("feature-on", true );
-					} 										
+					} 			
+			
 					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
 						$("#" + target ).fadeIn();
 					});	
+
+					if( $(".personalized-section-content .container > div:visible").length == 0 ){
+						$("#" + target ).fadeIn();					
+					}		
 				});
 				// END SCRIPT 				
 			}
