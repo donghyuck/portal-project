@@ -116,7 +116,7 @@
 						<p><a href="${connect.profileUrl }" class="btn-link">쇼셜 바로가기</a></p>
 						</#if>
 					</#if>	
-					<#if user?? && user.anonymous >
+					<#elseif user?? && user.anonymous >
 						<i class="icon-flat person"></i>
 						<div class="profile-blog">
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
