@@ -1205,7 +1205,7 @@
 								</div>													
 							</div><!-- /.row -->
 						</div><!-- /. my-site-notice -->	
-						<div id="my-page">
+						<div id="my-page"  style="display:none;">>
 							<div class="row">
 								<div id="my-page-list">
 									<div class="p-xxs">
