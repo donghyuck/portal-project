@@ -64,33 +64,30 @@
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
 				
-				setupPersonalizedSection();			
-				createPageSection();
-				createTemplateSection();
-				createWebsiteSection();
-				
+				setupPersonalizedSection();
+				createWebsiteSection();		
+						
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
 					if( !$("#" + target ).data("feature-on") ){
 						switch( target ){
+							case "my-page" :
+								createPageSection();
+								break;
 							case "my-site-notice":
 								createNoticeSection();				
 							break;
 							case "my-site-template":
-								$('#template-tree a:first').tab('show');				
+								createTemplateSection();
+								$('#template-tree a:first').tab('show');
 							break;	
 						}
 						$("#" + target ).data("feature-on", true );
-					} 
-										
+					} 										
 					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
 						$("#" + target ).fadeIn();
 					});	
-					
-						
-					
-
 				});
 				// END SCRIPT 				
 			}
@@ -1021,8 +1018,8 @@
 									<label class="btn btn-sm btn-primary">
 										<input type="radio" name="my-site-action" aria-controls="my-site-notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
 									</label>											
-									<label class="btn btn-sm btn-primary rounded-right active">
-										<input type="radio" name="my-site-action" aria-controls="my-page" checked="checked" ><i class="fa fa-file-o"></i> 페이지
+									<label class="btn btn-sm btn-primary rounded-right">
+										<input type="radio" name="my-site-action" aria-controls="my-page"><i class="fa fa-file-o"></i> 페이지
 									</label>
 								</div>
 							</div>
