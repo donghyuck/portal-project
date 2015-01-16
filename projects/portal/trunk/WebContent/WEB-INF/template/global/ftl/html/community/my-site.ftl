@@ -72,9 +72,15 @@
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
-					//alert($("#" + target ).html());				
-					alert($("#" + target ).data("feature-on"));
 					if( !$("#" + target ).data("feature-on") ){
+						switch( target ){
+							case "my-site-notice":
+								createNoticeSection();				
+							break;
+							case "my-site-template":
+								$('#template-tree a:first').tab('show');				
+							break;	
+						}
 						$("#" + target ).data("feature-on", true );
 					} 
 										
@@ -84,14 +90,7 @@
 					
 						
 					
-					switch( target ){
-						case "my-site-notice":
-							createNoticeSection();				
-						break;
-						case "my-site-template":
-							$('#template-tree a:first').tab('show');				
-						break;	
-					}
+
 				});
 				// END SCRIPT 				
 			}
