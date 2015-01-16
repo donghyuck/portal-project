@@ -111,9 +111,12 @@
 						</div>
 							
 						<#if connect.profileUrl ?? >
-						<p><a href="${connect.profileUrl }" class="btn-link">홈</a></p>
+						<p><a href="${connect.profileUrl }" class="btn-link">쇼셜 바로가기</a></p>
 						</#if>
-					</#if>					
+					</#if>	
+					<#if user?? && user.anonymous >
+						<i class="icon-flat person"></i>
+					</#if>				
 				</div>
 			</div>
 		</div>
