@@ -1353,10 +1353,11 @@
 		</div>				
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
-				<!-- tab-v1 -->
+				
+				<h5 class="side-section-title white">My 클라우드 저장소</h5>		
 				<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
-				<div class="tab-v1" >			
-					<h5 class="side-section-title white">My 클라우드 저장소</h5>			
+				<!-- tab-v1 -->
+				<div class="tab-v1 m-t-md" >						
 					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
 						<#if !action.user.anonymous >	
 						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
