@@ -72,7 +72,12 @@
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
-					alert($("#" + target ).html());									
+					alert($("#" + target ).html());				
+					
+					if( !$("#" + target ).data("feature-on") ){
+						$("#" + target ).data("feature-on", true );
+					} 
+										
 					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
 						$("#" + target ).fadeIn();
 					});	
