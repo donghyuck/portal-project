@@ -112,7 +112,7 @@
 						</div>
 							
 						<#if connect.profileUrl ?? >
-						<p><a href="${connect.profileUrl }" class="btn-link">쇼셜 바로가기</a></p>
+						<p><a href="${connect.profileUrl }" class="btn btn-lg btn-${connect.providerId}">쇼셜 바로가기</a></p>
 						</#if>
 					<else>	
 					<#if user?? && user.anonymous >
