@@ -88,12 +88,14 @@
 		<div class="profile container content">	
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">				
-					<#if error ?? >
+					<#if error ??>
 					<div class="error-v1 rounded">
 						<p>${error?html}</p>
+						<#if !profile ??>
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
+						</#if>
 					</div>
 					</#if>					
 					<#if social_provider_error ?? >
