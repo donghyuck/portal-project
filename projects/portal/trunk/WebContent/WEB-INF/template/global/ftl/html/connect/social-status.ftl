@@ -88,27 +88,27 @@
 		<div class="profile container content">	
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2">				
-					<#if error ??>
+					<#if error??>
 					<div class="error-v1 rounded">
 						<p>${error?html}</p>
-						<#if !profile?exists >
+						<#if !profile?? >
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
 						</#if>
 					</div>
 					</#if>					
-					<#if social_provider_error ?? >
+					<#if social_provider_error?exists >
 					<div class="error-v1 rounded">
 						<p>${social_provider_error?html}</p>
-						<#if !profile?exists >
+						<#if !profile?? >
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
 						</#if>
 					</div>
 					</#if>										
-					<#if profile ?? >
+					<#if profile?? >
 					<div class="profile-blog">
 						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
 						<div class="name-location">
@@ -118,7 +118,7 @@
 						<p class="text-center"><a href="${connect.profileUrl }" class="btn btn-lg btn-${connect.providerId}"><i class="fa fa-${connect.providerId}"></i> 쇼셜 바로가기</a></p>
 						</#if>
 					<#else>	
-						<#if user?? && user.anonymous >
+						<#if !error?? && !social_provider_error?? && user?? && user.anonymous >
 							<i class="icon-flat person"></i>
 							<div class="profile-blog">
 							<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
