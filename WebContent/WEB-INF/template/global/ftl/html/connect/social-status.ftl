@@ -101,9 +101,11 @@
 					<#if social_provider_error ?? >
 					<div class="error-v1 rounded">
 						<p>${social_provider_error?html}</p>
+						<#if !profile ??>
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
+						</#if>
 					</div>
 					</#if>										
 					<#if profile ?? >
