@@ -72,9 +72,13 @@
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
+					alert($this.html())
+					
 					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
 						$("#" + target ).fadeIn();
 					});	
+					
+					
 					switch( target ){
 						case "my-site-notice":
 							createNoticeSection();				
@@ -93,11 +97,10 @@
 		function createWebsiteSection(){				
 			var model = kendo.observable({
 				website : new common.ui.data.WebSite(),
-				updateMenuData : function(e){				
-					
+				updateMenuData : function(e){			
 					var $this = this;
 					var btn = $(e.target);						
-					btn.button('loading');				
+					btn.button('loading');			
 					
 					$this.website.menu.menuData = ace.edit("xmleditor").getValue();
 						common.ui.ajax(
