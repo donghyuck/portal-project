@@ -9,6 +9,7 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',
+			'css!<@spring.url "/styles/common.plugins/brand-buttons.css"/>',
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
