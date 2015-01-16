@@ -105,7 +105,6 @@
 					</div>
 					</#if>										
 					<#if profile ?? >
-					<i class="icon-flat person"></i>
 					<div class="profile-blog">
 						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
 						<div class="name-location">
@@ -115,14 +114,15 @@
 						<#if connect.profileUrl ?? >
 						<p><a href="${connect.profileUrl }" class="btn-link">쇼셜 바로가기</a></p>
 						</#if>
-						
-					<#elseif user?? && user.anonymous >
+					<else>	
+					<#if user?? && user.anonymous >
 						<i class="icon-flat person"></i>
 						<div class="profile-blog">
 						<a class="btn btn-lg btn-${connect.providerId}" href="/connect/${connect.providerId}/authorize">
 							<i class="fa fa-${connect.providerId}"></i> Connect with ${connect.providerId?cap_first} <i class="fa fa-angle-right"></i>
 						</a>
 						</div>
+					</#if>
 					</#if>				
 				</div>
 			</div>
