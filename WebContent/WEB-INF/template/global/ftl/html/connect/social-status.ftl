@@ -108,7 +108,7 @@
 					<div class="profile-blog">
 						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
 						<div class="name-location">
-							<strong>${profile}</strong>
+							<strong>${profile.name}</strong>
 						</div>							
 						<#if connect.profileUrl ?? >
 						<p class="text-center"><a href="${connect.profileUrl }" class="btn btn-lg btn-${connect.providerId}"><i class="fa fa-${connect.providerId}"></i> 쇼셜 바로가기</a></p>
