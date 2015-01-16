@@ -115,7 +115,7 @@
 						<#if connect.profileUrl ?? >
 						<p><a href="${connect.profileUrl }" class="btn-link">쇼셜 바로가기</a></p>
 						</#if>
-					</#if>	
+						
 					<#elseif user?? && user.anonymous >
 						<i class="icon-flat person"></i>
 						<div class="profile-blog">
