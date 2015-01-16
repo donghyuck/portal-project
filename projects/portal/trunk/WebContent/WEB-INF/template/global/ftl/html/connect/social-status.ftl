@@ -109,8 +109,7 @@
 						<img class="rounded-x" src="<#if connect.imageUrl ??>${connect.imageUrl}<#else>/images/common/anonymous.png</#if>" alt="">
 						<div class="name-location">
 							<strong><#if connect ?? >${connect}</#if></strong>
-						</div>
-							
+						</div>							
 						<#if connect.profileUrl ?? >
 						<p class="text-center"><a href="${connect.profileUrl }" class="btn btn-lg btn-${connect.providerId}">쇼셜 바로가기</a></p>
 						</#if>
