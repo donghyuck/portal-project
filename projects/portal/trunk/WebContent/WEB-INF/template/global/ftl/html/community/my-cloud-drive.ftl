@@ -584,17 +584,14 @@
 					</div>													
 				</div>				
 			</section><!-- /.section -->
-			
-			
-							
-	
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
 			<!-- ./END FOOTER -->					
-		</div>				
-			<!-- START RIGHT SLIDE MENU -->
-			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
+		</div>			
+
+		<!-- START RIGHT SLIDE MENU -->
+		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
 				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='personalized-controls-section']">Close</button>
 				<h5 class="side-section-title white">My 클라우드 저장소</h5>	
 				<!-- details -->
@@ -667,7 +664,7 @@
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 								</div>												
-														<div class="panel-body">
+								<div class="panel-body">
 														<#if !action.user.anonymous >			
 														<div class="page-header text-primary">
 															<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
@@ -702,45 +699,41 @@
 														</form>
 														</#if>
 													</div>
-												</div>	
+								</div>	
 
 							<div class="panel panel-default no-margin-b">			
 								<div class="panel-body bg-slivergray border-b">
-									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
-									<#if !action.user.anonymous >		
-									<p class="pull-right">				
-										<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-									</p>	
-									
-									<div class="btn-group" data-toggle="buttons" id="image-source-list">
-										<label class="btn btn-sm btn-danger rounded-left active">
-											<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
-										</label>
-										<label class="btn btn-sm btn-danger">
-											<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
-										</label>											
-										<label class="btn btn-sm btn-danger rounded-right">
-											<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
-										</label>
-
-									</div>	
-																		
-									</#if>											
-								</div>
-								<div class="panel-body p-xxs">
-									<div id="photo-list-view" class="image-listview" ></div>
-								</div>	
-								<div class="panel-footer no-padding">
-									<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
-								</div>
+								<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
+								<#if !action.user.anonymous >		
+								<p class="pull-right">				
+									<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
+								</p>										
+								<div class="btn-group" data-toggle="buttons" id="image-source-list">
+									<label class="btn btn-sm btn-danger rounded-left active">
+										<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
+									</label>
+									<label class="btn btn-sm btn-danger">
+										<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
+									</label>											
+									<label class="btn btn-sm btn-danger rounded-right">
+										<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
+									</label>
+								</div>																			
+								</#if>											
+							</div>
+							<div class="panel-body p-xxs">
+								<div id="photo-list-view" class="image-listview" ></div>
 							</div>	
-						</div><!-- end photos  tab-pane -->
-					</div><!-- end of tab content -->
-				</div>	
-			</section>	
-			<div class="cbp-spmenu-overlay"></div>			
-			<!-- ./END RIGHT SLIDE MENU -->
-							
+							<div class="panel-footer no-padding">
+								<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
+							</div>
+						</div>	
+					</div><!-- end photos  tab-pane -->
+				</div><!-- end of tab content -->
+			</div>	
+		</section>	
+		<div class="cbp-spmenu-overlay"></div>			
+		<!-- ./END RIGHT SLIDE MENU -->							
 		<!-- START TEMPLATE -->									
 	<!-- ============================== -->
 	<!-- gallery template                                        -->
