@@ -451,16 +451,16 @@
 					"open":function(e){						
 						if( !renderTo.data("model")){
 							var model =  common.ui.observable({ 
-								image : new common.ui.data.Image()
-							});
-							
-							common.ui.bind( renderTo , model );
+								image : new common.ui.data.Image(),
+								setImage: function(source){
+									source.copy(this.image);
+									alert( source.name + "/" + this.image.name );								
+								}
+							});							
+							kendo.bind(renderTo, model );	
 							renderTo.data("model", model);
-								alert("0");
 						}	
-						alert("1");
-						image.copy( renderTo.data("model").image );
-						
+						renderTo.data("model").setImage( image );						
 					},
 					"close":function(e){
 						alert("fdsafasd");
