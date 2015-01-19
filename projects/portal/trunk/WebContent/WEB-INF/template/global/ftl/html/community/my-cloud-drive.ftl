@@ -641,7 +641,7 @@
 					<div class="row">						
 						<div class="col-sm-6" >		
 							<span data-bind="text:image.imageUrl"></span>					
-							<img data-bind="attr:{src:image.imageUrl}" src="/images/common/loader/preloader.gif"  class="img-responsive"/>
+							<img data-bind="attr:{src:image.imageUrl}" class="img-responsive"/>
 						</div>		
 						<div class="col-sm-6" style="background:#fff;">
 						<h2><strong data-bind="text: image.name"></strong>, I'm a dialog box</h2>
