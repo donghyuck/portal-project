@@ -261,7 +261,8 @@
 		options = options || {};
 		if(common.ui.exists(renderTo))
 			return renderTo.data("kendoDialogFx");
-		return new DialogFx(renderTo, options);		
+		else
+			return new DialogFx(renderTo, options);		
 	}	
 	
 	var DialogFx = Widget.extend({
