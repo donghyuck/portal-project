@@ -18,7 +18,7 @@
 		        creationDate: { type: "date" },
 		        index : {type: "number", defaultValue : 0 }
 		    },
-		    imageUrl: function(){		 
+		    extractImageUrl:function(){		 
 		    	if( this.get("imageId") > 0 )
 		    		return "/download/image/"+ this.get("imageId") + "/" + this.get("name") ;
 		    	else 
@@ -46,6 +46,7 @@
 		    	target.set("creationDate", this.get("creationDate"));
 		    	target.set("modifiedDate", this.get("modifiedDate"));
 		    	target.set("index", this.get("index"));
+		    	target.set("imageUrl", this.extractImageUrl());
 		    }
 		});
 
