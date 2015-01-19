@@ -551,7 +551,7 @@
 			}
 			
 			.dialog__content {
-				width : 100%
+				width : 100%;
 				max-width: none;
 				background: transparent;
 			}
