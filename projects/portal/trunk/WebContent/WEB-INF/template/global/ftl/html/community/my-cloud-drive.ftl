@@ -447,11 +447,16 @@
 			var renderTo = $(".dialog");
 			if( !common.ui.exist(renderTo) ){
 				common.ui.dialog( renderTo , {
-					
+					"open":function(e){
+						alert("fdsafasd");
+					},
+					"close":function(e){
+						alert("fdsafasd");
+					}
 				});
 			}	
-			if( common.ui.dialog( renderTo )){
-			
+			if( !common.ui.dialog( renderTo ).isOpen ){
+				common.ui.dialog( renderTo ).open();
 			}
 		}
 				
