@@ -554,7 +554,7 @@
 				width : 100%;
 				max-width: none;				
 				background: transparent;
-				padding: 10px;
+				padding: 4em;
 			}
 		</style>   	
 		</#compress>
@@ -621,7 +621,7 @@
 			<div class="dialog__content">
 				<div class="fluid-container">
 					<div class="row">
-						<div class="col-sm-12" style="background:#fff; height:100%;">
+						<div class="col-sm-12" style="background:#fff; ">
 							<h2><strong>Howdy</strong>, I'm a dialog box</h2><div><button class="action" data-dialog-close>Close</button></div>
 						</div>					
 					</div>
