@@ -290,7 +290,7 @@
 				var content = element.children("'.dialog__content");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					element.removeClass("dialog--close");			
-				};
+				});
 				
 				that.isOpen = false;				
 				that.trigger("close");
