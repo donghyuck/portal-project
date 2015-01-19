@@ -639,7 +639,8 @@
 				<div class="fluid-container">					
 					<span class="close animated" data-dialog-close></span>
 					<div class="row">						
-						<div class="col-sm-6" >							
+						<div class="col-sm-6" >		
+							<span data-bind="text:image.imageUrl"></span>					
 							<img data-bind="attr:{src:image.imageUrl}" src="/images/common/loader/preloader.gif"  class="img-responsive"/>
 						</div>		
 						<div class="col-sm-6" style="background:#fff;">
