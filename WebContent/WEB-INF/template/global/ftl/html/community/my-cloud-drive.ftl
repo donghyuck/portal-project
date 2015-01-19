@@ -362,6 +362,7 @@
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
 					showPhotoPanel(item);
+					showPhotoPanel2(item);
 				});									
 				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
