@@ -1130,10 +1130,10 @@ body:not  (.right-to-left  ) .no-border-l {
 /* Overlay panel
 ------------------------------------*/
 .dialog__overlay {
-	z-index : 2010;
+	z-index : 2010!important;
 }
 .dialog__content {
-	z-index : 2020;	
+	z-index : 2020!important;	
 }
 
 
