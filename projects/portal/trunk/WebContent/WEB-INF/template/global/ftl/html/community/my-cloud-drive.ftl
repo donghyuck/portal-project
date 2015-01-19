@@ -634,8 +634,9 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">				
 				<div class="fluid-container">
-					<span class="close animated" data-dialog-close></span>
+					
 					<div class="row" style="background:#fff; ">
+						<span class="close animated" data-dialog-close></span>
 						<div class="col-sm-6" >							
 							<img data-bind="attr:{src:image.imageUrl}" src="/images/common/loader/preloader.gif"  class="img-responsive"/>
 						</div>		
