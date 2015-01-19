@@ -446,7 +446,6 @@
 		}	
 		
 		function showPhotoPanel(image){		
-			var $image = image;
 			var renderTo = $("#image-viewer");
 			if( ! common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
@@ -455,13 +454,14 @@
 							var model =  common.ui.observable({ 
 								image : new common.ui.data.Image(),
 								setImage: function(source){
+									alert( source.imageId );
 									source.copy(this.image);					
 								}
 							});							
 							common.ui.bind(renderTo, model );	
 							renderTo.data("model", model);
 						}	
-						renderTo.data("model").setImage( $image );						
+						renderTo.data("model").setImage( image );						
 					},
 					"close":function(e){
 						
