@@ -259,6 +259,8 @@
 	
 	function dialog (renderTo, options) {
 		options = options || {};
+		if(common.ui.exists(renderTo.data("kendoDialogFx")))
+			return renderTo.data("kendoDialogFx");
 		return new DialogFx(renderTo, options);		
 	}	
 	
