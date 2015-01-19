@@ -552,7 +552,7 @@
 			
 			.dialog__content {
 				width : 100%;
-				max-width: none;
+				max-width: none;				
 				background: transparent;
 			}
 		
@@ -620,7 +620,12 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
 				<div class="container">
-					<h2><strong>Howdy</strong>, I'm a dialog box</h2><div><button class="action" data-dialog-close>Close</button></div>
+					<div class="row">
+						<div class="col-sm-12" style="background:#fff;">
+							<h2><strong>Howdy</strong>, I'm a dialog box</h2><div><button class="action" data-dialog-close>Close</button></div>
+						</div>					
+					</div>
+					
 				</div>				
 			</div>
 		</div>
