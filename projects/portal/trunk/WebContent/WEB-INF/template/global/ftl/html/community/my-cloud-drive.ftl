@@ -456,8 +456,9 @@
 							
 							common.ui.bind( renderTo , model );
 							renderTo.data("model", model);
+								alert("0");
 						}	
-						
+						alert("1");
 						image.copy( renderTo.data("model").image );
 						
 					},
