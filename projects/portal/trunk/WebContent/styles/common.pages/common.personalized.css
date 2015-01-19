@@ -347,6 +347,14 @@
 	}
 }
 
+.cbp-spmenu .image-listview.k-listview, .cbp-spmenu .file-listview.k-listview {
+	min-height: 450px;	
+}
+
+.cbp-spmenu nav.nav-tabs {
+	padding-left: 15px;
+}
+
 /**
 * sliede side menu
 */
@@ -475,6 +483,8 @@
 	text-decoration: none;
 }
 
+
+
 /** grid */
 .og-grid li {
 	height: 150px;
@@ -490,6 +500,8 @@
 	width: 150px;
 	height: 150px
 }
+
+
 
 /**
  * Panel
