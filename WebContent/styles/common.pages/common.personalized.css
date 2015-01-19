@@ -351,10 +351,14 @@
 	min-height: 450px;	
 }
 
-.cbp-spmenu nav.nav-tabs {
+.cbp-spmenu .nav.nav-tabs {
 	padding-left: 15px;
 }
 
+.cbp-spmenu .tab-content {
+	background:#fff;
+	padding:5px;
+} 
 /**
 * sliede side menu
 */
