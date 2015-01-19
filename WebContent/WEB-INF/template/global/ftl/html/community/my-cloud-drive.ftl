@@ -636,6 +636,7 @@
 						<div class="col-sm-12" style="background:#fff; ">
 							<span class="close animated" data-dialog-close></span>
 							<h2><strong>Howdy</strong>, I'm a dialog box</h2>
+							<img data-bind="src:image.imageUrl" class="img-responsive"/>
 						</div>					
 					</div>
 					
