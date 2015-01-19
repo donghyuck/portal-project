@@ -442,7 +442,18 @@
 				});
 			}			
 		}	
-		function showPhotoPanel(image){				
+		
+		function showPhotoPanel(image){		
+			var renderTo = $(".dialog");
+			if( !common.ui.exist(renderTo) ){
+				common.ui.dialog( renderTo , {
+					
+				});
+			}	
+			if( common.ui.dialog( renderTo ).
+		}
+				
+		function showPhotoPanel2(image){				
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.extPanel(
 			appendTo,
@@ -592,7 +603,7 @@
 			<!-- ./END FOOTER -->					
 		</div>			
 		
-		<div class="dialog">
+		<div class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
 				<h2><strong>Howdy</strong>, I'm a dialog box</h2><div><button class="action" data-dialog-close>Close</button></div>
