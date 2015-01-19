@@ -459,11 +459,10 @@
 					}
 				});							
 				common.ui.bind(renderTo, model );	
-				renderTo.data("model", model);
-						
 				common.ui.dialog( renderTo , {
+					data : model,
 					"open":function(e){						
-						model.setImage(image);
+						common.ui.dialog( renderTo ).data().setImage(image);
 					},
 					"close":function(e){
 						
