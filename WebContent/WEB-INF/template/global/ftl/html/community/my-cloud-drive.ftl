@@ -638,7 +638,7 @@
 						<div class="col-sm-12" style="background:#fff; ">
 							<span class="close animated" data-dialog-close></span>
 							<h2><strong data-bind="text: image.name"></strong>, I'm a dialog box</h2>
-							<img data-bind="attr : {src:image.imageUrl() }" class="img-responsive"/>
+							<img data-bind="attr:{src:image.imageUrl}" src="/image/common/no-image2.jpg"  class="img-responsive"/>
 						</div>					
 					</div>
 					
