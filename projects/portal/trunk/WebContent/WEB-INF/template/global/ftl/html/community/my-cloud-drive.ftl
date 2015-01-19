@@ -451,30 +451,27 @@
 			var renderTo = $("#image-viewer");
 			
 			if( ! common.ui.exists(renderTo) ){
+				var model =  common.ui.observable({ 
+					image : new common.ui.data.Image(),
+					setImage: function(source){
+						alert( source.imageId );
+						source.copy(this.image);					
+					}
+				});							
+				common.ui.bind(renderTo, model );	
+				renderTo.data("model", model);
+						
 				common.ui.dialog( renderTo , {
 					"open":function(e){						
-						if( !renderTo.data("model")){
-							var model =  common.ui.observable({ 
-								image : new common.ui.data.Image(),
-								setImage: function(source){
-									alert( source.imageId );
-									source.copy(this.image);					
-								}
-							});							
-							common.ui.bind(renderTo, model );	
-							renderTo.data("model", model);
-						}							
+						model.setImage(image);
 					},
 					"close":function(e){
 						
 					}
 				});
 			}
-			
-			
 				
-			if( !common.ui.dialog( renderTo ).isOpen ){
-				renderTo.data("model").setImage( image );
+			if( !common.ui.dialog( renderTo ).isOpen ){				
 				common.ui.dialog( renderTo ).open();
 			}
 		}
