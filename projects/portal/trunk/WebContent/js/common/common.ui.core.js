@@ -43,7 +43,6 @@
 		return false;
 	}	
 		
-	
 	extend(common, {	
 		ui: common.ui || {},
 		random : common.random || random,
