@@ -444,7 +444,7 @@
 		}	
 		
 		function showPhotoPanel(image){		
-			var renderTo = $(".dialog");
+			var renderTo = $("#image-viewer");
 			alert( common.ui.stringify(image));
 			if( !common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
