@@ -727,7 +727,7 @@
 																		
 									</#if>											
 								</div>
-								<div class="panel-body sm-padding" style="min-height:450px;">
+								<div class="panel-body p-xxs">
 									<div id="photo-list-view" class="image-listview" ></div>
 								</div>	
 								<div class="panel-footer no-padding">
