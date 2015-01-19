@@ -447,8 +447,15 @@
 			var renderTo = $(".dialog");
 			if( !common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
-					"open":function(e){
-						alert("fdsafasd");
+					"open":function(e){						
+						if( !renderTo.data("model")){
+							var model =  common.ui.observable({ 
+								image : new common.ui.data.Image()
+							});
+							renderTo.data("model", model);
+							common.ui.bind( renderTo , model );
+						}	
+						image.copy( renderTo.data("model").image );
 					},
 					"close":function(e){
 						alert("fdsafasd");
@@ -459,6 +466,8 @@
 				common.ui.dialog( renderTo ).open();
 			}
 		}
+		
+		
 				
 		function showPhotoPanel2(image){				
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
@@ -619,10 +628,9 @@
 			<!-- ./END FOOTER -->					
 		</div>			
 		
-		<div class="dialog" data-feature="dialog" data-dialog-animate="">
+		<div id="image-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
-			<div class="dialog__content">
-				
+			<div class="dialog__content">				
 				<div class="fluid-container">
 					<div class="row">
 						<div class="col-sm-12" style="background:#fff; ">
