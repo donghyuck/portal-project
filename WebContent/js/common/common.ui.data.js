@@ -29,7 +29,7 @@
 		    },
 		    imageUrl: function(){		 
 		    	if( this.imageId > 0 )
-		    		return "/download/image/"+ this.imageId + "/" + this.name ;
+		    		return "/download/image/"+ this.get("imageId") + "/" + this.get("name") ;
 		    	else 
 		    		return "/images/common/no-image2.jpg"
 		    },
