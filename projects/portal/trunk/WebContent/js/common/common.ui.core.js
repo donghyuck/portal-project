@@ -288,6 +288,14 @@
 				that.close();				
 			});
 		},
+		data : function( data ){
+			var that = this;
+			if( defined(data)){
+				that.options.data = data;
+			}else{
+				return that.options.data;
+			}
+		},		
 		close : function(){
 			var that = this,
 			element = that.element,
