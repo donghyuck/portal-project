@@ -551,16 +551,10 @@
 			}
 			
 			.dialog__content {
-				width : 80%;
+				width : 100%;
 				max-width: none;				
 				background: transparent;
 			}
-
-		@media (max-width: 768px){
-			dialog__content{
-				width : 100%;
-			}		
-		}
 		</style>   	
 		</#compress>
 	</head>
