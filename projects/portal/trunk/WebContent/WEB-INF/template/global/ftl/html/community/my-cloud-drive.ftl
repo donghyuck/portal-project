@@ -450,7 +450,9 @@
 					
 				});
 			}	
-			if( common.ui.dialog( renderTo ).
+			if( common.ui.dialog( renderTo )){
+			
+			}
 		}
 				
 		function showPhotoPanel2(image){				
