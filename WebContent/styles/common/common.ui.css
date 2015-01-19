@@ -1127,6 +1127,14 @@ body:not  (.right-to-left  ) .no-border-l {
 	background-color: #ebccd1;
 }
 
+/* Overlay panel
+------------------------------------*/
+.dialog__overlay {
+	z-index : 2010;
+}
+.dialog__content {
+	z-index : 2020;	
+}
 
 
 /* Loader
