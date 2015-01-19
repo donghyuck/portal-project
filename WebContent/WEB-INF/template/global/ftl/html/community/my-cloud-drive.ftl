@@ -463,7 +463,7 @@
 					data : model,
 					"open":function(e){			
 						alert( e );			
-						alert( $(this).html() ) ;
+						alert( e.target ) ;
 						//common.ui.dialog( renderTo ).data().setImage(image);
 					},
 					"close":function(e){
