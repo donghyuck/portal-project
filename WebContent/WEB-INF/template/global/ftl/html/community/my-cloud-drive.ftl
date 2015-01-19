@@ -590,7 +590,12 @@
 			<!-- ./END FOOTER -->					
 		</div>			
 		
-		<div 
+		<div class="dialog">
+			<div class="dialog__overlay"></div>
+			<div class="dialog__content">
+				<h2><strong>Howdy</strong>, I'm a dialog box</h2><div><button class="action" data-dialog-close>Close</button></div>
+			</div>
+		</div>
 		
 		<!-- START RIGHT SLIDE MENU -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
