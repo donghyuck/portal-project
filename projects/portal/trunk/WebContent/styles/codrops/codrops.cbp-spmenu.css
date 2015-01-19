@@ -2,9 +2,6 @@
 ------------------------------------*/
 
 .cbp-spmenu-overlay {
-	
-	width: 100%;
-	height: 100%;
 	visibility: hidden;
 	opacity: 0;
 	left: 0;
@@ -18,9 +15,10 @@
 
 .cbp-spmenu-open ~ .cbp-spmenu-overlay {
 	position: fixed;
-	opacity: .5;
+	opacity: .7;
 	visibility: visible;
 	top: 0;	
+	bottom: 0;	
 }
 
 
