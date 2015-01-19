@@ -362,7 +362,7 @@
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
-					alert( item.imageId );
+				
 					showPhotoPanel(item);
 					showPhotoPanel2(item);
 				});									
@@ -447,6 +447,7 @@
 		}	
 		
 		function showPhotoPanel(image){		
+			alert( image.imageId );
 			var renderTo = $("#image-viewer");
 			if( ! common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
