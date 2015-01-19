@@ -362,6 +362,7 @@
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];			
+					alert( item.imageId );
 					showPhotoPanel(item);
 					showPhotoPanel2(item);
 				});									
