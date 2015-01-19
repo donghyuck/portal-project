@@ -621,7 +621,7 @@
 			<div class="dialog__content">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-12" style="background:#fff; height:100%">
+						<div class="col-sm-12" style="background:#fff; height:100%;">
 							<h2><strong>Howdy</strong>, I'm a dialog box</h2><div><button class="action" data-dialog-close>Close</button></div>
 						</div>					
 					</div>
