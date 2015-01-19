@@ -549,6 +549,12 @@
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}
+			
+			.dialog__content {
+				width : 100%
+				max-width: none;
+				background: transparent;
+			}
 		
 		</style>   	
 		</#compress>
