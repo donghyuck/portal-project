@@ -622,10 +622,11 @@
 		<div class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
-				<span class="close animated" data-dialog-close></span>
+				
 				<div class="fluid-container">
 					<div class="row">
 						<div class="col-sm-12" style="background:#fff; ">
+							<span class="close animated" data-dialog-close></span>
 							<h2><strong>Howdy</strong>, I'm a dialog box</h2>
 						</div>					
 					</div>
