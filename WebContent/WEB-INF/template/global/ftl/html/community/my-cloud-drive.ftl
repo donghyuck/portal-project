@@ -452,12 +452,13 @@
 							var model =  common.ui.observable({ 
 								image : new common.ui.data.Image()
 							});
-							renderTo.data("model", model);
+							
 							common.ui.bind( renderTo , model );
+							renderTo.data("model", model);
 						}	
 						
 						image.copy( renderTo.data("model").image );
-						alert( common.ui.stringify(renderTo.data("model").image));
+						alert( common.ui.stringify(image));
 					},
 					"close":function(e){
 						alert("fdsafasd");
