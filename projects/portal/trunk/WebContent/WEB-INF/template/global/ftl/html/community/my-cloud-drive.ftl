@@ -463,6 +463,7 @@
 							common.ui.bind(renderTo, model );	
 							renderTo.data("model", model);
 						}	
+						alert( image.imageId );
 						renderTo.data("model").setImage( image );						
 					},
 					"close":function(e){
