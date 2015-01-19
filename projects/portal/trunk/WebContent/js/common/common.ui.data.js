@@ -27,6 +27,10 @@
 		    formattedModifiedDate : function(){
 		    	return kendo.toString(this.get("modifiedDate"), "g");
 		    },
+		    imageUrl: function(){
+		    	var url =  "/download/image/"+ this.imageId + "/" + this.name ;
+		    	
+		    },
 		    copy : function ( target ){
 		    	target.imageId = this.get("imageId");
 		    	target.set("objectType" , this.get("objectType"));
@@ -86,6 +90,7 @@
 		});
 	
 	var ANONYMOUS_PHOTO_URL = "/images/common/anonymous.png" ;	
+	
 	function photoUrl ( user , width , height ){		
 		if( !common.ui.defined( user ))
 		{
