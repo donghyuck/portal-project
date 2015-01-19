@@ -257,6 +257,11 @@
 		return new Setup(options);		
 	}
 	
+	function dialog (renderTo, options) {
+		options = options || {};
+		return new DialogFx(renderTo, options);		
+	}	
+	
 	var DialogFx = Widget.extend({
 		init : function(element, options) {
 			var that = this;
@@ -777,6 +782,7 @@
 			slim : slimScroll, 
 			top : scrollTop
 		},
+		dialog : common.ui.dialog || dialog,
 		enable: common.ui.enable || enable,
 		disable: common.ui.disable || disable,
 		buttons : common.ui.buttons || buttons,
