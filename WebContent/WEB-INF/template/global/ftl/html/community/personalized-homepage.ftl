@@ -412,6 +412,7 @@
 											</div>
 										</div>
 										<div class="personalized-session-content">
+										
 											<div class="container">
 												<div class="row">
 													<div class="col-sm-12 p-sm">													
@@ -442,6 +443,7 @@
 													</div>
 												</div>
 											</div>
+										
 										</div>
 									</div>														
 								</div>								
