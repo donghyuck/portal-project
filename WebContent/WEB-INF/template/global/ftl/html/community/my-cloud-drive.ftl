@@ -445,7 +445,7 @@
 		
 		function showPhotoPanel(image){		
 			var renderTo = $(".dialog");
-			if( !common.ui.exist(renderTo) ){
+			if( !common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
 					"open":function(e){
 						alert("fdsafasd");
