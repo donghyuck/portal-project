@@ -554,6 +554,10 @@ padding: 20px 10px;
 	border-bottom: none;
 }
 
+
+body.aside-menu-in.modal-open .aside-menu {
+	overflow-y: hidden;
+}
 /*
 * Utility 
 **/
