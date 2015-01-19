@@ -259,9 +259,9 @@
 	
 	var DialogFx = Widget.extend({
 		init : function(element, options) {
-			var that = this,
-			Widget.fn.init.call(that, element, options),
-			element = that.element,
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			element = that.element;
 			options = that.options;
 			that.isOpen = false;
 			kendo.notify(that);
