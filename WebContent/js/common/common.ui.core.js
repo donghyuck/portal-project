@@ -294,7 +294,7 @@
 			if( that.isOpen ){
 				element.removeClass("dialog--open");
 				element.addClass("dialog--close");
-				var content = element.children("'.dialog__content");
+				var content = element.children(".dialog__content");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					element.removeClass("dialog--close");			
 				});
