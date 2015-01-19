@@ -28,7 +28,7 @@
 		    	return kendo.toString(this.get("modifiedDate"), "g");
 		    },
 		    imageUrl: function(){		 
-		    	if( this.imageId > 0 )
+		    	if( this.get("imageId") > 0 )
 		    		return "/download/image/"+ this.get("imageId") + "/" + this.get("name") ;
 		    	else 
 		    		return "/images/common/no-image2.jpg"
