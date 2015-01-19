@@ -449,6 +449,7 @@
 		function showPhotoPanel(image){		
 			alert( image.imageId );
 			var renderTo = $("#image-viewer");
+			
 			if( ! common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
 					"open":function(e){						
@@ -462,16 +463,18 @@
 							});							
 							common.ui.bind(renderTo, model );	
 							renderTo.data("model", model);
-						}	
-						alert( image.imageId );
-						renderTo.data("model").setImage( image );						
+						}							
 					},
 					"close":function(e){
 						
 					}
 				});
-			}	
+			}
+			
+			
+				
 			if( !common.ui.dialog( renderTo ).isOpen ){
+				renderTo.data("model").setImage( image );
 				common.ui.dialog( renderTo ).open();
 			}
 		}
