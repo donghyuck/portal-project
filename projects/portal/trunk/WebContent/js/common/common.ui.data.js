@@ -18,6 +18,12 @@
 		        creationDate: { type: "date" },
 		        index : {type: "number", defaultValue : 0 }
 		    },
+		    imageUrl: function(){		 
+		    	if( this.get("imageId") > 0 )
+		    		return "/download/image/"+ this.get("imageId") + "/" + this.get("name") ;
+		    	else 
+		    		return "/images/common/no-image2.jpg"
+		    },		    
 			formattedSize : function(){
 				return kendo.toString(this.get("size"), "##,###");
 			},
@@ -26,12 +32,6 @@
 		    },
 		    formattedModifiedDate : function(){
 		    	return kendo.toString(this.get("modifiedDate"), "g");
-		    },
-		    imageUrl: function(){		 
-		    	if( this.get("imageId") > 0 )
-		    		return "/download/image/"+ this.get("imageId") + "/" + this.get("name") ;
-		    	else 
-		    		return "/images/common/no-image2.jpg"
 		    },
 		    copy : function ( target ){
 		    	target.imageId = this.get("imageId");
