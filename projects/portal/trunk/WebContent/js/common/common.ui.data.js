@@ -27,8 +27,11 @@
 		    formattedModifiedDate : function(){
 		    	return kendo.toString(this.get("modifiedDate"), "g");
 		    },
-		    imageUrl: function(){
-		    	return "/download/image/"+ this.imageId + "/" + this.name ;
+		    imageUrl: function(){		 
+		    	if( this.imageId > 0 )
+		    		return "/download/image/"+ this.imageId + "/" + this.name ;
+		    	else 
+		    		return "/images/common/no-image2.jpg"
 		    },
 		    copy : function ( target ){
 		    	target.imageId = this.get("imageId");
