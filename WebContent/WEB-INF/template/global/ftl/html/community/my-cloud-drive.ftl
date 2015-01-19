@@ -455,7 +455,9 @@
 							renderTo.data("model", model);
 							common.ui.bind( renderTo , model );
 						}	
+						
 						image.copy( renderTo.data("model").image );
+						alert( common.ui.stringify(renderTo.data("model").image));
 					},
 					"close":function(e){
 						alert("fdsafasd");
