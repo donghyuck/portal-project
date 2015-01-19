@@ -461,7 +461,8 @@
 				common.ui.bind(renderTo, model );	
 				common.ui.dialog( renderTo , {
 					data : model,
-					"open":function(e){						
+					"open":function(e){			
+						alert( e.target.data() );			
 						common.ui.dialog( renderTo ).data().setImage(image);
 					},
 					"close":function(e){
