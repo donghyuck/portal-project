@@ -357,6 +357,7 @@
 				});		
 												
 				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });
+				
 				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
@@ -445,26 +446,25 @@
 		}	
 		
 		function showPhotoPanel(image){		
+			var $image = image;
 			var renderTo = $("#image-viewer");
-			alert( common.ui.stringify(image));
-			if( !common.ui.exists(renderTo) ){
+			if( ! common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
 					"open":function(e){						
 						if( !renderTo.data("model")){
 							var model =  common.ui.observable({ 
 								image : new common.ui.data.Image(),
 								setImage: function(source){
-									source.copy(this.image);
-									alert( source.name + "/" + this.image.name );								
+									source.copy(this.image);					
 								}
 							});							
-							kendo.bind(renderTo, model );	
+							common.ui.bind(renderTo, model );	
 							renderTo.data("model", model);
 						}	
-						renderTo.data("model").setImage( image );						
+						renderTo.data("model").setImage( $image );						
 					},
 					"close":function(e){
-						alert("fdsafasd");
+						
 					}
 				});
 			}	
