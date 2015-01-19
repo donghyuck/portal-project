@@ -243,7 +243,8 @@
 			wallpaper : false,
 			lightbox: false,
 			spmenu: false,
-			morphing: false
+			morphing: false,
+			dialog:false
 		},
 		wallpaper : {
 			slideshow : true
@@ -255,6 +256,51 @@
 		options = options || {};
 		return new Setup(options);		
 	}
+	
+	var DialogFx = Widget.extend({
+		init : function(element, options) {
+			var that = this,
+			Widget.fn.init.call(that, element, options);
+			element = that.element;
+			options = that.options;
+			that.isOpen = false;
+			kendo.notify(that);
+		},
+		options : {
+			name : "DialogFx"
+		},
+		events : [ "open", "close" ],
+		render : function() {
+			var that = this;
+		},
+		close : function(){
+			var that = this,
+			element = that.element,
+			options = that.options;		
+			if( that.isOpen ){
+				element.removeClass("dialog--open");
+				element.addClass("dialog--close");
+				var content = element.children("'.dialog__content");
+				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+					element.removeClass("dialog--close");			
+				};
+				
+				that.isOpen = false;				
+				that.trigger("close");
+			}
+		},
+		open : function(){
+			var that = this,
+			element = that.element,
+			options = that.options;			
+			if( !that.isOpen )
+			{
+				element.addClass("dialog--open");
+				that.isOpen = true;
+				that.trigger("open");				
+			}
+		}
+	});		
 	
 	var Setup = kendo.Class.extend({		
 		init: function(options) {
@@ -315,7 +361,16 @@
 					target.trigger(e = $.Event('open.morphing'))
 					target.toggleClass("open");
 				});
-			}			
+			}		
+			if(features.dialog){
+				$(document).on("click", "[data-feature=dialog]", function(e){
+					var target ,
+					$this = $(this);
+					
+					
+					
+				});
+			}
 		} 		
 	});
 	
