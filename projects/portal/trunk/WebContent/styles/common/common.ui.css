@@ -556,7 +556,7 @@ padding: 20px 10px;
 
 
 body.aside-menu-in.modal-open .aside-menu {
-	overflow-y: hidden;
+	overflow: hidden;
 }
 /*
 * Utility 
