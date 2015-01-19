@@ -1133,6 +1133,29 @@ body:not  (.right-to-left  ) .no-border-l {
 	z-index : 2000;
 }
 
+.dialog .close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 50px;
+	font-size: 40px;
+	display: block;
+	width: 50px;
+	height: 50px;
+	text-align: center;
+	background: url(/images/common/grey-cross.png) no-repeat center center;
+	background-size: 40px;
+	content: "";
+	display: block;
+	opacity: .5;
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;		
+}
+
+.dialog .close:hover {
+	opacity: 1;
+}
+
 
 /* Loader
 ------------------------------------*/
