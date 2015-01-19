@@ -11,9 +11,10 @@
 		    	objectType: { type: "number", editable: true, defaultValue:0  },    	
 		    	objectId: { type: "number", editable: true, defaultValue:0  },    	
 		    	name: { type: "string", editable: true , validation: { required: true }},
-		        contentType: { type: "string", editable: true },
+		    	contentType: { type: "string", editable: true },
 		        size: { type: "number", defaultValue : 0,  editable: true },
 		        shared : { type: "boolean", defaultValue : false,  editable: true },
+		        imageUrl: { type: "string", editable: true },
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" },
 		        index : {type: "number", defaultValue : 0 }
