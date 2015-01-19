@@ -633,14 +633,13 @@
 		<div id="image-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">				
-				<div class="fluid-container">
-					
-					<div class="row" style="background:#fff; ">
-						<span class="close animated" data-dialog-close></span>
+				<div class="fluid-container">					
+					<span class="close animated" data-dialog-close></span>
+					<div class="row">						
 						<div class="col-sm-6" >							
 							<img data-bind="attr:{src:image.imageUrl}" src="/images/common/loader/preloader.gif"  class="img-responsive"/>
 						</div>		
-						<div class="col-sm-6">
+						<div class="col-sm-6" style="background:#fff;">
 						<h2><strong data-bind="text: image.name"></strong>, I'm a dialog box</h2>
 						</div>			
 					</div>
