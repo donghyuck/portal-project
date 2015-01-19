@@ -594,8 +594,7 @@
 			<!-- ./END FOOTER -->					
 		</div>				
 			<!-- START RIGHT SLIDE MENU -->
-			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
-				
+			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
 				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='personalized-controls-section']">Close</button>
 				<h5 class="side-section-title white">My 클라우드 저장소</h5>	
 				<!-- details -->
@@ -607,19 +606,18 @@
 				    min-height: 700%;
 				    z-index: 1000;
 				    width: 100%;
-				">
-									
+				">									
 				</div>
 				<!-- tab-v1 -->
 				<div class="tab-v1 m-t-md" >							
-					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
+					<ul class="nav nav-tabs" id="myTab">
 						<#if !action.user.anonymous >	
 						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
 						<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
 						</#if>						
 					</ul>		
 					<!-- tab-content -->		
-					<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
+					<div class="tab-content">
 						<!-- start attachement tab-pane -->
 						<div class="tab-pane" id="my-files">
 								<div class="panel panel-primary panel-upload no-margin-b border-2x" style="display:none;">
