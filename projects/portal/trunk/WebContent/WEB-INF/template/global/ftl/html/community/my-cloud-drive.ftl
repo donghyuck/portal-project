@@ -445,6 +445,7 @@
 		
 		function showPhotoPanel(image){		
 			var renderTo = $(".dialog");
+			alert( common.ui.stringify(image));
 			if( !common.ui.exists(renderTo) ){
 				common.ui.dialog( renderTo , {
 					"open":function(e){						
@@ -458,7 +459,7 @@
 						}	
 						
 						image.copy( renderTo.data("model").image );
-						alert( common.ui.stringify(image));
+						
 					},
 					"close":function(e){
 						alert("fdsafasd");
