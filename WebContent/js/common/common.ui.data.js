@@ -28,8 +28,7 @@
 		    	return kendo.toString(this.get("modifiedDate"), "g");
 		    },
 		    imageUrl: function(){
-		    	var url =  "/download/image/"+ this.imageId + "/" + this.name ;
-		    	
+		    	return "/download/image/"+ this.imageId + "/" + this.name ;
 		    },
 		    copy : function ( target ){
 		    	target.imageId = this.get("imageId");
