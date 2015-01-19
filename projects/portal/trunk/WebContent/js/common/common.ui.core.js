@@ -265,13 +265,20 @@
 			options = that.options;
 			that.isOpen = false;
 			kendo.notify(that);
+			that.render();
 		},
 		options : {
 			name : "DialogFx"
 		},
 		events : [ "open", "close" ],
 		render : function() {
-			var that = this;
+			var that = this,
+			element = that.element,
+			options = that.options;	
+			var ctrlClose  = element.find("[data-dialog-close]");
+			ctrlClose.click(function(e){
+				that.close();				
+			});
 		},
 		close : function(){
 			var that = this,
