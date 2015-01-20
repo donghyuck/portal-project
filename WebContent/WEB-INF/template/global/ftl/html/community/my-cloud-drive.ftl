@@ -663,6 +663,7 @@
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
 					<span class="close animated" data-dialog-close=""></span>
+					
 					<div class="mfp-content">
 						<div class="og-loading" style="display: none;"></div>
 						<div class="mfp-figure">
@@ -676,7 +677,8 @@
 								</figcaption>
 							</figure>
 						</div>
-					</div>					
+					</div>
+					<div class="mfp-preloader">Loading...</div>					
 				</div>
 			</div>
 		</div>
