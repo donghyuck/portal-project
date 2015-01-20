@@ -1166,7 +1166,7 @@ body:not  (.right-to-left  ) .no-border-l {
 	opacity: .5;
 }
 
-.dialog .close:hover {
+.dialog .close:hover, .dialog .edit:hover {
 	opacity: .9;
 }
 
