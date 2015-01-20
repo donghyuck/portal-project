@@ -698,7 +698,8 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="close animated" data-dialog-close=""></span>					
+					<span class="edit" data-dialog-edit></span>				
+					<span class="close" data-dialog-close></span>					
 					<div class="mfp-content">						
 						<div class="mfp-figure">
 							<figure>
