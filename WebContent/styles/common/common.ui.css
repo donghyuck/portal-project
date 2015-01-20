@@ -1143,7 +1143,7 @@ body:not  (.right-to-left  ) .no-border-l {
 	height: 60px;
 	text-align: center;
 	background: url(/images/common/icons/flat-icons.png) no-repeat center rgba(0, 0, 0, 0.8);
-	background-position: --60px -285px;
+	background-position: -60px -285px;
 	content: "";
 	display: block;
 	opacity: .5;
