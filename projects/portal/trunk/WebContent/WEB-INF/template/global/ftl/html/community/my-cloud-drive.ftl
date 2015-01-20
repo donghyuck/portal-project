@@ -333,7 +333,7 @@
 								}
 							}
 						),
-						selectable: false,
+						selectable: "single",
 						change: function(e) {
 							var data = this.dataSource.view() ;
 							var current_index = this.select().index();
