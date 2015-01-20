@@ -452,8 +452,17 @@
 				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
 					setImage: function(source){
-						source.copy(this.image);					
-					}
+						var $this = this;
+						$this.loading = true;
+						source.copy($this.image);									
+						$("<img/>" ).load( function() {
+							var $img = $(this);
+							if( $img.attr( 'src' ) === $this.image.imageUrl ) {								
+								$this.loading = false;
+							}
+						}).attr( 'src', $this.image.imageUrl );
+					},
+					loading : true
 				});					
 				common.ui.dialog( renderTo , {
 					data : observable,
@@ -643,8 +652,9 @@
 					<span class="close animated" data-dialog-close></span>
 					<div class="row">						
 						<div class="col-sm-6" >		
-							<span data-bind="text:image.imageUrl"></span>					
-							<img data-bind="attr:{src:image.imageUrl}" class="img-responsive"/>
+							<span data-bind="text:image.imageUrl"></span>		
+							<div class="og-loading" style="display: none;" data-bind="visible:loading"></div>
+							<img data-bind="attr:{src:image.imageUrl}" class="img-responsive" data-bind="invisible:loading"/>
 						</div>		
 						<div class="col-sm-6" style="background:#fff;">
 						<h2><strong data-bind="text: image.name"></strong>, I'm a dialog box</h2>
