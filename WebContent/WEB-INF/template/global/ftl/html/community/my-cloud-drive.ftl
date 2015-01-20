@@ -656,7 +656,7 @@
 					<div class="mfp-content">
 						<div class="mfp-figure">
 							<figure>
-								<img class="mfp-img" style="display: block;" data-bind="text:image.imageUrl">
+								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}">
 								<figcaption>
 									<div class="mfp-bottom-bar">
 										<div class="mfp-title" data-bind="text: image.name"></div>
