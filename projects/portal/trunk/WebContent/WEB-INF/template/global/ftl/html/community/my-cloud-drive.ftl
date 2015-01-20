@@ -451,18 +451,21 @@
 			if( ! common.ui.exists(renderTo) ){			
 				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
-					setImage: function(source){
-						var $this = this;
-						$this.loading = true;
-						source.copy($this.image);							
+					setImage: function(image){
+						var $this = this;						
+						image.copy($this.image);												
+						var $loading = renderTo.find(".og-loading");
+						var $largeImg = renderTo.find("img");		
+						$largeImg.hide();				
+						$loading.show();							
 						$("<img/>" ).load( function() {
 							var $img = $(this);							
 							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
-								$this.set("loading", false);
+								$loading.hide();
+								$largeImg.show();		
 							}
 						}).attr( 'src', $this.image.imageUrl );
-					},
-					loading : true
+					}
 				});					
 				common.ui.dialog( renderTo , {
 					data : observable,
@@ -653,8 +656,8 @@
 					<div class="row">						
 						<div class="col-sm-6" >		
 							<span data-bind="text:image.imageUrl"></span>		
-							<div class="og-loading" style="display: none;" data-bind="visible:loading"></div>
-							<img data-bind="attr:{src:image.imageUrl}, invisible:loading" class="img-responsive"/>
+							<div class="og-loading" style="display: none;"></div>
+							<img data-bind="attr:{src:image.imageUrl}" class="img-responsive"/>
 						</div>		
 						<div class="col-sm-6" style="background:#fff;">
 						<h2><strong data-bind="text: image.name"></strong>, I'm a dialog box</h2>
