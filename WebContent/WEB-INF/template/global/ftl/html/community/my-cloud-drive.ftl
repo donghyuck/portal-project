@@ -472,23 +472,18 @@
 						}).attr( 'src', $this.image.imageUrl );
 					}
 				});
-				observable.resize();
-				
+				observable.resize();				
 				$window.resize(function(){
 					observable.resize();
-				});				
-				
+				});		
 				common.ui.dialog( renderTo , {
 					data : observable,
-					"open":function(e){			
-						
+					"open":function(e){								
 					},
-					"close":function(e){
-					
+					"close":function(e){					
 					}
 				});				
-				common.ui.bind(renderTo, observable );	
-				
+				common.ui.bind(renderTo, observable );					
 			}			
 			var dialogFx = common.ui.dialog( renderTo );				
 			if( !dialogFx.isOpen ){			
