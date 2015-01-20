@@ -650,21 +650,23 @@
 		
 		<div id="image-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
-			<div class="dialog__content">				
-				<div class="fluid-container">					
-					<span class="close animated" data-dialog-close></span>
-					<div class="row">						
-						<div class="col-sm-6" >		
-							<span data-bind="text:image.imageUrl"></span>		
-							<div class="og-loading" style="display: none;"></div>
-							<img data-bind="attr:{src:image.imageUrl}" class="img-responsive"/>
-						</div>		
-						<div class="col-sm-6" style="background:#fff;">
-						<h2><strong data-bind="text: image.name"></strong>, I'm a dialog box</h2>
-						</div>			
-					</div>
-					
-				</div>				
+			<div class="dialog__content">			
+				<span class="close animated" data-dialog-close=""></span>
+				<div class="mfp-container mfp-s-ready mfp-image-holder">
+					<div class="mfp-content">
+						<div class="mfp-figure">
+							<figure>
+								<img class="mfp-img" style="display: block;" data-bind="text:image.imageUrl">
+								<figcaption>
+									<div class="mfp-bottom-bar">
+										<div class="mfp-title" data-bind="text: image.name"></div>
+										<div class="mfp-counter">sss</div>
+									</div>
+								</figcaption>
+							</figure>
+						</div>
+					</div>					
+				</div>
 			</div>
 		</div>
 		
