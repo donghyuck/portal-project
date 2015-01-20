@@ -462,7 +462,7 @@
 							var $img = $(this);							
 							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
 								$loading.hide();
-								$largeImg.show();		
+								$largeImg.fadeIn();		
 							}
 						}).attr( 'src', $this.image.imageUrl );
 					}
