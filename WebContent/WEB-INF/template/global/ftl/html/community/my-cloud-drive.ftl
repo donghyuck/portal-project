@@ -660,9 +660,9 @@
 		
 		<div id="image-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
-			<div class="dialog__content">			
-				<span class="close animated" data-dialog-close=""></span>
+			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
+					<span class="close animated" data-dialog-close=""></span>
 					<div class="mfp-content">
 						<div class="mfp-figure">
 							<figure>
