@@ -457,6 +457,26 @@
 					},
 					hasPrevious: false,
 					hasNext: false,
+					previous : function(){
+						var $this = this;
+						if( $this.hasPrevious ){
+							var index = $this.image.index - 1;
+							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+							var item = data[index];				
+							item.set("index", index );
+							showPhotoPanel(item);		
+						}
+					},
+					next : function(){
+						var $this = this;
+						if( $this.hasNext ){
+							var index = $this.image.index + 1;
+							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+							var item = data[index];		
+							item.set("index", index );
+							showPhotoPanel(item);					
+						}
+					},
 					setHasPrevious: function(){
 						var $this = this;
 						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
@@ -487,7 +507,7 @@
 							var $img = $(this);							
 							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
 								$loading.hide();
-								$largeImg.fadeIn();		
+								$largeImg.fadeIn("slow");		
 							}
 						}).attr( 'src', $this.image.imageUrl );
 					}
