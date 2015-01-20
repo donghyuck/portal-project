@@ -1135,7 +1135,7 @@ body:not  (.right-to-left  ) .no-border-l {
 .dialog .edit {
 	position: absolute;
 	top: 0;
-	right: 0;
+	right: 60px;
 	line-height: 50px;
 	font-size: 40px;
 	display: block;
@@ -1143,7 +1143,7 @@ body:not  (.right-to-left  ) .no-border-l {
 	height: 60px;
 	text-align: center;
 	background: url(/images/common/icons/flat-icons.png) no-repeat center rgba(0, 0, 0, 0.8);
-	background-position: -389px -120px;
+	background-position: --60px -285px;
 	content: "";
 	display: block;
 	opacity: .5;
