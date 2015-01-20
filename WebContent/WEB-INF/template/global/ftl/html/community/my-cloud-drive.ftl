@@ -487,7 +487,7 @@
 					setHasNext: function(){
 						var $this = this;
 						var size = common.ui.listview($('#photo-list-view')).dataSource.view().length;						
-						if( $this.image.index < size && (size - this.image.index ) > 0 )
+						if( ($this.image.index + 1 )< size && (size - this.image.index ) > 0 )
 							$this.set("hasNext", true); 
 						else 
 							$this.set("hasNext", false); 
