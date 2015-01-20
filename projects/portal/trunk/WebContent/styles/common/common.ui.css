@@ -1143,8 +1143,8 @@ body:not  (.right-to-left  ) .no-border-l {
 	width: 60px;
 	height: 60px;
 	text-align: center;
-	background: url(/images/common/grey-cross.png) no-repeat center center;
-	background-size: 40px;
+	background: url(/images/common/white-cross.png) no-repeat center center;
+	background-size: 30px;
 	content: "";
 	display: block;
 	opacity: .5;
