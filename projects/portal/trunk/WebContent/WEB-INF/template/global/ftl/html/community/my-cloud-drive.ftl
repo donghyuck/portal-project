@@ -457,9 +457,8 @@
 						source.copy($this.image);							
 						$("<img/>" ).load( function() {
 							var $img = $(this);							
-							if( $img.attr( 'src' ) === $this.image.imageUrl ) {								
-								$this.loading = false;
-								alert( $this.loading );
+							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
+								$this.set("loading", false);
 							}
 						}).attr( 'src', $this.image.imageUrl );
 					},
