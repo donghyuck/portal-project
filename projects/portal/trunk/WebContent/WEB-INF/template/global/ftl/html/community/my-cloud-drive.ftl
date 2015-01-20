@@ -454,9 +454,11 @@
 					setImage: function(source){
 						var $this = this;
 						$this.loading = true;
-						source.copy($this.image);									
+						source.copy($this.image);							
+alert( $this.image.imageUrl );
 						$("<img/>" ).load( function() {
 							var $img = $(this);
+							alert(  $img.attr( 'src' ) === $this.image.imageUrl );
 							if( $img.attr( 'src' ) === $this.image.imageUrl ) {								
 								$this.loading = false;
 							}
