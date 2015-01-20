@@ -654,7 +654,7 @@
 						<div class="col-sm-6" >		
 							<span data-bind="text:image.imageUrl"></span>		
 							<div class="og-loading" style="display: none;" data-bind="visible:loading"></div>
-							<img data-bind="attr:{src:image.imageUrl}" class="img-responsive" data-bind="invisible:loading"/>
+							<img data-bind="attr:{src:image.imageUrl}" class="img-responsive" data-bind="invisible:loading" />
 						</div>		
 						<div class="col-sm-6" style="background:#fff;">
 						<h2><strong data-bind="text: image.name"></strong>, I'm a dialog box</h2>
