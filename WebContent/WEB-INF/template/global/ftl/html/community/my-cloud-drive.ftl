@@ -459,7 +459,6 @@
 					hasNext: false,
 					previous : function(){
 						var $this = this;
-						alert( $this.hasPrevious  );
 						if( $this.hasPrevious ){
 							var index = $this.image.index - 1;
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
@@ -469,8 +468,7 @@
 						}
 					},
 					next : function(){
-						var $this = this;
-						alert( $this.hasNext  );
+						var $this = this;						
 						if( $this.hasNext ){
 							var index = $this.image.index + 1;
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
@@ -527,9 +525,9 @@
 				});				
 				common.ui.bind(renderTo, observable );					
 			}			
-			var dialogFx = common.ui.dialog( renderTo );				
-			if( !dialogFx.isOpen ){			
-				dialogFx.data().setImage(image);	
+			var dialogFx = common.ui.dialog( renderTo );		
+			dialogFx.data().setImage(image);			
+			if( !dialogFx.isOpen ){							
 				dialogFx.open();
 			}
 		}
