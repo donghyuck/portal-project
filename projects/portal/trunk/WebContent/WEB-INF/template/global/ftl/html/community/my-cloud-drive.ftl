@@ -325,7 +325,7 @@
 										}
 									}
 								},
-								pageSize: 12,
+								pageSize: 24,
 								schema: {
 									model: common.ui.data.Image,
 									data : "images",
