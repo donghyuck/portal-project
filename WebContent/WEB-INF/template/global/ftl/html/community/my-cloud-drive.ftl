@@ -362,7 +362,8 @@
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 					var item = data[index];
-					showPhotoPanel(item, index);
+					item.set("index", index );
+					showPhotoPanel(item);
 				});									
 				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
