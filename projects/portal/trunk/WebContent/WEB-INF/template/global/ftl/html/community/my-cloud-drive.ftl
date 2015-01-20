@@ -664,6 +664,7 @@
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
 					<span class="close animated" data-dialog-close=""></span>
 					<div class="mfp-content">
+						<div class="og-loading" style="display: none;"></div>
 						<div class="mfp-figure">
 							<figure>
 								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}">
