@@ -632,6 +632,7 @@
 				top: 0;
 				left: 0;
 				position: absolute;
+				height: 100%!important;
 			}
 		</style>   	
 		</#compress>
