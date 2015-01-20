@@ -448,6 +448,7 @@
 		
 		function showPhotoPanel(image){		
 			var renderTo = $("#image-viewer");			
+			
 			if( ! common.ui.exists(renderTo) ){			
 				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
@@ -479,7 +480,9 @@
 				common.ui.bind(renderTo, observable );	
 			}
 			
+			renderTo.find(".mfp-content").css("height", $(window).height());
 			var dialogFx = common.ui.dialog( renderTo );
+			
 				
 			if( !dialogFx.isOpen ){			
 				dialogFx.data().setImage(image);	
