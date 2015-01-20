@@ -687,7 +687,9 @@
 					</div>
 					<div class="mfp-preloader" style="display: none;">
 						<div class="og-loading"></div>
-					</div>					
+					</div>
+					<button title="Previous (Left arrow key)" type="button" class="mfp-arrow mfp-arrow-left mfp-prevent-close" data-bind="visible: hasPrevious"></button>
+					<button title="Next (Right arrow key)" type="button" class="mfp-arrow mfp-arrow-right mfp-prevent-close" data-bind="visible: hasNext"></button>					
 				</div>
 			</div>
 		</div>
