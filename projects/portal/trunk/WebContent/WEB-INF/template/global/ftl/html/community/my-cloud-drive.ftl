@@ -455,23 +455,30 @@
 					resize : function(){
 						renderTo.find("img.mfp-img").css("max-height", $window.height());					
 					},
-					hasPrevious: function(){
-						var listview = common.ui.listview($('#photo-list-view'));
+					hasPrevious: false,
+					hasNext: false,
+					setHasPrevious: function(){
+						var $this = this;
 						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
-							return true;
+							$this.set("hasPrevious", true); 
 						else 
-							return false;	
+							$this.set("hasPrevious", false); 
 					}, 
-					hasNext: function(){
+					setHasNext: function(){
+						var $this = this;
 						var listview = common.ui.listview($('#photo-list-view'));
 						if(  (listview.dataSource.view().length - this.image.index ) > 0 )
-							return true;
+							$this.set("hasNext", true); 
 						else 
-							return false;	
+							$this.set("hasNext", false); 
 					}, 
 					setImage: function(image){
 						var $this = this;						
-						image.copy($this.image);												
+						image.copy($this.image);				
+						
+						$this.setHasPrevious();
+						$this.setHasNext();
+														
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
 						$largeImg.hide();				
