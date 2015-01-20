@@ -455,12 +455,11 @@
 						var $this = this;
 						$this.loading = true;
 						source.copy($this.image);							
-alert( $this.image.imageUrl );
 						$("<img/>" ).load( function() {
-							var $img = $(this);
-							alert(  $img.attr( 'src' ) === $this.image.imageUrl );
+							var $img = $(this);							
 							if( $img.attr( 'src' ) === $this.image.imageUrl ) {								
 								$this.loading = false;
+								alert( $this.loading );
 							}
 						}).attr( 'src', $this.image.imageUrl );
 					},
