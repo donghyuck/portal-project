@@ -459,8 +459,8 @@
 					setImage: function(image){
 						var $this = this;						
 						image.copy($this.image);												
-						var $loading = renderTo.find(".og-loading");
-						var $largeImg = renderTo.find("img.mfp-img");		
+						var $loading = renderTo.find(".mfp-preloader");
+						var $largeImg = renderTo.find(".mfp-content");		
 						$largeImg.hide();				
 						$loading.show();							
 						$("<img/>" ).load( function() {
@@ -664,8 +664,7 @@
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
 					<span class="close animated" data-dialog-close=""></span>					
-					<div class="mfp-content">
-						<div class="og-loading" style="display: none;"></div>
+					<div class="mfp-content">						
 						<div class="mfp-figure">
 							<figure>
 								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}">
@@ -678,7 +677,9 @@
 							</figure>
 						</div>
 					</div>
-					<div class="mfp-preloader">Loading...</div>					
+					<div class="mfp-preloader" style="display: none;">
+						<div class="og-loading"></div>
+					</div>					
 				</div>
 			</div>
 		</div>
