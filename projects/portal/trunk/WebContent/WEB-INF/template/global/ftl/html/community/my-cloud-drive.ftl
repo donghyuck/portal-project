@@ -447,31 +447,31 @@
 		}	
 		
 		function showPhotoPanel(image){		
-			alert( image.imageId );
-			var renderTo = $("#image-viewer");
-			
-			if( ! common.ui.exists(renderTo) ){
-				var model =  common.ui.observable({ 
+			var renderTo = $("#image-viewer");			
+			if( ! common.ui.exists(renderTo) ){			
+				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
 					setImage: function(source){
-						alert( source.imageId );
 						source.copy(this.image);					
 					}
-				});							
-				common.ui.bind(renderTo, model );	
+				});					
 				common.ui.dialog( renderTo , {
-					data : model,
+					data : observable,
 					"open":function(e){			
-						this.data().setImage(image);
+						
 					},
 					"close":function(e){
-						
+					
 					}
-				});
+				});				
+				common.ui.bind(renderTo, observable );	
 			}
+			
+			var dialogFx = common.ui.dialog( renderTo );
 				
-			if( !common.ui.dialog( renderTo ).isOpen ){				
-				common.ui.dialog( renderTo ).open();
+			if( !dialogFx.isOpen ){			
+				dialogFx.data().setImage(image);	
+				dialogFx.open();
 			}
 		}
 		
