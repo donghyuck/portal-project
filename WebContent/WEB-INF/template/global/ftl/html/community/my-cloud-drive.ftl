@@ -450,13 +450,17 @@
 			var renderTo = $("#image-viewer");			
 			
 			if( ! common.ui.exists(renderTo) ){			
+				var $window = $(window);
 				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
+					resize : function(){
+						renderTo.find("img.mfp-img").css("max-height", $window.height());					
+					},
 					setImage: function(image){
 						var $this = this;						
 						image.copy($this.image);												
 						var $loading = renderTo.find(".og-loading");
-						var $largeImg = renderTo.find("img");		
+						var $largeImg = renderTo.find("img.mfp-img");		
 						$largeImg.hide();				
 						$loading.show();							
 						$("<img/>" ).load( function() {
@@ -467,7 +471,13 @@
 							}
 						}).attr( 'src', $this.image.imageUrl );
 					}
-				});					
+				});
+				observable.resize();
+				
+				$window.resize(function(){
+					observable.resize();
+				});				
+				
 				common.ui.dialog( renderTo , {
 					data : observable,
 					"open":function(e){			
@@ -478,12 +488,9 @@
 					}
 				});				
 				common.ui.bind(renderTo, observable );	
-			}
-			
-			renderTo.find(".mfp-content").css("height", $(window).height());
-			var dialogFx = common.ui.dialog( renderTo );
-			
 				
+			}			
+			var dialogFx = common.ui.dialog( renderTo );				
 			if( !dialogFx.isOpen ){			
 				dialogFx.data().setImage(image);	
 				dialogFx.open();
