@@ -455,6 +455,20 @@
 					resize : function(){
 						renderTo.find("img.mfp-img").css("max-height", $window.height());					
 					},
+					hasPrevious: function(){
+						var listview = common.ui.listview($('#photo-list-view'));
+						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
+							return true;
+						else 
+							return false;	
+					}, 
+					hasNext: function(){
+						var listview = common.ui.listview($('#photo-list-view'));
+						if(  (listview.dataSource.view().length - this.image.index ) > 0 )
+							return true;
+						else 
+							return false;	
+					}, 
 					setImage: function(image){
 						var $this = this;						
 						image.copy($this.image);												
