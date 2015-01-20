@@ -1132,6 +1132,22 @@ body:not  (.right-to-left  ) .no-border-l {
 .dialog {
 	z-index : 2000;
 }
+.dialog .edit {
+	position: absolute;
+	top: 0;
+	right: 0;
+	line-height: 50px;
+	font-size: 40px;
+	display: block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	background: url(/images/common/icons/flat-icons.png) no-repeat center rgba(0, 0, 0, 0.8);
+	background-position: -389px -120px;
+	content: "";
+	display: block;
+	opacity: .5;
+}
 
 .dialog .close {
 	position: absolute;
