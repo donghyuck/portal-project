@@ -459,6 +459,7 @@
 					hasNext: false,
 					previous : function(){
 						var $this = this;
+						alert( $this.hasPrevious  );
 						if( $this.hasPrevious ){
 							var index = $this.image.index - 1;
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
@@ -469,6 +470,7 @@
 					},
 					next : function(){
 						var $this = this;
+						alert( $this.hasNext  );
 						if( $this.hasNext ){
 							var index = $this.image.index + 1;
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
