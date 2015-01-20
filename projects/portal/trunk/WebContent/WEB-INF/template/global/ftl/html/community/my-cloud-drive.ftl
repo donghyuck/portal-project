@@ -361,9 +361,8 @@
 				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
-					var item = data[index];						
-					alert(index + "/" + data.length );	
-					showPhotoPanel(item);
+					var item = data[index];
+					showPhotoPanel(item, index);
 				});									
 				
 				common.ui.buttons($("#my-photo-stream button.btn-control-group[data-action]"), {
