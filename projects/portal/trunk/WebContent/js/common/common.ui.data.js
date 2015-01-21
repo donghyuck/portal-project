@@ -30,13 +30,7 @@
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" },
 		        index : {type: "number", defaultValue : 0 }
-		    },
-		    extractImageUrl:function(){		 
-		    	if( this.get("imageId") > 0 )
-		    		return "/download/image/"+ this.get("imageId") + "/" + this.get("name") ;
-		    	else 
-		    		return "/images/common/no-image2.jpg"
-		    },		    
+		    },	    
 			formattedSize : function(){
 				return kendo.toString(this.get("size"), "##,###");
 			},
