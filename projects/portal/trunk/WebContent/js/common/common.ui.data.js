@@ -3,7 +3,7 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
-
+/*
 	function imageUrl ( image , width , height ){	
 		if( image.get("imageId") > 0 )
 			var _photoUrl = "/download/image/" + image.imageId + "/" + image.name ;	
@@ -14,7 +14,7 @@
 		}
 		return "/images/common/no-image2.jpg";
 	}
-	
+	*/
 	common.ui.data.Image = kendo.data.Model.define( {
 		    id: "imageId", // the identifier of the model
 		    fields: {
