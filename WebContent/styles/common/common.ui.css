@@ -1169,13 +1169,11 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 .dialog .btn-flat.right2 {
-	right: 120px;
 	background: url(/images/common/white-angle-double-right.png) no-repeat center rgba(0, 0, 0, 0.8);;
 	background-size: 30px;
 }
 
 .dialog .btn-flat.left2 {
-	right: 180px;
 	background: url(/images/common/white-angle-double-left.png) no-repeat center rgba(0, 0, 0, 0.8);;
 	background-size: 30px;
 }
