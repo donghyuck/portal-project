@@ -1160,6 +1160,7 @@ body:not  (.right-to-left  ) .no-border-l {
 .dialog .btn-flat.trash {
 	position: absolute;
 	left: 0px;
+	background-position: -7px -286px;
 }
 
 .dialog .btn-flat.pencil {
