@@ -341,16 +341,25 @@
 							var data = this.dataSource.view() ;
 							var current_index = this.select().index();
 							var total_index = this.dataSource.view().length -1 ;
-							var list_view_pager = $("#photo-list-pager").data("kendoPager");	
+							var list_view_pager =  common.ui.pager( $("#photo-list-pager") );		
 							var item = data[current_index];								
 						},
 						dataBound : function(e){
 							var renderTo = $("#image-viewer");
 							if(common.ui.exists(renderTo) && common.ui.dialog(renderTo).isOpen ){
-								var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
-								var item = data[0];
-								item.set("index", 0 );
-								showPhotoPanel(item);
+								var list_view_pager = common.ui.pager( $("#photo-list-pager") );
+								var dialogFx = common.ui.dialog(renderTo);
+								var data = common.ui.listview($('#photo-list-view')).dataSource.view();
+								
+								if( dialogFx.page > list_view_pager.page() ){
+									var item = data[dialogFx.pageSize-1];
+									item.set("index", dialogFx.pageSize-1 );
+									showPhotoPanel(item);
+								} else {
+									var item = data[0];
+									item.set("index", 0 );
+									showPhotoPanel(item);
+								}
 							}
 						},
 						navigatable: false,
@@ -466,6 +475,8 @@
 					resize : function(){
 						renderTo.find("img.mfp-img").css("max-height", $window.height());					
 					},
+					page:0,
+					pageSize:0,
 					hasPreviousPage: false,
 					hasNextPage: false,
 					hasPrevious: false,
@@ -494,16 +505,14 @@
 						var $this = this;
 						if( $this.hasPreviousPage ){							
 							var pager = common.ui.pager( $("#photo-list-pager") );
-							var page = pager.page();
-							pager.page(page -1);
+							pager.page($this.page -1);
 						}
 					},
 					nextPage : function(){
 						var $this = this;						
 						if( $this.hasNextPage ){
 							var pager = common.ui.pager( $("#photo-list-pager") );
-							var page = pager.page();
-							pager.page(page +1);			
+							pager.page($this.page +1);			
 						}
 					},					
 					setPagination: function(){
@@ -525,6 +534,7 @@
 						
 						$this.set("hasPreviousPage", page > 1 );				
 						$this.set("hasNextPage", totalPages > page  );		
+						$this.set("page", page );			
 						$this.set("pageSize", pageSize );																	
 					},
 					setImage: function(image){
