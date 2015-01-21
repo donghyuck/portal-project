@@ -718,6 +718,22 @@
 				margin: 10px auto;
 				position: relative;
 			}
+			.white-popup-block .close {
+				position: absolute;
+				top: 0;
+				right: 0;
+				line-height: 50px;
+				font-size: 40px;
+				display: block;
+				width: 50px;
+				height: 50px;
+				text-align: center;
+				background: url(/images/common/grey-cross.png) no-repeat center center;
+				background-size: 25px;
+				content: "";
+				display: block;
+				opacity: .5;
+			}
 		</style>   	
 		</#compress>
 	</head>
@@ -788,6 +804,8 @@
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">	
 						<div class="white-popup-block" style="display:none">
+							<span class="close"></span>
+						
 							<h1>Modal dialog</h1>
 							<p>You won't be able to dismiss this by usual means (escape or
 								click button), but you can close it programatically based on
