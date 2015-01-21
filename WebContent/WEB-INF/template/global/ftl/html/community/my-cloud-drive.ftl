@@ -458,6 +458,8 @@
 					resize : function(){
 						renderTo.find("img.mfp-img").css("max-height", $window.height());					
 					},
+					hasPreviousPage: false,
+					hasNextPage: false,
 					hasPrevious: false,
 					hasNext: false,
 					previous : function(){
@@ -480,6 +482,31 @@
 							showPhotoPanel(item);					
 						}
 					},
+					previousPage : function(){
+						var $this = this;
+						if( $this.hasPreviousPage ){
+							
+							var pager = common.ui.pager( $("#photo-list-pager") );
+							var page = pager.page();
+							pager(page -1);
+							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+							var item = data[0];		
+							item.set("index", 0 );
+							showPhotoPanel(item);	
+						}
+					},
+					nextPage : function(){
+						var $this = this;						
+						if( $this.hasNextPage ){
+							var pager = common.ui.pager( $("#photo-list-pager") );
+							var page = pager.page();
+							pager(page +1);
+							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+							var item = data[0];		
+							item.set("index", 0 );
+							showPhotoPanel(item);					
+						}
+					},					
 					setHasPrevious: function(){
 						var $this = this;
 						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
@@ -501,6 +528,12 @@
 						
 						$this.setHasPrevious();
 						$this.setHasNext();
+						
+						var pager = common.ui.pager( $("#photo-list-pager") );
+						var page = pager.page();
+						var totalPages = pager.totalPages();						
+						$this.set("hasPreviousPage", page < 2 );				
+						$this.set("hasNextPage", totalPages > page  );						
 														
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
