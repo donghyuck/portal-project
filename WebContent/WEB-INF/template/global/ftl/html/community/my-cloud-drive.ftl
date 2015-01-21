@@ -532,11 +532,36 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					edit: function(){
+						var gridRenderTo = renderTo.find(".photo-props-grid");	
+						if(!common.ui.exists(gridRenderTo)){
+							common.ui.grid(grid, {
+								dataSource : common.ui.data.image.property.datasource($this.image.imageId),
+								columns: [
+									{ title: "속성", field: "name" },
+									{ title: "값",   field: "value" },
+									{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+								],
+								pageable: false,
+								resizable: true,
+								editable : true,
+								scrollable: true,
+								autoBind: true,
+								toolbar: [
+									{ name: "create", text: "추가" },
+									{ name: "save", text: "저장" },
+									{ name: "cancel", text: "취소" }
+								],				     
+								change: function(e) {
+									this.refresh();
+								}
+							});							
+						}					
 						renderTo.find(".mfp-figure").fadeOut(function(e){
 							renderTo.find(".white-popup-block").fadeIn();
 						});		
 					},
 					closeEdit: function(){
+						var $this = this;		
 						renderTo.find("white-popup-block").fadeOut(function(e){
 							renderTo.find(".mfp-figure").fadeIn();
 						});						
