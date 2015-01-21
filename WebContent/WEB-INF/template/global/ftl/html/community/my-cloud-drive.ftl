@@ -761,8 +761,8 @@
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
 					<span class="btn-flat trash" data-dialog-trash></span>		
-					<span class="btn-flat left2"></span>		
-					<span class="btn-flat right2"></span>		
+					<span class="btn-flat left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
+					<span class="btn-flat right2" data-bind="visible: hasNextPage, click: nextPage"></span>		
 					<span class="btn-flat pencil grayscale"></span>				
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">						
