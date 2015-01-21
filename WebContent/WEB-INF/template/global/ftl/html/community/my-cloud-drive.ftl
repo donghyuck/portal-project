@@ -557,16 +557,11 @@
 								}
 							});							
 						}					
-						renderTo.find(".mfp-figure").fadeOut(function(e){
-							renderTo.find(".white-popup-block").fadeIn();
-						});		
+						renderTo.find(".white-popup-block").fadeIn();	
 					},
 					close: function(){
-						var $this = this;		
-						
-						renderTo.find(".white-popup-block").fadeOut(function(e){
-							renderTo.find(".mfp-figure").fadeIn();
-						});						
+						var $this = this;						
+						renderTo.find(".white-popup-block").fadeOut();
 					},
 					setImage: function(image){
 						var $this = this;						
@@ -746,9 +741,11 @@
 				background: #FFF;
 				padding: 20px 30px;
 				text-align: left;
-				max-width: 650px;
-				margin: 10px auto;
-				position: relative;
+				width: 100%;
+				height: 100%;
+				position: fixed;
+				top: 0;
+				left: 0;
 			}
 			.white-popup-block .close {
 				position: absolute;
@@ -839,18 +836,11 @@
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">	
 						<div class="white-popup-block" style="display:none">
+							
 							<div class="container">
 								<div class="row">
-								
+									<span class="close" data-bind="click: close"></span>
 									<div class="col-sm-12">
-									
-									
-									</div>
-								</div>
-							</div>
-						
-							<span class="close" data-bind="click: close"></span>
-						
 							<img class="img-circle" data-bind="attr:{src:image.imageThumbnailUrl}">
 							<h1>Modal dialog</h1>
 							<p>You won't be able to dismiss this by usual means (escape or
@@ -876,7 +866,15 @@
 	<h4 class="text-primary"><i class="fa fa-cfg"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
 </div>
 <div class="photo-props-grid"></div>
-								
+																	
+									
+									</div>
+								</div>
+							</div>
+						
+							
+						
+
 											
 						</div>			
 						<div class="mfp-figure">
