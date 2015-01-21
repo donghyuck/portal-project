@@ -784,7 +784,13 @@
 					<span class="btn-flat left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 					<span class="btn-flat right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
 					<span class="btn-flat close" data-dialog-close></span>					
-					<div class="mfp-content">						
+					<div class="mfp-content">	
+						<div class="white-popup-block" style="display:none">
+							<h1>Modal dialog</h1>
+							<p>You won't be able to dismiss this by usual means (escape or
+								click button), but you can close it programatically based on
+								user choices or actions.</p>						
+						</div>			
 						<div class="mfp-figure">
 							<figure>
 								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}">
