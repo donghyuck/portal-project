@@ -1174,12 +1174,12 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 .dialog .btn-flat.pencil2 {
-	background-position: -76px -557px;
+	background-position: -70px -550px;
 	width: 40px;
 	height: 40px;		
 }
 
-.dialog .btn-flat.garbage2 {
+.dialog .btn-flat.trash2 {
 	background-position: -187px -556px;
 	width: 40px;
 	height: 40px;	
