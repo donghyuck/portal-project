@@ -12,7 +12,7 @@
 			}
 			return _photoUrl ;
 		}
-		return "/images/common/no-image2.jpg"
+		return "/images/common/no-image2.jpg";
 	}
 	
 	common.ui.data.Image = kendo.data.Model.define( {
