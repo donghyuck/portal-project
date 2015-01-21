@@ -840,8 +840,13 @@
 					<div class="mfp-content">	
 						<div class="white-popup-block" style="display:none">
 							<div class="container">
-							
+								<div class="row">
 								
+									<div class="col-sm-12">
+									
+									
+									</div>
+								</div>
 							</div>
 						
 							<span class="close" data-bind="click: close"></span>
