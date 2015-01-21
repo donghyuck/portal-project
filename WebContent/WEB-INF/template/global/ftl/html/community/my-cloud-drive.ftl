@@ -647,13 +647,15 @@
 			}
 			
 			.dialog .btn-flat.left2 {
-				top:60px;
-				right:60px			
+				top:auto;
+				left:0px;	
+				bottom:0px;		
 			}
 			
 			.dialog .btn-flat.right2 {
-				top:60px;
-				right:0px
+				top:auto;
+				right:0px;	
+				bottom:0px;		
 			}
 			
 		</style>   	
