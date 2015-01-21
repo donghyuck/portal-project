@@ -49,7 +49,7 @@
 
 
 	function imageUrl ( image , width , height ){	
-		if( image.imageId > 0 ){}
+		if( image.imageId > 0 ){
 			var _photoUrl = "/download/image/" + image.imageId + "/" + image.name ;	
 			if( typeof width === "number" && typeof height === "number" ){
 				_photoUrl = _photoUrl + "?width=" + width + "&height=" + height ;
