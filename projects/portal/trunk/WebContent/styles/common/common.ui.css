@@ -1193,6 +1193,11 @@ body:not  (.right-to-left  ) .no-border-l {
 	background-size: 30px;
 }
 
+.dialog .btn-flat.plus {
+	background: url(/images/common/white-plu.png) no-repeat center rgba(0, 0, 0, 0.8);;
+	background-size: 30px;
+}
+
 
 .dialog .btn-flat:hover {
 	opacity: .9;
