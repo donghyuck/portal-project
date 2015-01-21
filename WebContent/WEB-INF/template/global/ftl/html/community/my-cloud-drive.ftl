@@ -344,6 +344,15 @@
 							var list_view_pager = $("#photo-list-pager").data("kendoPager");	
 							var item = data[current_index];								
 						},
+						dataBound : function(e){
+							var renderTo = $("#image-viewer");
+							if(common.ui.exists(renderTo) && common.ui.dialog(renderTo).isOpen ){
+								var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+								var item = data[0];
+								item.set("index", 0 );
+								showPhotoPanel(item);
+							}
+						},
 						navigatable: false,
 						template: kendo.template($("#photo-list-view-template").html())
 					}
@@ -397,8 +406,7 @@
 									},
 									upload: function(e) {
 										e.preventDefault();	
-										var hasError = false;	
-										
+										var hasError = false;											
 										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
 										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
 											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");			
@@ -484,15 +492,10 @@
 					},
 					previousPage : function(){
 						var $this = this;
-						if( $this.hasPreviousPage ){
-							
+						if( $this.hasPreviousPage ){							
 							var pager = common.ui.pager( $("#photo-list-pager") );
 							var page = pager.page();
 							pager.page(page -1);
-							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
-							var item = data[0];		
-							item.set("index", 0 );
-							showPhotoPanel(item);	
 						}
 					},
 					nextPage : function(){
@@ -500,41 +503,33 @@
 						if( $this.hasNextPage ){
 							var pager = common.ui.pager( $("#photo-list-pager") );
 							var page = pager.page();
-							pager.page(page +1);
-							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
-							var item = data[0];		
-							item.set("index", 0 );
-							showPhotoPanel(item);					
+							pager.page(page +1);			
 						}
 					},					
-					setHasPrevious: function(){
+					setPagination: function(){
 						var $this = this;
+						var pageSize = common.ui.listview($('#photo-list-view')).dataSource.view().length;	
+						var pager = common.ui.pager( $("#photo-list-pager") );
+						var page = pager.page();
+						var totalPages = pager.totalPages();					
+						
 						if( this.image.index > 0 && (this.image.index - 1) >= 0 )
 							$this.set("hasPrevious", true); 
 						else 
 							$this.set("hasPrevious", false); 
-					}, 
-					setHasNext: function(){
-						var $this = this;
-						var size = common.ui.listview($('#photo-list-view')).dataSource.view().length;						
-						if( ($this.image.index + 1 )< size && (size - this.image.index ) > 0 )
+							
+						if( ($this.image.index + 1 )< pageSize && (pageSize - this.image.index ) > 0 )
 							$this.set("hasNext", true); 
 						else 
-							$this.set("hasNext", false); 
-					}, 
+							$this.set("hasNext", false); 		
+						
+						$this.set("hasPreviousPage", page > 1 );				
+						$this.set("hasNextPage", totalPages > page  );															
+					},
 					setImage: function(image){
 						var $this = this;						
-						image.copy($this.image);				
-						
-						$this.setHasPrevious();
-						$this.setHasNext();
-						
-						var pager = common.ui.pager( $("#photo-list-pager") );
-						var page = pager.page();
-						var totalPages = pager.totalPages();						
-						$this.set("hasPreviousPage", page > 1 );				
-						$this.set("hasNextPage", totalPages > page  );						
-														
+						image.copy($this.image);	
+						$this.setPagination();
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
 						$largeImg.hide();				
