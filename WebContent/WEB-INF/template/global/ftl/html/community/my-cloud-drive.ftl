@@ -532,7 +532,9 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					edit: function(){
-						alert("");
+												
+						renderTo.find("white-popup-block").fadeIn();
+						
 					},
 					setImage: function(image){
 						var $this = this;						
