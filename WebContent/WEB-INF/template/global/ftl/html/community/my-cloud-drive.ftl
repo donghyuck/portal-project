@@ -702,7 +702,9 @@
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
 					<span class="btn-flat trash" data-dialog-trash></span>		
-					<span class="btn-flat pencil grayscale" data-dialog-edit></span>				
+					<span class="btn-flat left2"></span>		
+					<span class="btn-flat right2"></span>		
+					<span class="btn-flat pencil grayscale"></span>				
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">						
 						<div class="mfp-figure">
