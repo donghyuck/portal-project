@@ -524,7 +524,8 @@
 							$this.set("hasNext", false); 		
 						
 						$this.set("hasPreviousPage", page > 1 );				
-						$this.set("hasNextPage", totalPages > page  );															
+						$this.set("hasNextPage", totalPages > page  );		
+						$this.set("pageSize", pageSize );																	
 					},
 					setImage: function(image){
 						var $this = this;						
@@ -767,7 +768,7 @@
 								<figcaption>
 									<div class="mfp-bottom-bar">
 										<div class="mfp-title" data-bind="text: image.name"></div>
-										<div class="mfp-counter">sss</div>
+										<div class="mfp-counter"><span data-bind="text:image.index"></span>/<span data-bind="text:pageSize"></span></div>
 									</div>
 								</figcaption>
 							</figure>
