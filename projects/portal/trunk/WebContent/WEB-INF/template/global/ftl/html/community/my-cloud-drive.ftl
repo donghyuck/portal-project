@@ -693,6 +693,11 @@
 				right:0px;	
 				bottom:0px;		
 			}
+
+			.dialog .btn-flat.plus {
+				top:60px;
+				right:0px;		
+			}			
 			
 			.dialog .mfp-preloader {
 				top: 0;
