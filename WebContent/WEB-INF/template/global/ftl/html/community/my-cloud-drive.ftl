@@ -563,7 +563,8 @@
 					},
 					close: function(){
 						var $this = this;		
-						renderTo.find("white-popup-block").fadeOut(function(e){
+						
+						renderTo.find(".white-popup-block").fadeOut(function(e){
 							renderTo.find(".mfp-figure").fadeIn();
 						});						
 					},
@@ -838,6 +839,11 @@
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">	
 						<div class="white-popup-block" style="display:none">
+							<div class="container">
+							
+								
+							</div>
+						
 							<span class="close" data-bind="click: close"></span>
 						
 							<img class="img-circle" data-bind="attr:{src:image.imageThumbnailUrl}">
