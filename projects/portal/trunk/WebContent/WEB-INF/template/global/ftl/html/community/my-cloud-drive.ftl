@@ -708,6 +708,14 @@
 				box-shadow: none;
 				background: none;
 			}
+			.white-popup-block{
+				.background: #FFF;
+				padding: 20px 30px;
+				text-align: left;
+				max-width: 650px;
+				margin: 40px auto;
+				position: relative;
+			}
 		</style>   	
 		</#compress>
 	</head>
