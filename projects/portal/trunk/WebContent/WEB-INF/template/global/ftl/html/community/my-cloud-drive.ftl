@@ -532,9 +532,9 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					edit: function(){
-												
-						renderTo.find(".white-popup-block").fadeIn();
-						
+						renderTo.find(".mfp-figure").fadeOut(function(e){
+							renderTo.find(".white-popup-block").fadeIn();
+						});		
 					},
 					setImage: function(image){
 						var $this = this;						
@@ -711,11 +711,11 @@
 				background: none;
 			}
 			.white-popup-block{
-				.background: #FFF;
+				background: #FFF;
 				padding: 20px 30px;
 				text-align: left;
 				max-width: 650px;
-				margin: 40px auto;
+				margin: 10px auto;
 				position: relative;
 			}
 		</style>   	
