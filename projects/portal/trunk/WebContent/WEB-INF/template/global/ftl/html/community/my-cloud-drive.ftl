@@ -734,6 +734,9 @@
 				display: block;
 				opacity: .5;
 			}
+			.white-popup-block .close:hover {
+				opacity: 1;
+			}
 		</style>   	
 		</#compress>
 	</head>
