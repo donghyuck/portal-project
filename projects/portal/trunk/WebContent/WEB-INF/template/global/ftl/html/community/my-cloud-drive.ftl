@@ -488,7 +488,7 @@
 							
 							var pager = common.ui.pager( $("#photo-list-pager") );
 							var page = pager.page();
-							pager(page -1);
+							pager.page(page -1);
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 							var item = data[0];		
 							item.set("index", 0 );
@@ -500,7 +500,7 @@
 						if( $this.hasNextPage ){
 							var pager = common.ui.pager( $("#photo-list-pager") );
 							var page = pager.page();
-							pager(page +1);
+							pager.page(page +1);
 							var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
 							var item = data[0];		
 							item.set("index", 0 );
