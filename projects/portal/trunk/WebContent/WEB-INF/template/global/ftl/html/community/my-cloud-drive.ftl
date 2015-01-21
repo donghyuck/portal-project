@@ -533,7 +533,7 @@
 					},
 					edit: function(){
 												
-						renderTo.find("white-popup-block").fadeIn();
+						renderTo.find(".white-popup-block").fadeIn();
 						
 					},
 					setImage: function(image){
