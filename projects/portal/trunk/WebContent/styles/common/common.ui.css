@@ -1162,9 +1162,9 @@ body:not  (.right-to-left  ) .no-border-l {
 	left: 0px;
 }
 
-.dialog .btn-flat.edit {
+.dialog .btn-flat.pencil {
 	right: 60px;
-	background-position: -60px -285px;
+	background-position: -402px -132px;
 }
 
 .dialog .btn-flat.close {
