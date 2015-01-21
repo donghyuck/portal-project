@@ -698,7 +698,7 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat trash grayscale" data-dialog-trash></span>		
+					<span class="btn-flat trash" data-dialog-trash></span>		
 					<span class="btn-flat pencil grayscale" data-dialog-edit></span>				
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">						
