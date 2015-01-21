@@ -696,16 +696,9 @@
 
 			.dialog .btn-flat.pencil {
 				top:60px;
-				right:0px;		
-				background-position: -390px -121px;
+				right:0px;
 				background-color: transparent;				
 			}			
-
-			.dialog .btn-flat.trash {
-				top:120px;
-				right:0px;		
-				background-color: transparent;				
-			}	
 						
 			.dialog .mfp-preloader {
 				top: 0;
@@ -779,7 +772,6 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat trash"></span>		
 					<span class="btn-flat pencil"></span>			
 					<span class="btn-flat left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 					<span class="btn-flat right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
