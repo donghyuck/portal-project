@@ -364,20 +364,16 @@
 						navigatable: false,
 						template: kendo.template($("#photo-list-view-template").html())
 					}
-				);			
-				
+				);					
 				$("#image-source-list input[type=radio][name=image-source]").on("change", function () {
 					common.ui.listview($('#photo-list-view')).dataSource.read();	
-				});
-				
+				});				
 				$("#photo-list-view").on("mouseenter",  ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
-				});		
-												
-				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });
-				
+				});														
+				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
 				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
@@ -465,8 +461,7 @@
 		}	
 		
 		function showPhotoPanel(image){		
-			var renderTo = $("#image-viewer");			
-			
+			var renderTo = $("#image-viewer");						
 			if( ! common.ui.exists(renderTo) ){			
 				var $window = $(window);
 				var observable =  common.ui.observable({ 
@@ -535,6 +530,9 @@
 						$this.set("hasNextPage", totalPages > page  );		
 						$this.set("page", page );			
 						$this.set("pageSize", pageSize );																	
+					},
+					edit: function(){
+					
 					},
 					setImage: function(image){
 						var $this = this;						
@@ -700,7 +698,10 @@
 				top: 0;
 				margin-top: 0;
 			}
-			
+			.dialog .mfp-figure{
+				box-shadow: none;
+				background: none;
+			}
 		</style>   	
 		</#compress>
 	</head>
