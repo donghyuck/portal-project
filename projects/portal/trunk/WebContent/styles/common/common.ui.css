@@ -1180,6 +1180,16 @@ body:not  (.right-to-left  ) .no-border-l {
 	background-size: 30px;
 }
 
+.dialog .btn-flat.right {
+	background: url(/images/common/white-angle-double-right.png) no-repeat center rgba(0, 0, 0, 0.8);;
+	background-size: 30px;
+}
+
+.dialog .btn-flat.left {
+	right: 180px;
+	background: url(/images/common/white-angle-double-left.png) no-repeat center rgba(0, 0, 0, 0.8);;
+}
+
 .dialog .btn-flat.close {
 	right: 0;
 	background: url(/images/common/white-cross.png) no-repeat center rgba(0, 0, 0, 0.8);;
