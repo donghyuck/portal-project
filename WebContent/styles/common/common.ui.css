@@ -1181,7 +1181,7 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 .dialog .btn-flat.right {
-	background: url(/images/common/white-angle-right.png) no-repeat center rgba(0, 0, 0, 0.8);;
+	background: url(/images/common/white-angle-right.png) no-repeat center rgba(0, 0, 0, 0.8);
 	background-size: 30px;
 }
 
@@ -1196,6 +1196,9 @@ body:not  (.right-to-left  ) .no-border-l {
 	background-size: 30px;
 }
 
+.dialog .btn-flat.btn-transparent {
+	background-color: transparent;	
+}
 .dialog .btn-flat:hover {
 	opacity: .9;
 }
