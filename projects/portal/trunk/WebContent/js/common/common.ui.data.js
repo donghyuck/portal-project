@@ -3,6 +3,17 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
+
+	function imageUrl ( image , width , height ){	
+		if( image.get("imageId") > 0 )
+			var _photoUrl = "/download/image/" + image.imageId + "/" + image.name ;	
+			if( typeof width === "number" && typeof height === "number" ){
+				_photoUrl = _photoUrl + "?width=" + width + "&height=" + height ;
+			}
+			return _photoUrl ;
+		}
+		return "/images/common/no-image2.jpg"
+	}
 	
 	common.ui.data.Image = kendo.data.Model.define( {
 		    id: "imageId", // the identifier of the model
@@ -15,6 +26,7 @@
 		        size: { type: "number", defaultValue : 0,  editable: true },
 		        shared : { type: "boolean", defaultValue : false,  editable: true },
 		        imageUrl: { type: "string", editable: true },
+		        imageThumbnailUrl: { type: "string", editable: true },
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" },
 		        index : {type: "number", defaultValue : 0 }
@@ -47,7 +59,8 @@
 		    	target.set("creationDate", this.get("creationDate"));
 		    	target.set("modifiedDate", this.get("modifiedDate"));
 		    	target.set("index", this.get("index"));
-		    	target.set("imageUrl", this.extractImageUrl());
+		    	target.set("imageUrl", imageUrl( target ));
+		    	target.set("imageThumbnailUrl", imageUrl( target, 150, 150 ));
 		    }
 		});
 
