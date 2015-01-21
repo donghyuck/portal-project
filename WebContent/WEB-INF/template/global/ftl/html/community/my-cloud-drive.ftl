@@ -840,7 +840,6 @@
 						<div class="white-popup-block" style="display:none">
 							<span class="close" data-bind="click: close"></span>
 						
-						
 							<img class="img-circle" data-bind="attr:{src:image.imageThumbnailUrl}">
 							<h1>Modal dialog</h1>
 							<p>You won't be able to dismiss this by usual means (escape or
