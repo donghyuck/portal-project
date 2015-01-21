@@ -1196,7 +1196,7 @@ body:not  (.right-to-left  ) .no-border-l {
 	background-size: 30px;
 }
 
-.dialog .btn-flat.btn-transparent {
+.dialog .btn-flat.btn-flat-transparent {
 	background-color: transparent;	
 }
 .dialog .btn-flat:hover {
