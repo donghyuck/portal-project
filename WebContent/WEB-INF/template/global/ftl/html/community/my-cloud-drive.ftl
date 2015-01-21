@@ -532,7 +532,7 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					edit: function(){
-					
+						alert("");
 					},
 					setImage: function(image){
 						var $this = this;						
@@ -772,7 +772,7 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat pencil"></span>			
+					<span class="btn-flat pencil" data-bind="click: edit"></span>			
 					<span class="btn-flat left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 					<span class="btn-flat right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
 					<span class="btn-flat close" data-dialog-close></span>					
