@@ -561,7 +561,7 @@
 							renderTo.find(".white-popup-block").fadeIn();
 						});		
 					},
-					closeEdit: function(){
+					close: function(){
 						var $this = this;		
 						renderTo.find("white-popup-block").fadeOut(function(e){
 							renderTo.find(".mfp-figure").fadeIn();
@@ -838,8 +838,10 @@
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">	
 						<div class="white-popup-block" style="display:none">
-							<span class="close" data-bind="click:closeEdit"></span>
+							<span class="close" data-bind="click: close"></span>
 						
+						
+							<img class="img-circle" data-bind="attr:{src:image.imageThumbnailUrl}">
 							<h1>Modal dialog</h1>
 							<p>You won't be able to dismiss this by usual means (escape or
 								click button), but you can close it programatically based on
