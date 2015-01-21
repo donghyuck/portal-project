@@ -534,7 +534,7 @@
 					edit: function(){
 						var gridRenderTo = renderTo.find(".photo-props-grid");	
 						if(!common.ui.exists(gridRenderTo)){
-							common.ui.grid(grid, {
+							common.ui.grid(gridRenderTo, {
 								dataSource : common.ui.data.image.property.datasource($this.image.imageId),
 								columns: [
 									{ title: "속성", field: "name" },
