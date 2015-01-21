@@ -1207,6 +1207,15 @@ body:not  (.right-to-left  ) .no-border-l {
 	z-index: 100000;
 }
 
+.mfp-preloader{
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	overflow: visible;
+	z-index: 100000;
+	background: url(http://222.122.63.146/images/common/loader/loading-transparent-bg.gif) 50% 50% no-repeat transparent;
+}
+
 /* Text
 ------------------------------------*/
 article>h3.title {
