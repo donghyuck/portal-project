@@ -637,6 +637,15 @@
 				position: absolute;
 				height: 100%!important;
 			}
+			
+			.dialog .btn-flat.mfp-arrow {
+				background-color:transparent!important;
+			}
+			
+			.dialog .btn-flat.left.mfp-arrow {
+				left:0px;
+			}
+			
 		</style>   	
 		</#compress>
 	</head>
@@ -721,8 +730,8 @@
 					</div>	
 					<div class="mfp-preloader" style="display: none;">
 					</div>
-					<button title="Previous (Left arrow key)" type="button" class="btn-flat left bg-transparent mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
-					<button title="Next (Right arrow key)" type="button" class="btn-flat right bg-transparent mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>					
+					<button title="Previous (Left arrow key)" type="button" class="btn-flat left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
+					<button title="Next (Right arrow key)" type="button" class="btn-flat right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>					
 				</div>
 			</div>
 		</div>
