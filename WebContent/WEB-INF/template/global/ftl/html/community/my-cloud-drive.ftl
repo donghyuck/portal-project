@@ -646,6 +646,16 @@
 				left:0px;
 			}
 			
+			.dialog .btn-flat.left2 {
+				top:60px;
+				right:60px			
+			}
+			
+			.dialog .btn-flat.right2 {
+				top:60px;
+				right:0px
+			}
+			
 		</style>   	
 		</#compress>
 	</head>
