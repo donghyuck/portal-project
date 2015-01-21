@@ -532,7 +532,7 @@
 						var pager = common.ui.pager( $("#photo-list-pager") );
 						var page = pager.page();
 						var totalPages = pager.totalPages();						
-						$this.set("hasPreviousPage", page < 2 );				
+						$this.set("hasPreviousPage", page > 1 );				
 						$this.set("hasNextPage", totalPages > page  );						
 														
 						var $loading = renderTo.find(".mfp-preloader");
