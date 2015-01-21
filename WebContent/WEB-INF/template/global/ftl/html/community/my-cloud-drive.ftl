@@ -28,6 +28,7 @@
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
 			'<@spring.url "/js/pdfobject/pdfobject.js"/>',	
+			'<@spring.url "/js/snap.svg/snap.svg-min.js"/>',		
 			'<@spring.url "/js/codrops/codrops.svg-loader.js"/>',		
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
