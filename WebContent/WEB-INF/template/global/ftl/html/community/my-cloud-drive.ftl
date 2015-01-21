@@ -532,6 +532,7 @@
 						$this.set("pageSize", pageSize );																	
 					},
 					edit: function(){
+						var $this = this;		
 						var gridRenderTo = renderTo.find(".photo-props-grid");	
 						if(!common.ui.exists(gridRenderTo)){
 							common.ui.grid(gridRenderTo, {
