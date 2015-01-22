@@ -1434,10 +1434,14 @@
 									</section>
 									<div class="row">
 										<section class="col-md-6"></section>
-										<section class="col-md-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></section>
-									</div>	
-									<div class="row">
 										<section class="col-md-6"></section>
+									</div>	
+								</fieldset>	
+								<fieldset>	
+									<div class="row">
+										<section class="col-md-6">
+											<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label>
+										</section>
 										<section class="col-md-6 text-right">
 											<button class="btn btn-success btn-sm" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
 											<button class="btn btn-danger btn-sm" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 사용자 정의 템플릿 만들기</button>
