@@ -1427,9 +1427,11 @@
 								<fieldset class="padding-sm" data-bind="invisible: file.directory">
 									<div class="row">
 										<div class="col-sm-12">
-											<h3><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></h3>
-											<div class="pull-right text-muted">
-												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+											<div class="headline">
+												<h3><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></h3>
+												<div class="pull-right text-muted">
+													<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+												</div>
 											</div>
 										</div>
 									</div>
