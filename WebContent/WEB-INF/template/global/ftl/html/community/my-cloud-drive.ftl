@@ -847,17 +847,18 @@
 					<span class="btn-flat left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
 					<span class="btn-flat right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
 					<span class="btn-flat close" data-dialog-close></span>					
-						<div class="white-popup-block" style="display:none">							
-							<div class="container">
-								<div class="row">
-									<span class="close" data-bind="click: close"></span>
-									<div class="col-sm-12">
-										<img class="img-circle" data-bind="attr:{src:image.imageThumbnailUrl}">
-										<h1>Modal dialog</h1>
-										<p>You won't be able to dismiss this by usual means (escape or
-											click button), but you can close it programatically based on
-											user choices or actions.</p>			
-																	
+					<div class="white-popup-block" style="display:none">							
+						<div class="container">
+							<div class="row">
+								<span class="close" data-bind="click: close"></span>
+								<div class="left-col">
+									<img class="img-circle" data-bind="attr:{src:image.imageThumbnailUrl}">
+									<h1>Modal dialog</h1>
+									<p>You won't be able to dismiss this by usual means (escape or
+										click button), but you can close it programatically based on
+										user choices or actions.</p>			
+								</div>
+								<div class="right-col">								
 									<div class="page-header no-margin">
 										<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
 									</div>
@@ -877,8 +878,7 @@
 										<h4 class="text-primary"><i class="fa fa-cfg"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
 									</div>
 									<div class="photo-props-grid"></div>
-
-								</div><!-- ./col-sm-12 	-->
+								</div><!-- ./right-col	-->
 							</div><!-- ./row	-->
 						</div><!-- ./container		-->	
 					</div><!-- ./white-popup-block		-->
