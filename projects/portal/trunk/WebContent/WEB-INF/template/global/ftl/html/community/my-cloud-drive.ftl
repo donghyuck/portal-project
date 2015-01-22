@@ -862,16 +862,31 @@
 										click button), but you can close it programatically based on
 										user choices or actions.</p>			
 								</div>
-								<div class="right-col">								
+								<div class="right-col">		
+								
+									<section class="sky-form">
+										<header data-bind="text: image.name"></header>
+										<fieldset>
+											<section>
+												<div class="inline-group">
+													<label class="radio"><input type="radio" name="photo-public-shared" value="0"><i class="rounded-x"></i>공개</label>
+													<label class="radio"><input type="radio" name="photo-public-shared" value="1" checked><i class="rounded-x"></i>비공개</label>
+												</div>
+											</section>                  
+										</fieldset>
+										<footer>
+											<button type="submit" class="btn-u">Continue</button>
+										</footer>
+									</section>														
 									<div class="page-header no-margin">
 										<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
 									</div>
 									<div class="btn-group btn-group-sm" data-toggle="buttons">
 										<label class="btn btn-success rounded-left">
-											<input type="radio"  class="js-switch"  name="photo-public-shared" value="0">모두에게 공개
+											<input type="radio"  class="js-switch"  name="photo-public-shared2" value="0">모두에게 공개
 										</label>
 										<label class="btn btn-success rounded-right active">
-											<input type="radio"  class="js-switch"  name="photo-public-shared" value="1"> 비공개
+											<input type="radio"  class="js-switch"  name="photo-public-shared2" value="1"> 비공개
 										</label>
 									</div>	
 									<div class="page-header no-margin-b">
