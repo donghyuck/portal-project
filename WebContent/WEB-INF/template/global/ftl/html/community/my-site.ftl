@@ -1423,7 +1423,6 @@
 						</div><!-- ./col-sm-4 -->						
 						<div class="col-sm-8">
 							<div class="sky-form animated fadeIn" data-bind="visible: visible" style="display:none;">
-								<header><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory" ></i> <span data-bind="text:file.name"></span></header>	
 								<fieldset data-bind="invisible: file.directory">
 									<section>
 										<div class="headline">
@@ -1436,7 +1435,16 @@
 									<div class="row">
 										<section class="col-md-6"></section>
 										<section class="col-md-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></section>
-									</div>									
+									</div>	
+									<div class="row">
+										<section class="col-md-6"></section>
+										<section class="col-md-6 pull-right">
+
+												<button class="btn btn-success btn-sm" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
+												<button class="btn btn-danger btn-sm" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 사용자 정의 템플릿 만들기</button>
+
+										</section>
+									</div>																		
 								</fieldset>	
 								<footer class="text-right">
 								
@@ -1452,8 +1460,7 @@
 											</div>
 								<hr class="m-sm"/>		
 											<div class="pull-right">
-												<button class="btn btn-success btn-sm" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-												<button class="btn btn-danger btn-sm" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 사용자 정의 템플릿 만들기</button>
+
 											</div>												
 										</div>
 										<div id="templateeditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
