@@ -70,8 +70,10 @@
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"open-menu-editor" : function(e){
-							//common.ui.disable($(e.target));
 							openMenuEditor();
+						},
+						"open-template-editor" : function(e){
+							openTemplateEditor();
 						}
 					}
 				});
@@ -170,8 +172,7 @@
 				});				
 				var editor = ace.edit("menueditor");		
 				editor.setTheme("ace/theme/monokai");
-				editor.getSession().setMode("ace/mode/xml");					
-				
+				editor.getSession().setMode("ace/mode/xml");	
 				observable.bind("change", function(e){		
 					var sender = e.sender ;
 					if( e.field.match('^website.menu')){
@@ -189,20 +190,43 @@
 						$("body").css("overflow-y", "auto");		
 					}
 				});
-
 				common.ui.bind(renderTo, observable );	
 				observable.refresh();			
-			}
-			
+			}			
+			var dialogFx = common.ui.dialog( renderTo );		
+			if( !dialogFx.isOpen ){							
+				dialogFx.open();
+			}			
+		}				
+		<!-- ============================== -->
+		<!-- TEMPLATE												-->
+		<!-- ============================== -->		
+		function openTemplateEditor(){
+			var renderTo = $("#my-site-template-editor");
+			if( ! common.ui.exists(renderTo) ){
+				var observable =  common.ui.observable({
+					
+				});				
+				common.ui.dialog( renderTo , {
+					data : observable,
+					"open":function(e){		
+						$("body").css("overflow-y", "hidden");						
+						renderTo.find(".dialog__content").css("overflow-y", "auto");					
+					},
+					"close":function(e){			
+						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
+						$("body").css("overflow-y", "auto");		
+					}
+				});
+				common.ui.bind(renderTo, observable );		
+			}			
 			var dialogFx = common.ui.dialog( renderTo );		
 			if( !dialogFx.isOpen ){							
 				dialogFx.open();
 			}			
 		}
-				
-		<!-- ============================== -->
-		<!-- TEMPLATE												-->
-		<!-- ============================== -->		
+		
+		
 		function createTemplateSection(){
 			$('#template-tree').on( 'show.bs.tab', function (e) {		
 				var show_bs_tab = $(e.target);
@@ -1397,130 +1421,51 @@
 				</div>				
 			</div>
 		</div>		
-					
-			<!-- START RIGHT SLIDE MENU -->
-			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
-				<h5 class="side-section-title white">My 클라우드 저장소</h5>		
-				<button type="button" class="btn-close" data-dismiss='spmenu' >Close</button>
-				<!-- tab-v1 -->
-				<div class="tab-v1 m-t-md" >						
-					<ul class="nav nav-tabs" id="myTab" style="padding-left:5px;">
-						<#if !action.user.anonymous >	
-						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab">포토</a></li>
-						<li><a href="#my-files" tabindex="-1" data-toggle="tab">파일</a></li>							
-						</#if>						
-					</ul>		
-					<!-- tab-content -->		
-					<div class="tab-content" style="background-color : #FFFFFF; padding:5px;">
-						<!-- start attachement tab-pane -->
-						<div class="tab-pane" id="my-files">
-								<div class="panel panel-default panel-upload no-margin-b no-border-b" style="display:none;">
-								<div class="panel-heading">
-									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
-								</div>						
-									<div class="panel-body">													
-										<#if !action.user.anonymous >			
-											<div class="page-header text-primary">
-												<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-											</div>								
-											<input name="uploadAttachment" id="attachment-files" type="file" />												
-										</#if>								
-									</div>
-								</div>
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
-									<#if !action.user.anonymous >		
-									<p class="pull-right">				
-										<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
-									</p>	
-									</#if>																										
-									<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-										<label class="btn btn-sm btn-warning active">
-											<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
-										</label>
-										<label class="btn btn-sm btn-warning">
-											<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
-										</label>
-										<label class="btn btn-sm btn-warning">
-											<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
-										</label>	
-									</div>												
-								</div>
-								<div class="panel-body sm-padding" style="min-height:450px;">
-									<div id="attachment-list-view" class="file-listview"></div>
-								</div>	
-								<div class="panel-footer no-padding">
-										<div id="pager" class="file-listview-pager k-pager-wrap"></div>
-								</div>
-							</div>																				
-						</div><!-- end attachements  tab-pane -->		
-						<!-- start photos  tab-pane -->
-						<div class="tab-pane" id="my-photo-stream">									
-												<div class="panel panel-default panel-upload no-margin-b no-border-b" style="display:none;">
-							<div class="panel-heading">
-								<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
-							</div>												
-													<div class="panel-body">
-														<#if !action.user.anonymous >			
-														<div class="page-header text-primary">
-															<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-														</div>
-														<div id="my-photo-upload">	
-															<input name="uploadPhotos" id="photo-files" type="file" />					
-														</div>
-														<div class="blank-top-5" ></div>
-														<div class="page-header text-primary">
-															<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
-														</div>						
-														<form name="photo-url-upload-form" class="form-horizontal" role="form">
-															<div class="form-group">
-																<label class="col-sm-2 control-label"><small>출처</small></label>
-																<div class="col-sm-10">
-																	<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.sourceUrl">
-																	<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-2 control-label"><small>사진</small></label>
-																<div class="col-sm-10">
-																	<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.imageUrl">
-																	<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
-																</div>
-															</div>														
-															<div class="form-group">
-																<div class="col-sm-offset-2 col-sm-10">
-																	<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
-																</div>
-															</div>
-														</form>
-														</#if>
-													</div>
-												</div>	
-
-							<div class="panel panel-default">			
-								<div class="panel-body">
-									<p class="text-muted"><small><i class="fa fa-info"></i> 사진을 선택하면 아래의 마이페이지 영역에 선택한 사진이 보여집니다.</small></p>
-									<#if !action.user.anonymous >		
-									<p class="pull-right">				
-										<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-									</p>	
-									</#if>											
-								</div>
-								<div class="panel-body sm-padding" style="min-height:450px;">
-									<div id="photo-list-view" class="image-listview" ></div>
-								</div>	
-								<div class="panel-footer no-padding">
-									<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
-								</div>
-							</div>	
-						</div><!-- end photos  tab-pane -->
-					</div><!-- end of tab content -->
-				</div>	
-			</section>	
-			<div class="cbp-spmenu-overlay"></div>			
-			<!-- ./END RIGHT SLIDE MENU -->
-							
+		<div id="my-site-template-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
+			<div class="dialog__overlay"></div>
+			<div class="dialog__content">			
+				<span class="btn-flat close" data-dialog-close></span>		
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="sky-form">
+								<header>템플릿</header>
+								<fieldset class="padding-sm">
+									<div class="tab-v1 p-xxs">								
+										<ul class="nav nav-tabs" id="template-tree">
+											<li><a href="#template-tree-view" data-toggle="tab">기본</a></li>
+											<li><a href="#custom-template-tree-view" data-toggle="tab">사용자 정의</a></li>
+										</ul>	
+										<div class="tab-content">
+											<div class="tab-pane fade" id="template-tree-view"></div>
+											<div class="tab-pane fade" id="custom-template-tree-view"></div>
+										</div>
+									</div>										
+								</fieldset>
+							</div>									
+						</div><!-- ./col-sm-4 -->						
+						<div class="col-sm-8">								
+									<div id="template-editor-panel" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
+										<div class="panel-body padding-sm bg-slivergray">
+											<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
+											<div class="pull-right text-muted">
+												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+											</div>
+										</div>	
+										<div class="panel-body padding-sm">	
+											<div class="pull-right">
+												<button class="btn btn-success btn-sm" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
+												<button class="btn btn-danger btn-sm" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 사용자 정의 템플릿 만들기</button>
+											</div>												
+										</div>
+										<div id="templateeditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
+									</div>	
+						</div><!-- ./col-sm-8 -->									
+					</div>					
+				</div>				
+			</div>		
+		</div>
+												
 	<!-- START TEMPLATE -->				
 	<script id="webpage-title-template" type="text/x-kendo-template">
 		#: title #</span>
