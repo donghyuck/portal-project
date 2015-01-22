@@ -473,6 +473,7 @@
 					hasNextPage: false,
 					hasPrevious: false,
 					hasNext: false,
+					hasSource : false,
 					previous : function(){
 						var $this = this;
 						if( $this.hasPrevious ){
@@ -597,6 +598,12 @@
 						var $this = this;						
 						$this.resize();
 						image.copy($this.image);	
+						
+						if( common.ui.defined( image.properties.source ) )
+							$this.set("hasSource", true);
+						else
+							$this.set("hasSource", false);	
+						
 						$this.setPagination();
 						var $loading = renderTo.find(".mfp-preloader");
 						var $largeImg = renderTo.find(".mfp-content");		
@@ -919,7 +926,7 @@
 								<div class="right-col">									
 									<section class="sky-form">
 										<header data-bind="text: image.name"></header>
-										<fieldset>
+										<fieldset data-bind="visible:hasSource">
 											<section>
 												<label class="label">출처</label>
 												<a href="#" class="btn btn-link" data-bind="attr:{href:image.properties.source }, text:image.properties.source"></a>
