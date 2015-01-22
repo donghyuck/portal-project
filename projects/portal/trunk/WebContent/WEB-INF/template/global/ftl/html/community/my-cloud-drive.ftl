@@ -522,7 +522,9 @@
 								Fn();	
 							});	
 							
-							renderTo.find(".tag-box").slimScroll();	
+							renderTo.find(".tag-box").slimScroll({
+								height: "100%"
+							});	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
