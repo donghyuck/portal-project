@@ -180,8 +180,7 @@
 					if( e.field.match('^website.menu')){
 					 	editor.setValue( sender.website.menu.menuData );	
 					}
-				});			
-					
+				});	
 				common.ui.dialog( renderTo , {
 					data : observable,
 					"open":function(e){		
@@ -197,6 +196,7 @@
 				common.ui.bind(renderTo, observable );	
 				observable.refresh();			
 			}
+			
 			var dialogFx = common.ui.dialog( renderTo );		
 			if( !dialogFx.isOpen ){							
 				dialogFx.open();
