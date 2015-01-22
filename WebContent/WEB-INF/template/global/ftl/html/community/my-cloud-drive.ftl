@@ -522,7 +522,7 @@
 								Fn();	
 							});	
 							
-							renderTo.find(".sky-form").slimScroll();	
+							renderTo.find(".tag-box").slimScroll();	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
