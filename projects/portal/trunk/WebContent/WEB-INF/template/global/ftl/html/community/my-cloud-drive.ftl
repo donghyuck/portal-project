@@ -522,7 +522,7 @@
 								Fn();	
 							});	
 							
-							renderTo.find(".sky-from").slimScroll({
+							renderTo.find(".sky-form").slimScroll({
 								height: "600px"
 							});	
 						}					
