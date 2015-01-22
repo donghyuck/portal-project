@@ -1095,10 +1095,10 @@
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane fade in active" id="website-page">
-									<div class="headline headline-md"><h2 class="heading-sm"><i class="icon-flat paper-plane m-b-n-sm"></i> 페이지</h2></div>	
+									<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small>페이지</small></h4>
 								</div>
 								<div class="tab-pane fade in" id="website-notice">
-									<div class="headline headline-md"><h2><i class="icon-flat mega-phone m-b-n-sm"></i> 공지 &amp; 이벤트</h2></div>
+									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small>Secondary 공지 &amp; 이벤트</small></h4>
 								</div>
 							</div>
 						</div>
