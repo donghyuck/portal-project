@@ -1426,8 +1426,8 @@
 								<header><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></header>	
 								<fieldset class="padding-sm" data-bind="visible: visible">
 									<div class="row">
-										<div class="col-md-9"></div>
-										<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+										<div class="col-md-6"></div>
+										<div class="col-md-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 									</div>
 								</fieldset>	
 								<footer class="text-right">
