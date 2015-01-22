@@ -66,8 +66,7 @@
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
 				
 				setupPersonalizedSection();
-				createWebsiteSection();		
-
+			
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"open-menu-editor" : function(e){
@@ -110,8 +109,6 @@
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
-		
-		
 		function openMenuEditor(){
 			var renderTo = $("#my-site-menu-editor");
 			if( ! common.ui.exists(renderTo) ){
@@ -202,84 +199,7 @@
 				dialogFx.open();
 			}			
 		}
-		
-		function createWebsiteSection(){				
-			var model = kendo.observable({
-				website : new common.ui.data.WebSite(),
-				updateMenuData : function(e){			
-					var $this = this;
-					var btn = $(e.target);						
-					btn.button('loading');						
-					$this.website.menu.menuData = ace.edit("menueditor").getValue();
-						common.ui.ajax(
-							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
-							{
-								data : kendo.stringify( $this.website.menu ),
-								contentType : "application/json",
-								success : function(response){									
-								},
-								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
-								},
-								requestStart : function(){
-									kendo.ui.progress($("#my-site-menu"), true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress($("#my-site-menu"), false);
-								},
-								complete : function(e){
-									$this.refresh();
-									btn.button('reset');
-								}
-							});	
-											
-				},
-				menuDataUpdated : false,
-				useWrapMode : false,
-				useWrap : function(e){
-					ace.edit("xmleditor").getSession().setUseWrapMode(this.useWrapMode);
-				},
-				refresh : function(){
-					var $this = this;
-					common.ui.ajax(
-						'<@spring.url "/secure/data/website/get.json?output=json" />' , 
-						{
-							data : {
-								refresh : true,
-							},
-							success : function(response){					
-								var site = new common.ui.data.WebSite(response);
-								site.copy($this.website);
-								$this.menuDataUpdated = false;
-							}
-						}
-					);						
-				}
-			});	
-								
-			var editor = ace.edit("menueditor");			
-			editor.setTheme("ace/theme/monokai");
-			editor.getSession().setMode("ace/mode/xml");					
-			editor.getSession().on("change", function(e){
-				model.set("menuDataUpdated", true);
-			});			
-			model.bind("change", function(e){		
-				var sender = e.sender ;
-				if( e.field.match('^website.menu')){
-				 	editor.setValue( sender.website.menu.menuData );	
-				}
-			});								
-			common.ui.bind($(".website-details"), model);			
-			model.refresh();			
-		}
-		
+				
 		<!-- ============================== -->
 		<!-- TEMPLATE												-->
 		<!-- ============================== -->		
@@ -1152,26 +1072,7 @@
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container content" style="min-height:450px;">											
-						<div id="my-site-menu" class="bg-slivergray rounded-2x website-details" style="display:none;">
-							<div class="row">
-								<div class="col-sm-12">
-									<div class="sky-form">
-										<header><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</header>
-										<fieldset class="padding-sm">
-											<div class="row">
-												<div class="col-md-9"></div>
-												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
-											</div>
-										</fieldset>
-										<div id="xmleditor"></div>
-										<footer class="text-right">
-											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
-											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
-										</footer>
-									</div>
-								</div>
-							</div>
-						</div>		
+						
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
 								<div class="col-sm-4">
