@@ -522,8 +522,8 @@
 								Fn();	
 							});	
 							
-							renderTo.find(".tag-box").slimScroll({
-								height: "500px"
+							renderTo.find(".sky-from").slimScroll({
+								height: "600px"
 							});	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
