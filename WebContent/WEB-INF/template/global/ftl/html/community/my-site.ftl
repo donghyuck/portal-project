@@ -1430,7 +1430,7 @@
 									<div id="template-editor-panel" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
 										<div class="panel-body padding-sm">
 											<span class="label label-warning">PATH</span> 
-											<i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.path"></span>
+											<i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span>
 											<div class="pull-right text-muted">
 												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
 											</div>
