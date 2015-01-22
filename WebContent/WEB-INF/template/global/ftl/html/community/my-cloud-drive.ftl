@@ -868,13 +868,20 @@
 										<header data-bind="text: image.name"></header>
 										<fieldset>
 											<section>
+												<label class="label">이미지 변경</label>
+												<input name="update-photo-file" type="file" class="pull-right" />	
+												<div class="note"><i class="fa fa-info"></i> 사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</div>
+											</section>
+										</fieldset>
+										<fieldset>
+											<section>
 												<label class="label">이미지 공개 여부</label>
 												<div class="inline-group">
 													<label class="radio"><input type="radio" name="photo-public-shared" value="0"><i class="rounded-x"></i>공개</label>
 													<label class="radio"><input type="radio" name="photo-public-shared" value="1" checked><i class="rounded-x"></i>비공개</label>
 												</div>
-												<div class="note text-primary"><i class="fa fa-lock"></i> 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</div>
-											</section>                  
+												<div class="note"><i class="fa fa-info"></i> 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</div>
+											</section>
 										</fieldset>
 										<footer>
 											<button type="submit" class="btn-u">Continue</button>
@@ -894,7 +901,7 @@
 									<div class="page-header no-margin-b">
 										<h4 class="text-primary"><i class="fa fa-upload"></i> <strong>이미지 변경</strong> <small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h4>
 									</div>
-									<input name="update-photo-file" type="file" class="pull-right" />	
+									
 									<div class="page-header no-margin-b">
 										<h4 class="text-primary"><i class="fa fa-cfg"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
 									</div>
