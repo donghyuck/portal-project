@@ -863,13 +863,25 @@
 									<div class="box-shadow shadow-effect-2">
 										<img class="img-rounded" data-bind="attr:{src:image.imageThumbnailUrl}">
 									</div>	
-									<h1>Modal dialog</h1>
-									<p>You won't be able to dismiss this by usual means (escape or
-										click button), but you can close it programatically based on
-										user choices or actions.</p>			
+									<div class="headline headline-md"><h2>Blog Tags</h2></div>
+									<ul class="list-unstyled blog-tags margin-bottom-30">
+                	<li><a href="#"><i class="fa fa-tags"></i> Business</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Music</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Internet</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Money</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Google</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> TV Shows</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Education</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> People</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> People</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Math</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Photos</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Electronics</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Apple</a></li>
+                	<li><a href="#"><i class="fa fa-tags"></i> Canada</a></li>
+                </ul>			
 								</div>
-								<div class="right-col">		
-								
+								<div class="right-col">									
 									<section class="sky-form">
 										<header data-bind="text: image.name"></header>
 										<fieldset>
@@ -895,31 +907,8 @@
 											<div class="photo-props-grid"></div>											
 											<div class="note"><i class="fa fa-info"></i> 수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</div>
 											</section>
-										</fieldset>
-										
-										<footer>
-											<button type="submit" class="btn-u">Continue</button>
-										</footer>
-									</section>														
-									<div class="page-header no-margin">
-										<h4 class="text-primary"><i class="fa fa-lock"></i> <strong>공개</strong>&nbsp;<small>공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</small></h4>
-									</div>
-									<div class="btn-group btn-group-sm" data-toggle="buttons">
-										<label class="btn btn-success rounded-left">
-											<input type="radio"  class="js-switch"  name="photo-public-shared2" value="0">모두에게 공개
-										</label>
-										<label class="btn btn-success rounded-right active">
-											<input type="radio"  class="js-switch"  name="photo-public-shared2" value="1"> 비공개
-										</label>
-									</div>	
-									<div class="page-header no-margin-b">
-										<h4 class="text-primary"><i class="fa fa-upload"></i> <strong>이미지 변경</strong> <small>사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</small></h4>
-									</div>
-									
-									<div class="page-header no-margin-b">
-										<h4 class="text-primary"><i class="fa fa-cfg"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
-									</div>
-									
+										</fieldset>										
+									</section>	
 								</div><!-- ./right-col	-->
 								</div>
 							</div><!-- ./row	-->
