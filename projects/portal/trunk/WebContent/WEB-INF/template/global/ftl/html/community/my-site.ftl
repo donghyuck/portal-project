@@ -1429,7 +1429,10 @@
 										<div class="col-md-9"></div>
 										<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 									</div>
-								</fieldset>														
+								</fieldset>	
+								<footer class="text-right">
+								
+								</footer>													
 							</div>
 						
 									<div id="template-editor-panel" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
