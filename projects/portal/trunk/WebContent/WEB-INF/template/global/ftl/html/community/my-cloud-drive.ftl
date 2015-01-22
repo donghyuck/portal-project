@@ -860,8 +860,10 @@
 								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40">
 								<span class="close" data-bind="click: close"></span>
 								<div class="left-col">
-									<div class="box-shadow shadow-effect-2 margin-bottom-40" >
+									<div class="shadow-wrapper margin-bottom-40">
+									<div class="box-shadow shadow-effect-2 " >
 										<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}">
+									</div>	
 									</div>	
 									
 									<ul class="list-unstyled margin-bottom-30">
