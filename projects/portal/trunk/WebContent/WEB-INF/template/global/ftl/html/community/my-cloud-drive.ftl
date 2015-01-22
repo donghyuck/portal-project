@@ -863,7 +863,14 @@
 									<div class="box-shadow shadow-effect-2">
 										<img class="img-rounded" data-bind="attr:{src:image.imageThumbnailUrl}">
 									</div>	
-									<div class="headline headline-md"><h4>태크</h4></div>
+									
+									<ul class="list-unstyled margin-bottom-30">
+										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span></li>
+										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
+										<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
+									</ul>
+											
+									<div class="headline headline-md"><h4>태그</h4></div>
 									<ul class="list-unstyled blog-tags margin-bottom-30">
 										<li><a href="#"><i class="fa fa-tags"></i> 성인</a></li>
 										<li><a href="#"><i class="fa fa-tags"></i> 여자</a></li>
