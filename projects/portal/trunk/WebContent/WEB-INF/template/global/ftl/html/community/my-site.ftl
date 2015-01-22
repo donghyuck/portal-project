@@ -1063,7 +1063,7 @@
 								<div id="personalized-buttons" class="btn-group">
 									<button type="button" class="btn-u btn-u-blue rounded-left" data-toggle="button" data-action="open-menu-editor"><i class="fa fa-sitemap"></i> <span class="hidden-xs">메뉴</span> </button>
 									<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-action="open-template-editor"><i class="fa fa-file-code-o"></i> <span class="hidden-xs">템플릿</span></button>
-								</div
+								</div>
 															
 								<div class="btn-group" data-toggle="buttons">
 									<label class="btn btn-sm btn-primary rounded-left">
