@@ -1089,40 +1089,15 @@
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container content" style="min-height:450px;">											
 						<div class="tab-v1">
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                        <li><a href="#profile" data-toggle="tab">Profile</a></li>
-                        <li><a href="#messages" data-toggle="tab">Messages</a></li>
-                        <li><a href="#settings" data-toggle="tab">Settings</a></li>
-                    </ul>                
-                    <div class="tab-content">
-                        <div class="tab-pane fade in active" id="home">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img alt="" class="img-responsive img-tab-space" src="assets/img/new/img4.jpg">                                
-                                </div>
-                                <div class="col-md-8">
-                                    <h4>Heading Sample 1</h4>
-                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade in" id="profile">
-                            <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/5.jpg">                         
-                            <h4>Heading Sample 2</h4>
-                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
-                        </div>
-                        <div class="tab-pane fade in" id="messages">
-                            <h4>Heading Sample 3</h4>
-                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/6.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
-                        </div>
-                        <div class="tab-pane fade in" id="settings">
-                            <h4>Heading Sample 4</h4>
-                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/1.jpg"> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
-                        </div>
-                    </div>
-                </div>
-                
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#website-page" data-toggle="tab">페이지</a></li>
+								<li><a href="#website-notice" data-toggle="tab">공지 & 이벤트</a></li>
+							</ul>
+							<div class="tab-content">
+								<div class="tab-pane fade in active" id="website-page">1</div>
+								<div class="tab-pane fade in" id="website-notice">2</div>
+							</div>
+						</div>
 
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
