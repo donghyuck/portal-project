@@ -653,7 +653,7 @@
 				width: 50px;
 				height: 50px;
 				text-align: center;
-				url(/images/common/grey-cross.png) no-repeat center rgba(0, 0, 0, 0.8);
+				background: url(/images/common/grey-cross.png) no-repeat center rgba(0, 0, 0, 0.8);
 				background-size: 25px;
 				content: "";
 				display: block;
