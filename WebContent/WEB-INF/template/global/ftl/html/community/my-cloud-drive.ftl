@@ -802,8 +802,14 @@
 				opacity: .5;
 				z-index:1047;
 			}
+			
 			.white-popup-block .close:hover {
 				opacity: 1;
+			}
+			
+			
+			.white-popup-block .k-grid-content {
+				min-height: 100px;
 			}
 			
 			@media ( min-width :768px) {
