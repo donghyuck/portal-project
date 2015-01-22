@@ -1434,8 +1434,8 @@
 										</div>
 									</section>
 									<div class="row">
-										<section class="col-md-6"></div>
-										<section class="col-md-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+										<section class="col-md-6"></section>
+										<section class="col-md-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></section>
 									</div>									
 								</fieldset>	
 								<footer class="text-right">
