@@ -1408,6 +1408,11 @@
 						<div class="col-sm-4">
 							<div class="sky-form">
 								<header>템플릿</header>
+								<fieldset class="padding-sm" data-bind="visible: visible" style="display:none;">
+									<section>
+										<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label>
+									</section>
+								</fieldset>								
 								<fieldset class="padding-sm">
 									<div class="tab-v1 p-xxs">								
 										<ul class="nav nav-tabs" id="template-tree-tabs">
