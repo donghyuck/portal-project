@@ -63,17 +63,7 @@
 				
 				// personalized grid setting																																					
 				preparePersonalizedArea($("#personalized-area"), 3, 6 );
-				
-				// personalized buttons setting							
-				common.ui.buttonGroup($("#personalized-buttons"), {
-					handlers :{
-						"show-gallery-section" : function(e){
-							common.ui.disable($(e.target));
-							createGallerySection();
-						}
-					}				
-				});	
-																															
+																																			
 				// SpMenu Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
 					//e.preventDefault();		
@@ -94,62 +84,6 @@
 				// END SCRIPT 				
 			}
 		}]);	
-		<!-- ============================== -->
-		<!-- display image gallery                                  -->
-		<!-- ============================== -->
-		function createGallerySection(){
-			var renderTo = "image-gallery";			
-			
-			var $section = $('.wrapper .personalized-section').first();		
-			var section_heading = $section.children(".personalized-section-heading");
-			var section_content = $section.children(".personalized-section-content");
-		
-			if( $( "#" +renderTo).length == 0 ){			
-				section_content.append($("#image-gallery-template").html());
-				var galleryDataSource = common.ui.datasource(
-					'<@spring.url "/data/images/list.json?output=json" />',
-					{
-						transport:{
-							parameterMap: function (options, operation){
-								if (operation != "read" && options) {										                        								                       	 	
-									return { imageId :options.imageId };									                            	
-								}else{
-									 return { startIndex: options.skip, pageSize: options.pageSize }
-								}
-							}						
-						},
-						pageSize: 30,
-						schema: {
-							model: common.ui.data.Image,
-							data : "images",
-							total : "totalCount"
-						},
-						change : function(){
-							$( "#image-gallery-grid" ).html(
-								kendo.render( kendo.template($("#image-gallery-grid-template").html()), this.view() )
-							);	
-						}
-					}
-				);
-				common.ui.thumbnail.expanding({ template: $("#image-gallery-expanding-template").html() });			
-				common.ui.pager($("#image-gallery-pager"), {dataSource: galleryDataSource});
-				//common.ui.buttons("#image-gallery button[data-dismiss='panel'][data-dismiss-target]");							
-				$section.find(".personalized-section-content>.close").click(function(e){ 
-					var $this = $(this);
-					$section.toggleClass("open");
-					section_content.slideUp("slow", function(){
-						var target = $("[data-action='show-gallery-section']");
-						target.toggleClass("active");					
-						common.ui.enable(target);
-					});	
-				});						
-				galleryDataSource.read();	
-			}
-			if( section_content.is(":hidden") ){
-				$section.toggleClass("open");
-				section_content.slideDown("slow");				
-			}
-		}
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
 		<!-- ============================== -->		
@@ -637,91 +571,7 @@
 				dialogFx.open();
 			}
 		}
-		
-		
-				
-		function showPhotoPanel2(image){				
-			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
-			var panel = common.ui.extPanel(
-			appendTo,
-			{ 
-				title: '<i class="fa fa-picture-o"></i> ' + image.name  , 
-				actions:["Custom", "Minimize", "Close"],
-				data: image,
-				template : common.ui.template($("#photo-view-template").html()),
-				css : "panel-primary",
-				custom: function(e){
-					var $this = e.target; 
-					var body = $this.element.children(".panel-custom-body");
-					if( body.children().length === 0 ){						
-						body.html($("#photo-editor-modal-template").html());						
-						var streams = body.find("input[name='photo-public-shared']");
-						var upload = body.find("input[name='update-photo-file']");
-						var grid = body.find(".photo-props-grid");		
-						common.ui.upload( upload, {
-							async : {
-								saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-							},
-							localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
-							upload: function (e) {				
-								e.data = { imageId: $this.data().imageId };
-							},
-							success: function (e) {							
-							}
-						});
-						common.ui.grid(grid, {
-							dataSource : common.ui.data.image.property.datasource($this.data().imageId),
-							columns: [
-								{ title: "속성", field: "name" },
-								{ title: "값",   field: "value" },
-								{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
-							],
-							pageable: false,
-							resizable: true,
-							editable : true,
-							scrollable: true,
-							autoBind: true,
-							toolbar: [
-								{ name: "create", text: "추가" },
-								{ name: "save", text: "저장" },
-								{ name: "cancel", text: "취소" }
-							],				     
-							change: function(e) {
-								this.refresh();
-							}
-						});			
-						
-						//$this.data().set("shared", false );
-						var Fn = function(){
-							streams.on("change", function(e){
-								var newValue = ( this.value == 1 ) ;
-								if(newValue){
-									common.ui.data.image.unshare($this.data().imageId);	
-								}else{
-									common.ui.data.image.share($this.data().imageId);
-								}
-							});						
-						}			
-						common.ui.data.image.streams($this.data().imageId, function(data){
-							if( data.length > 0 )
-								streams.first().click();
-							else
-								streams.last().click();	
-							Fn();	
-						});			
-						
-							
-					}
-				},
-				open: function(e){
-					//var data = e.target.data(),
-					//uid = e.target.element.attr("id"),
-					//embed = uid + "-fileview"; 								
-				}
-			});
-			panel.show();		
-		}
-								
+					
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -849,7 +699,6 @@
 							<h3>MY 드라이브 <span>PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정	리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></span></h3>
 							<div class="personalized-section-heading-controls">
 								<div id="personalized-buttons" class="btn-group">
-									<button type="button" class="btn-u btn-u-blue rounded-left" 	data-toggle="button" data-action="show-gallery-section" disabled><i class="fa fa-picture-o"></i> <span class="hidden-xs">My 포토 탐색기</span></button>
 									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><i class="fa fa-cloud-upload fa-lg"></i> <span class="hidden-xs">My 드라이브</span></button>
 								</div>					
 							</div>		
