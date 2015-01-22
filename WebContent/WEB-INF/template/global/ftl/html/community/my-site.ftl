@@ -1426,7 +1426,11 @@
 								</fieldset>
 							</div>									
 						</div><!-- ./col-sm-4 -->						
-						<div class="col-sm-8">								
+						<div class="col-sm-8">
+							<div class="sky-form">
+								<header><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></header>							
+							</div>
+						
 									<div id="template-editor-panel" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
 										<div class="panel-body padding-sm">
 											<span class="label label-warning">PATH</span> 
