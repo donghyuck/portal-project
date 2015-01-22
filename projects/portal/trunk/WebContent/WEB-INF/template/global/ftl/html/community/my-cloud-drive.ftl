@@ -904,7 +904,7 @@
 										</div>	
 									</div>										
 									<ul class="list-unstyled margin-bottom-30">
-										<li class="p-xxs"><strong>출처:</strong> <span data-bind="text:image.properties.source"></span></li>
+										<li class="p-xxs"><strong>출처:</strong> <a href="#" class="btn btn-link" data-bind="attr:{href:image.properties.source }, text:image.properties.source"></a></li>
 										<hr/>
 										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
