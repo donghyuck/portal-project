@@ -764,6 +764,7 @@
 				content: "";
 				display: block;
 				opacity: .5;
+				z-index:1047;
 			}
 			.white-popup-block .close:hover {
 				opacity: 1;
