@@ -1390,13 +1390,12 @@
 		<div id="my-site-menu-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">			
-				<span class="btn-flat close" data-dialog-close></span>		
-				<div class="tag-box tag-box-v3 tag-text-space">
+				<span class="btn-flat close" data-dialog-close></span>						
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-							
-							<div class="sky-form">
+								<div class="tag-box tag-box-v3 tag-text-space">
+									<div class="sky-form">
 										<header><span data-bind="text:website.menu.title">메르디앙 메뉴</span>( <span data-bind="text:website.menu.name">MAIN_WEBSITE_MENU</span>)</header>
 										<fieldset class="padding-sm">
 											<div class="row">
@@ -1409,13 +1408,12 @@
 											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData"> 저장 </button>
 											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
 										</footer>
-									</div>
-									
-							
+									</div>									
+								</div>	
 							</div>
 						</div>					
 					</div>
-				</div>
+				
 			</div>
 		</div>		
 					
