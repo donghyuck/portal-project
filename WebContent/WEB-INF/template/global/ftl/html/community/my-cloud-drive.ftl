@@ -521,6 +521,8 @@
 									streams.last().click();	
 								Fn();	
 							});	
+							
+							renderTo.find(".sky-form").slimScroll();	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
@@ -563,7 +565,8 @@
 					"close":function(e){					
 					}
 				});				
-				common.ui.bind(renderTo, observable );					
+				common.ui.bind(renderTo, observable );				
+			
 			}			
 			var dialogFx = common.ui.dialog( renderTo );		
 			dialogFx.data().setImage(image);			
