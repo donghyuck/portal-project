@@ -1442,6 +1442,7 @@
 										</section>
 									</div>																		
 								</fieldset>	
+								<div id="templateeditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 								<footer class="text-right">
 								
 								</footer>													
@@ -1459,7 +1460,7 @@
 
 											</div>												
 										</div>
-										<div id="templateeditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
+										
 									</div>	
 						</div><!-- ./col-sm-8 -->									
 					</div>					
