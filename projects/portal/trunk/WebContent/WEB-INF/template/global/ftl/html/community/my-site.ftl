@@ -217,30 +217,27 @@
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
 						$("body").css("overflow-y", "auto");		
 					}
-				});
+				});				
+				$('#template-tree-tabs').on( 'show.bs.tab', function (e) {		
+					var target = $(e.target);
+					switch( target.attr('href') ){
+						case "#template-tree-view" :
+							createTemplateTree($("#template-tree-view"), false);
+							break;
+						case  '#custom-template-tree-view' :
+							createTemplateTree($("#custom-template-tree-view"), true);
+							break;
+					}					
+				});				
 				common.ui.bind(renderTo, observable );		
 			}			
 			var dialogFx = common.ui.dialog( renderTo );		
-			if( !dialogFx.isOpen ){							
+			if( !dialogFx.isOpen ){	
+				$('#template-tree-tabs a:first').tab('show');						
 				dialogFx.open();
 			}			
 		}
-		
-		
-		function createTemplateSection(){
-			$('#template-tree').on( 'show.bs.tab', function (e) {		
-				var show_bs_tab = $(e.target);
-				switch( show_bs_tab.attr('href') ){
-					case "#template-tree-view" :
-						createTemplateTree($("#template-tree-view"), false);
-						break;
-					case  '#custom-template-tree-view' :
-						createTemplateTree($("#custom-template-tree-view"), true);
-						break;
-				}					
-			});
-		}	
-		
+				
 		function createTemplateTree(renderTo, customized){
 			if( !renderTo.data('kendoTreeView') ){					
 				renderTo.kendoTreeView({
@@ -1045,7 +1042,7 @@
 		}
 		
 		
-		#menueditor.ace_editor, #xmleditor.ace_editor, #htmleditor.ace_editor , #my-notice-edit  .ace_editor{
+		#menueditor.ace_editor, #templateeditor.ace_editor, #htmleditor.ace_editor , #my-notice-edit  .ace_editor{
 			min-height: 500px;			
 		}
 		
@@ -1099,22 +1096,7 @@
 						
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
-								<div class="col-sm-4">
-									<div class="headline"><h2><i class="icon-flat folder m-b-n-sm"></i> 템플릿</h2></div>
-									<div class="sky-form">
-										<fieldset class="padding-sm">
-											<div class="tab-v1 p-xxs">								
-												<ul class="nav nav-tabs" id="template-tree">
-													<li><a href="#template-tree-view" data-toggle="tab">디폴트</a></li>
-													<li><a href="#custom-template-tree-view" data-toggle="tab">커스텀</a></li>
-												</ul>	
-												<div class="tab-content">
-													<div class="tab-pane fade" id="template-tree-view"></div>
-													<div class="tab-pane fade" id="custom-template-tree-view"></div>
-												</div>
-											</div>										
-										</fieldset>
-									</div>									
+								
 								</div>
 								<div class="col-sm-8">								
 									<div id="template-editor" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
@@ -1432,7 +1414,7 @@
 								<header>템플릿</header>
 								<fieldset class="padding-sm">
 									<div class="tab-v1 p-xxs">								
-										<ul class="nav nav-tabs" id="template-tree">
+										<ul class="nav nav-tabs" id="template-tree-tabs">
 											<li><a href="#template-tree-view" data-toggle="tab">기본</a></li>
 											<li><a href="#custom-template-tree-view" data-toggle="tab">사용자 정의</a></li>
 										</ul>	
