@@ -1426,21 +1426,17 @@
 								<header><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory" ></i> <span data-bind="text:file.name"></span></header>	
 								<fieldset data-bind="invisible: file.directory">
 									<section>
-									<div class="row">
-										<div class="col-sm-12">
-											<div class="headline">
-												<h3 class="padding-sm-hr"><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></h3>
-												<div class="pull-right text-muted">
-													<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-												</div>
+										<div class="headline">
+											<h3 class="padding-sm-hr"><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></h3>
+											<div class="pull-right text-muted">
+												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
 											</div>
 										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6"></div>
-										<div class="col-md-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
-									</div>
 									</section>
+									<div class="row">
+										<section class="col-md-6"></div>
+										<section class="col-md-6"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+									</div>									
 								</fieldset>	
 								<footer class="text-right">
 								
