@@ -873,6 +873,7 @@
 													<label class="radio"><input type="radio" name="photo-public-shared" value="0"><i class="rounded-x"></i>공개</label>
 													<label class="radio"><input type="radio" name="photo-public-shared" value="1" checked><i class="rounded-x"></i>비공개</label>
 												</div>
+												<div class="note text-primary"><i class="fa fa-lock"></i> 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</div>
 											</section>                  
 										</fieldset>
 										<footer>
