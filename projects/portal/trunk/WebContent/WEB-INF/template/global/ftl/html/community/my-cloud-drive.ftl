@@ -531,9 +531,12 @@
 					},
 					edit: function(){
 						var $this = this;		
-						var gridRenderTo = renderTo.find(".photo-props-grid");	
-						if(!common.ui.exists(gridRenderTo)){
-							common.ui.grid(gridRenderTo, {
+						var grid = renderTo.find(".photo-props-grid");	
+						var upload = renderTo.find("input[name='update-photo-file']");
+						var shared = renderTo.find("input[name='photo-public-shared']");
+						
+						if(!common.ui.exists(grid)){
+							common.ui.grid(grid, {
 								dataSource : common.ui.data.image.property.datasource($this.image.imageId),
 								columns: [
 									{ title: "속성", field: "name" },
@@ -553,7 +556,36 @@
 								change: function(e) {
 									this.refresh();
 								}
-							});							
+							});															
+							common.ui.upload( upload, {
+								async : {
+									saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+								},
+								localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+								upload: function (e) {				
+									e.data = { imageId: $this.image.imageId };
+								},
+								success: function (e) {									
+								}
+							});						
+							
+							var Fn = function(){
+								shared.on("change", function(e){
+									var newValue = ( this.value == 1 ) ;
+									if(newValue){
+										common.ui.data.image.unshare($this.image.imageId);	
+									}else{
+										common.ui.data.image.share($this.image.imageId);
+									}
+								});						
+							}			
+							common.ui.data.image.streams($this.image.imageId, function(data){
+								if( data.length > 0 )
+									streams.first().click();
+								else
+									streams.last().click();	
+								Fn();	
+							});	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
