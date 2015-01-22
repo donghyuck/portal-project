@@ -18,7 +18,8 @@
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',	
-			'css!<@spring.url "/styles/codrops/codrops.page-transitions.css"/>',			
+			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
+			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',					
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
@@ -100,6 +101,26 @@
 		<!-- ============================== -->
 		<!-- MENU														-->
 		<!-- ============================== -->
+		
+		
+		function openMenuEditor(){
+			var renderTo = $("#my-site-menu-editor");
+			if( ! common.ui.exists(renderTo) ){
+				var observable =  common.ui.observable({ });
+				common.ui.dialog( renderTo , {
+					data : observable,
+					"open":function(e){								
+					},
+					"close":function(e){					
+					}
+				});			
+			}
+			var dialogFx = common.ui.dialog( renderTo );		
+			if( !dialogFx.isOpen ){							
+				dialogFx.open();
+			}			
+		}
+		
 		function createWebsiteSection(){				
 			var model = kendo.observable({
 				website : new common.ui.data.WebSite(),
@@ -1052,8 +1073,7 @@
 									</div>
 								</div>
 							</div>
-						</div>					
-							
+						</div>		
 						<div id="my-site-template" style="display:none;">
 							<div class="row">
 								<div class="col-sm-4">
@@ -1350,7 +1370,15 @@
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-footer.ftl" >		
 			<!-- ./END FOOTER -->					
-		</div>				
+		</div>	
+		
+		<div id="my-site-menu-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
+			<div class="dialog__overlay"></div>
+			<div class="dialog__content">			
+				<span class="btn-flat close" data-dialog-close></span>		
+			</div>
+		</div>		
+					
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
 				<h5 class="side-section-title white">My 클라우드 저장소</h5>		
