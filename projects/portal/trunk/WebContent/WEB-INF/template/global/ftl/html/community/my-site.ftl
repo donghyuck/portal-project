@@ -1392,10 +1392,9 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">			
 				<span class="btn-flat close" data-dialog-close></span>						
-					<div class="container">
+				<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
-								<div class="tag-box tag-box-v3 tag-text-space">
 									<div class="sky-form">
 										<header><span data-bind="text:website.menu.title">메르디앙 메뉴</span>( <span data-bind="text:website.menu.name">MAIN_WEBSITE_MENU</span>)</header>
 										<fieldset class="padding-sm">
@@ -1410,11 +1409,10 @@
 											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
 										</footer>
 									</div>									
-								</div>	
+								>	
 							</div>
 						</div>					
-					</div>
-				
+				</div>				
 			</div>
 		</div>		
 					
