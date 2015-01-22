@@ -523,7 +523,7 @@
 							});	
 							
 							renderTo.find(".tag-box").slimScroll({
-								height: "80%"
+								min-height: "300px"
 							});	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
