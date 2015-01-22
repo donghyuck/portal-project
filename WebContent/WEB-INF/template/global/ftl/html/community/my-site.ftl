@@ -1088,31 +1088,42 @@
 				</div>
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container content" style="min-height:450px;">											
-						
-						<div id="my-site-template" style="display:none;">
-							<div class="row">
-								
-								</div>
-								<div class="col-sm-8">								
-									<div id="template-editor" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
-										<div class="panel-body padding-sm bg-slivergray">
-											<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
-											<div class="pull-right text-muted">
-												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-											</div>
-										</div>	
-										<div class="panel-body padding-sm">	
-											<div class="pull-right">
-												<button class="btn btn-success btn-sm" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-												<button class="btn btn-danger btn-sm" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
-											</div>												
-										</div>
-										<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
-										<div class="panel-footer no-padding-vr"></div>
-									</div>	
-								</div>
-							</div>	
-						</div>
+						<div class="tab-v1">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                        <li><a href="#profile" data-toggle="tab">Profile</a></li>
+                        <li><a href="#messages" data-toggle="tab">Messages</a></li>
+                        <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                    </ul>                
+                    <div class="tab-content">
+                        <div class="tab-pane fade in active" id="home">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="" class="img-responsive img-tab-space" src="assets/img/new/img4.jpg">                                
+                                </div>
+                                <div class="col-md-8">
+                                    <h4>Heading Sample 1</h4>
+                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade in" id="profile">
+                            <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/5.jpg">                         
+                            <h4>Heading Sample 2</h4>
+                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
+                        </div>
+                        <div class="tab-pane fade in" id="messages">
+                            <h4>Heading Sample 3</h4>
+                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/6.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        </div>
+                        <div class="tab-pane fade in" id="settings">
+                            <h4>Heading Sample 4</h4>
+                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/1.jpg"> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        </div>
+                    </div>
+                </div>
+                
+
 						<div id="my-site-notice" style="display:none;">
 							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">		
