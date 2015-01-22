@@ -962,6 +962,7 @@
 			left: 0;
 			position: absolute;
 			height: 100%!important;
+			overflow-y: auto;
 		}
 					
 		.acc-v1	.panel-default {
