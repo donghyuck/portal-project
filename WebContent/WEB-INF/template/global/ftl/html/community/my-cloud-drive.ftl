@@ -864,10 +864,9 @@
 										<div class="box-shadow shadow-effect-2 " >
 											<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}">
 										</div>	
-									</div>	
-									
+									</div>										
 									<ul class="list-unstyled margin-bottom-30">
-										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span></li>
+										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
 										<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
 									</ul>
