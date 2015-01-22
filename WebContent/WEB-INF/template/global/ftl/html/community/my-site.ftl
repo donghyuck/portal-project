@@ -950,7 +950,18 @@
 		-->
 		</script>		
 		<style scoped="scoped">			
-		
+
+		.dialog__content {
+			width : 100%;
+			max-width: none;				
+			background: transparent;
+			padding: 4em;
+			top: 0;
+			left: 0;
+			position: absolute;
+			height: 100%!important;
+		}
+					
 		.acc-v1	.panel-default {
 			border-color: #bbb;
 		}
