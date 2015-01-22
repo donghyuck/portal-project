@@ -861,7 +861,7 @@
 								<span class="close" data-bind="click: close"></span>
 								<div class="left-col">
 									<div class="box-shadow shadow-effect-2">
-										<img class="img-rounded" data-bind="attr:{src:image.imageThumbnailUrl}">
+										<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}">
 									</div>	
 									
 									<ul class="list-unstyled margin-bottom-30">
