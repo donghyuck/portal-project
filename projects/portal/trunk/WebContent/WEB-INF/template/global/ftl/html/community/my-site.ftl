@@ -1447,7 +1447,7 @@
 								
 								</footer>													
 							</div>
-						
+						<!--
 									<div id="template-editor-panel" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
 										<div class="panel-body padding-sm">
 											<span class="label label-warning">PATH</span> 
@@ -1462,6 +1462,7 @@
 										</div>
 										
 									</div>	
+									-->
 						</div><!-- ./col-sm-8 -->									
 					</div>					
 				</div>				
