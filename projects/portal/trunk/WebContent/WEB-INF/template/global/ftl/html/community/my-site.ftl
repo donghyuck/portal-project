@@ -1429,13 +1429,12 @@
 						</div><!-- ./col-sm-4 -->						
 						<div class="col-sm-8">								
 									<div id="template-editor-panel" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
-										<div class="panel-body padding-sm bg-slivergray">
+										<div class="panel-body padding-sm">
 											<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 											<div class="pull-right text-muted">
 												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
 											</div>
-										</div>	
-										<div class="panel-body padding-sm">	
+								<hr class="m-sm"/>		
 											<div class="pull-right">
 												<button class="btn btn-success btn-sm" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
 												<button class="btn btn-danger btn-sm" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 사용자 정의 템플릿 만들기</button>
