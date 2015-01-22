@@ -868,6 +868,7 @@
 										<header data-bind="text: image.name"></header>
 										<fieldset>
 											<section>
+												<label class="label">이미지 공개 여부</label>
 												<div class="inline-group">
 													<label class="radio"><input type="radio" name="photo-public-shared" value="0"><i class="rounded-x"></i>공개</label>
 													<label class="radio"><input type="radio" name="photo-public-shared" value="1" checked><i class="rounded-x"></i>비공개</label>
