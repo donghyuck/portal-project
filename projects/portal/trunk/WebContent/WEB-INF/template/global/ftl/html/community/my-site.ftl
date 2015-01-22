@@ -110,9 +110,11 @@
 				common.ui.dialog( renderTo , {
 					data : observable,
 					"open":function(e){		
-						$("body").css("overflow-y", "hidden");					
+						$("body").css("overflow-y", "hidden");						
+						renderTo.find(".dialog__content").css("overflow-y", "auto");					
 					},
 					"close":function(e){			
+						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
 						$("body").css("overflow-y", "auto");		
 					}
 				});			
@@ -962,7 +964,6 @@
 			left: 0;
 			position: absolute;
 			height: 100%!important;
-			overflow-y: auto;
 		}
 					
 		.acc-v1	.panel-default {
