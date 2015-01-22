@@ -523,7 +523,7 @@
 							});	
 							
 							renderTo.find(".sky-form").slimScroll({
-								height: "600px"
+								height: "500px"
 							});	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
