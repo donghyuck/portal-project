@@ -768,6 +768,17 @@
 			.white-popup-block .close:hover {
 				opacity: 1;
 			}
+			
+			@media ( min-width :768px) {
+				.white-popup-block .left-col {
+					float: left;
+					width: 220px;
+				}
+				.white-popup-block .right-col {
+					overflow: hidden;
+					padding-left: 20px;
+				}
+			}
 		</style>   	
 		</#compress>
 	</head>
