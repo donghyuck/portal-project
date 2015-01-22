@@ -958,12 +958,13 @@
 		.dialog__content {
 			width : 100%;
 			max-width: none;				
-			background: transparent;
+			background: #fff;
 			padding: 4em;
 			top: 0;
 			left: 0;
 			position: absolute;
 			height: 100%!important;
+			text-align: inherit;
 		}
 					
 		.acc-v1	.panel-default {
