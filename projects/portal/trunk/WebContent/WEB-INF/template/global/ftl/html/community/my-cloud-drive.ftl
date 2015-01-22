@@ -9,12 +9,12 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',						
+			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',				
 			'css!<@spring.url "/styles/codrops/codrops.grid.min.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
-			'css!<@spring.url "/styles/codrops/codrops.page-loading-effects.css"/>',					
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',			
@@ -28,8 +28,6 @@
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
 			'<@spring.url "/js/pdfobject/pdfobject.js"/>',	
-			'<@spring.url "/js/snap.svg/snap.svg-min.js"/>',		
-			'<@spring.url "/js/codrops/codrops.svg-loader.js"/>',		
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>',
@@ -739,7 +737,7 @@
 			}
 						
 			.white-popup-block{
-				background: #f5f5f5;
+				background: #303030;
 				padding: 20px 30px;
 				text-align: left;
 				width: 100%;
@@ -771,6 +769,8 @@
 			}
 			
 			@media ( min-width :768px) {
+				
+			
 				.white-popup-block .left-col {
 					float: left;
 					width: 220px;
