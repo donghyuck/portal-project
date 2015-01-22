@@ -563,6 +563,7 @@
 					},
 					setImage: function(image){
 						var $this = this;						
+						$this.resize();
 						image.copy($this.image);	
 						$this.setPagination();
 						var $loading = renderTo.find(".mfp-preloader");
