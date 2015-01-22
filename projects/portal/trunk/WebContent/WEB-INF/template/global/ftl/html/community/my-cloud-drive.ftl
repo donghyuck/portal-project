@@ -863,7 +863,7 @@
 									<div class="box-shadow shadow-effect-2">
 										<img class="img-rounded" data-bind="attr:{src:image.imageThumbnailUrl}">
 									</div>	
-									<div class="headline headline-md"><h2>Blog Tags</h2></div>
+									<div class="headline headline-md"><h3>Blog Tags</h3></div>
 									<ul class="list-unstyled blog-tags margin-bottom-30">
                 	<li><a href="#"><i class="fa fa-tags"></i> Business</a></li>
                 	<li><a href="#"><i class="fa fa-tags"></i> Music</a></li>
