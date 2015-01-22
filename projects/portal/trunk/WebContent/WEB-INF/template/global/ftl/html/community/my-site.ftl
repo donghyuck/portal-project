@@ -1413,7 +1413,7 @@
 											<li><a href="#template-tree-view" data-toggle="tab">기본</a></li>
 											<li><a href="#custom-template-tree-view" data-toggle="tab">사용자 정의</a></li>
 										</ul>	
-										<div class="tab-content">
+										<div class="tab-content" style="min-height:300px;">
 											<div class="tab-pane fade" id="template-tree-view"></div>
 											<div class="tab-pane fade" id="custom-template-tree-view"></div>
 										</div>
@@ -1442,10 +1442,7 @@
 										</section>
 									</div>																		
 								</fieldset>	
-								<div id="templateeditor" class="panel-body bordered no-border-hr no-border-b" data-bind="invisible: file.directory" style="display:none;"></div>
-								<footer class="text-right">
-								
-								</footer>													
+								<div id="templateeditor" class="panel-body bordered no-border-hr no-border-b" data-bind="invisible: file.directory" style="display:none;"></div>											
 							</div>
 						</div><!-- ./col-sm-8 -->									
 					</div>					
