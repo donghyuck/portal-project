@@ -1094,8 +1094,12 @@
 								<li><a href="#website-notice" data-toggle="tab">공지 & 이벤트</a></li>
 							</ul>
 							<div class="tab-content">
-								<div class="tab-pane fade in active" id="website-page">1</div>
-								<div class="tab-pane fade in" id="website-notice">2</div>
+								<div class="tab-pane fade in active" id="website-page">
+									<div class="headline headline-md"><h2><i class="icon-flat paper-plane m-b-n-sm"></i> 페이지</h2></div>	
+								</div>
+								<div class="tab-pane fade in" id="website-notice">
+									<div class="headline headline-md"><h2><i class="icon-flat mega-phone m-b-n-sm"></i> 공지 &amp; 이벤트</h2></div>
+								</div>
 							</div>
 						</div>
 
