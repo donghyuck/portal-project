@@ -523,7 +523,7 @@
 							});	
 							
 							renderTo.find(".tag-box").slimScroll({
-								min-height: "300px"
+								"min-height": "300px"
 							});	
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
