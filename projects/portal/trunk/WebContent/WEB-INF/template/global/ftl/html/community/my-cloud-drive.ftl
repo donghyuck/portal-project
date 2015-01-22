@@ -746,6 +746,7 @@
 				top: 0;
 				left: 0;				
 				z-index:1047;
+				overflow-y: auto;
 			}
 			.white-popup-block .close {
 				position: absolute;
