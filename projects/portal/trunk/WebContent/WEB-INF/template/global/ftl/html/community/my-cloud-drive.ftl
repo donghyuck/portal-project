@@ -883,7 +883,14 @@
 												<div class="note"><i class="fa fa-info"></i> 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</div>
 											</section>
 										</fieldset>
-										<div class="photo-props-grid"></div>
+										<fieldset>
+											<section>
+											<label class="label">추가 정보</label>
+											<div class="photo-props-grid"></div>											
+											<div class="note"><i class="fa fa-info"></i> 수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</div>
+											</section>
+										</fieldset>
+										
 										<footer>
 											<button type="submit" class="btn-u">Continue</button>
 										</footer>
