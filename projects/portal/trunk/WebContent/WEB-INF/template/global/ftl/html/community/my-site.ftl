@@ -1101,7 +1101,7 @@
 		}
 		
 		
-		#menueditor .ace_editor, #xmleditor.ace_editor, #htmleditor.ace_editor , #my-notice-edit  .ace_editor{
+		#menueditor.ace_editor, #xmleditor.ace_editor, #htmleditor.ace_editor , #my-notice-edit  .ace_editor{
 			min-height: 500px;			
 		}
 		
