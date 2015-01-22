@@ -751,8 +751,8 @@
 			}
 			.white-popup-block .close {
 				position: absolute;
-				top: 0;
-				right: 0;
+				top: 30px;
+				right: 40px;
 				line-height: 50px;
 				font-size: 40px;
 				display: block;
@@ -849,7 +849,8 @@
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="white-popup-block" style="display:none">							
 						<div class="container">
-							<div class="row tag-box tag-box-v3 tag-text-space margin-bottom-40">
+							<div class="row">
+								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40">
 								<span class="close" data-bind="click: close"></span>
 								<div class="left-col">
 									<div class="box-shadow shadow-effect-2">
@@ -881,6 +882,7 @@
 									</div>
 									<div class="photo-props-grid"></div>
 								</div><!-- ./right-col	-->
+								</div>
 							</div><!-- ./row	-->
 						</div><!-- ./container		-->	
 					</div><!-- ./white-popup-block		-->
