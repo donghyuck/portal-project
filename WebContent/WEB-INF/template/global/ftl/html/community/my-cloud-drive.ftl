@@ -737,6 +737,11 @@
 				box-shadow: none;
 				background: none;
 			}
+			
+			.dialog .mfp-content{
+				z-index:-1;
+			}
+			
 			.white-popup-block{
 				background: #FFF;
 				padding: 20px 30px;
@@ -745,7 +750,8 @@
 				height: 100%;
 				position: fixed;
 				top: 0;
-				left: 0;
+				left: 0;				
+				z-index:1047;
 			}
 			.white-popup-block .close {
 				position: absolute;
