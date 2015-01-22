@@ -205,8 +205,80 @@
 			var renderTo = $("#my-site-template-editor");
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
-					
+					file : new common.ui.data.FileInfo(),
+					content : "",
+					visible : false,
+					supportCustomized : false,
+					supportUpdate : false,
+					supportSvn : true,
+					openFileUpdateModal : function(){
+						alert("준비중입니다");
+						return false;
+					},
+					openFileCopyModal : function(e){
+						alert("준비중입니다");
+						return false;
+					},
+					useWrapMode : false,
+					useWrap : function(e){
+						ace.edit("templateeditor").getSession().setUseWrapMode(this.useWrapMode);
+					},					
+					setFile : function( fileToUse ) {	
+						$this = this;
+						$this.file.path = fileToUse.get("path");
+						$this.file.set("customized", fileToUse.get("customized") );
+						$this.file.set("absolutePath", fileToUse.get("absolutePath") );
+						$this.file.set("name", fileToUse.get("name"));
+						$this.file.set("size", fileToUse.get("size") );
+						$this.file.set("directory", fileToUse.get("directory"));
+						$this.file.set("lastModifiedDate", fileToUse.get("lastModifiedDate") );
+						
+						if( !$this.file.customized && !$this.file.directory ) {
+							$this.set("supportCustomized", true); 
+						}else{
+							$this.set("supportCustomized", false); 
+						}				    	
+						if( $this.file.path.indexOf( ".svn" ) != -1 ) {
+							$this.set("supportSvn", false); 
+						}else{
+							$this.set("supportSvn", true); 
+						}						
+						if(!$this.file.directory){
+							common.ui.ajax(
+							'<@spring.url "/secure/data/template/get.json?output=json" />' , 
+							{
+								data : { path:  $this.file.path , customized: $this.file.customized },
+								success : function(response){
+									ace.edit("templateeditor").setValue( response.fileContent );	
+								}
+							}); 
+				    	}
+				    	$this.set("visible", true);		    					    			
+					}, 
+					createCustomizedTemplate : function(e){
+						e.preventDefault();						
+						$this = $(e.target);
+						$this.button("loading");
+						var input1 =  $("#file-copy-modal-input-sites").val();
+						var input2 =  $("#file-copy-modal-input-target").val();						
+						if( input1.length == 0 || input2.length == 0 ){
+							if( !$("#file-copy-modal .tab-content").hasClass("has-error") ){
+								$("#file-copy-modal .tab-content").addClass("has-error");
+							}	
+						}else{
+							if( $("#file-copy-modal .tab-content").hasClass("has-error") ){
+								$("#file-copy-modal .tab-content").removeClass("has-error");
+							}						
+						}						
+						$this.button("reset");																		
+						return false;
+					}
 				});				
+				
+				var editor = ace.edit("templateeditor");		
+				editor.getSession().setMode("ace/mode/ftl");
+				editor.getSession().setUseWrapMode(true);	
+								
 				common.ui.dialog( renderTo , {
 					data : observable,
 					"open":function(e){		
@@ -228,7 +300,7 @@
 							createTemplateTree($("#custom-template-tree-view"), true);
 							break;
 					}					
-				});				
+				});												
 				common.ui.bind(renderTo, observable );		
 			}			
 			var dialogFx = common.ui.dialog( renderTo );		
@@ -278,85 +350,9 @@
 		}		
 				
 		function createTemplateEditor(file){
-			var renderTo = $('#template-editor');			
-			if(!renderTo.data("model")){					
-				var model = kendo.observable({
-					file : new common.ui.data.FileInfo(),
-					content : "",
-					visible : false,
-					supportCustomized : false,
-					supportUpdate : false,
-					supportSvn : true,
-					openFileUpdateModal : function(){
-						alert("준비중입니다");
-						return false;
-					},
-					openFileCopyModal : function(e){
-						alert("준비중입니다");
-						return false;
-					},
-					setFile : function( fileToUse ) {
-	
-						this.file.path = fileToUse.get("path");
-						this.file.set("customized", fileToUse.get("customized") );
-						this.file.set("absolutePath", fileToUse.get("absolutePath") );
-						this.file.set("name", fileToUse.get("name"));
-						this.file.set("size", fileToUse.get("size") );
-						this.file.set("directory", fileToUse.get("directory"));
-						this.file.set("lastModifiedDate", fileToUse.get("lastModifiedDate") );
-						
-						if( !this.file.customized && !this.file.directory ) 
-						{
-							this.set("supportCustomized", true); 
-						}else{
-							this.set("supportCustomized", false); 
-						}				    	
-						if( this.file.path.indexOf( ".svn" ) != -1 ) {
-							this.set("supportSvn", false); 
-						}else{
-							this.set("supportSvn", true); 
-						}
-						
-						if(!this.file.directory){
-							common.ui.ajax(
-							'<@spring.url "/secure/data/template/get.json?output=json" />' , 
-							{
-								data : { path:  this.file.path , customized: this.file.customized },
-								success : function(response){
-									ace.edit("htmleditor").setValue( response.fileContent );	
-								}
-							}); 
-				    	}
-				    	this.set("visible", true);		    					    			
-					}, 
-					createCustomizedTemplate : function(e){
-						e.preventDefault();						
-						$this = $(e.target);
-						$this.button("loading");
-						var input1 =  $("#file-copy-modal-input-sites").val();
-						var input2 =  $("#file-copy-modal-input-target").val();						
-						if( input1.length == 0 || input2.length == 0 ){
-							if( !$("#file-copy-modal .tab-content").hasClass("has-error") ){
-								$("#file-copy-modal .tab-content").addClass("has-error");
-							}	
-						}else{
-							if( $("#file-copy-modal .tab-content").hasClass("has-error") ){
-								$("#file-copy-modal .tab-content").removeClass("has-error");
-							}						
-						}						
-						$this.button("reset");																		
-						return false;
-					}
-				});					
-				model.setFile(file);
-				kendo.bind(renderTo, model );	
-				renderTo.data("model", model );	
-				var editor = ace.edit("htmleditor");		
-				editor.getSession().setMode("ace/mode/ftl");
-				editor.getSession().setUseWrapMode(true);	
-			}else{
-				renderTo.data("model").setFile(file);
-			}		
+			var renderTo = $("#my-site-template-editor");
+			var dialogFx = common.ui.dialog( renderTo );		
+			dialogFx.data().setFile(file);	
 		}
 		
 
