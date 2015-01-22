@@ -898,14 +898,13 @@
 								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40">
 								<span class="close" data-bind="click: close"></span>
 								<div class="left-col">
-									<div class="shadow-wrapper margin-bottom-20" style="width:150px;height:150px;">
+									<div class="shadow-wrapper" style="width:150px;height:150px;">
 										<div class="box-shadow shadow-effect-2 " >
 											<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}">
 										</div>	
-									</div>										
-									<ul class="list-unstyled margin-bottom-30">
-										<li class="p-xxs"><strong>출처:</strong> <a href="#" class="btn btn-link" data-bind="attr:{href:image.properties.source, alt:image.properties.source  }">이동</a></li>
-										<hr/>
+									</div>
+									<hr/>										
+									<ul class="list-unstyled margin-bottom-30">																		
 										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text:image.formattedSize"></span> bytes</li>
 										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: image.formattedCreationDate"></span></li>
 										<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: image.formattedModifiedDate"></span></li>
@@ -922,6 +921,12 @@
 										<header data-bind="text: image.name"></header>
 										<fieldset>
 											<section>
+												<label class="label">출처</label>
+												<a href="#" class="btn btn-link" data-bind="attr:{href:image.properties.source }, text:image.properties.source"></a>
+											</section>
+										</fieldset>											
+										<fieldset>
+											<section>											
 												<label class="label">이미지 변경</label>
 												<input name="update-photo-file" type="file" class="pull-right" />	
 												<div class="note"><i class="fa fa-info"></i> 사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</div>
