@@ -883,6 +883,7 @@
 												<div class="note"><i class="fa fa-info"></i> 공개를 선택하면 누구나 웹을 통하여 볼 수 있도록 공개됩니다.</div>
 											</section>
 										</fieldset>
+										<div class="photo-props-grid"></div>
 										<footer>
 											<button type="submit" class="btn-u">Continue</button>
 										</footer>
@@ -905,7 +906,7 @@
 									<div class="page-header no-margin-b">
 										<h4 class="text-primary"><i class="fa fa-cfg"></i> <strong>속성</strong> <small>수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</small></h4>
 									</div>
-									<div class="photo-props-grid"></div>
+									
 								</div><!-- ./right-col	-->
 								</div>
 							</div><!-- ./row	-->
