@@ -794,15 +794,15 @@
 			}
 			.white-popup-block .close {
 				position: absolute;
-				top: 30px;
-				right: 40px;
+				top: 0;
+				right: 0;
 				line-height: 50px;
 				font-size: 40px;
 				display: block;
 				width: 50px;
 				height: 50px;
 				text-align: center;
-				background: url(/images/common/grey-cross.png) no-repeat center center;
+				url(/images/common/grey-cross.png) no-repeat center rgba(0, 0, 0, 0.8)
 				background-size: 25px;
 				content: "";
 				display: block;
