@@ -739,7 +739,7 @@
 			}
 						
 			.white-popup-block{
-				background: #FFF;
+				background: #f5f5f5;
 				padding: 20px 30px;
 				text-align: left;
 				width: 100%;
@@ -849,10 +849,12 @@
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="white-popup-block" style="display:none">							
 						<div class="container">
-							<div class="row">
+							<div class="row tag-box tag-box-v3 tag-text-space margin-bottom-40">
 								<span class="close" data-bind="click: close"></span>
 								<div class="left-col">
-									<img class="img-circle" data-bind="attr:{src:image.imageThumbnailUrl}">
+									<div class="box-shadow shadow-effect-2">
+										<img class="img-rounded" data-bind="attr:{src:image.imageThumbnailUrl}">
+									</div>	
 									<h1>Modal dialog</h1>
 									<p>You won't be able to dismiss this by usual means (escape or
 										click button), but you can close it programatically based on
