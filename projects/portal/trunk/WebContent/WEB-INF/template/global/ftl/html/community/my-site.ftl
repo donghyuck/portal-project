@@ -109,9 +109,11 @@
 				var observable =  common.ui.observable({ });
 				common.ui.dialog( renderTo , {
 					data : observable,
-					"open":function(e){								
+					"open":function(e){		
+						$("body").css("overflow-y", "hidden");					
 					},
-					"close":function(e){					
+					"close":function(e){			
+						$("body").css("overflow-y", "auto");		
 					}
 				});			
 			}
