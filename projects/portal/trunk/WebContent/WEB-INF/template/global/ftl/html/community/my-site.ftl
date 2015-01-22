@@ -1442,27 +1442,11 @@
 										</section>
 									</div>																		
 								</fieldset>	
-								<div id="templateeditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
+								<div id="templateeditor" class="panel-body bordered no-border-hr no-border-b" data-bind="invisible: file.directory" style="display:none;"></div>
 								<footer class="text-right">
 								
 								</footer>													
 							</div>
-						<!--
-									<div id="template-editor-panel" class="panel panel-default animated fadeIn" data-bind="visible: visible" style="display:none;">
-										<div class="panel-body padding-sm">
-											<span class="label label-warning">PATH</span> 
-											<i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span>
-											<div class="pull-right text-muted">
-												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-											</div>
-								<hr class="m-sm"/>		
-											<div class="pull-right">
-
-											</div>												
-										</div>
-										
-									</div>	
-									-->
 						</div><!-- ./col-sm-8 -->									
 					</div>					
 				</div>				
