@@ -1391,7 +1391,7 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">			
 				<span class="btn-flat close" data-dialog-close></span>		
-				<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40">
+				
 					<div class="container">
 						<div class="row">
 							<div class="col-sm-12">
@@ -1415,7 +1415,7 @@
 							</div>
 						</div>					
 					</div>
-				</div>
+				
 			</div>
 		</div>		
 					
