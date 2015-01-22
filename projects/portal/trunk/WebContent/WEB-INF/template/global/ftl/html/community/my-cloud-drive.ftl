@@ -860,7 +860,7 @@
 								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40">
 								<span class="close" data-bind="click: close"></span>
 								<div class="left-col">
-									<div class="box-shadow shadow-effect-2">
+									<div class="box-shadow shadow-effect-2 margin-bottom-40" >
 										<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}">
 									</div>	
 									
