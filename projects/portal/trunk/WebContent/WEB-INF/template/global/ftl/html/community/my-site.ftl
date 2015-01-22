@@ -1423,7 +1423,7 @@
 						</div><!-- ./col-sm-4 -->						
 						<div class="col-sm-8">
 							<div class="sky-form animated fadeIn" data-bind="visible: visible" style="display:none;">
-								<fieldset data-bind="invisible: file.directory">
+								<fieldset>	
 									<section>
 										<div class="headline">
 											<h3 class="padding-sm-hr"><i class="fa fa-folder-o" data-bind="visible:file.directory"></i><i class="fa fa-file-text-o" data-bind="invisible:file.directory"></i> <span data-bind="text:file.name"></span></h3>
@@ -1431,13 +1431,7 @@
 												<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
 											</div>
 										</div>
-									</section>
-									<div class="row">
-										<section class="col-md-6"></section>
-										<section class="col-md-6"></section>
-									</div>	
-								</fieldset>	
-								<fieldset>	
+									</section>								
 									<div class="row">
 										<section class="col-md-6">
 											<label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label>
