@@ -701,6 +701,10 @@
 				height: 100%!important;
 			}
 			
+			.dialog .btn-flat {
+				z-index: 1046;
+			}
+			
 			.dialog .btn-flat.mfp-arrow {
 				background-color:transparent!important;
 			}
