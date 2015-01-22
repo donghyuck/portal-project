@@ -115,7 +115,73 @@
 		function openMenuEditor(){
 			var renderTo = $("#my-site-menu-editor");
 			if( ! common.ui.exists(renderTo) ){
-				var observable =  common.ui.observable({ });
+				var observable =  common.ui.observable({
+					website : new common.ui.data.WebSite(),
+					updateMenuData : function(e){			
+						var $this = this;
+						var btn = $(e.target);						
+						btn.button('loading');						
+						$this.website.menu.menuData = ace.edit("menueditor").getValue();
+						common.ui.ajax(
+							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.website.menu ),
+								contentType : "application/json",
+								success : function(response){},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									$this.refresh();
+									btn.button('reset');
+								}
+							}
+						);												
+					},
+					useWrapMode : false,
+					useWrap : function(e){
+						ace.edit("menueditor").getSession().setUseWrapMode(this.useWrapMode);
+					},
+					refresh : function(){
+						var $this = this;
+						common.ui.ajax(
+							'<@spring.url "/secure/data/website/get.json?output=json" />' , 
+							{
+								data : {
+									refresh : true,
+								},
+								success : function(response){					
+									var website = new common.ui.data.WebSite(response);
+									website.copy($this.website);
+								}
+							}
+						);						
+					}
+				});				
+				var editor = ace.edit("menueditor");		
+				editor.setTheme("ace/theme/monokai");
+				editor.getSession().setMode("ace/mode/xml");					
+				
+				observable.bind("change", function(e){		
+					var sender = e.sender ;
+					if( e.field.match('^website.menu')){
+					 	editor.setValue( sender.website.menu.menuData );	
+					}
+				});			
+					
 				common.ui.dialog( renderTo , {
 					data : observable,
 					"open":function(e){		
@@ -126,7 +192,10 @@
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
 						$("body").css("overflow-y", "auto");		
 					}
-				});			
+				});
+
+				common.ui.bind(renderTo, observable );	
+				observable.refresh();			
 			}
 			var dialogFx = common.ui.dialog( renderTo );		
 			if( !dialogFx.isOpen ){							
@@ -140,9 +209,8 @@
 				updateMenuData : function(e){			
 					var $this = this;
 					var btn = $(e.target);						
-					btn.button('loading');			
-					
-					$this.website.menu.menuData = ace.edit("xmleditor").getValue();
+					btn.button('loading');						
+					$this.website.menu.menuData = ace.edit("menueditor").getValue();
 						common.ui.ajax(
 							'<@spring.url "/secure/data/menu/update.json?output=json" />' , 
 							{
@@ -196,7 +264,7 @@
 				}
 			});	
 								
-			var editor = ace.edit("xmleditor");			
+			var editor = ace.edit("menueditor");			
 			editor.setTheme("ace/theme/monokai");
 			editor.getSession().setMode("ace/mode/xml");					
 			editor.getSession().on("change", function(e){
@@ -1417,7 +1485,7 @@
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 											</div>
 										</fieldset>
-										<div id="xmleditor"></div>
+										<div id="menueditor"></div>
 										<footer class="text-right">
 											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
 											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
