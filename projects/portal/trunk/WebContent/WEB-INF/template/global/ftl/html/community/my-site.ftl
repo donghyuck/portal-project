@@ -1250,6 +1250,7 @@
 										</form><!-- /.form >	
 									</div><!-- /.my-page-view -->															
 								</div>
+								
 								<div class="tab-pane fade in" id="website-notice">
 									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
 								
