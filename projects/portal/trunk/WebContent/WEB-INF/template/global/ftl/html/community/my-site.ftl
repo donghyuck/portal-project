@@ -1116,134 +1116,8 @@
 								<div class="tab-pane fade in" id="website-page">
 									<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>
 									
-								</div>
-								<div class="tab-pane fade in" id="website-notice">
-									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
-								
-								</div>
-							</div>
-						</div>
-
-						<div id="my-site-notice" style="display:none;">
-							<div class="row">
-								<div id="my-notice-list" class="col-sm-4">		
-									<div class="headline"><h2><i class="icon-flat mega-phone m-b-n-sm"></i> 공지 & 이벤트</h2></div>
-									<div class="sky-form">
-										<fieldset class="padding-sm">
-											<p class="help-block"><i class="fa fa-info"></i> 소스와 검색 기간을 선택하세요.</p>	
-											<div class="row">
-												<section class="col-sm-12">
-													<label class="label">소스</label>
-													<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-														<label class="btn btn-info btn-sm active rounded-left">
-															<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-														</label>
-														<label class="btn btn-info btn-sm rounded-right">
-															<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-														</label>
-													</div>												
-												</section>
-											</div>											
-											<div class="row">											
-												<section class="col-lg-6">
-													<label for="noticeStartDatePicker" class="label">시작일시</label>
-													<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
-												</section>
-												<section class="col-lg-6">
-													<label for="noticeEndDatePicker" class="label">종료일시</label>
-													<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />													
-												</section>
-											</div>		
-											<div class="row">
-												<section class="col-sm-12 text-right">
-													<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
-													<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
-												</section>
-											</div>																				
-										</fieldset>
-										<div id="my-notice-grid" class="no-border-hr no-border-b"></div>					
-									</div>																				
-								</div>
-								<div id="my-notice-view" class="col-sm-8">
-									<span class="hidden-lg  m-t-sm" ></span>		
-									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
-										<header data-bind="html:notice.subject"></header>
-										<fieldset>
-											<ul class="list-unstyled margin-bottom-30">
-												<li class="p-xxs"><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
-												<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: notice.formattedCreationDate"></span></li>
-												<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: notice.formattedModifiedDate"></span></li>
-												<li class="p-xxs">
-													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:notice.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-													<ul class="list-unstyled text-muted">
-														<li><span data-bind="visible: notice.user.nameVisible, text: notice.user.name"></span><code data-bind="text: notice.user.username"></code></li>
-														<li><span data-bind="visible: notice.user.emailVisible, text: notice.user.email"></span></li>
-													</ul>															
-												</li>
-											</ul>
-											<div class="text-right">
-												<button type="button" class="btn-u" data-bind="events:{click:edit}">편집</button>
-											</div>													
-										</fieldset>
-										<fieldset>
-											<section  data-bind="html:notice.body"></section>
-										</fieldset>												
-									</div>								
-								</div>
-								<div id="my-notice-edit" class="col-sm-8" style="display:none;">
-									<span class="hidden-lg  m-t-sm" ></span>		
-									<span class="back" data-bind="events{click:close}"></span>
-									<div class="sky-form" >
-										<header>&nbsp;</header> 
-										<fieldset class="padding-sm">
-											<section>
-												<label class="label">제목</label>
-												<label for="title" class="input">
-													<input type="text" name="title" placeholder="제목" data-bind="value: notice.subject" >
-												</label>
-											</section>		
-											<section class="no-margin">
-												<label class="label">공지 기간</label>
-												<input data-role="datetimepicker" data-bind="value:notice.startDate"> ~ <input data-role="datetimepicker" data-bind="value:notice.endDate">
-												<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
-											</section>		
-											<div class="row">
-												<div class="col col-6">
-																							
-												</div>
-												<div class="col col-6">
-												</div>												
-											</div>		
-										</fieldset>
-										<section class="no-margin p-sm">	
-											<div class="tab-v1">
-												<div role="tabpanel">
-													<!-- Nav tabs -->													
-													<ul class="nav nav-tabs" role="tablist" id="my-notice-editor-tabs">
-														<li role="presentation" class="active"><a href="#my-notice-editor-ui" aria-controls="my-notice-editor-ui" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
-														<li role="presentation"><a href="#my-notice-editor-code" aria-controls="my-notice-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
-													</ul>												
-													<!-- Tab panes -->
-													<div class="tab-content no-padding">
-														<div role="tabpanel" class="tab-pane active" id="my-notice-editor-ui">
-															<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
-														</div>
-														<div role="tabpanel" class="tab-pane" id="my-notice-editor-code"></div>
-													</div>
-												</div>
-											</div>
-										</section>											
-										<footer class="text-right">
-											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 
-											<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-										</footer>										
-									</div>																			
-								</div>													
-							</div><!-- /.row -->
-						</div><!-- /. my-site-notice -->	
-						<div id="my-page"  style="display:none;">
-							<div class="row">
-								<div id="my-page-list">
+									
+								<div id="my-page-list" class="p-xxs">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
 											<label class="btn btn-sm btn-danger rounded-left active">
@@ -1371,8 +1245,133 @@
 										</footer>
 									</form><!-- /.form >	
 								</div><!-- /.my-page-view -->
-							</div><!-- /.my-page -->
-						</div><!-- /.row -->
+															
+								</div>
+								<div class="tab-pane fade in" id="website-notice">
+									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
+								
+								</div>
+							</div>
+						</div>
+
+						<div id="my-site-notice" style="display:none;">
+							<div class="row">
+								<div id="my-notice-list" class="col-sm-4">		
+									<div class="headline"><h2><i class="icon-flat mega-phone m-b-n-sm"></i> 공지 & 이벤트</h2></div>
+									<div class="sky-form">
+										<fieldset class="padding-sm">
+											<p class="help-block"><i class="fa fa-info"></i> 소스와 검색 기간을 선택하세요.</p>	
+											<div class="row">
+												<section class="col-sm-12">
+													<label class="label">소스</label>
+													<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+														<label class="btn btn-info btn-sm active rounded-left">
+															<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+														</label>
+														<label class="btn btn-info btn-sm rounded-right">
+															<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+														</label>
+													</div>												
+												</section>
+											</div>											
+											<div class="row">											
+												<section class="col-lg-6">
+													<label for="noticeStartDatePicker" class="label">시작일시</label>
+													<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
+												</section>
+												<section class="col-lg-6">
+													<label for="noticeEndDatePicker" class="label">종료일시</label>
+													<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />													
+												</section>
+											</div>		
+											<div class="row">
+												<section class="col-sm-12 text-right">
+													<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
+													<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
+												</section>
+											</div>																				
+										</fieldset>
+										<div id="my-notice-grid" class="no-border-hr no-border-b"></div>					
+									</div>																				
+								</div>
+								<div id="my-notice-view" class="col-sm-8">
+									<span class="hidden-lg  m-t-sm" ></span>		
+									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
+										<header data-bind="html:notice.subject"></header>
+										<fieldset>
+											<ul class="list-unstyled margin-bottom-30">
+												<li class="p-xxs"><strong>게시 기간:</strong> <span data-bind="text:notice.formattedStartDate"></span> ~ <span data-bind="text:notice.formattedEndDate"></span></li>
+												<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: notice.formattedCreationDate"></span></li>
+												<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: notice.formattedModifiedDate"></span></li>
+												<li class="p-xxs">
+													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:notice.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+													<ul class="list-unstyled text-muted">
+														<li><span data-bind="visible: notice.user.nameVisible, text: notice.user.name"></span><code data-bind="text: notice.user.username"></code></li>
+														<li><span data-bind="visible: notice.user.emailVisible, text: notice.user.email"></span></li>
+													</ul>															
+												</li>
+											</ul>
+											<div class="text-right">
+												<button type="button" class="btn-u" data-bind="events:{click:edit}">편집</button>
+											</div>													
+										</fieldset>
+										<fieldset>
+											<section  data-bind="html:notice.body"></section>
+										</fieldset>												
+									</div>								
+								</div>
+								<div id="my-notice-edit" class="col-sm-8" style="display:none;">
+									<span class="hidden-lg  m-t-sm" ></span>		
+									<span class="back" data-bind="events{click:close}"></span>
+									<div class="sky-form" >
+										<header>&nbsp;</header> 
+										<fieldset class="padding-sm">
+											<section>
+												<label class="label">제목</label>
+												<label for="title" class="input">
+													<input type="text" name="title" placeholder="제목" data-bind="value: notice.subject" >
+												</label>
+											</section>		
+											<section class="no-margin">
+												<label class="label">공지 기간</label>
+												<input data-role="datetimepicker" data-bind="value:notice.startDate"> ~ <input data-role="datetimepicker" data-bind="value:notice.endDate">
+												<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
+											</section>		
+											<div class="row">
+												<div class="col col-6">
+																							
+												</div>
+												<div class="col col-6">
+												</div>												
+											</div>		
+										</fieldset>
+										<section class="no-margin p-sm">	
+											<div class="tab-v1">
+												<div role="tabpanel">
+													<!-- Nav tabs -->													
+													<ul class="nav nav-tabs" role="tablist" id="my-notice-editor-tabs">
+														<li role="presentation" class="active"><a href="#my-notice-editor-ui" aria-controls="my-notice-editor-ui" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+														<li role="presentation"><a href="#my-notice-editor-code" aria-controls="my-notice-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+													</ul>												
+													<!-- Tab panes -->
+													<div class="tab-content no-padding">
+														<div role="tabpanel" class="tab-pane active" id="my-notice-editor-ui">
+															<textarea id="notice-editor-body" class="no-border" data-bind='value:notice.body' style="height:500px;"></textarea>
+														</div>
+														<div role="tabpanel" class="tab-pane" id="my-notice-editor-code"></div>
+													</div>
+												</div>
+											</div>
+										</section>											
+										<footer class="text-right">
+											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 
+											<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
+										</footer>										
+									</div>																			
+								</div>													
+							</div><!-- /.row -->
+						</div><!-- /. my-site-notice -->	
+
 					</div><!-- /.container -->
 				</div>				
 			</section><!-- /.section -->
