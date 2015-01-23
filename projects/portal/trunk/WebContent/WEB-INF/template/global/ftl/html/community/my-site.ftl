@@ -861,7 +861,7 @@
 		}
 		
 		
-		#menueditor.ace_editor, #templateeditor.ace_editor, #htmleditor.ace_editor , #my-notice-edit  .ace_editor{
+		.ace_editor{
 			min-height: 500px;			
 		}
 		
