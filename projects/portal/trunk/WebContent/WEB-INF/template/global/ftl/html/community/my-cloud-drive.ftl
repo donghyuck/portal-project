@@ -757,7 +757,7 @@
 					<div class="white-popup-block" style="display:none">							
 						<div class="container">
 							<div class="row">
-								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40">
+								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
 								<span class="close" data-bind="click: close"></span>
 								<div class="left-col">
 									<div class="shadow-wrapper" style="width:150px;height:150px;">
