@@ -896,6 +896,7 @@
 							<ul class="nav nav-tabs">
 								<li><a href="#website-page" data-toggle="tab" class="rounded-top">페이지</a></li>
 								<li><a href="#website-notice" data-toggle="tab" class="rounded-top">공지 & 이벤트</a></li>
+								<li><a href="#website-timeline" data-toggle="tab" class="rounded-top">타임라인</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane fade" id="website-page">
@@ -1146,7 +1147,9 @@
 									</div>																			
 								</div>	
 								
+								
 								</div>
+								<div class="tab-pane fade" id="website-timeline"></div><!-- ./website-timeline -->
 							</div>
 						</div>
 
