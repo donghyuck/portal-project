@@ -679,6 +679,10 @@
 				min-height: 100px;
 			}
 			
+			.image-listview .img-wrapper, .file-listview .file-wrapper {
+				width : 150px;
+			}
+			
 			@media ( min-width :768px) {
 				
 			
