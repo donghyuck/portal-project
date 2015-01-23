@@ -1049,36 +1049,30 @@
 								<div id="my-notice-list" class="col-sm-4">		
 									<div class="sky-form">
 										<fieldset class="padding-sm">
-											<p class="help-block"><i class="fa fa-info"></i> 소스와 검색 기간을 선택하세요.</p>	
-											<div class="row">
-												<section class="col-sm-12">
-													<label class="label">소스</label>
-													<div id="notice-source-list" class="btn-group" data-toggle="buttons">
-														<label class="btn btn-info btn-sm active rounded-left">
-															<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-														</label>
-														<label class="btn btn-info btn-sm rounded-right">
-															<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-														</label>
-													</div>												
-												</section>
-											</div>											
-											<div class="row">											
-												<section class="col-lg-6">
-													<label for="noticeStartDatePicker" class="label">시작일시</label>
-													<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
-												</section>
-												<section class="col-lg-6">
-													<label for="noticeEndDatePicker" class="label">종료일시</label>
-													<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />													
-												</section>
-											</div>		
-											<div class="row">
-												<section class="col-sm-12 text-right">
-													<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
-													<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
-												</section>
-											</div>																				
+											<section>
+												<label class="label">소스</label>
+												<div id="notice-source-list" class="btn-group" data-toggle="buttons">
+													<label class="btn btn-info btn-sm active rounded-left">
+														<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
+													</label>
+													<label class="btn btn-info btn-sm rounded-right">
+														<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
+													</label>
+												</div>																								
+											</section>
+											<section>
+												<label for="noticeStartDatePicker" class="label">시작일시</label>
+												<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
+											</section>
+											<section>
+												<label for="noticeEndDatePicker" class="label">종료일시</label>
+												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />	
+												<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 것들을 검색합니다.</div>													
+											</section>																						
+											<section class="text-right">
+												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
+												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
+											</section>																			
 										</fieldset>
 										<div id="my-notice-grid" class="no-border-hr no-border-b"></div>					
 									</div>																				
