@@ -701,7 +701,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-section bg-transparent" >
+			<section class="personalized-section bg-transparent open" >
 				<div class="personalized-section-heading">
 					<div class="container">
 						<div class="personalized-section-title">
