@@ -89,7 +89,6 @@
 					
 					}		
 					
-					alert( renderTo.html() );
 				});
 				
 				$('.personalized-section .nav-tabs a[data-toggle="tab"]:first').tab('show');
