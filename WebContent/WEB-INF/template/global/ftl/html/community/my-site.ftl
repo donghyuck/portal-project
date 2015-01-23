@@ -1043,12 +1043,12 @@
 			pointer-events: auto;		
 		} 
 		
-		#my-page 	span.back, #my-notice-edit 	span.back {
+		#my-page 	span.back,  #my-notice-edit 	span.back {
 			top:inherit;
 			left:inherit;
 		}
 		
-		#my-page .k-editor, #my-site-notice .k-editor {
+		#my-page-view .k-editor, #my-site-notice .k-editor {
 			border:0px;
 		}
 		
