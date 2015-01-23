@@ -63,8 +63,7 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
-				
-				setupPersonalizedSection();			
+					
 				createPageSection();
 				// END SCRIPT 				
 			}
