@@ -1226,7 +1226,6 @@
 									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
 
 								<div id="my-notice-list" class="col-sm-4">		
-									<div class="headline"><h2><i class="icon-flat mega-phone m-b-n-sm"></i> 공지 & 이벤트</h2></div>
 									<div class="sky-form">
 										<fieldset class="padding-sm">
 											<p class="help-block"><i class="fa fa-info"></i> 소스와 검색 기간을 선택하세요.</p>	
