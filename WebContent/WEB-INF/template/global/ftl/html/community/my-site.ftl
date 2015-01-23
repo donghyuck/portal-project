@@ -550,7 +550,7 @@
 				renderTo.data("model", model);
 				kendo.bind(renderTo, model );				
 				var bodyEditor =  $("#page-editor-body" );
-				createEditor( "page-editor" , bodyEditor );			
+				//createEditor( "page-editor" , bodyEditor );			
 				
 				//createEditor( "announce-editor" , bodyEditor, { modal : false , theme: "ace/theme/monokai" } );				
 				
