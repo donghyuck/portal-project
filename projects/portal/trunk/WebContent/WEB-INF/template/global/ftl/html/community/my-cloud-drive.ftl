@@ -683,9 +683,10 @@
 			
 			@media ( min-width :768px) {
 				
-			.image-listview .img-wrapper, .file-listview .file-wrapper {
-				width : 150px;
-			}			
+				.image-listview .img-wrapper, .file-listview .file-wrapper {
+					width : 14.2%;
+				}			
+				
 				.white-popup-block .left-col {
 					float: left;
 					width: 220px;
