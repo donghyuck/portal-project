@@ -979,6 +979,14 @@
 			height: 100%!important;
 			text-align: inherit;
 		}
+
+		dialog .ace_editor {
+			display : none;
+		}
+				
+		dialog.dialog--open .ace_editor {
+			display : block;
+		}
 					
 		.acc-v1	.panel-default {
 			border-color: #bbb;
