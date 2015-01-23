@@ -980,11 +980,11 @@
 			text-align: inherit;
 		}
 
-		dialog .ace_editor {
+		.dialog .ace_editor {
 			display : none;
 		}
 				
-		dialog.dialog--open .ace_editor {
+		.dialog.dialog--open .ace_editor {
 			display : block;
 		}
 					
