@@ -1211,8 +1211,23 @@
 													</div>
 												</div>
 											</fieldset>
-											<section class="no-margin">	
-												<textarea id="page-editor-body" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+											<section class="no-margin">													
+												<div class="tab-v1">
+													<div role="tabpanel">
+														<!-- Nav tabs -->													
+														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
+															<li role="presentation" class="active"><a href="#my-page-editor-ui" aria-controls="my-page-editor-ui" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+															<li role="presentation"><a href="#my-page-editor-code" aria-controls="my-page-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+														</ul>												
+														<!-- Tab panes -->
+														<div class="tab-content no-padding">
+															<div role="tabpanel" class="tab-pane active" id="my-page-editor-ui">
+																<textarea id="page-editor-body" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="my-page-editor-code"></div>
+														</div>
+													</div>
+												</div>																							
 											</section>											
 											<footer class="text-right">
 												<button type="button" class="btn-u" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
