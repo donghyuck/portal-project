@@ -1114,7 +1114,7 @@
 					<div class="container content" style="min-height:450px;">											
 						<div class="tab-v1">
 							<ul class="nav nav-tabs">
-								<li class="active"><a href="#website-page" data-toggle="tab">페이지</a></li>
+								<li><a href="#website-page" data-toggle="tab">페이지</a></li>
 								<li><a href="#website-notice" data-toggle="tab">공지 & 이벤트</a></li>
 							</ul>
 							<div class="tab-content">
