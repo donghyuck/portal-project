@@ -63,10 +63,8 @@
 				});				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");
 				
-				setupPersonalizedSection();
-			
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"open-menu-editor" : function(e){
