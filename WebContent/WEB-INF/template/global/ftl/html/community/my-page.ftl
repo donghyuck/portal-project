@@ -577,7 +577,10 @@
 		.sky-form fieldset {
 			background: #fff;
 		}
-		
+
+		.ace_editor{
+			min-height: 500px;			
+		}		
 		</style>   	
 		</#compress>
 	</head>
