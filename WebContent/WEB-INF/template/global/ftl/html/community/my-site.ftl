@@ -1118,7 +1118,7 @@
 								<li><a href="#website-notice" data-toggle="tab">공지 & 이벤트</a></li>
 							</ul>
 							<div class="tab-content">
-								<div class="tab-pane fade in" id="website-page">
+								<div class="tab-pane fade" id="website-page">
 									<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>									
 									<div id="my-page-list" class="p-xxs">
 										<div class="p-xxs">
@@ -1251,7 +1251,7 @@
 									</div><!-- /.my-page-view -->															
 								</div>
 								
-								<div class="tab-pane fade in" id="website-notice">
+								<div class="tab-pane fade" id="website-notice">
 									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
 								
 								</div>
