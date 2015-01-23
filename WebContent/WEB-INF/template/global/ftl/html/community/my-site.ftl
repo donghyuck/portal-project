@@ -1124,10 +1124,10 @@
 									<div id="my-page-list" class="p-xxs">
 										<div class="btn-toolbar p-xxs">
 											<div class="btn-group" data-toggle="buttons" id="page-source-list">
-												<label class="btn btn-sm btn-danger rounded-left active">
+												<label class="btn btn-sm btn-danger rounded-left ">
 													<input type="radio" name="page-source" value="2"><i class="fa fa-user"></i> ME
 												</label>
-												<label class="btn btn-sm btn-danger">
+												<label class="btn btn-sm btn-danger active">
 													<input type="radio" name="page-source" value="30" checked="checked"><i class="fa fa-globe"></i> SITE
 												</label>											
 												<label class="btn btn-sm btn-danger rounded-right">
