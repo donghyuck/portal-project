@@ -395,11 +395,14 @@
 		function showPhotoPanel(image){		
 			var renderTo = $("#image-viewer");						
 			if( ! common.ui.exists(renderTo) ){			
-				var $window = $(window);
+				
 				var observable =  common.ui.observable({ 
 					image : new common.ui.data.Image(),
 					resize : function(){
-						renderTo.find("img.mfp-img").css("max-height", $window.height());					
+						var $img = renderTo.find("img.mfp-img");
+						var $window = $(window);
+						$img.css("max-height", $window.height() - 10 );	
+						$img.css("max-width", $window.height() - 10 );					
 					},
 					page:0,
 					pageSize:0,
@@ -557,7 +560,7 @@
 					}
 				});
 				observable.resize();				
-				$window.resize(function(){
+				$(window).resize(function(){
 					observable.resize();
 				});		
 				common.ui.dialog( renderTo , {
