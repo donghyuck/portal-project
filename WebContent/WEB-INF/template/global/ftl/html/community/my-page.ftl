@@ -610,7 +610,7 @@
 								<div id="my-page-list" class="master animated">
 									<div class="btn-toolbar p-xxs">
 										<div class="btn-group btn-group-sm" data-toggle="buttons" id="page-source-list">
-											<label class="btn btn-info rounded-left rounded-right active">
+											<label class="btn btn-info rounded active">
 												<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
 											</label><!--
 											<label class="btn btn-sm btn-danger">
