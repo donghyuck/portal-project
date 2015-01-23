@@ -85,39 +85,12 @@
 					if( renderTo.attr('href') == '#website-page' ){			
 						createPageSection();
 					}else if ( renderTo.attr('href') == "#website-notice"){
-					
+						createNoticeSection();	
 					}							
 				});
 				
 				$('.personalized-section .nav-tabs a[data-toggle="tab"]:first').tab('show');
-												
-				$("input[type=radio][name=my-site-action]").on("change", function () {
-					var $this = $(this);
-					var target = $this.attr("aria-controls");
-					if( !$("#" + target ).data("feature-on") ){
-						switch( target ){
-							case "my-page" :
-								createPageSection();
-								break;
-							case "my-site-notice":
-								createNoticeSection();				
-							break;
-							case "my-site-template":
-								createTemplateSection();
-								$('#template-tree a:first').tab('show');
-							break;	
-						}
-						$("#" + target ).data("feature-on", true );
-					} 			
-			
-					$(".personalized-section-content .container > div:visible").fadeOut( function(e){
-						$("#" + target ).fadeIn();
-					});	
-
-					if( $(".personalized-section-content .container > div:visible").length == 0 ){
-						$("#" + target ).fadeIn();					
-					}		
-				});
+				
 				// END SCRIPT 				
 			}
 		}]);			
@@ -1251,13 +1224,7 @@
 								
 								<div class="tab-pane fade" id="website-notice">
 									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
-								
-								</div>
-							</div>
-						</div>
 
-						<div id="my-site-notice" style="display:none;">
-							<div class="row">
 								<div id="my-notice-list" class="col-sm-4">		
 									<div class="headline"><h2><i class="icon-flat mega-phone m-b-n-sm"></i> 공지 & 이벤트</h2></div>
 									<div class="sky-form">
@@ -1370,7 +1337,15 @@
 											<button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
 										</footer>										
 									</div>																			
-								</div>													
+								</div>	
+								
+								</div>
+							</div>
+						</div>
+
+						<div id="my-site-notice" style="display:none;">
+							<div class="row">
+												
 							</div><!-- /.row -->
 						</div><!-- /. my-site-notice -->	
 
