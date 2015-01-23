@@ -17,6 +17,7 @@
 			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
+			
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
@@ -715,7 +716,10 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">
-					<span class="close animated"></span>
+					<div class="container content" style="min-height:450px;">						
+					
+					
+					</div>
 				</div>			
 			</section>		
 
