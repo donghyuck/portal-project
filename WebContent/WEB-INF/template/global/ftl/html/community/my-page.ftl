@@ -610,15 +610,15 @@
 								<div id="my-page-list" class="master animated">
 									<div class="p-xxs">
 										<div class="btn-group" data-toggle="buttons" id="page-source-list">
-											<label class="btn btn-sm btn-danger rounded-left active">
+											<label class="btn btn-sm btn-danger rounded-left rounded-right active">
 												<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
-											</label>
+											</label><!--
 											<label class="btn btn-sm btn-danger">
 												<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
 											</label>											
 											<label class="btn btn-sm btn-danger rounded-right">
 												<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
-											</label>
+											</label>-->
 										</div>
 										<button type="button" class="btn btn-sm btn-danger" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 										<button type="button" class="btn btn-primary btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
