@@ -886,21 +886,6 @@
 									<button type="button" class="btn btn-primary rounded-left" data-action="open-menu-editor"><i class="fa fa-sitemap"></i> <span class="hidden-xs">메뉴</span> </button>
 									<button type="button" class="btn btn-primary rounded-right" data-action="open-template-editor"><i class="fa fa-file-code-o"></i> <span class="hidden-xs">템플릿</span></button>
 								</div>
-															
-								<div class="btn-group" data-toggle="buttons">
-									<label class="btn btn-sm btn-primary rounded-left">
-										<input type="radio" name="my-site-action" aria-controls="my-site-menu"><i class="fa fa-sitemap"></i> 메뉴
-									</label>
-									<label class="btn btn-sm btn-primary">
-										<input type="radio" name="my-site-action" aria-controls="my-site-template"><i class="fa fa-file-code-o"></i> 템플릿
-									</label>	
-									<label class="btn btn-sm btn-primary">
-										<input type="radio" name="my-site-action" aria-controls="my-site-notice"><i class="fa fa-bullhorn"></i> 공지 및 이벤트
-									</label>											
-									<label class="btn btn-sm btn-primary rounded-right">
-										<input type="radio" name="my-site-action" aria-controls="my-page"><i class="fa fa-file-o"></i> 페이지
-									</label>
-								</div>
 							</div>
 						</div>
 					</div>				
@@ -909,8 +894,8 @@
 					<div class="container content" style="min-height:450px;">											
 						<div class="tab-v1">
 							<ul class="nav nav-tabs">
-								<li><a href="#website-page" data-toggle="tab">페이지</a></li>
-								<li><a href="#website-notice" data-toggle="tab">공지 & 이벤트</a></li>
+								<li><a href="#website-page" data-toggle="tab" class="rounded-top">페이지</a></li>
+								<li><a href="#website-notice" data-toggle="tab" class="rounded-top">공지 & 이벤트</a></li>
 							</ul>
 							<div class="tab-content">
 								<div class="tab-pane fade" id="website-page">
