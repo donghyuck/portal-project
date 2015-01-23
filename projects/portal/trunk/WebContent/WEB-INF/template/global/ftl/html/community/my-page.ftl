@@ -608,9 +608,9 @@
 						<div class="row">
 							<div id="my-page">
 								<div id="my-page-list" class="master animated">
-									<div class="p-xxs">
-										<div class="btn-group" data-toggle="buttons" id="page-source-list">
-											<label class="btn btn-sm btn-danger rounded-left rounded-right active">
+									<div class="btn-toolbar p-xxs">
+										<div class="btn-group btn-group-sm" data-toggle="buttons" id="page-source-list">
+											<label class="btn btn-info rounded-left rounded-right active">
 												<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
 											</label><!--
 											<label class="btn btn-sm btn-danger">
@@ -625,10 +625,10 @@
 									</div>
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
-								<div id="my-page-view" class="details animated bg-dark">								
+								<div id="my-page-view" class="details animated">								
 									<span class="back"></span>
 									<form action="" id="sky-form" class="sky-form" novalidate="novalidate">
-										<header>&nbsp;</header>
+										<header class="text-right"><span class="badge badge-dark rounded" data-bind="text:page.pageState"></span></header>
 										<fieldset>											
 											<section>
 												<label for="title" class="input">
