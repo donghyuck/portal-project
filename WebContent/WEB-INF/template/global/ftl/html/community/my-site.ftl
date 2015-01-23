@@ -902,14 +902,14 @@
 									<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">웹 페이지을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>									
 									<div id="my-page-list" class="p-xxs">
 										<div class="btn-toolbar p-xxs">
-											<div class="btn-group" data-toggle="buttons" id="page-source-list">
-												<!--<label class="btn btn-sm btn-danger rounded-left ">
+											<div class="btn-group btn-group-sm" data-toggle="buttons" id="page-source-list">
+												<!--<label class="btn  btn-danger rounded-left ">
 													<input type="radio" name="page-source" value="2"><i class="fa fa-user"></i> ME
 												</label>-->
-												<label class="btn btn-sm btn-danger  rounded-left  active">
+												<label class="btn btn-info  rounded-left  active">
 													<input type="radio" name="page-source" value="30" checked="checked"><i class="fa fa-globe"></i> SITE
 												</label>											
-												<label class="btn btn-sm btn-danger rounded-right">
+												<label class="btn btn-info rounded-right">
 													<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
 												</label>
 											</div>
