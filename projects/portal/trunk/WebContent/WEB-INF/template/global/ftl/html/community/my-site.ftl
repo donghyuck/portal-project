@@ -81,7 +81,8 @@
 					e.target // newly activated tab
 					e.relatedTarget // previous active tab
 					
-					alert("hello");
+					var renderTo = $(e.target);
+					alert( renderTo.html() );
 				});
 
 												
