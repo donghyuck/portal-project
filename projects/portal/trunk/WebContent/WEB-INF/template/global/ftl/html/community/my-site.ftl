@@ -1144,7 +1144,7 @@
 										<span class="hidden-lg  m-t-sm" ></span>				
 										<span class="back"></span>
 										<form action="" class="sky-form" novalidate="novalidate">
-											<header>&nbsp;</header>
+											<header class="text-right"><span class="badge badge-dark rounded" data-bind="text:page.pageState"></span></header>
 											<fieldset>											
 												<section>
 													<label for="title" class="input">
@@ -1174,9 +1174,6 @@
 														</section>
 													</div>
 													<div class="col col-6">
-														<section>
-															<span class="badge badge-dark rounded" data-bind="text:page.pageState"></span>	
-														</section>
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: isAllowToFileAndProps">
 															<div class="panel panel-default">
 																<div class="panel-heading">
