@@ -1047,7 +1047,7 @@
 									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
 
 								<div id="my-notice-list" class="col-sm-4">		
-									<div class="sky-form">
+									<div class="sky-form bg-gray">
 										<fieldset class="padding-sm">
 											<section>
 												<label class="label">소스</label>
