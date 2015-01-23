@@ -75,7 +75,16 @@
 						}
 					}
 				});
-										
+				
+				
+				$('.personalized-section .nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+					e.target // newly activated tab
+					e.relatedTarget // previous active tab
+					
+					alert("hello");
+				});
+
+												
 				$("input[type=radio][name=my-site-action]").on("change", function () {
 					var $this = $(this);
 					var target = $this.attr("aria-controls");
