@@ -81,14 +81,12 @@
 				$('.personalized-section .nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
 					e.target // newly activated tab
 					e.relatedTarget // previous active tab					
-					var renderTo = $(e.target);
-					
+					var renderTo = $(e.target);					
 					if( renderTo.attr('href') == '#website-page' ){			
 						createPageSection();
 					}else if ( renderTo.attr('href') == "#website-notice"){
 					
-					}		
-					
+					}							
 				});
 				
 				$('.personalized-section .nav-tabs a[data-toggle="tab"]:first').tab('show');
