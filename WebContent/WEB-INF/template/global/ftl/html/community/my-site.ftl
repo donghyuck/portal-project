@@ -1067,7 +1067,7 @@
 											<section>
 												<label for="noticeEndDatePicker" class="label">종료일시</label>
 												<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />	
-												<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 것들을 검색합니다.</div>													
+												<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 공지&이벤트들을 검색합니다.</div>													
 											</section>																						
 											<section class="text-right">
 												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
