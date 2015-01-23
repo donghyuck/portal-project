@@ -684,13 +684,12 @@
 					width : 14.28%;
 				}	
 			}	
-						
-			@media ( min-width :768px) {				
-				.image-listview .img-wrapper, .file-listview .file-wrapper {
-					width : 20%;
-				}	
-			}	
+
+			@media (min-width: 768px) and (max-width: 991px) {
+				width : 20%;
+			}						
 			
+						
 			@media ( min-width :768px) {
 				
 				.white-popup-block .left-col {
