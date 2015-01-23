@@ -1032,7 +1032,7 @@
 													</div>
 												</div>
 											</fieldset>
-											<section class="no-margin">													
+											<section class="no-margin p-sm">													
 												<div class="tab-v1">
 													<div role="tabpanel">
 														<!-- Nav tabs -->													
