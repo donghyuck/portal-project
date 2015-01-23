@@ -60,7 +60,7 @@ function createEditor( renderToString, bodyEditor, options ){
 var DEFAULT_ACE_EDITOR_SETTING = {
 	modal : true,
 	mode : "ace/mode/xml",
-	theme : "ace/theme/twilight",
+	theme : "ace/theme/xcode",
 	useWrapMode : true		
 }
 
