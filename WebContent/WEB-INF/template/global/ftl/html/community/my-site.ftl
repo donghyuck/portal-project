@@ -1175,7 +1175,7 @@
 													</div>
 													<div class="col col-6">
 														<section>
-															<span class="label label-light" data-bind="text:page.pageState"></span>
+															<span class="badge badge-dark rounded" data-bind="text:page.pageState"></span>	
 														</section>
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: isAllowToFileAndProps">
 															<div class="panel panel-default">
