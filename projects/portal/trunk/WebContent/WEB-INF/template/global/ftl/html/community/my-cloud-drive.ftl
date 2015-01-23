@@ -678,17 +678,17 @@
 			.white-popup-block .k-grid-content {
 				min-height: 100px;
 			}
-
+			@media (min-width: 768px) and (max-width: 991px) {
+				width : 20%;
+			}						
+			
 			@media ( min-width :992px) {				
 				.image-listview .img-wrapper, .file-listview .file-wrapper {
 					width : 14.28%;
 				}	
 			}	
 
-			@media (min-width: 768px) and (max-width: 991px) {
-				width : 20%;
-			}						
-			
+
 						
 			@media ( min-width :768px) {
 				
