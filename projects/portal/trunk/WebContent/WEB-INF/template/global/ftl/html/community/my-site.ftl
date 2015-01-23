@@ -1453,24 +1453,6 @@
 		<a class='delete-link' href='\#'></a> 
 		# } #
 	</script>	
-	<script type="text/x-kendo-template" id="notice-listview-item-template">	
-	<div class="media media-v2 padding-sm no-margin-t">
-		<a class="pull-left" href="\\#"><img width="30" height="30" class="img-circle" src="/download/profile/#= user.username #?width=150&amp;height=150"></a>
-		<div class="media-body">
-			<h5 class="media-heading">
-				# if (objectType == 30) { #
-					<span class="badge badge-blue">공지</span></span>
-				# }else{ #
-					<span class="badge badge-red">알림</span></span>
-				# } #				
-				<strong>#: subject #</strong> 
-			</h5>
-			<div class="name-location">		
-				작성자 : # if (user.nameVisible) { # #: user.name # # } else { # #:user.username # # } #</p>				
-			</div>
-		</div>
-	</div>
-	</script>																									
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<#include "/html/common/common-editor-templates.ftl" >	
