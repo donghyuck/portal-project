@@ -904,7 +904,14 @@
 			<#include "/html/common/common-homepage-footer.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>			
-		
+		<div id="attachment-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
+			<div class="dialog__overlay"></div>
+			<div class="dialog__content">	
+				<span class="btn-flat close" data-dialog-close></span>					
+				
+			</div>
+		</div>	
+					
 		<div id="image-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
