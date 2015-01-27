@@ -222,11 +222,16 @@
 				var observable =  common.ui.observable({ 
 					attachment : new common.ui.data.Attachment(),
 					resize : function(){
-					
-						var $content = renderTo.find(".mfp-content");
 						var $window = $(window);
-						$content.css("max-height", $window.height() - 10 );	
-						$content.css("max-width", $window.height() - 10 );		
+						var $iframe = renderTo.find(".mfp-content .mfp-iframe-scaler");
+						if( $iframe.length == 1 ){
+							$iframe.css("max-height", $window.height() - 10 );	
+							$iframe.css("max-width", $window.height() - 10 );		
+						}
+						
+						
+						
+						
 						
 						
 						/*var $img = renderTo.find("img.mfp-img");
