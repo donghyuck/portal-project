@@ -997,7 +997,7 @@
 									<div class="left-col">
 										<div class="shadow-wrapper" style="width:150px;height:150px;">
 											<div class="box-shadow shadow-effect-2 " >
-												<img class="img-responsive">
+												<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}>
 											</div>	
 										</div>
 										<hr class="m-sm"/>										
