@@ -225,8 +225,8 @@
 						var $window = $(window);
 						var $iframe = renderTo.find(".mfp-content .mfp-iframe-scaler");
 						if( $iframe.length == 1 ){
-							$iframe.css("max-height", $window.height() - 10 );	
-							$iframe.css("max-width", $window.height() - 10 );		
+							$iframe.css("height", $window.height() - 10 );	
+							$iframe.css("width", $window.height() - 10 );		
 						}
 						
 						
@@ -988,8 +988,7 @@
 					<span class="btn-flat pencil" data-bind="click: edit"></span>	
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">
-						<div id="attachment-content-pdf" class="mfp-iframe-scaler">					
-						</div>
+						<div id="attachment-content-pdf" class="mfp-iframe-scaler"></div>
 					</div>
 				</div>
 			</div>
