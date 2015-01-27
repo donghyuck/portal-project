@@ -1017,7 +1017,7 @@
 											<div class="col-sm-12">
 											
 										<section class="sky-form">
-										
+											<header data-bind="text: attachment.name"></header>
 										</section>	
 										</div><!-- ./row	-->
 						</div><!-- ./container		-->	
