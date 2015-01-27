@@ -180,11 +180,10 @@
 				$("#attachment-list-view").on("click", ".file-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#attachment-list-view')).dataSource.view();					
-					var item = data[index];			
+					var item = data[index];		
+					item.set("index", index);	
 					showAttachmentPanel(item);
-					$(this).addClass("disabled");
-				});
-								
+				});								
 				common.ui.buttons(
 					$("#my-files button.btn-control-group"),
 					{
