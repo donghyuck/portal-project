@@ -234,6 +234,47 @@
 						*/			
 					},
 					edit : function(){
+						var $this = this;		
+						var grid = renderTo.find(".attachment-props-grid");	
+						var upload = renderTo.find("input[name='update-attachment-file']");
+												
+						if(!common.ui.exists(grid)){
+							common.ui.grid(grid, {
+								dataSource : common.ui.data.attachment.property.datasource($this.attachment.attachmentId),
+								columns: [
+									{ title: "속성", field: "name" },
+									{ title: "값",   field: "value" },
+									{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+								],
+								pageable: false,
+								resizable: true,
+								editable : true,
+								scrollable: true,
+								autoBind: true,
+								toolbar: [
+									{ name: "create", text: "추가" },
+									{ name: "save", text: "저장" },
+									{ name: "cancel", text: "취소" }
+								],				     
+								change: function(e) {
+									this.refresh();
+								}
+							});															
+							common.ui.upload( upload, {
+								async : {
+									saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />'
+								},
+								localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+								upload: function (e) {				
+									e.data = { objectType:$this.attachment.objectType , fileId: $this.attachment.attachmentId };
+								},
+								success: function (e) {									
+								}
+							});									
+							renderTo.find(".sky-form").slimScroll({
+								height: "500px"
+							});	
+						}		
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
 					close: function(){
@@ -1017,6 +1058,14 @@
 									<div class="col-sm-12">
 										<section class="sky-form">
 											<header data-bind="text: attachment.name"></header>
+										<fieldset>
+											<section>											
+												<label class="label">이미지 변경</label>
+												<input name="update-photo-file" type="file" class="pull-right" />	
+												<div class="note"><i class="fa fa-info"></i> 사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</div>
+											</section>
+										</fieldset>
+										
 										</section>	
 									</div><!-- ./col-sm-12	-->
 								</div><!-- ./row		-->	
