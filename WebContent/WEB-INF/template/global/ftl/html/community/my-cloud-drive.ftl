@@ -225,8 +225,8 @@
 						var $window = $(window);
 						var $iframe = renderTo.find(".mfp-content .mfp-iframe-scaler");
 						if( $iframe.length == 1 ){
-							$iframe.css("height", $window.height() - 10 );	
-							$iframe.css("width", $window.width() - 10 );		
+							$iframe.css("height", $window.height() - 20 );	
+							$iframe.css("width", $window.width() - 20 );		
 						}
 						
 						
