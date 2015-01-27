@@ -260,23 +260,6 @@
 								}
 							});									
 						}
-						common.ui.grid(grid).setDataSource(
-							common.ui.data.properties.datasource({
-									transport: { 
-										read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
-										create: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json" },
-										update: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST'  ,contentType : "application/json"},
-										destroy: { url:"/data/files/properties/delete.json?output=json" +  "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json"},
-								 		parameterMap: function (options, operation){			
-											if (operation !== "read" && options.models) {
-												return kendo.stringify(options.models);
-											} 
-											return { fileId: $this.attachment.attachmentId }
-										}
-									}
-							})
-						);
-												
 						if(!common.ui.exists(upload)){
 							common.ui.upload( upload, {
 								async : {
@@ -293,7 +276,24 @@
 							renderTo.find(".sky-form").slimScroll({
 								height: "500px"
 							});	
-						}							
+						}	
+												
+						common.ui.grid(grid).setDataSource(
+							common.ui.data.properties.datasource({
+									transport: { 
+										read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
+										create: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json" },
+										update: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST'  ,contentType : "application/json"},
+										destroy: { url:"/data/files/properties/delete.json?output=json" +  "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json"},
+								 		parameterMap: function (options, operation){			
+											if (operation !== "read" && options.models) {
+												return kendo.stringify(options.models);
+											} 
+											return { fileId: $this.attachment.attachmentId }
+										}
+									}
+							})
+						);
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
 					close: function(){
@@ -614,11 +614,9 @@
 						var $this = this;		
 						var grid = renderTo.find(".photo-props-grid");	
 						var upload = renderTo.find("input[name='update-photo-file']");
-						var shared = renderTo.find("input[name='photo-public-shared']");
-						
+						var shared = renderTo.find("input[name='photo-public-shared']");						
 						if(!common.ui.exists(grid)){
 							common.ui.grid(grid, {
-								dataSource : common.ui.data.image.property.datasource($this.image.imageId),
 								columns: [
 									{ title: "속성", field: "name" },
 									{ title: "값",   field: "value" },
@@ -637,7 +635,13 @@
 								change: function(e) {
 									this.refresh();
 								}
-							});															
+							});	
+							renderTo.find(".sky-form").slimScroll({
+								height: "500px"
+							});							
+						}
+						
+						if(!common.ui.exists(upload)){
 							common.ui.upload( upload, {
 								async : {
 									saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
@@ -648,32 +652,24 @@
 								},
 								success: function (e) {									
 								}
-							});						
+							});												
+						}												
+						common.ui.data.image.streams($this.image.imageId, function(data){
+							if( data.length > 0 )
+								streams.first().click();
+							else
+								streams.last().click();
 							
-							var Fn = function(){
-								shared.on("change", function(e){
-									var newValue = ( this.value == 1 ) ;
-									if(newValue){
-										common.ui.data.image.unshare($this.image.imageId);	
-									}else{
-										common.ui.data.image.share($this.image.imageId);
-									}
-								});						
-							}			
-							common.ui.data.image.streams($this.image.imageId, function(data){
-								if( data.length > 0 )
-									streams.first().click();
-								else
-									streams.last().click();	
-								Fn();	
-							});	
-							
-							renderTo.find(".sky-form").slimScroll({
-								height: "500px"
-							});	
-						}else{
-							common.ui.grid(grid).dataSource.read();
-						}					
+							shared.on("change", function(e){
+								var newValue = ( this.value == 1 ) ;
+								if(newValue){
+									common.ui.data.image.unshare($this.image.imageId);	
+								}else{
+									common.ui.data.image.share($this.image.imageId);
+								}
+							});		
+						});																			
+						common.ui.grid(grid).setDataSource( common.ui.data.image.property.datasource($this.image.imageId) );												
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
 					close: function(){
