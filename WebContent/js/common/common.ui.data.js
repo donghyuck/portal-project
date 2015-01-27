@@ -60,7 +60,7 @@
 	}
 
 	function attachmentImageUrl ( attachment , thumbnail ){	
-		if( attachment.attachmentId > 0 && ( attachment.isPdf() || attachment.isImage() ){
+		if( attachment.attachmentId > 0 && ( attachment.isPdf() || attachment.isImage() )){
 			var _photoUrl = "/download/file/" + attachment.attachmentId + "/" + attachment.name ;	
 			if( thumbnail ){
 				_photoUrl = _photoUrl + "?thumbnail=true" ;
