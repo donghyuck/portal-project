@@ -1055,6 +1055,18 @@
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">
 						<div id="attachment-content-pdf" class="mfp-iframe-scaler no-padding" data-bind="visible:attachment.isPdf"></div>
+						<div class="mfp-figure" data-bind="visible:attachment.isImage">
+							<figure>
+								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}">
+								<figcaption>
+									<div class="mfp-bottom-bar">
+										<div class="mfp-title" data-bind="text: image.name"></div>
+										<div class="mfp-counter"><span data-bind="text:image.index"></span>/<span data-bind="text:pageSize"></span></div>
+									</div>
+								</figcaption>
+							</figure>
+						</div>
+												
 					</div>
 					<div class="white-popup-block" style="display:none">							
 						<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
