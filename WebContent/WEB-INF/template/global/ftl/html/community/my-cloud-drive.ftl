@@ -267,9 +267,7 @@
 				common.ui.dialog( renderTo , {
 					data : observable,
 					"open":function(e){	
-						var $this = this;		
-						var $attachment = $this.data().attachment;
-						
+						var $this = this;								
 						if( $attachment.get("contentType") === "application/pdf" ){	
 							var myPdf = new PDFObject({ url:  "<@spring.url "/download/file/" />" + $attachment.attachmentId + "/" + $attachment.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed("attachment-content-pdf");
 						}				
@@ -981,7 +979,9 @@
 			<div class="dialog__content">	
 				<span class="btn-flat close" data-dialog-close></span>					
 				<div class="mfp-content">
-					<div id="attachment-content-pdf"></div>
+					<div class="mfp-iframe-scaler">					
+						<div id="attachment-content-pdf"></div>
+					</div>
 				</div>
 			</div>
 		</div>	
