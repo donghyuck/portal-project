@@ -491,6 +491,9 @@
 			uploadByUrl : uploadMyImageByUrl ,
 			property : { datasource: imagePorpertyDataSource }
 		},
+		attachment : {
+			property : { datasource: attachmentPorpertyDataSource }			
+		},
 		properties : {		
 			datasource: createPorpertyDataSource
 		}
