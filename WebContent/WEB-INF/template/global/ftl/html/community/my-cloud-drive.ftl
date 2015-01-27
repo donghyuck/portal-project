@@ -60,28 +60,23 @@
 				var currentUser = new common.ui.data.User();			
 
 				// menu active setting	
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_2']").addClass("active");
-				
-				// personalized grid setting																																					
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );
+				preparePage({
+					navbar : { parent: "MENU_PERSONALIZED", current: "MENU_PERSONALIZED_2"	},
+					personalizedSection : { renderTo: $("#personalized-area") }
+				});
 																																			
 				// SpMenu Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
-					//e.preventDefault();		
+					e.preventDefault();		
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-files' ){					
 						createAttachmentListView();
 					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
 						createPhotoListView();
 					}					
-				});
+				});				
 				$('#myTab a:first').tab('show') ;
-				// SpMenu Tabs select first				
-				//$("#personalized-controls-section").on("open", function(e){
-				//	$('#myTab a:first').tab('show') ;
-				//});			
 				
-				//setupPersonalizedSection();				
 				// END SCRIPT 				
 			}
 		}]);	
@@ -261,7 +256,7 @@
 										}
 									}
 								},
-								pageSize: 24,
+								pageSize: 28,
 								schema: {
 									model: common.ui.data.Image,
 									data : "images",
@@ -269,7 +264,7 @@
 								}
 							}
 						),
-						selectable: "single",
+						selectable: false,//"single",
 						change: function(e) {
 							var data = this.dataSource.view() ;
 							var current_index = this.select().index();
