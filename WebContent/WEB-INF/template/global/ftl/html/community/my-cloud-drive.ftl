@@ -239,7 +239,8 @@
 						var upload = renderTo.find("input[name='update-attachment-file']");												
 						
 						if(!common.ui.exists(grid)){
-							common.ui.grid(grid, {/
+							common.ui.grid(grid, {
+							/*
 								dataSource : common.ui.data.properties.datasource({
 									transport: { 
 										read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
@@ -253,7 +254,7 @@
 											return { fileId: $this.attachment.attachmentId }
 										}
 									}
-								}), /
+								}), */
 								columns: [
 									{ title: "속성", field: "name" },
 									{ title: "값",   field: "value" },
