@@ -83,6 +83,10 @@
 		<!-- ============================== -->
 		<!-- create my attachment grid							-->
 		<!-- ============================== -->		
+		function getMyDriverAttachmentSource(){
+			return $("#attachment-source-list input[type=radio][name=attachment-source]:checked").val();			
+		}
+				
 		function createAttachmentListView(){					
 			if( !common.ui.exists($('#attachment-list-view')) ){
 				var attachementTotalModle = common.ui.observable({ 
@@ -108,13 +112,13 @@
 									destroy: { url: '<@spring.url "/community/delete-my-attachment.do?output=json" />', type:"POST" }, 
 									parameterMap: function (options, operation){
 										if (operation != "read" && options) {										                        								                       	 	
-											return { attachmentId :options.attachmentId };									                            	
+											return { objectType: getMyDriverAttachmentSource() , imageId :options.attachmentId };									                            	
 										}else{
-											 return { startIndex: options.skip, pageSize: options.pageSize }
+											 return { objectType: getMyDriverAttachmentSource(), startIndex: options.skip, pageSize: options.pageSize }
 										}
 									}
 								},
-								pageSize: 12,
+								pageSize: 28,
 								schema: {
 									model: common.ui.data.Attachment,
 									data : "files",
@@ -133,7 +137,6 @@
 						navigatable: false,
 						template: kendo.template($("#attachment-list-view-template").html()),			
 						dataBound: function(e) {
-							//var attachment_list_view = common.ui.$('#attachment-list-view').data('kendoListView');
 							var filter =  this.dataSource.filter().filters[0].value;
 							var totalCount = this.dataSource.total();
 							if( filter == "image" ) 
@@ -145,12 +148,18 @@
 								attachementTotalModle.set("totalAttachCount", totalCount);
 							}
 						}											
-				});				
+				});	
+							
 				$("#attachment-list-view").on("mouseenter",  ".file-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().play();
 				}).on("mouseleave", ".file-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".file-description")).expand("vertical").stop().reverse();
 				});	
+				
+				$("#attachment-source-list input[type=radio][name=attachment-source]").on("change", function () {
+					common.ui.listview($('#attachment-list-view')).dataSource.read();	
+				});	
+								
 				$("input[name='attachment-list-view-filters']").on("change", function () {
 					var attachment_list_view = common.ui.listview($("#attachment-list-view"));
 					switch(this.value){
@@ -164,7 +173,8 @@
 								attachment_list_view.dataSource.filter( { field: "contentType", operator: "startswith", value: "application" }) ; 
 								break;
 					}
-				});				
+				});		
+						
 				common.ui.pager($("#pager"),{ buttonCount : 5, dataSource : common.ui.listview($("#attachment-list-view")).dataSource });			
 				
 				$("#attachment-list-view").on("click", ".file-wrapper button", function(e){
@@ -752,17 +762,17 @@
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
 									<#if !action.user.anonymous >		
-									<div class="btn-group" data-toggle="buttons" id="file-source-list">
-									<label class="btn btn-sm btn-danger rounded-left active">
-										<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
-									</label>
-									<label class="btn btn-sm btn-danger">
-										<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
-									</label>											
-									<label class="btn btn-sm btn-danger rounded-right">
-										<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
-									</label>
-								</div>											
+									<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
+										<label class="btn btn-sm btn-danger rounded-left active">
+											<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
+										</label>
+										<label class="btn btn-sm btn-danger">
+											<input type="radio" name="attachment-source"  value="30"><i class="fa fa-globe"></i> SITE
+										</label>											
+										<label class="btn btn-sm btn-danger rounded-right">
+											<input type="radio" name="attachment-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
+										</label>
+									</div>											
 									<p class="pull-right">				
 										<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
 									</p>	
