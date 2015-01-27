@@ -60,7 +60,7 @@
 	}
 
 	function attachmentImageUrl ( attachment , thumbnail ){	
-		if( image.imageId > 0 ){
+		if( attachment.attachmentId > 0 && (attachment.contentType === "application/pdf") || attachment.contentType.match("^image") ){
 			var _photoUrl = "/download/file/" + attachment.attachmentId + "/" + attachment.name ;	
 			if( thumbnail ){
 				_photoUrl = _photoUrl + "?thumbnail=true" ;
@@ -80,6 +80,8 @@
 		        contentType: { type: "string", editable: true },
 		        size: { type: "number", defaultValue : 0,  editable: true },
 		        downloadCount: { type: "number", editable: true },
+		        imageUrl: { type: "string", editable: true },
+		        thumbnailImageUrl: { type: "string", editable: true },
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" }        
 		    },
@@ -104,6 +106,8 @@
 		    	target.set("creationDate", this.get("creationDate"));
 		    	target.set("modifiedDate", this.get("modifiedDate"));
 		    	target.set("downloadCount", this.get("downloadCount"));
+		    	target.set("imageUrl", attachmentImageUrl( target, false ));
+		    	target.set("thumbnailImageUrl", attachmentImageUrl( target, true ));
 		    }		    
 		});
 		
