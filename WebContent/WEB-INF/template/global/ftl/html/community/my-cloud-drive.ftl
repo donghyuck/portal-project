@@ -1057,11 +1057,11 @@
 						<div id="attachment-content-pdf" class="mfp-iframe-scaler no-padding" data-bind="visible:attachment.isPdf"></div>
 						<div class="mfp-figure" data-bind="visible:attachment.isImage">
 							<figure>
-								<img class="mfp-img" style="display: block;" data-bind="attr:{src:image.imageUrl}">
+								<img class="mfp-img" style="display: block;" data-bind="attr:{src:attachment.imageUrl}">
 								<figcaption>
 									<div class="mfp-bottom-bar">
 										<div class="mfp-title" data-bind="text: image.name"></div>
-										<div class="mfp-counter"><span data-bind="text:image.index"></span>/<span data-bind="text:pageSize"></span></div>
+										<div class="mfp-counter"></div>
 									</div>
 								</figcaption>
 							</figure>
