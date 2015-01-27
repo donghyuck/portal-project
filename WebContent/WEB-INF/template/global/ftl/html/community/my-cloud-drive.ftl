@@ -242,18 +242,17 @@
 								dataSource : common.ui.data.properties.datasource({
 									transport: { 
 										read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
-										create: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + fileId, type:'POST' ,contentType : "application/json" },
-										update: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + fileId, type:'POST'  ,contentType : "application/json"},
-										destroy: { url:"/data/files/properties/delete.json?output=json" +  "&fileId=" + fileId, type:'POST' ,contentType : "application/json"},
+										create: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json" },
+										update: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST'  ,contentType : "application/json"},
+										destroy: { url:"/data/files/properties/delete.json?output=json" +  "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json"},
 								 		parameterMap: function (options, operation){			
 											if (operation !== "read" && options.models) {
 												return kendo.stringify(options.models);
 											} 
-											return { imageId: imageId }
+											return { fileId: $this.attachment.attachmentId }
 										}
 									}
 								}), 
-								dataSource : common.ui.data.attachment.property.datasource($this.attachment.attachmentId),
 								columns: [
 									{ title: "속성", field: "name" },
 									{ title: "값",   field: "value" },
