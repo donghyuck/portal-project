@@ -262,6 +262,7 @@
 					data : observable,
 					"open":function(e){	
 						var $this = this;		
+						alert( $this.attachment.contentType);
 						//mfp-content
 						if( attachment.contentType === "application/pdf" ){	
 							var myPdf = new PDFObject({ url:  "<@spring.url "/download/file/" />" + attachment.attachmentId + "/" + attachment.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed("attachment-content-pdf");
