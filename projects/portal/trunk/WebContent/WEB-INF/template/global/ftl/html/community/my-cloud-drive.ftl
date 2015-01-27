@@ -262,9 +262,10 @@
 					data : observable,
 					"open":function(e){	
 						var $this = this;		
-						alert( kendo.stringify( $this.data() ) );
+						var file = $this.data();
+						alert( kendo.stringify( file ) );
 						//mfp-content
-						if( $this.data().contentType === "application/pdf" ){	
+						if( file.get("contentType") === "application/pdf" ){	
 							var myPdf = new PDFObject({ url:  "<@spring.url "/download/file/" />" + $this.data().attachmentId + "/" + $this.data().name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed("attachment-content-pdf");
 						}				
 					},
