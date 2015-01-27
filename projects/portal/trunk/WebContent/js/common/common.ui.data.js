@@ -82,7 +82,7 @@
 		    	return kendo.toString(this.get("modifiedDate"), "g");
 		    },
 		    copy : function ( target ){
-		    	target.attachmentId = this.get(attachmentId);
+		    	target.attachmentId = this.get("attachmentId");
 		    	target.set("objectType" , this.get("objectType"));
 		    	target.set("objectId" ,this.get("objectId"));
 		    	target.set("name", this.get("name"));
