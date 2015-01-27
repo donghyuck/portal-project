@@ -988,8 +988,7 @@
 					<span class="btn-flat pencil" data-bind="click: edit"></span>	
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">
-						<div class="mfp-iframe-scaler">					
-							<div id="attachment-content-pdf"></div>
+						<div id="attachment-content-pdf" class="mfp-iframe-scaler">					
 						</div>
 					</div>
 				</div>
