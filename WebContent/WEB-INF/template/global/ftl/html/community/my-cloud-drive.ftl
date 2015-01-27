@@ -222,6 +222,12 @@
 				var observable =  common.ui.observable({ 
 					attachment : new common.ui.data.Attachment(),
 					resize : function(){
+						var $content = renderTo.find(".mfp-content");
+						var $window = $(window);
+						$content.css("max-height", $window.height() - 10 );	
+						$content.css("max-width", $window.height() - 10 );		
+						
+						
 						/*var $img = renderTo.find("img.mfp-img");
 						var $window = $(window);
 						$img.css("max-height", $window.height() - 10 );	
