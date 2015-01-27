@@ -659,9 +659,9 @@
 						}												
 						common.ui.data.image.streams($this.image.imageId, function(data){
 							if( data.length > 0 )
-								streams.first().click();
-							else
-								streams.last().click();
+								shared.first().click();
+							else$()
+								shared.last().click();
 							
 							shared.on("change", function(e){
 								var newValue = ( this.value == 1 ) ;
