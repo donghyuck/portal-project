@@ -721,10 +721,8 @@
 					</div>				
 				</div>
 				<div class="personalized-section-content animated arrow-up">
-					<div class="container content" style="min-height:450px;">						
-					
-					
-					
+					<div class="container content" style="min-height:450px;">		
+										
 				<!-- tab-v1 -->
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
@@ -752,8 +750,19 @@
 								</div>
 							<div class="panel panel-default no-margin-b">
 								<div class="panel-body bg-slivergray border-b">
-									<p class="text-muted"><small><i class="fa fa-info"></i> 파일을 선택하면 아래의 마이페이지 영역에 선택한 파일이 보여집니다.</small></p>
+									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
 									<#if !action.user.anonymous >		
+									<div class="btn-group" data-toggle="buttons" id="file-source-list">
+									<label class="btn btn-sm btn-danger rounded-left active">
+										<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
+									</label>
+									<label class="btn btn-sm btn-danger">
+										<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
+									</label>											
+									<label class="btn btn-sm btn-danger rounded-right">
+										<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
+									</label>
+								</div>											
 									<p class="pull-right">				
 										<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
 									</p>	
