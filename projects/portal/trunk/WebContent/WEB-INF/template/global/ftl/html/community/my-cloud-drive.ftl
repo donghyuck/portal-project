@@ -311,7 +311,7 @@
 						var $this = this;
 						attachment.copy($this.attachment);							
 						$this.resize();						
-						if( common.ui.defined( image.properties.source ) )
+						if( common.ui.defined( $this.attachment.properties.source ) )
 							$this.set("hasSource", true);
 						else
 							$this.set("hasSource", false);	
