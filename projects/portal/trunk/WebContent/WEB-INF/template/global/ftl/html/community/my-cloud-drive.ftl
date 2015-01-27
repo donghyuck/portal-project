@@ -981,6 +981,7 @@
 			<#include "/html/common/common-homepage-footer.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>			
+
 		<div id="attachment-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">	
@@ -996,7 +997,7 @@
 							<div class="left-col">
 										<div class="shadow-wrapper" style="width:150px;height:150px;">
 											<div class="box-shadow shadow-effect-2 " >
-												<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}>
+												<img class="img-responsive" data-bind="attr:{src:image.imageThumbnailUrl}">
 											</div>	
 								</div>
 								<hr class="m-sm"/>										
@@ -1020,9 +1021,9 @@
 									</div><!-- ./col-sm-12	-->
 								</div><!-- ./row		-->	
 							</div><!-- ./right-col	-->								
-						</div><!-- ./ tab-box -->
+						</div><!-- ./ tag-box -->
 					</div><!-- ./white-popup-block		-->					
-				</div>
+				</div><!-- ./mfp-container -->
 			</div>
 		</div>	
 					
