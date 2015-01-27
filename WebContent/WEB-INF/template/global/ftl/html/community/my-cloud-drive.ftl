@@ -260,7 +260,13 @@
 				});		
 				common.ui.dialog( renderTo , {
 					data : observable,
-					"open":function(e){								
+					"open":function(e){	
+						var $this = this;		
+						//mfp-content
+						if( $this.attachment.contentType === "application/pdf" ){	
+							var myPdf = new PDFObject({ url:  "<@spring.url "/download/file/" />" + $this.attachment.attachmentId + "/" + $this.attachment.name, pdfOpenParams: { navpanes: 1, statusbar: 0, view: "FitV" } }).embed("attachment-content-pdf");
+						
+						}				
 					},
 					"close":function(e){					
 					}
@@ -968,7 +974,9 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">	
 				<span class="btn-flat close" data-dialog-close></span>					
-				
+				<div class="mfp-content">
+					<div id="attachment-content-pdf"></div>
+				</div>
 			</div>
 		</div>	
 					
