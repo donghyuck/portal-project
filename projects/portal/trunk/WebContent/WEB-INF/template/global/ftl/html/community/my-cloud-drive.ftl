@@ -214,8 +214,68 @@
 				);				
 			}		
 		}				
-		
-		function showAttachmentPanel(attachment){				
+
+		function showAttachmentPanel(attachment){		
+			var renderTo = $("#attachment-viewer");						
+			if( ! common.ui.exists(renderTo) ){			
+				
+				var observable =  common.ui.observable({ 
+					attachment : new common.ui.data.Attachment(),
+					resize : function(){
+						/*var $img = renderTo.find("img.mfp-img");
+						var $window = $(window);
+						$img.css("max-height", $window.height() - 10 );	
+						$img.css("max-width", $window.height() - 10 );		
+						*/			
+					},
+					setAttachment: function(attachment){
+						var $this = this;						
+						$this.resize();
+						attachment.copy($this.attachment);	
+						
+						/*
+						if( common.ui.defined( image.properties.source ) )
+							$this.set("hasSource", true);
+						else
+							$this.set("hasSource", false);	
+						
+						$this.setPagination();
+						var $loading = renderTo.find(".mfp-preloader");
+						var $largeImg = renderTo.find(".mfp-content");		
+						$largeImg.hide();				
+						$loading.show();							
+						$("<img/>" ).load( function() {
+							var $img = $(this);							
+							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
+								$loading.hide();
+								$largeImg.fadeIn("slow");		
+							}
+						}).attr( 'src', $this.image.imageUrl );
+						*/
+					}
+				});
+				observable.resize();				
+				$(window).resize(function(){
+					observable.resize();
+				});		
+				common.ui.dialog( renderTo , {
+					data : observable,
+					"open":function(e){								
+					},
+					"close":function(e){					
+					}
+				});				
+				common.ui.bind(renderTo, observable );				
+			
+			}			
+			var dialogFx = common.ui.dialog( renderTo );		
+			dialogFx.data().setAttachment(attachment);			
+			if( !dialogFx.isOpen ){							
+				dialogFx.open();
+			}
+		}
+				
+		function showAttachmentPanel2(attachment){				
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.extPanel(
 			appendTo,
