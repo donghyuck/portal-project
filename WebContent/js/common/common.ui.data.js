@@ -59,6 +59,17 @@
 		return "/images/common/no-image2.jpg";
 	}
 
+	function attachmentImageUrl ( attachment , thumbnail ){	
+		if( image.imageId > 0 ){
+			var _photoUrl = "/download/file/" + attachment.attachmentId + "/" + attachment.name ;	
+			if( thumbnail ){
+				_photoUrl = _photoUrl + "?thumbnail=true" ;
+			}
+			return _photoUrl ;
+		}
+		return "/images/common/no-image2.jpg";
+	}
+	
 	common.ui.data.Attachment = kendo.data.Model.define( {
 		    id: "attachmentId", // the identifier of the model
 		    fields: {
