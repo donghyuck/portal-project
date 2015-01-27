@@ -226,18 +226,19 @@
 						if( $iframe.length == 1 ){
 							$iframe.css("height", $window.height() - 20 );	
 							$iframe.css("width", $window.width() - 20 );		
-						}
-						
-						
-						
-						
-						
-						
+						}						
 						/*var $img = renderTo.find("img.mfp-img");
 						var $window = $(window);
 						$img.css("max-height", $window.height() - 10 );	
 						$img.css("max-width", $window.height() - 10 );		
 						*/			
+					},
+					edit : function(){
+						renderTo.find(".white-popup-block").fadeIn();	
+					},
+					close: function(){
+						var $this = this;						
+						renderTo.find(".white-popup-block").fadeOut();
 					},
 					setAttachment: function(attachment){
 						var $this = this;						
@@ -989,6 +990,38 @@
 					<div class="mfp-content">
 						<div id="attachment-content-pdf" class="mfp-iframe-scaler no-padding"></div>
 					</div>
+					<div class="white-popup-block" style="display:none">							
+						<div class="container">
+							<div class="row">
+								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
+								<span class="close" data-bind="click: close"></span>
+								<div class="left-col">
+									<div class="shadow-wrapper" style="width:150px;height:150px;">
+										<div class="box-shadow shadow-effect-2 " >
+											<img class="img-responsive">
+										</div>	
+									</div>
+									<hr class="m-sm"/>										
+									<ul class="list-unstyled margin-bottom-30">																		
+										<li class="p-xxs"><strong>크기:</strong> <span data-bind="text: attachment.formattedSize"></span> bytes</li>
+										<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: attachment.formattedCreationDate"></span></li>
+										<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: attachment.formattedModifiedDate"></span></li>
+									</ul>											
+									<div class="headline headline-md"><h4>태그</h4></div>
+									<ul class="list-unstyled blog-tags margin-bottom-30">
+										<li><a href="#"><i class="fa fa-tags"></i> 성인</a></li>
+										<li><a href="#"><i class="fa fa-tags"></i> 여자</a></li>
+									</ul>			
+								</div>
+								<div class="right-col">									
+									<section class="sky-form">
+																		
+									</section>	
+								</div><!-- ./right-col	-->
+								</div>
+							</div><!-- ./row	-->
+						</div><!-- ./container		-->	
+					</div><!-- ./white-popup-block		-->					
 				</div>
 			</div>
 		</div>	
