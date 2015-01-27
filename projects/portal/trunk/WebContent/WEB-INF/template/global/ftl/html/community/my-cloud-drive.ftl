@@ -236,10 +236,23 @@
 					edit : function(){
 						var $this = this;		
 						var grid = renderTo.find(".attachment-props-grid");	
-						var upload = renderTo.find("input[name='update-attachment-file']");
-												
+						var upload = renderTo.find("input[name='update-attachment-file']");												
 						if(!common.ui.exists(grid)){
 							common.ui.grid(grid, {
+								dataSource : common.ui.data.properties.datasource({
+									transport: { 
+										read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
+										create: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + fileId, type:'POST' ,contentType : "application/json" },
+										update: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + fileId, type:'POST'  ,contentType : "application/json"},
+										destroy: { url:"/data/files/properties/delete.json?output=json" +  "&fileId=" + fileId, type:'POST' ,contentType : "application/json"},
+								 		parameterMap: function (options, operation){			
+											if (operation !== "read" && options.models) {
+												return kendo.stringify(options.models);
+											} 
+											return { imageId: imageId }
+										}
+									}
+								}), 
 								dataSource : common.ui.data.attachment.property.datasource($this.attachment.attachmentId),
 								columns: [
 									{ title: "속성", field: "name" },
@@ -274,6 +287,8 @@
 							renderTo.find(".sky-form").slimScroll({
 								height: "500px"
 							});	
+						}else{
+							common.ui.grid(grid).dataSource.read();
 						}		
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
@@ -652,6 +667,8 @@
 							renderTo.find(".sky-form").slimScroll({
 								height: "500px"
 							});	
+						}else{
+							common.ui.grid(grid).dataSource.read();
 						}					
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
