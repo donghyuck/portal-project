@@ -231,17 +231,15 @@
 								$iframe.css("height", $window.height() - 20 );	
 								$iframe.css("width", $window.width() - 20 );		
 							}	
-						}						
-						var $iframe = renderTo.find(".mfp-content .mfp-iframe-scaler");
-						/*if( $iframe.length == 1 ){
-							$iframe.css("height", $window.height() - 20 );	
-							$iframe.css("width", $window.width() - 20 );		
-						}						
-						var $img = renderTo.find("img.mfp-img");
-						var $window = $(window);
-						$img.css("max-height", $window.height() - 10 );	
-						$img.css("max-width", $window.height() - 10 );		
-						*/			
+						}
+						
+						if( $this.attachment.isImage()){
+							var $img = renderTo.find("img.mfp-img");
+							if($img.length == 1 ){
+								$img.css("max-height", $window.height() - 10 );	
+								$img.css("max-width", $window.height() - 10 );	
+							}														
+						}							
 					},
 					edit : function(){
 						var $this = this;		
@@ -315,22 +313,20 @@
 							$this.set("hasSource", true);
 						else
 							$this.set("hasSource", false);	
-						/*
-
-						
-						$this.setPagination();
-						var $loading = renderTo.find(".mfp-preloader");
-						var $largeImg = renderTo.find(".mfp-content");		
-						$largeImg.hide();				
-						$loading.show();							
-						$("<img/>" ).load( function() {
-							var $img = $(this);							
-							if( $img.attr( 'src' ) === $this.image.imageUrl ) {		
-								$loading.hide();
-								$largeImg.fadeIn("slow");		
-							}
-						}).attr( 'src', $this.image.imageUrl );
-						*/
+							
+						if( $this.attachment.isImage() ){
+							var $loading = renderTo.find(".mfp-preloader");
+							var $largeImg = renderTo.find(".mfp-content");		
+							$largeImg.hide();				
+							$loading.show();							
+							$("<img/>" ).load( function() {
+								var $img = $(this);							
+								if( $img.attr( 'src' ) === $this.attachment.imageUrl ) {		
+									$loading.hide();
+									$largeImg.fadeIn("slow");		
+								}
+							}).attr( 'src', $this.attachment.imageUrl );							
+						}	
 					}
 				});
 				observable.resize();				
@@ -1010,9 +1006,7 @@
 							</div>
 						</div>	
 					</div><!-- end photos  tab-pane -->
-				</div><!-- end of tab content -->					
-					
-					
+				</div><!-- end of tab content -->			
 					</div>
 				</div>			
 			</section>		
@@ -1065,9 +1059,9 @@
 									</div>
 								</figcaption>
 							</figure>
-						</div>
-												
+						</div>												
 					</div>
+					<div class="mfp-preloader" style="display: none;"></div>
 					<div class="white-popup-block" style="display:none">							
 						<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
 							<span class="close" data-bind="click: close"></span>
