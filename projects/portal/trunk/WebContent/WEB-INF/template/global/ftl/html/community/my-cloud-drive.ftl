@@ -1054,7 +1054,7 @@
 					<span class="btn-flat pencil" data-bind="click: edit"></span>	
 					<span class="btn-flat close" data-dialog-close></span>					
 					<div class="mfp-content">
-						<div id="attachment-content-pdf" class="mfp-iframe-scaler no-padding"></div>
+						<div id="attachment-content-pdf" class="mfp-iframe-scaler no-padding" data-bind="visible:attachment.isPdf"></div>
 					</div>
 					<div class="white-popup-block" style="display:none">							
 						<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
@@ -1074,8 +1074,8 @@
 								</ul>											
 								<div class="headline headline-md"><h4>태그</h4></div>
 								<ul class="list-unstyled blog-tags margin-bottom-30">
-											<li><a href="#"><i class="fa fa-tags"></i> 성인</a></li>
-											<li><a href="#"><i class="fa fa-tags"></i> 여자</a></li>
+									<li><a href="#"><i class="fa fa-tags"></i> 성인</a></li>
+									<li><a href="#"><i class="fa fa-tags"></i> 여자</a></li>
 								</ul>			
 							</div><!-- ./left-col -->
 							<div class="right-col">					
