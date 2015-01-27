@@ -7,7 +7,7 @@
 	common.ui.data.Image = kendo.data.Model.define( {
 		    id: "imageId", // the identifier of the model
 		    fields: {
-		    	imageId: { type: "number", editable: false, defaultValue: 0  },   
+				imageId: { type: "number", editable: false, defaultValue: 0  },   
 		    	objectType: { type: "number", editable: true, defaultValue:0  },    	
 		    	objectId: { type: "number", editable: true, defaultValue:0  },    	
 		    	name: { type: "string", editable: true , validation: { required: true }},
@@ -62,15 +62,38 @@
 	common.ui.data.Attachment = kendo.data.Model.define( {
 		    id: "attachmentId", // the identifier of the model
 		    fields: {
-		    	attachmentId: { type: "number", editable: false, defaultValue: -1  },   
-		    	objectType: { type: "number", editable: false, defaultValue: -1  },    	
-		    	objectId: { type: "number", editable: false, defaultValue: -1  },    	
+		    	attachmentId: { type: "number", editable: false, defaultValue: 0  },   
+		    	objectType: { type: "number", editable: true, defaultValue: 0  },    	
+		    	objectId: { type: "number", editable: true, defaultValue: 0  },    	
 		    	name: { type: "string", editable: true , validation: { required: true }},
-		        contentType: { type: "string", editable: false },
-		        downloadCount: { type: "number", editable: false },
+		        contentType: { type: "string", editable: true },
+		        size: { type: "number", defaultValue : 0,  editable: true },
+		        downloadCount: { type: "number", editable: true },
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" }        
-		    }
+		    },
+			formattedSize : function(){
+				return kendo.toString(this.get("size"), "##,###");
+			},
+			formattedCreationDate : function(){
+		    	return kendo.toString(this.get("creationDate"), "g");
+		    },
+		    formattedModifiedDate : function(){
+		    	return kendo.toString(this.get("modifiedDate"), "g");
+		    },
+		    copy : function ( target ){
+		    	target.attachmentId = this.get(attachmentId);
+		    	target.set("objectType" , this.get("objectType"));
+		    	target.set("objectId" ,this.get("objectId"));
+		    	target.set("name", this.get("name"));
+		    	target.set("contentType", this.get("contentType"));
+		    	target.set("size", this.get("size"));
+		    	if( typeof this.get("properties") === 'object' )
+		    		target.set("properties", this.get("properties") );	    	
+		    	target.set("creationDate", this.get("creationDate"));
+		    	target.set("modifiedDate", this.get("modifiedDate"));
+		    	target.set("downloadCount", this.get("downloadCount"));
+		    }		    
 		});
 		
 	common.ui.data.Company = kendo.data.Model.define( {
