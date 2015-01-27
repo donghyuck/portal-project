@@ -237,8 +237,9 @@
 						var $this = this;		
 						var grid = renderTo.find(".attachment-props-grid");	
 						var upload = renderTo.find("input[name='update-attachment-file']");												
+						
 						if(!common.ui.exists(grid)){
-							common.ui.grid(grid, {
+							common.ui.grid(grid, {/
 								dataSource : common.ui.data.properties.datasource({
 									transport: { 
 										read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
@@ -252,7 +253,7 @@
 											return { fileId: $this.attachment.attachmentId }
 										}
 									}
-								}), 
+								}), /
 								columns: [
 									{ title: "속성", field: "name" },
 									{ title: "값",   field: "value" },
@@ -271,7 +272,28 @@
 								change: function(e) {
 									this.refresh();
 								}
-							});															
+							});									
+						}
+						common.ui.grid(grid).setDataSource(
+							common.ui.data.properties.datasource({
+									transport: { 
+										read: { url:"/data/files/properties/list.json?output=json", type:'GET' },
+										create: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json" },
+										update: { url:"/data/files/properties/update.json?output=json" + "&fileId=" + $this.attachment.attachmentId, type:'POST'  ,contentType : "application/json"},
+										destroy: { url:"/data/files/properties/delete.json?output=json" +  "&fileId=" + $this.attachment.attachmentId, type:'POST' ,contentType : "application/json"},
+								 		parameterMap: function (options, operation){			
+											if (operation !== "read" && options.models) {
+												return kendo.stringify(options.models);
+											} 
+											return { fileId: $this.attachment.attachmentId }
+										}
+									}
+							})
+						);
+						//common.ui.grid(grid).dataSource.read();
+							
+						
+						if(!common.ui.exists(upload)){
 							common.ui.upload( upload, {
 								async : {
 									saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />'
@@ -282,13 +304,12 @@
 								},
 								success: function (e) {									
 								}
-							});									
+							});
+							
 							renderTo.find(".sky-form").slimScroll({
 								height: "500px"
 							});	
-						}else{
-							common.ui.grid(grid).dataSource.read();
-						}		
+						}							
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
 					close: function(){
