@@ -216,18 +216,28 @@
 
 		function showAttachmentPanel(attachment){		
 			var renderTo = $("#attachment-viewer");						
-			if( ! common.ui.exists(renderTo) ){			
-				
+			if( ! common.ui.exists(renderTo) ){		
 				var observable =  common.ui.observable({ 
 					attachment : new common.ui.data.Attachment(),
+					hasSource : false,
+					isPdf : false,
+					isImage : false,
 					resize : function(){
+						var $this = this;	
 						var $window = $(window);
+						if( $this.attachment.isPdf() ){
+							var $iframe = renderTo.find(".mfp-content .mfp-iframe-scaler");
+							if( $iframe.length == 1 ){
+								$iframe.css("height", $window.height() - 20 );	
+								$iframe.css("width", $window.width() - 20 );		
+							}	
+						}						
 						var $iframe = renderTo.find(".mfp-content .mfp-iframe-scaler");
-						if( $iframe.length == 1 ){
+						/*if( $iframe.length == 1 ){
 							$iframe.css("height", $window.height() - 20 );	
 							$iframe.css("width", $window.width() - 20 );		
 						}						
-						/*var $img = renderTo.find("img.mfp-img");
+						var $img = renderTo.find("img.mfp-img");
 						var $window = $(window);
 						$img.css("max-height", $window.height() - 10 );	
 						$img.css("max-width", $window.height() - 10 );		
@@ -236,8 +246,7 @@
 					edit : function(){
 						var $this = this;		
 						var grid = renderTo.find(".attachment-props-grid");	
-						var upload = renderTo.find("input[name='update-attachment-file']");												
-						
+						var upload = renderTo.find("input[name='update-attachment-file']");		
 						if(!common.ui.exists(grid)){
 							common.ui.grid(grid, {
 								columns: [
@@ -271,13 +280,11 @@
 								},
 								success: function (e) {									
 								}
-							});
-							
+							});							
 							renderTo.find(".sky-form").slimScroll({
 								height: "500px"
 							});	
-						}	
-												
+						}													
 						common.ui.grid(grid).setDataSource(
 							common.ui.data.properties.datasource({
 									transport: { 
@@ -301,15 +308,15 @@
 						renderTo.find(".white-popup-block").fadeOut();
 					},
 					setAttachment: function(attachment){
-						var $this = this;						
-						$this.resize();
-						attachment.copy($this.attachment);	
-						
-						/*
+						var $this = this;
+						attachment.copy($this.attachment);							
+						$this.resize();						
 						if( common.ui.defined( image.properties.source ) )
 							$this.set("hasSource", true);
 						else
 							$this.set("hasSource", false);	
+						/*
+
 						
 						$this.setPagination();
 						var $loading = renderTo.find(".mfp-preloader");
