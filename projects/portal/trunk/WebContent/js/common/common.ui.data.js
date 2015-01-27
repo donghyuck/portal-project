@@ -60,7 +60,7 @@
 	}
 
 	function attachmentImageUrl ( attachment , thumbnail ){	
-		if( attachment.attachmentId > 0 && (attachment.contentType === "application/pdf") || attachment.contentType.match("^image") ){
+		if( attachment.attachmentId > 0 && (attachment.isPdf() || attachment.isImage() ){
 			var _photoUrl = "/download/file/" + attachment.attachmentId + "/" + attachment.name ;	
 			if( thumbnail ){
 				_photoUrl = _photoUrl + "?thumbnail=true" ;
@@ -93,6 +93,18 @@
 		    },
 		    formattedModifiedDate : function(){
 		    	return kendo.toString(this.get("modifiedDate"), "g");
+		    },
+		    isPdf: function(){		    	
+		    	if(this.get("contentType") === "application/pdf" )	
+		    		return true;
+		    	else 
+		    		return false;
+		    },
+		    isImage : function(){		    	
+		    	if(this.get("contentType").match("^image") )	
+		    		return true;
+		    	else 
+		    		return false;		    	
 		    },
 		    copy : function ( target ){
 		    	target.attachmentId = this.get("attachmentId");
