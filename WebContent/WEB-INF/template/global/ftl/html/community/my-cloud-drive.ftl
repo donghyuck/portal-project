@@ -1058,14 +1058,20 @@
 									<div class="col-sm-12">
 										<section class="sky-form">
 											<header data-bind="text: attachment.name"></header>
-										<fieldset>
-											<section>											
-												<label class="label">이미지 변경</label>
-												<input name="update-photo-file" type="file" class="pull-right" />	
-												<div class="note"><i class="fa fa-info"></i> 사진을 변경하려면 마우스로 사진을 끌어 놓거나 사진 선택을 클릭하세요.</div>
-											</section>
-										</fieldset>
-										
+											<fieldset>
+												<section>											
+													<label class="label">파일 변경</label>
+													<input name="update-attachment-file" type="file" class="pull-right" />	
+													<div class="note"><i class="fa fa-info"></i> 파일을 변경하려면 마우스로 사진을 끌어 놓거나 파일 선택을 클릭하세요.</div>
+												</section>
+											</fieldset>
+											<fieldset>
+												<section>
+												<label class="label">추가 정보</label>
+												<div class="attachment-props-grid"></div>											
+												<div class="note"><i class="fa fa-info"></i> 수정후 반듯이 저장버튼을 클릭해야 반영됩니다.</div>
+												</section>
+											</fieldset>				
 										</section>	
 									</div><!-- ./col-sm-12	-->
 								</div><!-- ./row		-->	
