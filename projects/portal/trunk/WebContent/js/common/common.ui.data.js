@@ -107,7 +107,7 @@
 		    	target.set("modifiedDate", this.get("modifiedDate"));
 		    	target.set("downloadCount", this.get("downloadCount"));
 		    	target.set("imageUrl", attachmentImageUrl( target, false ));
-		    	target.set("thumbnailImageUrl", attachmentImageUrl( target, true ));
+		    	target.set("imageThumbnailUrl", attachmentImageUrl( target, true ));
 		    }		    
 		});
 		
