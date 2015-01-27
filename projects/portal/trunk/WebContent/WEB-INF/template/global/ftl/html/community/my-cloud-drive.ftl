@@ -979,10 +979,13 @@
 		<div id="attachment-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">	
-				<span class="btn-flat close" data-dialog-close></span>					
-				<div class="mfp-content">
-					<div class="mfp-iframe-scaler">					
-						<div id="attachment-content-pdf"></div>
+				<div class="mfp-container mfp-s-ready mfp-image-holder">
+					<span class="btn-flat pencil" data-bind="click: edit"></span>	
+					<span class="btn-flat close" data-dialog-close></span>					
+					<div class="mfp-content">
+						<div class="mfp-iframe-scaler">					
+							<div id="attachment-content-pdf"></div>
+						</div>
 					</div>
 				</div>
 			</div>
