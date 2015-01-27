@@ -1036,16 +1036,17 @@
 						<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
 							<span class="close" data-bind="click: close"></span>
 							<div class="left-col">
-										<div class="shadow-wrapper" style="width:150px;height:150px;">
-											<div class="box-shadow shadow-effect-2 " >
-												<img class="img-responsive" data-bind="attr:{src: attachment.imageThumbnailUrl}">
-											</div>	
+								<div class="shadow-wrapper" style="width:150px;height:150px;">
+									<div class="box-shadow shadow-effect-2 " >
+										<img class="img-responsive" data-bind="attr:{src: attachment.imageThumbnailUrl}">
+									</div>	
 								</div>
 								<hr class="m-sm"/>										
 								<ul class="list-unstyled margin-bottom-30">																		
-											<li class="p-xxs"><strong>크기:</strong> <span data-bind="text: attachment.formattedSize"></span> bytes</li>
-											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: attachment.formattedCreationDate"></span></li>
-											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: attachment.formattedModifiedDate"></span></li>
+									<li class="p-xxs"><strong>콘텐츠 타입:</strong> <span data-bind="text: attachment.contentType"></span> bytes</li>
+									<li class="p-xxs"><strong>크기:</strong> <span data-bind="text: attachment.formattedSize"></span> bytes</li>
+									<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: attachment.formattedCreationDate"></span></li>
+									<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: attachment.formattedModifiedDate"></span></li>
 								</ul>											
 								<div class="headline headline-md"><h4>태그</h4></div>
 								<ul class="list-unstyled blog-tags margin-bottom-30">
