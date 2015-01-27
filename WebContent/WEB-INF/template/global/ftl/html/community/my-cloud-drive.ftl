@@ -1043,7 +1043,7 @@
 								</div>
 								<hr class="m-sm"/>										
 								<ul class="list-unstyled margin-bottom-30">																		
-									<li class="p-xxs"><strong>콘텐츠 타입:</strong> <span data-bind="text: attachment.contentType"></span> bytes</li>
+									<li class="p-xxs"><span data-bind="text: attachment.contentType" class="label rounded label-dark-blue"></span></li>
 									<li class="p-xxs"><strong>크기:</strong> <span data-bind="text: attachment.formattedSize"></span> bytes</li>
 									<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: attachment.formattedCreationDate"></span></li>
 									<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: attachment.formattedModifiedDate"></span></li>
