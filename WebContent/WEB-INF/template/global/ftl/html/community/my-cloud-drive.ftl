@@ -660,7 +660,7 @@
 						common.ui.data.image.streams($this.image.imageId, function(data){
 							if( data.length > 0 )
 								shared.first().click();
-							else$()
+							else
 								shared.last().click();
 							
 							shared.on("change", function(e){
