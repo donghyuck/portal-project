@@ -102,7 +102,7 @@
 			} else if (xhr.errorThrown == 'parsererror') {
 				message = "데이터 파싱 중에 오류가 발생하였습니다.";
 			} else {
-				if( response.error.message )
+				if( response.error )
 					message = response.error.message;
 				else 	
 					message = "오류가 발생하였습니다." ;
