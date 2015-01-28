@@ -1079,7 +1079,7 @@
 										</div>																												
 									</div>
 								<div class="col-sm-4">		
-									<div id="my-notice-grid" class="no-border-hr no-border-b"></div>		
+									<div id="my-notice-grid"></div>		
 								</div>
 								<div id="my-notice-view" class="col-sm-8">
 									<span class="hidden-lg  m-t-sm" ></span>		
