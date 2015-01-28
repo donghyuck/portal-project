@@ -1047,6 +1047,7 @@
 								<div class="tab-pane fade" id="website-notice">
 									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
 									<div id="my-notice-list" class="row">
+										<div class="col-sm-12 m-b-sm">
 										<div class="sky-form bg-gray">
 											<fieldset class="padding-sm">
 												<section>
@@ -1074,6 +1075,7 @@
 													<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
 												</section>																			
 											</fieldset>															
+										</div>
 										</div>																												
 									</div>
 								<div class="col-sm-4">		
