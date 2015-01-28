@@ -10,7 +10,7 @@
                  
 	//String formatString = ParamUtils.getParameter(request, "output", "html");
 	OutputFormat format = ServletUtils.getOutputFormat(request, response);// OutputFormat.stingToOutputFormat(formatString);	
-	
+	System.out.println(request.getHeader("referer"));
 	Throwable ex = exception;	
 	if( ex == null ){
 		// 스트럿츠1 오류 처리
