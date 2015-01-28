@@ -85,7 +85,6 @@
 		if( typeof xhr === STRING ){
 			message = xhr;			
 		} else {		
-			alert( xhr.getResponseHeader("content-type")	);
 			
 			var response = $.parseJSON(xhr.responseText);
 			
