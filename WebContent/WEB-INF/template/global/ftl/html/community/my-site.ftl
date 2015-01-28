@@ -1081,6 +1081,7 @@
 								<div class="col-sm-4">		
 									<div id="my-notice-grid"></div>		
 								</div>
+								<div class="row">
 								<div id="my-notice-view" class="col-sm-8">
 									<span class="hidden-lg  m-t-sm" ></span>		
 									<div class="sky-form" style="display:none;"  data-bind="visible: visible" class="animated fadeIn">
@@ -1150,7 +1151,7 @@
 									</div>																			
 								</div>	
 								
-								
+								</div>
 								</div>
 								<div class="tab-pane fade" id="website-timeline"></div><!-- ./website-timeline -->
 							</div>
