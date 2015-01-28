@@ -1050,7 +1050,7 @@
 										<div class="col-sm-12 m-b-sm">
 										<div class="sky-form bg-gray">
 											<fieldset class="padding-sm">
-												<section>
+												<section class="col-sm-4">
 													<label class="label">소스</label>
 													<div id="notice-source-list" class="btn-group" data-toggle="buttons">
 														<label class="btn btn-info btn-sm active rounded-left">
@@ -1061,15 +1061,19 @@
 														</label>
 													</div>																								
 												</section>
-												<section>
-													<label for="noticeStartDatePicker" class="label">시작일시</label>
-													<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
-												</section>
-												<section>
-													<label for="noticeEndDatePicker" class="label">종료일시</label>
-													<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />	
-													<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 공지&이벤트들을 검색합니다.</div>													
-												</section>																						
+												<div class="col-sm-8">
+													<div class="row">
+														<section class="col-sm-6">
+															<label for="noticeStartDatePicker" class="label">시작일시</label>
+															<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
+														</section>
+														<section class="col-sm-6">
+															<label for="noticeEndDatePicker" class="label">종료일시</label>
+															<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />																											
+														</section>	
+														<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 공지&이벤트들을 검색합니다.</div>		
+													</div>
+												</div>																																
 												<section class="text-right">
 													<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
 													<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>												
