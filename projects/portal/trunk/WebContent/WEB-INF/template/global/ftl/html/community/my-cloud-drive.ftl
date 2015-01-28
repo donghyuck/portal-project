@@ -1092,6 +1092,12 @@
 									<div class="col-sm-12">
 										<section class="sky-form">
 											<header data-bind="text: attachment.name"></header>
+										<fieldset data-bind="visible:hasSource">
+											<section>
+												<label class="label">출처</label>
+												<a href="#" class="btn btn-link" data-bind="attr:{href:attachment.properties.source }, text:attachment.properties.source"></a>
+											</section>
+										</fieldset>												
 											<fieldset>
 												<section>											
 													<label class="label">파일 변경</label>
