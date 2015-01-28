@@ -1065,14 +1065,15 @@
 													<div class="row">
 														<div class="col-sm-6">
 															<label for="noticeStartDatePicker" class="label">시작일시</label>
-															<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
+															<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" style="height:auto;" />											
 														</div>
 														<div class="col-sm-6">
 															<label for="noticeEndDatePicker" class="label">종료일시</label>
-															<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />																											
+															<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" style="height:auto;" />																											
 														</div>	
-														<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 공지&이벤트들을 검색합니다.</div>		
+															
 													</div>
+													<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 공지&이벤트들을 검색합니다.</div>	
 												</div>																																																	
 											</fieldset>	
 											<footer class="text-right">
