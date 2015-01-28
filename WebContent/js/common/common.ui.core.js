@@ -117,7 +117,6 @@
 		$.jGrowl(message, {
 			sticky : false,
 			life : 3000,
-			header: '오류',
 			animateOpen : {
 				height : "show"
 			},
