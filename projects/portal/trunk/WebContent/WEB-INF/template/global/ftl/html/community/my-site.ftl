@@ -894,7 +894,7 @@
 					<div class="container content" style="min-height:450px;">											
 						<div class="tab-v1">
 							<ul class="nav nav-tabs">
-								<li><a href="#website-page" data-toggle="tab" class="rounded-top">페이지</a></li>
+								<li><a href="#website-page" data-toggle="tab" class="m-l-sm rounded-top">페이지</a></li>
 								<li><a href="#website-notice" data-toggle="tab" class="rounded-top">공지 & 이벤트</a></li>
 								<li><a href="#website-timeline" data-toggle="tab" class="rounded-top">타임라인</a></li>
 							</ul>
