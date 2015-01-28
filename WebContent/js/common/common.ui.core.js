@@ -86,6 +86,7 @@
 			message = xhr;			
 		} else {	
 			alert( xhr.status );
+			alert( xhr.responseJSON );
 			alert( kendo.stringify(xhr) );
 			
 			var json = xhr.responseJSON ; 			
