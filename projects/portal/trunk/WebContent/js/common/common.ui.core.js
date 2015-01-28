@@ -85,14 +85,15 @@
 		if( typeof xhr === STRING ){
 			message = xhr;			
 		} else {	
-			var response = {}; //$.parseJSON(xhr.responseText);			
-			
+			alert( xhr.status );
+			alert( xhr.responseJSON.status );
+			var json = xhr.responseJSON ; 			
 			if (xhr.status == 0) {
 				message = "오프라인 상태입니다.";
 			} else if (xhr.status == 404 || xhr.errorThrown == "Not found")  {
 				message = "요청하신 페이지를 찾을 수 없습니다.";
 			} else if (xhr.status == 500) {
-				message = "시스템 내부 오류가 발생하였습니다.";
+				message = "오류가 발생하였습니다.";
 			} else if (xhr.status == 503) {
 				message = "서비스 이용이 지연되고 있습니다. 잠시 후 다시 시도하여 주십시오.";			
 			} else if (xhr.status == 403 || xhr.errorThrown == "Forbidden") {
@@ -101,16 +102,14 @@
 				message = "처리 대기 시간을 초가하였습니다. 잠시 후 다시 시도하여 주십시오.";
 			} else if (xhr.errorThrown == 'parsererror') {
 				message = "데이터 파싱 중에 오류가 발생하였습니다.";
-			} else {
-				if( response.error ){
-					message = response.error.message;
+			} else {				
+				if( json.error ){
+					message = json.error.message;
 				} else {
 					message = "오류가 발생하였습니다." ;
-					
-				}	
-					
+				}
 			}	
-			alert( kendo.stringify( xhr )  );
+			
 		}
 		
 		$.jGrowl(message, {
