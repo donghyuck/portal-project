@@ -3,6 +3,7 @@
 <head>
 	<#assign pageMenuName = "USER_MENU" />
 	<#assign pageMenuItemName = "MENU_1_3" />
+	
 		<#if action.webSite ?? >
 			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
 			<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
@@ -28,8 +29,7 @@
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],
-			complete: function() {
-			
+			complete: function() {			
 				common.ui.setup({
 					features:{
 						wallpaper : false,
@@ -80,7 +80,7 @@
 				<#if !action.user.anonymous >				
 				
 				</#if>	
-				// END SCRIPT            
+				// END SCRIPT	
 			}
 		}]);	
 		
@@ -168,11 +168,13 @@
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
 				<div class="row">
-					<div class="col-lg-12" style="min-height: 500px;">			
+					<div class="col-lg-9" style="min-height: 500px;">			
 						<div id="announce-view-panel" style="display:none;"></div>
 						<h5><small><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
 						<div id="announce-grid"></div>												
-					</div>				
+					</div>	
+					<div class="col-lg-3">			
+					</div>
 				</div>
 			</div>			
 			</#if>						 			
@@ -200,20 +202,20 @@
 					<span class="close-sm"></span>
 					<h2 data-bind="html:subject"></h2>					
 					<ul class="list-unstyled">
-												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
-												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
-												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
-												<hr>	
-												<li class="text-muted">
-													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-													<ul class="list-unstyled text-muted">
-														<li><span data-bind="visible:user.nameVisible, text: user.name"></span><code data-bind="text: user.username"></code></li>
-														<li><span data-bind="visible:user.emailVisible, text: user.email"></span></li>
-													</ul>																
-												</li>	
-												<hr>	
+						<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
+						<hr>	
+						<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
+						<hr>	
+						<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+						<hr>	
+						<li class="text-muted">
+							<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+							<ul class="list-unstyled text-muted">
+								<li><span data-bind="visible:user.nameVisible, text: user.name"></span><code data-bind="text: user.username"></code></li>
+								<li><span data-bind="visible:user.emailVisible, text: user.email"></span></li>
+							</ul>																
+						</li>	
+						<hr>	
 					</ul>											
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:body"></div>	
