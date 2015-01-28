@@ -1058,7 +1058,7 @@
 								<figcaption>
 									<div class="mfp-bottom-bar">
 										<div class="mfp-title" data-bind="text: attachment.name"></div>
-										<div class="mfp-counter"></div>
+										<div class="mfp-counter" data-bind="text: attachment.formattedModifiedDate"></div>
 									</div>
 								</figcaption>
 							</figure>
