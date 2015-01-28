@@ -86,7 +86,8 @@
 			message = xhr;			
 		} else {	
 			alert( xhr.status );
-			alert( xhr.responseJSON.status );
+			alert( kendo.stringify(xhr.responseJSON) );
+			
 			var json = xhr.responseJSON ; 			
 			if (xhr.status == 0) {
 				message = "오프라인 상태입니다.";
