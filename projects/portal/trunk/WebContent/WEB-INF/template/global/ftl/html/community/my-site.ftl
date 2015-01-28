@@ -1061,8 +1061,10 @@
 											<div class="col-sm-8">											
 														<div class="row">
 															<section class="col-sm-6">
-																<label for="noticeStartDatePicker" class="label">시작일시</label>
-																<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
+																<div class="form-group">
+																	<label for="noticeStartDatePicker" class="label">시작일시</label>
+																	<input id="noticeStartDatePicker" class="form-control" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />			
+																</div>								
 															</section>
 															<section class="col-sm-6">
 																<label for="noticeEndDatePicker" class="label">종료일시</label>
