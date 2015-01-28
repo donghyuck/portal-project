@@ -78,38 +78,31 @@
 	ACTIVATE = "activate",	
 	UNDEFINED = "undefined";
 	
-	function handleAjaxError(xhr) {
-		
+	function handleAjaxError(xhr) {		
 		var message = "";		
-		
 		if( typeof xhr === STRING ){
 			message = xhr;			
 		} else {	
-			alert( xhr.status );
-			alert( xhr.xhr.responseText );
-			alert( xhr.errorThrown );
-			alert( kendo.stringify(xhr) );
-			
-			if (xhr.status == 0) {
+			var $xhr = xhr;
+			if(  $xhr.xhr ){
+				$xhr = $xhr.xhr;			
+			}						
+			if ($xhr.status == 0) {
 				message = "오프라인 상태입니다.";
-			} else if (xhr.status == 404 || xhr.errorThrown == "Not found")  {
+			} else if ($xhr.status == 404 || $xhr.errorThrown == "Not found")  {
 				message = "요청하신 페이지를 찾을 수 없습니다.";
-			} else if (xhr.status == 500) {
+			} else if ($xhr.status == 500) {
 				message = "오류가 발생하였습니다.";
-			} else if (xhr.status == 503) {
+			} else if ($xhr.status == 503) {
 				message = "서비스 이용이 지연되고 있습니다. 잠시 후 다시 시도하여 주십시오.";			
-			} else if (xhr.status == 403 || xhr.errorThrown == "Forbidden") {
+			} else if ($xhr.status == 403 || $xhr.errorThrown == "Forbidden") {
 				message =  "접근 권한이 없습니다.";
-			} else if (xhr.errorThrown == 'timeout') {
+			} else if ($xhr.errorThrown == 'timeout') {
 				message = "처리 대기 시간을 초가하였습니다. 잠시 후 다시 시도하여 주십시오.";
-			} else if (xhr.errorThrown == 'parsererror') {
+			} else if ($xhr.errorThrown == 'parsererror') {
 				message = "데이터 파싱 중에 오류가 발생하였습니다.";
 			} else {				
-				if( json.error ){
-					message = json.error.message;
-				} else {
-					message = "오류가 발생하였습니다." ;
-				}
+				message = "오류가 발생하였습니다." ;
 			}	
 			
 		}
