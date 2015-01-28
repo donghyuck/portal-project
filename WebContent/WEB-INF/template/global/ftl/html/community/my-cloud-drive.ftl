@@ -1057,7 +1057,7 @@
 								<img class="mfp-img" style="display: block;" data-bind="attr:{src:attachment.imageUrl}">
 								<figcaption>
 									<div class="mfp-bottom-bar">
-										<div class="mfp-title" data-bind="text: image.name"></div>
+										<div class="mfp-title" data-bind="text: attachment.name"></div>
 										<div class="mfp-counter"></div>
 									</div>
 								</figcaption>
