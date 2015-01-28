@@ -883,7 +883,7 @@
 					<div class="tab-content">
 						<!-- start attachement tab-pane -->
 						<div class="tab-pane" id="my-files">
-								<div class="panel panel-primary panel-upload no-margin-b border-2x" style="display:none;">
+								<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 								</div>						
@@ -937,7 +937,7 @@
 						</div><!-- end attachements  tab-pane -->		
 						<!-- start photos  tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
-							<div class="panel panel-primary panel-upload no-margin-b border-2x" style="display:none;">
+							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 								</div>												
