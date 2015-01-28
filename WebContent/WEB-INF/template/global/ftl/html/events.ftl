@@ -202,11 +202,11 @@
 					<span class="close-sm"></span>
 					<h2 data-bind="html:subject"></h2>					
 					<ul class="list-unstyled">
-						<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:formattedStartDate"></span> ~ <span data-bind="text:formattedEndDate"></span></li>
+						<li ><i class="fa fa-calendar"></i> <span class="label label-light">게시 기간</span> <span class="text-muted" data-bind="text:formattedStartDate"></span> ~ <span class="text-muted" data-bind="text:formattedEndDate"></span></li>
 						<hr>	
-						<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: formattedCreationDate"></span></li>
+						<li><i class="fa fa-calendar"></i> <span class="label label-light">생성일</span> <span class="text-muted" data-bind="text: formattedCreationDate"></span></li>
 						<hr>	
-						<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: formattedModifiedDate"></span></li>
+						<li><i class="fa fa-calendar"></i> <span class="label label-light">수정일</span> <span class="text-muted" data-bind="text: formattedModifiedDate"></span></li>
 						<hr>	
 						<li class="text-muted">
 							<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
