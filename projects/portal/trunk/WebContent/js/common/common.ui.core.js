@@ -79,11 +79,16 @@
 	UNDEFINED = "undefined";
 	
 	function handleAjaxError(xhr) {
+		
 		var message = "";		
 		
 		if( typeof xhr === STRING ){
 			message = xhr;			
 		} else {		
+			alert( xhr.getResponseHeader("content-type")	);
+			
+			var response = $.parseJSON(xhr.responseText);
+			
 			if (xhr.status == 0) {
 				message = "오프라인 상태입니다.";
 			} else if (xhr.status == 404 || xhr.errorThrown == "Not found")  {
@@ -99,7 +104,10 @@
 			} else if (xhr.errorThrown == 'parsererror') {
 				message = "데이터 파싱 중에 오류가 발생하였습니다.";
 			} else {
-				message = "오류가 발생하였습니다." ;
+				if( defined(response.error.message) )
+					message = response.error.message;
+				else 	
+					message = "오류가 발생하였습니다." ;
 			}		
 		}
 		
