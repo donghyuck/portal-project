@@ -197,6 +197,9 @@
 											async : {
 												saveUrl:  '<@spring.url "/data/files/upload.json?output=json" />',
 											},
+											upload: function(e){
+												e.data = {objectType: getMyDriverAttachmentSource()};
+											},
 											success : function(e) {								    
 												common.ui.listview($("#attachment-list-view")).dataSource.read();						
 											}
@@ -275,7 +278,7 @@
 								localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
 								upload: function (e) {				
 									e.data = { objectType:$this.attachment.objectType , fileId: $this.attachment.attachmentId };
-								},
+								},								
 								success: function (e) {									
 								}
 							});							
