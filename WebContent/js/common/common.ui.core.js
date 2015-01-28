@@ -86,7 +86,8 @@
 			message = xhr;			
 		} else {	
 			alert( xhr.status );
-			alert( status );
+			alert( xhr.responseText );
+			alert( xhr.errorThrown );
 			alert( kendo.stringify(xhr) );
 			
 			if (xhr.status == 0) {
