@@ -5,10 +5,12 @@
                  architecture.ee.util.OutputFormat,
                  architecture.common.user.authentication.UnAuthorizedException,
                  architecture.ee.web.util.WebApplicationHelper,
+                 architecture.ee.web.util.ServletUtils,
                  architecture.ee.web.util.ParamUtils" %><%
                  
-	String formatString = ParamUtils.getParameter(request, "output", "html");
-	OutputFormat format = OutputFormat.stingToOutputFormat(formatString);	
+	//String formatString = ParamUtils.getParameter(request, "output", "html");
+	OutputFormat format = ServletUtils.getOutputFormat(request, response);// OutputFormat.stingToOutputFormat(formatString);	
+	
 	Throwable ex = exception;	
 	if( ex == null ){
 		// 스트럿츠1 오류 처리
