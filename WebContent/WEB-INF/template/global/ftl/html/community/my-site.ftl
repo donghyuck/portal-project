@@ -1047,7 +1047,7 @@
 								<div class="tab-pane fade" id="website-notice">
 									<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>
 									
-									<div id="my-notice-list m-b-sm">
+									<div id="my-notice-list" class="m-b-sm">
 										<div class="sky-form">
 											<fieldset class="padding-sm">
 												<section class="col-sm-4">
@@ -1063,14 +1063,14 @@
 												</section>
 												<div class="col-sm-8">
 													<div class="row">
-														<section class="col-sm-6">
+														<div class="col-sm-6">
 															<label for="noticeStartDatePicker" class="label">시작일시</label>
 															<input id="noticeStartDatePicker" data-role="datepicker" data-bind="value: startDate, events: { change: startDateChange }" />											
-														</section>
-														<section class="col-sm-6">
+														</div>
+														<div class="col-sm-6">
 															<label for="noticeEndDatePicker" class="label">종료일시</label>
 															<input id="noticeEndDatePicker"  data-role="datepicker" data-bind="value: endDate,  events: { change: endDateChange }" />																											
-														</section>	
+														</div>	
 														<div class="note"><i class="fa fa-info"></i> 공지기간이 지정한 시작일과 종료일에 포함되는 공지&이벤트들을 검색합니다.</div>		
 													</div>
 												</div>																																																	
