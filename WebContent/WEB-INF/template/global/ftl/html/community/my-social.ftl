@@ -58,7 +58,7 @@
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_3']").addClass("active");			
 					
 				// personalized grid setting																																					
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );
+				preparePersonalizedArea($("#personalized-area"), 3, 4 );
 			}
 		}]);	
 		<!-- ============================== -->
@@ -193,10 +193,10 @@
 										<label class="btn btn-info rounded-left">
 											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
 										</label>
-										<label class="btn btn-info active">
+										<label class="btn btn-info">
 									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
 										</label>
-										<label class="btn btn-info rounded-right">
+										<label class="btn btn-info active rounded-right">
 											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
 										</label>
 									</div>														
