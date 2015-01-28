@@ -9,7 +9,6 @@
                  architecture.ee.web.util.ParamUtils" %><%
                  
 	//String formatString = ParamUtils.getParameter(request, "output", "html");
-                 System.out.println("*************"+ParamUtils.getAttribute(request, "output"));
 	OutputFormat format = ServletUtils.getOutputFormat(request, response);// OutputFormat.stingToOutputFormat(formatString);	
 	Throwable ex = exception;	
 	if( ex == null ){
