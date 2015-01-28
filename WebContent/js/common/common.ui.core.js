@@ -110,7 +110,7 @@
 				}	
 					
 			}	
-			alert( xhr.responseText );
+			alert( kendo.stringify( xhr )  );
 		}
 		
 		$.jGrowl(message, {
