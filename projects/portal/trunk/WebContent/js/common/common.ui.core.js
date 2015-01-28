@@ -84,10 +84,8 @@
 		
 		if( typeof xhr === STRING ){
 			message = xhr;			
-		} else {		
-			
-			var response = $.parseJSON(xhr.responseText);
-			
+		} else {					
+			var response = $.parseJSON(xhr.responseText);			
 			if (xhr.status == 0) {
 				message = "오프라인 상태입니다.";
 			} else if (xhr.status == 404 || xhr.errorThrown == "Not found")  {
