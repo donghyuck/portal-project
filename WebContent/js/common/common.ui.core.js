@@ -84,9 +84,9 @@
 		
 		if( typeof xhr === STRING ){
 			message = xhr;			
-		} else {					
+		} else {	
 			var response = {}; //$.parseJSON(xhr.responseText);			
-			alert(xhr.responseText);
+			
 			if (xhr.status == 0) {
 				message = "오프라인 상태입니다.";
 			} else if (xhr.status == 404 || xhr.errorThrown == "Not found")  {
@@ -102,11 +102,15 @@
 			} else if (xhr.errorThrown == 'parsererror') {
 				message = "데이터 파싱 중에 오류가 발생하였습니다.";
 			} else {
-				if( response.error )
+				if( response.error ){
 					message = response.error.message;
-				else 	
+				} else {
 					message = "오류가 발생하였습니다." ;
-			}		
+					
+				}	
+					
+			}	
+			alert( xhr.responseText );
 		}
 		
 		$.jGrowl(message, {
