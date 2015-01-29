@@ -1084,9 +1084,14 @@
 									</div>	
 									
 									<div class="row">
+											
+											
+											
 											<div class="col-sm-4">
+												<button class="btn-u btn-brd btn-brd-hover rounded-4x btn-u-dark btn-u-xs" type="button"><i class="fa fa-columns"></i></button>
 												<div id="my-notice-grid"></div>
 											</div>
+											
 											<div class="col-sm-8">
 												<div id="my-notice-view">
 													<span class="hidden-lg  m-t-sm" ></span>		
