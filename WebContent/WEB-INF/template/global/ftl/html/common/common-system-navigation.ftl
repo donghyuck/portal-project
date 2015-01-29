@@ -1,4 +1,4 @@
-		<#assign menu = WebSiteUtils.getMenuComponent("SYSTEM_MENU") />			
+		<#assign menu = WebSiteUtils.getMenuComponent("SYSTEM_MENU") />	
 		<div id="main-navbar" class="navbar navbar-inverse theme-default" role="navigation">
 			<!-- Main menu toggle -->
 			<button type="button" id="main-menu-toggle"><i class="navbar-icon fa fa-bars icon"></i><span class="hide-menu-text">HIDE MENU</span></button>
@@ -6,8 +6,7 @@
 				<!-- Main navbar header -->
 				<div class="navbar-header">
 					<!-- Logo -->
-					<a href="${request.contextPath}/secure/main.do" class="navbar-brand">
-					<!--<div><img alt="Pixel Admin" src="로고 이미지"></div>-->
+					<a href="<@spring.ur "/secure/main.do"/>" class="navbar-brand">
 					관리자 콘솔
 					</a>
 					<!-- Main navbar toggle -->
@@ -19,7 +18,7 @@
 					<div>
 						<ul class="nav navbar-nav">
 							<li>
-								<a href="#">사용자 홈</a>
+								<a href="<@spring.url "/main.do"/>">사용자 홈</a>
 							</li>
 							<li class="dropdown">
 								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown</a>
@@ -61,9 +60,7 @@
 									<!-- MESSAGES -->								
 									<!-- Javascript -->
 									<script>
-										//init.push(function () {
-										//	$('#main-navbar-messages').slimScroll({ height: 250 });
-										//});
+
 									</script>
 									<!-- / Javascript -->
 									<div class="dropdown-menu widget-messages-alt no-padding" style="width: 300px;">
