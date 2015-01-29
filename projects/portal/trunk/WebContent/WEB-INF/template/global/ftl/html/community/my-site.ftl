@@ -575,7 +575,7 @@
 					visible : false,
 					edit : function(e){
 						e.stopPropagation();
-						common.ui.scroll.top($("#my-site-notice").parent());
+						common.ui.scroll.top($("website-notice"));
 						createNoticeEditorSection(this.notice);	
 					},
 					create : function(e){
