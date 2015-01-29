@@ -1080,15 +1080,14 @@
 												<button type="button" class="btn btn-sm btn-danger" data-bind="click:create"><span class="btn-label icon fa fa-plus"></span> 새로운 공지 & 이벤트</button>
 												<button class="btn btn-primary btn-sm " data-bind="click:refresh"><i class="fa fa-search"></i> 검색 </button>											
 											</footer>														
-										</div>										
-									</div>	
-									
+										</div><!-- /.sky-form -->										
+									</div><!-- /#my-notice-list -->											
 									<div class="row">
 											
 											
 											
 											<div class="col-sm-4">
-												<button class="btn-u btn-brd btn-brd-hover rounded-4x btn-u-dark btn-u-xs" type="button"><i class="fa fa-columns"></i></button>
+												<button class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-xs m-b-xs" type="button"><i class="fa fa-columns"></i></button>
 												<div id="my-notice-grid"></div>
 											</div>
 											
