@@ -1111,7 +1111,7 @@
 													<fieldset>
 														<section  data-bind="html:notice.body"></section>
 													</fieldset>												
-												</div												
+												</div>												
 											</div><!-- ./my-notice-view -->
 											
 											<div id="my-notice-edit" style="display:none;">
