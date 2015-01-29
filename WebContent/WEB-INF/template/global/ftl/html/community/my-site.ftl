@@ -1083,7 +1083,6 @@
 									</div><!-- /#my-notice-list -->											
 									<div class="row">											
 										<div class="col-sm-4">
-											<button class="btn-u btn-brd btn-brd-hover btn-u-dark btn-u-xs m-b-xs" type="button"><i class="fa fa-columns"></i></button>
 											<div id="my-notice-grid"></div>
 										</div>
 										<div class="col-sm-8">
