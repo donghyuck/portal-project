@@ -6,7 +6,7 @@
 				<!-- Main navbar header -->
 				<div class="navbar-header">
 					<!-- Logo -->
-					<a href="<@spring.ur "/secure/main.do"/>" class="navbar-brand">
+					<a href="<@spring.url "/secure/main.do"/>" class="navbar-brand">
 					관리자 콘솔
 					</a>
 					<!-- Main navbar toggle -->
