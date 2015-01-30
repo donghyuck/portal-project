@@ -40,18 +40,33 @@
 						e.data.copy(targetCompany);
 					}
 				});		
-				
-				// memory dataSource
-				var dataSource = common.ui.datasource(	'<@spring.url "/secure/data/stage/memory/get.json?output=json"/>',	{
-					schema: { 
-						data: function(response){
-							return response ; 
-						}
-					},
-					change: function( e 	) { // subscribe to the CHANGE event of the data source
-						var data = this.data()[0];						
-						common.ui.bind($(".memory-details"), data.memoryInfo );
-						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
+											
+				var observable =  common.ui.observable({ 
+					allocateHeap : 0,
+					availableHeap : 0,
+					maxHeap : 0,
+					usedHeap : 0,
+					freeAllocatedHeap : 0,
+					maxPermGen : 0,
+					availablePermGen : 0,
+					usedPermGen : 0
+				});					
+				common.ui.bind($(".memory-details"), observable );				
+				var timer = setInterval(function () {
+					//dataSource.read();
+					//clearInterval(timer);					
+					common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
+						success : function(response){
+							observable.set("allocateHeap", response.allocateHeap.megabytes );
+							observable.set("availableHeap", response.availableHeap.megabytes );
+							observable.set("maxHeap", response.maxHeap.megabytes );
+							observable.set("usedHeap", response.usedHeap.megabytes );
+							observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
+							observable.set("maxPermGen", response.maxPermGen.megabytes );
+							observable.set("availablePermGen", response.availablePermGen.megabytes );
+							observable.set("usedPermGen", response.usedPermGen.megabytes );
+							
+							if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
@@ -77,11 +92,8 @@
 										]			
 									}
 								});						
-						}else{
-							$("#mem-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedHeap.megabytes );
-						}					
-							
-						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
+							}
+							if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
 								$("#perm-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
@@ -107,37 +119,7 @@
 										]								
 									}
 								});		
-						}else{
-							$("#perm-gen-gauge").data("kendoRadialGauge").value( data.memoryInfo.usedPermGen.megabytes );
-						}
-					}
-				});				
-				dataSource.read();		
-							
-				var observable =  common.ui.observable({ 
-					allocateHeap : 0,
-					availableHeap : 0,
-					maxHeap : 0,
-					usedHeap : 0,
-					freeAllocatedHeap : 0,
-					maxPermGen : 0,
-					availablePermGen : 0,
-					usedPermGen : 0
-				});					
-				common.ui.bind($(".memory-details"), observable );				
-				var timer = setInterval(function () {
-					//dataSource.read();
-					//clearInterval(timer);					
-					common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
-						success : function(response){
-							observable.set("allocateHeap", response.allocateHeap.megabytes );
-							observable.set("availableHeap", response.availableHeap.megabytes );
-							observable.set("maxHeap", response.maxHeap.megabytes );
-							observable.set("usedHeap", response.usedHeap.megabytes );
-							observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
-							observable.set("maxPermGen", response.maxPermGen.megabytes );
-							observable.set("availablePermGen", response.availablePermGen.megabytes );
-							observable.set("usedPermGen", response.usedPermGen.megabytes );
+							}							
 						}
 					} );					
 				}, 6000);		
