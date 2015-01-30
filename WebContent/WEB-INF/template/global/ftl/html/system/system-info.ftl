@@ -211,7 +211,6 @@
 		</script> 		 
 		<style>
 			.table thead th {
-				font-size : 13px;
 				text-align: center;
 			}
 		</style>
