@@ -73,12 +73,10 @@
 			});	
 			
 			observable.bind("change", function(e){		
-				var sender = e.sender ;
-				
-				if( e.field === 'maxHeap' ){
-					alert(sender.maxHeap)
+				var sender = e.sender ;				
+				if( e.field === 'usedHeap' ){
 					if( $("#mem-gen-gauge").data("kendoRadialGauge") )
-				 		$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.maxHeap);
+				 		$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.usedHeap);
 				}else if (e.field === 'usedPermGen'){
 					if( $("#perm-gen-gauge").data("kendoRadialGauge") )
 						$("#perm-gen-gauge").data("kendoRadialGauge").value(sender.usedPermGen);
@@ -126,8 +124,35 @@
 									}
 								});						
 						}							
-												
-								
+						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
+							$("#perm-gen-gauge").kendoRadialGauge({
+								theme: "white",
+								pointer: {
+									value: observable.usedPermGen,
+									color: "#ea7001"		
+								},
+								scale: {
+									majorUnit: 50,
+									minorUnit: 10,
+									startAngle: -30,
+									endAngle: 210,
+									max: observable.maxPermGen,
+									ranges: [
+										{
+											from:  ( observable.maxPermGen -  ( ( observable.maxPermGen / 10 ) * 2 ) ) ,
+											to:  ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
+											color: "#ff7a00"
+										}, {
+											from: ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
+											to: observable.maxPermGen,
+											color: "#c20000"
+										}
+									]								
+								}
+							});						
+						
+						
+						}		
 					}
 				})
 			}, 6000);			
@@ -175,31 +200,7 @@
 								});						
 						}						
 						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
-							$("#perm-gen-gauge").kendoRadialGauge({
-								theme: "white",
-								pointer: {
-									value: observable.usedPermGen,
-									color: "#ea7001"		
-								},
-								scale: {
-									majorUnit: 50,
-									minorUnit: 10,
-									startAngle: -30,
-									endAngle: 210,
-									max: observable.maxPermGen,
-									ranges: [
-										{
-											from:  ( observable.maxPermGen -  ( ( observable.maxPermGen / 10 ) * 2 ) ) ,
-											to:  ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
-											color: "#ff7a00"
-										}, {
-											from: ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
-											to: observable.maxPermGen,
-											color: "#c20000"
-										}
-								]								
-							}
-						});		
+									
 					
 				});	
 				
