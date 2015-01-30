@@ -7,6 +7,7 @@
 		<!--		
 		yepnope([{
 			load: [
+			'css!<@spring.url "/styles/fonts/themify-icons.css"/>',
 			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.css"/>',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css"/>',			
