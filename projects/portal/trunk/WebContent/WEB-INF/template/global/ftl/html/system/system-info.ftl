@@ -112,11 +112,37 @@
 						}
 					}
 				});				
-				dataSource.read();										
+				dataSource.read();		
+							
+				var observable =  common.ui.observable({ 
+					allocateHeap : 0,
+					availableHeap : 0,
+					maxHeap : 0,
+					usedHeap : 0,
+					freeAllocatedHeap : 0,
+					maxPermGen : 0,
+					availablePermGen : 0,
+					usedPermGen : 0
+				});					
+				common.ui.bind($(".memory-details"), observable );				
 				var timer = setInterval(function () {
-					dataSource.read();
-					//clearInterval(timer);
+					//dataSource.read();
+					//clearInterval(timer);					
+					common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
+						success : function(response){
+							observable.set("allocateHeap", response.allocateHeap.megabytes );
+							observable.set("availableHeap", response.availableHeap.megabytes );
+							observable.set("maxHeap", response.maxHeap.megabytes );
+							observable.set("usedHeap", response.usedHeap.megabytes );
+							observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
+							observable.set("maxPermGen", response.maxPermGen.megabytes );
+							observable.set("availablePermGen", response.availablePermGen.megabytes );
+							observable.set("usedPermGen", response.usedPermGen.megabytes );
+						}
+					} );					
 				}, 6000);		
+				
+				
 				displayDiskUsage();
 				displaySystemDetails();					
 				// END SCRIPT
