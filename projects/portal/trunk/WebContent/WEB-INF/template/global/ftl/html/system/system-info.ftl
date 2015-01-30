@@ -159,7 +159,46 @@
 					kendo.bind($(".system-details"), data );
 				}
 			});	
-						
+			
+			$('#myTab').on( 'show.bs.tab', function (e) {		
+					var target = $(e.target);
+					switch( target.attr('href') ){
+						case "#database-info" :
+							if(! common.ui.exists($("#database-info-grid")) ){
+								common.ui.grid($('#database-info-grid'), {
+									dataSource: {
+										transport: { 
+											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+										},						
+										batch: false, 
+										schema: {
+											data: "databaseInfos",
+											model: common.ui.data.DatabaseInfo
+										},
+										error:common.ui.handleAjaxError
+									},
+									columns: [
+										{ title: "데이터베이스", field: "databaseVersion"},
+										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
+										{ title: "ISOLATION", field: "isolationLevel", width:90 },
+									],
+									pageable: false,
+									resizable: true,
+									editable : false,
+									scrollable: true,
+									height: 200,
+									change: function(e) {
+									}
+								});
+							}								
+							break;
+						case  '#license-info' :
+							createTemplateTree($("#custom-template-tree-view"), true);
+							break;
+					}					
+				});				
+							
+							/*			
 			$('#myTab a').click(function (e) {
 				e.preventDefault();					
 				if(  $(this).attr('href') == '#setup-info' ){
@@ -215,7 +254,9 @@
 						}					
 					}
 					$(this).tab('show');		
-			});				
+			});
+			*/
+			$('#template-tree-tabs a:first').tab('show');				
 		}
 		-->
 		</script> 		 
