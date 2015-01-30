@@ -146,10 +146,10 @@
 		function displayDiskUsage () {
 			var template = kendo.template( $("#disk-usage-row-template").html() );
 			var dataSource = common.ui.datasource(	'<@spring.url "/secure/data/stage/disk/list.json?output=json"/>', {
-					 change:function(e){
-						if(this.view().length>0)			
-							$("table .disk-usage-table-row").html(kendo.render(template, this.view()))
-					}		
+				 change:function(e){
+					if(this.view().length>0)			
+						$("table .disk-usage-table-row").html(kendo.render(template, this.view()))
+				}		
 			}).read();
 		}		
 				
