@@ -362,7 +362,7 @@
 						</div><!-- ./stat-panel -->					
 					</div>	
 					<div class="col-xs-6 col-lg-3">
-						<div class="stat-panel text-center">
+						<div class="stat-panel text-center animated fadeIn memory-details" data-bind="visible: visible" style="display:none;">
 							<div class="stat-row">						
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
 									<i class="fa fa-flash"></i> Heap 메모리
@@ -373,7 +373,7 @@
 									<div id="mem-gen-gauge" style="display: inline-block !important;"></div>									
 								</div>							
 							</div> <!-- /.stat-row -->						
-							<div class="stat-row memory-details" data-bind="visible: visible" style="display:none;">
+							<div class="stat-row">
 								<div class="stat-counters bg-primary bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
@@ -392,7 +392,7 @@
 						</div> <!-- /.stat-panel -->
 					</div>					
 					<div class="col-xs-6 col-lg-3">
-						<div class="stat-panel text-center">
+						<div class="stat-panel text-center animated fadeIn memory-details" data-bind="visible: visible" style="display:none;">
 							<div class="stat-row">
 								<!-- Dark gray background, small padding, extra small text, semibold text -->
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
@@ -405,7 +405,7 @@
 									<div id="perm-gen-gauge" style="display: inline-block !important;"></div>
 								</div>							
 							</div> <!-- /.stat-row -->
-							<div class="stat-row memory-details" data-bind="visible: visible" style="display:none;">
+							<div class="stat-row">
 								<div class="stat-counters bg-danger bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
