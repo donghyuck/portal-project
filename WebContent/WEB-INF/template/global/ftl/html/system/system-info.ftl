@@ -153,7 +153,8 @@
 			}).read();
 		}		
 				
-		function displaySystemDetails (){		
+		function displaySystemDetails (){	
+			
 			common.ui.ajax('<@spring.url "/secure/data/stage/os/get.json?output=json"/>', {
 				success : function( data ){
 					kendo.bind($(".system-details"), data );
@@ -196,7 +197,7 @@
 							createTemplateTree($("#custom-template-tree-view"), true);
 							break;
 					}					
-				});				
+			});				
 							
 							/*			
 			$('#myTab a').click(function (e) {
