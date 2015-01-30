@@ -1,145 +1,13 @@
 	<!- ================================ ->
 	<!-- SECURE TOOLBAR 										 -->
 	<!- ================================ ->
-	<script id="top-navbar-template" type="text/x-kendo-template">
-		<div class="navbar navbar-inverse navbar-fixed-top " role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="\\#">관리자 콘솔</a>
-				</div>
-				<form role="navigation" name="navbar-form" method="POST" accept-charset="utf-8">
-					<input type="hidden" id="output" name="output" value="html" />
-					<input type="hidden" id="companyId" name="targetCompanyId" value="${action.user.company.companyId}" />
-					<input type="hidden" id="targetSiteId" name="targetSiteId" value="0" />
-				</form>			
-				<div class="navbar-form navbar-left">
-					<div class="form-group">
-						<div id="companyDropDownList"></div>
-					</div>					
-				</div>			
-				<div class="collapse navbar-collapse navbar-ex1-collapse">					
-					<ul class="nav navbar-nav">						
-					<#assign webSiteMenu = action.getWebSiteMenu("SYSTEM_MENU") />
-					<#list webSiteMenu.components as item >
-						<#if  item.components?has_content >
-						<li class="dropdown">
-							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${item.title}<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-							<#list item.components as sub_item >	
-							<#if WebSiteUtils.isUserAccessAllowed(request, sub_item ) >						
-							<#if sub_item.components?has_content >
-								<li class="dropdown-submenu">
-									<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">${sub_item.title}</a>
-									<ul class="dropdown-menu">
-										<#list sub_item.components as sub_sub_item >
-										<li><a href="${sub_sub_item.page}" data-description="${sub_sub_item.description}" >${ sub_sub_item.title }</a></li>
-										</#list>
-									</ul>
-								</li>
-								<#else>								
-								<li><a href="${sub_item.page}" data-description="${sub_item.description}" >${sub_item.title}</a></li>
-							</#if>
-							</#if>								
-							</#list>
-							</ul>
-						</li>						
-						<#else>
-						<li><a href="\\#">${ item.title }</a></li>
-						</#if>							
-					</#list>	
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="${request.contextPath}/main.do"><i class="fa fa-home"></i> 사용자 홈</a></li>
-						<li class="dropdown">
-							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ${action.user.name} <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="\\#">Action</a></li>
-								<li><a href="\\#">Another action</a></li>
-								<li><a href="\\#">Something else here</a></li>
-								<li><a href="${request.contextPath}/logout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
-							</ul>
-						</li>
-						<li>
-							<p class="navbar-text"></p>
-						</li>
-					</ul>					
-				</div>
-			</div>
-		</div>	
-	</script>	
-		
-	<script id="topnavbar-template" type="text/x-kendo-template">
-		<div class="navbar navbar-inverse navbar-fixed-top " role="navigation">
-			<div class="container-fluid">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="\\#">관리자 콘솔</a>
-				</div>
-				<form role="navigation" name="navbar-form" method="POST" accept-charset="utf-8">
-					<input type="hidden" id="output" name="output" value="html" />
-					<input type="hidden" id="companyId" name="targetCompanyId" value="${action.user.company.companyId}" />
-					<input type="hidden" id="targetSiteId" name="targetSiteId" value="0" />
-				</form>			
-				<div class="navbar-form navbar-left">
-					<div class="form-group">
-						<div id="companyDropDownList"></div>
-					</div>					
-				</div>			
-				<div class="collapse navbar-collapse navbar-ex1-collapse">					
-					<ul class="nav navbar-nav">
-					# for (var i = 0; i < data.length; i++) { #
-						# var item =data[i] ; #
-						#if ( item.components.length > 0) { #	
-						<li class="dropdown">
-							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown">#= item.title # <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-							# for ( var j = 0 ; j <item.components.length ; j ++ ) { #
-								# var sub_item =item.components[j] ; #
-								<li><a href="\\#" #if (sub_item.page != 'null' && sub_item.page != '')  { # action="#=sub_item.page#" description="#=sub_item.description#" # } # >#= sub_item.title #</a></li>
-							# } #
-							</ul>							
-						</li>
-						# } else { #	
-						<li><a href="\\#">#= item.title #</a></li>
-						# } #
-					# } #
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="${request.contextPath}/main.do"><i class="fa fa-home"></i> 사용자 홈</a></li>
-						<li class="dropdown">
-							<a href="\\#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> ${action.user.name} <b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<li><a href="\\#">Action</a></li>
-								<li><a href="\\#">Another action</a></li>
-								<li><a href="\\#">Something else here</a></li>
-								<li><a href="${request.contextPath}/logout"><i class="fa fa-sign-out"></i> 로그아웃</a></li>
-							</ul>
-						</li>
-						<li>
-							<p class="navbar-text"></p>
-						</li>
-					</ul>					
-				</div>
-			</div>
-		</div>	
-	</script>	
+	
 	<!- ================================ ->
 	<!-- SECURE ATTACH DETAIL								 -->
 	<!- ================================ ->	
 		<script id="attach-details-template" type="text/x-kendo-template">	
 			<span class="label label-info">#= contentType #</span>
-			<a href="${request.contextPath}/secure/download-attachment.do?attachmentId=#= attachmentId #" class="btn btn-sm btn-warning">다운로드</a>
+			<a href="<@spring.url "/secure/download-attachment.do?attachmentId=#= attachmentId #"/>" class="btn btn-sm btn-warning">다운로드</a>
 		</script>		
 	<!- ================================ ->
 	<!-- COMPANY SETTING MODAL TEMPLAGE 		 -->
@@ -343,7 +211,7 @@
 <script type="text/x-kendo-tmpl" id="logo-list-view-template">
 	<div class="media">
 		<a class="pull-left" href="\\#">
-		<img class="media-object" src="${request.contextPath}/secure/download-logo-image.do?logoId=#=logoId#" alt="...">
+		<img class="media-object" src="<@spring.url "/secure/download-logo-image.do?logoId=#=logoId#"/>" alt="...">
 		</a>
 		<div class="media-body">
 			<p>파일 : #: filename# <span class="label label-info">#: imageContentType #</span></p>
