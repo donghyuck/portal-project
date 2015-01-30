@@ -40,6 +40,7 @@
 						e.data.copy(targetCompany);
 					}
 				});		
+				
 				// memory dataSource
 				var dataSource = common.ui.datasource(	'<@spring.url "/secure/view-system-memory.do?output=json"/>',	{
 					schema: { 
@@ -232,7 +233,7 @@
 						<div class="stat-panel system-details">
 							<div class="stat-row">
 								<!-- Bordered, without right border, top aligned text -->
-								<div class="stat-cell col-sm-5 bordered no-border-r padding-sm-hr valign-top">									
+								<div class="stat-cell col-sm-12 bordered no-border-r padding-sm-hr valign-top">									
 									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-desktop text-primary"></i></h4>
 									<!-- Without margin -->
 									<i class="fa fa-desktop bg-icon" style="font-size:60px;line-height:80px;height:80px;top: 0;"></i>
@@ -244,25 +245,29 @@
 											OS <span class="pull-right" data-bind="text: operatingSystem">Unknown</span>
 										</li> <!-- / .list-group-item -->
 									</ul>
+									<div class="table-light">
+										<div class="table-header">
+											<div class="table-caption">
+												Light Table
+											</div>
+										</div>
+										<table class="table">
+											<thead>
+												<tr>
+													<th>위치</th>
+													<th>사용 중인 공간</th>
+													<th>사용 가능한 공간</th>
+													<th>전체 용량</th>
+												</tr>
+											</thead>
+											<tbody class="valign-middle disk-usage-table-row">
+											</tbody>
+										</table>		
+										<div class="table-footer">
+										<small class="text-danger"><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
+										</div>
+									</div>	
 								</div> <!-- /.stat-cell -->
-								<!-- Primary background, small padding, vertically centered text -->
-								<div class="stat-cell col-sm-7 bg-primary bordered  padding-sm valign-middle">
-									<table class="table">
-										<thead>
-											<tr>
-												<th>위치</th>
-												<th>사용 중인 공간</th>
-												<th>사용 가능한 공간</th>
-												<th>전체 용량</th>
-											</tr>
-										</thead>
-										<tbody class="valign-middle disk-usage-table-row">
-										</tbody>
-									</table>		
-									<span class="text-danger">
-										<small><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
-									</span>							
-								</div>
 							</div>
 						</div><!-- ./stat-panel -->					
 					</div>	
