@@ -210,7 +210,7 @@
 		-->
 		</script> 		 
 		<style>
-			table-light .table thead th {
+			.table-light .table thead th {
 				text-align: center;
 			}
 			
