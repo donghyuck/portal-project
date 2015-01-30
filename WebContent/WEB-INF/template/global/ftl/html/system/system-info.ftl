@@ -249,10 +249,10 @@
 									<div class="table-light">
 										<div class="table-header">
 											<div class="table-caption">
-												Light Table
+												DISK 정보
 											</div>
 										</div>
-										<table class="table">
+										<table class="table table-bordered">
 											<thead>
 												<tr>
 													<th>위치</th>
@@ -262,6 +262,7 @@
 												</tr>
 											</thead>
 											<tbody class="valign-middle disk-usage-table-row">
+											
 											</tbody>
 										</table>		
 										<div class="table-footer">
