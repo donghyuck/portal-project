@@ -210,9 +210,14 @@
 		-->
 		</script> 		 
 		<style>
-			.table thead th {
+			table-light .table thead th {
 				text-align: center;
 			}
+			
+			table-light .table-footer {
+				margin-top:-20px;
+			}
+			
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -247,7 +252,7 @@
 											OS <span class="pull-right" data-bind="text: operatingSystem">Unknown</span>
 										</li> <!-- / .list-group-item -->
 									</ul>
-									<div class="table-light">
+									<div class="table-light m-t-sm">
 										<div class="table-header">
 											<div class="table-caption">
 												DISK 정보
