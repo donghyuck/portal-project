@@ -94,33 +94,7 @@
 						observable.set("availablePermGen", response.availablePermGen.megabytes );
 						observable.set("usedPermGen", response.usedPermGen.megabytes );
 						observable.set("visible", true );			
-						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
-								$("#mem-gen-gauge").kendoRadialGauge({
-									theme: "white",
-									pointer: {
-										value: observable.usedHeap,
-										color: "#ea7001"									
-									},
-									scale: {
-										majorUnit: 100,
-										minorUnit: 10,
-										startAngle: -30,
-	                            		endAngle: 210,
-										max: observable.maxHeap,
-										ranges: [
-											{
-												from:  ( observable.maxHeap -  ( ( observable.maxHeap / 10 ) * 2 ) ) ,
-												to:  ( observable.maxHeap -  observable.maxHeap / 10 ) ,
-												color: "#ff7a00"
-											}, {
-												from: ( observable.maxHeap -  observable.maxHeap / 10 ) ,
-												to: observable.maxHeap,
-												color: "#c20000"
-											}
-										]			
-									}
-								});						
-						}													
+						
 						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
 							$("#perm-gen-gauge").kendoRadialGauge({
 								theme: "white",
@@ -146,7 +120,8 @@
 										}
 								]								
 							}
-						});									
+						});													
+								
 					}
 				})
 			}, 6000);			
@@ -167,7 +142,32 @@
 						observable.set("visible", true );	
 								
 					
-	
+						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
+							$("#perm-gen-gauge").kendoRadialGauge({
+								theme: "white",
+								pointer: {
+									value: observable.usedPermGen,
+									color: "#ea7001"		
+								},
+								scale: {
+									majorUnit: 50,
+									minorUnit: 10,
+									startAngle: -30,
+									endAngle: 210,
+									max: observable.maxPermGen,
+									ranges: [
+										{
+											from:  ( observable.maxPermGen -  ( ( observable.maxPermGen / 10 ) * 2 ) ) ,
+											to:  ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
+											color: "#ff7a00"
+										}, {
+											from: ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
+											to: observable.maxPermGen,
+											color: "#c20000"
+										}
+								]								
+							}
+						});		
 					
 				});	
 				
