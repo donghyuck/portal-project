@@ -82,7 +82,7 @@
 			});									
 			common.ui.bind($(".memory-details"), observable );		
 						
-			 setInterval(function () {
+			 setInterval(function(){
 				common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
 					success : function(response){
 						observable.set("allocateHeap", response.allocateHeap.megabytes );
@@ -149,9 +149,9 @@
 							}
 						});									
 					}
-				});					
+				});		
+							
 			}, 6000);							
-		}
 		
 		
 		function displayDiskUsage () {
