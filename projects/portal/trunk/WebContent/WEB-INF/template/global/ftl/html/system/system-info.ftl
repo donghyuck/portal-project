@@ -58,8 +58,7 @@
 			}
 		}]);
 		
-		function createMemoryGauge(){
-		
+		function createMemoryGauge(){		
 			var observable =  common.ui.observable({ 
 				visible : false,
 				allocateHeap : 0,
@@ -70,8 +69,7 @@
 				maxPermGen : 0,
 				availablePermGen : 0,
 				usedPermGen : 0				
-			});	
-			
+			});				
 			observable.bind("change", function(e){		
 				var sender = e.sender ;				
 				if( e.field === 'usedHeap' ){
@@ -82,9 +80,8 @@
 						$("#perm-gen-gauge").data("kendoRadialGauge").value(sender.usedPermGen);
 				}
 			});									
-			common.ui.bind($(".memory-details"), observable );		
-						
-			 setInterval(function(){
+			common.ui.bind($(".memory-details"), observable );								
+			setInterval(function(){
 				common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
 					success : function(response){
 						observable.set("allocateHeap", response.allocateHeap.megabytes );
@@ -153,60 +150,7 @@
 						}		
 					}
 				})
-			}, 6000);			
-			
-				
-					/*
-					success : function(response){
-					
-				
-						observable.set("allocateHeap", response.allocateHeap.megabytes );
-						observable.set("availableHeap", response.availableHeap.megabytes );
-						observable.set("maxHeap", response.maxHeap.megabytes );
-						observable.set("usedHeap", response.usedHeap.megabytes );
-						observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
-						observable.set("maxPermGen", response.maxPermGen.megabytes );
-						observable.set("availablePermGen", response.availablePermGen.megabytes );
-						observable.set("usedPermGen", response.usedPermGen.megabytes );
-						observable.set("visible", true );	
-								
-						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
-								$("#mem-gen-gauge").kendoRadialGauge({
-									theme: "white",
-									pointer: {
-										value: observable.usedHeap,
-										color: "#ea7001"									
-									},
-									scale: {
-										majorUnit: 100,
-										minorUnit: 10,
-										startAngle: -30,
-	                            		endAngle: 210,
-										max: observable.maxHeap,
-										ranges: [
-											{
-												from:  ( observable.maxHeap -  ( ( observable.maxHeap / 10 ) * 2 ) ) ,
-												to:  ( observable.maxHeap -  observable.maxHeap / 10 ) ,
-												color: "#ff7a00"
-											}, {
-												from: ( observable.maxHeap -  observable.maxHeap / 10 ) ,
-												to: observable.maxHeap,
-												color: "#c20000"
-											}
-										]			
-									}
-								});						
-						}						
-						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
-									
-					
-				});	
-				
-			
-			
-			*/
-			
-							
+			}, 6000);						
 		}
 		
 		function displayDiskUsage () {
