@@ -93,26 +93,7 @@
 						observable.set("maxPermGen", response.maxPermGen.megabytes );
 						observable.set("availablePermGen", response.availablePermGen.megabytes );
 						observable.set("usedPermGen", response.usedPermGen.megabytes );
-						observable.set("visible", true );					
-					}
-				})
-			}, 6000);			
-			
-				
-					/*
-					success : function(response){
-					
-				
-						observable.set("allocateHeap", response.allocateHeap.megabytes );
-						observable.set("availableHeap", response.availableHeap.megabytes );
-						observable.set("maxHeap", response.maxHeap.megabytes );
-						observable.set("usedHeap", response.usedHeap.megabytes );
-						observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
-						observable.set("maxPermGen", response.maxPermGen.megabytes );
-						observable.set("availablePermGen", response.availablePermGen.megabytes );
-						observable.set("usedPermGen", response.usedPermGen.megabytes );
-						observable.set("visible", true );	
-								
+						observable.set("visible", true );			
 						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
@@ -139,7 +120,7 @@
 										]			
 									}
 								});						
-						}						
+						}													
 						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
 							$("#perm-gen-gauge").kendoRadialGauge({
 								theme: "white",
@@ -165,7 +146,28 @@
 										}
 								]								
 							}
-						});		
+						});									
+					}
+				})
+			}, 6000);			
+			
+				
+					/*
+					success : function(response){
+					
+				
+						observable.set("allocateHeap", response.allocateHeap.megabytes );
+						observable.set("availableHeap", response.availableHeap.megabytes );
+						observable.set("maxHeap", response.maxHeap.megabytes );
+						observable.set("usedHeap", response.usedHeap.megabytes );
+						observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
+						observable.set("maxPermGen", response.maxPermGen.megabytes );
+						observable.set("availablePermGen", response.availablePermGen.megabytes );
+						observable.set("usedPermGen", response.usedPermGen.megabytes );
+						observable.set("visible", true );	
+								
+					
+	
 					
 				});	
 				
