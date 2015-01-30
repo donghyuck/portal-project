@@ -205,66 +205,7 @@
 							break;
 					}					
 			});				
-			$('#myTab a:first').tab('show');						
-							/*			
-			$('#myTab a').click(function (e) {
-				e.preventDefault();					
-				if(  $(this).attr('href') == '#setup-info' ){
-						if(!common.ui.exists($("#setup-props-grid")) ){
-							common.ui.grid($('#setup-props-grid'), {
-								dataSource : {
-									transport: { 
-										read: { url:'/secure/view-system-setup-props.do?output=json', type:'post' }
-									},
-									schema: {
-										data: "setupApplicationProperties",
-										model: common.ui.data.Property
-									}
-								},
-								columns: [
-										{ title: "속성", field: "name", width:400 },
-										{ title: "값",   field: "value"}
-									],
-								pageable: false,
-								resizable: true,
-								editable : false,
-								scrollable: true,
-								height: 600
-							});									
-						}
-					}else if(  $(this).attr('href') == '#database-info' ){
-						if(! common.ui.exists($("#database-info-grid")) ){
-							common.ui.grid($('#database-info-grid'), {
-									dataSource: {
-										transport: { 
-											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
-										},						
-										batch: false, 
-										schema: {
-											data: "databaseInfos",
-											model: common.ui.data.DatabaseInfo
-										},
-										error:common.ui.handleAjaxError
-									},
-									columns: [
-										{ title: "데이터베이스", field: "databaseVersion"},
-										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
-										{ title: "ISOLATION", field: "isolationLevel", width:90 },
-									],
-									pageable: false,
-									resizable: true,
-									editable : false,
-									scrollable: true,
-									height: 200,
-									change: function(e) {
-									}
-								});
-						}					
-					}
-					$(this).tab('show');		
-			});
-			*/
-					
+			$('#myTab a:first').tab('show');								
 		}
 		-->
 		</script> 		 
