@@ -85,6 +85,8 @@
 			 setInterval(function(){
 				common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
 					success : function(response){
+					
+					/*
 						observable.set("allocateHeap", response.allocateHeap.megabytes );
 						observable.set("availableHeap", response.availableHeap.megabytes );
 						observable.set("maxHeap", response.maxHeap.megabytes );
@@ -147,10 +149,9 @@
 										}
 								]								
 							}
-						});									
-					}
-				});		
-							
+						});		
+					*/
+				});	// .end of ajax call
 			}, 6000);							
 		
 		
