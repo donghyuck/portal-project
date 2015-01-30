@@ -341,7 +341,7 @@
 									<div id="mem-gen-gauge" style="display: inline-block !important;"></div>									
 								</div>							
 							</div> <!-- /.stat-row -->						
-							<div class="stat-row memory-details" data-bind="visible: visible">
+							<div class="stat-row memory-details" data-bind="visible: visible" style="display:none;">
 								<div class="stat-counters bg-primary bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
@@ -373,7 +373,7 @@
 									<div id="perm-gen-gauge" style="display: inline-block !important;"></div>
 								</div>							
 							</div> <!-- /.stat-row -->
-							<div class="stat-row memory-details" data-bind="visible: visible">
+							<div class="stat-row memory-details" data-bind="visible: visible" style="display:none;">
 								<div class="stat-counters bg-danger bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
