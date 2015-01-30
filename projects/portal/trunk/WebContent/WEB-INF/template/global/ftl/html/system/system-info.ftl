@@ -245,6 +245,7 @@
 											OS <span class="pull-right" data-bind="text: operatingSystem">Unknown</span>
 										</li> <!-- / .list-group-item -->
 									</ul>
+									<div class="header-2">DISK 정보</div>
 									<div class="table-light">
 										<div class="table-header">
 											<div class="table-caption">
