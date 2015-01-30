@@ -95,7 +95,33 @@
 						observable.set("usedPermGen", response.usedPermGen.megabytes );
 						observable.set("visible", true );		
 						
-							
+						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
+								$("#mem-gen-gauge").kendoRadialGauge({
+									theme: "white",
+									pointer: {
+										value: observable.usedHeap,
+										color: "#ea7001"									
+									},
+									scale: {
+										majorUnit: 100,
+										minorUnit: 10,
+										startAngle: -30,
+	                            		endAngle: 210,
+										max: observable.maxHeap,
+										ranges: [
+											{
+												from:  ( observable.maxHeap -  ( ( observable.maxHeap / 10 ) * 2 ) ) ,
+												to:  ( observable.maxHeap -  observable.maxHeap / 10 ) ,
+												color: "#ff7a00"
+											}, {
+												from: ( observable.maxHeap -  observable.maxHeap / 10 ) ,
+												to: observable.maxHeap,
+												color: "#c20000"
+											}
+										]			
+									}
+								});						
+						}							
 												
 								
 					}
