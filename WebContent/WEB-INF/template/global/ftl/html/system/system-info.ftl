@@ -74,6 +74,7 @@
 			
 			observable.bind("change", function(e){		
 				var sender = e.sender ;
+				alert(e.field);
 				if( e.field.match('^maxHeap') ){
 					if( $("#mem-gen-gauge").data("kendoRadialGauge") )
 				 		$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.maxHeap);
