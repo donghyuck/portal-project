@@ -42,7 +42,7 @@
 				});		
 				
 				// memory dataSource
-				var dataSource = common.ui.datasource(	'<@spring.url "/secure//stage/memory/get.json?output=json"/>',	{
+				var dataSource = common.ui.datasource(	'<@spring.url "/secure/data/stage/memory/get.json?output=json"/>',	{
 					schema: { 
 						data: function(response){
 							return [ response ] ; 
@@ -50,8 +50,7 @@
 					},
 					change: function( e 	) { // subscribe to the CHANGE event of the data source
 						var data = this.data()[0];						
-						common.ui.bind($(".memory-details"), data.memoryInfo );		
-											
+						common.ui.bind($(".memory-details"), data.memoryInfo );
 						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
