@@ -42,16 +42,6 @@
 				});		
 				
 				createMemoryGauge();
-				
-											
-
-					
-
-				
-							
-				
-				
-				
 				displayDiskUsage();
 				displaySystemDetails();					
 				// END SCRIPT
@@ -156,15 +146,12 @@
 		function displayDiskUsage () {
 			var template = kendo.template( $("#disk-usage-row-template").html() );
 			var dataSource = common.ui.datasource(
-				'<@spring.url "/secure/view-system-diskusage.do?output=json"/>', // the remove service url
+				'<@spring.url "/secure/data/stage/disk/list.json?output=json"/>', // the remove service url
 				{
-					schema: { 
-						data: "diskUsages"
-                    },
-                    change:function(e){
-                    	if(this.view().length>0)			
+					 change:function(e){
+						if(this.view().length>0)			
 							$("table .disk-usage-table-row").html(kendo.render(template, this.view()))
-                    }		
+					}		
 			}).read();
 		}		
 				
