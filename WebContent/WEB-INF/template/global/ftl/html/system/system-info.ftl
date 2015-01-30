@@ -45,7 +45,7 @@
 				var dataSource = common.ui.datasource(	'<@spring.url "/secure/data/stage/memory/get.json?output=json"/>',	{
 					schema: { 
 						data: function(response){
-							return [ response ] ; 
+							return response ; 
 						}
 					},
 					change: function( e 	) { // subscribe to the CHANGE event of the data source
