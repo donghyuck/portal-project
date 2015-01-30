@@ -210,7 +210,9 @@
 		-->
 		</script> 		 
 		<style>
-		
+			.table thead {
+				font-size : 13px;
+			}
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -245,7 +247,6 @@
 											OS <span class="pull-right" data-bind="text: operatingSystem">Unknown</span>
 										</li> <!-- / .list-group-item -->
 									</ul>
-									<div class="header-2">DISK 정보</div>
 									<div class="table-light">
 										<div class="table-header">
 											<div class="table-caption">
@@ -261,9 +262,7 @@
 													<th>전체 용량</th>
 												</tr>
 											</thead>
-											<tbody class="valign-middle disk-usage-table-row">
-											
-											</tbody>
+											<tbody class="valign-middle disk-usage-table-row"></tbody>
 										</table>		
 										<div class="table-footer">
 										<small class="text-danger"><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
