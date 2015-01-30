@@ -40,34 +40,62 @@
 						e.data.copy(targetCompany);
 					}
 				});		
+				
+				createMemoryGauge();
+				
 											
-				var observable =  common.ui.observable({ 
-					visible : false,
-					allocateHeap : 0,
-					availableHeap : 0,
-					maxHeap : 0,
-					usedHeap : 0,
-					freeAllocatedHeap : 0,
-					maxPermGen : 0,
-					availablePermGen : 0,
-					usedPermGen : 0
-				});					
-				common.ui.bind($(".memory-details"), observable );				
-				var timer = setInterval(function () {
-					//dataSource.read();
-					//clearInterval(timer);					
-					common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
-						success : function(response){
-							observable.set("allocateHeap", response.allocateHeap.megabytes );
-							observable.set("availableHeap", response.availableHeap.megabytes );
-							observable.set("maxHeap", response.maxHeap.megabytes );
-							observable.set("usedHeap", response.usedHeap.megabytes );
-							observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
-							observable.set("maxPermGen", response.maxPermGen.megabytes );
-							observable.set("availablePermGen", response.availablePermGen.megabytes );
-							observable.set("usedPermGen", response.usedPermGen.megabytes );
-							observable.set("visible", true );
-							if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
+
+					
+
+				
+							
+				
+				
+				
+				displayDiskUsage();
+				displaySystemDetails();					
+				// END SCRIPT
+			}
+		}]);
+		
+		function createMemoryGauge(){
+		
+			var observable =  common.ui.observable({ 
+				visible : false,
+				allocateHeap : 0,
+				availableHeap : 0,
+				maxHeap : 0,
+				usedHeap : 0,
+				freeAllocatedHeap : 0,
+				maxPermGen : 0,
+				availablePermGen : 0,
+				usedPermGen : 0
+			});	
+			
+			observable.bind("change", function(e){		
+				var sender = e.sender ;
+				if( e.field.match('^maxHeap') ){
+				 	$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.maxHeap);
+				}else if (e.field.match('^usedPermGen')){
+					$("#perm-gen-gauge").data("kendoRadialGauge").value(sender.usedPermGen);
+				}
+			});									
+			common.ui.bind($(".memory-details"), observable );		
+						
+			 setInterval(function () {
+				common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
+					success : function(response){
+						observable.set("allocateHeap", response.allocateHeap.megabytes );
+						observable.set("availableHeap", response.availableHeap.megabytes );
+						observable.set("maxHeap", response.maxHeap.megabytes );
+						observable.set("usedHeap", response.usedHeap.megabytes );
+						observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
+						observable.set("maxPermGen", response.maxPermGen.megabytes );
+						observable.set("availablePermGen", response.availablePermGen.megabytes );
+						observable.set("usedPermGen", response.usedPermGen.megabytes );
+						observable.set("visible", true );	
+								
+						if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
@@ -93,44 +121,38 @@
 										]			
 									}
 								});						
+						}						
+						if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
+							$("#perm-gen-gauge").kendoRadialGauge({
+								theme: "white",
+								pointer: {
+									value: observable.usedPermGen,
+									color: "#ea7001"		
+								},
+								scale: {
+									majorUnit: 50,
+									minorUnit: 10,
+									startAngle: -30,
+									endAngle: 210,
+									max: observable.maxPermGen,
+									ranges: [
+										{
+											from:  ( observable.maxPermGen -  ( ( observable.maxPermGen / 10 ) * 2 ) ) ,
+											to:  ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
+											color: "#ff7a00"
+										}, {
+											from: ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
+											to: observable.maxPermGen,
+											color: "#c20000"
+										}
+								]								
 							}
-							if( ! $("#perm-gen-gauge").data("kendoRadialGauge") ){	
-								$("#perm-gen-gauge").kendoRadialGauge({
-									theme: "white",
-									pointer: {
-										value: observable.usedPermGen,
-										color: "#ea7001"		
-									},
-									scale: {
-										majorUnit: 50,
-										minorUnit: 10,
-										startAngle: -30,
-	                            		endAngle: 210,
-										max: observable.maxPermGen.megabytes,
-										ranges: [
-											{
-												from:  ( observable.maxPermGen -  ( ( observable.maxPermGen / 10 ) * 2 ) ) ,
-												to:  ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
-												color: "#ff7a00"
-											}, {
-												from: ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
-												to: observable.maxPermGen,
-												color: "#c20000"
-											}
-										]								
-									}
-								});		
-							}							
-						}
-					} );					
-				}, 6000);		
-				
-				
-				displayDiskUsage();
-				displaySystemDetails();					
-				// END SCRIPT
-			}
-		}]);
+						});									
+					}
+				});					
+			}, 6000);							
+		}
+		
 		
 		function displayDiskUsage () {
 			var template = kendo.template( $("#disk-usage-row-template").html() );
