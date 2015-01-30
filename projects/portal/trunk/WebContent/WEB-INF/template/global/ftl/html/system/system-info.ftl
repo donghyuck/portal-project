@@ -69,7 +69,7 @@
 				freeAllocatedHeap : 0,
 				maxPermGen : 0,
 				availablePermGen : 0,
-				usedPermGen : 0
+				usedPermGen : 0				
 			});	
 			
 			observable.bind("change", function(e){		
@@ -84,7 +84,17 @@
 						
 			 setInterval(function(){
 				common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
-				
+					success : function(response){
+						observable.set("allocateHeap", response.allocateHeap.megabytes );
+						observable.set("availableHeap", response.availableHeap.megabytes );
+						observable.set("maxHeap", response.maxHeap.megabytes );
+						observable.set("usedHeap", response.usedHeap.megabytes );
+						observable.set("freeAllocatedHeap", response.freeAllocatedHeap.megabytes );
+						observable.set("maxPermGen", response.maxPermGen.megabytes );
+						observable.set("availablePermGen", response.availablePermGen.megabytes );
+						observable.set("usedPermGen", response.usedPermGen.megabytes );
+						observable.set("visible", true );					
+					}
 				})
 			}, 6000);			
 			
