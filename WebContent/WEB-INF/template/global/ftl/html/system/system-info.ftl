@@ -156,14 +156,13 @@
 		function displaySystemDetails (){		
 			common.ui.ajax('<@spring.url "/secure/data/stage/os/get.json?output=json"/>', {
 				success : function( data ){
-					kendo.bind($(".system-details"), data );			
-					//kendo.bind($(".license-details"), data.licenseInfo );					
+					kendo.bind($(".system-details"), data );
 				}
 			});	
 						
-				$('#myTab a').click(function (e) {
-					e.preventDefault();					
-					if(  $(this).attr('href') == '#setup-info' ){
+			$('#myTab a').click(function (e) {
+				e.preventDefault();					
+				if(  $(this).attr('href') == '#setup-info' ){
 						if(!common.ui.exists($("#setup-props-grid")) ){
 							common.ui.grid($('#setup-props-grid'), {
 								dataSource : {
@@ -358,14 +357,11 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
-									<li class="active">
-										<a href="#license-info" data-toggle="tab">라이센스 정보</a>
-									</li>
-									<li>
-										<a href="#setup-info" data-toggle="tab">셋업 프로퍼티 정보</a>
-									</li>
 									<li>
 										<a href="#system-info" data-toggle="tab">시스템 환경 정보</a>
+									</li>
+									<li>
+										<a href="#license-info" data-toggle="tab">라이센스 정보</a>
 									</li>
 									<li>
 										<a href="#database-info" data-toggle="tab">데이터베이스 정보</a>
@@ -407,29 +403,6 @@
 															</tr>	
 													 	</tbody>
 													</table>		
-								</div>
-								<div class="tab-pane" id="setup-info">
-									<div class="panel-body padding-sm">
-									<div class="note note-default no-margin-b no-border-vr">
-										<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하세요.
-										<table class="table table-striped">
-											<thead>
-														<tr>
-															<th>#</th>
-															<th>이름(키)</th>
-															<th>설명</th>														
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>1</td>
-															<td>##</td>
-															<td><code>true</code> ##</td>														
-														</tr>											
-													</tbody>
-									</table></div>		
-									</div>						
-									<div id="setup-props-grid" class="no-border-hr no-border-b" ></div>		
 								</div>
 								<div class="tab-pane" id="system-info">
 									<table class="table table-hover system-details">
