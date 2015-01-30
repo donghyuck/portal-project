@@ -300,13 +300,13 @@
 								<div class="stat-counters bg-primary bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: maxHeap.megabytes"></span>MB</strong></span><br>
+										<span class="text-bg"><strong><span data-bind="text: maxHeap"></span>MB</strong></span><br>
 										<!-- Extra small text -->
 										<span class="text-xs">Total Memory</span>
 									</div>
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: usedHeap.megabytes"></span>MB</strong></span><br>
+										<span class="text-bg"><strong><span data-bind="text: usedHeap"></span>MB</strong></span><br>
 										<!-- Extra small text -->
 										<span class="text-xs">Used Memory</span>
 									</div>
@@ -332,13 +332,13 @@
 								<div class="stat-counters bg-danger bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: maxPermGen.megabytes"></span>MB</strong></span><br>
+										<span class="text-bg"><strong><span data-bind="text: maxPermGen"></span>MB</strong></span><br>
 										<!-- Extra small text -->
 										<span class="text-xs">Total Memory</span>
 									</div>
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: usedPermGen.megabytes"></span>MB</strong></span><br>
+										<span class="text-bg"><strong><span data-bind="text: usedPermGen"></span>MB</strong></span><br>
 										<!-- Extra small text -->
 										<span class="text-xs">Used Memory</span>
 									</div>
