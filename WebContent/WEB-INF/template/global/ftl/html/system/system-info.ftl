@@ -194,7 +194,14 @@
 							}								
 							break;
 						case  '#license-info' :
-							createTemplateTree($("#custom-template-tree-view"), true);
+							if( !$("#license-info").data("on") ){
+								/*common.ui.ajax('<@spring.url "/secure/data/stage//get.json?output=json"/>', {
+									success : function( data ){
+										kendo.bind($(".license-details"), data );
+										$("#license-info").data("on", true)
+									}
+								});		*/						
+							} 
 							break;
 					}					
 			});				
