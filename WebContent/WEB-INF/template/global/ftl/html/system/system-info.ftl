@@ -78,7 +78,7 @@
 				if( e.field === 'maxHeap' ){
 					if( $("#mem-gen-gauge").data("kendoRadialGauge") )
 				 		$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.maxHeap);
-				}else if (e.field === 'usedPermGen')){
+				}else if (e.field === 'usedPermGen'){
 					if( $("#perm-gen-gauge").data("kendoRadialGauge") )
 						$("#perm-gen-gauge").data("kendoRadialGauge").value(sender.usedPermGen);
 				}
