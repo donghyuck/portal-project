@@ -210,8 +210,9 @@
 		-->
 		</script> 		 
 		<style>
-			.table thead {
+			.table thead th {
 				font-size : 13px;
+				text-align: center;
 			}
 		</style>
 	</head>
