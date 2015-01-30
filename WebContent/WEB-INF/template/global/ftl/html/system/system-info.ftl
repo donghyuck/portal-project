@@ -75,9 +75,11 @@
 			observable.bind("change", function(e){		
 				var sender = e.sender ;
 				if( e.field.match('^maxHeap') ){
-				 	$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.maxHeap);
+					if( $("#mem-gen-gauge").data("kendoRadialGauge") )
+				 		$("#mem-gen-gauge").data("kendoRadialGauge").value(sender.maxHeap);
 				}else if (e.field.match('^usedPermGen')){
-					$("#perm-gen-gauge").data("kendoRadialGauge").value(sender.usedPermGen);
+					if( $("#perm-gen-gauge").data("kendoRadialGauge") )
+						$("#perm-gen-gauge").data("kendoRadialGauge").value(sender.usedPermGen);
 				}
 			});									
 			common.ui.bind($(".memory-details"), observable );		
