@@ -85,6 +85,10 @@
 			 setInterval(function(){
 				common.ui.ajax('<@spring.url "/secure/data/stage/memory/get.json?output=json"/>', {
 				
+				})
+			}, 6000);			
+			
+				
 					/*
 					success : function(response){
 					
@@ -154,9 +158,13 @@
 						});		
 					
 				});	
-				*/
-			}, 6000);							
-		
+				
+			
+			
+			*/
+			
+							
+		}
 		
 		function displayDiskUsage () {
 			var template = kendo.template( $("#disk-usage-row-template").html() );
