@@ -70,7 +70,7 @@
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
-										value: data.memoryInfo.usedHeap.megabytes,
+										value: observable.usedHeap,
 										color: "#ea7001"									
 									},
 									scale: {
@@ -78,15 +78,15 @@
 										minorUnit: 10,
 										startAngle: -30,
 	                            		endAngle: 210,
-										max: data.memoryInfo.maxHeap.megabytes,
+										max: observable.maxHeap,
 										ranges: [
 											{
-												from:  ( data.memoryInfo.maxHeap.megabytes -  ( ( data.memoryInfo.maxHeap.megabytes / 10 ) * 2 ) ) ,
-												to:  ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
+												from:  ( observable.maxHeap -  ( ( observable.maxHeap / 10 ) * 2 ) ) ,
+												to:  ( observable.maxHeap -  observable.maxHeap / 10 ) ,
 												color: "#ff7a00"
 											}, {
-												from: ( data.memoryInfo.maxHeap.megabytes -  data.memoryInfo.maxHeap.megabytes / 10 ) ,
-												to: data.memoryInfo.maxHeap.megabytes,
+												from: ( observable.maxHeap -  observable.maxHeap / 10 ) ,
+												to: observable.maxHeap,
 												color: "#c20000"
 											}
 										]			
@@ -97,7 +97,7 @@
 								$("#perm-gen-gauge").kendoRadialGauge({
 									theme: "white",
 									pointer: {
-										value: data.memoryInfo.usedPermGen.megabytes,
+										value: observable.usedPermGen,
 										color: "#ea7001"		
 									},
 									scale: {
@@ -105,15 +105,15 @@
 										minorUnit: 10,
 										startAngle: -30,
 	                            		endAngle: 210,
-										max: data.memoryInfo.maxPermGen.megabytes,
+										max: observable.maxPermGen.megabytes,
 										ranges: [
 											{
-												from:  ( data.memoryInfo.maxPermGen.megabytes -  ( ( data.memoryInfo.maxPermGen.megabytes / 10 ) * 2 ) ) ,
-												to:  ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
+												from:  ( observable.maxPermGen -  ( ( observable.maxPermGen / 10 ) * 2 ) ) ,
+												to:  ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
 												color: "#ff7a00"
 											}, {
-												from: ( data.memoryInfo.maxPermGen.megabytes -  data.memoryInfo.maxPermGen.megabytes / 10 ) ,
-												to: data.memoryInfo.maxPermGen.megabytes,
+												from: ( observable.maxPermGen -  observable.maxPermGen / 10 ) ,
+												to: observable.maxPermGen,
 												color: "#c20000"
 											}
 										]								
