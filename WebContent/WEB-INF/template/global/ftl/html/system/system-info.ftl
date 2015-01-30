@@ -154,14 +154,11 @@
 		}		
 				
 		function displaySystemDetails (){		
-			common.ui.ajax(
-				'<@spring.url "/secure/view-system-details.do?output=json"/>',
-				{
-					success : function( response ){
-						var data = response ;	
-						kendo.bind($(".system-details"), data.systemInfo );			
-						kendo.bind($(".license-details"), data.licenseInfo );					
-					}
+			common.ui.ajax('<@spring.url "/secure/data/stage/os/get.json?output=json"/>', {
+				success : function( data ){
+					kendo.bind($(".system-details"), data );			
+					//kendo.bind($(".license-details"), data.licenseInfo );					
+				}
 			});	
 						
 				$('#myTab a').click(function (e) {
