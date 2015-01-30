@@ -42,6 +42,7 @@
 				});		
 											
 				var observable =  common.ui.observable({ 
+					visible : false,
 					allocateHeap : 0,
 					availableHeap : 0,
 					maxHeap : 0,
@@ -65,7 +66,7 @@
 							observable.set("maxPermGen", response.maxPermGen.megabytes );
 							observable.set("availablePermGen", response.availablePermGen.megabytes );
 							observable.set("usedPermGen", response.usedPermGen.megabytes );
-							
+							observable.set("visible", true );
 							if( ! $("#mem-gen-gauge").data("kendoRadialGauge") ){	
 								$("#mem-gen-gauge").kendoRadialGauge({
 									theme: "white",
@@ -296,7 +297,7 @@
 									<div id="mem-gen-gauge" style="display: inline-block !important;"></div>									
 								</div>							
 							</div> <!-- /.stat-row -->						
-							<div class="stat-row memory-details">
+							<div class="stat-row memory-details" data-bind="visible: visible">
 								<div class="stat-counters bg-primary bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
@@ -328,7 +329,7 @@
 									<div id="perm-gen-gauge" style="display: inline-block !important;"></div>
 								</div>							
 							</div> <!-- /.stat-row -->
-							<div class="stat-row memory-details">
+							<div class="stat-row memory-details" data-bind="visible: visible">
 								<div class="stat-counters bg-danger bordered no-border-t text-center">
 									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
 										<!-- Big text -->
