@@ -198,7 +198,7 @@
 							break;
 					}					
 			});				
-							
+			$('#myTab a:first').tab('show');						
 							/*			
 			$('#myTab a').click(function (e) {
 				e.preventDefault();					
@@ -257,7 +257,7 @@
 					$(this).tab('show');		
 			});
 			*/
-			$('#template-tree-tabs a:first').tab('show');				
+					
 		}
 		-->
 		</script> 		 
