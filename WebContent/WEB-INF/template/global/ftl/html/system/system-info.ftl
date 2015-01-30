@@ -42,7 +42,7 @@
 				});		
 				
 				// memory dataSource
-				var dataSource = common.ui.datasource(	'<@spring.url "/secure/view-system-memory.do?output=json"/>',	{
+				var dataSource = common.ui.datasource(	'<@spring.url "/secure//stage/memory/get.json?output=json"/>',	{
 					schema: { 
 						data: function(response){
 							return [ response ] ; 
