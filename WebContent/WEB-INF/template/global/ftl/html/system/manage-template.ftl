@@ -334,10 +334,24 @@
 							</div>
 						</div>				
 					</div>
-					<div class="list-and-detail-contanier">
-					
-					
-					
+					<div class="list-and-detail-contanier">					
+						<div id="template-details" class="panel panel-primary">
+							<div class="panel-heading">
+								<span data-bind="text:file.name">&nbsp;</span>
+								<div class="panel-heading-controls">
+									<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
+									<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
+								</div>
+							</div>			
+							<div class="panel-body padding-sm">							
+								<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
+								<div class="pull-right text-muted">
+									<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
+								</div>									
+							</div>
+							<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
+							<div class="panel-footer no-padding-vr"></div>
+						</div>					
 					</div>
 				</div>						
 				<div class="row">			
@@ -360,25 +374,7 @@
 						</div>															
 					</div>
 					<div class="col-sm-8">				
-						<div id="template-details" class="panel panel-primary">
-							<div class="panel-heading">
-								<span data-bind="text:file.name">&nbsp;</span>
-								<div class="panel-heading-controls">
-									<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>
-									<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
-								</div>
-							</div>			
-							<div class="panel-body padding-sm">
-							
-								<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
-								<div class="pull-right text-muted">
-									<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-								</div>
-									
-							</div>
-							<div id="htmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
-							<div class="panel-footer no-padding-vr"></div>
-						</div>					
+						
 					</div></!-- /.col-sm-12 -->
 				</div><!-- /.row -->	
 			</div> <!-- / #content-wrapper -->
