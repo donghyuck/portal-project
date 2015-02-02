@@ -80,8 +80,8 @@
 					var btn = $(this);
 					btn.button("loading");
 					common.api.callback({
-						url :"<@spring.url "/secure/remove-cache-stats.do?output=json"/>", 
-						data : { targetName:  getSelectedCacheStats().cacheName },
+						url :"<@spring.url "/secure/data/mgmt/cache/refresh.json?output=json"/>", 
+						data : { name:  getSelectedCacheStats().cacheName },
 						success : function(response){
 							$("#cache-stats-grid").data("kendoGrid").dataSource.read();
 						},
