@@ -199,12 +199,12 @@
 							break;
 						case  '#license-info' :
 							if( !$("#license-info").data("on") ){
-								/*common.ui.ajax('<@spring.url "/secure/data/stage//get.json?output=json"/>', {
+								common.ui.ajax('<@spring.url "/secure/data/config/license/get.json?output=json"/>', {
 									success : function( data ){
 										kendo.bind($(".license-details"), data );
 										$("#license-info").data("on", true)
 									}
-								});		*/						
+								});			
 							} 
 							break;
 					}					
