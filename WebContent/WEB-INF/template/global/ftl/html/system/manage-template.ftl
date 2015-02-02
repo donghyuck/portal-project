@@ -314,14 +314,6 @@
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav">
-						<ul class="nav nav-tabs nav-tabs-sm" id="template-tabs">						
-							<li class="p-l-sm">
-								<a href="#template-tree-view" data-toggle="tab">디폴트</a>
-							</li>
-							<li>
-								<a href="#custom-template-tree-view" data-toggle="tab">사용자 정의</a>
-							</li>
-						</ul>
 						<div class="panel no-border">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
