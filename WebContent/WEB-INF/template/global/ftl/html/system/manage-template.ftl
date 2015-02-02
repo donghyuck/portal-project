@@ -328,16 +328,17 @@
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
 						<div class="tab-content">
-						
 							<div class="tab-pane fade" id="template-tree-view"></div>
 							<div class="tab-pane fade" id="custom-template-tree-view"></div>
 						</div>	
 							</div>
-						</div>	
-												
-													
+						</div>				
 					</div>
-					<div class="list-and-detail-contanier">a</div>
+					<div class="list-and-detail-contanier">
+					
+					
+					
+					</div>
 				</div>						
 				<div class="row">			
 					<div class="col-sm-4">
