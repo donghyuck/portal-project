@@ -42,39 +42,39 @@
 					}
 				});				
 				
-				$('#template-tabs').on( 'show.bs.tab', function (e) {		
-					var show_bs_tab = $(e.target);
-					switch( show_bs_tab.attr('href') ){
-						case "#template-tree-view" :
-							createPathFinder();
-							break;
-						case  '#custom-template-tree-view' :
-							createCustomPathFinder();
-							break;
-					}	
-				});
-				
-				$('#template-tabs a:first').tab('show');				
+		
 				// END SCRIPT
 			}
 		}]);		
 		
+		
+		function createTemplateTab(){
+			$('#template-tabs').on( 'show.bs.tab', function (e) {		
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.attr('href') ){
+					case "#template-tree-view" :
+						createPathFinder();
+						break;
+					case  '#custom-template-tree-view' :
+						createCustomPathFinder();
+						break;
+				}	
+			});
+			$('#template-tabs a:first').tab('show');				
+		}
+		
+		
 		function createPathFinder(){		
 			if( !$("#template-tree-view").data('kendoTreeView') ){					
 				$("#template-tree-view").kendoTreeView({
-					dataSource: {
-						transport: { 
-							read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' }
-						},
-						schema: {
-							data: "targetFiles",					
+					dataSource:  common.ui.datasource('<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>', {
+						schema: {		
 							model: {
 								id: "path",
 								hasChildren: "directory"
 							}
-						},
-						error: common.ui.handleAjaxError					
-					},
+						}
+					}),
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
@@ -88,23 +88,20 @@
 		function createCustomPathFinder(){		
 			if( !$("#custom-template-tree-view").data('kendoTreeView') ){			
 				$("#custom-template-tree-view").kendoTreeView({
-					dataSource: {
-						transport: { 
-							read: { url:'${request.contextPath}/secure/list-template-files.do?output=json', type: 'POST' },
+					dataSource:  common.ui.datasource('<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>', {
+						transport: {
 							parameterMap: function (options, operation){			
 								options.customized = true;
 								return options ;
-							}							
+							}	
 						},
-						schema: {
-							data: "targetFiles",					
+						schema: {		
 							model: {
 								id: "path",
 								hasChildren: "directory"
 							}
-						},
-						error: common.ui.handleAjaxError					
-					},
+						}
+					}),				
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
