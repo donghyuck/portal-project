@@ -315,6 +315,9 @@
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav">
 						<ul class="nav nav-tabs nav-tabs-sm" id="template-tabs">
+						
+						
+						
 							<li class="p-l-sm">
 								<a href="#template-tree-view" data-toggle="tab">디폴트</a>
 							</li>
@@ -322,19 +325,10 @@
 								<a href="#custom-template-tree-view" data-toggle="tab">사용자 정의</a>
 							</li>
 						</ul>
-						<div class="tab-content">
-							<div class="tab-pane fade" id="template-tree-view"></div>
-							<div class="tab-pane fade" id="custom-template-tree-view"></div>
-						</div>														
-					</div>
-					<div class="list-and-detail-contanier">a</div>
-				</div>						
-				<div class="row">			
-					<div class="col-sm-4">
-						<div class="panel colourable">
+						<div class="panel no-border">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
-								<ul class="nav nav-tabs nav-tabs-xs" role="tablist">
+								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
 									<li>
 										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
 									</li>
@@ -343,7 +337,34 @@
 									</li>
 								</ul>			
 							</div> <!-- / .panel-heading -->
-							<div class="panel-body padding-sm">
+							<div class="panel-body">
+						<div class="tab-content">
+						
+							<div class="tab-pane fade" id="template-tree-view"></div>
+							<div class="tab-pane fade" id="custom-template-tree-view"></div>
+						</div>	
+							</div>
+						</div>	
+												
+													
+					</div>
+					<div class="list-and-detail-contanier">a</div>
+				</div>						
+				<div class="row">			
+					<div class="col-sm-4">
+						<div class="panel no-border">
+							<div class="panel-heading">
+								<span class="panel-title">템플릿</span>
+								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
+									<li>
+										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
+									</li>
+									<li>
+										<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
+									</li>
+								</ul>			
+							</div> <!-- / .panel-heading -->
+							<div class="panel-body">
 
 							</div>
 						</div>															
