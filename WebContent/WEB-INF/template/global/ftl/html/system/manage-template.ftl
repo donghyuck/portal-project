@@ -314,14 +314,20 @@
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav p-xxs">
-						<ul class="nav nav-tabs nav-tabs-sm">
-							<li class="active">
-								<a href="#" data-toggle="tab">디폴트 <span class="label label-success">12</span></a>
+						<ul class="nav nav-tabs nav-tabs-sm" id="template-tabs">
+							<li>
+								<a href="#template-tree-view" data-toggle="tab">디폴트 <span class="label label-success">12</span></a>
 							</li>
 							<li>
-								<a href="#" data-toggle="tab">사용자 정의 <span class="badge badge-info">12</span></a>
+								<a href="#custom-template-tree-view" data-toggle="tab">사용자 정의 <span class="badge badge-info">12</span></a>
 							</li>
 						</ul>
+
+								<div class="tab-content">
+									 <div class="tab-pane fade" id="template-tree-view"></div>
+									 <div class="tab-pane fade" id="custom-template-tree-view"></div>
+								</div>
+														
 					</div>
 					<div class="list-and-detail-contanier">a</div>
 				</div>						
@@ -330,7 +336,7 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
-								<ul class="nav nav-tabs nav-tabs-xs" role="tablist" id="template-tabs">
+								<ul class="nav nav-tabs nav-tabs-xs" role="tablist">
 									<li>
 										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
 									</li>
@@ -340,10 +346,7 @@
 								</ul>			
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body padding-sm">
-								<div class="tab-content">
-									 <div class="tab-pane fade" id="template-tree-view"></div>
-									 <div class="tab-pane fade" id="custom-template-tree-view"></div>
-								</div>
+
 							</div>
 						</div>															
 					</div>
