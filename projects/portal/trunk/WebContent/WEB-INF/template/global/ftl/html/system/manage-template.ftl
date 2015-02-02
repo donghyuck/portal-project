@@ -326,7 +326,7 @@
 									</li>
 								</ul>			
 							</div> <!-- / .panel-heading -->
-							<div class="panel-body">
+							<div class="panel-body padding-sm bg-gray ">
 						<div class="tab-content">
 							<div class="tab-pane fade" id="template-tree-view"></div>
 							<div class="tab-pane fade" id="custom-template-tree-view"></div>
@@ -335,7 +335,7 @@
 						</div>				
 					</div>
 					<div class="list-and-detail-contanier">					
-						<div id="template-details" class="panel panel-primary">
+						<div id="template-details" class="panel panel-primary no-border">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
