@@ -79,8 +79,7 @@
 				$(document).on("click", "[data-action='cache-removeAll']", function(e){
 					var btn = $(this);
 					btn.button("loading");
-					common.api.callback({
-						url :"<@spring.url "/secure/data/mgmt/cache/refresh.json?output=json"/>", 
+					common.ui.ajax( "<@spring.url "/secure/data/mgmt/cache/refresh.json?output=json"/>", {
 						data : { name:  getSelectedCacheStats().cacheName },
 						success : function(response){
 							$("#cache-stats-grid").data("kendoGrid").dataSource.read();
