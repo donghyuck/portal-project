@@ -313,24 +313,15 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
-					<div class="list-and-detail-nav">
-
+					<div class="list-and-detail-nav p-xxs">
 						<ul class="nav nav-tabs nav-tabs-sm">
 							<li class="active">
-								<a href="#" data-toggle="tab">Home <span class="label label-success">12</span></a>
+								<a href="#" data-toggle="tab">디폴트 <span class="label label-success">12</span></a>
 							</li>
 							<li>
-								<a href="#" data-toggle="tab">Profile <span class="badge badge-info">12</span></a>
+								<a href="#" data-toggle="tab">사용자 정의 <span class="badge badge-info">12</span></a>
 							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown&nbsp;&nbsp;<i class="fa fa-caret-down"></i></a>
-								<ul class="dropdown-menu">
-									<li><a href="#" data-toggle="tab">@fat</a></li>
-									<li><a href="#" data-toggle="tab">@mdo</a></li>
-								</ul>
-							</li> <!-- / .dropdown -->
 						</ul>
-
 					</div>
 					<div class="list-and-detail-contanier">a</div>
 				</div>						
