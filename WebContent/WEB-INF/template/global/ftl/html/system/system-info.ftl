@@ -151,6 +151,11 @@
 						$("table .disk-usage-table-row").html(kendo.render(template, this.view()))
 				}		
 			}).read();
+			
+			$(".system-details .table-header button" ).click(function(e){
+				dataSource.read();
+			});
+			
 		}		
 				
 		function displaySystemDetails (){				
