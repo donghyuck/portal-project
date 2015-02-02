@@ -267,6 +267,28 @@
 			min-height:500px;
 		}
 
+		.list-and-detail .list-and-detail-nav {
+			border-color: #e2e2e2;
+			background: #f6f6f6;
+			border: 0 solid;
+		}
+		
+		@media (min-width: 992px) {
+			.list-and-detail .list-and-detail-nav {
+				width: 200px;
+				border-bottom: 0;
+				position: absolute;
+				height: auto;
+				min-height: 100%;
+				border-right-width: 1px;		
+			}
+		}
+		
+		
+		.list-and-detail .list-and-detail-contanier {
+		
+		}
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
