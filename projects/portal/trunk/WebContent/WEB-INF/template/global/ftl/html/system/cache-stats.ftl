@@ -47,14 +47,15 @@
 		}]);		
 				
 		function createCacheStatsGrid(){
+		
+		
 			if( !$("#cache-stats-grid").data("kendoGrid") ){
 				$("#cache-stats-grid").kendoGrid({
 					dataSource: {	
 						transport: { 
-							read: { url:'<@spring.url "/secure/list-cache-stats.do?output=json"/>', type: 'POST' }
+							read: { url:'<@spring.url "/secure/data/stage/cache/list.json?output=json"/>', type: 'POST' }
 						},
 						schema: {
-							data: "allCacheStats",
 							model : common.ui.data.CacheStats 
 						},
 						sort: { field: "cacheName", dir: "asc" },
