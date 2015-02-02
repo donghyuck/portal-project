@@ -2,32 +2,32 @@
 <html decorator="secure">
 <head>
 		<title>관리자 메인</title>		
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />
+		<link  rel="stylesheet" type="text/css"  href="<@spring.url "/styles/common.admin/pixel/pixel.admin.style.css"/>" />
 		<script type="text/javascript">
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.plugins/animate.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/common.plugins/animate.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css"/>',			
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.themes.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css"/>',	
 			
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo/kendo.dataviz.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
-			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',			
-			'${request.contextPath}/js/common.plugins/fastclick.js', 
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
-			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
-			'${request.contextPath}/js/common/common.ui.core.js',							
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.community.js',
-			'${request.contextPath}/js/common/common.ui.admin.js'
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.dataviz.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
+			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',			
+			'<@spring.url "/js/common.plugins/fastclick.js"/>', 
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 
+			'<@spring.url "/js/common.admin/pixel.admin.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>',
+			'<@spring.url "/js/common/common.ui.admin.js"/>'
 			],
 			complete: function() {
 				var currentUser = new common.ui.data.User();
@@ -51,7 +51,7 @@
 				$("#cache-stats-grid").kendoGrid({
 					dataSource: {	
 						transport: { 
-							read: { url:'${request.contextPath}/secure/list-cache-stats.do?output=json', type: 'POST' }
+							read: { url:'<@spring.url "/secure/list-cache-stats.do?output=json"/>', type: 'POST' }
 						},
 						schema: {
 							data: "allCacheStats",
@@ -79,7 +79,7 @@
 					var btn = $(this);
 					btn.button("loading");
 					common.api.callback({
-						url :"${request.contextPath}/secure/remove-cache-stats.do?output=json", 
+						url :"<@spring.url "/secure/remove-cache-stats.do?output=json"/>", 
 						data : { targetName:  getSelectedCacheStats().cacheName },
 						success : function(response){
 							$("#cache-stats-grid").data("kendoGrid").dataSource.read();
