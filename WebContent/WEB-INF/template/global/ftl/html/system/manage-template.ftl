@@ -282,12 +282,15 @@
 				min-height: 100%;
 				border-right-width: 1px;		
 			}
+
+			.list-and-detail .list-and-detail-contanier {
+				margin-left: 200px;
+				min-height: 400px;
+			}
 		}
 		
 		
-		.list-and-detail .list-and-detail-contanier {
-		
-		}
+
 		
 		</style>
 	</head>
@@ -303,7 +306,11 @@
 				</ul>			
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
-				</div><!-- / .page-header -->				
+				</div><!-- / .page-header -->		
+				<div class="list-and-detail">
+					<div class="list-and-detail-nav"></div>
+					<div class="list-and-detail-contanier"></div>
+				</div>						
 				<div class="row">			
 					<div class="col-sm-4">
 						<div class="panel colourable">
