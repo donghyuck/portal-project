@@ -2,33 +2,32 @@
 <html decorator="secure">
 <head>
 		<title>관리자 메인</title>		
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />
+		<link  rel="stylesheet" type="text/css"  href="<@spring.url "/styles/common.admin/pixel/pixel.admin.style.css"/>" />
 		<script type="text/javascript">
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.plugins/animate.css',
-			'css!${request.contextPath}/styles/jquery.jgrowl/jquery.jgrowl.min.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
-			
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',
-			'${request.contextPath}/js/jquery.jgrowl/jquery.jgrowl.min.js',			
-			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',			
-			'${request.contextPath}/js/common.plugins/fastclick.js', 
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
-			'${request.contextPath}/js/common.admin/pixel.admin.min.js',
-			'${request.contextPath}/js/common/common.ui.core.js',							
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.community.js',
-			'${request.contextPath}/js/common/common.ui.admin.js',	
-			'${request.contextPath}/js/ace/ace.js'			
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/common.plugins/animate.css"/>',
+			'css!<@spring.url "/styles/jquery.jgrowl/jquery.jgrowl.min.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css"/>',			
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.themes.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css"/>',				
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',
+			'<@spring.url "/js/jquery.jgrowl/jquery.jgrowl.min.js"/>',			
+			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',			
+			'<@spring.url "/js/common.plugins/fastclick.js"/>', 
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 
+			'<@spring.url "/js/common.admin/pixel.admin.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>',
+			'<@spring.url "/js/common/common.ui.admin.js"/>',	
+			'<@spring.url "/js/ace/ace.js"/>'			
 			],
 			complete: function() {
 				var currentUser = new common.ui.data.User();
@@ -40,9 +39,7 @@
 					change: function(e){
 						e.data.copy(targetCompany);
 					}
-				});				
-				
-		
+				});			
 				// END SCRIPT
 			}
 		}]);		
@@ -62,7 +59,6 @@
 			});
 			$('#template-tabs a:first').tab('show');				
 		}
-		
 		
 		function createPathFinder(){		
 			if( !$("#template-tree-view").data('kendoTreeView') ){					
@@ -180,7 +176,7 @@
 	    	}  
 	    	if(!filePlaceHolder.directory){
 				common.ui.ajax(
-				"${request.contextPath}/secure/view-template-content.do?output=json" , 
+				"<@spring.url "/secure/view-template-content.do?output=json" , 
 				{
 					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
 					success : function(response){
@@ -215,7 +211,7 @@
 							dataValueField: "companyId",
 							dataSource : {
 								transport : {
-									read: { type : "post", dataType:"json", url : '${request.contextPath}/secure/list-company.do?output=json' },	
+									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/list-company.do?output=json"/>' },	
 								},
 								schema: {
 									total: "totalCompanyCount",
@@ -233,7 +229,7 @@
 							dataSource : {
 								serverFiltering: true,
 								transport : {
-									read: { type : "post", dataType:"json", url : '${request.contextPath}/secure/list-site.do?output=json' },	
+									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/list-site.do?output=json"/>' },	
 									parameterMap: function (options, operation){
 										return { "targetCompanyId" :  options.filter.filters[0].value }; 
 									}									
@@ -310,7 +306,7 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
-					<div class="list-and-detail-nav">
+					<div class="list-and-detail-nav p-xs">
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
@@ -331,7 +327,7 @@
 							</div>
 						</div>				
 					</div>
-					<div class="list-and-detail-contanier">					
+					<div class="list-and-detail-contanier p-xs">					
 						<div id="template-details" class="panel panel-transparent">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
