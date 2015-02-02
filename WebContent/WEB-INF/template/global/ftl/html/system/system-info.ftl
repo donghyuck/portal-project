@@ -153,8 +153,7 @@
 			}).read();
 		}		
 				
-		function displaySystemDetails (){	
-			
+		function displaySystemDetails (){				
 			common.ui.ajax('<@spring.url "/secure/data/stage/os/get.json?output=json"/>', {
 				success : function( data ){
 					kendo.bind($(".system-details"), data );
@@ -256,6 +255,7 @@
 										<div class="table-header">
 											<div class="table-caption">
 												DISK 정보
+												<button class="btn btn-xs btn-primary btn-flat pull-right btn-outline"><span class="fa fa-refresh"></span> 새로고침</button>
 											</div>
 										</div>
 										<table class="table table-bordered">
