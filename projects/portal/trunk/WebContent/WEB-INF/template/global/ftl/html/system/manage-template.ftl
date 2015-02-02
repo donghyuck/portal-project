@@ -314,7 +314,7 @@
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav">
-						<div class="panel no-border">
+						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
@@ -335,7 +335,7 @@
 						</div>				
 					</div>
 					<div class="list-and-detail-contanier">					
-						<div id="template-details" class="panel panel-primary no-border">
+						<div id="template-details" class="panel panel-transparent">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
