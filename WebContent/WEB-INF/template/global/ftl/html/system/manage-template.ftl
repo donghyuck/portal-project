@@ -316,18 +316,16 @@
 					<div class="list-and-detail-nav p-xxs">
 						<ul class="nav nav-tabs nav-tabs-sm" id="template-tabs">
 							<li>
-								<a href="#template-tree-view" data-toggle="tab">디폴트 <span class="label label-success">12</span></a>
+								<a href="#template-tree-view" data-toggle="tab">디폴트</a>
 							</li>
 							<li>
-								<a href="#custom-template-tree-view" data-toggle="tab">사용자 정의 <span class="badge badge-info">12</span></a>
+								<a href="#custom-template-tree-view" data-toggle="tab">사용자 정의</a>
 							</li>
 						</ul>
-
-								<div class="tab-content">
-									 <div class="tab-pane fade" id="template-tree-view"></div>
-									 <div class="tab-pane fade" id="custom-template-tree-view"></div>
-								</div>
-														
+						<div class="tab-content">
+							<div class="tab-pane fade" id="template-tree-view"></div>
+							<div class="tab-pane fade" id="custom-template-tree-view"></div>
+						</div>														
 					</div>
 					<div class="list-and-detail-contanier">a</div>
 				</div>						
