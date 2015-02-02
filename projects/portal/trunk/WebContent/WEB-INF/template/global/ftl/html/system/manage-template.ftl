@@ -279,7 +279,7 @@
 		
 		@media (min-width: 992px) {
 			.list-and-detail .list-and-detail-nav {
-				width: 200px;
+				width: 400px;
 				border-bottom: 0;
 				position: absolute;
 				height: auto;
@@ -288,7 +288,7 @@
 			}
 
 			.list-and-detail .list-and-detail-contanier {
-				margin-left: 200px;
+				margin-left: 400px;
 				min-height: 400px;
 			}
 		}
