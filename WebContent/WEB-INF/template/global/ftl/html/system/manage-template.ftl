@@ -266,7 +266,11 @@
 		#htmleditor.panel-body{
 			min-height:500px;
 		}
-
+		
+		.list-and-detail{
+			margin: -18px -18px 18px -18px;
+		
+		}
 		.list-and-detail .list-and-detail-nav {
 			border-color: #e2e2e2;
 			background: #f6f6f6;
