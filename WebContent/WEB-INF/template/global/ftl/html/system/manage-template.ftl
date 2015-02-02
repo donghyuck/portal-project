@@ -354,29 +354,6 @@
 						</div>					
 					</div>
 				</div>						
-				<div class="row">			
-					<div class="col-sm-4">
-						<div class="panel no-border">
-							<div class="panel-heading">
-								<span class="panel-title">템플릿</span>
-								<ul class="nav nav-tabs nav-tabs-xs" >
-									<li>
-										<a href="#template-tree-view" role="tab" data-toggle="tab">기본</a>
-									</li>
-									<li>
-										<a href="#custom-template-tree-view" role="tab" data-toggle="tab">커스텀</a>
-									</li>
-								</ul>			
-							</div> <!-- / .panel-heading -->
-							<div class="panel-body">
-
-							</div>
-						</div>															
-					</div>
-					<div class="col-sm-8">				
-						
-					</div></!-- /.col-sm-12 -->
-				</div><!-- /.row -->	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
