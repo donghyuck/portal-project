@@ -308,8 +308,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
-					<div class="list-and-detail-nav"></div>
-					<div class="list-and-detail-contanier"></div>
+					<div class="list-and-detail-nav">a</div>
+					<div class="list-and-detail-contanier">a</div>
 				</div>						
 				<div class="row">			
 					<div class="col-sm-4">
