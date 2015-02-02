@@ -313,9 +313,9 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
-					<div class="list-and-detail-nav p-xxs">
+					<div class="list-and-detail-nav">
 						<ul class="nav nav-tabs nav-tabs-sm" id="template-tabs">
-							<li>
+							<li class="p-l-sm">
 								<a href="#template-tree-view" data-toggle="tab">디폴트</a>
 							</li>
 							<li>
