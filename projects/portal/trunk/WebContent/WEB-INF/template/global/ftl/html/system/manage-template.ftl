@@ -40,6 +40,7 @@
 						e.data.copy(targetCompany);
 					}
 				});			
+				createTemplateTab();
 				// END SCRIPT
 			}
 		}]);		
