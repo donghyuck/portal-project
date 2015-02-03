@@ -59,7 +59,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 	CHANGE = 'change',
 	AUTHENTICATE = 'authenticate',
 	COMPLETE = 'complete',
-	AUTHENTICATE_URL = "/accounts/get-user.do?output=json",	
+	AUTHENTICATE_URL =  "/data/accounts/get.json?output=json";//"/accounts/get-user.do?output=json",	
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 	
 	OBJECT_TYPE = 30 ,
@@ -138,7 +138,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 						transport: {
 							read: {
 								dataType: JSON,
-								url: '/secure/list-company.do?output=json',
+								url: '/secure/data/mgmt/template/list.json?output=json',
 								type: POST
 							}
 						},
