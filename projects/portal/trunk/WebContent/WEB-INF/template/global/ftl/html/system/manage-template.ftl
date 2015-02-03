@@ -64,7 +64,11 @@
 		function createPathFinder(){		
 			if( !$("#template-tree-view").data('kendoTreeView') ){					
 				$("#template-tree-view").kendoTreeView({
-					dataSource:  common.ui.datasource('<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>', {
+					transport: {
+						read: {
+							url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
+							dataType: "json"
+						},
 						schema: {		
 							model: {
 								id: "path",
