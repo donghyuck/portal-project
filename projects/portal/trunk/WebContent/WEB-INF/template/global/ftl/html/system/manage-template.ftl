@@ -64,18 +64,19 @@
 		function createPathFinder(){		
 			if( !$("#template-tree-view").data('kendoTreeView') ){					
 				$("#template-tree-view").kendoTreeView({
-					dataSource: {
-					transport: new kendo.data.HierarchicalDataSource({						
-						read: {
-							url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
-							dataType: "json"
+					dataSource: new kendo.data.HierarchicalDataSource({						
+						transport: {
+							read: {
+								url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
+								dataType: "json"
+							}
 						},
 						schema: {		
 							model: {
 								id: "path",
 								hasChildren: "directory"
 							}
-						}
+						}	
 					}),
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
