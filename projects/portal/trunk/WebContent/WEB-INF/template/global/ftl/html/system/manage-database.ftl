@@ -306,8 +306,7 @@
 										<a href="#database-sql-tree-view" data-toggle="tab">SQL</a>
 									</li>
 								</ul> <!-- / .nav -->
-							</div> <!-- / .panel-heading -->		
-											
+							</div> <!-- / .panel-heading -->												
 							<div class="tab-content">
 								<div class="tab-pane fade panel-body padding-sm" id="database-table-tree-view">
 									<div class="m-b-sm">
@@ -328,15 +327,7 @@
 					</div>
 					<div class="list-and-detail-contanier p-xs">
 					
-					</div>
-				</div>	
-								
-				<div class="row">			
-					<div class="col-sm-4">
-
-					</div></!-- /.col-sm-4 -->	
-					<div class="col-sm-8">										
-						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
+						<div id="database-table-details" class="panel panel-transparent" data-bind="visible:visible">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
 								<div class="panel-heading-controls">
@@ -352,7 +343,7 @@
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>	
-						<div id="sql-details" class="panel panel-primary">
+						<div id="sql-details" class="panel panel-transparent">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 									<div class="panel-heading-controls">
@@ -367,7 +358,17 @@
 							</div>
 							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
 							<div class="panel-footer no-padding-vr"></div>
-						</div>										
+						</div>						
+					
+					</div>
+				</div>	
+								
+				<div class="row">			
+					<div class="col-sm-4">
+
+					</div></!-- /.col-sm-4 -->	
+					<div class="col-sm-8">										
+									
 					</div></!-- /.col-sm-8 -->
 				</div><!-- /.row -->	
 			</div> <!-- / #content-wrapper -->
