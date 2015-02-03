@@ -251,6 +251,33 @@
 		#xmleditor.panel-body{
 			min-height:500px;
 		}	
+		
+		.list-and-detail{
+			margin: -18px -18px 18px -18px;
+		
+		}
+		.list-and-detail .list-and-detail-nav {
+			border-color: #e2e2e2;
+			background: #f6f6f6;
+			border: 0 solid;
+		}
+		
+		@media (min-width: 992px) {
+			.list-and-detail .list-and-detail-nav {
+				width: 400px;
+				border-bottom: 0;
+				position: absolute;
+				height: auto;
+				min-height: 100%;
+				border-right-width: 1px;		
+				border-color: #e2e2e2;
+			}
+
+			.list-and-detail .list-and-detail-contanier {
+				margin-left: 400px;
+				min-height: 400px;
+			}
+		}		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -265,7 +292,16 @@
 				</ul>			
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
-				</div><!-- / .page-header -->				
+				</div><!-- / .page-header -->	
+				<div class="list-and-detail">
+					<div class="list-and-detail-nav p-xs">
+					
+					</div>
+					<div class="list-and-detail-contanier p-xs">
+					
+					</div>
+				</div>	
+								
 				<div class="row">			
 					<div class="col-sm-4">
 						<div class="panel colourable">
