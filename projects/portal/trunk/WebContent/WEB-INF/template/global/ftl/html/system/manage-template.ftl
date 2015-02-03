@@ -153,7 +153,6 @@
 								$("#file-copy-modal .tab-content").removeClass("has-error");
 							}						
 						}
-						
 						$this.button("reset");																		
 						return false;
 					}
@@ -187,11 +186,11 @@
 	    	}  
 	    	if(!filePlaceHolder.directory){
 				common.ui.ajax(
-				"<@spring.url "/secure/view-template-content.do?output=json" />" , 
+				"<@spring.url "/secure/data/mgmt/template/get.json?output=json" />" , 
 				{
 					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
 					success : function(response){
-						ace.edit("htmleditor").setValue( response.targetFileContent );	
+						ace.edit("htmleditor").setValue( response.fileContent );	
 					}
 				}); 
 	    	}	    		
