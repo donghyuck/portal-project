@@ -295,15 +295,6 @@
 				</div><!-- / .page-header -->	
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav p-xs">
-					
-					</div>
-					<div class="list-and-detail-contanier p-xs">
-					
-					</div>
-				</div>	
-								
-				<div class="row">			
-					<div class="col-sm-4">
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
@@ -334,7 +325,16 @@
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->						
 							<div class="panel-footer no-padding-vr"></div>	
-						</div>
+						</div>					
+					</div>
+					<div class="list-and-detail-contanier p-xs">
+					
+					</div>
+				</div>	
+								
+				<div class="row">			
+					<div class="col-sm-4">
+
 					</div></!-- /.col-sm-4 -->	
 					<div class="col-sm-8">										
 						<div id="database-table-details" class="panel panel-primary" data-bind="visible:visible">
