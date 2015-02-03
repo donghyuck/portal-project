@@ -245,7 +245,7 @@
 								transport : {
 									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/data/mgmt/website/list.json?output=json"/>' },	
 									parameterMap: function (options, operation){
-										return { "targetCompanyId" :  options.filter.filters[0].value }; 
+										return { "company" :  options.filter.filters[0].value }; 
 									}									
 								},
 								schema: {
