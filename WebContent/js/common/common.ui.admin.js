@@ -138,7 +138,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 						transport: {
 							read: {
 								dataType: JSON,
-								url: '/secure/data/mgmt/template/list.json?output=json',
+								url: '/secure/data/mgmt/company/list.json?output=json',
 								type: POST
 							}
 						},
