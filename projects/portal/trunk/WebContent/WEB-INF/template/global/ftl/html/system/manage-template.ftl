@@ -221,10 +221,14 @@
 							dataValueField: "companyId",
 							dataSource : {
 								transport : {
-									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/list-company.do?output=json" />' },	
+									read: { 
+										type : "post", 
+										dataType:"json", 
+										url : '<@spring.url "/secure/data/mgmt/company/list.json?output=json"/>'
+									}	
 								},
 								schema: {
-									total: "totalCompanyCount",
+									total: "totalCount",
 									data: "companies",
 									model : common.ui.data.Company
 								}
@@ -239,14 +243,14 @@
 							dataSource : {
 								serverFiltering: true,
 								transport : {
-									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/list-site.do?output=json"/>' },	
+									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/data/mgmt/website/list.json?output=json"/>' },	
 									parameterMap: function (options, operation){
 										return { "targetCompanyId" :  options.filter.filters[0].value }; 
 									}									
 								},
 								schema: {
-									total: "targetWebSiteCount",
-									data: "targetWebSites",
+									total: "totalCount",
+									data: "items",
 									model : common.ui.data.WebSite
 								}
 							}						
