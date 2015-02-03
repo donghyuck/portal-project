@@ -211,7 +211,7 @@
 							dataValueField: "companyId",
 							dataSource : {
 								transport : {
-									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/list-company.do?output=json"/>' },	
+									read: { type : "post", dataType:"json", url : '<@spring.url "/secure/list-company.do?output=json" />' },	
 								},
 								schema: {
 									total: "totalCompanyCount",
