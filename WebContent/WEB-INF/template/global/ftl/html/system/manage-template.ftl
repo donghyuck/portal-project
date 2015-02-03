@@ -176,7 +176,7 @@
 	    	}  
 	    	if(!filePlaceHolder.directory){
 				common.ui.ajax(
-				"<@spring.url "/secure/view-template-content.do?output=json" , 
+				"<@spring.url "/secure/view-template-content.do?output=json" />" , 
 				{
 					data : { path:  filePlaceHolder.path , customized: filePlaceHolder.customized },
 					success : function(response){
