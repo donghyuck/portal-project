@@ -85,8 +85,12 @@
 		function createCustomPathFinder(){		
 			if( !$("#custom-template-tree-view").data('kendoTreeView') ){			
 				$("#custom-template-tree-view").kendoTreeView({
-					dataSource:  common.ui.datasource('<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>', {
+					dataSource:  new kendo.data.HierarchicalDataSource({						
 						transport: {
+							read: {
+								url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
+								dataType: "json"
+							},
 							parameterMap: function (options, operation){			
 								options.customized = true;
 								return options ;
