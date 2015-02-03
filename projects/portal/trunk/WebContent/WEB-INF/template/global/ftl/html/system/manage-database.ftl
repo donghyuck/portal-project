@@ -327,7 +327,7 @@
 					</div>
 					<div class="list-and-detail-contanier p-xs">
 					
-						<div id="database-table-details" class="panel panel-transparent" data-bind="visible:visible">
+						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
 								<div class="panel-heading-controls">
@@ -343,7 +343,7 @@
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>	
-						<div id="sql-details" class="panel panel-transparent">
+						<div id="sql-details" class="panel panel-default">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 									<div class="panel-heading-controls">
