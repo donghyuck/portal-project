@@ -300,7 +300,7 @@
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
 									<li>
-										<a href="#database-table-tree-view" data-toggle="tab">스키마</a>
+										<a href="#database-table-tree-view" data-toggle="tab">테이블</a>
 									</li>
 									<li>
 										<a href="#database-sql-tree-view" data-toggle="tab">SQL</a>
@@ -315,11 +315,10 @@
 										<span class="label label-warning">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
 										<div class="pull-right margin-buttom-20">
 											<span data-bind="text: tableCount, invisible:connecting">0</span>
-											<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 목록</button>										
+											<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
 										</div>
 									</div>
-									<ul class="list-group no-margin-b" style="display:none;"></ul>
-									
+									<ul class="list-group no-margin-b" style="display:none;"></ul>									
 								</div><!-- ./tab-pane -->
 								<div class="tab-pane fade panel-body padding-sm" id="database-sql-tree-view">
 								</div><!-- ./tab-pane -->
