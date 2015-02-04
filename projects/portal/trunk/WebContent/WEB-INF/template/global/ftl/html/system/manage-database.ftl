@@ -59,7 +59,7 @@
 		}]);		
 
 		function extractDatabaseSchema( renderTo, model ){
-			common.ui.ajax("<@spring.url "/stage/jdbc/schema/list.json?output=json" />", {
+			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
 				success : function(response){		
 					if( response.status == 2 ){
 						model.set("connecting", false );
