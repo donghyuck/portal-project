@@ -59,6 +59,9 @@
 		}]);		
 
 		function extractDatabaseSchema( renderTo, model ){
+			
+			alert( common.ui.stringify( model ) );
+		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
 				success : function(response){		
 					if( response.status == 2 ){
