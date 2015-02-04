@@ -77,7 +77,7 @@
 		}
 		
 		function createTableTreePanel(renderTo){		
-			if( !common.ui.defined(renderTo.data("loaded")) || !renderTo.data("loaded") ){}
+			if( !common.ui.defined(renderTo.data("loaded")) || !renderTo.data("loaded") ){
 				var model = kendo.observable({
 					catalog : "",
 					schema : "",
