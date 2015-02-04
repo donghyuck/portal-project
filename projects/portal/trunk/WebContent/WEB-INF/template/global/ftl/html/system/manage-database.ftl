@@ -77,7 +77,7 @@
 		}
 		
 		function createTableTreePanel(renderTo){		
-			if(!renderTo.data("loaded") ){
+			if( !common.ui.defined(renderTo.data("loaded")) || !renderTo.data("loaded") ){}
 				var model = kendo.observable({
 					catalog : "",
 					schema : "",
@@ -92,8 +92,6 @@
 						extractDatabaseSchema(renderTo, $that);	
 					}
 				});
-				
-				
 			} 
 			
 			if( renderTo.data("model") ){
