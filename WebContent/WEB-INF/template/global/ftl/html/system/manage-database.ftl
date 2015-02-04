@@ -74,7 +74,8 @@
 					}
 				});	
 				renderTo.data("model", detailsModel );
-				kendo.bind( renderTo, detailsModel );				
+				kendo.bind( renderTo, detailsModel );
+				
 				renderTo.find("ul.list-group").slimScroll({
 					height: '550px'
 				});
@@ -90,7 +91,7 @@
 		
 		function extractDatabaseTableInfo(renderTo){
 			common.ui.ajax(
-			"<@spring.url "/stage/jdbc/schema/list.json?output=json" />", 
+			"<@spring.url "/secure/list-database-browser-tables.do?output=json" />", 
 			{				
 				data : {  },
 				success : function(response){					
@@ -101,11 +102,11 @@
 					
 					if( response.taskStatusCode == 2 ){
 						model.set("connecting" , false);
-						model.set("tableCount" , response.tables.length );
+						model.set("tableCount" , response.tableNames.length );
 						var renderTarget = renderTo.find("ul.list-group");
 						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >상세 보기</button></li>');
 						$.each( 
-							response.tables,
+							response.tableNames,
 							function( index , value ){
 								renderTarget.append(template({ "index" : index , "name" : value  }));
 							}
