@@ -64,17 +64,19 @@
 		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
 				success : function(response){	
-					model.set("status", status );
-					if( response.status === 2 ){
-						model.set("connecting", false );						
-						model.set("catalog", response.catalog );
-						model.set("schema", response.schema );
-						model.set("tables", response.tables );
-						model.set("tableCount", response.tables.length );
-					}else{
-						setInterval(function () {
-							extractDatabaseSchema(renderTo, model);
-						}, 10000);				
+					if( response.status ){
+						model.set("status", response.status );
+						if( response.status === 2 ){
+							model.set("connecting", false );						
+							model.set("catalog", response.catalog );
+							model.set("schema", response.schema );
+							model.set("tables", response.tables );
+							model.set("tableCount", response.tables.length );
+						}else{
+							setInterval(function () {
+								extractDatabaseSchema(renderTo, model);
+							}, 10000);				
+						}					
 					}
 				}			
 			});
