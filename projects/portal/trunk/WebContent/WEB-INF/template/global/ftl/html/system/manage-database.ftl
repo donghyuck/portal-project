@@ -58,10 +58,7 @@
 			}
 		}]);		
 
-		function extractDatabaseSchema( renderTo, model ){
-			
-			
-		
+		function extractDatabaseSchema( renderTo, model ){		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
 				success : function(response){	
 					if( response.status ){
@@ -84,7 +81,7 @@
 		
 		function createTableTreePanel(renderTo){		
 			if( !common.ui.defined(renderTo.data("on")) || !renderTo.data("on") ){
-				var model = kendo.observable({
+				var observable = kendo.observable({
 					catalog : "",
 					schema : "",
 					connecting : true,
@@ -98,7 +95,19 @@
 						extractDatabaseSchema(renderTo, $that);	
 					}
 				});
-				common.ui.bind( renderTo, model );
+				observable.bind("change", function(e){		
+					var sender = e.sender ;				
+					if( e.field === 'tables' && sender.tables.length > 0 ){
+						var renderTarget = renderTo.find("ul.list-group");
+						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >보기</button></li>');
+						$.each(sender.tables, function( index , value ){
+								renderTarget.append(template({ "index" : index , "name" : value  }));
+						});												
+						renderTarget.slideDown();					
+					}
+				});	
+				common.ui.bind( renderTo, observable );
+				renderTo.find("ul.list-group").slimScroll({ height: '550px' });				
 				renderTo.data("on", true);
 			} 
 			
