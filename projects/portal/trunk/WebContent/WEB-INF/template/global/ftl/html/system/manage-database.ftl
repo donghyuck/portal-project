@@ -58,9 +58,45 @@
 			}
 		}]);		
 
+		function extractDatabaseSchema( renderTo, model ){
+			common.ui.ajax("<@spring.url "/stage/jdbc/schema/list.json?output=json" />", {
+				success : function(response){		
+					if( response.status == 2 ){
+						model.set("connecting", false );
+						model.set("catalog", response.catalog );
+						model.set("schema", response.schema );
+						model.set("tables", response.tables );
+						model.set("tableCount", response.tables.length );
+					}else{
+						setInterval(function () {
+							extractDatabaseSchema(renderTo, model);
+						}, 10000);				
+					}
+				}			
+			});
+		}
 		
-		function createTableTreePanel(renderTo){			
-			if( !renderTo.data("model") ){
+		function createTableTreePanel(renderTo){		
+			if(!renderTo.data("loaded") ){
+				var model = kendo.observable({
+					catalog : "",
+					schema : "",
+					connecting : true,
+					status : 0,
+					tables : [],
+					tableCount : 0,
+					showDBTableList : function(e){
+						$that = this;
+						$this = $(e.target);
+						$this.button("loading");		
+						extractDatabaseSchema(renderTo, $that);	
+					}
+				});
+				
+				
+			} 
+			
+			if( renderTo.data("model") ){
 				var detailsModel = kendo.observable({
 					catalog : "",
 					schema : "",
@@ -83,12 +119,7 @@
 			}	
 			$("#database-table-details").find("button.close[data-action='slideDown']").click();	
 		}
-		
-		function getDBDetailsModel(){
-			var renderTo = $("#database-table-tree-view");
-			return renderTo.data("model");
-		} 		
-		
+
 		function extractDatabaseTableInfo(renderTo){
 			common.ui.ajax(
 			"<@spring.url "/secure/list-database-browser-tables.do?output=json" />", 
@@ -120,6 +151,7 @@
 				}
 			}); 						
 		}
+		
 
 		function createTableDetailsPanel(){
 				var renderTo =  $("#database-table-details");
@@ -159,6 +191,15 @@
 					btnSlideUp.show();
 				});	
 		}
+		
+		function getDBDetailsModel(){
+			var renderTo = $("#database-table-tree-view");
+			return renderTo.data("model");
+		} 		
+		
+
+
+
 		
 		function createSqlFileTreePanel(renderTo){
 			if( !renderTo.data('kendoTreeView') ){		
