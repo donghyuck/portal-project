@@ -60,12 +60,13 @@
 
 		function extractDatabaseSchema( renderTo, model ){
 			
-			alert( common.ui.stringify( model ) );
+			
 		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
-				success : function(response){		
-					if( response.status == 2 ){
-						model.set("connecting", false );
+				success : function(response){	
+					model.set("status", status );
+					if( response.status === 2 ){
+						model.set("connecting", false );						
 						model.set("catalog", response.catalog );
 						model.set("schema", response.schema );
 						model.set("tables", response.tables );
