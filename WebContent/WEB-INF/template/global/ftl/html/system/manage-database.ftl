@@ -121,7 +121,23 @@
 					columnCount : 0,
 					visible : false
 				});
-				kendo.bind( renderTo, observable );
+				common.ui.bind( renderTo, observable );
+				
+				var btnSlideUp = renderTo.find("button.close[data-action='slideUp']");				
+				var btnSlideDown = renderTo.find("button.close[data-action='slideDown']");				
+				
+				btnSlideUp.click(function(e){
+					renderTo.find("[data-role='grid']").slideUp();
+					btnSlideUp.hide();
+					btnSlideDown.show();
+				});
+				
+				btnSlideDown.click(function(e){
+					renderTo.find("[data-role='grid']").slideDown();
+					btnSlideDown.hide();
+					btnSlideUp.show();
+				});	
+								
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
 					common.ui.ajax(
@@ -132,22 +148,14 @@
 							observable.set("name", response.targetTable.name);
 							observable.set("columns", response.targetTable.columns);
 							observable.set("columnCount", response.targetTable.columns.length);
-							observable.set("visible", true );						
+							observable.set("visible", true );				
+							if( btnSlideDown.is(":visible") ){
+								btnSlideDown.click();
+							} 		
 						}
 					}); 		
 				});					
-				var btnSlideUp = renderTo.find("button.close[data-action='slideUp']");				
-				var btnSlideDown = renderTo.find("button.close[data-action='slideDown']");				
-				btnSlideUp.click(function(e){
-					renderTo.find("[data-role='grid']").slideUp();
-					btnSlideUp.hide();
-					btnSlideDown.show();
-				});
-				btnSlideDown.click(function(e){
-					renderTo.find("[data-role='grid']").slideDown();
-					btnSlideDown.hide();
-					btnSlideUp.show();
-				});	
+
 		}
 		
 		function createSqlFileTreePanel(renderTo){
