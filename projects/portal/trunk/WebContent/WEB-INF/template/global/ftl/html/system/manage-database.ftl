@@ -99,6 +99,7 @@
 					var sender = e.sender ;				
 					if( e.field === 'tables' && sender.tables.length > 0 ){
 						var renderTarget = renderTo.find("table > tbody"); // renderTo.find("ul.list-group");
+						renderTarget.html("");
 						var template = kendo.template('<tr><td><i class="fa fa-table"></i> #: name #</td><td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="#= name #">보기</button></td></tr>');
 						//var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >보기</button></li>');
 						$.each(sender.tables, function( index , value ){
