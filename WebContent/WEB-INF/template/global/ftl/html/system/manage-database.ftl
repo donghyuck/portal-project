@@ -108,7 +108,7 @@
 					}
 				});	
 				common.ui.bind( renderTo, observable );
-				renderTo.find("ul.list-group").slimScroll({ height: '550px' });				
+				renderTo.find("table > tbody").slimScroll({ height: '550px' });				
 				renderTo.data("on", true);
 			} 
 			$("#database-table-details").find("button.close[data-action='slideDown']").click();	
