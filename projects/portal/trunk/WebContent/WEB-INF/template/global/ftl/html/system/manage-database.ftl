@@ -310,7 +310,6 @@
 
 			.list-and-detail .list-and-detail-contanier {
 				margin-left: 400px;
-				min-height: 400px;
 			}
 		}		
 		</style>
