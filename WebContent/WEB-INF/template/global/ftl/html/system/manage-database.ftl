@@ -363,7 +363,8 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td colspan="2"> .. </td>
+												<td>&nbsp; </td>
+												<td>&nbsp; </td>
 											</tr>
 										</tbody>
 									</table>
