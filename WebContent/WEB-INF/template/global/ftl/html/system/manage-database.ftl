@@ -155,15 +155,6 @@
 				});	
 		}
 		
-		function getDBDetailsModel(){
-			var renderTo = $("#database-table-tree-view");
-			return renderTo.data("model");
-		} 		
-		
-
-
-
-		
 		function createSqlFileTreePanel(renderTo){
 			if( !renderTo.data('kendoTreeView') ){		
 				renderTo.kendoTreeView({
