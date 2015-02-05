@@ -351,7 +351,7 @@
 									<button class="btn btn-danger  btn-xs" data-bind="visible: supportCustomized, click:openFileCopyModal" style="display:none;"><i class="fa fa-code"></i> 커스텀 템플릿 만들기</button>
 								</div>
 							</div>			
-							<div class="panel-body padding-sm">							
+							<div class="panel-body padding-sm" style="height: 43px;">							
 								<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 								<div class="pull-right text-muted">
 									<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
