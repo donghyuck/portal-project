@@ -45,7 +45,7 @@
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
 						case "#database-table-tree-view" :
-							createTableTreePanel($(show_bs_tab.attr('href')));
+							createDatabaseTablePanel($(show_bs_tab.attr('href')));
 							break;
 						case  '#database-sql-tree-view' :
 							createSqlFileTreePanel($(show_bs_tab.attr('href')));
@@ -79,7 +79,7 @@
 			});
 		}
 		
-		function createTableTreePanel(renderTo){		
+		function createDatabaseTablePanel(renderTo){		
 			if( !common.ui.defined(renderTo.data("on")) || !renderTo.data("on") ){
 				var observable = kendo.observable({
 					catalog : "",
@@ -98,66 +98,34 @@
 				observable.bind("change", function(e){		
 					var sender = e.sender ;				
 					if( e.field === 'tables' && sender.tables.length > 0 ){
-						var renderTarget = renderTo.find("table > tbody"); // renderTo.find("ul.list-group");
+						var renderTarget = renderTo.find("table > tbody");
 						renderTarget.html("");
 						var template = kendo.template('<tr><td><i class="fa fa-table"></i> #: name #</td><td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="#= name #">보기</button></td></tr>');
-						//var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >보기</button></li>');
 						$.each(sender.tables, function( index , value ){
-								renderTarget.append(template({ "index" : index , "name" : value  }));
+							renderTarget.append(template({ "index" : index , "name" : value  }));
 						});												
-						renderTarget.slideDown();					
+						renderTarget.slideDown();	
+						createTableDetailsPanel();				
 					}
 				});	
 				common.ui.bind( renderTo, observable );
-				//renderTo.find("table > tbody").slimScroll({ height: '550px' });				
 				renderTo.data("on", true);
 			} 
-			$("#database-table-details").find("button.close[data-action='slideDown']").click();	
+			//$("#database-table-details").find("button.close[data-action='slideDown']").click();	
 		}
-
-		function extractDatabaseTableInfo(renderTo){
-			common.ui.ajax(
-			"<@spring.url "/secure/list-database-browser-tables.do?output=json" />", 
-			{				
-				data : {  },
-				success : function(response){					
-					var model = getDBDetailsModel();
-					model.set("catalog" , response.catalogFilter);
-					model.set("schema", response.schemaFilter); 
-					model.set("status", response.taskStatusCode);
-					
-					if( response.taskStatusCode == 2 ){
-						model.set("connecting" , false);
-						model.set("tableCount" , response.tableNames.length );
-						var renderTarget = renderTo.find("ul.list-group");
-						var template = kendo.template('<li class="list-group-item"><i class="fa fa-table"></i> #: name # <button class="btn  btn-primary btn-outline btn-flat btn-xs pull-right" data-table="#= name #" >상세 보기</button></li>');
-						$.each( 
-							response.tableNames,
-							function( index , value ){
-								renderTarget.append(template({ "index" : index , "name" : value  }));
-							}
-						);						
-						renderTarget.slideDown();
-					}else{
-						setInterval(function () {
-							extractDatabaseTableInfo(renderTo);
-						}, 10000);						
-					}
-				}
-			}); 						
-		}
-		
 
 		function createTableDetailsPanel(){
-				var renderTo =  $("#database-table-details");
-				var detailsModel = kendo.observable({
+				var renderTo =  $("#database-table-details");				
+				var observable = kendo.observable({
 					name : "",
 					columns : [],
 					columnCount : 0,
 					visible : false
 				});
-				renderTo.data("model", detailsModel );
-				kendo.bind( renderTo, detailsModel );
+				kendo.bind( renderTo, observable );
+				
+				//renderTo.data("model", observable );
+				
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
 					common.ui.ajax(
@@ -165,10 +133,10 @@
 					{
 						data : { targetTableName : $this.data("table") },
 						success : function(response){
-							detailsModel.set("name", response.targetTable.name);
-							detailsModel.set("columns", response.targetTable.columns);
-							detailsModel.set("columnCount", response.targetTable.columns.length);
-							detailsModel.set("visible", true );						
+							observable.set("name", response.targetTable.name);
+							observable.set("columns", response.targetTable.columns);
+							observable.set("columnCount", response.targetTable.columns.length);
+							observable.set("visible", true );						
 						}
 					}); 		
 				});				
@@ -380,9 +348,8 @@
 							<div class="panel-footer no-padding-vr"></div>	
 						</div>					
 					</div>
-					<div class="list-and-detail-contanier p-xs">
-					
-						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible">
+					<div class="list-and-detail-contanier p-xs">					
+						<div id="database-table-details" class="panel panel-transparent" data-bind="visible:visible" style="display:none;">
 							<div class="panel-heading">
 								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
 								<div class="panel-heading-controls">
