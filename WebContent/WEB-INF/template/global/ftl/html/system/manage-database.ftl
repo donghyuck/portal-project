@@ -302,7 +302,7 @@
 			.list-and-detail .list-and-detail-nav {
 				width: 400px;
 				border-bottom: 0;
-				position: absolute;
+				/*position: absolute;*/
 				height: auto;
 				border-right-width: 1px;		
 				border-color: #e2e2e2;
@@ -363,17 +363,8 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td><i class="fa fa-table"></i> DFSADFAKK</td>
-												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
+												<td colspan="2"> .. </td>
 											</tr>
-											<tr>
-												<td><i class="fa fa-table"></i> DFSADFAKK</td>
-												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
-											</tr>
-											<tr>
-												<td><i class="fa fa-table"></i> DFSADFAKK</td>
-												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
-										  </tr>
 										</tbody>
 									</table>
 									<div class="table-footer">
