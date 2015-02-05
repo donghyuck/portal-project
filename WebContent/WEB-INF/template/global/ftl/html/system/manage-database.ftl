@@ -295,6 +295,7 @@
 			border-color: #e2e2e2;
 			background: #f6f6f6;
 			border: 0 solid;
+			float: left;
 		}
 		
 		@media (min-width: 992px) {
@@ -303,7 +304,6 @@
 				border-bottom: 0;
 				position: absolute;
 				height: auto;
-				min-height: 100%;
 				border-right-width: 1px;		
 				border-color: #e2e2e2;
 			}
