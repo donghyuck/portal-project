@@ -373,11 +373,6 @@
 									</div>
 								</div>								
 								
-								
-									<div class="m-b-sm">
-										
-									</div>
-									<ul class="list-group no-margin-b" style="display:none;"></ul>									
 								</div><!-- ./tab-pane -->
 								<div class="tab-pane fade panel-body padding-sm" id="database-sql-tree-view">
 								</div><!-- ./tab-pane -->
@@ -410,7 +405,7 @@
 										<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>					
 									</div>
 								</div>			
-								<div class="panel-body padding-sm">
+								<div class="panel-body padding-sm" style="height: 43px;">
 									<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
 									<div class="pull-right text-muted">
 										<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
