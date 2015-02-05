@@ -295,7 +295,6 @@
 			border-color: #e2e2e2;
 			background: #f6f6f6;
 			border: 0 solid;
-			float: left;
 		}
 		
 		@media (min-width: 992px) {
@@ -306,6 +305,7 @@
 				height: auto;
 				border-right-width: 1px;		
 				border-color: #e2e2e2;
+				float: left;
 			}
 
 			.list-and-detail .list-and-detail-contanier {
