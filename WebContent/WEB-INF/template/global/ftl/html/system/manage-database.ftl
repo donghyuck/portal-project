@@ -358,7 +358,7 @@
 										<thead>
 											<tr>
 												<th>테이블</th>
-												<th width="20">보기</th>
+												<th width="45">보기</th>
 											</tr>
 										</thead>
 										<tbody>
