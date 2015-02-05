@@ -346,7 +346,12 @@
 								<div class="table-light">
 									<div class="table-header">
 										<div class="table-caption">
-											<span data-bind="text:schema" class="text-muted"></span>
+											<span class="label label-warning">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
+										<span class="label label-warning">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
+										<div class="pull-right margin-buttom-20">
+											<span data-bind="text: tableCount, invisible:connecting">0</span>
+											<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
+										</div>
 										</div>
 									</div>
 									<table class="table table-bordered">
@@ -358,15 +363,15 @@
 										</thead>
 										<tbody>
 											<tr>
-												<td><i class="fa fa-table"></i>DFSADFAKK</td>
+												<td><i class="fa fa-table"></i> DFSADFAKK</td>
 												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
 											</tr>
 											<tr>
-												<td><i class="fa fa-table"></i>DFSADFAKK</td>
+												<td><i class="fa fa-table"></i> DFSADFAKK</td>
 												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
 											</tr>
 											<tr>
-												<td><i class="fa fa-table"></i>DFSADFAKK</td>
+												<td><i class="fa fa-table"></i> DFSADFAKK</td>
 												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
 										  </tr>
 										</tbody>
@@ -378,12 +383,7 @@
 								
 								
 									<div class="m-b-sm">
-										<span class="label label-warning">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
-										<span class="label label-warning">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
-										<div class="pull-right margin-buttom-20">
-											<span data-bind="text: tableCount, invisible:connecting">0</span>
-											<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
-										</div>
+										
 									</div>
 									<ul class="list-group no-margin-b" style="display:none;"></ul>									
 								</div><!-- ./tab-pane -->
