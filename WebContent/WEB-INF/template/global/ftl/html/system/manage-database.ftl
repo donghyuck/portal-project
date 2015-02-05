@@ -121,17 +121,14 @@
 					columnCount : 0,
 					visible : false
 				});
-				common.ui.bind( renderTo, observable );
-				
+				common.ui.bind( renderTo, observable );				
 				var btnSlideUp = renderTo.find("button.close[data-action='slideUp']");				
 				var btnSlideDown = renderTo.find("button.close[data-action='slideDown']");				
-				
 				btnSlideUp.click(function(e){
 					renderTo.find("[data-role='grid']").slideUp();
 					btnSlideUp.hide();
 					btnSlideDown.show();
-				});
-				
+				});				
 				btnSlideDown.click(function(e){
 					renderTo.find("[data-role='grid']").slideDown();
 					btnSlideDown.hide();
@@ -141,13 +138,13 @@
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
 					common.ui.ajax(
-					"<@spring.url "/secure/get-database-browser-table.do?output=json" />",
+					"<@spring.url "/secure/data/stage/jdbc/schema/get.json?output=json" />",
 					{
-						data : { targetTableName : $this.data("table") },
+						data : { table : $this.data("table") },
 						success : function(response){
-							observable.set("name", response.targetTable.name);
-							observable.set("columns", response.targetTable.columns);
-							observable.set("columnCount", response.targetTable.columns.length);
+							observable.set("name", response.name);
+							observable.set("columns", response.columns);
+							observable.set("columnCount", response.columns.length);
 							observable.set("visible", true );				
 							if( btnSlideDown.is(":visible") ){
 								btnSlideDown.click();
