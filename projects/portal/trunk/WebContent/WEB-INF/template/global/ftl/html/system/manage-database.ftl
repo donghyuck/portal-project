@@ -110,28 +110,6 @@
 				renderTo.find("ul.list-group").slimScroll({ height: '550px' });				
 				renderTo.data("on", true);
 			} 
-			
-			if( renderTo.data("model") ){
-				var detailsModel = kendo.observable({
-					catalog : "",
-					schema : "",
-					connecting : true,
-					status : 0,
-					tableCount : 0,
-					showDBTableList : function(e){
-						$this = $(e.target);
-						$this.button("loading");				
-						extractDatabaseTableInfo(renderTo);	
-					}
-				});	
-				renderTo.data("model", detailsModel );
-				kendo.bind( renderTo, detailsModel );
-				
-				renderTo.find("ul.list-group").slimScroll({
-					height: '550px'
-				});
-				createTableDetailsPanel();				
-			}	
 			$("#database-table-details").find("button.close[data-action='slideDown']").click();	
 		}
 
@@ -365,6 +343,40 @@
 							</div> <!-- / .panel-heading -->												
 							<div class="tab-content">
 								<div class="tab-pane fade panel-body padding-sm" id="database-table-tree-view">
+								<div class="table-light">
+									<div class="table-header">
+										<div class="table-caption">
+											<span data-bind="text:schema" class="text-muted"></span>
+										</div>
+									</div>
+									<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>테이블</th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><i class="fa fa-table"></i>DFSADFAKK</td>
+												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
+											</tr>
+											<tr>
+												<td><i class="fa fa-table"></i>DFSADFAKK</td>
+												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
+											</tr>
+											<tr>
+												<td><i class="fa fa-table"></i>DFSADFAKK</td>
+												<td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="V2_SOCIAL_ACCOUNT">보기</button></td>
+										  </tr>
+										</tbody>
+									</table>
+									<div class="table-footer">
+										Footer
+									</div>
+								</div>								
+								
+								
 									<div class="m-b-sm">
 										<span class="label label-warning">카테고리</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:catalog" class="text-muted"></span>	
 										<span class="label label-warning">스키마</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:schema" class="text-muted"></span>
