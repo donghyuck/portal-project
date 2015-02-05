@@ -288,11 +288,12 @@
 			.list-and-detail .list-and-detail-nav {
 				width: 400px;
 				border-bottom: 0;
-				position: absolute;
+				/*position: absolute;*/
 				height: auto;
 				min-height: 100%;
 				border-right-width: 1px;		
 				border-color: #e2e2e2;
+				float: left;
 			}
 
 			.list-and-detail .list-and-detail-contanier {
