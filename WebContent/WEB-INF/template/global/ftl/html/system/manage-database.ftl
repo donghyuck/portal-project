@@ -111,7 +111,6 @@
 				common.ui.bind( renderTo, observable );
 				renderTo.data("on", true);
 			} 
-			//$("#database-table-details").find("button.close[data-action='slideDown']").click();	
 		}
 
 		function createTableDetailsPanel(){
@@ -123,9 +122,6 @@
 					visible : false
 				});
 				kendo.bind( renderTo, observable );
-				
-				//renderTo.data("model", observable );
-				
 				$(document).on("click","[data-table]", function(e){		
 					var $this = $(this);		
 					common.ui.ajax(
@@ -139,8 +135,7 @@
 							observable.set("visible", true );						
 						}
 					}); 		
-				});				
-				
+				});					
 				var btnSlideUp = renderTo.find("button.close[data-action='slideUp']");				
 				var btnSlideDown = renderTo.find("button.close[data-action='slideDown']");				
 				btnSlideUp.click(function(e){
