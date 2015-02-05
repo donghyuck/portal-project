@@ -417,15 +417,6 @@
 					
 					</div>
 				</div>	
-								
-				<div class="row">			
-					<div class="col-sm-4">
-
-					</div></!-- /.col-sm-4 -->	
-					<div class="col-sm-8">										
-									
-					</div></!-- /.col-sm-8 -->
-				</div><!-- /.row -->	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
