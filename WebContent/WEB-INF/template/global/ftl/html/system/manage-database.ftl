@@ -160,10 +160,9 @@
 				renderTo.kendoTreeView({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/list-sql-files.do?output=json" />', type: 'POST' }
+							read: { url:'<@spring.url "/secure/data/mgmt/sql/list.json?output=json" />', type: 'POST' }
 						},
-						schema: {
-							data: "targetFiles",					
+						schema: {					
 							model: {
 								id: "path",
 								hasChildren: "directory"
@@ -229,11 +228,11 @@
 	    	}  
 	    	if(!filePlaceHolder.directory){
 				common.ui.ajax(  
-				"<@spring.url "/secure/view-sql-file-content.do?output=json" />", 
+				"<@spring.url "/secure/data/mgmt/sql/get.json?output=json" />", 
 				{					
 					data : { path:  filePlaceHolder.path },
 					success : function(response){
-						ace.edit("xmleditor").setValue( response.targetFileContent );	
+						ace.edit("xmleditor").setValue( response.fileContent );	
 					}
 				}); 
 	    	}
