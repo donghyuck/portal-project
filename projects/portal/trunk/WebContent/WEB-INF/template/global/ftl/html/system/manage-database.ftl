@@ -211,16 +211,14 @@
 				var editor = ace.edit("xmleditor");		
 				editor.getSession().setMode("ace/mode/xml");
 				editor.getSession().setUseWrapMode(false);					
-			}
-						
+			}						
 			renderTo.data("model").file.set("path", filePlaceHolder.path); 
 			renderTo.data("model").file.set("customized", filePlaceHolder.customized); 
 	    	renderTo.data("model").file.set("absolutePath", filePlaceHolder.absolutePath );
 	    	renderTo.data("model").file.set("name", filePlaceHolder.name );
 	    	renderTo.data("model").file.set("size", filePlaceHolder.size );
 	    	renderTo.data("model").file.set("directory", filePlaceHolder.directory );
-	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
-	    	
+	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );		    	
 	    	if( !filePlaceHolder.customized && !filePlaceHolder.directory ) 
 	    	{
 	    		renderTo.data("model").set("supportCustomized", true); 
@@ -241,7 +239,9 @@
 						ace.edit("xmleditor").setValue( response.targetFileContent );	
 					}
 				}); 
-	    	}	    		
+	    	}
+	    	if (!$('#sql-details').is(":visible")) 
+	    		$('#sql-details').fadeIn();	    		
 		}												
 		-->
 		</script> 		 
