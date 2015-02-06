@@ -25,7 +25,7 @@
 	<!-- ============================================================ -->
 	<!-- Servlet Filters 																									   -->
 	<!-- ============================================================ -->
-
+	<!-- logging  -->
 	<filter>
 		<filter-name>logging</filter-name>
 		<filter-class>org.springframework.web.filter.CommonsRequestLoggingFilter</filter-class>
@@ -40,7 +40,17 @@
 			<param-value>true</param-value>
 		</init-param>
 	</filter>
-
+	<!-- monitoring  -->
+	<filter>
+	  <filter-name>RequestURIFilter</filter-name>
+	  <filter-class>net.anotheria.moskito.web.filters.RequestURIFilter</filter-class>
+	  <init-param>
+	    <param-name>limit</param-name>
+	    <param-value>1000</param-value>
+	  </init-param>
+	</filter>
+	
+	<!-- encoding  -->
 	<filter>
 		<filter-name>encoding</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -53,12 +63,13 @@
 		    <param-value>true</param-value>
 		</init-param>			
 	</filter>
-
+	<!-- spring security  -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 	</filter>
-
+	
+	<!-- struts2  -->
 	<filter>
 		<filter-name>struts2-prepare</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareFilter</filter-class>
@@ -68,7 +79,8 @@
 		<filter-name>struts2-execute</filter-name>
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsExecuteFilter</filter-class>
 	</filter>
-
+	
+	<!-- sitemesh  -->
 	<filter>
 		<filter-name>sitemesh</filter-name>
 		<filter-class>com.opensymphony.module.sitemesh.filter.PageFilter</filter-class>
@@ -78,8 +90,12 @@
 	<filter-mapping> 
 		<filter-name>logging</filter-name> 
 		<url-pattern>/*</url-pattern> 
-	</filter-mapping> 
-	
+	</filter-mapping>
+	 
+	<filter-mapping>
+	  <filter-name>RequestURIFilter</filter-name>
+	  <url-pattern>/*</url-pattern>
+	</filter-mapping>	
 	
 	<filter-mapping>
 		<filter-name>encoding</filter-name>
@@ -141,6 +157,12 @@
 			org.springframework.web.context.request.RequestContextListener
 		</listener-class>
 	</listener>
+
+<listener>
+  <listener-class>
+    net.anotheria.moskito.web.session.SessionByTldListener
+  </listener-class>
+</listener> 
 	
 	<!-- ============================================================ -->
 	<!-- Servlet																												   -->
