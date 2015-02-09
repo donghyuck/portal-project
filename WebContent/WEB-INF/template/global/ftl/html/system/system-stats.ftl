@@ -81,16 +81,16 @@
 					<div class="col-lg-12">	
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i></span>
+								<span class="panel-title"><i class="fa fa-info"></i> 메모리</span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
 									<li>
-										<a href="#system-info" data-toggle="tab">시스템 환경 정보</a>
+										<a href="#system-info" data-toggle="tab">Memory Pool</a>
 									</li>
 									<li>
-										<a href="#license-info" data-toggle="tab">라이센스 정보</a>
+										<a href="#license-info" data-toggle="tab">VirtualMemoryPool</a>
 									</li>
 									<li>
-										<a href="#database-info" data-toggle="tab">데이터베이스 정보</a>
+										<a href="#database-info" data-toggle="tab">Memory</a>
 									</li>							
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
