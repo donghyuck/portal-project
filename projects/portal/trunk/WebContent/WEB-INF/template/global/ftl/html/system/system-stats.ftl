@@ -83,6 +83,40 @@
 							});
 						}
 					break;
+					case "#virtual-pool-stats" :
+						if(! common.ui.exists($("#virtual-pool-stats-grid")) ){
+							common.ui.grid($('#virtual-pool-stats-grid'), {
+								dataSource: {
+									transport: { 
+										read: { url:'/secure/data/stage/memory/stats.json?output=json', type:'post' },
+										parameterMap: function (options, operation){			
+											options.class = "BuiltInMemoryPoolVirtualProducer";
+											return options ;
+										}	
+									},						
+									batch: false
+								},
+								columns: [
+									{ title: "항목", field: "producerId", width:150},
+									{ title: "INIT", field: "firstStatsValues[0].value" , format: "{0:c}" },
+									{ title: "MIN_USED", field: "firstStatsValues[1].value" , format: "{0:c}" },
+									{ title: "USED", field: "firstStatsValues[2].value" , format: "{0:c}" },
+									{ title: "MAX_USED", field: "firstStatsValues[3].value" , format: "{0:c}" },
+									{ title: "MIN_COMMITED", field: "firstStatsValues[4].value" , format: "{0:c}" },
+									{ title: "COMMITED", field: "firstStatsValues[5].value" , format: "{0:c}" },
+									{ title: "MAX_COMMITED", field: "firstStatsValues[6].value" , format: "{0:c}" },
+									{ title: "MAX", field: "firstStatsValues[7].value" , format: "{0:c}" }
+								],
+								pageable: false,	
+								resizable: true,
+								editable : false,
+								scrollable: true,
+								height: 200,
+								change: function(e) {
+								}
+							});
+						}
+					break;
 				}					
 			});				
 			$('#memory-stats-tabs a:first').tab('show');
@@ -143,6 +177,7 @@
 									<div id="memory-pool-stats-grid"></div>
 								</div>
 								<div class="tab-pane" id="virtual-pool-stats">
+									<div id="virtual-pool-stats-grid"></div>
 								</div>
 								<div class="tab-pane" id="memory-stats">
 								</div>
