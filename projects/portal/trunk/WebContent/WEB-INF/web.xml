@@ -158,11 +158,16 @@
 		</listener-class>
 	</listener>
 
-<listener>
-  <listener-class>
-    net.anotheria.moskito.web.session.SessionByTldListener
-  </listener-class>
-</listener> 
+	<listener>
+		<listener-class>
+			net.anotheria.moskito.web.session.SessionByTldListener
+		</listener-class>
+	</listener>
+	<listener>
+		<listener-class>
+			net.anotheria.moskito.web.session.SessionCountProducer
+		</listener-class>
+	</listener>
 	
 	<!-- ============================================================ -->
 	<!-- Servlet																												   -->
