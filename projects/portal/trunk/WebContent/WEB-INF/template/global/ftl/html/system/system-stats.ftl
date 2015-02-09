@@ -46,7 +46,7 @@
 		}]);
 		
 		function createMemoryStats (){	
-			$('#myTab').on( 'show.bs.tab', function (e) {		
+			$('#memory-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
 				switch( target.attr('href') ){
 					case "#memory-pool-stats" :
