@@ -56,7 +56,7 @@
 									transport: { 
 										read: { url:'/secure/data/stage/memory/stats.json?output=json', type:'post' },
 										parameterMap: function (options, operation){			
-											options.class = "BuiltInMemoryPoolVirtualProducer";
+											options.class = "BuiltInMemoryPoolProducer";
 											return options ;
 										}	
 									},						
