@@ -64,7 +64,7 @@
 								},
 								columns: [
 									{ title: "항목", field: "producerId"},
-									{ title: "INIT", template: "#:firstStatsValues[0].value #", format: "##,#"},
+									{ title: "INIT", template: "#:firstStatsValues[0].value #", format: "{0:c}"},
 									{ title: "MIN_USED", field: "firstStatsValues[1].value" },
 								],
 								pageable: false,	
