@@ -63,7 +63,7 @@
 									batch: false
 								},
 								columns: [
-									{ title: "항목", field: "producerId"},
+									{ title: "항목", field: "producerId", width:150},
 									{ title: "INIT", field: "firstStatsValues[0].value" , format: "{0:c}" },
 									{ title: "MIN_USED", field: "firstStatsValues[1].value" , format: "{0:c}" },
 									{ title: "USED", field: "firstStatsValues[2].value" , format: "{0:c}" },
