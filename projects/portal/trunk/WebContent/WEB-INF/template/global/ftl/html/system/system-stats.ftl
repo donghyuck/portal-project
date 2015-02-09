@@ -181,6 +181,7 @@
 									<div id="virtual-memory-pool-stats-grid"></div>
 								</div>
 								<div class="tab-pane" id="memory-stats">
+									<div id="memory-stats-grid"></div>
 								</div>
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
