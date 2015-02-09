@@ -77,7 +77,7 @@
 								}
 							});
 						}
-						break;
+					break;
 				}					
 			});				
 			$('#myTab a:first').tab('show');
