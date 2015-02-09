@@ -64,7 +64,7 @@
 								},
 								columns: [
 									{ title: "항목", field: "producerId"},
-									{ title: "INIT", template: "#:firstStatsValues[0].INIT #"},
+									{ title: "INIT", template: "#:firstStatsValues[1].INIT #"},
 									{ title: "USED", field: "firstStatsValues[0].USED" },
 								],
 								pageable: false,	
@@ -79,7 +79,7 @@
 					break;
 				}					
 			});				
-			$('#myTab a:first').tab('show');
+			$('#memory-stats-tabs a:first').tab('show');
 		}			
 		
 		-->
