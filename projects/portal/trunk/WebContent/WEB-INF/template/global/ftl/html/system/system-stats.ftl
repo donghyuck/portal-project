@@ -68,7 +68,7 @@
 									{ title: "INIT", field: "firstStatsValues[0].INIT"},
 									{ title: "USED", field: "firstStatsValues[0].USED" },
 								],
-								pageable: false,
+								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
 								resizable: true,
 								editable : false,
 								scrollable: true,
