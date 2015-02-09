@@ -60,8 +60,7 @@
 											return options ;
 										}	
 									},						
-									batch: false,
-									error:common.ui.handleAjaxError
+									batch: false
 								},
 								columns: [
 									{ title: "항목", field: "producerId"},
