@@ -68,7 +68,7 @@
 									{ title: "INIT", template: "#:firstStatsValues[0].INIT #"},
 									{ title: "USED", field: "firstStatsValues[0].USED" },
 								],
-								pageable: { refresh:true },	
+								pageable: false,	
 								resizable: true,
 								editable : false,
 								scrollable: true,
