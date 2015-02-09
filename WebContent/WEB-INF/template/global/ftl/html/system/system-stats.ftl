@@ -40,9 +40,48 @@
 						e.data.copy(targetCompany);
 					}
 				});				
+				createMemoryStats();
 				// END SCRIPT
 			}
 		}]);
+		
+		function createMemoryStats (){	
+			$('#myTab').on( 'show.bs.tab', function (e) {		
+				var target = $(e.target);
+				switch( target.attr('href') ){
+					case "#memory-pool-stats" :
+						if(! common.ui.exists($("#memory-pool-stats-grid")) ){
+							common.ui.grid($('#memory-pool-stats-grid'), {
+								dataSource: {
+									transport: { 
+										read: { url:'/secure/data/stage/memory/stats.json?output=json', type:'post' },
+										parameterMap: function (options, operation){			
+											options.class = "BuiltInMemoryPoolVirtualProducer";
+											return options ;
+										}	
+									},						
+									batch: false,
+									error:common.ui.handleAjaxError
+								},
+								columns: [
+									{ title: "항목", field: "producerId"},
+									{ title: "INIT", field: "firstStatsValues[0].INIT"},
+									{ title: "USED", field: "firstStatsValues[0].USED" },
+								],
+								pageable: false,
+								resizable: true,
+								editable : false,
+								scrollable: true,
+								height: 200,
+								change: function(e) {
+								}
+							});
+						}
+						break;
+				}					
+			});				
+			$('#myTab a:first').tab('show');
+		}			
 		
 		-->
 		</script> 		 
@@ -82,20 +121,26 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> 메모리</span>
-								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
+								<ul class="nav nav-tabs nav-tabs-xs" id="memory-stats-tabs">
 									<li>
-										<a href="#system-info" data-toggle="tab">Memory Pool</a>
+										<a href="#memory-pool-stats" data-toggle="tab">Memory Pool</a>
 									</li>
 									<li>
-										<a href="#license-info" data-toggle="tab">VirtualMemoryPool</a>
+										<a href="#virtual-memory-pool-stats" data-toggle="tab">VirtualMemoryPool</a>
 									</li>
 									<li>
-										<a href="#database-info" data-toggle="tab">Memory</a>
+										<a href="#memory-stats" data-toggle="tab">Memory</a>
 									</li>							
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
-
+								<div class="tab-pane" id="memory-pool-stats">
+									<div id="memory-pool-stats-grid"></div>
+								</div>
+								<div class="tab-pane" id="virtual-pool-stats">
+								</div>
+								<div class="tab-pane" id="memory-stats">
+								</div>
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
 						</div><!-- /.panel -->
