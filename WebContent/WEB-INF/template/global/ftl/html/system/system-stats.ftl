@@ -61,8 +61,6 @@
 										}	
 									},						
 									batch: false,
-									pageSize: 15,
-									serverPaging: false,
 									error:common.ui.handleAjaxError
 								},
 								columns: [
@@ -70,7 +68,7 @@
 									{ title: "INIT", field: "firstStatsValues[0].INIT"},
 									{ title: "USED", field: "firstStatsValues[0].USED" },
 								],
-								pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
+								pageable: { refresh:true },	
 								resizable: true,
 								editable : false,
 								scrollable: true,
