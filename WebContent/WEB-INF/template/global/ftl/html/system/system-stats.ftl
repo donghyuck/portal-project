@@ -61,6 +61,8 @@
 										}	
 									},						
 									batch: false,
+									pageSize: 15,
+									serverPaging: false,
 									error:common.ui.handleAjaxError
 								},
 								columns: [
