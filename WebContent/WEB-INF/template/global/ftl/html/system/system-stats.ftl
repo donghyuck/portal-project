@@ -64,8 +64,14 @@
 								},
 								columns: [
 									{ title: "항목", field: "producerId"},
-									{ title: "INIT", template: "#:firstStatsValues[0].value #", format: "{0:c}"},
+									{ title: "INIT", field: "firstStatsValues[0].value" , format: "{0:c}" },
 									{ title: "MIN_USED", field: "firstStatsValues[1].value" , format: "{0:c}" },
+									{ title: "USED", field: "firstStatsValues[2].value" , format: "{0:c}" },
+									{ title: "MAX_USED", field: "firstStatsValues[3].value" , format: "{0:c}" },
+									{ title: "MIN_COMMITED", field: "firstStatsValues[4].value" , format: "{0:c}" },
+									{ title: "COMMITED", field: "firstStatsValues[5].value" , format: "{0:c}" },
+									{ title: "MAX_COMMITED", field: "firstStatsValues[6].value" , format: "{0:c}" },
+									{ title: "MAX", field: "firstStatsValues[7].value" , format: "{0:c}" }
 								],
 								pageable: false,	
 								resizable: true,
