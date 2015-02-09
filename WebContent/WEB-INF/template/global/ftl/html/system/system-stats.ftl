@@ -83,9 +83,9 @@
 							});
 						}
 					break;
-					case "#virtual-pool-stats" :
-						if(! common.ui.exists($("#virtual-pool-stats-grid")) ){
-							common.ui.grid($('#virtual-pool-stats-grid'), {
+					case "#virtual-memory-pool-stats" :
+						if(! common.ui.exists($("#virtual-memory-pool-stats-grid")) ){
+							common.ui.grid($('#virtual-memory-pool-stats-grid'), {
 								dataSource: {
 									transport: { 
 										read: { url:'/secure/data/stage/memory/stats.json?output=json', type:'post' },
@@ -177,8 +177,8 @@
 								<div class="tab-pane" id="memory-pool-stats">
 									<div id="memory-pool-stats-grid"></div>
 								</div>
-								<div class="tab-pane" id="virtual-pool-stats">
-									<div id="virtual-pool-stats-grid"></div>
+								<div class="tab-pane" id="virtual-memory-pool-stats">
+									<div id="virtual-memory-pool-stats-grid"></div>
 								</div>
 								<div class="tab-pane" id="memory-stats">
 								</div>
