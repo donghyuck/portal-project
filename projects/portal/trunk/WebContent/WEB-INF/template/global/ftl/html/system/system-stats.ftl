@@ -117,6 +117,7 @@
 							});
 						}
 					break;
+					
 				}					
 			});				
 			$('#memory-stats-tabs a:first').tab('show');
