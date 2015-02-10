@@ -60,15 +60,15 @@
 	                },
 	                series: [{
 	                    name: "INIT",
-	                    field : "firstStatsValues[0].value",
+	                    field : "INIT",
 		                    color: "#f3ac32"
 	                }, {
 	                    name: "USED",
-	                   	field : "firstStatsValues[2].value",
+	                   	field : "USED",
 	                    color: "#b8b8b8"
 	                }, {
 	                    name: "MAX_USED",
-	                   	field : "firstStatsValues[3].value",
+	                   	field : "MAX_USED",
 	                    color: "#bb6e36"
 	                }],
 	                valueAxis: {
@@ -222,15 +222,15 @@
 							</div> <!-- / .panel-heading -->			
 							<div class="tab-content">
 								<div class="tab-pane" id="memory-pool-stats">
-									<div id="memory-pool-stats-chart" ></div>
+									<div id="memory-pool-stats-chart" class="padding-sm" ></div>
 									<div id="memory-pool-stats-grid" class="no-border"></div>
 								</div>
 								<div class="tab-pane" id="virtual-memory-pool-stats">
-									<div id="virtual-memory-pool-stats-chart" ></div>
+									<div id="virtual-memory-pool-stats-chart" class="padding-sm"></div>
 									<div id="virtual-memory-pool-stats-grid" class="no-border"></div>
 								</div>
 								<div class="tab-pane" id="memory-stats">
-									<div id="memory-stats-chart" ></div>
+									<div id="memory-stats-chart" class="padding-sm"></div>
 									<div id="memory-stats-grid" class="no-border"></div>
 								</div>
 							</div><!-- tab contents end -->
