@@ -136,7 +136,7 @@
 				switch( target.attr('href') ){
 					case "#memory-pool-stats" :						
 						createMemoryStatsGrid($("#memory-pool-stats-grid"), "BuiltInMemoryPoolProducer");				
-						createMemoryStatsChart($('#memory-pool-stats-grid-chart'), common.ui.grid($("#memory-pool-stats-grid")).dataSource);					
+						createMemoryStatsChart($('#memory-pool-stats-chart'), common.ui.grid($("#memory-pool-stats-grid")).dataSource);					
 					break;
 					case "#virtual-memory-pool-stats" :
 						
