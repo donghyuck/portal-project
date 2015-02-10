@@ -42,7 +42,7 @@
 				});				
 				createOSStats();
 				createMemoryStats();
-				createFitlerStats();
+				createWebStats();
 				// END SCRIPT
 			}
 		}]);
