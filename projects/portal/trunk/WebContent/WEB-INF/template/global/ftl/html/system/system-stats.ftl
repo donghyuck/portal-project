@@ -172,6 +172,42 @@
 			$('#memory-stats-tabs a:first').tab('show');
 		}			
 		
+		function createFitlerStats (){				
+			var renderTo = $("#filter-stats-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
+						},						
+						batch: false
+					},
+					columns: [
+						{ title: "항목", field: "producerId", width:150},
+						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
+						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
+						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
+						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
+						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
+						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
+						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
+					],
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+			}	
+		}
+		
 		-->
 		</script> 		 
 		<style>
@@ -250,7 +286,7 @@
 								</div> <!-- / .panel-heading-controls -->
 							</div> <!-- / .panel-heading -->
 							<div class="panel-body">
-								Panel body content
+								<div id="filter-stats-grid" class="no-border-hr"></div>					
 							</div>
 						</div>
 				
