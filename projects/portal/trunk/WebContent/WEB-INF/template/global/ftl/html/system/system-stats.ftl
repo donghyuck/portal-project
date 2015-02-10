@@ -112,7 +112,7 @@
 						{ title: "MIN_USED", field: "firstStatsValues[1].value" , format: "{0:c}" },
 						{ title: "USED", field: "firstStatsValues[2].value" , format: "{0:c}" },
 						{ title: "MAX_USED", field: "firstStatsValues[3].value" , format: "{0:c}" },
-						{ title: "MIN_COMMITED", field: "firstStatsValues[4].value" , format: "{0:c}" },
+						{ title: "MIN_COMMITED", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
 						{ title: "COMMITED", field: "firstStatsValues[5].value" , format: "{0:c}" },
 						{ title: "MAX_COMMITED", field: "firstStatsValues[6].value" , format: "{0:c}" },
 						{ title: "MAX", field: "firstStatsValues[7].value" , format: "{0:c}" }
