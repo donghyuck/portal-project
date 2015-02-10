@@ -335,6 +335,8 @@
 								<ul class="nav nav-tabs nav-tabs-xs" id="web-stats-tabs">
 									<li>
 										<a href="#web-filter-stats" data-toggle="tab">필터</a>
+									</li>	
+									<li>
 										<a href="#web-session-stats" data-toggle="tab">세션</a>
 									</li>
 								</ul>
