@@ -127,7 +127,7 @@
 					},
 					dataBound: function(e) {
 						
-						vat data = [];
+						var data = [];
 						$.each( this.dataSource.view() , function( index , value ) {
 							data.push({
 								producerId : value.producerId,
