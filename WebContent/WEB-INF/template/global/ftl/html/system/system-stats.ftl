@@ -61,15 +61,15 @@
 	                },
 	                series: [{
 	                    name: "INIT",
-	                    field : "INIT",
+	                    field : "firstStatsValues[0].value",
 		                    color: "#f3ac32"
 	                }, {
 	                    name: "USED",
-	                   	field : "USED",
+	                   	field : "firstStatsValues[2].value",
 	                    color: "#b8b8b8"
 	                }, {
 	                    name: "MAX_USED",
-	                   	field : "MAX_USED",
+	                   	field : "firstStatsValues[3].value",
 	                    color: "#bb6e36"
 	                }],
 	                valueAxis: {
