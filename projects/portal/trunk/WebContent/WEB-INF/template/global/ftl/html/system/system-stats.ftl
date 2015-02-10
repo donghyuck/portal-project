@@ -47,7 +47,7 @@
 		
 		function createMemoryStatsChart(renderTo) {
 			if(!common.ui.exists(renderTo)){
-				$("#chart").kendoChart({
+				renderTo.kendoChart({
 	                title: {
 	                    text: "Olympic Medals won by USA"
 	                },
