@@ -316,10 +316,20 @@
 				</div><!-- / .page-header -->				
 				<div class="row">
 					<div class="col-xs-12 col-lg-6">	
-						MON <span id="os-physical-memory-chart"></span>				
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-info"></i> Runtime</span></span>
+							</div>
+							<div id="runtime-stats-grid" class="no-border-hr"></div>
+						</div>
 					</div>
 					<div class="col-xs-12 col-lg-6">		
-						<div id="os-stats-grid"></div>			
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-info"></i> OS</span></span>
+							</div>
+							<div id="os-stats-grid" class="no-border-hr"></div>
+						</div>		
 					</div>					
 				</div><!-- memory status end -->
 				<hr class="no-grid-gutter-h grid-gutter-margin-b">				
