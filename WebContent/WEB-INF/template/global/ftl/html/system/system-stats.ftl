@@ -45,10 +45,9 @@
 			}
 		}]);
 		
-		function createMemoryStatsChart(renderTo, dataSource) {
+		function createMemoryStatsChart(renderTo) {
 			if(!common.ui.exists(renderTo)){
 				renderTo.kendoChart({
-					dataSource: dataSource,
 	                title: {
 	                    text: "Memory Usage"
 	                },
@@ -94,7 +93,7 @@
 			}
 		}
 		
-		function createMemoryStatsGrid (renderTo, className){
+		function createMemoryStatsGrid (renderTo, className, renderTo2){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
@@ -125,11 +124,10 @@
 					height: 300,
 					change: function(e) {
 					},
-					dataBound: function(e) {
-						
-						var data = [];
+					dataBound: function(e) {						
+						var items = [];
 						$.each( this.dataSource.view() , function( index , value ) {
-							data.push({
+							items.push({
 								producerId : value.producerId,
 								INIT: value.firstStatsValues[0].value,
 								MIN_USED: value.firstStatsValues[1].value,
@@ -141,7 +139,8 @@
 								MAX: value.firstStatsValues[7].value
 							});							
 						} );
-						alert( common.ui.stringify(data));
+						
+						renderTo2.("kendoChart").setDataSource({data: items});
 					}					
 				});
 			}	
@@ -151,19 +150,20 @@
 			
 			$('#memory-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
+				var renderTo1 =  $(target.attr("href") + "-grid" ); 
+				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#memory-pool-stats" :						
-						createMemoryStatsGrid($("#memory-pool-stats-grid"), "BuiltInMemoryPoolProducer");				
-						createMemoryStatsChart($('#memory-pool-stats-chart'), common.ui.grid($("#memory-pool-stats-grid")).dataSource);					
+						createMemoryStatsChart(renderTo2);		
+						createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolProducer", renderTo2);												
 					break;
-					case "#virtual-memory-pool-stats" :
-						
-						createMemoryStatsGrid($("#virtual-memory-pool-stats-grid"), "BuiltInMemoryPoolVirtualProducer");					
-						createMemoryStatsChart($('#virtual-memory-pool-stats-chart'), common.ui.grid($("#virtual-memory-pool-stats-grid")).dataSource);		
+					case "#virtual-memory-pool-stats" :						
+						createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolVirtualProducer", renderTo2);					
+						createMemoryStatsChart(renderTo2);		
 					break;
-					case "#memory-stats" :						
-						createMemoryStatsGrid($("#memory-stats-grid"), "BuiltInMemoryProducer");			
-						createMemoryStatsChart($('#memory-stats-chart'), common.ui.grid($("#memory-stats-grid")).dataSource);				
+					case "#memory-stats" :				
+						createMemoryStatsChart(renderTo2);			
+						createMemoryStatsGrid(renderTo1, "BuiltInMemoryProducer", renderTo2);										
 					break;
 				}					
 			});				
