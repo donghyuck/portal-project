@@ -72,7 +72,6 @@
 	                    color: "#bb6e36"
 	                }],
 	                valueAxis: {
-	                    max: 180,
 	                    line: {
 	                        visible: false
 	                    },
