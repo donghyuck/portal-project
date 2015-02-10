@@ -188,7 +188,7 @@
 						batch: false
 					},
 					columns: [
-						{ title: "항목", field: "name", width:150},
+						{ title: "항목", field: "name", width:190},
 						{ title: "값", field: "value" }
 					],
 					pageable: false,	
@@ -271,10 +271,10 @@
 					<div class="col-xs-12 col-lg-6">					
 					</div>
 					<div class="col-xs-12 col-lg-6">		
-						<div id="os-stats-grid" class="no-border-hr"></div>			
+						<div id="os-stats-grid"></div>			
 					</div>					
 				</div><!-- memory status end -->
-				<hr class="no-grid-gutter-h grid-gutter-margin-b no-margin-t">				
+				<hr class="no-grid-gutter-h grid-gutter-margin-b">				
 				<div class="row">			
 					<div class="col-lg-12">	
 						<div class="panel colourable">
