@@ -50,7 +50,7 @@
 				renderTo.kendoChart({
 					dataSource: dataSource,
 	                title: {
-	                    text: "Olympic Medals won by USA"
+	                    text: "Memory Usage"
 	                },
 	                legend: {
 	                    visible: false
