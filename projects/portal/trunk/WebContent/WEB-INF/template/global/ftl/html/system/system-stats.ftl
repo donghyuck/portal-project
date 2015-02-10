@@ -138,7 +138,7 @@
 								MIN_COMMITED: value.firstStatsValues[4].value,
 								COMMITED: value.firstStatsValues[5].value,
 								MAX_COMMITED: value.firstStatsValues[6].value,
-								MAX:
+								MAX: value.firstStatsValues[7].value
 							});							
 						} );
 						alert( common.ui.stringify(data);
