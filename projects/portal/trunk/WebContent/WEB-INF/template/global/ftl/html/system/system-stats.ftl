@@ -40,6 +40,7 @@
 						e.data.copy(targetCompany);
 					}
 				});				
+				createOSStats();
 				createMemoryStats();
 				createFitlerStats();
 				// END SCRIPT
