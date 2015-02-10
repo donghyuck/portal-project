@@ -136,16 +136,16 @@
 				switch( target.attr('href') ){
 					case "#memory-pool-stats" :						
 						createMemoryStatsGrid($("#memory-pool-stats-grid"), "BuiltInMemoryPoolProducer");				
-						createMemoryStatsChart($('#memory-pool-stats-grid-chart'), common.ui.gird($("#memory-pool-stats-grid")).dataSource);					
+						createMemoryStatsChart($('#memory-pool-stats-grid-chart'), common.ui.grid($("#memory-pool-stats-grid")).dataSource);					
 					break;
 					case "#virtual-memory-pool-stats" :
 						
 						createMemoryStatsGrid($("#virtual-memory-pool-stats-grid"), "BuiltInMemoryPoolVirtualProducer");					
-						createMemoryStatsChart($('#virtual-memory-pool-stats-chart'), common.ui.gird($("#virtual-memory-pool-stats-grid")).dataSource);		
+						createMemoryStatsChart($('#virtual-memory-pool-stats-chart'), common.ui.grid($("#virtual-memory-pool-stats-grid")).dataSource);		
 					break;
 					case "#memory-stats" :						
 						createMemoryStatsGrid($("#memory-stats-grid"), "BuiltInMemoryProducer");			
-						createMemoryStatsChart($('#memory-stats-chart'), common.ui.gird($("#memory-stats-grid")).dataSource);				
+						createMemoryStatsChart($('#memory-stats-chart'), common.ui.grid($("#memory-stats-grid")).dataSource);				
 					break;
 				}					
 			});				
