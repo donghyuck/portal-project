@@ -173,6 +173,37 @@
 			$('#memory-stats-tabs a:first').tab('show');
 		}			
 		
+		function createOSStats (){				
+			var renderTo = $("#os-stats-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/os/list.stats?output=json', type:'post' }
+						},				
+						schema: {
+							data: "firstStatsValues"
+						},		
+						batch: false
+					},
+					columns: [
+						{ title: "항목", field: "name", width:150},
+						{ title: "값", field: "value" }
+					],
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+			}	
+		}
+		
 		function createFitlerStats (){				
 			var renderTo = $("#filter-stats-grid");
 			if(! common.ui.exists(renderTo) ){
