@@ -189,7 +189,7 @@
 					},
 					columns: [
 						{ title: "항목", field: "name", width:190},
-						{ title: "값", field: "value" }
+						{ title: "값", field: "value", format: "{0:##,#}" }
 					],
 					pageable: false,	
 					resizable: true,
@@ -268,7 +268,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">
-					<div class="col-xs-12 col-lg-6">					
+					<div class="col-xs-12 col-lg-6">	
+						MON <span id="os-physical-memory-chart"></span>				
 					</div>
 					<div class="col-xs-12 col-lg-6">		
 						<div id="os-stats-grid"></div>			
