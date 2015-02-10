@@ -221,17 +221,17 @@
 							<div class="tab-content">
 								<div class="tab-pane" id="memory-pool-stats">
 									<div id="memory-pool-stats-chart" class="padding-sm" ></div>
-									<button class="btn btn-info btn-sm btn-outline btn-flat">새로고침</button>
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="memory-pool-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="virtual-memory-pool-stats">
 									<div id="virtual-memory-pool-stats-chart" class="padding-sm"></div>
-									<button class="btn btn-info btn-sm btn-outline btn-flat">새로고침</button>
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="virtual-memory-pool-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="memory-stats">
 									<div id="memory-stats-chart" class="padding-sm"></div>
-									<button class="btn btn-info btn-sm btn-outline btn-flat">새로고침</button>
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="memory-stats-grid" class="no-border-hr"></div>
 								</div>
 							</div><!-- tab contents end -->
