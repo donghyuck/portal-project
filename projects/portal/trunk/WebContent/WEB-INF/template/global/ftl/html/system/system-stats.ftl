@@ -45,6 +45,18 @@
 			}
 		}]);
 		
+		function createMemoryStatsDataSource (className){
+			common.ui.datasource( '<@spring.url "/secure/data/stage/memory/stats.json?output=json" />' ,{
+				transport : {
+					parameterMap: function (options, operation){			
+						options.class = className;
+						return options ;
+					}	
+				},
+				serverPaging: false,
+			});
+		}
+		
 		function createMemoryStats (){	
 			$('#memory-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
@@ -52,16 +64,7 @@
 					case "#memory-pool-stats" :
 						if(! common.ui.exists($("#memory-pool-stats-grid")) ){
 							common.ui.grid($('#memory-pool-stats-grid'), {
-								dataSource: {
-									transport: { 
-										read: { url:'/secure/data/stage/memory/stats.json?output=json', type:'post' },
-										parameterMap: function (options, operation){			
-											options.class = "BuiltInMemoryPoolProducer";
-											return options ;
-										}	
-									},						
-									batch: false
-								},
+								dataSource: createMemoryStatsDataSource("BuiltInMemoryPoolProducer"),
 								columns: [
 									{ title: "항목", field: "producerId", width:150},
 									{ title: "INIT", field: "firstStatsValues[0].value" , format: "{0:c}" },
