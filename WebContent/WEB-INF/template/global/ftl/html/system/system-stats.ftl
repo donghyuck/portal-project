@@ -148,8 +148,7 @@
 					}					
 				});
 				renderTo.parent().find("button[data-action=refresh]").click(function(e){
-					common.ui.grid(renderTo).dataSource.read();
-								
+					common.ui.grid(renderTo).dataSource.read();								
 				});
 			}	
 		}
@@ -205,8 +204,22 @@
 			}	
 		}
 		
-		function createFitlerStats (){				
-			var renderTo = $("#filter-stats-grid");
+		function createWebStats (){				
+			$('#web-stats-tabs').on( 'show.bs.tab', function (e) {		
+				var target = $(e.target);
+				var renderTo1 =  $(target.attr("href") + "-grid" ); 
+				var renderTo2 =  $(target.attr("href") + "-chart" ); 
+				switch( target.attr('href') ){
+					case "#web-filter-stats" :						
+						createFitlerStats(renderTo1);												
+					break;
+				}					
+			});				
+			$('#web-stats-tabs a:first').tab('show');		
+		}
+		
+		
+		function createFitlerStats (renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
@@ -238,6 +251,9 @@
 						
 					}					
 				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});				
 			}	
 		}
 		
@@ -315,14 +331,21 @@
 						
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> 필터</span></span>
-								<div class="panel-heading-controls">
-									<button class="btn btn-xs btn-warning btn-outline"><span class="fa fa-refresh"></span>&nbsp;&nbsp;새로고침</button>
-								</div> <!-- / .panel-heading-controls -->
+								<span class="panel-title"><i class="fa fa-info"></i> 웹</span></span>
+								<ul class="nav nav-tabs nav-tabs-xs" id="memory-stats-tabs">
+									<li>
+										<a href="#web-filter-stats" data-toggle="tab">필터</a>
+										<a href="#web-session-stats" data-toggle="tab">세션</a>
+									</li>
+								</ul>
 							</div> <!-- / .panel-heading -->
-							<div class="panel-body">
-								<div id="filter-stats-grid" class="no-border-hr"></div>					
-							</div>
+							<div class="tab-content">
+								<div class="tab-pane" id="web-filter-stats">
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+									<div id="web-filter-stats-grid" class="no-border-hr"></div>
+								</div>
+							</div><!-- tab contents end -->
+							<div class="panel-footer no-padding-vr"></div>
 						</div>
 				
 					</div>
