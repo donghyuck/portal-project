@@ -41,6 +41,7 @@
 					}
 				});				
 				createMemoryStats();
+				createFitlerStats();
 				// END SCRIPT
 			}
 		}]);
