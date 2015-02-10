@@ -53,7 +53,8 @@
 						return options ;
 					}	
 				},
-				serverPaging: false,
+				batch: false,
+				serverPaging: false
 			});
 		}
 		
