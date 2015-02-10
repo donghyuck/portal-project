@@ -124,7 +124,10 @@
 					scrollable: true,
 					height: 300,
 					change: function(e) {
-					}
+					},
+					dataBound: function(e) {
+						alert( common.ui.stringify(this.dataSource.view()) );
+					}					
 				});
 			}	
 		}
