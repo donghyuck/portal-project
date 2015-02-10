@@ -124,44 +124,43 @@
 					height: 300,
 					change: function(e) {
 					},
-					dataBound: function(e) {						
-						var items = [];
-						$.each( this.dataSource.view() , function( index , value ) {
-							items.push({
-								producerId : value.producerId,
-								INIT: value.firstStatsValues[0].value,
-								MIN_USED: value.firstStatsValues[1].value,
-								USED: value.firstStatsValues[2].value,
-								MAX_USED: value.firstStatsValues[3].value,
-								MIN_COMMITED: value.firstStatsValues[4].value,
-								COMMITED: value.firstStatsValues[5].value,
-								MAX_COMMITED: value.firstStatsValues[6].value,
-								MAX: value.firstStatsValues[7].value
-							});							
-						} );						
-						renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: items}));
+					dataBound: function(e) {			
+						if( common.ui.defined(renderTo2) ){
+							var items = [];
+							$.each( this.dataSource.view() , function( index , value ) {
+								items.push({
+									producerId : value.producerId,
+									INIT: value.firstStatsValues[0].value,
+									MIN_USED: value.firstStatsValues[1].value,
+									USED: value.firstStatsValues[2].value,
+									MAX_USED: value.firstStatsValues[3].value,
+									MIN_COMMITED: value.firstStatsValues[4].value,
+									COMMITED: value.firstStatsValues[5].value,
+									MAX_COMMITED: value.firstStatsValues[6].value,
+									MAX: value.firstStatsValues[7].value
+								});							
+							} );						
+							createMemoryStatsChart(renderTo2);
+							renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: items}));						
+						}	
 					}					
 				});
 			}	
 		}
 		
-		function createMemoryStats (){	
-			
+		function createMemoryStats (){				
 			$('#memory-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
 				var renderTo1 =  $(target.attr("href") + "-grid" ); 
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#memory-pool-stats" :						
-						createMemoryStatsChart(renderTo2);		
 						createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolProducer", renderTo2);												
 					break;
 					case "#virtual-memory-pool-stats" :						
-						createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolVirtualProducer", renderTo2);					
-						createMemoryStatsChart(renderTo2);		
+						createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolVirtualProducer", renderTo2);	
 					break;
-					case "#memory-stats" :				
-						createMemoryStatsChart(renderTo2);			
+					case "#memory-stats" :	
 						createMemoryStatsGrid(renderTo1, "BuiltInMemoryProducer", renderTo2);										
 					break;
 				}					
