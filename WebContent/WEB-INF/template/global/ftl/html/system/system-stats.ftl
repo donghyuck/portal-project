@@ -61,11 +61,11 @@
 	                series: [{
 	                    name: "INIT",
 	                    field : "INIT",
-		                    color: "#8e8e93"
+		                    color: "#5acbfa"
 	                }, {
 	                    name: "USED",
 	                   	field : "USED",
-	                    color: "#4cd964"
+	                    color: "#007aff"
 	                }, {
 	                    name: "MAX_USED",
 	                   	field : "MAX_USED",
