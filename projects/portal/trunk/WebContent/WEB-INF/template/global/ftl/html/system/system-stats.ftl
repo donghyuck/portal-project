@@ -47,7 +47,7 @@
 		
 		function createMemoryStatsDataSource (className){
 			return common.ui.datasource( '<@spring.url "/secure/data/stage/memory/stats.json?output=json" />' ,{
-				transport : {
+				transport: {
 					parameterMap: function (options, operation){			
 						options.class = className;
 						return options ;
