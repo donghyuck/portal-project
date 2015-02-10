@@ -180,7 +180,7 @@
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/stage/os/list.stats?output=json', type:'post' }
+							read: { url:'/secure/data/stage/os/stats.json?output=json', type:'post' }
 						},				
 						schema: {
 							data: "firstStatsValues"
