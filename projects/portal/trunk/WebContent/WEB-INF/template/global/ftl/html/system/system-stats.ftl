@@ -60,15 +60,15 @@
 	                },
 	                series: [{
 	                    name: "INIT",
-	                    data: [40, 32, 34, 36, 45, 33, 34, 83, 36, 37, 44, 37, 35, 36, 46],
-	                    color: "#f3ac32"
+	                    field : INIT
+		                    color: "#f3ac32"
 	                }, {
 	                    name: "USED",
-	                    data: [19, 25, 21, 26, 28, 31, 35, 60, 31, 34, 32, 24, 40, 38, 29],
+	                   	field : USED
 	                    color: "#b8b8b8"
 	                }, {
 	                    name: "MAX_USED",
-	                    data: [17, 17, 16, 28, 34, 30, 25, 30, 27, 37, 25, 33, 26, 36, 29],
+	                   	field : MAX_USED
 	                    color: "#bb6e36"
 	                }],
 	                valueAxis: {
@@ -80,7 +80,7 @@
 	                    }
 	                },
 	                categoryAxis: {
-						categories: [1952, 1956, 1960, 1964],
+						field: "producerId",
 						majorGridLines: {
 							visible: false
 						}
