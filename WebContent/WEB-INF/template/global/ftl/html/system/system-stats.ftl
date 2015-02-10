@@ -138,8 +138,7 @@
 								MAX_COMMITED: value.firstStatsValues[6].value,
 								MAX: value.firstStatsValues[7].value
 							});							
-						} );
-						
+						} );						
 						renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: items}));
 					}					
 				});
