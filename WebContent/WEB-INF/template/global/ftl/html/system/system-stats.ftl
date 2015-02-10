@@ -129,17 +129,20 @@
 		}
 		
 		function createMemoryStats (){	
-			createMemoryStatsChart($('#memory-stats-chart'));			
+			
 			$('#memory-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
 				switch( target.attr('href') ){
 					case "#memory-pool-stats" :
+						createMemoryStatsChart($('#memory-pool-stats-grid-chart'));			
 						createMemoryStatsGrid($("#memory-pool-stats-grid"), "BuiltInMemoryPoolProducer");						
 					break;
 					case "#virtual-memory-pool-stats" :
+						createMemoryStatsChart($('#virtual-memory-pool-stats-chart'));	
 						createMemoryStatsGrid($("#virtual-memory-pool-stats-grid"), "BuiltInMemoryPoolVirtualProducer");						
 					break;
 					case "#memory-stats" :
+						createMemoryStatsChart($('#memory-stats-chart'));	
 						createMemoryStatsGrid($("#memory-stats-grid"), "BuiltInMemoryProducer");						
 					break;
 				}					
@@ -197,17 +200,17 @@
 									</li>							
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->			
-							<div class="panel-body">
-								<div id="memory-stats-chart" ></div>
-							</div>		
 							<div class="tab-content">
 								<div class="tab-pane" id="memory-pool-stats">
+									<div id="memory-pool-stats-chart" ></div>
 									<div id="memory-pool-stats-grid" class="no-border"></div>
 								</div>
 								<div class="tab-pane" id="virtual-memory-pool-stats">
+									<div id="virtual-memory-pool-stats-chart" ></div>
 									<div id="virtual-memory-pool-stats-grid" class="no-border"></div>
 								</div>
 								<div class="tab-pane" id="memory-stats">
+									<div id="memory-stats-chart" ></div>
 									<div id="memory-stats-grid" class="no-border"></div>
 								</div>
 							</div><!-- tab contents end -->
