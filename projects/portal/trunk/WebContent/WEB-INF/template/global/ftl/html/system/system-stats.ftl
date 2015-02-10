@@ -328,7 +328,9 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> Runtime</span></span>
 							</div>
+							<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 							<div id="runtime-stats-grid" class="no-border-hr"></div>
+							<div class="panel-footer no-padding-vr"></div>
 						</div>
 					</div>
 					<div class="col-xs-12 col-lg-6">		
@@ -336,7 +338,9 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> OS</span></span>
 							</div>
+							<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 							<div id="os-stats-grid" class="no-border-hr"></div>
+							<div class="panel-footer no-padding-vr"></div>
 						</div>		
 					</div>					
 				</div><!-- memory status end -->
