@@ -53,7 +53,7 @@
 	                    text: "Memory Usage"
 	                },
 	                legend: {
-	                    visible: false
+	                    visible: true
 	                },
 	                seriesDefaults: {
 	                    type: "bar",
