@@ -61,7 +61,7 @@
 	                },
 	                series: [{
 	                    name: "INIT",
-	                    field : "firstStatsValues[0].value",
+	                    field : firstStatsValues[0].value,
 		                    color: "#f3ac32"
 	                }, {
 	                    name: "USED",
