@@ -141,7 +141,7 @@
 								MAX: value.firstStatsValues[7].value
 							});							
 						} );
-						alert( common.ui.stringify(data);
+						alert( common.ui.stringify(data));
 					}					
 				});
 			}	
