@@ -126,7 +126,22 @@
 					change: function(e) {
 					},
 					dataBound: function(e) {
-						alert( common.ui.stringify(this.dataSource.view()) );
+						
+						vat data = [];
+						$.each( this.dataSource.view() , function( index , value ) {
+							data.push({
+								producerId : value.producerId,
+								INIT: value.firstStatsValues[0].value,
+								MIN_USED: value.firstStatsValues[1].value,
+								USED: value.firstStatsValues[2].value,
+								MAX_USED: value.firstStatsValues[3].value,
+								MIN_COMMITED: value.firstStatsValues[4].value,
+								COMMITED: value.firstStatsValues[5].value,
+								MAX_COMMITED: value.firstStatsValues[6].value,
+								MAX:
+							});							
+						} );
+						alert( common.ui.stringify(data);
 					}					
 				});
 			}	
