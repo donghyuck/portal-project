@@ -203,7 +203,38 @@
 				});
 			}	
 		}
-		
+
+		function createRuntimeStats (){				
+			var renderTo = $("#runtime-stats-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/runtime/stats.json?output=json', type:'post' }
+						},				
+						schema: {
+							data: "firstStatsValues"
+						},		
+						batch: false
+					},
+					columns: [
+						{ title: "항목", field: "name", width:190},
+						{ title: "값", field: "value" }
+					],
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+			}	
+		}
+				
 		function createWebStats (){				
 			$('#web-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
