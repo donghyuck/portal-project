@@ -45,9 +45,10 @@
 			}
 		}]);
 		
-		function createMemoryStatsChart(renderTo) {
+		function createMemoryStatsChart(renderTo, dataSource) {
 			if(!common.ui.exists(renderTo)){
 				renderTo.kendoChart({
+					dataSource: dataSource,
 	                title: {
 	                    text: "Olympic Medals won by USA"
 	                },
@@ -133,17 +134,18 @@
 			$('#memory-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
 				switch( target.attr('href') ){
-					case "#memory-pool-stats" :
-						createMemoryStatsChart($('#memory-pool-stats-grid-chart'));			
-						createMemoryStatsGrid($("#memory-pool-stats-grid"), "BuiltInMemoryPoolProducer");						
+					case "#memory-pool-stats" :						
+						createMemoryStatsGrid($("#memory-pool-stats-grid"), "BuiltInMemoryPoolProducer");				
+						createMemoryStatsChart($('#memory-pool-stats-grid-chart'), common.ui.gird($("#memory-pool-stats-grid")).dataSource);					
 					break;
 					case "#virtual-memory-pool-stats" :
-						createMemoryStatsChart($('#virtual-memory-pool-stats-chart'));	
-						createMemoryStatsGrid($("#virtual-memory-pool-stats-grid"), "BuiltInMemoryPoolVirtualProducer");						
+						
+						createMemoryStatsGrid($("#virtual-memory-pool-stats-grid"), "BuiltInMemoryPoolVirtualProducer");					
+						createMemoryStatsChart($('#virtual-memory-pool-stats-chart'), common.ui.gird($("#virtual-memory-pool-stats-grid")).dataSource);		
 					break;
-					case "#memory-stats" :
-						createMemoryStatsChart($('#memory-stats-chart'));	
-						createMemoryStatsGrid($("#memory-stats-grid"), "BuiltInMemoryProducer");						
+					case "#memory-stats" :						
+						createMemoryStatsGrid($("#memory-stats-grid"), "BuiltInMemoryProducer");			
+						createMemoryStatsChart($('#memory-stats-chart'), common.ui.gird($("#memory-stats-grid")).dataSource);				
 					break;
 				}					
 			});				
