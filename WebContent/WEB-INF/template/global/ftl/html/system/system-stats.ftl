@@ -146,7 +146,6 @@
 					}					
 				});
 				renderTo.parent().find("button[data-action=refresh]").click(function(e){
-					alert("");
 					common.ui.grid(renderTo).dataSource.read();
 								
 				});
