@@ -39,7 +39,9 @@
 					change: function(e){
 						e.data.copy(targetCompany);
 					}
-				});				
+				});			
+				
+				createRuntimeStats();	
 				createOSStats();
 				createMemoryStats();
 				createWebStats();
@@ -201,6 +203,9 @@
 						
 					}					
 				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});	
 			}	
 		}
 
@@ -232,6 +237,9 @@
 						
 					}					
 				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});	
 			}	
 		}
 				
