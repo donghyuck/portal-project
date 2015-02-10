@@ -140,9 +140,7 @@
 							});							
 						} );
 						
-						renderTo2.data("kendoChart").setDataSource(
-						new kendo.data.DataSource({data: items})
-						);
+						renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: items}));
 					}					
 				});
 			}	
