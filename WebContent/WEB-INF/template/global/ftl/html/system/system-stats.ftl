@@ -87,7 +87,7 @@
 					},
 	                tooltip: {
 	                    visible: true,
-	                     template: "#= series.name #: #= common.byteToSize(value) #"
+	                     template: "#= series.name #: #= common.bytesToSize(value) #"
 	                }
 	            });			
 			}
