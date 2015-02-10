@@ -236,10 +236,11 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">
-					<div class="col-xs-12 col-lg-6">
-					
-					
+					<div class="col-xs-12 col-lg-6">					
 					</div>
+					<div class="col-xs-12 col-lg-6">		
+						<div id="os-stats-grid" class="no-border-hr"></div>			
+					</div>					
 				</div><!-- memory status end -->
 				<hr class="no-grid-gutter-h grid-gutter-margin-b no-margin-t">				
 				<div class="row">			
