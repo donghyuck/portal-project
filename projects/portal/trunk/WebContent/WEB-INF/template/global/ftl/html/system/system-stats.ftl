@@ -241,6 +241,23 @@
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
 						</div><!-- /.panel -->
+						
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-info"></i> 필터</span></span>
+								<div class="panel-heading-controls">
+									<button class="btn btn-xs btn-warning btn-outline"><span class="fa fa-refresh"></span>&nbsp;&nbsp;Refresh</button>
+									<button class="btn btn-xs btn-danger btn-outline"><span class="fa fa-paperclip"></span></button>
+									<div class="btn-group btn-group-xs">
+										<button class="btn btn-info dropdown-toggle" type="button" data-toggle="dropdown"><span class="fa fa-refresh"></span>&nbsp;</button>										
+									</div> <!-- / .btn-group -->
+								</div> <!-- / .panel-heading-controls -->
+							</div> <!-- / .panel-heading -->
+							<div class="panel-body">
+								Panel body content
+							</div>
+						</div>
+				
 					</div>
 				</div>	
 			</div> <!-- / #content-wrapper -->
