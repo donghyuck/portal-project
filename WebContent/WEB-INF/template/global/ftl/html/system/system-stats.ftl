@@ -332,7 +332,7 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> 웹</span></span>
-								<ul class="nav nav-tabs nav-tabs-xs" id="memory-stats-tabs">
+								<ul class="nav nav-tabs nav-tabs-xs" id="web-stats-tabs">
 									<li>
 										<a href="#web-filter-stats" data-toggle="tab">필터</a>
 										<a href="#web-session-stats" data-toggle="tab">세션</a>
