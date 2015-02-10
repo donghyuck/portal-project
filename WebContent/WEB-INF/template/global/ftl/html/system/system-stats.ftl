@@ -87,7 +87,7 @@
 					},
 	                tooltip: {
 	                    visible: true,
-	                    template: "hello"
+	                     template: "#= series.name #: #= value #"
 	                }
 	            });			
 			}
