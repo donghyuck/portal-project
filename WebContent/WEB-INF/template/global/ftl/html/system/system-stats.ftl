@@ -49,6 +49,7 @@
 			return common.ui.datasource( '<@spring.url "/secure/data/stage/memory/stats.json?output=json" />' ,{
 				transport:{
 					parameterMap: function (options, operation){			
+						alert( className );
 						options.class = className;
 						return options ;
 					}	
