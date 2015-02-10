@@ -46,7 +46,7 @@
 		}]);
 		
 		function createMemoryStatsDataSource (className){
-			return common.ui.datasource( '<@spring.url "/secure/data/stage/memory/stats.json?output=json" />' ,{
+			return common.ui.datasource( '<@spring.url "/secure/data/stage/memory/stats.json?output=json" />', {
 				transport:{
 					parameterMap: function (options, operation){			
 						alert( className );
@@ -91,16 +91,7 @@
 					case "#virtual-memory-pool-stats" :
 						if(! common.ui.exists($("#virtual-memory-pool-stats-grid")) ){
 							common.ui.grid($('#virtual-memory-pool-stats-grid'), {
-								dataSource: {
-									transport: { 
-										read: { url:'/secure/data/stage/memory/stats.json?output=json', type:'post' },
-										parameterMap: function (options, operation){			
-											options.class = "BuiltInMemoryPoolVirtualProducer";
-											return options ;
-										}	
-									},						
-									batch: false
-								},
+								dataSource: createMemoryStatsDataSource("BuiltInMemoryPoolVirtualProducer"),								
 								columns: [
 									{ title: "항목", field: "producerId", width:150},
 									{ title: "INIT", field: "firstStatsValues[0].value" , format: "{0:c}" },
