@@ -170,9 +170,7 @@
 								target.find(".counter span").first().html(hours);
 								target.find(".counter span").last().html(days);
 							}
-						});
-						
-																
+						});														
 					break;
 					case "#system-os-stats" :
 						createProducerStats ("OS", true, false, renderTo1, {							
@@ -479,34 +477,6 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
-				<div class="row">
-					<div class="col-xs-12 col-lg-6">	
-						<div class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> Runtime</span></span>
-							</div>
-							<div id="runtime-stats-grid" class="no-border-hr"></div>
-							<div class="panel-footer no-padding-vr"></div>
-						</div>
-					</div>
-					<div class="col-xs-12 col-lg-6">		
-						<div class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> OS</span></span>
-							</div>						
-							<div class="row">														
-								<div class="col-sm-4 text-center"><span id="os-memory-stats-chart" class="md-chart" style="margin-top:60px;"></span></div>
-								<div class="col-sm-8">
-									<div class="p-sm text-right">							
-										<button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button>							
-									</div>	
-									<div id="os-stats-grid"></div>
-								</div>
-							</div>							
-							<div class="panel-footer no-padding-vr"></div>
-						</div>		
-					</div>					
-				</div><!-- memory status end -->
 				<div class="row">			
 					<div class="col-lg-12">	
 						<div class="panel colourable">
