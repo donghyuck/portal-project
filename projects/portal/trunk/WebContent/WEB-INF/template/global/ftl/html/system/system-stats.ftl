@@ -41,8 +41,6 @@
 					}
 				});			
 				
-				//createRuntimeStats();	
-				//createOSStats();
 				createSystemStats();
 				createMemoryStats();
 				createWebStats();
@@ -123,6 +121,7 @@
 						{ title: "MAX_COMMITED", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
 						{ title: "MAX", field: "firstStatsValues[7].value" , format: "{0:##,#}" }
 					],
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					pageable: false,	
 					resizable: true,
 					editable : false,
@@ -284,6 +283,7 @@
 						{ title: "New", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
 						{ title: "Del", field: "firstStatsValues[4].value" , format: "{0:##,#}" }
 					],
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					pageable: false,	
 					resizable: true,
 					editable : false,
