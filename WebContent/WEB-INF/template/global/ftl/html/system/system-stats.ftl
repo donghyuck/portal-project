@@ -436,6 +436,13 @@
 				height: 250px;
 			}			
 			
+			#os-stats-grid.k-grid {
+				border-top: 1px solid #e4e4e4;
+				border-left: 1px solid #e4e4e4;
+				border-right-width: 0 !important;
+				border-bottom-width: 0 !important;
+			}
+			
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -472,7 +479,7 @@
 							</div>
 							<div class="row">
 								<div class="col-sm-6 text-center"><span id="os-memory-stats-chart" class="md-chart"></span></div>
-								<div class="col-sm-6"><div id="os-stats-grid" class="no-border-hr"></div></div>
+								<div class="col-sm-6"><div id="os-stats-grid"></div></div>
 							</div>							
 							<div class="panel-footer no-padding-vr"></div>
 						</div>		
