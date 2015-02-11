@@ -396,7 +396,7 @@
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
+							read: { url:'/secure/data/stage/producers/list.json?producerId=ThreadCount&createFirstStats=true&createAllStats=false&output=json', type:'post' }
 						},						
 						batch: false
 					},
