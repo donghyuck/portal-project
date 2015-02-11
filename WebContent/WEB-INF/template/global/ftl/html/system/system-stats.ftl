@@ -202,7 +202,7 @@
 								seriesColors: ["#5ac8fa", "#ff2d55"],
 								tooltip: {
 								visible: true,
-									template: "#: category # - #: value #%"
+									template: "#: category # - #: value #MB"
 								}
 							});
 						}
@@ -210,7 +210,7 @@
 						
 						items.push({ 
 							percentage: this.dataSource.view()[3].value,
-							source: "TOTAL",
+							source: "USAGE",
 							explode : false
 						});
 						items.push({ 
