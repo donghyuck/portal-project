@@ -471,7 +471,7 @@
 								<button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button>							
 							</div>
 							<div class="row">
-								<div class="col-sm-6"><span id="os-memory-stats-chart" class="md-chart"></span></div>
+								<div class="col-sm-6 text-center"><span id="os-memory-stats-chart" class="md-chart"></span></div>
 								<div class="col-sm-6"><div id="os-stats-grid" class="no-border-hr"></div></div>
 							</div>							
 							<div class="panel-footer no-padding-vr"></div>
