@@ -168,7 +168,7 @@
 					break;
 					case "#system-os-stats" :						
 						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolVirtualProducer", renderTo2);	
-						createProducerStats ("OS", true, false, renderTo, {
+						createProducerStats ("OS", true, false, renderTo1, {
 							columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ],
 							dataBound : function(e){				
 								if( common.ui.defined(renderTo2) ){
