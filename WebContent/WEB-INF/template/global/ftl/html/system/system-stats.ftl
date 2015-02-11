@@ -529,9 +529,9 @@
 											<i class="fa fa-laptop bg-icon bg-icon-left"></i>
 											<!-- Extra small text -->								
 											<p class="text-xlg"><strong>RUNNING HOURS</strong></p>			
-											<div class="counter counter-lg"><span>765</span></div>
+											<div class="counter counter-lg"><span>0</span></div>
 											<p class="text-xlg"><strong>RUNNING DAYS</strong></p>			
-											<div class="counter counter-lg"><span>765</span></div>											
+											<div class="counter counter-lg"><span>0</span></div>											
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
 											<div id="system-runtime-stats-grid"></div>			
