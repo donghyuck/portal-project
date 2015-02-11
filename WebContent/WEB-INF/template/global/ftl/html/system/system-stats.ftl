@@ -214,9 +214,6 @@
 							}
 						});	
 						break;
-					case "#memory-stats" :	
-						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryProducer", renderTo2);										
-					break;
 				}					
 			});				
 			$('#system-stats-tabs a:first').tab('show');		
