@@ -573,8 +573,21 @@
 									<div id="system-runtime-stats-grid" class="no-border-hr"></div>								
 								</div>
 								<div class="tab-pane" id="system-os-stats">
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
-									<div id="system-os-stats-grid" class="no-border-hr"></div>											
+								
+									<div class="stat-panel">
+										<div class="stat-cell col-xs-5 text-right">
+											<!-- Stat panel bg icon -->
+											<i class="fa fa-computor bg-icon bg-icon-left"></i>
+											<!-- Extra small text -->
+											<span class="text-xs">TODAY'S EARNINGS</span><br>
+											<!-- Extra large text -->
+											<span class="text-xlg"><small><small>$</small></small><strong>247</strong></span>
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-xs-7 no-padding valign-bottom">
+											<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+											<div id="system-os-stats-grid" class="no-border-hr"></div>
+										</div>
+									</div>		
 								</div>								
 							</div>
 						</div>
