@@ -573,40 +573,39 @@
 								</div>								
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
-						</div>				
-					</div>
+						</div><!-- /.panel -->				
 					
-					<div class="panel colourable">
-						<div class="panel-heading">
-							<span class="panel-title"><i class="fa fa-info"></i> Threads & Component</span></span>
-							<ul class="nav nav-tabs nav-tabs-xs" id="others-stats-tabs">
-								<li>
-									<a href="#others-thread-state-stats" data-toggle="tab">Thread State</a>
-								</li>	
-								<li>
-									<a href="#others-thread-count-stats" data-toggle="tab">Thread Count</a>
-								</li>									
-								<li>
-									<a href="#others-annotated-stats" data-toggle="tab">Component</a>
-								</li>
-							</ul>
-						</div> <!-- / .panel-heading -->
-						<div class="tab-content">
-							<div class="tab-pane" id="others-thread-state">
-								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
-								<div id="others-thread-state-stats-grid" class="no-border-hr"></div>
-							</div>
-							<div class="tab-pane" id="others-thread-count-stats">
-								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
-								<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
-							</div>	
-							<div class="tab-pane" id="others-annotated-stats">
-								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
-								<div id="others-annotated-stats-grid" class="no-border-hr"></div>
-							</div>															
-						</div><!-- tab contents end -->
-						<div class="panel-footer no-padding-vr"></div>
-					</div>				
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-info"></i> Threads & Component</span></span>
+								<ul class="nav nav-tabs nav-tabs-xs" id="others-stats-tabs">
+									<li>
+										<a href="#others-thread-state-stats" data-toggle="tab">Thread State</a>
+									</li>	
+									<li>
+										<a href="#others-thread-count-stats" data-toggle="tab">Thread Count</a>
+									</li>									
+									<li>
+										<a href="#others-annotated-stats" data-toggle="tab">Component</a>
+									</li>
+								</ul>
+							</div> <!-- / .panel-heading -->
+							<div class="tab-content">
+								<div class="tab-pane" id="others-thread-state">
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+									<div id="others-thread-state-stats-grid" class="no-border-hr"></div>
+								</div>
+								<div class="tab-pane" id="others-thread-count-stats">
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+									<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
+								</div>	
+								<div class="tab-pane" id="others-annotated-stats">
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+									<div id="others-annotated-stats-grid" class="no-border-hr"></div>
+								</div>															
+							</div><!-- tab contents end -->
+							<div class="panel-footer no-padding-vr"></div>
+						</div><!-- /.panel -->							
 										
 				</div>	
 			</div> <!-- / #content-wrapper -->
