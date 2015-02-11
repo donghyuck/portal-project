@@ -313,8 +313,12 @@
 			}			
 		}
 		
-		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo, columns){
-		
+		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo, columns, handlers){
+			handlers = handlers || {
+				change : function(e) {},
+				dataBound : function(e) {}
+			};
+			
 			if(! common.ui.exists(renderTo) ){
 				columns = columns || [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ];
 					
@@ -340,11 +344,8 @@
 					editable : false,
 					scrollable: true,
 					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {			
-						
-					}					
+					change: handlers.change,
+					dataBound: handlers.dataBound				
 				});
 				renderTo.parent().find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
