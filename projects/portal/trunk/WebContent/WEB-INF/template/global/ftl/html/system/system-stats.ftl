@@ -45,6 +45,7 @@
 				createOSStats();
 				createMemoryStats();
 				createWebStats();
+				createOthersStats();
 				// END SCRIPT
 			}
 		}]);
@@ -350,7 +351,7 @@
 					break; 
 				}					
 			});				
-			$('#web-stats-tabs a:first').tab('show');		
+			$('#others-stats-tabs a:first').tab('show');		
 		}
 		function createAnnotatedtStats (renderTo){
 			if(! common.ui.exists(renderTo) ){
