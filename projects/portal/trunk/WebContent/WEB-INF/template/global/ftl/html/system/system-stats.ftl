@@ -164,7 +164,7 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#system-runtime-stats" :						
-						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolProducer", renderTo2);												
+						createProducerStats ("Runtime", true, false, renderTo1);										
 					break;
 					case "#system-os-stats" :						
 						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolVirtualProducer", renderTo2);	
