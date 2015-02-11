@@ -518,7 +518,7 @@
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
-											<i class="fa fa-tachometer bg-icon bg-icon-left"></i>
+											<i class="fa fa-laptop bg-icon bg-icon-left"></i>
 											<!-- Extra small text -->											
 											<div class="counter counter-lg"><span>765</span></div>
 										</div> <!-- /.stat-cell -->
