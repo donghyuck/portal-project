@@ -390,12 +390,13 @@
 				});				
 			}	
 		}		
+		
 		function createThreadCountStats (renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/stage/producers/get.json?producerId=ThreadCount&createFirstStats=true&createAllStats=false&output=json', type:'post' }
+							read: { url:'/secure/data/stage/producers/get.json?producerId=ThreadCount&createFirstStats=true&output=json', type:'post' }
 						},						
 						batch: false
 					},
@@ -422,7 +423,8 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});				
 			}	
-		}			
+		}	
+				
 		function createThreadStateStats (renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
