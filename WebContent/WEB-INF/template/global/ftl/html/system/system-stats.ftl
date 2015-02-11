@@ -574,7 +574,7 @@
 								</div>
 								<div class="tab-pane" id="system-os-stats">
 								
-									<div class="stat-panel">
+									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-xs-5 text-right">
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-computor bg-icon bg-icon-left"></i>
@@ -585,7 +585,7 @@
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">
 											<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
-											<div id="system-os-stats-grid" class="no-border-hr"></div>
+											<div id="system-os-stats-grid"></div>
 										</div>
 									</div>		
 								</div>								
