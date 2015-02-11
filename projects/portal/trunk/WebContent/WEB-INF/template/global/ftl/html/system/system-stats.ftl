@@ -197,7 +197,7 @@
 					case "#web-filter-stats" :						
 						createProducersStats ("filter", true, false, renderTo1, {
 							columns: [
-							{ title: "이름", field: "producerId", width:150},
+							{ title: "이름", field: "producerId", width:180},
 							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 							{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
 							{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
