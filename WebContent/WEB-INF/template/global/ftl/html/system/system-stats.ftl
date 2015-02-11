@@ -502,7 +502,7 @@
 				height: 250px;
 			}			
 			
-			#os-stats-grid.k-grid {
+			.stat-cell .k-grid {
 				border-top: 1px solid #e4e4e4;
 				border-left: 1px solid #e4e4e4;
 				border-right-width: 0 !important;
@@ -575,11 +575,11 @@
 								<div class="tab-pane" id="system-os-stats">	
 									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>							
 									<div class="stat-panel no-margin-b">
-										<div class="stat-cell col-xs-5 text-right">
+										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-tachometer bg-icon bg-icon-left"></i>
 											<!-- Extra small text -->											
-											<span id="system-os-stats-chart" class="md-chart" style="margin-top:60px;"></span>											
+											<span id="system-os-stats-chart" class="md-chart"></span>											
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
 											<div id="system-os-stats-grid"></div>
