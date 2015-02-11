@@ -270,8 +270,7 @@
 								{ title: "STATE", field: "statName", width:150},
 								{ title: "CUR", field: "values[0].value" , format: "{0:##,#}" },
 								{ title: "MIN", field: "values[1].value" , format: "{0:##,#}" },
-								{ title: "MAX", field: "values[2].value" , format: "{0:##,#}" }
-							
+								{ title: "MAX", field: "values[2].value" , format: "{0:##,#}" }							
 							]
 						});
 					break;					
