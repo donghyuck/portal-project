@@ -410,7 +410,7 @@
 						batch: false
 					},
 					columns: [
-						{ title: "항목", field: "name", width:190},
+						{ title: "이름", field: "name", width:190},
 						{ title: "값", field: "value" }
 					],
 					pageable: false,	
