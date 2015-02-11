@@ -262,7 +262,18 @@
 						createProducerStats("ThreadStates", true, false, renderTo1);
 					break;					
 					case "#others-annotated-stats" :
-						createProducerStats("", true, false, renderTo1);	
+						createProducersStats ("annotated", true, false, renderTo1, [
+							{ title: "이름", field: "producerId", width:150},
+							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+							{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+							{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
+							{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
+							{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
+							{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
+							{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
+							{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
+							{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }						
+						])	
 					break; 
 				}					
 			});				
