@@ -163,7 +163,16 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#system-runtime-stats" :						
-						createProducerStats ("Runtime", true, false, renderTo1);										
+						createProducerStats ("Runtime", true, false, renderTo1,{
+							dataBound : function(e){		
+								var hours = this.dataSource.view()[4].value 
+								var days = this.dataSource.view()[5].value 
+								target.find(".counter span").first().html(hours);
+								target.find(".counter span").last().html(days);
+							}
+						});
+						
+																
 					break;
 					case "#system-os-stats" :
 						createProducerStats ("OS", true, false, renderTo1, {							
