@@ -414,6 +414,7 @@
 						schema: settings.schema,		
 						batch: false
 					},
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					columns: settings.columns,
 					pageable: false,	
 					resizable: true,
@@ -474,7 +475,6 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> Runtime</span></span>
 							</div>
-							<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 							<div id="runtime-stats-grid" class="no-border-hr"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>
@@ -513,11 +513,9 @@
 							</div>
 							<div class="tab-content">
 								<div class="tab-pane" id="system-runtime-stats">
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="system-runtime-stats-grid" class="no-border-hr"></div>								
 								</div>
-								<div class="tab-pane" id="system-os-stats">	
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>							
+								<div class="tab-pane" id="system-os-stats">							
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
@@ -526,7 +524,7 @@
 											<span id="system-os-stats-chart" class="md-chart"></span>											
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
-											<div id="system-os-stats-grid" data-refersh></div>
+											<div id="system-os-stats-grid"></div>
 										</div>
 									</div>		
 								</div>								
@@ -555,17 +553,14 @@
 							<div class="tab-content">
 								<div class="tab-pane" id="memory-pool-stats">
 									<div id="memory-pool-stats-chart" class="padding-sm" ></div>
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="memory-pool-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="virtual-memory-pool-stats">
 									<div id="virtual-memory-pool-stats-chart" class="padding-sm"></div>
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="virtual-memory-pool-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="memory-stats">
 									<div id="memory-stats-chart" class="padding-sm"></div>
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="memory-stats-grid" class="no-border-hr"></div>
 								</div>
 							</div><!-- tab contents end -->
@@ -586,11 +581,9 @@
 							</div> <!-- / .panel-heading -->
 							<div class="tab-content">
 								<div class="tab-pane" id="web-filter-stats">
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="web-filter-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="web-session-stats">
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="web-session-stats-grid" class="no-border-hr"></div>
 								</div>								
 							</div><!-- tab contents end -->
@@ -614,15 +607,12 @@
 							</div> <!-- / .panel-heading -->
 							<div class="tab-content">
 								<div class="tab-pane" id="others-thread-state-stats">
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="others-thread-state-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="others-thread-count-stats">
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
 								</div>	
 								<div class="tab-pane" id="others-annotated-stats">
-									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="others-annotated-stats-grid" class="no-border-hr"></div>
 								</div>															
 							</div><!-- tab contents end -->
