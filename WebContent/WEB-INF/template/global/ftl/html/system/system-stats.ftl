@@ -560,10 +560,10 @@
 								<span class="panel-title"><i class="fa fa-info"></i> SYSTEM</span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="system-stats-tabs">
 									<li>
-										<a href="#system-runtime-stats" data-toggle="tab">Memory Pool</a>
+										<a href="#system-runtime-stats" data-toggle="tab">Runtime</a>
 									</li>
 									<li>
-										<a href="#system-os-stats" data-toggle="tab">VirtualMemoryPool</a>
+										<a href="#system-os-stats" data-toggle="tab">OS</a>
 									</li>					
 								</ul> <!-- / .nav -->							
 							</div>
