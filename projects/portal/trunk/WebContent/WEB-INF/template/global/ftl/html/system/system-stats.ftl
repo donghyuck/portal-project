@@ -201,14 +201,11 @@
 								}],
 								tooltip: {
 								visible: true,
-									template: "${ category } - ${ value }%"
+									template: "#: category # - #: value #%"
 								}
 							});
 						}
-						
-						
-						var items = [];
-						
+						var items = [];						
 						renderTo2.data("kendoChart").setDataSource(
 							new kendo.data.DataSource({data: items})
 						);
