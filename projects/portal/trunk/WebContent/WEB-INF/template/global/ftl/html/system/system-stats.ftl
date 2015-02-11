@@ -178,7 +178,9 @@
 		
 		function createOSStats (){				
 			var renderTo = $("#os-stats-grid");
-			createProducerStats ("OS", true, false, renderTo, [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ]);		
+			createProducerStats ("OS", true, false, renderTo, {
+				columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ]
+			});		
 		}
 
 		function createRuntimeStats (){				
@@ -313,15 +315,16 @@
 			}			
 		}
 		
-		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo, columns, handlers){
-			handlers = handlers || {
-				change : function(e) {},
-				dataBound : function(e) {}
-			};
-			
+		var DEFAULT_PRODUCER_SETTING = {
+			columns : [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ],
+			change : function(e) {},
+			dataBound : function(e) {}
+		};
+		
+		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo, options){			
+			options = options || {};		
 			if(! common.ui.exists(renderTo) ){
-				columns = columns || [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ];
-					
+				var settings = $.extend(true, {}, DEFAULT_PRODUCER_SETTING, options ); 						
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
@@ -338,14 +341,14 @@
 						},		
 						batch: false
 					},
-					columns: columns,
+					columns: settings.columns,
 					pageable: false,	
 					resizable: true,
 					editable : false,
 					scrollable: true,
 					height: 300,
-					change: handlers.change,
-					dataBound: handlers.dataBound				
+					change: settings.change,
+					dataBound: settings.dataBound				
 				});
 				renderTo.parent().find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
