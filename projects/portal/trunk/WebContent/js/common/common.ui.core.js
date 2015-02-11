@@ -801,9 +801,15 @@
 		}
 		return renderTo.data("kendoNotification");
 	};
+	
+	function error ( e ){
+				
+		handleAjaxError(e.xhr);
+	}
 
 	extend(ui , {	
 		handleAjaxError : common.ui.handleAjaxError || handleAjaxError,
+		error : error,
 		defined : common.ui.defined || defined,
 		visible : common.ui.visible || visible,
 		status : common.ui.status || status,
