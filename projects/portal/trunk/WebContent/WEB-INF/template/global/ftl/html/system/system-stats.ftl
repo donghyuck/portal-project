@@ -207,9 +207,7 @@
 							});
 						}
 						var items = [];						
-						renderTo2.data("kendoChart").setDataSource(
-							new kendo.data.DataSource({data: items})
-						);
+						
 						items.push({ 
 							percentage: 90, //this.dataSource.view()[3].value,
 							source: "TOTAL",
@@ -220,6 +218,9 @@
 							source: "FREE",
 							explode : true						
 						});
+						renderTo2.data("kendoChart").setDataSource(
+							new kendo.data.DataSource({data: items})
+						);
 					}
 				}
 			});		
