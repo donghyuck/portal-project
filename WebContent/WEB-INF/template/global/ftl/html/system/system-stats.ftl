@@ -166,9 +166,8 @@
 					case "#system-runtime-stats" :						
 						createProducerStats ("Runtime", true, false, renderTo1);										
 					break;
-					case "#system-os-stats" :						
-						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolVirtualProducer", renderTo2);	
-						createProducerStats ("OS", true, false, renderTo1, {
+					case "#system-os-stats" :
+						createProducerStats ("OS", true, false, renderTo1, {							
 							columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ],
 							dataBound : function(e){				
 								if( common.ui.defined(renderTo2) ){
@@ -195,8 +194,7 @@
 											}
 										});
 									}
-									var items = [];						
-									
+									var items = [];	
 									items.push({ 
 										percentage: this.dataSource.view()[3].value - this.dataSource.view()[2].value ,
 										source: "USAGE",
@@ -238,62 +236,7 @@
 			});				
 			$('#memory-stats-tabs a:first').tab('show');
 		}			
-		
-		function createOSStats (){				
-			var renderTo = $("#os-stats-grid");
-			var renderTo2 = $("#os-memory-stats-chart");
-			createProducerStats ("OS", true, false, renderTo, {
-				columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ],
-				dataBound : function(e){				
-					if( common.ui.defined(renderTo2) ){
-						if(! common.ui.exists(renderTo2) ){
-							renderTo2.kendoChart({
-								title : {
-									position: "bottom",
-									text: "Physical System Memory"
-								},
-								legend: {
-									visible: false
-								},
-								series : [{
-									type: "pie",
-									startAngle: 150,
-									field: "percentage",
-									categoryField: "source",
-									explodeField: "explode"
-								}],
-								seriesColors: ["#5ac8fa", "#ff2d55"],
-								tooltip: {
-								visible: true,
-									template: "#: category # - #: value #MB"
-								}
-							});
-						}
-						var items = [];						
 						
-						items.push({ 
-							percentage: this.dataSource.view()[3].value - this.dataSource.view()[2].value ,
-							source: "USAGE",
-							explode : false
-						});
-						items.push({ 
-							percentage: this.dataSource.view()[2].value,
-							source: "FREE",
-							explode : true						
-						});
-						renderTo2.data("kendoChart").setDataSource(
-							new kendo.data.DataSource({data: items})
-						);
-					}
-				}
-			});		
-		}
-
-		function createRuntimeStats (){				
-			var renderTo = $("#runtime-stats-grid");
-			createProducerStats ("Runtime", true, false, renderTo);			
-		}
-				
 		function createWebStats (){				
 			$('#web-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
@@ -427,6 +370,7 @@
 						batch: false,
 						error : common.ui.error
 					},
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					columns: settings.columns,
 					pageable: false,	
 					resizable: true,
@@ -582,7 +526,7 @@
 											<span id="system-os-stats-chart" class="md-chart"></span>											
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
-											<div id="system-os-stats-grid"></div>
+											<div id="system-os-stats-grid" data-refersh></div>
 										</div>
 									</div>		
 								</div>								
