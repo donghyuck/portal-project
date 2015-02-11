@@ -429,6 +429,12 @@
 			table-light .table-footer {
 				margin-top:-20px;
 			}
+
+			.k-chart.md-chart {
+				display: inline-block;
+				width: 250px;
+				height: 250px;
+			}			
 			
 		</style>
 	</head>
@@ -464,7 +470,7 @@
 							<div class="p-sm text-right">							
 								<button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button>							
 							</div>
-							<span id="os-memory-stats-chart" sytle="width: 300px;"></span>						
+							<span id="os-memory-stats-chart" class="md-chart"></span>						
 							<div id="os-stats-grid" class="no-border-hr"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>		
