@@ -178,7 +178,7 @@
 		
 		function createOSStats (){				
 			var renderTo = $("#os-stats-grid");
-			createProducerStats ("OS", true, false, renderTo);		
+			createProducerStats ("OS", true, false, renderTo, [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ]);		
 		}
 
 		function createRuntimeStats (){				
@@ -340,39 +340,7 @@
 				});				
 			}	
 		}	
-				
-		function createThreadStateStats (renderTo){
-			if(! common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {
-						transport: { 
-							read: { url:'/secure/data/stage/producers/get.json?producerId=ThreadStates&createFirstStats=true&createAllStats=false&output=json', type:'post' }
-						},						
-						batch: false
-					},
-					columns: [
-						{ title: "항목", field: "producerId", width:150},
-						{ title: "CUR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
-						{ title: "MIN", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
-						{ title: "MAX", field: "firstStatsValues[2].value" , format: "{0:##,#}" }
-					],
-					pageable: false,	
-					resizable: true,
-					editable : false,
-					scrollable: true,
-					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {			
-						
-					}					
-				});
-				renderTo.parent().find("button[data-action=refresh]").click(function(e){
-					common.ui.grid(renderTo).dataSource.read();								
-				});				
-			}	
-		}	
-							
+											
 		-->
 		</script> 		 
 		<style>
