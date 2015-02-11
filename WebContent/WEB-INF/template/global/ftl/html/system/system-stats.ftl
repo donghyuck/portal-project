@@ -251,7 +251,7 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :						
-						function createProducersStats ("filter", true, false, [
+						createProducersStats ("filter", true, false, [
 							{ title: "이름", field: "producerId", width:150},
 							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 							{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
