@@ -262,7 +262,18 @@
 						createProducerStats("ThreadCount", true, false, renderTo1);
 					break;
 					case "#others-thread-state-stats" :						
-						createProducerStats("ThreadStates", true, false, renderTo1);
+						createProducersStats("ThreadStates", false, true, renderTo1, {
+							schema:{
+								data: "lines"
+							},
+							columns: [
+								{ title: "STATE", field: "statName", width:150},
+								{ title: "CUR", field: "values[0].value" , format: "{0:##,#}" },
+								{ title: "MIN", field: "values[1].value" , format: "{0:##,#}" },
+								{ title: "MAX", field: "values[2].value" , format: "{0:##,#}" }
+							
+							]
+						});
 					break;					
 					case "#others-annotated-stats" :
 						createProducersStats ("annotated", true, false, renderTo1, { 
