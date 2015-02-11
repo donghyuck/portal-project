@@ -195,7 +195,8 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :						
-						createProducersStats ("filter", true, false, renderTo1, [
+						createProducersStats ("filter", true, false, renderTo1, {
+							columns: [
 							{ title: "이름", field: "producerId", width:150},
 							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 							{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
@@ -206,7 +207,7 @@
 							{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
 							{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
 							{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }						
-						])									
+						]})									
 					break;
 					case "#web-session-stats" :
 						createSessionCountStats(renderTo1);	
@@ -264,7 +265,8 @@
 						createProducerStats("ThreadStates", true, false, renderTo1);
 					break;					
 					case "#others-annotated-stats" :
-						createProducersStats ("annotated", true, false, renderTo1, [
+						createProducersStats ("annotated", true, false, renderTo1, { 
+							columns: [
 							{ title: "이름", field: "producerId", width:150},
 							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 							{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
@@ -275,15 +277,24 @@
 							{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
 							{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
 							{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }						
-						])	
+						]})	
 					break; 
 				}					
 			});				
 			$('#others-stats-tabs a:first').tab('show');		
 		}
-				
-		function createProducersStats (category, createFirstStats, createAllStats, renderTo, columns ){
+
+		var DEFAULT_PRODUCERS_SETTING = {
+			schema : {},
+			columns : [],
+			change : function(e) {},
+			dataBound : function(e) {}
+		};
+						
+		function createProducersStats (category, createFirstStats, createAllStats, renderTo, options ){
+			options = options || {};
 			if(! common.ui.exists(renderTo) ){
+				var settings = $.extend(true, {}, DEFAULT_PRODUCERS_SETTING, options ); 						
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
@@ -294,20 +305,18 @@
 								options.createAllStats = createAllStats ;
 								return options ;
 							}	
-						},						
+						},	
+						schema : settings.schema,					
 						batch: false
 					},
-					columns: columns,
+					columns: settings.columns,
 					pageable: false,	
 					resizable: true,
 					editable : false,
 					scrollable: true,
 					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {			
-						
-					}					
+					change: settings.change,
+					dataBound:settings.dataBounded			
 				});
 				renderTo.parent().find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
