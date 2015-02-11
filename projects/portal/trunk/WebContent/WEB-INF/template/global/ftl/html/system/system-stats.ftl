@@ -183,11 +183,44 @@
 				columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ],
 				dataBound : function(e){				
 					if( common.ui.defined(renderTo2) ){
-						var free = this.dataSource.view()[0].value;
-						var total = this.dataSource.view()[1].value;
-						 renderTo2.kendoSparkline({
-							type: "pie",
-							data: [total-free, free]
+						if(! common.ui.exists(renderTo2) ){
+							renderTo2.kendoChart({
+								title : {
+									position: "bottom",
+									text: "Physical System Memory"
+								},
+								legend: {
+									visible: false
+								},
+								series : [{
+									type: "pie",
+									startAngle: 150,
+									field: "percentage",
+									categoryField: "source",
+									explodeField: "explode"
+								}],
+								tooltip: {
+								visible: true,
+									template: "${ category } - ${ value }%"
+								}
+							});
+						}
+						
+						
+						var items = [];
+						
+						renderTo2.data("kendoChart").setDataSource(
+							new kendo.data.DataSource({data: items})
+						);
+						items.push({ 
+							percentage: this.dataSource.view()[1].value
+							source: "TOTAL",
+							explode : false
+						});
+						items.push({ 
+							percentage: this.dataSource.view()[0].value
+							source: "FREE",
+							explode : true						
 						});
 					}
 				}
