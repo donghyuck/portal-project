@@ -570,7 +570,7 @@
 							<div class="tab-content">
 								<div class="tab-pane" id="system-runtime-stats">
 									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
-									<div id="system-runtime-stats" class="no-border-hr"></div>								
+									<div id="system-runtime-stats-grid" class="no-border-hr"></div>								
 								</div>
 								<div class="tab-pane" id="system-os-stats">
 									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
