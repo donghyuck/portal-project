@@ -391,6 +391,39 @@
 			}	
 		}		
 		
+		function createProducersStats (category, createFirstStats, createAllStats, columns, renderTo){
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/producers/list.json?output=json', type:'post' },
+							parameterMap: function (options, operation){			
+								options.category = category ;
+								options.createFirstStats = createFirstStats ;
+								options.createAllStats = createAllStats ;
+								return options ;
+							}	
+						},						
+						batch: false
+					},
+					columns: columns,
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});				
+			}			
+		}
+		
 		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
