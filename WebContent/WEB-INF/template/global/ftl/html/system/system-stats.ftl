@@ -262,7 +262,7 @@
 						createProducerStats("ThreadCount", true, false, renderTo1);
 					break;
 					case "#others-thread-state-stats" :						
-						createProducersStats("ThreadStates", false, true, renderTo1, {
+						createProducerStats("ThreadStates", false, true, renderTo1, {
 							schema:{
 								data: "lines"
 							},
@@ -335,6 +335,9 @@
 		}
 		
 		var DEFAULT_PRODUCER_SETTING = {
+			schema : { 
+				data: "firstStatsValues" 
+			},
 			columns : [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ],
 			change : function(e) {},
 			dataBound : function(e) {}
@@ -355,9 +358,7 @@
 								return options ;
 							}	
 						},
-						schema: {
-							data: "firstStatsValues"
-						},		
+						schema: settings.schema,		
 						batch: false
 					},
 					columns: settings.columns,
