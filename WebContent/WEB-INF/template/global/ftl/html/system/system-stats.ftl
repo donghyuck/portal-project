@@ -339,7 +339,6 @@
 
 		var DEFAULT_PRODUCERS_SETTING = {
 			schema : {
-				errors : common.ui.handleAjaxError 
 			},
 			columns : [],
 			change : function(e) {},
@@ -381,8 +380,7 @@
 		
 		var DEFAULT_PRODUCER_SETTING = {
 			schema : { 
-				data: "firstStatsValues",
-				errors : common.ui.handleAjaxError 
+				data: "firstStatsValues"
 			},
 			columns : [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ],
 			change : function(e) {},
