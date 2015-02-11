@@ -178,8 +178,20 @@
 		
 		function createOSStats (){				
 			var renderTo = $("#os-stats-grid");
+			var renderTo2 = $("#os-memory-stats-chart");
 			createProducerStats ("OS", true, false, renderTo, {
 				columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ]
+				dataBound : function(e){				
+					if( common.ui.defined(renderTo2) ){
+						var free = this.dataSource.view()[0].value;
+						var total = this.dataSource.view()[1].value;					
+						
+						 $("#stats-wed").kendoSparkline({
+							type: "pie",
+							data: [total-free, free]
+						});
+					}
+				}
 			});		
 		}
 
@@ -419,6 +431,7 @@
 								<span class="panel-title"><i class="fa fa-info"></i> OS</span></span>
 							</div>
 							<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+							<span id="os-memory-stats-chart"></span>
 							<div id="os-stats-grid" class="no-border-hr"></div>
 							<div class="panel-footer no-padding-vr"></div>
 						</div>		
