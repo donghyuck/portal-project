@@ -253,7 +253,7 @@
 						createFilterStats(renderTo1);												
 					break;
 					case "#web-session-stats" :
-						createSessionStats(renderTo1);	
+						createSessionCountStats(renderTo1);	
 					break; 
 				}					
 			});				
@@ -261,7 +261,7 @@
 		}
 		
 		
-		function createSessionStats (renderTo){
+		function createSessionCountStats (renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
@@ -423,10 +423,10 @@
 								<span class="panel-title"><i class="fa fa-info"></i> 웹</span></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="web-stats-tabs">
 									<li>
-										<a href="#web-filter-stats" data-toggle="tab">필터</a>
+										<a href="#web-filter-stats" data-toggle="tab">Filters</a>
 									</li>	
 									<li>
-										<a href="#web-session-stats" data-toggle="tab">세션</a>
+										<a href="#web-session-stats" data-toggle="tab">Session</a>
 									</li>
 								</ul>
 							</div> <!-- / .panel-heading -->
@@ -441,30 +441,39 @@
 								</div>								
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
-						</div>
-				
+						</div>				
 					</div>
+					
+					<div class="panel colourable">
+						<div class="panel-heading">
+							<span class="panel-title"><i class="fa fa-info"></i> Threads & Component</span></span>
+							<ul class="nav nav-tabs nav-tabs-xs" id="others-stats-tabs">
+								<li>
+									<a href="#others-thread-stats" data-toggle="tab">Threads</a>
+								</li>	
+								<li>
+									<a href="#others-annotated-stats" data-toggle="tab">Component</a>
+								</li>
+							</ul>
+						</div> <!-- / .panel-heading -->
+						<div class="tab-content">
+							<div class="tab-pane" id="web-filter-stats">
+								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+								<div id="others-thread-stats-grid" class="no-border-hr"></div>
+							</div>
+							<div class="tab-pane" id="web-session-stats">
+								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+								<div id="others-annotated-stats-grid" class="no-border-hr"></div>
+							</div>								
+						</div><!-- tab contents end -->
+						<div class="panel-footer no-padding-vr"></div>
+					</div>				
+										
 				</div>	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
-		</div> <!-- / #main-wrapper -->
-		<script id="disk-usage-row-template" type="text/x-kendo-template">			
-			<tr>
-				<td>
-					#: absolutePath #
-				</td>
-				<td>#: common.ui.admin.bytesToSize(totalSpace - freeSpace) #
-					<small class="text-light-gray">#= kendo.toString(( totalSpace - freeSpace), '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.ui.admin.bytesToSize(usableSpace) #
-					<small class="text-light-gray">#= kendo.toString(usableSpace, '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.ui.admin.bytesToSize(totalSpace) #
-					<small class="text-light-gray">#= kendo.toString(totalSpace, '\\#\\#,\\#') #</small>
-				</td>
-			</tr>
-		</script>								
+		</div> <!-- / #main-wrapper -->						
 												
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
