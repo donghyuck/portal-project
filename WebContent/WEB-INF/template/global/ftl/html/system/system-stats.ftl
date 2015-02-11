@@ -450,6 +450,7 @@
 			.stat-cell .k-grid {
 				border-top: 1px solid #e4e4e4;
 				border-left: 1px solid #e4e4e4;
+				border-top-width: 0 !important;
 				border-right-width: 0 !important;
 				border-bottom-width: 0 !important;
 			}
