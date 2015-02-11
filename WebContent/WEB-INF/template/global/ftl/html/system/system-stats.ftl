@@ -395,21 +395,17 @@
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
+							read: { url:'/secure/data/stage/producers/get.json?producerId=ThreadCount&createFirstStats=true&createAllStats=false&output=json', type:'post' }
 						},						
 						batch: false
 					},
 					columns: [
 						{ title: "항목", field: "producerId", width:150},
-						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
-						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
-						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
-						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
-						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
-						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
-						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
-						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
-						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
+						{ title: "Started", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "Min", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+						{ title: "Max", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
+						{ title: "Daemon", field: "firstStatsValues[3].value" },
+						{ title: "Cur", field: "firstStatsValues[4].value" , format: "{0:##,#}" }
 					],
 					pageable: false,	
 					resizable: true,
@@ -432,21 +428,15 @@
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
+							read: { url:'/secure/data/stage/producers/get.json?producerId=ThreadStates&createFirstStats=true&createAllStats=false&output=json', type:'post' }
 						},						
 						batch: false
 					},
 					columns: [
 						{ title: "항목", field: "producerId", width:150},
-						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
-						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
-						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
-						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
-						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
-						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
-						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
-						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
-						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
+						{ title: "CUR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "MIN", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+						{ title: "MAX", field: "firstStatsValues[2].value" , format: "{0:##,#}" }
 					],
 					pageable: false,	
 					resizable: true,
