@@ -209,12 +209,12 @@
 						var items = [];						
 						
 						items.push({ 
-							percentage: 90, //this.dataSource.view()[3].value,
+							percentage: this.dataSource.view()[3].value,
 							source: "TOTAL",
 							explode : false
 						});
 						items.push({ 
-							percentage: 10, //this.dataSource.view()[2].value,
+							percentage: this.dataSource.view()[2].value,
 							source: "FREE",
 							explode : true						
 						});
