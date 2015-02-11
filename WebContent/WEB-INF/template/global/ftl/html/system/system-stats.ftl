@@ -210,12 +210,12 @@
 							new kendo.data.DataSource({data: items})
 						);
 						items.push({ 
-							percentage: this.dataSource.view()[1].value
+							percentage: this.dataSource.view()[1].value,
 							source: "TOTAL",
 							explode : false
 						});
 						items.push({ 
-							percentage: this.dataSource.view()[0].value
+							percentage: this.dataSource.view()[0].value,
 							source: "FREE",
 							explode : true						
 						});
