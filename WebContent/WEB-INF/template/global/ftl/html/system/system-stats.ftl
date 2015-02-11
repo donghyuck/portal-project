@@ -475,7 +475,7 @@
 								<span class="panel-title"><i class="fa fa-info"></i> OS</span></span>
 							</div>						
 							<div class="row">														
-								<div class="col-sm-6 text-center"><span id="os-memory-stats-chart" class="md-chart"></span></div>
+								<div class="col-sm-6 text-center"><span id="os-memory-stats-chart" class="md-chart" style="margin-top:60px;"></span></div>
 								<div class="col-sm-6">
 									<div class="p-sm text-right">							
 										<button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button>							
