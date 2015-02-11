@@ -209,7 +209,7 @@
 						var items = [];						
 						
 						items.push({ 
-							percentage: this.dataSource.view()[3].value,
+							percentage: this.dataSource.view()[3].value - this.dataSource.view()[2].value ,
 							source: "USAGE",
 							explode : false
 						});
