@@ -167,8 +167,8 @@
 							dataBound : function(e){		
 								var hours = this.dataSource.view()[4].value 
 								var days = this.dataSource.view()[5].value 
-								target.find(".counter span").first().html(hours);
-								target.find(".counter span").last().html(days);
+								$(target.attr("href")).find(".counter span").first().html(hours);
+								$(target.attr("href")).find(".counter span").last().html(days);
 							}
 						});														
 					break;
