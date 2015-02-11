@@ -361,7 +361,8 @@
 							}	
 						},	
 						schema : settings.schema,					
-						batch: false
+						batch: false,
+						error : common.ui.error
 					},
 					columns: settings.columns,
 					pageable: false,	
@@ -402,6 +403,7 @@
 								return options ;
 							}	
 						},
+						error : common.ui.error,
 						schema: settings.schema,		
 						batch: false
 					},
