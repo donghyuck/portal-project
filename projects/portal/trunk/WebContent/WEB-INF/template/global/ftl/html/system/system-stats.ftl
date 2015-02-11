@@ -180,7 +180,7 @@
 			var renderTo = $("#os-stats-grid");
 			var renderTo2 = $("#os-memory-stats-chart");
 			createProducerStats ("OS", true, false, renderTo, {
-				columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ]
+				columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ],
 				dataBound : function(e){				
 					if( common.ui.defined(renderTo2) ){
 						var free = this.dataSource.view()[0].value;
