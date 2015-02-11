@@ -341,13 +341,13 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#others-thread-count-stats" :						
-						createThreadCountStats(renderTo1);
+						createProducerStats("ThreadCount", true, false, renderTo1);
 					break;
 					case "#others-thread-state-stats" :						
-						createThreadStateStats(renderTo1);
+						createProducerStats("ThreadStates", true, false, renderTo1);
 					break;					
 					case "#others-annotated-stats" :
-						createAnnotatedtStats(renderTo1);	
+						createProducerStats("", true, false, renderTo1);	
 					break; 
 				}					
 			});				
@@ -391,22 +391,27 @@
 			}	
 		}		
 		
-		function createThreadCountStats (renderTo){
+		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/stage/producers/list.json?producerId=ThreadCount&createFirstStats=true&createAllStats=false&output=json', type:'post' }
-						},						
+							read: { url:'/secure/data/stage/producers/get.json?output=json', type:'post' },
+							parameterMap: function (options, operation){			
+								options.producerId = producerId ;
+								options.createFirstStats = createFirstStats ;
+								options.createAllStats = createAllStats ;
+								return options ;
+							}	
+						},
+						schema: {
+							data: "firstStatsValues"
+						},		
 						batch: false
 					},
 					columns: [
-						{ title: "항목", field: "producerId", width:150},
-						{ title: "Started", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
-						{ title: "Min", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
-						{ title: "Max", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
-						{ title: "Daemon", field: "firstStatsValues[3].value" },
-						{ title: "Cur", field: "firstStatsValues[4].value" , format: "{0:##,#}" }
+						{ title: "항목", field: "name", width:190},
+						{ title: "값", field: "value" }
 					],
 					pageable: false,	
 					resizable: true,
