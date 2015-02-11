@@ -331,7 +331,139 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});				
 			}	
+		}	
+		
+		function createOthersStats (){				
+			$('#others-stats-tabs').on( 'show.bs.tab', function (e) {		
+				var target = $(e.target);
+				var renderTo1 =  $(target.attr("href") + "-grid" ); 
+				var renderTo2 =  $(target.attr("href") + "-chart" ); 
+				switch( target.attr('href') ){
+					case "#others-thread-count-stats" :						
+						createThreadCountStats(renderTo1);
+					break;
+					case "#others-thread-state-stats" :						
+						createThreadStateStats(renderTo1);
+					break;					
+					case "#others-annotated-stats" :
+						createAnnotatedtStats(renderTo1);	
+					break; 
+				}					
+			});				
+			$('#web-stats-tabs a:first').tab('show');		
+		}
+		function createAnnotatedtStats (renderTo){
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
+						},						
+						batch: false
+					},
+					columns: [
+						{ title: "항목", field: "producerId", width:150},
+						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
+						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
+						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
+						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
+						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
+						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
+						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
+					],
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});				
+			}	
 		}		
+		function createThreadCountStats (renderTo){
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
+						},						
+						batch: false
+					},
+					columns: [
+						{ title: "항목", field: "producerId", width:150},
+						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
+						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
+						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
+						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
+						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
+						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
+						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
+					],
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});				
+			}	
+		}			
+		function createThreadStateStats (renderTo){
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
+						},						
+						batch: false
+					},
+					columns: [
+						{ title: "항목", field: "producerId", width:150},
+						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
+						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
+						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
+						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
+						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
+						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
+						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
+					],
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});				
+			}	
+		}	
+							
 		-->
 		</script> 		 
 		<style>
@@ -449,22 +581,29 @@
 							<span class="panel-title"><i class="fa fa-info"></i> Threads & Component</span></span>
 							<ul class="nav nav-tabs nav-tabs-xs" id="others-stats-tabs">
 								<li>
-									<a href="#others-thread-stats" data-toggle="tab">Threads</a>
+									<a href="#others-thread-state-stats" data-toggle="tab">Thread State</a>
 								</li>	
+								<li>
+									<a href="#others-thread-count-stats" data-toggle="tab">Thread Count</a>
+								</li>									
 								<li>
 									<a href="#others-annotated-stats" data-toggle="tab">Component</a>
 								</li>
 							</ul>
 						</div> <!-- / .panel-heading -->
 						<div class="tab-content">
-							<div class="tab-pane" id="web-filter-stats">
+							<div class="tab-pane" id="others-thread-state">
 								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
-								<div id="others-thread-stats-grid" class="no-border-hr"></div>
+								<div id="others-thread-state-stats-grid" class="no-border-hr"></div>
 							</div>
-							<div class="tab-pane" id="web-session-stats">
+							<div class="tab-pane" id="others-thread-count-stats">
+								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+								<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
+							</div>	
+							<div class="tab-pane" id="others-annotated-stats">
 								<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 								<div id="others-annotated-stats-grid" class="no-border-hr"></div>
-							</div>								
+							</div>															
 						</div><!-- tab contents end -->
 						<div class="panel-footer no-padding-vr"></div>
 					</div>				
