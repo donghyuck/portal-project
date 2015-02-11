@@ -178,70 +178,12 @@
 		
 		function createOSStats (){				
 			var renderTo = $("#os-stats-grid");
-			if(! common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {
-						transport: { 
-							read: { url:'/secure/data/stage/os/stats.json?output=json', type:'post' }
-						},				
-						schema: {
-							data: "firstStatsValues"
-						},		
-						batch: false
-					},
-					columns: [
-						{ title: "항목", field: "name", width:190},
-						{ title: "값", field: "value", format: "{0:##,#}" }
-					],
-					pageable: false,	
-					resizable: true,
-					editable : false,
-					scrollable: true,
-					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {			
-						
-					}					
-				});
-				renderTo.parent().find("button[data-action=refresh]").click(function(e){
-					common.ui.grid(renderTo).dataSource.read();								
-				});	
-			}	
+			createProducerStats ("OS", true, false, renderTo);		
 		}
 
 		function createRuntimeStats (){				
 			var renderTo = $("#runtime-stats-grid");
-			if(! common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {
-						transport: { 
-							read: { url:'/secure/data/stage/runtime/stats.json?output=json', type:'post' }
-						},				
-						schema: {
-							data: "firstStatsValues"
-						},		
-						batch: false
-					},
-					columns: [
-						{ title: "항목", field: "name", width:190},
-						{ title: "값", field: "value" }
-					],
-					pageable: false,	
-					resizable: true,
-					editable : false,
-					scrollable: true,
-					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {			
-						
-					}					
-				});
-				renderTo.parent().find("button[data-action=refresh]").click(function(e){
-					common.ui.grid(renderTo).dataSource.read();								
-				});	
-			}	
+			createProducerStats ("Runtime", true, false, renderTo);			
 		}
 				
 		function createWebStats (){				
