@@ -514,7 +514,18 @@
 							</div>
 							<div class="tab-content">
 								<div class="tab-pane" id="system-runtime-stats">
-									<div id="system-runtime-stats-grid" class="no-border-hr"></div>								
+									
+									<div class="stat-panel no-margin-b">
+										<div class="stat-cell col-xs-5 text-center">
+											<!-- Stat panel bg icon -->
+											<i class="fa fa-tachometer bg-icon bg-icon-left"></i>
+											<!-- Extra small text -->											
+											<div class="counter counter-lg"><span>765</span></div>
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
+											<div id="system-runtime-stats-grid"></div>			
+										</div>
+									</div>
 								</div>
 								<div class="tab-pane" id="system-os-stats">							
 									<div class="stat-panel no-margin-b">
