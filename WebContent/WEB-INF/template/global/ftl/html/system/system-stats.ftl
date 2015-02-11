@@ -592,7 +592,7 @@
 								</ul>
 							</div> <!-- / .panel-heading -->
 							<div class="tab-content">
-								<div class="tab-pane" id="others-thread-state">
+								<div class="tab-pane" id="others-thread-state-stats">
 									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="others-thread-state-stats-grid" class="no-border-hr"></div>
 								</div>
