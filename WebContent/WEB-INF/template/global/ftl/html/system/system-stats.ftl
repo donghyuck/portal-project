@@ -41,8 +41,9 @@
 					}
 				});			
 				
-				createRuntimeStats();	
-				createOSStats();
+				//createRuntimeStats();	
+				//createOSStats();
+				createSystemStats();
 				createMemoryStats();
 				createWebStats();
 				createOthersStats();
@@ -154,6 +155,71 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});
 			}	
+		}
+		
+		function createSystemStats (){		
+			$('#system-stats-tabs').on( 'show.bs.tab', function (e) {		
+				var target = $(e.target);
+				var renderTo1 =  $(target.attr("href") + "-grid" ); 
+				var renderTo2 =  $(target.attr("href") + "-chart" ); 
+				switch( target.attr('href') ){
+					case "#system-runtime-stats" :						
+						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolProducer", renderTo2);												
+					break;
+					case "#system-os-stats" :						
+						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryPoolVirtualProducer", renderTo2);	
+						createProducerStats ("OS", true, false, renderTo, {
+							columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ],
+							dataBound : function(e){				
+								if( common.ui.defined(renderTo2) ){
+									if(! common.ui.exists(renderTo2) ){
+										renderTo2.kendoChart({
+											title : {
+												position: "bottom",
+												text: "Physical System Memory"
+											},
+											legend: {
+												visible: false
+											},
+											series : [{
+												type: "pie",
+												startAngle: 150,
+												field: "percentage",
+												categoryField: "source",
+												explodeField: "explode"
+											}],
+											seriesColors: ["#5ac8fa", "#ff2d55"],
+											tooltip: {
+											visible: true,
+												template: "#: category # - #: value #MB"
+											}
+										});
+									}
+									var items = [];						
+									
+									items.push({ 
+										percentage: this.dataSource.view()[3].value - this.dataSource.view()[2].value ,
+										source: "USAGE",
+										explode : false
+									});
+									items.push({ 
+										percentage: this.dataSource.view()[2].value,
+										source: "FREE",
+										explode : true						
+									});
+									renderTo2.data("kendoChart").setDataSource(
+										new kendo.data.DataSource({data: items})
+									);
+								}
+							}
+						});	
+						break;
+					case "#memory-stats" :	
+						//createMemoryStatsGrid(renderTo1, "BuiltInMemoryProducer", renderTo2);										
+					break;
+				}					
+			});				
+			$('#system-stats-tabs a:first').tab('show');		
 		}
 		
 		function createMemoryStats (){				
@@ -490,6 +556,33 @@
 						</div>		
 					</div>					
 				</div><!-- memory status end -->
+				<div class="row">			
+					<div class="col-lg-12">	
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-info"></i> SYSTEM</span>
+								<ul class="nav nav-tabs nav-tabs-xs" id="system-stats-tabs">
+									<li>
+										<a href="#system-runtime-stats" data-toggle="tab">Memory Pool</a>
+									</li>
+									<li>
+										<a href="#system-os-stats" data-toggle="tab">VirtualMemoryPool</a>
+									</li>					
+								</ul> <!-- / .nav -->							
+							</div>
+							<div class="tab-content">
+								<div class="tab-pane" id="system-runtime-stats">
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+									<div id="system-runtime-stats" class="no-border-hr"></div>								
+								</div>
+								<div class="tab-pane" id="system-os-stats">
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+									<div id="system-os-stats-grid" class="no-border-hr"></div>											
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>	
 				<hr class="no-grid-gutter-h grid-gutter-margin-b">				
 				<div class="row">			
 					<div class="col-lg-12">	
