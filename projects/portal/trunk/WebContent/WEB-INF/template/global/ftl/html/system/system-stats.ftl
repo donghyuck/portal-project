@@ -250,15 +250,52 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :						
-						createFitlerStats(renderTo1);												
+						createFilterStats(renderTo1);												
 					break;
+					case "#web-session-stats" :
+						createSessionStats(renderTo1);	
+					break; 
 				}					
 			});				
 			$('#web-stats-tabs a:first').tab('show');		
 		}
 		
 		
-		function createFitlerStats (renderTo){
+		function createSessionStats (renderTo){
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/session/stats.json?output=json', type:'post' }
+						},						
+						batch: false
+					},
+					columns: [
+						{ title: "항목", field: "producerId", width:150},
+						{ title: "Cur", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "Min", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
+						{ title: "Max", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
+						{ title: "New", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
+						{ title: "Del", field: "firstStatsValues[4].value" , format: "{0:##,#}" }
+					],
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						
+					}					
+				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});				
+			}	
+		}
+
+		function createFilterStats (renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
@@ -294,8 +331,7 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});				
 			}	
-		}
-		
+		}		
 		-->
 		</script> 		 
 		<style>
@@ -399,6 +435,10 @@
 									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
 									<div id="web-filter-stats-grid" class="no-border-hr"></div>
 								</div>
+								<div class="tab-pane" id="web-session-stats">
+									<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
+									<div id="web-session-stats-grid" class="no-border-hr"></div>
+								</div>								
 							</div><!-- tab contents end -->
 							<div class="panel-footer no-padding-vr"></div>
 						</div>
