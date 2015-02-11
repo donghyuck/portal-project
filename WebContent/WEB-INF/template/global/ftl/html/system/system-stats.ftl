@@ -474,12 +474,12 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> OS</span></span>
 							</div>						
-							<div class="p-sm text-right">							
-								<button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button>							
-							</div>
 							<div class="row">
+								<div class="p-sm text-right">							
+									<button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button>							
+								</div>							
 								<div class="col-sm-6 text-center"><span id="os-memory-stats-chart" class="md-chart"></span></div>
-								<div class="col-sm-6"><div id="os-stats-grid"></div></div>
+								<div id="os-stats-grid" class="col-sm-6"></div>
 							</div>							
 							<div class="panel-footer no-padding-vr"></div>
 						</div>		
