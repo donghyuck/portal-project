@@ -582,6 +582,8 @@
 											<span class="text-xs">TODAY'S EARNINGS</span><br>
 											<!-- Extra large text -->
 											<span class="text-xlg"><small><small>$</small></small><strong>247</strong></span>
+											<span id="system-os-stats-chart" class="md-chart" style="margin-top:60px;"></span>
+											
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">
 											<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>
