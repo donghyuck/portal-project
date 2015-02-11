@@ -307,7 +307,7 @@
 					},
 					columns: [
 						{ title: "항목", field: "producerId", width:150},
-						{ title: firstStatsValues[0].name, field: "firstStatsValues[0].value" , format: "{0:##,#}" },
+						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
 						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
 						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
