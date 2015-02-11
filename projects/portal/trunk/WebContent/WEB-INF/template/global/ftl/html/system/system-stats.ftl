@@ -184,9 +184,8 @@
 				dataBound : function(e){				
 					if( common.ui.defined(renderTo2) ){
 						var free = this.dataSource.view()[0].value;
-						var total = this.dataSource.view()[1].value;					
-						
-						 $("#stats-wed").kendoSparkline({
+						var total = this.dataSource.view()[1].value;
+						 renderTo2.kendoSparkline({
 							type: "pie",
 							data: [total-free, free]
 						});
