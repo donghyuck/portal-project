@@ -199,6 +199,7 @@
 									categoryField: "source",
 									explodeField: "explode"
 								}],
+								seriesColors: ["#5ac8fa", "#ff2d55"],
 								tooltip: {
 								visible: true,
 									template: "#: category # - #: value #%"
