@@ -193,7 +193,7 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :						
-						createProducersStats ("filter", true, false, [
+						createProducersStats ("filter", true, false, renderTo1, [
 							{ title: "이름", field: "producerId", width:150},
 							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 							{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
@@ -204,7 +204,7 @@
 							{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
 							{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
 							{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }						
-						], renderTo1)									
+						])									
 					break;
 					case "#web-session-stats" :
 						createSessionCountStats(renderTo1);	
@@ -248,44 +248,6 @@
 				});				
 			}	
 		}
-
-		function createFilterStats (renderTo){
-			if(! common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {
-						transport: { 
-							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
-						},						
-						batch: false
-					},
-					columns: [
-						{ title: "항목", field: "producerId", width:150},
-						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
-						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
-						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
-						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
-						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
-						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
-						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
-						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
-						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
-					],
-					pageable: false,	
-					resizable: true,
-					editable : false,
-					scrollable: true,
-					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {			
-						
-					}					
-				});
-				renderTo.parent().find("button[data-action=refresh]").click(function(e){
-					common.ui.grid(renderTo).dataSource.read();								
-				});				
-			}	
-		}	
 		
 		function createOthersStats (){				
 			$('#others-stats-tabs').on( 'show.bs.tab', function (e) {		
@@ -306,45 +268,8 @@
 			});				
 			$('#others-stats-tabs a:first').tab('show');		
 		}
-		function createAnnotatedtStats (renderTo){
-			if(! common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {
-						transport: { 
-							read: { url:'/secure/data/stage/producers/list.json?category=filter&output=json', type:'post' }
-						},						
-						batch: false
-					},
-					columns: [
-						{ title: "항목", field: "producerId", width:150},
-						{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
-						{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
-						{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
-						{ title: "MCR", field: "firstStatsValues[3].value" , format: "{0:##,#}" },
-						{ title: "ERR", field: "firstStatsValues[4].value" , format: "{0:##,#}" },
-						{ title: "Last", field: "firstStatsValues[5].value" , format: "{0:##,#}" },
-						{ title: "Min", field: "firstStatsValues[6].value" , format: "{0:##,#}" },
-						{ title: "Max", field: "firstStatsValues[7].value" , format: "{0:##,#}" },
-						{ title: "Avg", field: "firstStatsValues[8].value" , format: "{0:##,#}" }
-					],
-					pageable: false,	
-					resizable: true,
-					editable : false,
-					scrollable: true,
-					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {			
-						
-					}					
-				});
-				renderTo.parent().find("button[data-action=refresh]").click(function(e){
-					common.ui.grid(renderTo).dataSource.read();								
-				});				
-			}	
-		}		
-		
-		function createProducersStats (category, createFirstStats, createAllStats, columns, renderTo){
+				
+		function createProducersStats (category, createFirstStats, createAllStats, renderTo, columns ){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
@@ -377,8 +302,11 @@
 			}			
 		}
 		
-		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo){
+		function createProducerStats (producerId, createFirstStats, createAllStats, renderTo, columns){
+		
 			if(! common.ui.exists(renderTo) ){
+				columns = columns || [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ];
+					
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
@@ -395,10 +323,7 @@
 						},		
 						batch: false
 					},
-					columns: [
-						{ title: "이름", field: "name", width:190},
-						{ title: "값", field: "value" }
-					],
+					columns: columns,
 					pageable: false,	
 					resizable: true,
 					editable : false,
