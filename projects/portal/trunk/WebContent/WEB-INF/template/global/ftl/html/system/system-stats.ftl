@@ -211,12 +211,12 @@
 							new kendo.data.DataSource({data: items})
 						);
 						items.push({ 
-							percentage: this.dataSource.view()[3].value,
+							percentage: 90, //this.dataSource.view()[3].value,
 							source: "TOTAL",
 							explode : false
 						});
 						items.push({ 
-							percentage: this.dataSource.view()[2].value,
+							percentage: 10, //this.dataSource.view()[2].value,
 							source: "FREE",
 							explode : true						
 						});
