@@ -687,7 +687,7 @@
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-area-chart bg-icon bg-icon-left"></i>
 											<!-- Extra small text -->											
-											<span id="others-thread-state-stats-grid" class="md-chart"></span>											
+											<span id="others-thread-state-stats-chart" class="md-chart"></span>											
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
 											<div id="others-thread-state-stats-grid"></div>
