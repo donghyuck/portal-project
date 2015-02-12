@@ -255,30 +255,31 @@
 							change: function(e){
 								var selectedCells = this.select();
 								var selectedCell = this.dataItem( selectedCells );			
-								createProducerStats(selectedCell.producerId, false, true, renderTo3, {
-									toolbar:null,
-									schema:{
-										data: "lines"
-									},
-									columns: [
-										{ title: "STATE", field: "statName", width:150},
-										{ title: "TR", field: "values[0].value" , format: "{0:##,#}" },
-										{ title: "TT", field: "values[1].value" , format: "{0:##,#}" },
-										{ title: "CR", field: "values[2].value" , format: "{0:##,#}" },
-										{ title: "MCR", field: "values[3].value" , format: "{0:##,#}" },
-										{ title: "ERR", field: "values[4].value" , format: "{0:##,#}" },
-										{ title: "Last", field: "values[5].value" , format: "{0:##,#}" },
-										{ title: "Min", field: "values[6].value" , format: "{0:##,#}" },
-										{ title: "Max", field: "values[7].value" , format: "{0:##,#}" },
-										{ title: "Avg", field: "values[8].value" , format: "{0:##,#}" }						
-									]
-								});
-								
+								if( !common.ui.exists(renderTo3) ){
+									createProducerStats(selectedCell.producerId, false, true, renderTo3, {
+										toolbar:null,
+										schema:{
+											data: "lines"
+										},
+										columns: [
+											{ title: "STATE", field: "statName", width:150},
+											{ title: "TR", field: "values[0].value" , format: "{0:##,#}" },
+											{ title: "TT", field: "values[1].value" , format: "{0:##,#}" },
+											{ title: "CR", field: "values[2].value" , format: "{0:##,#}" },
+											{ title: "MCR", field: "values[3].value" , format: "{0:##,#}" },
+											{ title: "ERR", field: "values[4].value" , format: "{0:##,#}" },
+											{ title: "Last", field: "values[5].value" , format: "{0:##,#}" },
+											{ title: "Min", field: "values[6].value" , format: "{0:##,#}" },
+											{ title: "Max", field: "values[7].value" , format: "{0:##,#}" },
+											{ title: "Avg", field: "values[8].value" , format: "{0:##,#}" }						
+										]
+									});
+								}else{
+									common.ui.grid(renderTo3).dataSource.read({producerId:selectedCell.producerId });
+								}
 								if( !renderTo3.is(":visible") ){
 									renderTo3.slideDown("slow");
-								}
-								
-																
+								}																
 							},
 							selectable : "row",
 							columns: [
