@@ -249,13 +249,36 @@
 				var renderTo1 =  $(target.attr("href") + "-grid" ); 
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
-					case "#web-filter-stats" :						
+					case "#web-filter-stats" :		
+						var renderTo3 = $("web-filter-single-stats-grid");				
 						createProducersStats ("filter", true, false, renderTo1, {
+							toolbar: null,
 							change: function(e){
 								var selectedCells = this.select();
-								var selectedCell = this.dataItem( selectedCells );	
-								alert( selectedCell.producerId );
-								var renderTo3 = $("web-filter-single-stats-grid");	          
+								var selectedCell = this.dataItem( selectedCells );									
+								createProducerStats(selectedCell.producerId, false, true, renderTo3, {
+									schema:{
+										data: "lines"
+									},
+									columns: [
+										{ title: "STATE", field: "statName", width:150},
+										{ title: "TR", field: "values[0].value" , format: "{0:##,#}" },
+										{ title: "TT", field: "values[1].value" , format: "{0:##,#}" },
+										{ title: "CR", field: "values[2].value" , format: "{0:##,#}" },
+										{ title: "MCR", field: "values[3].value" , format: "{0:##,#}" },
+										{ title: "ERR", field: "values[4].value" , format: "{0:##,#}" },
+										{ title: "Last", field: "values[5].value" , format: "{0:##,#}" },
+										{ title: "Min", field: "values[6].value" , format: "{0:##,#}" },
+										{ title: "Max", field: "values[7].value" , format: "{0:##,#}" },
+										{ title: "Avg", field: "values[8].value" , format: "{0:##,#}" }						
+									]
+								});
+								
+								if( !renderTo3.is(":visible") ){
+									renderTo3.slideDown("slow");
+								}
+								
+																
 							},
 							selectable : "row",
 							columns: [
@@ -361,6 +384,7 @@
 		var DEFAULT_PRODUCERS_SETTING = {
 			schema : {
 			},
+			toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 			columns : [],
 			selectable : false,
 			change : function(e) {},
@@ -386,7 +410,7 @@
 						batch: false,
 						error : common.ui.error
 					},
-					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+					toolbar: settings.toolbar,
 					columns: settings.columns,
 					selectable : settings.selectable,
 					pageable: false,	
@@ -407,6 +431,7 @@
 			schema : { 
 				data: "firstStatsValues"
 			},
+			toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 			columns : [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ],
 			change : function(e) {},
 			selectable : false,
@@ -432,7 +457,7 @@
 						schema: settings.schema,		
 						batch: false
 					},
-					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+					toolbar: settings.toolbar,
 					columns: settings.columns,
 					selectable : settings.selectable,
 					pageable: false,	
