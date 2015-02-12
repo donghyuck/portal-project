@@ -319,7 +319,7 @@
 						batch: false
 					},
 					columns: [
-						{ title: "항목", field: "producerId", width:150},
+						{ title: "Name", field: "producerId", width:150},
 						{ title: "Cur", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 						{ title: "Min", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
 						{ title: "Max", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
@@ -469,7 +469,7 @@
 				data: "firstStatsValues"
 			},
 			toolbar: '<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>',
-			columns : [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ],
+			columns : [{ title: "Name", field: "name", width:190}, { title: "Value", field: "value" } ],
 			change : function(e) {},
 			selectable : false,
 			dataBound : function(e) {}
@@ -608,7 +608,7 @@
 					<div class="col-lg-12">	
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> 메모리</span>
+								<span class="panel-title"><i class="fa fa-info"></i> Memory</span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="memory-stats-tabs">
 									<li>
 										<a href="#memory-pool-stats" data-toggle="tab">Memory Pool</a>
@@ -640,7 +640,7 @@
 						
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> 웹</span></span>
+								<span class="panel-title"><i class="fa fa-info"></i> Web</span></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="web-stats-tabs">
 									<li>
 										<a href="#web-filter-stats" data-toggle="tab">Filters</a>
