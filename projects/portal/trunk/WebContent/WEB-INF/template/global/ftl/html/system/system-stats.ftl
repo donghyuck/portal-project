@@ -690,7 +690,6 @@
 											<span id="others-thread-state-stats-grid" class="md-chart"></span>											
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
-											<div id="system-os-stats-grid"></div>
 											<div id="others-thread-state-stats-grid"></div>
 										</div>
 									</div>	
