@@ -683,13 +683,13 @@
 							<div class="tab-content">
 								<div class="tab-pane" id="others-thread-state-stats">
 									<div class="stat-panel no-margin-b">
-										<div class="stat-cell col-xs-5 text-center">
+										<div class="stat-cell col-sm-5 text-center">
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-area-chart bg-icon bg-icon-left"></i>
 											<!-- Extra small text -->											
 											<span id="others-thread-state-stats-chart" class="md-chart"></span>											
 										</div> <!-- /.stat-cell -->
-										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
+										<div class="stat-cell col-xs-12 col-sm-7 no-padding valign-bottom">											
 											<div id="others-thread-state-stats-grid"></div>
 										</div>
 									</div>	
