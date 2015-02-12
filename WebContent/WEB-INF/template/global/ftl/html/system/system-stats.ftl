@@ -251,12 +251,12 @@
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :		
 						var renderTo3 = $("web-filter-single-stats-grid");				
-						createProducersStats ("filter", true, false, renderTo1, {
-							toolbar: null,
+						createProducersStats ("filter", true, false, renderTo1, {							
 							change: function(e){
 								var selectedCells = this.select();
 								var selectedCell = this.dataItem( selectedCells );									
 								createProducerStats(selectedCell.producerId, false, true, renderTo3, {
+									toolbar: null,
 									schema:{
 										data: "lines"
 									},
