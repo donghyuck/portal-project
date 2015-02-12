@@ -252,6 +252,11 @@
 					case "#web-filter-stats" :		
 						var renderTo3 = $("#web-filter-single-stats-grid");				
 						createProducersStats ("filter", true, false, renderTo1, {							
+							dataBound: function(e) {			
+								if( renderTo3.is(":visible") ){
+									renderTo3.slideUp("slow");
+								}	
+							},
 							change: function(e){
 								var selectedCells = this.select();
 								var selectedCell = this.dataItem( selectedCells );			
