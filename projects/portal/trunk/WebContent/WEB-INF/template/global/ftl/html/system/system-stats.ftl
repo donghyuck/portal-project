@@ -431,7 +431,7 @@
 			schema : { 
 				data: "firstStatsValues"
 			},
-			toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+			toolbar: '<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>',
 			columns : [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ],
 			change : function(e) {},
 			selectable : false,
