@@ -327,8 +327,7 @@
 						{ title: "Del", field: "firstStatsValues[4].value" , format: "{0:##,#}" }
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
-					pageable: false,	
-					selectable : "row",
+					pageable: false,
 					resizable: true,
 					editable : false,
 					scrollable: true,
