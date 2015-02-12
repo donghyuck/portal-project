@@ -682,7 +682,18 @@
 							</div> <!-- / .panel-heading -->
 							<div class="tab-content">
 								<div class="tab-pane" id="others-thread-state-stats">
-									<div id="others-thread-state-stats-grid" class="no-border-hr"></div>
+									<div class="stat-panel no-margin-b">
+										<div class="stat-cell col-xs-5 text-center">
+											<!-- Stat panel bg icon -->
+											<i class="fa fa-area-chart bg-icon bg-icon-left"></i>
+											<!-- Extra small text -->											
+											<span id="others-thread-state-stats-grid" class="md-chart"></span>											
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
+											<div id="system-os-stats-grid"></div>
+											<div id="others-thread-state-stats-grid"></div>
+										</div>
+									</div>	
 								</div>
 								<div class="tab-pane" id="others-thread-count-stats">
 									<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
