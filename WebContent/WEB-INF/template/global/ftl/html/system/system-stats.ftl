@@ -354,6 +354,7 @@
 			schema : {
 			},
 			columns : [],
+			selectable : false,
 			change : function(e) {},
 			dataBound : function(e) {}
 		};
@@ -379,6 +380,7 @@
 					},
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					columns: settings.columns,
+					selectable : settings.selectable,
 					pageable: false,	
 					resizable: true,
 					editable : false,
@@ -399,6 +401,7 @@
 			},
 			columns : [{ title: "이름", field: "name", width:190}, { title: "값", field: "value" } ],
 			change : function(e) {},
+			selectable : false,
 			dataBound : function(e) {}
 		};
 		
@@ -423,8 +426,8 @@
 					},
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					columns: settings.columns,
-					pageable: {  refresh: true,
-                            pageSizes: false },	
+					selectable : settings.selectable,
+					pageable: false,	
 					resizable: true,
 					editable : false,
 					scrollable: true,
