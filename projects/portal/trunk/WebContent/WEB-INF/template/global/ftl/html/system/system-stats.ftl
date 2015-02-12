@@ -686,7 +686,7 @@
 									<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
 								</div>	
 								<div class="tab-pane" id="others-annotated-stats">
-									<div id="annotated-single-stats-grid" class="m-sm" style="display:none"></div>
+									<div id="custom-annotated-single-stats-grid" class="m-sm" style="display:none"></div>
 									<div id="others-annotated-stats-grid" class="no-border-hr"></div>
 								</div>															
 							</div><!-- tab contents end -->
