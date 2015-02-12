@@ -193,7 +193,7 @@
 												categoryField: "source",
 												explodeField: "explode"
 											}],
-											seriesColors: ["#5ac8fa", "#ff2d55"],
+											seriesColors: ["#5ac8fa", "#4cd964"],
 											tooltip: {
 											visible: true,
 												template: "#: category # - #: value #MB"
@@ -204,12 +204,12 @@
 									items.push({ 
 										percentage: this.dataSource.view()[3].value - this.dataSource.view()[2].value ,
 										source: "USAGE",
-										explode : false
+										explode : true
 									});
 									items.push({ 
 										percentage: this.dataSource.view()[2].value,
 										source: "FREE",
-										explode : true						
+										explode : false						
 									});
 									renderTo2.data("kendoChart").setDataSource(
 										new kendo.data.DataSource({data: items})
