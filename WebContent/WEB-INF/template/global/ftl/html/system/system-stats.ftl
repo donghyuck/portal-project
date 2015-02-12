@@ -463,7 +463,7 @@
 					change: settings.change,
 					dataBound:settings.dataBounded			
 				});
-				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});				
 			}			
@@ -511,7 +511,7 @@
 					change: settings.change,
 					dataBound: settings.dataBound				
 				});
-				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});				
 			}	
