@@ -251,6 +251,7 @@
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :						
 						createProducersStats ("filter", true, false, renderTo1, {
+							selectable : "row",
 							columns: [
 							{ title: "이름", field: "producerId", width:180},
 							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
@@ -292,6 +293,7 @@
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					pageable: false,	
+					selectable : "row",
 					resizable: true,
 					editable : false,
 					scrollable: true,
