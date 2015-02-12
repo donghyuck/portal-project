@@ -640,7 +640,6 @@
 									<div id="memory-stats-grid" class="no-border-hr"></div>
 								</div>
 							</div><!-- tab contents end -->
-							<div class="panel-footer no-padding-vr"></div>
 						</div><!-- /.panel -->
 						
 						<div class="panel colourable">
@@ -664,7 +663,6 @@
 									<div id="web-session-stats-grid" class="no-border-hr"></div>
 								</div>								
 							</div><!-- tab contents end -->
-							<div class="panel-footer no-padding-vr"></div>
 						</div><!-- /.panel -->				
 					
 						<div class="panel colourable">
@@ -694,7 +692,6 @@
 									<div id="others-annotated-stats-grid" class="no-border-hr"></div>
 								</div>															
 							</div><!-- tab contents end -->
-							<div class="panel-footer no-padding-vr"></div>
 						</div><!-- /.panel -->							
 										
 				</div>	
