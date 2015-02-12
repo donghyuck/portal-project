@@ -262,7 +262,7 @@
 											data: "lines"
 										},
 										columns: [
-											{ title: "STATE", field: "statName", width:150},
+											{ title: "Name", field: "statName", width:180},
 											{ title: "TR", field: "values[0].value" , format: "{0:##,#}" },
 											{ title: "TT", field: "values[1].value" , format: "{0:##,#}" },
 											{ title: "CR", field: "values[2].value" , format: "{0:##,#}" },
@@ -283,7 +283,7 @@
 							},
 							selectable : "row",
 							columns: [
-							{ title: "이름", field: "producerId", width:180},
+							{ title: "Name", field: "producerId", width:180},
 							{ title: "TR", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 							{ title: "TT", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
 							{ title: "CR", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
