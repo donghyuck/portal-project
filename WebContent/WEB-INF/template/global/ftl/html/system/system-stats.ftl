@@ -504,7 +504,7 @@
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-laptop bg-icon bg-icon-left"></i>
 											<!-- Extra small text -->								
-											<p class="text-xlg"><strong>RUNNING HOURS</strong></p>			
+											<p class="text-xlg m-t-lg"><strong>RUNNING HOURS</strong></p>			
 											<div class="counter counter-lg"><span>0</span></div>
 											<p class="text-xlg"><strong>RUNNING DAYS</strong></p>			
 											<div class="counter counter-lg"><span>0</span></div>											
