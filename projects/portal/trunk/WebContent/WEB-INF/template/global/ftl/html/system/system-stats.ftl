@@ -255,9 +255,6 @@
 							change: function(e){
 								var selectedCells = this.select();
 								var selectedCell = this.dataItem( selectedCells );			
-								
-								alert(selectedCell.producerId);
-														
 								createProducerStats(selectedCell.producerId, false, true, renderTo3, {
 									toolbar:null,
 									schema:{
@@ -450,8 +447,9 @@
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/stage/producers/get.json?output=json', type:'post' },
-							parameterMap: function (options, operation){			
-								options.producerId = producerId ;
+							parameterMap: function (options, operation){		
+								if( !options.producerId )
+									options.producerId = producerId ;
 								options.createFirstStats = createFirstStats ;
 								options.createAllStats = createAllStats ;
 								return options ;
