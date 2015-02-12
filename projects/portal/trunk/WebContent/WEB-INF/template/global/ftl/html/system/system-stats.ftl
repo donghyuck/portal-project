@@ -256,7 +256,7 @@
 								var selectedCells = this.select();
 								var selectedCell = this.dataItem( selectedCells );									
 								createProducerStats(selectedCell.producerId, false, true, renderTo3, {
-									toolbar: null,
+									toolbar:null,
 									schema:{
 										data: "lines"
 									},
