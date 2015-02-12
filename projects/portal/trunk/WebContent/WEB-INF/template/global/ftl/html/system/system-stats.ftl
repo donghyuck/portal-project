@@ -664,7 +664,7 @@
 					
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> Threads & Component</span></span>
+								<span class="panel-title"><i class="fa fa-info"></i> Threads & Monitors</span></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="others-stats-tabs">
 									<li>
 										<a href="#others-thread-state-stats" data-toggle="tab">Thread State</a>
