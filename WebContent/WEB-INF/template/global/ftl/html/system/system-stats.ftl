@@ -502,6 +502,9 @@
 				border-bottom-width: 0 !important;
 			}
 			
+			.tab-pane .k-grid{
+				height: 300px;
+			} 
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
