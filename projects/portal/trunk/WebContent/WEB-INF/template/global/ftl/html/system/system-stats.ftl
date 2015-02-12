@@ -384,7 +384,8 @@
 		var DEFAULT_PRODUCERS_SETTING = {
 			schema : {
 			},
-			toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+			toolbar: '<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>',
+			//toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 			columns : [],
 			selectable : false,
 			change : function(e) {},
