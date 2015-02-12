@@ -255,7 +255,7 @@
 								var selectedCells = this.select();
 								var selectedCell = this.dataItem( selectedCells );	
 								alert( selectedCell.producerId );
-									          
+								var renderTo3 = $("web-filter-single-stats-grid");	          
 							},
 							selectable : "row",
 							columns: [
@@ -586,6 +586,7 @@
 							</div> <!-- / .panel-heading -->
 							<div class="tab-content">
 								<div class="tab-pane" id="web-filter-stats">
+									<div id="web-filter-single-stats-grid" class="no-border-hr" style="display:none"></div>
 									<div id="web-filter-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="web-session-stats">
