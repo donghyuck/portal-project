@@ -250,7 +250,7 @@
 				var renderTo2 =  $(target.attr("href") + "-chart" ); 
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :		
-						var renderTo3 = $("web-filter-single-stats-grid");				
+						var renderTo3 = $("#web-filter-single-stats-grid");				
 						createProducersStats ("filter", true, false, renderTo1, {							
 							change: function(e){
 								var selectedCells = this.select();
