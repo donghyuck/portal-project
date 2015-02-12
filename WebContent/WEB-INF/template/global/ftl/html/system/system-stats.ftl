@@ -614,7 +614,7 @@
 							</div> <!-- / .panel-heading -->
 							<div class="tab-content">
 								<div class="tab-pane" id="web-filter-stats">
-									<div class="rounded p-sm bg-default">
+									<div class="rounded-2x m-sm bg-primary">
 									<div id="web-filter-single-stats-grid" style="display:none"></div>
 									</div>
 									<div id="web-filter-stats-grid" class="no-border-hr"></div>
