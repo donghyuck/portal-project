@@ -127,16 +127,16 @@
 						<ul class="mmc-dropdown-delay animated fadeInLeft">
 							<#list item.components as sub_item >
 								<#if sub_item.components?has_content >
-								<li>
+								<li class="mm-dropdown">
 									<a href="#" class="dropdown-toggle" data-toggle="dropdown" data-menu-item="${sub_item.name}"><#if sub_item.isSetIcon()><i class="menu-icon fa ${sub_item.icon}"></i> </#if><span class="mm-text">${sub_item.title}</span></a>
-									<ul class="dropdown-menu">
+									<ul>
 									<#list sub_item.components as sub_sub_item >
-										<li><a href="${sub_sub_item.page}" data-menu-item="${sub_sub_item.name}"> <span class="mm-text">${ sub_sub_item.title }</span></a></li>
+										<li><a tabindex="-1" href="${sub_sub_item.page}" data-menu-item="${sub_sub_item.name}"><#if sub_sub_item.isSetIcon()><i class="menu-icon fa ${sub_sub_item.icon}"></i> </#if> <span class="mm-text">${ sub_sub_item.title }</span></a></li>
 									</#list>
 									</ul>
 								</li>
 								<#else>								
-									<li><a tabindex="-1" href="${sub_item.page}" data-menu-item="${sub_item.name}"><#if sub_item.isSetIcon()><i class="menu-icon fa ${sub_item.icon}"></i> </#if><span class="mm-text">${sub_item.title}</span></a></li>
+								<li><a tabindex="-1" href="${sub_item.page}" data-menu-item="${sub_item.name}"><#if sub_item.isSetIcon()><i class="menu-icon fa ${sub_item.icon}"></i> </#if><span class="mm-text">${sub_item.title}</span></a></li>
 								</#if>								
 							</#list>
 						</ul>					
