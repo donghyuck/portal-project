@@ -141,6 +141,11 @@ PC9saWNlbnNlPg==</file>
 	</components>
 	
 	<performance-monitoring>
+		
+		<moskito>
+			<thresholds-setup>true</thresholds-setup>
+		</moskito>
+		
 		<database>			
 			<schema>U_PORTAL</schema>
 		</database>
