@@ -251,6 +251,12 @@
 				switch( target.attr('href') ){
 					case "#web-filter-stats" :						
 						createProducersStats ("filter", true, false, renderTo1, {
+							change: function(e){
+								var selectedCells = this.select();
+								var selectedCell = this.dataItem( selectedCells );	
+								alert( selectedCell.producerId );
+									          
+							},
 							selectable : "row",
 							columns: [
 							{ title: "이름", field: "producerId", width:180},
