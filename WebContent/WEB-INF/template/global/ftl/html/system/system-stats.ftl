@@ -369,6 +369,11 @@
 					case "#others-annotated-stats" :
 						var renderTo3 = $("#custom-annotated-single-stats-grid");				
 						createProducersStats ("annotated", true, false, renderTo1, { 
+							dataBound: function(e) {			
+								if( renderTo3.is(":visible") ){
+									renderTo3.slideUp("slow");
+								}	
+							},						
 							change: function(e){
 								var selectedCells = this.select();
 								var selectedCell = this.dataItem( selectedCells );			
@@ -673,7 +678,7 @@
 										<a href="#others-thread-count-stats" data-toggle="tab">Thread Count</a>
 									</li>									
 									<li>
-										<a href="#others-annotated-stats" data-toggle="tab">Component</a>
+										<a href="#others-annotated-stats" data-toggle="tab">Annotated Class</a>
 									</li>
 								</ul>
 							</div> <!-- / .panel-heading -->
