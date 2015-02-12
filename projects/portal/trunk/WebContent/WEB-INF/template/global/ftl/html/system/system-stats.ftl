@@ -254,7 +254,10 @@
 						createProducersStats ("filter", true, false, renderTo1, {							
 							change: function(e){
 								var selectedCells = this.select();
-								var selectedCell = this.dataItem( selectedCells );									
+								var selectedCell = this.dataItem( selectedCells );			
+								
+								alert(selectedCell.producerId);
+														
 								createProducerStats(selectedCell.producerId, false, true, renderTo3, {
 									toolbar:null,
 									schema:{
