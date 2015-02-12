@@ -695,7 +695,17 @@
 									</div>	
 								</div>
 								<div class="tab-pane" id="others-thread-count-stats">
-									<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
+									<div class="stat-panel no-margin-b">
+										<div class="stat-cell col-sm-5 text-center">
+											<!-- Stat panel bg icon -->
+											<i class="fa fa-area-chart bg-icon bg-icon-left"></i>
+											<!-- Extra small text -->											
+											<span id="others-thread-count-stats-chart" class="md-chart"></span>											
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-xs-12 col-sm-7 no-padding valign-bottom">											
+											<div id="others-thread-count-stats-grid"></div>
+										</div>
+									</div>
 								</div>	
 								<div class="tab-pane" id="others-annotated-stats">
 									<div id="custom-annotated-single-stats-grid" class="m-sm" style="display:none"></div>
