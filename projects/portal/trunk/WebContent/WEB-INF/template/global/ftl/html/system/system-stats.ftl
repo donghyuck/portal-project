@@ -111,7 +111,7 @@
 						batch: false
 					},
 					columns: [
-						{ title: "항목", field: "producerId", width:150},
+						{ title: "Name", field: "producerId", width:150},
 						{ title: "INIT", field: "firstStatsValues[0].value" , format: "{0:##,#}" },
 						{ title: "MIN_USED", field: "firstStatsValues[1].value" , format: "{0:##,#}" },
 						{ title: "USED", field: "firstStatsValues[2].value" , format: "{0:##,#}" },
