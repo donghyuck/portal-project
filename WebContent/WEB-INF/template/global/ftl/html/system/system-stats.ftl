@@ -192,8 +192,11 @@
 								pageable: false,
 								resizable: true,
 								editable : false,
-								scrollable: true,
-								height: 300							
+								scrollable: false,
+								height: 300	,	
+								dataBound : function(e){		
+								
+								}					
 							});		
 							renderTo1.find("button[data-action=refresh]").click(function(e){
 								common.ui.grid(renderTo1).dataSource.read();								
