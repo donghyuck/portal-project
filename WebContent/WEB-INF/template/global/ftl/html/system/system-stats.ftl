@@ -227,7 +227,7 @@
 												seriesColors: [ "#8e8e93", "#007aff"],
 												tooltip: {
 												visible: true,
-													template: "#: category # - #: kendo.format( '{0:##,#}',  value) #"
+													template: "#: category # - #: kendo.format( '{0:\\#\\#,\\#}',  value) #"
 												}
 											});
 										}
@@ -257,7 +257,7 @@
 					break;
 					case "#system-os-stats" :
 						createProducerStats ("OS", true, false, renderTo1, {							
-							columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:\#\#,\#}" } ],
+							columns: [{ title: "이름", field: "name", width:190}, { title: "값", field: "value", format: "{0:##,#}" } ],
 							dataBound : function(e){				
 								if( common.ui.defined(renderTo2) ){
 									if(! common.ui.exists(renderTo2) ){
