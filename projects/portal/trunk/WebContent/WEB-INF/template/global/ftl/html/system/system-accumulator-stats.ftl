@@ -137,7 +137,7 @@
 								valueAxis: {
 				                    type: "log",
 				                    labels: {
-				                        format: "N0"
+				                        format: "{0:##,#}"
 				                    },
 				                    minorGridLines: {
 				                        visible: true
