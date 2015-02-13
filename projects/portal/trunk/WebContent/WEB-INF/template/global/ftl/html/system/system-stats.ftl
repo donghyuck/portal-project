@@ -208,7 +208,7 @@
 												},
 												seriesDefaults: {
 													labels: {
-														template: "#= category # - #= kendo.format('{0:##,#}', percentage)#",
+														template: "#= category # - #= common.ui.admin.bytesToSize(value) #",
 														position: "outsideEnd",
 														visible: true,
 														background: "transparent"
@@ -224,7 +224,7 @@
 												seriesColors: [ "#8e8e93", "#007aff"],
 												tooltip: {
 												visible: true,
-													template: "#: category # - #: common.ui.admin.bytesToSize(value) #"
+													template: "#: category # - #: kendo.format( '{0:##,#}',  value) #"
 												}
 											});
 										}
