@@ -132,7 +132,7 @@
 				                },
 				                series: [{
 				                    xField: "date",
-				                    yField: "values[0]"
+				                    yField: "values"
 				                }],
 				                yAxis: {
 				                    labels: {
