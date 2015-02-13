@@ -89,7 +89,7 @@
 								},
 				                series: [{
 				                    field: "values",
-				                    name: "#: name #"
+				                    name: "#= name #"
 				                }],
 				                categoryAxis: {
 				                    field: "date",
