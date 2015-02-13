@@ -116,15 +116,26 @@
 										}
 									}
 				                },
+				                seriesDefaults: {
+				                    type: "line",
+				                    style: "smooth"
+				                },
 		                        series: [{
-									type: "line",
 									aggregate: "avg",
 									field: "values[0]",
 									categoryField: "date"
 								}],
 								categoryAxis: {
-									baseUnit: "hours"// "minutes"
-								}
+									baseUnit: "hours"// "minutes",
+									 majorGridLines: {
+				                        visible: true
+				                    }
+								},
+								tooltip: {
+				                    visible: true,
+				                   format: "{0}%",
+				                    template: "#= series.name #: #= value #"
+				                }
 							});						
 						}else{
 							renderTo2.data("kendoChart").dataSource.read();
