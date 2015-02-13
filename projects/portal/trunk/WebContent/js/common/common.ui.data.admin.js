@@ -11,14 +11,17 @@
 	    	name: { type: "string" },
 	    	path: { type: "string" },
 	        lastValueDate: { type: "date" },
-	        formattedLastValueDate : { type: "string" }
+	        numberOfValues : { type: "number", defaultValue: 0 }
 	    },
+		formattedLastValueDate : function(){
+	    	return kendo.toString(this.get("lastValueDate"), "g");
+	    },	    
 	    copy : function ( target ){
 	    	target.id = this.get("id");
 	    	target.set("name", this.get("name"));		    	
 	    	target.set("path", this.get("path"));
 	    	target.set("lastValueDate", this.get("lastValueDate"));
-	    	target.set("lastValueDate", this.get("lastValueDate"));	
+	    	target.set("numberOfValues", this.get("numberOfValues"));	
 	    }
 	});	
 	
