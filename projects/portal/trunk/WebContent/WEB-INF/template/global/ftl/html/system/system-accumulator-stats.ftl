@@ -135,7 +135,7 @@
 									categoryField: "date"
 								}],
 								categoryAxis: {
-									//baseUnit: "minutes"// "minutes"
+									baseUnit: "hours"// "minutes"
 								}
 							});						
 						}
