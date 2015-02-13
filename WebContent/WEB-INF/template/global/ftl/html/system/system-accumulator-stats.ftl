@@ -88,7 +88,7 @@
 				                    type: "line"
 				                },
 				                series: [{
-				                    field: "values[0]",
+				                    field: "values",
 				                    name: "Nuclear"
 				                }],
 				                categoryAxis: {
