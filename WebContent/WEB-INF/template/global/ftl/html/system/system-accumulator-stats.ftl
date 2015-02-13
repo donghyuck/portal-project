@@ -53,8 +53,7 @@
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/stage/accumulators/list.json?output=json', type:'post' }
-						},
-						pageSize: 20,
+						}
 						serverPaging: false						
 					},
 					columns: [
@@ -69,7 +68,7 @@
 					editable : false,
 					scrollable: true,
 					sortable: true,
-					pageable: true,
+					pageable: false,
 					height: 550,
 					change: function(e) {
 					},
