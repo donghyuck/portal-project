@@ -94,7 +94,7 @@
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
-											<i class="fa fa-tachometer bg-icon bg-icon-left"></i>
+											<i class="fa fa-line-chart bg-icon bg-icon-left"></i>
 																					
 																					
 										</div> <!-- /.stat-cell -->
