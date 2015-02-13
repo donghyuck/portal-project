@@ -90,50 +90,16 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-lg-12">	
-						<div class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> SYSTEM</span>
-								<ul class="nav nav-tabs nav-tabs-xs" id="system-stats-tabs">
-									<li>
-										<a href="#system-runtime-stats" data-toggle="tab">Runtime</a>
-									</li>
-									<li>
-										<a href="#system-os-stats" data-toggle="tab">OS</a>
-									</li>					
-								</ul> <!-- / .nav -->							
-							</div>
-							<div class="tab-content">
-								<div class="tab-pane" id="system-runtime-stats">									
-									<div class="stat-panel no-margin-b">
-										<div class="stat-cell col-xs-5 text-center">
-											<!-- Stat panel bg icon -->
-											<i class="fa fa-laptop bg-icon bg-icon-left"></i>
-											<!-- Extra small text -->								
-											<p class="text-xlg m-t-lg"><strong>RUNNING HOURS</strong></p>			
-											<div class="counter counter-lg"><span>0</span></div>
-											<p class="text-xlg"><strong>RUNNING DAYS</strong></p>			
-											<div class="counter counter-lg"><span>0</span></div>											
-										</div> <!-- /.stat-cell -->
-										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
-											<div id="system-runtime-stats-grid"></div>			
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane" id="system-os-stats">							
+
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-tachometer bg-icon bg-icon-left"></i>
-											<!-- Extra small text -->											
-											<span id="system-os-stats-chart" class="md-chart"></span>											
+																					
+																					
 										</div> <!-- /.stat-cell -->
-										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
-											<div id="system-os-stats-grid"></div>
-										</div>
-									</div>		
-								</div>								
-							</div>
-						</div>
+									</div>	
+						
 					</div>
 				</div>	
 				<hr class="no-grid-gutter-h grid-gutter-margin-b">				
