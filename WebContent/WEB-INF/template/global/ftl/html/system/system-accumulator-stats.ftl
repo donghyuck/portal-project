@@ -127,14 +127,24 @@
 								}],
 								categoryAxis: {
 									//baseUnit: "hours", // "minutes",
-									 majorGridLines: {
+									 labels: {
+				                        rotation: -90
+				                    },
+				                    crosshair: {
 				                        visible: true
 				                    }
 								},
+								valueAxis: {
+				                    type: "log",
+				                    labels: {
+				                        format: "N0"
+				                    },
+				                    minorGridLines: {
+				                        visible: true
+				                    }
+				                },
 								tooltip: {
-				                    visible: true,
-				                   format: "{0}%",
-				                    template: "#= name # <br> #= value #"
+				                    visible: true
 				                }
 							});						
 						}else{
