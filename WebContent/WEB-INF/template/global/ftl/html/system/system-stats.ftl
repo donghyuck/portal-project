@@ -221,8 +221,8 @@
 													type: "pie",
 													startAngle: 150,
 													field: "percentage",
-													categoryField: "source",
-													explodeField: "explode"
+													categoryField: "source"
+													/*explodeField: "explode"*/
 												}],
 												seriesColors: [ "#8e8e93", "#007aff"],
 												tooltip: {
