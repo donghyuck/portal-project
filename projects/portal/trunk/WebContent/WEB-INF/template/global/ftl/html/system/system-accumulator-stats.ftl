@@ -54,8 +54,7 @@
 						transport: { 
 							read: { url:'/secure/data/stage/accumulators/list.json?output=json', type:'post' }
 						},	
-						pageSize: 15,					
-						batch: false
+						pageSize: 20
 					},
 					columns: [
 						{ title: "ID", field: "id", width:100},
@@ -70,7 +69,7 @@
 					editable : false,
 					scrollable: true,
 					sortable: true,
-					height: 300,
+					height: 550,
 					change: function(e) {
 					},
 					dataBound: function(e) {			
