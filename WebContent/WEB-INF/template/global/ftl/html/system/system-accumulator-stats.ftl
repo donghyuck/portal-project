@@ -81,21 +81,6 @@
 						var renderTo2 = $("#accumulator-stats-chart");
 						if(! common.ui.exists(renderTo2) ){
 							renderTo2.kendoChart({
-				                dataSource: {
-				                    transport: {
-				                        read: {
-				                            url: "/secure/data/stage/accumulators/graph.json?output=json",
-				                            dataType: "json"
-				                        }
-				                    },
-				                    schema : { 
-				                   		data: "data"
-				                    },
-				                    sort: {
-				                        field: "date",
-				                        dir: "asc"
-				                    }
-				                },
 				                legend: {
 				                    position: "top"
 				                },
@@ -128,7 +113,14 @@
 				                }
 				            });							
 						}
-						renderTo2.data("kendoChart").dataSource.read( { accumulator:selectedCell.id } );
+						
+						var dataSource = common.ui.datasource("/secure/data/stage/accumulators/graph.json?output=json", {
+								schema: {
+									data: "data"
+								}
+							}
+						).read({accumulator:selectedCell.id});						
+						renderTo2.data("kendoChart").setDataSource(dataSource);
 					},
 					dataBound: function(e) {			
 					}					
