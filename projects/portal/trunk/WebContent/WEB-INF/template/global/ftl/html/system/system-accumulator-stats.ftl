@@ -55,7 +55,7 @@
 						transport: { 
 							read: { url:'/secure/data/stage/accumulators/list.json?output=json', type:'post' }
 						},
-						schema : {model: common.ui.data.Accumulator}
+						schema : {model: common.ui.data.Accumulator},
 						sort: { field: "name", dir: "asc" },
 						serverPaging: false						
 					},
