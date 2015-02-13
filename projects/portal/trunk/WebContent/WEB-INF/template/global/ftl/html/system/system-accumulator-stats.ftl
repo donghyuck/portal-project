@@ -78,9 +78,56 @@
 					change: function(e) {
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						alert(
-						selectedCell.lastValueDate
-						);
+						var renderTo2 = $("#accumulator-stats-chart");
+						if(! common.ui.exists(renderTo2) ){
+							$("#chart").kendoChart({
+				                dataSource: {
+				                    transport: {
+				                        read: {
+				                            url: "/secure/data/stage/accumulators/graph.json?output=json",
+				                            dataType: "json"
+				                        }
+				                    },
+				                    schema : { 
+				                   		data: data
+				                    },
+				                    sort: {
+				                        field: "date",
+				                        dir: "asc"
+				                    }
+				                },
+				                legend: {
+				                    position: "top"
+				                },
+				                seriesDefaults: {
+				                    type: "line"
+				                },
+				                series: [{
+				                    field: "values[0]",
+				                    name: "Nuclear"
+				                }],
+				                categoryAxis: {
+				                    field: "date",
+				                    labels: {
+				                        rotation: -90
+				                    },
+				                    crosshair: {
+				                        visible: true
+				                    }
+				                },
+				                valueAxis: {
+				                    labels: {
+				                        format: "N0"
+				                    },
+				                    majorUnit: 10000
+				                },
+				                tooltip: {
+				                    visible: true,
+				                    shared: true,
+				                    format: "N0"
+				                }
+				            });							
+						}
 					},
 					dataBound: function(e) {			
 					}					
@@ -141,7 +188,7 @@
 										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-line-chart bg-icon bg-icon-left"></i>
-																					
+											<div id="accumulator-stats-chart" class="no-border"></div>										
 																					
 										</div> <!-- /.stat-cell -->
 									</div>	
