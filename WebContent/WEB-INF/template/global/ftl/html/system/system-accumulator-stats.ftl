@@ -134,7 +134,7 @@
 								tooltip: {
 				                    visible: true,
 				                   format: "{0}%",
-				                    template: "#= series.name #: #= value #"
+				                    template: "#= name #: #= value #"
 				                }
 							});						
 						}else{
