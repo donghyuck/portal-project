@@ -128,7 +128,7 @@
 				                }
 				            });							
 						}
-						renderTo2.data("kendoChart").dataSource.read(accumulator:selectedCell.id );
+						renderTo2.data("kendoChart").dataSource.read( { accumulator:selectedCell.id } );
 					},
 					dataBound: function(e) {			
 					}					
