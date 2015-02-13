@@ -116,12 +116,30 @@
 										}
 									}
 				                },
+				                /*
 		                        series: [{
-									type: "line",
+									type: "scatterLine",
 									aggregate: "avg",
 									field: "values[0]",
 									categoryField: "date"
 								}],
+								*/
+								seriesDefaults: {
+				                    type: "scatterLine",
+				                    markers: {
+				                        size: 6
+				                    }
+				                },
+				                series: [{
+				                    xField: "date",
+				                    yField: "values[0]"
+				                }],
+				                yAxis: {
+				                    labels: {
+				                        format: "${0}",
+				                        skip: 1
+				                    }
+				                },								
 								categoryAxis: {
 									baseUnit: "hours"// "minutes"
 								}
