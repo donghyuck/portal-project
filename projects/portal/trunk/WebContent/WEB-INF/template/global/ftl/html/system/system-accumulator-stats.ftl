@@ -126,7 +126,7 @@
 									categoryField: "date"
 								}],
 								categoryAxis: {
-									baseUnit: "hours", // "minutes",
+									//baseUnit: "hours", // "minutes",
 									 majorGridLines: {
 				                        visible: true
 				                    }
