@@ -176,7 +176,7 @@
 					case "#system-disk-usage" :
 						if(! common.ui.exists(renderTo1) ){
 							common.ui.grid(renderTo1, {
-								dataSource : common.ui.datasource(	'<@spring.url "/secure/data/stage/disk/list.json?output=json"/>'),
+								dataSource : common.ui.datasource('<@spring.url "/secure/data/stage/disk/list.json?output=json"/>'),
 								columns: [
 									{ title: "Path", field: "absolutePath", width:150},
 									{ title: "USED", field: "usableSpace" , format: "{0:##,#}" },
