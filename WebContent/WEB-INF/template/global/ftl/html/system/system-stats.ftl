@@ -177,7 +177,18 @@
 						if(! common.ui.exists(renderTo1) ){
 							common.ui.grid(, {
 								dataSource : common.ui.datasource(	'<@spring.url "/secure/data/stage/disk/list.json?output=json"/>')
-							
+								columns: [
+									{ title: "Path", field: "absolutePath", width:150},
+									{ title: "USED", field: "usableSpace" , format: "{0:##,#}" },
+									{ title: "AVAILABLE", field: "freeSpace" , format: "{0:##,#}" },
+									{ title: "TOTAL", field: "totalSpace" , format: "{0:##,#}" }
+								],
+								toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+								pageable: false,
+								resizable: true,
+								editable : false,
+								scrollable: true,
+								height: 300,							
 							});						
 						}
 					break;
