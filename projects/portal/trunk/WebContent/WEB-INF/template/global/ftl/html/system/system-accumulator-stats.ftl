@@ -113,7 +113,7 @@
 		                            categoryField: "date"
 		                        }],
 		                        categoryAxis: {
-		                            baseUnit: "weeks"
+		                            baseUnit: "minutes"
 		                        }
 		                    });						
 						}						
