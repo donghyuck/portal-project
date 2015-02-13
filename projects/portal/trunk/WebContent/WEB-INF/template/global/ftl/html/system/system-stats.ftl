@@ -209,7 +209,7 @@
 												seriesDefaults: {
 													labels: {
 														template: "#= category # - #= common.ui.admin.bytesToSize(value) #",
-														position: "insideEnd",
+														position: "insideBase",
 														visible: true,
 														background: "transparent"
 													}
