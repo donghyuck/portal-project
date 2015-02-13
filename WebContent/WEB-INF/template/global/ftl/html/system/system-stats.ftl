@@ -209,13 +209,13 @@
 												seriesDefaults: {
 													labels: {
 														template: "#= category # - #= common.ui.admin.bytesToSize(value) #",
-														position: "outsideEnd",
+														position: "insideEnd",
 														visible: true,
 														background: "transparent"
 													}
 												},
 												chartArea: {
-													background: "transparent"
+													background: ""
 												},
 												series : [{
 													type: "pie",
