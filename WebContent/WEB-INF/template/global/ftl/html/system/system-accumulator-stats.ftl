@@ -62,7 +62,7 @@
 						{ title: "Name", field: "name", width:250 },
 						{ title: "Path", field: "path", sortable: false },
 						{ title: "Values", field: "numberOfValues" , width:100,  format: "{0:##,#}", sortable: false },
-						{ title: "UPDATE DATE", field: "lastValueDate", format:"{0:g}", width:200 }
+						{ title: "UPDATE DATE", field: "lastValueDate", format:"{0:yyyy.MM.dd}", width:200 }
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					resizable: true,
