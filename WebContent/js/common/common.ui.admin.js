@@ -67,6 +67,12 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 	JSON = 'json';
 	
 	
+	function culture ( locale ){
+		if( !defined( locale ) )
+			locale = "ko-KR";
+		kendo.culture(locale);				
+	}	
+	
 	
 	var Setup = Widget.extend({		
 		init : function(element, options) {
@@ -91,6 +97,8 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 			
 			that.authenticate();
 			that.companySelector();
+			culture();
+			
 			
 			$('.menu-content-profile .close').click(function () {
 				var $p = $(this).parents('.menu-content');
