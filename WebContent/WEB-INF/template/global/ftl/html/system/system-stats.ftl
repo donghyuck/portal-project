@@ -571,7 +571,10 @@
 									</li>
 									<li>
 										<a href="#system-os-stats" data-toggle="tab">OS</a>
-									</li>					
+									</li>	
+									<li>
+										<a href="#system-disk-usage" data-toggle="tab">DISK</a>
+									</li>														
 								</ul> <!-- / .nav -->							
 							</div>
 							<div class="tab-content">
@@ -603,7 +606,20 @@
 											<div id="system-os-stats-grid"></div>
 										</div>
 									</div>		
-								</div>								
+								</div>				
+								<div class="tab-pane" id="system-disk-usage">							
+									<div class="stat-panel no-margin-b">
+										<div class="stat-cell col-xs-5 text-center">
+											<!-- Stat panel bg icon -->
+											<i class="fa fa-tachometer bg-icon bg-icon-left"></i>
+											<!-- Extra small text -->											
+											<span id="system-disk-usage-chart" class="md-chart"></span>											
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-xs-7 no-padding valign-bottom">											
+											<div id="system-disk-usage-grid"></div>
+										</div>
+									</div>		
+								</div>																
 							</div>
 						</div>
 					</div>
