@@ -227,7 +227,7 @@
 												seriesColors: [ "#8e8e93", "#007aff"],
 												tooltip: {
 												visible: true,
-													template: "#: category # - #: kendo.format( '{0:##,#}',  value) #"
+													template: "#: category # - #: kendo.format( '##,#',  value) #"
 												}
 											});
 										}
