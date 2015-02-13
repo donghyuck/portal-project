@@ -189,7 +189,10 @@
 								editable : false,
 								scrollable: true,
 								height: 300							
-							});						
+							});		
+							renderTo1.find("button[data-action=refresh]").click(function(e){
+								common.ui.grid(renderTo1).dataSource.read();								
+							});					
 						}
 					break;
 					case "#system-os-stats" :
