@@ -82,7 +82,7 @@
 					editable : false,
 					scrollable: true,
 					sortable: true,
-					height:500,
+					height:550,
 					pageable: false,
 					selectable: 'row',
 					change: function(e) {
@@ -116,30 +116,12 @@
 										}
 									}
 				                },
-				                /*
 		                        series: [{
-									type: "scatterLine",
-									aggregate: "avg",
+									type: "line",
+									aggregate: "object",
 									field: "values[0]",
 									categoryField: "date"
 								}],
-								*/
-								seriesDefaults: {
-				                    type: "scatterLine",
-				                    markers: {
-				                        size: 6
-				                    }
-				                },
-				                series: [{
-				                    xField: "date",
-				                    yField: "values"
-				                }],
-				                yAxis: {
-				                    labels: {
-				                        format: "${0}",
-				                        skip: 1
-				                    }
-				                },								
 								categoryAxis: {
 									baseUnit: "hours"// "minutes"
 								}
