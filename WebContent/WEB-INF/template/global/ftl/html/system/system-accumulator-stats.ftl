@@ -106,19 +106,29 @@
 		                        title: {
 		                            text: "Units sold"
 		                        },
-		                        dataSource: {
-		                            data: stats
-		                        },
+								dataSource: {
+				                    transport: {
+				                        read: {
+											url: "/secure/data/stage/accumulators/graph_data_only.json?output=json",
+											dataType: "json"
+										},
+										parameterMap: function (options, operation){			
+											if( !options.accumulator ) 
+												options.accumulator = selectedCell.id;											
+											return options ;
+										}	
+									},
+				                },
 		                        series: [{
-		                            type: "line",
-		                            aggregate: "avg",
-		                            field: "value[0]",
-		                            categoryField: "date"
-		                        }],
-		                        categoryAxis: {
-		                            baseUnit: "days"// "minutes"
-		                        }
-		                    });						
+									type: "line",
+									aggregate: "avg",
+									field: "values[0]",
+									categoryField: "date"
+								}],
+								categoryAxis: {
+									baseUnit: "days"// "minutes"
+								}
+							});						
 						}
 						
 					},
