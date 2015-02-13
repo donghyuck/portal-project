@@ -137,7 +137,7 @@
 								valueAxis: {
 				                    type: "log",
 				                    labels: {
-				                        template: "value: #: kendo.toString(value, '\\#\\#.\\#' ) #"
+				                        format: "{0:##,#}"
 				                    },
 				                    minorGridLines: {
 				                        visible: true
