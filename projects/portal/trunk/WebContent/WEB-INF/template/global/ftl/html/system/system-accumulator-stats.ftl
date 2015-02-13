@@ -60,10 +60,10 @@
 						serverPaging: false						
 					},
 					columns: [
-						{ title: "ID", field: "id", width:100, sortable: false },
+						{ title: "ID", field: "id", width:80, sortable: false, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
 						{ title: "Name", field: "name", width:250 },
 						{ title: "Path", field: "path", sortable: false },
-						{ title: "Values", field: "numberOfValues" , width:100,  format: "{0:##,#}", sortable: false },
+						{ title: "Values", field: "numberOfValues" , width:80,  headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, format: "{0:##,#}", sortable: false },
 						{ title: "UPDATE DATE", field: "lastValueDate", width:200, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } ,  format:"{0:yyyy.MM.dd}" }
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
