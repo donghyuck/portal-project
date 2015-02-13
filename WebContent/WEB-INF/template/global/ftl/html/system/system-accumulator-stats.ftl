@@ -53,7 +53,7 @@
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/stage/accumulators/list.json?output=json', type:'post' }
-						}
+						},
 						pageSize: 20,
 						serverPaging: false						
 					},
