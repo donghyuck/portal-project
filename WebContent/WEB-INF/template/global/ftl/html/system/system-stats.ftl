@@ -188,7 +188,7 @@
 									{ title: "AVAILABLE", field: "freeSpace" , format: "{0:##,#}" },
 									{ title: "TOTAL", field: "totalSpace" , format: "{0:##,#}" }
 								],
-								toolbar: kendo.template('<small class="text-danger"><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small><div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+								toolbar: kendo.template('<div class="p-sm text-right"><small class="text-danger m-r-lg"><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 								pageable: false,
 								resizable: true,
 								editable : false,
