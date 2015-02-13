@@ -81,15 +81,15 @@
 						var renderTo2 = $("#accumulator-stats-chart");
 						if(! common.ui.exists(renderTo2) ){
 							renderTo2.kendoChart({
-				                legend: {
-				                    position: "top"
-				                },
-				                seriesDefaults: {
-				                    type: "line"
-				                },
+								legend: {
+									position: "top"
+								},
+								seriesDefaults: {
+									type: "line"
+								},
 				                series: [{
 				                    field: "values",
-				                    name: "Nuclear"
+				                    name: "#: name #"
 				                }],
 				                categoryAxis: {
 				                    field: "date",
@@ -112,11 +112,10 @@
 				                    format: "N0"
 				                }
 				            });							
-						}
-						
-						var dataSource = common.ui.datasource("/secure/data/stage/accumulators/graph.json?output=json", {
+						}						
+						var dataSource = common.ui.datasource("/secure/data/stage/accumulators/graph_data_only.json?output=json", {
 								schema: {
-									data: "data"
+
 								}
 							}
 						).read({accumulator:selectedCell.id});						
