@@ -66,7 +66,7 @@
 						{ title: "Name", field: "name", width:250 },
 						{ title: "Path", field: "path", sortable: false },
 						{ title: "Values", field: "numberOfValues" , width:80,  headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, format: "{0:##,#}", sortable: false },
-						{ title: "UPDATE DATE", field: "lastValueDate", width:200, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } ,  template: '#= kendo.toString(lastValueDate, "MM/dd/yyyy" ) #' }
+						{ title: "UPDATE DATE", field: "lastValueDate", width:200, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } ,   format : "{0:dd-MMM-yyyy hh:mm:ss tt}", parseFormats: ["yyyy-MM-dd'T'HH:mm:ss.zz"]}
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					resizable: true,
