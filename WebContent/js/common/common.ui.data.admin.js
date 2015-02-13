@@ -3,6 +3,7 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
+	var extend = $.extend;
 	
 	var Accumulator = kendo.data.Model.define( {
 	    id: "id", // the identifier of the model
