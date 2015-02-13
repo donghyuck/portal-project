@@ -134,7 +134,7 @@
 								tooltip: {
 				                    visible: true,
 				                   format: "{0}%",
-				                    template: "#= name # <br> #= date # <br> #= value #"
+				                    template: "#= name # <br> #= series.date # <br> #= value #"
 				                }
 							});						
 						}else{
