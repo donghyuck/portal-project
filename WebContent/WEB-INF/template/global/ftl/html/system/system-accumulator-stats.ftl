@@ -76,6 +76,8 @@
 					change: function(e) {
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );			
+						
+						alert(selectedCell.formattedLastValueDate);
 					
 					},
 					dataBound: function(e) {			
