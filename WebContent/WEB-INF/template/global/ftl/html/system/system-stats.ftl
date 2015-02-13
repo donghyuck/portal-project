@@ -206,6 +206,14 @@
 												legend: {
 													visible: false
 												},
+												seriesDefaults: {
+													labels: {
+														template: "#= category # - #= kendo.format('{0:##,#}', percentage)#",
+														position: "outsideEnd",
+														visible: true,
+														background: "transparent"
+													}
+												},
 												series : [{
 													type: "pie",
 													startAngle: 150,
