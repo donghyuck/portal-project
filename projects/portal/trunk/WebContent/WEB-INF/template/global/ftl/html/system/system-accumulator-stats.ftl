@@ -78,7 +78,8 @@
 					change: function(e) {
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );			
-						
+						alert(typeof selectedCell.lastValueDate );
+						alert(selectedCell.lastValueDate.toString());
 						alert(common.ui.stringify(selectedCell));
 					
 					},
