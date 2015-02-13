@@ -118,6 +118,15 @@
 											return options ;
 										}	
 									},
+									schema: {
+										model: {
+											id: "date",
+											fields: {
+												name: {type: "string"},
+												date:{ type:"date"}
+											}										
+										}
+									}
 				                },
 		                        series: [{
 									type: "line",
