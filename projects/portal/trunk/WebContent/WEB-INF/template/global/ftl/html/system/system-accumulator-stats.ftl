@@ -126,7 +126,7 @@
 									categoryField: "date"
 								}],
 								categoryAxis: {
-									baseUnit: "days"// "minutes"
+									baseUnit: "minutes"// "minutes"
 								}
 							});						
 						}
