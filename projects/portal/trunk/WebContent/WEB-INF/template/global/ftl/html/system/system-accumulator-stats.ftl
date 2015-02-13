@@ -118,7 +118,7 @@
 				                },
 		                        series: [{
 									type: "line",
-									aggregate: "object",
+									aggregate: "avg",
 									field: "values[0]",
 									categoryField: "date"
 								}],
