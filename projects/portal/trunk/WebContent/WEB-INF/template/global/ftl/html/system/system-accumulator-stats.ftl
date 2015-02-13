@@ -58,10 +58,10 @@
 					},
 					columns: [
 						{ title: "ID", field: "id", width:100},
-						{ title: "Name", field: "name" },
+						{ title: "Name", field: "name", width:250 },
 						{ title: "Path", field: "path" },
 						{ title: "Values", field: "numberOfValues" , width:100,  format: "{0:##,#}" },
-						{ title: "UPDATE DATE", field: "lastValueDate", format: "{0: 'yyyy.MM.dd HH:mm:ss'}", width:250 }
+						{ title: "UPDATE DATE", field: "lastValueDate", format: "{0: 'yyyy.MM.dd HH:mm:ss'}", width:200 }
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					pageable: false,	
