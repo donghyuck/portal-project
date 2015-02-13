@@ -88,7 +88,7 @@
 									type: "line"
 								},
 				                series: [{
-				                    field: "values",
+				                    field: "values[0]",
 				                    name: "#= name #"
 				                }],
 				                categoryAxis: {
