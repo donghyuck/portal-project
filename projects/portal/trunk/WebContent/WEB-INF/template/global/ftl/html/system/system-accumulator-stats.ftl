@@ -69,7 +69,6 @@
 					scrollable: true,
 					sortable: true,
 					pageable: false,
-					height: 550,
 					change: function(e) {
 					},
 					dataBound: function(e) {			
@@ -106,8 +105,8 @@
 				border-bottom-width: 0 !important;
 			}
 			
-			.tab-pane .k-grid{
-				min-height: 300px;
+			.k-grid{
+				min-height: 500px;
 			} 
 		</style>
 	</head>
