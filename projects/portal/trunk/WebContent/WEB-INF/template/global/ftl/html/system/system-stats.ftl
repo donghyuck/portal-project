@@ -234,12 +234,12 @@
 										items.push({ 
 											percentage: selectedCell.usableSpace ,
 											source: "USED",
-											explode : true
+											explode: true
 										});
 										items.push({ 
 											percentage: selectedCell.freeSpace ,
 											source: "FREE",
-											explode : false
+											explode: false
 										});		
 										renderTo2.data("kendoChart").setDataSource(
 											new kendo.data.DataSource({data: items})
