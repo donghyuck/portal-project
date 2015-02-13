@@ -156,6 +156,7 @@
 			}	
 		}
 		
+		/** SYSTEM STATS **/
 		function createSystemStats (){		
 			$('#system-stats-tabs').on( 'show.bs.tab', function (e) {		
 				var target = $(e.target);
@@ -171,6 +172,14 @@
 								$(target.attr("href")).find(".counter span").last().html(days);
 							}
 						});														
+					break;
+					case "#system-disk-usage" :
+						if(! common.ui.exists(renderTo1) ){
+							common.ui.grid(, {
+								dataSource : common.ui.datasource(	'<@spring.url "/secure/data/stage/disk/list.json?output=json"/>')
+							
+							});						
+						}
 					break;
 					case "#system-os-stats" :
 						createProducerStats ("OS", true, false, renderTo1, {							
