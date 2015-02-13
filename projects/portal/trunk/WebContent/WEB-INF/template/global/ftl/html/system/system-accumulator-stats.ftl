@@ -112,7 +112,7 @@
 		                        series: [{
 		                            type: "line",
 		                            aggregate: "avg",
-		                            field: "value",
+		                            field: "value[0]",
 		                            categoryField: "date"
 		                        }],
 		                        categoryAxis: {
