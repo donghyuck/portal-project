@@ -214,6 +214,9 @@
 														background: "transparent"
 													}
 												},
+												chartArea: {
+													background: "transparent"
+												},
 												series : [{
 													type: "pie",
 													startAngle: 150,
