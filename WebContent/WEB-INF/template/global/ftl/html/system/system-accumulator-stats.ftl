@@ -79,7 +79,7 @@
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );			
 						
-						alert(selectedCell.formattedLastValueDate());
+						alert(common.ui.stringify(selectedCell));
 					
 					},
 					dataBound: function(e) {			
