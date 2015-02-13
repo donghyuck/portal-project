@@ -199,13 +199,8 @@
 									if( common.ui.defined(renderTo2) ){
 										if(! common.ui.exists(renderTo2) ){
 											renderTo2.kendoChart({
-												title : {
-													position: "bottom",
-													text: "Disk Usage"
-												},
-												legend: {
-													visible: false
-												},
+												title : { position: "bottom", text: "Disk Usage" },
+												legend: { visible: false },
 												seriesDefaults: {
 													labels: {
 														template: "#= category # - #= common.ui.admin.bytesToSize(value) #",
@@ -214,9 +209,7 @@
 														background: "transparent"
 													}
 												},
-												chartArea: {
-													background: ""
-												},
+												chartArea: { background: "" },
 												series : [{
 													type: "pie",
 													startAngle: 150,
@@ -234,19 +227,9 @@
 										var selectedCells = this.select();
 										var selectedCell = this.dataItem( selectedCells );			
 										var items = [];	
-										items.push({ 
-											percentage: selectedCell.usableSpace ,
-											source: "USED",
-											explode: true
-										});
-										items.push({ 
-											percentage: selectedCell.freeSpace ,
-											source: "FREE",
-											explode: false
-										});		
-										renderTo2.data("kendoChart").setDataSource(
-											new kendo.data.DataSource({data: items})
-										);								
+										items.push({ percentage: selectedCell.usableSpace , source: "USED", explode: true });
+										items.push({ percentage: selectedCell.freeSpace , source: "FREE", explode: false });		
+										renderTo2.data("kendoChart").setDataSource( new kendo.data.DataSource({data: items}) );								
 									}	
 								}					
 							});		
