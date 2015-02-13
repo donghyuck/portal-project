@@ -82,6 +82,7 @@
 					editable : false,
 					scrollable: true,
 					sortable: true,
+					height:500,
 					pageable: false,
 					selectable: 'row',
 					change: function(e) {
