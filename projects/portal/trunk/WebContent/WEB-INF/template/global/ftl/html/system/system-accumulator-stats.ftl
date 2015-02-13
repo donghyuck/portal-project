@@ -54,7 +54,7 @@
 						transport: { 
 							read: { url:'/secure/data/stage/accumulators/list.json?output=json', type:'post' }
 						},
-						sort: { field: "name", dir: "desc" },
+						sort: { field: "name", dir: "asc" },
 						serverPaging: false						
 					},
 					columns: [
