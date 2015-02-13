@@ -144,7 +144,7 @@
 				                    }
 				                },
 								tooltip: {
-				                    visible: true
+				                    visible: true,
 				                     format: "{0:##,#}"
 				                }
 							});						
