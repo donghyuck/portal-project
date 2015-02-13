@@ -89,7 +89,7 @@
 				                        }
 				                    },
 				                    schema : { 
-				                   		data: data
+				                   		data: "data"
 				                    },
 				                    sort: {
 				                        field: "date",
