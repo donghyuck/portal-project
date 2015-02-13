@@ -106,6 +106,9 @@
 		                        title: {
 		                            text: "Units sold"
 		                        },
+		                        dataSource: {
+		                            data: stats
+		                        },
 		                        series: [{
 		                            type: "line",
 		                            aggregate: "avg",
@@ -116,9 +119,8 @@
 		                            baseUnit: "minutes"
 		                        }
 		                    });						
-						}						
-									
-						renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: stats}));
+						}
+						
 					},
 					dataBound: function(e) {			
 					}					
