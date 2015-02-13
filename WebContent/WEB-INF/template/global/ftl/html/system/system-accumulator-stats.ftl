@@ -41,9 +41,44 @@
 					}
 				});			
 				
+				createAccumulatorsStats();
 				// END SCRIPT
 			}
 		}]);
+				
+		function createAccumulatorsStats(){
+			var renderTo = $("#accumulator-stats-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/accumulators/list.json?output=json', type:'post' }
+						},						
+						batch: false
+					},
+					columns: [
+						{ title: "ID", field: "id", width:150},
+						{ title: "Name", field: "name" },
+						{ title: "Path", field: "path" },
+						{ title: "Values", field: "numberOfValues" , format: "{0:##,#}" },
+						{ title: "UPDATE DATE", field: "lastValueDate" , format: "g" }
+					],
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+					}					
+				});
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});
+			}				
+		}		
 				
 		-->
 		</script> 		 
@@ -110,6 +145,7 @@
 								<span class="panel-title"><i class="fa fa-info"></i> 통계</span>								
 							</div> <!-- / .panel-heading -->			
 							<div class="panel-body">
+								<div id="accumulator-stats-grid"></div>
 							</div>
 						</div><!-- /.panel -->
 										
