@@ -238,7 +238,8 @@
 										});
 										items.push({ 
 											percentage: selectedCell.freeSpace ,
-											source: "FREE"
+											source: "FREE",
+											explode : false
 										});		
 										renderTo2.data("kendoChart").setDataSource(
 											new kendo.data.DataSource({data: items})
