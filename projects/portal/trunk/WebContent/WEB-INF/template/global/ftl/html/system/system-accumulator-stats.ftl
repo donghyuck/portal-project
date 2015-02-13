@@ -107,89 +107,11 @@
 					<div class="col-lg-12">	
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> Memory</span>
-								<ul class="nav nav-tabs nav-tabs-xs" id="memory-stats-tabs">
-									<li>
-										<a href="#memory-pool-stats" data-toggle="tab">Memory Pool</a>
-									</li>
-									<li>
-										<a href="#virtual-memory-pool-stats" data-toggle="tab">VirtualMemoryPool</a>
-									</li>
-									<li>
-										<a href="#memory-stats" data-toggle="tab">Memory</a>
-									</li>							
-								</ul> <!-- / .nav -->
+								<span class="panel-title"><i class="fa fa-info"></i> 통계</span>								
 							</div> <!-- / .panel-heading -->			
-							<div class="tab-content">
-								<div class="tab-pane" id="memory-pool-stats">
-									<div id="memory-pool-stats-chart" class="padding-sm" ></div>
-									<div id="memory-pool-stats-grid" class="no-border-hr"></div>
-								</div>
-								<div class="tab-pane" id="virtual-memory-pool-stats">
-									<div id="virtual-memory-pool-stats-chart" class="padding-sm"></div>
-									<div id="virtual-memory-pool-stats-grid" class="no-border-hr"></div>
-								</div>
-								<div class="tab-pane" id="memory-stats">
-									<div id="memory-stats-chart" class="padding-sm"></div>
-									<div id="memory-stats-grid" class="no-border-hr"></div>
-								</div>
-							</div><!-- tab contents end -->
-							<div class="panel-footer no-padding-vr"></div>
+							<div class="panel-body">
+							</div>
 						</div><!-- /.panel -->
-						
-						<div class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> Web</span></span>
-								<ul class="nav nav-tabs nav-tabs-xs" id="web-stats-tabs">
-									<li>
-										<a href="#web-filter-stats" data-toggle="tab">Filters</a>
-									</li>	
-									<li>
-										<a href="#web-session-stats" data-toggle="tab">Session</a>
-									</li>
-								</ul>
-							</div> <!-- / .panel-heading -->
-							<div class="tab-content">
-								<div class="tab-pane" id="web-filter-stats">
-									<div id="web-filter-single-stats-grid" class="m-sm" style="display:none"></div>
-									<div id="web-filter-stats-grid" class="no-border-hr"></div>
-								</div>
-								<div class="tab-pane" id="web-session-stats">
-									<div id="web-session-stats-grid" class="no-border-hr"></div>
-								</div>								
-							</div><!-- tab contents end -->
-							<div class="panel-footer no-padding-vr"></div>
-						</div><!-- /.panel -->				
-					
-						<div class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-info"></i> Threads & Monitors</span></span>
-								<ul class="nav nav-tabs nav-tabs-xs" id="others-stats-tabs">
-									<li>
-										<a href="#others-thread-state-stats" data-toggle="tab">Thread State</a>
-									</li>	
-									<li>
-										<a href="#others-thread-count-stats" data-toggle="tab">Thread Count</a>
-									</li>									
-									<li>
-										<a href="#others-annotated-stats" data-toggle="tab">Annotated Class</a>
-									</li>
-								</ul>
-							</div> <!-- / .panel-heading -->
-							<div class="tab-content">
-								<div class="tab-pane" id="others-thread-state-stats">
-									<div id="others-thread-state-stats-grid" class="no-border-hr"></div>
-								</div>
-								<div class="tab-pane" id="others-thread-count-stats">
-									<div id="others-thread-count-stats-grid" class="no-border-hr"></div>
-								</div>	
-								<div class="tab-pane" id="others-annotated-stats">
-									<div id="custom-annotated-single-stats-grid" class="m-sm" style="display:none"></div>
-									<div id="others-annotated-stats-grid" class="no-border-hr"></div>
-								</div>															
-							</div><!-- tab contents end -->
-							<div class="panel-footer no-padding-vr"></div>
-						</div><!-- /.panel -->							
 										
 				</div>	
 			</div> <!-- / #content-wrapper -->
