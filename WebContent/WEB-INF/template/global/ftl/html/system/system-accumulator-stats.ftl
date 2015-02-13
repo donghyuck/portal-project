@@ -92,7 +92,7 @@
 						if(! common.ui.exists(renderTo2) ){
 							renderTo2.kendoChart({
 								title: {
-									text: "Units sold"
+									text: ""
 								},
 								dataSource: {
 									transport: {
@@ -137,7 +137,7 @@
 								valueAxis: {
 				                    type: "log",
 				                    labels: {
-				                        format: "{0:##,#}"
+				                        template: "value: #: value #"
 				                    },
 				                    minorGridLines: {
 				                        visible: true
