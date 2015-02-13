@@ -79,47 +79,46 @@
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
 						var renderTo2 = $("#accumulator-stats-chart");
+						
+						var stats = [
+                    { value: 30, date: new Date("2011/12/20") },
+                    { value: 50, date: new Date("2011/12/21") },
+                    { value: 45, date: new Date("2011/12/22") },
+                    { value: 40, date: new Date("2011/12/23") },
+                    { value: 35, date: new Date("2011/12/24") },
+                    { value: 40, date: new Date("2011/12/25") },
+                    { value: 42, date: new Date("2011/12/26") },
+                    { value: 40, date: new Date("2011/12/27") },
+                    { value: 35, date: new Date("2011/12/28") },
+                    { value: 43, date: new Date("2011/12/29") },
+                    { value: 38, date: new Date("2011/12/30") },
+                    { value: 30, date: new Date("2011/12/31") },
+                    { value: 48, date: new Date("2012/01/01") },
+                    { value: 50, date: new Date("2012/01/02") },
+                    { value: 55, date: new Date("2012/01/03") },
+                    { value: 35, date: new Date("2012/01/04") },
+                    { value: 30, date: new Date("2012/01/05") }
+                ];
+                
+						
 						if(! common.ui.exists(renderTo2) ){
 							renderTo2.kendoChart({
-								legend: {
-									position: "top"
-								},
-								seriesDefaults: {
-									type: "line"
-								},
-				                series: [{
-				                    field: "values[0]",
-				                    name: "#= name #"
-				                }],
-				                categoryAxis: {
-				                    field: "date",
-				                    labels: {
-				                        rotation: -90
-				                    },
-				                    crosshair: {
-				                        visible: true
-				                    }
-				                },
-				                valueAxis: {
-				                    labels: {
-				                        format: "N0"
-				                    },
-				                    majorUnit: 10000
-				                },
-				                tooltip: {
-				                    visible: true,
-				                    shared: true,
-				                    format: "N0"
-				                }
-				            });							
+		                        title: {
+		                            text: "Units sold"
+		                        },
+		                        series: [{
+		                            type: "line",
+		                            aggregate: "avg",
+		                            field: "value",
+		                            categoryField: "date"
+		                        }],
+		                        categoryAxis: {
+		                            baseUnit: "weeks"
+		                        }
+		                    });						
 						}						
-						var dataSource = common.ui.datasource("/secure/data/stage/accumulators/graph_data_only.json?output=json", {
-								schema: {
-
-								}
-							}
-						).read({accumulator:selectedCell.id});						
-						renderTo2.data("kendoChart").setDataSource(dataSource);
+									
+						renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: stats}));
 					},
 					dataBound: function(e) {			
 					}					
