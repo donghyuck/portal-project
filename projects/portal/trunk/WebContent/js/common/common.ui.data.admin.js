@@ -25,7 +25,7 @@
 	
 	extend( common.ui.data, {
 		stats : {
-			accumulator:Accumulator	
+			Accumulator: Accumulator	
 		}
 	} );
 	
