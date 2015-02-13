@@ -144,9 +144,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> 통계</span>								
 							</div> <!-- / .panel-heading -->			
-							<div class="panel-body">
-								<div id="accumulator-stats-grid"></div>
-							</div>
+							<div id="accumulator-stats-grid" class="no-border"></div>
 						</div><!-- /.panel -->
 										
 				</div>	
