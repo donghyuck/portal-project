@@ -68,7 +68,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 	
 	
 	function culture ( locale ){
-		if( !defined( locale ) )
+		if( !common.ui.defined( locale ) )
 			locale = "ko-KR";
 		kendo.culture(locale);				
 	}	
