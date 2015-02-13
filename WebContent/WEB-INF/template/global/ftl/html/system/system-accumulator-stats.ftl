@@ -49,6 +49,7 @@
 		
 		
 		function selectedAccumulator(){
+			var renderTo = $("#accumulator-stats-grid");
 			var grid = common.ui.grid(renderTo);
 			var selectedCells = grid.select();
 			var selectedCell = grid.dataItem( selectedCells );	
