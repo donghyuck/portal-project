@@ -46,6 +46,14 @@
 				// END SCRIPT
 			}
 		}]);
+		
+		
+		function selectedAccumulator(){
+			var grid = common.ui.grid(renderTo);
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells );	
+			return selectedCell;
+		}
 				
 		function createAccumulatorsStats(){
 			var renderTo = $("#accumulator-stats-grid");
@@ -103,18 +111,18 @@
 						
 						if(! common.ui.exists(renderTo2) ){
 							renderTo2.kendoChart({
-		                        title: {
-		                            text: "Units sold"
-		                        },
+								title: {
+									text: "Units sold"
+								},
 								dataSource: {
-				                    transport: {
-				                        read: {
+									transport: {
+										read: {
 											url: "/secure/data/stage/accumulators/graph_data_only.json?output=json",
 											dataType: "json"
 										},
-										parameterMap: function (options, operation){			
+										parameterMap: function (options, operation){
 											if( !options.accumulator ) 
-												options.accumulator = selectedCell.id;											
+												options.accumulator = selectedAccumulator().id;											
 											return options ;
 										}	
 									},
@@ -138,8 +146,9 @@
 									baseUnit: "hours"// "minutes"
 								}
 							});						
-						}
-						
+						}else{
+							renderTo2.data("kendoChart").dataSource.read();
+						}						
 					},
 					dataBound: function(e) {			
 					}					
