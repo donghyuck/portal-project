@@ -209,7 +209,7 @@
 												seriesDefaults: {
 													labels: {
 														template: "#= category # - #= common.ui.admin.bytesToSize(value) #",
-														position: "insideBase",
+														position: "insideEnd",
 														visible: true,
 														background: "transparent"
 													}
@@ -221,8 +221,8 @@
 													type: "pie",
 													startAngle: 150,
 													field: "percentage",
-													categoryField: "source"
-													/*explodeField: "explode"*/
+													categoryField: "source",
+													explodeField: "explode"
 												}],
 												seriesColors: [ "#8e8e93", "#007aff"],
 												tooltip: {
@@ -291,7 +291,8 @@
 									});
 									items.push({ 
 										percentage: this.dataSource.view()[2].value,
-										source: "FREE"				
+										source: "FREE",			
+										explode: false	
 									});
 									renderTo2.data("kendoChart").setDataSource(
 										new kendo.data.DataSource({data: items})
