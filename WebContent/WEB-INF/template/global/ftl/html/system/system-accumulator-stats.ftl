@@ -72,7 +72,11 @@
 					scrollable: true,
 					sortable: true,
 					pageable: false,
+					selectable: 'row',
 					change: function(e) {
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );			
+					
 					},
 					dataBound: function(e) {			
 					}					
