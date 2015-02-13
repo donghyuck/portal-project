@@ -53,8 +53,7 @@
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/stage/accumulators/list.json?output=json', type:'post' }
-						},	
-						pageSize: 20
+						}
 					},
 					columns: [
 						{ title: "ID", field: "id", width:100},
@@ -64,7 +63,9 @@
 						{ title: "UPDATE DATE", field: "lastValueDate", format: "{0:yyyy.MM.dd HH:mm:ss}", width:200 }
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
-					pageable: true,	
+					pageable: {
+						pageSize: 20
+					},	
 					resizable: true,
 					editable : false,
 					scrollable: true,
