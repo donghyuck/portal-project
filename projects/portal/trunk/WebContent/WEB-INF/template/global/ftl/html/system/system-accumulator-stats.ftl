@@ -59,7 +59,7 @@
 					columns: [
 						{ title: "ID", field: "id", width:100},
 						{ title: "Name", field: "name", width:250 },
-						{ title: "Path", field: "path" },
+						{ title: "Path", field: "path", sortable: false },
 						{ title: "Values", field: "numberOfValues" , width:100,  format: "{0:##,#}" },
 						{ title: "UPDATE DATE", field: "lastValueDate", format: "{0: 'yyyy.MM.dd HH:mm:ss'}", width:200 }
 					],
@@ -68,6 +68,7 @@
 					resizable: true,
 					editable : false,
 					scrollable: true,
+					sortable: true,
 					height: 300,
 					change: function(e) {
 					},
