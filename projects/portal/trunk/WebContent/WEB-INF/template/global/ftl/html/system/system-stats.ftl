@@ -189,13 +189,54 @@
 									{ title: "TOTAL", field: "totalSpace" , format: "{0:##,#}" }
 								],
 								toolbar: kendo.template('<div class="p-sm text-right"><small class="text-danger m-r-lg"><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+								selectable : "row",
 								pageable: false,
 								resizable: true,
 								editable : false,
 								scrollable: false,
 								height: 300	,	
-								dataBound : function(e){		
-								
+								change : function(e){		
+									if( common.ui.defined(renderTo2) ){
+										if(! common.ui.exists(renderTo2) ){
+											renderTo2.kendoChart({
+												title : {
+													position: "bottom",
+													text: "Disk Usage"
+												},
+												legend: {
+													visible: false
+												},
+												series : [{
+													type: "pie",
+													startAngle: 150,
+													field: "percentage",
+													categoryField: "source",
+													explodeField: "explode"
+												}],
+												seriesColors: ["#5ac8fa", "#4cd964"],
+												tooltip: {
+												visible: true,
+													template: "#: category # - #: common.ui.admin.bytesToSize(value) #"
+												}
+											});
+										}
+										var selectedCells = this.select();
+										var selectedCell = this.dataItem( selectedCells );			
+										var items = [];	
+										items.push({ 
+											percentage: selectedCell.usableSpace ,
+											source: "USED",
+											explode : true
+										});
+										items.push({ 
+											percentage: selectedCell.freeSpace ,
+											source: "FREE",
+											explode : false
+										});		
+										renderTo2.data("kendoChart").setDataSource(
+											new kendo.data.DataSource({data: items})
+										);								
+									}	
 								}					
 							});		
 							renderTo1.find("button[data-action=refresh]").click(function(e){
@@ -234,7 +275,7 @@
 									var items = [];	
 									items.push({ 
 										percentage: this.dataSource.view()[3].value - this.dataSource.view()[2].value ,
-										source: "USAGE",
+										source: "USED",
 										explode : true
 									});
 									items.push({ 
