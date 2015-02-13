@@ -683,7 +683,7 @@
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
-											<i class="fa fa-tachometer bg-icon bg-icon-left"></i>
+											<i class="fa fa-pie-chart bg-icon bg-icon-left"></i>
 											<!-- Extra small text -->											
 											<span id="system-disk-usage-chart" class="md-chart"></span>											
 										</div> <!-- /.stat-cell -->
