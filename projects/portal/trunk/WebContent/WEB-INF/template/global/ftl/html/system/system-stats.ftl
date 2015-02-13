@@ -213,7 +213,7 @@
 													categoryField: "source",
 													explodeField: "explode"
 												}],
-												seriesColors: ["#5ac8fa", "#4cd964"],
+												seriesColors: [ "#8e8e93", "#007aff"],
 												tooltip: {
 												visible: true,
 													template: "#: category # - #: common.ui.admin.bytesToSize(value) #"
@@ -265,7 +265,7 @@
 												categoryField: "source",
 												explodeField: "explode"
 											}],
-											seriesColors: ["#5ac8fa", "#4cd964"],
+											seriesColors: [ "#8e8e93", "#5ac8fa"],
 											tooltip: {
 											visible: true,
 												template: "#: category # - #: value #MB"
