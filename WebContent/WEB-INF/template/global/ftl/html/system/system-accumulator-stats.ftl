@@ -80,7 +80,7 @@
 						var selectedCell = this.dataItem( selectedCells );	
 						var renderTo2 = $("#accumulator-stats-chart");
 						if(! common.ui.exists(renderTo2) ){
-							$("#chart").kendoChart({
+							renderTo2.kendoChart({
 				                dataSource: {
 				                    transport: {
 				                        read: {
@@ -128,6 +128,7 @@
 				                }
 				            });							
 						}
+						renderTo2.data("kendoChart").dataSource.read(accumulator:selectedCell.id );
 					},
 					dataBound: function(e) {			
 					}					
