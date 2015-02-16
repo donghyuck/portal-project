@@ -58,11 +58,11 @@
 					},
 					columns: [
 						{ title: "Name", field: "name", width:150},
-						{ title: "Status", field: "status"},
-						{ title: "Value", field: "value" },
-						{ title: "previousStatus", field: "previousStatus" },
-						{ title: "updatedDate", field: "updatedDate" },
-						{ title: "flipCount", field: "flipCount" , format: "{0:##,#}" },
+						{ title: "Status", field: "status" , width:150},
+						{ title: "Value", field: "value" , width:150},
+						{ title: "previousStatus", field: "previousStatus" , width:150},
+						{ title: "updatedDate", field: "updatedDate" , format: "{0:yyyy.MM.dd HH:mm:SS" },
+						{ title: "flipCount", field: "flipCount" , format: "{0:##,#}" , width:150},
 						{ title: "Path", field: "description"}
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
