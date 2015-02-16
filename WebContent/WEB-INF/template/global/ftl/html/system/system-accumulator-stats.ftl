@@ -128,8 +128,7 @@
 									style: "smooth",
 									color: "#007aff",
 									markers: {
-										visible:false,
-										
+										visible:true,										
 										size: 1
 									}							
 								},
