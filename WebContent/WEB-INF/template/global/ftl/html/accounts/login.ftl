@@ -158,7 +158,7 @@
 			background:transparent;
 		}
 		
-		.note-error {
+		.sky-form .note.note-error {
 			color: #ff3b30;
 		}
 		
