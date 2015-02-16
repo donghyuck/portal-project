@@ -144,7 +144,7 @@
 								},					*/								
 				                
 				                seriesDefaults: {
-				                    type: "line",
+				                    type: "scatterLine",
 				                    style: "smooth"
 				                },
 		                        series: [{
