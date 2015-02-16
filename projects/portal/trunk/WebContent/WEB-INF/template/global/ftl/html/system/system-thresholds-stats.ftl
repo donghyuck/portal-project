@@ -74,24 +74,7 @@
 					change: function(e) {
 					},
 					dataBound: function(e) {			
-						if( common.ui.defined(renderTo2) ){
-							var items = [];
-							$.each( this.dataSource.view() , function( index , value ) {
-								items.push({
-									producerId : value.producerId,
-									INIT: value.firstStatsValues[0].value,
-									MIN_USED: value.firstStatsValues[1].value,
-									USED: value.firstStatsValues[2].value,
-									MAX_USED: value.firstStatsValues[3].value,
-									MIN_COMMITED: value.firstStatsValues[4].value,
-									COMMITED: value.firstStatsValues[5].value,
-									MAX_COMMITED: value.firstStatsValues[6].value,
-									MAX: value.firstStatsValues[7].value
-								});							
-							} );						
-							createMemoryStatsChart(renderTo2);
-							renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: items}));						
-						}	
+							
 					}					
 				});
 				renderTo.parent().find("button[data-action=refresh]").click(function(e){
