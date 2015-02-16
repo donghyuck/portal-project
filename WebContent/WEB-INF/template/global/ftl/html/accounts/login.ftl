@@ -76,8 +76,10 @@
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
 				var btn = $('.btn-signin');
-				btn.button('loading');
+				
+
 				if( validator.validate() ){
+					btn.button('loading');
 					common.ui.ajax(
 						"<@spring.url "/login_auth"/>", 
 						{
@@ -189,7 +191,7 @@
 						<section>
 							<label class="input">
 								<i class="icon-append fa fa-lock"></i>
-								<input type="password" name="password" placeholder="비밀번호" required validationMessage="비밀번호를 입력하여 주세요." >
+								<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 							</label>
 						</section>
 						<section>
