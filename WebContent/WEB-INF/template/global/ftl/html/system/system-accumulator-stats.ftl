@@ -126,10 +126,10 @@
 								seriesDefaults: {
 									type: "scatterLine",
 									style: "smooth",
-									scatterLine: { 
-										color: "#007aff",
-									},
+									color: "#007aff",
 									markers: {
+										visible:false,
+										
 										size: 1
 									}							
 								},
