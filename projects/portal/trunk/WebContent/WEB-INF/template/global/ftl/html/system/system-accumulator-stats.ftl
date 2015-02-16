@@ -130,21 +130,19 @@
 								xAxis: {
 									labels: {
 										format: "${0}",
-										skip:1
+									},
+									title: {
+										text: "Date"
+									}
+								},
+								yAxis: {
+									labels: {
+										format: "{0:##,#}"
 									},
 									title: {
 										text: "Value"
 									}
-								},
-								/*
-								yAxis: {
-									labels: {
-										format: "{0}"
-									},
-									title: {
-										text: "Dare"
-									}
-								},	*/															
+								},													
 				                /*
 				                seriesDefaults: {
 				                    type: "line",
