@@ -161,6 +161,9 @@
 		.sky-form .note.note-error {
 			color: #ff3b30;
 		}
+		.sky-form .radio, .sky-form .checkbox {
+			font-size: 14px;
+		}
 		
 		</style>
 </#compress>		
