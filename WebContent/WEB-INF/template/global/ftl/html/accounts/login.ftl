@@ -20,6 +20,7 @@
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 				
 			'<@spring.url "/js/common/common.ui.core.js"/>',
+			'<@spring.url "/js/common/common.ui.bootstrap.js"/>',
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.connect.js"/>'
 			],			
@@ -88,8 +89,8 @@
 							success : function( response ) {   
 								if( response.error ){ 
 									common.ui.alert({
-										renderTo: "#signin-status",
-										data:{message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."}
+										appendTo: $("#signin-status"),
+										message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."
 									});
 									$("input[type='password']").val("").focus();											
 								} else {        	   
