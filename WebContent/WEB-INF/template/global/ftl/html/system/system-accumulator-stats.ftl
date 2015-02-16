@@ -118,7 +118,10 @@
 				                },
 								seriesDefaults: {
 									type: "scatterLine",
-									style: "smooth"
+									style: "smooth",
+									markers: {
+										size : 6
+									}
 								},
 								series: [{
 									yField: "values[0]",
@@ -126,12 +129,14 @@
 								}],
 								xAxis: {
 									labels: {
-										format: "${0}"
+										format: "${0}",
+										skip:1
 									},
 									title: {
 										text: "Value"
 									}
 								},
+								/*
 								yAxis: {
 									labels: {
 										format: "{0}"
@@ -139,7 +144,7 @@
 									title: {
 										text: "Dare"
 									}
-								},																
+								},	*/															
 				                /*
 				                seriesDefaults: {
 				                    type: "line",
