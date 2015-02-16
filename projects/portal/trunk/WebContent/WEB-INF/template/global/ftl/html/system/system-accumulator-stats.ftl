@@ -125,7 +125,10 @@
 				                },
 				                
 								seriesDefaults: {
-									type: "scatterLine"							
+									type: "scatterLine",
+									markers: {
+										size: 6
+									}							
 								},
 								series: [{
 									yField: "firstValue",
