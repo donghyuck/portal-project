@@ -157,7 +157,7 @@
 		</style>
 </#compress>		
 	</head>
-	<body>
+	<body class="bg-dark">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
