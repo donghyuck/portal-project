@@ -113,6 +113,7 @@
 										model: {
 											fields: {
 												name: {type: "string"},
+												firstValue: { type: "number", defaultValue: 0 },
 												date:{ type:"date"}
 											}										
 										}
