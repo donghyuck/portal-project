@@ -71,7 +71,7 @@
 			} );		
 					
 			var validator = $("#signin-block").kendoValidator({
-				errorTemplate: "<div class='note note-error'>#=message#</div>"
+				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
 			}).data("kendoValidator");
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
