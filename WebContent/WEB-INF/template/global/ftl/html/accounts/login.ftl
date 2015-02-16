@@ -166,6 +166,14 @@
 		}
 		
 		.sky-form header  {
+			background: rgba(255, 255, 255, .5);
+		}
+		
+		.sky-form fieldset {
+			background: rgba(255, 255, 255, .8);
+		}
+		
+		.sky-form footer { 
 			background: rgba(255, 255, 255, .8);
 		}
 		
