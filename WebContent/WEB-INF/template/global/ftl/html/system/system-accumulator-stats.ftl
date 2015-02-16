@@ -122,10 +122,10 @@
 											}										
 										}
 									}
-				                },
-				                
+								},
 								seriesDefaults: {
 									type: "scatterLine",
+									style: "smooth,
 									markers: {
 										size: 6
 									}							
@@ -141,10 +141,8 @@
 									labels: {
 										format: "{0:##,#}"
 									},
-								},
-												
-								/*							
-				                
+								},												
+								/*					                
 				                seriesDefaults: {
 				                    type: "line",
 				                    style: "smooth"
@@ -172,11 +170,10 @@
 				                        visible: true
 				                    }
 				                },*/
-				                
 								tooltip: {
-				                    visible: true,
+									visible: true,
 									template: "#= dataItem.name  #<br> #= dataItem.date # <br> #= dataItem.firstValue #"
-				                }
+								}
 							});						
 						}else{
 							renderTo2.data("kendoChart").dataSource.read();
