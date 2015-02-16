@@ -165,6 +165,10 @@
 			font-size: 14px;
 		}
 		
+		.sky-form header  {
+			background: rgba(255, 255, 255, .8);
+		}
+		
 		</style>
 </#compress>		
 	</head>
