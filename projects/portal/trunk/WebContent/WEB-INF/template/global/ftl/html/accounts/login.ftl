@@ -70,7 +70,7 @@
 				}				
 			} );		
 					
-			var validator = $("#signin-block").kendoValidator({
+			var validator = $("#signin-block form").kendoValidator({
 				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
 			}).data("kendoValidator");
 			
