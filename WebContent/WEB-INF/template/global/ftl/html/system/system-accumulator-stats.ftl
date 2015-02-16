@@ -125,7 +125,7 @@
 								},
 								seriesDefaults: {
 									type: "scatterLine",
-									style: "smooth,
+									style: "smooth",
 									markers: {
 										size: 6
 									}							
