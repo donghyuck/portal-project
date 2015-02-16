@@ -239,7 +239,7 @@
 										<div class="stat-cell col-xs-5 text-center">
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-line-chart bg-icon bg-icon-left"></i>
-											<div id="accumulator-stats-chart" class="no-border"></div>										
+											<div id="accumulator-stats-chart" class="no-border" style="min-height:200px"></div>										
 																					
 										</div> <!-- /.stat-cell -->
 									</div>	
