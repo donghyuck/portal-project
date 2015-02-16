@@ -25,6 +25,7 @@
 	function alert (option){
 		options = options || {};	
 		var settings = $.extend(true, {}, DEFAULT_ALERT_SETTING, options );
+			alert(settings.appendTo.html());	
 		if( defined(settings.appendTo)){
 			settings.appendTo.append(
 				settings.template({
