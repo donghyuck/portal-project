@@ -107,7 +107,7 @@
 										}	
 									},
 									group: {
-										field: "symbol"
+										field: "name"
 									},
 									schema: {
 										model: {
