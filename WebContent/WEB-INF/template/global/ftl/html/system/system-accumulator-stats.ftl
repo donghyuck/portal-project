@@ -111,7 +111,6 @@
 									},
 									schema: {
 										model: {
-											id: "date",
 											fields: {
 												name: {type: "string"},
 												date:{ type:"date"}
