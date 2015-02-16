@@ -120,10 +120,12 @@
 				                },
 				                
 								seriesDefaults: {
-									type: "scatterLine",
-									yField: "firstValue",
-									xField: "date"									
+									type: "scatterLine"							
 								},
+								series: [{
+									yField: "firstValue",
+									xField: "date"
+								}],
 								legend: {
 									position: "bottom"
 								},
