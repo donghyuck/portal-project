@@ -22,7 +22,6 @@
 	};
 	
 	
-	
 	function alert (option){
 		options = options || {};	
 		var settings = $.extend(true, {}, DEFAULT_ALERT_SETTING, options );
