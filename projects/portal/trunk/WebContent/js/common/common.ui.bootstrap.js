@@ -14,7 +14,7 @@
 	handleAjaxError = common.ui.handleAjaxError,
 	DEFAULT_ALERT_SETTING = {
 		dismissible : false,	
-		appendTo : "body",
+		appendTo : $("body"),
 		css : "alert-danger",
 		animateCss : "fade in",
 		title: null,
@@ -22,10 +22,13 @@
 	};
 	
 	
-	function alert (option){
+	function bootstarpAlert (option){
 		options = options || {};	
 		var settings = $.extend(true, {}, DEFAULT_ALERT_SETTING, options );
-			alert(settings.appendTo.html());	
+		
+		alert(settings.appendTo.html());	
+			
+			
 		if( defined(settings.appendTo)){
 			settings.appendTo.append(
 				settings.template({
@@ -42,7 +45,7 @@
 	}
 	
 	extend(ui , {	
-		alert : alert
+		alert : bootstarpAlert
 	});
 	
 })(jQuery);
