@@ -126,7 +126,9 @@
 								seriesDefaults: {
 									type: "scatterLine",
 									style: "smooth",
-									color: "#007aff",
+									scatterLine: { 
+										color: "#007aff",
+									},
 									markers: {
 										size: 6
 									}							
