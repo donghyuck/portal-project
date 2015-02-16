@@ -41,7 +41,7 @@
 	}
 	
 	extend(ui , {	
-		
+		alert : alert
 	});
 	
 })(jQuery);
