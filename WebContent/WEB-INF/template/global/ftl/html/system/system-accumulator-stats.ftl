@@ -170,7 +170,7 @@
 				                
 								tooltip: {
 				                    visible: true,
-				                    format: "{0:d}, ${1}"
+									template: "#= category #<br> #= dataItem.date #  , #= dataItem.firstValue #"
 				                }
 							});						
 						}else{
