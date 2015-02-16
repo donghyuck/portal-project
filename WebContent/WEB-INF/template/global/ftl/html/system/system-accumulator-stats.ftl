@@ -126,13 +126,14 @@
 								seriesDefaults: {
 									type: "scatterLine",
 									style: "smooth",
+									color: "#007aff",
 									markers: {
 										size: 6
 									}							
 								},
 								series: [{
 									yField: "firstValue",
-									xField: "date"
+									xField: "date"									
 								}],
 								legend: {
 									position: "bottom"
