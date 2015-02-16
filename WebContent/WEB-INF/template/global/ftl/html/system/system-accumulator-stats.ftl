@@ -118,7 +118,7 @@
 										}
 									}
 				                },
-				                /*
+				                
 								seriesDefaults: {
 									type: "scatterLine"
 								},
@@ -126,25 +126,20 @@
 									yField: "values[0]",
 									xField: "date"
 								}],
-								xAxis: {
-									labels: {
-										format: "${0}",
-									},
-									title: {
-										text: "Date"
-									}
+								legend: {
+									position: "bottom"
 								},
 								yAxis: {
 									labels: {
-										format: "{0:##,#}"
+										format: "{0:##,#}",
+										skip: 2,
+										step: 2
 									},
-									title: {
-										text: "Value"
-									}
-								},					*/								
+								},					
+								/*							
 				                
 				                seriesDefaults: {
-				                    type: "scatterLine",
+				                    type: "line",
 				                    style: "smooth"
 				                },
 		                        series: [{
@@ -169,7 +164,7 @@
 				                    minorGridLines: {
 				                        visible: true
 				                    }
-				                },
+				                },*/
 				                
 								tooltip: {
 				                    visible: true,
