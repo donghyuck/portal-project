@@ -29,7 +29,7 @@
 			settings.appendTo.html(
 				settings.template({
 					css: settings.css,
-					animatedCss : settings.animateCss,
+					animateCss : settings.animateCss,
 					title: settings.title,
 					message : settings.message
 				})	
