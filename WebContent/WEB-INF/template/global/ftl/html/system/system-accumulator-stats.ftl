@@ -120,11 +120,7 @@
 									}
 				                },
 								seriesDefaults: {
-									type: "scatterLine",
-									style: "smooth",
-									markers: {
-										size : 6
-									}
+									type: "scatterLine"
 								},
 								series: [{
 									yField: "values[0]",
