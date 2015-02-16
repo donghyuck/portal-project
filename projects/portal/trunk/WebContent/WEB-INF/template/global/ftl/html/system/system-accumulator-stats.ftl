@@ -118,6 +118,7 @@
 										}
 									}
 				                },
+				                /*
 								seriesDefaults: {
 									type: "scatterLine"
 								},
@@ -132,7 +133,7 @@
 									title: {
 										text: "Date"
 									}
-								},/*
+								},
 								yAxis: {
 									labels: {
 										format: "{0:##,#}"
@@ -141,7 +142,7 @@
 										text: "Value"
 									}
 								},					*/								
-				                /*
+				                
 				                seriesDefaults: {
 				                    type: "line",
 				                    style: "smooth"
@@ -169,7 +170,7 @@
 				                        visible: true
 				                    }
 				                },
-				                */
+				                
 								tooltip: {
 				                    visible: true,
 				                    format: "{0:d}, ${1}"
