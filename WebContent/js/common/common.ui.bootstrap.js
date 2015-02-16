@@ -28,7 +28,7 @@
 		
 		
 		
-		alert( kendo.stringify(options) );	
+		
 			
 			
 		if( defined(settings.appendTo)){
