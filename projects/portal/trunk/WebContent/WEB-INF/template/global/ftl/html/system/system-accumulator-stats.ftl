@@ -136,15 +136,13 @@
 								}],
 								legend: {
 									position: "bottom"
-								},
-								/*
+								},								
 								yAxis: {
 									labels: {
-										format: "{0:##,#}",
-										skip: 2,
-										step: 2
+										format: "{0:##,#}"
 									},
-								},	*/				
+								},
+												
 								/*							
 				                
 				                seriesDefaults: {
