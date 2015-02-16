@@ -174,7 +174,7 @@
 				                */
 								tooltip: {
 				                    visible: true,
-				                    format: "{0}%",
+				                    format: "{0:d}, ${1}"
 				                }
 							});						
 						}else{
