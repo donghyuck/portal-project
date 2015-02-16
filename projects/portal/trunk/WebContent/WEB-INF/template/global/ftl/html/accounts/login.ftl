@@ -75,6 +75,7 @@
 			}).data("kendoValidator");
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
+				event.preventDefault();
 				var btn = $('.btn-signin');
 				
 
