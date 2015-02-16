@@ -26,7 +26,7 @@
 		options = options || {};	
 		var settings = $.extend(true, {}, DEFAULT_ALERT_SETTING, options );
 		if( defined(settings.appendTo)){
-			settings.appendTo.html(
+			settings.appendTo.append(
 				settings.template({
 					css: settings.css,
 					animateCss : settings.animateCss,
@@ -35,7 +35,7 @@
 				})	
 			);  
 			if(settings.dismissible){
-				settings.appendTo.prepend('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+				settings.appendTo.find(".alert").prepend('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 			}
 		}
 	}
