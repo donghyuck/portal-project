@@ -37,8 +37,7 @@
 				prepareSignOn();
 				
 			}
-		}]);	
-		
+		}]);			
 		
 		function prepareSocialSignOn(){				
 				common.ui.ajax("<@spring.url "/connect/list.json"/>", {
@@ -90,7 +89,6 @@
 								if( response.error ){ 
 									common.ui.alert({
 										appendTo: $("#signin-status"),
-										dismissible : true,
 										message: "입력한 사용자 이름/메일주소 또는 비밀번호가 잘못되었습니다."
 									});
 									$("input[type='password']").val("").focus();											
