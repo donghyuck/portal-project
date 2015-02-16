@@ -32,6 +32,14 @@
 					}
 				});			
 				
+				prepareSocialLogin();
+				prepareSignOn();
+				
+			}
+		}]);	
+		
+		
+		public prepareSocialLogin(){
 				common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 					success: function(response){ 
 						var renderTo = $("#signin-block .social-icons");
@@ -46,13 +54,10 @@
 								"height=500, width=600, left=10, top=10, resizable=yes, scrollbars=yes, toolbar=yes, menubar=no, location=no, directories=no, status=yes");	
 							return false;								
 						});
-						
 					}				
 				});		
-				prepareSignOn();
-				
-			}
-		}]);	
+		}
+		
 
 		function handleCallbackResult( success ){
 			if( success ){
@@ -164,10 +169,10 @@
 						<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 						<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 					</ul>
-<div class="note">쇼셜 로그인을 통한 인증을 지원합니다.</div>					
-		            <#assign webSite = action.webSite
-		            	isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
-		            <#if isAllowedSignup >
+					<div class="note">쇼셜 로그인을 통한 인증을 지원합니다.</div>					
+					<#assign webSite = action.webSite
+						isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
+					<#if isAllowedSignup >
 					 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>
 					 </#if>						
 				</header>
@@ -199,7 +204,7 @@
 								<div id="signin-status"  class="col-sm-12"></div>
 							</div>
 						</section>						
-						<div class="note"><i class="fa fa-info-circle"></i> ${ action.getRemoteAddr() } 에서 접속함.</div>
+						<div class="note"><i class="fa fa-info-circle"></i> 접속 IP: ${ action.getRemoteAddr() }</div>
 						</section>
 					</fieldset>				
 					<footer>
