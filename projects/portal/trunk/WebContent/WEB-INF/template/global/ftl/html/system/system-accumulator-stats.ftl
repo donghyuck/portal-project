@@ -130,7 +130,7 @@
 										color: "#007aff",
 									},
 									markers: {
-										size: 3
+										size: 1
 									}							
 								},
 								series: [{
