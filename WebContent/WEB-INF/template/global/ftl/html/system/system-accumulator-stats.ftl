@@ -116,6 +116,31 @@
 										}
 									}
 				                },
+								seriesDefaults: {
+									type: "scatterLine",
+									style: "smooth"
+								},
+								series: [{
+									yField: "values[0]",
+									xField: "date"
+								}],
+								xAxis: {
+									labels: {
+										format: "${0}"
+									},
+									title: {
+										text: "Value"
+									}
+								},
+								yAxis: {
+									labels: {
+										format: "{0}"
+									},
+									title: {
+										text: "Dare"
+									}
+								},																
+				                /*
 				                seriesDefaults: {
 				                    type: "line",
 				                    style: "smooth"
@@ -143,9 +168,10 @@
 				                        visible: true
 				                    }
 				                },
+				                */
 								tooltip: {
 				                    visible: true,
-				                     format: "{0:##,#}"
+				                    format: "{0}%",
 				                }
 							});						
 						}else{
