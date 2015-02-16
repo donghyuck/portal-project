@@ -109,6 +109,10 @@
 									group: {
 										field: "name"
 									},
+									sort: {
+										field: "date",
+										dir: "asc"
+									},
 									schema: {
 										model: {
 											fields: {
