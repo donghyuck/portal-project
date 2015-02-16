@@ -157,6 +157,11 @@
 		.wrapper {
 			background:transparent;
 		}
+		
+		.note-error {
+			color: #ff3b30;
+		}
+		
 		</style>
 </#compress>		
 	</head>
