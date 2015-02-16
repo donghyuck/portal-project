@@ -22,11 +22,13 @@
 	};
 	
 	
-	function bootstarpAlert (option){
+	function bootstarpAlert (options){
 		options = options || {};	
 		var settings = $.extend(true, {}, DEFAULT_ALERT_SETTING, options );
 		
-		alert(settings.appendTo.html());	
+		
+		
+		alert( kendo.stringify(options) );	
 			
 			
 		if( defined(settings.appendTo)){
