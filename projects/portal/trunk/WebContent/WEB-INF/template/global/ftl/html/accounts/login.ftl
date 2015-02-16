@@ -71,7 +71,7 @@
 			} );		
 					
 			var validator = $("#signin-block").kendoValidator({
-				errorTemplate: "<b class='tooltip tooltip-alert'>#=message#</b>"
+				errorTemplate: "<div class='note note-error'>#=message#</div>"
 			}).data("kendoValidator");
 			
 			$('form[name="signin-fm"]').submit(function(e) {		
