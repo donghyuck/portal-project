@@ -106,6 +106,9 @@
 											return options ;
 										}	
 									},
+									group: {
+										field: "symbol"
+									},
 									schema: {
 										model: {
 											id: "date",
@@ -134,7 +137,7 @@
 									title: {
 										text: "Date"
 									}
-								},
+								},/*
 								yAxis: {
 									labels: {
 										format: "{0:##,#}"
@@ -142,7 +145,7 @@
 									title: {
 										text: "Value"
 									}
-								},													
+								},					*/								
 				                /*
 				                seriesDefaults: {
 				                    type: "line",
