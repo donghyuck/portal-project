@@ -47,8 +47,57 @@
 		}]);
 		
 		function createThresholdsStats() {
-		
-		
+			var renderTo = $("#thresholds-stats-grid");
+			if(!common.ui.exists(renderTo)){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/stage/thresholds/list.json?output=json', type:'post' }
+						},						
+						batch: false
+					},
+					columns: [
+						{ title: "Name", field: "name", width:150},
+						{ title: "Status", field: "status"},
+						{ title: "Value", field: "value" },
+						{ title: "previousStatus", field: "previousStatus" },
+						{ title: "updatedDate", field: "updatedDate" },
+						{ title: "flipCount", field: "flipCount" , format: "{0:##,#}" },
+						{ title: "Path", field: "description"}
+					],
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+					pageable: false,	
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {			
+						if( common.ui.defined(renderTo2) ){
+							var items = [];
+							$.each( this.dataSource.view() , function( index , value ) {
+								items.push({
+									producerId : value.producerId,
+									INIT: value.firstStatsValues[0].value,
+									MIN_USED: value.firstStatsValues[1].value,
+									USED: value.firstStatsValues[2].value,
+									MAX_USED: value.firstStatsValues[3].value,
+									MIN_COMMITED: value.firstStatsValues[4].value,
+									COMMITED: value.firstStatsValues[5].value,
+									MAX_COMMITED: value.firstStatsValues[6].value,
+									MAX: value.firstStatsValues[7].value
+								});							
+							} );						
+							createMemoryStatsChart(renderTo2);
+							renderTo2.data("kendoChart").setDataSource(new kendo.data.DataSource({data: items}));						
+						}	
+					}					
+				});
+				renderTo.parent().find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});					
+			}
 		}
 		
 		function createMemoryStatsChart(renderTo) {
@@ -568,6 +617,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-info"></i> Thresholds</span>									
 							</div>
+							<div id="thresholds-stats-grid" class="no-border-hr"></div>
 							<div class="panel-body">
 									
 							</div>
