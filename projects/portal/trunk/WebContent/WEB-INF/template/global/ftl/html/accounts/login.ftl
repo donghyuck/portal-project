@@ -32,15 +32,14 @@
 					}
 				});			
 				
-				prepareSocialLogin();
+				prepareSocialSignOn();
 				prepareSignOn();
 				
 			}
 		}]);	
 		
 		
-		function prepareSocialLogin(){
-				
+		function prepareSocialSignOn(){				
 				common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 					success: function(response){ 
 						var renderTo = $("#signin-block .social-icons");
