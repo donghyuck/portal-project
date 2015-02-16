@@ -14,7 +14,7 @@
 	handleAjaxError = common.ui.handleAjaxError,
 	DEFAULT_ALERT_SETTING = {
 		dismissible : false,	
-		appendTo : $("body"),
+		appendTo : "body",
 		css : "alert-danger",
 		animateCss : "fade in",
 		title: null,
