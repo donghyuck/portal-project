@@ -25,14 +25,13 @@
 	function bootstarpAlert (options){
 		options = options || {};	
 		var settings = $.extend(true, {}, DEFAULT_ALERT_SETTING, options );
-		
-		
-		
-		
+		var appendTo = settings.appendTo;
 			
-			
-		if( defined(settings.appendTo)){
-			settings.appendTo.append(
+		if( defined(appendTo)){
+			if( appendTo.html().length > 0 ){
+				appendTo.html("");
+			}
+			appendTo.append(
 				settings.template({
 					css: settings.css,
 					animateCss : settings.animateCss,
@@ -41,7 +40,7 @@
 				})	
 			);  
 			if(settings.dismissible){
-				settings.appendTo.find(".alert").prepend('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
+				appendTo.find(".alert").prepend('<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>');
 			}
 		}
 	}
