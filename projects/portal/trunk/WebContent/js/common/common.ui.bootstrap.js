@@ -17,6 +17,7 @@
 		appendTo : $("body"),
 		css : "alert-danger",
 		animateCss : "fade in",
+		title: null,
 		template :  template('<div class="alert #=css# #=animateCss#" #if(title){#<strong>#= title #</strong>#}#role="alert">#=message#</div>'),
 	};
 	
