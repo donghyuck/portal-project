@@ -39,7 +39,8 @@
 		}]);	
 		
 		
-		public prepareSocialLogin(){
+		function prepareSocialLogin(){
+				
 				common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 					success: function(response){ 
 						var renderTo = $("#signin-block .social-icons");
