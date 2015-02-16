@@ -57,25 +57,9 @@
 					}				
 				});		
 		}
-		
 
-		function handleCallbackResult( success ){
-			if( success ){
-				common.ui.connect.signin({
-					success : function(data){
-						if(data.userId > 0){
-							location.href="/main.do";
-						}else{
-							$("form[name='signin-fm'] fieldset").attr("disabled", false);	
-						} 
-					}
-				});
-			}else{
-				$("form[name='signin-fm'] fieldset").attr("disabled", false);	
-			}		
-		}
-	
 		function prepareSignOn () {		
+		
 			common.ui.data.user( {
 				success : function ( user ) {				
 					if( !user.anonymous ){
@@ -121,7 +105,24 @@
 				return false ;
 			});			
 		}
-		
+				
+
+		function handleCallbackResult( success ){
+			if( success ){
+				common.ui.connect.signin({
+					success : function(data){
+						if(data.userId > 0){
+							location.href="/main.do";
+						}else{
+							$("form[name='signin-fm'] fieldset").attr("disabled", false);	
+						} 
+					}
+				});
+			}else{
+				$("form[name='signin-fm'] fieldset").attr("disabled", false);	
+			}		
+		}
+	
 		-->
 		</script>
 		<style>	
@@ -214,6 +215,7 @@
 		        </form><!-- /form -->
 		    </div><!-- /.reg-block -->
 		</div><!-- /.container -->
+		<!--
 		<nav class="navbar navbar-fixed-bottom" role="navigation">
 			<div class="container">
 				<ul class="nav navbar-nav navbar-right">
@@ -221,7 +223,8 @@
 					 <li><a href="#">개인정보보호</a></li>	 
 				</ul>
 			</div>
-		</nav>	
+		</nav>
+		-->	
 	</div> <!-- ./wrapper -->	
 		
 	<script type="text/x-kendo-template" id="alert-template">
