@@ -170,7 +170,7 @@
 				                
 								tooltip: {
 				                    visible: true,
-									template: "#= category #<br> #= dataItem.date #  , #= dataItem.firstValue #"
+									template: "#= dataItem.name  #<br> #= dataItem.date # <br> #= dataItem.firstValue #"
 				                }
 							});						
 						}else{
