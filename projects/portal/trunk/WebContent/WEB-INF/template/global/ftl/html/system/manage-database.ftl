@@ -393,35 +393,7 @@
 								</div>
 							
 								<div class="tab-pane fade panel-body padding-sm" id="database-datasource-view">
-								<div class="table-light">
-									<div class="table-header">
-										<div class="table-caption">
-											&nbsp;
-											<span data-bind="text:catalog" class="text-muted"></span>	 <span data-bind="text:schema" class="text-muted"></span>
-											<div class="pull-right margin-buttom-20">											
-												<button class="btn btn-flat btn-xs btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
-											</div>
-										</div>
-									</div>
-									<table class="table table-bordered">
-										<thead>
-											<tr>
-												<th>테이블</th>
-												<th width="45">보기</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>&nbsp; </td>
-												<td>&nbsp; </td>
-											</tr>
-										</tbody>
-									</table>
-									<div class="table-footer">
-										<span data-bind="text: tableCount, invisible:connecting">0</span> 개
-									</div>
-								</div>								
-								
+									<span data-bind="text: tableCount, invisible:connecting">0</span> 개
 								</div><!-- ./tab-pane -->
 								<div class="tab-pane fade panel-body padding-sm" id="database-sql-tree-view">
 								</div><!-- ./tab-pane -->
