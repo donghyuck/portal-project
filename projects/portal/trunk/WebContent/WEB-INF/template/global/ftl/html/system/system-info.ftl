@@ -311,10 +311,10 @@
 								<span class="panel-title"><i class="fa fa-info"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
 									<li>
-										<a href="#system-info" data-toggle="tab">시스템 환경 정보</a>
+										<a href="#system-info" data-toggle="tab">시스템 환경</a>
 									</li>
 									<li>
-										<a href="#license-info" data-toggle="tab">라이센스 정보</a>
+										<a href="#license-info" data-toggle="tab">라이센스</a>
 									</li>
 									<!--<li>
 										<a href="#database-info" data-toggle="tab">데이터베이스 정보</a>
