@@ -41,7 +41,7 @@
 					}
 				});		
 				
-				createMemoryGauge();
+				//createMemoryGauge();
 				//displayDiskUsage();
 				displaySystemDetails();					
 				// END SCRIPT
@@ -163,11 +163,49 @@
 				success : function( data ){
 					kendo.bind($(".system-details"), data );
 				}
-			});	
-			
+			});				
 			$('#myTab').on( 'show.bs.tab', function (e) {		
 					var target = $(e.target);
 					switch( target.attr('href') ){
+							var renderTo = 
+							if(! common.ui.exists($("#library-info-grid")) ){
+								common.ui.grid($('#library-info-grid'), {
+									dataSource: {
+										transport: { 
+											read: { url:'/secure/data/stage/more/list_library.json?output=json', type:'post' }
+										},						
+										batch: false, 
+										schema: {
+											model: {
+												fields: {
+													name: {type: "string"},
+													group: { type: "string", defaultValue: "-" },
+													artifact:{ type:"string", defaultValue: "-"},
+													version: {type: "string", defaultValue: "-"},
+													timestamp: {type: "string", defaultValue: "-"},
+													lastModified : { type:"date"}
+												}										
+											}
+										}
+									},
+									columns: [
+										{ title: "Name", field: "name"},
+										{ title: "Group", field: "group" },
+										{ title: "Artifact", field: "artifact" },
+										{ title: "Version", field: "version", width:90 },
+										{ title: "Timestamp", field: "timestamp" },
+										{ title: "Last Modified", field: "lastModified", format: "{0:yyyy.MM.dd HH:mm:SS}" },
+									],
+									pageable: false,
+									resizable: true,
+									editable : false,
+									scrollable: true,
+									height: 500,
+									change: function(e) {
+									}
+								});
+							}														
+							break;
 						case "#database-info" :
 							if(! common.ui.exists($("#database-info-grid")) ){
 								common.ui.grid($('#database-info-grid'), {
@@ -179,8 +217,7 @@
 										schema: {
 											data: "databaseInfos",
 											model: common.ui.data.DatabaseInfo
-										},
-										error:common.ui.handleAjaxError
+										}
 									},
 									columns: [
 										{ title: "데이터베이스", field: "databaseVersion"},
@@ -309,10 +346,13 @@
 								<span class="panel-title"><i class="fa fa-info"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
 									<li>
+										<a href="#license-info" data-toggle="tab">라이센스</a>
+									</li>
+									<li>
 										<a href="#system-info" data-toggle="tab">시스템 환경</a>
 									</li>
 									<li>
-										<a href="#license-info" data-toggle="tab">라이센스</a>
+										<a href="#library-info" data-toggle="tab">라이브러리</a>
 									</li>
 									<!--<li>
 										<a href="#database-info" data-toggle="tab">데이터베이스 정보</a>
@@ -442,6 +482,9 @@
 										</div>
 									</div>
 								</div>
+								<div class="tab-pane" id="library-info">
+									<div id="library-info-grid" class="no-border-hr no-border-b"></div>
+								</div>	
 								<div class="tab-pane" id="database-info">
 									<div id="database-info-grid" class="no-border-hr no-border-b"></div>
 								</div>		
