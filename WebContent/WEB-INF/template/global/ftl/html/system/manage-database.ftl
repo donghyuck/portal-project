@@ -323,45 +323,14 @@
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav p-xs">
 						
-						<div class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-database"></i></span>
-							</div> <!-- / .panel-heading -->	
-							
-						</div>
-						<div id="database-schema-view" class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-table"></i></span>
-							</div> <!-- / .panel-heading -->	
-							<div class="panel-body">
-								<span data-bind="text:catalog" class="text-muted"></span>	 <span data-bind="text:schema" class="text-muted"></span>
-								<div class="pull-right">											
-									<button class="btn btn-flat btn-sm btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
-								</div>
-							</div>	
-							<table class="table table-bordered" style="display:none;">
-										<!--<thead>
-											<tr>
-												<th>테이블</th>
-												<th width="45">보기</th>
-											</tr>
-										</thead>-->
-										<tbody>
-											<tr>
-												<td>&nbsp; </td>
-												<td>&nbsp; </td>
-											</tr>
-										</tbody>
-							</table>								
-							
-						</div>
+						
 						
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
 									<li>
-										<a href="#database-table-view" data-toggle="tab">Schema</a>
+										<a href="#database-schema-view" data-toggle="tab">Schema</a>
 									</li>
 									<li>
 										<a href="#database-datasource-view" data-toggle="tab">DataSource</a>
@@ -369,7 +338,7 @@
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->												
 							<div class="tab-content">								
-								<div class="tab-pane fade in" id="database-table-view">
+								<div class="tab-pane fade in" id="database-schema-view">
 									<div class="panel-body">
 										<span data-bind="text:catalog" class="text-muted"></span>	 <span data-bind="text:schema" class="text-muted"></span>
 										<div class="pull-right">											
