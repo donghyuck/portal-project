@@ -41,7 +41,7 @@
 					}
 				});	
 				
-				createDatabaseGrid();
+				
 				createDatabaseTablePanel($("#database-schema-view"));
 				
 				
@@ -51,8 +51,8 @@
 						case "#database-table-tree-view" :
 							createDatabaseTablePanel($(show_bs_tab.attr('href')));
 							break;
-						case  '#database-sql-tree-view' :
-							createSqlFileTreePanel($(show_bs_tab.attr('href')));
+						case  '#database-datasource-view' :
+							createDatabaseGrid();
 							break;
 					}	
 				});
@@ -327,7 +327,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 							</div> <!-- / .panel-heading -->	
-							<div id="database-datasource-grid"></div>
+							
 						</div>
 						<div id="database-schema-view" class="panel colourable">
 							<div class="panel-heading">
@@ -393,9 +393,7 @@
 								</div>
 							
 								<div class="tab-pane fade panel-body padding-sm" id="database-datasource-view">
-									<span data-bind="text: tableCount, invisible:connecting">0</span> 개
-								</div><!-- ./tab-pane -->
-								<div class="tab-pane fade panel-body padding-sm" id="database-sql-tree-view">
+									<div id="database-datasource-grid"></div>
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->						
 							<div class="panel-footer no-padding-vr"></div>	
