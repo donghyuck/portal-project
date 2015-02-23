@@ -61,7 +61,7 @@
 									updatedDate: { type:"date" }
 								}										
 							}
-						}								
+						},								
 						batch: false
 					},
 					columns: [
