@@ -327,6 +327,12 @@
 							</div> <!-- / .panel-heading -->	
 							<div id="database-connection-grid"></div>
 						</div>
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-table"></i></span>
+							</div> <!-- / .panel-heading -->	
+							<div id="database-table-grid"></div>
+						</div>
 						
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
