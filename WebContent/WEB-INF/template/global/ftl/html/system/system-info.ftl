@@ -167,7 +167,7 @@
 			$('#myTab').on( 'show.bs.tab', function (e) {		
 					var target = $(e.target);
 					switch( target.attr('href') ){
-							var renderTo = 
+						case "#library-info" :
 							if(! common.ui.exists($("#library-info-grid")) ){
 								common.ui.grid($('#library-info-grid'), {
 									dataSource: {
