@@ -335,11 +335,11 @@
 							</div> <!-- / .panel-heading -->	
 							<div class="panel-body">
 								<span data-bind="text:catalog" class="text-muted"></span>	 <span data-bind="text:schema" class="text-muted"></span>
-									<div class="pull-right">											
-										<button class="btn btn-flat btn-sm btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
-									</div>
-								</div>	
-								<table class="table table-bordered">
+								<div class="pull-right">											
+									<button class="btn btn-flat btn-sm btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
+								</div>
+							</div>	
+							<table class="table table-bordered" style="display:none;">
 										<!--<thead>
 											<tr>
 												<th>테이블</th>
@@ -352,7 +352,7 @@
 												<td>&nbsp; </td>
 											</tr>
 										</tbody>
-									</table>								
+							</table>								
 							
 						</div>
 						
