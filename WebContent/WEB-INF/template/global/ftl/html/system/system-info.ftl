@@ -277,71 +277,7 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
-				<div class="row"  style="min-height:328px;">						
-					<div class="col-xs-6 col-lg-3">
-						<div class="stat-panel text-center animated fadeIn memory-details" data-bind="visible: visible" style="display:none;">
-							<div class="stat-row">						
-								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
-									<i class="fa fa-flash"></i> Heap Memory
-								</div>
-							</div><!-- /.stat-row -->
-							<div class="stat-row">								
-								<div class="stat-cell bordered no-border-t no-padding-hr" style="padding: 0 0 0 0;">								
-									<div id="mem-gen-gauge" style="display: inline-block !important;"></div>									
-								</div>							
-							</div> <!-- /.stat-row -->						
-							<div class="stat-row">
-								<div class="stat-counters bg-primary bordered no-border-t text-center">
-									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
-										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: maxHeap"></span>MB</strong></span><br>
-										<!-- Extra small text -->
-										<span class="text-xs">Total Memory</span>
-									</div>
-									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
-										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: usedHeap"></span>MB</strong></span><br>
-										<!-- Extra small text -->
-										<span class="text-xs">Used Memory</span>
-									</div>
-								</div> <!-- /.stat-counters -->
-							</div>						
-						</div> <!-- /.stat-panel -->
-					</div>					
-					<div class="col-xs-6 col-lg-3">
-						<div class="stat-panel text-center animated fadeIn memory-details" data-bind="visible: visible" style="display:none;">
-							<div class="stat-row">
-								<!-- Dark gray background, small padding, extra small text, semibold text -->
-								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
-									<i class="fa fa-flash"></i> PermGen Memory
-								</div>
-							</div> <!-- /.stat-row -->
-							<div class="stat-row">
-								<!-- Bordered, without top border, without horizontal padding -->
-								<div class="stat-cell bordered no-border-t no-padding-hr" style="padding: 0 0 0 0;">	
-									<div id="perm-gen-gauge" style="display: inline-block !important;"></div>
-								</div>							
-							</div> <!-- /.stat-row -->
-							<div class="stat-row">
-								<div class="stat-counters bg-danger bordered no-border-t text-center">
-									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
-										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: maxPermGen"></span>MB</strong></span><br>
-										<!-- Extra small text -->
-										<span class="text-xs">Total Memory</span>
-									</div>
-									<div class="stat-cell col-xs-6 padding-sm no-padding-hr">
-										<!-- Big text -->
-										<span class="text-bg"><strong><span data-bind="text: usedPermGen"></span>MB</strong></span><br>
-										<!-- Extra small text -->
-										<span class="text-xs">Used Memory</span>
-									</div>
-								</div> <!-- /.stat-counters -->
-							</div>													
-						</div> <!-- /.stat-panel -->
-					</div>									
-				</div><!-- memory status end -->
-				<hr class="no-grid-gutter-h grid-gutter-margin-b no-margin-t">				
+					
 				<div class="row">			
 					<div class="col-lg-12">	
 						<div class="panel colourable">
