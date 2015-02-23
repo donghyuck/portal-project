@@ -237,56 +237,14 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
-				<div class="row">	
-				
-						
-					<div class="col-xs-12 col-lg-6">
-						<div class="stat-panel system-details">
-							<div class="stat-row">
-								<!-- Bordered, without right border, top aligned text -->
-								<div class="stat-cell col-sm-12 bordered no-border-r padding-sm-hr valign-top">									
-									<h4 class="padding-sm no-padding-t padding-xs-hr"><i class="fa fa-desktop text-primary"></i></h4>
-									<!-- Without margin -->
-									<i class="fa fa-desktop bg-icon" style="font-size:60px;line-height:80px;height:80px;top: 0;"></i>
-									<ul class="list-group no-margin">
-										<li class="list-group-item no-border-hr padding-xs-hr">
-											CPU <span class="label label-danger pull-right" data-bind="text: availableProcessors">0</span>
-										</li> <!-- / .list-group-item -->
-										<li class="list-group-item no-border-hr padding-xs-hr">
-											OS <span class="pull-right" data-bind="text: operatingSystem">Unknown</span>
-										</li> <!-- / .list-group-item -->
-									</ul>
-									<div class="table-light m-t-sm">
-										<div class="table-header">
-											<div class="table-caption">
-												DISK 정보
-												<button class="btn btn-xs btn-primary btn-flat pull-right btn-outline"><span class="fa fa-refresh"></span> 새로고침</button>
-											</div>
-										</div>
-										<table class="table table-bordered">
-											<thead>
-												<tr>
-													<th>위치</th>
-													<th>사용 중인 공간</th>
-													<th>사용 가능한 공간</th>
-													<th>전체 용량</th>
-												</tr>
-											</thead>
-											<tbody class="valign-middle disk-usage-table-row"></tbody>
-										</table>		
-										<div class="table-footer">
-										<small class="text-danger"><i class="fa fa-danger"></i>  사용가능 공간은 자바 가상 머신상에서 사용 가능한 공간을 의미합니다. </small>
-										</div>
-									</div>	
-								</div> <!-- /.stat-cell -->
-							</div>
-						</div><!-- ./stat-panel -->					
+				<div class="row">						
+					<div class="col-xs-12 col-lg-6">									
 					</div>	
 					<div class="col-xs-6 col-lg-3">
 						<div class="stat-panel text-center animated fadeIn memory-details" data-bind="visible: visible" style="display:none;">
 							<div class="stat-row">						
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
-									<i class="fa fa-flash"></i> Heap 메모리
+									<i class="fa fa-flash"></i> Heap Memory
 								</div>
 							</div><!-- /.stat-row -->
 							<div class="stat-row">								
@@ -317,7 +275,7 @@
 							<div class="stat-row">
 								<!-- Dark gray background, small padding, extra small text, semibold text -->
 								<div class="stat-cell bg-dark-gray padding-sm text-xs text-semibold">
-									<i class="fa fa-flash"></i> PermGen 메모리
+									<i class="fa fa-flash"></i> PermGen Memory
 								</div>
 							</div> <!-- /.stat-row -->
 							<div class="stat-row">
@@ -358,9 +316,9 @@
 									<li>
 										<a href="#license-info" data-toggle="tab">라이센스 정보</a>
 									</li>
-									<li>
+									<!--<li>
 										<a href="#database-info" data-toggle="tab">데이터베이스 정보</a>
-									</li>							
+									</li>-->							
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
@@ -480,24 +438,7 @@
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
-		</div> <!-- / #main-wrapper -->
-		<script id="disk-usage-row-template" type="text/x-kendo-template">			
-			<tr>
-				<td>
-					#: absolutePath #
-				</td>
-				<td>#: common.ui.admin.bytesToSize(totalSpace - freeSpace) #
-					<small class="text-light-gray">#= kendo.toString(( totalSpace - freeSpace), '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.ui.admin.bytesToSize(usableSpace) #
-					<small class="text-light-gray">#= kendo.toString(usableSpace, '\\#\\#,\\#') #</small>
-				</td>
-				<td>#: common.ui.admin.bytesToSize(totalSpace) #
-					<small class="text-light-gray">#= kendo.toString(totalSpace, '\\#\\#,\\#') #</small>
-				</td>
-			</tr>
-		</script>								
-												
+		</div> <!-- / #main-wrapper -->												
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
