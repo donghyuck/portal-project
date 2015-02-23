@@ -343,7 +343,7 @@
 						</div>				
 					</div>
 					<div class="list-and-detail-contanier p-xs">					
-						<div id="template-details" class="panel panel-transparent">
+						<div id="template-details" class="panel colourable">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
