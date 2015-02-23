@@ -58,7 +58,7 @@
 					},
 					columns: [
 						{ title: "Name", field: "name", width:150},
-						{ title: "Status", field: "status" , width:150},
+						{ title: "Status", field: "status" , width:150, template:'<i class="status status-#= status #"></i>'},
 						{ title: "Value", field: "value" , width:150},
 						{ title: "previousStatus", field: "previousStatus" , width:150},
 						{ title: "updatedDate", field: "updatedDate" , format: "{0:yyyy.MM.dd HH:mm:SS}" },
@@ -579,6 +579,39 @@
 			.tab-pane .k-grid{
 				min-height: 300px;
 			} 
+			
+			.status {
+				display: inline-block;
+				width: 12px;
+				height: 12px;
+				background: #a3a3a3;
+				border-radius: 12px;
+				margin-bottom: -2px;
+			}		
+			.status.status-green {
+			    background: #53d769;
+			}
+			
+			.status.status-orange {
+			    background: #ff8023;
+			}
+			
+			.status.status-red {
+			    background: #fc3e39;
+			}
+			
+			.status.status-grey {
+			    background: #a3a3a3;
+			}
+			
+			.status.status-purple {
+			    background: #b44bc4;
+			}
+			
+			.status.status-yellow {
+			    background: #ffde00;
+			}
+	
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
