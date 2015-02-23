@@ -138,7 +138,7 @@
 						$.each(sender.tables, function( index , value ){
 							renderTarget.append(template({ "index" : index , "name" : value  }));
 						});												
-						renderTarget.slideDown();	
+						renderTo.find("table").slideDown();	
 						createTableDetailsPanel();				
 					}
 				});	
