@@ -589,19 +589,19 @@
 				margin-bottom: -2px;
 			}		
 			.status.status-green {
-			    background: #53d769;
+			    background: #4cd964;
 			}
 			
 			.status.status-orange {
-			    background: #ff8023;
+			    background: #ff3b30;
 			}
 			
 			.status.status-red {
-			    background: #fc3e39;
+			    background: #ff2d55;
 			}
 			
 			.status.status-grey {
-			    background: #a3a3a3;
+			    background: #8e8e93;
 			}
 			
 			.status.status-purple {
@@ -609,7 +609,7 @@
 			}
 			
 			.status.status-yellow {
-			    background: #ffde00;
+			    background: #ffcc00;
 			}
 	
 		</style>
