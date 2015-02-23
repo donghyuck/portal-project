@@ -323,7 +323,7 @@
 						
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-plug"></i></span>
+								<span class="panel-title"><i class="fa fa-database"></i></span>
 							</div> <!-- / .panel-heading -->	
 							<div id="database-connection-grid"></div>
 						</div>
