@@ -369,7 +369,7 @@
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-xs-3 text-center">
 											<!-- Stat panel bg icon -->
-											<i class="fa fa-certificate bg-icon bg-icon-left"></i>								
+											<i class="fa fa-server bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-xs-9 no-padding valign-bottom">		
 											<table class="table table-hover system-details">
