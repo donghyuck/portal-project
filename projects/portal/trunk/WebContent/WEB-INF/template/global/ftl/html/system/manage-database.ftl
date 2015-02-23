@@ -42,7 +42,7 @@
 				});	
 				
 				
-				createDatabaseTablePanel($("#database-schema-view"));
+				//createDatabaseTablePanel($("#database-schema-view"));
 				
 				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
