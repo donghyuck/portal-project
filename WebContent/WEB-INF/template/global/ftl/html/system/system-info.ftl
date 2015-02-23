@@ -247,7 +247,7 @@
 									<i class="fa fa-flash"></i> Heap Memory
 								</div>
 							</div><!-- /.stat-row -->
-							<div class="stat-row">								
+							<div class="stat-row" style="min-height:328px;">								
 								<div class="stat-cell bordered no-border-t no-padding-hr" style="padding: 0 0 0 0;">								
 									<div id="mem-gen-gauge" style="display: inline-block !important;"></div>									
 								</div>							
