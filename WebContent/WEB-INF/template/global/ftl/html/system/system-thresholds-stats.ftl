@@ -53,7 +53,15 @@
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/stage/thresholds/list.json?output=json', type:'post' }
-						},						
+						},				
+						schema: {
+							model: {
+								fields: {
+									name: {type: "string"},
+									updatedDate: { type:"date" }
+								}										
+							}
+						}								
 						batch: false
 					},
 					columns: [
