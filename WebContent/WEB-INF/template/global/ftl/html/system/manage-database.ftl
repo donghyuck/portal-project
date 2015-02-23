@@ -41,6 +41,8 @@
 					}
 				});	
 				
+				createDatabaseGrid();
+				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
@@ -57,7 +59,36 @@
 				// END SCRIPT
 			}
 		}]);		
-
+		
+		function createDatabaseGrid(){		
+			var renderTo = $("#database-connection-grid");
+			if(! common.ui.exists(renderTo) ){
+								common.ui.grid($('#database-info-grid'), {
+									dataSource: {
+										transport: { 
+											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+										},						
+										batch: false, 
+										schema: {
+											data: "databaseInfos",
+											model: common.ui.data.DatabaseInfo
+										}
+									},
+									columns: [
+										{ title: "데이터베이스", field: "databaseVersion"},
+										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
+										{ title: "ISOLATION", field: "isolationLevel", width:90 },
+									],
+									pageable: false,
+									resizable: true,
+									editable : false,
+									scrollable: true,
+									height: 200,
+									change: function(e) {
+									}
+								});
+			}							
+		}
 		function extractDatabaseSchema( renderTo, model ){		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
 				success : function(response){	
@@ -288,6 +319,14 @@
 				</div><!-- / .page-header -->	
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav p-xs">
+						
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-database"></i></span>
+							</div> <!-- / .panel-heading -->	
+							<div id="database-connection-grid"></div>
+						</div>
+						
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
