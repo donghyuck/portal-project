@@ -126,7 +126,7 @@
 					<div class="col-sm-12">				
 						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬 통계</span>
+								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬</span>
 							</div>
 							<div id="cache-stats-grid" class="no-border-hr"></div>
 						</div>					
