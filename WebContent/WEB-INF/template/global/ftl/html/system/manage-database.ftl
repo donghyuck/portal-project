@@ -48,7 +48,7 @@
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
-						case "#database-table-tree-view" :
+						case "#database-schema-view" :
 							createDatabaseTablePanel($(show_bs_tab.attr('href')));
 							break;
 						case  '#database-datasource-view' :
