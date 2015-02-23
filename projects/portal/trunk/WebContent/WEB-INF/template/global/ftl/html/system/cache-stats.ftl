@@ -127,9 +127,6 @@
 						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬 통계</span>
-								<div class="panel-heading-controls">
-									<button class="btn btn-info btn-xs btn-outline" data-action="refresh"><span class="k-icon k-si-refresh"></span> 새로고침</button>
-								</div>
 							</div>
 							<div id="cache-stats-grid" class="no-border-hr"></div>	
 							<div class="panel-footer no-padding-vr"></div>
