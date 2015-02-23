@@ -323,7 +323,6 @@
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
 								<div class="tab-pane active" id="license-info">
-
 													<table class="table table-hover license-details">
 														<tbody>
 															<tr>
@@ -358,7 +357,13 @@
 													</table>		
 								</div>
 								<div class="tab-pane" id="system-info">
-									<table class="table table-hover system-details">
+									<div class="stat-panel no-margin-b">
+										<div class="stat-cell col-xs-3 text-center">
+											<!-- Stat panel bg icon -->
+											<i class="fa fa-certificate bg-icon bg-icon-left"></i>								
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-xs-9 no-padding valign-bottom">		
+											<table class="table table-hover system-details">
 													<tbody>
 														<tr>
 															<th>운영시스템</th>
@@ -425,7 +430,9 @@
 															<td><span data-bind="text: jvmInputArguments"></span></td>
 														</tr>											
 													</tbody>
-									</table>	
+											</table>	
+										</div>
+									</div>
 								</div>
 								<div class="tab-pane" id="database-info">
 									<div id="database-info-grid" class="no-border-hr no-border-b"></div>
