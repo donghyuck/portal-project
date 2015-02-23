@@ -235,16 +235,13 @@
 				</div><!-- / .page-header -->				
 				<div class="row">			
 					<div class="col-lg-12">	
-
-									<div class="stat-panel no-margin-b">
-										<div class="stat-cell col-xs-5 text-center">
-											<!-- Stat panel bg icon -->
-											<i class="fa fa-line-chart bg-icon bg-icon-left"></i>
-											<div id="accumulator-stats-chart" class="no-border" style="min-height:200px"></div>										
-																					
-										</div> <!-- /.stat-cell -->
-									</div>	
-						
+						<div class="stat-panel no-margin-b bordered">
+							<div class="stat-cell col-xs-5 text-center">
+								<!-- Stat panel bg icon -->
+								<i class="fa fa-line-chart bg-icon bg-icon-left"></i>
+								<div id="accumulator-stats-chart" class="no-border" style="min-height:200px"></div>										
+							</div> <!-- /.stat-cell -->
+						</div>							
 					</div>
 				</div>	
 				<hr class="no-grid-gutter-h grid-gutter-margin-b">				
