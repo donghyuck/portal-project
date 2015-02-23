@@ -356,7 +356,7 @@
 							
 						</div>
 						
-						<div class="panel panel-transparent">
+						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
