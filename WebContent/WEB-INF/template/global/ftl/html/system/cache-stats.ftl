@@ -128,8 +128,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬 통계</span>
 							</div>
-							<div id="cache-stats-grid" class="no-border-hr"></div>	
-							<div class="panel-footer no-padding-vr"></div>
+							<div id="cache-stats-grid" class="no-border-hr"></div>
 						</div>					
 					</div></!-- /.col-sm-12 -->
 				</div><!-- /.row -->	
