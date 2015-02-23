@@ -47,10 +47,9 @@
 		}]);		
 				
 		function createCacheStatsGrid(){
-		
-		
-			if( !$("#cache-stats-grid").data("kendoGrid") ){
-				$("#cache-stats-grid").kendoGrid({
+			var renderTo = $("#cache-stats-grid");
+			if( !common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/stage/cache/list.json?output=json"/>', type: 'POST' }
@@ -58,9 +57,9 @@
 						schema: {
 							model : common.ui.data.CacheStats 
 						},
-						sort: { field: "cacheName", dir: "asc" },
-						error: common.ui.handleAjaxError
+						sort: { field: "cacheName", dir: "asc" }
 					},
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					columns: [
 						{ field: "cacheName", title: "Cache", width:80,  filterable: true, sortable: true , template: '#: cacheName # <button class="btn btn-xs btn-labeled btn-danger pull-right" data-action="cache-removeAll" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><span class="btn-label icon fa fa-bolt"></span>캐쉬 비우기</button>' }, 
 						{ field: "diskPersistent", title: "Disk Cache", width:20,  filterable: true, sortable: true ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
