@@ -611,7 +611,12 @@
 			.status.status-yellow {
 			    background: #ffcc00;
 			}
-	
+			
+			.fa-long-arrow-right {
+			font-size: 14px;
+			color: #bebebe;
+			margin: 0 8px;
+			}	
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
