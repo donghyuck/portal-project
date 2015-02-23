@@ -338,13 +338,14 @@
 									<div class="pull-right">											
 										<button class="btn btn-flat btn-sm btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
 									</div>
+								</div>	
 								<table class="table table-bordered">
-										<thead>
+										<!--<thead>
 											<tr>
 												<th>테이블</th>
 												<th width="45">보기</th>
 											</tr>
-										</thead>
+										</thead>-->
 										<tbody>
 											<tr>
 												<td>&nbsp; </td>
@@ -352,7 +353,7 @@
 											</tr>
 										</tbody>
 									</table>								
-							</div>
+							
 						</div>
 						
 						<div class="panel panel-transparent">
