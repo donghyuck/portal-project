@@ -42,6 +42,8 @@
 				});	
 				
 				createDatabaseGrid();
+				createDatabaseTablePanel($("#database-schema"));
+				
 				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
@@ -61,9 +63,9 @@
 		}]);		
 		
 		function createDatabaseGrid(){		
-			var renderTo = $("#database-connection-grid");
+			var renderTo = $("#database-datasource-grid");
 			if(! common.ui.exists(renderTo) ){
-								common.ui.grid(renderTo, {
+				common.ui.grid(renderTo, {
 									dataSource: {
 										transport: { 
 											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
@@ -86,7 +88,7 @@
 									height: 200,
 									change: function(e) {
 									}
-								});
+				});
 			}						
 				
 		}
@@ -325,9 +327,9 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
 							</div> <!-- / .panel-heading -->	
-							<div id="database-connection-grid"></div>
+							<div id="database-datasource-grid"></div>
 						</div>
-						<div class="panel colourable">
+						<div id="database-schema-view" class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-table"></i></span>
 							</div> <!-- / .panel-heading -->	
@@ -335,9 +337,22 @@
 								<span data-bind="text:catalog" class="text-muted"></span>	 <span data-bind="text:schema" class="text-muted"></span>
 									<div class="pull-right">											
 										<button class="btn btn-flat btn-sm btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
-									</div>							
+									</div>
+								<table class="table table-bordered">
+										<thead>
+											<tr>
+												<th>테이블</th>
+												<th width="45">보기</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>&nbsp; </td>
+												<td>&nbsp; </td>
+											</tr>
+										</tbody>
+									</table>								
 							</div>
-							<div id="database-table-grid"></div>
 						</div>
 						
 						<div class="panel panel-transparent">
