@@ -170,8 +170,7 @@
 	    	renderTo.data("model").file.set("name", filePlaceHolder.name );
 	    	renderTo.data("model").file.set("size", filePlaceHolder.size );
 	    	renderTo.data("model").file.set("directory", filePlaceHolder.directory );
-	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );	
-	    	
+	    	renderTo.data("model").file.set("lastModifiedDate", filePlaceHolder.lastModifiedDate );		    	
 	    	if( !filePlaceHolder.customized && !filePlaceHolder.directory ) 
 	    	{
 	    		renderTo.data("model").set("supportCustomized", true); 
@@ -193,6 +192,10 @@
 						ace.edit("htmleditor").setValue( response.fileContent );	
 					}
 				}); 
+	    	}
+	    	
+	    	if(!renderTo.is("visible")){
+	    		renderTo.slideDown();
 	    	}	    		
 		}				
 		
@@ -343,7 +346,7 @@
 						</div>				
 					</div>
 					<div class="list-and-detail-contanier p-xs">					
-						<div id="template-details" class="panel colourable">
+						<div id="template-details" class="panel colourable" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 								<div class="panel-heading-controls">
