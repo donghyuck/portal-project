@@ -237,9 +237,7 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
-				<div class="row">						
-					<div class="col-xs-12 col-lg-6">									
-					</div>	
+				<div class="row"  style="min-height:328px;">						
 					<div class="col-xs-6 col-lg-3">
 						<div class="stat-panel text-center animated fadeIn memory-details" data-bind="visible: visible" style="display:none;">
 							<div class="stat-row">						
@@ -247,7 +245,7 @@
 									<i class="fa fa-flash"></i> Heap Memory
 								</div>
 							</div><!-- /.stat-row -->
-							<div class="stat-row" style="min-height:328px;">								
+							<div class="stat-row">								
 								<div class="stat-cell bordered no-border-t no-padding-hr" style="padding: 0 0 0 0;">								
 									<div id="mem-gen-gauge" style="display: inline-block !important;"></div>									
 								</div>							
