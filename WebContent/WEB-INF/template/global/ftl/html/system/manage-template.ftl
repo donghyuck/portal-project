@@ -322,7 +322,7 @@
 				</div><!-- / .page-header -->		
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav p-xs">
-						<div class="panel panel-transparent">
+						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title">템플릿</span>
 								<ul class="nav nav-tabs nav-tabs-xs"  id="template-tabs">
