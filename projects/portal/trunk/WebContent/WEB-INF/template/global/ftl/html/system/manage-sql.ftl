@@ -291,7 +291,7 @@
 					<div class="list-and-detail-nav p-xs">
 						<div class="panel panel-transparent">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-database"></i></span>
+								<span class="panel-title"><i class="fa fa-code"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
 									<li>
 										<a href="#database-table-tree-view" data-toggle="tab">테이블</a>
