@@ -63,7 +63,7 @@
 		function createDatabaseGrid(){		
 			var renderTo = $("#database-connection-grid");
 			if(! common.ui.exists(renderTo) ){
-								common.ui.grid($('#database-info-grid'), {
+								common.ui.grid(renderTo, {
 									dataSource: {
 										transport: { 
 											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
