@@ -323,6 +323,13 @@
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
 								<div class="tab-pane active" id="license-info">
+									<div class="stat-panel no-margin-b">
+										<div class="stat-cell col-sm-3 text-center">
+											<!-- Stat panel bg icon -->
+											<i class="fa fa-certificate bg-icon bg-icon-left"></i>								
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
+								
 													<table class="table table-hover license-details">
 														<tbody>
 															<tr>
@@ -355,6 +362,8 @@
 															</tr>	
 													 	</tbody>
 													</table>		
+										</div>
+									</div>													
 								</div>
 								<div class="tab-pane" id="system-info">
 									<div class="stat-panel no-margin-b">
