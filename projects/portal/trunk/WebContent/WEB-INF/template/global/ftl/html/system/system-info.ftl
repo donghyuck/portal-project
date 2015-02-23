@@ -42,7 +42,7 @@
 				});		
 				
 				createMemoryGauge();
-				displayDiskUsage();
+				//displayDiskUsage();
 				displaySystemDetails();					
 				// END SCRIPT
 			}
