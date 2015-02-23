@@ -289,7 +289,7 @@
 				</div><!-- / .page-header -->	
 				<div class="list-and-detail">
 					<div class="list-and-detail-nav p-xs">
-						<div class="panel panel-transparent">
+						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-code"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="database-details-tabs" role="tablist">
@@ -356,7 +356,7 @@
 								컬럼 : <span data-bind="text: columnCount">0</span> 
 							</div>
 						</div>	
-						<div id="sql-details" class="panel panel-transparent" style="display:none;">
+						<div id="sql-details" class="panel colourable" style="display:none;">
 							<div class="panel-heading">
 								<span data-bind="text:file.name">&nbsp;</span>
 									<div class="panel-heading-controls">
