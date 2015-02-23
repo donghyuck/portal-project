@@ -75,8 +75,8 @@
 										}
 									},
 									columns: [
-										{ title: "데이터베이스", field: "databaseVersion"},
-										{ title: "JDBC 드라이버", field: "driverName + ' ' + driverVersion" },
+										{ title: "Database", field: "databaseVersion"},
+										{ title: "JDBC Driver", field: "driverName + ' ' + driverVersion" },
 										{ title: "ISOLATION", field: "isolationLevel", width:90 },
 									],
 									pageable: false,
