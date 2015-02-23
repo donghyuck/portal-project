@@ -41,13 +41,14 @@
 					}
 				});	
 				
+				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
 						case "#database-table-tree-view" :
-							createDatabaseTablePanel($(show_bs_tab.attr('href')));
+							//createDatabaseTablePanel($(show_bs_tab.attr('href')));
 							break;
-						case  '#database-sql-tree-view' :
+						case  '#sql-tree-view' :
 							createSqlFileTreePanel($(show_bs_tab.attr('href')));
 							break;
 					}	
@@ -332,7 +333,7 @@
 								</div>								
 								
 								</div><!-- ./tab-pane -->
-								<div class="tab-pane fade panel-body padding-sm" id="database-sql-tree-view">
+								<div class="tab-pane fade panel-body padding-sm" id="sql-tree-view">
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->						
 							<div class="panel-footer no-padding-vr"></div>	
