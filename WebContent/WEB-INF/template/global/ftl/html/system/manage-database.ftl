@@ -87,7 +87,8 @@
 									change: function(e) {
 									}
 								});
-			}							
+			}						
+				
 		}
 		function extractDatabaseSchema( renderTo, model ){		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
@@ -322,7 +323,7 @@
 						
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-database"></i></span>
+								<span class="panel-title"><i class="fa fa-plug"></i></span>
 							</div> <!-- / .panel-heading -->	
 							<div id="database-connection-grid"></div>
 						</div>
