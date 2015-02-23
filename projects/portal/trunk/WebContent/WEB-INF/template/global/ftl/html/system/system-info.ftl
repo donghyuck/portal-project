@@ -201,6 +201,7 @@
 									resizable: true,
 									filterable: true,
 									editable : false,
+									sortable: true,
 									scrollable: true,
 									height: 500,
 									change: function(e) {
