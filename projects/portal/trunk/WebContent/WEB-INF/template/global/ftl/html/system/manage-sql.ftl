@@ -297,7 +297,7 @@
 										<a href="#database-table-tree-view" data-toggle="tab">테이블</a>
 									</li>
 									<li>
-										<a href="#database-sql-tree-view" data-toggle="tab">SQL</a>
+										<a href="#sql-tree-view" data-toggle="tab">SQL</a>
 									</li>
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->												
