@@ -577,7 +577,7 @@
 			}
 			
 			.tab-pane .k-grid{
-				min-height: 300px;
+				min-height: 500px;
 			} 
 			
 			.status {
