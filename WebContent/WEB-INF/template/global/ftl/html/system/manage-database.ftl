@@ -392,8 +392,8 @@
 									</table>																						
 								</div>
 							
-								<div class="tab-pane fade panel-body padding-sm" id="database-datasource-view">
-									<div id="database-datasource-grid"></div>
+								<div class="tab-pane fade" id="database-datasource-view">
+									<div id="database-datasource-grid" class="no-border"></div>
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->						
 							<div class="panel-footer no-padding-vr"></div>	
