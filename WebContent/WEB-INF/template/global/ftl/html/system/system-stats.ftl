@@ -738,7 +738,7 @@
 							</div> <!-- / .panel-heading -->
 							<div class="tab-content">
 								<div class="tab-pane" id="web-filter-stats">
-									<div id="web-filter-single-stats-grid" class="m-sm" style="display:none"></div>
+									<div id="web-filter-single-stats-grid" class="m-sm" style="display:none; border: solid #34AADC;"></div>
 									<div id="web-filter-stats-grid" class="no-border-hr"></div>
 								</div>
 								<div class="tab-pane" id="web-session-stats">
