@@ -105,8 +105,7 @@
 				
 		-->
 		</script> 		 
-		<style>
-		
+		<style>		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
