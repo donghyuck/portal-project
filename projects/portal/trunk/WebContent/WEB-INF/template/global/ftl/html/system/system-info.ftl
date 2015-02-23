@@ -186,7 +186,8 @@
 													lastModified : { type:"date"}
 												}										
 											}
-										}
+										},
+										sort: { field: "name", dir: "asc" }
 									},
 									columns: [
 										{ title: "Name", field: "name"},
@@ -198,6 +199,7 @@
 									],
 									pageable: false,
 									resizable: true,
+									filterable: true,
 									editable : false,
 									scrollable: true,
 									height: 500,
