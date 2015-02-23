@@ -195,7 +195,7 @@
 										{ title: "Artifact", field: "artifact" },
 										{ title: "Version", field: "version", width:90 , filterable: false},
 										{ title: "Timestamp", field: "timestamp" , filterable: false },
-										{ title: "Last Modified", field: "lastModified", format: "{0:yyyy.MM.dd HH:mm:SS}" , filterable: false },
+										{ title: "Last Modified", field: "lastModified", format: "{0:yyyy.MM.dd HH:mm:ss}" , filterable: false },
 									],
 									pageable: false,
 									resizable: true,
