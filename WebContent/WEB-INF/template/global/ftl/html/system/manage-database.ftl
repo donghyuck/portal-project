@@ -44,13 +44,13 @@
 				
 				//createDatabaseTablePanel($("#database-schema-view"));
 				
-				createDatabaseSchemaTableGrid();
+				
 				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
 						case "#database-schema-view" :
-							createDatabaseTablePanel($(show_bs_tab.attr('href')));
+							createDatabaseSchemaTableGrid(); //	createDatabaseTablePanel($(show_bs_tab.attr('href')));
 							break;
 						case  '#database-datasource-view' :
 							createDatabaseGrid();
@@ -90,28 +90,7 @@
 									change: function(e) {
 					}
 				});
-			}						
-				
-		}
-		function extractDatabaseSchema( renderTo, model ){		
-			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
-				success : function(response){	
-					if( response.status ){
-						model.set("status", response.status );
-						if( response.status === 2 ){
-							model.set("connecting", false );						
-							model.set("catalog", response.catalog );
-							model.set("schema", response.schema );
-							model.set("tables", response.tables );
-							model.set("tableCount", response.tables.length );
-						}else{
-							setInterval(function () {
-								extractDatabaseSchema(renderTo, model);
-							}, 10000);				
-						}					
-					}
-				}			
-			});
+			}										
 		}
 		
 		function createDatabaseSchemaTableGrid(){
@@ -141,6 +120,9 @@
 					}
 				});
 				createTableDetailsPanel();
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});
 			}
 		}
 
@@ -183,6 +165,27 @@
 						}
 					}); 		
 				});		
+		}
+		
+				function extractDatabaseSchema( renderTo, model ){		
+			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
+				success : function(response){	
+					if( response.status ){
+						model.set("status", response.status );
+						if( response.status === 2 ){
+							model.set("connecting", false );						
+							model.set("catalog", response.catalog );
+							model.set("schema", response.schema );
+							model.set("tables", response.tables );
+							model.set("tableCount", response.tables.length );
+						}else{
+							setInterval(function () {
+								extractDatabaseSchema(renderTo, model);
+							}, 10000);				
+						}					
+					}
+				}			
+			});
 		}
 				
 		function createDatabaseTablePanel(renderTo){		
