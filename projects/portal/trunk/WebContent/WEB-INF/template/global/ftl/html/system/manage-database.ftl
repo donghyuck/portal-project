@@ -121,6 +121,7 @@
 				});
 				createTableDetailsPanel();
 				renderTo.find("button[data-action=refresh]").click(function(e){
+					 var $btn = $(this).button('loading')
 					common.ui.grid(renderTo).dataSource.read();								
 				});
 			}
