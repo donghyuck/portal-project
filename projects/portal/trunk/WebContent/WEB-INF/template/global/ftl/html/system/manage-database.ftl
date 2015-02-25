@@ -135,47 +135,12 @@
 					resizable: true,
 					editable : false,
 					scrollable: true,
-					height: 200,
+					height: 600,
 					change: function(e) {
 					}
 				});
+				createTableDetailsPanel();
 			}
-		}
-		
-		function createDatabaseTablePanel(renderTo){		
-			
-					
-			if( !common.ui.defined(renderTo.data("on")) || !renderTo.data("on") ){
-				var observable = kendo.observable({
-					catalog : "",
-					schema : "",
-					connecting : true,
-					status : 0,
-					tables : [],
-					tableCount : 0,
-					showDBTableList : function(e){
-						$that = this;
-						$this = $(e.target);
-						$this.button("loading");		
-						extractDatabaseSchema(renderTo, $that);	
-					}
-				});
-				observable.bind("change", function(e){		
-					var sender = e.sender ;				
-					if( e.field === 'tables' && sender.tables.length > 0 ){
-						var renderTarget = renderTo.find("table > tbody");
-						renderTarget.html("");
-						var template = kendo.template('<tr><td><i class="fa fa-table"></i> #: name #</td><td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="#= name #">보기</button></td></tr>');
-						$.each(sender.tables, function( index , value ){
-							renderTarget.append(template({ "index" : index , "name" : value  }));
-						});												
-						renderTo.find("table").slideDown();	
-						createTableDetailsPanel();				
-					}
-				});	
-				common.ui.bind( renderTo, observable );
-				renderTo.data("on", true);
-			} 
 		}
 
 		function createTableDetailsPanel(){
@@ -216,9 +181,45 @@
 							} 		
 						}
 					}); 		
-				});					
-
+				});		
 		}
+				
+		function createDatabaseTablePanel(renderTo){		
+			
+					
+			if( !common.ui.defined(renderTo.data("on")) || !renderTo.data("on") ){
+				var observable = kendo.observable({
+					catalog : "",
+					schema : "",
+					connecting : true,
+					status : 0,
+					tables : [],
+					tableCount : 0,
+					showDBTableList : function(e){
+						$that = this;
+						$this = $(e.target);
+						$this.button("loading");		
+						extractDatabaseSchema(renderTo, $that);	
+					}
+				});
+				observable.bind("change", function(e){		
+					var sender = e.sender ;				
+					if( e.field === 'tables' && sender.tables.length > 0 ){
+						var renderTarget = renderTo.find("table > tbody");
+						renderTarget.html("");
+						var template = kendo.template('<tr><td><i class="fa fa-table"></i> #: name #</td><td><button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="#= name #">보기</button></td></tr>');
+						$.each(sender.tables, function( index , value ){
+							renderTarget.append(template({ "index" : index , "name" : value  }));
+						});												
+						renderTo.find("table").slideDown();	
+						createTableDetailsPanel();				
+					}
+				});	
+				common.ui.bind( renderTo, observable );
+				renderTo.data("on", true);
+			} 
+		}
+
 		
 		function createSqlFileTreePanel(renderTo){
 			if( !renderTo.data('kendoTreeView') ){		
