@@ -74,7 +74,7 @@
 									columns: [
 										{ title: "Menu", field: "name"}
 									],
-									toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-flat btn-labeled btn-danger " data-action="create-menu"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info " data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
+									toolbar: kendo.template('<div class="p-xs text-right"><button class="btn btn-flat btn-labeled btn-sm btn-danger pull-left" data-action="create-menu"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info " data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 									pageable: false,
 									resizable: true,
 									editable : false,
