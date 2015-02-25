@@ -26,10 +26,20 @@
 	    }
 	});	
 	
+	var Database = kendo.data.Model.define( {
+	    fields: {
+	    	databaseName: { type: "string",  editable: false },
+	    	databaseVersion:  { type: "string", editable: false },
+	    	driverName : { type: "string", editable: false},
+	    	driverVersion: {type: "string", editable: false},
+	    	isolationLevel: {type: "string", editable: false}
+	    }
+	});
 	
 	extend( common.ui.data, {
 		stats : {
-			Accumulator: Accumulator	
+			Accumulator: Accumulator,
+			Database : Database
 		}
 	} );
 	
