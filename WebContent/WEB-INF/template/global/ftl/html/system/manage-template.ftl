@@ -277,6 +277,10 @@
 			min-height:500px;
 		}
 		
+		.k-treeview {
+			min-height:600px;
+		}
+		
 		.list-and-detail{
 			margin: -18px -18px 18px -18px;
 		
