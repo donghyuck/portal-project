@@ -62,7 +62,7 @@
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+							read: { url:'/secure/data/mgmt/navigator/list.json?output=json', type:'post' }
 										},						
 										batch: false, 
 										schema: {
