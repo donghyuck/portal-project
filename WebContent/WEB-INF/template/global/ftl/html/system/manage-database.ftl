@@ -107,9 +107,11 @@
 							data: "tables"
 						},
 						requestStart: function(e) {
+							alert("1");
 							$btn.button('loading');
 						},
 						requestEnd: function(e) {
+							alert("2");
 							$btn.button('reset');
 						}
 					},
