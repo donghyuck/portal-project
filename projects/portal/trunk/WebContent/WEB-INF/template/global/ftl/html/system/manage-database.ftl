@@ -131,6 +131,9 @@
 						{ title: "Table", template: '<i class="fa fa-table"></i> #: value #'},
 						{ title: "", width:80, template: '<button class="btn  btn-default btn-outline btn-flat btn-xs pull-left" data-table="#= value #">View</button>'}
 					],
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+										
+					
 					pageable: false,
 					resizable: true,
 					editable : false,
