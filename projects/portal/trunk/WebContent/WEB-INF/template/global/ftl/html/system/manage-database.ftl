@@ -95,7 +95,8 @@
 		
 		function createDatabaseSchemaTableGrid(){
 			var renderTo = $("#database-schema-table-grid");
-			if( !common.ui.exists(renderTo)){
+			if( !common.ui.exists(renderTo)){				
+				var $btn = renderTo.find("button[data-action=refresh]");				
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
@@ -104,6 +105,12 @@
 						batch: false, 
 						schema: {
 							data: "tables"
+						},
+						requestStart: function(e) {
+							$btn.button('loading');
+						},
+						requestEnd: function(e) {
+							$btn.button('reset');
 						}
 					},
 					columns: [
@@ -120,8 +127,7 @@
 					}
 				});
 				createTableDetailsPanel();
-				renderTo.find("button[data-action=refresh]").click(function(e){
-					 var $btn = $(this).button('loading')
+				$btn.click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});
 			}
