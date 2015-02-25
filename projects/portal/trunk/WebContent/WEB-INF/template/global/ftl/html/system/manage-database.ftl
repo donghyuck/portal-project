@@ -128,7 +128,8 @@
 						}
 					},
 					columns: [
-						{ title: "Name", field: "value", template: '<i class="fa fa-table"></i> #: value #'}
+						{ title: "Name", template: '<i class="fa fa-table"></i> #: value #'},
+						{ title: "", template: '<button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="#= value #">View</button>'}
 					],
 					pageable: false,
 					resizable: true,
