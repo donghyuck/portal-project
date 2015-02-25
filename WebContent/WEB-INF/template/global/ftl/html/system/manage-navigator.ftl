@@ -57,7 +57,32 @@
 		}]);		
 		
 		function createMenuGrid(){
-		
+			var renderTo = $("#navigator-menu-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+										},						
+										batch: false, 
+										schema: {
+											data: "items",
+											total: "totalCount",
+											model: common.ui.data.Menu
+										}
+									},
+									columns: [
+										{ title: "Menu", field: "name"}
+									],
+									pageable: false,
+									resizable: true,
+									editable : false,
+									scrollable: true,
+									height: 200,
+									change: function(e) {
+					}
+				});
+			}		
 		
 		}
 										
