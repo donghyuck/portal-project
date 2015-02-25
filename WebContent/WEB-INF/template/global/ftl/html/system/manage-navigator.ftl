@@ -42,22 +42,24 @@
 				});	
 				
 				
-				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
+				$('#navigator-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
-						case "#database-table-tree-view" :
-							
-							break;
-						case  '#sql-tree-view' :
-							
+						case "#navigator-menu-view" :
+							createMenuGrid();
 							break;
 					}	
 				});
 				
-				$('#database-details-tabs a:first').tab('show');		
+				$('#navigator-tabs a:first').tab('show');		
 				// END SCRIPT
 			}
 		}]);		
+		
+		function createMenuGrid(){
+		
+		
+		}
 										
 		-->
 		</script> 		 
