@@ -43,6 +43,7 @@
 				
 				
 				//createDatabaseTablePanel($("#database-schema-view"));
+				
 				createDatabaseSchemaTableGrid();
 				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
@@ -67,8 +68,8 @@
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
-										transport: { 
-											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
+						transport: { 
+							read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
 										},						
 										batch: false, 
 										schema: {
@@ -117,25 +118,25 @@
 			var renderTo = $("#database-schema-table-grid");
 			if( !common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
-									dataSource: {
-										transport: { 
-											read: { url:'<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />', type:'post' }
-										},						
-										batch: false, 
-										schema: {
-											data: "tables"
-										}
-									},
-									columns: [
-										{ title: "Name", field: "value"}
-									],
-									pageable: false,
-									resizable: true,
-									editable : false,
-									scrollable: true,
-									height: 200,
-									change: function(e) {
-									}
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />', type:'post' }
+						},						
+						batch: false, 
+						schema: {
+							data: "tables"
+						}
+					},
+					columns: [
+						{ title: "Name", field: "value", template: '<i class="fa fa-table"></i> #: value #'}
+					],
+					pageable: false,
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 200,
+					change: function(e) {
+					}
 				});
 			}
 		}
