@@ -83,6 +83,12 @@
 					change: function(e) {
 					}
 				});
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				})
+				renderTo.find("button[data-action=create-menu]").click(function(e){
+					alert("wait ...");						
+				})				
 			}		
 		
 		}
