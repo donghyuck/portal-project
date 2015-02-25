@@ -43,7 +43,7 @@
 				
 				
 				//createDatabaseTablePanel($("#database-schema-view"));
-				
+				createDatabaseSchemaTableGrid();
 				
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
@@ -66,14 +66,14 @@
 			var renderTo = $("#database-datasource-grid");
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
-									dataSource: {
+					dataSource: {
 										transport: { 
 											read: { url:'/secure/view-system-databases.do?output=json', type:'post' }
 										},						
 										batch: false, 
 										schema: {
 											data: "databaseInfos",
-											model: common.ui.data.DatabaseInfo
+											model: common.ui.data.Database
 										}
 									},
 									columns: [
@@ -87,7 +87,7 @@
 									scrollable: true,
 									height: 200,
 									change: function(e) {
-									}
+					}
 				});
 			}						
 				
@@ -113,7 +113,36 @@
 			});
 		}
 		
+		function createDatabaseSchemaTableGrid(){
+			var renderTo = $("#database-schema-table-grid");
+			if( !common.ui.exists(renderTo)){
+				common.ui.grid(renderTo, {
+									dataSource: {
+										transport: { 
+											read: { url:'<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />', type:'post' }
+										},						
+										batch: false, 
+										schema: {
+											data: "tables"
+										}
+									},
+									columns: [
+										{ title: "Name", field: "value"}
+									],
+									pageable: false,
+									resizable: true,
+									editable : false,
+									scrollable: true,
+									height: 200,
+									change: function(e) {
+									}
+				});
+			}
+		}
+		
 		function createDatabaseTablePanel(renderTo){		
+			
+					
 			if( !common.ui.defined(renderTo.data("on")) || !renderTo.data("on") ){
 				var observable = kendo.observable({
 					catalog : "",
@@ -345,6 +374,7 @@
 											<button class="btn btn-flat btn-sm btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
 										</div>
 									</div>	
+									<div id="database-schema-table-grid"></div>
 									<table class="table table-hover" style="display:none;">
 										<!--<thead>
 											<tr>
