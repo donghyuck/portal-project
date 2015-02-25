@@ -63,24 +63,24 @@
 					dataSource: {
 						transport: { 
 							read: { url:'/secure/data/mgmt/navigator/list.json?output=json', type:'post' }
-										},						
-										batch: false, 
-										schema: {
-											data: "items",
-											total: "totalCount",
-											model: common.ui.data.Menu
-										}
-									},
-									columns: [
-										{ title: "Menu", field: "name"}
-									],
-									toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create-menu"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-left" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
-									pageable: false,
-									resizable: true,
-									editable : false,
-									scrollable: true,
-									height: 200,
-									change: function(e) {
+						},						
+						batch: false, 
+						schema: {
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.Menu
+						}
+					},
+					columns: [
+						{ title: "Menu", field: "name"}
+					],
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create-menu"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
+					pageable: false,
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 200,
+					change: function(e) {
 					}
 				});
 			}		
