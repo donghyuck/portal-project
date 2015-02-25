@@ -151,7 +151,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 							}
 						},
 						schema: { 
-							data: "companies",
+							data: "items",
 							model : common.ui.data.Company
 						}
 					},
