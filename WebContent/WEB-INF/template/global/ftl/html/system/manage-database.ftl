@@ -40,12 +40,7 @@
 						e.data.copy(targetCompany);
 					}
 				});	
-				
-				
-				//createDatabaseTablePanel($("#database-schema-view"));
-				
-				
-				
+								
 				$('#database-details-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
@@ -107,11 +102,9 @@
 							data: "tables"
 						},
 						requestStart: function(e) {
-							alert("1");
 							$btn.button('loading');
 						},
 						requestEnd: function(e) {
-							alert("2");
 							$btn.button('reset');
 						}
 					},
@@ -176,7 +169,7 @@
 				});		
 		}
 		
-				function extractDatabaseSchema( renderTo, model ){		
+		function extractDatabaseSchema( renderTo, model ){		
 			common.ui.ajax("<@spring.url "/secure/data/stage/jdbc/schema/list.json?output=json" />", {
 				success : function(response){	
 					if( response.status ){
@@ -197,9 +190,7 @@
 			});
 		}
 				
-		function createDatabaseTablePanel(renderTo){		
-			
-					
+		function createDatabaseTablePanel(renderTo){						
 			if( !common.ui.defined(renderTo.data("on")) || !renderTo.data("on") ){
 				var observable = kendo.observable({
 					catalog : "",
@@ -366,10 +357,7 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				<div class="list-and-detail">
-					<div class="list-and-detail-nav p-xs">
-						
-						
-						
+					<div class="list-and-detail-nav p-xs">						
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-database"></i></span>
