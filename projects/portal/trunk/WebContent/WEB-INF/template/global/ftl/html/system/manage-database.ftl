@@ -384,29 +384,8 @@
 							</div> <!-- / .panel-heading -->												
 							<div class="tab-content">								
 								<div class="tab-pane fade in" id="database-schema-view">
-									<div class="panel-body">
-										<span data-bind="text:catalog" class="text-muted"></span>	 <span data-bind="text:schema" class="text-muted"></span>
-										<div class="pull-right">											
-											<button class="btn btn-flat btn-sm btn-labeled btn-default" data-bind="visible:connecting, click:showDBTableList" data-loading-text="<i class='fa fa-spinner fa-spin'></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span>TABLE 조회</button>										
-										</div>
-									</div>	
 									<div id="database-schema-table-grid" class="no-border-hr"></div>
-									<table class="table table-hover" style="display:none;">
-										<!--<thead>
-											<tr>
-												<th>테이블</th>
-												<th width="45">보기</th>
-											</tr>
-										</thead>-->
-										<tbody>
-											<tr>
-												<td>&nbsp; </td>
-												<td>&nbsp; </td>
-											</tr>
-										</tbody>
-									</table>																						
 								</div>
-							
 								<div class="tab-pane fade" id="database-datasource-view">
 									<div id="database-datasource-grid" class="no-border"></div>
 								</div><!-- ./tab-pane -->
