@@ -131,7 +131,7 @@
 						{ title: "Table", template: '<i class="fa fa-table"></i> #: value #'},
 						{ title: "", width:80, template: '<button class="btn  btn-default btn-outline btn-flat btn-xs pull-left" data-table="#= value #">View</button>'}
 					],
-					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh" data-loading-text="<i class="fa fa-spinner fa-spin"></i> 조회중 ..."><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh" data-loading-text="<i class=\"fa fa-spinner fa-spin"></i> 조회중 ...\"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: false,
 					resizable: true,
 					editable : false,
