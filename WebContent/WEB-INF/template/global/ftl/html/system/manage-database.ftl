@@ -128,8 +128,8 @@
 						}
 					},
 					columns: [
-						{ title: "Name", template: '<i class="fa fa-table"></i> #: value #'},
-						{ title: "", width:80, template: '<button class="btn  btn-default btn-outline btn-flat btn-xs pull-right" data-table="#= value #">View</button>'}
+						{ title: "Table", template: '<i class="fa fa-table"></i> #: value #'},
+						{ title: "", width:80, template: '<button class="btn  btn-default btn-outline btn-flat btn-xs pull-left" data-table="#= value #">View</button>'}
 					],
 					pageable: false,
 					resizable: true,
