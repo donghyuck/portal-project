@@ -74,6 +74,7 @@
 									columns: [
 										{ title: "Menu", field: "name"}
 									],
+									toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-danger btn-labeled" data-action="create-menu"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 									pageable: false,
 									resizable: true,
 									editable : false,
