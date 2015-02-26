@@ -149,6 +149,7 @@
 
 		.list-and-detail{
 			margin: -18px -18px 18px -18px;
+			font-size:13px;
 		
 		}
 		.list-and-detail .list-and-detail-nav {
