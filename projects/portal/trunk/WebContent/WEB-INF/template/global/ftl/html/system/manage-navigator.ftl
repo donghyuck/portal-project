@@ -215,7 +215,7 @@
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
-							<div class="panel-body" style="height:350px;">
+							<div class="panel-body">
 								<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
