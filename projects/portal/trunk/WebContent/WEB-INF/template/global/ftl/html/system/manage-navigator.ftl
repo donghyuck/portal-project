@@ -219,7 +219,7 @@
 							</div>
 							<div class="panel-body">
 
-								<ul class="nav nav nav-pills">									
+								<ul class="nav nav nav-pills" style="height:35px;">									
 									<li class=""><a href="#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
 									<li class="active"><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>
 									<li class=""><a href="#bs-tabdrop-pill3" data-toggle="tab">Section 3</a></li>
