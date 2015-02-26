@@ -145,9 +145,6 @@
 			height:500px;
 			position: relative;
 		}	
-		.ace_editor{
-			min-height: 500px;
-		}
 
 		.list-and-detail{
 			margin: -18px -18px 18px -18px;
