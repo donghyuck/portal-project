@@ -226,19 +226,7 @@
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
-										<p>I'm in Section 1.</p>
-									</div>
-									<div class="tab-pane active" id="bs-tabdrop-pill2">
-										<p>Howdy, I'm in Section 2.</p>
-									</div>
-									<div class="tab-pane" id="bs-tabdrop-pill3">
-										<p>Howdy, I'm in Section 3.</p>
-									</div>
-								</div>
 
-							
-													
-<!--
 								<div class="row no-margin">
 									<div class="col-sm-6">
 										<div class="form-group">
@@ -263,11 +251,20 @@
 											<p class="help-block">간단하게 설명을 입력하세요.</p>
 										</div>		
 									</div>
-								</div>			
--->
+								</div>	
+
+									</div>
+									<div class="tab-pane active" id="bs-tabdrop-pill2">
+<div id="xml-editor"></div>	
+									</div>
+									<div class="tab-pane" id="bs-tabdrop-pill3">
+										<p>Howdy, I'm in Section 3.</p>
+									</div>
+								</div>
+
 							</div>
 							<!--
-							<div id="xml-editor"></div>	
+							
 							-->
 							<div class="panel-footer text-right">
 								<button class="btn btn-flat btn-primary">저장</button>
