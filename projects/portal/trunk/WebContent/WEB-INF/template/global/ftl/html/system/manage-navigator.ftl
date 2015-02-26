@@ -158,7 +158,7 @@
 			.list-and-detail .list-and-detail-nav {
 				width: 400px;
 				border-bottom: 0;
-				/*position: absolute;*/
+				position: absolute;
 				height: auto;
 				border-right-width: 1px;		
 				border-color: #e2e2e2;
