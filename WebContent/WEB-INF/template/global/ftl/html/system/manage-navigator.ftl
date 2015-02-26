@@ -209,7 +209,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
-									<span class="panel-heading-text" style="font-size:11px;font-weight:600;margin-top:">줄바꿈 설정/해지</span>
+									<span class="panel-heading-text" style="font-size:11px;font-weight:600;margin-top:3px;">줄바꿈 설정/해지</span>
 									<div class="switcher switcher-sm">
 										<input type="checkbox" data-class="switcher-sm" name="warp-switcher">
 									</div>
