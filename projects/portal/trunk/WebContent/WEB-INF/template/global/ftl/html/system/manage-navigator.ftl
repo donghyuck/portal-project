@@ -216,6 +216,9 @@
 								</div> <!-- / .panel-heading-controls -->
 							</div>
 							<div class="panel-body">
+							
+							
+							<!--
 								<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
@@ -240,7 +243,10 @@
 											<p class="help-block">간단하게 설명을 입력하세요.</p>
 										</div>		
 									</div>
-								</div>														
+								</div>			
+								
+								-->
+																			
 							</div>
 							<div id="xml-editor" style="height:400px; position:relative;"></div>	
 							<div class="panel-footer text-right">
