@@ -106,20 +106,22 @@
 		function openEditor(source){
 			var renderTo = $("#navigator-menu-details");
 			if( !renderTo.data("model")){
-				var editor = ace.edit("xml-editor");		
-				editor.getSession().setMode("ace/mode/xml");
-				editor.getSession().setUseWrapMode(false);
-							
+									
 				var  observable = kendo.observable({
 					menu : new common.ui.data.Menu(),
 					setSource : function(source){
 						source.copy(this.menu);
-						editor.setValue(this.menu.menuData);
+						ace.edit("xml-editor").setValue(this.menu.menuData);
 					}
 				});		
 								
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );					
+				
+				var editor = ace.edit("xml-editor");		
+				editor.getSession().setMode("ace/mode/xml");
+				editor.getSession().setUseWrapMode(false);
+				
 				var switcher = renderTo.find("input[name='warp-switcher']");				
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
