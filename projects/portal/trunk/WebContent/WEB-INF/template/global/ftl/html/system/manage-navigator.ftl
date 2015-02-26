@@ -79,7 +79,7 @@
 					resizable: true,
 					editable : false,
 					scrollable: true,
-					height: 200,
+					height: 600,
 					change: function(e) {
 					}
 				});
