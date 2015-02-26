@@ -176,7 +176,7 @@
 					
 					<div class="list-and-detail-contanier p-xs">				
 								
-						<div id="navigator-menu-details" class="panel panel-default" data-bind="visible:visible" style="height:400px;">
+						<div id="navigator-menu-details" class="panel panel-default" data-bind="visible:visible">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
@@ -186,7 +186,7 @@
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
-							<div class="panel-body">
+							<div class="panel-body" style="height:350px;">
 								<div class="row no-margin">
 								<div class="col-sm-12">
 								<div class="form-group">
