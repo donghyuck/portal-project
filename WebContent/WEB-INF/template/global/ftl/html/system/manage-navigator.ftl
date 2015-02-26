@@ -221,11 +221,11 @@
 										
 									</div>
 							</div>
-							
+								<!--
 							<div class="panel-body no-padding-t">
 							
 							
-							<!--
+						
 								<div class="row no-margin">
 								<div class="col-sm-6">
 									<div class="form-group">
@@ -252,9 +252,9 @@
 									</div>
 								</div>			
 								
-								-->
+								
 																			
-							</div>
+							</div>-->
 							<div id="xml-editor" style="height:400px; position:relative;"></div>	
 							<div class="panel-footer text-right">
 								<button class="btn btn-flat btn-primary">저장</button>
