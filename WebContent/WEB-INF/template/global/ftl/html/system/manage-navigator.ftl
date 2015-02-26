@@ -215,7 +215,7 @@
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
-							<div class="panel-body">
+							<div class="panel-body no-padding-t">
 							
 							
 							<!--
