@@ -236,7 +236,7 @@
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label class="control-label" for="input-menu-description">요약</label>
-											<input type="text" class="form-control" id="input-menu-description">
+											<input type="text" class="form-control imput-sm" id="input-menu-description">
 											<p class="help-block">간단하게 설명을 입력하세요.</p>
 										</div>		
 									</div>
@@ -244,7 +244,7 @@
 							</div>
 							<div id="xml-editor" style="height:400px; position:relative;"></div>	
 							<div class="panel-footer text-right">
-								<button class="btn btn-primary">저장</button>
+								<button class="btn btn-flat btn-primary">저장</button>
 							</div>
 						</div>
 					
