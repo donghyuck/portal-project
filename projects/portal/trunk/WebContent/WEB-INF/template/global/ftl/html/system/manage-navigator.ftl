@@ -74,7 +74,7 @@
 					},
 					columns: [
 						{ title: "Menu", field: "name"},
-						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary" data-action="update" data-object-id="#=menuId#" onclick="openEditor(this); return false;" ><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
+						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-primary" data-action="update" data-object-id="#=menuId#"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-bolt"></span> 새로고침</button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
@@ -91,12 +91,16 @@
 				});
 				renderTo.find("button[data-action=create]").click(function(e){
 					openEditor();		
-				});						
+				});				
+								
+				$(document).on("click","[data-action=update]", function(e){		
+					var $this = $(this);		
+					alert( $this.html()  );
+				}			
 			}	
 		}
 		
 		function openEditor(){
-			alert( this.html() );
 		
 		}				
 						
