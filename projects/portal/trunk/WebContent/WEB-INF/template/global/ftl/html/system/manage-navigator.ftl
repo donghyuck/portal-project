@@ -174,9 +174,9 @@
 							</div><!-- /.tab-content -->
 						</div>					
 					</div>
+					
 					<div class="list-and-detail-contanier p-xs">	
-					
-					
+						
 						<div id="navigator-menu-details" class="panel panel-default" data-bind="visible:visible">
 							<div class="panel-heading">
 								<span class="panel-title"><a href="http://hackerwins.github.io/summernote/" target="_blank">Summernote WYSIWYG-editor <i class="fa fa-link"></i></a></span>
@@ -189,40 +189,6 @@
 							
 							</div>
 						</div>
-					
-									
-						<div id="database-table-details" class="panel panel-default" data-bind="visible:visible" style="display:none;">
-							<div class="panel-heading">
-								<i class="fa fa-table"></i> <span data-bind="text:name"></span>
-								<div class="panel-heading-controls">
-									<button class="close" data-action="slideUp"><i class="fa fa-chevron-up"></i></button>
-									<button class="close" data-action="slideDown"  style="display:none;"><i class="fa fa-chevron-down"></i></button>								
-								</div>
-							</div>			
-							<div data-role="grid" 
-								data-sortable="true" 
-								data-bind="source: columns" 
-								data-columns="[ {'field':'primaryKey', 'title':'기본키'}, {'field':'name', 'title':'컬럼'}, {'field':'typeName' ,'title':'타입'}, {'field':'size' ,'title':'크기'}, {'field':'nullable' ,'title':'IS_NULLABLE'}]"  class="no-border" ></div>
-							<div class="panel-footer">
-								컬럼 : <span data-bind="text: columnCount">0</span> 
-							</div>
-						</div>	
-						<div id="sql-details" class="panel colourable" style="display:none;">
-							<div class="panel-heading">
-								<span data-bind="text:file.name">&nbsp;</span>
-									<div class="panel-heading-controls">
-										<button class="btn btn-success  btn-xs" data-bind="visible: supportSvn, click:openFileUpdateModal" style="display:none;" ><i class="fa fa-long-arrow-down"></i> 업데이트</button>					
-									</div>
-								</div>			
-								<div class="panel-body padding-sm" style="height: 43px;">
-									<span class="label label-warning">PATH</span>&nbsp;&nbsp;&nbsp;<span data-bind="text:file.path"></span>
-									<div class="pull-right text-muted">
-										<span data-bind="text:file.formattedSize"></span> bytes &nbsp;&nbsp;<span data-bind="text:file.formattedLastModifiedDate">&nbsp;</span>
-									</div>
-							</div>
-							<div id="xmleditor" class="panel-body bordered no-border-hr" data-bind="invisible: file.directory" style="display:none;"></div>
-							<div class="panel-footer no-padding-vr"></div>
-						</div>						
 					
 					</div>
 				</div>	
