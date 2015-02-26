@@ -95,7 +95,7 @@
 			}	
 		}
 		
-		function openEditor(){
+		function openEditor(this){
 			alert( $(this).html() );
 		
 		}				
