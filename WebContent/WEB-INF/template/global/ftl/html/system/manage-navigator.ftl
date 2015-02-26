@@ -143,6 +143,7 @@
 		
 		#xml-editor	 {
 			height:500px;
+			position: relative;
 		}	
 		.ace_editor{
 			min-height: 500px;
