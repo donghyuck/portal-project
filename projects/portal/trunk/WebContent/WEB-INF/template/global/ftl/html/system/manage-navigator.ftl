@@ -172,11 +172,10 @@
 								</div>																
 								</div><!-- ./tab-pane -->
 							</div><!-- /.tab-content -->
-						</div>					
+						</div>		
 					</div>
 					
-					<div class="list-and-detail-contanier p-xs">	
-						
+					<div class="list-and-detail-contanier p-xs">							
 						<div id="navigator-menu-details" class="panel panel-default" data-bind="visible:visible">
 							<div class="panel-heading">
 								<span class="panel-title"><a href="http://hackerwins.github.io/summernote/" target="_blank">Summernote WYSIWYG-editor <i class="fa fa-link"></i></a></span>
@@ -191,7 +190,8 @@
 						</div>
 					
 					</div>
-				</div>	
+					
+				</div><!-- / #list-and-detail -->	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
