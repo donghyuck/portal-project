@@ -217,6 +217,8 @@
 									<span class="panel-heading-text" style="font-size:11px;font-weight:600;">줄바꿈 설정/해지</span>
 									<div class="switcher switcher-sm">
 										<input type="checkbox" data-class="switcher-sm" name="warp-switcher">
+										<div class="switcher-toggler"></div>
+										<div class="switcher-inner"><div class="switcher-state-on"><span class="fa fa-check" style="font-size:11px;"></span></div><div class="switcher-state-off"><span class="fa fa-times" style="font-size:11px;"></span></div></div>
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
