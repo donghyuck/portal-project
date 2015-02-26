@@ -207,6 +207,16 @@
 					</div>
 					
 					<div class="list-and-detail-contanier p-xs">			
+
+						<ul class="nav nav-tabs nav-tabs-xs" style="margin-top: 20px">
+							<li class="">
+								<a href="#" data-toggle="tab">Home <span class="label label-warning">12</span></a>
+							</li>
+							<li class="active">
+								<a href="#" data-toggle="tab">Profile <span class="badge badge-danger">12</span></a>
+							</li>
+						</ul>
+						
 								
 						<div id="navigator-menu-details" class="panel colourable">
 							<div class="panel-heading">
