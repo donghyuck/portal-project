@@ -263,7 +263,9 @@
 								</div>			
 -->
 							</div>
+							<!--
 							<div id="xml-editor"></div>	
+							-->
 							<div class="panel-footer text-right">
 								<button class="btn btn-flat btn-primary">저장</button>
 							</div>
