@@ -209,7 +209,8 @@
 					
 					<div class="list-and-detail-contanier p-xs">									
 						<div id="navigator-menu-details" class="panel colourable">
-							<div class="panel-heading">
+						
+							<div class="panel-heading hidden">
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
 									<span class="panel-heading-text" style="font-size:11px;font-weight:600;margin-top:3px;">줄바꿈 설정/해지</span>
@@ -220,7 +221,7 @@
 							</div>
 							<div class="panel-body">
 
-								<ul class="nav nav-tabs nav-tabs-xs">									
+								<ul class="nav nav-tabs nav-tabs-xs" style="height:27px;">									
 									<li class=""><a href="#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
 									<li class="active"><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>
 									<li class=""><a href="#bs-tabdrop-pill3" data-toggle="tab">Section 3</a></li>
