@@ -140,9 +140,9 @@
 		-->
 		</script> 		 
 		<style>
-		#xmleditor.panel-body{
-			min-height:500px;
-		}	
+		.ace_editor{
+		min-height: 500px;
+		}
 
 		.list-and-detail{
 			margin: -18px -18px 18px -18px;
