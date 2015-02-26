@@ -181,7 +181,9 @@
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
 									<span class="panel-heading-text" style="font-size:11px;font-weight:600;">BOXED&nbsp;&nbsp;</span>
-									<div class="switcher switcher-sm"><input type="checkbox" data-class="switcher-sm" id="summernote-boxed"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on"><span class="fa fa-check" style="font-size:11px;"></span></div><div class="switcher-state-off"><span class="fa fa-times" style="font-size:11px;"></span></div></div></div>
+									<div class="switcher switcher-sm">
+										<input type="checkbox" data-class="switcher-sm" name="warp-switcher">
+									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
 							<div class="panel-body padding-sm" style="height: 43px;">
