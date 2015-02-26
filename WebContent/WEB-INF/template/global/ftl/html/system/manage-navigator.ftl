@@ -140,8 +140,12 @@
 		-->
 		</script> 		 
 		<style>
+		
+		#xml-editor	 {
+			height:500px;
+		}	
 		.ace_editor{
-		min-height: 500px;
+			min-height: 500px;
 		}
 
 		.list-and-detail{
