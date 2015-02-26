@@ -206,8 +206,18 @@
 						</div>		
 					</div>
 					
-					<div class="list-and-detail-contanier p-xs">			
-
+					<div class="list-and-detail-contanier p-xs">									
+						<div id="navigator-menu-details" class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-pencil"></i></span>
+								<div class="panel-heading-controls">
+									<span class="panel-heading-text" style="font-size:11px;font-weight:600;margin-top:3px;">줄바꿈 설정/해지</span>
+									<div class="switcher switcher-sm">
+										<input type="checkbox" data-class="switcher-sm" name="warp-switcher">
+									</div>
+								</div> <!-- / .panel-heading-controls -->
+							</div>
+							<div class="panel-body">
 						<ul class="nav nav-tabs nav-tabs-xs" style="margin-top: 20px">
 							<li class="">
 								<a href="#" data-toggle="tab">Home <span class="label label-warning">12</span></a>
@@ -223,20 +233,9 @@
 							<div class="tab-pane fade active in" id="uidemo-tabs-default-demo-profile">
 								<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
 							</div> <!-- / .tab-pane -->
-						</div>						
-								
-						<div id="navigator-menu-details" class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-pencil"></i></span>
-								<div class="panel-heading-controls">
-									<span class="panel-heading-text" style="font-size:11px;font-weight:600;margin-top:3px;">줄바꿈 설정/해지</span>
-									<div class="switcher switcher-sm">
-										<input type="checkbox" data-class="switcher-sm" name="warp-switcher">
-									</div>
-								</div> <!-- / .panel-heading-controls -->
-							</div>
-							<div class="panel-body padding-sm">
-
+						</div>	
+													
+<!--
 								<div class="row no-margin">
 									<div class="col-sm-6">
 										<div class="form-group">
@@ -262,7 +261,7 @@
 										</div>		
 									</div>
 								</div>			
-
+-->
 							</div>
 							<div id="xml-editor"></div>	
 							<div class="panel-footer text-right">
