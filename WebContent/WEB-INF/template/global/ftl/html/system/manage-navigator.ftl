@@ -159,7 +159,7 @@
 					<div class="list-and-detail-nav p-xs">
 						<div class="panel colourable">
 							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-sitemap"></i></span>
+								<span class="panel-title"><i class="fa fa-bars"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="navigator-tabs" role="tablist">
 									<li>
 										<a href="#navigator-menu-view" data-toggle="tab">MENU</a>
