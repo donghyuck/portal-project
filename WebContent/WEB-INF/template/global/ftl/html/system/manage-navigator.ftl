@@ -221,10 +221,10 @@
 							</div>
 							<div class="panel-body">
 
-								<ul class="nav nav-tabs nav-tabs-xs" style="height:27px;">									
-									<li class=""><a href="#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
-									<li class="active"><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>
-									<li class=""><a href="#bs-tabdrop-pill3" data-toggle="tab">Section 3</a></li>
+								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">									
+									<li class="pull-right"><a href="#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
+									<li class="pull-right"><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>
+									<li class="pull-right"><a href="#bs-tabdrop-pill3" data-toggle="tab">Section 3</a></li>
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
