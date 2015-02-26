@@ -203,9 +203,9 @@
 						</div>		
 					</div>
 					
-					<div class="list-and-detail-contanier p-xs">				
+					<div class="list-and-detail-contanier p-xs">			
 								
-						<div id="navigator-menu-details" class="panel panel-default">
+						<div id="navigator-menu-details" class="panel panel-default" style="display:none;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
