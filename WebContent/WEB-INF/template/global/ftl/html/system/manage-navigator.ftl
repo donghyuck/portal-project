@@ -143,7 +143,6 @@
 		
 		#xml-editor	 {
 			height:500px;
-			position: relative;
 		}	
 
 		.list-and-detail{
@@ -217,7 +216,7 @@
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
-							<div class="panel-body padding-sm" style="height: 43px;">
+							<div class="panel-body padding-sm">
 
 								<div class="row no-margin">
 									<div class="col-sm-6">
