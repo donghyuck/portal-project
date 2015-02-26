@@ -226,7 +226,7 @@
 									<li class="pull-right"><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>
 									<li class="pull-right"><a href="#bs-tabdrop-pill3" data-toggle="tab">Section 3</a></li>
 								</ul>
-								<div class="tab-content">
+								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
 										<div class="m-b-sm">
 											<label class="control-label" for="input-menu-name">코드</label>
