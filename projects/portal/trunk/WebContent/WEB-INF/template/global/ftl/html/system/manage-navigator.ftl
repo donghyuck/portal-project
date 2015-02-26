@@ -90,7 +90,7 @@
 					common.ui.grid(renderTo).dataSource.read();								
 				});
 				renderTo.find("button[data-action=create]").click(function(e){
-					alert("wait ...");						
+					openEditor();		
 				});						
 			}	
 		}
