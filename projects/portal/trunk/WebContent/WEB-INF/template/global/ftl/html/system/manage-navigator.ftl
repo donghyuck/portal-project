@@ -248,17 +248,7 @@
 								</div>			
 
 							</div>
-								<!--
-							<div class="panel-body no-padding-t">
-							
-							
-						
-								
-								
-								
-																			
-							</div>-->
-							<div id="xml-editor" style="height:400px; position:relative;"></div>	
+							<div id="xml-editor"></div>	
 							<div class="panel-footer text-right">
 								<button class="btn btn-flat btn-primary">저장</button>
 							</div>
