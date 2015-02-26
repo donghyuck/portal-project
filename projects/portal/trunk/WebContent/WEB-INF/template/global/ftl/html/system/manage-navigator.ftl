@@ -205,7 +205,7 @@
 					
 					<div class="list-and-detail-contanier p-xs">				
 								
-						<div id="navigator-menu-details" class="panel panel-default" data-bind="visible:visible">
+						<div id="navigator-menu-details" class="panel panel-default">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
@@ -220,14 +220,14 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label class="control-label" for="input-menu-name">코드</label>
-										<input type="text" class="form-control" id="input-menu-name">
+										<input type="text" class="form-control" id="input-menu-name" data-bind="value:menu.name">
 										<p class="help-block">중복되지 않는 코드 값을 입력하세요.</p>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label class="control-label" for="input-menu-title">이름</label>
-										<input type="text" class="form-control" id="input-menu-title">
+										<input type="text" class="form-control" id="input-menu-title" data-bind="value:menu.title">
 										<p class="help-block">이름을 입력하세요.</p>
 									</div>
 								</div>
@@ -236,7 +236,7 @@
 									<div class="col-sm-12">
 										<div class="form-group">
 											<label class="control-label" for="input-menu-description">요약</label>
-											<input type="text" class="form-control imput-sm" id="input-menu-description">
+											<input type="text" class="form-control imput-sm" id="input-menu-description" data-bind="value:menu.description">
 											<p class="help-block">간단하게 설명을 입력하세요.</p>
 										</div>		
 									</div>
