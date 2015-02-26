@@ -104,7 +104,41 @@
 		}
 		
 		function openEditor(source){
-			alert( common.ui.stringify( source ) );
+			var renderTo = $("#navigator-menu-details");
+			if( !renderTo.data("model")){
+
+				var editor = ace.edit("xmleditor");		
+				editor.getSession().setMode("ace/mode/xml");
+				editor.getSession().setUseWrapMode(false);
+							
+				var  observable = kendo.observable({
+					menu : new common.ui.data.Menu(),
+					setSource : function(source){
+						source.copy(this.menu);
+						editor.setValue(this.menu.menuData);
+					}
+				});		
+								
+				renderTo.data("model", observable );		
+				
+				kendo.bind(renderTo, observable );	
+					
+				
+				
+				var switcher = renderTo.find("input[name="warp-switcher"]');				
+				if( switcher.length > 0 ){
+					$(switcher).switcher();
+					$(switcher).change(function(){
+						editor.getSession().setUseWrapMode($(this).is(":checked"));
+					});		
+				}	
+			}
+			
+			renderTo.data("model").setSource( source );
+			
+			if (!renderTo.is(":visible")) 
+				renderTo.fadeIn();	 
+			
 		}				
 						
 										
