@@ -243,6 +243,9 @@
 								</div>														
 							</div>
 							<div id="xml-editor" style="height:400px; position:relative;"></div>	
+							<div class="panel-footer text-right">
+								<button class="btn btn-primary">저장</button>
+							</div>
 						</div>
 					
 					</div>
