@@ -218,22 +218,30 @@
 								</div> <!-- / .panel-heading-controls -->
 							</div>
 							<div class="panel-body">
-						<ul class="nav nav-tabs nav-tabs-xs" style="margin-top: 20px">
-							<li class="">
-								<a href="#" data-toggle="tab">Home <span class="label label-warning">12</span></a>
-							</li>
-							<li class="active">
-								<a href="#" data-toggle="tab">Profile <span class="badge badge-danger">12</span></a>
-							</li>
-						</ul>
-						<div class="tab-content">
-							<div class="tab-pane fade" id="uidemo-tabs-default-demo-home">
-								<p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-							</div> <!-- / .tab-pane -->
-							<div class="tab-pane fade active in" id="uidemo-tabs-default-demo-profile">
-								<p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-							</div> <!-- / .tab-pane -->
-						</div>	
+
+								<ul class="nav nav-pills bs-tabdrop-example"><li class="dropdown pull-right tabdrop"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bars"></i> <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#bs-tabdrop-pill8" data-toggle="tab">Section 8</a></li><li><a href="#bs-tabdrop-pill9" data-toggle="tab">Section 9</a></li><li><a href="#bs-tabdrop-pill10" data-toggle="tab">Section 10</a></li><li><a href="#bs-tabdrop-pill11" data-toggle="tab">Section 11</a></li><li><a href="#bs-tabdrop-pill12" data-toggle="tab">Section 12</a></li></ul></li>
+									<li class=""><a href="#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
+									<li class="active"><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>
+									<li class=""><a href="#bs-tabdrop-pill3" data-toggle="tab">Section 3</a></li>
+									
+									
+									
+									
+									
+								</ul>
+								<div class="tab-content">
+									<div class="tab-pane" id="bs-tabdrop-pill1">
+										<p>I'm in Section 1.</p>
+									</div>
+									<div class="tab-pane active" id="bs-tabdrop-pill2">
+										<p>Howdy, I'm in Section 2.</p>
+									</div>
+									<div class="tab-pane" id="bs-tabdrop-pill3">
+										<p>Howdy, I'm in Section 3.</p>
+									</div>
+								</div>
+
+							
 													
 <!--
 								<div class="row no-margin">
