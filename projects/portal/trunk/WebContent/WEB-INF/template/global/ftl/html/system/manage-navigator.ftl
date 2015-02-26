@@ -178,7 +178,7 @@
 								
 						<div id="navigator-menu-details" class="panel panel-default" data-bind="visible:visible">
 							<div class="panel-heading">
-								<span class="panel-title"><a href="http://hackerwins.github.io/summernote/" target="_blank">Summernote WYSIWYG-editor <i class="fa fa-link"></i></a></span>
+								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
 									<span class="panel-heading-text" style="font-size:11px;font-weight:600;">BOXED&nbsp;&nbsp;</span>
 									<div class="switcher switcher-sm"><input type="checkbox" data-class="switcher-sm" id="summernote-boxed"><div class="switcher-toggler"></div><div class="switcher-inner"><div class="switcher-state-on"><span class="fa fa-check" style="font-size:11px;"></span></div><div class="switcher-state-off"><span class="fa fa-times" style="font-size:11px;"></span></div></div></div>
