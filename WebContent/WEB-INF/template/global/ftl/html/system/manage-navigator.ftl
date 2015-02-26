@@ -65,6 +65,7 @@
 							read: { url:'/secure/data/mgmt/navigator/list.json?output=json', type:'post' }
 						},						
 						batch: false, 
+						pageSize: 15,
 						schema: {
 							data: "items",
 							total: "totalCount",
