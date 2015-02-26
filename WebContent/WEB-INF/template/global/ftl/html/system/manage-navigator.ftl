@@ -125,7 +125,7 @@
 					
 				
 				
-				var switcher = renderTo.find("input[name="warp-switcher"]');				
+				var switcher = renderTo.find("input[name='warp-switcher']");				
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
 					$(switcher).change(function(){
