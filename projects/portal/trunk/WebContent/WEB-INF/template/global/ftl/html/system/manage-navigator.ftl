@@ -159,7 +159,7 @@
 				width: 400px;
 				border-bottom: 0;
 				/*position: absolute;*/
-				height: auto;
+				/*height: auto;*/
 				border-right-width: 1px;		
 				border-color: #e2e2e2;
 				float: left;
