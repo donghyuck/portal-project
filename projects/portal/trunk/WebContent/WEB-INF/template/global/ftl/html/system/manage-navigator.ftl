@@ -219,15 +219,10 @@
 							</div>
 							<div class="panel-body">
 
-								<ul class="nav nav-pills bs-tabdrop-example"><li class="dropdown pull-right tabdrop"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-bars"></i> <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="#bs-tabdrop-pill8" data-toggle="tab">Section 8</a></li><li><a href="#bs-tabdrop-pill9" data-toggle="tab">Section 9</a></li><li><a href="#bs-tabdrop-pill10" data-toggle="tab">Section 10</a></li><li><a href="#bs-tabdrop-pill11" data-toggle="tab">Section 11</a></li><li><a href="#bs-tabdrop-pill12" data-toggle="tab">Section 12</a></li></ul></li>
+								<ul class="nav nav-pills bs-tabdrop-example">									
 									<li class=""><a href="#bs-tabdrop-pill1" data-toggle="tab">Section 1</a></li>
 									<li class="active"><a href="#bs-tabdrop-pill2" data-toggle="tab">Section 2</a></li>
 									<li class=""><a href="#bs-tabdrop-pill3" data-toggle="tab">Section 3</a></li>
-									
-									
-									
-									
-									
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
