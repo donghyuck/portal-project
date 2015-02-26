@@ -205,7 +205,7 @@
 					
 					<div class="list-and-detail-contanier p-xs">			
 								
-						<div id="navigator-menu-details" class="panel panel-default" style="display:none;">
+						<div id="navigator-menu-details" class="panel colourable" style="display:none;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
@@ -215,6 +215,13 @@
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
+							<div class="panel-body padding-sm" style="height: 43px;">
+									<span class="label label-warning"></span>
+									<div class="pull-right text-muted">
+										
+									</div>
+							</div>
+							
 							<div class="panel-body no-padding-t">
 							
 							
