@@ -80,7 +80,7 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
-					selectable : "row",
+					/*selectable : "row",*/
 					scrollable: true,
 					height: 600,
 					change: function(e) {
