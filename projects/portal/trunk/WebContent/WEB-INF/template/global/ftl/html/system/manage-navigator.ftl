@@ -210,7 +210,7 @@
 					
 					<div class="list-and-detail-contanier p-xs">			
 								
-						<div id="navigator-menu-details" class="panel colourable" style="display:none;">
+						<div id="navigator-menu-details" class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-pencil"></i></span>
 								<div class="panel-heading-controls">
