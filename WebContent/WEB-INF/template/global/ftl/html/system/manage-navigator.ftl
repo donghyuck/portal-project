@@ -96,7 +96,7 @@
 		}
 		
 		function openEditor(){
-			alert( $(this).html() );
+			alert( this.html() );
 		
 		}				
 						
