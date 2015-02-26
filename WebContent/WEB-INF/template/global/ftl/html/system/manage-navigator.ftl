@@ -96,7 +96,7 @@
 				$(document).on("click","[data-action=update]", function(e){		
 					var $this = $(this);		
 					alert( $this.html()  );
-				}			
+				});			
 			}	
 		}
 		
