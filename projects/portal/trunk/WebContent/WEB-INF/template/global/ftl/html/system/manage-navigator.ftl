@@ -106,8 +106,7 @@
 		function openEditor(source){
 			var renderTo = $("#navigator-menu-details");
 			if( !renderTo.data("model")){
-
-				var editor = ace.edit("xmleditor");		
+				var editor = ace.edit("xml-editor");		
 				editor.getSession().setMode("ace/mode/xml");
 				editor.getSession().setUseWrapMode(false);
 							
@@ -119,12 +118,8 @@
 					}
 				});		
 								
-				renderTo.data("model", observable );		
-				
-				kendo.bind(renderTo, observable );	
-					
-				
-				
+				renderTo.data("model", observable );
+				kendo.bind(renderTo, observable );					
 				var switcher = renderTo.find("input[name='warp-switcher']");				
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
