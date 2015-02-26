@@ -187,6 +187,8 @@
 								</div> <!-- / .panel-heading-controls -->
 							</div>
 							<div class="panel-body">
+								<div class="row no-margin">
+								<div class="col-sm-12">
 								<div class="form-group">
 									<label class="control-label" for="input-menu-name">코드</label>
 									<input type="text" class="form-control" id="input-menu-name">
@@ -201,7 +203,9 @@
 									<label class="control-label" for="input-menu-description">요약</label>
 									<input type="text" class="form-control" id="input-menu-description">
 									<p class="help-block">간단하게 설명을 입력하세요.</p>
-								</div>																
+								</div>		
+								</div>
+								</div>														
 							</div>
 							<div id="xml-editor" style="height:400px; position:relative;"></div>	
 						</div>
