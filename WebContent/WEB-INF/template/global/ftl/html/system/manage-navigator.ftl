@@ -91,13 +91,20 @@
 				});	
 				$(document).on("click","[data-action=update],[data-action=create]", function(e){		
 					var $this = $(this);		
-					alert( $this.html()  );
+					if( common.ui.defined($this.data("object-id")) ){
+						var objectId = $this.data("object-id");
+						if( objectId > 0 ){
+							openEditor(common.ui.grid(renderTo).dataSource.get(objectId));
+						}else{
+							openEditor(new common.ui.data.Menu())
+						}
+					}
 				});			
 			}	
 		}
 		
-		function openEditor(){
-		
+		function openEditor(source){
+			alert( common.ui.stringify( source ) );
 		}				
 						
 										
