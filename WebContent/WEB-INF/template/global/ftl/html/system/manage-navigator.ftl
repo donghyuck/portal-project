@@ -186,8 +186,22 @@
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
-							<div class="panel-body padding-sm" style="height: 43px;">
-							
+							<div class="panel-body padding-sm">
+								<div class="form-group">
+									<label class="control-label" for="inputDefault-4">Default input</label>
+									<input type="text" class="form-control" id="inputDefault-4">
+									<p class="help-block">Example block-level help text here.</p>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="inputDefault-4">Default input</label>
+									<input type="text" class="form-control" id="inputDefault-4">
+									<p class="help-block">Example block-level help text here.</p>
+								</div>
+								<div class="form-group">
+									<label class="control-label" for="inputDefault-4">Default input</label>
+									<input type="text" class="form-control" id="inputDefault-4">
+									<p class="help-block">Example block-level help text here.</p>
+								</div>																
 							</div>
 						</div>
 					
