@@ -205,20 +205,9 @@
 				});					
 				kendo.bind(renderTo, detailsModel );	
 				renderTo.data("model", detailsModel );		
-
 				var editor = ace.edit("xmleditor");		
 				editor.getSession().setMode("ace/mode/xml");
-				editor.getSession().setUseWrapMode(false);		
-								
-				var switcher = renderTo.find("input[name="warp-switcher"]');				
-				if( switcher.length > 0 ){
-					$(switcher).switcher();
-					$(switcher).change(function(){
-						editor.getSession().setUseWrapMode($(this).is(":checked"));
-					});		
-				}	
-				
-			
+				editor.getSession().setUseWrapMode(false);					
 			}						
 			renderTo.data("model").file.set("path", filePlaceHolder.path); 
 			renderTo.data("model").file.set("customized", filePlaceHolder.customized); 
