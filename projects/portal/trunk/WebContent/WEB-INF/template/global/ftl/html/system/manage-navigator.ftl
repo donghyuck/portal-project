@@ -203,6 +203,7 @@
 									<p class="help-block">간단하게 설명을 입력하세요.</p>
 								</div>																
 							</div>
+							<div id="xml-editor" style="height:400px; position:relative;"></div>	
 						</div>
 					
 					</div>
