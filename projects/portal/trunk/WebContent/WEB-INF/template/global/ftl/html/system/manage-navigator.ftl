@@ -188,18 +188,18 @@
 							</div>
 							<div class="panel-body padding-sm">
 								<div class="form-group">
-									<label class="control-label" for="inputDefault-4">Default input</label>
-									<input type="text" class="form-control" id="inputDefault-4">
+									<label class="control-label" for="input-menu-name">코드</label>
+									<input type="text" class="form-control" id="input-menu-name">
 									<p class="help-block">Example block-level help text here.</p>
 								</div>
 								<div class="form-group">
-									<label class="control-label" for="inputDefault-4">Default input</label>
-									<input type="text" class="form-control" id="inputDefault-4">
+									<label class="control-label" for="input-menu-title">이름</label>
+									<input type="text" class="form-control" id="input-menu-title">
 									<p class="help-block">Example block-level help text here.</p>
 								</div>
 								<div class="form-group">
-									<label class="control-label" for="inputDefault-4">Default input</label>
-									<input type="text" class="form-control" id="inputDefault-4">
+									<label class="control-label" for="input-menu-description">요약</label>
+									<input type="text" class="form-control" id="input-menu-description">
 									<p class="help-block">Example block-level help text here.</p>
 								</div>																
 							</div>
