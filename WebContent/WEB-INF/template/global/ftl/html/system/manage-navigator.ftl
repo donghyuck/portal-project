@@ -226,33 +226,21 @@
 								</ul>
 								<div class="tab-content">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
-
-								<div class="row no-margin">
-									<div class="col-sm-6">
 										<div class="form-group">
 											<label class="control-label" for="input-menu-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
 											<p class="help-block">중복되지 않는 코드 값을 입력하세요.</p>
 										</div>
-									</div>
-									<div class="col-sm-6">
 										<div class="form-group">
 											<label class="control-label" for="input-menu-title">이름</label>
 											<input type="text" class="form-control input-sm" id="input-menu-title" data-bind="value:menu.title">
 											<p class="help-block">이름을 입력하세요.</p>
-										</div>
-									</div>
-								</div>
-								<div class="row no-margin">
-									<div class="col-sm-12">
+										</div>	
 										<div class="form-group">
 											<label class="control-label" for="input-menu-description">요약</label>
 											<input type="text" class="form-control imput-sm" id="input-menu-description" data-bind="value:menu.description">
 											<p class="help-block">간단하게 설명을 입력하세요.</p>
-										</div>		
-									</div>
-								</div>	
-
+										</div>	
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
 <div id="xml-editor"></div>	
