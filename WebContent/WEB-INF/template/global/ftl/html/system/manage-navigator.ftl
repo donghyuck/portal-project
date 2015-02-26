@@ -186,7 +186,7 @@
 									</div>
 								</div> <!-- / .panel-heading-controls -->
 							</div>
-							<div class="panel-body padding-sm">
+							<div class="panel-body">
 								<div class="form-group">
 									<label class="control-label" for="input-menu-name">코드</label>
 									<input type="text" class="form-control" id="input-menu-name">
