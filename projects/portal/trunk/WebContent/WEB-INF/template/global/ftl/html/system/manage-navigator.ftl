@@ -190,17 +190,17 @@
 								<div class="form-group">
 									<label class="control-label" for="input-menu-name">코드</label>
 									<input type="text" class="form-control" id="input-menu-name">
-									<p class="help-block">Example block-level help text here.</p>
+									<p class="help-block">중복되지 않는 코드 값을 입력하세요.</p>
 								</div>
 								<div class="form-group">
 									<label class="control-label" for="input-menu-title">이름</label>
 									<input type="text" class="form-control" id="input-menu-title">
-									<p class="help-block">Example block-level help text here.</p>
+									<p class="help-block">이름을 입력하세요.</p>
 								</div>
 								<div class="form-group">
 									<label class="control-label" for="input-menu-description">요약</label>
 									<input type="text" class="form-control" id="input-menu-description">
-									<p class="help-block">Example block-level help text here.</p>
+									<p class="help-block">간단하게 설명하시오.</p>
 								</div>																
 							</div>
 						</div>
