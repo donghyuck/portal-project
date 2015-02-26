@@ -220,14 +220,14 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label class="control-label" for="input-menu-name">코드</label>
-										<input type="text" class="form-control" id="input-menu-name" data-bind="value:menu.name">
+										<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
 										<p class="help-block">중복되지 않는 코드 값을 입력하세요.</p>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<label class="control-label" for="input-menu-title">이름</label>
-										<input type="text" class="form-control" id="input-menu-title" data-bind="value:menu.title">
+										<input type="text" class="form-control input-sm" id="input-menu-title" data-bind="value:menu.title">
 										<p class="help-block">이름을 입력하세요.</p>
 									</div>
 								</div>
