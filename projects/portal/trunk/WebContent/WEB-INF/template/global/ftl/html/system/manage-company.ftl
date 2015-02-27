@@ -123,7 +123,7 @@
 									alert(1);
 									//var tr = $(e.target).closest("tr"); 
 									//this.editRow(tr);
-								}
+								},
 								text: { update: "저장", cancel: "취소"}
 							}], 
 							title: "&nbsp;", 
