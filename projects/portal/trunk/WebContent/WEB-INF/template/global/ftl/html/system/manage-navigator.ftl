@@ -263,7 +263,7 @@
 										</div>	
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
-										<span class="text-light-gray text-semibold">줄바꿈 설정/해지</span>
+										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >									
 										<div id="xml-editor"></div>	
 									</div>
