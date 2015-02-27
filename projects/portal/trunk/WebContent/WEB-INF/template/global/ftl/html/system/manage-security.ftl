@@ -61,8 +61,36 @@
 		
 		
 		function createRoleGrid(){
-		
-		alert(1);
+			var renderTo = $("#security-role-grid");
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/security/data/mgmt/role/list.json?output=json', type:'post' }
+						},						
+						batch: false, 
+						pageSize: 15,
+						schema: {
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.Role
+						}
+					},
+					columns: [
+						{ title: "ID", field: "roleId",  width:40 },
+						{ title: "이름", field: "name" },
+						{ title: "설명",   field: "description" }
+					],
+					pageable: false,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
+					resizable: true,
+					editable : false,
+					scrollable: true,
+					height: 300,
+					change: function(e) {
+					}	
+				});
+			}					
 		}
 		
 		-->
@@ -111,7 +139,7 @@
 											<i class="fa fa-lock bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
-											
+											<div id="security-role-grid" class=""></div>
 										</div>
 									</div>													
 								</div>								
