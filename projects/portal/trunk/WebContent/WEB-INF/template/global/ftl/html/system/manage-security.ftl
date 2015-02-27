@@ -45,6 +45,14 @@
 			}
 		}]);
 		
+		function createSecurityTabPanels(){		
+			$('#myTab').on( 'show.bs.tab', function (e) {				
+				var target = $(e.target);
+			
+			});
+		}
+		
+		
 		-->
 		</script> 		 
 		<style>
@@ -79,7 +87,7 @@
 								<span class="panel-title"><i class="fa fa-info"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
 									<li>
-										<a href="#bs-tabdrop-tab1" data-toggle="tab">롤</a>
+										<a href="#bs-tabdrop-tab1" data-toggle="tab" data-action="role">롤</a>
 									</li>			
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
