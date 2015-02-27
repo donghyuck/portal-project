@@ -120,10 +120,8 @@
 					update: function(e){
 						var $this = this;
 						var btn = $(e.target);		
-						btn.button('loading');
-						
-						$this.menu.menuData = ace.edit("xml-editor").getValue();
-						
+						btn.button('loading');						
+						$this.menu.menuData = ace.edit("xml-editor").getValue();						
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
 							{
@@ -147,7 +145,7 @@
 									kendo.ui.progress(renderTo, false);
 								},
 								complete : function(e){
-									//$this.refresh();
+									common.ui.grid($("#navigator-menu-grid")).dataSource.read();									
 									btn.button('reset');
 								}
 							}
