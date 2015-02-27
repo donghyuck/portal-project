@@ -220,6 +220,9 @@
 			padding-top: 20px;
 		}
 		
+		#navigator-menu-grid.k-grid {
+			height:600px;
+		}
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
