@@ -255,19 +255,8 @@
 					</div>
 					
 					<div class="list-and-detail-contanier p-xs">									
-						<div id="navigator-menu-details" class="panel colourable">
-						
-							<div class="panel-heading hidden">
-								<span class="panel-title"><i class="fa fa-pencil"></i></span>
-								<div class="panel-heading-controls">
-									<span class="panel-heading-text" style="font-size:11px;font-weight:600;margin-top:3px;">줄바꿈 설정/해지</span>
-									<div class="switcher switcher-sm">
-										<input type="checkbox" data-class="switcher-sm" name="warp-switcher">
-									</div>
-								</div> <!-- / .panel-heading-controls -->
-							</div>
+						<div id="navigator-menu-details" class="panel colourable" style="display:none;">						
 							<div class="panel-body">
-
 								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
