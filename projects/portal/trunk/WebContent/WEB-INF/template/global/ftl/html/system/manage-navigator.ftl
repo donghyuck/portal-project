@@ -227,17 +227,13 @@
 		#navigator-menu-grid.k-grid {
 			height:600px;
 		}
+		
 		.tab-pane label {
 			height:20px;
 		}
 	
-		.k-grid .k-selectable td > .btn, .k-grid .k-selectable tr[aria-selected="false"] > td .btn, .k-grid .k-selectable td > a.btn, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn{
-			cursor: not-allowed;
-			pointer-events: none;
+		#navigator-menu-grid .k-grid .k-selectable td > .btn, .k-grid .k-selectable tr[aria-selected="false"] > td .btn, .k-grid .k-selectable td > a.btn, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn{
 			opacity: 0;
-			filter: alpha(opacity=65);
-			-webkit-box-shadow: none;
-			box-shadow: none;
 		}	
 			
 		</style>
