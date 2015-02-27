@@ -176,6 +176,19 @@
 				margin-left: 400px;
 			}
 		}		
+		
+		.panel-body ul.nav.nav-tabs {
+			height: 36px;
+			right: 20px;
+			position: absolute;
+		}
+		
+		.panel-body .tab-content {
+			border-top: 2px solid #e4e4e4;
+			margin-top: 34px;
+			padding-top: 20px;
+		}
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -224,10 +237,10 @@
 							</div>
 							<div class="panel-body">
 
-								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">									
-									<li class="pull-right"><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>
-									<li class="pull-right"><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
-									<li class="pull-right"><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>									
+								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
+									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
+									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
+									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
 								</ul>
 								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
@@ -248,7 +261,7 @@
 										</div>	
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
-<div id="xml-editor"></div>	
+										<div id="xml-editor"></div>	
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<p>Howdy, I'm in Section 3.</p>
