@@ -130,7 +130,8 @@
 					$(switcher).change(function(){
 						editor.getSession().setUseWrapMode($(this).is(":checked"));
 					});		
-				}	
+				}					
+				renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 			}
 			
 			renderTo.data("model").setSource( source );
@@ -138,8 +139,6 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 
 			
-			renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
-			//$('#database-details-tabs a:first').tab('show');		
 		}				
 						
 										
