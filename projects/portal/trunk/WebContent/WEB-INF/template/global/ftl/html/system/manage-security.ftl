@@ -86,7 +86,7 @@
 					editable : false,
 					/*selectable : "row",*/
 					scrollable: true,
-					height: 600,
+					height: 300,
 					change: function(e) {
 					}	
 				});
@@ -96,7 +96,7 @@
 		-->
 		</script> 		 
 		<style>
-			.stat-panel .k-gird {
+			.stat-cell .k-gird {
 				height:300px;
 				border-top-width: 0 !important;
 				border-right-width: 0 !important;
