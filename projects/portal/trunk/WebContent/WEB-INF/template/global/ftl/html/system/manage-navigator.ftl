@@ -3,6 +3,7 @@
 <head>
 		<title>관리자 메인</title>		
 		<link  rel="stylesheet" type="text/css"  href="<@spring.url "/styles/common.admin/pixel/pixel.admin.style.css"/>" />
+		<#compress>		
 		<script type="text/javascript">
 		<!--		
 		yepnope([{
@@ -233,6 +234,7 @@
 		}
 		
 		</style>
+		</#compress>		
 	</head>
 	<body class="theme-default main-menu-animated">
 		<div id="main-wrapper">
