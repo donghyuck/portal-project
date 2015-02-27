@@ -177,7 +177,7 @@
 		<style>
 		
 		#xml-editor	 {
-			height:500px;
+			height:550px;
 			width:100%;
 		}	
 
