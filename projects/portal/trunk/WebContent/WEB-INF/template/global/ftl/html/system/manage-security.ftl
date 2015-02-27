@@ -84,8 +84,9 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
+					/*selectable : "row",*/
 					scrollable: true,
-					height: 300,
+					height: 600,
 					change: function(e) {
 					}	
 				});
