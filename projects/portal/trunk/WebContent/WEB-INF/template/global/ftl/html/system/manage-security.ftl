@@ -139,7 +139,7 @@
 											<i class="fa fa-lock bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
-											<div id="security-role-grid" class=""></div>
+											<div id="security-role-grid"></div>
 										</div>
 									</div>													
 								</div>								
