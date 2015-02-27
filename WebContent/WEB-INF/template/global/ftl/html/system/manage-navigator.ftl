@@ -263,6 +263,12 @@
 										</div>	
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
+									
+										<span class="panel-heading-text" style="font-size:11px;font-weight:600;margin-top:3px;">줄바꿈 설정/해지</span>
+										<div class="switcher switcher-sm">
+											<input type="checkbox" data-class="switcher-sm" name="warp-switcher">
+										</div>
+									
 										<div id="xml-editor"></div>	
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
