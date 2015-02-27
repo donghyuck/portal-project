@@ -20,7 +20,7 @@
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
-			'<@spring.url "/js/bootstrap/3.3.1/bootstrap.min.js"/>',			
+			'<@spring.url "/js/bootstrap/3.3.1/bootstrap.min.js" />',			
 			'<@spring.url "/js/common.plugins/fastclick.js"/>', 
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 
 			'<@spring.url "/js/common.admin/pixel.admin.min.js"/>',
