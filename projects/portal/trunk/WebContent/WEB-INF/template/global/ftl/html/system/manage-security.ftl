@@ -53,6 +53,7 @@
 						case "role" :
 						createRoleGrid();
 						break;
+					}	
 				}			
 			});
 		}
