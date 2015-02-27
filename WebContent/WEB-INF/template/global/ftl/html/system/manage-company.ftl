@@ -117,7 +117,7 @@
 							name: "edit",
 								text: "변경",
 								/*className: "btn btn-xs btn-labeled btn-info",*/
-								template : '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>',
+								/*template : '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>',*/
 								click: function(e){
 									e.stopPropagation();
 									alert(1);
