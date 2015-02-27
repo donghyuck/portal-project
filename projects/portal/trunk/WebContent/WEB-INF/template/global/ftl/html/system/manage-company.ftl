@@ -115,7 +115,7 @@
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
 						{ command: [{ 
 								name:"edit",  
-								template : '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>',
+								template : { edit: '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'},
 								text: { edit: "수정", update: "저장", cancel: "취소"} 
 							}], 
 							title: "&nbsp;", 
