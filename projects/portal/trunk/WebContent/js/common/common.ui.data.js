@@ -282,6 +282,12 @@
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" }
 		    },
+			formattedCreationDate : function(){
+		    	return kendo.toString(this.get("creationDate"), "g");
+		    },
+		    formattedModifiedDate : function(){
+		    	return kendo.toString(this.get("modifiedDate"), "g");
+		    },		    
 			copy : function ( target ){
 				target.menuId = this.get("menuId");
 				target.set("name", this.get("name"));
