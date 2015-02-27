@@ -114,9 +114,8 @@
 						{ field: "domainName",   title: "도메인",  filterable: true, sortable: false,  width: 100 }, 
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
 						{ command: [{ 
-								name:"edit",  
-								/*template : '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>',*/
-								template : '<a herf="\\#" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+								name:"edit2",  
+								template : '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>',
 								click: function(e){
 									alert(e);
 									var tr = $(e.target).closest("tr"); 
