@@ -96,12 +96,8 @@
 		-->
 		</script> 		 
 		<style>
-			.table-light .table thead th {
-				text-align: center;
-			}
-			
-			table-light .table-footer {
-				margin-top:-20px;
+			.k-gird {
+				height:300px;
 			}
 			
 		</style>
