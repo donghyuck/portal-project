@@ -303,7 +303,7 @@
 							
 							-->
 							<div class="panel-footer text-right">
-								<button class="btn btn-flat btn-primary" data-bind="click:update">저장</button>
+								<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 							</div>
 						</div>
 					
