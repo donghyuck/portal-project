@@ -106,7 +106,7 @@
 		function openEditor(source){
 			var renderTo = $("#navigator-menu-details");
 			
-			renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
+			
 			
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
@@ -138,7 +138,7 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 
 			
-			
+			renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 			//$('#database-details-tabs a:first').tab('show');		
 		}				
 						
