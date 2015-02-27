@@ -117,7 +117,7 @@
 							name: "edit",
 								className: "btn btn-xs btn-info",
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
-								text: { update: "저장", cancel: "취소"}
+								text: { edit: "변경", update: "저장", cancel: "취소"}
 							}
 
 							
