@@ -111,7 +111,7 @@
 					setSource : function(source){
 						source.copy(this.menu);
 						ace.edit("xml-editor").setValue(this.menu.menuData);
-					}
+					},
 					update: function(){
 						var $this = this;
 						var btn = $(e.target);		
