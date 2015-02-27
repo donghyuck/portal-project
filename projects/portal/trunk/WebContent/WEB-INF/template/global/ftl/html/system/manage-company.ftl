@@ -119,8 +119,8 @@
 								click: function(e){
 									e.stopPropagation();
 									alert(e);
-									var tr = $(e.target).closest("tr"); 
-									this.editRow(tr);
+									//var tr = $(e.target).closest("tr"); 
+									//this.editRow(tr);
 								}								
 								/*,
 								text: { update: "저장", cancel: "취소"} */
