@@ -263,8 +263,8 @@
 										
 														<ul class="list-unstyled margin-bottom-30">
 															
-															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.formattedCreationDate"></span></li>
-															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.formattedModifiedDate"></span></li>
+															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
+															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.modifiedDate"></span></li>
 															
 														</ul>
 										
