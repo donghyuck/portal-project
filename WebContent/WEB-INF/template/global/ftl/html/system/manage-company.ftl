@@ -115,7 +115,6 @@
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
 						{ command: [{ 
 							name: "edit",
-								text: "변경",
 								/*className: "btn btn-xs btn-labeled btn-info",*/
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								click: function(e){
@@ -124,8 +123,14 @@
 									//var tr = $(e.target).closest("tr"); 
 									//this.editRow(tr);
 								},
-								text: { update: "저장", cancel: "취소"}
-							}], 
+								/*text: { update: "저장", cancel: "취소"}*/
+							},
+							{
+								name: "update",
+								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-update"><span class="btn-label icon fa fa-floppy-o"></span> 저장</a>',
+							}
+							
+							], 
 							title: "&nbsp;", 
 							width: 180  
 						}
