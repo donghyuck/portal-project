@@ -233,7 +233,7 @@
 		}
 	
 		#navigator-menu-grid .k-grid .k-selectable td > .btn, .k-grid .k-selectable tr[aria-selected="false"] > td .btn, .k-grid .k-selectable td > a.btn, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn{
-			opacity: 0;
+			opacity: 0!important;
 		}	
 			
 		</style>
