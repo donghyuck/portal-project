@@ -96,8 +96,11 @@
 		-->
 		</script> 		 
 		<style>
-			.k-gird {
+			.stat-panel .k-gird {
 				height:300px;
+				border-top-width: 0 !important;
+				border-right-width: 0 !important;
+				border-bottom-width: 0 !important;
 			}
 			
 		</style>
