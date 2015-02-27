@@ -96,7 +96,7 @@
 		-->
 		</script> 		 
 		<style>
-			.stat-cell .k-gird {
+			.stat-cell > .k-gird {
 				height:300px;
 				border-top-width: 0 !important;
 				border-right-width: 0 !important;
