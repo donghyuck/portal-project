@@ -115,6 +115,7 @@
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
 						{ command: [{ 
 							name: "edit",
+								text: "변경",
 								template : '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>',
 								click: function(e){
 									e.stopPropagation();
