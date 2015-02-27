@@ -81,7 +81,6 @@
 						{ title: "이름", field: "name" },
 						{ title: "설명",   field: "description" }
 					],
-					pageable: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
