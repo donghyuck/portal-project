@@ -258,7 +258,7 @@
 				text-align: center;
 			}
 			
-			table-light .table-footer {
+			.table-light .table-footer {
 				margin-top:-20px;
 			}
 			
