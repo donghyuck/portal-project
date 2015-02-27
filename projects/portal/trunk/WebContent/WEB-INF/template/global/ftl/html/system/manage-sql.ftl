@@ -244,7 +244,7 @@
 		</script> 		 
 		<style>
 		#xmleditor.panel-body{
-			min-height:500px;
+			min-height:577px;
 		}	
 		
 		.k-treeview {
