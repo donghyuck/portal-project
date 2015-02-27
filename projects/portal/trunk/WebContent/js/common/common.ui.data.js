@@ -252,7 +252,7 @@
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" }
 		    }
-		})		
+		});		
 
 	common.ui.data.Template = kendo.data.Model.define( {
 	    id: "templateId", // the identifier of the model
