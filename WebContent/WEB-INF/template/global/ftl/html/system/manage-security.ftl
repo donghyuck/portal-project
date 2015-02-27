@@ -48,7 +48,12 @@
 		function createSecurityTabPanels(){		
 			$('#myTab').on( 'show.bs.tab', function (e) {				
 				var target = $(e.target);
-			
+				if( target.data("action") ){
+					switch( target.data("action") ){
+						case "role" :
+						
+						break;
+				}			
 			});
 		}
 		
