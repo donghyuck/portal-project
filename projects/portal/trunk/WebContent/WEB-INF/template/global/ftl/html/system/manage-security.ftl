@@ -79,147 +79,23 @@
 								<span class="panel-title"><i class="fa fa-info"></i></span>
 								<ul class="nav nav-tabs nav-tabs-xs" id="myTab">
 									<li>
-										<a href="#license-info" data-toggle="tab">라이센스</a>
-									</li>
-									<li>
-										<a href="#system-info" data-toggle="tab">시스템 환경</a>
-									</li>
-									<li>
-										<a href="#library-info" data-toggle="tab">라이브러리</a>
-									</li>					
+										<a href="#bs-tabdrop-tab1" data-toggle="tab">롤</a>
+									</li>			
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->					
 							<div class="tab-content">
-								<div class="tab-pane active" id="license-info">
+								<div class="tab-pane" id="bs-tabdrop-tab1">
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-sm-3 hidden-xs text-center">
 											<!-- Stat panel bg icon -->
 											<i class="fa fa-certificate bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
-											<p class="text-success m-sm"><i class="fa fa-info"></i>  설치된 라이센스 정보입니다.</p>	
-													<table class="table table-hover license-details">
-														<tbody>
-															<tr>
-																<th>발급 ID</th>
-																<td><span data-bind="text: licenseId"></span></td>
-															</tr>								
-															<tr>
-																<th>제품</th>
-																<td><span data-bind="text: name"></span></td>
-															</tr>			
-															<tr>
-																<th>버전</th>
-																<td><span data-bind="text: version.versionString"></span></td>
-															</tr>				
-															<tr>
-																<th>에디션</th>
-																<td><span class="label label-info"><span data-bind="text: edition"></span></span></td>
-															</tr>																
-															<tr>
-																<th>타입</th>
-																<td><span class="label label-danger"><span data-bind="text: type"></span></span></td>
-															</tr>																	
-															<tr>
-																<th>발급일</th>
-																<td><span data-bind="text: creationDate"></span></td>
-															</tr>	
-															<tr>
-																<th>발급대상</th>
-																<td><span data-bind="text: client.company"></span>(<span data-bind="text: client.name"></span>)</td>
-															</tr>	
-													 	</tbody>
-													</table>		
+											
 										</div>
 									</div>													
-								</div>
-								<div class="tab-pane" id="system-info">
-									<div class="stat-panel no-margin-b">
-										<div class="stat-cell col-xs-3 text-center">
-											<!-- Stat panel bg icon -->
-											<i class="fa fa-server bg-icon bg-icon-left"></i>								
-										</div> <!-- /.stat-cell -->
-										<div class="stat-cell col-xs-9 no-padding valign-bottom">		
-											<p class="text-success m-sm"><i class="fa fa-info"></i>  시스템 환경 정보는 자바 가상머신에서 제공하는 정보를 의미합니다. </p>
-											<table class="table table-hover system-details">
-													<tbody>
-														<tr>
-															<th>운영시스템</th>
-															<td><span data-bind="text: operatingSystem"></span></td>
-														</tr>
-														<tr>
-															<th>시스템 언어</th>
-															<td><span data-bind="text: systemLanguage"></span></td>
-														</tr>						
-														<tr>
-															<th>표준 시간대</th>
-															<td><span data-bind="text: systemTimezone"></span></td>
-														</tr>																			
-														<tr>
-															<th>시스템 날짜</th>
-															<td><span data-bind="text: date"></span></td>
-														</tr>
-														<tr>
-															<th>시스템 시간</th>
-															<td><span data-bind="text: time"></span></td>
-														</tr>							
-														<tr>
-															<th>임시 디렉터리</th>
-															<td><span data-bind="text: tempDirectory"></span></td>
-														</tr>									
-														<tr>
-															<th>파일 시스템 인코딩</th>
-															<td><span data-bind="text: fileSystemEncoding"></span></td>
-														</tr>
-														<tr>
-															<th>작업 디렉터리</th>
-															<td><span data-bind="text: workingDirectory"></span></td>
-														</tr>										
-														<tr>
-															<th>자바 실행환경</th>
-															<td><span data-bind="text: javaRuntime"></span></td>
-														</tr>			
-														<tr>
-															<th width="150">자바 벤더</th>
-															<td><span data-bind="text: javaVendor"></span></td>
-														</tr>		
-														<tr>
-															<th>자바 버전</th>
-															<td><span data-bind="text: javaVersion"></span></td>
-														</tr>			
-														<tr>
-															<th>가상머신</th>
-															<td><span data-bind="text: javaVm"></span></td>
-														</tr>	
-														<tr>
-															<th>가상머신 벤더</th>
-															<td><span data-bind="text: jvmVendor"></span></td>
-														</tr>
-														<tr>
-															<th>가상머신 버전</th>
-															<td><span data-bind="text: jvmVersion"></span></td>
-														</tr>																				
-														<tr>
-															<th>가상머신 구현 버전</th>
-															<td><span data-bind="text: jvmImplementationVersion"></span></td>
-														</tr>											
-														<tr>
-															<th>가상머신 옵션</th>
-															<td><span data-bind="text: jvmInputArguments"></span></td>
-														</tr>											
-													</tbody>
-											</table>	
-										</div>
-									</div>
-								</div>
-								<div class="tab-pane" id="library-info">
-									<div id="library-info-grid" class="no-border-hr no-border-b"></div>
-								</div>	
-								<div class="tab-pane" id="database-info">
-									<div id="database-info-grid" class="no-border-hr no-border-b"></div>
-								</div>		
+								</div>								
 							</div><!-- tab contents end -->
-							<div class="panel-footer no-padding-vr"></div>
 						</div><!-- /.panel -->
 					</div>
 				</div>	
