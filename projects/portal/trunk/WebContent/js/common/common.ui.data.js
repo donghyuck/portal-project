@@ -246,9 +246,10 @@
 	common.ui.data.Role = kendo.data.Model.define( {
 		    id: "roleId", // the identifier of the model
 		    fields: {
-		    	roleId: { type: "number", editable: false, defaultValue: -1  },
-		        name: { type: "string", editable: true, validation: { required: true }},
-		        description: { type: "string", editable: true },
+		    	roleId: { type: "number", defaultValue: 0  },
+		        name: { type: "string", validation: { required: true }},
+		        description: { type: "string"},
+		        mask: { type: "number", defaultValue: 0  },
 		        modifiedDate: { type: "date"},
 		        creationDate: { type: "date" }
 		    }
