@@ -136,6 +136,8 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 
 			
+			renderTo.find("ul.nav.nav-tabs a:last");	
+			//$('#database-details-tabs a:first').tab('show');		
 		}				
 						
 										
