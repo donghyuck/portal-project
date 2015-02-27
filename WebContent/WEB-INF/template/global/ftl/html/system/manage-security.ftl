@@ -108,7 +108,7 @@
 									<div class="stat-panel no-margin-b">
 										<div class="stat-cell col-sm-3 hidden-xs text-center">
 											<!-- Stat panel bg icon -->
-											<i class="fa fa-certificate bg-icon bg-icon-left"></i>								
+											<i class="fa fa-lock bg-icon bg-icon-left"></i>								
 										</div> <!-- /.stat-cell -->
 										<div class="stat-cell col-sm-9 no-padding valign-bottom">		
 											
