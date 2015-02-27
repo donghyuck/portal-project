@@ -231,13 +231,7 @@
 		.tab-pane label {
 			height:20px;
 		}
-	
-		#navigator-menu-grid.k-grid .k-selectable td > .btn, #navigator-menu-grid.k-grid .k-selectable, #navigator-menu-grid.k-grid .k-selectable td > .btn, #navigator-menu-grid.k-grid .k-selectable tr[aria-selected="false"] > td .btn, #navigator-menu-grid.k-grid .k-selectable td > a.btn, #navigator-menu-grid.k-grid .k-selectable tr[aria-selected="false"] > td a.btn{
-			opacity: 0!important;
-		}	
-		#navigator-menu-grid.k-grid .k-selectable td > .btn, #navigator-menu-grid.k-grid .k-selectable tr[aria-selected="true"] > td .btn, #navigator-menu-grid.k-grid .k-selectable td > a.btn, #navigator-menu-grid.k-grid .k-selectable tr[aria-selected="true"] > td a.btn{
-			opacity: 1!important;
-		}			
+		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
