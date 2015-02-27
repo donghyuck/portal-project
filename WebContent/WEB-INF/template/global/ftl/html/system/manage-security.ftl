@@ -66,7 +66,7 @@
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/security/data/mgmt/role/list.json?output=json', type:'post' }
+							read: { url:'<@spring.url "/secure/data/mgmt/role/list.json?output=json"/>', type:'post' }
 						},						
 						batch: false, 
 						pageSize: 15,
