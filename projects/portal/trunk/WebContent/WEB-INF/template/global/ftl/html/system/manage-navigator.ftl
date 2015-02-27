@@ -80,10 +80,14 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
-					/*selectable : "row",*/
+					selectable : "row",
 					scrollable: true,
 					height: 600,
 					change: function(e) {
+					},
+					dataBound: function(e) {
+						if ($("#navigator-menu-details").is(":visible")) 
+							$("#navigator-menu-details").fadeOut();	 						
 					}
 				});
 				renderTo.find("button[data-action=refresh]").click(function(e){
