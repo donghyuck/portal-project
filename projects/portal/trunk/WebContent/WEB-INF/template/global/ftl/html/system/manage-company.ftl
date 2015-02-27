@@ -117,10 +117,12 @@
 								name:"edit",  
 								template : '<button type="button" class="btn btn-xs btn-labeled btn-info"><span class="btn-label icon fa fa-pencil"></span> 변경</button>',
 								click: function(e){
+									alert(e);
 									var tr = $(e.target).closest("tr"); 
-									var data = this.dataItem(tr);
 									this.editRow(tr);
-								}/*,
+								}
+								
+								/*,
 								text: { update: "저장", cancel: "취소"} */
 							}], 
 							title: "&nbsp;", 
