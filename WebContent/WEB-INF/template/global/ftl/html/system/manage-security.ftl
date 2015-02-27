@@ -7,27 +7,27 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/common.plugins/animate.css"/>',
-			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css"/>',			
-			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css"/>',
-			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.themes.css"/>',
-			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css"/>',	
-			
-			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
-			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
-			'<@spring.url "/js/kendo/kendo.dataviz.min.js"/>',
-			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
-			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',
-			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css" />',
+			'css!<@spring.url "/styles/common.plugins/animate.css" />',
+			'css!<@spring.url "/styles/jquery.jgrowl/jquery.jgrowl.min.css" />',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css" />',			
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css" />',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.themes.css" />',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css" />',				
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js" />',
+			'<@spring.url "/js/kendo/kendo.web.min.js" />',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js" />',
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js" />',
+			'<@spring.url "/js/jquery.jgrowl/jquery.jgrowl.min.js" />',			
 			'<@spring.url "/js/bootstrap/3.3.1/bootstrap.min.js" />',			
-			'<@spring.url "/js/common.plugins/fastclick.js"/>', 
-			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 
-			'<@spring.url "/js/common.admin/pixel.admin.min.js"/>',
-			'<@spring.url "/js/common/common.ui.core.js"/>',							
-			'<@spring.url "/js/common/common.ui.data.js"/>',
-			'<@spring.url "/js/common/common.ui.community.js"/>',
-			'<@spring.url "/js/common/common.ui.admin.js"/>'
+			'<@spring.url "/js/common.plugins/fastclick.js" />', 
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js" />', 
+			'<@spring.url "/js/common.admin/pixel.admin.min.js" />',
+			'<@spring.url "/js/common/common.ui.core.js" />',							
+			'<@spring.url "/js/common/common.ui.data.js" />',
+			'<@spring.url "/js/common/common.ui.community.js" />',
+			'<@spring.url "/js/common/common.ui.admin.js" />',	
+			'<@spring.url "/js/ace/ace.js" />'	
 			],
 			complete: function() {
 				var currentUser = new common.ui.data.User();
