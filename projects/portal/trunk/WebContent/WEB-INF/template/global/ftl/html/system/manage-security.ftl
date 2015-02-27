@@ -87,7 +87,7 @@
 					editable : false,
 					/*selectable : "row",*/
 					scrollable: true,
-					height: 300,
+					height: 500,
 					change: function(e) {
 					}	
 				});
@@ -105,7 +105,9 @@
 				border-right-width: 0 !important;
 				border-bottom-width: 0 !important;				
 			}
-
+			.tab-pane .k-grid{
+				min-height: 300px;
+			} 
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
