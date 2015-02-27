@@ -147,6 +147,7 @@
 		
 		#xml-editor	 {
 			height:500px;
+			width:100%;
 		}	
 
 		.list-and-detail{
