@@ -51,12 +51,17 @@
 				if( target.data("action") ){
 					switch( target.data("action") ){
 						case "role" :
-						
+						createRoleGrid();
 						break;
 				}			
 			});
 		}
 		
+		
+		function createRoleGrid(){
+		
+		alert(1);
+		}
 		
 		-->
 		</script> 		 
