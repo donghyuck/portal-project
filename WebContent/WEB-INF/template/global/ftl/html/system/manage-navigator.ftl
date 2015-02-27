@@ -223,6 +223,9 @@
 		#navigator-menu-grid.k-grid {
 			height:600px;
 		}
+		.tab-pane label {
+			height:18px;
+		}
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
@@ -282,7 +285,7 @@
 											<input type="text" class="form-control imput-sm" id="input-menu-location" data-bind="value:menu.location">
 											<p class="help-block">메뉴 위치정보를 입력하세요.</p>
 										</div>	
-										<div class="checkbox" style="margin: 0; height:35px;">
+										<div class="checkbox" style="margin: 0;">
 											<label>
 												<input type="checkbox" value="" class="px" data-bind="checked: menu.enabled">
 												<span class="lbl">사용 여부</span>
