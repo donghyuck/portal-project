@@ -104,16 +104,46 @@
 		}
 		
 		function openEditor(source){
-			var renderTo = $("#navigator-menu-details");
-			
-			
-			
+			var renderTo = $("#navigator-menu-details");			
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					menu : new common.ui.data.Menu(),
 					setSource : function(source){
 						source.copy(this.menu);
 						ace.edit("xml-editor").setValue(this.menu.menuData);
+					}
+					update: function(){
+						var $this = this;
+						var btn = $(e.target);		
+						$this.menu.menuData = ace.edit("xml-editor").getValue();
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.menu ),
+								contentType : "application/json",
+								success : function(response){},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									//$this.refresh();
+									btn.button('reset');
+								}
+							}
+						);	
 					}
 				});		
 								
@@ -284,7 +314,7 @@
 							
 							-->
 							<div class="panel-footer text-right">
-								<button class="btn btn-flat btn-primary">저장</button>
+								<button class="btn btn-flat btn-primary" data-bind="click:update">저장</button>
 							</div>
 						</div>
 					
