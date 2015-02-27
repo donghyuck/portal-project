@@ -123,13 +123,7 @@
 									//var tr = $(e.target).closest("tr"); 
 									//this.editRow(tr);
 								},
-								/*text: { update: "저장", cancel: "취소"}*/
-								command:[
-															{
-								name: "update",
-								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-update"><span class="btn-label icon fa fa-floppy-o"></span> 저장</a>',
-							}
-								]
+								text: { update: "저장", cancel: "취소"}
 							}
 
 							
