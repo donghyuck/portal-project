@@ -120,8 +120,8 @@
 									var tr = $(e.target).closest("tr"); 
 									var data = this.dataItem(tr);
 									this.editRow(tr);
-								},
-								text: { update: "저장", cancel: "취소"} 
+								}/*,
+								text: { update: "저장", cancel: "취소"} */
 							}], 
 							title: "&nbsp;", 
 							width: 180  
