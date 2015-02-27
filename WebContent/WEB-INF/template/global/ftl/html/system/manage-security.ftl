@@ -40,7 +40,7 @@
 						e.data.copy(targetCompany);
 					}
 				});		
-			
+				createSecurityTabPanels();
 				// END SCRIPT
 			}
 		}]);
@@ -56,6 +56,7 @@
 					}	
 				}			
 			});
+			$('#myTab a:first').tab('show');							
 		}
 		
 		
