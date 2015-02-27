@@ -224,7 +224,7 @@
 			height:600px;
 		}
 		.tab-pane label {
-			height:18px;
+			height:20px;
 		}
 		</style>
 	</head>
@@ -290,7 +290,8 @@
 												<input type="checkbox" value="" class="px" data-bind="checked: menu.enabled">
 												<span class="lbl">사용 여부</span>
 											</label>
-										</div>										
+										</div>			
+										<hr/>							
 														<ul class="list-unstyled margin-bottom-30">
 															
 															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
