@@ -260,6 +260,14 @@
 											<input type="text" class="form-control imput-sm" id="input-menu-description" data-bind="value:menu.description">
 											<p class="help-block">간단하게 설명을 입력하세요.</p>
 										</div>	
+										
+														<ul class="list-unstyled margin-bottom-30">
+															
+															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.formattedCreationDate"></span></li>
+															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.formattedModifiedDate"></span></li>
+															
+														</ul>
+										
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
