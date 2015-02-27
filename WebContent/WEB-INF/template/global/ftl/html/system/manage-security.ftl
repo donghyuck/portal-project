@@ -96,6 +96,7 @@
 		-->
 		</script> 		 
 		<style>
+		
 			#security-role-grid.k-gird {
 				height:300px;
 				border-top-width: 0 !important;
