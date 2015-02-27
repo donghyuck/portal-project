@@ -115,14 +115,8 @@
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
 						{ command: [{ 
 							name: "edit",
-								/*className: "btn btn-xs btn-labeled btn-info",*/
+								className: "btn btn-xs btn-info",
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
-								click: function(e){
-									e.stopPropagation();
-									alert(1);
-									//var tr = $(e.target).closest("tr"); 
-									//this.editRow(tr);
-								},
 								text: { update: "저장", cancel: "취소"}
 							}
 
