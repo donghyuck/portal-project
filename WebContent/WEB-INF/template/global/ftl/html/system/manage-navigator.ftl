@@ -230,6 +230,17 @@
 		.tab-pane label {
 			height:20px;
 		}
+	
+		.k-grid .k-selectable td > .btn, .k-grid .k-selectable tr[aria-selected="false"] > td .btn, .k-grid .k-selectable td > a.btn, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn{
+			cursor: not-allowed;
+			pointer-events: none;
+			opacity: .65;
+			filter: alpha(opacity=65);
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			display:none;
+		}
+			
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
