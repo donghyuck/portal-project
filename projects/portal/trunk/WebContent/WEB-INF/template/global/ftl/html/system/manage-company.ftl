@@ -431,7 +431,6 @@
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
 									<span class="panel-title"  data-bind="text:company.description"></span>
-									
 								</div>
 								<table class="table">
 									<tbody>						
@@ -454,7 +453,7 @@
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h">	
 							<div class="details-content">
-								<div class="panel colourable">
+								<div class="panel panel-transparent">
 									<div class="panel-heading">
 										<span class="panel-title"><i class="fa fa-info"></i></span>							
 										<ul id="myTab" class="nav nav-tabs nav-tabs-xs">
