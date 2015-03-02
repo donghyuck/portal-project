@@ -101,7 +101,8 @@
 						],				     
 						change: function(e) {
 						}
-					});				
+					});
+					common.ui.grid(renderTo).dataSource.read();				
 				}else{
 					common.ui.grid(renderTo, {
 						dataSource: {	
