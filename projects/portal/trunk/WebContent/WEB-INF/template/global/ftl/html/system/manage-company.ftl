@@ -398,11 +398,7 @@
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
 				</ul>
 				<div class="page-header bg-dark-gray">		
-					<div class="row">
-						<h1 class="col-xs-12 col-sm-6 text-center text-left-sm"><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}
-							<p><small><i class="fa fa-quote-left"></i> ${selectedMenu.description} <i class="fa fa-quote-right"></i></small></p>
-						</h1>						
-					</div>				
+					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>		
 				</div><!-- / .page-header -->
 				<div class="row">				
 					<div class="col-sm-12">					
