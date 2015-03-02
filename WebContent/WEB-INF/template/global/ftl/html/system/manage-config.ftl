@@ -50,7 +50,7 @@
 							createApplicationPropertiesGrid($(show_bs_tab.attr('href')), false);
 							break;
 						case  '#config-tab-application' :
-							createApplicationPropertiesGrid($(show_bs_tab.attr('href')), false);
+							createApplicationPropertiesGrid($(show_bs_tab.attr('href')), true);
 							break;
 					}	
 				});
