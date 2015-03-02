@@ -97,7 +97,7 @@
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
-					editable : 'inline',
+					editable : true,
 					selectable : "row",
 					scrollable: true,
 					height: 500,
