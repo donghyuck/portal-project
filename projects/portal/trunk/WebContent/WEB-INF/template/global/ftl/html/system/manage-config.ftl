@@ -93,7 +93,6 @@
 						scrollable: true,
 						filterable: true,
 						sortable: true,
-						autoBind: false,
 						height:500,
 						toolbar: [
 							{ name: "create", text: "추가" },
