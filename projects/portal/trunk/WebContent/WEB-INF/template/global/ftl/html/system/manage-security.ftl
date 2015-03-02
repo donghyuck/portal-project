@@ -87,8 +87,7 @@
 								click: function(e){
 									var tr = $(e.target).closest("tr");
 									alert( tr.html() );
-								},
-								text: { edit: "변경", update: "저장", cancel: "취소"}
+								}
 							}
 							], 
 							title: "&nbsp;", 
