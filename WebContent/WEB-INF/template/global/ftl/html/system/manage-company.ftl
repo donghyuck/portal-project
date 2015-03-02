@@ -84,11 +84,13 @@
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
 						{ command: [{ 
 							name: "edit",
-								className: "btn btn-xs btn-info",
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								text: { edit: "변경", update: "저장", cancel: "취소"}
-							}
-							], 
+							},
+							{ 
+								name: "detail",
+								template : '<a href="\\#" class="btn btn-xs btn-info"><span class="btn-label icon fa fa-pencil"></span> 상세보기</a>',
+							}], 
 							title: "&nbsp;", 
 							width: 180  
 						}
