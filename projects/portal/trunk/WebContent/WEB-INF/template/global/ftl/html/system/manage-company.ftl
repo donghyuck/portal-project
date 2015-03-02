@@ -112,11 +112,11 @@
 					edit: function(e){	
 					},
 					dataBound: function(e){   
+						renderTo.find("a[data-action=details]").click(function(e){
+							showCompanyDetails(e);
+						});	
 					}	   
-				});
-				renderTo.find("a[data-action=details]").click(function(e){
-					showCompanyDetails(e);
-				});	
+				});				
 			}
 			
 		}
