@@ -246,7 +246,6 @@
 					editable : true,
 					scrollable: true,
 					autoBind: false,
-					height: 300,
 					toolbar: [
 						{ name: "create", text: "추가" },
 						{ name: "save", text: "저장" },
@@ -283,7 +282,6 @@
 						serverFiltering: false,
 						serverSorting: false 
 					},
-					height: 300,
 					filterable: true,
 					sortable: true,
 					scrollable: true,
@@ -327,7 +325,6 @@
 							},
 							error:common.ui.handleAjaxError
 						},
-						height: 300,
 						scrollable: true,
 						editable: false,
 						autoBind: false,
