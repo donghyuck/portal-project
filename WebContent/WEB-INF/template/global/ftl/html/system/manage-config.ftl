@@ -77,6 +77,7 @@
 						{ title: "속성", field: "name" },
 						{ title: "값",   field: "value", filterable: false, sortable:false }
 					],
+					height:500,
 					filterable: true,
 					sortable: true,
 					scrollable: true,
