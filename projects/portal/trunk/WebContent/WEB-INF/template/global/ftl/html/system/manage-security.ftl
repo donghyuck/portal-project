@@ -79,7 +79,19 @@
 					columns: [
 						{ title: "ID", field: "roleId",  width:40 },
 						{ title: "이름", field: "name" },
-						{ title: "설명",   field: "description" }
+						{ title: "설명",   field: "description" },
+						{ command: [{ 
+							name: "edit",
+								className: "btn btn-xs btn-info",
+								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+								text: { edit: "변경", update: "저장", cancel: "취소"}
+							}
+
+							
+							], 
+							title: "&nbsp;", 
+							width: 180  
+						}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> 조회중 ...\'"><span class="btn-label icon fa fa-plus"></span> 메뉴 추가 </button></div>'),
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
