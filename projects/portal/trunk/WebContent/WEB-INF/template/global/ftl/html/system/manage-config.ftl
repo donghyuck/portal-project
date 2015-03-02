@@ -191,7 +191,10 @@
 				
 		-->
 		</script> 		 
-		<style>		
+		<style>	
+			.tab-pane.k-grid{
+				height:500px;
+			}				
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
