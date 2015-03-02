@@ -368,6 +368,9 @@
 									<li>
 										<a href="#database-datasource-view" data-toggle="tab">DataSource</a>
 									</li>
+									<li>
+										<a href="#imp_and_exp-view" data-toggle="tab">Import & Export</a>
+									</li>									
 								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->												
 							<div class="tab-content">								
@@ -377,6 +380,13 @@
 								<div class="tab-pane fade" id="database-datasource-view">
 									<div id="database-datasource-grid" class="no-border"></div>
 								</div><!-- ./tab-pane -->
+								<div class="tab-pane fade" id="imp_and_exp-view">
+									
+									데이터 익스포트  <br>
+									파일 형식 : Excel, Xml<br>
+									대상 소스 : User<br>									
+									
+								</div><!-- ./tab-pane -->								
 							</div><!-- /.tab-content -->						
 							<div class="panel-footer no-padding-vr"></div>	
 						</div>					
