@@ -122,6 +122,31 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->				
 				<div class="row">			
+					<div class="col-sm-12">
+						<div class="panel colourable">
+							<div class="panel-heading">
+								<span class="panel-title"><i class="fa fa-cog"></i> Config</span>								
+								<ul class="nav nav-tabs nav-tabs-xs" id="config-tabs">
+									<li>
+										<a href="#config-tab-setup" data-toggle="tab">Setup</a>
+									</li>
+									<li>
+										<a href="#config-tab-application" data-toggle="tab">Application</a>
+									</li>						
+								</ul>					
+							</div>
+							<div class="tab-content">
+								<div class="tab-pane" id="config-tab-setup">	
+								</div>	
+								<div class="tab-pane" id="config-tab-application">	
+								</div>													
+							</div>
+							
+						</div>
+							
+					</div></!-- /.col-sm-12 -->
+				</div><!-- /.row -->						
+				<div class="row">			
 					<div class="col-sm-12">				
 						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
