@@ -298,8 +298,8 @@
 						getCompanyDetailsModel().set("memberCount", this.dataSource.total() );
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success m-r-xs" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
-						
-					toolbar: [{ name: "create-groups", text: "선택 사용자 소속 변경하기", imageClass:"k-icon k-i-folder-up" , className: "changeUserCompanyCustomClass" }]
+					/*	
+					toolbar: [{ name: "create-groups", text: "선택 사용자 소속 변경하기", imageClass:"k-icon k-i-folder-up" , className: "changeUserCompanyCustomClass" }]*/
 				});												
 			}	
 			renderTo.data("kendoGrid").dataSource.read();
