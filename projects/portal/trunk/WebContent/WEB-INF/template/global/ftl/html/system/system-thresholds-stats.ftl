@@ -68,7 +68,7 @@
 						{ title: "Name", field: "name", width:150,},
 						{ title: "Status", field: "status" , width:150, filterable:false,  template:'<i class="status status-#= status #"></i>'},
 						{ title: "Value", field: "value" , width:150, filterable:false},
-						{ title: "Status Change", field: "previousStatus" , width:150, filterable:false,, template:'<i class="status status-#= previousStatus #"></i><i class="fa fa-long-arrow-right"></i><i class="status status-#= status #"></i>'},
+						{ title: "Status Change", field: "previousStatus" , width:150, filterable:false, template:'<i class="status status-#= previousStatus #"></i><i class="fa fa-long-arrow-right"></i><i class="status status-#= status #"></i>'},
 						{ title: "updatedDate", field: "updatedDate" , format: "{0:yyyy.MM.dd HH:mm:SS}", filterable:false },
 						{ title: "flipCount", field: "flipCount" , format: "{0:##,#}" , width:150, filterable:false},
 						{ title: "Path", field: "description", filterable:false}
