@@ -394,8 +394,7 @@
 									<h4 class="note-title"><small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다.</small></h4>
 								</div>	
 							</div>									
-							<div id="company-grid" class="no-border-hr"></div>	
-							<div class="panel-footer no-padding-vr"></div>
+							<div id="company-grid" class="no-border-hr"></div>
 						</div>
 						<!-- /details -->
 						<!-- list -->
