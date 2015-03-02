@@ -194,7 +194,12 @@
 		<style>	
 			.tab-pane.k-grid{
 				height:500px;
-			}				
+			}		
+			
+			.tab-pane.k-grid .k-selectable tr.k-state-selected{
+				background-color: #4cd964;
+				border-color: #4cd964;
+			}		
 		</style>
 	</head>
 	<body class="theme-default main-menu-animated">
