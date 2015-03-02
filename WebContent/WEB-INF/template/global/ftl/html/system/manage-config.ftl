@@ -63,37 +63,73 @@
 		
 		function createApplicationPropertiesGrid(renderTo, usingDatabase){			
 			if( !common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {	
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/config/setup/list.json?output=json"/>', type: 'POST' }
+				if( usingDatabase ){
+					common.ui.grid(renderTo, {
+						dataSource: {
+							transport: { 
+								read: { url:'<@spring.url "/secure/data/config/application/list.json?output=json"/>', type:'post' },
+								create: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post' },
+								update: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post'  },
+								destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' },
+								parameterMap: function (options, operation){			
+									if (operation !== "read" && options.models) {
+										return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
+									} 
+									return { companyId: getSelectedCompany().companyId }
+								}
+							},						
+							batch: true, 
+							schema: {
+								model: common.ui.data.Property
+							}
 						},
-						schema: {
-							model : common.ui.data.Property 
+						columns: [
+							{ title: "속성", field: "name", width: 250 },
+							{ title: "값",   field: "value" },
+							{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
+						],
+						pageable: false,
+						resizable: true,
+						editable : true,
+						scrollable: true,
+						autoBind: false,
+						height:500,
+						toolbar: [
+							{ name: "create", text: "추가" },
+							{ name: "save", text: "저장" },
+							{ name: "cancel", text: "취소" }
+						],				     
+						change: function(e) {
+						}
+					});				
+				}else{
+					common.ui.grid(renderTo, {
+						dataSource: {	
+							transport: { 
+								read: { url:'<@spring.url "/secure/data/config/setup/list.json?output=json"/>', type: 'POST' }
+							},
+							schema: {
+								model : common.ui.data.Property 
+							},
+							sort: { field: "name", dir: "asc" }
 						},
-						sort: { field: "name", dir: "asc" }
-					},
-					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
-					columns: [
-						{ title: "속성", field: "name" },
-						{ title: "값",   field: "value", filterable: false, sortable:false }
-					],
-					height:500,
-					filterable: true,
-					sortable: true,
-					scrollable: true,
-					selectable : "row"
-				});	
-				
-				$("[data-action='refresh']").click( function(e){
-					common.ui.grid(renderTo).dataSource.read();
-				});						
+						toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
+						columns: [
+							{ title: "속성", field: "name" },
+							{ title: "값",   field: "value", filterable: false, sortable:false }
+						],
+						height:500,
+						filterable: true,
+						sortable: true,
+						scrollable: true,
+						selectable : "row"
+					});										
+					$("[data-action='refresh']").click( function(e){
+						common.ui.grid(renderTo).dataSource.read();
+					});					
+				}						
 			}
 		}
-		
-		
-		
-		
 				
 		function createCacheStatsGrid(){
 			var renderTo = $("#cache-stats-grid");
