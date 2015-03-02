@@ -73,6 +73,7 @@
 						},
 						sort: { field: "name", dir: "asc" }
 					},
+					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					columns: [
 						{ title: "속성", field: "name" },
 						{ title: "값",   field: "value", filterable: false, sortable:false }
@@ -82,6 +83,10 @@
 					sortable: true,
 					scrollable: true,
 					selectable : "row"
+				});	
+				
+				$("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
 				});						
 			}
 		}
