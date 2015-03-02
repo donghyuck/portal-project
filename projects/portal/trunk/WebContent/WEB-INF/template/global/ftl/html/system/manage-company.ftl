@@ -474,7 +474,6 @@
 											<div id="company-user-grid"  class="users no-border-hr no-border-t"></div>
 										</div>
 									</div><!-- / .tab-content -->
-									<div class="panel-footer no-padding-vr"></div>
 								</div><!-- / .panel -->
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
