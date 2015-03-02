@@ -86,8 +86,6 @@
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								text: { edit: "변경", update: "저장", cancel: "취소"}
 							}
-
-							
 							], 
 							title: "&nbsp;", 
 							width: 180  
@@ -97,7 +95,7 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : 'inline',
-					/*selectable : "row",*/
+					selectable : "row",
 					scrollable: true,
 					height: 500,
 					change: function(e) {
