@@ -338,7 +338,9 @@
 						dataBound:function(e){
 							getCompanyDetailsModel().set("groupCount", this.dataSource.total() );
 						},
-						toolbar: [{ name: "create-groups", text: "디폴트 그룹 생성하기", imageClass:"k-icon k-i-folder-add" , className: "createGroupsCustomClass" }]
+						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 롤 추가 </button></div>')
+						/**									
+						toolbar: [{ name: "create-groups", text: "디폴트 그룹 생성하기", imageClass:"k-icon k-i-folder-add" , className: "createGroupsCustomClass" }]**/
 				});		
 			}
 			renderTo.data("kendoGrid").dataSource.read();
