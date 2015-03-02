@@ -290,8 +290,8 @@
 					selectable: "multiple, row",
 					columns: [
 						{ field: "userId", title: "ID", width:50,  filterable: false, sortable: false }, 
-						{ field: "username", title: "아이디", width: 100 }, 
-						{ field: "name", title: "이름", width: 100 }, 
+						{ field: "username", title: "아이디"}, 
+						{ field: "name", title: "이름" }, 
 						{ field: "email", title: "메일" },
 						{ field: "creationDate", title: "생성일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
 					dataBound:function(e){
@@ -332,10 +332,10 @@
 						autoBind: false,
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
-							{ field: "name",    title: "KEY",  filterable: true, sortable: true,  width: 100 },
-							{ field: "displayName",    title: "그룹",  filterable: true, sortable: true,  width: 100 },
+							{ field: "name",  title: "KEY",  filterable: true, sortable: true },
+							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
 							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
-							{ field:"memberCount", title: "멤버", filterable: false,  sortable: false, width:50 }
+							{ field:"memberCount", title: "멤버수", filterable: false,  sortable: false, width:50 }
 						],
 						dataBound:function(e){
 							getCompanyDetailsModel().set("groupCount", this.dataSource.total() );
