@@ -52,7 +52,7 @@
 		
 		function createCompanyGrid(){
 			var renderTo = $("#company-grid");
-			if(common.ui.exists(renderTo)){
+			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
