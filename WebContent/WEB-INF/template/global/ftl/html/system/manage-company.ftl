@@ -113,7 +113,7 @@
 					},
 					dataBound: function(e){   
 						renderTo.find("a[data-action=details]").click(function(e){
-							showCompanyDetails(e);
+							showCompanyDetails();
 						});	
 					}	   
 				});				
@@ -147,7 +147,7 @@
 			}	
 		}
 		
-		function showCompanyDetails(e){		
+		function showCompanyDetails(){		
 		
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
