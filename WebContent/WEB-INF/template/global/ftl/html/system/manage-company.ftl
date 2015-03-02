@@ -115,7 +115,7 @@
 					}	   
 				});
 				renderTo.find("a[data-action=details]").click(function(e){
-					showCompanyDetails();
+					showCompanyDetails(e);
 				});	
 			}
 			
