@@ -70,13 +70,7 @@
 								read: { url:'<@spring.url "/secure/data/config/application/list.json?output=json"/>', type:'post' },
 								create: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post' },
 								update: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post'  },
-								destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' },
-								parameterMap: function (options, operation){			
-									if (operation !== "read" && options.models) {
-										return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
-									} 
-									return { companyId: getSelectedCompany().companyId }
-								}
+								destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' }
 							},						
 							batch: true, 
 							sort: { field: "name", dir: "asc" },
