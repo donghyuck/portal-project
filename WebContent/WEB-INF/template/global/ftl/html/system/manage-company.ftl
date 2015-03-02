@@ -43,25 +43,7 @@
 						e.data.copy(targetCompany);
 					}
 				});		
-				
-				/*
-				common.ui.admin.setup({
-					authenticate: function(e){
-						e.token.copy(currentUser);
-					},
-					companyChanged: function(item){
-						item.copy(targetCompany);
-					},
-					switcherChanged: function( name , value ){						
-						if( value && !$('#company-list').is(":visible") ){
-							$('#company-list').show();
-						}else if ( !value && $('#company-list').is(":visible") && $('#company-details').is(":visible") ){
-							hideCompanyDetails();
-						}
-					}
-				});
-				*/
-				
+								
 				common.ui.buttons(	$("button.btn-control-group"), {
 					handlers: {
 						'create-company' : function(e){
@@ -153,211 +135,7 @@
 			}
 		}]);
 		
-		
-		function showMenuWindow(){
-			var renderToString = "menu-modal";
-			var renderTo = $( '#' + renderToString );
-			if( renderTo.length === 0 ){		
-				$("#main-wrapper").append( kendo.template($('#menu-modal-template').html()) );				
-				renderTo = $('#' + renderToString );
-				renderTo.modal({
-					backdrop: 'static'
-				});				
-				renderTo.on('hidden.bs.modal', function(e){
-					closeMenuEditor();
-				});
-				renderTo.on('show.bs.modal', function(e){				
-					if(! $("#menu-grid").data("kendoGrid")){				
-						$('#menu-grid').kendoGrid({
-							dataSource: {
-								transport: { 
-									read: { url:'${request.contextPath}/secure/list-menu.do?output=json', type:'post' }
-								},
-								batch: false, 
-								schema: {
-									total: "totalMenuCount",
-									data: "targetMenus",
-									model: common.ui.data.Menu
-								},
-								pageSize: 15,
-								serverPaging: true,
-								serverFiltering: false,
-								serverSorting: false,  
-								error:common.ui.handleAjaxError
-							},
-							columns: [
-								{ title: "ID", field: "menuId",  width:50 },
-								{ title: "이름", field: "name", template:'#:name#  <a href="\\#" onclick="openMenuEditor(); return false;" class="btn btn-info btn-xs">메뉴 편집</a>'  }
-							],
-							pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
-							resizable: true,
-							editable : false,
-							selectable : "row",
-							scrollable: true,
-							autoBind: false,
-							change: function(e) {
-								var selectedCells = this.select();
-								if( selectedCells.length == 1){ 
-									var selectedCell = this.dataItem( selectedCells );											 	
-								}
-							},
-							dataBound: function(e){
-							}
-						});	
-						renderTo.find('button[data-action="create-menu"]').click(function(e){				
-							
-							$("#menu-grid").data("kendoGrid").addRow();
-							$("#menu-grid").data("kendoGrid").select("tr.k-grid-edit-row:first");			
-							openMenuEditor();				
-						});	
-						renderTo.find('button[data-action="saveOrUpdate"]').click(function(e){
-							if( $("#menu-editor").data("model") ){
-								var btn = $(this);								
-								btn.button('loading');
-								var saveTarget = $("#menu-editor").data("model").menu ;
-								var editor = ace.edit("xml-editor");
-								saveTarget.set("menuData", editor.session.getValue() );
-								
-								alert(saveTarget.menuData);								
-								
-								var updateUrl = "${request.contextPath}/secure/create-menu.do?output=json";
-								if( saveTarget.menuId > 0){
-									updateUrl = "${request.contextPath}/secure/update-menu.do?output=json";
-								}
-								$.ajax({
-									type : 'POST',
-									url : updateUrl,
-									data : { menuId:saveTarget.menuId, item: kendo.stringify( saveTarget ) },
-									success : function( response ){									
-										$('#menu-grid').data('kendoGrid').dataSource.read();	
-									},
-									error: common.ui.handleAjaxError,
-									dataType : "json",
-									complete: function(jqXHR, textStatus ){					
-										btn.button('reset');
-									}
-								});
-							}
-						});
-					}				
-					$("#menu-grid").data("kendoGrid").dataSource.read();
-				});
-			}
-			renderTo.modal('show');	
-		} 
-
-		function getSelectedMenu(){
-			
-			var renderTo = $("#menu-grid");
-			var grid = renderTo.data('kendoGrid');			
-			var selectedCells = grid.select();
-			
-			if( selectedCells.length == 0){
-				return new common.ui.data.Menu();
-			}else{			
-				var selectedCell = grid.dataItem( selectedCells );   
-				return selectedCell;
-			}
-		}	
 				
-		function openMenuEditor(){
-			var menuPlaceHolder = getSelectedMenu();		
-			var renderTo = $("#menu-editor");
-			var editor = ace.edit("xml-editor");			
-			
-			if( !renderTo.data("model"))
-			{
-				var  editorModel = kendo.observable({
-					menu : new common.ui.data.Menu()
-				});					
-				kendo.bind(renderTo, editorModel);
-				renderTo.data("model", editorModel );					
-				editor.setTheme("ace/theme/monokai");
-				editor.getSession().setMode("ace/mode/xml");		
-						
-				$('#menu-editor button[data-action="editor-close"]').click(function(e){
-					closeMenuEditor();
-					return false;
-				});
-				
-				var switcher = $('#menu-editor input[role="switcher"][name="warp-switcher"]');
-				
-				if( switcher.length > 0 ){
-					$(switcher).switcher();
-					$(switcher).change(function(){
-						editor.getSession().setUseWrapMode($(this).is(":checked"));
-					});		
-				}				
-			}						
-			menuPlaceHolder.copy( renderTo.data("model").menu );	
-			editor.setValue(renderTo.data("model").menu.menuData);
-			
-			$('#menu-modal .modal-body:first').fadeOut("slow", function(){
-				$('#menu-modal button[data-action="saveOrUpdate"]').removeClass("hidden");
-				$("#menu-editor").fadeIn();
-			});
-		}
-		
-		function closeMenuEditor(){		
-			if(getSelectedMenu().menuId < 0 ){
-				$("#menu-grid").data("kendoGrid").removeRow("tr.k-grid-edit-row");
-			}
-			$('#menu-modal button[data-action="saveOrUpdate"]').addClass("hidden");						
-			
-			if($("#menu-editor").is(":visible")){
-				$("#menu-editor").fadeOut("slow", function(){
-					if($('#menu-modal .modal-body:first').is(":hidden")){
-						$('#menu-modal .modal-body:first').fadeIn();
-					}
-				});
-			}
-			
-		}
-		
-		
-		function showRoleWindow(){
-			var renderToString = "role-modal";
-			var renderTo = $( '#' + renderToString );
-			if( renderTo.length === 0 ){		
-				$("#main-wrapper").append( kendo.template($('#role-modal-template').html()) );				
-				renderTo = $('#' + renderToString );
-				renderTo.modal({
-					backdrop: 'static'
-				});
-				renderTo.on('show.bs.modal', function(e){
-					if( ! $('#role-grid').data("kendoGrid")){
-						// ROLE GRID 생성
-						$('#role-grid').kendoGrid({
-							dataSource: {
-								transport: { 
-									read: { url:'${request.contextPath}/secure/list-role.do?output=json', type:'post' }
-								},						
-								batch: false, 
-								schema: {
-									data: "roles",
-									model: common.ui.data.Role
-								},
-								error:common.ui.handleAjaxError
-							},
-							columns: [
-								{ title: "ID", field: "roleId",  width:40 },
-								{ title: "롤", field: "name" },
-								{ title: "설명",   field: "description" }
-							],
-							pageable: false,
-							resizable: true,
-							editable : false,
-							scrollable: true,
-							/*height: 300,*/
-							change: function(e) {
-							}
-						});		
-					}
-				});
-			}
-			renderTo.modal('show');
-		}
-		
 		function getSelectedCompany(){
 			var renderTo = $("#company-grid");
 			var grid = renderTo.data('kendoGrid');
@@ -384,8 +162,7 @@
 			}	
 		}
 		
-		function showCompanyDetails(e){
-		
+		function showCompanyDetails(e){		
 		
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
@@ -624,19 +401,7 @@
 					<div class="row">
 						<h1 class="col-xs-12 col-sm-6 text-center text-left-sm"><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}
 							<p><small><i class="fa fa-quote-left"></i> ${selectedMenu.description} <i class="fa fa-quote-right"></i></small></p>
-						</h1>
-						<div class="col-xs-12 col-sm-6">
-							<div class="row">
-								<hr class="visible-xs no-grid-gutter-h">							
-								<div class="pull-right col-xs-12 col-sm-auto">
-									<h6 class="text-light-gray text-semibold text-xs hidded-xs" style="margin:20px 0 10px 0;">옵션</h6>
-									<div class="btn-group pull-right">
-										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="menu"><i class="btn-label icon fa fa-sitemap"></i> 메뉴</button>
-										<button type="button" class="btn btn-primary btn-sm btn-control-group" data-action="role"><i class="btn-label icon fa fa-lock"></i> 권한 & 롤</button>
-									</div>									
-								</div>
-							</div>
-						</div>
+						</h1>						
 					</div>				
 				</div><!-- / .page-header -->
 				<div class="row">				
