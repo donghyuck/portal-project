@@ -71,11 +71,11 @@
 						serverPaging: false						
 					},
 					columns: [
-						{ title: "ID", field: "id", width:80, sortable: false, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
+						{ title: "ID", field: "id", width:80, sortable: false, filterable: false, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } },
 						{ title: "Name", field: "name", width:250 },
-						{ title: "Path", field: "path", sortable: false },
-						{ title: "Values", field: "numberOfValues" , width:80,  headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, format: "{0:##,#}", sortable: false },
-						{ title: "UPDATE DATE", field: "lastValueDate", width:200, headerAttributes: { "class": "table-header-cell", style: "text-align: center" } }
+						{ title: "Path", field: "path", sortable: false,  filterable: false },
+						{ title: "Values", field: "numberOfValues" , width:80,  headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, format: "{0:##,#}", sortable: false,  filterable: false },
+						{ title: "UPDATE DATE", field: "lastValueDate", width:200, headerAttributes: { "class": "table-header-cell", style: "text-align: center" },  filterable: false }
 					],
 					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
 					resizable: true,
@@ -84,6 +84,7 @@
 					sortable: true,
 					height:550,
 					pageable: false,
+					filterable: true,
 					selectable: 'row',
 					change: function(e) {
 						var selectedCells = this.select();
