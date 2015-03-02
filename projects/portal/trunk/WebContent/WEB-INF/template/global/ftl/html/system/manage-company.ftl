@@ -114,7 +114,7 @@
 					dataBound: function(e){   
 					}	   
 				});
-				renderTo.find("button[data-action=details]").click(function(e){
+				renderTo.find("a[data-action=details]").click(function(e){
 					showCompanyDetails();
 				});	
 			}
