@@ -47,10 +47,10 @@
 					var show_bs_tab = $(e.target);					
 					switch( show_bs_tab.attr('href') ){
 						case "#config-tab-setup" :
-							createApplicationPropertiesGrid(show_bs_tab, false);
+							createApplicationPropertiesGrid($(show_bs_tab.attr('href')), false);
 							break;
 						case  '#config-tab-application' :
-							createApplicationPropertiesGrid(show_bs_tab, false);
+							createApplicationPropertiesGrid($(show_bs_tab.attr('href')), false);
 							break;
 					}	
 				});
@@ -61,8 +61,7 @@
 			}
 		}]);		
 		
-		function createApplicationPropertiesGrid(renderTo, usingDatabase){
-			
+		function createApplicationPropertiesGrid(renderTo, usingDatabase){			
 			if( !common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {	
