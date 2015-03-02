@@ -56,7 +56,7 @@
 				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
-							read: { url:'<@spring.url "/mgmt/company/list.json?output=json"/>', type: 'POST' },
+							read: { url:'<@spring.url "/secure/data/mgmt/company/list.json?output=json"/>', type: 'POST' },
 							create: { url:'<@spring.url "/secure/create-company.do?output=json"/>', type:'POST' },             
 							update: { url:'<@spring.url "/secure/update-company.do?output=json"/>', type:'POST' },
 							parameterMap: function (options, operation){	          
