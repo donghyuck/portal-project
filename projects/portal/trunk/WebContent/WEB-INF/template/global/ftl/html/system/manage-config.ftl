@@ -74,10 +74,12 @@
 						sort: { field: "name", dir: "asc" }
 					},
 					columns: [
-						{ title: "속성", field: "name", width: 250 },
-						{ title: "값",   field: "value" }
+						{ title: "속성", field: "name" },
+						{ title: "값",   field: "value", filterable: false, sortable:false }
 					],
+					filterable: true,
 					sortable: true,
+					scrollable: true,
 					selectable : "row"
 				});						
 			}
