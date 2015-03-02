@@ -56,7 +56,7 @@
 				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
-							read: { url:'<@spring.url "/secure/list-company.do?output=json"/>', type: 'POST' },
+							read: { url:'<@spring.url "/mgmt/company/list.json?output=json"/>', type: 'POST' },
 							create: { url:'<@spring.url "/secure/create-company.do?output=json"/>', type:'POST' },             
 							update: { url:'<@spring.url "/secure/update-company.do?output=json"/>', type:'POST' },
 							parameterMap: function (options, operation){	          
@@ -68,8 +68,8 @@
 							}
 						},
 						schema: {
-							total: "totalCompanyCount",
-							data: "companies",
+							total: "totalCount",
+							data: "items",
 							model : common.ui.data.Company
 						},
 						pageSize: 15,
