@@ -43,28 +43,17 @@
 						e.data.copy(targetCompany);
 					}
 				});		
-								
-				common.ui.buttons(	$("button.btn-control-group"), {
-					handlers: {
-						'create-company' : function(e){
-							$("#company-grid").data('kendoGrid').addRow();			
-						}, 	
-						user : function(e){
-							topBar.go('main-user.do');								
-						}, 	
-						group : function(e){
-							topBar.go('main-group.do');							
-						}, 							
-						menu : function(e){
-							showMenuWindow();
-						},
-						role : function(e){					
-							showRoleWindow();			
-						}  						 
-					}
-				});
-
-				var company_grid = $("#company-grid").kendoGrid({
+				
+				createCompanyGrid();															
+				// END SCRIPT
+			}
+		}]);
+		
+		
+		function createCompanyGrid(){
+			var renderTo = $("#company-grid");
+			if(common.ui.exists(renderTo)){
+				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
 							read: { url:'<@spring.url "/secure/list-company.do?output=json"/>', type: 'POST' },
@@ -84,10 +73,7 @@
 							model : common.ui.data.Company
 						},
 						pageSize: 15,
-						serverPaging: true,
-						serverFiltering: false,
-						serverSorting: false,                        
-						error: common.ui.handleAjaxError
+						serverPaging: true
 					},
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
@@ -101,8 +87,6 @@
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								text: { edit: "변경", update: "저장", cancel: "취소"}
 							}
-
-							
 							], 
 							title: "&nbsp;", 
 							width: 180  
@@ -111,7 +95,7 @@
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
-					height: '350',
+					height: '500',
 					batch: false,              
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
@@ -120,21 +104,16 @@
 						if( selectedCells.length === 0){								
 						}
 					},
-					cancel: function(e){	
-						
+					cancel: function(e){							
 					},
 					edit: function(e){	
-						hideCompanyDetails()		
 					},
 					dataBound: function(e){   
-						hideCompanyDetails(); 
-					}	                    
-				}); //.css("border", 0);
-																			
-				// END SCRIPT
+					}	   
+				});
 			}
-		}]);
-		
+			
+		}
 				
 		function getSelectedCompany(){
 			var renderTo = $("#company-grid");
