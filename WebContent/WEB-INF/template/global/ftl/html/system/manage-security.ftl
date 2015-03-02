@@ -103,6 +103,7 @@
 				});
 				renderTo.find("button[data-action=create]").click(function(e){
 					common.ui.grid(renderTo).addRow();
+					common.ui.grid(renderTo).select("tr:eq(1)");
 				});	
 			}					
 		}
