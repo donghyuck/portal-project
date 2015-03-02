@@ -79,19 +79,20 @@
 								}
 							},						
 							batch: true, 
+							sort: { field: "name", dir: "asc" },
 							schema: {
 								model: common.ui.data.Property
 							}
 						},
 						columns: [
 							{ title: "속성", field: "name", width: 250 },
-							{ title: "값",   field: "value" },
+							{ title: "값",   field: "value", filterable: false, sortable:false },
 							{ command:  { name: "destroy", text:"삭제" },  title: "&nbsp;", width: 100 }
 						],
-						pageable: false,
-						resizable: true,
 						editable : true,
 						scrollable: true,
+						filterable: true,
+						sortable: true,
 						autoBind: false,
 						height:500,
 						toolbar: [
