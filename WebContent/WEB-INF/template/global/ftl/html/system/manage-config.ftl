@@ -42,9 +42,51 @@
 				});				
 				
 				createCacheStatsGrid();	
+				
+				$('#config-tabs').on( 'show.bs.tab', function (e) {		
+					var show_bs_tab = $(e.target);					
+					switch( show_bs_tab.attr('href') ){
+						case "#config-tab-setup" :
+							createApplicationPropertiesGrid(show_bs_tab, false);
+							break;
+						case  '#config-tab-application' :
+							createApplicationPropertiesGrid(show_bs_tab, false);
+							break;
+					}	
+				});
+				
+				$('#config-tabs a:first').tab('show');		
+				
 				// END SCRIPT
 			}
 		}]);		
+		
+		function createApplicationPropertiesGrid(renderTo, usingDatabase){
+			
+			if( !common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {	
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/config/setup/list.json?output=json"/>', type: 'POST' }
+						},
+						schema: {
+							model : common.ui.data.Property 
+						},
+						sort: { field: "name", dir: "asc" }
+					},
+					columns: [
+						{ title: "속성", field: "name", width: 250 },
+						{ title: "값",   field: "value" }
+					],
+					sortable: true,
+					selectable : "row"
+				});						
+			}
+		}
+		
+		
+		
+		
 				
 		function createCacheStatsGrid(){
 			var renderTo = $("#cache-stats-grid");
