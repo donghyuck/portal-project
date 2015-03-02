@@ -85,7 +85,7 @@
 						{ command: [
 							{ 
 								name: "detail",
-								template : '<a href="\\#" class="btn btn-xs btn-success m-r-sm">상세보기</a>',
+								template : '<a href="\\#" class="btn btn-xs btn-success m-r-xs">상세보기</a>',
 							},{ 
 								name: "edit",
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
