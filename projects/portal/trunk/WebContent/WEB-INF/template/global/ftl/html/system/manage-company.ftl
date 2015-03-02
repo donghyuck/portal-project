@@ -1,36 +1,36 @@
-<#ftl encoding="UTF-8"/>
+<#ftl encoding="UTF-8"/>	
 <html decorator="secure">
 <head>
 		<title>관리자 메인</title>		
 <#compress>		
-		<link  rel="stylesheet" type="text/css"  href="${request.contextPath}/styles/common.admin/pixel/pixel.admin.style.css" />
+		<link  rel="stylesheet" type="text/css"  href="<@spring.url "/styles/common.admin/pixel/pixel.admin.style.css"/>" />
 		<script type="text/javascript">
 		<!--		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.plugins/animate.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.widgets.css',			
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.rtl.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.themes.css',
-			'css!${request.contextPath}/styles/common.admin/pixel/pixel.admin.pages.css',	
-			'css!${request.contextPath}/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css',
+			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/common.plugins/animate.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css"/>',			
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.themes.css"/>',
+			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.pages.css"/>',	
+			'css!<@spring.url "/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css"/>',
 			
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',			
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',	
-			'${request.contextPath}/js/bootstrap/3.3.1/bootstrap.min.js',
-			'${request.contextPath}/js/common.plugins/fastclick.js', 
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 
-			'${request.contextPath}/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js', 			
-			'${request.contextPath}/js/common.admin/pixel.admin.min.js',			
-			'${request.contextPath}/js/common/common.ui.core.js',							
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.community.js',
-			'${request.contextPath}/js/common/common.ui.admin.js',	
-			'${request.contextPath}/js/ace/ace.js'
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',			
+			'<@spring.url "}/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',	
+			'<@spring.url "/js/bootstrap/3.3.1/bootstrap.min.js"/>',
+			'<@spring.url "/js/common.plugins/fastclick.js"/>', 
+			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 
+			'<@spring.url "/js/perfect-scrollbar/perfect-scrollbar-0.4.9.min.js"/>', 			
+			'<@spring.url "/js/common.admin/pixel.admin.min.js"/>',			
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>',
+			'<@spring.url "/js/common/common.ui.admin.js"/>',	
+			'<@spring.url "/js/ace/ace.js"/>'
 			],
 			complete: function() {
 				var currentUser = new common.ui.data.User();
@@ -67,9 +67,9 @@
 				var company_grid = $("#company-grid").kendoGrid({
 					dataSource: {	
 						transport: { 
-							read: { url:'${request.contextPath}/secure/list-company.do?output=json', type: 'POST' },
-							create: { url:'${request.contextPath}/secure/create-company.do?output=json', type:'POST' },             
-							update: { url:'${request.contextPath}/secure/update-company.do?output=json', type:'POST' },
+							read: { url:'<@spring.url "/secure/list-company.do?output=json"/>', type: 'POST' },
+							create: { url:'<@spring.url "/secure/create-company.do?output=json"/>', type:'POST' },             
+							update: { url:'<@spring.url "/secure/update-company.do?output=json"/>', type:'POST' },
 							parameterMap: function (options, operation){	          
 								if (operation != "read" && options) {
 									return { companyId: options.companyId, item: kendo.stringify(options)};
@@ -233,10 +233,10 @@
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
-							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
-							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
-							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
+							read: { url:'<@spring.url "/secure/get-company-property.do?output=json"/>', type:'post' },
+							create: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post' },
+							update: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post'  },
+							destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' },
 							parameterMap: function (options, operation){			
 								if (operation !== "read" && options.models) {
 									return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
@@ -281,7 +281,7 @@
 					dataSource: {
 						type: "json",
 						transport: { 
-							read: { url:'${request.contextPath}/secure/list-user.do?output=json', type: 'POST' },
+							read: { url:'<@spring.url "/secure/list-user.do?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
 								return { startIndex: options.skip, pageSize: options.pageSize,  companyId: getSelectedCompany().companyId }
 							}
@@ -327,8 +327,8 @@
 						dataSource: {
 							type: "json",
 							transport: {
-								read: { url:'${request.contextPath}/secure/list-company-group.do?output=json', type:'post' },
-								destroy: { url:'${request.contextPath}/secure/remove-group-members.do?output=json', type:'post' },
+								read: { url:'<@spring.url "/secure/list-company-group.do?output=json"/>', type:'post' },
+								destroy: { url:'<@spring.url "/secure/remove-group-members.do?output=json"/>', type:'post' },
 								parameterMap: function (options, operation){
 									if (operation !== "read" && options.models) {
 										return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
@@ -512,7 +512,7 @@
 						<div class="left-col">
 							<div class="details-block no-margin-t">
 								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="" src="${request.contextPath}/images/common/loader/loading-transparent-bg.gif">
+									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
 								</div>
 								<br>
 								<!--
