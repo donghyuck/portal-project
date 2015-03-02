@@ -126,7 +126,7 @@
 	common.ui.data.Company = kendo.data.Model.define( {
 		    id: "companyId", // the identifier of the model
 		    fields: {
-		    	companyId: { type: "number", editable: false, defaultValue: -1  },    	
+		    	companyId: { type: "number", editable: false, defaultValue: 0  },    	
 		        name: { type: "string", editable: true , validation: { required: true }},
 		        displayName: { type: "string", editable: true },
 		        domainName: { type: "string", editable: true },
@@ -246,7 +246,7 @@
 	common.ui.data.Role = kendo.data.Model.define( {
 		    id: "roleId", // the identifier of the model
 		    fields: {
-		    	roleId: { type: "number", defaultValue: 0  },
+		    	roleId: { type: "number", defaultValue: 0 , editable: false },
 		        name: { type: "string", validation: { required: true }},
 		        description: { type: "string"},
 		        mask: { type: "number", defaultValue: 0  },
