@@ -17,7 +17,7 @@
 			'css!<@spring.url "/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css"/>',
 			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',			
-			'<@spring.url "}/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',	
