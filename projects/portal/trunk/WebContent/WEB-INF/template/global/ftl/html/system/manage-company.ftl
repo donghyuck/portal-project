@@ -351,11 +351,7 @@
 		</script> 		 
 		<style>
 			.k-grid-content {
-				min-height:150px;
-			}
-			
-			#menu-grid .k-grid-content {
-				min-height:350px;
+				min-height:300px;
 			}
 			
 			#xml-editor{
