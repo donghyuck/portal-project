@@ -70,6 +70,7 @@
 					sortable: true,
 					pageable: false,
 					selectable: "single" ,
+					height:400,
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
