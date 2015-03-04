@@ -91,12 +91,14 @@
 						filterable: true,
 						sortable: true,
 						height:500,
-						toolbar: [
+						toolbar: { template: '<div class="btn-group"><a href="\\#"class="btn btn-info btn-sm btn-outline k-grid-add">추가</a></div><a href="\\#"class="btn btn-info btn-sm btn-outline k-grid-save-changes">저장</a></div><a href="\\#"class="btn btn-info btn-sm btn-outline k-grid-cancle-changes">취소</a></div><button class="btn btn-info btn-sm btn-outline m-l-sm" data-action="refresh">새로고침</button>'}
+						/*
+						[
 							{ name: "create", text: "추가" },
 							{ name: "save", text: "저장" },
 							{ name: "cancel", text: "취소" }
-							template: '<div class="btn-group"><a href="\\#"class="btn btn-info btn-sm btn-outline k-grid-add">추가</a></div><a href="\\#"class="btn btn-info btn-sm btn-outline k-grid-save-changes">저장</a></div><a href="\\#"class="btn btn-info btn-sm btn-outline k-grid-cancle-changes">취소</a></div><button class="btn btn-info btn-sm btn-outline m-l-sm" data-action="refresh">새로고침</button>'
-						],				     
+							
+						],		*/		     
 						change: function(e) {
 						}
 					});
