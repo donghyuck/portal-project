@@ -137,10 +137,8 @@
 		
 		function hideCompanyDetails(){			
 			if( $("#company-details").text().length > 0 && $("#company-details").is(":visible") ){
-				var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");
-				
 				$("#company-details").fadeOut("slow", function(){
-					if( !alwaysShowList && $("#company-list").is(":hidden") ){
+					if( $("#company-list").is(":hidden") ){
 						$("#company-list").fadeIn();
 					}
 				});
@@ -152,8 +150,6 @@
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
 
-			var alwaysShowList = common.ui.admin.switcherEnabled("list-switcher");			
-			
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
 				var detailsModel = kendo.observable({
@@ -198,12 +194,7 @@
 			$('#myTab a:first').tab('show');		
 			
 			if(renderTo.is(':hidden')){
-				if(alwaysShowList){		
-					renderTo.fadeIn("slow", function(){
-						$('html,body').animate({scrollTop: renderTo.offset().top - 20 }, 500);	
-					});
-				}else{
-					$("#company-list").fadeOut("slow", function(){
+				$("#company-list").fadeOut("slow", function(){
 						renderTo.fadeIn("slow");
 					});
 				}
