@@ -236,14 +236,13 @@
 					editable : true,
 					scrollable: true,
 					autoBind: false,
-					toolbar: [
-						{ name: "create", text: "추가" },
-						{ name: "save", text: "저장" },
-						{ name: "cancel", text: "취소" }
-					],				     
+					toolbar: kendo.template('<div class="p-sm"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
 					change: function(e) {
 					}
 				});		
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});	
 			}
 			renderTo.data("kendoGrid").dataSource.read();
 		}
