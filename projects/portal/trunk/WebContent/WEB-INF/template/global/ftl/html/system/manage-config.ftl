@@ -84,7 +84,7 @@
 						columns: [
 							{ title: "속성", field: "name", width: 250 },
 							{ title: "값",   field: "value", filterable: false, sortable:false },
-							{ command:  { name: "destroy", template='<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 100 }
+							{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 100 }
 						],
 						editable : true,
 						scrollable: true,
