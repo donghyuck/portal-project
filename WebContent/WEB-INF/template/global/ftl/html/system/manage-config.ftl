@@ -68,7 +68,12 @@
 								read: { url:'<@spring.url "/secure/data/config/application/list.json?output=json"/>', type:'post', contentType : "application/json" },
 								create: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post',  contentType : "application/json" },
 								update: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post',  contentType : "application/json"  },
-								destroy: { url:'<@spring.url "/secure/data/config/application/delete.json?output=json"/>', type:'post',  contentType : "application/json" }
+								destroy: { url:'<@spring.url "/secure/data/config/application/delete.json?output=json"/>', type:'post',  contentType : "application/json" },
+								parameterMap: function (options, operation){			
+									if (operation !== "read" && options.models) {
+										return kendo.stringify(options.models);
+									} 
+								}
 							},						
 							batch: true, 
 							sort: { field: "name", dir: "asc" },
