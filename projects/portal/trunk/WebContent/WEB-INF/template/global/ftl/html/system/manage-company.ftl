@@ -358,6 +358,11 @@
 				border-color: #4cd964;
 			}	
 			
+			#company-user-grid.k-grid .k-selectable tr.k-state-selected{
+				background-color: #5ac8fa;
+				border-color: #34aadc;			
+			}
+			
 			.panel .tab-content {
 				padding:5px!important;
 			}
