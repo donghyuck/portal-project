@@ -197,7 +197,6 @@
 				$("#company-list").fadeOut("slow", function(){
 						renderTo.fadeIn("slow");
 					});
-				}
 			}
 						
 			return false;
