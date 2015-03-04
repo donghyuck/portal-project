@@ -357,6 +357,10 @@
 				background-color: #4cd964;
 				border-color: #4cd964;
 			}	
+			
+			.panel .tab-content {
+				padding:5px!important;
+			}
 												
 		</style>
 </#compress>		
