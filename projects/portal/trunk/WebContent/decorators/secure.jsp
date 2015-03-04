@@ -73,7 +73,7 @@
 		}			
 
 
-		.k-grid td > a.k-button, .k-grid tr[aria-selected="false"] > td > a.k-button {
+		.k-grid tr[aria-selected="false"] > td > a.k-button {
 			display : none; 
 		}
 						
