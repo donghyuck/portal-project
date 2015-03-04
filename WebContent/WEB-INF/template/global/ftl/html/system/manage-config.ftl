@@ -65,10 +65,10 @@
 					common.ui.grid(renderTo, {
 						dataSource: {
 							transport: { 
-								read: { url:'<@spring.url "/secure/data/config/application/list.json?output=json"/>', type:'post' },
-								create: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post' },
-								update: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post'  },
-								destroy: { url:'<@spring.url "/secure/data/config/application/delete.json?output=json"/>', type:'post' }
+								read: { url:'<@spring.url "/secure/data/config/application/list.json?output=json"/>', type:'post', contentType : "application/json" },
+								create: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post',  contentType : "application/json" },
+								update: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post',  contentType : "application/json"  },
+								destroy: { url:'<@spring.url "/secure/data/config/application/delete.json?output=json"/>', type:'post',  contentType : "application/json" }
 							},						
 							batch: true, 
 							sort: { field: "name", dir: "asc" },
