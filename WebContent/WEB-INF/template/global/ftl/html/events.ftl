@@ -144,16 +144,7 @@
 							<small class="page-summary">
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 								</small>	
-							</h2>
-							<#if navigator.parent.layout?? && navigator.parent.layout == "pills" >
-							<div class="pull-right">
-								<div class="btn-group">
-								<#list navigator.parent.components as item >								
-									<a class="btn btn-info btn-sm <#if navigator.parent.components?seq_index_of(item) == 0>rounded-left<#elseif navigator.parent.components?seq_index_of(item) == (navigator.parent.components?size - 1)  >rounded-right</#if> <#if item.name ==  navigator.name >active</#if>" href="${item.page}">${ item.title }</a>					
-								</#list>		
-								</div>
-							</div>
-							</#if>				
+							</h2>			
 							<div class="breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
@@ -174,7 +165,16 @@
 						<h5><small><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
 						<div id="announce-grid"></div>												
 					</div>	
-					<div class="col-lg-3">			
+					<div class="col-lg-3">	
+							<#if navigator.parent.layout?? && navigator.parent.layout == "pills" >
+							<div class="pull-right">
+								<div class="btn-group">
+								<#list navigator.parent.components as item >								
+									<a class="btn btn-info btn-sm <#if navigator.parent.components?seq_index_of(item) == 0>rounded-left<#elseif navigator.parent.components?seq_index_of(item) == (navigator.parent.components?size - 1)  >rounded-right</#if> <#if item.name ==  navigator.name >active</#if>" href="${item.page}">${ item.title }</a>					
+								</#list>		
+								</div>
+							</div>
+							</#if>								
 					</div>
 				</div>
 			</div>			
