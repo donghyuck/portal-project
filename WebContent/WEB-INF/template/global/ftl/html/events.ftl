@@ -170,7 +170,7 @@
 						<ul class="dropdown-menu" style="display: block; position: relative;">
 							<li class="dropdown-header">${navigator.parent.title}</li>
 							<#list navigator.parent.components as item >
-							<li><a href="${item.page}">${ item.title }</a></li>
+							<li class="<#if item.name ==  navigator.name >active</#if>"><a href="${item.page}">${ item.title }</a></li>
 							</#list>
 						</ul>
 															
