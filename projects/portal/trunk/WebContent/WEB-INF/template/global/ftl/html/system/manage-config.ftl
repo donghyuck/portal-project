@@ -67,7 +67,7 @@
 							transport: { 
 								read: { url:'<@spring.url "/secure/data/config/application/list.json?output=json"/>', type:'post' },
 								create: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post' },
-								update: { url:'<@spring.url "/secure/data/config/application/create.json?output=json"/>', type:'post'  },
+								update: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post'  },
 								destroy: { url:'<@spring.url "/secure/data/config/application/delete.json?output=json"/>', type:'post' }
 							},						
 							batch: true, 
