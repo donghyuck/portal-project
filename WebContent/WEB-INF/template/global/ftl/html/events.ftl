@@ -216,7 +216,6 @@
 								<li><span data-bind="visible:user.emailVisible, text: user.email"></span></li>
 							</ul>																
 						</li>	
-						<hr>	
 					</ul>											
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:body"></div>	
