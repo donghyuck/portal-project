@@ -40,9 +40,7 @@
 						e.data.copy(targetCompany);
 					}
 				});				
-				
-				createCacheStatsGrid();	
-				
+								
 				$('#config-tabs').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);					
 					switch( show_bs_tab.attr('href') ){
@@ -68,9 +66,9 @@
 						dataSource: {
 							transport: { 
 								read: { url:'<@spring.url "/secure/data/config/application/list.json?output=json"/>', type:'post' },
-								create: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post' },
-								update: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post'  },
-								destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' }
+								create: { url:'<@spring.url "/secure/data/config/application/update.json?output=json"/>', type:'post' },
+								update: { url:'<@spring.url "/secure/data/config/application/create.json?output=json"/>', type:'post'  },
+								destroy: { url:'<@spring.url "/secure/data/config/application/delete.json?output=json"/>', type:'post' }
 							},						
 							batch: true, 
 							sort: { field: "name", dir: "asc" },
@@ -124,65 +122,7 @@
 					});					
 				}						
 			}
-		}
-				
-		function createCacheStatsGrid(){
-			var renderTo = $("#cache-stats-grid");
-			if( !common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {	
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/stage/cache/list.json?output=json"/>', type: 'POST' }
-						},
-						schema: {
-							model : common.ui.data.CacheStats 
-						},
-						sort: { field: "cacheName", dir: "asc" }
-					},
-					toolbar: kendo.template('<div class="p-sm text-right"><button class="btn btn-info btn-sm btn-outline btn-flat" data-action="refresh">새로고침</button></div>'),
-					columns: [
-						{ field: "cacheName", title: "Cache", width:80,  filterable: true, sortable: true , template: '#: cacheName # <button class="btn btn-xs btn-labeled btn-danger pull-right" data-action="cache-removeAll" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><span class="btn-label icon fa fa-bolt"></span>캐쉬 비우기</button>' }, 
-						{ field: "diskPersistent", title: "Disk Cache", width:20,  filterable: true, sortable: true ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
-						{ title: "Effectiveness",  width: 40, template: '#if( cacheHits > 0 ){ # #= kendo.toString( cacheHits / (cacheHits + misses ) , "p") # #}#' , headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
-						{ field: "size",    title: "Object",  filterable: true, sortable: true,  width: 30 , template: '#if(diskPersistent){# #:size# / #: (maxEntriesLocalHeap+maxEntriesLocalDisk) # #}else{# #:size# / #: maxEntriesLocalHeap # #}#'  ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }},
-						{ field: "cacheHits",    title: "cacheHits",  width: 30 ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center; color:blue;" }},
-						{ field: "misses",    title: "misses",  width: 30 ,headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center; color: red;" }},
-						{ field: "evictionCount",    title: "evictionCount",  width: 30, headerAttributes: { "class": "table-header-cell", style: "text-align: center" }, attributes : {  "class": "table-cell", style: "text-align: center" }}
-					],
-					sortable: true,
-					selectable : "row"
-				});
-				$("[data-action='refresh']").click( function(e){
-					$("#cache-stats-grid").data("kendoGrid").dataSource.read();
-				});				
-				$(document).on("click", "[data-action='cache-removeAll']", function(e){
-					var btn = $(this);
-					btn.button("loading");
-					common.ui.ajax( "<@spring.url "/secure/data/mgmt/cache/refresh.json?output=json"/>", {
-						data : { name:  getSelectedCacheStats().cacheName },
-						success : function(response){
-							$("#cache-stats-grid").data("kendoGrid").dataSource.read();
-						},
-						always : function(e){
-							btn.button("reset");
-						}							
-					});					
-				});				
-			}
-		}
-				
-		function getSelectedCacheStats(){			
-			var renderTo = $("#cache-stats-grid");
-			var grid = renderTo.data('kendoGrid');			
-			var selectedCells = grid.select();			
-			if( selectedCells.length == 0){
-				return new common.ui.data.CacheStats();
-			}else{			
-				var selectedCell = grid.dataItem( selectedCells );   
-				return selectedCell;
-			}
-		}	
-				
+		}				
 		-->
 		</script> 		 
 		<style>	
@@ -234,16 +174,7 @@
 							
 					</div></!-- /.col-sm-12 -->
 				</div><!-- /.row -->						
-				<div class="row">			
-					<div class="col-sm-12">				
-						<div id="cache-stats-list" class="panel panel-default" style="min-height:300px;">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-align-justify"></i> 캐쉬</span>
-							</div>
-							<div id="cache-stats-grid" class="no-border-hr"></div>
-						</div>					
-					</div></!-- /.col-sm-12 -->
-				</div><!-- /.row -->	
+
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
