@@ -205,7 +205,7 @@
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=jsoncompanyId="/>' + getSelectedCompany().companyId , type:'post' },
+							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=jsoncompanyId="/>' + getSelectedCompany().companyId , type:'post' , contentType : "application/json"},
 							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post', contentType : "application/json" },
 							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json"  },
 							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json" },
