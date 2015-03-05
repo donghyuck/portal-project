@@ -76,7 +76,7 @@
 						pageSize: 15,
 						serverPaging: true
 					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </a></div>'),
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
 						{ field: "name", title: "KEY", width:100,  filterable: false, sortable: false }, 
@@ -117,7 +117,10 @@
 							showCompanyDetails();
 						});	
 					}	   
-				});				
+				});		
+				renderTo.find("a[data-action=create]").click(function(e){
+					common.ui.grid(renderTo)
+				});			
 			}
 			
 		}
