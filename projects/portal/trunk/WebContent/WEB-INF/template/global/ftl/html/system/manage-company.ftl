@@ -57,8 +57,8 @@
 					dataSource: {	
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/company/list.json?output=json"/>', type: 'POST' },
-							create: { url:'<@spring.url "/secure/create-company.do?output=json"/>', type:'POST', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/update-company.do?output=json"/>', type:'POST', contentType : "application/json" },
+							create: { url:'<@spring.url "/secure/data/mgmt/company/create.json?output=json"/>', type:'POST', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', type:'POST', contentType : "application/json" },
 							parameterMap: function (options, operation){	          
 								if (operation != "read" && options) {
 									//return { companyId: options.companyId, item: kendo.stringify(options)};
