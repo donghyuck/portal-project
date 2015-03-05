@@ -60,7 +60,6 @@
 							create: { url:'<@spring.url "/secure/data/mgmt/company/create.json?output=json"/>', type:'POST', contentType : "application/json" },
 							update: { url:'<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', type:'POST', contentType : "application/json" },
 							parameterMap: function (options, operation){	          
-								alert( kendo.stringify(options) );
 								if (operation != "read" && options) {
 									return kendo.stringify(options);
 								}else{
