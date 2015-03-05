@@ -148,32 +148,27 @@
 			}	
 		}
 		
-		function showCompanyDetails(){		
-		
+		function showCompanyDetails(){				
 			var renderTo = $('#company-details');
 			var companyPlaceHolder = getSelectedCompany();
-
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
-				var detailsModel = kendo.observable({
+				var observablem = kendo.observable({
 					company : new common.ui.data.Company(),
 					logoUrl : "",
 					memberCount : 0 ,
-					groupCount : 0 
+					groupCount : 0 ,
+					setCompany: function(newCompany){
+						newCompany.copy(this.company);
+						var dt = new Date();
+						this.set("logoUrl", "/download/logo/company/" + this.company.name + "?" + dt.getTime() );
+						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));      
+						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));					
+					}
 				});					
-				detailsModel.bind("change", function(e){		
-					if( e.field.match('^company.name')){ 						
-						var sender = e.sender ;
-						if( sender.company.companyId > 0 ){
-							var dt = new Date();
-							this.set("logoUrl", "/download/logo/company/" + sender.company.name + "?" + dt.getTime() );
-							this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.creationDate ));      
-							this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  sender.company.modifiedDate ));
-						}
-					}	
-				});
-				kendo.bind(renderTo, detailsModel );	
-				renderTo.data("model", detailsModel );		
+				kendo.bind(renderTo, observable );	
+				renderTo.data("model", observable );		
+				
 				$('#myTab').on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.attr('href') ){
@@ -192,16 +187,14 @@
 					hideCompanyDetails();
 				});
 			}
-			companyPlaceHolder.copy( renderTo.data("model").company );
 			
+			renderTo.data("model").setCompany(companyPlaceHolder);
 			$('#myTab a:first').tab('show');		
-			
 			if(renderTo.is(':hidden')){
 				$("#company-list").fadeOut("slow", function(){
-						renderTo.fadeIn("slow");
-					});
-			}
-						
+					renderTo.fadeIn("slow");
+				});
+			}			
 			return false;
 		}
 		
