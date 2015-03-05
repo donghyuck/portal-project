@@ -189,7 +189,8 @@
 			}
 			
 			renderTo.data("model").setCompany(companyPlaceHolder);
-			$('#myTab a:first').tab('show');		
+			$('#myTab a:first').tab('show');	
+				
 			if(renderTo.is(':hidden')){
 				$("#company-list").fadeOut("slow", function(){
 					renderTo.fadeIn("slow");
@@ -199,20 +200,20 @@
 		}
 		
 		function createCompanyPropsPane(renderTo){
-			var companyPlaceHolder = getSelectedCompany();
+		
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json"/>', type:'post' },
-							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + companyPlaceHolder.companyId , type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + companyPlaceHolder.companyId, type:'post', contentType : "application/json"  },
-							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + companyPlaceHolder.companyId, type:'post', contentType : "application/json" },
+							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=jsoncompanyId="/>' + getSelectedCompany().companyId , type:'post' },
+							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json" },
 							parameterMap: function (options, operation){			
 								if (operation !== "read" && options.models) {
 									return kendo.stringify(options);
 								}else{ 
-									return { companyId: companyPlaceHolder.companyId }
+									return { companyId: getSelectedCompany().companyId }
 								}
 							}
 						},						
@@ -241,6 +242,7 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}
+			
 			renderTo.data("kendoGrid").dataSource.read();
 		}
 		
