@@ -63,7 +63,7 @@
 								alert( kendo.stringify(options) );
 								if (operation != "read" && options) {
 									//return { companyId: options.companyId, item: kendo.stringify(options)};
-									return kendo.stringify(options.models);
+									return kendo.stringify(options);
 								}else{
 									return { startIndex: options.skip, pageSize: options.pageSize }
 								}
