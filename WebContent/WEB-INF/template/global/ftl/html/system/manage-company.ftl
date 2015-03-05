@@ -153,7 +153,7 @@
 			var companyPlaceHolder = getSelectedCompany();
 			if( renderTo.text().length === 0 ){
 				renderTo.html(kendo.template($('#company-details-template').html()));
-				var observablem = kendo.observable({
+				var observable = kendo.observable({
 					company : new common.ui.data.Company(),
 					logoUrl : "",
 					memberCount : 0 ,
