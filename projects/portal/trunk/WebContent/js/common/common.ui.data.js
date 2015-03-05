@@ -132,9 +132,10 @@
 		        domainName: { type: "string", editable: true },
 		        description: { type: "string", editable: true },
 		        modifiedDate: { type: "date"},
-		        creationDate: { type: "date" },
+		        creationDate: { type: "date" }
+		        /*,
 		        memberCount: { type: "number", editable: true, defaultValue: 0  },
-		        adminCount: { type: "number", editable: true, defaultValue: 0  }
+		        adminCount: { type: "number", editable: true, defaultValue: 0  }*/
 		    },
 		    copy : function ( target ){
 		    	target.companyId = this.get("companyId");
@@ -144,8 +145,8 @@
 		    	target.set("description", this.get("description"));
 		    	target.set("modifiedDate", this.get("modifiedDate"));
 		    	target.set("creationDate", this.get("creationDate"));
-		    	target.set("memberCount", this.get("memberCount"));
-		    	target.set("adminCount", this.get("adminCount"));		
+		    	/*target.set("memberCount", this.get("memberCount"));
+		    	target.set("adminCount", this.get("adminCount"));		*/
 		    	if( typeof this.get("properties") === 'object' )
 		    		target.set("properties", this.get("properties"));
 		    }    
