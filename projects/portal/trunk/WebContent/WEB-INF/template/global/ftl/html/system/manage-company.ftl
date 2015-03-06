@@ -163,7 +163,7 @@
 						dataSource: {
 							type: "json",
 							transport: {
-								read: { url:'<@spring.url "/secure/list-company-group.do?output=json"/>', type:'post' },
+								read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
 								destroy: { url:'<@spring.url "/secure/remove-group-members.do?output=json"/>', type:'post' },
 								parameterMap: function (options, operation){
 									if (operation !== "read" && options.models) {
@@ -173,10 +173,9 @@
 								}
 							},
 							schema: {
-								data: "companyGroups",
+								total: "totalCount",
 								model: common.ui.data.Group
-							},
-							error:common.ui.handleAjaxError
+							}
 						},
 						scrollable: true,
 						editable: false,
@@ -201,8 +200,8 @@
 		 * function for create logo grid
 		 */
 		function createCompanyLogoGrid(renderTo, data){
-			if( ! renderTo.data("kendoGrid") ){	
-				renderTo.kendoGrid({
+			if( ! common.ui.exists(renderTo)){	
+				common.ui.grid(renderTo,{
 					dataSource: {
 						type: "json",
 						transport: { 
@@ -273,8 +272,7 @@
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
 		
-		function createCompanyPropertiesGrid(renderTo, data){
-		
+		function createCompanyPropertiesGrid(renderTo, data){		
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					dataSource: {
