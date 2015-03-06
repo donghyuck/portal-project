@@ -149,6 +149,9 @@
 						case "groups" :
 							createCompanyGroupGrid	(detailRow.find(".groups"), data);
 							break
+						case "logos" :
+							createCompanyLogoGrid	(detailRow.find(".logos"), data);
+							break	
 					}	
 				});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
@@ -193,6 +196,44 @@
 			}
 			renderTo.data("kendoGrid").dataSource.read();
 		}				
+		
+		function createCompanyLogoGrid(renderTo, data){
+			if( ! renderTo.data("kendoGrid") ){	
+				renderTo.kendoGrid({
+					dataSource: {
+						type: "json",
+						transport: { 
+							read: { url:'<@spring.url "/secure/list-logo-image.do?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { objectType: 1, objectId: data.companyId }
+							}
+						},
+						schema: {
+							data: "targetLogoImages",
+							total: "targetLogoImageCount",
+							model : common.ui.data.Logo
+						}
+						batch: false,
+						pageSize: 10,
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false 
+					},
+					filterable: true,
+					sortable: true,
+					scrollable: true,
+					autoBind: false,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+					selectable: "multiple, row",
+					columns:[
+							{ field: "logoId", title: "ID",  width: 30, filterable: false, sortable: false },
+							{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
+							{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
+						]	
+				});												
+			}	
+			renderTo.data("kendoGrid").dataSource.read();		
+		}
 		
 		function createCompanyUserGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){	
