@@ -421,6 +421,10 @@
 	
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel">
+			<div class="panel-heading">
+				<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span> <span class="text-semibold" data-bind="text:company.displayName"></span></span>
+				<button type="button" class="close" aria-hidden="true">&times;</button>
+			</div>	
 			<div class="panel-body">
 
 <div class="tab-v1">
