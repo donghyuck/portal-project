@@ -212,7 +212,7 @@
 							data: "targetLogoImages",
 							total: "targetLogoImageCount",
 							model : common.ui.data.Logo
-						}
+						},
 						batch: false,
 						pageSize: 10,
 						serverPaging: true,
