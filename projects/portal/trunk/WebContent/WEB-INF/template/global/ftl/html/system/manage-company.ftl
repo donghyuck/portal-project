@@ -364,7 +364,7 @@
 				position: absolute;
 			}
 					
-			.properties a.btn {
+			#company-grid .properties a.btn {
 				cursor: pointer;
 				pointer-events: auto;
 				opacity: 1;
