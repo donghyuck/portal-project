@@ -143,11 +143,58 @@
 						case "properties" :
 							createCompanyPropertiesGrid(detailRow.find(".properties"), data);
 							break;
+						case "users" :
+							createCompanyUserGrid(detailRow.find(".properties"), data);
+							break;	
 					}	
 				});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
 
+		function createCompanyUserGrid(renderTo, data){
+			if( ! renderTo.data("kendoGrid") ){	
+				renderTo.kendoGrid({
+					dataSource: {
+						type: "json",
+						transport: { 
+							read: { url:'<@spring.url "/secure/list-user.do?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  companyId: data.companyId }
+							}
+						},
+						schema: {
+							total: "totalUserCount",
+							data: "users",
+							model: common.ui.data.User
+						},
+						error:common.ui.handleAjaxError,
+						batch: false,
+						pageSize: 10,
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false 
+					},
+					filterable: true,
+					sortable: true,
+					scrollable: true,
+					autoBind: false,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+					selectable: "multiple, row",
+					columns: [
+						{ field: "userId", title: "ID", width:50,  filterable: false, sortable: false }, 
+						{ field: "username", title: "아이디"}, 
+						{ field: "name", title: "이름" }, 
+						{ field: "email", title: "메일" },
+						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
+					dataBound:function(e){
+						//getCompanyDetailsModel().set("memberCount", this.dataSource.total() );
+					},
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
+				});												
+			}	
+			renderTo.data("kendoGrid").dataSource.read();
+		}	
+		
 		function createCompanyPropertiesGrid(renderTo, data){
 		
 			if( ! renderTo.data("kendoGrid") ){
@@ -502,10 +549,10 @@
 							<h4>Heading Sample 1</h4>
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-2">
-							<h4>Heading Sample 2</h4>
+							<div class="groups"></div>
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-3">
-							<h4>Heading Sample 3</h4>
+							<div class="users"></div>
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-4">
 							 <div class="properties"></div>
