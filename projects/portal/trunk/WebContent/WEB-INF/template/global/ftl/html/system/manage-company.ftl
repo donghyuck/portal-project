@@ -430,47 +430,32 @@
 	
 	
 		<script type="text/x-kendo-template" id="company-details-template">		
-		<div class="panel">
-		
+		<div class="panel">		
 			<div class="panel-body padding-sm">
-				<button class="close" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
-			<div class="tab-v1">
-
-                    <ul class="nav nav-tabs">
-                        <li class="active"><a href="\\#home" data-toggle="tab">Home</a></li>
-                        <li class=""><a href="\\#profile" data-toggle="tab">Profile</a></li>
-                        <li class=""><a href="\\#messages" data-toggle="tab">Messages</a></li>
-                        <li class=""><a href="\\#settings" data-toggle="tab">Settings</a></li>
-                    </ul>                
-                    <div class="tab-content">
-                        <div class="tab-pane fade active in" id="home">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <img alt="" class="img-responsive img-tab-space" src="assets/img/new/img4.jpg">                                
-                                </div>
-                                <div class="col-md-8">
-                                    <h4>Heading Sample 1</h4>
-                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
-                                </div>
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="profile">
-                            <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/5.jpg">                         
-                            <h4>Heading Sample 2</h4>
-                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
-                        </div>
-                        <div class="tab-pane fade" id="messages">
-                            <h4>Heading Sample 3</h4>
-                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/6.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
-                        </div>
-                        <div class="tab-pane fade" id="settings">
-                            <h4>Heading Sample 4</h4>
-                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/1.jpg"> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
-                        </div>
-                    </div>
-                </div>
-
-
+				<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
+				<div class="tab-v1">
+					<ul class="nav nav-tabs">
+						<li class=""><a href="\\#company-#= companyId#-tab-1" data-toggle="tab">Home</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-2" data-toggle="tab">Profile</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-3" data-toggle="tab">그룹</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-4" data-toggle="tab">사용자</a></li>
+					</ul>                
+					<div class="tab-content">
+						<div class="tab-pane fade" id="#company-#= companyId#-tab-1">
+							<h4>Heading Sample 1</h4>
+						</div>
+						<div class="tab-pane fade" id="#company-#= companyId#-tab-2">
+							<h4>Heading Sample 2</h4>
+						</div>
+						<div class="tab-pane fade" id="#company-#= companyId#-tab-3">
+							<h4>Heading Sample 3</h4>
+						</div>
+						<div class="tab-pane fade" id="#company-#= companyId#-tab-4">
+							<h4>Heading Sample 4</h4>
+						</div>
+																							
+					</div>
+				</div>
 			</div>
 		</div>			
 		</script>			
