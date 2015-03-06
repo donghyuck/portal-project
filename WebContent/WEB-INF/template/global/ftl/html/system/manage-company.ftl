@@ -144,7 +144,7 @@
 							createCompanyPropertiesGrid(detailRow.find(".properties"), data);
 							break;
 						case "users" :
-							createCompanyUserGrid(detailRow.find(".properties"), data);
+							createCompanyUserGrid(detailRow.find(".users"), data);
 							break;	
 					}	
 				});			
