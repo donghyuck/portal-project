@@ -130,11 +130,10 @@
 		
 		function detailInit(e) {
 			var detailRow = e.detailRow;
-			alert(detailRow.find("[data-action=collapses]").html());
-						detailRow.find("[data-action=collapses]").click(function(e){
-							alert(detailRow.prev().html());
-							//$this.expandRow($this.select());
-						});				
+			var renderTo = $("#company-grid");
+			detailRow.find("[data-action=collapses]").click(function(e){
+				common.ui.grid(renderTo).collapseRow(detailRow.prev());
+			});				
 		}		
 				
 				
@@ -252,9 +251,6 @@
 					change: function(e) {
 					}
 				});		
-				renderTo.find("[data-action='refresh']").click( function(e){
-					common.ui.grid(renderTo).dataSource.read();
-				});	
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
 				});	
