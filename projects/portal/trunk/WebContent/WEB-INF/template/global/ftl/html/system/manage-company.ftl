@@ -378,6 +378,13 @@
 			.panel .tab-content {
 				padding:5px!important;
 			}
+			
+			button.close {
+				z-index: 1000;
+				float: none;
+				right: 25px;
+				position: absolute;
+			}
 												
 		</style>
 </#compress>		
@@ -426,7 +433,7 @@
 		<div class="panel">
 		
 			<div class="panel-body padding-sm">
-				<button class="close" style="z-index:1;" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
+				<button class="close" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
 			<div class="tab-v1">
 
                     <ul class="nav nav-tabs">
