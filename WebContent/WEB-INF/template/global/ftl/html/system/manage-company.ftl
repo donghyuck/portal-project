@@ -620,7 +620,7 @@
 				<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
 				<div class="tab-v1">
 					<ul class="nav nav-tabs nav-tabs-xs">
-						<li class=""><a href="\\#company-#= companyId#-tab-1" data-toggle="tab" data-action="logos">Home</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-1" data-toggle="tab" data-action="logos">로고</a></li>
 						<li class=""><a href="\\#company-#= companyId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
 						<li class=""><a href="\\#company-#= companyId#-tab-3" data-toggle="tab" data-action="users">사용자</a></li>
 						<li class=""><a href="\\#company-#= companyId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
