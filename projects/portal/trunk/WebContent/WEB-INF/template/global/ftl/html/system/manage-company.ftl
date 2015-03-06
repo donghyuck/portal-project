@@ -573,6 +573,7 @@
 				z-index: 1000;
 				float: none;
 				right: 25px;
+				top: 5px;
 				position: absolute;
 			}
 												
