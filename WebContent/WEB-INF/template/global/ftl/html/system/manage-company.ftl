@@ -426,7 +426,7 @@
 				<button type="button" class="close" aria-hidden="true">&times;</button>
 			</div>	
 			<div class="panel-body">
-			<div class="pull-right"><i class="fa fa-angle-up"></i></div>"
+			<div class="pull-right"><button class="close" data-action="collapses" style=""><i class="fa fa-angle-up fa-2x"></i></button></div>"
 <div class="tab-v1">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="\\#home" data-toggle="tab">Home</a></li>
