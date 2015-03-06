@@ -425,7 +425,7 @@
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel">
 			<div class="panel-body">
-			<div class="pull-right"><button class="close" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button></div>
+			<button class="close" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>
 			<div class="tab-v1">
 
                     <ul class="nav nav-tabs">
