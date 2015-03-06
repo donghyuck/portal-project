@@ -424,12 +424,11 @@
 	
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel">
-			<div class="panel-heading">
-				<span class="panel-title">&nbsp;</span>
-				<button class="close" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>
-			</div>			
-			<div class="panel-body">
-			
+		
+			<div class="panel-body padding-sm">
+				<div style="height:20px;">
+					<button class="close" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>
+				</div>				
 			<div class="tab-v1">
 
                     <ul class="nav nav-tabs">
