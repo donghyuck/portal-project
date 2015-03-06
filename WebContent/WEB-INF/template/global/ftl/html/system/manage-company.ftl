@@ -131,8 +131,7 @@
 		function detailInit(e) {
 			var detailRow = e.detailRow;
 			var renderTo = $("#company-grid");
-			
-			alert(kendo.stringify(e.data));
+			var data = e.data;
 			
 			detailRow.find("[data-action=collapses]").click(function(e){
 				common.ui.grid(renderTo).collapseRow(detailRow.prev());
@@ -140,31 +139,30 @@
 			
 			detailRow.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
-					alert(show_bs_tab.html()  );
 					switch( show_bs_tab.data("action") ){
 						case "properties" :
-							createCompanyPropertiesGrid(detailRow.find(".properties"));
+							createCompanyPropertiesGrid(detailRow.find(".properties"), data);
 							break;
 					}	
 				});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
 
-		function createCompanyPropertiesGrid(renderTo){
+		function createCompanyPropertiesGrid(renderTo, data){
 		
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post' , contentType : "application/json"},
-							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json"  },
-							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json" },
+							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json&companyId="/>' + data.companyId , type:'post' , contentType : "application/json"},
+							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId , type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json" },
 							parameterMap: function (options, operation){			
 								if (operation !== "read" && options.models) {
 									return kendo.stringify(options);
 								}else{ 
-									return { companyId: getSelectedCompany().companyId }
+									return { companyId: data.companyId }
 								}
 							}
 						},						
@@ -192,8 +190,7 @@
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
 				});	
-			}
-			
+			}			
 			renderTo.data("kendoGrid").dataSource.read();
 		}
 						
