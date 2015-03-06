@@ -114,8 +114,11 @@
 					edit: function(e){	
 					},
 					dataBound: function(e){   
+						var $this = this;
 						renderTo.find("a[data-action=details]").click(function(e){
-							showCompanyDetails();
+							//showCompanyDetails();
+							$this.expandRow($this.select());
+							
 						});	
 					}	   
 				});		
