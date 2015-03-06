@@ -426,8 +426,7 @@
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
-		</div> <!-- / #main-wrapper -->
-	
+		</div> <!-- / #main-wrapper -->	
 	
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel">		
@@ -439,18 +438,18 @@
 						<li class=""><a href="\\#company-#= companyId#-tab-2" data-toggle="tab">Profile</a></li>
 						<li class=""><a href="\\#company-#= companyId#-tab-3" data-toggle="tab">그룹</a></li>
 						<li class=""><a href="\\#company-#= companyId#-tab-4" data-toggle="tab">사용자</a></li>
-					</ul>                
+					</ul>	
 					<div class="tab-content">
-						<div class="tab-pane fade" id="#company-#= companyId#-tab-1">
+						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
 							<h4>Heading Sample 1</h4>
 						</div>
-						<div class="tab-pane fade" id="#company-#= companyId#-tab-2">
+						<div class="tab-pane fade" id="company-#= companyId#-tab-2">
 							<h4>Heading Sample 2</h4>
 						</div>
-						<div class="tab-pane fade" id="#company-#= companyId#-tab-3">
+						<div class="tab-pane fade" id="company-#= companyId#-tab-3">
 							<h4>Heading Sample 3</h4>
 						</div>
-						<div class="tab-pane fade" id="#company-#= companyId#-tab-4">
+						<div class="tab-pane fade" id="company-#= companyId#-tab-4">
 							<h4>Heading Sample 4</h4>
 						</div>
 																							
