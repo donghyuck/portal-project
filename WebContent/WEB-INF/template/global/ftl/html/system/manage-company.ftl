@@ -226,7 +226,7 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
 					columns:[
-							{ field: "logoId", title: "ID",  width: 30, filterable: false, sortable: false },
+							{ title: "&nbsp;",  width: 30, filterable: false, sortable: false, template:'<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">' },
 							{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
 							{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
 						]	
