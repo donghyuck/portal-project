@@ -278,7 +278,7 @@
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
 				});												
 			}	
-			renderTo.data("kendoGrid").dataSource.read();
+			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
 		
 		function createCompanyPropertiesGrid(renderTo, data){
@@ -324,7 +324,7 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}			
-			renderTo.data("kendoGrid").dataSource.read();
+			renderTo.data("kendoGrid").dataSource.fetch();
 		}
 						
 				
