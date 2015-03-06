@@ -233,22 +233,20 @@
 		}
 		
 		function createCompanyUserGrid(renderTo, data){
-			if( ! renderTo.data("kendoGrid") ){	
-				renderTo.kendoGrid({
+			if( ! common.ui.exists(renderTo)){	
+				common.ui.grid(renderTo, {
 					dataSource: {
 						type: "json",
 						transport: { 
-							read: { url:'<@spring.url "/secure/list-user.do?output=json"/>', type: 'POST' },
+							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
 								return { startIndex: options.skip, pageSize: options.pageSize,  companyId: data.companyId }
 							}
 						},
 						schema: {
-							total: "totalUserCount",
-							data: "users",
+							total: "totalCount",
 							model: common.ui.data.User
 						},
-						error:common.ui.handleAjaxError,
 						batch: false,
 						pageSize: 10,
 						serverPaging: true,
@@ -262,7 +260,6 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
 					columns: [
-						{ field: "userId", title: "ID", width:50,  filterable: false, sortable: false }, 
 						{ field: "username", title: "아이디"}, 
 						{ field: "name", title: "이름" }, 
 						{ field: "email", title: "메일" },
