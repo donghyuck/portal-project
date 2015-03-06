@@ -223,7 +223,7 @@
 					sortable: true,
 					scrollable: true,
 					autoBind: false,
-					selectable: false,
+					/*selectable: false,*/
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
 					columns:[
