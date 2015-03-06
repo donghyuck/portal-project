@@ -265,7 +265,7 @@
 						{ field: "email", title: "메일" },
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
 					dataBound:function(e){
-						//getCompanyDetailsModel().set("memberCount", this.dataSource.total() );
+
 					},
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
 				});												
