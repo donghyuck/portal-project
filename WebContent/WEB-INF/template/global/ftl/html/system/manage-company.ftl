@@ -419,69 +419,44 @@
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel">
 			<div class="panel-body">
-					<div class="details-row no-margin-t">					
-						<div class="left-col">
-							<div class="details-block no-margin-t">
-								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
-								</div>
-								<br>
-								<!--
-								<a href="\\#" class="btn btn-success"><i class="fa fa-check"></i> Following</a> 
-								<a href="\\#" class="btn"><i class="fa fa-comment"></i></a>-->
-							</div>				
-							<div class="panel panel-transparent">
-								<div class="panel-heading">
-									<span class="panel-title"  data-bind="text:company.description"></span>
-								</div>
-								<table class="table">
-									<tbody>						
-										<tr>
-											<th><small>도메인</small></th>								
-											<td><span data-bind="text:company.domainName"></span></td>
-										</tr>	
-										<tr>
-											<th><small>생성일</small></th>								
-											<td><span data-bind="text:formattedCreationDate"></span></td>
-										</tr>	
-										<tr>
-											<th><small>수정일</small></th>								
-											<td><span data-bind="text:formattedModifiedDate"></span></td>
-										</tr>														
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="right-col">
-							<hr class="details-content-hr no-grid-gutter-h">	
-							<div class="details-content">
-								<div class="panel panel-transparent">
-									<div class="panel-heading">
-										<span class="panel-title">&nbsp;</span>							
-										<ul id="myTab" class="nav nav-tabs nav-tabs-simple">
-											<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
-											<li><a href="\\#groups" data-toggle="tab">그룹 <span class="badge badge-success" data-bind="text:groupCount, visible:groupCount ">0</span></a></li>
-											<li><a href="\\#users" data-toggle="tab">사용자 <span class="badge badge-success" data-bind="text:memberCount, visible:memberCount">0</span></a></li>
-										</ul>	
-									</div></!-- /.panel-heading -->								
-									<!-- .tab-content -->	
-									<div class="tab-content  no-padding">								
-										<div class="tab-pane fade" id="props">				
-											<div id="company-prop-grid" class="props no-border-t no-border-hr"></div>
-										</div>
-										<div class="tab-pane fade" id="groups">										
-											<div id="company-group-grid"  class="groups no-border-t no-border-hr"></div>					
-										</div>
-										<div class="tab-pane fade" id="users">	
-											<div id="company-user-grid"  class="users no-border-t no-border-hr"></div>
-										</div>
-									</div><!-- / .tab-content -->
-								</div><!-- / .panel -->
-							</div><!-- / .details-content -->
-						</div><!-- / .right-col -->
-					</div><!-- / .details-row -->	
+
+<div class="tab-v1">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                        <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
+                        <li class=""><a href="#messages" data-toggle="tab">Messages</a></li>
+                        <li class=""><a href="#settings" data-toggle="tab">Settings</a></li>
+                    </ul>                
+                    <div class="tab-content">
+                        <div class="tab-pane fade active in" id="home">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <img alt="" class="img-responsive img-tab-space" src="assets/img/new/img4.jpg">                                
+                                </div>
+                                <div class="col-md-8">
+                                    <h4>Heading Sample 1</h4>
+                                    <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="profile">
+                            <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/5.jpg">                         
+                            <h4>Heading Sample 2</h4>
+                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
+                        </div>
+                        <div class="tab-pane fade" id="messages">
+                            <h4>Heading Sample 3</h4>
+                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/6.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        </div>
+                        <div class="tab-pane fade" id="settings">
+                            <h4>Heading Sample 4</h4>
+                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/1.jpg"> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+                        </div>
+                    </div>
+                </div>
+
+
 			</div>
-			<div class="panel-footer no-padding-vr"></div>
 		</div>			
 		</script>			
 		
