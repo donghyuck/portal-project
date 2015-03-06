@@ -118,8 +118,12 @@
 						renderTo.find("a[data-action=details]").click(function(e){
 							//showCompanyDetails();
 							$this.expandRow($this.select());
-							
 						});	
+						renderTo.find("[data-action=collapses]").click(function(e){
+							alert(this.closest(".k-detail-row").prev().html());
+							//$this.expandRow($this.select());
+						});	
+						
 					}	   
 				});		
 				renderTo.find("a[data-action=create]").click(function(e){
@@ -248,6 +252,9 @@
 					change: function(e) {
 					}
 				});		
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});	
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
 				});	
