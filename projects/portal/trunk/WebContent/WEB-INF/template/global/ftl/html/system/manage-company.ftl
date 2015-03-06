@@ -421,12 +421,8 @@
 	
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel">
-			<div class="panel-heading">
-				<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span> <span class="text-semibold" data-bind="text:company.displayName"></span></span>
-				<button type="button" class="close" aria-hidden="true">&times;</button>
-			</div>	
 			<div class="panel-body">
-			<div class="pull-right"><button class="close" data-action="collapses" style=""><i class="fa fa-angle-up fa-2x"></i></button></div>"
+			<div class="pull-right"><button class="close" data-action="collapses" style=""><i class="fa fa-angle-up fa-lg"></i></button></div>"
 <div class="tab-v1">
                     <ul class="nav nav-tabs">
                         <li class="active"><a href="\\#home" data-toggle="tab">Home</a></li>
