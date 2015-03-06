@@ -218,7 +218,7 @@
 						},
 						batch: false,
 						pageSize: 10,
-						serverPaging: true,
+						serverPaging: false,
 						serverFiltering: false,
 						serverSorting: false 
 					},
