@@ -118,12 +118,7 @@
 						renderTo.find("a[data-action=details]").click(function(e){
 							//showCompanyDetails();
 							$this.expandRow($this.select());
-						});	
-						renderTo.find("[data-action=collapses]").click(function(e){
-							alert(this.closest(".k-detail-row").prev().html());
-							//$this.expandRow($this.select());
-						});	
-						
+						});							
 					}	   
 				});		
 				renderTo.find("a[data-action=create]").click(function(e){
@@ -135,6 +130,10 @@
 		
 		function detailInit(e) {
 			var detailRow = e.detailRow;
+						renderTo.find("[data-action=collapses]").click(function(e){
+							alert(this.closest(".k-detail-row").prev().html());
+							//$this.expandRow($this.select());
+						});				
 		}		
 				
 				
