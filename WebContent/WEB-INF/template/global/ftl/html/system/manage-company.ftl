@@ -226,7 +226,6 @@
 					sortable: true,
 					scrollable: true,
 					selectable: false,
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					columns:[
 							{ title: "&nbsp;",  width:150, filterable: false, sortable: false, template:'<div class="text-center"><img alt="" class="img-thumbnail" src="<@spring.url "/secure/download/logo/#= logoId #?width=120&height=120" />"></div>' },
 							{ field: "filename", title: "파일", template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
