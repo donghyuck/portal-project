@@ -131,12 +131,71 @@
 		function detailInit(e) {
 			var detailRow = e.detailRow;
 			var renderTo = $("#company-grid");
+			
+			alert(kendo.stringify(e.data));
+			
 			detailRow.find("[data-action=collapses]").click(function(e){
 				common.ui.grid(renderTo).collapseRow(detailRow.prev());
 			});				
+			
+			detailRow.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
+					var show_bs_tab = $(e.target);
+					switch( show_bs_tab.data("action") ){
+						case "properties" :
+							createCompanyPropertiesGrid(detailRow.find(".properties"));
+							break;
+					}	
+				});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
-				
+
+		function createCompanyPropertiesGrid(renderTo){
+		
+			if( ! renderTo.data("kendoGrid") ){
+				renderTo.kendoGrid({
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post' , contentType : "application/json"},
+							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json" },
+							parameterMap: function (options, operation){			
+								if (operation !== "read" && options.models) {
+									return kendo.stringify(options);
+								}else{ 
+									return { companyId: getSelectedCompany().companyId }
+								}
+							}
+						},						
+						batch: true, 
+						schema: {
+							data: "targetCompanyProperty",
+							model: common.ui.data.Property
+						},
+						error:common.ui.handleAjaxError
+					},
+					columns: [
+						{ title: "속성", field: "name", width: 250 },
+						{ title: "값",   field: "value" },
+						{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }
+					],
+					pageable: false,
+					resizable: true,
+					editable : true,
+					scrollable: true,
+					autoBind: false,
+					toolbar: kendo.template('<div class="p-sm"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
+					change: function(e) {
+					}
+				});		
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});	
+			}
+			
+			renderTo.data("kendoGrid").dataSource.read();
+		}
+						
 				
 		function getSelectedCompany(){
 			var renderTo = $("#company-grid");
@@ -219,7 +278,7 @@
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=jsoncompanyId="/>' + getSelectedCompany().companyId , type:'post' , contentType : "application/json"},
+							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post' , contentType : "application/json"},
 							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId , type:'post', contentType : "application/json" },
 							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json"  },
 							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + getSelectedCompany().companyId, type:'post', contentType : "application/json" },
@@ -435,10 +494,10 @@
 				<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
 				<div class="tab-v1">
 					<ul class="nav nav-tabs">
-						<li class=""><a href="\\#company-#= companyId#-tab-1" data-toggle="tab">Home</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-2" data-toggle="tab">Profile</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-3" data-toggle="tab">그룹</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-4" data-toggle="tab">사용자</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-1" data-toggle="tab" data-action="1">Home</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-3" data-toggle="tab" data-action="users">사용자</a></li>
+						<li class=""><a href="\\#company-#= companyId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
 					</ul>	
 					<div class="tab-content">
 						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
@@ -452,6 +511,7 @@
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-4">
 							<h4>Heading Sample 4</h4>
+							 <div class="properties"></div>
 						</div>
 																							
 					</div>
