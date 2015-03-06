@@ -94,7 +94,9 @@
 							title: "&nbsp;", 
 							width: 180  
 						}
-					], 						
+					], 		
+					detailTemplate: kendo.template($("#company-details-template").html()),		
+					detailInit: detailInit,		
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
@@ -123,6 +125,11 @@
 			}
 			
 		}
+		
+		function detailInit(e) {
+			var detailRow = e.detailRow;		
+		}		
+				
 				
 		function getSelectedCompany(){
 			var renderTo = $("#company-grid");
@@ -408,6 +415,8 @@
 			</div>
 		</div> <!-- / #main-wrapper -->
 	
+		
+		
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel">
 			<div class="panel-heading">
