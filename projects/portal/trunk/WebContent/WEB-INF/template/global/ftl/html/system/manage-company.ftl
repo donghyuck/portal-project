@@ -130,8 +130,8 @@
 		
 		function detailInit(e) {
 			var detailRow = e.detailRow;
-						renderTo.find("[data-action=collapses]").click(function(e){
-							alert(this.closest(".k-detail-row").prev().html());
+						detailRow.find("[data-action=collapses]").click(function(e){
+							alert(detailRow.prev().html());
 							//$this.expandRow($this.select());
 						});				
 		}		
