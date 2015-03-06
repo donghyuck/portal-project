@@ -229,7 +229,7 @@
 					columns:[
 							{ title: "&nbsp;",  width:150, filterable: false, sortable: false, template:'<div class="text-center"><img alt="" class="img-thumbnail" src="<@spring.url "/secure/download/logo/#= logoId #?width=120&height=120" />"></div>' },
 							{ field: "filename", title: "파일", template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
-							{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
+							{ field: "imageSize", title: "파일크기",  width: 150 , format: "{0:##,### bytes}" }
 						]	
 				});												
 			}	
