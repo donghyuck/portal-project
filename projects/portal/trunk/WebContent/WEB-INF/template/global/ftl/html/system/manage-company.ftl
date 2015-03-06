@@ -363,7 +363,15 @@
 				top: 5px;
 				position: absolute;
 			}
-												
+					
+			.properties a.btn {
+				cursor: pointer;
+				pointer-events: auto;
+				opacity: 1;
+				filter: none;
+				-webkit-box-shadow: none;
+				box-shadow: none;				
+			} 									
 		</style>
 </#compress>		
 	</head>
