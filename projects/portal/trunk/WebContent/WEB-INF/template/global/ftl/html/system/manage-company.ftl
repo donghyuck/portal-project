@@ -301,7 +301,6 @@
 						},						
 						batch: true, 
 						schema: {
-							data: "targetCompanyProperty",
 							model: common.ui.data.Property
 						},
 						error:common.ui.handleAjaxError
