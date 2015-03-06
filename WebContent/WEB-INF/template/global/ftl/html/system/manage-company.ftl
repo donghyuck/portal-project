@@ -422,10 +422,10 @@
 
 <div class="tab-v1">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                        <li class=""><a href="#profile" data-toggle="tab">Profile</a></li>
-                        <li class=""><a href="#messages" data-toggle="tab">Messages</a></li>
-                        <li class=""><a href="#settings" data-toggle="tab">Settings</a></li>
+                        <li class="active"><a href="\\#home" data-toggle="tab">Home</a></li>
+                        <li class=""><a href="\\#profile" data-toggle="tab">Profile</a></li>
+                        <li class=""><a href="\\#messages" data-toggle="tab">Messages</a></li>
+                        <li class=""><a href="\\#settings" data-toggle="tab">Settings</a></li>
                     </ul>                
                     <div class="tab-content">
                         <div class="tab-pane fade active in" id="home">
