@@ -134,6 +134,7 @@
 			detailRow.find("[data-action=collapses]").click(function(e){
 				common.ui.grid(renderTo).collapseRow(detailRow.prev());
 			});				
+			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
 				
 				
