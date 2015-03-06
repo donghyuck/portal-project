@@ -140,6 +140,7 @@
 			
 			detailRow.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
+					alert(show_bs_tab.html()  );
 					switch( show_bs_tab.data("action") ){
 						case "properties" :
 							createCompanyPropertiesGrid(detailRow.find(".properties"));
