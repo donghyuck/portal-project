@@ -415,9 +415,77 @@
 			</div>
 		</div> <!-- / #main-wrapper -->
 	
-		
-		
+	
 		<script type="text/x-kendo-template" id="company-details-template">		
+		<div class="panel">
+			<div class="panel-body">
+					<div class="details-row no-margin-t">					
+						<div class="left-col">
+							<div class="details-block no-margin-t">
+								<div class="details-photo">
+									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
+								</div>
+								<br>
+								<!--
+								<a href="\\#" class="btn btn-success"><i class="fa fa-check"></i> Following</a> 
+								<a href="\\#" class="btn"><i class="fa fa-comment"></i></a>-->
+							</div>				
+							<div class="panel panel-transparent">
+								<div class="panel-heading">
+									<span class="panel-title"  data-bind="text:company.description"></span>
+								</div>
+								<table class="table">
+									<tbody>						
+										<tr>
+											<th><small>도메인</small></th>								
+											<td><span data-bind="text:company.domainName"></span></td>
+										</tr>	
+										<tr>
+											<th><small>생성일</small></th>								
+											<td><span data-bind="text:formattedCreationDate"></span></td>
+										</tr>	
+										<tr>
+											<th><small>수정일</small></th>								
+											<td><span data-bind="text:formattedModifiedDate"></span></td>
+										</tr>														
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="right-col">
+							<hr class="details-content-hr no-grid-gutter-h">	
+							<div class="details-content">
+								<div class="panel panel-transparent">
+									<div class="panel-heading">
+										<span class="panel-title">&nbsp;</span>							
+										<ul id="myTab" class="nav nav-tabs nav-tabs-simple">
+											<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
+											<li><a href="\\#groups" data-toggle="tab">그룹 <span class="badge badge-success" data-bind="text:groupCount, visible:groupCount ">0</span></a></li>
+											<li><a href="\\#users" data-toggle="tab">사용자 <span class="badge badge-success" data-bind="text:memberCount, visible:memberCount">0</span></a></li>
+										</ul>	
+									</div></!-- /.panel-heading -->								
+									<!-- .tab-content -->	
+									<div class="tab-content  no-padding">								
+										<div class="tab-pane fade" id="props">				
+											<div id="company-prop-grid" class="props no-border-t no-border-hr"></div>
+										</div>
+										<div class="tab-pane fade" id="groups">										
+											<div id="company-group-grid"  class="groups no-border-t no-border-hr"></div>					
+										</div>
+										<div class="tab-pane fade" id="users">	
+											<div id="company-user-grid"  class="users no-border-t no-border-hr"></div>
+										</div>
+									</div><!-- / .tab-content -->
+								</div><!-- / .panel -->
+							</div><!-- / .details-content -->
+						</div><!-- / .right-col -->
+					</div><!-- / .details-row -->	
+			</div>
+			<div class="panel-footer no-padding-vr"></div>
+		</div>			
+		</script>			
+		
+		<script type="text/x-kendo-template" id="company-details-template2">		
 		<div class="panel">
 			<div class="panel-heading">
 				<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span> <span class="text-semibold" data-bind="text:company.displayName"></span></span>
