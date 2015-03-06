@@ -227,7 +227,7 @@
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
 					columns:[
-							{ title: "&nbsp;",  width: 30, filterable: false, sortable: false, template:'<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">' },
+							{ title: "&nbsp;",  width: 30, filterable: false, sortable: false, template:'<img alt="" src="<@spring.url "/secure/download/logo/#= logoId #?width=150"/>">' },
 							{ field: "filename", title: "파일", width: 250, template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
 							{ field: "imageSize", title: "파일크기",  width: 100 , format: "{0:##,### bytes}" }
 						]	
