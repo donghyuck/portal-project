@@ -426,9 +426,7 @@
 		<div class="panel">
 		
 			<div class="panel-body padding-sm">
-				<div style="height:20px;">
-					<button class="close" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>
-				</div>				
+				<button class="close" style="z-index:1;" data-action="collapses" data-object-id="#: companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
 			<div class="tab-v1">
 
                     <ul class="nav nav-tabs">
