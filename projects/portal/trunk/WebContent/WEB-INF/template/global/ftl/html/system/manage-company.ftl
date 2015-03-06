@@ -197,6 +197,9 @@
 			renderTo.data("kendoGrid").dataSource.read();
 		}				
 		
+		/**
+		 * function for create logo grid
+		 */
 		function createCompanyLogoGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){	
 				renderTo.kendoGrid({
@@ -223,9 +226,7 @@
 					sortable: true,
 					scrollable: true,
 					autoBind: false,
-					/*selectable: false,*/
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-					selectable: "multiple, row",
 					columns:[
 							{ title: "&nbsp;",  width:150, filterable: false, sortable: false, template:'<div class="text-center"><img alt="" class="img-thumbnail" src="<@spring.url "/secure/download/logo/#= logoId #?width=120&height=120" />"></div>' },
 							{ field: "filename", title: "파일", template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
