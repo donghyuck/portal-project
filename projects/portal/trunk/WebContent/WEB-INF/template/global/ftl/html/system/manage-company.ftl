@@ -194,7 +194,7 @@
 						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success m-r-xs" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-gift"></span> 디폴트 그룹 자동 생성</button> <button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </button></div>')
 				});		
 			}
-			renderTo.data("kendoGrid").dataSource.read();
+			renderTo.data("kendoGrid").dataSource.fetch();
 		}				
 		
 		/**
