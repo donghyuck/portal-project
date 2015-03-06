@@ -146,11 +146,54 @@
 						case "users" :
 							createCompanyUserGrid(detailRow.find(".users"), data);
 							break;	
+						case "groups" :
+							createCompanyGroupGrid	(detailRow.find(".groups"), data);
+							break
 					}	
 				});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
-
+		
+		function createCompanyGroupGrid(renderTo, data){
+			if( ! renderTo.data("kendoGrid") ){	
+					renderTo.kendoGrid({
+						dataSource: {
+							type: "json",
+							transport: {
+								read: { url:'<@spring.url "/secure/list-company-group.do?output=json"/>', type:'post' },
+								destroy: { url:'<@spring.url "/secure/remove-group-members.do?output=json"/>', type:'post' },
+								parameterMap: function (options, operation){
+									if (operation !== "read" && options.models) {
+										return { companyId: data.companyId, items: kendo.stringify(options.models)};
+									}
+									return { companyId: data.companyId }
+								}
+							},
+							schema: {
+								data: "companyGroups",
+								model: common.ui.data.Group
+							},
+							error:common.ui.handleAjaxError
+						},
+						scrollable: true,
+						editable: false,
+						autoBind: false,
+						columns: [
+							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
+							{ field: "name",  title: "KEY",  filterable: true, sortable: true },
+							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
+							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
+							{ field:"memberCount", title: "인원", filterable: false,  sortable: false, width:50 }
+						],
+						dataBound:function(e){
+							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );
+						},
+						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success m-r-xs" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-gift"></span> 디폴트 그룹 자동 생성</button> <button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </button></div>')
+				});		
+			}
+			renderTo.data("kendoGrid").dataSource.read();
+		}				
+		
 		function createCompanyUserGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){	
 				renderTo.kendoGrid({
