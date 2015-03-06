@@ -130,6 +130,7 @@
 		
 		function detailInit(e) {
 			var detailRow = e.detailRow;
+			alert(detailRow.html());
 						detailRow.find("[data-action=collapses]").click(function(e){
 							alert(detailRow.prev().html());
 							//$this.expandRow($this.select());
