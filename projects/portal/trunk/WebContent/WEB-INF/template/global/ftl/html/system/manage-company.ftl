@@ -216,11 +216,7 @@
 							total: "targetLogoImageCount",
 							model : common.ui.data.Logo
 						},
-						batch: false,
-						pageSize: 10,
-						serverPaging: false,
-						serverFiltering: false,
-						serverSorting: false 
+						batch: false
 					},
 					filterable: true,
 					sortable: true,
