@@ -508,7 +508,6 @@
 							<h4>Heading Sample 3</h4>
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-4">
-							<h4>Heading Sample 4</h4>
 							 <div class="properties"></div>
 						</div>
 																							
