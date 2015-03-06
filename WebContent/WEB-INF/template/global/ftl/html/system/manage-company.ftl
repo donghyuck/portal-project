@@ -630,7 +630,7 @@
 					</ul>	
 					<div class="tab-content">
 						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
-							<h4>Heading Sample 1</h4>
+							<div class="logos"></div>
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-2">
 							<div class="groups"></div>
