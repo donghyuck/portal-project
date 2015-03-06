@@ -234,7 +234,7 @@
 						]	
 				});												
 			}	
-			renderTo.data("kendoGrid").dataSource.read();		
+			renderTo.data("kendoGrid").dataSource.fetch();		
 		}
 		
 		function createCompanyUserGrid(renderTo, data){
