@@ -81,7 +81,7 @@
 			display : inline; 
 		}
 
-		 .k-grid .k-selectable tr[aria-selected="false"] > td .btn, .k-grid .k-selectable td > a.btn, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn{
+		.k-grid .k-selectable td > .btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td .btn-selectable, .k-grid .k-selectable td > a.btn-selectable, .k-grid .k-selectable tr[aria-selected="false"] > td a.btn-selectable{
 			cursor: not-allowed;
 			pointer-events: none;
 			opacity: 0;
@@ -90,7 +90,7 @@
 			box-shadow: none;
 		}			
 		
-		.k-grid  .k-selectable tr[aria-selected="true"] > td > .btn , .k-grid .k-selectable tr[aria-selected="true"] > td  a.btn {
+		.k-grid  .k-selectable tr[aria-selected="true"] > td > .btn-selectable , .k-grid .k-selectable tr[aria-selected="true"] > td  a.btn-selectable {
 			cursor: pointer;
 			pointer-events: auto;
 			opacity: 1;
