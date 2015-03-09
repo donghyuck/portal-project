@@ -98,6 +98,7 @@
 					detailTemplate: kendo.template($("#company-details-template").html()),		
 					detailInit: detailInit,		
 					filterable: true,
+					selectable: true,
 					editable: "inline",
 					selectable: 'row',
 					height: '600',
