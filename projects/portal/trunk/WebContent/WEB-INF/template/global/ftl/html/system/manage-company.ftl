@@ -280,7 +280,7 @@
 					selectable: "multiple, row",
 					columns: [
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
-						{ field: "name", title: "이름(메일)", template: '#if (nameVisible) { #: name #} else{ #: "****" #} #' }, 
+						{ field: "name", title: "이름(메일)", template: '#if (nameVisible) { #= name #} else{ #: "****" #} #' }, 
 						{ field: "email", title: "메일" },
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
 					dataBound:function(e){
