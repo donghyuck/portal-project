@@ -99,7 +99,7 @@
 			box-shadow: none;
 		}
 
-		.k-grid  .k-selectable  > td > .btn.disabled, .k-grid  .k-selectable  > td > .btn[disabled] {
+		.k-grid  td > .btn.disabled, .k-grid  td > .btn[disabled] {
 			  pointer-events: none;
 			  cursor: not-allowed;
 			  filter: alpha(opacity=65);
