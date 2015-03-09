@@ -179,6 +179,7 @@
 							}
 						},
 						scrollable: true,
+						editable: "inline",
 						editable: true,
 						autoBind: false,
 						selectable: 'row',
