@@ -97,7 +97,7 @@
 				$(document).on("click","[data-action=update],[data-action=create]", function(e){		
 					var $this = $(this);		
 					if( common.ui.defined($this.data("object-id")) ){
-						common.ui.grid(renderTo).clearSelection();
+						//common.ui.grid(renderTo).clearSelection();
 						var objectId = $this.data("object-id");						
 						if( objectId > 0 ){
 							openEditor(common.ui.grid(renderTo).dataSource.get(objectId));
