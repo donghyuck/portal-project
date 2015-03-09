@@ -85,10 +85,10 @@
 						{ command: [
 							{ 
 								name: "detail",
-								template : '<a href="\\#" class="btn btn-xs btn-success m-r-xs" data-action="details">상세보기</a>',
+								template : '<a href="\\#" class="btn btn-xs btn-success m-r-xs btn-selectable" data-action="details">상세보기</a>',
 							},{ 
 								name: "edit",
-								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								text: { edit: "변경", update: "저장", cancel: "취소"}
 							}], 
 							title: "&nbsp;", 
