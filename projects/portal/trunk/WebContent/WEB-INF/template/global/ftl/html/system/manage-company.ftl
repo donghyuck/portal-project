@@ -364,7 +364,7 @@
 				position: absolute;
 			}
 					
-			#company-grid .properties a.btn {
+			#company-grid .properties a.btn, .k-detail-cell .logos button.btn {
 				cursor: pointer;
 				pointer-events: auto;
 				opacity: 1;
