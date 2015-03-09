@@ -186,7 +186,7 @@
 							{ field: "name",  title: "KEY",  filterable: true, sortable: true },
 							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
 							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
-							{ field:"memberCount", title: "인원", filterable: false,  sortable: false, width:50 }
+							{ field:"memberCount", title: "인원", filterable: false,  sortable: false, width:50, editable:false }
 						],
 						dataBound:function(e){
 							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );							
