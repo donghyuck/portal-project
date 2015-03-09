@@ -443,7 +443,7 @@
 		}	
 		options = options || {},
 		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
-		dataSource = options.dataSource = datasource( "/data/streams/photos/list.json?output=json", {
+		dataSource = options.dataSource = datasource( "/data/streams/photos/list_with_random.json?output=json", {
 			pageSize: 15,
 			schema: {
 				total: "totalCount",
