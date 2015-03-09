@@ -229,8 +229,9 @@
 						],
 				dataBound:function(e){
 					renderTo.find("[data-action=primary]").click(function(e){
+						kendo.ui.progress(renderTo, true);
 						alert($(this).data("object-id") );					
-					
+						kendo.ui.progress(renderTo, false);
 					});
 				},							
 				});												
