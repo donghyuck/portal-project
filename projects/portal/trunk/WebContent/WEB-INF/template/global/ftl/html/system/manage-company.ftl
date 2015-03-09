@@ -229,11 +229,22 @@
 						],
 				dataBound:function(e){
 					renderTo.find("[data-action=primary]").click(function(e){
-						kendo.ui.progress(renderTo, true);
-						alert($(this).data("object-id") );					
-						kendo.ui.progress(renderTo, false);
+						var logoId = $(this).data("object-id");
+						common.ui.ajax(
+							"<@spring.url "/secure/data/mgmt/logo/set_primary.json"/>",
+							{
+									type : 'POST',
+									url : '/data/streams/photos/delete.json?output=json' ,
+									data: { logoId : logoId },
+									success : function(response){
+										renderTo.data("kendoGrid").dataSource.read();		
+									},
+									complete: function(){
+										kendo.ui.progress(renderTo, false);
+									}
+						});		
 					});
-				},							
+				}						
 				});												
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();		
