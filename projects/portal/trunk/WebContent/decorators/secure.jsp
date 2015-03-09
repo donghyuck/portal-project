@@ -98,15 +98,6 @@
 			-webkit-box-shadow: none;
 			box-shadow: none;
 		}
-
-		.k-grid  td > .btn.disabled, .k-grid  td > .btn[disabled] {
-			  pointer-events: none;
-			  cursor: not-allowed;
-			  filter: alpha(opacity=65);
-			  -webkit-box-shadow: none;
-			  box-shadow: none;
-			  opacity: .65;
-		}
 						
 </style>
 </head>
