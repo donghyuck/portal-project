@@ -186,7 +186,15 @@
 							{ field: "name",  title: "KEY",  filterable: true, sortable: true },
 							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
 							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
-							{ field:"memberCount", title: "인원", filterable: false,  sortable: false, width:50, editable:false }
+							{ command: [
+								{ 
+									name: "edit",
+									template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+									text: { edit: "변경", update: "저장", cancel: "취소"}
+								}], 
+								title: "&nbsp;", 
+								width: 180  
+							}
 						],
 						dataBound:function(e){
 							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );							
