@@ -371,7 +371,15 @@
 				filter: none;
 				-webkit-box-shadow: none;
 				box-shadow: none;				
-			} 									
+			} 		
+			
+			#company-grid .logos button.btn.disabled {
+				cursor: not-allowed;
+				pointer-events: none;
+				filter: alpha(opacity=65);
+				-webkit-box-shadow: none;
+				opacity: .65;
+			}							
 		</style>
 </#compress>		
 	</head>
