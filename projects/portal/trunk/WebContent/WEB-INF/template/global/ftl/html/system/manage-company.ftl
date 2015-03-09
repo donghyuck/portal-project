@@ -172,6 +172,7 @@
 										if( operation == "create" )
 										{
 											options.companyId = data.companyId;
+											options.company = data;
 										}	
 										return kendo.stringify(options);
 									}else{
