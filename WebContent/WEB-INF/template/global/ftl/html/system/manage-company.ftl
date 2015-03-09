@@ -312,7 +312,7 @@
 							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json" },
 							parameterMap: function (options, operation){			
 								if (operation !== "read" && options.models) {
-									return kendo.stringify(options);
+									return kendo.stringify(options.models);
 								}else{ 
 									return { companyId: data.companyId }
 								}
