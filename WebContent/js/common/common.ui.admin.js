@@ -59,7 +59,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 	CHANGE = 'change',
 	AUTHENTICATE = 'authenticate',
 	COMPLETE = 'complete',
-	AUTHENTICATE_URL =  "/data/accounts/get.json?output=json";//"/accounts/get-user.do?output=json",	
+	AUTHENTICATE_URL =  "/data/accounts/get.json?output=json";
 	ROLE_ADMIN = "ROLE_ADMIN", 
 	ROLE_SYSTEM = "ROLE_SYSTEM", 	
 	OBJECT_TYPE = 30 ,
@@ -89,14 +89,13 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 		complete : function(){
 			var that = this,
 			options = that.options, 			
-			cfg = { features : {}, jobs : [] };
-			
+			cfg = { features : {}, jobs : [] };			
 			cfg.features = options.features || {} ;
 			cfg.jobs =  options.jobs || [] ;			
 			common.ui.setup(cfg);		
 			
 			that.authenticate();
-			that.companySelector();
+			//that.companySelector();
 			culture();
 			
 			
