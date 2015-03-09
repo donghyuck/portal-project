@@ -205,6 +205,9 @@
 								width: 180  
 							}
 						],
+						save: function(e) {
+							this.dataSource.read();						
+						},
 						dataBound:function(e){
 							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );							
 						},
