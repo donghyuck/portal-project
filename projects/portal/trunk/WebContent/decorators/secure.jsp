@@ -89,6 +89,7 @@
 			-webkit-box-shadow: none;
 			box-shadow: none;
 		}			
+		
 		.k-grid  .k-selectable tr[aria-selected="true"] > td > .btn , .k-grid .k-selectable tr[aria-selected="true"] > td  a.btn {
 			cursor: pointer;
 			pointer-events: auto;
@@ -97,7 +98,16 @@
 			-webkit-box-shadow: none;
 			box-shadow: none;
 		}
-				
+
+		.k-grid  .k-selectable  > td > .btn.disabled, .k-grid  .k-selectable  > td > .btn[disabled] {
+			  pointer-events: none;
+			  cursor: not-allowed;
+			  filter: alpha(opacity=65);
+			  -webkit-box-shadow: none;
+			  box-shadow: none;
+			  opacity: .65;
+		}
+						
 </style>
 </head>
 <body onload="<decorator:getProperty property="body.onload" />"  data-color="<decorator:getProperty property="body.data-color" />" class="<decorator:getProperty property="body.class" default="" />">
