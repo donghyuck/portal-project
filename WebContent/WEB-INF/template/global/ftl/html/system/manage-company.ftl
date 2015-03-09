@@ -98,7 +98,6 @@
 					detailTemplate: kendo.template($("#company-details-template").html()),		
 					detailInit: detailInit,		
 					filterable: true,
-					selectable: true,
 					editable: "inline",
 					selectable: 'row',
 					height: '600',
@@ -182,6 +181,7 @@
 						scrollable: true,
 						editable: true,
 						autoBind: false,
+						selectable: 'row',
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
 							{ field: "name",  title: "KEY",  filterable: true, sortable: true },
