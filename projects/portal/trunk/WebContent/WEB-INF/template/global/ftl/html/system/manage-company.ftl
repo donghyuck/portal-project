@@ -228,7 +228,7 @@
 							{ field: "imageSize", title: "파일크기",  width: 150 , format: "{0:##,### bytes}" }
 						],
 				dataBound:function(e){
-					renderTo.find("data-action[primary]").click(function(e){
+					renderTo.find("[data-action=primary]").click(function(e){
 						alert($(this).data("object-id") );					
 					
 					});
