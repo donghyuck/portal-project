@@ -164,12 +164,20 @@
 							type: "json",
 							transport: {
 								read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
+								create: { url:'<@spring.url "/secure/data/mgmt/company/groups/create.json?output=json"/>', type:'post', contentType : "application/json" },
+								update: { url:'<@spring.url "/secure/data/mgmt/company/groups/update.json?output=json"/>', type:'post', contentType : "application/json"  },
+								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },															
 								destroy: { url:'<@spring.url "/secure/remove-group-members.do?output=json"/>', type:'post' },
 								parameterMap: function (options, operation){
-									if (operation !== "read" && options.models) {
-										return { companyId: data.companyId, items: kendo.stringify(options.models)};
+									if (operation != "read" && options) {
+										if( operation == "create" )
+										{
+											options.companyId = data.companyId;
+										}	
+										return kendo.stringify(options);
+									}else{
+										return { companyId: data.companyId }
 									}
-									return { companyId: data.companyId }
 								}
 							},
 							schema: {
