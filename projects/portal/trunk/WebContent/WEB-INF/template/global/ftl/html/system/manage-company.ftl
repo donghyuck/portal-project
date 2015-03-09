@@ -166,8 +166,7 @@
 								read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
 								create: { url:'<@spring.url "/secure/data/mgmt/company/groups/create.json?output=json"/>', type:'post', contentType : "application/json" },
 								update: { url:'<@spring.url "/secure/data/mgmt/company/groups/update.json?output=json"/>', type:'post', contentType : "application/json"  },
-								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },															
-								destroy: { url:'<@spring.url "/secure/remove-group-members.do?output=json"/>', type:'post' },
+								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
 										if( operation == "create" )
