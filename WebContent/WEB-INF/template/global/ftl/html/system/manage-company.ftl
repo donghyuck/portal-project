@@ -206,14 +206,14 @@
 					dataSource: {
 						type: "json",
 						transport: { 
-							read: { url:'<@spring.url "/secure/list-logo-image.do?output=json"/>', type: 'POST' },
+							read: { url:'<@spring.url "/secure/data/mgmt/logo/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
 								return { objectType: 1, objectId: data.companyId }
 							}
 						},
 						schema: {
-							data: "targetLogoImages",
-							total: "targetLogoImageCount",
+							data: "items",
+							total: "totalCount",
 							model : common.ui.data.Logo
 						},
 						batch: false
@@ -224,7 +224,7 @@
 					selectable: false,
 					columns:[
 							{ title: "&nbsp;",  width:150, filterable: false, sortable: false, template:'<div class="text-center"><img alt="" class="img-thumbnail" src="<@spring.url "/secure/download/logo/#= logoId #?width=120&height=120" />"></div>' },
-							{ field: "filename", title: "파일", template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small>" },
+							{ field: "filename", title: "파일", template:"#:filename# <small><span class='label label-info'>#: imageContentType #</span></small> #= primary #" },
 							{ field: "imageSize", title: "파일크기",  width: 150 , format: "{0:##,### bytes}" }
 						]	
 				});												
