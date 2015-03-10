@@ -61,7 +61,8 @@
 						var dt = new Date();
 						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + this.company.name + "?" + dt.getTime() );
 						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));      
-						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));					
+						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));				
+						alert( common.ui.stringify( this.company ));	
 					},
 					onSave : function(e){						
 						var btn = $(e.target);
