@@ -81,7 +81,7 @@
 					}	
 				});	
 				
-				$("#my-company-details").data("model", observable );	
+				common.ui.bind($("#my-company-details"), observable );				
 				
 				common.ui.admin.setup({					 
 					authenticate : function(e){
