@@ -98,7 +98,6 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 			//that.companySelector();
 			culture();
 			
-			
 			$('.menu-content-profile .close').click(function () {
 				var $p = $(this).parents('.menu-content');
 				$p.addClass('fadeOut');
@@ -114,6 +113,10 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 			that._pixelAdmin.start([]);	
 			
 		
+		},
+		token : function(){
+			var that = this;
+			return that.token;
 		},
 		authenticate : function() {
 			var that = this;
