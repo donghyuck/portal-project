@@ -66,10 +66,12 @@
 	});
 	
 	extend( common.ui.data, {
+		admin: {
+			EditableCompany : EditableCompany			
+		},
 		stats : {
 			Accumulator: Accumulator,
-			Database : Database,
-			EditableCompany : EditableCompany
+			Database : Database			
 		}
 	} );
 	
