@@ -54,6 +54,13 @@
 							data: "targetCompanyProperty"
 						}
 					}),
+					setCompany:function(company){
+						company.copy(this.company);
+						var dt = new Date();
+						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + this.company.name + "?" + dt.getTime() );
+						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));      
+						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));					
+					},
 					onSave : function(e){						
 						var btn = $(e.target);
 						btn.button('loading');
