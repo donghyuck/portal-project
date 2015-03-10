@@ -173,7 +173,6 @@
 		    id: "userId", // the identifier of the model
 		    fields: {
 		    	companyId: {  type: "number", defaultValue: 0 },
-		    	company: common.ui.data.Company,
 		    	userId: { type: "number", editable: false, defaultValue: 0  },
 		        username: { type: "string", defaultValue: "anonymous" },
 		        name: { type: "string" },
