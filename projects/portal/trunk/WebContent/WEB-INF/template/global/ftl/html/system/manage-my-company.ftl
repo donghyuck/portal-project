@@ -93,7 +93,6 @@
 		}]);
 		
 		function getCompany(){
-			if( 
 			return new common.ui.data.Company( common.ui.admin.setup().token.company );
 		}
 						
