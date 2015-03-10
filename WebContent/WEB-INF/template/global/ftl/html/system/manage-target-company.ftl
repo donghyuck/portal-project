@@ -113,7 +113,10 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
-						e.data.copy(detailsModel.company);
+						getSelectedCompany().copy(detailsModel.company);
+						detailsModel.isEnabled = true;
+						kendo.bind($("#company-details"), detailsModel );				
+						displayCompanyDetails();	
 					},
 					change: function(e){
 						e.data.copy(detailsModel.company);
