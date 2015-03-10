@@ -84,7 +84,7 @@
 				
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						getCompany().copy(observable.company);
+						observable.setCompany(getCompany());
 					}
 				});		
 					
