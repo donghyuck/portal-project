@@ -33,7 +33,11 @@
 			'<@spring.url "/js/ace/ace.js"/>'
 			],
 			complete: function() {
-
+				common.ui.admin.setup({					 
+					authenticate : function(e){
+						observable.setCompany(getCompany());
+					}
+				});	
 				var observable = common.ui.observable({
 					company : new common.ui.data.Company(),
 					isEnabled : false,
@@ -82,20 +86,14 @@
 					}	
 				});	
 				
-				common.ui.bind($("#my-company-details"), observable );				
-				
-				common.ui.admin.setup({					 
-					authenticate : function(e){
-						observable.setCompany(getCompany());
-					}
-				});		
-					
+				common.ui.bind($("#my-company-details"), observable );						
 				createCompanyGrid();															
 				// END SCRIPT
 			}
 		}]);
 		
 		function getCompany(){
+			if( 
 			return new common.ui.data.Company( common.ui.admin.setup().token.company );
 		}
 						
