@@ -114,7 +114,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 			
 		
 		},
-		user : function(){
+		user:function(){
 			var that = this;
 			return that.token;
 		},
