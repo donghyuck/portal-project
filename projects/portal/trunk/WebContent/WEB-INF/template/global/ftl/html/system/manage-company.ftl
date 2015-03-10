@@ -508,7 +508,7 @@
 									<input name="logo-file" id="logo-file" type="file">
 									<i class="fa fa-upload bg-icon bg-icon-left"></i>	
 								</div> <!-- /.stat-cell -->
-								<div class="stat-cell col-sm-9 no-padding valign-bottom">		
+								<div class="stat-cell col-sm-9 no-padding">		
 									<div class="logos"></div>
 								</div>
 							</div>
