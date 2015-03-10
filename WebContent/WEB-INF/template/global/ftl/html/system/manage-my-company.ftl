@@ -37,6 +37,7 @@
 				var observable = common.ui.observable({
 					company : new common.ui.data.Company(),
 					isEnabled : false,
+					logoUrl: '<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>',
 					properties : common.ui.data.properties.datasource({
 						transport: { 
 							read: { url:'<@spring.url "/secure/get-company-property.do?output=json"/>', type:'post' },
