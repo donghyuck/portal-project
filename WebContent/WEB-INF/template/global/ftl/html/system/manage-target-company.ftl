@@ -113,6 +113,7 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
+						alert(common.ui.stringify(e.token));
 					},
 					change: function(e){
 						e.data.copy(detailsModel.company);
