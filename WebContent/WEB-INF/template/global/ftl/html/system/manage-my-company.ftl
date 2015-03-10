@@ -62,7 +62,7 @@
 						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + this.company.name + "?" + dt.getTime() );
 						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));      
 						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));				
-						alert( common.ui.stringify( this.company ));	
+
 					},
 					onSave : function(e){						
 						var btn = $(e.target);
@@ -97,7 +97,7 @@
 		}]);
 		
 		function getCompany(){
-			return new common.ui.data.Company( common.ui.admin.setup().token.company );
+			return new common.ui.data.EditableCompany( common.ui.admin.setup().token.company );
 		}
 						
 		function getSelectedCompany(){
