@@ -33,23 +33,71 @@
 			'<@spring.url "/js/ace/ace.js"/>'
 			],
 			complete: function() {
-				var currentUser = new common.ui.data.User();
-				var targetCompany = new common.ui.data.Company();	
+
+				var observable = common.ui.observable({
+					company : new common.ui.data.Company(),
+					isEnabled : false,
+					properties : common.ui.data.properties.datasource({
+						transport: { 
+							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
+							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
+							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
+							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
+								} 
+								return { companyId: getSelectedCompany().companyId }
+							}
+						},
+						schema: {
+							data: "targetCompanyProperty"
+						}
+					}),
+					onSave : function(e){						
+						var btn = $(e.target);
+						btn.button('loading');
+						$.ajax({
+							type : 'POST',
+							url : '${request.contextPath}/secure/update-company.do?output=json',
+							data: { companyId : this.get('company').companyId, item : kendo.stringify( this.get('company') ) },
+							success : function(response){
+								window.location.reload( true );
+							},
+							complete: function(jqXHR, textStatus ){					
+								btn.button('reset');
+							},
+							error:common.ui.handleAjaxError,
+							dataType : "json"
+						});						
+						return false;
+					}	
+				});	
+				$("#company-details").data("model", observable );	
+				
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						e.token.copy(currentUser);
-					},
-					change: function(e){
-						e.data.copy(targetCompany);
+						getCompany().copy(observable.company);
 					}
 				});		
-				
+					
 				createCompanyGrid();															
 				// END SCRIPT
 			}
 		}]);
 		
-		
+		function getCompany(){
+			return new common.ui.data.Company( common.ui.admin.setup().token.company );
+		}
+						
+		function getSelectedCompany(){
+			var renderTo = $("#company-grid");
+			var grid = renderTo.data('kendoGrid');
+			var selectedCells = grid.select();
+			var selectedCell = grid.dataItem( selectedCells );   
+			return selectedCell;
+		}
+				
 		function createCompanyGrid(){
 			var renderTo = $("#company-grid");
 			if(!common.ui.exists(renderTo)){
@@ -386,14 +434,7 @@
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}
 						
-				
-		function getSelectedCompany(){
-			var renderTo = $("#company-grid");
-			var grid = renderTo.data('kendoGrid');
-			var selectedCells = grid.select();
-			var selectedCell = grid.dataItem( selectedCells );   
-			return selectedCell;
-		}
+
 	
 		-->
 		</script> 		 
