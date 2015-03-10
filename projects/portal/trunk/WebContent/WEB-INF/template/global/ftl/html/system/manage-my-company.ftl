@@ -46,9 +46,9 @@
 							destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' },
 					 		parameterMap: function (options, operation){			
 						 		if (operation !== "read" && options.models) {
-						 			return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
+						 			return { companyId: getCompany().companyId, items: kendo.stringify(options.models)};
 								} 
-								return { companyId: getSelectedCompany().companyId }
+								return { companyId: getCompany().companyId }
 							}
 						},
 						schema: {
