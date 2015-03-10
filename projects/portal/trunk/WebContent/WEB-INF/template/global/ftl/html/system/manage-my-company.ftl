@@ -35,7 +35,7 @@
 			complete: function() {
 				
 				var observable = common.ui.observable({
-					company : new common.ui.data.Company(),
+					company : new common.ui.data.EditableCompany(),
 					isEnabled : false,
 					logoUrl: '<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>',
 					properties : common.ui.data.properties.datasource({
