@@ -442,7 +442,7 @@
 				box-shadow: none;				
 			} 		
 			
-			#company-grid .k-dorpzone {
+			#company-grid .k-dropzone {
 				border-radius: 8px !important;
 				background: #f5f5f5;
 				height: 100px;
