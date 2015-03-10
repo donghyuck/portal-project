@@ -57,6 +57,7 @@
 					}),
 					setCompany:function(company){
 						company.copy(this.company);
+						this.companyId = company.companyId;
 						var dt = new Date();
 						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + this.company.name + "?" + dt.getTime() );
 						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));      
