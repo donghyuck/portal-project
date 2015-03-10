@@ -4,6 +4,34 @@
  */
 ;(function($, undefined) {
 	var extend = $.extend;
+	var EditableCompany = kendo.data.Model.define( {
+	    id: "companyId", // the identifier of the model
+	    fields: {
+	    	companyId: { type: "number", editable: true, defaultValue: 0  },    	
+	        name: { type: "string", editable: true , validation: { required: true }},
+	        displayName: { type: "string", editable: true },
+	        domainName: { type: "string", editable: true },
+	        description: { type: "string", editable: true },
+	        modifiedDate: { type: "date"},
+	        creationDate: { type: "date" }
+	        /*,
+	        memberCount: { type: "number", editable: true, defaultValue: 0  },
+	        adminCount: { type: "number", editable: true, defaultValue: 0  }*/
+	    },
+	    copy : function ( target ){
+	    	target.companyId = this.get("companyId");
+	    	target.set("name", this.get("name"));
+	    	target.set("displayName", this.get("displayName"));
+	    	target.set("domainName", this.get("domainName"));
+	    	target.set("description", this.get("description"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	target.set("creationDate", this.get("creationDate"));
+	    	/*target.set("memberCount", this.get("memberCount"));
+	    	target.set("adminCount", this.get("adminCount"));		*/
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
+	    }    
+	});
 	
 	var Accumulator = kendo.data.Model.define( {
 	    id: "id", // the identifier of the model
@@ -39,7 +67,8 @@
 	extend( common.ui.data, {
 		stats : {
 			Accumulator: Accumulator,
-			Database : Database
+			Database : Database,
+			EditableCompany : EditableCompany
 		}
 	} );
 	
