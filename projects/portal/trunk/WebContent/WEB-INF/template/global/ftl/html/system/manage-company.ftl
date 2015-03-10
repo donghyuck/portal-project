@@ -205,7 +205,7 @@
 								width: 180  
 							}
 						],
-						save: function(e) {
+						saveChanges: function(e) {
 							this.dataSource.read();						
 						},
 						dataBound:function(e){
@@ -251,12 +251,12 @@
 							{ field: "filename", title: "파일", template:'#:filename# <small><span class="label label-info">#: imageContentType #</span></small> #if( !primary ){ # <button class="btn btn-flat btn-xs btn-labeled btn-danger" data-action="primary" data-object-id="#= logoId#"><span class="btn-label icon fa fa-check-square"></span>선택</button> #}#' },
 							{ field: "imageSize", title: "파일크기",  width: 150 , format: "{0:##,### bytes}" }
 						],
-				dataBound:function(e){
-					renderTo.find("[data-action=primary]").click(function(e){
-						var logoId = $(this).data("object-id");
-						common.ui.ajax(
-							"<@spring.url "/secure/data/mgmt/logo/set_primary.json"/>",
-							{
+					dataBound:function(e){
+						renderTo.find("[data-action=primary]").click(function(e){
+							var logoId = $(this).data("object-id");
+							common.ui.ajax(
+								"<@spring.url "/secure/data/mgmt/logo/set_primary.json"/>",
+								{
 									type : 'POST',
 									url : '/data/streams/photos/delete.json?output=json' ,
 									data: { logoId : logoId },
