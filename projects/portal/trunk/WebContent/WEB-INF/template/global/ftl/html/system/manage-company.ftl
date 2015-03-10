@@ -224,6 +224,29 @@
 		 * function for create logo grid
 		 */
 		function createCompanyLogoGrid(renderTo, data){
+			if( !common.ui.exists($('#logo-file'))){
+				$("#logo-file").kendoUpload({
+					multiple : false,
+					width: 300,
+				 	showFileList : false,
+					localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+					async: {
+						saveUrl:  '<@spring.url "/secure/data/mgmt/logo/upload.json?output=json"/>',							   
+						autoUpload: true
+					},
+					upload: function (e) {								         
+						e.data = {
+							objectType : 1,
+							objectId: data.companyId
+						};														    								    	 		    	 
+					},
+					success : function(e) {								    
+						if( e.response.success ){
+							common.ui.grid(renderTo).dataSource.read();
+						}
+					}
+				});								
+			}						
 			if( ! common.ui.exists(renderTo)){	
 				common.ui.grid(renderTo,{
 					dataSource: {
@@ -272,7 +295,8 @@
 				});	
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
-				});											
+				});
+				
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();		
 		}
@@ -473,6 +497,7 @@
 					</ul>	
 					<div class="tab-content">
 						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
+							<div id="logo-file"></div>
 							<div class="logos"></div>
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-2">
