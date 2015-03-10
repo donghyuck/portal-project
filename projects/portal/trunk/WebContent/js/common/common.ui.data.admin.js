@@ -66,7 +66,7 @@
 	});
 	
 	extend( common.ui.data, {
-		EditableCompany : EditableCompany			
+		EditableCompany : EditableCompany,			
 		stats : {
 			Accumulator: Accumulator,
 			Database : Database			
