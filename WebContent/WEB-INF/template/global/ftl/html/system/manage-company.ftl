@@ -497,8 +497,17 @@
 					</ul>	
 					<div class="tab-content">
 						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
-							<div id="logo-file"></div>
-							<div class="logos"></div>
+							<div class="stat-panel no-margin-b">
+								<div class="stat-cell col-sm-3 hidden-xs text-center">
+									<div id="logo-file"></div>
+									<i class="fa fa-upload bg-icon bg-icon-left"></i>	
+								</div> <!-- /.stat-cell -->
+								<div class="stat-cell col-sm-9 no-padding valign-bottom">		
+									<div class="logos"></div>
+								</div>
+							</div>
+							
+							
 						</div>
 						<div class="tab-pane fade" id="company-#= companyId#-tab-2">
 							<div class="groups"></div>
