@@ -113,6 +113,7 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
+						e.data.copy(detailsModel.company);
 					},
 					change: function(e){
 						e.data.copy(detailsModel.company);
@@ -150,8 +151,9 @@
 		}
 		
 		function getSelectedCompany(){
-			var companySelector = common.ui.admin.setup().companySelector();
-			return companySelector.dataItem(companySelector.select());
+			return new common.ui.data.Company( common.ui.admin.setup().token.company );
+			//var companySelector = common.ui.admin.setup().companySelector();
+			//return companySelector.dataItem(companySelector.select());
 		}
 
 		function openCompanyUpdateModal(){
