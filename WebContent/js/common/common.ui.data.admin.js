@@ -4,6 +4,7 @@
  */
 ;(function($, undefined) {
 	var extend = $.extend;
+	
 	var EditableCompany = kendo.data.Model.define( {
 	    id: "companyId", // the identifier of the model
 	    fields: {
