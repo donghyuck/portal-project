@@ -505,7 +505,7 @@
 						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
 							<div class="stat-panel no-margin-b">
 								<div class="stat-cell col-sm-3 hidden-xs text-center">
-									<div id="logo-file"></div>
+									<input name="logo-file" id="logo-file" type="file">
 									<i class="fa fa-upload bg-icon bg-icon-left"></i>	
 								</div> <!-- /.stat-cell -->
 								<div class="stat-cell col-sm-9 no-padding valign-bottom">		
