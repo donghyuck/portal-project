@@ -122,7 +122,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 			var that = this;
 			ajax( that.options.authenticateUrl || AUTHENTICATE_URL, {
 				success : function(response){
-					var token = new common.ui.data.User($.extend( response.currentUser, { roles : response.roles }));
+					var token = new common.ui.data.User($.extend( response.user, { roles : response.roles }));
 					token.set('isSystem', false);
 					if (token.hasRole(ROLE_SYSTEM) || token.hasRole(ROLE_ADMIN))
 						token.set('isSystem', true);			
