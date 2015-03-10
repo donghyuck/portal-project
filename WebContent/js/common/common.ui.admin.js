@@ -114,10 +114,6 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 			
 		
 		},
-		user:function(){
-			var that = this;
-			return that.token;
-		},
 		authenticate : function() {
 			var that = this;
 			ajax( that.options.authenticateUrl || AUTHENTICATE_URL, {
