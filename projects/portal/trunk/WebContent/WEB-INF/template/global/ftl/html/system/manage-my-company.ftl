@@ -80,7 +80,8 @@
 						return false;
 					}	
 				});	
-				$("#company-details").data("model", observable );	
+				
+				$("#my-company-details").data("model", observable );	
 				
 				common.ui.admin.setup({					 
 					authenticate : function(e){
@@ -514,7 +515,7 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>		
 				</div><!-- / .page-header -->
 				<!-- details-row -->
-				<div id="company-details" class="page-details" style="">				
+				<div id="my-company-details" class="page-details" style="">				
 					<div class="details-row no-margin-t">					
 						<div class="left-col">
 							<div class="details-block no-margin-t">
