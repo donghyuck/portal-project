@@ -39,10 +39,10 @@
 					isEnabled : false,
 					properties : common.ui.data.properties.datasource({
 						transport: { 
-							read: { url:'${request.contextPath}/secure/get-company-property.do?output=json', type:'post' },
-							create: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post' },
-							update: { url:'${request.contextPath}/secure/update-company-property.do?output=json', type:'post'  },
-							destroy: { url:'${request.contextPath}/secure/delete-company-property.do?output=json', type:'post' },
+							read: { url:'<@spring.url "/secure/get-company-property.do?output=json"/>', type:'post' },
+							create: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post' },
+							update: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post'  },
+							destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' },
 					 		parameterMap: function (options, operation){			
 						 		if (operation !== "read" && options.models) {
 						 			return { companyId: getSelectedCompany().companyId, items: kendo.stringify(options.models)};
@@ -59,7 +59,7 @@
 						btn.button('loading');
 						$.ajax({
 							type : 'POST',
-							url : '${request.contextPath}/secure/update-company.do?output=json',
+							url : '<@spring.url "/secure/update-company.do?output=json"/>',
 							data: { companyId : this.get('company').companyId, item : kendo.stringify( this.get('company') ) },
 							success : function(response){
 								window.location.reload( true );
