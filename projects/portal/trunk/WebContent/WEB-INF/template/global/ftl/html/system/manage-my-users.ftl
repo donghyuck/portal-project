@@ -78,7 +78,7 @@
 						{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
 						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
-						{ field: "lastLoggedIn", title: "마지막 로그인", filterable: false,  width: 150, format: "{0:yyyy/MM/dd}" },
+						{ field: "lastLoggedIn", title: "마지막 로그인", filterable: false,  width: 150, format: "{0:yyyy/MM/dd HH:mm}" },
 						{ command: [
 							{ 
 								name: "detail",
