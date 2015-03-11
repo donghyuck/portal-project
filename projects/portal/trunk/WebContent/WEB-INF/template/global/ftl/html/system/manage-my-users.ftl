@@ -289,7 +289,7 @@
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();		
 		}
-		
+		.*
 		function createCompanyUserGrid(renderTo, data){
 			if( ! common.ui.exists(renderTo)){	
 				common.ui.grid(renderTo, {
@@ -331,7 +331,7 @@
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
-		
+		*/
 		function createCompanyPropertiesGrid(renderTo, data){		
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
