@@ -49,7 +49,7 @@
 			return new common.ui.data.EditableCompany( common.ui.admin.setup().token.company );
 		}		
 		
-		function createCompanyUserGrid(data){
+		function createCompanyUserGrid(){
 			var renderTo = $("#company-user-grid");
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
@@ -73,11 +73,10 @@
 						serverPaging: true
 					},
 					columns: [
-						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
-						{ field: "name", title: "KEY", width:100,  filterable: false, sortable: false }, 
-						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 150 }, 
-						{ field: "domainName",   title: "도메인",  filterable: true, sortable: false,  width: 100 }, 
-						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
+						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
+						{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
+						{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
+						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
 						{ command: [
 							{ 
 								name: "detail",
