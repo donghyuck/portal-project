@@ -66,22 +66,16 @@
 							});			
 						renderTo.find(".nav-tabs a:first").tab('show');						
 					},
-					onSave : function(e){						
+					update : function(e){						
 						var btn = $(e.target);
 						btn.button('loading');
-						$.ajax({
-							type : 'POST',
-							url : '<@spring.url "/secure/update-company.do?output=json"/>',
-							data: { companyId : this.get('company').companyId, item : kendo.stringify( this.get('company') ) },
-							success : function(response){
-								window.location.reload( true );
-							},
+						common.ui.ajax('<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', {
+							contentType : "application/json"
+							data: kendo.stringify( this.get('company') ) ,
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
-							},
-							error:common.ui.handleAjaxError,
-							dataType : "json"
-						});						
+							}
+						});					
 						return false;
 					}	
 				});					
