@@ -66,6 +66,12 @@
 							});			
 						renderTo.find(".nav-tabs a:first").tab('show');						
 					},
+					modal: function(e){
+						var btn = $(e.target);						
+						if( btn.data("action") === 'edit' ){
+							openCompanyEditModal(this); 
+						}
+					},
 					update : function(e){						
 						var btn = $(e.target);
 						btn.button('loading');
@@ -89,7 +95,21 @@
 				// END SCRIPT
 			}
 		}]);
+
+		function openCompanyEditModal(observable){
+			var renderTo = $( '#my-company-edit-modal' );
+			if( renderTo.length === 0 ){		
+				$("#main-wrapper").append( kendo.template($('#my-company-edit-modal-template').html()) );				
+				renderTo.modal({
+					backdrop: 'static',
+					show : false
+				});				
+				kendo.bind(renderTo, observable );
+			}			
+			renderTo.modal('show');	
+		}
 		
+						
 		function getCompany(){
 			return new common.ui.data.EditableCompany( common.ui.admin.setup().token.company );
 		}
@@ -409,7 +429,7 @@
 									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
 								</div>
 								<br>
-								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: editable, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 변경</button>											
+								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="edit" data-toggle="button" data-bind="enabled: editable, click:modal" ><i class="fa fa-pencil"></i> 변경</button>											
 							</div>				
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
@@ -487,7 +507,64 @@
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg"></div>
 		</div> <!-- / #main-wrapper -->	
-				
+		
+		<script type="text/x-kendo-template" id="my-company-edit-modal-template">
+		<div id="my-company-update-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog modal-lg">	
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">회사 정보 변경</h4>
+					</div>					
+					<div class="modal-body">
+					
+					
+					</div>
+				</div>
+			</div>
+		</div>	
+		<!--	
+		<div class="modal fade" id="company-update-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog animated slideDown">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">회사 정보 변경</h4>
+					</div>
+					<div class="modal-body no-padding">
+						<div class=" form-horizontal padding-sm" >
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">이름:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
+								</div>
+							</div>
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">설명:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.description">
+								</div>
+							</div>																
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">도메인:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" data-bind="value:company.domainName">
+								</div>
+							</div>	
+							<h5><small><i class="fa fa-info"></i> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+							<input name="logo-file" id="logo-file" type="file" />	
+							<div id="logo-grid"></div>							
+						</div>
+					</div>																		
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat" data-bind="click: onSave, enabled: isEnabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>저장</button>					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+					</div>
+				</div>
+			</div>
+		</div>		
+		-->		
+		</script>				
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
