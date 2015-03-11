@@ -72,6 +72,12 @@
 						pageSize: 15,
 						serverPaging: true
 					},
+					toolbar : ["excel"],
+					excel: {
+						fileName: "Users Export.xlsx",	
+						proxyURL: "<@spring.url "/secure/download/export"/>",
+						filterable: true				
+					},
 					columns: [
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
 						{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
