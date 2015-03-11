@@ -75,7 +75,6 @@
 						pageSize: 15,
 						serverPaging: true
 					},
-					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </a></div>'),
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
 						{ field: "name", title: "KEY", width:100,  filterable: false, sortable: false }, 
@@ -86,10 +85,6 @@
 							{ 
 								name: "detail",
 								template : '<a href="\\#" class="btn btn-xs btn-success m-r-xs btn-selectable" data-action="details">상세보기</a>',
-							},{ 
-								name: "edit",
-								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
-								text: { edit: "변경", update: "저장", cancel: "취소"}
 							}], 
 							title: "&nbsp;", 
 							width: 180  
