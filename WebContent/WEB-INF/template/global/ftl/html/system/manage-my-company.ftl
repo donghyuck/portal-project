@@ -72,7 +72,7 @@
 							openCompanyEditModal(this); 
 						}
 					},
-					update : function(e){						
+					save : function(e){						
 						var btn = $(e.target);
 						btn.button('loading');
 						common.ui.ajax('<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', {
@@ -510,7 +510,7 @@
 		
 		<script type="text/x-kendo-template" id="my-company-edit-modal-template">
 		<div id="my-company-edit-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog modal-lg">	
+			<div class="modal-dialog">	
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -538,6 +538,10 @@
 							</div>							
 						</div>	
 					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat" data-bind="click: save, enabled: editable" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>저장</button>					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+					</div>					
 				</div>
 			</div>
 		</div>	
