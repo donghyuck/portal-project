@@ -517,8 +517,26 @@
 						<h4 class="modal-title">회사 정보 변경</h4>
 					</div>					
 					<div class="modal-body">
-					
-					
+						<div class=" form-horizontal padding-sm" >
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">이름:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
+								</div>
+							</div>
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">설명:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.description">
+								</div>
+							</div>																
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">도메인:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" data-bind="value:company.domainName">
+								</div>
+							</div>							
+						</div>	
 					</div>
 				</div>
 			</div>
