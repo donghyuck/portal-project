@@ -356,15 +356,11 @@
 				min-height:400px;
 			}
 
-			#company-grid.k-grid .k-selectable tr.k-state-selected{
+			#my-company-details .k-grid .k-selectable tr.k-state-selected{
 				background-color: #4cd964;
 				border-color: #4cd964;
 			}	
 			
-			#company-user-grid.k-grid .k-selectable tr.k-state-selected{
-				background-color: #5ac8fa;
-				border-color: #34aadc;			
-			}
 			
 			.panel .tab-content {
 				padding:5px!important;
@@ -378,7 +374,7 @@
 				position: absolute;
 			}
 					
-			#company-grid .properties a.btn, #company-grid .logos button.btn {
+			#my-company-details .properties a.btn, #company-grid .logos button.btn {
 				cursor: pointer;
 				pointer-events: auto;
 				opacity: 1;
@@ -387,7 +383,7 @@
 				box-shadow: none;				
 			} 		
 			
-			#company-grid .k-dropzone {
+			#my-company-details .k-dropzone {
 				border-radius: 8px !important;
 				background: #f5f5f5;
 				height: 100px;
