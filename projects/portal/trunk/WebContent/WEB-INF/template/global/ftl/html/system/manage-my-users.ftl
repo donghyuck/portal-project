@@ -44,13 +44,13 @@
 					}
 				});		
 				
-				createCompanyGrid();															
+				createCompanyUser();															
 				// END SCRIPT
 			}
 		}]);
 		
 		
-		function createCompanyGrid(){
+		function createCompanyUser(){
 			var renderTo = $("#company-grid");
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
