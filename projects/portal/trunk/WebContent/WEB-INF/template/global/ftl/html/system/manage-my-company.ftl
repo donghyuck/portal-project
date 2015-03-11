@@ -562,42 +562,42 @@
 							<hr class="details-content-hr no-grid-gutter-h"/>						
 							<div class="details-content">									
 									
-		<div class="panel" style="border: 2px solid \\#34aadc; ">		
-			<div class="panel-body padding-sm">
-				<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
-				<div class="tab-v1">
-					<ul class="nav nav-tabs nav-tabs-xs">
-						<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
-						<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
-						<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
-						<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
-					</ul>	
-					<div class="tab-content">
-						<div class="tab-pane fade" id="my-company-tabs-1">
-							<div class="stat-panel no-margin-b">
-								<div class="stat-cell col-sm-3 hidden-xs text-center">
-									<input name="logo-file" type="file">
-									<i class="fa fa-upload bg-icon bg-icon-left"></i>	
-								</div> <!-- /.stat-cell -->
-								<div class="stat-cell col-sm-9 no-padding">		
-									<div class="logos"></div>
-								</div>
-							</div>							
-						</div>
-						<div class="tab-pane fade" id="my-company-tabs-2">
-							<div class="groups"></div>
-						</div>
-						<div class="tab-pane fade" id="my-company-tabs-3">
-							<div class="users"></div>
-						</div>
-						<div class="tab-pane fade" id="my-company-tabs-4">
-							 <div class="properties"></div>
-						</div>
-																							
-					</div>
-				</div>
-			</div>
-		</div>			
+								<div class="panel" style="border: 2px solid \\#34aadc; ">		
+									<div class="panel-body padding-sm">
+										<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
+										<div class="tab-v1">
+											<ul class="nav nav-tabs nav-tabs-xs">
+												<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
+												<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
+												<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
+												<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
+											</ul>	
+											<div class="tab-content">
+												<div class="tab-pane fade" id="my-company-tabs-1">
+													<div class="stat-panel no-margin-b">
+														<div class="stat-cell col-sm-3 hidden-xs text-center">
+															<input name="logo-file" type="file">
+															<i class="fa fa-upload bg-icon bg-icon-left"></i>	
+														</div> <!-- /.stat-cell -->
+														<div class="stat-cell col-sm-9 no-padding">		
+															<div class="logos"></div>
+														</div>
+													</div>							
+												</div>
+												<div class="tab-pane fade" id="my-company-tabs-2">
+													<div class="groups"></div>
+												</div>
+												<div class="tab-pane fade" id="my-company-tabs-3">
+													<div class="users"></div>
+												</div>
+												<div class="tab-pane fade" id="my-company-tabs-4">
+													 <div class="properties"></div>
+												</div>
+																													
+											</div>
+										</div>
+									</div>
+								</div>			
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
