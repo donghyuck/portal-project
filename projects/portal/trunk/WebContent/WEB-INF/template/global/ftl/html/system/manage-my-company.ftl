@@ -509,7 +509,7 @@
 		</div> <!-- / #main-wrapper -->	
 		
 		<script type="text/x-kendo-template" id="my-company-edit-modal-template">
-		<div id="my-company-update-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+		<div id="my-company-edit-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
 			<div class="modal-dialog modal-lg">	
 				<div class="modal-content">
 					<div class="modal-header">
