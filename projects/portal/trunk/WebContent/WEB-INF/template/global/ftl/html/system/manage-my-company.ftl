@@ -455,16 +455,17 @@
 							<hr class="details-content-hr no-grid-gutter-h"/>						
 							<div class="details-content">									
 									
-								<div class="panel" style="border: 2px solid \\#34aadc; ">		
-									<div class="panel-body padding-sm">
-										
-										<div class="tab-v1">
+								<div class="panel panel colourable" style="border: 2px solid #34aadc; ">		
+									<div class="panel-heading">
+										<span class="panel-title"><i class="fa fa-info"></i> &nbsp</span>
 											<ul class="nav nav-tabs nav-tabs-xs">
 												<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
 												<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
 												<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
 												<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
 											</ul>	
+									</div>						
+								</div>
 											<div class="tab-content">
 												<div class="tab-pane fade" id="my-company-tabs-1">
 													<div class="stat-panel no-margin-b">
@@ -488,8 +489,6 @@
 												</div>
 																													
 											</div>
-										</div>
-									</div>
 								</div>			
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
