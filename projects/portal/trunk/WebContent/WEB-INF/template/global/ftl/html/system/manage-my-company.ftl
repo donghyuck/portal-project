@@ -40,31 +40,31 @@
 					isEnabled : false,
 					logoUrl: '<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>',
 					setCompany:function(company){
-						
-						company.copy(this.company);
+						$this = this;						
+						company.copy($this.company);
 						var dt = new Date();
-						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + this.company.name + "?" + dt.getTime() );
-						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));
-						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));
+						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + $this.company.name + "?" + dt.getTime() );
+						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  $this.company.creationDate ));
+						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  $this.company.modifiedDate ));
 																		
 						renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 								var show_bs_tab = $(e.target);
 								switch( show_bs_tab.data("action") ){
 									case "properties" :
-										createCompanyPropertiesGrid(renderTo.find(".properties"), data);
+										createCompanyPropertiesGrid(renderTo.find(".properties"), $this.company);
 										break;
 									case "users" :
-										createCompanyUserGrid(renderTo.find(".users"), data);
+										createCompanyUserGrid(renderTo.find(".users"), $this.company);
 										break;	
 									case "groups" :
-										createCompanyGroupGrid	(renderTo.find(".groups"), data);
+										createCompanyGroupGrid	(renderTo.find(".groups"), $this.company);
 										break
 									case "logos" :
-										createCompanyLogoGrid	(renderTo.find(".logos"), renderTo.find("[name=logo-file]"), data);
+										createCompanyLogoGrid	(renderTo.find(".logos"), renderTo.find("[name=logo-file]"), $this.company);
 										break	
 								}	
 							});			
-						detailRow.find(".nav-tabs a:first").tab('show');						
+						renderTo.find(".nav-tabs a:first").tab('show');						
 					},
 					onSave : function(e){						
 						var btn = $(e.target);
