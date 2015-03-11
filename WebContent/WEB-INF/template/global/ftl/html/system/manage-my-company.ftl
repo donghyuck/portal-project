@@ -490,26 +490,6 @@
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
-				<div class="row">				
-					<div class="col-sm-12">					
-						<!-- details -->
-						<div id="company-list" class="panel panel-default" style="min-height:300px;">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
-							</div>
-							<div class="panel-body padding-sm">
-								<div class="note note-info no-margin-b">
-									<h4 class="note-title"><small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다. 상세보기 버튼을 클릭하면 보다 많은 정보를 조회/수정 할 수 있습니다.</small></h4>
-								</div>	
-							</div>									
-							<div id="company-grid" class="no-border-hr"></div>
-						</div>
-						<!-- /details -->
-						<!-- list -->
-						<div id="company-details" class="page-details" style="display:none;"></div><!-- /company details -->		
-						<!-- /list -->
-					</div>	
-				</div>				
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
