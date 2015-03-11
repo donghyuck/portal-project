@@ -129,6 +129,7 @@
 		}
 		
 		function detailInit(e) {
+		/*
 			var detailRow = e.detailRow;
 			var renderTo = $("#company-grid");
 			var data = e.data;
@@ -155,6 +156,7 @@
 					}	
 				});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
+			*/
 		}		
 		
 		function createCompanyGroupGrid(renderTo, data){
