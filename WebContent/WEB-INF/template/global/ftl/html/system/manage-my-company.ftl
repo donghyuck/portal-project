@@ -97,16 +97,16 @@
 		}]);
 
 		function openCompanyEditModal(observable){
-			var renderTo = $( '#my-company-edit-modal' );
-			if( renderTo.length === 0 ){		
+			var renderToString = "#my-company-edit-modal";
+			if( $(renderToString).length === 0 ){		
 				$("#main-wrapper").append( kendo.template($('#my-company-edit-modal-template').html()) );				
-				renderTo.modal({
+				$(renderToString).modal({
 					backdrop: 'static',
 					show : false
 				});				
-				kendo.bind(renderTo, observable );
+				kendo.bind($(renderToString), observable );
 			}			
-			renderTo.modal('show');	
+			$(renderToString).modal('show');	
 		}
 		
 						
