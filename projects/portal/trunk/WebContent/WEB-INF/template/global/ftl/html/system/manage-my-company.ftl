@@ -37,16 +37,16 @@
 				var renderTo = $("#my-company-details");
 				var observable = common.ui.observable({
 					company : new common.ui.data.EditableCompany(),
-					isEnabled : false,
+					editable : false,
 					logoUrl: '<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>',
 					setCompany:function(company){
 						$this = this;						
 						company.copy($this.company);
 						var dt = new Date();
-						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + $this.company.name + "?" + dt.getTime() );
-						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  $this.company.creationDate ));
-						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  $this.company.modifiedDate ));
-																		
+						$this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + $this.company.name + "?" + dt.getTime() );
+						$this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  $this.company.creationDate ));
+						$this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  $this.company.modifiedDate ));
+						$this.set("editable", true);												
 						renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 								var show_bs_tab = $(e.target);
 								switch( show_bs_tab.data("action") ){
@@ -415,7 +415,7 @@
 									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
 								</div>
 								<br>
-								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 변경</button>											
+								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: editable, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 변경</button>											
 							</div>				
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
