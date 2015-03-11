@@ -507,8 +507,7 @@
 									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
 								</div>
 								<br>
-								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 회사 정보변경</button>
-											
+								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 변경</button>											
 							</div>				
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
@@ -521,7 +520,7 @@
 											<td><span data-bind="text: company.displayName"></span><code><span data-bind="text: company.companyId"></span></code></td>
 										</tr>	
 										<tr>
-											<th class="text-center">영문명</th>								
+											<th class="text-center">키</th>								
 											<td><span class="label label-primary" data-bind="text: company.name"></span></td>
 										</tr>	
 										<tr>
@@ -548,14 +547,14 @@
 										<div class="panel-heading">
 											<span class="panel-title"><i class="fa fa-info"></i> </span>
 											<ul id="company-tabs" class="nav nav-tabs nav-tabs-xs">
-												<li><a href="#company-tabs-props" data-toggle="tab">프로퍼티</a></li>
-												<li><a href="#company-tabs-images" data-toggle="tab">이미지</a></li>
-												<li><a href="#company-tabs-files" data-toggle="tab">파일</a></li>
-												<li><a href="#company-tabs-timeline" data-toggle="tab">타임라인</a></li>
+												<li><a href="#company-tabs-1" data-toggle="tab">로고</a></li>
+												<li><a href="#company-tabs-2" data-toggle="tab">그룹</a></li>
+												<li><a href="#company-tabs-3" data-toggle="tab">사용자</a></li>
+												<li><a href="#company-tabs-4" data-toggle="tab">속성</a></li>
 											</ul>	
 										</div> <!-- / .panel-heading -->		
 										<div class="tab-content">		
-											<div class="tab-pane fade" id="company-tabs-props">
+											<div class="tab-pane fade" id="company-tabs-1">
 												<div class="note note-default no-margin-b no-border-vr">
 															<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하여 프로퍼티 값을 설정하세요.
 														<table class="table table-striped">
@@ -588,14 +587,14 @@
 													style="height: 300px"></div>																				
 													
 											</div>
-											<div class="tab-pane fade" id="company-tabs-images" >
+											<div class="tab-pane fade" id="company-tabs-2" >
 												<div class="row no-margin-hr" style="background:#f5f5f5;" >
 													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
 													<div class="col-md-8 no-padding-hr" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
 												</div>
 												<div id="image-grid" class="no-border-hr"></div>		
 											</div>
-											<div class="tab-pane fade" id="company-tabs-files">
+											<div class="tab-pane fade" id="company-tabs-3">
 												<div class="panel panel-transparent no-margin-b">
 													<div class="panel-body">
 														<input name="attach-upload" id="attach-upload" type="file" />
@@ -603,7 +602,7 @@
 												</div>
 												<div id="attach-grid" class="no-border-hr"></div>
 											</div>
-											<div class="tab-pane fade" id="company-tabs-timeline">											
+											<div class="tab-pane fade" id="company-tabs-4">											
 											</div>																																								
 										</div>	
 										<div class="panel-footer no-padding-vr"></div>	
