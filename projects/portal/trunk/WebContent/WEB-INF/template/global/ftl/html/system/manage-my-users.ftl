@@ -72,7 +72,7 @@
 						pageSize: 15,
 						serverPaging: true
 					},					
-					toolbar : kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-xs btn-labeled btn-success k-grid-excel"><span class="btn-label icon fa fa-file-excel-o"></span>Excel</a></div>'),
+					toolbar : kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-xs btn-outline btn-labeled btn-success k-grid-excel"><span class="btn-label icon fa fa-file-excel-o"></span>Excel</a></div>'),
 					excel: {
 						fileName: "Users Export.xlsx",	
 						proxyURL: "<@spring.url "/secure/download/export"/>",
