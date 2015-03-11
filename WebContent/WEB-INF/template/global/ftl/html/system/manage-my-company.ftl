@@ -39,30 +39,12 @@
 					company : new common.ui.data.EditableCompany(),
 					isEnabled : false,
 					logoUrl: '<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>',
-					properties : common.ui.data.properties.datasource({
-						transport: { 
-							read: { url:'<@spring.url "/secure/get-company-property.do?output=json"/>', type:'post' },
-							create: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post' },
-							update: { url:'<@spring.url "/secure/update-company-property.do?output=json"/>', type:'post'  },
-							destroy: { url:'<@spring.url "/secure/delete-company-property.do?output=json"/>', type:'post' },
-					 		parameterMap: function (options, operation){			
-						 		if (operation !== "read" && options.models) {
-						 			return { companyId: getCompany().companyId, items: kendo.stringify(options.models)};
-								} 
-								return { companyId: getCompany().companyId }
-							}
-						},
-						schema: {
-							data: "targetCompanyProperty"
-						}
-					}),
 					setCompany:function(company){
 						company.copy(this.company);
 						var dt = new Date();
 						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + this.company.name + "?" + dt.getTime() );
 						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));      
-						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));				
-
+						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));
 					},
 					onSave : function(e){						
 						var btn = $(e.target);
