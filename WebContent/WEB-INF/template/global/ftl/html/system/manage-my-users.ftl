@@ -46,7 +46,7 @@
 		}]);
 		
 		function getCompany(){
-			return new common.ui.data.EditableCompany( common.ui.admin.setup().token.company );
+			return new common.ui.data.Company( common.ui.admin.setup().token.company );
 		}		
 		
 		function createCompanyUserGrid(){
