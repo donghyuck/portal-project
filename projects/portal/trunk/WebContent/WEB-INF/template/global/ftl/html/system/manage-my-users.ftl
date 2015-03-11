@@ -17,7 +17,8 @@
 			'css!<@spring.url "/styles/perfect-scrollbar/perfect-scrollbar-0.4.9.min.css"/>',
 			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',	
-			'<@spring.url "/js/kendo/jszip.min.js"/>',			
+			'<@spring.url "/js/kendo/jszip.min.js"/>',		
+			'<@spring.url "/js/kendo/pako_deflate.min.js"'/>	
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
@@ -41,6 +42,12 @@
 					}
 				});		
 				
+			kendo.pdf.defineFont({
+				"DejaVu Sans"             : "http://cdn.kendostatic.com/2014.3.1314/styles/fonts/DejaVu/DejaVuSans.ttf",
+				"DejaVu Sans|Bold"        : "http://cdn.kendostatic.com/2014.3.1314/styles/fonts/DejaVu/DejaVuSans-Bold.ttf",
+				"DejaVu Sans|Bold|Italic" : "http://cdn.kendostatic.com/2014.3.1314/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf",
+				"DejaVu Sans|Italic"      : "http://cdn.kendostatic.com/2014.3.1314/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf"
+			});				
 											
 				// END SCRIPT
 			}
@@ -73,12 +80,15 @@
 						pageSize: 15,
 						serverPaging: true
 					},					
-					toolbar : kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-xs btn-outline btn-labeled btn-success k-grid-excel"><span class="btn-label icon fa fa-file-excel-o"></span>Excel</a></div>'),
+					toolbar : kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-xs btn-outline btn-labeled btn-primary k-grid-pdf"><span class="btn-label icon fa fa-file-pdf-o"></span>PDF</a> <a href="\\#" class="btn btn-flat btn-xs btn-outline btn-labeled btn-primary k-grid-excel"><span class="btn-label icon fa fa-file-excel-o"></span>Excel</a></div>'),
 					excel: {
 						fileName: "Users Export.xlsx",	
-						forceProxy: true,
 						proxyURL: "<@spring.url "/download/export"/>",
 						filterable: true				
+					},
+					pdf: {
+						fileName: "Users Export.pdf",
+						proxyURL: "<@spring.url "/download/export"/>",
 					},
 					columns: [
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
