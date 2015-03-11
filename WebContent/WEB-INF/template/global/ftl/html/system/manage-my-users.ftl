@@ -81,6 +81,7 @@
 					pdf: {
 						fileName: "Users Export.pdf",
 						proxyURL: "<@spring.url "/download/export"/>",
+						creator:"${action.user.name}"
 					},
 					columns: [
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
