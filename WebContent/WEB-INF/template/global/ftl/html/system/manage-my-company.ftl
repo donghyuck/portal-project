@@ -177,7 +177,7 @@
 						dataBound:function(e){
 							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );							
 						},
-						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success m-r-xs " data-action="create" data-object-id="0"><span class="btn-label icon fa fa-gift"></span> 디폴트 그룹 자동 생성</button> <a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </a><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
+						toolbar: kendo.template('<div class="p-xs"><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </a><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
 				});		
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
@@ -302,8 +302,7 @@
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
 					dataBound:function(e){
 
-					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
+					}
 				});												
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
