@@ -65,10 +65,10 @@
 						return false;
 					}	
 				});					
+				common.ui.bind($("#my-company-details"), observable );	
 				
 				common.ui.admin.setup({					 
-					authenticate : function(e){
-						common.ui.bind($("#my-company-details"), observable );	
+					authenticate : function(e){						
 						observable.setCompany(getCompany());						
 					}
 				});					
