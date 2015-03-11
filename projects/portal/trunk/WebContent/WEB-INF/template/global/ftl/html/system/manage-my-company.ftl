@@ -457,7 +457,7 @@
 									
 								<div class="panel" style="border: 2px solid \\#34aadc; ">		
 									<div class="panel-body padding-sm">
-										<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
+										
 										<div class="tab-v1">
 											<ul class="nav nav-tabs nav-tabs-xs">
 												<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
