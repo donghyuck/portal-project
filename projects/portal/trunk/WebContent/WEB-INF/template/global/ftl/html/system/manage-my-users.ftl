@@ -493,16 +493,16 @@
 		<script type="text/x-kendo-template" id="company-details-template">		
 		<div class="panel" style="border: 2px solid \\#34aadc; ">		
 			<div class="panel-body padding-sm">
-				<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
+				<button class="close" data-action="collapses" data-object-id="#= userId #"><i class="fa fa-angle-up fa-lg"></i></button>				
 				<div class="tab-v1">
 					<ul class="nav nav-tabs nav-tabs-xs">
-						<li class=""><a href="\\#company-#= companyId#-tab-1" data-toggle="tab" data-action="logos">기본정보</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-3" data-toggle="tab" data-action="users">롤</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
+						<li class=""><a href="\\#user-#= userId#-tab-1" data-toggle="tab" data-action="logos">기본정보</a></li>
+						<li class=""><a href="\\#user-#= userId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
+						<li class=""><a href="\\#user-#= userId#-tab-3" data-toggle="tab" data-action="users">롤</a></li>
+						<li class=""><a href="\\#user-#= userId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
 					</ul>	
 					<div class="tab-content">
-						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
+						<div class="tab-pane fade" id="user-#= userId#-tab-1">
 							<div class="stat-panel no-margin-b">
 								<div class="stat-cell col-sm-3 hidden-xs text-center">
 									<input name="logo-file" type="file">
@@ -513,13 +513,13 @@
 								</div>
 							</div>							
 						</div>
-						<div class="tab-pane fade" id="company-#= companyId#-tab-2">
+						<div class="tab-pane fade" id="user-#= userId#-tab-2">
 							<div class="groups"></div>
 						</div>
-						<div class="tab-pane fade" id="company-#= companyId#-tab-3">
+						<div class="tab-pane fade" id="user-#= userId#-tab-3">
 							<div class="users"></div>
 						</div>
-						<div class="tab-pane fade" id="company-#= companyId#-tab-4">
+						<div class="tab-pane fade" id="user-#= userId#-tab-4">
 							 <div class="properties"></div>
 						</div>
 																							
