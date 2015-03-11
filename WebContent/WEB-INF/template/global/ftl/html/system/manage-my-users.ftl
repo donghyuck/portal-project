@@ -33,37 +33,34 @@
 			'<@spring.url "/js/ace/ace.js"/>'
 			],
 			complete: function() {
-				var currentUser = new common.ui.data.User();
-				var targetCompany = new common.ui.data.Company();	
+
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						e.token.copy(currentUser);
-					},
-					change: function(e){
-						e.data.copy(targetCompany);
+						createCompanyUserGrid();								
 					}
 				});		
 				
-				createCompanyUser();															
+											
 				// END SCRIPT
 			}
 		}]);
 		
+		function getCompany(){
+			return new common.ui.data.EditableCompany( common.ui.admin.setup().token.company );
+		}		
 		
-		function createCompanyUser(){
-			var renderTo = $("#company-grid");
+		function createCompanyUserGrid(data){
+			var renderTo = $("#company-user-grid");
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/list.json?output=json"/>', type: 'POST' },
-							create: { url:'<@spring.url "/secure/data/mgmt/company/create.json?output=json"/>', type:'POST', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', type:'POST', contentType : "application/json" },
+							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, operation){	          
 								if (operation != "read" && options) {
 									return kendo.stringify(options);
 								}else{
-									return { startIndex: options.skip, pageSize: options.pageSize }
+									return { startIndex: options.skip, pageSize: options.pageSize, companyId:getCompany().companyId  }
 								}
 							}
 						},
@@ -115,12 +112,8 @@
 							$this.expandRow($this.select());
 						});							
 					}	   
-				});		
-				renderTo.find("a[data-action=create]").click(function(e){
-					common.ui.grid(renderTo)
-				});			
-			}
-			
+				})	
+			}			
 		}
 		
 		function detailInit(e) {
@@ -474,7 +467,7 @@
 									<h4 class="note-title"><small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다. 상세보기 버튼을 클릭하면 보다 많은 정보를 조회/수정 할 수 있습니다.</small></h4>
 								</div>	
 							</div>									
-							<div id="company-grid" class="no-border-hr"></div>
+							<div id="company-user-grid" class="no-border-hr"></div>
 						</div>
 						<!-- /details -->
 						<!-- list -->
