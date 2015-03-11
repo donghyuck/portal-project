@@ -67,7 +67,7 @@
 						schema: {
 							total: "totalCount",
 							data: "items",
-							model : common.ui.data.Company
+							model : common.ui.data.User
 						},
 						pageSize: 15,
 						serverPaging: true
