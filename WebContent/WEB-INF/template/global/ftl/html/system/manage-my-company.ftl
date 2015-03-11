@@ -76,7 +76,7 @@
 						var btn = $(e.target);
 						btn.button('loading');
 						common.ui.ajax('<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', {
-							contentType : "application/json"
+							contentType : "application/json",
 							data: kendo.stringify( this.get('company') ) ,
 							complete: function(jqXHR, textStatus ){					
 								btn.button('reset');
