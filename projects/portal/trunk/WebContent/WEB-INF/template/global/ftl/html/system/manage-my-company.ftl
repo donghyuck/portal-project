@@ -465,7 +465,7 @@
 												<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
 											</ul>	
 									</div>						
-								</div>
+								
 											<div class="tab-content">
 												<div class="tab-pane fade" id="my-company-tabs-1">
 													<div class="stat-panel no-margin-b">
@@ -489,6 +489,7 @@
 												</div>
 																													
 											</div>
+									</div>		
 								</div>			
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
