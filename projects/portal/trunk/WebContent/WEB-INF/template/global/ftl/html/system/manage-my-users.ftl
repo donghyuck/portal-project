@@ -77,7 +77,7 @@
 					excel: {
 						fileName: "Users Export.xlsx",	
 						forceProxy: true,
-						proxyURL: "<@spring.url "/secure/download/export"/>",
+						proxyURL: "<@spring.url "/download/export"/>",
 						filterable: true				
 					},
 					columns: [
