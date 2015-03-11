@@ -68,7 +68,7 @@
 					}
 				});	
 				
-
+				common.ui.admin.setup().companySelector();
 /*
 				common.ui.admin.setup({
 					authenticate: function(e){
