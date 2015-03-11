@@ -34,17 +34,37 @@
 			'<@spring.url "/js/ace/ace.js"/>'
 			],
 			complete: function() {
-				
+				var renderTo = $("#my-company-details");
 				var observable = common.ui.observable({
 					company : new common.ui.data.EditableCompany(),
 					isEnabled : false,
 					logoUrl: '<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>',
 					setCompany:function(company){
+						
 						company.copy(this.company);
 						var dt = new Date();
 						this.set("logoUrl", "<@spring.url "/download/logo/company/"/>" + this.company.name + "?" + dt.getTime() );
-						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));      
+						this.set("formattedCreationDate", kendo.format("{0:yyyy.MM.dd}",  this.company.creationDate ));
 						this.set("formattedModifiedDate", kendo.format("{0:yyyy.MM.dd}",  this.company.modifiedDate ));
+																		
+						renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
+								var show_bs_tab = $(e.target);
+								switch( show_bs_tab.data("action") ){
+									case "properties" :
+										createCompanyPropertiesGrid(renderTo.find(".properties"), data);
+										break;
+									case "users" :
+										createCompanyUserGrid(renderTo.find(".users"), data);
+										break;	
+									case "groups" :
+										createCompanyGroupGrid	(renderTo.find(".groups"), data);
+										break
+									case "logos" :
+										createCompanyLogoGrid	(renderTo.find(".logos"), renderTo.find("[name=logo-file]"), data);
+										break	
+								}	
+							});			
+						detailRow.find(".nav-tabs a:first").tab('show');						
 					},
 					onSave : function(e){						
 						var btn = $(e.target);
@@ -65,8 +85,7 @@
 						return false;
 					}	
 				});					
-				common.ui.bind($("#my-company-details"), observable );	
-				
+				common.ui.bind(renderTo, observable );					
 				common.ui.admin.setup({					 
 					authenticate : function(e){						
 						observable.setCompany(getCompany());						
@@ -541,72 +560,44 @@
 						</div>
 						<div class="right-col">
 							<hr class="details-content-hr no-grid-gutter-h"/>						
-							<div class="details-content">											
-									<!-- company-tabs -->	
-									<div class="panel colourable">
-										<div class="panel-heading">
-											<span class="panel-title"><i class="fa fa-info"></i> </span>
-											<ul id="company-tabs" class="nav nav-tabs nav-tabs-xs">
-												<li><a href="#company-tabs-1" data-toggle="tab">로고</a></li>
-												<li><a href="#company-tabs-2" data-toggle="tab">그룹</a></li>
-												<li><a href="#company-tabs-3" data-toggle="tab">사용자</a></li>
-												<li><a href="#company-tabs-4" data-toggle="tab">속성</a></li>
-											</ul>	
-										</div> <!-- / .panel-heading -->		
-										<div class="tab-content">		
-											<div class="tab-pane fade" id="company-tabs-1">
-												<div class="note note-default no-margin-b no-border-vr">
-															<h4 class="note-title">프로퍼티 요약</h4> 아래의 표를 참조하여 프로퍼티 값을 설정하세요.
-														<table class="table table-striped">
-													<thead>
-														<tr>
-															<th>#</th>
-															<th>이름(키)</th>
-															<th>설명</th>														
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td>1</td>
-															<td>##</td>
-															<td><code>true</code> ##</td>														
-														</tr>											
-													</tbody>
-												</table></div>	
-												<div data-role="grid"
-													class="no-border-hr"
-													date-scrollable="false"
-													data-editable="true"
-													data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-													data-columns="[
-														{ 'title': '이름',  'field': 'name', 'width': 200 },
-														{ 'title': '값', 'field': 'value' },
-														{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
-													]"
-													data-bind="source: properties, visible: isEnabled"
-													style="height: 300px"></div>																				
-													
-											</div>
-											<div class="tab-pane fade" id="company-tabs-2" >
-												<div class="row no-margin-hr" style="background:#f5f5f5;" >
-													<div class="col-md-4"><input name="image-upload" id="image-upload" type="file" /></div>
-													<div class="col-md-8 no-padding-hr" style="border-left : solid 1px #ccc;" ><div id="image-details" class="hide animated padding-sm fadeInRight"></div></div>
-												</div>
-												<div id="image-grid" class="no-border-hr"></div>		
-											</div>
-											<div class="tab-pane fade" id="company-tabs-3">
-												<div class="panel panel-transparent no-margin-b">
-													<div class="panel-body">
-														<input name="attach-upload" id="attach-upload" type="file" />
-													</div>												
-												</div>
-												<div id="attach-grid" class="no-border-hr"></div>
-											</div>
-											<div class="tab-pane fade" id="company-tabs-4">											
-											</div>																																								
-										</div>	
-										<div class="panel-footer no-padding-vr"></div>	
-									</div>	
+							<div class="details-content">									
+									
+		<div class="panel" style="border: 2px solid \\#34aadc; ">		
+			<div class="panel-body padding-sm">
+				<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
+				<div class="tab-v1">
+					<ul class="nav nav-tabs nav-tabs-xs">
+						<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
+						<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
+						<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
+						<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
+					</ul>	
+					<div class="tab-content">
+						<div class="tab-pane fade" id="my-company-tabs-1">
+							<div class="stat-panel no-margin-b">
+								<div class="stat-cell col-sm-3 hidden-xs text-center">
+									<input name="logo-file" type="file">
+									<i class="fa fa-upload bg-icon bg-icon-left"></i>	
+								</div> <!-- /.stat-cell -->
+								<div class="stat-cell col-sm-9 no-padding">		
+									<div class="logos"></div>
+								</div>
+							</div>							
+						</div>
+						<div class="tab-pane fade" id="my-company-tabs-2">
+							<div class="groups"></div>
+						</div>
+						<div class="tab-pane fade" id="my-company-tabs-3">
+							<div class="users"></div>
+						</div>
+						<div class="tab-pane fade" id="my-company-tabs-4">
+							 <div class="properties"></div>
+						</div>
+																							
+					</div>
+				</div>
+			</div>
+		</div>			
 							</div><!-- / .details-content -->
 						</div><!-- / .right-col -->
 					</div><!-- / .details-row -->	
