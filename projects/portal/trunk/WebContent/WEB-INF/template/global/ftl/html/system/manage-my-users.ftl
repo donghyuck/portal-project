@@ -213,7 +213,7 @@
 						alert("2");
 					}
 				});	
-				multiSelect2.setDataSource(common.ui.admin.setup().element.data("role-datasource"));						
+				multiSelect2.setDataSource(dataSource);						
 			}			
 		}
 		
