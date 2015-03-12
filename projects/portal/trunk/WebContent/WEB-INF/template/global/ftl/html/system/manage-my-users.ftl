@@ -307,7 +307,7 @@
 										description: { type: "string", defaultValue: "" },
 										membership: { type: "boolean", defaultValue: false }
 									}
-								)	
+								})	
 							}
 						},
 						scrollable: true,
