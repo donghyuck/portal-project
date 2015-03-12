@@ -134,7 +134,6 @@
 			var renderTo = $("#company-user-grid");
 			var data = e.data;			
 			
-			alert(detailRow.find("[data-action=collapses]").html());
 			detailRow.find("[data-action=collapses]").click(function(e){
 				common.ui.grid(renderTo).collapseRow(detailRow.prev());
 			});				
