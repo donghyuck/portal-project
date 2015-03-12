@@ -176,7 +176,7 @@
 			}					
 			var renderTo1 = renderTo.find(".group-roles");
 			var renderTo2 = renderTo.find(".user-roles");
-			
+			alert(common.ui.exists(renderTo1));
 			if( !common.ui.exists(renderTo1) ){
 				renderTo1.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
