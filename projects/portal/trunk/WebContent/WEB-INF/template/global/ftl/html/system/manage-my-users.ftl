@@ -208,22 +208,7 @@
 						$this = this;
 						alert("2");
 					}
-				});	
-						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_user.json"/>", {
-							data: { userId : data.userId },
-							success : function(response){
-								var IDs = "";			                        		
-								$.each(response, function(index, row){  
-									if( IDs == "" ){
-										IDs =  IDs + row.roleId ;
-									}else{
-										IDs = IDs + "," + row.roleId;
-									}
-								});			                        		
-								renderTo2.data('kendoMultiSelect').value( IDs.split( "," ) );	 
-							}
-						});		
-						
+				});							
 			}			
 		}
 		
