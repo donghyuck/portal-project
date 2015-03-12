@@ -8,7 +8,7 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.css"/>',
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css"/>',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css"/>',
@@ -315,7 +315,7 @@
 						selectable: 'row',
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
-							{ field: "name",  title: "이름",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> #: displayName #(#: name #) <a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-user-plus"></span> 가입</a><a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>' },
+							{ field: "name",  title: "이름",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> #: displayName #(#: name #) <div class="pull-right">"<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a><a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a></div>' },
 							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
 							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
 							{ command: [
