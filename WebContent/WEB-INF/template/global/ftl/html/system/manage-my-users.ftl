@@ -287,7 +287,7 @@
 						dataSource: {
 							type: "json",
 							transport: {
-								read: { url:'<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json?output=json"/>', type: 'POST' },
+								read: { url:'<@spring.url "/secure/data/mgmt/user/groups/list_with_membership.json?output=json"/>', type: 'POST' },
 								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
