@@ -183,7 +183,7 @@
 					dataValueField: "roleId",
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
-						alert("");
+						alert("1");
 					},
 					enable: false
 				});	
@@ -195,7 +195,7 @@
 					dataValueField: "roleId",
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
-						alert("");
+						alert("2");
 					}
 				});	
 			}			
