@@ -217,7 +217,14 @@
 								var item =  $this.dataSource.get(row);
 								list.push(item);			                        			
 							});	
-							alert( common.ui.stringify( list ) );
+							common.ui.ajax('<@spring.url "/secure/data/mgmt/user/roles/update.json?output=json&userId="/>' + data.userId , {
+								contentType : "application/json",
+								data : kendo.stringify( list ) ,
+								success : function( response ){		
+									
+								}
+							});										
+							
 						},
 						dataBound:function(e){
 							$this = this;
