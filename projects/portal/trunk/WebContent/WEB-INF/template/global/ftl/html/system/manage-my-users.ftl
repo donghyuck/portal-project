@@ -480,7 +480,7 @@
 		</script> 		 
 		<style>
 			.k-grid-content {
-				min-height:300px;
+				min-height:150px;
 			}
 			
 			#xml-editor{
