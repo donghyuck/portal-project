@@ -172,6 +172,7 @@
 					})				
 				);
 			}			
+			var dataSource = common.ui.admin.setup().element.data("role-datasource");			
 			var renderTo1 = renderTo.find("#user-" + data.userId + "-group-roles");
 			var renderTo2 = renderTo.find("#user-" + data.userId + "-user-roles");
 			
@@ -182,6 +183,7 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
+					dataSource: dataSource,
 					autoBind: false,
 					dataBound:function(e){
 						$this = this;
@@ -197,7 +199,7 @@
 					},
 					enable: false
 				});	
-				multiSelect1.setDataSource(common.ui.admin.setup().element.data("role-datasource"));
+				
 			}
 			if(!renderTo2.data('kendoMultiSelect')){
 			alert( "create2");
