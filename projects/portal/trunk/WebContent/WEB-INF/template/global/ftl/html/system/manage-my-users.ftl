@@ -172,24 +172,12 @@
 						}
 					})				
 				);
-				common.ui.admin.setup().element.data("role-datasource").read();
-			}
-
-			if(!common.ui.defined( common.ui.admin.setup().element.data("group-role-datasource") ) ){
-				common.ui.admin.setup().element.data("group-role-datasource", 
-					common.ui.datasource('<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>',{
-						schema: { 
-							data: "items",
-							total: "totalCount",
-							model: common.ui.data.Role						
-						}
-					})				
-				);
-			}
-					
+				common.ui.admin.setup().element.data("role-datasource").read();				
+			}					
 			var renderTo1 = renderTo.find(".group-roles");
 			var renderTo2 = renderTo.find(".user-roles");
-			if( !renderTo1.data('kendoMultiSelect') ){
+			
+			if( !common.ui.exist(renderTo1) ){
 				renderTo1.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
@@ -209,7 +197,7 @@
 					enable: false
 				});	
 			}
-			if( !renderTo2.data('kendoMultiSelect') ){
+			if( !common.ui.exist(renderTo2)  ){
 				renderTo2.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
