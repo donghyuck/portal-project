@@ -158,20 +158,30 @@
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
 		
+		
+		
 		function createUserRolePanel(renderTo, data){
-			var renderTo1 = renderTo.find(".group-roles");
-			if( !renderTo1.data('kendoMultiSelect') ){
-				renderTo1.kendoMultiSelect({
-					placeholder: "롤을 선택하세요.",
-					dataTextField: "name",
-					dataValueField: "roleId",
-					dataSource: common.ui.datasource('<@spring.url "/secure/data/mgmt/role/list.json?output=json"/>',{
+		
+			if(!common.ui.defined( common.ui.admin.setup().element.data("role-datasource") ) ){
+				common.ui.admin.setup().element.data("role-datasource", 
+					common.ui.datasource('<@spring.url "/secure/data/mgmt/role/list.json?output=json"/>',{
 						schema: { 
 							data: "items",
 							total: "totalCount",
 							model: common.ui.data.Role						
 						}
-					}),
+					})				
+				);
+			}
+		
+			var renderTo1 = renderTo.find(".group-roles");
+			var renderTo2 = renderTo.find(".user-roles");
+			if( !renderTo1.data('kendoMultiSelect') ){
+				renderTo1.kendoMultiSelect({
+					placeholder: "롤을 선택하세요.",
+					dataTextField: "name",
+					dataValueField: "roleId",
+					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 					
 					}
