@@ -173,7 +173,19 @@
 					})				
 				);
 			}
-		
+
+			if(!common.ui.defined( common.ui.admin.setup().element.data("group-role-datasource") ) ){
+				common.ui.admin.setup().element.data("group-role-datasource", 
+					common.ui.datasource('<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>',{
+						schema: { 
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.Role						
+						}
+					})				
+				);
+			}
+					
 			var renderTo1 = renderTo.find(".group-roles");
 			var renderTo2 = renderTo.find(".user-roles");
 			if( !renderTo1.data('kendoMultiSelect') ){
@@ -183,7 +195,10 @@
 					dataValueField: "roleId",
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
-						alert("1");
+						$this = this;
+						common.ui.admin.setup().element.data("group-role-datasource").fetch(function(){
+							$this.value(this.data());
+						});
 					},
 					enable: false
 				});	
