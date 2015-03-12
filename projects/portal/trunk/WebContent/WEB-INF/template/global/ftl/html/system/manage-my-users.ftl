@@ -236,10 +236,7 @@
 						}
 					});	
 				}
-			});			
-			
-			
-		
+			});					
 		}
 		
 		function createUserPropertiesGrid(renderTo, data){		
@@ -290,7 +287,7 @@
 						dataSource: {
 							type: "json",
 							transport: {
-								read: { url:'<@spring.url "/secure/data/mgmt/user/groups/list.json?output=json"/>', type: 'POST' },
+								read: { url:'<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json?output=json"/>', type: 'POST' },
 								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
@@ -328,9 +325,8 @@
 							this.dataSource.read();						
 						},
 						dataBound:function(e){
-							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );							
-						},
-						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success m-r-xs " data-action="create" data-object-id="0"><span class="btn-label icon fa fa-gift"></span> 디폴트 그룹 자동 생성</button> <a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </a><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
+						
+						}
 				});		
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
