@@ -315,9 +315,8 @@
 						selectable: 'row',
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
-							{ field: "name",  title: "이름",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> #: displayName #(#: name #) <div class="pull-right">"<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a><a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a></div>' },
-							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
-							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
+							{ field: "name",  title: "그룹",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> #: displayName #(#: name #) <div class="pull-right">"<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a><a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a></div>' },
+							{ field: "description",    title: "설명",  filterable: false,  sortable: false }/*,
 							{ command: [
 								{ 
 									name: "edit",
@@ -326,7 +325,7 @@
 								}], 
 								title: "&nbsp;", 
 								width: 180  
-							}
+							}*/
 						],
 						saveChanges: function(e) {
 							this.dataSource.read();						
