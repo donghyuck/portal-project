@@ -193,7 +193,8 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
-					dataSource: common.ui.admin.setup().element.data("role-datasource").data(),
+					autoBind: false,
+					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						$this = this;
 						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>", {
@@ -211,7 +212,8 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
-					dataSource: common.ui.admin.setup().element.data("role-datasource").data(),
+					autoBind: false,
+					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						alert("2");
 					}
