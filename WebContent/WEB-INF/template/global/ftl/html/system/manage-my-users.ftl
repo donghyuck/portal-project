@@ -315,7 +315,7 @@
 						selectable: 'row',
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
-							{ field: "name",  title: "KEY",  filterable: true, sortable: true },
+							{ field: "name",  title: "이름",  filterable: true, sortable: true, template;'<i class="fa fa-users"></i> #: displayName #(#: name #)' },
 							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
 							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
 							{ command: [
