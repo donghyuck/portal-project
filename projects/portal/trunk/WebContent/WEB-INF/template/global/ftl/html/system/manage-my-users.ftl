@@ -130,36 +130,78 @@
 		}
 		
 		function detailInit(e) {
-		/*
-			var detailRow = e.detailRow;
-			var renderTo = $("#company-grid");
-			var data = e.data;
+			var detailRow = e.detailRow;			
+			var renderTo = $("#company-user-grid");
+			var data = e.data;			
 			
+			alert(detailRow.find("[data-action=collapses]").html());
 			detailRow.find("[data-action=collapses]").click(function(e){
 				common.ui.grid(renderTo).collapseRow(detailRow.prev());
 			});				
 			
 			detailRow.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
-					var show_bs_tab = $(e.target);
-					switch( show_bs_tab.data("action") ){
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.data("action") ){
 						case "properties" :
-							createCompanyPropertiesGrid(detailRow.find(".properties"), data);
+							createUserPropertiesGrid(detailRow.find(".properties"), data);
 							break;
-						case "users" :
-							createCompanyUserGrid(detailRow.find(".users"), data);
-							break;	
 						case "groups" :
-							createCompanyGroupGrid	(detailRow.find(".groups"), data);
+							//createUserGroupGrid(detailRow.find(".groups"), data);
+							break;	
+						case "roles" :
+							//createUserRoleGrid	(detailRow.find(".roles"), data);
 							break
-						case "logos" :
-							createCompanyLogoGrid	(detailRow.find(".logos"), detailRow.find("[name=logo-file]"), data);
+						case "profile" :
+							//createCompanyLogoGrid	(detailRow.find(".logos"), detailRow.find("[name=logo-file]"), data);
 							break	
-					}	
-				});			
+				}	
+			});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
-			*/
 		}		
-		
+
+		function createUserPropertiesGrid(renderTo, data){		
+			if( ! renderTo.data("kendoGrid") ){
+				renderTo.kendoGrid({
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json&companyId="/>' + data.companyId , type:'post' },
+							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId , type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json" },
+							parameterMap: function (options, operation){			
+								if (operation !== "read" && options.models) {
+									return kendo.stringify(options.models);
+								}else{ 
+									return { companyId: data.companyId }
+								}
+							}
+						},						
+						batch: true, 
+						schema: {
+							model: common.ui.data.Property
+						},
+						error:common.ui.handleAjaxError
+					},
+					columns: [
+						{ title: "속성", field: "name", width: 250 },
+						{ title: "값",   field: "value" },
+						{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }
+					],
+					editable : true,
+					scrollable: true,
+					filterable: true,
+					sortable: true,
+					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
+					change: function(e) {
+					}
+				});		
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});	
+			}			
+			renderTo.data("kendoGrid").dataSource.fetch();
+		}
+				
 		function createCompanyGroupGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){	
 					renderTo.kendoGrid({
@@ -346,48 +388,7 @@
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
 		*/
-		function createCompanyPropertiesGrid(renderTo, data){		
-			if( ! renderTo.data("kendoGrid") ){
-				renderTo.kendoGrid({
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json&companyId="/>' + data.companyId , type:'post' },
-							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId , type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json"  },
-							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json" },
-							parameterMap: function (options, operation){			
-								if (operation !== "read" && options.models) {
-									return kendo.stringify(options.models);
-								}else{ 
-									return { companyId: data.companyId }
-								}
-							}
-						},						
-						batch: true, 
-						schema: {
-							model: common.ui.data.Property
-						},
-						error:common.ui.handleAjaxError
-					},
-					columns: [
-						{ title: "속성", field: "name", width: 250 },
-						{ title: "값",   field: "value" },
-						{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }
-					],
-					editable : true,
-					scrollable: true,
-					filterable: true,
-					sortable: true,
-					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
-					change: function(e) {
-					}
-				});		
-				renderTo.find("[data-action='refresh']").click( function(e){
-					common.ui.grid(renderTo).dataSource.read();
-				});	
-			}			
-			renderTo.data("kendoGrid").dataSource.fetch();
-		}
+
 						
 				
 		function getSelectedCompany(){
