@@ -215,7 +215,13 @@
 					autoBind: false,
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
-						alert("2");
+						$this = this;
+						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_user.json"/>", {
+							data: { userId : data.userId },
+							success : function(response){
+								$this.value(response); 
+							}
+						});			
 					}
 				});	
 			}			
