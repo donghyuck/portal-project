@@ -178,7 +178,7 @@
 			var renderTo2 = renderTo.find(".user-roles");
 			alert( renderTo.html() );
 			alert(common.ui.exists(renderTo1));
-			if( !common.ui.exists(renderTo1) ){
+			if(!renderTo1.data('kendoMultiSelect')){
 				renderTo1.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
@@ -198,7 +198,7 @@
 					enable: false
 				});	
 			}
-			if( !common.ui.exists(renderTo2)  ){
+			if(!renderTo2.data('kendoMultiSelect')){
 				renderTo2.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
@@ -267,7 +267,8 @@
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
 				});	
-			}
+			}			
+			renderTo.data("kendoGrid").dataSource.fetch();
 		}
 				
 		function createUserGroupGrid(renderTo, data){
