@@ -156,9 +156,7 @@
 				}	
 			});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
-		}		
-		
-		
+		}
 		
 		function createUserRolePanel(renderTo, data){		
 			if(!common.ui.defined( common.ui.admin.setup().element.data("role-datasource") ) ){
@@ -171,14 +169,12 @@
 						}
 					})				
 				);
-			}			
-			
+			}
 			var renderTo1 = renderTo.find("#user-" + data.userId + "-group-roles");
 			var renderTo2 = renderTo.find("#user-" + data.userId + "-user-roles");
 			var dataSource = common.ui.admin.setup().element.data("role-datasource").fetch(function(){
 				var $data = this.data();
 				if(!renderTo1.data('kendoMultiSelect')){
-					alert( "create1");
 					var multiSelect1 = renderTo1.kendoMultiSelect({
 						placeholder: "롤을 선택하세요.",
 						dataTextField: "name",
@@ -186,7 +182,6 @@
 						dataSource: $data,
 						dataBound:function(e){
 							$this = this;
-							alert("1");
 							common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json?output=json"/>", {
 								data: { userId : data.userId },
 								success : function(response){
@@ -204,7 +199,6 @@
 					
 				}
 				if(!renderTo2.data('kendoMultiSelect')){
-					alert( "create2");
 					renderTo2.kendoMultiSelect({
 						placeholder: "롤을 선택하세요.",
 						dataTextField: "name",
