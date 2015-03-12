@@ -321,7 +321,7 @@
 							{ command: [
 								{ 
 									name: "edit",
-									template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+									template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>#: name#',
 									text: { edit: "변경", update: "저장", cancel: "취소"}
 								}], 
 								title: "&nbsp;", 
