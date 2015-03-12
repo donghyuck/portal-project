@@ -267,8 +267,7 @@
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
 				});	
-			}			
-			renderTo.data("kendoGrid").dataSource.fetch();
+			}
 		}
 				
 		function createUserGroupGrid(renderTo, data){
