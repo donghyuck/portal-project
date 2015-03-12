@@ -298,9 +298,16 @@
 								}
 							},
 							schema: {
-								total: "totalCount",
-								data: "items",
-								model: common.ui.data.Group
+								model: kendo.data.Model.define({
+									id : "groupId",
+									fields: { 
+										groupId: { type: "number", defaultValue: 0 },
+										name: { type: "string", defaultValue: "" },
+										displayName: { type: "string", defaultValue: "" },
+										description: { type: "string", defaultValue: "" },
+										membership: { type: "boolean", defaultValue: false }
+									}
+								)	
 							}
 						},
 						scrollable: true,
