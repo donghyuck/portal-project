@@ -177,7 +177,7 @@
 			var renderTo1 = renderTo.find(".group-roles");
 			var renderTo2 = renderTo.find(".user-roles");
 			
-			if( !common.ui.exist(renderTo1) ){
+			if( !common.ui.exists(renderTo1) ){
 				renderTo1.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
@@ -197,7 +197,7 @@
 					enable: false
 				});	
 			}
-			if( !common.ui.exist(renderTo2)  ){
+			if( !common.ui.exists(renderTo2)  ){
 				renderTo2.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
