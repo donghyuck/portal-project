@@ -171,7 +171,8 @@
 							model: common.ui.data.Role						
 						}
 					})				
-				).read();
+				);
+				common.ui.admin.setup().element.data("role-datasource").read();
 			}
 
 			if(!common.ui.defined( common.ui.admin.setup().element.data("group-role-datasource") ) ){
@@ -193,9 +194,11 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
+					autoBind: false,
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						$this = this;
+						alert("1");
 						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>", {
 							data: { userId : data.userId },
 							success : function(response){
@@ -211,10 +214,11 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
+					autoBind: false,
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						$this = this;
-
+						alert("2");
 					}
 				});	
 						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_user.json"/>", {
