@@ -165,7 +165,7 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
-					dataSource: common.ui.datasource('<@spring.url "/secure/data/role/list.json?output=json"/>',{
+					dataSource: common.ui.datasource('<@spring.url "/secure/data/mgmt/role/list.json?output=json"/>',{
 						schema: { 
 							data: "items",
 							total: "totalCount",
