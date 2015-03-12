@@ -145,7 +145,7 @@
 							createUserPropertiesGrid(detailRow.find(".properties"), data);
 							break;
 						case "groups" :
-							//createUserGroupGrid(detailRow.find(".groups"), data);
+							createUserGroupGrid(detailRow.find(".groups"), data);
 							break;	
 						case "roles" :
 							//createUserRoleGrid	(detailRow.find(".roles"), data);
@@ -201,26 +201,19 @@
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}
 				
-		function createCompanyGroupGrid(renderTo, data){
+		function createUserGroupGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){	
 					renderTo.kendoGrid({
 						dataSource: {
 							type: "json",
 							transport: {
-								read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
-								create: { url:'<@spring.url "/secure/data/mgmt/company/groups/create.json?output=json"/>', type:'post', contentType : "application/json" },
-								update: { url:'<@spring.url "/secure/data/mgmt/company/groups/update.json?output=json"/>', type:'post', contentType : "application/json"  },
+								read: { url:'<@spring.url "/secure/data/mgmt/user/groups/list.json?output=json"/>', type: 'POST' },
 								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
-										if( operation == "create" )
-										{
-											options.companyId = data.companyId;
-											options.company = data;
-										}	
-										return kendo.stringify(options);
+												return kendo.stringify(options);
 									}else{
-										return { companyId: data.companyId }
+										return { userId: data.userId }
 									}
 								}
 							},
@@ -231,7 +224,6 @@
 							}
 						},
 						scrollable: true,
-						editable: "inline",
 						autoBind: false,
 						selectable: 'row',
 						columns: [
