@@ -203,7 +203,7 @@
 			}
 			if(!renderTo2.data('kendoMultiSelect')){
 			alert( "create2");
-				var multiSelect2 = renderTo2.kendoMultiSelect({
+				renderTo2.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
@@ -213,7 +213,7 @@
 						alert("2");
 					}
 				});	
-				multiSelect2.setDataSource(dataSource);						
+				renderTo2.data("kendoMultiSelect").setDataSource(dataSource);						
 			}			
 		}
 		
