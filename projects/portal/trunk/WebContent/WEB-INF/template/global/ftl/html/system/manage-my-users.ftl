@@ -187,14 +187,17 @@
 						dataBound:function(e){
 							$this = this;
 							alert("1");
-							/*
 							common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>", {
 								data: { userId : data.userId },
 								success : function(response){
 									$this.value(response); 
+									var IDs = [] ;
+									$.each(response, function(index, row){  
+										IDs.push(row.roleId);
+									});
+									$this.value(IDs);	
 								}
 							});	
-							*/							
 						},
 						enable: false
 					});	
