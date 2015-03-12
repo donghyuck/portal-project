@@ -175,7 +175,7 @@
 			}					
 			var renderTo1 = renderTo.find(".group-roles");
 			var renderTo2 = renderTo.find(".user-roles");
-			alert( renderTo.html() );
+			alert( renderTo1.html() );
 			
 			if(!renderTo1.data('kendoMultiSelect')){
 				renderTo1.kendoMultiSelect({
