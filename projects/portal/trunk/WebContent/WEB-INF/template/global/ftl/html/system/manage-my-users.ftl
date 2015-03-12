@@ -176,14 +176,14 @@
 			var renderTo1 = renderTo.find("#user-" + data.userId + "-group-roles");
 			var renderTo2 = renderTo.find("#user-" + data.userId + "-user-roles");
 			var dataSource = common.ui.admin.setup().element.data("role-datasource").fetch(function(){
-				var data = this.data();
+				var $data = this.data();
 				if(!renderTo1.data('kendoMultiSelect')){
 					alert( "create1");
 					var multiSelect1 = renderTo1.kendoMultiSelect({
 						placeholder: "롤을 선택하세요.",
 						dataTextField: "name",
 						dataValueField: "roleId",
-						dataSource: data,
+						dataSource: $data,
 						dataBound:function(e){
 							$this = this;
 							alert("1");
@@ -209,7 +209,7 @@
 						placeholder: "롤을 선택하세요.",
 						dataTextField: "name",
 						dataValueField: "roleId",
-						dataSource: data,
+						dataSource: $data,
 						dataBound:function(e){
 							$this = this;
 							common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_user.json?output=json"/>", {
