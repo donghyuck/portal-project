@@ -184,9 +184,21 @@
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 					
-					}
+					},
+					enable: false
 				});	
 			}
+			if( !renderTo2.data('kendoMultiSelect') ){
+				renderTo2.kendoMultiSelect({
+					placeholder: "롤을 선택하세요.",
+					dataTextField: "name",
+					dataValueField: "roleId",
+					dataSource: common.ui.admin.setup().element.data("role-datasource"),
+					dataBound:function(e){
+					
+					}
+				});	
+			}			
 		}
 		
 		function createUserPropertiesGrid(renderTo, data){		
