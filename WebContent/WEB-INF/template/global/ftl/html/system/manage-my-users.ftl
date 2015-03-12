@@ -210,6 +210,15 @@
 						dataTextField: "name",
 						dataValueField: "roleId",
 						dataSource: $data,
+						change: function(e){
+							$this = this;
+							var list = new Array();			                        		                  		
+							$.each($this.value(), function(index, row){  
+								var item =  $this.dataSource.get(row);
+								list.push(item);			                        			
+							});	
+							alert( common.ui.stringify( list ) );
+						},
 						dataBound:function(e){
 							$this = this;
 							common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_user.json?output=json"/>", {
