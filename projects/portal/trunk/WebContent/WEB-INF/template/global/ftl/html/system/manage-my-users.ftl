@@ -193,7 +193,6 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
-					autoBind: false,
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						$this = this;
@@ -212,7 +211,6 @@
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
 					dataValueField: "roleId",
-					autoBind: false,
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						$this = this;
