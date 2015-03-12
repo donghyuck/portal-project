@@ -266,8 +266,7 @@
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
 				});	
-			}			
-			renderTo.data("kendoGrid").dataSource.fetch();
+			}
 		}
 				
 		function createUserGroupGrid(renderTo, data){
@@ -580,9 +579,9 @@
 						<div class="tab-pane fade" id="user-#= userId#-tab-3">
 							<div class="roles p-xs">
 								<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">다음은 맴버로 가입된 그룹으로 부터 상속된 롤입니다. 그룹에서 상속된 롤은 그룹 관리에서 변경할 수 있습니다.</h6>
-								<div class="group-roles"></div>
+								<div id="group-roles"></div>
 								<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">다음은 사용자에게 직접 부여된 롤입니다. 그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</h6>
-								<div class="user-roles"></div>
+								<div id="user-roles"></div>
 							</div>
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-4">
