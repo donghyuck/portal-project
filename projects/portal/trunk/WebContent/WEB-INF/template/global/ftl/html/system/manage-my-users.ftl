@@ -214,6 +214,9 @@
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						$this = this;
+
+					}
+				});	
 						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_user.json"/>", {
 							data: { userId : data.userId },
 							success : function(response){
@@ -225,11 +228,10 @@
 										IDs = IDs + "," + row.roleId;
 									}
 								});			                        		
-								$this.value( IDs.split( "," ) );	 
+								renderTo2.data('kendoMultiSelect').value( IDs.split( "," ) );	 
 							}
-						});			
-					}
-				});	
+						});		
+						
 			}			
 		}
 		
