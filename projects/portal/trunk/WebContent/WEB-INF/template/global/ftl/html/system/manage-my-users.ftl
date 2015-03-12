@@ -171,7 +171,7 @@
 							model: common.ui.data.Role						
 						}
 					})				
-				);
+				).read();
 			}
 
 			if(!common.ui.defined( common.ui.admin.setup().element.data("group-role-datasource") ) ){
