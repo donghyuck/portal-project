@@ -148,7 +148,7 @@
 							createUserGroupGrid(detailRow.find(".groups"), data);
 							break;	
 						case "roles" :
-							//createUserRoleGrid	(detailRow.find(".roles"), data);
+							createUserRolePanel	(detailRow, data);
 							break
 						case "profile" :
 							//createCompanyLogoGrid	(detailRow.find(".logos"), detailRow.find("[name=logo-file]"), data);
@@ -157,7 +157,28 @@
 			});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
-
+		
+		function createUserRolePanel(renderTo, data){
+			var renderTo1 = renderTo.find(".group-roles");
+			if( !renderTo1.data('kendoMultiSelect') ){
+				renderTo1.kendoMultiSelect({
+					placeholder: "롤을 선택하세요.",
+					dataTextField: "name",
+					dataValueField: "roleId",
+					dataSource: common.ui.datasource('<@spring.url "/secure/data/role/list.json?output=json"/>',{
+						schema: { 
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.Role						
+						}
+					}),
+					dataBound:function(e){
+					
+					}
+				});	
+			}
+		}
+		
 		function createUserPropertiesGrid(renderTo, data){		
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
@@ -490,7 +511,7 @@
 					<ul class="nav nav-tabs nav-tabs-xs">
 						<li class=""><a href="\\#user-#= userId#-tab-1" data-toggle="tab" data-action="logos">기본정보</a></li>
 						<li class=""><a href="\\#user-#= userId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
-						<li class=""><a href="\\#user-#= userId#-tab-3" data-toggle="tab" data-action="users">롤</a></li>
+						<li class=""><a href="\\#user-#= userId#-tab-3" data-toggle="tab" data-action="roles">롤</a></li>
 						<li class=""><a href="\\#user-#= userId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
 					</ul>	
 					<div class="tab-content">
@@ -509,7 +530,8 @@
 							<div class="groups"></div>
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-3">
-							<div class="users"></div>
+							<div class="group-roles"></div>
+							<div class="user-roles"></div>
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-4">
 							 <div class="properties"></div>
