@@ -196,9 +196,12 @@
 					dataSource: common.ui.admin.setup().element.data("role-datasource"),
 					dataBound:function(e){
 						$this = this;
-						common.ui.admin.setup().element.data("group-role-datasource").fetch(function(){
-							$this.value(this.data());
-						});
+						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>", {
+							data: { userId : data.userId },
+							success : function(response){
+								$this.value(response); 
+							}
+						});								
 					},
 					enable: false
 				});	
