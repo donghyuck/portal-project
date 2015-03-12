@@ -172,49 +172,51 @@
 					})				
 				);
 			}			
-			var dataSource = common.ui.admin.setup().element.data("role-datasource");			
+			
 			var renderTo1 = renderTo.find("#user-" + data.userId + "-group-roles");
 			var renderTo2 = renderTo.find("#user-" + data.userId + "-user-roles");
+			var dataSource = common.ui.admin.setup().element.data("role-datasource").fetch(function(){
+				var data = this.data();
+				if(!renderTo1.data('kendoMultiSelect')){
+					alert( "create1");
+					var multiSelect1 = renderTo1.kendoMultiSelect({
+						placeholder: "롤을 선택하세요.",
+						dataTextField: "name",
+						dataValueField: "roleId",
+						dataSource: data,
+						dataBound:function(e){
+							$this = this;
+							alert("1");
+							/*
+							common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>", {
+								data: { userId : data.userId },
+								success : function(response){
+									$this.value(response); 
+								}
+							});	
+							*/							
+						},
+						enable: false
+					});	
+					
+				}
+				if(!renderTo2.data('kendoMultiSelect')){
+					alert( "create2");
+					renderTo2.kendoMultiSelect({
+						placeholder: "롤을 선택하세요.",
+						dataTextField: "name",
+						dataValueField: "roleId",
+						dataSource: data,
+						dataBound:function(e){
+							$this = this;
+							alert("2");
+						}
+					});	
+				}
+			});			
 			
 			
-			if(!renderTo1.data('kendoMultiSelect')){
-			alert( "create1");
-				var multiSelect1 = renderTo1.kendoMultiSelect({
-					placeholder: "롤을 선택하세요.",
-					dataTextField: "name",
-					dataValueField: "roleId",
-					dataSource: dataSource,
-					autoBind: false,
-					dataBound:function(e){
-						$this = this;
-						alert("1");
-						/*
-						common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json"/>", {
-							data: { userId : data.userId },
-							success : function(response){
-								$this.value(response); 
-							}
-						});	
-						*/							
-					},
-					enable: false
-				});	
-				
-			}
-			if(!renderTo2.data('kendoMultiSelect')){
-			alert( "create2");
-				renderTo2.kendoMultiSelect({
-					placeholder: "롤을 선택하세요.",
-					dataTextField: "name",
-					dataValueField: "roleId",
-					autoBind: false,
-					dataBound:function(e){
-						$this = this;
-						alert("2");
-					}
-				});	
-				renderTo2.data("kendoMultiSelect").setDataSource(dataSource);						
-			}			
+		
 		}
 		
 		function createUserPropertiesGrid(renderTo, data){		
