@@ -175,9 +175,10 @@
 			}					
 			var renderTo1 = renderTo.find(".group-roles");
 			var renderTo2 = renderTo.find(".user-roles");
-			alert( renderTo1.html() );
+			
 			
 			if(!renderTo1.data('kendoMultiSelect')){
+			alert( "create1");
 				renderTo1.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
@@ -198,6 +199,7 @@
 				});	
 			}
 			if(!renderTo2.data('kendoMultiSelect')){
+			alert( "create2");
 				renderTo2.kendoMultiSelect({
 					placeholder: "롤을 선택하세요.",
 					dataTextField: "name",
