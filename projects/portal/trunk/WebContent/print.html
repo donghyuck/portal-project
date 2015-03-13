@@ -37,10 +37,25 @@
 			
 	-->
 </script>
-<style></style>	
+<style>
+	@media all {
+		.page-break	{ display: none; }
+	}
+	
+	@media print {
+		.page-break	{ display: block; page-break-before: always; }
+	}
+</style>	
 </head>
 <body>
 
+<h1>Page Title</h1>
+<!-- content block -->
+<!-- content block -->
+<div class="page-break"></div>
+<!-- content block -->
+<!-- content block -->
+<div class="page-break"></div>
 
 </body>
 </html>
