@@ -553,7 +553,7 @@
 			
 
 			.k-checkbox:disabled+.k-checkbox-label:hover:before {
-				content:"";
+				content:none;
 			}
 			
 
