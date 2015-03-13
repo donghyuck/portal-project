@@ -159,8 +159,16 @@
 			info: false
 	};	
 	
+	
+	
 	function grid(renderTo, options){
+		options = options || {};		
 		if(!renderTo.data("kendoGrid")){			
+			if( defined(options.dataSource) ){
+				if( !defined(options.dataSource.error) ){
+					options.dataSource.error = handleAjaxError	;
+				}			
+			}
 			 renderTo.kendoGrid(options);
 		}		
 		return renderTo.data("kendoGrid");
