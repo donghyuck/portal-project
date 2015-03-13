@@ -215,7 +215,7 @@
 						columns: [
 							{ field: "objectId", title: "ID", width:40,  filterable: false, sortable: false }, 
 							{ field: "name",  title: "권한",  filterable: true, sortable: true, template: '<span class="#if (inherited){ #text-default# }else{ #text-primary#}#"><i class="fa fa-key"></i></span> #: name # <div class="pull-right">#if (inherited){ # <span class="text-muted">그룹</span> #}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-remove"></span> 제거</a>#}#</div>' },
-							{ field: "inherited", title: "그룹", width:40,  filterable: false, sortable: false }, 
+							{ field: "inherited", title: "그룹", width:40,  filterable: false, sortable: false, template:'<input type="checkbox" id="eq1" class="k-checkbox" #if (inherited){ #checked="checked"#}# disabled="disabled">' }, 
 							{ field: "ownership", title: "권한부여됨", width:40,  filterable: false, sortable: false }
 						],
 						dataBound:function(e){
