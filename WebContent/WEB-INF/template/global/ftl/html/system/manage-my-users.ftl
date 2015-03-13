@@ -184,13 +184,13 @@
 						dataSource: {
 							type: "json",
 							transport: {
-								read: { url:'<@spring.url "/secure/data/mgmt/user/groups/list_with_membership.json?output=json"/>', type: 'POST' },
-								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
+								read: { url:'<@spring.url "/secure/data/mgmt/user/roles/list_with_ownership.json?output=json"/>', type: 'POST' },
+								destroy: { url:'<@spring.url "/secure/data/mgmt/user/roles/remove.json?output=json"/>', type:'post'},	
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
-												return kendo.stringify(options);
+												return { userId: data.userId, roleId : options.roleId  };
 									}else{
-										return { userId: data.userId }
+										return { userId: data.userId };
 									}
 								}
 							},
