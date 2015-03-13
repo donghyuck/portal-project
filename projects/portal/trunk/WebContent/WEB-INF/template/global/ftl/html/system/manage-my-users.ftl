@@ -553,6 +553,7 @@
 			
 			.k-checkbox:disabled+.k-checkbox-label:hover{
 				color:red;
+				border-color: transparent;
 			}
 
 			#company-grid.k-grid .k-selectable tr.k-state-selected{
