@@ -188,7 +188,7 @@
 								destroy: { url:'<@spring.url "/secure/data/mgmt/user/roles/remove.json?output=json"/>', type:'post'},	
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
-												return { userId: data.userId, roleId : options.roleId  };
+												return { userId: data.userId, roleId : options.objectId  };
 									}else{
 										return { userId: data.userId };
 									}
@@ -196,9 +196,9 @@
 							},
 							schema: {
 								model: kendo.data.Model.define({
-									id : "roleId",
+									id : "objectId",
 									fields: { 
-										roleId: { type: "number", defaultValue: 0 },
+										objectId: { type: "number", defaultValue: 0 },
 										name: { type: "string", defaultValue: "" },
 										displayName: { type: "string", defaultValue: "" },
 										description: { type: "string", defaultValue: "" },
@@ -211,8 +211,8 @@
 						autoBind: false,
 						selectable: 'row',
 						columns: [
-							{ field: "roleId", title: "ID", width:40,  filterable: false, sortable: false }, 
-							{ field: "name",  title: "롤",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> #: displayName #(#: name #) <div class="pull-right">#if (inherited){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#</div>' },
+							{ field: "objectId", title: "ID", width:40,  filterable: false, sortable: false }, 
+							{ field: "name",  title: "롤",  filterable: true, sortable: true, template: '<i class="fa fa-key"></i> #: name # <div class="pull-right">#if (inherited){ # <span class="text-muted">그룹</span> #}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-remove"></span> 제거</a>#}#</div>' },
 						],
 						dataBound:function(e){
 							
