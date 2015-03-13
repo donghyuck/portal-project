@@ -10,6 +10,7 @@
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/kendo/kendo.dataviz.min.css"/>',
+			'css!<@spring.url "/styles/kendo/kendo.dataviz.default.min.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.css"/>',
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css"/>',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.rtl.css"/>',
