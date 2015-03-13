@@ -70,7 +70,8 @@
 							model : common.ui.data.User
 						},
 						pageSize: 15,
-						serverPaging: true
+						serverPaging: true,
+						error:common.ui.handleAjaxError
 					},					
 					toolbar : kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-sm btn-outline btn-labeled btn-primary k-grid-pdf"><span class="btn-label icon fa fa-file-pdf-o"></span>PDF</a> <a href="\\#" class="btn btn-flat btn-sm btn-outline btn-labeled btn-primary k-grid-excel"><span class="btn-label icon fa fa-file-excel-o"></span>Excel</a></div>'),
 					excel: {
