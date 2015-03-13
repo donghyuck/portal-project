@@ -552,8 +552,8 @@
 			}
 			
 
-			.k-checkbox:disabled+.k-checkbox-label:after, .k-checkbox:checked:disabled+.k-checkbox-label:active:after, .k-checkbox:disabled+.k-checkbox-label:hover:before, .k-checkbox:checked:disabled+.k-checkbox-label:hover:after {
-				content:none;
+			.k-checkbox:disabled+.k-checkbox-label:hover:before {
+				content:"";
 			}
 			
 
