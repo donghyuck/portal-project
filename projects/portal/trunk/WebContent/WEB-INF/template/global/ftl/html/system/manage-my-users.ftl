@@ -171,16 +171,8 @@
 					})				
 				);
 			}
-			
-			
-			var renderTo1 = renderTo.find("#user-" + data.userId + "-group-roles");
-			var renderTo2 = renderTo.find("#user-" + data.userId + "-user-roles");
-						
-			var renderTo3	= renderTo.find("#user-" + data.userId + "-role-avaiable");
-			var renderTo4 = renderTo.find("#user-" + data.userId + "-role-selected");
-
-			if( ! renderTo4.data("kendoGrid") ){	
-					renderTo4.kendoGrid({
+			if( ! renderTo.data("kendoGrid") ){	
+					renderTo.kendoGrid({
 						dataSource: {
 							type: "json",
 							transport: {
@@ -223,79 +215,11 @@
 						},
 						toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>')
 				});		
-				renderTo4.find("[data-action='refresh']").click( function(e){
+				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo4).dataSource.read();
 				});				
 			}
-			renderTo4.data("kendoGrid").dataSource.fetch();
-						
-			
-			
-			var dataSource = common.ui.admin.setup().element.data("role-datasource").fetch(function(){
-				var $data = this.data();
-				if(!renderTo1.data('kendoMultiSelect')){
-					var multiSelect1 = renderTo1.kendoMultiSelect({
-						placeholder: "롤을 선택하세요.",
-						dataTextField: "name",
-						dataValueField: "roleId",
-						dataSource: $data,
-						dataBound:function(e){
-							$this = this;
-							common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_groups.json?output=json"/>", {
-								data: { userId : data.userId },
-								success : function(response){
-									$this.value(response); 
-									var IDs = [] ;
-									$.each(response, function(index, row){  
-										IDs.push(row.roleId);
-									});
-									$this.value(IDs);	
-								}
-							});	
-						},
-						enable: false
-					});	
-					
-				}
-				if(!renderTo2.data('kendoMultiSelect')){
-					renderTo2.kendoMultiSelect({
-						placeholder: "롤을 선택하세요.",
-						dataTextField: "name",
-						dataValueField: "roleId",
-						dataSource: $data,
-						change: function(e){
-							$this = this;
-							var list = new Array();			                        		                  		
-							$.each($this.value(), function(index, row){  
-								var item =  $this.dataSource.get(row);
-								list.push(item);			                        			
-							});	
-							common.ui.ajax('<@spring.url "/secure/data/mgmt/user/roles/update.json?output=json&userId="/>' + data.userId , {
-								contentType : "application/json",
-								data : kendo.stringify( list ) ,
-								success : function( response ){		
-									
-								}
-							});										
-							
-						},
-						dataBound:function(e){
-							$this = this;
-							common.ui.ajax("<@spring.url "/secure/data/mgmt/user/roles/list_from_user.json?output=json"/>", {
-								data: { userId : data.userId },
-								success : function(response){
-									$this.value(response); 
-									var IDs = [] ;
-									$.each(response, function(index, row){  
-										IDs.push(row.roleId);
-									});
-									$this.value(IDs);	
-								}
-							});	
-						}
-					});	
-				}
-			});					
+			renderTo.data("kendoGrid").dataSource.fetch();					
 		}
 		
 		function createUserPropertiesGrid(renderTo, data){		
@@ -660,15 +584,8 @@
 							<div class="groups"></div>
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-3">
-							<div class="roles p-xs">
-								<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">그룹으로 부터 상속된 롤들은 변경할 수 없습니다. 그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</h6>
-								<div id="user-#= userId#-role-avaiable"></div>
-								<div id="user-#= userId#-role-selected"></div>							
-								
-								<div id="user-#= userId#-group-roles"></div>
-								
-								<div id="user-#= userId#-user-roles"></div>
-							</div>
+							<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">그룹으로 부터 상속된 롤들은 변경할 수 없습니다. 그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</h6>
+							<div class="roles"></div>
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-4">
 							 <div class="properties"></div>
