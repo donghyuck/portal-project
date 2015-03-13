@@ -553,7 +553,7 @@
 			
 
 			.k-checkbox:disabled+.k-checkbox-label:after, .k-checkbox:checked:disabled+.k-checkbox-label:active:after, .k-checkbox:disabled+.k-checkbox-label:hover:before, .k-checkbox:checked:disabled+.k-checkbox-label:hover:after {
-				font-weight: normal;
+				content:none;
 			}
 			
 
