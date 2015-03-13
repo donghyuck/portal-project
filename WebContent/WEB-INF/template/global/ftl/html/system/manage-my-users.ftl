@@ -370,7 +370,7 @@
 						selectable: 'row',
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
-							{ field: "name",  title: "그룹",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> #: displayName #(#: name #) <div class="pull-right">#if (membership){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-success k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#</div>' },
+							{ field: "name",  title: "그룹",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> <span class="#if (membership){ #text-muted# } #">#: displayName #(#: name #)</span> <div class="pull-right">#if (membership){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-success k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#</div>' },
 							/*{ field: "description",    title: "설명",  filterable: false,  sortable: false },
 							{ command: [
 								{ 
