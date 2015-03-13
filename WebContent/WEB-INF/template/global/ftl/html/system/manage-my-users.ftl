@@ -655,8 +655,10 @@
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-3">
 							<div class="roles p-xs">
+								<div id="user-#= userId#-role-avaiable"></div>
+							
 								<div class="row">
-									<div class="col-sm-6"><div id="user-#= userId#-role-avaiable"></div></div>
+									<div class="col-sm-6"></div>
 									<div class="col-sm-6"><div id="user-#= userId#-role-selected"></div></div>
 								</div>
 							
