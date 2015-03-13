@@ -656,10 +656,10 @@
 						<div class="tab-pane fade" id="user-#= userId#-tab-3">
 							<div class="roles p-xs">
 								<div id="user-#= userId#-role-avaiable"></div>
-							
+								<div class="col-sm-6"><div id="user-#= userId#-role-selected"></div>
 								<div class="row">
 									<div class="col-sm-6"></div>
-									<div class="col-sm-6"><div id="user-#= userId#-role-selected"></div></div>
+									</div>
 								</div>
 							
 								<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">다음은 맴버로 가입된 그룹으로 부터 상속된 롤입니다. 그룹에서 상속된 롤은 그룹 관리에서 변경할 수 있습니다.</h6>
