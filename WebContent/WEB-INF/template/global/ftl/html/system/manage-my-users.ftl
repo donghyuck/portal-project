@@ -206,7 +206,8 @@
 										inherited: { type: "boolean", defaultValue: false }
 									}
 								})	
-							}
+							},
+							error:common.ui.handleAjaxError
 						},
 						scrollable: true,
 						autoBind: false,
