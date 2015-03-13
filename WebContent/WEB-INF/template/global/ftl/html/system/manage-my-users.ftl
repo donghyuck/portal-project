@@ -171,8 +171,62 @@
 					})				
 				);
 			}
+			
+			
 			var renderTo1 = renderTo.find("#user-" + data.userId + "-group-roles");
 			var renderTo2 = renderTo.find("#user-" + data.userId + "-user-roles");
+						
+			var renderTo3	= renderTo.find("#user-" + data.userId + "-role-avaiable");
+			var renderTo4 = renderTo.find("#user-" + data.userId + "-role-selected");
+
+			if( ! renderTo4.data("kendoGrid") ){	
+					renderTo4.kendoGrid({
+						dataSource: {
+							type: "json",
+							transport: {
+								read: { url:'<@spring.url "/secure/data/mgmt/user/groups/list_with_membership.json?output=json"/>', type: 'POST' },
+								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
+								parameterMap: function (options, operation){
+									if (operation != "read" && options) {
+												return kendo.stringify(options);
+									}else{
+										return { userId: data.userId }
+									}
+								}
+							},
+							schema: {
+								model: kendo.data.Model.define({
+									id : "roleId",
+									fields: { 
+										roleId: { type: "number", defaultValue: 0 },
+										name: { type: "string", defaultValue: "" },
+										displayName: { type: "string", defaultValue: "" },
+										description: { type: "string", defaultValue: "" },
+										inherited: { type: "boolean", defaultValue: false }
+									}
+								})	
+							}
+						},
+						scrollable: true,
+						autoBind: false,
+						selectable: 'row',
+						columns: [
+							{ field: "roleId", title: "ID", width:40,  filterable: false, sortable: false }, 
+							{ field: "name",  title: "롤",  filterable: true, sortable: true, template: '<i class="fa fa-users"></i> #: displayName #(#: name #) <div class="pull-right">#if (inherited){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#</div>' },
+						],
+						dataBound:function(e){
+							
+						},
+						toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>')
+				});		
+				renderTo4.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo4).dataSource.read();
+				});				
+			}
+			renderTo4.data("kendoGrid").dataSource.fetch();
+						
+			
+			
 			var dataSource = common.ui.admin.setup().element.data("role-datasource").fetch(function(){
 				var $data = this.data();
 				if(!renderTo1.data('kendoMultiSelect')){
@@ -597,6 +651,11 @@
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-3">
 							<div class="roles p-xs">
+								<div class="row">
+									<div class="col-sm-6"><div id="user-#= userId#-role-avaiable"></div></div>
+									<div class="col-sm-6"><div id="user-#= userId#-role-selected"></div></div>
+								</div>
+							
 								<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">다음은 맴버로 가입된 그룹으로 부터 상속된 롤입니다. 그룹에서 상속된 롤은 그룹 관리에서 변경할 수 있습니다.</h6>
 								<div id="user-#= userId#-group-roles"></div>
 								<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">다음은 사용자에게 직접 부여된 롤입니다. 그룹에서 부여된 롤을 제외한 롤들만 아래의 선택박스에서 사용자에게 부여 또는 제거하세요.</h6>
