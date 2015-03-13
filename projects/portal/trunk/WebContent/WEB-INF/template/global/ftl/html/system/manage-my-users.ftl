@@ -550,6 +550,10 @@
 				left: 0;
 				min-height:400px;
 			}
+			
+			.k-checkbox:disabled+.k-checkbox-label:hover{
+				color:red;
+			}
 
 			#company-grid.k-grid .k-selectable tr.k-state-selected{
 				background-color: #4cd964;
