@@ -299,7 +299,7 @@
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
 							{ field: "name",  title: "그룹",  filterable: true, sortable: true, template: '<span class="#if (membership){ #text-primary# }else{ #text-default#}#"><i class="fa fa-users"></i></span> #: displayName #(#: name #) ' },
-							{ field: "membership",  width=100, title: "멤버쉽",  filterable: true, sortable: true, template: '#if (membership){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-success k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#' }
+							{ field: "membership",  width:100, title: "멤버쉽",  filterable: true, sortable: true, template: '#if (membership){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-success k-grid-edit"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#' }
 						],
 						saveChanges: function(e) {
 							this.dataSource.read();						
