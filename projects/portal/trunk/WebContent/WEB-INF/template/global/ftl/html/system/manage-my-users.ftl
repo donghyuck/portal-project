@@ -319,7 +319,7 @@
 							this.dataSource.read();						
 						},
 						dataBound:function(e){
-							renderTo.find("[data-action=add]").click(function(e){
+							renderTo.find("[data-action=add],[data-action=remove]").click(function(e){
 								var $this = $(this);
 								var $btn = $this.button('loading');
 								
