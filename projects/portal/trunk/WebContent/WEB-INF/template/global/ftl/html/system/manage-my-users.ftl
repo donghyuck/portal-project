@@ -91,7 +91,7 @@
 						{ field: "enabled", title: "사용여부", width: 100 },
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
 						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
-						{ field: "lastLoggedIn", title: "마지막 로그인", filterable: false,  width: 150, format: "{0:yyyy/MM/dd HH:mm}" },
+						{ field: "lastLoggedIn", title: "마지막 로그인", filterable: false,  width: 150, format: "{0:yyyy/MM/dd HH:mm}" }/**,
 						{ command: [
 							{ 
 								name: "detail",
@@ -99,7 +99,7 @@
 							}], 
 							title: "&nbsp;", 
 							width: 180  
-						}
+						}*/
 					], 		
 					detailTemplate: kendo.template($("#company-details-template").html()),		
 					detailInit: detailInit,		
@@ -121,10 +121,10 @@
 					},
 					dataBound: function(e){   
 						var $this = this;
-						renderTo.find("a[data-action=details]").click(function(e){
+						//renderTo.find("a[data-action=details]").click(function(e){
 							//showCompanyDetails();
-							$this.expandRow($this.select());
-						});							
+							//$this.expandRow($this.select());
+						//});							
 					}	   
 				})	
 			}			
