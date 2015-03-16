@@ -171,13 +171,12 @@
 					})				
 				);
 			}
-			if( ! renderTo.data("kendoGrid") ){	
-					renderTo.kendoGrid({
+			if( ! common.ui.exist(renderTo) ){	
+					common.ui.grid(renderTo, {
 						dataSource: {
 							type: "json",
 							transport: {
 								read: { url:'<@spring.url "/secure/data/mgmt/user/roles/list_with_ownership.json?output=json"/>', type: 'POST' },
-								destroy: { url:'<@spring.url "/secure/data/mgmt/user/roles/remove.json?output=json"/>', type:'post'},	
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
 												return { userId: data.userId, roleId : options.objectId  };
@@ -208,10 +207,27 @@
 							{ field: "objectId", title: "ID", width:40,  filterable: false, sortable: false }, 
 							{ field: "name",  title: "권한",  filterable: true, sortable: true, template: '<span class="#if (inherited){ #text-default# }else{ #text-primary#}#"><i class="fa fa-key"></i></span> #: name #' },
 							{ field: "inherited", title: "그룹권한", width:100,  filterable: false, sortable: false, template:'#if (inherited){ #<input type="checkbox" class="k-checkbox" checked="checked" disabled="disabled"><label class="k-checkbox-label">&nbsp;</label>#}#' }, 
-							{ field: "ownership", title: "권한부여됨", width:100,  filterable: false, sortable: false, template:'<input id="#=uid#-role-#=objectId#" type="checkbox" class="k-checkbox" #if (ownership){ #checked="checked" #}# #if (inherited){# disabled="disabled" #}#><label for="#=uid#-role-#=objectId#"class="k-checkbox-label">&nbsp;</label>' }, 
+							{ field: "ownership", title: "권한부여됨", width:100,  filterable: false, sortable: false, template:'<input id="#=uid#-role-#=objectId#" type="checkbox" data-object-id="#=objectId#" class="k-checkbox" #if (ownership){ #checked="checked" #}# #if (inherited){# disabled="disabled" #}#><label for="#=uid#-role-#=objectId#"class="k-checkbox-label">&nbsp;</label>' }, 
 						],
 						dataBound:function(e){
-							
+							renderTo.find(".k-checkbox").change(function(e){
+								var $this = $(this);
+								var objectId = $this.data("object-id");
+								var checked = $this.is(":checked");
+								kendo.ui.progress(renderTo, true);
+								common.ui.ajax(
+								checked?"<@spring.url "/secure/data/mgmt/user/roles/add.json"/>":"<@spring.url "/secure/data/mgmt/user/roles/remove.json"/>",
+								{
+									type : 'POST',
+									data: { userId : data.userId, roleId: objectId },
+									success : function(response){
+										renderTo.data("kendoGrid").dataSource.read();		
+									},
+									complete: function(){
+										kendo.ui.progress(renderTo, false);
+									}
+								});															
+							});
 						},
 						toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>')
 				});		
@@ -219,7 +235,7 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});				
 			}
-			renderTo.data("kendoGrid").dataSource.fetch();					
+			common.ui.grid(renderTo).dataSource.fetch();					
 		}
 		
 		function createUserPropertiesGrid(renderTo, data){		
@@ -396,52 +412,7 @@
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();		
 		}
-		/*
-		function createCompanyUserGrid(renderTo, data){
-			if( ! common.ui.exists(renderTo)){	
-				common.ui.grid(renderTo, {
-					dataSource: {
-						type: "json",
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
-							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  companyId: data.companyId }
-							}
-						},
-						schema: {
-							total: "totalCount",
-							data: "items",
-							model: common.ui.data.User
-						},
-						batch: false,
-						pageSize: 10,
-						serverPaging: true,
-						serverFiltering: false,
-						serverSorting: false 
-					},
-					filterable: true,
-					sortable: true,
-					scrollable: true,
-					autoBind: false,
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-					selectable: "multiple, row",
-					columns: [
-						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
-						{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
-						{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
-						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
-					dataBound:function(e){
-
-					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
-				});												
-			}	
-			renderTo.data("kendoGrid").dataSource.fetch();
-		}	
-		*/
-
 						
-				
 		function getSelectedCompany(){
 			var renderTo = $("#company-grid");
 			var grid = renderTo.data('kendoGrid');
