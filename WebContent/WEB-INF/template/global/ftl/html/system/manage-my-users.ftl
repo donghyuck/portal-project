@@ -37,7 +37,8 @@
 
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						createCompanyUserGrid();								
+						createCompanyUserGrid();
+						
 					}
 				});		
 											
@@ -51,6 +52,10 @@
 		
 		function createCompanyUserGrid(){
 			var renderTo = $("#company-user-grid");
+			
+			renderTo.find(".panel-heading .panel-title ").html('fdsa');
+			
+			
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
 					dataSource: {	
@@ -517,7 +522,7 @@
 				<div class="row">				
 					<div class="col-sm-12">					
 						<!-- details -->
-						<div id="company-list" class="panel panel-default" style="min-height:300px;">
+						<div id="company-user-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 							</div>
