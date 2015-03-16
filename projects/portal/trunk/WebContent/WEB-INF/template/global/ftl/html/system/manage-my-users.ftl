@@ -37,8 +37,8 @@
 
 				common.ui.admin.setup({					 
 					authenticate : function(e){
-						createCompanyUserGrid();
-						
+						createCompanyUserGrid();						
+						$("#company-user-list .panel-heading .panel-title ").html(kendo.template('#: displayName # <span class="label label-primary">#: name#</span>')(getCompany()));
 					}
 				});		
 											
@@ -53,7 +53,7 @@
 		function createCompanyUserGrid(){
 			var renderTo = $("#company-user-grid");
 			
-			renderTo.find(".panel-heading .panel-title ").html('fdsa');
+			
 			
 			
 			if(!common.ui.exists(renderTo)){
