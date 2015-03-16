@@ -38,7 +38,7 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						createCompanyUserGrid();						
-						$("#company-user-list .panel-heading .panel-title ").html(kendo.template('#: displayName # <span class="label label-primary">#: name#</span>')(getCompany()));
+						$("#company-user-list .panel-heading .panel-title ").html(kendo.template('#: displayName # <span class="label label-primary"> #: name#</span>')(getCompany()));
 					}
 				});		
 											
