@@ -214,7 +214,6 @@
 								var $this = $(this);
 								var objectId = $this.data("object-id");
 								var checked = $this.is(":checked");
-								kendo.ui.progress(renderTo, true);
 								common.ui.ajax(
 								checked?"<@spring.url "/secure/data/mgmt/user/roles/add.json"/>":"<@spring.url "/secure/data/mgmt/user/roles/remove.json"/>",
 								{
@@ -224,7 +223,6 @@
 										renderTo.data("kendoGrid").dataSource.read();		
 									},
 									complete: function(){
-										kendo.ui.progress(renderTo, false);
 									}
 								});															
 							});
@@ -315,7 +313,7 @@
 						columns: [
 							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
 							{ field: "name",  title: "그룹",  filterable: true, sortable: true, template: '<span class="#if (membership){ #text-primary# }else{ #text-default#}#"><i class="fa fa-users"></i></span> #: displayName #(#: name #) ' },
-							{ field: "membership",  width:100, title: "멤버쉽",  filterable: true, sortable: true, template: '#if (membership){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit" data-action="remove" data-object-id="#=groupId#"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-success k-grid-edit" data-action="add" data-object-id="#=groupId#"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#' }
+							{ field: "membership",  width:100, title: "멤버쉽",  filterable: true, sortable: true, template: '#if (membership){ #<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-edit" data-action="remove" data-object-id="#=groupId#" data-loading-text='<i class="fa fa-spinner fa-spin"><span class="btn-label icon fa fa-user-times"></span> 탈퇴</a>#}else{#<a href="\\#" class="btn btn-xs btn-labeled btn-success k-grid-edit" data-action="add" data-object-id="#=groupId#" data-loading-text='<i class="fa fa-spinner fa-spin"><span class="btn-label icon fa fa-user-plus"></span> 가입</a>#}#' }
 						],
 						saveChanges: function(e) {
 							this.dataSource.read();						
@@ -323,8 +321,11 @@
 						dataBound:function(e){
 							renderTo.find("[data-action=add]").click(function(e){
 								var $this = $(this);
+								var $btn = $this.button('loading');
+								
 								var membership = $this.data("action") == "add" ;
 								var objectId = $this.data("object-id");
+								
 								common.ui.ajax(
 									membership ? "<@spring.url "/secure/data/mgmt/user/groups/add.json"/>" : "<@spring.url "/secure/data/mgmt/user/groups/remove.json"/>" ,
 									{
@@ -334,7 +335,7 @@
 											common.ui.grid(renderTo).dataSource.read();
 										},
 										complete: function(){
-											
+											$btn.button('reset');
 										}
 								});													
 							});				
