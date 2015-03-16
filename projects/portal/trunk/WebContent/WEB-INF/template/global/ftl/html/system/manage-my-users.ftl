@@ -171,7 +171,7 @@
 					})				
 				);
 			}
-			if( ! common.ui.exist(renderTo) ){	
+			if( ! common.ui.exists(renderTo) ){	
 					common.ui.grid(renderTo, {
 						dataSource: {
 							type: "json",
