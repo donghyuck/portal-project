@@ -106,8 +106,8 @@
 							width: 180  
 						}
 					], 		
-				//	detailTemplate: kendo.template($("#company-details-template").html()),		
-				//	detailInit: detailInit,		
+					detailTemplate: kendo.template($("#group-details-template").html()),		
+					detailInit: detailInit,		
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
@@ -127,7 +127,6 @@
 					dataBound: function(e){   
 						var $this = this;
 						renderTo.find("a[data-action=details]").click(function(e){
-							//showCompanyDetails();
 							$this.expandRow($this.select());
 						});							
 					}	   
@@ -216,26 +215,24 @@
 		function detailInit(e) {
 			var detailRow = e.detailRow;
 			var renderTo = $("#company-grid");
-			var data = e.data;
-			
+			var data = e.data;			
 			detailRow.find("[data-action=collapses]").click(function(e){
 				common.ui.grid(renderTo).collapseRow(detailRow.prev());
-			});				
-			
+			});			
 			detailRow.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.data("action") ){
 						case "properties" :
-							createCompanyPropertiesGrid(detailRow.find(".properties"), data);
+						//	createCompanyPropertiesGrid(detailRow.find(".properties"), data);
 							break;
 						case "users" :
-							createCompanyUserGrid(detailRow.find(".users"), data);
+						//	createCompanyUserGrid(detailRow.find(".users"), data);
 							break;	
 						case "groups" :
-							createCompanyGroupGrid	(detailRow.find(".groups"), data);
+						//	createCompanyGroupGrid	(detailRow.find(".groups"), data);
 							break
 						case "logos" :
-							createCompanyLogoGrid	(detailRow.find(".logos"), detailRow.find("[name=logo-file]"), data);
+						//	createCompanyLogoGrid	(detailRow.find(".logos"), detailRow.find("[name=logo-file]"), data);
 							break	
 					}	
 				});			
@@ -580,16 +577,16 @@
 			</div>
 		</div> <!-- / #main-wrapper -->	
 	
-		<script type="text/x-kendo-template" id="company-details-template">		
+		<script type="text/x-kendo-template" id="group-details-template">		
 		<div class="panel" style="border: 2px solid \\#34aadc; ">		
 			<div class="panel-body padding-sm">
-				<button class="close" data-action="collapses" data-object-id="#= companyId#"><i class="fa fa-angle-up fa-lg"></i></button>				
+				<button class="close" data-action="collapses" data-object-id="#= groupId#"><i class="fa fa-angle-up fa-lg"></i></button>				
 				<div class="tab-v1">
 					<ul class="nav nav-tabs nav-tabs-xs">
-						<li class=""><a href="\\#company-#= companyId#-tab-1" data-toggle="tab" data-action="logos">로고</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-3" data-toggle="tab" data-action="users">사용자</a></li>
-						<li class=""><a href="\\#company-#= companyId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
+						<li class=""><a href="\\#group-#= companyId#-tab-1" data-toggle="tab" data-action="logos">로고</a></li>
+						<li class=""><a href="\\#group-#= companyId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
+						<li class=""><a href="\\#group-#= companyId#-tab-3" data-toggle="tab" data-action="users">사용자</a></li>
+						<li class=""><a href="\\#group-#= companyId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
 					</ul>	
 					<div class="tab-content">
 						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
@@ -603,13 +600,13 @@
 								</div>
 							</div>							
 						</div>
-						<div class="tab-pane fade" id="company-#= companyId#-tab-2">
+						<div class="tab-pane fade" id="group-#= groupId#-tab-2">
 							<div class="groups"></div>
 						</div>
-						<div class="tab-pane fade" id="company-#= companyId#-tab-3">
+						<div class="tab-pane fade" id="group-#= groupId#-tab-3">
 							<div class="users"></div>
 						</div>
-						<div class="tab-pane fade" id="company-#= companyId#-tab-4">
+						<div class="tab-pane fade" id="group-#= groupId#-tab-4">
 							 <div class="properties"></div>
 						</div>
 																							
@@ -618,79 +615,6 @@
 			</div>
 		</div>			
 		</script>			
-		
-		<script type="text/x-kendo-template" id="company-details-template2">		
-		<div class="panel">
-			<div class="panel-heading">
-				<span class="panel-title"><span class="label label-primary" data-bind="text: company.name"></span> <span class="text-semibold" data-bind="text:company.displayName"></span></span>
-				<button type="button" class="close" aria-hidden="true">&times;</button>
-			</div>			
-			<div class="panel-body">
-					<div class="details-row no-margin-t">					
-						<div class="left-col">
-							<div class="details-block no-margin-t">
-								<div class="details-photo">
-									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
-								</div>
-								<br>
-								<!--
-								<a href="\\#" class="btn btn-success"><i class="fa fa-check"></i> Following</a> 
-								<a href="\\#" class="btn"><i class="fa fa-comment"></i></a>-->
-							</div>				
-							<div class="panel panel-transparent">
-								<div class="panel-heading">
-									<span class="panel-title"  data-bind="text:company.description"></span>
-								</div>
-								<table class="table">
-									<tbody>						
-										<tr>
-											<th><small>도메인</small></th>								
-											<td><span data-bind="text:company.domainName"></span></td>
-										</tr>	
-										<tr>
-											<th><small>생성일</small></th>								
-											<td><span data-bind="text:formattedCreationDate"></span></td>
-										</tr>	
-										<tr>
-											<th><small>수정일</small></th>								
-											<td><span data-bind="text:formattedModifiedDate"></span></td>
-										</tr>														
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="right-col">
-							<hr class="details-content-hr no-grid-gutter-h">	
-							<div class="details-content">
-								<div class="panel panel-transparent">
-									<div class="panel-heading">
-										<span class="panel-title">&nbsp;</span>							
-										<ul id="myTab" class="nav nav-tabs nav-tabs-simple">
-											<li><a href="\\#props" data-toggle="tab">프로퍼티</a></li>
-											<li><a href="\\#groups" data-toggle="tab">그룹 <span class="badge badge-success" data-bind="text:groupCount, visible:groupCount ">0</span></a></li>
-											<li><a href="\\#users" data-toggle="tab">사용자 <span class="badge badge-success" data-bind="text:memberCount, visible:memberCount">0</span></a></li>
-										</ul>	
-									</div></!-- /.panel-heading -->								
-									<!-- .tab-content -->	
-									<div class="tab-content  no-padding">								
-										<div class="tab-pane fade" id="props">				
-											<div id="company-prop-grid" class="props no-border-t no-border-hr"></div>
-										</div>
-										<div class="tab-pane fade" id="groups">										
-											<div id="company-group-grid"  class="groups no-border-t no-border-hr"></div>					
-										</div>
-										<div class="tab-pane fade" id="users">	
-											<div id="company-user-grid"  class="users no-border-t no-border-hr"></div>
-										</div>
-									</div><!-- / .tab-content -->
-								</div><!-- / .panel -->
-							</div><!-- / .details-content -->
-						</div><!-- / .right-col -->
-					</div><!-- / .details-row -->	
-			</div>
-			<div class="panel-footer no-padding-vr"></div>
-		</div>			
-		</script>				
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
