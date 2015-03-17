@@ -86,7 +86,7 @@
 						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 100 }, 
 						{ field: "description",   title: "설명",  filterable: true, sortable: false,  width: 150 }, 
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 80, format: "{0:yyyy/MM/dd}" },
-						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 80, format: "{0:yyyy/MM/dd}" },
+						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 80, format: "{0:yyyy/MM/dd}", editable: false },
 						{ command: [
 							{ 
 								name: "edit",
