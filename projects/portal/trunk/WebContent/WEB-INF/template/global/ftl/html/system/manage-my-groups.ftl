@@ -109,7 +109,6 @@
 				//	detailInit: detailInit,		
 					filterable: true,
 					editable: "inline",
-					selectable: 'row',
 					height: '600',
 					batch: false,              
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
