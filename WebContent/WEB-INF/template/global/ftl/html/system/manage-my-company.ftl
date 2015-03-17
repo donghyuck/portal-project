@@ -456,12 +456,8 @@
 											<div class="tab-content">
 												<div class="tab-pane fade" id="my-company-tabs-0">
 													<div class="stat-panel no-margin-b">
-														<div class="stat-cell col-sm-3 hidden-xs text-center">
-														
+														<div class="stat-cell col-sm-3 hidden-xs text-center">														
 															<i class="fa fa-building-o bg-icon bg-icon-left"></i>	
-															
-														
-
 														</div> <!-- /.stat-cell -->
 														
 														<div class="stat-cell col-sm-9 no-padding">	
