@@ -55,7 +55,9 @@
 		}
 				
 		function createCompanyGroupGrid(){
+			
 			var renderTo = $("#company-group-grid");
+			
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
 					dataSource: {	
@@ -242,7 +244,7 @@
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
 		
-		function createCompanyGroupGrid(renderTo, data){
+		function createCompanyGroupGrid2(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){	
 					renderTo.kendoGrid({
 						dataSource: {
