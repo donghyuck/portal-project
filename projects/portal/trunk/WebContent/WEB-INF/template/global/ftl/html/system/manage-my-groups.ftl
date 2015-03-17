@@ -223,7 +223,7 @@
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.data("action") ){
 						case "properties" :
-						//	createCompanyPropertiesGrid(detailRow.find(".properties"), data);
+							createGroupPropertiesGrid(detailRow.find(".properties"), data);
 							break;
 						case "users" :
 						//	createCompanyUserGrid(detailRow.find(".users"), data);
@@ -425,20 +425,20 @@
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
 		
-		function createCompanyPropertiesGrid(renderTo, data){		
+		function createGroupPropertiesGrid(renderTo, data){		
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/properties/list.json?output=json&companyId="/>' + data.companyId , type:'post' },
-							create: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId , type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/company/properties/update.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json"  },
-							destroy: { url:'<@spring.url "/secure/data/mgmt/company/properties/delete.json?output=json&companyId="/>' + data.companyId, type:'post', contentType : "application/json" },
+							read: { url:'<@spring.url "/secure/data/mgmt/group/properties/list.json?output=json&groupId="/>' + data.groupId , type:'post' },
+							create: { url:'<@spring.url "/secure/data/mgmt/group/properties/update.json?output=json&groupId="/>' + data.groupId , type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/group/properties/update.json?output=json&groupId="/>' + data.groupId, type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/group/properties/delete.json?output=json&groupId="/>' + data.groupId, type:'post', contentType : "application/json" },
 							parameterMap: function (options, operation){			
 								if (operation !== "read" && options.models) {
 									return kendo.stringify(options.models);
 								}else{ 
-									return { companyId: data.companyId }
+									return { groupId: data.groupId }
 								}
 							}
 						},						
