@@ -38,7 +38,7 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
-						createCompanyUserGrid();
+						createCompanyGroupGrid();
 					},
 					change: function(e){
 						e.data.copy(targetCompany);						
@@ -54,17 +54,23 @@
 			return new common.ui.data.Company( common.ui.admin.setup().token.company );
 		}
 				
-		function createCompanyUserGrid(){
+		function createCompanyGroupGrid(){
 			var renderTo = $("#company-group-grid");
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
 					dataSource: {	
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
-							create: { url:'<@spring.url "/secure/data/mgmt/company/create.json?output=json"/>', type:'POST', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', type:'POST', contentType : "application/json" },
-							parameterMap: function (options, operation){	          
+							create: { url:'<@spring.url "/secure/data/mgmt/company/groups/create.json?output=json"/>', type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/company/groups/update.json?output=json"/>', type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
+							parameterMap: function (options, operation){
 								if (operation != "read" && options) {
+									if( operation == "create" )
+									{
+										options.companyId = getCompany().companyId;
+										options.company = getCompany();
+									}	
 									return kendo.stringify(options);
 								}else{
 									return { startIndex: options.skip, pageSize: options.pageSize, companyId:getCompany().companyId }
