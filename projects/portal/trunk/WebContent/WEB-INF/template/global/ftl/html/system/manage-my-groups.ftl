@@ -229,7 +229,7 @@
 						//	createCompanyUserGrid(detailRow.find(".users"), data);
 							break;	
 						case "roles" :
-						//	createCompanyGroupGrid	(detailRow.find(".groups"), data);
+							createGroupRolePanel(detailRow.find(".roles"), data);
 							break
 						case "basic" :
 						//	createCompanyLogoGrid	(detailRow.find(".logos"), detailRow.find("[name=logo-file]"), data);
@@ -494,10 +494,10 @@
 							</div>							
 						</div>
 						<div class="tab-pane fade" id="group-#= groupId#-tab-2">
-							<div class="groups"></div>
+							<div class="users"></div>
 						</div>
 						<div class="tab-pane fade" id="group-#= groupId#-tab-3">
-							<div class="users"></div>
+							<div class="roles"></div>
 						</div>
 						<div class="tab-pane fade" id="group-#= groupId#-tab-4">
 							 <div class="properties"></div>
