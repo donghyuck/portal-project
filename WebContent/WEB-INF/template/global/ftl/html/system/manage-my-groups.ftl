@@ -96,8 +96,8 @@
 							width: 180  
 						}
 					], 		
-					detailTemplate: kendo.template($("#company-details-template").html()),		
-					detailInit: detailInit,		
+				//	detailTemplate: kendo.template($("#company-details-template").html()),		
+				//	detailInit: detailInit,		
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
