@@ -298,7 +298,7 @@
 								checked?"<@spring.url "/secure/data/mgmt/group/roles/add.json"/>":"<@spring.url "/secure/data/mgmt/group/roles/remove.json"/>",
 								{
 									type : 'POST',
-									data: { userId : data.groupId, roleId: objectId },
+									data: { groupId : data.groupId, roleId: objectId },
 									success : function(response){
 										renderTo.data("kendoGrid").dataSource.read();		
 									},
