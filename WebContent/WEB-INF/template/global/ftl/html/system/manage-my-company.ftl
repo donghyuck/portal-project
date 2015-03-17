@@ -433,6 +433,7 @@
 				<div  id="my-company-details">
 					<div  class="row">				
 						<div class="col-sm-12">	
+						
 										<div class="panel panel colourable" style="border: 2px solid #34aadc; ">		
 											<div class="panel-heading">
 												<span class="panel-title">&nbsp</span>
