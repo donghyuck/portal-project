@@ -465,11 +465,8 @@
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="edit" data-toggle="button" data-bind="enabled: editable, click:modal" ><i class="fa fa-pencil"></i> 변경</button>											
 								</div>	
 														</div> <!-- /.stat-cell -->
-														<div class="stat-cell col-sm-9 no-padding">		
-							<div class="panel panel-transparent">
-								<div class="panel-heading">
-									<span class="panel-title" data-bind="text:company.description"></span>									
-								</div>
+														<div class="stat-cell col-sm-9 no-padding">	
+								<span class="panel-title" data-bind="text:company.description"></span>				
 								<table class="table">
 									<tbody>						
 										<tr>
@@ -494,14 +491,8 @@
 										</tr>																								
 									</tbody>
 								</table>
-							</div>
 														</div>
-													</div>	
-													
-			
-
-							
-												
+													</div>													
 												</div>
 												<div class="tab-pane fade" id="my-company-tabs-1">
 													<div class="stat-panel no-margin-b">
