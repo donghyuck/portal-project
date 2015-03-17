@@ -44,7 +44,7 @@
 					}
 				});		
 				createCompanyUserGrid();
-				createCompanyGrid();															
+				//createCompanyGrid();															
 				// END SCRIPT
 			}
 		}]);
