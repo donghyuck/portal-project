@@ -39,6 +39,7 @@
 					authenticate : function(e){
 						e.token.copy(currentUser);
 						createCompanyGroupGrid();
+						$("#company-group-list .panel-heading .panel-title ").html(kendo.template('<i class="fa fa-align-justify"></i> #: displayName # <span class="label label-primary"> #: name#</span>')(getCompany()));
 					},
 					change: function(e){
 						e.data.copy(targetCompany);						
