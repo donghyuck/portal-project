@@ -430,29 +430,22 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>		
 				</div><!-- / .page-header -->
 				<!-- details-row -->
-				<div id="my-company-details" class="page-details" style="">				
-					<div class="details-row no-margin-t">					
-						<div class="left-col">
-							
-						</div>
-						<div class="right-col">
-							<hr class="details-content-hr no-grid-gutter-h"/>						
-							<div class="details-content">									
-									
-								<div class="panel panel colourable" style="border: 2px solid #34aadc; ">		
-									<div class="panel-heading">
-										<span class="panel-title">&nbsp</span>
-											<ul class="nav nav-tabs nav-tabs-xs">
-												<li class=""><a href="#my-company-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
-												<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
-												<!--
-												<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
-												<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
-												-->
-												<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
-											</ul>	
-									</div>						
-								
+				<div  id="my-company-details">
+					<div  class="row">				
+						<div class="col-sm-12">	
+										<div class="panel panel colourable" style="border: 2px solid #34aadc; ">		
+											<div class="panel-heading">
+												<span class="panel-title">&nbsp</span>
+													<ul class="nav nav-tabs nav-tabs-xs">
+														<li class=""><a href="#my-company-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
+														<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
+														<!--
+														<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
+														<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
+														-->
+														<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
+													</ul>	
+											</div>
 											<div class="tab-content">
 												<div class="tab-pane fade" id="my-company-tabs-0">
 													<div class="stat-panel no-margin-b">
@@ -460,36 +453,33 @@
 															<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>" class="img-responsive img-circle">	
 															<span class="panel-title" data-bind="text:company.description"></span>														
 															<i class="fa fa-building-o bg-icon bg-icon-left"></i>	
-														</div> <!-- /.stat-cell -->
-														
-														<div class="stat-cell col-sm-9 no-padding">	
-								
-								<table class="table table-striped">
-									<tbody>						
-										<tr>
-											<th class="text-center">회사</th>								
-											<td><span data-bind="text: company.displayName"></span><code><span data-bind="text: company.companyId"></span></code></td>
-										</tr>	
-										<tr>
-											<th class="text-center">키</th>								
-											<td><span class="label label-primary" data-bind="text: company.name"></span></td>
-										</tr>	
-										<tr>
-											<th class="text-center">도메인</th>								
-											<td><span data-bind="text: company.domainName"></span></td>
-										</tr>	
-										<tr>
-											<th class="text-center">생성일</th>								
-											<td><span data-bind="text:formattedModifiedDate"></span></td>
-										</tr>	
-										<tr>
-											<th class="text-center">수정일</th>								
-											<td><span data-bind="text:formattedModifiedDate"></span></td>
-										</tr>																								
-									</tbody>
-								</table>
-								<button type="button" class="btn btn-default btn-flat btn-control-group pull-right" data-action="edit" data-toggle="button" data-bind="enabled: editable, click:modal" ><i class="fa fa-pencil"></i> 변경</button>
-								
+														</div> <!-- /.stat-cell -->														
+														<div class="stat-cell col-sm-9 no-padding">									
+															<table class="table table-striped">
+																<tbody>						
+																	<tr>
+																		<th class="text-center">회사</th>								
+																		<td><span data-bind="text: company.displayName"></span><code><span data-bind="text: company.companyId"></span></code></td>
+																	</tr>	
+																	<tr>
+																		<th class="text-center">키</th>								
+																		<td><span class="label label-primary" data-bind="text: company.name"></span></td>
+																	</tr>	
+																	<tr>
+																		<th class="text-center">도메인</th>								
+																		<td><span data-bind="text: company.domainName"></span></td>
+																	</tr>	
+																	<tr>
+																		<th class="text-center">생성일</th>								
+																		<td><span data-bind="text:formattedModifiedDate"></span></td>
+																	</tr>	
+																	<tr>
+																		<th class="text-center">수정일</th>								
+																		<td><span data-bind="text:formattedModifiedDate"></span></td>
+																	</tr>																								
+																</tbody>
+															</table>
+															<button type="button" class="btn btn-default btn-flat btn-control-group pull-right" data-action="edit" data-toggle="button" data-bind="enabled: editable, click:modal" ><i class="fa fa-pencil"></i> 변경</button>								
 														</div>
 													</div>													
 												</div>
@@ -513,13 +503,11 @@
 												<div class="tab-pane fade" id="my-company-tabs-4">
 													 <div class="properties"></div>
 												</div>
-																													
 											</div>
-									</div>		
-								</div>			
-							</div><!-- / .details-content -->
-						</div><!-- / .right-col -->
-					</div><!-- / .details-row -->	
+										 </div>							
+						</div>					
+					</div>	
+				</div>	
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg"></div>
 		</div> <!-- / #main-wrapper -->	
