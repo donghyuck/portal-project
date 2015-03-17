@@ -34,6 +34,7 @@
 			'<@spring.url "/js/ace/ace.js"/>'
 			],
 			complete: function() {
+			
 				var renderTo = $("#my-company-details");
 				var observable = common.ui.observable({
 					company : new common.ui.data.EditableCompany(),
@@ -50,6 +51,9 @@
 						renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 								var show_bs_tab = $(e.target);
 								switch( show_bs_tab.data("action") ){
+									case "company" :
+										createCompanyDetails(renderTo.find(".company"), $this.company);
+										break;
 									case "properties" :
 										createCompanyPropertiesGrid(renderTo.find(".properties"), $this.company);
 										break;
@@ -124,6 +128,10 @@
 			return selectedCell;
 		}
 				
+		function createCompanyDetails(renderTo, data){
+		
+		}
+		
 		
 		function createCompanyGroupGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){	
@@ -425,7 +433,30 @@
 				<div id="my-company-details" class="page-details" style="">				
 					<div class="details-row no-margin-t">					
 						<div class="left-col">
-							<div class="details-block no-margin-t">
+							
+						</div>
+						<div class="right-col">
+							<hr class="details-content-hr no-grid-gutter-h"/>						
+							<div class="details-content">									
+									
+								<div class="panel panel colourable" style="border: 2px solid #34aadc; ">		
+									<div class="panel-heading">
+										<span class="panel-title">&nbsp</span>
+											<ul class="nav nav-tabs nav-tabs-xs">
+												<li class=""><a href="#my-company-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
+												<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
+												<!--
+												<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
+												<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
+												-->
+												<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
+											</ul>	
+									</div>						
+								
+											<div class="tab-content">
+												<div class="tab-pane fade" id="my-company-tabs-0">
+
+<div class="details-block no-margin-t">
 								<div class="details-photo">
 									<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
 								</div>
@@ -461,25 +492,9 @@
 									</tbody>
 								</table>
 							</div>
-						</div>
-						<div class="right-col">
-							<hr class="details-content-hr no-grid-gutter-h"/>						
-							<div class="details-content">									
-									
-								<div class="panel panel colourable" style="border: 2px solid #34aadc; ">		
-									<div class="panel-heading">
-										<span class="panel-title">&nbsp</span>
-											<ul class="nav nav-tabs nav-tabs-xs">
-												<li class=""><a href="#my-company-tabs-1" data-toggle="tab" data-action="logos">로고</a></li>
-												<!--
-												<li class=""><a href="#my-company-tabs-2" data-toggle="tab" data-action="groups">그룹</a></li>
-												<li class=""><a href="#my-company-tabs-3" data-toggle="tab" data-action="users">사용자</a></li>
-												-->
-												<li class=""><a href="#my-company-tabs-4" data-toggle="tab" data-action="properties">속성</a></li>
-											</ul>	
-									</div>						
-								
-											<div class="tab-content">
+							
+												
+												</div>
 												<div class="tab-pane fade" id="my-company-tabs-1">
 													<div class="stat-panel no-margin-b">
 														<div class="stat-cell col-sm-3 hidden-xs text-center">
