@@ -238,192 +238,85 @@
 				});			
 			detailRow.find(".nav-tabs a:first").tab('show');		
 		}		
-		
-		function createCompanyGroupGrid2(renderTo, data){
-			if( ! renderTo.data("kendoGrid") ){	
-					renderTo.kendoGrid({
+
+
+		function createGroupRolePanel(renderTo, data){		
+			if(!common.ui.defined( common.ui.admin.setup().element.data("role-datasource") ) ){
+				common.ui.admin.setup().element.data("role-datasource", 
+					common.ui.datasource('<@spring.url "/secure/data/mgmt/role/list.json?output=json"/>',{
+						schema: { 
+							data: "items",
+							total: "totalCount",
+							model: common.ui.data.Role						
+						}
+					})				
+				);
+			}
+			if( ! common.ui.exists(renderTo) ){	
+					common.ui.grid(renderTo, {
 						dataSource: {
 							type: "json",
 							transport: {
-								read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
-								create: { url:'<@spring.url "/secure/data/mgmt/company/groups/create.json?output=json"/>', type:'post', contentType : "application/json" },
-								update: { url:'<@spring.url "/secure/data/mgmt/company/groups/update.json?output=json"/>', type:'post', contentType : "application/json"  },
-								destroy: { url:'<@spring.url "/secure/data/mgmt/company/groups/delete.json?output=json"/>', type:'post', contentType : "application/json" },	
+								read: { url:'<@spring.url "/secure/data/mgmt/group/roles/list_with_ownership.json?output=json"/>', type: 'POST' },
 								parameterMap: function (options, operation){
 									if (operation != "read" && options) {
-										if( operation == "create" )
-										{
-											options.companyId = data.companyId;
-											options.company = data;
-										}	
-										return kendo.stringify(options);
+												return { groupId: data.groupId, roleId : options.objectId  };
 									}else{
-										return { companyId: data.companyId }
+										return { groupId: data.groupId };
 									}
 								}
 							},
 							schema: {
-								total: "totalCount",
-								data: "items",
-								model: common.ui.data.Group
-							}
+								model: kendo.data.Model.define({
+									id : "objectId",
+									fields: { 
+										objectId: { type: "number", defaultValue: 0 },
+										name: { type: "string", defaultValue: "" },
+										displayName: { type: "string", defaultValue: "" },
+										description: { type: "string", defaultValue: "" },
+										ownership: { type: "boolean", defaultValue: false },
+										inherited: { type: "boolean", defaultValue: false }
+									}
+								})	
+							},
+							error:common.ui.handleAjaxError
 						},
 						scrollable: true,
-						editable: "inline",
 						autoBind: false,
 						selectable: 'row',
 						columns: [
-							{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
-							{ field: "name",  title: "KEY",  filterable: true, sortable: true },
-							{ field: "displayName",    title: "이름",  filterable: true, sortable: true},
-							{ field: "description",    title: "설명",  filterable: false,  sortable: false },
-							{ command: [
-								{ 
-									name: "edit",
-									template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
-									text: { edit: "변경", update: "저장", cancel: "취소"}
-								}], 
-								title: "&nbsp;", 
-								width: 180  
-							}
+							{ field: "objectId", title: "ID", width:40,  filterable: false, sortable: false }, 
+							{ field: "name",  title: "권한",  filterable: true, sortable: true, template: '<span class="#if (inherited){ #text-default# }else{ #text-primary#}#"><i class="fa fa-key"></i></span> #: name #' },
+							{ field: "inherited", title: "그룹권한", width:100,  filterable: false, sortable: false, template:'#if (inherited){ #<input type="checkbox" class="k-checkbox" checked="checked" disabled="disabled"><label class="k-checkbox-label">&nbsp;</label>#}#' }, 
+							{ field: "ownership", title: "권한부여됨", width:100,  filterable: false, sortable: false, template:'<input id="#=uid#-role-#=objectId#" type="checkbox" data-object-id="#=objectId#" class="k-checkbox" #if (ownership){ #checked="checked" #}# #if (inherited){# disabled="disabled" #}#><label for="#=uid#-role-#=objectId#"class="k-checkbox-label">&nbsp;</label>' }, 
 						],
-						saveChanges: function(e) {
-							this.dataSource.read();						
-						},
 						dataBound:function(e){
-							//getCompanyDetailsModel().set("groupCount", this.dataSource.total() );							
+							renderTo.find(".k-checkbox").change(function(e){
+								var $this = $(this);
+								var objectId = $this.data("object-id");
+								var checked = $this.is(":checked");
+								common.ui.ajax(
+								checked?"<@spring.url "/secure/data/mgmt/group/roles/add.json"/>":"<@spring.url "/secure/data/mgmt/group/roles/remove.json"/>",
+								{
+									type : 'POST',
+									data: { userId : data.groupId, roleId: objectId },
+									success : function(response){
+										renderTo.data("kendoGrid").dataSource.read();		
+									},
+									complete: function(){
+									}
+								});															
+							});
 						},
-						toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success m-r-xs " data-action="create" data-object-id="0"><span class="btn-label icon fa fa-gift"></span> 디폴트 그룹 자동 생성</button> <a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-plus"></span> 그룹 추가 </a><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
+						toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>')
 				});		
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
 				});				
 			}
-			renderTo.data("kendoGrid").dataSource.fetch();
-		}				
-		
-		/**
-		 * function for create logo grid
-		 */
-		function createCompanyLogoGrid(renderTo, renderTo2,  data){
-			if( !common.ui.exists(renderTo2)){
-				renderTo2.kendoUpload({
-					multiple : false,
-					width: 300,
-				 	showFileList : false,
-					localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
-					async: {
-						saveUrl:  '<@spring.url "/secure/data/mgmt/logo/upload.json?output=json"/>',							   
-						autoUpload: true
-					},
-					upload: function (e) {								         
-						e.data = {
-							objectType : 1,
-							objectId: data.companyId
-						};														    								    	 		    	 
-					},
-					success : function(e) {								    
-						if( e.response.success ){
-							common.ui.grid(renderTo).dataSource.read();
-						}
-					}
-				});								
-			}						
-			if( ! common.ui.exists(renderTo)){	
-				common.ui.grid(renderTo,{
-					dataSource: {
-						type: "json",
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/logo/list.json?output=json"/>', type: 'POST' },
-							parameterMap: function (options, type){
-								return { objectType: 1, objectId: data.companyId }
-							}
-						},
-						schema: {
-							data: "items",
-							total: "totalCount",
-							model : common.ui.data.Logo
-						},
-						batch: false
-					},
-					toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>'),    
-					filterable: true,
-					sortable: true,
-					scrollable: true,
-					selectable: false,
-					columns:[
-							{ title: "&nbsp;",  width:150, filterable: false, sortable: false, template:'<div class="text-center"><img alt="" class="img-thumbnail" src="<@spring.url "/secure/download/logo/#= logoId #?width=120&height=120" />"></div>' },
-							{ field: "filename", title: "파일", template:'#:filename# <small><span class="label label-info">#: imageContentType #</span></small> #if( !primary ){ # <button class="btn btn-flat btn-xs btn-labeled btn-danger" data-action="primary" data-object-id="#= logoId#"><span class="btn-label icon fa fa-check-square"></span>선택</button> #}#' },
-							{ field: "imageSize", title: "파일크기",  width: 150 , format: "{0:##,### bytes}" }
-						],
-					dataBound:function(e){
-						renderTo.find("[data-action=primary]").click(function(e){
-							var logoId = $(this).data("object-id");
-							common.ui.ajax(
-								"<@spring.url "/secure/data/mgmt/logo/set_primary.json"/>",
-								{
-									type : 'POST',
-									url : '/data/streams/photos/delete.json?output=json' ,
-									data: { logoId : logoId },
-									success : function(response){
-										renderTo.data("kendoGrid").dataSource.read();		
-									},
-									complete: function(){
-										kendo.ui.progress(renderTo, false);
-									}
-							});		
-						});
-					}						
-				});	
-				renderTo.find("[data-action='refresh']").click( function(e){
-					common.ui.grid(renderTo).dataSource.read();
-				});
-				
-			}	
-			renderTo.data("kendoGrid").dataSource.fetch();		
+			common.ui.grid(renderTo).dataSource.fetch();					
 		}
-		
-		function createCompanyUserGrid2(renderTo, data){
-			if( ! common.ui.exists(renderTo)){	
-				common.ui.grid(renderTo, {
-					dataSource: {
-						type: "json",
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
-							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  companyId: data.companyId }
-							}
-						},
-						schema: {
-							total: "totalCount",
-							data: "items",
-							model: common.ui.data.User
-						},
-						batch: false,
-						pageSize: 10,
-						serverPaging: true,
-						serverFiltering: false,
-						serverSorting: false 
-					},
-					filterable: true,
-					sortable: true,
-					scrollable: true,
-					autoBind: false,
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
-					selectable: "multiple, row",
-					columns: [
-						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
-						{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
-						{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
-						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
-					dataBound:function(e){
-
-					},
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-success disabled" data-action="move" data-object-id="0"><span class="btn-label icon fa fa-exchange"></span> 선택 사용자 회사 변경</button></div>')
-				});												
-			}	
-			renderTo.data("kendoGrid").dataSource.fetch();
-		}	
+					
 		
 		function createGroupPropertiesGrid(renderTo, data){		
 			if( ! renderTo.data("kendoGrid") ){
