@@ -40,11 +40,10 @@
 						e.token.copy(currentUser);
 					},
 					change: function(e){
-						e.data.copy(targetCompany);
-						createCompanyUserGrid()
+						e.data.copy(targetCompany);						
 					}
 				});		
-				
+				createCompanyUserGrid();
 				createCompanyGrid();															
 				// END SCRIPT
 			}
