@@ -38,12 +38,13 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
+						createCompanyUserGrid();
 					},
 					change: function(e){
 						e.data.copy(targetCompany);						
 					}
 				});		
-				createCompanyUserGrid();
+				
 				//createCompanyGrid();															
 				// END SCRIPT
 			}
