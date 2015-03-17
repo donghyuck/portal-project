@@ -41,6 +41,7 @@
 					},
 					change: function(e){
 						e.data.copy(targetCompany);
+						createCompanyUserGrid()
 					}
 				});		
 				
