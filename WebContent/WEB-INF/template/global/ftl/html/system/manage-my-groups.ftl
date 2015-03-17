@@ -49,6 +49,84 @@
 			}
 		}]);
 		
+		function getCompany(){
+			return new common.ui.data.EditableCompany( common.ui.admin.setup().token.company );
+		}
+				
+		function createCompanyUserGrid(){
+			var renderTo = $("#company-group-grid");
+			if(!common.ui.exists(renderTo)){
+				common.ui.grid(renderTo, {
+					dataSource: {	
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/company/groups/list.json?output=json"/>', type: 'POST' },
+							create: { url:'<@spring.url "/secure/data/mgmt/company/create.json?output=json"/>', type:'POST', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', type:'POST', contentType : "application/json" },
+							parameterMap: function (options, operation){	          
+								if (operation != "read" && options) {
+									return kendo.stringify(options);
+								}else{
+									return { startIndex: options.skip, pageSize: options.pageSize, companyId:getCompany().companyId }
+								}
+							}
+						},
+						schema: {
+							total: "totalCount",
+							data: "items",
+							model : common.ui.data.Group
+						},
+						pageSize: 15,
+						serverPaging: true
+					},
+					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </a></div>'),
+					columns: [
+						{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
+						{ field: "name", title: "KEY", width:100,  filterable: false, sortable: false }, 
+						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 150 }, 
+						{ field: "description",   title: "도메인",  filterable: true, sortable: false,  width: 100 }, 
+						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
+						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" },
+						{ command: [
+							{ 
+								name: "edit",
+								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
+								text: { edit: "변경", update: "저장", cancel: "취소"}
+							}], 
+							title: "&nbsp;", 
+							width: 180  
+						}
+					], 		
+					detailTemplate: kendo.template($("#company-details-template").html()),		
+					detailInit: detailInit,		
+					filterable: true,
+					editable: "inline",
+					selectable: 'row',
+					height: '600',
+					batch: false,              
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
+					change: function(e) {
+						// 1-1 SELECTED EVENT  
+						var selectedCells = this.select();
+						if( selectedCells.length === 0){								
+						}
+					},
+					cancel: function(e){							
+					},
+					edit: function(e){	
+					},
+					dataBound: function(e){   
+						var $this = this;
+						renderTo.find("a[data-action=details]").click(function(e){
+							//showCompanyDetails();
+							$this.expandRow($this.select());
+						});							
+					}	   
+				});		
+				renderTo.find("a[data-action=create]").click(function(e){
+					common.ui.grid(renderTo)
+				});			
+			}			
+		}
 		
 		function createCompanyGrid(){
 			var renderTo = $("#company-grid");
@@ -468,7 +546,7 @@
 				<div class="row">				
 					<div class="col-sm-12">					
 						<!-- details -->
-						<div id="company-list" class="panel panel-default" style="min-height:300px;">
+						<div id="company-group-list" class="panel panel-default" style="min-height:300px;">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-align-justify"></i> 목록</span>
 							</div>
@@ -477,6 +555,7 @@
 									<h4 class="note-title"><small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다. 상세보기 버튼을 클릭하면 보다 많은 정보를 조회/수정 할 수 있습니다.</small></h4>
 								</div>	
 							</div>									
+							<div id="company-group-grid" class="no-border-hr"></div>
 							<div id="company-grid" class="no-border-hr"></div>
 						</div>
 						<!-- /details -->
