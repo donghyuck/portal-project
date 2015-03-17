@@ -379,7 +379,7 @@
 			renderTo.data("kendoGrid").dataSource.fetch();		
 		}
 		
-		function createCompanyUserGrid(renderTo, data){
+		function createCompanyUserGrid2(renderTo, data){
 			if( ! common.ui.exists(renderTo)){	
 				common.ui.grid(renderTo, {
 					dataSource: {
