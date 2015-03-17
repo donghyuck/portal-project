@@ -226,7 +226,7 @@
 							createGroupPropertiesGrid(detailRow.find(".properties"), data);
 							break;
 						case "users" :
-						//	createCompanyUserGrid(detailRow.find(".users"), data);
+							createGroupUserGrid(detailRow.find(".users"), data);
 							break;	
 						case "roles" :
 							createGroupRolePanel(detailRow.find(".roles"), data);
@@ -240,6 +240,47 @@
 		}		
 
 
+		function createGroupUserGrid(renderTo, data){
+			if( ! common.ui.exists(renderTo)){	
+				common.ui.grid(renderTo, {
+					dataSource: {
+						type: "json",
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  groupId: data.groupId }
+							}
+						},
+						schema: {
+							total: "totalCount",
+							data: "items",
+							model: common.ui.data.User
+						},
+						batch: false,
+						pageSize: 10,
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false 
+					},
+					filterable: true,
+					sortable: true,
+					scrollable: true,
+					autoBind: false,
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+					selectable: "multiple, row",
+					columns: [
+						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
+						{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
+						{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
+						{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
+					dataBound:function(e){
+
+					}
+				});												
+			}	
+			renderTo.data("kendoGrid").dataSource.fetch();
+		}	
+		
 		function createGroupRolePanel(renderTo, data){		
 			if(!common.ui.defined( common.ui.admin.setup().element.data("role-datasource") ) ){
 				common.ui.admin.setup().element.data("role-datasource", 
