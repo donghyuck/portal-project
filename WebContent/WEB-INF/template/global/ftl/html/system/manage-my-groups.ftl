@@ -228,10 +228,10 @@
 						case "users" :
 						//	createCompanyUserGrid(detailRow.find(".users"), data);
 							break;	
-						case "groups" :
+						case "roles" :
 						//	createCompanyGroupGrid	(detailRow.find(".groups"), data);
 							break
-						case "logos" :
+						case "basic" :
 						//	createCompanyLogoGrid	(detailRow.find(".logos"), detailRow.find("[name=logo-file]"), data);
 							break	
 					}	
@@ -583,9 +583,9 @@
 				<button class="close" data-action="collapses" data-object-id="#= groupId#"><i class="fa fa-angle-up fa-lg"></i></button>				
 				<div class="tab-v1">
 					<ul class="nav nav-tabs nav-tabs-xs">
-						<li class=""><a href="\\#group-#= companyId#-tab-1" data-toggle="tab" data-action="logos">로고</a></li>
-						<li class=""><a href="\\#group-#= companyId#-tab-2" data-toggle="tab" data-action="groups">그룹</a></li>
-						<li class=""><a href="\\#group-#= companyId#-tab-3" data-toggle="tab" data-action="users">사용자</a></li>
+						<li class=""><a href="\\#group-#= companyId#-tab-1" data-toggle="tab" data-action="basic">기본정보</a></li>
+						<li class=""><a href="\\#group-#= companyId#-tab-2" data-toggle="tab" data-action="users">멤버</a></li>
+						<li class=""><a href="\\#group-#= companyId#-tab-3" data-toggle="tab" data-action="roles">롤</a></li>
 						<li class=""><a href="\\#group-#= companyId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
 					</ul>	
 					<div class="tab-content">
