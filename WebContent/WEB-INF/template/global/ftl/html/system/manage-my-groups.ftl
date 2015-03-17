@@ -87,14 +87,14 @@
 						pageSize: 15,
 						serverPaging: true
 					},
-					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </a></div>'),
+					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 그룹만들기 </a></div>'),
 					columns: [
 						{ field: "groupId", title: "ID", width:40,  filterable: false, sortable: false }, 
 						{ field: "name", title: "키", width:150,  filterable: false, sortable: false }, 
 						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 100 }, 
 						{ field: "description",   title: "설명",  filterable: true, sortable: false,  width: 150 }, 
 						{ field: "creationDate", title: "등록일", filterable: false,  width: 80, format: "{0:yyyy/MM/dd}" },
-						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 80, format: "{0:yyyy/MM/dd}", editable: false },
+						{ field: "modifiedDate", title: "수정일", filterable: false,  width: 80, format: "{0:yyyy/MM/dd}" },
 						{ command: [
 							{ 
 								name: "edit",
@@ -162,7 +162,7 @@
 						pageSize: 15,
 						serverPaging: true
 					},
-					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 회사 추가 </a></div>'),
+					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 그룹만들기 </a></div>'),
 					columns: [
 						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
 						{ field: "name", title: "KEY", width:100,  filterable: false, sortable: false }, 
@@ -171,9 +171,6 @@
 						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
 						{ command: [
 							{ 
-								name: "detail",
-								template : '<a href="\\#" class="btn btn-xs btn-success m-r-xs btn-selectable" data-action="details">상세보기</a>',
-							},{ 
 								name: "edit",
 								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
 								text: { edit: "변경", update: "저장", cancel: "취소"}
