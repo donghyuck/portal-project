@@ -457,15 +457,24 @@
 												<div class="tab-pane fade" id="my-company-tabs-0">
 													<div class="stat-panel no-margin-b">
 														<div class="stat-cell col-sm-3 hidden-xs text-center">
-								<div class="details-block no-margin-t">
+														
+															<i class="fa fa-building-o bg-icon bg-icon-left"></i>	
+															
+														
+
+														</div> <!-- /.stat-cell -->
+														
+														<div class="stat-cell col-sm-9 no-padding">	
+														
+														
+																						<div class="details-block no-margin-t">
 									<div class="details-photo">
 										<img data-bind="attr: { src: logoUrl }" alt="" src="<@spring.url "/images/common/loader/loading-transparent-bg.gif"/>">
 									</div>
 									<br>
 									<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="edit" data-toggle="button" data-bind="enabled: editable, click:modal" ><i class="fa fa-pencil"></i> 변경</button>											
 								</div>	
-														</div> <!-- /.stat-cell -->
-														<div class="stat-cell col-sm-9 no-padding">	
+								
 								<span class="panel-title" data-bind="text:company.description"></span>				
 								<table class="table">
 									<tbody>						
