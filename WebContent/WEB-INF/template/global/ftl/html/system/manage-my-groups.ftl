@@ -246,7 +246,7 @@
 					dataSource: {
 						type: "json",
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/users/list.json?output=json"/>', type: 'POST' },
+							read: { url:'<@spring.url "/secure/data/mgmt/group/users/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
 								return { startIndex: options.skip, pageSize: options.pageSize,  groupId: data.groupId }
 							}
