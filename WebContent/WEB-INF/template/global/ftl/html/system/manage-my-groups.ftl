@@ -476,13 +476,13 @@
 				<button class="close" data-action="collapses" data-object-id="#= groupId#"><i class="fa fa-angle-up fa-lg"></i></button>				
 				<div class="tab-v1">
 					<ul class="nav nav-tabs nav-tabs-xs">
-						<li class=""><a href="\\#group-#= companyId#-tab-1" data-toggle="tab" data-action="basic">기본정보</a></li>
-						<li class=""><a href="\\#group-#= companyId#-tab-2" data-toggle="tab" data-action="users">멤버</a></li>
-						<li class=""><a href="\\#group-#= companyId#-tab-3" data-toggle="tab" data-action="roles">롤</a></li>
-						<li class=""><a href="\\#group-#= companyId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
+						<li class=""><a href="\\#group-#= groupId#-tab-1" data-toggle="tab" data-action="basic">기본정보</a></li>
+						<li class=""><a href="\\#group-#= groupId#-tab-2" data-toggle="tab" data-action="users">멤버</a></li>
+						<li class=""><a href="\\#group-#= groupId#-tab-3" data-toggle="tab" data-action="roles">롤</a></li>
+						<li class=""><a href="\\#group-#= groupId#-tab-4" data-toggle="tab" data-action="properties">속성</a></li>
 					</ul>	
 					<div class="tab-content">
-						<div class="tab-pane fade" id="company-#= companyId#-tab-1">
+						<div class="tab-pane fade" id="group-#= groupId#-tab-1">
 							<div class="stat-panel no-margin-b">
 								<div class="stat-cell col-sm-3 hidden-xs text-center">
 									<input name="logo-file" type="file">
