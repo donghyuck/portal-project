@@ -418,7 +418,7 @@
 	
 						}
 					});		
-									
+				}				
 				
 				$(renderToString).modal({
 					backdrop: 'static',
@@ -588,7 +588,7 @@
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title"><span data-bind="text: group.displayName" ></span> 멤버 추가</h4>
 					</div>	
-					<div class="mambers"></div>
+					<div class="members"></div>
 					<!--,				
 					<div class="modal-body">
 						<div class=" form-horizontal padding-sm" >
