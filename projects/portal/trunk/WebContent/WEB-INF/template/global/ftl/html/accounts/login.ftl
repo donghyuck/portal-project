@@ -72,7 +72,6 @@
 					
 			$("#signin-block>button.btn-close").click(function(e){
 				$this = $(this);	
-				alert("1');
 				if($this.hasClass("up")){
 					$("#signin-block>section.sky-form").fadeIn("slow", function(){
 						$this.toggleClass("up");	
