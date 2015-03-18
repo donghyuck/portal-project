@@ -270,7 +270,7 @@
 					selectable: "multiple, row",
 					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-user-plus"></span> 멤버 추가 </a><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-user-times"></span> 멤버 삭제 </a></div></div>'),
 					columns: [
-						{ headerTemplate: '<input type="checkbox" id="selecte-all-groups" class="k-checkbox" /> <label class="k-checkbox-label" for="selecte-all-groups">&nbsp</label>', template: '<input type="checkbox" id="selected-groups" class="k-checkbox" /> <label class="k-checkbox-label" for="selected-groups">&nbsp</label>', width: 50},
+						{ headerTemplate: '<input type="checkbox" id="select-all-members" class="k-checkbox" /> <label class="k-checkbox-label" for="selecte-all-groups">&nbsp</label>', template: '<input type="checkbox" id="selected-member-#= userId #" class="k-checkbox" /> <label class="k-checkbox-label" for="selected-member-#= userId #">&nbsp</label>', width: 50},
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
 						{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
 						{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
@@ -278,7 +278,15 @@
 					dataBound:function(e){
 
 					}
-				});												
+				});		
+				renderTo.find("#select-all-members").change( function(e){
+					if($(this).is(":checked")) {
+						var returnVal = confirm("Are you sure?");
+						
+					}else{
+					
+					}					
+				});											
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
