@@ -372,8 +372,9 @@
 				$("#main-wrapper").append( kendo.template($('#my-membership-modal-template').html()) );				
 				var observable = kendo.observable({
 					group : new common.ui.data.Group(),
-					setGroup : function(group){
-						group.copy(this.group);
+					setGroup : function(data){
+						alert( kendo.stringify(data) );
+						data.copy(this.group);
 					}
 				});				
 				kendo.bind($(renderToString), observable );
