@@ -213,6 +213,10 @@
 					}					
 				});			
 				// buttons
+				renderTo.find(".btn[data-action=add]").click( function(e){ 
+					openMembershipModal(data);
+				});
+				
 				renderTo.find(".btn[data-action=remove]").click( function(e){ 
 					var selected = renderTo.find("input.k-checkbox[data-object-id]:checked");
 					var members = [];
