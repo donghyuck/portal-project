@@ -546,7 +546,9 @@
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
 						<h4 class="modal-title"><span data-bind="text: group.displayName" ></span> 멤버 추가</h4>
-					</div>					
+					</div>	
+					<div class="mambers"></div>
+					<!--,				
 					<div class="modal-body">
 						<div class=" form-horizontal padding-sm" >
 							<div class="row form-group">
@@ -568,7 +570,7 @@
 								</div>
 							</div>							
 						</div>	
-					</div>
+					</div>-->
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-primary btn-flat" data-bind="click: save, enabled: editable" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>추가</button>					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
