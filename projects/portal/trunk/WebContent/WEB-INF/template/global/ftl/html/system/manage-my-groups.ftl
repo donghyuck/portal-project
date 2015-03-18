@@ -270,7 +270,7 @@
 					selectable: "multiple, row",
 					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-user-plus"></span> 멤버 추가 </a><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-user-times"></span> 멤버 삭제 </a></div></div>'),
 					columns: [
-						{ title"&nbsp;", template: '<input type="checkbox" id="select-all-groups" class="k-checkbox" />', width: 50}
+						{ title"&nbsp;", template: '<input type="checkbox" id="select-all-groups" class="k-checkbox" />', width: 50},
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
 						{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
 						{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
