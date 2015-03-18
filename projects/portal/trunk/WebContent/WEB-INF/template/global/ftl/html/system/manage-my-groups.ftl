@@ -461,9 +461,6 @@
 							<div id="company-grid" class="no-border-hr"></div>
 						</div>
 						<!-- /details -->
-						<!-- list -->
-						<div id="company-details" class="page-details" style="display:none;"></div><!-- /company details -->		
-						<!-- /list -->
 					</div>	
 				</div>				
 			</div> <!-- / #content-wrapper -->
