@@ -21,8 +21,8 @@
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 				
 			'<@spring.url "/js/common/common.ui.core.js"/>',
 			'<@spring.url "/js/common/common.ui.bootstrap.js"/>',
-			'<@spring.url "/js/common/common.ui.data.js"/>',
-			'<@spring.url "/js/common/common.ui.connect.js"/>'
+			'<@spring.url "/js/common/common.ui.data.min.js"/>',
+			'<@spring.url "/js/common/common.ui.connect.min.js"/>'
 			],			
 			complete: function() {
 			
@@ -135,6 +135,11 @@
 			padding: 20px;
 			margin: 60px auto;
 			background:rgba(255, 255, 255, .8);
+		}
+		@media ( max-width : 600px) {
+			.reg-block {
+				width: 100%!important;			
+			}
 		}
 		
 		.nav>li>a{
