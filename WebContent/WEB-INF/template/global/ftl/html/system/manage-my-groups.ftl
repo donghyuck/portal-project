@@ -280,7 +280,11 @@
 					}
 				});		
 				renderTo.find("#select-all-members").change( function(e){
-					$("#company-group-grid").find(".k-checkbox-label.membership").click();					
+					if($(this).is(":checked")) {
+						$("#company-group-grid").find("input.k-checkbox[data-object-id]").prop("checked", true);						
+					}else{
+						$("#company-group-grid").find("input.k-checkbox[data-object-id]").prop("checked", false);
+					}					
 				});											
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
