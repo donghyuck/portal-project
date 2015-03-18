@@ -111,7 +111,7 @@
 					selectable: 'row',
 					batch: false,              
 					scrollable: true,
-					height: 500,
+					height: 600,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
