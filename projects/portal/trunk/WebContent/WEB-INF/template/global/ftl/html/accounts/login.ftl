@@ -70,6 +70,21 @@
 				}				
 			} );		
 					
+			$("#signin-block>button.btn-close").click(function(e){
+				$this = $(this);	
+				if($this.hasClass("up")){
+					$("#signin-block>section.sky-form").faceIn("slow", function(){
+						$this.toggleClass("up");	
+					});
+				}else{
+					$("#signin-block>section.sky-form").faceOut("slow", function(){
+						$this.toggleClass("up");	
+					});					
+				}
+				
+	
+			}); 
+					
 			var validator = $("#signin-block form").kendoValidator({
 				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
 			}).data("kendoValidator");
@@ -77,8 +92,6 @@
 			$('form[name="signin-fm"]').submit(function(e) {		
 				event.preventDefault();
 				var btn = $('.btn-signin');
-				
-
 				if( validator.validate() ){
 					btn.button('loading');
 					common.ui.ajax(
