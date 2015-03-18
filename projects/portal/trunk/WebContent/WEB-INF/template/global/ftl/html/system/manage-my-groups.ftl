@@ -575,7 +575,7 @@
 				</div>
 			</div>
 		</div>	
-						
+		</script> 				
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
