@@ -296,6 +296,12 @@
 					$.each( selected , function( index, row ){
 						members.push( $(row).data("object-id") );					
 					});					
+					
+					if( members.length == 0 ){
+						alert( "선택된 사용자가 없습니다." );
+						return false;
+					}
+					
 					common.ui.ajax("<@spring.url "/secure/data/mgmt/group/users/remove.json?output=json"/>" , {
 						type : 'POST',
 						data: { groupId : data.groupId, memberIds: members },
@@ -305,8 +311,7 @@
 						complete: function(){
 							$btn.button('reset');
 						}
-					});						
-					alert( common.ui.stringify(members) );
+					});
 				});												
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
