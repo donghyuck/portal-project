@@ -143,10 +143,11 @@
 		}
 		
 		.reg-block .btn-close {
+			right: -1px;
 			background-image: url(/images/common/white-angle-up.png);
 			background-repeat: no-repeat;
 			background-position: center;
-			background-color: rgba (0, 0, 0, .5);		
+			background-color: rgba(0, 0, 0, .5)!important;		
 		}
 
 		.reg-block .btn-close.up {
