@@ -109,7 +109,6 @@
 					filterable: true,
 					editable: "inline",
 					selectable: 'row',
-					height: '600',
 					batch: false,              
 					scrollable: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
@@ -386,6 +385,11 @@
 				left: 0;
 				min-height:400px;
 			}
+			
+			#company-group-grid.k-gird {
+				min-height: 600px;
+			}
+			
 			#company-group-grid.k-grid .k-selectable tr.k-state-selected{
 				background-color: #4cd964;
 				border-color: #4cd964;
