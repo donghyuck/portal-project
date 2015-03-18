@@ -55,10 +55,8 @@
 			return new common.ui.data.Company( common.ui.admin.setup().token.company );
 		}
 				
-		function createCompanyGroupGrid(){
-			
-			var renderTo = $("#company-group-grid");
-			
+		function createCompanyGroupGrid(){			
+			var renderTo = $("#company-group-grid");			
 			if(!common.ui.exists(renderTo)){
 				common.ui.grid(renderTo, {
 					dataSource: {	
@@ -113,6 +111,7 @@
 					selectable: 'row',
 					height: '600',
 					batch: false,              
+					scrollable: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
@@ -137,80 +136,6 @@
 			}			
 		}
 		
-		function createCompanyGrid(){
-			var renderTo = $("#company-grid");
-			if(!common.ui.exists(renderTo)){
-				common.ui.grid(renderTo, {
-					dataSource: {	
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/company/list.json?output=json"/>', type: 'POST' },
-							create: { url:'<@spring.url "/secure/data/mgmt/company/create.json?output=json"/>', type:'POST', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/company/update.json?output=json"/>', type:'POST', contentType : "application/json" },
-							parameterMap: function (options, operation){	          
-								if (operation != "read" && options) {
-									return kendo.stringify(options);
-								}else{
-									return { startIndex: options.skip, pageSize: options.pageSize }
-								}
-							}
-						},
-						schema: {
-							total: "totalCount",
-							data: "items",
-							model : common.ui.data.Company
-						},
-						pageSize: 15,
-						serverPaging: true
-					},
-					toolbar: kendo.template('<div class="p-xs"><a href="\\#" class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 그룹만들기 </a></div>'),
-					columns: [
-						{ field: "companyId", title: "ID", width:40,  filterable: false, sortable: false }, 
-						{ field: "name", title: "KEY", width:100,  filterable: false, sortable: false }, 
-						{ field: "displayName",   title: "이름",  filterable: true, sortable: true,  width: 150 }, 
-						{ field: "domainName",   title: "도메인",  filterable: true, sortable: false,  width: 100 }, 
-						{ field: "description", title: "설명", width: 200, filterable: false, sortable: false },
-						{ command: [
-							{ 
-								name: "edit",
-								template : '<a href="\\#" class="btn btn-xs btn-labeled btn-info k-grid-edit btn-selectable"><span class="btn-label icon fa fa-pencil"></span> 변경</a>',
-								text: { edit: "변경", update: "저장", cancel: "취소"}
-							}], 
-							title: "&nbsp;", 
-							width: 180  
-						}
-					], 		
-					detailTemplate: kendo.template($("#company-details-template").html()),		
-					detailInit: detailInit,		
-					filterable: true,
-					editable: "inline",
-					selectable: 'row',
-					height: '600',
-					batch: false,              
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
-					change: function(e) {
-						// 1-1 SELECTED EVENT  
-						var selectedCells = this.select();
-						if( selectedCells.length === 0){								
-						}
-					},
-					cancel: function(e){							
-					},
-					edit: function(e){	
-					},
-					dataBound: function(e){   
-						var $this = this;
-						renderTo.find("a[data-action=details]").click(function(e){
-							//showCompanyDetails();
-							$this.expandRow($this.select());
-						});							
-					}	   
-				});		
-				renderTo.find("a[data-action=create]").click(function(e){
-					common.ui.grid(renderTo)
-				});			
-			}
-			
-		}
 		
 		function detailInit(e) {
 			var detailRow = e.detailRow;
@@ -264,7 +189,7 @@
 					},
 					filterable: true,
 					sortable: true,
-					scrollable: false,
+					scrollable: true,
 					autoBind: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
