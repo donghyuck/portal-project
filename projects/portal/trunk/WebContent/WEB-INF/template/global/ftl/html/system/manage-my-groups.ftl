@@ -386,7 +386,7 @@
 				min-height:400px;
 			}
 			
-			#company-group-grid.k-gird {
+			#company-group-grid.k-grid {
 				min-height: 600px;
 			}
 			
