@@ -72,6 +72,7 @@
 					
 			$("#signin-block>button.btn-close").click(function(e){
 				$this = $(this);	
+				alert("1');
 				if($this.hasClass("up")){
 					$("#signin-block>section.sky-form").faceIn("slow", function(){
 						$this.toggleClass("up");	
@@ -81,8 +82,6 @@
 						$this.toggleClass("up");	
 					});					
 				}
-				
-	
 			}); 
 					
 			var validator = $("#signin-block form").kendoValidator({
