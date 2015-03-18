@@ -71,15 +71,12 @@
 			} );		
 					
 			$("#signin-block>button.btn-close").click(function(e){
-				$this = $(this);	
-				
-				if($this.hasClass("up")){
-					
+				$this = $(this);					
+				if($this.hasClass("up")){					
 					$("#signin-block>section.sky-form").slideDown("slow", function(){
 						$this.toggleClass("up");	
 					});
 				}else{
-					$this.toggleClass("up");	
 					$("#signin-block>section.sky-form").slideUp("slow", function(){
 						$this.toggleClass("up");	
 					});					
