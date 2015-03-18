@@ -305,7 +305,7 @@
 										
 					common.ui.ajax("<@spring.url "/secure/data/mgmt/group/users/remove.json?output=json"/>" , {
 						type : 'POST',
-						data: { groupId : data.groupId, memberIds: members },
+						data: { groupId : data.groupId, userIds: members },
 						success : function(response){
 							renderTo.data("kendoGrid").dataSource.read();
 						},
