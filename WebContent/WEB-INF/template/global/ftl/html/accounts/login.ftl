@@ -140,12 +140,12 @@
 		-->
 		</script>
 		<style>	
-		
 		.reg-block {
 			width: 380px;
 			padding: 20px;
 			margin: 60px auto;
 			background:rgba(255, 255, 255, .8);
+			border-top: solid 2px #34aadc;
 		}
 		@media ( max-width : 600px) {
 			.reg-block {
