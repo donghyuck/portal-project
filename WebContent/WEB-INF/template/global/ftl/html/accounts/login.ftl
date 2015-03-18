@@ -201,9 +201,9 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
-			<div id="signin-block" class="reg-block sky-form pull-right animated swing no-padding">
+			<div id="signin-block" class="reg-block pull-right animated swing no-padding">
 				<button class="btn-close"></button>
-				<section> 
+				<section class="sky-form"> 
 				<header class="text-center">
 					<img src="/download/logo/company/${action.webSite.company.name}" height="80%" class="img-circle" alt="로그인">
 					<ul class="social-icons text-center">
@@ -253,9 +253,8 @@
 					<footer>
 						<button type="submit" class="btn btn-primary btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 					</footer>
-		        </fieldset><!-- /fieldset -->
-		        </form><!-- /form -->
-		        </section>
+				</form><!-- /form -->
+				</section>
 		    </div><!-- /.reg-block -->
 		</div><!-- /.container -->
 		<!--
