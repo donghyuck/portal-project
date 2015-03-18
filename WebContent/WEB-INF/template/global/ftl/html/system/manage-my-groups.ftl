@@ -295,8 +295,17 @@
 					var members = [];
 					$.each( selected , function( index, row ){
 						members.push( $(row).data("object-id") );					
-					});
-					
+					});					
+					common.ui.ajax("<@spring.url "/secure/data/mgmt/group/users/remove.json?output=json"/>" , {
+						type : 'POST',
+						data: { groupId : data.groupId, memberIds: members },
+						success : function(response){
+							renderTo.data("kendoGrid").dataSource.read();
+						},
+						complete: function(){
+							$btn.button('reset');
+						}
+					});						
 					alert( common.ui.stringify(members) );
 				});												
 			}	
