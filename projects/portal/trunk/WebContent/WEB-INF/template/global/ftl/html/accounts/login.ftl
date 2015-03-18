@@ -160,7 +160,7 @@
 			background-image: url(/images/common/white-angle-up.png);
 			background-repeat: no-repeat;
 			background-position: center;
-			background-color: rgba(0, 0, 0, .6)!important;		
+			background-color: rgba(52, 170, 220, .6)!important
 		}
 
 		.reg-block .btn-close.up {
