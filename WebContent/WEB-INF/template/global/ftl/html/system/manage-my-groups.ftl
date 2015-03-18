@@ -437,7 +437,7 @@
 				padding:5px!important;
 			}
 			
-			button.close {
+			.k-detail-row button.close {
 				z-index: 1000;
 				float: none;
 				right: 25px;
