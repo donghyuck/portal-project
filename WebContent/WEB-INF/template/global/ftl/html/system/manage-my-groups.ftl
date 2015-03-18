@@ -268,7 +268,7 @@
 					autoBind: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
-					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-user-plus"></span> 멤버 추가 </a><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger k-grid-add" href="\\#"><span class="btn-label icon fa fa-user-times"></span> 멤버 삭제 </a></div></div>'),
+					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="add" href="\\#"><span class="btn-label icon fa fa-user-plus"></span> 멤버 추가 </a><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="remove" href="\\#" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> ...\'"><span class="btn-label icon fa fa-user-times"></span> 멤버 삭제 </a></div></div>'),
 					columns: [
 						{ headerTemplate: '<input type="checkbox" id="select-all-members" class="k-checkbox" /> <label class="k-checkbox-label" for="select-all-members">&nbsp</label>', template: '<input type="checkbox" id="selected-member-#= userId #" class="k-checkbox" data-object-id="#=userId#"/> <label class="k-checkbox-label membership" for="selected-member-#= userId #">&nbsp</label>', width: 50},
 						{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
@@ -283,9 +283,16 @@
 					if($(this).is(":checked")) {
 						$("#company-group-grid").find("input.k-checkbox[data-object-id]").prop("checked", true);						
 					}else{
-						$("#company-group-grid").find("input.k-checkbox[data-object-id]").prop("checked", false);
+						$(".btn[data-action=remove]").click(function(e){
+							var $this = $(this);
+							var $btn = $this.button('loading');
+						
+						});
 					}					
-				});											
+				});			
+				
+				renderTo.find("#select-all-members").change( function(e){
+												
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
