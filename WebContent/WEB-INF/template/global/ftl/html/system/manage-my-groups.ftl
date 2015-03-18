@@ -110,7 +110,7 @@
 					editable: "inline",
 					selectable: 'row',
 					batch: false,              
-					scrollable: false,
+					scrollable: true,
 					height: 500,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
