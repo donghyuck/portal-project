@@ -295,7 +295,7 @@
 					var members = [];
 					$.each( selected , function( index, row ){
 						members.push( row.data("object-id") );					
-					} );
+					});
 					
 					alert( common.ui.stringify(members) );
 				});
