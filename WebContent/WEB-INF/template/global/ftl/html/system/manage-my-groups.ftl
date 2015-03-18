@@ -111,6 +111,7 @@
 					selectable: 'row',
 					batch: false,              
 					scrollable: false,
+					height:500;
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
@@ -385,11 +386,7 @@
 				left: 0;
 				min-height:400px;
 			}
-			
-			#company-group-grid.k-grid {
-				min-height: 600px;
-			}
-			
+						
 			#company-group-grid.k-grid .k-selectable tr.k-state-selected{
 				background-color: #4cd964;
 				border-color: #4cd964;
