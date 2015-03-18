@@ -294,7 +294,7 @@
 					var selected = renderTo.find("input.k-checkbox[data-object-id]:checked");
 					var members = [];
 					$.each( selected , function( index, row ){
-						members.push( row.data("object-id") );					
+						members.push( $(row).data("object-id") );					
 					});
 					
 					alert( common.ui.stringify(members) );
