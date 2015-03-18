@@ -298,17 +298,6 @@
 					});
 					
 					alert( common.ui.stringify(members) );
-				});
-				
-					if($(this).is(":checked")) {
-						$("#company-group-grid").find("input.k-checkbox[data-object-id]").prop("checked", true);						
-					}else{
-						$(".btn[data-action=remove]").click(function(e){
-							var $this = $(this);
-							var $btn = $this.button('loading');
-						
-						});
-					}	
 				});												
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
