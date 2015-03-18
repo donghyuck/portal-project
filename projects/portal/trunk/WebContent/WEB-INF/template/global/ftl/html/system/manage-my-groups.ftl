@@ -280,7 +280,7 @@
 					}
 				});		
 				// checkbox
-				renderTo.find("#group" + data.groupId +  "-select-all-members").change( function(e){
+				renderTo.find("#group-" + data.groupId +  "-select-all-members").change( function(e){
 					if($(this).is(":checked")) {
 						renderTo.find("input.k-checkbox[data-object-id]").prop("checked", true);						
 					}else{
@@ -289,7 +289,6 @@
 				});			
 				// buttons
 				renderTo.find(".btn[data-action=remove]").click( function(e){ 
-
 					var selected = renderTo.find("input.k-checkbox[data-object-id]:checked");
 					var members = [];
 					$.each( selected , function( index, row ){
