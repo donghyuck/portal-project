@@ -361,7 +361,28 @@
 			}			
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}
-						
+
+		function openMembershipModal(data){			
+			var renderToString = "#my-membership-modal";			
+			if( $(renderToString).length === 0 ){	
+				$("#main-wrapper").append( kendo.template($('#my-membership-modal-template').html()) );				
+				var observable = kendo.observable({
+					group : new common.ui.data.Group(),
+					setGroup : function(group){
+						group.copy(this.group);
+					}
+				});				
+				kendo.bind($(renderToString), observable );
+				$(renderToString).data("model", observable );
+				$(renderToString).modal({
+					backdrop: 'static',
+					show : false
+				});
+			}	
+			$(renderToString).data("model").setGroup( data );		
+			$(renderToString).modal('show');	
+		}
+							
 				
 		function getSelectedCompany(){
 			var renderTo = $("#company-grid");
@@ -511,7 +532,46 @@
 				</div>
 			</div>
 		</div>			
-		</script>			
+		</script>	
+		
+		<script type="text/x-kendo-template" id="my-membership-modal-template">
+		<div id="my-membership-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog">	
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title"><span data-bind="text: displayName" ></span> 멤버 추가</h4>
+					</div>					
+					<div class="modal-body">
+						<div class=" form-horizontal padding-sm" >
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">이름:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
+								</div>
+							</div>
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">설명:</label>
+								<div class="col-sm-8">
+									<input type="text" name="name" class="form-control" data-bind="value:company.description">
+								</div>
+							</div>																
+							<div class="row form-group">
+								<label class="col-sm-4 control-label">도메인:</label>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" data-bind="value:company.domainName">
+								</div>
+							</div>							
+						</div>	
+					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat" data-bind="click: save, enabled: editable" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>추가</button>					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+					</div>					
+				</div>
+			</div>
+		</div>	
+						
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
