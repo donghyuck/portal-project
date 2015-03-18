@@ -530,7 +530,7 @@
 							</div>
 							<div class="panel-body padding-sm">
 								<div class="note note-info no-margin-b">
-									<h4 class="note-title"><small><i class="fa fa-info"></i> 회사 단위의 독립적인 회원, 그룹, 웹 사이트 운영을 지원합니다. 상세보기 버튼을 클릭하면 보다 많은 정보를 조회/수정 할 수 있습니다.</small></h4>
+									<h4 class="note-title"><small><i class="fa fa-info"></i> 상세보기 <i class="k-icon k-plus"></i> 를 클릭하면 보다 많은 그룹관련 정보를 조회/변경 할 수 있습니다.</small></h4>
 								</div>	
 							</div>									
 							<div id="company-group-grid" class="no-border-hr"></div>
