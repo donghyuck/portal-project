@@ -75,12 +75,12 @@
 				
 				if($this.hasClass("up")){
 					$this.toggleClass("up");	
-					$("#signin-block>section.sky-form").fadeIn("slow", function(){
+					$("#signin-block>section.sky-form").slideUp("slow", function(){
 						
 					});
 				}else{
 					$this.toggleClass("up");	
-					$("#signin-block>section.sky-form").fadeOut("slow", function(){
+					$("#signin-block>section.sky-form").slideDown("slow", function(){
 					});					
 				}
 			}); 
