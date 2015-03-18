@@ -289,8 +289,7 @@
 				});			
 				// buttons
 				renderTo.find(".btn[data-action=remove]").click( function(e){ 
-					var $this = $(this);		
-					var $btn = $this.button('loading');
+
 					var selected = renderTo.find("input.k-checkbox[data-object-id]:checked");
 					var members = [];
 					$.each( selected , function( index, row ){
@@ -301,7 +300,9 @@
 						alert( "선택된 사용자가 없습니다." );
 						return false;
 					}
-					
+					var $this = $(this);		
+					var $btn = $this.button('loading');
+										
 					common.ui.ajax("<@spring.url "/secure/data/mgmt/group/users/remove.json?output=json"/>" , {
 						type : 'POST',
 						data: { groupId : data.groupId, memberIds: members },
