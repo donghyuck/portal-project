@@ -74,11 +74,11 @@
 				$this = $(this);	
 				alert("1');
 				if($this.hasClass("up")){
-					$("#signin-block>section.sky-form").faceIn("slow", function(){
+					$("#signin-block>section.sky-form").fadeIn("slow", function(){
 						$this.toggleClass("up");	
 					});
 				}else{
-					$("#signin-block>section.sky-form").faceOut("slow", function(){
+					$("#signin-block>section.sky-form").fadeOut("slow", function(){
 						$this.toggleClass("up");	
 					});					
 				}
