@@ -279,7 +279,27 @@
 
 					}
 				});		
+				// checkbox
 				renderTo.find("#select-all-members").change( function(e){
+					if($(this).is(":checked")) {
+						renderTo.find("input.k-checkbox[data-object-id]").prop("checked", true);						
+					}else{
+						renderTo.find("input.k-checkbox[data-object-id]").prop("checked", false);	
+					}					
+				});			
+				// buttons
+				renderTo.find(".btn[data-action=remove]").click( function(e){ 
+					var $this = $(this);		
+					var $btn = $this.button('loading');
+					var selected = renderTo.find("input.k-checkbox[data-object-id]:checked");
+					var members = [];
+					$.each( selected , function( index, row ){
+						members.push( row.data("object-id") );					
+					} );
+					
+					alert( common.ui.stringify(members) );
+				});
+				
 					if($(this).is(":checked")) {
 						$("#company-group-grid").find("input.k-checkbox[data-object-id]").prop("checked", true);						
 					}else{
@@ -288,11 +308,8 @@
 							var $btn = $this.button('loading');
 						
 						});
-					}					
-				});			
-				
-				renderTo.find("#select-all-members").change( function(e){
-												
+					}	
+				});												
 			}	
 			renderTo.data("kendoGrid").dataSource.fetch();
 		}	
