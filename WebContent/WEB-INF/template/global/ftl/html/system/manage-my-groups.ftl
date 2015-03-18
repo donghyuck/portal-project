@@ -264,7 +264,7 @@
 					},
 					filterable: true,
 					sortable: true,
-					scrollable: true,
+					scrollable: false,
 					autoBind: false,
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 					selectable: "multiple, row",
