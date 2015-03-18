@@ -161,7 +161,7 @@
 		}
 
 		.reg-block .btn-close.up {
-			  background-image: url(/images/common/white-down-up.png);
+			  background-image: url(/images/common/white-angle-down.png);
 		}
 				
 		.nav>li>a{
