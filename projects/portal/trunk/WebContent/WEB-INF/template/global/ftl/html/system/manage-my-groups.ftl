@@ -110,8 +110,8 @@
 					editable: "inline",
 					selectable: 'row',
 					batch: false,              
-					scrollable: true,
-					height: 600,
+					scrollable: false,
+					/*height: 600,*/
 					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },					
 					change: function(e) {
 						// 1-1 SELECTED EVENT  
@@ -377,7 +377,7 @@
 			.k-grid-content {
 				min-height:300px;
 			}
-			
+						
 			#xml-editor{
 				position: absolute;
 				top: 0;
@@ -385,6 +385,11 @@
 				bottom: 0;
 				left: 0;
 				min-height:400px;
+			}
+			
+			
+			#company-group-grid > .k-grid-content {
+				min-height: 500px;
 			}
 						
 			#company-group-grid.k-grid .k-selectable tr.k-state-selected{
