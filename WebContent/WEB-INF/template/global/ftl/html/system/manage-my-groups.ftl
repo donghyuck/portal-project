@@ -378,7 +378,48 @@
 					}
 				});				
 				kendo.bind($(renderToString), observable );
-				$(renderToString).data("model", observable );
+				$(renderToString).data("model", observable );				
+				var renderTo = $(renderToString).find(".members");
+				if( ! common.ui.exists(renderTo)){	
+					common.ui.grid(renderTo, {
+						dataSource: {
+							type: "json",
+							transport: { 
+								read: { url:'<@spring.url "/secure/data/mgmt/group/users/find.json?output=json"/>', type: 'POST' },
+								parameterMap: function (options, type){
+									return { startIndex: options.skip, pageSize: options.pageSize,  companyId: data.companyId }
+								}
+							},
+							schema: {
+								total: "totalCount",
+								data: "items",
+								model: common.ui.data.User
+							},
+							batch: false,
+							pageSize: 10,
+							serverPaging: true,
+							serverFiltering: false,
+							serverSorting: false 
+						},
+						filterable: true,
+						sortable: true,
+						scrollable: true,
+						autoBind: false,
+						pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
+						selectable: "multiple, row",
+						toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="add" href="\\#"><span class="btn-label icon fa fa-user-plus"></span> 멤버 추가 </a><a class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="remove" href="\\#" data-loading-text="<i class=\'fa fa-spinner fa-spin\'></i> ...\'"><span class="btn-label icon fa fa-user-times"></span> 멤버 삭제 </a></div></div>'),
+						columns: [
+							{ headerTemplate: '<input type="checkbox" id="group-'+data.groupId+'-select-all-members" class="k-checkbox" /> <label class="k-checkbox-label" for="group-'+data.groupId+'-select-all-members">&nbsp</label>', template: '<input type="checkbox" id="group-'+ data.groupId +'-selected-member-#= userId #" class="k-checkbox" data-object-id="#=userId#"/> <label class="k-checkbox-label membership" for="group-'+data.groupId+'-selected-member-#= userId #">&nbsp</label>', width: 50},
+							{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
+							{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
+							{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
+							{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
+						dataBound:function(e){
+	
+						}
+					});		
+									
+				
 				$(renderToString).modal({
 					backdrop: 'static',
 					show : false
@@ -572,7 +613,7 @@
 						</div>	
 					</div>-->
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat" data-bind="click: save, enabled: editable" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>추가</button>					
+						<button type="button" class="btn btn-primary btn-flat" data-bind="click: save, enabled: editable" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-user-plus"></i> 추가</button>					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
 					</div>					
 				</div>
