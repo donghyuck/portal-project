@@ -72,13 +72,15 @@
 					
 			$("#signin-block>button.btn-close").click(function(e){
 				$this = $(this);	
+				
 				if($this.hasClass("up")){
+					$this.toggleClass("up");	
 					$("#signin-block>section.sky-form").fadeIn("slow", function(){
-						$this.toggleClass("up");	
+						
 					});
 				}else{
+					$this.toggleClass("up");	
 					$("#signin-block>section.sky-form").fadeOut("slow", function(){
-						$this.toggleClass("up");	
 					});					
 				}
 			}); 
