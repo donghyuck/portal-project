@@ -280,7 +280,7 @@
 					}
 				});		
 				// checkbox
-				renderTo.find("#select-all-members").change( function(e){
+				renderTo.find("#group" + data.groupId +  "-select-all-members").change( function(e){
 					if($(this).is(":checked")) {
 						renderTo.find("input.k-checkbox[data-object-id]").prop("checked", true);						
 					}else{
