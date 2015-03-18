@@ -220,20 +220,64 @@
 		    }
 		});
 
-	common.ui.data.Group = kendo.data.Model.define( {
-		    id: "groupId", // the identifier of the model
-		    fields: {
-		    	companyId: { type: "number", defaultValue: 1 },
-		    	company: common.ui.data.Company,
-		        groupId: { type: "number", editable: false, defaultValue: -1  },
-		        name: { type: "string", editable: true, validation: { required: true }},
-		        description: { type: "string", editable: true },
-		        modifiedDate: { type: "date"},
-		        creationDate: { type: "date" },
-		        memberCount: { type: "number", editable: true, defaultValue: 0  },
-		        adminCount: { type: "number", editable: true, defaultValue: 0  }       
-		    }
-		});
+	common.ui.data.Group = kendo.data.Model.define({
+		id : "groupId", // the identifier of the model
+		fields : {
+			companyId : {
+				type : "number",
+				defaultValue : 0
+			},
+			groupId : {
+				type : "number",
+				editable : false,
+				defaultValue : 0
+			},
+			name : {
+				type : "string",
+				editable : true,
+				validation : {
+					required : true
+				}
+			},
+			displayName : {
+				type : "string"				
+			},
+			description : {
+				type : "string",
+				editable : true
+			},
+			modifiedDate : {
+				type : "date"
+			},
+			creationDate : {
+				type : "date"
+			},
+			memberCount : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			adminCount : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			}
+		},
+		copy : function ( target ){
+			target.groupId = this.get("groupId");
+	    	target.set("displayName", this.get("displayName"));
+	    	target.set("name", this.get("name"));
+	    	target.set("description", this.get("description"));
+	    	
+	    	target.set("creationDate", this.get("creationDate"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
+	    	
+	    	if( typeof this.get("company") === 'object' )
+	    		target.set("company", this.get("company"));		
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));	
+		}
+	});
 
 	common.ui.data.Property = kendo.data.Model.define( {
 		    id: "name", // the identifier of the model
