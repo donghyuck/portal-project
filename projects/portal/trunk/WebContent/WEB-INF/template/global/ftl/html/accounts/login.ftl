@@ -142,6 +142,17 @@
 			}
 		}
 		
+		.reg-block .btn-close {
+			background-image: url(/images/common/white-angle-up.png);
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: rgba (0, 0, 0, .5);		
+		}
+
+		.reg-block .btn-close.up {
+			  background-image: url(/images/common/white-down-up.png);
+		}
+				
 		.nav>li>a{
 			color: #fff;
 			font-weight: 700;
@@ -190,6 +201,8 @@
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
 			<div id="signin-block" class="reg-block sky-form pull-right animated swing no-padding">
+				<button class="btn-close"></button>
+				<section> 
 				<header class="text-center">
 					<img src="/download/logo/company/${action.webSite.company.name}" height="80%" class="img-circle" alt="로그인">
 					<ul class="social-icons text-center">
@@ -241,6 +254,7 @@
 					</footer>
 		        </fieldset><!-- /fieldset -->
 		        </form><!-- /form -->
+		        </section>
 		    </div><!-- /.reg-block -->
 		</div><!-- /.container -->
 		<!--
