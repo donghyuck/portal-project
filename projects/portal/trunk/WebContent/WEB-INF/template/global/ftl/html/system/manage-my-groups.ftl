@@ -588,8 +588,8 @@
 					</div>	
 					<div class="modal-body">
 						<div class="row">
-							<div class="col-sm-6"/><input type="email" class="form-control input-block no-rounded" id="" placeholder="검색할 사용자 이름 또는 메일을 입력하세요"></div>
-							<div class="col-sm-6"/><button class="btn btn-info btn-flat btn-outline">검색</button></div>
+							<div class="col-sm-6"><input type="email" class="form-control input-block no-rounded" id="" placeholder="검색할 사용자 이름 또는 메일을 입력하세요"></div>
+							<div class="col-sm-6"><button class="btn btn-info btn-flat btn-outline">검색</button></div>
 						</div>	
 							
 													
