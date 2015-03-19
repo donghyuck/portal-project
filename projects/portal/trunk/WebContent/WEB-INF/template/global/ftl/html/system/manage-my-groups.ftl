@@ -402,15 +402,7 @@
 							alert( "선택된 사용자가 없습니다." );
 							return false;
 						}		
-						
-						$.each( members , function( index, row ){
-							var item = common.ui.grid(renderTo).dataSource.get( row );
-							common.ui.grid(renderTo).dataSource.remove(item);
-						});
-						
-						alert( common.ui.stringify( members ) );
-						
-						/*			
+							
 						var $btn = $(e.target);
 						$btn.button('loading');		
 														
@@ -418,15 +410,15 @@
 							type : 'POST',
 							data: { groupId : $this.group.groupId, userIds: members },
 							success : function(response){
-								renderTo.data("kendoGrid").dataSource.read();
-								
-								
+								$.each( members , function( index, row ){
+									var item = common.ui.grid(renderTo).dataSource.get( row );
+									common.ui.grid(renderTo).dataSource.remove(item);
+								});								
 							},
 							complete: function(){
 								$btn.button('reset');
 							}
 						});
-						*/
 					}
 				});				
 				kendo.bind($(renderToString), observable );
