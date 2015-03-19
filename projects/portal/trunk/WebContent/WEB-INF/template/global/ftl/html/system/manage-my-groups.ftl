@@ -587,10 +587,13 @@
 						<h4 class="modal-title"><span data-bind="text: group.company.displayName" ></span> <i class="fa fa-angle-right"></i> <span data-bind="text: group.displayName" ></span></h4>
 					</div>	
 					<div class="modal-body">
-						<div class="form-group">
-							<input type="email" class="form-control input-block no-rounded" id="" placeholder="검색할 사용자 이름 또는 메일을 입력하세요">
-						</div>							
-						<button class="btn btn-info btn-flat btn-outline">검색</button>
+						<div class="row">
+							<div class="col-sm-6"/><input type="email" class="form-control input-block no-rounded" id="" placeholder="검색할 사용자 이름 또는 메일을 입력하세요"></div>
+							<div class="col-sm-6"/><button class="btn btn-info btn-flat btn-outline">검색</button></div>
+						</div>	
+							
+													
+						
 					</div>
 					<div class="members"></div>
 					<!--,				
