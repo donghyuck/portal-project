@@ -374,15 +374,50 @@
 				var observable = kendo.observable({
 					group : new common.ui.data.Group(),
 					nameOrEmail : "",
-					setGroup : function(data){
+					editable:false,
+					refresh:function(e){
 						this.set("nameOrEmail", "");
-						data.copy(this.group);
 						if(common.ui.exists(renderTo)){	
 							common.ui.grid(renderTo).dataSource.data([]);
 						}
 					},
+					setGroup : function(data){
+						this.refresh();
+						data.copy(this.group);						
+					},
 					search:function(e){
 						common.ui.grid(renderTo).dataSource.read();
+						this.editable = true;
+					},
+					save:function(e){
+						var $this = this;
+					
+						var selected = renderTo.find("input.k-checkbox[data-object-id]:checked");
+						var members = [];
+						$.each( selected , function( index, row ){
+							members.push( $(row).data("object-id") );					
+						});					
+					
+						if( members.length == 0 ){
+							alert( "선택된 사용자가 없습니다." );
+							return false;
+						}		
+						alert( common.ui.stringify( members ) );
+						/**					
+						var $btn = $(e.target);
+						$btn.button('loading');		
+														
+						common.ui.ajax("<@spring.url "/secure/data/mgmt/group/users/add.json?output=json"/>" , {
+							type : 'POST',
+							data: { groupId : $this.group.groupId, userIds: members },
+							success : function(response){
+								renderTo.data("kendoGrid").dataSource.read();
+							},
+							complete: function(){
+								$btn.button('reset');
+							}
+						});
+						**/	
 					}
 				});				
 				kendo.bind($(renderToString), observable );
