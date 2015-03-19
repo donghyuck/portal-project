@@ -480,7 +480,7 @@
 																	</tr>																								
 																</tbody>
 															</table>
-															<button type="button" class="btn btn-primary btn-flat btn-control-group pull-right" data-action="edit" data-toggle="button" data-bind="enabled: editable, click:modal" ><i class="fa fa-pencil"></i> 변경</button>								
+															<button type="button" class="btn btn-primary btn-flat btn-outline btn-control-group pull-right" data-action="edit" data-toggle="button" data-bind="enabled: editable, click:modal" ><i class="fa fa-pencil"></i> 변경</button>								
 														</div>
 													</div>													
 												</div>
