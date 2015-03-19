@@ -388,7 +388,7 @@
 							transport: { 
 								read: { url:'<@spring.url "/secure/data/mgmt/company/users/find.json?output=json"/>', type: 'POST' },
 								parameterMap: function (options, type){
-									return { startIndex: options.skip, pageSize: options.pageSize,  companyId: renderTo.data("model").group.companyId, groupId: renderTo).data("model").group.groupId }
+									return { startIndex: options.skip, pageSize: options.pageSize,  companyId: renderTo.data("model").group.companyId, groupId: renderTo.data("model").group.groupId }
 								}
 							},
 							schema: {
