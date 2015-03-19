@@ -378,7 +378,8 @@
 					}
 				});				
 				kendo.bind($(renderToString), observable );
-				$(renderToString).data("model", observable );				
+				$(renderToString).data("model", observable );		
+						
 				var renderTo = $(renderToString).find(".members");
 				if( ! common.ui.exists(renderTo)){	
 					common.ui.grid(renderTo, {
@@ -387,7 +388,7 @@
 							transport: { 
 								read: { url:'<@spring.url "/secure/data/mgmt/company/users/find.json?output=json"/>', type: 'POST' },
 								parameterMap: function (options, type){
-									return { startIndex: options.skip, pageSize: options.pageSize,  companyId: observable.group.companyId, groupId: observable.groupId }
+									return { startIndex: options.skip, pageSize: options.pageSize,  companyId: renderTo.data("model").group.companyId, groupId: renderTo).data("model").groupId }
 								}
 							},
 							schema: {
