@@ -387,7 +387,7 @@
 					},
 					search:function(e){
 						common.ui.grid(renderTo).dataSource.read();
-						this.editable = true;
+						this.set("editable", true);
 					},
 					save:function(e){
 						var $this = this;
