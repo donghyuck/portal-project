@@ -166,9 +166,9 @@
 						<div class="list-group">
 						<#list navigator.parent.components as item >
 							<#if item.name ==  navigator.name >
-							<a href="${item.page}" class="list-group-item active"><i class="fa fa-angle-right"></i> ${ item.title } </a>
+							<a href="${item.page}" class="list-group-item active">${ item.title } </a>
 							<#else>
-							<a href="${item.page}" class="list-group-item"><i class="fa fa-angle-right"></i> ${ item.title } </a>
+							<a href="${item.page}" class="list-group-item">${ item.title } </a>
 							</#if>						
 						</#list>
 						</div>
