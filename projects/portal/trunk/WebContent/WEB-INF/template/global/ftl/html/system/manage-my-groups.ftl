@@ -374,7 +374,6 @@
 					group : new common.ui.data.Group(),
 					setGroup : function(data){
 						data.copy(this.group);
-						alert(kendo.stringify(data));
 					}
 				});				
 				kendo.bind($(renderToString), observable );
