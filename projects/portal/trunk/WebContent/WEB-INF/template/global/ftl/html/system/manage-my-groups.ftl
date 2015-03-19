@@ -419,8 +419,8 @@
 							{ headerTemplate: '<input type="checkbox" id="group-'+data.groupId+'-select-all-members" class="k-checkbox" /> <label class="k-checkbox-label" for="group-'+data.groupId+'-select-all-members">&nbsp</label>', template: '<input type="checkbox" id="group-'+ data.groupId +'-selected-member-#= userId #" class="k-checkbox" data-object-id="#=userId#"/> <label class="k-checkbox-label membership" for="group-'+data.groupId+'-selected-member-#= userId #">&nbsp</label>', width: 50},
 							{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
 							{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
-							{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' },
-							{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } ],
+							{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' }/*,
+							{ field: "creationDate", title: "등록일", filterable: false,  width: 100, format: "{0:yyyy/MM/dd}" } */],
 						dataBound:function(e){
 	
 						}
