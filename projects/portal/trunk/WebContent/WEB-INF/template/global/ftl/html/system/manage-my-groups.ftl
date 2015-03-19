@@ -416,7 +416,7 @@
 						pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },
 						selectable: "multiple, row",
 						columns: [
-							{ headerTemplate: '<input type="checkbox" id="group-'+data.groupId+'-select-all-members" class="k-checkbox" /> <label class="k-checkbox-label" for="group-'+data.groupId+'-select-all-members">&nbsp</label>', template: '<input type="checkbox" id="group-'+ data.groupId +'-selected-member-#= userId #" class="k-checkbox" data-object-id="#=userId#"/> <label class="k-checkbox-label membership" for="group-'+data.groupId+'-selected-member-#= userId #">&nbsp</label>', width: 50},
+							{ headerTemplate: '<input type="checkbox" id="modal-users-found-select-all" class="k-checkbox" /> <label class="k-checkbox-label" for="modal-users-found-select-all">&nbsp</label>', template: '<input type="checkbox" id="modal-users-found-#=userId#" class="k-checkbox" data-object-id="#=userId#"/> <label class="k-checkbox-label membership" for="modal-users-found-#=userId#">&nbsp</label>', width: 50},
 							{ field: "username", title: "아이디" , template:'<img width="25" height="25" class="img-circle no-margin" src="/download/profile/#= username #?width=150&amp;height=150" style="margin-right:10px;"> #: username #'}, 
 							{ field: "name", title: "이름", template: '#if (nameVisible) { # #: name#  #} else{ # **** # } #  ' }, 
 							{ field: "email", title: "메일", template: '#if (emailVisible) { # #: email#  #} else{ # **** # } #  ' }/*,
@@ -425,6 +425,13 @@
 	
 						}
 					});		
+					renderTo.find("#modal-users-found-select-all").change( function(e){
+						if($(this).is(":checked")) {
+							renderTo.find("input.k-checkbox[data-object-id]").prop("checked", true);						
+						}else{
+							renderTo.find("input.k-checkbox[data-object-id]").prop("checked", false);	
+						}					
+					});							
 				}				
 				
 				$(renderToString).modal({
@@ -599,7 +606,7 @@
 							<div class="col-sm-6"><button class="btn btn-info btn-flat btn-outline" data-bind="events: { click: search }">검색</button></div>
 						</div>	
 					</div>
-					<div class="members"></div>
+					<div class="members no-border-b no-border-hr"></div>
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-primary btn-flat" data-bind="click: save, enabled: editable" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-user-plus"></i> 추가</button>					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
