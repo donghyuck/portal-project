@@ -369,18 +369,25 @@
 		function openMembershipModal(data){			
 			var renderToString = "#my-membership-modal";			
 			if( $(renderToString).length === 0 ){	
-				$("#main-wrapper").append( kendo.template($('#my-membership-modal-template').html()) );				
+				$("#main-wrapper").append( kendo.template($('#my-membership-modal-template').html()) );
+				var renderTo = $(renderToString).find(".members");
 				var observable = kendo.observable({
 					group : new common.ui.data.Group(),
+					nameOrEmail : "",
 					setGroup : function(data){
+						this.set("nameOrEmail", "");
 						data.copy(this.group);
+						if(common.ui.exists(renderTo)){	
+							common.ui.grid(renderTo).dataSource.data([]);
+						}
+					},
+					search:function(e){
+						common.ui.grid(renderTo).dataSource.read();
 					}
 				});				
 				kendo.bind($(renderToString), observable );
-				$(renderToString).data("model", observable );		
-			
-				var renderTo = $(renderToString).find(".members");
-				if( ! common.ui.exists(renderTo)){	
+				$(renderToString).data("model", observable );					
+				if( !common.ui.exists(renderTo)){	
 					common.ui.grid(renderTo, {
 						dataSource: {
 							type: "json",
@@ -388,7 +395,7 @@
 								read: { url:'<@spring.url "/secure/data/mgmt/company/users/find.json?output=json"/>', type: 'POST' },
 								parameterMap: function (options, type){
 									var model = $(renderToString).data("model");
-									return { startIndex: options.skip, pageSize: options.pageSize,  companyId: model.group.companyId, groupId: model.group.groupId }
+									return { startIndex: options.skip, pageSize: options.pageSize,  companyId: model.group.companyId, groupId: model.group.groupId, nameOrEmail:model.nameOrEmail }
 								}
 							},
 							schema: {
@@ -588,37 +595,11 @@
 					</div>	
 					<div class="modal-body">
 						<div class="row">
-							<div class="col-sm-6"><input type="email" class="form-control input-block no-rounded" id="" placeholder="검색할 사용자 이름 또는 메일을 입력하세요"></div>
-							<div class="col-sm-6"><button class="btn btn-info btn-flat btn-outline">검색</button></div>
+							<div class="col-sm-6"><input type="email" class="form-control input-block no-rounded" placeholder="검색할 사용자 이름 또는 메일을 입력하세요" data-bind="value:nameOrEmail"></div>
+							<div class="col-sm-6"><button class="btn btn-info btn-flat btn-outline" data-bind="events: { click: search }">검색</button></div>
 						</div>	
-							
-													
-						
 					</div>
 					<div class="members"></div>
-					<!--,				
-					<div class="modal-body">
-						<div class=" form-horizontal padding-sm" >
-							<div class="row form-group">
-								<label class="col-sm-4 control-label">이름:</label>
-								<div class="col-sm-8">
-									<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
-								</div>
-							</div>
-							<div class="row form-group">
-								<label class="col-sm-4 control-label">설명:</label>
-								<div class="col-sm-8">
-									<input type="text" name="name" class="form-control" data-bind="value:company.description">
-								</div>
-							</div>																
-							<div class="row form-group">
-								<label class="col-sm-4 control-label">도메인:</label>
-								<div class="col-sm-8">
-									<input type="text" class="form-control" data-bind="value:company.domainName">
-								</div>
-							</div>							
-						</div>	
-					</div>-->
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-primary btn-flat" data-bind="click: save, enabled: editable" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-user-plus"></i> 추가</button>					
 						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
