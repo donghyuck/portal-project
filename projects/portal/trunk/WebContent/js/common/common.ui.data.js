@@ -223,14 +223,8 @@
 	common.ui.data.Group = kendo.data.Model.define({
 		id : "groupId", // the identifier of the model
 		fields : {
-			companyId : {
-				type : "number",
-				defaultValue : 0
-			},
-			groupId : {
-				type : "number",
-				editable : false,
-				defaultValue : 0
+			companyId : { type : "number", defaultValue : 0 },
+			groupId : { type : "number", editable : false, defaultValue : 0
 			},
 			name : {
 				type : "string",
@@ -265,17 +259,15 @@
 		},
 		copy : function ( target ){
 			target.groupId = this.get("groupId");
-	    	target.set("displayName", this.get("displayName"));
-	    	target.set("name", this.get("name"));
-	    	target.set("description", this.get("description"));
-	    	
-	    	target.set("creationDate", this.get("creationDate"));
-	    	target.set("modifiedDate", this.get("modifiedDate"));
-	    	
-	    	if( typeof this.get("company") === 'object' )
-	    		target.set("company", this.get("company"));		
-	    	if( typeof this.get("properties") === 'object' )
-	    		target.set("properties", this.get("properties"));	
+			target.set("displayName", this.get("displayName"));
+			target.set("name", this.get("name"));
+			target.set("description", this.get("description"));
+			target.set("creationDate", this.get("creationDate"));
+			target.set("modifiedDate", this.get("modifiedDate"));	    	
+			if( typeof this.get("company") === 'object' )
+				target.set("company", this.get("company"));	
+			if( typeof this.get("properties") === 'object' )
+				target.set("properties", this.get("properties"));	 
 		}
 	});
 
