@@ -508,22 +508,17 @@
 			#company-group-grid > .k-grid-content {
 				min-height: 500px;
 			}
-						
+
+			#company-group-list .k-grid .k-selectable tr.k-state-selected{
+				background-color: #4cd964;
+				border-color: #4cd964;
+			}	
+									
 			#my-membership-modal .k-grid .k-selectable tr.k-state-selected{
-				background-color: #4cd964;
-				border-color: #4cd964;
-			}	
-			
-			#company-grid.k-grid .k-selectable tr.k-state-selected{
-				background-color: #4cd964;
-				border-color: #4cd964;
-			}	
-			
-			#company-user-grid.k-grid .k-selectable tr.k-state-selected{
 				background-color: #5ac8fa;
 				border-color: #34aadc;			
-			}
-			
+			}	
+						
 			.panel .tab-content {
 				padding:5px!important;
 			}
