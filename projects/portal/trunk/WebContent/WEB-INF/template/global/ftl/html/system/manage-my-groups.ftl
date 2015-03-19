@@ -406,9 +406,10 @@
 						$.each( members , function( index, row ){
 							var item = common.ui.grid(renderTo).dataSource.get( row );
 							common.ui.grid(renderTo).dataSource.remove(item);
-						}
+						});
 						
 						alert( common.ui.stringify( members ) );
+						
 						/*			
 						var $btn = $(e.target);
 						$btn.button('loading');		
