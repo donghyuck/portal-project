@@ -259,6 +259,7 @@
 		},
 		copy : function ( target ){
 			target.groupId = this.get("groupId");
+			target.set("companyId", this.get("companyId"));
 			target.set("displayName", this.get("displayName"));
 			target.set("name", this.get("name"));
 			target.set("description", this.get("description"));
