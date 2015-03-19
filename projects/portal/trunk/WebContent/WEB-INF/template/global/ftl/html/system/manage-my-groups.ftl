@@ -373,8 +373,8 @@
 				var observable = kendo.observable({
 					group : new common.ui.data.Group(),
 					setGroup : function(data){
-						alert( kendo.stringify(data) );
 						data.copy(this.group);
+						alert(kendo.stringify(data));
 					}
 				});				
 				kendo.bind($(renderToString), observable );
