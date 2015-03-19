@@ -160,29 +160,24 @@
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
 				<div class="row">
+					<div class="col-lg-3 visible-lg">	
+						<div class="headline"><h4> ${navigator.parent.title} </h4></div>  
+	                	<p class="margin-bottom-25"><small>${navigator.parent.description!" " }</small></p>					
+						<div class="list-group">
+						<#list navigator.parent.components as item >
+							<#if item.name ==  navigator.name >
+							<a href="${item.page}" class="list-group-item active">${ item.title } </a>
+							<#else>
+							<a href="${item.page}" class="list-group-item">${ item.title } </a>
+							</#if>						
+						</#list>
+						</div>
+					</div>				
 					<div class="col-lg-9" style="min-height: 500px;">			
 						<div id="announce-view-panel" style="display:none;"></div>
 						<h5><small><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
 						<div id="announce-grid"></div>												
-					</div>	
-					<div class="col-lg-3">	
-						<#if navigator.parent.layout?? && navigator.parent.layout == "pills" >
-						<ul class="dropdown-menu" style="display: block; position: relative;">
-							<li class="dropdown-header">${navigator.parent.title}</li>
-							<#list navigator.parent.components as item >
-							<li class="<#if item.name ==  navigator.name >active</#if>"><a href="${item.page}">${ item.title }</a></li>
-							</#list>
-						</ul>
-															
-							<div class="pull-right">
-								<div class="btn-group">
-								<#list navigator.parent.components as item >								
-									<a class="btn btn-info btn-sm <#if navigator.parent.components?seq_index_of(item) == 0>rounded-left<#elseif navigator.parent.components?seq_index_of(item) == (navigator.parent.components?size - 1)  >rounded-right</#if> <#if item.name ==  navigator.name >active</#if>" href="${item.page}">${ item.title }</a>					
-								</#list>		
-								</div>
-							</div>
-							</#if>								
-					</div>
+					</div>						
 				</div>
 			</div>			
 			</#if>						 			
