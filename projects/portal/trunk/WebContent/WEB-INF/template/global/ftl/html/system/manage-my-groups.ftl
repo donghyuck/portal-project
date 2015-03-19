@@ -509,7 +509,7 @@
 				min-height: 500px;
 			}
 						
-			#company-group-grid.k-grid .k-selectable tr.k-state-selected{
+			#my-membership-modal .k-grid .k-selectable tr.k-state-selected{
 				background-color: #4cd964;
 				border-color: #4cd964;
 			}	
