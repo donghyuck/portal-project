@@ -102,7 +102,7 @@
 				</div>
 				<!-- End About -->
 				<div class="col-md-3 md-margin-bottom-40">
-					<label><h3>링크</h3></label>
+					<label><h3>공지 & 이벤트</h3></label>
 					<script type="text/javascript">
 					<!--
 							jobs.push( function(){
