@@ -40,6 +40,7 @@
 
 .footer-global .link-list  li {
 	border-top: solid 1px #353535;
+	 line-height: 2;
 }
 
 .footer-global .latest-list li a {
