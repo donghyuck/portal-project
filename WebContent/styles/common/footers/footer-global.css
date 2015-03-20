@@ -236,8 +236,10 @@
 .footer-global .copyright {
 	background: #222;
 	border-top: none;
-	color : #f5f5f5;
+	color : #fff;
 	padding: 10px 0 5px;
+	line-height: 1.5em;
+	font-size: .88em;	
 }
 
 .footer-global .copyright p {
@@ -247,6 +249,9 @@
 
 .footer-global .copyright a {
 	margin: 0 2px;
+	color : #fff;
+}
+.footer-global .copyright a:hover {
 	color : #f5f5f5;
 }
 
