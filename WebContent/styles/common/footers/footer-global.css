@@ -179,10 +179,10 @@
 
 .directorynav a {
 	font-size: 0.9em;
-	line-height: 1.4167;
+	line-height: 1.99;
 	font-weight: 400;
 	display: inline;
-	color: #666;
+	color: #666!important;
 	white-space: normal;
 }
 
