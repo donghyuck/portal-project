@@ -107,6 +107,8 @@
 	padding: 0 5px;
 	color: #ccc;
 	content: "/\00a0";
+	font-style: normal;
+	font-weight:100;
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
@@ -117,7 +119,6 @@
 	content: "\f054";
 	font-family: FontAwesome;
 	font-size: 2m;
-	font-weight: normal;
 	display: inline-block;
 	line-height: 8px;
 	top: -1px;
