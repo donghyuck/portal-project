@@ -11,7 +11,7 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.3.0/font-awesome.min.css',
+			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
@@ -139,7 +139,7 @@
 		<!-- END MAIN CONTENT -->	
 
  		<!-- START FOOTER -->
-		<#include "/html/common/common-homepage-globalfooter.ftl" >		
+		<#include "/html/common/common-homepage-footer.ftl" >		
 		<!-- END FOOTER -->	
 		</div><!-- /.wrapper -->
 		
