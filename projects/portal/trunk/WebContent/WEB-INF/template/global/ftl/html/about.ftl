@@ -135,25 +135,7 @@
         </div>					
 					
 					</div>					
-				</div>
-
-					<!-- Meer Our Team -->
-					<div class="headline"><h2>멤버 소개</h2></div>
-					<div class="row team">
-						<div class="col-sm-3">
-							<div class="thumbnail-style">
-								<img class="img-responsive" src="/images/common/no-image2.jpg" alt="">
-								<h3><a>Antonio</a> <small>Software Architect</small></h3>
-								<p>열정만 있는 소프트웨어 아키텍트이자 게으른 자바 개발자.</p>
-								<ul class="list-unstyled list-inline team-socail">
-									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div><!--/team-->
-				<!-- End Meer Our Team -->				
+				</div>		
 			</div>
 		
 		<article class="bg-slivergray">			
@@ -243,6 +225,26 @@
         </div>
     </div>
 </article>
+
+<div class="container">
+					<!-- Meer Our Team -->
+					<div class="headline"><h2>멤버 소개</h2></div>
+					<div class="row team">
+						<div class="col-sm-3">
+							<div class="thumbnail-style">
+								<img class="img-responsive" src="/images/common/no-image2.jpg" alt="">
+								<h3><a>Antonio</a> <small>Software Architect</small></h3>
+								<p>열정만 있는 소프트웨어 아키텍트이자 게으른 자바 개발자.</p>
+								<ul class="list-unstyled list-inline team-socail">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+							</div>
+						</div>
+					</div><!--/team-->
+				<!-- End Meer Our Team -->		
+</div>
 			
 			<!-- END MAIN CONTENT -->	
 			</#if>	
