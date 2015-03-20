@@ -42,9 +42,16 @@
 	border-top: solid 1px #353535;
 }
 
+.footer-global .latest-list li a {
+	color: #666;
+}
+
+.footer-global .latest-list li a:hover {
+	color: #333;
+}
 
 .footer-global address,.footer-global .link-list a,.footer-global .link-list i {
-	color: #eee;
+	color: #666;
 }
 
 .footer-global address {
