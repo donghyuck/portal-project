@@ -73,7 +73,7 @@
 				</div>		
 
 				<div class="col-md-3 md-margin-bottom-40">
-					<p><small><i class="fa fa-quote-left"></i>${action.webSite.company.description}<i class="fa fa-quote-right"></i></small></p>		
+					<p><small><i class="fa fa-quote-left"></i> ${action.webSite.company.description} <i class="fa fa-quote-right"></i></small></p>		
 					<div class="footer-logo">
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
 					</div>
