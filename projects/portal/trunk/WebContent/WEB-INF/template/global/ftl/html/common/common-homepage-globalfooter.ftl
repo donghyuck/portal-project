@@ -20,7 +20,7 @@
 					<div class="directorynav">					
 						<#list navigator.parent.components as item >
 						<div class="col-sm-3 no-padding-l">
-						<label><h3><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</h3></label>
+						<label><h3><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title} ${item.menuDepth}</h3></label>
 						<#if  item.components?has_content >
 							
 						<#else>
