@@ -156,6 +156,38 @@
 	display: table;
 }
 
+.directorynav  label {
+	cursor: default;
+}
+
+.directorynav  h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 0.6667em;
+	line-height: 1.4167;
+	font-weight: 600;
+	color: #333;
+	letter-spacing: 0;
+}
+
+.directorynav  ul {
+	list-style: none;
+	margin: 0;
+}
+
+.directorynav ul>li {
+	line-height: 1;
+}
+
+.directorynav a {
+	font-size: 0.6667em;
+	line-height: 1.4167;
+	font-weight: 400;
+	display: inline;
+	color: #666;
+	white-space: normal;
+}
+
 /*Dotted Map*/
 .footer-global .footer .map-img {
 	background: url(../../img/map-img.png) 5px 60px no-repeat;
