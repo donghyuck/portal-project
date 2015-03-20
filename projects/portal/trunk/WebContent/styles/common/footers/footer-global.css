@@ -32,6 +32,11 @@
 	color:#333; 
 }
 
+.footer-global .footer label > h3 {
+	color:#828293;
+	font-size: 16px;
+}
+
 .footer-global .footer hr {
 	border-bottom: 1px solid #e3e3e3;
 }
@@ -251,10 +256,7 @@
 	font-size: 16px;
 }
 
-.footer-global .copyright label > h3 {
-	color:#828293;
-	font-size: 16px;
-}
+
 
 @media ( max-width : 991px) {
 	.footer-global .copyright,.footer-global .footer-socials {
