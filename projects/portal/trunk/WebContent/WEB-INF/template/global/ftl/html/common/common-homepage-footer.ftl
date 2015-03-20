@@ -50,7 +50,12 @@
 					<div class="headline"><h2>링크</h2></div>
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
-					<div class="headline"><h2>링크</h2></div>				
+					<div class="headline"><h2>링크</h2></div>		
+					<ul>
+						<li><a href="#">메르디앙 소개</a></li>
+						<li><a href="#">사이트 맵</a></li>
+						<li><a href="#">이벤트 & 공지</a></li>
+					</ul>		
 				</div>
 			</div><!-- /.row -->
 		</div><!-- /.container -->
