@@ -77,7 +77,7 @@
 					<div class="footer-logo">
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
 					</div>
-					<ul class="list-unstyled latest-list m-l-sm">
+					<ul class="list-unstyled link-list m-l-sm">
 						<li><a href="#">메르디앙 소개</a></li>
 						<li><a href="#">사이트 맵</a></li>
 						<li><a href="#">이벤트 & 공지</a></li>
