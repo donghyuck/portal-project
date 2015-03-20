@@ -3,7 +3,7 @@
 	<div class="footer">
 		<div class="container">
 			
-			<#if !action.isSetNavigator() &&  action.webSite ??   >
+			<#if action.isSetPage() && !action.isSetNavigator() &&  action.webSite ??   >
 				<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
 				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />					
 			</#if>
