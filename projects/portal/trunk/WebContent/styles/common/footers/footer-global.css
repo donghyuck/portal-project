@@ -95,7 +95,7 @@
   margin-left: 12px;
 }
 .breadcrumbs-list>li {
-  font-size: 0.6667em;
+  font-size: 1em;
   line-height: 2;
   font-weight: 400;
   display: inline-block;
@@ -107,13 +107,17 @@
 	padding: 0 5px;
 	color: #ccc;
 	content: "/\00a0";
-}
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	transform: translate(0, 0);}
 
 .breadcrumbs-list li+li:before {
 	color: #ccc;
 	content: "\f054";
 	font-family: FontAwesome;
-	font-size: 7px;
+	font-size: 2m;
+	font-weight: normal;
 	display: inline-block;
 	line-height: 8px;
 	top: -1px;
