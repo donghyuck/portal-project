@@ -18,8 +18,7 @@
 
 
 <div id="directorynav" class="directorynav">
-	<div id="dn-cola" class="column large-3 small-12 xsmall-12">
-		<input type="checkbox" id="gf-dn-iphone-iphone-6"><label for="gf-dn-iphone-iphone-6">
+	<div id="dn-cola" class="col-sm-4"><label for="gf-dn-iphone-iphone-6">
 		<h3>iPhone 6</h3>
 		</label>
 		<ul>
@@ -37,9 +36,9 @@
 			<li><a href="/kr/iphone-6/tips/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/tips/_1&quot;;return this.s_oc?this.s_oc(e):true">사용팁과 묘수</a></li>
 		</ul>
 	</div>
-	<div id="dn-colb" class="column large-3 small-12 xsmall-12">
+	<div id="dn-colb" class="col-sm-4">
 		<div class="directorynav-subcol">
-			<input type="checkbox" id="gf-dn-iphone-iphone-5s"><label for="gf-dn-iphone-iphone-5s">
+			<label for="gf-dn-iphone-iphone-5s">
 			<h3>iPhone 5s</h3>
 			</label>
 			<ul>
@@ -48,7 +47,7 @@
 			</ul>
 		</div>
 		<div class="directorynav-subcol">
-			<input type="checkbox" id="gf-dn-iphone-iphone-5c"><label for="gf-dn-iphone-iphone-5c">
+			<label for="gf-dn-iphone-iphone-5c">
 			<h3>iPhone 5c</h3>
 			</label>
 			<ul>
@@ -57,8 +56,8 @@
 			</ul>
 		</div>
 	</div>
-	<div id="dn-colc" class="column large-3 small-12 xsmall-12">
-		<input type="checkbox" id="gf-dn-more-iphone"><label for="gf-dn-more-iphone">
+	<div id="dn-colc" class="col-sm-4">
+		<label for="gf-dn-more-iphone">
 		<h3>iPhone 더 알아보기</h3>
 		</label>
 		<ul>
