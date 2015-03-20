@@ -116,9 +116,9 @@
 
 .breadcrumbs-list li+li:before {
 	color: #ccc;
-	content: "\f054";
+	content: "\f105";
 	font-family: FontAwesome;
-	font-size: 2m;
+	font-size: 2em;
 	display: inline-block;
 	line-height: 8px;
 	top: 1px;
