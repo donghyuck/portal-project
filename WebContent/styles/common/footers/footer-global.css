@@ -88,8 +88,12 @@
 }
 
 .breadcrumbs-list>li a {
-  color: #666;
+	color: #666;
 }
+.breadcrumbs-list>li a:hover {
+	color: #999;
+}
+
 .breadcrumbs-list a:visited, .breadcrumbs-list a:link, .breadcrumbs-list a:active {
   text-decoration: none;
 }
