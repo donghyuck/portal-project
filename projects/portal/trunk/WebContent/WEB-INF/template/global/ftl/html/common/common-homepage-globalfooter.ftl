@@ -17,17 +17,16 @@
 					</div>
 					
 					
-					<div class="directorynav">					
-						<#list navigator.parent.components as item >
+					<div class="directorynav">
+						<#assign directoryAncestor = navigator.parent />						
 						<div class="col-sm-3 no-padding-l">
-						<label><h3><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title} ${item.menuDepth}</h3></label>
-						<#if  item.components?has_content >
-							
-						<#else>
-							
-						</#if>
-						</div>	
-						</#list>								
+							<label><h3><#if directoryAncestor.icon?? ><i class="fa ${directoryAncestor.icon}"></i></#if> ${directoryAncestor.title}</h3></label>
+							<ul>
+							<#list directoryAncestor.components as item >
+								<li><a href="${item.page}"><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</a></li>
+							</#list>
+							</ul>
+						</div>			
 					</div>	
 			<!--
 <div class="directorynav">
