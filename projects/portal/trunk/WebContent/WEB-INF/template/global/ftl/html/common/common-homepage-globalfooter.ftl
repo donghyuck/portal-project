@@ -29,7 +29,7 @@
 				</div>
 				<!-- End About -->
 				<div class="col-md-3 md-margin-bottom-40">
-					<div class="headline"><h2>최근 글</h2></div>
+					<div class="headline"><h3>최근 글</h3></div>
 					<script type="text/javascript">
 					<!--
 							jobs.push( function(){
@@ -57,10 +57,10 @@
 					</ul>	
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
-					<div class="headline"><h2>링크</h2></div>
+					<div class="headline"><h3>링크</h3></div>
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
-					<div class="headline"><h2>링크</h2></div>				
+					<div class="headline"><h3>링크</h3></div>				
 				</div>
 			</div><!-- /.row -->
 		</div><!-- /.container -->
