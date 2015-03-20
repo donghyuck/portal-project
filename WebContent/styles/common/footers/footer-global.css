@@ -25,6 +25,12 @@
 	font-weight: 200;
 }
 
+.footer-global .footer h3
+	font-size: 0.6667em;
+	line-height: 1.4167;
+	font-weight: 600;
+	color:#333; 
+}
 /*Link List*/
 .footer-global .link-list li {
 	border-top: solid 1px #353535;
