@@ -18,7 +18,7 @@
 
 			
 <div class="directorynav">
-	<div id="dn-cola" class="col-sm-4 no-padding-l">
+	<div id="dn-cola" class="col-sm-3 no-padding-l">
 		<label>
 			<h3>iPhone 6</h3>
 		</label>
@@ -37,7 +37,7 @@
 			<li><a href="/kr/iphone-6/tips/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/tips/_1&quot;;return this.s_oc?this.s_oc(e):true">사용팁과 묘수</a></li>
 		</ul>
 	</div>
-	<div id="dn-colb" class="col-sm-4">
+	<div id="dn-colb" class="col-sm-3">
 		<div class="directorynav-subcol">
 			<label for="gf-dn-iphone-iphone-5s">
 			<h3>iPhone 5s</h3>
