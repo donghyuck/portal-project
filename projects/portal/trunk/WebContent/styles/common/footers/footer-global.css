@@ -53,6 +53,16 @@
 	color: #333;
 }
 
+.footer-global .footer-link-list  li a {
+	color: #34aadc;
+	font-size : .9em;
+	line-height : 1.2 em;
+}
+
+.footer-global .footer-link-list  li a:hover {
+	color: #007aff;
+}
+
 .footer-global .latest-list li {
 	border-color: #e3e3e3;
 }
