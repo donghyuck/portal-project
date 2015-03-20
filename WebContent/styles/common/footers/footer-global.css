@@ -78,6 +78,9 @@
 	direction: ltr;		
 }
 
+.breadcrumbs-list .fa {
+	text-shadow:none;
+}
 
 .breadcrumbs-list:before, .breadcrumbs-list:after {
   content: " ";
