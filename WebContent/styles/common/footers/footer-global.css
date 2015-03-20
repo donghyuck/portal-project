@@ -182,7 +182,7 @@
 .directorynav  h3 {
 	margin: 0;
 	padding: 0;
-	font-size: 0.96em;
+	font-size: 0.900em;
 	line-height: 1.4167;
 	font-weight: 600;
 	color: #333;
@@ -200,7 +200,7 @@
 }
 
 .directorynav a {
-	font-size: 0.9em;
+	font-size: 0.855em;
 	line-height: 1.99;
 	font-weight: 400;
 	display: inline;
