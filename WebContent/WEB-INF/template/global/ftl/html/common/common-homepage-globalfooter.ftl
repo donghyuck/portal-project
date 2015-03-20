@@ -16,7 +16,7 @@
 						</ol>
 					</div>
 
-
+			
 <div class="directorynav">
 	<div id="dn-cola" class="col-sm-4 no-padding-l">
 		<label>
@@ -73,11 +73,12 @@
 	</div>
 	<div class="capbottom"></div>
 </div>
-
+				
 									
 				</div>
 			</div>
 			<!--  /.breadcombs -->
+			<hr/>
 			</#if>
 			<div class="row">
 				<!-- About -->
