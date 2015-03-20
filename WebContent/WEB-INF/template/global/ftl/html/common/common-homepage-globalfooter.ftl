@@ -17,9 +17,10 @@
 					</div>
 
 
-<div id="directorynav" class="directorynav">
-	<div id="dn-cola" class="col-sm-4"><label for="gf-dn-iphone-iphone-6">
-		<h3>iPhone 6</h3>
+<div class="directorynav">
+	<div id="dn-cola" class="col-sm-4 no-padding-l">
+		<label>
+			<h3>iPhone 6</h3>
 		</label>
 		<ul>
 			<li><a href="/kr/iphone-6/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/_4&quot;;return this.s_oc?this.s_oc(e):true">개요</a></li>
