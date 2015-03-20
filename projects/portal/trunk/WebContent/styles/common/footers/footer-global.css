@@ -10,6 +10,7 @@
 .footer-global .footer {
 	padding: 40px 0;
 	border-top: 1px solid #e3e3e3;
+	border:0;
 	font-size: 1.125em;
 	line-height: 1.125;
 	color:#999
