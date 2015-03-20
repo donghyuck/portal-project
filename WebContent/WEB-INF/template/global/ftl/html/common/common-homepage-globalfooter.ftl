@@ -15,8 +15,21 @@
 							<li class="active">${navigator.title}</li>
 						</ol>
 					</div>
-
-			
+					
+					
+					<div class="directorynav">					
+						<#list navigator.parent.components as item >
+						<div class="col-sm-3 no-padding-l">
+						<label><h3><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</h3></label>
+						<#if  item.components?has_content >
+							
+						<#else>
+							
+						</#if>
+						</div>	
+						</#list>								
+					</div>	
+			<!--
 <div class="directorynav">
 	<div id="dn-cola" class="col-sm-3 no-padding-l">
 		<label>
@@ -73,7 +86,7 @@
 	</div>
 	<div class="capbottom"></div>
 </div>
-				
+				-->
 									
 				</div>
 			</div>
