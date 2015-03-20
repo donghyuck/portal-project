@@ -1,6 +1,8 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 <head>
+		<#assign pageMenuName = "USER_MENU" />
+		<#assign pageMenuItemName = "MENU_PERSONALIZED_2" />
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<#compress>		
 		<script type="text/javascript">
