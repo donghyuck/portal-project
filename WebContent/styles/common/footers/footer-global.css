@@ -34,7 +34,7 @@
 
 .footer-global .footer label > h3 {
 	color:#828293;
-	font-size: 16px;
+	font-size: 1.8em;
 }
 
 .footer-global .footer hr {
@@ -53,7 +53,8 @@
 
 .footer-global .latest-list li a {
 	color: #666;
-	 line-height: 2em;
+	font-size: 16em;
+	line-height: 2em;
 }
 
 .footer-global .latest-list li a:hover {
