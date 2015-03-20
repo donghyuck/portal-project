@@ -9,8 +9,7 @@
 			</#if>		
 			<#if action.webSite ?? >
 				<#assign webSite = action.webSite />				
-				<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />
-				
+				<#assign webSiteMenu = action.getWebSiteMenu("USER_MENU") />	
 			<div class="header">
 				<div class="topbar">
 					<div class="container">
