@@ -39,8 +39,11 @@
 /*Link List*/
 
 .footer-global .link-list  li {
-	border-top: solid 1px #353535;
-	
+	border-top: solid 1px #353535;	
+}
+
+.footer-global latest-list li {
+	border-color: #e3e3e3;
 }
 
 .footer-global .latest-list li a {
