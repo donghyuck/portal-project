@@ -34,7 +34,7 @@
 
 .footer-global .footer label > h3 {
 	color:#828293;
-	font-size: 1.2em;
+	font-size: 1.12em;
 	font-weight: 300;
 }
 
@@ -54,8 +54,8 @@
 
 .footer-global .latest-list li a {
 	color: #666;
-	font-size: 1.15em;
-	line-height: 1.5em;
+	font-size: .99em;
+	line-height: 1.2em;
 }
 
 .footer-global .latest-list li a:hover {
