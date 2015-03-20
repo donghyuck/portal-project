@@ -11,7 +11,7 @@
 		
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',		
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
@@ -80,6 +80,7 @@
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 							</small>	
 							</h2>
+							<!--
 							<div class="pull-right breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
@@ -87,6 +88,7 @@
 									<li class="active">${navigator.title}</li>
 								</ul>
 							</div>	
+							-->
 						</div>
 					</div>
 				</div>	
