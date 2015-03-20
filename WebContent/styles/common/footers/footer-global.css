@@ -208,6 +208,15 @@
 	white-space: normal;
 }
 
+.directorynav a:hover:after {
+	content: "";
+	border-bottom: 1px solid #333;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 3px;
+}
+
 /*Dotted Map*/
 .footer-global .footer .map-img {
 	background: url(../../img/map-img.png) 5px 60px no-repeat;
