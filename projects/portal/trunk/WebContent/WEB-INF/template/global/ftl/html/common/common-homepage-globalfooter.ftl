@@ -9,6 +9,7 @@
 			</#if>
 			<#if action.webSite ?? >				
 			<!-- breadcombs -->
+			<div class="footer-breadory">
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="breadcrumbs">
@@ -18,8 +19,6 @@
 							<li class="active">${navigator.title}</li>
 						</ol>
 					</div>
-					
-					
 					<div class="directorynav">
 						<#assign directoryAncestor = navigator.parent />						
 						<div class="col-sm-3 no-padding-l">
@@ -30,67 +29,9 @@
 							</#list>
 							</ul>
 						</div>			
-					</div>	
-			<!--
-<div class="directorynav">
-	<div id="dn-cola" class="col-sm-3 no-padding-l">
-		<label>
-			<h3>iPhone 6</h3>
-		</label>
-		<ul>
-			<li><a href="/kr/iphone-6/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/_4&quot;;return this.s_oc?this.s_oc(e):true">개요</a></li>
-			<li><a href="/kr/iphone-6/design/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/design/_1&quot;;return this.s_oc?this.s_oc(e):true">디자인</a></li>
-			<li><a href="/kr/iphone-6/display/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/display/_1&quot;;return this.s_oc?this.s_oc(e):true">디스플레이</a></li>
-			<li><a href="/kr/iphone-6/technology/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/technology/_1&quot;;return this.s_oc?this.s_oc(e):true">기술</a></li>
-			<li><a href="/kr/iphone-6/cameras/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/cameras/_1&quot;;return this.s_oc?this.s_oc(e):true">카메라</a></li>
-			<li><a href="/kr/iphone-6/connectivity/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/connectivity/_1&quot;;return this.s_oc?this.s_oc(e):true">연결성</a></li>
-			<li><a href="/kr/iphone-6/touch-id/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/touch-id/_1&quot;;return this.s_oc?this.s_oc(e):true">Touch ID</a></li>
-			<li><a href="/kr/iphone-6/ios-8/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/ios-8/_1&quot;;return this.s_oc?this.s_oc(e):true">iOS 8</a></li>
-			<li><a href="/kr/iphone-6/accessories/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/accessories/_1&quot;;return this.s_oc?this.s_oc(e):true">액세서리</a></li>
-			<li><a href="/kr/iphone-6/specs/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/specs/_1&quot;;return this.s_oc?this.s_oc(e):true">제품 사양</a></li>
-			<li><a href="/kr/iphone-6/films/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/films/_1&quot;;return this.s_oc?this.s_oc(e):true">동영상</a></li>
-			<li><a href="/kr/iphone-6/tips/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-6/tips/_1&quot;;return this.s_oc?this.s_oc(e):true">사용팁과 묘수</a></li>
-		</ul>
-	</div>
-	<div id="dn-colb" class="col-sm-3">
-		<div class="directorynav-subcol">
-			<label for="gf-dn-iphone-iphone-5s">
-			<h3>iPhone 5s</h3>
-			</label>
-			<ul>
-				<li><a href="/kr/iphone-5s/specs/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-5s/specs/_2&quot;;return this.s_oc?this.s_oc(e):true">제품 사양</a></li>
-				<li><a href="/kr/iphone-5s/tips/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-5s/tips/_1&quot;;return this.s_oc?this.s_oc(e):true">사용팁과 묘수</a></li>
-			</ul>
-		</div>
-		<div class="directorynav-subcol">
-			<label for="gf-dn-iphone-iphone-5c">
-			<h3>iPhone 5c</h3>
-			</label>
-			<ul>
-				<li><a href="/kr/iphone-5c/specs/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-5c/specs/_2&quot;;return this.s_oc?this.s_oc(e):true">제품 사양</a></li>
-				<li><a href="/kr/iphone-5c/tips/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone-5c/tips/_1&quot;;return this.s_oc?this.s_oc(e):true">사용팁과 묘수</a></li>
-			</ul>
-		</div>
-	</div>
-	<div id="dn-colc" class="col-sm-4">
-		<label for="gf-dn-more-iphone">
-		<h3>iPhone 더 알아보기</h3>
-		</label>
-		<ul>
-			<li><a href="/kr/iphone/compare/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone/compare/_1&quot;;return this.s_oc?this.s_oc(e):true">iPhone 모델 비교하기	</a></li>
-			<li><a href="/kr/ios/carplay/" onclick="s_objectID=&quot;http://www.apple.com/kr/ios/carplay/_1&quot;;return this.s_oc?this.s_oc(e):true">Apple CarPlay</a></li>
-			<li><a href="/kr/iphone/switch-to-iphone/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone/switch-to-iphone/_1&quot;;return this.s_oc?this.s_oc(e):true">iPhone으로 갈아타기</a></li>
-			<li><a href="/kr/iphone/business/" onclick="s_objectID=&quot;http://www.apple.com/kr/iphone/business/_1&quot;;return this.s_oc?this.s_oc(e):true">비즈니스를 위한 iPhone</a></li>
-			<li><a href="https://developer.apple.com/kr/programs/ios/" onclick="s_objectID=&quot;https://developer.apple.com/kr/programs/ios/_1&quot;;return this.s_oc?this.s_oc(e):true">개발자를 위한 iOS</a></li>
-			<li><a href="/kr/accessibility/ios/" onclick="s_objectID=&quot;http://www.apple.com/kr/accessibility/ios/_1&quot;;return this.s_oc?this.s_oc(e):true">손쉬운 사용</a></li>
-			<li><a href="/kr/product-red/" onclick="s_objectID=&quot;http://www.apple.com/kr/product-red/_1&quot;;return this.s_oc?this.s_oc(e):true">(PRODUCT)RED™</a></li>
-		</ul>
-	</div>
-	<div class="capbottom"></div>
-</div>
-				-->
-									
+					</div>										
 				</div>
+			</div>
 			</div>
 			<!--  /.breadcombs -->
 			<hr/>
