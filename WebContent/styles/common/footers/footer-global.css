@@ -32,6 +32,15 @@
 	color:#333; 
 }
 /*Link List*/
+.footer-global a {
+	color: #666;
+}
+
+.footer-global a:hover {
+	color: #333;
+}
+
+
 .footer-global .link-list li {
 	border-top: solid 1px #353535;
 }
