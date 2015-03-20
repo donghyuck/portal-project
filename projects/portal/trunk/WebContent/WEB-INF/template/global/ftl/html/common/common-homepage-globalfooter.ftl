@@ -7,7 +7,7 @@
 				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />				
 			<!-- breadcombs -->
 			<div class="row">
-			
+				<div class="col-sm-12">
 							<div class="breadcrumb-v1">
 								<ul class="breadcrumb">
 									<li><a href="main.do"><i class="fa fa-home fa-lg"></i></a></li>
@@ -15,7 +15,7 @@
 									<li class="active">${navigator.title}</li>
 								</ul>
 							</div>				
-			
+				</div>
 			</div>
 			<!--  /.breadcombs -->
 			</#if>
