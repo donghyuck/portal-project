@@ -37,22 +37,6 @@
 			<hr/>
 			</#if>
 			<div class="row">
-				<!-- About -->
-				<div class="col-md-3 md-margin-bottom-40">
-					<div class="footer-logo">
-						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
-					</div>
-					<p>${action.webSite.company.description}</p>					
-				</div>
-				<!-- End About -->
-				<div class="col-md-3 md-margin-bottom-40">
-					<label><h3><i class="fa fa-circle-thin"></i> 제휴 사이트</h3></label>
-					<ul class="list-unstyled latest-list m-l-sm">
-						<li><a href="#">메르디앙 소개</a></li>
-						<li><a href="#">사이트 맵</a></li>
-						<li><a href="#">이벤트 & 공지</a></li>
-					</ul>							
-				</div>				
 				<div class="col-md-3 md-margin-bottom-40">
 					<label><h3><i class="fa fa-circle-thin"></i> 공지 & 이벤트</h3></label>
 					<script type="text/javascript">
@@ -84,6 +68,21 @@
 				<div class="col-md-3 md-margin-bottom-40">
 					<label><h3><i class="fa fa-circle-thin"></i> 링크</h3></label>
 				</div>
+				<div class="col-md-3 md-margin-bottom-40">
+					<label><h3><i class="fa fa-circle-thin"></i> 제휴 사이트</h3></label>				
+				</div>		
+
+				<div class="col-md-3 md-margin-bottom-40">
+					<p><small>${action.webSite.company.description}</small></p>		
+					<div class="footer-logo">
+						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
+					</div>
+					<ul class="list-unstyled latest-list m-l-sm">
+						<li><a href="#">메르디앙 소개</a></li>
+						<li><a href="#">사이트 맵</a></li>
+						<li><a href="#">이벤트 & 공지</a></li>
+					</ul>											
+				</div>	
 			</div><!-- /.row -->
 		</div><!-- /.container -->
 	</div><!-- /.footer -->	
