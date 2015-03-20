@@ -2,9 +2,12 @@
 <footer class="footer-global">
 	<div class="footer">
 		<div class="container">
-			<#if action.webSite ?? >
+			
+			<#if !action.isSetNavigator() &&  action.webSite ??   >
 				<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
-				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />				
+				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />					
+			</#if>
+			<#if action.webSite ?? >				
 			<!-- breadcombs -->
 			<div class="row">
 				<div class="col-sm-12">
