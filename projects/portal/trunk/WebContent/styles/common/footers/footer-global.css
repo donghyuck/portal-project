@@ -179,7 +179,7 @@
 	cursor: default;
 }
 
-.directorynav  h3 {
+.footer-global .footer .directorynav  h3 {
 	margin: 0;
 	padding: 0;
 	font-size: 0.900em;
@@ -200,7 +200,7 @@
 }
 
 .directorynav a {
-	font-size: 0.855em;
+	font-size: 0.8em;
 	line-height: 1.99;
 	font-weight: 400;
 	display: inline;
