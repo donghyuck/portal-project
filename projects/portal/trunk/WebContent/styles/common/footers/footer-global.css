@@ -53,6 +53,7 @@
 	direction: rtl;
 	background:none;
 	border : 0;
+	padding:0;
 }
 
 .footer-global .breadcrumbs ol {
