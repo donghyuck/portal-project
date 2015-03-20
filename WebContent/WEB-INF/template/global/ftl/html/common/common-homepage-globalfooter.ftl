@@ -17,7 +17,7 @@
 					</div>
 
 
-<div id="directorynav" class="iphone directorynav">
+<div id="directorynav" class="directorynav">
 	<div id="dn-cola" class="column large-3 small-12 xsmall-12">
 		<input type="checkbox" id="gf-dn-iphone-iphone-6"><label for="gf-dn-iphone-iphone-6">
 		<h3>iPhone 6</h3>
