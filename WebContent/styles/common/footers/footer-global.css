@@ -32,15 +32,6 @@
 	color:#333; 
 }
 /*Link List*/
-.footer-global .footer a {
-	color: #666;
-}
-
-.footer-global .footer a:hover {
-	color: #333;
-}
-
-
 .footer-global .link-list li {
 	border-top: solid 1px #353535;
 }
@@ -110,10 +101,11 @@
   display: table;
 }
 
-.breadcrumbs-list>li a {
+
+.breadcrumbs a, .breadcrumbs-list>li a {
 	color: #666;
 }
-.breadcrumbs-list>li a:hover {
+.breadcrumbs a:hover, .breadcrumbs-list>li a:hover {
 	color: #333;
 }
 
