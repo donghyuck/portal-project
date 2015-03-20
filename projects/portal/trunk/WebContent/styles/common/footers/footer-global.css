@@ -33,15 +33,15 @@
 }
 
 .footer-global .footer hr {
-	border-top: solid 1px #353535;	
+	border-bottom: 1px solid #e3e3e3;
 }
 
 /*Link List*/
-/*
+
 .footer-global .link-list li {
 	border-top: solid 1px #353535;
 }
-*/
+
 
 .footer-global address,.footer-global .link-list a,.footer-global .link-list i {
 	color: #eee;
@@ -167,7 +167,6 @@
 	z-index: 1;
 	margin-top: 0;
 	margin-bottom: 18px;
-	border-bottom: 1px solid #e3e3e3;
 	line-height: 1.3889;
 }
 
