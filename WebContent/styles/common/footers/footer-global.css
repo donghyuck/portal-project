@@ -103,6 +103,12 @@
   white-space: nowrap;
 }
 
+.breadcrumbs-list>li+li:before {
+	padding: 0 5px;
+	color: #ccc;
+	content: "/\00a0";
+}
+
 .breadcrumbs-list li+li:before {
 	color: #ccc;
 	content: "\f054";
@@ -119,11 +125,7 @@
 	text-align: center;
 }
 
-.breadcrumbs-list>li+li:before {
-	padding: 0 5px;
-	color: #ccc;
-	content: "/\00a0";
-}
+
 
 /*Dotted Map*/
 .footer-global .footer .map-img {
