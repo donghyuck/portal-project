@@ -3,6 +3,9 @@
 <head>
 		<#assign pageMenuName = "USER_MENU" />
 		<#assign pageMenuItemName = "MENU_PERSONALIZED_2" />
+		<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
+		<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />		
+						
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<#compress>		
 		<script type="text/javascript">
