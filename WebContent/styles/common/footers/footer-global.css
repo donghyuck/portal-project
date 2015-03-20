@@ -251,6 +251,11 @@
 	font-size: 16px;
 }
 
+.footer-global .copyright label > h3 {
+	color:#828293;
+	font-size: 16px;
+}
+
 @media ( max-width : 991px) {
 	.footer-global .copyright,.footer-global .footer-socials {
 		text-align: left;
