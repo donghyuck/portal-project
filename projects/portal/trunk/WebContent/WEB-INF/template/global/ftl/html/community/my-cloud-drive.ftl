@@ -8,7 +8,7 @@
 		var jobs = [];					
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/font-awesome/4.3	.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',				
 			'css!<@spring.url "/styles/codrops/codrops.grid.min.css"/>',
@@ -17,7 +17,6 @@
 			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
-			
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
@@ -1040,7 +1039,7 @@
 			</section><!-- /.section -->
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-footer.ftl" >		
+			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>			
 
