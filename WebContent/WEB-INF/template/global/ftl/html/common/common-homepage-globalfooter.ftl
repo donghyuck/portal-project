@@ -102,7 +102,7 @@
 				</div>
 				<!-- End About -->
 				<div class="col-md-3 md-margin-bottom-40">
-					<label><h3>공지 & 이벤트</h3></label>
+					<label><h3><i class="fa fa-circle-thin"></i> 공지 & 이벤트</h3></label>
 					<script type="text/javascript">
 					<!--
 							jobs.push( function(){
@@ -126,14 +126,14 @@
 							});
 					-->
 					</script>
-					<ul id="footer-announcement" class="list-unstyled latest-list">
+					<ul id="footer-announcement" class="list-unstyled latest-list m-l-sm">
 					</ul>	
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
-					<label><h3>링크</h3></label>
+					<label><h3><i class="fa fa-circle-thin"></i> 링크</h3></label>
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
-					<label><h3>링크</h3></label>
+					<label><h3><i class="fa fa-circle-thin"></i> 제휴 사이트</h3></label>
 				</div>
 			</div><!-- /.row -->
 		</div><!-- /.container -->
