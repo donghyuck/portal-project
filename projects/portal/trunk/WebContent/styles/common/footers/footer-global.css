@@ -57,14 +57,14 @@
 }
 
 .breadcrumbs-home {
-	color: #666;
+	color: #666!important;
 	background: #f2f2f2;
 	display: block;
 	font-size: 1.1111em;
 	line-height: 1;
 	height: 1em;
 	position: absolute;
-	top: 0.2222em;
+	top:1.155em;
 	left: 0;
 	z-index: 2;
 }
@@ -124,8 +124,8 @@
   padding-left: 0.8em;
   white-space: nowrap;
 }
-
-.breadcrumbs-list>li+li:before {
+/*
+.breadcrumbs-list>lii:before {
 	padding: 0 5px;
 	color: #ccc;
 	content: "/\00a0";
@@ -135,8 +135,8 @@
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	transform: translate(0, 0);}
-
-.breadcrumbs-list li+li:before {
+*/
+.breadcrumbs-list li:before {
 	color: #ccc;
 	content: "\f105";
 	font-family: FontAwesome;
