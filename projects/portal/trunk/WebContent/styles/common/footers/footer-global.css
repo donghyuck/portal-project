@@ -103,6 +103,28 @@
   white-space: nowrap;
 }
 
+.breadcrumbs-list li+li:before {
+	color: #ccc;
+	content: "\f054";
+	font-family: FontAwesome;
+	font-size: 7px;
+	display: inline-block;
+	line-height: 8px;
+	top: -1px;
+	left: -1px;
+	position: relative;
+	padding: 0;
+	height: 8px;
+	width: 15px;
+	text-align: center;
+}
+
+.breadcrumbs-list>li+li:before {
+	padding: 0 5px;
+	color: #ccc;
+	content: "/\00a0";
+}
+
 /*Dotted Map*/
 .footer-global .footer .map-img {
 	background: url(../../img/map-img.png) 5px 60px no-repeat;
