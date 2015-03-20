@@ -31,10 +31,17 @@
 	font-weight: 600;
 	color:#333; 
 }
+
+.footer-global .footer hr {
+	border-top: solid 1px #353535;	
+}
+
 /*Link List*/
+/*
 .footer-global .link-list li {
 	border-top: solid 1px #353535;
 }
+*/
 
 .footer-global address,.footer-global .link-list a,.footer-global .link-list i {
 	color: #eee;
