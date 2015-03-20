@@ -55,6 +55,11 @@
 }
 
 .footer-global .breadcrumbs ol {
+	list-style: none;
+	margin: 0;
+}
+
+.footer-global .breadcrumbs ol {
 	display: block;
 	list-style-type: decimal;
 	-webkit-margin-before: 1em;
