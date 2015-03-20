@@ -1,5 +1,5 @@
 <!--=== Footer ===-->
-<footer class="footer-v1">
+<footer class="footer-global">
 	<div class="footer">
 		<div class="container">
 			<#if action.webSite ?? >
