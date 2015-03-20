@@ -101,6 +101,7 @@
   display: inline-block;
   padding-left: 0.8em;
   white-space: nowrap;
+  text-shadow: 0.1em 0.1em 0.15em #ccc;
 }
 
 .breadcrumbs-list>li+li:before {
@@ -110,6 +111,7 @@
 	font-style: normal;
 	font-weight:100;
 	text-rendering: auto;
+	text-shadow: none;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	transform: translate(0, 0);}
