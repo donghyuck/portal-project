@@ -9,7 +9,7 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div class="breadcrumbs">
-						<a href="main.do"><i class="fa fa-home fa-lg"></i></a>
+						<a href="main.do" class="breadcrumbs-home" ><i class="fa fa-home fa-lg"></i></a>
 						<ol class="breadcrumbs-list">
 							<li><a href="">${navigator.parent.title}</a></li>
 							<li class="active">${navigator.title}</li>
