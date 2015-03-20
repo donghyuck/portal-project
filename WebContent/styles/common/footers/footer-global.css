@@ -84,6 +84,13 @@
   display: table;
 }
 
+.breadcrumbs-list>li a {
+  color: #666;
+}
+.breadcrumbs-list a:visited, .breadcrumbs-list a:link, .breadcrumbs-list a:active {
+  text-decoration: none;
+}
+
 .breadcrumbs-list>li:first-child {
   margin-left: 12px;
 }
