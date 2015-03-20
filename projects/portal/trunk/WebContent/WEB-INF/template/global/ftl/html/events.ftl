@@ -166,7 +166,7 @@
 						<div class="list-group">
 						<#list navigator.parent.components as item >
 							<#if item.name ==  navigator.name >
-							<a href="${item.page}" class="list-group-item active">${ item.title } </a>
+							<a href="${item.page}" class="list-group-item active">${ item.title }</a>
 							<#else>
 							<a href="${item.page}" class="list-group-item">${ item.title } </a>
 							</#if>						
@@ -183,22 +183,19 @@
 			</#if>						 			
 			<!-- END MAIN CONTENT -->	
  			<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-footer.ftl" >		
+			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- END FOOTER -->	
-		</div>
-		
+		</div>		
 		<!-- START TEMPLATE -->
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 			<tr data-uid="#: uid #">
 				<td><span class="label label-success">공지</span>&nbsp;#: subject #	 </td>
 				<td class="text-center">#: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
 			</tr>
-		</script>
-						
+		</script>						
 		<script id="alert-message-template" type="text/x-kendo-tmpl">
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
-		</script>			
-
+		</script>	
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
 			<div class="panel panel-default no-border">
 				<div class="panel-heading rounded-top">
@@ -222,8 +219,7 @@
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:body"></div>	
 			</div>
-		</script>
-					
+		</script>					
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
