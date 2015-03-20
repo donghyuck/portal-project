@@ -44,7 +44,7 @@
 	line-height: 23px;
 }
 
-/* breadcombs */
+/* Breadcrumbs */
 .footer-global .breadcrumbs {
 	width: 100%;
 	overflow-x: auto;
@@ -139,7 +139,22 @@
 	text-align: center;
 }
 
+/*Directory*/
 
+.directorynav {
+	position: relative;
+	z-index: 1;
+	margin-top: 0;
+	margin-bottom: 18px;
+	border-bottom: 1px solid #e3e3e3;
+	position: relative;
+	line-height: 1.3889;
+}
+
+.directorynav:before,.directorynav:after {
+	content: " ";
+	display: table;
+}
 
 /*Dotted Map*/
 .footer-global .footer .map-img {
