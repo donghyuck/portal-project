@@ -78,6 +78,24 @@
 	direction: ltr;		
 }
 
+
+.breadcrumbs-list:before, .breadcrumbs-list:after {
+  content: " ";
+  display: table;
+}
+
+.breadcrumbs-list>li:first-child {
+  margin-left: 12px;
+}
+.breadcrumbs-list>li {
+  font-size: 0.6667em;
+  line-height: 2;
+  font-weight: 400;
+  display: inline-block;
+  padding-left: 0.8em;
+  white-space: nowrap;
+}
+
 /*Dotted Map*/
 .footer-global .footer .map-img {
 	background: url(../../img/map-img.png) 5px 60px no-repeat;
