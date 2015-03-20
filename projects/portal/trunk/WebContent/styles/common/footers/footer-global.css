@@ -32,11 +32,11 @@
 	color:#333; 
 }
 /*Link List*/
-.footer-global a {
+.footer-global .footer a {
 	color: #666;
 }
 
-.footer-global a:hover {
+.footer-global .footer a:hover {
 	color: #333;
 }
 
