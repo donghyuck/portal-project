@@ -311,7 +311,7 @@
 										}
 									});																		
 								}else{
-									$this.prop("checked", checked);	
+									$this.prop("checked", !checked);	
 								}																					
 							});
 						},
