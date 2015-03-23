@@ -310,8 +310,9 @@
 										complete: function(){
 										}
 									});																		
-								}
-								return;																					
+								}else{
+									$.prop("checked", checked);	
+								}																					
 							});
 						},
 						toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>')
