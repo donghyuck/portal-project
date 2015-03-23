@@ -293,7 +293,8 @@
 											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.formattedCreationDate"></span></li>
 											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.formattedModifiedDate"></span></li>															
 										</ul>
-										<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>										
+										<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>						
+														
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
