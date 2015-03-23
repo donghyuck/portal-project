@@ -292,7 +292,8 @@
 										<ul class="list-unstyled margin-bottom-30">															
 											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.formattedCreationDate"></span></li>
 											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.formattedModifiedDate"></span></li>															
-										</ul>										
+										</ul>
+										<button class="btn btn-flat btn-outline btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>										
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
@@ -309,7 +310,7 @@
 							
 							-->
 							<div class="panel-footer text-right">
-								<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+								
 							</div>
 						</div>
 					
