@@ -164,7 +164,7 @@
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.data("action") ){
 						case "properties" :
-							//createUserPropertiesGrid(detailRow.find(".properties"), data);
+							createSitePropertiesGrid(renderTo.find(".properties"), observable );
 							break;
 						case "logo" :
 							//createUserGroupGrid(detailRow.find(".groups"), data);
@@ -177,10 +177,50 @@
 			renderTo.data("model").setSource( source );
 			
 			if (!renderTo.is(":visible")) 
-				renderTo.fadeIn();	 
-			
+				renderTo.fadeIn();	 			
 		}				
 						
+		function createSitePropertiesGrid(renderTo, data){		
+			if( ! renderTo.data("kendoGrid") ){
+				renderTo.kendoGrid({
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json"/>', type:'post' },
+							create: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId , type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/website/properties/delete.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json" },
+							parameterMap: function (options, operation){			
+								if (operation !== "read" && options.models) {
+									return kendo.stringify(options.models);
+								}else{ 
+									return { siteId: data.webSiteId }
+								}
+							}
+						},						
+						batch: true, 
+						schema: {
+							model: common.ui.data.Property
+						},
+						error:common.ui.handleAjaxError
+					},
+					columns: [
+						{ title: "속성", field: "name", width: 250 },
+						{ title: "값",   field: "value" },
+						{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }
+					],
+					editable : true,
+					scrollable: true,
+					filterable: true,
+					sortable: true,
+					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
+					change: function(e) {
+					}
+				});		
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});	
+			}
+		}						
 										
 		-->
 		</script> 		 
