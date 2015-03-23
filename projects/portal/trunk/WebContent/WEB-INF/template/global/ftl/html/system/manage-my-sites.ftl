@@ -274,7 +274,12 @@
 											<p class="help-block">사이트 이름을 입력하세요.</p>
 										</div>	
 										<div class="m-b-sm">
-											<label class="control-label" for="input-site-description">위치</label>
+											<label class="control-label" for="input-site-url">도메인</label>
+											<input type="text" class="form-control input-sm" id="input-site-url" data-bind="value: site.url">
+											<p class="help-block">사이트 URL 을 입력하세요. 예) 192.168.0.1, www.demo.com</p>
+										</div>											
+										<div class="m-b-sm">
+											<label class="control-label" for="input-site-description">설명</label>
 											<input type="text" class="form-control imput-sm" id="input-site-description" data-bind="value: site.description">
 											<p class="help-block">사이트에 대한 간략한 설명을 입력하세요.</p>
 										</div>	
