@@ -257,17 +257,8 @@
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
-								<ul class="nav nav-tabs nav-tabs-xs" id="navigator-tabs" role="tablist">
-									<li>
-										<a href="#navigator-menu-view" data-toggle="tab">MENU</a>
-									</li>
-								</ul> <!-- / .nav -->
 							</div> <!-- / .panel-heading -->												
-							<div class="tab-content">
-								<div class="tab-pane fade" id="navigator-menu-view">
-									<div id="navigator-menu-grid" class="no-border-hr"></div>
-								</div><!-- ./tab-pane -->
-							</div><!-- /.tab-content -->
+							<div id="navigator-menu-grid" class="no-border-hr"></div>
 						</div>		
 					</div>
 					
