@@ -381,7 +381,7 @@
 	    },
 	    formattedModifiedDate : function(){
 	    	return kendo.toString(this.get("modifiedDate"), "g");
-	    }		
+	    },		
 	    copy: function ( target ){
 	    	target.webSiteId = this.get("webSiteId");
 	    	target.set("name",this.get("name") );
