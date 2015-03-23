@@ -104,7 +104,7 @@
 			var renderTo = $("#navigator-menu-details");			
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
-					menu : new common.ui.data.Menu(),
+					menu : new common.ui.data.WebSite(),
 					setSource : function(source){
 						source.copy(this.menu);
 						ace.edit("xml-editor").setValue(this.menu.menuData);
