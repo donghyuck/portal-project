@@ -177,6 +177,7 @@
 		#xml-editor	 {
 			height:550px;
 			width:100%;
+			border: solid 2px #666;
 		}	
 
 		.list-and-detail{
