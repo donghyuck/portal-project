@@ -73,7 +73,17 @@
 			float: none;
 		}			
 
-
+		.k-grid .k-selectable tr.k-state-selected{
+			background-color: #4cd964;
+			border-color: #4cd964;
+		}	
+			
+		.k-detail-row .k-grid .k-selectable tr.k-state-selected{
+			background-color: #5ac8fa;
+			border-color: #34aadc;			
+		}
+			
+			
 		.k-grid tr[aria-selected="false"] > td > a.k-button {
 			display : none; 
 		}
