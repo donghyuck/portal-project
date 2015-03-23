@@ -43,16 +43,8 @@
 				});	
 				
 				
-				$('#navigator-tabs').on( 'show.bs.tab', function (e) {		
-					var show_bs_tab = $(e.target);
-					switch( show_bs_tab.attr('href') ){
-						case "#navigator-menu-view" :
-							createMenuGrid();
-							break;
-					}	
-				});
-				
-				$('#navigator-tabs a:first').tab('show');		
+				createMenuGrid();
+					
 				// END SCRIPT
 			}
 		}]);		
