@@ -79,8 +79,8 @@
 		}	
 			
 		.k-detail-row .k-grid .k-selectable tr.k-state-selected{
-			background-color: #5ac8fa;
-			border-color: #34aadc;			
+			background-color: #4cd964;
+			border-color: #4cd964;	
 		}
 			
 			
