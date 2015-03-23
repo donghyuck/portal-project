@@ -270,9 +270,9 @@
 						<div id="navigator-menu-details" class="panel colourable" style="display:none;">						
 							<div class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
-									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
-									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">메뉴</a></li>
-									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
+									<li><a href="#bs-tabdrop-pill1" data-toggle="tab" data-action="none">기본정보</a></li>	
+									<li><a href="#bs-tabdrop-pill2" data-toggle="tab" data-action="none">메뉴</a></li>
+									<li><a href="#bs-tabdrop-pill3" data-toggle="tab" data-action="none">추가정보</a></li>								
 								</ul>
 								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
