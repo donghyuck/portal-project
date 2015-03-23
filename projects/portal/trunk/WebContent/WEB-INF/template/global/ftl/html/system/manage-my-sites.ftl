@@ -101,7 +101,8 @@
 		}
 		
 		function openEditor(source){
-			var renderTo = $("#navigator-menu-details");			
+			var renderTo = $("#navigator-menu-details");
+			
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
@@ -143,22 +144,33 @@
 							}
 						);	
 					}
-				});		
-								
+				});	
+												
 				renderTo.data("model", observable );
-				kendo.bind(renderTo, observable );					
+				kendo.bind(renderTo, observable );	
 				
 				var editor = ace.edit("xml-editor");		
 				editor.getSession().setMode("ace/mode/xml");
-				editor.getSession().setUseWrapMode(false);
-				
+				editor.getSession().setUseWrapMode(false);				
 				var switcher = renderTo.find("input[name='warp-switcher']");				
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
 					$(switcher).change(function(){
 						editor.getSession().setUseWrapMode($(this).is(":checked"));
 					});		
-				}					
+				}
+				
+				renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
+					var show_bs_tab = $(e.target);
+					switch( show_bs_tab.data("action") ){
+						case "properties" :
+							//createUserPropertiesGrid(detailRow.find(".properties"), data);
+							break;
+						case "logo" :
+							//createUserGroupGrid(detailRow.find(".groups"), data);
+							break;	
+					}	
+				});						
 				renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 			}
 			
