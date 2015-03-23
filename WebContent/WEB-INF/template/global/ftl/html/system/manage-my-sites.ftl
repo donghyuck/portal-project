@@ -250,7 +250,7 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
 							</div> <!-- / .panel-heading -->												
-							<div id="navigator-menu-grid" class="no-border-hr"></div>
+							<div id="navigator-menu-grid" class="no-border"></div>
 						</div>		
 					</div>
 					
