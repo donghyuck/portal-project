@@ -33,18 +33,17 @@
 			complete: function() {
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
+				
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
+						createMenuGrid();
 					},
 					change: function(e){
 						e.data.copy(targetCompany);
 					}
 				});	
-				
-				
-				createMenuGrid();
-					
+									
 				// END SCRIPT
 			}
 		}]);		
@@ -94,7 +93,7 @@
 						if( objectId > 0 ){
 							openEditor(common.ui.grid(renderTo).dataSource.get(objectId));
 						}else{
-							openEditor(new common.ui.data.Menu())
+							openEditor(new common.ui.data.WebSite())
 						}
 					}
 				});			
