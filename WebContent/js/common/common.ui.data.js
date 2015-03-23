@@ -390,7 +390,7 @@
 	    	target.set("url",this.get("url") );
 	    	target.set("enabled", this.get("enabled"));
 	    	target.set("allowAnonymousAccess", this.get("allowAnonymousAccess"));
-	    	target.set("modifiedDate", = this.get("modifiedDate"));
+	    	target.set("modifiedDate", this.get("modifiedDate"));
 	    	target.set("creationDate", this.get("creationDate")) ;
 	    	if( typeof this.get("menu") === 'object' )
 	    		target.set("menu", this.get("menu") );    		    	
