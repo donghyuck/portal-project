@@ -331,7 +331,7 @@
 								var objectId = $this.data("object-id");
 								
 								common.ui.ajax(
-									membership ? "<@spring.url "/secure/data/mgmt/user/groups/add.json"/>" : "<@spring.url "/secure/data/mgmt/user/groups/remove.json"/>" ,
+									membership ? "<@spring.url "/secure/data/mgmt/group/users/remove.json"/>" : "<@spring.url "/secure/data/mgmt/user/groups/remove.json"/>" ,
 									{
 										type : 'POST',
 										data: { groupId : objectId, userId:data.userId },
