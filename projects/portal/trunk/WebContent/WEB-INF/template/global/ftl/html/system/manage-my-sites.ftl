@@ -285,13 +285,10 @@
 											</label>
 										</div>			
 										<hr/>							
-														<ul class="list-unstyled margin-bottom-30">
-															
-															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.creationDate"></span></li>
-															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.modifiedDate"></span></li>
-															
-														</ul>
-										
+										<ul class="list-unstyled margin-bottom-30">															
+											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.creationDate"></span></li>
+											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.modifiedDate"></span></li>															
+										</ul>										
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
