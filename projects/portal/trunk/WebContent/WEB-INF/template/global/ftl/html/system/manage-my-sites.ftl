@@ -107,7 +107,7 @@
 					site : new common.ui.data.WebSite(),
 					setSource : function(source){
 						source.copy(this.site);
-						//ace.edit("xml-editor").setValue(this.menu.menuData);
+						ace.edit("xml-editor").setValue(this.site.menu.menuData);
 					},
 					update: function(e){
 						var $this = this;
