@@ -266,7 +266,7 @@
 										<div class="m-b-sm">
 											<label class="control-label" for="input-menu-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
-											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 이름]_[웹사이트 이름]_MENU</p>
+											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 키]_[웹사이트 키]</p>
 										</div>
 										<div class="m-b-sm">
 											<label class="control-label" for="input-menu-title">이름</label>
