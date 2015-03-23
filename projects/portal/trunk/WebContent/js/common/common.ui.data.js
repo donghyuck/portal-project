@@ -373,9 +373,15 @@
 			url : { type: "string", editable: true},
 			enabled: { type: "boolean", editable: true , defaultValue: false},
 			allowAnonymousAccess: { type: "boolean", editable: true, defaultValue: false },
-	        modifiedDate: { type: "date", editable: false },
-	        creationDate: { type: "date", editable: false } 			
+			modifiedDate: { type: "date", editable: false },
+			creationDate: { type: "date", editable: false } 			
 		},
+		formattedCreationDate : function(){
+	    	return kendo.toString(this.get("creationDate"), "g");
+	    },
+	    formattedModifiedDate : function(){
+	    	return kendo.toString(this.get("modifiedDate"), "g");
+	    }		
 	    copy: function ( target ){
 	    	target.webSiteId = this.get("webSiteId");
 	    	target.set("name",this.get("name") );
