@@ -354,7 +354,7 @@
 										<div id="xml-editor"></div>	
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
-										<p>Howdy, I'm in Section 3.</p>
+										<div class="properties"></div>
 									</div>
 								</div>
 
