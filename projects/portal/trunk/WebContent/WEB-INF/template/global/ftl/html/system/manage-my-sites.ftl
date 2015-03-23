@@ -285,8 +285,8 @@
 										</div>	
 										<div class="checkbox" style="margin: 0;">
 											<label>
-												<input type="checkbox" value="" class="px" data-bind="checked: site.enabled">
-												<span class="lbl">사용 여부</span>
+												<input type="checkbox"id="checkbox-site-enabled"  class="k-checkbox" data-bind="checked: site.enabled">
+												<label for="checkbox-site-enabled" class="k-checkbox-label">사용 여부</label>
 											</label>
 										</div>			
 										<hr/>							
