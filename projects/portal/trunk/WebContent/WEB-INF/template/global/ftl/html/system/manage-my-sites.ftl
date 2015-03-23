@@ -270,25 +270,25 @@
 										</div>
 										<div class="m-b-sm">
 											<label class="control-label" for="input-menu-title">이름</label>
-											<input type="text" class="form-control input-sm" id="input-menu-title" data-bind="value:menu.title">
+											<input type="text" class="form-control input-sm" id="input-menu-title" data-bind="value:site.displayName">
 											<p class="help-block">이름을 입력하세요.</p>
 										</div>	
 										<div class="m-b-sm">
 											<label class="control-label" for="input-menu-location">위치</label>
-											<input type="text" class="form-control imput-sm" id="input-menu-location" data-bind="value:menu.location">
+											<input type="text" class="form-control imput-sm" id="input-menu-location" data-bind="value:site.description">
 											<p class="help-block">메뉴 위치정보를 입력하세요.</p>
 										</div>	
 										<div class="checkbox" style="margin: 0;">
 											<label>
-												<input type="checkbox" value="" class="px" data-bind="checked: menu.enabled">
+												<input type="checkbox" value="" class="px" data-bind="checked: site.enabled">
 												<span class="lbl">사용 여부</span>
 											</label>
 										</div>			
 										<hr/>							
 														<ul class="list-unstyled margin-bottom-30">
 															
-															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
-															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.modifiedDate"></span></li>
+															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.creationDate"></span></li>
+															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.modifiedDate"></span></li>
 															
 														</ul>
 										
