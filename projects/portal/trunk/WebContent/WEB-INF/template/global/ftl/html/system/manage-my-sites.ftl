@@ -106,7 +106,7 @@
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
 					setSource : function(source){
-						source.copy(this.menu);
+						source.copy(this.site);
 						//ace.edit("xml-editor").setValue(this.menu.menuData);
 					},
 					update: function(e){
