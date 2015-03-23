@@ -300,7 +300,7 @@
 								var $this = $(this);
 								var objectId = $this.data("object-id");
 								var checked = $this.is(":checked");
-								if( confirm( "선택한 권한을 " +  ( checked ? "부여하시겠습니까?" : "제거하시겠습니까?" ) ) == true ){								
+								if( confirm( "선택한 권한을 " +  ( checked ? "부여하시겠습니까?" : "제거하시겠습니까?" ) ) ){								
 									common.ui.ajax( checked?"<@spring.url "/secure/data/mgmt/group/roles/add.json"/>":"<@spring.url "/secure/data/mgmt/group/roles/remove.json"/>", {
 										type : 'POST',
 										data: { groupId : data.groupId, roleId: objectId },
@@ -311,7 +311,7 @@
 										}
 									});																		
 								}else{
-									$.prop("checked", checked);	
+									$this.prop("checked", checked);	
 								}																					
 							});
 						},
