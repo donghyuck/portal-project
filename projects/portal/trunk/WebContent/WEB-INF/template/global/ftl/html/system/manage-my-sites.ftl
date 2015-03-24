@@ -311,17 +311,15 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				<div class="list-and-detail">
-					<div class="list-and-detail-nav p-xs">
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
 							</div> <!-- / .panel-heading -->												
 							<div id="company-site-grid" class="no-border"></div>
-						</div>		
-					</div>
-					
-					<div class="list-and-detail-contanier p-xs">									
+						</div>				
+
+
+
 						<div id="company-site-details" class="panel colourable" style="display:none;">	
 							<div class="panel-heading">
 								<span class="panel-title">&nbsp</span>
@@ -387,10 +385,7 @@
 								
 							</div>-->
 						</div>
-					
-					</div>
-					
-				</div><!-- / #list-and-detail -->	
+						
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
