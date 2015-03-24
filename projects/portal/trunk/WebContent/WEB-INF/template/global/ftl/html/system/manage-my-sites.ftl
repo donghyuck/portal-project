@@ -70,7 +70,7 @@
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info  btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 사이트 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" >새로고침</button></div>'),
-					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
+					/* pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		*/
 					resizable: true,
 					editable : false,
 					selectable : "row",
@@ -175,9 +175,8 @@
 						
 		function createSitePropertiesGrid(renderTo, data){
 			alert( kendo.stringify( data ) ) ;
-			if( ! renderTo.data("kendoGrid") ){
-				renderTo.kendoGrid({
-				
+			if( ! common.ui.exists( renderTo) ){
+				common.ui.grid( renderTo, {				
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
@@ -196,7 +195,6 @@
 						},
 						error:common.ui.handleAjaxError
 					},
-				
 					columns: [
 						{ title: "속성", field: "name", width: 250 },
 						{ title: "값",   field: "value" },
