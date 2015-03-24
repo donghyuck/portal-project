@@ -285,10 +285,6 @@
 			height:20px;
 		}
 		
-		.properties {
-			height:400px;
-		}
-		
 		.properties .k-grid-toolbar {
 			height:47px;
 		}
@@ -309,8 +305,8 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				
-				<div class="row">
-					<div class="col-sm-3 p-xs">
+				<div class="list-and-detail">
+					<div class="list-and-detail-nav p-xs">
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
@@ -319,7 +315,7 @@
 						</div>		
 					</div>
 					
-					<div class="col-sm-9 p-xs">									
+					<div class="list-and-detail-contanier p-xs">									
 						<div id="company-site-details" class="panel colourable" style="display:none;">	
 							<div class="panel-heading">
 												<span class="panel-title">&nbsp</span>
