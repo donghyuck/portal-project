@@ -324,12 +324,12 @@
 					<div class="list-and-detail-contanier p-xs">									
 						<div id="company-site-details" class="panel colourable" style="display:none;">	
 							<div class="panel-heading">
-												<span class="panel-title">&nbsp</span>
-													<ul class="nav nav-tabs nav-tabs-xs">
-														<li class=""><a href="#my-site-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
-														<li class=""><a href="#my-site-tabs-1" data-toggle="tab" data-action="logos">메뉴</a></li>
-														<li class=""><a href="#my-site-tabs-2" data-toggle="tab" data-action="properties">속성</a></li>
-													</ul>	
+								<span class="panel-title">&nbsp</span>
+									<ul class="nav nav-tabs nav-tabs-xs">
+										<li class=""><a href="#my-site-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
+										<li class=""><a href="#my-site-tabs-1" data-toggle="tab" data-action="logos">메뉴</a></li>
+										<li class=""><a href="#my-site-tabs-2" data-toggle="tab" data-action="properties">속성</a></li>
+									</ul>	
 								</div>
 							<div class="tab-content">
 								<div class="tab-pane fade" id="my-site-tabs-0">
@@ -366,10 +366,11 @@
 																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-1">
+									<div class="p-xs">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >									
 										<div id="xml-editor"></div>	
-																		
+									</div>									
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-2">
 									<div class="properties"></div>
