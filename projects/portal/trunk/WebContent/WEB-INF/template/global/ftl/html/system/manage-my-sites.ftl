@@ -110,6 +110,8 @@
 					setSource : function(source){
 						source.copy(this.site);
 						ace.edit("xml-editor").setValue(this.site.menu.menuData);
+						
+						
 					},
 					update: function(e){
 						var $this = this;
@@ -160,17 +162,7 @@
 					});		
 				}
 				
-				renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
-					var show_bs_tab = $(e.target);
-					switch( show_bs_tab.data("action") ){
-						case "properties" :
-							createSitePropertiesGrid(renderTo.find(".properties"), observable.site );
-							break;
-						case "logo" :
-							//createUserGroupGrid(detailRow.find(".groups"), data);
-							break;	
-					}	
-				});						
+					
 				renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 			}
 			
@@ -179,11 +171,13 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 			
 		}				
+		
 						
 		function createSitePropertiesGrid(renderTo, data){
 			alert( kendo.stringify( data ) ) ;
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
+				/*
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
@@ -202,6 +196,7 @@
 						},
 						error:common.ui.handleAjaxError
 					},
+				*/	
 					columns: [
 						{ title: "속성", field: "name", width: 250 },
 						{ title: "값",   field: "value" },
