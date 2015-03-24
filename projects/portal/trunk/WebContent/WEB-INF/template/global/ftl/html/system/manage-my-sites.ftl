@@ -333,11 +333,11 @@
 								</div>
 							<div class="tab-content">
 								<div class="tab-pane fade" id="my-site-tabs-0">
-										<div class="m-b-sm">
+									<div class="form-group">
 											<label class="control-label" for="input-site-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-site-name" data-bind="value: site.name">
 											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 키]_[웹사이트 키]</p>
-										</div>
+									</div>
 										<div class="m-b-sm">
 											<label class="control-label" for="input-site-title">이름</label>
 											<input type="text" class="form-control input-sm" id="input-site-title" data-bind="value: site.displayName">
