@@ -352,7 +352,7 @@
 											<input type="text" class="form-control imput-sm" id="input-site-description" data-bind="value: site.description">
 											<p class="help-block">사이트에 대한 간략한 설명을 입력하세요.</p>
 										</div>	
-										<div class=form-group">
+										<div class=form-group m-t-md">
 											<input type="checkbox"id="checkbox-site-enabled"  class="k-checkbox" data-bind="checked: site.enabled">
 											<label for="checkbox-site-enabled" class="k-checkbox-label">사용 여부</label>
 										</div>			
