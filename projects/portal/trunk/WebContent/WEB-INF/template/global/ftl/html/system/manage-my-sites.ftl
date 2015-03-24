@@ -286,7 +286,7 @@
 		}
 		
 		.properties .k-grid-toolbar {
-		
+			height:47px;
 		}
 		</style>
 		</#compress>		
