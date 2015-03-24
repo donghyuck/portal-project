@@ -243,6 +243,9 @@
 			border: 0 solid;
 		}
 		
+		.list-and-detail .list-and-detail-nav, .list-and-detail .list-and-detail-contanier {
+			float:none;
+		}
 		@media (min-width: 992px) {
 			.list-and-detail .list-and-detail-nav {
 				width: 400px;
@@ -257,7 +260,9 @@
 			.list-and-detail .list-and-detail-contanier {
 				margin-left: 400px;
 			}
-		}		
+		}
+		
+				
 		
 		.panel-body ul.nav.nav-tabs {
 			height: 36px;
