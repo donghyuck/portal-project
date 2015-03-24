@@ -49,7 +49,7 @@
 		}]);		
 		
 		function createMenuGrid(){
-			var renderTo = $("#navigator-menu-grid");
+			var renderTo = $("#company-site-grid");
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
 					dataSource: {
@@ -78,8 +78,8 @@
 					change: function(e) {
 					},
 					dataBound: function(e) {
-						if ($("#navigator-menu-details").is(":visible")) 
-							$("#navigator-menu-details").fadeOut();			
+						if ($("#company-site-details").is(":visible")) 
+							$("#company-site-details").fadeOut();			
 					}
 				});
 				renderTo.find("button[data-action=refresh]").click(function(e){
@@ -101,7 +101,7 @@
 		}
 		
 		function openEditor(source){
-			var renderTo = $("#navigator-menu-details");
+			var renderTo = $("#company-site-details");
 			
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
@@ -164,7 +164,7 @@
 					var show_bs_tab = $(e.target);
 					switch( show_bs_tab.data("action") ){
 						case "properties" :
-							createSitePropertiesGrid(renderTo.find(".properties"), observable );
+							createSitePropertiesGrid(renderTo.find(".properties"), observable.site );
 							break;
 						case "logo" :
 							//createUserGroupGrid(detailRow.find(".groups"), data);
@@ -185,7 +185,7 @@
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json"/>', type:'post' },
+							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>', type:'post' },
 							create: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId , type:'post', contentType : "application/json" },
 							update: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json"  },
 							destroy: { url:'<@spring.url "/secure/data/mgmt/website/properties/delete.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json" },
@@ -272,8 +272,8 @@
 			padding-top: 20px;
 		}
 		
-		#navigator-menu-grid.k-grid {
-			height:600px;
+		#company-site-grid.k-grid {
+			height:300px;
 		}
 		
 		.tab-pane label {
@@ -302,12 +302,12 @@
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
 							</div> <!-- / .panel-heading -->												
-							<div id="navigator-menu-grid" class="no-border"></div>
+							<div id="company-site-grid" class="no-border"></div>
 						</div>		
 					</div>
 					
 					<div class="list-and-detail-contanier p-xs">									
-						<div id="navigator-menu-details" class="panel colourable" style="display:none;">						
+						<div id="company-site-details" class="panel colourable" style="display:none;">						
 							<div class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab" data-action="none">기본정보</a></li>	
