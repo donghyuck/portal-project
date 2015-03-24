@@ -285,7 +285,7 @@
 
 
 
-						<div id="company-site-details" class="panel colourable" style="display:none;">	
+						<div id="company-site-details" class="panel colourable" style="display:none; border: 2px solid #34aadc; ">	
 							<div class="panel-heading">
 								<span class="panel-title">&nbsp</span>
 									<ul class="nav nav-tabs nav-tabs-xs">
