@@ -174,7 +174,7 @@
 		
 						
 		function createSitePropertiesGrid(renderTo, data){
-			alert( kendo.stringify( data ) ) ;
+			
 			if( ! common.ui.exists( renderTo) ){
 				common.ui.grid( renderTo, {				
 					dataSource: {
