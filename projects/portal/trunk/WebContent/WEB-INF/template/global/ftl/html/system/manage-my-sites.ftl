@@ -237,38 +237,7 @@
 			border: solid 2px #666;
 		}	
 
-		.list-and-detail{
-			margin: -18px -18px 18px -18px;
-			font-size:13px;
-		
-		}
-		
-		.list-and-detail .list-and-detail-nav {
-			border-color: #e2e2e2;
-			background: #f6f6f6;
-			border: 0 solid;
-		}
-		
-		.list-and-detail .list-and-detail-nav, .list-and-detail .list-and-detail-contanier {
-			float:none;
-		}
-		@media (min-width: 992px) {
-			.list-and-detail .list-and-detail-nav {
-				width: 400px;
-				border-bottom: 0;
-				position: relative;
-				height: auto;
-				border-right-width: 1px;		
-				border-color: #e2e2e2;
-				float: left;
-			}
-
-			.list-and-detail .list-and-detail-contanier {
-				margin-left: 400px;
-			}
-		}
-		
-				
+/**
 		
 		.panel-body ul.nav.nav-tabs {
 			height: 36px;
@@ -285,7 +254,7 @@
 		.tab-pane label {
 			height:20px;
 		}
-
+**/
 		</style>
 		</#compress>		
 	</head>
