@@ -286,10 +286,7 @@
 		.tab-pane label {
 			height:20px;
 		}
-		
-		.properties.k-grid {
-			min-height:300px;
-		}
+
 		</style>
 		</#compress>		
 	</head>
