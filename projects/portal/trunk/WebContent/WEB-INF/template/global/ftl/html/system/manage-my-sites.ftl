@@ -185,7 +185,7 @@
 				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId', type:'post' },
+							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
 							create: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId , type:'post', contentType : "application/json" },
 							update: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json"  },
 							destroy: { url:'<@spring.url "/secure/data/mgmt/website/properties/delete.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json" },
