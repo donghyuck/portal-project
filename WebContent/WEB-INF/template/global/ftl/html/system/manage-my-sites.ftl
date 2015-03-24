@@ -306,15 +306,17 @@
 					</div>
 					
 					<div class="list-and-detail-contanier p-xs">									
-						<div id="company-site-details" class="panel colourable" style="display:none;">						
-							<div class="panel-body">
-								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
-									<li><a href="#bs-tabdrop-pill1" data-toggle="tab" data-action="none">기본정보</a></li>	
-									<li><a href="#bs-tabdrop-pill2" data-toggle="tab" data-action="none">메뉴</a></li>
-									<li><a href="#bs-tabdrop-pill3" data-toggle="tab" data-action="properties">추가정보</a></li>								
-								</ul>
-								<div class="tab-content m-t-lg">
-									<div class="tab-pane" id="bs-tabdrop-pill1">
+						<div id="company-site-details" class="panel colourable" style="display:none;">	
+							<div class="panel-heading">
+												<span class="panel-title">&nbsp</span>
+													<ul class="nav nav-tabs nav-tabs-xs">
+														<li class=""><a href="#my-site-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
+														<li class=""><a href="#my-site-tabs-1" data-toggle="tab" data-action="logos">메뉴</a></li>
+														<li class=""><a href="#my-site-tabs-2" data-toggle="tab" data-action="properties">속성</a></li>
+													</ul>	
+								</div>
+							<div class="tab-content">
+								<div class="tab-pane fade" id="my-site-tabs-0">
 										<div class="m-b-sm">
 											<label class="control-label" for="input-site-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-site-name" data-bind="value: site.name">
@@ -344,20 +346,20 @@
 											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.formattedCreationDate"></span></li>
 											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.formattedModifiedDate"></span></li>															
 										</ul>
-										<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>						
-														
-									</div>
-									<div class="tab-pane active" id="bs-tabdrop-pill2">
+										<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
+																		
+								</div>	
+								<div class="tab-pane fade" id="my-site-tabs-1">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >									
 										<div id="xml-editor"></div>	
-									</div>
-									<div class="tab-pane" id="bs-tabdrop-pill3">
-										<div class="properties"></div>
-									</div>
-								</div>
+																		
+								</div>	
+								<div class="tab-pane fade" id="my-site-tabs-2">
+									<div class="properties"></div>
+								</div>																				
+							</div>																				
 
-							</div>
 							<!--
 							
 							
