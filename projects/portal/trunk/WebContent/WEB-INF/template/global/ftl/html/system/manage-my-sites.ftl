@@ -283,10 +283,6 @@
 			padding-top: 20px;
 		}
 		
-		#company-site-grid.k-grid {
-			height:600px;
-		}
-		
 		.tab-pane label {
 			height:20px;
 		}
