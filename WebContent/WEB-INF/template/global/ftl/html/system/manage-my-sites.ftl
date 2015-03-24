@@ -147,8 +147,7 @@
 				});	
 												
 				renderTo.data("model", observable );
-				kendo.bind(renderTo, observable );	
-				
+				kendo.bind(renderTo, observable );					
 				var editor = ace.edit("xml-editor");		
 				editor.getSession().setMode("ace/mode/xml");
 				editor.getSession().setUseWrapMode(false);				
@@ -180,7 +179,8 @@
 				renderTo.fadeIn();	 			
 		}				
 						
-		function createSitePropertiesGrid(renderTo, data){		
+		function createSitePropertiesGrid(renderTo, data){
+			alert( kendo.stringify( data ) ) ;
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					dataSource: {
