@@ -70,11 +70,11 @@
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info  btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 사이트 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" >새로고침</button></div>'),
-					/* pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		*/
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },		
 					resizable: true,
 					editable : false,
 					selectable : "row",
-					scrollable: false,
+					scrollable: true,
 					height: 300,
 					change: function(e) {
 					},
@@ -154,29 +154,42 @@
 				var editor = ace.edit("xml-editor");		
 				editor.getSession().setMode("ace/mode/xml");
 				editor.getSession().setUseWrapMode(false);				
-				var switcher = renderTo.find("input[name='warp-switcher']");				
-				if( switcher.length > 0 ){
-					$(switcher).switcher();
-					$(switcher).change(function(){
-						editor.getSession().setUseWrapMode($(this).is(":checked"));
-					});		
-				}
-				
-					
-				renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
-			}
-			
-			renderTo.data("model").setSource( source );
-			
+				createEditorModeSwitcher(renderTo, editor );
+				createSiteDetailsTabs(render, observable);
+			}			
+			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 			
-		}				
+		}	
 		
+		function createEditorModeSwitcher(renderTo, editor ){
+			var switcher = renderTo.find("input[name='warp-switcher']");				
+			if( switcher.length > 0 ){
+				$(switcher).switcher();
+				$(switcher).change(function(){
+					editor.getSession().setUseWrapMode($(this).is(":checked"));
+				});		
+			}		
+		}
+		
+		function createSiteDetailsTabs(renderTo, data){
+			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.data("action") ){
+					case "properties" :
+					createSitePropertiesGrid(renderTo.find(".properties"), data.site );
+					break;
+					case "logo" :
+					//createUserGroupGrid(detailRow.find(".groups"), data);
+					break;	
+				}	
+			});		
+			renderTo.find("ul.nav.nav-tabs a:first").tab('show');			
+		}				
 						
 		function createSitePropertiesGrid(renderTo, data){
-			
-			if( ! common.ui.exists( renderTo) ){
-				common.ui.grid( renderTo, {				
+			if( ! renderTo.data("kendoGrid") ){
+				renderTo.kendoGrid({
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
@@ -353,11 +366,10 @@
 																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-1">
-									<div class="p-sm">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >									
 										<div id="xml-editor"></div>	
-									</div>									
+																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-2">
 									<div class="properties"></div>
