@@ -332,40 +332,41 @@
 									</ul>	
 								</div>
 							<div class="tab-content">
-								<div class="tab-pane fade p-sm" id="my-site-tabs-0">
-									<div class="form-group">
-											<label class="control-label" for="input-site-name">코드</label>
-											<input type="text" class="form-control input-sm" id="input-site-name" data-bind="value: site.name">
-											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 키]_[웹사이트 키]</p>
-									</div>
-										<div class="m-b-sm">
+								<div class="tab-pane fade" id="my-site-tabs-0">
+									<div class="panel-body">
+										<div class="form-group">
+												<label class="control-label" for="input-site-name">코드</label>
+												<input type="text" class="form-control input-sm" id="input-site-name" data-bind="value: site.name">
+												<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 키]_[웹사이트 키]</p>
+										</div>
+										<div class=form-group">
 											<label class="control-label" for="input-site-title">이름</label>
 											<input type="text" class="form-control input-sm" id="input-site-title" data-bind="value: site.displayName">
 											<p class="help-block">사이트 이름을 입력하세요.</p>
 										</div>	
-										<div class="m-b-sm">
+										<div class=form-group">
 											<label class="control-label" for="input-site-url">도메인</label>
 											<input type="text" class="form-control input-sm" id="input-site-url" data-bind="value: site.url">
 											<p class="help-block">사이트 URL 을 입력하세요. 예) 192.168.0.1, www.demo.com</p>
 										</div>											
-										<div class="m-b-sm">
+										<div class=form-group">
 											<label class="control-label" for="input-site-description">설명</label>
 											<input type="text" class="form-control imput-sm" id="input-site-description" data-bind="value: site.description">
 											<p class="help-block">사이트에 대한 간략한 설명을 입력하세요.</p>
 										</div>	
-										<div class="p-sm">
-												<input type="checkbox"id="checkbox-site-enabled"  class="k-checkbox" data-bind="checked: site.enabled">
-												<label for="checkbox-site-enabled" class="k-checkbox-label">사용 여부</label>
+										<div class=form-group">
+											<input type="checkbox"id="checkbox-site-enabled"  class="k-checkbox" data-bind="checked: site.enabled">
+											<label for="checkbox-site-enabled" class="k-checkbox-label">사용 여부</label>
 										</div>			
 										<hr/>							
 										<ul class="list-unstyled margin-bottom-30">															
 											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.formattedCreationDate"></span></li>
 											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.formattedModifiedDate"></span></li>															
-										</ul>
+										</ul>										
+									</div>
+									<div class="panel-footer text-right">
 										<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
-<div class="panel-footer text-right">
-						<button class="btn btn-primary">Send message</button>
-					</div>																		
+									</div>																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-1">
 									<div class="p-xs">
