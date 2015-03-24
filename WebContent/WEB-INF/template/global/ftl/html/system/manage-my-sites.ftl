@@ -332,7 +332,7 @@
 									</ul>	
 								</div>
 							<div class="tab-content">
-								<div class="tab-pane fade" id="my-site-tabs-0">
+								<div class="tab-pane fade p-sm" id="my-site-tabs-0">
 									<div class="form-group">
 											<label class="control-label" for="input-site-name">코드</label>
 											<input type="text" class="form-control input-sm" id="input-site-name" data-bind="value: site.name">
@@ -363,7 +363,9 @@
 											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.formattedModifiedDate"></span></li>															
 										</ul>
 										<button class="btn btn-flat btn-outline btn-info pull-right" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
-																		
+<div class="panel-footer text-right">
+						<button class="btn btn-primary">Send message</button>
+					</div>																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-1">
 									<div class="p-xs">
