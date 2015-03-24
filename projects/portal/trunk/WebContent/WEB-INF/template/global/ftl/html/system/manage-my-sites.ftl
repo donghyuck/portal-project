@@ -74,7 +74,7 @@
 					resizable: true,
 					editable : false,
 					selectable : "row",
-					scrollable: true,
+					scrollable: false,
 					height: 300,
 					change: function(e) {
 					},
