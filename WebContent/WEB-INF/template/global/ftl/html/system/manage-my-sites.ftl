@@ -291,8 +291,8 @@
 			height:20px;
 		}
 		
-		.properties .k-grid-toolbar {
-			height:47px;
+		.properties.k-grid {
+			min-height:300px;
 		}
 		</style>
 		</#compress>		
@@ -374,7 +374,7 @@
 									</div>									
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-2">
-									<div class="properties"></div>
+									<div class="properties no-border"></div>
 								</div>																				
 							</div>																				
 
