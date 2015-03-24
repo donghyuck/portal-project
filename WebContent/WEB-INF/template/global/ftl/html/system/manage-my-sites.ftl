@@ -177,7 +177,7 @@
 			alert( kendo.stringify( data ) ) ;
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
-				/*
+				
 					dataSource: {
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
@@ -196,7 +196,7 @@
 						},
 						error:common.ui.handleAjaxError
 					},
-				*/	
+				
 					columns: [
 						{ title: "속성", field: "name", width: 250 },
 						{ title: "값",   field: "value" },
