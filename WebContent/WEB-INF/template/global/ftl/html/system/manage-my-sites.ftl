@@ -230,7 +230,11 @@
 		-->
 		</script> 		 
 		<style>
-		
+
+		.k-grid-content {
+			min-height:300px;
+		}
+					
 		#xml-editor	 {
 			height:550px;
 			width:100%;
