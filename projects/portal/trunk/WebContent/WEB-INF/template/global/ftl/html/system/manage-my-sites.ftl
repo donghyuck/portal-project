@@ -285,6 +285,10 @@
 			height:20px;
 		}
 		
+		.properties {
+			height:400px;
+		}
+		
 		.properties .k-grid-toolbar {
 			height:47px;
 		}
