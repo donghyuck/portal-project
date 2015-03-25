@@ -344,7 +344,7 @@
 											<input type="text" class="form-control imput-sm" id="input-site-description" data-bind="value: site.description">
 											<p class="help-block">사이트에 대한 간략한 설명을 입력하세요.</p>
 										</div>	
-										<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">옵션</h6>										
+										<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">고급 옵션</h6>										
 										<div class="form-group">
 											<input type="checkbox" id="checkbox-site-new-menu"  class="k-checkbox" data-bind="checked: requiredNewMenu">
 											<label for="checkbox-site-new-menu" class="k-checkbox-label">새로운 메뉴 생성</label>
