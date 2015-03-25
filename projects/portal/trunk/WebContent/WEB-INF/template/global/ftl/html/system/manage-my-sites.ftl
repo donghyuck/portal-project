@@ -165,30 +165,32 @@
 					update2: function(e){
 						var $this = this;
 						var btn = $(e.target);							
-						btn.button('loading');						
-						$this.site.menu.menuData = ace.edit("xml-editor").getValue();
-						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
-							{
-								data : kendo.stringify( $this.site.menu ),
-								contentType : "application/json",
-								success : function(response){},
-								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
-								},
-								complete : function(e){
-									common.ui.grid($("#company-site-grid")).dataSource.read();									
-									btn.button('reset');
+									
+						if( confirm("저장 하시겠습니까?") ) {
+							btn.button('loading');			
+							$this.site.menu.menuData = ace.edit("xml-editor").getValue();
+							common.ui.ajax(
+								'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
+								{
+									data : kendo.stringify( $this.site.menu ),
+									contentType : "application/json",
+									success : function(response){},
+									fail: function(){								
+										common.ui.notification({
+											hide:function(e){
+												btn.button('reset');
+											}
+										}).show(
+											{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+											"error"
+										);	
+									},
+									complete : function(e){
+										btn.button('reset');
+									}
 								}
-							}
-						);	
+							);
+						}		
 					}
 				});	
 												
