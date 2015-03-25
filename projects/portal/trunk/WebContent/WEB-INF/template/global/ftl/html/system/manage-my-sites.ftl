@@ -109,7 +109,7 @@
 					editable : false,
 					setSource : function(source){
 						source.copy(this.site);			
-						if( this.site.siteId > 0 ){
+						if( this.site.webSiteId > 0 ){
 							this.set("editable", true);
 						}else{
 							this.set("editable", false);
