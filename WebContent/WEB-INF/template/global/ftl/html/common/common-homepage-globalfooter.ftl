@@ -75,7 +75,7 @@
 					
 					${action.getWebSiteMenu("FOOTER_MENU") }		
 					
-					<#assign websiteFooterMenu = action.getWebSiteMenu("FOOTER_MENU") />
+					<#assign websiteFooterMenu = action.getWebSiteMenu("1") />
 					<#if  websiteFooterMenu.components?has_content >
 					<ul class="list-unstyled footer-link-list m-l-sm">
 					<#list websiteFooterMenu.components as item >					
