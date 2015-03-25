@@ -84,6 +84,7 @@
 						<li><a href="${item.page}">${item.title}</a></li>
 					</#list>
 					</ul>	
+					</#if>
 				</div>	
 			</div><!-- /.row -->
 		</div><!-- /.container -->
