@@ -267,6 +267,14 @@
 			display:block;		
 		}	
 		
+		@media (min-width: 768px) {
+			.multi-pane-layout > aside {
+				-webkit-box-flex: 1;
+				-webkit-flex: 1 1 auto;
+				-ms-flex: 1 1 auto;
+				flex: 1 1 auto;			
+			}
+		}
 					
 		</style>
 		</#compress>		
