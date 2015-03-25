@@ -373,8 +373,8 @@
 			url : { type: "string", editable: true},
 			enabled: { type: "boolean", editable: true , defaultValue: false},
 			allowAnonymousAccess: { type: "boolean", editable: true, defaultValue: false },
-			modifiedDate: { type: "date", editable: false },
-			creationDate: { type: "date", editable: false } 			
+			modifiedDate: { type: "date" },
+			creationDate: { type: "date" } 			
 		},
 		formattedCreationDate : function(){
 	    	return kendo.toString(this.get("creationDate"), "g");
