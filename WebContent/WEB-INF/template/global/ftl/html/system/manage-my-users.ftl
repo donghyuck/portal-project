@@ -562,7 +562,7 @@
 							<div class="roles"></div>
 						</div>
 						<div class="tab-pane fade" id="user-#= userId#-tab-4">
-							 <div class="properties"></div>
+							<div class="properties"></div>
 						</div>
 																							
 					</div>
