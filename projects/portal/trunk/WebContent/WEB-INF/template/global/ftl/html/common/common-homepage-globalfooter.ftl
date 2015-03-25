@@ -2,11 +2,6 @@
 <footer class="footer-global">
 	<div class="footer">
 		<div class="container">
-			
-			<#if action.isSetPage() && !action.isSetNavigator() &&  action.webSite ??   >
-				<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
-				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />					
-			</#if>
 			<#if action.webSite ?? >				
 			<!-- breadcombs -->
 			<div class="footer-breadory">
