@@ -2,13 +2,6 @@
 <footer class="footer-v1">
 	<div class="footer">
 		<div class="container">
-			<!-- breadcombs -->
-			<div class="row">
-			
-			
-			
-			</div>
-			<!--  /.breadcombs -->
 			<div class="row">
 				<!-- About -->
 				<div class="col-md-3 md-margin-bottom-40">
