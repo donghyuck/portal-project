@@ -141,19 +141,18 @@
 							{
 								data : kendo.stringify( $this.site ),
 								contentType : "application/json",
-								success : function(response){},
+								success : function(response){
+									//common.ui.grid($("#company-site-grid")).dataSource.read();
+								},
 								fail: function(){								
 									common.ui.notification({
 										hide:function(e){
 											$btn.button('reset');
 										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
+									}).show({	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	}, "error"	);	
 								},
 								complete : function(e){
-									common.ui.grid($("#company-site-grid")).dataSource.read();									
+									common.ui.grid($("#company-site-grid")).dataSource.read();								
 									$btn.button('reset');
 								}
 							}
