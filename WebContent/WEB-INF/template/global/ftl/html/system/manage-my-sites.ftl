@@ -100,6 +100,11 @@
 			}	
 		}
 		
+		function getEditorSource(){
+			var renderTo = $("#company-site-details");		
+			return renderTo.data("model");
+		}
+		
 		function openEditor(source){
 			var renderTo = $("#company-site-details");
 			if( !renderTo.data("model")){									
