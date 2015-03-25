@@ -198,7 +198,7 @@
 					createSitePropertiesGrid(renderTo.find(".properties"), data.site );
 					break;
 					case "logo" :
-					createCompanyLogoGrid	(renderTo.find(".logos"), renderTo.find("[name=logo-file]"), data.site );
+					createSiteLogoGrid(renderTo.find(".logos"), renderTo.find("[name=logo-file]"), data.site );
 					break;	
 				}	
 			});
