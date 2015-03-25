@@ -276,23 +276,15 @@
 				</div><!-- / .page-header -->	
 				<div style=" display: flex;  width: 100%; position:relative" >
 					<aside class="flex: 0 0 18.57142857rem; display:block;">
-					
-					aa
-					</aside>
-					<section class="  flex: 1 1 auto; display:block;">
-					
-					aa
-					</section>
-				</div>
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
 							</div> <!-- / .panel-heading -->												
 							<div id="company-site-grid" class="no-border"></div>
-						</div>				
-
-
-
+						</div>
+					</aside>
+					<section class="  flex: 1 1 auto; display:block;">
+					
 						<div id="company-site-details" class="panel colourable" style="display:none; border: 2px solid #34aadc; ">	
 							<div class="panel-heading">
 								<span class="panel-title">&nbsp</span>
@@ -349,7 +341,14 @@
 								<div class="tab-pane fade" id="my-site-tabs-2">
 									<div class="properties no-border"></div>
 								</div>																				
-							</div>																				
+							</div>	
+					</section>
+				</div>
+				
+
+
+
+																			
 
 							<!--
 							
