@@ -108,6 +108,9 @@
 					site : new common.ui.data.WebSite(),
 					setSource : function(source){
 						source.copy(this.site);
+						
+						
+						alert( kendo.stringify(this.site.menu));
 						ace.edit("xml-editor").setValue(this.site.menu.menuData);
 						
 						
