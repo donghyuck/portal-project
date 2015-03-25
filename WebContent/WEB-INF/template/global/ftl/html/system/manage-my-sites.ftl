@@ -113,6 +113,7 @@
 							this.set("editable", true);
 						}else{
 							this.set("editable", false);
+							this.set("enabled", true);
 						}									
 						if(common.ui.defined(source.menu)){							
 							this.set("menuInherited", this.site.menu.menuId == ${WebSiteUtils.getDefaultMenuId()} ? true : false );
