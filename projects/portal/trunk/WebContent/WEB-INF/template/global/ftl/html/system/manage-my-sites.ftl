@@ -133,13 +133,12 @@
 					},
 					update: function(e){
 						var $this = this;
-						var btn = $(e.target);		
-						btn.button('loading');						
-						$this.menu.menuData = ace.edit("xml-editor").getValue();						
+						var btn = $(e.target);							
+						btn.button('loading');	
 						common.ui.ajax(
-							'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
+							'<@spring.url "/secure/data/mgmt/website/update.json?output=json" />' , 
 							{
-								data : kendo.stringify( $this.menu ),
+								data : kendo.stringify( $this.site ),
 								contentType : "application/json",
 								success : function(response){},
 								fail: function(){								
@@ -152,11 +151,33 @@
 										"error"
 									);	
 								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
+								complete : function(e){
+									common.ui.grid(renderTo).dataSource.read();									
+									btn.button('reset');
+								}
+							}
+						);						
+					}, 
+					update2: function(e){
+						var $this = this;
+						var btn = $(e.target);							
+						btn.button('loading');						
+						$this.site.menu.menuData = ace.edit("xml-editor").getValue();
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.site.menu ),
+								contentType : "application/json",
+								success : function(response){},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
 								},
 								complete : function(e){
 									common.ui.grid(renderTo).dataSource.read();									
@@ -447,7 +468,7 @@
 										</ul>										
 									</div>
 									<div class="panel-footer text-right">
-										<button class="btn btn-flat btn-outline btn-info" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
+										<button class="btn btn-flat btn-outline btn-info" data-bind="events:{click:saveOrUpdate}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
 									</div>																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-1">
