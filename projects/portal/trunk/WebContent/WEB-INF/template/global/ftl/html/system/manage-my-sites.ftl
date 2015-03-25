@@ -102,7 +102,7 @@
 		
 		function openEditor(source){
 			var renderTo = $("#company-site-details");
-			
+			alert( ${WebSiteUtils.getDefaultMenuId } );
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
@@ -110,6 +110,7 @@
 					setSource : function(source){
 						source.copy(this.site);						
 						if(common.ui.defined(source.menu)){
+							
 							this.set("menuInherited", false);
 							ace.edit("xml-editor").setValue(this.site.menu.menuData);
 						}else{
