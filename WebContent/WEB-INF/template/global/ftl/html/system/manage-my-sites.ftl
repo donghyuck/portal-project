@@ -313,7 +313,7 @@
 								<span class="panel-title">&nbsp</span>
 									<ul class="nav nav-tabs nav-tabs-xs">
 										<li class=""><a href="#my-site-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
-										<li class=""><a href="#my-site-tabs-1" data-toggle="tab" data-action="logos">메뉴</a></li>
+										<li data-bind="visible:editable"><a href="#my-site-tabs-1" data-toggle="tab" data-action="logos">메뉴</a></li>
 										<li data-bind="visible:editable"><a href="#my-site-tabs-2" data-toggle="tab" data-action="properties">속성</a></li>
 									</ul>	
 								</div>
