@@ -107,6 +107,7 @@
 					site : new common.ui.data.WebSite(),
 					menuInherited : true,
 					editable : false,
+					requiredNewMenu: false,
 					setSource : function(source){
 						source.copy(this.site);			
 						if( this.site.webSiteId > 0 ){
@@ -114,6 +115,7 @@
 						}else{
 							this.set("editable", false);
 							this.set("enabled", true);
+							this.set("requiredNewMenu", false);
 						}									
 						if(common.ui.defined(source.menu)){							
 							this.set("menuInherited", this.site.menu.menuId == ${WebSiteUtils.getDefaultMenuId()} ? true : false );
