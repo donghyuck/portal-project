@@ -102,7 +102,7 @@
 		
 		function openEditor(source){
 			var renderTo = $("#company-site-details");
-			alert( ${WebSiteUtils.defaultMenuId } );
+			alert( ${WebSiteUtils.getDefaultMenuId() } );
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
