@@ -109,7 +109,7 @@
 					setSource : function(source){
 						source.copy(this.site);						
 						if(common.ui.defined(source.menu)){							
-							this.set("menuInherited", this.site.menu.menuId == ${WebSiteUtils.getDefaultMenuId() ? true : false );
+							this.set("menuInherited", this.site.menu.menuId == ${WebSiteUtils.getDefaultMenuId()} ? true : false );
 							ace.edit("xml-editor").setValue(this.site.menu.menuData);
 						}else{
 							this.set("menuInherited", true);
