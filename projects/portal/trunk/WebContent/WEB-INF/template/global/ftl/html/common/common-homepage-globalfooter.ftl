@@ -77,11 +77,13 @@
 					<div class="footer-logo">
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
 					</div>
+					<#assign websiteFooterMenu = action.getWebSiteMenu("FOOTER_MENU") />
+					<#if  websiteFooterMenu.components?has_content >
 					<ul class="list-unstyled footer-link-list m-l-sm">
-						<li><a href="#">메르디앙 소개</a></li>
-						<li><a href="#">사이트 맵</a></li>
-						<li><a href="#">이벤트 & 공지</a></li>
-					</ul>											
+					<#list websiteFooterMenu.components as item >					
+						<li><a href="${item.page}">${item.title}</a></li>
+					</#list>
+					</ul>	
 				</div>	
 			</div><!-- /.row -->
 		</div><!-- /.container -->
