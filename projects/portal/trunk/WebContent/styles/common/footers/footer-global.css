@@ -26,6 +26,10 @@
 	font-weight: 200;
 }
 
+.footer-global .footer .b-l {
+	border-left: 1px solid #e1e1e1;	
+}
+
 .footer-global .footer h3 {
 	font-size: 1em;
 	line-height: 1.4167;
