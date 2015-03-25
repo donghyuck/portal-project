@@ -356,7 +356,7 @@
 										<div id="xml-editor"></div>	
 									</div>
 									<div class="panel-footer text-right">
-										<button class="btn btn-flat btn-outline btn-info" data-bind="events:{click:update},disable:menuInherited" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
+										<button class="btn btn-flat btn-outline btn-info" data-bind="events:{click:update}, disabled:menuInherited" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
 									</div>																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-2">
