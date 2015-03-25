@@ -107,6 +107,7 @@
 		
 		function openEditor(source){
 			var renderTo = $("#company-site-details");
+			
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
@@ -133,8 +134,8 @@
 					},
 					update: function(e){
 						var $this = this;
-						var btn = $(e.target);							
-						btn.button('loading');	
+						var $btn = $(e.target);							
+						$btn.button('loading');	
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/website/update.json?output=json" />' , 
 							{
@@ -144,7 +145,7 @@
 								fail: function(){								
 									common.ui.notification({
 										hide:function(e){
-											btn.button('reset');
+											$btn.button('reset');
 										}
 									}).show(
 										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
@@ -152,8 +153,8 @@
 									);	
 								},
 								complete : function(e){
-									common.ui.grid(renderTo).dataSource.read();									
-									btn.button('reset');
+									common.ui.grid($("#company-site-grid")).dataSource.read();									
+									$btn.button('reset');
 								}
 							}
 						);						
@@ -180,7 +181,7 @@
 									);	
 								},
 								complete : function(e){
-									common.ui.grid(renderTo).dataSource.read();									
+									common.ui.grid($("#company-site-grid")).dataSource.read();									
 									btn.button('reset');
 								}
 							}
