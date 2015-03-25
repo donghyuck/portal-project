@@ -369,7 +369,14 @@
 								<div class="tab-pane fade" id="my-site-tabs-1">
 									<div class="panel-body">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
-										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >									
+										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >			
+
+										<div class="form-group" data-bind="visible:menuInherited">
+											<input type="checkbox" id="checkbox-site-new-menu2"  class="k-checkbox" data-bind="checked: requiredNewMenu">
+											<label for="checkbox-site-new-menu2" class="k-checkbox-label">새로운 메뉴 생성</label>
+											<p class="help-block text-danger small" style="padding-left: 25px;">디폰트 메뉴를 복사하여 수정 가능한 새로운 매뉴를 생성합니다.</p>
+										</div>	
+																										
 										<div id="xml-editor"></div>	
 									</div>
 									<div class="panel-footer text-right">
