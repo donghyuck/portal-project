@@ -107,13 +107,12 @@
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
 					setSource : function(source){
-						source.copy(this.site);
-						
-						
-						alert( kendo.stringify(this.site.menu));
-						ace.edit("xml-editor").setValue(this.site.menu.menuData);
-						
-						
+						source.copy(this.site);						
+						if(common.ui.defined(source.menu)){
+							ace.edit("xml-editor").setValue(this.site.menu.menuData);
+						}else{
+							ace.edit("xml-editor").setValue("");
+						}
 					},
 					update: function(e){
 						var $this = this;
