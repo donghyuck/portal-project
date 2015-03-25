@@ -170,9 +170,9 @@
 							btn.button('loading');			
 							$this.site.menu.menuData = ace.edit("xml-editor").getValue();
 							common.ui.ajax(
-								'<@spring.url "/secure/data/mgmt/navigator/update.json?output=json" />' , 
+								'<@spring.url "/secure/data/mgmt/website/navigator/update.json?output=json" />' , 
 								{
-									data : kendo.stringify( $this.site.menu ),
+									data : kendo.stringify( $this.site ),
 									contentType : "application/json",
 									success : function(response){},
 									fail: function(){								
