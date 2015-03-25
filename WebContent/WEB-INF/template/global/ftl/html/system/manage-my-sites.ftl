@@ -281,7 +281,11 @@
 		@media (min-width: 768px) {
 
 		}
-					
+		
+		.k-checkbox-label {
+		  font-weight: 100;
+		  color: #737373;		
+		}			
 		</style>
 		</#compress>		
 	</head>
