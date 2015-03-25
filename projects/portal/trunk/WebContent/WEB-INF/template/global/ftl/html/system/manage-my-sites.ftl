@@ -344,10 +344,11 @@
 											<input type="text" class="form-control imput-sm" id="input-site-description" data-bind="value: site.description">
 											<p class="help-block">사이트에 대한 간략한 설명을 입력하세요.</p>
 										</div>	
+										<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">옵션</h6>										
 										<div class="form-group">
 											<input type="checkbox" id="checkbox-site-new-menu"  class="k-checkbox" data-bind="checked: requiredNewMenu">
 											<label for="checkbox-site-new-menu" class="k-checkbox-label">새로운 메뉴 생성</label>
-											<p class="help-block text-danger">디폴트 메뉴를 사용합니다. 디폰트 메뉴는 수정할 수 없습니다.</p>
+											<p class="help-block text-danger small" style="padding-left: 25px;">채크하지 않으면 디폴트 메뉴를 사용합니다. 디폰트 메뉴는 수정할 수 없습니다.</p>
 										</div>	
 										<div class="form-group">
 											<input type="checkbox" id="checkbox-site-enabled"  class="k-checkbox" data-bind="checked: site.enabled">
