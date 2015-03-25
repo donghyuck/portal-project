@@ -73,7 +73,7 @@
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
 					</div>
 					<#assign websiteFooterMenu = action.getWebSiteMenu("USER_MENU") />
-					${ action.menu }
+					${ action.webSite.menu }
 					<#if  websiteFooterMenu.components?has_content >
 					<ul class="list-unstyled footer-link-list m-l-sm">
 					<#list websiteFooterMenu.components as item >					
