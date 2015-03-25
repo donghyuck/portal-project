@@ -255,7 +255,8 @@
 			-webkit-flex:  0 0 400px;
 			-ms-flex:  0 0 400px;
 			flex: 0 0 400px
-			display:block;		
+			display:block;					
+			padding-right:10px;
 		}	
 		
 		
