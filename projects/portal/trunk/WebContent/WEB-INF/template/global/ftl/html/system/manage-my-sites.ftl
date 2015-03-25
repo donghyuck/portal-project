@@ -345,11 +345,14 @@
 									</div>																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-1">
-									<div class="p-xs">
+									<div class="panel-body">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >									
 										<div id="xml-editor"></div>	
-									</div>									
+									</div>
+									<div class="panel-footer text-right">
+										<button class="btn btn-flat btn-outline btn-info" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
+									</div>																		
 								</div>	
 								<div class="tab-pane fade" id="my-site-tabs-2">
 									<div class="properties no-border"></div>
