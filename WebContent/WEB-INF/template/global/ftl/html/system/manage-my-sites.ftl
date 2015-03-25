@@ -216,6 +216,7 @@
 					scrollable: true,
 					filterable: true,
 					sortable: true,
+					height: 300,
 					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
 					change: function(e) {
 					}
@@ -239,25 +240,34 @@
 			width:100%;
 			border: solid 2px #666;
 		}	
-
-/**
 		
-		.panel-body ul.nav.nav-tabs {
-			height: 36px;
-			right: 20px;
-			position: absolute;
+		.multi-pane-layout {
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex
+			width: 100%; 
+			position:relative
 		}
 		
-		.panel-body .tab-content {
-			border-top: 2px solid #e4e4e4;
-			margin-top: 34px;
-			padding-top: 20px;
-		}
+		.multi-pane-layout > aside {
+			-webkit-box-flex:  0 0 400px;
+			-webkit-flex:  0 0 400px;
+			-ms-flex:  0 0 400px;
+			flex: 0 0 400px
+			display:block;		
+		}	
 		
-		.tab-pane label {
-			height:20px;
-		}
-**/
+		
+		.multi-pane-layout > section.pane {
+			-webkit-box-flex: 1;
+			-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			display:block;		
+		}	
+		
+					
 		</style>
 		</#compress>		
 	</head>
@@ -274,8 +284,8 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				<div style=" display: flex;  width: 100%; position:relative" >
-					<aside class="flex: 0 0 18.57142857rem; display:block;">
+				<div class="multi-pane-layout" >
+					<aside>
 						<div class="panel colourable">
 							<div class="panel-heading">
 								<span class="panel-title"><i class="fa fa-bars"></i></span>
@@ -283,8 +293,7 @@
 							<div id="company-site-grid" class="no-border"></div>
 						</div>
 					</aside>
-					<section class="  flex: 1 1 auto; display:block;">
-					
+					<section class="pane">					
 						<div id="company-site-details" class="panel colourable" style="display:none; border: 2px solid #34aadc; ">	
 							<div class="panel-heading">
 								<span class="panel-title">&nbsp</span>
