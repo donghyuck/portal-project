@@ -325,22 +325,22 @@
 												<input type="text" class="form-control input-sm" id="input-site-name" data-bind="value: site.name">
 												<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 키]_[웹사이트 키]</p>
 										</div>
-										<div class=form-group">
+										<div class="form-group">
 											<label class="control-label" for="input-site-title">이름</label>
 											<input type="text" class="form-control input-sm" id="input-site-title" data-bind="value: site.displayName">
 											<p class="help-block">사이트 이름을 입력하세요.</p>
 										</div>	
-										<div class=form-group">
+										<div class="form-group">
 											<label class="control-label" for="input-site-url">도메인</label>
 											<input type="text" class="form-control input-sm" id="input-site-url" data-bind="value: site.url">
 											<p class="help-block">사이트 URL 을 입력하세요. 예) 192.168.0.1, www.demo.com</p>
 										</div>											
-										<div class=form-group">
+										<div class="form-group">
 											<label class="control-label" for="input-site-description">설명</label>
 											<input type="text" class="form-control imput-sm" id="input-site-description" data-bind="value: site.description">
 											<p class="help-block">사이트에 대한 간략한 설명을 입력하세요.</p>
 										</div>	
-										<div class=form-group m-t-md">
+										<div class="form-group m-t-md">
 											<input type="checkbox"id="checkbox-site-enabled"  class="k-checkbox" data-bind="checked: site.enabled">
 											<label for="checkbox-site-enabled" class="k-checkbox-label">사용 여부</label>
 										</div>			
