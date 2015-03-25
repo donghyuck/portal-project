@@ -124,6 +124,7 @@
 							this.set("menuInherited", true);
 							ace.edit("xml-editor").setValue("");
 						}
+						renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 					},
 					update: function(e){
 						var $this = this;
@@ -195,8 +196,7 @@
 					//createUserGroupGrid(detailRow.find(".groups"), data);
 					break;	
 				}	
-			});		
-			renderTo.find("ul.nav.nav-tabs a:first").tab('show');			
+			});
 		}				
 						
 		function createSitePropertiesGrid(renderTo, data){
