@@ -345,9 +345,9 @@
 											<label for="checkbox-site-enabled" class="k-checkbox-label">사용 여부</label>
 										</div>			
 										<hr/>							
-										<ul class="list-unstyled margin-bottom-30" data-bind="visible:editable">															
-											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: site.formattedCreationDate"></span></li>
-											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: site.formattedModifiedDate"></span></li>															
+										<ul class="list-inline text-right" data-bind="visible:editable">															
+											<li><span class="label">생성일</span> <span data-bind="text: site.formattedCreationDate"></span></li>
+											<li><span class="label">수정일</span> <span data-bind="text: site.formattedModifiedDate"></span></li>															
 										</ul>										
 									</div>
 									<div class="panel-footer text-right">
