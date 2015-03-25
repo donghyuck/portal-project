@@ -102,16 +102,14 @@
 		
 		function openEditor(source){
 			var renderTo = $("#company-site-details");
-			alert( ${WebSiteUtils.getDefaultMenuId() } );
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
 					menuInherited : true,
 					setSource : function(source){
 						source.copy(this.site);						
-						if(common.ui.defined(source.menu)){
-							
-							this.set("menuInherited", false);
+						if(common.ui.defined(source.menu)){							
+							this.set("menuInherited", this.site.menu.menuId == ${WebSiteUtils.getDefaultMenuId() ? true : false );
 							ace.edit("xml-editor").setValue(this.site.menu.menuData);
 						}else{
 							this.set("menuInherited", true);
