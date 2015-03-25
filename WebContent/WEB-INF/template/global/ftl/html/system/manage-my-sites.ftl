@@ -193,12 +193,90 @@
 					createSitePropertiesGrid(renderTo.find(".properties"), data.site );
 					break;
 					case "logo" :
-					//createUserGroupGrid(detailRow.find(".groups"), data);
+					createCompanyLogoGrid	(renderTo.find(".logos"), renderTo.find("[name=logo-file]"), data.site );
 					break;	
 				}	
 			});
 		}				
-						
+
+		function createSiteLogoGrid(renderTo, renderTo2,  data){
+			if( !common.ui.exists(renderTo2)){
+				renderTo2.kendoUpload({
+					multiple : false,
+					width: 300,
+				 	showFileList : false,
+					localization:{ select : '파일 선택' , dropFilesHere : '업로드할 파일을 이곳에 끌어 놓으세요.' },
+					async: {
+						saveUrl:  '<@spring.url "/secure/data/mgmt/logo/upload.json?output=json"/>',							   
+						autoUpload: true
+					},
+					upload: function (e) {								         
+						e.data = {
+							objectType : 30,
+							objectId: data.webSiteId
+						};														    								    	 		    	 
+					},
+					success : function(e) {								    
+						if( e.response.success ){
+							common.ui.grid(renderTo).dataSource.read();
+						}
+					}
+				});								
+			}						
+			if( ! common.ui.exists(renderTo)){	
+				common.ui.grid(renderTo,{
+					dataSource: {
+						type: "json",
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/logo/list.json?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { objectType: 30, objectId: data.webSiteId }
+							}
+						},
+						schema: {
+							data: "items",
+							total: "totalCount",
+							model : common.ui.data.Logo
+						},
+						batch: false
+					},
+					toolbar: kendo.template('<div class="p-xs pull-right"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>'),    
+					filterable: true,
+					sortable: true,
+					scrollable: true,
+					selectable: false,
+					columns:[
+							{ title: "&nbsp;",  width:150, filterable: false, sortable: false, template:'<div class="text-center"><img alt="" class="img-thumbnail" src="<@spring.url "/secure/download/logo/#= logoId #?width=120&height=120" />"></div>' },
+							{ field: "filename", title: "파일", template:'#:filename# <small><span class="label label-info">#: imageContentType #</span></small> #if( !primary ){ # <button class="btn btn-flat btn-xs btn-labeled btn-danger" data-action="primary" data-object-id="#= logoId#"><span class="btn-label icon fa fa-check-square"></span>선택</button> #}#' },
+							{ field: "imageSize", title: "파일크기",  width: 150 , format: "{0:##,### bytes}" }
+						],
+					dataBound:function(e){
+						renderTo.find("[data-action=primary]").click(function(e){
+							var logoId = $(this).data("object-id");
+							common.ui.ajax(
+								"<@spring.url "/secure/data/mgmt/logo/set_primary.json"/>",
+								{
+									type : 'POST',
+									url : '/data/streams/photos/delete.json?output=json' ,
+									data: { logoId : logoId },
+									success : function(response){
+										renderTo.data("kendoGrid").dataSource.read();		
+									},
+									complete: function(){
+										kendo.ui.progress(renderTo, false);
+									}
+							});		
+						});
+					}						
+				});	
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});
+				
+			}	
+			renderTo.data("kendoGrid").dataSource.fetch();		
+		}
+								
 		function createSitePropertiesGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
@@ -390,7 +468,15 @@
 									<div class="properties no-border"></div>
 								</div>
 								<div class="tab-pane fade" id="my-site-tabs-3">
-									<div class="properties no-border"></div>
+									<div class="stat-panel no-margin-b">
+										<div class="stat-cell col-sm-3 hidden-xs text-center">
+											<input name="logo-file" type="file">
+											<i class="fa fa-upload bg-icon bg-icon-left"></i>	
+										</div> <!-- /.stat-cell -->
+										<div class="stat-cell col-sm-9 no-padding">		
+											<div class="logos"></div>
+										</div>
+									</div>
 								</div>																												
 							</div>	
 					</section>
