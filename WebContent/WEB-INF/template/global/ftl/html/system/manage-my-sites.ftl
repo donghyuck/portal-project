@@ -235,7 +235,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/secure/data/mgmt/logo/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
-								return { objectType: 30, objectId: data.webSiteId }
+								return { objectType: 30, objectId: getEditorSource().site.webSiteId }
 							}
 						},
 						schema: {
