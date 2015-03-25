@@ -73,7 +73,7 @@
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
 					</div>
 					
-					${WebSiteUtils.getMenuComponent(action.webSite.menu, "SYSTEM_MENU") }		
+					${actjion.getWebSiteMenu("FOOTER_MENU") }		
 					
 					<#assign websiteFooterMenu = action.getWebSiteMenu("FOOTER_MENU") />
 					<#if  websiteFooterMenu.components?has_content >
