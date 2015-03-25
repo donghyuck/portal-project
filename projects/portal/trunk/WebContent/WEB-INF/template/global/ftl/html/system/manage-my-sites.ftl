@@ -106,8 +106,14 @@
 				var  observable = kendo.observable({
 					site : new common.ui.data.WebSite(),
 					menuInherited : true,
+					editable : false,
 					setSource : function(source){
-						source.copy(this.site);						
+						source.copy(this.site);			
+						if( this.site.siteId > 0 ){
+							this.set("editable", true);
+						}else{
+							this.set("editable", false);
+						}									
 						if(common.ui.defined(source.menu)){							
 							this.set("menuInherited", this.site.menu.menuId == ${WebSiteUtils.getDefaultMenuId()} ? true : false );
 							ace.edit("xml-editor").setValue(this.site.menu.menuData);
@@ -308,7 +314,7 @@
 									<ul class="nav nav-tabs nav-tabs-xs">
 										<li class=""><a href="#my-site-tabs-0" data-toggle="tab" data-action="company">기본정보</a></li>
 										<li class=""><a href="#my-site-tabs-1" data-toggle="tab" data-action="logos">메뉴</a></li>
-										<li class=""><a href="#my-site-tabs-2" data-toggle="tab" data-action="properties">속성</a></li>
+										<li data-bind="visible:editable"><a href="#my-site-tabs-2" data-toggle="tab" data-action="properties">속성</a></li>
 									</ul>	
 								</div>
 							<div class="tab-content">
