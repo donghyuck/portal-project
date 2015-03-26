@@ -1,8 +1,8 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 <head>
-	<#assign pageMenuName = "USER_MENU" />
-	<#assign pageMenuItemName = "MENU_1_3" />
+	<#assign pageMenuName = "FOOTER_MENU" />
+	<#assign pageMenuItemName = "MENU_FOOTER_2" />
 	
 		<#if action.webSite ?? >
 			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
