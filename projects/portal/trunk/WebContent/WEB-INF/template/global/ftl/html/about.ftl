@@ -66,12 +66,11 @@
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />
 			<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">							
-			<script>
-				jobs.push(function () {
-					$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
-				});
-			</script>				
-			
+				<script>
+					jobs.push(function () {
+						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
+					});
+				</script>			
 				<div class="breadcrumbs arrow-up">
 					<div class="container">
 						<div class="row">
@@ -84,7 +83,7 @@
 					</div>
 				</div>	
 			</header>						
-			</#if>">			
+			</#if>			
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">
 				<div class="row margin-bottom-40">
