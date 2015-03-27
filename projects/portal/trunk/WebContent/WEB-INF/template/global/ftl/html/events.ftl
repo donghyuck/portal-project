@@ -14,6 +14,7 @@
 			'css!<@spring.url "/styles/font-icons/atlassian-icons.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/unify/pages/feature_timeline-v2.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
