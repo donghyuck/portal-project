@@ -241,7 +241,7 @@
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
 				<div class="panel-footer">
-					
+					<button class="btn-u btn-blue btn-u-xs" data-bind="click:close"> 닫기 </button>
 				</div>	
 			</div>
 		</script>					
