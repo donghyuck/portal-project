@@ -73,7 +73,7 @@
 						{field: "subject", title: "제목", sortable : false },
 						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
 					],					
-					toolbar: kendo.template('<div class="p-xs text-right"><small class="m-r-xl"><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small><button class="btn-u btn-brd btn-brd-hover btn-blue btn-u-xs" data-action="refresh">새로고침</button></div>'),
+					toolbar: kendo.template('<div class="p-xs text-right"><small class="m-r-xl"><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm" data-action="refresh">새로고침</button></div>'),
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					sortable: true,
 					pageable: false,
