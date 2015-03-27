@@ -1,7 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 	<head>
-	<#assign page = action.getPage() />
+	<#assign page = action.getPage() >
 	<#assign pageMenuName = "FOOTER_MENU" />
 	<#assign pageMenuItemName = "MENU_FOOTER_1" />
 		<title>${page.title}</title>
@@ -60,7 +60,7 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->
-
+			<#include "/html/common/common-homepage-menu.ftl" >	
 
 				
 			<!-- START MAIN CONTENT -->	
@@ -225,7 +225,7 @@
 			<!-- END MAIN CONTENT -->	
 			</#if>	
 	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-globalfooter.ftl" >		
+
 			<!-- END FOOTER -->
 		</div><!-- ./wrapper -->	
 		<!-- START TEMPLATE -->
