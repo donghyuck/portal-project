@@ -243,6 +243,7 @@
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
 				<div class="panel-footer text-right">
+					<div class="btn-group btn-sm'><button class="btn btn-defautl btn-sm btn-flat btn-outline"><i class="fa fa-angle-left"></i>  이전</button><button class="btn btn-defautl btn-sm btn-flat btn-outline" ><i class="fa fa-angle-right"></i>  다음</button></div>
 					<button class="btn btn-defautl btn-sm btn-flat btn-outline"  data-bind="click:close"><i class="aui-icon aui-iconfont-close-dialog"></i>  닫기</button>
 				</div>	
 			</div>
