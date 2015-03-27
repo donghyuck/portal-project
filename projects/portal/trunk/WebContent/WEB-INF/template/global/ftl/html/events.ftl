@@ -71,7 +71,7 @@
 						{field: "subject", title: "제목", sortable : false },
 						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
 					],					
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					sortable: true,
 					pageable: false,
