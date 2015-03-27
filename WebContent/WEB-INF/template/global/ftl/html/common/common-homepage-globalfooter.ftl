@@ -2,7 +2,8 @@
 <footer class="footer-global">
 	<div class="footer">
 		<div class="container">
-			<#if action.webSite ?? >				
+			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />						
 			<!-- breadcombs -->
 			<div class="footer-breadory">
 			<div class="row">
