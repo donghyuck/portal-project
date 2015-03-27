@@ -80,8 +80,8 @@
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						$("#announce-grid").data( "announcePlaceHolder", selectedCell );
-						displayAnnouncement();
+					//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
+						displayAnnouncement(selectedCell);
 					}
 				});
 				renderTo.find("[data-action='refresh']").click( function(e){
@@ -90,15 +90,28 @@
 			}		
 		}
 		
-		function displayAnnouncement () {		
+		function displayAnnouncement (data) {		
 		
 			var renderTo = $("#announce-view-panel");
 			if(renderTo.contents().length == 0){				
 				renderTo = renderTo.html( $('#announce-view-panel-template').html() );
+				var observable = common.ui.observable({
+					announce: new common.ui.data.Announce(),
+					setAnnounce: function(announce){
+						$this = this;
+						announce.copy( $this.announce );					
+					}
+				});
+				common.ui.bind(renderTo, observable );
+				renderTo.data("model", observable );
 				renderTo.find(".close-sm").click(function (e) {
 					renderTo.slideUp();
 				});	
+				
 			}
+			renderTo.data("model").setAnnounce( data );
+			
+			
 			/*
 			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );		
 				
@@ -206,24 +219,24 @@
 			<div class="panel no-border">
 				<div class="panel-heading rounded-top">
 					<span class="close-sm"></span>
-					<h2 data-bind="html:subject"></h2>					
-					<ul class="list-unstyled">
-						<li ><i class="fa fa-calendar"></i> <span class="label label-light">게시 기간</span> <span class="text-muted" data-bind="text:formattedStartDate"></span> ~ <span class="text-muted" data-bind="text:formattedEndDate"></span></li>
+					<h2 data-bind="html:announce.subject"></h2>					
+					<ul class="list-unstyled m-r-xl">
+						<li ><i class="fa fa-calendar"></i> <span class="label label-light">게시 기간</span> <span class="text-muted" data-bind="text:announce.formattedStartDate"></span> ~ <span class="text-muted" data-bind="text:announce.formattedEndDate"></span></li>
 						<hr>	
 						<li><i class="fa fa-calendar"></i> <span class="label label-light">생성일</span> <span class="text-muted" data-bind="text: formattedCreationDate"></span></li>
 						<hr>	
 						<li><i class="fa fa-calendar"></i> <span class="label label-light">수정일</span> <span class="text-muted" data-bind="text: formattedModifiedDate"></span></li>
 						<hr>	
 						<li class="text-muted">
-							<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+							<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src: announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 							<ul class="list-unstyled text-muted">
-								<li><span data-bind="visible:user.nameVisible, text: user.name"></span><code data-bind="text: user.username"></code></li>
-								<li><span data-bind="visible:user.emailVisible, text: user.email"></span></li>
+								<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
+								<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
 							</ul>																
 						</li>	
 					</ul>											
 				</div>
-				<div class="panel-body padding-sm" data-bind="html:body"></div>	
+				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
 				<div class="panel-footer">
 					
 				</div>	
