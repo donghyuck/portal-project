@@ -100,6 +100,9 @@
 					setAnnounce: function(announce){
 						$this = this;
 						announce.copy( $this.announce );					
+					},
+					close:function(e){
+						renderTo.slideUp();
 					}
 				});
 				common.ui.bind(renderTo, observable );
