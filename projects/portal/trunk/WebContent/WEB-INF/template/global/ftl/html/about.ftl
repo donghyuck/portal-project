@@ -62,8 +62,8 @@
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
 			<#if action.isSetNavigator()  >
-				<#assign navigator = action.getNavigator() />				
-				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">							
+				<#assign navigator = action.getNavigator() />			
+				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
 				<script>
 					jobs.push(function () {
 						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
