@@ -1,14 +1,8 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
-<head>
-	<#assign pageMenuName = "FOOTER_MENU" />
-	<#assign pageMenuItemName = "MENU_FOOTER_2" />
-	
-		<#if action.webSite ?? >
-			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
-			<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
-			<title>${navigator.title}</title>
-		</#if>
+	<head>
+		<#assign page = action.getPage() >
+		<title>${page.title}</title>
 		<script type="text/javascript">
 		<!--
 		
@@ -128,27 +122,27 @@
 		<div class="wrapper">
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
-			<#if action.webSite ?? >
-				<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
-				<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
-			<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">			
-			<script>
-				jobs.push(function () {
-					$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
-				});
-			</script>
+			<#if action.isSetNavigator()  >
+				<#assign navigator = action.getNavigator() />			
+				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
+				<script>
+					jobs.push(function () {
+						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
+					});
+				</script>			
 				<div class="breadcrumbs arrow-up">
 					<div class="container">
 						<div class="row">
-							<h2>${ navigator.title }
+							<h2 class="pull-left">${ navigator.title }
 							<small class="page-summary">
 									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
-								</small>	
-							</h2>							
+							</small>	
+							</h2>
 						</div>
 					</div>
 				</div>	
-			</header>
+			</header>	
+			</#if>				
 			<!-- END HEADER -->			
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
