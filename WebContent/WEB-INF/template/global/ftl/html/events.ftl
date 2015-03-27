@@ -214,6 +214,9 @@
 					</ul>											
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:body"></div>	
+				<div class="panel-footer">
+					
+				</div>	
 			</div>
 		</script>					
 		<#include "/html/common/common-homepage-templates.ftl" >		
