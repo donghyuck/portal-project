@@ -127,7 +127,7 @@
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="footer-notice-template">				
 	<li>
-		<a href='javascript:common.redirect("<@spring.url('/display/0/events.html'/>", { announceId :#= announceId # }, "post" );'><i class="fa fa-angle-right"></i> #:subject# </a>
+		<a href="javascript:common.redirect('<@spring.url("/display/0/events.html"/>', { announceId :#= announceId # }, 'post' );"><i class="fa fa-angle-right"></i> #:subject# </a>
 		<small>#: formattedModifiedDate() #</small>
 	</li>
 </script>
