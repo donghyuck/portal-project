@@ -1,6 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 	<head>
+	<#assign page = action.getPage() >
 	<#assign pageMenuName = "FOOTER_MENU" />
 	<#assign pageMenuItemName = "MENU_FOOTER_1" />
 		<title>${page.title}</title>
