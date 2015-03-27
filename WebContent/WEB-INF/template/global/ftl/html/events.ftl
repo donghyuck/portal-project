@@ -83,7 +83,7 @@
 		
 			var renderTo = $("#announce-view-panel");
 			if(renderTo.contents().length == 0){				
-				renderTo.html( $('#announce-view-panel-template').html() );
+				renderTo = renderTo.html( $('#announce-view-panel-template').html() );
 				renderTo.find(".close-sm").click(function (e) {
 					renderTo.slideUp();
 				});	
