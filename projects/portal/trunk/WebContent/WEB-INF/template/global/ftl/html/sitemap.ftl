@@ -91,9 +91,9 @@
 			<!-- END HEADER -->			
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
-				<div class="row">		
-					<div class="col-lg-12" style="min-height: 500px;">			
+				<div class="row">					
 						<#list action.menuNames as item>
+						<div class="col-md-4" style="min-height: 500px;">			
 						<#assign menu = action.getWebSiteMenu(item) />
 						<div class="headline"><h4> ${menu.title} </h4></div>  
 						<ul>
@@ -109,8 +109,8 @@
 							</li>	
 							</#list>
 						</ul>
-						</#list>				
-					</div>											
+						</div>	
+						</#list>						
 				</div>
 			</div>							 			
 			<!-- END MAIN CONTENT -->	
