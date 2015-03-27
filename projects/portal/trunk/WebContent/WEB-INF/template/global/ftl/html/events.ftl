@@ -11,6 +11,7 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/font-icons/atlassian-icons.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/unify/pages/feature_timeline-v2.css"/>',		
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
@@ -241,7 +242,7 @@
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
 				<div class="panel-footer">
-					<button class="btn-u btn-blue btn-u-xs" data-bind="click:close"> 닫기 </button>
+					<button class="btn-u btn-blue btn-u-xs" data-bind="click:close"><i class="aui-icon aui-iconfont-close-dialog"></i>  닫기 </button>
 				</div>	
 			</div>
 		</script>					
