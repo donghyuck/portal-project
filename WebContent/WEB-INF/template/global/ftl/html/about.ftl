@@ -7,9 +7,7 @@
 		<title>${page.title}</title>
 		<script type="text/javascript">
 		<!--
-
-		var jobs = [];	
-				
+		var jobs = [];					
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
