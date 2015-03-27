@@ -221,16 +221,16 @@
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
 		</script>	
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
-			<div class="panel no-border">
+			<div class="panel bordered">
 				<div class="panel-heading rounded-top">
 					<span class="close-sm"></span>
 					<h2 data-bind="html:announce.subject"></h2>					
 					<ul class="list-unstyled m-r-xl">
 						<li ><i class="fa fa-calendar"></i> <span class="label label-light">게시 기간</span> <span class="text-muted" data-bind="text:announce.formattedStartDate"></span> ~ <span class="text-muted" data-bind="text:announce.formattedEndDate"></span></li>
 						<hr>	
-						<li><i class="fa fa-calendar"></i> <span class="label label-light">생성일</span> <span class="text-muted" data-bind="text: formattedCreationDate"></span></li>
+						<li><i class="fa fa-calendar"></i> <span class="label label-light">생성일</span> <span class="text-muted" data-bind="text: announce.formattedCreationDate"></span></li>
 						<hr>	
-						<li><i class="fa fa-calendar"></i> <span class="label label-light">수정일</span> <span class="text-muted" data-bind="text: formattedModifiedDate"></span></li>
+						<li><i class="fa fa-calendar"></i> <span class="label label-light">수정일</span> <span class="text-muted" data-bind="text: announce.formattedModifiedDate"></span></li>
 						<hr>	
 						<li class="text-muted">
 							<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src: announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
