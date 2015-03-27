@@ -71,7 +71,7 @@
 						{field: "subject", title: "제목", sortable : false },
 						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
 					],					
-					toolbar: kendo.template('<div class="p-xs"><small class="text-left"><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small><button class="btn-u btn-brd btn-brd-hover btn-blue btn-u-xs pull-right" data-action="refresh">새로고침</button></div>'),
+					toolbar: kendo.template('<div class="p-xs text-right"><small class="m-r-xl"><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small><button class="btn-u btn-brd btn-brd-hover btn-blue btn-u-xs" data-action="refresh">새로고침</button></div>'),
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					sortable: true,
 					pageable: false,
@@ -179,7 +179,6 @@
 				<div class="row">		
 					<div class="col-lg-9" style="min-height: 500px;">			
 						<div id="announce-view-panel" style="display:none;"></div>
-						<h5><small><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small></h5>
 						<div id="announce-grid"></div>												
 					</div>	
 					<div class="col-lg-3 visible-lg">	
