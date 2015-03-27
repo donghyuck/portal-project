@@ -97,3 +97,45 @@
 	border-color: #595959;
 	border-color: rgba(255, 255, 255, .12)
 }
+
+
+
+
+
+.btn-info.btn-flat {
+	background: #4ebbdb
+}
+
+.btn-info.btn-flat.active,.btn-info.btn-flat:active,.btn-info.btn-flat:hover,.open .btn-info.btn-flat.dropdown-toggle
+	{
+	background: #4ebbdb !important;
+	color: #fff
+}
+
+.btn-info.btn-outline.btn-flat:hover,.btn-info.btn-outline:hover {
+	color: #fff;
+	border-color: #39b3d7;
+	border-bottom-color: #2596b8
+}
+
+.btn-info.btn-outline.btn-flat:active,.btn-info.btn-outline:active {
+	border-color: #28a4c9
+}
+
+.btn-group .btn-info,.btn-group .btn-info:focus,.input-group-btn .btn-info,.input-group-btn .btn-info:focus
+	{
+	border-left-color: #39b3d7;
+	border-right-color: #39b3d7
+}
+
+.btn-group .btn-info:hover,.btn-group.open .btn-info.dropdown-toggle,.input-group-btn .btn-info:hover,.input-group-btn.open .btn-info.dropdown-toggle
+	{
+	border-color: #39b3d7;
+	border-bottom-color: #2596b8
+}
+
+.btn-group .btn-info.active,.btn-group .btn-info:active,.input-group-btn .btn-info.active,.input-group-btn .btn-info:active
+	{
+	border-left-color: #28a4c9;
+	border-right-color: #28a4c9
+}
