@@ -116,7 +116,7 @@
 							$this.set("hasPrevious", true); 
 						else 
 							$this.set("hasPrevious", false); 							
-						if( ($this.index + 1 )< pageSize && (pageSize - $this.index ) > 0 )
+						if( ($this.index + 1 )< size && (size - $this.index ) > 0 )
 							$this.set("hasNext", true); 
 						else 
 							$this.set("hasNext", false); 
