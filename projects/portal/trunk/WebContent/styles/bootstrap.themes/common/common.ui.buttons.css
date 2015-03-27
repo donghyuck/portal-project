@@ -1,0 +1,99 @@
+
+/* Flat Buttons 
+------------------------------------*/
+
+.btn.btn-flat,.btn.btn-flat:focus {
+	border-bottom-width: 3px
+}
+
+.btn.btn-flat:active {
+	border-bottom-width: 1px !important;
+	margin-top: 2px;
+	-webkit-box-shadow: none;
+	box-shadow: none
+}
+
+.btn.btn-flat.btn-lg {
+	border-bottom-width: 3px
+}
+
+.btn.btn-flat.btn-lg:active {
+	margin-top: 2px
+}
+
+.btn.btn-flat.btn-xs {
+	border-bottom-width: 2px
+}
+
+.btn.btn-flat.btn-xs:active {
+	margin-top: 1px
+}
+
+.btn.btn-outline,.btn.btn-outline.btn-flat,.btn.btn-outline.btn-flat.btn-primary,.btn.btn-outline.btn-primary
+{
+	color: #555
+}
+
+.btn-group>.btn.btn-outline,.btn-group>.btn.btn-outline.btn-flat,.btn-group>.btn.btn-outline.btn-flat.btn-primary,.btn-group>.btn.btn-outline.btn-flat.btn-primary:focus,.btn-group>.btn.btn-outline.btn-flat:focus,.btn-group>.btn.btn-outline.btn-primary,.btn-group>.btn.btn-outline.btn-primary:focus,.btn-group>.btn.btn-outline:focus,.btn.btn-outline,.btn.btn-outline.btn-flat,.btn.btn-outline.btn-flat.btn-primary,.btn.btn-outline.btn-flat.btn-primary:focus,.btn.btn-outline.btn-flat:focus,.btn.btn-outline.btn-primary,.btn.btn-outline.btn-primary:focus,.btn.btn-outline:focus,.input-group-btn>.btn.btn-outline,.input-group-btn>.btn.btn-outline.btn-flat,.input-group-btn>.btn.btn-outline.btn-flat.btn-primary,.input-group-btn>.btn.btn-outline.btn-flat.btn-primary:focus,.input-group-btn>.btn.btn-outline.btn-flat:focus,.input-group-btn>.btn.btn-outline.btn-primary,.input-group-btn>.btn.btn-outline.btn-primary:focus,.input-group-btn>.btn.btn-outline:focus
+	{
+	background: 0 0;
+	border-color: #e0e0e0;
+	border-color: rgba(0, 0, 0, .12)
+}
+
+.btn.btn-outline.dark,.btn.btn-outline.dark.btn-primary {
+	color: #fff;
+	color: rgba(255, 255, 255, .8)
+}
+
+.btn.btn-outline.dark,.btn.btn-outline.dark.btn-primary,.btn.btn-outline.dark.btn-primary:focus,.btn.btn-outline.dark:focus
+	{
+	border-color: #595959;
+	border-color: rgba(255, 255, 255, .12)
+}
+
+.btn.btn-outline.dark.btn-primary:active,.btn.btn-outline.dark.btn-primary:hover,.btn.btn-outline.dark:active,.btn.btn-outline.dark:hover
+	{
+	border-color: transparent !important
+}
+
+.btn.btn-rounded {
+	border-radius: 9999px
+}
+
+.btn-rounded.btn-flat {
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent
+}
+
+.btn-rounded.btn-flat,.btn-rounded.btn-flat:focus,.btn-rounded.btn-flat:hover
+	{
+	border-bottom-width: 2px
+}
+
+.btn-rounded.btn-flat.btn-lg,.btn-rounded.btn-flat.btn-lg:focus,.btn-rounded.btn-flat.btn-lg:hover
+	{
+	border-bottom-width: 3px
+}
+
+.btn-rounded.btn-flat:active {
+	margin-top: 1px
+}
+
+.btn-rounded.btn-flat.btn-outline.btn:hover,.btn-rounded.btn-flat.btn:focus,.btn-rounded.btn-flat.btn:hover
+	{
+	border-top-color: transparent;
+	border-left-color: transparent;
+	border-right-color: transparent
+}
+
+.btn-rounded.btn-flat.btn-outline:focus {
+	border-color: #e0e0e0;
+	border-color: rgba(0, 0, 0, .12)
+}
+
+.btn-rounded.btn-flat.btn-outline.dark:focus {
+	border-color: #595959;
+	border-color: rgba(255, 255, 255, .12)
+}
