@@ -61,7 +61,10 @@
 		<div class="wrapper">
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
-				
+			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />
+			</#if>	
+			
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">
 				<div class="row margin-bottom-40">
