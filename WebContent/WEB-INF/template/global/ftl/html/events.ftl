@@ -54,7 +54,7 @@
 		
 		function createAnnounceGrid(){
 			var renderTo =$("#announce-grid");
-			if( common.ui.exists( renderTo ) ){
+			if( !common.ui.exists( renderTo ) ){
 				common.ui.grid(	$("#announce-grid"), {
 					dataSource : common.ui.datasource(
 						'<@spring.url "/data/announce/list.json"/>',
