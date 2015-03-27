@@ -193,7 +193,7 @@
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
 		</script>	
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
-			<div class="panel panel-default no-border">
+			<div class="panel no-border">
 				<div class="panel-heading rounded-top">
 					<span class="close-sm"></span>
 					<h2 data-bind="html:subject"></h2>					
