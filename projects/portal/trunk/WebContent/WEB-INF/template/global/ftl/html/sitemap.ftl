@@ -93,8 +93,9 @@
 			<div class="container content">			
 				<div class="row">		
 					<div class="col-lg-12" style="min-height: 500px;">			
-						<div class="headline"><h4> 덧글 </h4></div>  
-										
+						<#list action.getMenuNames as item>
+						<div class="headline"><h4> ${item} </h4></div>  
+						</#list>				
 					</div>											
 				</div>
 			</div>							 			
