@@ -82,6 +82,9 @@
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
+						var index = this.items().index( selectedCells );
+						
+						alert( index + "/" +  this.items().length );
 					//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement(selectedCell);
 					}
