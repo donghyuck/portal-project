@@ -49,6 +49,7 @@
 				createAnnounceGrid();
 				
 				${RequestParameters.announceId}
+				
 				<#if !action.user.anonymous >				
 				
 				</#if>	
