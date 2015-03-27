@@ -80,12 +80,19 @@
 		}]);	
 		
 		function displayAnnouncement () {		
+		
+			var renderTo = $("#announce-view-panel");
+			if(renderTo.contents().length == 0){				
+				renderTo.html( $('#announce-view-panel-template').html() );
+			}
+			/*
 			var announcePlaceHolder = $("#announce-grid").data( "announcePlaceHolder" );		
 				
 			var template = kendo.template($('#announce-view-panel-template').html());		
 			$("#announce-view-panel").html( template(announcePlaceHolder) );
 			
 			kendo.bind($("#announce-view-panel"), announcePlaceHolder );
+			*/
 			$("#announce-view-panel").slideDown();
 			$("#announce-view-panel").find(".close-sm").click(function (e) {
 				$("#announce-view-panel").slideUp();
