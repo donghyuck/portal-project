@@ -71,7 +71,7 @@
 						{field: "subject", title: "제목", sortable : false },
 						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
 					],					
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),
+					toolbar: kendo.template('<div class="p-xs"><small class="text-left"><i class="fa fa-info"></i> 게시 기간이 지난 내용들은 목록에서 보여지지 않습니다.</small><button class="btn-u btn-brd btn-brd-hover btn-blue btn-u-xs pull-right" data-action="refresh">새로고침</button></div>'),
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					sortable: true,
 					pageable: false,
@@ -196,7 +196,7 @@
 		<!-- START TEMPLATE -->
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 			<tr data-uid="#: uid #">
-				<td><span class="label label-success">공지</span>&nbsp;#: subject #	 </td>
+				<td><span class="label label-red">공지</span>&nbsp;#: subject #	 </td>
 				<td class="text-center">#: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
 			</tr>
 		</script>						
