@@ -262,8 +262,8 @@
 				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
 				<div class="panel-footer text-right">
 					<div class="btn-group">
-						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasPrevious"><i class="fa fa-angle-left"></i>  이전</button>
-						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasNext">다음  <i class="fa fa-angle-right"></i></button>
+						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasPrevious, click:previous"><i class="fa fa-angle-left"></i>  이전</button>
+						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasNext, click:next">다음  <i class="fa fa-angle-right"></i></button>
 					</div>
 					<button class="btn btn-defautl btn-sm btn-flat btn-outline"  data-bind="click:close"><i class="aui-icon aui-iconfont-close-dialog"></i>  닫기</button>
 				</div>	
