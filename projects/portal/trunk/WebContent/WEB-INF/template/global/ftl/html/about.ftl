@@ -3,11 +3,7 @@
 	<head>
 	<#assign pageMenuName = "FOOTER_MENU" />
 	<#assign pageMenuItemName = "MENU_FOOTER_1" />
-		<#if action.webSite ?? >
-			<#assign webSiteMenu = action.getWebSiteMenu(pageMenuName) />
-			<#assign navigator = WebSiteUtils.getMenuComponent(webSiteMenu, pageMenuItemName) />
-			<title>${navigator.title}</title>
-		</#if>	
+		<title>${page.title}</title>
 		<script type="text/javascript">
 		<!--
 
