@@ -127,21 +127,9 @@
 <!-- ============================== -->
 <script type="text/x-kendo-tmpl" id="footer-notice-template">				
 	<li>
-		<a href="javascript:teleportToNotice( #= announceId # );"><i class="fa fa-angle-right"></i> #:subject# </a>
+		<a href='javascript:common.redirect("<@spring.url('/display/0/events.html'/>", { announceId :#= announceId # }, "post" );'><i class="fa fa-angle-right"></i> #:subject# </a>
 		<small>#: formattedModifiedDate() #</small>
 	</li>
-			<!--		   							
-	<dl class="dl-horizontal">
-		<dt>
-			#if ( imageCount > 0 ) {#
-			<a href="javascript:void(0);"><img src="#= firstImageSrc #?width=150&height=150" alt=""></a>
-			# } #
-		</dt>
-		<dd>
-			<p>#: kendo.toString(creationDate, "yyyy.MM.dd") #</p>
-			<p><a href="javascript:teleportToNotice( #= announceId # );">#:subject#</a></p> 
-		</dd>
-	</dl>	-->
 </script>
 <!-- ============================== -->
 <!-- Top Nav Account Status Template               -->
