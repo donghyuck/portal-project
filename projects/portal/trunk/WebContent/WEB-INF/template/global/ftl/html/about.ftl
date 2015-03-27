@@ -61,7 +61,6 @@
 		<div class="wrapper">
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
-			${action.isSetNavigator()?string("yes", "no") }
 			${page.toString()}
 			<#if action.isSetNavigator()  >
 				<#assign navigator = action.getNavigator() />			
