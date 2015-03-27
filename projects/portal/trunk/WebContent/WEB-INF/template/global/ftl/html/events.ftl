@@ -84,8 +84,8 @@
 						var selectedCell = this.dataItem( selectedCells );	
 						var index = this.items().index( selectedCells );
 						
-						alert( index + "/" +  this.items().length );
-					//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
+						//alert( index + "/" +  this.items().length );
+						//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
 						displayAnnouncement(selectedCell);
 					}
 				});
@@ -189,8 +189,8 @@
 						<div id="announce-grid"></div>												
 					</div>	
 					<div class="col-lg-3 visible-lg">	
-						<div class="headline"><h4> 내용 </h4></div>  
-	                	<p class="margin-bottom-25"><small>내용</small></p>					
+						<div class="headline"><h4> 덧글 </h4></div>  
+	                	<p class="margin-bottom-25"><small>내용 무...</small></p>					
 					</div>												
 				</div>
 			</div>							 			
