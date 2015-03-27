@@ -2,8 +2,6 @@
 <html decorator="unify">
 	<head>
 	<#assign page = action.getPage() >
-	<#assign pageMenuName = "FOOTER_MENU" />
-	<#assign pageMenuItemName = "MENU_FOOTER_1" />
 		<title>${page.title}</title>
 		<script type="text/javascript">
 		<!--
@@ -82,8 +80,7 @@
 					</div>
 				</div>	
 			</header>	
-			</#if>	
-			
+			</#if>				
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">
 				<div class="row margin-bottom-40">
