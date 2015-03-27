@@ -107,6 +107,20 @@
 					index : 0,
 					hasNext : false,
 					hasPrevious : false,
+					previous : function(e){
+						var $this = this;						
+						if( $this.hasPrevious ){
+							var index = $this.image.index - 1;
+							common.ui.grid($('#announce-grid')).select( "tr:eq(" + index + ")");		
+						}						
+					},
+					next:function(e){
+						var $this = this;						
+						if( $this.hasNext ){
+							var index = $this.image.index + 1;
+							common.ui.grid($('#announce-grid')).select( "tr:eq(" + index + ")");		
+						}					
+					},
 					setAnnounce: function(announce){
 						var $this = this;
 						var size = common.ui.grid($('#announce-grid')).dataSource.view().length;							
@@ -119,8 +133,7 @@
 						if( ($this.index + 1 )< size && (size - $this.index ) > 0 )
 							$this.set("hasNext", true); 
 						else 
-							$this.set("hasNext", false); 
-							
+							$this.set("hasNext", false); 							
 					},
 					close:function(e){
 						renderTo.slideUp();
