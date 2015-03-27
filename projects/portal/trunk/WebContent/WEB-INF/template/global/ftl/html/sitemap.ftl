@@ -96,6 +96,11 @@
 						<#list action.menuNames as item>
 						<#assign menu = action.getWebSiteMenu(item) />
 						<div class="headline"><h4> ${menu.title} </h4></div>  
+						<ul>
+							<#list menu.components as menu_item>
+							<li>${menu_item.title}</li>	
+							</#list>
+						</ul>
 						</#list>				
 					</div>											
 				</div>
