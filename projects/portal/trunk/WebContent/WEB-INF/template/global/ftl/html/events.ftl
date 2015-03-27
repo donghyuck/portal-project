@@ -88,8 +88,7 @@
 						//alert( index + "/" +  this.items().length );
 						//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
 						selectedCell.set("index", index);
-						selectedCell.set("size", size );
-						displayAnnouncement(selectedCell, index , size  );
+						displayAnnouncement(selectedCell);
 					}
 				});
 				renderTo.find("[data-action='refresh']").click( function(e){
@@ -105,9 +104,25 @@
 				renderTo = renderTo.html( $('#announce-view-panel-template').html() );
 				var observable = common.ui.observable({
 					announce: new common.ui.data.Announce(),
+					index : 0,
+					hasNext : false,
+					hasPrevious : false,
 					setAnnounce: function(announce){
-						$this = this;
-						announce.copy( $this.announce );					
+						var $this = this;
+						var size = common.ui.grid($('#announce-grid')).dataSource.view().length;	
+						
+						announce.copy( $this.announce );	
+						$this.set("index", announce.get("index");
+						
+						if( $this.index > 0 && ($this.index - 1) >= 0 )
+							$this.set("hasPrevious", true); 
+						else 
+							$this.set("hasPrevious", false); 							
+						if( ($this.index + 1 )< pageSize && (pageSize - $this.index ) > 0 )
+							$this.set("hasNext", true); 
+						else 
+							$this.set("hasNext", false); 
+							
 					},
 					close:function(e){
 						renderTo.slideUp();
@@ -236,8 +251,8 @@
 				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
 				<div class="panel-footer text-right">
 					<div class="btn-group">
-						<button class="btn btn-info btn-flat btn-outline btn-sm"><i class="fa fa-angle-left"></i>  이전</button>
-						<button class="btn btn-info btn-flat btn-outline btn-sm" >다음  <i class="fa fa-angle-right"></i></button>
+						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasPrevious"><i class="fa fa-angle-left"></i>  이전</button>
+						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasNext">다음  <i class="fa fa-angle-right"></i></button>
 					</div>
 					<button class="btn btn-defautl btn-sm btn-flat btn-outline"  data-bind="click:close"><i class="aui-icon aui-iconfont-close-dialog"></i>  닫기</button>
 				</div>	
