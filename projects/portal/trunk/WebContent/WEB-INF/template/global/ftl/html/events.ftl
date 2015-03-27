@@ -109,11 +109,9 @@
 					hasPrevious : false,
 					setAnnounce: function(announce){
 						var $this = this;
-						var size = common.ui.grid($('#announce-grid')).dataSource.view().length;	
-						
+						var size = common.ui.grid($('#announce-grid')).dataSource.view().length;							
 						announce.copy( $this.announce );	
-						$this.set("index", announce.get("index");
-						
+						$this.set("index", announce.get("index"));						
 						if( $this.index > 0 && ($this.index - 1) >= 0 )
 							$this.set("hasPrevious", true); 
 						else 
