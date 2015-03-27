@@ -111,6 +111,7 @@
 						var $this = this;						
 						if( $this.hasPrevious ){
 							var index = $this.index - 1;
+							index = index + 1;
 							common.ui.grid($('#announce-grid')).select( "tr:eq(" + index + ")");		
 						}						
 					},
@@ -118,6 +119,7 @@
 						var $this = this;						
 						if( $this.hasNext ){
 							var index = $this.index + 1;
+							index = index + 1;
 							common.ui.grid($('#announce-grid')).select( "tr:eq(" + index + ")");		
 						}					
 					},
