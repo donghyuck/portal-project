@@ -47,9 +47,6 @@
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
 				createAnnounceGrid();
-				<#if RequestParameters.announceId?? >
-				alert( ${RequestParameters.announceId} );
-				</#if>	
 				<#if !action.user.anonymous >				
 				
 				</#if>	
@@ -92,7 +89,16 @@
 						//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
 						selectedCell.set("index", index);
 						displayAnnouncement(selectedCell);
-					}
+					},
+					dataBound:function(e){
+					<#if RequestParameters.announceId?? >
+						$this = this;
+						if(!renderTo.data("selected") ){
+							renderTo.data("selected", true);
+							$this.select('tr[data-id="' + ${RequestParameters.announceId} + '"]');									
+						} 			
+					</#if>
+					}			
 				});
 				renderTo.find("[data-action='refresh']").click( function(e){
 					common.ui.grid(renderTo).dataSource.read();
