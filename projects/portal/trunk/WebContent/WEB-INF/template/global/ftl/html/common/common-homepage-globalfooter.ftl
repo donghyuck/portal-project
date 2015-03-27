@@ -2,6 +2,7 @@
 <footer class="footer-global">
 	<div class="footer">
 		<div class="container">
+			${action.isSetNavigator()?string("yes", "no") }
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />						
 			<!-- breadcombs -->
