@@ -242,7 +242,7 @@
 					</ul>											
 				</div>
 				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
-				<div class="panel-footer">
+				<div class="panel-footer text-right">
 					<button class="btn btn-info btn-sm btn-flat btn-outline"  data-bind="click:close"><i class="aui-icon aui-iconfont-close-dialog"></i>  닫기</button>
 				</div>	
 			</div>
