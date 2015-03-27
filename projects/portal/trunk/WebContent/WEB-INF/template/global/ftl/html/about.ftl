@@ -61,7 +61,6 @@
 		<div class="wrapper">
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
-
 				
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">
@@ -80,6 +79,7 @@
 						</p>
 					</div>
 					<div class="col-md-6 md-margin-bottom-40">
+					
 <div class="shadow-wrapper">
             <div class="carousel slide carousel-v1 box-shadow shadow-effect-2" id="myCarousel">
                 <ol class="carousel-indicators">
@@ -202,7 +202,7 @@
     </div>
 </article>
 
-<div class="container">
+				<div class="container">
 					<!-- Meer Our Team -->
 					<div class="headline"><h2>멤버 소개</h2></div>
 					<div class="row team">
@@ -220,12 +220,12 @@
 						</div>
 					</div><!--/team-->
 				<!-- End Meer Our Team -->		
-</div>
+			</div>
 			
 			<!-- END MAIN CONTENT -->	
-			</#if>	
+			
 	 		<!-- START FOOTER -->
-
+			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- END FOOTER -->
 		</div><!-- ./wrapper -->	
 		<!-- START TEMPLATE -->
