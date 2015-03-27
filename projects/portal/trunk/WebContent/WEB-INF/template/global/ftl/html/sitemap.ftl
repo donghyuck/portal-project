@@ -98,7 +98,15 @@
 						<div class="headline"><h4> ${menu.title} </h4></div>  
 						<ul>
 							<#list menu.components as menu_item>
-							<li>${menu_item.title}</li>	
+							<li>${menu_item.title}
+								<#if  menu_item.components?has_content >
+								<ul>
+								<#list menu_item.components as menu_item_item>
+									<li>${menu_item_item.title}</li>
+								</#list>	
+								</ul>	
+								</#if>
+							</li>	
 							</#list>
 						</ul>
 						</#list>				
