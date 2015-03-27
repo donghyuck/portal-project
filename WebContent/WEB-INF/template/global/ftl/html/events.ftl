@@ -48,7 +48,7 @@
 				var currentUser = new common.ui.data.User();			
 				createAnnounceGrid();
 				
-				${RequestParameters.announceId}
+				alert( ${RequestParameters.announceId} );
 				
 				<#if !action.user.anonymous >				
 				
