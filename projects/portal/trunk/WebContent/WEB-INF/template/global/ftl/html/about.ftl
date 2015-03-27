@@ -62,6 +62,7 @@
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
 			${action.isSetNavigator()?string("yes", "no") }
+			${page}
 			<#if action.isSetNavigator()  >
 				<#assign navigator = action.getNavigator() />			
 				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
