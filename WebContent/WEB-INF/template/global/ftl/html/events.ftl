@@ -209,7 +209,7 @@
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
 			<tr data-uid="#: uid #">
 				<td><span class="label label-red">공지</span>&nbsp;#: subject #	 </td>
-				<td class="text-center">#: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
+				<td class="text-center"><i class="fa fa-calendar"></i> #: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
 			</tr>
 		</script>						
 		<script id="alert-message-template" type="text/x-kendo-tmpl">
