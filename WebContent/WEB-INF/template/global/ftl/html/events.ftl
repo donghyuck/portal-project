@@ -110,14 +110,14 @@
 					previous : function(e){
 						var $this = this;						
 						if( $this.hasPrevious ){
-							var index = $this.image.index - 1;
+							var index = $this.index - 1;
 							common.ui.grid($('#announce-grid')).select( "tr:eq(" + index + ")");		
 						}						
 					},
 					next:function(e){
 						var $this = this;						
 						if( $this.hasNext ){
-							var index = $this.image.index + 1;
+							var index = $this.index + 1;
 							common.ui.grid($('#announce-grid')).select( "tr:eq(" + index + ")");		
 						}					
 					},
