@@ -1,5 +1,5 @@
 <#ftl encoding="UTF-8"/>
-<#assign page = action.getPage() >
+<#assign page = action.getPage() />
 <html decorator="unify">
 <head>
 		<title>${page.title}</title>
