@@ -135,7 +135,10 @@
 						if( ($this.index + 1 )< size && (size - $this.index ) > 0 )
 							$this.set("hasNext", true); 
 						else 
-							$this.set("hasNext", false); 							
+							$this.set("hasNext", false); 			
+							
+						$('html,body').animate({ scrollTop: $('.wrapper > header').offset().top }, 0 );
+											
 					},
 					close:function(e){
 						renderTo.slideUp();
