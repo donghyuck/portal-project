@@ -157,8 +157,7 @@
 	                	<p class="margin-bottom-25"><small>내용</small></p>					
 					</div>												
 				</div>
-			</div>			
-			</#if>						 			
+			</div>							 			
 			<!-- END MAIN CONTENT -->	
  			<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
