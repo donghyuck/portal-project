@@ -87,6 +87,8 @@
 						
 						//alert( index + "/" +  this.items().length );
 						//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
+						selectedCell.set("index", index);
+						selectedCell.set("size", size );
 						displayAnnouncement(selectedCell, index , size  );
 					}
 				});
