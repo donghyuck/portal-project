@@ -44,6 +44,17 @@
 
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
+				createAnnounceGrid();
+				<#if !action.user.anonymous >				
+				
+				</#if>	
+				// END SCRIPT	
+			}
+		}]);	
+		
+		function createAnnounceGrid(){
+			var renderTo =$("#announce-grid");
+			if( common.ui.exists( renderTo ) ){
 				common.ui.grid(	$("#announce-grid"), {
 					dataSource : common.ui.datasource(
 						'<@spring.url "/data/announce/list.json"/>',
@@ -60,6 +71,7 @@
 						{field: "subject", title: "제목", sortable : false },
 						{field: "creationDate", title: "게시일", width: "120px", format: "{0:yyyy.MM.dd}"}
 					],					
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>')
 					rowTemplate: kendo.template($("#announce-row-template").html()),
 					sortable: true,
 					pageable: false,
@@ -72,12 +84,11 @@
 						displayAnnouncement();
 					}
 				});
-				<#if !action.user.anonymous >				
-				
-				</#if>	
-				// END SCRIPT	
-			}
-		}]);	
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});			
+			}		
+		}
 		
 		function displayAnnouncement () {		
 		
