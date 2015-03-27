@@ -93,7 +93,7 @@
 			<div class="container content">			
 				<div class="row">		
 					<div class="col-lg-12" style="min-height: 500px;">			
-						<#list action.getMenuNames() as item>
+						<#list action.menuNames as item>
 						<div class="headline"><h4> ${item} </h4></div>  
 						</#list>				
 					</div>											
