@@ -94,7 +94,8 @@
 				<div class="row">		
 					<div class="col-lg-12" style="min-height: 500px;">			
 						<#list action.menuNames as item>
-						<div class="headline"><h4> ${item} </h4></div>  
+						<#assign menu = action.getWebSiteMenu(item) />
+						<div class="headline"><h4> ${menu.title} </h4></div>  
 						</#list>				
 					</div>											
 				</div>
