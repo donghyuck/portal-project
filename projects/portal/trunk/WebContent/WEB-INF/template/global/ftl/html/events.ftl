@@ -201,7 +201,7 @@
 		</div>		
 		<!-- START TEMPLATE -->
 		<script id="announce-row-template" type="text/x-kendo-tmpl">
-			<tr data-uid="#: uid #">
+			<tr data-uid="#: uid #" data-id="#: announceId #">
 				<td><span class="label label-red">공지</span>&nbsp;#: subject #	 </td>
 				<td class="text-center"><i class="fa fa-calendar"></i> #: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
 			</tr>
