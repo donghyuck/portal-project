@@ -83,7 +83,8 @@
 					</div>
 				</div>	
 			</header>						
-			</#if>			
+			</#if>		
+				
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">
 				<div class="row margin-bottom-40">
