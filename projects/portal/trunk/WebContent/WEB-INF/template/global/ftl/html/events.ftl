@@ -47,9 +47,9 @@
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
 				createAnnounceGrid();
-				
+				<#if RequestParameters.announceId?? >
 				alert( ${RequestParameters.announceId} );
-				
+				</#if>	
 				<#if !action.user.anonymous >				
 				
 				</#if>	
