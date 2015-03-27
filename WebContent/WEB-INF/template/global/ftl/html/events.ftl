@@ -83,10 +83,11 @@
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
 						var index = this.items().index( selectedCells );
+						var size =  this.items().size();
 						
 						//alert( index + "/" +  this.items().length );
 						//	$("#announce-grid").data( "announcePlaceHolder", selectedCell );
-						displayAnnouncement(selectedCell);
+						displayAnnouncement(selectedCell, index , size  );
 					}
 				});
 				renderTo.find("[data-action='refresh']").click( function(e){
