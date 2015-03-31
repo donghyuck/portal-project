@@ -65,8 +65,7 @@
 
 				// menu active setting	
 				preparePage({
-					navbar : { parent: "MENU_PERSONALIZED", current: "MENU_PERSONALIZED_2"	},
-					personalizedSection : { renderTo: $("#personalized-area") }
+					navbar : { parent: "MENU_PERSONALIZED", current: "MENU_PERSONALIZED_2"	}
 				});
 																																			
 				// SpMenu Tabs								
