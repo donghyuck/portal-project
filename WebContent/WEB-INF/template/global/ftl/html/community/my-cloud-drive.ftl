@@ -1018,30 +1018,6 @@
 				</div>			
 			</section>		
 
-			<section class="personalized-section bg-grid open" >
-				<div class="personalized-section-content animated" style="display:block;">
-					<div class="container-fluid p-xs">
-						<div class="row m-b-xs">
-							<div class="col-sm-12">
-								<div class="pull-right">
-									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
-										<label class="btn btn-info rounded-left">
-											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-										</label>
-										<label class="btn btn-info active">
-									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-										</label>
-										<label class="btn btn-info rounded-right">
-											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-										</label>
-									</div>														
-								</div>	
-							</div>
-						</div>
-						<div id="personalized-area" class="row"></div>
-					</div>													
-				</div>				
-			</section><!-- /.section -->
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
