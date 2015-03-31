@@ -837,10 +837,7 @@
 				}	
 			}	
 
-
-						
-			@media ( min-width :768px) {
-				
+			@media ( min-width :768px) {				
 				.white-popup-block .left-col {
 					float: left;
 					width: 220px;
@@ -849,6 +846,10 @@
 					overflow: hidden;
 					padding-left: 20px;
 				}
+			}
+			
+			.personalized-section-content {
+				margin-bottom:0!important;
 			}
 		</style>   	
 		</#compress>
