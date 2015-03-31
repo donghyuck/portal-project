@@ -34,12 +34,13 @@ function preparePage(options){
 	options = options || {};
 	if( common.ui.defined(options.navbar.parent) && common.ui.defined(options.navbar.current))
 		$(".navbar-nav li[data-menu-item='"+options.navbar.parent+"'], .navbar-nav li[data-menu-item='"+options.navbar.current+"']").addClass("active");	
-	
-	if ( common.ui.defined(options.personalizedSection.renderTo )){
-		var count = options.personalizedSection.count || 3;
-		var size = options.personalizedSection.size || 6;
-		preparePersonalizedArea(options.personalizedSection.renderTo, count, size);
-	}	
+	if(options.personalizedSection){
+		if ( common.ui.defined(options.personalizedSection.renderTo )){
+			var count = options.personalizedSection.count || 3;
+			var size = options.personalizedSection.size || 6;
+			preparePersonalizedArea(options.personalizedSection.renderTo, count, size);
+		}	
+	}
 }
 
 function setupPersonalizedSection(){
