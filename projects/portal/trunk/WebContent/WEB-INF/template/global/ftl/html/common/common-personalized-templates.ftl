@@ -22,7 +22,7 @@
 <div class="img-wrapper">			
 	#if (contentType.match("^image") ) {#
 	<img src="<@spring.url '/download/image/#= imageId #/#=name#?width=150&height=150'/>" alt="#:name# 이미지" />
-	<button type="button" class="btn btn-danger btn-sm rounded-3x"><i class="fa fa-search-plus fa-lg"></i>&nbsp;</button>
+	<button type="button" class="btn btn-info btn-sm rounded-3x"><i class="fa fa-search-plus fa-lg"></i></button>
 	# } else { #			
 	<img src="http://placehold.it/146x146&amp;text=[file]"></a>
 	# } #	
