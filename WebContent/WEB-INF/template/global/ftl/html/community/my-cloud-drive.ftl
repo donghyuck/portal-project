@@ -848,7 +848,7 @@
 				}
 			}
 			
-			.personalized-section-content {
+			.personalized-section {
 				margin-bottom:0!important;
 			}
 		</style>   	
