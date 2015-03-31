@@ -759,7 +759,12 @@
 			
 			.dialog .btn-flat.left.mfp-arrow {
 				left:0px;
+				top:55%;
 			}
+
+			.dialog .btn-flat.right.mfp-arrow {
+				top:55%;
+			}			
 			
 			.dialog .btn-flat.left2 {
 				top:auto;
