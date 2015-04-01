@@ -420,7 +420,7 @@
 										<div class="panel panel colourable">		
 											<div class="panel-heading">
 												<span class="panel-title">&nbsp</span>
-													<ul class="nav nav-tabs nav-tabs-xs">
+													<ul class="nav nav-tabs nav-tabs-sm">
 														<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
 														<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
 													</ul>	
