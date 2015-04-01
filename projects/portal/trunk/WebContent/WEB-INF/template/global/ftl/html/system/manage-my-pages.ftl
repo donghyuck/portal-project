@@ -427,7 +427,14 @@
 											</div>
 											<div class="tab-content">
 												<div class="tab-pane fade" id="my-pages-tabs-0">
-																									
+													<aside style="position:absolute; width:350px;">
+													
+													1
+													</aside>
+													<section style="position:relative; z-index:2;">
+													2
+													
+													<section>												
 												</div>
 												<div class="tab-pane fade" id="my-pages-tabs-1">
 
