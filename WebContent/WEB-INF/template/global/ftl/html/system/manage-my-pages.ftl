@@ -407,7 +407,7 @@
 			<#include "/html/common/common-system-navigation.ftl" >	
 			<div id="content-wrapper">
 				<ul class="breadcrumb breadcrumb-page">
-					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_2_4") />
+					<#assign selectedMenu = WebSiteUtils.getMenuComponent("SYSTEM_MENU", "MENU_2_5_3") />
 					<li><a href="#">Home</a></li>
 					<li><a href="${ selectedMenu.parent.page!"#" }">${selectedMenu.parent.title}</a></li>
 					<li class="active"><a href="#">${selectedMenu.title}</a></li>
