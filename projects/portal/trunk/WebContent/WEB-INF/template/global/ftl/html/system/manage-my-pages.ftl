@@ -421,7 +421,7 @@
 											<div class="panel-heading">
 												<span class="panel-title">&nbsp</span>
 													<ul class="nav nav-tabs nav-tabs-xs">
-														<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">메핑 페이지</a></li>
+														<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
 														<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
 													</ul>	
 											</div>
