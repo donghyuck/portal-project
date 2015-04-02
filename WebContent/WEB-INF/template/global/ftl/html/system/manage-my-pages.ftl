@@ -485,13 +485,13 @@
 											</div>
 											<div class="tab-content">
 												<div class="tab-pane fade" id="my-pages-tabs-0">
-													<div style="float:left;clear:both;width:100%;position:relative;">
-														<aside style="width:350px;">													
+													<div class="row">
+														<div class="col-sm-4">											
 															<div class="pages no-border"></div>
-														</aside>
-														<section style="position:relative; z-index:2;">		
+														</div>
+														<div class="col-sm-8">			
 																									
-														<section>
+														<div>
 													</div>												
 												</div>
 												<div class="tab-pane fade" id="my-pages-tabs-1">
