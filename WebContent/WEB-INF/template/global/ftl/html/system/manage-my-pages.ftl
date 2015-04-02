@@ -480,8 +480,26 @@
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
 				<div  class="row">				
+					<div class="col-sm-4">	
+						
+					</div>
+					<div class="col-sm-8">	
+						<div id="site-page-list" >
+							<div class="panel panel colourable">		
+								<div class="panel-heading">
+									<span class="panel-title"><i class="fa fa-bars"></i></span>
+									<ul class="nav nav-tabs nav-tabs-sm">
+										<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
+										<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
+									</ul>	
+								</div>
+								<div class="pages no-border"></div>						
+						</div>
+					</div>						
+				</div>		
+				<div  class="row">				
 						<div class="col-sm-12">	
-							<div id="site-page-list" >
+							<div id="site-page-list2" >
 										<div class="panel panel colourable">		
 											<div class="panel-heading">
 												<span class="panel-title">&nbsp</span>
@@ -494,7 +512,7 @@
 												<div class="tab-pane fade" id="my-pages-tabs-0">
 													<div class="row">
 														<div class="col-sm-4">											
-															<div class="pages no-border"></div>
+															
 														</div>
 														<div class="col-sm-8 p-xs">			
 				
