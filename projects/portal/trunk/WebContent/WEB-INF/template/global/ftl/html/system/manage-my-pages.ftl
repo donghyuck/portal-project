@@ -497,10 +497,10 @@
 														<div class="col-sm-4">											
 															<div class="pages no-border"></div>
 														</div>
-														<div class="col-sm-8 p-sm">			
+														<div class="col-sm-8 p-xs">			
 				
 
-								<ul class="nav nav-pills bs-tabdrop-example" style="height:36px;">		
+								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
 									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
