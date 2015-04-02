@@ -508,20 +508,30 @@
 								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
 										<div class="m-b-sm">
-											<label class="control-label" for="input-menu-name">코드</label>
+											<label class="control-label" for="input-menu-name">파일</label>
 											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
-											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 이름]_[웹사이트 이름]_MENU</p>
+											<p class="help-block">중복되지 않는 파일명을 입력하세요.</p>
 										</div>
 										<div class="m-b-sm">
-											<label class="control-label" for="input-menu-title">이름</label>
+											<label class="control-label" for="input-menu-title">타이틀</label>
 											<input type="text" class="form-control input-sm" id="input-menu-title" data-bind="value:menu.title">
-											<p class="help-block">이름을 입력하세요.</p>
+											<p class="help-block">페이지 타이틀 입력하세요.</p>
 										</div>	
 										<div class="m-b-sm">
-											<label class="control-label" for="input-menu-location">위치</label>
+											<label class="control-label" for="input-menu-location">요약</label>
 											<input type="text" class="form-control imput-sm" id="input-menu-location" data-bind="value:menu.location">
-											<p class="help-block">메뉴 위치정보를 입력하세요.</p>
+											<p class="help-block">간략하게 페이지를 기술하세요.</p>
 										</div>	
+										<div class="m-b-sm">
+											<label class="control-label" for="input-menu-location">템플릿</label>
+											<input type="text" class="form-control imput-sm" id="input-menu-location" data-bind="value:menu.location">
+											<p class="help-block">물리적 템플릿 파일 경로를 입력하세요.</p>
+										</div>											
+										<div class="m-b-sm">
+											<label class="control-label" for="input-menu-location">언어</label>
+											<input type="text" class="form-control imput-sm" id="input-menu-location" data-bind="value:menu.location">
+											<p class="help-block">로케일 코드 값을 입력하세요 예)en, ko_KR </p>
+										</div>											
 										<div class="checkbox" style="margin: 0;">
 											<label>
 												<input type="checkbox" value="" class="px" data-bind="checked: menu.enabled">
