@@ -498,6 +498,43 @@
 															<div class="pages no-border"></div>
 														</div>
 														<div class="col-sm-8">			
+				
+
+									
+									<div class="tab-pane" id="bs-tabdrop-pill1">
+										<div class="m-b-sm">
+											<label class="control-label" for="input-menu-name">코드</label>
+											<input type="text" class="form-control input-sm" id="input-menu-name" data-bind="value:menu.name">
+											<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 이름]_[웹사이트 이름]_MENU</p>
+										</div>
+										<div class="m-b-sm">
+											<label class="control-label" for="input-menu-title">이름</label>
+											<input type="text" class="form-control input-sm" id="input-menu-title" data-bind="value:menu.title">
+											<p class="help-block">이름을 입력하세요.</p>
+										</div>	
+										<div class="m-b-sm">
+											<label class="control-label" for="input-menu-location">위치</label>
+											<input type="text" class="form-control imput-sm" id="input-menu-location" data-bind="value:menu.location">
+											<p class="help-block">메뉴 위치정보를 입력하세요.</p>
+										</div>	
+										<div class="checkbox" style="margin: 0;">
+											<label>
+												<input type="checkbox" value="" class="px" data-bind="checked: menu.enabled">
+												<span class="lbl">사용 여부</span>
+											</label>
+										</div>			
+										<hr/>							
+										<ul class="list-unstyled margin-bottom-30">
+											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
+											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.modifiedDate"></span></li>
+										</ul>																				
+									</div>
+									<div class="tab-pane active" id="bs-tabdrop-pill2">					
+										</div>
+									<div class="tab-pane" id="bs-tabdrop-pill3">
+										<p>Howdy, I'm in Section 3.</p>
+									</div>
+								</div>																
 																									
 														<div>
 													</div>												
