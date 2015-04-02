@@ -37,7 +37,7 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
-						createMenuGrid();
+						createPageList();
 					},
 					change: function(e){
 						e.data.copy(targetCompany);
@@ -47,6 +47,60 @@
 				// END SCRIPT
 			}
 		}]);		
+		
+		function createPageList(){
+			var renderTo = $("#site-page-list");
+			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.data("action") ){
+						case "pages1" :
+							createMappedPageGrid(renderTo.find(".pages"));
+							break;
+						case "pages2" :
+							createPageGrid(renderTo.find(".pages"));
+							break;	
+				}	
+			});			
+			renderTo.find(".nav-tabs a:first").tab('show');		
+		}
+		
+		function createMappedPageGrid(renderTo){
+			if(! common.ui.exists(renderTo) ){
+				common.ui.grid(renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'/secure/data/mgmt/website/pages/list.json?output=json', type:'post' },
+							parameterMap: function (options, type){
+								return { siteId: 1 }
+							}
+						},						
+						batch: false, 
+						pageSize: 15,
+						schema: {
+							data: "items",
+							total: "totalCount"
+						}
+					},
+					columns: [
+						{ title: "사이트", field: "displayName"},
+						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info  btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
+					],
+					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 사이트 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" >새로고침</button></div>'),
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
+					resizable: true,
+					editable : false,
+					selectable : "row",
+					scrollable: false,
+					height: 300,
+					change: function(e) {
+					},
+					dataBound: function(e) {
+					}	
+				});			
+			}
+		}
+		
+		
 		
 		function createMenuGrid(){
 			var renderTo = $("#company-site-grid");
@@ -417,6 +471,7 @@
 				</div><!-- / .page-header -->	
 				<div  class="row">				
 						<div class="col-sm-12">	
+							<div id="site-page-list" >
 										<div class="panel panel colourable">		
 											<div class="panel-heading">
 												<span class="panel-title">&nbsp</span>
@@ -427,21 +482,18 @@
 											</div>
 											<div class="tab-content">
 												<div class="tab-pane fade" id="my-pages-tabs-0">
-													<aside style="position:absolute; width:350px;">
-													
-													1
+													<aside style="position:absolute; width:350px;">													
+													<div class="pages no-border"></div>
 													</aside>
-													<section style="position:relative; z-index:2;">
-													2
-													
+													<section style="position:relative; z-index:2;">													
 													<section>												
 												</div>
 												<div class="tab-pane fade" id="my-pages-tabs-1">
 
 												</div>
 											</div>
-										 </div>									
-						
+										 </div>		
+							</div>
 						</div>
 				</div>		
 				<div class="multi-pane-layout" >
