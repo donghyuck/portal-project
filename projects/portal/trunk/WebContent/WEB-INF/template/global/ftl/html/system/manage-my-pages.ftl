@@ -497,7 +497,7 @@
 														<div class="col-sm-4">											
 															<div class="pages no-border"></div>
 														</div>
-														<div class="col-sm-8">			
+														<div class="col-sm-8 p-sm">			
 				
 
 								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
