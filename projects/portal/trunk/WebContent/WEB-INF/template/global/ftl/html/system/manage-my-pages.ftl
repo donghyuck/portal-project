@@ -72,7 +72,7 @@
 				common.ui.grid(renderTo, {
 					dataSource: {
 						transport: { 
-							read: { url:'/secure/data/mgmt/website/pages/list.json?output=json', type:'post' },
+							read: { url:'/secure/data/mgmt/website/pages/list.json?output=json', type:'get' },
 							parameterMap: function (options, type){
 								return { siteId: 1 }
 							}
