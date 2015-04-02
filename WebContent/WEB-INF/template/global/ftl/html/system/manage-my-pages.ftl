@@ -64,6 +64,9 @@
 			renderTo.find(".nav-tabs a:first").tab('show');		
 		}
 		
+		function createPageGrid(renderTo){
+		
+		}
 		function createMappedPageGrid(renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
