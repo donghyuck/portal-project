@@ -99,7 +99,10 @@
 					},
 					dataBound: function(e) {
 					}	
-				});			
+				});		
+				renderTo.find("button[data-action=refresh]").click(function(e){
+					common.ui.grid(renderTo).dataSource.read();								
+				});		
 			}
 		}
 		
