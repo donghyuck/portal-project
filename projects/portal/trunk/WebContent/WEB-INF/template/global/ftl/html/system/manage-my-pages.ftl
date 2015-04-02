@@ -494,29 +494,6 @@
 						</div>						
 					</div>
 					<div class="col-sm-8">	
-
-					</div>						
-				</div>		
-				<div  class="row">				
-						<div class="col-sm-12">	
-							<div id="site-page-list2" >
-										<div class="panel panel colourable">		
-											<div class="panel-heading">
-												<span class="panel-title">&nbsp</span>
-													<ul class="nav nav-tabs nav-tabs-sm">
-														<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
-														<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
-													</ul>	
-											</div>
-											<div class="tab-content">
-												<div class="tab-pane fade" id="my-pages-tabs-0">
-													<div class="row">
-														<div class="col-sm-4">											
-															
-														</div>
-														<div class="col-sm-8 p-xs">			
-				
-
 								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
@@ -570,7 +547,30 @@
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<p>Howdy, I'm in Section 3.</p>
 									</div>
-								</div>															
+								</div>	
+					</div>						
+				</div>		
+				<div  class="row">				
+						<div class="col-sm-12">	
+							<div id="site-page-list2" >
+										<div class="panel panel colourable">		
+											<div class="panel-heading">
+												<span class="panel-title">&nbsp</span>
+													<ul class="nav nav-tabs nav-tabs-sm">
+														<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
+														<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
+													</ul>	
+											</div>
+											<div class="tab-content">
+												<div class="tab-pane fade" id="my-pages-tabs-0">
+													<div class="row">
+														<div class="col-sm-4">											
+															
+														</div>
+														<div class="col-sm-8 p-xs">			
+				
+
+														
 																									
 														<div>
 													</div>												
