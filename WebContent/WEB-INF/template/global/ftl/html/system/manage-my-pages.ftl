@@ -500,7 +500,7 @@
 														<div class="col-sm-8 p-sm">			
 				
 
-								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
+								<ul class="nav nav-pills bs-tabdrop-example" style="height:36px;">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
 									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
