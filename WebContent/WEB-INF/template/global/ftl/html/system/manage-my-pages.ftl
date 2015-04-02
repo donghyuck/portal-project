@@ -500,7 +500,12 @@
 														<div class="col-sm-8">			
 				
 
-									
+								<ul class="nav nav-tabs nav-tabs-simple" style="height:36px;">		
+									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
+									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
+									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
+								</ul>
+								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
 										<div class="m-b-sm">
 											<label class="control-label" for="input-menu-name">코드</label>
@@ -524,17 +529,23 @@
 											</label>
 										</div>			
 										<hr/>							
-										<ul class="list-unstyled margin-bottom-30">
-											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
-											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.modifiedDate"></span></li>
-										</ul>																				
+														<ul class="list-unstyled margin-bottom-30">
+															
+															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
+															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.modifiedDate"></span></li>
+															
+														</ul>
+										
 									</div>
-									<div class="tab-pane active" id="bs-tabdrop-pill2">					
-										</div>
+									<div class="tab-pane active" id="bs-tabdrop-pill2">
+										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
+										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >									
+										<div id="xml-editor"></div>	
+									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<p>Howdy, I'm in Section 3.</p>
 									</div>
-								</div>																
+								</div>															
 																									
 														<div>
 													</div>												
