@@ -77,6 +77,7 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 	var Setup = Widget.extend({		
 		init : function(element, options) {
 			var that = this;
+			that.data = new kendo.data.ObservableObject();
 			Widget.fn.init.call(that, element, options);
 			options = that.options;
 			that.complete();
@@ -92,11 +93,12 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 			cfg = { features : {}, jobs : [] };			
 			cfg.features = options.features || {} ;
 			cfg.jobs =  options.jobs || [] ;			
-			common.ui.setup(cfg);		
-			
+			common.ui.setup(cfg);					
 			that.authenticate();
 			//that.companySelector();
 			culture();
+			
+			
 			
 			$('.menu-content-profile .close').click(function () {
 				var $p = $(this).parents('.menu-content');
@@ -107,12 +109,9 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 					});
 				}, 300);
 				return false;
-			});
-			
+			});			
 			that._pixelAdmin = window.PixelAdmin;
 			that._pixelAdmin.start([]);	
-			
-		
 		},
 		authenticate : function() {
 			var that = this;
@@ -131,6 +130,14 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 					that.trigger(AUTHENTICATE,{ token : that.token });
 				}
 			});		
+		},
+		get:function(name){
+			var that = this;
+			that.data.get(name);
+		},
+		set function ( name, value ){
+			var that = this;
+			that.data.set(name, value);						
 		},
 		companySelector : function(renderTo){	
 			var that = this, renderTo = renderTo || $("#targetCompany");		
