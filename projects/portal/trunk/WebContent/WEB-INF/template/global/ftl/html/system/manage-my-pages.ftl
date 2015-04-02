@@ -460,7 +460,7 @@
 		  color: #737373;		
 		}			
 		
-		.k-grid.pages > k-grid-pager {
+		.k-grid.pages > .k-grid-pager {
 			position: absolute;
 	  		bottom: 0;
 		}
