@@ -490,7 +490,8 @@
 										<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
 									</ul>	
 								</div>
-								<div class="pages no-border"></div>						
+								<div class="pages no-border"></div>	
+							</div>						
 						</div>						
 					</div>
 					<div class="col-sm-8">	
