@@ -459,6 +459,11 @@
 		  font-weight: 100;
 		  color: #737373;		
 		}			
+		
+		.k-grid.pages > k-grid-pager {
+			position: absolute;
+	  		bottom: 0;
+		}
 		</style>
 		</#compress>		
 	</head>
