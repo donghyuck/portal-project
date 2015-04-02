@@ -8,7 +8,7 @@
 		<!--		
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css" />',
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css" />',
 			'css!<@spring.url "/styles/common.plugins/animate.css" />',
 			'css!<@spring.url "/styles/jquery.jgrowl/jquery.jgrowl.min.css" />',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css" />',			
@@ -27,8 +27,7 @@
 			'<@spring.url "/js/common/common.ui.core.js" />',							
 			'<@spring.url "/js/common/common.ui.data.js" />',
 			'<@spring.url "/js/common/common.ui.community.js" />',
-			'<@spring.url "/js/common/common.ui.admin.js" />',	
-			'<@spring.url "/js/ace/ace.js" />'			
+			'<@spring.url "/js/common/common.ui.admin.js" />' />'			
 			],
 			complete: function() {
 				var currentUser = new common.ui.data.User();
