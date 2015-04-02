@@ -481,9 +481,6 @@
 				</div><!-- / .page-header -->	
 				<div  class="row">				
 					<div class="col-sm-4">	
-						
-					</div>
-					<div class="col-sm-8">	
 						<div id="site-page-list" >
 							<div class="panel panel colourable">		
 								<div class="panel-heading">
@@ -494,7 +491,10 @@
 									</ul>	
 								</div>
 								<div class="pages no-border"></div>						
-						</div>
+						</div>						
+					</div>
+					<div class="col-sm-8">	
+
 					</div>						
 				</div>		
 				<div  class="row">				
