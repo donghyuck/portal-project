@@ -131,14 +131,6 @@ common.ui.data.DatabaseInfo = kendo.data.Model.define( {
 				}
 			});		
 		},
-		get:function(name){
-			var that = this;
-			that.data.get(name);
-		},
-		set function ( name, value ){
-			var that = this;
-			that.data.set(name, value);						
-		},
 		companySelector : function(renderTo){	
 			var that = this, renderTo = renderTo || $("#targetCompany");		
 			if(!renderTo.data("kendoDropDownList")){
