@@ -456,6 +456,8 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
+													<input type="checkbox" id="input-page-enabled" class="k-checkbox" data-bind="checked: page.enabled">
+													<label class="k-checkbox-label" for="input-page-enabled">사용 여부</label>												
 												</div>
 											</div>
 											<div class="col-sm-6">
@@ -463,18 +465,7 @@
 												</div>
 											</div>
 										</div>	
-										<div class="m-b-sm">
-
-										</div>											
-										<div class="m-b-sm">
-
-										</div>											
-										<div class="checkbox" style="margin: 0;">
-											<label>
-												<input type="checkbox" value="" class="px" data-bind="checked: page.enabled">
-												<span class="lbl">사용 여부</span>
-											</label>
-										</div>			
+										
 										<hr/>							
 										<ul class="list-unstyled margin-bottom-30">
 											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
