@@ -45,6 +45,8 @@
 	    	target.set("enabled", this.get("enabled"));
 	    	target.set("creationDate",this.get("creationDate") );
 	    	target.set("modifiedDate",this.get("modifiedDate") );
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
 	    }
 	});
 	
