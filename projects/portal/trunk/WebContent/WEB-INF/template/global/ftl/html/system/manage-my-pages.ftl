@@ -495,6 +495,11 @@
 						</div>						
 					</div>
 					<div class="col-sm-8">	
+						<div class="panel panel colourable">		
+							<div class="panel-heading">
+								<span class="panel-title">&nbsp</span>
+							</div>
+							<div class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
@@ -534,12 +539,10 @@
 											</label>
 										</div>			
 										<hr/>							
-														<ul class="list-unstyled margin-bottom-30">
-															
-															<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
-															<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.modifiedDate"></span></li>
-															
-														</ul>
+										<ul class="list-unstyled margin-bottom-30">
+											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: menu.creationDate"></span></li>
+											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: menu.modifiedDate"></span></li>
+										</ul>
 										
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
@@ -548,7 +551,9 @@
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<p>Howdy, I'm in Section 3.</p>
 									</div>
-								</div>	
+								</div>
+							</div>
+						</div>			
 					</div>						
 				</div>		
 				<div  class="row">				
