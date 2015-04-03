@@ -405,15 +405,21 @@
 								</ul>
 								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
-										<div class="m-b-sm">
-											<label class="control-label" for="input-page-name">파일</label>
-											<input type="text" class="form-control input-sm" id="input-page-name" data-bind="value:page.name">
-											<p class="help-block">중복되지 않는 파일명을 입력하세요.</p>
-										</div>
-										<div class="m-b-sm">
-											<label class="control-label" for="input-page-contentType">콘텐츠 타입</label>
-											<input type="text" class="form-control input-sm" id="input-page-contentType" data-bind="value:page.contentType">
-											<p class="help-block">콘텐츠 타입을 입력하세요.</p>
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-name">파일</label>
+													<input type="text" class="form-control input-sm" id="input-page-name" data-bind="value:page.name">
+													<p class="help-block">중복되지 않는 파일명을 입력하세요.</p>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-contentType">콘텐츠 타입</label>
+													<input type="text" class="form-control input-sm" id="input-page-contentType" data-bind="value:page.contentType">
+													<p class="help-block">콘텐츠 타입을 입력하세요.</p>												
+												</div>
+											</div>
 										</div>
 										<div class="m-b-sm">
 											<label class="control-label" for="input-page-displayName">타이틀</label>
