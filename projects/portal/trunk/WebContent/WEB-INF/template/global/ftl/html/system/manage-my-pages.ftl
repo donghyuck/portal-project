@@ -416,16 +416,16 @@
 		.layout-block {
 			background: #272822;
 			 margin: 0 0 20px 0;
-			border-top: 1px solid #23241e;				
+			border-top: 1px solid #8e8e93;				
 		}
 		.layout-block .left {
 		  display: block;
 		  width: 400px;
-		  border-right: 1px solid #333;
+		  border-right: 1px solid #8e8e93;
 		  padding: 15px;
 		  float: left;
 		  position: relative;
-		  height: 340px;
+		  height: auto;
 		}
 
 		.layout-block .left .header {
