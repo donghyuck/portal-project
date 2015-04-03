@@ -80,7 +80,8 @@
 						pageSize: 15,
 						schema: {
 							data: "items",
-							total: "totalCount"
+							total: "totalCount",
+							model: common.ui.data.WebPage
 						}
 					},
 					columns: [
@@ -102,52 +103,9 @@
 				renderTo.find("button[data-action=refresh]").click(function(e){
 					common.ui.grid(renderTo).dataSource.read();								
 				});		
-			}
-		}
-		
-		
-		
-		function createMenuGrid(){
-			var renderTo = $("#company-site-grid");
-			if(! common.ui.exists(renderTo) ){
-				common.ui.grid(renderTo, {
-					dataSource: {
-						transport: { 
-							read: { url:'/secure/data/mgmt/website/list.json?output=json', type:'post' }
-						},						
-						batch: false, 
-						pageSize: 15,
-						schema: {
-							data: "items",
-							total: "totalCount",
-							model: common.ui.data.WebSite
-						}
-					},
-					columns: [
-						{ title: "사이트", field: "displayName"},
-						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info  btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
-					],
-					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 사이트 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" >새로고침</button></div>'),
-					/*pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },*/		
-					resizable: true,
-					editable : false,
-					selectable : "row",
-					scrollable: false,
-					height: 300,
-					change: function(e) {
-					},
-					dataBound: function(e) {
-						if ($("#company-site-details").is(":visible")) 
-							$("#company-site-details").fadeOut();			
-					}
-				});
-				renderTo.find("button[data-action=refresh]").click(function(e){
-					common.ui.grid(renderTo).dataSource.read();								
-				});	
 				$(document).on("click","[data-action=update],[data-action=create]", function(e){		
 					var $this = $(this);		
 					if( common.ui.defined($this.data("object-id")) ){
-						//common.ui.grid(renderTo).clearSelection();
 						var objectId = $this.data("object-id");						
 						if( objectId > 0 ){
 							openEditor(common.ui.grid(renderTo).dataSource.get(objectId));
@@ -155,116 +113,37 @@
 							openEditor(new common.ui.data.WebSite())
 						}
 					}
-				});			
-			}	
+				});						
+			}
 		}
 		
-		function getEditorSource(){
-			var renderTo = $("#company-site-details");		
-			return renderTo.data("model");
-		}
-		
-		function openEditor(source){
-			var renderTo = $("#company-site-details");
-			
+		function openEditor(source){			
+			var renderTo = $("#site-page-editor");
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
-					site : new common.ui.data.WebSite(),
-					menuInherited : true,
+					page : new common.ui.data.WebPage(),
 					editable : false,
-					requiredNewMenu: false,
+					enabled : false,
 					setSource : function(source){
-						source.copy(this.site);			
-						if( this.site.webSiteId > 0 ){
+						source.copy(this.page);			
+						if( this.page.webPageId > 0 ){
 							this.set("editable", true);
 						}else{
 							this.set("editable", false);
 							this.set("enabled", true);
-							this.set("requiredNewMenu", false);
 						}									
-						if(common.ui.defined(source.menu)){							
-							this.set("menuInherited", this.site.menu.menuId == ${WebSiteUtils.getDefaultMenuId()} ? true : false );
-							ace.edit("xml-editor").setValue(this.site.menu.menuData);
-						}else{
-							this.set("menuInherited", true);
-							ace.edit("xml-editor").setValue("");
-						}
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
-					},
-					update: function(e){
-						var $this = this;
-						var $btn = $(e.target);						
-						if( confirm("저장 하시겠습니까?") ) {
-							$btn.button('loading');	
-							common.ui.ajax(
-								'<@spring.url "/secure/data/mgmt/website/update.json?output=json" />' , 
-								{
-									data : kendo.stringify( $this.site ),
-									contentType : "application/json",
-									success : function(response){
-										common.ui.grid($("#company-site-grid")).dataSource.read();
-									},
-									fail: function(){								
-										common.ui.notification({
-											hide:function(e){
-												$btn.button('reset');
-											}
-										}).show({	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	}, "error"	);	
-									},
-									complete : function(e){
-										//common.ui.grid($("#company-site-grid")).dataSource.read();
-										$btn.button('reset');
-									}
-								}
-							);												
-						}else{
-							source.copy($this.site);			
-						}
-					}, 
-					update2: function(e){
-						var $this = this;
-						var btn = $(e.target);							
-									
-						if( confirm("저장 하시겠습니까?") ) {
-							btn.button('loading');			
-							$this.site.menu.menuData = ace.edit("xml-editor").getValue();
-							common.ui.ajax(
-								'<@spring.url "/secure/data/mgmt/website/navigator/update.json?output=json" />' , 
-								{
-									data : kendo.stringify( $this.site ),
-									contentType : "application/json",
-									success : function(response){},
-									fail: function(){								
-										common.ui.notification({
-											hide:function(e){
-												btn.button('reset');
-											}
-										}).show(
-											{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-											"error"
-										);	
-									},
-									complete : function(e){
-										btn.button('reset');
-									}
-								}
-							);
-						}		
 					}
-				});	
-												
+				});								
 				renderTo.data("model", observable );
-				kendo.bind(renderTo, observable );					
-				var editor = ace.edit("xml-editor");		
-				editor.getSession().setMode("ace/mode/xml");
-				editor.getSession().setUseWrapMode(false);				
-				createEditorModeSwitcher(renderTo, editor );
-				createSiteDetailsTabs(renderTo, observable);
+				kendo.bind(renderTo, observable );				
 			}			
 			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
-				renderTo.fadeIn();	 			
+				renderTo.fadeIn();	 						
 		}	
+		
+		
 		
 		function createEditorModeSwitcher(renderTo, editor ){
 			var switcher = renderTo.find("input[name='warp-switcher']");				
@@ -518,7 +397,7 @@
 													
 					</div>					
 					<div class="right">
-							<div class="panel-body">
+							<div  id="site-page-editor" class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
