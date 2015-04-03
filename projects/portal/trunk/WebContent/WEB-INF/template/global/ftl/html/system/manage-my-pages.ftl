@@ -536,25 +536,7 @@
 					
 					<div class="right">
 
-<div style="border-bottom: 1px solid #8e8e93;">
-					<span class="header">Enter color name</span>
-					<input type="text" class="form-control" id="g-name-input">
-				</div>
-					</div>
-				</div>
-				
-								
-				<div  class="row">				
-					<div class="col-sm-4">	
-						<div id="site-page-list" >
-							
-						</div>						
-					</div>
-					<div class="col-sm-8">	
-						<div class="panel panel colourable">		
-							<div class="panel-heading">
-								<span class="panel-title">&nbsp</span>
-							</div>
+
 							<div class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
@@ -609,6 +591,24 @@
 									</div>
 								</div>
 							</div>
+
+
+					</div>
+				</div>
+				
+								
+				<div  class="row">				
+					<div class="col-sm-4">	
+						<div id="site-page-list" >
+							
+						</div>						
+					</div>
+					<div class="col-sm-8">	
+						<div class="panel panel colourable">		
+							<div class="panel-heading">
+								<span class="panel-title">&nbsp</span>
+							</div>
+
 						</div>			
 					</div>						
 				</div>		
