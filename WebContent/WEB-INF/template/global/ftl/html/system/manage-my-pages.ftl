@@ -150,34 +150,31 @@
 				var show_bs_tab = $(e.target);
 				switch( show_bs_tab.data("action") ){
 					case "properties" :
-					createSitePropertiesGrid(renderTo.find(".properties"), data.site );
+					createPagePropertiesGrid(renderTo.find(".properties"));
 					break;
 				}	
 			});
 		}	
-				
 		
-		function createSitePropertiesGrid(renderTo, data){
+		function createPagePropertiesDataSource(data){
+			return common.ui.data.properties.datasource({
+				transport: { 
+					read: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
+					create: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&siteId="/>' + data.webPageId , type:'post', contentType : "application/json" },
+					update: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&siteId="/>' + data.webPageId, type:'post', contentType : "application/json"  },
+					destroy: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/delete.json?output=json&siteId="/>' + data.webPageId, type:'post', contentType : "application/json" },
+					parameterMap: function (options, operation){			
+						if (operation !== "read" && options.models) {
+							return kendo.stringify(options.models);
+						}
+					}
+				}		
+			});		
+		}		
+		
+		function createPagePropertiesGrid(renderTo){		
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
-							create: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId , type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json"  },
-							destroy: { url:'<@spring.url "/secure/data/mgmt/website/properties/delete.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json" },
-							parameterMap: function (options, operation){			
-								if (operation !== "read" && options.models) {
-									return kendo.stringify(options.models);
-								}
-							}
-						},						
-						batch: true, 
-						schema: {
-							model: common.ui.data.Property
-						},
-						error:common.ui.handleAjaxError
-					},
 					columns: [
 						{ title: "속성", field: "name", width: 250 },
 						{ title: "값",   field: "value" },
