@@ -409,15 +409,15 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-name">파일</label>
-													<input type="text" class="form-control input-sm" id="input-page-name" data-bind="value:page.name">
-													<p class="help-block">중복되지 않는 파일명을 입력하세요.</p>
+													<input type="text" class="form-control" id="input-page-name" data-bind="value:page.name">
+													<p class="help-block small">중복되지 않는 파일명을 입력하세요.</p>
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-contentType">콘텐츠 타입</label>
-													<input type="text" class="form-control input-sm" id="input-page-contentType" data-bind="value:page.contentType">
-													<p class="help-block">콘텐츠 타입을 입력하세요.</p>												
+													<input type="text" class="form-control" id="input-page-contentType" data-bind="value:page.contentType">
+													<p class="help-block small">콘텐츠 타입을 입력하세요.</p>												
 												</div>
 											</div>
 										</div>
@@ -425,15 +425,15 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-displayName">타이틀</label>
-													<input type="text" class="form-control input-sm" id="input-page-displayName" data-bind="value:page.displayName">
-													<p class="help-block">페이지 타이틀을 입력하세요.</p>
+													<input type="text" class="form-control" id="input-page-displayName" data-bind="value:page.displayName">
+													<p class="help-block small">페이지 타이틀을 입력하세요.</p>
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">			
 													<label class="control-label" for="input-page-description">요약</label>
-													<input type="text" class="form-control imput-sm" id="input-page-description" data-bind="value: page.description">
-													<p class="help-block">간략하게 페이지를 기술하세요.</p>																					
+													<input type="text" class="form-control" id="input-page-description" data-bind="value: page.description">
+													<p class="help-block small">간략하게 페이지를 기술하세요.</p>																					
 												</div>
 											</div>
 										</div>												
@@ -441,15 +441,15 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-template">템플릿</label>
-													<input type="text" class="form-control imput-sm" id="input-page-template" data-bind="value: page.template">
-													<p class="help-block">물리적 템플릿 파일 경로를 입력하세요.</p>												
+													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">
+													<p class="help-block small">물리적 템플릿 파일 경로를 입력하세요.</p>												
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">		
 													<label class="control-label" for="input-page-locale">언어</label>
-													<input type="text" class="form-control imput-sm" id="input-page-locale" data-bind="value: page.locale">
-													<p class="help-block">로케일 코드 값을 입력하세요 예)en, ko_KR </p>																						
+													<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
+													<p class="help-block small">로케일 코드 값을 입력하세요 예)en, ko_KR </p>																						
 												</div>
 											</div>
 										</div>														
@@ -457,7 +457,7 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<input type="checkbox" id="input-page-enabled" class="k-checkbox" data-bind="checked: page.enabled">
-													<label class="k-checkbox-label" for="input-page-enabled">사용 여부</label>												
+													<label class="k-checkbox-label small" for="input-page-enabled">사용 여부</label>												
 												</div>
 											</div>
 											<div class="col-sm-6">
@@ -468,8 +468,8 @@
 										
 										<hr/>							
 										<ul class="list-unstyled margin-bottom-30">
-											<li class="p-xxs"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
-											<li class="p-xxs"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
+											<li class="p-xxs small"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
+											<li class="p-xxs small"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
 										</ul>
 										
 									</div>
