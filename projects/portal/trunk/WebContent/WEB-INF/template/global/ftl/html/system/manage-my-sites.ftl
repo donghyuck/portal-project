@@ -368,6 +368,16 @@
 		  position: relative;
 		  height: 340px;
 		}
+
+		.layout-block .left .header {
+		  text-align: center;
+		  color: #aaa;
+		  display: block;
+		  text-transform: uppercase;
+		  font-size: 11px;
+		  font-weight: 600;
+		  margin: -15px -15px 0 -15px;
+		}
 		
 		.layout-block .right {
 		  overflow: hidden;
@@ -442,9 +452,17 @@
 				
 				<div class="layout-block clearfix no-grid-gutter-h" style="margin-top:-26px;margin-bottom: 26px;">
 				
-					<div class="left">1</div>
+					<div class="left">
+						<span class="header">Choose color</span>
+					</div>
 					
-					<div class="right">2</div>
+					<div class="right">
+
+<div style="border-bottom: 1px solid #333;">
+					<span class="header">Enter color name</span>
+					<input type="text" class="form-control" id="g-name-input">
+				</div>
+					</div>
 				</div>
 				
 				<div class="multi-pane-layout" >
