@@ -64,7 +64,7 @@
 	    	isolationLevel: {type: "string", editable: false}
 	    }
 	});
-	
+
 	extend( common.ui.data, {
 		EditableCompany : EditableCompany,			
 		stats : {
