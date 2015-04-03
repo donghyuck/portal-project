@@ -2,16 +2,17 @@
  * COMMON ADMIN UI DEFINE
  */
 
-common.ui.data.DatabaseInfo = kendo.data.Model.define( {
-    fields: {
-    	databaseName: { type: "string",  editable: false },
-    	databaseVersion:  { type: "string", editable: false },
-    	driverName : { type: "string", editable: false},
-    	driverVersion: {type: "string", editable: false},
-    	isolationLevel: {type: "string", editable: false}
-    }
-});
-
+	common.ui.data.DatabaseInfo = kendo.data.Model.define( {
+	    fields: {
+	    	databaseName: { type: "string",  editable: false },
+	    	databaseVersion:  { type: "string", editable: false },
+	    	driverName : { type: "string", editable: false},
+	    	driverVersion: {type: "string", editable: false},
+	    	isolationLevel: {type: "string", editable: false}
+	    }
+	});
+	
+	
 	common.ui.data.FileInfo =  kendo.data.Model.define({
 		id : "path",
 		hasChildren: "directory",
