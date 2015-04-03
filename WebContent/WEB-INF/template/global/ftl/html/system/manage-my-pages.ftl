@@ -536,7 +536,7 @@
 					
 					<div class="right">
 
-<div style="border-bottom: 1px solid #333;">
+<div style="border-bottom: 1px solid #8e8e93;">
 					<span class="header">Enter color name</span>
 					<input type="text" class="form-control" id="g-name-input">
 				</div>
