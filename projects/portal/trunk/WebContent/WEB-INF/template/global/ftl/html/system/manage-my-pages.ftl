@@ -93,7 +93,7 @@
 					editable : false,
 					selectable : "row",
 					scrollable: false,
-					height: 500,
+					height: 400,
 					change: function(e) {
 					},
 					dataBound: function(e) {
@@ -448,17 +448,6 @@
 		  padding: 15px;
 		}
 
-
-		.k-grid-content {
-			min-height:300px;
-		}
-					
-		#xml-editor	 {
-			height:550px;
-			width:100%;
-			border: solid 2px #666;
-		}	
-		
 		.multi-pane-layout {
 			display: -webkit-box;
 			display: -webkit-flex;
@@ -495,10 +484,6 @@
 		  color: #737373;		
 		}			
 		
-		.k-grid.pages > .k-grid-pager {
-			position: absolute;
-	  		bottom: 0;
-		}
 		</style>
 		</#compress>		
 	</head>
