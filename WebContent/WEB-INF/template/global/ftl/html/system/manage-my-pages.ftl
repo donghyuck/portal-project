@@ -397,7 +397,7 @@
 													
 					</div>					
 					<div class="right">
-							<div  id="site-page-editor" class="panel-body" data-bind="visible:enabled">
+							<div  id="site-page-editor" class="panel-body" data-bind="visible:enabled" style="display:none;">
 								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
