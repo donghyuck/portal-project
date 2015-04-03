@@ -37,7 +37,7 @@
 				common.ui.admin.setup({					 
 					authenticate : function(e){
 						e.token.copy(currentUser);
-						createMenuGrid();
+						createSiteGrid();
 					},
 					change: function(e){
 						e.data.copy(targetCompany);
@@ -48,7 +48,7 @@
 			}
 		}]);		
 		
-		function createMenuGrid(){
+		function createSiteGrid(){
 			var renderTo = $("#company-site-grid");
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
@@ -353,6 +353,21 @@
 		-->
 		</script> 		 
 		<style>
+
+		.layout-block {
+			background: #272822;
+			 margin: 0 0 20px 0;
+			border-top: 1px solid #23241e;				
+		}
+
+		.layout-block .right {
+		  overflow: hidden;
+		  float: none;
+		}
+
+		.layout-block .header, .layout-block .right > div {
+		  padding: 15px;
+		}
 
 		.k-grid-content {
 			min-height:300px;
