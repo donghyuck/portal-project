@@ -421,16 +421,33 @@
 												</div>
 											</div>
 										</div>
-										<div class="m-b-sm">
-											<label class="control-label" for="input-page-displayName">타이틀</label>
-											<input type="text" class="form-control input-sm" id="input-page-displayName" data-bind="value:page.displayName">
-											<p class="help-block">페이지 타이틀 입력하세요.</p>
-										</div>	
-										<div class="m-b-sm">
-											<label class="control-label" for="input-page-description">요약</label>
-											<input type="text" class="form-control imput-sm" id="input-page-description" data-bind="value: page.description">
-											<p class="help-block">간략하게 페이지를 기술하세요.</p>
-										</div>	
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-displayName">타이틀</label>
+													<input type="text" class="form-control input-sm" id="input-page-displayName" data-bind="value:page.displayName">
+													<p class="help-block">페이지 타이틀을 입력하세요.</p>
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">			
+													<label class="control-label" for="input-page-description">요약</label>
+													<input type="text" class="form-control imput-sm" id="input-page-description" data-bind="value: page.description">
+													<p class="help-block">간략하게 페이지를 기술하세요.</p>																					
+												</div>
+											</div>
+										</div>												
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">												
+												</div>
+											</div>
+										</div>														
+
 										<div class="m-b-sm">
 											<label class="control-label" for="input-page-template">템플릿</label>
 											<input type="text" class="form-control imput-sm" id="input-page-template" data-bind="value: page.template">
