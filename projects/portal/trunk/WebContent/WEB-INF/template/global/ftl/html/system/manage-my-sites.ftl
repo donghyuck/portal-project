@@ -354,40 +354,6 @@
 		</script> 		 
 		<style>
 
-		.layout-block {
-			background: #272822;
-			 margin: 0 0 20px 0;
-			border-top: 1px solid #23241e;				
-		}
-		.layout-block .left {
-		  display: block;
-		  width: 204px;
-		  border-right: 1px solid #333;
-		  padding: 15px;
-		  float: left;
-		  position: relative;
-		  height: 340px;
-		}
-
-		.layout-block .left .header {
-		  text-align: center;
-		  color: #aaa;
-		  display: block;
-		  text-transform: uppercase;
-		  font-size: 11px;
-		  font-weight: 600;
-		  margin: -15px -15px 0 -15px;
-		}
-		
-		.layout-block .right {
-		  overflow: hidden;
-		  float: none;
-		}
-
-		.layout-block .header, .layout-block .right > div {
-		  padding: 15px;
-		}
-
 		.k-grid-content {
 			min-height:300px;
 		}
@@ -449,21 +415,7 @@
 				<div class="page-header bg-dark-gray">					
 					<h1><#if selectedMenu.isSetIcon() ><i class="fa ${selectedMenu.icon} page-header-icon"></i></#if> ${selectedMenu.title}  <small><i class="fa fa-quote-left"></i> ${selectedMenu.description!""} <i class="fa fa-quote-right"></i></small></h1>
 				</div><!-- / .page-header -->	
-				
-				<div class="layout-block clearfix no-grid-gutter-h" style="margin-top:-26px;margin-bottom: 26px;">
-				
-					<div class="left">
-						<span class="header">Choose color</span>
-					</div>
-					
-					<div class="right">
 
-<div style="border-bottom: 1px solid #333;">
-					<span class="header">Enter color name</span>
-					<input type="text" class="form-control" id="g-name-input">
-				</div>
-					</div>
-				</div>
 				
 				<div class="multi-pane-layout" >
 					<aside>
