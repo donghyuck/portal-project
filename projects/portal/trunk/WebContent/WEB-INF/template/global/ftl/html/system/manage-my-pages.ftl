@@ -494,12 +494,10 @@
 		
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
-										<p>Howdy, I'm in Section 3.</p>
+										<div class="properties no-border"></div>
 									</div>
 								</div>
 							</div>
-
-
 					</div>
 				</div>						
 			</div> <!-- / #content-wrapper -->
