@@ -420,7 +420,7 @@
 		}
 		.layout-block .left {
 		  display: block;
-		  width: 204px;
+		  width: 400px;
 		  border-right: 1px solid #333;
 		  padding: 15px;
 		  float: left;
@@ -516,10 +516,22 @@
 				</div><!-- / .page-header -->	
 				
 				
-				<div class="layout-block clearfix no-grid-gutter-h" style="margin-top:-26px;margin-bottom: 26px;">
+				<div id="site-page-list" class="layout-block clearfix no-grid-gutter-h" style="margin-top:-26px;margin-bottom: 26px;">
 				
 					<div class="left">
 						<span class="header">Choose color</span>
+						
+							<div class="panel panel colourable">		
+								<div class="panel-heading">
+									<span class="panel-title"><i class="fa fa-bars"></i></span>
+									<ul class="nav nav-tabs nav-tabs-xs">
+										<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
+										<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
+									</ul>	
+								</div>
+								<div class="pages no-border"></div>	
+							</div>						
+													
 					</div>
 					
 					<div class="right">
@@ -535,16 +547,7 @@
 				<div  class="row">				
 					<div class="col-sm-4">	
 						<div id="site-page-list" >
-							<div class="panel panel colourable">		
-								<div class="panel-heading">
-									<span class="panel-title"><i class="fa fa-bars"></i></span>
-									<ul class="nav nav-tabs nav-tabs-xs">
-										<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
-										<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
-									</ul>	
-								</div>
-								<div class="pages no-border"></div>	
-							</div>						
+							
 						</div>						
 					</div>
 					<div class="col-sm-8">	
