@@ -32,6 +32,8 @@
 	    	target.set("size",this.get("size") );
 	    	target.set("directory", this.get("directory"));
 	    	target.set("lastModifiedDate",this.get("lastModifiedDate") );
+	    	if( typeof this.get("properties") === 'object' )
+	    		target.set("properties", this.get("properties"));
 	    }
 	});
 	
