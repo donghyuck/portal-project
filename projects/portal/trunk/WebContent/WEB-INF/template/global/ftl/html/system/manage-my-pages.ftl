@@ -93,7 +93,7 @@
 					editable : false,
 					selectable : "row",
 					scrollable: true,
-					height: 400,
+					height: 500,
 					change: function(e) {
 					},
 					dataBound: function(e) {
@@ -502,11 +502,9 @@
 				</div><!-- / .page-header -->	
 				
 				
-				<div id="site-page-list" class="layout-block clearfix no-grid-gutter-h" style="margin-top:-26px;margin-bottom: 26px;">
-				
+				<div id="site-page-list" class="layout-block clearfix no-grid-gutter-h" style="margin-top:-26px;margin-bottom: 26px;">				
 					<div class="left">
-						<span class="header">Choose color</span>
-						
+						<span class="header">Choose color</span>						
 							<div class="panel panel colourable">		
 								<div class="panel-heading">
 									<span class="panel-title"><i class="fa fa-bars"></i></span>
@@ -518,11 +516,8 @@
 								<div class="pages no-border"></div>	
 							</div>						
 													
-					</div>
-					
+					</div>					
 					<div class="right">
-
-
 							<div class="panel-body">
 								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
@@ -580,169 +575,7 @@
 
 
 					</div>
-				</div>
-				
-								
-				<div  class="row">				
-					<div class="col-sm-4">	
-						<div id="site-page-list" >
-							
-						</div>						
-					</div>
-					<div class="col-sm-8">	
-						<div class="panel panel colourable">		
-							<div class="panel-heading">
-								<span class="panel-title">&nbsp</span>
-							</div>
-
-						</div>			
-					</div>						
-				</div>		
-				<div  class="row">				
-						<div class="col-sm-12">	
-							<div id="site-page-list2" >
-										<div class="panel panel colourable">		
-											<div class="panel-heading">
-												<span class="panel-title">&nbsp</span>
-													<ul class="nav nav-tabs nav-tabs-sm">
-														<li class=""><a href="#my-pages-tabs-0" data-toggle="tab" data-action="pages1">웹 페이지 매핑</a></li>
-														<li class=""><a href="#my-pages-tabs-1" data-toggle="tab" data-action="pages2">페이지</a></li>
-													</ul>	
-											</div>
-											<div class="tab-content">
-												<div class="tab-pane fade" id="my-pages-tabs-0">
-													<div class="row">
-														<div class="col-sm-4">											
-															
-														</div>
-														<div class="col-sm-8 p-xs">			
-				
-
-														
-																									
-														<div>
-													</div>												
-												</div>
-												<div class="tab-pane fade" id="my-pages-tabs-1">
-
-												</div>
-											</div>
-										 </div>		
-							</div>
-						</div>
-				</div>		
-				<div class="multi-pane-layout" >
-					<aside>
-						<div class="panel colourable">
-							<div class="panel-heading">
-								<span class="panel-title"><i class="fa fa-bars"></i></span>
-							</div> <!-- / .panel-heading -->												
-							<div id="company-site-grid" class="no-border"></div>
-						</div>
-					</aside>
-					<section class="pane">					
-						<div id="company-site-details" class="panel colourable" style="display:none; border: 2px solid #34aadc; ">	
-							<div class="panel-heading">
-								<span class="panel-title">&nbsp</span>
-									<ul class="nav nav-tabs nav-tabs-xs">
-										<li class=""><a href="#my-site-tabs-0" data-toggle="tab" data-action="none">기본정보</a></li>
-										<li data-bind="visible:editable"><a href="#my-site-tabs-3" data-toggle="tab" data-action="logo">로고</a></li>
-										<li data-bind="visible:editable"><a href="#my-site-tabs-1" data-toggle="tab" data-action="none">메뉴</a></li>
-										<li data-bind="visible:editable"><a href="#my-site-tabs-2" data-toggle="tab" data-action="properties">속성</a></li>
-									</ul>	
-								</div>
-							<div class="tab-content">
-								<div class="tab-pane fade" id="my-site-tabs-0">
-									<div class="panel-body">
-										<div class="form-group">
-												<label class="control-label" for="input-site-name">코드</label>
-												<input type="text" class="form-control input-sm" id="input-site-name" data-bind="value: site.name">
-												<p class="help-block">중복되지 않는 코드 값을 입력하세요. 예) [회사 키]_[웹사이트 키]</p>
-										</div>
-										<div class="form-group">
-											<label class="control-label" for="input-site-title">이름</label>
-											<input type="text" class="form-control input-sm" id="input-site-title" data-bind="value: site.displayName">
-											<p class="help-block">사이트 이름을 입력하세요.</p>
-										</div>	
-										<div class="form-group">
-											<label class="control-label" for="input-site-url">도메인</label>
-											<input type="text" class="form-control input-sm" id="input-site-url" data-bind="value: site.url">
-											<p class="help-block">사이트 URL 을 입력하세요. 예) 192.168.0.1, www.demo.com</p>
-										</div>											
-										<div class="form-group">
-											<label class="control-label" for="input-site-description">설명</label>
-											<input type="text" class="form-control imput-sm" id="input-site-description" data-bind="value: site.description">
-											<p class="help-block">사이트에 대한 간략한 설명을 입력하세요.</p>
-										</div>	
-										<h6 class="text-light-gray text-semibold text-xs" style="margin:20px 0 10px 0;">고급 옵션</h6>										
-										<div class="form-group" data-bind="invisible:editable">
-											<input type="checkbox" id="checkbox-site-new-menu"  class="k-checkbox" data-bind="checked: requiredNewMenu">
-											<label for="checkbox-site-new-menu" class="k-checkbox-label">새로운 메뉴 생성</label>
-											<p class="help-block text-danger small" style="padding-left: 25px;">채크하지 않으면 디폴트 메뉴를 사용합니다. 디폰트 메뉴는 수정할 수 없습니다.</p>
-										</div>	
-										<div class="form-group">
-											<input type="checkbox" id="checkbox-site-enabled"  class="k-checkbox" data-bind="checked: site.enabled">
-											<label for="checkbox-site-enabled" class="k-checkbox-label">사용 여부</label>
-										</div>					
-										<ul class="list-inline text-right" data-bind="visible:editable">															
-											<li><span class="label">생성일</span> <span data-bind="text: site.formattedCreationDate"></span></li>
-											<li><span class="label">수정일</span> <span data-bind="text: site.formattedModifiedDate"></span></li>															
-										</ul>										
-									</div>
-									<div class="panel-footer text-right">
-										<button class="btn btn-flat btn-outline btn-info" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
-									</div>																		
-								</div>	
-								<div class="tab-pane fade" id="my-site-tabs-1">
-									<div class="panel-body">
-										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>										
-										<div class="row">
-											<div class="col-xs-6"><input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" ></div>
-											<div class="col-xs-6">
-												<div class="form-group" data-bind="visible:menuInherited">
-													<input type="checkbox" id="checkbox-site-new-menu2"  class="k-checkbox" data-bind="checked: requiredNewMenu">
-													<label for="checkbox-site-new-menu2" class="k-checkbox-label">새로운 메뉴 생성</label>
-													<p class="help-block text-danger small" style="padding-left: 25px;">디폰트 메뉴를 복사하여 수정 가능한 새로운 매뉴를 생성합니다.</p>
-												</div>	
-											</div>
-										</div>																										
-										<div id="xml-editor"></div>	
-									</div>
-									<div class="panel-footer text-right">
-										<button class="btn btn-flat btn-outline btn-info" data-bind="events:{click:update2}, disabled:menuInherited" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>	
-									</div>																		
-								</div>	
-								<div class="tab-pane fade" id="my-site-tabs-2">
-									<div class="properties no-border"></div>
-								</div>
-								<div class="tab-pane fade" id="my-site-tabs-3">
-									<div class="stat-panel no-margin-b">
-										<div class="stat-cell col-sm-3 hidden-xs text-center">
-											<input name="logo-file" type="file">
-											<i class="fa fa-upload bg-icon bg-icon-left"></i>	
-										</div> <!-- /.stat-cell -->
-										<div class="stat-cell col-sm-9 no-padding">		
-											<div class="logos"></div>
-										</div>
-									</div>
-								</div>																												
-							</div>	
-					</section>
-				</div>
-				
-
-
-
-																			
-
-							<!--
-							
-							
-							<div class="panel-footer text-right">
-								
-							</div>-->
-						</div>
-						
+				</div>						
 			</div> <!-- / #content-wrapper -->
 			<div id="main-menu-bg">
 			</div>
