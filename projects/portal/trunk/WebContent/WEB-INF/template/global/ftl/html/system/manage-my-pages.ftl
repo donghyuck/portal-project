@@ -129,9 +129,9 @@
 						if( this.page.webPageId > 0 ){
 							this.set("editable", true);
 						}else{
-							this.set("editable", false);
-							this.set("enabled", true);
-						}									
+							this.set("editable", false);							
+						}		
+						this.set("enabled", true);							
 						renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 					}
 				});								
@@ -397,7 +397,7 @@
 													
 					</div>					
 					<div class="right">
-							<div  id="site-page-editor" class="panel-body">
+							<div  id="site-page-editor" class="panel-body" data-bind="visible:enabled">
 								<ul class="nav nav-tabs nav-tabs-simple">		
 									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
 									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
