@@ -66,6 +66,7 @@
 		function createPageGrid(renderTo){
 		
 		}
+		
 		function createMappedPageGrid(renderTo){
 			if(! common.ui.exists(renderTo) ){
 				common.ui.grid(renderTo, {
@@ -137,13 +138,68 @@
 				});								
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );				
+				createEditorTabs(renderTo, observable);
 			}			
 			renderTo.data("model").setSource( source );			
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 						
 		}	
+
+		function createEditorTabs(renderTo, data){
+			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
+				var show_bs_tab = $(e.target);
+				switch( show_bs_tab.data("action") ){
+					case "properties" :
+					createSitePropertiesGrid(renderTo.find(".properties"), data.site );
+					break;
+				}	
+			});
+		}	
+				
+		
+		function createSitePropertiesGrid(renderTo, data){
+			if( ! renderTo.data("kendoGrid") ){
+				renderTo.kendoGrid({
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
+							create: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId , type:'post', contentType : "application/json" },
+							update: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json"  },
+							destroy: { url:'<@spring.url "/secure/data/mgmt/website/properties/delete.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json" },
+							parameterMap: function (options, operation){			
+								if (operation !== "read" && options.models) {
+									return kendo.stringify(options.models);
+								}
+							}
+						},						
+						batch: true, 
+						schema: {
+							model: common.ui.data.Property
+						},
+						error:common.ui.handleAjaxError
+					},
+					columns: [
+						{ title: "속성", field: "name", width: 250 },
+						{ title: "값",   field: "value" },
+						{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }
+					],
+					editable : true,
+					scrollable: false,
+					filterable: true,
+					sortable: true,
+					height: 400,
+					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
+					change: function(e) {
+					}
+				});		
+				renderTo.find("[data-action='refresh']").click( function(e){
+					common.ui.grid(renderTo).dataSource.read();
+				});	
+			}
+		}						
 		
 		
+				
 		
 		function createEditorModeSwitcher(renderTo, editor ){
 			var switcher = renderTo.find("input[name='warp-switcher']");				
@@ -247,46 +303,7 @@
 			renderTo.data("kendoGrid").dataSource.fetch();		
 		}
 								
-		function createSitePropertiesGrid(renderTo, data){
-			if( ! renderTo.data("kendoGrid") ){
-				renderTo.kendoGrid({
-					dataSource: {
-						transport: { 
-							read: { url:'<@spring.url "/secure/data/mgmt/website/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
-							create: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId , type:'post', contentType : "application/json" },
-							update: { url:'<@spring.url "/secure/data/mgmt/website/properties/update.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json"  },
-							destroy: { url:'<@spring.url "/secure/data/mgmt/website/properties/delete.json?output=json&siteId="/>' + data.webSiteId, type:'post', contentType : "application/json" },
-							parameterMap: function (options, operation){			
-								if (operation !== "read" && options.models) {
-									return kendo.stringify(options.models);
-								}
-							}
-						},						
-						batch: true, 
-						schema: {
-							model: common.ui.data.Property
-						},
-						error:common.ui.handleAjaxError
-					},
-					columns: [
-						{ title: "속성", field: "name", width: 250 },
-						{ title: "값",   field: "value" },
-						{ command:  { name: "destroy", template:'<a href="\\#" class="btn btn-xs btn-labeled btn-danger k-grid-delete"><span class="btn-label icon fa fa-trash"></span> 삭제</a>' },  title: "&nbsp;", width: 80 }
-					],
-					editable : true,
-					scrollable: false,
-					filterable: true,
-					sortable: true,
-					height: 400,
-					toolbar: kendo.template('<div class="p-xs"><div class="btn-group"><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-add">추가</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-save-changes">저장</a><a href="\\#"class="btn btn-primary btn-sm btn-flat btn-outline k-grid-cancel-changes">취소</a></div><button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button></div>'),    
-					change: function(e) {
-					}
-				});		
-				renderTo.find("[data-action='refresh']").click( function(e){
-					common.ui.grid(renderTo).dataSource.read();
-				});	
-			}
-		}						
+
 										
 		-->
 		</script> 		 
@@ -399,9 +416,9 @@
 					<div class="right">
 							<div  id="site-page-editor" class="panel-body" data-bind="visible:enabled" style="display:none;">
 								<ul class="nav nav-tabs nav-tabs-simple">		
-									<li><a href="#bs-tabdrop-pill1" data-toggle="tab">기본정보</a></li>	
-									<li><a href="#bs-tabdrop-pill2" data-toggle="tab">XML</a></li>
-									<li><a href="#bs-tabdrop-pill3" data-toggle="tab">추가정보</a></li>								
+									<li><a href="#bs-tabdrop-pill1" data-toggle="tab" data-action="basic">기본정보</a></li>	
+									<li><a href="#bs-tabdrop-pill2" data-toggle="tab" data-action="template">템플릿</a></li>
+									<li><a href="#bs-tabdrop-pill3" data-toggle="tab" data-action="properties">속성</a></li>								
 								</ul>
 								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
