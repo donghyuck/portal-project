@@ -440,23 +440,34 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
+													<label class="control-label" for="input-page-template">템플릿</label>
+													<input type="text" class="form-control imput-sm" id="input-page-template" data-bind="value: page.template">
+													<p class="help-block">물리적 템플릿 파일 경로를 입력하세요.</p>												
+												</div>
+											</div>
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">		
+													<label class="control-label" for="input-page-locale">언어</label>
+													<input type="text" class="form-control imput-sm" id="input-page-locale" data-bind="value: page.locale">
+													<p class="help-block">로케일 코드 값을 입력하세요 예)en, ko_KR </p>																						
+												</div>
+											</div>
+										</div>														
+										<div class="row">
+											<div class="col-sm-6">
+												<div class="form-group no-margin-hr">
 												</div>
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">												
 												</div>
 											</div>
-										</div>														
-
+										</div>	
 										<div class="m-b-sm">
-											<label class="control-label" for="input-page-template">템플릿</label>
-											<input type="text" class="form-control imput-sm" id="input-page-template" data-bind="value: page.template">
-											<p class="help-block">물리적 템플릿 파일 경로를 입력하세요.</p>
+
 										</div>											
 										<div class="m-b-sm">
-											<label class="control-label" for="input-page-locale">언어</label>
-											<input type="text" class="form-control imput-sm" id="input-page-locale" data-bind="value: page.locale">
-											<p class="help-block">로케일 코드 값을 입력하세요 예)en, ko_KR </p>
+
 										</div>											
 										<div class="checkbox" style="margin: 0;">
 											<label>
