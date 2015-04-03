@@ -88,7 +88,7 @@
 						{ title: "", width:80, template: '<button type="button" class="btn btn-xs btn-labeled btn-info  btn-selectable" data-action="update" data-object-id="#= webSiteId #"><span class="btn-label icon fa fa-pencil"></span> 변경</button>'}
 					],
 					toolbar: kendo.template('<div class="p-xs"><button class="btn btn-flat btn-labeled btn-outline btn-sm btn-danger" data-action="create" data-object-id="0"><span class="btn-label icon fa fa-plus"></span> 페이지 추가 </button><button class="btn btn-flat btn-sm btn-outline btn-info pull-right" data-action="refresh" >새로고침</button></div>'),
-					pageable: { refresh:true, pageSizes:true,  messages: { display: ' {1} / {2}' }  },	
+					pageable: { refresh:true, pageSizes:false,  messages: { display: ' {1} / {2}' }  },	
 					resizable: true,
 					editable : false,
 					selectable : "row",
@@ -414,7 +414,7 @@
 		<style>
 
 		.layout-block {
-			background: #f5f5f5;
+			background: #8e8e93;
 			 margin: 0 0 20px 0;
 			border-top: 1px solid #8e8e93;				
 		}
@@ -441,6 +441,7 @@
 		.layout-block .right {
 		  overflow: hidden;
 		  float: none;
+		  min-height:600px;
 		}
 
 		.layout-block .header, .layout-block .right > div {
