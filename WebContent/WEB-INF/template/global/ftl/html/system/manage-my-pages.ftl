@@ -414,7 +414,7 @@
 		<style>
 
 		.layout-block {
-			background: #272822;
+			background: #f5f5f5;
 			 margin: 0 0 20px 0;
 			border-top: 1px solid #8e8e93;				
 		}
