@@ -504,7 +504,7 @@
 				
 				<div id="site-page-list" class="layout-block clearfix no-grid-gutter-h" style="margin-top:-26px;margin-bottom: 26px;">				
 					<div class="left">
-						<span class="header">Choose color</span>						
+						<span class="header">웹 페이지</span>						
 							<div class="panel panel colourable">		
 								<div class="panel-heading">
 									<span class="panel-title"><i class="fa fa-bars"></i></span>
