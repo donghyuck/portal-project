@@ -193,7 +193,8 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}
-			if( common.ui.defined(renderTo.data("object-id") ){
+			
+			if( common.ui.defined(renderTo.data("object-id"))){
 				renderTo.data("object-id", data.webPageId );
 			}else{
 			
