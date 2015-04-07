@@ -150,7 +150,7 @@
 				var show_bs_tab = $(e.target);
 				switch( show_bs_tab.data("action") ){
 					case "properties" :
-					createPagePropertiesGrid(renderTo.find(".properties"));
+					createPagePropertiesGrid(renderTo.find(".properties"), data.page);
 					break;
 				}	
 			});
@@ -172,7 +172,7 @@
 			});		
 		}		
 		
-		function createPagePropertiesGrid(renderTo){		
+		function createPagePropertiesGrid(renderTo, data){
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					columns: [
@@ -193,6 +193,11 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}
+			if( common.ui.defined(renderTo.data("object-id") ){
+				renderTo.data("object-id", data.webPageId );
+			}else{
+			
+			}			
 		}						
 		
 		
