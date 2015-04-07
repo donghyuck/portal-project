@@ -123,6 +123,7 @@
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
+					customized : false,
 					editable : false,
 					enabled : false,
 					setSource : function(source){
@@ -202,6 +203,7 @@
 				renderTo.data("object-id", data.webPageId );
 				common.ui.grid(renderTo).setDataSource(createPagePropertiesDataSource(data));
 			}			
+			common.ui.grid(renderTo).fetch();
 		}						
 		
 		
@@ -467,6 +469,9 @@
 													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">
 													<p class="help-block small">물리적 템플릿 파일 경로를 입력하세요.</p>												
 												</div>
+												
+													<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
+													<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>														
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">		
