@@ -467,11 +467,11 @@
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-template">콘텐츠 템플릿</label>
 													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">													
-													<div class="p-xs">
-														<button class="btn btn-flat" type="button">검색</button>
+													<div class="p-xs">														
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
 														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>													
 													</div>			
+													<button class="btn btn-flat" type="button">템블릿 검색</button>
 													<p class="help-block small">물리적 템플릿 파일 경로를 입력하세요.</p>																						
 												</div>																								
 											</div>
