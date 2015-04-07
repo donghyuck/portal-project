@@ -470,9 +470,8 @@
 													<div class="p-xs">														
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
 														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>													
-													</div>			
-													<button class="btn btn-flat" type="button">템블릿 검색</button>
-													<p class="help-block small">물리적 템플릿 파일 경로를 입력하세요.</p>																						
+													</div>		
+													<p class="text-right"><button class="btn btn-flat" type="button">템플릿 검색</button></p>																						
 												</div>																								
 											</div>
 											<div class="col-sm-6">
