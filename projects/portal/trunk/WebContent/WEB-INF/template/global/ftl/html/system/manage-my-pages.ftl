@@ -193,11 +193,11 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}
-			
+			alert(renderTo.data("object-id"));
 			if( common.ui.defined(renderTo.data("object-id"))){
-				renderTo.data("object-id", data.webPageId );
+				//renderTo.data("object-id", data.webPageId );
 			}else{
-			
+				renderTo.data("object-id", data.webPageId );
 			}			
 		}						
 		
