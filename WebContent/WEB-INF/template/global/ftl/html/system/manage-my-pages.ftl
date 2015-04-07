@@ -193,11 +193,14 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}
-			alert(renderTo.data("object-id"));
 			if( common.ui.defined(renderTo.data("object-id"))){
-				//renderTo.data("object-id", data.webPageId );
+				if( renderTo.data("object-id") == 0 || data.webPageId != renderTo.data("object-id") ){
+					renderTo.data("object-id", data.webPageId );
+					common.ui.grid(renderTo).setDataSource(createPagePropertiesDataSource(data));
+				}
 			}else{
 				renderTo.data("object-id", data.webPageId );
+				common.ui.grid(renderTo).setDataSource(createPagePropertiesDataSource(data));
 			}			
 		}						
 		
