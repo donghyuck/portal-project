@@ -465,7 +465,7 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
-													<label class="control-label" for="input-page-template">템플릿</label>
+													<label class="control-label" for="input-page-template">콘텐츠 템플릿</label>
 													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">
 													
 													<div class="p-xs">
