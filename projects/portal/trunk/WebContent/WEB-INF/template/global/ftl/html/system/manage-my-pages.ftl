@@ -466,8 +466,12 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-template">콘텐츠 템플릿</label>
-													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">
-													
+													<div class="input-group">
+														<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">
+														<span class="input-group-btn">
+															<button class="btn" type="button">검색</button>
+														</span>
+													</div>													
 													<div class="p-xs">
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
 														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>													
