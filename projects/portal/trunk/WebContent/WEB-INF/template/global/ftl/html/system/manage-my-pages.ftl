@@ -133,8 +133,7 @@
 						}else{
 							this.set("editable", false);							
 						}		
-						this.set("enabled", true);							
-						renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
+						this.set("enabled", true);			
 					}
 				});								
 				renderTo.data("model", observable );
@@ -142,6 +141,7 @@
 				createEditorTabs(renderTo, observable);
 			}			
 			renderTo.data("model").setSource( source );			
+			renderTo.find("ul.nav.nav-tabs a:first").tab('show');		
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 						
 		}	
