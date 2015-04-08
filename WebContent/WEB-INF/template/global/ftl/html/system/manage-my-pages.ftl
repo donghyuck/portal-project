@@ -331,7 +331,9 @@
 		-->
 		</script> 		 
 		<style>
-
+		#htmleditor.panel-body{
+			min-height:577px;
+		}
 		.layout-block {
 			background: #8e8e93;
 			 margin: 0 0 20px 0;
