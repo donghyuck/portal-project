@@ -332,7 +332,7 @@
 		-->
 		</script> 		 
 		<style>
-		#htmleditor.panel-body{
+		#htmleditor {
 			min-height:577px;
 		}
 		.layout-block {
