@@ -168,7 +168,7 @@
 				var editor = ace.edit("htmleditor");		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
-				
+				alert(renderTo.html());
 				var switcher = renderTo.find("input[name='warp-switcher']");				
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
