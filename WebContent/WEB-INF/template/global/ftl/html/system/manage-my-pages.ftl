@@ -134,7 +134,7 @@
 							this.set("editable", true);
 						}else{
 							this.set("editable", false);						
-							this.template.				
+						
 						}		
 						this.set("enabled", true);			
 					}
