@@ -124,7 +124,7 @@
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
-					template : new common.ui.data.FileInfo(),
+					fileContent : "",
 					customized : false,
 					editable : false,
 					enabled : false,
@@ -133,9 +133,9 @@
 						if( this.page.webPageId > 0 ){
 							this.set("editable", true);
 						}else{
-							this.set("editable", false);						
-						
+							this.set("editable", false);								
 						}		
+						this.set("fileContent", "");
 						this.set("enabled", true);			
 					}
 				});								
