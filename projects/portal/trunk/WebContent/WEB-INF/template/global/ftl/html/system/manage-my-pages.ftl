@@ -173,7 +173,7 @@
 				common.ui.ajax(
 				"<@spring.url "/secure/data/mgmt/template/get.json?output=json" />" , 
 				{
-					data : { path:  page.template , customized: data.customized },
+					data : { path:  data.page.template , customized: data.customized },
 					success : function(response){
 						data.set("fileContent", response.fileContent )
 						ace.edit("htmleditor").setValue( data.get("fileContent") );			
