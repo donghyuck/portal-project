@@ -567,7 +567,7 @@
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">		
-													<label class="control-label" for="input-page-locale">로케일</label>
+													<label class="control-label" for="input-page-locale">국가</label>
 													<input type="text" class="form-control" id="input-page-locale" data-bind="value: page.locale">
 													<p class="help-block small">로케일 코드 값을 입력하세요 예)en, ko_KR </p>																						
 												</div>
