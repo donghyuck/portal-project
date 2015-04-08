@@ -157,7 +157,7 @@
 					createPagePropertiesGrid(renderTo.find(".properties"), data.page);
 					break;
 					case "template" :
-					createTemplateEditor(show_bs_tab, data);
+					createTemplateEditor($(this), data);
 					break;					
 				}	
 			});
