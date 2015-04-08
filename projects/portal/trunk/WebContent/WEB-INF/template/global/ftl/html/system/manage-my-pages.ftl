@@ -165,7 +165,7 @@
 		
 		function createTemplateEditor(renderTo, data){
 			if( $("#htmleditor").contents().length == 0 ){
-				var editor = ace.edit(renderTo.attr("id"));		
+				var editor = ace.edit("htmleditor");		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
 				
