@@ -188,7 +188,8 @@
 								id: "path",
 								hasChildren: "directory"
 							}
-						}	
+						},
+						filter: { field: "path", operator: "contains", value: ".svn" }	
 					}),
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
