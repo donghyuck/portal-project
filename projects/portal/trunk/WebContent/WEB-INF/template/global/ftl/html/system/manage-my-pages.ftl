@@ -129,7 +129,8 @@
 					editable : false,
 					enabled : false,
 					select : function(e){
-						var btn = $(e.target);					
+						var btn = $(e.target);			
+						$('#my-template-select-modal').modal('hide')		
 					},
 					find : function(e){
 						var btn = $(e.target);						
