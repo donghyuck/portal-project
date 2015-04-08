@@ -157,15 +157,15 @@
 					createPagePropertiesGrid(renderTo.find(".properties"), data.page);
 					break;
 					case "template" :
-					createTemplateEditor(renderTo.find(".template"), data);
+					createTemplateEditor($("#htmleditor"), data);
 					break;					
 				}	
 			});
 		}	
 		
-		function createTemplateEditor(data){
-			if( $("#htmleditor").contents().length == 0 ){
-				var editor = ace.edit("htmleditor");		
+		function createTemplateEditor(renderTo, data){
+			if( renderTo.contents().length == 0 ){
+				var editor = ace.edit(renderTo.attr("id"));		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
 			}			
@@ -178,7 +178,7 @@
 					data : { path:  data.page.template , customized: data.customized },
 					success : function(response){
 						data.set("fileContent", response.fileContent )
-						ace.edit("htmleditor").setValue( data.get("fileContent") );			
+						ace.edit(renderTo.attr("id")).setValue( data.get("fileContent") );			
 					}
 				}); 				
 			}
