@@ -168,6 +168,15 @@
 				var editor = ace.edit(renderTo.attr("id"));		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
+				
+				var switcher = renderTo.find("input[name='warp-switcher']");				
+				if( switcher.length > 0 ){
+					$(switcher).switcher();
+					$(switcher).change(function(){
+						editor.getSession().setUseWrapMode($(this).is(":checked"));
+					});		
+				}	
+								
 			}			
 			if( !data.get("fileContent") && data.page.template  ){
 				common.ui.ajax(
@@ -531,6 +540,8 @@
 										
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
+										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
+										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >											
 										<div id="htmleditor"></div>
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
