@@ -592,8 +592,8 @@
 
 					</div>
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat" data-bind="click: select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
-						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+						<button type="button" class="btn btn-primary btn-flat btn-sm" data-bind="click: select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+						<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
 					</div>					
 				</div>
 			</div>
