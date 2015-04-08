@@ -582,7 +582,7 @@
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">			
-													<p class="text-right"><button class="btn btn-flat btn-sm" type="button">메뉴 선택</button></p>												
+													<p class="text-right"><button class="btn btn-flat btn-sm" type="button">메뉴 설정</button></p>												
 												</div>
 											</div>
 										</div>	
