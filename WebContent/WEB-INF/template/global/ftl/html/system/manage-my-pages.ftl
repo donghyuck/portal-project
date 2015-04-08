@@ -27,7 +27,8 @@
 			'<@spring.url "/js/common/common.ui.core.js" />',							
 			'<@spring.url "/js/common/common.ui.data.js" />',
 			'<@spring.url "/js/common/common.ui.community.js" />',
-			'<@spring.url "/js/common/common.ui.admin.js" />'
+			'<@spring.url "/js/common/common.ui.admin.js" />',
+			'<@spring.url "/js/ace/ace.js"/>'		
 			],
 			complete: function() {
 				var currentUser = new common.ui.data.User();
@@ -123,6 +124,7 @@
 			if( !renderTo.data("model")){									
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
+					template : new common.ui.data.FileInfo(),
 					customized : false,
 					editable : false,
 					enabled : false,
@@ -131,7 +133,8 @@
 						if( this.page.webPageId > 0 ){
 							this.set("editable", true);
 						}else{
-							this.set("editable", false);							
+							this.set("editable", false);						
+							this.template.				
 						}		
 						this.set("enabled", true);			
 					}
@@ -153,9 +156,19 @@
 					case "properties" :
 					createPagePropertiesGrid(renderTo.find(".properties"), data.page);
 					break;
+					case "template" :
+					createTemplateEditor(renderTo.find(".template"), data.page);
+					break;					
 				}	
 			});
 		}	
+		
+		function createTemplateEditor(data){
+			var editor = ace.edit("htmleditor");		
+			editor.getSession().setMode("ace/mode/ftl");
+			editor.getSession().setUseWrapMode(true);				
+		}
+		
 		
 		function createPagePropertiesDataSource(data){
 			return common.ui.data.properties.datasource({
@@ -503,7 +516,7 @@
 										
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
-		
+										<div id="htmleditor"></div>
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<div class="properties no-border"></div>
