@@ -561,7 +561,7 @@
 													<p class="help-block small">템플릿 경로를 입력하거나 템플릿 선택을 클릭하여 선택하세요 </p>										
 													<div class="p-xs">														
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
-														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>													
+														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿 여부</label>													
 													</div>																				
 												</div>																								
 											</div>
