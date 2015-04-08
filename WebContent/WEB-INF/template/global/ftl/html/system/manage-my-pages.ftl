@@ -157,7 +157,7 @@
 					createPagePropertiesGrid(renderTo.find(".properties"), data.page);
 					break;
 					case "template" :
-					createTemplateEditor(renderTo.find(".template"), data.page);
+					createTemplateEditor(renderTo.find(".template"), data);
 					break;					
 				}	
 			});
@@ -169,6 +169,7 @@
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
 			}			
+			ace.edit("htmleditor").setValue( data.fileContent );				
 		}
 		
 		
