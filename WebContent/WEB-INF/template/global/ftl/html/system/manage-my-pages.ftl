@@ -557,12 +557,12 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<label class="control-label" for="input-page-template">콘텐츠 템플릿</label>
-													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">													
+													<input type="text" class="form-control" id="input-page-template" data-bind="value: page.template">				
+													<p class="help-block small">템플릿 경로를 입력하거나 템플릿 선택을 클릭하여 선택하세요 </p>										
 													<div class="p-xs">														
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
 														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>													
-													</div>		
-													<p class="text-right"><button class="btn btn-flat btn-sm" type="button" data-bind="click: find">템플릿 선택</button></p>																						
+													</div>																				
 												</div>																								
 											</div>
 											<div class="col-sm-6">
@@ -582,7 +582,9 @@
 											</div>
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">			
-													<p class="text-right"><button class="btn btn-flat btn-sm" type="button">메뉴 설정</button></p>												
+													<p class="text-right">
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: find">템플릿 선택</button>
+														<button class="btn btn-flat btn-sm" type="button">메뉴 설정</button></p>												
 												</div>
 											</div>
 										</div>	
