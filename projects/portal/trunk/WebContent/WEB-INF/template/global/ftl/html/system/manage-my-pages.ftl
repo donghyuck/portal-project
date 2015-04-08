@@ -166,11 +166,39 @@
 					backdrop: 'static',
 					show : false
 				});				
-				kendo.bind($(renderToString), data );				
+				kendo.bind($(renderToString), data );
+				createTemplateTree($(renderToString).find(".template-tree"));
 			}
 			$(renderToString).modal('show');	
 		}
+
 		
+		function createTemplateTree(renderTo){		
+			if( !common.ui.exists(renderTo) ){					
+				renderTo.kendoTreeView({
+					dataSource: new kendo.data.HierarchicalDataSource({						
+						transport: {
+							read: {
+								url : '<@spring.url "/secure/data/mgmt/template/list.json?output=json"/>',
+								dataType: "json"
+							}
+						},
+						schema: {		
+							model: {
+								id: "path",
+								hasChildren: "directory"
+							}
+						}	
+					}),
+					template: kendo.template($("#treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {
+						
+					}
+				});
+			}
+		}	
+				
 		
 
 		function createEditorTabs(renderTo, data){
@@ -589,7 +617,7 @@
 						<h4 class="modal-title">템플릿 선택</h4>
 					</div>					
 					<div class="modal-body">
-
+						<div class="template-tree"></div>
 					</div>
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-primary btn-flat btn-sm" data-bind="click: select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
@@ -598,7 +626,14 @@
 				</div>
 			</div>
 		</div>
-        </script>									
+        </script>	
+		<script id="treeview-template" type="text/kendo-ui-template">
+			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
+            #: item.name # 
+            # if (!item.items) { #
+                <a class='delete-link' href='\#'></a> 
+            # } #
+        </script>	        								
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
 </html>
