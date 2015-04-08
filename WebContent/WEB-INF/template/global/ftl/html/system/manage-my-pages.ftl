@@ -65,7 +65,7 @@
 		}
 		
 		function createPageGrid(renderTo){
-		
+			
 		}
 		
 		function createMappedPageGrid(renderTo){
@@ -128,6 +128,13 @@
 					customized : false,
 					editable : false,
 					enabled : false,
+					select : function(e){
+						var btn = $(e.target);					
+					},
+					find : function(e){
+						var btn = $(e.target);						
+						openTemplateSelectModal(this);
+					},					
 					setSource : function(source){
 						source.copy(this.page);			
 						if( this.page.webPageId > 0 ){
@@ -148,6 +155,22 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 						
 		}	
+		
+		
+		function openTemplateSelectModal(data){
+			var renderToString= "#my-template-select-modal";
+			if( $(renderToString).length === 0 ){			
+				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
+				$(renderToString).modal({
+					backdrop: 'static',
+					show : false
+				});				
+				kendo.bind($(renderToString), data );				
+			}
+			$(renderToString).modal('show');	
+		}
+		
+		
 
 		function createEditorTabs(renderTo, data){
 			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
@@ -509,7 +532,7 @@
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
 														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>													
 													</div>		
-													<p class="text-right"><button class="btn btn-flat btn-sm" type="button" data-bind="click:find">템플릿 검색</button></p>																						
+													<p class="text-right"><button class="btn btn-flat btn-sm" type="button" data-bind="click: find">템플릿 선택</button></p>																						
 												</div>																								
 											</div>
 											<div class="col-sm-6">
@@ -542,7 +565,7 @@
 									</div>
 									<div class="tab-pane active" id="bs-tabdrop-pill2">
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
-										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >											
+										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >
 										<div id="htmleditor"></div>
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
@@ -556,12 +579,24 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
-		<script id="treeview-template" type="text/kendo-ui-template">
-			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
-            #: item.name # 
-            # if (!item.items) { #
-                <a class='delete-link' href='\#'></a> 
-            # } #
+		<script id="my-template-select-modal-template" type="text/kendo-ui-template">
+		<div id="my-template-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog">	
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">템플릿 선택</h4>
+					</div>					
+					<div class="modal-body">
+
+					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat" data-bind="click: select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
+					</div>					
+				</div>
+			</div>
+		</div>
         </script>									
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    
