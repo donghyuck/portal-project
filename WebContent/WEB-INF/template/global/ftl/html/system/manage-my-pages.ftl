@@ -170,7 +170,7 @@
 				editor.getSession().setUseWrapMode(true);	
 			}			
 			
-			alert( common.ui.stringify(data)):
+			alert( common.ui.stringify(data));
 			if( !data.get("fileContent") && data.page.template  ){
 				common.ui.ajax(
 				"<@spring.url "/secure/data/mgmt/template/get.json?output=json" />" , 
