@@ -577,7 +577,7 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">
 													<input type="checkbox" id="input-page-enabled" class="k-checkbox" data-bind="checked: page.enabled">
-													<label class="k-checkbox-label small" for="input-page-enabled">사용 여부</label>												
+													<label class="k-checkbox-label" for="input-page-enabled">사용 여부</label>												
 												</div>
 											</div>
 											<div class="col-sm-6">
