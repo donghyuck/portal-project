@@ -489,7 +489,7 @@
 														<input type="checkbox" id="input-page-customized" class="k-checkbox" data-bind="checked: page.customized">
 														<label class="k-checkbox-label small" for="input-page-customized">커스텀 템플릿</label>													
 													</div>		
-													<p class="text-right"><button class="btn btn-flat" type="button">템플릿 검색</button></p>																						
+													<p class="text-right"><button class="btn btn-flat btn-sm" type="button">템플릿 검색</button></p>																						
 												</div>																								
 											</div>
 											<div class="col-sm-6">
