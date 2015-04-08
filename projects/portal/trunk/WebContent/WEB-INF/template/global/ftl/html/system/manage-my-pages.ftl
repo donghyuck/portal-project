@@ -164,9 +164,11 @@
 		}	
 		
 		function createTemplateEditor(data){
-			var editor = ace.edit("htmleditor");		
-			editor.getSession().setMode("ace/mode/ftl");
-			editor.getSession().setUseWrapMode(true);				
+			if( $("#htmleditor").contents().length == 0 ){
+				var editor = ace.edit("htmleditor");		
+				editor.getSession().setMode("ace/mode/ftl");
+				editor.getSession().setUseWrapMode(true);	
+			}			
 		}
 		
 		
