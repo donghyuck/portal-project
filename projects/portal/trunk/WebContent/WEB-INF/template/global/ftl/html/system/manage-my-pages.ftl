@@ -157,26 +157,24 @@
 					createPagePropertiesGrid(renderTo.find(".properties"), data.page);
 					break;
 					case "template" :
-					createTemplateEditor($(this), data);
+					createTemplateEditor($("#htmleditor"), data);
 					break;					
 				}	
 			});
 		}	
 		
 		function createTemplateEditor(renderTo, data){
-			if( $("#htmleditor").contents().length == 0 ){
-				var editor = ace.edit("htmleditor");		
+			if( renderTo.contents().length == 0 ){
+				var editor = ace.edit(renderTo.attr("id"));		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
-				alert(renderTo.html());
-				var switcher = renderTo.find("input[name='warp-switcher']");				
+				var switcher = renderTo.parent().find("input[name='warp-switcher']");				
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
 					$(switcher).change(function(){
 						editor.getSession().setUseWrapMode($(this).is(":checked"));
 					});		
-				}	
-								
+				}									
 			}			
 			if( !data.get("fileContent") && data.page.template  ){
 				common.ui.ajax(
@@ -185,7 +183,7 @@
 					data : { path:  data.page.template + ".ftl" , customized: data.customized },
 					success : function(response){
 						data.set("fileContent", response.fileContent )
-						ace.edit("htmleditor").setValue( data.get("fileContent") );			
+						ace.edit(renderTo.attr("id")).setValue( data.get("fileContent") );			
 					}
 				}); 				
 			}
