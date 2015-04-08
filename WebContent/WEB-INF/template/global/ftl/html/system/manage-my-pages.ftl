@@ -157,14 +157,14 @@
 					createPagePropertiesGrid(renderTo.find(".properties"), data.page);
 					break;
 					case "template" :
-					createTemplateEditor($("#htmleditor"), data);
+					createTemplateEditor(show_bs_tab, data);
 					break;					
 				}	
 			});
 		}	
 		
 		function createTemplateEditor(renderTo, data){
-			if( renderTo.contents().length == 0 ){
+			if( $("#htmleditor").contents().length == 0 ){
 				var editor = ace.edit(renderTo.attr("id"));		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
@@ -185,7 +185,7 @@
 					data : { path:  data.page.template + ".ftl" , customized: data.customized },
 					success : function(response){
 						data.set("fileContent", response.fileContent )
-						ace.edit(renderTo.attr("id")).setValue( data.get("fileContent") );			
+						ace.edit("htmleditor").setValue( data.get("fileContent") );			
 					}
 				}); 				
 			}
