@@ -15,6 +15,7 @@
 		OBJECT = "object",
 		UNDEFINED = "undefined";
 
+		
 	function bytesToSize(bytes) {
 		var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
 		    if (bytes == 0) return 'n/a';
@@ -97,6 +98,9 @@
 		return {url: url, params: obj};	
 	}
 	
+	function endsWith (suffix) {
+		return this.indexOf(suffix, this.length - suffix.length) !== -1;
+	};
 		
 	extend(common, {	
 		ui: common.ui || {},
@@ -104,7 +108,10 @@
 		guid : common.guid || guid,
 		valid : common.valid || valid,
 		bytesToSize : common.bytesToSize || bytesToSize,
-		redirect : common.redirect || redirect
+		redirect : common.redirect || redirect,
+		String : {
+			endsWith : 	endsWith		
+		}
 	});
 		
 })(jQuery);
