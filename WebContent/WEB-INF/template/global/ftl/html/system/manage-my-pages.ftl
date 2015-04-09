@@ -201,7 +201,7 @@
 						},
 						schema: {		
 							model: {
-								id: "name, menu",
+								id: "name",
 								hasChildren: "child"
 							}
 						}
