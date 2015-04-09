@@ -182,9 +182,14 @@
 				kendo.bind( renderTo, observable );				
 				createTemplateTree(rendetTo2, observable);				
 				renderTo.find("[data-action=select]").click(function(e){
-					var item = getSelectedTemplateFile(rendetTo2) ;						
-					alert( common.ui.stringify(observable) + "/" + common.ui.stringify(item) );
-					//observable.page.template = item.
+					var item = getSelectedTemplateFile(rendetTo2) ;
+					if( item.directory ){
+						alert("파일을 선택하여 주십시오.");
+						return;
+					}else{
+						observable.page.template = item.path ;
+					
+					}		
 					renderTo.modal('hide');				
 				});
 			}
