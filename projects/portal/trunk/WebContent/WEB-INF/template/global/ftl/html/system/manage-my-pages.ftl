@@ -164,7 +164,27 @@
 			if (!renderTo.is(":visible")) 
 				renderTo.fadeIn();	 						
 		}	
-		
+
+		function createMenuSelectModal(observable){
+			var renderToString= "#my-menu-select-modal";
+			if( $(renderToString).length === 0 ){			
+				$("#main-wrapper").append( kendo.template($('#my-menu-select-modal-template').html()) );				
+				var renderTo = $(renderToString);
+				
+				renderTo.modal({
+					backdrop: 'static',
+					show : false
+				});			
+				
+				//kendo.bind( renderTo, observable );				
+						
+				renderTo.find("[data-action=select]").click(function(e){					
+					renderTo.modal('hide');				
+				});
+			}
+			$(renderToString).modal('show');	
+		}
+				
 		
 		function createTemplateSelectModal(observable){
 			var renderToString= "#my-template-select-modal";
@@ -642,6 +662,25 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
+		<script id="my-menu-select-modal-template" type="text/kendo-ui-template">
+		<div id="my-menu-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
+			<div class="modal-dialog">	
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title">메뉴 선택</h4>
+					</div>					
+					<div class="modal-body">
+
+					</div>
+					<div class="modal-footer">					
+						<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+						<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
+					</div>					
+				</div>
+			</div>
+		</div>
+        </script>			
 		<script id="my-template-select-modal-template" type="text/kendo-ui-template">
 		<div id="my-template-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
 			<div class="modal-dialog">	
