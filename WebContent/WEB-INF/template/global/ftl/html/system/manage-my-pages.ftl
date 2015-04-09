@@ -128,10 +128,6 @@
 					customized : false,
 					editable : false,
 					enabled : false,
-					select : function(e){
-						var btn = $(e.target);			
-						$('#my-template-select-modal').modal('hide')		
-					},
 					cfg: function(e){
 						var btn = $(e.target);	
 						var action = btn.data("action");
@@ -175,16 +171,30 @@
 			var renderToString= "#my-template-select-modal";
 			if( $(renderToString).length === 0 ){			
 				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
-				$(renderToString).modal({
+				var renderTo = $(renderToString);
+				var rendetTo2 = renderTo.find(".template-tree");
+				renderTo.modal({
 					backdrop: 'static',
 					show : false
 				});				
-				kendo.bind($(renderToString), observable );
-				createTemplateTree($(renderToString).find(".template-tree"), observable);
+				kendo.bind(renderTo, observable );
+				
+				createTemplateTree(rendetTo2, observable);
+				
+				renderTo.find("[data-action=select]").click(e){
+					observable.page.template = getSelectedTemplateFile(rendetTo2).path ;				
+				}
 			}
 			$(renderToString).modal('show');	
 		}
-		
+	
+		function getSelectedTemplateFile( renderTo ){			
+			var tree = renderTo.data('kendoTreeView');			
+			var selectedCells = tree.select();			
+			var selectedCell = tree.dataItem( selectedCells );   
+			return selectedCell ;
+		}
+				
 		function createTemplateTree(renderTo, observable){		
 			if( !common.ui.exists(renderTo) ){					
 				renderTo.kendoTreeView({
@@ -205,12 +215,9 @@
 					}),
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
-					change: function(e) {
-						var selectedCells = this.select();
-						var selectedCell = this.dataItem( selectedCells );	
-						observable.page.template = selectedCell.path;						
+					change: function(e) {				
 					}
-				});
+				});				
 			}
 		}	
 				
@@ -640,7 +647,7 @@
 						<div class="template-tree"></div>
 					</div>
 					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat btn-sm" data-bind="click: select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
+						<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
 						<button type="button" class="btn btn-default btn-flat btn-sm" data-dismiss="modal">닫기</button>
 					</div>					
 				</div>
