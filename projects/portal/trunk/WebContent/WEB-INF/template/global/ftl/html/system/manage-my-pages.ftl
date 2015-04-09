@@ -171,7 +171,7 @@
 		}	
 		
 		
-		function openTemplateSelectModal(data){
+		function openTemplateSelectModal(observable){
 			var renderToString= "#my-template-select-modal";
 			if( $(renderToString).length === 0 ){			
 				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
@@ -179,14 +179,14 @@
 					backdrop: 'static',
 					show : false
 				});				
-				kendo.bind($(renderToString), data );
-				createTemplateTree($(renderToString).find(".template-tree"));
+				kendo.bind($(renderToString), observable );
+				createTemplateTree($(renderToString).find(".template-tree"), observable);
 			}
 			$(renderToString).modal('show');	
 		}
 
 		
-		function createTemplateTree(renderTo){		
+		function createTemplateTree(renderTo, observable){		
 			if( !common.ui.exists(renderTo) ){					
 				renderTo.kendoTreeView({
 					dataSource: new kendo.data.HierarchicalDataSource({						
@@ -207,7 +207,9 @@
 					template: kendo.template($("#treeview-template").html()),
 					dataTextField: "name",
 					change: function(e) {
-						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+						observable.page.template = selectedCell.path;						
 					}
 				});
 			}
