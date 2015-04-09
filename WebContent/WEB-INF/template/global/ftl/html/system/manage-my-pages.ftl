@@ -178,12 +178,11 @@
 					show : false
 				});				
 				
-				kendo.bind( renderTo, observable );
-				
-				createTemplateTree(rendetTo2, observable);
-				
+				kendo.bind( renderTo, observable );				
+				createTemplateTree(rendetTo2, observable);				
 				renderTo.find("[data-action=select]").click(function(e){
-					observable.page.template = getSelectedTemplateFile(rendetTo2).path ;				
+					observable.page.template = getSelectedTemplateFile(rendetTo2).path ;	
+					renderTo.modal('hide');				
 				});
 			}
 			$(renderToString).modal('show');	
