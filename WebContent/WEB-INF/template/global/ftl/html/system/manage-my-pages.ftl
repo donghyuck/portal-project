@@ -183,7 +183,7 @@
 				createTemplateTree(rendetTo2, observable);				
 				renderTo.find("[data-action=select]").click(function(e){
 					var item = getSelectedTemplateFile(rendetTo2).path ;						
-					alert( observable.page.template + "/" + common.ui.stringify(item) );
+					alert( common.ui.stringify(observable) + "/" + common.ui.stringify(item) );
 					renderTo.modal('hide');				
 				});
 			}
