@@ -156,6 +156,7 @@
 							this.set("editable", false);								
 						}		
 						this.set("fileContent", "");
+						this.page.template = "";
 						this.set("enabled", true);			
 					}
 				});								
