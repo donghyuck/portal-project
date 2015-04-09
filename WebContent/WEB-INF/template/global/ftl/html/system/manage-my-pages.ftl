@@ -187,7 +187,7 @@
 				
 		function createMenuTree(renderTo, observable){		
 			if( !common.ui.exists(renderTo) ){					
-				renderTo.kendoTreeView({
+				var tree = renderTo.kendoTreeView({
 					dataSource: new kendo.data.HierarchicalDataSource({						
 						transport: {
 							read: {
@@ -196,7 +196,10 @@
 							},
 							parameterMap: function (options, type){
 								options.siteId = 1;
-								return options
+								
+								kendo.stringify( tree.get(options.name ) );
+								
+								return options;
 							}
 						},
 						schema: {		
