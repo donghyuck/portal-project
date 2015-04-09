@@ -196,13 +196,13 @@
 							},
 							parameterMap: function (options, type){
 								options.siteId = 1;
-								if( options.name ){
-								alert(
-								kendo.stringify( 
-									renderTo.data("kendoTreeView").dataSource.get( options.name ).menu 
-								));
+								if( options.name )
+								{
+									var item = renderTo.data("kendoTreeView").dataSource.get( options.name );
+									return {siteId:1, menu:item.menu, name:item.name };
+								}else{
+									return {siteId:1};
 								}
-								return options;
 							}
 						},
 						schema: {		
