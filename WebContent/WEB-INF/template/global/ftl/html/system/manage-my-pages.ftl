@@ -181,7 +181,8 @@
 				kendo.bind( renderTo, observable );				
 				createTemplateTree(rendetTo2, observable);				
 				renderTo.find("[data-action=select]").click(function(e){
-					observable.page.template = getSelectedTemplateFile(rendetTo2).path ;	
+					var item = getSelectedTemplateFile(rendetTo2).path ;						
+					alert( observable.page.template + "/" + common.ui.stringify(item) );
 					renderTo.modal('hide');				
 				});
 			}
