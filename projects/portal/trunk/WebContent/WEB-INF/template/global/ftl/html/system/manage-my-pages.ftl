@@ -195,6 +195,7 @@
 								dataType: "json"
 							},
 							parameterMap: function (options, type){
+								alert(kendo.stringify( options ) );
 								return { siteId: 1 }
 							}
 						},
