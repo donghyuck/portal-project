@@ -179,7 +179,7 @@
 					show : false
 				});				
 				
-				kendo.bind( renderTo, observable );				
+				//kendo.bind( renderTo, observable );				
 				createTemplateTree(rendetTo2, observable);				
 				renderTo.find("[data-action=select]").click(function(e){
 					var item = getSelectedTemplateFile(rendetTo2) ;
