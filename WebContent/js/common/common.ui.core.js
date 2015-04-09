@@ -16,7 +16,7 @@
 		UNDEFINED = "undefined";
 
 	function endsWith(source, suffix){
-		return this.indexOf(suffix, source.length - suffix.length) !== -1;		
+		return source.indexOf(suffix, source.length - suffix.length) !== -1;		
 	}	
 			
 	function bytesToSize(bytes) {
