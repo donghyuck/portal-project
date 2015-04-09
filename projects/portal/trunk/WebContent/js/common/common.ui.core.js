@@ -15,6 +15,11 @@
 		OBJECT = "object",
 		UNDEFINED = "undefined";
 
+		if (typeof String.prototype.endsWith !== 'function') {
+		String.prototype.endsWith = function(suffix) {
+			return this.indexOf(suffix, this.length - suffix.length) !== -1;
+		};
+	}
 		
 	function bytesToSize(bytes) {
 		var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
@@ -97,21 +102,14 @@
 		}
 		return {url: url, params: obj};	
 	}
-	
-	function endsWith (suffix) {
-		return this.indexOf(suffix, this.length - suffix.length) !== -1;
-	};
-		
+			
 	extend(common, {	
 		ui: common.ui || {},
 		random : common.random || random,
 		guid : common.guid || guid,
 		valid : common.valid || valid,
 		bytesToSize : common.bytesToSize || bytesToSize,
-		redirect : common.redirect || redirect,
-		String : {
-			endsWith : 	endsWith		
-		}
+		redirect : common.redirect || redirect
 	});
 		
 })(jQuery);
