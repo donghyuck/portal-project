@@ -129,6 +129,7 @@
 					editable : false,
 					enabled : false,
 					cfg: function(e){
+						var $this = this;
 						var btn = $(e.target);	
 						var action = btn.data("action");
 						switch( action ){
@@ -136,7 +137,7 @@
 							
 							break;
 							case "template" :
-							openTemplateSelectModal(this);
+							createTemplateSelectModal($this);
 							break;
 							case "locale" :
 							
@@ -167,7 +168,7 @@
 		}	
 		
 		
-		function openTemplateSelectModal(observable){
+		function createTemplateSelectModal(observable){
 			var renderToString= "#my-template-select-modal";
 			if( $(renderToString).length === 0 ){			
 				$("#main-wrapper").append( kendo.template($('#my-template-select-modal-template').html()) );				
