@@ -197,7 +197,7 @@
 							parameterMap: function (options, type){
 								options.siteId = 1;
 								
-								kendo.stringify( tree.get(options.name ) );
+								kendo.stringify( tree.findByUid(options.name ) );
 								
 								return options;
 							}
