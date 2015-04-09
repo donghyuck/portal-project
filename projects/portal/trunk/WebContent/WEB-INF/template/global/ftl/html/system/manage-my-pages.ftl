@@ -731,7 +731,7 @@
         </script>	
 		<script id="menu-treeview-template" type="text/kendo-ui-template">
 			#if(item.progenitor){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
-            #: item.name # 
+            #: item.title # 
         </script>
 		<script id="treeview-template" type="text/kendo-ui-template">
 			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
