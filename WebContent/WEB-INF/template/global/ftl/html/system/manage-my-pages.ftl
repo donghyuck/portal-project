@@ -199,7 +199,7 @@
 								if( options.name )
 								{
 									var item = renderTo.data("kendoTreeView").dataSource.get( options.name );
-									return {siteId:1, menu:item.menu, name:item.name };
+									return {siteId:1, menu:item.menu, name:item.name, progenitor: item.progenitor  };
 								}else{
 									return {siteId:1};
 								}
