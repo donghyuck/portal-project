@@ -259,7 +259,7 @@
 				common.ui.ajax(
 				"<@spring.url "/secure/data/mgmt/template/get.json?output=json" />" , 
 				{
-					data : { path:  data.page.template.endsWith(".ftl") ? data.page.template + ".ftl" : data.page.template , customized: data.customized },
+					data : { path:  common.endsWith( data.page.template, ".ftl") ? data.page.template + ".ftl" : data.page.template , customized: data.customized },
 					success : function(response){
 						data.set("fileContent", response.fileContent )
 						ace.edit(renderTo.attr("id")).setValue( data.get("fileContent") );			
