@@ -197,9 +197,10 @@
 							parameterMap: function (options, type){
 								options.siteId = 1;
 								if( options.name ){
+								alert(
 								kendo.stringify( 
 									renderTo.data("kendoTreeView").dataSource.get( options.name ).menu 
-								);
+								));
 								}
 								return options;
 							}
