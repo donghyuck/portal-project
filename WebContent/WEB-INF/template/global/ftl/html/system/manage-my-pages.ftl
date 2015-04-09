@@ -175,7 +175,7 @@
 				renderTo.modal({
 					backdrop: 'static',
 					show : false
-				});				
+				});			
 				
 				//kendo.bind( renderTo, observable );				
 				createTemplateTree(rendetTo2, observable);				
@@ -190,6 +190,7 @@
 					renderTo.modal('hide');				
 				});
 			}
+			$(renderToString).find(".template-tree").data("kendoTreeView").select($());
 			$(renderToString).modal('show');	
 		}
 	
