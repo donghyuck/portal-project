@@ -148,10 +148,10 @@
 						if( this.page.webPageId > 0 ){
 							this.set("editable", true);
 						}else{
-							this.set("editable", false);								
+							this.set("editable", false);		
+							this.page.set("template", "");						
 						}		
 						this.set("fileContent", "");
-						this.page.set("template", "");
 						this.set("enabled", true);			
 					}
 				});								
