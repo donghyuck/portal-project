@@ -170,12 +170,12 @@
 			if( $(renderToString).length === 0 ){			
 				$("#main-wrapper").append( kendo.template($('#my-menu-select-modal-template').html()) );				
 				var renderTo = $(renderToString);
-				
+				var rendetTo2 = renderTo.find(".menu-tree");
 				renderTo.modal({
 					backdrop: 'static',
 					show : false
 				});			
-				
+				createMenuTree(rendetTo2, observable);				
 				//kendo.bind( renderTo, observable );				
 						
 				renderTo.find("[data-action=select]").click(function(e){					
@@ -184,6 +184,34 @@
 			}
 			$(renderToString).modal('show');	
 		}
+				
+		function createMenuTree(renderTo, observable){		
+			if( !common.ui.exists(renderTo) ){					
+				renderTo.kendoTreeView({
+					dataSource: new kendo.data.HierarchicalDataSource({						
+						transport: {
+							read: {
+								url : '<@spring.url "/secure/data/mgmt/website/navigator/items/list.json?output=json"/>',
+								dataType: "json"
+							},
+							parameterMap: function (options, type){
+								return { siteId: 1 }
+							}
+						},
+						schema: {		
+							model: {
+								id: "name",
+								hasChildren: "child"
+							}
+						}
+					}),
+					template: kendo.template($("#menu-treeview-template").html()),
+					dataTextField: "name",
+					change: function(e) {				
+					}
+				});				
+			}
+		}					
 				
 		
 		function createTemplateSelectModal(observable){
@@ -671,7 +699,7 @@
 						<h4 class="modal-title">메뉴 선택</h4>
 					</div>					
 					<div class="modal-body">
-
+						<div class="menu-tree"></div>
 					</div>
 					<div class="modal-footer">					
 						<button type="button" class="btn btn-primary btn-flat btn-sm" data-action="select" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>선택</button>					
@@ -700,6 +728,10 @@
 			</div>
 		</div>
         </script>	
+		<script id="menu-treeview-template" type="text/kendo-ui-template">
+			#if(item.progenitor){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
+            #: item.name # 
+        </script>
 		<script id="treeview-template" type="text/kendo-ui-template">
 			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
             #: item.name # 
