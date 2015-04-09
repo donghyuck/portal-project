@@ -139,11 +139,9 @@
 							case "template" :
 							createTemplateSelectModal($this);
 							break;
-							case "locale" :
-							
+							case "locale" :							
 							break;												
-						}							
-						
+						}		
 					},				
 					setSource : function(source){
 						source.copy(this.page);			
@@ -187,8 +185,7 @@
 						alert("파일을 선택하여 주십시오.");
 						return;
 					}else{
-						observable.page.template = item.path ;
-					
+						observable.page.set("template", item.path) ;
 					}		
 					renderTo.modal('hide');				
 				});
