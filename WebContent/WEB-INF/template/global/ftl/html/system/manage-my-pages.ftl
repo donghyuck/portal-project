@@ -184,7 +184,6 @@
 			}
 			$(renderToString).modal('show');	
 		}
-
 		
 		function createTemplateTree(renderTo, observable){		
 			if( !common.ui.exists(renderTo) ){					
