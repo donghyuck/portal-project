@@ -15,12 +15,10 @@
 		OBJECT = "object",
 		UNDEFINED = "undefined";
 
-		if (typeof String.prototype.endsWith !== 'function') {
-		String.prototype.endsWith = function(suffix) {
-			return this.indexOf(suffix, this.length - suffix.length) !== -1;
-		};
-	}
-		
+	function endsWith(source, suffix){
+		return this.indexOf(suffix, source.length - suffix.length) !== -1;		
+	}	
+			
 	function bytesToSize(bytes) {
 		var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
 		    if (bytes == 0) return 'n/a';
@@ -109,7 +107,8 @@
 		guid : common.guid || guid,
 		valid : common.valid || valid,
 		bytesToSize : common.bytesToSize || bytesToSize,
-		redirect : common.redirect || redirect
+		redirect : common.redirect || redirect,
+		endsWith : common.endsWith || endsWith
 	});
 		
 })(jQuery);
