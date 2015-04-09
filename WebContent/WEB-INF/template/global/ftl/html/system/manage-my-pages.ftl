@@ -134,7 +134,7 @@
 						var action = btn.data("action");
 						switch( action ){
 							case "menu" :
-							
+							createMenuSelectModal($this);
 							break;
 							case "template" :
 							createTemplateSelectModal($this);
