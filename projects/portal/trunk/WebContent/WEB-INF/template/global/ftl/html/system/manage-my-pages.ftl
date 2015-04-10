@@ -322,7 +322,7 @@
 					},
 					iframe: true,
 					width: "615px",
-					height: "80%"
+					height: "80%",
 					visible: false,
 					title: data.page.title ,
 					content: "/display/0/" +data.page.name
