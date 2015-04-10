@@ -379,8 +379,7 @@
 			}else{
 				renderTo.data("object-id", data.webPageId );
 				common.ui.grid(renderTo).setDataSource(createPagePropertiesDataSource(data));
-			}			
-			common.ui.grid(renderTo).dataSource.fetch();
+			}
 		}						
 		
 		
