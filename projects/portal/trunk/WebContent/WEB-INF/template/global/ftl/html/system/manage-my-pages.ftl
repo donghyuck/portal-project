@@ -371,9 +371,7 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}
-			
-			alert( renderTo.data("object-id") + ">>>>>>>>>>" + kendo.stringify( data ) );
-			
+						
 			if( common.ui.defined(renderTo.data("object-id"))){
 				if( renderTo.data("object-id") == 0 || data.webPageId != renderTo.data("object-id") ){
 					renderTo.data("object-id", data.webPageId );
@@ -692,6 +690,7 @@
 										
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
+										<button class="btn btn-sm btn-success btn-flat" data-action="preview">미리보기</button>
 										<span data-bind="text:page.template"></span>
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >
