@@ -322,7 +322,7 @@
 					},
 					width: "615px",
 					visible: false,
-					title: "미리보기",
+					title: "/display/0/" +data.page.name ,
 					content: ""
 				});
 				
