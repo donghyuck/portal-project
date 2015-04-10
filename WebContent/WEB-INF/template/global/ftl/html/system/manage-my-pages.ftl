@@ -735,17 +735,17 @@
 				</div>
 			</div>
 		</div>
-        </script>	
+		</script>	
 		<script id="menu-treeview-template" type="text/kendo-ui-template">
-			#if(item.progenitor){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
-            #: item.title # 
-        </script>
-		<script id="treeview-template" type="text/kendo-ui-template">
-			#if(item.directory){#
+			#if(item.progenitor){#
 			<i class="fa fa-bars"></i>	 #: item.name # 		
 			 #}else{# 
 			<i class="fa fa-file-text-o"></i> #: item.name # # if (!item.description) { #<small>#:item.description#</small>#}#
-			 #}#			
+			 #}#	
+		</script>
+		<script id="menu-treeview-template" type="text/kendo-ui-template">
+			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
+			#: item.title # 	
 			# if (!item.items) { #
 			<a class='delete-link' href='\#'></a> 
 			# } #
