@@ -321,7 +321,7 @@
 						top: 50, left: 50
 					},
 					iframe: true,
-					width: "615px",
+					width: "700px",
 					height: "80%",
 					visible: false,
 					title: data.page.title ,
