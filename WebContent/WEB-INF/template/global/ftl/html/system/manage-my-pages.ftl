@@ -320,6 +320,7 @@
 					position : {
 						top: 100, left: "10%"
 					},
+					iframe: true,
 					width: "615px",
 					visible: false,
 					title: data.page.title ,
