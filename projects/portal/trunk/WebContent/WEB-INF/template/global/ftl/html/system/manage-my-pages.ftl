@@ -331,6 +331,7 @@
 					var renderToEditor = $("#site-page-editor");
 					previewWindow.title( renderToEditor.data("model").page.displayName );
 					 previewWindow.content( "/display/0/" + renderToEditor.data("model").page.name );
+					 previewWindow.refresh();
 					previewWindow.open();
 				}) 
 					
