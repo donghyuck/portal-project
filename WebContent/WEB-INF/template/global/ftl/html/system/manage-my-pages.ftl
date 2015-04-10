@@ -184,7 +184,7 @@
 						alert("메뉴 아이템을 선택하여 주십시오.");
 						return;
 					}else{
-						observable.page.set("template", item.path) ;
+						observable.page.set("template", item.name) ;
 					}				
 					renderTo.modal('hide');				
 				});
@@ -689,7 +689,7 @@
 										</ul>
 										
 									</div>
-									<div class="tab-pane active" id="bs-tabdrop-pill2">
+									<div class="tab-pane" id="bs-tabdrop-pill2">
 										<span data-bind="text:page.template"></span>
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >
