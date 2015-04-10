@@ -318,10 +318,11 @@
 				
 				$("#preview-window").kendoWindow({
 					position : {
-						top: 100, left: "10%"
+						top: 50, left: 50
 					},
 					iframe: true,
 					width: "615px",
+					height: "80%"
 					visible: false,
 					title: data.page.title ,
 					content: "/display/0/" +data.page.name
