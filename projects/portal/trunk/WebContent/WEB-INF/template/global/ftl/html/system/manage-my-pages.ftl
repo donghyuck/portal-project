@@ -312,7 +312,26 @@
 				var editor = ace.edit(renderTo.attr("id"));		
 				editor.getSession().setMode("ace/mode/ftl");
 				editor.getSession().setUseWrapMode(true);	
-				var switcher = renderTo.parent().find("input[name='warp-switcher']");				
+				
+				var switcher = renderTo.parent().find("input[name='warp-switcher']");			
+				var preview = renderTo.parent().find("button[data-action='preview']");				
+				
+				$("#preview-window").kendoWindow({
+					width: "615px",
+					visible: false,
+					title: "미리보기",
+					content: ""
+				});
+				
+				preview.click(function(e){
+					var previewWindow = $("#preview-window").data("kendoWindow");
+					
+					var renderToEditor = $("#site-page-editor");
+					previewWindow.title( renderToEditor.data("model").page.displayName );
+					 previewWindow.content( "/display/0/" + renderToEditor.data("model").page.name );
+					previewWindow.show();
+				}) 
+					
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
 					$(switcher).change(function(){
@@ -690,7 +709,7 @@
 										
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
-										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat" data-action="preview">미리보기</button>
+										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat pull-right" data-action="preview">미리보기</button>
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" >
 										<div id="htmleditor"></div>
@@ -706,6 +725,7 @@
 			<div id="main-menu-bg">
 			</div>
 		</div> <!-- / #main-wrapper -->
+		<div id="preview-window"></div>
 		<script id="my-menu-select-modal-template" type="text/kendo-ui-template">
 		<div id="my-menu-select-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
 			<div class="modal-dialog">	
