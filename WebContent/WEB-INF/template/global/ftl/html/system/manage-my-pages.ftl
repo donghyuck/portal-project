@@ -697,7 +697,7 @@
 										<div id="htmleditor"></div>
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill3">
-										<div class="properties no-border"></div>
+										<div class="properties no-border" data-object-id="0"></div>
 									</div>
 								</div>
 							</div>
