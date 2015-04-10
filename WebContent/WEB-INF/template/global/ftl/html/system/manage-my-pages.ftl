@@ -740,7 +740,7 @@
 			#if(item.progenitor){#
 			<i class="fa fa-bars"></i>	 #: item.title # 		
 			 #}else{# 
-			<i class="fa fa-file-text-o"></i> #: item.title # # if (!item.name) { #<small>#:item.name#</small>#}#
+			<i class="fa fa-file-text-o"></i> #: item.title # <small>(#:item.name#)</small>
 			 #}#	
 		</script>
 		<script id="treeview-template" type="text/kendo-ui-template">
