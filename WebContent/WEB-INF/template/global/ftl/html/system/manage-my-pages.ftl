@@ -322,8 +322,8 @@
 					},
 					width: "615px",
 					visible: false,
-					title: "/display/0/" +data.page.name ,
-					content: ""
+					title: data.page.title ,
+					content: "/display/0/" +data.page.name
 				});
 				
 				preview.click(function(e){
