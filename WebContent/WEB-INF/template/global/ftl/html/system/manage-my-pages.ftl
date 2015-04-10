@@ -324,8 +324,7 @@
 				});
 				
 				preview.click(function(e){
-					var previewWindow = $("#preview-window").data("kendoWindow");
-					
+					var previewWindow = $("#preview-window").data("kendoWindow");					
 					var renderToEditor = $("#site-page-editor");
 					previewWindow.title( renderToEditor.data("model").page.displayName );
 					 previewWindow.content( "/display/0/" + renderToEditor.data("model").page.name );
