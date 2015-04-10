@@ -351,7 +351,7 @@
 		}		
 		
 		function createPagePropertiesGrid(renderTo, data){
-			alert( kendo.stringify( data ) );
+			
 			
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
@@ -373,6 +373,9 @@
 					common.ui.grid(renderTo).dataSource.read();
 				});	
 			}
+			
+			alert( renderTo.data("object-id") + ">>>>>>>>>>" + kendo.stringify( data ) );
+			
 			if( common.ui.defined(renderTo.data("object-id"))){
 				if( renderTo.data("object-id") == 0 || data.webPageId != renderTo.data("object-id") ){
 					renderTo.data("object-id", data.webPageId );
