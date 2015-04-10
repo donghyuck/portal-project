@@ -316,25 +316,22 @@
 				var switcher = renderTo.parent().find("input[name='warp-switcher']");			
 				var preview = renderTo.parent().find("button[data-action='preview']");				
 				
-				$("#preview-window").kendoWindow({
-					position : {
-						top: 50, left: 50
-					},
-					iframe: true,
-					width: "700px",
-					height: "80%",
-					visible: false,
-					title: data.page.title ,
-					content: "/display/0/" +data.page.name
-				});
+
 				
 				preview.click(function(e){
-					var previewWindow = $("#preview-window").data("kendoWindow");					
-					var renderToEditor = $("#site-page-editor");
-					previewWindow.title( renderToEditor.data("model").page.displayName );
-					 previewWindow.setOptions( { content : "/display/0/" + renderToEditor.data("model").page.name } );
-					 previewWindow.refresh();
-					previewWindow.open();
+					if($("#preview-window").data("kendoWindow")){
+						$("#preview-window").data("kendoWindow").distory();
+					}
+					$("#preview-window").kendoWindow({
+						position : {
+							top: 50, left: 50
+						},
+						iframe: true,
+						width: "700px",
+						height: "80%",
+						title: data.page.title ,
+						content: "/display/0/" +data.page.name
+					});
 				}) 
 					
 				if( switcher.length > 0 ){
