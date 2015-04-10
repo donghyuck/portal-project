@@ -213,7 +213,7 @@
 						}
 					}),
 					template: kendo.template($("#menu-treeview-template").html()),
-					dataUrlField: "page", 
+					/*dataUrlField: "page", */
 					dataTextField: "name",
 					change: function(e) {				
 					}
