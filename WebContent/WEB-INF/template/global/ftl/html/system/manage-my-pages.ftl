@@ -351,6 +351,8 @@
 		}		
 		
 		function createPagePropertiesGrid(renderTo, data){
+			alert( kendo.stringify( data ) );
+			
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					columns: [
