@@ -317,6 +317,9 @@
 				var preview = renderTo.parent().find("button[data-action='preview']");				
 				
 				$("#preview-window").kendoWindow({
+					position : {
+						top: 200, left: 20%;
+					},
 					width: "615px",
 					visible: false,
 					title: "미리보기",
