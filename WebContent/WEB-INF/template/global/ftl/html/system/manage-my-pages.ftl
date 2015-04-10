@@ -318,7 +318,7 @@
 				
 				$("#preview-window").kendoWindow({
 					position : {
-						top: 200, left: 20%;
+						top: 200, left: "20%"
 					},
 					width: "615px",
 					visible: false,
