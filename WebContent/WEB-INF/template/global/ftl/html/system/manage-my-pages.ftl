@@ -337,7 +337,7 @@
 		function createPagePropertiesDataSource(data){
 			return common.ui.data.properties.datasource({
 				transport: { 
-					read: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/list.json?output=json&pageId="/>' + data.webSiteId, type:'post' },
+					read: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/list.json?output=json&pageId="/>' + data.webPageId, type:'post' },
 					create: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&pageId="/>' + data.webPageId , type:'post', contentType : "application/json" },
 					update: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&pageId="/>' + data.webPageId, type:'post', contentType : "application/json"  },
 					destroy: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/delete.json?output=json&pageId="/>' + data.webPageId, type:'post', contentType : "application/json" },
@@ -351,8 +351,6 @@
 		}		
 		
 		function createPagePropertiesGrid(renderTo, data){
-			
-			
 			if( ! renderTo.data("kendoGrid") ){
 				renderTo.kendoGrid({
 					columns: [
