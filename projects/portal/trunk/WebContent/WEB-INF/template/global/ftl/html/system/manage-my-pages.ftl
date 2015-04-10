@@ -178,10 +178,18 @@
 				createMenuTree(rendetTo2, observable);				
 				//kendo.bind( renderTo, observable );				
 						
-				renderTo.find("[data-action=select]").click(function(e){					
+				renderTo.find("[data-action=select]").click(function(e){			
+					var item = getSelectedTreeItem(rendetTo2);
+					if(  item.progenitor  ){
+						alert("메뉴 아이템을 선택하여 주십시오.");
+						return;
+					}else{
+						observable.page.set("template", item.path) ;
+					}				
 					renderTo.modal('hide');				
 				});
 			}
+			$(renderToString).find(".menu-tree").data("kendoTreeView").select($());
 			$(renderToString).modal('show');	
 		}
 				
@@ -236,7 +244,7 @@
 				//kendo.bind( renderTo, observable );				
 				createTemplateTree(rendetTo2, observable);				
 				renderTo.find("[data-action=select]").click(function(e){
-					var item = getSelectedTemplateFile(rendetTo2) ;
+					var item = getSelectedTreeItem(rendetTo2) ;
 					if( item.directory ){
 						alert("파일을 선택하여 주십시오.");
 						return;
@@ -250,7 +258,7 @@
 			$(renderToString).modal('show');	
 		}
 	
-		function getSelectedTemplateFile( renderTo ){			
+		function getSelectedTreeItem( renderTo ){			
 			var tree = renderTo.data('kendoTreeView');			
 			var selectedCells = tree.select();			
 			var selectedCell = tree.dataItem( selectedCells );   
@@ -329,10 +337,10 @@
 		function createPagePropertiesDataSource(data){
 			return common.ui.data.properties.datasource({
 				transport: { 
-					read: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/list.json?output=json&siteId="/>' + data.webSiteId, type:'post' },
-					create: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&siteId="/>' + data.webPageId , type:'post', contentType : "application/json" },
-					update: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&siteId="/>' + data.webPageId, type:'post', contentType : "application/json"  },
-					destroy: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/delete.json?output=json&siteId="/>' + data.webPageId, type:'post', contentType : "application/json" },
+					read: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/list.json?output=json&pageId="/>' + data.webSiteId, type:'post' },
+					create: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&pageId="/>' + data.webPageId , type:'post', contentType : "application/json" },
+					update: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/update.json?output=json&pageId="/>' + data.webPageId, type:'post', contentType : "application/json"  },
+					destroy: { url:'<@spring.url "/secure/data/mgmt/website/page/properties/delete.json?output=json&pageId="/>' + data.webPageId, type:'post', contentType : "application/json" },
 					parameterMap: function (options, operation){			
 						if (operation !== "read" && options.models) {
 							return kendo.stringify(options.models);
