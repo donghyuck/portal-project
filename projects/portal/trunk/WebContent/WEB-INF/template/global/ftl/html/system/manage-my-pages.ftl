@@ -738,14 +738,14 @@
 		</script>	
 		<script id="menu-treeview-template" type="text/kendo-ui-template">
 			#if(item.progenitor){#
-			<i class="fa fa-bars"></i>	 #: item.name # 		
+			<i class="fa fa-bars"></i>	 #: item.title # 		
 			 #}else{# 
-			<i class="fa fa-file-text-o"></i> #: item.name # # if (!item.description) { #<small>#:item.description#</small>#}#
+			<i class="fa fa-file-text-o"></i> #: item.title # # if (!item.name) { #<small>#:item.name#</small>#}#
 			 #}#	
 		</script>
-		<script id="menu-treeview-template" type="text/kendo-ui-template">
+		<script id="treeview-template" type="text/kendo-ui-template">
 			#if(item.directory){#<i class="fa fa-folder-open-o"></i> # }else{# <i class="fa fa-file-code-o"></i> #}#
-			#: item.title # 	
+			#: item.name # 	
 			# if (!item.items) { #
 			<a class='delete-link' href='\#'></a> 
 			# } #
