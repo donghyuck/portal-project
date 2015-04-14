@@ -156,6 +156,7 @@
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}
+						alert($this.page.enabled) ;
 						if( $this.page.enabled ){
 							$(switcher).switcher('on');
 						}else{
