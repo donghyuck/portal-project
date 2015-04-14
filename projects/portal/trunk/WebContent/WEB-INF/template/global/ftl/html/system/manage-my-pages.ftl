@@ -154,7 +154,6 @@
 						}
 						
 						if( $this.page.enabled ){
-							alert($this.page.enabled) ;
 							switcher.switcher('on');
 						}else{
 							switcher.switcher('off');
