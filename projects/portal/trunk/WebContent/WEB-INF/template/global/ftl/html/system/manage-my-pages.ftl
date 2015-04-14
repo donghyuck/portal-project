@@ -702,7 +702,7 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">템플릿 사용 여부</h6>
-												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" data-bind="checked:page.enabled" >
+												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" data-bind="checked:page.enabled" checked="checked" >
 											</div>
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">고급설정</h6>
