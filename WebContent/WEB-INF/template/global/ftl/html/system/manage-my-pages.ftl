@@ -157,9 +157,9 @@
 						}
 						alert($this.page.enabled) ;
 						if( $this.page.enabled ){
-							switcher.switcher('on');
+							renderTo.find("input[name='enabled-switcher']").switcher('on');
 						}else{
-							switcher.switcher('off');
+							renderTo.find("input[name='enabled-switcher']").switcher('off');
 						}
 						this.set("fileContent", "");
 						this.set("enabled", true);		
