@@ -694,21 +694,30 @@
 												</div>
 											</div>
 											<div class="col-sm-6">
-												<div class="form-group no-margin-hr">			
+												<div class="form-group no-margin-hr">		
+												</div>
+											</div>
+										</div>											
+										<hr/>	
+										<div class="row">
+											<div class="col-sm-6">
+												<ul class="list-unstyled margin-bottom-30">
+													<li class="p-xxs small"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
+													<li class="p-xxs small"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
+												</ul>
+											</div>
+											<div class="col-sm-6">
 													<p class="text-right">
+														<div class="btn-group btn-sm">
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><i class="fa fa-file-code-o"></i> 템플릿 선택</button>
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><i class="fa fa-bars"></i> 메뉴 설정</button>
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="locale"><i class="fa fa-flag"></i> 국가 선택</button>
-														</p>												
-												</div>
+														</div>
+													</p>												
 											</div>
 										</div>	
+																	
 										
-										<hr/>							
-										<ul class="list-unstyled margin-bottom-30">
-											<li class="p-xxs small"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
-											<li class="p-xxs small"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
-										</ul>
 										
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
