@@ -19,7 +19,7 @@
 						<#assign directoryAncestor = navigator.parent />						
 						<div class="col-sm-3 no-padding-l">
 							<label><h3><#if directoryAncestor.icon?? ><i class="fa ${directoryAncestor.icon}"></i></#if> ${directoryAncestor.title}</h3></label>
-							<ul>
+							<ul style="margin-left:3px;">
 							<#list directoryAncestor.components as item >
 								<li><a href="${item.page}">${item.title}</a></li>
 							</#list>
