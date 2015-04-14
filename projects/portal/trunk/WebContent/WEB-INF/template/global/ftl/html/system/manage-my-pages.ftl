@@ -155,8 +155,9 @@
 						if( !$this.editable ){
 							$this.page.set("template", "");				
 						}
-						alert($this.page.enabled) ;
+						
 						if( $this.page.enabled ){
+							alert($this.page.enabled) ;
 							renderTo.find("input[name='enabled-switcher']").switcher('on');
 						}else{
 							renderTo.find("input[name='enabled-switcher']").switcher('off');
