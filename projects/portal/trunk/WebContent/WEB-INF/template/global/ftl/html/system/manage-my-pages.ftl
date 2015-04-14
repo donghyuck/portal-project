@@ -694,7 +694,17 @@
 										</div>														
 										<div class="row">
 											<div class="col-sm-6">
+												<div class="switcher switcher-primary checked">
+													<input type="checkbox" data-class="switcher-primary" checked="checked">
+													<div class="switcher-toggler"></div>
+													<div class="switcher-inner">
+													<div class="switcher-state-on">ON</div>
+													<div class="switcher-state-off">OFF</div>
+													</div>
+												</div>
+												
 												<div class="form-group no-margin-hr">
+												
 													<input type="checkbox" id="input-page-enabled" class="k-checkbox" data-bind="checked: page.enabled">
 													<label class="k-checkbox-label" for="input-page-enabled">사용 여부</label>												
 												</div>
@@ -703,7 +713,9 @@
 												<div class="form-group no-margin-hr">		
 												</div>
 											</div>
-										</div>											
+										</div>				
+										
+																	
 										<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">ww</button>
 										<div class="collapse" id="collapse1">
 											<div class="well">
