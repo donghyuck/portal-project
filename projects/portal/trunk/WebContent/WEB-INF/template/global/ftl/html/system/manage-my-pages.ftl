@@ -158,9 +158,9 @@
 						
 						if( $this.page.enabled ){
 							alert($this.page.enabled) ;
-							renderTo.find("input[name='enabled-switcher']").switcher('on');
+							$("input[name='enabled-switcher']").switcher('on');
 						}else{
-							renderTo.find("input[name='enabled-switcher']").switcher('off');
+							$("input[name='enabled-switcher']").switcher('off');
 						}
 						this.set("fileContent", "");
 						this.set("enabled", true);		
