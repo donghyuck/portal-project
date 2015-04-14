@@ -520,6 +520,7 @@
 		}
 		#site-page-editor {
 			min-height:650px;
+			background-color: #fff;
 		}
 		.layout-block {
 			background: #8e8e93;
@@ -626,12 +627,17 @@
 													
 					</div>					
 					<div class="right">
-							<div  id="site-page-editor" class="panel-body" data-bind="visible:enabled" style="display:none;">
-								<ul class="nav nav-tabs nav-tabs-simple">		
-									<li><a href="#bs-tabdrop-pill1" data-toggle="tab" data-action="basic">기본정보</a></li>	
-									<li><a href="#bs-tabdrop-pill2" data-toggle="tab" data-action="template">템플릿</a></li>
-									<li><a href="#bs-tabdrop-pill3" data-toggle="tab" data-action="properties">속성</a></li>								
-								</ul>
+						<div  id="site-page-editor"  data-bind="visible:enabled" style="display:none;">
+							<div class="panel panel-transparent">
+								<div class="panel-heading">
+									<span class="panel-title"><i class="panel-title-icon fa fa-file text-danger"></i> <input type="text" data-bind="value:page.name"></span>
+									<ul class="nav nav-tabs nav-tabs-simple">		
+										<li><a href="#bs-tabdrop-pill1" data-toggle="tab" data-action="basic">기본정보</a></li>	
+										<li><a href="#bs-tabdrop-pill2" data-toggle="tab" data-action="template">템플릿</a></li>
+										<li><a href="#bs-tabdrop-pill3" data-toggle="tab" data-action="properties">속성</a></li>								
+									</ul>																	
+								</div>
+
 								<div class="tab-content m-t-lg">
 									<div class="tab-pane" id="bs-tabdrop-pill1">
 										<div class="row">
@@ -715,11 +721,7 @@
 														</div>
 													</p>												
 											</div>
-										</div>	
-										<div class="text-right">
-											<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>							
-										</div>
-										
+										</div>										
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
 										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat pull-right" data-action="preview">미리보기</button>
@@ -730,8 +732,12 @@
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<div class="properties no-border" data-object-id="0"></div>
 									</div>
+									<div class="panel-footer">
+										<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+									</div>
+
 								</div>
-							</div>
+						</div>
 					</div>
 				</div>						
 			</div> <!-- / #content-wrapper -->
