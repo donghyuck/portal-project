@@ -704,7 +704,7 @@
 												</div>
 											</div>
 										</div>											
-										<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+										<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">ww</button>
 										<div class="collapse" id="collapse1">
 											<div class="well">
 											...
