@@ -706,6 +706,7 @@
 												</div>
 											</div>
 											<div class="col-sm-6">
+												<h6 class="text-light-gray text-semibold">고급설정</h6>
 													<div class="btn-group btn-sm">
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><i class="fa fa-file-code-o"></i> 템플릿 선택</button>
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><i class="fa fa-bars"></i> 메뉴 설정</button>
