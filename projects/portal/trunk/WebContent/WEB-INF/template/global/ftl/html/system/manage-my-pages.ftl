@@ -125,7 +125,7 @@
 			if( !renderTo.data("model")){					
 				var switcher = renderTo.find("input[name='enabled-switcher']");
 				if( switcher.length > 0 ){
-					switcher.switcher();	
+					switcher.switcher("off");	
 				}				
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
