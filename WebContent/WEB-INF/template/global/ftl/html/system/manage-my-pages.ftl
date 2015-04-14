@@ -159,9 +159,9 @@
 						
 						if( $this.page.enabled ){
 							alert($this.page.enabled) ;
-							$("input[name='enabled-switcher']").switcher('on');
+							//$("input[name='enabled-switcher']").switcher('on');
 						}else{
-							$("input[name='enabled-switcher']").switcher('off');
+							//$("input[name='enabled-switcher']").switcher('off');
 						}
 						this.set("fileContent", "");
 						this.set("enabled", true);		
@@ -344,7 +344,7 @@
 				}) 
 					
 				if( switcher.length > 0 ){
-					$(switcher).switcher();
+					$(switcher).switcher('on');
 					$(switcher).change(function(){
 						editor.getSession().setUseWrapMode($(this).is(":checked"));
 					});		
