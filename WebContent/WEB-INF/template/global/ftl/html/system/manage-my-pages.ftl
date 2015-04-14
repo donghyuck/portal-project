@@ -155,7 +155,13 @@
 						this.set("fileContent", "");
 						this.set("enabled", true);			
 					}
-				});								
+				});					
+
+				var switcher = renderTo.parent().find("input[name='enabled-switcher']");							
+				if( switcher.length > 0 ){
+					$(switcher).switcher();
+				}	
+											
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );				
 				createEditorTabs(renderTo, observable);
@@ -295,13 +301,6 @@
 		
 
 		function createEditorTabs(renderTo, data){
-			
-			var switcher = renderTo.parent().find("input[name='enabled-switcher']");	
-					
-			if( switcher.length > 0 ){
-				$(switcher).switcher();
-			}		
-		
 			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 				var show_bs_tab = $(e.target);
 				switch( show_bs_tab.data("action") ){
