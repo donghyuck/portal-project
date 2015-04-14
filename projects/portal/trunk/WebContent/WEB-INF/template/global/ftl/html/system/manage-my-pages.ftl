@@ -705,35 +705,19 @@
 													</div>
 												</div>
 											</div>
-											<div class="col-sm-6 text-right">
+											<div class="col-sm-6">
 													<div class="btn-group btn-sm">
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><i class="fa fa-file-code-o"></i> 템플릿 선택</button>
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><i class="fa fa-bars"></i> 메뉴 설정</button>
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="locale"><i class="fa fa-flag"></i> 국가 선택</button>
 													</div>
 											</div>
-										</div>				
-										
-																	
-										<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">ww</button>
-										<div class="collapse" id="collapse1">
-											<div class="well">
-											...
-											</div>
 										</div>
-										<div class="row">
-											<div class="col-sm-6">
-												<ul class="list-unstyled margin-bottom-30">
+										<hr class="panel-wide">				
+										<ul class="list-unstyled margin-bottom-30">
 													<li class="p-xxs small"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
 													<li class="p-xxs small"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
-												</ul>
-											</div>
-											<div class="col-sm-6">
-													<p class="text-right">
-														
-													</p>												
-											</div>
-										</div>										
+										</ul>								
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
 										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat pull-right" data-action="preview">미리보기</button>
