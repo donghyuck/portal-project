@@ -125,7 +125,7 @@
 			if( !renderTo.data("model")){					
 				var switcher = renderTo.find("input[name='enabled-switcher']");
 				if( switcher.length > 0 ){
-					$(switcher).switcher();	
+					switcher.switcher();	
 				}
 				
 				var  observable = kendo.observable({
@@ -158,9 +158,9 @@
 						}
 						alert($this.page.enabled) ;
 						if( $this.page.enabled ){
-							$(switcher).switcher('on');
+							switcher.switcher('on');
 						}else{
-							$(switcher).switcher('off');
+							switcher.switcher('off');
 						}
 						this.set("fileContent", "");
 						this.set("enabled", true);		
