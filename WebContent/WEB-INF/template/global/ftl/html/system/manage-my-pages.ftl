@@ -124,6 +124,10 @@
 			var renderTo = $("#site-page-editor");
 			if( !renderTo.data("model")){					
 				var switcher = renderTo.find("input[name='enabled-switcher']");
+				if( switcher.length > 0 ){
+					$(switcher).switcher();	
+				}
+				
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
@@ -146,29 +150,21 @@
 						}		
 					},				
 					setSource : function(source){
-						source.copy(this.page);			
-						if( this.page.webPageId > 0 ){
-							this.set("editable", true);							
-						}else{
-							this.set("editable", false);		
-							this.page.set("template", "");						
-						}		
-						
-						if( this.page.enabled ) {
+						var $this = this;
+						source.copy($this.page);		
+						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
+						if( !$this.editable ){
+							$this.page.set("template", "");				
+						}
+						if( $this.page.enabled ){
 							$(switcher).switcher('on');
-						} else{
+						}else{
 							$(switcher).switcher('off');
 						}
 						this.set("fileContent", "");
-						this.set("enabled", true);			
+						this.set("enabled", true);		
 					}
-				});					
-
-									
-				if( switcher.length > 0 ){
-					$(switcher).switcher();	
-				}	
-											
+				});												
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );				
 				createEditorTabs(renderTo, observable);
