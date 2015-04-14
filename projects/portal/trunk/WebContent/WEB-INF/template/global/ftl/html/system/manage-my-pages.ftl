@@ -155,9 +155,9 @@
 						}		
 						
 						if( this.page.enabled ) {
-							$(switcher).switcher().on();
+							$(switcher).switcher({"on"});
 						} else{
-							$(switcher).switcher().off();
+							$(switcher).switcher({"off"});
 						}
 						this.set("fileContent", "");
 						this.set("enabled", true);			
