@@ -9,6 +9,7 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css" />',
+			'css!<@spring.url "/styles/font-icons/themify/themify-icons.css" />',
 			'css!<@spring.url "/styles/common.plugins/animate.css" />',
 			'css!<@spring.url "/styles/jquery.jgrowl/jquery.jgrowl.min.css" />',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css" />',			
@@ -20,7 +21,7 @@
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js" />',
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js" />',
 			'<@spring.url "/js/jquery.jgrowl/jquery.jgrowl.min.js" />',			
-			'<@spring.url "/js/bootstrap/3.3.1/bootstrap.min.js" />',			
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js" />',			
 			'<@spring.url "/js/common.plugins/fastclick.js" />', 
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js" />', 
 			'<@spring.url "/js/common.admin/pixel.admin.min.js" />',
