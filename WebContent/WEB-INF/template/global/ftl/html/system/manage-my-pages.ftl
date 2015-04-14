@@ -704,7 +704,12 @@
 												</div>
 											</div>
 										</div>											
-										<hr/>	
+										<button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
+										<div class="collapse" id="collapse1">
+											<div class="well">
+											...
+											</div>
+										</div>
 										<div class="row">
 											<div class="col-sm-6">
 												<ul class="list-unstyled margin-bottom-30">
