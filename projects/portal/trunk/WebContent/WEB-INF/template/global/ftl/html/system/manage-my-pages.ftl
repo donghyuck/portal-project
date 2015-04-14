@@ -344,7 +344,7 @@
 				}) 
 					
 				if( switcher.length > 0 ){
-					$(switcher).switcher('on');
+					$(switcher).switcher();
 					$(switcher).change(function(){
 						editor.getSession().setUseWrapMode($(this).is(":checked"));
 					});		
