@@ -755,7 +755,7 @@
 											<li class="p-xxs small"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
 											<li class="p-xxs small"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
 										</ul>	
-										<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>							
+										<button class="btn btn-flat btn-primary" data-bind="events:{click:saveOrUpdate}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>							
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
 										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat pull-right" data-action="preview">미리보기</button>
