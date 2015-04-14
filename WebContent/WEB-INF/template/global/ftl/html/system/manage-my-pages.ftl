@@ -691,7 +691,8 @@
 													<p class="help-block small">로케일 코드 값을 입력하세요 예)en, ko_KR </p>																						
 												</div>
 											</div>
-										</div>														
+										</div>				
+										<hr class="panel-wide">										
 										<div class="row">
 											<div class="col-sm-6">
 												<div class="switcher switcher-primary checked">
