@@ -122,7 +122,8 @@
 		
 		function openEditor(source){			
 			var renderTo = $("#site-page-editor");
-			if( !renderTo.data("model")){									
+			if( !renderTo.data("model")){					
+				var switcher = renderTo.parent().find("input[name='enabled-switcher']");						
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
@@ -147,19 +148,28 @@
 					setSource : function(source){
 						source.copy(this.page);			
 						if( this.page.webPageId > 0 ){
-							this.set("editable", true);
+							this.set("editable", true);							
 						}else{
 							this.set("editable", false);		
 							this.page.set("template", "");						
 						}		
+						
+						if( this.page.enabled ) {
+							$(switcher).switcher().on();
+						} else{
+							$(switcher).switcher().off();
+						}
 						this.set("fileContent", "");
 						this.set("enabled", true);			
 					}
 				});					
 
-				var switcher = renderTo.parent().find("input[name='enabled-switcher']");							
+									
 				if( switcher.length > 0 ){
 					$(switcher).switcher();
+					//$(switcher).change(function(){
+					//	editor.getSession().setUseWrapMode($(this).is(":checked"));
+					//});		
 				}	
 											
 				renderTo.data("model", observable );
@@ -699,7 +709,7 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">템플릿 사용 여부</h6>
-												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" checked="checked" data-bind="checked: page.enabled">
+												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" checked="checked">
 											</div>
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">고급설정</h6>
@@ -712,9 +722,10 @@
 										</div>
 										<hr class="panel-wide">				
 										<ul class="list-unstyled margin-bottom-30">
-													<li class="p-xxs small"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
-													<li class="p-xxs small"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
-										</ul>								
+											<li class="p-xxs small"><strong>생성일:</strong> <span data-bind="text: page.formattedCreationDate"></span></li>
+											<li class="p-xxs small"><strong>수정일:</strong> <span data-bind="text: page.formattedModifiedDate"></span></li>
+										</ul>	
+										<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>							
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
 										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat pull-right" data-action="preview">미리보기</button>
@@ -725,11 +736,7 @@
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<div class="properties no-border" data-object-id="0"></div>
 									</div>
-
 								</div>
-									<div class="panel-footer">
-										<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
-									</div>
 						</div>
 					</div>
 				</div>						
