@@ -123,11 +123,7 @@
 		function openEditor(source){			
 			var renderTo = $("#site-page-editor");
 			if( !renderTo.data("model")){					
-				var switcher = renderTo.find("input[name='enabled-switcher']");
-				if( switcher.length > 0 ){
-				//	switcher.switcher();
-				//	switcher.switcher('off');	
-				}				
+			
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
@@ -159,14 +155,20 @@
 						
 						if( $this.page.enabled ){
 							alert($this.page.enabled) ;
-							//$("input[name='enabled-switcher']").switcher('on');
+							switcher.switcher('on');
 						}else{
-							//$("input[name='enabled-switcher']").switcher('off');
+							switcher.switcher('off');
 						}
 						this.set("fileContent", "");
 						this.set("enabled", true);		
 					}
-				});												
+				});		
+
+				var switcher = renderTo.find("input[name='enabled-switcher']");
+				if( switcher.length > 0 ){
+					switcher.switcher();					
+				}	
+																		
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );				
 				createEditorTabs(renderTo, observable);
@@ -704,7 +706,7 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">템플릿 사용 여부</h6>
-												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" data-bind="checked:page.enabled" >
+												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" checked="checked">
 											</div>
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">고급설정</h6>
