@@ -732,11 +732,11 @@
 									<div class="tab-pane" id="bs-tabdrop-pill3">
 										<div class="properties no-border" data-object-id="0"></div>
 									</div>
+
+								</div>
 									<div class="panel-footer">
 										<button class="btn btn-flat btn-primary" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 									</div>
-
-								</div>
 						</div>
 					</div>
 				</div>						
