@@ -123,13 +123,51 @@
 		function openEditor(source){			
 			var renderTo = $("#site-page-editor");
 			if( !renderTo.data("model")){					
-			
+				var switcher = renderTo.find("input[name='enabled-switcher']");
+				if( switcher.length > 0 ){
+					switcher.switcher();					
+				}
+				
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
 					customized : false,
 					editable : false,
 					enabled : false,
+					saveOrUpdate : function(e){
+						var $this = this;
+						var btn = $(e.target);
+						btn.button('loading');			
+						$this.page.set("enabled", switcher.is(":checked"));
+						common.ui.ajax(
+							'<@spring.url "/secure/data/mgmt/website/page/update.json?output=json" />' , 
+							{
+								data : kendo.stringify( $this.page ),
+								contentType : "application/json",
+								success : function(response){},
+								fail: function(){								
+									common.ui.notification({
+										hide:function(e){
+											btn.button('reset');
+										}
+									}).show(
+										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
+										"error"
+									);	
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									common.ui.grid($("#site-page-list .pages")).dataSource.read();									
+									btn.button('reset');
+								}
+							}
+						);													
+					},
 					cfg: function(e){
 						var $this = this;
 						var btn = $(e.target);	
@@ -151,8 +189,7 @@
 						$this.set("editable", $this.page.webPageId > 0 ? true : false );		
 						if( !$this.editable ){
 							$this.page.set("template", "");				
-						}
-						
+						}						
 						if( $this.page.enabled ){
 							switcher.switcher('on');
 						}else{
@@ -163,10 +200,7 @@
 					}
 				});		
 
-				var switcher = renderTo.find("input[name='enabled-switcher']");
-				if( switcher.length > 0 ){
-					switcher.switcher();					
-				}	
+					
 																		
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );				
