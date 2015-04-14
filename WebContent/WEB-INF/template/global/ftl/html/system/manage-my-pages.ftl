@@ -113,7 +113,7 @@
 						if( objectId > 0 ){
 							openEditor(common.ui.grid(renderTo).dataSource.get(objectId));
 						}else{
-							openEditor(new common.ui.data.WebSite())
+							openEditor(new common.ui.data.WebPage())
 						}
 					}
 				});						
