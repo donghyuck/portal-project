@@ -630,7 +630,7 @@
 						<div  id="site-page-editor"  data-bind="visible:enabled" style="display:none;">
 							<div class="panel panel-transparent">
 								<div class="panel-heading">
-									<span class="panel-title"><i class="panel-title-icon fa fa-file text-danger"></i> <input type="text" data-bind="value:page.name"></span>
+									<span class="panel-title"><i class="panel-title-icon fa fa-file text-danger"></i> <span data-bind="text:page.name"></span></span>
 									<ul class="nav nav-tabs nav-tabs-simple">		
 										<li><a href="#bs-tabdrop-pill1" data-toggle="tab" data-action="basic">기본정보</a></li>	
 										<li><a href="#bs-tabdrop-pill2" data-toggle="tab" data-action="template">템플릿</a></li>
