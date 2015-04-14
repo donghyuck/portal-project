@@ -9,7 +9,7 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css" />',
-			'css!<@spring.url "/styles/font-icons/themify/themify-icons.css" />',
+			'css!<@spring.url "/styles/font-icons/themify-icons.css"/>',
 			'css!<@spring.url "/styles/common.plugins/animate.css" />',
 			'css!<@spring.url "/styles/jquery.jgrowl/jquery.jgrowl.min.css" />',			
 			'css!<@spring.url "/styles/common.admin/pixel/pixel.admin.widgets.css" />',			
