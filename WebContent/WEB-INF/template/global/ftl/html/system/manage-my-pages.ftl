@@ -696,8 +696,8 @@
 											<div class="col-sm-6">
 												<div class="form-group no-margin-hr">			
 													<p class="text-right">
-														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template">템플릿 선택</button>
-														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu">메뉴 설정</button>
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><span class="ti-menu"></span> 템플릿 선택</button>
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><span class="ti-file"></span> 메뉴 설정</button>
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="locale">국가 선택</button>
 														</p>												
 												</div>
