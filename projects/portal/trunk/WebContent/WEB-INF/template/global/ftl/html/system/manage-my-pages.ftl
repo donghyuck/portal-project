@@ -123,7 +123,7 @@
 		function openEditor(source){			
 			var renderTo = $("#site-page-editor");
 			if( !renderTo.data("model")){					
-				var switcher = renderTo.parent().find("input[name='enabled-switcher']");						
+				var switcher = renderTo.find("input[name='enabled-switcher']");
 				var  observable = kendo.observable({
 					page : new common.ui.data.WebPage(),
 					fileContent : "",
@@ -155,9 +155,9 @@
 						}		
 						
 						if( this.page.enabled ) {
-							$(switcher).switcher("on");
+							$(switcher).switcher('on');
 						} else{
-							$(switcher).switcher("off");
+							$(switcher).switcher('off');
 						}
 						this.set("fileContent", "");
 						this.set("enabled", true);			
@@ -166,10 +166,7 @@
 
 									
 				if( switcher.length > 0 ){
-					$(switcher).switcher();
-					//$(switcher).change(function(){
-					//	editor.getSession().setUseWrapMode($(this).is(":checked"));
-					//});		
+					$(switcher).switcher();	
 				}	
 											
 				renderTo.data("model", observable );
