@@ -695,24 +695,22 @@
 										<hr class="panel-wide">										
 										<div class="row">
 											<div class="col-sm-6">
+												<h6 class="text-light-gray text-semibold">템플릿 사용 여부</h6>
 												<div class="switcher switcher-primary checked">
-													<input type="checkbox" data-class="switcher-primary" checked="checked">
+													<input type="checkbox" data-class="switcher-primary" data-bind="checked: page.enabled"data-bind="checked: page.enabled">
 													<div class="switcher-toggler"></div>
 													<div class="switcher-inner">
 													<div class="switcher-state-on">ON</div>
 													<div class="switcher-state-off">OFF</div>
 													</div>
 												</div>
-												
-												<div class="form-group no-margin-hr">
-												
-													<input type="checkbox" id="input-page-enabled" class="k-checkbox" data-bind="checked: page.enabled">
-													<label class="k-checkbox-label" for="input-page-enabled">사용 여부</label>												
-												</div>
 											</div>
-											<div class="col-sm-6">
-												<div class="form-group no-margin-hr">		
-												</div>
+											<div class="col-sm-6 text-right">
+													<div class="btn-group btn-sm">
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><i class="fa fa-file-code-o"></i> 템플릿 선택</button>
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><i class="fa fa-bars"></i> 메뉴 설정</button>
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="locale"><i class="fa fa-flag"></i> 국가 선택</button>
+													</div>
 											</div>
 										</div>				
 										
@@ -732,11 +730,7 @@
 											</div>
 											<div class="col-sm-6">
 													<p class="text-right">
-														<div class="btn-group btn-sm">
-														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><i class="fa fa-file-code-o"></i> 템플릿 선택</button>
-														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><i class="fa fa-bars"></i> 메뉴 설정</button>
-														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="locale"><i class="fa fa-flag"></i> 국가 선택</button>
-														</div>
+														
 													</p>												
 											</div>
 										</div>										
