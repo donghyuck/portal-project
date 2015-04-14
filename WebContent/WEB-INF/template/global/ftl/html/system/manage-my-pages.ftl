@@ -295,6 +295,13 @@
 		
 
 		function createEditorTabs(renderTo, data){
+			
+			var switcher = renderTo.parent().find("input[name='enabled-switcher']");	
+					
+			if( switcher.length > 0 ){
+				$(switcher).switcher();
+			}		
+		
 			renderTo.find(".nav-tabs").on( 'show.bs.tab', function (e) {		
 				var show_bs_tab = $(e.target);
 				switch( show_bs_tab.data("action") ){
@@ -315,10 +322,7 @@
 				editor.getSession().setUseWrapMode(true);	
 				
 				var switcher = renderTo.parent().find("input[name='warp-switcher']");			
-				var preview = renderTo.parent().find("button[data-action='preview']");				
-				
-
-				
+				var preview = renderTo.parent().find("button[data-action='preview']");			
 				preview.click(function(e){
 					if($("#preview-window").data("kendoWindow")){
 						$("#preview-window").data("kendoWindow").distory();
@@ -696,14 +700,7 @@
 										<div class="row">
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">템플릿 사용 여부</h6>
-												<div class="switcher switcher-primary checked">
-													<input type="checkbox" data-class="switcher-primary" data-bind="checked: page.enabled"data-bind="checked: page.enabled">
-													<div class="switcher-toggler"></div>
-													<div class="switcher-inner">
-													<div class="switcher-state-on">ON</div>
-													<div class="switcher-state-off">OFF</div>
-													</div>
-												</div>
+												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" data-bind="checked: page.enabled">
 											</div>
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">고급설정</h6>
