@@ -21,7 +21,7 @@
 							<label><h3><#if directoryAncestor.icon?? ><i class="fa ${directoryAncestor.icon}"></i></#if> ${directoryAncestor.title}</h3></label>
 							<ul>
 							<#list directoryAncestor.components as item >
-								<li><a href="${item.page}"><#if item.icon?? ><i class="fa ${item.icon}"></i></#if> ${item.title}</a></li>
+								<li><a href="${item.page}">${item.title}</a></li>
 							</#list>
 							</ul>
 						</div>			
@@ -66,17 +66,16 @@
 				</div>
 				<div class="col-md-3 md-margin-bottom-40">
 					<label><h3><i class="fa fa-circle-thin"></i> 제휴 사이트</h3></label>				
-				</div>		
-
+				</div>
 				<div class="col-md-3 md-margin-bottom-40 b-l">
 					<p><small><i class="fa fa-quote-left"></i> ${action.webSite.company.description} <i class="fa fa-quote-right"></i></small></p>		
 					<div class="footer-logo">
 						<img src="<@spring.url '/download/logo/company/${action.webSite.company.name}'/>" height="42"   alt="로고 이미지">
 					</div>
-					<#assign websiteFooterMenu = action.getWebSiteMenu("FOOTER_MENU") />
-					<#if  websiteFooterMenu.components?has_content >
+					<#assign website_footer_menu = action.getWebSiteMenu("FOOTER_MENU") />
+					<#if  website_footer_menu.components?has_content >
 					<ul class="list-unstyled footer-link-list m-l-sm">
-					<#list websiteFooterMenu.components as item >					
+					<#list website_footer_menu.components as item >					
 						<li><a href="${item.page}">${item.title}</a></li>
 					</#list>
 					</ul>	
