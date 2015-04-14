@@ -139,6 +139,8 @@
 						var btn = $(e.target);
 						btn.button('loading');			
 						$this.page.set("enabled", switcher.is(":checked"));
+						alert( kendo.stringify( $this.page ) );
+						
 						common.ui.ajax(
 							'<@spring.url "/secure/data/mgmt/website/page/update.json?output=json" />' , 
 							{
