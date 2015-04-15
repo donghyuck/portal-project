@@ -233,7 +233,7 @@
 						alert("메뉴 아이템을 선택하여 주십시오.");
 						return;
 					}else{
-					alert( kendo.stringify( item ) );
+						alert( kendo.stringify( observable ) );
 						observable.properties["page.menu.name"] = item.menu ;
 						observable.properties["navigator.selected.name"] = item.name ;
 					}				
