@@ -234,8 +234,8 @@
 						return;
 					}else{
 					alert( kendo.stringify( item ) );
-						observable.page.set("page.menu.name", item.menu) ;
-						observable.page.set("navigator.selected.name", item.name) ;
+						observable.page.properties.set("page.menu.name", item.menu) ;
+						observable.page.properties.set("navigator.selected.name", item.name) ;
 					}				
 					renderTo.modal('hide');				
 				});
