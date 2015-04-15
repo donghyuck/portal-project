@@ -549,48 +549,7 @@
 					</div>					
 				</div>
 			</div>
-		</div>	
-		<!--	
-		<div class="modal fade" id="company-update-modal" tabindex="-1" role="dialog" aria-labelledby=".modal-title" aria-hidden="true">
-			<div class="modal-dialog animated slideDown">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title">회사 정보 변경</h4>
-					</div>
-					<div class="modal-body no-padding">
-						<div class=" form-horizontal padding-sm" >
-							<div class="row form-group">
-								<label class="col-sm-4 control-label">이름:</label>
-								<div class="col-sm-8">
-									<input type="text" name="name" class="form-control" data-bind="value:company.displayName">
-								</div>
-							</div>
-							<div class="row form-group">
-								<label class="col-sm-4 control-label">설명:</label>
-								<div class="col-sm-8">
-									<input type="text" name="name" class="form-control" data-bind="value:company.description">
-								</div>
-							</div>																
-							<div class="row form-group">
-								<label class="col-sm-4 control-label">도메인:</label>
-								<div class="col-sm-8">
-									<input type="text" class="form-control" data-bind="value:company.domainName">
-								</div>
-							</div>	
-							<h5><small><i class="fa fa-info"></i> <strong>파일 선택</strong> 버튼을 클릭하여 로고 이미지를 직접 선택하거나, 이미지파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-							<input name="logo-file" id="logo-file" type="file" />	
-							<div id="logo-grid"></div>							
-						</div>
-					</div>																		
-					<div class="modal-footer">					
-						<button type="button" class="btn btn-primary btn-flat" data-bind="click: onSave, enabled: isEnabled" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>저장</button>					
-						<button type="button" class="btn btn-default btn-flat" data-dismiss="modal">닫기</button>
-					</div>
-				</div>
-			</div>
-		</div>		
-		-->		
+		</div>			
 		</script>				
 		<#include "/html/common/common-system-templates.ftl" >			
 	</body>    

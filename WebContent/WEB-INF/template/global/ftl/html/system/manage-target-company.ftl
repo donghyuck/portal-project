@@ -642,7 +642,7 @@
 									<img data-bind="attr: { szrc: logoUrl }" alt="" src="${request.contextPath}/images/common/loader/loading-transparent-bg.gif">
 								</div>
 								<br>
-								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: isEnabled, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 회사 정보변경</button>
+								<button type="button" class="btn btn-success btn-flat btn-control-group" data-action="update-company" data-toggle="button" data-bind="enabled: editable, click:toggleOptionPanel" ><i class="fa fa-pencil"></i> 회사 정보변경</button>
 											
 							</div>				
 							<div class="panel panel-transparent">
