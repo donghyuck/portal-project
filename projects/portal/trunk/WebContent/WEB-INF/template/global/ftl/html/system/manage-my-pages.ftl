@@ -234,7 +234,7 @@
 						return;
 					}else{
 					alert( kendo.stringify( item ) );
-						observable.properties['page.menu.name'] = null ;// item.menu ;
+						observable.properties.set("page.menu.name",  item.menu ) ;
 						observable.properties['navigator.selected.name'] = item.name ;
 					}				
 					renderTo.modal('hide');				
