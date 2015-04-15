@@ -761,7 +761,7 @@
 										<button class="btn btn-flat btn-primary" data-bind="events:{click:saveOrUpdate}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>							
 									</div>
 									<div class="tab-pane" id="bs-tabdrop-pill2">
-										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat pull-right" data-action="preview">미리보기</button>
+										<span data-bind="text:page.template"></span> <button class="btn btn-sm btn-success btn-flat btn-outline pull-right" data-action="preview">미리보기</button>
 										<h6 class="text-light-gray text-semibold">줄바꿈 설정/해지</h6>
 										<input type="checkbox" name="warp-switcher" data-class="switcher-info" role="switcher" checked="checked">
 										<hr class="panel-wide">			
