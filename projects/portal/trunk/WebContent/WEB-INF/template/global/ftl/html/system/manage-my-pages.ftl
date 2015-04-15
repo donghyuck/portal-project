@@ -233,7 +233,8 @@
 						alert("메뉴 아이템을 선택하여 주십시오.");
 						return;
 					}else{
-						observable.page.set("template", item.name) ;
+						observable.page.set("page.menu.name", item.menu) ;
+						observable.page.set("navigator.selected.name", item.name) ;
 					}				
 					renderTo.modal('hide');				
 				});
@@ -746,8 +747,8 @@
 											<div class="col-sm-6">
 												<h6 class="text-light-gray text-semibold">고급설정</h6>
 													<div class="btn-group btn-sm">
-														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><i class="fa fa-file-code-o"></i> 템플릿 선택</button>
-														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><i class="fa fa-bars"></i> 메뉴 설정</button>
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="template"><i class="fa fa-file-code-o"></i> 템플릿 파일 선택</button>
+														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="menu"><i class="fa fa-bars"></i> 페이지 메뉴 설정</button>
 														<button class="btn btn-flat btn-sm" type="button" data-bind="click: cfg" data-action="locale"><i class="fa fa-flag"></i> 국가 선택</button>
 													</div>
 											</div>
