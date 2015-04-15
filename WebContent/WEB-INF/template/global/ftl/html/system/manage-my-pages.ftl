@@ -113,7 +113,10 @@
 						if( objectId > 0 ){
 							openEditor(common.ui.grid(renderTo).dataSource.get(objectId));
 						}else{
-							openEditor(new common.ui.data.WebPage({webSiteId:1, properties:{}}))
+							var newObj = new common.ui.data.WebPage();
+							newObj.set("webSiteId", 1);
+							newObj.set("properties", {});							
+							openEditor(newObj);
 						}
 					}
 				});						
@@ -200,9 +203,7 @@
 						this.set("fileContent", "");
 						this.set("enabled", true);		
 					}
-				});		
-
-					
+				});						
 																		
 				renderTo.data("model", observable );
 				kendo.bind(renderTo, observable );				
