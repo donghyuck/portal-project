@@ -30,7 +30,7 @@
 
 				var currentUser = new common.ui.data.User();
 				var targetCompany = new common.ui.data.Company();	
-				common.ui.admin.setup({					 
+				common.ui.admin.setup({			
 					authenticate : function(e){
 						e.token.copy(currentUser);
 					},

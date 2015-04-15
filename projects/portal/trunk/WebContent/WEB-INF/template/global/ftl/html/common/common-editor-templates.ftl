@@ -97,7 +97,7 @@
 			background : transparent;
 		}
 	</style>				
-	<div class='modal editor-popup image-broswer  fade'>
+	<div class='modal editor-popup image-broswer fade'>
 		<div class='modal-dialog modal-lg'>
 			<div class='modal-content'>
 				<div class='modal-header'>
