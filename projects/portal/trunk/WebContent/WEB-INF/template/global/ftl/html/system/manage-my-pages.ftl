@@ -113,7 +113,7 @@
 						if( objectId > 0 ){
 							openEditor(common.ui.grid(renderTo).dataSource.get(objectId));
 						}else{
-							openEditor(new common.ui.data.WebPage())
+							openEditor(new common.ui.data.WebPage({webSiteId:1, properties:{}}))
 						}
 					}
 				});						
@@ -741,7 +741,7 @@
 										<hr class="panel-wide">										
 										<div class="row">
 											<div class="col-sm-6">
-												<h6 class="text-light-gray text-semibold">템플릿 사용 여부</h6>
+												<h6 class="text-light-gray text-semibold">페이지 사용 여부</h6>
 												<input type="checkbox" name="enabled-switcher" data-class="switcher-primary" role="switcher" checked="checked">
 											</div>
 											<div class="col-sm-6">
