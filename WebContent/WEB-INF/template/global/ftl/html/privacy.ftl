@@ -124,8 +124,8 @@
 						<p class="text-sm m-t-md">
 						다음은 ${action.webSite.company.displayName}에서 수집할 수 있는 개인 정보의 유형 및 사용 방법에 대한 몇 가지 예입니다.
 						</p>			
-						<h3>${action.webSite.company.displayName}에서 수집하는 개인정보</h3>
-						<ul class="text-sm">
+						<h3 class="m-t-md">${action.webSite.company.displayName}에서 수집하는 개인정보</h3>
+						<ul class="text-sm m-t-md">
 							<li>
 							고객이 ID를 만들거나, 제품을 구입하거나, 소프트웨어 업데이트를 다운로드하거나, 
 							${action.webSite.company.displayName}에 연락하거나, 
