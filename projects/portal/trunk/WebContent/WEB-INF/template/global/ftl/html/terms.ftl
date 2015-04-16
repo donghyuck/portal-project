@@ -97,7 +97,7 @@
 
 			<#if action.isSetNavigator()  >
 				<#assign navigator = action.getNavigator() />
-				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
+				<header class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
 				<script>
 					jobs.push(function () {
 						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
