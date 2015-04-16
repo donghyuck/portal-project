@@ -169,6 +169,28 @@
 						이러한 개인 정보 외의 정보는 어떤 목적으로든 수집, 사용, 전송 및 공개할 수 있습니다. 
 						다음은 ${action.webSite.company.displayName}에서 수집하는 개인 정보 외의 정보와 그 사용 방법에 대한 몇 가지 예입니다.
 						</p>		
+						<ul class="text-sm m-t-md">
+							<li>
+							 ${action.webSite.company.displayName}에서는 고객 행동을 더 잘 이해하고 제품, 
+							 서비스 및 광고를 개선하기 위해 Apple 제품이 사용되는 직업, 언어, 우편 번호, 지역 코드, 고유 기기 식별자, 언급자의 URL, 위치 및 시간대와 같은 정보를 수집할 수 있습니다.
+							</li>
+							<li>
+							 ${action.webSite.company.displayName}에서는  ${action.webSite.displayName} 웹 사이트, 그 밖의 ${action.webSite.company.displayName} 제품 및 서비스에서의 고객 활동에 대한 정보를 수집할 수 있습니다. 
+							 이 정보는 집계되어 고객에게 더욱 유용한 정보를 제공하고 ${action.webSite.displayName} 웹 사이트, 제품 및 서비스에서 어떤 부분에 대한 관심이 가장 많은지를 이해하는 데 사용됩니다. 
+							 집계된 데이터는 본 개인정보 취급방침의 목적상 개인 정보 외의 정보로 간주됩니다.
+							</li>
+							<li>
+							 ${action.webSite.company.displayName}은 검색어를 비롯해 고객이 당사의 서비스를 사용하는 방법에 대한 자세한 정보를 수집하여 저장할 수 있습니다. 
+							 이 정보는 ${action.webSite.company.displayName} 서비스가 제공하는 결과의 관련성을 향상시키는 데 사용될 수도 있습니다. 
+							 인터넷을 통해 서비스의 품질을 보장하려는 목적 등 제한된 경우를 제외하고 이러한 정보는 고객의 IP 주소와 연결되지 않습니다.
+							</li>		
+							<li>
+							고객의 명시적의 동의하에  ${action.webSite.company.displayName}은 고객이 응용 프로그램을 사용하는 방법에 대한 데이터를 수집하여 앱 향상을 지원할 수 있습니다.
+							</li>																												
+						</ul>	
+						<p class="text-sm m-t-md">
+						개인 정보 외의 정보를 개인 정보와 통합할 경우 통합된 정보는 통합된 상태로 유지되는 동안 개인 정보로 간주됩니다.
+						</p>
 					</div>
 				</div>													
 			</div>							 									 			
