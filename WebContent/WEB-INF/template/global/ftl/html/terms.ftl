@@ -123,25 +123,15 @@
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
 				<div class="row">					
-					<div class="col-sm-12">
-					
-					Apple 개인정보 취급방침이 2014년 9월 17일에 업데이트되었습니다. 변경 사항은 주로 iOS 8과 함께 출시될 새로운 기능을 다루거나, 사용자가 제공한 생일 또는 타사 사용자 데이터와 같은 데이터의 사용 현황에 대한 추가 정보(예: 제품 또는 상품권을 보낼 때)를 제공하기 위해 이루어 졌습니다. 모든 변경 사항은 소급하지 않습니다.
-					
-					해당 국가의 13세 이상 사용자를 위한 Spotlight 제안, 분석,가족 공유, Apple ID에 대한 내용을 다루기 위해 언어를 추가하였습니다. 마지막으로 위치 기반 서비스에서 사용하는 GPS, Bluetooth, IP 주소, 크라우드 소싱 Wi-Fi 핫스팟 및 기지국 위치 등과 같은 기술에 대한 설명을 추가했습니다.
-					
-					
-					
+					<div class="col-sm-10 col-sm-offset-1">		
+						<h1 class="text-center text-xxl">${action.webSite.displayName} 서비스 약관</h1>
+						<p class="text-center"><i class="icon-flat award"></i></p>
+						<p class="text-sm text-center p-md">
+						서비스를 이용함으로써 귀하는 본 약관에 동의하게 되므로 본 약관을 주의 깊게 읽어보시기 바랍니다.
+						</p>					
 					</div>			
 				</div>
-				<hr/>
-				<div class="row">					
-					<div class="col-sm-10 col-sm-offset-1">
-						<h3 class="text-center">
-						${action.webSite.company.displayName}은 고객의 개인 정보를 중요하게 생각합니다. 이에 ${action.webSite.company.displayName}은 고객의 정보를 수집, 사용, 공개, 이전, 저장하는 것과 관련된 사항을 규정하는 개인정보 취급방침을 마련했습니다. 
-						잠시 시간을 내어 ${action.webSite.company.displayName}의 개인정보 처리 방침을 익힌 후 궁금한 사항이 있으면 <span class="text-info">알려 주시기</span> 바랍니다.
-						</h3>					
-					</div>
-				</div>					
+				<hr/>				
 			</div>							 			
 			<!-- END MAIN CONTENT -->	
  			<!-- START FOOTER -->
