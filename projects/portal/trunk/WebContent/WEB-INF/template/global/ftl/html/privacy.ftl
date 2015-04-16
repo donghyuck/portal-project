@@ -163,7 +163,7 @@
 							데이터 분석, 조사 등의 내부적인 용도에 개인 정보를 사용할 수 있습니다.
 							</li>
 						</ul>			
-						<h2 class="m-t">개인 정보 외의 정보 수집 및 사용</h2>	
+						<h2 class="m-t-lg">개인 정보 외의 정보 수집 및 사용</h2>	
 						<p class="text-sm m-t-md">
 						또한 ${action.webSite.company.displayName}은 자체적으로 특정 개인과의 직접적인 연관성이 없는 형태의 데이터를 수집합니다. 
 						이러한 개인 정보 외의 정보는 어떤 목적으로든 수집, 사용, 전송 및 공개할 수 있습니다. 
@@ -175,7 +175,7 @@
 							 서비스 및 광고를 개선하기 위해 Apple 제품이 사용되는 직업, 언어, 우편 번호, 지역 코드, 고유 기기 식별자, 언급자의 URL, 위치 및 시간대와 같은 정보를 수집할 수 있습니다.
 							</li>
 							<li>
-							 ${action.webSite.company.displayName}에서는  ${action.webSite.displayName} 웹 사이트, 그 밖의 ${action.webSite.company.displayName} 제품 및 서비스에서의 고객 활동에 대한 정보를 수집할 수 있습니다. 
+							 ${action.webSite.company.displayName}에서는  ${action.webSite.company.displayName} 웹사이트 ${action.webSite.displayName}, 그 밖의 ${action.webSite.company.displayName} 제품 및 서비스에서의 고객 활동에 대한 정보를 수집할 수 있습니다. 
 							 이 정보는 집계되어 고객에게 더욱 유용한 정보를 제공하고 ${action.webSite.displayName} 웹 사이트, 제품 및 서비스에서 어떤 부분에 대한 관심이 가장 많은지를 이해하는 데 사용됩니다. 
 							 집계된 데이터는 본 개인정보 취급방침의 목적상 개인 정보 외의 정보로 간주됩니다.
 							</li>
@@ -191,6 +191,78 @@
 						<p class="text-sm m-t-md">
 						개인 정보 외의 정보를 개인 정보와 통합할 경우 통합된 정보는 통합된 상태로 유지되는 동안 개인 정보로 간주됩니다.
 						</p>
+						
+						<h2 class="m-t-lg">쿠키 및 기타 기술</h2>	
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}의 웹 사이트 ${action.webSite.displayName}, 온라인 서비스, 대화형 응용 프로그램, 이메일 메시지 및 광고에서는 "쿠키" 및 기타 기술(예: 픽셀 태그 및 웹 비콘)을 사용할 수 있습니다. 
+						이러한 기술은 사용자 행동을 이해하고, 사용자가 웹 사이트의 어떤 부분을 방문했는지 파악하며, 광고 및 웹 검색을 용이하게 하고 그 효과를 측정하는 데 도움이 됩니다. 
+						쿠키 및 기타 기술을 통해 수집된 정보는 개인 정보 외의 정보로 간주됩니다. 
+						그러나 IP(인터넷 프로토콜) 주소 또는 이와 유사한 식별자가 해당 지역의 법에 따라 개인 정보로 간주되는 범위에서는 ${action.webSite.company.displayName}에서도 이러한 식별자를 개인 정보로 간주합니다. 
+						마찬가지로 개인 정보 외의 정보가 개인 정보와 통합된 범위에서 ${action.webSite.company.displayName}에서는 통합된 정보를 본 개인정보 취급방침의 목적상 개인 정보로 간주합니다.
+						</p>
+						<p class="text-sm m-t-md">
+						또한 ${action.webSite.company.displayName}과 ${action.webSite.company.displayName}의 파트너는 고객이 ${action.webSite.company.displayName} 웹 사이트, 온라인 서비스 및 응용 프로그램을 사용할 때 쿠키 및 기타 기술을 사용하여 개인 정보를 기억할 수 있습니다. 
+						이는 고객에게 보다 편리하고 개인적인 환경을 제공하기 위한 것입니다. 
+						예를 들어 고객의 이름을 알면 고객이 다음에 ${action.webSite.company.displayName} 웹사이트를 방문할 때 환영 인사말을 표시할 수 있고, 
+						고객의 국가 및 언어와 학교(교육자인 경우)를 알면 맞춤화되고 보다 유용한 쇼핑 환경을 제공할 수 있으며, 
+						고객의 컴퓨터나 기기를 사용하여 특정 제품을 쇼핑하거나 특정 서비스를 이용한 사람을 알면 고객 관심사와 보다 관련 있는 광고 및 이메일 통신을 제공할 수 있습니다. 
+						또한 고객의 연락처 정보, 하드웨어 식별자 및 컴퓨터 또는 기기 정보를 알고 있으면 고객의 운영 체제를 개인화하고, 고객의 서비스를 설정하고, 고객에게 더 나은 서비스를 제공할 수 있습니다.
+						</p>
+						<p class="text-sm m-t-md">
+						쿠키를 사용하지 않으려면 웹 브라우저를 사용하는 경우 해당 공급자와 쿠키를 허용하지 않는 방법을 확인하십시오. 
+						${action.webSite.company.displayName} 웹 사이트의 특정 기능은 쿠키를 사용하지 않는 경우 사용할 수 없다는 점에 주의하십시오.
+						</p>
+						<p class="text-sm m-t-md">
+						대부분의 인터넷 서비스에서 ${action.webSite.company.displayName}은 일부 정보를 자동으로 수집하여 로그 파일에 저장합니다. 
+						이 정보에는 IP(인터넷 프로토콜) 주소, 브라우저 유형 및 언어, ISP(인터넷 서비스 제공업체), 참조 및 종료 웹 사이트 및 응용 프로그램, 운영 체제, 날짜/시간 스탬프, 클릭 스트림 데이터 등이 포함됩니다.
+						</p>
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}에서는 이 정보를 사용하여 추세를 이해하고 분석하며, 
+						사이트를 관리하고, 사이트에서의 사용자 행동을 파악하여 당사의 제품 및 서비스를 향상시키고 전체 사용자 계층에 대한 인구 통계 정보를 수집합니다. 
+						이 정보는 ${action.webSite.company.displayName}의 마케팅 및 광고 서비스에 사용될 수도 있습니다.
+						</p>
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}에서는 이메일 메시지 중 일부에 ${action.webSite.company.displayName} 웹 사이트의 콘텐츠로 연결되는"클릭 쓰루(click-through) URL"을 사용합니다. 
+						고객이 이러한 URL 중 하나를 클릭하면 별도의 웹 서버를 거쳐 ${action.webSite.company.displayName} 웹 페이지의 대상 페이지로 도달하게 됩니다. 
+						Apple에서는 이러한 클릭 쓰루 데이터를 사용하여 특정 사안에 대한 관심도를 알아보고, 고객 통신의 효과를 측정합니다. 
+						이러한 방식으로 추적되는 것을 원치 않으면 이메일 메시지 내의 텍스트 또는 그래픽 링크를 클릭하지 않아야 합니다.
+						</p>
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}에서는 픽셀 태그를 통해 이메일 메시지를 고객이 읽을 수 있는 형식으로 전송하고 고객이 이메일을 열었는지 확인합니다. 
+						${action.webSite.company.displayName}에서는 이 정보를 사용하여 고객에게 보내는 메시지를 줄이거나 제거할 수 있습니다.
+						</p>
+						
+						<h2 class="m-t-lg">제3자에 대한 공개</h2>	
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}에서는 제품 및 서비스를 제공하기 위해 ${action.webSite.company.displayName}과 협력하거나 
+						${action.webSite.company.displayName}의 고객 마케팅을 돕는 전략적 파트너에게 특정 개인 정보를 수시로 제공할 수 있습니다. 
+						${action.webSite.company.displayName}은 오직 ${action.webSite.company.displayName}의 제품, 서비스 및 광고를 제공하거나 향상시키기 위해서만 개인 정보를 공유합니다. 
+						이를 제3자의 마케팅을 위해 제3자와 공유하지 않습니다.
+						</p>
+						<h3 class="m-t-md"><i class="fa fa-circle-thin"></i> 서비스 제공업체</h3>		
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}은 정보 처리, 신용 연장, 고객 주문 이행, 제품 배송, 고객 데이터 관리 및 강화, 고객 서비스 제공, 
+						${action.webSite.company.displayName} 제품 및 서비스에 대한 고객의 관심도 측정 및 고객 연구 또는 만족도 조사 수행 등의 서비스를 제공하는 회사와 개인 정보를 공유합니다. 
+						이러한 회사는 고객의 정보를 보호할 의무가 있으며 ${action.webSite.company.displayName}이 활동하는 모든 영역에 있을 수 있습니다.
+						</p>
+						<h3 class="m-t-md"><i class="fa fa-circle-thin"></i> 기타</h3>		
+						<p class="text-sm m-t-md">
+						법령, 법적 절차, 소송 및/또는 고객의 거주 국가 내외의 공공 또는 정부 당국의 요청으로 ${action.webSite.company.displayName}이 고객의 개인 정보를 공개해야 하는 경우가 있을 수 있습니다. 
+						${action.webSite.company.displayName}에서는 국가안보, 법 집행 또는 기타 중요한 공공의 문제로 인해 공개가 필요하거나 적절하다고 판단하는 경우 고객에 대한 정보를 공개할 수 있습니다.
+						</p>			
+						<p class="text-sm m-t-md">
+						또한 ${action.webSite.company.displayName}의 계약 조건을 이행하거나 ${action.webSite.company.displayName}의 영업 또는 사용자를 보호하기 위해 공개가 합리적으로 필요하다고 판단되는 경우 
+						고객에 대한 정보를 공개할 수 있습니다. 뿐만 아니라 구조 조정, 합병, 또는 매각의 경우 ${action.webSite.company.displayName}은 ${action.webSite.company.displayName}에서 수집한 모든 개인 정보를 관련 제3자에게 이전할 수 있습니다.
+						</p>					
+						
+						
+						<h2 class="m-t-lg">개인 정보의 보호</h2>	
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}은 개인 정보의 보안을 매우 중요하게 생각합니다. 
+						${action.webSite.displayName} 과 같은 ${action.webSite.company.displayName}의 온라인 서비스는 TLS(Transport Layer Security)와 같은 암호화를 사용하여 전송 중 개인 정보를 보호합니다.
+						${action.webSite.company.displayName}에서는 고객의 개인 데이터를 저장할 때 물리적 보안 조치를 사용하는 시설 내에 설치된 접근이 제한된 컴퓨터 시스템을 사용합니다.
+						데이터는 제3자 스토리지를 활용할 때를 포함하여 암호화된 형식으로 저장됩니다.
+						</p>			
 					</div>
 				</div>													
 			</div>							 									 			
