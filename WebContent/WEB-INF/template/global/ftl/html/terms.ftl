@@ -50,10 +50,27 @@
 		</script>		
 		<style scoped="scoped">
 		
-		blockquote p {
-			font-size: 15px;
-		}			
-						
+		.localnav:before, .localnav:after {
+			content: ' ';
+			display: table;
+		}		
+		.localnav {
+			position: relative;
+			margin-top: 0;
+			padding-top: 1em;		
+			border-bottom: 1px solid #d6d6d6;
+			margin: 0 auto;		
+		}
+		
+		.localnav-title {
+			padding: 0;
+			display: block;
+			font-size: 32px;
+			line-height: 1;
+			float: left;
+			font-weight: 200;
+		}
+		
 		</style>   	
 	</head>
 	<body>
@@ -62,8 +79,16 @@
 		<div class="wrapper">
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
+
 			<#if action.isSetNavigator()  >
-				<#assign navigator = action.getNavigator() />			
+				<#assign navigator = action.getNavigator() />
+			<div class="container">
+				<div class="localnav">
+					<h2 class="localnav-title">${ navigator.title }</h2>
+				</div>	
+			</div>	
+			
+
 				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
 				<script>
 					jobs.push(function () {
