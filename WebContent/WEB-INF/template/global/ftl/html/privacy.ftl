@@ -109,7 +109,7 @@
 				<hr/>
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
-						<h3><i class="fa fa-circle-thin"></i> 개인정보 수집 및 사용</h3>
+						<h2></i> 개인정보 수집 및 사용</h2>
 						<p class="text-sm m-t-md">
 						개인 정보는 한 사람을 식별하거나 한 사람에게 연락하는 데 사용할 수 있는 데이터입니다.
 						</p>
@@ -161,7 +161,13 @@
 							또한 ${action.webSite.company.displayName}에서는 ${action.webSite.company.displayName}의 제품, 서비스 및 고객 통신을 개선하기 위해 감사, 
 							데이터 분석, 조사 등의 내부적인 용도에 개인 정보를 사용할 수 있습니다.
 							</li>
-						</ul>					
+						</ul>			
+						<h2>개인 정보 외의 정보 수집 및 사용</h2>	
+						<p class="text-sm m-t-md">
+						또한 ${action.webSite.company.displayName}은 자체적으로 특정 개인과의 직접적인 연관성이 없는 형태의 데이터를 수집합니다. 
+						이러한 개인 정보 외의 정보는 어떤 목적으로든 수집, 사용, 전송 및 공개할 수 있습니다. 
+						다음은 ${action.webSite.company.displayName}에서 수집하는 개인 정보 외의 정보와 그 사용 방법에 대한 몇 가지 예입니다.
+						</p>		
 					</div>
 				</div>													
 			</div>							 									 			
