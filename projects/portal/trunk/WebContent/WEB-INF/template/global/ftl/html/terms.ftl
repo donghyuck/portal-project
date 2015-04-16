@@ -97,30 +97,18 @@
 
 			<#if action.isSetNavigator()  >
 				<#assign navigator = action.getNavigator() />
-			<div class="container">
-				<div class="localnav">
-					<h2 class="localnav-title">${ navigator.title }</h2>
-					<ul class="localnav-links">
-						<li>
-							<a href="#" class="localnav-link">sfdf</a>
-						</li>
-					</ul>
-				</div>	
-			</div>	
-			
-
 				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
 				<script>
 					jobs.push(function () {
 						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
 					});
 				</script>			
-				<div class="breadcrumbs arrow-up">
+				<div class="breadcrumbs">
 					<div class="container">
 						<div class="row">
-							<h2 class="pull-left">${ navigator.title }
+							<h2>${ navigator.title }
 							<small class="page-summary">
-									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
+							${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 							</small>	
 							</h2>
 						</div>
