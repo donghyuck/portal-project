@@ -137,7 +137,7 @@
 				<div class="row">					
 					<div class="col-sm-8 col-sm-offset-2">
 						<h3 class="text-center">
-						Apple은 고객의 개인 정보를 중요하게 생각합니다. 이에 Apple은 고객의 정보를 수집, 사용, 공개, 이전, 저장하는 것과 관련된 사항을 규정하는 개인정보 취급방침을 마련했습니다. 
+						${action.webSite.company.displayName}은 고객의 개인 정보를 중요하게 생각합니다. 이에 Apple은 고객의 정보를 수집, 사용, 공개, 이전, 저장하는 것과 관련된 사항을 규정하는 개인정보 취급방침을 마련했습니다. 
 						잠시 시간을 내어 Apple의 개인정보 처리 방침을 익힌 후 궁금한 사항이 있으면 알려 주시기 바랍니다.
 						</h3>					
 					</div>
