@@ -66,7 +66,7 @@ yepnope([{
 	    <div class="twelve columns">
 	        <hr style="margin-top:10px;margin-bottom:10px;" />
 			<ul class="breadcrumbs">
-			  <li class="current"><a href="${request.contextPath}/main.do">홈</a></li>
+			  <li class="current"><a href="<@spring.url "/display/main.html"/>">홈</a></li>
 			</ul>
 		</div>
 	</section>
