@@ -224,7 +224,7 @@
 						<p class="text-sm m-t-md">
 						${action.webSite.company.displayName}에서는 이메일 메시지 중 일부에 ${action.webSite.company.displayName} 웹 사이트의 콘텐츠로 연결되는"클릭 쓰루(click-through) URL"을 사용합니다. 
 						고객이 이러한 URL 중 하나를 클릭하면 별도의 웹 서버를 거쳐 ${action.webSite.company.displayName} 웹 페이지의 대상 페이지로 도달하게 됩니다. 
-						Apple에서는 이러한 클릭 쓰루 데이터를 사용하여 특정 사안에 대한 관심도를 알아보고, 고객 통신의 효과를 측정합니다. 
+						${action.webSite.company.displayName}에서는 이러한 클릭 쓰루 데이터를 사용하여 특정 사안에 대한 관심도를 알아보고, 고객 통신의 효과를 측정합니다. 
 						이러한 방식으로 추적되는 것을 원치 않으면 이메일 메시지 내의 텍스트 또는 그래픽 링크를 클릭하지 않아야 합니다.
 						</p>
 						<p class="text-sm m-t-md">
@@ -263,6 +263,30 @@
 						${action.webSite.company.displayName}에서는 고객의 개인 데이터를 저장할 때 물리적 보안 조치를 사용하는 시설 내에 설치된 접근이 제한된 컴퓨터 시스템을 사용합니다.
 						데이터는 제3자 스토리지를 활용할 때를 포함하여 암호화된 형식으로 저장됩니다.
 						</p>			
+						<p class="text-sm m-t-md">
+						고객이 일부 ${action.webSite.company.displayName} 제품, 서비스 또는 응용 프로그램을 사용하거나 
+						게시판, 채팅룸 또는 SNS(소셜 네트워킹 서비스)에 글을 게시하는 경우 고객이 공유하는 개인 정보와 콘텐츠는 다른 사용자에게 보여지며 읽고, 수집하고 이용할 수 있게 됩니다. 
+						이러한 경우에 고객이 공유 또는 제출하기로 선택하는 개인 정보에 대한 책임은 고객에게 있습니다. 
+						예를 들어 고객이 게시판에 게시하는 글에 이름과 이메일 주소를 포함하는 경우 해당 정보는 공개됩니다. 
+						따라서 이러한 기능을 사용할 때 주의하시기 바랍니다.
+						</p>
+						
+						<h2 class="m-t-lg">개인 정보의 진실성 및 보관</h2>	
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName} 은 고객이 개인 정보를 정확하고 완전하며 최신 상태로 유지하기 쉽도록 해드립니다. 
+						${action.webSite.company.displayName} 은 고객의 개인 정보를 법에서 더 오래 보관하도록 요구하거나 허용하지 않는 한, 
+						본 개인정보 취급방침에 명시된 목적들을 달성하기에 필요한 기간 동안 보관할 것입니다.
+						</p>
+						
+						<h2 class="m-t-lg">개인 정보 접근</h2>	
+						<p class="text-sm m-t-md">
+						고객은 http://222.122.63.146/accounts/login?ver=1 에서 고객의 계정으로 로그인하여 고객의 연락처 정보 및 환경설정을 정확하고 완전하며 최신 상태로 유지할 수 있습니다. 
+						${action.webSite.company.displayName}에서 보유하고 있는 기타 개인 정보의 경우, 
+						${action.webSite.company.displayName}에서는 고객이 부정확한 데이터에 대해 데이터의 수정을 요구하거나, 
+						법에 따라 보관할 필요가 없는 경우 또는 다른 적법한 사업상의 목적을 위해 삭제를 요구하는 용도 등 모든 용도를 위해 고객에게 접근성을 제공할 것입니다. 
+						${action.webSite.company.displayName}에서는 사소하거나 귀찮게 하거나, 다른 이들의 개인 정보를 위태롭게 하거나, 극도로 비실용적이거나, 
+						기타 법에서 접근을 요구하지 않는 요청에 대해서는 처리를 거부할 수 있습니다. 
+						</p>
 					</div>
 				</div>													
 			</div>							 									 			
