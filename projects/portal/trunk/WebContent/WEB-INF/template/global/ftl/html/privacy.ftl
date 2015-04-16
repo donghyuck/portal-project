@@ -87,7 +87,7 @@
 			<div class="container content">			
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
-						<p class="text-sm text-center">
+						<p class="text-sm text-center p-md">
 						<strong>${action.webSite.company.displayName} 개인정보 취급방침이 2015년 4월 16일에 업데이트되었습니다. </strong>
 						변경 사항은 주로 앞으로 출시될 새로운 기능을 다루거나, 
 						사용자가 제공한 생일 또는 타사 사용자 데이터와 같은 데이터의 사용 현황에 대한 
@@ -99,7 +99,7 @@
 				<hr/>
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">
-						<p class="text-md text-center">
+						<p class="text-md text-center p-md">
 						${action.webSite.company.displayName}은 고객의 개인 정보를 중요하게 생각합니다. 
 						이에 ${action.webSite.company.displayName}은 고객의 정보를 수집, 사용, 공개, 이전, 저장하는 것과 관련된 사항을 규정하는 개인정보 취급방침을 마련했습니다. 
 						잠시 시간을 내어 ${action.webSite.company.displayName}의 개인정보 처리 방침을 익힌 후 궁금한 사항이 있으면 <span class="text-primary">알려 주시기</span> 바랍니다.
