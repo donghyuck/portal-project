@@ -87,6 +87,7 @@
 			<div class="container content">			
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
+						<p class="text-center"><i class="icon-flat microphone"></i></p>
 						<p class="text-sm text-center p-md">
 						<strong>${action.webSite.company.displayName} 개인정보 취급방침이 2015년 4월 16일에 업데이트되었습니다. </strong>
 						변경 사항은 주로 앞으로 출시될 새로운 기능을 다루거나, 
