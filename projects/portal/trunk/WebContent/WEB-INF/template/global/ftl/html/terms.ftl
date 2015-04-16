@@ -124,10 +124,10 @@
 			<div class="container content">			
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
-						<h1 class="text-center text-xxl">${action.webSite.displayName} 서비스 약관</h1>
-						<p class="text-center"><i class="icon-flat award"></i></p>
+						<h1 class="text-center text-xxl">${action.webSite.company.displayName} 서비스 약관</h1>
+						<p class="text-center"><i class="icon-flat microphone"></i></p>
 						<p class="text-sm text-center p-md">
-						서비스를 이용함으로써 귀하는 본 약관에 동의하게 되므로 본 약관을 주의 깊게 읽어보시기 바랍니다.
+						${action.webSite.company.displayName} 에서 제공하는 	서비스를 이용함으로써 귀하는 본 약관에 동의하게 되므로 본 약관을 주의 깊게 읽어보시기 바랍니다.
 						</p>					
 					</div>			
 				</div>
