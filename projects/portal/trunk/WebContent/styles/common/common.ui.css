@@ -1477,6 +1477,10 @@ overflow-y: auto;
 	text-transform: uppercase;
 }
 
+.text-sm {
+	font-size : 1em;
+}
+
 .text-md {
 	font-size : 1.4em;
 }
