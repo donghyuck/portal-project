@@ -106,6 +106,7 @@
 						</p>					
 					</div>
 				</div>	
+				<hr/>
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
 						<h3>개인정보 수집 및 사용</h3>
@@ -119,7 +120,25 @@
 						고객은 ${action.webSite.company.displayName}에서 요청하는 개인 정보를 제공할 의무는 없지만 제공하지 않기로 결정하면, 
 						많은 경우 ${action.webSite.company.displayName}에서 
 						${action.webSite.company.displayName}의 제품 또는 서비스를 제공하지 못하거나 고객의 문의에 답변할 수 없게 됩니다.						
-						</p>						
+						</p>			
+						<p class="text-sm">
+						다음은 ${action.webSite.company.displayName}에서 수집할 수 있는 개인 정보의 유형 및 사용 방법에 대한 몇 가지 예입니다.
+						</p>			
+						<h3>${action.webSite.company.displayName}에서 수집하는 개인정보</h3>
+						<ul class="list-unstyled">
+							<li><i class="fa fa-circle-thin"></i>
+							고객이 ID를 만들거나, 제품을 구입하거나, 소프트웨어 업데이트를 다운로드하거나, 
+							${action.webSite.company.displayName}에 연락하거나, 
+							온라인 설문 조사에 참여하는 경우 ${action.webSite.company.displayName}에서는 
+							고객의 이름, 우편 주소, 전화 번호, 이메일 주소, 연락처 환경설정, 신용 카드 정보 등 다양한 정보를 수집할 수 있습니다.
+							</li>
+							<li><i class="fa fa-circle-thin"></i>	
+							고객이 ${action.webSite.company.displayName} 제품을 사용하여 가족 및 친구와 콘텐츠를 공유하거나, 
+							상품권 및 제품을 보내거나, 다른 사람을 ${action.webSite.company.displayName} 서비스나 포럼에 초대하는 경우 
+							${action.webSite.company.displayName}에서는 이름, 우편 주소, 이메일 주소, 전화 번호 등 고객이 제공한 상대방의 정보를 수집할 수 있습니다. 
+							${action.webSite.company.displayName}은 이러한 정보를 사용하여 고객의 요청을 처리하고 관련 제품이나 서비스를 제공하거나 사기를 방지할 것입니다.
+							</li>
+						</ul>						
 					</div>
 				</div>													
 			</div>							 									 			
