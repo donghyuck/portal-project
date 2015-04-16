@@ -292,7 +292,34 @@
 				<hr/>
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
-						<h1 class="text-xxl">개인정보 수집 및 사용</h1>
+						<h1 class="text-xxl">개인정보 취급방침 부록</h1>
+						<h2 class="m-t-lg">개인 정보 수집 및 이용 세부 사항</h2>	
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}은 귀하의 개인 정보를 다음과 같이 수집하고 이용합니다.
+						</p>
+						<p class="text-sm m-t-md">
+						일반적인 개인 정보
+						</p>
+						<table class="table table-bordered">
+							<thead>
+								<tr>
+									<th>수집 및 이용의 목적</th>
+									<th>수집 항목</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+	ㅁ
+
+									</td>
+									<td>
+	ㅁ
+
+									</td>
+								</tr>
+							</tbody>
+						</table>						
 					</div>
 				</div>																			
 			</div>							 									 			
