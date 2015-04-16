@@ -298,7 +298,7 @@
 						${action.webSite.company.displayName}은 귀하의 개인 정보를 다음과 같이 수집하고 이용합니다.
 						</p>
 						<p class="text-sm m-t-md">
-						일반적인 개인 정보
+							<i class="fa fa-circle-thin"></i> 일반적인 개인 정보
 						</p>
 						<table class="table table-bordered">
 							<thead>
@@ -310,16 +310,61 @@
 							<tbody>
 								<tr>
 									<td>
-	ㅁ
-
+										<ul class="list-unstyled">
+											<li>회사 웹 사이트 및 온라인 서비스 개선</li>
+											<li>제품, 서비스, 콘텐츠, 광고 등의 개발, 제공 및 향상</li>
+											<li>사이트의 사용자 환경 개인화 및 사용자가 방문한 페이지의 콘텐츠 및/또는 형식 사용자화</li>
+											<li>최신 제품 공지, 소프트웨어 업데이트, 이벤트 일정 등을 안내</li>
+											<li>이용약관과 방침 변경 등 중요한 알림 전달</li>
+											<li>설문 조사 참여 권유</li>
+											<li>통계분석 연구 수행 및 회사의 제품, 서비스, 웹 사이트 이용에 관한 조사 실시</li>
+											<li>회사의 웹 사이트, 제품, 서비스 중 최고 인기 항목 파악</li>
+											<li>모든 관련 법률 준수</li>
+										</ul>
 									</td>
 									<td>
-	ㅁ
-
+										<ul class="list-unstyled">
+											<li>이름과 성, 이메일 주소</li>
+											<li>상품 및 서비스 구매시 우편 주소, 전화 번호, 연락처 환경 설정, 신용 카드 정보 </li>
+											<li> 서비스 이용 기록, 액세스 로그, 쿠키, 액세스 IP 정보, 결제 기록, 이용 중지 기록</li>
+										</ul>
 									</td>
 								</tr>
 							</tbody>
-						</table>						
+						</table>		
+						<p class="text-sm m-t-md">
+							${action.webSite.company.displayName}은 개인 정보를 다음을 통해 수집합니다.
+						</p>
+						<ul class="text-sm m-t-md">
+							<li>홈페이지를 통한 수집</li>
+							<li>생성된 정보의 수집 도구를 사용한 수집</li>
+						</ul>		
+						
+						<h2 class="m-t-lg">개인 정보의 보유 및 이용 기간</h2>	
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}는 원칙적으로 개인 정보의 수집 및 이용 목적이 달성되고 그러한 데이터를 보존해야 할 법적∙경영적 필요가 없어질 경우 개인 정보를 폐기합니다. 
+						회사는 영업 도큐멘트 및 회계 장부를 5년간, 고객 불만 사항은 3년간 보존합니다. 
+						${action.webSite.company.displayName}는 고객이 이용 약관에 동의하는 순간부터 ${action.webSite.company.displayName}와의 관계 종료를 요청할 때까지, 
+						또는 분쟁이 발생하는 경우 그 분쟁이 종료될 때까지 고객의 개인 정보를 이용합니다.
+						</p>
+						
+						
+						<h2 class="m-t-lg">개인 정보 파기 절차 및 방법</h2>			
+						<p class="text-sm m-t-md">
+						${action.webSite.company.displayName}는 원칙적으로 개인 정보의 수집 및 이용 목적이 달성되는 경우, 개인 정보에 대한 법적∙경영적 필요가 해결되는 경우, 
+						또는 고객이 요청하는 즉시 귀하의 개인 정보를 지체 없이 파기합니다. 
+						개인 정보가 수록된 종이 기록은 파쇄 또는 소각하고, 전자 파일에 저장된 개인 정보는 기술적으로 복원이 불가능한 방법을 이용하여 삭제합니다.
+						</p>
+						
+						
+						<h2 class="m-t-lg">이용자/법정 대리인의 권리 및 그 행사 방법</h2>			
+						<p class="text-sm m-t-md">이용자는 정보의 주체로서 다음과 같은 권리를 행사할 수 있습니다.</p>
+						
+						
+						<h2 class="m-t-lg">개인 정보 안전성 확보 조치</h2>	
+						<p class="text-sm m-t-md">
+							${action.webSite.company.displayName}은 관련 법률 및 규정에 따라 개인 정보의 안전성을 확보하기 위해 다음과 같이 기술적·관리적 및 물리적 조치를 취하고 있습니다.
+						</p>															
 					</div>
 				</div>																			
 			</div>							 									 			
