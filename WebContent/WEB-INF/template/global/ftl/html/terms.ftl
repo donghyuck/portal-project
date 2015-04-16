@@ -49,7 +49,10 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-		
+		.breadcrumbs h2 {
+			font-size: 32px;
+			font-weight: 200;
+		}
 		.localnav:before, .localnav:after {
 			content: ' ';
 			display: table;
