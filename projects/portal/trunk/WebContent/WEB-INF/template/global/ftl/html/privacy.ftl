@@ -87,8 +87,8 @@
 			<div class="container content">			
 				<div class="row">					
 					<div class="col-sm-12">					
-					<p class="text-sm">
-					${action.webSite.company.displayName} 개인정보 취급방침이 2015년 4월 16일에 업데이트되었습니다. 
+					<p class="text-sm text-center">
+					<strong>${action.webSite.company.displayName} 개인정보 취급방침이 2015년 4월 16일에 업데이트되었습니다. </strong>
 					변경 사항은 주로 앞으로 출시될 새로운 기능을 다루거나, 
 					사용자가 제공한 생일 또는 타사 사용자 데이터와 같은 데이터의 사용 현황에 대한 
 					추가 정보(예: 제품 또는 상품권을 보낼 때)를 제공하기 위해 이루어 졌습니다. 
