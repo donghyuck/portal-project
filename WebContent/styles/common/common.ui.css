@@ -1485,6 +1485,12 @@ overflow-y: auto;
 	font-size : 1.4em;
 }
 
+.text-xxl {
+	font-size : 64px;
+	line-height: 1.0625;
+	font-weight: 200;	
+}
+
 .bg-pattern {
 	background-image: url(/images/common/pattern.png);
 	background-repeat: repeat;	
