@@ -70,7 +70,22 @@
 			float: left;
 			font-weight: 200;
 		}
-		
+
+		.localnav-links {
+			float: right;
+			margin: 8px 0 7px 0;
+		}		
+		.localnav-links>li {
+			float: left;
+			list-style: none;
+			margin-left: 30px;
+		}	
+		.localnav-link {
+			font-size: 13px;
+			color: #333;
+			display: inline-block;
+			white-space: nowrap;
+		}			
 		</style>   	
 	</head>
 	<body>
@@ -85,6 +100,11 @@
 			<div class="container">
 				<div class="localnav">
 					<h2 class="localnav-title">${ navigator.title }</h2>
+					<ul class="localnav-links">
+						<li>
+							<a href="#" class="localnav-link">sfdf</a>
+						</li>
+					</ul>
 				</div>	
 			</div>	
 			
