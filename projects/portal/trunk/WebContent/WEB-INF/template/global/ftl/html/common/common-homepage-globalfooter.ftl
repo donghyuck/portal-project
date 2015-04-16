@@ -95,7 +95,7 @@
 					<#if action.webSite ?? >${.now?string("yyyy")} &copy; ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
 						<#if action.hasWebSiteMenu("RULES_MENU") >
 							<#assign website_rules_menu = action.getWebSiteMenu("RULES_MENU") />
-							<#list website_footer_menu.components as item >					
+							<#list website_rules_menu.components as item >					
 						<a href="${item.page}">${item.title}</a> <#if item != website_rules_menu.components?last >|</#if>		
 							</#list>
 					<#else>
