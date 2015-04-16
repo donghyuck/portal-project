@@ -86,25 +86,42 @@
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
 				<div class="row">					
-					<div class="col-sm-12">					
-					<p class="text-sm text-center">
-					<strong>${action.webSite.company.displayName} 개인정보 취급방침이 2015년 4월 16일에 업데이트되었습니다. </strong>
-					변경 사항은 주로 앞으로 출시될 새로운 기능을 다루거나, 
-					사용자가 제공한 생일 또는 타사 사용자 데이터와 같은 데이터의 사용 현황에 대한 
-					추가 정보(예: 제품 또는 상품권을 보낼 때)를 제공하기 위해 이루어 졌습니다. 
-					모든 변경 사항은 소급하지 않습니다.
-					</p>					
+					<div class="col-sm-10 col-sm-offset-1">		
+						<p class="text-sm text-center">
+						<strong>${action.webSite.company.displayName} 개인정보 취급방침이 2015년 4월 16일에 업데이트되었습니다. </strong>
+						변경 사항은 주로 앞으로 출시될 새로운 기능을 다루거나, 
+						사용자가 제공한 생일 또는 타사 사용자 데이터와 같은 데이터의 사용 현황에 대한 
+						추가 정보(예: 제품 또는 상품권을 보낼 때)를 제공하기 위해 이루어 졌습니다. 
+						모든 변경 사항은 소급하지 않습니다.
+						</p>					
 					</div>			
 				</div>
 				<hr/>
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">
 						<p class="text-md text-center">
-						${action.webSite.company.displayName}은 고객의 개인 정보를 중요하게 생각합니다. 이에 ${action.webSite.company.displayName}은 고객의 정보를 수집, 사용, 공개, 이전, 저장하는 것과 관련된 사항을 규정하는 개인정보 취급방침을 마련했습니다. 
-						잠시 시간을 내어 ${action.webSite.company.displayName}의 개인정보 처리 방침을 익힌 후 궁금한 사항이 있으면 <span class="text-info">알려 주시기</span> 바랍니다.
+						${action.webSite.company.displayName}은 고객의 개인 정보를 중요하게 생각합니다. 
+						이에 ${action.webSite.company.displayName}은 고객의 정보를 수집, 사용, 공개, 이전, 저장하는 것과 관련된 사항을 규정하는 개인정보 취급방침을 마련했습니다. 
+						잠시 시간을 내어 ${action.webSite.company.displayName}의 개인정보 처리 방침을 익힌 후 궁금한 사항이 있으면 <span class="text-primary">알려 주시기</span> 바랍니다.
 						</p>					
 					</div>
-				</div>					
+				</div>	
+				<div class="row">					
+					<div class="col-sm-10 col-sm-offset-1">		
+						<h3>개인정보 수집 및 사용</h3>
+						<p class="text-sm">
+						개인 정보는 한 사람을 식별하거나 한 사람에게 연락하는 데 사용할 수 있는 데이터입니다.
+						</p>
+						<p class="text-sm">
+						${action.webSite.company.displayName}과 연락할 때 언제든 개인 정보를 제공하라는 요청을 받을 수 있습니다. 
+						${action.webSite.company.displayName}는 본 개인정보 취급방침에 따라 사용할 수 있습니다. 
+						또한 ${action.webSite.company.displayName}의 제품, 서비스, 콘텐츠 및 광고를 제공하고 개선하기 위해 다른 정보와 함께 사용할 수도 있습니다. 
+						고객은 ${action.webSite.company.displayName}에서 요청하는 개인 정보를 제공할 의무는 없지만 제공하지 않기로 결정하면, 
+						많은 경우 ${action.webSite.company.displayName}에서 
+						${action.webSite.company.displayName}의 제품 또는 서비스를 제공하지 못하거나 고객의 문의에 답변할 수 없게 됩니다.						
+						</p>						
+					</div>
+				</div>													
 			</div>							 									 			
 			<!-- END MAIN CONTENT -->	
  			<!-- START FOOTER -->
