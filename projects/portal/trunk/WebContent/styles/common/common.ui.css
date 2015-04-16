@@ -1486,7 +1486,7 @@ overflow-y: auto;
 }
 
 .text-xxl {
-	font-size : 64px;
+	font-size : 4em;
 	line-height: 1.0625;
 	font-weight: 200;	
 }
