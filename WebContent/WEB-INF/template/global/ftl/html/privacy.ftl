@@ -288,7 +288,13 @@
 						기타 법에서 접근을 요구하지 않는 요청에 대해서는 처리를 거부할 수 있습니다. 
 						</p>
 					</div>
-				</div>													
+				</div>
+				<hr/>
+				<div class="row">					
+					<div class="col-sm-10 col-sm-offset-1">		
+						<h1 class="text-xxl">개인정보 수집 및 사용</h1>
+					</div>
+				</div>																			
 			</div>							 									 			
 			<!-- END MAIN CONTENT -->	
  			<!-- START FOOTER -->
