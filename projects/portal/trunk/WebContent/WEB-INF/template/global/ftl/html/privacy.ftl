@@ -110,10 +110,10 @@
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
 						<h3>개인정보 수집 및 사용</h3>
-						<p class="text-sm">
+						<p class="text-sm m-t-md">
 						개인 정보는 한 사람을 식별하거나 한 사람에게 연락하는 데 사용할 수 있는 데이터입니다.
 						</p>
-						<p class="text-sm">
+						<p class="text-sm m-t-md">
 						${action.webSite.company.displayName}과 연락할 때 언제든 개인 정보를 제공하라는 요청을 받을 수 있습니다. 
 						${action.webSite.company.displayName}는 본 개인정보 취급방침에 따라 사용할 수 있습니다. 
 						또한 ${action.webSite.company.displayName}의 제품, 서비스, 콘텐츠 및 광고를 제공하고 개선하기 위해 다른 정보와 함께 사용할 수도 있습니다. 
@@ -121,7 +121,7 @@
 						많은 경우 ${action.webSite.company.displayName}에서 
 						${action.webSite.company.displayName}의 제품 또는 서비스를 제공하지 못하거나 고객의 문의에 답변할 수 없게 됩니다.						
 						</p>			
-						<p class="text-sm">
+						<p class="text-sm m-t-md">
 						다음은 ${action.webSite.company.displayName}에서 수집할 수 있는 개인 정보의 유형 및 사용 방법에 대한 몇 가지 예입니다.
 						</p>			
 						<h3>${action.webSite.company.displayName}에서 수집하는 개인정보</h3>
