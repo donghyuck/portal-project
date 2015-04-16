@@ -1,32 +1,25 @@
 <#ftl encoding="UTF-8"/>
-<#assign contextPath = request.contextPath >
-<html decorator="homepage">
+<#assign page = action.getPage() >
+<html decorator="unify">
 <head>
 <#compress>
-<title>메인 페이지</title>
+<title>${page.title}</title>
 <script type="text/javascript">
 <!--
 yepnope([{
     load: [        
-			'css!${request.contextPath}/styles/font-awesome/4.3.0/font-awesome.min.css',
-			'css!${request.contextPath}/styles/common.pages/common.signup_signon.css',
-			'css!${request.contextPath}/styles/common.themes/unify/themes/blue.css',
-			'css!${request.contextPath}/styles/common.plugins/animate.css',
-			'${request.contextPath}/js/jquery/1.10.2/jquery.min.js',
-			'${request.contextPath}/js/jquery.plugins/jquery.ui.shake.min.js',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/bootstrap/3.1.0/bootstrap.min.js',
-
-			'${request.contextPath}/js/common.plugins/jquery.slimscroll.min.js', 		
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 
-				
-			'${request.contextPath}/js/common/common.models.js',
-			'${request.contextPath}/js/common/common.api.js',
-			'${request.contextPath}/js/common/common.ui.js'			
-			],             
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>'],        
 		complete : function() {
 
 		}
