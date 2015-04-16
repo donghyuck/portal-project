@@ -11,17 +11,14 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/font-icons/atlassian-icons.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',		
-			'css!<@spring.url "/styles/bootstrap.themes/unify/pages/feature_timeline-v2.css"/>',		
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
-			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],
@@ -55,10 +52,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">
-		
-		blockquote p {
-			font-size: 15px;
-		}							
+					
 		</style>   	
 	</head>
 	<body>
@@ -75,7 +69,7 @@
 						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
 					});
 				</script>			
-				<div class="breadcrumbs arrow-up">
+				<div class="breadcrumbs">
 					<div class="container">
 						<div class="row">
 							<h2 class="pull-left">${ navigator.title }
@@ -92,73 +86,28 @@
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">			
 				<div class="row">					
-						<#list action.menuNames as item>
-						<div class="col-md-4" style="min-height: 500px;">			
-						<#assign menu = action.getWebSiteMenu(item) />
-						<div class="headline"><h4> ${menu.title} </h4></div>  
-						<ul>
-							<#list menu.components as menu_item>
-							<li>${menu_item.title}
-								<#if  menu_item.components?has_content >
-								<ul>
-								<#list menu_item.components as menu_item_item>
-									<li>${menu_item_item.title}</li>
-								</#list>	
-								</ul>	
-								</#if>
-							</li>	
-							</#list>
-						</ul>
-						</div>	
-						</#list>						
+					<div class="col-sm-12">					
+					Apple 개인정보 취급방침이 2014년 9월 17일에 업데이트되었습니다. 변경 사항은 주로 iOS 8과 함께 출시될 새로운 기능을 다루거나, 
+					사용자가 제공한 생일 또는 타사 사용자 데이터와 같은 데이터의 사용 현황에 대한 추가 정보(예: 제품 또는 상품권을 보낼 때)를 제공하기 위해 이루어 졌습니다. 
+					모든 변경 사항은 소급하지 않습니다.					
+					</div>			
 				</div>
-			</div>							 			
+				<hr/>
+				<div class="row">					
+					<div class="col-sm-10 col-sm-offset-1">
+						<p class="text-md text-center">
+						${action.webSite.company.displayName}은 고객의 개인 정보를 중요하게 생각합니다. 이에 ${action.webSite.company.displayName}은 고객의 정보를 수집, 사용, 공개, 이전, 저장하는 것과 관련된 사항을 규정하는 개인정보 취급방침을 마련했습니다. 
+						잠시 시간을 내어 ${action.webSite.company.displayName}의 개인정보 처리 방침을 익힌 후 궁금한 사항이 있으면 <span class="text-info">알려 주시기</span> 바랍니다.
+						</p>					
+					</div>
+				</div>					
+			</div>							 									 			
 			<!-- END MAIN CONTENT -->	
  			<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- END FOOTER -->	
 		</div>		
-		<!-- START TEMPLATE -->
-		<script id="announce-row-template" type="text/x-kendo-tmpl">
-			<tr data-uid="#: uid #" data-id="#: announceId #">
-				<td><span class="label label-red">공지</span>&nbsp;#: subject #	 </td>
-				<td class="text-center"><i class="fa fa-calendar"></i> #: kendo.toString(creationDate, "yyyy.MM.dd") #</td>
-			</tr>
-		</script>						
-		<script id="alert-message-template" type="text/x-kendo-tmpl">
-			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
-		</script>	
-		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
-			<div class="panel bordered">
-				<div class="panel-heading rounded-top">
-					<span class="close-sm"></span>
-					<h2 data-bind="html:announce.subject"></h2>					
-					<ul class="list-unstyled m-r-xl">
-						<li ><i class="fa fa-calendar"></i> <span class="label label-light">게시 기간</span> <span class="text-muted" data-bind="text:announce.formattedStartDate"></span> ~ <span class="text-muted" data-bind="text:announce.formattedEndDate"></span></li>
-						<hr>	
-						<li><i class="fa fa-calendar"></i> <span class="label label-light">생성일</span> <span class="text-muted" data-bind="text: announce.formattedCreationDate"></span></li>
-						<hr>	
-						<li><i class="fa fa-calendar"></i> <span class="label label-light">수정일</span> <span class="text-muted" data-bind="text: announce.formattedModifiedDate"></span></li>
-						<hr>	
-						<li class="text-muted">
-							<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src: announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-							<ul class="list-unstyled text-muted">
-								<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-								<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-							</ul>																
-						</li>	
-					</ul>											
-				</div>
-				<div class="panel-body padding-sm" data-bind="html:announce.body"></div>	
-				<div class="panel-footer text-right">
-					<div class="btn-group">
-						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasPrevious, click:previous"><i class="fa fa-angle-left"></i>  이전</button>
-						<button class="btn btn-info btn-flat btn-outline btn-sm" data-bind="enabled:hasNext, click:next">다음  <i class="fa fa-angle-right"></i></button>
-					</div>
-					<button class="btn btn-defautl btn-sm btn-flat btn-outline"  data-bind="click:close"><i class="aui-icon aui-iconfont-close-dialog"></i>  닫기</button>
-				</div>	
-			</div>
-		</script>					
+		<!-- START TEMPLATE -->				
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
 	</body>    
