@@ -109,7 +109,7 @@
 				<hr/>
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
-						<h3>개인정보 수집 및 사용</h3>
+						<h3><i class="fa fa-circle-thin"></i> 개인정보 수집 및 사용</h3>
 						<p class="text-sm m-t-md">
 						개인 정보는 한 사람을 식별하거나 한 사람에게 연락하는 데 사용할 수 있는 데이터입니다.
 						</p>
@@ -124,7 +124,7 @@
 						<p class="text-sm m-t-md">
 						다음은 ${action.webSite.company.displayName}에서 수집할 수 있는 개인 정보의 유형 및 사용 방법에 대한 몇 가지 예입니다.
 						</p>			
-						<h3 class="m-t-md">${action.webSite.company.displayName}에서 수집하는 개인정보</h3>
+						<h3 class="m-t-md"><i class="fa fa-circle-thin"></i> ${action.webSite.company.displayName}에서 수집하는 개인정보</h3>
 						<ul class="text-sm m-t-md">
 							<li>
 							고객이 ID를 만들거나, 제품을 구입하거나, 소프트웨어 업데이트를 다운로드하거나, 
@@ -138,7 +138,30 @@
 							${action.webSite.company.displayName}에서는 이름, 우편 주소, 이메일 주소, 전화 번호 등 고객이 제공한 상대방의 정보를 수집할 수 있습니다. 
 							${action.webSite.company.displayName}은 이러한 정보를 사용하여 고객의 요청을 처리하고 관련 제품이나 서비스를 제공하거나 사기를 방지할 것입니다.
 							</li>
-						</ul>						
+						</ul>
+						<h3 class="m-t-md"><i class="fa fa-circle-thin"></i> 개인 정보를 사용하는 방법</h3>		
+						<ul class="text-sm m-t-md">
+							<li>
+							 ${action.webSite.company.displayName} 에서는 수집한 개인 정보를 통해  ${action.webSite.company.displayName} 의 최신 제품 발표, 소프트웨어 업데이트 및 예정된 이벤트를 알립니다. 
+							  ${action.webSite.company.displayName} 의 메일링 목록에 정보를 남기지 않으려면 언제든지 환경설정을 업데이트하여 거부할 수 있습니다.
+							</li>
+							<li>
+							또한 ${action.webSite.company.displayName}에서는 ${action.webSite.company.displayName}의 제품, 서비스, 콘텐츠 및 광고를 제작, 개발, 운영, 제공 및 개선하기 위해, 
+							그리고 손실 방지 및 사기 방지 용도로 개인 정보를 사용합니다.
+							</li>
+							<li>
+							 ${action.webSite.company.displayName}은 생년월일과 같은 고객의 개인 정보를 신원 확인, 사용자의 신원 확인 지원, 적절한 서비스 파악의 목적으로 사용할 수 있습니다. 
+							 예를 들어,  ${action.webSite.company.displayName} ID 계정 소유자의 나이를 파악하기 위해 생년월일을 사용할 수도 있습니다.
+							</li>
+							<li>
+							경우에 따라 개인 정보를 사용하여 구입한 항목에 대한 전달사항 및 이용 약관과 정책에 대한 변경사항과 같은 중요한 주의사항을 전달할 수도 있습니다. 
+							이 정보는 ${action.webSite.company.displayName}과 상호 작용하는 데 중요하므로 이러한 통신의 수신은 거부할 수 없습니다.
+							</li>
+							<li>
+							또한 ${action.webSite.company.displayName}에서는 ${action.webSite.company.displayName}의 제품, 서비스 및 고객 통신을 개선하기 위해 감사, 
+							데이터 분석, 조사 등의 내부적인 용도에 개인 정보를 사용할 수 있습니다.
+							</li>
+						</ul>					
 					</div>
 				</div>													
 			</div>							 									 			
