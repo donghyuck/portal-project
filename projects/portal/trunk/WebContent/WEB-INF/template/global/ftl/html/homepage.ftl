@@ -1,9 +1,8 @@
 <#ftl encoding="UTF-8"/>
-
-<#assign contextPath = request.contextPath >
 <html decorator="unify">
-<head>
-		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>		
+	<head>
+		<#assign page = action.getPage() >
+		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>				
 		<script type="text/javascript">
 		<!--
 		
@@ -11,36 +10,41 @@
 		
 		yepnope([{
 			load: [
-			'css!${request.contextPath}/styles/font-awesome/4.2.0/font-awesome.min.css',
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
-			'css!${request.contextPath}/styles/bootstrap.themes/unify/colors/blue.css',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
-			'${request.contextPath}/js/jgrowl/jquery.jgrowl.min.js',			
-			'${request.contextPath}/js/kendo/kendo.web.min.js',
-			'${request.contextPath}/js/kendo.extension/kendo.ko_KR.js',			
-			'${request.contextPath}/js/kendo/cultures/kendo.culture.ko-KR.min.js',			
-			'${request.contextPath}/js/bootstrap/3.2.0/bootstrap.min.js',			
-			'${request.contextPath}/js/common.plugins/query.backstretch.min.js', 			
-			'${request.contextPath}/js/common/common.ui.core.js',		
-			'${request.contextPath}/js/common/common.ui.data.js',
-			'${request.contextPath}/js/common/common.ui.community.js'],
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
+			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
+			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
+			'<@spring.url "/js/common/common.ui.core.js"/>',							
+			'<@spring.url "/js/common/common.ui.data.js"/>',
+			'<@spring.url "/js/common/common.ui.community.js"/>'],
 			complete: function() {
-						
 				common.ui.setup({
 					features:{
 						wallpaper : false,
+						lightbox : true,
+						spmenu : false,
+						morphing : false,
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
+								if( !currentUser.anonymous ){		
+															 
+								}
 							} 
-						}
+						}						
 					},
 					jobs:jobs
 				});	
-				
-				// ACCOUNTS LOAD					
+
+				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
-				<#if !action.user.anonymous ></#if>	
+				<#if !action.user.anonymous >	
+				</#if>
 			}
 		}]);	
 			
@@ -139,7 +143,7 @@
 		<!-- END MAIN CONTENT -->	
 
  		<!-- START FOOTER -->
-		<#include "/html/common/common-homepage-footer.ftl" >		
+		<#include "/html/common/common-homepage-globalfooter.ftl" >		
 		<!-- END FOOTER -->	
 		</div><!-- /.wrapper -->
 		
