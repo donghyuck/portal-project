@@ -360,12 +360,12 @@
 						<h2 class="m-t-lg">이용자/법정 대리인의 권리 및 그 행사 방법</h2>			
 						<p class="text-sm m-t-md">이용자는 정보의 주체로서 다음과 같은 권리를 행사할 수 있습니다.</p>
 						
-						<ul class="text-sm m-t-md">
+						<ol class="text-sm m-t-md">
 							<li>이용자는 (i) 본인의 개인 정보에 대한 액세스, (ii) 개인 정보의 정정 또는 삭제, 또는 (iii) 개인 정보 처리의 일시 정지를 요청할 수 있습니다.</li>
 							<li>14세 미만 아동의 법정대리인은 해당 아동의 개인 정보에 대한 액세스, 정정, 삭제, 처리 또는 일시 정지를 요청할 수 있습니다.</li>
 							<li>위와 같은 요청이 접수되는 경우, ${action.webSite.company.displayName}은 요청 당사자가 정보의 주체인지 아니면 정당한 대리인인지 여부를 확인합니다.</li>
 							<li>${action.webSite.company.displayName}는 법률에 명시된 타당한 사유 또는 그에 상응하는 사유가 있는 경우에만 그러한 요청을 거부할 수 있습니다.</li>
-						</ul>	
+						</ol>	
 						
 						<h2 class="m-t-lg">개인 정보 안전성 확보 조치</h2>	
 						<p class="text-sm m-t-md">
