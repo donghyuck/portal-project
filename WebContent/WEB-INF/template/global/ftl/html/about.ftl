@@ -59,7 +59,7 @@
 				margin-bottom: 0;
 			}
 			
-			${ page.getProperty("breadcrumbs.imageUrl", null) }
+			${ page.properties }
 			
 			<#if page.getProperty("breadcrumbs.imageUrl", null) ??>	
 			.breadcrumbs-v3.img-v1 {
