@@ -26,9 +26,6 @@
 				common.ui.setup({
 					features:{
 						wallpaper : true,
-						lightbox : false,
-						spmenu : false,
-						morphing : false,
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
