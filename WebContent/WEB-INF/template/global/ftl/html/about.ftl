@@ -72,27 +72,7 @@
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl">${ navigator.title }</h1>
 					</div><!--/end container-->
-			</div>    			
-			
-					
-				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
-				<script>
-					jobs.push(function () {
-						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
-					});
-				</script>			
-				<div class="breadcrumbs arrow-up">
-					<div class="container">
-						<div class="row">
-							<h2 class="pull-left">${ navigator.title }
-							<small class="page-summary">
-									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
-							</small>	
-							</h2>
-						</div>
-					</div>
-				</div>	
-			</header>	
+			</div>
 			</#if>				
 			<!-- START MAIN CONTENT -->	
 			<div class="container content">
