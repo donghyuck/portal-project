@@ -134,10 +134,9 @@
       <!-- /END THE FEATURETTES -->
        
 	</div><!-- /.container -->
-
 		
 		<!-- END MAIN CONTENT -->	
-
+		
  		<!-- START FOOTER -->
 		<#include "/html/common/common-homepage-globalfooter.ftl" >		
 		<!-- END FOOTER -->	
