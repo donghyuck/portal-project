@@ -84,7 +84,7 @@
 			</#if>				
 			<!-- END HEADER -->			
 			<!-- START MAIN CONTENT -->	
-			<div class="container content bg-transparent ">		
+			<div class="container content bg-white ">		
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
 						<h1 class="text-center text-xxl">사이트 맵</h1>
