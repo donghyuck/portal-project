@@ -60,6 +60,7 @@
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
 			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />		
 			<div class="breadcrumbs-v3 img-v1">
 				<div class="container text-center">
 					<p class="page-summary">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
@@ -67,7 +68,7 @@
 					</div><!--/end container-->
 			</div>    			
 			
-				<#assign navigator = action.getNavigator() />			
+					
 				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
 				<script>
 					jobs.push(function () {
