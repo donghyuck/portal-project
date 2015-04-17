@@ -54,6 +54,9 @@
 		<style scoped="scoped">				
 			.breadcrumbs-v3 p	{
 				color : #fff;
+				font-size: 24px;
+				font-weight: 200;
+				margin-bottom: 0;
 			}	
 		</style>   	
 	</head>
