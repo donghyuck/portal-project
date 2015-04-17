@@ -40,7 +40,7 @@
 					jobs:jobs
 				});	
 				// ACCOUNTS LOAD
-				common.ui.backstretch({renderTo:$(".interactive-slider-v2 > .container") });
+				common.ui.backstretch({renderTo:$(".interactive-slider-v2") });
 				<#if !action.user.anonymous >	
 				</#if>	
 				// END SCRIPT	
@@ -50,7 +50,9 @@
 		-->
 		</script>		
 		<style scoped="scoped">		
-					
+			.interactive-slider-v2 {
+				height : 300px;
+			}		
 		</style>   	
 	</head>
 	<body class="bg-dark">
