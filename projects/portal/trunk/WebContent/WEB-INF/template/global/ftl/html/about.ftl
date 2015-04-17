@@ -60,6 +60,7 @@
 			}
 			
 
+			${ page.properties }
 			
 			<#if page.getProperty( "breadcrumbs.imageUrl", "")?has_content >	
 			.breadcrumbs-v3.img-v1 {
