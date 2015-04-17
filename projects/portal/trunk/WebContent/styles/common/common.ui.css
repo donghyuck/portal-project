@@ -1110,6 +1110,16 @@ body:not  (.right-to-left  ) .no-border-l {
 	bottom: 0;
 	}
 
+.interactive-slider-v2 {
+  z-index: 1;
+  padding: 200px 0;
+  position: relative;
+  text-align: center;
+  background: transparents;
+  background-size: cover;
+  background-position: center center;
+}
+
 /* Background
 ------------------------------------*/
 .bg-dark {
