@@ -51,10 +51,10 @@
 		</script>		
 		<style scoped="scoped">		
 			.interactive-slider-v2 {
-				height : 280px;
+				height : 240px;
 				color : #fff;
 			}		
-			.interactive-slider-v2 h1 {
+			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
 				color : #fff;
 			}
 		</style>   	
