@@ -228,7 +228,7 @@
 				<div class="row">		
 					<div class="col-lg-9" style="min-height: 500px;">			
 						<div id="announce-view-panel" style="display:none;"></div>
-						<div id="announce-grid" class="no-border-b no-border-hr"></div>												
+						<div id="announce-grid" class="no-border-t no-border-hr"></div>												
 					</div>	
 					<div class="col-lg-3 visible-lg">	
 						<div class="headline"><h4><i class="fa fa-comments"></i> 덧글 </h4></div>  
