@@ -1104,6 +1104,10 @@ body:not  (.right-to-left  ) .no-border-l {
 	background: #fff!important;
 }
 
+.bg-sky {
+	background:#6c9fd1;		
+}
+
 .bs-callout {
 	padding: 20px;
 	margin: 20px 0;
