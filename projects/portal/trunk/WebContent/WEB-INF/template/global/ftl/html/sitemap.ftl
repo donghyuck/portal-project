@@ -25,8 +25,8 @@
 			complete: function() {			
 				common.ui.setup({
 					features:{
-						wallpaper : false,
-						lightbox : true,
+						wallpaper : true,
+						lightbox : false,
 						spmenu : false,
 						morphing : false,
 						accounts : {
