@@ -11,7 +11,6 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/font-icons/atlassian-icons.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/unify/pages/feature_timeline-v2.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
@@ -21,7 +20,7 @@
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
-			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],
@@ -232,7 +231,7 @@
 						<div id="announce-grid"></div>												
 					</div>	
 					<div class="col-lg-3 visible-lg">	
-						<div class="headline"><h4> 덧글 </h4></div>  
+						<div class="headline"><h4><i class="fa fa-comments"></i> 덧글 </h4></div>  
 	                	<p class="margin-bottom-25"><small>내용 무...</small></p>					
 					</div>												
 				</div>
