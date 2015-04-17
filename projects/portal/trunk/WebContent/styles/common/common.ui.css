@@ -1082,6 +1082,33 @@ body:not  (.right-to-left  ) .no-border-l {
 	margin: 0 15px -4px 0px !important;
 }
 
+
+/* Parallax Blocks
+------------------------------------*/
+.parallax-bg.arrow-down :after {
+	content: ' ';
+	top: 0;
+	left: 50%;
+	content: " ";
+	margin-left: -25px;
+	position: absolute;
+	border-top: 25px solid #fff;
+	border-left: 25px solid transparent;
+	border-right: 25px solid transparent;
+}
+
+.parallax-bg.arrow-up:after  {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-left: 20px solid transparent;
+	border-right: 20px solid transparent;
+	border-bottom: 20px solid #fff;
+	left: 50%;
+	margin-left: -10px;
+	bottom: 0;}
+
 /* Background
 ------------------------------------*/
 .bg-dark {
