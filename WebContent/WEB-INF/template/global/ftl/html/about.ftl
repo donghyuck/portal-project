@@ -66,7 +66,7 @@
 			<#assign navigator = action.getNavigator() />		
 			<div class="breadcrumbs-v3 img-v1">
 				<div class="container text-center">
-					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl">${ navigator.title }</h1>
 					</div><!--/end container-->
 			</div>    			
