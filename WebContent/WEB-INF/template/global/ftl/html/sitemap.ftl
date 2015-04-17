@@ -67,7 +67,7 @@
 			<div class="interactive-slider-v2 arrow-up">
 				<div class="container">
 					<h1 class="text-xxl">${ navigator.title }</h1>
-					<i class="icon-flat microphone"></i>
+					<i class="icon-flat dribble"></i>
 					<p class="text-sm text-center p-md">${ navigator.description ? replace ("{displayName}" , action.webSite.displayName ) }</p>
 				</div>
 			</div>
