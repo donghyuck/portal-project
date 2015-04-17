@@ -61,16 +61,18 @@
 		<div class="wrapper">
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
+			<#if action.isSetNavigator()  >
+				<#assign navigator = action.getNavigator() />		
+							
 			<div class="interactive-slider-v2">
 				<div class="container">
-					<h1>Welcome to Unify</h1>
-					<p>Clean and fully responsive Template.</p>
+					<h1>${ navigator.title }</h1>
+					<p>${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }</p>
 				</div>
 			</div>
 			
 			
-			<#if action.isSetNavigator()  >
-				<#assign navigator = action.getNavigator() />			
+	
 				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
 				<script>
 					jobs.push(function () {
