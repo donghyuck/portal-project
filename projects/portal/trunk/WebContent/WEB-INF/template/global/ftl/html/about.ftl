@@ -59,6 +59,8 @@
 				margin-bottom: 0;
 			}
 			
+			${ page.getProperty("breadcrumbs.imageUrl", null) }
+			
 			<#if page.getProperty("breadcrumbs.imageUrl", null) ??>	
 			.breadcrumbs-v3.img-v1 {
 				background: url(../img/breadcrumbs/img1.jpg) no-repeat;
