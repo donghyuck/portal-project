@@ -64,8 +64,8 @@
 							
 			<div class="interactive-slider-v2">
 				<div class="container">
-					<h1>${ navigator.title }</h1>
-					<p>${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }</p>
+					<h1 class="text-xxl">${ navigator.title }</h1>
+					<p class="text-sm text-center p-md">${ navigator.description ? replace ("{displayName}" , action.webSite.displayName ) }</p>
 				</div>
 			</div>
 			
