@@ -1100,6 +1100,9 @@ body:not  (.right-to-left  ) .no-border-l {
 	background: transparent;
 }
 
+.bg-white {
+	background: #fff!important;
+}
 
 .bs-callout {
 	padding: 20px;
