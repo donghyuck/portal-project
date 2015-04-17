@@ -105,7 +105,7 @@
 									$("input[type='password']").val("").focus();											
 								} else {        	   
 									$("#signin-status").html("");                         
-									location.href="<@spring.url "/main.do"/>";
+									location.href="<@spring.url "/"/>";
 								} 	
 							},
 							complete: function(jqXHR, textStatus ){					
