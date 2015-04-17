@@ -1536,6 +1536,17 @@ overflow-y: auto;
 	font-weight: 200;	
 }
 
+
+.text-quote:before {
+	content: "\f10d";
+	font-family: 'FontAwesome';
+}
+
+.text-quote:after {
+	content: "\f10e";
+	font-family: 'FontAwesome';
+}
+
 .bg-pattern {
 	background-image: url(/images/common/pattern.png);
 	background-repeat: repeat;	
