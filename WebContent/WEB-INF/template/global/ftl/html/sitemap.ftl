@@ -60,49 +60,17 @@
 			<!-- START HEADER -->
 			<#include "/html/common/common-homepage-menu.ftl" >	
 			<#if action.isSetNavigator()  >
-				<#assign navigator = action.getNavigator() />		
-							
-			<div class="interactive-slider-v2">
+				<#assign navigator = action.getNavigator() />
+			<div class="interactive-slider-v2 arrow-up">
 				<div class="container">
 					<h1 class="text-xxl">${ navigator.title }</h1>
 					<p class="text-sm text-center p-md">${ navigator.description ? replace ("{displayName}" , action.webSite.displayName ) }</p>
 				</div>
 			</div>
-			
-			
-	
-				<header  class="cloud <#if navigator.parent.css??>${navigator.parent.css}</#if>">					
-				<script>
-					jobs.push(function () {
-						$(".navbar-nav li[data-menu-item='${navigator.parent.name}']").addClass("active");
-					});
-				</script>			
-				<div class="breadcrumbs arrow-up">
-					<div class="container">
-						<div class="row">
-							<h2 class="pull-left">${ navigator.title }
-							<small class="page-summary">
-									${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
-							</small>	
-							</h2>
-						</div>
-					</div>
-				</div>	
-			</header>	
 			</#if>				
 			<!-- END HEADER -->			
 			<!-- START MAIN CONTENT -->	
 			<div class="container content bg-white ">		
-				<div class="row">					
-					<div class="col-sm-10 col-sm-offset-1">		
-						<h1 class="text-center text-xxl">사이트 맵</h1>
-						<p class="text-center"><i class="icon-flat robot"></i></p>
-						<p class="text-sm text-center p-md">
-						${action.webSite.displayName} 웹 사이트의 서비스를 한눈에 볼실 수 있습니다.
-						</p>					
-					</div>			
-				</div>
-				<hr/>				
 				<div class="row">					
 						<#list action.menuNames as item>
 						<div class="col-md-4 col-sm-6" style="min-height: 200px;">			
