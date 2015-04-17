@@ -51,7 +51,8 @@
 		</script>		
 		<style scoped="scoped">		
 			.interactive-slider-v2 {
-				height : 300px;
+				height : 280px;
+				color : #fff;
 			}		
 		</style>   	
 	</head>
@@ -66,6 +67,7 @@
 			<div class="interactive-slider-v2 arrow-up">
 				<div class="container">
 					<h1 class="text-xxl">${ navigator.title }</h1>
+					<i class="icon-flat microphone"></i>
 					<p class="text-sm text-center p-md">${ navigator.description ? replace ("{displayName}" , action.webSite.displayName ) }</p>
 				</div>
 			</div>
