@@ -794,7 +794,7 @@
 			}
 						
 			.white-popup-block{
-				background: #303030;
+				background: rgba(48, 48, 48, 0.9);
 				padding: 20px 30px;
 				text-align: left;
 				width: 100%;
