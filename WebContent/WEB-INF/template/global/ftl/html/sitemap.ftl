@@ -25,6 +25,7 @@
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],
 			complete: function() {			
+				var currentUser = new common.ui.data.User();		
 				common.ui.setup({
 					features:{
 						accounts : {
@@ -38,8 +39,8 @@
 					},
 					jobs:jobs
 				});	
-				// ACCOUNTS LOAD	
-				var currentUser = new common.ui.data.User();			
+				// ACCOUNTS LOAD
+				common.ui.backstretch({renderTo:$(".interactive-slider-v2") });
 				<#if !action.user.anonymous >	
 				</#if>	
 				// END SCRIPT	
