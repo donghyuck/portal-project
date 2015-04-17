@@ -67,7 +67,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >	
 			<#if action.isSetNavigator()  >
 				<#assign navigator = action.getNavigator() />
-			<div class="interactive-slider-v2 bg-sky arrow-up">
+			<div class="interactive-slider-v2 bg-dark arrow-up">
 				<div class="container">
 					<h1 class="text-xxl">${ navigator.title }</h1>
 					<i class="icon-flat dribble"></i>
