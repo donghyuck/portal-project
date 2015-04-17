@@ -4,10 +4,8 @@
 		<#assign page = action.getPage() >
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>				
 		<script type="text/javascript">
-		<!--
-		
-		var jobs = [];	
-		
+		<!--		
+		var jobs = [];			
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
@@ -33,14 +31,12 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								if( !currentUser.anonymous ){		
-															 
 								}
 							} 
 						}						
 					},
 					jobs:jobs
 				});	
-
 				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
 				<#if !action.user.anonymous >	
