@@ -57,7 +57,15 @@
 				font-size: 24px;
 				font-weight: 200;
 				margin-bottom: 0;
-			}	
+			}
+			
+			<#if page.getProperty("breadcrumbs.imageUrl", null) ??>	
+			.breadcrumbs-v3.img-v1 {
+				background: url(../img/breadcrumbs/img1.jpg) no-repeat;
+				background-size: cover;
+				background-position: center center;			
+			}
+			</#if>	
 		</style>   	
 	</head>
 	<body>
