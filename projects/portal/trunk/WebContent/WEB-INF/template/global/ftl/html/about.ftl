@@ -17,7 +17,7 @@
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
-			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>'],
@@ -51,7 +51,10 @@
 		}]);	
 		-->
 		</script>		
-		<style scoped="scoped">						
+		<style scoped="scoped">				
+			.breadcrumbs-v3 p	{
+				color : #fff;
+			}	
 		</style>   	
 	</head>
 	<body>
@@ -63,7 +66,7 @@
 			<#assign navigator = action.getNavigator() />		
 			<div class="breadcrumbs-v3 img-v1">
 				<div class="container text-center">
-					<p class="page-summary">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl">${ navigator.title }</h1>
 					</div><!--/end container-->
 			</div>    			
