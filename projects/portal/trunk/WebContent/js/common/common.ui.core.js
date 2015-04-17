@@ -502,15 +502,10 @@
 				data: "photos"
 			},
 			change : function(e){
-				var view = this.view(),
-				urls = [];				
-				if ( options.slideshow ){
-					each(view, function(idx, photo){
-						urls.push(template(photo));
-					});	
-				}else{
-					urls.push(template(view[random(0, view.length)]));
-				}				
+				var view = this.view(), urls = [];				
+				each(view, function(idx, photo){
+					urls.push(template(photo));
+				});				
 				if( defined( options.renderTo) ){
 					options.renderTo.backstretch( urls, {duration: 6000, fade: 750});	
 				}else{
