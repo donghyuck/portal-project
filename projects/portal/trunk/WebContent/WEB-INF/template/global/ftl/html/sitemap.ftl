@@ -55,7 +55,7 @@
 		}							
 		</style>   	
 	</head>
-	<body>
+	<body class="bg-dark">
 		<div class="page-loader"></div>	
 		<!-- START HEADER -->		
 		<div class="wrapper">
@@ -84,7 +84,7 @@
 			</#if>				
 			<!-- END HEADER -->			
 			<!-- START MAIN CONTENT -->	
-			<div class="container content">		
+			<div class="container content bg-transparent ">		
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
 						<h1 class="text-center text-xxl">사이트 맵</h1>
