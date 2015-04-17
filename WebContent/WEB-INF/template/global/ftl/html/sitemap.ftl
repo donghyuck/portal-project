@@ -54,6 +54,9 @@
 				height : 280px;
 				color : #fff;
 			}		
+			.interactive-slider-v2 h1 {
+				color : #fff;
+			}
 		</style>   	
 	</head>
 	<body class="bg-dark">
@@ -68,7 +71,7 @@
 				<div class="container">
 					<h1 class="text-xxl">${ navigator.title }</h1>
 					<i class="icon-flat dribble"></i>
-					<p class="text-sm text-center p-md">${ navigator.description ? replace ("{displayName}" , action.webSite.displayName ) }</p>
+					<p class="text-sm text-center">${ navigator.description ? replace ("{displayName}" , action.webSite.displayName ) }</p>
 				</div>
 			</div>
 			</#if>				
