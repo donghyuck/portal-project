@@ -40,7 +40,7 @@
 					jobs:jobs
 				});	
 				// ACCOUNTS LOAD
-				common.ui.backstretch({renderTo:$(".interactive-slider-v2") });
+				common.ui.backstretch({renderTo:$(".interactive-slider-v2 > .container") });
 				<#if !action.user.anonymous >	
 				</#if>	
 				// END SCRIPT	
