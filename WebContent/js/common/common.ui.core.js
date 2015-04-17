@@ -492,13 +492,42 @@
 		 $(element).fadeOut('slow');
 	}
 	
+	function backstretch( options ){
+		options = options || {},
+		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
+		dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
+			pageSize: 20,
+			schema: {
+				total: "totalCount",
+				data: "photos"
+			},
+			change : function(e){
+				var view = this.view(),
+				urls = [];				
+				if ( options.slideshow ){
+					each(view, function(idx, photo){
+						urls.push(template(photo));
+					});	
+				}else{
+					urls.push(template(view[random(0, view.length)]));
+				}				
+				if( defined( options.renderTo) ){
+					options.renderTo.backstretch( urls, {duration: 6000, fade: 750});	
+				}else{
+					$.backstretch( urls, {duration: 6000, fade: 750});	
+				}
+				
+			}
+		}).read();
+	} 
+	
 	function wallpaper (options){		
 		if(!defined($.backstretch)) {
 			return;
 		}	
 		options = options || {},
 		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
-		dataSource = options.dataSource = datasource( "/data/streams/photos/list_with_random.json?output=json", {
+		dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
 			pageSize: 15,
 			schema: {
 				total: "totalCount",
@@ -515,8 +544,8 @@
 					urls.push(template(view[random(0, view.length)]));
 				}
 				$.backstretch(
-						urls,	
-						{duration: 6000, fade: 750}	
+					urls,	
+					{duration: 6000, fade: 750}	
 				);
 			}
 		}).read();			
@@ -535,8 +564,7 @@
 			}	
 		};
 	
-	function spmenu(options){				
-		
+	function spmenu(options){
 		$(document).on("click","[data-feature-name='spmenu']", function(e){
 			var $this = $(this) , target_object ;
 			if( $this.prop("tagName").toLowerCase() == "a" ){			
@@ -550,23 +578,6 @@
 			target_object.trigger("open");
 			target_object.toggleClass("cbp-spmenu-open");	
 		});
-		/**
-		
-		$(document).on("click","[data-toggle='spmenu']", function(e){
-			var $this = $(this);					
-			var target ;
-			if( $this.prop("tagName").toLowerCase() == "a" ){			
-				target  = $this.attr("href");	
-			}else{
-				if($this.data("target")){
-					target = $this.data("target")
-				}
-			}
-			$("body").css("overflow-y: hidden;");
-			$(target).trigger("open");
-			$(target).toggleClass("cbp-spmenu-open");		
-		});
-		**/
 		
 		$(document).on("click","[data-dismiss='spmenu']", function(e){
 			var $this = $(this);			
@@ -580,8 +591,6 @@
 			target.trigger("close");
 			target.toggleClass("cbp-spmenu-open");
 		});
-		
-		
 	}
 	
 	function lightbox (){		
@@ -891,6 +900,7 @@
 		observable : kendo.observable,
 		exists : exists,
 		setup : common.ui.setup || setup,
+		backstretch : common.ui.backstretch || backstretch,
 		data : common.ui.data || {},
 		notification : common.ui.notification || notification,
 		connect : common.ui.connect || {}
