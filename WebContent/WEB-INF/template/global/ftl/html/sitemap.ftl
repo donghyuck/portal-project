@@ -50,8 +50,8 @@
 		-->
 		</script>		
 		<style scoped="scoped">		
-		blockquote p {
-			font-size: 15px;
+		.wrapper {
+		  background-color: transparent;
 		}							
 		</style>   	
 	</head>
