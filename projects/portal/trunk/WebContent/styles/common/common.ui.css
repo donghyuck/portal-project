@@ -1085,7 +1085,7 @@ body:not  (.right-to-left  ) .no-border-l {
 
 /* Parallax Blocks
 ------------------------------------*/
-.parallax-bg.arrow-down :after {
+.parallax-bg.arrow-down:after {
 	content: ' ';
 	top: 0;
 	left: 50%;
@@ -1107,7 +1107,8 @@ body:not  (.right-to-left  ) .no-border-l {
 	border-bottom: 20px solid #fff;
 	left: 50%;
 	margin-left: -10px;
-	bottom: 0;}
+	bottom: 0;
+	}
 
 /* Background
 ------------------------------------*/
