@@ -88,7 +88,7 @@
 			<div class="container content">		
 				<div class="row">					
 					<div class="col-sm-10 col-sm-offset-1">		
-						<h1 class="text-center text-xxl">개인정보 취급방침</h1>
+						<h1 class="text-center text-xxl">서비스 전체 보기</h1>
 						<p class="text-center"><i class="icon-flat microphone"></i></p>
 						<p class="text-sm text-center p-md">
 						<strong>${action.webSite.company.displayName} 개인정보 취급방침이 2015년 4월 16일에 업데이트되었습니다. </strong>
