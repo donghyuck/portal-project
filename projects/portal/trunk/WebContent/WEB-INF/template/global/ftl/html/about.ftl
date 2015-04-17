@@ -52,6 +52,9 @@
 		-->
 		</script>		
 		<style scoped="scoped">				
+			.breadcrumbs-v3 {
+				position:relative;
+			}
 			.breadcrumbs-v3 p	{
 				color : #fff;
 				font-size: 24px;
@@ -74,7 +77,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >	
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />		
-			<div class="breadcrumbs-v3 img-v1">
+			<div class="breadcrumbs-v3 img-v1 arrow-up">
 				<div class="container text-center p-xl">
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl">${ navigator.title }</h1>
@@ -132,7 +135,35 @@
 					</div>					
 				</div>		
 			</div>
-		
+
+
+<div class="parallax-counter-v4 parallaxBg" style="background-position: 50% 54px;">
+        <div class="container content-sm">
+            <div class="row">
+                <div class="col-md-3 col-xs-6 md-margin-bottom-50">
+                    <i class="icon-cup"></i>
+                    <span class="counter">265</span>
+                    <h4>Coffee's Drunk</h4>
+                </div>
+                <div class="col-md-3 col-xs-6 md-margin-bottom-50">
+                    <i class="icon-clock"></i>
+                    <span class="counter">5957</span>
+                    <h4>Working Hours</h4>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <i class="icon-emoticon-smile"></i>
+                    <span class="counter">3495</span>
+                    <h4>Happy Clients</h4>
+                </div>
+                <div class="col-md-3 col-xs-6">
+                    <i class="icon-bulb"></i>
+                    <span class="counter">576</span>
+                    <h4>New Ideas</h4>
+                </div>
+            </div><!--/end row-->
+        </div><!--/end container-->
+    </div>
+    		
 		<article class="bg-slivergray">			
 			<div class="container content no-padding-b">
 			<div class="title-box-v2">
