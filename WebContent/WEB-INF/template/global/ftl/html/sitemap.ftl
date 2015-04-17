@@ -50,9 +50,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">		
-		.wrapper {
-		  background-color: transparent;
-		}							
+					
 		</style>   	
 	</head>
 	<body class="bg-dark">
