@@ -882,26 +882,8 @@
 					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section"></span>
 					</div><!--/end container-->
 			</div>
-						
-			<section class="personalized-section bg-transparent open" >
-			<!--
-				<div class="personalized-section-heading">
-					<div class="container">
-						<div class="personalized-section-title">
-							<i class="icon-flat folder"></i>
-							<h3 >MY 드라이브 <span class="hidden-xs">PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정	리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></span></h3>
-							<div class="personalized-section-heading-controls">
-								<i class="icon-flat settings"></i>
-								<div id="personalized-buttons" class="btn-group">
-									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><span class="hidden-xs">My 드라이브</span></button>
-								</div>					
-							</div>		
-						</div>
-					</div>				
-				</div>-->
-				<div class="personalized-section-content animated arrow-up">
-					<div class="container content" style="min-height:450px;">		
-										
+			<div class="container content bg-white ">		
+
 				<!-- tab-v1 -->
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
@@ -1037,7 +1019,31 @@
 							</div>
 						</div>	
 					</div><!-- end photos  tab-pane -->
-				</div><!-- end of tab content -->			
+				</div><!-- end of tab content -->					
+				
+			</div><!--/end container-->
+			
+						
+			<section class="personalized-section bg-transparent open" >
+			<!--
+				<div class="personalized-section-heading">
+					<div class="container">
+						<div class="personalized-section-title">
+							<i class="icon-flat folder"></i>
+							<h3 >MY 드라이브 <span class="hidden-xs">PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정	리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></span></h3>
+							<div class="personalized-section-heading-controls">
+								<i class="icon-flat settings"></i>
+								<div id="personalized-buttons" class="btn-group">
+									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><span class="hidden-xs">My 드라이브</span></button>
+								</div>					
+							</div>		
+						</div>
+					</div>				
+				</div>-->
+				<div class="personalized-section-content animated arrow-up">
+					<div class="container content" style="min-height:450px;">		
+										
+	
 					</div>
 				</div>			
 			</section>		
