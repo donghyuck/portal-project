@@ -55,7 +55,7 @@
 						}		
 					},
 					wallpaper : {
-						renderTo:$(".interactive-slider-v3")
+						renderTo:$(".interactive-slider-v2")
 					},
 					jobs:jobs
 				});				
@@ -865,7 +865,7 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
-			<div class="breadcrumbs-v3 img-v1">
+			<div class="interactive-slider-v2 bg-dark arrow-up">
 				<div class="container text-center p-xl">
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl">${ navigator.title }</h1>
