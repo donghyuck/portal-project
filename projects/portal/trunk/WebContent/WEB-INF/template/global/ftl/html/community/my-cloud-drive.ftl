@@ -917,8 +917,8 @@
 							</section>			
 		
 							<#if !action.user.anonymous >	
-							<div class="panel panel-blue m-t-sm margin-bottom-40">
-								<div class="panel-heading">
+							<div class="panel panel-blue margin-bottom-40">
+								<div class="panel-heading text-right">
 									<button type="button" class="btn btn-info btn-md" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
 								</div>
 								<div class="panel-body">
