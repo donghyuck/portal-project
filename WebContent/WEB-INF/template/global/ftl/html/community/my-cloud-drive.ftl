@@ -733,6 +733,14 @@
 		</script>		
 		<style scoped="scoped">
 			
+			.interactive-slider-v2 {
+				height : 240px;
+				color : #fff;
+			}		
+			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
+				color : #fff;
+			}
+						
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}
