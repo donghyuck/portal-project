@@ -884,10 +884,10 @@
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
 			<div class="interactive-slider-v2 bg-dark arrow-up">
-				<div class="container text-center p-xl">
+				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>	${ navigator.title }</h1>					
-					<button type="button" class="btn-flat pencil" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section"><span class="hidden-xs">My 드라이브</span></button>
+					<button type="button" class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section"><span class="hidden-xs">My 드라이브</span></button>
 					</div><!--/end container-->
 			</div>
 						
