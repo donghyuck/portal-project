@@ -123,6 +123,11 @@
 	background-position: -59px -286px;
 }
 
+.sky-form > header .close-sm {
+	top: 5px;
+	right : 5px;
+}
+
 /**
 * image grid
 */
