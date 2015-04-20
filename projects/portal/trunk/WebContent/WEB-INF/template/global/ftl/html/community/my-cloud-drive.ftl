@@ -896,6 +896,7 @@
 					<div class="tab-content">
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
+						
 							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
@@ -909,6 +910,7 @@
 									</#if>								
 								</div>
 							</div>
+							
 							<div class="panel panel-default no-margin-b">
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
@@ -941,12 +943,15 @@
 									</div>												
 								</div>
 								<div class="panel-body sm-padding" style="min-height:450px;">
-									<div id="attachment-list-view" class="file-listview"></div>
+									
 								</div>	
 								<div class="panel-footer no-padding">
-										<div id="pager" class="file-listview-pager k-pager-wrap"></div>
+										
 								</div>
-							</div>																				
+								
+							</div>
+							<div id="attachment-list-view" class="file-listview"></div>		
+							<div id="pager" class="file-listview-pager k-pager-wrap"></div>																		
 						</div><!-- end tab-pane -->		
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
