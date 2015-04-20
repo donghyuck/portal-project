@@ -15,11 +15,8 @@
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',		
-			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',				
-			'css!<@spring.url "/styles/codrops/codrops.grid.min.css"/>',
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',		
-			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
-			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',			
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',	
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',			
@@ -29,7 +26,7 @@
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
-			'<@spring.url "/js/bootstrap/3.2.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
 			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
 			'<@spring.url "/js/pdfobject/pdfobject.js"/>',	
@@ -866,6 +863,13 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
+			<div class="breadcrumbs-v3 img-v1">
+				<div class="container text-center p-xl">
+					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<h1 class="text-xxl">${ navigator.title }</h1>
+					</div><!--/end container-->
+			</div>
+						
 			<section class="personalized-section bg-transparent open" >
 				<div class="personalized-section-heading">
 					<div class="container">
