@@ -917,8 +917,7 @@
 								</fieldset>			
 							</section>						
 
-							<div class="tag-box tag-box-v3 form-page">
-								<div class="headline"><h3>Standard Form Controls</h3></div>
+							<div class="tag-box tag-box-v1 form-page">
 								<div class="row">
 									<div class="col-md-6">
 										<h4>소유자</h4>
