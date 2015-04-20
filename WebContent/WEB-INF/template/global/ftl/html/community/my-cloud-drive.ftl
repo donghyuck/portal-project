@@ -918,13 +918,10 @@
 		
 							<#if !action.user.anonymous >	
 							<div class="panel panel-blue margin-bottom-40">
-								<div class="panel-heading text-right">
-									<button type="button" class="btn btn-info btn-md" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
-								</div>
 								<div class="panel-body">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
 									<div class="row">
-										<div class="col-md-6">
+										<div class="col-md-4">
 											<h4>소유자</h4>
 											<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
 												<label class="btn btn-sm btn-danger rounded-left active">
@@ -938,7 +935,7 @@
 												</label>
 											</div>												
 										</div>
-										<div class="col-md-6">
+										<div class="col-md-4">
 											<h4>필터</h4>
 											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-sm btn-info  rounded-left active">
@@ -950,10 +947,10 @@
 												<label class="btn btn-sm btn-info rounded-right">
 													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
 												</label>	
-											</div>
-											<p class="pull-right">				
-												
-											</p>										
+											</div>								
+										</div>
+										<div class="col-md-4">
+											<button type="button" class="btn btn-info btn-lg" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
 										</div>
 									</div>									
 									<hr/>
