@@ -90,6 +90,32 @@
 	left: 0;
 }
 
+
+/**
+* personalized 
+*/
+
+.personalized-controls {
+	
+	
+}
+
+.personalized-controls .btn-flat {
+	position: absolute;
+	top: 0;
+	right: 0px;
+	line-height: 50px;
+	font-size: 40px;
+	display: block;
+	width: 60px;
+	height: 60px;
+	text-align: center;
+	background: url(/images/common/icons/flat-icons.png) no-repeat center rgba(0, 0, 0, 0.8);
+	content: "";
+	display: block;
+	opacity: .5;
+}
+
 /**
 * image grid
 */
