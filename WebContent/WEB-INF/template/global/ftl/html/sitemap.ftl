@@ -53,6 +53,7 @@
 			.interactive-slider-v2 {
 				height : 240px;
 				color : #fff;
+				position:relative;
 			}		
 			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
 				color : #fff;
