@@ -734,7 +734,7 @@
 		<style scoped="scoped">
 			
 			.interactive-slider-v2 {
-				height : 240px;
+				height : 220px;
 				color : #fff;
 			}		
 			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
@@ -863,6 +863,7 @@
 			.personalized-section {
 				margin-bottom:0!important;
 			}
+			
 		</style>   	
 		</#compress>
 	</head>
