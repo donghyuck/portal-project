@@ -442,7 +442,7 @@
 				common.ui.accounts(features.accounts);				
 			}			
 			if(features.wallpaper){
-				wallpaper(options.wallpaper);
+				backstretch(options.wallpaper);
 			}
 			if(features.spmenu){				
 				spmenu();
@@ -511,7 +511,6 @@
 				}else{
 					$.backstretch( urls, {duration: 6000, fade: 750});	
 				}
-				
 			}
 		}).read();
 	} 
