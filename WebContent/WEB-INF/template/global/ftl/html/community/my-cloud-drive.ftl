@@ -897,9 +897,10 @@
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
 							
-							<section class="sky-form">
+							<section class="sky-form" style="position:relative;">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>		
+									<span class="close-sm"></span>	
 								</header>
 							
 							</section>
