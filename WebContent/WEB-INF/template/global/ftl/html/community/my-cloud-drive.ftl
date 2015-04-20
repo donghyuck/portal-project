@@ -187,7 +187,7 @@
 					showAttachmentPanel(item);
 				});								
 				common.ui.buttons(
-					$("#my-files button.btn-control-group"),
+					$("#my-files [data-action]"),
 					{
 						handlers : {
 							upload : function(e){
