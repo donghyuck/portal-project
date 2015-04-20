@@ -868,7 +868,7 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body id="doc" class="bg-dark">
+	<body id="doc" class="bg-white">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
@@ -882,7 +882,7 @@
 					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section"></span>
 					</div><!--/end container-->
 			</div>
-			<div class="container content bg-white ">		
+			<div class="container content">		
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
 						<#if !action.user.anonymous >	
