@@ -959,7 +959,7 @@
 									<hr/>
 									<div id="attachment-list-view" class="file-listview"></div>		
 								</div>								
-								<div class="panel-footer p-xs">
+								<div class="panel-footer p-xxs bg-white">
 									<div id="pager" class="file-listview-pager k-pager-wrap"></div>		
 								</div>							
 							</div>		
