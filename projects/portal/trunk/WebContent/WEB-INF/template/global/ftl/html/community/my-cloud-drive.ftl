@@ -747,8 +747,8 @@
 			}
 			
 			.panel-upload {
-				padding-top : 5px!important;
-				padding-bottom : 5px!important;
+				margin-top : 5px!important;
+				margin-bottom : 5px!important;
 			}
 			
 			.dialog__content {
@@ -916,37 +916,51 @@
 									</#if>	
 								</fieldset>			
 							</section>						
-								
+
+							<div class="tag-box tag-box-v3 form-page">
+								<div class="headline"><h3>Standard Form Controls</h3></div>
+								<div class="row">
+									<div class="col-md-6">
+										<h4>소유자</h4>
+										<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
+											<label class="btn btn-sm btn-danger rounded-left active">
+												<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
+											</label>
+											<label class="btn btn-sm btn-danger">
+												<input type="radio" name="attachment-source"  value="30"><i class="fa fa-globe"></i> SITE
+											</label>											
+											<label class="btn btn-sm btn-danger rounded-right">
+												<input type="radio" name="attachment-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
+											</label>
+										</div>												
+									</div>
+									<div class="col-md-6">
+										<h4>필터</h4>
+										<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+											<label class="btn btn-sm btn-warning rounded-left active">
+												<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
+											</label>
+											<label class="btn btn-sm btn-warning">
+												<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
+											</label>
+											<label class="btn btn-sm btn-warning rounded-right">
+												<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
+											</label>	
+										</div>
+										<p class="pull-right">				
+											<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+										</p>										
+									</div>
+								</div>
+							</div>		
 							<div class="panel panel-default">
 								<div class="panel-body bg-slivergray">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
 									<#if !action.user.anonymous >		
-									<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
-										<label class="btn btn-sm btn-danger rounded-left active">
-											<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
-										</label>
-										<label class="btn btn-sm btn-danger">
-											<input type="radio" name="attachment-source"  value="30"><i class="fa fa-globe"></i> SITE
-										</label>											
-										<label class="btn btn-sm btn-danger rounded-right">
-											<input type="radio" name="attachment-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
-										</label>
-									</div>											
-									<p class="pull-right">				
-										<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
-									</p>	
+								
+										
 									</#if>																										
-									<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-										<label class="btn btn-sm btn-warning rounded-left active">
-											<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
-										</label>
-										<label class="btn btn-sm btn-warning">
-											<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
-										</label>
-										<label class="btn btn-sm btn-warning rounded-right">
-											<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
-										</label>	
-									</div>												
+											
 								</div>
 								<div class="panel-body sm-padding" style="min-height:450px;">
 									
