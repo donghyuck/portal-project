@@ -746,6 +746,11 @@
 				margin-top: 5px; 
 			}
 			
+			.panel-upload {
+				padding-top : 5px!important;
+				padding-bottom : 5px!important;
+			}
+			
 			.dialog__content {
 				width : 100%;
 				max-width: none;				
@@ -910,9 +915,10 @@
 									<input name="uploadAttachment" id="attachment-files" type="file" />												
 									</#if>	
 								</fieldset>			
-							</section>							
-							<div class="panel panel-default no-margin-b">
-								<div class="panel-body bg-slivergray border-b">
+							</section>						
+								
+							<div class="panel panel-default">
+								<div class="panel-body bg-slivergray">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
 									<#if !action.user.anonymous >		
 									<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
