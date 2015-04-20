@@ -916,8 +916,9 @@
 									</#if>	
 								</fieldset>			
 							</section>						
-
-							<div class="tag-box tag-box-v1 form-page">
+							<#if !action.user.anonymous >		
+							<div class="tag-box tag-box-v1 bg-slivergray">
+								<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
 								<div class="row">
 									<div class="col-md-6">
 										<h4>소유자</h4>
@@ -952,23 +953,7 @@
 									</div>
 								</div>
 							</div>		
-							<div class="panel panel-default">
-								<div class="panel-body bg-slivergray">
-									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
-									<#if !action.user.anonymous >		
-								
-										
-									</#if>																										
-											
-								</div>
-								<div class="panel-body sm-padding" style="min-height:450px;">
-									
-								</div>	
-								<div class="panel-footer no-padding">
-										
-								</div>
-								
-							</div>
+							</#if>								
 							<div id="attachment-list-view" class="file-listview"></div>		
 							<div id="pager" class="file-listview-pager k-pager-wrap"></div>																		
 						</div><!-- end tab-pane -->		
