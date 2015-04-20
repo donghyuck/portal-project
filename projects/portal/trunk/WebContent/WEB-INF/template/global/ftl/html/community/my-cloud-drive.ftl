@@ -456,7 +456,7 @@
 				}).on("mouseleave", ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 				});														
-				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
+				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, pageSizes: true, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
 				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
 					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
