@@ -734,8 +734,9 @@
 		<style scoped="scoped">
 			
 			.interactive-slider-v2 {
-				height : 220px;
+				max-height : 220px;
 				color : #fff;
+				overflow:hidden;
 			}		
 			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
 				color : #fff;
