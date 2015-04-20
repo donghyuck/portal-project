@@ -884,6 +884,7 @@
 			</div>
 						
 			<section class="personalized-section bg-transparent open" >
+			<!--
 				<div class="personalized-section-heading">
 					<div class="container">
 						<div class="personalized-section-title">
@@ -897,7 +898,7 @@
 							</div>		
 						</div>
 					</div>				
-				</div>
+				</div>-->
 				<div class="personalized-section-content animated arrow-up">
 					<div class="container content" style="min-height:450px;">		
 										
