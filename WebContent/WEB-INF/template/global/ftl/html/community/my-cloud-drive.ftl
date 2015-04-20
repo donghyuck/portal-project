@@ -1028,9 +1028,9 @@
 				
 			</div><!--/end container-->
 			
-						
+				<!--		
 			<section class="personalized-section bg-transparent open" >
-			<!--
+			
 				<div class="personalized-section-heading">
 					<div class="container">
 						<div class="personalized-section-title">
@@ -1044,11 +1044,10 @@
 							</div>		
 						</div>
 					</div>				
-				</div>-->
+				</div>
 				<div class="personalized-section-content animated arrow-up">
 					<div class="container content" style="min-height:450px;">		
-										
-				<!-- tab-v1 -->
+	
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
 						<#if !action.user.anonymous >	
@@ -1060,7 +1059,7 @@
 					</div>
 				</div>			
 			</section>		
-
+-->
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
