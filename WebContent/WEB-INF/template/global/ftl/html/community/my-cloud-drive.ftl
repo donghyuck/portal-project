@@ -896,19 +896,19 @@
 					<div class="tab-content">
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
-								<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
+							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 								</div>						
-									<div class="panel-body">													
-										<#if !action.user.anonymous >			
-											<div class="page-header text-primary">
-												<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-											</div>								
-											<input name="uploadAttachment" id="attachment-files" type="file" />												
-										</#if>								
-									</div>
+								<div class="panel-body">													
+									<#if !action.user.anonymous >			
+									<div class="page-header text-primary">
+										<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
+									</div>								
+									<input name="uploadAttachment" id="attachment-files" type="file" />												
+									</#if>								
 								</div>
+							</div>
 							<div class="panel panel-default no-margin-b">
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
