@@ -900,8 +900,7 @@
 					<!-- tab-content -->		
 					<div class="tab-content">
 						<!-- start tab-pane -->
-						<div class="tab-pane" id="my-files">
-							
+						<div class="tab-pane" id="my-files">							
 							<section class="sky-form panel-upload" style="position:relative; display:none;">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 
@@ -915,7 +914,15 @@
 									<input name="uploadAttachment" id="attachment-files" type="file" />												
 									</#if>	
 								</fieldset>			
-							</section>						
+							</section>			
+							<div class="panel panel-blue m-t-sm margin-bottom-40">
+								<div class="panel-body">
+								</div>
+								<div id="attachment-list-view" class="file-listview"></div>		
+								<div class="panel-footer">
+									<div id="pager" class="file-listview-pager k-pager-wrap"></div>		
+								</div>							
+							</div>			
 							<#if !action.user.anonymous >		
 							<div class="tag-box tag-box-v1 bg-slivergray">
 								<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
@@ -954,8 +961,8 @@
 								</div>
 							</div>		
 							</#if>								
-							<div id="attachment-list-view" class="file-listview"></div>		
-							<div id="pager" class="file-listview-pager k-pager-wrap"></div>																		
+							
+																							
 						</div><!-- end tab-pane -->		
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
