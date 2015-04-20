@@ -948,7 +948,7 @@
 											</label>	
 										</div>
 										<p class="pull-right">				
-											<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+											<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
 										</p>										
 									</div>
 								</div>
