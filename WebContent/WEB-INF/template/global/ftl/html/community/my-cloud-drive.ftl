@@ -740,7 +740,17 @@
 			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
 				color : #fff;
 			}
-						
+			
+			.interactive-slider-v2 .btn-flat {
+				z-index: 1046;
+			}
+			
+			.interactive-slider-v2 .btn-flat.settings {
+				top:60px;
+				right:0px;
+				background-color: transparent;				
+			}	
+									
 			#image-gallery-pager { 
 				margin-top: 5px; 
 			}
