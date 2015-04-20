@@ -897,7 +897,7 @@
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
 							
-							<section class="sky-form panel-upload" style="position:relative;">
+							<section class="sky-form panel-upload" style="position:relative; display:none;">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 
 									<span class="close-sm" data-action="upload-close"></span>										
@@ -910,17 +910,7 @@
 									<input name="uploadAttachment" id="attachment-files" type="file" />												
 									</#if>	
 								</fieldset>			
-							</section>
-							
-							<div class="panel panel-primary   m-b-sm  border-2x" style="display:none;">
-								<div class="panel-heading">
-									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
-								</div>						
-								<div class="panel-body">													
-					
-								</div>
-							</div>
-							
+							</section>							
 							<div class="panel panel-default no-margin-b">
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
