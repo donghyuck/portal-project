@@ -891,12 +891,12 @@
 						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab" class="rounded-top m-l-sm">포토</a></li>
 						<li><a href="#my-files" tabindex="-1" data-toggle="tab" class="rounded-top">파일</a></li>							
 						</#if>						
-					</ul>		
+					</ul><!--/end ul-->		
 					<!-- tab-content -->		
 					<div class="tab-content">
-						<!-- start attachement tab-pane -->
+						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
-								<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
+							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
 								</div>						
@@ -947,8 +947,8 @@
 										<div id="pager" class="file-listview-pager k-pager-wrap"></div>
 								</div>
 							</div>																				
-						</div><!-- end attachements  tab-pane -->		
-						<!-- start photos  tab-pane -->
+						</div><!-- end  tab-pane -->		
+						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
 							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
@@ -1018,9 +1018,9 @@
 								<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
 							</div>
 						</div>	
-					</div><!-- end photos  tab-pane -->
-				</div><!-- end of tab content -->					
-				
+					</div><!-- end  tab-pane -->
+				</div><!-- end of tab content -->		
+				</div>
 			</div><!--/end container-->
 			
 						
