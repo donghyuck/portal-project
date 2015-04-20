@@ -891,39 +891,10 @@
 						</#if>						
 					</ul>					
 				</div>
-			</div><!--/end container-->
-			
-						
-			<section class="personalized-section bg-transparent open" >
-			<!--
-				<div class="personalized-section-heading">
-					<div class="container">
-						<div class="personalized-section-title">
-							<i class="icon-flat folder"></i>
-							<h3 >MY 드라이브 <span class="hidden-xs">PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정	리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></span></h3>
-							<div class="personalized-section-heading-controls">
-								<i class="icon-flat settings"></i>
-								<div id="personalized-buttons" class="btn-group">
-									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><span class="hidden-xs">My 드라이브</span></button>
-								</div>					
-							</div>		
-						</div>
-					</div>				
-				</div>-->
-				<div class="personalized-section-content animated arrow-up">
-					<div class="container content" style="min-height:450px;">		
-										
-				<!-- tab-v1 -->
-				<div class="tab-v1 m-t-md" >							
-					<ul class="nav nav-tabs" id="myTab">
-						<#if !action.user.anonymous >	
-						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab" class="rounded-top m-l-sm">포토</a></li>
-						<li><a href="#my-files" tabindex="-1" data-toggle="tab" class="rounded-top">파일</a></li>							
-						</#if>						
-					</ul>		
+
 					<!-- tab-content -->		
 					<div class="tab-content">
-						<!-- start attachement tab-pane -->
+						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
 								<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
@@ -976,8 +947,8 @@
 										<div id="pager" class="file-listview-pager k-pager-wrap"></div>
 								</div>
 							</div>																				
-						</div><!-- end attachements  tab-pane -->		
-						<!-- start photos  tab-pane -->
+						</div><!-- end tab-pane -->		
+						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">									
 							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
@@ -1047,8 +1018,40 @@
 								<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
 							</div>
 						</div>	
-					</div><!-- end photos  tab-pane -->
-				</div><!-- end of tab content -->			
+					</div><!-- end tab-pane -->
+				</div><!-- end of tab content -->		
+				
+			</div><!--/end container-->
+			
+						
+			<section class="personalized-section bg-transparent open" >
+			<!--
+				<div class="personalized-section-heading">
+					<div class="container">
+						<div class="personalized-section-title">
+							<i class="icon-flat folder"></i>
+							<h3 >MY 드라이브 <span class="hidden-xs">PC는 문론 스마트폰, 태블릿에서도 이미지와 파일을 쉽게 정	리하고 관리하세요.. <i class="fa fa-long-arrow-right"></i></span></h3>
+							<div class="personalized-section-heading-controls">
+								<i class="icon-flat settings"></i>
+								<div id="personalized-buttons" class="btn-group">
+									<button type="button" class="btn-u btn-u-blue rounded-right" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section" disabled><span class="hidden-xs">My 드라이브</span></button>
+								</div>					
+							</div>		
+						</div>
+					</div>				
+				</div>-->
+				<div class="personalized-section-content animated arrow-up">
+					<div class="container content" style="min-height:450px;">		
+										
+				<!-- tab-v1 -->
+				<div class="tab-v1 m-t-md" >							
+					<ul class="nav nav-tabs" id="myTab">
+						<#if !action.user.anonymous >	
+						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab" class="rounded-top m-l-sm">포토</a></li>
+						<li><a href="#my-files" tabindex="-1" data-toggle="tab" class="rounded-top">파일</a></li>							
+						</#if>						
+					</ul>		
+	
 					</div>
 				</div>			
 			</section>		
