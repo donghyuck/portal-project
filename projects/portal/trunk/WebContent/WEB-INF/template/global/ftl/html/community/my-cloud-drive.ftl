@@ -937,13 +937,13 @@
 									<div class="col-md-6">
 										<h4>필터</h4>
 										<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-											<label class="btn btn-sm btn-warning rounded-left active">
+											<label class="btn btn-sm btn-info  rounded-left active">
 												<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
 											</label>
-											<label class="btn btn-sm btn-warning">
+											<label class="btn btn-sm btn-info">
 												<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
 											</label>
-											<label class="btn btn-sm btn-warning rounded-right">
+											<label class="btn btn-sm btn-info rounded-right">
 												<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
 											</label>	
 										</div>
