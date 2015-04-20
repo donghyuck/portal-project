@@ -915,50 +915,51 @@
 									</#if>	
 								</fieldset>			
 							</section>			
+		
+							<#if !action.user.anonymous >	
 							<div class="panel panel-blue m-t-sm margin-bottom-40">
+							
 								<div class="panel-body">
-								</div>
-								<div id="attachment-list-view" class="file-listview"></div>		
+									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
+									<div class="row">
+										<div class="col-md-6">
+											<h4>소유자</h4>
+											<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
+												<label class="btn btn-sm btn-danger rounded-left active">
+													<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
+												</label>
+												<label class="btn btn-sm btn-danger">
+													<input type="radio" name="attachment-source"  value="30"><i class="fa fa-globe"></i> SITE
+												</label>											
+												<label class="btn btn-sm btn-danger rounded-right">
+													<input type="radio" name="attachment-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
+												</label>
+											</div>												
+										</div>
+										<div class="col-md-6">
+											<h4>필터</h4>
+											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+												<label class="btn btn-sm btn-info  rounded-left active">
+													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
+												</label>
+												<label class="btn btn-sm btn-info">
+													<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
+												</label>
+												<label class="btn btn-sm btn-info rounded-right">
+													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
+												</label>	
+											</div>
+											<p class="pull-right">				
+												<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+											</p>										
+										</div>
+									</div>									
+									<hr/>
+									<div id="attachment-list-view" class="file-listview"></div>		
+								</div>								
 								<div class="panel-footer">
 									<div id="pager" class="file-listview-pager k-pager-wrap"></div>		
 								</div>							
-							</div>			
-							<#if !action.user.anonymous >		
-							<div class="tag-box tag-box-v1 bg-slivergray">
-								<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
-								<div class="row">
-									<div class="col-md-6">
-										<h4>소유자</h4>
-										<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
-											<label class="btn btn-sm btn-danger rounded-left active">
-												<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
-											</label>
-											<label class="btn btn-sm btn-danger">
-												<input type="radio" name="attachment-source"  value="30"><i class="fa fa-globe"></i> SITE
-											</label>											
-											<label class="btn btn-sm btn-danger rounded-right">
-												<input type="radio" name="attachment-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
-											</label>
-										</div>												
-									</div>
-									<div class="col-md-6">
-										<h4>필터</h4>
-										<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-											<label class="btn btn-sm btn-info  rounded-left active">
-												<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
-											</label>
-											<label class="btn btn-sm btn-info">
-												<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
-											</label>
-											<label class="btn btn-sm btn-info rounded-right">
-												<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
-											</label>	
-										</div>
-										<p class="pull-right">				
-											<button type="button" class="btn btn-info btn-lg btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
-										</p>										
-									</div>
-								</div>
 							</div>		
 							</#if>								
 							
