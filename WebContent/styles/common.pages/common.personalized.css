@@ -115,7 +115,7 @@
 	display: block;
 	opacity: .5;
 }
-.personalized-controls .btn-flat : hover {
+.personalized-controls .btn-flat:hover {
 	opacity: 1;
 }
 
