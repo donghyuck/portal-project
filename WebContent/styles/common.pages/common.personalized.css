@@ -116,6 +116,10 @@
 	opacity: .5;
 }
 
+.personalized-controls .btn-flat.settings {
+	background-position: -73px -298px;
+}
+
 /**
 * image grid
 */
