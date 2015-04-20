@@ -897,24 +897,27 @@
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-files">
 							
-							<section class="sky-form" style="position:relative;">
+							<section class="sky-form panel-upload" style="position:relative;">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 
-									<span class="close-sm" data-action="upload-close"></span>	
+									<span class="close-sm" data-action="upload-close"></span>										
 								</header>
-							
-							</section>
-							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
-								<div class="panel-heading">
-									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
-								</div>						
-								<div class="panel-body">													
+								<fieldset>
 									<#if !action.user.anonymous >			
 									<div class="page-header text-primary">
 										<h5><i class="fa fa-upload"></i>&nbsp;<strong>파일 업로드</strong>&nbsp;<small>아래의 <strong>파일 선택</strong> 버튼을 클릭하여 파일을 직접 선택하거나, 아래의 영역에 파일을 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
 									</div>								
 									<input name="uploadAttachment" id="attachment-files" type="file" />												
-									</#if>								
+									</#if>	
+								</fieldset>			
+							</section>
+							
+							<div class="panel panel-primary   m-b-sm  border-2x" style="display:none;">
+								<div class="panel-heading">
+									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
+								</div>						
+								<div class="panel-body">													
+					
 								</div>
 							</div>
 							
