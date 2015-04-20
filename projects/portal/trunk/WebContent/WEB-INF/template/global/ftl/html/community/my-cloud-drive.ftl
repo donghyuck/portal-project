@@ -899,8 +899,8 @@
 							
 							<section class="sky-form" style="position:relative;">
 								<header>
-									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>		
-									<span class="close-sm"></span>	
+									<i class="fa fa-cloud-upload  fa-lg"></i> 파일 업로드 
+									<span class="close-sm" data-action="upload-close"></span>	
 								</header>
 							
 							</section>
