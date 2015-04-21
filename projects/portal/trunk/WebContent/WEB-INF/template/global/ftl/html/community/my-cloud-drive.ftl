@@ -889,10 +889,8 @@
 			<div class="container content">		
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
-						<#if !action.user.anonymous >	
 						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab" class="rounded-top m-l-sm">포토</a></li>
 						<li><a href="#my-files" tabindex="-1" data-toggle="tab" class="rounded-top">파일</a></li>							
-						</#if>						
 					</ul>					
 				</div>
 
