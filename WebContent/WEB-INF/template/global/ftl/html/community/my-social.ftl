@@ -47,7 +47,7 @@
 						}	
 					},
 					wallpaper : {
-						renderTo:$(".interactive-slider-v2")
+						renderTo:$(".interactive-slider-v3")
 					},					
 					jobs:jobs
 				});		
