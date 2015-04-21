@@ -185,7 +185,9 @@
 					</div><!--/end container-->
 			</div>
 			</#if>	
-						
+			<div class="container content">
+			
+			</div>			
 			<section class="personalized-session bg-trans" >
 				<div class="personalized-session-heading">
 					<div class="container">
