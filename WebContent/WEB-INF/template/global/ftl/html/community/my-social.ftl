@@ -113,7 +113,7 @@
 				title: "<i class='fa fa-" + connect.providerId + " fa-fw'></i>" + connect.providerId  , 
 				actions:["Custom", "Minimize", "Refresh", "Close"],
 				data: connect,
-				css : "panel-primary rounded",
+				css : "panel-primary no-border",
 				scrollTop : true,
 				template: kendo.template("<ul class='media-list no-border' style='min-height:150px;'></ul>"),
 				close: function(e) {
