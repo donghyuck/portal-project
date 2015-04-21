@@ -918,7 +918,7 @@
 							</section>			
 		
 							<#if !action.user.anonymous >	
-							<div class="panel panel-blue margin-bottom-40">
+							<div class="panel panel-blue m-t-sm margin-bottom-40">
 								<div class="panel-body">
 									<p class="text-muted"><small><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</small></p>
 									<div class="row">
