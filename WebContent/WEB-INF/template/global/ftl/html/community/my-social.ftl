@@ -215,8 +215,8 @@
 					</div>
 				</div>			
 			</div>
-			<article class="bg-sky">			
-				<div class="container-fluid content">
+			<article class="bg-sky" style="min-height:200px;">			
+				<div class="container-fluid content" >
 					<div id="personalized-area" class="row"></div>
 				</div>
 			</article>		
