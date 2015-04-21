@@ -924,7 +924,7 @@
 		
 							<#if !action.user.anonymous >	
 							<div class="panel panel-default m-t-sm margin-bottom-40">
-								<div class="panel-body">
+								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 									<div class="row">
 										<div class="col-md-4">
@@ -960,10 +960,10 @@
 										</div>
 									</div>									
 								</div>		
-								<div class="panel-body">								
+								<div class="panel-body no-padding">								
 									<div id="attachment-list-view" class="file-listview"></div>		
 								</div>								
-								<div class="panel-footer p-xxs bg-white">
+								<div class="panel-footer no-padding">
 									<div id="pager" class="file-listview-pager k-pager-wrap"></div>		
 								</div>							
 							</div>		
