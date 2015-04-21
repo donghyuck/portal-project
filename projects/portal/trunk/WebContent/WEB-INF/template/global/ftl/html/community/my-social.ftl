@@ -34,7 +34,7 @@
 				// FEATURES SETUP	
 				common.ui.setup({
 					features:{
-						wallpaper : true,
+						wallpaper : false,
 						lightbox : true,
 						spmenu : true,
 						accounts : {
@@ -45,10 +45,7 @@
 								}
 							} 
 						}	
-					},
-					wallpaper : {
-						slideshow : false
-					},
+					}
 					jobs:jobs
 				});		
 				
