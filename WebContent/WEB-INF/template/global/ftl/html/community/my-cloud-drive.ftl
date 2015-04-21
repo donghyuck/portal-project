@@ -68,7 +68,7 @@
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-files' ){					
 						createAttachmentListView();
-					} else if(show_bs_tab.attr('href') == '#my-photo-stream' ){					
+					} else if(show_bs_tab.attr('href') == '#my-photos' ){					
 						createPhotoListView();
 					}					
 				});				
@@ -483,33 +483,33 @@
 									}		
 								});		
 							}	
-							$("#my-photo-stream .panel-upload").slideToggle(200);
+							$("#my-photos .panel-upload").slideToggle(200);
 						},
 						reset: function(e){
 							this.data.sourceUrl = '';
 							this.data.imageUrl = '';							
-							$('#my-photo-stream .sky-form input').val('');							
+							$('#my-photos .sky-form input').val('');							
 						},	
 						upload: function(e) {
 							$this = this;
 							e.preventDefault();	
 							var hasError = false;											
-							$('#my-photo-stream .sky-form .input.state-error').removeClass("state-error");								
+							$('#my-photos .sky-form .input.state-error').removeClass("state-error");								
 							if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
-								$('#my-photo-stream .sky-form .input').eq(0).addClass("state-error");			
+								$('#my-photos .sky-form .input').eq(0).addClass("state-error");			
 								hasError = true;					
 							}else{
-								if( $('#my-photo-stream .sky-form .input').eq(0).hasClass("state-error") ){
-									$('#my-photo-stream .sky-form .input').eq(0).removeClass("state-error");
+								if( $('#my-photos .sky-form .input').eq(0).hasClass("state-error") ){
+									$('#my-photos .sky-form .input').eq(0).removeClass("state-error");
 								}											
 							}																		
 							
 							if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.valid("url", this.data.imageUrl)  ){
-								$('#my-photo-stream .sky-form .input').eq(1).addClass("state-error");
+								$('#my-photos .sky-form .input').eq(1).addClass("state-error");
 								hasError = true;		
 							}else{
-								if( $('#my-photo-stream .sky-form .input').eq(1).hasClass("state-error") ){
-									$('#my-photo-stream .sky-form .input').eq(1).removeClass("state-error");
+								if( $('#my-photos .sky-form .input').eq(1).hasClass("state-error") ){
+									$('#my-photos .sky-form .input').eq(1).removeClass("state-error");
 								}											
 							}				
 							if( !hasError ){
@@ -530,7 +530,7 @@
 							}				
 						}										
 					});			
-					kendo.bind($("#my-photo-stream"), model);						
+					kendo.bind($("#my-photos"), model);						
 			}			
 		}	
 		
@@ -889,7 +889,7 @@
 			<div class="container content">		
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
-						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab" class="rounded-top m-l-sm">포토</a></li>
+						<li><a href="#my-photos" tabindex="-1" data-toggle="tab" class="rounded-top m-l-sm">포토</a></li>
 						<li><a href="#my-files" tabindex="-1" data-toggle="tab" class="rounded-top">파일</a></li>							
 					</ul>					
 					<!-- tab-content -->		
@@ -958,7 +958,7 @@
 							</#if>																								
 						</div><!-- end tab-pane -->		
 						<!-- start tab-pane -->
-						<div class="tab-pane" id="my-photo-stream">			
+						<div class="tab-pane" id="my-photos">			
 							<#if !action.user.anonymous >			
 							<section class="sky-form panel-upload" style="position:relative; display:none;">
 								<header>
@@ -990,9 +990,7 @@
 										</div>
 									</div>
 								</fieldset>	
-							</section>	
-							</#if>	
-							<#if !action.user.anonymous >			
+							</section>			
 							<div class="panel panel-default no-margin-b">			
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
