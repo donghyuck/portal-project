@@ -70,7 +70,7 @@
 																																			
 				// SpMenu Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
-					//e.preventDefault();		
+					e.preventDefault();		
 					var show_bs_tab = $(e.target);
 					if( show_bs_tab.attr('href') == '#my-files' ){					
 						createAttachmentListView();
@@ -467,7 +467,7 @@
 					showPhotoPanel(item);
 				});	
 								
-			//	if( !common.ui.defined(renderTo.data("model"))){
+			
 					var model = common.ui.observable({
 						data : {
 							objectType : 2,
@@ -536,9 +536,7 @@
 							}				
 						}										
 					});			
-			//		renderTo.data("model", model);
-					kendo.bind($("#my-photo-stream"), model);					
-			//	} 				
+					kendo.bind($("#my-photo-stream"), model);						
 			}			
 		}	
 		
@@ -1026,7 +1024,7 @@
 									</div>						
 								</div>
 								<div class="panel-body no-padding">
-									<div id="photo-list-view" class="image-listview" ></div>
+									<div id="photo-list-view" class="image-listview" style="min-height:450px;">		</div>
 								</div>	
 								<div class="panel-footer no-padding">
 									<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
