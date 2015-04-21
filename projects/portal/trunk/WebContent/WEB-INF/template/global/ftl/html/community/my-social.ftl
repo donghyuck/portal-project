@@ -187,11 +187,30 @@
 			</div>
 			</#if>	
 			<div class="container content">
-								<div class="btn-toolbar">
-									<div id="navbar-btn-my-streams" class="btn-group btn-group-lg" data-toggle="buttons">
-										<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
-									</div>	
-								</div>				
+				<div class="row">
+					<div class="col-md-6">
+						<div class="btn-toolbar">
+							<div id="navbar-btn-my-streams" class="btn-group btn-group-lg" data-toggle="buttons">
+								<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+							</div>	
+						</div>							
+					</div>
+					<div class="col-md-6">
+								<div class="pull-right">
+									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
+										<label class="btn btn-info rounded-left">
+											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
+										</label>
+										<label class="btn btn-info">
+									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
+										</label>
+										<label class="btn btn-info active rounded-right">
+											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
+										</label>
+									</div>														
+								</div>						
+					</div>
+				</div>			
 			</div>	
 			<!--		
 			<section class="personalized-session bg-trans" >
@@ -220,19 +239,7 @@
 					<div class="container-fluid p-xs">
 						<div class="row m-b-xs">
 							<div class="col-sm-12">
-								<div class="pull-right">
-									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
-										<label class="btn btn-info rounded-left">
-											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-										</label>
-										<label class="btn btn-info">
-									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-										</label>
-										<label class="btn btn-info active rounded-right">
-											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-										</label>
-									</div>														
-								</div>	
+
 							</div>
 						</div>
 						<div id="personalized-area" class="row"></div>
