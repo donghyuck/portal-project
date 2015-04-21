@@ -63,9 +63,6 @@
 				var currentUser = new common.ui.data.User();			
 
 				// menu active setting	
-				preparePage({
-					navbar : { parent: "MENU_PERSONALIZED", current: "MENU_PERSONALIZED_2"	}
-				});
 																																			
 				// SpMenu Tabs								
 				$('#myTab').on( 'show.bs.tab', function (e) {
