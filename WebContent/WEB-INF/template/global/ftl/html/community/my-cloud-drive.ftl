@@ -998,9 +998,9 @@
 											<label class="label">사진</label>
 											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url2" placeholder="사진 URL"  data-bind="value: data.imageUrl"></label>
 											<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
-											
+											<section class="text-right">
 											<button type="submit" class="btn btn-primary" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
-											
+											</section>
 										</div>
 									</div>
 								</fieldset>	
