@@ -536,7 +536,7 @@
 		var settings = extend(true, {}, DEFAULT_PROPERTY_DATASOURCE_CFG , options ); 
 		return DataSource.create(settings);		
 	}
-	
+		
 	extend( common.ui.data, {
 		user : user ,
 		image : {
