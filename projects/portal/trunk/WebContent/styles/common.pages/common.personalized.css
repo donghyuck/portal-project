@@ -115,12 +115,17 @@
 	display: block;
 	opacity: .5;
 }
+
 .personalized-controls .btn-flat:hover {
 	opacity: 1;
 }
 
 .personalized-controls .btn-flat.settings {
 	background-position: -59px -286px;
+}
+
+.personalized-controls .btn-flat.gift {
+	background-position: -293px -22px;
 }
 
 .sky-form > header .close-sm {
