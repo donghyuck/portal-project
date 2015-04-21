@@ -951,7 +951,7 @@
 											</div>								
 										</div>
 										<div class="col-md-4">
-											<button type="button" class="btn btn-info btn-lg" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> 파일업로드</button>	
+											<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-3x"></i> 파일업로드</button>	
 										</div>
 									</div>									
 									<hr/>
