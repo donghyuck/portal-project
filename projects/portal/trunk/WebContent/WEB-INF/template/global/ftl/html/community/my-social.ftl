@@ -106,6 +106,11 @@
 		<!-- display media stream panel                        -->
 		<!-- ============================== -->		
 		function showMediaPanel(connect){	
+
+			if( $("article.bg-sky").is(":hidden") ){
+				$("article.bg-sky").show();
+			} 		
+		
 			var appendTo = getNextPersonalizedColumn($("#personalized-area"));
 			var panel = common.ui.extPanel(
 			appendTo,
@@ -148,10 +153,6 @@
 				}
 			});
 			panel.show();
-			
-			if( $("article.bg-sky").is(":hidden") ){
-				$("article.bg-sky").show();
-			} 
 		}
 						
 		-->
