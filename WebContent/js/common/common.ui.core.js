@@ -501,11 +501,11 @@
 				total: "totalCount",
 				data: "photos"
 			},
-			change : function(e){
+			change : function(e){				
 				var view = this.view(), urls = [];				
 				each(view, function(idx, photo){
 					urls.push(template(photo));
-				});				
+				});		
 				if( defined( options.renderTo) ){
 					options.renderTo.backstretch( urls, {duration: 6000, fade: 750});	
 				}else{
