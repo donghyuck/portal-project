@@ -465,8 +465,7 @@
 					var item = data[index];
 					item.set("index", index );
 					showPhotoPanel(item);
-				});									
-				
+				});	
 								
 				if( !common.ui.defined(renderTo.data("model"))){
 					var model = common.ui.observable({
@@ -490,7 +489,7 @@
 									}		
 								});		
 							}	
-							$("#my-photo-stream .panel-upload").slideToggle(200);							
+							$("#my-photo-stream .panel-upload").slideToggle(200);
 						},
 						reset: function(e){
 							this.data.sourceUrl = '';
@@ -536,7 +535,8 @@
 								});		
 							}				
 						}										
-					});					
+					});			
+					renderTo.data("model", model );		
 					kendo.bind($("#my-photo-stream .sky-form"), model);					
 				} 				
 			}			
