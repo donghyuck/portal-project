@@ -160,6 +160,16 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
+			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />		
+			<div class="breadcrumbs-v3 img-v1 arrow-up">
+				<div class="container text-center p-xl">
+					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<h1 class="text-xxl">${ navigator.title }</h1>
+					</div><!--/end container-->
+			</div>
+			</#if>	
+						
 			<section class="personalized-session bg-trans" >
 				<div class="personalized-session-heading">
 					<div class="container">
