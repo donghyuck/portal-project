@@ -396,10 +396,9 @@
 		}
 		
 		function createPhotoListView(){
-			if( !common.ui.exists($('#photo-list-view')) ){
-				common.ui.listview(
-					$('#photo-list-view'),
-					{
+			var renderTo = $('#photo-list-view');
+			if( !common.ui.exists(renderTo) ){
+				common.ui.listview(	renderTo, {
 						dataSource : common.ui.datasource(
 							'<@spring.url "/data/images/list.json?output=json" />',
 							{
@@ -433,7 +432,7 @@
 							if(common.ui.exists(renderTo) && common.ui.dialog(renderTo).isOpen ){
 								var list_view_pager = common.ui.pager( $("#photo-list-pager") );
 								var dialogFx = common.ui.dialog(renderTo);
-								var data = common.ui.listview($('#photo-list-view')).dataSource.view();								
+								var data = common.ui.listview(renderTo).dataSource.view();								
 								if( dialogFx.data().page > list_view_pager.page() ){
 									var item = data[dialogFx.data().pageSize - 1];
 									item.set("index", dialogFx.data().pageSize -1 );
@@ -448,7 +447,8 @@
 						navigatable: false,
 						template: kendo.template($("#photo-list-view-template").html())
 					}
-				);					
+				);		
+							
 				$("#image-source-list input[type=radio][name=image-source]").on("change", function () {
 					common.ui.listview($('#photo-list-view')).dataSource.read();	
 				});				
@@ -457,15 +457,89 @@
 				}).on("mouseleave", ".img-wrapper", function(e) {
 					common.ui.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 				});														
-				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, pageSizes: true, dataSource : common.ui.listview($('#photo-list-view')).dataSource });				
-				$("#photo-list-view").on("click", ".img-wrapper button", function(e){
+				common.ui.pager( $("#photo-list-pager"), { buttonCount : 9, pageSizes: true, dataSource : common.ui.listview($('#photo-list-view')).dataSource });
+				
+				renderTo.on("click", ".img-wrapper button", function(e){
 					var index = $(this).closest("[data-uid]").index();
-					var data = common.ui.listview($('#photo-list-view')).dataSource.view();					
+					var data = common.ui.listview(renderTo).dataSource.view();					
 					var item = data[index];
 					item.set("index", index );
 					showPhotoPanel(item);
 				});									
 				
+								
+				if( !common.ui.defined(renderTo.data("model")){
+					var model = common.ui.observable({
+						data : {
+							objectType : 2,
+							sourceUrl : '', 
+							imageUrl : ''
+						},
+						toggle: function(e){
+							if( !common.ui.exists($("#photo-files")) ){
+								common.ui.upload($("#photo-files"),{
+									async: {
+										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+									},
+									upload: function(e){
+										e.data = {objectType:getMyDriverPhotoSource()};
+									},
+									success : function(e) {	
+										var photo_list_view = common.ui.listview(renderTo);
+										photo_list_view.dataSource.read();								
+									}		
+								});		
+							}	
+							$("#my-photo-stream .panel-upload").slideToggle(200);							
+						},
+						reset: function(e){
+							this.data.sourceUrl = '';
+							this.data.imageUrl = '';							
+							$('#my-photo-stream .sky-form input').val('');							
+						},	
+						upload: function(e) {
+							$this = this;
+							e.preventDefault();	
+							var hasError = false;											
+							$('#my-photo-stream .sky-form .input.state-error').removeClass("state-error");								
+							if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
+								$('#my-photo-stream .sky-form .input').eq(0).addClass("state-error");			
+								hasError = true;					
+							}else{
+								if( $('#my-photo-stream .sky-form .input').eq(0).hasClass("state-error") ){
+									$('#my-photo-stream .sky-form .input').eq(0).removeClass("state-error");
+								}											
+							}																		
+							
+							if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.valid("url", this.data.imageUrl)  ){
+								$('#my-photo-stream .sky-form .input').eq(1).addClass("state-error");
+								hasError = true;		
+							}else{
+								if( $('#my-photo-stream .sky-form .input').eq(1).hasClass("state-error") ){
+									$('#my-photo-stream .sky-form .input').eq(1).removeClass("state-error");
+								}											
+							}				
+							if( !hasError ){
+								var btn = $(e.target);
+								btn.button('loading');			
+								this.data.objectType = getMyDriverPhotoSource();
+								common.ui.data.image.uploadByUrl( {
+									data : this.data ,
+									success : function(response){
+										var photo_list_view = common.ui.listview(renderTo);
+										photo_list_view.dataSource.read();		
+									},
+									always : function(){
+										btn.button('reset');										
+										$this.reset();
+									}
+								});		
+							}				
+						}										
+					});
+					kendo.bind($("#my-photo-stream .sky-form"), model);					
+				} 
+				/*
 				common.ui.buttons($("#my-photo-stream [data-action]"), {
 					handlers : {
 						"upload" : function(e){				
@@ -482,6 +556,7 @@
 										photo_list_view.dataSource.read();								
 									}		
 								});		
+								
 								var model = common.ui.observable({
 									data : {
 										objectType : 2,
@@ -532,8 +607,11 @@
 									}
 								});
 								kendo.bind($("#my-photo-stream form"), model);							
-							}											
-							$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
+							}				
+							
+														
+							//$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
+							
 							$("#my-photo-stream .panel-upload").slideToggle(200);	
 						},
 						"upload-close" : function(e){
@@ -541,6 +619,7 @@
 						}	
 					}
 				});
+				*/
 			}			
 		}	
 		
@@ -974,7 +1053,7 @@
 							<section class="sky-form panel-upload" style="position:relative; display:none;">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 
-									<span class="close-sm" data-action="upload-close"></span>										
+									<span class="close-sm" data-bind="events: { click: toggle }"></span>										
 								</header>
 								<fieldset>
 									<div class="row">
@@ -1023,7 +1102,7 @@
 											</div>		
 										</div>
 										<div class="col-sm-4">
-											<button type="button" class="btn btn-info btn-lg btn-flat btn-block m-t-sm btn-outline bg-white rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
+											<button type="button" class="btn btn-info btn-lg btn-flat btn-block m-t-sm btn-outline bg-white rounded" data-toggle="button" data-bind="events: { click: toggle }"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
 										</div>
 									</div>						
 								</div>
