@@ -128,6 +128,11 @@
 	background-position: -278px -12px;
 }
 
+.personalized-controls .btn-flat.t-0-r-1 {
+	top:0;
+	right: 61px;	
+}
+
 .sky-form > header .close-sm {
 	top: 5px;
 	right : 5px;
