@@ -924,7 +924,7 @@
 		
 							<#if !action.user.anonymous >	
 							<div class="panel panel-default m-t-sm margin-bottom-40">
-								<div class="panel-body bg-slivergray border-b">
+								<div class="panel-body border-b">
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 									<div class="row">
 										<div class="col-md-4">
@@ -956,7 +956,7 @@
 											</div>								
 										</div>
 										<div class="col-md-4">
-											<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	
+											<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg m-t-sm rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	
 										</div>
 									</div>									
 								</div>		
