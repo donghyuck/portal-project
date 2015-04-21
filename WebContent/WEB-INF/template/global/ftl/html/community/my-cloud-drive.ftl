@@ -742,6 +742,10 @@
 			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
 				color : #fff;
 			}
+						
+			button[data-action='upoad'] {
+				font-size : 2.5em;
+			}
 												
 			#image-gallery-pager { 
 				margin-top: 5px; 
