@@ -920,11 +920,10 @@
 									<input name="uploadAttachment" id="attachment-files" type="file" />												
 									</#if>	
 								</fieldset>			
-							</section>			
-		
+							</section>					
 							<#if !action.user.anonymous >	
 							<div class="panel panel-default m-t-sm margin-bottom-40">
-								<div class="panel-body border-b">
+								<div class="panel-body border-b">								
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 									<div class="row">
 										<div class="col-md-4">
@@ -967,13 +966,11 @@
 									<div id="pager" class="file-listview-pager k-pager-wrap"></div>		
 								</div>							
 							</div>		
-							</#if>								
-							
-																							
+							</#if>																								
 						</div><!-- end tab-pane -->		
 						<!-- start tab-pane -->
 						<div class="tab-pane" id="my-photo-stream">			
-						
+							<#if !action.user.anonymous >			
 							<section class="sky-form panel-upload" style="position:relative; display:none;">
 								<header>
 									<i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 
@@ -1005,73 +1002,39 @@
 									</div>
 								</fieldset>	
 							</section>	
-												<!--							
-							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
-								<div class="panel-heading">
-									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
-								</div>												
-								<div class="panel-body">
-														<#if !action.user.anonymous >			
-														<div class="page-header text-primary">
-															<h5><i class="fa fa-upload"></i>&nbsp;<strong>사진 업로드</strong>&nbsp;<small>아래의 <strong>사진 선택</strong> 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></h5>
-														</div>
-														
-														<div class="blank-top-5" ></div>
-														<div class="page-header text-primary">
-															<h5><i class="fa fa-upload"></i>&nbsp;<strong>URL 사진 업로드</strong>&nbsp;<small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></h5>
-														</div>						
-														<form name="photo-url-upload-form" class="form-horizontal" role="form">
-															<div class="form-group">
-																<label class="col-sm-2 control-label"><small>출처</small></label>
-																<div class="col-sm-10">
-																	<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.sourceUrl">
-																	<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
-																</div>
-															</div>
-															<div class="form-group">
-																<label class="col-sm-2 control-label"><small>사진</small></label>
-																<div class="col-sm-10">
-																	<input type="url" class="form-control" placeholder="URL"  data-bind="value: data.imageUrl">
-																	<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
-																</div>
-															</div>														
-															<div class="form-group">
-																<div class="col-sm-offset-2 col-sm-10">
-																	<button type="submit" class="btn btn-primary btn-sm btn-control-group" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
-																</div>
-															</div>
-														</form>
-														</#if>
-													</div>
-								</div>	
--->
+							</#if>	
+							<#if !action.user.anonymous >			
 							<div class="panel panel-default no-margin-b">			
 								<div class="panel-body bg-slivergray border-b">
-								<p class="text-muted"><small><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </small></p>
-								<#if !action.user.anonymous >		
-								<p class="pull-right">				
-									<button type="button" class="btn btn-info btn-lg btn-control-group rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>																		
-								</p>										
-								<div class="btn-group" data-toggle="buttons" id="image-source-list">
-									<label class="btn btn-sm btn-danger rounded-left active">
-										<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
-									</label>
-									<label class="btn btn-sm btn-danger">
-										<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
-									</label>											
-									<label class="btn btn-sm btn-danger rounded-right">
-										<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
-									</label>
-								</div>																			
-								</#if>											
+									<p class="text-muted"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
+									<div class="row" >
+										<div class="col-sm-8">
+											<h4>소유자</h4>
+											<div class="btn-group" data-toggle="buttons" id="image-source-list">
+												<label class="btn btn-danger rounded-left active">
+													<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
+												</label>
+												<label class="btn btn-danger">
+													<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
+												</label>											
+												<label class="btn btn-danger rounded-right">
+													<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
+												</label>
+											</div>		
+										</div>
+										<div class="col-sm-4">
+											<button type="button" class="btn btn-info btn-lg  btn-block rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
+										</div>
+									</div>						
+								</div>
+								<div class="panel-body no-padding">
+									<div id="photo-list-view" class="image-listview" ></div>
+								</div>	
+								<div class="panel-footer no-padding">
+									<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
+								</div>
 							</div>
-							<div class="panel-body no-padding">
-								<div id="photo-list-view" class="image-listview" ></div>
-							</div>	
-							<div class="panel-footer no-padding">
-								<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
-							</div>
-						</div>	
+							</#if>			
 					</div><!-- end tab-pane -->
 				</div><!-- end of tab content -->		
 				
