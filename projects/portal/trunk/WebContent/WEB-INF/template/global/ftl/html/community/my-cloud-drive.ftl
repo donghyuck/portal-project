@@ -5,7 +5,7 @@
 		
 		<#assign pageMenuName = "USER_MENU" />
 		<#assign navigator = action.getNavigator() />		
-		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
+		<title><>${page.title}</title>
 		<#compress>		
 		<script type="text/javascript">
 		<!--
