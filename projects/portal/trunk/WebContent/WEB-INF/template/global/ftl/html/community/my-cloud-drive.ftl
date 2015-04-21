@@ -972,7 +972,26 @@
 																							
 						</div><!-- end tab-pane -->		
 						<!-- start tab-pane -->
-						<div class="tab-pane" id="my-photo-stream">									
+						<div class="tab-pane" id="my-photo-stream">			
+						
+							<section class="sky-form panel-upload" style="position:relative; display:none;">
+								<header>
+									<i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드 
+									<span class="close-sm" data-action="upload-close"></span>										
+								</header>
+								<fieldset>
+									<div class="row">
+										<div class="col-sm-6">
+											<div class="headline"><h3>사진 업로드 </h3></div>										
+										
+										</div>
+										<div class="col-sm-6">
+											<div class="headline"><h3>URL 업로드</h3></div>	
+										</div>
+									</div>
+								</fieldset>	
+							</section>	
+																			
 							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
