@@ -876,6 +876,8 @@
 			<#include "/html/common/common-homepage-menu.ftl" >		
 			<!-- ./END HEADER -->
 			<!-- START MAIN CONTENT -->
+			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />					
 			<div class="interactive-slider-v2 bg-dark arrow-up">
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
@@ -883,6 +885,7 @@
 					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section"></span>
 					</div><!--/end container-->
 			</div>
+			</#if>				
 			<div class="container content">		
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
