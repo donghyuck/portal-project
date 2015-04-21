@@ -536,91 +536,9 @@
 								});		
 							}				
 						}										
-					});
+					});					
 					kendo.bind($("#my-photo-stream .sky-form"), model);					
-				} 
-				
-				/**
-				common.ui.buttons($("#my-photo-stream [data-action]"), {
-					handlers : {
-						"upload" : function(e){				
-							if( !common.ui.exists($("#photo-files")) ){
-								common.ui.upload($("#photo-files"),{
-									async: {
-										saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
-									},
-									upload: function(e){
-										e.data = {objectType:getMyDriverPhotoSource()};
-									},
-									success : function(e) {	
-										var photo_list_view = common.ui.listview($('#photo-list-view'));
-										photo_list_view.dataSource.read();								
-									}		
-								});		
-								
-								var model = common.ui.observable({
-									data : {
-										objectType : 2,
-										sourceUrl : null, 
-										imageUrl : null
-									},
-									reset: function(e){
-										this.data.sourceUrl = null;
-										this.data.imageUrl = null;
-									},
-									upload: function(e) {
-										e.preventDefault();	
-										var hasError = false;											
-										$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");								
-										if( this.data.sourceUrl == null || this.data.sourceUrl.length == 0 || !common.valid("url", this.data.sourceUrl) ){
-											$('#my-photo-stream form div.form-group').eq(0).addClass("has-error");			
-											hasError = true;					
-										}else{
-											if( $('#my-photo-stream form div.form-group').eq(0).hasClass("has-error") ){
-												$('#my-photo-stream form div.form-group').eq(0).removeClass("has-error");
-											}											
-										}																				
-										if( this.data.imageUrl == null || this.data.imageUrl.length == 0 || !common.valid("url", this.data.imageUrl)  ){
-											$('#my-photo-stream form div.form-group').eq(1).addClass("has-error");
-											hasError = true;		
-										}else{
-											if( $('#my-photo-stream form div.form-group').eq(1).hasClass("has-error") ){
-												$('#my-photo-stream form div.form-group').eq(1).removeClass("has-error");
-											}											
-										}				
-										if( !hasError ){
-											var btn = $(e.target);
-											btn.button('loading');			
-											this.data.objectType = getMyDriverPhotoSource();
-											common.ui.data.image.uploadByUrl( {
-												data : this.data ,
-												success : function(response){
-													var photo_list_view = common.ui.listview($('#photo-list-view'));
-													photo_list_view.dataSource.read();		
-												},
-												always : function(){
-													btn.button('reset');
-													$('#my-photo-stream form')[0].reset();
-													model.reset();
-												}
-											});		
-										}				
-									}
-								});
-								kendo.bind($("#my-photo-stream form"), model);							
-							}				
-							
-														
-							$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
-							
-							$("#my-photo-stream .panel-upload").slideToggle(200);	
-						},
-						"upload-close" : function(e){
-							$("#my-photo-stream .panel-upload").slideToggle(200);		
-						}	
-					}
-				});
-				*/
+				} 				
 			}			
 		}	
 		
