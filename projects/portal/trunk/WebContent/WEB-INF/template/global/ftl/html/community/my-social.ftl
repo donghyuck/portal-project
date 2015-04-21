@@ -214,6 +214,12 @@
 					</div>
 				</div>			
 			</div>	
+			<article class="bg-slivergray">			
+				<div class="container content no-padding-b">
+					<div id="personalized-area" class="row"></div>
+				</div>
+			</article>		
+				
 			<!--		
 			<section class="personalized-session bg-trans" >
 				<div class="personalized-session-heading">
@@ -235,7 +241,7 @@
 					<span class="close"></span>
 				</div>			
 			</div>						
-			-->
+		
 			<section class="personalized-section bg-grid open" >
 				<div class="personalized-section-content animated" style="display:block;">
 					<div class="container-fluid p-xs">
@@ -244,10 +250,10 @@
 
 							</div>
 						</div>
-						<div id="personalized-area" class="row"></div>
+						
 					</div>													
 				</div>				
-			</section><!-- /.section -->
+			</section>	--><!-- /.section -->
 
 			<!-- END MAIN CONTENT -->		
  		<!-- START FOOTER -->
