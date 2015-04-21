@@ -1023,7 +1023,7 @@
 											</div>		
 										</div>
 										<div class="col-sm-4">
-											<button type="button" class="btn btn-info btn-lg  btn-block m-t-sm  rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
+											<button type="button" class="btn btn-info btn-lg btn-flat btn-block m-t-sm btn-outline bg-white rounded" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
 										</div>
 									</div>						
 								</div>
