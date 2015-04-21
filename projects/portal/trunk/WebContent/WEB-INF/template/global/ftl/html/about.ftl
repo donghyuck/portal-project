@@ -25,7 +25,7 @@
 			
 				common.ui.setup({
 					features:{
-						wallpaper : false,
+						wallpaper : true,
 						lightbox : true,
 						spmenu : false,
 						morphing : false,
@@ -37,6 +37,9 @@
 								}
 							} 
 						}						
+					},
+					wallpaper : {
+						renderTo:$(".interactive-slider-v2")
 					},
 					jobs:jobs
 				});	
