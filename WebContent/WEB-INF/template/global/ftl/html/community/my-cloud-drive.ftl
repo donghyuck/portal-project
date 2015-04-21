@@ -743,7 +743,7 @@
 				color : #fff;
 			}
 						
-			button[data-action='upoad'] {
+			.btn.btn-flat.btn-lg{
 				font-size : 2.5em;
 				font-weight:200;
 			}
@@ -956,7 +956,7 @@
 											</div>								
 										</div>
 										<div class="col-md-4">
-											<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-3x"></i> 파일업로드</button>	
+											<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	
 										</div>
 									</div>									
 									<hr/>
