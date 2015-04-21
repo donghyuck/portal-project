@@ -186,6 +186,7 @@
 					</div><!--/end container-->
 			</div>
 			</#if>	
+			<article class="bg-slivergray">
 			<div class="container content">
 				<div class="row">
 					<div class="col-md-6">
@@ -213,9 +214,10 @@
 								</div>						
 					</div>
 				</div>			
-			</div>	
-			<article class="bg-slivergray">			
-				<div class="container content no-padding-b">
+			</div>
+			</article>	
+			<article class="bg-white">			
+				<div class="container">
 					<div id="personalized-area" class="row"></div>
 				</div>
 			</article>		
