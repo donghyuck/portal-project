@@ -158,7 +158,12 @@
 				font-weight: 200;
 				margin-bottom: 0;
 			}	
-		
+			
+			.breadcrumbs-v3.img-v1 {
+				background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
+				background-size: cover;
+				background-position: center center;			
+			}		
 		</style>   	
 	</head>
 	<body id="doc" class="bg-dark">
