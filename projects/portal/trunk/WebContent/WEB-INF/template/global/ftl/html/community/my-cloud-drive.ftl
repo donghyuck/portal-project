@@ -467,7 +467,7 @@
 					showPhotoPanel(item);
 				});	
 								
-				if( !common.ui.defined(renderTo.data("model"))){
+			//	if( !common.ui.defined(renderTo.data("model"))){
 					var model = common.ui.observable({
 						data : {
 							objectType : 2,
@@ -536,9 +536,9 @@
 							}				
 						}										
 					});			
-					renderTo.data("model", model);
+			//		renderTo.data("model", model);
 					kendo.bind($("#my-photo-stream"), model);					
-				} 				
+			//	} 				
 			}			
 		}	
 		
