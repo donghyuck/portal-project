@@ -468,7 +468,7 @@
 				});									
 				
 								
-				if( !common.ui.defined(renderTo.data("model")){
+				if( !common.ui.defined(renderTo.data("model"))){
 					var model = common.ui.observable({
 						data : {
 							objectType : 2,
