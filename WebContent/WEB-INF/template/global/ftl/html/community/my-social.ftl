@@ -153,7 +153,7 @@
 				position:relative;
 			}
 			.breadcrumbs-v3 p	{
-				color : #ccc;
+				color : #585f69;
 				font-size: 24px;
 				font-weight: 200;
 				margin-bottom: 0;
