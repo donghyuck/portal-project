@@ -1034,7 +1034,7 @@
 								</div>																			
 								</#if>											
 							</div>
-							<div class="panel-body p-xxs">
+							<div class="panel-body no-padding">
 								<div id="photo-list-view" class="image-listview" ></div>
 							</div>	
 							<div class="panel-footer no-padding">
