@@ -148,6 +148,10 @@
 				}
 			});
 			panel.show();
+			
+			if( $("article.bg-sky").is(":hidden") ){
+				$("article.bg-sky").show();
+			} 
 		}
 						
 		-->
@@ -215,7 +219,7 @@
 					</div>
 				</div>			
 			</div>
-			<article class="bg-sky" style="min-height:200px; display:none;">			
+			<article class="bg-sky animated fadeInUp" style="min-height:200px; display:none;">			
 				<div class="container-fluid content" >
 					<div id="personalized-area" class="row"></div>
 				</div>
