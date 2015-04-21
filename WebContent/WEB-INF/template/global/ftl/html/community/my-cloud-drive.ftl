@@ -2,7 +2,7 @@
 <html decorator="unify">
 <head>
 		<#assign page = action.getPage() >		
-		<#assign navigator = action.getNavigator() />		
+		
 		<title><>${page.title}</title>
 		<#compress>		
 		<script type="text/javascript">
