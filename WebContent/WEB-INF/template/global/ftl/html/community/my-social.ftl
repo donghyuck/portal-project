@@ -186,7 +186,6 @@
 					</div><!--/end container-->
 			</div>
 			</#if>	
-			<article class="bg-slivergray">
 			<div class="container content">
 				<div class="row">
 					<div class="col-md-6">
@@ -215,9 +214,8 @@
 					</div>
 				</div>			
 			</div>
-			</article>	
-			<article class="bg-white">			
-				<div class="container">
+			<article class="bg-sky">			
+				<div class="container-fluid content>
 					<div id="personalized-area" class="row"></div>
 				</div>
 			</article>		
