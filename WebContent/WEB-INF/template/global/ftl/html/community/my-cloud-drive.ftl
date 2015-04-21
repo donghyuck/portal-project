@@ -892,8 +892,6 @@
 						<li><a href="#my-photo-stream" tabindex="-1" data-toggle="tab" class="rounded-top m-l-sm">포토</a></li>
 						<li><a href="#my-files" tabindex="-1" data-toggle="tab" class="rounded-top">파일</a></li>							
 					</ul>					
-				</div>
-
 					<!-- tab-content -->		
 					<div class="tab-content">
 						<!-- start tab-pane -->
@@ -1026,9 +1024,9 @@
 								</div>
 							</div>
 							</#if>			
-					</div><!-- end tab-pane -->
-				</div><!-- end of tab content -->		
-				
+						</div><!-- end tab-pane -->
+					</div><!-- end of tab content -->		
+				</div>			
 			</div><!--/end container-->
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
