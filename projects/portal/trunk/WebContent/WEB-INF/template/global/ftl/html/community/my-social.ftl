@@ -72,7 +72,7 @@
 			var myConnectDataSource = common.ui.connect.list.datasource({
 				change:function(e){
 					var $this = this;
-					var template = kendo.template('<label class="btn btn-info"><input name="selectedSocialConnect" type="checkbox" value="#:socialConnectId#"><i class="fa fa-#= providerId #"></i> #: providerId #</label>');
+					var template = kendo.template('<label class="btn btn-primary"><input name="selectedSocialConnect" type="checkbox" value="#:socialConnectId#"><i class="fa fa-#= providerId #"></i> #: providerId #</label>');
 					var html = kendo.render(template, $this.data());
 					renderTo.html(html);	
 					renderTo.find("label").first().addClass("rounded-left");
