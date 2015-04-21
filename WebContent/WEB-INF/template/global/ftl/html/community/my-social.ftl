@@ -72,7 +72,7 @@
 			var myConnectDataSource = common.ui.connect.list.datasource({
 				change:function(e){
 					var $this = this;
-					var template = kendo.template('<label class="btn btn-primary"><input name="selectedSocialConnect" type="checkbox" value="#:socialConnectId#"><i class="fa fa-#= providerId #"></i> #: providerId #</label>');
+					var template = kendo.template('<label class="btn btn-info"><input name="selectedSocialConnect" type="checkbox" value="#:socialConnectId#"><i class="fa fa-#= providerId #"></i> #: providerId #</label>');
 					var html = kendo.render(template, $this.data());
 					renderTo.html(html);	
 					renderTo.find("label").first().addClass("rounded-left");
@@ -188,7 +188,7 @@
 			</#if>	
 			<div class="container content">
 								<div class="btn-toolbar">
-									<div id="navbar-btn-my-streams" class="btn-group btn-group-sm" data-toggle="buttons">
+									<div id="navbar-btn-my-streams" class="btn-group btn-group-lg" data-toggle="buttons">
 										<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
 									</div>	
 								</div>				
