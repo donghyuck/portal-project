@@ -989,8 +989,8 @@
 											</div>
 										</div>
 										<div class="col-sm-6">
-											<div class="headline"><h3><i class="fa fa-upload"></i> URL 업로드</h3> <small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></div>	
-											
+											<h4><i class="fa fa-upload"></i> URL 업로드 </h4> 
+											<p>사진이 존재하는 URL 을 직접 입력하여 주세요.</p>
 											<label class="label">출처</label>
 											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url" placeholder="출처 URL"  data-bind="value: data.sourceUrl"></label>
 											<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
@@ -999,7 +999,7 @@
 											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url2" placeholder="사진 URL"  data-bind="value: data.imageUrl"></label>
 											<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
 											
-											
+											<button type="submit" class="btn btn-primary" data-bind="events: { click: upload }" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><i class="fa fa-cloud-upload"></i> &nbsp; URL 사진 업로드</button>
 											
 										</div>
 									</div>
