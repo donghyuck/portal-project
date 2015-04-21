@@ -923,7 +923,7 @@
 							</section>			
 		
 							<#if !action.user.anonymous >	
-							<div class="panel panel-blue m-t-sm margin-bottom-40">
+							<div class="panel panel-default m-t-sm margin-bottom-40">
 								<div class="panel-body">
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 									<div class="row">
@@ -959,7 +959,8 @@
 											<button type="button" class="btn btn-info btn-flat btn-outline btn-block btn-lg" data-toggle="button" data-action="upload"><i class="fa fa-cloud-upload fa-lg"></i> 파일업로드</button>	
 										</div>
 									</div>									
-									<hr/>
+								</div>		
+								<div class="panel-body">								
 									<div id="attachment-list-view" class="file-listview"></div>		
 								</div>								
 								<div class="panel-footer p-xxs bg-white">
