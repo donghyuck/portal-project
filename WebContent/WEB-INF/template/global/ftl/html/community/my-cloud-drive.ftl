@@ -916,7 +916,7 @@
 									<p class="text-muted"><i class="fa fa-info"></i> 파일보기 버튼을 클릭하면 상세 정보 및 수정을 할 수 있습니다.</p>
 									<div class="row">
 										<div class="col-md-4">
-											<h4>소유자</h4>
+											<h4><i class="fa fa-angle-right"></i> 소유자</h4>
 											<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
 												<label class="btn btn-danger rounded-left active">
 													<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
@@ -930,7 +930,7 @@
 											</div>												
 										</div>
 										<div class="col-md-4">
-											<h4>필터</h4>
+											<h4><i class="fa fa-angle-right"></i> 필터</h4>
 											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-info  rounded-left active">
 													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
@@ -996,7 +996,7 @@
 									<p class="text-muted"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
 									<div class="row" >
 										<div class="col-sm-8">
-											<h4>소유자</h4>
+											<h4><i class="fa fa-angle-right"></i> 소유자</h4>
 											<div class="btn-group" data-toggle="buttons" id="image-source-list">
 												<label class="btn btn-danger rounded-left active">
 													<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
