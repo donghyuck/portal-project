@@ -982,8 +982,9 @@
 								<fieldset>
 									<div class="row">
 										<div class="col-sm-6">
-											<div class="headline"><h3><i class="fa fa-upload"></i> 사진 업로드 </h3> <small>아래의 사진 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small></div>										
-										
+											<h4><i class="fa fa-upload"></i> 사진 업로드 </h4> 
+											<p>아래의 사진 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</p>
+											
 										</div>
 										<div class="col-sm-6">
 											<div class="headline"><h3><i class="fa fa-upload"></i> URL 업로드</h3> <small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></div>	
