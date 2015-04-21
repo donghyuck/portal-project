@@ -960,7 +960,7 @@
 										</div>
 									</div>									
 								</div>		
-								<div class="panel-body no-padding">								
+								<div class="panel-body no-padding" style="min-height:450px;">								
 									<div id="attachment-list-view" class="file-listview"></div>		
 								</div>								
 								<div class="panel-footer no-padding">
