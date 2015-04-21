@@ -186,8 +186,13 @@
 			</div>
 			</#if>	
 			<div class="container content">
-			
-			</div>			
+								<div class="btn-toolbar">
+									<div id="navbar-btn-my-streams" class="btn-group btn-group-sm" data-toggle="buttons">
+										<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
+									</div>	
+								</div>				
+			</div>	
+			<!--		
 			<section class="personalized-session bg-trans" >
 				<div class="personalized-session-heading">
 					<div class="container">
@@ -208,7 +213,7 @@
 					<span class="close"></span>
 				</div>			
 			</div>						
-
+			-->
 			<section class="personalized-section bg-grid open" >
 				<div class="personalized-section-content animated" style="display:block;">
 					<div class="container-fluid p-xs">
