@@ -745,6 +745,7 @@
 						
 			button[data-action='upoad'] {
 				font-size : 2.5em;
+				font-weight:200;
 			}
 												
 			#image-gallery-pager { 
