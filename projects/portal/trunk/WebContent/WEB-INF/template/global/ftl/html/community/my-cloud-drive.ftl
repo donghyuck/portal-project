@@ -990,11 +990,22 @@
 										</div>
 										<div class="col-sm-6">
 											<div class="headline"><h3><i class="fa fa-upload"></i> URL 업로드</h3> <small>사진이 존재하는 URL 을 직접 입력하여 주세요.</small></div>	
+											
+											<label class="label">출처</label>
+											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url" placeholder="출처 URL"  data-bind="value: data.sourceUrl"></label>
+											<span class="help-block"><small>사진 이미지 출처 URL 을 입력하세요.</small></span>
+											
+											<label class="label">사진</label>
+											<label class="input"><i class="icon-append fa fa-globe"></i> <input type="url" name="url2" placeholder="사진 URL"  data-bind="value: data.imageUrl"></label>
+											<span class="help-block"><small>사진 이미지 경로가 있는 URL 을 입력하세요.</small></span>
+											
+											
+											
 										</div>
 									</div>
 								</fieldset>	
 							</section>	
-																			
+												<!--							
 							<div class="panel panel-primary panel-upload  m-b-sm  border-2x" style="display:none;">
 								<div class="panel-heading">
 									<strong><i class="fa fa-cloud-upload  fa-lg"></i> 사진 업로드</strong> <button type="button" class="close btn-control-group" data-action="upload-close">&times;</button>
@@ -1033,7 +1044,7 @@
 														</#if>
 													</div>
 								</div>	
-
+-->
 							<div class="panel panel-default no-margin-b">			
 								<div class="panel-body bg-slivergray border-b">
 								<p class="text-muted"><small><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </small></p>
