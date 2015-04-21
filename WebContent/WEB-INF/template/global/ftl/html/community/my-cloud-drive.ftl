@@ -537,7 +537,7 @@
 						}										
 					});			
 					renderTo.data("model", model);
-					kendo.bind($("#my-photo-stream .sky-form"), model);					
+					kendo.bind($("#my-photo-stream"), model);					
 				} 				
 			}			
 		}	
