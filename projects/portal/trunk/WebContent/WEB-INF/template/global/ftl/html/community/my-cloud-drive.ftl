@@ -539,7 +539,8 @@
 					});
 					kendo.bind($("#my-photo-stream .sky-form"), model);					
 				} 
-				/*
+				
+				/**
 				common.ui.buttons($("#my-photo-stream [data-action]"), {
 					handlers : {
 						"upload" : function(e){				
@@ -610,7 +611,7 @@
 							}				
 							
 														
-							//$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
+							$('#my-photo-stream form div.form-group.has-error').removeClass("has-error");
 							
 							$("#my-photo-stream .panel-upload").slideToggle(200);	
 						},
