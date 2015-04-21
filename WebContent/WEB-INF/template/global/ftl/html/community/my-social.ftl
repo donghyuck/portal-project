@@ -189,7 +189,7 @@
 			<div class="container content">
 				<div class="row">
 					<div class="col-md-6">
-						<p>쇼셜네트워크</p>
+						<h4>쇼셜네트워크</h4>
 						<div class="btn-toolbar">
 							<div id="navbar-btn-my-streams" class="btn-group btn-group-lg" data-toggle="buttons">
 								<button type="button" class="btn btn-primary rounded" data-action="media-list" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'>미디어</button>
@@ -198,7 +198,7 @@
 					</div>
 					<div class="col-md-6">
 								<div class="pull-right">
-									<p>레이아웃</p>
+									<h4>레이아웃</h4>
 									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
 										<label class="btn btn-info rounded-left">
 											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
@@ -215,7 +215,7 @@
 				</div>			
 			</div>
 			<article class="bg-sky">			
-				<div class="container-fluid content>
+				<div class="container-fluid content">
 					<div id="personalized-area" class="row"></div>
 				</div>
 			</article>		
