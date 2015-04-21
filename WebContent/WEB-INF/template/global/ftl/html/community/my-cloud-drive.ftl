@@ -731,6 +731,14 @@
 				color : #fff;
 				overflow:hidden;
 			}		
+			
+			.interactive-slider-v2 p	{
+				color : #fff;
+				font-size: 24px;
+				font-weight: 200;
+				margin-bottom: 0;
+			}	
+						
 			.interactive-slider-v2 h1 , .interactive-slider-v2 p {
 				color : #fff;
 			}
