@@ -523,6 +523,7 @@
 						renderTo.data('backstretch').images.push(template(photo));
 						});							
 					}					
+					alert( page + "/" + totalPages  );
 					//f( totalPages > page )
 					//	$this.read();
 				}
