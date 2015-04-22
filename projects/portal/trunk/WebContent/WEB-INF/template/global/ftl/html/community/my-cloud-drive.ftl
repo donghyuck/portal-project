@@ -834,6 +834,7 @@
 			.white-popup-block .toolbar {
 				position:relative;
 				text-align: right;
+				height:50px;
 			}
 			
 			.white-popup-block  .toolbar .btn-flat {
