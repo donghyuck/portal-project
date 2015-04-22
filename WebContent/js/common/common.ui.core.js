@@ -511,12 +511,22 @@
 					total: "totalCount",
 					data: "photos"
 				},
-				change : function(e){				
-					var view = this.view(), images = [];	
+				change : function(e){			
+					var $this = this;
+					var view = $this.view();
+					var startIndex = 0 ;
+					var page = $this.page();
+					var pageSize = $this.pageSize();
+					var totalPages = $this.totalPages();
+					
+					alert( totalPages + ", " + page + ", " + pageSize ) ;
+					
 					each(view, function(idx, photo){
 						//urls.push(template(photo));
 						renderTo.data('backstretch').images.push(template(photo));
 					});		
+					
+					
 				}
 			});
 			
