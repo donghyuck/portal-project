@@ -326,7 +326,9 @@
 			dialog:false
 		},
 		wallpaper : {
-			slideshow : true
+			slideshow : true,
+			fade : 0,
+			duration : 5000
 		},
 		jobs: []
 	};
@@ -493,7 +495,38 @@
 	}
 	
 	function backstretch( options ){
-		options = options || {},
+		var options = options || {}, 
+		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
+		renderTo = $("body");
+		
+		if( defined( options.renderTo) ){
+			renderTo = options.renderTo ;
+		}		
+		
+		if( !definde( renderTo.data('backstretch') ) ){			
+			renderTo.backstretch( [], { duration: options.duration || 6000, fade: options.fade || 750});			
+			var dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
+				pageSize: 20,
+				schema: {
+					total: "totalCount",
+					data: "photos"
+				},
+				change : function(e){				
+					var view = this.view(), images = [];	
+					each(view, function(idx, photo){
+						//urls.push(template(photo));
+						renderTo.data('backstretch').images.push(template(photo));
+					});		
+				}
+			});
+			
+			
+		}
+		
+		
+		/**
+			
+		var options = options || {},
 		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
 		dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
 			pageSize: 20,
@@ -512,7 +545,10 @@
 					$.backstretch( urls, {duration: 6000, fade: 750});	
 				}
 			}
-		}).read();
+		});
+		
+		*/
+		
 	} 
 	
 	function wallpaper (options){		
