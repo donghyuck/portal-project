@@ -527,7 +527,7 @@
 						//renderTo.data('backstretch').images.push(template(photo));
 					});	
 				}
-			});
+			}).read();
 			
 			
 		}
