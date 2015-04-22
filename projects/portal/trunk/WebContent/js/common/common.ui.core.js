@@ -520,12 +520,13 @@
 					var pageSize = $this.pageSize();
 					var totalPages = $this.totalPages();
 					
-					alert( totalPages + ", " + page + ", " + pageSize ) ;
+					if( totalPages > page  && page > 1 )
+						alert( totalPages + ", " + page + ", " + pageSize ) ;
 					
-					each(view, function(idx, photo){
-						images.push(template(photo));
+					//each(view, function(idx, photo){
+						//images.push(template(photo));
 						//renderTo.data('backstretch').images.push(template(photo));
-					});	
+					//});	
 				}
 			}).fetch(function(){
 				 var data = this.data();
