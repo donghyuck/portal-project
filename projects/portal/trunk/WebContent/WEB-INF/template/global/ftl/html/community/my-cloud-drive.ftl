@@ -841,6 +841,11 @@
 				height : 50px;
 				top:0;
 				right:51px;
+				background-color: transparent;
+			}
+			
+			.white-popup-block  .toolbar .btn-flat.paper-plane {
+				background-position: -231px -125px;
 			}
 			
 			.white-popup-block .close {
@@ -853,7 +858,7 @@
 				width: 50px;
 				height: 50px;
 				text-align: center;
-				background: url(/images/common/grey-cross.png) no-repeat center rgba(0, 0, 0, 0.8);
+				background: url(/images/common/grey-cross.png) no-repeat center;
 				background-size: 25px;
 				content: "";
 				display: block;
