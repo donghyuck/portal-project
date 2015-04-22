@@ -524,6 +524,8 @@
 						});							
 					}					
 					alert( page + "/" + totalPages  );
+					if( (totalPages - page)  > 0 )
+						$this.read();
 					//f( totalPages > page )
 					//	$this.read();
 				}
