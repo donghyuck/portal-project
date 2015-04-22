@@ -48,8 +48,6 @@
 								e.token.copy(currentUser);
 								if( !currentUser.anonymous ){		
 									//common.ui.enable( $("#personalized-buttons button")	);
-									var backstretch = $(".interactive-slider-v2").data('backstretch');
-									backstretch.images.push("");
 								}
 							} 
 						}		
