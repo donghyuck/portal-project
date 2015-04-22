@@ -903,7 +903,7 @@
 					</div><!--/end container-->
 			</div>
 			</#if>			
-			<article class="bg-white animated fadeInDown" style="min-height:200px; display:none;">		
+			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
 			<div class="container content">		
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
