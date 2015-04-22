@@ -1174,6 +1174,7 @@
 								</div>
 								<div class="right-col">								
 									<div class="toolbar">
+										<span class="btn-flat paper-plane"></span>
 										<span class="close" data-bind="click: close"></span>
 									</div>	
 									<section class="sky-form">
