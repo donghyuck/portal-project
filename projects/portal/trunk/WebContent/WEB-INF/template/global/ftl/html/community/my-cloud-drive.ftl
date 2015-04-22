@@ -73,7 +73,8 @@
 					} else if(show_bs_tab.attr('href') == '#my-photos' ){					
 						createPhotoListView();
 					}					
-				});				
+				});		
+						
 				$('#myTab a:first').tab('show') ;
 				
 				// END SCRIPT 				
@@ -392,6 +393,11 @@
 		}
 		
 		function createPhotoListView(){
+		
+			if( $(".container.content").is(":hidden")){
+				$(".container.content").show();
+			}
+			
 			var renderTo = $('#photo-list-view');
 			if( !common.ui.exists(renderTo) ){
 				common.ui.listview(	renderTo, {
@@ -879,7 +885,7 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body id="doc" class="bg-white">
+	<body id="doc" class="bg-dark">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
@@ -896,7 +902,8 @@
 					<span class="btn-flat gift t-0-r-1"></span>
 					</div><!--/end container-->
 			</div>
-			</#if>				
+			</#if>			
+			<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">		
 			<div class="container content">		
 				<div class="tab-v1 m-t-md" >							
 					<ul class="nav nav-tabs" id="myTab">
@@ -1037,6 +1044,7 @@
 					</div><!-- end of tab content -->		
 				</div>			
 			</div><!--/end container-->
+			</article>
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
