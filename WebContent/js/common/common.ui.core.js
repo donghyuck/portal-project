@@ -524,8 +524,11 @@
 						});							
 					}					
 					//alert( page + "/" + totalPages  );
-					if( (totalPages - page)  > 0 )
-						$this.read();
+					if( (totalPages - page)  > 0 ){
+						$this.page( page + 1 );
+						$this.read();						
+					}
+						
 					//f( totalPages > page )
 					//	$this.read();
 				}
