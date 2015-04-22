@@ -1093,7 +1093,7 @@
 					</div>
 					<div class="mfp-preloader" style="display: none;"></div>
 					<div class="white-popup-block" style="display:none">							
-						<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
+						<div class="tag-box tag-box-v3 padding-sm tag-text-space margin-bottom-40 rounded">
 							<span class="close" data-bind="click: close"></span>
 							<div class="left-col">
 								<div class="shadow-wrapper" style="width:150px;height:150px;top:50px;">
