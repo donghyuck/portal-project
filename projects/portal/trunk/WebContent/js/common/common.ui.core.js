@@ -503,7 +503,7 @@
 			renderTo = options.renderTo ;
 		}		
 		
-		if( !definde( renderTo.data('backstretch') ) ){			
+		if( !defined( renderTo.data('backstretch') ) ){			
 			renderTo.backstretch( [], { duration: options.duration || 6000, fade: options.fade || 750});			
 			var dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
 				pageSize: 20,
