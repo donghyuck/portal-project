@@ -1096,7 +1096,7 @@
 						<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
 							<span class="close" data-bind="click: close"></span>
 							<div class="left-col">
-								<div class="shadow-wrapper" style="width:150px;height:150px;">
+								<div class="shadow-wrapper" style="width:150px;height:150px;top:50px;">
 									<div class="box-shadow shadow-effect-2 " >
 										<img class="img-responsive" data-bind="attr:{src: attachment.imageThumbnailUrl}">
 									</div>	
