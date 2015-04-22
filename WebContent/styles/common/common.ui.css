@@ -1214,6 +1214,11 @@ body:not  (.right-to-left  ) .no-border-l {
 	background-position: -7px -286px;
 }
 
+
+.dialog .btn-flat.paper-plane {
+  background-position: -235px -133px;
+}
+
 .dialog .btn-flat.pencil {
 	background-position: -390px -121px;
 }
