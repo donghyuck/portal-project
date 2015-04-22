@@ -676,12 +676,14 @@
 								}
 							});		
 						});																			
-						common.ui.grid(grid).setDataSource( common.ui.data.image.property.datasource($this.image.imageId) );												
+						common.ui.grid(grid).setDataSource( common.ui.data.image.property.datasource($this.image.imageId) );			
+						$('body').css('overflow', 'hidden');									
 						renderTo.find(".white-popup-block").fadeIn();	
 					},
 					close: function(){
 						var $this = this;						
 						renderTo.find(".white-popup-block").fadeOut();
+						$('body').css('overflow', 'auto');				
 					},
 					setImage: function(image){
 						var $this = this;						
