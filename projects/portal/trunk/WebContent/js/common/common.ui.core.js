@@ -522,7 +522,7 @@
 						renderTo.data('backstretch').images.push(template(photo));
 						});							
 					}					
-					if( (totalPages - page)  > 0 ){
+					if( (page < 5 && totalPages - page)  > 0 ){
 						$this.page( page + 1 );
 						$this.read();						
 					}
