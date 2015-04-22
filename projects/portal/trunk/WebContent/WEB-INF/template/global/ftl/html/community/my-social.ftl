@@ -265,7 +265,7 @@
 					#}#
 					# for (var i = 0; i < entities.media.length ; i++) { #	
 					# var media = entities.media[i] ; #					
-					<img src="#: media.mediaUrl #" width="100%" alt="media" class="img-responsive">
+					<img src="#: media.mediaUrl #" alt="media" class="img-responsive">
 					# } #
 					<ul class="list-unstyled list-inline text-muted ">
                             <li><i class="fa fa-retweet"></i> #= retweetCount #</li>
