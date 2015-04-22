@@ -885,7 +885,7 @@
 		</style>   	
 		</#compress>
 	</head>
-	<body id="doc" class="bg-dark">
+	<body id="doc" class="bg-white">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
