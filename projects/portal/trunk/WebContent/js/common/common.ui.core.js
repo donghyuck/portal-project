@@ -506,7 +506,7 @@
 		if( !defined( renderTo.data('backstretch') ) ){			
 			//renderTo.backstretch( [], { duration: options.duration || 6000, fade: options.fade || 750});			
 			var dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
-				pageSize: 20,
+				pageSize: 10,
 				schema: {
 					total: "totalCount",
 					data: "photos"
@@ -516,21 +516,16 @@
 					var startIndex = 0 ;
 					var page = $this.page();
 					var pageSize = $this.pageSize();
-					var totalPages = $this.totalPages();				
-					
+					var totalPages = $this.totalPages();			
 					if( defined( renderTo.data('backstretch') ) && page > 1 ){
 						each($this.view(), function(idx, photo){
 						renderTo.data('backstretch').images.push(template(photo));
 						});							
 					}					
-					//alert( page + "/" + totalPages  );
 					if( (totalPages - page)  > 0 ){
 						$this.page( page + 1 );
 						$this.read();						
 					}
-						
-					//f( totalPages > page )
-					//	$this.read();
 				}
 			}).fetch(function(){
 				var data = this.data(), images = [];
@@ -539,8 +534,6 @@
 				}); 
 				renderTo.backstretch( images, { duration: options.duration || 6000, fade: options.fade || 750});	
 			});
-			
-			
 		}
 		
 		
