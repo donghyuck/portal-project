@@ -513,20 +513,17 @@
 				},
 				change : function(e){			
 					var $this = this;
-					var view = $this.view();
 					var startIndex = 0 ;
-					var images = [];
 					var page = $this.page();
 					var pageSize = $this.pageSize();
-					var totalPages = $this.totalPages();
-					
-					if( totalPages > page  && page > 1 )
-						alert( totalPages + ", " + page + ", " + pageSize ) ;
-					
-					//each(view, function(idx, photo){
-						//images.push(template(photo));
-						//renderTo.data('backstretch').images.push(template(photo));
-					//});	
+					var totalPages = $this.totalPages();					
+					if( defined( renderTo.data('backstretch') ) && page > 1 ){
+						each($this.view(), function(idx, photo){
+						renderTo.data('backstretch').images.push(template(photo));
+						});							
+					}					
+					if( totalPages > page )
+						$this.read({ startIndex: pageSize * page , pageSize: pageSize  });
 				}
 			}).fetch(function(){
 				var data = this.data(), images = [];
