@@ -504,7 +504,7 @@
 		}		
 		
 		if( !defined( renderTo.data('backstretch') ) ){			
-			renderTo.backstretch( [], { duration: options.duration || 6000, fade: options.fade || 750});			
+			//renderTo.backstretch( [], { duration: options.duration || 6000, fade: options.fade || 750});			
 			var dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
 				pageSize: 20,
 				schema: {
@@ -515,6 +515,7 @@
 					var $this = this;
 					var view = $this.view();
 					var startIndex = 0 ;
+					var images = [];
 					var page = $this.page();
 					var pageSize = $this.pageSize();
 					var totalPages = $this.totalPages();
@@ -522,11 +523,9 @@
 					alert( totalPages + ", " + page + ", " + pageSize ) ;
 					
 					each(view, function(idx, photo){
-						//urls.push(template(photo));
-						renderTo.data('backstretch').images.push(template(photo));
-					});		
-					
-					
+						images.push(template(photo));
+						//renderTo.data('backstretch').images.push(template(photo));
+					});	
 				}
 			});
 			
