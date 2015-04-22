@@ -394,8 +394,8 @@
 		
 		function createPhotoListView(){
 		
-			if( $(".container.content").is(":hidden")){
-				$(".container.content").show();
+			if( $('article.bg-white').is(":hidden")){
+				$("article.bg-white").show();
 			}
 			
 			var renderTo = $('#photo-list-view');
