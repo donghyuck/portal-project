@@ -831,6 +831,18 @@
 				overflow-y: auto;
 			}
 			
+			.white-popup-block .toolbar {
+				position:relative;
+				text-align: right;
+			}
+			
+			.white-popup-block  .toolbar .btn-flat {
+				width : 50px;
+				height : 50px;
+				top:0;
+				right:51px;
+			}
+			
 			.white-popup-block .close {
 				position: absolute;
 				top: 0;
@@ -1140,8 +1152,7 @@
 					<div class="white-popup-block" style="display:none">							
 						<div class="container">
 							<div class="row">
-								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">
-								<span class="close" data-bind="click: close"></span>
+								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">								
 								<div class="left-col">
 									<div class="shadow-wrapper" style="width:150px;height:150px;">
 										<div class="box-shadow shadow-effect-2 " >
@@ -1161,7 +1172,10 @@
 										<li><a href="#"><i class="fa fa-tags"></i> 여자</a></li>
 									</ul>			
 								</div>
-								<div class="right-col">									
+								<div class="right-col">								
+									<div class="toolbar">
+										<span class="close" data-bind="click: close"></span>
+									</div>	
 									<section class="sky-form">
 										<header data-bind="text: image.name"></header>
 										<fieldset data-bind="visible:hasSource">
