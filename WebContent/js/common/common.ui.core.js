@@ -516,14 +516,15 @@
 					var startIndex = 0 ;
 					var page = $this.page();
 					var pageSize = $this.pageSize();
-					var totalPages = $this.totalPages();					
+					var totalPages = $this.totalPages();				
+					
 					if( defined( renderTo.data('backstretch') ) && page > 1 ){
 						each($this.view(), function(idx, photo){
 						renderTo.data('backstretch').images.push(template(photo));
 						});							
 					}					
-					if( totalPages > page )
-						$this.read();
+					//f( totalPages > page )
+					//	$this.read();
 				}
 			}).fetch(function(){
 				var data = this.data(), images = [];
