@@ -527,7 +527,10 @@
 						//renderTo.data('backstretch').images.push(template(photo));
 					});	
 				}
-			}).read();
+			}).fetch(function(){
+				 var data = this.data();
+				 alert(data.length);
+			});
 			
 			
 		}
