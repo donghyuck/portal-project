@@ -523,7 +523,7 @@
 						});							
 					}					
 					if( totalPages > page )
-						$this.read({ startIndex: pageSize * page , pageSize: pageSize  });
+						$this.read();
 				}
 			}).fetch(function(){
 				var data = this.data(), images = [];
