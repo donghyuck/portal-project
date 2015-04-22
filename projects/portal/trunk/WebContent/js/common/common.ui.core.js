@@ -529,8 +529,11 @@
 					//});	
 				}
 			}).fetch(function(){
-				 var data = this.data();
-				 alert(data.length);
+				var data = this.data(), images = [];
+				each(data, function(idx, photo){
+					images.push(template(photo));	
+				}); 
+				renderTo.backstretch( images, { duration: options.duration || 6000, fade: options.fade || 750});	
 			});
 			
 			
