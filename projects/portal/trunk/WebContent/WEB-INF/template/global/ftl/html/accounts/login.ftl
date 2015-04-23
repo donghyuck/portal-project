@@ -341,16 +341,10 @@
 									<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 								</label>
 							</section>
-							
-							
-							<section>
-							
+							<section>							
 								<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 							</section>
-			</fieldset>		
-		
-		
-		
+			</fieldset>			
 		</div>		
 		<!--		
 		<div class="input-group margin-bottom-20">
@@ -362,19 +356,12 @@
 			<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 		</div>
 		-->
-		<hr>
-		
+		<hr>		
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				
-			</div>
-		</div>	
-			
+		</div>			
 	</div>
     
 
