@@ -3,9 +3,9 @@
 	<head>
 		<#assign page = action.getPage() >
 		<title>${page.title}</title>			
-		<#compress><script type="text/javascript"><!-- 
-		var jobs = [];	
-		
+		<#compress>
+		<script type="text/javascript"><!-- 
+		var jobs = [];			
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
@@ -43,7 +43,8 @@
 				</#if>
 			}
 		}]);	
-		--></script></#compress>		
+		--></script>
+		</#compress>		
 	</head>
 	<body>
 		<div class="page-loader"></div>	
