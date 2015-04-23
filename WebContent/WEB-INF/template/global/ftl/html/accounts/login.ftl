@@ -358,8 +358,8 @@
 			<span class="input-group-addon"><i class="fa fa-lock"></i></span>
 			<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 		</div>
-		-->
-		<hr>		
+		
+		<hr>		-->
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
