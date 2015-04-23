@@ -285,7 +285,7 @@
 							</section>
 						</fieldset>				
 						<footer>
-							<button type="submit" class="btn btn-primary btn-block btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+							<button type="submit" class="btn btn-blue btn-block btn-flat btn-outline btn-lg btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 						</footer>
 					</form><!-- /form -->
 				</section>
