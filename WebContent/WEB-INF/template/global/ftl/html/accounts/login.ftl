@@ -184,10 +184,12 @@
 			border: 0px solid #a94442;
 			background: rgba(55, 58, 71, 0.5);
 			color : #fff;
+			max-width: 350px;
 		}
 		
 		.popover  p {
 			color : #fff;
+			margin-bottom : 15px;
 		}
 		
 		.wrapper {
