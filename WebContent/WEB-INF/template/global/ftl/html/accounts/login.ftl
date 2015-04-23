@@ -284,7 +284,7 @@
 								<div class="note"><i class="fa fa-info-circle"></i> 접속 IP: ${ action.getRemoteAddr() }</div>
 							</section>
 						</fieldset>				
-						<footer>
+						<footer class="text-right">
 							<button type="submit" class="btn btn-blue btn-block btn-flat btn-outline btn-lg btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 						</footer>
 					</form><!-- /form -->
