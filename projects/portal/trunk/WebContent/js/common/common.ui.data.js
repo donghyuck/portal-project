@@ -449,7 +449,7 @@
 				if( typeof options.success === 'function'  )
 					options.success (user);
 			}, 
-			always: function () {
+			done: function () {
 				if( kendo.isFunction( options.always ))
 					options.always( ) ;					
 			}
