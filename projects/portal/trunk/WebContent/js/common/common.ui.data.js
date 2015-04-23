@@ -438,6 +438,10 @@
 	function user (options){	
 		options = options || {};
 		ajax( options.url || '/data/accounts/get.json?output=json', {
+			always : function() {
+				if( typeof options.always === 'function'  )
+					options.always();				
+			},
 			success : function(response){
 				var user = new common.ui.data.User ();			
 				if( response.error ){ 		
