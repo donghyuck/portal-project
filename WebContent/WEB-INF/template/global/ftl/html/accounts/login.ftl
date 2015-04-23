@@ -182,6 +182,7 @@
 			right: 0;
 			border: 0px solid #a94442;
 			background: rgba(55, 58, 71, 0.9);
+			color : #fff;
 		}
 		
 		.wrapper {
