@@ -336,7 +336,7 @@
 							</section>
 							<section>
 								<label class="input">
-									<i class="icon-append fa fa-lock"></i>
+									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
 									<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 								</label>
 							</section>
