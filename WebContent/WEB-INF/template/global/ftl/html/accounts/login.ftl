@@ -142,7 +142,7 @@
 		<style>	
 		.reg-block {
 			width: 380px;
-			padding: 20px;
+			padding: 0px;
 			margin: 60px auto;
 			background:rgba(255, 255, 255, .8);
 			border-top: solid 2px #34aadc;
@@ -211,7 +211,7 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
-			<div id="signin-block" class="reg-block pull-right animated swing no-padding">
+			<div id="signin-block" class="reg-block pull-right animated slideInUp">
 				<button class="btn-close"></button>
 				<section class="sky-form"> 
 					<header class="text-center">
@@ -267,16 +267,6 @@
 				</section>
 			</div><!-- /.reg-block -->
 		</div><!-- /.container -->
-		<!--
-		<nav class="navbar navbar-fixed-bottom" role="navigation">
-			<div class="container">
-				<ul class="nav navbar-nav navbar-right">
-					 <li><a href="#">이용약관</a></li>
-					 <li><a href="#">개인정보보호</a></li>	 
-				</ul>
-			</div>
-		</nav>
-		-->	
 	</div> <!-- ./wrapper -->	
 		
 	<script type="text/x-kendo-template" id="alert-template">
