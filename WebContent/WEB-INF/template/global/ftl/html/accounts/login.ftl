@@ -227,11 +227,7 @@
 		.sky-form footer { 
 			background: rgba(255, 255, 255, 1);
 		}
-		
-		.sky-form .alert {
-			margin-buttom:0;
-		} 
-		
+				
 		</style>
 </#compress>		
 	</head>
@@ -282,7 +278,7 @@
 									</div>
 								</div>
 							</section>
-							<section>
+							<section class="no-margin">
 								<div class="row">
 									<div id="signin-status"  class="col-sm-12"></div>
 								</div>
