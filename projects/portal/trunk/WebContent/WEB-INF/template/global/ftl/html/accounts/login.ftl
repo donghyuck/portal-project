@@ -314,7 +314,7 @@
 
 
 <div class="reg-block">
-	<div class="sky-form">
+	
 	<div class="reg-block-header">
             <h2>Sign In</h2>
             <ul class="social-icons text-center">
@@ -326,7 +326,8 @@
 			<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? 지금 클릭하여 가입하세요.</p>        
 			<p class="text-right" ><a class="btn btn-default btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>    
 		</div>
-		<fieldset>
+		<div class="sky-form">
+			<fieldset>
 							<section id="signin-status" class="no-margin"></section>						
 							<section>
 								<label class="input">
@@ -340,7 +341,8 @@
 									<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 								</label>
 							</section>
-		</fieldset>		
+			</fieldset>		
+		</div>		
 		<!--		
 		<div class="input-group margin-bottom-20">
 			<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -363,7 +365,7 @@
 				<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 			</div>
 		</div>	
-		</div>		
+			
 	</div>
     
 
