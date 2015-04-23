@@ -252,7 +252,7 @@
 			<div class="alert alert-warning">새로운 공지 & 이벤트가 없습니다.</div>
 		</script>	
 		<script type="text/x-kendo-tmpl" id="announce-view-panel-template">		
-			<div class="panel bordered">
+			<article class="panel bordered" data-animate='show'>
 				<div class="panel-heading rounded-top">
 					<span class="close-sm"></span>
 					<h2 data-bind="html:announce.subject"></h2>					
@@ -280,7 +280,7 @@
 					</div>
 					<button class="btn btn-defautl btn-sm btn-flat btn-outline"  data-bind="click:close"><i class="aui-icon aui-iconfont-close-dialog"></i>  닫기</button>
 				</div>	
-			</div>
+			</article>
 		</script>					
 		<#include "/html/common/common-homepage-templates.ftl" >		
 		<!-- END TEMPLATE -->
