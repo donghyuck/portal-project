@@ -180,7 +180,8 @@
 			display: block;
 			margin: 80px auto;
 			right: 0;
-			border: 2px solid #a94442;
+			border: 0px solid #a94442;
+			background: rgba(55, 58, 71, 0.9);
 		}
 		
 		.wrapper {
