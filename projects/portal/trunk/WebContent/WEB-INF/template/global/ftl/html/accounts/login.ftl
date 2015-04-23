@@ -342,17 +342,7 @@
 								</label>
 							</section>
 			</fieldset>		
-		</div>		
-		<!--		
-		<div class="input-group margin-bottom-20">
-			<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-			<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
-		</div>
-		<div class="input-group margin-bottom-20">
-			<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
-		</div>
-		-->
+		
 		<hr>
 		
 		<div class="row">
@@ -364,7 +354,20 @@
 			<div class="col-md-10 col-md-offset-1">
 				<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 			</div>
-		</div>	
+		</div>			
+		
+		</div>		
+		<!--		
+		<div class="input-group margin-bottom-20">
+			<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+			<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
+		</div>
+		<div class="input-group margin-bottom-20">
+			<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+			<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
+		</div>
+		-->
+
 			
 	</div>
     
