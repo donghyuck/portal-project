@@ -9,6 +9,7 @@
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>', 
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',				
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',				
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jquery.plugins/jquery.ui.shake.min.js"/>',
@@ -280,7 +281,8 @@
 	<script type="text/x-kendo-template" id="alert-template">
 	<div class="popover pull-right animated bounceInDown">
 		<!--<h3 class="popover-title">로그인 상태입니다.</h3>-->
-			<div class="popover-content text-center">			
+			<div class="popover-content text-center">		
+			<i class="icon-flat icon-flat folder"></i>	
 			<p>#:name # 님은 로그인 상태입니다.</p>
 			<a href="/" class="btn btn-default btn-flat">메인으로 이동</a>
 		</div>
