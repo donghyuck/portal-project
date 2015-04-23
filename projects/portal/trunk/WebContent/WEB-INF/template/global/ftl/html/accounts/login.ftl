@@ -344,10 +344,7 @@
 							<section>							
 								<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 							</section>
-			</fieldset>		
-						<footer class="text-right">
-							<div class="text-muted"><i class="fa fa-info-circle"></i> 접속 IP: ${ action.getRemoteAddr() }</div>
-						</footer>				
+	
 		</div>		
 		<!--		
 		<div class="input-group margin-bottom-20">
