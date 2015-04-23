@@ -4,6 +4,7 @@
 		<#assign page = action.getPage() >
 		<title>${page.title}</title>			
 		<script type="text/javascript"><!-- 
+		
 		<@kendo.compress>
 		var jobs = [];	
 		
@@ -44,7 +45,8 @@
 				</#if>
 			}
 		}]);	
-		</@kendo.compress>  				
+		</@kendo.compress>  
+						
 		--></script>
 		
 	</head>
