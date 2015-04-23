@@ -66,10 +66,9 @@
 						$("form fieldset").prop("disabled", true);
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(user));				
-					}								
-				},
-				always: function(){
-					$("#signin-block").show();
+					}else{
+						$("#signin-block").show();
+					}													
 				}				
 			} );		
 					
