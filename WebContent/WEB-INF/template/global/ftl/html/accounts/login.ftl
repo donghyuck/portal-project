@@ -274,7 +274,7 @@
 										<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 									</div>
 									<div class="col-sm-6">
-										<button type="submit" class="btn btn-blue btn-block btn-flat btn-outline btn-lg btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+										<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 									</div>
 								</div>
 							</section>
