@@ -168,12 +168,6 @@
 			font-size: 28px;
 		}
 		
-		.reg-block p a {
-			text-decoration: underline;
-		}
-		.reg-block p a:hover {
-			text-decoration: none;
-		}
 		
 		/*Forms*/
 		.reg-block .input-group-addon {
