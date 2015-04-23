@@ -143,6 +143,7 @@
 		-->
 		</script>
 		<style>	
+		/**
 		.reg-block {
 			width: 380px;
 			padding: 0px;
@@ -228,7 +229,7 @@
 		.sky-form footer { 
 			background: rgba(255, 255, 255, 1);
 		}
-				
+		*/		
 		</style>
 </#compress>		
 	</head>
