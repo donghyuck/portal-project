@@ -566,7 +566,7 @@ body.aside-menu-in.modal-open .aside-menu {
 * Utility 
 **/
 
-article [data-animate=show] {
+article[data-animate=show] {
 	height: auto;
 	min-height: 100vh;
 	opacity: 1;
@@ -575,7 +575,7 @@ article [data-animate=show] {
 	transition: opacity 0.6s;
 }
 
-article [data-animate=show] p {
+article[data-animate=show] p {
 	opacity: 1;
 	-webkit-transition: opacity 0.5s 0.25s;
 	transition: opacity 0.5s 0.25s;	
