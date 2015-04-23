@@ -332,9 +332,7 @@
 			<input type="text" class="form-control" placeholder="Password">
 		</div>
 		<hr>
-		<div class="checkbox">
-			<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
-		</div>
+		<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg">로그인</button>
