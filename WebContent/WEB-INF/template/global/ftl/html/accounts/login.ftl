@@ -201,7 +201,8 @@
 		
 		.popover  p {
 			color : #fff;
-			margin-bottom : 15px;
+			margin-top : 15px;
+			margin-bottom : 10px;
 		}
 		
 		.wrapper {
