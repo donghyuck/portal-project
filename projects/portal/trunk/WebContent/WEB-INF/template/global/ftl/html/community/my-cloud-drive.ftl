@@ -1262,7 +1262,6 @@
 		<div class="cbp-spmenu-overlay"></div>			
 		<!-- ./END RIGHT SLIDE MENU -->							
 		<!-- START TEMPLATE -->									
-
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<!-- ./END TEMPLATE -->
