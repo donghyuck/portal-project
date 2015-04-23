@@ -357,7 +357,8 @@
 		</div>
 		
 		<hr>		-->
-		<div class="row m-b-md">
+		<hr class="m-b-md" />	
+		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 			</div>
