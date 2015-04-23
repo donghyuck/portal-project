@@ -270,8 +270,8 @@
 							</section>
 							<section>
 								<div class="row">
-									<div class="col col-4"></div>
-									<div class="col col-8">
+									<div class="col-sm-6"></div>
+									<div class="col-sm-6">
 										<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 									</div>
 								</div>
