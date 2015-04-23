@@ -276,7 +276,7 @@
 		<h3 class="popover-title">로그인 상태입니다.</h3>
 			<div class="popover-content">			
 			<p>#:name # 님은 로그인 상태입니다.</p>
-			<a href="/main.do" class="btn btn-default btn-falt btn-outline">메인으로 이동</a>
+			<a href="/" class="btn btn-default btn-flat btn-outline">메인으로 이동</a>
 		</div>
 	</div>
     </script>
