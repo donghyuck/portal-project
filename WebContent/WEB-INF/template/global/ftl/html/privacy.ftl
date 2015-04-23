@@ -4,8 +4,6 @@
 		<#assign page = action.getPage() >
 		<title>${page.title}</title>			
 		<script type="text/javascript"><!-- 
-		
-		<@kendo.compress>
 		var jobs = [];	
 		
 		yepnope([{
@@ -45,8 +43,6 @@
 				</#if>
 			}
 		}]);	
-		</@kendo.compress>  
-						
 		--></script>		
 	</head>
 	<body>
