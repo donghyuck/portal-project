@@ -67,6 +67,9 @@
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(user));				
 					}								
+				},
+				always : function(){
+					$("#signin-block").show();
 				}				
 			} );		
 					
@@ -211,7 +214,7 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
-			<div id="signin-block" class="reg-block pull-right animated slideInUp">
+			<div id="signin-block" class="reg-block pull-right animated slideInUp" style="display:none;">
 				<button class="btn-close"></button>
 				<section class="sky-form"> 
 					<header class="text-center">
