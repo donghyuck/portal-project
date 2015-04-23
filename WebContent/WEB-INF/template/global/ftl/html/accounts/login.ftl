@@ -68,7 +68,7 @@
 						$(".container:first").prepend(template(user));				
 					}								
 				},
-				always : function(){
+				always: function(){
 					$("#signin-block").show();
 				}				
 			} );		
