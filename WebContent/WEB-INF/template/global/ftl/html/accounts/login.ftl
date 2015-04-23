@@ -191,6 +191,14 @@
 			padding : 15px;
 		}
 		
+		.popover-content > img {
+		  border-radius: 25px;
+		  display: inline-block;
+		  height: 20px;
+		  margin: -2px 0 0 0;
+		  width: 20px;
+		}
+		
 		.popover  p {
 			color : #fff;
 			margin-bottom : 15px;
