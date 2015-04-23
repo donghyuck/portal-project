@@ -155,6 +155,7 @@
 			padding: 20px;
 			margin: 60px auto;
 			background: #fff;
+			border:0;
 			border-top: solid 2px #34aadc;
 		}
 
