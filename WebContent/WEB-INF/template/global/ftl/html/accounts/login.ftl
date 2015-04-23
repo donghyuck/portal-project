@@ -311,7 +311,8 @@
 
 
 <div class="reg-block sky-form">
-        <div class="reg-block-header">
+	<div class="sky-form">
+	<div class="reg-block-header">
             <h2>Sign In</h2>
             <ul class="social-icons text-center">
 				<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
@@ -325,23 +326,24 @@
 
 		<div class="input-group margin-bottom-20">
 			<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-			<input type="text" class="form-control" placeholder="Email">
+			<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
 		</div>
 		<div class="input-group margin-bottom-20">
 			<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			<input type="text" class="form-control" placeholder="Password">
+			<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 		</div>
 		<hr>
 		
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
-				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg">로그인</button>
+				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
 			</div>
+		</div>	
 		</div>		
 	</div>
     
