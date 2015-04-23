@@ -2,11 +2,9 @@
 <html decorator="unify">
 	<head>
 		<#assign page = action.getPage() >
-		<title>${page.title}</title>		
+		<title>${page.title}</title>			
+		<script type="text/javascript"><!-- 
 		<@kendo.compress>
-		<script type="text/javascript">
-		<!-- 
-		
 		var jobs = [];	
 		
 		yepnope([{
@@ -45,9 +43,10 @@
 				<#if !action.user.anonymous >	
 				</#if>
 			}
-		}]);				
+		}]);	
+		</@kendo.compress>  				
 		--></script>
-		</@kendo.compress>  	
+		
 	</head>
 	<body>
 		<div class="page-loader"></div>	
