@@ -111,7 +111,7 @@
 				<div class="breadcrumbs">
 					<div class="container">
 						<div class="row">
-							<h2>${ navigator.title }
+							<h2  class="pull-left">${ navigator.title }
 							<small class="page-summary">
 							${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }								
 							</small>	
