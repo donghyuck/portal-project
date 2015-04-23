@@ -185,6 +185,10 @@
 			color : #fff;
 		}
 		
+		.popover  p {
+			color : #fff;
+		}
+		
 		.wrapper {
 			background:transparent;
 		}
