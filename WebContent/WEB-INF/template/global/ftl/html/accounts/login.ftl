@@ -235,7 +235,7 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
-			<div id="signin-block" class="reg-block pull-right animated zoomIn" style="display:none;">
+			<div id="signin-block" class="reg-block pull-right animated zoomIn no-margin-b" style="display:none;">
 				<button class="btn-close"></button>
 				<section class="sky-form"> 
 					<header class="text-center">
