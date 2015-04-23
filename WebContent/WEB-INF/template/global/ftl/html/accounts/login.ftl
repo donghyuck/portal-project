@@ -187,6 +187,10 @@
 			max-width: 350px;
 		}
 		
+		.popover > .popover-content {
+			padding : 15px;
+		}
+		
 		.popover  p {
 			color : #fff;
 			margin-bottom : 15px;
