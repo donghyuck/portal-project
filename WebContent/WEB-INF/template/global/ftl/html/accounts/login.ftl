@@ -310,7 +310,7 @@
 		<div class="container" style="min-height:450px;">
 
 
-<div class="reg-block">
+<div class="reg-block sky-form">
         <div class="reg-block-header">
             <h2>Sign In</h2>
             <ul class="social-icons text-center">
