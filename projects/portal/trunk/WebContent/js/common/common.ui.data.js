@@ -448,11 +448,12 @@
 				}
 				if( typeof options.success === 'function'  )
 					options.success (user);
-			} 
-		).always( function () {
-			if( kendo.isFunction( options.always ))
-				options.always( ) ;					
-		});	
+			}, 
+			always: function () {
+				if( kendo.isFunction( options.always ))
+					options.always( ) ;					
+			}
+		});
 	}
 	
 	function uploadMyImageByUrl (options){
