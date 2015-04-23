@@ -202,7 +202,9 @@
 		.reg-block-header p {
 			text-align: center;
 		}
-		
+		.reg-block-header p.text-right {
+			text-align: right;
+		} 
 		/*For Mobile Devices*/
 		@media (max-width: 500px) { 
 			.reg-block {
