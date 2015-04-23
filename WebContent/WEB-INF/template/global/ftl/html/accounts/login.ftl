@@ -155,7 +155,7 @@
 			padding: 20px;
 			margin: 60px auto;
 			background: #fff;
-			border-top: solid 2px #72c02c;
+			border-top: solid 2px #34aadc;
 		}
 
 		.reg-block h2,
