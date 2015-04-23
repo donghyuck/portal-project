@@ -192,7 +192,7 @@
 		}
 		
 		.popover-content > img {
-		  border-radius: 80px;
+		  border-radius: 80px!important;
 		  display: inline-block;
 		  height: 80px;
 		  margin: -2px 0 0 0;
