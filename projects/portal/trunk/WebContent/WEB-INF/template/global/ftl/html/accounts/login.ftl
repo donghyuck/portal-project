@@ -256,6 +256,7 @@
 					<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
 						<input type="hidden" name="output" value="json" />
 						<fieldset>
+							<section id="signin-status" class="no-margin"></section>						
 							<section>
 								<label class="input">
 									<i class="icon-append fa fa-envelope"></i>
@@ -277,8 +278,6 @@
 										<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 									</div>
 								</div>
-							</section>
-							<section id="signin-status" class="no-margin">
 							</section>
 						</fieldset>				
 						<footer class="text-right">
