@@ -71,7 +71,7 @@
 					}													
 				}				
 			} );		
-					
+			/*		
 			$("#signin-block>button.btn-close").click(function(e){
 				$this = $(this);					
 				if($this.hasClass("up")){					
@@ -83,8 +83,9 @@
 						$this.toggleClass("up");	
 					});					
 				}
+			
 			}); 
-					
+				*/		
 			var validator = $("#signin-block form").kendoValidator({
 				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
 			}).data("kendoValidator");
@@ -236,10 +237,10 @@
 		<div class="wrapper">
 		<div class="container" style="min-height:450px;">
 			<div id="signin-block" class="reg-block pull-right animated zoomIn" style="display:none;">
-				<button class="btn-close"></button>
+				
 				<section class="sky-form"> 
 					<header class="text-center">
-						<img src="/download/logo/company/${action.webSite.company.name}" height="80%" class="img-circle" alt="로그인">
+						<!--<img src="/download/logo/company/${action.webSite.company.name}" height="80%" class="img-circle" alt="로그인">-->
 						<ul class="social-icons text-center">
 							<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
 							<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
