@@ -278,10 +278,7 @@
 									</div>
 								</div>
 							</section>
-							<section class="no-margin">
-								<div class="row">
-									<div id="signin-status"  class="col-sm-12"></div>
-								</div>
+							<section id="signin-status" class="no-margin">
 							</section>
 						</fieldset>				
 						<footer class="text-right">
