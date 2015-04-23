@@ -322,29 +322,27 @@
 			<p class="text-right" ><a class="btn btn-default btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>    
 		</div>
 
-        <div class="input-group margin-bottom-20">
-            <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-            <input type="text" class="form-control" placeholder="Email">
-        </div>
-        <div class="input-group margin-bottom-20">
-            <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-            <input type="text" class="form-control" placeholder="Password">
-        </div>
-        <hr>
-
-        <div class="checkbox">
-            <label>
-                <input type="checkbox"> 
-                <p>Always stay signed in</p>
-            </label>            
-        </div>
-                                
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <button type="submit" class="btn-u btn-block">Log In</button>
-            </div>
-        </div>
-    </div>
+		<div class="input-group margin-bottom-20">
+			<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+			<input type="text" class="form-control" placeholder="Email">
+		</div>
+		<div class="input-group margin-bottom-20">
+			<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+			<input type="text" class="form-control" placeholder="Password">
+		</div>
+		<hr>
+		<div class="checkbox">
+			<label>
+				<input type="checkbox"> 
+				<p>Always stay signed in</p>
+			</label>            
+		</div>
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg">로그인</button>
+			</div>
+		</div>
+	</div>
     
 
 			<div id="signin-block" class="reg-block pull-right animated zoomIn" style="display:none;">
