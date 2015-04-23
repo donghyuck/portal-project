@@ -154,11 +154,14 @@
 			width: 380px;
 			padding: 20px;
 			margin: 60px auto;
-			background: #fff;
-			border:0;
+			background: #fff;			
 			border-top: solid 2px #34aadc;
 		}
 
+		.reg-block > .sky-form {
+			border:0;
+		}
+		
 		.reg-block h2,
 		.reg-block p,
 		.reg-block p a {
