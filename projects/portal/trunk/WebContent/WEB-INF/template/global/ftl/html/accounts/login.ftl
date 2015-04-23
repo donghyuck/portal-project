@@ -336,21 +336,9 @@
 							</section>
 							<section>
 								<label class="input">
-									<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+									<i class="icon-append fa fa-lock"></i>
 									<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
 								</label>
-							</section>
-							<section>
-								<div class="row">
-									<div class="col-sm-6">
-										<div class="m-b-md">
-										<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
-										</div>
-									</div>
-									<div class="col-sm-6">
-										<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg btn-signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
-									</div>
-								</div>
 							</section>
 		</fieldset>		
 		<!--		
