@@ -247,7 +247,8 @@
 							<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 							<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
 						</ul>
-						<div class="note">쇼셜 로그인을 통한 인증을 지원합니다.</div>					
+						<p>쇼셜 로그인을 통한 인증을 지원합니다.</p>			
+						 <p>계정을 가지고 있지 않다면, 다음을 클릭하세요. <a class="color-green" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>		
 						<#assign webSite = action.webSite
 							isAllowedSignup = WebSiteUtils.isAllowedSignup( webSite ) >
 						<#if isAllowedSignup >
@@ -284,7 +285,7 @@
 							</section>
 						</fieldset>				
 						<footer class="text-right">
-							<div class="note"><i class="fa fa-info-circle"></i> 접속 IP: ${ action.getRemoteAddr() }</div>
+							<div class="text-muted"><i class="fa fa-info-circle"></i> 접속 IP: ${ action.getRemoteAddr() }</div>
 						</footer>
 					</form><!-- /form -->
 				</section>
