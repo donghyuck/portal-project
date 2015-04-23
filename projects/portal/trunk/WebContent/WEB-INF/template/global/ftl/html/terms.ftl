@@ -3,6 +3,7 @@
 	<head>
 		<#assign page = action.getPage() >
 		<title>${page.title}</title>
+		<#compress>
 		<script type="text/javascript">
 		<!--		
 		var jobs = [];			
@@ -47,7 +48,8 @@
 			}
 		}]);	
 		-->
-		</script>		
+		</script>	
+		</#compress>	
 		<style scoped="scoped">
 		.breadcrumbs h2 {
 			font-size: 32px;
