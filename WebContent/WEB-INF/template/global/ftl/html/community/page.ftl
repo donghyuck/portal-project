@@ -41,9 +41,6 @@
 							} 
 						}						
 					},
-					wallpaper : {
-						slideshow : false
-					},
 					jobs:jobs
 				});		
 				
@@ -110,9 +107,9 @@
 					</div>
 				</div>
 				<div class="col-lg-9">		
-					<div class="content-main-section text-md" style="min-height:300px;">
+					<article data-animate="show"  class="content-main-section text-md" style="min-height:300px;">
 					${ action.bodyText }
-					</div>
+					</article>
 				</div>
 			</div>
 		</div><!-- /.container -->		
