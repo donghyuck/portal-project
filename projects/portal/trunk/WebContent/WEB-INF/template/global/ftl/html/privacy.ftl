@@ -40,12 +40,9 @@
 					},
 					jobs:jobs
 				});	
-
-				// ACCOUNTS LOAD	
 				var currentUser = new common.ui.data.User();			
 				<#if !action.user.anonymous >	
-				</#if>	
-				// END SCRIPT	
+				</#if>
 			}
 		}]);		
 		</@kendo.compress>					
