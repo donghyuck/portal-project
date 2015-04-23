@@ -2,10 +2,9 @@
 <html decorator="unify">
 	<head>
 		<#assign page = action.getPage() >
-		<title>${page.title}</title>
-		<@kendo.compress>
+		<title>${page.title}</title>		
 		<script type="text/javascript">
-		<!--
+		<!-- <@kendo.compress>
 		
 		var jobs = [];	
 		
@@ -48,9 +47,10 @@
 				</#if>	
 				// END SCRIPT	
 			}
-		}]);					
+		}]);		
+		</@kendo.compress>					
 		-->
-		</script></@kendo.compress>		
+		</script>
 		<style scoped="scoped">
 					
 		</style>   	
