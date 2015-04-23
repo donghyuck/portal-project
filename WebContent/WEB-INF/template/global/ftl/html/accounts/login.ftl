@@ -279,7 +279,7 @@
 		
 	<script type="text/x-kendo-template" id="alert-template">
 	<div class="popover pull-right animated bounceInDown">
-		<h3 class="popover-title">로그인 상태입니다.</h3>
+		<!--<h3 class="popover-title">로그인 상태입니다.</h3>-->
 			<div class="popover-content text-center">			
 			<p>#:name # 님은 로그인 상태입니다.</p>
 			<a href="/" class="btn btn-default btn-flat">메인으로 이동</a>
