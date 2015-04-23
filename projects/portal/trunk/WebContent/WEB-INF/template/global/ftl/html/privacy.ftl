@@ -47,8 +47,7 @@
 		}]);	
 		</@kendo.compress>  
 						
-		--></script>
-		
+		--></script>		
 	</head>
 	<body>
 		<div class="page-loader"></div>	
