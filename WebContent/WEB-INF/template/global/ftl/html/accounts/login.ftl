@@ -282,12 +282,10 @@
 								<div class="row">
 									<div id="signin-status"  class="col-sm-12"></div>
 								</div>
-		
-								<div class="note"><i class="fa fa-info-circle"></i> 접속 IP: ${ action.getRemoteAddr() }</div>
 							</section>
 						</fieldset>				
 						<footer class="text-right">
-							
+							<div class="note"><i class="fa fa-info-circle"></i> 접속 IP: ${ action.getRemoteAddr() }</div>
 						</footer>
 					</form><!-- /form -->
 				</section>
