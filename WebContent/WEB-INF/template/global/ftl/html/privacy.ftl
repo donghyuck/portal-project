@@ -3,6 +3,7 @@
 	<head>
 		<#assign page = action.getPage() >
 		<title>${page.title}</title>
+		<@kendo.compress>
 		<script type="text/javascript">
 		<!--
 		
@@ -47,10 +48,9 @@
 				</#if>	
 				// END SCRIPT	
 			}
-		}]);	
-				
+		}]);					
 		-->
-		</script>		
+		</script></@kendo.compress>		
 		<style scoped="scoped">
 					
 		</style>   	
