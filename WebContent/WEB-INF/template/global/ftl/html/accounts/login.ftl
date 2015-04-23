@@ -317,13 +317,13 @@
         <div class="reg-block-header">
             <h2>Sign In</h2>
             <ul class="social-icons text-center">
-                <li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
-                <li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
-                <li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
-                <li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
+				<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
+				<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
+				<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
+				<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
             </ul>
-            <p>Don't Have Account? Click <a class="color-green" href="page_registration1.html">Sign Up</a> to registration.</p>            
-        </div>
+			<p>${action.webSite.displayName} 회원이 아니신가요? 지금 <a class="color-green" href="<@spring.url "/accounts/signup.do"/>">회원가입</a> 클릭하여 가입하세요.</p>            
+		</div>
 
         <div class="input-group margin-bottom-20">
             <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
