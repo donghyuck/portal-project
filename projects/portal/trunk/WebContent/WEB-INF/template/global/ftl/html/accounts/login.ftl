@@ -228,6 +228,10 @@
 			background: rgba(255, 255, 255, 1);
 		}
 		
+		.sky-form .alert {
+			margin-buttom:0;
+		} 
+		
 		</style>
 </#compress>		
 	</head>
