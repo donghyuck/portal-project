@@ -322,7 +322,7 @@
 				<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
 				<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
             </ul>
-			<p>${action.webSite.displayName} 회원이 아니신가요? 지금 <a class="color-green" href="<@spring.url "/accounts/signup.do"/>">회원가입</a> 클릭하여 가입하세요.</p>            
+			<p>${action.webSite.displayName} 회원이 아니신가요? 지금 클릭하여 가입하세요. <a class="btn btn-default btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>            
 		</div>
 
         <div class="input-group margin-bottom-20">
