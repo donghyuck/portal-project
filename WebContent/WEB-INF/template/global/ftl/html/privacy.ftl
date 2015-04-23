@@ -3,7 +3,7 @@
 	<head>
 		<#assign page = action.getPage() >
 		<title>${page.title}</title>			
-		<script type="text/javascript"><!-- 
+		<#compress><script type="text/javascript"><!-- 
 		var jobs = [];	
 		
 		yepnope([{
@@ -43,7 +43,7 @@
 				</#if>
 			}
 		}]);	
-		--></script>		
+		--></script></#compress>		
 	</head>
 	<body>
 		<div class="page-loader"></div>	
