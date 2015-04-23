@@ -51,46 +51,7 @@
 		</script>	
 		</#compress>	
 		<style scoped="scoped">
-		.breadcrumbs h2 {
-			font-size: 32px;
-			font-weight: 200;
-		}
-		.localnav:before, .localnav:after {
-			content: ' ';
-			display: table;
-		}		
-		.localnav {
-			position: relative;
-			margin-top: 0;
-			padding-top: 1em;		
-			border-bottom: 1px solid #d6d6d6;
-			margin: 0 auto;		
-		}
 		
-		.localnav-title {
-			padding: 0;
-			display: block;
-			font-size: 32px;
-			line-height: 1;
-			float: left;
-			font-weight: 200;
-		}
-
-		.localnav-links {
-			float: right;
-			margin: 8px 0 7px 0;
-		}		
-		.localnav-links>li {
-			float: left;
-			list-style: none;
-			margin-left: 30px;
-		}	
-		.localnav-link {
-			font-size: 13px;
-			color: #333;
-			display: inline-block;
-			white-space: nowrap;
-		}			
 		</style>   	
 	</head>
 	<body>
