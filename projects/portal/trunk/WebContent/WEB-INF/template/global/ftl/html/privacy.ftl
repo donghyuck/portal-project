@@ -3,8 +3,9 @@
 	<head>
 		<#assign page = action.getPage() >
 		<title>${page.title}</title>		
+		<@kendo.compress>
 		<script type="text/javascript">
-		<!-- <@kendo.compress>
+		<!-- 
 		
 		var jobs = [];	
 		
@@ -44,13 +45,9 @@
 				<#if !action.user.anonymous >	
 				</#if>
 			}
-		}]);		
-		</@kendo.compress>					
-		-->
-		</script>
-		<style scoped="scoped">
-					
-		</style>   	
+		}]);				
+		--></script>
+		</@kendo.compress>  	
 	</head>
 	<body>
 		<div class="page-loader"></div>	
