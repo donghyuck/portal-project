@@ -282,6 +282,7 @@
 	<div class="popover pull-right animated bounceInDown">
 		<!--<h3 class="popover-title">로그인 상태입니다.</h3>-->
 			<div class="popover-content text-center">		
+			<img class="img-rounded" src="/download/profile/{=username}?width=100&amp;height=150">	
 			<i class="icon-flat icon-flat thunder"></i>	
 			<p>#:name # 님은 로그인 상태입니다.</p>
 			<a href="/" class="btn btn-default btn-flat">메인으로 이동</a>
