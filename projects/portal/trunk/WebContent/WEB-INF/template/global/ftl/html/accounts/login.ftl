@@ -234,7 +234,36 @@
 		footer a:hover{
 			color:#fff;
 		}
-				
+
+		.popover {
+			display: block;
+			margin: 80px auto;
+			right: 0;
+			border: 0px solid #a94442;
+			background: rgba(55, 58, 71, 0.5);
+			color : #fff;
+			max-width: 350px;
+		}
+		
+		.popover > .popover-content {
+			padding : 15px;
+		}
+		
+		.popover-content > img {
+		  border-radius: 80px!important;
+		  display: inline-block;
+		  height: 80px;
+		  margin: -2px 0 0 0;
+		  width: 80px;
+		}
+		
+		.popover  p {
+			color : #fff;
+			font-size:1.1em;
+			margin-top : 15px;
+			margin-bottom : 10px;
+		}
+						
 		/**
 		.reg-block {
 			width: 380px;
