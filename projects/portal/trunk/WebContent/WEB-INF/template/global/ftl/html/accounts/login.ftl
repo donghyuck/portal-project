@@ -244,6 +244,10 @@
 		.copyright-text{
 			color:#fff;
 		}
+		
+		footer a {
+			color:#fff;
+		}
 				
 		/**
 		.reg-block {
