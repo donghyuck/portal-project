@@ -70,11 +70,9 @@
 						$(".container:first").prepend(template(user));				
 					}else{
 						renderTo.addClass("slideInDown");
-						renderTo.show(function(e){
-							//renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
-							//	alert("s");
-							//});
-							renderTo.removeClass("slideInDown");						
+						renderTo.show();
+						renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+							renderTo.removeClass("slideInDown");		
 						});
 					}													
 				}				
