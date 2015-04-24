@@ -497,6 +497,8 @@
 	function backstretch( options ){
 		var options = options || {}, 
 		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
+		pageSize = options.pageSize || 10 ,
+		maxPages = options.maxPages || 5;
 		renderTo = $("body");
 		
 		if( defined( options.renderTo) ){
@@ -506,7 +508,7 @@
 		if( !defined( renderTo.data('backstretch') ) ){			
 			//renderTo.backstretch( [], { duration: options.duration || 6000, fade: options.fade || 750});			
 			var dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
-				pageSize: 10,
+				pageSize: pageSize,
 				schema: {
 					total: "totalCount",
 					data: "photos"
@@ -522,7 +524,7 @@
 						renderTo.data('backstretch').images.push(template(photo));
 						});							
 					}					
-					if( (page < 5 && totalPages - page)  > 0 ){
+					if( (page < maxPages && totalPages - page)  > 0 ){
 						$this.page( page + 1 );
 						$this.read();						
 					}
