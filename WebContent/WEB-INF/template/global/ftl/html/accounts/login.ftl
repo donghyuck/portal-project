@@ -224,6 +224,7 @@
 		@media ( max-width : 768px) {
 			.reg-block {
 				width: 100%!important;			
+				margin: 0px auto;
 			}
 		}
 				
