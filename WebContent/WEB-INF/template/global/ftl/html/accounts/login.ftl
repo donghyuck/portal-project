@@ -87,7 +87,9 @@
 			
 			renderTo.find("form").submit(function(e) {		
 				event.preventDefault();
+				
 				var btn = renderTo.find("button[data-action='signin']");
+				
 				if( validator.validate() ){
 					btn.button('loading');
 					common.ui.ajax(
@@ -393,7 +395,8 @@
 						</#if>
 						</div>
 					</div>
-					<div class="col-sm-6 text-right">
+					<div class="col-sm-6">
+					<div class="copyright-text  text-right">
 					<#if action.hasWebSiteMenu("FOOTER_MENU") >
 						<#assign website_footer_menu = action.getWebSiteMenu("FOOTER_MENU") />
 						<#if  website_footer_menu.components?has_content >
@@ -402,6 +405,7 @@
 							</#list>
 						</#if>
 					</#if>
+					</div>
 					</div>					
 				</div><!--/row--> 
 			</div>
