@@ -1051,7 +1051,7 @@
 										</div>
 									</div>														
 							</section>
-							<hr/>
+							<hr class="no-margin-t"/>
 							<div id="photo-list-view" class="image-listview" style="min-height:450px;">	</div>
 							<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
 							<!--
