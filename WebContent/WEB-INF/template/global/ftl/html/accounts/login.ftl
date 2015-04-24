@@ -79,22 +79,6 @@
 				}				
 			} );		
 			
-			/*		
-			$("#signin-block>button.btn-close").click(function(e){
-				$this = $(this);					
-				if($this.hasClass("up")){					
-					$("#signin-block>section.sky-form").slideDown("slow", function(){
-						$this.toggleClass("up");	
-					});
-				}else{
-					$("#signin-block>section.sky-form").slideUp("slow", function(){
-						$this.toggleClass("up");	
-					});					
-				}
-			
-			}); 
-			*/		
-			
 			var validator = $("#signin-block form").kendoValidator({
 				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
 			}).data("kendoValidator");
@@ -365,7 +349,9 @@
 							<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>        
 							<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">가입하기</a></p>    
 						</div>
-						<div class="sky-form">
+						<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
+						<input type="hidden" name="output" value="json" />									
+						<div class="sky-form">		
 							<fieldset>
 								<section id="signin-status" class="no-margin"></section>						
 								<section>
@@ -385,22 +371,12 @@
 								</section>
 							</fieldset>		
 						</div>		
-		<!--		
-		<div class="input-group margin-bottom-20">
-			<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-			<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
-		</div>
-		<div class="input-group margin-bottom-20">
-			<span class="input-group-addon"><i class="fa fa-lock"></i></span>
-			<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
-		</div>
-		
-		<hr>		-->
 						<div class="row">
 							<div class="col-md-10 col-md-offset-1">
 								<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 							</div>
-						</div>			
+						</div>	
+						</form><!-- /form -->		
 					</div>
     
 
