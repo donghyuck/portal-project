@@ -69,11 +69,12 @@
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(user));				
 					}else{
-						renderTo.addClass("slideInDown");
 						renderTo.show();
+						/*
 						renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
 							renderTo.removeClass("slideInDown");		
 						});
+						*/
 					}													
 				}				
 			} );		
