@@ -71,7 +71,9 @@
 					}else{
 						renderTo.addClass("zoomIn");
 						renderTo.show(function(e){
-							renderTo.removeClass("zoomIn");					
+							renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+								alert("s");
+							});
 							//renderTo.removeClass("zoomIn");						
 						});
 						//renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
@@ -456,17 +458,8 @@
 			<nav class="navbar navbar-static-bottom">
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-12">
+					<div class="col-sm-6">
 						<div class="copyright-text">
-						<#if action.hasWebSiteMenu("FOOTER_MENU") >
-							<#assign website_footer_menu = action.getWebSiteMenu("FOOTER_MENU") />
-							<#if  website_footer_menu.components?has_content >
-								<#list website_footer_menu.components as item >					
-									<a href="${item.page}">${item.title}</a> <#if item != website_footer_menu.components?last >|</#if>	
-								</#list>
-							</#if>
-						</#if>
-											
 						<#if action.webSite ?? >${.now?string("yyyy")} &copy; ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
 							<#if action.hasWebSiteMenu("RULES_MENU") >
 								<#assign website_rules_menu = action.getWebSiteMenu("RULES_MENU") />
@@ -475,7 +468,17 @@
 								</#list>
 						</#if>
 						</div>
-					</div>				
+					</div>
+					<div class="col-sm-6 text-right">
+					<#if action.hasWebSiteMenu("FOOTER_MENU") >
+						<#assign website_footer_menu = action.getWebSiteMenu("FOOTER_MENU") />
+						<#if  website_footer_menu.components?has_content >
+							<#list website_footer_menu.components as item >					
+								<a href="${item.page}">${item.title}</a> <#if item != website_footer_menu.components?last >|</#if>	
+							</#list>
+						</#if>
+					</#if>
+					</div>					
 				</div><!--/row--> 
 			</div>
 			</nav>
