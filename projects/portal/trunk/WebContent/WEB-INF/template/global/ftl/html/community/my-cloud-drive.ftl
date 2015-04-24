@@ -1029,7 +1029,7 @@
 									</div>
 								</fieldset>	
 							</section>	
-							<section class="tag-box box-shadow shadow-effect-2">	
+							<section>	
 								<p class="text-muted"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
 									<div class="row" >
 										<div class="col-sm-8">
@@ -1051,6 +1051,7 @@
 										</div>
 									</div>														
 							</section>
+							<hr/>
 							<div id="photo-list-view" class="image-listview" style="min-height:450px;">	</div>
 							<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
 							<!--
