@@ -434,11 +434,13 @@
 				</section>
 			</div><!-- /.reg-block -->
 		</div><!-- /.container -->
-<nav class="navbar navbar-default navbar-fixed-bottom">
-  <div class="container">
-    ...
-  </div>
-</nav>		
+		<footer>
+			<nav class="navbar navbar-default navbar-static-bottom">
+			<div class="container">
+
+			</div>
+			</nav>
+		</footer>	
 	</div> <!-- ./wrapper -->	
 		
 	<script type="text/x-kendo-template" id="alert-template">
