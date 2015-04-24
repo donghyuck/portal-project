@@ -439,7 +439,7 @@
 									showPhotoPanel(item);
 								} else {
 									var item = data[0];
-									alert( this.view() );
+									alert( data.length );
 									alert( kendo.stringify( item ) );
 									item.set("index", 0 );
 									showPhotoPanel(item);
