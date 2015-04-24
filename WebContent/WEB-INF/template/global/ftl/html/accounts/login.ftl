@@ -80,7 +80,7 @@
 			} );		
 			
 			var validator = renderTo.find("form").kendoValidator({
-				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
+				errorTemplate: "<div class='note note-error'>#=message#</div>"
 			}).data("kendoValidator");
 			
 			
