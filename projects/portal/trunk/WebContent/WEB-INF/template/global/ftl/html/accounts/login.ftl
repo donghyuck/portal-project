@@ -168,7 +168,7 @@
 		.reg-block p a {
 			color: #777;
 		}
-		
+				
 		.reg-block > .sky-form fieldset {
 			padding: 10px 0px 5px;
 		}
