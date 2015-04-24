@@ -41,9 +41,9 @@
 		}]);			
 		
 		function prepareSocialSignOn(){				
-				common.ui.ajax("<@spring.url "/connect/list.json"/>", {
+			common.ui.ajax("<@spring.url "/connect/list.json"/>", {
 					success: function(response){ 
-						var renderTo = $("#signin-block .social-icons");
+						var renderTo = $("#signin .social-icons");
 						var html = kendo.render( kendo.template('<li #if(!allowSignin){# class="hidden"  # } #><a class="rounded-x social_#= provider #" data-action="connect" data-provider-id="#: provider #"  href="\\#"></a></li>') , response.media );
 						renderTo.html( html );							
 						$("a[data-action='connect']").click(function(e){
@@ -56,7 +56,7 @@
 							return false;								
 						});
 					}				
-				});		
+			});		
 		}
 
 		function prepareSignOn () {				
@@ -336,7 +336,7 @@
 				</div>
 			</nav>		
 			<div class="container" style="min-height:450px;">
-					<div class="reg-block">	
+					<div id="signin" class="reg-block" style="display:none;">	
 						<div class="reg-block-header">
 							<h2></h2>
 							<ul class="social-icons text-center">
