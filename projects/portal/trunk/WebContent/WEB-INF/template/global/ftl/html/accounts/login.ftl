@@ -319,6 +319,11 @@
 	<body class="bg-dark">
 		<div class="page-loader"></div>
 		<div class="wrapper">
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+			
+				</div>
+			</nav>		
 			<div class="container" style="min-height:450px;">
 				<div class="row"></div>
 
@@ -429,6 +434,11 @@
 				</section>
 			</div><!-- /.reg-block -->
 		</div><!-- /.container -->
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    ...
+  </div>
+</nav>		
 	</div> <!-- ./wrapper -->	
 		
 	<script type="text/x-kendo-template" id="alert-template">
