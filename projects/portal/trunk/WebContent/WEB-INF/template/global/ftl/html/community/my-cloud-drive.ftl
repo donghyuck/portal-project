@@ -433,14 +433,15 @@
 								var list_view_pager = common.ui.pager( $("#photo-list-pager") );
 								var dialogFx = common.ui.dialog(renderTo);
 								var data = common.ui.listview(renderTo).dataSource.view();	
+								
+								alert( data.length );
+								
 								if( dialogFx.data().page > list_view_pager.page() ){
 									var item = data[dialogFx.data().pageSize - 1];
 									item.set("index", dialogFx.data().pageSize -1 );
 									showPhotoPanel(item);
 								} else {
 									var item = data[0];
-									alert( data.length );
-									alert( kendo.stringify( item ) );
 									item.set("index", 0 );
 									showPhotoPanel(item);
 								}
