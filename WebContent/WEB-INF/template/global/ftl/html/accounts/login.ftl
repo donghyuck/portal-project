@@ -71,7 +71,7 @@
 					}else{
 						renderTo.addClass("fadeInRight");
 						renderTo.show(function(e){
-							renderTo.removeClass("fadeInRight");
+							renderTo.removeClass("slideInRight");
 						
 						});
 						//renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
