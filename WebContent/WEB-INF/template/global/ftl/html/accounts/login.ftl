@@ -153,7 +153,7 @@
 		.reg-block {
 			width: 380px;
 			padding: 20px;
-			margin: 60px auto;
+			margin: 50px auto;
 			background: #fff;			
 			border-top: solid 2px #34aadc;
 		}
@@ -220,7 +220,13 @@
 				margin: 60px auto;
 			}
 		}
-		
+
+		@media ( max-width : 768px) {
+			.reg-block {
+				width: 100%!important;			
+			}
+		}
+				
 		/**
 		.reg-block {
 			width: 380px;
@@ -314,8 +320,8 @@
 	<body class="bg-dark">
 		<div class="page-loader"></div>
 		<div class="wrapper">
-		<div class="container" style="min-height:450px;">
-
+			<div class="container" style="min-height:450px;">
+				<div class="row"></div>
 
 <div class="reg-block">
 	
