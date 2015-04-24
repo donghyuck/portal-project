@@ -336,41 +336,38 @@
 				</div>
 			</nav>		
 			<div class="container" style="min-height:450px;">
-				<div class="row"></div>
-
-<div class="reg-block">
-	
-	<div class="reg-block-header">
-            <h2>Sign In</h2>
-            <ul class="social-icons text-center">
-				<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
-				<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
-				<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
-				<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
-            </ul>
-			<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>        
-			<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">가입하기</a></p>    
-		</div>
-		<div class="sky-form">
-			<fieldset>
-							<section id="signin-status" class="no-margin"></section>						
-							<section>
-								<label class="input">
-									<i class="icon-append fa fa-envelope"></i>
-									<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
-								</label>
-							</section>
-							<section>
-								<label class="input">
-									<i class="icon-append fa fa-lock"></i>
-									<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
-								</label>
-							</section>
-							<section>							
-								<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
-							</section>
-	
-		</div>		
+					<div class="reg-block">	
+						<div class="reg-block-header">
+							<h2>Sign In</h2>
+							<ul class="social-icons text-center">
+								<li><a class="rounded-x social_facebook" data-original-title="Facebook" href="#"></a></li>
+								<li><a class="rounded-x social_twitter" data-original-title="Twitter" href="#"></a></li>
+								<li><a class="rounded-x social_googleplus" data-original-title="Google Plus" href="#"></a></li>
+								<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
+							</ul>
+							<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>        
+							<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">가입하기</a></p>    
+						</div>
+						<div class="sky-form">
+							<fieldset>
+								<section id="signin-status" class="no-margin"></section>						
+								<section>
+									<label class="input">
+										<i class="icon-append fa fa-envelope"></i>
+										<input type="text" name="username" placeholder="아이디 또는 이메일" pattern="[^-][A-Za-z0-9]{2,20}" required validationMessage="아이디 또는 이메일 주소를 입력하여 주세요.">
+									</label>
+								</section>
+								<section>
+									<label class="input">
+										<i class="icon-append fa fa-lock"></i>
+										<input type="password" name="password" placeholder="비밀번호" required  validationMessage="비밀번호를 입력하여 주세요." >
+									</label>
+								</section>
+								<section>							
+									<label class="checkbox"><input type="checkbox" name="remember"><i></i>로그인 상태 유지</label>
+								</section>
+							</fieldset>		
+						</div>		
 		<!--		
 		<div class="input-group margin-bottom-20">
 			<span class="input-group-addon"><i class="fa fa-envelope"></i></span>
@@ -382,12 +379,12 @@
 		</div>
 		
 		<hr>		-->
-		<div class="row">
-			<div class="col-md-10 col-md-offset-1">
-				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
-			</div>
-		</div>			
-	</div>
+						<div class="row">
+							<div class="col-md-10 col-md-offset-1">
+								<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+							</div>
+						</div>			
+					</div>
     
 
 			<div id="signin-block" class="reg-block pull-right animated zoomIn" style="display:none;">
