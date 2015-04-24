@@ -349,8 +349,8 @@
 					</div>					
 				</div>
 			</nav>		
-			<div class="container" style="min-height:450px;">
-					<div id="signin" class="reg-block animated">	
+			<div class="container" style="min-height:570px;">
+					<div id="signin" class="reg-block animated" style="display:none;">	
 						<div class="reg-block-header">
 							<h2></h2>
 							<ul class="social-icons text-center">
