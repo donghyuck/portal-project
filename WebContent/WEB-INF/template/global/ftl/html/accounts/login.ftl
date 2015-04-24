@@ -71,8 +71,13 @@
 					}else{
 						renderTo.addClass("zoomIn");
 						renderTo.show(function(e){
-							renderTo.removeClass("zoomIn");						
+							renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+								alert("s");
+							});
+							//renderTo.removeClass("zoomIn");						
 						});
+						//renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+						//});
 					}													
 				}				
 			} );		
