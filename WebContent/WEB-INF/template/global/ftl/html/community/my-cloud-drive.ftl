@@ -1029,8 +1029,7 @@
 									</div>
 								</fieldset>	
 							</section>	
-							<section>	
-								
+							<section class="p-sm">									
 									<div class="row" >
 										<div class="col-sm-8">
 											<h4><i class="fa fa-lock"></i> 소유자</h4>
@@ -1045,7 +1044,7 @@
 													<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
 												</label>
 											</div>		
-											<p class="text-muted"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
+											<p class="text-muted m-t-sm"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
 										</div>
 										<div class="col-sm-4">
 											<button type="button" class="btn btn-info btn-lg btn-flat btn-block m-t-sm btn-outline bg-white rounded" data-toggle="button" data-bind="events: { click: toggle }"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
