@@ -324,8 +324,12 @@
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<nav class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
-			
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="/">
+							<img alt="Brand" src="/download/logo/company/${action.webSite.company.name}">
+						</a>
+					</div>					
 				</div>
 			</nav>		
 			<div class="container" style="min-height:450px;">
