@@ -69,7 +69,7 @@
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(user));				
 					}else{
-						renderTo.addClass("fadeInRight");
+						renderTo.addClass("slideInRight");
 						renderTo.show(function(e){
 							renderTo.removeClass("slideInRight");
 						
