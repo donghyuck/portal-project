@@ -48,6 +48,7 @@
 						renderTo.html( html );							
 						$("a[data-action='connect']").click(function(e){
 							var $this = $(this);				
+							
 							//$("form[name='signin-fm'] fieldset").attr("disabled", true);									
 							window.open( 
 								"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
@@ -59,18 +60,26 @@
 			});		
 		}
 
-		function prepareSignOn () {				
+		function prepareSignOn () {			
+			var renderTo = $("#signin");	
 			common.ui.data.user( {
 				success : function ( user ) {				
 					if( !user.anonymous ){
-						$("form fieldset").prop("disabled", true);
+						$(".reg-block fieldset").prop("disabled", true);
 						var template = kendo.template($("#alert-template").html());	
 						$(".container:first").prepend(template(user));				
 					}else{
-						$("#signin-block").show();
+						renderTo.addClass("fadeInRight");
+						renderTo.show(function(e){
+							alert("ee");
+						
+						});
+						//renderTo.one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+						//});
 					}													
 				}				
 			} );		
+			
 			/*		
 			$("#signin-block>button.btn-close").click(function(e){
 				$this = $(this);					
@@ -85,7 +94,8 @@
 				}
 			
 			}); 
-				*/		
+			*/		
+			
 			var validator = $("#signin-block form").kendoValidator({
 				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
 			}).data("kendoValidator");
@@ -336,7 +346,7 @@
 				</div>
 			</nav>		
 			<div class="container" style="min-height:450px;">
-					<div id="signin" class="reg-block" style="display:none;">	
+					<div id="signin" class="reg-block animated" style="display:none;">	
 						<div class="reg-block-header">
 							<h2></h2>
 							<ul class="social-icons text-center">
