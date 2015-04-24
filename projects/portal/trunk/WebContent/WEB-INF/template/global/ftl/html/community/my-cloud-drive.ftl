@@ -832,9 +832,11 @@
 			}
 			
 			.white-popup-block .toolbar {
-				position:relative;
+				position: absolute;
 				text-align: right;
 				height:50px;
+				right:0;
+				top:0;
 			}
 			
 			.white-popup-block  .toolbar .btn-flat {
@@ -1158,7 +1160,11 @@
 					<div class="white-popup-block" style="display:none">							
 						<div class="container">
 							<div class="row">
-								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded">								
+								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded" style="position:relative">							
+									<div class="toolbar">
+										<span class="btn-flat paper-plane"></span>
+										<span class="close" data-bind="click: close"></span>
+									</div>										
 								<div class="left-col">
 									<div class="shadow-wrapper" style="width:150px;height:150px;">
 										<div class="box-shadow shadow-effect-2 " >
@@ -1179,10 +1185,6 @@
 									</ul>			
 								</div>
 								<div class="right-col">								
-									<div class="toolbar">
-										<span class="btn-flat paper-plane"></span>
-										<span class="close" data-bind="click: close"></span>
-									</div>	
 									<section class="sky-form">
 										<header data-bind="text: image.name"></header>
 										<fieldset data-bind="visible:hasSource">
