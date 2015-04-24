@@ -225,7 +225,10 @@
 				margin: 60px auto;
 			}
 		}
-				
+		.navbar-brand>img {
+			max-width: 150px;
+			height:auto;
+		}		
 		.copyright-text{
 			color:#fff;
 		}
