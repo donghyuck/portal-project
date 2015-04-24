@@ -351,11 +351,11 @@
 							<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 <span class="text-primary">가입</span>하세요.</p>        
 							<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">가입하기</a></p>    
 						</div>
+						<section id="signin-status" class="text-danger"></section>			
 						<form name="signin-fm" role="form" method="POST" accept-charset="utf-8">
 						<input type="hidden" name="output" value="json" />									
 						<div class="sky-form">		
-							<fieldset>
-								<section id="signin-status" class="no-margin"></section>						
+							<fieldset>											
 								<section>
 									<label class="input">
 										<i class="icon-append fa fa-envelope"></i>
