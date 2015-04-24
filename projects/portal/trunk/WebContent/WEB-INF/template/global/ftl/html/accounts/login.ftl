@@ -87,7 +87,7 @@
 			
 			renderTo.find("form").submit(function(e) {		
 				event.preventDefault();
-				var btn = $('.btn-signin');
+				var btn = renderTo.find("button[data-action='signin]'");
 				if( validator.validate() ){
 					btn.button('loading');
 					common.ui.ajax(
