@@ -439,7 +439,17 @@
 		<footer>
 			<nav class="navbar navbar-static-bottom">
 			<div class="container">
-
+					<div class="copyright-text">
+					<#if action.webSite ?? >${.now?string("yyyy")} &copy; ${action.webSite.company.displayName }. 모든 권리 보유.<#else></#if>
+						<#if action.hasWebSiteMenu("RULES_MENU") >
+							<#assign website_rules_menu = action.getWebSiteMenu("RULES_MENU") />
+							<#list website_rules_menu.components as item >					
+						<a href="${item.page}">${item.title}</a> <#if item != website_rules_menu.components?last >|</#if>		
+							</#list>
+					<#else>
+						<a href="<@spring.url '/content.do?contentId=2'/>">개인정보 취급방침</a> | <a href="<@spring.url '/content.do?contentId=1'/>">이용약관</a>
+					</#if>
+					</div>
 			</div>
 			</nav>
 		</footer>	
