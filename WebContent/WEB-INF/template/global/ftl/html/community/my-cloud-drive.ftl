@@ -434,7 +434,7 @@
 								var dialogFx = common.ui.dialog(renderTo);
 								var data = common.ui.listview(renderTo).dataSource.view();	
 								
-								alert( data.length );
+								alert( this.dataSource.view().length );
 								
 								if( dialogFx.data().page > list_view_pager.page() ){
 									var item = data[dialogFx.data().pageSize - 1];
