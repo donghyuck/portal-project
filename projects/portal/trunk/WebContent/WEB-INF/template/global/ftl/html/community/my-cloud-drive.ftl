@@ -1028,7 +1028,32 @@
 										</div>
 									</div>
 								</fieldset>	
-							</section>			
+							</section>	
+							<section class="tag-box box-shadow shadow-effect-2">	
+								<p class="text-muted"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
+									<div class="row" >
+										<div class="col-sm-8">
+											<h4><i class="fa fa-angle-right"></i> 소유자</h4>
+											<div class="btn-group" data-toggle="buttons" id="image-source-list">
+												<label class="btn btn-danger rounded-left active">
+													<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
+												</label>
+												<label class="btn btn-danger">
+													<input type="radio" name="image-source"  value="30"><i class="fa fa-globe"></i> SITE
+												</label>											
+												<label class="btn btn-danger rounded-right">
+													<input type="radio" name="image-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
+												</label>
+											</div>		
+										</div>
+										<div class="col-sm-4">
+											<button type="button" class="btn btn-info btn-lg btn-flat btn-block m-t-sm btn-outline bg-white rounded" data-toggle="button" data-bind="events: { click: toggle }"><i class="fa fa-cloud-upload"></i> &nbsp; 사진업로드</button>
+										</div>
+									</div>														
+							</section>
+							<div id="photo-list-view" class="image-listview" style="min-height:450px;">	</div>
+							<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
+							<!--
 							<div class="panel panel-default no-margin-b">			
 								<div class="panel-body bg-slivergray border-b">
 									<p class="text-muted"><i class="fa fa-info"></i> "이미지 보기"를 클릭하면 상세 정보 및 수정할 수 있습니다. </p>
@@ -1058,7 +1083,7 @@
 								<div class="panel-footer no-padding">
 									<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
 								</div>
-							</div>
+							</div>-->
 							</#if>			
 						</div><!-- end tab-pane -->
 					</div><!-- end of tab content -->		
