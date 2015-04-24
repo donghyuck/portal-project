@@ -153,7 +153,7 @@
 		.reg-block {
 			width: 320px;
 			padding: 20px;
-			margin: 50px auto;
+			margin: 60px auto;
 			background: #fff;			
 			border-top: solid 0px #34aadc;
 			float: right;
