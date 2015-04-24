@@ -154,7 +154,7 @@
 			float: right;
 		}
 
-		.reg-block > .sky-form {
+		.reg-block .sky-form {
 			border:0;
 		}
 		
