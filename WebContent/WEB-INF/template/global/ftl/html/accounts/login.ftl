@@ -245,6 +245,10 @@
 		footer a {
 			color:#fff;
 		}
+		
+		footer a:hover{
+			color:#fff;
+		}
 				
 		/**
 		.reg-block {
