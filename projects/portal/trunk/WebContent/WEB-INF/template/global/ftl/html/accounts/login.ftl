@@ -48,7 +48,7 @@
 						renderTo.html( html );							
 						$("a[data-action='connect']").click(function(e){
 							var $this = $(this);				
-							$("form[name='signin-fm'] fieldset").attr("disabled", true);									
+							//$("form[name='signin-fm'] fieldset").attr("disabled", true);									
 							window.open( 
 								"<@spring.url "/connect/"/>" + $this.data("provider-id") + "/authorize",
 								$this.data("provider-id") + " Window", 
