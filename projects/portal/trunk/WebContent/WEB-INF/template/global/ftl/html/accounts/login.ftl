@@ -79,11 +79,13 @@
 				}				
 			} );		
 			
-			var validator = $("#signin-block form").kendoValidator({
+			var validator = renderTo.find("form").kendoValidator({
 				errorTemplate: "<div class='note note-error'><i class='fa fa-exclamation-triangle'></i> #=message#</div>"
 			}).data("kendoValidator");
 			
-			$('form[name="signin-fm"]').submit(function(e) {		
+			
+			
+			renderTo.find("form").submit(function(e) {		
 				event.preventDefault();
 				var btn = $('.btn-signin');
 				if( validator.validate() ){
@@ -91,7 +93,7 @@
 					common.ui.ajax(
 						"<@spring.url "/login_auth"/>", 
 						{
-							data: $('form[name="signin-fm"]').serialize(),
+							data: renderTo.find("form").serialize(),
 							success : function( response ) {   
 								if( response.error ){ 
 									common.ui.alert({
@@ -373,7 +375,7 @@
 						</div>		
 						<div class="row">
 							<div class="col-md-10 col-md-offset-1">
-								<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
+								<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-action="signin" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
 							</div>
 						</div>	
 						</form><!-- /form -->		
