@@ -226,6 +226,8 @@
 			}
 		}
 				
+		footer .mavbar 		
+				
 		/**
 		.reg-block {
 			width: 380px;
@@ -435,7 +437,7 @@
 			</div><!-- /.reg-block -->
 		</div><!-- /.container -->
 		<footer>
-			<nav class="navbar navbar-default navbar-static-bottom">
+			<nav class="navbar navbar-static-bottom">
 			<div class="container">
 
 			</div>
