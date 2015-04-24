@@ -198,7 +198,7 @@
 		/*Reg Header*/
 		.reg-block-header {
 			padding-bottom: 5px;
-			margin-bottom: 30px;
+			margin-bottom: 10px;
 			border-bottom: solid 1px #eee;
 		}
 		
@@ -328,7 +328,7 @@
 				<li><a class="rounded-x social_linkedin" data-original-title="Linkedin" href="#"></a></li>
             </ul>
 			<p class="m-t-md">${action.webSite.displayName} 회원이 아니신가요? <br >지금 클릭하여 <span class="text-primary">가입</span>하세요.</p>        
-			<p class="text-right" ><a class="btn btn-default btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>    
+			<p class="text-right" ><a class="btn btn-info btn-flat btn-outline" href="<@spring.url "/accounts/signup.do"/>">회원가입</a></p>    
 		</div>
 		<div class="sky-form">
 			<fieldset>
@@ -361,7 +361,7 @@
 		</div>
 		
 		<hr>		-->
-		<hr class="m-b-md m-t-sm" />	
+		<hr class="m-b-md m-t-xs" />	
 		<div class="row">
 			<div class="col-md-10 col-md-offset-1">
 				<button type="submit" class="btn btn-info btn-block btn-flat btn-outline btn-lg" data-loading-text='<i class="fa fa-spinner fa-spin"></i>' >로그인</button>
