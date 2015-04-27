@@ -917,7 +917,7 @@
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote">${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if>	${ navigator.title }</h1>					
-					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="mycloud-controls-section"></span>
+					<span class="btn-flat settings" data-feature-name="spmenu" data-toggle="spmenu" data-target-object-id="personalized-controls-section"></span>
 					<span class="btn-flat gift t-0-r-1"></span>
 					</div><!--/end container-->
 			</div>
@@ -1269,9 +1269,9 @@
 		</div>
 		
 		<!-- START RIGHT SLIDE MENU -->
-		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="mycloud-controls-section">
+		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
 			<header>
-				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='mycloud-controls-section']">Close</button>
+				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='personalized-controls-section']">Close</button>
 				<h5 class="side-section-title white">My 클라우드</h5>	
 			</header>	
 				<!-- details -->
