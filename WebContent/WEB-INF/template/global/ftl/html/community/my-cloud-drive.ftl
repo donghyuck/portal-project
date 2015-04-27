@@ -726,8 +726,7 @@
 			if( !dialogFx.isOpen ){							
 				dialogFx.open();
 			}
-		}
-					
+		}		
 		-->
 		</script>		
 		<style scoped="scoped">
@@ -1271,8 +1270,10 @@
 		
 		<!-- START RIGHT SLIDE MENU -->
 		<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">
+			<header>
 				<button type="button" class="btn-close" data-dismiss='spmenu' data-target-object="button[data-target-object-id='personalized-controls-section']">Close</button>
-				<h5 class="side-section-title white">My 클라우드 저장소</h5>	
+				<h5 class="side-section-title white">My 클라우드</h5>	
+			</header>	
 				<!-- details -->
 				<div style="
 				    position: absolute;
@@ -1284,6 +1285,8 @@
 				    width: 100%;
 				">									
 				</div>
+				
+				
 
 			</div>	
 		</section>	
