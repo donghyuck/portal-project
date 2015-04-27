@@ -610,6 +610,9 @@
 		};
 	
 	function spmenu(options){
+		
+		
+		
 		$(document).on("click","[data-feature-name='spmenu']", function(e){
 			var $this = $(this) , target_object ;
 			if( $this.prop("tagName").toLowerCase() == "a" ){			
@@ -625,8 +628,10 @@
 		});
 		
 		$(document).on("click","[data-dismiss='spmenu']", function(e){
+			
 			var $this = $(this);			
-			var target  = $this.parent();
+			var target  = $this.closest(".cbp-spmenu");
+			
 			$("body").css("overflow-y" , "auto");			
 			if($this.data("target-object-id")){
 				var target = $($this.data("target-object"));
