@@ -411,6 +411,7 @@
 * sliede side menu
 */
 .cbp-spmenu {
+	background:#fff;	
 	position: fixed;
 }
 
@@ -516,7 +517,7 @@
 	margin: 0px;
 	padding: 5px;
 	color: #000000;
-	background: #5bc0de; /* transparent;        	*/
+	background: #6c9fd1; /* transparent;        	*/
 	height: 80px;
 }
 
