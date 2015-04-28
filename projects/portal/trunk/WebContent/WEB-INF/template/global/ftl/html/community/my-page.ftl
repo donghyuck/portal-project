@@ -621,21 +621,21 @@
 			<!-- START MAIN CONTENT -->
 			<div class="container content">			
 				<div class="sky-form">
-                    <fieldset>
-                        <section>
-                            <label class="label"><i class="fa fa-lock"></i> 소유자</label>
-                            <div class="inline-group">
-                                <label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i> Me</label>
-                                <label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>  ${action.webSite.displayName}</label>
-                                <label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>  ${action.webSite.company.displayName}</label>
-                            </div>
-                        </section>
-                    </fieldset>
-                    <footer>
-                        <button type="button" class="btn btn-danger"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
-                        <button type="button" class="btn btn-primary" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
-                    </footer>
-                </div>
+					<fieldset>
+						<section>
+							<label class="label"> 소유자</label>
+							<div class="inline-group">
+								<label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i> Me</label>
+								<label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>  ${action.webSite.displayName}</label>
+								<label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>  ${action.webSite.company.displayName}</label>
+							</div>
+						</section>
+					</fieldset>
+					<footer>
+						<button type="button" class="btn btn-danger"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+						<button type="button" class="btn btn-primary" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
+					</footer>
+				</div>
 			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
 				<!--
