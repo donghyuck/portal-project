@@ -2,7 +2,7 @@
 <html decorator="unify">
 <head>
 	<#assign page = action.getPage() >		
-		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
+		<title>${page.title}</title>
 		<#compress>		
 		<script type="text/javascript">
 		<!--
