@@ -632,8 +632,8 @@
                         </section>
                     </fieldset>
                     <footer>
-                        <button type="submit" class="btn-u">Submit</button>
-                        <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+                        <button type="button" class="btn btn-sm btn-danger"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+                        <button type="button" class="btn btn-primary btn-sm" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
                     </footer>
                 </div>
 			</div>		
