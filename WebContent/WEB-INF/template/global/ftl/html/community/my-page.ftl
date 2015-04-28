@@ -74,8 +74,10 @@
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->
+		
+		
 		function getMyPageSource(){
-			return $("#page-source-list input[type=radio][name=page-source]:checked").val();			
+			return $("#page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 				
 		function createPageSection(){
@@ -624,7 +626,7 @@
 					<fieldset>
 						<section>
 							<label class="label"> 소유자</label>
-							<div class="inline-group">
+							<div id="my-page-list" class="inline-group">
 								<label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i> Me</label>
 								<label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>  ${action.webSite.displayName}</label>
 								<label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>  ${action.webSite.company.displayName}</label>
@@ -654,26 +656,30 @@
 					</div>				
 				</div>
 				-->
+				
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container content" style="min-height:450px;">
 						<div class="row">
 							<div id="my-page">
 								<div id="my-page-list" class="master animated">
+									<!--
 									<div class="btn-toolbar p-xxs">
+									
 										<div class="btn-group btn-group-sm" data-toggle="buttons" id="page-source-list">
 											<label class="btn btn-info rounded active">
 												<input type="radio" name="page-source" value="2" checked="checked"><i class="fa fa-user"></i> ME
-											</label><!--
+											</label>
 											<label class="btn btn-sm btn-danger">
 												<input type="radio" name="page-source" value="30"><i class="fa fa-globe"></i> SITE
 											</label>											
 											<label class="btn btn-sm btn-danger rounded-right">
 												<input type="radio" name="page-source" value="1"><i class="fa fa-building-o"></i> COMPANY
-											</label>-->
+											</label>
 										</div>
 										<button type="button" class="btn btn-sm btn-danger" data-action="page-create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 										<button type="button" class="btn btn-primary btn-sm" data-action="page-publish" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
 									</div>
+									-->
 									<div id="my-page-grid"></div>
 								</div><!-- /.my-page-list -->
 								<div id="my-page-view" class="details animated">								
