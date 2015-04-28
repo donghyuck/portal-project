@@ -105,6 +105,9 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html())
 				});		
+				renderTo.removeClass("k-widget");
+				
+				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					common.ui.listview(renderTo).dataSource.read();	
 				});										
@@ -980,7 +983,6 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-				<div class="clearfix"></div>
 				<div class="row margin-bottom-20">
                     <div class="col-sm-5 sm-margin-bottom-20">
                         <img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.7/assets/img/main/img12.jpg" alt="">
