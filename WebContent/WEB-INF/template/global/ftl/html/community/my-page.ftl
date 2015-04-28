@@ -619,6 +619,26 @@
 			</div>
 			</#if>	
 			<!-- START MAIN CONTENT -->
+			<div class="container content">			
+				<div class="sky-form">
+                    <fieldset>
+                        <section>
+                            <label class="label">Inline radios</label>
+                            <div class="inline-group">
+                                <label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Alice</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Anastasia</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Avelina</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
+                            </div>
+                        </section>
+                    </fieldset>
+                    <footer>
+                        <button type="submit" class="btn-u">Submit</button>
+                        <button type="button" class="btn-u btn-u-default" onclick="window.history.back();">Back</button>
+                    </footer>
+                </div>
+			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
 				<!--
 				<div class="personalized-section-heading">
