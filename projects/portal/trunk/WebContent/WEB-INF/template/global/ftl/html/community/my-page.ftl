@@ -625,11 +625,9 @@
                         <section>
                             <label class="label">Inline radios</label>
                             <div class="inline-group">
-                                <label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Alice</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Anastasia</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Avelina</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
+                                <label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i>My</label>
+                                <label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>Site</label>
+                                <label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>Company</label>
                             </div>
                         </section>
                     </fieldset>
