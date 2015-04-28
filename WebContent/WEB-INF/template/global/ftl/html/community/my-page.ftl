@@ -626,8 +626,8 @@
                             <label class="label"><i class="fa fa-lock"></i> 소유자</label>
                             <div class="inline-group">
                                 <label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i>My</label>
-                                <label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>Site ${page.webSite.displayName}</label>
-                                <label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>Company ${page.webSite.company.displayName}</label>
+                                <label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>Site ${action.webSite.displayName}</label>
+                                <label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>Company ${action.webSite.company.displayName}</label>
                             </div>
                         </section>
                     </fieldset>
