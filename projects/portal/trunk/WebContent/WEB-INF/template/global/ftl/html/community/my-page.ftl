@@ -13,24 +13,24 @@
 			'css!<@spring.url "/styles/font-icons/themify-icons.css"/>',
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/skins/dark.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
-			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',				
+			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',			
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',	
 			'css!<@spring.url "/styles/codrops/codrops.page-transitions.css"/>',			
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
-			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
-			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
 			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
-			'<@spring.url "/js/bootstrap/3.3.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
-			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 		
+			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',				
 			'<@spring.url "/js/pdfobject/pdfobject.js"/>',			
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
@@ -51,19 +51,19 @@
 							authenticate : function(e){
 								e.token.copy(currentUser);
 								if( !currentUser.anonymous ){		
-									$("#announce-selector label.btn").last().removeClass("disabled");									 
+ 
 								}
 							} 
 						}						
 					},
 					wallpaper : {
-						slideshow : false
-					},
+						renderTo:$(".breadcrumbs-v3")
+					},	
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
+				//$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
 					
 				createPageSection();
 				// END SCRIPT 				
@@ -472,7 +472,22 @@
 		-->
 		</script>		
 		<style scoped="scoped">			
-
+			.breadcrumbs-v3 {
+				position:relative;
+			}
+			.breadcrumbs-v3 p	{
+				color : #fff;
+				font-size: 24px;
+				font-weight: 200;
+				margin-bottom: 0;
+			}	
+			
+			.breadcrumbs-v3.img-v1 {
+				background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
+				background-size: cover;
+				background-position: center center;			
+			}	
+			
 		#my-page .master  {
 			opacity: 1;
 			visibility: visible;		
@@ -590,9 +605,21 @@
 		<div class="wrapper">
 			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
-			<!-- ./END HEADER -->
+			<!-- END HEADER -->	
+			<!-- START MAIN CONTENT -->
+			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />		
+			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
+				<div class="personalized-controls container text-center p-xl">
+					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>
+					<span class="btn-flat settings"></span>
+					</div><!--/end container-->
+			</div>
+			</#if>	
 			<!-- START MAIN CONTENT -->
 			<section class="personalized-section bg-transparent no-margin-b open" >
+				<!--
 				<div class="personalized-section-heading">
 					<div class="container">
 						<div class="personalized-section-title">
@@ -607,6 +634,7 @@
 						</div>
 					</div>				
 				</div>
+				-->
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container content" style="min-height:450px;">
 						<div class="row">
