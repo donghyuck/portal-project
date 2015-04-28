@@ -990,7 +990,7 @@
                         <div class="news-v3-in-sm no-padding">
                             <ul class="list-inline posted-info">
                                 <li>By Alexander Jenni</li>
-                                <li>In <a href="#">Design</a></li>
+                                <li>In <a href="\\#">Design</a></li>
                                 <li>Posted January 24, 2015</li>
                             </ul>
                             <h2><a href="\\#">Incredible standard post “IMAGE”</a></h2>
