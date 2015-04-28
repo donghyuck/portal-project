@@ -982,18 +982,32 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-<div class="thumbnails thumbnail-style">
-                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project 1" href="assets/img/main/9.jpg">
-                                <span class="overlay-zoom">  
-                                    <img class="img-responsive" src="assets/img/main/img18.jpg" alt="">
-                                    <span class="zoom-icon"></span>                   
-                                </span>                                              
-                            </a>                    
-                            <div class="caption">
-                                <h3><a class="hover-effect" href="\\#">Project One</a></h3>
-                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
-                            </div>
+<div class="row margin-bottom-20">
+                    <div class="col-sm-5 sm-margin-bottom-20">
+                        <img class="img-responsive" src="assets/img/main/img12.jpg" alt="">
+                    </div>
+                    <div class="col-sm-7 news-v3">
+                        <div class="news-v3-in-sm no-padding">
+                            <ul class="list-inline posted-info">
+                                <li>By Alexander Jenni</li>
+                                <li>In <a href="#">Design</a></li>
+                                <li>Posted January 24, 2015</li>
+                            </ul>
+                            <h2><a href="\\#">Incredible standard post “IMAGE”</a></h2>
+                            <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin non metus inmi efficitur...</p>
+                            <ul class="post-shares">
+                                <li>
+                                    <a href="\\#">
+                                        <i class="rounded-x icon-speech"></i>
+                                        <span>5</span>
+                                    </a>
+                                </li>
+                                <li><a href="\\#"><i class="rounded-x icon-share"></i></a></li>
+                                <li><a href="\\#"><i class="rounded-x icon-heart"></i></a></li>
+                            </ul>
                         </div>
+                    </div>
+                </div>
 	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
 		#: title #</span>
