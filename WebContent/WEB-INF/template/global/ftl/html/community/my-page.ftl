@@ -678,7 +678,7 @@
 						<button type="button" class="btn btn-primary" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
 					</footer>
 				</div>
-				<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">			
+				<article class="bg-white animated fadeInUp m-t-sm" style="min-height:200px; display:none;">			
 					<div id="my-page-listview" class="no-border"></div>
 				</article>					
 			</div>		
