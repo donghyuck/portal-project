@@ -1,6 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 <head>
+	<#assign page = action.getPage() >		
 		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
 		<#compress>		
 		<script type="text/javascript">
