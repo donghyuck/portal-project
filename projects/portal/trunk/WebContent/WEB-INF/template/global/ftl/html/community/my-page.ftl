@@ -991,10 +991,10 @@
 			<img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.7/assets/img/main/img12.jpg" alt="">
 			#}#
 		</div>
-                    <div class="col-sm-7 news-v3">
-                        <div class="news-v3-in-sm no-padding">
-                            <ul class="list-inline posted-info">
-                                <li>By Alexander Jenni</li>
+		<div class="col-sm-7 news-v3">
+			<div class="news-v3-in-sm no-padding">
+				<ul class="list-inline posted-info">
+					<li>By #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
                                 <li>In <a href="\\#">Design</a></li>
                                 <li>Posted January 24, 2015</li>
                             </ul>
