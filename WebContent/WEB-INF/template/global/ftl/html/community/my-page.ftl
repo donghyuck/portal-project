@@ -998,8 +998,8 @@
                                 <li>In <a href="\\#">Design</a></li>
                                 <li>Posted January 24, 2015</li>
                             </ul>
-                            <h2><a href="\\#">#: subject #</a></h2>
-                            <p>Nullam elementum tincidunt massa, a pulvinar leo ultricies ut. Ut fringilla lectus tellus, imperdiet molestie est volutpat at. Sed viverra cursus nibh, sed consectetur ipsum sollicitudin non metus inmi efficitur...</p>
+                            <h2><a href="\\#">#: title #</a></h2>
+                            <p>#: summary #</p>
                             <ul class="post-shares">
                                 <li>
                                     <a href="\\#">
