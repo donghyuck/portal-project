@@ -623,7 +623,7 @@
 				<div class="sky-form">
                     <fieldset>
                         <section>
-                            <label class="label">Inline radios</label>
+                            <label class="label"><i class="fa fa-lock"></i> 소유자</label>
                             <div class="inline-group">
                                 <label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i>My</label>
                                 <label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>Site</label>
