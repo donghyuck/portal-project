@@ -980,7 +980,7 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-<div class="row margin-bottom-20">
+				<div class="row margin-bottom-20 clearfix ">
                     <div class="col-sm-5 sm-margin-bottom-20">
                         <img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.7/assets/img/main/img12.jpg" alt="">
                     </div>
