@@ -75,7 +75,7 @@
 		<!-- Page														-->
 		<!-- ============================== -->		
 		function getMyPageSource(){
-			return $("#page-source-list input[type=radio][name=radio-inline]:checked").val();			
+			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 		
 		function createMyPageListView(){
@@ -105,7 +105,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html())
 				});		
-				$("#page-source-list input[type=radio][name=radio-inline]").on("change", function () {
+				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					common.ui.listview(renderTo).dataSource.read();	
 				});										
 			}
