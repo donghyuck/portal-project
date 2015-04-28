@@ -855,7 +855,7 @@
 			<!-- ./END MAIN CONTENT -->	
 	 		
 	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-footer.ftl" >		
+			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>				
 			<!-- START RIGHT SLIDE MENU -->
