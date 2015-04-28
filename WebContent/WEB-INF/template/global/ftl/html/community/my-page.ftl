@@ -677,7 +677,7 @@
 				</div>
 				<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">			
 					<div class="container-fluid content" >
-						<div id="my-page-listview"></div>
+						<div id="my-page-listview" class="container no-border"></div>
 					</div>
 				</article>					
 			</div>		
