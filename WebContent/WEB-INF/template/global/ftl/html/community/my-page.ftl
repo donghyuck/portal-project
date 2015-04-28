@@ -65,20 +65,55 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				//$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
-					
-				createPageSection();
+				createMyPageListView();	
+				//createPageSection();
 				// END SCRIPT 				
 			}
 		}]);			
 
 		<!-- ============================== -->
 		<!-- Page														-->
-		<!-- ============================== -->
-		
-		
+		<!-- ============================== -->		
 		function getMyPageSource(){
 			return $("#page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
+		
+		function createMyPageListView(){
+		
+			var renderTo = $("#my-page-listview");
+			if( !common.ui.exists( renderTo ) ){
+				common.ui.listview( renderTo, {
+					dataSource: {
+						serverFiltering: false,
+						transport: { 
+							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
+							}
+						},
+						schema: {
+							total: "totalCount",
+							data: "pages",
+							model: common.ui.data.Page
+						},
+						error:common.ui.handleAjaxError,
+						batch: false,
+						pageSize: 15,
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false
+					},
+					template: kendo.template($("#my-page-listview-template").html())
+				}).fetch();						
+				$("#page-source-list input[type=radio][name=radio-inline]").on("change", function () {
+					common.ui.listview(renderTo).dataSource.read();	
+				});										
+			}
+
+			
+		}
+		
+		
 				
 		function createPageSection(){
 			var renderTo = $("#my-page-grid");
@@ -638,6 +673,11 @@
 						<button type="button" class="btn btn-primary" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
 					</footer>
 				</div>
+				<article class="bg-white animated fadeInUp" style="min-height:200px; display:none;">			
+					<div class="container-fluid content" >
+						<div id="my-page-listview"></div>
+					</div>
+				</article>					
 			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
 				<!--
@@ -939,6 +979,20 @@
 			<!-- ./END RIGHT SLIDE MENU -->
 							
 	<!-- START TEMPLATE -->				
+	<script id="my-page-listview-template" type="text/x-kendo-template">
+<div class="thumbnails thumbnail-style">
+                            <a class="fancybox-button zoomer" data-rel="fancybox-button" title="Project 1" href="assets/img/main/9.jpg">
+                                <span class="overlay-zoom">  
+                                    <img class="img-responsive" src="assets/img/main/img18.jpg" alt="">
+                                    <span class="zoom-icon"></span>                   
+                                </span>                                              
+                            </a>                    
+                            <div class="caption">
+                                <h3><a class="hover-effect" href="\\#">Project One</a></h3>
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+                            </div>
+                        </div>
+	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
 		#: title #</span>
 		<div class="btn-group btn-group-xs pull-right">
