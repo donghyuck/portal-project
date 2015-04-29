@@ -996,7 +996,7 @@
 				<ul class="list-inline posted-info">
 					<li>By #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
                                 <li>In <a href="\\#">Design</a></li>
-                                <li>Posted #:formattedCreationDate#</li>
+                                <li>Posted #:formattedCreationDate() #</li>
                             </ul>
                             <h2><a href="\\#">#: title #</a></h2>
                             <p>#: summary #</p>
