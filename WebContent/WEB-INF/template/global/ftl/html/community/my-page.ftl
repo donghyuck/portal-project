@@ -111,6 +111,11 @@
 					}
 				});		
 				renderTo.removeClass("k-widget");
+				
+				common.ui.pager($("my-page-pager"), {
+					dataSource: common.ui.listview(renderTo).dataSource
+				});
+				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					common.ui.listview(renderTo).dataSource.read();	
 				});										
@@ -738,6 +743,7 @@
 				
 				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
 					<div id="my-page-listview" class="masonry no-border"></div>
+					<div id="my-page-pager" class="masonry no-border"></div>
 				</article>					
 			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
