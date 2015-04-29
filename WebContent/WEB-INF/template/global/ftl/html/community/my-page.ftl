@@ -1105,7 +1105,7 @@
                 <div class="grid-boxes-caption">
                     <h3><a href="\\#">Unify Clean and Fresh Fully Responsive Template</a></h3>
                     <ul class="list-inline grid-boxes-news">
-                        <li><span>By</span> <a href="#">Kathy Reyes</a></li>
+                        <li><span>By</span> <a href="\\#">Kathy Reyes</a></li>
                         <li>|</li>
                         <li><i class="fa fa-clock-o"></i> July 06, 2014</li>
                         <li>|</li>
