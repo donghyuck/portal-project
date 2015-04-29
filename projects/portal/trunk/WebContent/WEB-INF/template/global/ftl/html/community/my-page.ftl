@@ -1018,10 +1018,10 @@
                             </ul>
 				<div class="navbar-btn">
 					<div class="btn-group">				
-						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"><span class="btn-label icon fa fa-pencil"></span> 편집</button>
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"> 편집</button>
 						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">미리보기</button>
 					</div>
-					<button class="btn btn-danger btn-flat btn-outline" data-action="refresh"><span class="btn-label icon fa fa-trash"></span> 삭제</button>
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="refresh">삭제</button>
 				</div>
 				
 			</div>
