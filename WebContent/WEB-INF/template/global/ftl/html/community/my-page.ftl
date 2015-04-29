@@ -985,11 +985,13 @@
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="row margin-bottom-20">
 		<div class="col-sm-5 sm-margin-bottom-20">
+		<div style="width:250px; height:150px;">
 			#if( bodyContent.imageCount > 0 ){#
-			<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
+				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}else{#
-			<img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.7/assets/img/main/img12.jpg" alt="">
+				<img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.7/assets/img/main/img12.jpg" alt="">
 			#}#
+		</div>
 		</div>
 		<div class="col-sm-7 news-v3">
 			<div class="news-v3-in-sm no-padding">
