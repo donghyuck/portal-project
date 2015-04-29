@@ -137,7 +137,7 @@
 						//masonry();
 					}
 				});		
-				renderTo.removeClass("k-widget");
+				renderTo.removeClass("k-widget k-listview");
 				
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
