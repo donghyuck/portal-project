@@ -91,6 +91,7 @@
 			renderTo.find('.grid-boxes-in').width(box_width);
 			renderTo.masonry({
 				itemSelector : ".grid-boxes-in",
+				isFitWidth : true,
 				gutterWidth: gutter,
 				columnWidth: box_width,
 				animate: true,
