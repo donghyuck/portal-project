@@ -79,7 +79,35 @@
 		function getMyPageSource(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
+	
+		function masonry(){
+			var renderTo = $("#my-page-listview");
+			var gutter = 30;
+   			 var min_width = 300;
+    
+			renderTo.masonry({
+			itemSelector : '.grid-boxes-in',
+            gutterWidth: gutter,
+            isAnimated: true,
+              columnWidth: function( containerWidth ) {
+                var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
 
+                if (box_width < min_width) {
+                    box_width = (((containerWidth - gutter)/2) | 0);
+                }
+
+                if (box_width < min_width) {
+                    box_width = containerWidth;
+                }
+
+                $('.grid-boxes-in').width(box_width);
+
+                return box_width;
+              }		
+			
+			});
+		}
+	
 		function createMyPageListView(){
 		
 			var renderTo = $("#my-page-listview");
