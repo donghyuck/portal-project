@@ -1047,19 +1047,12 @@
 		#}#
 		<div class="news-v3-in-sm">
 			<h2><a href="\\#">#:title#</a></h2>
-				<ul class="list-inline posted-info">
-					<li><img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">
-							#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
-					<li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
-					<li><i class="fa fa-calendar"></i> #:formattedCreationDate() #</li>
-				</ul>
-							
-                    <ul class="list-inline grid-boxes-news">
-                        <li><span>By</span> <a href="\\#">Kathy Reyes</a></li>
+				<ul class="list-inline grid-boxes-news">
+                        <li><span>By</span> <a href="\\#">#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></a></li>
                         <li>|</li>
-                        <li><i class="fa fa-clock-o"></i> July 06, 2014</li>
+                        <li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
                         <li>|</li>
-                        <li><a href="\\#"><i class="fa fa-comments-o"></i> 06</a></li>
+                        <li><a href="\\#"><i class="fa fa-comments-o"></i> 0</a></li>
                     </ul>                    
 			<p>#: summary #</p>
 				<div class="navbar-btn">
