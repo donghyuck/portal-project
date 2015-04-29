@@ -829,6 +829,11 @@
 				
 				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
 					<div class="blog_masonry_3col">
+	<div id="container" class="grid-boxes">
+  <div class="grid-boxes-in">...</div>
+  <div class="grid-boxes-in">...</div>
+  <div class="grid-boxes-in">...</div>
+  					
 						<div id="my-page-listview" class="grid-boxes"></div>
 					</div>
 					<div id="my-page-pager" class="no-border"></div>
@@ -1133,10 +1138,7 @@
 			<div class="cbp-spmenu-overlay"></div>			
 			<!-- ./END RIGHT SLIDE MENU -->
 	
-	<div id="container" class="grid-boxes">
-  <div class="grid-boxes-in">...</div>
-  <div class="grid-boxes-in">...</div>
-  <div class="grid-boxes-in">...</div>
+
 
 	</div>						
 	<!-- START TEMPLATE -->				
