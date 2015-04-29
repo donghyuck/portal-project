@@ -123,6 +123,9 @@
 							renderTo.html(kendo.render(template, this.view()));						
 						}
 			});
+			
+			masonry();
+			
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					dataSource.read();	
 				});					
