@@ -1046,7 +1046,7 @@
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
                 <div class="masonry-brick-caption news-v3-in-sm">
-                    <h3><a href="\\#">#:title#</a></h3>
+                    <h2><a href="\\#">#:title#</a></h2>
                     <ul class="list-inline grid-boxes-news">
                         <li><span>By</span> <a href="\\#">Kathy Reyes</a></li>
                         <li>|</li>
