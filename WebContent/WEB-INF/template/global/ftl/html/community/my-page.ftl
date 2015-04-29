@@ -994,7 +994,9 @@
 		<div class="col-sm-7 news-v3">
 			<div class="news-v3-in-sm no-padding">
 				<ul class="list-inline posted-info">
-					<li>By #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
+					<li>By 
+					<img width="30" height="30" class="img-circle pull-left" src="authorPhotoUrl()" style="margin-right:10px;">
+					#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
                                 <li>In <a href="\\#">Design</a></li>
                                 <li>Posted #:formattedCreationDate() #</li>
                             </ul>
