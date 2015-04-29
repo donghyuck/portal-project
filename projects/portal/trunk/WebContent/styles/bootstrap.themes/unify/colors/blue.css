@@ -1252,3 +1252,29 @@ i.icon-bg-u {
 #topcontrol:hover {
 	background-color: #3498db;
 }
+
+/* News Info
+------------------------------------*/
+.news-v1 .news-v1-info li a:hover {
+	color: #3498db;
+}
+
+.news-v1 h3 a:hover {
+	color: #3498db;
+}
+
+.news-v2 .news-v2-desc h3 a:hover {
+	color: #3498db !important;
+}
+
+.news-v3 .post-shares li span {
+	background: #3498db;
+}
+
+.news-v3 .posted-info li a:hover {
+	color: #3498db !important;
+}
+
+.news-v3 h2 a:hover {
+	color: #3498db !important;
+}
