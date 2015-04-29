@@ -1002,21 +1002,8 @@
 					<li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
 					<li><i class="fa fa-calendar"></i> #:formattedCreationDate() #</li>
 				</ul>
-
-								
-
-                            <h2><a href="\\#">#: title #</a></h2>
-                            <p>#: summary #</p>
-                            <ul class="post-shares">
-                                <li>
-                                    <a href="\\#">
-                                        <i class="rounded-x icon-speech"></i>
-                                        <span>5</span>
-                                    </a>
-                                </li>
-                                <li><a href="\\#"><i class="rounded-x icon-share"></i></a></li>
-                                <li><a href="\\#"><i class="rounded-x icon-heart"></i></a></li>
-                            </ul>
+				<h2><a href="\\#">#: title #</a></h2>
+				<p>#: summary #</p>
 				<div class="navbar-btn">
 					<div class="btn-group">				
 						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"> 편집</button>
