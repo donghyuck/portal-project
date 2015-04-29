@@ -991,7 +991,7 @@
 			#}#
                             <div class="caption">
                                 <h3><a class="hover-effect" href="\\#">#: title #</a></h3>
-                                <<p>#: summary #</p>
+                                <p>#: summary #</p>
                                 <p><a href="\\#" class="btn-u btn-u-xs">Read more <i class="fa fa-angle-right margin-left-5"></i></a></p>
                             </div>
                         </div>
