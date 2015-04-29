@@ -129,6 +129,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					change : function(e){
+					alert(renderTo.html());
 						masonry(renderTo);				
 					}
 				});		
