@@ -90,12 +90,9 @@
 			}
     
 			renderTo.masonry({
-			itemSelector : '.grid-boxes-in',
-			gutterWidth: gutter,
-			columnWidth: function( containerWidth ) {
-				alert(containerWidth);
-			}		
-			
+				itemSelector : '.grid-boxes-in',
+				gutterWidth: gutter,
+				columnWidth: box_width			
 			});
 		}
 	
