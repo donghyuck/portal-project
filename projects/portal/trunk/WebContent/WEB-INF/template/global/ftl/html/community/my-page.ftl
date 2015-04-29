@@ -718,7 +718,6 @@
 	padding: 0;
 	margin-bottom: 30px;
 	border: solid 1px #eee;
-	width: 33.33333333%;
 }
 
 .blog_masonry_3col .grid-boxes-caption {
