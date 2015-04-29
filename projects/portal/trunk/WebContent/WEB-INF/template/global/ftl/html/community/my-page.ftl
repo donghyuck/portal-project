@@ -1146,7 +1146,7 @@
 			<!-- ./END RIGHT SLIDE MENU -->					
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="grid-boxes-in col-sm-4">
+	<div class="grid-boxes-in col-sm-4 col-md-6 col-xs-12">
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
