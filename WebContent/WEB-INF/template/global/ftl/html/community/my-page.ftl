@@ -191,10 +191,11 @@
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
 			}
+			*/
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
 			} 		
-			*/
+			
 			
 		}
 		
