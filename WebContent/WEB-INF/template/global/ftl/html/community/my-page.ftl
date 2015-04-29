@@ -995,6 +995,7 @@
 		</div>
 		<div class="col-sm-8 news-v3">
 			<div class="news-v3-in-sm no-padding">
+				#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#
 				<ul class="list-inline posted-info">
 					<li><!--<img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">-->
 							#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
