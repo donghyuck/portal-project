@@ -1041,11 +1041,11 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-<div class="masonry-brick">
+	<div class="masonry-brick news-v3">
               #if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
-                <div class="masonry-brick-caption">
+                <div class="masonry-brick-caption news-v3-in-sm">
                     <h3><a href="\\#">#:title#</a></h3>
                     <ul class="list-inline grid-boxes-news">
                         <li><span>By</span> <a href="\\#">Kathy Reyes</a></li>
