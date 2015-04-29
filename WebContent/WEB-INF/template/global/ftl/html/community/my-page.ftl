@@ -83,7 +83,7 @@
 		function masonry(){
 			var renderTo = $(".grid-boxes");
 			
-			if( !common.ui.exists(renderTo.data(masonry))) {			
+			if( !common.ui.exists(renderTo.data("masonry"))) {			
 				var gutter = 30;
 				var min_width = 300;
 				var box_width = (((renderTo.width() - 2*gutter)/3) | 0) ;
