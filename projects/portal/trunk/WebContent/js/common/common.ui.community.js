@@ -140,6 +140,18 @@
 			modifiedDate: { type: "date", editable: false },
 			creationDate: { type: "date", editable: false } 				
 		},
+	    authorPhotoUrl : function (){
+			if( typeof this.get("user") === 'object' )
+				return "/download/profile/" + this.get("user").username+ "?width=150&height=150";
+			else
+				return "/images/common/no-avatar.png";
+		},		
+	    formattedCreationDate : function(){
+	    	return kendo.toString(this.get("creationDate"), "g");
+	    },
+	    formattedModifiedDate : function(){
+	    	return kendo.toString(this.get("modifiedDate"), "g");
+	    },		
 		copy: function ( target ){
 			target.pageId = this.get("pageId");
 	    	target.modifiedDate = this.get("modifiedDate");
