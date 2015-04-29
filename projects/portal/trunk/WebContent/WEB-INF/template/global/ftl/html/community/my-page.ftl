@@ -645,20 +645,26 @@
 		}		
 		
 .masonry { /* Masonry container */
-    -moz-column-count: 4;
-    -webkit-column-count: 4;
-    column-count: 4;
-    -moz-column-gap: 1em;
-    -webkit-column-gap: 1em;
-    column-gap: 1em;
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
+	-moz-column-gap: 1em;
+	-webkit-column-gap: 1em;
+	column-gap: 1em;
 }
 
-.item { /* Masonry bricks or child elements */
-    background-color: #eee;
-    display: inline-block;
-    margin: 0 0 1em;
-    width: 100%;
+.masonry-brick { /* Masonry bricks or child elements */
+	background-color: #eee;
+	display: inline-block;
+	margin: 0 0 1em;
+	width: 100%;
+	border: solid 1px #eee;
 }		
+
+.masonry-brick-caption { 
+	padding: 15px;
+}
+ 
 		</style>   	
 		</#compress>
 	</head>
@@ -1003,11 +1009,11 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-<div class="item">
+<div class="masonry-brick">
               #if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
-                <div class="grid-boxes-caption">
+                <div class="masonry-brick-caption">
                     <h3><a href="\\#">#:title#</a></h3>
                     <ul class="list-inline grid-boxes-news">
                         <li><span>By</span> <a href="\\#">Kathy Reyes</a></li>
