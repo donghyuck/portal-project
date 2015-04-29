@@ -88,7 +88,6 @@
 			renderTo.masonry({
 			itemSelector : '.grid-boxes-in',
             gutterWidth: gutter,
-            isAnimated: true,
               columnWidth: function( containerWidth ) {
                 var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
 
