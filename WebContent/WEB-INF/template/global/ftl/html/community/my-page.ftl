@@ -89,16 +89,21 @@
 
 				var gutter = 30;
 				var min_width = 300;
-				var box_width = (((renderTo.width() - 2*gutter)/3) | 0) ;
-				if (box_width < min_width) {
-					 box_width = renderTo.width();
-				}
-				renderTo.find('.grid-boxes-in').width(box_width);				
 				renderTo.masonry({
 					itemSelector : ".grid-boxes-in",
 					isFitWidth : true,
 					gutterWidth: gutter,
-					columnWidth: box_width,
+					columnWidth: function(containerWidth){					
+						var box_width = (((containerWidth - 2*gutter)/3) | 0); 
+						if (box_width < min_width) {
+							box_width = (((containerWidth - gutter)/2) | 0);
+						}
+						if (box_width < min_width) {
+							box_width = containerWidth;
+						}
+						renderTo.find('.grid-boxes-in').width(box_width);
+						return box_width;                					
+					},
 					animate: true,
 					animationOptions: {
 						duration: 700,
@@ -107,7 +112,7 @@
 				});	
 								
 			}else{
-				renderTo.masonry('reloadItems');
+				renderTo.masonry('reload');
 			}		
 			
 			});
