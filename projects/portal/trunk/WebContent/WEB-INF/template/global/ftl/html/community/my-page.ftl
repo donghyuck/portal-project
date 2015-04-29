@@ -96,7 +96,7 @@
 				animate: true,
 				animationOptions: {
 					duration: speed,
-					queue: true
+					queue: 700
 				}			
 			});
 		}
