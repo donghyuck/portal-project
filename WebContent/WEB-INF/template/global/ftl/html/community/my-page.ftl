@@ -81,11 +81,8 @@
 		}
 	
 		function masonry(){
-
 			var renderTo = $(".grid-boxes");
-			renderTo.imagesLoaded( function(e){
-			
-			if( !common.ui.defined(renderTo.data("masonry"))) {			
+			renderTo.imagesLoaded( function(e){			
 
 				var gutter = 30;
 				var min_width = 300;
@@ -110,11 +107,7 @@
 						queue: true
 					}			
 				});	
-								
-			}else{
-				renderTo.masonry('reload');
-			}		
-			
+	
 			});
 			
 
@@ -156,7 +149,7 @@
 					dataSource.read();	
 				});					
 			*/
-			
+			/*
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
 					dataSource: {
@@ -196,6 +189,7 @@
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
 			} 		
+			*/
 			
 		}
 		
