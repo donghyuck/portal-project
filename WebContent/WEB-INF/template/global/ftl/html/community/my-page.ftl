@@ -141,7 +141,7 @@
 						serverSorting: false,
 						change: function() {
 							renderTo.html(kendo.render(template, this.view()));		
-							masonry();	
+						
 						}
 			});
 			
