@@ -667,13 +667,21 @@
 
 @media only screen and (min-width: 400px) {
     .masonry {
+        -moz-column-count: 1;
+        -webkit-column-count: 1;
+        column-count: 1;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    .masonry {
         -moz-column-count: 2;
         -webkit-column-count: 2;
         column-count: 2;
     }
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 970px) {
     .masonry {
         -moz-column-count: 3;
         -webkit-column-count: 3;
@@ -681,19 +689,11 @@
     }
 }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1170px) {
     .masonry {
         -moz-column-count: 4;
         -webkit-column-count: 4;
         column-count: 4;
-    }
-}
-
-@media only screen and (min-width: 1100px) {
-    .masonry {
-        -moz-column-count: 5;
-        -webkit-column-count: 5;
-        column-count: 5;
     }
 }
  
