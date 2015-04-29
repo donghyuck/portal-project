@@ -83,7 +83,7 @@
 		function masonry(){
 			var renderTo = $(".grid-boxes");
 			renderTo.imagesLoaded( function(e){			
-
+			if( !common.ui.defined(renderTo.data("masonry"))) {		
 				var gutter = 30;
 				var min_width = 300;
 				renderTo.masonry({
@@ -107,7 +107,11 @@
 						queue: true
 					}			
 				});	
-	
+								
+			}else{
+				
+				renderTo.masonry('appended', renderTo.find('.grid-boxes-in') );
+			}	
 			});
 			
 
