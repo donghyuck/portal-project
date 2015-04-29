@@ -87,8 +87,7 @@
 				itemSelector : '.grid-boxes-in',
 				columnWidth: 200,
 				animate: true
-				/*gutterWidth: gutter,
-				isAnimated: true,*/
+				*/
 /*				columnWidth: function( containerWidth ) {
 					var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
 					if (box_width < min_width) {
