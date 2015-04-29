@@ -997,7 +997,7 @@
 					<li>By 
 					<img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">
 					#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
-                                <li>In <a href="\\#">Design</a></li>
+                                <li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
                                 <li><i class="fa fa-calendar"></i> #:formattedCreationDate() #</li>
                             </ul>
                             <h2><a href="\\#">#: title #</a></h2>
