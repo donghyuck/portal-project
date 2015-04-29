@@ -83,7 +83,7 @@
 		function masonry(){
 			var renderTo = $(".grid-boxes");
 			if( common.ui.defined(renderTo.data("masonry"))) {		
-				renderTo.masonry('destory');
+				renderTo.masonry('destroy');
 			}	
 			renderTo.imagesLoaded( function(e){			
 			
