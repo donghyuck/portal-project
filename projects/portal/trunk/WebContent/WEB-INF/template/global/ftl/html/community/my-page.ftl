@@ -755,8 +755,6 @@
 }
 
 
-.item { width: 25%; }
- 
 		</style>   	
 		</#compress>
 	</head>
