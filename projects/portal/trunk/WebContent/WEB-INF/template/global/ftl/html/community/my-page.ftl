@@ -1098,25 +1098,23 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-
 <div class="grid-boxes-in">
-                        <div class="thumbnails thumbnail-style">
-                            #if( bodyContent.imageCount > 0 ){#
+              #if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
-                            <div class="caption">
-                                <h3><a class="hover-effect" href="\\#">#: title #</a></h3>
-                                <p>#: summary #</p>
-				<div class="navbar-btn">
-					<div class="btn-group">				
-						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"> 편집</button>
-						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">미리보기</button>
-					</div>
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="refresh">삭제</button>
-				</div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="grid-boxes-caption">
+                    <h3><a href="#">Unify Clean and Fresh Fully Responsive Template</a></h3>
+                    <ul class="list-inline grid-boxes-news">
+                        <li><span>By</span> <a href="#">Kathy Reyes</a></li>
+                        <li>|</li>
+                        <li><i class="fa fa-clock-o"></i> July 06, 2014</li>
+                        <li>|</li>
+                        <li><a href="#"><i class="fa fa-comments-o"></i> 06</a></li>
+                    </ul>                    
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                </div>
+            </div>
+
 	</script>
  	<script id="my-page-listview-template2" type="text/x-kendo-template">
 		
