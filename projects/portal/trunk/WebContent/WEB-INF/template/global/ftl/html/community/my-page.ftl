@@ -81,27 +81,30 @@
 		}
 	
 		function masonry(){
-			
 			var renderTo = $(".grid-boxes");
-			var gutter = 30;
-			var min_width = 300;
-			var box_width = (((renderTo.width() - 2*gutter)/3) | 0) ;
-			if (box_width < min_width) {
-				 box_width = renderTo.width();
+			if( !common.ui.exists(renderTo.data(masonry)) {			
+				var gutter = 30;
+				var min_width = 300;
+				var box_width = (((renderTo.width() - 2*gutter)/3) | 0) ;
+				if (box_width < min_width) {
+					 box_width = renderTo.width();
+				}
+				//renderTo.find('.grid-boxes-in').width(box_width);
+				
+				renderTo.masonry({
+					itemSelector : ".grid-boxes-in",
+					isFitWidth : true,
+					gutterWidth: gutter,
+					/*columnWidth: box_width,*/
+					animate: true,
+					animationOptions: {
+						duration: 700,
+						queue: true
+					}			
+				});
+			}else{
+				renderTo.masonry('reloadItems');
 			}
-			//renderTo.find('.grid-boxes-in').width(box_width);
-			
-			renderTo.masonry({
-				itemSelector : ".grid-boxes-in",
-				isFitWidth : true,
-				gutterWidth: gutter,
-				/*columnWidth: box_width,*/
-				animate: true,
-				animationOptions: {
-					duration: 700,
-					queue: true
-				}			
-			});
 		}
 	
 		function createMyPageListView(){
