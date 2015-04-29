@@ -120,7 +120,7 @@
 		function createMyPageListView(){
 		
 			var renderTo = $("#my-page-listview");
-			/*
+			
 			var template =kendo.template($("#my-page-listview-template").html());
 			var dataSource = new kendo.data.DataSource({
 						serverFiltering: false,
@@ -152,7 +152,7 @@
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					dataSource.read();	
 				});					
-			*/
+			
 			/*
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
