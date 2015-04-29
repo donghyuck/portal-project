@@ -80,6 +80,27 @@
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 		
+		function masonry(renderTo){
+			var gutter = 30;
+			var min_width = 300;
+			renderTo.masonry({
+				itemSelector : '.grid-boxes-in',
+				gutterWidth: gutter,
+				isAnimated: true,
+				columnWidth: function( containerWidth ) {
+					var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
+					if (box_width < min_width) {
+						box_width = (((containerWidth - gutter)/2) | 0);
+					}
+					if (box_width < min_width) {
+						box_width = containerWidth;
+					}
+					$('.grid-boxes-in').width(box_width);							
+					return box_width;
+				}
+			});	
+		} 
+		
 		function createMyPageListView(){
 		
 			var renderTo = $("#my-page-listview");
@@ -107,31 +128,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound : function(e){
-						
-						
-								var gutter = 30;
-								var min_width = 300;
-								renderTo.imagesLoaded( function(){
-									renderTo.masonry({
-										itemSelector : '.grid-boxes-in',
-										gutterWidth: gutter,
-										isAnimated: true,
-										columnWidth: function( containerWidth ) {
-							                var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
-							
-							                if (box_width < min_width) {
-							                    box_width = (((containerWidth - gutter)/2) | 0);
-							                }
-							
-							                if (box_width < min_width) {
-							                    box_width = containerWidth;
-							                }
-							
-							                $('.grid-boxes-in').width(box_width);							
-							                return box_width;
-							              }
-							        });
-							    });						
+						masonry(renderTo);				
 					}
 				});		
 				renderTo.removeClass("k-widget");
