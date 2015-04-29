@@ -1129,7 +1129,13 @@
 			</section>	
 			<div class="cbp-spmenu-overlay"></div>			
 			<!-- ./END RIGHT SLIDE MENU -->
-							
+	
+	<div id="container">
+  <div class="item">...</div>
+  <div class="item w2">...</div>
+  <div class="item">...</div>
+  ...
+</div>						
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="grid-boxes-in">
