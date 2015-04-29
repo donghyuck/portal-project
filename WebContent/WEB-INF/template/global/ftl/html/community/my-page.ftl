@@ -798,7 +798,7 @@
 				
 				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
 					<div class="blog_masonry_3col">
-						<div id="my-page-listview" class="grid-boxes js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".hero-item" }'></div>
+						<div id="my-page-listview" class="grid-boxes js-masonry" data-masonry-options='{ "columnWidth": 200, "itemSelector": ".item" }'></div>
 					</div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
@@ -1104,7 +1104,7 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="hero-item grid-boxes-in">
+	<div class="item grid-boxes-in">
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
