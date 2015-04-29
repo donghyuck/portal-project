@@ -99,6 +99,33 @@
 		function createMyPageListView(){
 		
 			var renderTo = $("#my-page-listview");
+			var template =kendo.template($("#my-page-listview-template").html());
+			var dataSource = new kendo.data.DataSource({
+						serverFiltering: false,
+						transport: { 
+							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
+							}
+						},
+						schema: {
+							total: "totalCount",
+							data: "pages",
+							model: common.ui.data.Page
+						},
+						error:common.ui.handleAjaxError,
+						batch: false,
+						pageSize: 15,
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false,
+						change: function() {
+							renderTo.html(kendo.render(template, this.view()));						
+						}
+			});
+			
+			
+			/*
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
 					dataSource: {
@@ -123,7 +150,6 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
-						//masonry();
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");
@@ -131,11 +157,15 @@
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
 				});
+				*/
 				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					common.ui.listview(renderTo).dataSource.read();	
 				});										
 			}
+			
+			
+			
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
 			} 		
