@@ -170,7 +170,8 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
-						masonry();	
+						
+
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");				
