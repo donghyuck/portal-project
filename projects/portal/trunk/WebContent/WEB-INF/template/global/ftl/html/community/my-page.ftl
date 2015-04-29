@@ -168,6 +168,9 @@
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
 				});		
+				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
+					common.ui.listview(renderTo).dataSource.read();	
+				});					
 			}
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
