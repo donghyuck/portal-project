@@ -90,7 +90,6 @@
 			}
     
 			renderTo.masonry({
-				itemSelector : "grid-boxes-in",
 				gutterWidth: gutter,
 				columnWidth: box_width			
 			});
