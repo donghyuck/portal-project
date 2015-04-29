@@ -82,12 +82,7 @@
 	
 		function masonry(){
 			var renderTo = $(".grid-boxes");
-			
-			if( common.ui.defined(renderTo.data("masonry"))) {		
-				renderTo.masonry('destroy');
-			}	
-			
-			renderTo.imagesLoaded( function(e){			
+//			renderTo.imagesLoaded( function(e){			
 
 				var gutter = 30;
 				var min_width = 300;
@@ -112,7 +107,7 @@
 						queue: true
 					}			
 				});	
-			});
+	//		});
 		}
 	
 		function createMyPageListView(){
