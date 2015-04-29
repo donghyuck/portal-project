@@ -1139,10 +1139,13 @@
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="grid-boxes-in">
+	<h2><a href="\\#">#:title#</a></h2>
+	<!--
+	
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
-		<!--
+		
 		<div class="grid-boxes-caption">
 			<h2><a href="\\#">#:title#</a></h2>
 				<ul class="list-inline grid-boxes-news">
