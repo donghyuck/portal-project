@@ -654,7 +654,7 @@
 }
 
 .masonry-brick { /* Masonry bricks or child elements */
-	background-color: #eee;
+	background-color: #fff;
 	display: inline-block;
 	margin: 0 0 1em;
 	width: 100%;
@@ -663,6 +663,38 @@
 
 .masonry-brick-caption { 
 	padding: 15px;
+}
+
+@media only screen and (min-width: 400px) {
+    .masonry {
+        -moz-column-count: 2;
+        -webkit-column-count: 2;
+        column-count: 2;
+    }
+}
+
+@media only screen and (min-width: 700px) {
+    .masonry {
+        -moz-column-count: 3;
+        -webkit-column-count: 3;
+        column-count: 3;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+    .masonry {
+        -moz-column-count: 4;
+        -webkit-column-count: 4;
+        column-count: 4;
+    }
+}
+
+@media only screen and (min-width: 1100px) {
+    .masonry {
+        -moz-column-count: 5;
+        -webkit-column-count: 5;
+        column-count: 5;
+    }
 }
  
 		</style>   	
