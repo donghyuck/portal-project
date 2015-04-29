@@ -795,7 +795,7 @@
 				</div>
 				
 				<article class="blog_masonry_3col bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
-					<div class="grid-boxes masonry">
+					<div class="grid-boxes">
 						<div id="my-page-listview" class="no-border"></div>
 					</div>
 				</article>					
@@ -1106,7 +1106,7 @@
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
                 <div class="grid-boxes-caption">
-                    <h3><a href="\\#">Unify Clean and Fresh Fully Responsive Template</a></h3>
+                    <h3><a href="\\#">#:title#</a></h3>
                     <ul class="list-inline grid-boxes-news">
                         <li><span>By</span> <a href="\\#">Kathy Reyes</a></li>
                         <li>|</li>
