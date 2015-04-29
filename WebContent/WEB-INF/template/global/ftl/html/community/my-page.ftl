@@ -120,7 +120,8 @@
 						serverFiltering: false,
 						serverSorting: false,
 						change: function() {
-							renderTo.html(kendo.render(template, this.view()));			
+							renderTo.html(kendo.render(template, this.view()));		
+							masonry();	
 						}
 			});
 			
