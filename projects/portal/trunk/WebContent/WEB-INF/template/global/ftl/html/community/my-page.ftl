@@ -127,7 +127,7 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
-					dataBound : function(e){
+					change : function(e){
 						masonry(renderTo);				
 					}
 				});		
