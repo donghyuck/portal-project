@@ -984,7 +984,7 @@
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="row margin-bottom-20">
-		<div class="col-sm-5 sm-margin-bottom-20">
+		<div class="col-sm-4 sm-margin-bottom-20">
 		<div style="width:250px; height:150px;">
 			#if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
@@ -993,7 +993,7 @@
 			#}#
 		</div>
 		</div>
-		<div class="col-sm-7 news-v3">
+		<div class="col-sm-8 news-v3">
 			<div class="news-v3-in-sm no-padding">
 				<ul class="list-inline posted-info">
 					<li><!--<img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">-->
@@ -1016,6 +1016,7 @@
                         </div>
                     </div>
                 </div>
+	<div class="clearfix margin-bottom-10"><hr></div>
 	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
 		#: title #</span>
