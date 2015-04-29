@@ -984,7 +984,7 @@
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 
-<div class="col-md-4">
+<div class="col-sm-4">
                         <div class="thumbnails thumbnail-style">
                             #if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
