@@ -88,20 +88,17 @@
 			if (box_width < min_width) {
 				 box_width = renderTo.width();
 			}
-			
+			renderTo.find('.grid-boxes-in').width(box_width);
 			renderTo.masonry({
 				itemSelector : ".grid-boxes-in",
 				gutterWidth: gutter,
 				columnWidth: box_width,
 				animate: true,
 				animationOptions: {
-					duration: speed,
-					queue: 700
+					duration: 700,
+					queue: true
 				}			
 			});
-			
-			renderTo.find('.grid-boxes-in').width(box_width);
-			
 		}
 	
 		function createMyPageListView(){
