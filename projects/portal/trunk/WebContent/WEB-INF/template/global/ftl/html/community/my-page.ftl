@@ -1001,9 +1001,13 @@
 					<li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
 					<li><i class="fa fa-calendar"></i> #:formattedCreationDate() #</li>
 				</ul>
-				<div class="toolbar">
-				
-					<button class="btn btn-info btn-sm btn-flat btn-outline m-l-sm pull-right" data-action="refresh">새로고침</button>
+
+								
+				<div class="navbar-btn">
+					<div class="btn-group">				
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh">새로고침</button>
+						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">새로고침</button>
+					</div>
 				</div>
                             <h2><a href="\\#">#: title #</a></h2>
                             <p>#: summary #</p>
