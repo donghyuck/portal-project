@@ -81,6 +81,7 @@
 		}
 	
 		function masonry(){
+			
 			var renderTo = $(".grid-boxes");
 			var gutter = 30;
 			var min_width = 300;
@@ -89,6 +90,7 @@
 				 box_width = renderTo.width();
 			}
 			renderTo.find('.grid-boxes-in').width(box_width);
+			
 			renderTo.masonry({
 				itemSelector : ".grid-boxes-in",
 				isFitWidth : true,
@@ -711,6 +713,7 @@
 	padding: 0;
 	margin-bottom: 30px;
 	border: solid 1px #eee;
+	width: 33.33333333%;
 }
 
 .blog_masonry_3col .grid-boxes-caption {
@@ -792,46 +795,6 @@
 }
 
 
-
-/*** GRID **/
-.grid-wrap {
-	clear: both;
-	margin: 0 auto;
-	padding: 0;
-	max-width: 1260px;
-}
-
-.grid {
-	margin: 30px auto;
-	padding: 0;
-	list-style: none;
-	min-height: 500px;
-}
-
-.js .grid {
-	background: url(../img/loading.gif) no-repeat 50% 100px;
-}
-
-.js .grid.loaded {
-	background: none;
-}
-
-.grid li {
-	display: inline-block;
-	overflow: hidden;
-	width: 314px;
-	text-align: left;
-	vertical-align: top;
-}
-
-.js .grid li {
-	display: none;
-	float: left;
-}
-
-.js .grid.loaded li {
-	display: block;
-}
 
 		</style>   	
 		</#compress>
