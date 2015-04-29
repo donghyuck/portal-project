@@ -120,7 +120,8 @@
 						serverFiltering: false,
 						serverSorting: false,
 						change: function() {
-							renderTo.html(kendo.render(template, this.view()));						
+							renderTo.html(kendo.render(template, this.view()));			
+										
 						}
 			});
 			
@@ -829,7 +830,7 @@
 				
 				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
 					<div class="blog_masonry_3col">
-						<div id="my-page-listview" class="grid-boxes" ></div>
+						<div id="my-page-listview" class="grid-boxes js-masonry" data-masonry-options='{ "columnWidth": 250, "itemSelector": ".grid-boxes-in" }'></div>
 					</div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
