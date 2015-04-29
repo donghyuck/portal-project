@@ -89,7 +89,7 @@
 			if (box_width < min_width) {
 				 box_width = renderTo.width();
 			}
-			renderTo.find('.grid-boxes-in').width(box_width);
+			//renderTo.find('.grid-boxes-in').width(box_width);
 			
 			renderTo.masonry({
 				itemSelector : ".grid-boxes-in",
