@@ -104,6 +104,7 @@
 		function createMyPageListView(){
 		
 			var renderTo = $("#my-page-listview");
+			/*
 			var template =kendo.template($("#my-page-listview-template").html());
 			var dataSource = new kendo.data.DataSource({
 						serverFiltering: false,
@@ -135,8 +136,8 @@
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					dataSource.read();	
 				});					
+			*/
 			
-			/*
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
 					dataSource: {
@@ -163,18 +164,11 @@
 					dataBound: function(e){
 					}
 				});		
-				renderTo.removeClass("k-widget k-listview");
-				
+				renderTo.removeClass("k-widget k-listview");				
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
-				});
-				
-				
-								
+				});		
 			}
-			*/
-			
-			
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
 			} 		
@@ -793,6 +787,47 @@
 	font-size: 12px;
 }
 
+
+
+/*** GRID **/
+.grid-wrap {
+	clear: both;
+	margin: 0 auto;
+	padding: 0;
+	max-width: 1260px;
+}
+
+.grid {
+	margin: 30px auto;
+	padding: 0;
+	list-style: none;
+	min-height: 500px;
+}
+
+.js .grid {
+	background: url(../img/loading.gif) no-repeat 50% 100px;
+}
+
+.js .grid.loaded {
+	background: none;
+}
+
+.grid li {
+	display: inline-block;
+	overflow: hidden;
+	width: 314px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.js .grid li {
+	display: none;
+	float: left;
+}
+
+.js .grid.loaded li {
+	display: block;
+}
 
 		</style>   	
 		</#compress>
