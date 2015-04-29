@@ -1026,8 +1026,8 @@
 				
 			</div>
 		</div>
+		<hr class="m-b-sm">
 	</div>
-	<div class="clearfix margin-bottom-10"><hr></div>
 	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
 		#: title #</span>
