@@ -994,7 +994,7 @@
 		<div class="col-sm-7 news-v3">
 			<div class="news-v3-in-sm no-padding">
 				<ul class="list-inline posted-info">
-					<li>By 
+					<li><i class="fa fa-user"></i>  
 					<img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">
 					#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
                                 <li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
