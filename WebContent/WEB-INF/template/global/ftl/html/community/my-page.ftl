@@ -79,29 +79,7 @@
 		function getMyPageSource(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
-		
-		function masonry(renderTo){
-			var gutter = 30;
-			var min_width = 300;
-			renderTo.masonry({
-				itemSelector : '.grid-boxes-in',
-				columnWidth: 200,
-				animate: true
-				*/
-/*				columnWidth: function( containerWidth ) {
-					var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
-					if (box_width < min_width) {
-						box_width = (((containerWidth - gutter)/2) | 0);
-					}
-					if (box_width < min_width) {
-						box_width = containerWidth;
-					}
-					$('.grid-boxes-in').width(box_width);							
-					return box_width;
-				}*/
-			});	
-		} 
-		
+
 		function createMyPageListView(){
 		
 			var renderTo = $("#my-page-listview");
@@ -129,8 +107,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
-						alert(renderTo.html());
-						masonry(renderTo);				
+	
 					}
 				});		
 				renderTo.removeClass("k-widget");
@@ -668,95 +645,6 @@
 		}		
 		
 		
-		
-.blog_masonry_3col {
-	padding-bottom: 60px;
-}
-
-.blog_masonry_3col .grid-boxes-in {
-	padding: 0;
-	margin-bottom: 30px;
-	border: solid 1px #eee;
-}
-
-.blog_masonry_3col .grid-boxes-caption {
-	padding: 15px;
-}
-
-.blog_masonry_3col h3 {
-	font-size: 20px; 
-	font-weight: 200;
-	line-height: 28px;
-}
-
-.blog_masonry_3col h3 a {
-	color: #555;
-}
-
-.blog_masonry_3col h3 a:hover {
-	color: #72c02c;
-}
-
-.blog_masonry_3col h3 a:hover {
-	color: #72c02c;
-}
-
-.blog_masonry_3col ul.grid-boxes-news {
-	margin-bottom: 15px;
-}
-
-.blog_masonry_3col ul.grid-boxes-news li {
-	font-size: 12px;
-}
-
-.blog_masonry_3col ul.grid-boxes-news li,
-.blog_masonry_3col ul.grid-boxes-news li a {
-	color: #777;
-}
-
-.blog_masonry_3col ul.grid-boxes-news li a:hover {
-	color: #72c02c;
-}
-
-/*Quote Block*/
-.grid-boxes-caption.grid-boxes-quote {
-	padding: 30px;
-	background: #333;
-	text-align: center;
-}
-
-.grid-boxes-quote p {
-	position: relative;
-}
-
-.grid-boxes-quote p:after {
-    content: " \" ";
-	margin-left: 10px;
-    position: absolute;
-    font-family: Tahoma;
-}
-
-.grid-boxes-quote p:before {
-    content: " \" ";
-	margin-left: -15px;
-    position: absolute;
-    font-family: Tahoma;
-}
-
-.grid-boxes-quote p,
-.grid-boxes-quote p a,
-.grid-boxes-quote span {
-	color: #fff;
-	font-size: 20px;
-	font-weight: 200;
-	font-family: "Open Sans";
-	text-transform: uppercase;
-}	
-
-.grid-boxes-quote span {
-	font-size: 12px;
-}
-		
 		</style>   	
 		</#compress>
 	</head>
@@ -796,10 +684,8 @@
 					</footer>
 				</div>
 				
-				<article class="blog_masonry_3col bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
-					<div class="grid-boxes">
-						<div id="my-page-listview" class="no-border"></div>
-					</div>
+				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
+					<div id="my-page-listview" class="masonry no-border"></div>
 				</article>					
 			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
@@ -1103,7 +989,7 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-<div class="grid-boxes-in">
+<div class="item">
               #if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
