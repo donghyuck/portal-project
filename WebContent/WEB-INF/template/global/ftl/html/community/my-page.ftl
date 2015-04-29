@@ -793,8 +793,11 @@
 						<button type="button" class="btn btn-primary" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
 					</footer>
 				</div>
-				<article class="grid-boxes bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">			
-					<div id="my-page-listview" class="no-border"></div>
+				
+				<article class="blog_masonry_3col bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
+					<div class="grid-boxes masonry">
+						<div id="my-page-listview" class="no-border"></div>
+					</div>
 				</article>					
 			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
