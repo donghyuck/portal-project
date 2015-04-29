@@ -88,8 +88,7 @@
 			}	
 			
 			renderTo.imagesLoaded( function(e){			
-			alert(":1");
-			/*
+
 				var gutter = 30;
 				var min_width = 300;
 				renderTo.masonry({
@@ -113,7 +112,6 @@
 						queue: true
 					}			
 				});	
-				*/
 			});
 		}
 	
