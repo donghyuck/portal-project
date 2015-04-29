@@ -983,6 +983,21 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
+
+<div class="col-md-4">
+                        <div class="thumbnails thumbnail-style">
+                            #if( bodyContent.imageCount > 0 ){#
+				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
+			#}#
+                            <div class="caption">
+                                <h3><a class="hover-effect" href="#">Project One</a></h3>
+                                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, justo sit amet risus etiam porta sem.</p>
+                                <p><a href="#" class="btn-u btn-u-xs">Read more <i class="fa fa-angle-right margin-left-5"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                    	
+	<!--
 	<div class="row margin-bottom-20">
 		<div class="col-sm-4 sm-margin-bottom-20">
 			<div class="thumbnail-kenburn overflow-hidden" style="width:250px; height:150px;">
@@ -997,7 +1012,7 @@
 			<div class="news-v3-in-sm no-padding">
 				#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#
 				<ul class="list-inline posted-info">
-					<li><!--<img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">-->
+					<li><img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">
 							#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 					<li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
 					<li><i class="fa fa-calendar"></i> #:formattedCreationDate() #</li>
@@ -1016,6 +1031,7 @@
 		</div>
 		<div class="clearfix margin-bottom-10"><hr class="m-b-sm"></div>
 	</div>
+	-->
 	
 	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
