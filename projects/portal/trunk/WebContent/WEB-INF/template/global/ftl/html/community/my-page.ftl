@@ -1042,11 +1042,18 @@
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="masonry-brick news-v3">
-              #if( bodyContent.imageCount > 0 ){#
-				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
-			#}#
-                <div class="masonry-brick-caption news-v3-in-sm">
-                    <h2><a href="\\#">#:title#</a></h2>
+		#if( bodyContent.imageCount > 0 ){#
+		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
+		#}#
+		<div class="news-v3-in-sm">
+			<h2><a href="\\#">#:title#</a></h2>
+				<ul class="list-inline posted-info">
+					<li><img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">
+							#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
+					<li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
+					<li><i class="fa fa-calendar"></i> #:formattedCreationDate() #</li>
+				</ul>
+							
                     <ul class="list-inline grid-boxes-news">
                         <li><span>By</span> <a href="\\#">Kathy Reyes</a></li>
                         <li>|</li>
@@ -1054,10 +1061,16 @@
                         <li>|</li>
                         <li><a href="\\#"><i class="fa fa-comments-o"></i> 06</a></li>
                     </ul>                    
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                </div>
-            </div>
-
+			<p>#: summary #</p>
+				<div class="navbar-btn">
+					<div class="btn-group">				
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"> 편집</button>
+						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">미리보기</button>
+					</div>
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="refresh">삭제</button>
+				</div>			
+		</div>
+	</div>
 	</script>
  	<script id="my-page-listview-template2" type="text/x-kendo-template">
 		
