@@ -86,7 +86,6 @@
 				renderTo.masonry('destroy');
 			}	
 			renderTo.imagesLoaded( function(e){			
-			
 				var gutter = 30;
 				var min_width = 300;
 				renderTo.masonry({
@@ -110,20 +109,13 @@
 						queue: true
 					}			
 				});	
-								
-		
-				
-				
-
 			});
-			
-
 		}
 	
 		function createMyPageListView(){
 		
 			var renderTo = $("#my-page-listview");
-			
+			/*
 			var template =kendo.template($("#my-page-listview-template").html());
 			var dataSource = new kendo.data.DataSource({
 						serverFiltering: false,
@@ -155,9 +147,8 @@
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					dataSource.read();	
 				});	
-								
+			*/
 			
-			/*
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
 					dataSource: {
@@ -182,8 +173,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
-					
-
+						masonry();	
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");				
@@ -194,7 +184,7 @@
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
 			}
-			*/
+			
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
 			} 		
