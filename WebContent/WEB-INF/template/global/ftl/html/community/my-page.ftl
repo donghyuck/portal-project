@@ -996,8 +996,9 @@
                             </div>
                         </div>
                     </div>
-                    	
-	<!--
+	</script>
+ 	<script id="my-page-listview-template2" type="text/x-kendo-template">
+		
 	<div class="row margin-bottom-20">
 		<div class="col-sm-4 sm-margin-bottom-20">
 			<div class="thumbnail-kenburn overflow-hidden" style="width:250px; height:150px;">
@@ -1031,7 +1032,6 @@
 		</div>
 		<div class="clearfix margin-bottom-10"><hr class="m-b-sm"></div>
 	</div>
-	-->
 	
 	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
