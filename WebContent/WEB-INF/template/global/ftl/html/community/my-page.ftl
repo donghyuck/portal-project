@@ -769,9 +769,9 @@
 					</footer>
 				</div>
 				
-				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
-					<div id="my-page-listview" class="masonry no-border"></div>
-					<div id="my-page-pager" class="masonry no-border"></div>
+				<article class="bg-white animated fadeInUp m-t-md blog_masonry_3col" style="min-height:200px; display:none;">								
+					<div id="my-page-listview" class="grid-boxes no-border"></div>
+					<div id="my-page-pager" class="no-border"></div>
 				</article>					
 			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
