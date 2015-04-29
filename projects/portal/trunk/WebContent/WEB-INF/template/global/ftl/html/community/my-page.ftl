@@ -134,7 +134,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
-						masonry();
+						//masonry();
 					}
 				});		
 				renderTo.removeClass("k-widget");
