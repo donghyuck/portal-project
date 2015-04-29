@@ -992,7 +992,13 @@
                             <div class="caption">
                                 <h3><a class="hover-effect" href="\\#">#: title #</a></h3>
                                 <p>#: summary #</p>
-                                <p><a href="\\#" class="btn-u btn-u-xs">Read more <i class="fa fa-angle-right margin-left-5"></i></a></p>
+				<div class="navbar-btn">
+					<div class="btn-group">				
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"> 편집</button>
+						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">미리보기</button>
+					</div>
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="refresh">삭제</button>
+				</div>
                             </div>
                         </div>
                     </div>
