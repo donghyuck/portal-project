@@ -175,7 +175,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
-						masonry();
+					
 
 					}
 				});		
