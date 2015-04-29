@@ -112,7 +112,7 @@
 				});		
 				renderTo.removeClass("k-widget");
 				
-				common.ui.pager($("my-page-pager"), {
+				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
 				});
 				
