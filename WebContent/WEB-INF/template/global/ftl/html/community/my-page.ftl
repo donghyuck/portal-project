@@ -985,13 +985,13 @@
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="row margin-bottom-20">
 		<div class="col-sm-4 sm-margin-bottom-20">
-		<div style="width:250px; height:150px;">
+			<div style="width:250px; height:150px;">
 			#if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}else{#
 				<img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.7/assets/img/main/img12.jpg" alt="">
 			#}#
-		</div>
+			</div>
 		</div>
 		<div class="col-sm-8 news-v3">
 			<div class="news-v3-in-sm no-padding">
@@ -1003,12 +1003,7 @@
 				</ul>
 
 								
-				<div class="navbar-btn">
-					<div class="btn-group">				
-						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh">새로고침</button>
-						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">새로고침</button>
-					</div>
-				</div>
+
                             <h2><a href="\\#">#: title #</a></h2>
                             <p>#: summary #</p>
                             <ul class="post-shares">
@@ -1021,9 +1016,17 @@
                                 <li><a href="\\#"><i class="rounded-x icon-share"></i></a></li>
                                 <li><a href="\\#"><i class="rounded-x icon-heart"></i></a></li>
                             </ul>
-                        </div>
-                    </div>
-                </div>
+				<div class="navbar-btn">
+					<div class="btn-group">				
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh">편집</button>
+						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">미리보기</button>
+					</div>
+					<button class="btn btn-danger btn-flat btn-outline" data-action="refresh">삭제</button>
+				</div>
+				
+			</div>
+		</div>
+	</div>
 	<div class="clearfix margin-bottom-10"><hr></div>
 	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
