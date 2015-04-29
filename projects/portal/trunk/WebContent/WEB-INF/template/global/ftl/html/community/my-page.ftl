@@ -85,9 +85,10 @@
 			var min_width = 300;
 			renderTo.masonry({
 				itemSelector : '.grid-boxes-in',
+				columnWidth:200,
 				/*gutterWidth: gutter,
 				isAnimated: true,*/
-				columnWidth: function( containerWidth ) {
+/*				columnWidth: function( containerWidth ) {
 					var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
 					if (box_width < min_width) {
 						box_width = (((containerWidth - gutter)/2) | 0);
@@ -97,7 +98,7 @@
 					}
 					$('.grid-boxes-in').width(box_width);							
 					return box_width;
-				}
+				}*/
 			});	
 		} 
 		
