@@ -1150,7 +1150,7 @@
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
-	<!--
+
 	
 
 		
@@ -1172,7 +1172,7 @@
 					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="refresh">삭제</button>
 				</div>			
 		</div>
-		-->
+
 	</div>
 	</script>
  	<script id="my-page-listview-template2" type="text/x-kendo-template">
