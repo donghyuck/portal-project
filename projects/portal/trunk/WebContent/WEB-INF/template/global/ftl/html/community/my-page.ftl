@@ -81,7 +81,7 @@
 		}
 	
 		function masonry(){
-			var renderTo = $("#my-page-listview");
+			var renderTo = $(".grid-boxes");
 			var gutter = 30;
 			var min_width = 300;
 			var box_width = (((renderTo.width() - 2*gutter)/3) | 0) ;
@@ -829,7 +829,7 @@
 				
 				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
 					<div class="blog_masonry_3col">
-						<div id="my-page-listview" class="grid-boxes js-masonry" data-masonry-options='{ "columnWidth": 250, "itemSelector": ".grid-boxes-in" }'></div>
+						<div id="my-page-listview" class="grid-boxes"></div>
 					</div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
@@ -1142,12 +1142,12 @@
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="grid-boxes-in">
-	<h2><a href="\\#">#:title#</a></h2>
-	<!--
-	
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
+	<!--
+	
+
 		
 		<div class="grid-boxes-caption">
 			<h2><a href="\\#">#:title#</a></h2>
