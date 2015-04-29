@@ -1132,7 +1132,7 @@
 							
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="item grid-boxes-in">
+	<div class="grid-boxes-in">
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
