@@ -190,7 +190,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
-						
+						masonry();
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");				
@@ -198,7 +198,13 @@
 					dataSource: common.ui.listview(renderTo).dataSource
 				});		
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
+					
 					common.ui.listview(renderTo).dataSource.read();	
+					
+					if( $(".grid-boxes").data('masonry') ){
+						$(".grid-boxes").masonry('destroy');
+					}
+					
 				});					
 			}
 			
