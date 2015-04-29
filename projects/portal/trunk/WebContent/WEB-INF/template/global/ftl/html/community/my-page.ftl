@@ -677,58 +677,97 @@
 			min-height: 500px;			
 		}		
 		
-.masonry { /* Masonry container */
-	-moz-column-count: 3;
-	-webkit-column-count: 3;
-	column-count: 3;
-	-moz-column-gap: 1em;
-	-webkit-column-gap: 1em;
-	column-gap: 1em;
+		
+.blog_masonry_3col {
+	padding-bottom: 60px;
 }
 
-.masonry-brick { /* Masonry bricks or child elements */
-	background-color: #fff;
-	display: inline-block;
-	margin: 0 0 1em;
-	width: 100%;
+.blog_masonry_3col .grid-boxes-in {
+	padding: 0;
+	margin-bottom: 30px;
 	border: solid 1px #eee;
-}		
+}
 
-.masonry-brick-caption { 
+.blog_masonry_3col .grid-boxes-caption {
 	padding: 15px;
 }
 
-@media only screen and (min-width: 400px) {
-    .masonry {
-        -moz-column-count: 1;
-        -webkit-column-count: 1;
-        column-count: 1;
-    }
+.blog_masonry_3col h3 {
+	font-size: 20px; 
+	font-weight: 200;
+	line-height: 28px;
 }
 
-@media only screen and (min-width: 750px) {
-    .masonry {
-        -moz-column-count: 2;
-        -webkit-column-count: 2;
-        column-count: 2;
-    }
+.blog_masonry_3col h3 a {
+	color: #555;
 }
 
-@media only screen and (min-width: 970px) {
-    .masonry {
-        -moz-column-count: 3;
-        -webkit-column-count: 3;
-        column-count: 3;
-    }
+.blog_masonry_3col h3 a:hover {
+	color: #72c02c;
 }
 
-@media only screen and (min-width: 1170px) {
-    .masonry {
-        -moz-column-count: 4;
-        -webkit-column-count: 4;
-        column-count: 4;
-    }
+.blog_masonry_3col h3 a:hover {
+	color: #72c02c;
 }
+
+.blog_masonry_3col ul.grid-boxes-news {
+	margin-bottom: 15px;
+}
+
+.blog_masonry_3col ul.grid-boxes-news li {
+	font-size: 12px;
+}
+
+.blog_masonry_3col ul.grid-boxes-news li,
+.blog_masonry_3col ul.grid-boxes-news li a {
+	color: #777;
+}
+
+.blog_masonry_3col ul.grid-boxes-news li a:hover {
+	color: #72c02c;
+}
+
+/*Quote Block*/
+.grid-boxes-caption.grid-boxes-quote {
+	padding: 30px;
+	background: #333;
+	text-align: center;
+}
+
+.grid-boxes-quote p {
+	position: relative;
+}
+
+.grid-boxes-quote p:after {
+    content: " \" ";
+	margin-left: 10px;
+    position: absolute;
+    font-family: Tahoma;
+}
+
+.grid-boxes-quote p:before {
+    content: " \" ";
+	margin-left: -15px;
+    position: absolute;
+    font-family: Tahoma;
+}
+
+.grid-boxes-quote p,
+.grid-boxes-quote p a,
+.grid-boxes-quote span {
+	color: #fff;
+	font-size: 20px;
+	font-weight: 200;
+	font-family: "Open Sans";
+	text-transform: uppercase;
+}	
+
+.grid-boxes-quote span {
+	font-size: 12px;
+}
+
+
+
  
 		</style>   	
 		</#compress>
