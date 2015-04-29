@@ -85,7 +85,8 @@
 			var min_width = 300;
 			renderTo.masonry({
 				itemSelector : '.grid-boxes-in',
-				columnWidth:200,
+				columnWidth: 200,
+				animate: true
 				/*gutterWidth: gutter,
 				isAnimated: true,*/
 /*				columnWidth: function( containerWidth ) {
