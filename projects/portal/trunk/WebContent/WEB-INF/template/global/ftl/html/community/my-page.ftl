@@ -985,7 +985,7 @@
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<div class="row margin-bottom-20">
 		<div class="col-sm-4 sm-margin-bottom-20">
-			<div style="width:250px; height:150px; overflow:hidden;">
+			<div class="thumbnail-kenburn overflow-hidden" style="width:250px; height:150px;">
 			#if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 			#}else{#
