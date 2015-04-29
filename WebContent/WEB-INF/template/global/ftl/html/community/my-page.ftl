@@ -95,7 +95,7 @@
 				itemSelector : ".grid-boxes-in",
 				isFitWidth : true,
 				gutterWidth: gutter,
-				columnWidth: box_width,
+				/*columnWidth: box_width,*/
 				animate: true,
 				animationOptions: {
 					duration: 700,
