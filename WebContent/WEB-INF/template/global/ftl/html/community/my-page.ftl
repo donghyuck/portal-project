@@ -104,11 +104,36 @@
 						serverFiltering: false,
 						serverSorting: false
 					},
-					template: kendo.template($("#my-page-listview-template").html())
+					template: kendo.template($("#my-page-listview-template").html()),
+					dataBound : function(e){
+						
+						
+								var gutter = 30;
+								var min_width = 300;
+								renderTo.imagesLoaded( function(){
+									renderTo.masonry({
+										itemSelector : '.grid-boxes-in',
+										gutterWidth: gutter,
+										isAnimated: true,
+										columnWidth: function( containerWidth ) {
+							                var box_width = (((containerWidth - 2*gutter)/3) | 0) ;
+							
+							                if (box_width < min_width) {
+							                    box_width = (((containerWidth - gutter)/2) | 0);
+							                }
+							
+							                if (box_width < min_width) {
+							                    box_width = containerWidth;
+							                }
+							
+							                $('.grid-boxes-in').width(box_width);							
+							                return box_width;
+							              }
+							        });
+							    });						
+					}
 				});		
 				renderTo.removeClass("k-widget");
-				
-				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
 					common.ui.listview(renderTo).dataSource.read();	
 				});										
@@ -985,7 +1010,7 @@
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 
-<div class="col-sm-4">
+<div class="grid-boxes-in">
                         <div class="thumbnails thumbnail-style">
                             #if( bodyContent.imageCount > 0 ){#
 				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
