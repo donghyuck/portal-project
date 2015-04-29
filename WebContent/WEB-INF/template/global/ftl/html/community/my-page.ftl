@@ -27,6 +27,7 @@
 			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',		
 			'<@spring.url "/js/masonry/masonry.pkgd.min.js"/>',		
+			'<@spring.url "/js/masonry/imagesloaded/imagesloaded.pkgd.min.js"/>',		
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
 			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
