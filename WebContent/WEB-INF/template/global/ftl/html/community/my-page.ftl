@@ -151,9 +151,7 @@
 					dataSource: common.ui.listview(renderTo).dataSource,
 					pageSizes: [15, 25, 50]
 				});		
-				
-				$(document).on("click","[data-toggle='morphing'], [data-action='morphing']
-				
+
 				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
