@@ -105,6 +105,7 @@
 					isFitWidth : true,
 					gutterWidth: gutter,
 					columnWidth : box_width,
+					isAnimated : true
 /*					
 					columnWidth: function(containerWidth){					
 						var box_width = (((containerWidth - 2*gutter)/3) | 0); 
@@ -118,12 +119,6 @@
 						return box_width;                					
 					},
 */					
-					animate: true,
-					animationOptions: {
-						duration: 700,
-						queue: true
-					}			
-				
 				});
 	
 			});	
@@ -189,11 +184,6 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
-					change: function(e){
-						if( $(".grid-boxes").data('masonry') ){						
-							$(".grid-boxes").masonry('destroy');
-						}					
-					},
 					dataBound: function(e){
 						masonry();
 					}
@@ -202,8 +192,10 @@
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
 				});		
-				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {					
+				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
+				
 					common.ui.listview(renderTo).dataSource.read();										
+				
 				});					
 			}
 			
