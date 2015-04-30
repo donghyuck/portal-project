@@ -197,7 +197,8 @@
 						//$("body").css("overflow-y", "auto");		
 					}
 				});				
-			}		
+			}	
+			return false;	
 		}
 				
 		function createPageSection(){
