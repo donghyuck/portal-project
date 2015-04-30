@@ -102,7 +102,8 @@
 					gutterWidth: gutter,					
 					isAnimated : true,
 /*					columnWidth : box_width */			
-					columnWidth: function(containerWidth){					
+					columnWidth: function(){		
+						var containerWidth = $(".grid-boxes").width();			
 						var box_width = (((containerWidth - 2*gutter)/3) | 0); 
 						if (box_width < min_width) {
 							box_width = (((containerWidth - gutter)/2) | 0);
