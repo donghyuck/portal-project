@@ -81,9 +81,8 @@
 		}
 	
 		function masonry(){
-
-			$(".grid-boxes").imagesLoaded( function(e){		
 		
+			$(".grid-boxes").imagesLoaded( function(e){				
 				var renderTo = $(".grid-boxes");			
 				var gutter = 30;
 				var min_width = 300;			
@@ -120,7 +119,7 @@
 					},
 */					
 				});
-	
+				$("#my-page-listview").fadeIn();				
 			});	
 		}
 	
@@ -198,6 +197,7 @@
 						$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
 						$(".grid-boxes").masonry('destroy');
 					}
+					renderTo.fadeOut();
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
 			}
