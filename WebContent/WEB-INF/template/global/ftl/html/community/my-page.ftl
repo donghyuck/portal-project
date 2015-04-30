@@ -119,7 +119,7 @@
 					},
 */					
 				});
-				$("#my-page-listview").fadeIn();				
+				//$("#my-page-listview").fadeIn();				
 			});	
 		}
 	
@@ -197,7 +197,7 @@
 						$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
 						$(".grid-boxes").masonry('destroy');
 					}
-					renderTo.fadeOut();
+					//renderTo.fadeOut();
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
 			}
