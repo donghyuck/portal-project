@@ -154,11 +154,10 @@
 				
 				$(document).on("click","[data-toggle='morphing'], [data-action='morphing']
 				
-				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){
+				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
-					var objectId = $this.data("object-id");
-					
+					var objectId = $this.data("object-id");					
 					switch( action ){
 						case 'view':						
 						alert( action );
@@ -169,8 +168,8 @@
 						case 'delete':
 						alert( action );							
 						break;																		
-					}									
-				} );
+					}	
+				});
 				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
 					common.ui.listview(renderTo).dataSource.read();	
