@@ -2147,7 +2147,7 @@ padding: 5px;
 }
 
 
-.dialog__overlay {
+.dialog.bg-glass .dialog__overlay {
 	background: rgba(55, 58, 71, 0.3);	
 }
 
