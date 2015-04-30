@@ -156,6 +156,9 @@
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");					
+					
+					
+					
 					switch( action ){
 						case 'view':						
 						alert( action );
@@ -178,7 +181,23 @@
 			} 			
 		}
 		
-		
+		function openPageViewer(){
+			var renderTo = $("#my-page-viewer");
+			if( ! common.ui.exists(renderTo) ){
+				var observable =  common.ui.observable({});			
+				common.ui.dialog( renderTo , {
+					data : observable,
+					"open":function(e){		
+						//$("body").css("overflow-y", "hidden");						
+						renderTo.find(".dialog__content").css("overflow-y", "auto");					
+					},
+					"close":function(e){			
+						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
+						//$("body").css("overflow-y", "auto");		
+					}
+				});				
+			}		
+		}
 				
 		function createPageSection(){
 			var renderTo = $("#my-page-grid");
