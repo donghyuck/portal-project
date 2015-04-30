@@ -2136,3 +2136,12 @@ padding: 5px;
 	{
 	display: none;
 }
+
+
+.k-pager-wrap.bg-flat-gray {
+	border-bottom-width: 5px;
+	border-bottom: 5px #eee solid;
+	background: #f5f5f5!important;
+	border-bottom-left-radius : 8px!imporant;
+	border-bottom-right-radius : 8px!imporant;
+}
