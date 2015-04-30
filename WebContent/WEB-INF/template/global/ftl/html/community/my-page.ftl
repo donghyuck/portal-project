@@ -171,6 +171,8 @@
 						alert( action );							
 						break;																		
 					}	
+					
+					return false;
 				});
 				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
@@ -198,7 +200,6 @@
 					}
 				});				
 			}	
-			return;	
 		}
 				
 		function createPageSection(){
