@@ -20,7 +20,8 @@
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',			
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',	
-			'css!<@spring.url "/styles/codrops/codrops.page-transitions.css"/>',						
+			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
+			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',					
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
@@ -609,6 +610,8 @@
 				background-size: cover;
 				background-position: center center;			
 			}	
+
+
 			
 		#my-page .master  {
 			opacity: 1;
@@ -721,104 +724,102 @@
 		}		
 		
 		
-.blog_masonry_3col {
-	padding-bottom: 60px;
-}
-
-.blog_masonry_3col .grid-boxes-in {
-	padding: 0;
-	margin-bottom: 30px;
-	border: solid 1px #eee;
-}
-
-.blog_masonry_3col .grid-boxes-caption {
-	padding: 15px;
-}
-
-.blog_masonry_3col h3 {
-	font-size: 20px; 
-	font-weight: 200;
-	line-height: 28px;
-}
-
-.blog_masonry_3col h3 a {
-	color: #555;
-}
-
-.blog_masonry_3col h3 a:hover {
-	color: #72c02c;
-}
-
-.blog_masonry_3col h3 a:hover {
-	color: #72c02c;
-}
-
-.blog_masonry_3col ul.grid-boxes-news {
-	margin-bottom: 15px;
-}
-
-.blog_masonry_3col ul.grid-boxes-news li {
-	font-size: 12px;
-}
-
-.blog_masonry_3col ul.grid-boxes-news li,
-.blog_masonry_3col ul.grid-boxes-news li a {
-	color: #777;
-}
-
-.blog_masonry_3col ul.grid-boxes-news li a:hover {
-	color: #72c02c;
-}
-
-.grid-boxes {
-	visibility: hidden;
-	min-height:300px;
-}
-
-.grid-boxes-in.masonry-brick {
-	visibility: visible;
-}
-
-/*Quote Block*/
-.grid-boxes-caption.grid-boxes-quote {
-	padding: 30px;
-	background: #333;
-	text-align: center;
-}
-
-.grid-boxes-quote p {
-	position: relative;
-}
-
-.grid-boxes-quote p:after {
-    content: " \" ";
-	margin-left: 10px;
-    position: absolute;
-    font-family: Tahoma;
-}
-
-.grid-boxes-quote p:before {
-    content: " \" ";
-	margin-left: -15px;
-    position: absolute;
-    font-family: Tahoma;
-}
-
-.grid-boxes-quote p,
-.grid-boxes-quote p a,
-.grid-boxes-quote span {
-	color: #fff;
-	font-size: 20px;
-	font-weight: 200;
-	font-family: "Open Sans";
-	text-transform: uppercase;
-}	
-
-.grid-boxes-quote span {
-	font-size: 12px;
-}
-
-
+		.blog_masonry_3col {
+			padding-bottom: 60px;
+		}
+		
+		.blog_masonry_3col .grid-boxes-in {
+			padding: 0;
+			margin-bottom: 30px;
+			border: solid 1px #eee;
+		}
+		
+		.blog_masonry_3col .grid-boxes-caption {
+			padding: 15px;
+		}
+		
+		.blog_masonry_3col h3 {
+			font-size: 20px; 
+			font-weight: 200;
+			line-height: 28px;
+		}
+		
+		.blog_masonry_3col h3 a {
+			color: #555;
+		}
+		
+		.blog_masonry_3col h3 a:hover {
+			color: #72c02c;
+		}
+		
+		.blog_masonry_3col h3 a:hover {
+			color: #72c02c;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news {
+			margin-bottom: 15px;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news li {
+			font-size: 12px;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news li,
+		.blog_masonry_3col ul.grid-boxes-news li a {
+			color: #777;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news li a:hover {
+			color: #72c02c;
+		}
+		
+		.grid-boxes {
+			visibility: hidden;
+			min-height:300px;
+		}
+		
+		.grid-boxes-in.masonry-brick {
+			visibility: visible;
+		}
+		
+		/*Quote Block*/
+		.grid-boxes-caption.grid-boxes-quote {
+			padding: 30px;
+			background: #333;
+			text-align: center;
+		}
+		
+		.grid-boxes-quote p {
+			position: relative;
+		}
+		
+		.grid-boxes-quote p:after {
+		    content: " \" ";
+			margin-left: 10px;
+		    position: absolute;
+		    font-family: Tahoma;
+		}
+		
+		.grid-boxes-quote p:before {
+		    content: " \" ";
+			margin-left: -15px;
+		    position: absolute;
+		    font-family: Tahoma;
+		}
+		
+		.grid-boxes-quote p,
+		.grid-boxes-quote p a,
+		.grid-boxes-quote span {
+			color: #fff;
+			font-size: 20px;
+			font-weight: 200;
+			font-family: "Open Sans";
+			text-transform: uppercase;
+		}	
+		
+		.grid-boxes-quote span {
+			font-size: 12px;
+		}
 
 		</style>   	
 		</#compress>
