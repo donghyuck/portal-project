@@ -201,6 +201,7 @@
 				renderTo.data("model", observable);		
 				common.ui.dialog( renderTo , {
 					data : observable,
+					autoBind: true,
 					"open":function(e){		
 						$("body").css("overflow-y", "hidden");						
 						renderTo.find(".dialog__content").css("overflow-y", "auto");					
@@ -212,6 +213,7 @@
 					}
 				});		
 			}			
+			
 			var dialogFx = common.ui.dialog( renderTo );		
 			if( !dialogFx.isOpen ){				
 				renderTo.data("model").setPage(source);	
