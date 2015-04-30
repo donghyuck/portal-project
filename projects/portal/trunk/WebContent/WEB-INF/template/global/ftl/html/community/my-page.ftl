@@ -1049,10 +1049,9 @@
 			<!-- ./END FOOTER -->					
 		</div>				
 		
-		<div id="my-page-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
+		<div id="my-page-viewer" class="dialog bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
-			<div class="dialog__content">			
-				<span class="btn-flat close" data-dialog-close></span>						
+			<div class="dialog__content">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
