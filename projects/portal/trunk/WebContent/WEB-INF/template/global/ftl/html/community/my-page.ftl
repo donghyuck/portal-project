@@ -98,7 +98,6 @@
 			*/
 				renderTo.masonry({
 					itemSelector : ".grid-boxes-in",
-					isFitWidth : true,
 					gutterWidth: gutter,					
 					isAnimated : true,
 					columnWidth: function( containerWidth ) {
