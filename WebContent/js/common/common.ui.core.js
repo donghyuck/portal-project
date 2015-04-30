@@ -308,7 +308,7 @@
 		renderTo.kendoStop().kendoAnimate(options);
 	}
 	
-	function animate_v2 (renderTo, effect,  ){		
+	function animate_v2 (renderTo, effect, done){		
 		var options = options || {};		
 		if( !renderTo.hasClass('animated')){
 			renderTo.addClass('animated');			
@@ -317,6 +317,8 @@
 			'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',	
 			function (e) {
 				renderTo.removeClass('animated' + ' ' + effect  );
+				if(isFunction(done))
+					done();
 			}
 		);		
 	}	
