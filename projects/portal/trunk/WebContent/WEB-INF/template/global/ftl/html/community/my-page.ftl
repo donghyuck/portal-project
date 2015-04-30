@@ -876,7 +876,7 @@
 					<div class="blog_masonry_3col">					
 						<div id="my-page-listview" class="grid-boxes"></div>
 					</div>
-					<div id="my-page-pager" class="no-border bg-flat-gray"></div>
+					<div id="my-page-pager" class="bg-flat-gray"></div>
 				</article>					
 			</div>		
 			<section class="personalized-section bg-transparent no-margin-b open" >
