@@ -136,10 +136,13 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
-					dataBound: function(e){
-						
-					
+					dataBound: function(e){					
 						masonry();
+					},
+					change: function(e){						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+						alert( kendo.stringify( selectedCell ) );
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");							
