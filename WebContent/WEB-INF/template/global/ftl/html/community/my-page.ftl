@@ -192,20 +192,18 @@
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
 				});		
-				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
-				
+				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {				
 					common.ui.listview(renderTo).dataSource.read();	
 					if( $(".grid-boxes").data('masonry') ){
 						$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
+						$(".grid-boxes").masonry('destory');
 					}
 				});					
 			}
 			
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
-			} 		
-			
-			
+			} 			
 		}
 		
 		
