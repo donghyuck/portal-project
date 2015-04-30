@@ -1051,7 +1051,7 @@
 		
 		<div id="my-page-viewer" class="dialog bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
-			<div class="dialog__content">
+			<div class="dialog__content full">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
