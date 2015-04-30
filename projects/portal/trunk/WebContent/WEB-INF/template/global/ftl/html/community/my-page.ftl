@@ -1075,6 +1075,7 @@
 											<span data-bind="text: page.title"></span>( <span data-bind="text: page.name"></span>)
 											<span class="close" data-dialog-close></span>						
 										</header>
+										<article data-bind="html:page.bodyContent.bodyText"></article>
 										<fieldset class="padding-sm">
 											<div class="row">
 												<div class="col-md-9"></div>
