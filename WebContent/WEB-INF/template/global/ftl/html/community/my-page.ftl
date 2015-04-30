@@ -198,7 +198,7 @@
 					}
 				});				
 			}	
-			return false;	
+			return;	
 		}
 				
 		function createPageSection(){
