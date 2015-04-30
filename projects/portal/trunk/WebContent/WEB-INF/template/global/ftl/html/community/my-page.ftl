@@ -788,6 +788,10 @@
 	color: #72c02c;
 }
 
+.grid-boxes {
+	min-height:300px;
+}
+
 /*Quote Block*/
 .grid-boxes-caption.grid-boxes-quote {
 	padding: 30px;
