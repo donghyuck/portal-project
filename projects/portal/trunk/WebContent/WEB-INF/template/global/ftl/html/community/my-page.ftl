@@ -1137,12 +1137,11 @@
 		<div class="grid-boxes-caption">
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#
 			<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>
-				<ul class="list-inline grid-boxes-news">
-                        <li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
-                        <li>|</li>
-                        <li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
-                        <li>|</li>
-                    </ul>                    
+			<ul class="list-inline grid-boxes-news">
+				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
+				<li>|</li>
+				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
+			</ul>                    
 			<p>#: summary #</p>
 				<div class="navbar-btn">
 					<div class="btn-group">				
