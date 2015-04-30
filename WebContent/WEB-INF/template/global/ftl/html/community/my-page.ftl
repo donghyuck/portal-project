@@ -1055,7 +1055,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-									<div class="sky-form">
+									<div class="sky-form rounded">
 										<header>
 											<span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)
 											<span class="close" data-dialog-close></span>						
