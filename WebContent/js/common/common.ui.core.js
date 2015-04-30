@@ -377,10 +377,17 @@
 			var that = this,
 			element = that.element,
 			options = that.options;	
+			
+			
 			var ctrlClose  = element.find("[data-dialog-close]");
 			ctrlClose.click(function(e){
 				that.close();				
 			});
+			
+			if( options.autoBind  ){
+				kendo.bind( element , that.options.data );				
+			}
+			
 		},
 		data : function( data ){
 			var that = this;
