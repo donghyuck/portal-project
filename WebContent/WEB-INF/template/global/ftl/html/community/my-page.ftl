@@ -1146,10 +1146,9 @@
 			<p>#: summary #</p>
 				<div class="navbar-btn">
 					<div class="btn-group">				
-						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"> 편집</button>
-						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">미리보기</button>
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
 					</div>
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="refresh">삭제</button>
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#">삭제</button>
 				</div>			
 		</div>
 
@@ -1180,12 +1179,10 @@
 				<p>#: summary #</p>
 				<div class="navbar-btn">
 					<div class="btn-group">				
-						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="refresh"> 편집</button>
-						<button class="btn btn-info btn-flat btn-outline" data-action="refresh">미리보기</button>
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit"> 편집</button>
 					</div>
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="refresh">삭제</button>
-				</div>
-				
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete">삭제</button>
+				</div>				
 			</div>
 		</div>
 		<div class="clearfix margin-bottom-10"><hr class="m-b-sm"></div>
