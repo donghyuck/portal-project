@@ -137,6 +137,8 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){
+						
+					
 						masonry();
 					}
 				});		
@@ -1129,13 +1131,9 @@
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
-
-	
-
-		
 		<div class="grid-boxes-caption">
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#
-			<h2><a href="\\#">#:title#</a></h2>
+			<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>
 				<ul class="list-inline grid-boxes-news">
                         <li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
                         <li>|</li>
