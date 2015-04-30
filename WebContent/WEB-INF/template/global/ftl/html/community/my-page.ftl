@@ -108,8 +108,8 @@
 						if (box_width < min_width) {
 							box_width = containerWidth;
 						}
-						//renderTo.find('.grid-boxes-in').width(box_width);
-						return box_width;                					
+						renderTo.find('.grid-boxes-in').width(box_width);
+						return box_width;
 					}	
 				});
 				//$("#my-page-listview").fadeIn();				
