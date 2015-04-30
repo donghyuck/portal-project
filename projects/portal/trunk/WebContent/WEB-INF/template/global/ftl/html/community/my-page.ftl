@@ -1187,7 +1187,7 @@
                         <li>|</li>
                         <li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
                         <li>|</li>
-                        <li><a href="\\#"><i class="fa fa-comments-o"></i> 0</a></li>
+                        <li>#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#</li>
                     </ul>                    
 			<p>#: summary #</p>
 				<div class="navbar-btn">
