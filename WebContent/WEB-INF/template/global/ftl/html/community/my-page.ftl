@@ -100,15 +100,7 @@
 					itemSelector : ".grid-boxes-in",
 					gutterWidth: gutter,					
 					isAnimated : true,
-					columnWidth: function( containerWidth ) {
-						alert(containerWidth);
-					
-						return containerWidth / 3;
-					}
-					/*
-					columnWidth : box_width	*/
-/*						columnWidth: function(){		
-						var containerWidth = $(".grid-boxes").width();			
+					columnWidth: function(containerWidth){		
 						var box_width = (((containerWidth - 2*gutter)/3) | 0); 
 						if (box_width < min_width) {
 							box_width = (((containerWidth - gutter)/2) | 0);
@@ -116,9 +108,9 @@
 						if (box_width < min_width) {
 							box_width = containerWidth;
 						}
-						renderTo.find('.grid-boxes-in').width(box_width);
+						//renderTo.find('.grid-boxes-in').width(box_width);
 						return box_width;                					
-					}	*/			
+					}	
 				});
 				//$("#my-page-listview").fadeIn();				
 			});	
