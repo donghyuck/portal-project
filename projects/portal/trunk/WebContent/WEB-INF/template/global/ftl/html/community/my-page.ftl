@@ -1076,6 +1076,7 @@
 											<span class="close" data-dialog-close></span>						
 										</header>
 										<article data-bind="html:page.bodyContent.bodyText" class="p-md bg-white text-md"></article>
+										<!--
 										<fieldset class="padding-sm">
 											<div class="row">
 												<div class="col-md-9"></div>
@@ -1086,7 +1087,7 @@
 										<footer class="text-right">
 											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
 											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
-										</footer>
+										</footer>-->
 									</div>	
 						</div>
 					</div>					
