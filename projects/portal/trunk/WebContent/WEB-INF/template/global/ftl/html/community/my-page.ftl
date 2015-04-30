@@ -784,6 +784,10 @@
 	min-height:300px;
 }
 
+.grid-boxes-in.masonry-brick {
+	visibility: visible;
+}
+
 /*Quote Block*/
 .grid-boxes-caption.grid-boxes-quote {
 	padding: 30px;
