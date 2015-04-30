@@ -102,7 +102,7 @@
 					gutterWidth: gutter,					
 					isAnimated : true,
 					columnWidth: function( containerWidth ) {
-					
+						alert(containerWidth);
 					
 						return containerWidth / 3;
 					}
