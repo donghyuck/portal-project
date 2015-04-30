@@ -152,7 +152,9 @@
 					pageSizes: [15, 25, 50]
 				});		
 				
-				$(".grid-boxes [data-action]").on( "click", function(e){
+				$(document).on("click","[data-toggle='morphing'], [data-action='morphing']
+				
+				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");
