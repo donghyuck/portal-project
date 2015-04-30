@@ -146,10 +146,29 @@
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");							
+				
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource,
 					pageSizes: [15, 25, 50]
 				});		
+				
+				$(".grid-boxes [data-action]").on( "click", function(e){
+					$this = $(this);
+					var action = $this.data("action");
+					var objectId = $this.data("object-id");
+					
+					switch( action ){
+						case 'view':						
+						alert( action );
+						break;		
+						case 'edit':						
+						alert( action );	
+						break;	
+						case 'delete':
+						alert( action );							
+						break;																		
+					}									
+				} );
 				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
 					common.ui.listview(renderTo).dataSource.read();	
@@ -1150,7 +1169,6 @@
 					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#">삭제</button>
 				</div>			
 		</div>
-
 	</div>
 	</script>
  	<script id="my-page-listview-template2" type="text/x-kendo-template">
