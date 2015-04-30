@@ -80,8 +80,7 @@
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 	
-		function masonry(){
-		
+		function masonry(){		
 			$(".grid-boxes").imagesLoaded( function(e){				
 				var renderTo = $(".grid-boxes");			
 				var gutter = 30;
@@ -105,43 +104,8 @@
 			});	
 		}
 	
-		function createMyPageListView(){
-		
+		function createMyPageListView(){		
 			var renderTo = $("#my-page-listview");
-			/*
-			var template =kendo.template($("#my-page-listview-template").html());
-			var dataSource = new kendo.data.DataSource({
-						serverFiltering: false,
-						transport: { 
-							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
-							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
-							}
-						},
-						schema: {
-							total: "totalCount",
-							data: "pages",
-							model: common.ui.data.Page
-						},
-						error:common.ui.handleAjaxError,
-						batch: false,
-						pageSize: 15,
-						serverPaging: true,
-						serverFiltering: false,
-						serverSorting: false,
-						change: function() {
-							renderTo.html(kendo.render(template, this.view()));		
-						
-						}
-			});
-			
-			
-			
-				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
-					dataSource.read();	
-				});	
-			*/
-			
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
 					dataSource: {
@@ -151,6 +115,12 @@
 							parameterMap: function (options, type){
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
 							}
+						},
+						requestStart: function(e){
+							if( $(".grid-boxes").data('masonry') ){
+								$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
+								$(".grid-boxes").masonry('destroy');
+							}						
 						},
 						schema: {
 							total: "totalCount",
@@ -170,20 +140,16 @@
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");				
+				
 				common.ui.pager($("#my-page-pager"), {
-					dataSource: common.ui.listview(renderTo).dataSource
+					dataSource: common.ui.listview(renderTo).dataSource,
+					pageSizes: [15, 25, 50]
 				});		
-				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {				
-					
-					if( $(".grid-boxes").data('masonry') ){
-						$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
-						$(".grid-boxes").masonry('destroy');
-					}
-					//renderTo.fadeOut();
+				
+				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
-			}
-			
+			}			
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
 			} 			
