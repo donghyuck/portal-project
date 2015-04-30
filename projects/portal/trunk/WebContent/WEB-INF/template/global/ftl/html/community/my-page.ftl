@@ -1056,7 +1056,10 @@
 					<div class="row">
 						<div class="col-sm-12">
 									<div class="sky-form">
-										<header><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</header>
+										<header>
+											<span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)
+											<span class="btn-flat close" data-dialog-close></span>						
+										</header>
 										<fieldset class="padding-sm">
 											<div class="row">
 												<div class="col-md-9"></div>
