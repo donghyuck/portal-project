@@ -210,9 +210,7 @@
 			buttonCount : 9,
 			info: false
 	};	
-	
-	
-	
+		
 	function grid(renderTo, options){
 		options = options || {};		
 		if(!renderTo.data("kendoGrid")){			
@@ -309,6 +307,19 @@
 		var options = options || {};
 		renderTo.kendoStop().kendoAnimate(options);
 	}
+	
+	function animate_v2 (renderTo, effect,  ){		
+		var options = options || {};		
+		if( !renderTo.hasClass('animated')){
+			renderTo.addClass('animated');			
+		}		
+		renderTo.addClass(effect).one(
+			'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',	
+			function (e) {
+				renderTo.removeClass('animated' + ' ' + effect  );
+			}
+		);		
+	}	
 	
 	/**
 	 * Setup  
@@ -537,33 +548,6 @@
 				renderTo.backstretch( images, { duration: options.duration || 6000, fade: options.fade || 750});	
 			});
 		}
-		
-		
-		/**
-			
-		var options = options || {},
-		template = options.template || kendo.template("/download/streams/photo/#= externalId#"),
-		dataSource = options.dataSource || datasource( "/data/streams/photos/list_with_random.json?output=json", {
-			pageSize: 20,
-			schema: {
-				total: "totalCount",
-				data: "photos"
-			},
-			change : function(e){				
-				var view = this.view(), urls = [];				
-				each(view, function(idx, photo){
-					urls.push(template(photo));
-				});		
-				if( defined( options.renderTo) ){
-					options.renderTo.backstretch( urls, {duration: 6000, fade: 750});	
-				}else{
-					$.backstretch( urls, {duration: 6000, fade: 750});	
-				}
-			}
-		});
-		
-		*/
-		
 	} 
 	
 	function wallpaper (options){		
@@ -942,6 +926,7 @@
 		disable: common.ui.disable || disable,
 		buttons : common.ui.buttons || buttons,
 		animate : common.ui.animate || animate,
+		animate_v2 : common.ui.animate_v2 || animate_v2,
 		fx : kendo.fx,
 		bind : kendo.bind,
 		stringify : kendo.stringify,
@@ -957,6 +942,8 @@
 	});
 	
 })(jQuery);
+
+
 
 ;(function($, undefined) {
 	var ui = common.ui,
