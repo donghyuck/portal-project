@@ -189,6 +189,11 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
+					dataBounding: function(e){
+						if( $(".grid-boxes").data('masonry') ){						
+							$(".grid-boxes").masonry('destroy');
+						}					
+					},
 					dataBound: function(e){
 						masonry();
 					}
@@ -197,14 +202,8 @@
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource
 				});		
-				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {
-					
-					common.ui.listview(renderTo).dataSource.read();	
-					
-					if( $(".grid-boxes").data('masonry') ){
-						$(".grid-boxes").masonry('destroy');
-					}
-					
+				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {					
+					common.ui.listview(renderTo).dataSource.read();										
 				});					
 			}
 			
