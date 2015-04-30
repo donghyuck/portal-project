@@ -146,23 +146,19 @@
 						alert( kendo.stringify( selectedCell ) );
 					}
 				});		
-				renderTo.removeClass("k-widget k-listview");							
-				
+				renderTo.removeClass("k-widget k-listview");					
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource,
 					pageSizes: [15, 25, 50]
 				});		
-
 				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
-					var objectId = $this.data("object-id");					
-					
-					
-					
+					var objectId = $this.data("object-id");						
+					var item common.ui.listview(renderTo).dataSource.get(objectId);					
 					switch( action ){
 						case 'view':						
-						openPageViewer();
+						openPageViewer(item);
 						break;		
 						case 'edit':						
 						alert( action );	
@@ -184,24 +180,40 @@
 			} 			
 		}
 		
-		function openPageViewer(){
+		function openPageViewer(source){
 			var renderTo = $("#my-page-viewer");
 			if( ! common.ui.exists(renderTo) ){
-				var observable =  common.ui.observable({});			
+				var observable =  common.ui.observable({
+					page : new common.ui.data.Page(),
+					stateSource : [
+						{name: "" , value: "INCOMPLETE"},
+						{name: "승인" , value: "APPROVAL"},
+						{name: "게시" , value: "PUBLISHED"},
+						{name: "거절" , value: "REJECTED"},
+						{name: "보관" , value: "ARCHIVED"},
+						{name: "삭제" , value: "DELETED"}
+					],
+					setPage: function(page){
+						var $this = this;
+						page.copy($this.page);					
+					}
+				});		
+				renderTo.data("model", observable);		
 				common.ui.dialog( renderTo , {
 					data : observable,
 					"open":function(e){		
-						//$("body").css("overflow-y", "hidden");						
+						$("body").css("overflow-y", "hidden");						
 						renderTo.find(".dialog__content").css("overflow-y", "auto");					
 					},
 					"close":function(e){			
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");					
-						//$("body").css("overflow-y", "auto");		
+						$("body").css("overflow-y", "auto");		
 					}
-				});				
-			}
+				});		
+			}			
 			var dialogFx = common.ui.dialog( renderTo );		
-			if( !dialogFx.isOpen ){					
+			if( !dialogFx.isOpen ){				
+				renderTo.data("model").setPage(source);	
 				dialogFx.open();
 			}				
 		}
