@@ -2192,3 +2192,11 @@ padding: 5px;
 .dialog.dialog--open .ace_editor {
 	display: block;
 }
+
+@media (max-width: 767px) {
+  .visible-xs-block {
+	.dialog.dialog-full .dialog__content {
+		
+	}
+  }
+}
