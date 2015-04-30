@@ -1017,12 +1017,40 @@
 					</div><!-- /.container -->
 				</div>				
 			</section><!-- /.section -->
-			<!-- ./END MAIN CONTENT -->	
-	 		
+			<!-- ./END MAIN CONTENT -->		 		
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>				
+		
+		<div id="my-page-viewer" class="dialog" data-feature="dialog" data-dialog-animate="">
+			<div class="dialog__overlay"></div>
+			<div class="dialog__content">			
+				<span class="btn-flat close" data-dialog-close></span>						
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+									<div class="sky-form">
+										<header><span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)</header>
+										<fieldset class="padding-sm">
+											<div class="row">
+												<div class="col-md-9"></div>
+												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+											</div>
+										</fieldset>
+										<div id="menueditor"></div>
+										<footer class="text-right">
+											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
+											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
+										</footer>
+									</div>	
+						</div>
+					</div>					
+				</div>				
+			</div>
+		</div>	
+		
+		
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- tab-v1 -->
@@ -1144,7 +1172,8 @@
 				</div>	
 			</section>	
 			<div class="cbp-spmenu-overlay"></div>			
-			<!-- ./END RIGHT SLIDE MENU -->					
+			<!-- ./END RIGHT SLIDE MENU -->			
+					
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
 	<!--<div class="grid-boxes-in col-md-4 col-sm-6 col-xs-12">-->
@@ -1170,41 +1199,6 @@
 		</div>
 	</div>
 	</script>
- 	<script id="my-page-listview-template2" type="text/x-kendo-template">
-		
-	<div class="row margin-bottom-20">
-		<div class="col-sm-4 sm-margin-bottom-20">
-			<div class="thumbnail-kenburn overflow-hidden" style="width:250px; height:150px;">
-			#if( bodyContent.imageCount > 0 ){#
-				<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
-			#}else{#
-				<img class="img-responsive" src="http://htmlstream.com/preview/unify-v1.7/assets/img/main/img12.jpg" alt="">
-			#}#
-			</div>
-		</div>
-		<div class="col-sm-8 news-v3">
-			<div class="news-v3-in-sm no-padding">
-				#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else{# <span class="label label-danger">#: pageState #</span> #}#
-				<ul class="list-inline posted-info">
-					<li><img width="30" height="30" class="img-circle" src="#: authorPhotoUrl()#" style="margin-right:5px; margin-left:10px">
-							#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
-					<li><i class="fa fa-tags"></i> <a href="\\#">Design</a></li>
-					<li><i class="fa fa-calendar"></i> #:formattedCreationDate() #</li>
-				</ul>
-				<h2><a href="\\#">#: title #</a></h2>
-				<p>#: summary #</p>
-				<div class="navbar-btn">
-					<div class="btn-group">				
-						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit"> 편집</button>
-					</div>
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete">삭제</button>
-				</div>				
-			</div>
-		</div>
-		<div class="clearfix margin-bottom-10"><hr class="m-b-sm"></div>
-	</div>
-	
-	</script>		
 	<script id="webpage-title-template" type="text/x-kendo-template">
 		#: title #</span>
 		<div class="btn-group btn-group-xs pull-right">
