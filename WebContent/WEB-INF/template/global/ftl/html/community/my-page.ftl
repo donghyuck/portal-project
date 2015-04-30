@@ -86,7 +86,7 @@
 				var renderTo = $(".grid-boxes");			
 				var gutter = 30;
 				var min_width = 300;			
-/*				
+			
 				var box_width = (((renderTo.width() - 2*gutter)/3) | 0); 
 				if (box_width < min_width) {
 					box_width = (((renderTo.width() - gutter)/2) | 0);
@@ -95,14 +95,14 @@
 					box_width = renderTo.width();
 				}
 				renderTo.find('.grid-boxes-in').width(box_width);
-*/				
+			
 				renderTo.masonry({
 					itemSelector : ".grid-boxes-in",
 					isFitWidth : true,
 					gutterWidth: gutter,					
 					isAnimated : true,
-/*					columnWidth : box_width */			
-					columnWidth: function(){		
+					columnWidth : box_width	
+/*						columnWidth: function(){		
 						var containerWidth = $(".grid-boxes").width();			
 						var box_width = (((containerWidth - 2*gutter)/3) | 0); 
 						if (box_width < min_width) {
@@ -113,7 +113,7 @@
 						}
 						renderTo.find('.grid-boxes-in').width(box_width);
 						return box_width;                					
-					}				
+					}	*/			
 				});
 				//$("#my-page-listview").fadeIn();				
 			});	
