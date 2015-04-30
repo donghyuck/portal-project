@@ -1070,7 +1070,7 @@
 						<div class="col-sm-12">
 									<div class="sky-form rounded">
 										<header>
-											<span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)
+											<span data-bind="text: page.title"></span>( <span data-bind="text: page.name"></span>)
 											<span class="close" data-dialog-close></span>						
 										</header>
 										<fieldset class="padding-sm">
