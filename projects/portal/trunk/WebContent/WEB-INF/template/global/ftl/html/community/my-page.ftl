@@ -161,7 +161,7 @@
 					
 					switch( action ){
 						case 'view':						
-						alert( action );
+						openPageViewer();
 						break;		
 						case 'edit':						
 						alert( action );	
