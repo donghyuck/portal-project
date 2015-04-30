@@ -1058,7 +1058,7 @@
 									<div class="sky-form">
 										<header>
 											<span data-bind="text:website.menu.title"></span>( <span data-bind="text:website.menu.name"></span>)
-											<span class="btn-flat close" data-dialog-close></span>						
+											<span class="close" data-dialog-close></span>						
 										</header>
 										<fieldset class="padding-sm">
 											<div class="row">
