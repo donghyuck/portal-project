@@ -2150,7 +2150,7 @@ padding: 5px;
 	background: rgba(55, 58, 71, 0.3);	
 }
 
-.dialog__content.full {
+.dialog.dialog-full .dialog__content {
 	width: 100%;
 	max-width: none;
 	background: #fff;
