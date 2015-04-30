@@ -2194,7 +2194,6 @@ padding: 5px;
 }
 
 @media (max-width: 767px) {
-  .visible-xs-block {
 	.dialog.dialog-full .dialog__content {
 		
 	}
