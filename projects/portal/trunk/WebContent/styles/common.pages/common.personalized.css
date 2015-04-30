@@ -2182,7 +2182,7 @@ padding: 5px;
   z-index: 1047;
 }
 .dialog__content .close:hover{
-  opacity: .1;	
+  opacity: 1;	
 }
 
 .dialog .ace_editor {
