@@ -189,7 +189,7 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
-					dataBounding: function(e){
+					change: function(e){
 						if( $(".grid-boxes").data('masonry') ){						
 							$(".grid-boxes").masonry('destroy');
 						}					
