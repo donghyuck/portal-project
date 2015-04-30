@@ -2149,11 +2149,13 @@ padding: 5px;
 .dialog.bg-glass .dialog__overlay {
 	background: rgba(55, 58, 71, 0.3);	
 }
+.dialog.bg-glass .dialog__content {
+	background: transparent!important;	
+}
 
 .dialog.dialog-full .dialog__content {
 	width: 100%;
 	max-width: none;
-	background: #fff;
 	padding: 4em;
 	top: 0;
 	left: 0;
