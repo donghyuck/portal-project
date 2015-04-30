@@ -199,7 +199,11 @@
 						//$("body").css("overflow-y", "auto");		
 					}
 				});				
-			}	
+			}
+			var dialogFx = common.ui.dialog( renderTo );		
+			if( !dialogFx.isOpen ){					
+				dialogFx.open();
+			}				
 		}
 				
 		function createPageSection(){
