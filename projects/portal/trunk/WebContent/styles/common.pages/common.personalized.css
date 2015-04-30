@@ -2147,7 +2147,7 @@ padding: 5px;
 
 
 .dialog.bg-glass .dialog__overlay {
-	background: rgba(55, 58, 71, 0.3);	
+	background: rgba(55, 58, 71, 0.2);	
 }
 .dialog.bg-glass .dialog__content {
 	background: transparent!important;	
