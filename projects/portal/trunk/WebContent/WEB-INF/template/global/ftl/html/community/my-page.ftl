@@ -196,7 +196,7 @@
 					
 					if( $(".grid-boxes").data('masonry') ){
 						$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
-						$(".grid-boxes").masonry('destory');
+						$(".grid-boxes").masonry('destroy');
 					}
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
