@@ -2158,6 +2158,10 @@ padding: 5px;
 	text-align: inherit;
 }
 
+.dialog__overlay {
+	background: rgba(55, 58, 71, 0.3);	
+}
+
 .dialog .ace_editor {
 	display: none;
 }
