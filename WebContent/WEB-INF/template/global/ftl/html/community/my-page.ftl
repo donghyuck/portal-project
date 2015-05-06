@@ -332,9 +332,10 @@
 					data : observable,
 					autoBind: true,
 					"open":function(e){		
-						$("body").css("overflow-y", "hidden");							
+									
 					},
 					"opened" : function(e){		
+						$("body").css("overflow-y", "hidden");				
 						renderTo.find(".dialog__content").css("overflow-y", "auto");					
 					},
 					"close":function(e){			
