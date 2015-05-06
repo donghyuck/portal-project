@@ -328,12 +328,7 @@
 					}
 				});		
 				renderTo.data("model", observable);		
-				
-				var content = renderTo.find(".sky-form");
-				common.ui.scroll.slim(content, {				 
-					height: content.css({'height':(($(window).height())- 120 )+'px'})
-				});
-				
+								
 				common.ui.dialog( renderTo , {
 					data : observable,
 					autoBind: true,
@@ -350,6 +345,19 @@
 						$("body").css("overflow-y", "auto");		
 					}
 				});		
+				
+				var content = renderTo.find(".sky-form");
+				common.ui.scroll.slim(content, {				 
+					height: content.css({'height':(($(window).height())- 120 )+'px'})
+				});
+								
+				$(window).resize(function(){    
+					if( common.ui.dialog( renderTo ).isOpen ){
+						common.ui.scroll.slim(content, {				 
+							height: content.css({'height':(($(window).height())- 120 )+'px'})
+						});
+					}				
+				});
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );		
