@@ -372,7 +372,7 @@
 		options : {
 			name : "DialogFx"
 		},
-		events : [ "open", "close" ],
+		events : [ "open", "opened", "close", "closed" ],
 		render : function() {
 			var that = this,
 			element = that.element,
@@ -407,6 +407,7 @@
 				var content = element.children(".dialog__content");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					element.removeClass("dialog--close");			
+					that.trigger("closed");
 				});
 				
 				that.isOpen = false;				
@@ -420,6 +421,10 @@
 			if( !that.isOpen )
 			{
 				element.addClass("dialog--open");
+				var content = element.children(".dialog__content");
+				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+					that.trigger("opened");
+				});
 				that.isOpen = true;
 				that.trigger("open");				
 			}
