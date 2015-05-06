@@ -331,7 +331,7 @@
 				
 				var content = renderTo.find(".sky-form");
 				common.ui.scroll.slim(content, {				 
-					height: content.css({'height':(($(window).height())- '4em' )+'px'})
+					height: content.css({'height':(($(window).height())- '8em' )+'px'})
 				});
 				
 				common.ui.dialog( renderTo , {
