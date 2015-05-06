@@ -20,7 +20,7 @@
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',	
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
-			'css!<@spring.url "/styles/codrops/codrops.dialog-val.css"/>',					
+			'css!<@spring.url "/styles/codrops/codrops.dialog-sally.css"/>',					
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
@@ -158,10 +158,10 @@
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);					
 					switch( action ){
 						case 'view':						
-						openPageViewer(item);
+						createPageViewer(item);
 						break;		
 						case 'edit':						
-						alert( action );	
+						createPageEditor( item );	
 						break;	
 						case 'delete':
 						alert( action );							
@@ -180,7 +180,136 @@
 			} 			
 		}
 		
-		function openPageViewer(source){
+
+		function createPageEditor(source){
+			var renderTo = $("#my-page-editor");
+			
+			/*
+			$("#sky-form label.state-error").removeClass("state-error");
+			
+			if( !renderTo.data("model")){
+				var model =  common.ui.observable({ 
+					page : new common.ui.data.Page(),
+					stateSource : [
+						{name: "" , value: "INCOMPLETE"},
+						{name: "승인" , value: "APPROVAL"},
+						{name: "게시" , value: "PUBLISHED"},
+						{name: "거절" , value: "REJECTED"},
+						{name: "보관" , value: "ARCHIVED"},
+						{name: "삭제" , value: "DELETED"}
+					],
+					properties : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
+							create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
+							update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
+							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { pageId: model.page.pageId, items: kendo.stringify(options.models)};
+								} 
+								return { pageId: model.page.pageId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							model: common.ui.data.Property
+						},
+						error:common.ui.handleAjaxError
+					}),
+					isVisible : true,
+					close:function(e){
+						$("#my-page-view span.back").click();
+						common.ui.scroll.top($(".personalized-section").first());
+					},
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');
+						
+						if( $this.page.title.length == 0 ){
+							if(!$("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").addClass("state-error");							
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "제목을 입력하세요."	},
+								"error"
+							);
+							return false;
+						}						
+						else{
+							if($("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").removeClass("state-error");
+						}
+												
+						if($this.page.summary.length == 0 ){
+							if(!$("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").removeClass("state-error");
+						}
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
+									$("#my-page-grid").data('kendoGrid').dataSource.read();
+									$this.close();									
+								},
+								fail: function(){								
+									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
+					}
+				});				
+				source.copy( model.page );
+				renderTo.data("model", model);
+				kendo.bind(renderTo, model );				
+				var bodyEditor =  $("#page-editor-body" );
+				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : true } );
+				
+			}else{
+				source.copy( renderTo.data("model").page );				
+				if(renderTo.data("model").page.pageId > 0 )
+					renderTo.data("model").properties.read();
+			}	
+			
+			if(renderTo.data("model").page.pageId > 0) {
+				renderTo.data("model").set("isAllowToFileAndProps", true);
+			} else {
+				renderTo.data("model").set("isAllowToFileAndProps", false);
+			}	
+			*/						
+		}
+		
+		
+		function createPageViewer(source){
 			var renderTo = $("#my-page-viewer");
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
@@ -313,130 +442,6 @@
 			return renderTo.data("model");		
 		}
 
-		function createPageEditor(source){
-			var renderTo = $("#my-page-view");
-			$("#sky-form label.state-error").removeClass("state-error");
-			
-			if( !renderTo.data("model")){
-				var model =  common.ui.observable({ 
-					page : new common.ui.data.Page(),
-					stateSource : [
-						{name: "" , value: "INCOMPLETE"},
-						{name: "승인" , value: "APPROVAL"},
-						{name: "게시" , value: "PUBLISHED"},
-						{name: "거절" , value: "REJECTED"},
-						{name: "보관" , value: "ARCHIVED"},
-						{name: "삭제" , value: "DELETED"}
-					],
-					properties : new kendo.data.DataSource({
-						transport: { 
-							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
-							create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
-							update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
-							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
-					 		parameterMap: function (options, operation){			
-						 		if (operation !== "read" && options.models) {
-						 			return { pageId: model.page.pageId, items: kendo.stringify(options.models)};
-								} 
-								return { pageId: model.page.pageId }
-							}
-						},	
-						batch: true, 
-						schema: {
-							model: common.ui.data.Property
-						},
-						error:common.ui.handleAjaxError
-					}),
-					isVisible : true,
-					close:function(e){
-						$("#my-page-view span.back").click();
-						common.ui.scroll.top($(".personalized-section").first());
-					},
-					update : function(e){
-						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');
-						
-						if( $this.page.title.length == 0 ){
-							if(!$("label[for=title]").hasClass("state-error"))
-								$("label[for=title]").addClass("state-error");							
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"입력 오류", message: "제목을 입력하세요."	},
-								"error"
-							);
-							return false;
-						}						
-						else{
-							if($("label[for=title]").hasClass("state-error"))
-								$("label[for=title]").removeClass("state-error");
-						}
-												
-						if($this.page.summary.length == 0 ){
-							if(!$("label[for=summary]").hasClass("state-error"))
-								$("label[for=summary]").addClass("state-error");
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
-								"error"
-							);	
-							return false;	
-						}
-						else{
-							if($("label[for=summary]").hasClass("state-error"))
-								$("label[for=summary]").removeClass("state-error");
-						}
-						common.ui.ajax(
-							'<@spring.url "/data/pages/update.json?output=json"/>',
-							{
-								data : kendo.stringify($this.page) ,
-								contentType : "application/json",
-								success : function(response){
-									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
-									$("#my-page-grid").data('kendoGrid').dataSource.read();
-									$this.close();									
-								},
-								fail: function(){								
-									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									btn.button('reset');
-								}							
-						});												
-						return false;
-					}
-				});				
-				source.copy( model.page );
-				renderTo.data("model", model);
-				kendo.bind(renderTo, model );				
-				var bodyEditor =  $("#page-editor-body" );
-				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : true } );
-				
-			}else{
-				source.copy( renderTo.data("model").page );				
-				if(renderTo.data("model").page.pageId > 0 )
-					renderTo.data("model").properties.read();
-			}	
-			
-			if(renderTo.data("model").page.pageId > 0) {
-				renderTo.data("model").set("isAllowToFileAndProps", true);
-			} else {
-				renderTo.data("model").set("isAllowToFileAndProps", false);
-			}							
-		}
-		
 		
 		
 		function createAnnounceSection(){
