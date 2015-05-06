@@ -309,7 +309,8 @@
 		}
 		
 		
-		function createPageViewer(source){
+		function createPageViewer(source, edit){
+			var edit = edit || false;		
 			var renderTo = $("#my-page-viewer");
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
