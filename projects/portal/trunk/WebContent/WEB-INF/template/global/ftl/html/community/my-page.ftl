@@ -309,12 +309,13 @@
 		}
 		
 		
-		function createPageViewer(source, edit){
-			var edit = edit || false;		
+		function createPageViewer(source, isEditable){
+			var isEditable = isEditable || false;		
 			var renderTo = $("#my-page-viewer");
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
+					editable : false;
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
 						{name: "승인" , value: "APPROVAL"},
@@ -359,7 +360,8 @@
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );		
-			if( !dialogFx.isOpen ){				
+			if( !dialogFx.isOpen ){		
+				renderTo.data("model").set( "editable" , isEditable) ;	
 				renderTo.data("model").setPage(source);	
 				dialogFx.open();
 			}				
