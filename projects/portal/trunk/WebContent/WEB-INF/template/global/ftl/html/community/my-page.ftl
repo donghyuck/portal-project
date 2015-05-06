@@ -1104,6 +1104,11 @@
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
 										<fieldset class="padding-sm">
+											<section>
+												<label for="title" class="input">
+													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+												</label>
+											</section>													
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
