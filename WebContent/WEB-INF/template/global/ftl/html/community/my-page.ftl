@@ -328,6 +328,9 @@
 					}
 				});		
 				renderTo.data("model", observable);		
+				
+				common.ui.scroll.slimScroll(renderTo.find(".dialog__content"));
+				
 				common.ui.dialog( renderTo , {
 					data : observable,
 					autoBind: true,
