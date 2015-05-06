@@ -1097,7 +1097,7 @@
 									<div class="sky-form bg-white rounded">
 										<header>
 											<span class="badge badge-dark rounded" data-bind="{text:page.pageState, visible:editable }"></span>
-											<span data-bind="text: page.title"></span>( <span data-bind="{text: page.name, invisible: editable}"></span>)
+											<span data-bind="invisible: editable"><span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)</span>
 											<span class="close" data-dialog-close></span>						
 										</header>
 										<article data-bind="html:page.bodyContent.bodyText" class="p-md bg-white text-md"></article>
