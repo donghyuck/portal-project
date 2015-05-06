@@ -315,7 +315,7 @@
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
-					editable : false;
+					editable : false,
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
 						{name: "승인" , value: "APPROVAL"},
