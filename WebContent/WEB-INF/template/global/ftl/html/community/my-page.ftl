@@ -316,6 +316,7 @@
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
 					editable : false,
+					advencedSetting : false,
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
 						{name: "승인" , value: "APPROVAL"},
@@ -326,7 +327,12 @@
 					],
 					setPage: function(page){
 						var $this = this;
-						page.copy($this.page);					
+						page.copy($this.page);				
+						if( page.getPageId() > 0 ) {
+							$this.set("advencedSetting", true);
+						} else {
+							$this.set("advencedSetting", false);
+						}	
 					}
 				});		
 				renderTo.data("model", observable);					
