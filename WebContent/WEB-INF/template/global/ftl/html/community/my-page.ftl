@@ -329,7 +329,11 @@
 				});		
 				renderTo.data("model", observable);		
 				
-				common.ui.scroll.slim(renderTo.find(".dialog__content"));
+				var content = renderTo.find(".dialog__content");
+				common.ui.scroll.slim(content, {
+				 	width: content.css({'width':(($(window).width())-240)+'px'}),
+					height: content.css({'height':(($(window).height())-65)+'px'})
+				});
 				
 				common.ui.dialog( renderTo , {
 					data : observable,
