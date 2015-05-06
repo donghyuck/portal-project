@@ -1096,6 +1096,7 @@
 						<div class="col-sm-12">
 									<div class="sky-form bg-white rounded">
 										<header>
+											<span class="badge badge-dark rounded" data-bind="text:page.pageState"></span>
 											<span data-bind="text: page.title"></span>( <span data-bind="text: page.name"></span>)
 											<span class="close" data-dialog-close></span>						
 										</header>
