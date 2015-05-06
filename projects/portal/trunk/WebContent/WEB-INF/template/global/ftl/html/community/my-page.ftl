@@ -1094,7 +1094,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">
-									<div class="sky-form rounded">
+									<div class="sky-form bg-white rounded">
 										<header>
 											<span data-bind="text: page.title"></span>( <span data-bind="text: page.name"></span>)
 											<span class="close" data-dialog-close></span>						
