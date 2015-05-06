@@ -336,7 +336,7 @@
 					},
 					"opened" : function(e){		
 						$("body").css("overflow-y", "hidden");				
-						renderTo.find(".dialog__content").css("overflow-y", "auto");					
+						//renderTo.find(".dialog__content").css("overflow-y", "auto");					
 					},
 					"close":function(e){			
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");		
