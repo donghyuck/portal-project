@@ -77,7 +77,7 @@
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->		
-		function getMyPageSource(){
+		function getMyPageOwnerId(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 	
@@ -114,7 +114,7 @@
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageSource() }
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
 							}
 						},
 						requestStart: function(e){
@@ -220,6 +220,8 @@
 				dialogFx.open();
 			}				
 		}
+				
+				
 				
 		function createPageSection(){
 			var renderTo = $("#my-page-grid");
