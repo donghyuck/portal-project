@@ -161,7 +161,7 @@
 						createPageViewer(item);
 						break;		
 						case 'edit':						
-						createPageEditor( item );	
+						createPageViewer( item , true );	
 						break;	
 						case 'delete':
 						alert( action );							
