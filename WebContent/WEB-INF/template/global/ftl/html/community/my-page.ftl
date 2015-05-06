@@ -329,7 +329,7 @@
 				});		
 				renderTo.data("model", observable);		
 				
-				var content = renderTo.find(".dialog__content");
+				var content = renderTo.find(".sky-form");
 				common.ui.scroll.slim(content, {
 				 
 					height: content.css({'height':(($(window).height())-65)+'px'})
