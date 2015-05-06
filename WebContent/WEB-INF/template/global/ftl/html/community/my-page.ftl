@@ -328,10 +328,8 @@
 						page.copy($this.page);					
 					}
 				});		
-				renderTo.data("model", observable);		
-				
-				var content = renderTo.find(".sky-form");		
-						
+				renderTo.data("model", observable);					
+				var content = renderTo.find(".sky-form");							
 				common.ui.dialog( renderTo , {
 					data : observable,
 					autoBind: true,
