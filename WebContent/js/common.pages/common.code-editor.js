@@ -9,14 +9,12 @@ function createEditor( renderToString, bodyEditor, options ){
 	if(!bodyEditor.data("kendoEditor") ){			
 		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
+		//var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		var htmlEditorTools = [
 			'bold', 
 			'italic', 
 			'insertUnorderedList', 
-			'insertOrderedList'
-			/*
-			,
+			'insertOrderedList',
 			{	
 				name: "createLink",
 				exec: function(e){
@@ -42,27 +40,29 @@ function createEditor( renderToString, bodyEditor, options ){
 					return false;
 				}
 			});
-		}
-		
+		}		
 		bodyEditor.kendoEditor({
-				tools :htmlEditorTools,
-				stylesheets: [
-					"/styles/fonts/nanumgothic.css",
-					"/styles/bootstrap/3.3.4/bootstrap.min.css",
-					"/styles/fonts/nanumgothic.css",
-					"/styles/common.themes/unify/style.css",
-					"/styles/common/common.ui.css"
-				]
+			tools :htmlEditorTools,
+			stylesheets: DEFAULT_HTML_EDITOR_STYLESHEETS
 		});
 	}			
 }
+
+var DEFAULT_HTML_EDITOR_STYLESHEETS = [
+ 	"/styles/fonts/nanumgothic.css",
+	"/styles/bootstrap/3.3.4/bootstrap.min.css",
+	"/styles/fonts/nanumgothic.css",
+	"/styles/common.themes/unify/style.css",
+	"/styles/common/common.ui.css"
+];
+
 
 var DEFAULT_ACE_EDITOR_SETTING = {
 	modal : true,
 	mode : "ace/mode/xml",
 	theme : "ace/theme/xcode",
 	useWrapMode : true		
-}
+};
 
 function createCodeEditor( renderToString, editor, options ) {		
 	options = options || {};		
