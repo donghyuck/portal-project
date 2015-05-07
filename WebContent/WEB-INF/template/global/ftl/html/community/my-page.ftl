@@ -1218,7 +1218,7 @@
 											</div>
 										</fieldset>
 										<fieldset>
-											<h2>고급옵션</h2>
+											<h3>고급옵션</h3>
 											<section>
 												<label class="label">File input</label>
 											
