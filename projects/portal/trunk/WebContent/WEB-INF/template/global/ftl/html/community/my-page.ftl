@@ -207,7 +207,7 @@
 						
 						var that = this;
 						page.copy(that.page);				
-						
+						log.debug("----------");
 						if( that.page.pageId  > 0 ) {
 							that.set("advencedSetting", true);
 						} else {
