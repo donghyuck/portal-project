@@ -560,8 +560,7 @@
 										</header>										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
-										<fieldset class="bg-gray padding-sm">
-										
+										<fieldset class="bg-gray padding-sm">										
 											<section>
 												<label for="title" class="input">
 													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
@@ -583,7 +582,7 @@
 												</ul>                
 							                    <div class="tab-content bg-white">
 							                        <div class="tab-pane fade active in" id="my-page-tab-1">
-																								
+														<p>준비중입니다.</p>										
 													</div>
 							                        <div class="tab-pane fade" id="my-page-tab-2">         
 							                            <p>준비중입니다.</p>
@@ -591,7 +590,6 @@
 							                        <div class="tab-pane fade" id="my-page-tab-3">
 							                            <h4>버전</h4>
 																		<section>									
-																			<label class="label">현재 버전</label>					
 																			<label class="input state-disabled">
 																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
 																			</label>
@@ -601,11 +599,12 @@
 							                        <div class="tab-pane fade" id="my-page-tab-4">
 							                            <h4>속성</h4>
 
-														</div>
-							                    </div>
-							                </div>										
+													</div>
+												</div>
+												</div><!-- /.col-6-->				
+											</div><!-- /.row-->										
 											
-											</fieldset>
+										</fieldset>
 										<fieldset>			
 											<div class="row">
 												<div class="col-md-9"></div>
