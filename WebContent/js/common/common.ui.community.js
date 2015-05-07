@@ -153,6 +153,9 @@
 	    	return kendo.toString(this.get("modifiedDate"), "g");
 	    },		
 		copy: function ( target ){
+			
+			alert( kendo.stringify (target) );
+			
 			target.pageId = this.get("pageId");
 	    	target.modifiedDate = this.get("modifiedDate");
 	    	target.creationDate = this.get("creationDate") ;
@@ -164,10 +167,13 @@
 	    	target.set("summary",this.get("summary") );		
 	    	target.set("bodyText",this.get("bodyText") );		
 	    	target.set("pageState",this.get("pageState") );		
+	    	
 	    	if(typeof  this.get("bodyContent") === 'object')
-	    		target.set("bodyContent",this.get("bodyContent") );		    	
+	    		target.set("bodyContent",this.get("bodyContent") );		    
+	    	
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set("user", this.get("user") );    		
+	    	
 	    	if( typeof this.get("properties") === 'object' )
 	    		target.properties = this.get("properties") ;
 	    		
