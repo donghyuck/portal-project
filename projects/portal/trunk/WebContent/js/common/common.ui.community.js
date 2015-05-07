@@ -172,7 +172,7 @@
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set('user', this.get("user") );    	
 	    	else
-	    		target.set('user', {} );    	
+	    		target.set('user', null);    	
 	    	if( typeof this.get('properties') === 'object' )
 	    		target.properties = this.get("properties") ;
 	    	else
