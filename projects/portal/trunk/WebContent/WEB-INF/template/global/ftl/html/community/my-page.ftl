@@ -351,6 +351,7 @@
 					modal : false , 
 					appendTo: $("#my-page-editor-code-panel"), 
 					tab: $("#my-page-editor-tabs"), 
+					pageSize : 15,
 					useWrapMode : observable.useWrapMode } 
 				);	
 			}			
