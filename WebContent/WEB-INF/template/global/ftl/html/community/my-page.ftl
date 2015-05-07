@@ -295,6 +295,9 @@
 			min-height: 500px;			
 		}		
 		
+		#my-page-viewer .k-grid-content {
+			min-height: 150px;		
+		}
 		/** Masonry Grid **/			
 
 		.blog_masonry_3col {
