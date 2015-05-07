@@ -582,16 +582,17 @@
 							                        </div>
 							                        <div class="tab-pane fade" id="my-page-tab-3">
 							                            <h4>버전</h4>
-							                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/img21.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
-							                        </div>
-							                        <div class="tab-pane fade" id="my-page-tab-4">
-							                            <h4>속성</h4>
-							                           					<section>									
+																		<section>									
 																			<label class="label">현재 버전</label>					
 																			<label class="input state-disabled">
 																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
 																			</label>
 																		</section>
+																		
+													</div>
+							                        <div class="tab-pane fade" id="my-page-tab-4">
+							                            <h4>속성</h4>
+
 														</div>
 							                    </div>
 							                </div>										
