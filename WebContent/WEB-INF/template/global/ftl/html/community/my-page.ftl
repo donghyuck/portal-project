@@ -635,7 +635,7 @@
 																				{ 'title': '값', 'field': 'value' },
 																				{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
 																			]"
-																			data-bind="source: properties, visible: isVisible"
+																			data-bind="source: properties"
 																			style="border:0px;"></div>	
 																	</div>
 																</div>
