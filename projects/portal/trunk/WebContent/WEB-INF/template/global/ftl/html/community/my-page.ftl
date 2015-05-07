@@ -158,10 +158,10 @@
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);					
 					switch( action ){
 						case 'view':						
-						createPageViewer(item);
+						createMyPageViewer(item);
 						break;		
 						case 'edit':						
-						createPageViewer( item , true );	
+						createMyPageViewer( item , true );	
 						break;	
 						case 'delete':
 						alert( action );							
@@ -309,14 +309,20 @@
 		}
 		
 		
-		function createPageViewer(source, isEditable){
+		function createMyPageViewer(source, isEditable){
 			var isEditable = isEditable || false;		
-			var renderTo = $("#my-page-viewer");
+			var renderTo = $("#my-page-viewer");			
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
 					editable : false,
 					advencedSetting : false,
+					useWrapMode : false,
+					useWrap : function(e){
+						var $this = this;
+						if( $this.get('editable') )
+							ace.edit("menueditor").getSession().setUseWrapMode(this.useWrapMode);
+					},
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
 						{name: "승인" , value: "APPROVAL"},
@@ -335,8 +341,12 @@
 						}	
 					}
 				});		
-				renderTo.data("model", observable);					
-				var content = renderTo.find(".sky-form");							
+				renderTo.data("model", observable);									
+				var content = renderTo.find(".sky-form");			
+				
+				var bodyEditor =  $("#page-editor-body" );
+				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : true } );				
+								
 				common.ui.dialog( renderTo , {
 					data : observable,
 					autoBind: true,
@@ -354,8 +364,7 @@
 						$("body").css("overflow-x", "hidden");					
 						$("body").css("overflow-y", "auto");		
 					}
-				});		
-												
+				});														
 				$(window).resize(function(){    
 					if( common.ui.dialog( renderTo ).isOpen ){
 						common.ui.scroll.slim(content, {				 
@@ -1033,18 +1042,27 @@
 													</div>
 												</div>
 											</fieldset>
-											<fieldset>
-											
-
-
-								
-											</fieldset>		
 										<fieldset>			
 											<div class="row">
 												<div class="col-md-9"></div>
-												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
-											</div>																		
-											<div id="page-html-editor"></div>
+												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+											</div>												
+												<div class="tab-v1">
+													<div role="tabpanel">
+														<!-- Nav tabs -->													
+														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
+															<li role="presentation" class="active"><a href="#my-page-editor-ui" aria-controls="my-page-editor-ui" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+															<li role="presentation"><a href="#my-page-editor-code" aria-controls="my-page-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+														</ul>												
+														<!-- Tab panes -->
+														<div class="tab-content no-padding">
+															<div role="tabpanel" class="tab-pane active" id="my-page-editor-ui">
+																<textarea id="page-editor-body" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="my-page-editor-code"></div>
+														</div>
+													</div>
+												</div>		
 										</fieldset>			
 										<footer class="text-right">
 											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
