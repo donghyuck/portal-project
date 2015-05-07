@@ -253,7 +253,25 @@
 							if($("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").removeClass("state-error");
 						}
-												
+						
+						if($this.page.name.length == 0 ){
+							if(!$("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "파일이름을 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").removeClass("state-error");
+						}
+																		
 						if($this.page.summary.length == 0 ){
 							if(!$("label[for=summary]").hasClass("state-error"))
 								$("label[for=summary]").addClass("state-error");
