@@ -236,7 +236,7 @@
 						btn = $(e.target);						
 						btn.button('loading');
 						
-						$this.page.bodyContent.bodyText = $('#my-page-editor').val();
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
 						
 						if( $this.page.title.length == 0 ){
 							if(!$("label[for=title]").hasClass("state-error"))
