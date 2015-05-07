@@ -655,6 +655,7 @@
 		-->
 		</script>		
 		<style scoped="scoped">			
+		
 			.breadcrumbs-v3 {
 				position:relative;
 			}
@@ -664,7 +665,13 @@
 				font-weight: 200;
 				margin-bottom: 0;
 			}	
-			
+/** Page Editor **/		
+#my-page-editor-ui .k-editor {
+	border : 0;
+}
+
+
+		/*	
 			.breadcrumbs-v3.img-v1 {
 				background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
 				background-size: cover;
@@ -727,11 +734,13 @@
 			animation-name: fadeOut;				
 			height:0px;				
 		}
+		*/
+		
 		
 		.acc-v1	.panel-default {
 			border-color: #bbb;
 		}
-						
+		/*				
 		.k-grid tr > td  .btn-group {
 			-webkit-animation-duration: 1s;
 			animation-duration: 1s;
@@ -841,8 +850,10 @@
 		.grid-boxes-in.masonry-brick {
 			visibility: visible;
 		}
+		*/
 		
 		/*Quote Block*/
+		/*
 		.grid-boxes-caption.grid-boxes-quote {
 			padding: 30px;
 			background: #333;
@@ -880,7 +891,7 @@
 		.grid-boxes-quote span {
 			font-size: 12px;
 		}
-
+		*/
 		</style>   	
 		</#compress>
 	</head>
