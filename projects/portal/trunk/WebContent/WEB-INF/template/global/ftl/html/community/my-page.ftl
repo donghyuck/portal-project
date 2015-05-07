@@ -966,15 +966,7 @@
 														</section>
 													</div>
 													<div class="col col-6">
-												
-													</div>
-												</div>
-												
-																						
-
-										</fieldset>
-										<fieldset>
-											<h3>고급옵션</h3>
+														<h3>고급옵션</h3>
 
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: advencedSetting">
 															<div class="panel panel-default">
@@ -1036,7 +1028,17 @@
 																	</div>
 																</div>
 															</div>																												
-														</div>	
+														</div>															
+														
+													</div>
+												</div>
+												
+																						
+
+										</fieldset>
+										<fieldset>
+											
+
 
 								
 										</fieldset>		
