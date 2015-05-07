@@ -173,6 +173,10 @@
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
+				$("button[data-action=create]").click(function(e){
+					createMyPageViewer(new common.ui.data.Page(), true);
+				});
+				
 			}			
 			if( $("article.bg-white").is(":hidden") ){
 				$("article.bg-white").show();
