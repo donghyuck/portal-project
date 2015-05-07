@@ -155,7 +155,10 @@
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");						
-					var item = common.ui.listview(renderTo).dataSource.get(objectId);					
+					var item = common.ui.listview(renderTo).dataSource.get(objectId);				
+					
+					alert ( action );
+						
 					switch( action ){
 						case 'view':						
 						createMyPageViewer(item);
