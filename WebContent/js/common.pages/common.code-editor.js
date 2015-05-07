@@ -145,7 +145,9 @@ function createCodeEditor( renderToString, editor, options ) {
 }
 		
 function createEditorImageBroswer(renderToString, editor , options){				
+	
 	var pageSize = options.pageSize || 13;	
+	alert(pageSize) ;
 	
 	if( $("#"+ renderToString).length == 0 ){
 		$('body').append('<div id="'+ renderToString +'"></div>');
