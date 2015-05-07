@@ -1056,7 +1056,14 @@
 														</div>																												
 													</div>													
 												</div>
-											</div>
+											</div>											
+										</fieldset>
+										<fieldset>
+											<h2>고급옵션</h2>
+											<section>
+												<label class="label">File input</label>
+											
+											</section>										
 										</fieldset>
 											<section class="no-margin p-sm">													
 												<div class="tab-v1">
