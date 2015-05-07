@@ -206,8 +206,7 @@
 					setPage: function(page){
 						
 						var that = this;
-						page.copy(that.page);				
-						log.debug("----------");
+						page.copy(that.page);
 						if( that.page.pageId  > 0 ) {
 							that.set("advencedSetting", true);
 						} else {
@@ -241,19 +240,15 @@
 							height: content.css({'height':(($(window).height())- 120 )+'px'})
 						});
 					}				
-				});
-						
+				});						
 				var bodyEditor =  $("#page-editor-body" );
-				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );		
-				
+				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );						
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){						
 				renderTo.data("model").set( "editable" , isEditable) ;	
-					alert( 2 );
 				renderTo.data("model").setPage(source);	
-				alert( 3 );
 				dialogFx.open();
 			}				
 		}
