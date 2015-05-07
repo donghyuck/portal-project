@@ -554,17 +554,16 @@
 						<div class="col-sm-12">
 									<div class="sky-form bg-white rounded">
 										<header>
-											<!--<span class="badge badge-dark rounded" data-bind="{text:page.pageState, visible:editable }"></span>-->
-											<label for="title" class="input" data-bind="visible:editable">
+											<label for="title" class="input m-r-md" data-bind="visible:editable">
 												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 											</label>
 											<span data-bind="invisible: editable"><span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)</span>
 											<span class="close" data-dialog-close></span>						
 										</header>										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
-										<div data-bind="visible:editable" class="bg-gray padding-sm">
+										<div data-bind="visible:editable">
 										
-											<fieldset>
+											<fieldset class="bg-gray padding-sm">
 												<div class="row">
 													<div class="col col-6">
 														<section>
