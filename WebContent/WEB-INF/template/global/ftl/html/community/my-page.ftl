@@ -567,10 +567,10 @@
 												</label>
 											</section>	
 											<div class="row">
-												<div class="col col-6">
+												<div class="col col-sm-6">
 												
 												</div>
-												<div class="col col-6">
+												<div class="col col-sm-6">
 
 
 											<div class="tab-v2">
