@@ -939,7 +939,7 @@
 										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
-											<fieldset class="padding-sm">
+											<fieldset class="bg-gray padding-sm">
 												<div class="row">
 													<div class="col col-6">
 														<section>
@@ -966,8 +966,7 @@
 														</section>
 													</div>
 													<div class="col col-6">
-														<h3>고급옵션</h3>
-
+														<h4>고급옵션</h4>
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
