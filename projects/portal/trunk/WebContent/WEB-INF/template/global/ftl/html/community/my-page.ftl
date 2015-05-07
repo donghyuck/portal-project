@@ -575,8 +575,7 @@
 							                            <h4>Heading Sample 1</h4>
 							                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
 							                        </div>
-							                        <div class="tab-pane fade" id="my-page-tab-2">
-							                            <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/img17.jpg">                         
+							                        <div class="tab-pane fade" id="my-page-tab-2">         
 							                            <h4>첨부파일</h4>
 							                            <p>준비중입니다.</p>
 							                        </div>
