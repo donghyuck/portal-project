@@ -155,7 +155,8 @@
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");						
-					var item = common.ui.listview(renderTo).dataSource.get(objectId);				
+					var item = common.ui.listview(renderTo).dataSource.get(objectId);			
+						
 											
 					switch( action ){
 						case 'view':						
@@ -241,7 +242,8 @@
 					}				
 				});						
 				var bodyEditor =  $("#my-page-content-editor" );
-				createEditor( "my-page-content-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );						
+				//createEditor( "my-page-content-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );	
+				
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );	
