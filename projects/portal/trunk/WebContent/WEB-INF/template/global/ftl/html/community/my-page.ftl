@@ -572,30 +572,9 @@
 												</ul>                
 							                    <div class="tab-content bg-white">
 							                        <div class="tab-pane fade active in" id="my-page-tab-1">
-							                            <h4>Heading Sample 1</h4>
-							                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
-							                        </div>
-							                        <div class="tab-pane fade" id="my-page-tab-2">         
-							                            <h4>첨부파일</h4>
-							                            <p>준비중입니다.</p>
-							                        </div>
-							                        <div class="tab-pane fade" id="my-page-tab-3">
-							                            <h4>버전</h4>
-																		<section>									
-																			<label class="label">현재 버전</label>					
-																			<label class="input state-disabled">
-																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
-																			</label>
-																		</section>
-																		
-													</div>
-							                        <div class="tab-pane fade" id="my-page-tab-4">
-							                            <h4>속성</h4>
+							                            <h4>기본</h4>
+													
 
-														</div>
-							                    </div>
-							                </div>										
-											
 												<div class="row">
 													<div class="col col-6">
 														<section>
@@ -690,6 +669,29 @@
 														</div>	
 													</div>
 												</div>
+																									
+													</div>
+							                        <div class="tab-pane fade" id="my-page-tab-2">         
+							                            <h4>첨부파일</h4>
+							                            <p>준비중입니다.</p>
+							                        </div>
+							                        <div class="tab-pane fade" id="my-page-tab-3">
+							                            <h4>버전</h4>
+																		<section>									
+																			<label class="label">현재 버전</label>					
+																			<label class="input state-disabled">
+																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
+																			</label>
+																		</section>
+																		
+													</div>
+							                        <div class="tab-pane fade" id="my-page-tab-4">
+							                            <h4>속성</h4>
+
+														</div>
+							                    </div>
+							                </div>										
+											
 											</fieldset>
 										<fieldset>			
 											<div class="row">
