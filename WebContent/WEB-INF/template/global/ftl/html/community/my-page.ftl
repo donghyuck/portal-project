@@ -176,7 +176,7 @@
 				$("button[data-action=create]").click(function(e){
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());					
-					createMyPageViewer(new common.ui.data.Page(), true);
+					createMyPageViewer(page, true);
 				});
 				
 			}			
