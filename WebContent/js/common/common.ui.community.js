@@ -167,7 +167,7 @@
 	    	if(typeof this.get("bodyContent") === 'object'){
 	    		target.set('bodyContent' , this.get("bodyContent"));   
 	    	}else{
-	    		target.set('bodyContent', { bodyText: ""} );	    		
+	    		target.set('bodyContent', { bodyId: 0, pageId:0, bodyType: "FREEMARKER", bodyText: "",  } );	    		
 	    	}
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set('user', this.get("user") );    	
