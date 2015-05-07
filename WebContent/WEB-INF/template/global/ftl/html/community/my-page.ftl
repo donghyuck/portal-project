@@ -939,30 +939,26 @@
 										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
-										<fieldset class="padding-sm">
-											<section>
-												<label for="title" class="input">
-													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-												</label>
-											</section>	
-											
-
+											<fieldset class="padding-sm">
 												<div class="row">
 													<div class="col col-6">
+														<section>
+															<label for="title" class="input">
+																<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+															</label>
+														</section>														
 														<section>
 															<label class="input">
 																<i class="icon-prepend fa fa-file-text-o"></i>
 																<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
 															</label>
-														</section>
-																										
+														</section>																										
 														<section>
 															<label class="input">
 																<i class="icon-prepend fa fa-file-code-o"></i>
 																<input type="text" name="template" placeholder="템플릿">
 															</label>
-														</section>
-														
+														</section>														
 														<section>
 															<label for="summary" class="textarea">
 																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
