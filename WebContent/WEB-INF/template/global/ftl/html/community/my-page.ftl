@@ -679,15 +679,15 @@
 													<div role="tabpanel">
 														<!-- Nav tabs -->													
 														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
-															<li role="presentation" class="active"><a href="#my-page-editor-ui" aria-controls="my-page-editor-ui" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
-															<li role="presentation"><a href="#my-page-editor-code" aria-controls="my-page-editor-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+															<li role="presentation" class="active"><a href="#my-page-editor-panel" aria-controls="my-page-editor-panel" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+															<li role="presentation"><a href="#my-page-editor-code-panel" aria-controls="my-page-editor-code-panel" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
 														</ul>												
 														<!-- Tab panes -->
 														<div class="tab-content no-padding">
-															<div role="tabpanel" class="tab-pane active" id="my-page-editor-ui">
+															<div role="tabpanel" class="tab-pane active" id="my-page-editor-panel">
 																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
 															</div>
-															<div role="tabpanel" class="tab-pane" id="my-page-editor-code"></div>
+															<div role="tabpanel" class="tab-pane" id="my-page-editor-code-panel"></div>
 														</div>
 													</div>
 												</div>		
