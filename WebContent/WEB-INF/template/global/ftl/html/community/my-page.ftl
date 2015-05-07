@@ -562,12 +562,18 @@
 										<div data-bind="visible:editable">
 										<fieldset class="bg-gray padding-sm">
 										
-														<section>
-															<label for="title" class="input">
-																<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-															</label>
-														</section>	
-																								
+											<section>
+												<label for="title" class="input">
+													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+												</label>
+											</section>	
+											<div class="row">
+												<div class="col col-6">
+												
+												</div>
+												<div class="col col-6">
+
+
 											<div class="tab-v2">
 												<ul class="nav nav-tabs">
 													<li class="active"><a href="#my-page-tab-1" data-toggle="tab" aria-expanded="true">기본</a></li>
@@ -670,6 +676,12 @@
 														</div>	
 													</div>
 												</div>
+																								
+												
+												</div>
+											</div>	
+																										
+
 																									
 													</div>
 							                        <div class="tab-pane fade" id="my-page-tab-2">         
