@@ -342,10 +342,7 @@
 					}
 				});		
 				
-				renderTo.data("model", observable);				
-				var bodyEditor =  $("#page-editor-body" );
-				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );				
-								
+				renderTo.data("model", observable);		
 				var content = renderTo.find(".sky-form");					
 				common.ui.dialog( renderTo , {
 					data : observable,
@@ -371,6 +368,10 @@
 						});
 					}				
 				});
+						
+				var bodyEditor =  $("#page-editor-body" );
+				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );		
+				
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );		
