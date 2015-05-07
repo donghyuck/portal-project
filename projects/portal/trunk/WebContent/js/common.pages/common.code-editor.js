@@ -48,7 +48,7 @@ function createEditor( renderToString, bodyEditor, options ){
 				tools :htmlEditorTools,
 				stylesheets: [
 					"/styles/fonts/nanumgothic.css",
-					"/styles/bootstrap/3.1.1/bootstrap.min.css",
+					"/styles/bootstrap/3.3.4/bootstrap.min.css",
 					"/styles/fonts/nanumgothic.css",
 					"/styles/common.themes/unify/style.css",
 					"/styles/common/common.ui.css"
