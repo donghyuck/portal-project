@@ -6,9 +6,9 @@ function createEditor( renderToString, bodyEditor, options ){
 	if( !common.ui.defined(options.modal)  ){
 		options.modal = true;
 	}	
-	if(!bodyEditor.data("kendoEditor") ){			
-		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
-		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
+	if(!bodyEditor.data("kendoEditor") ){				
+		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor, options );				
+		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor, options );	
 		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		var htmlEditorTools = [
 			'bold', 
@@ -144,13 +144,15 @@ function createCodeEditor( renderToString, editor, options ) {
 	}	
 }
 		
-function createEditorImageBroswer(renderToString, editor ){			
+function createEditorImageBroswer(renderToString, editor , options){				
+	var pageSize = options.pageSize || 13;	
 	if( $("#"+ renderToString).length == 0 ){
 		$('body').append('<div id="'+ renderToString +'"></div>');
 	}					
 	var renderTo = $("#"+ renderToString);	
 	if(!renderTo.data("kendoExtImageBrowser")){
 		var imageBrowser = renderTo.extImageBrowser({
+			pageSize : pageSize;
 			template : $("#image-broswer-template").html(),
 			apply : function(e){						
 				editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
