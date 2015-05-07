@@ -166,6 +166,8 @@
 	    	target.set("pageState",this.get("pageState") );		
 	    	if(typeof this.get("bodyContent") === 'object'){
 	    		target.set('bodyContent' , this.get("bodyContent"));   
+	    	}else{
+	    		target.set('bodyContent', { bodyText: ""} );	    		
 	    	}
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set('user', this.get("user") );    		
