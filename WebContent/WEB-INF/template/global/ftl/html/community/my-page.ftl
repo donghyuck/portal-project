@@ -230,6 +230,7 @@
 						page.copy(that.page);
 						if( that.page.pageId  > 0 ) {
 							that.set("advencedSetting", true);
+							that.properties.read();
 						} else {
 							that.set("advencedSetting", false);
 						}	
