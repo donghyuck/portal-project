@@ -250,6 +250,7 @@
 					useWrapMode : observable.useWrapMode } 
 				);	
 				*/
+				 bodyEditor.kendoEditor({ resizable: true });
 				
 			}			
 			
