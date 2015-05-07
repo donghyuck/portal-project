@@ -128,7 +128,7 @@
 	common.ui.data.Page = kendo.data.Model.define({
 		id : "pageId",
 		fields:{
-			pageId:{ type:"number", editable:false, defaultValue:0 },
+			pageId:{ type:"number", editable:true, defaultValue:0 },
 			objectType:{ type:"number", editable:true, defaultValue: 30 },
 			objectId:{ type:"number", editable:true, defaultValue:0 },
 			name : { type: "string", editable: true},
@@ -137,8 +137,8 @@
 			summary :  { type: "string", editable: true},
 			pageState : { type: "string", editable: true, defaultValue:"INCOMPLETE"},
 			bodyText:  { type: "string", editable: true},
-			modifiedDate: { type: "date", editable: false },
-			creationDate: { type: "date", editable: false },
+			modifiedDate: { type: "date", editable: true },
+			creationDate: { type: "date", editable: true },
 			bodyContent : {}
 		},
 	    authorPhotoUrl : function (){
