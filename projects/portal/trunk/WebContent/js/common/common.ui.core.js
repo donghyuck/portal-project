@@ -404,20 +404,23 @@
 			if( that.isOpen ){
 				element.removeClass("dialog--open");
 				element.addClass("dialog--close");
+				that.isOpen = false;				
+				that.trigger("close");
+				
 				var content = element.children(".dialog__content");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					element.removeClass("dialog--close");			
 					that.trigger("closed");
-				});
-				
-				that.isOpen = false;				
-				that.trigger("close");
+				});				
+
 			}
 		},
 		open : function(){
 			var that = this,
 			element = that.element,
 			options = that.options;			
+			
+			alert( that.isOpen);
 			if( !that.isOpen )
 			{
 				element.addClass("dialog--open");
