@@ -970,6 +970,16 @@
 														</section>
 													</div>
 													<div class="col col-6">
+												
+													</div>
+												</div>
+												
+																						
+
+										</fieldset>
+										<fieldset>
+											<h3>고급옵션</h3>
+
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
@@ -1030,24 +1040,17 @@
 																	</div>
 																</div>
 															</div>																												
-														</div>													
-													</div>
-												</div>
-												
-																						
+														</div>	
+
+								
+										</fieldset>		
+										<fieldset>			
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
-											</div>
-										</fieldset>
-										<fieldset>
-											<h3>고급옵션</h3>
-											<section>
-												<label class="label">File input</label>
-											
-											</section>										
-										</fieldset>										
-										<div id="menueditor"></div>
+											</div>																		
+											<div id="page-html-editor"></div>
+										</fieldset>			
 										<footer class="text-right">
 											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
 											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>										
