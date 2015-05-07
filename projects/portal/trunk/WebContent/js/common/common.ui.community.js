@@ -138,7 +138,8 @@
 			pageState : { type: "string", editable: true, defaultValue:"INCOMPLETE"},
 			bodyText:  { type: "string", editable: true},
 			modifiedDate: { type: "date", editable: false },
-			creationDate: { type: "date", editable: false } 				
+			creationDate: { type: "date", editable: false },
+			bodyContent : {}
 		},
 	    authorPhotoUrl : function (){
 			if( typeof this.get("user") === 'object' )
