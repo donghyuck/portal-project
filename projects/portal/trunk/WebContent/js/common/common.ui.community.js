@@ -171,12 +171,12 @@
 	    	alert( typeof this.get("bodyContent") );
 	    	
 	    	if(typeof this.get("bodyContent") === 'object')
-	    		target.set("bodyContent",this.get("bodyContent") );		    
+	    		target.set('bodyContent',this.get("bodyContent") );		    
 	    	
 	    	if( typeof this.get("user") === 'object' )
-	    		target.set("user", this.get("user") );    		
+	    		target.set('user', this.get("user") );    		
 	    	
-	    	if( typeof this.get("properties") === 'object' )
+	    	if( typeof this.get('properties') === 'object' )
 	    		target.properties = this.get("properties") ;
 	    		
 		}
