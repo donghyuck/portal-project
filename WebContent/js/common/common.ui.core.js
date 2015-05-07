@@ -1895,10 +1895,11 @@
 		},
 		handleAjaxError = common.ui.handleAjaxError;
 	
-	function createImagePanel(element, objectType, objectId, changeState, changeStateEl){
+	function createImagePanel(element, objectType, objectId, changeState, changeStateEl, options){
 		var my_selected = element.find(".image-selected");
 		var my_list_view =  element.find(".image-listview");
 		var my_list_pager =  element.find(".image-pager");
+		var my_page_size = options.pageSize || 13;
 		if( !common.ui.exists(my_list_view)){
 			var listview = my_list_view.kendoListView({
 				dataSource : {
@@ -1921,7 +1922,7 @@
 							}
 						}
 					},
-					pageSize : 12,
+					pageSize : my_page_size,
 					error : handleAjaxError,
 					schema : {
 						model : common.ui.data.Image,
@@ -2112,13 +2113,13 @@
 							}							
 							break;
 						case "#" + that.options.guid[1]:
-							createImagePanel(tab_pane, 2, 0 , that._changeState, my_insert_btn );
+							createImagePanel(tab_pane, 2, 0 , that._changeState, my_insert_btn, that.options );
 							break;
 						case "#" + that.options.guid[2]:
-							createImagePanel(tab_pane, 30, 0 , that._changeState, my_insert_btn);
+							createImagePanel(tab_pane, 30, 0 , that._changeState, my_insert_btn, that.options);
 							break;
 						case "#"+ that.options.guid[3]:
-							createImagePanel(tab_pane, 1, 0 , that._changeState, my_insert_btn);
+							createImagePanel(tab_pane, 1, 0 , that._changeState, my_insert_btn, that.options);
 							break;
 						case "#" + that.options.guid[4]:
 							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
