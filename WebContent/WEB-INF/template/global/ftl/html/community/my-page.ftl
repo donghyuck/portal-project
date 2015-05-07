@@ -570,7 +570,7 @@
 													<li class=""><a href="#my-page-tab-3" data-toggle="tab" aria-expanded="false">버전</a></li>
 													<li class=""><a href="#my-page-tab-4" data-toggle="tab" aria-expanded="false">속성</a></li>
 												</ul>                
-							                    <div class="tab-content bg-gray">
+							                    <div class="tab-content bg-white">
 							                        <div class="tab-pane fade active in" id="my-page-tab-1">
 							                            <h4>Heading Sample 1</h4>
 							                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
