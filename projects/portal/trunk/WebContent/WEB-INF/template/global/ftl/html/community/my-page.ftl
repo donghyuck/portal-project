@@ -233,14 +233,16 @@
 						$("body").css("overflow-x", "hidden");					
 						$("body").css("overflow-y", "auto");		
 					}
-				});														
+				});		
+				/*												
 				$(window).resize(function(){    
 					if( common.ui.dialog( renderTo ).isOpen ){
 						common.ui.scroll.slim(content, {				 
 							height: content.css({'height':(($(window).height())- 120 )+'px'})
 						});
 					}				
-				});						
+				});		
+				*/				
 				var bodyEditor =  $("#my-page-editor" );
 				/*
 				createEditor( "my-page" , bodyEditor, { 
