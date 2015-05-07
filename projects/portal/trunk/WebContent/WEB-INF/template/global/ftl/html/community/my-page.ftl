@@ -568,11 +568,7 @@
 											</section>	
 											<div class="row">
 											<div class="col col-md-6">
-														<section>
-															<label for="title" class="input">
-																<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-															</label>
-														</section>														
+												
 														<section>
 															<label class="input">
 																<i class="icon-prepend fa fa-file-text-o"></i>
