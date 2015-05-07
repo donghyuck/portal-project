@@ -249,10 +249,10 @@
 			var dialogFx = common.ui.dialog( renderTo );		
 			
 			if( !dialogFx.isOpen ){		
-				alert( isEditable + ", " + kendo.stringify( source ) );
+				
 				renderTo.data("model").set( "editable" , isEditable) ;	
 				renderTo.data("model").setPage(source);	
-				
+				alert( isEditable + ", " + kendo.stringify( source ) );
 				dialogFx.open();
 			}				
 		}
