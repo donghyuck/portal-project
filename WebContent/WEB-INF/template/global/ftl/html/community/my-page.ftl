@@ -156,9 +156,7 @@
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");						
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);				
-					
-					alert ( action );
-						
+											
 					switch( action ){
 						case 'view':						
 						createMyPageViewer(item);
@@ -249,6 +247,7 @@
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );		
+			alert(dialogFx.isOpen) ;
 			if( !dialogFx.isOpen ){		
 				renderTo.data("model").set( "editable" , isEditable) ;	
 				renderTo.data("model").setPage(source);	
