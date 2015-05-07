@@ -1217,6 +1217,13 @@
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change:useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 											</div>
 										</fieldset>
+										<fieldset>
+											<h2>고급옵션</h2>
+											<section>
+												<label class="label">File input</label>
+											
+											</section>										
+										</fieldset>										
 										<div id="menueditor"></div>
 										<footer class="text-right">
 											<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
