@@ -554,15 +554,20 @@
 						<div class="col-sm-12">
 									<div class="sky-form bg-white rounded">
 										<header>
-											<label for="title" class="input m-r-md no-margin-t" data-bind="visible:editable">
-												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-											</label>
+											<span data-bind="visible: editable">&nbsp;</span>
 											<span data-bind="invisible: editable"><span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)</span>
 											<span class="close" data-dialog-close></span>						
 										</header>										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
 										<fieldset class="bg-gray padding-sm">
+										
+														<section>
+															<label for="title" class="input">
+																<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+															</label>
+														</section>	
+																								
 											<div class="tab-v2">
 												<ul class="nav nav-tabs">
 													<li class="active"><a href="#my-page-tab-1" data-toggle="tab" aria-expanded="true">기본</a></li>
@@ -577,11 +582,7 @@
 
 												<div class="row">
 													<div class="col col-6">
-														<section>
-															<label for="title" class="input">
-																<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-															</label>
-														</section>														
+													
 														<section>
 															<label class="input">
 																<i class="icon-prepend fa fa-file-text-o"></i>
