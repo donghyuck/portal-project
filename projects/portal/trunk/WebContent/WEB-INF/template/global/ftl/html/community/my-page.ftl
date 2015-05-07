@@ -654,24 +654,26 @@
 
 		-->
 		</script>		
-		<style scoped="scoped">			
-		
-			.breadcrumbs-v3 {
-				position:relative;
-			}
-			.breadcrumbs-v3 p	{
-				color : #fff;
-				font-size: 24px;
-				font-weight: 200;
-				margin-bottom: 0;
-			}	
-/** Page Editor **/		
-#my-page-editor-ui .k-editor {
-	border : 0;
-}
+		<style scoped="scoped">		
+			
+		/** Breadcrumbs */
+		.breadcrumbs-v3 {
+			position:relative;
+		}
 
-/** Masonry Grid **/	
-		
+		.breadcrumbs-v3 p	{
+			color : #fff;
+			font-size: 24px;
+			font-weight: 200;
+			margin-bottom: 0;
+		}	
+			
+		/** Page Editor **/		
+		#my-page-editor-ui .k-editor {
+			border : 0;
+		}
+
+		/** Masonry Grid **/			
 		.grid-boxes {
 			visibility: hidden;
 			min-height:300px;
