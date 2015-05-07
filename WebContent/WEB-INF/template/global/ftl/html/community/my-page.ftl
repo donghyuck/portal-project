@@ -554,7 +554,7 @@
 						<div class="col-sm-12">
 									<div class="sky-form bg-white rounded">
 										<header>
-											<label for="title" class="input m-r-md" data-bind="visible:editable">
+											<label for="title" class="input m-r-md no-margin-t" data-bind="visible:editable">
 												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 											</label>
 											<span data-bind="invisible: editable"><span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)</span>
@@ -562,7 +562,33 @@
 										</header>										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
-										
+											<div class="tab-v2">
+												<ul class="nav nav-tabs">
+													<li class="active"><a href="#my-page-tab-1" data-toggle="tab" aria-expanded="true">Home</a></li>
+													<li class=""><a href="#my-page-tab-2" data-toggle="tab" aria-expanded="false">Profile</a></li>
+													<li class=""><a href="#my-page-tab-3" data-toggle="tab" aria-expanded="false">Messages</a></li>
+													<li class=""><a href="#my-page-tab-4" data-toggle="tab" aria-expanded="false">Settings</a></li>
+												</ul>                
+							                    <div class="tab-content">
+							                        <div class="tab-pane fade active in" id="my-page-tab-1">
+							                            <h4>Heading Sample 1</h4>
+							                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
+							                        </div>
+							                        <div class="tab-pane fade" id="my-page-tab-2">
+							                            <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/img17.jpg">                         
+							                            <h4>Heading Sample 2</h4>
+							                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
+							                        </div>
+							                        <div class="tab-pane fade" id="my-page-tab-3">
+							                            <h4>Heading Sample 3</h4>
+							                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/img21.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+							                        </div>
+							                        <div class="tab-pane fade" id="my-page-tab-4">
+							                            <h4>Heading Sample 4</h4>
+							                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/img23.jpg"> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
+							                        </div>
+							                    </div>
+							                </div>										
 											<fieldset class="bg-gray padding-sm">
 												<div class="row">
 													<div class="col col-6">
