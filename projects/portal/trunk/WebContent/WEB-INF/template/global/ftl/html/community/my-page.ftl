@@ -275,7 +275,7 @@
 		}	
 			
 		/** Page Editor **/		
-		#my-page-editor-ui .k-editor {
+		#my-page-editor-panel .k-editor {
 			border : 0;
 		}
 		
