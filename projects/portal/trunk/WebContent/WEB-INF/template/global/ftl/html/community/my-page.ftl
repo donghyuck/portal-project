@@ -674,6 +674,56 @@
 		}
 
 		/** Masonry Grid **/			
+
+		.blog_masonry_3col {
+			padding-bottom: 60px;
+		}
+		
+		.blog_masonry_3col .grid-boxes-in {
+			padding: 0;
+			margin-bottom: 30px;
+			border: solid 1px #eee;
+		}
+		
+		.blog_masonry_3col .grid-boxes-caption {
+			padding: 15px;
+		}
+		
+		.blog_masonry_3col h3 {
+			font-size: 20px; 
+			font-weight: 200;
+			line-height: 28px;
+		}
+		
+		.blog_masonry_3col h3 a {
+			color: #555;
+		}
+		
+		.blog_masonry_3col h3 a:hover {
+			color: #72c02c;
+		}
+		
+		.blog_masonry_3col h3 a:hover {
+			color: #72c02c;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news {
+			margin-bottom: 15px;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news li {
+			font-size: 12px;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news li,
+		.blog_masonry_3col ul.grid-boxes-news li a {
+			color: #777;
+		}
+		
+		.blog_masonry_3col ul.grid-boxes-news li a:hover {
+			color: #72c02c;
+		}
+				
 		.grid-boxes {
 			visibility: hidden;
 			min-height:300px;
@@ -806,54 +856,6 @@
 		}		
 		
 		
-		.blog_masonry_3col {
-			padding-bottom: 60px;
-		}
-		
-		.blog_masonry_3col .grid-boxes-in {
-			padding: 0;
-			margin-bottom: 30px;
-			border: solid 1px #eee;
-		}
-		
-		.blog_masonry_3col .grid-boxes-caption {
-			padding: 15px;
-		}
-		
-		.blog_masonry_3col h3 {
-			font-size: 20px; 
-			font-weight: 200;
-			line-height: 28px;
-		}
-		
-		.blog_masonry_3col h3 a {
-			color: #555;
-		}
-		
-		.blog_masonry_3col h3 a:hover {
-			color: #72c02c;
-		}
-		
-		.blog_masonry_3col h3 a:hover {
-			color: #72c02c;
-		}
-		
-		.blog_masonry_3col ul.grid-boxes-news {
-			margin-bottom: 15px;
-		}
-		
-		.blog_masonry_3col ul.grid-boxes-news li {
-			font-size: 12px;
-		}
-		
-		.blog_masonry_3col ul.grid-boxes-news li,
-		.blog_masonry_3col ul.grid-boxes-news li a {
-			color: #777;
-		}
-		
-		.blog_masonry_3col ul.grid-boxes-news li a:hover {
-			color: #72c02c;
-		}
 
 		*/
 		
