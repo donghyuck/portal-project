@@ -42,7 +42,7 @@ function createEditor( renderToString, bodyEditor, options ){
 			});
 		}		
 		bodyEditor.kendoEditor({
-			tools :htmlEditorTools,
+			/*tools :htmlEditorTools,*/
 			stylesheets: DEFAULT_HTML_EDITOR_STYLESHEETS
 		});
 	}			
