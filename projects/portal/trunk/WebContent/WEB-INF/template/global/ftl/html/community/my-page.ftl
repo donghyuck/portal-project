@@ -201,6 +201,30 @@
 						{name: "보관" , value: "ARCHIVED"},
 						{name: "삭제" , value: "DELETED"}
 					],
+					properties : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
+							create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
+							update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
+							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { pageId: observable.page.pageId, items: kendo.stringify(options.models)};
+								} 
+								return { pageId: observable.page.pageId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							model: common.ui.data.Property
+						},
+						error:common.ui.handleAjaxError
+					}),
+					isVisible : true,
+					close:function(e){
+						$("#my-page-view span.back").click();
+						common.ui.scroll.top($(".personalized-section").first());
+					},					
 					setPage: function(page){
 						var that = this;
 						page.copy(that.page);
