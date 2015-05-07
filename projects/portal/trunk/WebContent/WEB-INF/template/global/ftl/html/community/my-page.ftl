@@ -708,8 +708,8 @@
 												</div>		
 										</fieldset>			
 										<footer class="text-right">
-											<!--<button class="btn-u action-update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click:updateMenuData" > 저장 </button>
-											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>		-->								
+											<button class="btn-u" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" data-bind="click: update" > 저장 </button>
+											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>					
 										</footer>
 										</div> 
 									</div>	
