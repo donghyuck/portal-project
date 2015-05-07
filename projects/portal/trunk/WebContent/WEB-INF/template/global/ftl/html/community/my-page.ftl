@@ -321,7 +321,7 @@
 					useWrap : function(e){
 						var $this = this;
 						if( $this.get('editable') )
-							ace.edit("page-editor-code-editor").getSession().setUseWrapMode(this.useWrapMode);
+							ace.edit("page-editor-code-editor").getSession().setUseWrapMode($this.useWrapMode);
 					},
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
