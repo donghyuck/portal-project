@@ -240,7 +240,7 @@
 						});
 					}				
 				});						
-				var bodyEditor =  $("#my-page-editor" );
+				var bodyEditor =  $("#my-page-content-editor" );
 				createEditor( "my-page-content-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );						
 			}			
 			
