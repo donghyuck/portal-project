@@ -246,10 +246,8 @@
 				
 			}			
 			
-			var dialogFx = common.ui.dialog( renderTo );		
-			
-			if( !dialogFx.isOpen ){		
-				
+			var dialogFx = common.ui.dialog( renderTo );	
+			if( !dialogFx.isOpen ){						
 				renderTo.data("model").set( "editable" , isEditable) ;	
 				renderTo.data("model").setPage(source);	
 				alert( isEditable + ", " + kendo.stringify( source ) );
