@@ -139,7 +139,7 @@
 			bodyText:  { type: "string", editable: true},
 			modifiedDate: { type: "date", editable: true },
 			creationDate: { type: "date", editable: true },
-			bodyContent : {}
+			bodyContent : {editable: true}
 		},
 	    authorPhotoUrl : function (){
 			if( typeof this.get("user") === 'object' )
