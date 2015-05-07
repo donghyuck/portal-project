@@ -241,8 +241,13 @@
 						});
 					}				
 				});						
-				var bodyEditor =  $("#my-page-content-editor" );
-				//createEditor( "my-page-content-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );	
+				var bodyEditor =  $("#my-page-editor" );
+				createEditor( "my-page" , bodyEditor, { 
+					modal : false , 
+					appendTo: $("#my-page-editor-code"), 
+					tab: $("#my-page-editor-tabs"), 
+					useWrapMode : observable.useWrapMode } 
+				);	
 				
 			}			
 			
@@ -680,7 +685,7 @@
 														<!-- Tab panes -->
 														<div class="tab-content no-padding">
 															<div role="tabpanel" class="tab-pane active" id="my-page-editor-ui">
-																<textarea id="my-page-content-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
 															</div>
 															<div role="tabpanel" class="tab-pane" id="my-page-editor-code"></div>
 														</div>
