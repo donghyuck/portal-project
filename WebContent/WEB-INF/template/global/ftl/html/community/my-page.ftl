@@ -562,6 +562,7 @@
 										</header>										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
+										<fieldset class="bg-gray padding-sm">
 											<div class="tab-v2">
 												<ul class="nav nav-tabs">
 													<li class="active"><a href="#my-page-tab-1" data-toggle="tab" aria-expanded="true">Home</a></li>
@@ -589,7 +590,7 @@
 							                        </div>
 							                    </div>
 							                </div>										
-											<fieldset class="bg-gray padding-sm">
+											
 												<div class="row">
 													<div class="col col-6">
 														<section>
