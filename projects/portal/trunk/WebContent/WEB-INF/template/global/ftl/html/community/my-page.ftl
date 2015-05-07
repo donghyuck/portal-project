@@ -241,7 +241,7 @@
 					}				
 				});						
 				var bodyEditor =  $("#page-editor-body" );
-				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );						
+				createEditor( "page-editor" , bodyEditor, { modal : true , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );						
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );	
