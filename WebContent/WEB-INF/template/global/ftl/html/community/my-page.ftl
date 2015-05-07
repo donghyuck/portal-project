@@ -249,8 +249,10 @@
 			var dialogFx = common.ui.dialog( renderTo );		
 			
 			if( !dialogFx.isOpen ){		
+				
 				renderTo.data("model").set( "editable" , isEditable) ;	
 				renderTo.data("model").setPage(source);	
+				
 				dialogFx.open();
 			}				
 		}
