@@ -672,7 +672,11 @@
 		#my-page-editor-ui .k-editor {
 			border : 0;
 		}
-
+		
+		.ace_editor{
+			min-height: 500px;			
+		}		
+		
 		/** Masonry Grid **/			
 
 		.blog_masonry_3col {
@@ -851,9 +855,7 @@
 			background: #fff;
 		}
 		
-		.ace_editor{
-			min-height: 500px;			
-		}		
+
 		
 		
 
