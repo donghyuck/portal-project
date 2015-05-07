@@ -419,8 +419,7 @@
 			var that = this,
 			element = that.element,
 			options = that.options;			
-			
-			alert( that.isOpen);
+		
 			if( !that.isOpen )
 			{
 				element.addClass("dialog--open");
