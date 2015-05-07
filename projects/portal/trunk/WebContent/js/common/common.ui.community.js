@@ -170,9 +170,13 @@
 	    		target.set('bodyContent', { bodyText: ""} );	    		
 	    	}
 	    	if( typeof this.get("user") === 'object' )
-	    		target.set('user', this.get("user") );    		
+	    		target.set('user', this.get("user") );    	
+	    	else
+	    		target.set('user', {} );    	
 	    	if( typeof this.get('properties') === 'object' )
 	    		target.properties = this.get("properties") ;
+	    	else
+	    		target.properties = {} ;
 		}
 	});
 
