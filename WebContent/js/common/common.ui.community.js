@@ -138,8 +138,7 @@
 			pageState : { type: "string", editable: true, defaultValue:"INCOMPLETE"},
 			bodyText:  { type: "string", editable: true},
 			modifiedDate: { type: "date", editable: true },
-			creationDate: { type: "date", editable: true },
-			bodyContent : {type: 'object', editable: true}
+			creationDate: { type: "date", editable: true }
 		},
 	    authorPhotoUrl : function (){
 			if( typeof this.get("user") === 'object' )
@@ -171,8 +170,11 @@
 	    	
 	    	alert( typeof this.get("bodyContent") );
 	    	
-	    	if(typeof this.get("bodyContent") === 'object')
+	    	if(typeof this.get("bodyContent") === 'object'){
+	    		target.bodyContent = {};
 	    		target.set('bodyContent' , this.get("bodyContent"));   
+	    	}
+	    		
 	    	
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set('user', this.get("user") );    		
