@@ -224,9 +224,9 @@
 						$("body").css("overflow-y", "hidden");
 					},
 					"opened" : function(e){		
-						common.ui.scroll.slim(content, {				 
+					/*	common.ui.scroll.slim(content, {				 
 							height: content.css({'height':(($(window).height())- 120 )+'px'})
-						});		
+						});		*/
 					},
 					"close":function(e){			
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");
