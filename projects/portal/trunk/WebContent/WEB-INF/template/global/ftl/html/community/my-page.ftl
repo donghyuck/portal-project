@@ -294,7 +294,7 @@
 								}							
 						});												
 						return false;
-					}									
+					},									
 					setPage: function(page){
 						var that = this;
 						page.copy(that.page);
