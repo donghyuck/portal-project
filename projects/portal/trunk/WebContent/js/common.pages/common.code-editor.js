@@ -7,9 +7,9 @@ function createEditor( renderToString, bodyEditor, options ){
 		options.modal = true;
 	}	
 	if(!bodyEditor.data("kendoEditor") ){			
-		//var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
-		//var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-		//var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
+		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
+		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
+		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		var htmlEditorTools = [
 			'bold', 
 			'italic', 
@@ -31,7 +31,7 @@ function createEditor( renderToString, bodyEditor, options ){
 					imageBroswer.show();
 					return false;
 				}
-			}*/
+			}
 		];		
 				
 		if( options.modal ){
