@@ -555,7 +555,7 @@
 									<div class="sky-form bg-white rounded">
 										<header>
 											<!--<span class="badge badge-dark rounded" data-bind="{text:page.pageState, visible:editable }"></span>-->
-											<label for="title" class="input" data-bind="{visible:editable }>
+											<label for="title" class="input" data-bind="visible:editable">
 												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 											</label>
 											<span data-bind="invisible: editable"><span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)</span>
