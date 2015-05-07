@@ -168,7 +168,7 @@
 	    	target.set("bodyText",this.get("bodyText") );		
 	    	target.set("pageState",this.get("pageState") );		
 	    	
-	    	alert( typeof target.bodyContent + "," + typeof this.get("bodyContent") );
+	    	alert( typeof target.bodyContent + "," + typeof target.get("bodyContent") );
 	    	
 	    	if(typeof this.get("bodyContent") === 'object'){
 	    		target.bodyContent = {};
