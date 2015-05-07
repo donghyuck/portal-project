@@ -172,7 +172,7 @@
 	    	alert( typeof this.get("bodyContent") );
 	    	
 	    	if(typeof this.get("bodyContent") === 'object')
-	    		target.set('bodyContent',this.get("bodyContent") );		    
+	    		target.bodyContent =  this.get("bodyContent");   
 	    	
 	    	if( typeof this.get("user") === 'object' )
 	    		target.set('user', this.get("user") );    		
