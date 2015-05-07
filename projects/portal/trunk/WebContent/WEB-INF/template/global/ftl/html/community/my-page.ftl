@@ -226,9 +226,75 @@
 					}),
 					isVisible : true,
 					close:function(e){
-						$("#my-page-view span.back").click();
-						common.ui.scroll.top($(".personalized-section").first());
-					},					
+						 common.ui.dialog( renderTo ).close();
+						 return false;
+					},	
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');
+						
+						if( $this.page.title.length == 0 ){
+							if(!$("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").addClass("state-error");							
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "제목을 입력하세요."	},
+								"error"
+							);
+							return false;
+						}						
+						else{
+							if($("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").removeClass("state-error");
+						}
+												
+						if($this.page.summary.length == 0 ){
+							if(!$("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").removeClass("state-error");
+						}
+						
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
+									common.ui.listview( $("#my-page-listview") ).dataSource.read();
+									$this.close();									
+								},
+								fail: function(){								
+									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
+					}									
 					setPage: function(page){
 						var that = this;
 						page.copy(that.page);
