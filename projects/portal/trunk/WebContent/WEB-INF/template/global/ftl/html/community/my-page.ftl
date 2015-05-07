@@ -204,12 +204,14 @@
 						{name: "삭제" , value: "DELETED"}
 					],
 					setPage: function(page){
-						var $this = this;
-						page.copy($this.page);				
-						if( $this.page.pageId  > 0 ) {
-							$this.set("advencedSetting", true);
+						
+						var that = this;
+						page.copy(that.page);				
+						
+						if( that.page.pageId  > 0 ) {
+							that.set("advencedSetting", true);
 						} else {
-							$this.set("advencedSetting", false);
+							that.set("advencedSetting", false);
 						}	
 					}
 				});		
