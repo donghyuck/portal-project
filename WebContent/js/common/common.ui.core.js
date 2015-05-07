@@ -1978,7 +1978,8 @@
 			options : {
 				name : "ExtImageBrowser",
 				title: null,
-				transport : {}
+				transport : {},
+				pageSize : 12
 			},
 			show : function() {
 				var that = this;
@@ -2064,7 +2065,7 @@
 													}
 												}
 											},
-											pageSize : 12,
+											pageSize : that.options.pageSize,
 											error : handleAjaxError,
 											schema : {
 												model : Image,
