@@ -328,7 +328,7 @@
 					setPage: function(page){
 						var $this = this;
 						page.copy($this.page);				
-						if( page.getPageId() > 0 ) {
+						if( $this.page.pageId  > 0 ) {
 							$this.set("advencedSetting", true);
 						} else {
 							$this.set("advencedSetting", false);
@@ -1140,7 +1140,7 @@
 														</section>
 													</div>
 													<div class="col col-6">
-														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: isAllowToFileAndProps">
+														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
 																	<h4 class="panel-title">
