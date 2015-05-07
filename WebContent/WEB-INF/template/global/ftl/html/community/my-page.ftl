@@ -244,7 +244,7 @@
 				var bodyEditor =  $("#my-page-editor" );
 				createEditor( "my-page" , bodyEditor, { 
 					modal : false , 
-					appendTo: $("#my-page-editor-code"), 
+					appendTo: $("#my-page-editor-code-panel"), 
 					tab: $("#my-page-editor-tabs"), 
 					useWrapMode : observable.useWrapMode } 
 				);	
