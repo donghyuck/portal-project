@@ -599,7 +599,7 @@
 												</label>
 											</section>	
 											<div class="row">
-												<div class="col col-md-6">
+												<div class="col-md-6">
 													<section>
 														<label class="input">
 																<i class="icon-prepend fa fa-file-text-o"></i>
@@ -618,10 +618,10 @@
 															</label>
 														</section>
 													</div>
-												<div class="col col-md-6">
+												<div class="col-md-6">
 
 
-														<div class="panel-group acc-v1" id="accordion-1">
+														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
 																	<h4 class="panel-title">
