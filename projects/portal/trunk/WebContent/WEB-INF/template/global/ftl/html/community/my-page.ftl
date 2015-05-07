@@ -620,7 +620,7 @@
 																<div class="panel-heading">
 																	<h4 class="panel-title">
 																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-																		<i class="fa fa-floppy-o"></i> 파일
+																		<i class="fa fa-floppy-o"></i> 첨부파일
 																		</a>
 																	</h4>
 																</div>
@@ -649,37 +649,7 @@
 																	</div>
 																</div>
 															</div>																												
-														</div><!-- ./acc-v1 -->					
-														
-
-											<div class="tab-v2">
-												<ul class="nav nav-tabs">
-													<li class="active"><a href="#my-page-tab-1" data-toggle="tab" aria-expanded="true">기본</a></li>
-													<li class=""><a href="#my-page-tab-2" data-toggle="tab" aria-expanded="false">첨부파일</a></li>
-													<li class=""><a href="#my-page-tab-3" data-toggle="tab" aria-expanded="false">버전</a></li>
-													<li class=""><a href="#my-page-tab-4" data-toggle="tab" aria-expanded="false">속성</a></li>
-												</ul>                
-							                    <div class="tab-content bg-white">
-							                        <div class="tab-pane fade active in" id="my-page-tab-1">
-														<p>준비중입니다.</p>										
-													</div>
-							                        <div class="tab-pane fade" id="my-page-tab-2">         
-							                            <p>준비중입니다.</p>
-							                        </div>
-							                        <div class="tab-pane fade" id="my-page-tab-3">
-							                            <h4>버전</h4>
-																		<section>									
-																			<label class="input state-disabled">
-																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
-																			</label>
-																		</section>
-																		
-													</div>
-							                        <div class="tab-pane fade" id="my-page-tab-4">
-							                            <h4>속성</h4>
-
-													</div>
-												</div>
+														</div><!-- ./acc-v1 -->
 												</div><!-- /.col-6-->				
 											</div><!-- /.row-->										
 											
