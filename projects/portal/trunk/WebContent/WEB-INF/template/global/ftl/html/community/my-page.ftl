@@ -607,6 +607,7 @@
 																</div>
 																<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
 																	<div class="panel-body no-padding">
+																	<!--
 																		<div id="page-property-grid"></div>
 																		<div data-role="grid"
 																			date-scrollable="false"
@@ -620,6 +621,7 @@
 																			]"
 																			data-bind="source: properties, visible: isVisible"
 																			style="border:0px;"></div>	
+																	-->
 																	</div>
 																</div>
 															</div>
