@@ -321,7 +321,7 @@
 					useWrap : function(e){
 						var $this = this;
 						if( $this.get('editable') )
-							ace.edit("menueditor").getSession().setUseWrapMode(this.useWrapMode);
+							ace.edit("page-editor-code-editor").getSession().setUseWrapMode(this.useWrapMode);
 					},
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
@@ -344,7 +344,7 @@
 				
 				renderTo.data("model", observable);				
 				var bodyEditor =  $("#page-editor-body" );
-				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : true } );				
+				createEditor( "page-editor" , bodyEditor, { modal : false , appendTo: $("#my-page-editor-code"), tab: $("#my-page-editor-tabs"), useWrapMode : observable.useWrapMode } );				
 								
 				var content = renderTo.find(".sky-form");					
 				common.ui.dialog( renderTo , {
