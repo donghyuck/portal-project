@@ -204,7 +204,6 @@
 						{name: "삭제" , value: "DELETED"}
 					],
 					setPage: function(page){
-						
 						var that = this;
 						page.copy(that.page);
 						if( that.page.pageId  > 0 ) {
