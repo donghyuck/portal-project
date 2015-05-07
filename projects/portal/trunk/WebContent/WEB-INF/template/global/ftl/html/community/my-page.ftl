@@ -567,20 +567,19 @@
 												</label>
 											</section>	
 											<div class="row">
-											<div class="col col-md-6">
-												
-														<section>
-															<label class="input">
+												<div class="col col-md-6">
+													<section>
+														<label class="input">
 																<i class="icon-prepend fa fa-file-text-o"></i>
 																<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
 															</label>
-														</section>																										
-														<section>
-															<label class="input">
-																<i class="icon-prepend fa fa-file-code-o"></i>
-																<input type="text" name="template" placeholder="템플릿">
-															</label>
-														</section>														
+													</section>																										
+													<section>
+														<label class="input">
+															<i class="icon-prepend fa fa-file-code-o"></i>
+															<input type="text" name="template" placeholder="템플릿">
+														</label>
+													</section>														
 														<section>
 															<label for="summary" class="textarea">
 																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
@@ -589,6 +588,69 @@
 													</div>
 												<div class="col col-md-6">
 
+
+														<div class="panel-group acc-v1" id="accordion-1">
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
+																		<i class="fa fa-cog"></i> 속성
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body no-padding">
+																		<div id="page-property-grid"></div>
+																		<div data-role="grid"
+																			date-scrollable="false"
+																			data-editable="true"
+																			data-autoBind="false"
+																			data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+																			data-columns="[
+																				{ 'title': '이름',  'field': 'name', 'width': 200 },
+																				{ 'title': '값', 'field': 'value' },
+																				{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+																			]"
+																			data-bind="source: properties, visible: isVisible"
+																			style="border:0px;"></div>	
+																	</div>
+																</div>
+															</div>
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
+																		<i class="fa fa-floppy-o"></i> 파일
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body">
+																	서비스 준비중 입니다.	
+																	</div>
+																</div>
+															</div>					
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
+																		<i class="fa fa-history"></i> 버전
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-Three" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body">
+																		<section>									
+																			<label class="label">현재 버전</label>					
+																			<label class="input state-disabled">
+																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
+																			</label>
+																		</section>
+																	</div>
+																</div>
+															</div>																												
+														</div>					
+														
 
 											<div class="tab-v2">
 												<ul class="nav nav-tabs">
