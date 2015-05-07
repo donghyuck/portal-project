@@ -966,8 +966,9 @@
 														</section>
 													</div>
 													<div class="col col-6">
+														<div data-bind="visible:advencedSetting">
 														<h4>고급옵션</h4>
-														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible: advencedSetting">
+														<div class="panel-group acc-v1" id="accordion-1">
 															<div class="panel panel-default">
 																<div class="panel-heading">
 																	<h4 class="panel-title">
@@ -1028,19 +1029,16 @@
 																</div>
 															</div>																												
 														</div>															
-														
+														</div>	
 													</div>
 												</div>
-												
-																						
-
-										</fieldset>
-										<fieldset>
+											</fieldset>
+											<fieldset>
 											
 
 
 								
-										</fieldset>		
+											</fieldset>		
 										<fieldset>			
 											<div class="row">
 												<div class="col-md-9"></div>
