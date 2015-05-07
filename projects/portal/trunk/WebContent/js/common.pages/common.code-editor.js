@@ -9,7 +9,7 @@ function createEditor( renderToString, bodyEditor, options ){
 	if(!bodyEditor.data("kendoEditor") ){			
 		var imageBroswer = createEditorImageBroswer( renderToString + "-imagebroswer", bodyEditor);				
 		var linkPopup = createEditorLinkPopup(renderToString + "-linkpopup", bodyEditor);	
-		//var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
+		var htmlEditor = createCodeEditor(renderToString + "-code-editor", bodyEditor, options );							
 		var htmlEditorTools = [
 			'bold', 
 			'italic', 
@@ -42,7 +42,7 @@ function createEditor( renderToString, bodyEditor, options ){
 			});
 		}		
 		bodyEditor.kendoEditor({
-			/*tools :htmlEditorTools,*/
+			tools :htmlEditorTools,
 			stylesheets: DEFAULT_HTML_EDITOR_STYLESHEETS
 		});
 	}			
