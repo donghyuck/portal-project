@@ -236,6 +236,8 @@
 						btn = $(e.target);						
 						btn.button('loading');
 						
+						$this.page.bodyContent.bodyText = $('#my-page-editor').val();
+						
 						if( $this.page.title.length == 0 ){
 							if(!$("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").addClass("state-error");							
