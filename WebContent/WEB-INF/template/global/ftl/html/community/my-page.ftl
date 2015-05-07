@@ -649,7 +649,7 @@
 																	</div>
 																</div>
 															</div>																												
-														</div>					
+														</div><!-- ./acc-v1 -->					
 														
 
 											<div class="tab-v2">
