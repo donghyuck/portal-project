@@ -565,29 +565,34 @@
 										<fieldset class="bg-gray padding-sm">
 											<div class="tab-v2">
 												<ul class="nav nav-tabs">
-													<li class="active"><a href="#my-page-tab-1" data-toggle="tab" aria-expanded="true">Home</a></li>
-													<li class=""><a href="#my-page-tab-2" data-toggle="tab" aria-expanded="false">Profile</a></li>
-													<li class=""><a href="#my-page-tab-3" data-toggle="tab" aria-expanded="false">Messages</a></li>
-													<li class=""><a href="#my-page-tab-4" data-toggle="tab" aria-expanded="false">Settings</a></li>
+													<li class="active"><a href="#my-page-tab-1" data-toggle="tab" aria-expanded="true">기본</a></li>
+													<li class=""><a href="#my-page-tab-2" data-toggle="tab" aria-expanded="false">첨부파일</a></li>
+													<li class=""><a href="#my-page-tab-3" data-toggle="tab" aria-expanded="false">버전</a></li>
+													<li class=""><a href="#my-page-tab-4" data-toggle="tab" aria-expanded="false">속성</a></li>
 												</ul>                
-							                    <div class="tab-content">
+							                    <div class="tab-content bg-gray">
 							                        <div class="tab-pane fade active in" id="my-page-tab-1">
 							                            <h4>Heading Sample 1</h4>
 							                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum <strong>ivamus imperdiet</strong> condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque <strong>fermentum vivamus</strong> imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac felis consectetur id. Donec eget orci metusvivamus imperdiet.</p>                        
 							                        </div>
 							                        <div class="tab-pane fade" id="my-page-tab-2">
 							                            <img alt="" class="pull-left lft-img-margin img-width-200" src="assets/img/main/img17.jpg">                         
-							                            <h4>Heading Sample 2</h4>
-							                            <p>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, <strong>ac adipiscing nunc.</strong> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac <strong>interdum ullamcorper.</strong></p>
+							                            <h4>첨부파일</h4>
+							                            <p>준비중입니다.</p>
 							                        </div>
 							                        <div class="tab-pane fade" id="my-page-tab-3">
-							                            <h4>Heading Sample 3</h4>
+							                            <h4>버전</h4>
 							                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/img21.jpg"> <strong>Vivamus imperdiet condimentum diam, eget placerat felis consectetur id.</strong> Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
 							                        </div>
 							                        <div class="tab-pane fade" id="my-page-tab-4">
-							                            <h4>Heading Sample 4</h4>
-							                            <p><img alt="" class="pull-right rgt-img-margin img-width-200" src="assets/img/main/img23.jpg"> Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, Vivamus imperdiet condimentum diam, eget placerat felis consectetur id. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, consectetur id. Donec eget orci metus, ac adipiscing nunc. <strong>Pellentesque fermentum</strong>, ante ac interdum ullamcorper. Donec eget orci metus, ac adipiscing nunc. Pellentesque fermentum, ante ac interdum ullamcorper.</p>
-							                        </div>
+							                            <h4>속성</h4>
+							                           					<section>									
+																			<label class="label">현재 버전</label>					
+																			<label class="input state-disabled">
+																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
+																			</label>
+																		</section>
+														</div>
 							                    </div>
 							                </div>										
 											
