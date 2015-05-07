@@ -155,9 +155,7 @@
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");						
-					var item = common.ui.listview(renderTo).dataSource.get(objectId);			
-						
-											
+					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					switch( action ){
 						case 'view':						
 						createMyPageViewer(item);
@@ -169,7 +167,6 @@
 						alert( action );							
 						break;																		
 					}	
-					
 					return false;
 				});
 				
@@ -194,7 +191,7 @@
 					useWrap : function(e){
 						var $this = this;
 						if( $this.get('editable') )
-							ace.edit("page-editor-code-editor").getSession().setUseWrapMode($this.useWrapMode);
+							ace.edit("my-page-code-editor").getSession().setUseWrapMode($this.useWrapMode);
 					},
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
