@@ -670,6 +670,17 @@
 	border : 0;
 }
 
+/** Masonry Grid **/	
+		
+		.grid-boxes {
+			visibility: hidden;
+			min-height:300px;
+		}
+		
+		.grid-boxes-in.masonry-brick {
+			visibility: visible;
+		}
+		
 
 		/*	
 			.breadcrumbs-v3.img-v1 {
@@ -841,15 +852,7 @@
 		.blog_masonry_3col ul.grid-boxes-news li a:hover {
 			color: #72c02c;
 		}
-		
-		.grid-boxes {
-			visibility: hidden;
-			min-height:300px;
-		}
-		
-		.grid-boxes-in.masonry-brick {
-			visibility: visible;
-		}
+
 		*/
 		
 		/*Quote Block*/
