@@ -225,12 +225,6 @@
 					},
 					"opened" : function(e){		
 						renderTo.find(".dialog__content").css("overflow-y", "auto");
-					/*	common.ui.scroll.slim(content, {				 
-							height: content.css({'height':(($(window).height())- 120 )+'px'})
-						});		*/
-						
-						
-						
 					},
 					"close":function(e){			
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");
@@ -238,26 +232,13 @@
 						$("body").css("overflow-y", "auto");		
 					}
 				});		
-				/*												
-				$(window).resize(function(){    
-					if( common.ui.dialog( renderTo ).isOpen ){
-						common.ui.scroll.slim(content, {				 
-							height: content.css({'height':(($(window).height())- 120 )+'px'})
-						});
-					}				
-				});		
-				*/				
 				var bodyEditor =  $("#my-page-editor" );
-				/*
 				createEditor( "my-page" , bodyEditor, { 
 					modal : false , 
 					appendTo: $("#my-page-editor-code-panel"), 
 					tab: $("#my-page-editor-tabs"), 
 					useWrapMode : observable.useWrapMode } 
 				);	
-				*/
-				 bodyEditor.kendoEditor({ resizable: true });
-				
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );	
