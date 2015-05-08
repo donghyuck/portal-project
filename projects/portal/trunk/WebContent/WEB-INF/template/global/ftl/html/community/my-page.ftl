@@ -299,10 +299,8 @@
 					update : function(e){
 						var $this = this, 
 						btn = $(e.target);						
-						btn.button('loading');
-						
-						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
-						
+						btn.button('loading');						
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();						
 						if( $this.page.title.length == 0 ){
 							if(!$("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").addClass("state-error");							
@@ -319,8 +317,7 @@
 						else{
 							if($("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").removeClass("state-error");
-						}
-						
+						}						
 						if($this.page.name.length == 0 ){
 							if(!$("label[for=name]").hasClass("state-error"))
 								$("label[for=name]").addClass("state-error");
@@ -337,8 +334,7 @@
 						else{
 							if($("label[for=name]").hasClass("state-error"))
 								$("label[for=name]").removeClass("state-error");
-						}
-																		
+						}																		
 						if($this.page.summary.length == 0 ){
 							if(!$("label[for=summary]").hasClass("state-error"))
 								$("label[for=summary]").addClass("state-error");
@@ -413,6 +409,7 @@
 				});		
 				var bodyEditor =  $("#my-page-editor" );
 				createEditor( "my-page" , bodyEditor, { 
+					data : observable.page,
 					modal : false , 
 					appendTo: $("#my-page-editor-code-panel"), 
 					tab: $("#my-page-editor-tabs"), 
