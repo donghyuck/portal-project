@@ -2110,10 +2110,8 @@
 										dataSource : my_list_view.data('kendoListView').dataSource
 									});
 								}								
-								my_list_view.data('kendoListView').dataSource.read({pageId: that._objectId() });								
-							}else{
-								
-							}							
+								my_list_view.data('kendoListView').dataSource.read();								
+							}					
 							break;
 						case "#" + that.options.guid[1]:
 							createImagePanel(tab_pane, USER_OBJECT_TYPE, 0 , that._changeState, my_insert_btn, that.options );
