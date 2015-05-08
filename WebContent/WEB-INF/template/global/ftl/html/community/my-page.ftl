@@ -171,8 +171,7 @@
 													
 						break;	
 						case 'publish':
-						alert( action );							
-						
+						publishPage( item, $this );		
 						break;																														
 					}	
 					return false;
@@ -194,7 +193,32 @@
 				$("article.bg-white").show();
 			} 			
 		}
-				
+
+		function publishPage(page, target ){
+			if( page.pageState === 'INCOMPLETE' ||  page.pageState === 'APPROVAL' || page.pageState === 'ARCHIVED' ){
+				if( common.ui.defined( target )){	
+					target.button('loading');	
+				}
+				common.ui.ajax(
+					'<@spring.url "/data/pages/update_state.json?output=json"/>',
+					{
+						data : kendo.stringify(page) ,
+						contentType : "application/json",
+						success : function(response){
+							common.ui.listview( $("#my-page-listview") ).dataSource.read();						
+						},
+						complete : function(e){
+							if( common.ui.defined( target )){	
+								target.button('reset');	
+							}									
+						}							
+				});		
+			}else{
+				alert("게시할 수 없습니다.");	
+			}
+			return false;					
+		}  
+						
 		function createMyPageViewer(source, isEditable){
 			var isEditable = isEditable || false;		
 			var renderTo = $("#my-page-viewer");			
