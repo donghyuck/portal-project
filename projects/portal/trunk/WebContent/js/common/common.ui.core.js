@@ -2113,7 +2113,8 @@
 								}else{
 									_listview = my_list_view.data('kendoListView');
 								}
-
+								_listview.dataSource.read();	
+								
 								var my_file_upload = tab_pane.find("input[type=file]");		
 								
 								if( !common.ui.exists(my_file_upload) ){
@@ -2132,7 +2133,7 @@
 										}		
 									});		
 								}								
-								_listview.dataSource.read();	
+								
 							}					
 							break;
 						case "#" + that.options.guid[1]:
