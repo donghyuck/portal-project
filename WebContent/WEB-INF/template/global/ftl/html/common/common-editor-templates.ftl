@@ -109,13 +109,11 @@
 						<div class="col-sm-3 no-padding">
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
-							#if(objectId>0){#
-							  <li class="no-margin-t"><a href="\\##=guid[0]#" data-toggle="tab">업로드</a></li>
-							#}#
-							  <li class="no-margin-t"><a href="\\##=guid[1]#" data-toggle="tab">My 포토에서 선택</a></li>
-							  <li class="no-margin-t"><a href="\\##=guid[2]#" data-toggle="tab">My 사이트에서 선택</a></li>
-							  <li class="no-margin-t"><a href="\\##=guid[3]#" data-toggle="tab">My 회사에서 선택</a></li>
-							  <li class="no-margin-t"><a href="\\##=guid[4]#" data-toggle="tab">URL에서 선택</a></li>
+								<li class="no-margin-t"><a href="\\##=guid[0]#" data-toggle="tab">업로드</a></li>
+								<li class="no-margin-t"><a href="\\##=guid[1]#" data-toggle="tab">My 포토에서 선택</a></li>
+								<li class="no-margin-t"><a href="\\##=guid[2]#" data-toggle="tab">My 사이트에서 선택</a></li>
+								<li class="no-margin-t"><a href="\\##=guid[3]#" data-toggle="tab">My 회사에서 선택</a></li>
+								<li class="no-margin-t"><a href="\\##=guid[4]#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
 						</div>
 						<div class="col-sm-9 padding-sm" style="border-left: 1px solid \\#e5e5e5; background:\\#f5f5f5; min-height:250px;">
