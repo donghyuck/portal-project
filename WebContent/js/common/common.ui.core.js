@@ -1968,17 +1968,21 @@
 				objectId : 0,
 				objectType : 0
 			},
-			show : function() {
-				var that = this;
-				
-				if(that.objectId()>0){
+			show : function() {				
+				var that = this;				
+				if(that.objectId() > 0 ){
 					that.element.find('.modal-body ul.nav a:first').show();
 				}else{
 					that.element.find('.modal-body ul.nav a:first').hide();
 				}				
+				that.element.find(".modal-body ul.nav a").filter(function(){ 
+					if( that.objectId() > 0 ){
+						return $(this).attr("href") === ("#"+ that.options.guid[0]) ;						
+					}else{
+						return $(this).attr("href") === ("#"+ that.options.guid[1]) ;						
+					}
+				}).tab('show');
 				that._modal().modal('show');
-				that.element.find('.modal-body ul.nav a:first').tab('show');
-				
 			},
 			close : function() {
 				var that = this;
