@@ -56,7 +56,6 @@ var DEFAULT_HTML_EDITOR_STYLESHEETS = [
 	"/styles/common/common.ui.css"
 ];
 
-
 var DEFAULT_ACE_EDITOR_SETTING = {
 	modal : true,
 	mode : "ace/mode/xml",
@@ -153,7 +152,7 @@ function createEditorImageBroswer(renderToString, editor , options){
 	if(!renderTo.data("kendoExtImageBrowser")){
 		var imageBrowser = renderTo.extImageBrowser({
 			pageSize : pageSize,
-			data : options.data || {}, 
+			objectType : options.objectType || 0, 
 			template : $("#image-broswer-template").html(),
 			apply : function(e){						
 				editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
