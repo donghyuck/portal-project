@@ -4,8 +4,8 @@
 <!-- ============================== -->
 <script id="image-broswer-template" type="text/x-kendo-template">
 	<style type="text/css" media="screen">
-
-		.image-broswer .image-listview .img-wrapper.k-state-selected:after , .file-broswer .file-listview .file-wrapper.k-state-selected:after  {
+		.image-broswer .image-listview .img-wrapper.k-state-selected:after , 
+		.file-broswer .file-listview .file-wrapper.k-state-selected:after  {
 			top: 10px;
 			right: 15px;
 			content: "\\f00c";
@@ -109,7 +109,9 @@
 						<div class="col-sm-3 no-padding">
 							<!-- Nav tabs -->
 							<ul class="nav nav-pills nav-stacked">
+							#if (pageId > 0 ){ #
 							  <li class="no-margin-t"><a href="\\##=guid[0]#" data-toggle="tab">업로드</a></li>
+							#}#
 							  <li class="no-margin-t"><a href="\\##=guid[1]#" data-toggle="tab">My 포토에서 선택</a></li>
 							  <li class="no-margin-t"><a href="\\##=guid[2]#" data-toggle="tab">My 사이트에서 선택</a></li>
 							  <li class="no-margin-t"><a href="\\##=guid[3]#" data-toggle="tab">My 회사에서 선택</a></li>
