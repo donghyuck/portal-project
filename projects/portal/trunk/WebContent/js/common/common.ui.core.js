@@ -2043,10 +2043,11 @@
 					that._changeState(my_insert_btn, false);					
 					switch (tab_pane_id) {
 						case "#" + that.options.guid[0]:					
-							if(that.objectId() > 0){							
+							if( that.objectId() > 0 && that.objectType() > 0){			
 								// list view 
+								var _listview ;
 								if (!my_list_view.data('kendoListView')) {
-									my_list_view.kendoListView({
+									_listview = my_list_view.kendoListView({
 										dataSource : {
 											type : 'json',
 											transport : {
@@ -2109,8 +2110,29 @@
 										buttonCount : 5,
 										dataSource : my_list_view.data('kendoListView').dataSource
 									});
+								}else{
+									_listview = my_list_view.data('kendoListView');
+								}
+
+								var my_file_upload = tab_pane.find("input[type=file]");		
+								
+								if( !common.ui.exists(my_file_upload) ){
+									common.ui.upload(my_file_upload,{
+										async: {
+											saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+										},
+										upload: function(e){
+											e.data = {
+												objectType: objectType(),
+												objectId: objectId()
+											};
+										},
+										success : function(e) {	
+											_listview.dataSource.read();						
+										}		
+									});		
 								}								
-								my_list_view.data('kendoListView').dataSource.read();								
+								_listview.dataSource.read();	
 							}					
 							break;
 						case "#" + that.options.guid[1]:
