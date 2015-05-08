@@ -2016,6 +2016,9 @@
 				var template = that._dialogTemplate();			
 				that.options.objectType = that._objectType();
 				that.options.objectId = that._objectId();
+				
+				alert( kendo.stringify(that.options) );
+				
 				that.element.html(template( that.options ));
 				that.element.children('.modal').css('z-index', '2000');				
 				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
