@@ -380,7 +380,10 @@
 					},									
 					setPage: function(page){
 						var that = this;
-						page.copy(that.page);
+						page.copy(that.page);						
+						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
+							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
+						}
 						if( that.page.pageId  > 0 ) {
 							that.set("advencedSetting", true);
 							that.properties.read();
@@ -413,6 +416,7 @@
 					appendTo: $("#my-page-editor-code-panel"), 
 					tab: $("#my-page-editor-tabs"), 
 					pageSize : 15,
+					objectType : 31,
 					useWrapMode : observable.useWrapMode 
 				});	
 			}			
@@ -420,7 +424,7 @@
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){						
 				renderTo.data("model").set( "editable" , isEditable) ;	
-				renderTo.data("model").setPage(source);	
+				renderTo.data("model").setPage(source);					
 				dialogFx.open();
 			}				
 		}
