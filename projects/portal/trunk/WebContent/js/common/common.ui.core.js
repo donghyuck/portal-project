@@ -2073,7 +2073,7 @@
 											pageSize : that.options.pageSize,
 											error : handleAjaxError,
 											schema : {
-												model : Image,
+												model : common.ui.data.Image,
 												data : "images",
 												total : "totalCount"
 											},
