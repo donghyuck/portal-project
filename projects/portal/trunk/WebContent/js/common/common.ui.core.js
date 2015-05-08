@@ -1970,8 +1970,15 @@
 			},
 			show : function() {
 				var that = this;
+				
+				if(that.objectId()>0){
+					that.element.find('.modal-body ul.nav a:first').show();
+				}else{
+					that.element.find('.modal-body ul.nav a:first').hide();
+				}				
 				that._modal().modal('show');
 				that.element.find('.modal-body ul.nav a:first').tab('show');
+				
 			},
 			close : function() {
 				var that = this;
