@@ -541,14 +541,8 @@
 								<button type="button" class="btn btn-danger" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 							</div>
 						</div>	
-
 					</fieldset>
-					<footer>
-						
-						<button type="button" class="btn btn-primary" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
-					</footer>
-				</div>
-				
+				</div>				
 				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">								
 					<div class="blog_masonry_3col">					
 						<div id="my-page-listview" class="grid-boxes"></div>
