@@ -2127,6 +2127,7 @@
 												objectId: that.objectId()
 											};
 										},
+										error : handleAjaxError,
 										success : function(e) {	
 											my_list_view.data('kendoListView').dataSource.read();	
 										}		
