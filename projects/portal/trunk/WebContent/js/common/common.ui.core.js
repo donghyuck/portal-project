@@ -1842,7 +1842,9 @@
 	
 })(jQuery);
 
-
+/**
+ * Image Broswer for kendoui editor;
+ */
 (function($, undefined) {
 	var kendo = window.kendo, 
 		Widget = kendo.ui.Widget, 
@@ -1868,26 +1870,7 @@
 		JSON = 'json', 
 		templates = {
 			selected : template(
-					/**
-				'<div class="row">' +
-				'<div class="col-xs-2">'+ **/
 				'<img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated zoomIn" data-id="#=imageId#">'
-				/**
-				'</div>' +
-				'<div class="col-xs-10">' +						
-				'<h5><span class="label label-warning label-lightweight">#: contentType #</span> #:name# <small>(#: formattedSize() #)</small></h5>' +
-				
-				'<ul class="list-unstyled">' +
-				'<li><i class="fa fa-user color-green"></i></li>' +
-				'<li><i class="fa fa-calendar color-green"></i> #: formattedCreationDate() #</li>' +
-				'<li><i class="fa fa-calendar color-green"></i> #: formattedModifiedDate() #</li>' +
-				'<li><i class="fa fa-tags color-green"></i></li>' +
-				'</ul>' +
-				**/
-				/**
-				'</div>' +
-				'</div>'			
-				**/		
 			),
 			image : template('<img src="#: url #" class="img-responsive"/>'),
 			linkUrl : template('/download/image/#= linkId #'),
@@ -1937,10 +1920,8 @@
 					var current_index = this.select().index();
 					if (current_index >= 0) {
 						var item = data[current_index];
-						var imageId = item.imageId;
-						
-						my_selected.html(templates.selected(item));
-						
+						var imageId = item.imageId;						
+						my_selected.html(templates.selected(item));						
 						if(isFunction(changeState))
 							changeState(changeStateEl, true);
 					}
@@ -1963,8 +1944,7 @@
 			my_list_view.data('kendoListView').clearSelection();			
 			if(isFunction(changeState))
 				changeState(changeStateEl, false);
-		}	
-		
+		}			
 	}
 	
 		var ExtImageBrowser = Widget.extend({
@@ -2004,6 +1984,7 @@
 				ajax("/data/images/link.json?output=json", {
 					data : { imageId : image.imageId },	
 					success : function(data) {
+						
 						callback(data);
 					}					
 				});
@@ -2011,6 +1992,15 @@
 			_modal : function() {
 				var that = this;
 				return that.element.children('.modal');
+			},
+			_objectType : function(){
+				var that = this;
+				if( typeof that.options.data === 'object' ){	
+					if( that.options.data instanceof common.ui.data.Page ){
+						return 31 ;
+					}
+				}
+				return 0;
 			},
 			_objectId : function(){
 				var that = this;
@@ -2023,12 +2013,13 @@
 			},
 			_createDialog : function() {
 				var that = this;
-				var template = that._dialogTemplate();								
+				var template = that._dialogTemplate();			
+				that.options.objectType = that._objectType();
+				that.options.objectId = that._objectId();
 				that.element.html(template( that.options ));
 				that.element.children('.modal').css('z-index', '2000');				
 				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
-				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
-					
+				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {					
 					e.target // activated tab
 					e.relatedTarget // previous tab					
 					var tab_pane_id = $(e.target).attr('href');
@@ -2036,8 +2027,7 @@
 					var my_selected = tab_pane.find(".image-selected");
 					var my_list_view =  tab_pane.find(".image-listview");
 					var my_list_pager =  tab_pane.find(".image-pager");			
-					that._changeState(my_insert_btn, false);	
-					
+					that._changeState(my_insert_btn, false);					
 					switch (tab_pane_id) {
 						case "#" + that.options.guid[0]:					
 							if(that._objectId() > 0){							
