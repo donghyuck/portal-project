@@ -194,26 +194,36 @@
 			} 			
 		}
 
-		function publishPage(page, target ){
-			if( page.pageState === 'INCOMPLETE' ||  page.pageState === 'APPROVAL' || page.pageState === 'ARCHIVED' ){
+		function deletePage(page, target ){
+			if( page.pageState != PAGE_STATES.DELETED ){
 				if( common.ui.defined( target )){	
 					target.button('loading');	
 				}
-				page.pageState = "PUBLISHED";
-				common.ui.ajax(
-					'<@spring.url "/data/pages/update_state.json?output=json"/>',
-					{
-						data : kendo.stringify(page) ,
-						contentType : "application/json",
-						success : function(response){
-							common.ui.listview( $("#my-page-listview") ).dataSource.read();						
-						},
-						complete : function(e){
-							if( common.ui.defined( target )){	
-								target.button('reset');	
-							}									
-						}							
+				page.pageState = PAGE_STATES.DELETED;
+				updatePageState( page , function(){
+					if( common.ui.defined( target )){	
+						target.button('reset');	
+					}
+					common.ui.listview( $("#my-page-listview") ).dataSource.read();									
 				});		
+			}else{
+				alert("삭제할 수 없습니다.");	
+			}
+			return false;					
+		}  
+
+		function publishPage(page, target ){
+			if( page.pageState === PAGE_STATES.INCOMPLETE ||  page.pageState === PAGE_STATES.APPROVAL || page.pageState === PAGE_STATES.ARCHIVED ){
+				if( common.ui.defined( target )){	
+					target.button('loading');	
+				}
+				page.pageState = PAGE_STATES.PUBLISHED;
+				updatePageState( page , function(){
+					if( common.ui.defined( target )){	
+						target.button('reset');	
+					}
+					common.ui.listview( $("#my-page-listview") ).dataSource.read();									
+				});				
 			}else{
 				alert("게시할 수 없습니다.");	
 			}
