@@ -378,7 +378,13 @@
 			font-weight: 200;
 			margin-bottom: 0;
 		}	
-			
+		
+		.breadcrumbs-v3.img-v1 {
+			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
+			background-size: cover;
+			background-position: center center;			
+		}
+						
 		/** Page Editor **/		
 		#my-page-editor-panel .k-editor {
 			border : 0;
@@ -451,129 +457,10 @@
 			visibility: visible;
 		}
 		
-
-		/*	
-			.breadcrumbs-v3.img-v1 {
-				background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
-				background-size: cover;
-				background-position: center center;			
-			}	
-
-
-			
-		#my-page .master  {
-			opacity: 1;
-			visibility: visible;		
-			height:auto;					
-		} 
-
-		#my-page .details  {
-			opacity: 0;
-			visibility: hidden;		
-			height:0px;		
-		} 
-
-		#my-page.compose .master  {
-			opacity: 1;
-			visibility: visible;				
-		} 
-
-		#my-page.compose .details  {
-			opacity: 1;
-			visibility: visible;		
-		
-		} 
-
-		#my-page.compose.in .master  {
-			opacity: 0;
-			visibility: hidden;		
-			height:0px;				
-			-webkit-animation-name: fadeOut;
-			animation-name: fadeOut;							
-		} 
-
-		#my-page.compose.in .details  {
-			opacity: 1;
-			visibility: visible;		
-			height:auto;		
-			-webkit-animation-name: fadeIn;
-			animation-name: fadeIn;				
-		} 
-				
-		#my-page.compose.out .master  {		
-			opacity: 1;
-			visibility: visible;			
-			height:auto;	
-			-webkit-animation-name: fadeIn;
-			animation-name: fadeIn;				
-		}
-
-		#my-page.compose.out .details  {
-			opacity: 0;
-			visibility: hidden;		
-			-webkit-animation-name: fadeOut;
-			animation-name: fadeOut;				
-			height:0px;				
-		}
-		*/
-		
 		
 		.acc-v1	.panel-default {
 			border-color: #bbb;
 		}
-		/*				
-		.k-grid tr > td  .btn-group {
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
-			-webkit-animation-fill-mode: both;
-			animation-fill-mode: both;		
-			cursor: not-allowed;
-			pointer-events: none;			
-			opacity: 0;
-			visibility: hidden;						
-		}
-
-		.k-grid tr[aria-selected=true] > td  .btn-group {
-			opacity: 1;
-			visibility: visible;
-			cursor: pointer;
-			pointer-events: auto;				
-			-webkit-animation-name: fadeInRight;
-			animation-name: fadeInRight;	
-		}
-		
-		.k-grid tr[aria-selected=false] > td  .btn-group {
-			opacity: 1;
-			visibility: visible;
-			cursor: pointer;
-			pointer-events: auto;				
-			-webkit-animation-name: fadeOutRight;
-			animation-name: fadeOutRight;	
-		}
-		
-		.btn[disabled]{
-			cursor: not-allowed;
-			pointer-events: auto;		
-		} 
-		
-		#my-page 	span.back {
-			top:inherit;
-			left:inherit;
-		}
-		
-		#my-page .k-editor {
-			border:0px;
-		}
-		
-		.sky-form fieldset {
-			background: #fff;
-		}
-		
-
-		
-		
-
-		*/
 		
 		/*Quote Block*/
 		/*
@@ -639,17 +526,25 @@
 			<div class="container content">			
 				<div class="sky-form">
 					<fieldset>
-						<section>
-							<label class="label"> 소유자</label>
-							<div id="my-page-source-list" class="inline-group">
-								<label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i> Me</label>
-								<label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>  ${action.webSite.displayName}</label>
-								<label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>  ${action.webSite.company.displayName}</label>
+						<div class="row">
+							<div class="col col-6">
+								<section>
+									<label class="label"> 소유자</label>
+									<div id="my-page-source-list" class="inline-group">
+										<label class="radio"><input type="radio" name="radio-inline" value="2"  checked=""><i class="rounded-x"></i> Me</label>
+										<label class="radio"><input type="radio" name="radio-inline" value="30" ><i class="rounded-x"></i>  ${action.webSite.displayName}</label>
+										<label class="radio"><input type="radio" name="radio-inline" value="1" ><i class="rounded-x"></i>  ${action.webSite.company.displayName}</label>
+									</div>
+								</section>							
 							</div>
-						</section>
+							<div class="col col-6 text-right">
+								<button type="button" class="btn btn-danger" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+							</div>
+						</div>	
+
 					</fieldset>
 					<footer>
-						<button type="button" class="btn btn-danger" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+						
 						<button type="button" class="btn btn-primary" disabled="disabled" data-loading-text="<i class=&quot;fa fa-spinner fa-spin&quot;></i>"><i class="fa fa-external-link"></i> 게시</button>
 					</footer>
 				</div>
