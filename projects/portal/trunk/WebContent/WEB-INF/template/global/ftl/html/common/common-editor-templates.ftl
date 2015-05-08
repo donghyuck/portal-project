@@ -98,7 +98,7 @@
 		}
 		.image-broswer .k-dropzone {
 		  border-radius: 5px !important;
-		  background-color: #eee;		
+		  background-color: \\#eee;		
 		}
 	</style>				
 	<div class='modal editor-popup image-broswer fade'>
