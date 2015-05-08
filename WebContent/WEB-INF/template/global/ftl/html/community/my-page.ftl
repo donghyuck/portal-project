@@ -164,11 +164,10 @@
 						createMyPageViewer( item , true );	
 						break;	
 						case 'delete':
-						alert( action );							
+						deletePage(item, $this );					
 						break;	
 						case 'share':
-						alert( action );
-													
+						alert( action );													
 						break;	
 						case 'publish':
 						publishPage( item, $this );		
