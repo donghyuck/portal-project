@@ -895,7 +895,9 @@
 		#}#
 		<div class="grid-boxes-caption">
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
-			<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>
+			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
+			<h2 class="text-muted">#:title#</a></h2>
+			#}#
 			<ul class="list-inline grid-boxes-news">
 				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
