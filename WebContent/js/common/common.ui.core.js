@@ -2119,7 +2119,7 @@
 								if( !common.ui.exists(my_file_upload) ){
 									common.ui.upload(my_file_upload,{
 										async: {
-											saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+											saveUrl:  '/data/images/update_with_media.json?output=json'
 										},
 										upload: function(e){
 											e.data = {
