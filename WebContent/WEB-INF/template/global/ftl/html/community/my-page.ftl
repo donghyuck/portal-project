@@ -883,14 +883,22 @@
 			<p>#: summary #</p>
 				<div class="navbar-btn">
 					<div class="btn-group">				
+						#if( pageState !=  'DELETED' ){#
 						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
-						#if( pageState === 'PUBLISHED' ){#
-						<button class="btn btn-info btn-flat btn-outline" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>
-						#}else{#
-						<button class="btn btn-info btn-flat btn-outline" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
 						#}#
-					</div>
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>
+						#if( pageState === 'PUBLISHED' ){#
+						<button class="btn btn-info btn-flat btn-outline" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>		
+						#}else{#
+							#if( pageState != 'DELETED'){# 
+							<button class="btn btn-info btn-flat btn-outline" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
+							#}#						
+						#}#
+					</div>				
+					#if( pageState !=  'DELETED' ){#	
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
+					#}else{#
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="restore" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">임시저장</button>		
+					#}#			
 				</div>			
 		</div>
 	</div>
