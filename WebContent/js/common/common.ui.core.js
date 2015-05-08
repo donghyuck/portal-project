@@ -2123,8 +2123,8 @@
 										},
 										upload: function(e){
 											e.data = {
-												objectType: objectType(),
-												objectId: objectId()
+												objectType: that.objectType(),
+												objectId: that.objectId()
 											};
 										},
 										success : function(e) {	
