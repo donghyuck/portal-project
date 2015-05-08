@@ -1861,6 +1861,10 @@
 		isFunction = kendo.isFunction, 
 		handleAjaxError = ui.handleAjaxError,
 		trimSlashesRegExp = /(^\/|\/$)/g, 
+		USER_OBJECT_TYPE = 2 ,
+		COMPANY_OBJECT_TYPE = 1,
+		WEBSITE_OPBJECT_TYPE = 30,
+		PAGE_OPBJECT_TYPE = 31,
 		CHANGE = "change", 
 		APPLY = "apply", 
 		ERROR = "error", 
@@ -1951,8 +1955,8 @@
 			init : function(element, options) {
 				var that = this;
 				Widget.fn.init.call(that, element, options);
-				options = that.options;				
-				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];
+				options = that.options;	
+				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];				
 				that.refresh();
 			},
 			events : [ ERROR, CHANGE, APPLY ],
@@ -1960,7 +1964,9 @@
 				name : "ExtImageBrowser",
 				title: null,
 				transport : {},
-				pageSize : 12
+				pageSize : 12,
+				objectId : 0,
+				objectType : 0
 			},
 			show : function() {
 				var that = this;
@@ -1980,6 +1986,22 @@
 				Widget.fn.destroy.call(that);
 				$(that.element).remove();
 			},
+			objectType: function(objectType){
+				var that = this;
+				if( typeof objectType === 'number' ){
+					that.options.objectType = objectType ;
+				}else{
+					return that.options.objectType;
+				}				
+			},
+			objectId : function( objectId) {
+				var that = this;
+				if( typeof objectId === 'number' ){
+					that.options.objectId = objectId ;
+				}else{
+					return that.options.objectId;
+				}	
+			},
 			_getImageLink : function(image, callback) {
 				ajax("/data/images/link.json?output=json", {
 					data : { imageId : image.imageId },	
@@ -1992,15 +2014,6 @@
 			_modal : function() {
 				var that = this;
 				return that.element.children('.modal');
-			},
-			_objectId : function(){
-				var that = this;
-				if( typeof that.options.data === 'object' ){	
-					if( that.options.data instanceof common.ui.data.Page ){
-						return that.options.data.pageId ;
-					}
-				}
-				return 0;
 			},
 			_createDialog : function() {
 				var that = this;
@@ -2019,7 +2032,7 @@
 					that._changeState(my_insert_btn, false);					
 					switch (tab_pane_id) {
 						case "#" + that.options.guid[0]:					
-							if(that._objectId() > 0){							
+							if(that.objectId() > 0){							
 								// list view 
 								if (!my_list_view.data('kendoListView')) {
 									my_list_view.kendoListView({
@@ -2033,14 +2046,14 @@
 												parameterMap : function(options, operation) {
 													if (operation != "read" && options) {
 														return {
-															pageId : options.pageId || that._objectId()
+															
 														};
 													} else {
 														return {
 															startIndex : options.skip,
 															pageSize : options.pageSize,
-															objectType : 31,
-															objectId : options.pageId || that._objectId()
+															objectType : that.objectType(),
+															objectId : that.objectId()
 														}
 													}
 												}
@@ -2092,13 +2105,13 @@
 							}							
 							break;
 						case "#" + that.options.guid[1]:
-							createImagePanel(tab_pane, 2, 0 , that._changeState, my_insert_btn, that.options );
+							createImagePanel(tab_pane, USER_OBJECT_TYPE, 0 , that._changeState, my_insert_btn, that.options );
 							break;
 						case "#" + that.options.guid[2]:
-							createImagePanel(tab_pane, 30, 0 , that._changeState, my_insert_btn, that.options);
+							createImagePanel(tab_pane, WEBSITE_OPBJECT_TYPE, 0 , that._changeState, my_insert_btn, that.options);
 							break;
 						case "#"+ that.options.guid[3]:
-							createImagePanel(tab_pane, 1, 0 , that._changeState, my_insert_btn, that.options);
+							createImagePanel(tab_pane, COMPANY_OBJECT_TYPE, 0 , that._changeState, my_insert_btn, that.options);
 							break;
 						case "#" + that.options.guid[4]:
 							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
