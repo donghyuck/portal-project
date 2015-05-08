@@ -165,7 +165,15 @@
 						break;	
 						case 'delete':
 						alert( action );							
-						break;																		
+						break;	
+						case 'share':
+						alert( action );
+													
+						break;	
+						case 'publish':
+						alert( action );							
+						
+						break;																														
 					}	
 					return false;
 				});
@@ -173,6 +181,8 @@
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
 					common.ui.listview(renderTo).dataSource.read();	
 				});					
+				
+				// event for new page
 				$("button[data-action=create]").click(function(e){
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());					
@@ -841,12 +851,12 @@
 					<div class="btn-group">				
 						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
 						#if( pageState === 'PUBLISHED' ){#
-						<button class="btn btn-info btn-flat btn-outline" data-action="share" data-object-id="#=pageId#"> 공유</button>
+						<button class="btn btn-info btn-flat btn-outline" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>
 						#}else{#
-						<button class="btn btn-info btn-flat btn-outline" data-action="publish" data-object-id="#=pageId#"> 게시</button>
+						<button class="btn btn-info btn-flat btn-outline" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
 						#}#
 					</div>
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#">삭제</button>
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>
 				</div>			
 		</div>
 	</div>
