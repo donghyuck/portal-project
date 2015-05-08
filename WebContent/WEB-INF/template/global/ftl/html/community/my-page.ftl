@@ -409,13 +409,12 @@
 				});		
 				var bodyEditor =  $("#my-page-editor" );
 				createEditor( "my-page" , bodyEditor, { 
-					data : observable.page,
 					modal : false , 
 					appendTo: $("#my-page-editor-code-panel"), 
 					tab: $("#my-page-editor-tabs"), 
 					pageSize : 15,
-					useWrapMode : observable.useWrapMode } 
-				);	
+					useWrapMode : observable.useWrapMode 
+				});	
 			}			
 			
 			var dialogFx = common.ui.dialog( renderTo );	
