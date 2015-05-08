@@ -891,7 +891,7 @@
 	<!--<div class="grid-boxes-in col-md-4 col-sm-6 col-xs-12">-->
 	<div class="grid-boxes-in">
 		#if( bodyContent.imageCount > 0 ){#
-		<img class="img-responsive" src="#=bodyContent.firstImageSrc#" alt="">
+		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
 		<div class="grid-boxes-caption">
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
@@ -917,10 +917,10 @@
 							#}#						
 						#}#
 					</div>				
-					#if( pageState !=  'DELETED' ){#	
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
-					#}else{#
+					#if( pageState ===  'DELETED' ){#						
 					<button class="btn btn-default btn-flat btn-outline rounded" data-action="restore" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">임시저장 이동</button>		
+					#}else{#
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
 					#}#			
 				</div>			
 		</div>
