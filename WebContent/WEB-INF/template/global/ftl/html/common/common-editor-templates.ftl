@@ -96,6 +96,10 @@
 			border-width: 0px;
 			background : transparent;
 		}
+		.image-broswer .k-dropzone {
+		  border-radius: 5px !important;
+		  background-color: #eee;		
+		}
 	</style>				
 	<div class='modal editor-popup image-broswer fade'>
 		<div class='modal-dialog modal-lg'>
