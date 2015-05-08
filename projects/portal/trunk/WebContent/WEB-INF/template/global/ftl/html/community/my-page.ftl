@@ -172,7 +172,7 @@
 						case 'publish':
 						publishPage( item, $this );		
 						break;				
-						case : 'restore':
+						case 'restore':
 						restorePage(item, $this);
 						break;																										
 					}	
