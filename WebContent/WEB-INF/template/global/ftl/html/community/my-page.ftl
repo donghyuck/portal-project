@@ -538,7 +538,7 @@
 								</section>							
 							</div>
 							<div class="col col-6 text-right">
-								<button type="button" class="btn btn-danger" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+								<button type="button" class="btn btn-danger btn-lg btn-outline btn-flat" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 							</div>
 						</div>	
 					</fieldset>
