@@ -2045,9 +2045,9 @@
 						case "#" + that.options.guid[0]:					
 							if( that.objectId() > 0 && that.objectType() > 0){			
 								// list view 
-								var _listview ;
+							
 								if (!my_list_view.data('kendoListView')) {
-									_listview = my_list_view.kendoListView({
+									my_list_view.kendoListView({
 										dataSource : {
 											type : 'json',
 											transport : {
@@ -2110,10 +2110,9 @@
 										buttonCount : 5,
 										dataSource : my_list_view.data('kendoListView').dataSource
 									});
-								}else{
-									_listview = my_list_view.data('kendoListView');
 								}
-								_listview.dataSource.read();	
+								
+								my_list_view.data('kendoListView').dataSource.read();	
 								
 								var my_file_upload = tab_pane.find("input[type=file]");		
 								
@@ -2129,7 +2128,7 @@
 											};
 										},
 										success : function(e) {	
-											_listview.dataSource.read();						
+											my_list_view.data('kendoListView').dataSource.read();	
 										}		
 									});		
 								}								
