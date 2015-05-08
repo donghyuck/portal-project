@@ -171,7 +171,10 @@
 						break;	
 						case 'publish':
 						publishPage( item, $this );		
-						break;																														
+						break;				
+						case : 'restore':
+						restorePage(item, $this);
+						break;																										
 					}	
 					return false;
 				});
@@ -193,6 +196,24 @@
 			} 			
 		}
 
+		function restorePage(page, target ){
+			if( page.pageState === PAGE_STATES.DELETED ){
+				if( common.ui.defined( target )){	
+					target.button('loading');	
+				}
+				page.pageState = PAGE_STATES.INCOMPLETE;
+				updatePageState( page , function(){
+					if( common.ui.defined( target )){	
+						target.button('reset');	
+					}
+					common.ui.listview( $("#my-page-listview") ).dataSource.read();									
+				});		
+			}else{
+				alert("삭제된 페이지가 아닙니다.");	
+			}
+			return false;					
+		}  
+		
 		function deletePage(page, target ){
 			if( page.pageState != PAGE_STATES.DELETED ){
 				if( common.ui.defined( target )){	
