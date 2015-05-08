@@ -144,8 +144,7 @@ function createCodeEditor( renderToString, editor, options ) {
 	}	
 }
 		
-function createEditorImageBroswer(renderToString, editor , options){				
-	
+function createEditorImageBroswer(renderToString, editor , options){	
 	var pageSize = options.pageSize || 13;	
 	if( $("#"+ renderToString).length == 0 ){
 		$('body').append('<div id="'+ renderToString +'"></div>');
@@ -154,6 +153,7 @@ function createEditorImageBroswer(renderToString, editor , options){
 	if(!renderTo.data("kendoExtImageBrowser")){
 		var imageBrowser = renderTo.extImageBrowser({
 			pageSize : pageSize,
+			data : options.data || {}, 
 			template : $("#image-broswer-template").html(),
 			apply : function(e){						
 				editor.data("kendoEditor").exec("inserthtml", { value : e.html } );
