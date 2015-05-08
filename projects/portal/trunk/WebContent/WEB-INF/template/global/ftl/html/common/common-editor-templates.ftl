@@ -130,12 +130,9 @@
 											<div class="panel-body image-selected"></div>	
 											<div class="panel-body padding-sm" style="border-bottom: 1px solid \\#e5e5e5;">
 												<p class="text-muted">
-													<small><i class="fa fa-info"></i> 업로드 버튼을 클릭하여 여러개의 파일을 한번에 업로드할 수 있습니다.</small>		
+													<small><i class="fa fa-info"></i> 아래의 사진 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small>		
 												</p>
-												<button type="button" class="btn btn-info btn-lg pull-right btn-control-group" data-toggle="button" data-action="upload"><i class="fa fa-upload"></i> &nbsp; 이미지 업로드</button>	
-												
-												<input name="uploadPhotos" id="#=guid[0]#-upload" type="file" />		
-																							
+												<input name="uploadPhotos" id="#=guid[0]#-upload" type="file" />																									
 											</div>											
 											<div class="panel-body scrollable" style="max-height:450px; padding:5px;">
 												<div class="image-listview" style="padding:0px; border: 0px; min-height: 360px;"></div>
