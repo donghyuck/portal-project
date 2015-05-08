@@ -43,8 +43,7 @@ function preparePage(options){
 	}
 }
 
-function setupPersonalizedSection(){
-	
+function setupPersonalizedSection(){	
 	$("section.personalized-section").each(function(index){
 		var $section = $( this );		
 		var section_heading = $section.children(".personalized-section-heading");
@@ -66,8 +65,7 @@ function setupPersonalizedSection(){
 				});				
 			}				
 		});
-	});
-	
+	});	
 }
 
 function getNextPersonalizedColumn (element){
@@ -92,6 +90,27 @@ function getNextPersonalizedColumn (element){
 
 function getCurrentUser () {
 	return common.ui.accounts().token ;
+}
+
+var PAGE_STATES = {
+	INCOMPLETE : "INCOMPLETE",
+	APPROVAL : "APPROVAL",
+	PUBLISHED : "PUBLISHED",
+	REJECTED : "REJECTED",
+	ARCHIVED : "ARCHIVED",
+	DELETED : "DELETED"	
+}
+
+function updatePageState(page, callback ){	
+	common.ui.ajax( '/data/pages/update_state.json?output=json', {
+		data : kendo.stringify(page) ,
+		contentType : "application/json",
+		complete : function(e){
+			if( common.ui.defined( callback )){	
+				callback();
+			}									
+		}							
+	});		
 }
 
 
