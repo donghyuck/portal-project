@@ -840,6 +840,11 @@
 				<div class="navbar-btn">
 					<div class="btn-group">				
 						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
+						#if( pageState === 'PUBLISHED' ){#
+						<button class="btn btn-info btn-flat btn-outline" data-action="share" data-object-id="#=pageId#"> 공유</button>
+						#}else{#
+						<button class="btn btn-info btn-flat btn-outline" data-action="publish" data-object-id="#=pageId#"> 게시</button>
+						#}#
 					</div>
 					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#">삭제</button>
 				</div>			
