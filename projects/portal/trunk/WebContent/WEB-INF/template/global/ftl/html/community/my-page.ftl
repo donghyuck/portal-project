@@ -631,6 +631,7 @@
 										<header>
 											<span data-bind="visible: editable">&nbsp;</span>
 											<span data-bind="invisible: editable"><span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)</span>
+											<span class="btn-flat settings2" data-dialog-options></span>
 											<span class="close" data-dialog-close></span>						
 										</header>										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
