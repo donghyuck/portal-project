@@ -1260,7 +1260,7 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 .dialog .btn-flat.settings2 {
-	background-position: -235px -550px
+	background-position: -235px -550px;
 	width: 40px;
 	height: 40px;		
 }
