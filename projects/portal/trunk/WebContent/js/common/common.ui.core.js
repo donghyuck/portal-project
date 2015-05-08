@@ -1993,15 +1993,6 @@
 				var that = this;
 				return that.element.children('.modal');
 			},
-			_objectType : function(){
-				var that = this;
-				if( typeof that.options.data === 'object' ){	
-					if( that.options.data instanceof common.ui.data.Page ){
-						return 31 ;
-					}
-				}
-				return 0;
-			},
 			_objectId : function(){
 				var that = this;
 				if( typeof that.options.data === 'object' ){	
@@ -2014,11 +2005,6 @@
 			_createDialog : function() {
 				var that = this;
 				var template = that._dialogTemplate();			
-				that.options.objectType = that._objectType();
-				that.options.objectId = that._objectId();
-				
-				alert( kendo.stringify(that.options) );
-				
 				that.element.html(template( that.options ));
 				that.element.children('.modal').css('z-index', '2000');				
 				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
