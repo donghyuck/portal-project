@@ -2071,23 +2071,24 @@
 											serverPaging : true
 										},
 										selectable : "single",
-										change : function(e) {
-											tab_pane.find(	'.panel-body.custom-selected-image').remove();
+										change : function(e) {											
 											var data = this.dataSource.view();
 											var current_index = this.select().index();
 											if (current_index >= 0) {
 												var item = data[current_index];
 												var imageId = item.imageId;
 												if (imageId > 0) {
+													my_selected.html(templates.selected(item));
 													that._changeState(my_insert_btn, true);
-													tab_pane.find('.panel').prepend(templates.selected(item));													
+													//tab_pane.find('.panel').prepend(templates.selected(item));													
 												}
 											}
 										},
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											tab_pane.find('.panel-body.custom-selected-image').html("");
+											//tab_pane.find('.panel-body.custom-selected-image').html("");
+											my_selected.html("");
 											that._changeState(my_insert_btn, false);
 										}
 									});
