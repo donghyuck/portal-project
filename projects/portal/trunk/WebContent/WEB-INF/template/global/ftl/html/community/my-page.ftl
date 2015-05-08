@@ -199,6 +199,7 @@
 				if( common.ui.defined( target )){	
 					target.button('loading');	
 				}
+				page.pageState = "PUBLISHED";
 				common.ui.ajax(
 					'<@spring.url "/data/pages/update_state.json?output=json"/>',
 					{
