@@ -2016,8 +2016,7 @@
 			_getImageLink : function(image, callback) {
 				ajax("/data/images/link.json?output=json", {
 					data : { imageId : image.imageId },	
-					success : function(data) {
-						
+					success : function(data) {						
 						callback(data);
 					}					
 				});
@@ -2044,8 +2043,6 @@
 					switch (tab_pane_id) {
 						case "#" + that.options.guid[0]:					
 							if( that.objectId() > 0 && that.objectType() > 0){			
-								// list view 
-							
 								if (!my_list_view.data('kendoListView')) {
 									my_list_view.kendoListView({
 										dataSource : {
@@ -2056,17 +2053,11 @@
 													type : 'POST'
 												},
 												parameterMap : function(options, operation) {
-													if (operation != "read" && options) {
-														return {
-															
-														};
-													} else {
-														return {
-															startIndex : options.skip,
-															pageSize : options.pageSize,
-															objectType : that.objectType(),
-															objectId : that.objectId()
-														}
+													return {
+														startIndex : options.skip,
+														pageSize : options.pageSize,
+														objectType : that.objectType(),
+														objectId : that.objectId()
 													}
 												}
 											},
@@ -2096,7 +2087,7 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											tab_pane.find('.panel-body.custom-selected-image').remove();
+											tab_pane.find('.panel-body.custom-selected-image').html("");
 											that._changeState(my_insert_btn, false);
 										}
 									});
@@ -2132,8 +2123,7 @@
 											my_list_view.data('kendoListView').dataSource.read();	
 										}		
 									});		
-								}								
-								
+								}	
 							}					
 							break;
 						case "#" + that.options.guid[1]:
