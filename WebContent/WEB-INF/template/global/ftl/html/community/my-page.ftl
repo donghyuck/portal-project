@@ -646,11 +646,11 @@
 			                    </article>
 								<div class="sky-form" data-bind="visible:editable">
 									<fieldset class="bg-gray padding-sm">
-											<section>
-												<label for="title" class="input">
-													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-												</label>
-											</section>										
+										<section>
+											<label for="title" class="input">
+												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+											</label>
+										</section>										
 									</fieldset>								
 								</div>
 			                </div>
