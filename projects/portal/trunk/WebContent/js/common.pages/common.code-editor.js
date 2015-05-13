@@ -16,8 +16,7 @@ function createEditor( renderToString, bodyEditor, options ){
 			'insertUnorderedList', 
 			'insertOrderedList',
 			"formatting",
-            "cleanFormatting",
-            
+			"cleanFormatting",
 			{	
 				name: "createLink",
 				exec: function(e){
