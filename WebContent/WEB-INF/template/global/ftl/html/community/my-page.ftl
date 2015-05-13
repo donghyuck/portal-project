@@ -304,8 +304,6 @@
 						btn = $(e.target);						
 						btn.button('loading');						
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();						
-						
-						
 						if( $this.page.title.length == 0 ){
 							if(!$("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").addClass("state-error");							
@@ -329,7 +327,11 @@
 								}
 								if( $this.page.summary.length === 0 ){
 									$this.page.summary = $this.page.summary ;
-								}								
+								}	
+								
+								if( $this.page.bodyContent.bodyText.length === 0 ){
+									$this.page.bodyContent.bodyText = "  ";
+								}							
 							} 	
 						}						
 						
