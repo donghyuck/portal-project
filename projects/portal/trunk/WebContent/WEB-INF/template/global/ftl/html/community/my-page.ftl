@@ -650,6 +650,9 @@
 											<label for="title" class="input">
 												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 											</label>
+											<div class="text-right">
+												<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button"><i class="fa fa-angle-down"></i> 고급옵션</button>
+											</div>											
 										</section>										
 									</fieldset>	
 									<fieldset class="bg-gray padding-sm">
