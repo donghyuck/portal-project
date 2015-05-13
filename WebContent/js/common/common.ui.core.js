@@ -1918,7 +1918,7 @@
 					},
 					serverPaging : true					
 				},
-				selectable : "single",
+				selectable : "multiple",
 				change : function(e) {
 					var data = this.dataSource.view();
 					var current_index = this.select().index();
@@ -2083,7 +2083,7 @@
 											},
 											serverPaging : true
 										},
-										selectable : "single",
+										selectable : "multiple",
 										change : function(e) {											
 											var data = this.dataSource.view();
 											var current_index = this.select().index();
@@ -2092,8 +2092,7 @@
 												var imageId = item.imageId;
 												if (imageId > 0) {
 													my_selected.html(templates.selected(item));
-													that._changeState(my_insert_btn, true);
-													//tab_pane.find('.panel').prepend(templates.selected(item));													
+													that._changeState(my_insert_btn, true);											
 												}
 											}
 										},
