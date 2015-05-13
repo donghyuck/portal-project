@@ -652,8 +652,8 @@
 											<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
 										</div>											
 									</fieldset>	
-									<section class="no-margin-b bg-gray collapse" id="my-page-options"> 
-									<fieldset>
+									<section class="no-margin-b collapse" id="my-page-options"> 
+									<fieldset class="bg-gray">
 											<div class="row">
 												<div class="col-md-6">
 													<section>
