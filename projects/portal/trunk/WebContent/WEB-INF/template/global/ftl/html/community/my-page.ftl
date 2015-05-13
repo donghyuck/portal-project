@@ -650,12 +650,18 @@
 										</label>
 										<div class="text-right">
 											<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
+											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 										</div>											
 									</fieldset>	
 									<section class="no-margin-b collapse" id="my-page-options"> 
 									<fieldset>
 											<div class="row">
 												<div class="col-md-6">
+													<section>
+															<label for="summary" class="textarea">
+																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+															</label>
+													</section>												
 													<section>
 														<label class="input">
 																<i class="icon-prepend fa fa-file-text-o"></i>
@@ -668,11 +674,6 @@
 															<input type="text" name="template" placeholder="템플릿">
 														</label>
 													</section>														
-														<section>
-															<label for="summary" class="textarea">
-																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
-															</label>
-														</section>
 													</div>
 												<div class="col-md-6">
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
@@ -762,8 +763,7 @@
 												</div>		
 										</fieldset>	
 										<footer class="text-right">
-											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 
-											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>					
+											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
 										</footer>															
 								</div>
 			                </div>
