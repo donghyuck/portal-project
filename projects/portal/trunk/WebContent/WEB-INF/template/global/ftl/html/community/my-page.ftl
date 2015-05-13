@@ -638,6 +638,9 @@
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
+								<div class="ibox-content ibox-heading">
+                                    <small>작성자 정보</small>
+                                </div>
 			                    <article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="ibox-content"></article>
 			                </div>
                 
