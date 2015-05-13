@@ -651,26 +651,8 @@
 												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 											</label>
 										</section>										
-									</fieldset>								
-								</div>
-			                </div>
-                
-                			
-			
-									<div class="sky-form bg-white rounded">
-										<header>
-											<span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)
-											<span class="btn-flat settings2" data-dialog-options data-bind="visible:editable"></span>
-												
-										</header>										
-										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
-										<div data-bind="visible:editable">
-										<fieldset class="bg-gray padding-sm">										
-											<section>
-												<label for="title" class="input">
-													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-												</label>
-											</section>	
+									</fieldset>	
+									<fieldset class="bg-gray padding-sm">
 											<div class="row">
 												<div class="col-md-6">
 													<section>
@@ -756,6 +738,27 @@
 														</div><!-- ./acc-v1 -->
 												</div><!-- /.col-6-->				
 											</div><!-- /.row-->										
+									</fieldset>										
+								</div>
+			                </div>
+                
+                			
+			
+									<div class="sky-form bg-white rounded">
+										<header>
+											<span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)
+											<span class="btn-flat settings2" data-dialog-options data-bind="visible:editable"></span>
+												
+										</header>										
+										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
+										<div data-bind="visible:editable">
+										<fieldset class="bg-gray padding-sm">										
+											<section>
+												<label for="title" class="input">
+													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+												</label>
+											</section>	
+									
 											
 										</fieldset>
 										<fieldset>			
