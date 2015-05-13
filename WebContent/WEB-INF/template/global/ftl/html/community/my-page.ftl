@@ -644,7 +644,7 @@
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
 			                    </article>
-								<div class="sky-form" data-bind="visible:editable">
+								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
 									<fieldset class="bg-gray padding-sm">
 										<section>
 											<label for="title" class="input">
