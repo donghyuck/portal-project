@@ -737,7 +737,8 @@
 														</div><!-- ./acc-v1 -->
 												</div><!-- /.col-6-->				
 											</div><!-- /.row-->										
-									</fieldset>		
+									</fieldset>										
+									</section>		
 									<fieldset>			
 											<div class="row">
 												<div class="col-md-9"></div>
@@ -759,9 +760,7 @@
 														</div>
 													</div>
 												</div>		
-										</fieldset>										
-									</section>		
-					
+										</fieldset>						
 								</div>
 			                </div>
                 
