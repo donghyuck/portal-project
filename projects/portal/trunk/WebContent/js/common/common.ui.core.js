@@ -1983,6 +1983,9 @@
 				}else{
 					that.element.find('.modal-body ul.nav a:first').hide();
 				}				
+				
+				that.element.find(".image-selected").html("");
+				
 				that.element.find(".modal-body ul.nav a").filter(function(){ 
 					if( that.objectId() > 0 ){
 						refreshListViewDataSource($("#"+ that.options.guid[0]));
