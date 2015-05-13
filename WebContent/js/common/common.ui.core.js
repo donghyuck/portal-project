@@ -1925,7 +1925,7 @@
 					if (current_index >= 0) {
 						var item = data[current_index];
 						var imageId = item.imageId;						
-						my_selected.html(templates.selected(item));						
+						my_selected.append(templates.selected(item));						
 						if(isFunction(changeState))
 							changeState(changeStateEl, true);
 					}
@@ -2091,7 +2091,7 @@
 												var item = data[current_index];
 												var imageId = item.imageId;
 												if (imageId > 0) {
-													my_selected.html(templates.selected(item));
+													my_selected.append(templates.selected(item));
 													that._changeState(my_insert_btn, true);											
 												}
 											}
