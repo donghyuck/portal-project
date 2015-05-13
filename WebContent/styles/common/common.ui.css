@@ -1588,4 +1588,9 @@ span.back {
 	display: block;
 	opacity: 1;	
 	cursor: pointer;
-} 
+}
+
+
+.full-height{
+	height: 100%;	
+}
