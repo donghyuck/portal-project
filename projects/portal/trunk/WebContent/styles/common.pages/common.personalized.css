@@ -2181,8 +2181,20 @@ padding: 5px;
   opacity: .5;
   z-index: 1047;
 }
+
 .dialog__content .close:hover{
   opacity: 1;	
+}
+
+.dialog__content  .ibox-title  {
+  display: block;
+  font-size: 20px;
+  background: #fff;
+  font-weight: 400;
+  padding: 8px 30px;	
+}
+.dialog__content  .ibox-title .close {
+	top: 2px;	
 }
 
 .dialog .ace_editor {
