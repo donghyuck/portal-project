@@ -652,10 +652,11 @@
 											</label>
 											<div class="text-right">
 												<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button"><i class="fa fa-angle-down"></i> 고급옵션</button>
+												<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
 											</div>											
 										</section>										
 									</fieldset>	
-									<fieldset class="bg-gray padding-sm">
+									<fieldset class="collapse bg-gray padding-sm" id="my-page-options" >
 											<div class="row">
 												<div class="col-md-6">
 													<section>
