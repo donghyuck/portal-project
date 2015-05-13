@@ -646,15 +646,12 @@
 			                    </article>
 								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
 									<fieldset class="bg-gray padding-sm">
-										<section>
-											<label for="title" class="input">
-												<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-											</label>
-											<div class="text-right">
-												<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button"><i class="fa fa-angle-down"></i> 고급옵션</button>
-												<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
-											</div>											
-										</section>										
+										<label for="title" class="input">
+											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+										</label>
+										<div class="text-right">
+											<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
+										</div>											
 									</fieldset>	
 									<fieldset class="collapse bg-gray padding-sm" id="my-page-options" >
 											<div class="row">
@@ -678,8 +675,6 @@
 														</section>
 													</div>
 												<div class="col-md-6">
-
-
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
