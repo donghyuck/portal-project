@@ -15,6 +15,9 @@ function createEditor( renderToString, bodyEditor, options ){
 			'italic', 
 			'insertUnorderedList', 
 			'insertOrderedList',
+			"formatting",
+            "cleanFormatting",
+            
 			{	
 				name: "createLink",
 				exec: function(e){
