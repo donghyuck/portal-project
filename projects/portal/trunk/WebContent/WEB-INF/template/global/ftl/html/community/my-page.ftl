@@ -638,9 +638,7 @@
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
-			                    <div class="ibox-content icons-box">
-			                    	<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
-			                    </div>
+			                    <article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="ibox-content"></article>
 			                </div>
                 
                 			
