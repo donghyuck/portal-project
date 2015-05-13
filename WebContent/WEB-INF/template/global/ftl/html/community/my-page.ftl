@@ -653,7 +653,7 @@
 										</div>											
 									</fieldset>	
 									<section class="collapse" id="my-page-options"> 
-									<fieldset class="bg-gray">
+									<fieldset class="no-margin-b">
 											<div class="row">
 												<div class="col-md-6">
 													<section>
@@ -738,7 +738,30 @@
 												</div><!-- /.col-6-->				
 											</div><!-- /.row-->										
 									</fieldset>		
-									</section>								
+									<fieldset>			
+											<div class="row">
+												<div class="col-md-9"></div>
+												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+											</div>												
+												<div class="tab-v1">
+													<div role="tabpanel">
+														<!-- Nav tabs -->													
+														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
+															<li role="presentation" class="m-l-sm active"><a href="#my-page-editor-panel" aria-controls="my-page-editor-panel" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+															<li role="presentation"><a href="#my-page-editor-code-panel" aria-controls="my-page-editor-code-panel" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+														</ul>												
+														<!-- Tab panes -->
+														<div class="tab-content no-padding">
+															<div role="tabpanel" class="tab-pane active" id="my-page-editor-panel">
+																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="my-page-editor-code-panel"></div>
+														</div>
+													</div>
+												</div>		
+										</fieldset>										
+									</section>		
+					
 								</div>
 			                </div>
                 
@@ -761,28 +784,7 @@
 									
 											
 										</fieldset>
-										<fieldset>			
-											<div class="row">
-												<div class="col-md-9"></div>
-												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
-											</div>												
-												<div class="tab-v1">
-													<div role="tabpanel">
-														<!-- Nav tabs -->													
-														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
-															<li role="presentation" class="m-l-sm active"><a href="#my-page-editor-panel" aria-controls="my-page-editor-panel" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
-															<li role="presentation"><a href="#my-page-editor-code-panel" aria-controls="my-page-editor-code-panel" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
-														</ul>												
-														<!-- Tab panes -->
-														<div class="tab-content no-padding">
-															<div role="tabpanel" class="tab-pane active" id="my-page-editor-panel">
-																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
-															</div>
-															<div role="tabpanel" class="tab-pane" id="my-page-editor-code-panel"></div>
-														</div>
-													</div>
-												</div>		
-										</fieldset>			
+		
 										<footer class="text-right">
 											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 
 											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>					
