@@ -652,7 +652,7 @@
 											<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
 										</div>											
 									</fieldset>	
-									<section class="no-margin-b bg-slivergray collapse" id="my-page-options"> 
+									<section class="no-margin-b bg-gray collapse" id="my-page-options"> 
 									<fieldset>
 											<div class="row">
 												<div class="col-md-6">
@@ -739,7 +739,7 @@
 											</div><!-- /.row-->										
 									</fieldset>										
 									</section>		
-									<fieldset>			
+									<fieldset class="bg-white">			
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
