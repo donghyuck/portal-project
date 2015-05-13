@@ -638,13 +638,22 @@
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
-
 			                    <article data-bind="{invisible:editable}">
 									<div class="ibox-content ibox-heading">
                                     	<small>작성자 정보</small>
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
 			                    </article>
+								<div class="sky-form" data-bind="visible:editable">
+									<header>
+											<section>
+												<label for="title" class="input">
+													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+												</label>
+											</section>										
+									</header>
+								
+								</div>
 			                </div>
                 
                 			
