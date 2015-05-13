@@ -1951,6 +1951,14 @@
 		}			
 	}
 	
+	function refreshListViewDataSource ( el ){
+		if( el.find('.k-listview').length > 0 ){				
+			if( common.ui.exists( el.find('.k-listview') ) ){
+				common.ui.listview( el.find('.k-listview') ).dataSource.read();
+			}
+		}
+	}
+	
 		var ExtImageBrowser = Widget.extend({
 			init : function(element, options) {
 				var that = this;
@@ -1977,9 +1985,11 @@
 				}				
 				that.element.find(".modal-body ul.nav a").filter(function(){ 
 					if( that.objectId() > 0 ){
-						return $(this).attr("href") === ("#"+ that.options.guid[0]) ;						
+						refreshListViewDataSource($("#"+ that.options.guid[0]));
+						return $(this).attr("href") === ("#"+ that.options.guid[0]) ;	
 					}else{
-						return $(this).attr("href") === ("#"+ that.options.guid[1]) ;						
+						refreshListViewDataSource($("#"+ that.options.guid[1]));
+						return $(this).attr("href") === ("#"+ that.options.guid[1]) ;	
 					}
 				}).tab('show');
 				that._modal().modal('show');
