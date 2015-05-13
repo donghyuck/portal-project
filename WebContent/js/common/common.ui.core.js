@@ -1952,13 +1952,11 @@
 	}
 	
 	function refreshListViewDataSource ( el ){
-		/*
 		if( el.find('.k-listview').length > 0 ){				
 			if( common.ui.exists( el.find('.k-listview') ) ){
 				common.ui.listview( el.find('.k-listview') ).dataSource.read();
 			}
 		}
-		*/
 	}
 	
 		var ExtImageBrowser = Widget.extend({
