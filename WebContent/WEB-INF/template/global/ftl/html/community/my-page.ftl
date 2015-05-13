@@ -645,14 +645,13 @@
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
 			                    </article>
 								<div class="sky-form" data-bind="visible:editable">
-									<header>
+									<fieldset class="bg-gray padding-sm">
 											<section>
 												<label for="title" class="input">
 													<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 												</label>
 											</section>										
-									</header>
-								
+									</fieldset>								
 								</div>
 			                </div>
                 
