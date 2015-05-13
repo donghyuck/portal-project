@@ -635,24 +635,8 @@
 						
 							<div class="ibox float-e-margins">
 			                    <div class="ibox-title">
-			                        <h3><span data-bind="{text: page.title, invisible:editable }"></span></h3>
-			                        <div class="ibox-tools">
-			                            <a class="collapse-link">
-			                                <i class="fa fa-chevron-up"></i>
-			                            </a>
-			                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-			                                <i class="fa fa-wrench"></i>
-			                            </a>
-			                            <ul class="dropdown-menu dropdown-user">
-			                                <li><a href="#">Config option 1</a>
-			                                </li>
-			                                <li><a href="#">Config option 2</a>
-			                                </li>
-			                            </ul>
-			                            <a class="close-link">
-			                                <i class="fa fa-times"></i>
-			                            </a>
-			                        </div>
+			                        <span data-bind="{text: page.title, invisible:editable }"></span>
+			                        <span class="close" data-dialog-close></span>					
 			                    </div>
 			                    <div class="ibox-content icons-box">
 			                    	<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
@@ -665,7 +649,7 @@
 										<header>
 											<span data-bind="{text: page.title}"></span>( <span data-bind="text: page.name"></span>)
 											<span class="btn-flat settings2" data-dialog-options data-bind="visible:editable"></span>
-											<span class="close" data-dialog-close></span>						
+												
 										</header>										
 										<article data-bind="{html:page.bodyContent.bodyText, invisible:editable}" class="p-md bg-white text-md"></article>
 										<div data-bind="visible:editable">
