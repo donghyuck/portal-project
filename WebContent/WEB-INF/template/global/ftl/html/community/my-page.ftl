@@ -322,11 +322,19 @@
 						else{
 							if($("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").removeClass("state-error");
+								
+							if( $this.page.pageId === 0 ) {
+								if( $this.page.name.length === 0 ){
+									$this.page.name = $this.page.title ;
+								}
+								if( $this.page.summary.length === 0 ){
+									$this.page.summary = $this.page.summary ;
+								}								
+							} 	
 						}						
 						
-						alert( kendo.stringify( $this.page )  );
 						
-						if($this.page.name.length == 0 ){
+						if($this.page.name.length === 0 ){
 							if(!$("label[for=name]").hasClass("state-error"))
 								$("label[for=name]").addClass("state-error");
 							common.ui.notification({
