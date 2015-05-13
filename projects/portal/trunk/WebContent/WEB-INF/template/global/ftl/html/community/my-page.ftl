@@ -760,7 +760,11 @@
 														</div>
 													</div>
 												</div>		
-										</fieldset>						
+										</fieldset>	
+										<footer class="text-right">
+											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 
+											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>					
+										</footer>															
 								</div>
 			                </div>
                 
@@ -784,10 +788,7 @@
 											
 										</fieldset>
 		
-										<footer class="text-right">
-											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 
-											<button class="btn-u btn-u-default btn-u-small action-refresh" data-bind="click:refresh"> 새로고침 </button>					
-										</footer>
+
 										</div> 
 									</div>	
 						</div>
