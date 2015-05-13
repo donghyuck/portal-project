@@ -631,8 +631,7 @@
 			
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-12">
-						
+						<div class="col-sm-12">						
 							<div class="ibox float-e-margins">
 			                    <div class="ibox-title">
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>
@@ -653,7 +652,8 @@
 											<button class="btn-u btn-brd btn-brd-hover btn-u-blue" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
 										</div>											
 									</fieldset>	
-									<fieldset class="collapse bg-gray padding-sm" id="my-page-options" >
+									<section class="collapse" id="my-page-options"> 
+									<fieldset class="bg-gray">
 											<div class="row">
 												<div class="col-md-6">
 													<section>
@@ -737,7 +737,8 @@
 														</div><!-- ./acc-v1 -->
 												</div><!-- /.col-6-->				
 											</div><!-- /.row-->										
-									</fieldset>										
+									</fieldset>		
+									</section>								
 								</div>
 			                </div>
                 
