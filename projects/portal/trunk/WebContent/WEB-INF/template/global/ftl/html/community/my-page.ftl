@@ -779,7 +779,7 @@
 												</div>		
 										</fieldset>	
 										<footer class="text-right">
-											<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
+											<button type="button" class="btn btn-info btn-flat btn-lg " data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
 										</footer>															
 								</div>
 			                </div>
