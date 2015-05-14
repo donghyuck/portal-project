@@ -133,8 +133,8 @@
 									<div class="text-primary">
 										<h5 ><i class="fa fa-upload"></i> <strong>업로드</strong>&nbsp;<small> 삽입할 이미지를 선택하세요.</small></h5>
 										<div class="panel panel-default">		
-											<div class="panel-body image-selected"></div>	
-											<div class="panel-body padding-sm" style="border-bottom: 1px solid \\#e5e5e5;">
+											<div class="panel-body image-selected scrollable"></div>	
+											<div class="panel-body" style="border-bottom: 2px solid \\#e5e5e5;">
 												<h4 class="text-muted">
 													<i class="fa fa-info"></i> 아래의 파일 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.
 												</h4>
