@@ -773,36 +773,36 @@
 				height: 100%!important;
 			}
 			
-			.dialog .btn-flat {
+			.dialog .btn-flat-icon {
 				z-index: 1046;
 			}
 			
-			.dialog .btn-flat.mfp-arrow {
+			.dialog .btn-flat-icon.mfp-arrow {
 				background-color:transparent!important;
 			}
 			
-			.dialog .btn-flat.left.mfp-arrow {
+			.dialog .btn-flat-icon.left.mfp-arrow {
 				left:0px;
 				top:55%;
 			}
 
-			.dialog .btn-flat.right.mfp-arrow {
+			.dialog .btn-flat-icon.right.mfp-arrow {
 				top:55%;
 			}			
 			
-			.dialog .btn-flat.left2 {
+			.dialog .btn-flat-icon.left2 {
 				top:auto;
 				left:0px;	
 				bottom:0px;		
 			}
 			
-			.dialog .btn-flat.right2 {
+			.dialog .btn-flat-icon.right2 {
 				top:auto;
 				right:0px;	
 				bottom:0px;		
 			}
 
-			.dialog .btn-flat.pencil {
+			.dialog .btn-flat-icon.pencil {
 				top:60px;
 				right:0px;
 				background-color: transparent;				
@@ -838,7 +838,7 @@
 				top:0;
 			}
 			
-			.white-popup-block  .toolbar .btn-flat {
+			.white-popup-block  .toolbar .btn-flat-icon {
 				width : 50px;
 				height : 50px;
 				top:0;
@@ -846,7 +846,7 @@
 				background-color: transparent;
 			}
 			
-			.white-popup-block  .toolbar .btn-flat.paper-plane {
+			.white-popup-block  .toolbar .btn-flat-icon.paper-plane {
 				background-position: -231px -125px;
 			}
 			
@@ -1100,8 +1100,8 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">	
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat pencil" data-bind="click: edit"></span>	
-					<span class="btn-flat close" data-dialog-close></span>					
+					<span class="btn-flat-icon pencil" data-bind="click: edit"></span>	
+					<span class="btn-flat-icon close" data-dialog-close></span>					
 					<div class="mfp-content">
 						<div id="attachment-content-pdf" class="mfp-iframe-scaler no-padding" data-bind="visible:attachment.isPdf"></div>
 						<div class="mfp-figure" data-bind="visible:attachment.isImage">
@@ -1178,16 +1178,16 @@
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">							
 				<div class="mfp-container mfp-s-ready mfp-image-holder">
-					<span class="btn-flat pencil" data-bind="click: edit"></span>			
-					<span class="btn-flat left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
-					<span class="btn-flat right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
-					<span class="btn-flat close" data-dialog-close></span>					
+					<span class="btn-flat-icon pencil" data-bind="click: edit"></span>			
+					<span class="btn-flat-icon left2" data-bind="visible: hasPreviousPage, click: previousPage"></span>		
+					<span class="btn-flat-icon right2" data-bind="visible: hasNextPage, click: nextPage"></span>								
+					<span class="btn-flat-icon close" data-dialog-close></span>					
 					<div class="white-popup-block" style="display:none">							
 						<div class="container">
 							<div class="row">
 								<div class="tag-box tag-box-v3 tag-text-space margin-bottom-40 rounded" style="position:relative">							
 									<div class="toolbar">
-										<span class="btn-flat paper-plane"></span>
+										<span class="btn-flat-icon paper-plane"></span>
 										<span class="close" data-bind="click: close"></span>
 									</div>										
 								<div class="left-col">
@@ -1262,8 +1262,8 @@
 						</div>
 					</div>	
 					<div class="mfp-preloader" style="display: none;"></div>
-					<button title="Previous (Left arrow key)" type="button" class="btn-flat left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
-					<button title="Next (Right arrow key)" type="button" class="btn-flat right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>					
+					<button title="Previous (Left arrow key)" type="button" class="btn-flat-icon left mfp-arrow mfp-prevent-close" data-bind="visible: hasPrevious, click: previous"></button>
+					<button title="Next (Right arrow key)" type="button" class="btn-flat-icon right mfp-arrow  mfp-prevent-close" data-bind="visible: hasNext, click: next"></button>					
 				</div>
 			</div>
 		</div>
