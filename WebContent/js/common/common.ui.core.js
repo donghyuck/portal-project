@@ -2087,9 +2087,10 @@
 										},
 										selectable : "multiple",
 										change : function(e) {	
-											var data = this.dataSource.view();			
-											if( this.select().length > 0 ){											
-												$.each(this.select(), function( index, value ){
+											var data = this.dataSource.view();	
+											 var selectedCells = data.select();	    
+											if( selectedCells.length > 0 ){											
+												$.each(selectedCells, function( index, value ){
 													var idx = value.index();
 													var item = data[idx];
 													addImageTo(my_selected, item);
