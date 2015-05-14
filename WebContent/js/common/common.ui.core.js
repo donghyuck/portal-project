@@ -1963,7 +1963,11 @@
 		if( el.find( "[data-id=" + image.imageId + "]").length === 0 ){
 			el.append(templates.selected(image));	
 			el.find( "[data-id=" + image.imageId + "]").click( function(e){
-				$(this).parent().remove();
+				var $this = $(this);
+				$this.removeClass("slideInUp");
+				common.ui.animate_v2($this, "rollOut" , function(){
+					$this.parent().remove();
+				});				
 			});
 		}	
 	}
