@@ -29,7 +29,7 @@
 		}
 			
 		.image-broswer .image-selected{
-			border-bottom: 1px solid \\#e5e5e5;
+			border-bottom: 1px solid \\#007aff;
 			padding: 5px;
 			min-height:132px;
 		}	
