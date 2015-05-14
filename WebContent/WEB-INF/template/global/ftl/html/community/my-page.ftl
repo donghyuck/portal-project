@@ -300,12 +300,8 @@
 						 common.ui.dialog( renderTo ).close();
 						 return false;
 					},	
-					update : function(e){
+					validate : function (){
 						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');						
-						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
-						
 						if( $this.page.title.length == 0 ){
 							if(!$("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").addClass("state-error");							
@@ -328,9 +324,8 @@
 									$this.page.name = $this.page.title ;
 								}
 								if( $this.page.summary.length === 0 ){
-									$this.page.summary = $this.page.summary ;
-								}	
-								
+									$this.page.summary = $this.page.title ;
+								}									
 								if( $this.page.bodyContent.bodyText.length === 0 ){
 									$this.page.bodyContent.bodyText = "  ";
 								}							
@@ -369,8 +364,33 @@
 						else{
 							if($("label[for=summary]").hasClass("state-error"))
 								$("label[for=summary]").removeClass("state-error");
-						}
-						
+						}									
+					},
+					create : function(e){
+						btn = $(e.target);						
+						btn.button('loading');					
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();					
+						validate();
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									alert( common.ui.stringify( response ) );							
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
+					},
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');						
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
+						validate();						
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
