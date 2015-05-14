@@ -2091,8 +2091,7 @@
 											 var selectedCells = this.select();	    
 											if( selectedCells.length > 0 ){											
 												$.each(selectedCells, function( index, value ){
-													alert( value );
-													var idx = value.index();
+													var idx = $(value).index();
 													var item = data[idx];
 													addImageTo(my_selected, item);
 												});
