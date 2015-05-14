@@ -756,7 +756,7 @@
 											</div><!-- /.row-->										
 									</fieldset>										
 									</section>		
-									<fieldset class="bg-white">			
+									<fieldset class="bg-white" data-bind="visible:advencedSetting">			
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
@@ -779,7 +779,7 @@
 												</div>		
 										</fieldset>	
 										<footer class="text-right">
-											<button type="button" class="btn btn-info btn-flat btn-lg " data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
+											<button type="button" class="btn btn-info btn-flat btn-lg " data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
 										</footer>															
 								</div>
 			                </div>
