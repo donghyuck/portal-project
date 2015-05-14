@@ -378,7 +378,10 @@
 								data : kendo.stringify($this.page) ,
 								contentType : "application/json",
 								success : function(response){
-									alert( common.ui.stringify( response ) );							
+									if( response.pageId ){
+										$this.set( "editable" , true ) ;	
+										$this.setPage( new common.ui.data.Page(response) );
+									}						
 								},
 								complete : function(e){
 									btn.button('reset');
