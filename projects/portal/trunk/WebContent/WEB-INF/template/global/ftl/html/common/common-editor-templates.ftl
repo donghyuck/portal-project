@@ -97,9 +97,14 @@
 			border-width: 0px;
 			background : transparent;
 		}
+		
+		.image-broswer .k-upload {
+			border : 0;
+		}
 		.image-broswer .k-dropzone {
-		  border-radius: 5px !important;
-		  background-color: \\#eee;		
+			min-height: 60px;
+			border-top: solid 3px \\#6c9fd1;
+			background-color: \\#eee;		
 		}
 	</style>				
 	<div class='modal editor-popup image-broswer fade'>
@@ -130,9 +135,9 @@
 										<div class="panel panel-default">		
 											<div class="panel-body image-selected"></div>	
 											<div class="panel-body padding-sm" style="border-bottom: 1px solid \\#e5e5e5;">
-												<p class="text-muted">
-													<small><i class="fa fa-info"></i> 아래의 파일 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.</small>		
-												</p>
+												<h4 class="text-muted">
+													<i class="fa fa-info"></i> 아래의 파일 선택 버튼을 클릭하여 사진을 직접 선택하거나, 아래의 영역에 사진를 끌어서 놓기(Drag & Drop)를 하세요.
+												</h4>
 												<input name="uploadPhotos" id="#=guid[0]#-upload" type="file" />																									
 											</div>											
 											<div class="panel-body scrollable" style="max-height:450px; padding:5px;">
