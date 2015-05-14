@@ -956,6 +956,7 @@
 				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
 			</ul>                    
 			<p>#: summary #</p>
+			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="navbar-btn">
 					<div class="btn-group">				
 						#if( pageState !=  'DELETED' ){#
@@ -974,7 +975,8 @@
 					#}else{#
 					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
 					#}#			
-				</div>			
+				</div>	
+			#}#			
 		</div>
 	</div>
 	</script>
