@@ -1920,14 +1920,15 @@
 				},
 				selectable : "multiple",
 				change : function(e) {
-					var data = this.dataSource.view();
-					var current_index = this.select().index();
-					if (current_index >= 0) {
-						var item = data[current_index];
-						var imageId = item.imageId;						
-						my_selected.append(templates.selected(item));						
-						if(isFunction(changeState))
-							changeState(changeStateEl, true);
+					var data = this.dataSource.view();	
+					var selectedCells = this.select();	    
+					if( selectedCells.length > 0 ){											
+						$.each(selectedCells, function( index, value ){
+							var idx = $(value).index();
+							var item = data[idx];
+							addImageTo(my_selected, item);
+						});
+						that._changeState(my_insert_btn, true);					
 					}
 				},
 				navigatable : false,
@@ -1960,7 +1961,8 @@
 	}
 	
 	function addImageTo( el, image ){
-		el.append(templates.selected(image));	
+		if( el.find( "[data-id=" + image.imageId + "]").length === 0 )
+			el.append(templates.selected(image));	
 	}
 	
 		var ExtImageBrowser = Widget.extend({
@@ -2097,22 +2099,11 @@
 												});
 												that._changeState(my_insert_btn, true);					
 											}
-											/*
-											var current_index = this.select().index();
-											if (current_index >= 0) {
-												var item = data[current_index];
-												var imageId = item.imageId;
-												if (imageId > 0) {
-													my_selected.append(templates.selected(item));
-													that._changeState(my_insert_btn, true);											
-												}
-											}
-											*/
 										},
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											//my_selected.html("");
+											my_selected.html("");
 											that._changeState(my_insert_btn, false);
 										}
 									});
