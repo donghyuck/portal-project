@@ -1874,7 +1874,7 @@
 		JSON = 'json', 
 		templates = {
 			selected : template(
-				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated zoomIn" data-id="#=imageId#"><button type="button" class="btn-link"><i class="fa fa-minus-circle fa-3x"></i></button></div>'
+				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated zoomIn" data-id="#=imageId#"></div>'
 			),
 			image : template('<img src="#: url #" class="img-responsive"/>'),
 			linkUrl : template('/download/image/#= linkId #'),
