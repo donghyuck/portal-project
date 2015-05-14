@@ -142,9 +142,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){				
-					alert("1" + $("#my-page-listview").html() );	
 						masonry();
-						alert("2" +  $("#my-page-listview").html() );	
 					},
 					change: function(e){						
 						var selectedCells = this.select();
