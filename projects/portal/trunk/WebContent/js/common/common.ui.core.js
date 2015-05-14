@@ -1961,9 +1961,7 @@
 	
 	function addImageTo( el, image ){
 		if( el.find( "[data-id=" + image.imageId + "]").length === 0 ){
-			el.append(templates.selected(image)).click(function(){
-				$(this).remove();				
-			});				
+			el.append(templates.selected(image));	
 		}	
 	}
 	
