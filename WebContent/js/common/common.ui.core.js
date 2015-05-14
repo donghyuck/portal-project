@@ -1876,7 +1876,7 @@
 			selected : template(
 				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated slideInUp" data-id="#=imageId#"></div>'
 			),
-			image : template('<img src="#: url #" class="img-responsive"/>'),
+			image : template('<img src="#: url #" class="#= css #"/>'),
 			linkUrl : template('/download/image/#= linkId #'),
 			download : template('/download/image/#=imageId#/#=name#')
 		},
@@ -2219,15 +2219,28 @@
 						break;
 						default:			
 							var active_list_view =  active_pane.find(".image-listview");
+							var active_datasource = active_list_view.data('kendoListView').dataSource;		
 							var active_my_selected = active_pane.find(".image-selected");
-							$.each( active_my_selected.find("img"), function( index, value){
-								
-								var objectId = $(value).data("id");
-								alert(objectId);
+							$.each( active_my_selected.find("img"), function( index, value){		
+								var objectEl = $(value);
+								var objectId = objectEl.data("id");
+								var image = active_datasource.get(objectId);
+								that._getImageLink(image, function(data){
+									if(!defined(data.error)){
+										that.trigger(APPLY, { 
+											html : templates.image({ 
+												url: templates.linkUrl( data ),
+												thumbnail : objectEl.attr('src'),
+												css : "img-responsive" 
+											})
+										});										
+									}
+								})
 							} );							
-							var active_data = active_list_view.data('kendoListView').dataSource.view();			
 							
 							/*
+							 * 
+							var active_data = active_list_view.data('kendoListView').dataSource.view();			
 							$.each( active_list_view.data('kendoListView').select(), function(index, item){
 								var image = active_data[$(item).index()];
 								that._getImageLink(image, function(data){
