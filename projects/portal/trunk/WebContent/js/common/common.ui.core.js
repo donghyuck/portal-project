@@ -1933,7 +1933,7 @@
 				navigatable : false,
 				template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 				dataBound : function(e) {
-					my_selected.html('');
+//					/my_selected.html('');
 					if(isFunction(changeState))
 						changeState(changeStateEl, false);
 				}				
@@ -1982,10 +1982,8 @@
 					that.element.find('.modal-body ul.nav a:first').show();
 				}else{
 					that.element.find('.modal-body ul.nav a:first').hide();
-				}				
-				
-				that.element.find(".image-selected").html("");
-				
+				}	
+				that.element.find(".image-selected").html("");				
 				that.element.find(".modal-body ul.nav a").filter(function(){ 
 					if( that.objectId() > 0 ){
 						refreshListViewDataSource($("#"+ that.options.guid[0]));
@@ -2099,8 +2097,7 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											//tab_pane.find('.panel-body.custom-selected-image').html("");
-											my_selected.html("");
+											//my_selected.html("");
 											that._changeState(my_insert_btn, false);
 										}
 									});
