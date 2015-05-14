@@ -306,7 +306,8 @@
 						var $this = this, 
 						btn = $(e.target);						
 						btn.button('loading');						
-						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();						
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
+						
 						if( $this.page.title.length == 0 ){
 							if(!$("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").addClass("state-error");							
@@ -336,9 +337,7 @@
 									$this.page.bodyContent.bodyText = "  ";
 								}							
 							} 	
-						}						
-						
-						
+						}								
 						if($this.page.name.length === 0 ){
 							if(!$("label[for=name]").hasClass("state-error"))
 								$("label[for=name]").addClass("state-error");
@@ -652,6 +651,7 @@
 						<div class="col-sm-12">						
 							<div class="ibox float-e-margins">
 			                    <div class="ibox-title">
+			                    	<span class="text-danger" data-bind="visible:advencedSetting">작성할 페이지 제목을 입력하세요</span>
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
