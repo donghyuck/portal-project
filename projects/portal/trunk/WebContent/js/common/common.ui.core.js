@@ -1934,7 +1934,6 @@
 				navigatable : false,
 				template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 				dataBound : function(e) {
-//					/my_selected.html('');
 					if(isFunction(changeState))
 						changeState(changeStateEl, false);
 				}				
@@ -1961,8 +1960,11 @@
 	}
 	
 	function addImageTo( el, image ){
-		if( el.find( "[data-id=" + image.imageId + "]").length === 0 )
-			el.append(templates.selected(image));	
+		if( el.find( "[data-id=" + image.imageId + "]").length === 0 ){
+			el.append(templates.selected(image)).click(function(){
+				$(this).remove();				
+			});				
+		}	
 	}
 	
 		var ExtImageBrowser = Widget.extend({
