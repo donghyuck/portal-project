@@ -301,7 +301,7 @@
 						 return false;
 					},	
 					validate : function (){
-						var $this = this, 
+						var $this = this;
 						if( $this.page.title.length == 0 ){
 							if(!$("label[for=title]").hasClass("state-error"))
 								$("label[for=title]").addClass("state-error");							
