@@ -141,7 +141,6 @@
 												<input name="uploadPhotos" id="#=guid[0]#-upload" type="file" />																									
 											</div>											
 											<div class="panel-body scrollable" style="max-height:450px; padding:5px;">
-												<h4 class="text-muted">이미지를 클릭하면 선택됩니다.</h4>
 												<div class="image-listview" style="padding:0px; border: 0px; min-height: 360px;"></div>
 											</div>	
 											<div class="panel-footer" style="padding:0px;">
