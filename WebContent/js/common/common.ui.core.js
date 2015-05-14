@@ -2088,7 +2088,7 @@
 										selectable : "multiple",
 										change : function(e) {	
 											var data = this.dataSource.view();	
-											 var selectedCells = data.select();	    
+											 var selectedCells = this.select();	    
 											if( selectedCells.length > 0 ){											
 												$.each(selectedCells, function( index, value ){
 													var idx = value.index();
