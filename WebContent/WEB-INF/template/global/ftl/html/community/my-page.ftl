@@ -367,6 +367,7 @@
 						}									
 					},
 					create : function(e){
+						var $this = this, 
 						btn = $(e.target);						
 						btn.button('loading');					
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();					
