@@ -370,7 +370,7 @@
 						btn = $(e.target);						
 						btn.button('loading');					
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();					
-						validate();
+						$this.validate();
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
@@ -390,7 +390,7 @@
 						btn = $(e.target);						
 						btn.button('loading');						
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
-						validate();						
+						$this.validate();						
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
