@@ -33,20 +33,7 @@
 			padding: 5px;
 			min-height:132px;
 		}	
-		
-		.image-broswer .image-selected .img-wrapper:after {
-			top: 10px;
-			right: 15px;
-			content: "\\f00c";
-			font-size: 2em;
-			position: absolute;
-			font-weight: normal;
-			display: inline-block;
-			font-family: FontAwesome;
-			color: \\#fff;
-		}
-		
-						
+								
 		.image-broswer .image-selected img{
 			height:120px;
 			width:120px;
