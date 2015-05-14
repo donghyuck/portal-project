@@ -321,10 +321,10 @@
 								
 							if( $this.page.pageId === 0 ) {
 								if( $this.page.name.length === 0 ){
-									$this.page.name = $this.page.title ;
+									$this.page.set("name" , $this.page.title) ;
 								}
 								if( $this.page.summary.length === 0 ){
-									$this.page.summary = $this.page.title ;
+									$this.page.set("summary" , $this.page.title) ;
 								}									
 								if( $this.page.bodyContent.bodyText.length === 0 ){
 									$this.page.bodyContent.bodyText = "  ";
