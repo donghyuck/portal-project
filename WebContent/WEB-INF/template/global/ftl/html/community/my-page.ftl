@@ -649,7 +649,7 @@
 						<div class="col-sm-12">						
 							<div class="ibox float-e-margins">
 			                    <div class="ibox-title">
-			                    	<span class="text-danger" data-bind="visible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
+			                    	<span class="text-danger" data-bind="invisible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
@@ -666,7 +666,7 @@
 										</label>
 										<div class="text-right">
 											<button class="btn btn-default btn-flat btn-outline btn-lg rounded" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
-											<button type="button" class="btn btn-info btn-flat btn-outline btn-lg rounded" data-bind="{events:{click:update}, visible:editable}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+											<button type="button" class="btn btn-info btn-flat btn-outline btn-lg rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 										</div>											
 									</fieldset>	
 									<section class="no-margin-b collapse" id="my-page-options"> 
