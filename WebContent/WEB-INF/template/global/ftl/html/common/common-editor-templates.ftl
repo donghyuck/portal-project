@@ -42,7 +42,7 @@
 		.image-broswer .image-selected img{
 			height:120px;
 			width:120px;
-			border: 1px solid \\#46b8da;
+			border: 1px solid \\#ff3b30;
 			float: left;
 		}	
 					
