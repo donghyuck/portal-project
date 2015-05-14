@@ -86,7 +86,7 @@
 		
 			$(".grid-boxes").imagesLoaded( function(e){				
 				var renderTo = $(".grid-boxes");			
-				var gutter = 15;
+				var gutter = 30;
 				var min_width = 298;			
 				renderTo.masonry({
 					itemSelector : ".grid-boxes-in",
