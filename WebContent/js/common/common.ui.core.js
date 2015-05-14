@@ -1882,12 +1882,11 @@
 		},
 		handleAjaxError = common.ui.handleAjaxError;
 	
-	function createImagePanel(element, objectType, objectId, changeState, changeStateEl, that){
+	function createImagePanel(element, objectType, objectId, changeState, changeStateEl, options){
 		var my_selected = element.find(".image-selected");
 		var my_list_view =  element.find(".image-listview");
 		var my_list_pager =  element.find(".image-pager");
 		var my_page_size = options.pageSize || 13;
-		var options = that.options;
 		if( !common.ui.exists(my_list_view)){
 			var listview = my_list_view.kendoListView({
 				dataSource : {
@@ -1930,7 +1929,7 @@
 							var item = data[idx];
 							addImageTo(my_selected, item);
 						});
-						that._changeState(my_insert_btn, true);					
+						changeState(changeStateEl, true);		
 					}
 				},
 				navigatable : false,
@@ -2152,13 +2151,13 @@
 							}					
 							break;
 						case "#" + that.options.guid[1]:
-							createImagePanel(tab_pane, USER_OBJECT_TYPE, 0 , that._changeState, my_insert_btn, that );
+							createImagePanel(tab_pane, USER_OBJECT_TYPE, 0 , that._changeState, my_insert_btn, that.options );
 							break;
 						case "#" + that.options.guid[2]:
-							createImagePanel(tab_pane, WEBSITE_OPBJECT_TYPE, 0 , that._changeState, my_insert_btn, that);
+							createImagePanel(tab_pane, WEBSITE_OPBJECT_TYPE, 0 , that._changeState, my_insert_btn, that.options);
 							break;
 						case "#"+ that.options.guid[3]:
-							createImagePanel(tab_pane, COMPANY_OBJECT_TYPE, 0 , that._changeState, my_insert_btn, that);
+							createImagePanel(tab_pane, COMPANY_OBJECT_TYPE, 0 , that._changeState, my_insert_btn, that.options);
 							break;
 						case "#" + that.options.guid[4]:
 							var form_input = that.element.find('.modal-body input[name="custom-selected-url"]');
