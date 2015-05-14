@@ -34,6 +34,11 @@
 			min-height:132px;
 		}	
 
+		.image-broswer .image-selected .img-wrapper > button {
+			color : \\#ff3b30!important;
+		}
+		
+		
 		.image-broswer .image-selected img{
 			height:120px;
 			width:120px;
