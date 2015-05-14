@@ -83,6 +83,7 @@
 		}
 	
 		function masonry(){		
+		
 			$(".grid-boxes").imagesLoaded( function(e){				
 				var renderTo = $(".grid-boxes");			
 				var gutter = 30;
@@ -122,7 +123,7 @@
 						},
 						requestStart: function(e){
 							if( $(".grid-boxes").data('masonry') ){
-								$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
+								//$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
 								$(".grid-boxes").masonry('destroy');
 							}						
 						},
