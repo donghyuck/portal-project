@@ -124,7 +124,7 @@
 						position: absolute;
 						width:  300px;
 						z-index: 400;
-						top: 0;
+						top: -1px;
 						left: 0;
 						border-top:solid 3px \\#8e8e93;
 					">
