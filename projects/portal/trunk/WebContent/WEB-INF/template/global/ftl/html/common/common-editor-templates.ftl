@@ -162,13 +162,11 @@
                     </fieldset>                    
                     <fieldset>
                         <section>
-                            <label class="label">Inline checkboxes</label>
+                            <label class="label">Lightbox</label>
                             <div class="inline-group">
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Alexandra</label>
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Alice</label>
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Anastasia</label>
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Avelina</label>
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Beatrice</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-lightbox"><i></i>Lightbox</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
                             </div>
                         </section>
                     </fieldset>
