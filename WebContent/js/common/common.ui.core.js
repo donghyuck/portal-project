@@ -2059,7 +2059,8 @@
 				that.element.children('.modal').css('z-index', '2000');				
 				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
 				var my_insert_options = $("#" + that.options.guid[5]);
-				var my_insert_options_icon = $("button[aria-controls="+ that.options.guid[5] +"] i");				
+				var my_insert_options_up = $("#" + that.options.guid[5] +" . btn-up");	
+				
 				// tabs events
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {					
 					e.target // activated tab
@@ -2264,8 +2265,10 @@
 							*/
 					}
 				});	
-					
-				//	my_insert_options.collapse();
+
+					my_insert_options_up.click(function(e){
+						my_insert_options.collapse('hide');
+					});
 					my_insert_options.on('show.bs.collapse', function () {
 					});
 					
