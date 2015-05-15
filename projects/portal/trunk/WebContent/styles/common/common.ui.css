@@ -325,7 +325,24 @@ body.aside-menu-in .aside-menu {
 	width: 20px;
 	height: 20px;	
 }	
-	
+
+.btn-up{
+	position: absolute;
+	cursor: pointer;	
+	background: url(/images/common/white-angle-up.png) no-repeat center center;		
+}
+
+.btn-up.btn-up-gray {
+	background: url(/images/common/grey-angle-up.png) no-repeat center center;		
+}
+
+.btn-up.btn-md {
+	top: 0;
+	right: 5px;
+	height: 45px;
+	width: 45px;
+	background-size: 25px 25px;		
+}
 
 .panel-heading .btn-close.btn-xs , .panel-heading .btn-close.btn-sm {
 	position: relative;
