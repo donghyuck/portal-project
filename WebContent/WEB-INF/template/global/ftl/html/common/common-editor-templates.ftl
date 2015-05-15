@@ -151,7 +151,7 @@
                 </li>
                 <li>
     	            <input type="checkbox" id="eq4" class="k-checkbox">
-			        <label class="k-checkbox-label" for="eq4">Heated front and rear seats</label>
+			        <label class="k-checkbox-label" for="eq4">Responsive</label>
                 </li>
                 <li>
     	            <input type="checkbox" id="eq5" class="k-checkbox">
