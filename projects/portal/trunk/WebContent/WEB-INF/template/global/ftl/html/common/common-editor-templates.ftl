@@ -147,7 +147,7 @@
                 </li>
                 <li>
     	            <input type="checkbox" id="eq3" class="k-checkbox">
-			        <label class="k-checkbox-label" for="eq3">Luggage compartment cover</label>
+			        <label class="k-checkbox-label" for="eq3">Thumbnails</label>
                 </li>
                 <li>
     	            <input type="checkbox" id="eq4" class="k-checkbox">
