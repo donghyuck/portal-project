@@ -13,8 +13,27 @@ function createEditor( renderToString, bodyEditor, options ){
 		var htmlEditorTools = [
 			'bold', 
 			'italic', 
+			"underline",
+            "strikethrough",
+            
+            "justifyLeft",
+            "justifyCenter",
+            "justifyRight",
+            "justifyFull",
+            
 			'insertUnorderedList', 
 			'insertOrderedList',
+			
+			"createTable",
+            "addColumnLeft",
+            "addColumnRight",
+            "addRowAbove",
+            "addRowBelow",
+            "deleteRow",
+            "deleteColumn",
+            "foreColor",
+            "backColor"
+            
 			"formatting",
 			"cleanFormatting",
 			{	
