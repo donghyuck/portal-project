@@ -671,6 +671,7 @@
 						<div class="col-sm-12">						
 							<div class="ibox float-e-margins">
 			                    <div class="ibox-title">
+			                    	&nbsp;
 			                    	<span class="text-danger" data-bind="invisible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>
 			                        <span class="close" data-dialog-close></span>					
