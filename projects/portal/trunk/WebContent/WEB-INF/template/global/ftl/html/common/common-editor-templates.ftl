@@ -135,15 +135,15 @@
 								</div>
 								<div class="ibox-content">
 								<h4>이미지 스타일 옵션</h4>
-								<div class="separator"/>
+								<div class="separator-2"/>
 <ul class="list-unstyled">
                 <li>
     	            <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
-			        <label class="k-checkbox-label" for="eq1">Lightroom</label>
+			        <label class="k-checkbox-label" for="eq1">Lightbox</label>
                 </li>
                 <li>
     	            <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
-			        <label class="k-checkbox-label" for="eq2">Leather trim</label>
+			        <label class="k-checkbox-label" for="eq2">Lightbox gallery</label>
                 </li>
                 <li>
     	            <input type="checkbox" id="eq3" class="k-checkbox">
