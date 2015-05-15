@@ -2265,7 +2265,7 @@
 					}
 				});	
 					
-					my_insert_options.collapse();
+				//	my_insert_options.collapse();
 					my_insert_options.on('show.bs.collapse', function () {
 						alert(my_insert_options_btn.html());
 						my_insert_options_btn.faceOut();								
