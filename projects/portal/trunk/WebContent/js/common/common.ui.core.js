@@ -2059,8 +2059,7 @@
 				that.element.children('.modal').css('z-index', '2000');				
 				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
 				var my_insert_options = $("#" + that.options.guid[5]);
-				var my_insert_options_btn = $("button[aria-controls="+ that.options.guid[5] +"]");
-				
+				var my_insert_options_btn = $("button[aria-controls="+ that.options.guid[5] +"]");				
 				// tabs events
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {					
 					e.target // activated tab
@@ -2177,10 +2176,10 @@
 								selected_img.addClass('hide');
 							break;
 						}
-				}); //end of tabs
+					}); //end of tabs
 				
-				// handle select image url 
-				that.element.find('.modal-body input[name="custom-selected-url"]').on( 'change',
+					// handle select image url 
+					that.element.find('.modal-body input[name="custom-selected-url"]').on( 'change',
 					function() {
 						var form_input = $(this);
 						var selected_img = $("#"+ that.options.guid[4]).children('img');
@@ -2211,8 +2210,8 @@
 									});
 							}
 					});
-				// handle insert 		
-				my_insert_btn.on('click', function() {						
+					// handle insert 		
+					my_insert_btn.on('click', function() {						
 					var active_pane = that._activePane();
 					var active_pane_id	= active_pane.attr('id');			
 					switch (active_pane_id) {
@@ -2242,19 +2241,8 @@
 										});										
 									}
 								})
-							} );	
-							
-							my_insert_options.collapse();
-							my_insert_options.on('show.bs.collapse', function () {
-								alert(1);
-								my_insert_options_btn.faceOut();								
-							});
-							
-							my_insert_options.on('hide.bs.collapse', function () {
-								alert(2);
-								my_insert_options_btn.fadeIn();
-							});
-							
+							});	
+														
 							/*
 							 * 
 							var active_data = active_list_view.data('kendoListView').dataSource.view();			
@@ -2275,6 +2263,18 @@
 							*/
 					}
 				});	
+					
+					my_insert_options.collapse();
+					my_insert_options.on('show.bs.collapse', function () {
+						alert(1);
+						my_insert_options_btn.faceOut();								
+					});
+					
+					my_insert_options.on('hide.bs.collapse', function () {
+						alert(2);
+						my_insert_options_btn.fadeIn();
+					});
+					
 			},
 			_activePane : function() {
 				var that = this;
