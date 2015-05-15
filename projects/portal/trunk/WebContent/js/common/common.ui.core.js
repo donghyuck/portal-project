@@ -2245,10 +2245,12 @@
 							} );	
 							
 							my_insert_options.on('show.bs.collapse', function () {
+								alert(1);
 								my_insert_options_btn.faceOut();								
 							});
 							
 							my_insert_options.on('hide.bs.collapse', function () {
+								alert(2);
 								my_insert_options_btn.fadeIn();
 							});
 							
