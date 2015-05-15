@@ -110,6 +110,13 @@
 			border-top: solid 3px \\#6c9fd1;
 			background-color: \\#eee;		
 		}
+		
+		.mfp-bg {
+			z-index : 2001;
+		}
+		.mfp-wrap {
+			z-index : 2002;
+		}
 	</style>				
 	<div class='modal editor-popup image-broswer fade'>
 		<div class='modal-dialog modal-lg'>
