@@ -134,13 +134,7 @@
 						</header>
                     <fieldset>                  
                         <section>
-                        <div class="separator-2"/>
-                            <label class="label">CSS</label>
-                            <label class="input">
-                                <input type="text" name="image-custom-css">
-                            </label>
-                        </section>
-                        <section>
+                        	<div class="separator-2"/>
                             <label class="label">Template</label>
                             <label class="textarea textarea-expandable">
                                 <textarea rows="3" name="image-custom-template"></textarea>
@@ -150,13 +144,10 @@
                     </fieldset>
                     <fieldset>
                         <section>
-                            <label class="label">Inline radios</label>
+                            <label class="label">Effect</label>
                             <div class="inline-group">
-                                <label class="radio"><input type="radio" name="image-radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
-                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Alice</label>
-                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Anastasia</label>
-                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Avelina</label>
-                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Beatrice</label>
+                                <label class="radio"><input type="radio" name="image-radio-none" checked=""><i class="rounded-x"></i>None</label>
+                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>FadeIn</label>
                             </div>
                         </section>
                     </fieldset>                    
@@ -164,8 +155,8 @@
                         <section>
                             <label class="label">Lightbox</label>
                             <div class="inline-group">
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-lightbox"><i></i>Lightbox</label>
+                            	<label class="checkbox"><input type="checkbox" name="image-checkbox-lightbox"><i></i>Lightbox</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>                                
                                 <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
                             </div>
                         </section>
