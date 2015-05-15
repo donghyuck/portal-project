@@ -2228,6 +2228,12 @@
 							var active_list_view =  active_pane.find(".image-listview");
 							var active_datasource = active_list_view.data('kendoListView').dataSource;		
 							var active_my_selected = active_pane.find(".image-selected");
+							
+							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
+							var lightbox_enabled = my_insert_options.find("input[name=image-checkbox-lightbox]").is(":checked");
+							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");
+							
+							
 							$.each( active_my_selected.find("img"), function( index, value){		
 								var objectEl = $(value);
 								var objectId = objectEl.data("id");
@@ -2237,7 +2243,10 @@
 										that.trigger(APPLY, { 
 											html : templates.image({ 
 												url: templates.linkUrl( data ),
-												thumbnail : objectEl.attr('src'),
+												thumbnail : thumbnail_enabled,
+												lightbox : lightbox_enabled,
+												gallery : gallery_enabled,
+												thumbnaiUrll : objectEl.attr('src'),
 												css : "img-responsive" 
 											})
 										});										
