@@ -1978,7 +1978,7 @@
 				var that = this;
 				Widget.fn.init.call(that, element, options);
 				options = that.options;	
-				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];				
+				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];				
 				that.refresh();
 			},
 			events : [ ERROR, CHANGE, APPLY ],
