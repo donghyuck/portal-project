@@ -2191,13 +2191,15 @@ padding: 5px;
 
 .dialog__content  .ibox-title  {
   display: block;
-  font-size: 20px;
+  font-size: 2.5em;
   background: #fff;
   font-weight: 400;
   padding: 8px 30px;	
 }
 .dialog__content  .ibox-title .close {
-	top: 2px;	
+  top: 5px;
+  width: 65px;
+  height: 65px;
 }
 
 .dialog .ace_editor {
