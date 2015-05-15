@@ -2210,6 +2210,7 @@
 									});
 							}
 					});
+					
 					// handle insert 		
 					my_insert_btn.on('click', function() {						
 					var active_pane = that._activePane();
