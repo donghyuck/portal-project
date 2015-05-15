@@ -127,7 +127,10 @@
 						top: 0;
 						left: 0;
 					">
-						<header><span class="cross"></span>&nbsp;</header>
+						<header>
+							이미지 스타일 옵션
+							<span class="btn-up btn-up-gray btn-md"></span>
+						</header>
                     <fieldset>                  
                         <section>
                         <div class="separator-2"/>
