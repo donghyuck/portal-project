@@ -666,8 +666,6 @@
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
-			
-			
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">						
@@ -684,8 +682,8 @@
 										<ul class="list-inline grid-boxes-news">
 											<li><span>By</span> #if (page.user.nameVisible){ # #:page.user.name#  #}# <code>#:page.user.username#</code></li>
 											<li>|</li>
-											<li><i class="fa fa-clock-o"></i> #:page.formattedCreationDate() #</li>
-											<li><i class="fa fa-clock-o"></i> #:page.formattedModifiedDate() #</li>
+											<li><i class="fa fa-clock-o"></i> #: page.formattedCreationDate() #</li>
+											<li><i class="fa fa-clock-o"></i> #: page.formattedModifiedDate() #</li>
 										</ul>  
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
