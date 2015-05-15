@@ -134,7 +134,7 @@
 									<h5>이미지 스타일 옵션</h5>
 								</div>
 								<div class="ibox-content">
-								<h5>이미지 스타일 옵션</h5>
+								<h4>이미지 스타일 옵션</h4>
 								<div class="separator"/>
 <ul class="list-unstyled">
                 <li>
