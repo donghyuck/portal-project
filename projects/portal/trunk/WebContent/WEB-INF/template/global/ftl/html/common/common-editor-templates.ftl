@@ -126,6 +126,7 @@
 						z-index: 400;
 						top: 0;
 						left: 0;
+						border-top:solid 3px \\#8e8e93;
 					">
 						<header>
 							이미지 스타일 옵션
