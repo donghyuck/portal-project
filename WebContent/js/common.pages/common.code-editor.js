@@ -32,7 +32,7 @@ function createEditor( renderToString, bodyEditor, options ){
             "deleteRow",
             "deleteColumn",
             "foreColor",
-            "backColor"
+            "backColor",
             
 			"formatting",
 			"cleanFormatting",
