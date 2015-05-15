@@ -2244,11 +2244,11 @@
 								})
 							} );	
 							
-							my_insert_options..on('show.bs.collapse', function () {
+							my_insert_options.on('show.bs.collapse', function () {
 								my_insert_options_btn.faceOut();								
 							});
 							
-							my_insert_options..on('hide.bs.collapse', function () {
+							my_insert_options.on('hide.bs.collapse', function () {
 								my_insert_options_btn.fadeIn();
 							});
 							
