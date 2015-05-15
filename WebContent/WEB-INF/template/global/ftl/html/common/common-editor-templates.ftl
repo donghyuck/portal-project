@@ -119,21 +119,15 @@
 					<h5 class='modal-title'>#if( title ){# #: title # #} else { # 이미지 삽입 #}#</h5>
 				</div>
 				<div class="modal-body no-padding">		
-<!-- options -->
-<form id="#=guid[5]#" action="#" class="sky-form" style="
-    position: absolute;
-    width:  300px;
-    z-index: 400;
-    top: 0;
-    left: 0;
-">
-                    <header><span class="cross"></span>&nbsp;
-</header>
-                    
-                    
-                    
-                    
-                    
+					<!-- options -->
+					<form id="#=guid[5]#" action="\\#" class="sky-form" style="
+						position: absolute;
+						width:  300px;
+						z-index: 400;
+						top: 0;
+						left: 0;
+					">
+						<header><span class="cross"></span>&nbsp;</header>
                     <fieldset>                  
                         <section>
                         <div class="separator-2"/>
@@ -142,9 +136,6 @@
                                 <input type="text">
                             </label>
                         </section>
-                        
-                        
-                        
                         <section>
                             <label class="label">Image Template</label>
                             <label class="textarea textarea-expandable">
@@ -153,10 +144,7 @@
                             <div class="note"><strong>Note:</strong> expands on focus.</div>
                         </section>
                     </fieldset>
-                    
                     <fieldset>
-                        
-                        
                         <section>
                             <label class="label">Inline radios</label>
                             <div class="inline-group">
@@ -167,11 +155,8 @@
                                 <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
                             </div>
                         </section>
-                    </fieldset>
-                    
+                    </fieldset>                    
                     <fieldset>
-                        
-                        
                         <section>
                             <label class="label">Inline checkboxes</label>
                             <div class="inline-group">
@@ -183,17 +168,8 @@
                             </div>
                         </section>
                     </fieldset>
-                    
-                    
-
-                    
-                    
-                    
-                    
-                    
-                </form>
-<!-- /.options -->
-				
+					</form>
+					<!-- /.options -->				
 					<div class="row no-margin-hr">
 						<div class="col-sm-3 no-padding">
 							<!-- Nav tabs -->
