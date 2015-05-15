@@ -119,6 +119,81 @@
 					<h5 class='modal-title'>#if( title ){# #: title # #} else { # 이미지 삽입 #}#</h5>
 				</div>
 				<div class="modal-body no-padding">		
+<!-- options -->
+<form id="#=guid[5]#" action="#" class="sky-form" style="
+    position: absolute;
+    width:  300px;
+    z-index: 400;
+    top: 0;
+    left: 0;
+">
+                    <header><span class="cross"></span>&nbsp;
+</header>
+                    
+                    
+                    
+                    
+                    
+                    <fieldset>                  
+                        <section>
+                        <div class="separator-2"/>
+                            <label class="label">CSS</label>
+                            <label class="input">
+                                <input type="text">
+                            </label>
+                        </section>
+                        
+                        
+                        
+                        <section>
+                            <label class="label">Image Template</label>
+                            <label class="textarea textarea-expandable">
+                                <textarea rows="3"></textarea>
+                            </label>
+                            <div class="note"><strong>Note:</strong> expands on focus.</div>
+                        </section>
+                    </fieldset>
+                    
+                    <fieldset>
+                        
+                        
+                        <section>
+                            <label class="label">Inline radios</label>
+                            <div class="inline-group">
+                                <label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Alice</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Anastasia</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Avelina</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
+                            </div>
+                        </section>
+                    </fieldset>
+                    
+                    <fieldset>
+                        
+                        
+                        <section>
+                            <label class="label">Inline checkboxes</label>
+                            <div class="inline-group">
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline" checked=""><i></i>Alexandra</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Alice</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Anastasia</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Avelina</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Beatrice</label>
+                            </div>
+                        </section>
+                    </fieldset>
+                    
+                    
+
+                    
+                    
+                    
+                    
+                    
+                </form>
+<!-- /.options -->
+				
 					<div class="row no-margin-hr">
 						<div class="col-sm-3 no-padding">
 							<!-- Nav tabs -->
@@ -128,46 +203,7 @@
 								<li class="no-margin-t"><a href="\\##=guid[2]#" data-toggle="tab">My 사이트에서 선택</a></li>
 								<li class="no-margin-t"><a href="\\##=guid[3]#" data-toggle="tab">My 회사에서 선택</a></li>
 								<li class="no-margin-t"><a href="\\##=guid[4]#" data-toggle="tab">URL에서 선택</a></li>
-							</ul>							
-							<div class="ibox collapse" id="#=guid[5]#">
-								<div class="ibox-title" >
-									<h5>이미지 스타일 옵션</h5>
-								</div>
-								<div class="ibox-content">
-								<h4>이미지 스타일 옵션</h4>
-								<div class="separator-2"/>
-<ul class="list-unstyled">
-                <li>
-    	            <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
-			        <label class="k-checkbox-label" for="eq1">Lightbox</label>
-                </li>
-                <li>
-    	            <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
-			        <label class="k-checkbox-label" for="eq2">Lightbox gallery</label>
-                </li>
-                <li>
-    	            <input type="checkbox" id="eq3" class="k-checkbox">
-			        <label class="k-checkbox-label" for="eq3">Thumbnails</label>
-                </li>
-                <li>
-    	            <input type="checkbox" id="eq4" class="k-checkbox">
-			        <label class="k-checkbox-label" for="eq4">Responsive</label>
-                </li>
-                <li>
-    	            <input type="checkbox" id="eq5" class="k-checkbox">
-			        <label class="k-checkbox-label" for="eq5">Dual-zone air conditioning</label>
-                </li>
-                <li>
-    	            <input type="checkbox" id="eq6" class="k-checkbox">
-			        <label class="k-checkbox-label" for="eq6">Rain sensor</label>
-                </li>
-                <li>
-    	            <input type="checkbox" id="eeeeq4" class="k-checkbox" disabled="disabled">
-			        <label class="k-checkbox-label" for="eeeeq4">Towbar preparation</label>
-                </li>
-            </ul>							
-								</div>
-							</div>							
+							</ul>													
 						</div>
 						<div class="col-sm-9 padding-sm" style="border-left: 1px solid \\#e5e5e5; background:\\#f5f5f5; min-height:250px;">
 							<!-- Tab panes -->
