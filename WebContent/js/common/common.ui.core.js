@@ -1876,7 +1876,7 @@
 			selected : template(
 				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated slideInUp" data-id="#=imageId#"></div>'
 			),
-			image : template('<img src="#: url #" class="#= css #"/>'),
+			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
 			download : template('/download/image/#=imageId#/#=name#')
 		},
