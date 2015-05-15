@@ -40,7 +40,11 @@
 			border: 1px solid \\#fff;
 			float: left;
 		}	
-					
+		
+		.image-broswer .image-selected .img-wrapper:hover {
+			
+		}
+		 			
 		.image-broswer .img-wrapper {
 			float: left;
 			position: relative;
@@ -125,6 +129,14 @@
 								<li class="no-margin-t"><a href="\\##=guid[3]#" data-toggle="tab">My 회사에서 선택</a></li>
 								<li class="no-margin-t"><a href="\\##=guid[4]#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>
+							<div class="ibox">
+								<div class="ibox-title">
+									<button class="btn btn-warning btn-flat btn-block" type="button" data-toggle="collapse" data-target="\\##=guid[5]#" aria-expanded="false" aria-controls="#=guid[5]#"> 이미지 스타일 옵션</button>
+								</div>
+								<div id="#=guid[5]#" class="ibox-content collapse">
+									
+								</div>
+							</div>							
 						</div>
 						<div class="col-sm-9 padding-sm" style="border-left: 1px solid \\#e5e5e5; background:\\#f5f5f5; min-height:250px;">
 							<!-- Tab panes -->
