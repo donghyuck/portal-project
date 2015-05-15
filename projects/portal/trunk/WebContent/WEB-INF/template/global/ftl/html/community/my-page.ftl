@@ -678,14 +678,19 @@
 			                    </div>
 			                    <article data-bind="{invisible:editable}">
 									<div class="ibox-content ibox-heading">
-                                    	<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-										<ul class="list-inline grid-boxes-news">
-											<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
-											<li>|</li>
-											<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
-											<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
-										</ul>  
-										<small data-bind="text:page.summary"></small>
+										<div class="author margin-bottom-20">
+											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+											<ul class="list-inline grid-boxes-news">
+												<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
+												<li>|</li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+											</ul>  
+										</div>
+										<div class="tag-box tag-box-v4 no-margin-b">                    
+                    						<p data-bind="text:page.summary"></p>
+                    					</div>
+										
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
 			                    </article>
