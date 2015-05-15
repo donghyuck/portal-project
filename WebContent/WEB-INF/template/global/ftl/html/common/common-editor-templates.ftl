@@ -131,10 +131,41 @@
 							</ul>							
 							<div class="ibox collapse" id="#=guid[5]#">
 								<div class="ibox-title" >
-									이미지 스타일
+									<h5>이미지 스타일 옵션</h5>
 								</div>
 								<div class="ibox-content">
-									
+								<h5>이미지 스타일 옵션</h5>
+								<div class="separator"/>
+<ul class="list-unstyled">
+                <li>
+    	            <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
+			        <label class="k-checkbox-label" for="eq1">Rear side airbags</label>
+                </li>
+                <li>
+    	            <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
+			        <label class="k-checkbox-label" for="eq2">Leather trim</label>
+                </li>
+                <li>
+    	            <input type="checkbox" id="eq3" class="k-checkbox">
+			        <label class="k-checkbox-label" for="eq3">Luggage compartment cover</label>
+                </li>
+                <li>
+    	            <input type="checkbox" id="eq4" class="k-checkbox">
+			        <label class="k-checkbox-label" for="eq4">Heated front and rear seats</label>
+                </li>
+                <li>
+    	            <input type="checkbox" id="eq5" class="k-checkbox">
+			        <label class="k-checkbox-label" for="eq5">Dual-zone air conditioning</label>
+                </li>
+                <li>
+    	            <input type="checkbox" id="eq6" class="k-checkbox">
+			        <label class="k-checkbox-label" for="eq6">Rain sensor</label>
+                </li>
+                <li>
+    	            <input type="checkbox" id="eeeeq4" class="k-checkbox" disabled="disabled">
+			        <label class="k-checkbox-label" for="eeeeq4">Towbar preparation</label>
+                </li>
+            </ul>							
 								</div>
 							</div>							
 						</div>
