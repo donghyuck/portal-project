@@ -137,13 +137,13 @@
                         <div class="separator-2"/>
                             <label class="label">CSS</label>
                             <label class="input">
-                                <input type="text">
+                                <input type="text" name="image-custom-css">
                             </label>
                         </section>
                         <section>
-                            <label class="label">Image Template</label>
+                            <label class="label">Template</label>
                             <label class="textarea textarea-expandable">
-                                <textarea rows="3"></textarea>
+                                <textarea rows="3" name="image-custom-template"></textarea>
                             </label>
                             <div class="note"><strong>Note:</strong> expands on focus.</div>
                         </section>
@@ -152,11 +152,11 @@
                         <section>
                             <label class="label">Inline radios</label>
                             <div class="inline-group">
-                                <label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Alice</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Anastasia</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Avelina</label>
-                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
+                                <label class="radio"><input type="radio" name="image-radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
+                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Alice</label>
+                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Anastasia</label>
+                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Avelina</label>
+                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>Beatrice</label>
                             </div>
                         </section>
                     </fieldset>                    
@@ -164,11 +164,11 @@
                         <section>
                             <label class="label">Inline checkboxes</label>
                             <div class="inline-group">
-                                <label class="checkbox"><input type="checkbox" name="checkbox-inline" checked=""><i></i>Alexandra</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Alice</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Anastasia</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Avelina</label>
-                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Beatrice</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Alexandra</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Alice</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Anastasia</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Avelina</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-inline"><i></i>Beatrice</label>
                             </div>
                         </section>
                     </fieldset>
