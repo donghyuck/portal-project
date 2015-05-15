@@ -680,10 +680,10 @@
                                     	<small>작성자 정보</small>
                                     	<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 										<ul class="list-inline grid-boxes-news">
-											<li><span>By</span><sapan data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span> <code data-bind="{ text: page.user.username }"></code></li>
+											<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
 											<li>|</li>
-											<li><i class="fa fa-clock-o"></i> #: page.formattedCreationDate() #</li>
-											<li><i class="fa fa-clock-o"></i> #: page.formattedModifiedDate() #</li>
+											<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+											<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 										</ul>  
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
