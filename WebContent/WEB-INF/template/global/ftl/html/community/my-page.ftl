@@ -677,7 +677,6 @@
 			                    </div>
 			                    <article data-bind="{invisible:editable}">
 									<div class="ibox-content ibox-heading">
-                                    	<small>작성자 정보</small>
                                     	<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 										<ul class="list-inline grid-boxes-news">
 											<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
