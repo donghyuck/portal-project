@@ -139,7 +139,7 @@
 <ul class="list-unstyled">
                 <li>
     	            <input type="checkbox" id="eq1" class="k-checkbox" checked="checked">
-			        <label class="k-checkbox-label" for="eq1">Rear side airbags</label>
+			        <label class="k-checkbox-label" for="eq1">Lightroom</label>
                 </li>
                 <li>
     	            <input type="checkbox" id="eq2" class="k-checkbox" checked="checked" disabled="disabled">
