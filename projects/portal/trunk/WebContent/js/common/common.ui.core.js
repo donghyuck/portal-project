@@ -2059,7 +2059,7 @@
 				that.element.children('.modal').css('z-index', '2000');				
 				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
 				var my_insert_options = $("#" + that.options.guid[5]);
-				var my_insert_options_up = $("#" + that.options.guid[5] +" . btn-up");	
+				var my_insert_options_up = $("#" + that.options.guid[5] +" .btn-up");	
 				
 				// tabs events
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {					
