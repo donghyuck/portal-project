@@ -1991,7 +1991,7 @@
 				objectType : 0
 			},
 			show : function() {				
-				var that = this;				
+				var that = this;								
 				if(that.objectId() > 0 ){
 					that.element.find('.modal-body ul.nav a:first').show();
 				}else{
@@ -2007,6 +2007,8 @@
 						return $(this).attr("href") === ("#"+ that.options.guid[1]) ;	
 					}
 				}).tab('show');
+				
+				$("#" + that.options.guid[5]).collapse('hide');
 				that._modal().modal('show');
 			},
 			close : function() {
