@@ -129,12 +129,12 @@
 								<li class="no-margin-t"><a href="\\##=guid[3]#" data-toggle="tab">My 회사에서 선택</a></li>
 								<li class="no-margin-t"><a href="\\##=guid[4]#" data-toggle="tab">URL에서 선택</a></li>
 							</ul>							
-							<div class="ibox">
+							<div class="ibox collapse" id="#=guid[5]#">
 								<div class="ibox-title" >
-									
+									이미지 스타일
 								</div>
-								<div id="#=guid[5]#" class="ibox-content collapse">
-									스타일
+								<div class="ibox-content">
+									
 								</div>
 							</div>							
 						</div>
