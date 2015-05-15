@@ -120,7 +120,7 @@
 				</div>
 				<div class="modal-body no-padding">		
 					<!-- options -->
-					<form id="#=guid[5]#" action="\\#" class="sky-form" style="
+					<form id="#=guid[5]#" action="\\#" class="sky-form collapse" style="
 						position: absolute;
 						width:  300px;
 						z-index: 400;
