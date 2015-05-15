@@ -2268,12 +2268,12 @@
 				//	my_insert_options.collapse();
 					my_insert_options.on('show.bs.collapse', function () {
 						my_insert_options_icon.removeClass("fa-angle-down");	
-						my_insert_options_icon.addeClass("fa-angle-up");	
+						my_insert_options_icon.addClass("fa-angle-up");	
 					});
 					
 					my_insert_options.on('hide.bs.collapse', function () {
 						my_insert_options_icon.removeClass("fa-angle-up");	
-						my_insert_options_icon.addeClass("fa-angle-down");	
+						my_insert_options_icon.addClass("fa-angle-down");	
 					});
 					
 			},
