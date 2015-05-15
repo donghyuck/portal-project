@@ -680,7 +680,7 @@
                                     	<small>작성자 정보</small>
                                     	<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
 										<ul class="list-inline grid-boxes-news">
-											<li><span>By</span> #if (page.user.nameVisible){ # #:page.user.name#  #}# <code>#:page.user.username#</code></li>
+											<li><span>By</span><sapan data-bind={ text: page.user.nam, visible: page.user.nameVisible } #if (page.user.nameVisible){ # #:page.user.name#  #}# <code>#:page.user.username#</code></li>
 											<li>|</li>
 											<li><i class="fa fa-clock-o"></i> #: page.formattedCreationDate() #</li>
 											<li><i class="fa fa-clock-o"></i> #: page.formattedModifiedDate() #</li>
