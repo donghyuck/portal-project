@@ -131,7 +131,7 @@
 							</ul>							
 							<div class="ibox">
 								<div class="ibox-title" >
-									<button class="btn btn-warning btn-flat btn-block" type="button" data-toggle="collapse" data-target="\\##=guid[5]#" aria-expanded="false" aria-controls="#=guid[5]#"> 이미지 스타일 옵션 <i class="fa fa-angle-down"></i></button>
+									
 								</div>
 								<div id="#=guid[5]#" class="ibox-content collapse">
 									스타일
@@ -209,8 +209,9 @@
 					</div>
 				</div>
 				<div class='modal-footer no-margin-t'>
-					<button type="button" class="btn btn-primary custom-insert-img" disabled="disabled">선택된 이미지 삽입</button>	
-					<button type="button" class="btn btn-default" data-dismiss='modal' aria-hidden='true'>취소</button>
+					<button class="btn btn-warning btn-flat btn-block" type="button" data-toggle="collapse" data-target="\\##=guid[5]#" aria-expanded="false" aria-controls="#=guid[5]#"><i class="fa fa-cog"></i> 이미지 스타일 옵션</button>
+					<button type="button" class="btn btn-flat btn-info custom-insert-img" disabled="disabled">선택된 이미지 삽입</button>	
+					<button type="button" class="btn btn-default btn-flat" data-dismiss='modal' aria-hidden='true'>취소</button>
 				</div>
 			</div><!-- /.modal-content -->
 		</div><!-- /.modal-dialog -->
