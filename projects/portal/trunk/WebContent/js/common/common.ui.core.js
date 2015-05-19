@@ -2262,8 +2262,43 @@
 							var uid = guid().toLowerCase() ;
 							
 							if(carousel_enabled){
-								var html = kendo.template($('#image-broswer-photo-carousel-template').html());
-								html= html({ 'uid': uid });
+								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
+								var html = $parseHTML(carousel_template({ 'uid': uid }));
+								var carousel_inner = html.find(".carousel-inner");
+								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());
+								
+								$.each( active_my_selected.find("img"), function( index, value){
+									var objectEl = $(value);
+									var objectId = objectEl.data("id");
+									var image = active_datasource.get(objectId);
+									that._getImageLink(image, function(data){
+										if(!defined(data.error)){
+											carousel_inner.append(
+												carousel_inner_template({ 
+												url: templates.linkUrl( data )
+												})													
+											);
+											
+											
+											/*that.trigger(APPLY, { 
+												html : templates.image({ 
+													url: templates.linkUrl( data ),
+													thumbnail : thumbnail_enabled,
+													lightbox : lightbox_enabled,
+													gallery : gallery_enabled,
+													gallerySelector : uid,
+													thumbnaiUrll : objectEl.attr('src'),
+													css : "img-responsive" 
+												})
+											});
+											*/
+										}
+									})
+								});	
+								
+								
+								
+								
 								alert( html );
 							}
 							
