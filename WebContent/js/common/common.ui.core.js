@@ -2263,9 +2263,10 @@
 							
 							if(carousel_enabled){
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
-								var html = $( carousel_template({ 'uid': uid }));
-								//var carousel_inner = html.find(".carousel-inner");
 								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());
+								
+								var html = $( carousel_template({ 'uid': uid }));
+								var carousel_inner = html.find(".carousel-inner");
 								
 								$.each( active_my_selected.find("img"), function( index, value){
 									var objectEl = $(value);
@@ -2273,6 +2274,7 @@
 									var image = active_datasource.get(objectId);
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){
+											alert(carousel_inner.html());
 											html.find(".carousel-inner").append(
 												carousel_inner_template({ 
 												url: templates.linkUrl( data )
