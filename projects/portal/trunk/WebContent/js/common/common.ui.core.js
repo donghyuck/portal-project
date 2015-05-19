@@ -2261,27 +2261,27 @@
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");							
 							var uid = guid().toLowerCase() ;
 							
-							if(carousel_enabled){
+							if( carousel_enabled ){
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
-								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());
-								
+								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());								
 								var html = $( carousel_template({ 'uid': uid }));
-								var carousel_inner = html.find(".carousel-inner");
-								
+								var carousel_inner = html.find(".carousel-inner");						
+								var total = active_my_selected.find("img").length;
 								$.each( active_my_selected.find("img"), function( index, value){
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
 									var image = active_datasource.get(objectId);
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){
-											alert(carousel_inner.html());
-											html.find(".carousel-inner").append(
+											carousel_inner.append(
 												carousel_inner_template({ 
 												url: templates.linkUrl( data )
 												})													
 											);
-											
-											
+											if( idex === total -1  )
+											{
+												alert( html.html() );
+											}
 											/*that.trigger(APPLY, { 
 												html : templates.image({ 
 													url: templates.linkUrl( data ),
@@ -2295,15 +2295,17 @@
 											});
 											*/
 										}
-									})
+									});
+									
+									
 								});	
 								
 								
 								
 								
-								alert( html.html() );
+								
 							}
-							
+							/*
 							$.each( active_my_selected.find("img"), function( index, value){
 								var objectEl = $(value);
 								var objectId = objectEl.data("id");
@@ -2324,6 +2326,7 @@
 									}
 								})
 							});	
+							*/
 					}
 				});	
 
