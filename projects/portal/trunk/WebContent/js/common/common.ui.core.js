@@ -2263,7 +2263,7 @@
 							
 							if(carousel_enabled){
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
-								var html = $.parseHTML(carousel_template({ 'uid': uid }));
+								var html = $( carousel_template({ 'uid': uid }));
 								var carousel_inner = html.find(".carousel-inner");
 								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());
 								
