@@ -147,17 +147,22 @@
                                 <textarea rows="3" name="image-custom-template"></textarea>
                             </label>
                             <div class="note"><strong>Note:</strong> expands on focus.</div>
+                            <label class="label">Style</label>
+                            <label class="textarea textarea-expandable">
+                                <textarea rows="2" name="image-custom-css"></textarea>
+                            </label>
+                            <div class="note"><strong>Note:</strong> expands on focus.</div>                            
                         </section>
                     </fieldset>
                     <fieldset>
                         <section>
                             <label class="label">Effect</label>
                             <div class="inline-group">
-                                <label class="radio"><input type="radio" name="image-radio-none" checked=""><i class="rounded-x"></i>None</label>
-                                <label class="radio"><input type="radio" name="image-radio-inline"><i class="rounded-x"></i>FadeIn</label>
+                                <label class="radio"><input type="radio" name="image-radio-effect" value="none" checked=""><i class="rounded-x"></i>None</label>
+                                <label class="radio"><input type="radio" name="image-radio-effect"><i class="rounded-x"></i>FadeIn</label>
                             </div>
                         </section>
-                    </fieldset>                    
+                    </fieldset>       
                     <fieldset>
                         <section>
                             <label class="label">Lightbox</label>
@@ -165,6 +170,15 @@
                             	<label class="checkbox"><input type="checkbox" name="image-checkbox-lightbox"><i></i>Lightbox</label>
                                 <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>                                
                                 <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
+                            </div>
+                        </section>
+                    </fieldset>                                 
+                    <fieldset>
+                        <section>
+                            <label class="label">Carousel</label>
+                            <div class="inline-group">
+                            	<label class="checkbox"><input type="checkbox" name="image-checkbox-lightbox"><i></i>Lightbox</label>
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>
                             </div>
                         </section>
                     </fieldset>
