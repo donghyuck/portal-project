@@ -2284,6 +2284,7 @@
 													'active': count === 0,
 													'uid':uid, 
 													'index':count,
+													thumbnail : thumbnail_enabled,
 													thumbnaiUrll : objectEl.attr('src')
 												})	
 											);
