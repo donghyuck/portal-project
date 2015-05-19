@@ -146,7 +146,7 @@
                             <label class="textarea textarea-expandable">
                                 <textarea rows="3" name="image-custom-template"></textarea>
                             </label>
-                            <div class="note"><strong>Note:</strong> expands on focus.</div>
+                            <div class="note"><strong>Note:</strong> 템플릿 설정의 주의가 필요합니다.</div>
                             <label class="label">Style</label>
                             <label class="textarea textarea-expandable">
                                 <textarea rows="2" name="image-custom-css"></textarea>
