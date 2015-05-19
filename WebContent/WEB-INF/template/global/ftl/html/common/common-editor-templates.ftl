@@ -173,15 +173,6 @@
                             </div>
                         </section>
                     </fieldset>                                 
-                    <fieldset>
-                        <section>
-                            <label class="label">Carousel</label>
-                            <div class="inline-group">
-                            	<label class="checkbox"><input type="checkbox" name="image-checkbox-lightbox"><i></i>Lightbox</label>
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>
-                            </div>
-                        </section>
-                    </fieldset>
 					</form>
 					<!-- /.options -->				
 					<div class="row no-margin-hr">
