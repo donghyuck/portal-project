@@ -2268,44 +2268,36 @@
 								var html = $( carousel_template({ 'uid': uid }));
 								var carousel_inner = html.find(".carousel-inner");						
 								var carousel_indicators = html.find(".carousel-indicators");								
-								var total = active_my_selected.find("img").length;
-								var count = total;
-								$.each( active_my_selected.find("img"), function( index, value){
-									
+								var count = 0;								
+								$.each( active_my_selected.find("img"), function( index, value){									
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
-									var image = active_datasource.get(objectId);
-									
+									var image = active_datasource.get(objectId);									
 									that._getImageLink(image, function(data){
-										if(!defined(data.error)){
-																						
+										if(!defined(data.error)){			
 											carousel_indicators.append(
 												carousel_indicators_template({
-													'active': index === 0,
+													'active': count === 0,
 													'uid':uid, 
-													'index':index,
+													'index':count,
 													thumbnaiUrll : objectEl.attr('src')
 												})	
 											);
 											
 											carousel_inner.append(
 													carousel_inner_template({ 
-														'active': index === 0,
-														url: templates.linkUrl( data ),													
+														'active': count === 0,
+														'index':count,
+														'uid':uid, 
+														url: templates.linkUrl( data ),																	
 														thumbnail : thumbnail_enabled
 													})		
 											);
-											
-											if( !--count )
-											{
-												//html.find('.carousel-indicators>li').first().addClass('active');
-												//html.find('.carousel-inner>.item').first().addClass('active');
-												that.trigger(APPLY, { 'html' : html[0].outerHTML });
-												
-												
-											}
+											count ++ ;											
 										}
 									});									
+								}).promise().done(function(){
+									that.trigger(APPLY, { 'html' : html[0].outerHTML });									
 								});
 							}else{
 								$.each( active_my_selected.find("img"), function( index, value){
