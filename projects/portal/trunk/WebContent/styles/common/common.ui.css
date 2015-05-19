@@ -1214,12 +1214,6 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 
-/* Carousel
-------------------------------------*/
-.carousel-control .btn-flat-icon {
-	top:50%;
-}
-
 
 /* Overlay panel , dialog
 ------------------------------------*/
@@ -1324,6 +1318,18 @@ body:not  (.right-to-left  ) .no-border-l {
 
 .dialog .btn-flat-icon:hover {
 	opacity: .9;
+}
+
+
+
+/* Carousel
+------------------------------------*/
+.carousel-control .btn-flat-icon {
+	top:50%;
+}
+
+.carousel-control .btn-flat-icon.left {
+	left: 0;
 }
 
 
