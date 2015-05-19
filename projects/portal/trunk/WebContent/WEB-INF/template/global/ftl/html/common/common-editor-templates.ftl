@@ -172,6 +172,16 @@
                                 <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
                             </div>
                         </section>
+						<section>
+                            <label class="label">Size</label>
+                            <div class="inline-group">
+                                <label class="input col-sm-6">
+                                    <input type="text" name="width" placeholder="Width"></label>
+                                <label class="input col-sm-6">
+                                    <input type="text" name="height" placeholder="Height"></label>
+                                </label>
+                            </div>
+                        </section>
                     </fieldset>                                 
 					</form>
 					<!-- /.options -->				
