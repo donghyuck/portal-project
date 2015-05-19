@@ -1213,6 +1213,14 @@ body:not  (.right-to-left  ) .no-border-l {
 	background-color: #ebccd1;
 }
 
+
+/* Carousel
+------------------------------------*/
+.carousel-control .btn-flat-icon {
+	top:50%;
+}
+
+
 /* Overlay panel , dialog
 ------------------------------------*/
 .dialog {
