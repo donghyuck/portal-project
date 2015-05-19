@@ -2291,7 +2291,7 @@
 													carousel_inner_template({ 
 														'active': index === 0,
 														url: templates.linkUrl( data ),													
-														thumbnail : thumbnail_enabled,
+														thumbnail : thumbnail_enabled
 													})		
 											);
 											
@@ -2305,9 +2305,10 @@
 											}
 										}
 									});									
-								}).done(
+								}).done(function(){
 										that.trigger(APPLY, { 'html' : html[0].outerHTML });
-								);	
+										
+								});	
 							}else{
 								$.each( active_my_selected.find("img"), function( index, value){
 									var objectEl = $(value);
