@@ -2259,13 +2259,14 @@
 							
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");							
-							var uid = guid().toLowerCase() ;
-							
+							var uid = guid().toLowerCase() ;							
 							if( carousel_enabled ){
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
-								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());								
+								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());						
+								var carousel_indicators_template = kendo.template($("#image-broswer-photo-carousel-indicators-template").html());									
 								var html = $( carousel_template({ 'uid': uid }));
 								var carousel_inner = html.find(".carousel-inner");						
+								var carousel_indicators = html.find(".carousel-indicators");								
 								var total = active_my_selected.find("img").length;
 								$.each( active_my_selected.find("img"), function( index, value){
 									var objectEl = $(value);
@@ -2275,8 +2276,11 @@
 										if(!defined(data.error)){
 											carousel_inner.append(
 												carousel_inner_template({ 
-												url: templates.linkUrl( data )
-												})													
+													url: templates.linkUrl( data )
+												})		
+											);
+											carousel_indicators.append(
+												carousel_indicators_template({'uid':uid, 'index':index })	
 											);
 											if( index === total -1  )
 											{
@@ -2295,9 +2299,7 @@
 											});
 											*/
 										}
-									});
-									
-									
+									});									
 								});	
 								
 								
