@@ -347,13 +347,13 @@
 </script>			
 
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-inner-template">	
-	<div class="item">
+	<div class="item #if(active){# active #}#">
 		<img src="#=url#" alt="..."/>
 		<div class="carousel-caption"></div>
 	</div>
 </script>
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-indicators-template">	
-	<li data-target="\\##=uid#" data-slide-to="#= index #">
+	<li data-target="\\##=uid#" data-slide-to="#= index #" class="#if(active){# active #}#">
 		<img src="#=thumbnaiUrll#" alt="..."/>
 	</li>
 </script>
