@@ -1332,6 +1332,11 @@ body:not  (.right-to-left  ) .no-border-l {
 	left: 0;
 }
 
+.carousel-indicators li {
+	width : 25px;
+	height:25px;
+}
+
 .carousel-indicators img {
 	border-radius: 50% !important;	
 	width:25px;
