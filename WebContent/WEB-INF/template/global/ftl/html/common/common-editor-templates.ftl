@@ -160,7 +160,7 @@
                             <div class="inline-group">	
                                 <label class="radio"><input type="radio" name="image-radio-effect" value="none" checked=""><i class="rounded-x"></i>None</label>
                                 <label class="radio"><input type="radio" name="image-radio-effect" value="lightbox"><i class="rounded-x"></i>Lightbox</label>
-                                <label class="radio"><input type="radio" name="image-radio-effect" value="carousel"><i class="rounded-x"></i>Carousel</label>
+                                <label class="radio"><input type="radio" name="image-radio-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
                             </div>
                         </section>
                     </fieldset>       
