@@ -2277,12 +2277,14 @@
 										if(!defined(data.error)){
 											carousel_inner.append(
 												carousel_inner_template({ 
+													'active': index === 0,
 													url: templates.linkUrl( data ),													
 													thumbnail : thumbnail_enabled,
 												})		
 											);
 											carousel_indicators.append(
 												carousel_indicators_template({
+													'active': index === 0,
 													'uid':uid, 
 													'index':index,
 													thumbnaiUrll : objectEl.attr('src')
@@ -2290,8 +2292,8 @@
 											);
 											if( index === total -1  )
 											{
-												html.find('.carousel-indicators>li').first().addClass('active');
-												html.find('.carousel-inner>.item').first().addClass('active');
+												//html.find('.carousel-indicators>li').first().addClass('active');
+												//html.find('.carousel-inner>.item').first().addClass('active');
 												
 												
 												that.trigger(APPLY, { 'html' : html[0].outerHTML });
