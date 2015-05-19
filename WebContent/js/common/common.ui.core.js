@@ -2275,6 +2275,7 @@
 									var image = active_datasource.get(objectId);
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){
+											alert( index );
 											carousel_inner.append(
 												carousel_inner_template({ 
 													'active': index === 0,
