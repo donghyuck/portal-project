@@ -2226,7 +2226,8 @@
 												form_input.parent().removeClass('has-success');
 											form_input.parent().addClass('has-error');
 											that._changeState(my_insert_btn, false);
-									});
+								});
+							}		
 					});
 					
 					// handle insert 		
