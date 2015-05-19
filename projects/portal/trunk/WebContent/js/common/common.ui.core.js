@@ -2275,14 +2275,7 @@
 									var image = active_datasource.get(objectId);
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){
-											alert( index );
-											carousel_inner.append(
-												carousel_inner_template({ 
-													'active': index === 0,
-													url: templates.linkUrl( data ),													
-													thumbnail : thumbnail_enabled,
-												})		
-											);
+																						
 											carousel_indicators.append(
 												carousel_indicators_template({
 													'active': index === 0,
@@ -2291,6 +2284,15 @@
 													thumbnaiUrll : objectEl.attr('src')
 												})	
 											);
+											
+											carousel_inner.append(
+													carousel_inner_template({ 
+														'active': index === 0,
+														url: templates.linkUrl( data ),													
+														thumbnail : thumbnail_enabled,
+													})		
+											);
+											
 											if( index === total -1  )
 											{
 												//html.find('.carousel-indicators>li').first().addClass('active');
