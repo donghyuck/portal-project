@@ -2269,6 +2269,7 @@
 								var carousel_inner = html.find(".carousel-inner");						
 								var carousel_indicators = html.find(".carousel-indicators");								
 								var total = active_my_selected.find("img").length;
+								var count = total;
 								$.each( active_my_selected.find("img"), function( index, value){
 									
 									var objectEl = $(value);
@@ -2295,20 +2296,17 @@
 													})		
 											);
 											
-											if( index === total -1  )
+											if( !--count )
 											{
 												//html.find('.carousel-indicators>li').first().addClass('active');
 												//html.find('.carousel-inner>.item').first().addClass('active');
-												
+												that.trigger(APPLY, { 'html' : html[0].outerHTML });
 												
 												
 											}
 										}
 									});									
-								}).done(function(){
-										that.trigger(APPLY, { 'html' : html[0].outerHTML });
-										
-								});	
+								});
 							}else{
 								$.each( active_my_selected.find("img"), function( index, value){
 									var objectEl = $(value);
