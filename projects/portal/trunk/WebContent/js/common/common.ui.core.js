@@ -2247,19 +2247,20 @@
 							var active_datasource = active_list_view.data('kendoListView').dataSource;		
 							var active_my_selected = active_pane.find(".image-selected");
 							
-							
-							var custom_effect = $("[name=image-radio-effect]:checked").val();
+							var custom_effect = $("[name=image-radio-effect]:checked").val();							
 							var lightbox_enabled = false;
 							var carousel_enabled = false;
 							if( custom_effect === "lightbox" ){
 								lightbox_enabled = true;
 							}else if( custom_effect === 'carousel') {
 								carousel_enabled = true;
-							}
+							}							
 							
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");							
-							var uid = guid().toLowerCase() ;							
+							
+							var uid = guid().toLowerCase() ;	
+							
 							if( carousel_enabled ){
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
 								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());						
@@ -2286,9 +2287,19 @@
 											{
 												html.find('.carousel-indicators>li').first().addClass('active');
 												html.find('.carousel-inner>.item').first().addClass('active');
-												alert( html.html() );
+												that.trigger(APPLY, { 'html' : html.html() });
 											}
-											/*that.trigger(APPLY, { 
+										}
+									});									
+								});	
+							}else{
+								$.each( active_my_selected.find("img"), function( index, value){
+									var objectEl = $(value);
+									var objectId = objectEl.data("id");
+									var image = active_datasource.get(objectId);
+									that._getImageLink(image, function(data){
+										if(!defined(data.error)){
+											that.trigger(APPLY, { 
 												html : templates.image({ 
 													url: templates.linkUrl( data ),
 													thumbnail : thumbnail_enabled,
@@ -2298,39 +2309,11 @@
 													thumbnaiUrll : objectEl.attr('src'),
 													css : "img-responsive" 
 												})
-											});
-											*/
+											});										
 										}
-									});									
-								});	
-								
-								
-								
-								
-								
+									})
+								});									
 							}
-							/*
-							$.each( active_my_selected.find("img"), function( index, value){
-								var objectEl = $(value);
-								var objectId = objectEl.data("id");
-								var image = active_datasource.get(objectId);
-								that._getImageLink(image, function(data){
-									if(!defined(data.error)){
-										that.trigger(APPLY, { 
-											html : templates.image({ 
-												url: templates.linkUrl( data ),
-												thumbnail : thumbnail_enabled,
-												lightbox : lightbox_enabled,
-												gallery : gallery_enabled,
-												gallerySelector : uid,
-												thumbnaiUrll : objectEl.attr('src'),
-												css : "img-responsive" 
-											})
-										});										
-									}
-								})
-							});	
-							*/
 					}
 				});	
 
