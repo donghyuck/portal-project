@@ -353,7 +353,9 @@
 	</div>
 </script>
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-indicators-template">	
-	<li data-target="\\##=uid#" data-slide-to="#= index #"></li>
+	<li data-target="\\##=uid#" data-slide-to="#= index #">
+		<img src="#=thumbnaiUrll#" alt="...">
+	</li>
 </script>
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-template">	
 <div id="#=uid#" class="carousel slide" data-ride="carousel">
