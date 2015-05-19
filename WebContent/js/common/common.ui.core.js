@@ -2232,9 +2232,12 @@
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
 							var lightbox_enabled = my_insert_options.find("input[name=image-checkbox-lightbox]").is(":checked");
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");
+							var gallery_selector = "#" + guid().toLowerCase() ;
 							
 							
-							$.each( active_my_selected.find("img"), function( index, value){		
+							
+							
+							$.each( active_my_selected.find("img"), function( index, value){
 								var objectEl = $(value);
 								var objectId = objectEl.data("id");
 								var image = active_datasource.get(objectId);
@@ -2246,6 +2249,7 @@
 												thumbnail : thumbnail_enabled,
 												lightbox : lightbox_enabled,
 												gallery : gallery_enabled,
+												gallerySelector : gallery_selector,
 												thumbnaiUrll : objectEl.attr('src'),
 												css : "img-responsive" 
 											})
@@ -2253,25 +2257,6 @@
 									}
 								})
 							});	
-														
-							/*
-							 * 
-							var active_data = active_list_view.data('kendoListView').dataSource.view();			
-							$.each( active_list_view.data('kendoListView').select(), function(index, item){
-								var image = active_data[$(item).index()];
-								that._getImageLink(image, function(data){
-									if(!defined(data.error)){
-										that.trigger(APPLY, { 
-											html : templates.image({ 
-												url: templates.linkUrl( data )
-											})
-										});										
-									}
-								});
-							})
-							
-							that._changeState(my_insert_btn, false);	
-							*/
 					}
 				});	
 
