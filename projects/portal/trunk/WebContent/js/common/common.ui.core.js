@@ -2284,6 +2284,8 @@
 											);
 											if( index === total -1  )
 											{
+												html.find('.carousel-indicators>li').first().addClass('active');
+												html.find('.carousel-inner>.item').first().addClass('active');
 												alert( html.html() );
 											}
 											/*that.trigger(APPLY, { 
