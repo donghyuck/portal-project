@@ -2287,6 +2287,8 @@
 											{
 												html.find('.carousel-indicators>li').first().addClass('active');
 												html.find('.carousel-inner>.item').first().addClass('active');
+												
+												alert(html.[0].outerHTML) ;
 												that.trigger(APPLY, { 'html' : html.html() });
 											}
 										}
