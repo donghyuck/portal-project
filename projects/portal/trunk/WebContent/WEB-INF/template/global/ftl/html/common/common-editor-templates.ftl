@@ -364,12 +364,14 @@
 </script>
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-indicators-template">	
 	<li data-target="\\##=uid#" data-slide-to="#= index #" class="#if(active){# active #}#">
+		#if(thumbnail){#
 		<img src="#=thumbnaiUrll#" alt="..."/>
+		#}#
 	</li>
 </script>
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-template">	
 <div class="carousel-v1">
-<div id="#=uid#" class="carousel slide" data-ride="carousel" style="#if(width){# max-width: #= width # #}#">
+<div id="#=uid#" class="carousel slide" data-ride="carousel" style="#if(width){# max-width: #= width #; #}#">
 	<ol class="carousel-indicators">
 	</ol>	
 	<div class="carousel-inner" role="listbox">
