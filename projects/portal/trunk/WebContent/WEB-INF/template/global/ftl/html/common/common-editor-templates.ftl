@@ -159,7 +159,8 @@
                             <label class="label">Effect</label>
                             <div class="inline-group">
                                 <label class="radio"><input type="radio" name="image-radio-effect" value="none" checked=""><i class="rounded-x"></i>None</label>
-                                <label class="radio"><input type="radio" name="image-radio-effect"><i class="rounded-x"></i>FadeIn</label>
+                                <label class="radio"><input type="radio" name="image-radio-effect" value="lightbox"><i class="rounded-x"></i>Lightbox</label>
+                                <label class="radio"><input type="radio" name="image-radio-effect" value="carousel"><i class="rounded-x"></i>Carousel</label>
                             </div>
                         </section>
                     </fieldset>       
@@ -167,7 +168,6 @@
                         <section>
                             <label class="label">Lightbox</label>
                             <div class="inline-group">
-                            	<label class="checkbox"><input type="checkbox" name="image-checkbox-lightbox"><i></i>Lightbox</label>
                                 <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>                                
                                 <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
                             </div>
