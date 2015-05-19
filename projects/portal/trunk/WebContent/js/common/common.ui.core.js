@@ -647,6 +647,7 @@
 		if(!defined($.magnificPopup)) {
 			return false;
 		}		
+		
 		$(document).on("click","[data-ride='lightbox']", function(e){					
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
@@ -689,6 +690,7 @@
 			}
 			$.magnificPopup.open(config);
 		} );	
+		
 	}
 	
 	var DEFAULT_THUMBNAIL_EXPAND_HEIGHT = 500,
@@ -1876,7 +1878,7 @@
 			selected : template(
 				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated slideInUp" data-id="#=imageId#"></div>'
 			),
-			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}#  />'),
+			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
 			download : template('/download/image/#=imageId#/#=name#')
 		},
@@ -2229,10 +2231,20 @@
 							var active_datasource = active_list_view.data('kendoListView').dataSource;		
 							var active_my_selected = active_pane.find(".image-selected");
 							
+							
+							var custom_effect = $("[name=image-radio-effect]:checked").val();
+							var lightbox_enabled = false;
+							var carousel_enabled = false;
+							if( custom_effect === "lightbox" ){
+								lightbox_enabled = true;
+							}else if( custom_effect === 'carousel') {
+								carousel_enabled = true;
+							}
+							
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
-							var lightbox_enabled = my_insert_options.find("input[name=image-checkbox-lightbox]").is(":checked");
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");
-							var gallery_selector = "#" + guid().toLowerCase() ;
+							
+							var custom_guid = "#" + guid().toLowerCase() ;
 							
 							
 							
@@ -2249,7 +2261,7 @@
 												thumbnail : thumbnail_enabled,
 												lightbox : lightbox_enabled,
 												gallery : gallery_enabled,
-												gallerySelector : gallery_selector,
+												gallerySelector : custom_guid,
 												thumbnaiUrll : objectEl.attr('src'),
 												css : "img-responsive" 
 											})
