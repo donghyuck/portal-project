@@ -2278,7 +2278,7 @@
 												url: templates.linkUrl( data )
 												})													
 											);
-											if( idex === total -1  )
+											if( index === total -1  )
 											{
 												alert( html.html() );
 											}
