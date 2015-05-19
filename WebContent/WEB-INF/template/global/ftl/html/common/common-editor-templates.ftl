@@ -352,19 +352,14 @@
 		<div class="carousel-caption"></div>
 	</div>
 </script>
-
+<script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-indicators-template">	
+	<li data-target="\\##=uid#" data-slide-to="#= index #"></li>
+</script>
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-template">	
 <div id="#=uid#" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
-	    <li data-target="\\##=uid#" data-slide-to="0" class="active"></li>
-	    <li data-target="\\##=uid#" data-slide-to="1"></li>
-	    <li data-target="\\##=uid#" data-slide-to="2"></li>
-	  </ol>	
+	</ol>	
 	<div class="carousel-inner" role="listbox">
-		<div class="item active">
-			<img src="..." alt="...">
-			<div class="carousel-caption"></div>
-		</div>
 	</div>	  
 	<a class="left carousel-control" href="\\##=uid#" role="button" data-slide="prev">
 	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
