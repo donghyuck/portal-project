@@ -2259,7 +2259,13 @@
 							
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");							
-							var custom_guid = "#" + guid().toLowerCase() ;							
+							var uid = guid().toLowerCase() ;
+							
+							if(carousel_enabled){
+								var html = template($('image-broswer-photo-carousel-template').html());
+								html= html({ 'uid': uid });
+								alert( html );
+							}
 							
 							$.each( active_my_selected.find("img"), function( index, value){
 								var objectEl = $(value);
@@ -2273,7 +2279,7 @@
 												thumbnail : thumbnail_enabled,
 												lightbox : lightbox_enabled,
 												gallery : gallery_enabled,
-												gallerySelector : custom_guid,
+												gallerySelector : uid,
 												thumbnaiUrll : objectEl.attr('src'),
 												css : "img-responsive" 
 											})
