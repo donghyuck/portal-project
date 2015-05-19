@@ -2277,11 +2277,16 @@
 										if(!defined(data.error)){
 											carousel_inner.append(
 												carousel_inner_template({ 
-													url: templates.linkUrl( data )
+													url: templates.linkUrl( data ),													
+													thumbnail : thumbnail_enabled,
 												})		
 											);
 											carousel_indicators.append(
-												carousel_indicators_template({'uid':uid, 'index':index })	
+												carousel_indicators_template({
+													'uid':uid, 
+													'index':index,
+													thumbnaiUrll : objectEl.attr('src')
+												})	
 											);
 											if( index === total -1  )
 											{
