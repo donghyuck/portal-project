@@ -346,6 +346,13 @@
 	</div>
 </script>			
 
+<script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-inner-template">	
+	<div class="item">
+		<img src="#=url#" alt="...">
+		<div class="carousel-caption"></div>
+	</div>
+</script>
+
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-template">	
 <div id="#=uid#" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
