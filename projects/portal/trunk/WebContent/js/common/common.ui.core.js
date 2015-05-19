@@ -2295,11 +2295,11 @@
 													})		
 											);
 											count ++ ;		
-											alert(count + "/" + total) ;
+											if(count == total) {
+												that.trigger(APPLY, { 'html' : html[0].outerHTML });									
+											}
 										}
 									});									
-								}).promise().done(function(){
-									that.trigger(APPLY, { 'html' : html[0].outerHTML });									
 								});
 							}else{
 								$.each( active_my_selected.find("img"), function( index, value){
