@@ -1344,7 +1344,7 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 .carousel-indicators img {
-	position:absoluet;	
+	position: absolute;	
 	border-radius: 50% !important;	
 	width:25px;
 	height:25px;
