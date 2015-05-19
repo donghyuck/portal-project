@@ -644,9 +644,18 @@
 	}
 	
 	function lightbox (){		
+		
 		if(!defined($.magnificPopup)) {
 			return false;
 		}		
+		
+		$(window).on('load', function () {
+			$('[data-ride="owl-carousel"]').each(function () {
+				var $carousel = $(this);
+				
+				alert( $carousel.html() );
+			});
+		});
 		
 		$(document).on("click","[data-ride='lightbox']", function(e){					
 			var $this = $(this), config = {};				
@@ -1878,6 +1887,13 @@
 			selected : template(
 				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated slideInUp" data-id="#=imageId#"></div>'
 			),
+			carousel : template(
+				'<div id="#= uid #" class="carousel slide" data-ride="carousel">'	
+					
+				+ '<div class="carousel-inner" role="listbox">'	
+				+ '</div>'	
+				+ '</div>'	
+			),
 			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
 			download : template('/download/image/#=imageId#/#=name#')
@@ -2211,7 +2227,6 @@
 											form_input.parent().addClass('has-error');
 											that._changeState(my_insert_btn, false);
 									});
-							}
 					});
 					
 					// handle insert 		
@@ -2242,12 +2257,8 @@
 							}
 							
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
-							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");
-							
-							var custom_guid = "#" + guid().toLowerCase() ;
-							
-							
-							
+							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");							
+							var custom_guid = "#" + guid().toLowerCase() ;							
 							
 							$.each( active_my_selected.find("img"), function( index, value){
 								var objectEl = $(value);
