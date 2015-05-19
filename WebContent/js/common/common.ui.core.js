@@ -2255,7 +2255,7 @@
 							}else if( custom_effect === 'carousel') {
 								carousel_enabled = true;
 							}							
-							
+							var gallery_width = my_insert_options.find("input[name=width]").val();							
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");							
 							
@@ -2265,7 +2265,10 @@
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
 								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());						
 								var carousel_indicators_template = kendo.template($("#image-broswer-photo-carousel-indicators-template").html());									
-								var html = $( carousel_template({ 'uid': uid }));
+								var html = $( carousel_template({ 
+									'uid': uid ,
+									width : gallery_width.length > 0 ? gallery_width : null
+								}));
 								var carousel_inner = html.find(".carousel-inner");						
 								var carousel_indicators = html.find(".carousel-indicators");								
 								var count = 0;					
