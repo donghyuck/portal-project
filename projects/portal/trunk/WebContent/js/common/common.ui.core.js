@@ -2268,7 +2268,8 @@
 								var html = $( carousel_template({ 'uid': uid }));
 								var carousel_inner = html.find(".carousel-inner");						
 								var carousel_indicators = html.find(".carousel-indicators");								
-								var count = 0;								
+								var count = 0;					
+								var total = active_my_selected.find("img").length;		
 								$.each( active_my_selected.find("img"), function( index, value){									
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
