@@ -344,4 +344,28 @@
 					<p>#:formattedSize() # 바이트</p>
 				</div>
 	</div>
-</script>					
+</script>			
+
+<script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-template">	
+<div id="#=uid#" class="carousel slide" data-ride="carousel">
+	<ol class="carousel-indicators">
+	    <li data-target="\\##=uid#" data-slide-to="0" class="active"></li>
+	    <li data-target="\\##=uid#" data-slide-to="1"></li>
+	    <li data-target="\\##=uid#" data-slide-to="2"></li>
+	  </ol>	
+	<div class="carousel-inner" role="listbox">
+		<div class="item active">
+			<img src="..." alt="...">
+			<div class="carousel-caption"></div>
+		</div>
+	</div>	  
+	<a class="left carousel-control" href="\\##=uid#" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="\\##=uid#" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>	
+</div>	
+</script>	
