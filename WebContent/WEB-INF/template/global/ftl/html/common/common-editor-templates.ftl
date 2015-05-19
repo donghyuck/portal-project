@@ -358,6 +358,7 @@
 	</li>
 </script>
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-template">	
+<div class="carousel-v1">
 <div id="#=uid#" class="carousel slide" data-ride="carousel">
 	<ol class="carousel-indicators">
 	</ol>	
@@ -371,5 +372,6 @@
 	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
 	    <span class="sr-only">Next</span>
 	  </a>	
+</div>
 </div>	
 </script>	
