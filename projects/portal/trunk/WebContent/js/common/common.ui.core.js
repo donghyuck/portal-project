@@ -2270,9 +2270,11 @@
 								var carousel_indicators = html.find(".carousel-indicators");								
 								var total = active_my_selected.find("img").length;
 								$.each( active_my_selected.find("img"), function( index, value){
+									
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
 									var image = active_datasource.get(objectId);
+									
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){
 																						
@@ -2299,11 +2301,13 @@
 												//html.find('.carousel-inner>.item').first().addClass('active');
 												
 												
-												that.trigger(APPLY, { 'html' : html[0].outerHTML });
+												
 											}
 										}
 									});									
-								});	
+								}).done(
+										that.trigger(APPLY, { 'html' : html[0].outerHTML });
+								);	
 							}else{
 								$.each( active_my_selected.find("img"), function( index, value){
 									var objectEl = $(value);
