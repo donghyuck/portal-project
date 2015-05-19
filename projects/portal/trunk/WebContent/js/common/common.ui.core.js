@@ -2293,7 +2293,8 @@
 														thumbnail : thumbnail_enabled
 													})		
 											);
-											count ++ ;											
+											count ++ ;		
+											alert(count + "/" + total) ;
 										}
 									});									
 								}).promise().done(function(){
