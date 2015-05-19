@@ -2299,7 +2299,7 @@
 								
 								
 								
-								alert( html );
+								alert( html.html() );
 							}
 							
 							$.each( active_my_selected.find("img"), function( index, value){
