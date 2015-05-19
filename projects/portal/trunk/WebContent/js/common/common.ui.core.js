@@ -2262,7 +2262,7 @@
 							var uid = guid().toLowerCase() ;
 							
 							if(carousel_enabled){
-								var html = template($('image-broswer-photo-carousel-template').html());
+								var html = kendo.template($('image-broswer-photo-carousel-template').html());
 								html= html({ 'uid': uid });
 								alert( html );
 							}
