@@ -649,7 +649,7 @@
 			return false;
 		}		
 		
-		$(widow).on('load', function () {
+		$(window).on('load', function () {
 			$('[data-ride="owl-carousel"]').each(function () {
 				var $carousel = $(this);
 				
