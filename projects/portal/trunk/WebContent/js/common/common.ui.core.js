@@ -1981,14 +1981,13 @@
 	function addImageTo( el, image ){
 		if( el.find( "[data-id=" + image.imageId + "]").length === 0 ){
 			el.append(templates.selected(image));
-			var render = el.find( "[data-id=" + image.imageId + "]");
-			render.addClass("slideInUp").one(
+			el.find( "[data-id=" + image.imageId + "]").addClass("slideInUp").one(
 				'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',	
 				function (e) {
-					renderTo.removeClass("slideInUp" );
+					el.find( "[data-id=" + image.imageId + "]").removeClass("slideInUp" );
 				}
 			);
-			render.click( function(e){
+			el.find( "[data-id=" + image.imageId + "]").click( function(e){
 				var $this = $(this);
 				common.ui.animate_v2($this, "rollOut" , function(){
 					$this.parent().remove();
