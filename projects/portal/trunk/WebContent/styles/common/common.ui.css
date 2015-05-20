@@ -1349,6 +1349,13 @@ body:not  (.right-to-left  ) .no-border-l {
 	width:25px;
 	height:25px;
 }
+.carousel-inner >.item {
+	text-align:center;
+}
+.carousel-inner >.item img{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 /* Loader
 ------------------------------------*/
