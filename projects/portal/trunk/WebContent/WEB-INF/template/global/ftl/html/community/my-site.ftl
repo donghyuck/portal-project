@@ -862,7 +862,13 @@
 		{
 			background : #F5F5F5;
 			color: #585f69;
-		}		
+		}	
+		.breadcrumbs-v3 p {
+		  color: #fff;
+		  font-size: 24px;
+		  font-weight: 200;
+		  margin-bottom: 0;
+		}			
 		</style>   	
 		</#compress>
 	</head>
@@ -885,6 +891,7 @@
 			</#if>	
 						
 			<section class="personalized-section bg-transparent no-margin-b open" >
+			<!--
 				<div class="personalized-section-heading">
 					<div class="container">
 						<div class="personalized-section-title">
@@ -898,7 +905,7 @@
 							</div>
 						</div>
 					</div>				
-				</div>
+				</div>-->
 				<div class="personalized-section-content animated arrow-up">	
 					<div class="container content" style="min-height:450px;">											
 						<div class="tab-v1">
