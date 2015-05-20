@@ -1980,7 +1980,9 @@
 	
 	function addImageTo( el, image ){
 		if( el.find( "[data-id=" + image.imageId + "]").length === 0 ){
-			el.append(templates.selected(image)).addClass("slideInUp").one(
+			el.append(templates.selected(image));
+			
+			el.find( "[data-id=" + image.imageId + "]").addClass("slideInUp").one(
 				'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',	
 				function (e) {
 					renderTo.removeClass("slideInUp" );
