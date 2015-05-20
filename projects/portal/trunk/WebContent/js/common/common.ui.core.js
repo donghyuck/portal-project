@@ -2107,7 +2107,7 @@
 				
 				// sorting 
 				$.each( that.element.find('.image-selected'), function (index, value){
-					value..kendoSortable({
+					$(value).kendoSortable({
 						hint:function(element) {
 							return element.clone().addClass("hint");
 						},
