@@ -105,7 +105,7 @@
 						renderTo.find('.grid-boxes-in').width(box_width);
 						return box_width;
 					}	
-				}).layout();	
+				});
 			});	
 		}
 	
