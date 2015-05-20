@@ -2323,7 +2323,9 @@
 								$.each( active_my_selected.find("img"), function( index, value){									
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
-									var image = active_datasource.get(objectId);									
+									var image = active_datasource.get(objectId);					
+									if( image == null )
+										image = new common.ui.data.Image({imageId: objectId});
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){			
 											carousel_indicators.append(
@@ -2356,6 +2358,9 @@
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
 									var image = active_datasource.get(objectId);
+									if( image == null)
+										image = new common.ui.data.Image({imageId: objectId});
+									
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){
 											that.trigger(APPLY, { 
