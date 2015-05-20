@@ -1155,30 +1155,8 @@
 									</div><!-- /.row -->									
 								</div><!-- /. my-site-notice -->	
 					</div><!-- /.container -->
-					
-
-						
-			<section class="personalized-section bg-transparent no-margin-b open" >
-			<!--
-				<div class="personalized-section-heading">
-					<div class="container">
-						<div class="personalized-section-title">
-							<i class="icon-flat  settings2"></i>
-							<h3>MY 사이트 <span style="height:2.6em;" class="hidden-xs"> 웹사이트의 메뉴, 페이지, 이미지들을 쉽고 빠르게 생성하고 수정할 수 있습니다. <i class="fa fa-long-arrow-right"></i></span></h3>
-							<div class="personalized-section-heading-controls btn-toolbar ">							
-								<div id="personalized-buttons" class="btn-group btn-group-sm">
-									<button type="button" class="btn btn-primary rounded-left" data-action="open-menu-editor"><i class="fa fa-sitemap"></i> <span class="hidden-xs">메뉴</span> </button>
-									<button type="button" class="btn btn-primary rounded-right" data-action="open-template-editor"><i class="fa fa-file-code-o"></i> <span class="hidden-xs">템플릿</span></button>
-								</div>
-							</div>
-						</div>
-					</div>				
-				</div>-->
-				<div class="personalized-section-content animated arrow-up">	
-
-				</div>				
-			</section><!-- /.section -->
-			<!-- ./END MAIN CONTENT -->	
+								
+			<!-- ./END MAIN CONTENT -->				
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->				
