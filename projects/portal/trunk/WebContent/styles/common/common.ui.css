@@ -1335,6 +1335,7 @@ body:not  (.right-to-left  ) .no-border-l {
 .carousel-indicators li {
 	width : 27px;
 	height:27px;
+	text-indent: 0;
 }
 .carousel-indicators .active {
   width: 27px;
