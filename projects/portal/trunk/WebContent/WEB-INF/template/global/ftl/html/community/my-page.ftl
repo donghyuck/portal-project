@@ -422,7 +422,7 @@
 						var that = this;
 						if( that.page.pageId  > 0 ) {
 							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
-							// Render the result as a PDF file
+								// Render the result as a PDF file
 								return kendo.drawing.exportPDF(group, {
 								paperSize: "auto",
 								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
