@@ -74,7 +74,7 @@
 					}
 				});
 								
-				$('.personalized-section .nav-tabs a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+				$(".wrapper>.container.content:first .nav-tabs a[data-toggle=tab]").on('show.bs.tab', function (e) {
 					e.target // newly activated tab
 					e.relatedTarget // previous active tab					
 					var renderTo = $(e.target);					
@@ -85,7 +85,7 @@
 					}							
 				});
 				
-				$('.personalized-section .nav-tabs a[data-toggle="tab"]:first').tab('show');
+				$(".wrapper>.container.content:first .nav-tabs a[data-toggle=tab]:first").tab('show');
 				
 				// END SCRIPT 				
 			}
