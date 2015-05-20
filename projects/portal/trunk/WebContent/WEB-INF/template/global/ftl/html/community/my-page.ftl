@@ -692,7 +692,7 @@
 			                    	<span class="text-danger" data-bind="invisible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>&nbsp;
 									<div class="ibox-tools m-r-lg" data-bind="invisible:editable">
-										<button class="btn btn-deafult btn-flat btn-outline btn-sm rounded" data-bind="exportPdf"><i class="fa fa-file-pdf-o"></i> PDF</button>
+										<button class="btn btn-deafult btn-flat btn-outline btn-sm rounded" data-bind="click:exportPdf"><i class="fa fa-file-pdf-o"></i> PDF</button>
 									</div>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
