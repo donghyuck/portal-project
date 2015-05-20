@@ -114,10 +114,12 @@
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
 					dataSource: {
-						serverFiltering: false,
+						serverFiltering: true,
+						filter :  { field: "pageState", operator: "eq", value: "" }		
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
+							alert( kendo.stringify(options));
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
 							}
 						},
