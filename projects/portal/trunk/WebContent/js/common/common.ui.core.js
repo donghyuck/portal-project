@@ -2103,6 +2103,25 @@
 						that.element.find("input:radio[name=image-radio-effect]").first().prop("checked", true);
 					}
 				});				
+				
+				
+				// sorting 
+				$.each( that.element.find('.image-selected'), function (index, value){
+					value..kendoSortable({
+						hint:function(element) {
+							return element.clone().addClass("hint");
+						},
+							placeholder:function(element) {
+							return element.clone().addClass("placeholder").text("drop here");
+						},
+						cursor: "url('/images/common/sortable/grabbing.cur'), default",
+						cursorOffset: {
+							top: -10,
+							left: -230
+						}
+					});
+				});
+				
 				// image options events
 				var imageOptions = that.options.imageOptions ;
 				that.element.find("input[name=image-radio-effect]").change( function(){
