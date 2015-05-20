@@ -1339,7 +1339,7 @@ body:not  (.right-to-left  ) .no-border-l {
 .carousel-indicators .active {
   width: 25px;
   height: 25px;
-  margin: 0;
+  margin: 1px;
   background-color: #fff;
 }
 
