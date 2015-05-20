@@ -1996,7 +1996,8 @@
 				var that = this;
 				Widget.fn.init.call(that, element, options);
 				options = that.options;	
-				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];				
+				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];	
+				options.
 				that.refresh();
 			},
 			events : [ ERROR, CHANGE, APPLY ],
@@ -2015,7 +2016,7 @@
 				}else{
 					that.element.find('.modal-body ul.nav a:first').hide();
 				}	
-				that.element.find(".image-selected").html("");				
+				that.element.find(".image-selected").html("");
 				that.element.find(".modal-body ul.nav a").filter(function(){ 
 					if( that.objectId() > 0 ){
 						refreshListViewDataSource($("#"+ that.options.guid[0]));
@@ -2075,6 +2076,7 @@
 				var template = that._dialogTemplate();			
 				that.element.html(template( that.options ));
 				that.element.children('.modal').css('z-index', '2000');				
+				
 				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
 				var my_insert_options = $("#" + that.options.guid[5]);
 				var my_insert_options_up = $("#" + that.options.guid[5] +" .btn-up");	
@@ -2135,7 +2137,7 @@
 										navigatable : false,
 										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
 										dataBound : function(e) {
-											my_selected.html("");
+											//my_selected.html("");
 											that._changeState(my_insert_btn, false);
 										}
 									});
@@ -2149,12 +2151,9 @@
 										buttonCount : 5,
 										dataSource : my_list_view.data('kendoListView').dataSource
 									});
-								}
-								
-								my_list_view.data('kendoListView').dataSource.read();	
-								
-								var my_file_upload = tab_pane.find("input[type=file]");		
-								
+								}								
+								my_list_view.data('kendoListView').dataSource.read();									
+								var my_file_upload = tab_pane.find("input[type=file]");										
 								if( !common.ui.exists(my_file_upload) ){
 									common.ui.upload(my_file_upload,{
 										async: {
