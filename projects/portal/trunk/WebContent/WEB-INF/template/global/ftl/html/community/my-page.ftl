@@ -418,7 +418,7 @@
 						});												
 						return false;
 					},	
-					exportPdf: function(){
+					exportPdf: function(e){
 						var $this = this, 
 						btn = $(e.target);						
 						btn.button('loading');	
