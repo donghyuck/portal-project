@@ -1,7 +1,8 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 <head>
-		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
+		<#assign page = action.getPage() >
+		<title><>${page.title}</title>
 		<#compress>		
 		<script type="text/javascript">
 		<!--
@@ -1159,10 +1160,9 @@
 				</div>				
 			</section><!-- /.section -->
 			<!-- ./END MAIN CONTENT -->	
-	 		
 	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-footer.ftl" >		
-			<!-- ./END FOOTER -->					
+			<#include "/html/common/common-homepage-globalfooter.ftl" >		
+			<!-- ./END FOOTER -->				
 		</div>	
 		
 		<div id="my-site-menu-editor" class="dialog" data-feature="dialog" data-dialog-animate="">
