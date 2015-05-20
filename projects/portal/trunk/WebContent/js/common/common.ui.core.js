@@ -2362,7 +2362,7 @@
 													url: templates.linkUrl( data ),
 													thumbnail : imageOptions.get('thumbnail'),
 													lightbox : imageOptions.isLightboxEnabled(),
-													gallery : imageOptions.isGalleryEnabled(),
+													gallery : imageOptions.get("gallery"),
 													uid : uid,
 													thumbnaiUrll : objectEl.attr('src'),
 													css : "img-responsive" 
