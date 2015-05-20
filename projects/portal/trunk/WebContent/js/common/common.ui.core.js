@@ -1885,7 +1885,7 @@
 		JSON = 'json', 
 		templates = {
 			selected : template(
-				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated fadeIn" data-id="#=imageId#"></div>'
+				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated" data-id="#=imageId#"></div>'
 			),
 			carousel : template(
 				'<div id="#= uid #" class="carousel slide" data-ride="carousel">'	
@@ -1980,10 +1980,14 @@
 	
 	function addImageTo( el, image ){
 		if( el.find( "[data-id=" + image.imageId + "]").length === 0 ){
-			el.append(templates.selected(image));	
+			el.append(templates.selected(image)).addClass("slideInUp").one(
+				'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',	
+				function (e) {
+					renderTo.removeClass("slideInUp" );
+				}
+			);
 			el.find( "[data-id=" + image.imageId + "]").click( function(e){
 				var $this = $(this);
-				$this.removeClass("slideInUp");
 				common.ui.animate_v2($this, "rollOut" , function(){
 					$this.parent().remove();
 				});				
