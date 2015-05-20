@@ -421,7 +421,7 @@
 					exportPdf: function(){
 						var that = this;
 						if( that.page.pageId  > 0 ) {
-							kendo.drawing.drawDOM($(".content-wrapper")).then(function(group) {
+							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
 							// Render the result as a PDF file
 								return kendo.drawing.exportPDF(group, {
 								paperSize: "auto",
