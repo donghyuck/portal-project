@@ -1885,7 +1885,7 @@
 		JSON = 'json', 
 		templates = {
 			selected : template(
-				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated slideInUp" data-id="#=imageId#"></div>'
+				'<div class="img-wrapper"><img src="/download/image/#= imageId #/#= name #?width=150&height=150" alt="#=name#" class="img-responsive animated fadeIn" data-id="#=imageId#"></div>'
 			),
 			carousel : template(
 				'<div id="#= uid #" class="carousel slide" data-ride="carousel">'	
