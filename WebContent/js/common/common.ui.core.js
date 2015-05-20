@@ -2245,8 +2245,7 @@
 						default:			
 							var active_list_view =  active_pane.find(".image-listview");
 							var active_datasource = active_list_view.data('kendoListView').dataSource;		
-							var active_my_selected = active_pane.find(".image-selected");
-							
+							var active_my_selected = active_pane.find(".image-selected");							
 							var custom_effect = $("[name=image-radio-effect]:checked").val();							
 							var lightbox_enabled = false;
 							var carousel_enabled = false;
@@ -2254,10 +2253,10 @@
 								lightbox_enabled = true;
 							}else if( custom_effect === 'carousel') {
 								carousel_enabled = true;
-							}							
+							}
 							var gallery_width = my_insert_options.find("input[name=width]").val();							
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
-							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");							
+							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");			
 							
 							var uid = guid().toLowerCase() ;	
 							
@@ -2288,7 +2287,6 @@
 													thumbnaiUrll : objectEl.attr('src')
 												})	
 											);
-											
 											carousel_inner.append(
 													carousel_inner_template({ 
 														'active': count === 0,
@@ -2318,7 +2316,7 @@
 													thumbnail : thumbnail_enabled,
 													lightbox : lightbox_enabled,
 													gallery : gallery_enabled,
-													gallerySelector : uid,
+													uid : uid,
 													thumbnaiUrll : objectEl.attr('src'),
 													css : "img-responsive" 
 												})
