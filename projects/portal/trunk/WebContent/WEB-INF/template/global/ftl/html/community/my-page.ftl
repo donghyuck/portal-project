@@ -139,7 +139,6 @@
 						batch: false,
 						pageSize: 15,
 						serverPaging: true,
-						serverFiltering: false,
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
