@@ -62,7 +62,7 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");
-				
+				/**
 				common.ui.buttonGroup($("#personalized-buttons"), {
 					handlers :{
 						"open-menu-editor" : function(e){
@@ -73,7 +73,7 @@
 						}
 					}
 				});
-								
+				**/				
 				$(".wrapper>.container.content:first .nav-tabs a[data-toggle=tab]").on('show.bs.tab', function (e) {
 					e.target // newly activated tab
 					e.relatedTarget // previous active tab					
