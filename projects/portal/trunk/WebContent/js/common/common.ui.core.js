@@ -2100,7 +2100,7 @@
 						this.set('gallery', false);
 						this.set('thumbnail', false);						
 						that.element.find('input:checkbox[name]').removeAttr('checked');
-						that.element.find(("input:radio[name=image-radio-effect]").first().prop("checked", true);
+						that.element.find("input:radio[name=image-radio-effect]").first().prop("checked", true);
 					}
 				});				
 				// image options events
