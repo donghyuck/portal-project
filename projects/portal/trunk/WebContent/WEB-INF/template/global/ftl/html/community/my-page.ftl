@@ -417,7 +417,27 @@
 								}							
 						});												
 						return false;
-					},									
+					},	
+					exportPdf: function(){
+						var that = this;
+						if( that.page.pageId  > 0 ) {
+							kendo.drawing.drawDOM($(".content-wrapper")).then(function(group) {
+							// Render the result as a PDF file
+								return kendo.drawing.exportPDF(group, {
+								paperSize: "auto",
+								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+								});
+							}).done(function(data) {
+								// Save the PDF file
+								kendo.saveAs({
+								dataURI: data,
+								fileName:  that.page.name + ".pdf",
+								proxyURL: "/downlaod/export"
+								});
+							});
+						}
+						return false;
+					},								
 					setPage: function(page){
 						var that = this;
 						page.copy(that.page);						
@@ -672,7 +692,7 @@
 			                    	<span class="text-danger" data-bind="invisible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>&nbsp;
 									<div class="ibox-tools m-r-lg" data-bind="invisible:editable">
-										<button class="btn btn-deafult btn-flat btn-outline btn-sm rounded"><i class="fa fa-file-pdf-o"></i> PDF</button>
+										<button class="btn btn-deafult btn-flat btn-outline btn-sm rounded" data-bind="exportPdf"><i class="fa fa-file-pdf-o"></i> PDF</button>
 									</div>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
