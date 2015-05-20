@@ -1997,24 +1997,6 @@
 				Widget.fn.init.call(that, element, options);
 				options = that.options;	
 				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];	
-				options.imageOptions = new kendo.data.ObservableObject({ 
-					effect: "none",
-					gallery : false,
-					thumbnail : false,
-					style: "",		
-					isCarouselEnabled:function(){
-						if( this.effect == 'carousel')
-							return true;
-						else 
-							return false;						
-					},
-					isLightboxEnabled:function(){
-						if( this.effect == 'lightbox')
-							return true;
-						else 
-							return false;
-					}
-				});
 				that.refresh();
 			},
 			events : [ ERROR, CHANGE, APPLY ],
@@ -2027,13 +2009,16 @@
 				objectType : 0
 			},
 			show : function() {				
-				var that = this;								
+				var that = this;				
+				that.options.imageOptions.reset();
 				if(that.objectId() > 0 ){
 					that.element.find('.modal-body ul.nav a:first').show();
 				}else{
 					that.element.find('.modal-body ul.nav a:first').hide();
 				}	
+				
 				that.element.find(".image-selected").html("");
+				
 				that.element.find(".modal-body ul.nav a").filter(function(){ 
 					if( that.objectId() > 0 ){
 						refreshListViewDataSource($("#"+ that.options.guid[0]));
@@ -2092,12 +2077,32 @@
 				var that = this;
 				var template = that._dialogTemplate();			
 				that.element.html(template( that.options ));
-				that.element.children('.modal').css('z-index', '2000');				
-				
-				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
-				var my_insert_options = $("#" + that.options.guid[5]);
-				var my_insert_options_up = $("#" + that.options.guid[5] +" .btn-up");	
-				
+				that.element.children('.modal').css('z-index', '2000');		
+				that.options.imageOptions = new kendo.data.ObservableObject({ 
+					effect: "none",
+					gallery : false,
+					thumbnail : false,
+					style: "",		
+					isCarouselEnabled:function(){
+						if( this.effect == 'carousel')
+							return true;
+						else 
+							return false;						
+					},
+					isLightboxEnabled:function(){
+						if( this.effect == 'lightbox')
+							return true;
+						else 
+							return false;
+					},
+					reset:function(){
+						this.set('effect', 'none');
+						this.set('gallery', false);
+						this.set('thumbnail', false);						
+						that.element.find('input:checkbox[name]').removeAttr('checked');
+						that.element.find(("input:radio[name=image-radio-effect]").first().prop("checked", true);
+					}
+				});				
 				// image options events
 				var imageOptions = that.options.imageOptions ;
 				that.element.find("input[name=image-radio-effect]").change( function(){
@@ -2108,7 +2113,12 @@
 				});	
 				that.element.find("input[name=image-checkbox-gallery]").change( function(){
 					imageOptions.set('gallery', $(this).is(':checked'));				
-				});					
+				});
+				
+				var my_insert_btn = that.element.find(	'.modal-footer .btn.custom-insert-img');
+				var my_insert_options = $("#" + that.options.guid[5]);
+				var my_insert_options_up = $("#" + that.options.guid[5] +" .btn-up");	
+				
 				// tabs events
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {					
 					e.target // activated tab
