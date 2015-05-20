@@ -114,18 +114,14 @@
 			if( !common.ui.exists( renderTo ) ){
 				common.ui.listview( renderTo, {
 					dataSource: {
-						serverFiltering: true,
-						filter :  { field: "pageState", operator: "eq", value: "" },		
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
-								alert( kendo.stringify(options));
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
 							}
 						},
 						requestStart: function(e){
 							if( $(".grid-boxes").data('masonry') ){
-								//$(".grid-boxes").masonry('remove', $('.grid-boxes .grid-boxes-in'));
 								$(".grid-boxes").masonry('destroy');
 							}						
 						},
@@ -139,6 +135,7 @@
 						batch: false,
 						pageSize: 15,
 						serverPaging: true,
+						serverFiltering: false,
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
