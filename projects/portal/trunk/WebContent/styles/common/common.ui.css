@@ -1333,19 +1333,17 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 .carousel-indicators li {
-	width : 25px;
-	height:25px;
+	width : 27px;
+	height:27px;
 }
 .carousel-indicators .active {
-  width: 25px;
-  height: 25px;
+  width: 27px;
+  height: 27px;
   margin: 1px;
   background-color: #fff;
 }
 
 .carousel-indicators img {
-	position: absolute;	
-	border-radius: 50% !important;	
 	width:25px;
 	height:25px;
 }
