@@ -2108,16 +2108,13 @@
 				// sorting 
 				$.each( that.element.find('.image-selected'), function (index, value){
 					$(value).kendoSortable({
+						filter: ">div.img-wrapper",
+						cursor: "move",
 						hint:function(element) {
 							return element.clone().addClass("hint");
 						},
-							placeholder:function(element) {
-							return element.clone().addClass("placeholder").text("drop here");
-						},
-						cursor: "url('/images/common/sortable/grabbing.cur'), default",
-						cursorOffset: {
-							top: -10,
-							left: -230
+						placeholder:function(element) {
+							 return element.clone().css("opacity", 0.1);
 						}
 					});
 				});
