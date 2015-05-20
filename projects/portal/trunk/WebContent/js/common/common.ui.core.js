@@ -1997,7 +1997,24 @@
 				Widget.fn.init.call(that, element, options);
 				options = that.options;	
 				options.guid = [guid().toLowerCase(), guid().toLowerCase(), guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase(),guid().toLowerCase()];	
-				options.
+				options.imageOptions = new kendo.data.ObservableObject({ 
+					effect: "none",
+					gallery : false,
+					thumbnail : false,
+					style: "",		
+					isCarouselEnabled:function(){
+						if( this.effect == 'carousel')
+							return true;
+						else 
+							return false;						
+					},
+					isLightboxEnabled:function(){
+						if( this.effect == 'lightbox')
+							return true;
+						else 
+							return false;
+					}
+				});
 				that.refresh();
 			},
 			events : [ ERROR, CHANGE, APPLY ],
@@ -2081,6 +2098,17 @@
 				var my_insert_options = $("#" + that.options.guid[5]);
 				var my_insert_options_up = $("#" + that.options.guid[5] +" .btn-up");	
 				
+				// image options events
+				var imageOptions = that.options.imageOptions ;
+				that.element.find("input[name=image-radio-effect]").change( function(){
+					imageOptions.set('effect', this.value);				
+				});
+				that.element.find("input[name=image-checkbox-thumbnail]").change( function(){
+					imageOptions.set('thumbnail', $(this).is(':checked'));				
+				});	
+				that.element.find("input[name=image-checkbox-gallery]").change( function(){
+					imageOptions.set('gallery', $(this).is(':checked'));				
+				});					
 				// tabs events
 				that.element.find('.modal-body a[data-toggle="tab"]').on('shown.bs.tab', function(e) {					
 					e.target // activated tab
@@ -2245,7 +2273,12 @@
 							var active_list_view =  active_pane.find(".image-listview");
 							var active_datasource = active_list_view.data('kendoListView').dataSource;		
 							var active_my_selected = active_pane.find(".image-selected");							
+						/*
+							
+							
 							var custom_effect = $("[name=image-radio-effect]:checked").val();							
+							
+							
 							var lightbox_enabled = false;
 							var carousel_enabled = false;
 							if( custom_effect === "lightbox" ){
@@ -2253,16 +2286,21 @@
 							}else if( custom_effect === 'carousel') {
 								carousel_enabled = true;
 							}
-							var gallery_width = my_insert_options.find("input[name=width]").val();							
+												
 							var thumbnail_enabled = my_insert_options.find("input[name=image-checkbox-thumbnail]").is(":checked");
 							var gallery_enabled = my_insert_options.find("input[name=image-checkbox-gallery]").is(":checked");			
 							
+							
+							
+							*/
+							
 							var uid = guid().toLowerCase() ;	
 							
-							if( carousel_enabled ){
+							if( imageOptions.isCarouselEnabled() ){
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
 								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());						
-								var carousel_indicators_template = kendo.template($("#image-broswer-photo-carousel-indicators-template").html());									
+								var carousel_indicators_template = kendo.template($("#image-broswer-photo-carousel-indicators-template").html());		
+								var gallery_width = my_insert_options.find("input[name=width]").val();		
 								var html = $( carousel_template({ 
 									'uid': uid ,
 									width : gallery_width.length > 0 ? gallery_width : null
@@ -2282,7 +2320,7 @@
 													'active': count === 0,
 													'uid':uid, 
 													'index':count,
-													thumbnail : thumbnail_enabled,
+													thumbnail : imageOptions.get('thumbnail'),
 													thumbnaiUrll : objectEl.attr('src')
 												})	
 											);
@@ -2292,7 +2330,7 @@
 														'index':count,
 														'uid':uid, 
 														url: templates.linkUrl( data ),																	
-														thumbnail : thumbnail_enabled
+														thumbnail : imageOptions.get('thumbnail')
 													})		
 											);
 											count ++ ;		
@@ -2312,9 +2350,9 @@
 											that.trigger(APPLY, { 
 												html : templates.image({ 
 													url: templates.linkUrl( data ),
-													thumbnail : thumbnail_enabled,
-													lightbox : lightbox_enabled,
-													gallery : gallery_enabled,
+													thumbnail : imageOptions.get('thumbnail'),
+													lightbox : imageOptions.isLightboxEnabled(),
+													gallery : imageOptions.isGalleryEnabled(),
 													uid : uid,
 													thumbnaiUrll : objectEl.attr('src'),
 													css : "img-responsive" 
