@@ -372,10 +372,10 @@
 <script type="text/x-kendo-tmpl" id="image-broswer-photo-carousel-template">	
 <div class="carousel-v1">
 <div id="#=uid#" class="carousel slide" data-ride="carousel" style="#if(width){# max-width: #= width #; #}#">
-	<ol class="carousel-indicators">
-	</ol>	
 	<div class="carousel-inner" role="listbox">
-	</div>	  
+	</div>	
+	<ol class="carousel-indicators">
+	</ol>	  
 	<a class="left carousel-control" href="\\##=uid#" role="button" data-slide="prev">
 	    <span class="btn-flat-icon left" aria-hidden="true"></span>
 	    <span class="sr-only">Previous</span>
