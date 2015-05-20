@@ -989,7 +989,7 @@
 									<div id="attachment-list-view" class="file-listview"></div>		
 								</div>								
 								<div class="panel-footer no-padding">
-									<div id="pager" class="file-listview-pager k-pager-wrap"></div>		
+									<div id="pager" class="file-listview-pager bg-flat-gray p-sm"></div>		
 								</div>							
 							</div>		
 							</#if>																								
@@ -1052,7 +1052,7 @@
 							</section>
 							<hr class="no-margin-t"/>
 							<div id="photo-list-view" class="image-listview" style="min-height:450px;">	</div>
-							<div id="photo-list-pager" class="image-listview-pager k-pager-wrap"></div>
+							<div id="photo-list-pager" class="image-listview-pager bg-flat-gray p-sm"></div>
 							<!--
 							<div class="panel panel-default no-margin-b">			
 								<div class="panel-body bg-slivergray border-b">
