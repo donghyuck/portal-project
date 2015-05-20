@@ -888,7 +888,7 @@
 			</div>
 			</#if>	
 
-					<div class="container content" style="min-height:450px;">											
+			<div class="container content" style="min-height:450px;">											
 						<div class="tab-v1">
 							<ul class="nav nav-tabs">
 								<li><a href="#website-page" data-toggle="tab" class="m-l-sm rounded-top">페이지</a></li>
@@ -1154,8 +1154,9 @@
 										</div><!-- /.col-sm-8 -->										
 									</div><!-- /.row -->									
 								</div><!-- /. my-site-notice -->	
-					</div><!-- /.container -->
-								
+					</div>
+				</div>				
+			</div><!-- /.container -->								
 			<!-- ./END MAIN CONTENT -->				
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
