@@ -420,7 +420,6 @@
 					},	
 					exportPdf: function(){
 						var that = this;
-						/*
 						if( that.page.pageId  > 0 ) {
 							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
 								return kendo.drawing.exportPDF(group, {
@@ -435,7 +434,6 @@
 								});
 							});
 						}
-						*/
 						return false;
 					},								
 					setPage: function(page){
