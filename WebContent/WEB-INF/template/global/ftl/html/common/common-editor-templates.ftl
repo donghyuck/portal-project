@@ -44,18 +44,21 @@
 		.image-broswer .image-selected .img-wrapper:hover {
 			
 		}
-		 			
+		
+		.img-wrapper { 
+			width: 120px;
+			height: 120px;
+			padding: 0;		 
+		} 			
+		
 		.image-broswer .img-wrapper {
 			float: left;
 			position: relative;
-			width: 120px;
-			height: 120px;
-			padding: 0;
 			cursor: pointer;
 			overflow: hidden;		
 		}
 		
-		.image-broswer .img-wrapper img{
+		.img-wrapper img{
 			width: 100%;
 			height: 100%;
 		}
