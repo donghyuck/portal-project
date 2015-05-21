@@ -80,10 +80,11 @@
 			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){
 			
-				var msnry = renderTo.masonry({
+				renderTo.masonry({
 					columnWidth: '.item',
 					itemSelector: '.item'
 				});
+				var msnry = renderTo.data('masonry');
 								
 				var dataSource = new kendo.data.DataSource({				
 						transport: { 
