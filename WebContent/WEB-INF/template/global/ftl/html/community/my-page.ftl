@@ -86,13 +86,11 @@
 			$(".grid-boxes").imagesLoaded( function(e){				
 				console.log("in page list, all images loaded.");				
 				var renderTo = $(".grid-boxes");				
-				
-				if( $(".grid-boxes").data('masonry') ){
-					console.log("masonry create and render...");
+				console.log("masonry create and render...");
 					var gutter = 30;
 					var min_width = 298;
-					renderTo.delay(100).masonry({
-						isInitLayout: true,
+					renderTo.masonry({
+						isInitLayout: false,
 						itemSelector : ".grid-boxes-in",
 						gutterWidth: gutter,					
 						isAnimated : true,
@@ -110,11 +108,9 @@
 							renderTo.find('.grid-boxes-in').width(box_width);
 							return box_width;
 						}	
-					});					
-				}else{
+					});
 					
-				}
-				renderTo.delay( 100 ).masonry();
+					renderTo.masonry();
 			});	
 		}
 	
@@ -605,7 +601,7 @@
 			visibility: visible;
 			border-radius: 6px 6px 0 0 !important;
 			overflow:hidden;
-			background: #fff;
+			
 		}
 		
 		.acc-v1	.panel-default {
