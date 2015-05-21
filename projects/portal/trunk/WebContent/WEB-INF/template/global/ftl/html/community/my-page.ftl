@@ -148,6 +148,7 @@
 						serverFiltering: false,
 						serverSorting: false
 					},
+					selectable: false, 
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){				
 						console.log("page list data bound.");
