@@ -270,85 +270,8 @@
 			<!-- START MAIN CONTENT -->
 			<div class="container content">		
 				<div class="row">
-				<div id="my-page-stream" >
-				
-<div class="col-md-4 col-sm-6 item">
-				<div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>Badges</h5>                        
-                    </div>
-                    <div class="ibox-content" style="display: block;">
-                        <p>
-                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
-                        </p>
-                            <p><span class="badge">Plain</span></p>
-                            <p><span class="badge badge-primary">Primary</span></p>
-                            <p><span class="badge badge-info">Information</span></p>
-                            <p><span class="badge badge-success">Success</span></p>
-                            <p><span class="badge badge-warning">Warning</span></p>
-                            <p><span class="badge badge-danger">Danger</span></p>
-                    </div>
-                </div>
-          </div><!--/.item  -->
-
-<div class="col-md-4 col-sm-6 item">
-				<div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>Badges</h5>                        
-                    </div>
-                    <div class="ibox-content" style="display: block;">
-                        <p>
-                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
-                        </p>
-                            <p><span class="badge">Plain</span></p>
-                            <p><span class="badge badge-primary">Primary</span></p>
-                            <p><span class="badge badge-info">Information</span></p>
-                            <p><span class="badge badge-success">Success</span></p>
-                            <p><span class="badge badge-warning">Warning</span></p>
-                            <p><span class="badge badge-danger">Danger</span></p>
-                    </div>
-                </div>
-          </div><!--/.item  -->
-
-<div class="col-md-4 col-sm-6 item">
-				<div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>Badges</h5>                        
-                    </div>
-                    <div class="ibox-content" style="display: block;">
-                        <p>
-                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
-                        </p>
-                            <p><span class="badge">Plain</span></p>
-                            <p><span class="badge badge-primary">Primary</span></p>
-                            <p><span class="badge badge-info">Information</span></p>
-                            <p><span class="badge badge-success">Success</span></p>
-                            <p><span class="badge badge-warning">Warning</span></p>
-                            <p><span class="badge badge-danger">Danger</span></p>
-                    </div>
-                </div>
-          </div><!--/.item  -->
-
-<div class="col-md-4 col-sm-6 item">
-				<div class="ibox float-e-margins">
-                    <div class="ibox-title">
-                        <h5>Badges</h5>                        
-                    </div>
-                    <div class="ibox-content" style="display: block;">
-                        <p>
-                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
-                        </p>
-                            <p><span class="badge">Plain</span></p>
-                            <p><span class="badge badge-primary">Primary</span></p>
-                            <p><span class="badge badge-info">Information</span></p>
-                            <p><span class="badge badge-success">Success</span></p>
-                            <p><span class="badge badge-warning">Warning</span></p>
-                            <p><span class="badge badge-danger">Danger</span></p>
-                    </div>
-                </div>
-          </div><!--/.item  -->
-
-          			</div>		
+					<div id="my-page-stream" >
+					</div>
 				</div>
 			</div>	
 			<!-- ./END MAIN CONTENT -->	
@@ -592,20 +515,19 @@
 	</script>	
 	<script id="my-stream-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6 item">
-				<div class="ibox float-e-margins">
-                    <div class="ibox-title">
-				#if( bodyContent.imageCount > 0 ){#
-				<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
-				#}#                
-                    </div>
-                    <div class="ibox-content" style="display: block;">
-                        <p>
-                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
-                        </p>
-                    </div>
-                </div>
-	</div><!--/.item  -->
-	
+		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+			#if( bodyContent.imageCount > 0 ){#
+			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
+			#}#                
+			</div>
+			<div class="ibox-content" style="display: block;">
+				<p>
+					To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
+				</p>
+			</div>
+		</div>
+	</div><!--/.item  -->	
 	</script>										
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
