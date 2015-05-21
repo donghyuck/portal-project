@@ -121,68 +121,81 @@
 				<div class="row masonry-container">
 				
 <div class="col-md-4 col-sm-6 item">
-            <div class="thumbnail">
-              <img src="http://lorempixel.com/200/200/abstract" alt="">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
+				<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Badges</h5>                        
+                    </div>
+                    <div class="ibox-content" style="display: block;">
+                        <p>
+                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
+                        </p>
+                            <p><span class="badge">Plain</span></p>
+                            <p><span class="badge badge-primary">Primary</span></p>
+                            <p><span class="badge badge-info">Information</span></p>
+                            <p><span class="badge badge-success">Success</span></p>
+                            <p><span class="badge badge-warning">Warning</span></p>
+                            <p><span class="badge badge-danger">Danger</span></p>
+                    </div>
+                </div>
           </div><!--/.item  -->
 
-          <div class="col-md-4 col-sm-6 item">
-            <div class="thumbnail">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
+<div class="col-md-4 col-sm-6 item">
+				<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Badges</h5>                        
+                    </div>
+                    <div class="ibox-content" style="display: block;">
+                        <p>
+                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
+                        </p>
+                            <p><span class="badge">Plain</span></p>
+                            <p><span class="badge badge-primary">Primary</span></p>
+                            <p><span class="badge badge-info">Information</span></p>
+                            <p><span class="badge badge-success">Success</span></p>
+                            <p><span class="badge badge-warning">Warning</span></p>
+                            <p><span class="badge badge-danger">Danger</span></p>
+                    </div>
+                </div>
           </div><!--/.item  -->
 
-          <div class="col-md-4 col-sm-6 item">
-            <div class="thumbnail">
-              <img src="http://lorempixel.com/200/200/abstract" alt="">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
+<div class="col-md-4 col-sm-6 item">
+				<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Badges</h5>                        
+                    </div>
+                    <div class="ibox-content" style="display: block;">
+                        <p>
+                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
+                        </p>
+                            <p><span class="badge">Plain</span></p>
+                            <p><span class="badge badge-primary">Primary</span></p>
+                            <p><span class="badge badge-info">Information</span></p>
+                            <p><span class="badge badge-success">Success</span></p>
+                            <p><span class="badge badge-warning">Warning</span></p>
+                            <p><span class="badge badge-danger">Danger</span></p>
+                    </div>
+                </div>
           </div><!--/.item  -->
 
-          <div class="col-md-4 col-sm-6 item">
-            <div class="thumbnail">
-              <img src="http://lorempixel.com/200/200/abstract" alt="">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
+<div class="col-md-4 col-sm-6 item">
+				<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Badges</h5>                        
+                    </div>
+                    <div class="ibox-content" style="display: block;">
+                        <p>
+                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
+                        </p>
+                            <p><span class="badge">Plain</span></p>
+                            <p><span class="badge badge-primary">Primary</span></p>
+                            <p><span class="badge badge-info">Information</span></p>
+                            <p><span class="badge badge-success">Success</span></p>
+                            <p><span class="badge badge-warning">Warning</span></p>
+                            <p><span class="badge badge-danger">Danger</span></p>
+                    </div>
+                </div>
           </div><!--/.item  -->
 
-          <div class="col-md-4 col-sm-6 item">
-            <div class="thumbnail">
-              <img src="http://lorempixel.com/200/200/abstract" alt="">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
-          </div><!--/.item  -->
-
-          <div class="col-md-4 col-sm-6 item">
-            <div class="thumbnail">
-              <img src="http://lorempixel.com/200/200/abstract" alt="">
-              <div class="caption">
-                <h3>Thumbnail label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
-                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
-              </div>
-            </div>
-          </div>
           					
 				</div>
 			</div>	
