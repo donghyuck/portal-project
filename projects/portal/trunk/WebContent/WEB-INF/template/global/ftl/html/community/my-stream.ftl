@@ -78,14 +78,12 @@
 		function createMyPageStreamListView(){		
 			
 			var renderTo = $('#my-page-stream');			
-			if( !renderTo.data('masonry')){
-			
+			if( !renderTo.data('masonry')){			
 				renderTo.masonry({
 					columnWidth: '.item',
 					itemSelector: '.item'
 				});
-				var msnry = renderTo.data('masonry');
-								
+				var msnry = renderTo.data('masonry');								
 				var dataSource = new kendo.data.DataSource({				
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
@@ -110,9 +108,13 @@
 							var template = kendo.template($('#my-stream-item-template').html());				
 							
 							var elem = $(kendo.render(template, data));
-							renderTo.append( elem );							
-							msnry.appended( elem );
-							msnry.layout();
+												
+							
+							elem.imagesLoaded(function(){
+								renderTo.append( elem );		
+								msnry.appended( elem );
+								msnry.layout();
+							});							
 						}				
 				});			
 				
