@@ -87,6 +87,7 @@
 				console.log("in page list, all images loaded.");				
 				var renderTo = $(".grid-boxes");				
 				console.log("masonry create and render...");
+				
 					var gutter = 30;
 					var min_width = 298;
 					renderTo.masonry({
@@ -110,7 +111,7 @@
 						}	
 					});
 					
-					renderTo.masonry();
+					renderTo.delay( 500 ).masonry();
 			});	
 		}
 	
