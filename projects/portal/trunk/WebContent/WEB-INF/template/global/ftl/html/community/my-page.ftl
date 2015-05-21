@@ -112,9 +112,9 @@
 						}	
 					});					
 				}else{
-					renderTo.delay(150).masonry('reloadItems');
+					
 				}
-					//renderTo.delay( 500 ).masonry();
+				renderTo.delay( 100 ).masonry();
 			});	
 		}
 	
