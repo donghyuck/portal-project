@@ -111,8 +111,7 @@
 						}	
 					});					
 				}
-				//renderTo.delay(150).masonry('reloadItems');
-				renderTo.masonry();
+				renderTo.delay(150).masonry();				
 			});	
 		}
 	
