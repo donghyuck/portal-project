@@ -135,7 +135,7 @@
 							data: "pages",
 							model: common.ui.data.Page
 						},
-						selectable: 'single', 
+						selectable: false,
 						error:common.ui.handleAjaxError,
 						batch: false,
 						pageSize: 15,
