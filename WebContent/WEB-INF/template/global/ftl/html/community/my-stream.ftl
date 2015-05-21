@@ -83,7 +83,7 @@
 					columnWidth: '.item',
 					itemSelector: '.item'
 				});
-				
+								
 				var dataSource = new kendo.data.DataSource({				
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
@@ -105,12 +105,12 @@
 						serverSorting: false,
 						change: function(e) {
 							var data = this.data();
-							console.log(data.length); 
-							
+							var template = kendo.template($('#my-stream-item-template').html());							
 							$.each( data , function(index, value){
 								console.log(value.name); 	
+								renderTo.data('masonry').addItems($(kendo.render(template, value)));
 							});
-							var template = kendo.template($('#my-page-stream-item-template').html());							
+							
 						}				
 				});			
 				
@@ -586,7 +586,7 @@
 		</div>
 	</div>
 	</script>	
-	<script id="my-page-stream-item-template" type="text/x-kendo-template">
+	<script id="my-stream-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6 item">
 				<div class="ibox float-e-margins">
                     <div class="ibox-title">
