@@ -675,19 +675,19 @@
 									<label class="label"> 필터</label>							
 											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-info  rounded-left active">
-													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 </span>)
+													<input type="radio" name="page-list-view-filters"  value="ALL"> 전체 </span>)
 												</label>
 												<label class="btn btn-info">
-													<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> PUBLISHED
+													<input type="radio" name="page-list-view-filters"  value="PUBLISHED"><i class="fa fa-filter"></i> PUBLISHED
 												</label>
-												<label class="btn btn-info rounded-right">
-													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> ARCHIVED
+												<label class="btn btn-info">
+													<input type="radio" name="page-list-view-filters"  value="ARCHIVED"><i class="fa fa-filter"></i> ARCHIVED
 												</label>	
-												<label class="btn btn-info rounded-right">
-													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> INCOMPLETE
+												<label class="btn btn-info">
+													<input type="radio" name="page-list-view-filters"  value="INCOMPLETE"><i class="fa fa-filter"></i> INCOMPLETE
 												</label>													
 												<label class="btn btn-info rounded-right">
-													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> DELETED
+													<input type="radio" name="page-list-view-filters"  value="DELETED"><i class="fa fa-filter"></i> DELETED
 												</label>	
 											</div>					
 									</div>
