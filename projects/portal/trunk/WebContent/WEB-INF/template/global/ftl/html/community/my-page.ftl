@@ -85,8 +85,7 @@
 		function masonry(){				
 			$(".grid-boxes").imagesLoaded( function(e){				
 				console.log("in page list, all images loaded.");				
-				var renderTo = $(".grid-boxes");				
-				
+				var renderTo = $(".grid-boxes");								
 				if( $(".grid-boxes").data('masonry') ){
 					console.log("masonry create and render...");
 					var gutter = 30;
@@ -112,8 +111,8 @@
 						}	
 					});					
 				}
-				renderTo.delay(150).masonry('reloadItems');
-				renderTo.delay( 500 ).masonry();
+				//renderTo.delay(150).masonry('reloadItems');
+				renderTo.masonry();
 			});	
 		}
 	
