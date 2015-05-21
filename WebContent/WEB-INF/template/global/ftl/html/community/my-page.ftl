@@ -92,7 +92,7 @@
 					var gutter = 30;
 					var min_width = 298;
 					renderTo.delay(100).masonry({
-						isInitLayout: false,
+						isInitLayout: true,
 						itemSelector : ".grid-boxes-in",
 						gutterWidth: gutter,					
 						isAnimated : true,
