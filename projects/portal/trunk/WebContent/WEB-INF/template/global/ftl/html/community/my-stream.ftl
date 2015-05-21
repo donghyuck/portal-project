@@ -65,7 +65,7 @@
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 				
 				
-				var $container = $('.masonry-container');
+				var $container = $('#my-page-stream');
 				$container.imagesLoaded( function () {
 					$container.masonry({
 						columnWidth: '.item',
@@ -75,6 +75,109 @@
 			}
 		}]);			
 
+
+		function createMyPageListView(){		
+			var renderTo = $("#my-page-stream");
+			if( !common.ui.exists( renderTo ) ){
+				common.ui.listview( renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
+							}
+						},
+						requestStart: function(e){
+							if( $(".grid-boxes").data('masonry') ){
+								$(".grid-boxes").masonry('destroy');
+							//	$(".grid-boxes").masonry('remove',  $(".grid-boxes .masonry-brick") );
+							}						
+						},
+						schema: {
+							total: "totalCount",
+							data: "pages",
+							model: common.ui.data.Page
+						},
+						selectable: 'single', 
+						error:common.ui.handleAjaxError,
+						batch: false,
+						pageSize: 15,
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false
+					},
+					template: kendo.template($("#my-page-listview-template").html()),
+					dataBound: function(e){				
+						console.log("page list data bound.");
+						masonry();
+					},
+					change: function(e){						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+					}
+				});		
+				
+				renderTo.removeClass("k-widget k-listview");					
+				
+				common.ui.pager($("#my-page-pager"), {
+					dataSource: common.ui.listview(renderTo).dataSource,
+					pageSizes: [15, 25, 50, 100]
+				});		
+				
+				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
+					$this = $(this);
+					var action = $this.data("action");
+					var objectId = $this.data("object-id");						
+					var item = common.ui.listview(renderTo).dataSource.get(objectId);
+					switch( action ){
+						case 'view':						
+						createMyPageViewer(item);
+						break;		
+						case 'edit':						
+						createMyPageViewer( item , true );	
+						break;	
+						case 'delete':
+						deletePage(item, $this );					
+						break;	
+						case 'share':
+						alert( action );													
+						break;	
+						case 'publish':
+						publishPage( item, $this );		
+						break;				
+						case 'restore':
+						restorePage(item, $this);
+						break;																										
+					}	
+					return false;
+				});
+				
+				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
+					common.ui.listview(renderTo).dataSource.read();	
+				});	
+				
+				$("input[name='page-list-view-filters']").on("change", function () {
+					var pageState = this.value;
+					if( pageState == 'ALL' ){
+						common.ui.listview(renderTo).dataSource.filter({}); 
+					}else{
+						common.ui.listview(renderTo).dataSource.filter({ field: "pageState", operator: "eq", value: pageState}); 
+					}
+				});				
+				
+				// event for new page
+				$("button[data-action=create]").click(function(e){
+					var page = new common.ui.data.Page();
+					page.set("objectType", getMyPageOwnerId());					
+					createMyPageViewer(page, true);
+				});
+				
+			}			
+			if( $("article.bg-white").is(":hidden") ){
+				$("article.bg-white").show();
+			} 			
+		}
+		
 		-->
 		</script>		
 		<style scoped="scoped">			
@@ -118,7 +221,8 @@
 			</#if>	
 			<!-- START MAIN CONTENT -->
 			<div class="container content">		
-				<div class="row masonry-container">
+				<div class="row">
+				<div id="my-page-stream" >
 				
 <div class="col-md-4 col-sm-6 item">
 				<div class="ibox float-e-margins">
@@ -196,7 +300,7 @@
                 </div>
           </div><!--/.item  -->
 
-          					
+          			</div>		
 				</div>
 			</div>	
 			<!-- ./END MAIN CONTENT -->	
