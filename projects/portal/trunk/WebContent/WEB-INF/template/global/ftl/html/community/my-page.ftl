@@ -160,6 +160,7 @@
 					dataSource: common.ui.listview(renderTo).dataSource,
 					pageSizes: [15, 25, 50, 100]
 				});		
+				
 				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
@@ -190,7 +191,16 @@
 				
 				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
 					common.ui.listview(renderTo).dataSource.read();	
-				});					
+				});	
+				
+				$("input[name='post-list-view-filters']").on("change", function () {
+					var pageState = this.value;
+					if( pageState == 'ALL' ){
+						common.ui.listview(renderTo).dataSource.filter({}); 
+					}else{
+						common.ui.listview(renderTo).dataSource.filter({ field: "pageState", operator: "eq", value: pageState}); 
+					}
+				});				
 				
 				// event for new page
 				$("button[data-action=create]").click(function(e){
