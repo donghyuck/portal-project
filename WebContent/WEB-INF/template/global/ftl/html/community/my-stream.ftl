@@ -112,6 +112,21 @@
 	display: block;
 	max-width: 100%;
 }
+/* Effect 1: opacity */
+.grid.effect-1 li.animate {
+	-webkit-animation: fadeIn 0.65s ease forwards;
+	animation: fadeIn 0.65s ease forwards;
+}
+
+@-webkit-keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
+
+@keyframes fadeIn {
+	0% { }
+	100% { opacity: 1; }
+}
 				
 		</style>   	
 		</#compress>
