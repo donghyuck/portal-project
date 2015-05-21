@@ -88,7 +88,7 @@
 				
 				var renderTo = $(".grid-boxes");				
 							
-				if( !renderTo.data('masonry') ){
+				//if( !renderTo.data('masonry') ){
 					console.log("masonry create and render...");
 					var gutter = 30;
 					var min_width = 298;			
@@ -110,11 +110,11 @@
 							return box_width;
 						}	
 					});
-				}else{
+/*				}else{
 					console.log("masonry render.");
 					renderTo.masonry('reloadItems');
 				}				
-				
+				*/
 			});	
 		}
 	
