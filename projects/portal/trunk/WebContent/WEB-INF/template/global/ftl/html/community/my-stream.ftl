@@ -80,7 +80,7 @@
 			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){
 			
-				renderTo.masonry({
+				var msnry = renderTo.masonry({
 					columnWidth: '.item',
 					itemSelector: '.item'
 				});
@@ -107,7 +107,9 @@
 						change: function(e) {
 							var data = this.data();
 							var template = kendo.template($('#my-stream-item-template').html());				
-							renderTo.append( $(kendo.render(template, data)) );
+							
+							//renderTo.append( $(kendo.render(template, data)) );							
+							msnry.appended( $(kendo.render(template, data)) );
 						}				
 				});			
 				
