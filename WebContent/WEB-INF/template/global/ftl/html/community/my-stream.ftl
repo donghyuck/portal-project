@@ -160,7 +160,7 @@
 
 
 			<ul class="grid effect-1" id="grid">
-				<li><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
+				<li class="animate"><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
 				<li><a href="http://drbl.in/fHaa"><img src="images/13.png"></a></li>
 				<li><a href="http://drbl.in/gXMo"><img src="images/10.png"></a></li>
 				<li><a href="http://drbl.in/gXMn"><img src="images/11.png"></a></li>
