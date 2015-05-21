@@ -64,17 +64,22 @@
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 				
-				
-				var $container = $('#my-page-stream');
-				$container.imagesLoaded( function () {
-					$container.masonry({
-						columnWidth: '.item',
-						itemSelector: '.item'
-					});				
-				});
+
+				createMyPageStreamListView();
+
+
 			}
 		}]);			
 
+		function createMyPageStreamListView(){		
+			var renderTo = $('#my-page-stream');
+			if( !renderTo.data('masonry')){
+				$container.masonry({
+					columnWidth: '.item',
+					itemSelector: '.item'
+				});		
+			}
+		}
 
 		function createMyPageListView(){		
 			var renderTo = $("#my-page-stream");
