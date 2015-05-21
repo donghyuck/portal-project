@@ -99,6 +99,7 @@
 						transitionDuration : 1000,
 						columnWidth: function(containerWidth){		
 							var box_width = (((containerWidth - 2*gutter)/3) | 0); 
+							box_width -- ;
 							if (box_width < min_width) {
 								box_width = (((containerWidth - gutter)/2) | 0);
 							}
