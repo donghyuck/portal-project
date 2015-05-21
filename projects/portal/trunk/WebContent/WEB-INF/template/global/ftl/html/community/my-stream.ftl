@@ -80,7 +80,7 @@
 			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({
-					gutter: 0,					
+					gutter: 10,					
 					columnWidth: '.item',
 					itemSelector: '.item'
 				});
