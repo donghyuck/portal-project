@@ -660,7 +660,7 @@
 				<div class="sky-form">
 					<fieldset>
 						<div class="row">
-							<div class="col col-6">
+							<div class="col col-4">
 								<section>
 									<label class="label"> 소유자</label>
 									<div id="my-page-source-list" class="inline-group">
@@ -670,7 +670,30 @@
 									</div>
 								</section>							
 							</div>
-							<div class="col col-6 text-right">
+							<div class="col col-5 text-right">
+								<section>
+									<label class="label"> 필터</label>							
+											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+												<label class="btn btn-info  rounded-left active">
+													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 </span>)
+												</label>
+												<label class="btn btn-info">
+													<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> PUBLISHED
+												</label>
+												<label class="btn btn-info rounded-right">
+													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> ARCHIVED
+												</label>	
+												<label class="btn btn-info rounded-right">
+													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> INCOMPLETE
+												</label>													
+												<label class="btn btn-info rounded-right">
+													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> DELETED
+												</label>	
+											</div>					
+									</div>
+								</section>															
+							</div>
+							<div class="col col-3 text-right">
 								<button type="button" class="btn btn-danger btn-lg btn-outline btn-flat" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 							</div>
 						</div>	
