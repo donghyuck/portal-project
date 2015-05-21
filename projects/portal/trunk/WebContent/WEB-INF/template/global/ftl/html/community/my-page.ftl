@@ -97,6 +97,7 @@
 						isAnimated : true,
 						isFitWidth : true,
 						transitionDuration : 1000,
+						itemSelector : '.grid-boxes-in',
 						columnWidth: function(containerWidth){		
 							var box_width = (((containerWidth - 2*gutter)/3) | 0); 
 							box_width -- ;
