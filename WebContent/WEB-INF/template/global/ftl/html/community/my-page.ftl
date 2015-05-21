@@ -84,8 +84,7 @@
 	
 		function masonry(){				
 			$(".grid-boxes").imagesLoaded( function(e){				
-				console.log("in page list, all images loaded.");
-				
+				console.log("in page list, all images loaded.");				
 				var renderTo = $(".grid-boxes");				
 				console.log("masonry create and render...");
 					var gutter = 30;
@@ -110,6 +109,7 @@
 							return box_width;
 						}	
 					});
+					
 					renderTo.masonry();
 			});	
 		}
@@ -599,7 +599,7 @@
 		
 		.grid-boxes-in.masonry-brick {
 			visibility: visible;
-			border-radius: 4px 4px 0 0 !important;
+			border-radius: 6px 6px 0 0 !important;
 			overflow:hidden;
 		}
 		
