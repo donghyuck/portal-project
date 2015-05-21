@@ -86,11 +86,11 @@
 			$(".grid-boxes").imagesLoaded( function(e){				
 				console.log("in page list, all images loaded.");				
 				var renderTo = $(".grid-boxes");				
-				console.log("masonry create and render...");
+				if( !renderTo.data('masonry') ){				
+					console.log("masonry create and render...");
 					var gutter = 30;
 					var min_width = 298;
 					renderTo.masonry({
-						//isInitLayout: false,
 						itemSelector : ".grid-boxes-in",
 						gutterWidth: gutter,					
 						isAnimated : true,
@@ -108,9 +108,8 @@
 							renderTo.find('.grid-boxes-in').width(box_width);
 							return box_width;
 						}	
-					});
-					
-					//renderTo.masonry();
+					});				
+				}
 			});	
 		}
 	
