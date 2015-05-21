@@ -96,8 +96,6 @@
 						isAnimated : true,
 						isFitWidth : true,
 						itemSelector : '.grid-boxes-in',
-						columnWidth : 300
-						/*
 						columnWidth: function(containerWidth){		
 						
 							var box_width = (((containerWidth - 2*gutter)/3) | 0); 
@@ -113,7 +111,7 @@
 							console.log( "width : " + box_width );
 							return box_width;
 							
-						}	*/
+						}
 					});				
 				}
 			});	
