@@ -76,7 +76,8 @@
 		}
 		
 		function createMyPageStreamListView(){		
-			var renderTo = $('#my-page-stream');
+			
+			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){
 				renderTo.masonry({
 					columnWidth: '.item',
@@ -104,14 +105,18 @@
 						change: function(e) {
 							var data = this.data();
 							console.log(data.length); 
+							
+							$.each( data , function(index, value){
+								console.log(kendo.stringify(value)); 	
+							});
+							var template = kendo.template($('#my-page-stream-item-template').html());							
 						}				
 				});			
 				dataSource.fetch();					
 			}
-			
-			
-			
 		}
+		
+		
 
 		function createMyPageListView(){		
 			var renderTo = $("#my-page-stream");
@@ -578,6 +583,23 @@
 			</div>
 		</div>
 	</div>
+	
+	<script id="my-page-stream-item-template" type="text/x-kendo-template">
+	<div class="col-md-4 col-sm-6 item">
+				<div class="ibox float-e-margins">
+                    <div class="ibox-title">
+				#if( bodyContent.imageCount > 0 ){#
+				<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
+				#}#                
+                    </div>
+                    <div class="ibox-content" style="display: block;">
+                        <p>
+                            To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
+                        </p>
+                    </div>
+                </div>
+	</div><!--/.item  -->
+	</script>	
 	</script>										
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
