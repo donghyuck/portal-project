@@ -85,12 +85,13 @@
 		function masonry(){				
 			$(".grid-boxes").imagesLoaded( function(e){				
 				console.log("in page list, all images loaded.");				
-				var renderTo = $(".grid-boxes");								
+				var renderTo = $(".grid-boxes");				
+				
 				if( $(".grid-boxes").data('masonry') ){
 					console.log("masonry create and render...");
 					var gutter = 30;
 					var min_width = 298;
-					renderTo.masonry({
+					renderTo.delay(100).masonry({
 						isInitLayout: false,
 						itemSelector : ".grid-boxes-in",
 						gutterWidth: gutter,					
@@ -110,10 +111,10 @@
 							return box_width;
 						}	
 					});					
+				}else{
+					renderTo.delay(150).masonry('reloadItems');
 				}
-				window.setTimeout( function(){
-					renderTo.masonry();
-				}, 100);
+					//renderTo.delay( 500 ).masonry();
 			});	
 		}
 	
@@ -147,7 +148,6 @@
 						serverFiltering: false,
 						serverSorting: false
 					},
-					selectable: false, 
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){				
 						console.log("page list data bound.");
