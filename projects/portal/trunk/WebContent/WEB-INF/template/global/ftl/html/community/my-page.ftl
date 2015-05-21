@@ -107,6 +107,8 @@
 								box_width = containerWidth;
 							}
 							renderTo.find('.grid-boxes-in').width(box_width);
+							
+							console.log( "width : " + box_width );
 							return box_width;
 							
 						}	
