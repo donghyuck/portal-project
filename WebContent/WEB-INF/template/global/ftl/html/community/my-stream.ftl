@@ -107,7 +107,7 @@
 						change: function(e) {
 							var data = this.data();
 							var template = kendo.template($('#my-stream-item-template').html());				
-							renderTo.append($(kendo.render(template, data));
+							renderTo.append( $(kendo.render(template, data)) );
 						}				
 				});			
 				
