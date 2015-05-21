@@ -80,6 +80,7 @@
 			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({
+					gutter: 30,					
 					columnWidth: '.item',
 					itemSelector: '.item'
 				});
@@ -514,7 +515,7 @@
 	</div>
 	</script>	
 	<script id="my-stream-item-template" type="text/x-kendo-template">
-	<div class="col-md-4 col-sm-6 item">
+	<div class="col-md-4 col-sm-6 no-padding item">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title no-padding">
 			#if( bodyContent.imageCount > 0 ){#
