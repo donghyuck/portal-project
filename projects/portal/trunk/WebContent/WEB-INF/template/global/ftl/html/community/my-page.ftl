@@ -96,7 +96,7 @@
 						isAnimated : true,
 						isFitWidth : true,
 						itemSelector : '.grid-boxes-in',
-						columnWidth : 300,
+						columnWidth : 300
 						/*
 						columnWidth: function(containerWidth){		
 						
