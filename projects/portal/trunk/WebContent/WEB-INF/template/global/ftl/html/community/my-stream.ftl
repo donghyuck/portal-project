@@ -79,6 +79,7 @@
 			
 			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){
+			
 				renderTo.masonry({
 					columnWidth: '.item',
 					itemSelector: '.item'
@@ -105,12 +106,8 @@
 						serverSorting: false,
 						change: function(e) {
 							var data = this.data();
-							var template = kendo.template($('#my-stream-item-template').html());							
-							$.each( data , function(index, value){
-								console.log(value.name); 	
-								renderTo.data('masonry').addItems($(kendo.render(template, value)));
-							});
-							
+							var template = kendo.template($('#my-stream-item-template').html());				
+							renderTo.append($(kendo.render(template, data));
 						}				
 				});			
 				
