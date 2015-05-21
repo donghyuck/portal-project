@@ -61,232 +61,28 @@
 				// END SCRIPT 				
 			}
 		}]);			
-		<!-- ============================== -->
-		<!-- Memo													   -->
-		<!-- ============================== -->
-		function createMemoPanel(){
-			var renderTo = $("#my-memo-panel");
-			if(!renderTo.data("kendoPanel")){
-				new common.ui.extPanel( renderTo, { 
-					content : "새로운 메모가 없습니다." ,
-					deactivateAfterClose : false,
-					close:function(e){
-						$("#personalized-buttons button[data-target='#my-memo-panel']").toggleClass("active");
-						common.ui.enable($("#personalized-buttons button[data-target='#my-memo-panel']"));
-					}
-				});
-			}
-			renderTo.data("kendoPanel").show();
-		}
-		<!-- ============================== -->
-		<!-- Notify														-->
-		<!-- ============================== -->
-		function createNotificationPanel(){
-			var renderTo = $("#my-notification-panel");
-			if(!renderTo.data("kendoPanel")){
-				new common.ui.extPanel( renderTo, { 
-					content : "새로운 메시지가 없습니다." ,
-					deactivateAfterClose : false,
-					close:function(e){
-						$("#personalized-buttons button[data-target='#my-notification-panel']").toggleClass("active");
-						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
-					}
-				});
-			}
-			renderTo.data("kendoPanel").show();
-		}
-		<!-- ============================== -->
-		<!-- Announce												-->
-		<!-- ============================== -->
-		function createAnnounceSection(){
-			
-			var renderTo = $("#my-announce-section");
-			var listRenderTo = $("#my-announce-section .my-announce-list");
-			var viewRenderTo = $("#my-announce-section .my-announce-view");			
-			var model =  common.ui.observable({ 
-				announce : new common.ui.data.Announce(),
-				editable : false,
-				visible : false,
-				new : function(e){
-					e.stopPropagation();
-					common.ui.scroll.top(renderTo.parent());
-					$(".morphing").toggleClass("open");					
-				},
-				edit : function(e){
-					e.stopPropagation();
-					common.ui.scroll.top(renderTo.parent());
-					createAnnounceEditorSection(this.announce);
-					$(".morphing").toggleClass("open");					
-				}
-			});			
-			model.bind("change", function(e){				
-				if( e.field == "announce.user" ){ 				
-					if( getCurrentUser().userId == this.get(e.field).userId )
-						this.set("editable", true);
-				}
-			});
-			var announceSelector = common.ui.buttonGroup(
-				$("#announce-selector"),
-				{
-					change: function(e){						
-						listRenderTo.data("kendoListView").dataSource.read({objectType:e.value});
-					}
-				}
-			);				
-			kendo.bind(viewRenderTo, model );
-			common.ui.listview(	listRenderTo, {
-					dataSource : common.ui.datasource(
-						'<@spring.url "/data/announce/list.json"/>',
-						{
-							transport : {
-								parameterMap: function(options, operation) {
-									if( typeof options.objectType === "undefined"  ){
-										return {objectType: announceSelector.value };	
-									}else{			
-										return options;		
-									} 
-								}
-							},
-							schema: {
-								data : "announces",
-								model : common.ui.data.Announce,
-								total : "totalCount"
-							}
-						}
-					),
-					template: kendo.template($("#announce-listview-item-template").html()),
-					selectable: "single" ,
-					dataBound: function(e){
-						model.set("visible", false);
-					},
-					change: function(e){						
-						var selectedCells = this.select();
-						var selectedCell = this.dataItem( selectedCells );	
-						selectedCell.copy( model.announce );			
-						model.set("visible", false);			
-						if(!common.ui.visible(viewRenderTo)){
-							viewRenderTo.slideDown();
-						}						
-						common.ui.scroll.top(viewRenderTo, -20);
-					}
-				}
-			);
-			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
-			//common.ui.scroll.slim(listRenderTo, { height: 320 });
-			//common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
-		}
-		
-		function createAnnounceEditorSection(source){			
-			var renderTo = $(".morphing");		
-			if( !renderTo.data("model")){
-				var model =  common.ui.observable({ 
-					announce : new common.ui.data.Announce(),
-					new: true,
-					changed : false,
-					update : function(e){
-						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');
-						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
-								"error"
-							);
-							return ;
-						}
-						if( $this.announce.startDate >= $this.announce.endDate  ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
-								"error"
-							);							
-							return ;
-						}
-						common.ui.ajax(
-							'<@spring.url "/data/announce/update.json"/>',
-							{
-								data : kendo.stringify( $this.announce ),
-								contentType : "application/json",
-								success : function(response){									
-									var listRenderTo = $("#my-announce-section .my-announce-list");
-									common.ui.listview(listRenderTo).dataSource.read();
-									$this.close();
-								},
-								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
-								},
-								requestStart : function(){
-									kendo.ui.progress(renderTo, true);
-								},
-								requestEnd : function(){
-									kendo.ui.progress(renderTo, false);
-								},
-								complete : function(e){
-									btn.button('reset');
-								}
-							});					
-					},
-					close : function(e){		
-						$(".morphing ").toggleClass("open");			
-					}
-				});				
-				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
-					change: function(e){							
-						if( e.value != model.get("announce.objectType") ){				
-							model.set("announce.objectType", e.value );
-						}
-					}
-				});				
-				model.bind("change", function(e){	
-					if( e.field == "announce.objectType" && this.get(e.field) != announceSelector.value ){ 		
-						announceSelector.select(this.get(e.field));
-					}
-				});				
-				kendo.bind( renderTo, model);
-				renderTo.data("model", model);
-				var bodyEditor =  $("#announce-editor-body" );
-				createEditor( "announce-editor" , bodyEditor );				
-			}
-			if( source ){
-				source.copy( renderTo.data("model").announce );
-				renderTo.data("model").set("announce.objectType", common.ui.buttonGroup($("#announce-selector")).value); 
-				if( source.announceId === 0 ){
-					renderTo.data("model").set("new", false); 
-				}else{
-					renderTo.data("model").set("new", false); 					
-				} 
-			}		
-			renderTo.data("model").set("changed", false);
-		}
+
 		-->
 		</script>		
 		<style scoped="scoped">			
-			#image-gallery-pager { 
-				margin-top: 5px; 
-			}			
-			#my-announce-section .k-listview .k-state-selected
-			{
-				background : #F5F5F5;
-				color: #585f69;
-			}
-			#my-announce-section .k-listview .k-state-selected .media-heading strong{
-				font-weight:bold;
-				text-decoration: underline;				
-			}			
+		/** Breadcrumbs */
+		.breadcrumbs-v3 {
+			position:relative;
+		}
+
+		.breadcrumbs-v3 p	{
+			color : #fff;
+			font-size: 24px;
+			font-weight: 200;
+			margin-bottom: 0;
+		}	
+		
+		.breadcrumbs-v3.img-v1 {
+			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
+			background-size: cover;
+			background-position: center center;			
+		}
+				
 		</style>   	
 		</#compress>
 	</head>
@@ -295,198 +91,26 @@
 		<div class="wrapper">
 			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
-			<!-- ./END HEADER -->
+			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-section bg-transparent open" >
-				<div class="personalized-section-heading">
-					<span class="open animated"></span>
-					<div class="container">
-						<div class="personalized-section-title">
-							<i class="icon-flat home"></i>
-							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
-							<div class="personalized-section-heading-controls">
-								<div id="personalized-buttons" class="btn-group">
-									<button type="button" class="btn-u btn-u-blue rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
-									<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
-								</div>														
-							</div>		
-						</div>
-					</div>				
-				</div>
-				<div class="personalized-section-content animated arrow-up">
-					<span class="close animated"></span>
-					<div class="container" style="min-height:150px;">
-						<div class="row p-sm">
-							<div class="col-md-3">						
-								<div id="my-notification-panel" class="panel panel-danger rounded border-2x" style="display:none;">
-									<div class="panel-heading">
-										<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
-										<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-									<div class="panel-body"></div>
-								</div><!-- /.panel -->			
-							</div><!-- /.col-md-3 -->
-							<div class="col-md-3">				
-								<div id="my-memo-panel" class="panel panel-primary rounded border-2x" style="display:none">
-									<div class="panel-heading">
-										<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
-										<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-									<div class="panel-body"></div>
-								</div><!-- /.panel -->																
-							</div><!-- /.col-md-3 -->
-						</div><!-- /.row -->
-					</div>
-				</div>				
-			</section><!-- /.section -->
-
-			<section class="personalized-section bg-grid open" >
-				<div class="personalized-section-content animated" style="display:block;">
-					<div class="container-fluid p-xs">
-						<div class="row m-b-xs">
-							<div class="col-sm-12">
-								<div class="pull-right">
-									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
-										<label class="btn btn-info rounded-left">
-											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-										</label>
-										<label class="btn btn-info active">
-									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-										</label>
-										<label class="btn btn-info rounded-right">
-											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-										</label>
-									</div>														
-								</div>	
-							</div>
-						</div>
-						<div id="personalized-area" class="row"></div>
-					</div>													
-				</div>				
-			</section><!-- /.section -->
-						
-			<section class="personalized-section bg-transparent open" >
-							<#if !action.user.anonymous >
-								<div class="morphing" >								
-									<button class="btn-u btn-u-red animated" type="button" data-toggle="morphing" data-action="morphing"><i class="fa fa-plus lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>									
-									<div class="morphing-content">
-										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
-										<div class="personalized-session-heading  bg-dark">
-											<div class="container">
-												<div class="personalized-session-title">
-													<i class="icon-flat mega-phone"></i>
-													<h4>공지 &amp; 이벤트 <span>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></span></h4>
-													<div class="personalized-session-heading-controls">
-														<div id="edit-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
-															<label class="btn btn-success btn-sm active rounded-left">
-																<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-															</label>
-															<label class="btn btn-success btn-sm rounded-right">
-																<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-															</label>
-														</div>														
-													</div>		
-												</div>
-											</div>
-										</div>
-										<div class="personalized-session-content">
-											<div class="container">
-												<div class="row">
-													<div class="col-sm-12 p-sm">													
-														<h5 data-bind="visible: new">
-															<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
-														</h5>
-														<div class="panel panel-default ">
-															<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
-																<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
-															</div>			
-															<div class="panel-body p-xxs">									
-																<div  class="form">
-																	<div class="form-group">
-																		<label class="control-label">공지 기간</label>
-																		<div class="col-sm-12" >
-																			<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
-																			<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
-																		</div>
-																	</div>
-																	<label class="control-label">본문</label>
-																	<textarea id="announce-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
-																</div>						
-															</div>				
-														</div>										
-														<div class="text-right">
-															<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-														</div>	
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>														
-								</div>								
-							</#if>
-										
-				<div class="personalized-section-heading">
-					<span class="open animated"></span>
-					<div class="container">
-						<div class="personalized-section-title">
-							<i class="icon-flat mega-phone"></i>
-							<h4> 공지 &amp; 이벤트 <span>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></span></h4>
-							<div class="personalized-section-heading-controls">
-								<div id="announce-selector" class="btn-group" data-toggle="buttons" data-role="buttongroup">
-									<label class="btn btn-info btn-sm active rounded-left">
-										<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-									</label>
-									<label class="btn btn-info btn-sm rounded-right disabled">
-										<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-									</label>
-								</div>
-							</div>		
-						</div>
-					</div>
-				</div>
-				<div id="my-announce-section" class="personalized-section-content animated arrow-up">
-					<span class="close animated"></span>
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-6 p-sm">
-								<div class="my-announce-list"></div>
-								<div id="my-announce-list-pager"> </div>
-							</div>
-								<div class="col-sm-6 p-sm">
-									<div class="panel panel-default no-border no-margin-b my-announce-view animated fadeIn"  style="display:none;"  data-bind="visible: visible">
-										<div class="panel-heading">
-											<h4 data-bind="html:announce.subject"></h4>
-											<div class="panel-header-controls" data-bind="visible:editable">
-												<button class="btn btn-primary btn-sm rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i>  편집</button>
-											</div>
-											<ul class="list-unstyled">
-												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
-												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
-												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
-												<hr>	
-												<li class="text-muted">
-													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-													<ul class="list-unstyled text-muted">
-														<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-														<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-													</ul>																
-												</li>	
-												<hr>	
-											</ul>	
-										</div><!-- /.panel-heading -->
-									<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
-								</div><!-- /.panel -->								
-							</div>						
-						</div>								
-					</div>
-				</div>
-			</section>
-
-
+			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />		
+			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
+				<div class="personalized-controls container text-center p-xl">
+					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>
+					<span class="btn-flat settings"></span>
+					</div><!--/end container-->
+			</div>
+			</#if>	
+			<!-- START MAIN CONTENT -->
+			<div class="container content">		
+			
+			
+			</div>	
 			<!-- ./END MAIN CONTENT -->	
-	 		
 	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-footer.ftl" >		
+			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>				
 			<!-- START RIGHT SLIDE MENU -->
