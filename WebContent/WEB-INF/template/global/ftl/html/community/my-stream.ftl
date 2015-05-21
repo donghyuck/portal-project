@@ -109,8 +109,10 @@
 							var data = this.data();
 							var template = kendo.template($('#my-stream-item-template').html());				
 							
-							//renderTo.append( $(kendo.render(template, data)) );							
-							msnry.appended( $(kendo.render(template, data)) );
+							var elem = $(kendo.render(template, data));
+							renderTo.append( elem );							
+							msnry.appended( elem );
+							msnry.layout();
 						}				
 				});			
 				
