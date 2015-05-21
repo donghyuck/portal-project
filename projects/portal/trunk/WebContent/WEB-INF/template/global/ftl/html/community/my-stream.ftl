@@ -522,9 +522,37 @@
 			#}#                
 			</div>
 			<div class="ibox-content" style="display: block;">
-				<p>
-					To add a badge style You have to add <code>.badge</code>class to element. To change a color od badge you can add extra class like <code>.badge-primary</code>.
-				</p>
+		#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
+			<h2 class="text-muted">#:title#</a></h2>
+			#}#
+			<ul class="list-inline grid-boxes-news">
+				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
+				<li>|</li>
+				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
+			</ul>                    
+			<p>#: summary #</p>
+			# if( getCurrentUser().userId === user.userId ) { # 	
+				<div class="navbar-btn">
+					<div class="btn-group">				
+						#if( pageState !=  'DELETED' ){#
+						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
+						#}#
+						#if( pageState === 'PUBLISHED' ){#
+						<button class="btn btn-info btn-flat btn-outline" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>		
+						#}else{#
+							#if( pageState != 'DELETED'){# 
+							<button class="btn btn-info btn-flat btn-outline" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
+							#}#						
+						#}#
+					</div>				
+					#if( pageState ===  'DELETED' ){#						
+					<button class="btn btn-default btn-flat btn-outline rounded" data-action="restore" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">임시저장 이동</button>		
+					#}else{#
+					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
+					#}#			
+				</div>	
+			#}#			
 			</div>
 		</div>
 	</div><!--/.item  -->	
