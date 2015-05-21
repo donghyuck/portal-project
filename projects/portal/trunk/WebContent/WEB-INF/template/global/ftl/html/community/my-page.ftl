@@ -91,7 +91,7 @@
 					console.log("masonry create and render...");
 					var gutter = 30;
 					var min_width = 298;
-					renderTo.delay(100).masonry({
+					renderTo.masonry({
 						isInitLayout: false,
 						itemSelector : ".grid-boxes-in",
 						gutterWidth: gutter,					
@@ -111,9 +111,8 @@
 							return box_width;
 						}	
 					});					
-				}else{
-					renderTo.delay(150).masonry('reloadItems');
 				}
+				renderTo.delay(150).masonry('reloadItems');
 					//renderTo.delay( 500 ).masonry();
 			});	
 		}
