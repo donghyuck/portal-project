@@ -129,7 +129,7 @@
 						requestStart: function(e){
 							if( $(".grid-boxes").data('masonry') ){
 								$(".grid-boxes").masonry('destroy');
-							//	$(".grid-boxes").masonry('remove',  $(".grid-boxes .masonry-brick") );
+							//	$(".grid-boxes").masonry('remove',  $(".grid-boxes .grid-boxes-in") );
 							}						
 						},
 						schema: {
