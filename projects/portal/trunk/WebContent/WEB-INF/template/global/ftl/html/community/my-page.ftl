@@ -601,6 +601,7 @@
 			visibility: visible;
 			border-radius: 6px 6px 0 0 !important;
 			overflow:hidden;
+			background: #fff;
 		}
 		
 		.acc-v1	.panel-default {
