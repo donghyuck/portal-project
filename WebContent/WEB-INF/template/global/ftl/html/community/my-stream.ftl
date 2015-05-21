@@ -71,14 +71,46 @@
 			}
 		}]);			
 
+		function getMyPageOwnerId(){
+			return 2;
+		}
+		
 		function createMyPageStreamListView(){		
 			var renderTo = $('#my-page-stream');
 			if( !renderTo.data('masonry')){
-				$container.masonry({
+				renderTo.masonry({
 					columnWidth: '.item',
 					itemSelector: '.item'
-				});		
+				});
+				var dataSource = new kendo.data.DataSource({				
+						transport: { 
+							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
+							}
+						},
+						schema: {
+							total: "totalCount",
+							data: "pages",
+							model: common.ui.data.Page
+						},						
+						error:common.ui.handleAjaxError,
+						batch: false,						
+						pageSize: 15,
+						selectable: false, 
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false,
+						change: function(e) {
+							var data = this.data();
+							console.log(data.length); 
+						}				
+				});			
+				dataSource.fetch();					
 			}
+			
+			
+			
 		}
 
 		function createMyPageListView(){		
