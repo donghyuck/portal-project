@@ -112,7 +112,7 @@
 					});
 				}else{
 					console.log("masonry render.");
-					renderTo.masonry();
+					renderTo.masonry('reloadItems');
 				}				
 				
 			});	
@@ -131,7 +131,7 @@
 						},
 						requestStart: function(e){
 							if( $(".grid-boxes").data('masonry') ){
-								//$(".grid-boxes").masonry('destroy');
+							//	$(".grid-boxes").masonry('destroy');
 							}						
 						},
 						schema: {
