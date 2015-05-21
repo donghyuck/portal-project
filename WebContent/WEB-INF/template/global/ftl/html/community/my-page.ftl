@@ -87,11 +87,10 @@
 				console.log("in page list, all images loaded.");
 				
 				var renderTo = $(".grid-boxes");				
-							
-				//if( !renderTo.data('masonry') ){
-					console.log("masonry create and render...");
+				console.log("masonry create and render...");
 					var gutter = 30;
 					var min_width = 298;			
+
 					renderTo.masonry({
 						itemSelector : ".grid-boxes-in",
 						gutterWidth: gutter,					
@@ -110,11 +109,6 @@
 							return box_width;
 						}	
 					});
-/*				}else{
-					console.log("masonry render.");
-					renderTo.masonry('reloadItems');
-				}				
-				*/
 			});	
 		}
 	
@@ -131,7 +125,7 @@
 						},
 						requestStart: function(e){
 							if( $(".grid-boxes").data('masonry') ){
-								//	$(".grid-boxes").masonry('destroy');
+								$(".grid-boxes").masonry('destroy');
 							//	$(".grid-boxes").masonry('remove',  $(".grid-boxes .masonry-brick") );
 							}						
 						},
