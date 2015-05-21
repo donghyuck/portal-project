@@ -193,7 +193,7 @@
 					common.ui.listview(renderTo).dataSource.read();	
 				});	
 				
-				$("input[name='post-list-view-filters']").on("change", function () {
+				$("input[name='page-list-view-filters']").on("change", function () {
 					var pageState = this.value;
 					if( pageState == 'ALL' ){
 						common.ui.listview(renderTo).dataSource.filter({}); 
