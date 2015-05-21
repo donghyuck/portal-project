@@ -111,7 +111,9 @@
 						}	
 					});					
 				}
-				renderTo.delay(150).masonry();				
+				window.setTimeout( function(){
+					renderTo.masonry();
+				}, 100);
 			});	
 		}
 	
