@@ -110,7 +110,7 @@
 						}	
 					});
 					
-					renderTo.masonry();
+					renderTo.delay(100).masonry();
 			});	
 		}
 	
