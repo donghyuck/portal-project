@@ -85,7 +85,9 @@
 		function masonry(){				
 			$(".grid-boxes").imagesLoaded( function(e){				
 				console.log("in page list, all images loaded.");
-				var renderTo = $(".grid-boxes");							
+				
+				var renderTo = $(".grid-boxes");				
+							
 				if( !renderTo.data('masonry') ){
 					console.log("masonry create and render...");
 					var gutter = 30;
@@ -109,9 +111,10 @@
 						}	
 					});
 				}else{
+					console.log("masonry render.");
 					renderTo.masonry();
 				}				
-				console.log("masonry render.");
+				
 			});	
 		}
 	
@@ -128,7 +131,7 @@
 						},
 						requestStart: function(e){
 							if( $(".grid-boxes").data('masonry') ){
-								$(".grid-boxes").masonry('destroy');
+								//$(".grid-boxes").masonry('destroy');
 							}						
 						},
 						schema: {
@@ -154,7 +157,9 @@
 						var selectedCell = this.dataItem( selectedCells );	
 					}
 				});		
+				
 				renderTo.removeClass("k-widget k-listview");					
+				
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource,
 					pageSizes: [15, 25, 50, 100]
