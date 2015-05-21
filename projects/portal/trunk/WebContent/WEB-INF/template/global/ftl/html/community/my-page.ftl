@@ -109,9 +109,8 @@
 							renderTo.find('.grid-boxes-in').width(box_width);
 							return box_width;
 						}	
-					});
-					
-					renderTo.delay( 500 ).masonry();
+					});					
+					//renderTo.delay( 500 ).masonry();
 			});	
 		}
 	
