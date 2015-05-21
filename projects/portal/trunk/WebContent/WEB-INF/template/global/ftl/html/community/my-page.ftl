@@ -672,24 +672,23 @@
 							</div>
 							<div class="col col-5 text-right">
 								<section>
-									<label class="label"> 필터</label>							
-											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
+									<label class="label"> 상태</label>							
+									<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
 												<label class="btn btn-info  rounded-left active">
 													<input type="radio" name="page-list-view-filters"  value="ALL"> 전체 </span>)
 												</label>
 												<label class="btn btn-info">
 													<input type="radio" name="page-list-view-filters"  value="PUBLISHED"><i class="fa fa-filter"></i> PUBLISHED
-												</label>
+												</label><!--
 												<label class="btn btn-info">
 													<input type="radio" name="page-list-view-filters"  value="ARCHIVED"><i class="fa fa-filter"></i> ARCHIVED
-												</label>	
+												</label>	-->
 												<label class="btn btn-info">
 													<input type="radio" name="page-list-view-filters"  value="INCOMPLETE"><i class="fa fa-filter"></i> INCOMPLETE
 												</label>													
 												<label class="btn btn-info rounded-right">
 													<input type="radio" name="page-list-view-filters"  value="DELETED"><i class="fa fa-filter"></i> DELETED
 												</label>	
-											</div>					
 									</div>
 								</section>															
 							</div>
