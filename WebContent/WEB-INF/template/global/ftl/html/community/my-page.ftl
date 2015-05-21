@@ -670,7 +670,7 @@
 									</div>
 								</section>							
 							</div>
-							<div class="col col-5 text-right">
+							<div class="col col-5">
 								<section>
 									<label class="label"> 상태</label>							
 									<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
