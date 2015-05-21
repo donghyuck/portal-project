@@ -82,31 +82,34 @@
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
 	
-		function masonry(){		
-		
+		function masonry(){				
 			$(".grid-boxes").imagesLoaded( function(e){				
 				console.log("in page list, all images loaded.");
-				var renderTo = $(".grid-boxes");			
-				var gutter = 30;
-				var min_width = 298;			
-				renderTo.masonry({
-					itemSelector : ".grid-boxes-in",
-					gutterWidth: gutter,					
-					isAnimated : true,
-					isFitWidth : true,
-					transitionDuration : 1000,
-					columnWidth: function(containerWidth){		
-						var box_width = (((containerWidth - 2*gutter)/3) | 0); 
-						if (box_width < min_width) {
-							box_width = (((containerWidth - gutter)/2) | 0);
-						}
-						if (box_width < min_width) {
-							box_width = containerWidth;
-						}
-						renderTo.find('.grid-boxes-in').width(box_width);
-						return box_width;
-					}	
-				});
+				var renderTo = $(".grid-boxes");							
+				if( !renderTo.data('masonry') ){
+					var gutter = 30;
+					var min_width = 298;			
+					renderTo.masonry({
+						itemSelector : ".grid-boxes-in",
+						gutterWidth: gutter,					
+						isAnimated : true,
+						isFitWidth : true,
+						transitionDuration : 1000,
+						columnWidth: function(containerWidth){		
+							var box_width = (((containerWidth - 2*gutter)/3) | 0); 
+							if (box_width < min_width) {
+								box_width = (((containerWidth - gutter)/2) | 0);
+							}
+							if (box_width < min_width) {
+								box_width = containerWidth;
+							}
+							renderTo.find('.grid-boxes-in').width(box_width);
+							return box_width;
+						}	
+					});
+				}else{
+					renderTo.masonry();
+				}				
 				console.log("masonry render.");
 			});	
 		}
@@ -148,13 +151,12 @@
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
-						alert( kendo.stringify( selectedCell ) );
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");					
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource,
-					pageSizes: [15, 25, 50]
+					pageSizes: [15, 25, 50, 100]
 				});		
 				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
