@@ -599,8 +599,9 @@
 		
 		.grid-boxes-in.masonry-brick {
 			visibility: visible;
+			border-radius: 4px 4px 0 0 !important;
+			overflow:hidden;
 		}
-		
 		
 		.acc-v1	.panel-default {
 			border-color: #bbb;
