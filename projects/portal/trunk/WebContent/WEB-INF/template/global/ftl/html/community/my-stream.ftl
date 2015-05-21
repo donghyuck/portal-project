@@ -585,7 +585,7 @@
 			</div>
 		</div>
 	</div>
-	
+	</script>	
 	<script id="my-page-stream-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6 item">
 				<div class="ibox float-e-margins">
@@ -601,7 +601,7 @@
                     </div>
                 </div>
 	</div><!--/.item  -->
-	</script>	
+	
 	</script>										
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
