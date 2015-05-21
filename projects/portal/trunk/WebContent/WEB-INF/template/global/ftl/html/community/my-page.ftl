@@ -85,7 +85,7 @@
 		function masonry(){		
 		
 			$(".grid-boxes").imagesLoaded( function(e){				
-				console.log("all images loaded.");
+				console.log("in page list, all images loaded.");
 				var renderTo = $(".grid-boxes");			
 				var gutter = 30;
 				var min_width = 298;			
@@ -107,6 +107,7 @@
 						return box_width;
 					}	
 				});
+				console.log("masonry render.");
 			});	
 		}
 	
@@ -141,6 +142,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){				
+						console.log("page list data bound.");
 						masonry();
 					},
 					change: function(e){						
