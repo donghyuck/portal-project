@@ -61,11 +61,12 @@
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 				
 				
-				var $container = $('#grid');
-				// initialize
-				$container.masonry({
-				  columnWidth: 200,
-				  itemSelector: 'li'
+				var $container = $('.masonry-container');
+				$container.imagesLoaded( function () {
+					container.masonry({
+						columnWidth: '.item',
+						itemSelector: '.item'
+					});				
 				});
 			}
 		}]);			
@@ -90,51 +91,7 @@
 			background-size: cover;
 			background-position: center center;			
 		}
-		/** grid */
-.grid {
-	max-width: 69em;
-	list-style: none;
-	margin: 30px auto;
-	padding: 0;
-}
-
-.grid li {
-	display: block;
-	float: left;
-	padding: 7px;
-	width: 33%;
-	opacity: 0;
-}
-
-.grid li.shown,
-.no-js .grid li,
-.no-cssanimations .grid li {
-	opacity: 1;
-}
-
-.grid li a,
-.grid li img {
-	outline: none;
-	border: none;
-	display: block;
-	max-width: 100%;
-}
-/* Effect 1: opacity */
-.grid.effect-1 li.animate {
-	-webkit-animation: fadeIn 0.65s ease forwards;
-	animation: fadeIn 0.65s ease forwards;
-}
-
-@-webkit-keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
-}
-
-@keyframes fadeIn {
-	0% { }
-	100% { opacity: 1; }
-}
-				
+					
 		</style>   	
 		</#compress>
 	</head>
@@ -157,99 +114,73 @@
 			</#if>	
 			<!-- START MAIN CONTENT -->
 			<div class="container content">		
+				<div class="row masonry-container">
+				
+<div class="col-md-4 col-sm-6 item">
+            <div class="thumbnail">
+              <img src="http://lorempixel.com/200/200/abstract" alt="">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div><!--/.item  -->
 
+          <div class="col-md-4 col-sm-6 item">
+            <div class="thumbnail">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div><!--/.item  -->
 
-			<ul class="grid effect-1" id="grid">
-				<li class="animate"><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
-				<li><a href="http://drbl.in/fHaa"><img src="images/13.png"></a></li>
-				<li><a href="http://drbl.in/gXMo"><img src="images/10.png"></a></li>
-				<li><a href="http://drbl.in/gXMn"><img src="images/11.png"></a></li>
-				<li><a href="http://drbl.in/fzYo"><img src="images/2.jpg"></a></li>
-				<li><a href="http://drbl.in/fARU"><img src="images/14.png"></a></li>
-				<li><a href="http://drbl.in/fWMM"><img src="images/1.jpg"></a></li>
-				<li><a href="http://drbl.in/fWPV"><img src="images/3.jpg"></a></li>
-				<li><a href="http://drbl.in/fWMT"><img src="images/4.jpg"></a></li>
-				<li><a href="http://drbl.in/fGhI"><img src="images/5.jpg"></a></li>
-				<li><a href="http://drbl.in/fKCf"><img src="images/6.jpg"></a></li>
-				<li><a href="http://drbl.in/fLBG"><img src="images/7.jpg"></a></li>
-				<li><a href="http://drbl.in/fPEY"><img src="images/8.jpg"></a></li>
-				<li><a href="http://drbl.in/fWwG"><img src="images/9.jpg"></a></li>
-				<li><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
-				<li><a href="http://drbl.in/fHaa"><img src="images/13.png"></a></li>
-				<li><a href="http://drbl.in/gXMo"><img src="images/10.png"></a></li>
-				<li><a href="http://drbl.in/gXMn"><img src="images/11.png"></a></li>
-				<li><a href="http://drbl.in/fzYo"><img src="images/2.jpg"></a></li>
-				<li><a href="http://drbl.in/fARU"><img src="images/14.png"></a></li>
-				<li><a href="http://drbl.in/fWMM"><img src="images/1.jpg"></a></li>
-				<li><a href="http://drbl.in/fWPV"><img src="images/3.jpg"></a></li>
-				<li><a href="http://drbl.in/fWMT"><img src="images/4.jpg"></a></li>
-				<li><a href="http://drbl.in/fGhI"><img src="images/5.jpg"></a></li>
-				<li><a href="http://drbl.in/fKCf"><img src="images/6.jpg"></a></li>
-				<li><a href="http://drbl.in/fLBG"><img src="images/7.jpg"></a></li>
-				<li><a href="http://drbl.in/fPEY"><img src="images/8.jpg"></a></li>
-				<li><a href="http://drbl.in/fWwG"><img src="images/9.jpg"></a></li>
-				<li><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
-				<li><a href="http://drbl.in/fHaa"><img src="images/13.png"></a></li>
-				<li><a href="http://drbl.in/gXMo"><img src="images/10.png"></a></li>
-				<li><a href="http://drbl.in/gXMn"><img src="images/11.png"></a></li>
-				<li><a href="http://drbl.in/fzYo"><img src="images/2.jpg"></a></li>
-				<li><a href="http://drbl.in/fARU"><img src="images/14.png"></a></li>
-				<li><a href="http://drbl.in/fWMM"><img src="images/1.jpg"></a></li>
-				<li><a href="http://drbl.in/fWPV"><img src="images/3.jpg"></a></li>
-				<li><a href="http://drbl.in/fWMT"><img src="images/4.jpg"></a></li>
-				<li><a href="http://drbl.in/fGhI"><img src="images/5.jpg"></a></li>
-				<li><a href="http://drbl.in/fKCf"><img src="images/6.jpg"></a></li>
-				<li><a href="http://drbl.in/fLBG"><img src="images/7.jpg"></a></li>
-				<li><a href="http://drbl.in/fPEY"><img src="images/8.jpg"></a></li>
-				<li><a href="http://drbl.in/fWwG"><img src="images/9.jpg"></a></li>
-				<li><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
-				<li><a href="http://drbl.in/fHaa"><img src="images/13.png"></a></li>
-				<li><a href="http://drbl.in/gXMo"><img src="images/10.png"></a></li>
-				<li><a href="http://drbl.in/gXMn"><img src="images/11.png"></a></li>
-				<li><a href="http://drbl.in/fzYo"><img src="images/2.jpg"></a></li>
-				<li><a href="http://drbl.in/fARU"><img src="images/14.png"></a></li>
-				<li><a href="http://drbl.in/fWMM"><img src="images/1.jpg"></a></li>
-				<li><a href="http://drbl.in/fWPV"><img src="images/3.jpg"></a></li>
-				<li><a href="http://drbl.in/fWMT"><img src="images/4.jpg"></a></li>
-				<li><a href="http://drbl.in/fGhI"><img src="images/5.jpg"></a></li>
-				<li><a href="http://drbl.in/fKCf"><img src="images/6.jpg"></a></li>
-				<li><a href="http://drbl.in/fLBG"><img src="images/7.jpg"></a></li>
-				<li><a href="http://drbl.in/fPEY"><img src="images/8.jpg"></a></li>
-				<li><a href="http://drbl.in/fWwG"><img src="images/9.jpg"></a></li>
-				<li><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
-				<li><a href="http://drbl.in/fHaa"><img src="images/13.png"></a></li>
-				<li><a href="http://drbl.in/gXMo"><img src="images/10.png"></a></li>
-				<li><a href="http://drbl.in/gXMn"><img src="images/11.png"></a></li>
-				<li><a href="http://drbl.in/fzYo"><img src="images/2.jpg"></a></li>
-				<li><a href="http://drbl.in/fARU"><img src="images/14.png"></a></li>
-				<li><a href="http://drbl.in/fWMM"><img src="images/1.jpg"></a></li>
-				<li><a href="http://drbl.in/fWPV"><img src="images/3.jpg"></a></li>
-				<li><a href="http://drbl.in/fWMT"><img src="images/4.jpg"></a></li>
-				<li><a href="http://drbl.in/fGhI"><img src="images/5.jpg"></a></li>
-				<li><a href="http://drbl.in/fKCf"><img src="images/6.jpg"></a></li>
-				<li><a href="http://drbl.in/fLBG"><img src="images/7.jpg"></a></li>
-				<li><a href="http://drbl.in/fPEY"><img src="images/8.jpg"></a></li>
-				<li><a href="http://drbl.in/fWwG"><img src="images/9.jpg"></a></li>
-				<li><a href="http://drbl.in/fQdt"><img src="images/12.png"></a></li>
-				<li><a href="http://drbl.in/fHaa"><img src="images/13.png"></a></li>
-				<li><a href="http://drbl.in/gXMo"><img src="images/10.png"></a></li>
-				<li><a href="http://drbl.in/gXMn"><img src="images/11.png"></a></li>
-				<li><a href="http://drbl.in/fzYo"><img src="images/2.jpg"></a></li>
-				<li><a href="http://drbl.in/fARU"><img src="images/14.png"></a></li>
-				<li><a href="http://drbl.in/fWMM"><img src="images/1.jpg"></a></li>
-				<li><a href="http://drbl.in/fWPV"><img src="images/3.jpg"></a></li>
-				<li><a href="http://drbl.in/fWMT"><img src="images/4.jpg"></a></li>
-				<li><a href="http://drbl.in/fGhI"><img src="images/5.jpg"></a></li>
-				<li><a href="http://drbl.in/fKCf"><img src="images/6.jpg"></a></li>
-				<li><a href="http://drbl.in/fLBG"><img src="images/7.jpg"></a></li>
-				<li><a href="http://drbl.in/fPEY"><img src="images/8.jpg"></a></li>
-				<li><a href="http://drbl.in/fWwG"><img src="images/9.jpg"></a></li>
-				<li><a href="http://drbl.in/fWPV"><img src="images/3.jpg"></a></li>
-				<li><a href="http://drbl.in/fGhI"><img src="images/5.jpg"></a></li>
-				<li><a href="http://drbl.in/fzYo"><img src="images/2.jpg"></a></li>
-			</ul>
-						
-			
+          <div class="col-md-4 col-sm-6 item">
+            <div class="thumbnail">
+              <img src="http://lorempixel.com/200/200/abstract" alt="">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div><!--/.item  -->
+
+          <div class="col-md-4 col-sm-6 item">
+            <div class="thumbnail">
+              <img src="http://lorempixel.com/200/200/abstract" alt="">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div><!--/.item  -->
+
+          <div class="col-md-4 col-sm-6 item">
+            <div class="thumbnail">
+              <img src="http://lorempixel.com/200/200/abstract" alt="">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div><!--/.item  -->
+
+          <div class="col-md-4 col-sm-6 item">
+            <div class="thumbnail">
+              <img src="http://lorempixel.com/200/200/abstract" alt="">
+              <div class="caption">
+                <h3>Thumbnail label</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, illum voluptates consectetur consequatur ducimus. Necessitatibus, nobis consequatur hic eaque laborum laudantium. Adipisci, explicabo, asperiores molestias deleniti unde dolore enim quas.</p>
+                <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+              </div>
+            </div>
+          </div>
+          					
+				</div>
 			</div>	
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
