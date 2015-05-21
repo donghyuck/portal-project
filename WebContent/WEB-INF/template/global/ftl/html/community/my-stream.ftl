@@ -47,41 +47,17 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
-								if( !currentUser.anonymous ){		
-									$("#announce-selector label.btn").last().removeClass("disabled");									 
-								}
 							} 
 						}						
 					},
 					wallpaper : {
-						slideshow : false
+						renderTo:$(".breadcrumbs-v3")
 					},
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
-				// personalized grid setting				
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
-				common.ui.buttonGroup($("#personalized-buttons"), {
-					handlers :{
-						"show-notification-panel" : function(e){
-							common.ui.disable($(e.target));
-							createNotificationPanel();
-						},
-						"show-memo-panel" : function(e){
-							common.ui.disable($(e.target));
-							createMemoPanel();
-						}
-					}
-				});
-				
-				createAnnounceSection();				
-				$(".morphing").bind("open.morphing", function(e){
-					common.ui.scroll.top($("#my-announce-section").parent());
-					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);					
-				});					
-				setupPersonalizedSection();			
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 				
 			}
 		}]);			
