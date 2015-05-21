@@ -83,6 +83,7 @@
 					columnWidth: '.item',
 					itemSelector: '.item'
 				});
+				
 				var dataSource = new kendo.data.DataSource({				
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
@@ -107,11 +108,12 @@
 							console.log(data.length); 
 							
 							$.each( data , function(index, value){
-								console.log(kendo.stringify(value)); 	
+								console.log(value.name); 	
 							});
 							var template = kendo.template($('#my-page-stream-item-template').html());							
 						}				
 				});			
+				
 				dataSource.fetch();					
 			}
 		}
