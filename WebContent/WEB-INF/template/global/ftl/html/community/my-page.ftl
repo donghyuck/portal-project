@@ -90,7 +90,7 @@
 					var gutter = 30;
 					var min_width = 298;
 					renderTo.masonry({
-						isInitLayout: false,
+						//isInitLayout: false,
 						itemSelector : ".grid-boxes-in",
 						gutterWidth: gutter,					
 						isAnimated : true,
@@ -110,7 +110,7 @@
 						}	
 					});
 					
-					renderTo.masonry();
+					//renderTo.masonry();
 			});	
 		}
 	
