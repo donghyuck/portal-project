@@ -67,7 +67,7 @@
 				
 				var $container = $('.masonry-container');
 				$container.imagesLoaded( function () {
-					container.masonry({
+					$container.masonry({
 						columnWidth: '.item',
 						itemSelector: '.item'
 					});				
