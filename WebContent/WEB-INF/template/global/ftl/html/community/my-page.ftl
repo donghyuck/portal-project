@@ -85,6 +85,7 @@
 		function masonry(){		
 		
 			$(".grid-boxes").imagesLoaded( function(e){				
+				console.log("all images loaded.");
 				var renderTo = $(".grid-boxes");			
 				var gutter = 30;
 				var min_width = 298;			
