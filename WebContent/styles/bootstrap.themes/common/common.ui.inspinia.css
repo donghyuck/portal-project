@@ -154,3 +154,56 @@
 	margin-left: auto;
 }
 
+/**
+* Credit
+*/
+.ibox .page-credits {
+	color: #777;
+}
+
+.ibox .page-credits .credit-item {
+	line-height: 15px;
+	padding: 10px;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
+	border-radius: 0 0 6px 6px;
+	display: block;	
+}
+
+.ibox .page-credits .credit-item .credit-img.user {
+	position: relative;
+	border-radius: 50%;	
+	float: left;
+	height: 30px;
+	margin-right: 5px;
+	width: 30px;  
+}
+
+.ibox .page-credits .credit-item .credit-img.user  img {
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;	
+	position: absolute;
+	vertical-align: middle;
+	border: 0; 
+}
+
+.ibox .page-credits .credit-item .credit-name {
+	white-space: nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;	
+	color: #999;
+	display: block;	
+}
+.ibox .page-credits .credit-item .credit-title {
+	white-space: nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: block;
+	color: #717171;	
+}
