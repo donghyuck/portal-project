@@ -148,7 +148,7 @@
 			}
 		}
 		function createMyPageViewer( item ){
-			alert( typeof item ) );
+			alert( typeof item );
 		}
 		
 
