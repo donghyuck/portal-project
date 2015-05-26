@@ -86,7 +86,7 @@
 				var msnry = renderTo.data('masonry');								
 				var dataSource = new kendo.data.DataSource({				
 						transport: { 
-							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
+							read: { url:'<@spring.url "/data/pages/published/list.json?output=json"/>', type: 'POST' },
 							parameterMap: function (options, type){
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
 							}
