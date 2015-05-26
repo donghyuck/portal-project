@@ -105,11 +105,8 @@
 						serverSorting: false,
 						change: function(e) {
 							var data = this.data();
-							var template = kendo.template($('#my-stream-item-template').html());				
-							
-							var elem = $(kendo.render(template, data));
-												
-							
+							var template = kendo.template($('#my-stream-item-template').html());		
+							var elem = $(kendo.render(template, data));							
 							elem.imagesLoaded(function(){
 								renderTo.append( elem );		
 								msnry.appended( elem );
@@ -270,8 +267,7 @@
 			<!-- START MAIN CONTENT -->
 			<div class="container content">		
 				<div class="row">
-					<div id="my-page-stream" >
-					</div>
+					<div id="my-page-stream" ></div>
 				</div>
 			</div>	
 			<!-- ./END MAIN CONTENT -->	
@@ -522,16 +518,18 @@
 			#}#                
 			</div>
 			<div class="ibox-content" style="display: block;">
-		#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span># }else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
+			<img src="#= authorPhotoUrl #" class="img-responsive img-circle" />
 			<ul class="list-inline grid-boxes-news">
 				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
 				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
 			</ul>                    
 			<p>#: summary #</p>
+			
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="navbar-btn">
 					<div class="btn-group">				
