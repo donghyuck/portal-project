@@ -522,7 +522,7 @@
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
-			<img src="#= authorPhotoUrl #" class="img-responsive img-circle" />
+			<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
 			<ul class="list-inline grid-boxes-news">
 				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
