@@ -147,111 +147,248 @@
 				});	
 			}
 		}
-		function createMyPageViewer( item ){
-			alert( typeof item );
-		}
-		
 
-		function createMyPageListView(){		
-			var renderTo = $("#my-page-stream");
-			if( !common.ui.exists( renderTo ) ){
-				common.ui.listview( renderTo, {
-					dataSource: {
+		function createMyPageViewer(source, isEditable){
+			var isEditable = isEditable || false;		
+			var renderTo = $("#my-page-viewer");			
+			if( ! common.ui.exists(renderTo) ){
+				var observable =  common.ui.observable({
+					page : new common.ui.data.Page(),
+					editable : false,
+					advencedSetting : false,
+					useWrapMode : false,
+					useWrap : function(e){
+						var $this = this;
+						if( $this.get('editable') )
+							ace.edit("my-page-code-editor").getSession().setUseWrapMode($this.useWrapMode);
+					},
+					stateSource : [
+						{name: "" , value: "INCOMPLETE"},
+						{name: "승인" , value: "APPROVAL"},
+						{name: "게시" , value: "PUBLISHED"},
+						{name: "거절" , value: "REJECTED"},
+						{name: "보관" , value: "ARCHIVED"},
+						{name: "삭제" , value: "DELETED"}
+					],
+					properties : new kendo.data.DataSource({
 						transport: { 
-							read: { url:'<@spring.url "/data/pages/list.json?output=json"/>', type: 'POST' },
-							parameterMap: function (options, type){
-								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
+							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
+							create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
+							update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
+							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { pageId: observable.page.pageId, items: kendo.stringify(options.models)};
+								} 
+								return { pageId: observable.page.pageId }
 							}
-						},
-						requestStart: function(e){
-							if( $(".grid-boxes").data('masonry') ){
-								$(".grid-boxes").masonry('destroy');
-							//	$(".grid-boxes").masonry('remove',  $(".grid-boxes .masonry-brick") );
-							}						
-						},
+						},	
+						batch: true, 
 						schema: {
-							total: "totalCount",
-							data: "pages",
-							model: common.ui.data.Page
+							model: common.ui.data.Property
 						},
-						selectable: 'single', 
-						error:common.ui.handleAjaxError,
-						batch: false,
-						pageSize: 15,
-						serverPaging: true,
-						serverFiltering: false,
-						serverSorting: false
+						error:common.ui.handleAjaxError
+					}),
+					isVisible : true,
+					close:function(e){
+						 common.ui.dialog( renderTo ).close();
+						 return false;
+					},	
+					validate : function (){
+						var $this = this;
+						if( $this.page.title.length == 0 ){
+							if(!$("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").addClass("state-error");							
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "제목을 입력하세요."	},
+								"error"
+							);
+							return false;
+						}						
+						else{
+							if($("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").removeClass("state-error");
+								
+							if( $this.page.pageId === 0 ) {
+								if( $this.page.name.length === 0 ){
+									$this.page.set("name" , $this.page.title) ;
+								}
+								if( $this.page.summary.length === 0 ){
+									$this.page.set("summary" , $this.page.title) ;
+								}									
+								if( $this.page.bodyContent.bodyText.length === 0 ){
+									$this.page.bodyContent.bodyText = "  ";
+								}							
+							} 	
+						}								
+						if($this.page.name.length === 0 ){
+							if(!$("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "파일이름을 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").removeClass("state-error");
+						}																		
+						if($this.page.summary.length == 0 ){
+							if(!$("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").removeClass("state-error");
+						}									
 					},
-					template: kendo.template($("#my-page-listview-template").html()),
-					dataBound: function(e){				
-						console.log("page list data bound.");
-						masonry();
+					create : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');					
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();					
+						$this.validate();
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									if( response.pageId ){
+										$this.set( "editable" , true ) ;	
+										$this.setPage( new common.ui.data.Page(response) );
+									}						
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
 					},
-					change: function(e){						
-						var selectedCells = this.select();
-						var selectedCell = this.dataItem( selectedCells );	
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');						
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
+						$this.validate();						
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
+									common.ui.listview( $("#my-page-listview") ).dataSource.read();
+									$this.close();									
+								},
+								fail: function(){								
+									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
+					},	
+					exportPdf: function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');	
+						if( $this.page.pageId  > 0 ) {
+							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
+								return kendo.drawing.exportPDF(group, {
+								paperSize: "auto",
+								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+								});
+							}).done(function(data) {
+								kendo.saveAs({
+								dataURI: data,
+								fileName:  $this.page.name + ".pdf",
+								proxyURL: "/downlaod/export"
+								});
+								btn.button('reset');
+							});
+						}
+						return false;
+					},								
+					setPage: function(page){
+						var that = this;
+						page.copy(that.page);						
+						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
+							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
+						}
+						if( that.page.pageId  > 0 ) {
+							that.set("advencedSetting", true);
+							that.properties.read();
+						} else {
+							that.set("advencedSetting", false);
+						}	
 					}
 				});		
 				
-				renderTo.removeClass("k-widget k-listview");					
-				
-				common.ui.pager($("#my-page-pager"), {
-					dataSource: common.ui.listview(renderTo).dataSource,
-					pageSizes: [15, 25, 50, 100]
+				renderTo.data("model", observable);		
+				var content = renderTo.find(".sky-form");					
+				common.ui.dialog( renderTo , {
+					data : observable,
+					autoBind: true,
+					"open":function(e){		
+						$("body").css("overflow-y", "hidden");
+					},
+					"opened" : function(e){		
+						renderTo.find(".dialog__content").css("overflow-y", "auto");
+					},
+					"close":function(e){			
+						renderTo.find(".dialog__content").css("overflow-y", "hidden");
+						$("body").css("overflow-x", "hidden");					
+						$("body").css("overflow-y", "auto");		
+					}
 				});		
-				
-				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
-					$this = $(this);
-					var action = $this.data("action");
-					var objectId = $this.data("object-id");						
-					var item = common.ui.listview(renderTo).dataSource.get(objectId);
-					switch( action ){
-						case 'view':						
-						createMyPageViewer(item);
-						break;		
-						case 'edit':						
-						createMyPageViewer( item , true );	
-						break;	
-						case 'delete':
-						deletePage(item, $this );					
-						break;	
-						case 'share':
-						alert( action );													
-						break;	
-						case 'publish':
-						publishPage( item, $this );		
-						break;				
-						case 'restore':
-						restorePage(item, $this);
-						break;																										
-					}	
-					return false;
-				});
-				
-				$("#my-page-source-list input[type=radio][name=radio-inline]").on("change", function () {						
-					common.ui.listview(renderTo).dataSource.read();	
+				var bodyEditor =  $("#my-page-editor" );
+				createEditor( "my-page" , bodyEditor, { 
+					modal : false , 
+					appendTo: $("#my-page-editor-code-panel"), 
+					tab: $("#my-page-editor-tabs"), 
+					pageSize : 15,
+					objectType : 31,
+					useWrapMode : observable.useWrapMode 
 				});	
-				
-				$("input[name='page-list-view-filters']").on("change", function () {
-					var pageState = this.value;
-					if( pageState == 'ALL' ){
-						common.ui.listview(renderTo).dataSource.filter({}); 
-					}else{
-						common.ui.listview(renderTo).dataSource.filter({ field: "pageState", operator: "eq", value: pageState}); 
-					}
-				});				
-				
-				// event for new page
-				$("button[data-action=create]").click(function(e){
-					var page = new common.ui.data.Page();
-					page.set("objectType", getMyPageOwnerId());					
-					createMyPageViewer(page, true);
-				});
-				
 			}			
-			if( $("article.bg-white").is(":hidden") ){
-				$("article.bg-white").show();
-			} 			
+			
+			var dialogFx = common.ui.dialog( renderTo );	
+			if( !dialogFx.isOpen ){
+				if( typeof source == 'number' ){
+				
+				}else if ( typeof source == 'object' ){
+				
+				}
+				renderTo.data("model").set( "editable" , isEditable) ;	
+				renderTo.data("model").setPage(source);
+				dialogFx.open();
+			}				
 		}
 		
 		-->
@@ -312,6 +449,171 @@
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>				
+		
+		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
+			<div class="dialog__overlay"></div>
+			<div class="dialog__content">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">						
+							<div class="ibox float-e-margins">
+			                    <div class="ibox-title">
+			                    	<span class="text-danger" data-bind="invisible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
+			                        <span data-bind="{text: page.title, invisible:editable }"></span>&nbsp;
+									<div class="ibox-tools m-r-lg" data-bind="invisible:editable">
+										<button type="button" class="btn btn-deafult btn-flat btn-outline btn-sm rounded" data-bind="click:exportPdf" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-file-pdf-o"></i> PDF</button>
+									</div>
+			                        <span class="close" data-dialog-close></span>					
+			                    </div>
+			                    <article data-bind="{invisible:editable}">
+									<div class="ibox-content ibox-heading">
+										<div class="author margin-bottom-20">
+											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+											<ul class="list-inline grid-boxes-news">
+												<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
+												<li>|</li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+											</ul>  
+										</div>
+										<div class="tag-box tag-box-v4 no-margin-b">                    
+                    						<p data-bind="text:page.summary"></p>
+                    					</div>
+										
+                                	</div>
+                                	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
+			                    </article>
+								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
+									<fieldset>
+										<label for="title" class="input">
+											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+										</label>
+										<div class="text-right">
+											<button class="btn btn-default btn-flat btn-outline  rounded" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
+											<button type="button" class="btn btn-info btn-flat btn-outline  rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+										</div>											
+									</fieldset>	
+									<section class="no-margin-b collapse" id="my-page-options"> 
+									<fieldset>
+											<div class="row">
+												<div class="col-md-6">
+													<section>
+															<label for="summary" class="textarea">
+																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+															</label>
+													</section>												
+													<section>
+														<label class="input">
+																<i class="icon-prepend fa fa-file-text-o"></i>
+																<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
+															</label>
+													</section>																										
+													<section>
+														<label class="input">
+															<i class="icon-prepend fa fa-file-code-o"></i>
+															<input type="text" name="template" placeholder="템플릿">
+														</label>
+													</section>														
+													</div>
+												<div class="col-md-6">
+														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
+																		<i class="fa fa-cog"></i> 속성
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body no-padding">
+																		<div data-role="grid"
+																			date-scrollable="false"
+																			data-editable="true"
+																			data-autoBind="false"
+																			data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+																			data-columns="[
+																				{ 'title': '이름',  'field': 'name', 'width': 200 },
+																				{ 'title': '값', 'field': 'value' },
+																				{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+																			]"
+																			data-bind="source: properties"
+																			style="border:0px;"></div>	
+																	</div>
+																</div>
+															</div>
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
+																		<i class="fa fa-floppy-o"></i> 첨부파일
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body">
+																	서비스 준비중 입니다.	
+																	</div>
+																</div>
+															</div>					
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
+																		<i class="fa fa-history"></i> 버전
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-Three" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body">
+																		<section>									
+																			<label class="label">현재 버전</label>					
+																			<label class="input state-disabled">
+																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
+																			</label>
+																		</section>
+																	</div>
+																</div>
+															</div>																												
+														</div><!-- ./acc-v1 -->
+												</div><!-- /.col-6-->				
+											</div><!-- /.row-->										
+									</fieldset>										
+									</section>		
+									<fieldset class="bg-white" data-bind="visible:advencedSetting">			
+											<div class="row">
+												<div class="col-md-9"></div>
+												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+											</div>												
+												<div class="tab-v1">
+													<div role="tabpanel">
+														<!-- Nav tabs -->													
+														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
+															<li role="presentation" class="m-l-sm active"><a href="#my-page-editor-panel" aria-controls="my-page-editor-panel" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+															<li role="presentation"><a href="#my-page-editor-code-panel" aria-controls="my-page-editor-code-panel" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+														</ul>												
+														<!-- Tab panes -->
+														<div class="tab-content no-padding">
+															<div role="tabpanel" class="tab-pane active" id="my-page-editor-panel">
+																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="my-page-editor-code-panel"></div>
+														</div>
+													</div>
+												</div>		
+										</fieldset>	
+										<footer class="text-right">
+											<button type="button" class="btn btn-success btn-flat btn-lg rounded" data-bind="{events:{click:create}, invisible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-angle-right"></i> 다음</button> 				
+											<button type="button" class="btn btn-info btn-flat btn-lg rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
+										</footer>															
+								</div>
+			                </div>
+						</div>
+					</div>					
+				</div>				
+			</div>
+		</div>	
+				
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- tab-v1 -->
