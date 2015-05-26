@@ -122,7 +122,8 @@
 					var pageSize = dataSource.pageSize();
 					var totalPages = dataSource.totalPages();
 					if( page < totalPages ){
-						dataSource.read({ objectType: getMyPageOwnerId(), pageSize : pageSize,  page : ( page + 1) });
+						dataSource.page( page + 1 );
+						dataSource.read();
 					}
 				});			
 			}
