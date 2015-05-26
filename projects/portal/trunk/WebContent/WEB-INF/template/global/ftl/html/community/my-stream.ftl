@@ -274,7 +274,7 @@
 						<button type="button" class="btn btn-default btn-lg btn-outline rounded btn-flat btn-block" data-action="create"><span class="btn-label icon fa fa-angle-down" style="
 						    padding-right: 30px;"></span>더보기</button>					
 					</div>
-				<div>
+				</div>
 			</div>	
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
