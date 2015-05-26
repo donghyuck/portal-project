@@ -522,12 +522,12 @@
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
-			<div class="page-meta no-margin">
+			<div class="page-meta no-margin-hr">
 				<p class="page-description">#: summary #</p>
 				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
 			</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
-				<div class="navbar-btn">
+				<div class="navbar-btn text-right">
 					<div class="btn-group">				
 						#if( pageState !=  'DELETED' ){#
 						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
@@ -548,7 +548,7 @@
 				</div>	
 			#}#			
 			</div>
-			<div class="ibox-content" style="display: block;">
+			<div class="ibox-content no-padding" style="display: block;">
 				<div class="page-credits">
 					<div class="credit-item">
 						<div class="credit-img user">
