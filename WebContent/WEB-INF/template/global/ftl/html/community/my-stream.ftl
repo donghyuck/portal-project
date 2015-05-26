@@ -117,7 +117,7 @@
 				
 				dataSource.fetch();		
 				
-				$( "bottom[data-action=more]").click(function(){
+				$( "botton[data-action=more]").click(function(){
 					var page = dataSource.page();
 					var pageSize = dataSource.pageSize();
 					var totalPages = dataSource.totalPages();
