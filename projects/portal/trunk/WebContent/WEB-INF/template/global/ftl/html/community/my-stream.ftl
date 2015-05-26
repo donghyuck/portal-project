@@ -132,7 +132,7 @@
 						dataSource.page( page + 1 );						
 					}
 				});		
-				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
+				renderTo.on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");					
