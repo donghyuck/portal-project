@@ -523,18 +523,16 @@
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
 			
-			<ul class="list-inline grid-boxes-news">
-				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
-				<li>|</li>
-				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
-			</ul>                    
 			<p>#: summary #</p>
+			<ul class="list-inline grid-boxes-news">
+				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
+			</ul> 
 			<div class="page-credits">
 				<div class="credit-item">
 					<div class="credit-img user">
-						<img src="#= authorPhotoUrl() #" class="img-responsive" />
+						<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
 					</div>
-					<div class="credit-name">#: user.name #</div>
+					<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> # } else { # #: user.username #</div> # } #
 					<div class="credit-title"></div>
 				</div>
 			</div>
