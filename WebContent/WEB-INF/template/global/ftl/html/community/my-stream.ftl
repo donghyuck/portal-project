@@ -74,9 +74,8 @@
 		function getMyPageOwnerId(){
 			return 2;
 		}
-		
+				
 		function createMyPageStreamListView(){		
-			
 			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
@@ -118,8 +117,7 @@
 								$btn.fadeIn();
 							}else{
 								$btn.fadeOut();
-							}							
-							
+							}
 						}				
 				});			
 				
@@ -133,10 +131,25 @@
 					if( page < totalPages ){
 						dataSource.page( page + 1 );						
 					}
-				});			
+				});		
+				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
+					$this = $(this);
+					var action = $this.data("action");
+					var objectId = $this.data("object-id");					
+					var item = dataSource.get(objectId);
+					if( item == null )
+						item = objectId;					
+					if( action == 'view' ){
+						createMyPageViewer(item);					
+					}
+					
+					return false;					
+				});	
 			}
 		}
-		
+		function createMyPageViewer( item ){
+			alert( typeof item ) );
+		}
 		
 
 		function createMyPageListView(){		
