@@ -207,3 +207,16 @@
 	display: block;
 	color: #717171;	
 }
+
+.ibox .page-meta {
+	margin: 10px 16px;
+	position: relative;
+}
+
+.ibox .page-meta .page-description {
+	margin: 5px 0;
+	color: #333;
+	font-size: 13px;
+	line-height: 17px;
+	word-wrap: break-word;	  
+}
