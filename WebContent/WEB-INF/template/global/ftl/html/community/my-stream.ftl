@@ -105,6 +105,11 @@
 						serverSorting: false,
 						change: function(e) {
 							var data = this.data();
+							if( this.page() < this.totalPages() ){
+								$( "button[data-action=more]").fadeIn();
+							}else{
+								$( "button[data-action=more]").fadeOut();
+							}
 							var template = kendo.template($('#my-stream-item-template').html());		
 							var elem = $(kendo.render(template, data));							
 							elem.imagesLoaded(function(){
