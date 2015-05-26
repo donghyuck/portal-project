@@ -517,7 +517,7 @@
 			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#                
 			</div>
-			<div class="ibox-content" style="display: block;">
+			<div class="ibox-content no-padding-b" style="display: block;">
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span># }else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
