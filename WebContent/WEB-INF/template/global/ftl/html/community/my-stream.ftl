@@ -269,6 +269,12 @@
 				<div class="row">
 					<div id="my-page-stream" ></div>
 				</div>
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<button type="button" class="btn btn-default btn-lg btn-outline rounded btn-flat btn-block" data-action="create"><span class="btn-label icon fa fa-angle-down" style="
+						    padding-right: 30px;"></span>더보기</button>					
+					</div>
+				<div>
 			</div>	
 			<!-- ./END MAIN CONTENT -->	
 	 		<!-- START FOOTER -->
