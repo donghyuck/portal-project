@@ -112,13 +112,14 @@
 								renderTo.append( elem );		
 								msnry.appended( elem );
 								msnry.layout();
-							});		
+							});	
+							$btn.button('reset')						
 							if( this.page() < this.totalPages() ){
 								$btn.fadeIn();
 							}else{
 								$btn.fadeOut();
 							}							
-							$btn.button('reset')					
+							
 						}				
 				});			
 				
