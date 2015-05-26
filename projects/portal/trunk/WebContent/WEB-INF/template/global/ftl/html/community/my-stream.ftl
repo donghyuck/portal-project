@@ -522,14 +522,22 @@
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
-			<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
+			
 			<ul class="list-inline grid-boxes-news">
 				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
 				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
 			</ul>                    
 			<p>#: summary #</p>
-			
+			<div class="page-credits">
+				<div class="credit-item">
+					<div class="credit-img user">
+						<img src="#= authorPhotoUrl() #" class="img-responsive" />
+					</div>
+					<div class="credit-name">#: user.name #</div>
+					<div class="credit-title"></div>
+				</div>
+			</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="navbar-btn">
 					<div class="btn-group">				
