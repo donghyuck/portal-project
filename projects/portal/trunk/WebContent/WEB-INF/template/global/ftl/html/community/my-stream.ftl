@@ -123,7 +123,6 @@
 					var totalPages = dataSource.totalPages();
 					if( page < totalPages ){
 						dataSource.page( page + 1 );
-						dataSource.read();
 					}
 				});			
 			}
