@@ -522,8 +522,9 @@
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
-			
-			<p>#: summary #</p>
+			<div class="page-meta">
+				<p class="page-description">#: summary #</p>
+			</div>
 			<ul class="list-inline grid-boxes-news">
 				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
 			</ul> 
