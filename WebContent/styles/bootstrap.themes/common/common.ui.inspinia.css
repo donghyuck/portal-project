@@ -155,6 +155,16 @@
 }
 
 /**
+* Label
+*/
+
+.ibox-title .label{
+	position: absolute;
+	top: 15px;
+	right: 25px;	
+}
+
+/**
 * Credit
 */
 .ibox .page-credits {
