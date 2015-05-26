@@ -105,29 +105,32 @@
 						serverSorting: false,
 						change: function(e) {
 							var data = this.data();
-							if( this.page() < this.totalPages() ){
-								$( "button[data-action=more]").fadeIn();
-							}else{
-								$( "button[data-action=more]").fadeOut();
-							}
+							var $btn = $( "button[data-action=more]");
 							var template = kendo.template($('#my-stream-item-template').html());		
 							var elem = $(kendo.render(template, data));							
 							elem.imagesLoaded(function(){
 								renderTo.append( elem );		
 								msnry.appended( elem );
 								msnry.layout();
-							});							
+							});		
+							if( this.page() < this.totalPages() ){
+								$btn.fadeIn();
+							}else{
+								$btn.fadeOut();
+							}							
+							$btn.button('reset')					
 						}				
 				});			
 				
 				dataSource.fetch();		
 				
 				$( "button[data-action=more]").click(function(){
+					var $btn = $(this).button('loading')
 					var page = dataSource.page();
 					var pageSize = dataSource.pageSize();
 					var totalPages = dataSource.totalPages();
 					if( page < totalPages ){
-						dataSource.page( page + 1 );
+						dataSource.page( page + 1 );						
 					}
 				});			
 			}
@@ -285,7 +288,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-4">
-						<button type="button" class="btn btn-default btn-lg btn-outline rounded btn-flat btn-block" data-action="more"><span class="btn-label icon fa fa-angle-down" style="
+						<button type="button" class="btn btn-default btn-lg btn-outline rounded btn-flat btn-block" data-action="more" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><span class="btn-label icon fa fa-angle-down" style="
 						    padding-right: 30px; display:none;"></span>더보기</button>					
 					</div>
 				</div>
