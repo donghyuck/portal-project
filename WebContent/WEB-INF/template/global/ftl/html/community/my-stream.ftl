@@ -383,10 +383,10 @@
 				if( typeof source == 'number' ){
 				
 				}else if ( typeof source == 'object' ){
-				
+					renderTo.data("model").setPage(source);
 				}
 				renderTo.data("model").set( "editable" , isEditable) ;	
-				renderTo.data("model").setPage(source);
+				
 				dialogFx.open();
 			}				
 		}
