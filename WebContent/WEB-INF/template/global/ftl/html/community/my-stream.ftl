@@ -524,9 +524,7 @@
 			#}#
 			<div class="page-meta">
 				<p class="page-description">#: summary #</p>
-				<ul class="list-inline grid-boxes-news">
-					<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
-				</ul> 				
+				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
 			</div>
 			<div class="page-credits">
 				<div class="credit-item">
