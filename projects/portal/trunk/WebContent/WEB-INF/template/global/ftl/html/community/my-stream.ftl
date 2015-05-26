@@ -115,7 +115,16 @@
 						}				
 				});			
 				
-				dataSource.fetch();					
+				dataSource.fetch();		
+				
+				$( "bottom[data-action=more]").click(function(){
+					var page = dataSource.page();
+					var pageSize = dataSource.pageSize();
+					var totalPages = dataSource.totalPages();
+					if( page < totalPages ){
+						dataSource.read({ objectType: getMyPageOwnerId(), pageSize : pageSize, startIndex : (page * pageSize) });
+					}
+				});			
 			}
 		}
 		
@@ -271,7 +280,7 @@
 				</div>
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-4">
-						<button type="button" class="btn btn-default btn-lg btn-outline rounded btn-flat btn-block" data-action="create"><span class="btn-label icon fa fa-angle-down" style="
+						<button type="button" class="btn btn-default btn-lg btn-outline rounded btn-flat btn-block" data-action="more"><span class="btn-label icon fa fa-angle-down" style="
 						    padding-right: 30px;"></span>더보기</button>					
 					</div>
 				</div>
