@@ -522,18 +522,9 @@
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
-			<div class="page-meta">
+			<div class="page-meta no-margin">
 				<p class="page-description">#: summary #</p>
 				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
-			</div>
-			<div class="page-credits">
-				<div class="credit-item">
-					<div class="credit-img user">
-						<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
-					</div>
-					<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> # } else { # #: user.username #</div> # } #
-					<div class="credit-title"></div>
-				</div>
 			</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="navbar-btn">
@@ -556,6 +547,17 @@
 					#}#			
 				</div>	
 			#}#			
+			</div>
+			<div class="ibox-content" style="display: block;">
+				<div class="page-credits">
+					<div class="credit-item">
+						<div class="credit-img user">
+							<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
+						</div>
+						<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> # } else { # #: user.username #</div> # } #
+						<div class="credit-title"></div>
+					</div>
+				</div>			
 			</div>
 		</div>
 	</div><!--/.item  -->	
