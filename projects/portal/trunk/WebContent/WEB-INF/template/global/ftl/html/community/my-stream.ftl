@@ -97,7 +97,7 @@
 						},						
 						error:common.ui.handleAjaxError,
 						batch: false,						
-						pageSize: 6,
+						pageSize: 3,
 						selectable: false, 
 						serverPaging: true,
 						serverFiltering: false,
