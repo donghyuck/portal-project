@@ -524,10 +524,10 @@
 			#}#
 			<div class="page-meta">
 				<p class="page-description">#: summary #</p>
+				<ul class="list-inline grid-boxes-news">
+					<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
+				</ul> 				
 			</div>
-			<ul class="list-inline grid-boxes-news">
-				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
-			</ul> 
 			<div class="page-credits">
 				<div class="credit-item">
 					<div class="credit-img user">
