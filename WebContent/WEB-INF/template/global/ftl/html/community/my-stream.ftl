@@ -527,7 +527,7 @@
 				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
 			</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
-				<div class="navbar-btn text-right">
+				<div class="text-right">
 					<div class="btn-group">				
 						#if( pageState !=  'DELETED' ){#
 						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
