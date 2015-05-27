@@ -159,7 +159,7 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){				
-						this.element.imagesLoaded(function(){
+						this.element.children().imagesLoaded(function(){
 							msnry.appended(this.element.children());
 							msnry.layout();
 						});
