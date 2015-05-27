@@ -563,7 +563,7 @@
 			min-height : 300px;
 		}
 		#my-page-listview .ibox {
-			visibility: hidden;
+			display:none;
 			border-radius: 6px 6px 0 0 !important;
 			overflow: hidden;	
 		}
