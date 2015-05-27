@@ -161,6 +161,7 @@
 					dataBound: function(e){				
 						//console.log("page list data bound.");
 						//masonry();
+						msnry.layout();
 					},
 					change: function(e){						
 						var selectedCells = this.select();
