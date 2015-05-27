@@ -381,7 +381,7 @@
 				if( typeof source == 'number' ){
 					common.ui.ajax( 
 					'<@spring.url "/data/pages/get.json?output=json"/>', {
-						data : { pageId : source }
+						data : { pageId : source },
 						success: function(response){ 
 							renderTo.data("model").setPage( new common.ui.data.Page(response) );
 							renderTo.data("model").set( "editable" , isEditable) ;	
