@@ -159,10 +159,11 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){				
-						//console.log("page list data bound.");
-						//masonry();
-						msnry.appended(this.element.children());
-						msnry.layout();
+						this.element.imagesLoaded(function(){
+							msnry.appended(this.element.children());
+							msnry.layout();
+						});
+						
 					},
 					change: function(e){						
 						var selectedCells = this.select();
