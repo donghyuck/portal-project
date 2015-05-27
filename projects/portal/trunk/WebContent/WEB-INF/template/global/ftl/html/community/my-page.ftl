@@ -158,9 +158,10 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
-					dataBound: function(e){				
-						this.element.children().imagesLoaded(function(){
-							msnry.appended(this.element.children());
+					dataBound: function(e){		
+						var elem = 	this.element.children();	
+						elem.imagesLoaded(function(){
+							msnry.appended(elem);
 							msnry.layout();
 						});
 						
