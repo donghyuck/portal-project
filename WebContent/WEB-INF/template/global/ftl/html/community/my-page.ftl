@@ -941,23 +941,23 @@
 			</ul>                    
 			<p>#: summary #</p>
 			# if( getCurrentUser().userId === user.userId ) { # 	
-				<div class="navbar-btn">
+				<div class="text-right">
 					<div class="btn-group">				
 						#if( pageState !=  'DELETED' ){#
-						<button class="btn btn-info btn-flat btn-outline rounded-left" data-action="edit" data-object-id="#=pageId#"> 편집</button>
+						<button class="btn btn-info btn-flat btn-outline rounded-left btn-sm" data-action="edit" data-object-id="#=pageId#"> 편집</button>
 						#}#
 						#if( pageState === 'PUBLISHED' ){#
-						<button class="btn btn-info btn-flat btn-outline" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>		
+						<button class="btn btn-info btn-flat btn-outline btn-sm" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>		
 						#}else{#
 							#if( pageState != 'DELETED'){# 
-							<button class="btn btn-info btn-flat btn-outline" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
+							<button class="btn btn-info btn-flat btn-outline btn-sm" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
 							#}#						
 						#}#
 					</div>				
 					#if( pageState ===  'DELETED' ){#						
-					<button class="btn btn-default btn-flat btn-outline rounded" data-action="restore" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">임시저장 이동</button>		
+					<button class="btn btn-default btn-flat btn-outline rounded btn-sm" data-action="restore" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">임시저장 이동</button>		
 					#}else{#
-					<button class="btn btn-danger btn-flat btn-outline rounded-right" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
+					<button class="btn btn-danger btn-flat btn-outline rounded-right btn-sm" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
 					#}#			
 				</div>	
 			#}#			
