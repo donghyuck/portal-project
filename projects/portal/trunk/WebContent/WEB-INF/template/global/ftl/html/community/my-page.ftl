@@ -559,7 +559,9 @@
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
 		}
-		
+		#my-page-listview {
+			min-height : 300px;
+		}
 		#my-page-listview .ibox {
 			visibility: hidden;
 			border-radius: 6px 6px 0 0 !important;
