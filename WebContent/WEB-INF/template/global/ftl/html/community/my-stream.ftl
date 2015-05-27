@@ -140,7 +140,6 @@
 					if( action == 'view' ){
 						createMyPageViewer(item);					
 					}
-					
 					return false;					
 				});	
 			}
@@ -456,7 +455,7 @@
 		</div>				
 		
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
-			<div class="dialog__overlay"></div>
+			<div class="dialog__overlay dark"></div>
 			<div class="dialog__content">
 				<div class="container">
 					<div class="row">
