@@ -373,7 +373,16 @@
 					objectType : 31,
 					useWrapMode : observable.useWrapMode 
 				});	
+				common.ui.scroll.slim(renderTo,{
+					size: '8px', 
+					width: '100%', 
+					height: '100%', 
+					color: '#ff4800', 
+					allowPageScroll: true, 
+					alwaysVisible: true				
+				});
 			}			
+			
 			
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){
