@@ -2156,6 +2156,10 @@ padding: 5px;
 	background: transparent!important;	
 }
 
+.dialog.bg-glass .dialog__overlay.dark {
+	  background: rgba(55, 58, 71, 0.9);
+}
+
 .dialog.dialog-full .dialog__content {
 	width: 100%;
 	max-width: none;
