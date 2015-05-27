@@ -559,7 +559,13 @@
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
 		}
-
+		
+		#my-page-listview .ibox {
+			visibility: hidden;
+			border-radius: 6px 6px 0 0 !important;
+			overflow: hidden;	
+		}
+		
 		</style>   	
 		</#compress>
 	</head>
@@ -924,7 +930,7 @@
 					
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="col-md-4 col-sm-6  item" style="display:none;">
+	<div class="col-md-4 col-sm-6  item">
 	<div class="ibox float-e-margins">
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
