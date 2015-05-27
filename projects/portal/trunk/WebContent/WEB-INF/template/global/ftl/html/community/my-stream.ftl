@@ -426,6 +426,9 @@
 			background-position: center center;			
 		}
 					
+		#my-page-stream {
+			min-height:300px;
+		}			
 		</style>   	
 		</#compress>
 	</head>
