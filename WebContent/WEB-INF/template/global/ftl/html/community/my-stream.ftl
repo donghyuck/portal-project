@@ -79,7 +79,8 @@
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
 					columnWidth: '.item',
-					itemSelector: '.item'
+					itemSelector: '.item',
+					cornerStampSelector: '.item-stamp'
 				});
 				var msnry = renderTo.data('masonry');								
 				var dataSource = new kendo.data.DataSource({				
