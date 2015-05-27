@@ -80,46 +80,9 @@
 		function getMyPageOwnerId(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
-	/*
-		function masonry(){				
-			$(".grid-boxes").imagesLoaded( function(e){				
-				console.log("in page list, all images loaded.");				
-				var renderTo = $(".grid-boxes");				
-				if( !renderTo.data('masonry') ){				
-					console.log("masonry create and render...");
-					var gutter = 30;
-					var min_width = 298;
-					renderTo.masonry({
-						itemSelector : ".grid-boxes-in",
-						gutterWidth: gutter,					
-						isAnimated : true,
-						isFitWidth : true,
-						itemSelector : '.grid-boxes-in',
-						columnWidth: function(containerWidth){		
-						
-							var box_width = (((containerWidth - 2*gutter)/3) | 0); 
-							box_width -- ;
-							if (box_width < min_width) {
-								box_width = (((containerWidth - gutter)/2) | 0);
-							}
-							if (box_width < min_width) {
-								box_width = containerWidth;
-							}
-							renderTo.find('.grid-boxes-in').width(box_width);
-							
-							console.log( "width : " + box_width );
-							return box_width;
-							
-						}
-					});				
-				}
-			});	
-		}
-*/
 	
 		function createMyPageListView(){		
 			var renderTo = $("#my-page-listview");
-
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
 					columnWidth: '.item',
@@ -138,11 +101,7 @@
 								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
 							}
 						},
-						requestStart: function(e){
-							//if( $(".grid-boxes").data('masonry') ){
-							//	$(".grid-boxes").masonry('destroy');
-							//	$(".grid-boxes").masonry('remove',  $(".grid-boxes .grid-boxes-in") );
-							//}						
+						requestStart: function(e){				
 						},
 						schema: {
 							total: "totalCount",
@@ -180,7 +139,7 @@
 					pageSizes: [15, 25, 50, 100]
 				});		
 				
-				$(".grid-boxes").on( "click", "a[data-action], button[data-action]",  function(e){				
+				$("#my-page-listview").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");						
