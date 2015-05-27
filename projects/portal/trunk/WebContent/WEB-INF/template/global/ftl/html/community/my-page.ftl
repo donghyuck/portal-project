@@ -28,7 +28,7 @@
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
 			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',		
-			'<@spring.url "/js/jquery.masonry/jquery.masonry.min.js"/>',		
+			'<@spring.url "/js/jquery.masonry/masonry.pkgd.min.js"/>',		
 			'<@spring.url "/js/imagesloaded/imagesloaded.pkgd.min.js"/>',		
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
@@ -55,8 +55,7 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
-								if( !currentUser.anonymous ){		
- 
+								if( !currentUser.anonymous ){		 
 								}
 							} 
 						}						
