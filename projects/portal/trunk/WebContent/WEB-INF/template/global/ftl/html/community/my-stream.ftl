@@ -497,7 +497,7 @@
 											</ul>  
 										</div>
 										<div class="tag-box tag-box-v4 no-margin-b">                    
-                    						<p data-bind="text:page.summary"></p>
+                    						<p data-bind="html:page.summary"></p>
                     					</div>
 										
                                 	</div>
