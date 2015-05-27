@@ -80,7 +80,7 @@
 				renderTo.masonry({	
 					columnWidth: '.item',
 					itemSelector: '.item',
-					cornerStampSelector: '.item-stamp'
+					isAnimated: true
 				});
 				var msnry = renderTo.data('masonry');								
 				var dataSource = new kendo.data.DataSource({				
