@@ -63,8 +63,7 @@
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
-				// END SCRIPT 				
-
+				// END SCRIPT 
 				createMyPageStreamListView();
 
 
@@ -119,8 +118,7 @@
 								$btn.fadeOut();
 							}
 						}				
-				});			
-				
+				});
 				dataSource.fetch();		
 				
 				$( "button[data-action=more]").click(function(){
@@ -381,13 +379,20 @@
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){
 				if( typeof source == 'number' ){
-				
+					common.ui.ajax( 
+					'<@spring.url "/data/pages/get.json?output=json"/>', {
+						data : { pageId : source }
+						success: function(response){ 
+							renderTo.data("model").setPage( new common.ui.data.Page(response) );
+							renderTo.data("model").set( "editable" , isEditable) ;	
+							dialogFx.open();
+						}	
+					} );
 				}else if ( typeof source == 'object' ){
 					renderTo.data("model").setPage(source);
+					renderTo.data("model").set( "editable" , isEditable) ;	
+					dialogFx.open();
 				}
-				renderTo.data("model").set( "editable" , isEditable) ;	
-				
-				dialogFx.open();
 			}				
 		}
 		
