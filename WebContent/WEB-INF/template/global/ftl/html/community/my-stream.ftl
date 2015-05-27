@@ -377,9 +377,7 @@
 					size: '8px', 
 					width: '100%', 
 					height: '100%', 
-					color: '#ff4800', 
-					allowPageScroll: true, 
-					alwaysVisible: true				
+					color: '#ff4800'			
 				});
 			}			
 			
