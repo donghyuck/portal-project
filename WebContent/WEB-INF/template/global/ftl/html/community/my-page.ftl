@@ -929,21 +929,17 @@
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
-		<div class="ibox-content">
+		<div class="ibox-content ibox-title">
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
-			<ul class="list-inline grid-boxes-news">
+			<ul class="list-inline">
 				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
 				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
 			</ul>                    
-			<div class="page-meta">
-				<p class="page-description">#: summary #</p>
-				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
-			</div>
-			
+			<p>#: summary #</p>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="navbar-btn">
 					<div class="btn-group">				
