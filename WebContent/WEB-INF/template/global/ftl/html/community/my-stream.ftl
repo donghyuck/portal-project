@@ -428,7 +428,10 @@
 					
 		#my-page-stream {
 			min-height:300px;
+			margin-bottom:50px;
 		}			
+		
+		
 		</style>   	
 		</#compress>
 	</head>
