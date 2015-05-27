@@ -80,7 +80,7 @@
 		function getMyPageOwnerId(){
 			return $("#my-page-source-list input[type=radio][name=radio-inline]:checked").val();			
 		}
-	
+	/*
 		function masonry(){				
 			$(".grid-boxes").imagesLoaded( function(e){				
 				console.log("in page list, all images loaded.");				
@@ -115,10 +115,21 @@
 				}
 			});	
 		}
+*/
 	
 		function createMyPageListView(){		
 			var renderTo = $("#my-page-listview");
-			if( !common.ui.exists( renderTo ) ){
+
+			if( !renderTo.data('masonry')){			
+				renderTo.masonry({	
+					columnWidth: '.item',
+					itemSelector: '.item',
+					isAnimated: true
+				});
+			}	
+							
+			if( !common.ui.exists( renderTo ) ){		
+				var msnry = renderTo.data('masonry');	
 				common.ui.listview( renderTo, {
 					dataSource: {
 						transport: { 
@@ -128,10 +139,10 @@
 							}
 						},
 						requestStart: function(e){
-							if( $(".grid-boxes").data('masonry') ){
-								$(".grid-boxes").masonry('destroy');
+							//if( $(".grid-boxes").data('masonry') ){
+							//	$(".grid-boxes").masonry('destroy');
 							//	$(".grid-boxes").masonry('remove',  $(".grid-boxes .grid-boxes-in") );
-							}						
+							//}						
 						},
 						schema: {
 							total: "totalCount",
@@ -148,14 +159,15 @@
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){				
-						console.log("page list data bound.");
-						masonry();
+						//console.log("page list data bound.");
+						//masonry();
 					},
 					change: function(e){						
 						var selectedCells = this.select();
 						var selectedCell = this.dataItem( selectedCells );	
 					}
 				});		
+				
 				
 				renderTo.removeClass("k-widget k-listview");					
 				
