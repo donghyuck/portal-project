@@ -61,6 +61,14 @@
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD			
+				common.ui.scroll.slim($("body"),{
+					size: '8px', 
+					width: '100%', 
+					height: '100%', 
+					color: '#ff4800', 
+					allowPageScroll: true, 
+					alwaysVisible: true				
+				});
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 
