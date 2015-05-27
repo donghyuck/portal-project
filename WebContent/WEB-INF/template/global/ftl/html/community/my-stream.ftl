@@ -375,6 +375,7 @@
 				});	
 				common.ui.scroll.slim(renderTo,{
 					size: '8px', 
+					alwaysVisible: true,
 					width: '100%', 
 					height: '100%', 
 					color: '#ff4800'			
