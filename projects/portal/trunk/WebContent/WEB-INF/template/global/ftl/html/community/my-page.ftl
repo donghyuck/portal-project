@@ -563,7 +563,6 @@
 			min-height : 300px;
 		}
 		#my-page-listview .ibox {
-			display:none;
 			border-radius: 6px 6px 0 0 !important;
 			overflow: hidden;	
 		}
@@ -932,7 +931,7 @@
 					
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="col-md-4 col-sm-6  item">
+	<div class="col-md-4 col-sm-6  item" style="display:none;">
 	<div class="ibox float-e-margins">
 		#if( bodyContent.imageCount > 0 ){#
 		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
