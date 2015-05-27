@@ -939,7 +939,11 @@
 				<li>|</li>
 				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
 			</ul>                    
-			<p>#: summary #</p>
+			<div class="page-meta">
+				<p class="page-description">#: summary #</p>
+				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
+			</div>
+			
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="navbar-btn">
 					<div class="btn-group">				
