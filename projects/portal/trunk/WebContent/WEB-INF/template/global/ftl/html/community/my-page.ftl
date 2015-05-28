@@ -653,12 +653,26 @@
 										border-top: solid 3px #8e8e93;">
 										<header>고급옵션<span class="btn-up btn-up-gray btn-md" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"></span>
 										</header>
+										<fieldset>                  
+					                        <section>
+					                        	<div class="separator-2"></div>
+					                            <label class="label">요약</label>
+					                            <label class="textarea textarea-expandable">
+					                                <textarea rows="3"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+					                            </label>
+					                            <label class="label">출처</label>
+					                            <label class="textarea textarea-expandable">
+					                                <textarea rows="2" name="image-custom-css"></textarea>
+					                            </label>
+					                            <div class="note"><strong>Note:</strong> expands on focus.</div>                            
+					                        </section>
+					                    </fieldset>										
 										<fieldset>
 											<div class="row">
 												<div class="col-md-6">
 													<section>
 															<label for="summary" class="textarea">
-																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+																<textarea rows="3"></textarea>
 															</label>
 													</section>																									
 													</div>
