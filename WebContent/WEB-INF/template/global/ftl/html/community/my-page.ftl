@@ -667,31 +667,7 @@
 													</div>
 												<div class="col-md-6">
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
-															<div class="panel panel-default">
-																<div class="panel-heading">
-																	<h4 class="panel-title">
-																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
-																		<i class="fa fa-cog"></i> 속성
-																		</a>
-																	</h4>
-																</div>
-																<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
-																	<div class="panel-body no-padding">
-																		<div data-role="grid"
-																			date-scrollable="false"
-																			data-editable="true"
-																			data-autoBind="false"
-																			data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
-																			data-columns="[
-																				{ 'title': '이름',  'field': 'name', 'width': 200 },
-																				{ 'title': '값', 'field': 'value' },
-																				{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
-																			]"
-																			data-bind="source: properties"
-																			style="border:0px;"></div>	
-																	</div>
-																</div>
-															</div>
+
 															<div class="panel panel-default">
 																<div class="panel-heading">
 																	<h4 class="panel-title">
@@ -724,7 +700,32 @@
 																		</section>
 																	</div>
 																</div>
-															</div>																												
+															</div>
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
+																		<i class="fa fa-cog"></i> 속성
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body no-padding">
+																		<div data-role="grid"
+																			date-scrollable="false"
+																			data-editable="true"
+																			data-autoBind="false"
+																			data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+																			data-columns="[
+																				{ 'title': '이름',  'field': 'name', 'width': 200 },
+																				{ 'title': '값', 'field': 'value' },
+																				{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+																			]"
+																			data-bind="source: properties"
+																			style="border:0px;"></div>	
+																	</div>
+																</div>
+															</div>																																											
 														</div><!-- ./acc-v1 -->
 												</div><!-- /.col-6-->				
 											</div><!-- /.row-->										
