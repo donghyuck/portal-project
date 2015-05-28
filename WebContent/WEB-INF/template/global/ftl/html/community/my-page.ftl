@@ -751,7 +751,7 @@
 					                        </section>					                        
 					                    </fieldset>		
 									</div>
-									<fieldset class="bg-white" data-bind="visible:advencedSetting" style="border-top: solid 3px #8e8e93;">			
+									<fieldset class="bg-white" data-bind="visible:advencedSetting" style="border-top: solid 3px #e7eaec;">			
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
