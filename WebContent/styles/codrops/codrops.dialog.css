@@ -56,3 +56,8 @@
 	padding: 0 0 2em;
 	margin: 0;
 }
+@media (max-width: 768px){	
+	.dialog__content {
+		padding : 0 ;
+	}		
+}
