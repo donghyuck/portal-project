@@ -2252,4 +2252,6 @@ padding: 5px;
 
 .dialog__content .mfp-container .close {
 	right:0;
+	width:60px;
+	height:60px;
 }
