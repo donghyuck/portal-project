@@ -894,7 +894,7 @@
 	<div class="col-md-4 col-sm-6  item" style="display:none;">
 	<div class="ibox float-e-margins">
 		#if( bodyContent.imageCount > 0 ){#
-		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
+		<div class="cover" ><img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt=""></div>
 		#}#
 		<div class="ibox-content ibox-title">
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
