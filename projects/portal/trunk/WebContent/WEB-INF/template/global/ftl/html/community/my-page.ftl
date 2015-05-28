@@ -651,19 +651,7 @@
 															<label for="summary" class="textarea">
 																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
 															</label>
-													</section>												
-													<section>
-														<label class="input">
-																<i class="icon-prepend fa fa-file-text-o"></i>
-																<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
-															</label>
-													</section>																										
-													<section>
-														<label class="input">
-															<i class="icon-prepend fa fa-file-code-o"></i>
-															<input type="text" name="template" placeholder="템플릿">
-														</label>
-													</section>														
+													</section>																									
 													</div>
 												<div class="col-md-6">
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
@@ -678,7 +666,19 @@
 																</div>
 																<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
 																	<div class="panel-body">
-																	서비스 준비중 입니다.	
+																	파일이름 과 템플릿 파일을 정보를 설정합니다.
+																	<section>
+																		<label class="input">
+																				<i class="icon-prepend fa fa-file-text-o"></i>
+																				<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
+																			</label>
+																	</section>																										
+																	<section>
+																		<label class="input">
+																			<i class="icon-prepend fa fa-file-code-o"></i>
+																			<input type="text" name="template" placeholder="템플릿">
+																		</label>
+																	</section>																		
 																	</div>
 																</div>
 															</div>					
