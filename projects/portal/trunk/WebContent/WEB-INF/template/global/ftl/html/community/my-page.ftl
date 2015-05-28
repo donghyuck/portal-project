@@ -672,13 +672,11 @@
 					                                <label class="input col-sm-6">
 					                                    <input type="text" name="height" placeholder="URL"></label>					                                
 					                            </div>
-					                            <div class="note"><strong>Note:</strong> 출처 정보를 입력하세요</div>       
+					                            <div class="note"><strong>Note:</strong> 원 소스가 있는 경우 출처 정보를 입력하세요</div>       
 					                        </section>					                        
 					                    </fieldset>										
-										<fieldset>
 											<div class="row">
-												<div class="col-md-6">
-																							
+												<div class="col-md-6">																							
 												</div>
 												<div class="col-md-6">
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
@@ -755,8 +753,7 @@
 															</div>																																											
 														</div><!-- ./acc-v1 -->
 												</div><!-- /.col-6-->				
-											</div><!-- /.row-->										
-										</fieldset>
+											</div><!-- /.row-->			
 									</div>
 														
 									
