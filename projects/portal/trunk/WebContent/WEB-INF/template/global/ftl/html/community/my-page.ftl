@@ -639,13 +639,13 @@
 											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 										</label>
 										<div class="text-right">
-											<button class="btn btn-info btn-flat rounded" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
+											<button class="btn btn-info btn-flat rounded-top" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
 											<button type="button" class="btn btn-info btn-flat rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 										</div>											
 									</fieldset>	
 
 									<div id="my-page-options" class="bg-white collapse" style="
-										position: absolute;
+										position: relative;
 										width:  100%;
 										z-index: 1048;
 										top:  0;
