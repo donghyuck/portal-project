@@ -1,8 +1,7 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 <head>
-		<#assign page = action.getPage() >		
-		
+		<#assign page = action.getPage() >				
 		<title><>${page.title}</title>
 		<#compress>		
 		<script type="text/javascript">
