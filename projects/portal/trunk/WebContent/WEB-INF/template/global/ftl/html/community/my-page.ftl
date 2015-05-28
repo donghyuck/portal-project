@@ -644,24 +644,16 @@
 										</div>											
 									</fieldset>	
 
-					<div id="my-page-options" class="bg-white collapse" style="
-						position: relative;
-						width:  100%;
-						z-index: 400;
-						top:  0;
-						left: 0;
-						border-top: solid 3px #8e8e93;">
-						<header>고급옵션<span class="btn-up btn-up-gray btn-md"></span>
-						</header>
-                    <fieldset>                  
-                        <section>
-                        	</section>
-                    </fieldset>
-					</div>
-														
-									
-									<section class="no-margin-b collapse" > 
-									<fieldset>
+									<div id="my-page-options" class="bg-white collapse" style="
+										position: relative;
+										width:  100%;
+										z-index: 400;
+										top:  0;
+										left: 0;
+										border-top: solid 3px #8e8e93;">
+										<header>고급옵션<span class="btn-up btn-up-gray btn-md"></span>
+										</header>
+										<fieldset>
 											<div class="row">
 												<div class="col-md-6">
 													<section>
@@ -746,7 +738,12 @@
 														</div><!-- ./acc-v1 -->
 												</div><!-- /.col-6-->				
 											</div><!-- /.row-->										
-									</fieldset>										
+										</fieldset>
+									</div>
+														
+									
+									<section class="no-margin-b collapse" > 
+																			
 									</section>		
 									<fieldset class="bg-white" data-bind="visible:advencedSetting">			
 											<div class="row">
