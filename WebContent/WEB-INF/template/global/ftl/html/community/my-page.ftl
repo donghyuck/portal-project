@@ -645,7 +645,7 @@
 									</fieldset>	
 
 									<div id="my-page-options" class="bg-white collapse" style="
-										position: relative;
+										position: absolute;
 										width:  100%;
 										z-index: 400;
 										top:  0;
