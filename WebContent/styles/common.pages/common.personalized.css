@@ -141,6 +141,11 @@
 	right: 61px;	
 }
 
+.personalized-controls .btn-flat.t-0-r-2 {
+	top:0;
+	right: 122px;	
+}
+
 .sky-form > header .close-sm {
 	top: 5px;
 	right : 5px;
