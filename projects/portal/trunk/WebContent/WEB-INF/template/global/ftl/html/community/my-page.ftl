@@ -651,7 +651,7 @@
 										top:  0;
 										left: 0;
 										border-top: solid 3px #8e8e93;">
-										<header>고급옵션<span class="btn-up btn-up-gray btn-md"></span>
+										<header>고급옵션<span class="btn-up btn-up-gray btn-md" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"></span>
 										</header>
 										<fieldset>
 											<div class="row">
