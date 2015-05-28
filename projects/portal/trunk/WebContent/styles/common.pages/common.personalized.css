@@ -209,7 +209,6 @@
 }
 
 
-
 .image-listview .img-wrapper>img,.file-listview .file-wrapper>img {
 	top: 0;
 	padding: 0 !important;
@@ -2246,4 +2245,10 @@ padding: 5px;
 		padding: 0px;
 	}
   }
+}
+/** ------------------------------------------------- */
+/** Magnific Popup                                         */
+/** ------------------------------------------------- */
+.dialog__content .mfp-container .close {
+	right : 0;
 }
