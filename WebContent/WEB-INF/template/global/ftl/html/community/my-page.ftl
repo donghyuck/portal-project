@@ -615,7 +615,7 @@
 									</div>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
-			                    <article data-bind="{invisible:editable}">
+			                    <article data-bind="{invisible:editable}" >
 									<div class="ibox-content ibox-heading">
 										<div class="author margin-bottom-20">
 											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
