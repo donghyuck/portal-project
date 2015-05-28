@@ -135,11 +135,9 @@
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");					
-					var item = dataSource.get(objectId);
-					if( item == null )
-						item = objectId;					
+					var item = dataSource.get(objectId);		
 					if( action == 'view' ){
-						createMyPageViewer(item);					
+						createMyPageViewer(objectId);					
 					}
 					return false;					
 				});	
