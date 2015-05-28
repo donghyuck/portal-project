@@ -644,66 +644,23 @@
 										</div>											
 									</fieldset>	
 
-<section class="collapse" style="
-						position: absolute;
-						width:  300px;
+					<div id="my-page-options" class="bg-white collapse" style="
+						position: relative;
+						width:  100%;
 						z-index: 400;
-						top: -1px;
+						top:  0;
 						left: 0;
-						border-top:solid 3px \\#8e8e93;
-					">
-						<header>
-							이미지 스타일 옵션
-							<span class="btn-up btn-up-gray btn-md"></span>
+						border-top: solid 3px #8e8e93;">
+						<header>고급옵션<span class="btn-up btn-up-gray btn-md"></span>
 						</header>
                     <fieldset>                  
                         <section>
-                        	<div class="separator-2"/>
-                            <label class="label">Template</label>
-                            <label class="textarea textarea-expandable">
-                                <textarea rows="3" name="image-custom-template"></textarea>
-                            </label>
-                            <div class="note"><strong>Note:</strong> 템플릿 설정의 주의가 필요합니다.</div>
-                            <label class="label">Style</label>
-                            <label class="textarea textarea-expandable">
-                                <textarea rows="2" name="image-custom-css"></textarea>
-                            </label>
-                            <div class="note"><strong>Note:</strong> expands on focus.</div>                            
-                        </section>
+                        	</section>
                     </fieldset>
-                    <fieldset>
-                        <section>
-                            <label class="label">Effect</label>
-                            <div class="inline-group">	
-                                <label class="radio"><input type="radio" name="image-radio-effect" value="none" checked=""><i class="rounded-x"></i>None</label>
-                                <label class="radio"><input type="radio" name="image-radio-effect" value="lightbox"><i class="rounded-x"></i>Lightbox</label>
-                                <label class="radio"><input type="radio" name="image-radio-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
-                            </div>
-                        </section>
-                    </fieldset>       
-                    <fieldset>
-                        <section>
-                            <label class="label">Effect Options</label>
-                            <div class="inline-group">
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>                                
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
-                            </div>
-                        </section>
-						<section>
-                            <label class="label">Size</label>
-                            <div class="inline-group">
-                                <label class="input col-sm-6">
-                                    <input type="text" name="width" placeholder="Width"></label>
-                                <label class="input col-sm-6">
-                                    <input type="text" name="height" placeholder="Height"></label>
-                                </label>
-                            </div>
-                        </section>
-                    </fieldset>                                 
-					</section>
+					</div>
 														
 									
-									<section class="no-margin-b collapse" id="my-page-options"> 
+									<section class="no-margin-b collapse" > 
 									<fieldset>
 											<div class="row">
 												<div class="col-md-6">
