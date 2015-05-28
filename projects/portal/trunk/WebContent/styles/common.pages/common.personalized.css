@@ -2228,5 +2228,8 @@ padding: 5px;
 	.dialog.dialog-full .dialog__content {
 		padding:0px;
 	}
+	.dialog.dialog-full .dialog__content .container {
+		padding: 0px;
+	}
   }
 }
