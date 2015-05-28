@@ -1,7 +1,8 @@
 <#ftl encoding="UTF-8"/>
 <html decorator="unify">
 <head>
-		<title><#if action.webSite ?? >${action.webSite.displayName }<#else>::</#if></title>
+		<#assign page = action.getPage() >		
+		<title>${page.title}</title>
 		<#compress>		
 		<script type="text/javascript">
 		<!--
@@ -9,30 +10,34 @@
 				
 		yepnope([{
 			load: [
-			'css!<@spring.url "/styles/font-awesome/4.2.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
+			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
-			'css!<@spring.url "/styles/bootstrap.themes/unify/skins/dark.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
-			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',
-			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
-			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',			
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',									
+			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
+			'css!<@spring.url "/styles/codrops/codrops.dialog-ken.css"/>',					
+			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
-			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',
-			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',	
+			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
 			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
+			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',		
+			'<@spring.url "/js/jquery.masonry/masonry.pkgd.min.js"/>',		
+			'<@spring.url "/js/imagesloaded/imagesloaded.pkgd.min.js"/>',		
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
-			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',			
-			'<@spring.url "/js/bootstrap/3.3.0/bootstrap.min.js"/>',
+			'<@spring.url "/js/kendo/cultures/kendo.culture.ko-KR.min.js"/>',		
+			'<@spring.url "/js/bootstrap/3.3.4/bootstrap.min.js"/>',			
 			'<@spring.url "/js/common.plugins/jquery.slimscroll.min.js"/>', 		
-			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>', 					
-			'<@spring.url "/js/pdfobject/pdfobject.js"/>',			
+			'<@spring.url "/js/common.plugins/query.backstretch.min.js"/>',			
 			'<@spring.url "/js/common/common.ui.core.js"/>',							
 			'<@spring.url "/js/common/common.ui.data.js"/>',
 			'<@spring.url "/js/common/common.ui.community.js"/>',
 			'<@spring.url "/js/common.pages/common.personalized.js"/>',
+			'<@spring.url "/js/pdfobject/pdfobject.js"/>',			
 			'<@spring.url "/js/ace/ace.js"/>',
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'
 			],			
@@ -47,211 +52,251 @@
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
-								if( !currentUser.anonymous ){		
-									$("#announce-selector label.btn").last().removeClass("disabled");									 
-								}
 							} 
 						}						
 					},
 					wallpaper : {
-						slideshow : false
+						renderTo:$(".breadcrumbs-v3")
 					},
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD			
 				var currentUser = new common.ui.data.User();			
-				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
-				// personalized grid setting				
-				preparePersonalizedArea($("#personalized-area"), 3, 6 );				
-				common.ui.buttonGroup($("#personalized-buttons"), {
-					handlers :{
-						"show-notification-panel" : function(e){
-							common.ui.disable($(e.target));
-							createNotificationPanel();
-						},
-						"show-memo-panel" : function(e){
-							common.ui.disable($(e.target));
-							createMemoPanel();
-						}
-					}
-				});
-				
-				createAnnounceSection();				
-				$(".morphing").bind("open.morphing", function(e){
-					common.ui.scroll.top($("#my-announce-section").parent());
-					createAnnounceEditorSection(common.ui.data.EMPTY_ANNOUNCE);					
-				});					
-				setupPersonalizedSection();			
-				// END SCRIPT 				
+				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
+				// END SCRIPT 
+				createMyPageStreamListView();
+
+
 			}
 		}]);			
-		<!-- ============================== -->
-		<!-- Memo													   -->
-		<!-- ============================== -->
-		function createMemoPanel(){
-			var renderTo = $("#my-memo-panel");
-			if(!renderTo.data("kendoPanel")){
-				new common.ui.extPanel( renderTo, { 
-					content : "새로운 메모가 없습니다." ,
-					deactivateAfterClose : false,
-					close:function(e){
-						$("#personalized-buttons button[data-target='#my-memo-panel']").toggleClass("active");
-						common.ui.enable($("#personalized-buttons button[data-target='#my-memo-panel']"));
-					}
-				});
-			}
-			renderTo.data("kendoPanel").show();
+
+		function getMyPageOwnerId(){
+			return 2;
 		}
-		<!-- ============================== -->
-		<!-- Notify														-->
-		<!-- ============================== -->
-		function createNotificationPanel(){
-			var renderTo = $("#my-notification-panel");
-			if(!renderTo.data("kendoPanel")){
-				new common.ui.extPanel( renderTo, { 
-					content : "새로운 메시지가 없습니다." ,
-					deactivateAfterClose : false,
-					close:function(e){
-						$("#personalized-buttons button[data-target='#my-notification-panel']").toggleClass("active");
-						common.ui.enable($("#personalized-buttons button[data-target='#my-notification-panel']"));
-					}
+				
+		function createMyPageStreamListView(){		
+			var renderTo = $('#my-page-stream');			
+			if( !renderTo.data('masonry')){			
+				renderTo.masonry({	
+					columnWidth: '.item',
+					itemSelector: '.item',
+					isAnimated: true
 				});
-			}
-			renderTo.data("kendoPanel").show();
-		}
-		<!-- ============================== -->
-		<!-- Announce												-->
-		<!-- ============================== -->
-		function createAnnounceSection(){
-			
-			var renderTo = $("#my-announce-section");
-			var listRenderTo = $("#my-announce-section .my-announce-list");
-			var viewRenderTo = $("#my-announce-section .my-announce-view");			
-			var model =  common.ui.observable({ 
-				announce : new common.ui.data.Announce(),
-				editable : false,
-				visible : false,
-				new : function(e){
-					e.stopPropagation();
-					common.ui.scroll.top(renderTo.parent());
-					$(".morphing").toggleClass("open");					
-				},
-				edit : function(e){
-					e.stopPropagation();
-					common.ui.scroll.top(renderTo.parent());
-					createAnnounceEditorSection(this.announce);
-					$(".morphing").toggleClass("open");					
-				}
-			});			
-			model.bind("change", function(e){				
-				if( e.field == "announce.user" ){ 				
-					if( getCurrentUser().userId == this.get(e.field).userId )
-						this.set("editable", true);
-				}
-			});
-			var announceSelector = common.ui.buttonGroup(
-				$("#announce-selector"),
-				{
-					change: function(e){						
-						listRenderTo.data("kendoListView").dataSource.read({objectType:e.value});
-					}
-				}
-			);				
-			kendo.bind(viewRenderTo, model );
-			common.ui.listview(	listRenderTo, {
-					dataSource : common.ui.datasource(
-						'<@spring.url "/data/announce/list.json"/>',
-						{
-							transport : {
-								parameterMap: function(options, operation) {
-									if( typeof options.objectType === "undefined"  ){
-										return {objectType: announceSelector.value };	
-									}else{			
-										return options;		
-									} 
-								}
-							},
-							schema: {
-								data : "announces",
-								model : common.ui.data.Announce,
-								total : "totalCount"
+				var msnry = renderTo.data('masonry');								
+				var dataSource = new kendo.data.DataSource({				
+						transport: { 
+							read: { url:'<@spring.url "/data/pages/published/list.json?output=json"/>', type: 'POST' },
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
 							}
-						}
-					),
-					template: kendo.template($("#announce-listview-item-template").html()),
-					selectable: "single" ,
-					dataBound: function(e){
-						model.set("visible", false);
-					},
-					change: function(e){						
-						var selectedCells = this.select();
-						var selectedCell = this.dataItem( selectedCells );	
-						selectedCell.copy( model.announce );			
-						model.set("visible", false);			
-						if(!common.ui.visible(viewRenderTo)){
-							viewRenderTo.slideDown();
-						}						
-						common.ui.scroll.top(viewRenderTo, -20);
+						},
+						schema: {
+							total: "totalCount",
+							data: "pages",
+							model: common.ui.data.Page
+						},						
+						error:common.ui.handleAjaxError,
+						batch: false,						
+						pageSize: 3,
+						selectable: false, 
+						serverPaging: true,
+						serverFiltering: false,
+						serverSorting: false,
+						change: function(e) {
+							var data = this.data();
+							var $btn = $( "button[data-action=more]");
+							var template = kendo.template($('#my-stream-item-template').html());		
+							var elem = $(kendo.render(template, data));							
+							elem.imagesLoaded(function(){
+								renderTo.append( elem );		
+								msnry.appended( elem );
+								msnry.layout();
+							});	
+							$btn.button('reset')						
+							if( this.page() < this.totalPages() ){
+								$btn.fadeIn();
+							}else{
+								$btn.fadeOut();
+							}
+						}				
+				});
+				dataSource.fetch();		
+				
+				$( "button[data-action=more]").click(function(){
+					var $btn = $(this).button('loading')
+					var page = dataSource.page();
+					var pageSize = dataSource.pageSize();
+					var totalPages = dataSource.totalPages();
+					if( page < totalPages ){
+						dataSource.page( page + 1 );						
 					}
-				}
-			);
-			common.ui.pager($("#my-announce-list-pager"), {dataSource: listRenderTo.data("kendoListView").dataSource });			
-			//common.ui.scroll.slim(listRenderTo, { height: 320 });
-			//common.ui.animate( renderTo, {	effects: "slide:down fade:in", show: true, duration: 1000 	} );			
+				});		
+				renderTo.on( "click", "a[data-action], button[data-action]",  function(e){				
+					$this = $(this);
+					var action = $this.data("action");
+					var objectId = $this.data("object-id");					
+					var item = dataSource.get(objectId);		
+					if( action == 'view' ){
+						createMyPageViewer(objectId);					
+					}
+					return false;					
+				});	
+			}
 		}
-		
-		function createAnnounceEditorSection(source){			
-			var renderTo = $(".morphing");		
-			if( !renderTo.data("model")){
-				var model =  common.ui.observable({ 
-					announce : new common.ui.data.Announce(),
-					new: true,
-					changed : false,
+
+		function createMyPageViewer(source, isEditable){
+			var isEditable = isEditable || false;		
+			var renderTo = $("#my-page-viewer");			
+			if( ! common.ui.exists(renderTo) ){
+				var observable =  common.ui.observable({
+					page : new common.ui.data.Page(),
+					editable : false,
+					advencedSetting : false,
+					useWrapMode : false,
+					useWrap : function(e){
+						var $this = this;
+						if( $this.get('editable') )
+							ace.edit("my-page-code-editor").getSession().setUseWrapMode($this.useWrapMode);
+					},
+					stateSource : [
+						{name: "" , value: "INCOMPLETE"},
+						{name: "승인" , value: "APPROVAL"},
+						{name: "게시" , value: "PUBLISHED"},
+						{name: "거절" , value: "REJECTED"},
+						{name: "보관" , value: "ARCHIVED"},
+						{name: "삭제" , value: "DELETED"}
+					],
+					properties : new kendo.data.DataSource({
+						transport: { 
+							read: { url:'/data/pages/properties/list.json?output=json', type:'post' },
+							create: { url:'/data/pages/properties/update.json?output=json', type:'post' },
+							update: { url:'/data/pages/properties/update.json?output=json', type:'post'  },
+							destroy: { url:'/data/pages/properties/delete.json?output=json', type:'post' },
+					 		parameterMap: function (options, operation){			
+						 		if (operation !== "read" && options.models) {
+						 			return { pageId: observable.page.pageId, items: kendo.stringify(options.models)};
+								} 
+								return { pageId: observable.page.pageId }
+							}
+						},	
+						batch: true, 
+						schema: {
+							model: common.ui.data.Property
+						},
+						error:common.ui.handleAjaxError
+					}),
+					isVisible : true,
+					close:function(e){
+						 common.ui.dialog( renderTo ).close();
+						 return false;
+					},	
+					validate : function (){
+						var $this = this;
+						if( $this.page.title.length == 0 ){
+							if(!$("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").addClass("state-error");							
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "제목을 입력하세요."	},
+								"error"
+							);
+							return false;
+						}						
+						else{
+							if($("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").removeClass("state-error");
+								
+							if( $this.page.pageId === 0 ) {
+								if( $this.page.name.length === 0 ){
+									$this.page.set("name" , $this.page.title) ;
+								}
+								if( $this.page.summary.length === 0 ){
+									$this.page.set("summary" , $this.page.title) ;
+								}									
+								if( $this.page.bodyContent.bodyText.length === 0 ){
+									$this.page.bodyContent.bodyText = "  ";
+								}							
+							} 	
+						}								
+						if($this.page.name.length === 0 ){
+							if(!$("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "파일이름을 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").removeClass("state-error");
+						}																		
+						if($this.page.summary.length == 0 ){
+							if(!$("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").removeClass("state-error");
+						}									
+					},
+					create : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');					
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();					
+						$this.validate();
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									if( response.pageId ){
+										$this.set( "editable" , true ) ;	
+										$this.setPage( new common.ui.data.Page(response) );
+									}						
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
+					},
 					update : function(e){
 						var $this = this, 
 						btn = $(e.target);						
-						btn.button('loading');
-						if( $this.announce.subject.length == 0 || $this.announce.body.length == 0 ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 입력 오류", message: "제목 또는 본문을 입력하세요."	},
-								"error"
-							);
-							return ;
-						}
-						if( $this.announce.startDate >= $this.announce.endDate  ){
-							common.ui.notification({
-								hide:function(e){
-									btn.button('reset');
-								}
-							}).show(
-								{	title:"공지 기간 입력 오류", message: "시작일자가 종료일자보다 이후일 수 없습니다."	},
-								"error"
-							);							
-							return ;
-						}
+						btn.button('loading');						
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
+						$this.validate();						
 						common.ui.ajax(
-							'<@spring.url "/data/announce/update.json"/>',
+							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
-								data : kendo.stringify( $this.announce ),
+								data : kendo.stringify($this.page) ,
 								contentType : "application/json",
-								success : function(response){									
-									var listRenderTo = $("#my-announce-section .my-announce-list");
-									common.ui.listview(listRenderTo).dataSource.read();
-									$this.close();
+								success : function(response){
+									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
+									common.ui.listview( $("#my-page-listview") ).dataSource.read();
+									$this.close();									
 								},
 								fail: function(){								
-									common.ui.notification({
-										hide:function(e){
-											btn.button('reset');
-										}
-									}).show(
-										{	title:"공지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오."	},
-										"error"
-									);	
+									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
 								},
 								requestStart : function(){
 									kendo.ui.progress(renderTo, true);
@@ -261,258 +306,336 @@
 								},
 								complete : function(e){
 									btn.button('reset');
-								}
-							});					
-					},
-					close : function(e){		
-						$(".morphing ").toggleClass("open");			
-					}
-				});				
-				var announceSelector = common.ui.buttonGroup($("#edit-announce-selector"), {
-					change: function(e){							
-						if( e.value != model.get("announce.objectType") ){				
-							model.set("announce.objectType", e.value );
+								}							
+						});												
+						return false;
+					},	
+					exportPdf: function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');	
+						if( $this.page.pageId  > 0 ) {
+							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
+								return kendo.drawing.exportPDF(group, {
+								paperSize: "auto",
+								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+								});
+							}).done(function(data) {
+								kendo.saveAs({
+								dataURI: data,
+								fileName:  $this.page.name + ".pdf",
+								proxyURL: "/downlaod/export"
+								});
+								btn.button('reset');
+							});
 						}
+						return false;
+					},								
+					setPage: function(page){
+						var that = this;
+						page.copy(that.page);						
+						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
+							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
+						}
+						if( that.page.pageId  > 0 ) {
+							that.set("advencedSetting", true);
+							that.properties.read();
+						} else {
+							that.set("advencedSetting", false);
+						}	
 					}
-				});				
-				model.bind("change", function(e){	
-					if( e.field == "announce.objectType" && this.get(e.field) != announceSelector.value ){ 		
-						announceSelector.select(this.get(e.field));
+				});		
+				
+				renderTo.data("model", observable);		
+				var content = renderTo.find(".sky-form");					
+				common.ui.dialog( renderTo , {
+					data : observable,
+					autoBind: true,
+					"open":function(e){		
+						$("body").css("overflow-y", "hidden");
+						renderTo.find(".dialog__content").css("overflow-y", "auto");
+					},
+					"opened" : function(e){		
+						
+					},
+					"close":function(e){			
+						renderTo.find(".dialog__content").css("overflow-y", "hidden");
+						//$("body").css("overflow-x", "hidden");					
+						$("body").css("overflow-y", "auto");		
 					}
-				});				
-				kendo.bind( renderTo, model);
-				renderTo.data("model", model);
-				var bodyEditor =  $("#announce-editor-body" );
-				createEditor( "announce-editor" , bodyEditor );				
-			}
-			if( source ){
-				source.copy( renderTo.data("model").announce );
-				renderTo.data("model").set("announce.objectType", common.ui.buttonGroup($("#announce-selector")).value); 
-				if( source.announceId === 0 ){
-					renderTo.data("model").set("new", false); 
-				}else{
-					renderTo.data("model").set("new", false); 					
-				} 
-			}		
-			renderTo.data("model").set("changed", false);
+				});		
+				var bodyEditor =  $("#my-page-editor" );
+				createEditor( "my-page" , bodyEditor, { 
+					modal : false , 
+					appendTo: $("#my-page-editor-code-panel"), 
+					tab: $("#my-page-editor-tabs"), 
+					pageSize : 15,
+					objectType : 31,
+					useWrapMode : observable.useWrapMode 
+				});	
+				/*
+				common.ui.scroll.slim(renderTo,{
+					size: '8px', 
+					alwaysVisible: true,
+					width: '100%', 
+					height: '100%', 
+					color: '#ff4800'			
+				});*/
+			}			
+			
+			
+			var dialogFx = common.ui.dialog( renderTo );	
+			if( !dialogFx.isOpen ){
+				if( typeof source == 'number' ){
+					common.ui.ajax( 
+					'<@spring.url "/data/pages/get.json?output=json"/>', {
+						data : { pageId : source },
+						success: function(response){ 
+							renderTo.data("model").setPage( new common.ui.data.Page(response) );
+							renderTo.data("model").set( "editable" , isEditable) ;	
+							dialogFx.open();
+						}	
+					} );
+				}else if ( typeof source == 'object' ){
+					renderTo.data("model").setPage(source);
+					renderTo.data("model").set( "editable" , isEditable) ;	
+					dialogFx.open();
+				}
+			}				
 		}
+		
 		-->
 		</script>		
 		<style scoped="scoped">			
-			#image-gallery-pager { 
-				margin-top: 5px; 
-			}			
-			#my-announce-section .k-listview .k-state-selected
-			{
-				background : #F5F5F5;
-				color: #585f69;
-			}
-			#my-announce-section .k-listview .k-state-selected .media-heading strong{
-				font-weight:bold;
-				text-decoration: underline;				
-			}			
+		/** Breadcrumbs */
+		.breadcrumbs-v3 {
+			position:relative;
+		}
+
+		.breadcrumbs-v3 p	{
+			color : #fff;
+			font-size: 24px;
+			font-weight: 200;
+			margin-bottom: 0;
+		}	
+		
+		.breadcrumbs-v3.img-v1 {
+			background: url( ${page.getProperty( "breadcrumbs.imageUrl", "")}) no-repeat;
+			background-size: cover;
+			background-position: center center;			
+		}
+					
+		#my-page-stream {
+			min-height:300px;
+			margin-bottom:50px;
+		}			
+		
+		
 		</style>   	
 		</#compress>
 	</head>
-	<body id="doc" class="bg-dark">
+	<body id="doc" class="bg-white">
 		<div class="page-loader"></div>
 		<div class="wrapper">
 			<!-- START HEADER -->		
 			<#include "/html/common/common-homepage-menu.ftl" >		
-			<!-- ./END HEADER -->
+			<!-- END HEADER -->	
 			<!-- START MAIN CONTENT -->
-			<section class="personalized-section bg-transparent open" >
-				<div class="personalized-section-heading">
-					<span class="open animated"></span>
-					<div class="container">
-						<div class="personalized-section-title">
-							<i class="icon-flat home"></i>
-							<h3>MY 홈 <span>알림 메시지와 오늘을 할일을 확인하세요. <i class="fa fa-long-arrow-right"></i></span></h3>
-							<div class="personalized-section-heading-controls">
-								<div id="personalized-buttons" class="btn-group">
-									<button type="button" class="btn-u btn-u-blue rounded-left" data-toggle="button" data-action="show-notification-panel" data-target="#my-notification-panel"><i class="fa fa-bell-o"></i> <span class="hidden-xs">알림</span> </button>
-									<button type="button" class="btn-u btn-u-blue rounded-right" data-toggle="button" data-action="show-memo-panel"  data-target="#my-memo-panel" aria-pressed="false"><i class="fa fa-file-text-o"></i> <span class="hidden-xs">메모</span></button>
-								</div>														
-							</div>		
-						</div>
-					</div>				
+			<#if action.isSetNavigator()  >
+			<#assign navigator = action.getNavigator() />		
+			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
+				<div class="personalized-controls container text-center p-xl">
+					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
+					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>
+					
+					<span class="btn-flat pencle t-0-r-2"></span>
+					<span class="btn-flat folder t-0-r-1"></span>
+					<span class="btn-flat settings"></span>
+					</div><!--/end container-->
+			</div>
+			</#if>	
+			<!-- START MAIN CONTENT -->
+			<div class="container content">		
+				<div class="row">
+					<div id="my-page-stream" ></div>
 				</div>
-				<div class="personalized-section-content animated arrow-up">
-					<span class="close animated"></span>
-					<div class="container" style="min-height:150px;">
-						<div class="row p-sm">
-							<div class="col-md-3">						
-								<div id="my-notification-panel" class="panel panel-danger rounded border-2x" style="display:none;">
-									<div class="panel-heading">
-										<h3 class="panel-title"><i class="fa fa-bell-o"></i>알림</h3>
-										<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-									<div class="panel-body"></div>
-								</div><!-- /.panel -->			
-							</div><!-- /.col-md-3 -->
-							<div class="col-md-3">				
-								<div id="my-memo-panel" class="panel panel-primary rounded border-2x" style="display:none">
-									<div class="panel-heading">
-										<h3 class="panel-title"><i class="fa fa-file-text-o"></i> 메모</h3>
-										<div class="k-window-actions panel-header-controls"><div class="k-window-actions"><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-custom">Custom</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-minimize">Minimize</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-refresh">Refresh</span></a><a role="button" href="#" class="k-window-action k-link"><span role="presentation" class="k-icon k-i-close">Close</span></a></div></div></div>
-									<div class="panel-body"></div>
-								</div><!-- /.panel -->																
-							</div><!-- /.col-md-3 -->
-						</div><!-- /.row -->
-					</div>
-				</div>				
-			</section><!-- /.section -->
-
-			<section class="personalized-section bg-grid open" >
-				<div class="personalized-section-content animated" style="display:block;">
-					<div class="container-fluid p-xs">
-						<div class="row m-b-xs">
-							<div class="col-sm-12">
-								<div class="pull-right">
-									<div class="btn-group navbar-btn no-margin" data-toggle="buttons">
-										<label class="btn btn-info rounded-left">
-											<input type="radio" name="personalized-area-col-size" value="12"><i class="fa fa-square"></i>
-										</label>
-										<label class="btn btn-info active">
-									 		<input type="radio" name="personalized-area-col-size" value="6"> <i class="fa fa-th-large"></i>
-										</label>
-										<label class="btn btn-info rounded-right">
-											<input type="radio" name="personalized-area-col-size" value="4"> <i class="fa fa-th"></i>
-										</label>
-									</div>														
-								</div>	
-							</div>
-						</div>
-						<div id="personalized-area" class="row"></div>
-					</div>													
-				</div>				
-			</section><!-- /.section -->
-						
-			<section class="personalized-section bg-transparent open" >
-							<#if !action.user.anonymous >
-								<div class="morphing" >								
-									<button class="btn-u btn-u-red animated" type="button" data-toggle="morphing" data-action="morphing"><i class="fa fa-plus lg"></i> <span class="hidden-xs"> 새로운 공지 & 이벤트</span></button>									
-									<div class="morphing-content">
-										<button type="button" class="btn-close btn-close-grey btn-xs" data-action="morphing"><span class="sr-only">Close</span></button>
-										<div class="personalized-session-heading  bg-dark">
-											<div class="container">
-												<div class="personalized-session-title">
-													<i class="icon-flat mega-phone"></i>
-													<h4>공지 &amp; 이벤트 <span>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></span></h4>
-													<div class="personalized-session-heading-controls">
-														<div id="edit-announce-selector" class="btn-group pull-right m-r-xl" data-toggle="buttons" data-role="buttongroup">
-															<label class="btn btn-success btn-sm active rounded-left">
-																<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-															</label>
-															<label class="btn btn-success btn-sm rounded-right">
-																<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-															</label>
-														</div>														
-													</div>		
-												</div>
-											</div>
-										</div>
-										<div class="personalized-session-content">
-											<div class="container">
-												<div class="row">
-													<div class="col-sm-12 p-sm">													
-														<h5 data-bind="visible: new">
-															<small><span class="label label-danger">NEW</span> 모든 항목을 입력하여 주세요.</small>
-														</h5>
-														<div class="panel panel-default ">
-															<div class="panel-heading padding-xxs-hr rounded-top" style="background-color: \\#fff; ">
-																<h4 class="panel-title"><input type="text" placeholder="제목을 입력하세요." data-bind="value: announce.subject"  class="form-control" placeholder="제목" /></h4>		
-															</div>			
-															<div class="panel-body p-xxs">									
-																<div  class="form">
-																	<div class="form-group">
-																		<label class="control-label">공지 기간</label>
-																		<div class="col-sm-12" >
-																			<input data-role="datetimepicker" data-bind="value:announce.startDate"> ~ <input data-role="datetimepicker" data-bind="value:announce.endDate">
-																			<span class="help-block">지정된 기간 동안만 이벤트 및 공지가 보여집니다.</span>
-																		</div>
-																	</div>
-																	<label class="control-label">본문</label>
-																	<textarea id="announce-editor-body" class="no-border" data-bind='value:announce.body' style="height:500px;"></textarea>
-																</div>						
-															</div>				
-														</div>										
-														<div class="text-right">
-															<button type="button" class="btn-u btn-u-blue btn-u-small" data-bind="events:{click:update}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> <button type="button" class="btn-u btn-u-default btn-u-small" data-bind="events{click:close}">취소</button>
-														</div>	
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>														
-								</div>								
-							</#if>
-										
-				<div class="personalized-section-heading">
-					<span class="open animated"></span>
-					<div class="container">
-						<div class="personalized-section-title">
-							<i class="icon-flat mega-phone"></i>
-							<h4> 공지 &amp; 이벤트 <span>공지 &amp; 이벤트 소스를 선택하세요. <i class="fa fa-long-arrow-right"></i></span></h4>
-							<div class="personalized-section-heading-controls">
-								<div id="announce-selector" class="btn-group" data-toggle="buttons" data-role="buttongroup">
-									<label class="btn btn-info btn-sm active rounded-left">
-										<input type="radio" name="notice-target" value="30"><i class="fa fa-globe"></i> 사이트
-									</label>
-									<label class="btn btn-info btn-sm rounded-right disabled">
-										<input type="radio" name="notice-target" value="1"><i class="fa fa-building-o"></i> 회사
-									</label>
-								</div>
-							</div>		
-						</div>
+				<div class="row">
+					<div class="col-sm-4 col-sm-offset-4">
+						<button type="button" class="btn btn-default btn-lg btn-outline rounded btn-flat btn-block" data-action="more" data-loading-text='<i class="fa fa-spinner fa-spin"></i>'><span class="btn-label icon fa fa-angle-down" style="
+						    padding-right: 30px; display:none;"></span>더보기</button>					
 					</div>
 				</div>
-				<div id="my-announce-section" class="personalized-section-content animated arrow-up">
-					<span class="close animated"></span>
-					<div class="container">
-						<div class="row">
-							<div class="col-sm-6 p-sm">
-								<div class="my-announce-list"></div>
-								<div id="my-announce-list-pager"> </div>
-							</div>
-								<div class="col-sm-6 p-sm">
-									<div class="panel panel-default no-border no-margin-b my-announce-view animated fadeIn"  style="display:none;"  data-bind="visible: visible">
-										<div class="panel-heading">
-											<h4 data-bind="html:announce.subject"></h4>
-											<div class="panel-header-controls" data-bind="visible:editable">
-												<button class="btn btn-primary btn-sm rounded" type="button" data-bind="click:edit"><i class="fa fa-pencil"></i>  편집</button>
-											</div>
-											<ul class="list-unstyled">
-												<li class="text-muted"><span class="label label-info label-lightweight">게시 기간</span> <span data-bind="text:announce.formattedStartDate"></span> ~ <span data-bind="text:announce.formattedEndDate"></span></li>
-												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">생성일</span> <span data-bind="text: announce.formattedCreationDate"></span></li>
-												<hr>	
-												<li class="text-muted"><span class="label label-primary label-lightweight">수정일</span> <span data-bind="text: announce.formattedModifiedDate"></span></li>
-												<hr>	
-												<li class="text-muted">
-													<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:announce.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-													<ul class="list-unstyled text-muted">
-														<li><span data-bind="visible:announce.user.nameVisible, text: announce.user.name"></span><code data-bind="text: announce.user.username"></code></li>
-														<li><span data-bind="visible:announce.user.emailVisible, text: announce.user.email"></span></li>
-													</ul>																
-												</li>	
-												<hr>	
-											</ul>	
-										</div><!-- /.panel-heading -->
-									<div class="panel-body padding-sm" data-bind="html:announce.body"></div>
-								</div><!-- /.panel -->								
-							</div>						
-						</div>								
-					</div>
-				</div>
-			</section>
-
-
+			</div>	
 			<!-- ./END MAIN CONTENT -->	
-	 		
 	 		<!-- START FOOTER -->
-			<#include "/html/common/common-homepage-footer.ftl" >		
+			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
 		</div>				
+		
+		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
+			<div class="dialog__overlay dark"></div>
+			<div class="dialog__content">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">						
+							<div class="ibox float-e-margins">
+			                    <div class="ibox-title">
+			                    	<span class="text-danger" data-bind="invisible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
+			                        <span data-bind="{text: page.title, invisible:editable }"></span>&nbsp;
+									<div class="ibox-tools m-r-lg hidden-xs" data-bind="invisible:editable">
+										<button type="button" class="btn btn-deafult btn-flat btn-outline btn-sm rounded" data-bind="click:exportPdf" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-file-pdf-o"></i> PDF</button>
+									</div>
+			                        <span class="close" data-dialog-close></span>					
+			                    </div>
+			                    <article data-bind="{invisible:editable}">
+									<div class="ibox-content ibox-heading">
+										<div class="author margin-bottom-20">
+											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+											<ul class="list-inline grid-boxes-news">
+												<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
+												<li>|</li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+											</ul>  
+										</div>
+										<div class="tag-box tag-box-v4 no-margin-b">                    
+                    						<p data-bind="html:page.summary"></p>
+                    					</div>
+										
+                                	</div>
+                                	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
+			                    </article>
+								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
+									<fieldset>
+										<label for="title" class="input">
+											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+										</label>
+										<div class="text-right">
+											<button class="btn btn-default btn-flat btn-outline  rounded" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
+											<button type="button" class="btn btn-info btn-flat btn-outline  rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+										</div>											
+									</fieldset>	
+									<section class="no-margin-b collapse" id="my-page-options"> 
+									<fieldset>
+											<div class="row">
+												<div class="col-md-6">
+													<section>
+															<label for="summary" class="textarea">
+																<textarea rows="3" name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+															</label>
+													</section>												
+													<section>
+														<label class="input">
+																<i class="icon-prepend fa fa-file-text-o"></i>
+																<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
+															</label>
+													</section>																										
+													<section>
+														<label class="input">
+															<i class="icon-prepend fa fa-file-code-o"></i>
+															<input type="text" name="template" placeholder="템플릿">
+														</label>
+													</section>														
+													</div>
+												<div class="col-md-6">
+														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-One">
+																		<i class="fa fa-cog"></i> 속성
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-One" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body no-padding">
+																		<div data-role="grid"
+																			date-scrollable="false"
+																			data-editable="true"
+																			data-autoBind="false"
+																			data-toolbar="[ { 'name': 'create', 'text': '추가' }, { 'name': 'save', 'text': '저장' }, { 'name': 'cancel', 'text': '취소' } ]"
+																			data-columns="[
+																				{ 'title': '이름',  'field': 'name', 'width': 200 },
+																				{ 'title': '값', 'field': 'value' },
+																				{ 'command' :  { 'name' : 'destroy' , 'text' : '삭제' },  'title' : '&nbsp;', 'width' : 100 }
+																			]"
+																			data-bind="source: properties"
+																			style="border:0px;"></div>	
+																	</div>
+																</div>
+															</div>
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
+																		<i class="fa fa-floppy-o"></i> 첨부파일
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body">
+																	서비스 준비중 입니다.	
+																	</div>
+																</div>
+															</div>					
+															<div class="panel panel-default">
+																<div class="panel-heading">
+																	<h4 class="panel-title">
+																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Three">
+																		<i class="fa fa-history"></i> 버전
+																		</a>
+																	</h4>
+																</div>
+																<div id="collapse-Three" class="panel-collapse collapse" style="height: 0px;">
+																	<div class="panel-body">
+																		<section>									
+																			<label class="label">현재 버전</label>					
+																			<label class="input state-disabled">
+																				<input type="text" name="versionId" placeholder="버전" data-bind="value: page.versionId" readonly >
+																			</label>
+																		</section>
+																	</div>
+																</div>
+															</div>																												
+														</div><!-- ./acc-v1 -->
+												</div><!-- /.col-6-->				
+											</div><!-- /.row-->										
+									</fieldset>										
+									</section>		
+									<fieldset class="bg-white" data-bind="visible:advencedSetting">			
+											<div class="row">
+												<div class="col-md-9"></div>
+												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+											</div>												
+												<div class="tab-v1">
+													<div role="tabpanel">
+														<!-- Nav tabs -->													
+														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
+															<li role="presentation" class="m-l-sm active"><a href="#my-page-editor-panel" aria-controls="my-page-editor-panel" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+															<li role="presentation"><a href="#my-page-editor-code-panel" aria-controls="my-page-editor-code-panel" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+														</ul>												
+														<!-- Tab panes -->
+														<div class="tab-content no-padding">
+															<div role="tabpanel" class="tab-pane active" id="my-page-editor-panel">
+																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
+															</div>
+															<div role="tabpanel" class="tab-pane" id="my-page-editor-code-panel"></div>
+														</div>
+													</div>
+												</div>		
+										</fieldset>	
+										<footer class="text-right">
+											<button type="button" class="btn btn-success btn-flat btn-lg rounded" data-bind="{events:{click:create}, invisible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-angle-right"></i> 다음</button> 				
+											<button type="button" class="btn btn-info btn-flat btn-lg rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
+										</footer>															
+								</div>
+			                </div>
+						</div>
+					</div>					
+				</div>				
+			</div>
+		</div>	
+				
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- tab-v1 -->
@@ -746,6 +869,59 @@
 			</div>
 		</div>
 	</div>
+	</script>	
+	<script id="my-stream-item-template" type="text/x-kendo-template">
+	<div class="col-md-4 col-sm-6  item">
+		<div class="ibox float-e-margins">
+			<div class="ibox-title no-padding">
+			#if( bodyContent.imageCount > 0 ){#
+			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
+			#}#
+			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span># }else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+			</div>
+			<div class="ibox-content paddinig-sm" style="display: block;">
+			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
+			<h2 class="text-muted">#:title#</a></h2>
+			#}#
+			<div class="page-meta no-margin-hr">
+				<p class="page-description">#: summary #</p>
+				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
+			</div>
+			# if( getCurrentUser().userId === user.userId ) { # 	
+				<div class="text-right hidden">
+					<div class="btn-group">				
+						#if( pageState !=  'DELETED' ){#
+						<button class="btn btn-info btn-flat btn-outline rounded-left btn-sm" data-action="edit" data-object-id="#=pageId#"> 편집</button>
+						#}#
+						#if( pageState === 'PUBLISHED' ){#
+						<button class="btn btn-info btn-flat btn-outline btn-sm" data-action="share" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 공유</button>		
+						#}else{#
+							#if( pageState != 'DELETED'){# 
+							<button class="btn btn-info btn-flat btn-outline btn-sm" data-action="publish" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"> 게시</button>
+							#}#						
+						#}#
+					</div>				
+					#if( pageState ===  'DELETED' ){#						
+					<button class="btn btn-default btn-flat btn-outline rounded btn-sm" data-action="restore" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">임시저장 이동</button>		
+					#}else{#
+					<button class="btn btn-danger btn-flat btn-outline rounded-right btn-sm" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
+					#}#			
+				</div>	
+			#}#			
+			</div>
+			<div class="ibox-content no-padding" style="display: block;">
+				<div class="page-credits rounded-bottom">
+					<div class="credit-item">
+						<div class="credit-img user">
+							<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
+						</div>
+						<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> # } else { # #: user.username #</div> # } #
+						<div class="credit-title"></div>
+					</div>
+				</div>			
+			</div>
+		</div>
+	</div><!--/.item  -->	
 	</script>										
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
