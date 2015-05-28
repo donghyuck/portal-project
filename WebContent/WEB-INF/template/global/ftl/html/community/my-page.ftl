@@ -673,12 +673,8 @@
 					                                    <input type="text" name="height" placeholder="URL"></label>					                                
 					                            </div>
 					                            <div class="note"><strong>Note:</strong> 원 소스가 있는 경우 출처 정보를 입력하세요</div>       
-					                        </section>					                        
-					                    </fieldset>										
-											<div class="row">
-												<div class="col-md-6">																							
-												</div>
-												<div class="col-md-6">
+					                        </section>
+					                        <section>
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
 
 															<div class="panel panel-default">
@@ -751,16 +747,10 @@
 																	</div>
 																</div>
 															</div>																																											
-														</div><!-- ./acc-v1 -->
-												</div><!-- /.col-6-->				
-											</div><!-- /.row-->			
-									</div>
-														
-									
-									<section class="no-margin-b collapse" > 
-																			
-									</section>		
-									<fieldset class="bg-white" data-bind="visible:advencedSetting">			
+														</div><!-- ./acc-v1 -->					                        
+					                        </section>					                        
+					                    </fieldset>		
+									</div><fieldset class="bg-white" data-bind="visible:advencedSetting">			
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
