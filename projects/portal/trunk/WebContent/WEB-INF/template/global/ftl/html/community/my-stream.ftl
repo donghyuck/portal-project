@@ -447,8 +447,10 @@
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>
+					
+					<span class="btn-flat pencle t-0-r-2"></span>
+					<span class="btn-flat folder t-0-r-2"></span>
 					<span class="btn-flat settings"></span>
-					<span class="btn-flat gift t-0-r-1"></span>
 					</div><!--/end container-->
 			</div>
 			</#if>	
