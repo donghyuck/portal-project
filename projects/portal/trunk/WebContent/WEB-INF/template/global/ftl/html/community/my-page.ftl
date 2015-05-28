@@ -639,8 +639,8 @@
 											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 										</label>
 										<div class="text-right">
-											<button class="btn btn-info btn-flat rounded-top" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
-											<button type="button" class="btn btn-info btn-flat btn-outline  rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+											<button class="btn btn-info btn-flat rounded" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
+											<button type="button" class="btn btn-info btn-flat rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 										</div>											
 									</fieldset>	
 									<section class="no-margin-b collapse" id="my-page-options"> 
