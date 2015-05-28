@@ -286,7 +286,11 @@
 	animation-name: fadeIn;
 }
 
-
+@media (max-width: 768px){	
+	.image-listview .img-wrapper, .file-listview .file-wrapper {
+		height :90px;	
+	}		
+}
 
 /**
 * pdf view 
