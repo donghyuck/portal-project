@@ -1168,7 +1168,7 @@ body:not  (.right-to-left  ) .no-border-l {
 }
 
 .bg-transparent {
-	background: transparent;
+	background: transparent!important;
 }
 
 .bg-white {
