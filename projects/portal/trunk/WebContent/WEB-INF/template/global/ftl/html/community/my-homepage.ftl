@@ -873,7 +873,7 @@
 	<script id="my-stream-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins">
-			<div class="ibox-title no-padding">
+			<div class="ibox-title cover">
 			#if( bodyContent.imageCount > 0 ){#
 			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
