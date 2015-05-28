@@ -647,7 +647,7 @@
 									<div id="my-page-options" class="bg-white collapse" style="
 										position: absolute;
 										width:  100%;
-										z-index: 400;
+										z-index: 1048;
 										top:  0;
 										left: 0;
 										border-top: solid 3px #8e8e93;">
