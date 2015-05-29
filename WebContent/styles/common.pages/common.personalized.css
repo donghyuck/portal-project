@@ -2162,7 +2162,7 @@ padding: 5px;
 }
 
 /** ------------------------------------------------- */
-/** Dialog                                                      */
+/** Dialog, ibox                                              */
 /** ------------------------------------------------- */
 
 .dialog.bg-glass .dialog__overlay {
@@ -2216,6 +2216,7 @@ padding: 5px;
   font-weight: 400;
   padding: 8px 30px;	
 }
+
 .dialog__content  .ibox-title .close {
   top: 5px;
   width: 65px;
@@ -2234,6 +2235,13 @@ padding: 5px;
 
 .dialog.dialog--open .ace_editor {
 	display: block;
+}
+
+.ibox-content  .tag-box.summary  {	
+	  color: #A7AEB3;
+	  font-weight: bold;
+	  font-size: 1.15em;
+	  line-height: 1.6;  	
 }
 
 @media (max-width: 767px) {
