@@ -318,6 +318,8 @@
 							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
 								return kendo.drawing.exportPDF(group, {
 								paperSize: "auto",
+								subject : $this.page.title ,
+								title : $this.page.title,
 								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
 								});
 							}).done(function(data) {
