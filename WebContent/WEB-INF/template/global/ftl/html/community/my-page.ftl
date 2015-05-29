@@ -665,9 +665,9 @@
 					                            <label class="label">출처</label>
 					                            <div class="inline-group">
 					                                <label class="input col-sm-6">
-					                                    <input type="text" name="width" placeholder="출처"></label>
+					                                    <input type="text" name="source" placeholder="출처"></label>
 					                                <label class="input col-sm-6">
-					                                    <input type="text" name="height" placeholder="URL"></label>					                                
+					                                    <input type="text" name="url" placeholder="URL"></label>					                                
 					                            </div>
 					                            <div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>       
 					                        </section>
