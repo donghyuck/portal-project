@@ -501,7 +501,7 @@
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 											</ul>  
 										</div>
-										<div class="tag-box tag-box-v4 no-margin-b">                    
+										<div class="summary tag-box tag-box-v4 no-margin-b">                    
                     						<p data-bind="html:page.summary"></p>
                     					</div>
 										
