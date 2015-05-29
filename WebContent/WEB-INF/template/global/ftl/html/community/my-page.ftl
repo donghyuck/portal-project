@@ -660,24 +660,19 @@
 					                            <label class="textarea textarea-expandable">
 					                                <textarea rows="3"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
 					                            </label>
-					                            <label class="textarea textarea-expandable">
-					                                <textarea rows="2" name="image-custom-css"></textarea>
-					                            </label>
-					                                                 
 					                        </section>
 											<section>
-					                            <label class="label">Size</label>
+					                            <label class="label">출처</label>
 					                            <div class="inline-group">
 					                                <label class="input col-sm-6">
 					                                    <input type="text" name="width" placeholder="출처"></label>
 					                                <label class="input col-sm-6">
 					                                    <input type="text" name="height" placeholder="URL"></label>					                                
 					                            </div>
-					                            <div class="note"><strong>Note:</strong> 원 소스가 있는 경우 출처 정보를 입력하세요</div>       
+					                            <div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>       
 					                        </section>
 					                        <section>
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
-
 															<div class="panel panel-default">
 																<div class="panel-heading">
 																	<h4 class="panel-title">
