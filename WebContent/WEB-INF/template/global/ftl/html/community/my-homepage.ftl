@@ -478,7 +478,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12">						
-							<div class="ibox float-e-margins">
+							<article class="ibox float-e-margins">
 			                    <div class="ibox-title">
 			                    	<span class="text-danger" data-bind="invisible:advencedSetting"><i class="fa fa-info"></i> 페이지 제목을 입력하세요</span>
 			                        <span data-bind="{text: page.title, invisible:editable }"></span>&nbsp;
@@ -487,7 +487,7 @@
 									</div>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
-			                    <article data-bind="{invisible:editable}">
+			                    <section data-bind="{invisible:editable}">
 									<div class="ibox-content ibox-heading">
 										<div class="author margin-bottom-20">
 											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
@@ -504,7 +504,7 @@
 										
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
-			                    </article>
+			                    </section><!-- /.section-->
 								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
 									<fieldset>
 										<label for="title" class="input">
@@ -629,7 +629,7 @@
 											<button type="button" class="btn btn-info btn-flat btn-lg rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
 										</footer>															
 								</div>
-			                </div>
+			                </article>
 						</div>
 					</div>					
 				</div>				
