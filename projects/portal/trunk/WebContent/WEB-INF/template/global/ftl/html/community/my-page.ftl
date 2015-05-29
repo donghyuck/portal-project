@@ -372,8 +372,9 @@
 								contentType : "application/json",
 								success : function(response){
 									if( response.pageId ){
+										$("#my-page-options").collapse('hide');
 										$this.set( "editable" , true ) ;	
-										$this.setPage( new common.ui.data.Page(response) );
+										$this.setPage( new common.ui.data.Page(response) );										
 									}						
 								},
 								complete : function(e){
