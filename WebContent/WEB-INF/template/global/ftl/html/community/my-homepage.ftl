@@ -319,6 +319,7 @@
 								return kendo.drawing.exportPDF(group, {
 								paperSize: "auto",
 								subject : $this.page.title ,
+								creator : $this.page.user.name,
 								title : $this.page.title,
 								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
 								});
