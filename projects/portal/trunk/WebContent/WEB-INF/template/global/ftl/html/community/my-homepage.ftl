@@ -76,7 +76,8 @@
 		
 		function createMyAnnouncement(renderTo, msnry){
 			var template = kendo.template($('#announce-listview-item-template').html());
-			var elem = $(kendo.render(template, {}));			
+			var elem = $(kendo.render(template, {}));	
+			alert(elem);		
 			//elem.imagesLoaded(function(){				
 				renderTo.prepend(elem);
 				msnry.prepended( elem );
