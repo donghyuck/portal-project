@@ -20,6 +20,7 @@
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-ken.css"/>',					
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
+			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
 			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
