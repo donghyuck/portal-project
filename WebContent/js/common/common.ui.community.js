@@ -137,6 +137,7 @@
 			summary :  { type: "string", editable: true},
 			pageState : { type: "string", editable: true, defaultValue:"INCOMPLETE"},
 			bodyText:  { type: "string", editable: true},
+			viewCount: {type:"number", editable:true, defaultValue:0},
 			modifiedDate: { type: "date", editable: true },
 			creationDate: { type: "date", editable: true }
 		},
