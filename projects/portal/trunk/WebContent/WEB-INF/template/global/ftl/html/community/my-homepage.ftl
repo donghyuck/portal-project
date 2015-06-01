@@ -132,7 +132,7 @@
 						}				
 				});
 				createMyAnnouncement(renderTo, msnry);
-				//dataSource.fetch();						
+				dataSource.fetch();						
 				
 				$( "button[data-action=more]").click(function(){
 					var $btn = $(this).button('loading')
