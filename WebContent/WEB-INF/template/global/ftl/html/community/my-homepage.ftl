@@ -77,11 +77,11 @@
 		function createMyAnnouncement(renderTo, msnry){
 			var template = kendo.template($('#announce-listview-item-template').html());
 			var elem = $(kendo.render(template, {}));			
-			elem.imagesLoaded(function(){				
+			//elem.imagesLoaded(function(){				
 				renderTo.prepend(elem);
 				msnry.prepended( elem );
 				msnry.layout();
-			});
+			//});
 		}		
 		
 		function createMyPageStreamListView(){		
