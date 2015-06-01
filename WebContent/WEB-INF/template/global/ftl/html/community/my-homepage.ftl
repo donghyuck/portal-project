@@ -383,9 +383,7 @@
 					height: '100%', 
 					color: '#ff4800'			
 				});*/
-			}			
-			
-			
+			}									
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){
 				if( typeof source == 'number' ){
