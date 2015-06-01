@@ -25,9 +25,6 @@
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
-			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
-			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
-			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.min.js"/>',		
 			'<@spring.url "/js/jquery.masonry/masonry.pkgd.min.js"/>',		
 			'<@spring.url "/js/imagesloaded/imagesloaded.pkgd.min.js"/>',		
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
@@ -552,7 +549,7 @@
 				<div class="sky-form">
 					<fieldset>
 						<div class="row">
-							<div class="col col-sm-4">
+							<div class="col col-md-4">
 								<section>
 									<label class="label"> 소유자</label>
 									<div id="my-page-source-list" class="inline-group">
@@ -562,7 +559,7 @@
 									</div>
 								</section>							
 							</div>
-							<div class="col col-sm-5">
+							<div class="col col-md-5">
 								<section>
 									<label class="label"> 상태</label>							
 									<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
@@ -584,7 +581,7 @@
 									</div>
 								</section>															
 							</div>
-							<div class="col col-sm-3 text-right">
+							<div class="col col-md-3 text-right">
 								<button type="button" class="btn btn-danger btn-lg btn-outline btn-flat" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 							</div>
 						</div>	
@@ -658,7 +655,7 @@
 					                        <section>
 					                        	<div class="separator-2"></div>
 					                            <label class="textarea textarea-expandable">
-					                                <textarea rows="3"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+					                                <textarea rows="4"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
 					                            </label>
 					                        </section>
 											<section>
