@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<startup-config>
-	
+<startup-config>	
 	<setup>
 		<complete>false</complete>
-	</setup>
-	
+	</setup>	
 	<license>
 		<file>PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPGxpY2Vuc2UgaWQ9IjIwMTMwNjE0
 IiBuYW1lPSJBUFBMSUNBVElPTiBBUkNISVRFQ1RVUkUgZm9yIEpBVkEiIGVkaXRpb249IlNUQU5EQVJE
@@ -17,7 +15,7 @@ ZWIiLz48c2lnbmF0dXJlPjMwMmMwMjE0MDUxOGY0MzU1MDM2ZWJkYTRkNzQ0MDllMTk5M2UxOGM4ZmIz
 MTVmYzAyMTQ0ZWZmOWE3ZWY2NTI4ZjdkMDZmNGU2NjMzNGQyYWRjMjliNDA0MWNiPC9zaWduYXR1cmU+
 PC9saWNlbnNlPg==</file>
 	</license>
-	
+	<!--  view render setting  -->
 	<view>
 		<html>
 			<page>
@@ -45,10 +43,12 @@ PC9saWNlbnNlPg==</file>
 				<enabled>false</enabled>
 			</velocity>
 		</render>
-	</view>			
-	
-	
+	</view>		
+	<!--  components setting  -->
 	<components>
+		<viewCounts>
+			<enabled>true</enabled>
+		</viewCounts>
 		<user>
 			<anonymous>
 				<company>
@@ -111,8 +111,7 @@ PC9saWNlbnNlPg==</file>
 			<default>
 				<menuId>1</menuId>	
 			</default>				
-		</menu>
-		
+		</menu>		
 		<image>
 			<enabled>true</enabled>
 			<maxImageSize>2048</maxImageSize>
@@ -124,33 +123,28 @@ PC9saWNlbnNlPg==</file>
 			<allowedTypes></allowedTypes>
 			<disallowedTypes></disallowedTypes>
 			<forceThumbnailsEnabled></forceThumbnailsEnabled>
-		</image>
-		
+		</image>		
 		<multipart>
 			<maxUploadSize>31457280</maxUploadSize><!--  30MB  -->
-		</multipart>
-		
+		</multipart>		
 		<download>
 			<images>
 				<no-image-url>/images/common/no-image2.jpg</no-image-url>
 				<no-logo-url>/images/common/no-image.jpg</no-logo-url>
 				<no-avatar-url>/images/common/no-avatar.png</no-avatar-url>
 			</images>			
-		</download>	
-		
+		</download>			
 	</components>
-	
-	<performance-monitoring>
-		
+	<!--  performance monitoring setting  -->
+	<performance-monitoring>		
 		<moskito>
 			<thresholds-setup>true</thresholds-setup>
-		</moskito>
-		
+		</moskito>		
 		<database>			
 			<schema>U_PORTAL</schema>
 		</database>
 	</performance-monitoring>
-	
+	<!--  security setting  -->
 	<security>
 		<authentication>
 			<loginVer>1</loginVer>
@@ -162,7 +156,7 @@ PC9saWNlbnNlPg==</file>
 			</encoding>
 		</authentication>
 	</security>	
-	
+	<!--  scripting language setting  -->
 	<scripting>
 		<groovy>
 			<debug>false</debug>
@@ -173,7 +167,7 @@ PC9saWNlbnNlPg==</file>
 			</source>
 		</groovy>
 	</scripting>
-		
+	<!--  database setting  -->	
 	<database>
 		<default>
 		<!-- 
