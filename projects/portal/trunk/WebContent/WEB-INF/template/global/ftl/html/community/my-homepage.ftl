@@ -20,7 +20,6 @@
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-ken.css"/>',					
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
-			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
 			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
@@ -392,7 +391,7 @@
 				if( typeof source == 'number' ){
 					common.ui.ajax( 
 					'<@spring.url "/data/pages/get.json?output=json"/>', {
-						data : { pageId : source },
+						data : { pageId : source , count: 1 },
 						success: function(response){ 
 							renderTo.data("model").setPage( new common.ui.data.Page(response) );
 							renderTo.data("model").set( "editable" , isEditable) ;	
@@ -504,7 +503,6 @@
 										<div class="summary tag-box tag-box-v4 no-margin-b">                    
                     						<p data-bind="html:page.summary"></p>
                     					</div>
-										
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
 			                    </section><!-- /.section-->
