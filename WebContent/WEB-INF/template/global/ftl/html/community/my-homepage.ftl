@@ -495,7 +495,7 @@
 											<ul class="list-inline grid-boxes-news">
 												<li><span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
 												<li>|</li>
-												<li>조회수: #: viewCount #</li>
+												<li>조회수: <span data-bind="{ text: viewCount }"></span></li>
 												<li>|</li>
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
