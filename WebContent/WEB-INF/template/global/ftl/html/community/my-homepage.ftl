@@ -886,6 +886,13 @@
 			<div class="page-meta no-margin-hr">
 				<p class="page-description">#: summary #</p>
 				<p class="page-description"><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</p>
+				<ul class="list-inline grid-boxes-news">
+						<li><span>조회수:</span> #: viewCount #</li>
+						<li>|</li>
+						<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
+						<li>|</li>
+						<li><a href="\\#"><i class="fa fa-comments-o"></i> 0</a></li>
+				</ul>
 			</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right hidden">
