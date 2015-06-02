@@ -292,8 +292,8 @@
 		},
 		copy : function(target) {
 			target.pageId = this.get("pageId");
-			target.set('modifiedDate' this.get("modifiedDate");
-			target.set('creationDate', this.get("creationDate");
+			target.set('modifiedDate', this.get("modifiedDate"));
+			target.set('creationDate', this.get("creationDate"));
 			target.set("objectType", this.get("objectType"));
 			target.set("objectId", this.get("objectId"));
 			target.set("versionId", this.get("versionId"));
