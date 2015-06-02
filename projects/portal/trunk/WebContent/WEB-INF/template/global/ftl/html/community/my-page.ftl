@@ -619,6 +619,10 @@
 											<ul class="list-inline grid-boxes-news">
 												<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
 												<li>|</li>
+												<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
+												<li>|</li>
+												<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
+												<li>|</li>												
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 											</ul>  
