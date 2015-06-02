@@ -360,7 +360,7 @@
 						btn = $(e.target);						
 						btn.button('loading');					
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();				
-						
+						$this.validate();
 						var source_title = $("#my-page-options input[name=source]").val();
 						var source_link = $("#my-page-options input[name=url]").val();
 						if( source_title.length > 0 ){
@@ -369,8 +369,6 @@
 						if( source_link.length > 0 ){
 							$this.page.properties.url = source_link;
 						}
-							
-						$this.validate();
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
@@ -395,6 +393,16 @@
 						btn.button('loading');						
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
 						$this.validate();						
+						
+						var source_title = $("#my-page-options input[name=source]").val();
+						var source_link = $("#my-page-options input[name=url]").val();
+						if( source_title.length > 0 ){
+							$this.page.properties.source = source_title;
+						} 
+						if( source_link.length > 0 ){
+							$this.page.properties.url = source_link;
+						}
+												
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
