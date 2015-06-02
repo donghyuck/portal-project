@@ -2237,6 +2237,10 @@ padding: 5px;
 	display: block;
 }
 
+.ibox-content.article  {
+	font-size : 1.2em;
+}
+
 .dialog .ibox-content p {
 	font-size : 1.2em;
 }
