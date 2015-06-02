@@ -893,6 +893,7 @@
 				<p class="page-description">
 				<ul class="list-inline grid-boxes-news">
 						<li><span>버전:</span> #: versionId #</li>
+						<li>|</li>
 						<li><span>조회수:</span> #: viewCount #</li>
 						<li>|</li>
 						<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
