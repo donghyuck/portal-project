@@ -628,7 +628,7 @@
                     					</div>
 										
                                 	</div>
-                                	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content"></div>
+                                	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content atricle"></div>
 			                    </article>
 								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
 									<fieldset>
