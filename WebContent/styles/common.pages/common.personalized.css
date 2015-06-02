@@ -2237,12 +2237,18 @@ padding: 5px;
 	display: block;
 }
 
+.dialog .ibox-content p {
+	font-size : 1.2em;
+}
+
 .ibox-content  .tag-box.summary  {	
 	  color: #A7AEB3;
 	  font-weight: bold;
 	  font-size: 1.15em;
 	  line-height: 1.6;  	
 }
+
+
 
 @media (max-width: 767px) {
 	.dialog.dialog-full .dialog__content {
