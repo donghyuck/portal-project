@@ -938,7 +938,7 @@
 			<ul class="list-inline">
 				<li>#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
-				<li><i class="fa fa-clock-o"></i> #: modifiedDate #</li>
+				<li><i class="fa fa-clock-o"></i> #: formattedModifiedDate() #</li>
 				<li>|</li>
 				<li>조회수 : #: viewCount#</li>
 			</ul>                    
