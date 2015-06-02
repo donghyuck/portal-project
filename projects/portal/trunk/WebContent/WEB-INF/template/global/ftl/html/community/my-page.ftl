@@ -641,8 +641,8 @@
 												<li>|</li>
 												<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
 												<li>|</li>												
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.creationDate }"></span></li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.modifiedDate }"></span></li>
 											</ul>  
 										</div>
 										<div class="tag-box tag-box-v4 no-margin-b">                    
