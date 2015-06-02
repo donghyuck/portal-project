@@ -898,7 +898,7 @@
 						<li>|</li>
 						<li><span>조회수:</span> #: viewCount #</li>
 						<li>|</li>
-						<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
+						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
 						<li>|</li>
 						<li><a href="\\#"><i class="fa fa-comments-o"></i> 0</a></li>
 				</ul>
