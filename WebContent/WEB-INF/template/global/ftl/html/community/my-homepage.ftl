@@ -77,12 +77,9 @@
 		function createMyAnnouncement(renderTo, msnry){
 			var template = kendo.template($('#announce-listview-item-template').html());
 			var elem = $(kendo.render( template, {}));	
-			//alert(elem.html());		
-			//elem.imagesLoaded(function(){				
-				renderTo.prepend(elem);
-				msnry.prepended( elem );
-				msnry.layout();
-			//});
+			renderTo.prepend(elem);
+			msnry.prepended( elem );
+			msnry.layout();
 		}		
 		
 		function createMyPageStreamListView(){		
@@ -132,8 +129,7 @@
 						}				
 				});
 				createMyAnnouncement(renderTo, msnry);
-				dataSource.fetch();						
-				
+				dataSource.fetch();
 				$( "button[data-action=more]").click(function(){
 					var $btn = $(this).button('loading')
 					var page = dataSource.page();
@@ -388,14 +384,6 @@
 					objectType : 31,
 					useWrapMode : observable.useWrapMode 
 				});	
-				/*
-				common.ui.scroll.slim(renderTo,{
-					size: '8px', 
-					alwaysVisible: true,
-					width: '100%', 
-					height: '100%', 
-					color: '#ff4800'			
-				});*/
 			}									
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){
@@ -878,7 +866,7 @@
 	</div>	
 	</script>	
 	<script id="my-stream-item-template" type="text/x-kendo-template">
-	<div class="col-md-4 col-sm-6  item">
+	<div class="col-md-4 col-sm-6  item" data-object-id="#=pageId#">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title cover">
 			#if( bodyContent.imageCount > 0 ){#
