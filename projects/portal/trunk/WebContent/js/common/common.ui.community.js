@@ -285,10 +285,10 @@
 				return "/images/common/no-avatar.png";
 		},
 		formattedCreationDate : function() {
-			return kendo.toString(this.get("creationDate"), "m");
+			return kendo.toString(this.get("creationDate"), "d");
 		},
 		formattedModifiedDate : function() {
-			return kendo.toString(this.get("modifiedDate"), "m");
+			return kendo.toString(this.get("modifiedDate"), "d");
 		},
 		copy : function(target) {
 			target.pageId = this.get("pageId");
