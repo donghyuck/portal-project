@@ -160,6 +160,7 @@
 	    	target.set("objectType",this.get("objectType") );
 	    	target.set("objectId",this.get("objectId") );
 	    	target.set("versionId",this.get("versionId") );
+	    	target.set("viewCount",this.get("viewCount") );
 	    	target.set("title",this.get("title") );
 	    	target.set("name",this.get("name") );
 	    	target.set("summary",this.get("summary") );		
