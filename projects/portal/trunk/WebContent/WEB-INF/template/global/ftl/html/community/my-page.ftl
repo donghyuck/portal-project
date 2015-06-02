@@ -11,17 +11,16 @@
 		yepnope([{
 			load: [
 			'css!<@spring.url "/styles/font-awesome/4.3.0/font-awesome.min.css"/>',
-			'css!<@spring.url "/styles/font-icons/themify-icons.css"/>',
 			'css!<@spring.url "/styles/jquery.sky-forms/2.0.1/custom-sky-forms.css"/>',	
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
-			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',									
 			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',	
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-sally.css"/>',					
+			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
@@ -915,9 +914,11 @@
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
 			<ul class="list-inline">
-				<li><span>By</span> #if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
+				<li>#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
 				<li><i class="fa fa-clock-o"></i> #:formattedCreationDate() #</li>
+				<li>|</li>
+				<li>조회수 : #: viewCount#</li>
 			</ul>                    
 			<p>#: summary #</p>
 			# if( getCurrentUser().userId === user.userId ) { # 	
