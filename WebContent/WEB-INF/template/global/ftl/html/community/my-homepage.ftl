@@ -384,16 +384,20 @@
 					objectType : 31,
 					useWrapMode : observable.useWrapMode 
 				});	
-			}									
+			}		
+										
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){
-				if( typeof source == 'number' ){
+				if( typeof source == 'number' ){					
+					var targetEle = $('.item[data-object-id=' + source + ']');					
+					kendo.ui.progress(targetEle, true);	
 					common.ui.ajax( 
 					'<@spring.url "/data/pages/get.json?output=json"/>', {
 						data : { pageId : source , count: 1 },
 						success: function(response){ 
 							renderTo.data("model").setPage( new common.ui.data.Page(response) );
 							renderTo.data("model").set( "editable" , isEditable) ;	
+							kendo.ui.progress(targetEle, false);	
 							dialogFx.open();
 						}	
 					} );
