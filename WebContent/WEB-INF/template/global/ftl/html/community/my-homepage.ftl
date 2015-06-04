@@ -87,7 +87,7 @@
 			if( !renderTo.data("model") ){
 				var observable =  common.ui.observable({});
 				renderTo.data("model", observable);			
-				$('data[data-commentary-close]').click(function(){
+				$('.close[data-commentary-close]').click(function(){
 					renderTo.hide();
 					$("body").css("overflow", "auto");
 				});
