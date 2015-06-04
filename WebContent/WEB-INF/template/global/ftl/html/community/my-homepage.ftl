@@ -684,7 +684,7 @@
 			<span class="btn-flat-icon close" data-commentary-close></span>
 			<div class="commentary-content">
 				<h2 data-bind="text:title"></h2>
-				<img data-bind="attr{src:coverPhotoUrl}" class="img-responsive"></img>
+				<img data-bind="attr{ src:coverPhotoUrl }" class="img-responsive"></img>
 				<p data-bind="text:summary"></p>
 			</div>
 		</section>
