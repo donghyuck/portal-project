@@ -705,7 +705,8 @@
 								<div class="separator-2"></div>
 								<div class="sky-form no-border">
 									<label class="textarea textarea-expandable">
-										<textarea rows="4" name="comment" placeholder="요약"></textarea>
+										<textarea rows="4" name="comment" placeholder="댓글"></textarea>
+										<span>Enter 를 눌러 게시하세요.</span>
 									</label>
 								</div>	
 							</section>
