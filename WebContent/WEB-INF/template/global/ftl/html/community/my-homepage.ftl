@@ -84,10 +84,10 @@
 		
 		function createMyPageCommentary(){
 			var renderTo = $("#my-page-commentary");
-			common.ui.animate_v2(renderTo, "fadeInRight", function(){
+			//common.ui.animate_v2(renderTo, "fadeInRight", function(){
 			
-			} );
-		
+			//} );
+			renderTo.show();
 		}
 		
 		function createMyPageStreamListView(){		
