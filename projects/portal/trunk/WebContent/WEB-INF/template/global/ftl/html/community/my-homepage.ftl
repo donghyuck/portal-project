@@ -123,7 +123,12 @@
 				common.ui.bind( renderTo, observable );
 				
 				renderTo.find('textarea[name=comment]').keyup(function(e) {
-					 if (e.keyCode == 13) observable.comment();
+					 if (e.keyCode == 13) {
+					 
+					 	alert( kendo.stringify( e ) );
+					 	observable.comment();
+					 	
+					 }
 				});
 				
 				$('.close[data-commentary-close]').click(function(){
