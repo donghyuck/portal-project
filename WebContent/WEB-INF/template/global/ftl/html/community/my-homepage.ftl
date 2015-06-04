@@ -91,6 +91,9 @@
 					pageId : 0,
 					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
 					pageCreditHtml : "",
+					comment : function(e){
+						alert(e);
+					},
 					setPage : function(source){
 						var $this = this;
 						if( typeof source == 'number'){
@@ -705,7 +708,7 @@
 								<div class="separator-2"></div>
 								<div class="sky-form no-border">
 									<label class="textarea textarea-expandable">
-										<textarea rows="4" name="comment" placeholder="댓글"></textarea>
+										<textarea rows="4" name="comment" placeholder="댓글" data-bind="events:{ keypress: comment}"></textarea>
 										<span>Enter 를 눌러 게시하세요.</span>
 									</label>
 								</div>	
