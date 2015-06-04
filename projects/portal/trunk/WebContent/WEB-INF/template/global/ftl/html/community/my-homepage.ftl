@@ -84,7 +84,7 @@
 		
 		function createMyPageCommentary(){
 			var renderTo = $("#my-page-commentary");
-			if(renderTo.is(":hidden"){
+			if(renderTo.is(":hidden")){
 				$("body").css("overflow", "hidden");
 				renderTo.show();
 			}else{
