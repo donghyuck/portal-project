@@ -113,14 +113,14 @@
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );
 				$('.close[data-commentary-close]').click(function(){
-					renderTo.hide();
+					renderTo.fadeOut();
 					$("body").css("overflow", "auto");
 				});
 			}			
 			if(renderTo.is(":hidden")){
 				renderTo.data("model").setPage( pageId ) ;
 				$("body").css("overflow", "hidden");
-				renderTo.show();
+				renderTo.fadeIn();
 			}			
 		}
 		
