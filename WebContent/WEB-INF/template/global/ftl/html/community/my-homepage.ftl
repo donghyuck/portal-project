@@ -86,7 +86,7 @@
 			var renderTo = $("#my-page-commentary");			
 			if( !renderTo.data("model") ){
 				var observable =  common.ui.observable({
-					coverImageUrl : "",
+					coverPhotoUrl : "",
 					setPage : function(source){
 						var $this = this;
 						if( typeof source == 'number'){
@@ -94,7 +94,7 @@
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
 							if( coverImgEle.length == 1 ){
-								$this.set("coverImageUrl", coverImgEle.attr("src"));
+								$this.set("coverPhotoUrl", coverImgEle.attr("src"));
 							}
 							$this.set("title", title);
 							$this.set("summary", summary);
