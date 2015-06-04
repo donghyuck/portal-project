@@ -688,7 +688,7 @@
 			</div>
 		</div>	
 		<!-- END COMMENT SLIDE -->
-		<div id="my-page-commentary" class="modal" style="background: rgba(55, 58, 71, 0.2);">
+		<div id="my-page-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
 			<div class="commentary commentary-drawer">
 				<span class="btn-flat-icon close" data-commentary-close></span>
 				<div class="commentary-content">
