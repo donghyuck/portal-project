@@ -84,10 +84,6 @@
 		
 		function createMyPageCommentary(){
 			var renderTo = $("#my-page-commentary");
-			//common.ui.animate_v2(renderTo, "fadeInRight", function(){
-			
-			//} );
-			
 			if(renderTo.is(":hidden"){
 				$("body").css("overflow", "hidden");
 				renderTo.show();
