@@ -87,8 +87,16 @@
 			//common.ui.animate_v2(renderTo, "fadeInRight", function(){
 			
 			//} );
-			$("body").css("overflow", "hidden");				
-			renderTo.show();
+			
+			if(renderTo.is(":hidden"){
+				$("body").css("overflow", "hidden");
+				renderTo.show();
+			}else{
+				renderTo.hide();
+				$("body").css("overflow", "auto");
+			}
+							
+			
 		}
 		
 		function createMyPageStreamListView(){		
