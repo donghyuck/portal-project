@@ -155,6 +155,9 @@
 					if( action == 'view' ){
 						createMyPageViewer(objectId);					
 					}
+					if( action == 'comment' ){
+						createMyPageCommentary(objectId);					
+					}
 					return false;					
 				});	
 			}
@@ -905,7 +908,7 @@
 						<li>|</li>
 						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
 						<li>|</li>
-						<li><a href="\\#"><i class="fa fa-comments-o"></i> 0</a></li>
+						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> 0</a></li>
 				</ul>
 				</p>
 			</div>
