@@ -2322,8 +2322,12 @@ padding: 5px;
 }
 
 
+@media (min-width: 1200px) {
+	
+	
+}
 
-@media (max-width: 767px) {
+@media(min-width: 768px){
 	.dialog.dialog-full .dialog__content {
 		padding:0px;
 		overflow-x : hidden;
