@@ -82,22 +82,28 @@
 			msnry.layout();
 		}		
 		
+		var ONE_PIXEL_IMG_SRC_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42‌​mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
+		
 		function createMyPageCommentary(pageId){
 			var renderTo = $("#my-page-commentary");			
 			if( !renderTo.data("model") ){
 				var observable =  common.ui.observable({
-					coverPhotoUrl : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42‌​mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=",
+					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
+					pageCreditHtml : "",
 					setPage : function(source){
 						var $this = this;
 						if( typeof source == 'number'){
 							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
+							var pageCreditHtml = $(".item[data-object-id="+source+"] .page-credits").html();
+							
 							if( coverImgEle.length == 1 ){
 								$this.set("coverPhotoUrl", coverImgEle.attr("src"));
 							}else{
-								$this.set( "coverPhotoUrl", "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42‌​mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");
+								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
 							}
+							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
 						}
@@ -687,6 +693,7 @@
 			<div class="commentary-content">
 				<div class="ibox">
 					<div class="ibox-content">
+						<div class="page-credits" data-bind="{html:pageCreditHtml}" ></div>
 						<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
 						<h2 data-bind="text:title"></h2>
 						<p data-bind="text:summary"></p>
