@@ -574,7 +574,7 @@
  * Commentary 
  */
 .commentary {
-	z-index: 31;
+	z-index: 1000;
 	padding: 26px;
 	background: #fff;
 	overflow: scroll;
@@ -611,6 +611,13 @@
 	animation-name: slide-left-fade-in;
 	padding-top: 0;
 }
+
+@media (min-width: 768px){
+	.commentary.commentary-drawer {
+	  width: 750px;
+	}
+}
+
 /**
  * Panel
  */
