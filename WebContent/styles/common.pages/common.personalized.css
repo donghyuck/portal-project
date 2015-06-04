@@ -570,8 +570,47 @@
 	height: 150px
 }
 
+/**
+ * Commentary 
+ */
+.commentary {
+	z-index: 31;
+	padding: 26px;
+	background: #fff;
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
 
+.commentary.commentary-drawer {
+	position: fixed;
+	height: 100%;
+	top: 0;
+	right: 0;
+}
 
+.commentary .commentary-content {
+	max-width: 690px;
+	margin: 0 auto;
+	padding: 50px 30px;
+	position: relative;
+	text-align: left;
+	-webkit-animation-duration: .4s;
+	-moz-animation-duration: .4s;
+	-ms-animation-duration: .4s;
+	animation-duration: .4s;
+	-webkit-animation-iteration-count: 1;
+	-moz-animation-iteration-count: 1;
+	-ms-animation-iteration-count: 1;
+	animation-iteration-count: 1;
+}
+
+.commentary.commentary-drawer .commentary-content {
+	-webkit-animation-name: slide-left-fade-in;
+	-moz-animation-name: slide-left-fade-in;
+	-ms-animation-name: slide-left-fade-in;
+	animation-name: slide-left-fade-in;
+	padding-top: 0;
+}
 /**
  * Panel
  */
