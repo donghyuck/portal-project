@@ -685,9 +685,13 @@
 		<section id="my-page-commentary" class="commentary commentary-drawer" style="display:none;">
 			<span class="btn-flat-icon close" data-commentary-close></span>
 			<div class="commentary-content">
-				<h2 data-bind="text:title"></h2>
-				<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
-				<p data-bind="text:summary"></p>
+				<div class="ibox">
+					<div class="ibox-content">
+						<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
+						<h2 data-bind="text:title"></h2>
+						<p data-bind="text:summary"></p>
+					</div>
+				</div>				
 			</div>
 		</section>
 		<!-- END COMMENT SLIDE -->		
