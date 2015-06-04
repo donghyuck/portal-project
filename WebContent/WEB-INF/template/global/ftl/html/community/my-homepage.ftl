@@ -698,6 +698,12 @@
 							<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
 							<h2 data-bind="text:title" class="headline"></h2>
 							<p data-bind="text:summary"></p>
+							<section>
+					                        	<div class="separator-2"></div>
+					                            <label class="textarea textarea-expandable">
+					                                <textarea rows="4" name="summary" placeholder="요약"></textarea>
+					                            </label>
+					                        </section>
 						</div>
 					</div>				
 				</div>
