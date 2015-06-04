@@ -82,17 +82,30 @@
 			msnry.layout();
 		}		
 		
-		function createMyPageCommentary(){
+		function createMyPageCommentary(pageId){
 			var renderTo = $("#my-page-commentary");			
 			if( !renderTo.data("model") ){
-				var observable =  common.ui.observable({});
+				var observable =  common.ui.observable({
+					setPage : function(source){
+						var $this = this;
+						if( typeof source == 'number'){
+							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
+							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
+							$this.set("title", title);
+							$this.set("summary", summary);
+						}
+					
+					}
+				});
 				renderTo.data("model", observable);			
+				common.ui.bind( renderTo, observable );
 				$('.close[data-commentary-close]').click(function(){
 					renderTo.hide();
 					$("body").css("overflow", "auto");
 				});
 			}			
 			if(renderTo.is(":hidden")){
+				renderTo.data("model").setPage( pageId ) ;
 				$("body").css("overflow", "hidden");
 				renderTo.show();
 			}			
@@ -138,9 +151,9 @@
 							});	
 							$btn.button('reset')						
 							if( this.page() < this.totalPages() ){
-								$btn.fadeIn();
+								$btn.show();
 							}else{
-								$btn.fadeOut();
+								$btn.hide();
 							}
 						}				
 				});
@@ -159,7 +172,6 @@
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");					
-					alert( action ) ;
 					var item = dataSource.get(objectId);		
 					if( action == 'view' ){
 						createMyPageViewer(objectId);					
