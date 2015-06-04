@@ -86,7 +86,7 @@
 			var renderTo = $("#my-page-commentary");			
 			if( !renderTo.data("model") ){
 				var observable =  common.ui.observable({
-					coverImageUrl : ""
+					coverImageUrl : "",
 					setPage : function(source){
 						var $this = this;
 						if( typeof source == 'number'){
