@@ -615,7 +615,7 @@
 
 .commentary .close {
   position: absolute;
-  top: 0;
+  top: 15px;
   left: 15px;
   line-height: 50px;
   font-size: 40px;
@@ -629,6 +629,10 @@
   display: block;
   opacity: .5;
   z-index: 1047;
+}
+
+.commentary .close:hover{
+  opacity: 1;	
 }
 
 @media (min-width: 768px){
