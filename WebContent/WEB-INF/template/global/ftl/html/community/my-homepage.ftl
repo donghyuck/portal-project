@@ -64,7 +64,7 @@
 				var currentUser = new common.ui.data.User();			
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 
-				createMyPageStreamListView();
+				createMyPageListView();
 
 
 			}
@@ -83,20 +83,23 @@
 		}		
 		
 		function createMyPageCommentary(){
-			var renderTo = $("#my-page-commentary");
+			var renderTo = $("#my-page-commentary");			
+			if( !renderTo.data("model") ){
+				var observable =  common.ui.observable({});
+				renderTo.data("model", observable);			
+				$('data[data-commentary-close]').click(function(){
+					renderTo.hide();
+					$("body").css("overflow", "auto");
+				});
+			}			
 			if(renderTo.is(":hidden")){
 				$("body").css("overflow", "hidden");
 				renderTo.show();
-			}else{
-				renderTo.hide();
-				$("body").css("overflow", "auto");
-			}
-							
-			
+			}			
 		}
 		
-		function createMyPageStreamListView(){		
-			var renderTo = $('#my-page-stream');			
+		function createMyPageListView(){		
+			var renderTo = $('#my-page-listview');			
 			if( !renderTo.data('masonry')){			
 				renderTo.masonry({	
 					columnWidth: '.item',
@@ -446,7 +449,7 @@
 			background-position: center center;			
 		}
 					
-		#my-page-stream {
+		#my-page-listview {
 			min-height:300px;
 			margin-bottom:50px;
 		}			
@@ -478,7 +481,7 @@
 			<!-- START MAIN CONTENT -->
 			<div class="container content">		
 				<div class="row">
-					<div id="my-page-stream" ></div>
+					<div id="my-page-listview" ></div>
 				</div>
 				<div class="row">
 					<div class="col-sm-4 col-sm-offset-4">
