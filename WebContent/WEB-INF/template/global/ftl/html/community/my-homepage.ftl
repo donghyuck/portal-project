@@ -93,7 +93,7 @@
 					pageCreditHtml : "",
 					commentBody : "",
 					comment : function(e){
-					
+						alert(this.commentBody) ;
 						return false;						
 					},
 					setPage : function(source){
