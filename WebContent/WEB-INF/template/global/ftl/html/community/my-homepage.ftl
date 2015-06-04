@@ -86,11 +86,17 @@
 			var renderTo = $("#my-page-commentary");			
 			if( !renderTo.data("model") ){
 				var observable =  common.ui.observable({
+					coverImageUrl : ""
 					setPage : function(source){
 						var $this = this;
 						if( typeof source == 'number'){
 							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
+							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
+							if( coverImgEle.length == 0 ){
+								$this.set("coverImageUrl", coverImgEle.attr("src"));
+							}
+							
 							$this.set("title", title);
 							$this.set("summary", summary);
 						}
@@ -679,6 +685,7 @@
 			<span class="btn-flat-icon close" data-commentary-close></span>
 			<div class="commentary-content">
 				<h2 data-bind="text:title"></h2>
+				<img data-bind="attr{src:coverPhotoUrl}"></img>
 				<p data-bind="text:summary"></p>
 			</div>
 		</section>
