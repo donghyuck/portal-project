@@ -96,7 +96,6 @@
 							if( coverImgEle.length == 0 ){
 								$this.set("coverImageUrl", coverImgEle.attr("src"));
 							}
-							
 							$this.set("title", title);
 							$this.set("summary", summary);
 						}
