@@ -92,7 +92,7 @@
 					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
 					pageCreditHtml : "",
 					comment : function(e){
-						alert(e.val());
+						alert($(e.target).val());
 					},
 					setPage : function(source){
 						var $this = this;
