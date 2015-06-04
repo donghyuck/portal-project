@@ -88,11 +88,13 @@
 			var renderTo = $("#my-page-commentary");			
 			if( !renderTo.data("model") ){
 				var observable =  common.ui.observable({
+					pageId : 0,
 					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
 					pageCreditHtml : "",
 					setPage : function(source){
 						var $this = this;
 						if( typeof source == 'number'){
+							$this.set("pageId", source );
 							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
@@ -103,6 +105,7 @@
 							}else{
 								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
 							}
+							
 							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
