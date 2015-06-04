@@ -979,7 +979,7 @@
 			#}#			
 			</div>
 			<div class="ibox-content no-padding" style="display: block;">
-				<div class="page-credits rounded-bottom">
+				<div class="page-credits bg-white">
 					<div class="credit-item">
 						<div class="credit-img user">
 							<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
