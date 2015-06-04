@@ -692,8 +692,8 @@
 			<span class="btn-flat-icon close" data-commentary-close></span>
 			<div class="commentary-content">
 				<div class="ibox">
-					<div class="ibox-content">
-						<div class="page-credits" data-bind="{html:pageCreditHtml}" ></div>
+					<div class="ibox-content no-border">
+						<div class="page-credits bg-white" data-bind="{html:pageCreditHtml}" ></div>
 						<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
 						<h2 data-bind="text:title"></h2>
 						<p data-bind="text:summary"></p>
