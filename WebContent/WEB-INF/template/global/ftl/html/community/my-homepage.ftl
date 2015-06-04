@@ -702,11 +702,13 @@
 							<h2 data-bind="text:title" class="headline"></h2>
 							<p data-bind="text:summary"></p>
 							<section>
-					                        	<div class="separator-2"></div>
-					                            <label class="textarea textarea-expandable">
-					                                <textarea rows="4" name="summary" placeholder="요약"></textarea>
-					                            </label>
-					                        </section>
+								<div class="separator-2"></div>
+								<div class="sky-form no-border">
+									<label class="textarea textarea-expandable">
+										<textarea rows="4" name="comment" placeholder="요약"></textarea>
+									</label>
+								</div>	
+							</section>
 						</div>
 					</div>				
 				</div>
