@@ -125,7 +125,6 @@
 				renderTo.find('textarea[name=comment]').keyup(function(e) {
 					 if (e.keyCode == 13) {
 					 	e.preventDefault();
-					 	alert( kendo.stringify( e ) );
 					 	observable.comment();
 					 	
 					 }
