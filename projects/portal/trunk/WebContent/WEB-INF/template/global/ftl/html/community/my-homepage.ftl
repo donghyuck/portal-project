@@ -93,7 +93,10 @@
 					pageCreditHtml : "",
 					commentBody : "",
 					comment : function(e){
-						alert(this.commentBody) ;
+						var $this = this;
+						$this.set("commentBody", "");
+						alert($this.commentBody) ;
+						
 						return false;						
 					},
 					setPage : function(source){
@@ -103,14 +106,12 @@
 							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
-							var pageCreditHtml = $(".item[data-object-id="+source+"] .page-credits").html();
-							
+							var pageCreditHtml = $(".item[data-object-id="+source+"] .page-credits").html();							
 							if( coverImgEle.length == 1 ){
 								$this.set("coverPhotoUrl", coverImgEle.attr("src"));
 							}else{
 								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
-							}
-							
+							}							
 							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
