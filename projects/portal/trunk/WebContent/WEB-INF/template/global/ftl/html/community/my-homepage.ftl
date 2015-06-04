@@ -695,7 +695,7 @@
 					<div class="ibox-content no-border">
 						<div class="page-credits bg-white" data-bind="{html:pageCreditHtml}" ></div>
 						<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
-						<h2 data-bind="text:title"></h2>
+						<h2 data-bind="text:title" class="headline"></h2>
 						<p data-bind="text:summary"></p>
 					</div>
 				</div>				
