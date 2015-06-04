@@ -91,10 +91,9 @@
 					pageId : 0,
 					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
 					pageCreditHtml : "",
+					commentBody : "",
 					comment : function(e){
-						if( e.keyCode == 13 ){
-							alert($(e.target).val());						
-						}
+					
 						return false;						
 					},
 					setPage : function(source){
@@ -115,12 +114,18 @@
 							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
+							$this.set("commentBody", "");
 						}
 					
 					}
 				});
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );
+				
+				renderTo.find('textarea[name=comment]').keyup(function(e) {
+					 if (e.keyCode == 13) observable.comment();
+				});
+				
 				$('.close[data-commentary-close]').click(function(){
 					renderTo.fadeOut();
 					$("body").css("overflow", "auto");
@@ -711,7 +716,7 @@
 								<div class="separator-2"></div>
 								<div class="sky-form no-border">
 									<label class="textarea textarea-expandable">
-										<textarea rows="4" name="comment" placeholder="댓글" data-bind="events:{ keypress: comment}"></textarea>
+										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
 										<span>Enter 를 눌러 게시하세요.</span>
 									</label>
 								</div>	
