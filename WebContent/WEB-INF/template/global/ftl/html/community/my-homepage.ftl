@@ -18,7 +18,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',									
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
-			'css!<@spring.url "/styles/codrops/codrops.dialog-ken.css"/>',					
+			'css!<@spring.url "/styles/codrops/codrops.dialog-sandra.css"/>',					
 			'css!<@spring.url "/styles/common.pages/common.personalized.css"/>',	
 			'<@spring.url "/js/jquery/1.10.2/jquery.min.js"/>',
 			'<@spring.url "/js/jgrowl/jquery.jgrowl.min.js"/>',			
