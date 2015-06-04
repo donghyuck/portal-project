@@ -87,6 +87,7 @@
 			//common.ui.animate_v2(renderTo, "fadeInRight", function(){
 			
 			//} );
+			$("body").css("overflow-x", "hidden");				
 			renderTo.show();
 		}
 		
