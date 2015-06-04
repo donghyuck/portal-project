@@ -151,6 +151,7 @@
 					$this = $(this);
 					var action = $this.data("action");
 					var objectId = $this.data("object-id");					
+					alert( action ) ;
 					var item = dataSource.get(objectId);		
 					if( action == 'view' ){
 						createMyPageViewer(objectId);					
