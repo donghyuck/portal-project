@@ -712,9 +712,8 @@
 								<div class="sky-form no-border">
 									<label class="textarea textarea-expandable">
 										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
-										<span>Enter 를 눌러 게시하세요.</span>
-										<button class="btn btn-flat btn-info btn-outline btn-xl">확인</button>
 									</label>
+									<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
 								</div>	
 							</section>
 						</div>
