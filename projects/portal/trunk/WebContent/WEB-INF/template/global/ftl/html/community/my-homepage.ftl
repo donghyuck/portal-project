@@ -92,7 +92,10 @@
 					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
 					pageCreditHtml : "",
 					comment : function(e){
-						alert($(e.target).val());
+						if( e.keyCode == 13 ){
+							alert($(e.target).val());						
+						}
+						return false;						
 					},
 					setPage : function(source){
 						var $this = this;
