@@ -94,9 +94,9 @@
 					commentBody : "",
 					comment : function(e){
 						var $this = this;
-						$this.set("commentBody", "");
-						alert($this.commentBody) ;
 						
+						alert($this.commentBody) ;
+						$this.set("commentBody", "");
 						return false;						
 					},
 					setPage : function(source){
