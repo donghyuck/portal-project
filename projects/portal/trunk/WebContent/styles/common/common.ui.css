@@ -1320,7 +1320,20 @@ body:not  (.right-to-left  ) .no-border-l {
 	opacity: .9;
 }
 
+.dialog .btn-flat.t-0-r-0{
+	top:0;
+	right: 60px;	
+}
 
+.dialog .btn-flat.t-0-r-1 {
+	top:0;
+	right: 60px;	
+}
+
+.dialog .btn-flat.t-0-r-2 {
+	top:0;
+	right: 120px;	
+}
 
 /* Carousel
 ------------------------------------*/
