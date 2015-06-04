@@ -95,6 +95,8 @@
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
 							if( coverImgEle.length == 1 ){
 								$this.set("coverPhotoUrl", coverImgEle.attr("src"));
+							}else{
+								$this.set(coverPhotoUrl, "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42‌​mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=");
 							}
 							$this.set("title", title);
 							$this.set("summary", summary);
