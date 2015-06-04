@@ -688,19 +688,21 @@
 			</div>
 		</div>	
 		<!-- END COMMENT SLIDE -->
-		<section id="my-page-commentary" class="commentary commentary-drawer" style="display:none;">
-			<span class="btn-flat-icon close" data-commentary-close></span>
-			<div class="commentary-content">
-				<div class="ibox">
-					<div class="ibox-content no-border">
-						<div class="page-credits bg-white" data-bind="{html:pageCreditHtml}" ></div>
-						<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
-						<h2 data-bind="text:title" class="headline"></h2>
-						<p data-bind="text:summary"></p>
-					</div>
-				</div>				
-			</div>
-		</section>
+		<div id="my-page-commentary" class="modal" >
+			<div class="commentary commentary-drawer">
+				<span class="btn-flat-icon close" data-commentary-close></span>
+				<div class="commentary-content">
+					<div class="ibox">
+						<div class="ibox-content no-border">
+							<div class="page-credits bg-white" data-bind="{html:pageCreditHtml}" ></div>
+							<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
+							<h2 data-bind="text:title" class="headline"></h2>
+							<p data-bind="text:summary"></p>
+						</div>
+					</div>				
+				</div>
+			</div>	
+		</div>
 		<!-- END COMMENT SLIDE -->		
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
