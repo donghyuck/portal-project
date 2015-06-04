@@ -82,6 +82,14 @@
 			msnry.layout();
 		}		
 		
+		function createMyPageCommentary(){
+			var renderTo = $("#my-page-commentary");
+			common.ui.animate_v2(renderTo, "fadeInRight", function(){
+			
+			} );
+		
+		}
+		
 		function createMyPageStreamListView(){		
 			var renderTo = $('#my-page-stream');			
 			if( !renderTo.data('masonry')){			
@@ -384,8 +392,7 @@
 					objectType : 31,
 					useWrapMode : observable.useWrapMode 
 				});	
-			}		
-										
+			}										
 			var dialogFx = common.ui.dialog( renderTo );	
 			if( !dialogFx.isOpen ){
 				if( typeof source == 'number' ){					
@@ -644,7 +651,7 @@
 			</div>
 		</div>	
 		<!-- END COMMENT SLIDE -->
-		<section class="commentary commentary-drawer">
+		<section id="my-page-commentary" class="commentary commentary-drawer" style="display:none;">
 			<div class="commentary-content"></div>
 		</section>
 		<!-- END COMMENT SLIDE -->		
