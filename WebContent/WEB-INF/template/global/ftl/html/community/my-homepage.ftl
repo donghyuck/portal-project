@@ -154,7 +154,7 @@
 					var item = dataSource.get(objectId);		
 					if( action == 'view' ){
 						createMyPageViewer(objectId);					
-					}
+					}else
 					if( action == 'comment' ){
 						createMyPageCommentary(objectId);					
 					}
