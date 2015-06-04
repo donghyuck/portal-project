@@ -643,7 +643,11 @@
 				</div>				
 			</div>
 		</div>	
-				
+		<!-- END COMMENT SLIDE -->
+		<section class="commentary commentary-drawer">
+			<div class="commentary-content"></div>
+		</section>
+		<!-- END COMMENT SLIDE -->		
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- tab-v1 -->
@@ -858,8 +862,7 @@
 		</div>
 	</div>
 	<div class="notice-grid no-border-hr no-border-b" style="min-height: 300px"></div>
-	</script>	
-	
+	</script>		
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins">
@@ -869,6 +872,9 @@
 		</div>
 	</div>	
 	</script>	
+	
+	
+	
 	<script id="my-stream-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6  item" data-object-id="#=pageId#">
 		<div class="ibox float-e-margins">
