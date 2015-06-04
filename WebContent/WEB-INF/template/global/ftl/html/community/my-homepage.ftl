@@ -657,6 +657,7 @@
 		</div>	
 		<!-- END COMMENT SLIDE -->
 		<section id="my-page-commentary" class="commentary commentary-drawer" style="display:none;">
+			<span class="btn-flat-icon close" data-commentary-close></span>
 			<div class="commentary-content"></div>
 		</section>
 		<!-- END COMMENT SLIDE -->		
