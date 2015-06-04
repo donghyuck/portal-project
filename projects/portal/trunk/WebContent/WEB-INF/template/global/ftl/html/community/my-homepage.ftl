@@ -93,7 +93,7 @@
 							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
-							if( coverImgEle.length == 0 ){
+							if( coverImgEle.length == 1 ){
 								$this.set("coverImageUrl", coverImgEle.attr("src"));
 							}
 							$this.set("title", title);
