@@ -120,16 +120,7 @@
 					}
 				});
 				renderTo.data("model", observable);			
-				common.ui.bind( renderTo, observable );
-				
-				renderTo.find('textarea[name=comment]').keyup(function(e) {
-					 if (e.keyCode == 13) {
-					 	e.preventDefault();
-					 	observable.comment();
-					 	
-					 }
-				});
-				
+				common.ui.bind( renderTo, observable );				
 				$('.close[data-commentary-close]').click(function(){
 					renderTo.fadeOut();
 					$("body").css("overflow", "auto");
@@ -722,6 +713,7 @@
 									<label class="textarea textarea-expandable">
 										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
 										<span>Enter 를 눌러 게시하세요.</span>
+										<button class="btn btn-flat btn-info btn-outline btn-xl">확인</button>
 									</label>
 								</div>	
 							</section>
