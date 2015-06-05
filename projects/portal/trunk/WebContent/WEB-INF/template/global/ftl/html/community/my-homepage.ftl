@@ -1033,13 +1033,13 @@
 				<p class="page-description">#: summary #</p>
 				<p class="page-description">
 				<ul class="list-inline grid-boxes-news">
+						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
+						<li>|</li>
 						<li><span>버전:</span> #: versionId #</li>
 						<li>|</li>
 						<li><span>조회수:</span> #: viewCount #</li>
 						<li>|</li>
-						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> #: commentCount #</li>						
-						<li>|</li>
-						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
+						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> #: commentCount #</li>	
 				</ul>
 				</p>
 			</div>
