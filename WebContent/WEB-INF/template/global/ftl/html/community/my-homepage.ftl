@@ -169,13 +169,13 @@
 				common.ui.bind( renderTo, observable );				
 				$('.close[data-commentary-close]').click(function(){					
 					$("body").css("overflow", "auto");
-					renderTo.fadeOut();
+					renderTo.hide();
 				});
 			}			
 			if(renderTo.is(":hidden")){
 				renderTo.data("model").setPage( pageId ) ;
 				$("body").css("overflow", "hidden");
-				renderTo.fadeIn();
+				renderTo.show();
 			}			
 		}
 		
@@ -1006,7 +1006,7 @@
 		<div class="comment" >
 			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
 			<div class="content">
-				<a class="author" href="\\#">#if ( name == null ){# 손님 #}else{# #: name # #}#</a>
+				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
 				<span class="comment-date">#: formattedCreationDate() #</span>
 				<span class="linked-text">
 					#: body #
