@@ -279,8 +279,7 @@
 		},
 		authorPhotoUrl : function() {
 			if (typeof this.get("user") === 'object' && this.get("user") != null)
-				return "/download/profile/" + this.get("user").username
-						+ "?width=150&height=150";
+				return "/download/profile/" + this.get("user").username + "?width=150&height=150";
 			else
 				return "/images/common/no-avatar.png";
 		},
@@ -322,6 +321,62 @@
 			else
 				target.properties = {};
 		}
+	});
+	
+	common.ui.data.Comment = kendo.data.Model.define({
+		id : "commentId",
+		fields : {
+			commentId : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			objectType : {
+				type : "number",
+				editable : true,
+				defaultValue : 30
+			},
+			objectId : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			body : {
+				type : "string",
+				editable : true
+			},
+			name : {
+				type : "string",
+				editable : true
+			},
+			email : {
+				type : "string",
+				editable : true
+			},
+			ipaddress : {
+				type : "string",
+				editable : true,
+				defaultValue : "INCOMPLETE"
+			},
+			status : {
+				type : "string",
+				editable : true
+			}
+			modifiedDate : {
+				type : "date",
+				editable : true
+			},
+			creationDate : {
+				type : "date",
+				editable : true
+			}
+		},
+		formattedCreationDate : function() {
+			return kendo.toString(this.get("creationDate"), "F");
+		},
+		formattedModifiedDate : function() {
+			return kendo.toString(this.get("modifiedDate"), "F");
+		}		
 	});
 
 })(jQuery);
