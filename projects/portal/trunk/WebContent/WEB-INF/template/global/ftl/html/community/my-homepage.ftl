@@ -1001,7 +1001,7 @@
 	
 	<script id="my-page-commentary-listview-template" type="text/x-kendo-template">
 		<div class="comment" >
-			<img class="author-image" src="img/a4.jpg" alt="">
+			<img class="author-image" src="#=authorPhotoUrl#" alt="">
 			<div class="content">
 				<a class="author" href="\\#">#if (user.anonymous ){# 손님 #}#</a>
 				<span class="comment-date">#: formattedCreationDate #</span>
