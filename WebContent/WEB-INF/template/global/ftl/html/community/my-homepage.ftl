@@ -997,7 +997,7 @@
 	</script>	
 	
 	<script id="my-page-commentary-listview-template" type="text/x-kendo-template">
-		<div >#: name #</div>
+		<div >#: body #</div>
 	
 	</script>	
 	
