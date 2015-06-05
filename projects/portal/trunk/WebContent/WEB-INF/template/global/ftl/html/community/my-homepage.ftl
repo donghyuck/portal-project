@@ -1037,9 +1037,9 @@
 						<li>|</li>
 						<li><span>조회수:</span> #: viewCount #</li>
 						<li>|</li>
-						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
+						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> #: commentCount #</li>						
 						<li>|</li>
-						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> #: commentCount #</li>
+						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
 				</ul>
 				</p>
 			</div>
