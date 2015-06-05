@@ -1039,7 +1039,7 @@
 						<li>|</li>
 						<li><span>조회수:</span> #: viewCount #</li>
 						<li>|</li>
-						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> #: commentCount #</li>	
+						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> #: commentCount #</a></li>	
 				</ul>
 				</p>
 			</div>
