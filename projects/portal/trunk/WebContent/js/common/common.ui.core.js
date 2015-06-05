@@ -2389,7 +2389,11 @@
 									});									
 								});
 							}else if (imageOptions.isLightboxEnabled() && imageOptions.get("gallery") ){
+								
 								var html = $( templates.lightboxGallery({'uid': uid}) );
+								var count = 0;					
+								var total = active_my_selected.find("img").length;		
+								
 								$.each( active_my_selected.find("img"), function( index, value){							
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
