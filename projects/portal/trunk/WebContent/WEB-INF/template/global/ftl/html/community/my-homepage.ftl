@@ -97,7 +97,7 @@
 						btn = $(e.target);						
 						btn.button('loading');		
 						common.ui.ajax(
-							'<@spring.url "/data/pages/commnet.json?output=json"/>',
+							'<@spring.url "/data/pages/comment.json?output=json"/>',
 							{
 								data : {
 									'objectType' : 31,
