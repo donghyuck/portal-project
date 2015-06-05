@@ -135,7 +135,7 @@
 									text : $this.get("commentBody")
 								},
 								success : function(response){
-								
+									listview.dataSource.read({pageId: $this.pageId });
 								},
 								complete : function(e){
 									$this.set("commentBody", "");
