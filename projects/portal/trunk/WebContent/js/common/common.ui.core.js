@@ -641,7 +641,7 @@
 			return false;
 		}		
 		// live data attribute 
-		$(document).on('DOMNodeInserted', '[data-start-slideshow=true][data-ride=lightbox]', function(e){
+		$(document).on('DOMNodeInserted', '[data-start-gallery=true][data-ride=lightbox]', function(e){
 			var $this = $(this), config = {};
 			f($this.data("plugin-options")) {
 				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, opts, $this.data("plugin-options"));	
@@ -650,7 +650,6 @@
 			}
 			
 			$this.magnificPopup.open(config);
-		
 		} );
 				
 		// live click evnet ..
@@ -1924,8 +1923,15 @@
 				+ '</div>'	
 				+ '</div>'	
 			),
+			lightboxGallery : template(
+				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="{ delegate: 'a' }" #if(uid){# data-uid="#=uid#" #}#></div>'
+			),
+			lightboxGalleryImage : template (
+					'<a href="#= url #"><img src="#= thumbnaiUrll #" class="#= css #"></a>'	
+			),
 			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
+			thumbnailUrl : template('/download/image/#= imageId #/#= name #?width=150&height=150'),
 			download : template('/download/image/#=imageId#/#=name#')
 		},
 		handleAjaxError = common.ui.handleAjaxError;
@@ -2382,6 +2388,31 @@
 										}
 									});									
 								});
+							}else if (imageOptions.isLightboxEnabled() && imageOptions.get("gallery") ){
+								var html = templates.lightboxGallery({'uid': uid});
+								$.each( active_my_selected.find("img"), function( index, value){							
+									var objectEl = $(value);
+									var objectId = objectEl.data("id");
+									var image = active_datasource.get(objectId);					
+									if( image == null )
+										image = new common.ui.data.Image({imageId: objectId});
+									that._getImageLink(image, function(data){
+										if(!defined(data.error)){			
+											html.append(
+													templates.lightboxGalleryImage({ 
+														uid: uid, 
+														url: templates.linkUrl( data ),	
+														thumbnaiUrll : objectEl.attr('src'),
+														css : "img-responsive" 
+													})		
+											);
+											count ++ ;		
+											if(count == total) {
+												that.trigger(APPLY, { 'html' : html[0].outerHTML });									
+											}
+										}
+									});																					
+								});
 							}else{
 								$.each( active_my_selected.find("img"), function( index, value){
 									var objectEl = $(value);
@@ -2405,7 +2436,8 @@
 											});										
 										}
 									})
-								});									
+								});
+								
 							}
 					}
 				});	
