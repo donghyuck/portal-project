@@ -109,7 +109,7 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-commentary-listview-template").html()),
-					autoBind: false,
+					autoBind: false,./
 					dataBound: function(e){		
 						var elem = 	this.element.children();				
 					},
@@ -762,7 +762,9 @@
 										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
 									</label>
 									<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
-								</div>	
+								</div>									
+							</section>
+							<section>
 								<div id="my-page-commentary-listview" ></div>
 							</section>
 						</div>
