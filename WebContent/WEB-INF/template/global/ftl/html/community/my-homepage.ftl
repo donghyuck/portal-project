@@ -602,6 +602,8 @@
 												<li>|</li>
 												<li>조회수: <span data-bind="{ text: page.viewCount }"></span></li>
 												<li>|</li>
+												<li>댓글: <span data-bind="{ text: page.commentCount }"></span></li>
+												<li>|</li>
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 											</ul>  
@@ -1037,7 +1039,7 @@
 						<li>|</li>
 						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
 						<li>|</li>
-						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> 0</a></li>
+						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> #: commentCount #</li>
 				</ul>
 				</p>
 			</div>
