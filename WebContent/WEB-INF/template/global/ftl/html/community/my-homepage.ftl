@@ -100,9 +100,9 @@
 							'<@spring.url "/data/pages/comment.json?output=json"/>',
 							{
 								data : {
-									'objectType' : 31,
-									'objectId' : $this.set("pageId"),
-									'text' : $this.get("commentBody")
+									objectType: 31,
+									objectId: $this.set("pageId"),
+									text: $this.get("commentBody")
 								},
 								contentType : "application/json",
 								success : function(response){
