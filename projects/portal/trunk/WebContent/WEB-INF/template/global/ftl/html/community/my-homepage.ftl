@@ -1003,10 +1003,10 @@
 		<div class="comment" >
 			<img class="author-image" src="img/a4.jpg" alt="">
 			<div class="content">
-				<a class="author" href="\\#"> Karl Jordan </a>
-				<span class="comment-date">  Fri Jan 25 2015 - 11:12:36 </span>
+				<a class="author" href="\\#">#if (user.anonymous ){# 손님 #}#</a>
+				<span class="comment-date">#: formattedCreationDate #</span>
 				<span class="linked-text">
-					Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover.
+					#: body #
 				</span>
 			</div>		
 		</div>
