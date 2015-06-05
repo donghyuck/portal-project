@@ -608,62 +608,83 @@
 				navigateByImgClick: true
 			}	
 		};
+	var DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS = {
+			items:[] ,	
+			type:'image',	
+			mainClass: 	'mfp-no-margins mfp-with-zoom',
+			image: {
+				verticalFit: 	true
+			},
+			gallery: {
+				enabled: true,
+				navigateByImgClick: true
+			},
+			zoom: {
+				enabled: true, // By default it's false, so don't forget to enable it
+			    duration: 300, // duration of the effect, in milliseconds
+			    easing: 'ease-in-out', // CSS transition easing function 
+			    // The "opener" function should return the element from which popup will be zoomed in
+			    // and to which popup will be scaled down
+			    // By defailt it looks for an image tag:
+			    opener: function(openerElement) {
+			      // openerElement is the element on which popup was initialized, in this case its <a> tag
+			      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
+			      return openerElement.is('img') ? openerElement : openerElement.find('img');
+			    }
+			  }
+		};
 	
-	function spmenu(options){
-		
-		
-		
-		$(document).on("click","[data-feature-name='spmenu']", function(e){
-			var $this = $(this) , target_object ;
-			if( $this.prop("tagName").toLowerCase() == "a" ){			
-				target_object  = $($this.attr("href"));	
-			}else{
-				if($this.data("target-object-id")){
-					target_object = $("#" + $this.data("target-object-id"));
-				}
-			}
-			$("body").css("overflow-y" , "hidden");
-			target_object.trigger("open");
-			target_object.toggleClass("cbp-spmenu-open");	
-		});
-		
-		$(document).on("click","[data-dismiss='spmenu']", function(e){
-			
-			var $this = $(this);			
-			var target  = $this.closest(".cbp-spmenu");
-			
-			$("body").css("overflow-y" , "auto");			
-			if($this.data("target-object-id")){
-				var target = $($this.data("target-object"));
-				if(target.is(".active") )
-					targetremoveClass("active");
-			}
-			target.trigger("close");
-			target.toggleClass("cbp-spmenu-open");
-		});
-	}
 	
 	function lightbox (){		
 		
 		if(!defined($.magnificPopup)) {
 			return false;
 		}		
-		
-		$(window).on('load', function () {
-			$('[data-ride="owl-carousel"]').each(function () {
-				var $carousel = $(this);
+		// live data attribute 
+		$(document).on('DOMNodeInserted', '[data-start-slideshow=true][data-ride=lightbox]', function(e){
+			var $this = $(this), config = {};
+			f($this.data("plugin-options")) {
+				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, opts, $this.data("plugin-options"));	
+			}else{
+				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
+			}	
+			if( $this.data("selector") ){
+				config.items = [];
+				$.each( $($this.data("selector") ) , function( index , value ){
+					var $that = $(value);
+					if( $that.data("largesrc") ){
+						config.items.push({
+							src : $that.data("largesrc")
+						});						
+					}else{
+						if( $that.prop("tagName").toLowerCase() == "img" ){				
+							config.items.push({
+								src : $that.attr("src")
+							});			
+						}						
+					}
+				});								
+			}else{
+				if( $this.children("img").length > 0  ){
+					config.items = [];
+					$.each( $this.children("img"), function( index,  item){
+						config.items.push({
+							src : $(item).attr("src")
+						});
+					});	
+				}								
+			}
+			$.magnificPopup.open(config);
+		} );
 				
-				alert( $carousel.html() );
-			});
-		});
-		
+		// live click evnet ..
 		$(document).on("click","[data-ride='lightbox']", function(e){					
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
 				config = extend({}, DEFAULT_LIGHTBOX_OPTIONS, opts, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_OPTIONS;
-			}		
+			}	
 			
 			if( $this.data("selector") ){
 				config.items = [];
@@ -701,6 +722,39 @@
 		} );	
 		
 	}
+
+
+	function spmenu(options){
+		
+		$(document).on("click","[data-feature-name='spmenu']", function(e){
+			var $this = $(this) , target_object ;
+			if( $this.prop("tagName").toLowerCase() == "a" ){			
+				target_object  = $($this.attr("href"));	
+			}else{
+				if($this.data("target-object-id")){
+					target_object = $("#" + $this.data("target-object-id"));
+				}
+			}
+			$("body").css("overflow-y" , "hidden");
+			target_object.trigger("open");
+			target_object.toggleClass("cbp-spmenu-open");	
+		});
+		
+		$(document).on("click","[data-dismiss='spmenu']", function(e){
+			
+			var $this = $(this);			
+			var target  = $this.closest(".cbp-spmenu");
+			
+			$("body").css("overflow-y" , "auto");			
+			if($this.data("target-object-id")){
+				var target = $($this.data("target-object"));
+				if(target.is(".active") )
+					targetremoveClass("active");
+			}
+			target.trigger("close");
+			target.toggleClass("cbp-spmenu-open");
+		});
+	}	
 	
 	var DEFAULT_THUMBNAIL_EXPAND_HEIGHT = 500,
 		DEFAULT_THUMBNAIL_EXPAND_MARGIN = 10,
