@@ -65,8 +65,6 @@
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 
 				createMyPageListView();
-
-
 			}
 		}]);			
 
@@ -85,8 +83,41 @@
 		var ONE_PIXEL_IMG_SRC_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42‌​mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
 		
 		function createMyPageCommentary(pageId){
+			
 			var renderTo = $("#my-page-commentary");			
-			if( !renderTo.data("model") ){
+			if( !renderTo.data("model") ){				
+				var listview = common.ui.listview($("#my-page-commentary-listview"), {
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/data/pages/comments/list.json?output=json"/>', type: 'POST' }
+						},
+						requestStart: function(e){	
+									
+						},
+						schema: {
+							total: "totalCount",
+							data: "comments"
+							/*,
+							model: common.ui.data.Page*/
+						},
+						selectable: false,
+						error:common.ui.handleAjaxError,
+						batch: false,
+						pageSize: 15,
+						serverPaging: false,
+						serverFiltering: false,
+						serverSorting: false
+					},
+					template: kendo.template($("#my-page-commentary-listview-template").html()),
+					dataBound: function(e){		
+						var elem = 	this.element.children();				
+					},
+					change: function(e){						
+						var selectedCells = this.select();
+						var selectedCell = this.dataItem( selectedCells );	
+					}
+				});
+				
 				var observable =  common.ui.observable({
 					pageId : 0,
 					coverPhotoUrl : ONE_PIXEL_IMG_SRC_DATA,
@@ -95,8 +126,7 @@
 					comment : function(e){
 						var $this = this;
 						btn = $(e.target);						
-						btn.button('loading');		
-						
+						btn.button('loading');								
 						common.ui.ajax(
 							'<@spring.url "/data/pages/comment.json?output=json"/>',
 							{
@@ -112,14 +142,12 @@
 									$this.set("commentBody", "");
 									btn.button('reset');
 								}							
-						});										
-						
+						});	
 						return false;						
 					},
 					setPage : function(source){
 						var $this = this;
-						if( typeof source == 'number'){
-							
+						if( typeof source == 'number'){							
 							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
@@ -133,15 +161,14 @@
 							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
-							$this.set("commentBody", "");
-						}
-					
+							$this.set("commentBody", "");							
+							listview.dataSource.read({pageId: source });
+						}					
 					}
 				});
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );				
-				$('.close[data-commentary-close]').click(function(){
-					
+				$('.close[data-commentary-close]').click(function(){					
 					$("body").css("overflow", "auto");
 					renderTo.fadeOut();
 				});
@@ -735,6 +762,7 @@
 									</label>
 									<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
 								</div>	
+								<div id="my-page-commentary-listview" ></div>
 							</section>
 						</div>
 					</div>				
@@ -967,7 +995,10 @@
 	</div>	
 	</script>	
 	
+	<script id="my-page-commentary-listview-template" type="text/x-kendo-template">
+		<div >#: name #</div>
 	
+	</script>	
 	
 	<script id="my-stream-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6  item" data-object-id="#=pageId#">
