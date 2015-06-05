@@ -104,12 +104,8 @@
 							'<@spring.url "/data/pages/comment.json?output=json"/>',
 							{
 								data : {
-									"objectType": objectType,
-									"objectId": objectId,
-									"text": text
+									objectType: objectType
 								},
-								dataType  : "html",
-								contentType : "application/json",
 								success : function(response){
 								},
 								complete : function(e){
