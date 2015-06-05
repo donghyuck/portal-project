@@ -1001,11 +1001,11 @@
 	
 	<script id="my-page-commentary-listview-template" type="text/x-kendo-template">
 		<div class="comment" >
-			<img class="comment-avatar" src="img/a4.jpg" alt="">
-			<div class="comment">
-				<a class="comment-author" href="#"> Karl Jordan </a>
+			<img class="author-image" src="img/a4.jpg" alt="">
+			<div class="content">
+				<a class="author" href="#"> Karl Jordan </a>
 				<span class="comment-date">  Fri Jan 25 2015 - 11:12:36 </span>
-				<span class="comment-content">
+				<span class="linked-text">
 					Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover.
 				</span>
 			</div>		
