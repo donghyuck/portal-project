@@ -109,7 +109,7 @@
 						serverSorting: false
 					},
 					template: kendo.template($("#my-page-commentary-listview-template").html()),
-					autoBind: false,./
+					autoBind: false,
 					dataBound: function(e){		
 						var elem = 	this.element.children();				
 					},
