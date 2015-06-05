@@ -643,7 +643,7 @@
 		// live data attribute 
 		$(document).on('DOMNodeInserted', '[data-start-gallery=true][data-ride=lightbox]', function(e){
 			var $this = $(this), config = {};
-			f($this.data("plugin-options")) {
+			if($this.data("plugin-options")) {
 				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, opts, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
