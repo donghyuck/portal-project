@@ -643,9 +643,10 @@
 
 .commentary  .comments  {
 	border : 0;	
+	background-color: transparent;
 }
 .commentary  .comments  .comment {
-	  padding: 10px 20px;	
+	padding: 10px 20px;	
 }
 
 .commentary  .comments  .comment > img.author-image {
