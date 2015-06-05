@@ -355,13 +355,13 @@
 			},
 			ipaddress : {
 				type : "string",
-				editable : true,
-				defaultValue : "INCOMPLETE"
+				editable : true
 			},
 			status : {
 				type : "string",
-				editable : true
-			}
+				editable : true,
+				defaultValue : "PUBLISHED"
+			},
 			modifiedDate : {
 				type : "date",
 				editable : true
