@@ -136,6 +136,10 @@
 	background-position: -225px -176px;
 }
 
+.personalized-controls .btn-flat.home {
+	background-position: -115px -124px;
+}
+
 .personalized-controls .btn-flat.t-0-r-1 {
 	top:0;
 	right: 60px;	
