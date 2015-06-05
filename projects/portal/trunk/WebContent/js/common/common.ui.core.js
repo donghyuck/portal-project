@@ -2389,7 +2389,7 @@
 									});									
 								});
 							}else if (imageOptions.isLightboxEnabled() && imageOptions.get("gallery") ){
-								var html = templates.lightboxGallery({'uid': uid});
+								var html = $( templates.lightboxGallery({'uid': uid}) );
 								$.each( active_my_selected.find("img"), function( index, value){							
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
