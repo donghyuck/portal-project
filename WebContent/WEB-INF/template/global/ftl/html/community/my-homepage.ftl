@@ -82,8 +82,7 @@
 		
 		var ONE_PIXEL_IMG_SRC_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42‌​mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
 		
-		function createMyPageCommentary(pageId){
-			
+		function createMyPageCommentary(pageId){			
 			var renderTo = $("#my-page-commentary");			
 			if( !renderTo.data("model") ){				
 				var listview = common.ui.listview($("#my-page-commentary-listview"), {
@@ -96,9 +95,8 @@
 						},
 						schema: {
 							total: "totalCount",
-							data: "comments"
-							/*,
-							model: common.ui.data.Page*/
+							data: "comments",
+							model: common.ui.data.Comment
 						},
 						selectable: false,
 						error:common.ui.handleAjaxError,
