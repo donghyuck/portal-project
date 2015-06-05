@@ -94,15 +94,31 @@
 					commentBody : "",
 					comment : function(e){
 						var $this = this;
+						btn = $(e.target);						
+						btn.button('loading');		
+						common.ui.ajax(
+							'<@spring.url "/data/pages/commnet.json?output=json"/>',
+							{
+								data : {
+									'objectType' : 31,
+									'objectId' : $this.set("pageId"),
+									'text' : $this.get("commentBody")
+								},
+								contentType : "application/json",
+								success : function(response){
+								},
+								complete : function(e){
+									$this.set("commentBody", "");
+									btn.button('reset');
+								}							
+						});										
 						
-						alert($this.commentBody) ;
-						$this.set("commentBody", "");
 						return false;						
 					},
 					setPage : function(source){
 						var $this = this;
 						if( typeof source == 'number'){
-							$this.set("pageId", source );
+							
 							var title = $(".item [data-action=view][data-object-id=" + source + "]").text();
 							var summary = $(".item[data-object-id=" + source + "]  .page-meta .page-description").text();
 							var coverImgEle = $(".item[data-object-id=" + source + "] .cover img");
@@ -112,6 +128,7 @@
 							}else{
 								$this.set( "coverPhotoUrl", ONE_PIXEL_IMG_SRC_DATA);
 							}							
+							$this.set("pageId", source );
 							$this.set("pageCreditHtml", pageCreditHtml);
 							$this.set("title", title);
 							$this.set("summary", summary);
@@ -711,7 +728,7 @@
 							<section>
 								<div class="separator-2"></div>
 								<div class="sky-form no-border">
-									<label class="textarea textarea-expandable">
+									<label class="textarea">
 										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
 									</label>
 									<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
