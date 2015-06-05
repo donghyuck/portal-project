@@ -108,6 +108,7 @@
 									"objectId": objectId,
 									"text": text
 								},
+								processData : false,
 								contentType : "application/json",
 								success : function(response){
 								},
