@@ -756,7 +756,7 @@
 							<h2 data-bind="text:title" class="headline"></h2>
 							<p data-bind="text:summary"></p>
 						</div>
-						<div class="ibox-content no-border">
+						<div class="ibox-content no-border bg-gray">
 							<div class="separator-2"></div>
 							<div class="sky-form no-border">
 									<label class="textarea">
@@ -766,7 +766,7 @@
 										<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
 									</div>
 							</div>									
-							<div id="my-page-commentary-listview" class="comments bg-gray">
+							<div id="my-page-commentary-listview" class="comments">
 							</div>
 						</div>
 					</div>				
