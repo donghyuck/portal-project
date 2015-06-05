@@ -94,6 +94,9 @@
 					commentBody : "",
 					comment : function(e){
 						var $this = this;
+						var objectType = 31;
+						var objectId = $this.get("pageId");
+						var text = $this.get("commentBody");
 						btn = $(e.target);						
 						btn.button('loading');		
 						
@@ -101,9 +104,9 @@
 							'<@spring.url "/data/pages/comment.json?output=json"/>',
 							{
 								data : {
-									objectType: 31,
-									objectId: $this.get("pageId"),
-									text: $this.get("commentBody")
+									objectType: objectType,
+									objectId: objectId,
+									text: text
 								},
 								contentType : "application/json",
 								success : function(response){
