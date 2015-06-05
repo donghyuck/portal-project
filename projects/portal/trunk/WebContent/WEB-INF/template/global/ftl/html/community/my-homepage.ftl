@@ -764,16 +764,15 @@
 									</label>
 									<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
 							</div>									
-							<div id="my-page-commentary-listview" class="comments">
+							<div id="my-page-commentary-listview" class="comments bg-gray">
 							</div>
 						</div>
 					</div>				
 				</div>
 			</div>	
 		</div>
-		
-		
-		<!-- END COMMENT SLIDE -->		
+		<!-- END COMMENT SLIDE -->	
+			
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
 				<!-- tab-v1 -->
