@@ -96,12 +96,13 @@
 						var $this = this;
 						btn = $(e.target);						
 						btn.button('loading');		
+						
 						common.ui.ajax(
 							'<@spring.url "/data/pages/comment.json?output=json"/>',
 							{
 								data : {
 									objectType: 31,
-									objectId: $this.set("pageId"),
+									objectId: $this.get("pageId"),
 									text: $this.get("commentBody")
 								},
 								contentType : "application/json",
