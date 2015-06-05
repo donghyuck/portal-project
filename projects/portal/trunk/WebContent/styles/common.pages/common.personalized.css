@@ -651,8 +651,8 @@
 .commentary  .comments  .comment > img.author-image {
 	float: left;
 	margin-right: 10px;
-	height: 48px;
-	width: 48px;
+	height: 30px;
+	width: 30px;
 	border: 1px solid #e7eaec;
 	border-radius: 50% !important;
 	margin-top: 1px;
