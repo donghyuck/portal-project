@@ -641,6 +641,48 @@
 	}
 }
 
+.commentary  .comments  {
+	border : 0;	
+}
+.commentary  .comments  .comment {
+	  padding: 10px 20px;	
+}
+
+.commentary  .comments  .comment > img.author-image {
+	float: left;
+	margin-right: 10px;
+	height: 48px;
+	width: 48px;
+	border: 1px solid #e7eaec;
+	border-radius: 50% !important;
+	margin-top: 1px;
+}
+
+.commentary  .comments  .comment >.content   {
+	text-align: left;
+	margin-left: 55px;
+	background-color: #fff;
+	border: 1px solid #e7eaec;
+	display: block;
+	padding: 10px 20px;
+	position: relative;
+	border-radius: 4px !important;
+}
+
+.commentary  .comments  .comment >.content  .author {
+  cursor: pointer;	
+} 
+
+.commentary  .comments  .comment >.content  .comment-date {
+  float: right;
+  font-size: 11px;
+  color: #888888;	
+}
+.commentary  .comments  .comment >.content  .linked-text {
+  display: block;
+  text-align: left;	
+}
+
 /**
  * Panel
  */
