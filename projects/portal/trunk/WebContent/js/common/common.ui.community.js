@@ -281,7 +281,7 @@
 			if (typeof this.get("user") === 'object' && this.get("user") != null)
 				return "/download/profile/" + this.get("user").username + "?width=150&height=150";
 			else
-				return "/images/common/no-avatar.png";
+				return "/images/common/anonymous.png";
 		},
 		formattedCreationDate : function() {
 			return kendo.toString(this.get("creationDate"), "F");
