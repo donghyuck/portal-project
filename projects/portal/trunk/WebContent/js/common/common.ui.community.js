@@ -268,6 +268,11 @@
 				editable : true,
 				defaultValue : 0
 			},
+			commentCount : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
 			modifiedDate : {
 				type : "date",
 				editable : true
@@ -296,6 +301,7 @@
 			target.set("objectType", this.get("objectType"));
 			target.set("objectId", this.get("objectId"));
 			target.set("versionId", this.get("versionId"));
+			target.set("commentCount", this.get("commentCount"));
 			target.set("viewCount", this.get("viewCount"));
 			target.set("title", this.get("title"));
 			target.set("name", this.get("name"));
