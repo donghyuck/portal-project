@@ -1924,7 +1924,7 @@
 				+ '</div>'	
 			),
 			lightboxGallery : template(
-				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="{ delegate: 'a' }" #if(uid){# data-uid="#=uid#" #}#></div>'
+				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="{ delegate: \"a\" }" #if(uid){# data-uid="#=uid#" #}#></div>'
 			),
 			lightboxGalleryImage : template (
 					'<a href="#= url #"><img src="#= thumbnaiUrll #" class="#= css #"></a>'	
