@@ -612,6 +612,7 @@
 			items:[] ,	
 			type:'image',	
 			mainClass: 	'mfp-no-margins mfp-with-zoom',
+			delegate: 'a', // the selector for gallery item
 			image: {
 				verticalFit: 	true
 			},
@@ -1924,7 +1925,7 @@
 				+ '</div>'	
 			),
 			lightboxGallery : template(
-				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="{ delegate: \"a\" }" #if(uid){# data-uid="#=uid#" #}#></div>'
+				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="#= pluginOptions #" #if(uid){# data-uid="#=uid#" #}# ></div>'
 			),
 			lightboxGalleryImage : template (
 					'<a href="#= url #"><img src="#= thumbnaiUrll #" class="#= css #"></a>'	
@@ -2390,7 +2391,7 @@
 								});
 							}else if (imageOptions.isLightboxEnabled() && imageOptions.get("gallery") ){
 								
-								var html = $( templates.lightboxGallery({'uid': uid}) );
+								var html = $( templates.lightboxGallery({'uid': uid, 'pluginOptions' : '{}'}) );
 								var count = 0;					
 								var total = active_my_selected.find("img").length;		
 								
