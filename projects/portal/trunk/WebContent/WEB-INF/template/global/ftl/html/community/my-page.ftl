@@ -643,9 +643,12 @@
 												<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
 												<li>|</li>
 												<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
-												<li>|</li>												
+												<li>|</li>
+												<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
+												<li>|</li>																								
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
 												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+												
 											</ul>  
 										</div>
 										<div class="tag-box tag-box-v4 no-margin-b">                    
@@ -944,6 +947,8 @@
 				<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
 				<li>|</li>
 				<li>조회수 : #: viewCount#</li>
+				<li>|</li>
+				<li>댓글 : #: commentCount#</li>				
 			</ul>                    
 			<p>#: summary #</p>
 			# if( getCurrentUser().userId === user.userId ) { # 	
