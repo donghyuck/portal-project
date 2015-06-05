@@ -108,7 +108,7 @@
 									"objectId": objectId,
 									"text": text
 								},
-								processData : false,
+								type : "POST",
 								contentType : "application/json",
 								success : function(response){
 								},
