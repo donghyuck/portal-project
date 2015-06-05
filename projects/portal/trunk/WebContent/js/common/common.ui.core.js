@@ -647,34 +647,10 @@
 				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, opts, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
-			}	
-			if( $this.data("selector") ){
-				config.items = [];
-				$.each( $($this.data("selector") ) , function( index , value ){
-					var $that = $(value);
-					if( $that.data("largesrc") ){
-						config.items.push({
-							src : $that.data("largesrc")
-						});						
-					}else{
-						if( $that.prop("tagName").toLowerCase() == "img" ){				
-							config.items.push({
-								src : $that.attr("src")
-							});			
-						}						
-					}
-				});								
-			}else{
-				if( $this.children("img").length > 0  ){
-					config.items = [];
-					$.each( $this.children("img"), function( index,  item){
-						config.items.push({
-							src : $(item).attr("src")
-						});
-					});	
-				}								
 			}
-			$.magnificPopup.open(config);
+			
+			$this.magnificPopup.open(config);
+		
 		} );
 				
 		// live click evnet ..
