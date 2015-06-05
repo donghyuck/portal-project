@@ -1006,7 +1006,7 @@
 		<div class="comment" >
 			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
 			<div class="content">
-				<a class="author" href="\\#">#if (user.anonymous ){# 손님 #}#</a>
+				<a class="author" href="\\#">#if ( name == null ){# 손님 #}else{# #: name # #}#</a>
 				<span class="comment-date">#: formattedCreationDate() #</span>
 				<span class="linked-text">
 					#: body #
