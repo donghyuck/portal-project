@@ -140,8 +140,9 @@
 				renderTo.data("model", observable);			
 				common.ui.bind( renderTo, observable );				
 				$('.close[data-commentary-close]').click(function(){
-					renderTo.fadeOut();
+					
 					$("body").css("overflow", "auto");
+					renderTo.fadeOut();
 				});
 			}			
 			if(renderTo.is(":hidden")){
