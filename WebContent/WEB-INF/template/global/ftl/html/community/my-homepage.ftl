@@ -762,7 +762,9 @@
 									<label class="textarea">
 										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
 									</label>
-									<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
+									<div class="text-right">
+										<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
+									</div>
 							</div>									
 							<div id="my-page-commentary-listview" class="comments bg-gray">
 							</div>
