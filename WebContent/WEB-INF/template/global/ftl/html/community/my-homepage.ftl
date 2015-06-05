@@ -742,7 +742,9 @@
 				</div>				
 			</div>
 		</div>	
-		<!-- END COMMENT SLIDE -->
+		
+		
+		<!-- START COMMENT SLIDE -->		
 		<div id="my-page-commentary" class="modal" style="background: rgba(0,0,0,0.4);">
 			<div class="commentary commentary-drawer">
 				<span class="btn-flat-icon close" data-commentary-close></span>
@@ -753,23 +755,24 @@
 							<img data-bind="attr:{ src:coverPhotoUrl }" class="img-responsive"></img>
 							<h2 data-bind="text:title" class="headline"></h2>
 							<p data-bind="text:summary"></p>
-							<section>
-								<div class="separator-2"></div>
-								<div class="sky-form no-border">
+						</div>
+						<div class="ibox-content no-border">
+							<div class="separator-2"></div>
+							<div class="sky-form no-border">
 									<label class="textarea">
 										<textarea rows="4" name="comment" placeholder="댓글" data-bind="value:commentBody"></textarea>
 									</label>
 									<button class="btn btn-flat btn-info btn-outline btn-xl" data-bind="click:comment">게시하기</button>
-								</div>									
-							</section>
-							<section>
-								<div id="my-page-commentary-listview" ></div>
-							</section>
+							</div>									
+							<div id="my-page-commentary-listview" class="comments">
+							</div>
 						</div>
 					</div>				
 				</div>
 			</div>	
 		</div>
+		
+		
 		<!-- END COMMENT SLIDE -->		
 			<!-- START RIGHT SLIDE MENU -->
 			<section class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right"  id="personalized-controls-section">		
@@ -997,7 +1000,16 @@
 	</script>	
 	
 	<script id="my-page-commentary-listview-template" type="text/x-kendo-template">
-		<div >#: body #</div>
+		<div class="comment" >
+			<img class="comment-avatar" src="img/a4.jpg" alt="">
+			<div class="comment">
+				<a class="comment-author" href="#"> Karl Jordan </a>
+				<span class="comment-date">  Fri Jan 25 2015 - 11:12:36 </span>
+				<span class="comment-content">
+					Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover.
+				</span>
+			</div>		
+		</div>
 	
 	</script>	
 	
