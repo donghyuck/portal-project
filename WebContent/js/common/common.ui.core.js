@@ -642,6 +642,13 @@
 			return false;
 		}		
 		// live data attribute 
+		$(document).on('DOMNodeInserted', function(e){
+			var $this = $(this), config = {};
+			
+			alert( $(e.target.nodeName) );
+			
+		});
+		
 		$(document).on('DOMNodeInserted', '[data-start-gallery=true][data-ride=lightbox]', function(e){
 			var $this = $(this), config = {};
 			if($this.data("plugin-options")) {
