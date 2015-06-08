@@ -138,7 +138,7 @@
 									listview.dataSource.read({pageId: $this.pageId });
 									
 									var numberString  = $('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').text();
-									var realNumber = Number(numberString);									
+									var realNumber = + numberString.replace(/,/g, '');							
 									$('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').html( realNumber++  );
 									
 								},
