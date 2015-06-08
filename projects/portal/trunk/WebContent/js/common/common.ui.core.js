@@ -657,7 +657,6 @@
 			
 			console.log( "============================" );
 			if( $this.children("a").length > 0  ){
-				cfg.items = [];
 				$.each( $this.children("a"), function( index,  item){
 					config.items.push({
 						src : $(item).attr("href")
