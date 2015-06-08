@@ -648,13 +648,12 @@
 				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
-			}			
-			alert(
-			$this.html()		
-			);
+			}	
+			
+			console.log( $this.text() );
 			
 			
-			$this.magnificPopup.open(config);
+			//$this.magnificPopup.open(config);
 		} );
 				
 		// live click evnet ..
