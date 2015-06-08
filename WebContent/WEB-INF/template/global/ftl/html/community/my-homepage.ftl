@@ -136,6 +136,11 @@
 								},
 								success : function(response){
 									listview.dataSource.read({pageId: $this.pageId });
+									
+									var numberString  = $('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').text();
+									var realNumber = Number(numberString);									
+									$('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').html( realNumber++  );
+									
 								},
 								complete : function(e){
 									$this.set("commentBody", "");
