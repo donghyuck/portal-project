@@ -468,7 +468,6 @@
 					},
 					"opened" : function(e){		
 						// update main listview
-						this.data().page.viewCount 
 						$('.item[data-object-id=' + this.data.page.pageId + '] .view-page-count').html( this.data().page.viewCount  );
 					},
 					"close":function(e){			
