@@ -649,6 +649,11 @@
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}			
+			alert(
+			$this.html()		
+			);
+			
+			
 			$this.magnificPopup.open(config);
 		} );
 				
@@ -693,13 +698,11 @@
 				}
 			}
 			$.magnificPopup.open(config);
-		} );	
-		
+		} );			
 	}
 
 
-	function spmenu(options){
-		
+	function spmenu(options){		
 		$(document).on("click","[data-feature-name='spmenu']", function(e){
 			var $this = $(this) , target_object ;
 			if( $this.prop("tagName").toLowerCase() == "a" ){			
