@@ -609,7 +609,6 @@
 			}	
 		};
 	var DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS = {
-			items:[] ,	
 			type:'image',	
 			mainClass: 	'mfp-no-margins mfp-with-zoom',
 			delegate: 'a', // the selector for gallery item
