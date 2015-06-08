@@ -80,7 +80,7 @@
 			msnry.layout();
 		}		
 		
-		var ONE_PIXEL_IMG_SRC_DATA = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42‌​mNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=";
+		var ONE_PIXEL_IMG_SRC_DATA = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 		
 		function createMyPageCommentary(pageId){			
 			var renderTo = $("#my-page-commentary");			
