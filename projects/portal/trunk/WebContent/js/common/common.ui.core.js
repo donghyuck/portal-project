@@ -652,18 +652,18 @@
 			*/
 			
 			var $this = $(e.target);
-			var config = {};
+			var cfg = {};
 			if($this.data("plugin-options")) {
-				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
+				cfg = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
 			}else{
-				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
+				cfg = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}	
 			
 			console.log( "============================" );
 			console.log( $this.html() );
 			console.log( "============================" );
 			
-			$this.magnificPopup.open(config);
+			$this.magnificPopup.open({});
 		} );
 				
 		// live click evnet ..
