@@ -135,14 +135,9 @@
 									text : $this.get("commentBody")
 								},
 								success : function(response){
+								
 									listview.dataSource.read({pageId: $this.pageId });
-									
-									var numberString  = $('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').text();
-									var realNumber = + numberString.replace(/,/g, '');							
-									
-									alert(realNumber);
-									
-									$('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').html( realNumber++  );
+~									$('.item[data-object-id=' + $this.pageId  + '] .comment-page-count').html( response.count  );
 									
 								},
 								complete : function(e){
