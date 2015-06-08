@@ -660,7 +660,7 @@
 			}	
 			
 			console.log( "============================" );
-			console.log( config.html() );
+			console.log( $this.html() );
 			console.log( "============================" );
 			
 			//$this.magnificPopup.open(config);
