@@ -597,7 +597,6 @@
 	}	
 	
 	var DEFAULT_LIGHTBOX_OPTIONS = {
-			items:[] ,	
 			type:'image',	
 			mainClass: 	'mfp-no-margins mfp-with-zoom',
 			image: {
@@ -609,13 +608,18 @@
 			}	
 		};
 	var DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS = {
-			items:[] ,	
+			delegate : 'a',
 			type:'image',	
 			mainClass: 	'mfp-with-zoom',
 			gallery: {
 				enabled: true,
 				navigateByImgClick: true
 			},
+			callbacks: {
+			    elementParse: function(item) {
+			    	console.log(item); 			    	
+			    }
+			}
 			zoom: {
 				enabled: true, // By default it's false, so don't forget to enable it
 			    duration: 300, // duration of the effect, in milliseconds
@@ -656,14 +660,14 @@
 			}	
 			
 			console.log( "============================" );
-			if( $this.children("a").length > 0  ){
+			/*if( $this.children("a").length > 0  ){
 				$.each( $this.children("a"), function( index,  item){
 					config.items.push({
 						src : $(item).attr("href")
 					});
 				});	
-			}
-			
+			}			
+			*/
 			$this.magnificPopup(cfg);
 		} );
 				
