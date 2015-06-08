@@ -609,6 +609,7 @@
 			}	
 		};
 	var DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS = {
+			delegate: 'a',
 			type:'image',	
 			mainClass: 	'mfp-with-zoom',
 			gallery: {
