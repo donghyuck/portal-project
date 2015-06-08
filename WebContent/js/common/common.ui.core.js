@@ -663,7 +663,7 @@
 			console.log( $this.html() );
 			console.log( "============================" );
 			
-			//$this.magnificPopup.open(config);
+			$this.magnificPopup.open(config);
 		} );
 				
 		// live click evnet ..
