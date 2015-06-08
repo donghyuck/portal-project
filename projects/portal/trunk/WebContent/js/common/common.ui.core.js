@@ -650,14 +650,20 @@
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}	
 			*/
+			
 			var $this = $(e.target);
 			var config = {};
 			if($this.data("plugin-options")) {
 				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
-			}				
-			$this.magnificPopup.open(config);
+			}	
+			
+			console.log( "============================" );
+			console.log( config.html() );
+			console.log( "============================" );
+			
+			//$this.magnificPopup.open(config);
 		} );
 				
 		// live click evnet ..
