@@ -467,7 +467,8 @@
 						renderTo.find(".dialog__content").css("overflow-y", "auto");
 					},
 					"opened" : function(e){		
-						
+						// update main listview
+						alert( kendo.stringify( this.data() ) );
 					},
 					"close":function(e){			
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");
