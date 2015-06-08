@@ -613,6 +613,7 @@
 			type:'image',	
 			mainClass: 	'mfp-no-margins mfp-with-zoom',
 			delegate: 'a', // the selector for gallery item
+			type: 'image',
 			image: {
 				verticalFit: 	true
 			},
