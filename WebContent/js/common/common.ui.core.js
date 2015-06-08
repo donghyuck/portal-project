@@ -642,21 +642,13 @@
 			return false;
 		}		
 		// live data attribute 
-		$(document).on('DOMNodeInserted', function(e){
-			var $this = $(this), config = {};
-			
-			alert( $(e.target.nodeName) );
-			
-		});
-		
 		$(document).on('DOMNodeInserted', '[data-start-gallery=true][data-ride=lightbox]', function(e){
 			var $this = $(this), config = {};
 			if($this.data("plugin-options")) {
-				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, opts, $this.data("plugin-options"));	
+				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
-			}
-			
+			}			
 			$this.magnificPopup.open(config);
 		} );
 				
@@ -664,11 +656,10 @@
 		$(document).on("click","[data-ride='lightbox']", function(e){					
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
-				config = extend({}, DEFAULT_LIGHTBOX_OPTIONS, opts, $this.data("plugin-options"));	
+				config = extend({}, DEFAULT_LIGHTBOX_OPTIONS, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_OPTIONS;
-			}	
-			
+			}
 			if( $this.data("selector") ){
 				config.items = [];
 				$.each( $($this.data("selector") ) , function( index , value ){
@@ -2064,10 +2055,8 @@
 					that.element.find('.modal-body ul.nav a:first').show();
 				}else{
 					that.element.find('.modal-body ul.nav a:first').hide();
-				}	
-				
-				that.element.find(".image-selected").html("");
-				
+				}					
+				that.element.find(".image-selected").html("");				
 				that.element.find(".modal-body ul.nav a").filter(function(){ 
 					if( that.objectId() > 0 ){
 						refreshListViewDataSource($("#"+ that.options.guid[0]));
@@ -2348,8 +2337,7 @@
 							var active_list_view =  active_pane.find(".image-listview");
 							var active_datasource = active_list_view.data('kendoListView').dataSource;		
 							var active_my_selected = active_pane.find(".image-selected");							
-							var uid = guid().toLowerCase() ;	
-							
+							var uid = guid().toLowerCase() ;								
 							if( imageOptions.isCarouselEnabled() ){
 								var carousel_template = kendo.template($('#image-broswer-photo-carousel-template').html());
 								var carousel_inner_template = kendo.template($("#image-broswer-photo-carousel-inner-template").html());						
@@ -2396,12 +2384,10 @@
 										}
 									});									
 								});
-							}else if (imageOptions.isLightboxEnabled() && imageOptions.get("gallery") ){
-								
+							}else if (imageOptions.isLightboxEnabled() && imageOptions.get("gallery") ){								
 								var html = $( templates.lightboxGallery({'uid': uid, 'pluginOptions' : '{}'}) );
 								var count = 0;					
-								var total = active_my_selected.find("img").length;		
-								
+								var total = active_my_selected.find("img").length;										
 								$.each( active_my_selected.find("img"), function( index, value){							
 									var objectEl = $(value);
 									var objectId = objectEl.data("id");
@@ -2431,8 +2417,7 @@
 									var objectId = objectEl.data("id");
 									var image = active_datasource.get(objectId);
 									if( image == null)
-										image = new common.ui.data.Image({imageId: objectId});
-									
+										image = new common.ui.data.Image({imageId: objectId});									
 									that._getImageLink(image, function(data){
 										if(!defined(data.error)){
 											that.trigger(APPLY, { 
