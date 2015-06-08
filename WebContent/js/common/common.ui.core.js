@@ -610,12 +610,7 @@
 		};
 	var DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS = {
 			type:'image',	
-			mainClass: 	'mfp-no-margins mfp-with-zoom',
-			delegate: 'a', // the selector for gallery item
-			type: 'image',
-			image: {
-				verticalFit: 	true
-			},
+			mainClass: 	'mfp-with-zoom',
 			gallery: {
 				enabled: true,
 				navigateByImgClick: true
