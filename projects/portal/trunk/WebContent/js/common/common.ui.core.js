@@ -643,22 +643,21 @@
 		}		
 		// live data attribute 
 		$(document).on('DOMNodeInserted', '[data-start-gallery=true][data-ride=lightbox]', function(e){
-			var $this = $(this), config = {};
+			/*var $this = $(this), config = {};
 			if($this.data("plugin-options")) {
 				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}	
-			
-			
-			var element = $(e.target);
-			
-			
-			console.log( "============================" );
-			console.log( element.html() );
-			console.log( "============================" );
-			
-			//$this.magnificPopup.open(config);
+			*/
+			var $this = $(e.target);
+			var config = {};
+			if($this.data("plugin-options")) {
+				config = extend({}, DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS, $this.data("plugin-options"));	
+			}else{
+				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
+			}				
+			$this.magnificPopup.open(config);
 		} );
 				
 		// live click evnet ..
