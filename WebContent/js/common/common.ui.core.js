@@ -609,7 +609,7 @@
 			}	
 		};
 	var DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS = {
-			delegate: 'a',
+			items:[] ,	
 			type:'image',	
 			mainClass: 	'mfp-with-zoom',
 			gallery: {
@@ -656,8 +656,14 @@
 			}	
 			
 			console.log( "============================" );
-			console.log( $this.html() );
-			console.log( "============================" );
+			if( $this.children("a").length > 0  ){
+				cfg.items = [];
+				$.each( $this.children("a"), function( index,  item){
+					config.items.push({
+						src : $(item).attr("href")
+					});
+				});	
+			}
 			
 			$this.magnificPopup(cfg);
 		} );
