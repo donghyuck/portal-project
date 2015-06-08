@@ -649,9 +649,9 @@
 			}else{
 				config = DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS;
 			}	
-			
+			console.log( "============================" );
 			console.log( $this.text() );
-			
+			console.log( "============================" );
 			
 			//$this.magnificPopup.open(config);
 		} );
