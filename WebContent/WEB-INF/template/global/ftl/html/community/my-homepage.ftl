@@ -468,7 +468,7 @@
 					},
 					"opened" : function(e){		
 						// update main listview
-						$('.item[data-object-id=' + this.data.page.pageId + '] .view-page-count').html( this.data().page.viewCount  );
+						$('.item[data-object-id=' + this.data().page.pageId + '] .view-page-count').html( this.data().page.viewCount  );
 					},
 					"close":function(e){			
 						renderTo.find(".dialog__content").css("overflow-y", "hidden");
