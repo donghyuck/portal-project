@@ -554,6 +554,9 @@
 			margin-bottom:50px;
 		}			
 		
+		.ibox-title.events {
+			  border-color: #ff2d55;
+		}
 		
 		</style>   	
 		</#compress>
@@ -1015,10 +1018,9 @@
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins">
-			<div class="ibox-title">
-                        <span class="label label-primary pull-right">Today</span>
-                        <h5>이벤트</h5>
-                    </div>
+			<div class="ibox-title events">
+				<h5>이벤트</h5>
+			</div>
 			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
 				#: subject #
 				<p><i class="fa fa-calendar"></i> <span class="text-muted">#:formattedStartDate()# ~ #:formattedEndDate()#</span></p>
