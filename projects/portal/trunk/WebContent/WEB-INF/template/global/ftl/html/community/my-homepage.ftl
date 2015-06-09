@@ -1014,49 +1014,6 @@
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 	<div class="col-md-4 col-sm-6  item">
-		
-		<div id="testimonials-4" class="carousel slide testimonials testimonials-v2 testimonials-bg-default">
-                            <div class="carousel-inner">
-                                <div class="item">
-                                    <p class="rounded-3x">Dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpaid est praesentium..</p>
-                                    <div class="testimonial-info">
-                                        <span class="testimonial-author">
-                                            Jeremy Asigner 
-                                            <em>Web Developer, Unify Theme.</em>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="item">
-                                    <p class="rounded-3x">Cras justo odio, dapibus ac facilisis into egestas. Dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupidinon..</p>
-                                    <div class="testimonial-info">
-                                        <span class="testimonial-author">
-                                            Bootstrap :) 
-                                            <em>Java Developer, Htmlstream</em>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="item active">
-                                    <p class="rounded-3x">Justo odioDignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique facilisis into egestas.</p>
-                                    <div class="testimonial-info">
-                                        <span class="testimonial-author">
-                                            Kate Davenport 
-                                            <em>Web Designer, Google Inc.</em>
-                                        </span>
-                                    </div>                                
-                                </div>
-                            </div>
-                            
-                            <div class="carousel-arrow">
-                                <a class="left carousel-control" href="\\#testimonials-4" data-slide="prev">
-                                    <i class="fa fa-angle-left rounded-x"></i>
-                                </a>
-                                <a class="right carousel-control" href="\\#testimonials-4" data-slide="next">
-                                    <i class="fa fa-angle-right rounded-x"></i>
-                                </a>
-                            </div>
-                        </div>
-                        
-
 		<div class="ibox float-e-margins">
 			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
 				#: subject #
@@ -1072,8 +1029,10 @@
 				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
 				<span class="comment-date">#: formattedCreationDate() #</span>
 				<span class="linked-text">
+					
 					#: body #
-					<small>#: formattedCreationDate() #</small>
+					
+					<p><i class="fa fa-calendar"></i> <span class="text-muted">formattedStartDate ~ formattedEndDate</span></p>
 				</span>
 			</div>		
 		</div>
