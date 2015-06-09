@@ -77,12 +77,22 @@
 		
 		function createMyAnnouncement(renderTo, msnry){
 			var template = kendo.template($('#announce-listview-item-template').html());
-			var elem = $(template({})); //$(kendo.render( template, {}));	
-			
-			alert( elem.html() );
-			renderTo.prepend(elem);
-			msnry.prepended( elem );
-			msnry.layout();
+			common.ui.datasource(	'<@spring.url "/data/announce/list.json"/>',	{
+				schema: {
+					data : "announces",
+					model : common.ui.data.Announce,
+						total : "totalCount"
+					},
+				pageSize: 5											
+			}).fetch(function(){
+				var data = this.data();
+				$.each( data , function( index , item ){
+					var elem = $(template( item ));			
+					renderTo.prepend(elem);
+					msnry.prepended( elem );
+				});
+				msnry.layout();
+			});
 		}		
 		
 		var ONE_PIXEL_IMG_SRC_DATA = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
