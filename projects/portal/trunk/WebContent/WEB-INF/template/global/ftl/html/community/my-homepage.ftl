@@ -1017,7 +1017,7 @@
 		<div class="ibox float-e-margins">
 			<div class="ibox-title">
                         <span class="label label-primary pull-right">Today</span>
-                        <h5>Vistits</h5>
+                        <h5>이벤트</h5>
                     </div>
 			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
 				#: subject #
