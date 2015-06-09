@@ -26,7 +26,7 @@
 			'<@spring.url "/js/jquery.easing/jquery.easing.1.3.js"/>',		
 			'<@spring.url "/js/jquery.bxslider/jquery.bxslider.min.js"/>',
 			'<@spring.url "/js/jquery.magnific-popup/jquery.magnific-popup.js"/>',		
-			'<@spring.url "/js/jquery.masonry/masonry.pkgd.min.js"/>',			
+			'<@spring.url "/js/jquery.masonry/masonry.pkgd.min.js"/>',		
 			'<@spring.url "/js/imagesloaded/imagesloaded.pkgd.min.js"/>',		
 			'<@spring.url "/js/kendo/kendo.web.min.js"/>',
 			'<@spring.url "/js/kendo.extension/kendo.ko_KR.js"/>',			
@@ -1015,8 +1015,13 @@
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+                        <span class="label label-primary pull-right">Today</span>
+                        <h5>Vistits</h5>
+                    </div>
 			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
 				#: subject #
+				<p><i class="fa fa-calendar"></i> <span class="text-muted">formattedStartDate ~ formattedEndDate</span></p>
 			</div>
 		</div>
 	</div>	
@@ -1029,10 +1034,8 @@
 				<span class="author">#if ( name == null ){# 손님 #}else{# #: name # #}#</span>
 				<span class="comment-date">#: formattedCreationDate() #</span>
 				<span class="linked-text">
-					
 					#: body #
-					
-					<p><i class="fa fa-calendar"></i> <span class="text-muted">formattedStartDate ~ formattedEndDate</span></p>
+					<small>#: formattedCreationDate() #</small>
 				</span>
 			</div>		
 		</div>
