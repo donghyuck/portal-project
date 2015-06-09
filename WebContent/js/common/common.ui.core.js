@@ -668,7 +668,7 @@
 		} );
 				
 		// live click evnet ..
-		$(document).on("click","[data-ride='lightbox']", function(e){					
+		$(document).on("click","[data-toggle='lightbox']", function(e){					
 			var $this = $(this), config = {};				
 			if($this.data("plugin-options")) {
 				config = extend({}, DEFAULT_LIGHTBOX_OPTIONS, $this.data("plugin-options"));	
