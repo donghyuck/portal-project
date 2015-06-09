@@ -1017,6 +1017,10 @@
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins">
+			<div class="ibox-title">
+				<span class="label label-primary pull-right">Today</span>
+				<h5>이벤트</h5>
+			</div>
 			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
 				#: subject #
 			</div>
