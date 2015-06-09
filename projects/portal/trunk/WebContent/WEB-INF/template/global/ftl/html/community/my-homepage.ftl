@@ -1032,6 +1032,7 @@
 				<span class="comment-date">#: formattedCreationDate() #</span>
 				<span class="linked-text">
 					#: body #
+					<small>#: formattedCreationDate() #</small>
 				</span>
 			</div>		
 		</div>
