@@ -1021,7 +1021,7 @@
                     </div>
 			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
 				#: subject #
-				<p><i class="fa fa-calendar"></i> <span class="text-muted">formattedStartDate ~ formattedEndDate</span></p>
+				<p><i class="fa fa-calendar"></i> <span class="text-muted">#:formattedStartDate()# ~ #:formattedEndDate()#</span></p>
 			</div>
 		</div>
 	</div>	
@@ -1035,7 +1035,6 @@
 				<span class="comment-date">#: formattedCreationDate() #</span>
 				<span class="linked-text">
 					#: body #
-					<small>#: formattedCreationDate() #</small>
 				</span>
 			</div>		
 		</div>
