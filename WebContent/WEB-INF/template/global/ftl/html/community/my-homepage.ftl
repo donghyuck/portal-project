@@ -68,7 +68,6 @@
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 
 				createMyPageListView();
-				createMyAnnouncement();
 			}
 		}]);			
 
@@ -194,7 +193,10 @@
 					itemSelector: '.item',
 					isAnimated: true
 				});
-				var msnry = renderTo.data('masonry');								
+				
+				var msnry = renderTo.data('masonry');				
+				createMyAnnouncement(renderTo, msnry);
+								
 				var dataSource = new kendo.data.DataSource({				
 						transport: { 
 							read: { url:'<@spring.url "/data/pages/published/list.json?output=json"/>', type: 'POST' },
@@ -232,7 +234,7 @@
 							}
 						}				
 				});
-				createMyAnnouncement(renderTo, msnry);
+				
 				dataSource.fetch();
 				$( "button[data-action=more]").click(function(){
 					var $btn = $(this).button('loading')
