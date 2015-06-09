@@ -68,6 +68,7 @@
 				$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");			
 				// END SCRIPT 
 				createMyPageListView();
+				createMyAnnouncement();
 			}
 		}]);			
 
