@@ -231,7 +231,7 @@
 						change: function(e) {
 							var data = this.data();
 							var $btn = $( "button[data-action=more]");
-							var template = kendo.template($('#my-stream-item-template').html());		
+							var template = kendo.template($('#my-page-listview-item-template').html());		
 							var elem = $(kendo.render(template, data));							
 							elem.imagesLoaded(function(){
 								renderTo.append( elem );		
@@ -1013,11 +1013,12 @@
 	</div>
 	<div class="notice-grid no-border-hr no-border-b" style="min-height: 300px"></div>
 	</script>		
+	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins">
 			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
-				ehllo
+				#: subject #
 			</div>
 		</div>
 	</div>	
@@ -1037,7 +1038,7 @@
 	
 	</script>	
 	
-	<script id="my-stream-item-template" type="text/x-kendo-template">
+	<script id="my-page-listview-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6  item" data-object-id="#=pageId#">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title cover">
