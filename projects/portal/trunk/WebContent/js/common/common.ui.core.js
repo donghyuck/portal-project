@@ -1939,7 +1939,7 @@
 				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="#= pluginOptions #" #if(uid){# data-uid="#=uid#" #}# ></div>'
 			),
 			lightboxGalleryImage : template (
-					'<a href="#: url #" ><img src="#= thumbnaiUrll #" class="#= css #"></a>'	
+					'<a href="#: url #" ><img src="#if(thumbnai){##= thumbnaiUrll ##}else{##=url##}#" class="#= css #"></a>'	
 			),
 			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
@@ -2413,8 +2413,9 @@
 													templates.lightboxGalleryImage({ 
 														uid: uid, 
 														url: templates.linkUrl( data ),	
+														thumbnail : imageOptions.get('thumbnail'),
 														thumbnaiUrll : objectEl.attr('src'),
-														css : "img-responsive" 
+														css : "" 
 													})		
 											);
 											count ++ ;		
