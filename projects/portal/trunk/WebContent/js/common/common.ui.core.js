@@ -610,27 +610,23 @@
 	var DEFAULT_LIGHTBOX_WITH_ZOOM_OPTIONS = {
 			delegate : 'a',
 			type:'image',	
-			mainClass: 	'mfp-with-zoom',
-			gallery: {
-				enabled: true,
-				navigateByImgClick: true
-			},/*
-			callbacks: {
-				elementParse: function(item) {
-					console.log(item);
+			closeOnContentClick: false,
+			closeBtnInside: false,
+			mainClass: 'mfp-with-zoom mfp-img-mobile',
+			image: {
+				verticalFit: true,
+				titleSrc: function(item) {
+					return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
 				}
-			},*/
+			},
+			gallery: {
+				enabled: true
+			},
 			zoom: {
-				enabled: true, // By default it's false, so don't forget to enable it
-				duration: 300, // duration of the effect, in milliseconds
-				easing: 'ease-in-out', // CSS transition easing function 
-			    // The "opener" function should return the element from which popup will be zoomed in
-			    // and to which popup will be scaled down
-			    // By defailt it looks for an image tag:
-				opener: function(openerElement) {
-			      // openerElement is the element on which popup was initialized, in this case its <a> tag
-			      // you don't need to add "opener" option if this code matches your needs, it's defailt one.
-					return openerElement.is('img') ? openerElement : openerElement.find('img');
+				enabled: true,
+				duration: 300, // don't foget to change the duration also in CSS
+				opener: function(element) {
+					return element.find('img');
 				}
 			}
 		};
