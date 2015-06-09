@@ -1939,7 +1939,7 @@
 				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="#= pluginOptions #" #if(uid){# data-uid="#=uid#" #}# ></div>'
 			),
 			lightboxGalleryImage : template (
-					'<a href="#: url #" ><img src="#if(thumbnail){##= thumbnaiUrll ##}else{##=url##}#" class="#= css #"></a>'	
+					'<a href="#: url #" class="fancybox img-hover-v1"><img src="#if(thumbnail){##= thumbnaiUrll ##}else{##=url##}#" class="#= css #"></a>'	
 			),
 			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
