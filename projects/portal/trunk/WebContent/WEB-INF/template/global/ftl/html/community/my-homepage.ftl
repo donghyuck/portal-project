@@ -1016,7 +1016,8 @@
 	
 	<script type="text/x-kendo-template" id="announce-listview-item-template">	
 	<div class="col-md-4 col-sm-6  item">
-<div id="testimonials-4" class="carousel slide testimonials testimonials-v2 testimonials-bg-default">
+		
+		<div id="testimonials-4" class="carousel slide testimonials testimonials-v2 testimonials-bg-default">
                             <div class="carousel-inner">
                                 <div class="item">
                                     <p class="rounded-3x">Dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpaid est praesentium..</p>
@@ -1048,10 +1049,10 @@
                             </div>
                             
                             <div class="carousel-arrow">
-                                <a class="left carousel-control" href="#testimonials-4" data-slide="prev">
+                                <a class="left carousel-control" href="\\#testimonials-4" data-slide="prev">
                                     <i class="fa fa-angle-left rounded-x"></i>
                                 </a>
-                                <a class="right carousel-control" href="#testimonials-4" data-slide="next">
+                                <a class="right carousel-control" href="\\#testimonials-4" data-slide="next">
                                     <i class="fa fa-angle-right rounded-x"></i>
                                 </a>
                             </div>
