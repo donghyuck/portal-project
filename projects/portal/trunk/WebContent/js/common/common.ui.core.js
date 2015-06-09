@@ -1943,7 +1943,7 @@
 				'<div class="gallery" data-ride="lightbox" data-start-gallery="true" data-plugin-options="#= pluginOptions #" #if(uid){# data-uid="#=uid#" #}# ></div>'
 			),
 			lightboxGalleryImage : template (
-					'<a href="\\#" data-mfp-src="#= url #" ><img src="#= thumbnaiUrll #" class="#= css #"></a>'	
+					'<a href="#= url #" ><img src="#= thumbnaiUrll #" class="#= css #"></a>'	
 			),
 			image : template('<img src="#: url #" class="#= css #" #if(lightbox){# data-ride="lightbox" #}# #if(gallery){# data-gallery #}#  #if(uid){# data-uid="#=uid#" #}#  />'),
 			linkUrl : template('/download/image/#= linkId #'),
