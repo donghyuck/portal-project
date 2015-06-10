@@ -1053,10 +1053,10 @@
 	<script type="text/x-kendo-template" id="announce-listview-template">	
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins events">
-			<div class="ibox-title">
+			<div class="ibox-title bg-gray">
 				<h5>이벤트</h5>
 			</div>
-			<div class="ibox-content">
+			<div class="ibox-content bg-gray">
 				<ul class="list-unstyled m-l-sm"></ul>
 			</div>
 		</div>
@@ -1081,8 +1081,7 @@
 					#: body #
 				</span>
 			</div>		
-		</div>
-	
+		</div>	
 	</script>	
 	<!-- ============================== -->
 	<!-- page template                                        -->
