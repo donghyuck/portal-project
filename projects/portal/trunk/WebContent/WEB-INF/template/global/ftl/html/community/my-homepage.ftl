@@ -563,8 +563,28 @@
 			margin-bottom:50px;
 		}			
 		
-		.ibox-title.events {
+		/* Announce */
+		.ibox.events .ibox-title {
 			  border-color: #ff2d55;
+		}
+
+		.ibox.events ul li {
+			padding: 8px 0;
+			border-top: 1px solid #353535;
+		}
+		
+		.ibox.events ul li:first-child {
+			padding-top: 0;
+			border-top: none;
+		}
+		
+		.ibox.events ul li a {
+			color: #8e8e93;
+		}
+		
+		.ibox.events ul small {
+			color: #999;
+			display: block;
 		}
 		
 		</style>   	
