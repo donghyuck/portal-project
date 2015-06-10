@@ -74,7 +74,9 @@
 		}
 		
 		function createMyAnnouncement(renderTo, msnry){
-			var template = kendo.template($('#announce-listview-item-template').html());
+			
+			var elem = $($('#announce-listview-template').html());
+			var template = kendo.template($('#announce-listview-item-template').html());			
 			common.ui.datasource(	'<@spring.url "/data/announce/list.json"/>',	{
 				schema: {
 					data : "announces",
@@ -84,11 +86,18 @@
 				pageSize: 5											
 			}).fetch(function(){
 				var data = this.data();
+				elem.find('ul').html( kendo.render(template, this.view()) );
+				/*				
 				$.each( data , function( index , item ){
 					var elem = $(template( item ));			
 					renderTo.prepend(elem);
 					msnry.prepended( elem );
 				});
+				*/
+				
+				renderTo.prepend(elem);
+				msnry.prepended( elem );				
+				
 				msnry.layout();
 			});
 		}		
@@ -1014,21 +1023,30 @@
 	</div>
 	<div class="notice-grid no-border-hr no-border-b" style="min-height: 300px"></div>
 	</script>		
-	
-	<script type="text/x-kendo-template" id="announce-listview-item-template">	
+	<!-- ============================== -->
+	<!-- announce / events template                       -->
+	<!-- ============================== -->	
+	<script type="text/x-kendo-template" id="announce-listview-template">	
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins">
 			<div class="ibox-title events">
 				<h5>이벤트</h5>
 			</div>
-			<div class="ibox-content paddinig-sm bg-sky" style="display: block;">
-				#: subject #
-				<p><i class="fa fa-calendar"></i> <span class="text-muted">#:formattedStartDate()# ~ #:formattedEndDate()#</span></p>
+			<div class="ibox-content">
+				<ul class="list-unstyled m-l-sm"></ul>
 			</div>
 		</div>
 	</div>	
 	</script>	
-	
+	<script type="text/x-kendo-template" id="announce-listview-item-template">	
+	<li>
+		<a href="javascript:common.redirect('<@spring.url "/display/0/events.html" />', { announceId :#= announceId # }, 'get' );"><i class="fa fa-angle-right"></i> #:subject# </a>
+		<small>#: formattedModifiedDate() #</small>
+	</li>
+	</script>	
+	<!-- ============================== -->
+	<!-- commentary template                                        -->
+	<!-- ============================== -->	
 	<script id="my-page-commentary-listview-template" type="text/x-kendo-template">
 		<div class="comment" >
 			<img class="author-image" src="#=authorPhotoUrl()#" alt="">
@@ -1042,7 +1060,9 @@
 		</div>
 	
 	</script>	
-	
+	<!-- ============================== -->
+	<!-- page template                                        -->
+	<!-- ============================== -->	
 	<script id="my-page-listview-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6  item" data-object-id="#=pageId#">
 		<div class="ibox float-e-margins">
