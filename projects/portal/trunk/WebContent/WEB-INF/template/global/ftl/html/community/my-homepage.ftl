@@ -1054,7 +1054,7 @@
 	<div class="col-md-4 col-sm-6  item">
 		<div class="ibox float-e-margins events">
 			<div class="ibox-title bg-gray">
-				<h5>이벤트</h5>
+				<i class="icon-flat mega-phone m-b-n-sm"></i>
 			</div>
 			<div class="ibox-content bg-gray">
 				<ul class="list-unstyled m-l-sm"></ul>
