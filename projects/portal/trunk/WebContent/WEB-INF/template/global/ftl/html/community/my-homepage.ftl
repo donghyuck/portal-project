@@ -563,7 +563,11 @@
 			margin-bottom:50px;
 		}			
 		
-		/* Announce */
+		/* iBox */
+		.ibox.follow .ibox-title {
+			  border-color: #007aff;
+		}
+
 		.ibox.events .ibox-title {
 			  border-color: #ff2d55;
 		}
@@ -1085,7 +1089,7 @@
 	<!-- ============================== -->	
 	<script id="my-page-listview-item-template" type="text/x-kendo-template">
 	<div class="col-md-4 col-sm-6  item" data-object-id="#=pageId#">
-		<div class="ibox float-e-margins">
+		<div class="ibox float-e-margins #if( getCurrentUser().userId != user.userId ) { # follow#}#">
 			<div class="ibox-title cover">
 			#if( bodyContent.imageCount > 0 ){#
 			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
