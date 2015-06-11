@@ -1108,7 +1108,7 @@
 							<li>|</li>
 							<li><span>버전:</span> #: versionId #</li>
 							<li>|</li>
-							<li><span>조회수:</span> <span class="view-page-count">#: viewCount #<span></li>
+							<li><span>조회수:</span> <span class="view-page-count">#: viewCount #</span></li>
 							<li>|</li>
 							<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
 					</ul>
