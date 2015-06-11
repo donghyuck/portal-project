@@ -685,6 +685,10 @@
 					                                <textarea rows="4"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
 					                            </label>
 					                        </section>
+					                        <section>
+												<label class="label">태그</label>	
+					                            <label class="input col-sm-6"><input type="text" name="tags" placeholder="태그"></label>
+					                        </section>
 											<section>
 					                            <label class="label">출처</label>
 					                            <div class="inline-group">
