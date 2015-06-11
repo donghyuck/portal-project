@@ -463,15 +463,15 @@
 							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
 						}
 						
-						if( $this.page.properties.source ){
-							$this.pageSource = $this.page.properties.source;
+						if( that.page.properties.source ){
+							that.pageSource = that.page.properties.source;
 						}else{
-							$this.pageSource = "";
+							that.pageSource = "";
 						} 
-						if( $this.page.properties.url ){
-							$this.pageSourceUrl = $this.page.properties.url;
+						if( that.page.properties.url ){
+							that.pageSourceUrl = that.page.properties.url;
 						}else{
-							$this.pageSourceUrl = "";
+							that.pageSourceUrl = "";
 						}						
 						if( that.page.pageId  > 0 ) {
 							that.set("advencedSetting", true);
