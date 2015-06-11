@@ -981,6 +981,7 @@
 				<li>|</li>
 				<li>댓글 : #: commentCount#</li>				
 			</ul>                    
+			<p><i class="fa fa-tags"></i> #: tagsString #</p>
 			<p>#: summary #</p>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right">
