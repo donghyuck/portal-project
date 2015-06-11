@@ -685,21 +685,31 @@
 					                                <textarea rows="4"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
 					                            </label>
 					                        </section>
-					                        <section>
-												<label class="label">태그</label>	
-					                            <label class="input col-sm-6"><input type="text" name="tags" placeholder="태그"></label>
-					                        </section>
 											<section>
-					                            <label class="label">출처</label>
-					                            <div class="inline-group">
-					                                <label class="input col-sm-6">
-					                                    <input type="text" name="source" placeholder="출처"></label>
-					                                <label class="input col-sm-6">
-					                                    <input type="text" name="url" placeholder="URL"></label>					                                
-					                            </div>
-					                            <div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div>       
-					                        </section>
-					                        <section>
+												<label class="label">테그</label>
+												<label class="input">
+													<i class="icon-append fa fa-tag"></i>
+													<input type="text" name="tags">
+												</label>
+												<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
+											</section>
+											<section>
+												<label class="label">출처</label>
+												<div class="row">
+													<section class="col col-6">
+														<label class="input">
+															<input type="text" name="source" placeholder="출처"/>
+														</label>
+														<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>
+													<section class="col col-6">
+														<label class="input">
+															<i class="icon-append fa fa-globe"></i>
+															<input type="text" name="url" placeholder="URL"></label>
+														</label>
+													</section>
+												</div>
+											</section>											
+											<section>
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
