@@ -462,18 +462,15 @@
 						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
 							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
 						}
-						alert( kendo.stringify(that.page.properties) );
 						if( that.page.properties.source ){
-							that.pageSource = that.page.properties.source;
-							alert( 1 );
+							that.set('pageSource', that.page.properties.source);
 						}else{
-							that.pageSource = "";
-							alert( 2 );
+							that.set('pageSource', "");
 						} 
 						if( that.page.properties.url ){
-							that.pageSourceUrl = that.page.properties.url;
+							that.set('pageSourceUrl', that.page.properties.url);
 						}else{
-							that.pageSourceUrl = "";
+							that.set('pageSourceUrl', "");
 						}						
 						if( that.page.pageId  > 0 ) {
 							that.set("advencedSetting", true);
