@@ -462,6 +462,17 @@
 						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
 							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
 						}
+						
+						if( $this.page.properties.source ){
+							$this.pageSource = $this.page.properties.source;
+						}else{
+							$this.pageSource = "";
+						} 
+						if( $this.page.properties.url ){
+							$this.pageSourceUrl = $this.page.properties.url;
+						}else{
+							$this.pageSourceUrl = "";
+						}						
 						if( that.page.pageId  > 0 ) {
 							that.set("advencedSetting", true);
 							that.properties.read();
