@@ -1108,7 +1108,7 @@
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
 			<div class="page-meta no-margin-hr">
-				#if ( showTags.length > 0 ){#
+				#if ( tagsString.length > 0 ){#
 				<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
 				#}#
 				<p class="page-description">#: summary #</p>
