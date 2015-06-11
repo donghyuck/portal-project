@@ -273,6 +273,11 @@
 				editable : true,
 				defaultValue : 0
 			},
+			tagsString : {
+				type : "string",
+				editable : true,
+				defaultValue : ""
+			},
 			modifiedDate : {
 				type : "date",
 				editable : true
