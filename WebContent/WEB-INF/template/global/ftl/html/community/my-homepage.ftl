@@ -289,6 +289,7 @@
 					editable : false,
 					advencedSetting : false,
 					useWrapMode : false,
+					shwoTags : false,
 					useWrap : function(e){
 						var $this = this;
 						if( $this.get('editable') )
@@ -482,6 +483,10 @@
 						} else {
 							that.set("advencedSetting", false);
 						}	
+						if( that.page.tagsString.length > 0 )
+							that.set("shwoTags", true);
+						else 
+							that.set("shwoTags", false);	
 					}
 				});		
 				
@@ -659,7 +664,7 @@
 												<li>|</li>
 												<li><i class="fa fa-comments-o"></i> (<span data-bind="{ text: page.commentCount }"></span>)</li>
 												<li>|</li>
-												<li><i class="fa fa-tags"></i> <span data-bind="text:page.tagsString"></span></li>
+												<li data-bind="visible:shwoTags"><i class="fa fa-tags"></i> <span data-bind="text:page.tagsString"></span></li>
 												<li>|</li>
 												<li>생성일: <span data-bind="{ text: page.formattedCreationDate }"></span></li>
 												<li>최종수정: <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
