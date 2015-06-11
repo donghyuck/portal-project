@@ -249,6 +249,8 @@
 			if( ! common.ui.exists(renderTo) ){
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
+					pageSource : "",
+					pageSourceUrl : "",
 					editable : false,
 					advencedSetting : false,
 					useWrapMode : false,
@@ -361,14 +363,21 @@
 						btn.button('loading');					
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();				
 						$this.validate();
-						var source_title = $("#my-page-options input[name=source]").val();
-						var source_link = $("#my-page-options input[name=url]").val();
-						if( source_title.length > 0 ){
-							$this.page.properties.source = source_title;
+						
+						//var source_title = $("#my-page-options input[name=source]").val();
+						//var source_link = $("#my-page-options input[name=url]").val();
+						
+						if( $this.pageSource.length > 0 ){
+							$this.page.properties.source = $this.pageSource;
 						} 
-						if( source_link.length > 0 ){
-							$this.page.properties.url = source_link;
+						if( $this.pageSourceUrl.length > 0 ){
+							$this.page.properties.url = $this.pageSourceUrl;
 						}
+						
+						if( $this.page.tagsString.length > 0 ){
+							$this.page.properties.tagsString = $this.page.tagsString;
+						} 
+						
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
@@ -394,15 +403,13 @@
 						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
 						$this.validate();						
 						
-						var source_title = $("#my-page-options input[name=source]").val();
-						var source_link = $("#my-page-options input[name=url]").val();
-						if( source_title.length > 0 ){
-							$this.page.properties.source = source_title;
+						if( $this.pageSource.length > 0 ){
+							$this.page.properties.source = $this.pageSource;
 						} 
-						if( source_link.length > 0 ){
-							$this.page.properties.url = source_link;
+						if( $this.pageSourceUrl.length > 0 ){
+							$this.page.properties.url = $this.pageSourceUrl;
 						}
-												
+						$this.page.properties.tagsString = $this.page.tagsString;
 						common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
@@ -689,7 +696,7 @@
 												<label class="label">테그</label>
 												<label class="input">
 													<i class="icon-append fa fa-tag"></i>
-													<input type="text" name="tags">
+													<input type="text" name="tags" data-bind="value:page.tagsString">
 												</label>
 												<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
 											</section>
@@ -698,13 +705,13 @@
 												<div class="row">
 													<section class="col col-6">
 														<label class="input">
-															<input type="text" name="source" placeholder="출처"/>
+															<input type="text" name="source" placeholder="출처" data-bind="value: pageSource"/>
 														</label>
 														<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>
 													<section class="col col-6">
 														<label class="input">
 															<i class="icon-append fa fa-globe"></i>
-															<input type="text" name="url" placeholder="URL"></label>
+															<input type="text" name="url" placeholder="URL" data-bind="value: pageSourceUrl"></label>
 														</label>
 													</section>
 												</div>
