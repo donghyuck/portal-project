@@ -463,7 +463,7 @@
 							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
 						}
 						alert( kendo.stringify(that.page) );
-						if( that.page.properties.source ){
+						if( that.page.properties.source.properties ){
 							that.pageSource = that.page.properties.source;
 						}else{
 							that.pageSource = "";
