@@ -462,7 +462,7 @@
 						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
 							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
 						}
-						alert( kendo.stringify(that.page) ):
+						alert( kendo.stringify(that.page) );
 						if( that.page.properties.source ){
 							that.pageSource = that.page.properties.source;
 						}else{
