@@ -657,10 +657,10 @@
 												<li>|</li>
 												<li>조회수: <span data-bind="{ text: page.viewCount }"></span></li>
 												<li>|</li>
-												<li>댓글: <span data-bind="{ text: page.commentCount }"></span></li>
+												<li><i class="fa fa-comments-o"></i> (<span data-bind="{ text: page.commentCount }"></span>)</li>
 												<li>|</li>
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+												<li>생성일: <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+												<li>최종수정: <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
 											</ul>  
 										</div>
 										<div class="summary tag-box tag-box-v4 no-margin-b">                    
