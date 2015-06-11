@@ -465,8 +465,10 @@
 						alert( kendo.stringify(that.page.properties) );
 						if( that.page.properties.source ){
 							that.pageSource = that.page.properties.source;
+							alert( 1 );
 						}else{
 							that.pageSource = "";
+							alert( 2 );
 						} 
 						if( that.page.properties.url ){
 							that.pageSourceUrl = that.page.properties.url;
