@@ -1100,18 +1100,20 @@
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
 			<div class="page-meta no-margin-hr">
+				<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
 				<p class="page-description">#: summary #</p>
 				<p class="page-description">
-				<ul class="list-inline grid-boxes-news">
-						<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
-						<li>|</li>
-						<li><span>버전:</span> #: versionId #</li>
-						<li>|</li>
-						<li><span>조회수:</span> <span class="view-page-count">#: viewCount #<span></li>
-						<li>|</li>
-						<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
-				</ul>
+					<ul class="list-inline grid-boxes-news">
+							<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
+							<li>|</li>
+							<li><span>버전:</span> #: versionId #</li>
+							<li>|</li>
+							<li><span>조회수:</span> <span class="view-page-count">#: viewCount #<span></li>
+							<li>|</li>
+							<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
+					</ul>
 				</p>
+				
 			</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right hidden">
