@@ -331,6 +331,9 @@
 				target.properties = this.get("properties");
 			else
 				target.properties = {};
+			
+			if(this.get('tagsString'))
+				target.set('tagsString', this.get('tagsString'));
 		}
 	});
 	
