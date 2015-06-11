@@ -1108,7 +1108,9 @@
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
 			<div class="page-meta no-margin-hr">
+				#if ( shwoTags.length > 0 ){#
 				<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
+				#}#
 				<p class="page-description">#: summary #</p>
 				<p class="page-description">
 					<ul class="list-inline grid-boxes-news">
