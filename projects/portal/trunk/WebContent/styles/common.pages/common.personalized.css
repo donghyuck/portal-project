@@ -2363,7 +2363,7 @@ padding: 5px;
 
 .ibox-content  .tag-box.summary  {	
 	  color: #A7AEB3;
-	  font-weight: bold;
+	  font-weight: normal;
 	  font-size: 1.15em;
 	  line-height: 1.6;  	
 }
