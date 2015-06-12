@@ -956,28 +956,28 @@
 									<div class="row">
 										<div class="col-md-4">
 											<h4><i class="fa fa-angle-right"></i> 소유자</h4>
-											<div class="btn-group" data-toggle="buttons" id="attachment-source-list">
-												<label class="btn btn-danger rounded-left active">
+											<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-source-list">
+												<label class="btn btn-danger btn-flat rounded-left active">
 													<input type="radio" name="attachment-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
 												</label>
-												<label class="btn  btn-danger">
+												<label class="btn  btn-danger btn-flat">
 													<input type="radio" name="attachment-source"  value="30"><i class="fa fa-globe"></i> SITE
 												</label>											
-												<label class="btn btn-danger rounded-right">
+												<label class="btn btn-danger btn-flat rounded-right">
 													<input type="radio" name="attachment-source"  value="1"><i class="fa fa-building-o"></i> COMPANY
 												</label>
 											</div>												
 										</div>
 										<div class="col-md-4">
 											<h4><i class="fa fa-angle-right"></i> 필터</h4>
-											<div class="btn-group" data-toggle="buttons" id="attachment-list-filter">
-												<label class="btn btn-info  rounded-left active">
+											<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
+												<label class="btn btn-info btn-flat  rounded-left active">
 													<input type="radio" name="attachment-list-view-filters"  value="all"> 전체 (<span data-bind="text: totalAttachCount"></span>)
 												</label>
-												<label class="btn btn-info">
+												<label class="btn btn-info btn-flat">
 													<input type="radio" name="attachment-list-view-filters"  value="image"><i class="fa fa-filter"></i> 이미지
 												</label>
-												<label class="btn btn-info rounded-right">
+												<label class="btn btn-info btn-flat rounded-right">
 													<input type="radio" name="attachment-list-view-filters"  value="file"><i class="fa fa-filter"></i> 파일
 												</label>	
 											</div>								
