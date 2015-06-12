@@ -1062,7 +1062,7 @@
 									<div class="row" >
 										<div class="col-sm-8">
 											<h4><i class="fa fa-angle-right"></i> 소유자</h4>
-											<div class="btn-group" data-toggle="buttons" id="image-source-list">
+											<div class="btn-group btn-group-sm" data-toggle="buttons" id="image-source-list">
 												<label class="btn btn-danger rounded-left active">
 													<input type="radio" name="image-source"  value="2" checked="checked"><i class="fa fa-user"></i> ME
 												</label>
