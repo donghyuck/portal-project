@@ -110,7 +110,10 @@
 						pageSize: 15,
 						serverPaging: true,
 						serverFiltering: false,
-						serverSorting: false
+						serverSorting: false,
+						filter: {
+							field: "pageState", operator: "eq", value: "PUBLISHED"
+						}
 					},
 					template: kendo.template($("#my-page-listview-template").html()),
 					dataBound: function(e){		
@@ -604,7 +607,7 @@
 													<input type="radio" name="page-list-view-filters"  value="ALL"> 전체 </span>)
 												</label>
 												<label class="btn btn-success active">
-													<input type="radio" name="page-list-view-filters"  value="PUBLISHED" checked><i class="fa fa-filter"></i> PUBLISHED
+													<input type="radio" name="page-list-view-filters"  value="PUBLISHED"><i class="fa fa-filter"></i> PUBLISHED
 												</label><!--
 												<label class="btn btn-success">
 													<input type="radio" name="page-list-view-filters"  value="ARCHIVED"><i class="fa fa-filter"></i> ARCHIVED
