@@ -618,7 +618,7 @@
 								</section>															
 							</div>
 							<div class="col col-md-3 text-right">
-								<button type="button" class="btn btn-danger btn-lg btn-flat rounded-2x btn-outline" 
+								<button type="button" class="btn btn-info btn-lg btn-flat rounded-2x btn-outline" 
 									data-container="body" 
 									data-toggle="popover" 
 									data-placement="left" 
