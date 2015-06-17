@@ -2385,6 +2385,23 @@ padding: 5px;
   }
 
 /** ------------------------------------------------- */
+/** buttons				                                       */
+/** ------------------------------------------------- */
+.footer-buttons-wrapper{
+  bottom: 14px;
+  position: fixed;
+  right: 14px;
+  z-index: 680;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+.footer-buttons {
+	position: relative;
+}
+
+
+
+/** ------------------------------------------------- */
 /** Magnific Popup                                         */
 /** ------------------------------------------------- */
 
