@@ -643,7 +643,7 @@
 				</div>				
 				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">
 					<div id="my-page-listview" class="row"></div>
-					<div id="my-page-pager" class="bg-flat-gray p-sm"></div>
+					<div id="my-page-pager" class="no-border"></div>
 				</article>					
 			</div>		
 			<!-- ./END MAIN CONTENT -->		 		
