@@ -588,7 +588,7 @@
 					<button class="btn-link" type="button" id="dropdown-menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="icon-flat icon-flat pencil"></i></button>
 					<ul class="dropdown-menu" aria-labelledby="dropdown-menu1">
 						<li><a href="#">페이지 만들기</a></li>
-						<li><a href="#">설문 만들기</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#my-poll-modal">설문 만들기</a></li>
 						<li><a href="#">이벤트 & 공지 만들기</a></li>
 						<li class="disabled"><a href="#">장소 공유하기</a></li>
 						<li class="disabled"><a href="#">북마크 만들기 </a></li>
@@ -649,8 +649,26 @@
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
 			<!-- ./END FOOTER -->					
-		</div>				
-		
+		</div>			
+			
+<!-- Modal -->
+<div class="modal fade" id="my-poll-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>		
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
