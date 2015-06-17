@@ -40,11 +40,10 @@
 			'<@spring.url "/js/ace/ace.js"/>',
 			'<@spring.url "/js/common.pages/common.code-editor.js"/>'
 			],			
-			complete: function() {		
-				
+			complete: function() {						
 				common.ui.setup({
 					features:{
-						wallpaper : true,
+						wallpaper : false,
 						lightbox : true,
 						spmenu : false,
 						morphing : true,
@@ -55,10 +54,7 @@
 								}
 							} 
 						}						
-					},
-					wallpaper : {
-						renderTo:$(".breadcrumbs-v3")
-					},	
+					}
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD			
