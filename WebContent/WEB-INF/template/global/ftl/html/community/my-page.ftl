@@ -658,7 +658,7 @@
 <div class="ibox float-e-margins">
                                     <div class="ibox-title">
                                         <h5>Transactions worldwide</h5>
-<span class="close" data-dialog-close=""></span>
+<span class="close" data-dialog-close="" data-dismiss="modal" aria-label="Close"></span>
                                     </div>
                                     <div class="ibox-content">
 
