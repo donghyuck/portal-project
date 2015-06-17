@@ -836,7 +836,7 @@
 		</div>	
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="col-md-3 col-sm-6  item" style="display:none;" data-object-id="#=pageId#">
+	<div class="col-md-3 col-sm-4  item" style="display:none;" data-object-id="#=pageId#">
 	<div class="ibox float-e-margins">
 		<div class="ibox-title cover">
 		#if( bodyContent.imageCount > 0 ){#
