@@ -661,13 +661,65 @@
 						<!--<span class="close" data-dialog-close="" data-dismiss="modal" aria-label="Close"></span>-->
 						<span class="hvr-pulse-shrink" data-modal-settings><i class="icon-flat icon-flat settings"></i></span>
 					</div>
-					<div class="ibox-content">
-						<div class="row">
-							<div class="col-lg-6">
-							</div>
-							<div class="col-lg-6">
-							</div>
-						</div>
+					<div class="ibox-content no-padding">
+<form action="#" class="sky-form no-border">
+                            
+                            
+                            <fieldset>                  
+                                
+                                
+                                <section>
+                                    <label class="input">
+                                        
+                                        <input type="text" name="title" placeholder="제목">
+                                        
+                                    </label>
+                                </section>
+                                
+                                <section>
+                            <label class="textarea">
+                                <textarea rows="3" name="info" placeholder="설명"></textarea>
+                            </label>
+                        </section>
+                                
+                                
+                            </fieldset>
+                                
+                            <fieldset>
+                                <div class="row">
+                                    <section class="col col-6">
+                                        <label class="input">
+                                            <input type="text" name="firstname" placeholder="First name">
+                                        </label>
+                                    </section>
+                                    <section class="col col-6">
+                                        <label class="input">
+                                            <input type="text" name="lastname" placeholder="Last name">
+                                        </label>
+                                    </section>
+                                </div>
+                                
+                                <section>
+                                    <label class="select">
+                                        <select name="gender">
+                                            <option value="0" selected="" disabled="">Gender</option>
+                                            <option value="1">Male</option>
+                                            <option value="2">Female</option>
+                                            <option value="3">Other</option>
+                                        </select>
+                                        <i></i>
+                                    </label>
+                                </section>
+                                
+                                <section>
+                                    <label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
+                                    <label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>
+                                </section>
+                            </fieldset>
+                            <footer>
+                                <button type="submit" class="btn-u">확인</button>
+                            </footer>
+                        </form>
 					</div>
 				</div>
 			</div>
