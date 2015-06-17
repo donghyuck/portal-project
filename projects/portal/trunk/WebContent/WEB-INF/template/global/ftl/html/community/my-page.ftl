@@ -658,14 +658,7 @@
 <div class="ibox float-e-margins">
                                     <div class="ibox-title">
                                         <h5>Transactions worldwide</h5>
-                                        <div class="ibox-tools">
-                                            <a class="collapse-link">
-                                                <i class="fa fa-chevron-up"></i>
-                                            </a>
-                                            <a class="close-link">
-                                                <i class="fa fa-times"></i>
-                                            </a>
-                                        </div>
+<span class="close" data-dialog-close=""></span>
                                     </div>
                                     <div class="ibox-content">
 
