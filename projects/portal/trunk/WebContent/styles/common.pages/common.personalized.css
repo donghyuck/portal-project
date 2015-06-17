@@ -2298,7 +2298,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	text-align: inherit;
 }
 
-.dialog__content .close {
+.dialog__content .close , .modal-dialog .close  {
 	position: absolute;
 	top: 0;
 	right: 15px;
@@ -2316,7 +2316,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	z-index: 1047;
 }
 
-.dialog__content .close:hover {
+.dialog__content .close:hover, .modal-dialog .close:hover {
 	opacity: 1;
 }
 
@@ -2408,6 +2408,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	-webkit-animation-name: fadeInUp;
 	animation-name: fadeInUp;
 }
+
 
 /** ------------------------------------------------- */
 /** Magnific Popup                                         */
