@@ -1114,7 +1114,7 @@
 				<p class="page-description">#: summary #</p>
 				<p class="page-description">
 					<ul class="list-inline grid-boxes-news">
-							<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
+							<li>#: kendo.toString( modifiedDate , "D") #</li>
 							<li>|</li>
 							<li><span>버전:</span> #: versionId #</li>
 							<li>|</li>
