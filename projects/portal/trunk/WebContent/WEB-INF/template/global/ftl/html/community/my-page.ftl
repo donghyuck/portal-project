@@ -853,9 +853,9 @@
 				<li>|</li>
 				<li>#: kendo.toString( modifiedDate , "D") #</li>
 				<li>|</li>
-				<li>조회수 : #: viewCount#</li>
+				<li><i class="fa fa-eye"></i> #: viewCount#</li>
 				<li>|</li>
-				<li>댓글 : #: commentCount#</li>				
+				<li><i class="fa fa-comment-o"></i> #: commentCount#</li>				
 			</ul>        
 			#if ( tagsString.length > 0 ){#            
 			<p><i class="fa fa-tags"></i> #: tagsString #</p>
