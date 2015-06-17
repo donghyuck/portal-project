@@ -15,9 +15,7 @@
 			'css!<@spring.url "/styles/bootstrap.themes/unify/colors/blue.css"/>',
 			'css!<@spring.url "/styles/jquery.magnific-popup/magnific-popup.css"/>',
 			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.buttons.css"/>',		
-			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',									
-			'css!<@spring.url "/styles/codrops/codrops.cbp-spmenu.css"/>',
-			'css!<@spring.url "/styles/codrops/codrops.morphing.css"/>',	
+			'css!<@spring.url "/styles/bootstrap.themes/common/common.ui.inspinia.css"/>',
 			'css!<@spring.url "/styles/codrops/codrops.dialog.css"/>',		
 			'css!<@spring.url "/styles/codrops/codrops.dialog-sally.css"/>',					
 			'css!<@spring.url "/styles/common/common.flat-icons.css"/>',		
@@ -46,7 +44,7 @@
 						wallpaper : true,
 						lightbox : true,
 						spmenu : false,
-						morphing : true,
+						morphing : false,
 						accounts : {
 							authenticate : function(e){
 								e.token.copy(currentUser);
