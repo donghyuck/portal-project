@@ -54,7 +54,7 @@
 								}
 							} 
 						}						
-					}
+					},
 					jobs:jobs
 				});				
 				// ACCOUNTS LOAD			
