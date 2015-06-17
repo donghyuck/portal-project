@@ -588,7 +588,7 @@
 			<div class="footer-buttons-wrapper">
 				<div class="footer-buttons">
 					<button class="btn-link"><i class="icon-flat icon-flat pencil"></i></button>
-					<button class="btn-link"><i class="icon-flat icon-flat home"></i></button>
+					<button class="btn-link"><i class="icon-flat icon-flat settings"></i></button>
 				</div>
 			</div>			
 			<!-- START MAIN CONTENT -->
