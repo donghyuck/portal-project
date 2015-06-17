@@ -659,9 +659,61 @@
 					<div class="ibox-title">
 						<span class="text-primary"><i class="fa fa-info"></i> 설문 </span>
 						<!--<span class="close" data-dialog-close="" data-dismiss="modal" aria-label="Close"></span>-->
-						<span class="hvr-pulse-shrink" data-modal-settings><i class="icon-flat icon-flat settings"></i></span>
+						<span class="hvr-pulse-shrink" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
 					</div>
 					<div class="ibox-content no-padding">
+					
+<form id="my-poll-modal-settings" action="#" class="sky-form collapse" style="position: absolute; width: 300px; z-index: 400; top: -1px; left: 0px; border-top-style: solid; border-top-width: 3px; border-top-color: rgb(142, 142, 147); height: 4px;" aria-expanded="false">
+						<header>
+							이미지 스타일 옵션
+							<span class="btn-up btn-up-gray btn-md"></span>
+						</header>
+                    <fieldset>                  
+                        <section>
+                        	<div class="separator-2"></div>
+                            <label class="label">Template</label>
+                            <label class="textarea textarea-expandable">
+                                <textarea rows="3" name="image-custom-template"></textarea>
+                            </label>
+                            <div class="note"><strong>Note:</strong> 템플릿 설정의 주의가 필요합니다.</div>
+                            <label class="label">Style</label>
+                            <label class="textarea textarea-expandable">
+                                <textarea rows="2" name="image-custom-css"></textarea>
+                            </label>
+                            <div class="note"><strong>Note:</strong> expands on focus.</div>                            
+                        </section>
+                    </fieldset>
+                    <fieldset>
+                        <section>
+                            <label class="label">Effect</label>
+                            <div class="inline-group">	
+                                <label class="radio"><input type="radio" name="image-radio-effect" value="none" checked=""><i class="rounded-x"></i>None</label>
+                                <label class="radio"><input type="radio" name="image-radio-effect" value="lightbox"><i class="rounded-x"></i>Lightbox</label>
+                                <label class="radio"><input type="radio" name="image-radio-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
+                            </div>
+                        </section>
+                    </fieldset>       
+                    <fieldset>
+                        <section>
+                            <label class="label">Effect Options</label>
+                            <div class="inline-group">
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>                                
+                                <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
+                            </div>
+                        </section>
+						<section>
+                            <label class="label">Size</label>
+                            <div class="inline-group">
+                                <label class="input col-sm-6">
+                                    <input type="text" name="width" placeholder="Width"></label>
+                                <label class="input col-sm-6">
+                                    <input type="text" name="height" placeholder="Height"></label>
+                                
+                            </div>
+                        </section>
+                    </fieldset>                                 
+					</form>
+										
 <form action="#" class="sky-form no-border">
                             
                             
