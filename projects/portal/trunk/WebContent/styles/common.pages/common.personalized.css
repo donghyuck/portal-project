@@ -2337,6 +2337,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	height: 65px;
 }
 
+.modal-dialog .ibox-title [data-modal-settings] {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+	cursor: pointer;
+	display:block;
+}
+
 .dialog .ace_editor {
 	display: none;
 }
