@@ -651,29 +651,25 @@
 			<!-- ./END FOOTER -->					
 		</div>			
 			
-<!-- Modal -->
-<div class="modal fade" id="my-poll-modal" tabindex="-1" role="dialog" aria-labelledby="my-poll-modal">
-  <div class="modal-dialog" role="document">
-
-<div class="ibox float-e-margins">
-                                    <div class="ibox-title">
-                                        <h5>Transactions worldwide</h5>
-<span class="close" data-dialog-close="" data-dismiss="modal" aria-label="Close"></span>
-                                    </div>
-                                    <div class="ibox-content">
-
-                                        <div class="row">
-                                            <div class="col-lg-6">
-                                                
-                                            </div>
-                                            <div class="col-lg-6">
-                                                
-                                            </div>
-                                    </div>
-                                    </div>
-                                </div>
-  </div>
-</div>		
+		<!-- Modal -->
+		<div class="modal fade" id="my-poll-modal" tabindex="-1" role="dialog" aria-labelledby="my-poll-modal">
+			<div class="modal-dialog" role="document">
+				<div class="ibox float-e-margins">
+					<div class="ibox-title">
+						<h5>설문</h5>
+						<span class="close" data-dialog-close="" data-dismiss="modal" aria-label="Close"></span>
+					</div>
+					<div class="ibox-content">
+						<div class="row">
+							<div class="col-lg-6">
+							</div>
+							<div class="col-lg-6">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>		
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
 			<div class="dialog__overlay"></div>
 			<div class="dialog__content">
