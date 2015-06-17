@@ -589,8 +589,8 @@
 					<ul class="dropdown-menu" aria-labelledby="dropdown-menu1">
 						<li><a href="#">새 페이지 만들기</a></li>
 						<li><a href="#">사진 업로드하기</a></li>
-						<li><a href="#">장소 공유하기</a></li>
-						<li><a href="#">북마크 만들기 </a></li>
+						<li class="disabled"><a href="#">장소 공유하기</a></li>
+						<li class="disabled"><a href="#">북마크 만들기 </a></li>
 					</ul>					
 					</div>
 					<button class="btn-link"><i class="icon-flat icon-flat settings"></i></button>
