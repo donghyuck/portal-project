@@ -851,13 +851,15 @@
 			<ul class="list-inline">
 				<li>#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 				<li>|</li>
-				<li><i class="fa fa-clock-o"></i> #: kendo.toString( modifiedDate , "D") #</li>
+				<li>#: kendo.toString( modifiedDate , "D") #</li>
 				<li>|</li>
 				<li>조회수 : #: viewCount#</li>
 				<li>|</li>
 				<li>댓글 : #: commentCount#</li>				
-			</ul>                    
+			</ul>        
+			#if ( tagsString.length > 0 ){#            
 			<p><i class="fa fa-tags"></i> #: tagsString #</p>
+			#}#
 			<p>#: summary #</p>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right">
