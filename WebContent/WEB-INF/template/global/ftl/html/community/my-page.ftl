@@ -836,13 +836,15 @@
 		</div>	
 	<!-- START TEMPLATE -->				
 	<script id="my-page-listview-template" type="text/x-kendo-template">
-	<div class="col-md-3 col-sm-6  item" style="display:none;">
+	<div class="col-md-3 col-sm-6  item" style="display:none;" data-object-id="#=pageId#">
 	<div class="ibox float-e-margins">
+		<div class="ibox-title cover">
 		#if( bodyContent.imageCount > 0 ){#
 		<div class="cover" ><img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt=""></div>
 		#}#
-		<div class="ibox-content ibox-title">
-			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+		#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+		</div>
+		<div class="ibox-content ibox-title">			
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
 			<h2 class="text-muted">#:title#</a></h2>
 			#}#
