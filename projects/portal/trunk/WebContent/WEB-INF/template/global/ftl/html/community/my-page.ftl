@@ -657,7 +657,7 @@
 			<div class="modal-dialog" role="document">
 				<div class="ibox float-e-margins">
 					<div class="ibox-title">
-						<span class="text-danger"><i class="fa fa-info"></i> 설문 </span>
+						<span class="text-primary"><i class="fa fa-info"></i> 설문 </span>
 						<!--<span class="close" data-dialog-close="" data-dismiss="modal" aria-label="Close"></span>-->
 						<span class="hvr-pulse-shrink" data-modal-settings><i class="icon-flat icon-flat settings"></i></span>
 					</div>
