@@ -558,6 +558,10 @@
 			overflow: hidden;	
 		}
 		
+		.footer-buttons-wrapper {
+			width: 40px;
+			right: 24px;		
+		}
 		</style>   	
 		</#compress>
 	</head>
@@ -580,6 +584,13 @@
 					</div><!--/end container-->
 			</div>
 			</#if>	
+			
+			<div class="footer-buttons-wrapper">
+				<div class="footer-buttons">
+					<button class="btn-link"><i class="icon-flat icon-flat pencil"></i></button>
+					<button class="btn-link"><i class="icon-flat icon-flat home"></i></button>
+				</div>
+			</div>			
 			<!-- START MAIN CONTENT -->
 			<div class="container content">			
 				<div class="sky-form no-border">
@@ -618,16 +629,7 @@
 								</section>															
 							</div>
 							<div class="col col-md-3 text-right">
-								<button type="button" class="btn btn-info btn-lg btn-flat rounded-2x btn-outline" 
-									data-container="body" 
-									data-toggle="popover" 
-									data-placement="left" 
-									data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." >
-									<span class="fa fa-plus fa-lg"></span>
-								</button>
-
-								
-								<button type="button" class="btn btn-danger btn-lg btn-outline btn-flat" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
+									<button type="button" class="btn btn-danger btn-lg btn-outline btn-flat" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
 							</div>
 						</div>	
 					</fieldset>
