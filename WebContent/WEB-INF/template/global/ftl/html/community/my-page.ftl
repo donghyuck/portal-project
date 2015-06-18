@@ -786,6 +786,10 @@
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
 								<form id="my-page-dialog-settings" action="#" class="sky-form dialog-settings collapse" aria-expanded="false">
+									<header>
+										옵션
+										<span class="btn-up btn-up-gray btn-md" data-toggle="collapse" data-target="#my-page-dialog-settings" aria-expanded="false" aria-controls="my-page-dialog-settings"></span>
+									</header>
 									<fieldset>                  
 										<section>
 											<div class="separator-2"></div>
