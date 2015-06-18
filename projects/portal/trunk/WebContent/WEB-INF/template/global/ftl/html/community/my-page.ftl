@@ -724,18 +724,15 @@
 							<fieldset>    
 								<section>
 									<label class="input">
-										<input type="text" name="title" placeholder="제목">
+										<input type="text" name="name" placeholder="제목">
 									</label>
 								</section>
 								<section>
 									<label class="textarea textarea-expandable">
-										<textarea rows="3" name="description"></textarea>
+										<textarea rows="3" name="description" placeholder="설문내용"></textarea>
 									</label>
 								</section>
-                                
-                                
-                            </fieldset>
-                                
+							</fieldset>
                             <fieldset>
                                 <div class="row">
                                     <section class="col col-6">
