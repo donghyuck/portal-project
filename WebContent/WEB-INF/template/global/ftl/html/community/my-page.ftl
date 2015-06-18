@@ -788,9 +788,10 @@
 									<div class="ibox-tools m-r-lg" data-bind="invisible:editable">
 										<button type="button" class="btn btn-deafult btn-flat btn-outline btn-sm rounded" data-bind="click:exportPdf" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-file-pdf-o"></i> PDF</button>
 									</div>
-									<span class="hvr-pulse-shrink collapsed" data-dialog-settings style="right:65px;" data-toggle="collapse" data-target="#my-page-dialog-settings" area-expanded="false" aria-controls="my-page-dialog-settings"><i class="icon-flat icon-flat settings"></i></span>
-			                        <span class="close" data-dialog-close></span>					
-			                    </div>
+									<span class="hvr-pulse-shrink" data-dialog-settings data-export="pdf" style="right:110px;" data-bind="{invisible:editable, click:exportPdf}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" ><i class="icon-flat icon-flat disk"></i></span> 
+									<span class="hvr-pulse-shrink collapsed" data-dialog-settings style="right:65px;" data-toggle="collapse" data-target="#my-page-dialog-settings" area-expanded="false" aria-controls="my-page-dialog-settings"><i class="icon-flat icon-flat settings"></i></span> 
+									<span class="close" data-dialog-close></span>					
+								</div>
 								<form id="my-page-dialog-settings" action="#" class="sky-form dialog-settings collapse" aria-expanded="false">
 									<header>
 										옵션
