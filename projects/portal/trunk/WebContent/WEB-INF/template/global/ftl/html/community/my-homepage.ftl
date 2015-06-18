@@ -1059,7 +1059,7 @@
 	<!-- announce / events template                       -->
 	<!-- ============================== -->	
 	<script type="text/x-kendo-template" id="announce-listview-template">	
-	<div class="col-md-4 col-sm-6  item">
+	<div class="col-md-3 col-sm-4  item">
 		<div class="ibox float-e-margins events">
 			<div class="ibox-title bg-gray">
 				<i class="icon-flat mega-phone m-b-n-sm"></i>
