@@ -714,23 +714,18 @@
 							</fieldset>                                 
 						</form>
 						<!-- /.options forms -->			
-							<form action="#" class="sky-form no-border">                            
-                            <fieldset>                  
-                                
-                                
-                                <section>
-                                    <label class="input">
-                                        
-                                        <input type="text" name="title" placeholder="제목">
-                                        
-                                    </label>
-                                </section>
-                                
-                                <section>
-                            <label class="textarea">
-                                <textarea rows="3" name="info" placeholder="설명"></textarea>
-                            </label>
-                        </section>
+						<form action="#" class="sky-form no-border">                            
+							<fieldset>    
+								<section>
+									<label class="input">
+										<input type="text" name="title" placeholder="제목">
+									</label>
+								</section>
+								<section>
+									<label class="textarea textarea-expandable">
+										<textarea rows="3" name="description"></textarea>
+									</label>
+								</section>
                                 
                                 
                             </fieldset>
