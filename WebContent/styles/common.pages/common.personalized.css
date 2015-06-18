@@ -2337,7 +2337,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	height: 65px;
 }
 
-.dialog__content .ibox-title [data-modal-settings] , .modal-dialog .ibox-title [data-modal-settings] {
+.dialog__content .ibox-title [data-modal-settings] , .modal-dialog .ibox-title [data-dialog-settings] {
 	position: absolute;
 	right: 10px;
 	top: 20px;
@@ -2345,7 +2345,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	display:block;
 }
 
-.modal-dialog .modal-settings , .dialog__content .modal-settings{
+.modal-dialog .modal-settings , .dialog__content .dialog-settings{
 	position: absolute;
 	min-width: 400px;
 	z-index: 400;
