@@ -929,11 +929,7 @@
 										</div>		
 										-->									
 									</fieldset>
-									<fieldset data-bind="visible:advencedSetting">			
-											<div class="row">
-												<div class="col-md-9"></div>
-												
-											</div>										
+									<fieldset data-bind="visible:advencedSetting">											
 												<div class="tab-v1">
 													<div role="tabpanel">
 														<!-- Nav tabs -->													
