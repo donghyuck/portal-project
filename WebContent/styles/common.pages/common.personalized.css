@@ -2345,7 +2345,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	display:block;
 }
 
-.modal-dialog .modal-settings {
+.modal-dialog .modal-settings , .dialog__content .modal-settings{
 	position: absolute;
 	min-width: 400px;
 	z-index: 400;
