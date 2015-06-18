@@ -786,38 +786,47 @@
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
 								<form id="my-page-dialog-settings" action="#" class="sky-form dialog-settings collapse" aria-expanded="false">
-										<fieldset>                  
-					                        <section>
-					                        	<div class="separator-2"></div>
-					                            <label class="textarea textarea-expandable">
-					                                <textarea rows="4"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
-					                            </label>
-					                        </section>
-											<section>
-												<label class="label">테그</label>
-												<label class="input">
-													<i class="icon-append fa fa-tag"></i>
-													<input type="text" name="tags" data-bind="value:page.tagsString">
-												</label>
-												<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
-											</section>
-											<section>
-												<label class="label">출처</label>
-												<div class="row">
-													<section class="col col-6">
-														<label class="input">
-															<input type="text" name="source" placeholder="출처" data-bind="value: pageSource"/>
-														</label>
-														<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>
-													<section class="col col-6">
-														<label class="input">
-															<i class="icon-append fa fa-globe"></i>
-															<input type="text" name="url" placeholder="URL" data-bind="value: pageSourceUrl"></label>
-														</label>
-													</section>
-												</div>
-											</section>											
-											<section>
+									<fieldset>                  
+										<section>
+											<div class="separator-2"></div>
+											<label class="label">요약</label>	
+											<label class="textarea textarea-expandable">
+												<textarea rows="4"  name="summary" placeholder="요약" data-bind="value: page.summary"></textarea>
+											</label>
+										</section>
+										<section>
+											<label class="label">테그</label>
+											<label class="input">
+												<i class="icon-append fa fa-tag"></i>
+												<input type="text" name="tags" data-bind="value:page.tagsString">
+											</label>
+											<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
+										</section>
+										<section>
+											<label class="label">출처</label>
+											<label class="input">
+												<input type="text" name="source" placeholder="출처" data-bind="value: pageSource"/>
+											</label>
+											<label class="input">
+												<i class="icon-append fa fa-globe"></i>
+												<input type="text" name="url" placeholder="URL" data-bind="value: pageSourceUrl"></label>
+											</label>			
+											<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>																		
+										</section>											
+										<section data-bind="visible:advencedSetting">
+											<label class="label">파일</label>
+											<label class="input">
+												<i class="icon-prepend fa fa-file-text-o"></i>
+												<input type="text" name="name" placeholder="파일 이름" data-bind="value: page.name">
+											</label>
+											<label class="input">
+												<i class="icon-prepend fa fa-file-code-o"></i>
+												<input type="text" name="template" placeholder="템플릿">
+											</label>
+											<div class="note"><strong>Note:</strong>파일이름과 템플릿을 정보를 설정합니다.</div>
+										</section>
+										
+										<section>
 														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
@@ -831,16 +840,10 @@
 																	<div class="panel-body">
 																	파일이름 과 템플릿 파일을 정보를 설정합니다.
 																	<section>
-																		<label class="input">
-																				<i class="icon-prepend fa fa-file-text-o"></i>
-																				<input type="text" name="name" placeholder="파일" data-bind="value: page.name">
-																			</label>
+																		
 																	</section>																										
 																	<section>
-																		<label class="input">
-																			<i class="icon-prepend fa fa-file-code-o"></i>
-																			<input type="text" name="template" placeholder="템플릿">
-																		</label>
+																		
 																	</section>																		
 																	</div>
 																</div>
