@@ -903,7 +903,6 @@
 										<div class="tag-box tag-box-v4 no-margin-b">                    
                     						<p data-bind="text:page.summary"></p>
                     					</div>
-										
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content atricle"></div>
 			                    </article>
@@ -946,9 +945,9 @@
 												</div>		
 										</fieldset>	
 										<footer class="text-right">
-											<button class="btn btn-default btn-flat  btn-lg rounded" type="button" data-dialog-close >닫기</button>
-											<button type="button" class="btn btn-success btn-flat btn-lg rounded" data-bind="{events:{click:create}, invisible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-angle-right"></i> 다음</button> 				
-											<button type="button" class="btn btn-info btn-flat btn-lg rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
+											<button class="btn btn-default btn-flat  btn-md rounded" type="button" data-dialog-close >닫기</button>
+											<button type="button" class="btn btn-success btn-flat btn-md rounded" data-bind="{events:{click:create}, invisible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-angle-right"></i> 다음</button> 				
+											<button type="button" class="btn btn-info btn-flat btn-md rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
 										</footer>															
 								</div>
 			                </div>
