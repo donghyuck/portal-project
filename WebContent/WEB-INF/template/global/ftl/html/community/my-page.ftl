@@ -601,7 +601,7 @@
 						<li class="disabled"><a href="#">북마크 만들기 </a></li>
 					</ul>					
 					</div>
-					<button class="btn-link hvr-pulse-shrink"><i class="icon-flat icon-flat settings"></i></button>
+					<button class="btn-link hvr-pulse-shrink"><i class="icon-flat icon-flat help"></i></button>
 				</div>
 			</div>			
 			<!-- START MAIN CONTENT -->
