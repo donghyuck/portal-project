@@ -782,6 +782,7 @@
 									<div class="ibox-tools m-r-lg" data-bind="invisible:editable">
 										<button type="button" class="btn btn-deafult btn-flat btn-outline btn-sm rounded" data-bind="click:exportPdf" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-file-pdf-o"></i> PDF</button>
 									</div>
+									<span class="hvr-pulse-shrink collapsed" data-modal-settings="" data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings" aria-expanded="false"><i class="icon-flat icon-flat settings"></i></span>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
 			                    <article data-bind="{invisible:editable}" >
