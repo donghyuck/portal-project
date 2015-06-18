@@ -544,6 +544,12 @@
 			border : 0;
 		}
 		
+		.page-editor-options {
+			position : absolute;
+			top: 120px;
+			right:60px;
+		}
+		
 		.ace_editor{
 			min-height: 500px;			
 		}		
@@ -926,7 +932,7 @@
 									<fieldset data-bind="visible:advencedSetting">			
 											<div class="row">
 												<div class="col-md-9"></div>
-												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
+												
 											</div>										
 												<div class="tab-v1">
 													<div role="tabpanel">
@@ -941,6 +947,7 @@
 																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
 															</div>
 															<div role="tabpanel" class="tab-pane" id="my-page-editor-tabs-code">
+																<div class="page-editor-options"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
 																<div id="my-page-editor-tabs-code-body"></div>
 															</div>
 														</div>
