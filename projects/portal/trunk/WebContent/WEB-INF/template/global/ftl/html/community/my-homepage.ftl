@@ -1095,7 +1095,7 @@
 	<!-- page template                                        -->
 	<!-- ============================== -->	
 	<script id="my-page-listview-item-template" type="text/x-kendo-template">
-	<div class="col-md-4 col-sm-6  item" data-object-id="#=pageId#">
+	<div class="col-md-3 col-sm-4  item" data-object-id="#=pageId#">
 		<div class="ibox float-e-margins #if( getCurrentUser().userId != user.userId ) { # follow#}#">
 			<div class="ibox-title cover">
 			#if( bodyContent.imageCount > 0 ){#
