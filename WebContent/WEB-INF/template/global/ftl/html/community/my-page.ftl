@@ -502,7 +502,7 @@
 				var bodyEditor =  $("#my-page-editor" );
 				createEditor( "my-page" , bodyEditor, { 
 					modal : false , 
-					appendTo: $("#my-page-editor-tabs-code"), 
+					appendTo: $("#my-page-editor-tabs-code-body"), 
 					tab: $("#my-page-editor-tabs"), 
 					pageSize : 15,
 					objectType : 31,
@@ -941,7 +941,7 @@
 																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
 															</div>
 															<div role="tabpanel" class="tab-pane" id="my-page-editor-tabs-code">
-																<div id="my-page-editor-code"></div>
+																<div id="my-page-editor-tabs-code-body"></div>
 															</div>
 														</div>
 													</div>
