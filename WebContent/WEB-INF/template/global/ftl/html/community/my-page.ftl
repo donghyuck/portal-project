@@ -785,51 +785,7 @@
 									<span class="hvr-pulse-shrink collapsed" data-dialog-settings style="right:65px;" data-toggle="collapse" data-target="#my-page-dialog-settings" area-expanded="false" aria-controls="my-page-dialog-settings"><i class="icon-flat icon-flat settings"></i></span>
 			                        <span class="close" data-dialog-close></span>					
 			                    </div>
-			                    <article data-bind="{invisible:editable}" >
-									<div class="ibox-content ibox-heading">
-										<div class="author margin-bottom-20">
-											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
-											<ul class="list-inline grid-boxes-news">
-												<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
-												<li>|</li>
-												<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
-												<li>|</li>
-												<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
-												<li>|</li>
-												<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
-												<li>|</li>																								
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
-												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
-												
-											</ul>  
-										</div>
-										<div class="tag-box tag-box-v4 no-margin-b">                    
-                    						<p data-bind="text:page.summary"></p>
-                    					</div>
-										
-                                	</div>
-                                	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content atricle"></div>
-			                    </article>
-								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
-									<fieldset>
-										<label for="title" class="input">
-											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
-										</label>
-										<div class="text-right">
-											<button class="btn btn-info btn-flat rounded-top" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
-											<button type="button" class="btn btn-info btn-flat rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
-										</div>											
-									</fieldset>	
-
-									<div id="my-page-options" class="bg-white collapse" style="
-										position: relative;
-										width:  100%;
-										z-index: 1048;
-										top:  0;
-										left: 0;
-										border-top: solid 3px #8e8e93;">
-										<header>고급옵션<span class="btn-up btn-up-gray btn-md" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"></span>
-										</header>
+								<form id="my-page-dialog-settings" action="#" class="sky-form dialog-settings collapse" aria-expanded="false">
 										<fieldset>                  
 					                        <section>
 					                        	<div class="separator-2"></div>
@@ -934,8 +890,57 @@
 																</div>
 															</div>																																											
 														</div><!-- ./acc-v1 -->					                        
-					                        </section>					                        
-					                    </fieldset>		
+										</section>					                        
+									</fieldset>		
+								</form>
+			                    <article data-bind="{invisible:editable}" >
+									<div class="ibox-content ibox-heading">
+										<div class="author margin-bottom-20">
+											<img width="30" height="30" class="img-circle pull-left" data-bind="attr:{src:page.authorPhotoUrl}" src="/images/common/no-avatar.png" style="margin-right:10px;">
+											<ul class="list-inline grid-boxes-news">
+												<li><span>By</span> <span data-bind="{ text: page.user.name, visible: page.user.nameVisible }"></span><code data-bind="{ text: page.user.username }"></code></li>
+												<li>|</li>
+												<li><span>버전:</span> <span data-bind="{ text: page.versionId }"></span></li>
+												<li>|</li>
+												<li><span>조회수:</span> <span data-bind="{ text: page.viewCount }"></span></li>
+												<li>|</li>
+												<li><span>댓글:</span> <span data-bind="{ text: page.commentCount }"></span></li>
+												<li>|</li>																								
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedCreationDate }"></span></li>
+												<li><i class="fa fa-clock-o"></i> <span data-bind="{ text: page.formattedModifiedDate }"></span></li>
+												
+											</ul>  
+										</div>
+										<div class="tag-box tag-box-v4 no-margin-b">                    
+                    						<p data-bind="text:page.summary"></p>
+                    					</div>
+										
+                                	</div>
+                                	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content atricle"></div>
+			                    </article>
+			                    
+			                    
+								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
+									<fieldset>
+										<label for="title" class="input">
+											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
+										</label>
+										<div class="text-right">
+											<button class="btn btn-info btn-flat rounded-top" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
+											<button type="button" class="btn btn-info btn-flat rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
+										</div>											
+									</fieldset>	
+
+									<div id="my-page-options" class="bg-white collapse" style="
+										position: relative;
+										width:  100%;
+										z-index: 1048;
+										top:  0;
+										left: 0;
+										border-top: solid 3px #8e8e93;">
+										<header>고급옵션<span class="btn-up btn-up-gray btn-md" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"></span>
+										</header>
+
 									</div>
 									<fieldset class="bg-white" data-bind="visible:advencedSetting" style="border-top: solid 3px #e7eaec;">			
 											<div class="row">
