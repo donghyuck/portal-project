@@ -910,15 +910,19 @@
 			                    
 			                    
 								<div class="sky-form bg-white" data-bind="visible:editable" class="no-border-hr">
-									<!--<fieldset>
+									<fieldset>
+										<section>
 										<label for="title" class="input">
 											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 										</label>
+										</section>
+										<!--
 										<div class="text-right">
 											<button class="btn btn-info btn-flat rounded-top" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
 											<button type="button" class="btn btn-info btn-flat rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
-										</div>											
-									</fieldset>	-->
+										</div>		
+										-->									
+									</fieldset>
 									<fieldset data-bind="visible:advencedSetting">			
 											<div class="row">
 												<div class="col-md-9"></div>
@@ -942,6 +946,7 @@
 												</div>		
 										</fieldset>	
 										<footer class="text-right">
+											<button class="btn btn-default btn-flat  btn-lg rounded" type="button" data-dialog-close >닫기</button>
 											<button type="button" class="btn btn-success btn-flat btn-lg rounded" data-bind="{events:{click:create}, invisible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>"><i class="fa fa-angle-right"></i> 다음</button> 				
 											<button type="button" class="btn btn-info btn-flat btn-lg rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
 										</footer>															
