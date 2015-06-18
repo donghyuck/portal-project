@@ -812,8 +812,10 @@
 												<input type="text" name="url" placeholder="URL" data-bind="value: pageSourceUrl"></label>
 											</label>			
 											<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>																		
-										</section>											
-										<section data-bind="visible:advencedSetting">
+										</section>			
+									</fieldset>
+									<fieldset data-bind="visible:advencedSetting">									
+										<section>
 											<label class="label">파일</label>
 											<label class="input">
 												<i class="icon-prepend fa fa-file-text-o"></i>
@@ -827,27 +829,7 @@
 										</section>
 										
 										<section>
-														<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
-															<div class="panel panel-default">
-																<div class="panel-heading">
-																	<h4 class="panel-title">
-																		<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion-1" href="#collapse-Two">
-																		<i class="fa fa-floppy-o"></i> 파일
-																		</a>
-																	</h4>
-																</div>
-																<div id="collapse-Two" class="panel-collapse collapse" style="height: 0px;">
-																	<div class="panel-body">
-																	파일이름 과 템플릿 파일을 정보를 설정합니다.
-																	<section>
-																		
-																	</section>																										
-																	<section>
-																		
-																	</section>																		
-																	</div>
-																</div>
-															</div>					
+											<div class="panel-group acc-v1" id="accordion-1" data-bind="visible:advencedSetting">
 															<div class="panel panel-default">
 																<div class="panel-heading">
 																	<h4 class="panel-title">
