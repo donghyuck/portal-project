@@ -641,7 +641,7 @@
 						</div>	
 					</fieldset>
 				</div>				
-				<article class="bg-white animated fadeInUp m-t-md" style="min-height:200px; display:none;">
+				<article class="bg-white m-t-md" style="min-height:200px; display:none;">
 					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
