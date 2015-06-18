@@ -637,7 +637,7 @@
 		</div>				
 		
 		<div id="my-page-viewer" class="dialog dialog-full bg-glass" data-feature="dialog" data-dialog-animate="">
-			<div class="dialog__overlay dark"></div>
+			<div class="dialog__overlay bg-white"></div>
 			<div class="dialog__content">
 				<div class="container">
 					<div class="row">
