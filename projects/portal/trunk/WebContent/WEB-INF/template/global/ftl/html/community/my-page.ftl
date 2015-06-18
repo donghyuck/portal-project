@@ -540,7 +540,7 @@
 		}
 						
 		/** Page Editor **/		
-		#my-page-editor-panel .k-editor {
+		#my-page-editor-tabs-html .k-editor {
 			border : 0;
 		}
 		
