@@ -919,18 +919,6 @@
 											<button type="button" class="btn btn-info btn-flat rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 										</div>											
 									</fieldset>	
-
-									<div id="my-page-options" class="bg-white collapse" style="
-										position: relative;
-										width:  100%;
-										z-index: 1048;
-										top:  0;
-										left: 0;
-										border-top: solid 3px #8e8e93;">
-										<header>고급옵션<span class="btn-up btn-up-gray btn-md" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"></span>
-										</header>
-
-									</div>
 									<fieldset class="bg-white" data-bind="visible:advencedSetting" style="border-top: solid 3px #e7eaec;">			
 											<div class="row">
 												<div class="col-md-9"></div>
