@@ -882,6 +882,7 @@
 										</section>					                        
 									</fieldset>		
 								</form>
+								<!-- view article -->
 			                    <article data-bind="{invisible:editable}" >
 									<div class="ibox-content ibox-heading">
 										<div class="author margin-bottom-20">
@@ -906,8 +907,8 @@
                                 	</div>
                                 	<div data-bind="{html:page.bodyContent.bodyText}" class="ibox-content atricle"></div>
 			                    </article>
-			                    
-			                    
+								<!-- /.view article -->
+								<!-- edit form -->
 								<div class="sky-form bg-white" data-bind="visible:editable" class="no-border-hr">
 									<fieldset>
 										<section>
@@ -950,7 +951,8 @@
 											<button type="button" class="btn btn-info btn-flat btn-md rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button> 				
 										</footer>															
 								</div>
-			                </div>
+								<!-- /.edit form -->
+							</div>
 						</div>
 					</div>					
 				</div>				
