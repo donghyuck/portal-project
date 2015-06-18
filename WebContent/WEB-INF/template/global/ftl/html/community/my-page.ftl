@@ -502,7 +502,7 @@
 				var bodyEditor =  $("#my-page-editor" );
 				createEditor( "my-page" , bodyEditor, { 
 					modal : false , 
-					appendTo: $("#my-page-editor-code-panel"), 
+					appendTo: $("#my-page-editor-tabs-code"), 
 					tab: $("#my-page-editor-tabs"), 
 					pageSize : 15,
 					objectType : 31,
@@ -927,20 +927,22 @@
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
-											</div>												
+											</div>										
 												<div class="tab-v1">
 													<div role="tabpanel">
 														<!-- Nav tabs -->													
 														<ul class="nav nav-tabs" role="tablist" id="my-page-editor-tabs">
-															<li role="presentation" class="m-l-sm active"><a href="#my-page-editor-panel" aria-controls="my-page-editor-panel" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
-															<li role="presentation"><a href="#my-page-editor-code-panel" aria-controls="my-page-editor-code-panel" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
+															<li role="presentation" class="m-l-sm active"><a href="#my-page-editor-tabs-html" aria-controls="my-page-editor-tabs-html" data-action-target="editor"  role="tab" data-toggle="tab">글쓰기</a></li>
+															<li role="presentation"><a href="#my-page-editor-tabs-code" aria-controls="my-page-editor-tabs-code" data-action-target="ace" role="tab" data-toggle="tab">코드</a></li>
 														</ul>												
 														<!-- Tab panes -->
 														<div class="tab-content no-padding">
-															<div role="tabpanel" class="tab-pane active" id="my-page-editor-panel">
+															<div role="tabpanel" class="tab-pane active" id="my-page-editor-tabs-html">
 																<textarea id="my-page-editor" class="no-border" data-bind='value:page.bodyContent.bodyText' style="height:500px;"></textarea>
 															</div>
-															<div role="tabpanel" class="tab-pane" id="my-page-editor-code-panel"></div>
+															<div role="tabpanel" class="tab-pane" id="my-page-editor-tabs-code">
+																<div id="my-page-editor-code"></div>
+															</div>
 														</div>
 													</div>
 												</div>		
