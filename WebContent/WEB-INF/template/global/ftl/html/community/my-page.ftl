@@ -909,8 +909,8 @@
 			                    </article>
 			                    
 			                    
-								<div class="sky-form" data-bind="visible:editable" class="no-border-hr">
-									<fieldset>
+								<div class="sky-form bg-white" data-bind="visible:editable" class="no-border-hr">
+									<!--<fieldset>
 										<label for="title" class="input">
 											<input type="text" name="title" placeholder="제목" data-bind="value: page.title">
 										</label>
@@ -918,8 +918,8 @@
 											<button class="btn btn-info btn-flat rounded-top" type="button" data-toggle="collapse" data-target="#my-page-options" aria-expanded="false" aria-controls="my-page-options"><i class="fa fa-angle-down"></i> 고급옵션</button>
 											<button type="button" class="btn btn-info btn-flat rounded" data-bind="{events:{click:update}, visible:advencedSetting}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">저장</button>
 										</div>											
-									</fieldset>	
-									<fieldset class="bg-white" data-bind="visible:advencedSetting" style="border-top: solid 3px #e7eaec;">			
+									</fieldset>	-->
+									<fieldset data-bind="visible:advencedSetting">			
 											<div class="row">
 												<div class="col-md-9"></div>
 												<div class="col-md-3"><label class="toggle"><input type="checkbox" name="checkbox-toggle" data-bind="checked: useWrapMode, events: { change: useWrap }"><i class="rounded-4x"></i>줄바꿈 설정/해지</label></div>
