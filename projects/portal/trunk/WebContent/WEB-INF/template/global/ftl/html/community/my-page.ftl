@@ -662,15 +662,15 @@
 						<span class="hvr-pulse-shrink" data-modal-settings data-toggle="collapse" data-target="#my-poll-modal-settings" area-expanded="false" aria-controls="my-poll-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
 					</div>
 					<div class="ibox-content no-padding">
-					
-<form id="my-poll-modal-settings" action="#" class="sky-form collapse" style="position: absolute; width: 300px; z-index: 400; top: -1px; left: 0px; border-top-style: solid; border-top-width: 3px; border-top-color: rgb(142, 142, 147); height: 4px;" aria-expanded="false">
-						<header>
-							이미지 스타일 옵션
-							<span class="btn-up btn-up-gray btn-md"></span>
-						</header>
-                    <fieldset>                  
-                        <section>
-                        	<div class="separator-2"></div>
+						<!-- options forms -->
+						<form id="my-poll-modal-settings" action="#" class="sky-form modal-settings collapse" aria-expanded="false">
+							<header>
+								옵션
+								<span class="btn-up btn-up-gray btn-md"></span>
+							</header>
+						<fieldset>                  
+							<section>
+							<div class="separator-2"></div>
                             <label class="label">Template</label>
                             <label class="textarea textarea-expandable">
                                 <textarea rows="3" name="image-custom-template"></textarea>
@@ -711,12 +711,10 @@
                                 
                             </div>
                         </section>
-                    </fieldset>                                 
-					</form>
-										
-<form action="#" class="sky-form no-border">
-                            
-                            
+							</fieldset>                                 
+						</form>
+						<!-- /.options forms -->			
+							<form action="#" class="sky-form no-border">                            
                             <fieldset>                  
                                 
                                 
