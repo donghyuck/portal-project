@@ -2345,6 +2345,18 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	display:block;
 }
 
+.modal-dialog .modal-settings {
+	position: absolute;
+	min-width: 400px;
+	z-index: 400;
+	top: 50px;
+	right: 0px;
+	border-top-style: dashed;
+	margin: 10px;
+	border-bottom-left-radius: 6px !important;
+	border-bottom-right-radius: 6px !important;
+}
+
 .dialog .ace_editor {
 	display: none;
 }
@@ -2373,6 +2385,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	font-size: 1.15em;
 	line-height: 1.6;
 }
+
+
+
 
 @media ( min-width : 1200px) {
 }
