@@ -554,15 +554,19 @@
 			min-height: 500px;			
 		}		
 		
+		
 		.my-page-wrapper {
-			min-hegith : 200 px;
+			min-height:200 px;
 		}
-		
+		.my-page-form {
+			border:0;
+			border-bottom:1px dashed #e4e4e4;
+			margin-bottom:10px;
+		}
 		#my-page-pager {
-			border : 0;
-			border-top : 1px dashed #e4e4e4;
+			border:0;
+			border-top:1px dashed #e4e4e4;
 		}
-		
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
 		}
@@ -616,7 +620,7 @@
 			</div>			
 			<!-- START MAIN CONTENT -->
 			<div class="container content">			
-				<div class="sky-form no-border">
+				<div class="sky-form my-page-formr">
 					<fieldset>
 						<div class="row">
 							<div class="col col-md-4">
