@@ -1089,8 +1089,8 @@ body:not  (.right-to-left  ) .no-border-l {
 
 
 .rounded-top-2x {
-border-top-left-radius:4px!important;
-border-top-right-radius:4px!important;
+border-top-left-radius:6px!important;
+border-top-right-radius:6px!important;
 }
 /* Text
 ------------------------------------*/
