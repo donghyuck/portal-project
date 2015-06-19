@@ -578,7 +578,7 @@
 			<!-- START MAIN CONTENT -->
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />		
-			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
+			<div class="breadcrumbs-v3 img-v1 arrow-up arrow-gray no-border">
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>					
@@ -587,8 +587,7 @@
 					<span class="btn-flat settings"></span>
 					</div><!--/end container-->
 			</div>
-			</#if>	
-			
+			</#if>
 			<div class="footer-buttons-wrapper">
 				<div class="footer-buttons">
 					<div class="dropup">
@@ -648,7 +647,7 @@
 						</div>	
 					</fieldset>
 				</div>				
-				<article class="bg-white m-t-md" style="min-height:200px; display:none;">
+				<article class="" style="min-height:200px; display:none;">
 					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
