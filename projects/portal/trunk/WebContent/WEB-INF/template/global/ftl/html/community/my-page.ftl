@@ -648,7 +648,7 @@
 					</fieldset>
 				</div>				
 				<article class="my-page-wrapper m-t-sm" style="min-height:200px; display:none;">
-					<div id="my-page-listview" class="row"></div>
+					<div id="my-page-listview" class="row bg-gray-v2 padding-xs-vr"></div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
 			</div>		
