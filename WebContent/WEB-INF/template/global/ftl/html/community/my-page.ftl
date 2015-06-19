@@ -563,6 +563,7 @@
 		#my-page-listview .ibox {
 			border-radius: 0 0 6px 6px!important;
 			overflow: hidden;	
+			border: 1px solid #e7eaec;
 		}
 		
 
