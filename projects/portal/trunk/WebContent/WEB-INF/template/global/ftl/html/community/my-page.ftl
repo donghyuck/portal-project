@@ -560,7 +560,7 @@
 		
 		#my-page-pager {
 			border : 0;
-			border-top : 1px dotted #e4e4e4;
+			border-top : 1px dashed #e4e4e4;
 		}
 		
 		#my-page-viewer .k-grid-content {
