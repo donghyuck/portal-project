@@ -559,9 +559,12 @@
 			min-height:200 px;
 		}
 		.my-page-form {
-			border:0;
-			border-bottom:1px dashed #e4e4e4;
-			margin-bottom:10px;
+			border: 0;
+			border-bottom: 1px solid #cccccc;
+			margin-bottom: 10px;
+			background-color: #8e8e93;
+			border-top-left-radius: 8px!important;
+			border-top-right-radius: 8px!important;
 		}
 		#my-page-pager {
 			border:0;
