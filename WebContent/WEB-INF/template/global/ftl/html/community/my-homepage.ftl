@@ -1114,6 +1114,7 @@
 					#}#
 						<p class="page-description">#: summary #</p>
 						<ul class="list-inline grid-boxes-news">
+								<li>#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
 								<li>#: kendo.toString( modifiedDate , "D") #</li>
 								<li>|</li>
 								<li><i class="fa fa-eye"> </i> <span class="view-page-count">#: viewCount #</span></li>
