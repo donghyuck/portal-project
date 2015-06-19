@@ -554,6 +554,15 @@
 			min-height: 500px;			
 		}		
 		
+		.my-page-wrapper {
+		
+		}
+		
+		#my-page-pager {
+			border : 0;
+			border-top : 1px dotted #e4e4e4;
+		}
+		
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
 		}
@@ -565,6 +574,7 @@
 			overflow: hidden;	
 			border: 1px solid #e7eaec;
 		}
+		
 		
 
 		</style>   	
@@ -647,10 +657,10 @@
 						</div>	
 					</fieldset>
 				</div>				
-				<article class="my-page-wrapper m-t-sm" style="min-height:200px; display:none;">
+				<article class="my-page-wrapper" style="min-height:200px; display:none;">
 					<div id="my-page-listview" class="row padding-sm-vr"></div>
-					<div id="my-page-pager" class="no-border"></div>
-				</article>					
+					<div id="my-page-pager"></div>
+				</article>
 			</div>		
 			<div class="bg-white">
 			<div class="container content">		
