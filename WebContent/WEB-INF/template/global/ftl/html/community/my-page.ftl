@@ -555,7 +555,7 @@
 		}		
 		
 		.my-page-wrapper {
-		
+			min-hegith : 200 px;
 		}
 		
 		#my-page-pager {
@@ -657,8 +657,8 @@
 						</div>	
 					</fieldset>
 				</div>				
-				<article class="my-page-wrapper" style="min-height:200px; display:none;">
-					<div id="my-page-listview" class="row padding-sm-vr"></div>
+				<article class="my-page-wrapper" style="display:none;">
+					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager"></div>
 				</article>
 			</div>		
