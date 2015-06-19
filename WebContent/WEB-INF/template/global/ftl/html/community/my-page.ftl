@@ -576,6 +576,8 @@
 			border-top:1px dashed #e4e4e4;
 			padding : 10px;
 			background-color : #f3f3f4;
+			border-bottom-left-radius: 8px!important;
+			border-bottom-right-radius: 8px!important;						
 		}
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
