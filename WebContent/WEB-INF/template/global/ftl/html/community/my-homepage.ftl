@@ -1102,29 +1102,26 @@
 			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span># }else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
-			</div>
-			<div class="ibox-content paddinig-sm" style="display: block;">
-			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
-			<h2 class="text-muted">#:title#</a></h2>
-			#}#
-			<div class="page-meta no-margin-hr">
-				#if ( tagsString.length > 0 ){#
-				<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
+			</div>			
+			<div class="ibox-content paddinig-sm">
+				<div class="p-sm">
+				#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
+					<h2 class="text-muted">#:title#</a></h2>
 				#}#
-				<p class="page-description">#: summary #</p>
-				<p class="page-description">
-					<ul class="list-inline grid-boxes-news">
-							<li>#: kendo.toString( modifiedDate , "D") #</li>
-							<li>|</li>
-							<li><span>버전:</span> #: versionId #</li>
-							<li>|</li>
-							<li><span>조회수:</span> <span class="view-page-count">#: viewCount #</span></li>
-							<li>|</li>
-							<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
-					</ul>
-				</p>
-				
-			</div>
+					<div class="page-meta no-margin-hr">
+					#if ( tagsString.length > 0 ){#
+						<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
+					#}#
+						<p class="page-description">#: summary #</p>
+						<ul class="list-inline grid-boxes-news">
+								<li>#: kendo.toString( modifiedDate , "D") #</li>
+								<li>|</li>
+								<li><i class="fa fa-eye"> </i> <span class="view-page-count">#: viewCount #</span></li>
+								<li>|</li>
+								<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
+						</ul>										
+					</div>					
+				</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right hidden">
 					<div class="btn-group">				
@@ -1145,9 +1142,8 @@
 					<button class="btn btn-danger btn-flat btn-outline rounded-right btn-sm" data-action="delete" data-object-id="#=pageId#" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">삭제</button>		
 					#}#			
 				</div>	
-			#}#			
-			</div>
-			<div class="ibox-content no-padding" style="display: block;">
+			#}#	
+			
 				<div class="page-credits bg-white">
 					<div class="credit-item">
 						<div class="credit-img user">
@@ -1157,6 +1153,7 @@
 						<div class="credit-title"></div>
 					</div>
 				</div>			
+					
 			</div>
 		</div>
 	</div><!--/.item  -->	
