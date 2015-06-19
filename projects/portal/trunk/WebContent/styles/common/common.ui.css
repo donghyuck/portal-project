@@ -1143,6 +1143,16 @@ body:not  (.right-to-left  ) .no-border-l {
 	bottom: 0;
 	}
 
+.arrow-down.arrow-gray 
+{	
+	border-top: 25px solid #f3f3f4 ;
+}
+
+.arrow-up.arrow-gray  
+{	
+	border-bottom: 20px solid #f3f3f4 ;
+}
+
 .interactive-slider-v2 {
   z-index: 1;
   padding: 200px 0;
