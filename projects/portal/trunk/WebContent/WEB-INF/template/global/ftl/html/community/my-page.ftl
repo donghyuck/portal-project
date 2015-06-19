@@ -677,12 +677,18 @@
 					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager"></div>
 				</article>
-			</div>		
-			<div class="bg-white">
-			<div class="container content">		
 			
+				<div class="row">	
+					<div class="col-sm-6">
+						<h2>공지</h2>		
+					</div>	
+					<div class="col-sm-6">
+						<h2>설문</h2>		
+					</div>
+							
+				</div>
 			</div>		
-			</div>
+			
 			<!-- ./END MAIN CONTENT -->		 		
 	 		<!-- START FOOTER -->
 			<#include "/html/common/common-homepage-globalfooter.ftl" >		
