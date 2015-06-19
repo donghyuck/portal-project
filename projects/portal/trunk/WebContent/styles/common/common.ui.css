@@ -1143,12 +1143,12 @@ body:not  (.right-to-left  ) .no-border-l {
 	bottom: 0;
 	}
 
-.arrow-down.arrow-gray 
+.arrow-down.arrow-gray:after
 {	
 	border-top: 25px solid #f3f3f4 ;
 }
 
-.arrow-up.arrow-gray  
+.arrow-up.arrow-gray:after
 {	
 	border-bottom: 20px solid #f3f3f4 ;
 }
