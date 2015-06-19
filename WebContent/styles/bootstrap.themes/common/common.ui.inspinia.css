@@ -239,4 +239,10 @@
 .ibox .cover {
 	max-height: 500px;
 	overflow:hidden;	
-}  
+
+}
+
+
+.bg-gray-v2 {
+	background: #f3f3f4!important;
+}
