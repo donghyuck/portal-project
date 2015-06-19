@@ -604,7 +604,6 @@
 				</div>
 			</div>			
 			<!-- START MAIN CONTENT -->
-			<div class="bg-gray-v2">
 			<div class="container content">			
 				<div class="sky-form no-border">
 					<fieldset>
@@ -652,7 +651,6 @@
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
 			</div>		
-			</div>
 			<div class="bg-white">
 			<div class="container content">		
 			
