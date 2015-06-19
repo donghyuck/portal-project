@@ -569,7 +569,8 @@
 		#my-page-pager {
 			border:0;
 			border-top:1px dashed #e4e4e4;
-			padding-top : 10px;
+			padding : 10px;
+			background-color : #f3f3f4;
 		}
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
