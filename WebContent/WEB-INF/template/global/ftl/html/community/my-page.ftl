@@ -579,7 +579,7 @@
 			<!-- START MAIN CONTENT -->
 			<#if action.isSetNavigator()  >
 			<#assign navigator = action.getNavigator() />		
-			<div class="breadcrumbs-v3 img-v1 arrow-up arrow-gray no-border">
+			<div class="breadcrumbs-v3 img-v1 arrow-up no-border">
 				<div class="personalized-controls container text-center p-xl">
 					<p class="text-quote"> ${ navigator.description ? replace ("{displayName}" , action.webSite.company.displayName ) }	</p>
 					<h1 class="text-xxl"><#if navigator.icon?? ><i class="icon-flat ${navigator.icon}"></i></#if> ${ navigator.title }</h1>					
