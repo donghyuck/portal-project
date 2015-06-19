@@ -1087,6 +1087,11 @@ body:not  (.right-to-left  ) .no-border-l {
 	margin: 30px 0;
 }
 
+
+.rounded-top-2x {
+border-top-left-radius:4px!important;
+border-top-right-radius:4px!important;
+}
 /* Text
 ------------------------------------*/
 .title {
