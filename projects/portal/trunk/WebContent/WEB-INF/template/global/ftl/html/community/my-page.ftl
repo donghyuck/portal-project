@@ -561,7 +561,7 @@
 			min-height : 300px;
 		}
 		#my-page-listview .ibox {
-			border-radius: 6px 6px 0 0 !important;
+			border-radius: 0 0 6px 6px!important;
 			overflow: hidden;	
 		}
 		
@@ -651,6 +651,11 @@
 					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
+			</div>		
+			</div>
+			<div class="bg-white">
+			<div class="container content">		
+			
 			</div>		
 			</div>
 			<!-- ./END MAIN CONTENT -->		 		
