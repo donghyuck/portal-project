@@ -566,6 +566,7 @@
 		#my-page-pager {
 			border:0;
 			border-top:1px dashed #e4e4e4;
+			padding-top : 10px;
 		}
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
@@ -620,7 +621,7 @@
 			</div>			
 			<!-- START MAIN CONTENT -->
 			<div class="container content">			
-				<div class="sky-form my-page-formr">
+				<div class="sky-form my-page-form">
 					<fieldset>
 						<div class="row">
 							<div class="col col-md-4">
