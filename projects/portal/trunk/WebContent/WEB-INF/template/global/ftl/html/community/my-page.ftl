@@ -185,8 +185,8 @@
 				});
 				
 			}			
-			if( $("article.bg-white").is(":hidden") ){
-				$("article.bg-white").show();
+			if( $("article.my-page-wrapper").is(":hidden") ){
+				$("article.my-page-wrapper").show();
 			} 			
 		}
 
@@ -647,7 +647,7 @@
 						</div>	
 					</fieldset>
 				</div>				
-				<article class="" style="min-height:200px; display:none;">
+				<article class="my-page-wrapper" style="min-height:200px; display:none;">
 					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager" class="no-border"></div>
 				</article>					
