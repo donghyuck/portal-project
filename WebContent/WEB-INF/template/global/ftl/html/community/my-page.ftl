@@ -640,7 +640,7 @@
 				<div class="sky-form my-page-form">
 					<fieldset>
 						<div class="row">
-							<div class="col col-md-4">
+							<div class="col col-md-6">
 								<section>
 									<label class="label"> 소유자</label>
 									<div id="my-page-source-list" class="inline-group">
@@ -650,7 +650,7 @@
 									</div>
 								</section>							
 							</div>
-							<div class="col col-md-5">
+							<div class="col col-md-6">
 								<section>
 									<label class="label"> 상태 필터</label>							
 									<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
@@ -671,10 +671,10 @@
 										</label>	
 									</div>
 								</section>															
-							</div>
+							</div><!--
 							<div class="col col-md-3 text-right">
 									<button type="button" class="btn btn-danger btn-lg btn-outline btn-flat" data-action="create"><span class="btn-label icon fa fa-plus"></span> 새 페이지 만들기 </button>
-							</div>
+							</div>-->
 						</div>	
 					</fieldset>
 				</div>				
