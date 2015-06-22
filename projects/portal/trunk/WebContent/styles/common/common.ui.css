@@ -1182,6 +1182,10 @@ border-top-right-radius:6px!important;
 	background: #f5f5f5;
 }
 
+.bg-section {
+	background: #fafafa!important;
+}
+
 .bg-transparent {
 	background: transparent!important;
 }
