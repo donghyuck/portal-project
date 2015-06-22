@@ -649,21 +649,21 @@
 								<section>
 									<label class="label"> 상태 필터</label>							
 									<div class="btn-group btn-group-sm" data-toggle="buttons" id="attachment-list-filter">
-												<label class="btn btn-success  rounded-left">
-													<input type="radio" name="page-list-view-filters"  value="ALL"> 전체 </span>)
-												</label>
-												<label class="btn btn-success active">
-													<input type="radio" name="page-list-view-filters"  value="PUBLISHED"><i class="fa fa-filter"></i> PUBLISHED
-												</label><!--
-												<label class="btn btn-success">
-													<input type="radio" name="page-list-view-filters"  value="ARCHIVED"><i class="fa fa-filter"></i> ARCHIVED
-												</label>	-->
-												<label class="btn btn-success">
-													<input type="radio" name="page-list-view-filters"  value="INCOMPLETE"><i class="fa fa-filter"></i> INCOMPLETE
-												</label>													
-												<label class="btn btn-success rounded-right">
-													<input type="radio" name="page-list-view-filters"  value="DELETED"><i class="fa fa-filter"></i> DELETED
-												</label>	
+										<label class="btn btn-success  rounded-left">
+										<input type="radio" name="page-list-view-filters"  value="ALL"> 전체 </span>)
+										</label>
+										<label class="btn btn-success active">
+											<input type="radio" name="page-list-view-filters"  value="PUBLISHED"><i class="fa fa-filter"></i> PUBLISHED
+										</label><!--
+													<label class="btn btn-success">
+														<input type="radio" name="page-list-view-filters"  value="ARCHIVED"><i class="fa fa-filter"></i> ARCHIVED
+													</label>	-->
+										<label class="btn btn-success">
+											<input type="radio" name="page-list-view-filters"  value="INCOMPLETE"><i class="fa fa-filter"></i> INCOMPLETE
+										</label>													
+										<label class="btn btn-success rounded-right">
+											<input type="radio" name="page-list-view-filters"  value="DELETED"><i class="fa fa-filter"></i> DELETED
+										</label>	
 									</div>
 								</section>															
 							</div>
@@ -677,18 +677,19 @@
 					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager"></div>
 				</article>
+			</div>
 			
-
-				<div class="row">	
-					<div class="col-sm-6">
-						<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>		
-					</div>	
-					<div class="col-sm-6">
-						<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
-					</div>
-							
+			<div class="bg-section">
+				<div class="container" >					
+					<div class="row">	
+						<div class="col-sm-6">
+							<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>		
+						</div>	
+						<div class="col-sm-6">
+							<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
+						</div>								
+					</div>				
 				</div>
-
 			</div>		
 			
 			<!-- ./END MAIN CONTENT -->		 		
