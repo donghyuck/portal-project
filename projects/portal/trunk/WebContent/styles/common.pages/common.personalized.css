@@ -90,9 +90,25 @@
 	left: 0;
 }
 
+
+/* .breadcrumbs
+--------------------------------------*/
+.arrow-up.bg-session:after{
+	border-bottom: 20px solid #fafafa;
+}
+
+/* .background color
+--------------------------------------*/
+
+
+
+
 /**
 * personalized 
 */
+
+
+
 .personalized-controls {
 	
 }
