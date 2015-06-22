@@ -713,7 +713,7 @@
 						</div>	
 					</fieldset>
 				</div>				
-				<article class="my-page-wrapper" style="display:none;">
+				<article class="my-page-wrapper">
 					<div id="my-page-listview" class="row"></div>
 					<div id="my-page-pager"></div>
 				</article>
