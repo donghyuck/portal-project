@@ -565,7 +565,7 @@
 		}
 		
 		.my-page-form fieldset {
-			//background-color: #fafafa;
+			background-color: #fafafa;
 			border-bottom: 1px dashed #e4e4e4;
 			border-top-left-radius: 8px!important;
 			border-top-right-radius: 8px!important;				
@@ -575,7 +575,7 @@
 			border:0;
 			border-top:1px dashed #e4e4e4;
 			padding : 10px;
-			//background-color : #fafafa;
+			background-color : #fafafa;
 			border-bottom-left-radius: 8px!important;
 			border-bottom-right-radius: 8px!important;						
 		}
