@@ -575,7 +575,7 @@
 			border:0;
 			border-top:1px dashed #e4e4e4;
 			padding : 10px;
-			background-color : #fafafa;
+			//background-color : #fafafa;
 			border-bottom-left-radius: 8px!important;
 			border-bottom-right-radius: 8px!important;						
 		}
@@ -592,7 +592,7 @@
 		}
 		
 		#my-page-listview .ibox .ibox-content {
-			background-color: #fafafa!important;
+			//background-color: #fafafa!important;
 		}
 		
 
