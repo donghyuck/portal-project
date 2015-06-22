@@ -103,7 +103,8 @@
 						//var selectedCells = this.select();
 						//var selectedCell = this.dataItem( selectedCells );	
 					}
-				});			
+				});		
+				renderTo.removeClass('k-widget');	
 		
 		}
 		<!-- ============================== -->
