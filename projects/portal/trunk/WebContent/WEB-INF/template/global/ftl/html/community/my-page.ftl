@@ -684,7 +684,7 @@
 				</article>
 			</div>
 			</div>
-			<div class="bg-section">
+			<div class="bg-white">
 				<div class="container content" >					
 					<div class="row">	
 						<div class="col-sm-6">
