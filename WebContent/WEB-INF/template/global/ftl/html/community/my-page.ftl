@@ -634,6 +634,7 @@
 				</div>
 			</div>			
 			<!-- START MAIN CONTENT -->
+			<div class="bg-section">
 			<div class="container content">			
 				<div class="sky-form my-page-form">
 					<fieldset>
@@ -681,7 +682,7 @@
 					<div id="my-page-pager"></div>
 				</article>
 			</div>
-			
+			</div>
 			<div class="bg-section">
 				<div class="container" >					
 					<div class="row">	
