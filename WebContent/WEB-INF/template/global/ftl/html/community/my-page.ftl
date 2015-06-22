@@ -685,7 +685,7 @@
 			</div>
 			</div>
 			<div class="bg-section">
-				<div class="container" >					
+				<div class="container content" >					
 					<div class="row">	
 						<div class="col-sm-6">
 							<h4><i class="icon-flat mega-phone m-b-n-sm"></i> <small class="text-muted">공지 &amp; 이벤트을 작성하고 수정할 수 있습니다. </small></h4>		
