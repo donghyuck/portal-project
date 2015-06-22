@@ -220,9 +220,9 @@
 				});
 				
 			}			
-			if( $("article.my-page-wrapper").is(":hidden") ){
-				$("article.my-page-wrapper").show();
-			} 			
+			//if( $("article.my-page-wrapper").is(":hidden") ){
+			//	$("article.my-page-wrapper").show();
+			//} 			
 		}
 
 		function restorePage(page, target ){
@@ -1089,7 +1089,7 @@
 		<div class="ibox">
 			<div class="ibox-title">
 				<span class="label label-primary pull-right">NEW</span>
-				<h5>IT-01 - Design Team</h5>
+				<h5>#: name #</h5>
 			</div>
 			<div class="ibox-content">
                             <div class="team-members">
