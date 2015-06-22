@@ -63,11 +63,49 @@
 				var currentUser = new common.ui.data.User();			
 				//$(".navbar-nav li[data-menu-item='MENU_PERSONALIZED'], .navbar-nav li[data-menu-item='MENU_PERSONALIZED_1']").addClass("active");		
 				createMyPageListView();	
+				createMyPollListView();
 				//createPageSection();
 				// END SCRIPT 				
 			}
 		}]);			
 
+
+		<!-- ============================== -->
+		<!-- Pool														-->
+		<!-- ============================== -->		
+		function createMyPollListView(){		
+			
+			var renderTo = $("#my-poll-listview");
+			
+				common.ui.listview( renderTo, {
+					dataSource: {
+						transport: { 
+							read: { url:'<@spring.url "/data/polls/list.json?output=json"/>', type: 'POST' }/*,
+							parameterMap: function (options, type){
+								return { startIndex: options.skip, pageSize: options.pageSize,  objectType: getMyPageOwnerId() }
+							}*/
+						},
+						requestStart: function(e){				
+						},
+						schema: {
+							total: "totalCount",
+							data: "items"/*,
+							model: common.ui.data.Page*/
+						},
+						selectable: false,
+						pageSize: 15					
+					},
+					template: kendo.template($("#my-poll-listview-template").html()),
+					dataBound: function(e){		
+						var elem = 	this.element.children();	
+					},
+					change: function(e){						
+						//var selectedCells = this.select();
+						//var selectedCell = this.dataItem( selectedCells );	
+					}
+				});			
+		
+		}
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->		
@@ -127,15 +165,11 @@
 						var selectedCell = this.dataItem( selectedCells );	
 					}
 				});		
-				
-				
-				renderTo.removeClass("k-widget k-listview");					
-				
+				renderTo.removeClass("k-widget k-listview");				
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource,
 					pageSizes: [15, 25, 50, 100]
-				});		
-				
+				});	
 				$("#my-page-listview").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
@@ -692,6 +726,7 @@
 						</div>	
 						<div class="col-sm-6">
 							<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
+							<div id="my-poll-listview" ></div>
 						</div>								
 					</div>				
 				</div>
@@ -1049,13 +1084,8 @@
 	</div>
 	</div>
 	</script>
-	<script id="webpage-title-template" type="text/x-kendo-template">
-		#: title #</span>
-		<div class="btn-group btn-group-xs pull-right">
-			<a href="\\#" onclick="doPageEdit(); return false;" class="btn btn-info btn-sm">편집</a>
-			<a href="\\#" onclick="doPageDelete(); return false;" class="btn btn-info btn-sm">삭제</a>
-			<a href="\\#" onclick="doPagePreview(); return false;" class="btn btn-info btn-sm">미리보기</a>
-		</div>	
+	<script id="my-poll-listview-template" type="text/x-kendo-template">
+		hello<br/>
 	</script>																				
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
