@@ -556,7 +556,7 @@
 		
 		
 		.my-page-wrapper {
-			min-height:200 px;
+			min-height:200px;
 		}
 		
 		.my-page-form {
