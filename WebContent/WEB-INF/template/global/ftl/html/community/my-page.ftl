@@ -120,7 +120,13 @@
 				renderTo.masonry({	
 					columnWidth: '.item',
 					itemSelector: '.item',
-					isAnimated: true
+					isAnimated: true,
+					animationOptions: {
+                            duration: 750,
+                            easing: 'linear',
+                            queue: false
+                        },
+                        isResizable:true
 				});
 			}	
 							
