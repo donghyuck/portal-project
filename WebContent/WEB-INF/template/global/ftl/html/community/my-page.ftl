@@ -588,9 +588,12 @@
 		#my-page-listview .ibox {
 			border-radius: 0 0 6px 6px!important;
 			overflow: hidden;	
-			border: 1px solid #e7eaec;
+			//border: 1px solid #e7eaec;
 		}
 		
+		#my-page-listview .ibox .ibox-content {
+			background-color: #fafafa!important;
+		}
 		
 
 		</style>   	
