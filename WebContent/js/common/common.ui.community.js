@@ -441,6 +441,10 @@
 				type : "date",
 				editable : true
 			},
+			startDate : {
+				type : "date",
+				editable : true
+			},
 			endDate : {
 				type : "date",
 				editable : true
