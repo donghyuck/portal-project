@@ -1117,7 +1117,7 @@
                 	<li><strong>종료일:</strong>#: kendo.toString( endDate , "D") #</li>
                 	<li><strong>만료일:</strong> #: kendo.toString( expireDate , "D") #</li>
                 </ul>
-                <button class="btn btn-info btn-flat btn-outline rounded-left btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
+                <button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
 			</div>
 		</div>
 	</script>																				
