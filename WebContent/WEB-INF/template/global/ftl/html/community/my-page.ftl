@@ -843,18 +843,14 @@
 									</label>
 								</section>
 							</fieldset>
-							<!--<fieldset>
+							<fieldset>
 								<div class="row">
 									<section class="col col-6">
-                                        <label class="input">
-                                            <input type="text" name="firstname" placeholder="First name">
-                                        </label>
-                                    </section>
-                                    <section class="col col-6">
-                                        <label class="input">
-                                            <input type="text" name="lastname" placeholder="Last name">
-                                        </label>
-                                    </section>
+										<label for="start">Start date:</label><input id="start" style="width: 200px" value="10/10/2011" />
+									</section>
+									<section class="col col-6">
+                                        <label for="end">End date:</label><input id="end" style="width: 200px" value="10/10/2012"/>
+									</section>
                                 </div>
                                 
                                 <section>
@@ -873,7 +869,7 @@
                                     <label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
                                     <label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>
                                 </section>
-                            </fieldset>-->
+                            </fieldset>
 							<footer>
 								<button type="submit" class="btn-u">완료</button>
 							</footer>
