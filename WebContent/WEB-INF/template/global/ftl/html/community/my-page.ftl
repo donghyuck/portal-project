@@ -119,10 +119,8 @@
 				
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll()
-				});		
-						
-				renderTo.data("model", model);
-				
+				});								
+				renderTo.data("model", model);				
 				kendo.bind(renderTo, model );			
 			}	
 		}
@@ -865,18 +863,18 @@
 								<div class="row">
 									<section class="col col-6">
 										<label class="label">시작일</label>
-										<input id="start" style="width: 200px" value="10/10/2011" />
+										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate, events:{change:changeStartDate}" />
 									</section>
 									<section class="col col-6">
 										<label class="label">종료일</label>
-										<input id="end" style="width: 200px" value="10/10/2012"/>
+										<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate, events:{change:changeEndDate}"/>
 									</section>
 								</div>
 								<section>
 									<div class="row">
 									<section class="col col-6">
 										<label class="label">만료일</label>
-										<input id="start" style="width: 200px" value="10/10/2011" />
+										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate, events:{change:changeExpireDate}" />
 									</section>									
 									</div>
 								</section>
