@@ -74,10 +74,9 @@
 		<!-- ============================== -->
 		<!-- Pool														-->
 		<!-- ============================== -->		
-		function createMyPollListView(){		
-			
+		function createMyPollListView( ){					
 			var renderTo = $("#my-poll-listview");
-			
+			if( !common.ui.exists( renderTo )){	
 				common.ui.listview( renderTo, {
 					dataSource: {
 						transport: { 
@@ -105,8 +104,27 @@
 						//var selectedCell = this.dataItem( selectedCells );	
 					}
 				});		
-				renderTo.removeClass('k-widget');	
+				renderTo.removeClass('k-widget');
+				
+				createMyPollModal();
+				
+				
+				
+			}	
+		}
 		
+		function createMyPollModal(){
+			var renderTo = $("#my-poll-modal");
+			if( renderTo.data("model")!= null ){
+				
+				var observable =  common.ui.observable({ 
+					poll : new common.ui.data.Poll()
+				});		
+						
+				renderTo.data("model", model);
+				
+				kendo.bind(renderTo, model );			
+			}	
 		}
 		<!-- ============================== -->
 		<!-- Page														-->
