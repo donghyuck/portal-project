@@ -117,6 +117,7 @@
 					poll : new common.ui.data.Poll(),
 					changeStartDate : function(){
 						var $this = this;
+						alert(kendo.stringify($this.poll )) ;
 						var startDate  = $this.poll.startDate;
 						var endDate  = $this.poll.endDate;
 						if (startDate) {
@@ -146,7 +147,6 @@
                             $this.poll.startDate.max(endDate);
                             $this.poll.endDate.min(endDate);
                         }
-						
 					},
 					changeExpireDate : function(){}
 				});								
