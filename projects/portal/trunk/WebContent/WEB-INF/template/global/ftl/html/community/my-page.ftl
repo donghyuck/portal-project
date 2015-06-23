@@ -89,8 +89,8 @@
 						},
 						schema: {
 							total: "totalCount",
-							data: "items"/*,
-							model: common.ui.data.Page*/
+							data: "items",
+							model: common.ui.data.Poll
 						},
 						selectable: false,
 						pageSize: 15					
