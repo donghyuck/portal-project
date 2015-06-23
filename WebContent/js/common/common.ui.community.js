@@ -452,13 +452,14 @@
 			modifiedDate : {
 				type : "date",
 				editable : true
-			},
-			authorPhotoUrl : function() {
-				if (typeof this.get("user") === 'object' && this.get("user") != null)
-					return "/download/profile/" + this.get("user").username + "?width=150&height=150";
-				else
-					return "/images/common/no-avatar.png";
 			}
+		},	
+		authorPhotoUrl : function() {
+			if (typeof this.get("user") === 'object' && this.get("user") != null)
+				return "/download/profile/" + this.get("user").username + "?width=150&height=150";
+			else
+				return "/images/common/no-avatar.png";
+		}
 	});
 	
 	
