@@ -1113,9 +1113,9 @@
 				</div>
 				
 				<ul class="list-unstyled margin-bottom-30">
-					<li><strong>시작일:</strong> #: startDate#</li>
-                	<li><strong>종료일:</strong>#: endDate #</li>
-                	<li><strong>만료일:</strong> #: expireDate #</li>
+					<li><strong>시작일:</strong> #: kendo.toString( startDate , "D")#</li>
+                	<li><strong>종료일:</strong>#: kendo.toString( endDate , "D") #</li>
+                	<li><strong>만료일:</strong> #: kendo.toString( expireDate , "D") #</li>
                 </ul>
                 
 			</div>
