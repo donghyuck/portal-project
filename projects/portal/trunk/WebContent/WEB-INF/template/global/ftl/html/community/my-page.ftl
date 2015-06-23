@@ -734,6 +734,28 @@
 						</div>	
 						<div class="col-sm-6">
 							<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
+							<fieldset>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <p>설문 상태</p>
+                                        <div class="radio radio-info radio-inline">
+                                            <input type="radio" id="my-poll-listview-state-all" value="option1" name="my-poll-listview-state" checked="">
+                                            <label for="my-poll-listview-state-all">전체</label>
+                                        </div>
+                                        <div class="radio radio-inline">
+                                            <input type="radio" id="my-poll-listview-state-active" value="option2" name="my-poll-listview-state">
+                                            <label for="my-poll-listview-state-active"> Active </label>
+                                        </div>
+                                        <div class="radio radio-inline">
+                                            <input type="radio" id="my-poll-listview-state-live" value="option2" name="my-poll-listview-state">
+                                            <label for="my-poll-listview-state-live"> Live </label>
+                                        </div>                                        
+                                    </fieldset>
+                                    
 							<div id="my-poll-listview" class="ibox-content inspinia-timeline"></div>
 						</div>								
 					</div>				
@@ -1116,7 +1138,7 @@
 			<div class="ibox-content">
 				<p class="text-muted"><small>#: description #</small></p>
 				<div class="team-members">
-                                <a href="\\#"><img alt="member" class="img-circle" src="img/a1.jpg"></a>
+					<a href="\\#"><img alt="member" class="img-circle" src="img/a1.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a2.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a3.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a5.jpg"></a>
