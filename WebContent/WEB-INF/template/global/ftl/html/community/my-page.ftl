@@ -734,7 +734,7 @@
 						</div>	
 						<div class="col-sm-6">
 							<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
-							<fieldset>
+							<div class="p-md">
                                         
                                         
                                         
@@ -754,7 +754,7 @@
                                             <input type="radio" id="my-poll-listview-state-live" value="option2" name="my-poll-listview-state">
                                             <label for="my-poll-listview-state-live"> Live </label>
                                         </div>                                        
-                                    </fieldset>
+                                    </div>
                                     
 							<div id="my-poll-listview" class="ibox-content inspinia-timeline"></div>
 						</div>								
