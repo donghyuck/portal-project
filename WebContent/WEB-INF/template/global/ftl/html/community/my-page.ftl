@@ -106,17 +106,13 @@
 				});		
 				renderTo.removeClass('k-widget');
 				
-				createMyPollModal();
-				
-				
-				
+				createMyPollModal();				
 			}	
 		}
 		
 		function createMyPollModal(){
 			var renderTo = $("#my-poll-modal");
-			if( renderTo.data("model")!= null ){
-				
+			if( renderTo.data("model") == null ){				
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll()
 				});								
