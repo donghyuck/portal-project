@@ -458,7 +458,7 @@
 					return "/download/profile/" + this.get("user").username + "?width=150&height=150";
 				else
 					return "/images/common/no-avatar.png";
-		}
+			}
 	});
 	
 	
