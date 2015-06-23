@@ -114,41 +114,7 @@
 			var renderTo = $("#my-poll-modal");
 			if( !renderTo.data("model") ){				
 				var observable =  common.ui.observable({ 
-					poll : new common.ui.data.Poll(),
-					changeStartDate : function(){
-						var $this = this;
-						alert(kendo.stringify($this.poll )) ;
-						var startDate  = $this.poll.startDate;
-						var endDate  = $this.poll.endDate;
-						if (startDate) {
-							startDate = new Date(startDate);
-							startDate.setDate(startDate.getDate());
-							$this.poll.endDate.min(startDate);
-						} else if (endDate) {
-							$this.poll.startDate.max(new Date(endDate));
-						} else {
-							endDate = new Date();
-							$this.poll.startDate.max(endDate);
-							$this.poll.endDate.min(endDate);
-						}
-					},
-					changeEndDate : function(){
-						var $this = this;
-						var startDate  = $this.poll.startDate;
-						var endDate  = $this.poll.endDate;
-						if (endDate) {
-                            endDate = new Date(endDate);
-                            endDate.setDate(endDate.getDate());
-                            $this.poll.startDate.max(endDate);
-                        } else if (startDate) {
-                            $this.poll.endDate.min(new Date(startDate));
-                        } else {
-                            endDate = new Date();
-                            $this.poll.startDate.max(endDate);
-                            $this.poll.endDate.min(endDate);
-                        }
-					},
-					changeExpireDate : function(){}
+					poll : new common.ui.data.Poll()
 				});								
 				renderTo.data("model", observable);				
 				kendo.bind(renderTo, observable );			
@@ -893,18 +859,18 @@
 								<div class="row">
 									<section class="col col-6">
 										<label class="label">시작일</label>
-										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate, events:{change:changeStartDate}" />
+										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
 									</section>
 									<section class="col col-6">
 										<label class="label">종료일</label>
-										<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate, events:{change:changeEndDate}"/>
+										<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
 									</section>
 								</div>
 								<section>
 									<div class="row">
 									<section class="col col-6">
 										<label class="label">만료일</label>
-										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate, events:{change:changeExpireDate}" />
+										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
 									</section>									
 									</div>
 								</section>
