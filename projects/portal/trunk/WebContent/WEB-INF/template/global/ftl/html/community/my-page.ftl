@@ -1099,45 +1099,17 @@
 			</div>
 			<div class="ibox-content">
 				<p class="text-muted"><small>#: description #</small></p>
-                            <div class="team-members">
+				<div class="team-members">
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a1.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a2.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a3.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a5.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a6.jpg"></a>
-                            </div>
-                            <h3 class="heading-xs">Web Design <span class="pull-right">88%</span></h3>
-                           <div class="progress progress-u progress-xs">
-                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
-                                        </div>
-                                    </div>
-                                     
-                            
-                            <h4>Info about Design Team</h4>
-                            <p>
-                                It is a long established fact that a reader will be distracted by the readable content
-                                of a page when looking at its layout. The point of using Lorem Ipsum is that it has.
-                            </p>
-                            <div>
-                                <span>Status of current project:</span>
-                                <div class="stat-percent">48%</div>
-                                <div class="progress progress-mini">
-                                    <div style="width: 48%;" class="progress-bar"></div>
-                                </div>
-                            </div>
-                            <div class="row  m-t-sm">
-                                <div class="col-sm-4">
-                                    <div class="font-bold">PROJECTS</div>
-                                    12
-                                </div>
-                                <div class="col-sm-4">
-                                    <div class="font-bold">RANKING</div>
-                                    4th
-                                </div>
-                                <div class="col-sm-4 text-right">
-                                    <div class="font-bold">BUDGET</div>
-                                    $200,913 <i class="fa fa-level-up text-navy"></i>
-                                </div>
+				</div>
+				<h3 class="heading-xs">결과<span class="pull-right">88%</span></h3>
+				<div class="progress progress-u progress-xs">
+					<div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
+					</div>
 				</div>
 			</div>
 		</div>
