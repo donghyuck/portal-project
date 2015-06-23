@@ -116,8 +116,8 @@
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll()
 				});								
-				renderTo.data("model", model);				
-				kendo.bind(renderTo, model );			
+				renderTo.data("model", observable);				
+				kendo.bind(renderTo, observable );			
 			}	
 		}
 		<!-- ============================== -->
