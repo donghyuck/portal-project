@@ -114,7 +114,41 @@
 			var renderTo = $("#my-poll-modal");
 			if( !renderTo.data("model") ){				
 				var observable =  common.ui.observable({ 
-					poll : new common.ui.data.Poll()
+					poll : new common.ui.data.Poll(),
+					changeStartDate : function(){
+						var $this = this;
+						var startDate  = $this.poll.startDate;
+						var endDate  = $this.poll.endDate;
+						if (startDate) {
+							startDate = new Date(startDate);
+							startDate.setDate(startDate.getDate());
+							$this.poll.endDate.min(startDate);
+						} else if (endDate) {
+							$this.poll.startDate.max(new Date(endDate));
+						} else {
+							endDate = new Date();
+							$this.poll.startDate.max(endDate);
+							$this.poll.endDate.min(endDate);
+						}
+					},
+					changeEndDate : function(){
+						var $this = this;
+						var startDate  = $this.poll.startDate;
+						var endDate  = $this.poll.endDate;
+						if (endDate) {
+                            endDate = new Date(endDate);
+                            endDate.setDate(endDate.getDate());
+                            $this.poll.startDate.max(endDate);
+                        } else if (startDate) {
+                            $this.poll.endDate.min(new Date(startDate));
+                        } else {
+                            endDate = new Date();
+                            $this.poll.startDate.max(endDate);
+                            $this.poll.endDate.min(endDate);
+                        }
+						
+					},
+					changeExpireDate : function(){}
 				});								
 				renderTo.data("model", observable);				
 				kendo.bind(renderTo, observable );			
