@@ -849,7 +849,7 @@
 										<label for="start">Start date:</label><input id="start" style="width: 200px" value="10/10/2011" />
 									</section>
 									<section class="col col-6">
-                                        <label for="end">End date:</label><input id="end" style="width: 200px" value="10/10/2012"/>
+										<label for="end">End date:</label><input id="end" style="width: 200px" value="10/10/2012"/>
 									</section>
                                 </div>
                                 
