@@ -1095,7 +1095,7 @@
 		<div class="ibox">
 			<div class="ibox-title">
 				<span class="label label-primary pull-right">NEW</span>
-				<h5>#: name #</h5>
+				<h5><i class="fa fa-bar-chart"></i> #: name #</h5>
 			</div>
 			<div class="ibox-content">
 				<p class="text-muted"><small>#: description #</small></p>
