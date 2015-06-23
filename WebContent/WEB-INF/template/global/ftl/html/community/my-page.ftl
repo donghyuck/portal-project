@@ -830,22 +830,22 @@
 							</fieldset>                                 
 						</form>
 						<!-- /.options forms -->			
-						<form action="#" class="sky-form no-border">                            
+						<form action="#" class="sky-form no-border">
 							<fieldset>    
 								<section>
 									<label class="input">
-										<input type="text" name="name" placeholder="제목">
+										<input type="text" name="name" placeholder="질문 제목">
 									</label>
 								</section>
 								<section>
 									<label class="textarea textarea-expandable">
-										<textarea rows="3" name="description" placeholder="설문내용"></textarea>
+										<textarea rows="3" name="description" placeholder="도움말 텍스트"></textarea>
 									</label>
 								</section>
 							</fieldset>
-                            <fieldset>
-                                <div class="row">
-                                    <section class="col col-6">
+							<!--<fieldset>
+								<div class="row">
+									<section class="col col-6">
                                         <label class="input">
                                             <input type="text" name="firstname" placeholder="First name">
                                         </label>
@@ -873,11 +873,11 @@
                                     <label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
                                     <label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>
                                 </section>
-                            </fieldset>
-                            <footer>
-                                <button type="submit" class="btn-u">확인</button>
-                            </footer>
-                        </form>
+                            </fieldset>-->
+							<footer>
+								<button type="submit" class="btn-u">완료</button>
+							</footer>
+						</form>
 					</div>
 				</div>
 			</div>
