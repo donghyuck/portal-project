@@ -851,19 +851,14 @@
 									<section class="col col-6">
 										<label for="end">설문 종료일:</label><input id="end" style="width: 200px" value="10/10/2012"/>
 									</section>
-                                </div>
-                                
-                                <section>
-                                    <label class="select">
-                                        <select name="gender">
-                                            <option value="0" selected="" disabled="">Gender</option>
-                                            <option value="1">Male</option>
-                                            <option value="2">Female</option>
-                                            <option value="3">Other</option>
-                                        </select>
-                                        <i></i>
-                                    </label>
-                                </section>
+								</div>
+								<section>
+									<div class="row">
+									<section class="col col-6">
+										<label for="start">만료일:</label><input id="start" style="width: 200px" value="10/10/2011" />
+									</section>									
+									</div>
+								</section>
                                 
                                 <section>
                                     <label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
