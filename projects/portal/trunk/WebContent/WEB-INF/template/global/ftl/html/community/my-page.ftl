@@ -1096,9 +1096,9 @@
 		<div class="row">
 			<div class="col-xs-3 date">
 				<i class="fa fa-bar-chart"></i>
-				#: kendo.toString( expireDate , "m") #
+				#: kendo.toString( creationDate, "m") 
 				<br>
-				<small class="text-navy">#: kendo.toString( startDate , "y") # ~ #: kendo.toString( endDate , "y") #</small>
+				<small class="text-navy">#: kendo.toString( expireDate , "y") #</small>
 			</div>
 			<div class="col-xs-7 content no-top-border">
 					<p class="m-b-xs"><strong>#: name #</strong></p>
