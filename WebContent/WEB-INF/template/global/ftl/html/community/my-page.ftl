@@ -1106,6 +1106,13 @@
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a5.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a6.jpg"></a>
                             </div>
+                            <h3 class="heading-xs">Web Design <span class="pull-right">88%</span></h3>
+                           <div class="progress progress-u progress-xs">
+                                        <div class="progress-bar progress-bar-blue" role="progressbar" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100" style="width: 88%">
+                                        </div>
+                                    </div>
+                                     
+                            
                             <h4>Info about Design Team</h4>
                             <p>
                                 It is a long established fact that a reader will be distracted by the readable content
