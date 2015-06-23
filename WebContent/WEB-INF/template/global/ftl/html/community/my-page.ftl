@@ -846,16 +846,19 @@
 							<fieldset>
 								<div class="row">
 									<section class="col col-6">
-										<label for="start">설문 시작일:</label><input id="start" style="width: 200px" value="10/10/2011" />
+										<label class="label">시작일</label>
+										<input id="start" style="width: 200px" value="10/10/2011" />
 									</section>
 									<section class="col col-6">
-										<label for="end">설문 종료일:</label><input id="end" style="width: 200px" value="10/10/2012"/>
+										<label class="label">종료일</label>
+										<input id="end" style="width: 200px" value="10/10/2012"/>
 									</section>
 								</div>
 								<section>
 									<div class="row">
 									<section class="col col-6">
-										<label for="start">만료일:</label><input id="start" style="width: 200px" value="10/10/2011" />
+										<label class="label">만료일</label>
+										<input id="start" style="width: 200px" value="10/10/2011" />
 									</section>									
 									</div>
 								</section>
