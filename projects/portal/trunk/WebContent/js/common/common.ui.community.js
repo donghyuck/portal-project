@@ -399,6 +399,69 @@
 		}		
 	});
 
+	
+	
+	common.ui.data.Poll = kendo.data.Model.define({
+		id : "pollId",
+		fields : {
+			pollId : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			name : {
+				type : "string",
+				editable : true
+			},
+			description : {
+				type : "string",
+				editable : true
+			},
+			mode : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			objectId : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			objectType : {
+				type : "number",
+				editable : true,
+				defaultValue : 0
+			},
+			status : {
+				type : "string",
+				editable : true,
+				defaultValue : "PUBLISHED"
+			},
+			creationDate : {
+				type : "date",
+				editable : true
+			},
+			endDate : {
+				type : "date",
+				editable : true
+			},
+			expireDate : {
+				type : "date",
+				editable : true
+			},
+			modifiedDate : {
+				type : "date",
+				editable : true
+			},
+			authorPhotoUrl : function() {
+				if (typeof this.get("user") === 'object' && this.get("user") != null)
+					return "/download/profile/" + this.get("user").username + "?width=150&height=150";
+				else
+					return "/images/common/no-avatar.png";
+		}
+	});
+	
+	
 })(jQuery);
 
 ;
