@@ -1098,6 +1098,7 @@
 				<h5>#: name #</h5>
 			</div>
 			<div class="ibox-content">
+				<p class="text-muted"><small>#: description #</small></p>
                             <div class="team-members">
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a1.jpg"></a>
                                 <a href="\\#"><img alt="member" class="img-circle" src="img/a2.jpg"></a>
