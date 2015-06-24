@@ -882,13 +882,13 @@
 								</section>
 							</fieldset>
 							<fieldset>
-								<div data-role="listview"
-										data-edit-template="my-poll-option-edit-template"
-										data-template="my-poll-option-template"
-										data-bind="source:poll.options,
-										events: {
-											save: onSave
-										}" style="width: 420px; height: 200px; overflow: auto"></div>
+								<ul id="my-poll-options-text">
+									<li><label class="input">
+                                    <i class="icon-prepend fa fa-angle-right"></i>
+                                    <input type="text" name="fname" placeholder="First name">
+                                </label></li>
+									<li></li>
+								</ul>	
                  			</fieldset>	
                  			<fieldset>					
 								<div class="row">
@@ -1157,17 +1157,7 @@
 	</div>
 	</script>
 
-	<script id="my-poll-option-template" type="text/x-kendo-template">
-		<a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
-		<a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
-		<p>#: optionText #</p>
-	</script>	
-	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
-		<a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
-                <a class="k-button k-cancel-button" href="\\#"><span class="k-icon k-cancel"></span></a>
-		<input type="text" class="k-textbox" data-bind="value:optionText" name="optionText" required="required" validationMessage="required" />
-		<span data-for="optionText" class="k-invalid-msg"></span>
-	</script>
+
 	
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
 	<div class="timeline-item">
