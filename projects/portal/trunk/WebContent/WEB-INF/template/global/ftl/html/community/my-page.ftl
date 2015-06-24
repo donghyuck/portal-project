@@ -106,7 +106,8 @@
 				});		
 				renderTo.removeClass('k-widget');
 
-				$("#my-poll-listview").on( "click", "a[data-action=edit], button[data-action=edit]",  function(e){				
+				$("#my-poll-listview").on( "click", "a[data-action=edit], button[data-action=edit]",  function(e){		
+					$this = $(this);		
 					var objectId = $this.data("object-id");	
 					var item = common.ui.listview(renderTo).dataSource.get(objectId);
 					openMyPollModal(item);
