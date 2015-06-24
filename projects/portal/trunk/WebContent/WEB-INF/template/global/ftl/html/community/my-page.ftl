@@ -120,7 +120,10 @@
 			var renderTo = $("#my-poll-modal");
 			if( !renderTo.data("model") ){				
 				var observable =  common.ui.observable({ 
-					poll : new common.ui.data.Poll()
+					poll : new common.ui.data.Poll(),
+					setSource : function( source ){
+						source.copy( this.poll ) ;					
+					}
 				});								
 				renderTo.data("model", observable);				
 				kendo.bind(renderTo, observable );
@@ -134,6 +137,9 @@
 		
 		function openMyPollModal( poll ){
 			var renderTo = $("#my-poll-modal");
+			if( renderTo.data("model") ){	
+				renderTo.data("model").setSource( poll );			
+			}
 			renderTo.modal('show');
 		}
 		
