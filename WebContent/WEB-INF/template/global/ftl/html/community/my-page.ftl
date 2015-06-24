@@ -885,7 +885,7 @@
 								<div data-role="listview"
 										data-edit-template="my-poll-option-edit-template"
 										data-template="my-poll-option-template"
-										data-bind="poll.options,
+										data-bind="source:poll.options,
 										events: {
 											save: onSave
 										}" style="width: 420px; height: 200px; overflow: auto"></div>
