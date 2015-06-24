@@ -677,6 +677,14 @@
 			//background-color: #fafafa!important;
 		}
 		
+		#my-poll-options {
+			padding-left: 0;
+  			list-style: none;
+		}
+		
+		#my-poll-options > li.sortable {
+		
+		}
 
 		</style>   	
 		</#compress>
