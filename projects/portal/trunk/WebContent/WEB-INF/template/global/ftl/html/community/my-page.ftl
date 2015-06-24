@@ -122,7 +122,8 @@
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll(),
 					setSource : function( source ){
-						source.copy( this.poll ) ;					
+						source.copy( this.poll ) ;			
+						this.poll.options.push( {optionsId: 0 , optionText : ""} );		
 					}
 				});								
 				renderTo.data("model", observable);				
