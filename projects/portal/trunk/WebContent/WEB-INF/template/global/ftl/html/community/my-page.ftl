@@ -137,8 +137,6 @@
 		
 		function openMyPollModal( poll ){
 			var renderTo = $("#my-poll-modal");
-			
-			alert( kendo.stringify( poll ) );
 			if( renderTo.data("model") ){	
 				renderTo.data("model").setSource( poll );			
 			}
@@ -872,12 +870,12 @@
 							<fieldset>    
 								<section>
 									<label class="input">
-										<input type="text" name="name" placeholder="질문 제목">
+										<input type="text" name="name" placeholder="질문 제목" data-bind="value:poll.name">
 									</label>
 								</section>
 								<section>
 									<label class="textarea textarea-expandable">
-										<textarea rows="3" name="description" placeholder="도움말 텍스트"></textarea>
+										<textarea rows="3" name="description" placeholder="도움말 텍스트" data-bind="value:poll.description"></textarea>
 									</label>
 								</section>
 							</fieldset>
