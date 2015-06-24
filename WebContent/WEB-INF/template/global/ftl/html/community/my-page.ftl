@@ -677,7 +677,7 @@
 			//background-color: #fafafa!important;
 		}
 		
-		ul>li.sortable {
+		.sortable {
 			list-style-type: none;
 			margin: 5px;
 			line-height: 30px;
