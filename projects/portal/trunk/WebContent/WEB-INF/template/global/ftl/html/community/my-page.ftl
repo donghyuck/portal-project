@@ -880,7 +880,15 @@
 								</section>
 							</fieldset>
 							<fieldset>
-								
+								<div data-role="listview"
+										data-edit-template="my-poll-option-edit-template"
+										data-template="my-poll-option-template"
+										data-bind="poll.options,
+										events: {
+											save: onSave
+										}" style="width: 420px; height: 200px; overflow: auto"></div>
+                 			</fieldset>	
+                 			<fieldset>					
 								<div class="row">
 									<section class="col col-6">
 										<label class="label">시작일</label>
@@ -1146,6 +1154,14 @@
 	</div>
 	</div>
 	</script>
+
+	<script id="my-poll-option-template" type="text/x-kendo-template">
+		ss
+	</script>	
+	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
+	ss
+	</script>
+	
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
 	<div class="timeline-item">
 		<div class="row">
