@@ -105,7 +105,6 @@
 					}
 				});		
 				renderTo.removeClass('k-widget');
-				
 				createMyPollModal();				
 			}	
 		}
@@ -118,8 +117,15 @@
 				});								
 				renderTo.data("model", observable);				
 				kendo.bind(renderTo, observable );			
+				
+				renderTo.on('show.bs.modal', function () {
+				alert( $(this).html() );
+				});
 			}	
 		}
+		
+		
+		
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->		
