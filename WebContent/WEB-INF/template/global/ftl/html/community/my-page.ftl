@@ -133,6 +133,10 @@
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					openMyPollModal(new common.ui.data.Poll());
 				});
+				
+				$("#my-poll-options").kendoSortable({
+					filter : ".sortable"
+				});
 								
 			}	
 		}
@@ -883,11 +887,11 @@
 							</fieldset>
 							<fieldset>
 								<ul id="my-poll-options" class="list-unstyled">
-									<li><label class="input">
+									<li class="sortable"><label class="input">
                                     <i class="icon-prepend fa fa-circle-o"></i>
                                     <input type="text" name="my-poll-options-text" placeholder="First name">
                                 </label></li>
-									<li><label class="input">
+									<li class="sortable"><label class="input">
                                     <i class="icon-prepend fa fa-circle-o"></i>
                                     <input type="text" name="my-poll-options-text" placeholder="First name">
                                 </label></li>
