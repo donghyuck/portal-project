@@ -868,17 +868,16 @@
 								</div>
 								<section>
 									<div class="row">
-									<section class="col col-6">
-										<label class="label">만료일</label>
-										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
-										<span class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</div>
-									</section>									
+										<section class="col col-6">
+											<label class="label">만료일</label>
+											<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
+											<span class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</div>
+										</section>									
 									</div>
-								</section>
-                                
+								</section>                                
                                 <section>
-                                    <label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
-                                    <label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>
+									<label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
+									<label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>
                                 </section>
                             </fieldset>
 							<footer>
