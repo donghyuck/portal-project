@@ -117,12 +117,16 @@
 				});								
 				renderTo.data("model", observable);				
 				kendo.bind(renderTo, observable );
+				
+				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
+					openMyPollModal(new common.ui.data.Poll());
+				});
 			}	
 		}
 		
-		function openMyPollModal(){
+		function openMyPollModal( poll ){
 			var renderTo = $("#my-poll-modal");
-			renderTo.modal('show')
+			renderTo.modal('show');
 		}
 		
 		
@@ -140,12 +144,7 @@
 					columnWidth: '.item',
 					itemSelector: '.item',
 					isAnimated: true,
-					animationOptions: {
-                            duration: 750,
-                            easing: 'linear',
-                            queue: false
-                        },
-                        isResizable:true
+					isResizable:true
 				});
 			}	
 							
@@ -192,10 +191,12 @@
 					}
 				});		
 				renderTo.removeClass("k-widget k-listview");				
+				
 				common.ui.pager($("#my-page-pager"), {
 					dataSource: common.ui.listview(renderTo).dataSource,
 					pageSizes: [15, 25, 50, 100]
 				});	
+				
 				$("#my-page-listview").on( "click", "a[data-action], button[data-action]",  function(e){				
 					$this = $(this);
 					var action = $this.data("action");
@@ -238,11 +239,12 @@
 				});				
 				
 				// event for new page
-				$("button[data-action=create], a[data-action=create]").click(function(e){
+				$("button[data-action=create][data-object-type=31], a[data-action=create][data-object-type=31]").click(function(e){
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());					
 					createMyPageViewer(page, true);
 				});
+				
 				
 			}			
 			//if( $("article.my-page-wrapper").is(":hidden") ){
@@ -683,8 +685,8 @@
 					<div class="dropup">
 					<button class="btn-link hvr-pulse-shrink" type="button" id="dropdown-menu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><i class="icon-flat icon-flat pencil"></i></button>
 					<ul class="dropdown-menu" aria-labelledby="dropdown-menu1">
-						<li><a href="#" data-action="create">페이지 만들기</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#my-poll-modal">설문 만들기</a></li>
+						<li><a href="#" data-action="create" data-object-type="31">페이지 만들기</a></li>
+						<li><a href="#" data-action="create" data-object-type="40">설문 만들기</a></li>
 						<li><a href="#">이벤트 & 공지 만들기</a></li>
 						<li class="disabled"><a href="#">장소 공유하기</a></li>
 						<li class="disabled"><a href="#">북마크 만들기 </a></li>
