@@ -1160,7 +1160,7 @@
 	<script id="my-poll-option-template" type="text/x-kendo-template">
 		<a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
 		<a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
-		<p>#: optionText #</>
+		<p>#: optionText #</p>
 	</script>	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
 		<a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
