@@ -1162,6 +1162,8 @@
 		<p>#: optionText #</>
 	</script>	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
+		<a class="k-button k-update-button" href="\\#"><span class="k-icon k-update"></span></a>
+                <a class="k-button k-cancel-button" href="\\#"><span class="k-icon k-cancel"></span></a>
 		<input type="text" class="k-textbox" data-bind="value:optionText" name="optionText" required="required" validationMessage="required" />
 		<span data-for="optionText" class="k-invalid-msg"></span>
 	</script>
