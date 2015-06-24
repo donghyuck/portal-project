@@ -123,7 +123,7 @@
 					poll : new common.ui.data.Poll(),
 					setSource : function( source ){
 						source.copy( this.poll ) ;			
-						this.poll.options.push( {optionsId: 0 , optionText : ""} );		
+						this.poll.options.push( { optionsId: 0 , optionText : ""} );		
 					}
 				});								
 				renderTo.data("model", observable);				
@@ -1157,10 +1157,13 @@
 	</script>
 
 	<script id="my-poll-option-template" type="text/x-kendo-template">
-		ss
+		<a class="k-button k-edit-button" href="\\#"><span class="k-icon k-edit"></span></a>
+		<a class="k-button k-delete-button" href="\\#"><span class="k-icon k-delete"></span></a>
+		<p>#: optionText #</>
 	</script>	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
-	ss
+		<input type="text" class="k-textbox" data-bind="value:optionText" name="optionText" required="required" validationMessage="required" />
+		<span data-for="optionText" class="k-invalid-msg"></span>
 	</script>
 	
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
