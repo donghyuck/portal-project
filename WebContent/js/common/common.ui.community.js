@@ -463,6 +463,25 @@
 				return "/download/profile/" + this.get("user").username + "?width=150&height=150";
 			else
 				return "/images/common/no-avatar.png";
+		},
+		copy : function(target) {
+			target.pollId = this.get("pollId");
+			target.set("objectType", this.get("objectType"));
+			target.set("objectId", this.get("objectId"));
+			target.set("name", this.get("name"));
+			target.set("description", this.get("description"));
+			target.set("mode", this.get("mode"));
+			target.set("status", this.get("status"));
+			target.set('modifiedDate', this.get("modifiedDate"));
+			target.set('creationDate', this.get("creationDate"));
+			target.set('startDate', this.get("startDate"));
+			target.set('endDate', this.get("endDate"));	
+			target.set('expireDate', this.get("expireDate"));
+			
+			if (typeof this.get("user") === 'object')
+				target.set('user', this.get("user"));
+			else
+				target.set('user', null);
 		}
 	});
 	
