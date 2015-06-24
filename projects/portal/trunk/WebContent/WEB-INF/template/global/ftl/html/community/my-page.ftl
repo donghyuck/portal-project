@@ -863,12 +863,14 @@
 									<section class="col col-6">
 										<label class="label">시작일</label>
 										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
+										<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
 									</section>
 									<section class="col col-6">
 										<label class="label">종료일</label>
 										<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
+										<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
 									</section>
-									<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
+									
 								</div>
 								
 										<section>
