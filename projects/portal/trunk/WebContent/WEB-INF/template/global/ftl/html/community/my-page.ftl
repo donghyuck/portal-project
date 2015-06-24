@@ -882,12 +882,15 @@
 								</section>
 							</fieldset>
 							<fieldset>
-								<ul id="my-poll-options-text">
+								<ul id="my-poll-options-text" class="list-unstyled">
 									<li><label class="input">
                                     <i class="icon-prepend fa fa-angle-right"></i>
                                     <input type="text" name="fname" placeholder="First name">
                                 </label></li>
-									<li></li>
+									<li><label class="input">
+                                    <i class="icon-prepend fa fa-angle-right"></i>
+                                    <input type="text" name="fname" placeholder="First name">
+                                </label></li>
 								</ul>	
                  			</fieldset>	
                  			<fieldset>					
