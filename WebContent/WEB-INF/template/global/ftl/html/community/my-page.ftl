@@ -137,6 +137,8 @@
 		
 		function openMyPollModal( poll ){
 			var renderTo = $("#my-poll-modal");
+			
+			alert( kendo.stringify( poll ) );
 			if( renderTo.data("model") ){	
 				renderTo.data("model").setSource( poll );			
 			}
