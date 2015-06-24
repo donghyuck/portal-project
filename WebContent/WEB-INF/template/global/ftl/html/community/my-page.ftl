@@ -105,6 +105,12 @@
 					}
 				});		
 				renderTo.removeClass('k-widget');
+
+				$("#my-poll-listview").on( "click", "a[data-action=edit], button[data-action=edit]",  function(e){				
+					var objectId = $this.data("object-id");	
+					var item = common.ui.listview(renderTo).dataSource.get(objectId);
+					openMyPollModal(item);
+				});								
 				createMyPollModal();				
 			}	
 		}
@@ -121,6 +127,7 @@
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					openMyPollModal(new common.ui.data.Poll());
 				});
+								
 			}	
 		}
 		
