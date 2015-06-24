@@ -116,14 +116,14 @@
 					poll : new common.ui.data.Poll()
 				});								
 				renderTo.data("model", observable);				
-				kendo.bind(renderTo, observable );			
-				
-				renderTo.on('show.bs.modal', function () {
-				alert( $(this).html() );
-				});
+				kendo.bind(renderTo, observable );
 			}	
 		}
 		
+		function openMyPollModal(){
+			var renderTo = $("#my-poll-modal");
+			renderTo.modal('show')
+		}
 		
 		
 		<!-- ============================== -->
