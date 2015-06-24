@@ -868,6 +868,7 @@
 										<label class="label">종료일</label>
 										<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
 									</section>
+									<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
 								</div>
 								
 										<section>
