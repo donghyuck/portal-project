@@ -677,13 +677,10 @@
 			//background-color: #fafafa!important;
 		}
 		
-		#my-poll-options {
-			padding-left: 0;
-  			list-style: none;
-		}
-		
-		#my-poll-options > li.sortable {
-		
+		ul>li.sortable {
+			list-style-type: none;
+			margin: 5px;
+			line-height: 30px;
 		}
 
 		</style>   	
