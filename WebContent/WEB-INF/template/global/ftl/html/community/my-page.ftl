@@ -884,11 +884,11 @@
 							<fieldset>
 								<ul id="my-poll-options-text" class="list-unstyled">
 									<li><label class="input">
-                                    <i class="icon-prepend fa fa-angle-right"></i>
+                                    <i class="icon-prepend fa fa-circle-o"></i>
                                     <input type="text" name="fname" placeholder="First name">
                                 </label></li>
 									<li><label class="input">
-                                    <i class="icon-prepend fa fa-angle-right"></i>
+                                    <i class="icon-prepend fa fa-circle-o"></i>
                                     <input type="text" name="fname" placeholder="First name">
                                 </label></li>
 								</ul>	
