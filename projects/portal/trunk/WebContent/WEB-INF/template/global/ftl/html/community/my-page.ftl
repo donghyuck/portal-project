@@ -135,7 +135,8 @@
 				});
 				
 				$("#my-poll-options").kendoSortable({
-					filter : ".sortable"
+					filter : ".sortable",
+					ignore:input
 				});
 								
 			}	
@@ -892,8 +893,14 @@
 							</fieldset>
 							<fieldset>
 								<ul id="my-poll-options" class="list-unstyled">
-									<li class="sortable">fsdadadadadadadadadadadadadadadadadadadada</li>
-									<li class="sortable">fdsaaaaaaaaaaaaaaa</li>
+									<li class="sortable"><label class="input">
+                                    <i class="icon-prepend fa fa-circle-o"></i>
+                                    <input type="text" name="my-poll-options-text" placeholder="First name">
+                                </label></li>
+									<li class="sortable"><label class="input">
+                                    <i class="icon-prepend fa fa-circle-o"></i>
+                                    <input type="text" name="my-poll-options-text" placeholder="First name">
+                                </label></li>
 								</ul>	
                  			</fieldset>	
                  			<fieldset>					
