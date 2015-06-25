@@ -140,7 +140,7 @@
 					dataSource : new kendo.data.DataSource({ 
 						data: observable.poll.options 
 						schema:{
-							model:{ id: "optionId"
+							model:{ id: "optionId",
 								fields:{
 									optionId : {editable: true, editable : true, defaultValue : 0},
 									optionText : {editable: true, editable : true, nullable:false }								
