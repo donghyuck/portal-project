@@ -147,6 +147,7 @@
 							}
 						}
 					}),			
+					toolbar: [{ name: "create", text:"추가"}],
 					columns:[{
 						width: 80,
 						field: 'optionId',
