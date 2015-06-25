@@ -118,6 +118,7 @@
 		
 		function createMyPollModal(){
 			var renderTo = $("#my-poll-modal");
+			
 			if( !renderTo.data("model") ){				
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll(),
@@ -149,8 +150,14 @@
 					},
 					ignore: "input"
 				});
-								
-			}	
+				
+				common.ui.listview($("#my-poll-options-listview"), {
+					dataSource : new kendo.data.DataSource(observable.poll.options)			
+				});
+									
+			}
+			
+				
 		}
 		
 		function openMyPollModal( poll ){
@@ -947,14 +954,7 @@
 							<fieldset>
 								<div class="my-poll-options" >		
 									<label class="label">옵션</label>					
-									 <div data-role="listview"
-                 data-edit-template="my-poll-option-edit-template"
-                 data-template="my-poll-option-template"
-                 data-bind="source: poll.options,
-                            events: {
-                              save: onSave
-                            }"
-                 style="height: 300px; overflow: auto"></div>
+									<div id="my-poll-options-listview"></div>
 									
 									
 									<ul id="sortable-my-poll-options">
