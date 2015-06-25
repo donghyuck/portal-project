@@ -721,7 +721,7 @@
 		li.placeholder {
 			border : 1px dashed #007aff;
 			border-radius: 4px!important;
-			background-color: #5ac8fa;
+			background-color: #34aadc;
 			color: #fff;
 			text-align: right;
 		}		
@@ -740,7 +740,7 @@
                     height: 0;
                     border-top: 6px solid transparent;
                     border-bottom: 6px solid transparent;
-                    border-left: 6px solid #52aef7;
+                    border-left: 6px solid #007aff;
                     position: absolute;
                     left: 316px;
 			top: 8px;
@@ -761,6 +761,7 @@
 
 
                 li.hint span {
+                	display : none;
                     color: #fff;
                 }
                 
