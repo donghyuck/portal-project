@@ -153,6 +153,7 @@
 				
 				common.ui.listview($("#my-poll-options-listview"), {
 					dataSource : new kendo.data.DataSource(observable.poll.options)			
+					template : kendo.template($("#my-poll-option-template").html())
 				});
 									
 			}
