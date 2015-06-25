@@ -707,9 +707,10 @@
 		}
 		
 		li.sortable:hover {
-			//background-color: #5ac8fa;
-			border : 1px dashed #5ac8fa;
+			background-color: #5ac8fa;
+			//border : 1px dashed #5ac8fa;
 			border-radius: 4px!important;
+			color : #fff;
 		}		
 		
 		li.sortable:last-child {
@@ -726,7 +727,7 @@
 		}
 
 		li.placeholder {
-			border : 1px dashed #5ac8fa;
+			border : 1px dashed #007aff;
 			border-radius: 4px!important;
 			color: #007aff;
 			text-align: right;
