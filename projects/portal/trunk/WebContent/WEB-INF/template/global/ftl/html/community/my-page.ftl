@@ -123,7 +123,9 @@
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll(),
 					setSource : function( source ){
-						source.copy( this.poll ) ;			
+						this.poll.options= [];
+						source.copy( this.poll ) ;	
+								
 						this.poll.options.push( { optionId: 0 , optionText : "가지고 있다"} );		
 						this.poll.options.push( { optionId: 0 , optionText : "없다"} );		
 						common.ui.grid($("#my-poll-options-listview")).dataSource.data( this.poll.options );
