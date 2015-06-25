@@ -724,7 +724,13 @@
 			background-color: #5ac8fa;
 			color: #fff;
 		}
-		
+
+		li.placeholder {
+			background-color: #5ac8fa;
+			color: #52aef7;
+			text-align: right;
+		}
+				
 
                 li.hint:after {
                     content: "";
@@ -760,11 +766,7 @@
 
 
 
-		li.placeholder {
-			background-color: #dceffd;
-			color: #52aef7;
-			text-align: right;
-		}
+
                 
 		</style>   	
 		</#compress>
