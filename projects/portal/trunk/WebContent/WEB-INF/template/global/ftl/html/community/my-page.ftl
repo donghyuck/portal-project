@@ -159,14 +159,9 @@
 				});
 				grid.table.kendoSortable({
 					filter: ">tbody >tr",
-					hint: function(element) {
-						return element.clone().addClass("hint");
-					},
-					placeholder:function(element) {
-						return element.clone().addClass("placeholder").text("drop here");
-					},
+					hint: $.noop,
 					cursor: "move",
-					laceholder: function(element) {
+					placeholder: function(element) {
 						return element.clone().addClass("k-state-hover").css("opacity", 0.65);
 					},
 					container: "#my-poll-options-grid tbody",
