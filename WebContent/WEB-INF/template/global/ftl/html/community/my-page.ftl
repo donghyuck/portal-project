@@ -136,7 +136,7 @@
 					openMyPollModal(new common.ui.data.Poll());
 				});
 				
-				common.ui.listview($("#my-poll-options-listview"), {
+				common.ui.grid($("#my-poll-options-listview"), {
 					dataSource : new kendo.data.DataSource({ 
 						data: observable.poll.options ,
 						schema:{
@@ -148,7 +148,12 @@
 							}
 						}
 					}),			
-					template : kendo.template($("#my-poll-option-template").html())
+					columns:[{
+						field: 'optionId',
+						title: "ID"},{
+						field: 'optionText',
+						title: "내용"}				
+					]
 				});
 				
 				
