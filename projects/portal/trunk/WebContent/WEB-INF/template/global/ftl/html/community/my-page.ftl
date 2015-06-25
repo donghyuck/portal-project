@@ -733,17 +733,7 @@
 			border-radius: 4px!important;			
 			color: #fff;
 		}
-				
-		
-
-		
-
-
-
-
-				
-
-                li.hint:after {
+		li.hint:after {
                     content: "";
                     display: block;
                     width: 0;
@@ -752,13 +742,23 @@
                     border-bottom: 6px solid transparent;
                     border-left: 6px solid #52aef7;
                     position: absolute;
-                    left: 216px;
-                    top: 8px;
-                }
+                    left: 316px;
+			top: 8px;
+		}
 
                 li.hint:last-child {
                     border-radius: 4px;
-                }
+                }				
+		
+
+		
+
+
+
+
+				
+
+
 
                 li.hint span {
                     color: #fff;
