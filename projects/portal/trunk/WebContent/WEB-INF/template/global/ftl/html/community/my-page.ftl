@@ -126,7 +126,7 @@
 						source.copy( this.poll ) ;			
 						this.poll.options.push( { optionsId: 0 , optionText : "가지고 있다"} );		
 						this.poll.options.push( { optionsId: 0 , optionText : "없다"} );		
-						common.ui.listview($("#my-poll-options-listview").dataSource.data( this.poll.options );
+						common.ui.listview($("#my-poll-options-listview")).dataSource.data( this.poll.options );
 					}
 				});								
 				renderTo.data("model", observable);				
