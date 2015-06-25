@@ -974,7 +974,7 @@
 								<div class="my-poll-options" >		
 									<label class="label">옵션</label>					
 									<ul id="sortable-my-poll-options">
-										<li class="sortable">
+										<li class="sortable" object-id="0">
 											아이폰을 사용하고 있습니다. <span>3:04</span>
 										</li>
 										<li class="sortable">
@@ -982,6 +982,13 @@
 										</li>
 									</ul>	
 								</div>
+								<hr/>								
+								<section>
+									<label class="input">
+										<input type="text">
+									</label>
+									<button type="button" class="btn btn-info btn-flat btn-outline btn-sm"><i class="fa fa-plus"></i> 옵션 추가</button>
+								</section>
                  			</fieldset>	
                  			<fieldset>					
 								<div class="row">
