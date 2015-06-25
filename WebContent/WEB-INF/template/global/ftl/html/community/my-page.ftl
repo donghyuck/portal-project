@@ -916,11 +916,13 @@
 								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
 								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
 								</section>
+								<div class="hr-line-dashed"></div>
 								<section>			
 								<label class="label">종료일</label>							
 								<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
 								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
 								</section>			
+								<div class="hr-line-dashed"></div>
 								<section>			
 								<label class="label">만료일</label>
 								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
@@ -928,8 +930,7 @@
 								</section>
 							</fieldset>                               
 						</form>
-						<!-- /.options forms -->
-													
+						<!-- /.options forms -->													
 						<form action="#" class="sky-form no-border">
 							<fieldset>    
 								<section>
@@ -962,34 +963,10 @@
 									</label>
 									<button type="button" class="btn btn-info btn-flat btn-outline btn-sm"><i class="fa fa-plus"></i> 옵션 추가</button>
 								</section>
-                 			</fieldset>	
-                 			<fieldset>					
-								<div class="row">
-									<section class="col col-6">
-										<label class="label">시작일</label>
-										<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
-										<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
-									</section>
-									<section class="col col-6">
-										<label class="label">종료일</label>
-										<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
-										<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
-									</section>
-								</div>								
-										<section>
-											<label class="label">만료일</label>
-											<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
-											<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
-										</section>	<!--
-								<section>
-									<label class="checkbox"><input type="checkbox" name="subscription" id="subscription"><i></i>I want to receive news and  special offers</label>
-									<label class="checkbox"><input type="checkbox" name="terms" id="terms"><i></i>I agree with the Terms and Conditions</label>
-								</section>-->
-							</fieldset>						
+							</fieldset>			
 							<footer>
 								<button type="submit" class="btn-u">완료</button>
-							</footer>
-						
+							</footer>						
 						</form>
 					</div>
 				</div>
