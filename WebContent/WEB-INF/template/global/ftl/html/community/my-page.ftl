@@ -688,12 +688,7 @@
 		
 		.my-poll-options
 		{
-		margin: 30px auto;
-                    width: 300px;
-                    background-color: #f3f5f7;
-                    border-radius: 4px;
-                    border: 1px solid rgba(0,0,0,.1);
-		
+			width: 300px;		
 		}
 		
 		.my-poll-options ul {
