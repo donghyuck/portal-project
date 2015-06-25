@@ -751,7 +751,7 @@
 		}	
 
 		li.hint span {
-			display : none;
+			display : none!important;
 			color: #fff;
 		}
 
