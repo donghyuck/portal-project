@@ -688,13 +688,26 @@
 		
 		.my-poll-options
 		{
-			width: 300px;		
+			width: 100%;		
 		}
 		
 		.my-poll-options ul {
-			 padding: 0;
-                    margin: 0;
+			padding: 0;
+			margin: 0;
 		}
+
+		li.sortable {
+			list-style-type: none;
+			padding: 6px 8px;
+			margin: 0;
+			color: #666;
+			font-size: 1.2em;
+			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
+		}
+		
+		li.sortable:hover {
+			background-color: #5ac8fa;
+		}		
 
 li.hint {
                     display: block;
@@ -725,14 +738,7 @@ li.hint {
                 }
                 
 		
-		li.sortable {
-			list-style-type: none;
-			padding: 6px 8px;
-			margin: 0;
-			color: #666;
-			font-size: 1.2em;
-			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
-		}
+
 
 		li.sortable:last-child {
 			border-bottom: 0;
@@ -745,9 +751,7 @@ li.hint {
 			color: #666;
 		}
 
-		li.sortable:hover {
-			background-color: #dceffd;
-		}
+
 
 		li.placeholder {
 			background-color: #dceffd;
