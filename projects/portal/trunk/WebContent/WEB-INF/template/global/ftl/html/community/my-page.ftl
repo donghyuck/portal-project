@@ -713,7 +713,7 @@
 			//border-radius: 0 0 4px 4px;
 		}		
 		li.sortable:hover {
-			background-color: #5ac8fa;
+			background-color: #f5f5f5;
 			//border : 1px dashed #5ac8fa;
 			border-radius: 4px!important;
 			color : #fff;
@@ -729,9 +729,8 @@
 			display: block;
 			width: 300px;
 			background-color: #007aff;
-			border : 0;
-			border-radius: 4px!important;
-			
+			border : 1px solid #fff;
+			border-radius: 4px!important;			
 			color: #fff;
 		}
 				
