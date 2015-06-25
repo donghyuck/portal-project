@@ -149,7 +149,7 @@
 					}),			
 					toolbar: [{ name: "create", text:"추가"}],
 					columns:[{
-						width: 80,
+						width: 50,
 						field: 'optionId',
 						title: "ID"},{
 						field: 'optionText',
