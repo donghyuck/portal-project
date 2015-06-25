@@ -1268,7 +1268,7 @@
 				<i class="fa fa-bar-chart"></i>
 				<span class="text-navy"> #: kendo.toString( creationDate, "m") #</span>
 				<br>
-				<span class="text-danger">#: kendo.toString( expireDate , "m") #</span>
+				<span class="text-danger">#: status #</span>
 			</div>
 			<div class="col-xs-7 content no-top-border">
 					<p class="m-b-xs"><strong>#: name #</strong></p>
