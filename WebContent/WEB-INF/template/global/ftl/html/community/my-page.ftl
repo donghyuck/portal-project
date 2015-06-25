@@ -153,8 +153,10 @@
 						field: 'optionId',
 						title: "ID"},{
 						field: 'optionText',
-						title: "내용"}				
-					]
+						title: "내용"},
+						{ command: ["edit", "destroy"], title: "&nbsp;", width: "250px" }				
+					],
+					editable: "inline"
 				});
 				
 				
