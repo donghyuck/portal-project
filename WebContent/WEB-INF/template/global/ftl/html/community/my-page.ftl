@@ -947,6 +947,16 @@
 							<fieldset>
 								<div class="my-poll-options" >		
 									<label class="label">옵션</label>					
+									 <div data-role="listview"
+                 data-edit-template="my-poll-option-edit-template"
+                 data-template="my-poll-option-template"
+                 data-bind="source: poll.options,
+                            events: {
+                              save: onSave
+                            }"
+                 style="height: 300px; overflow: auto"></div>
+									
+									
 									<ul id="sortable-my-poll-options">
 										<li class="sortable" object-id="0">
 											아이폰을 사용하고 있습니다. <span><button type="button" class="btn btn-flat btn-danger btn-xs">삭제</button></span>
@@ -1203,10 +1213,7 @@
 		</div>
 	</div>
 	</div>
-	</script>
-
-
-	
+	</script>	
 	<script id="my-poll-listview-template" type="text/x-kendo-template">
 	<div class="timeline-item">
 		<div class="row">
@@ -1223,6 +1230,7 @@
 			</div>
 		</div>
 	</div>
+	
 	<!--	<div class="ibox">
 			<div class="ibox-title">
 				<span class="label label-primary pull-right">NEW</span>
@@ -1251,7 +1259,13 @@
                 <button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
 			</div>
 		</div>-->
-	</script>																				
+	</script>	
+	<script id="my-poll-option-template" type="text/x-kendo-template">
+	</script>	
+	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
+	</script>	
+	
+																				
 	<#include "/html/common/common-homepage-templates.ftl" >		
 	<#include "/html/common/common-personalized-templates.ftl" >
 	<#include "/html/common/common-editor-templates.ftl" >	
