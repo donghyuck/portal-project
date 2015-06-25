@@ -708,34 +708,40 @@
 			font-size: 1.1em;
 			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
 		}
-		
+		li.sortable:last-child {
+			//border-bottom: 0;
+			//border-radius: 0 0 4px 4px;
+		}		
 		li.sortable:hover {
 			background-color: #5ac8fa;
 			//border : 1px dashed #5ac8fa;
 			border-radius: 4px!important;
 			color : #fff;
 		}		
-		
-		li.sortable:last-child {
-			//border-bottom: 0;
-			//border-radius: 0 0 4px 4px;
-		}
-		
-
-		li.hint {
-			display: block;
-			width: 200px;
-			background-color: #5ac8fa;
-			color: #fff;
-		}
-
 		li.placeholder {
-			//border : 1px dashed #007aff;
+			border : 1px dashed #007aff;
 			border-radius: 4px!important;
 			background-color: #5ac8fa;
 			color: #fff;
 			text-align: right;
+		}		
+		li.hint {
+			display: block;
+			width: 300px;
+			background-color: #007aff;
+			border : 0;
+			border-radius: 4px!important;
+			
+			color: #fff;
 		}
+				
+		
+
+		
+
+
+
+
 				
 
                 li.hint:after {
