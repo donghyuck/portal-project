@@ -700,6 +700,7 @@
 			list-style-type: none;
 			padding: 6px 8px;
 			margin: 0;
+			border : 1px solid #fff;
 			color: #666;
 			font-size: 1.1em;
 			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
@@ -707,7 +708,7 @@
 		
 		li.sortable:hover {
 			//background-color: #5ac8fa;
-			border : 1px dotted #5ac8fa;
+			border : 1px dashed #5ac8fa;
 			border-radius: 4px!important;
 		}		
 
