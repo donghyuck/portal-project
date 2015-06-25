@@ -1261,6 +1261,7 @@
 		</div>-->
 	</script>	
 	<script id="my-poll-option-template" type="text/x-kendo-template">
+	#:optionText#
 	</script>	
 	<script id="my-poll-option-edit-template" type="text/x-kendo-template">
 	</script>	
