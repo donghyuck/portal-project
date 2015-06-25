@@ -727,7 +727,7 @@
 
 		li.placeholder {
 			background-color: #5ac8fa;
-			color: #52aef7;
+			color: #007aff;
 			text-align: right;
 		}
 				
