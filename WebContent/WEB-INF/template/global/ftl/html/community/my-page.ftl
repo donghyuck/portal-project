@@ -126,6 +126,7 @@
 						source.copy( this.poll ) ;			
 						this.poll.options.push( { optionsId: 0 , optionText : "가지고 있다"} );		
 						this.poll.options.push( { optionsId: 0 , optionText : "없다"} );		
+						common.ui.listview($("#my-poll-options-listview").dataSource.data( this.poll.options );
 					}
 				});								
 				renderTo.data("model", observable);				
@@ -134,6 +135,12 @@
 				$("button[data-action=create][data-object-type=40], a[data-action=create][data-object-type=40]").click(function(e){
 					openMyPollModal(new common.ui.data.Poll());
 				});
+				
+				common.ui.listview($("#my-poll-options-listview"), {
+					dataSource : new kendo.data.DataSource(observable.poll.options),			
+					template : kendo.template($("#my-poll-option-template").html())
+				});
+				
 				
 				$("#sortable-my-poll-options").kendoSortable({
 					filter : ".sortable",
@@ -151,10 +158,7 @@
 					ignore: "input"
 				});
 				
-				common.ui.listview($("#my-poll-options-listview"), {
-					dataSource : new kendo.data.DataSource(observable.poll.options),			
-					template : kendo.template($("#my-poll-option-template").html())
-				});
+
 									
 			}
 			
