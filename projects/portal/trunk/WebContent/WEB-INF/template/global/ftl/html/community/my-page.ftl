@@ -123,9 +123,8 @@
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll(),
 					setSource : function( source ){
-						source.copy( this.poll ) ;									
-						common.ui.grid($("#my-poll-options-listview")).dataSource.read();
-						common.ui.grid($("#my-poll-options-listview")).dataSource.data( this.poll.options );						
+						source.copy( this.poll );
+						common.ui.grid($("#my-poll-options-grid")).dataSource.data( this.poll.options );						
 					}
 				});								
 				renderTo.data("model", observable);				
@@ -135,7 +134,7 @@
 					openMyPollModal(new common.ui.data.Poll());
 				});
 				
-				var grid = common.ui.grid($("#my-poll-options-listview"), {
+				var grid = common.ui.grid($("#my-poll-options-grid"), {
 					dataSource : new kendo.data.DataSource({ 
 						data: observable.poll.options ,
 						schema:{
@@ -160,12 +159,17 @@
 				});
 				grid.table.kendoSortable({
 					filter: ">tbody >tr",
-					hint: $.noop,
+					hint: function(element) {
+						return element.clone().addClass("hint");
+					},
+					placeholder:function(element) {
+						return element.clone().addClass("placeholder").text("drop here");
+					},
 					cursor: "move",
 					laceholder: function(element) {
 						return element.clone().addClass("k-state-hover").css("opacity", 0.65);
 					},
-					container: "#my-poll-options-listview tbody",
+					container: "#my-poll-options-grid tbody",
 					change: function(e) {
 						var skip = grid.dataSource.skip(),
 						oldIndex = e.oldIndex + skip,
@@ -914,12 +918,7 @@
 						</div>	
 						<div class="col-sm-6">
 							<h4><i class="icon-flat paper-plane m-b-n-sm"></i> <small class="text-muted">설문을 쉽고 빠르게 생성하고 수정할 수 있습니다.</small></h4>		
-							<div class="p-md">
-                                        
-                                        
-                                        
-                                        
-                                        
+							<div class="p-md">                                        
                                         
                                         <p>설문 상태</p>
                                         <div class="radio radio-info radio-inline">
@@ -1002,7 +1001,7 @@
 							<fieldset>
 								<div class="my-poll-options" >		
 									<label class="label">옵션</label>					
-									<div id="my-poll-options-listview"></div>
+									<div id="my-poll-options-grid"></div>
 									
 									
 									<ul id="sortable-my-poll-options">
