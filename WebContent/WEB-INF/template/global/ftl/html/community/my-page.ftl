@@ -134,8 +134,16 @@
 					openMyPollModal(new common.ui.data.Poll());
 				});
 				
-				$("#my-poll-options").kendoSortable({
+				$("#sortable-my-poll-options").kendoSortable({
 					filter : ".sortable",
+					placeholder:function(element) {
+						return element.clone().addClass("placeholder").text("drop here");
+					},
+					cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default",
+						cursorOffset: {
+							top: -10,
+							left: -230
+					}
 					ignore: "input"
 				});
 								
@@ -678,12 +686,36 @@
 			//background-color: #fafafa!important;
 		}
 		
-		.sortable {
+		
+		li.sortable {
 			list-style-type: none;
-			margin: 5px;
-			line-height: 30px;
+			padding: 6px 8px;
+			margin: 0;
+			color: #666;
+			font-size: 1.2em;
+			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
 		}
+li.sortable:last-child {
+                    border-bottom: 0;
+                    border-radius: 0 0 4px 4px;
+                }
 
+                li.sortable span {
+                    display: block;
+                    float: right;
+                    color: #666;
+                }
+
+                li.sortable:hover {
+                    background-color: #dceffd;
+                }
+                
+                li.placeholder {
+                    background-color: #dceffd;
+                    color: #52aef7;
+                    text-align: right;
+                }
+                
 		</style>   	
 		</#compress>
 	</head>
@@ -892,15 +924,14 @@
 								</section>
 							</fieldset>
 							<fieldset>
-								<ul id="my-poll-options" class="list-unstyled">
-									<li class="sortable"><label class="input">
-                                    <i class="icon-prepend fa fa-circle-o"></i>
-                                    <input type="text" name="my-poll-options-text" placeholder="First name">
-                                </label></li>
-									<li class="sortable"><label class="input">
-                                    <i class="icon-prepend fa fa-circle-o"></i>
-                                    <input type="text" name="my-poll-options-text" placeholder="First name">
-                                </label></li>
+								<ul id="sortable-my-poll-options">
+									<li class="sortable">
+										Papercut <span>3:04</span>
+									</li>
+									<li class="sortable">
+										Papercut fdsaf<span>3:04</span>
+									</li>
+								
 								</ul>	
                  			</fieldset>	
                  			<fieldset>					
