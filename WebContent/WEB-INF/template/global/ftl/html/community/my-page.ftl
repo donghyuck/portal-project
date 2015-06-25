@@ -909,72 +909,26 @@
 								옵션
 								<span class="btn-up btn-up-gray btn-md"></span>
 							</header>
-						<fieldset>                  
-							<section>
-							<div class="separator-2"></div>
-							<label class="label">시작일</label>
-							<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
-							<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
-							</section>
-							<section>			
-							<label class="label">종료일</label>							
-							<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
-							<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
-							</section>			
-							<section>			
-							<label class="label">만료일</label>
-							<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
-							<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
-							</section>
-							
-							
-							
-                            
-                            
-                            
-                            <label class="textarea textarea-expandable">
-                                <textarea rows="3" name="image-custom-template"></textarea>
-                            </label>
-                            <div class="note"><strong>Note:</strong> 템플릿 설정의 주의가 필요합니다.</div>
-                            <label class="label">Style</label>
-                            <label class="textarea textarea-expandable">
-                                <textarea rows="2" name="image-custom-css"></textarea>
-                            </label>
-                            <div class="note"><strong>Note:</strong> expands on focus.</div>                            
-                        </section>
-                    </fieldset>
-                    <fieldset>
-                        <section>
-                            <label class="label">Effect</label>
-                            <div class="inline-group">	
-                                <label class="radio"><input type="radio" name="image-radio-effect" value="none" checked=""><i class="rounded-x"></i>None</label>
-                                <label class="radio"><input type="radio" name="image-radio-effect" value="lightbox"><i class="rounded-x"></i>Lightbox</label>
-                                <label class="radio"><input type="radio" name="image-radio-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
-                            </div>
-                        </section>
-                    </fieldset>       
-                    <fieldset>
-                        <section>
-                            <label class="label">Effect Options</label>
-                            <div class="inline-group">
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-thumbnail"><i></i>Thumbnail</label>                                
-                                <label class="checkbox"><input type="checkbox" name="image-checkbox-gallery"><i></i>Gallery</label>
-                            </div>
-                        </section>
-						<section>
-                            <label class="label">Size</label>
-                            <div class="inline-group">
-                                <label class="input col-sm-6">
-                                    <input type="text" name="width" placeholder="Width"></label>
-                                <label class="input col-sm-6">
-                                    <input type="text" name="height" placeholder="Height"></label>
-                                
-                            </div>
-                        </section>
-							</fieldset>                                 
+							<fieldset>                  
+								<section>
+								<div class="separator-2"></div>
+								<label class="label">시작일</label>
+								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
+								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
+								</section>
+								<section>			
+								<label class="label">종료일</label>							
+								<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
+								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
+								</section>			
+								<section>			
+								<label class="label">만료일</label>
+								<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
+								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
+								</section>
+							</fieldset>                               
 						</form>
-						<!-- /.options forms -->			
-													
+						<!-- /.options forms -->
 													
 						<form action="#" class="sky-form no-border">
 							<fieldset>    
