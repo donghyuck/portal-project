@@ -726,7 +726,8 @@
 		}
 
 		li.placeholder {
-			background-color: #5ac8fa;
+			border : 1px dashed #5ac8fa;
+			border-radius: 4px!important;
 			color: #007aff;
 			text-align: right;
 		}
