@@ -477,7 +477,12 @@
 			target.set('startDate', this.get("startDate"));
 			target.set('endDate', this.get("endDate"));	
 			target.set('expireDate', this.get("expireDate"));
-			target.set('options', this.get("options"));
+			
+			if (typeof this.get("options") === 'object')
+				target.set('options', this.get("options"));
+			else
+				target.set('options', [] );
+			
 			if (typeof this.get("user") === 'object')
 				target.set('user', this.get("user"));
 			else
