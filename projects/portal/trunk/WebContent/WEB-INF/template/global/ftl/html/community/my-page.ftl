@@ -711,6 +711,12 @@
 			border : 1px dashed #5ac8fa;
 			border-radius: 4px!important;
 		}		
+		
+		li.sortable:last-child {
+			//border-bottom: 0;
+			//border-radius: 0 0 4px 4px;
+		}
+		
 
 li.hint {
                     display: block;
@@ -743,10 +749,7 @@ li.hint {
 		
 
 
-		li.sortable:last-child {
-			border-bottom: 0;
-			border-radius: 0 0 4px 4px;
-		}
+
 
 		li.sortable span {
 			display: block;
