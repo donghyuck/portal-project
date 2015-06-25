@@ -742,7 +742,7 @@
                     border-bottom: 6px solid transparent;
                     border-left: 6px solid #007aff;
                     position: absolute;
-                    left: 316px;
+                    left: 300px;
 			top: 8px;
 		}
 
