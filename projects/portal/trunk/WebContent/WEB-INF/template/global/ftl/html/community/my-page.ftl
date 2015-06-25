@@ -143,7 +143,7 @@
 						cursorOffset: {
 							top: -10,
 							left: -230
-					}
+					},
 					ignore: "input"
 				});
 								
