@@ -975,10 +975,10 @@
 									<label class="label">옵션</label>					
 									<ul id="sortable-my-poll-options">
 										<li class="sortable" object-id="0">
-											아이폰을 사용하고 있습니다. <span>3:04</span>
+											아이폰을 사용하고 있습니다. <span><button type="button" class="btn btn-flat btn-danger btn-xs">삭제</button></span>
 										</li>
 										<li class="sortable">
-											아이폰을 사용하지 않습니다.<span>3:04</span>
+											아이폰을 사용하지 않습니다.<span><button type="button" class="btn btn-flat btn-danger btn-xs">삭제</button></span>
 										</li>
 									</ul>	
 								</div>
