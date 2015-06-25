@@ -718,12 +718,13 @@
 		}
 		
 
-li.hint {
-                    display: block;
-                    width: 200px;
-                    background-color: #52aef7;
-                    color: #fff;
-                }
+		li.hint {
+			display: block;
+			width: 200px;
+			background-color: #5ac8fa;
+			color: #fff;
+		}
+		
 
                 li.hint:after {
                     content: "";
