@@ -743,7 +743,7 @@
                     border-left: 6px solid #007aff;
                     position: absolute;
                     left: 300px;
-				top: 9px;
+				top: 10px;
 		}
 
 		li.hint:last-child {
