@@ -686,6 +686,49 @@
 			//background-color: #fafafa!important;
 		}
 		
+		.my-poll-options
+		{
+		margin: 30px auto;
+                    width: 300px;
+                    background-color: #f3f5f7;
+                    border-radius: 4px;
+                    border: 1px solid rgba(0,0,0,.1);
+		
+		}
+		
+		.my-poll-options ul {
+			 padding: 0;
+                    margin: 0;
+		}
+
+li.hint {
+                    display: block;
+                    width: 200px;
+                    background-color: #52aef7;
+                    color: #fff;
+                }
+
+                li.hint:after {
+                    content: "";
+                    display: block;
+                    width: 0;
+                    height: 0;
+                    border-top: 6px solid transparent;
+                    border-bottom: 6px solid transparent;
+                    border-left: 6px solid #52aef7;
+                    position: absolute;
+                    left: 216px;
+                    top: 8px;
+                }
+
+                li.hint:last-child {
+                    border-radius: 4px;
+                }
+
+                li.hint span {
+                    color: #fff;
+                }
+                
 		
 		li.sortable {
 			list-style-type: none;
@@ -695,26 +738,27 @@
 			font-size: 1.2em;
 			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
 		}
-li.sortable:last-child {
-                    border-bottom: 0;
-                    border-radius: 0 0 4px 4px;
-                }
 
-                li.sortable span {
-                    display: block;
-                    float: right;
-                    color: #666;
-                }
+		li.sortable:last-child {
+			border-bottom: 0;
+			border-radius: 0 0 4px 4px;
+		}
 
-                li.sortable:hover {
-                    background-color: #dceffd;
-                }
-                
-                li.placeholder {
-                    background-color: #dceffd;
-                    color: #52aef7;
-                    text-align: right;
-                }
+		li.sortable span {
+			display: block;
+			float: right;
+			color: #666;
+		}
+
+		li.sortable:hover {
+			background-color: #dceffd;
+		}
+
+		li.placeholder {
+			background-color: #dceffd;
+			color: #52aef7;
+			text-align: right;
+		}
                 
 		</style>   	
 		</#compress>
@@ -924,15 +968,17 @@ li.sortable:last-child {
 								</section>
 							</fieldset>
 							<fieldset>
-								<ul id="sortable-my-poll-options">
-									<li class="sortable">
-										Papercut <span>3:04</span>
-									</li>
-									<li class="sortable">
-										Papercut fdsaf<span>3:04</span>
-									</li>
-								
-								</ul>	
+								<div class="my-poll-options" >		
+									<label class="label">옵션</label>					
+									<ul id="sortable-my-poll-options">
+										<li class="sortable">
+											Papercut <span>3:04</span>
+										</li>
+										<li class="sortable">
+											Papercut fdsaf<span>3:04</span>
+										</li>
+									</ul>	
+								</div>
                  			</fieldset>	
                  			<fieldset>					
 								<div class="row">
