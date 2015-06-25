@@ -136,6 +136,9 @@
 				
 				$("#sortable-my-poll-options").kendoSortable({
 					filter : ".sortable",
+					hint:function(element) {
+						return element.clone().addClass("hint");
+					},
 					placeholder:function(element) {
 						return element.clone().addClass("placeholder").text("drop here");
 					},
