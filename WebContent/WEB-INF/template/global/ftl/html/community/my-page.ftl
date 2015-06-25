@@ -153,7 +153,7 @@
 						title: "ID"},{
 						field: 'optionText',
 						title: "내용"},
-						{ command: [{ name : "edit" , text : {edit:"수정", update:"저장", cancel:"최소" }  }, {name:"destroy", text:{destroy:"삭제"}}], title: "&nbsp;", width: "250px" }				
+						{ command: [{ name : "edit" , text : {edit:"수정", update:"저장", cancel:"최소" }  }, {name:"destroy", text: "삭제" }], title: "&nbsp;", width: "250px" }				
 					],
 					editable: "inline"
 				});
