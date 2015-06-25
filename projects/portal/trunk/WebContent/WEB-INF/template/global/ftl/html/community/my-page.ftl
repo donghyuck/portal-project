@@ -136,7 +136,7 @@
 				
 				$("#my-poll-options").kendoSortable({
 					filter : ".sortable",
-					ignore:input
+					ignore: "input"
 				});
 								
 			}	
