@@ -174,27 +174,7 @@
 						grid.dataSource.remove(dataItem);
 						grid.dataSource.insert(newIndex, dataItem);
 					}
-				});		
-				
-				
-				$("#sortable-my-poll-options").kendoSortable({
-					filter : ".sortable",
-					hint:function(element) {
-						return element.clone().addClass("hint");
-					},
-					placeholder:function(element) {
-						return element.clone().addClass("placeholder").text("drop here");
-					},
-					cursor: "url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default",
-						cursorOffset: {
-							top: -10,
-							left: -230
-					},
-					ignore: "input"
-				});
-				
-
-									
+				});								
 			}
 			
 				
@@ -997,24 +977,7 @@
 								<div class="my-poll-options" >		
 									<label class="label">옵션</label>					
 									<div id="my-poll-options-grid"></div>
-									
-									
-									<ul id="sortable-my-poll-options">
-										<li class="sortable" object-id="0">
-											아이폰을 사용하고 있습니다. <span><button type="button" class="btn btn-flat btn-danger btn-xs">삭제</button></span>
-										</li>
-										<li class="sortable">
-											아이폰을 사용하지 않습니다.<span><button type="button" class="btn btn-flat btn-danger btn-xs">삭제</button></span>
-										</li>
-									</ul>	
-								</div>
-								<hr/>								
-								<section>
-									<label class="input">
-										<input type="text">
-									</label>
-									<button type="button" class="btn btn-info btn-flat btn-outline btn-sm"><i class="fa fa-plus"></i> 옵션 추가</button>
-								</section>
+								</div>								
 							</fieldset>			
 							<footer>
 								<button type="submit" class="btn-u">완료</button>
