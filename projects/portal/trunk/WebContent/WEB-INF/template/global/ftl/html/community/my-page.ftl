@@ -139,7 +139,7 @@
 					placeholder:function(element) {
 						return element.clone().addClass("placeholder").text("drop here");
 					},
-					cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default",
+					cursor: "url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default",
 						cursorOffset: {
 							top: -10,
 							left: -230
