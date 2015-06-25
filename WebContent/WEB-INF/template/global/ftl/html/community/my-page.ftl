@@ -161,6 +161,7 @@
 				grid.table.kendoSortable({
 					filter: ">tbody >tr",
 					hint: $.noop,
+					cursor: "move",
 					laceholder: function(element) {
 						return element.clone().addClass("k-state-hover").css("opacity", 0.65);
 					},
