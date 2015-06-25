@@ -701,13 +701,13 @@
 			padding: 6px 8px;
 			margin: 0;
 			color: #666;
-			font-size: 1.2em;
+			font-size: 1.1em;
 			cursor: url('<@spring.url "/images/common/sortable/grabbing.cur"/>'), default;
 		}
 		
 		li.sortable:hover {
 			background-color: #5ac8fa;
-			 border-radius: 4px!important;
+			border-radius: 4px!important;
 		}		
 
 li.hint {
@@ -972,10 +972,10 @@ li.hint {
 									<label class="label">옵션</label>					
 									<ul id="sortable-my-poll-options">
 										<li class="sortable">
-											Papercut <span>3:04</span>
+											아이폰을 사용하고 있습니다. <span>3:04</span>
 										</li>
 										<li class="sortable">
-											Papercut fdsaf<span>3:04</span>
+											아이폰을 사용하지 않습니다.<span>3:04</span>
 										</li>
 									</ul>	
 								</div>
