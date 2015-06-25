@@ -942,7 +942,7 @@
 						<form id="my-poll-modal-settings" action="#" class="sky-form modal-settings collapse" aria-expanded="false">
 							<header>
 								옵션
-								<span class="btn-up btn-up-gray btn-md"></span>
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
 							</header>
 							<fieldset>                  
 								<section>
