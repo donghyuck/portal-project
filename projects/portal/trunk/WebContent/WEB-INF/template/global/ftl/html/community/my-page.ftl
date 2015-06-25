@@ -750,16 +750,18 @@
 			border-radius: 4px;
 		}	
 
-		li.hint span {
-			display : none!important;
-			color: #fff;
-		}
-
 		li.sortable span {
 			display: block;
 			float: right;
 			color: #666;
 		}
+		
+		li.hint span {
+			display : none!important;
+			color: #fff;
+		}
+
+
 		
 		</style>   	
 		</#compress>
