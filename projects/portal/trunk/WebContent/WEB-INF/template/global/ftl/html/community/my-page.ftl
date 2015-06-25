@@ -707,6 +707,7 @@
 		
 		li.sortable:hover {
 			background-color: #5ac8fa;
+			 border-radius: 4px!important;
 		}		
 
 li.hint {
