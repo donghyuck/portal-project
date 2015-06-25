@@ -706,7 +706,8 @@
 		}
 		
 		li.sortable:hover {
-			background-color: #5ac8fa;
+			//background-color: #5ac8fa;
+			border : 1px dotted #5ac8fa;
 			border-radius: 4px!important;
 		}		
 
