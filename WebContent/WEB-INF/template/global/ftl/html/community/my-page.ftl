@@ -138,7 +138,7 @@
 				
 				common.ui.listview($("#my-poll-options-listview"), {
 					dataSource : new kendo.data.DataSource({ 
-						data: observable.poll.options 
+						data: observable.poll.options ,
 						schema:{
 							model:{ id: "optionId",
 								fields:{
