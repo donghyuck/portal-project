@@ -743,43 +743,24 @@
                     border-left: 6px solid #007aff;
                     position: absolute;
                     left: 300px;
-			top: 8px;
+				top: 9px;
 		}
 
-                li.hint:last-child {
-                    border-radius: 4px;
-                }				
-		
+		li.hint:last-child {
+			border-radius: 4px;
+		}	
 
-		
-
-
-
-
-				
-
-
-
-                li.hint span {
-                	display : none;
-                    color: #fff;
-                }
-                
-		
-
-
-
+		li.hint span {
+			display : none;
+			color: #fff;
+		}
 
 		li.sortable span {
 			display: block;
 			float: right;
 			color: #666;
 		}
-
-
-
-
-                
+		
 		</style>   	
 		</#compress>
 	</head>
