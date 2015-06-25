@@ -813,6 +813,9 @@
 			color: #fff;
 		}
 
+.k-grid tbody tr {
+                    cursor: move;
+                }
 
 		
 		</style>   	
