@@ -135,7 +135,7 @@
 					openMyPollModal(new common.ui.data.Poll());
 				});
 				
-				common.ui.grid($("#my-poll-options-listview"), {
+				var grid = common.ui.grid($("#my-poll-options-listview"), {
 					dataSource : new kendo.data.DataSource({ 
 						data: observable.poll.options ,
 						schema:{
@@ -158,6 +158,23 @@
 					],
 					editable: "inline"
 				});
+				grid.table.kendoSortable({
+					filter: ">tbody >tr",
+					hint: $.noop,
+					laceholder: function(element) {
+						return element.clone().addClass("k-state-hover").css("opacity", 0.65);
+					},
+					container: "#my-poll-options-listview tbody",
+					change: function(e) {
+						var skip = grid.dataSource.skip(),
+						oldIndex = e.oldIndex + skip,
+						newIndex = e.newIndex + skip,
+						data = grid.dataSource.data(),
+						dataItem = grid.dataSource.getByUid(e.item.data("uid"));
+						grid.dataSource.remove(dataItem);
+						grid.dataSource.insert(newIndex, dataItem);
+					}
+				});		
 				
 				
 				$("#sortable-my-poll-options").kendoSortable({
