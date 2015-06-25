@@ -122,6 +122,12 @@
 			if( !renderTo.data("model") ){				
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll(),
+					save : function(e){
+						
+						
+						alert( kendo.stringify(this.poll) );
+					
+					},
 					setSource : function( source ){
 						source.copy( this.poll );
 						common.ui.grid($("#my-poll-options-grid")).dataSource.data( this.poll.options );						
@@ -980,7 +986,7 @@
 								</div>								
 							</fieldset>			
 							<footer>
-								<button type="submit" class="btn-u">완료</button>
+								<button type="button" class="btn-u" data-bind="click:save">완료</button>
 							</footer>						
 						</form>
 					</div>
