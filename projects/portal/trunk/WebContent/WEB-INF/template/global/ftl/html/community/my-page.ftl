@@ -912,7 +912,26 @@
 						<fieldset>                  
 							<section>
 							<div class="separator-2"></div>
-                            <label class="label">Template</label>
+							<label class="label">시작일</label>
+							<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker"  data-bind="value: poll.startDate" />
+							<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
+							</section>
+							<section>			
+							<label class="label">종료일</label>							
+							<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
+							<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
+							</section>			
+							<section>			
+							<label class="label">만료일</label>
+							<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
+							<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
+							</section>
+							
+							
+							
+                            
+                            
+                            
                             <label class="textarea textarea-expandable">
                                 <textarea rows="3" name="image-custom-template"></textarea>
                             </label>
@@ -1002,9 +1021,7 @@
 										<input id="end" style="width: 200px" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate"/>
 										<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
 									</section>
-									
-								</div>
-								
+								</div>								
 										<section>
 											<label class="label">만료일</label>
 											<input id="start" style="width: 200px" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" />
