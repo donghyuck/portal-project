@@ -2373,8 +2373,8 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .modal-dialog .modal-settings , .dialog__content .dialog-settings{
 	position: absolute;
 	min-width: 400px;
-	z-index: 400;
-	top: 50px;
+	z-index: 2100;
+	top: 5px;
 	right: 0px;
 	border-top-style: dashed;
 	margin: 10px;
