@@ -253,7 +253,7 @@
 	padding: 0 !important;
 }
 
-.ibox .ibox-title.cover >img {
+.ibox .ibox-title.cover img {
 	max-height: 900px;
 	overflow: hidden;
 }
@@ -285,6 +285,11 @@
 
 .ibox.summary  .cover:hover  .hover-mask {
 	  background: rgba(255,255,255,0.08);	
+}
+
+.ibox.summary  .ibox-content {
+	z-index: 101;
+	position: relative;
 }
 
 /* Intimeline */
