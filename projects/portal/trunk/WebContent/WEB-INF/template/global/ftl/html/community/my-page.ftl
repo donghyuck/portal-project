@@ -80,7 +80,16 @@
 		}
 				
 		function createPagePostDialog(){
+			var renderTo = $("#my-page-post-modal");			
+			if( !renderTo.data("model") ){				
+				var observable =  common.ui.observable({ 
 				
+					
+				});				
+				renderTo.data("model", observable);				
+				kendo.bind(renderTo, observable );				
+			}	
+			renderTo.modal('show');	
 		}
 				
 		<!-- ============================== -->
@@ -134,10 +143,7 @@
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll(),
 					save : function(e){
-						
-						
-						alert( kendo.stringify(this.poll) );
-					
+						alert( kendo.stringify(this.poll) );					
 					},
 					setSource : function( source ){
 						source.copy( this.poll );
@@ -941,6 +947,14 @@
 		</div>			
 			
 		<!-- Modal -->
+		<div id="my-page-post-modal" role="dialog" class="modal fade">
+			 <div class="modal-dialog" role="document">
+				 <div class="modal-content">
+				 
+				 </div>
+			</div>
+		</div>	
+		
 		<div class="modal fade" id="my-poll-modal" tabindex="-1" role="dialog" aria-labelledby="my-poll-modal">
 			<div class="modal-dialog" role="document">
 				<div class="ibox float-e-margins">
