@@ -252,11 +252,11 @@
 
 .ibox .ibox-title.cover {
 	padding: 0 !important;
+	max-height: 500px;
+	overflow: hidden;	
 }
 
 .ibox .ibox-title.cover img {
-	max-height: 900px;
-	overflow: hidden;
 }
 
 
