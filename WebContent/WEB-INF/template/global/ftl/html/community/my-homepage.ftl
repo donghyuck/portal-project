@@ -1096,12 +1096,13 @@
 	<!-- ============================== -->	
 	<script id="my-page-listview-item-template" type="text/x-kendo-template">
 	<div class="col-md-3 col-sm-4  item" data-object-id="#=pageId#">
-		<div class="ibox float-e-margins #if( getCurrentUser().userId != user.userId ) { # follow#}#">
+		<div class="ibox summary float-e-margins #if( getCurrentUser().userId != user.userId ) { # follow#}#">
 			<div class="ibox-title cover">
 			#if( bodyContent.imageCount > 0 ){#
 			<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 			#}#
 			#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span># }else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+				<div class="hover-mask"></div>
 			</div>			
 			<div class="ibox-content no-padding">
 				<div class="p-sm">
@@ -1145,12 +1146,12 @@
 				</div>	
 			#}#	
 			
-				<div class="page-credits bg-white">
+				<div class="page-credits">
 					<div class="credit-item">
 						<div class="credit-img user">
 							<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
 						</div>
-						<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> # } else { # #: user.username #</div> # } #
+						<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> <code>#:user.username#</code># } else { # #: user.username #</div> # } #
 						<div class="credit-title"></div>
 					</div>
 				</div>			
