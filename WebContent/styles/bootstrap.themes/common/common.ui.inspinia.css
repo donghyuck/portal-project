@@ -239,6 +239,7 @@
 .ibox .page-meta {
 	margin: 10px 16px;
 	position: relative;
+	z-index : 101;
 }
 
 .ibox .page-meta .page-description {
@@ -291,6 +292,9 @@
 	z-index: 101;
 	position: relative;
 }
+
+
+
 
 /* Intimeline */
 .timeline-item .date i {
