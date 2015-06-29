@@ -1145,18 +1145,18 @@
 					#}#			
 				</div>	
 			#}#	
-			
-				<div class="page-credits">
-					<div class="credit-item">
-						<div class="credit-img user">
-							<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
-						</div>
-						<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> <code>#:user.username#</code># } else { # #: user.username #</div> # } #
-						<div class="credit-title"></div>
-					</div>
-				</div>			
-					
 			</div>
+			
+			<div class="page-credits">
+				<div class="credit-item">
+					<div class="credit-img user">
+						<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
+					</div>
+					<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> <code>#:user.username#</code># } else { # #: user.username #</div> # } #
+					<div class="credit-title"></div>
+				</div>
+			</div>		
+			
 		</div>
 	</div><!--/.item  -->	
 	</script>										
