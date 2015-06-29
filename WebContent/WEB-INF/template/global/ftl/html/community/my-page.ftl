@@ -696,19 +696,21 @@
 		}
 		
 		.my-page-form fieldset {
-			background-color: #fafafa;
+			//background-color: #fafafa;
 			border-bottom: 1px dashed #e4e4e4;
-			border-top-left-radius: 8px!important;
-			border-top-right-radius: 8px!important;				
+			background-color:#f3f3f3!important;
+			//border-top-left-radius: 8px!important;
+			//border-top-right-radius: 8px!important;				
 		}
 		
 		#my-page-pager {
 			border:0;
 			border-top:1px dashed #e4e4e4;
 			padding : 10px;
-			background-color : #fafafa;
-			border-bottom-left-radius: 8px!important;
-			border-bottom-right-radius: 8px!important;						
+			background-color:#f3f3f3!important;
+			//background-color : #fafafa;
+			//border-bottom-left-radius: 8px!important;
+			//border-bottom-right-radius: 8px!important;						
 		}
 		#my-page-viewer .k-grid-content {
 			min-height: 150px;		
@@ -798,11 +800,9 @@
 			color: #fff;
 		}
 
-.k-grid tbody tr {
-                    cursor: move;
-                }
-
-		
+		.k-grid tbody tr {
+			 cursor: move;
+		}
 		</style>   	
 		</#compress>
 	</head>
