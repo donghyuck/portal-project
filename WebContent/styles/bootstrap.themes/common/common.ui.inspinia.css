@@ -185,7 +185,8 @@
 */
 .ibox .page-credits {
 	color: #777;
-	background: #f5f5f5;
+	/*background: #f5f5f5;*/
+	background:transparent;
 }
 
 .ibox .page-credits .credit-item {
