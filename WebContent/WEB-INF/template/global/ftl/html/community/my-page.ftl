@@ -1179,9 +1179,10 @@
 	<div class="ibox summary float-e-margins">
 		<div class="ibox-title cover">
 		#if( bodyContent.imageCount > 0 ){#
-		<div class="cover" ><img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt=""></div>
+		<img class="img-responsive #if(pageState ===  'DELETED' ){# grayscale #}#" src="#=bodyContent.firstImageSrc#" alt="">
 		#}#
 		#if ( pageState === "PUBLISHED" ) { #<span class="label label-success">#: pageState #</span>#}else if( pageState === "DELETED" ) {# <span class="label label-default">#: pageState #</span> #}else{# <span class="label label-danger">#: pageState #</span> #}#
+			<div class="hover-mask"></div>
 		</div>
 		<div class="ibox-content ibox-title">			
 			#if( pageState !=  'DELETED' ){#<h2><a href="\\#" data-action="view" data-object-id="#=pageId#">#:title#</a></h2>#}else{#
