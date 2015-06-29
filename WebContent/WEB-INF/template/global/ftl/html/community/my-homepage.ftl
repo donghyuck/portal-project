@@ -1152,7 +1152,7 @@
 					<div class="credit-img user">
 						<img src="#= authorPhotoUrl() #" class="img-responsive img-circle" />
 					</div>
-					<div class="credit-name">#if( user.nameVisible ){ # #: user.name #</div> <code>#:user.username#</code># } else { # #: user.username #</div> # } #
+					<div class="credit-name">#if( user.nameVisible ){ # #: user.name # <code>#:user.username#</code> </div># } else { # #: user.username #</div> # } #
 					<div class="credit-title"></div>
 				</div>
 			</div>		
