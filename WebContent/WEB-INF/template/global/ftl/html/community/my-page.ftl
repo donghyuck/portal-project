@@ -66,6 +66,7 @@
 				createMyPageListView();	
 				createMyPollListView();
 				//createPageSection();
+				createPageCompose();
 				// END SCRIPT 				
 			}
 		}]);			
@@ -73,7 +74,7 @@
 		<!-- ============================== -->
 		<!-- Page														-->
 		<!-- ============================== -->		
-		function creartePageCompose(){
+		function createPageCompose(){
 			$("button[data-action=post], a[data-action=post]").click(function(e){
 				createPagePostDialog();
 			});		
