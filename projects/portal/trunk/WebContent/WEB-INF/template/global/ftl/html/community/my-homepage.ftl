@@ -1114,14 +1114,13 @@
 						<p class="page-description" ><i class="fa fa-tags"></i> #: tagsString #</p>
 					#}#
 						<p class="page-description">#: summary #</p>
+
 						<ul class="list-inline grid-boxes-news">
-								<li>#if (user.nameVisible){ # #:user.name#  #}# <code>#:user.username#</code></li>
-								<li>#: kendo.toString( modifiedDate , "D") #</li>
-								<li>|</li>
 								<li><i class="fa fa-eye"> </i> <span class="view-page-count">#: viewCount #</span></li>
 								<li>|</li>
 								<li><a href="\\#" data-action="comment" data-object-id="#=pageId#"><i class="fa fa-comments-o"></i> <span class="comment-page-count">#: commentCount #</span></a></li>	
 						</ul>										
+
 					</div>					
 				</div>
 			# if( getCurrentUser().userId === user.userId ) { # 	
