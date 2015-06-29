@@ -949,10 +949,24 @@
 			
 		<!-- Modal -->
 		<div id="my-page-post-modal" role="dialog" class="modal fade">
-			 <div class="modal-dialog" role="document">
-				 <div class="modal-content">
-				 
-				 </div>
+			<div class="modal-dialog" role="document">
+				 <span class="close close-white" data-dismiss="modal" aria-label="Close"></span><div class="row ">
+				<div class="col-sm-4 text-center md-margin-bottom-50">
+                <i class="icon-flat news"></i>
+                <h2 class="title-v3-md text-uppercase margin-bottom-10">글</h2>
+                <p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+            </div><div class="col-sm-4 content-boxes-v1 md-margin-bottom-50">
+                <i class="icon-flat camera2"></i>
+                <h1 class="title-v3-md text-uppercase margin-bottom-10">사진</h1>
+                <p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+            </div>
+            <div class="col-sm-4 content-boxes-v1 bg-transparent md-margin-bottom-50">
+                <i class="icon-flat book"></i>
+                <h2 class="title-v3-md text-uppercase margin-bottom-10">링크</h2>
+                <p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+            </div>
+            
+        </div>
 			</div>
 		</div>	
 		
