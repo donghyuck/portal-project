@@ -70,7 +70,19 @@
 			}
 		}]);			
 
-
+		<!-- ============================== -->
+		<!-- Page														-->
+		<!-- ============================== -->		
+		function creartePageCompose(){
+			$("button[data-action=post], a[data-action=post]").click(function(e){
+				createPagePostDialog();
+			});		
+		}
+				
+		function createPagePostDialog(){
+				
+		}
+				
 		<!-- ============================== -->
 		<!-- Pool														-->
 		<!-- ============================== -->		
@@ -117,8 +129,7 @@
 		}
 		
 		function createMyPollModal(){
-			var renderTo = $("#my-poll-modal");
-			
+			var renderTo = $("#my-poll-modal");			
 			if( !renderTo.data("model") ){				
 				var observable =  common.ui.observable({ 
 					poll : new common.ui.data.Poll(),
