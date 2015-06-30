@@ -82,6 +82,9 @@
 						
 		function createPagePostDialog(){
 			var renderTo = $("#my-page-simple-post");		
+			renderTo.click(function(){
+				renderTo.hide();
+			});
 			/*
 			if( !renderTo.data('bs.modal')){
 				$("button[data-post-type]").click(function(e){
