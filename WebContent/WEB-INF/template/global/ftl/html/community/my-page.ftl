@@ -92,7 +92,7 @@
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());					
 					createMyPageViewer(page, true);
-					
+					renderTo.modal('hide');
 					}else if ( post_type == 'photo' ) {
 					
 					}else if ( post_type == 'link' ) {
