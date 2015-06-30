@@ -82,7 +82,7 @@
 				
 		function createPagePostDialog(){
 			var renderTo = $("#my-page-post-modal");			
-			if( !renderTo.data("model") ){				
+			/*if( !renderTo.data("model") ){				
 				var observable =  common.ui.observable({ 
 				
 					
@@ -90,6 +90,7 @@
 				renderTo.data("model", observable);				
 				kendo.bind(renderTo, observable );				
 			}	
+			*/
 			renderTo.modal('show');	
 		}
 				
