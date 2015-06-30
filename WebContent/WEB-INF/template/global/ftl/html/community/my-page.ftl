@@ -949,32 +949,35 @@
 			
 		<!-- Modal -->
 		<div id="my-page-post-modal" role="dialog" class="modal fade">
-			<div class="modal-dialog" role="document">
-			
-			
+			<div class="modal-dialog modal-lg" role="document">
 				<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
 				<div class="row ">
+
+
 
 			<div class="col-sm-4 content-boxes-v6 color-flat-sky md-margin-bottom-50">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-font fa-3x"></i>
 				</button>
-				<p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+				<p>생각나는 것을 기록하고, 공유하세요.</p>
 			</div>			
+
 			
 			<div class="col-sm-4 content-boxes-v6 color-flat-red md-margin-bottom-50">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-camera-retro fa-3x"></i>
 				</button>
-				<p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+				<p>사진을 저장하고, 공유하세요.</p>
 			</div>			
+
 
 			<div class="col-sm-4 content-boxes-v6 color-flat-green md-margin-bottom-50">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-link fa-3x"></i>
 				</button>
-				<p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
+				<p>관심있는 웹 페이지를 저장하고, 공유하세요.</p>
 			</div>
+
 		</div>
 			</div>
 		</div>	
