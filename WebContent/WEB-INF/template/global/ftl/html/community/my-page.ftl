@@ -82,9 +82,27 @@
 						
 		function createPagePostDialog(){
 			var renderTo = $("#my-page-simple-post");		
-			renderTo.click(function(){
-				renderTo.fadeOut();
-			});
+			if( !renderTo.data("ready") ){
+				
+				renderTo.click(function(){
+					renderTo.fadeOut();
+				});
+
+				$("button[data-post-type]").click(function(e){
+					var $this = $(this);
+					var postType = $this.data("post-type");
+					var page = new common.ui.data.Page();
+					page.set("objectType", getMyPageOwnerId());					
+					
+					
+					createPagePostModal(postType, page);
+					renderTo.modal('hide');
+				});
+											
+				renderTo.data("ready", true);
+			}
+			
+			
 			/*
 			if( !renderTo.data('bs.modal')){
 				$("button[data-post-type]").click(function(e){
