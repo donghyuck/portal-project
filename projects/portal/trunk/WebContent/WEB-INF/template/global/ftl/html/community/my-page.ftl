@@ -969,7 +969,7 @@
 		
 		
 		<div id="my-page-simple-post" role="dialog" class="modal fade" data-backdrop="static" >			
-			<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-dialog modal-lg post-form" role="document">
 				<div class="modal-header">
                                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                                         <h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
