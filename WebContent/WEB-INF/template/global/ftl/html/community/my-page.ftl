@@ -955,7 +955,7 @@
 				<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
 				<div class="row ">
 
-			<div class="col-sm-4 content-boxes-v6 color-flat-white md-margin-bottom-50">
+			<div class="col-sm-4 content-boxes-v6 color-flat-sky md-margin-bottom-50">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-font fa-3x"></i>
 				</button>
