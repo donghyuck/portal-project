@@ -987,6 +987,7 @@
 		
 		
 		<div id="my-page-simple-post" class="modal simple-post-compose">
+			<div class="container">
 				<div class="row ">
 					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
 						<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="text">
@@ -1006,7 +1007,8 @@
 						</button>
 						<p>관심있는 웹 페이지를 저장하고, 공유하세요.</p>
 					</div>
-				</div>			
+				</div>	
+			</div>				
 		</div>
 		
 		
