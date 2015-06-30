@@ -978,7 +978,7 @@
 		</div>	
 		
 		
-		<div id="my-page-simple-post" class="modal" style="display: block; background: rgba(0, 0, 0, 0.4);">
+		<div id="my-page-simple-post" role="dialog" class="modal fade" data-backdrop="static" >
 			<div class="modal-dialog modal-lg" role="document">
 				<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
 				<div class="row ">
