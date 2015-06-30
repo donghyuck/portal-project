@@ -89,6 +89,10 @@
 					var post_type = $this.data("post-type");
 					if( post_type == 'text' ){
 					
+					var page = new common.ui.data.Page();
+					page.set("objectType", getMyPageOwnerId());					
+					createMyPageViewer(page, true);
+					
 					}else if ( post_type == 'photo' ) {
 					
 					}else if ( post_type == 'link' ) {
