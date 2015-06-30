@@ -966,7 +966,7 @@
 			
 		<!-- Modal -->
 		
-		<div id="my-page-post-modal" role="dialog" class="modal fade">
+		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 		
 		
 		</div>	
