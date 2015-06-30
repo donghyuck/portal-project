@@ -962,7 +962,7 @@
 				<p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
 			</div>			
 			
-			<div class="col-sm-4 content-boxes-v6 md-margin-bottom-50">
+			<div class="col-sm-4 content-boxes-v6 color-flat-red md-margin-bottom-50">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-camera-retro fa-3x"></i>
 				</button>
