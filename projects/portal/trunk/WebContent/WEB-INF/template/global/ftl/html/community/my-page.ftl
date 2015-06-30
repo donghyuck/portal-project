@@ -79,11 +79,10 @@
 				createPagePostDialog();
 			});		
 		}
-				
+						
 		function createPagePostDialog(){
-			var renderTo = $("#my-page-post-modal");		
+			var renderTo = $("#my-page-simplepost-modal");		
 			if( !renderTo.data('bs.modal')){
-				
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
 					var post_type = $this.data("post-type");
@@ -91,31 +90,26 @@
 					
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());					
+					
 					createMyPageViewer(page, true);
-					renderTo.modal('hide');
+
 					}else if ( post_type == 'photo' ) {
 					
 					}else if ( post_type == 'link' ) {
 					
 					}
 				});
-				
 			}
-				
-			/*if( !renderTo.data("model") ){				
-				var observable =  common.ui.observable({ 
-				
-					
-				});				
-				renderTo.data("model", observable);				
-				kendo.bind(renderTo, observable );				
-			}	
-			*/
-			
-			
 			renderTo.modal('show');	
 		}
-				
+		
+		
+		function createPagePostModal( postType , page ){
+			var renderTo = $("#my-page-post-modal");
+			if( !renderTo.data('bs.modal')){
+				renderTo.modal('show');
+			}
+		}		
 		<!-- ============================== -->
 		<!-- Pool														-->
 		<!-- ============================== -->		
@@ -971,7 +965,12 @@
 		</div>			
 			
 		<!-- Modal -->
+		
 		<div id="my-page-post-modal" role="dialog" class="modal fade">
+		
+		
+		</div>	
+		<div id="my-page-simplepost-modal" role="dialog" class="modal fade">
 			<div class="modal-dialog modal-lg" role="document">
 				<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
 				<div class="row ">
