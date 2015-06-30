@@ -987,7 +987,26 @@
 		
 		
 		<div id="my-page-simple-post" class="modal simple-post-compose">
-			
+				<div class="row ">
+					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
+						<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="text">
+							<i class="rounded-x fa fa-font fa-3x"></i>
+						</button>
+						<p>생각나는 것을 기록하고, 공유하세요.</p>
+					</div>			
+					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-red">
+						<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="photo">
+							<i class="rounded-x fa fa-camera-retro fa-3x"></i>
+						</button>
+						<p>사진을 저장하고, 공유하세요.</p>
+					</div>			
+					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-green\">
+						<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="link">
+							<i class="rounded-x fa fa-link fa-3x"></i>
+						</button>
+						<p>관심있는 웹 페이지를 저장하고, 공유하세요.</p>
+					</div>
+				</div>			
 		</div>
 		
 		
