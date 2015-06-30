@@ -85,19 +85,13 @@
 			if( !renderTo.data('bs.modal')){
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
-					var post_type = $this.data("post-type");
-					if( post_type == 'text' ){
-					
+					var postType = $this.data("post-type");
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());					
 					
-					createMyPageViewer(page, true);
-
-					}else if ( post_type == 'photo' ) {
 					
-					}else if ( post_type == 'link' ) {
+					createPagePostModal(postType, page);
 					
-					}
 				});
 			}
 			renderTo.modal('show');	
