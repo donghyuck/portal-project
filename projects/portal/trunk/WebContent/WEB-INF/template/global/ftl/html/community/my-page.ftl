@@ -82,7 +82,7 @@
 				
 		function createPagePostDialog(){
 			var renderTo = $("#my-page-post-modal");		
-			if( !render.data('bs.modal')){
+			if( !renderTo.data('bs.modal')){
 				
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
