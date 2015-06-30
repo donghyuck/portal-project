@@ -82,28 +82,6 @@
 						
 		function createPagePostDialog(){
 			var renderTo = $("#my-page-simple-post");		
-			if( !renderTo.data("ready") ){
-				
-				renderTo.click(function(){
-					renderTo.hide();
-				});
-
-				$("button[data-post-type]").click(function(e){
-					var $this = $(this);
-					var postType = $this.data("post-type");
-					var page = new common.ui.data.Page();
-					page.set("objectType", getMyPageOwnerId());					
-					
-					
-					createPagePostModal(postType, page);
-					renderTo.modal('hide');
-				});
-											
-				renderTo.data("ready", true);
-			}
-			
-			
-			/*
 			if( !renderTo.data('bs.modal')){
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
@@ -117,8 +95,6 @@
 				});
 			}
 			renderTo.modal('show');	
-			*/
-			renderTo.fadeIn();
 		}
 		
 		
@@ -987,7 +963,7 @@
 		
 		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 				<div class="modal-dialog modal-lg">
-                                <div class="modal-content">
+					div class="modal-content">
                                     <div class="modal-header">
                                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                                         <h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
@@ -1004,34 +980,7 @@
 		</div>	
 		
 		
-		<div id="my-page-simple-post" class="modal simple-post-compose">
-			<div class="container">
-				<div class="row ">
-					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
-						<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="text">
-							<i class="rounded-x fa fa-font fa-3x"></i>
-						</button>
-						<p>생각나는 것을 기록하고, 공유하세요.</p>
-					</div>			
-					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-red">
-						<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="photo">
-							<i class="rounded-x fa fa-camera-retro fa-3x"></i>
-						</button>
-						<p>사진을 저장하고, 공유하세요.</p>
-					</div>			
-					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-green\">
-						<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="link">
-							<i class="rounded-x fa fa-link fa-3x"></i>
-						</button>
-						<p>관심있는 웹 페이지를 저장하고, 공유하세요.</p>
-					</div>
-				</div>	
-			</div>				
-		</div>
-		
-		
-		
-		<div id="my-page-simplepost-modal" role="dialog" class="modal fade">
+		<div id="my-page-simple-post" class="modal" style="display: block; background: rgba(0, 0, 0, 0.4);">
 			<div class="modal-dialog modal-lg" role="document">
 				<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
 				<div class="row ">
@@ -1054,8 +1003,8 @@
 						<p>관심있는 웹 페이지를 저장하고, 공유하세요.</p>
 					</div>
 				</div>
-			</div>
-		</div>	
+			</div>			
+		</div>
 		
 		<div class="modal fade" id="my-poll-modal" tabindex="-1" role="dialog" aria-labelledby="my-poll-modal">
 			<div class="modal-dialog" role="document">
