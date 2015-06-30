@@ -962,7 +962,18 @@
 		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 				<div class="modal-dialog modal-lg">
 					<div class="modal-content">
-                                    <div class="modal-header">
+                                    
+                                </div>
+                            </div>	
+		</div>	
+		
+		
+		<div id="my-page-simple-post" role="dialog" class="modal fade" data-backdrop="static" >
+			
+			<div class="modal-dialog modal-lg" role="document">
+				<div class="modal-content">
+				
+									<div class="modal-header">
                                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                                         <h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
                                     </div>
@@ -972,16 +983,8 @@
                                     <div class="modal-footer">
                                         <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
                                         <button type="button" class="btn-u btn-u-primary">Save changes</button>
-                                    </div>
-                                </div>
-                            </div>	
-		</div>	
-		
-		
-		<div id="my-page-simple-post" role="dialog" class="modal fade" data-backdrop="static" >
-			
-			<div class="modal-dialog modal-lg" role="document">
-			
+                                    </div>				
+				</div>	
 			</div>
 			
 			<div class="container">
