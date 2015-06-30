@@ -961,7 +961,7 @@
 		
 		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 				<div class="modal-dialog modal-lg">
-					div class="modal-content">
+					<div class="modal-content">
                                     <div class="modal-header">
                                         <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
                                         <h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
@@ -979,7 +979,12 @@
 		
 		
 		<div id="my-page-simple-post" role="dialog" class="modal fade" data-backdrop="static" >
+			
 			<div class="modal-dialog modal-lg" role="document">
+			
+			</div>
+			
+			<div class="container">
 				<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
 				<div class="row ">
 					<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
