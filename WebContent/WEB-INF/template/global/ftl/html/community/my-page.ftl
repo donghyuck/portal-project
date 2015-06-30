@@ -83,10 +83,12 @@
 		function createPagePostDialog(){
 			var renderTo = $("#my-page-post-modal");		
 			if( !render.data('bs.modal')){
-				$("button[data-post-type]" function(e){
+				
+				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
 					console.log( $this.html() );
 				});
+				
 			}
 				
 			/*if( !renderTo.data("model") ){				
