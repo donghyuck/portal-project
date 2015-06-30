@@ -91,7 +91,7 @@
 					
 					
 					createPagePostModal(postType, page);
-				//	renderTo.modal('hide');
+					renderTo.modal('hide');
 				});
 			}
 			renderTo.modal('show');	
