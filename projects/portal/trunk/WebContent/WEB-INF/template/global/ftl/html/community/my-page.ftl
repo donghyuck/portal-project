@@ -980,7 +980,6 @@
 				<div class="modal-footer">
                                         <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
                                         <button type="button" class="btn-u btn-u-primary">Save changes</button>
-				</div>				
 				</div>	
 			</div>
 			
