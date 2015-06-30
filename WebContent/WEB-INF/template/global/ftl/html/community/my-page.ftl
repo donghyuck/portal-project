@@ -86,7 +86,14 @@
 				
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
-					console.log( $this.html() );
+					var post_type = $this.data("post-type");
+					if( post_type == 'text' ){
+					
+					}else if ( post_type == 'photo' ) {
+					
+					}else if ( post_type == 'link' ) {
+					
+					}
 				});
 				
 			}
