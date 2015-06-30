@@ -83,7 +83,7 @@
 		function createPagePostDialog(){
 			var renderTo = $("#my-page-simple-post");		
 			renderTo.click(function(){
-				renderTo.hide();
+				renderTo.fadeOut();
 			});
 			/*
 			if( !renderTo.data('bs.modal')){
@@ -100,7 +100,7 @@
 			}
 			renderTo.modal('show');	
 			*/
-			renderTo.show();
+			renderTo.fadeIn();
 		}
 		
 		
