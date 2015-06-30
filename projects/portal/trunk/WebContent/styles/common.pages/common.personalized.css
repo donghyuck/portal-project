@@ -2437,10 +2437,6 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .simple-post-compose {
 	background: rgba(0, 0, 0, 0.4);	
-  opacity: 1;
-  -webkit-transition: opacity .15s linear;
-  -o-transition: opacity .15s linear;
-  transition: opacity .15s linear;	
 }
 
 .simple-post-compose .content-boxes-v6 {
