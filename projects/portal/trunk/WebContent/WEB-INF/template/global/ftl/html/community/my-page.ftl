@@ -101,8 +101,9 @@
 		function createPagePostModal( postType , page ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){
-				renderTo.modal('show');
+				
 			}
+			renderTo.modal('show');
 		}		
 		<!-- ============================== -->
 		<!-- Pool														-->
