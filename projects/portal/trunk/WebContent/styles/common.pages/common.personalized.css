@@ -2448,10 +2448,18 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background : #8e8e93;
 }
 
+.content-boxes-v6 i:after {
+	border-color: #8e8e93;
+}
+
+
 .content-boxes-v6:hover i {
 	background: #34aadc;
 }
 
+.content-boxes-v6:hover i:after {
+	border-color: #34aadc;
+}
 
 /** ------------------------------------------------- */
 /** buttons				                                       */
