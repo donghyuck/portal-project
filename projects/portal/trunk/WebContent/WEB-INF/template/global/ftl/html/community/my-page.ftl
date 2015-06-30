@@ -969,7 +969,7 @@
 				<p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
 			</div>			
 
-			<div class="col-sm-4 content-boxes-v6 color-flat-lime md-margin-bottom-50">
+			<div class="col-sm-4 content-boxes-v6 color-flat-green md-margin-bottom-50">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-link fa-3x"></i>
 				</button>
