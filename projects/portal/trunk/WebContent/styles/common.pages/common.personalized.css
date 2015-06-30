@@ -2503,7 +2503,20 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background: #BCC2C6;
 }
 
+.content-boxes-v6.color-flat-sky i{
+	background : #3598D9;
+}
 
+.content-boxes-v6.color-flat-sky:hover i {
+	background: #2A80B8;
+}
+.content-boxes-v6.color-flat-green i{
+	background : #2ACB72;
+}
+
+.content-boxes-v6.color-flat-green:hover i {
+	background: #24AD61;
+}
 /** ------------------------------------------------- */
 /** buttons				                                       */
 /** ------------------------------------------------- */
