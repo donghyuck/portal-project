@@ -2434,7 +2434,16 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	}
 }
 
+.post-type-switcher{
+	
+	
+}
+.post-type-switcher-overlay {
+	
+	
+}
 
+/*
 .simple-post-compose {
 	background: rgba(0, 0, 0, 0.4);	
 }
@@ -2443,6 +2452,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	top:0;
 	display : none;	
 }
+*/
 
 /** ------------------------------------------------- */
 /** content-boxes	                                       */
