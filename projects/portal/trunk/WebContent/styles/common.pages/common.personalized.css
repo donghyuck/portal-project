@@ -2463,6 +2463,14 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border:0;
 }
 
+.content-boxes-v6.color-flat-red i{
+	background : #E64B3C;
+}
+
+.content-boxes-v6.color-flat-red:hover i {
+	background: #BF382B;
+}
+
 /** ------------------------------------------------- */
 /** buttons				                                       */
 /** ------------------------------------------------- */
