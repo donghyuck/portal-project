@@ -85,7 +85,7 @@
 			if( !renderTo.data("ready") ){
 				
 				renderTo.click(function(){
-					renderTo.fadeOut();
+					renderTo.hide();
 				});
 
 				$("button[data-post-type]").click(function(e){
