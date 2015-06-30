@@ -2443,6 +2443,12 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .content-boxes-v6 p{
 	color:#fff;
 }
+
+.content-boxes-v6 i{
+	background : #34aadc;
+}
+
+
 /** ------------------------------------------------- */
 /** buttons				                                       */
 /** ------------------------------------------------- */
