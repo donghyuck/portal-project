@@ -2440,11 +2440,13 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 /** content-boxes	                                       */
 /** ------------------------------------------------- */
 .content-boxes-v7{
-	
-	
-	
-	
+	text-align:center;
 }
+
+.content-boxes-v7 h1, .content-boxes-v7 h2, .content-boxes-v7 h3{
+	color:#fff;
+}
+
 /** ------------------------------------------------- */
 /** buttons				                                       */
 /** ------------------------------------------------- */
