@@ -983,7 +983,7 @@
 		</div>	
 		
 		
-		<div id="my-page-simple-post" class="modal" style="background: rgba(0, 0, 0, 0.4);">
+		<div id="my-page-simple-post" class="modal simple-post-compose">
 			
 		</div>
 		
