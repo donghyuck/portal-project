@@ -81,7 +81,8 @@
 		}
 						
 		function createPagePostDialog(){
-			var renderTo = $("#my-page-simplepost-modal");		
+			var renderTo = $("#my-page-simple-post");		
+			/*
 			if( !renderTo.data('bs.modal')){
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
@@ -95,6 +96,8 @@
 				});
 			}
 			renderTo.modal('show');	
+			*/
+			renderTo.show();
 		}
 		
 		
@@ -978,6 +981,13 @@
                                 </div>
                             </div>	
 		</div>	
+		
+		
+		<div id="my-page-simple-post" class="modal" style="display: block; background: rgba(0, 0, 0, 0.4);">
+			
+		</div>
+		
+		
 		
 		<div id="my-page-simplepost-modal" role="dialog" class="modal fade">
 			<div class="modal-dialog modal-lg" role="document">
