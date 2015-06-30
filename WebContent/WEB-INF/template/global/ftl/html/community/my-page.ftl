@@ -968,11 +968,12 @@
                 <h1 class="title-v3-md text-uppercase margin-bottom-10">사진</h1>
                 <p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
             </div>
-            <div class="col-sm-4 content-boxes-v7 md-margin-bottom-50">
-                
-                <button class="btn-link hvr-pulse-shrink" type="button">
-					<i class="icon-flat book"></i>
-					</button>
+            <div class="col-sm-4 content-boxes-v6 md-margin-bottom-50">
+
+				<button class="btn-link hvr-pulse-shrink" type="button">
+					<i class="rounded-x fa fa-link fa-3x"></i>
+				</button>
+					
                 
                 <h2 class="title-v3-md text-uppercase margin-bottom-10">링크</h2>
                 <p>At vero eos et accusato odio dignissimos ducimus qui blanditiis praesentium voluptatum.</p>
