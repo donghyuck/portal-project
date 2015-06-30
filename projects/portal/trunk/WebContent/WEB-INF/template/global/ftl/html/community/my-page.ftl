@@ -88,8 +88,9 @@
 					var postType = $this.data("post-type");
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());
-					createPagePostModal(postType, page);
-					renderTo.modal('hide');
+					//createPagePostModal(postType, page);
+					//renderTo.modal('hide');
+					renderTo.find(".post-form").show();
 				});
 			}
 			renderTo.modal('show');	
