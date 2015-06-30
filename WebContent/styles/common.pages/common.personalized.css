@@ -2471,6 +2471,39 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background: #BF382B;
 }
 
+.content-boxes-v6.color-flat-orange i{
+	background : #E57D25;
+}
+
+.content-boxes-v6.color-flat-orange:hover i {
+	background: #D25304;
+}
+
+.content-boxes-v6.color-flat-teal i{
+	background : #3A6E80;
+}
+
+.content-boxes-v6.color-flat-teal:hover i {
+	background: #346171;
+}
+
+.content-boxes-v6.color-flat-lime i{
+	background : #A4C53F;
+}
+
+.content-boxes-v6.color-flat-lime:hover i {
+	background: #8DAF27;
+}
+
+.content-boxes-v6.color-flat-white i{
+	background : #EBEFF0;
+}
+
+.content-boxes-v6.color-flat-white:hover i {
+	background: #BCC2C6;
+}
+
+
 /** ------------------------------------------------- */
 /** buttons				                                       */
 /** ------------------------------------------------- */
