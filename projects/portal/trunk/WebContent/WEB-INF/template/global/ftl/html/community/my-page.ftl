@@ -955,7 +955,7 @@
 
 
 
-			<div class="col-sm-4 content-boxes-v6 color-flat-sky md-margin-bottom-50">
+			<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-font fa-3x"></i>
 				</button>
@@ -963,7 +963,7 @@
 			</div>			
 
 			
-			<div class="col-sm-4 content-boxes-v6 color-flat-red md-margin-bottom-50">
+			<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-red">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-camera-retro fa-3x"></i>
 				</button>
@@ -971,7 +971,7 @@
 			</div>			
 
 
-			<div class="col-sm-4 content-boxes-v6 color-flat-green md-margin-bottom-50">
+			<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-green\">
 				<button class="btn-link hvr-pulse-shrink" type="button">
 					<i class="rounded-x fa fa-link fa-3x"></i>
 				</button>
