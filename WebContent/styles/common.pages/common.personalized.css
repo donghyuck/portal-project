@@ -2451,11 +2451,15 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	display:none;
 }
 
+.dialog-switcher.dialog--open {
+	display:block;	
+}
 
-.post-type-switcher-overlay {
-	
+.dialog-switcher-overlay {	
 	
 }
+
+
 
 /*
 .simple-post-compose {
