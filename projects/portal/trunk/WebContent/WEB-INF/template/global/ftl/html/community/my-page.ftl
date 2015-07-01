@@ -81,19 +81,23 @@
 		}
 						
 		function createPagePostDialog(){
-			var renderTo = $("#my-page-simple-post");		
-			if( !renderTo.data('bs.modal')){
+			var renderTo = $("#my-post-type-switcher");		
+			if( !common.ui.exists(renderTo)){
+				new common.ui.DialogSwitcher( renderTo, {} );  
+				
+				/*
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
 					var postType = $this.data("post-type");
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());
-					//createPagePostModal(postType, page);
-					//renderTo.modal('hide');
+					createPagePostModal(postType, page);
+					renderTo.modal('hide');
 					renderTo.find(".post-form").show();
 				});
+				*/
 			}
-			renderTo.modal('show');	
+			//renderTo.modal('show');	
 		}
 		
 		
@@ -969,22 +973,8 @@
 		</div>	
 		
 		
-		<div id="my-page-simple-post" role="dialog" class="modal fade" data-backdrop="static" >			
-			<div class="modal-dialog modal-lg post-form" role="document">
-				<div class="modal-header">
-                                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                                        <h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
-				</div>
-				<div class="modal-body">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec mattis odio. In hac habitasse platea dictumst. Vestibulum volutpat pretium porta. Cras mattis metus non ipsum porttitor pulvinar. Proin tempus erat ac neque gravida suscipit. Morbi faucibus turpis a turpis hendrerit sodales sed vel nisl. Praesent vitae magna luctus, blandit quam eu, semper mi.</p>
-				</div>
-				<div class="modal-footer">
-                                        <button type="button" class="btn-u btn-u-default" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn-u btn-u-primary">Save changes</button>
-				</div>	
-			</div>
-			
-			<div class="post-type-switcher">
+		<div id="my-post-type-switcher" >		
+			<div class="post-type-switcher-overlay"></div>
 				<div class="container">
 					<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
 					<div class="row ">
@@ -1008,9 +998,7 @@
 						</div>
 					</div>
 				</div>
-			</div>	
-					
-		
+			</div>		
 		</div>
 		
 		<div class="modal fade" id="my-poll-modal" tabindex="-1" role="dialog" aria-labelledby="my-poll-modal">
