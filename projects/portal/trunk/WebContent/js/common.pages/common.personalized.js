@@ -3,7 +3,7 @@
  * dependency : jquery
  */
 ;(function($, undefined) {
-	var kendo = window.kendo, ui = kendo.ui, Widget = ui.Widget
+	var kendo = window.kendo, ui = kendo.ui, Widget = ui.Widget, extend = $.extend ;
     
 	var DialogSwitcher =  Widget.extend({
 		// initialization code goes here
