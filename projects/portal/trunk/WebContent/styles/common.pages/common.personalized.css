@@ -2460,7 +2460,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	z-index: 1001;		
 	padding-top: 60px;
 	padding-bottom:  30px;
-	backgroupd-color : rgba(0,0,0,.2);
+	background-color : rgba(0,0,0,.2);
 }
 
 .dialog-switcher-content .close {
