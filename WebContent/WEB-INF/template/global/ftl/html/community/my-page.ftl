@@ -978,7 +978,7 @@
 			<div class="post-type-switcher-overlay"></div>
 			<div class="dialog-switcher-content">
 				<div class="container">
-					<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
+					<span class="close close-white" data-dialog-close  aria-label="Close"></span>
 					<div class="row ">
 						<div class="col-sm-4 col-xs-6 content-boxes-v6 color-flat-sky">
 							<button class="btn-link hvr-pulse-shrink" type="button" data-post-type="text">
