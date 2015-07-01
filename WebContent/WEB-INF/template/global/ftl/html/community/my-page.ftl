@@ -90,7 +90,6 @@
 					var postType = $this.data("post-type");
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());
-					switcher.close();
 					createPagePostModal(postType, page);					
 				});
 			}			
@@ -101,7 +100,12 @@
 		function createPagePostModal( postType , page ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){
-				
+				renderTo.on('show.bs.modal', function(e){
+					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
+					if(switcher.isOpen){
+						switcher.close();
+					}
+				});
 			}
 			renderTo.modal('show');
 		}		
