@@ -2448,7 +2448,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	z-index: 1000;		
 	overflow: hidden;
 	outline: 0;
-	display:hidden;
+	display:none;
 }
 
 
