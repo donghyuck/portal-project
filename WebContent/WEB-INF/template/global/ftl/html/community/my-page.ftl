@@ -987,7 +987,7 @@
                         </section>
                         
                         <section>
-                            <label class="label">Textarea expandable</label>
+                            <label class="label">요약</label>
                             <label class="textarea textarea-expandable">
                                 <textarea rows="3"></textarea>
                             </label>
