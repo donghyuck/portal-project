@@ -28,9 +28,9 @@
 	    	var ctrlClose  = element.find("[data-dialog-close]");
 			ctrlClose.click(function(e){				
 				var content = element.children(".dialog-switcher-content");
-				element.addClass("animated fadeOutUp");
+				content.addClass("animated fadeOutUp");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
-					element.removeClass("animated fadeOutUp");	
+					content.removeClass("animated fadeOutUp");	
 					that.close();	
 				});		
 			});
@@ -52,12 +52,12 @@
 			options = that.options;			
 
 			if( !that.isOpen )
-			{
-				element.addClass("animated fadeInDown");
-				element.addClass("dialog-switcher-open");
+			{				
 				var content = element.children(".dialog-switcher-content");
+				content.addClass("animated fadeInDown");
+				element.addClass("dialog-switcher-open");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
-					element.removeClass("animated fadeInDown");	
+					content.removeClass("animated fadeInDown");	
 					that.trigger("opened");
 				});
 				that.isOpen = true;
