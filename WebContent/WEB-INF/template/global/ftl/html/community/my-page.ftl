@@ -975,7 +975,6 @@
 		
 		
 		<div id="my-post-type-switcher" class="dialog-switcher" >		
-			<div class="post-type-switcher-overlay"></div>
 			<div class="dialog-switcher-content">
 				<div class="container">
 					<span class="close close-white" data-dialog-close  aria-label="Close"></span>
