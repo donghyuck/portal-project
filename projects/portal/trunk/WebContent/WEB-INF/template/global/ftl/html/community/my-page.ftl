@@ -975,7 +975,6 @@
 						</div>
 						<span class="hvr-pulse-shrink collapsed" data-dialog-settings data-toggle="collapse" data-target="#my-page-post-dialog-settings" area-expanded="false" aria-controls="my-page-post-dialog-setting"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
-						<h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
 					</div>
 					<div class="modal-body">
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec mattis odio. In hac habitasse platea dictumst. Vestibulum volutpat pretium porta. Cras mattis metus non ipsum porttitor pulvinar. Proin tempus erat ac neque gravida suscipit. Morbi faucibus turpis a turpis hendrerit sodales sed vel nisl. Praesent vitae magna luctus, blandit quam eu, semper mi.</p>
