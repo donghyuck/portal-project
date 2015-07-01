@@ -2485,9 +2485,23 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	
 }
 
+
 .modal-dialog .modal-header .close {
 	right: 0px;
 	top: 4px;
+}
+
+.modal-dialog .modal-header  [data-dialog-settings] {
+	position: absolute;
+	right: 38px;
+	top: 11px;		
+}
+
+
+
+
+.my-page-post-form {
+	border-radius: 6px !important;
 }
 
 
