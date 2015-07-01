@@ -2497,8 +2497,18 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	top: 11px;		
 }
 
+.modal-dialog .modal-header .author {
+	position: relative;
+	top: -2px;
+	height: 23px;	
+}
 
-
+.modal-dialog .modal-header .author  > img {
+	border-radius: 50% !important;
+	margin-right: 10px;
+	width:30px;
+	height:30px;
+}
 
 .my-page-post-form {
 	border-radius: 6px !important;
