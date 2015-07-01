@@ -970,7 +970,9 @@
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content my-page-post-form">
 					<div class="modal-header">
-						
+						<div class="author">
+							<img data-bind="attr:{src:page.authorPhotoUrl}" src="/download/profile/andang?width=150&amp;height=150" style="margin-right:10px;">
+						</div>
 						<span class="hvr-pulse-shrink collapsed" data-dialog-settings data-toggle="collapse" data-target="#my-page-post-dialog-settings" area-expanded="false" aria-controls="my-page-post-dialog-setting"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 						<h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
