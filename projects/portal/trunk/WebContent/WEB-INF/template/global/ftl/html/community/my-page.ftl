@@ -974,7 +974,7 @@
 		</div>	
 		
 		
-		<div id="my-post-type-switcher" >		
+		<div id="my-post-type-switcher" class="dialog-switcher" >		
 			<div class="post-type-switcher-overlay"></div>
 				<div class="container">
 					<span class="close close-white" data-dismiss="modal" aria-label="Close"></span>
