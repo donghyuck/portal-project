@@ -16,7 +16,7 @@
 			that.render();
 	    },
 	    options: {
-	    	name:"DialogSwitcher"
+	    	name:"DialogSwitcher",
 	    	animate : true	
 	    },
 	    events : [ "open", "opened", "close", "closed" ],
