@@ -987,16 +987,17 @@
 							<section>
 								<label class="label">요약</label>
 								<label class="textarea textarea-expandable">
-								<textarea rows="3"></textarea>
-							</label>
-							<div class="note"><strong>Note:</strong> expands on focus.</div>
-						</section>
-					</fieldset>
-				</form>
-				<div class="modal-footer">
-					<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
-					<button class="btn-u" type="button">Save changes</button>
-				</div>				
+									<textarea rows="3"></textarea>
+								</label>
+								<div class="note"><strong>Note:</strong> expands on focus.</div>
+							</section>
+						</fieldset>
+					</form>
+					<div class="modal-footer">
+						<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
+						<button class="btn-u" type="button">Save changes</button>
+					</div>
+				</div>								
 			</div>	
 		</div>	
 		
