@@ -77,6 +77,7 @@
 		function createPageCompose(){
 			$("button[data-action=post], a[data-action=post]").click(function(e){
 				createPagePostDialog();
+				return false;
 			});		
 		}
 						
