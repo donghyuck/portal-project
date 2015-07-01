@@ -47,8 +47,8 @@
 
 			if( !that.isOpen )
 			{
-				element.addClass("dialog--open");
-				var content = element.children(".dialog__content");
+				element.addClass("dialog-switcher-open");
+				var content = element.children(".dialog-switcher-content");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
 					that.trigger("opened");
 				});
