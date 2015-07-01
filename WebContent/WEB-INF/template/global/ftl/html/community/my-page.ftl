@@ -962,11 +962,17 @@
 		<!-- Modal -->
 		
 		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-                                    
+			<div class="modal-dialog modal-lg">
+<div class="modal-content">
+                                    <div class="modal-header">
+                                        <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                                        <h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec mattis odio. In hac habitasse platea dictumst. Vestibulum volutpat pretium porta. Cras mattis metus non ipsum porttitor pulvinar. Proin tempus erat ac neque gravida suscipit. Morbi faucibus turpis a turpis hendrerit sodales sed vel nisl. Praesent vitae magna luctus, blandit quam eu, semper mi.</p>
+                                    </div>
                                 </div>
-                            </div>	
+			</div>	
 		</div>	
 		
 		
