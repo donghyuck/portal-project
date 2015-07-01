@@ -980,18 +980,19 @@
                     
                     <fieldset>
                         <section>
-                            <label class="label">Text input</label>
+                            <label class="label">주제</label>
                             <label class="input">
                                 <input type="text">
                             </label>
                         </section>
                         
                         <section>
-                            <label class="label">File input</label>
-                            <label for="file" class="input input-file">
-                                <div class="button"><input type="file" id="file" onchange="this.parentNode.nextSibling.value = this.value">Browse</div><input type="text" readonly="">
+                            <label class="label">Textarea expandable</label>
+                            <label class="textarea textarea-expandable">
+                                <textarea rows="3"></textarea>
                             </label>
-                        </section>                  
+                            <div class="note"><strong>Note:</strong> expands on focus.</div>
+                        </section>               
                             
                     </fieldset>
                     
@@ -1045,13 +1046,7 @@
                             </label>
                         </section>
                         
-                        <section>
-                            <label class="label">Textarea expandable</label>
-                            <label class="textarea textarea-expandable">
-                                <textarea rows="3"></textarea>
-                            </label>
-                            <div class="note"><strong>Note:</strong> expands on focus.</div>
-                        </section>
+
                     </fieldset>
                     
                     <fieldset>
