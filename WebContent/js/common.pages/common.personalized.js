@@ -39,7 +39,6 @@
 				element.removeClass("dialog-switcher-open");
 				that.isOpen = false;				
 				that.trigger("closed");
-				element.hide();
 			}			
 	    },
 	    open : function(){
