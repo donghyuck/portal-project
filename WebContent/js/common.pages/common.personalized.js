@@ -1,9 +1,68 @@
-/*var template = kendo.template(
-	'<div class="project-content" style="display: none;">'
-		'<div class="project-content" style="display: none;">'
-	'</div>'	
-);
-*/
+/**
+ * COMMON UI MY
+ * dependency : jquery
+ */
+;(function($, undefined) {
+	var kendo = window.kendo, ui = kendo.ui, Widget = ui.Widget
+    
+	var DialogSwitcher =  Widget.extend({
+		// initialization code goes here
+		init: function(element, options) {
+			var that = this;
+			Widget.fn.init.call(that, element, options);
+			options = that.options;
+			that.isOpen = false;
+			kendo.notify(that);
+			that.render();
+	    },
+	    options: {
+	    	name:"DialogSwitcher"
+	    	animate : true	
+	    },
+	    events : [ "open", "opened", "close", "closed" ],
+	    render : function() {
+	    	var ctrlClose  = element.find("[data-dialog-close]");
+			ctrlClose.click(function(e){
+				that.close();				
+			});
+	    },
+	    close : function(){
+			var that = this,
+			element = that.element,
+			options = that.options;
+			if( that.isOpen ){
+				that.isOpen = false;				
+				that.trigger("close");
+				element.hide();
+			}			
+	    },
+	    open : function(){
+			var that = this,
+			element = that.element,
+			options = that.options;			
+
+			if( !that.isOpen )
+			{
+				element.addClass("dialog--open");
+				var content = element.children(".dialog__content");
+				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+					that.trigger("opened");
+				});
+				that.isOpen = true;
+				that.trigger("open");				
+			}			
+	    }	
+    });
+	
+	
+	extend(common.ui, {	
+		DialogSwitcher : DialogSwitcher
+	});
+	
+})(jQuery);
+
+
+
 function preparePersonalizedArea( element, minCount, colSize ){	
 	
 	var template = kendo.template("<div id='#= guid #' class='personalized-panels-group col-sm-#= colSize#'></div>");
