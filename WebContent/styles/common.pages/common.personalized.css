@@ -2458,7 +2458,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .dialog-switcher .dialog-switcher-content {
 	z-index: 1001;		
-	margin-top: 60px;
+	padding-top: 60px;
+	padding-bottom:  30px;
+	backgroupd-color : rgba(0,0,0,.2);
 }
 
 .dialog-switcher-content .close {
