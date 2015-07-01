@@ -26,8 +26,13 @@
 			options = that.options;
 	    	
 	    	var ctrlClose  = element.find("[data-dialog-close]");
-			ctrlClose.click(function(e){
-				that.close();				
+			ctrlClose.click(function(e){				
+				var content = element.children(".dialog-switcher-content");
+				element.addClass("animated fadeOutUp");
+				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+					element.removeClass("animated fadeOutUp");	
+					that.close();	
+				});		
 			});
 	    },
 	    close : function(){
