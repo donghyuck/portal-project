@@ -2460,7 +2460,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	z-index: 1001;		
 	padding-top: 60px;
 	padding-bottom:  30px;
-	background-color : rgba(0,0,0,.2);
+	background-color : rgba(0,0,0,.4);
 }
 
 .dialog-switcher-content .close {
@@ -2474,7 +2474,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	height: 50px;
 	text-align: center;
 	background: url(/images/common/white-cross.png) no-repeat center;
-	background-size: 35px;
+	background-size: 30px;
 	content: "";
 	display: block;
 	opacity: .5;
