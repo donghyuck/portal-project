@@ -35,8 +35,10 @@
 			element = that.element,
 			options = that.options;
 			if( that.isOpen ){
+				var content = element.children(".dialog-switcher-content");
+				element.removeClass("dialog-switcher-open");
 				that.isOpen = false;				
-				that.trigger("close");
+				that.trigger("closed");
 				element.hide();
 			}			
 	    },
