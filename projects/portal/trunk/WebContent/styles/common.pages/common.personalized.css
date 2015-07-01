@@ -2485,6 +2485,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	
 }
 
+.modal-dialog .modal-header .close {
+	right: 0px;
+	top: 4px;
+}
+
 
 
 /*
