@@ -101,7 +101,7 @@
 		function createPagePostModal( postType , page ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){
-				renderTo.on('show.bs.modal', function(e){
+				renderTo.on('shown.bs.modal', function(e){
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
