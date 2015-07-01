@@ -21,6 +21,10 @@
 	    },
 	    events : [ "open", "opened", "close", "closed" ],
 	    render : function() {
+	    	var that = this,
+			element = that.element,
+			options = that.options;
+	    	
 	    	var ctrlClose  = element.find("[data-dialog-close]");
 			ctrlClose.click(function(e){
 				that.close();				
