@@ -2451,12 +2451,12 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	display:none;
 }
 
-.dialog-switcher.dialog--open {
+.dialog-switcher.dialog-switcher-open {
 	display:block;	
 }
 
 
-.dialog-switcher .dialog__content {
+.dialog-switcher .dialog_switcher_content {
 	z-index: 1001;		
 	margin-top: 60px;
 }
