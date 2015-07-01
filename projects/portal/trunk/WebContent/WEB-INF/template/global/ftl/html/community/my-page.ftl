@@ -968,8 +968,10 @@
 		
 		<div id="my-page-post-modal" role="dialog" class="modal fade" data-backdrop="static">
 			<div class="modal-dialog modal-lg">
-				<div class="modal-content">
+				<div class="modal-content my-page-post-form">
 					<div class="modal-header">
+						
+						<span class="hvr-pulse-shrink collapsed" data-dialog-settings data-toggle="collapse" data-target="#my-page-post-dialog-settings" area-expanded="false" aria-controls="my-page-post-dialog-setting"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 						<h4 id="myLargeModalLabel2" class="modal-title">Large Modal</h4>
 					</div>
