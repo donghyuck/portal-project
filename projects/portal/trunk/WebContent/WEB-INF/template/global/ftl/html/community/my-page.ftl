@@ -85,7 +85,6 @@
 			
 			if( !common.ui.exists(renderTo)){
 				new common.ui.DialogSwitcher( renderTo, {} );  
-				
 				/*
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
@@ -98,7 +97,8 @@
 				});
 				*/
 			}
-			//renderTo.modal('show');	
+			
+			renderTo.data('kendoDialogSwitcher').open();
 		}
 		
 		
