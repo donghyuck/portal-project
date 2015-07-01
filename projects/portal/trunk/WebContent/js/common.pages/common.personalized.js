@@ -48,9 +48,11 @@
 
 			if( !that.isOpen )
 			{
+				element.addClass("animated fadeInDown");
 				element.addClass("dialog-switcher-open");
 				var content = element.children(".dialog-switcher-content");
 				content.one( "webkitAnimationEnd oanimationend msAnimationEnd animationend", function(e) {
+					element.removeClass("animated fadeInDown");	
 					that.trigger("opened");
 				});
 				that.isOpen = true;
