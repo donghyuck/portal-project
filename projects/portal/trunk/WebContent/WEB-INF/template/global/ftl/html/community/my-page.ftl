@@ -82,6 +82,7 @@
 						
 		function createPagePostDialog(){
 			var renderTo = $("#my-post-type-switcher");		
+			
 			if( !common.ui.exists(renderTo)){
 				new common.ui.DialogSwitcher( renderTo, {} );  
 				
