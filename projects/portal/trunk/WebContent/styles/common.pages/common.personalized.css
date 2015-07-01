@@ -2455,6 +2455,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	display:block;	
 }
 
+
+.dialog-switcher .dialog__content {
+	z-index: 1001;		
+	margin-top: 60px;
+}
 .dialog-switcher-overlay {	
 	
 }
