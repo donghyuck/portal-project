@@ -976,9 +976,153 @@
 						<span class="hvr-pulse-shrink collapsed" data-dialog-settings data-toggle="collapse" data-target="#my-page-post-dialog-settings" area-expanded="false" aria-controls="my-page-post-dialog-setting"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<div class="modal-body">
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nec mattis odio. In hac habitasse platea dictumst. Vestibulum volutpat pretium porta. Cras mattis metus non ipsum porttitor pulvinar. Proin tempus erat ac neque gravida suscipit. Morbi faucibus turpis a turpis hendrerit sodales sed vel nisl. Praesent vitae magna luctus, blandit quam eu, semper mi.</p>
-					</div>
+<form action="#" class="sky-form no-border-hr">
+                    
+                    <fieldset>
+                        <section>
+                            <label class="label">Text input</label>
+                            <label class="input">
+                                <input type="text">
+                            </label>
+                        </section>
+                        
+                        <section>
+                            <label class="label">File input</label>
+                            <label for="file" class="input input-file">
+                                <div class="button"><input type="file" id="file" onchange="this.parentNode.nextSibling.value = this.value">Browse</div><input type="text" readonly="">
+                            </label>
+                        </section>                  
+                            
+                    </fieldset>
+                    
+                    <fieldset>
+                        <section>
+                            <label class="label">Select</label>
+                            <label class="select">
+                                <select>
+                                    <option value="0">Choose name</option>
+                                    <option value="1">Alexandra</option>
+                                    <option value="2">Alice</option>
+                                    <option value="3">Anastasia</option>
+                                    <option value="4">Avelina</option>
+                                </select>
+                                <i></i>
+                            </label>
+                        </section>
+                        
+                        <section>
+                            <label class="label">Multiple select</label>
+                            <label class="select select-multiple">
+                                <select multiple="">
+                                    <option value="1">Alexandra</option>
+                                    <option value="2">Alice</option>
+                                    <option value="3">Anastasia</option>
+                                    <option value="4">Avelina</option>
+                                    <option value="5">Basilia</option>
+                                    <option value="6">Beatrice</option>
+                                    <option value="7">Cassandra</option>
+                                    <option value="8">Clemencia</option>
+                                    <option value="9">Desiderata</option>
+                                </select>
+                            </label>
+                            <div class="note"><strong>Note:</strong> hold down the ctrl/cmd button to select multiple options.</div>
+                        </section>
+                    </fieldset>
+                    
+                    <fieldset>                  
+                        <section>
+                            <label class="label">Textarea</label>
+                            <label class="textarea">
+                                <textarea rows="3"></textarea>
+                            </label>
+                            <div class="note"><strong>Note:</strong> height of the textarea depends on the rows attribute.</div>
+                        </section>
+                        
+                        <section>
+                            <label class="label">Textarea resizable</label>
+                            <label class="textarea textarea-resizable">
+                                <textarea rows="3"></textarea>
+                            </label>
+                        </section>
+                        
+                        <section>
+                            <label class="label">Textarea expandable</label>
+                            <label class="textarea textarea-expandable">
+                                <textarea rows="3"></textarea>
+                            </label>
+                            <div class="note"><strong>Note:</strong> expands on focus.</div>
+                        </section>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <section>
+                            <label class="label">Columned radios</label>
+                            <div class="row">
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio" checked=""><i class="rounded-x"></i>Alexandra</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Alice</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Anastasia</label>
+                                </div>
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Avelina</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Basilia</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Beatrice</label>
+                                </div>
+                                <div class="col col-4">
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Cassandra</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Clemencia</label>
+                                    <label class="radio"><input type="radio" name="radio"><i class="rounded-x"></i>Desiderata</label>
+                                </div>
+                            </div>                      
+                        </section>
+                        
+                        <section>
+                            <label class="label">Inline radios</label>
+                            <div class="inline-group">
+                                <label class="radio"><input type="radio" name="radio-inline" checked=""><i class="rounded-x"></i>Alexandra</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Alice</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Anastasia</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Avelina</label>
+                                <label class="radio"><input type="radio" name="radio-inline"><i class="rounded-x"></i>Beatrice</label>
+                            </div>
+                        </section>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <section>
+                            <label class="label">Columned checkboxes</label>
+                            <div class="row">
+                                <div class="col col-4">
+                                    <label class="checkbox"><input type="checkbox" name="checkbox" checked=""><i></i>Alexandra</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Alice</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Anastasia</label>
+                                </div>
+                                <div class="col col-4">
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Avelina</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Basilia</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Beatrice</label>
+                                </div>
+                                <div class="col col-4">
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Cassandra</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Clemencia</label>
+                                    <label class="checkbox"><input type="checkbox" name="checkbox"><i></i>Desiderata</label>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        <section>
+                            <label class="label">Inline checkboxes</label>
+                            <div class="inline-group">
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline" checked=""><i></i>Alexandra</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Alice</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Anastasia</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Avelina</label>
+                                <label class="checkbox"><input type="checkbox" name="checkbox-inline"><i></i>Beatrice</label>
+                            </div>
+                        </section>
+                    </fieldset>
+                </form>
+                
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
 						<button class="btn-u" type="button">Save changes</button>
