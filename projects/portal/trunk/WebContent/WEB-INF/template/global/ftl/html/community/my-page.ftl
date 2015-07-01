@@ -84,20 +84,17 @@
 			var renderTo = $("#my-post-type-switcher");		
 			
 			if( !common.ui.exists(renderTo)){
-				new common.ui.DialogSwitcher( renderTo, {} );  
-				/*
+				var switcher = new common.ui.DialogSwitcher( renderTo, {} );  
 				$("button[data-post-type]").click(function(e){
 					var $this = $(this);
 					var postType = $this.data("post-type");
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());
 					createPagePostModal(postType, page);
-					renderTo.modal('hide');
-					renderTo.find(".post-form").show();
+					
+					switcher.close();
 				});
-				*/
-			}
-			
+			}			
 			renderTo.data('kendoDialogSwitcher').open();
 		}
 		
