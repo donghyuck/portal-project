@@ -2514,7 +2514,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border-radius: 6px !important;
 }
 
-
+.my-page-post-form  .modal-header {
+	border-bottom: 1px dashed #e5e5e5;
+}
 
 /*
 .simple-post-compose {
