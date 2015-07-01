@@ -90,9 +90,8 @@
 					var postType = $this.data("post-type");
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());
-					createPagePostModal(postType, page);
-					
 					switcher.close();
+					createPagePostModal(postType, page);					
 				});
 			}			
 			renderTo.data('kendoDialogSwitcher').open();
