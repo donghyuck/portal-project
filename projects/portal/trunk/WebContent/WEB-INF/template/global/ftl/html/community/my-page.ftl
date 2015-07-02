@@ -163,7 +163,8 @@
 					}
 				});									
 			
-				renderTo.on('shown.bs.modal', function(e){					
+				renderTo.on('shown.bs.modal', function(e){			
+					observable.setPage(page);
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
@@ -171,8 +172,8 @@
 				});						
 				renderTo.on('hidden.bs.modal', function(e){					
 					renderTo.find('.collapse').collapse('hide');
-				});								
-			
+				});				
+				kendo.bind(renderTo, observable);
 			}
 			renderTo.modal('show');
 		}		
