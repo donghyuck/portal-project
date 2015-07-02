@@ -82,8 +82,7 @@
 		}
 						
 		function createPagePostDialog(){
-			var renderTo = $("#my-post-type-switcher");		
-			
+			var renderTo = $("#my-post-type-switcher");					
 			if( !common.ui.exists(renderTo)){
 				var switcher = new common.ui.DialogSwitcher( renderTo, {} );  
 				$("button[data-post-type]").click(function(e){
@@ -101,15 +100,227 @@
 		function createPagePostModal( postType , page ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){
+			
+				var observable =  common.ui.observable({
+					page : new common.ui.data.Page(),
+					postType: "text",
+					pageSource : "",
+					pageSourceUrl : "",
+					editable : false,
+					visible : true,
+					useWrapMode : false,
+					stateSource : [
+						{name: "" , value: "INCOMPLETE"},
+						{name: "승인" , value: "APPROVAL"},
+						{name: "게시" , value: "PUBLISHED"},
+						{name: "거절" , value: "REJECTED"},
+						{name: "보관" , value: "ARCHIVED"},
+						{name: "삭제" , value: "DELETED"}
+					],
+					validate : function (){
+						var $this = this;
+						if( $this.page.pageId == 0 ){
+						
+						}
+							if(!$("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").addClass("state-error");							
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "제목을 입력하세요."	},
+								"error"
+							);
+							return false;
+						}						
+						else{
+							if($("label[for=title]").hasClass("state-error"))
+								$("label[for=title]").removeClass("state-error");
+								
+							if( $this.page.pageId === 0 ) {
+								if( $this.page.name.length === 0 ){
+									$this.page.set("name" , $this.page.title) ;
+								}
+								if( $this.page.summary.length === 0 ){
+									$this.page.set("summary" , $this.page.title) ;
+								}									
+								if( $this.page.bodyContent.bodyText.length === 0 ){
+									$this.page.bodyContent.bodyText = "  ";
+								}							
+							} 	
+						}								
+						if($this.page.name.length === 0 ){
+							if(!$("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "파일이름을 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=name]").hasClass("state-error"))
+								$("label[for=name]").removeClass("state-error");
+						}																		
+						if($this.page.summary.length == 0 ){
+							if(!$("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").addClass("state-error");
+							common.ui.notification({
+								hide:function(e){
+									btn.button('reset');
+								}
+							}).show(
+								{	title:"입력 오류", message: "페이지 요약 정보를 입력하세요."	},
+								"error"
+							);	
+							return false;	
+						}
+						else{
+							if($("label[for=summary]").hasClass("state-error"))
+								$("label[for=summary]").removeClass("state-error");
+						}									
+					},
+					create : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');					
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();				
+						$this.validate();
+						
+						//var source_title = $("#my-page-options input[name=source]").val();
+						//var source_link = $("#my-page-options input[name=url]").val();
+						
+						if( $this.pageSource.length > 0 ){
+							$this.page.properties.source = $this.pageSource;
+						} 
+						if( $this.pageSourceUrl.length > 0 ){
+							$this.page.properties.url = $this.pageSourceUrl;
+						}
+						
+						if( $this.page.tagsString.length > 0 ){
+							$this.page.properties.tagsString = $this.page.tagsString;
+						} 
+						
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									if( response.pageId ){
+										$("#my-page-options").collapse('hide');
+										$this.set( "editable" , true ) ;	
+										$this.setPage( new common.ui.data.Page(response) );										
+									}						
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
+					},
+					update : function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');						
+						$this.page.bodyContent.bodyText = $('#my-page-editor').data('kendoEditor').value();
+						$this.validate();						
+						
+						if( $this.pageSource.length > 0 ){
+							$this.page.properties.source = $this.pageSource;
+						} 
+						if( $this.pageSourceUrl.length > 0 ){
+							$this.page.properties.url = $this.pageSourceUrl;
+						}
+						$this.page.properties.tagsString = $this.page.tagsString;
+						common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									common.ui.notification({title:"페이지 저장", message: "페이지 가 정상적으로 저장되었습니다.", type: "success" });
+									common.ui.listview( $("#my-page-listview") ).dataSource.read();
+									$this.close();									
+								},
+								fail: function(){								
+									common.ui.notification({title:"페이지 저장 오류", message: "시스템 운영자에게 문의하여 주십시오." });
+								},
+								requestStart : function(){
+									kendo.ui.progress(renderTo, true);
+								},
+								requestEnd : function(){
+									kendo.ui.progress(renderTo, false);
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+						});												
+						return false;
+					},	
+					exportPdf: function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						btn.button('loading');	
+						if( $this.page.pageId  > 0 ) {
+							kendo.drawing.drawDOM(renderTo.find("article")).then(function(group) {
+								return kendo.drawing.exportPDF(group, {
+								paperSize: "auto",
+								margin: { left: "1cm", top: "1cm", right: "1cm", bottom: "1cm" }
+								});
+							}).done(function(data) {
+								kendo.saveAs({
+								dataURI: data,
+								fileName:  $this.page.name + ".pdf",
+								proxyURL: "/downlaod/export"
+								});
+								btn.button('reset');
+							});
+						}
+						return false;
+					},								
+					setPage: function(page){
+						var that = this;
+						page.copy(that.page);						
+						if( $("#my-page-imagebroswer").data("kendoExtImageBrowser") ) {
+							$("#my-page-imagebroswer").data("kendoExtImageBrowser").objectId( that.page.pageId );
+						}
+						if( that.page.properties.source ){
+							that.set('pageSource', that.page.properties.source);
+						}else{
+							that.set('pageSource', "");
+						} 
+						if( that.page.properties.url ){
+							that.set('pageSourceUrl', that.page.properties.url);
+						}else{
+							that.set('pageSourceUrl', "");
+						}						
+						if( that.page.pageId  > 0 ) {
+							that.set("advencedSetting", true);
+							that.properties.read();
+						} else {
+							that.set("advencedSetting", false);
+						}	
+					}
+				});		
+							
+			
 				renderTo.on('shown.bs.modal', function(e){					
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
 					}
 				});			
+			
 				renderTo.on('hidden.bs.modal', function(e){					
 					renderTo.find('.collapse').collapse('hide');
 				});								
+			
 			}
 			renderTo.modal('show');
 		}		
@@ -1025,8 +1236,9 @@
 						</fieldset>
 					</form>
 					<div class="modal-footer">
-						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left" type="button">닫기</button>
-						<button class="btn btn-flat btn-info" type="button">게시</button>
+						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
+						<button class="btn btn-flat btn-info rounded btn-outline" type="button">다음</button>
+						<button class="btn btn-flat btn-info rounded disabled" type="button">완료</button>
 					</div>
 				</div>								
 			</div>	
