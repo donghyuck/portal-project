@@ -979,7 +979,7 @@
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-post-modal-settings" area-expanded="false" aria-controls="my-post-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<form id="my-post-modal-settings" action="#" class="sky-form modal-settings" aria-expanded="false">
+					<form id="my-post-modal-settings" action="#" class="sky-form modal-settings collapse">
 							<header>
 								고급옵션
 								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
