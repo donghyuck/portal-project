@@ -977,15 +977,12 @@
 							<img data-bind="attr:{src:page.authorPhotoUrl}" src="/download/profile/andang?width=150&amp;height=150" style="margin-right:10px;">
 						</div>
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-post-modal-settings" area-expanded="false" aria-controls="my-post-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
-						
-						
-						
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<form id="my-post-modal-settings" action="#" class="sky-form modal-settings" aria-expanded="true">
+					<form id="my-post-modal-settings" action="#" class="sky-form modal-settings" aria-expanded="false">
 							<header>
-								옵션
-								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="true" aria-controls="my-post-modal-settings"></span>
+								고급옵션
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="false" aria-controls="my-post-modal-settings"></span>
 							</header>
 							<fieldset>                  
 										<section>
@@ -1024,13 +1021,6 @@
 								<label class="input">
 									<input type="text" placeholder="무엇에 대한 사진인가요?">
 								</label>
-							</section>
-							<section>
-								<label class="label">요약</label>
-								<label class="textarea textarea-expandable">
-									<textarea rows="3"></textarea>
-								</label>
-								<div class="note"><strong>Note:</strong> 조금 더 자세하게 알려 주세요.</div>
 							</section>
 						</fieldset>
 					</form>
