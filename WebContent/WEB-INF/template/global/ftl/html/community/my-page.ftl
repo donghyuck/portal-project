@@ -122,10 +122,9 @@
 						renderTo.find("form label[for]").removeClass("state-error");
 						if( $this.page.title.length == 0 )  
 						{
-							
+							renderTo.find("form label[for=title]").addClass("state-error");
+							return false;
 						}
-						
-						
 						if( $this.page.pageId > 0 ){
 							
 						}
@@ -1091,9 +1090,9 @@
 						<fieldset>
 							<section>
 								<label class="label">주제</label>
-								<label class="input" for="name">
+								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
-									<input type="text" name="name" placeholder="무엇에 대한 사진인가요?">
+									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title">
 								</label>
 							</section>
 						</fieldset>
