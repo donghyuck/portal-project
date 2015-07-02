@@ -119,16 +119,27 @@
 					validate : function (){
 						var $this = this;						
 						
+						renderTo.find("form label[for]").removeClass("state-error");
+						if( $this.page.title.length == 0 )  
+						{
+							
+						}
+						
+						
 						if( $this.page.pageId > 0 ){
 							
 						}
 						
+						return false;
 					},
 					create : function(e){
 						var $this = this, 
-						btn = $(e.target);						
-						btn.button('loading');					
-						btn.button('reset');
+						btn = $(e.target);							
+						if( $this.validate() ){
+							btn.button('loading');
+							// 
+							btn.button('reset');
+						}
 						return false;
 					},
 					update : function(e){
@@ -1089,8 +1100,8 @@
 					</form>
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
-						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-bind="invisible:editable">다음</button>
-						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable">완료</button>
+						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-bind="{invisible:editable, click:create}">다음</button>
+						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable, click:update">완료</button>
 					</div>
 				</div>								
 			</div>	
