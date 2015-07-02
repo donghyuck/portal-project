@@ -2540,6 +2540,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .my-page-post-form .sky-form.modal-settings fieldset {
 	background : transparent;
 }
+
+.my-page-post-form .sky-form.modal-settings .icon-append {
+	border : 0 ;	
+	color: #ff2d55;
+}
 /*
 .simple-post-compose {
 	background: rgba(0, 0, 0, 0.4);	
