@@ -2526,6 +2526,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background-color: #F5F7FA;		
 }
 
+.my-page-post-form .sky-form .textarea textarea {
+	border : 0;
+	background-color: #F5F7FA;		
+}
+
 
 /*
 .simple-post-compose {
