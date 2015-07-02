@@ -117,18 +117,13 @@
 						{name: "삭제" , value: "DELETED"}
 					],
 					validate : function (){
-						var $this = this;						
-						
+						var $this = this;		
 						renderTo.find("form label[for]").removeClass("state-error");
 						if( $this.page.title.length == 0 )  
 						{
 							renderTo.find("form label[for=title]").addClass("state-error");
 							return false;
 						}
-						if( $this.page.pageId > 0 ){
-							
-						}
-						
 						return false;
 					},
 					create : function(e){
@@ -1093,6 +1088,7 @@
 								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title">
+									
 								</label>
 							</section>
 						</fieldset>
