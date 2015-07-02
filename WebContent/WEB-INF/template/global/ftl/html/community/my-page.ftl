@@ -1090,7 +1090,7 @@
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
 						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-bind="invisible:editable">다음</button>
-						<button class="btn btn-flat btn-info rounded" type="button" data-bind="visible:editable">완료</button>
+						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable">완료</button>
 					</div>
 				</div>								
 			</div>	
