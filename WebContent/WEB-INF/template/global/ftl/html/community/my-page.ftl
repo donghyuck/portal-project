@@ -117,14 +117,17 @@
 						{name: "삭제" , value: "DELETED"}
 					],
 					validate : function (){
-						var $this = this;		
+						var $this = this, hasError = true;		
 						renderTo.find("form label[for]").removeClass("state-error");
+						
 						if( $this.page.title.length == 0 )  
 						{
 							renderTo.find("form label[for=title]").addClass("state-error");
-							return false;
+							hasError = false;
 						}
-						return false;
+						
+						
+						return !hasError;
 					},
 					create : function(e){
 						var $this = this, 
