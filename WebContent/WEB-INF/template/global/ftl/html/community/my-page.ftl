@@ -128,7 +128,8 @@
 					},
 					create : function(e){
 						var $this = this, 
-						btn = $(e.target);							
+						btn = $(e.target);						
+							
 						if( $this.validate() ){
 							btn.button('loading');
 							$this.page.bodyContent.bodyText = "";
@@ -144,8 +145,22 @@
 							if( $this.page.tagsString.length > 0 ){
 								$this.page.properties.tagsString = $this.page.tagsString;
 							} 
-							
-							btn.button('reset');
+							common.ui.ajax(
+							'<@spring.url "/data/pages/update.json?output=json"/>',
+							{
+								data : kendo.stringify($this.page) ,
+								contentType : "application/json",
+								success : function(response){
+									if( response.pageId ){
+										renderTo.find('.collapse').collapse('hide');
+										$this.set( "editable" , true ) ;	
+										$this.setPage( new common.ui.data.Page(response) );						
+									}						
+								},
+								complete : function(e){
+									btn.button('reset');
+								}							
+							});	
 						}
 						return false;
 					},
