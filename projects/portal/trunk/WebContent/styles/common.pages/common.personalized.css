@@ -2517,11 +2517,11 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 .my-page-post-form  .modal-header {
 	border-bottom: 1px dashed #e5e5e5;
 }
-.my-page-post-form  .sky_form {
+.my-page-post-form  .sky-form {
 	border : 0;		
 }
 
-.my-page-post-form  .sky_form .input input {
+.my-page-post-form .sky-form .input input {
 	border : 0;
 	background-color: #F5F7FA;		
 }
