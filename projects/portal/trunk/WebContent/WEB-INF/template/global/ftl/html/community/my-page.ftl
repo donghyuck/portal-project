@@ -1019,6 +1019,7 @@
 							<section>
 								<label class="label">주제</label>
 								<label class="input">
+									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" placeholder="무엇에 대한 사진인가요?">
 								</label>
 							</section>
