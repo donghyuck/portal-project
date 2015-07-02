@@ -101,13 +101,15 @@
 		function createPagePostModal( postType , page ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){
-				renderTo.on('shown.bs.modal', function(e){
-					
+				renderTo.on('shown.bs.modal', function(e){					
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
 					}
-				});				
+				});			
+				renderTo.on('hidden.bs.modal', function(e){					
+					renderTo.find('.collapse').collapse('hide');
+				});								
 			}
 			renderTo.modal('show');
 		}		
@@ -975,6 +977,9 @@
 							<img data-bind="attr:{src:page.authorPhotoUrl}" src="/download/profile/andang?width=150&amp;height=150" style="margin-right:10px;">
 						</div>
 						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-post-modal-settings" area-expanded="false" aria-controls="my-post-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
+						
+						
+						
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
 					<form id="my-post-modal-settings" action="#" class="sky-form modal-settings" aria-expanded="true">
