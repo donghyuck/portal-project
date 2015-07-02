@@ -2535,6 +2535,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	top:0;
 	margin:0;
 	background-color: #f5f5f5;
+	border-top-right-radius: 6px !important;
 }
 
 .my-page-post-form .sky-form.modal-settings fieldset {
