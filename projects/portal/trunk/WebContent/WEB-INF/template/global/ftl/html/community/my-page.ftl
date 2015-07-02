@@ -1056,6 +1056,12 @@
 							<fieldset>                  
 										<section>
 											<div class="separator-2"></div>
+											<label class="label">파일</label>	
+											<label class="input">
+												<input type="text" name="name" placeholder="파일 이름을 입력하세요." data-bind="value: page.name">
+											</label>
+										</section>										
+										<section>
 											<label class="label">요약</label>	
 											<label class="textarea textarea-expandable">
 												<textarea rows="4" name="summary" placeholder="조금 더 자세하게 알려 주세요" data-bind="value: page.summary"></textarea>
@@ -1076,8 +1082,7 @@
 											</label>
 											<label class="input">
 												<i class="icon-append fa fa-globe text-info"></i>
-												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>														
-											<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>																		
+												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>																													
 													
 							</fieldset>                            
 					</form>
