@@ -102,11 +102,12 @@
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){
 				renderTo.on('shown.bs.modal', function(e){
+					
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
 					}
-				});
+				});				
 			}
 			renderTo.modal('show');
 		}		
@@ -973,10 +974,37 @@
 						<div class="author">
 							<img data-bind="attr:{src:page.authorPhotoUrl}" src="/download/profile/andang?width=150&amp;height=150" style="margin-right:10px;">
 						</div>
-						<span class="hvr-pulse-shrink collapsed" data-dialog-settings data-toggle="collapse" data-target="#my-page-post-dialog-settings" area-expanded="false" aria-controls="my-page-post-dialog-setting"><i class="icon-flat icon-flat settings"></i></span>
+						<span class="hvr-pulse-shrink collapsed" data-modal-settings data-toggle="collapse" data-target="#my-post-modal-settings" area-expanded="false" aria-controls="my-post-modal-settings"><i class="icon-flat icon-flat settings"></i></span>
 						<button aria-hidden="true" data-dismiss="modal" class="close" type="button"></button>
 					</div>
-					<form action="#" class="sky-form no-border-hr">
+					<form id="my-post-modal-settings" action="#" class="sky-form" aria-expanded="true">
+							<header>
+								옵션
+								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-poll-modal-settings" aria-expanded="true" aria-controls="my-poll-modal-settings"></span>
+							</header>
+							<fieldset>                  
+								<section>
+								<div class="separator-2"></div>
+								<label class="label">시작일</label>
+								<span class="k-widget k-datepicker k-header" style="width: 200px;"><span class="k-picker-wrap k-state-default"><input id="start" style="width: 100%;" value="10/10/2011" data-role="datepicker" data-bind="value: poll.startDate" type="text" class="k-input" role="combobox" aria-expanded="false" aria-owns="start_dateview" aria-disabled="false" aria-readonly="false"><span unselectable="on" class="k-select" role="button" aria-controls="start_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span>
+								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
+								</section>
+								<div class="hr-line-dashed"></div>
+								<section>			
+								<label class="label">종료일</label>							
+								<span class="k-widget k-datepicker k-header" style="width: 200px;"><span class="k-picker-wrap k-state-default"><input id="end" style="width: 100%;" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate" type="text" class="k-input" role="combobox" aria-expanded="false" aria-owns="end_dateview" aria-disabled="false" aria-readonly="false"><span unselectable="on" class="k-select" role="button" aria-controls="end_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span>
+								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
+								</section>			
+								<div class="hr-line-dashed"></div>
+								<section>			
+								<label class="label">만료일</label>
+								<span class="k-widget k-datepicker k-header" style="width: 200px;"><span class="k-picker-wrap k-state-default"><input id="start" style="width: 100%;" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" type="text" class="k-input" role="combobox" aria-expanded="false" aria-owns="start_dateview" aria-disabled="false" aria-readonly="false"><span unselectable="on" class="k-select" role="button" aria-controls="start_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span>
+								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
+								</section>
+							</fieldset>                               
+					</form>
+						
+					<form action="#" class="sky-form">
 						<fieldset>
 							<section>
 								<label class="label">주제</label>
