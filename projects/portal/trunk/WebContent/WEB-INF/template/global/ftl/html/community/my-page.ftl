@@ -995,7 +995,7 @@
 										<section>
 											<label class="label">테그</label>
 											<label class="input">
-												<i class="icon-append fa fa-tag"></i>
+												<i class="icon-append fa fa-tag text-info"></i>
 												<input type="text" name="tags" data-bind="value:page.tagsString">
 											</label>
 											<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
@@ -1006,9 +1006,8 @@
 												<input type="text" name="source" placeholder="출처 이름을 입력하세요." data-bind="value: pageSource">
 											</label>
 											<label class="input">
-												<i class="icon-append fa fa-globe"></i>
-												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>
-														
+												<i class="icon-append fa fa-globe text-info"></i>
+												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>														
 											<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>																		
 													
 							</fieldset>                            
