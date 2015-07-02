@@ -988,25 +988,33 @@
 								<span class="close" style="right:0;" data-toggle="collapse" data-target="#my-post-modal-settings" aria-expanded="true" aria-controls="my-post-modal-settings"></span>
 							</header>
 							<fieldset>                  
-								<section>
-								<div class="separator-2"></div>
-								<label class="label">시작일</label>
-								<span class="k-widget k-datepicker k-header" style="width: 200px;"><span class="k-picker-wrap k-state-default"><input id="start" style="width: 100%;" value="10/10/2011" data-role="datepicker" data-bind="value: poll.startDate" type="text" class="k-input" role="combobox" aria-expanded="false" aria-owns="start_dateview" aria-disabled="false" aria-readonly="false"><span unselectable="on" class="k-select" role="button" aria-controls="start_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span>
-								<p class="note">시작일은 종료일 이후일 수 없습니다.</p>
-								</section>
-								<div class="hr-line-dashed"></div>
-								<section>			
-								<label class="label">종료일</label>							
-								<span class="k-widget k-datepicker k-header" style="width: 200px;"><span class="k-picker-wrap k-state-default"><input id="end" style="width: 100%;" value="10/10/2012" data-role="datepicker" data-bind="value: poll.endDate" type="text" class="k-input" role="combobox" aria-expanded="false" aria-owns="end_dateview" aria-disabled="false" aria-readonly="false"><span unselectable="on" class="k-select" role="button" aria-controls="end_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span>
-								<p class="note">종료일은 시작일 이전일 수 없습니다.</p>
-								</section>			
-								<div class="hr-line-dashed"></div>
-								<section>			
-								<label class="label">만료일</label>
-								<span class="k-widget k-datepicker k-header" style="width: 200px;"><span class="k-picker-wrap k-state-default"><input id="start" style="width: 100%;" value="10/10/2011" data-role="datepicker" data-bind="value: poll.expireDate" type="text" class="k-input" role="combobox" aria-expanded="false" aria-owns="start_dateview" aria-disabled="false" aria-readonly="false"><span unselectable="on" class="k-select" role="button" aria-controls="start_dateview"><span unselectable="on" class="k-icon k-i-calendar">select</span></span></span></span>
-								<p class="note">만료일은 설문종료 이후 설문 결과를 보여줄 마지막 일자를 의미합니다</p>
-								</section>
-							</fieldset>                               
+										<section>
+											<div class="separator-2"></div>
+											<label class="label">요약</label>	
+											<label class="textarea textarea-expandable">
+												<textarea rows="4" name="summary" placeholder="조금 더 자세하게 알려 주세요" data-bind="value: page.summary"></textarea>
+											</label>
+										</section>
+										<section>
+											<label class="label">테그</label>
+											<label class="input">
+												<i class="icon-append fa fa-tag"></i>
+												<input type="text" name="tags" data-bind="value:page.tagsString">
+											</label>
+											<div class="note"><strong>Note:</strong>공백으로 라벨을 구분하세요</div>
+										</section>
+										<section>
+											<label class="label">출처</label>
+											<label class="input">
+												<input type="text" name="source" placeholder="출처 이름을 입력하세요." data-bind="value: pageSource">
+											</label>
+											<label class="input">
+												<i class="icon-append fa fa-globe"></i>
+												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>
+														
+											<div class="note"><strong>Note:</strong> 저작권자의 출처 정보를 입력하세요</div></section>																		
+													
+							</fieldset>                            
 					</form>
 						
 					<form action="#" class="sky-form">
