@@ -143,7 +143,7 @@
 						page.copy(that.page);						
 						
 						
-						if( that.page.pageId > 0 {
+						if( that.page.pageId > 0){
 							that.set('editable', true);
 						}else{
 							that.set('editable', false);
