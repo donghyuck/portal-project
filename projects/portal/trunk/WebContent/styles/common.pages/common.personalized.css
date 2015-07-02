@@ -2541,7 +2541,7 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	background : transparent;
 }
 
-.my-page-post-form .sky-form.modal-settings .icon-append {
+.my-page-post-form .sky-form .icon-append {
 	border : 0 ;	
 	color: #ff2d55;
 }
