@@ -1026,7 +1026,7 @@
 					</form>
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left" type="button">닫기</button>
-						<button class="btn btn-flat btn-info" type="button">확인</button>
+						<button class="btn btn-flat btn-info" type="button">게시</button>
 					</div>
 				</div>								
 			</div>	
