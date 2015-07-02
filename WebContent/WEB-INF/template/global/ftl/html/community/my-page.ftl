@@ -159,19 +159,16 @@
 							that.set('pageSourceUrl', that.page.properties.url);
 						}else{
 							that.set('pageSourceUrl', "");
-						}
-						
+						}						
 					}
-				});		
-							
+				});									
 			
 				renderTo.on('shown.bs.modal', function(e){					
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
 					}
-				});			
-			
+				});						
 				renderTo.on('hidden.bs.modal', function(e){					
 					renderTo.find('.collapse').collapse('hide');
 				});								
