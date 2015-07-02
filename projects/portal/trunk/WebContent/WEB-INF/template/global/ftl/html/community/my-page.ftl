@@ -989,7 +989,7 @@
 								<label class="textarea textarea-expandable">
 									<textarea rows="3"></textarea>
 								</label>
-								<div class="note"><strong>Note:</strong> 조금 더 자세하게 말해주세요.</div>
+								<div class="note"><strong>Note:</strong> 조금 더 자세하게 알려 주세요.</div>
 							</section>
 						</fieldset>
 					</form>
