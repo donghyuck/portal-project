@@ -131,7 +131,20 @@
 						btn = $(e.target);							
 						if( $this.validate() ){
 							btn.button('loading');
-							// 
+							$this.page.bodyContent.bodyText = "";
+							if( $this.page.name.length == 0 ){
+								$this.page.set("name" , $this.page.title ) ;
+							}
+							if( $this.pageSource.length > 0 ){
+								$this.page.properties.source = $this.pageSource;
+							} 
+							if( $this.pageSourceUrl.length > 0 ){
+								$this.page.properties.url = $this.pageSourceUrl;
+							}						
+							if( $this.page.tagsString.length > 0 ){
+								$this.page.properties.tagsString = $this.page.tagsString;
+							} 
+							
 							btn.button('reset');
 						}
 						return false;
@@ -1093,15 +1106,14 @@
 								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title">
-									
 								</label>
 							</section>
 						</fieldset>
 					</form>
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
-						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-bind="{invisible:editable, click:create}">다음</button>
-						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable, click:update">완료</button>
+						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-bind="{invisible:editable, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
+						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable, click:update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">완료</button>
 					</div>
 				</div>								
 			</div>	
