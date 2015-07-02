@@ -1026,8 +1026,8 @@
 						</fieldset>
 					</form>
 					<div class="modal-footer">
-						<button data-dismiss="modal" class="btn-u btn-u-default" type="button">Close</button>
-						<button class="btn-u" type="button">Save changes</button>
+						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left" type="button">닫기</button>
+						<button class="btn btn-flat btn-info" type="button">확인</button>
 					</div>
 				</div>								
 			</div>	
