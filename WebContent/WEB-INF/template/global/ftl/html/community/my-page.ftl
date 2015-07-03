@@ -190,6 +190,9 @@
 								that.set('postType', that.page.properties.postType);
 							}else{
 								that.set('postType', "text");
+							}							
+							if( that.postType === 'photo'){
+								
 							}
 						}else{
 							that.set('editable', false);
@@ -1141,8 +1144,11 @@
 								</label>
 							</section>
 							<section>
-							
-							<section>
+								<div class="row">
+									<div class="col-sm-6"><div class="listview"></div></div>
+									<div class="col-sm-6">uploading file</div>
+								</div>	
+							</section>
 						</fieldset>
 					</form>
 					<div class="modal-footer">
