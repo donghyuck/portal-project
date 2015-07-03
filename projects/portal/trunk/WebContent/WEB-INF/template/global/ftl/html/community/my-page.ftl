@@ -117,16 +117,19 @@
 						{name: "삭제" , value: "DELETED"}
 					],
 					validate : function (){
-						var $this = this, hasError = true;		
-						renderTo.find("form label[for]").removeClass("state-error");
+						var $this = this, hasError = false;		
+						renderTo.find("form label[for]").removeClass("state-error");					
+						renderTo.find("form em[for]").remove();
 						
 						if( $this.page.title.length == 0 )  
 						{
-							renderTo.find("form label[for=title]").addClass("state-error");
-							hasError = false;
+							var template = kendo.template('<em for="#:name#" class="invalid">#: msg#</em>');
+							renderTo.find("form label[for=title]").addClass("state-error").append(
+								template({name: "title" ,msg:"주제를 입력하여 주세요."});
+							);
+							hasError = true;
+							
 						}
-						
-						
 						return !hasError;
 					},
 					create : function(e){
