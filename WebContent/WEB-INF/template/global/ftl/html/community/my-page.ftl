@@ -125,7 +125,7 @@
 						{
 							var template = kendo.template('<em for="#:name#" class="invalid">#: msg#</em>');
 							renderTo.find("form label[for=title]").addClass("state-error").append(
-								template({name: "title" ,msg:"주제를 입력하여 주세요."});
+								template( { name: "title" ,msg: "주제를 입력하여 주세요."} )
 							);
 							hasError = true;
 							
