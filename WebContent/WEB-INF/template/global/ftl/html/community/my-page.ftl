@@ -90,14 +90,14 @@
 					var postType = $this.data("post-type");
 					var page = new common.ui.data.Page();
 					page.set("objectType", getMyPageOwnerId());
-					createPagePostModal(postType, page);					
+					createPagePostModal(page, postType);					
 				});
 			}			
 			renderTo.data('kendoDialogSwitcher').open();
 		}
 		
 		
-		function createPagePostModal( postType , page ){
+		function createPagePostModal( page, postType ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){			
 				var observable =  common.ui.observable({
@@ -185,18 +185,22 @@
 						btn.button('reset');
 						return false;
 					},	
-					setPostType: function(postType){
-						var $this = this;
-						$this.set(postType, postType);
-					},
-					setSource: function(page){
+					setSource: function(page, postType){
 						var that = this;
-						page.copy(that.page);						
+						page.copy(that.page);					
 						if( that.page.pageId > 0){
 							that.set('editable', true);
+							if(that.page.properties.postType){
+								that.set('postType', that.page.properties.postType);
+							}else{
+								that.set('postType', "text");
+							}
 						}else{
 							that.set('editable', false);
-						}		
+							if(postType){
+								that.set('postType', postType);
+							}
+						}
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
@@ -211,7 +215,7 @@
 				});									
 			
 				renderTo.on('shown.bs.modal', function(e){			
-					observable.setSource(page);
+					//observable.setSource(page);
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
@@ -221,7 +225,9 @@
 					renderTo.find('.collapse').collapse('hide');
 				});				
 				kendo.bind(renderTo, observable);
+				renderTo.data("modal", observable );
 			}
+			renderTo.data("modal").setSource(page, postType);
 			renderTo.modal('show');
 		}		
 		<!-- ============================== -->
