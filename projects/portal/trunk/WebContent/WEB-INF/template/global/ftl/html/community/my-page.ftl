@@ -215,12 +215,15 @@
 			
 				renderTo.on('shown.bs.modal', function(e){			
 					//observable.setSource(page);
+						
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
 					}
 				});						
 				renderTo.on('hidden.bs.modal', function(e){					
+					renderTo.find("form label[for]").removeClass("state-error");					
+					renderTo.find("form em[for]").remove();					
 					renderTo.find('.collapse').collapse('hide');
 				});				
 				kendo.bind(renderTo, observable);
@@ -1142,6 +1145,9 @@
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
 								</label>
 							</section>
+							<section>
+							
+							<section>
 						</fieldset>
 					</form>
 					<div class="modal-footer">
