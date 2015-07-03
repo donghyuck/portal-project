@@ -110,9 +110,11 @@
 					useWrapMode : false,
 					keypress : function(e){
 						var $this = this, 
-						input = $(e.target);			
-						
-						alert( input.html () );
+						input = $(e.target);
+						if( $this.page.pageId === 0 && if e.keyCode === 13 )  {
+							renderTo.find("button[data-action=create]").click();
+						}
+						 e.preventDefault(); 
 						return false;
 					},
 					stateSource : [
@@ -126,16 +128,14 @@
 					validate : function (){
 						var $this = this, hasError = false;		
 						renderTo.find("form label[for]").removeClass("state-error");					
-						renderTo.find("form em[for]").remove();
-						
+						renderTo.find("form em[for]").remove();						
 						if( $this.page.title.length == 0 )  
 						{
 							var template = kendo.template('<em for="#:name#" class="invalid">#: msg#</em>');
 							renderTo.find("form label[for=title]").addClass("state-error").parent().append(
 								template( { name: "title" ,msg: "주제를 입력하여 주세요."} )
 							);
-							hasError = true;
-							
+							hasError = true;							
 						}
 						return !hasError;
 					},
@@ -1139,7 +1139,7 @@
 					</form>
 					<div class="modal-footer">
 						<button data-dismiss="modal" class="btn btn-flat btn-outline pull-left rounded" type="button">닫기</button>
-						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-bind="{invisible:editable, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
+						<button class="btn btn-flat btn-info rounded btn-outline" type="button" data-action="create" data-bind="{invisible:editable, click:create}" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">다음</button>
 						<button class="btn btn-flat btn-info rounded" type="button" data-bind="enabled:editable, click:update" data-loading-text="<i class='fa fa-spinner fa-spin'></i>">완료</button>
 					</div>
 				</div>								
