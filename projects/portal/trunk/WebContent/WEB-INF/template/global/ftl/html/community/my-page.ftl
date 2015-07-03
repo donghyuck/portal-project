@@ -109,7 +109,10 @@
 					visible : true,
 					useWrapMode : false,
 					keypress : function(e){
-						alert("s");
+						var $this = this, 
+						input = $(e.target);			
+						
+						alert( input.html () );
 						return false;
 					},
 					stateSource : [
@@ -138,8 +141,7 @@
 					},
 					create : function(e){
 						var $this = this, 
-						btn = $(e.target);						
-							
+						btn = $(e.target);	
 						if( $this.validate() ){
 							btn.button('loading');
 							$this.page.bodyContent.bodyText = "";
