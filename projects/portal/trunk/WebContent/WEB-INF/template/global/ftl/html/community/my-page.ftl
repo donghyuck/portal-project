@@ -156,11 +156,8 @@
 							}						
 							if( $this.page.tagsString.length > 0 ){
 								$this.page.properties.tagsString = $this.page.tagsString;
-							} 
-							
-							common.ui.ajax(
-							'<@spring.url "/data/pages/update.json?output=json"/>',
-							{
+							}
+							common.ui.ajax( '<@spring.url "/data/pages/update.json?output=json"/>', {
 								data : kendo.stringify($this.page) ,
 								contentType : "application/json",
 								success : function(response){
@@ -211,8 +208,7 @@
 							that.set('pageSourceUrl', "");
 						}						
 					}
-				});									
-			
+				});				
 				renderTo.on('shown.bs.modal', function(e){			
 					//observable.setSource(page);
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
