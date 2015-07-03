@@ -183,23 +183,23 @@
 						btn.button('reset');
 						return false;
 					},	
-					setPage: function(page){
+					setPostType: function(postType){
+						var $this = this, 
+						$this.set(postType, postType);
+					},
+					setSource: function(page){
 						var that = this;
 						page.copy(that.page);						
-						
-						
 						if( that.page.pageId > 0){
 							that.set('editable', true);
 						}else{
 							that.set('editable', false);
-						}						
-						
+						}		
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
 							that.set('pageSource', "");
-						} 
-						
+						} 						
 						if( that.page.properties.url ){
 							that.set('pageSourceUrl', that.page.properties.url);
 						}else{
@@ -209,7 +209,7 @@
 				});									
 			
 				renderTo.on('shown.bs.modal', function(e){			
-					observable.setPage(page);
+					observable.setSource(page);
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher.isOpen){
 						switcher.close();
@@ -1484,7 +1484,7 @@
 			</div>
 			<div class="col-xs-7 content no-top-border">
 					<p class="m-b-xs"><strong>#: name #</strong></p>
-					<p class="text-muted m-b-xs"><small>#: description #</small></p>
+					#if(description!=null){#<p class="text-muted m-b-xs"><small>#: description #</small></p>#}#
 					<button class="btn btn-info btn-flat btn-outline rounded btn-sm" data-action="edit" data-object-id="#= pollId#"> 편집</button>
 			</div>
 		</div>
