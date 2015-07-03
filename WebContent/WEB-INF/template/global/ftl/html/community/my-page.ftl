@@ -111,7 +111,7 @@
 					keypress : function(e){
 						var $this = this, 
 						input = $(e.target);
-						if( $this.page.pageId === 0 && if e.keyCode === 13 )  {
+						if( $this.page.pageId === 0 && e.keyCode === 13 )  {
 							renderTo.find("button[data-action=create]").click();
 						}
 						 e.preventDefault(); 
