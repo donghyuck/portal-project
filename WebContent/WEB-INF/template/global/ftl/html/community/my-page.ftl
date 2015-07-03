@@ -1447,7 +1447,9 @@
 			#if ( tagsString.length > 0 ){#            
 			<p><i class="fa fa-tags"></i> #: tagsString #</p>
 			#}#
+			#if (summary!= null) {#
 			<p>#: summary #</p>
+			#}#
 			# if( getCurrentUser().userId === user.userId ) { # 	
 				<div class="text-right">
 					<div class="btn-group">				
