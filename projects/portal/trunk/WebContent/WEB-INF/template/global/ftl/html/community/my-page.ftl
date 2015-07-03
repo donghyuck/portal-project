@@ -1136,7 +1136,7 @@
 					<form action="#" class="sky-form">
 						<fieldset>
 							<section>
-								<label class="label">주제 #: postType #</label>
+								<label class="label">주제 <span data-bind="text:postType"></span></label>
 								<label class="input" for="title">
 									<i class="icon-append fa fa-asterisk"></i>
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
