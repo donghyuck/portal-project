@@ -145,6 +145,7 @@
 						if( $this.validate() ){
 							btn.button('loading');
 							$this.page.bodyContent.bodyText = "";
+							$this.page.properties.postType = $this.postType;
 							if( $this.page.name.length == 0 ){
 								$this.page.set("name" , $this.page.title ) ;
 							}
@@ -157,6 +158,7 @@
 							if( $this.page.tagsString.length > 0 ){
 								$this.page.properties.tagsString = $this.page.tagsString;
 							} 
+							
 							common.ui.ajax(
 							'<@spring.url "/data/pages/update.json?output=json"/>',
 							{
