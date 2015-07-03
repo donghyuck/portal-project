@@ -96,7 +96,6 @@
 			renderTo.data('kendoDialogSwitcher').open();
 		}
 		
-		
 		function createPagePostModal( page, postType ){
 			var renderTo = $("#my-page-post-modal");
 			if( !renderTo.data('bs.modal')){			
@@ -431,7 +430,7 @@
 						createMyPageViewer(item);
 						break;		
 						case 'edit':						
-						createMyPageViewer( item , true );	
+						createPagePostModal(item);	
 						break;	
 						case 'delete':
 						deletePage(item, $this );					
