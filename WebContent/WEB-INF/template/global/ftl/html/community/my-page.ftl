@@ -110,6 +110,7 @@
 					useWrapMode : false,
 					keypress : function(e){
 						alert("s");
+						return false;
 					},
 					stateSource : [
 						{name: "" , value: "INCOMPLETE"},
