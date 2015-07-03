@@ -184,7 +184,7 @@
 						return false;
 					},	
 					setPostType: function(postType){
-						var $this = this, 
+						var $this = this;
 						$this.set(postType, postType);
 					},
 					setSource: function(page){
