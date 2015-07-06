@@ -221,6 +221,7 @@
 												}
 											},
 											pageSize : 25,
+											error : common.ui.handleAjaxError,
 											schema : {
 												model : common.ui.data.Image,
 												data : "images",
