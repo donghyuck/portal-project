@@ -181,6 +181,13 @@
 						btn.button('reset');
 						return false;
 					},	
+					setPostType(postType){
+						var that = this;
+						if(postType){
+						
+						
+						}
+					},
 					setSource: function(page, postType){
 						var that = this;
 						page.copy(that.page);					
@@ -192,8 +199,28 @@
 								that.set('postType', "text");
 							}							
 							if( that.postType === 'photo'){
+							
+								var upload = renderTo.find("input[name='photo'][type=file]");		
+								if(!common.ui.exists(upload)){
+									common.ui.upload( upload, {
+										async : {
+											saveUrl:  '<@spring.url "/data/images/update_with_media.json?output=json" />'
+										},
+										localization:{ select : '사진 선택' , dropFilesHere : '새로운 사진파일을 이곳에 끌어 놓으세요.' },	
+										upload: function (e) {				
+											e.data = { objectType: 31 , objectId: that.page.pageId };
+										},								
+										success: function (e) {									
+										}
+									});							
+									renderTo.find(".sky-form").slimScroll({
+										height: "500px"
+									});	
+								}	
+						
 								
 							}
+
 						}else{
 							that.set('editable', false);
 							if(postType){
@@ -229,6 +256,7 @@
 			}
 			renderTo.data("modal").setSource(page, postType);
 			renderTo.modal('show');
+			
 		}		
 		<!-- ============================== -->
 		<!-- Pool														-->
@@ -1132,7 +1160,7 @@
 												<i class="icon-append fa fa-globe text-info"></i>
 												<input type="text" name="url" placeholder="출처 URL를 입력하세요." data-bind="value: pageSourceUrl"></label>																													
 													
-							</fieldset>                            
+							</fieldset>
 					</form>
 					<form action="#" class="sky-form">
 						<fieldset>
@@ -1146,7 +1174,11 @@
 							<section>
 								<div class="row">
 									<div class="col-sm-6"><div class="listview"></div></div>
-									<div class="col-sm-6">uploading file</div>
+									<div class="col-sm-6">
+									
+									<input type="file" name="photo" />
+									
+									</div>
 								</div>	
 							</section>
 						</fieldset>
