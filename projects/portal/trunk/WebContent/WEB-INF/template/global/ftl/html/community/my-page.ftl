@@ -220,8 +220,7 @@
 													}
 												}
 											},
-											pageSize : that.options.pageSize,
-											error : handleAjaxError,
+											pageSize : 25,
 											schema : {
 												model : common.ui.data.Image,
 												data : "images",
