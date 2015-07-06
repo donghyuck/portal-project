@@ -199,7 +199,6 @@
 								that.set('postType', "text");
 							}							
 							if( that.postType === 'photo'){
-							
 								var upload = renderTo.find("input[name='photo'][type=file]");		
 								if(!common.ui.exists(upload)){
 									common.ui.upload( upload, {
@@ -212,15 +211,9 @@
 										},								
 										success: function (e) {									
 										}
-									});							
-									renderTo.find(".sky-form").slimScroll({
-										height: "500px"
-									});	
-								}	
-						
-								
+									});
+								}			
 							}
-
 						}else{
 							that.set('editable', false);
 							if(postType){
