@@ -247,16 +247,17 @@
 										dataBound : function(e) {
 										}
 									});
-									my_list_view.on("mouseenter",".img-wrapper", function(e) {
+									listview.on("mouseenter",".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 									}).on("mouseleave", ".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 									});
+									/**
 									my_list_pager.kendoPager({
 										refresh : true,
 										buttonCount : 5,
 										dataSource : my_list_view.data('kendoListView').dataSource
-									});
+									});*/
 								}									
 								if(!common.ui.exists(upload)){
 									common.ui.upload( upload, {
