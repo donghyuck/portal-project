@@ -2552,7 +2552,16 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 
 .my-page-post-form .sky-form .icon-append.text-info{
 	color: #007aff;
-} 
+}
+
+.my-page-post-form .k-upload {
+	padding: 10px;
+	background-color: #F5F7FA;
+	border: 1px dashed #e5e5e5;
+	border-radius: 6px !important;
+}
+
+
 /*
 .simple-post-compose {
 	background: rgba(0, 0, 0, 0.4);	
