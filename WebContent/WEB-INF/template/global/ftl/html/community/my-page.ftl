@@ -242,7 +242,7 @@
 				renderTo.on('shown.bs.modal', function(e){			
 					//observable.setSource(page);
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
-					if(switcher.isOpen){
+					if(switcher && switcher.isOpen){
 						switcher.close();
 					}
 				});						
