@@ -200,6 +200,64 @@
 							}							
 							if( that.postType === 'photo'){
 								var upload = renderTo.find("input[name='photo'][type=file]");		
+								var listview =  renderTo.find(".image-listview");
+								
+								if (!common.ui.exists(listview)) {
+									common.ui.listview( listview, {
+										dataSource : {
+											type : 'json',
+											transport : {
+												read : {
+													url : '<@spring.url "/data/images/list.json?output=json"/>',
+													type : 'POST'
+												},
+												parameterMap : function(options, operation) {
+													return {
+														startIndex : options.skip,
+														pageSize : options.pageSize,
+														objectType : 31,
+														objectId : that.page.pageId
+													}
+												}
+											},
+											pageSize : that.options.pageSize,
+											error : handleAjaxError,
+											schema : {
+												model : common.ui.data.Image,
+												data : "images",
+												total : "totalCount"
+											},
+											serverPaging : false
+										},
+										selectable : "multiple",
+										change : function(e) {	
+											var data = this.dataSource.view();	
+											 var selectedCells = this.select();	    
+											if( selectedCells.length > 0 ){											
+												$.each(selectedCells, function( index, value ){
+													var idx = $(value).index();
+													var item = data[idx];
+													//addImageTo(my_selected, item);
+												});
+												//that._changeState(my_insert_btn, true);					
+											}
+										},
+										navigatable : false,
+										template : kendo.template($("#image-broswer-photo-list-view-template").html()),
+										dataBound : function(e) {
+										}
+									});
+									my_list_view.on("mouseenter",".img-wrapper", function(e) {
+										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
+									}).on("mouseleave", ".img-wrapper", function(e) {
+										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
+									});
+									my_list_pager.kendoPager({
+										refresh : true,
+										buttonCount : 5,
+										dataSource : my_list_view.data('kendoListView').dataSource
+									});
+								}									
 								if(!common.ui.exists(upload)){
 									common.ui.upload( upload, {
 										async : {
@@ -1166,11 +1224,11 @@
 							</section>
 							<section>
 								<div class="row">
-									<div class="col-sm-6"><div class="listview"></div></div>
 									<div class="col-sm-6">
-									
-									<input type="file" name="photo" />
-									
+										<div class="image-listview"></div>
+									</div>
+									<div class="col-sm-6">									
+										<input type="file" name="photo" />									
 									</div>
 								</div>	
 							</section>
