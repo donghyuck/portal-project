@@ -177,7 +177,11 @@
 					update : function(e){
 						var $this = this, 
 						btn = $(e.target);						
-						btn.button('loading');						
+						btn.button('loading');			
+						
+						
+						
+									
 						btn.button('reset');
 						return false;
 					},	
@@ -200,8 +204,7 @@
 							}							
 							if( that.postType === 'photo'){
 								var upload = renderTo.find("input[name='photo'][type=file]");		
-								var listview =  renderTo.find(".image-listview");
-								
+								var listview =  renderTo.find(".image-listview");								
 								if (!common.ui.exists(listview)) {
 									common.ui.listview( listview, {
 										dataSource : {
@@ -220,7 +223,7 @@
 													}
 												}
 											},
-											pageSize : 25,
+											pageSize : 100,
 											error : common.ui.handleAjaxError,
 											schema : {
 												model : common.ui.data.Image,
@@ -229,6 +232,7 @@
 											},
 											serverPaging : false
 										},
+										autoBind:false,
 										selectable : "multiple",
 										change : function(e) {	
 											var data = this.dataSource.view();	
@@ -258,7 +262,9 @@
 										buttonCount : 5,
 										dataSource : my_list_view.data('kendoListView').dataSource
 									});*/
-								}									
+								}
+								common.ui.exists(listview).dataSource.read();
+																	
 								if(!common.ui.exists(upload)){
 									common.ui.upload( upload, {
 										async : {
