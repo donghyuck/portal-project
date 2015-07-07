@@ -304,6 +304,34 @@
 						}else{
 							that.set('pageSourceUrl', "");
 						}						
+					},
+					uploadImageByUrl: function(e){
+						var $this = this, 
+						btn = $(e.target);						
+						e.preventDefault();	
+						var hasError = false;
+						if( $this.imageSourceUrl == null || $this.imageSourceUrl.length == 0 || !common.valid("url", $this.imageSourceUrl) ){
+							renderTo.find$('.upload-by-url .input').eq(0).addClass("state-error");			
+							hasError = true;					
+						}
+						if( $this.imageDataUrl == null || $this.imageDataUrl.length == 0 || !common.valid("url", $this.imageDataUrl) ){
+							renderTo.find$('.upload-by-url .input').eq(1).addClass("state-error");	
+							hasError = true;					
+						}	
+						if( !hasError ){
+							btn.button('loading');			
+							common.ui.data.image.uploadByUrl( {
+								data : this.data ,
+								success : function(response){
+									var photo_list_view = common.ui.listview(renderTo);
+									photo_list_view.dataSource.read();		
+								},
+								always : function(){
+									btn.button('reset');
+								}
+							});						
+						}
+						return false;						
 					}
 				});				
 				renderTo.on('shown.bs.modal', function(e){			
@@ -1243,7 +1271,7 @@
 									<div class="col-sm-6">
 										<div class="image-listview"></div>
 									</div>
-									<div class="col-sm-6">									
+									<div class="col-sm-6 upload-by-url">									
 										<input type="file" name="photo" />	
 										<div class="m-t-lg">
 											<div class="separator-2"></div>
@@ -1254,8 +1282,7 @@
 											<label class="input"><i class="icon-append fa fa-globe"></i>
 											<input type="url" name="imageDataUrl" placeholder="이미지 데이 URL" data-bine="value:imageDataUrl"/>
 											</label>
-											<button type="button" class="btn btn-warning btn-flat" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class=''></i>" >업로</button>
-											
+											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
 										</div>								
 									</div>
 								</div>	
