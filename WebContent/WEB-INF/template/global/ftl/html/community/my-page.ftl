@@ -251,7 +251,7 @@
 										dataBound : function(e) {
 										}
 									});
-									common.ui.scroll.slim(listview,{height:'250px'});
+									common.ui.scroll.slim(listview,{height:'300px'});
 									listview.on("mouseenter",".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 									}).on("mouseleave", ".img-wrapper", function(e) {
