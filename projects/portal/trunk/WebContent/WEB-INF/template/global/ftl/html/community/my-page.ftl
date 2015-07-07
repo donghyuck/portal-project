@@ -1235,7 +1235,7 @@
 									<input type="text" name="title" placeholder="무엇에 대한 사진인가요?" data-bind="value:page.title, events:{keypress: keypress}">
 								</label>
 							</section>
-							<section>
+							<section data-bind="visible:photo">
 								<div class="row">
 									<div class="col-sm-6">
 										<div class="image-listview"></div>
