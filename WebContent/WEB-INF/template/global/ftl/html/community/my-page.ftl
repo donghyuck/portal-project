@@ -201,11 +201,14 @@
 						page.copy(that.page);					
 						if( that.page.pageId > 0){
 							that.set('editable', true);
-							if(that.page.properties.postType){
+							/**if(that.page.properties.postType){
 								that.set('postType', that.page.properties.postType);
 							}else{
 								that.set('postType', "text");
-							}							
+							}		
+							*/
+							that.setPostType(that.page.properties.postType); 
+												
 							if( that.postType === 'photo'){
 								var upload = renderTo.find("input[name='photo'][type=file]");		
 								var listview =  renderTo.find(".image-listview");								
@@ -262,9 +265,7 @@
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 									});
 								}
-								
 								common.ui.listview(listview).dataSource.read();
-																	
 								if(!common.ui.exists(upload)){
 									common.ui.upload( upload, {
 										async : {
