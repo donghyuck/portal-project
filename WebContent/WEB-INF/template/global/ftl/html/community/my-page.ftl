@@ -210,7 +210,7 @@
 						var that = this;
 						page.copy(that.page);					
 						//if( that.page.pageId > 0){
-						that.set('editable', true);
+						//that.set('editable', true);
 						that.setPostType(that.page.properties.postType||postType); 
 						if( that.photo && that.page.pageId > 0 ){
 								var upload = renderTo.find("input[name='photo'][type=file]");		
@@ -316,10 +316,10 @@
 						if( !hasError ){
 							btn.button('loading');			
 							common.ui.data.image.uploadByUrl( {
-								data : this.data ,
+								data : { objectType : 31, objectId: $this.page.pageId, sourceUrl : $this.imageSourceUrl,  imageUrl : $this.imageDataUrl
 								success : function(response){
-									var photo_list_view = common.ui.listview(renderTo);
-									photo_list_view.dataSource.read();		
+									var listview =  renderTo.find(".image-listview");		
+									common.ui.listview(listview).dataSource.read();	
 								},
 								always : function(){
 									btn.button('reset');
