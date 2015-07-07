@@ -1195,6 +1195,7 @@
                                     </div>
                                     
 							<div id="my-poll-listview" class="ibox-content inspinia-timeline"></div>
+							
 						</div>								
 					</div>				
 				</div>
@@ -1283,6 +1284,13 @@
 											</label>
 											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
 										</div>								
+										<div class="m-t-lg">
+				                            <label class="label">Effect</label>
+				                            <div class="inline-group">	
+				                                <label class="radio"><input type="radio" name="image-effect" value="mansory" checked=""><i class="rounded-x"></i>Mansory</label>
+				                                <label class="radio"><input type="radio" name="image-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
+				                            </div>
+										</div>
 									</div>
 								</div>	
 							</section>
