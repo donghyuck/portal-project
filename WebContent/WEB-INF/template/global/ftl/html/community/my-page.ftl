@@ -1272,10 +1272,10 @@
 											<div class="separator-2"></div>
 											<p class="text-primary">이미지 출처와 URL을 입력하세요.</p>
 											<label class="input"><i class="icon-append fa fa-globe"></i>
-											<input type="url" name="imageSourcUrl" placeholder="출처 URL" data-bine="value:imageSourceUrl"/>
+											<input type="url" name="imageSourcUrl" placeholder="출처 URL" data-bind="value:imageSourceUrl"/>
 											</label>
 											<label class="input"><i class="icon-append fa fa-globe"></i>
-											<input type="url" name="imageDataUrl" placeholder="이미지 데이 URL" data-bine="value:imageDataUrl"/>
+											<input type="url" name="imageDataUrl" placeholder="이미지 데이 URL" data-bind="value:imageDataUrl"/>
 											</label>
 											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
 										</div>								
