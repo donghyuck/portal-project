@@ -102,6 +102,9 @@
 				var observable =  common.ui.observable({
 					page : new common.ui.data.Page(),
 					postType: "text",
+					text:true,
+					photo:false,
+					link:false,
 					pageSource : "",
 					pageSourceUrl : "",
 					editable : false,
@@ -188,8 +191,9 @@
 					setPostType(postType){
 						var that = this;
 						if(postType){
-						
-						
+							that.set('postType', postType);	
+						}else{
+							that.set('postType', "text");
 						}
 					},
 					setSource: function(page, postType){
@@ -215,7 +219,6 @@
 													type : 'POST'
 												},
 												parameterMap : function(options, operation) {
-													alert( that.page.pageId );
 													return {
 														startIndex : options.skip,
 														pageSize : options.pageSize,
@@ -258,12 +261,6 @@
 									}).on("mouseleave", ".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().reverse();
 									});
-									/**
-									my_list_pager.kendoPager({
-										refresh : true,
-										buttonCount : 5,
-										dataSource : my_list_view.data('kendoListView').dataSource
-									});*/
 								}
 								
 								common.ui.listview(listview).dataSource.read();
