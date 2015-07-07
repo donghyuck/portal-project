@@ -195,19 +195,24 @@
 						}else{
 							that.set('postType', "text");
 						}
+						if( that.page.pageId > 0 ){
+							that.set('editable', true);
+							if( that.postType === "photo"){
+								that.set("photo", true);
+							}else{
+								that.set("photo", false);
+							}
+						}else{
+							that.set('editable', false);
+							that.set("photo", false);
+						}
 					},
 					setSource: function(page, postType){
 						var that = this;
 						page.copy(that.page);					
-						if( that.page.pageId > 0){
-							that.set('editable', true);
-							/**if(that.page.properties.postType){
-								that.set('postType', that.page.properties.postType);
-							}else{
-								that.set('postType', "text");
-							}		
-							*/
-							that.setPostType(that.page.properties.postType); 
+						//if( that.page.pageId > 0){
+						that.set('editable', true);
+						that.setPostType(that.page.properties.postType||postType); 
 												
 							if( that.postType === 'photo'){
 								var upload = renderTo.find("input[name='photo'][type=file]");		
@@ -280,12 +285,12 @@
 									});
 								}			
 							}
-						}else{
-							that.set('editable', false);
-							if(postType){
-								that.set('postType', postType);
-							}
-						}
+						//}else{
+						//	that.set('editable', false);
+						//	if(postType){
+						//		that.set('postType', postType);
+						//	}
+						//}
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
