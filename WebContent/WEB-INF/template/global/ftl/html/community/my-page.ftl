@@ -1285,6 +1285,7 @@
 											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
 										</div>								
 										<div class="m-t-lg">
+											<div class="separator-2"></div>
 				                            <label class="label">Effect</label>
 				                            <div class="inline-group">	
 				                                <label class="radio"><input type="radio" name="image-effect" value="mansory" checked=""><i class="rounded-x"></i>Mansory</label>
