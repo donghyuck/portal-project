@@ -215,6 +215,7 @@
 													type : 'POST'
 												},
 												parameterMap : function(options, operation) {
+													alert( that.page.pageId );
 													return {
 														startIndex : options.skip,
 														pageSize : options.pageSize,
@@ -264,6 +265,7 @@
 										dataSource : my_list_view.data('kendoListView').dataSource
 									});*/
 								}
+								
 								common.ui.listview(listview).dataSource.read();
 																	
 								if(!common.ui.exists(upload)){
