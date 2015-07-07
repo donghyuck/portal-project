@@ -316,7 +316,7 @@
 						if( !hasError ){
 							btn.button('loading');			
 							common.ui.data.image.uploadByUrl( {
-								data : { objectType : 31, objectId: $this.page.pageId, sourceUrl : $this.imageSourceUrl,  imageUrl : $this.imageDataUrl
+								data : { objectType : 31, objectId: $this.page.pageId, sourceUrl : $this.imageSourceUrl,  imageUrl : $this.imageDataUrl},
 								success : function(response){
 									var listview =  renderTo.find(".image-listview");		
 									common.ui.listview(listview).dataSource.read();	
