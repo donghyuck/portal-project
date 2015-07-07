@@ -107,6 +107,8 @@
 					link:false,
 					pageSource : "",
 					pageSourceUrl : "",
+					imageSourceUrl : "",
+					imageDataUrl: "",
 					editable : false,
 					visible : true,
 					useWrapMode : false,
@@ -181,9 +183,6 @@
 						var $this = this, 
 						btn = $(e.target);						
 						btn.button('loading');			
-						
-						
-						
 									
 						btn.button('reset');
 						return false;
@@ -1245,7 +1244,19 @@
 										<div class="image-listview"></div>
 									</div>
 									<div class="col-sm-6">									
-										<input type="file" name="photo" />									
+										<input type="file" name="photo" />	
+										<div class="m-t-lg">
+											<div class="separator-2"></div>
+											<p class="text-primary">이미지 출처와 URL을 입력하세요.</p>
+											<label class="input"><i class="icon-append fa fa-globe"></i>
+											<input type="url" name="imageSourcUrl" placeholder="출처 URL" data-bine="value:imageSourceUrl"/>
+											</label>
+											<label class="input"><i class="icon-append fa fa-globe"></i>
+											<input type="url" name="imageDataUrl" placeholder="이미지 데이 URL" data-bine="value:imageDataUrl"/>
+											</label>
+											<button type="button" class="btn btn-warning btn-flat" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class=''></i>" >업로</button>
+											
+										</div>								
 									</div>
 								</div>	
 							</section>
