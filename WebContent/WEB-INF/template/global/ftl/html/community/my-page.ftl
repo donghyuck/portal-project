@@ -263,7 +263,7 @@
 										dataSource : my_list_view.data('kendoListView').dataSource
 									});*/
 								}
-								common.ui.exists(listview).dataSource.read();
+								common.ui.listview(listview).dataSource.read();
 																	
 								if(!common.ui.exists(upload)){
 									common.ui.upload( upload, {
