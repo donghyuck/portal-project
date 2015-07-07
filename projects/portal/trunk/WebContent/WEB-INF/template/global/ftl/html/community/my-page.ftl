@@ -282,18 +282,9 @@
 											common.ui.listview(listview).dataSource.read();
 										}
 									});
-								}
-								
-						
+								}					
 							common.ui.listview(listview).dataSource.read();
 						}
-							
-						//}else{
-						//	that.set('editable', false);
-						//	if(postType){
-						//		that.set('postType', postType);
-						//	}
-						//}
 						if( that.page.properties.source ){
 							that.set('pageSource', that.page.properties.source);
 						}else{
@@ -311,13 +302,17 @@
 						e.preventDefault();	
 						var hasError = false;
 						if( $this.imageSourceUrl == null || $this.imageSourceUrl.length == 0 || !common.valid("url", $this.imageSourceUrl) ){
-							renderTo.find$('.upload-by-url .input').eq(0).addClass("state-error");			
+							renderTo.find('.upload-by-url .input').eq(0).addClass("state-error");			
 							hasError = true;					
-						}
-						if( $this.imageDataUrl == null || $this.imageDataUrl.length == 0 || !common.valid("url", $this.imageDataUrl) ){
-							renderTo.find$('.upload-by-url .input').eq(1).addClass("state-error");	
-							hasError = true;					
+						}else{
+							renderTo.find('.upload-by-url .input').eq(0).removeClass("state-error");		
 						}	
+						if( $this.imageDataUrl == null || $this.imageDataUrl.length == 0 || !common.valid("url", $this.imageDataUrl) ){
+							renderTo.find('.upload-by-url .input').eq(1).addClass("state-error");	
+							hasError = true;					
+						}else{
+							renderTo.find('.upload-by-url .input').eq(1).removeClass("state-error");
+						}							
 						if( !hasError ){
 							btn.button('loading');			
 							common.ui.data.image.uploadByUrl( {
