@@ -2562,6 +2562,9 @@ figure.effect-chico:hover figcaption::before,figure.effect-chico:hover p
 	border-radius: 6px !important;
 }
 
+.my-page-post-form .image-listview .img-wrapper {
+	border-bottom : 1px solid #fff;
+}
 
 /*
 .simple-post-compose {
