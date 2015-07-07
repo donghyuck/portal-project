@@ -301,12 +301,14 @@
 						btn = $(e.target);						
 						e.preventDefault();	
 						var hasError = false;
+						/**
 						if( $this.imageSourceUrl == null || $this.imageSourceUrl.length == 0 || !common.valid("url", $this.imageSourceUrl) ){
 							renderTo.find('.upload-by-url .input').eq(0).addClass("state-error");			
 							hasError = true;					
 						}else{
 							renderTo.find('.upload-by-url .input').eq(0).removeClass("state-error");		
 						}	
+						*/
 						if( $this.imageDataUrl == null || $this.imageDataUrl.length == 0 || !common.valid("url", $this.imageDataUrl) ){
 							renderTo.find('.upload-by-url .input').eq(1).addClass("state-error");	
 							hasError = true;					
@@ -320,6 +322,8 @@
 								success : function(response){
 									var listview =  renderTo.find(".image-listview");		
 									common.ui.listview(listview).dataSource.read();	
+									$this.set("imageSourceUrl", "");
+									$this.set("imageDataUrl", "");
 								},
 								always : function(){
 									btn.button('reset');
