@@ -280,6 +280,7 @@
 										}
 									});
 									common.ui.scroll.slim(listview,{height:'300px'});
+									
 									listview.on("mouseenter",".img-wrapper", function(e) {
 										kendo.fx($(e.currentTarget).find(".img-description")).expand("vertical").stop().play();
 									}).on("mouseleave", ".img-wrapper", function(e) {
@@ -302,8 +303,9 @@
 									});
 								}
 								
-							renderTo.find("input[type=radio][name=image-effect]").on("change", function () {						
+							renderTo.find("input[type=radio][name=image-sorting]").on("change", function () {						
 								//that.page.properties.imageEffect = this.value; 
+								common.ui.listview(listview).dataSource.sort({field: this.value, dir: "desc"});
 							});
 														
 							common.ui.listview(listview).dataSource.read();
