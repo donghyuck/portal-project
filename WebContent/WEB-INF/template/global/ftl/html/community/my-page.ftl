@@ -257,7 +257,7 @@
 												data : "images",
 												total : "totalCount"
 											},
-											sort: {	field: "creationDate", dir:"desc" },
+											sort: {	field: "name", dir:"desc" },
 											serverPaging : false
 										},
 										autoBind:false,
