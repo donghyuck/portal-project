@@ -187,13 +187,14 @@
 						btn.button('reset');
 						return false;
 					},	
-					setPostType(postType){
+					setPostType : function(postType){
 						var that = this;
 						if(postType){
 							that.set('postType', postType);	
 						}else{
 							that.set('postType', "text");
 						}
+						
 						if( that.page.pageId > 0 ){
 							that.set('editable', true);
 							if( that.postType === "photo"){
