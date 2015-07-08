@@ -305,9 +305,8 @@
 								}
 								
 							renderTo.find("input[type=radio][name=image-sorting], input[type=radio][name=image-sorting-dir]").on("change", function () {						
-								common.ui.listview(listview).dataSource.sort({field: this.imageSort, dir: this.imageSortDir});
-							});
-														
+								common.ui.listview(listview).dataSource.sort({field: that.imageSort, dir: that.imageSortDir});
+							});														
 							common.ui.listview(listview).dataSource.read();
 						}
 						if( that.page.properties.source ){
