@@ -1289,16 +1289,22 @@
 										</div>
 									</div>
 								</div>
+								<hr class="m-t-sm m-b-sm"/>
 								<div class="row">
 									<div class="col-sm-6">
-											<div class="separator-2"></div>
-				                            <label class="label">Effect</label>
+									        <label class="label">Effect</label>
 				                            <div class="inline-group">	
 				                                <label class="radio"><input type="radio" name="image-effect" value="mansory" checked=""><i class="rounded-x"></i>Mansory</label>
 				                                <label class="radio"><input type="radio" name="image-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
 				                            </div>									
 									</div>
-									<div class="col-sm-6"></div>
+									<div class="col-sm-6">
+									        <label class="label">정</label>
+				                            <div class="inline-group">	
+				                                <label class="radio"><input type="radio" name="image-sorting" value="name" checked=""><i class="rounded-x"></i>이름</label>
+				                                <label class="radio"><input type="radio" name="image-sorting" value="date"><i class="rounded-x"></i>날짜 </label>
+				                            </div>										
+									</div>
 								</div>	
 							</section>
 						</fieldset>
