@@ -283,7 +283,12 @@
 											common.ui.listview(listview).dataSource.read();
 										}
 									});
-								}					
+								}
+								
+							renderTo.find("input[type=radio][name=image-effect]").on("change", function () {						
+								that.page.properties.imageEffect = this.value; 
+							});
+														
 							common.ui.listview(listview).dataSource.read();
 						}
 						if( that.page.properties.source ){
@@ -1278,12 +1283,12 @@
 										<input type="file" name="photo" />	
 										<div class="m-t-lg">
 											<div class="separator-2"></div>
-											<p class="text-primary">이미지 출처와 URL을 입력하세요.</p>
+											<p class="text-primary">출처와 URL을 입력하세요.</p>
 											<label class="input"><i class="icon-append fa fa-globe"></i>
 											<input type="url" name="imageSourcUrl" placeholder="출처 URL" data-bind="value:imageSourceUrl"/>
 											</label>
 											<label class="input"><i class="icon-append fa fa-globe"></i>
-											<input type="url" name="imageDataUrl" placeholder="이미지 데이 URL" data-bind="value:imageDataUrl"/>
+											<input type="url" name="imageDataUrl" placeholder="이미지 URL" data-bind="value:imageDataUrl"/>
 											</label>
 											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
 										</div>
