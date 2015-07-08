@@ -1317,12 +1317,12 @@
 									<div class="col-sm-6">
 									    <label class="label">정렬 </label>
 								     	<div class="radio radio-info radio-inline">
-                                            <input type="radio" value="name" name="image-sorting" data-bind="checked: imageSort">
-                                            <label>mansory</label>
+                                            <input type="radio" value="name" id="my-page-post-image-sorting-name" name="image-sorting" data-bind="checked: imageSort">
+                                            <label for="my-page-post-image-sorting-name">mansory</label>
                                         </div>
                                         <div class="radio radio-inline">
-                                            <input type="radio" value="creationDate" name="image-sorting" data-bind="checked: imageSort">
-                                            <label > Active </label>
+                                            <input type="radio" value="creationDate" id="my-page-post-image-sorting-date" name="image-sorting" data-bind="checked: imageSort">
+                                            <label for="my-page-post-image-sorting-date"> Active </label>
                                         </div>
                                         
 									        
