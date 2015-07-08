@@ -109,6 +109,8 @@
 					pageSourceUrl : "",
 					imageSourceUrl : "",
 					imageDataUrl: "",
+					imageEffect: "carousel",
+					imageSort: "name",
 					editable : false,
 					visible : true,
 					useWrapMode : false,
@@ -286,7 +288,7 @@
 								}
 								
 							renderTo.find("input[type=radio][name=image-effect]").on("change", function () {						
-								that.page.properties.imageEffect = this.value; 
+								//that.page.properties.imageEffect = this.value; 
 							});
 														
 							common.ui.listview(listview).dataSource.read();
@@ -1299,15 +1301,15 @@
 									<div class="col-sm-6">
 									        <label class="label">Effect</label>
 				                            <div class="inline-group">	
-				                                <label class="radio"><input type="radio" name="image-effect" value="mansory" checked=""><i class="rounded-x"></i>Mansory</label>
-				                                <label class="radio"><input type="radio" name="image-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
+				                                <label class="radio"><input type="radio" name="image-effect" value="mansory" data-bind="checked: imageEffect" ><i class="rounded-x"></i>Mansory</label>
+				                                <label class="radio"><input type="radio" name="image-effect" value="carousel" data-bind="checked: imageEffect"><i class="rounded-x"></i>Carousel Slide</label>
 				                            </div>									
 									</div>
 									<div class="col-sm-6">
-									        <label class="label">정</label>
+									        <label class="label">정렬 </label>
 				                            <div class="inline-group">	
-				                                <label class="radio"><input type="radio" name="image-sorting" value="name" checked=""><i class="rounded-x"></i>이름</label>
-				                                <label class="radio"><input type="radio" name="image-sorting" value="date"><i class="rounded-x"></i>날짜 </label>
+				                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
+				                                <label class="radio"><input type="radio" name="image-sorting" value="date" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
 				                            </div>										
 									</div>
 								</div>	
