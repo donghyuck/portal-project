@@ -1270,6 +1270,8 @@
 							<section data-bind="visible:photo">
 								<div class="row">
 									<div class="col-sm-6">
+										<div class="separator-2"></div>
+										<p class="text-primary">이미지 출처와 URL을 입력하세요.</p>
 										<div class="image-listview"></div>
 									</div>
 									<div class="col-sm-6 upload-by-url">									
