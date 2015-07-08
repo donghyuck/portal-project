@@ -1286,16 +1286,19 @@
 											<input type="url" name="imageDataUrl" placeholder="이미지 데이 URL" data-bind="value:imageDataUrl"/>
 											</label>
 											<button type="button" class="btn btn-warning btn-flat rounded" data-bind="events:{click: uploadImageByUrl }" data-loading-text="<i class='fa fa-spinner fa-spin'></i>" >업로드</button>											
-										</div>								
-										<div class="m-t-lg">
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-6">
 											<div class="separator-2"></div>
 				                            <label class="label">Effect</label>
 				                            <div class="inline-group">	
 				                                <label class="radio"><input type="radio" name="image-effect" value="mansory" checked=""><i class="rounded-x"></i>Mansory</label>
 				                                <label class="radio"><input type="radio" name="image-effect" value="carousel"><i class="rounded-x"></i>Carousel Slide</label>
-				                            </div>
-										</div>
+				                            </div>									
 									</div>
+									<div class="col-sm-6"></div>
 								</div>	
 							</section>
 						</fieldset>
