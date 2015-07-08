@@ -185,6 +185,13 @@
 						var $this = this, 
 						btn = $(e.target);						
 						btn.button('loading');			
+						
+						if( $this.photo ){
+							$this.page.properties.imageEffect = $this.imageEffect;
+							$this.page.properties.imageSort = $this.imageSort;
+						}
+						
+						alert( kendo.stringify($this.page) );
 									
 						btn.button('reset');
 						return false;
@@ -309,14 +316,6 @@
 						btn = $(e.target);						
 						e.preventDefault();	
 						var hasError = false;
-						/**
-						if( $this.imageSourceUrl == null || $this.imageSourceUrl.length == 0 || !common.valid("url", $this.imageSourceUrl) ){
-							renderTo.find('.upload-by-url .input').eq(0).addClass("state-error");			
-							hasError = true;					
-						}else{
-							renderTo.find('.upload-by-url .input').eq(0).removeClass("state-error");		
-						}	
-						*/
 						if( $this.imageDataUrl == null || $this.imageDataUrl.length == 0 || !common.valid("url", $this.imageDataUrl) ){
 							renderTo.find('.upload-by-url .input').eq(1).addClass("state-error");	
 							hasError = true;					
@@ -342,7 +341,6 @@
 					}
 				});				
 				renderTo.on('shown.bs.modal', function(e){			
-					//observable.setSource(page);
 					var switcher = $("#my-post-type-switcher").data('kendoDialogSwitcher');
 					if(switcher && switcher.isOpen){
 						switcher.close();
@@ -361,7 +359,7 @@
 			
 		}		
 		<!-- ============================== -->
-		<!-- Pool														-->
+		<!-- Pool							-->
 		<!-- ============================== -->		
 		function createMyPollListView( ){					
 			var renderTo = $("#my-poll-listview");
