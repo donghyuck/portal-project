@@ -1315,7 +1315,17 @@
 				                            </div>									
 									</div>
 									<div class="col-sm-6">
-									        <label class="label">정렬 </label>
+									    <label class="label">정렬 </label>
+								     	<div class="radio radio-info radio-inline">
+                                            <input type="radio" value="name" name="image-sorting" data-bind="checked: imageSort">
+                                            <label>mansory</label>
+                                        </div>
+                                        <div class="radio radio-inline">
+                                            <input type="radio" value="creationDate" name="image-sorting" data-bind="checked: imageSort">
+                                            <label > Active </label>
+                                        </div>
+                                        
+									        
 				                            <div class="inline-group">	
 				                                <label class="radio"><input type="radio" name="image-sorting" value="name" data-bind="checked: imageSort" ><i class="rounded-x"></i>이름</label>
 				                                <label class="radio"><input type="radio" name="image-sorting" value="creationDate" data-bind="checked: imageSort" ><i class="rounded-x"></i>날짜 </label>
